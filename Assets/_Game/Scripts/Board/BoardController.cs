@@ -15,15 +15,27 @@ public class BoardController : MonoBehaviour
     [SerializeField, Min(0.1f)]
     private float cellSize = 1f;
 
+    [SerializeField, Range(0.1f, 1f)]
+    private float gemScale = 0.86f;
+
+    /*
+     * These properties allow other scripts, such as
+     * BoardVisuals and BoardLayoutController, to read
+     * the total board size without directly accessing
+     * the private width, height, and cellSize fields.
+     */
+    public float LocalBoardWidth =>
+        width * cellSize;
+
+    public float LocalBoardHeight =>
+        height * cellSize;
+
     [Header("Gem Assets")]
     [SerializeField]
     private Gem gemPrefab;
 
     [SerializeField]
     private Sprite[] gemSprites = new Sprite[6];
-
-    [SerializeField, Range(0.1f, 1f)]
-    private float gemScale = 0.86f;
 
     [Header("Input")]
     [SerializeField, Min(1f)]
@@ -86,9 +98,6 @@ public class BoardController : MonoBehaviour
     private Vector2 pointerStartPosition;
 
     private bool isBusy;
-
-    private Texture2D temporaryTexture;
-    private Sprite temporarySprite;
 
     private class GemMove
     {
@@ -184,8 +193,6 @@ public class BoardController : MonoBehaviour
         Debug.Log("Board entrance complete.");
     }
 
-
-
     private List<GemMove> GenerateStartingBoard()
     {
         gems = new Gem[width, height];
@@ -197,7 +204,9 @@ public class BoardController : MonoBehaviour
             (height + initialDropExtraRows) *
             cellSize;
 
-        for (int row = 0; row < height; row++)
+        for (int row = 0;
+             row < height;
+             row++)
         {
             for (int column = 0;
                  column < width;
@@ -230,15 +239,17 @@ public class BoardController : MonoBehaviour
                     new GemMove
                     {
                         Gem = gem,
+
                         StartPosition =
                             startingPosition,
+
                         TargetPosition =
                             targetPosition,
+
                         Delay =
-                            row *
-                            initialRowStagger +
-                            column *
-                            initialColumnStagger,
+                            row * initialRowStagger +
+                            column * initialColumnStagger,
+
                         Duration =
                             initialDropDuration
                     }
@@ -274,8 +285,17 @@ public class BoardController : MonoBehaviour
                 gem.gameObject.AddComponent<SpriteRenderer>();
         }
 
-        spriteRenderer.sortingLayerName = "Gems";
+        spriteRenderer.sortingLayerName =
+            "Gems";
+
         spriteRenderer.sortingOrder = 0;
+
+        /*
+         * This causes the gem to render only while it is
+         * inside the SpriteMask created for the board.
+         */
+        spriteRenderer.maskInteraction =
+            SpriteMaskInteraction.VisibleInsideMask;
 
         BoxCollider2D boxCollider;
 
@@ -554,8 +574,7 @@ public class BoardController : MonoBehaviour
             );
 
             Debug.Log(
-                "No match created. " +
-                "Swap reversed."
+                "No match created. Swap reversed."
             );
         }
         else
@@ -577,8 +596,7 @@ public class BoardController : MonoBehaviour
         {
             Debug.Log(
                 $"Cascade {cascadeNumber}: " +
-                $"clearing " +
-                $"{matches.Count} gems."
+                $"clearing {matches.Count} gems."
             );
 
             yield return ClearMatches(
@@ -638,29 +656,29 @@ public class BoardController : MonoBehaviour
             }
 
             BoxCollider2D collider =
-                gem.GetComponent
-                    <BoxCollider2D>();
+                gem.GetComponent<BoxCollider2D>();
 
             if (collider != null)
             {
                 collider.enabled = false;
             }
 
-            SpriteRenderer renderer =
-                gem.GetComponent
-                    <SpriteRenderer>();
+            SpriteRenderer spriteRenderer =
+                gem.GetComponent<SpriteRenderer>();
 
             visuals.Add(
                 new ClearVisual
                 {
                     Gem = gem,
+
                     SpriteRenderer =
-                        renderer,
+                        spriteRenderer,
+
                     StartScale =
-                        gem.transform
-                            .localScale,
+                        gem.transform.localScale,
+
                     StartColor =
-                        renderer.color
+                        spriteRenderer.color
                 }
             );
         }
@@ -687,8 +705,7 @@ public class BoardController : MonoBehaviour
                     continue;
                 }
 
-                visual.Gem.transform
-                    .localScale =
+                visual.Gem.transform.localScale =
                     Vector3.Lerp(
                         visual.StartScale,
                         Vector3.zero,
@@ -725,8 +742,7 @@ public class BoardController : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator
-        CollapseAndRefillBoard()
+    private IEnumerator CollapseAndRefillBoard()
     {
         List<GemMove> fallingMoves =
             new List<GemMove>();
@@ -752,8 +768,7 @@ public class BoardController : MonoBehaviour
                 if (row != targetRow)
                 {
                     Vector3 startPosition =
-                        gem.transform
-                            .localPosition;
+                        gem.transform.localPosition;
 
                     Vector3 targetPosition =
                         GetLocalPosition(
@@ -776,11 +791,15 @@ public class BoardController : MonoBehaviour
                         new GemMove
                         {
                             Gem = gem,
+
                             StartPosition =
                                 startPosition,
+
                             TargetPosition =
                                 targetPosition,
+
                             Delay = 0f,
+
                             Duration =
                                 CalculateFallDuration(
                                     startPosition,
@@ -814,8 +833,10 @@ public class BoardController : MonoBehaviour
                 Vector3 startPosition =
                     topPosition +
                     Vector3.up *
-                    ((newGemIndex + 1) *
-                     cellSize);
+                    (
+                        (newGemIndex + 1) *
+                        cellSize
+                    );
 
                 Gem gem = CreateGem(
                     column,
@@ -828,11 +849,15 @@ public class BoardController : MonoBehaviour
                     new GemMove
                     {
                         Gem = gem,
+
                         StartPosition =
                             startPosition,
+
                         TargetPosition =
                             targetPosition,
+
                         Delay = 0f,
+
                         Duration =
                             CalculateFallDuration(
                                 startPosition,
@@ -889,8 +914,7 @@ public class BoardController : MonoBehaviour
                 move.Duration
             );
 
-            move.Gem.transform
-                .localPosition =
+            move.Gem.transform.localPosition =
                 move.StartPosition;
         }
 
@@ -912,8 +936,7 @@ public class BoardController : MonoBehaviour
 
                 if (moveElapsed < 0f)
                 {
-                    move.Gem.transform
-                        .localPosition =
+                    move.Gem.transform.localPosition =
                         move.StartPosition;
 
                     continue;
@@ -928,8 +951,7 @@ public class BoardController : MonoBehaviour
                 float easedProgress =
                     SmoothStep(progress);
 
-                move.Gem.transform
-                    .localPosition =
+                move.Gem.transform.localPosition =
                     Vector3.Lerp(
                         move.StartPosition,
                         move.TargetPosition,
@@ -947,8 +969,7 @@ public class BoardController : MonoBehaviour
         {
             if (move.Gem != null)
             {
-                move.Gem.transform
-                    .localPosition =
+                move.Gem.transform.localPosition =
                     move.TargetPosition;
             }
         }
@@ -1070,9 +1091,8 @@ public class BoardController : MonoBehaviour
         if (!foundExistingLayout)
         {
             Debug.LogWarning(
-                "Could not find a valid " +
-                "arrangement using the " +
-                "existing gem counts. " +
+                "Could not find a valid arrangement " +
+                "using the existing gem counts. " +
                 "Generating new gem types."
             );
 
@@ -1114,15 +1134,12 @@ public class BoardController : MonoBehaviour
 
                     gem.SetType(
                         newType,
-                        gemSprites[
-                            (int)newType
-                        ]
+                        gemSprites[(int)newType]
                     );
                 }
 
                 Vector3 startPosition =
-                    gem.transform
-                        .localPosition;
+                    gem.transform.localPosition;
 
                 Vector3 targetPosition =
                     GetLocalPosition(
@@ -1142,15 +1159,19 @@ public class BoardController : MonoBehaviour
                     new GemMove
                     {
                         Gem = gem,
+
                         StartPosition =
                             startPosition,
+
                         TargetPosition =
                             targetPosition,
+
                         Delay =
                             Random.Range(
                                 0f,
                                 reshuffleStagger
                             ),
+
                         Duration =
                             reshuffleDuration
                     }
@@ -1179,8 +1200,7 @@ public class BoardController : MonoBehaviour
             GetAllGems();
 
         for (int attempt = 0;
-             attempt <
-             maximumReshuffleAttempts;
+             attempt < maximumReshuffleAttempts;
              attempt++)
         {
             List<Gem> candidate =
@@ -1242,17 +1262,20 @@ public class BoardController : MonoBehaviour
     private void ShuffleList<T>(
         List<T> list)
     {
-        for (int i = list.Count - 1;
-             i > 0;
-             i--)
+        for (int index = list.Count - 1;
+             index > 0;
+             index--)
         {
             int randomIndex =
-                Random.Range(0, i + 1);
+                Random.Range(
+                    0,
+                    index + 1
+                );
 
             T temporary =
-                list[i];
+                list[index];
 
-            list[i] =
+            list[index] =
                 list[randomIndex];
 
             list[randomIndex] =
@@ -1263,7 +1286,10 @@ public class BoardController : MonoBehaviour
     private GemType[,] BuildCurrentTypeGrid()
     {
         GemType[,] typeGrid =
-            new GemType[width, height];
+            new GemType[
+                width,
+                height
+            ];
 
         for (int row = 0;
              row < height;
@@ -1285,7 +1311,10 @@ public class BoardController : MonoBehaviour
         List<Gem> layout)
     {
         GemType[,] typeGrid =
-            new GemType[width, height];
+            new GemType[
+                width,
+                height
+            ];
 
         int index = 0;
 
@@ -1307,8 +1336,7 @@ public class BoardController : MonoBehaviour
         return typeGrid;
     }
 
-    private GemType[,]
-        GeneratePlayableTypeGrid()
+    private GemType[,] GeneratePlayableTypeGrid()
     {
         for (int attempt = 0;
              attempt < 500;
@@ -1328,13 +1356,11 @@ public class BoardController : MonoBehaviour
                      column < width;
                      column++)
                 {
-                    List<GemType>
-                        allowedTypes =
-                            new List<GemType>();
+                    List<GemType> allowedTypes =
+                        new List<GemType>();
 
                     for (int typeIndex = 0;
-                         typeIndex <
-                         gemSprites.Length;
+                         typeIndex < gemSprites.Length;
                          typeIndex++)
                     {
                         GemType candidate =
@@ -1388,8 +1414,7 @@ public class BoardController : MonoBehaviour
         }
 
         Debug.LogError(
-            "Failed to generate a " +
-            "playable board."
+            "Failed to generate a playable board."
         );
 
         return BuildCurrentTypeGrid();
@@ -1601,8 +1626,7 @@ public class BoardController : MonoBehaviour
                column < width &&
                row >= 0 &&
                row < height &&
-               typeGrid[column, row] ==
-               type)
+               typeGrid[column, row] == type)
         {
             count++;
 
@@ -1735,8 +1759,7 @@ public class BoardController : MonoBehaviour
                 );
 
             if (nextGem == null ||
-                nextGem.Type !=
-                origin.Type)
+                nextGem.Type != origin.Type)
             {
                 break;
             }
@@ -1767,8 +1790,7 @@ public class BoardController : MonoBehaviour
                 );
 
             if (nextGem == null ||
-                nextGem.Type !=
-                origin.Type)
+                nextGem.Type != origin.Type)
             {
                 break;
             }
@@ -1846,8 +1868,7 @@ public class BoardController : MonoBehaviour
         );
     }
 
-    private IEnumerator
-        ForceReshuffleRoutine()
+    private IEnumerator ForceReshuffleRoutine()
     {
         isBusy = true;
 
@@ -1855,5 +1876,4 @@ public class BoardController : MonoBehaviour
 
         isBusy = false;
     }
-
 }
