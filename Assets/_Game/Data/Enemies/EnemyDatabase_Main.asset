@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2b410687169d4cbcc3b360b81b031, type: 3}
   m_Name: EnemyDatabase_Main
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDatabase
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}

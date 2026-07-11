@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc694b828c22224ca4b552b383f553b, type: 3}
+  m_Name: Player_Skeleton
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDefinition
+  playerId: skeleton
+  displayName: SirRattlebone
+  description: 
+  playerPrefab: {fileID: 0}
+  battleFrameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  battleCharacterSprite: {fileID: -8755278493030557412, guid: 4ca39511b58c3984d87931252294c3f4, type: 3}
+  menuPortrait: {fileID: 0}
+  baseMaxHealth: 100
+  activeAbility: {fileID: 0}
+  passiveAbility: {fileID: 0}

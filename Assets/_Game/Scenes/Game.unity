@@ -450,6 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362587653}
+  - component: {fileID: 362587654}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -469,9 +470,36 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 748065085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362587654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362587652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f194a6f5b5929499f179634e7c98af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveController
+  enemyDatabase: {fileID: 11400000, guid: cdb186019bf676b4c9a0ab2d980ca598, type: 2}
+  difficultyProfile: {fileID: 11400000, guid: 22d731b792b705049bfcbc365338bea4, type: 2}
+  waveSpawnProfile: {fileID: 11400000, guid: 744232e57eebb164490df56453d7d33e, type: 2}
+  playerActor: {fileID: 748065086}
+  enemySlots:
+  - {fileID: 1468703618}
+  - {fileID: 1268935519}
+  - {fileID: 40744151}
+  currentWave: 1
+  playerPowerRatio: 1
+  spawnWaveOnStart: 1
+  avoidDuplicateEnemyTypesWhenPossible: 1
+  allowCategoryFallback: 1
+  debugDamageAmount: 25
 --- !u!1 &378906545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1360,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &748065084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748065085}
+  - component: {fileID: 748065086}
+  m_Layer: 0
+  m_Name: PlayerRuntime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748065085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 362587653}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748065086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae6bdd6ef3e1e146b05558db338ba13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerActor
+  startingDefinition: {fileID: 11400000, guid: 265e9b1cec447874d8ec61b6ec5232a8, type: 2}
+  initializeOnStart: 1
+  definition: {fileID: 0}
+  maximumHealth: 0
+  currentHealth: 0
+  revivalCount: 0
+  isInitialized: 0
+  isDefeated: 0
 --- !u!1 &772524362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 779200020}
   - component: {fileID: 779200021}
+  - component: {fileID: 779200022}
   m_Layer: 5
   m_Name: PlayerPanel
   m_TagString: Untagged
@@ -1414,6 +1495,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779200019}
   m_CullTransparentMesh: 1
+--- !u!114 &779200022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779200019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb449f020fd345a9471a797636e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPanelUI
+  playerActor: {fileID: 748065086}
+  playerFrame: {fileID: 126610987}
+  playerCharacter: {fileID: 1872833254}
+  playerBase: {fileID: 1888537364}
+  playerHealthBar: {fileID: 1585519224}
+  playerHealthFill: {fileID: 128503399}
+  playerHealthText: {fileID: 2010084971}
 --- !u!1 &844573959
 GameObject:
   m_ObjectHideFlags: 0

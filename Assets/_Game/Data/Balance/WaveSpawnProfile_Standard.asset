@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02340d02869c16c4499945ab235ee3b2, type: 3}
+  m_Name: WaveSpawnProfile_Standard
+  m_EditorClassIdentifier: Assembly-CSharp::WaveSpawnProfile
+  exactWaveRules:
+  - wave: 5
+    ruleName: First Special Encounter
+    enemyCategories: 000000000000000001000000
+  waveBands:
+  - ruleName: Introduction
+    minimumWave: 1
+    maximumWave: 2
+    minimumEnemyCount: 1
+    maximumEnemyCount: 1
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 100
+      maximumPerWave: 0
+  - ruleName: Early Combat
+    minimumWave: 3
+    maximumWave: 4
+    minimumEnemyCount: 2
+    maximumEnemyCount: 2
+    guaranteedCategories: 0000000000000000
+    categoryWeights:
+    - category: 0
+      weight: 100
+      maximumPerWave: 0
+  - ruleName: Developing
+    minimumWave: 6
+    maximumWave: 9
+    minimumEnemyCount: 2
+    maximumEnemyCount: 3
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 75
+      maximumPerWave: 0
+    - category: 1
+      weight: 25
+      maximumPerWave: 1
+  - ruleName: Escalation
+    minimumWave: 10
+    maximumWave: 14
+    minimumEnemyCount: 3
+    maximumEnemyCount: 3
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 55
+      maximumPerWave: 0
+    - category: 1
+      weight: 45
+      maximumPerWave: 2
+  - ruleName: Miniboss Introduction
+    minimumWave: 15
+    maximumWave: 19
+    minimumEnemyCount: 3
+    maximumEnemyCount: 3
+    guaranteedCategories: 
+    categoryWeights:
+    - category: 0
+      weight: 45
+      maximumPerWave: 0
+    - category: 1
+      weight: 45
+      maximumPerWave: 2
+    - category: 2
+      weight: 10
+      maximumPerWave: 1
+  - ruleName: Endless Pressure
+    minimumWave: 20
+    maximumWave: 0
+    minimumEnemyCount: 3
+    maximumEnemyCount: 3
+    guaranteedCategories: 
+    categoryWeights:
+    - category: 0
+      weight: 35
+      maximumPerWave: 0
+    - category: 1
+      weight: 50
+      maximumPerWave: 2
+    - category: 2
+      weight: 15
+      maximumPerWave: 1
