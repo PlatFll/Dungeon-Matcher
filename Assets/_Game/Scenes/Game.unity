@@ -728,7 +728,31 @@ MonoBehaviour:
   width: 7
   height: 8
   cellSize: 1
+  gemPrefab: {fileID: 2436599767616786368, guid: 3ce9495f8b649cb4bb59bdc0f781f4c1, type: 3}
+  gemSprites:
+  - {fileID: 21300000, guid: 8e15e946904760d4bbb5060dae51d96a, type: 3}
+  - {fileID: 21300000, guid: 672ba588cb67fd24a983a799e2c560f0, type: 3}
+  - {fileID: 21300000, guid: b6aa4fd2d9c272046bb397f2f6863216, type: 3}
+  - {fileID: 21300000, guid: d2a6ad94faa46c449aeb7e0583dc114e, type: 3}
+  - {fileID: 21300000, guid: d04f3840662faac42b73f5966b824344, type: 3}
+  - {fileID: 21300000, guid: 2c06a6a3f176bdb429f57efbcfb67cfb, type: 3}
   gemScale: 0.86
+  swipeMinDistance: 40
+  swapDuration: 0.15
+  invalidSwapPause: 0.08
+  initialDropExtraRows: 2
+  initialDropDuration: 0.6
+  initialRowStagger: 0.025
+  initialColumnStagger: 0.015
+  clearDuration: 0.18
+  cascadePause: 0.06
+  fallDurationPerCell: 0.075
+  minimumFallDuration: 0.14
+  maximumFallDuration: 0.45
+  reshufflePause: 0.25
+  reshuffleDuration: 0.45
+  reshuffleStagger: 0.04
+  maximumReshuffleAttempts: 250
 --- !u!1 &1809306374
 GameObject:
   m_ObjectHideFlags: 0

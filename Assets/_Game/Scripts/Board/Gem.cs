@@ -22,15 +22,17 @@ public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private BoardController board;
     private SpriteRenderer spriteRenderer;
 
-    private Color normalColor;
     private float normalScale;
+    private readonly Color normalColor = Color.white;
+    private readonly Color selectedColor =
+        new Color(1f, 1f, 0.72f, 1f);
 
     public void Initialize(
         BoardController boardController,
         int column,
         int row,
         GemType gemType,
-        Color color,
+        Sprite sprite,
         float scale)
     {
         board = boardController;
@@ -38,9 +40,10 @@ public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         normalScale = scale;
 
         SetGridPosition(column, row);
-        SetType(gemType, color);
+        SetType(gemType, sprite);
 
-        transform.localScale = Vector3.one * normalScale;
+        transform.localScale =
+            Vector3.one * normalScale;
     }
 
     public void SetGridPosition(int column, int row)
@@ -51,16 +54,16 @@ public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         gameObject.name = $"Gem_{column}_{row}";
     }
 
-    public void SetType(GemType gemType, Color color)
+    public void SetType(GemType gemType, Sprite sprite)
     {
         Type = gemType;
-        normalColor = color;
 
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        spriteRenderer.sprite = sprite;
         spriteRenderer.color = normalColor;
     }
 
@@ -76,20 +79,16 @@ public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void SetSelected(bool selected)
     {
-        if (selected)
-        {
-            transform.localScale =
-                Vector3.one * (normalScale * 1.12f);
+        transform.localScale =
+            Vector3.one *
+            normalScale *
+            (selected ? 1.12f : 1f);
 
-            spriteRenderer.color =
-                Color.Lerp(normalColor, Color.white, 0.35f);
-        }
-        else
-        {
-            transform.localScale =
-                Vector3.one * normalScale;
+        spriteRenderer.color =
+            selected ? selectedColor : normalColor;
 
-            spriteRenderer.color = normalColor;
-        }
+        // Keeps an enlarged selected gem in front of its neighbors.
+        spriteRenderer.sortingOrder =
+            selected ? 1 : 0;
     }
 }

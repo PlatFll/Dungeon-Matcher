@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 672ba588cb67fd24a983a799e2c560f0
+guid: d2a6ad94faa46c449aeb7e0583dc114e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7006938630301607282
-    second: Citrine_0
+      213: -676192851162484014
+    second: gem_sprite_64x64_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Citrine_0
+      name: gem_sprite_64x64_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 1
         y: 0
-        width: 30
+        width: 62
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 275e6165f85ad3160800000000000000
-      internalID: 7006938630301607282
+      spriteID: 2d23dca3f2ead96f0800000000000000
+      internalID: -676192851162484014
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Citrine_0: 7006938630301607282
+      gem_sprite_64x64_0: -676192851162484014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

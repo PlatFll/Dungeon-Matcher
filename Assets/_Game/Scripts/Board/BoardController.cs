@@ -15,6 +15,13 @@ public class BoardController : MonoBehaviour
     [SerializeField, Min(0.1f)]
     private float cellSize = 1f;
 
+    [Header("Gem Assets")]
+    [SerializeField]
+    private Gem gemPrefab;
+
+    [SerializeField]
+    private Sprite[] gemSprites = new Sprite[6];
+
     [SerializeField, Range(0.1f, 1f)]
     private float gemScale = 0.86f;
 
@@ -83,16 +90,6 @@ public class BoardController : MonoBehaviour
     private Texture2D temporaryTexture;
     private Sprite temporarySprite;
 
-    private readonly Color[] gemColors =
-    {
-        new Color32(220, 45, 55, 255),
-        new Color32(245, 125, 35, 255),
-        new Color32(245, 210, 45, 255),
-        new Color32(45, 190, 90, 255),
-        new Color32(55, 120, 230, 255),
-        new Color32(155, 75, 210, 255)
-    };
-
     private class GemMove
     {
         public Gem Gem;
@@ -112,8 +109,60 @@ public class BoardController : MonoBehaviour
 
     private void Start()
     {
-        CreateTemporarySprite();
+        if (!ValidateGemAssets())
+        {
+            enabled = false;
+            return;
+        }
+
         StartCoroutine(InitializeBoard());
+    }
+
+    private bool ValidateGemAssets()
+    {
+        int requiredSpriteCount =
+            System.Enum.GetValues(typeof(GemType)).Length;
+
+        if (gemPrefab == null)
+        {
+            Debug.LogError(
+                "BoardController requires a Gem prefab.",
+                this
+            );
+
+            return false;
+        }
+
+        if (gemSprites == null ||
+            gemSprites.Length != requiredSpriteCount)
+        {
+            Debug.LogError(
+                $"Gem Sprites must contain exactly " +
+                $"{requiredSpriteCount} sprites.",
+                this
+            );
+
+            return false;
+        }
+
+        for (int index = 0;
+             index < gemSprites.Length;
+             index++)
+        {
+            if (gemSprites[index] != null)
+            {
+                continue;
+            }
+
+            Debug.LogError(
+                $"Gem sprite element {index} is empty.",
+                this
+            );
+
+            return false;
+        }
+
+        return true;
     }
 
     private IEnumerator InitializeBoard()
@@ -135,39 +184,7 @@ public class BoardController : MonoBehaviour
         Debug.Log("Board entrance complete.");
     }
 
-    private void CreateTemporarySprite()
-    {
-        temporaryTexture = new Texture2D(
-            1,
-            1,
-            TextureFormat.RGBA32,
-            false
-        );
 
-        temporaryTexture.name =
-            "Temporary Gem Texture";
-
-        temporaryTexture.filterMode =
-            FilterMode.Point;
-
-        temporaryTexture.SetPixel(
-            0,
-            0,
-            Color.white
-        );
-
-        temporaryTexture.Apply();
-
-        temporarySprite = Sprite.Create(
-            temporaryTexture,
-            new Rect(0, 0, 1, 1),
-            new Vector2(0.5f, 0.5f),
-            1f
-        );
-
-        temporarySprite.name =
-            "Temporary Gem Sprite";
-    }
 
     private List<GemMove> GenerateStartingBoard()
     {
@@ -238,46 +255,47 @@ public class BoardController : MonoBehaviour
         GemType gemType,
         Vector3 localPosition)
     {
-        GameObject gemObject =
-            new GameObject(
-                $"Gem_{column}_{row}"
-            );
-
-        gemObject.transform.SetParent(
-            transform,
-            false
+        Gem gem = Instantiate(
+            gemPrefab,
+            transform
         );
 
-        gemObject.transform.localPosition =
+        gem.gameObject.layer =
+            LayerMask.NameToLayer("Default");
+
+        gem.transform.localPosition =
             localPosition;
 
-        SpriteRenderer spriteRenderer =
-            gemObject.AddComponent
-                <SpriteRenderer>();
+        SpriteRenderer spriteRenderer;
 
-        spriteRenderer.sprite =
-            temporarySprite;
+        if (!gem.TryGetComponent(out spriteRenderer))
+        {
+            spriteRenderer =
+                gem.gameObject.AddComponent<SpriteRenderer>();
+        }
 
-        spriteRenderer.sortingLayerName =
-            "Gems";
+        spriteRenderer.sortingLayerName = "Gems";
+        spriteRenderer.sortingOrder = 0;
 
-        BoxCollider2D boxCollider =
-            gemObject.AddComponent
-                <BoxCollider2D>();
+        BoxCollider2D boxCollider;
 
+        if (!gem.TryGetComponent(out boxCollider))
+        {
+            boxCollider =
+                gem.gameObject.AddComponent<BoxCollider2D>();
+        }
+
+        boxCollider.enabled = true;
+        boxCollider.isTrigger = false;
+        boxCollider.offset = Vector2.zero;
         boxCollider.size = Vector2.one;
-
-        Gem gem =
-            gemObject.AddComponent<Gem>();
-
-        int typeIndex = (int)gemType;
 
         gem.Initialize(
             this,
             column,
             row,
             gemType,
-            gemColors[typeIndex],
+            gemSprites[(int)gemType],
             gemScale
         );
 
@@ -315,7 +333,7 @@ public class BoardController : MonoBehaviour
             new List<GemType>();
 
         for (int typeIndex = 0;
-             typeIndex < gemColors.Length;
+             typeIndex < gemSprites.Length;
              typeIndex++)
         {
             GemType candidateType =
@@ -358,7 +376,7 @@ public class BoardController : MonoBehaviour
         int typeIndex =
             Random.Range(
                 0,
-                gemColors.Length
+                gemSprites.Length
             );
 
         return (GemType)typeIndex;
@@ -1096,7 +1114,7 @@ public class BoardController : MonoBehaviour
 
                     gem.SetType(
                         newType,
-                        gemColors[
+                        gemSprites[
                             (int)newType
                         ]
                     );
@@ -1316,7 +1334,7 @@ public class BoardController : MonoBehaviour
 
                     for (int typeIndex = 0;
                          typeIndex <
-                         gemColors.Length;
+                         gemSprites.Length;
                          typeIndex++)
                     {
                         GemType candidate =
@@ -1838,16 +1856,4 @@ public class BoardController : MonoBehaviour
         isBusy = false;
     }
 
-    private void OnDestroy()
-    {
-        if (temporarySprite != null)
-        {
-            Destroy(temporarySprite);
-        }
-
-        if (temporaryTexture != null)
-        {
-            Destroy(temporaryTexture);
-        }
-    }
 }
