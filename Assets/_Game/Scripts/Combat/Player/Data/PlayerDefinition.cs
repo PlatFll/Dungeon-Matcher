@@ -8,7 +8,9 @@ public sealed class PlayerDefinition : ScriptableObject
 {
     [Header("Identity")]
     [SerializeField]
-    [Tooltip("Stable internal identifier. Avoid changing it after release.")]
+    [Tooltip(
+        "Stable internal identifier. Avoid changing it after release."
+    )]
     private string playerId = "player_id";
 
     [SerializeField]
@@ -50,6 +52,15 @@ public sealed class PlayerDefinition : ScriptableObject
     [SerializeField, Min(1)]
     private int baseMaxHealth = 100;
 
+    [Header("Gem Affinity")]
+    [SerializeField]
+    [Tooltip(
+        "Matching this gem type heals this character. " +
+        "The player and an enemy may share the same color."
+    )]
+    private GemType affinityGemType =
+        GemType.Emerald;
+
     [Header("Character Features")]
     [SerializeField]
     private CharacterAbilityDefinition activeAbility;
@@ -63,10 +74,15 @@ public sealed class PlayerDefinition : ScriptableObject
 
     public GameObject PlayerPrefab => playerPrefab;
     public Sprite BattleFrameSprite => battleFrameSprite;
-    public Sprite BattleCharacterSprite => battleCharacterSprite;
+    public Sprite BattleCharacterSprite =>
+        battleCharacterSprite;
+
     public Sprite MenuPortrait => menuPortrait;
 
     public int BaseMaxHealth => baseMaxHealth;
+
+    public GemType AffinityGemType =>
+        affinityGemType;
 
     public CharacterAbilityDefinition ActiveAbility =>
         activeAbility;

@@ -19,6 +19,10 @@ public sealed class PlayerPanelUI : MonoBehaviour
     [SerializeField]
     private Image playerBase;
 
+    [Header("Shared Visual Data")]
+    [SerializeField]
+    private GemColorPalette gemColorPalette;
+
     [Header("Health Bar")]
     [SerializeField]
     private GameObject playerHealthBar;
@@ -238,6 +242,13 @@ public sealed class PlayerPanelUI : MonoBehaviour
         if (playerBase != null)
         {
             playerBase.gameObject.SetActive(true);
+
+            playerBase.color =
+                gemColorPalette != null
+                    ? gemColorPalette.GetColor(
+                        definition.AffinityGemType
+                    )
+                    : Color.white;
         }
 
         if (playerHealthBar != null)
@@ -281,6 +292,14 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private void ShowUninitializedState()
     {
+        if (playerBase != null)
+        {
+            playerBase.color =
+                gemColorPalette != null
+                    ? gemColorPalette.EmptyColor
+                    : Color.gray;
+        }
+
         if (playerHealthBar != null)
         {
             playerHealthBar.SetActive(false);
