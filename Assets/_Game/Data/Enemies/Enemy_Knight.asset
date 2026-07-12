@@ -18,8 +18,8 @@ MonoBehaviour:
   description: 
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   baseMaxHealth: 100
-  baseDamage: 10
-  baseAttackInterval: 3
+  baseDamage: 5
+  baseAttackInterval: 10
   hasSpecialAbility: 0
   baseSpecialTurnRequirement: 5
   minimumWave: 1

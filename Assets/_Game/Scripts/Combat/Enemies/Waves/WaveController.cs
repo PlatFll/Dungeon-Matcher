@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,25 @@ public sealed class WaveController : MonoBehaviour
     [Header("Player Target")]
     [SerializeField]
     private PlayerActor playerActor;
+
+    [Header("Board Synchronization")]
+    [SerializeField]
+    [Tooltip(
+    "Used to wait until matches and cascades have completely " +
+    "finished before the next wave spawns."
+)]
+    private BoardController boardController;
+
+    [Header("Automatic Wave Progression")]
+    [SerializeField]
+    private bool advanceWavesAutomatically = true;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Delay after the board settles before the next wave begins. " +
+        "Keep this at zero until a proper wave transition UI is added."
+    )]
+    private float delayBeforeNextWave;
 
     [Header("Enemy Slots")]
     [SerializeField]
@@ -77,6 +97,8 @@ public sealed class WaveController : MonoBehaviour
     private readonly List<EnemyActor> activeEnemies =
         new List<EnemyActor>();
 
+    private Coroutine advanceWaveCoroutine;
+
     private static readonly EnemyCategory[]
         fallbackCategoryOrder =
         {
@@ -107,6 +129,7 @@ public sealed class WaveController : MonoBehaviour
 
     private void OnDisable()
     {
+        CancelPendingWaveAdvance();
         UnsubscribeFromSlots();
     }
 
@@ -121,6 +144,8 @@ public sealed class WaveController : MonoBehaviour
 
             return;
         }
+
+        CancelPendingWaveAdvance();
 
         if (!ValidateReferences())
         {
@@ -548,16 +573,116 @@ public sealed class WaveController : MonoBehaviour
 
         IsWaveActive = false;
 
+        int completedWave =
+            currentWave;
+
         Debug.Log(
-            $"Wave {currentWave} completed.",
+            $"Wave {completedWave} completed.",
             this
         );
 
-        WaveCompleted?.Invoke(currentWave);
+        WaveCompleted?.Invoke(completedWave);
+
+        if (!advanceWavesAutomatically)
+        {
+            return;
+        }
+
+        if (playerActor == null ||
+            playerActor.IsDefeated)
+        {
+            return;
+        }
+
+        if (advanceWaveCoroutine != null)
+        {
+            return;
+        }
+
+        advanceWaveCoroutine =
+            StartCoroutine(
+                AdvanceToNextWaveWhenReady(
+                    completedWave
+                )
+            );
+    }
+
+    private IEnumerator AdvanceToNextWaveWhenReady(
+    int completedWave)
+    {
+        /*
+         * The final enemy may die while BoardController is still
+         * clearing gems, dropping new gems, or resolving cascades.
+         *
+         * Waiting here prevents those old cascades from attacking
+         * enemies belonging to the next wave.
+         */
+        while (boardController != null &&
+               boardController.IsBusy)
+        {
+            yield return null;
+        }
+
+        if (delayBeforeNextWave > 0f)
+        {
+            yield return new WaitForSeconds(
+                delayBeforeNextWave
+            );
+        }
+        else
+        {
+            /*
+             * Give the defeated enemy objects and UI one frame
+             * to finish cleaning themselves up.
+             */
+            yield return null;
+        }
+
+        if (!isActiveAndEnabled ||
+            playerActor == null ||
+            playerActor.IsDefeated)
+        {
+            advanceWaveCoroutine = null;
+            yield break;
+        }
+
+        /*
+         * Stop this old transition if something else already
+         * changed the wave or spawned enemies.
+         */
+        if (currentWave != completedWave ||
+            IsWaveActive)
+        {
+            advanceWaveCoroutine = null;
+            yield break;
+        }
+
+        currentWave =
+            completedWave + 1;
+
+        advanceWaveCoroutine = null;
+
+        SpawnCurrentWave();
+    }
+
+    private void CancelPendingWaveAdvance()
+    {
+        if (advanceWaveCoroutine == null)
+        {
+            return;
+        }
+
+        StopCoroutine(
+            advanceWaveCoroutine
+        );
+
+        advanceWaveCoroutine = null;
     }
 
     public void ClearCurrentWave()
     {
+        CancelPendingWaveAdvance();
+
         IsWaveActive = false;
         activeEnemies.Clear();
 
@@ -659,6 +784,16 @@ public sealed class WaveController : MonoBehaviour
         {
             Debug.LogError(
                 "WaveController requires a PlayerActor.",
+                this
+            );
+
+            isValid = false;
+        }
+
+        if (boardController == null)
+        {
+            Debug.LogError(
+                "WaveController requires a BoardController.",
                 this
             );
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardController : MonoBehaviour
+public partial class BoardController : MonoBehaviour
 {
     [Header("Board Size")]
     [SerializeField, Min(1)]
@@ -597,6 +597,11 @@ public class BoardController : MonoBehaviour
             Debug.Log(
                 $"Cascade {cascadeNumber}: " +
                 $"clearing {matches.Count} gems."
+            );
+
+            ReportMatchesToCombat(
+                matches,
+                cascadeNumber - 1
             );
 
             yield return ClearMatches(

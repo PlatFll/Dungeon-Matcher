@@ -451,6 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362587653}
   - component: {fileID: 362587654}
+  - component: {fileID: 362587655}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -490,6 +491,9 @@ MonoBehaviour:
   difficultyProfile: {fileID: 11400000, guid: 22d731b792b705049bfcbc365338bea4, type: 2}
   waveSpawnProfile: {fileID: 11400000, guid: 744232e57eebb164490df56453d7d33e, type: 2}
   playerActor: {fileID: 748065086}
+  boardController: {fileID: 1775734119}
+  advanceWavesAutomatically: 1
+  delayBeforeNextWave: 0
   enemySlots:
   - {fileID: 1468703618}
   - {fileID: 1268935519}
@@ -500,6 +504,27 @@ MonoBehaviour:
   avoidDuplicateEnemyTypesWhenPossible: 1
   allowCategoryFallback: 1
   debugDamageAmount: 25
+--- !u!114 &362587655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362587652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05daeae5f15596c4d930f53f7e69395a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatController
+  playerActor: {fileID: 748065086}
+  waveController: {fileID: 362587654}
+  minimumMatchSize: 3
+  threeGemMatchDamage: 30
+  additionalDamagePerGem: 15
+  cascadeDamageBonusPerDepth: 0.2
+  debugGemType: 0
+  debugGemCount: 3
+  debugCascadeDepth: 0
 --- !u!1 &378906545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b636ddf24c435d4b84c632f076c6bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardController
+  combatController: {fileID: 362587655}
   width: 7
   height: 8
   cellSize: 1
