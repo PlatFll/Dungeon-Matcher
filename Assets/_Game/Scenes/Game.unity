@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 362587654}
   - component: {fileID: 362587655}
   - component: {fileID: 362587656}
+  - component: {fileID: 362587657}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -545,6 +546,23 @@ MonoBehaviour:
   fiveGemHealing: 18
   additionalHealingPerGem: 6
   cascadeHealingBonusPerDepth: 0.15
+--- !u!114 &362587657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362587652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88fee05b02d95a47bf201c4d8fe9e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaggerCombatBridge
+  combatController: {fileID: 362587655}
+  initialStaggerDuration: 1
+  additionalStaggerDuration: 0.75
+  cascadeStaggerBonusPerDepth: 0.25
+  maximumStoredStaggerDuration: 3
 --- !u!1 &378906545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2916,7 @@ GameObject:
   - component: {fileID: 1872833253}
   - component: {fileID: 1872833255}
   - component: {fileID: 1872833254}
+  - component: {fileID: 1872833256}
   m_Layer: 5
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2936,7 +2955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: eb0589f6f7497e84fa43e15966154f27, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2962,6 +2981,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872833252}
   m_CullTransparentMesh: 1
+--- !u!114 &1872833256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872833252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1424ff084f58046adb86d270b6f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombatFeedback
+  playerActor: {fileID: 748065086}
+  visualRoot: {fileID: 1872833253}
+  playerImage: {fileID: 1872833254}
+  shakeDuration: 0.3
+  shakeStrength: {x: 3, y: 2}
+  shakeStepInterval: 0.04
+  whiteFlashDuration: 0.12
+  whiteFlashAmount: 1
 --- !u!1 &1888537362
 GameObject:
   m_ObjectHideFlags: 0
