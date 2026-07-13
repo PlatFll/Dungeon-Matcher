@@ -9,14 +9,17 @@ public sealed class EnemyDefinition : ScriptableObject
     [Header("Identity")]
 
     [SerializeField]
-    [Tooltip("Stable internal identifier. Avoid changing it after release.")]
+    [Tooltip(
+        "Stable internal identifier. Avoid changing it after release."
+    )]
     private string enemyId = "enemy_id";
 
     [SerializeField]
     private string displayName = "Enemy";
 
     [SerializeField]
-    private EnemyCategory category = EnemyCategory.Normal;
+    private EnemyCategory category =
+        EnemyCategory.Normal;
 
     [SerializeField]
     [TextArea(2, 4)]
@@ -87,49 +90,138 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private float attackSpeedMultiplier = 1f;
 
-    public string EnemyId => enemyId;
-    public string DisplayName => displayName;
-    public EnemyCategory Category => category;
-    public string Description => description;
-    public GameObject EnemyPrefab => enemyPrefab;
+    [Header("Status Resistance")]
 
-    public int BaseMaxHealth => baseMaxHealth;
-    public int BaseDamage => baseDamage;
-    public float BaseAttackInterval => baseAttackInterval;
+    [SerializeField, Range(0f, 2f)]
+    [Tooltip(
+        "Multiplies stagger duration. " +
+        "1 means normal stagger, 0.5 means half duration, " +
+        "and 0 makes this enemy immune."
+    )]
+    private float staggerDurationMultiplier = 1f;
 
-    public bool HasSpecialAbility => hasSpecialAbility;
+    public string EnemyId =>
+        enemyId;
+
+    public string DisplayName =>
+        displayName;
+
+    public EnemyCategory Category =>
+        category;
+
+    public string Description =>
+        description;
+
+    public GameObject EnemyPrefab =>
+        enemyPrefab;
+
+    public int BaseMaxHealth =>
+        baseMaxHealth;
+
+    public int BaseDamage =>
+        baseDamage;
+
+    public float BaseAttackInterval =>
+        baseAttackInterval;
+
+    public bool HasSpecialAbility =>
+        hasSpecialAbility;
 
     public int BaseSpecialTurnRequirement =>
         baseSpecialTurnRequirement;
 
-    public int MinimumWave => minimumWave;
-    public float SpawnWeight => spawnWeight;
+    public int MinimumWave =>
+        minimumWave;
 
-    public float HealthMultiplier => healthMultiplier;
-    public float DamageMultiplier => damageMultiplier;
+    public float SpawnWeight =>
+        spawnWeight;
+
+    public float HealthMultiplier =>
+        healthMultiplier;
+
+    public float DamageMultiplier =>
+        damageMultiplier;
 
     public float AttackSpeedMultiplier =>
         attackSpeedMultiplier;
 
+    public float StaggerDurationMultiplier =>
+        staggerDurationMultiplier;
+
     private void OnValidate()
     {
-        enemyId = enemyId.Trim().ToLowerInvariant();
-        displayName = displayName.Trim();
+        enemyId =
+            string.IsNullOrWhiteSpace(enemyId)
+                ? "enemy_id"
+                : enemyId
+                    .Trim()
+                    .ToLowerInvariant()
+                    .Replace(" ", "_");
 
-        baseMaxHealth = Mathf.Max(1, baseMaxHealth);
-        baseDamage = Mathf.Max(0, baseDamage);
-        baseAttackInterval = Mathf.Max(0.1f, baseAttackInterval);
+        displayName =
+            string.IsNullOrWhiteSpace(displayName)
+                ? "Enemy"
+                : displayName.Trim();
+
+        baseMaxHealth =
+            Mathf.Max(
+                1,
+                baseMaxHealth
+            );
+
+        baseDamage =
+            Mathf.Max(
+                0,
+                baseDamage
+            );
+
+        baseAttackInterval =
+            Mathf.Max(
+                0.1f,
+                baseAttackInterval
+            );
 
         baseSpecialTurnRequirement =
-            Mathf.Max(1, baseSpecialTurnRequirement);
+            Mathf.Max(
+                1,
+                baseSpecialTurnRequirement
+            );
 
-        minimumWave = Mathf.Max(1, minimumWave);
-        spawnWeight = Mathf.Max(0.01f, spawnWeight);
+        minimumWave =
+            Mathf.Max(
+                1,
+                minimumWave
+            );
 
-        healthMultiplier = Mathf.Max(0.1f, healthMultiplier);
-        damageMultiplier = Mathf.Max(0.1f, damageMultiplier);
+        spawnWeight =
+            Mathf.Max(
+                0.01f,
+                spawnWeight
+            );
+
+        healthMultiplier =
+            Mathf.Max(
+                0.1f,
+                healthMultiplier
+            );
+
+        damageMultiplier =
+            Mathf.Max(
+                0.1f,
+                damageMultiplier
+            );
 
         attackSpeedMultiplier =
-            Mathf.Max(0.1f, attackSpeedMultiplier);
+            Mathf.Max(
+                0.1f,
+                attackSpeedMultiplier
+            );
+
+        staggerDurationMultiplier =
+            Mathf.Clamp(
+                staggerDurationMultiplier,
+                0f,
+                2f
+            );
     }
 }

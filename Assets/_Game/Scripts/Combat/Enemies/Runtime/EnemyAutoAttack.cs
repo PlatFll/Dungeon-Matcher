@@ -25,6 +25,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool isRunning;
 
     private EnemyActor enemyActor;
+    private EnemyStagger enemyStagger;
     private PlayerActor playerTarget;
     private Coroutine attackCoroutine;
 
@@ -48,6 +49,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool IsRunning =>
         isRunning;
+
+    public bool IsPausedByStagger =>
+        enemyStagger != null &&
+        enemyStagger.IsStaggered;
 
     public float CooldownNormalized
     {
@@ -76,6 +81,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         enemyActor = enemy;
         playerTarget = target;
 
+        enemyStagger =
+            GetComponent<EnemyStagger>();
+
         if (enemyActor == null)
         {
             Debug.LogError(
@@ -89,11 +97,21 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (playerTarget == null)
         {
             Debug.LogError(
-                $"{name} cannot attack without a PlayerActor target.",
+                $"{name} cannot attack without a " +
+                "PlayerActor target.",
                 this
             );
 
             return;
+        }
+
+        if (enemyStagger == null)
+        {
+            Debug.LogWarning(
+                $"{name} has no EnemyStagger component. " +
+                "Its attack timer cannot be paused by stagger.",
+                this
+            );
         }
 
         Subscribe();
@@ -111,7 +129,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             return;
         }
 
-        if (!CanAttack())
+        if (!CanContinueAttackLoop())
         {
             return;
         }
@@ -136,7 +154,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool PerformAttackImmediately()
     {
-        if (!CanAttack())
+        if (!CanPerformAttack())
         {
             return false;
         }
@@ -170,10 +188,19 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
         if (!waitBeforeFirstAttack)
         {
-            PerformAttackImmediately();
+            while (CanContinueAttackLoop() &&
+                   IsPausedByStagger)
+            {
+                yield return null;
+            }
+
+            if (CanPerformAttack())
+            {
+                PerformAttackImmediately();
+            }
         }
 
-        while (CanAttack())
+        while (CanContinueAttackLoop())
         {
             remainingAttackTime =
                 Mathf.Max(
@@ -183,19 +210,43 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
             while (remainingAttackTime > 0f)
             {
-                if (!CanAttack())
+                if (!CanContinueAttackLoop())
                 {
                     FinishCoroutine();
                     yield break;
                 }
 
-                remainingAttackTime -=
-                    Time.deltaTime;
+                /*
+                 * Stagger pauses the countdown without
+                 * resetting or reducing the stored time.
+                 */
+                if (IsPausedByStagger)
+                {
+                    yield return null;
+                    continue;
+                }
+
+                remainingAttackTime =
+                    Mathf.Max(
+                        0f,
+                        remainingAttackTime -
+                        Time.deltaTime
+                    );
 
                 yield return null;
             }
 
-            if (!CanAttack())
+            /*
+             * Protect against stagger being applied on the
+             * exact frame the countdown reaches zero.
+             */
+            while (CanContinueAttackLoop() &&
+                   IsPausedByStagger)
+            {
+                yield return null;
+            }
+
+            if (!CanContinueAttackLoop())
             {
                 FinishCoroutine();
                 yield break;
@@ -207,7 +258,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         FinishCoroutine();
     }
 
-    private bool CanAttack()
+    private bool CanContinueAttackLoop()
     {
         return
             isActiveAndEnabled &&
@@ -217,6 +268,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             playerTarget != null &&
             playerTarget.IsInitialized &&
             !playerTarget.IsDefeated;
+    }
+
+    private bool CanPerformAttack()
+    {
+        return
+            CanContinueAttackLoop() &&
+            !IsPausedByStagger;
     }
 
     private void Subscribe()
