@@ -411,6 +411,8 @@ public partial class BoardController : MonoBehaviour
             return;
         }
 
+        NotifyBoardActivity();
+
         pointerStartGem = gem;
         pointerStartPosition =
             screenPosition;
