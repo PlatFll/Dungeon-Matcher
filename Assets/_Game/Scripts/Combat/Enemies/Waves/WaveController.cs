@@ -97,6 +97,10 @@ public sealed class WaveController : MonoBehaviour
     private readonly List<EnemyActor> activeEnemies =
         new List<EnemyActor>();
 
+    private int pendingDeathEffects;
+
+    private bool waitingForDeathEffects;
+
     private Coroutine advanceWaveCoroutine;
 
     private static readonly EnemyCategory[]
@@ -486,6 +490,24 @@ public sealed class WaveController : MonoBehaviour
                 );
         }
 
+        EnemyLifecycleVFX lifecycleVFX =
+            enemyObject.GetComponent<
+                EnemyLifecycleVFX
+            >();
+
+        if (lifecycleVFX != null)
+        {
+            lifecycleVFX.PlaySpawnEffect();
+        }
+        else
+        {
+            Debug.LogWarning(
+                $"The prefab {definition.EnemyPrefab.name} " +
+                "does not contain an EnemyLifecycleVFX component.",
+                enemyObject
+            );
+        }
+
         Debug.Log(
             $"Spawned {definition.DisplayName} " +
             $"in {slot.name}. " +
@@ -545,11 +567,55 @@ public sealed class WaveController : MonoBehaviour
         {
             activeEnemies.Remove(enemy);
 
-            /*
-             * Prototype cleanup.
-             * Later, destruction can wait for a death animation.
-             */
-            Destroy(enemy.gameObject);
+            EnemyLifecycleVFX lifecycleVFX =
+                enemy.GetComponent<
+                    EnemyLifecycleVFX
+                >();
+
+            if (lifecycleVFX != null)
+            {
+                pendingDeathEffects++;
+
+                bool effectStarted =
+                    lifecycleVFX.PlayDeathEffect(
+                        () =>
+                        {
+                            pendingDeathEffects =
+                                Mathf.Max(
+                                    0,
+                                    pendingDeathEffects - 1
+                                );
+
+                            if (enemy != null)
+                            {
+                                Destroy(
+                                    enemy.gameObject
+                                );
+                            }
+
+                            TryCompleteWaveAfterDeaths();
+                        }
+                    );
+
+                if (!effectStarted)
+                {
+                    pendingDeathEffects =
+                        Mathf.Max(
+                            0,
+                            pendingDeathEffects - 1
+                        );
+
+                    Destroy(
+                        enemy.gameObject
+                    );
+                }
+            }
+            else
+            {
+                Destroy(
+                    enemy.gameObject
+                );
+            }
         }
 
         Debug.Log(
@@ -560,8 +626,28 @@ public sealed class WaveController : MonoBehaviour
 
         if (activeEnemies.Count == 0)
         {
-            CompleteCurrentWave();
+            waitingForDeathEffects = true;
+
+            TryCompleteWaveAfterDeaths();
         }
+    }
+
+    private void TryCompleteWaveAfterDeaths()
+    {
+        if (!waitingForDeathEffects)
+        {
+            return;
+        }
+
+        if (activeEnemies.Count > 0 ||
+            pendingDeathEffects > 0)
+        {
+            return;
+        }
+
+        waitingForDeathEffects = false;
+
+        CompleteCurrentWave();
     }
 
     private void CompleteCurrentWave()
@@ -682,6 +768,9 @@ public sealed class WaveController : MonoBehaviour
     public void ClearCurrentWave()
     {
         CancelPendingWaveAdvance();
+
+        pendingDeathEffects = 0;
+        waitingForDeathEffects = false;
 
         IsWaveActive = false;
         activeEnemies.Clear();
