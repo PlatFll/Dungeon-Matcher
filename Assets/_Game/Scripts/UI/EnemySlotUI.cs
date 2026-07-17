@@ -30,10 +30,10 @@ public sealed class EnemySlotUI : MonoBehaviour
     [Header("Defeat Prototype")]
     [SerializeField]
     [Tooltip(
-        "Temporarily hides the enemy immediately when defeated. " +
-        "Later this can be disabled while a death animation plays."
+        "Legacy fallback that immediately hides defeated enemies. " +
+        "Keep disabled when using EnemyLifecycleVFX."
     )]
-    private bool hideEnemyImmediatelyOnDefeat = true;
+    private bool hideEnemyImmediatelyOnDefeat = false;
 
     public event Action<EnemySlotUI, EnemyActor> EnemyBound;
     public event Action<EnemySlotUI, EnemyActor> EnemyDefeated;
