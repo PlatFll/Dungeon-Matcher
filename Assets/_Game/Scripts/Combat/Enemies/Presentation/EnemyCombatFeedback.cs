@@ -38,6 +38,9 @@ public sealed class EnemyCombatFeedback :
     private Image enemyImage;
 
     [SerializeField]
+    private CharacterAnimationPlayback characterAnimation;
+
+    [SerializeField]
     [Tooltip(
         "The Image that fills toward the next attack."
     )]
@@ -142,6 +145,13 @@ public sealed class EnemyCombatFeedback :
         {
             enemyStagger =
                 GetComponent<EnemyStagger>();
+        }
+
+        if (characterAnimation == null &&
+            enemyImage != null)
+        {
+            characterAnimation =
+                enemyImage.GetComponent<CharacterAnimationPlayback>();
         }
     }
 
@@ -558,6 +568,8 @@ public sealed class EnemyCombatFeedback :
         float addedDuration,
         float remainingDuration)
     {
+        characterAnimation?.Pause();
+
         if (runtimeFlashMaterial == null ||
             blinkCoroutine != null)
         {
@@ -628,6 +640,7 @@ public sealed class EnemyCombatFeedback :
         EnemyStagger stagger)
     {
         StopBlinking();
+        characterAnimation?.Resume();
     }
 
     private void HandleEnemyDefeated(
@@ -671,6 +684,7 @@ public sealed class EnemyCombatFeedback :
 
         StopBlinking();
         RestoreVisualPosition();
+        characterAnimation?.Resume();
     }
 
     private void RestoreVisualPosition()

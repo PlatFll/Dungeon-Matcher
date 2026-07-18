@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: d740a702d3a63f24f9f988eb539497f4
+guid: 78ef6b00104491942b5b426c89504f29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7151144406226168854
-    second: RattleBones_Idle_0
+      213: -3858063850402955622
+    second: Knight_Idle_0
   - first:
-      213: 3093247266481599930
-    second: RattleBones_Idle_1
+      213: 4327642080381475721
+    second: Knight_Idle_1
   - first:
-      213: 1980214218114791573
-    second: RattleBones_Idle_2
+      213: -5663030001535758309
+    second: Knight_Idle_2
   - first:
-      213: 9168829084686673465
-    second: RattleBones_Idle_3
+      213: 2668040235456949442
+    second: Knight_Idle_3
   - first:
-      213: 4949023745396338224
-    second: RattleBones_Idle_4
+      213: -1072064108119391870
+    second: Knight_Idle_4
   - first:
-      213: 8991834794931254253
-    second: RattleBones_Idle_5
+      213: -1766690766402222169
+    second: Knight_Idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RattleBones_Idle_0
+      name: Knight_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae31e590d0802cc90800000000000000
-      internalID: -7151144406226168854
+      spriteID: a9eb4f37e57657ac0800000000000000
+      internalID: -3858063850402955622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RattleBones_Idle_1
+      name: Knight_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab57519000c6dea20800000000000000
-      internalID: 3093247266481599930
+      spriteID: 98b9b241b8fde0c30800000000000000
+      internalID: 4327642080381475721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RattleBones_Idle_2
+      name: Knight_Idle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 598f8e9f6522b7b10800000000000000
-      internalID: 1980214218114791573
+      spriteID: b10d416b730e861b0800000000000000
+      internalID: -5663030001535758309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RattleBones_Idle_3
+      name: Knight_Idle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -209,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 936e40759793e3f70800000000000000
-      internalID: 9168829084686673465
+      spriteID: 2cc6cd05578c60520800000000000000
+      internalID: 2668040235456949442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RattleBones_Idle_4
+      name: Knight_Idle_4
       rect:
         serializedVersion: 2
         x: 256
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03e625910e67ea440800000000000000
-      internalID: 4949023745396338224
+      spriteID: 281091baf534f11f0800000000000000
+      internalID: -1072064108119391870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RattleBones_Idle_5
+      name: Knight_Idle_5
       rect:
         serializedVersion: 2
         x: 320
@@ -253,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de3ffdeea1a69cc70800000000000000
-      internalID: 8991834794931254253
+      spriteID: 7a702a8bb147b77e0800000000000000
+      internalID: -1766690766402222169
       vertices: []
       indices: 
       edges: []
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6c4785d5758573741a191a79b30b0bfb
+    spriteID: 124619a29026690468e9d8b2d4bb3498
     internalID: 0
     vertices: []
     indices: 
@@ -275,12 +275,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RattleBones_Idle_0: -7151144406226168854
-      RattleBones_Idle_1: 3093247266481599930
-      RattleBones_Idle_2: 1980214218114791573
-      RattleBones_Idle_3: 9168829084686673465
-      RattleBones_Idle_4: 4949023745396338224
-      RattleBones_Idle_5: 8991834794931254253
+      Knight_Idle_0: -3858063850402955622
+      Knight_Idle_1: 4327642080381475721
+      Knight_Idle_2: -5663030001535758309
+      Knight_Idle_3: 2668040235456949442
+      Knight_Idle_4: -1072064108119391870
+      Knight_Idle_5: -1766690766402222169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

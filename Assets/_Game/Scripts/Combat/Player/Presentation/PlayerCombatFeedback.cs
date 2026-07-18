@@ -28,6 +28,9 @@ public sealed class PlayerCombatFeedback :
     )]
     private Image playerImage;
 
+    [SerializeField]
+    private CharacterAnimationPlayback characterAnimation;
+
     [Header("Damage Shake")]
     [SerializeField, Min(0f)]
     private float shakeDuration = 0.3f;
@@ -55,6 +58,14 @@ public sealed class PlayerCombatFeedback :
 
     private void Awake()
     {
+
+        if (characterAnimation == null &&
+            playerImage != null)
+        {
+            characterAnimation =
+                playerImage.GetComponent<CharacterAnimationPlayback>();
+        }
+
         if (visualRoot != null)
         {
             restingPosition =
@@ -162,6 +173,8 @@ public sealed class PlayerCombatFeedback :
 
     private IEnumerator DamageFeedbackRoutine()
     {
+        characterAnimation?.Pause();
+
         float elapsedTime = 0f;
 
         SetWhiteFlash(
@@ -232,6 +245,8 @@ public sealed class PlayerCombatFeedback :
         RestoreVisualPosition();
         SetWhiteFlash(0f);
 
+        characterAnimation?.Resume();
+
         damageFeedbackCoroutine = null;
     }
 
@@ -248,6 +263,7 @@ public sealed class PlayerCombatFeedback :
 
         RestoreVisualPosition();
         SetWhiteFlash(0f);
+        characterAnimation?.Resume();
     }
 
     private void RestoreVisualPosition()

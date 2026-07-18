@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 1352869047987660522}
   - component: {fileID: 6899140733003646242}
   - component: {fileID: 2748261585903923393}
+  - component: {fileID: 7751701487261706068}
+  - component: {fileID: 2581695430234947432}
   m_Layer: 5
   m_Name: VisualRoot
   m_TagString: Untagged
@@ -185,6 +187,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7751701487261706068
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337207872564383418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5c9fcbf8c820fa4291a59f17dff8b2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2581695430234947432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337207872564383418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35897ca7d716081449e93d8382a1c440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimationPlayback
+  animator: {fileID: 0}
+  defaultPlaybackSpeed: 1
 --- !u!1 &1875872192503601738
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +524,7 @@ MonoBehaviour:
   enemyStagger: {fileID: 1015823252208679965}
   visualRoot: {fileID: 1352869047987660522}
   enemyImage: {fileID: 2748261585903923393}
+  characterAnimation: {fileID: 2581695430234947432}
   attackTimerFill: {fileID: 7219595858952276518}
   showTimerOnlyWhileActive: 1
   fillClockwise: 1
