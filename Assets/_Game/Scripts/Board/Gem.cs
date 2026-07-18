@@ -13,19 +13,42 @@ public enum GemType
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Gem :
+    MonoBehaviour,
+    IPointerDownHandler,
+    IPointerUpHandler
 {
+    private static readonly int
+        FlashAmountId =
+            Shader.PropertyToID(
+                "_FlashAmount"
+            );
+
     public int Column { get; private set; }
+
     public int Row { get; private set; }
+
     public GemType Type { get; private set; }
 
     private BoardController board;
+
     private SpriteRenderer spriteRenderer;
 
+    private MaterialPropertyBlock
+        materialPropertyBlock;
+
     private float normalScale;
-    private readonly Color normalColor = Color.white;
+
+    private readonly Color normalColor =
+        Color.white;
+
     private readonly Color selectedColor =
-        new Color(1f, 1f, 0.72f, 1f);
+        new Color(
+            1f,
+            1f,
+            0.72f,
+            1f
+        );
 
     public void Initialize(
         BoardController boardController,
@@ -35,60 +58,141 @@ public class Gem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Sprite sprite,
         float scale)
     {
-        board = boardController;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        normalScale = scale;
+        board =
+            boardController;
 
-        SetGridPosition(column, row);
-        SetType(gemType, sprite);
+        spriteRenderer =
+            GetComponent<SpriteRenderer>();
+
+        normalScale =
+            scale;
+
+        SetGridPosition(
+            column,
+            row
+        );
+
+        SetType(
+            gemType,
+            sprite
+        );
 
         transform.localScale =
-            Vector3.one * normalScale;
+            Vector3.one *
+            normalScale;
+
+        SetFlashAmount(0f);
+
+        spriteRenderer.enabled =
+            true;
     }
 
-    public void SetGridPosition(int column, int row)
+    public void SetGridPosition(
+        int column,
+        int row)
     {
-        Column = column;
-        Row = row;
+        Column =
+            column;
 
-        gameObject.name = $"Gem_{column}_{row}";
+        Row =
+            row;
+
+        gameObject.name =
+            $"Gem_{column}_{row}";
     }
 
-    public void SetType(GemType gemType, Sprite sprite)
+    public void SetType(
+        GemType gemType,
+        Sprite sprite)
     {
-        Type = gemType;
+        Type =
+            gemType;
 
         if (spriteRenderer == null)
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer =
+                GetComponent<SpriteRenderer>();
         }
 
-        spriteRenderer.sprite = sprite;
-        spriteRenderer.color = normalColor;
+        spriteRenderer.sprite =
+            sprite;
+
+        spriteRenderer.color =
+            normalColor;
+
+        spriteRenderer.enabled =
+            true;
+
+        SetFlashAmount(0f);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void SetFlashAmount(
+        float amount)
     {
-        board.BeginPointer(this, eventData.position);
+        if (spriteRenderer == null)
+        {
+            spriteRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (materialPropertyBlock == null)
+        {
+            materialPropertyBlock =
+                new MaterialPropertyBlock();
+        }
+
+        spriteRenderer.GetPropertyBlock(
+            materialPropertyBlock
+        );
+
+        materialPropertyBlock.SetFloat(
+            FlashAmountId,
+            Mathf.Clamp01(amount)
+        );
+
+        spriteRenderer.SetPropertyBlock(
+            materialPropertyBlock
+        );
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerDown(
+        PointerEventData eventData)
     {
-        board.EndPointer(this, eventData.position);
+        board.BeginPointer(
+            this,
+            eventData.position
+        );
     }
 
-    public void SetSelected(bool selected)
+    public void OnPointerUp(
+        PointerEventData eventData)
+    {
+        board.EndPointer(
+            this,
+            eventData.position
+        );
+    }
+
+    public void SetSelected(
+        bool selected)
     {
         transform.localScale =
             Vector3.one *
             normalScale *
-            (selected ? 1.12f : 1f);
+            (
+                selected
+                    ? 1.12f
+                    : 1f
+            );
 
         spriteRenderer.color =
-            selected ? selectedColor : normalColor;
+            selected
+                ? selectedColor
+                : normalColor;
 
-        // Keeps an enlarged selected gem in front of its neighbors.
         spriteRenderer.sortingOrder =
-            selected ? 1 : 0;
+            selected
+                ? 1
+                : 0;
     }
 }

@@ -1185,6 +1185,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &552979143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552979144}
+  m_Layer: 0
+  m_Name: GemMatchVFXLayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552979144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552979143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1775734118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554974867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2035,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -2637,6 +2668,8 @@ GameObject:
   - component: {fileID: 1775734121}
   - component: {fileID: 1775734120}
   - component: {fileID: 1775734122}
+  - component: {fileID: 1775734123}
+  - component: {fileID: 1775734124}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -2656,7 +2689,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 552979144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1775734119
@@ -2691,7 +2725,10 @@ MonoBehaviour:
   initialDropDuration: 0.6
   initialRowStagger: 0.025
   initialColumnStagger: 0.015
-  clearDuration: 0.18
+  matchFlashDuration: 0.05
+  matchWhiteHoldDuration: 0.03
+  matchPostBurstDelay: 0.04
+  matchBurstScale: 1.04
   cascadePause: 0.06
   fallDurationPerCell: 0.075
   minimumFallDuration: 0.14
@@ -2752,6 +2789,66 @@ MonoBehaviour:
   shakeCyclesPerSecond: 6
   inactivityTime: 0
   hintIsActive: 0
+--- !u!114 &1775734123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775734117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f84adeb2a3f7b54fba6befd5d7a1a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GemMatchVFXController
+  boardController: {fileID: 1775734119}
+  particleContainer: {fileID: 552979144}
+  particlePrefab: {fileID: 2958517560879618000, guid: 22ea1b03b1f3fab4183f0cd5c34bbecf, type: 3}
+  gemColorPalette: {fileID: 11400000, guid: d9a751b9378d3f146ba1fc73a9445e4a, type: 2}
+  sortingLayerName: Gems
+  sortingOrder: 3
+  threeMatchParticles: 4
+  fourMatchParticles: 5
+  fivePlusMatchParticles: 6
+  particleSizeRange: {x: 0.045, y: 0.075}
+  maximumWhiteVariation: 0.18
+  shardAspectRatioRange: {x: 1.25, y: 2.25}
+  shardSpinRange: {x: -720, y: 720}
+  speedRange: {x: 2.6, y: 4}
+  lifetimeRange: {x: 0.2, y: 0.3}
+  spawnRadius: 0.03
+  upwardBias: 0.02
+  shardGravity: 0.15
+  shardMovementDrag: 0.65
+  fourMatchIntensityBonus: 0.12
+  fiveMatchIntensityBonus: 0.24
+  cascadeIntensityPerDepth: 0.08
+  maximumCascadeBonus: 0.32
+  prewarmCount: 72
+  maximumParticleCount: 120
+--- !u!114 &1775734124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775734117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e320e3bc654ae4fa07769421824fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GemBreakAudioController
+  boardController: {fileID: 1775734119}
+  gemBreakClip: {fileID: 8300000, guid: b62cfae1f2e067a4ab123bc45338a900, type: 3}
+  breakSoundDelay: 0.05
+  baseVolume: 0.72
+  extraGemVolumeBonus: 0.035
+  maximumVolume: 0.95
+  semitonesPerCascade: 1
+  maximumCascadePitchSteps: 4
+  maximumPitch: 1.26
+  randomPitchVariation: 0.01
+  audioSourceCount: 4
 --- !u!1 &1809306374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,6 +2967,8 @@ GameObject:
   - component: {fileID: 1872833255}
   - component: {fileID: 1872833254}
   - component: {fileID: 1872833256}
+  - component: {fileID: 1872833257}
+  - component: {fileID: 1872833258}
   m_Layer: 5
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2916,7 +3015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8755278493030557412, guid: 4ca39511b58c3984d87931252294c3f4, type: 3}
+  m_Sprite: {fileID: 6277751819275595366, guid: 00161a651a65be2429c4a2ab7a37de5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2954,6 +3053,42 @@ MonoBehaviour:
   shakeStepInterval: 0.04
   whiteFlashDuration: 0.12
   whiteFlashAmount: 1
+--- !u!95 &1872833257
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872833252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eea964b4c3964e94ea35646813df699f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1872833258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872833252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35897ca7d716081449e93d8382a1c440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimationPlayback
+  animator: {fileID: 0}
+  defaultPlaybackSpeed: 1
 --- !u!1 &1888537362
 GameObject:
   m_ObjectHideFlags: 0

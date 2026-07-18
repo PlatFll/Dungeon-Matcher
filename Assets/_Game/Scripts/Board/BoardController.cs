@@ -63,10 +63,24 @@ public partial class BoardController : MonoBehaviour
 
     [Header("Match Animation")]
     [SerializeField, Min(0.01f)]
-    private float clearDuration = 0.18f;
+    private float matchFlashDuration =
+        0.05f;
 
     [SerializeField, Min(0f)]
-    private float cascadePause = 0.06f;
+    private float matchWhiteHoldDuration =
+        0.03f;
+
+    [SerializeField, Min(0f)]
+    private float matchPostBurstDelay =
+        0.04f;
+
+    [SerializeField, Range(1f, 1.15f)]
+    private float matchBurstScale =
+        1.04f;
+
+    [SerializeField, Min(0f)]
+    private float cascadePause =
+        0.06f;
 
     [Header("Falling Animation")]
     [SerializeField, Min(0.01f)]
@@ -111,9 +125,11 @@ public partial class BoardController : MonoBehaviour
     private class ClearVisual
     {
         public Gem Gem;
-        public SpriteRenderer SpriteRenderer;
+
+        public SpriteRenderer
+            SpriteRenderer;
+
         public Vector3 StartScale;
-        public Color StartColor;
     }
 
     private void Start()
@@ -601,9 +617,17 @@ public partial class BoardController : MonoBehaviour
                 $"clearing {matches.Count} gems."
             );
 
+            int cascadeDepth =
+                cascadeNumber - 1;
+
             ReportMatchesToCombat(
                 matches,
-                cascadeNumber - 1
+                cascadeDepth
+            );
+
+            ReportMatchesToVFX(
+                matches,
+                cascadeDepth
             );
 
             yield return ClearMatches(
@@ -654,79 +678,96 @@ public partial class BoardController : MonoBehaviour
                 continue;
             }
 
-            int column = gem.Column;
-            int row = gem.Row;
+            int column =
+                gem.Column;
 
-            if (GetGem(column, row) == gem)
+            int row =
+                gem.Row;
+
+            if (GetGem(column, row) ==
+                gem)
             {
-                gems[column, row] = null;
+                gems[column, row] =
+                    null;
             }
 
             BoxCollider2D collider =
-                gem.GetComponent<BoxCollider2D>();
+                gem.GetComponent<
+                    BoxCollider2D
+                >();
 
             if (collider != null)
             {
-                collider.enabled = false;
+                collider.enabled =
+                    false;
             }
 
             SpriteRenderer spriteRenderer =
-                gem.GetComponent<SpriteRenderer>();
+                gem.GetComponent<
+                    SpriteRenderer
+                >();
+
+            gem.SetFlashAmount(0f);
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled =
+                    true;
+            }
 
             visuals.Add(
                 new ClearVisual
                 {
-                    Gem = gem,
+                    Gem =
+                        gem,
 
                     SpriteRenderer =
                         spriteRenderer,
 
                     StartScale =
-                        gem.transform.localScale,
-
-                    StartColor =
-                        spriteRenderer.color
+                        gem.transform.localScale
                 }
             );
         }
 
+        /*
+         * Quickly turn each matched gem into a white
+         * silhouette while applying a very small pop.
+         */
         float elapsedTime = 0f;
 
         while (elapsedTime <
-               clearDuration)
+               matchFlashDuration)
         {
             float progress =
                 Mathf.Clamp01(
                     elapsedTime /
-                    clearDuration
+                    matchFlashDuration
                 );
 
             float easedProgress =
                 SmoothStep(progress);
 
-            foreach (ClearVisual visual
-                     in visuals)
+            foreach (
+                ClearVisual visual
+                in visuals)
             {
                 if (visual.Gem == null)
                 {
                     continue;
                 }
 
+                visual.Gem.SetFlashAmount(
+                    easedProgress
+                );
+
                 visual.Gem.transform.localScale =
                     Vector3.Lerp(
                         visual.StartScale,
-                        Vector3.zero,
+                        visual.StartScale *
+                        matchBurstScale,
                         easedProgress
                     );
-
-                Color currentColor =
-                    visual.StartColor;
-
-                currentColor.a =
-                    1f - easedProgress;
-
-                visual.SpriteRenderer.color =
-                    currentColor;
             }
 
             elapsedTime +=
@@ -735,8 +776,61 @@ public partial class BoardController : MonoBehaviour
             yield return null;
         }
 
-        foreach (ClearVisual visual
-                 in visuals)
+        /*
+         * Force the exact peak state in case the final
+         * animation frame did not land on progress 1.
+         */
+        foreach (
+            ClearVisual visual
+            in visuals)
+        {
+            if (visual.Gem == null)
+            {
+                continue;
+            }
+
+            visual.Gem.SetFlashAmount(
+                1f
+            );
+
+            visual.Gem.transform.localScale =
+                visual.StartScale *
+                matchBurstScale;
+        }
+
+        if (matchWhiteHoldDuration > 0f)
+        {
+            yield return new WaitForSeconds(
+                matchWhiteHoldDuration
+            );
+        }
+
+        /*
+         * The gem does not shrink or fade. Its white
+         * silhouette disappears instantly, making the
+         * particle burst read as a shattering impact.
+         */
+        foreach (
+            ClearVisual visual
+            in visuals)
+        {
+            if (visual.SpriteRenderer != null)
+            {
+                visual.SpriteRenderer.enabled =
+                    false;
+            }
+        }
+
+        if (matchPostBurstDelay > 0f)
+        {
+            yield return new WaitForSeconds(
+                matchPostBurstDelay
+            );
+        }
+
+        foreach (
+            ClearVisual visual
+            in visuals)
         {
             if (visual.Gem != null)
             {
