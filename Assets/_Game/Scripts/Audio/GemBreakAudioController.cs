@@ -97,10 +97,10 @@ public sealed class GemBreakAudioController :
             return;
         }
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
 
-        boardController.MatchResolved +=
+        boardController.BoardMatchResolved +=
             HandleMatchResolved;
     }
 
@@ -111,14 +111,12 @@ public sealed class GemBreakAudioController :
             return;
         }
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
     }
 
     private void HandleMatchResolved(
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth)
+        BoardMatchContext context)
     {
         /*
          * Multiple match groups reported during the same
@@ -127,15 +125,12 @@ public sealed class GemBreakAudioController :
         hasPendingBreak = true;
 
         pendingGemCount +=
-            Mathf.Max(
-                0,
-                gemCount
-            );
+            context.GemCount;
 
         pendingCascadeDepth =
             Mathf.Max(
                 pendingCascadeDepth,
-                cascadeDepth
+                context.CascadeDepth
             );
     }
 
