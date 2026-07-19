@@ -67,10 +67,10 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             return;
         }
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
 
-        boardController.MatchResolved +=
+        boardController.BoardMatchResolved +=
             HandleMatchResolved;
     }
 
@@ -81,14 +81,12 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             return;
         }
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
     }
 
     private void HandleMatchResolved(
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth)
+        BoardMatchContext context)
     {
         if (playerActor == null ||
             !playerActor.IsInitialized ||
@@ -101,15 +99,15 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
         GemType affinityGemType =
             playerActor.Definition.AffinityGemType;
 
-        if (gemType != affinityGemType)
+        if (context.GemType != affinityGemType)
         {
             return;
         }
 
         int attemptedHealing =
             CalculateHealing(
-                gemCount,
-                cascadeDepth
+                context.GemCount,
+                context.CascadeDepth
             );
 
         int actualHealing =
@@ -118,9 +116,9 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             );
 
         AffinityHealingResolved?.Invoke(
-            gemType,
-            gemCount,
-            cascadeDepth,
+            context.GemType,
+            context.GemCount,
+            context.CascadeDepth,
             actualHealing
         );
 
@@ -129,15 +127,18 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             Debug.Log(
                 $"{playerActor.Definition.DisplayName} " +
                 $"healed {actualHealing} HP from " +
-                $"{gemCount} {gemType} gems. " +
-                $"Cascade depth: {cascadeDepth}.",
+                $"{context.GemCount} " +
+                $"{context.GemType} gems. " +
+                $"Cascade depth: " +
+                $"{context.CascadeDepth}.",
                 playerActor
             );
         }
         else
         {
             Debug.Log(
-                $"{gemCount} {gemType} gems matched the " +
+                $"{context.GemCount} " +
+                $"{context.GemType} gems matched the " +
                 "player affinity, but the player was " +
                 "already at full health.",
                 playerActor

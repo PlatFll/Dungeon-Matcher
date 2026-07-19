@@ -14,6 +14,14 @@ public partial class BoardController
     )]
     private CombatController combatController;
 
+    public event Action<BoardMatchContext>
+    BoardMatchResolved;
+
+    [Obsolete(
+        "Use BoardMatchResolved instead. " +
+        "This legacy event will be removed after migration."
+    )]
+
     public event Action<GemType, int, int>
         MatchResolved;
 
@@ -54,6 +62,22 @@ public partial class BoardController
             int safeCascadeDepth =
                 Mathf.Max(0, cascadeDepth);
 
+            BoardMatchContext matchContext =
+                new BoardMatchContext(
+                    gemType,
+                    gemCount,
+                    safeCascadeDepth
+                );
+
+            BoardMatchResolved?.Invoke(
+                matchContext
+            );
+
+            /*
+             * Temporary compatibility event.
+             * Remove after all existing listeners use
+             * BoardMatchResolved.
+             */
             MatchResolved?.Invoke(
                 gemType,
                 gemCount,

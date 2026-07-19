@@ -20,24 +20,6 @@ public sealed class PlayerAbilityEnergy : MonoBehaviour
     public bool IsFull =>
         CurrentEnergy >= maximumEnergy;
 
-    [Header("Energy Gain")]
-    [SerializeField, Min(0)]
-    private int energyPerMatch = 10;
-
-    [SerializeField, Min(0)]
-    private int bonusEnergyPerCascadeDepth = 3;
-
-    [SerializeField, Min(0)]
-    private int matchingGemTypeBonus = 2;
-
-    [Header("Match Source")]
-    [SerializeField]
-    private CombatController combatController;
-
-    [SerializeField]
-    private GemType characterGemType =
-        GemType.Emerald;
-
     private void Awake()
     {
         CurrentEnergy =
@@ -46,40 +28,6 @@ public sealed class PlayerAbilityEnergy : MonoBehaviour
                 0,
                 maximumEnergy
             );
-    }
-
-    private void OnEnable()
-    {
-        if (combatController != null)
-        {
-            combatController.GemDamageResolved +=
-                HandleGemDamageResolved;
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (combatController != null)
-        {
-            combatController.GemDamageResolved -=
-                HandleGemDamageResolved;
-        }
-    }
-
-    private void HandleGemDamageResolved(
-        GemDamageContext context,
-        int enemiesHit)
-    {
-        if (context == null)
-        {
-            return;
-        }
-
-        GainEnergyFromMatch(
-            context.GemType,
-            context.CascadeDepth,
-            characterGemType
-        );
     }
 
     public void AddEnergy(int amount)
@@ -92,27 +40,6 @@ public sealed class PlayerAbilityEnergy : MonoBehaviour
         SetEnergy(
             CurrentEnergy + amount
         );
-    }
-
-    public void GainEnergyFromMatch(
-    GemType matchedGemType,
-    int cascadeDepth,
-    GemType characterGemType)
-    {
-        int gainedEnergy =
-            energyPerMatch;
-
-        gainedEnergy +=
-            Mathf.Max(0, cascadeDepth) *
-            bonusEnergyPerCascadeDepth;
-
-        if (matchedGemType == characterGemType)
-        {
-            gainedEnergy +=
-                matchingGemTypeBonus;
-        }
-
-        AddEnergy(gainedEnergy);
     }
 
     public bool TrySpendEnergy(int amount)

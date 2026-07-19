@@ -1740,6 +1740,7 @@ GameObject:
   - component: {fileID: 748065085}
   - component: {fileID: 748065086}
   - component: {fileID: 748065087}
+  - component: {fileID: 748065088}
   m_Layer: 0
   m_Name: PlayerRuntime
   m_TagString: Untagged
@@ -1796,11 +1797,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilityEnergy
   maximumEnergy: 100
   startingEnergy: 0
+--- !u!114 &748065088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910236e694d2e20428b9476fde11cad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilityMatchEnergyGain
+  boardController: {fileID: 1775734119}
+  playerActor: {fileID: 748065086}
+  playerAbilityEnergy: {fileID: 748065087}
   energyPerMatch: 10
   bonusEnergyPerCascadeDepth: 3
-  matchingGemTypeBonus: 2
-  combatController: {fileID: 362587655}
-  characterGemType: 3
+  affinityGemBonus: 2
 --- !u!1 &779200019
 GameObject:
   m_ObjectHideFlags: 0
