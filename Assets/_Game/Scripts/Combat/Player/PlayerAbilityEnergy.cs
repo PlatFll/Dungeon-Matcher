@@ -48,6 +48,40 @@ public sealed class PlayerAbilityEnergy : MonoBehaviour
             );
     }
 
+    private void OnEnable()
+    {
+        if (combatController != null)
+        {
+            combatController.GemDamageResolved +=
+                HandleGemDamageResolved;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (combatController != null)
+        {
+            combatController.GemDamageResolved -=
+                HandleGemDamageResolved;
+        }
+    }
+
+    private void HandleGemDamageResolved(
+        GemDamageContext context,
+        int enemiesHit)
+    {
+        if (context == null)
+        {
+            return;
+        }
+
+        GainEnergyFromMatch(
+            context.GemType,
+            context.CascadeDepth,
+            characterGemType
+        );
+    }
+
     public void AddEnergy(int amount)
     {
         if (amount <= 0)

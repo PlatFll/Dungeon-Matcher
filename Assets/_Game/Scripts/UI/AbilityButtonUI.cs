@@ -45,6 +45,10 @@ public sealed class AbilityButtonUI : MonoBehaviour
         playerAbilityEnergy.EnergyChanged +=
             HandleEnergyChanged;
 
+        abilityButton.onClick.AddListener(
+            HandleButtonClicked
+        );
+
         SetEnergy(
             playerAbilityEnergy.CurrentEnergy,
             playerAbilityEnergy.MaximumEnergy
@@ -60,6 +64,10 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         playerAbilityEnergy.EnergyChanged -=
             HandleEnergyChanged;
+
+        abilityButton.onClick.RemoveListener(
+            HandleButtonClicked
+        );
     }
 
     private void HandleEnergyChanged(
@@ -69,6 +77,18 @@ public sealed class AbilityButtonUI : MonoBehaviour
         SetEnergy(
             currentEnergy,
             maximumEnergy
+        );
+    }
+
+    private void HandleButtonClicked()
+    {
+        if (playerAbilityEnergy == null)
+        {
+            return;
+        }
+
+        playerAbilityEnergy.TrySpendEnergy(
+            playerAbilityEnergy.MaximumEnergy
         );
     }
 
