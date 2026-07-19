@@ -85,6 +85,8 @@ public sealed class WaveController : MonoBehaviour
     public event Action<int> WaveStarted;
     public event Action<int> WaveCompleted;
 
+    public event Action<EnemyActor> EnemySpawned;
+
     public int CurrentWave => currentWave;
 
     public bool IsWaveActive { get; private set; }
@@ -291,6 +293,8 @@ public sealed class WaveController : MonoBehaviour
 
             selectedDefinitions.Add(definition);
             activeEnemies.Add(enemy);
+
+            EnemySpawned?.Invoke(enemy);
 
             spawnedEnemyCount++;
 
