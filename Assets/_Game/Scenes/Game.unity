@@ -1741,6 +1741,8 @@ GameObject:
   - component: {fileID: 748065086}
   - component: {fileID: 748065087}
   - component: {fileID: 748065088}
+  - component: {fileID: 748065090}
+  - component: {fileID: 748065089}
   m_Layer: 0
   m_Name: PlayerRuntime
   m_TagString: Untagged
@@ -1815,6 +1817,34 @@ MonoBehaviour:
   energyPerMatch: 10
   bonusEnergyPerCascadeDepth: 3
   affinityGemBonus: 2
+--- !u!114 &748065089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16820928e912ca643b1840c64b1145b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoyalDecreeRuntime
+  boardController: {fileID: 1775734119}
+  waveController: {fileID: 362587654}
+--- !u!114 &748065090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5a4f65a18d3240bb47e64793e8d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilityController
+  playerActor: {fileID: 748065086}
+  playerAbilityEnergy: {fileID: 748065087}
 --- !u!1 &779200019
 GameObject:
   m_ObjectHideFlags: 0
