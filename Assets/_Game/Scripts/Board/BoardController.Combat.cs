@@ -17,13 +17,6 @@ public partial class BoardController
     public event Action<BoardMatchContext>
     BoardMatchResolved;
 
-    [Obsolete(
-        "Use BoardMatchResolved instead. " +
-        "This legacy event will be removed after migration."
-    )]
-
-    public event Action<GemType, int, int>
-        MatchResolved;
 
     private void ReportMatchesToCombat(
         HashSet<Gem> matches,
@@ -71,17 +64,6 @@ public partial class BoardController
 
             BoardMatchResolved?.Invoke(
                 matchContext
-            );
-
-            /*
-             * Temporary compatibility event.
-             * Remove after all existing listeners use
-             * BoardMatchResolved.
-             */
-            MatchResolved?.Invoke(
-                gemType,
-                gemCount,
-                safeCascadeDepth
             );
 
             if (combatController != null)

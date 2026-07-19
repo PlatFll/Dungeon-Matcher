@@ -146,10 +146,10 @@ public sealed class BoardHintController :
         boardController.BoardActivityStarted +=
             HandleBoardActivity;
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
 
-        boardController.MatchResolved +=
+        boardController.BoardMatchResolved +=
             HandleMatchResolved;
     }
 
@@ -163,7 +163,7 @@ public sealed class BoardHintController :
         boardController.BoardActivityStarted -=
             HandleBoardActivity;
 
-        boardController.MatchResolved -=
+        boardController.BoardMatchResolved -=
             HandleMatchResolved;
     }
 
@@ -173,9 +173,7 @@ public sealed class BoardHintController :
     }
 
     private void HandleMatchResolved(
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth)
+        BoardMatchContext context)
     {
         /*
          * Any normal match or cascade resets the
