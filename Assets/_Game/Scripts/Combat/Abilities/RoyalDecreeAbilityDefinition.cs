@@ -38,7 +38,7 @@ public sealed class RoyalDecreeAbilityDefinition :
     private float cascadeDamageBonusPerDepth =
         0.15f;
 
-    public int EnergyCost => energyCost;
+    public override int EnergyCost => energyCost;
 
     public float Duration => duration;
 

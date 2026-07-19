@@ -53,6 +53,8 @@ public abstract class CharacterAbilityDefinition : ScriptableObject
     public AbilityMeterDisplay MeterDisplay =>
         meterDisplay;
 
+    public abstract int EnergyCost { get; }
+
     protected virtual void OnValidate()
     {
         abilityId =
