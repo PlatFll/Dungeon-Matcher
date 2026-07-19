@@ -16,12 +16,18 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private Image energyFill;
 
     [SerializeField]
-    private PlayerAbilityEnergy playerAbilityEnergy;
+    private PlayerAbilityController
+        playerAbilityController;
 
     [Header("Icon Colors")]
     [SerializeField]
     private Color unavailableIconColor =
-        new Color(0.35f, 0.35f, 0.35f, 1f);
+        new Color(
+            0.35f,
+            0.35f,
+            0.35f,
+            1f
+        );
 
     [SerializeField]
     private Color readyIconColor =
@@ -31,97 +37,109 @@ public sealed class AbilityButtonUI : MonoBehaviour
     {
         if (abilityButton == null)
         {
-            abilityButton = GetComponent<Button>();
+            abilityButton =
+                GetComponent<Button>();
         }
     }
 
     private void OnEnable()
     {
-        if (playerAbilityEnergy == null)
+        if (abilityButton != null)
         {
-            return;
+            abilityButton.onClick.RemoveListener(
+                HandleButtonClicked
+            );
+
+            abilityButton.onClick.AddListener(
+                HandleButtonClicked
+            );
         }
 
-        playerAbilityEnergy.EnergyChanged +=
-            HandleEnergyChanged;
+        if (playerAbilityController != null)
+        {
+            playerAbilityController.StateChanged -=
+                HandleAbilityStateChanged;
 
-        abilityButton.onClick.AddListener(
-            HandleButtonClicked
-        );
+            playerAbilityController.StateChanged +=
+                HandleAbilityStateChanged;
+        }
 
-        SetEnergy(
-            playerAbilityEnergy.CurrentEnergy,
-            playerAbilityEnergy.MaximumEnergy
-        );
+        RefreshVisuals();
     }
 
     private void OnDisable()
     {
-        if (playerAbilityEnergy == null)
+        if (abilityButton != null)
         {
-            return;
+            abilityButton.onClick.RemoveListener(
+                HandleButtonClicked
+            );
         }
 
-        playerAbilityEnergy.EnergyChanged -=
-            HandleEnergyChanged;
-
-        abilityButton.onClick.RemoveListener(
-            HandleButtonClicked
-        );
-    }
-
-    private void HandleEnergyChanged(
-        int currentEnergy,
-        int maximumEnergy)
-    {
-        SetEnergy(
-            currentEnergy,
-            maximumEnergy
-        );
+        if (playerAbilityController != null)
+        {
+            playerAbilityController.StateChanged -=
+                HandleAbilityStateChanged;
+        }
     }
 
     private void HandleButtonClicked()
     {
-        if (playerAbilityEnergy == null)
+        if (playerAbilityController == null)
         {
             return;
         }
 
-        playerAbilityEnergy.TrySpendEnergy(
-            playerAbilityEnergy.MaximumEnergy
-        );
+        playerAbilityController.TryActivate();
+
+        RefreshVisuals();
     }
 
-    public void SetEnergy(
-        float currentEnergy,
-        float requiredEnergy)
+    private void HandleAbilityStateChanged()
     {
-        float normalizedEnergy =
-            requiredEnergy > 0f
-                ? Mathf.Clamp01(
-                    currentEnergy / requiredEnergy
-                )
-                : 1f;
+        RefreshVisuals();
+    }
+
+    private void RefreshVisuals()
+    {
+        CharacterAbilityDefinition ability =
+            playerAbilityController != null
+                ? playerAbilityController.ActiveAbility
+                : null;
+
+        float normalizedCharge =
+            playerAbilityController != null
+                ? playerAbilityController
+                    .ChargeNormalized
+                : 0f;
+
+        bool canActivate =
+            playerAbilityController != null &&
+            playerAbilityController.CanActivate;
 
         if (energyFill != null)
         {
             energyFill.fillAmount =
-                normalizedEnergy;
+                normalizedCharge;
         }
-
-        bool isReady =
-            normalizedEnergy >= 1f;
 
         if (abilityButton != null)
         {
             abilityButton.interactable =
-                isReady;
+                canActivate;
         }
 
         if (abilityIcon != null)
         {
+            if (ability != null &&
+                ability.Icon != null)
+            {
+                abilityIcon.sprite =
+                    ability.Icon;
+            }
+
             abilityIcon.color =
-                isReady
+                canActivate
                     ? readyIconColor
                     : unavailableIconColor;
         }
