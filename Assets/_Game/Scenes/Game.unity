@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 313704322}
   - component: {fileID: 313704321}
   - component: {fileID: 313704320}
+  - component: {fileID: 313704323}
   m_Layer: 5
   m_Name: AbilityButton
   m_TagString: Untagged
@@ -563,6 +564,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313704318}
   m_CullTransparentMesh: 1
+--- !u!114 &313704323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313704318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc97175d56b3b14d955e7cf584092b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityButtonUI
+  abilityButton: {fileID: 313704320}
+  abilityIcon: {fileID: 462946877}
+  energyFill: {fileID: 1641111427}
+  playerAbilityEnergy: {fileID: 748065087}
+  unavailableIconColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
+  readyIconColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &353297554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 748065085}
   - component: {fileID: 748065086}
+  - component: {fileID: 748065087}
   m_Layer: 0
   m_Name: PlayerRuntime
   m_TagString: Untagged
@@ -1762,6 +1782,25 @@ MonoBehaviour:
   revivalCount: 0
   isInitialized: 0
   isDefeated: 0
+--- !u!114 &748065087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748065084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa27cf0c5d30a4f4db70c1e8744e200d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilityEnergy
+  maximumEnergy: 100
+  startingEnergy: 0
+  energyPerMatch: 10
+  bonusEnergyPerCascadeDepth: 3
+  matchingGemTypeBonus: 2
+  combatController: {fileID: 362587655}
+  characterGemType: 3
 --- !u!1 &779200019
 GameObject:
   m_ObjectHideFlags: 0
