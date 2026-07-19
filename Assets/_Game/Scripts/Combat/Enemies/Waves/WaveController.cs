@@ -58,6 +58,10 @@ public sealed class WaveController : MonoBehaviour
     [SerializeField]
     private bool spawnWaveOnStart = true;
 
+    [Header("Spawn Timing")]
+    [SerializeField, Min(0f)]
+    private float delayBetweenEnemySpawns = 0.5f;
+
     [Header("Selection Rules")]
     [SerializeField]
     [Tooltip(
@@ -102,6 +106,7 @@ public sealed class WaveController : MonoBehaviour
     private bool waitingForDeathEffects;
 
     private Coroutine advanceWaveCoroutine;
+    private Coroutine waveSpawnCoroutine;
 
     private static readonly EnemyCategory[]
         fallbackCategoryOrder =
@@ -149,11 +154,29 @@ public sealed class WaveController : MonoBehaviour
             return;
         }
 
+        if (waveSpawnCoroutine != null)
+        {
+            StopCoroutine(
+                waveSpawnCoroutine
+            );
+
+            waveSpawnCoroutine = null;
+        }
+
+        waveSpawnCoroutine =
+            StartCoroutine(
+                SpawnCurrentWaveRoutine()
+            );
+    }
+
+    private IEnumerator SpawnCurrentWaveRoutine()
+    {
         CancelPendingWaveAdvance();
 
         if (!ValidateReferences())
         {
-            return;
+            waveSpawnCoroutine = null;
+            yield break;
         }
 
         ClearCurrentWave();
@@ -169,7 +192,8 @@ public sealed class WaveController : MonoBehaviour
                 this
             );
 
-            return;
+            waveSpawnCoroutine = null;
+            yield break;
         }
 
         List<GemType> availableGemTypes =
@@ -253,11 +277,12 @@ public sealed class WaveController : MonoBehaviour
             GemType assignedGemType =
                 availableGemTypes[spawnedEnemyCount];
 
-            EnemyActor enemy = CreateEnemy(
-                definition,
-                slot,
-                assignedGemType
-            );
+            EnemyActor enemy =
+                CreateEnemy(
+                    definition,
+                    slot,
+                    assignedGemType
+                );
 
             if (enemy == null)
             {
@@ -268,6 +293,15 @@ public sealed class WaveController : MonoBehaviour
             activeEnemies.Add(enemy);
 
             spawnedEnemyCount++;
+
+            if (slotIndex < plannedEnemyCount - 1 &&
+                delayBetweenEnemySpawns > 0f)
+            {
+                yield return
+                    new WaitForSeconds(
+                        delayBetweenEnemySpawns
+                    );
+            }
         }
 
         IsWaveActive =
@@ -280,7 +314,8 @@ public sealed class WaveController : MonoBehaviour
                 this
             );
 
-            return;
+            waveSpawnCoroutine = null;
+            yield break;
         }
 
         Debug.Log(
@@ -290,6 +325,8 @@ public sealed class WaveController : MonoBehaviour
             $"Spawned: {spawnedEnemyCount}.",
             this
         );
+
+        waveSpawnCoroutine = null;
 
         WaveStarted?.Invoke(currentWave);
     }
