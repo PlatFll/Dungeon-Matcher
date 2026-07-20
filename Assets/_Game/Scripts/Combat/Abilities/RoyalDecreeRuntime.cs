@@ -6,7 +6,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class RoyalDecreeRuntime :
     MonoBehaviour,
-    IPlayerAbilityRuntime
+    IPlayerAbilityRuntime,
+    IMatchDrivenEnemyHitSource
 {
     [Header("References")]
     [SerializeField]

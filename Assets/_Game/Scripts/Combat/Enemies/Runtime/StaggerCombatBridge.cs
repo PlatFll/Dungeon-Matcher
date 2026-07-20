@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -34,6 +35,10 @@ public sealed class StaggerCombatBridge : MonoBehaviour
     )]
     private float maximumStoredStaggerDuration = 3f;
 
+    private readonly List<IMatchDrivenEnemyHitSource>
+        matchDrivenHitSources =
+            new List<IMatchDrivenEnemyHitSource>();
+
     public event Action<
         EnemyActor,
         float,
@@ -60,33 +65,104 @@ public sealed class StaggerCombatBridge : MonoBehaviour
 
     private void Subscribe()
     {
-        if (combatController == null)
+        if (combatController != null)
         {
-            return;
+            combatController.EnemyDamagedByGemMatch -=
+                HandleEnemyDamaged;
+
+            combatController.EnemyDamagedByGemMatch +=
+                HandleEnemyDamaged;
         }
 
-        combatController.EnemyDamagedByGemMatch -=
-            HandleEnemyDamaged;
-
-        combatController.EnemyDamagedByGemMatch +=
-            HandleEnemyDamaged;
+        SubscribeToMatchDrivenHitSources();
     }
 
     private void Unsubscribe()
     {
-        if (combatController == null)
+        if (combatController != null)
         {
-            return;
+            combatController.EnemyDamagedByGemMatch -=
+                HandleEnemyDamaged;
         }
 
-        combatController.EnemyDamagedByGemMatch -=
-            HandleEnemyDamaged;
+        UnsubscribeFromMatchDrivenHitSources();
+    }
+
+    private void SubscribeToMatchDrivenHitSources()
+    {
+        UnsubscribeFromMatchDrivenHitSources();
+
+        MonoBehaviour[] components =
+            GetComponentsInChildren<MonoBehaviour>(
+                true
+            );
+
+        foreach (MonoBehaviour component in components)
+        {
+            if (!(component is
+                    IMatchDrivenEnemyHitSource hitSource))
+            {
+                continue;
+            }
+
+            hitSource.HitResolved -=
+                HandleMatchDrivenAbilityHit;
+
+            hitSource.HitResolved +=
+                HandleMatchDrivenAbilityHit;
+
+            matchDrivenHitSources.Add(
+                hitSource
+            );
+        }
+    }
+
+    private void UnsubscribeFromMatchDrivenHitSources()
+    {
+        foreach (
+            IMatchDrivenEnemyHitSource hitSource
+            in matchDrivenHitSources)
+        {
+            hitSource.HitResolved -=
+                HandleMatchDrivenAbilityHit;
+        }
+
+        matchDrivenHitSources.Clear();
     }
 
     private void HandleEnemyDamaged(
         EnemyActor enemy,
         GemDamageContext damageContext,
         int actualDamage)
+    {
+        int cascadeDepth =
+            damageContext != null
+                ? damageContext.CascadeDepth
+                : 0;
+
+        ApplyMatchStagger(
+            enemy,
+            actualDamage,
+            cascadeDepth
+        );
+    }
+
+    private void HandleMatchDrivenAbilityHit(
+        EnemyActor enemy,
+        int actualDamage,
+        BoardMatchContext matchContext)
+    {
+        ApplyMatchStagger(
+            enemy,
+            actualDamage,
+            matchContext.CascadeDepth
+        );
+    }
+
+    private void ApplyMatchStagger(
+        EnemyActor enemy,
+        int actualDamage,
+        int cascadeDepth)
     {
         if (enemy == null ||
             enemy.IsDefeated ||
@@ -101,8 +177,8 @@ public sealed class StaggerCombatBridge : MonoBehaviour
         if (stagger == null)
         {
             Debug.LogWarning(
-                $"{enemy.name} received gem damage but " +
-                "has no EnemyStagger component.",
+                $"{enemy.name} received match-driven damage " +
+                "but has no EnemyStagger component.",
                 enemy
             );
 
@@ -117,7 +193,7 @@ public sealed class StaggerCombatBridge : MonoBehaviour
         durationToAdd +=
             Mathf.Max(
                 0,
-                damageContext.CascadeDepth
+                cascadeDepth
             ) *
             cascadeStaggerBonusPerDepth;
 
