@@ -80,6 +80,7 @@ public sealed class RoyalDecreeRuntime :
                 RoyalDecreeAbilityDefinition &&
             boardController != null &&
             waveController != null &&
+            waveController.IsWaveActive &&
             HasAliveEnemy();
     }
 
@@ -196,6 +197,18 @@ public sealed class RoyalDecreeRuntime :
 
             waveController.EnemySpawned +=
                 HandleEnemySpawned;
+
+            waveController.WaveStarted -=
+                HandleWaveStarted;
+
+            waveController.WaveStarted +=
+                HandleWaveStarted;
+
+            waveController.WaveCompleted -=
+                HandleWaveCompleted;
+
+            waveController.WaveCompleted +=
+                HandleWaveCompleted;
         }
     }
 
@@ -211,6 +224,12 @@ public sealed class RoyalDecreeRuntime :
         {
             waveController.EnemySpawned -=
                 HandleEnemySpawned;
+
+            waveController.WaveStarted -=
+                HandleWaveStarted;
+
+            waveController.WaveCompleted -=
+                HandleWaveCompleted;
         }
     }
 
@@ -268,6 +287,18 @@ public sealed class RoyalDecreeRuntime :
             actualDamage,
             context
         );
+    }
+
+    private void HandleWaveStarted(
+    int startedWave)
+    {
+        StateChanged?.Invoke();
+    }
+
+    private void HandleWaveCompleted(
+        int completedWave)
+    {
+        StateChanged?.Invoke();
     }
 
     private void HandleEnemySpawned(
