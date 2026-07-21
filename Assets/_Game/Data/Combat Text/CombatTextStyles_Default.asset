@@ -15,32 +15,32 @@ MonoBehaviour:
   fallbackStyle:
     kind: 0
     color: {r: 1, g: 1, b: 1, a: 1}
-    fontSize: 28
-    fontStyle: 1
+    fontSize: 32
+    fontStyle: 0
     lifetime: 0.75
     travelDistance: {x: 0, y: 25}
     horizontalJitter: 4
     fadeStartNormalized: 0.55
-    startScale: 0.75
-    peakScale: 1.15
+    startScale: 1
+    peakScale: 1
   styles:
   - kind: 0
-    color: {r: 0.6037736, g: 0.0085439505, b: 0.0085439505, a: 0}
-    fontSize: 28
-    fontStyle: 1
+    color: {r: 1, g: 1, b: 1, a: 0}
+    fontSize: 32
+    fontStyle: 0
     lifetime: 0.7
     travelDistance: {x: 0, y: 25}
     horizontalJitter: 4
     fadeStartNormalized: 0.55
-    startScale: 0.75
-    peakScale: 1.15
+    startScale: 1
+    peakScale: 1
   - kind: 1
     color: {r: 0, g: 0.7075472, b: 0.075434856, a: 0}
-    fontSize: 28
-    fontStyle: 1
+    fontSize: 32
+    fontStyle: 0
     lifetime: 0.8
     travelDistance: {x: 0, y: 25}
     horizontalJitter: 4
     fadeStartNormalized: 0.55
-    startScale: 0.75
-    peakScale: 1.15
+    startScale: 1
+    peakScale: 1
