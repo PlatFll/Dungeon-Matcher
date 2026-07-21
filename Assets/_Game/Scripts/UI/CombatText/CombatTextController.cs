@@ -134,6 +134,12 @@ public sealed class CombatTextController :
             return;
         }
 
+        waveController.EnemySpawned -=
+            HandleEnemySpawned;
+
+        waveController.EnemySpawned +=
+            HandleEnemySpawned;
+
         waveController.WaveStarted -=
             HandleWaveStarted;
 
@@ -148,8 +154,17 @@ public sealed class CombatTextController :
             return;
         }
 
+        waveController.EnemySpawned -=
+            HandleEnemySpawned;
+
         waveController.WaveStarted -=
             HandleWaveStarted;
+    }
+
+    private void HandleEnemySpawned(
+    EnemyActor spawnedEnemy)
+    {
+        BindEnemy(spawnedEnemy);
     }
 
     private void HandleWaveStarted(
