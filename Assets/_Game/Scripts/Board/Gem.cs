@@ -40,6 +40,9 @@ public class Gem :
 
     private SpriteRenderer spriteRenderer;
 
+    private GemSpecialOverlayView
+    specialOverlayView;
+
     private MaterialPropertyBlock
         materialPropertyBlock;
 
@@ -69,6 +72,11 @@ public class Gem :
 
         spriteRenderer =
             GetComponent<SpriteRenderer>();
+
+        specialOverlayView =
+            GetComponentInChildren<
+                GemSpecialOverlayView
+            >(true);
 
         normalScale =
             scale;
@@ -137,9 +145,34 @@ public class Gem :
     }
 
     public void SetSpecialType(
-    GemSpecialType specialType)
+        GemSpecialType specialType)
     {
         SpecialType = specialType;
+
+        if (specialOverlayView == null)
+        {
+            specialOverlayView =
+                GetComponentInChildren<
+                    GemSpecialOverlayView
+                >(true);
+        }
+
+        if (specialOverlayView == null)
+        {
+            return;
+        }
+
+        if (SpecialType ==
+            GemSpecialType.None)
+        {
+            specialOverlayView.Hide();
+            return;
+        }
+
+        specialOverlayView.Show(
+            Type,
+            SpecialType
+        );
     }
 
     public void SetFlashAmount(
