@@ -8,10 +8,13 @@ public readonly struct BoardMatchContext
 
     public int CascadeDepth { get; }
 
+    public BoardMatchType MatchType { get; }
+
     public BoardMatchContext(
         GemType gemType,
         int gemCount,
-        int cascadeDepth)
+        int cascadeDepth,
+        BoardMatchType matchType)
     {
         GemType = gemType;
 
@@ -26,5 +29,20 @@ public readonly struct BoardMatchContext
                 0,
                 cascadeDepth
             );
+
+        MatchType = matchType;
+    }
+
+    public BoardMatchContext(
+        GemType gemType,
+        int gemCount,
+        int cascadeDepth)
+        : this(
+            gemType,
+            gemCount,
+            cascadeDepth,
+            BoardMatchType.Other
+        )
+    {
     }
 }

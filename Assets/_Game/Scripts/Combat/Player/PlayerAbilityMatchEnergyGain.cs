@@ -19,15 +19,47 @@ public sealed class PlayerAbilityMatchEnergyGain :
     private PlayerAbilityController
         playerAbilityController;
 
-    [Header("Energy Gain")]
+    [Header("Normal Three Energy")]
     [SerializeField, Min(0)]
-    private int energyPerMatch = 10;
+    private int damagingThreeEnergy = 5;
 
     [SerializeField, Min(0)]
-    private int bonusEnergyPerCascadeDepth = 3;
+    private int nonDamagingThreeEnergy = 1;
+
+    [Header("Straight Four Energy")]
+    [SerializeField, Min(0)]
+    private int damagingFourEnergy = 7;
 
     [SerializeField, Min(0)]
-    private int affinityGemBonus = 2;
+    private int nonDamagingFourEnergy = 3;
+
+    [Header("Straight Five Energy")]
+    [SerializeField, Min(0)]
+    private int damagingFiveEnergy = 10;
+
+    [SerializeField, Min(0)]
+    private int nonDamagingFiveEnergy = 5;
+
+    [Header("L Shape Energy")]
+    [SerializeField, Min(0)]
+    private int damagingLShapeEnergy = 10;
+
+    [SerializeField, Min(0)]
+    private int nonDamagingLShapeEnergy = 5;
+
+    [Header("T Shape Energy")]
+    [SerializeField, Min(0)]
+    private int damagingTShapeEnergy = 10;
+
+    [SerializeField, Min(0)]
+    private int nonDamagingTShapeEnergy = 5;
+
+    [Header("Unclassified Match Energy")]
+    [SerializeField, Min(0)]
+    private int damagingOtherEnergy = 5;
+
+    [SerializeField, Min(0)]
+    private int nonDamagingOtherEnergy = 1;
 
     private void Awake()
     {
@@ -60,11 +92,11 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleBoardMatchResolved;
+        boardController.BoardMatchOutcomeResolved -=
+            HandleBoardMatchOutcomeResolved;
 
-        boardController.BoardMatchResolved +=
-            HandleBoardMatchResolved;
+        boardController.BoardMatchOutcomeResolved +=
+            HandleBoardMatchOutcomeResolved;
     }
 
     private void UnsubscribeFromBoard()
@@ -74,30 +106,25 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleBoardMatchResolved;
+        boardController.BoardMatchOutcomeResolved -=
+            HandleBoardMatchOutcomeResolved;
     }
 
-    private void HandleBoardMatchResolved(
-        BoardMatchContext context)
+    private void HandleBoardMatchOutcomeResolved(
+        BoardMatchOutcome outcome)
     {
         if (playerActor == null ||
             playerAbilityEnergy == null ||
             playerAbilityController == null ||
             playerAbilityController.IsAbilityActive ||
             !playerActor.IsInitialized ||
-            playerActor.IsDefeated ||
-            playerActor.Definition == null)
+            playerActor.IsDefeated)
         {
             return;
         }
 
         int gainedEnergy =
-            CalculateEnergyGain(
-                context,
-                playerActor.Definition
-                    .AffinityGemType
-            );
+            CalculateEnergyGain(outcome);
 
         playerAbilityEnergy.AddEnergy(
             gainedEnergy
@@ -105,27 +132,43 @@ public sealed class PlayerAbilityMatchEnergyGain :
     }
 
     public int CalculateEnergyGain(
-        BoardMatchContext context,
-        GemType affinityGemType)
+        BoardMatchOutcome outcome)
     {
-        int gainedEnergy =
-            energyPerMatch;
+        bool damagedMatchingEnemy =
+            outcome.DamagedMatchingEnemy;
 
-        gainedEnergy +=
-            context.CascadeDepth *
-            bonusEnergyPerCascadeDepth;
-
-        if (context.GemType ==
-            affinityGemType)
+        switch (outcome.MatchContext.MatchType)
         {
-            gainedEnergy +=
-                affinityGemBonus;
-        }
+            case BoardMatchType.NormalThree:
+                return damagedMatchingEnemy
+                    ? damagingThreeEnergy
+                    : nonDamagingThreeEnergy;
 
-        return Mathf.Max(
-            0,
-            gainedEnergy
-        );
+            case BoardMatchType.StraightFour:
+                return damagedMatchingEnemy
+                    ? damagingFourEnergy
+                    : nonDamagingFourEnergy;
+
+            case BoardMatchType.StraightFive:
+                return damagedMatchingEnemy
+                    ? damagingFiveEnergy
+                    : nonDamagingFiveEnergy;
+
+            case BoardMatchType.LShape:
+                return damagedMatchingEnemy
+                    ? damagingLShapeEnergy
+                    : nonDamagingLShapeEnergy;
+
+            case BoardMatchType.TShape:
+                return damagedMatchingEnemy
+                    ? damagingTShapeEnergy
+                    : nonDamagingTShapeEnergy;
+
+            default:
+                return damagedMatchingEnemy
+                    ? damagingOtherEnergy
+                    : nonDamagingOtherEnergy;
+        }
     }
 
     private void ResolveReferences()
@@ -204,22 +247,40 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
     private void OnValidate()
     {
-        energyPerMatch =
-            Mathf.Max(
-                0,
-                energyPerMatch
-            );
+        damagingThreeEnergy =
+            Mathf.Max(0, damagingThreeEnergy);
 
-        bonusEnergyPerCascadeDepth =
-            Mathf.Max(
-                0,
-                bonusEnergyPerCascadeDepth
-            );
+        nonDamagingThreeEnergy =
+            Mathf.Max(0, nonDamagingThreeEnergy);
 
-        affinityGemBonus =
-            Mathf.Max(
-                0,
-                affinityGemBonus
-            );
+        damagingFourEnergy =
+            Mathf.Max(0, damagingFourEnergy);
+
+        nonDamagingFourEnergy =
+            Mathf.Max(0, nonDamagingFourEnergy);
+
+        damagingFiveEnergy =
+            Mathf.Max(0, damagingFiveEnergy);
+
+        nonDamagingFiveEnergy =
+            Mathf.Max(0, nonDamagingFiveEnergy);
+
+        damagingLShapeEnergy =
+            Mathf.Max(0, damagingLShapeEnergy);
+
+        nonDamagingLShapeEnergy =
+            Mathf.Max(0, nonDamagingLShapeEnergy);
+
+        damagingTShapeEnergy =
+            Mathf.Max(0, damagingTShapeEnergy);
+
+        nonDamagingTShapeEnergy =
+            Mathf.Max(0, nonDamagingTShapeEnergy);
+
+        damagingOtherEnergy =
+            Mathf.Max(0, damagingOtherEnergy);
+
+        nonDamagingOtherEnergy =
+            Mathf.Max(0, nonDamagingOtherEnergy);
     }
 }
