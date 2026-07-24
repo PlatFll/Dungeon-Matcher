@@ -30,6 +30,12 @@ public class Gem :
 
     public GemType Type { get; private set; }
 
+    public GemSpecialType SpecialType
+    {
+        get;
+        private set;
+    }
+
     private BoardController board;
 
     private SpriteRenderer spriteRenderer;
@@ -75,6 +81,10 @@ public class Gem :
         SetType(
             gemType,
             sprite
+        );
+
+        SetSpecialType(
+            GemSpecialType.None
         );
 
         transform.localScale =
@@ -124,6 +134,12 @@ public class Gem :
             true;
 
         SetFlashAmount(0f);
+    }
+
+    public void SetSpecialType(
+    GemSpecialType specialType)
+    {
+        SpecialType = specialType;
     }
 
     public void SetFlashAmount(
