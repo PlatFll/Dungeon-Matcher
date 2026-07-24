@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(PlayerAbilityController))]
 public sealed class PlayerAbilityMatchEnergyGain :
     MonoBehaviour
 {
@@ -14,6 +15,10 @@ public sealed class PlayerAbilityMatchEnergyGain :
     [SerializeField]
     private PlayerAbilityEnergy playerAbilityEnergy;
 
+    [SerializeField]
+    private PlayerAbilityController
+        playerAbilityController;
+
     [Header("Energy Gain")]
     [SerializeField, Min(0)]
     private int energyPerMatch = 10;
@@ -24,8 +29,14 @@ public sealed class PlayerAbilityMatchEnergyGain :
     [SerializeField, Min(0)]
     private int affinityGemBonus = 2;
 
+    private void Awake()
+    {
+        ResolveReferences();
+    }
+
     private void OnEnable()
     {
+        ResolveReferences();
         SubscribeToBoard();
     }
 
@@ -72,6 +83,8 @@ public sealed class PlayerAbilityMatchEnergyGain :
     {
         if (playerActor == null ||
             playerAbilityEnergy == null ||
+            playerAbilityController == null ||
+            playerAbilityController.IsAbilityActive ||
             !playerActor.IsInitialized ||
             playerActor.IsDefeated ||
             playerActor.Definition == null)
@@ -115,6 +128,29 @@ public sealed class PlayerAbilityMatchEnergyGain :
         );
     }
 
+    private void ResolveReferences()
+    {
+        if (playerActor == null)
+        {
+            playerActor =
+                GetComponent<PlayerActor>();
+        }
+
+        if (playerAbilityEnergy == null)
+        {
+            playerAbilityEnergy =
+                GetComponent<PlayerAbilityEnergy>();
+        }
+
+        if (playerAbilityController == null)
+        {
+            playerAbilityController =
+                GetComponent<
+                    PlayerAbilityController
+                >();
+        }
+    }
+
     private bool ValidateReferences()
     {
         bool isValid = true;
@@ -146,6 +182,17 @@ public sealed class PlayerAbilityMatchEnergyGain :
             Debug.LogError(
                 "PlayerAbilityMatchEnergyGain " +
                 "requires PlayerAbilityEnergy.",
+                this
+            );
+
+            isValid = false;
+        }
+
+        if (playerAbilityController == null)
+        {
+            Debug.LogError(
+                "PlayerAbilityMatchEnergyGain " +
+                "requires a PlayerAbilityController.",
                 this
             );
 
