@@ -157,16 +157,46 @@ public class Gem :
                 >(true);
         }
 
-        if (specialOverlayView == null)
+        if (spriteRenderer == null)
         {
-            return;
+            spriteRenderer =
+                GetComponent<SpriteRenderer>();
         }
 
         if (SpecialType ==
             GemSpecialType.None)
         {
-            specialOverlayView.Hide();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = true;
+            }
+
+            if (specialOverlayView != null)
+            {
+                specialOverlayView.Hide();
+            }
+
             return;
+        }
+
+        if (specialOverlayView == null)
+        {
+            return;
+        }
+
+        /*
+         * Bombs are overlays, so keep the gem visible.
+         * Crystal is a full visual replacement,
+         * so hide the normal gem sprite.
+         */
+        bool isCrystal =
+            SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled =
+                !isCrystal;
         }
 
         specialOverlayView.Show(
