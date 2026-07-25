@@ -706,6 +706,7 @@ MonoBehaviour:
   threeGemMatchDamage: 30
   additionalDamagePerGem: 15
   cascadeDamageBonusPerDepth: 0.2
+  bombDamagePerGem: 5
   debugGemType: 0
   debugGemCount: 3
   debugCascadeDepth: 0
@@ -1942,6 +1943,8 @@ MonoBehaviour:
   nonDamagingTShapeEnergy: 5
   damagingOtherEnergy: 5
   nonDamagingOtherEnergy: 1
+  damagingBombEnergyPerGem: 2
+  nonDamagingBombEnergyPerGem: 1
 --- !u!114 &748065089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,6 +3261,7 @@ MonoBehaviour:
   matchPostBurstDelay: 0.04
   matchBurstScale: 1.04
   cascadePause: 0.06
+  crystalActivationStagger: 0.03
   fallDurationPerCell: 0.075
   minimumFallDuration: 0.14
   maximumFallDuration: 0.45
