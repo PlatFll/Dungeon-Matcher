@@ -73,6 +73,14 @@ public sealed class CombatController : MonoBehaviour
     )]
     private float cascadeDamageBonusPerDepth = 0.20f;
 
+    [Header("Bomb Explosion Damage")]
+    [SerializeField, Min(0)]
+    [Tooltip(
+    "Damage dealt for each gem destroyed only by " +
+    "a row or column bomb."
+)]
+    private int bombDamagePerGem = 5;
+
     [Header("Prototype Debugging")]
     [SerializeField]
     private GemType debugGemType;
@@ -236,6 +244,118 @@ public sealed class CombatController : MonoBehaviour
         return enemiesHit > 0;
     }
 
+    public bool ResolveBombGemClear(
+        GemType gemType,
+        int gemCount,
+        int cascadeDepth = 0)
+    {
+        if (!CanResolveCombat() ||
+            gemCount <= 0)
+        {
+            return false;
+        }
+
+        int calculatedDamage =
+            Mathf.Max(
+                0,
+                gemCount *
+                bombDamagePerGem
+            );
+
+        if (calculatedDamage == 0)
+        {
+            return false;
+        }
+
+        GemDamageContext context =
+            new GemDamageContext(
+                playerActor,
+                gemType,
+                gemCount,
+                cascadeDepth,
+                calculatedDamage
+            );
+
+        BeforeGemDamage?.Invoke(context);
+
+        if (context.IsCancelled)
+        {
+            return false;
+        }
+
+        context.Damage =
+            Mathf.Max(
+                0,
+                context.Damage
+            );
+
+        if (context.Damage == 0)
+        {
+            return false;
+        }
+
+        List<EnemyActor> enemySnapshot =
+            new List<EnemyActor>(
+                waveController.ActiveEnemies
+            );
+
+        int enemiesHit = 0;
+
+        foreach (
+            EnemyActor enemy
+            in enemySnapshot)
+        {
+            if (enemy == null ||
+                enemy.IsDefeated ||
+                !enemy.IsInitialized ||
+                enemy.AssignedGemType !=
+                    gemType)
+            {
+                continue;
+            }
+
+            int previousHealth =
+                enemy.CurrentHealth;
+
+            bool damageApplied =
+                enemy.TryTakeDamage(
+                    context.Damage
+                );
+
+            if (!damageApplied)
+            {
+                continue;
+            }
+
+            int actualDamage =
+                previousHealth -
+                enemy.CurrentHealth;
+
+            enemiesHit++;
+
+            EnemyDamagedByGemMatch?.Invoke(
+                enemy,
+                context,
+                actualDamage
+            );
+
+            Debug.Log(
+                $"Bomb-cleared {gemCount} " +
+                $"{gemType} gem(s) dealt " +
+                $"{actualDamage} damage to " +
+                $"{enemy.Definition.DisplayName}.",
+                enemy
+            );
+        }
+
+        GemDamageResolved?.Invoke(
+            context,
+            enemiesHit
+        );
+
+        return enemiesHit > 0;
+    }
+
     public int CalculateGemMatchDamage(
         int gemCount,
         int cascadeDepth)
@@ -328,6 +448,12 @@ public sealed class CombatController : MonoBehaviour
             Mathf.Max(
                 0,
                 additionalDamagePerGem
+            );
+
+        bombDamagePerGem =
+            Mathf.Max(
+                0,
+                bombDamagePerGem
             );
 
         debugGemCount =
