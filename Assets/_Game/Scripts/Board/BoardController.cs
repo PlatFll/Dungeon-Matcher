@@ -690,9 +690,42 @@ public partial class BoardController : MonoBehaviour
         List<ClearVisual> visuals =
             new List<ClearVisual>();
 
+        Dictionary<Gem, GemSpecialType>
+            specialGemsToCreate =
+                new Dictionary<
+                    Gem,
+                    GemSpecialType
+                >();
+
+        if (specialGemCreationRequests != null)
+        {
+            foreach (
+                SpecialGemCreationRequest request
+                in specialGemCreationRequests)
+            {
+                if (!request.IsValid ||
+                    !matches.Contains(
+                        request.GemToPreserve
+                    ))
+                {
+                    continue;
+                }
+
+                specialGemsToCreate[
+                    request.GemToPreserve
+                ] = request.SpecialType;
+            }
+        }
+
         foreach (Gem gem in matches)
         {
             if (gem == null)
+            {
+                continue;
+            }
+
+            if (specialGemsToCreate.ContainsKey(
+                    gem))
             {
                 continue;
             }
@@ -857,6 +890,50 @@ public partial class BoardController : MonoBehaviour
                     visual.Gem.gameObject
                 );
             }
+        }
+
+        foreach (
+            KeyValuePair<
+                Gem,
+                GemSpecialType
+            > specialGem
+            in specialGemsToCreate)
+        {
+            Gem gem =
+                specialGem.Key;
+
+            if (gem == null)
+            {
+                continue;
+            }
+
+            gem.SetFlashAmount(0f);
+
+            SpriteRenderer spriteRenderer =
+                gem.GetComponent<
+                    SpriteRenderer
+                >();
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled =
+                    true;
+            }
+
+            BoxCollider2D collider =
+                gem.GetComponent<
+                    BoxCollider2D
+                >();
+
+            if (collider != null)
+            {
+                collider.enabled =
+                    true;
+            }
+
+            gem.SetSpecialType(
+                specialGem.Value
+            );
         }
 
         yield return null;
