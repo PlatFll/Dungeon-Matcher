@@ -574,6 +574,28 @@ public partial class BoardController : MonoBehaviour
             second
         );
 
+        HashSet<Gem> crystalClearSet;
+        GemType crystalTargetType;
+
+        bool activatedColorCrystal =
+            TryBuildColorCrystalClearSet(
+                first,
+                second,
+                out crystalClearSet,
+                out crystalTargetType
+            );
+
+        if (activatedColorCrystal)
+        {
+            yield return ResolveColorCrystalActivation(
+                crystalClearSet,
+                crystalTargetType
+            );
+
+            isBusy = false;
+            yield break;
+        }
+
         HashSet<Gem> matches =
             FindMatchesFrom(
                 first,
