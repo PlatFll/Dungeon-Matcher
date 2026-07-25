@@ -624,6 +624,14 @@ public partial class BoardController : MonoBehaviour
             int cascadeDepth =
                 cascadeNumber - 1;
 
+            List<SpecialGemCreationRequest>
+                specialGemCreationRequests =
+                    BuildSpecialGemCreationRequests(
+                        matches,
+                        preferredGem,
+                        fallbackGem
+                    );
+
             ReportMatchesToCombat(
                 matches,
                 cascadeDepth
@@ -635,7 +643,8 @@ public partial class BoardController : MonoBehaviour
             );
 
             yield return ClearMatches(
-                matches
+                matches,
+                specialGemCreationRequests
             );
 
             if (cascadePause > 0f)
@@ -674,7 +683,9 @@ public partial class BoardController : MonoBehaviour
     }
 
     private IEnumerator ClearMatches(
-        HashSet<Gem> matches)
+        HashSet<Gem> matches,
+        List<SpecialGemCreationRequest>
+            specialGemCreationRequests)
     {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
