@@ -2,5 +2,6 @@ public enum GemSpecialType
 {
     None = 0,
     RowBomb = 1,
-    ColumnBomb = 2
+    ColumnBomb = 2,
+    ColorCrystal = 3
 }
