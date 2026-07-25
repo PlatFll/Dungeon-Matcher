@@ -1664,9 +1664,80 @@ public partial class BoardController : MonoBehaviour
 
     private bool HasAvailableMove()
     {
+        /*
+         * A color crystal can be activated by swapping it
+         * with any adjacent non-crystal gem, regardless of
+         * the crystal's hidden original GemType.
+         */
+        for (int row = 0;
+             row < height;
+             row++)
+        {
+            for (int column = 0;
+                 column < width;
+                 column++)
+            {
+                Gem crystal =
+                    GetGem(
+                        column,
+                        row
+                    );
+
+                if (crystal == null ||
+                    crystal.SpecialType !=
+                        GemSpecialType.ColorCrystal)
+                {
+                    continue;
+                }
+
+                Gem left =
+                    GetGem(
+                        column - 1,
+                        row
+                    );
+
+                Gem right =
+                    GetGem(
+                        column + 1,
+                        row
+                    );
+
+                Gem below =
+                    GetGem(
+                        column,
+                        row - 1
+                    );
+
+                Gem above =
+                    GetGem(
+                        column,
+                        row + 1
+                    );
+
+                bool hasValidCrystalSwap =
+                    IsValidCrystalSwapTarget(left) ||
+                    IsValidCrystalSwapTarget(right) ||
+                    IsValidCrystalSwapTarget(below) ||
+                    IsValidCrystalSwapTarget(above);
+
+                if (hasValidCrystalSwap)
+                {
+                    return true;
+                }
+            }
+        }
+
         return HasAvailableMove(
             BuildCurrentTypeGrid()
         );
+    }
+
+    private static bool IsValidCrystalSwapTarget(
+        Gem gem)
+    {
+        return gem != null &&
+               gem.SpecialType !=
+                   GemSpecialType.ColorCrystal;
     }
 
     private bool HasAvailableMove(
