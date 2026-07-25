@@ -281,6 +281,98 @@ public partial class BoardController
         return gemsToClear.Count > 1;
     }
 
+    private static List<Gem>
+        BuildOrderedCrystalTargets(
+            HashSet<Gem> crystalClearSet,
+            out Gem crystalGem)
+    {
+        crystalGem = null;
+
+        List<Gem> orderedTargets =
+            new List<Gem>();
+
+        if (crystalClearSet == null)
+        {
+            return orderedTargets;
+        }
+
+        foreach (Gem gem in crystalClearSet)
+        {
+            if (gem == null)
+            {
+                continue;
+            }
+
+            if (gem.SpecialType ==
+                GemSpecialType.ColorCrystal)
+            {
+                crystalGem = gem;
+                continue;
+            }
+
+            orderedTargets.Add(gem);
+        }
+
+        if (crystalGem == null)
+        {
+            return orderedTargets;
+        }
+
+        Gem sequenceOrigin =
+            crystalGem;
+
+        orderedTargets.Sort(
+            (left, right) =>
+            {
+                int leftDistance =
+                    Mathf.Abs(
+                        left.Column -
+                        sequenceOrigin.Column
+                    ) +
+                    Mathf.Abs(
+                        left.Row -
+                        sequenceOrigin.Row
+                    );
+
+                int rightDistance =
+                    Mathf.Abs(
+                        right.Column -
+                        sequenceOrigin.Column
+                    ) +
+                    Mathf.Abs(
+                        right.Row -
+                        sequenceOrigin.Row
+                    );
+
+                int distanceComparison =
+                    leftDistance.CompareTo(
+                        rightDistance
+                    );
+
+                if (distanceComparison != 0)
+                {
+                    return distanceComparison;
+                }
+
+                int rowComparison =
+                    left.Row.CompareTo(
+                        right.Row
+                    );
+
+                if (rowComparison != 0)
+                {
+                    return rowComparison;
+                }
+
+                return left.Column.CompareTo(
+                    right.Column
+                );
+            }
+        );
+
+        return orderedTargets;
+    }
+
     private IEnumerator ResolveColorCrystalActivation(
         HashSet<Gem> crystalClearSet,
         GemType targetGemType,
