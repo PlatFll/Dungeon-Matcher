@@ -632,6 +632,11 @@ public partial class BoardController : MonoBehaviour
                         fallbackGem
                     );
 
+            HashSet<Gem> expandedClearSet =
+                BuildBombExpandedClearSet(
+                    matches
+                );
+
             ReportMatchesToCombat(
                 matches,
                 cascadeDepth
@@ -643,7 +648,7 @@ public partial class BoardController : MonoBehaviour
             );
 
             yield return ClearMatches(
-                matches,
+                expandedClearSet,
                 specialGemCreationRequests
             );
 
