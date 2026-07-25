@@ -76,13 +76,6 @@ public sealed class PlayerAbilityMatchEnergyGain :
     )]
     private int nonDamagingBombEnergyPerGem = 1;
 
-    [Header("Bomb Clear Energy")]
-    [SerializeField, Min(0)]
-    [Tooltip(
-        "Energy gained for every gem destroyed only " +
-        "by a row or column bomb."
-    )]
-    private int bombEnergyPerGem = 1;
 
     private void Awake()
     {
@@ -176,11 +169,16 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
+        int energyPerGem =
+            outcome.DamagedMatchingEnemy
+                ? damagingBombEnergyPerGem
+                : nonDamagingBombEnergyPerGem;
+
         int gainedEnergy =
             Mathf.Max(
                 0,
                 outcome.GemCount *
-                bombEnergyPerGem
+                energyPerGem
             );
 
         playerAbilityEnergy.AddEnergy(
@@ -340,10 +338,16 @@ public sealed class PlayerAbilityMatchEnergyGain :
         nonDamagingOtherEnergy =
             Mathf.Max(0, nonDamagingOtherEnergy);
 
-        bombEnergyPerGem =
+        damagingBombEnergyPerGem =
             Mathf.Max(
                 0,
-                bombEnergyPerGem
+                damagingBombEnergyPerGem
+            );
+
+        nonDamagingBombEnergyPerGem =
+            Mathf.Max(
+                0,
+                nonDamagingBombEnergyPerGem
             );
     }
 }
