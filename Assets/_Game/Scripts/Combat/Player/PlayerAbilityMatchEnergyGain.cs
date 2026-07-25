@@ -64,6 +64,21 @@ public sealed class PlayerAbilityMatchEnergyGain :
     [Header("Bomb Clear Energy")]
     [SerializeField, Min(0)]
     [Tooltip(
+        "Energy per explosion-only gem when that " +
+        "gem damages a matching-color enemy."
+    )]
+    private int damagingBombEnergyPerGem = 2;
+
+    [SerializeField, Min(0)]
+    [Tooltip(
+        "Energy per explosion-only gem when no " +
+        "matching-color enemy is damaged."
+    )]
+    private int nonDamagingBombEnergyPerGem = 1;
+
+    [Header("Bomb Clear Energy")]
+    [SerializeField, Min(0)]
+    [Tooltip(
         "Energy gained for every gem destroyed only " +
         "by a row or column bomb."
     )]
