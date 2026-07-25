@@ -82,6 +82,15 @@ public partial class BoardController : MonoBehaviour
     private float cascadePause =
         0.06f;
 
+    [Header("Color Crystal")]
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Delay between each gem or converted bomb " +
+        "activated by a color crystal."
+    )]
+    private float crystalActivationStagger =
+        0.10f;
+
     [Header("Falling Animation")]
     [SerializeField, Min(0.01f)]
     private float fallDurationPerCell = 0.075f;
