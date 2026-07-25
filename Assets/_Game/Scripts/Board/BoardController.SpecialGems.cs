@@ -373,6 +373,174 @@ public partial class BoardController
         return orderedTargets;
     }
 
+    private IEnumerator
+        ResolveNormalColorCrystalSequence(
+            HashSet<Gem> crystalClearSet,
+            GemType targetGemType)
+    {
+        Gem crystalGem;
+
+        List<Gem> orderedTargets =
+            BuildOrderedCrystalTargets(
+                crystalClearSet,
+                out crystalGem
+            );
+
+        HashSet<Gem> alreadyCleared =
+            new HashSet<Gem>();
+
+        /*
+         * Remove the crystal first without granting rewards
+         * for its hidden underlying color.
+         */
+        if (crystalGem != null)
+        {
+            HashSet<Gem> crystalOnly =
+                new HashSet<Gem>
+                {
+                crystalGem
+                };
+
+            alreadyCleared.Add(
+                crystalGem
+            );
+
+            yield return ClearMatches(
+                crystalOnly,
+                null
+            );
+        }
+
+        HashSet<Gem> noRewardExclusions =
+            new HashSet<Gem>();
+
+        for (int index = 0;
+             index < orderedTargets.Count;
+             index++)
+        {
+            Gem targetGem =
+                orderedTargets[index];
+
+            if (targetGem == null ||
+                alreadyCleared.Contains(
+                    targetGem
+                ))
+            {
+                continue;
+            }
+
+            HashSet<Gem> activationSeed =
+                new HashSet<Gem>
+                {
+                targetGem
+                };
+
+            HashSet<Gem> activationSet;
+
+            /*
+             * Existing row or column bombs of the selected
+             * color still activate normally when reached.
+             */
+            if (targetGem.SpecialType ==
+                    GemSpecialType.RowBomb ||
+                targetGem.SpecialType ==
+                    GemSpecialType.ColumnBomb)
+            {
+                activationSet =
+                    BuildBombExpandedClearSet(
+                        activationSeed
+                    );
+            }
+            else
+            {
+                activationSet =
+                    activationSeed;
+            }
+
+            activationSet.RemoveWhere(
+                gem =>
+                    gem == null ||
+                    alreadyCleared.Contains(gem)
+            );
+
+            if (activationSet.Count == 0)
+            {
+                continue;
+            }
+
+            /*
+             * Reward only gems that are actually being
+             * destroyed during this individual activation.
+             */
+            ReportBombClearsToCombat(
+                noRewardExclusions,
+                activationSet,
+                0
+            );
+
+            foreach (Gem clearedGem in activationSet)
+            {
+                if (clearedGem != null)
+                {
+                    alreadyCleared.Add(
+                        clearedGem
+                    );
+                }
+            }
+
+            yield return ClearMatches(
+                activationSet,
+                null
+            );
+
+            if (crystalActivationStagger > 0f &&
+                index <
+                    orderedTargets.Count - 1)
+            {
+                yield return new WaitForSeconds(
+                    crystalActivationStagger
+                );
+            }
+        }
+
+        if (cascadePause > 0f)
+        {
+            yield return new WaitForSeconds(
+                cascadePause
+            );
+        }
+
+        yield return CollapseAndRefillBoard();
+
+        if (cascadePause > 0f)
+        {
+            yield return new WaitForSeconds(
+                cascadePause
+            );
+        }
+
+        HashSet<Gem> resultingMatches =
+            FindAllMatches();
+
+        if (resultingMatches.Count > 0)
+        {
+            yield return ResolveCascades(
+                resultingMatches,
+                null,
+                null
+            );
+        }
+        else if (!HasAvailableMove())
+        {
+            yield return ReshuffleBoard();
+        }
+
+        Debug.Log(
+            $"Color crystal sequentially cleared " +
+            $"{targetGemType} gems."
+        );
+    }
+
     private IEnumerator ResolveColorCrystalActivation(
         HashSet<Gem> crystalClearSet,
         GemType targetGemType,
@@ -381,6 +549,18 @@ public partial class BoardController
         if (crystalClearSet == null ||
             crystalClearSet.Count == 0)
         {
+            yield break;
+        }
+
+        if (targetSpecialType ==
+            GemSpecialType.None)
+        {
+            yield return
+                ResolveNormalColorCrystalSequence(
+                    crystalClearSet,
+                    targetGemType
+                );
+
             yield break;
         }
 
