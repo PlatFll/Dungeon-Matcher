@@ -281,6 +281,71 @@ public partial class BoardController
         return gemsToClear.Count > 1;
     }
 
+    private HashSet<Gem>
+        BuildBombTriggeredCrystalTargetSet(
+            BombTriggeredCrystalRequest request)
+    {
+        HashSet<Gem> targetSet =
+            new HashSet<Gem>();
+
+        if (!request.IsValid)
+        {
+            return targetSet;
+        }
+
+        Gem crystalGem =
+            request.CrystalGem;
+
+        /*
+         * The triggered crystal must also be destroyed as part
+         * of its activation, but its hidden GemType will not
+         * receive damage or energy rewards.
+         */
+        targetSet.Add(
+            crystalGem
+        );
+
+        for (int row = 0;
+             row < height;
+             row++)
+        {
+            for (int column = 0;
+                 column < width;
+                 column++)
+            {
+                Gem gem =
+                    GetGem(
+                        column,
+                        row
+                    );
+
+                if (gem == null ||
+                    gem == crystalGem ||
+                    gem.Type !=
+                        request.TriggerGemType)
+                {
+                    continue;
+                }
+
+                /*
+                 * Other crystals remain colorless and are not
+                 * selected through their hidden original type.
+                 */
+                if (gem.SpecialType ==
+                    GemSpecialType.ColorCrystal)
+                {
+                    continue;
+                }
+
+                targetSet.Add(
+                    gem
+                );
+            }
+        }
+
+        return targetSet;
+    }
+
     private static List<Gem>
         BuildOrderedCrystalTargets(
             HashSet<Gem> crystalClearSet,
