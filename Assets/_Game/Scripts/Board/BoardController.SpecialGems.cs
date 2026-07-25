@@ -969,6 +969,153 @@ public partial class BoardController
         );
     }
 
+    private IEnumerator
+        ResolveBombTriggeredCrystalSequence(
+            BombTriggeredCrystalRequest request)
+    {
+        if (!request.IsValid)
+        {
+            yield break;
+        }
+
+        HashSet<Gem> crystalTargetSet =
+            BuildBombTriggeredCrystalTargetSet(
+                request
+            );
+
+        Gem crystalGem;
+
+        List<Gem> orderedTargets =
+            BuildOrderedCrystalTargets(
+                crystalTargetSet,
+                out crystalGem
+            );
+
+        HashSet<Gem> alreadyCleared =
+            new HashSet<Gem>();
+
+        /*
+         * Destroy the triggered crystal without rewarding its
+         * hidden original GemType.
+         */
+        if (crystalGem != null)
+        {
+            HashSet<Gem> crystalOnly =
+                new HashSet<Gem>
+                {
+                crystalGem
+                };
+
+            alreadyCleared.Add(
+                crystalGem
+            );
+
+            yield return ClearMatches(
+                crystalOnly,
+                null
+            );
+        }
+
+        /*
+         * Every remaining gem matching the triggering bomb's
+         * color becomes a randomly oriented bomb.
+         */
+        HashSet<Gem> pendingConvertedBombs =
+            ConvertCrystalTargetsToRandomBombs(
+                orderedTargets
+            );
+
+        if (crystalActivationStagger > 0f &&
+            pendingConvertedBombs.Count > 0)
+        {
+            yield return new WaitForSeconds(
+                crystalActivationStagger
+            );
+        }
+
+        HashSet<Gem> noRewardExclusions =
+            new HashSet<Gem>();
+
+        for (int index = 0;
+             index < orderedTargets.Count;
+             index++)
+        {
+            Gem activatedBomb =
+                orderedTargets[index];
+
+            if (activatedBomb == null ||
+                alreadyCleared.Contains(
+                    activatedBomb
+                ) ||
+                !pendingConvertedBombs.Contains(
+                    activatedBomb
+                ))
+            {
+                continue;
+            }
+
+            /*
+             * This converted bomb has reached its activation
+             * turn and no longer needs protection.
+             */
+            pendingConvertedBombs.Remove(
+                activatedBomb
+            );
+
+            HashSet<Gem> activationSet =
+                BuildConvertedCrystalBombActivationSet(
+                    activatedBomb,
+                    pendingConvertedBombs
+                );
+
+            activationSet.RemoveWhere(
+                gem =>
+                    gem == null ||
+                    alreadyCleared.Contains(gem)
+            );
+
+            if (activationSet.Count == 0)
+            {
+                continue;
+            }
+
+            ReportBombClearsToCombat(
+                noRewardExclusions,
+                activationSet,
+                0
+            );
+
+            foreach (Gem clearedGem in activationSet)
+            {
+                if (clearedGem != null)
+                {
+                    alreadyCleared.Add(
+                        clearedGem
+                    );
+                }
+            }
+
+            yield return ClearMatches(
+                activationSet,
+                null
+            );
+
+            if (crystalActivationStagger > 0f &&
+                pendingConvertedBombs.Count > 0)
+            {
+                yield return new WaitForSeconds(
+                    crystalActivationStagger
+                );
+            }
+        }
+
+        Debug.Log(
+            $"Bomb-triggered crystal converted all " +
+            $"{request.TriggerGemType} gems into " +
+            $"random row and column bombs."
+        );
+    }
+
     private IEnumerator ResolveColorCrystalActivation(
         HashSet<Gem> crystalClearSet,
         GemType targetGemType,
