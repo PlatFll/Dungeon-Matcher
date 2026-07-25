@@ -100,6 +100,89 @@ public partial class BoardController
         }
     }
 
+    private void ReportBombClearsToCombat(
+        HashSet<Gem> originalMatches,
+        HashSet<Gem> expandedClearSet,
+        int cascadeDepth)
+    {
+        if (expandedClearSet == null ||
+            expandedClearSet.Count == 0)
+        {
+            return;
+        }
+
+        Dictionary<GemType, int>
+            explosionGemCounts =
+                new Dictionary<GemType, int>();
+
+        foreach (Gem gem in expandedClearSet)
+        {
+            if (gem == null)
+            {
+                continue;
+            }
+
+            /*
+             * Gems belonging to the original match already
+             * received normal match damage and energy.
+             */
+            if (originalMatches != null &&
+                originalMatches.Contains(gem))
+            {
+                continue;
+            }
+
+            if (!explosionGemCounts.ContainsKey(
+                    gem.Type))
+            {
+                explosionGemCounts[
+                    gem.Type
+                ] = 0;
+            }
+
+            explosionGemCounts[
+                gem.Type
+            ]++;
+        }
+
+        int safeCascadeDepth =
+            Mathf.Max(
+                0,
+                cascadeDepth
+            );
+
+        foreach (
+            KeyValuePair<GemType, int>
+                explosionResult
+            in explosionGemCounts)
+        {
+            bool damagedMatchingEnemy = false;
+
+            if (combatController != null)
+            {
+                damagedMatchingEnemy =
+                    combatController
+                        .ResolveBombGemClear(
+                            explosionResult.Key,
+                            explosionResult.Value,
+                            safeCascadeDepth
+                        );
+            }
+
+            BoardBombClearOutcome outcome =
+                new BoardBombClearOutcome(
+                    explosionResult.Key,
+                    explosionResult.Value,
+                    safeCascadeDepth,
+                    damagedMatchingEnemy
+                );
+
+            BoardBombClearOutcomeResolved?.Invoke(
+                outcome
+            );
+        }
+    }
+
     private List<List<Gem>>
         BuildConnectedMatchGroups(
             HashSet<Gem> matches)
