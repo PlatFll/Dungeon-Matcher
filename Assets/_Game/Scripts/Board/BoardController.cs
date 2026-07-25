@@ -583,11 +583,6 @@ public partial class BoardController : MonoBehaviour
             second
         );
 
-        yield return AnimateSwap(
-            first,
-            second
-        );
-
         if (IsDoubleColorCrystalSwap(
                 first,
                 second))
