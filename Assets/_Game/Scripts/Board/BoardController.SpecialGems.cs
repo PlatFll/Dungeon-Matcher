@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public partial class BoardController
 {
@@ -270,6 +272,102 @@ public partial class BoardController
         }
 
         return gemsToClear.Count > 1;
+    }
+
+    private IEnumerator ResolveColorCrystalActivation(
+        HashSet<Gem> crystalClearSet,
+        GemType targetGemType)
+    {
+        if (crystalClearSet == null ||
+            crystalClearSet.Count == 0)
+        {
+            yield break;
+        }
+
+        /*
+         * Selected-color bombs are included in the initial
+         * set. Expanding it here allows them to chain-react.
+         */
+        HashSet<Gem> expandedClearSet =
+            BuildBombExpandedClearSet(
+                crystalClearSet
+            );
+
+        /*
+         * The crystal has an underlying GemType from the
+         * match that created it, but it should not grant
+         * damage or energy for that hidden color.
+         */
+        HashSet<Gem> rewardExclusions =
+            new HashSet<Gem>();
+
+        foreach (Gem gem in crystalClearSet)
+        {
+            if (gem != null &&
+                gem.SpecialType ==
+                    GemSpecialType.ColorCrystal)
+            {
+                rewardExclusions.Add(gem);
+            }
+        }
+
+        /*
+         * All actual colored gems use the existing
+         * per-cleared-gem damage and energy rules.
+         */
+        ReportBombClearsToCombat(
+            rewardExclusions,
+            expandedClearSet,
+            0
+        );
+
+        Debug.Log(
+            $"Color crystal clearing " +
+            $"{targetGemType} gems. " +
+            $"{expandedClearSet.Count} total gems " +
+            $"will be destroyed."
+        );
+
+        yield return ClearMatches(
+            expandedClearSet,
+            null
+        );
+
+        if (cascadePause > 0f)
+        {
+            yield return new WaitForSeconds(
+                cascadePause
+            );
+        }
+
+        yield return CollapseAndRefillBoard();
+
+        if (cascadePause > 0f)
+        {
+            yield return new WaitForSeconds(
+                cascadePause
+            );
+        }
+
+        HashSet<Gem> resultingMatches =
+            FindAllMatches();
+
+        if (resultingMatches.Count > 0)
+        {
+            yield return ResolveCascades(
+                resultingMatches,
+                null,
+                null
+            );
+        }
+        else if (!HasAvailableMove())
+        {
+            yield return ReshuffleBoard();
+        }
+
+        Debug.Log(
+            "Color crystal activation complete."
+        );
     }
 
     private HashSet<Gem> BuildBombExpandedClearSet(
