@@ -20,6 +20,9 @@ public partial class BoardController
     public event Action<BoardMatchOutcome>
     BoardMatchOutcomeResolved;
 
+    public event Action<BoardBombClearOutcome>
+    BoardBombClearOutcomeResolved;
+
 
     private void ReportMatchesToCombat(
         HashSet<Gem> matches,
