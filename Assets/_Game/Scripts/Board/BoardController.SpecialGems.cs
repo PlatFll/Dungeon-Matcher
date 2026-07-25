@@ -179,13 +179,17 @@ public partial class BoardController
         Gem first,
         Gem second,
         out HashSet<Gem> gemsToClear,
-        out GemType targetGemType)
+        out GemType targetGemType,
+        out GemSpecialType targetSpecialType)
     {
         gemsToClear =
             new HashSet<Gem>();
 
         targetGemType =
             default(GemType);
+
+        targetSpecialType =
+            GemSpecialType.None;
 
         if (first == null ||
             second == null)
@@ -225,6 +229,9 @@ public partial class BoardController
 
         targetGemType =
             targetGem.Type;
+
+        targetSpecialType =
+            targetGem.SpecialType;
 
         /*
          * The activated crystal always destroys itself.
@@ -276,7 +283,8 @@ public partial class BoardController
 
     private IEnumerator ResolveColorCrystalActivation(
         HashSet<Gem> crystalClearSet,
-        GemType targetGemType)
+        GemType targetGemType,
+        GemSpecialType targetSpecialType)
     {
         if (crystalClearSet == null ||
             crystalClearSet.Count == 0)
