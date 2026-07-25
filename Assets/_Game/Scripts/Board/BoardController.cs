@@ -1935,7 +1935,9 @@ public partial class BoardController : MonoBehaviour
         Gem origin,
         HashSet<Gem> matchedGems)
     {
-        if (origin == null)
+        if (origin == null ||
+            origin.SpecialType ==
+                GemSpecialType.ColorCrystal)
         {
             return;
         }
@@ -2001,6 +2003,8 @@ public partial class BoardController : MonoBehaviour
                 );
 
             if (nextGem == null ||
+                nextGem.SpecialType ==
+                    GemSpecialType.ColorCrystal ||
                 nextGem.Type != origin.Type)
             {
                 break;
@@ -2032,6 +2036,8 @@ public partial class BoardController : MonoBehaviour
                 );
 
             if (nextGem == null ||
+                nextGem.SpecialType ==
+                    GemSpecialType.ColorCrystal ||
                 nextGem.Type != origin.Type)
             {
                 break;
