@@ -995,6 +995,29 @@ public partial class BoardController
     private HashSet<Gem> BuildBombExpandedClearSet(
         HashSet<Gem> matchedGems)
     {
+        List<BombTriggeredCrystalRequest>
+            ignoredCrystalRequests;
+
+        /*
+         * Existing callers retain their current behaviour:
+         * crystals caught in explosions are cleared normally.
+         *
+         * A later caller can enable preservation and receive
+         * activation requests instead.
+         */
+        return BuildBombExpandedClearSet(
+            matchedGems,
+            false,
+            out ignoredCrystalRequests
+        );
+    }
+
+    private HashSet<Gem> BuildBombExpandedClearSet(
+        HashSet<Gem> matchedGems,
+        bool preserveTriggeredCrystals,
+        out List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests)
+    {
         HashSet<Gem> gemsToClear =
             new HashSet<Gem>();
 
@@ -1003,6 +1026,9 @@ public partial class BoardController
 
         HashSet<Gem> triggeredBombs =
             new HashSet<Gem>();
+
+        triggeredCrystalRequests =
+            new List<BombTriggeredCrystalRequest>();
 
         if (matchedGems == null)
         {
@@ -1018,8 +1044,10 @@ public partial class BoardController
 
             gemsToClear.Add(gem);
 
-            if (gem.SpecialType !=
-                GemSpecialType.None)
+            if (gem.SpecialType ==
+                    GemSpecialType.RowBomb ||
+                gem.SpecialType ==
+                    GemSpecialType.ColumnBomb)
             {
                 pendingBombs.Enqueue(gem);
             }
@@ -1046,6 +1074,9 @@ public partial class BoardController
                         TryAddGemToBombClearSet(
                             column,
                             bomb.Row,
+                            bomb,
+                            preserveTriggeredCrystals,
+                            triggeredCrystalRequests,
                             gemsToClear,
                             pendingBombs
                         );
@@ -1061,6 +1092,9 @@ public partial class BoardController
                         TryAddGemToBombClearSet(
                             bomb.Column,
                             row,
+                            bomb,
+                            preserveTriggeredCrystals,
+                            triggeredCrystalRequests,
                             gemsToClear,
                             pendingBombs
                         );
@@ -1076,6 +1110,10 @@ public partial class BoardController
     private void TryAddGemToBombClearSet(
         int column,
         int row,
+        Gem triggeringBomb,
+        bool preserveTriggeredCrystals,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
         HashSet<Gem> gemsToClear,
         Queue<Gem> pendingBombs)
     {
@@ -1090,14 +1128,73 @@ public partial class BoardController
             return;
         }
 
+        /*
+         * When requested, a crystal hit by this bomb remains
+         * on the board temporarily and produces an activation
+         * request containing the bomb's color.
+         */
+        if (preserveTriggeredCrystals &&
+            gem.SpecialType ==
+                GemSpecialType.ColorCrystal)
+        {
+            TryAddBombTriggeredCrystalRequest(
+                gem,
+                triggeringBomb,
+                triggeredCrystalRequests
+            );
+
+            return;
+        }
+
         bool wasAdded =
             gemsToClear.Add(gem);
 
         if (wasAdded &&
-            gem.SpecialType !=
-                GemSpecialType.None)
+            (
+                gem.SpecialType ==
+                    GemSpecialType.RowBomb ||
+                gem.SpecialType ==
+                    GemSpecialType.ColumnBomb
+            ))
         {
             pendingBombs.Enqueue(gem);
         }
+    }
+
+    private static void
+        TryAddBombTriggeredCrystalRequest(
+            Gem crystalGem,
+            Gem triggeringBomb,
+            List<BombTriggeredCrystalRequest>
+                triggeredCrystalRequests)
+    {
+        if (crystalGem == null ||
+            triggeringBomb == null ||
+            triggeredCrystalRequests == null)
+        {
+            return;
+        }
+
+        /*
+         * A crystal may be crossed by several explosions in
+         * the same chain. Only create one request for it.
+         */
+        foreach (
+            BombTriggeredCrystalRequest request
+            in triggeredCrystalRequests)
+        {
+            if (request.CrystalGem ==
+                crystalGem)
+            {
+                return;
+            }
+        }
+
+        triggeredCrystalRequests.Add(
+            new BombTriggeredCrystalRequest(
+                crystalGem,
+                triggeringBomb.Type
+            )
+        );
     }
 }
