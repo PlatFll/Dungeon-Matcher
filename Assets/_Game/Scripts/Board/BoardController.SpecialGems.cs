@@ -541,6 +541,138 @@ public partial class BoardController
         );
     }
 
+    private HashSet<Gem>
+        BuildConvertedCrystalBombActivationSet(
+            Gem activatedBomb,
+            HashSet<Gem> pendingConvertedBombs)
+    {
+        HashSet<Gem> gemsToClear =
+            new HashSet<Gem>();
+
+        Queue<Gem> pendingBombs =
+            new Queue<Gem>();
+
+        HashSet<Gem> triggeredBombs =
+            new HashSet<Gem>();
+
+        if (activatedBomb == null)
+        {
+            return gemsToClear;
+        }
+
+        gemsToClear.Add(
+            activatedBomb
+        );
+
+        pendingBombs.Enqueue(
+            activatedBomb
+        );
+
+        while (pendingBombs.Count > 0)
+        {
+            Gem bomb =
+                pendingBombs.Dequeue();
+
+            if (bomb == null ||
+                !triggeredBombs.Add(bomb))
+            {
+                continue;
+            }
+
+            switch (bomb.SpecialType)
+            {
+                case GemSpecialType.RowBomb:
+                    for (int column = 0;
+                         column < width;
+                         column++)
+                    {
+                        TryAddGemToConvertedBombClearSet(
+                            column,
+                            bomb.Row,
+                            activatedBomb,
+                            pendingConvertedBombs,
+                            gemsToClear,
+                            pendingBombs
+                        );
+                    }
+
+                    break;
+
+                case GemSpecialType.ColumnBomb:
+                    for (int row = 0;
+                         row < height;
+                         row++)
+                    {
+                        TryAddGemToConvertedBombClearSet(
+                            bomb.Column,
+                            row,
+                            activatedBomb,
+                            pendingConvertedBombs,
+                            gemsToClear,
+                            pendingBombs
+                        );
+                    }
+
+                    break;
+            }
+        }
+
+        return gemsToClear;
+    }
+
+    private void TryAddGemToConvertedBombClearSet(
+        int column,
+        int row,
+        Gem activatedBomb,
+        HashSet<Gem> pendingConvertedBombs,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        Gem gem =
+            GetGem(
+                column,
+                row
+            );
+
+        if (gem == null)
+        {
+            return;
+        }
+
+        /*
+         * Converted bombs that have not reached their turn
+         * remain on the board, even when an earlier blast
+         * passes through their position.
+         */
+        bool isProtectedConvertedBomb =
+            gem != activatedBomb &&
+            pendingConvertedBombs != null &&
+            pendingConvertedBombs.Contains(gem);
+
+        if (isProtectedConvertedBomb)
+        {
+            return;
+        }
+
+        bool wasAdded =
+            gemsToClear.Add(gem);
+
+        /*
+         * Ordinary pre-existing bombs caught in the blast
+         * may still chain-react normally.
+         */
+        if (wasAdded &&
+            (
+                gem.SpecialType ==
+                    GemSpecialType.RowBomb ||
+                gem.SpecialType ==
+                    GemSpecialType.ColumnBomb
+            ))
+        {
+            pendingBombs.Enqueue(gem);
+        }
+    }
+
     private IEnumerator ResolveColorCrystalActivation(
         HashSet<Gem> crystalClearSet,
         GemType targetGemType,
