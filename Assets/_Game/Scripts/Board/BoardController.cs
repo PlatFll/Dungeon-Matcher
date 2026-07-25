@@ -583,6 +583,25 @@ public partial class BoardController : MonoBehaviour
             second
         );
 
+        yield return AnimateSwap(
+            first,
+            second
+        );
+
+        if (IsDoubleColorCrystalSwap(
+                first,
+                second))
+        {
+            yield return
+                ResolveDoubleColorCrystalActivation(
+                    first,
+                    second
+                );
+
+            isBusy = false;
+            yield break;
+        }
+
         HashSet<Gem> crystalClearSet;
         GemType crystalTargetType;
         GemSpecialType crystalTargetSpecialType;

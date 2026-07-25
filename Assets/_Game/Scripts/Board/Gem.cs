@@ -313,4 +313,17 @@ public class Gem :
             GemSpecialType.None
         );
     }
+
+    [ContextMenu("Debug/Show Color Crystal")]
+    private void DebugShowColorCrystal()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.ColorCrystal
+        );
+    }
 }
