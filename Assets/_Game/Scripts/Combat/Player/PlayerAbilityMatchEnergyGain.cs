@@ -61,6 +61,14 @@ public sealed class PlayerAbilityMatchEnergyGain :
     [SerializeField, Min(0)]
     private int nonDamagingOtherEnergy = 1;
 
+    [Header("Bomb Clear Energy")]
+    [SerializeField, Min(0)]
+    [Tooltip(
+        "Energy gained for every gem destroyed only " +
+        "by a row or column bomb."
+    )]
+    private int bombEnergyPerGem = 1;
+
     private void Awake()
     {
         ResolveReferences();
@@ -97,6 +105,12 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
         boardController.BoardMatchOutcomeResolved +=
             HandleBoardMatchOutcomeResolved;
+
+        boardController.BoardBombClearOutcomeResolved -=
+            HandleBoardBombClearOutcomeResolved;
+
+        boardController.BoardBombClearOutcomeResolved +=
+            HandleBoardBombClearOutcomeResolved;
     }
 
     private void UnsubscribeFromBoard()
@@ -108,6 +122,9 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
         boardController.BoardMatchOutcomeResolved -=
             HandleBoardMatchOutcomeResolved;
+
+        boardController.BoardBombClearOutcomeResolved -=
+            HandleBoardBombClearOutcomeResolved;
     }
 
     private void HandleBoardMatchOutcomeResolved(
@@ -125,6 +142,31 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
         int gainedEnergy =
             CalculateEnergyGain(outcome);
+
+        playerAbilityEnergy.AddEnergy(
+            gainedEnergy
+        );
+    }
+
+    private void HandleBoardBombClearOutcomeResolved(
+        BoardBombClearOutcome outcome)
+    {
+        if (playerActor == null ||
+            playerAbilityEnergy == null ||
+            playerAbilityController == null ||
+            playerAbilityController.IsAbilityActive ||
+            !playerActor.IsInitialized ||
+            playerActor.IsDefeated)
+        {
+            return;
+        }
+
+        int gainedEnergy =
+            Mathf.Max(
+                0,
+                outcome.GemCount *
+                bombEnergyPerGem
+            );
 
         playerAbilityEnergy.AddEnergy(
             gainedEnergy
@@ -282,5 +324,11 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
         nonDamagingOtherEnergy =
             Mathf.Max(0, nonDamagingOtherEnergy);
+
+        bombEnergyPerGem =
+            Mathf.Max(
+                0,
+                bombEnergyPerGem
+            );
     }
 }
