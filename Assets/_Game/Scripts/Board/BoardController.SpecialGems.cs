@@ -22,14 +22,30 @@ public partial class BoardController
 
         foreach (List<Gem> group in matchGroups)
         {
-            if (DetermineMatchType(group) !=
-                BoardMatchType.StraightFour)
-            {
-                continue;
-            }
+            BoardMatchType matchType =
+                DetermineMatchType(group);
 
             GemSpecialType specialType =
-                GetStraightFourSpecialType(group);
+                GemSpecialType.None;
+
+            switch (matchType)
+            {
+                case BoardMatchType.StraightFour:
+                    specialType =
+                        GetStraightFourSpecialType(
+                            group
+                        );
+
+                    break;
+
+                case BoardMatchType.StraightFive:
+                case BoardMatchType.LShape:
+                case BoardMatchType.TShape:
+                    specialType =
+                        GemSpecialType.ColorCrystal;
+
+                    break;
+            }
 
             if (specialType ==
                 GemSpecialType.None)
