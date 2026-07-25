@@ -301,18 +301,132 @@ public partial class BoardController
         pending.Enqueue(neighbour);
     }
     private static BoardMatchType DetermineMatchType(
-    List<Gem> group)
+        List<Gem> group)
     {
         if (group == null ||
-            group.Count < 3 ||
-            group[0] == null)
+            group.Count < 3)
         {
             return BoardMatchType.Other;
         }
 
-        int gemCount = group.Count;
-        int firstRow = group[0].Row;
-        int firstColumn = group[0].Column;
+        HashSet<Vector2Int> matchedPositions =
+            new HashSet<Vector2Int>();
+
+        foreach (Gem gem in group)
+        {
+            if (gem == null)
+            {
+                return BoardMatchType.Other;
+            }
+
+            matchedPositions.Add(
+                new Vector2Int(
+                    gem.Column,
+                    gem.Row
+                )
+            );
+        }
+
+        /*
+         * Highest priority:
+         *
+         * Search for any gem that belongs to both a
+         * horizontal line of at least three and a
+         * vertical line of at least three.
+         *
+         * This detects L, T, cross, and extended
+         * versions of those shapes even when the
+         * connected group contains more than five gems.
+         */
+        foreach (Gem intersection in group)
+        {
+            Vector2Int intersectionPosition =
+                new Vector2Int(
+                    intersection.Column,
+                    intersection.Row
+                );
+
+            int leftCount =
+                CountConnectedMatchPositions(
+                    matchedPositions,
+                    intersectionPosition,
+                    Vector2Int.left
+                );
+
+            int rightCount =
+                CountConnectedMatchPositions(
+                    matchedPositions,
+                    intersectionPosition,
+                    Vector2Int.right
+                );
+
+            int belowCount =
+                CountConnectedMatchPositions(
+                    matchedPositions,
+                    intersectionPosition,
+                    Vector2Int.down
+                );
+
+            int aboveCount =
+                CountConnectedMatchPositions(
+                    matchedPositions,
+                    intersectionPosition,
+                    Vector2Int.up
+                );
+
+            int horizontalCount =
+                1 +
+                leftCount +
+                rightCount;
+
+            int verticalCount =
+                1 +
+                belowCount +
+                aboveCount;
+
+            if (horizontalCount < 3 ||
+                verticalCount < 3)
+            {
+                continue;
+            }
+
+            bool isHorizontalMiddle =
+                leftCount > 0 &&
+                rightCount > 0;
+
+            bool isVerticalMiddle =
+                belowCount > 0 &&
+                aboveCount > 0;
+
+            /*
+             * End of both lines means an L shape.
+             */
+            if (!isHorizontalMiddle &&
+                !isVerticalMiddle)
+            {
+                return BoardMatchType.LShape;
+            }
+
+            /*
+             * Middle of one line means a T shape.
+             *
+             * Middle of both lines means a cross.
+             * Cross currently uses TShape because both
+             * produce the same color crystal and use
+             * the same energy reward.
+             */
+            return BoardMatchType.TShape;
+        }
+
+        /*
+         * No intersection was found, so check whether
+         * the entire group is one straight line.
+         */
+        int firstRow =
+            group[0].Row;
+
+        int firstColumn =
+            group[0].Column;
 
         bool allSameRow = true;
         bool allSameColumn = true;
@@ -321,12 +435,8 @@ public partial class BoardController
              index < group.Count;
              index++)
         {
-            Gem gem = group[index];
-
-            if (gem == null)
-            {
-                return BoardMatchType.Other;
-            }
+            Gem gem =
+                group[index];
 
             if (gem.Row != firstRow)
             {
@@ -343,136 +453,50 @@ public partial class BoardController
             allSameRow ||
             allSameColumn;
 
-        if (isStraight)
-        {
-            if (gemCount == 3)
-            {
-                return BoardMatchType.NormalThree;
-            }
-
-            if (gemCount == 4)
-            {
-                return BoardMatchType.StraightFour;
-            }
-
-            if (gemCount >= 5)
-            {
-                return BoardMatchType.StraightFive;
-            }
-        }
-
-        /*
-         * L and T matches currently require exactly
-         * five gems: two lines of three sharing one gem.
-         */
-        if (gemCount != 5)
+        if (!isStraight)
         {
             return BoardMatchType.Other;
         }
 
-        for (int candidateIndex = 0;
-             candidateIndex < group.Count;
-             candidateIndex++)
+        if (group.Count >= 5)
         {
-            Gem intersection =
-                group[candidateIndex];
+            return BoardMatchType.StraightFive;
+        }
 
-            int sameRowCount = 0;
-            int sameColumnCount = 0;
+        if (group.Count == 4)
+        {
+            return BoardMatchType.StraightFour;
+        }
 
-            int minimumColumn = int.MaxValue;
-            int maximumColumn = int.MinValue;
-
-            int minimumRow = int.MaxValue;
-            int maximumRow = int.MinValue;
-
-            for (int gemIndex = 0;
-                 gemIndex < group.Count;
-                 gemIndex++)
-            {
-                Gem gem = group[gemIndex];
-
-                if (gem.Row == intersection.Row)
-                {
-                    sameRowCount++;
-
-                    minimumColumn =
-                        Mathf.Min(
-                            minimumColumn,
-                            gem.Column
-                        );
-
-                    maximumColumn =
-                        Mathf.Max(
-                            maximumColumn,
-                            gem.Column
-                        );
-                }
-
-                if (gem.Column ==
-                    intersection.Column)
-                {
-                    sameColumnCount++;
-
-                    minimumRow =
-                        Mathf.Min(
-                            minimumRow,
-                            gem.Row
-                        );
-
-                    maximumRow =
-                        Mathf.Max(
-                            maximumRow,
-                            gem.Row
-                        );
-                }
-            }
-
-            if (sameRowCount != 3 ||
-                sameColumnCount != 3)
-            {
-                continue;
-            }
-
-            bool isHorizontalMiddle =
-                intersection.Column >
-                    minimumColumn &&
-                intersection.Column <
-                    maximumColumn;
-
-            bool isVerticalMiddle =
-                intersection.Row >
-                    minimumRow &&
-                intersection.Row <
-                    maximumRow;
-
-            /*
-             * Middle of one line and end of the other
-             * creates a T.
-             */
-            if (isHorizontalMiddle !=
-                isVerticalMiddle)
-            {
-                return BoardMatchType.TShape;
-            }
-
-            /*
-             * End of both lines creates an L.
-             */
-            if (!isHorizontalMiddle &&
-                !isVerticalMiddle)
-            {
-                return BoardMatchType.LShape;
-            }
-
-            /*
-             * Middle of both lines is a plus shape,
-             * which is not classified yet.
-             */
-            return BoardMatchType.Other;
+        if (group.Count == 3)
+        {
+            return BoardMatchType.NormalThree;
         }
 
         return BoardMatchType.Other;
+    }
+
+    private static int CountConnectedMatchPositions(
+        HashSet<Vector2Int> matchedPositions,
+        Vector2Int startingPosition,
+        Vector2Int direction)
+    {
+        int count = 0;
+
+        Vector2Int currentPosition =
+            startingPosition +
+            direction;
+
+        while (matchedPositions.Contains(
+                   currentPosition))
+        {
+            count++;
+
+            currentPosition +=
+                direction;
+        }
+
+        return count;
     }
 
     private static int CompareGemsByGridPosition(
