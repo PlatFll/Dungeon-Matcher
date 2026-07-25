@@ -346,6 +346,42 @@ public partial class BoardController
         return targetSet;
     }
 
+    private static HashSet<Gem>
+        ConvertCrystalTargetsToRandomBombs(
+            List<Gem> orderedTargets)
+    {
+        HashSet<Gem> pendingConvertedBombs =
+            new HashSet<Gem>();
+
+        if (orderedTargets == null)
+        {
+            return pendingConvertedBombs;
+        }
+
+        foreach (Gem targetGem in orderedTargets)
+        {
+            if (targetGem == null)
+            {
+                continue;
+            }
+
+            GemSpecialType randomBombType =
+                Random.Range(0, 2) == 0
+                    ? GemSpecialType.RowBomb
+                    : GemSpecialType.ColumnBomb;
+
+            targetGem.SetSpecialType(
+                randomBombType
+            );
+
+            pendingConvertedBombs.Add(
+                targetGem
+            );
+        }
+
+        return pendingConvertedBombs;
+    }
+
     private static List<Gem>
         BuildOrderedCrystalTargets(
             HashSet<Gem> crystalClearSet,
