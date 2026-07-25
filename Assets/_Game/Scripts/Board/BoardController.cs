@@ -666,9 +666,14 @@ public partial class BoardController : MonoBehaviour
                         fallbackGem
                     );
 
+            List<BombTriggeredCrystalRequest>
+                triggeredCrystalRequests;
+
             HashSet<Gem> expandedClearSet =
                 BuildBombExpandedClearSet(
-                    matches
+                    matches,
+                    true,
+                    out triggeredCrystalRequests
                 );
 
             ReportMatchesToCombat(
@@ -691,6 +696,26 @@ public partial class BoardController : MonoBehaviour
                 expandedClearSet,
                 specialGemCreationRequests
             );
+
+            /*
+             * The original bomb explosion clears first. Any crystal
+             * reached by that explosion then activates before the
+             * board collapses and refills.
+             */
+            foreach (
+                BombTriggeredCrystalRequest request
+                in triggeredCrystalRequests)
+            {
+                if (!request.IsValid)
+                {
+                    continue;
+                }
+
+                yield return
+                    ResolveBombTriggeredCrystalSequence(
+                        request
+                    );
+            }
 
             if (cascadePause > 0f)
             {
