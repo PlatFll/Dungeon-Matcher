@@ -598,7 +598,9 @@ public partial class BoardController : MonoBehaviour
         else
         {
             yield return ResolveCascades(
-                matches
+                matches,
+                first,
+                second
             );
         }
 
@@ -606,7 +608,9 @@ public partial class BoardController : MonoBehaviour
     }
 
     private IEnumerator ResolveCascades(
-        HashSet<Gem> matches)
+        HashSet<Gem> matches,
+        Gem preferredGem,
+        Gem fallbackGem)
     {
         int cascadeNumber = 1;
 
@@ -654,6 +658,10 @@ public partial class BoardController : MonoBehaviour
             }
 
             matches = FindAllMatches();
+
+            preferredGem = null;
+            fallbackGem = null;
+
             cascadeNumber++;
         }
 

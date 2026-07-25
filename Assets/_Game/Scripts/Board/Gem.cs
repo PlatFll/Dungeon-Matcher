@@ -244,4 +244,43 @@ public class Gem :
                 ? 1
                 : 0;
     }
+
+    [ContextMenu("Debug/Show Row Bomb")]
+    private void DebugShowRowBomb()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.RowBomb
+        );
+    }
+
+    [ContextMenu("Debug/Show Column Bomb")]
+    private void DebugShowColumnBomb()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.ColumnBomb
+        );
+    }
+
+    [ContextMenu("Debug/Clear Special Type")]
+    private void DebugClearSpecialType()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.None
+        );
+    }
 }
