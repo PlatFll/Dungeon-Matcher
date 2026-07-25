@@ -156,4 +156,113 @@ public partial class BoardController
 
         return GemSpecialType.None;
     }
+
+    private HashSet<Gem> BuildBombExpandedClearSet(
+        HashSet<Gem> matchedGems)
+    {
+        HashSet<Gem> gemsToClear =
+            new HashSet<Gem>();
+
+        Queue<Gem> pendingBombs =
+            new Queue<Gem>();
+
+        HashSet<Gem> triggeredBombs =
+            new HashSet<Gem>();
+
+        if (matchedGems == null)
+        {
+            return gemsToClear;
+        }
+
+        foreach (Gem gem in matchedGems)
+        {
+            if (gem == null)
+            {
+                continue;
+            }
+
+            gemsToClear.Add(gem);
+
+            if (gem.SpecialType !=
+                GemSpecialType.None)
+            {
+                pendingBombs.Enqueue(gem);
+            }
+        }
+
+        while (pendingBombs.Count > 0)
+        {
+            Gem bomb =
+                pendingBombs.Dequeue();
+
+            if (bomb == null ||
+                !triggeredBombs.Add(bomb))
+            {
+                continue;
+            }
+
+            switch (bomb.SpecialType)
+            {
+                case GemSpecialType.RowBomb:
+                    for (int column = 0;
+                         column < width;
+                         column++)
+                    {
+                        TryAddGemToBombClearSet(
+                            column,
+                            bomb.Row,
+                            gemsToClear,
+                            pendingBombs
+                        );
+                    }
+
+                    break;
+
+                case GemSpecialType.ColumnBomb:
+                    for (int row = 0;
+                         row < height;
+                         row++)
+                    {
+                        TryAddGemToBombClearSet(
+                            bomb.Column,
+                            row,
+                            gemsToClear,
+                            pendingBombs
+                        );
+                    }
+
+                    break;
+            }
+        }
+
+        return gemsToClear;
+    }
+
+    private void TryAddGemToBombClearSet(
+        int column,
+        int row,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        Gem gem =
+            GetGem(
+                column,
+                row
+            );
+
+        if (gem == null)
+        {
+            return;
+        }
+
+        bool wasAdded =
+            gemsToClear.Add(gem);
+
+        if (wasAdded &&
+            gem.SpecialType !=
+                GemSpecialType.None)
+        {
+            pendingBombs.Enqueue(gem);
+        }
+    }
 }
