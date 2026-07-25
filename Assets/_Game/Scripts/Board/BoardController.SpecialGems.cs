@@ -173,6 +173,105 @@ public partial class BoardController
         return GemSpecialType.None;
     }
 
+    private bool TryBuildColorCrystalClearSet(
+        Gem first,
+        Gem second,
+        out HashSet<Gem> gemsToClear,
+        out GemType targetGemType)
+    {
+        gemsToClear =
+            new HashSet<Gem>();
+
+        targetGemType =
+            default(GemType);
+
+        if (first == null ||
+            second == null)
+        {
+            return false;
+        }
+
+        bool firstIsCrystal =
+            first.SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        bool secondIsCrystal =
+            second.SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        /*
+         * Exactly one of the swapped gems must currently
+         * be a color crystal.
+         *
+         * Crystal + crystal will be handled separately later.
+         */
+        if (firstIsCrystal ==
+            secondIsCrystal)
+        {
+            return false;
+        }
+
+        Gem crystalGem =
+            firstIsCrystal
+                ? first
+                : second;
+
+        Gem targetGem =
+            firstIsCrystal
+                ? second
+                : first;
+
+        targetGemType =
+            targetGem.Type;
+
+        /*
+         * The activated crystal always destroys itself.
+         */
+        gemsToClear.Add(
+            crystalGem
+        );
+
+        for (int row = 0;
+             row < height;
+             row++)
+        {
+            for (int column = 0;
+                 column < width;
+                 column++)
+            {
+                Gem gem =
+                    GetGem(
+                        column,
+                        row
+                    );
+
+                if (gem == null ||
+                    gem == crystalGem ||
+                    gem.Type != targetGemType)
+                {
+                    continue;
+                }
+
+                /*
+                 * Other crystals do not count as colored gems.
+                 * Row and column bombs of the selected color
+                 * are included and can chain-react later.
+                 */
+                if (gem.SpecialType ==
+                    GemSpecialType.ColorCrystal)
+                {
+                    continue;
+                }
+
+                gemsToClear.Add(
+                    gem
+                );
+            }
+        }
+
+        return gemsToClear.Count > 1;
+    }
+
     private HashSet<Gem> BuildBombExpandedClearSet(
         HashSet<Gem> matchedGems)
     {
