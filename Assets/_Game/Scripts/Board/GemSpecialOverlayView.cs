@@ -12,6 +12,9 @@ public sealed class GemSpecialOverlayView :
     [SerializeField]
     private Sprite columnBombSprite;
 
+    [SerializeField]
+    private Sprite colorCrystalSprite;
+
     [Header("Gem Colors")]
     [SerializeField]
     private Color rubyTint =
@@ -177,7 +180,10 @@ public sealed class GemSpecialOverlayView :
             selectedSprite;
 
         currentTint =
-            GetGemTint(gemType);
+            specialType ==
+                GemSpecialType.ColorCrystal
+                    ? Color.white
+                    : GetGemTint(gemType);
 
         overlayRenderer.enabled =
             true;
@@ -220,6 +226,9 @@ public sealed class GemSpecialOverlayView :
 
             case GemSpecialType.ColumnBomb:
                 return columnBombSprite;
+
+            case GemSpecialType.ColorCrystal:
+                return colorCrystalSprite;
 
             default:
                 return null;
