@@ -642,6 +642,12 @@ public partial class BoardController : MonoBehaviour
                 cascadeDepth
             );
 
+            ReportBombClearsToCombat(
+                matches,
+                expandedClearSet,
+                cascadeDepth
+            );
+
             ReportMatchesToVFX(
                 matches,
                 cascadeDepth
