@@ -30,6 +30,25 @@ public partial class BoardController : MonoBehaviour
     public float LocalBoardHeight =>
         height * cellSize;
 
+    public int Width =>
+    width;
+
+    public int Height =>
+        height;
+
+    public float CellSize =>
+        cellSize;
+
+    public Vector3 GetCellLocalPosition(
+        int column,
+        int row)
+    {
+        return GetLocalPosition(
+            column,
+            row
+        );
+    }
+
     [Header("Gem Assets")]
     [SerializeField]
     private Gem gemPrefab;
