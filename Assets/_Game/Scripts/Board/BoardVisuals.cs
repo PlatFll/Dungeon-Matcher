@@ -19,6 +19,21 @@ public sealed class BoardVisuals : MonoBehaviour
     private Color backgroundColor =
         new Color32(19, 23, 31, 255);
 
+    [Header("Cell Tiles")]
+
+    [SerializeField]
+    private Sprite cellTileSprite;
+
+    [SerializeField, Range(0.1f, 1.2f)]
+    [Tooltip(
+        "Size of each tile relative to one board cell."
+    )]
+    private float cellTileScale = 1f;
+
+    [SerializeField]
+    private Color cellTileColor =
+        Color.white;
+
     private BoardController board;
 
     private Texture2D runtimeTexture;
@@ -38,6 +53,7 @@ public sealed class BoardVisuals : MonoBehaviour
 
         CreateSquareSprite();
         CreateBoardFrame();
+        CreateCellTiles();
         CreateBoardMask();
     }
 
@@ -101,6 +117,102 @@ public sealed class BoardVisuals : MonoBehaviour
             backgroundColor,
             1
         );
+    }
+
+    private void CreateCellTiles()
+    {
+        if (cellTileSprite == null)
+        {
+            Debug.LogWarning(
+                "BoardVisuals has no cell tile sprite.",
+                this
+            );
+
+            return;
+        }
+
+        GameObject tileContainer =
+            new GameObject("CellTiles");
+
+        tileContainer.transform.SetParent(
+            transform,
+            false
+        );
+
+        Vector2 spriteSize =
+            cellTileSprite.bounds.size;
+
+        if (spriteSize.x <= 0f ||
+            spriteSize.y <= 0f)
+        {
+            Debug.LogError(
+                "The cell tile sprite has invalid bounds.",
+                this
+            );
+
+            return;
+        }
+
+        float targetTileSize =
+            board.CellSize *
+            cellTileScale;
+
+        for (int row = 0;
+             row < board.Height;
+             row++)
+        {
+            for (int column = 0;
+                 column < board.Width;
+                 column++)
+            {
+                GameObject tileObject =
+                    new GameObject(
+                        $"CellTile_{column}_{row}"
+                    );
+
+                tileObject.transform.SetParent(
+                    tileContainer.transform,
+                    false
+                );
+
+                tileObject.transform.localPosition =
+                    board.GetCellLocalPosition(
+                        column,
+                        row
+                    );
+
+                tileObject.transform.localScale =
+                    new Vector3(
+                        targetTileSize /
+                        spriteSize.x,
+
+                        targetTileSize /
+                        spriteSize.y,
+
+                        1f
+                    );
+
+                SpriteRenderer tileRenderer =
+                    tileObject.AddComponent<
+                        SpriteRenderer
+                    >();
+
+                tileRenderer.sprite =
+                    cellTileSprite;
+
+                tileRenderer.color =
+                    cellTileColor;
+
+                tileRenderer.sortingLayerName =
+                    "BoardBackground";
+
+                tileRenderer.sortingOrder = 2;
+
+                tileRenderer.maskInteraction =
+                    SpriteMaskInteraction
+                        .VisibleInsideMask;
+            }
+        }
     }
 
     private void CreateSpriteObject(
