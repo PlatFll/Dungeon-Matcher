@@ -4,16 +4,27 @@ using UnityEngine;
 [RequireComponent(typeof(BoardController))]
 public sealed class BoardVisuals : MonoBehaviour
 {
-    [Header("Frame")]
-    [SerializeField, Min(0f)]
-    private float frameThickness = 0.18f;
-
-    [SerializeField, Min(0f)]
-    private float backgroundPadding = 0.04f;
+    [Header("Board Frame")]
 
     [SerializeField]
-    private Color frameColor =
-        new Color32(52, 42, 59, 255);
+    private Sprite boardFrameSprite;
+
+    [SerializeField]
+    private Color boardFrameColor =
+        Color.white;
+
+    [SerializeField]
+    private string boardFrameSortingLayer =
+        "Gems";
+
+    [SerializeField]
+    private int boardFrameSortingOrder =
+        100;
+
+    [Header("Board Background")]
+
+    [SerializeField, Min(0f)]
+    private float backgroundPadding = 0f;
 
     [SerializeField]
     private Color backgroundColor =
@@ -40,12 +51,14 @@ public sealed class BoardVisuals : MonoBehaviour
     private Sprite runtimeSquareSprite;
 
     public float OuterLocalWidth =>
-        board.LocalBoardWidth +
-        frameThickness * 2f;
+        boardFrameSprite != null
+            ? boardFrameSprite.bounds.size.x
+            : board.LocalBoardWidth;
 
     public float OuterLocalHeight =>
-        board.LocalBoardHeight +
-        frameThickness * 2f;
+        boardFrameSprite != null
+            ? boardFrameSprite.bounds.size.y
+            : board.LocalBoardHeight;
 
     private void Awake()
     {
@@ -96,27 +109,76 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private void CreateBoardFrame()
     {
-        CreateSpriteObject(
-            "BoardFrame",
-            new Vector2(
-                OuterLocalWidth,
-                OuterLocalHeight
-            ),
-            frameColor,
-            0
-        );
-
+        /*
+         * Dark backing behind tiles. This covers the small
+         * transparent gaps that may exist between tile sprites.
+         */
         CreateSpriteObject(
             "BoardBackground",
             new Vector2(
                 board.LocalBoardWidth +
                 backgroundPadding * 2f,
+
                 board.LocalBoardHeight +
                 backgroundPadding * 2f
             ),
             backgroundColor,
             1
         );
+
+        if (boardFrameSprite == null)
+        {
+            Debug.LogWarning(
+                "BoardVisuals has no board frame sprite.",
+                this
+            );
+
+            return;
+        }
+
+        GameObject frameObject =
+            new GameObject("BoardFrame");
+
+        frameObject.transform.SetParent(
+            transform,
+            false
+        );
+
+        frameObject.transform.localPosition =
+            Vector3.zero;
+
+        /*
+         * The frame is imported at 64 PPU, so its native
+         * size is already exactly 7.5 by 8.5 world units.
+         */
+        frameObject.transform.localScale =
+            Vector3.one;
+
+        SpriteRenderer frameRenderer =
+            frameObject.AddComponent<SpriteRenderer>();
+
+        frameRenderer.sprite =
+            boardFrameSprite;
+
+        frameRenderer.color =
+            boardFrameColor;
+
+        /*
+         * The frame renders above gems. Its transparent
+         * center means it only visually covers the border.
+         */
+        frameRenderer.sortingLayerName =
+            boardFrameSortingLayer;
+
+        frameRenderer.sortingOrder =
+            boardFrameSortingOrder;
+
+        /*
+         * The frame extends outside the board mask, so it
+         * must not be restricted by that mask.
+         */
+        frameRenderer.maskInteraction =
+            SpriteMaskInteraction.None;
     }
 
     private void CreateCellTiles()
