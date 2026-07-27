@@ -2422,10 +2422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 64
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 560, y: 940}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 540, y: 960}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -3304,9 +3304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85068aa6cd070b64fad72ac497093558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardVisuals
-  frameThickness: 0.18
+  boardFrameSprite: {fileID: 21300000, guid: f0e2c4a4419fd7f4b9a9fa8cd92118c0, type: 3}
+  boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
+  boardFrameSortingLayer: Gems
+  boardFrameSortingOrder: 100
   backgroundPadding: 0.04
-  frameColor: {r: 0.20392157, g: 0.16470589, b: 0.23137255, a: 1}
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
   cellTileSprite: {fileID: 21300000, guid: 13fa24f36febc744b8d9de6281c9bb80, type: 3}
   cellTileScale: 1
