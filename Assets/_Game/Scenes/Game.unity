@@ -3340,11 +3340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85068aa6cd070b64fad72ac497093558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardVisuals
-  boardFrameSprite: {fileID: 21300000, guid: f0e2c4a4419fd7f4b9a9fa8cd92118c0, type: 3}
+  boardFrameSprite: {fileID: 21300000, guid: 4692fd65467dd3a4b961da4ce062761c, type: 3}
   boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
   boardFrameSortingLayer: Gems
   boardFrameSortingOrder: 100
-  boardFrameOpeningPixels: {x: 384, y: 448}
+  boardFrameOpeningPixels: {x: 448, y: 512}
   boardFrameOffsetPixels: {x: 0, y: 0}
   backgroundPadding: 0.04
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
