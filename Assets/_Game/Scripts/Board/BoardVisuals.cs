@@ -21,6 +21,27 @@ public sealed class BoardVisuals : MonoBehaviour
     private int boardFrameSortingOrder =
         100;
 
+    [Header("Board Frame Fit")]
+
+    [SerializeField]
+    [Tooltip(
+    "Transparent inner opening of the frame sprite, " +
+    "measured in the source image's pixels."
+)]
+    private Vector2 boardFrameOpeningPixels =
+    new Vector2(
+        384f,
+        448f
+    );
+
+    [SerializeField]
+    [Tooltip(
+        "Moves the frame relative to the board. " +
+        "Values are measured in source-image pixels."
+    )]
+    private Vector2 boardFrameOffsetPixels =
+        Vector2.zero;
+
     [Header("Board Background")]
 
     [SerializeField, Min(0f)]
@@ -50,14 +71,94 @@ public sealed class BoardVisuals : MonoBehaviour
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
 
+    private float BoardFrameVisualScale
+    {
+        get
+        {
+            if (boardFrameSprite == null)
+            {
+                return 1f;
+            }
+
+            float pixelsPerUnit =
+                Mathf.Max(
+                    1f,
+                    boardFrameSprite.pixelsPerUnit
+                );
+
+            float openingWidthInWorldUnits =
+                Mathf.Max(
+                    1f,
+                    boardFrameOpeningPixels.x
+                ) /
+                pixelsPerUnit;
+
+            float openingHeightInWorldUnits =
+                Mathf.Max(
+                    1f,
+                    boardFrameOpeningPixels.y
+                ) /
+                pixelsPerUnit;
+
+            float requiredWidthScale =
+                board.LocalBoardWidth /
+                openingWidthInWorldUnits;
+
+            float requiredHeightScale =
+                board.LocalBoardHeight /
+                openingHeightInWorldUnits;
+
+            /*
+             * Use the larger requirement so the opening
+             * cannot cover gems on either axis.
+             */
+            return Mathf.Max(
+                requiredWidthScale,
+                requiredHeightScale
+            );
+        }
+    }
+
+    private Vector2 BoardFrameLocalOffset
+    {
+        get
+        {
+            if (boardFrameSprite == null)
+            {
+                return Vector2.zero;
+            }
+
+            float pixelsPerUnit =
+                Mathf.Max(
+                    1f,
+                    boardFrameSprite.pixelsPerUnit
+                );
+
+            return
+                boardFrameOffsetPixels /
+                pixelsPerUnit *
+                BoardFrameVisualScale;
+        }
+    }
+
     public float OuterLocalWidth =>
         boardFrameSprite != null
-            ? boardFrameSprite.bounds.size.x
+            ? boardFrameSprite.bounds.size.x *
+              BoardFrameVisualScale +
+              Mathf.Abs(
+                  BoardFrameLocalOffset.x
+              ) *
+              2f
             : board.LocalBoardWidth;
 
     public float OuterLocalHeight =>
         boardFrameSprite != null
-            ? boardFrameSprite.bounds.size.y
+            ? boardFrameSprite.bounds.size.y *
+              BoardFrameVisualScale +
+              Mathf.Abs(
+                  BoardFrameLocalOffset.y
+              ) *
+              2f
             : board.LocalBoardHeight;
 
     private void Awake()
@@ -144,15 +245,25 @@ public sealed class BoardVisuals : MonoBehaviour
             false
         );
 
-        frameObject.transform.localPosition =
-            Vector3.zero;
+        Vector2 frameOffset =
+            BoardFrameLocalOffset;
 
-        /*
-         * The frame is imported at 64 PPU, so its native
-         * size is already exactly 7.5 by 8.5 world units.
-         */
+        frameObject.transform.localPosition =
+            new Vector3(
+                frameOffset.x,
+                frameOffset.y,
+                0f
+            );
+
+        float frameScale =
+            BoardFrameVisualScale;
+
         frameObject.transform.localScale =
-            Vector3.one;
+            new Vector3(
+                frameScale,
+                frameScale,
+                1f
+            );
 
         SpriteRenderer frameRenderer =
             frameObject.AddComponent<SpriteRenderer>();
