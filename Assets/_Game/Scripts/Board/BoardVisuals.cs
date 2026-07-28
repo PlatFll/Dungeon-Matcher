@@ -33,7 +33,11 @@ public sealed class BoardVisuals : MonoBehaviour
     [Header("Cell Tiles")]
 
     [SerializeField]
-    private Sprite cellTileSprite;
+    [Tooltip(
+    "Visual tile variations randomly assigned across " +
+    "the board."
+)]
+    private Sprite[] cellTileSprites;
 
     [SerializeField, Range(0.1f, 1.2f)]
     [Tooltip(
@@ -44,6 +48,31 @@ public sealed class BoardVisuals : MonoBehaviour
     [SerializeField]
     private Color cellTileColor =
         Color.white;
+
+    [Header("Cell Tile Randomization")]
+
+    [SerializeField]
+    [Tooltip(
+        "When enabled, a different tile arrangement is " +
+        "generated each time the scene starts."
+    )]
+    private bool randomizeTileLayoutEachRun =
+        true;
+
+    [SerializeField]
+    [Tooltip(
+        "Used when Randomize Tile Layout Each Run is disabled."
+    )]
+    private int tileLayoutSeed =
+        12345;
+
+    [SerializeField]
+    [Tooltip(
+        "Tries to prevent identical tiles from appearing " +
+        "directly beside or underneath one another."
+    )]
+    private bool avoidAdjacentDuplicateTiles =
+        true;
 
     private BoardController board;
 
@@ -181,10 +210,10 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private void CreateCellTiles()
     {
-        if (cellTileSprite == null)
+        if (!HasValidCellTileSprite())
         {
             Debug.LogWarning(
-                "BoardVisuals has no cell tile sprite.",
+                "BoardVisuals has no valid cell tile sprites.",
                 this
             );
 
@@ -199,19 +228,23 @@ public sealed class BoardVisuals : MonoBehaviour
             false
         );
 
-        Vector2 spriteSize =
-            cellTileSprite.bounds.size;
+        int selectedSeed =
+            randomizeTileLayoutEachRun
+                ? System.Environment.TickCount
+                : tileLayoutSeed;
 
-        if (spriteSize.x <= 0f ||
-            spriteSize.y <= 0f)
-        {
-            Debug.LogError(
-                "The cell tile sprite has invalid bounds.",
-                this
-            );
+        /*
+         * Use a separate random generator so visual tile
+         * selection cannot change gameplay randomness.
+         */
+        System.Random tileRandom =
+            new System.Random(selectedSeed);
 
-            return;
-        }
+        Sprite[,] assignedSprites =
+            new Sprite[
+                board.Width,
+                board.Height
+            ];
 
         float targetTileSize =
             board.CellSize *
@@ -225,6 +258,40 @@ public sealed class BoardVisuals : MonoBehaviour
                  column < board.Width;
                  column++)
             {
+                Sprite selectedSprite =
+                    SelectCellTileSprite(
+                        tileRandom,
+                        assignedSprites,
+                        column,
+                        row
+                    );
+
+                if (selectedSprite == null)
+                {
+                    continue;
+                }
+
+                Vector2 spriteSize =
+                    selectedSprite.bounds.size;
+
+                if (spriteSize.x <= 0f ||
+                    spriteSize.y <= 0f)
+                {
+                    Debug.LogWarning(
+                        $"Cell tile sprite " +
+                        $"'{selectedSprite.name}' has " +
+                        $"invalid bounds.",
+                        this
+                    );
+
+                    continue;
+                }
+
+                assignedSprites[
+                    column,
+                    row
+                ] = selectedSprite;
+
                 GameObject tileObject =
                     new GameObject(
                         $"CellTile_{column}_{row}"
@@ -258,7 +325,7 @@ public sealed class BoardVisuals : MonoBehaviour
                     >();
 
                 tileRenderer.sprite =
-                    cellTileSprite;
+                    selectedSprite;
 
                 tileRenderer.color =
                     cellTileColor;
@@ -273,6 +340,114 @@ public sealed class BoardVisuals : MonoBehaviour
                         .VisibleInsideMask;
             }
         }
+    }
+
+    private bool HasValidCellTileSprite()
+    {
+        if (cellTileSprites == null ||
+            cellTileSprites.Length == 0)
+        {
+            return false;
+        }
+
+        foreach (Sprite sprite
+                 in cellTileSprites)
+        {
+            if (sprite != null)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private Sprite SelectCellTileSprite(
+        System.Random tileRandom,
+        Sprite[,] assignedSprites,
+        int column,
+        int row)
+    {
+        Sprite leftSprite =
+            column > 0
+                ? assignedSprites[
+                    column - 1,
+                    row
+                ]
+                : null;
+
+        Sprite lowerSprite =
+            row > 0
+                ? assignedSprites[
+                    column,
+                    row - 1
+                ]
+                : null;
+
+        /*
+         * Multiple attempts reduce visible clusters while
+         * still allowing layouts to remain naturally random.
+         */
+        const int maximumSelectionAttempts = 12;
+
+        Sprite fallbackSprite = null;
+
+        for (int attempt = 0;
+             attempt < maximumSelectionAttempts;
+             attempt++)
+        {
+            Sprite candidate =
+                cellTileSprites[
+                    tileRandom.Next(
+                        cellTileSprites.Length
+                    )
+                ];
+
+            if (candidate == null)
+            {
+                continue;
+            }
+
+            fallbackSprite ??=
+                candidate;
+
+            if (!avoidAdjacentDuplicateTiles)
+            {
+                return candidate;
+            }
+
+            bool matchesLeft =
+                candidate == leftSprite;
+
+            bool matchesBelow =
+                candidate == lowerSprite;
+
+            if (!matchesLeft &&
+                !matchesBelow)
+            {
+                return candidate;
+            }
+        }
+
+        /*
+         * This can happen when there is only one valid
+         * variation or when every alternative conflicts.
+         */
+        if (fallbackSprite != null)
+        {
+            return fallbackSprite;
+        }
+
+        foreach (Sprite sprite
+                 in cellTileSprites)
+        {
+            if (sprite != null)
+            {
+                return sprite;
+            }
+        }
+
+        return null;
     }
 
     private void CreateSpriteObject(
