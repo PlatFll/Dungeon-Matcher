@@ -3455,9 +3455,16 @@ MonoBehaviour:
   boardFrameSortingOrder: 100
   backgroundPadding: 0.04
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
-  cellTileSprite: {fileID: 21300000, guid: 13fa24f36febc744b8d9de6281c9bb80, type: 3}
+  cellTileSprites:
+  - {fileID: 21300000, guid: e2382b040f7ae1a46a5e7dadca886e11, type: 3}
+  - {fileID: 21300000, guid: 09012fd3de228aa42a58453f7ba448c4, type: 3}
+  - {fileID: 21300000, guid: 81d526c6c9d66aa48849994561a14e13, type: 3}
+  - {fileID: 21300000, guid: 59df859a178124d4599d9fd83d426860, type: 3}
   cellTileScale: 1
   cellTileColor: {r: 1, g: 1, b: 1, a: 1}
+  randomizeTileLayoutEachRun: 1
+  tileLayoutSeed: 12345
+  avoidAdjacentDuplicateTiles: 1
 --- !u!114 &1775734122
 MonoBehaviour:
   m_ObjectHideFlags: 0
