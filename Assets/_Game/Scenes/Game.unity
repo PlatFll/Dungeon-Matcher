@@ -371,8 +371,8 @@ RectTransform:
   - {fileID: 961790276}
   m_Father: {fileID: 1160412604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.03671706}
+  m_AnchorMax: {x: 1, y: 0.9492441}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1292,7 +1292,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 10.8515625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2346,6 +2346,7 @@ GameObject:
   - component: {fileID: 1061786183}
   - component: {fileID: 1061786182}
   - component: {fileID: 1061786184}
+  - component: {fileID: 1061786185}
   m_Layer: 5
   m_Name: WaveTracker
   m_TagString: Untagged
@@ -2426,6 +2427,21 @@ MonoBehaviour:
   waveController: {fileID: 362587654}
   waveText: {fileID: 1830979659}
   waveLabelFormat: WAVE {0}
+--- !u!114 &1061786185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061786180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1896dc95a174b454882461bcb7895e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoardTopUIFollower
+  boardVisuals: {fileID: 1775734121}
+  worldCamera: {fileID: 519420031}
+  gapAboveBoard: 4
 --- !u!1 &1145759834
 GameObject:
   m_ObjectHideFlags: 0
