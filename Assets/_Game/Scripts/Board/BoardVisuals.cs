@@ -76,6 +76,9 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private BoardController board;
 
+    private const string CellTileContainerName =
+    "CellTiles";
+
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
 
@@ -97,8 +100,8 @@ public sealed class BoardVisuals : MonoBehaviour
 
         CreateSquareSprite();
         CreateBoardFrame();
-        CreateCellTiles();
         CreateBoardMask();
+        CreateCellTiles();
     }
 
     private void CreateSquareSprite()
@@ -208,8 +211,53 @@ public sealed class BoardVisuals : MonoBehaviour
             SpriteMaskInteraction.None;
     }
 
+    private void RemoveExistingCellTileContainers()
+    {
+        Transform[] boardDescendants =
+            GetComponentsInChildren<Transform>(
+                true
+            );
+
+        foreach (Transform descendant
+                 in boardDescendants)
+        {
+            if (descendant == transform ||
+                descendant.name !=
+                    CellTileContainerName)
+            {
+                continue;
+            }
+
+            /*
+             * Disable immediately so an older tile layer
+             * cannot remain visible until Destroy finishes
+             * at the end of the frame.
+             */
+            descendant.gameObject.SetActive(false);
+
+            if (Application.isPlaying)
+            {
+                Destroy(
+                    descendant.gameObject
+                );
+            }
+            else
+            {
+                DestroyImmediate(
+                    descendant.gameObject
+                );
+            }
+        }
+    }
+
     private void CreateCellTiles()
     {
+        /*
+         * Remove any tile grid left behind by an earlier
+         * initialization or a Play Mode script reload.
+         */
+        RemoveExistingCellTileContainers();
+
         if (!HasValidCellTileSprite())
         {
             Debug.LogWarning(
@@ -221,7 +269,9 @@ public sealed class BoardVisuals : MonoBehaviour
         }
 
         GameObject tileContainer =
-            new GameObject("CellTiles");
+            new GameObject(
+                CellTileContainerName
+            );
 
         tileContainer.transform.SetParent(
             transform,
@@ -333,11 +383,10 @@ public sealed class BoardVisuals : MonoBehaviour
                 tileRenderer.sortingLayerName =
                     "BoardBackground";
 
-                tileRenderer.sortingOrder = 2;
+                tileRenderer.sortingOrder = 10;
 
                 tileRenderer.maskInteraction =
-                    SpriteMaskInteraction
-                        .VisibleInsideMask;
+                    SpriteMaskInteraction.None;
             }
         }
     }
