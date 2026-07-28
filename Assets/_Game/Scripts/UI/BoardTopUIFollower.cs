@@ -117,11 +117,15 @@ public sealed class BoardTopUIFollower :
         }
 
         /*
-         * Position the bottom of the plaque above the
-         * board instead of positioning its center there.
+         * Distance from the RectTransform pivot to the
+         * bottom edge of the plaque.
+         *
+         * Pivot Y = 0 means the pivot is already at the
+         * bottom, so this value becomes zero.
          */
-        float halfPlaqueHeight =
-            targetRect.rect.height * 0.5f;
+        float pivotToBottomEdge =
+            targetRect.rect.height *
+            targetRect.pivot.y;
 
         Vector3 newLocalPosition =
             targetRect.localPosition;
@@ -132,7 +136,7 @@ public sealed class BoardTopUIFollower :
         newLocalPosition.y =
             boardTopInParent.y +
             gapAboveBoard +
-            halfPlaqueHeight;
+            pivotToBottomEdge;
 
         targetRect.localPosition =
             newLocalPosition;
