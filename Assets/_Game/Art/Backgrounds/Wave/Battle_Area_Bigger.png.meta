@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 84fe6227a3c55a949bb28e7c1455d0fd
+guid: b7e11f50c9aabbb44b8119fe88d8f12c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -672268049839743081
-    second: Amber_tri_0
+      213: -6165898643270019212
+    second: Battle_Area_Bigger_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amber_tri_0
+      name: Battle_Area_Bigger_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 54
-        height: 56
+        x: 0
+        y: 73
+        width: 540
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79f157f35cf9ba6f0800000000000000
-      internalID: -672268049839743081
+      spriteID: 477d3de2ad35e6aa0800000000000000
+      internalID: -6165898643270019212
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Amber_tri_0: -672268049839743081
+      Battle_Area_Bigger_0: -6165898643270019212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
