@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 672ba588cb67fd24a983a799e2c560f0
+guid: 099dccbcbc9b4c74287d7e6975af7425
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7006938630301607282
-    second: Citrine_0
+      213: 152935856936865942
+    second: Topaz_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Citrine_0
+      name: Topaz_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 30
-        height: 64
+        x: 12
+        y: 1
+        width: 37
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 275e6165f85ad3160800000000000000
-      internalID: 7006938630301607282
+      spriteID: 69054220a565f1200800000000000000
+      internalID: 152935856936865942
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Citrine_0: 7006938630301607282
+      Topaz_0: 152935856936865942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

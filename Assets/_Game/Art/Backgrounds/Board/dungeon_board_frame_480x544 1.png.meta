@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 09012fd3de228aa42a58453f7ba448c4
+guid: e6d69ce84643e6f4e86fd5940630b19e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6618879316288476920
-    second: sprite_2_64x64_square_0
+      213: -1560794286248181672
+    second: dungeon_board_frame_480x544 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_2_64x64_square_0
+      name: dungeon_board_frame_480x544 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 480
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 809e17584540524a0800000000000000
-      internalID: -6618879316288476920
+      spriteID: 850c7b8bdd1f65ae0800000000000000
+      internalID: -1560794286248181672
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sprite_2_64x64_square_0: -6618879316288476920
+      dungeon_board_frame_480x544 1_0: -1560794286248181672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

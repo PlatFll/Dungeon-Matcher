@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 335071e7adabaa641aaf8467a01ef2cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d596b3f7dbdaa554589ca6dc9b476334, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3392,15 +3392,15 @@ MonoBehaviour:
   width: 7
   height: 8
   cellSize: 1
-  gemScale: 0.1
+  gemScale: 0.9
   gemPrefab: {fileID: 2436599767616786368, guid: 3ce9495f8b649cb4bb59bdc0f781f4c1, type: 3}
   gemSprites:
-  - {fileID: 21300000, guid: 8e15e946904760d4bbb5060dae51d96a, type: 3}
-  - {fileID: 21300000, guid: 672ba588cb67fd24a983a799e2c560f0, type: 3}
-  - {fileID: 21300000, guid: b6aa4fd2d9c272046bb397f2f6863216, type: 3}
-  - {fileID: 21300000, guid: d2a6ad94faa46c449aeb7e0583dc114e, type: 3}
-  - {fileID: 21300000, guid: d04f3840662faac42b73f5966b824344, type: 3}
-  - {fileID: 21300000, guid: 2c06a6a3f176bdb429f57efbcfb67cfb, type: 3}
+  - {fileID: 21300000, guid: 5ea1590b64ce7ab4b902531d1e25273b, type: 3}
+  - {fileID: 21300000, guid: 1c75de53cc88006469c5163f03fac3ab, type: 3}
+  - {fileID: 21300000, guid: 54f523362ff10e3489c0b5eb3d75eee2, type: 3}
+  - {fileID: 21300000, guid: 94e8b92a2da51c741b42163c4b51f740, type: 3}
+  - {fileID: 21300000, guid: 6dfa506764c5ba047a0934ed5c751daf, type: 3}
+  - {fileID: 21300000, guid: 0816b12990010ce4a88566a78b4bb76b, type: 3}
   swipeMinDistance: 40
   swapDuration: 0.15
   invalidSwapPause: 0.08
@@ -3449,17 +3449,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85068aa6cd070b64fad72ac497093558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardVisuals
-  boardFrameSprite: {fileID: 21300000, guid: 4692fd65467dd3a4b961da4ce062761c, type: 3}
+  boardFrameSprite: {fileID: 21300000, guid: e6d69ce84643e6f4e86fd5940630b19e, type: 3}
   boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
   boardFrameSortingLayer: Gems
   boardFrameSortingOrder: 100
   backgroundPadding: 0.04
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
   cellTileSprites:
-  - {fileID: 21300000, guid: e2382b040f7ae1a46a5e7dadca886e11, type: 3}
-  - {fileID: 21300000, guid: 09012fd3de228aa42a58453f7ba448c4, type: 3}
-  - {fileID: 21300000, guid: 81d526c6c9d66aa48849994561a14e13, type: 3}
-  - {fileID: 21300000, guid: 59df859a178124d4599d9fd83d426860, type: 3}
+  - {fileID: 21300000, guid: efd22062d9bf35040ac4922249ea6a7b, type: 3}
+  - {fileID: 21300000, guid: 8d1272af1ad6c4c42acffc6f3b3e0ad5, type: 3}
+  - {fileID: 21300000, guid: d3d57d54fd0d503418ec909442ad307b, type: 3}
+  - {fileID: 21300000, guid: aa8c190c2c6a43748b9b7b624143f829, type: 3}
+  - {fileID: 21300000, guid: bb22801d24fa11748bb9f079f6f2fc9b, type: 3}
   cellTileScale: 1
   cellTileColor: {r: 1, g: 1, b: 1, a: 1}
   randomizeTileLayoutEachRun: 1

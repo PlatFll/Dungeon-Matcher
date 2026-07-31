@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6aa4fd2d9c272046bb397f2f6863216
+guid: 54f523362ff10e3489c0b5eb3d75eee2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5339210281868379755
-    second: topaz_64x64_0
+      213: 1584692585226149869
+    second: Amber_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: topaz_64x64_0
+      name: Amber_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 2
-        width: 45
-        height: 61
+        x: 7
+        y: 4
+        width: 50
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5993f18798057e5b0800000000000000
-      internalID: -5339210281868379755
+      spriteID: def999c9285fdf510800000000000000
+      internalID: 1584692585226149869
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      topaz_64x64_0: -5339210281868379755
+      Amber_0: 1584692585226149869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
