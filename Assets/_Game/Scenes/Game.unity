@@ -580,8 +580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityButtonUI
   abilityButton: {fileID: 313704320}
   abilityIcon: {fileID: 462946877}
-  energyFill: {fileID: 0}
-  energyBarFillMask: {fileID: 1796838452}
+  energyFill: {fileID: 2114041982}
+  energyBarFillMask: {fileID: 0}
   playerAbilityController: {fileID: 748065090}
   energyFillSmoothTime: 0.18
   unavailableIconColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
@@ -3179,6 +3179,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1820463443}
+  - {fileID: 2114041981}
   - {fileID: 1796838452}
   m_Father: {fileID: 313704319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -3727,8 +3728,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2114041981}
+  m_Children: []
   m_Father: {fileID: 1621978074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -4685,12 +4685,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114041980}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1796838452}
+  m_Father: {fileID: 1621978074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -4718,11 +4718,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 78641b8aef5cbcb4a82c49a79e636069, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 0
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
