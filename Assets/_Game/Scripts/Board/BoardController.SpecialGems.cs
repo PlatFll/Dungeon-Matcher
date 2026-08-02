@@ -538,9 +538,15 @@ public partial class BoardController
 
             HashSet<Gem> activationSet;
 
+            List<BombTriggeredCrystalRequest>
+                triggeredCrystalRequests = null;
+
             /*
              * Existing row or column bombs of the selected
              * color still activate normally when reached.
+             *
+             * Any crystal crossed by the bomb is preserved and
+             * queued instead of being silently removed.
              */
             if (targetGem.SpecialType ==
                     GemSpecialType.RowBomb ||
@@ -549,7 +555,9 @@ public partial class BoardController
             {
                 activationSet =
                     BuildBombExpandedClearSet(
-                        activationSeed
+                        activationSeed,
+                        true,
+                        out triggeredCrystalRequests
                     );
             }
             else
@@ -594,8 +602,18 @@ public partial class BoardController
                 null
             );
 
+            /*
+             * The bomb explosion has finished, so activate any
+             * crystals that it crossed before continuing the
+             * original crystal sequence.
+             */
+            yield return
+                ResolveBombTriggeredCrystalRequests(
+                    triggeredCrystalRequests
+                );
+
             if (crystalActivationStagger > 0f &&
-                index <
+                            index <
                     orderedTargets.Count - 1)
             {
                 yield return new WaitForSeconds(
@@ -645,7 +663,9 @@ public partial class BoardController
     private HashSet<Gem>
         BuildConvertedCrystalBombActivationSet(
             Gem activatedBomb,
-            HashSet<Gem> pendingConvertedBombs)
+            HashSet<Gem> pendingConvertedBombs,
+            List<BombTriggeredCrystalRequest>
+                triggeredCrystalRequests)
     {
         HashSet<Gem> gemsToClear =
             new HashSet<Gem>();
@@ -692,6 +712,7 @@ public partial class BoardController
                             bomb.Row,
                             activatedBomb,
                             pendingConvertedBombs,
+                            triggeredCrystalRequests,
                             gemsToClear,
                             pendingBombs
                         );
@@ -709,6 +730,7 @@ public partial class BoardController
                             row,
                             activatedBomb,
                             pendingConvertedBombs,
+                            triggeredCrystalRequests,
                             gemsToClear,
                             pendingBombs
                         );
@@ -726,6 +748,8 @@ public partial class BoardController
         int row,
         Gem activatedBomb,
         HashSet<Gem> pendingConvertedBombs,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
         HashSet<Gem> gemsToClear,
         Queue<Gem> pendingBombs)
     {
@@ -741,9 +765,26 @@ public partial class BoardController
         }
 
         /*
-         * Converted bombs that have not reached their turn
-         * remain on the board, even when an earlier blast
-         * passes through their position.
+         * A crystal hit by this explosion must not be added
+         * to the clear set. Keep it on the board and queue
+         * its own activation instead.
+         */
+        if (gem.SpecialType ==
+            GemSpecialType.ColorCrystal)
+        {
+            TryAddBombTriggeredCrystalRequest(
+                gem,
+                activatedBomb,
+                triggeredCrystalRequests
+            );
+
+            return;
+        }
+
+        /*
+         * Converted bombs that have not reached their own
+         * activation turn remain protected when an earlier
+         * converted bomb crosses them.
          */
         bool isProtectedConvertedBomb =
             gem != activatedBomb &&
@@ -759,8 +800,8 @@ public partial class BoardController
             gemsToClear.Add(gem);
 
         /*
-         * Ordinary pre-existing bombs caught in the blast
-         * may still chain-react normally.
+         * Ordinary pre-existing bombs may still join the
+         * explosion chain.
          */
         if (wasAdded &&
             (
@@ -857,6 +898,12 @@ public partial class BoardController
         HashSet<Gem> noRewardExclusions =
             new HashSet<Gem>();
 
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests =
+                new List<
+                    BombTriggeredCrystalRequest
+                >();
+
         for (int index = 0;
              index < orderedTargets.Count;
              index++)
@@ -886,7 +933,8 @@ public partial class BoardController
             HashSet<Gem> activationSet =
                 BuildConvertedCrystalBombActivationSet(
                     activatedBomb,
-                    pendingConvertedBombs
+                    pendingConvertedBombs,
+                    triggeredCrystalRequests
                 );
 
             activationSet.RemoveWhere(
@@ -930,6 +978,16 @@ public partial class BoardController
             }
         }
 
+        /*
+         * All converted bombs have finished. Crystals
+         * crossed by those explosions now activate in
+         * the order in which they were reached.
+         */
+        yield return
+            ResolveBombTriggeredCrystalRequests(
+                triggeredCrystalRequests
+            );
+
         if (cascadePause > 0f)
         {
             yield return new WaitForSeconds(
@@ -967,6 +1025,40 @@ public partial class BoardController
             $"{targetGemType} gems into " +
             $"{convertedBombType} gems."
         );
+    }
+
+    private IEnumerator
+        ResolveBombTriggeredCrystalRequests(
+            List<BombTriggeredCrystalRequest>
+                triggeredCrystalRequests)
+    {
+        if (triggeredCrystalRequests == null ||
+            triggeredCrystalRequests.Count == 0)
+        {
+            yield break;
+        }
+
+        for (int index = 0;
+             index < triggeredCrystalRequests.Count;
+             index++)
+        {
+            BombTriggeredCrystalRequest request =
+                triggeredCrystalRequests[index];
+
+            /*
+             * Another crystal activation may already have
+             * destroyed this crystal before its queued turn.
+             */
+            if (!request.IsValid)
+            {
+                continue;
+            }
+
+            yield return
+                ResolveBombTriggeredCrystalSequence(
+                    request
+                );
+        }
     }
 
     private IEnumerator
@@ -1036,6 +1128,12 @@ public partial class BoardController
         HashSet<Gem> noRewardExclusions =
             new HashSet<Gem>();
 
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests =
+                new List<
+                    BombTriggeredCrystalRequest
+                >();
+
         for (int index = 0;
              index < orderedTargets.Count;
              index++)
@@ -1065,7 +1163,8 @@ public partial class BoardController
             HashSet<Gem> activationSet =
                 BuildConvertedCrystalBombActivationSet(
                     activatedBomb,
-                    pendingConvertedBombs
+                    pendingConvertedBombs,
+                    triggeredCrystalRequests
                 );
 
             activationSet.RemoveWhere(
@@ -1108,6 +1207,15 @@ public partial class BoardController
                 );
             }
         }
+
+        /*
+         * Continue the chain if any of these converted
+         * bombs crossed another crystal.
+         */
+        yield return
+            ResolveBombTriggeredCrystalRequests(
+                triggeredCrystalRequests
+            );
 
         Debug.Log(
             $"Bomb-triggered crystal converted all " +
