@@ -58,6 +58,14 @@ public partial class BoardController
 
     private bool isDoubleCrystalCharging;
 
+    private readonly HashSet<Gem>
+    chargingQueuedDoubleCrystals =
+        new HashSet<Gem>();
+
+    private readonly Dictionary<Gem, Coroutine>
+        queuedDoubleCrystalChargeRoutines =
+            new Dictionary<Gem, Coroutine>();
+
     private static bool
         IsDoubleColorCrystalSwap(
             Gem first,
@@ -84,21 +92,43 @@ public partial class BoardController
         }
 
         /*
-         * The crystal moved by the player explodes first.
-         * It receives no damage or energy reward for its
-         * hidden underlying GemType.
+         * Capture every additional crystal before any sweep
+         * begins. These crystals will remain protected until
+         * their own full-board activation turn.
+         */
+        List<Gem> queuedCrystals =
+            BuildAdditionalColorCrystalQueue(
+                firstCrystal,
+                waitingCrystal
+            );
+
+        HashSet<Gem> preservedCrystals =
+            new HashSet<Gem>(
+                queuedCrystals
+            );
+
+        /*
+         * The second crystal in the original swap must also
+         * survive the first sweep.
+         */
+        preservedCrystals.Add(
+            waitingCrystal
+        );
+
+        /*
+         * The crystal moved by the player activates first.
          */
         yield return ClearCrystalWithoutRewards(
             firstCrystal
         );
 
         /*
-         * The second crystal stays anchored in its current
-         * board cell while the first board clear occurs.
+         * The second swapped crystal performs the existing
+         * charge animation while waiting for sweep two.
          */
         isDoubleCrystalCharging = true;
 
-        Coroutine chargeRoutine =
+        Coroutine waitingCrystalChargeRoutine =
             StartCoroutine(
                 AnimateDoubleCrystalCharge(
                     waitingCrystal
@@ -106,31 +136,36 @@ public partial class BoardController
             );
 
         /*
-         * Record combat rewards once for the entire first
-         * sweep, rather than once per individual column.
+         * Every additional crystal begins charging now and
+         * remains charged until its own turn.
+         */
+        foreach (Gem queuedCrystal in queuedCrystals)
+        {
+            StartQueuedDoubleCrystalCharge(
+                queuedCrystal
+            );
+        }
+
+        /*
+         * First sweep: clear everything except the waiting
+         * swapped crystal and all additional queued crystals.
          */
         HashSet<Gem> firstSweepTargets =
             BuildCurrentGemSetExcept(
-                waitingCrystal
+                preservedCrystals
             );
 
         ReportDoubleCrystalSweepToCombat(
             firstSweepTargets
         );
 
-        /*
-         * First explosion clears the board from left
-         * to right, one complete column at a time.
-         */
         yield return ClearBoardColumnByColumn(
-            waitingCrystal
+            preservedCrystals
         );
 
         /*
-         * Normal collapse cannot be used here because it
-         * would move the waiting crystal. Instead, fill
-         * every null cell directly while leaving its
-         * current cell occupied and anchored.
+         * Fill every cleared position without moving any of
+         * the preserved crystals.
          */
         yield return
             RefillEmptyCellsAroundCrystal();
@@ -144,30 +179,40 @@ public partial class BoardController
 
         isDoubleCrystalCharging = false;
 
-        if (chargeRoutine != null)
+        if (waitingCrystalChargeRoutine != null)
         {
-            yield return chargeRoutine;
+            yield return
+                waitingCrystalChargeRoutine;
         }
 
         /*
-         * The charged crystal now performs the second
-         * explosion.
+         * The second crystal from the original swap now
+         * activates.
          */
         yield return ClearCrystalWithoutRewards(
             waitingCrystal
         );
 
+        preservedCrystals.Remove(
+            waitingCrystal
+        );
+
+        /*
+         * Second sweep: clear the refilled board while still
+         * protecting every additional queued crystal.
+         */
         HashSet<Gem> secondSweepTargets =
-            BuildCurrentGemSetExcept(null);
+            BuildCurrentGemSetExcept(
+                preservedCrystals
+            );
 
         ReportDoubleCrystalSweepToCombat(
             secondSweepTargets
         );
 
-        /*
-         * Second explosion clears from the top row down.
-         */
-        yield return ClearBoardRowByRow();
+        yield return ClearBoardRowByRow(
+            preservedCrystals
+        );
 
         if (cascadePause > 0f)
         {
@@ -177,10 +222,14 @@ public partial class BoardController
         }
 
         /*
-         * The entire board is empty now, so the normal
-         * collapse and refill method is safe again.
+         * Every additional crystal now receives one complete
+         * full-board activation. The board refills before each
+         * queued crystal activates.
          */
-        yield return CollapseAndRefillBoard();
+        yield return
+            ResolveQueuedDoubleCrystalChain(
+                queuedCrystals
+            );
 
         if (cascadePause > 0f)
         {
@@ -206,7 +255,9 @@ public partial class BoardController
         }
 
         Debug.Log(
-            "Double color crystal activation complete."
+            $"Double color crystal activation complete. " +
+            $"{queuedCrystals.Count} additional crystal(s) " +
+            $"joined the chain."
         );
     }
 
@@ -236,7 +287,7 @@ public partial class BoardController
     }
 
     private IEnumerator ClearBoardColumnByColumn(
-        Gem gemToPreserve)
+        HashSet<Gem> gemsToPreserve)
     {
         for (int column = 0;
              column < width;
@@ -255,8 +306,17 @@ public partial class BoardController
                         row
                     );
 
-                if (gem == null ||
-                    gem == gemToPreserve)
+                if (gem == null)
+                {
+                    continue;
+                }
+
+                /*
+                 * Waiting and queued crystals survive the
+                 * sweep instead of entering ClearMatches.
+                 */
+                if (gemsToPreserve != null &&
+                    gemsToPreserve.Contains(gem))
                 {
                     continue;
                 }
@@ -282,7 +342,8 @@ public partial class BoardController
         }
     }
 
-    private IEnumerator ClearBoardRowByRow()
+    private IEnumerator ClearBoardRowByRow(
+        HashSet<Gem> gemsToPreserve)
     {
         /*
          * Internal row zero is the bottom of the board,
@@ -306,10 +367,18 @@ public partial class BoardController
                         row
                     );
 
-                if (gem != null)
+                if (gem == null)
                 {
-                    rowGems.Add(gem);
+                    continue;
                 }
+
+                if (gemsToPreserve != null &&
+                    gemsToPreserve.Contains(gem))
+                {
+                    continue;
+                }
+
+                rowGems.Add(gem);
             }
 
             if (rowGems.Count > 0)
@@ -499,9 +568,332 @@ public partial class BoardController
         }
     }
 
+    private List<Gem>
+    BuildAdditionalColorCrystalQueue(
+        Gem firstCrystal,
+        Gem waitingCrystal)
+    {
+        List<Gem> queuedCrystals =
+            new List<Gem>();
+
+        for (int row = 0;
+             row < height;
+             row++)
+        {
+            for (int column = 0;
+                 column < width;
+                 column++)
+            {
+                Gem gem =
+                    GetGem(
+                        column,
+                        row
+                    );
+
+                if (gem == null ||
+                    gem == firstCrystal ||
+                    gem == waitingCrystal ||
+                    gem.SpecialType !=
+                        GemSpecialType.ColorCrystal)
+                {
+                    continue;
+                }
+
+                queuedCrystals.Add(gem);
+            }
+        }
+
+        /*
+         * Use a stable board order so repeated tests produce
+         * understandable activation sequencing.
+         */
+        queuedCrystals.Sort(
+            CompareGemsByGridPosition
+        );
+
+        return queuedCrystals;
+    }
+
+    private void StartQueuedDoubleCrystalCharge(
+    Gem crystal)
+    {
+        if (crystal == null ||
+            queuedDoubleCrystalChargeRoutines
+                .ContainsKey(crystal))
+        {
+            return;
+        }
+
+        chargingQueuedDoubleCrystals.Add(
+            crystal
+        );
+
+        Coroutine chargeRoutine =
+            StartCoroutine(
+                AnimateQueuedDoubleCrystalCharge(
+                    crystal
+                )
+            );
+
+        queuedDoubleCrystalChargeRoutines.Add(
+            crystal,
+            chargeRoutine
+        );
+    }
+
+    private void StartQueuedDoubleCrystalCharge(
+    Gem crystal)
+    {
+        if (crystal == null ||
+            queuedDoubleCrystalChargeRoutines
+                .ContainsKey(crystal))
+        {
+            return;
+        }
+
+        chargingQueuedDoubleCrystals.Add(
+            crystal
+        );
+
+        Coroutine chargeRoutine =
+            StartCoroutine(
+                AnimateQueuedDoubleCrystalCharge(
+                    crystal
+                )
+            );
+
+        queuedDoubleCrystalChargeRoutines.Add(
+            crystal,
+            chargeRoutine
+        );
+    }
+
+    private IEnumerator
+    StopQueuedDoubleCrystalCharge(
+        Gem crystal)
+    {
+        if (crystal == null)
+        {
+            yield break;
+        }
+
+        chargingQueuedDoubleCrystals.Remove(
+            crystal
+        );
+
+        if (!queuedDoubleCrystalChargeRoutines
+                .TryGetValue(
+                    crystal,
+                    out Coroutine chargeRoutine))
+        {
+            yield break;
+        }
+
+        queuedDoubleCrystalChargeRoutines.Remove(
+            crystal
+        );
+
+        if (chargeRoutine != null)
+        {
+            yield return chargeRoutine;
+        }
+    }
+
+    private IEnumerator
+    AnimateQueuedDoubleCrystalCharge(
+        Gem crystal)
+    {
+        if (crystal == null)
+        {
+            yield break;
+        }
+
+        Vector3 originalScale =
+            crystal.transform.localScale;
+
+        while (crystal != null &&
+               chargingQueuedDoubleCrystals.Contains(
+                   crystal))
+        {
+            float pulse =
+                (
+                    Mathf.Sin(
+                        Time.time *
+                        doubleCrystalShakeSpeed *
+                        0.18f
+                    ) +
+                    1f
+                ) *
+                0.5f;
+
+            float scaleMultiplier =
+                Mathf.Lerp(
+                    1f,
+                    doubleCrystalChargeScale,
+                    pulse
+                );
+
+            crystal.transform.localScale =
+                originalScale *
+                scaleMultiplier;
+
+            yield return null;
+        }
+
+        if (crystal != null)
+        {
+            crystal.transform.localScale =
+                originalScale;
+        }
+    }
+
+    private bool IsQueuedCrystalValid(
+    Gem crystal)
+    {
+        if (crystal == null ||
+            crystal.SpecialType !=
+                GemSpecialType.ColorCrystal)
+        {
+            return false;
+        }
+
+        return GetGem(
+            crystal.Column,
+            crystal.Row
+        ) == crystal;
+    }
+
+    private IEnumerator
+    ResolveQueuedDoubleCrystalChain(
+        List<Gem> queuedCrystals)
+    {
+        HashSet<Gem> remainingCrystals =
+            new HashSet<Gem>();
+
+        if (queuedCrystals != null)
+        {
+            foreach (Gem crystal in queuedCrystals)
+            {
+                if (IsQueuedCrystalValid(crystal))
+                {
+                    remainingCrystals.Add(
+                        crystal
+                    );
+                }
+            }
+        }
+
+        int completedExtraSweeps = 0;
+
+        if (queuedCrystals != null)
+        {
+            foreach (Gem queuedCrystal
+                     in queuedCrystals)
+            {
+                if (!remainingCrystals.Contains(
+                        queuedCrystal))
+                {
+                    continue;
+                }
+
+                if (!IsQueuedCrystalValid(
+                        queuedCrystal))
+                {
+                    remainingCrystals.Remove(
+                        queuedCrystal
+                    );
+
+                    yield return
+                        StopQueuedDoubleCrystalCharge(
+                            queuedCrystal
+                        );
+
+                    continue;
+                }
+
+                /*
+                 * The preceding sweep left the board empty
+                 * except for queued crystals. Refill first so
+                 * this crystal receives a rewarding full board
+                 * to destroy.
+                 */
+                yield return
+                    RefillEmptyCellsAroundCrystal();
+
+                if (doubleCrystalSettlePause > 0f)
+                {
+                    yield return new WaitForSeconds(
+                        doubleCrystalSettlePause
+                    );
+                }
+
+                yield return
+                    StopQueuedDoubleCrystalCharge(
+                        queuedCrystal
+                    );
+
+                /*
+                 * Consume this crystal without granting rewards
+                 * for its hidden original color.
+                 */
+                yield return
+                    ClearCrystalWithoutRewards(
+                        queuedCrystal
+                    );
+
+                remainingCrystals.Remove(
+                    queuedCrystal
+                );
+
+                HashSet<Gem> sweepTargets =
+                    BuildCurrentGemSetExcept(
+                        remainingCrystals
+                    );
+
+                ReportDoubleCrystalSweepToCombat(
+                    sweepTargets
+                );
+
+                /*
+                 * Alternate sweep direction so consecutive
+                 * crystal activations are visually distinct.
+                 */
+                if (completedExtraSweeps % 2 == 0)
+                {
+                    yield return
+                        ClearBoardColumnByColumn(
+                            remainingCrystals
+                        );
+                }
+                else
+                {
+                    yield return
+                        ClearBoardRowByRow(
+                            remainingCrystals
+                        );
+                }
+
+                completedExtraSweeps++;
+
+                if (cascadePause > 0f)
+                {
+                    yield return new WaitForSeconds(
+                        cascadePause
+                    );
+                }
+            }
+        }
+
+        /*
+         * The last queued crystal has now emptied the board.
+         * Perform the normal final refill.
+         */
+        yield return CollapseAndRefillBoard();
+    }
+
     private HashSet<Gem>
         BuildCurrentGemSetExcept(
-            Gem gemToExclude)
+            HashSet<Gem> gemsToExclude)
     {
         HashSet<Gem> currentGems =
             new HashSet<Gem>();
@@ -520,8 +912,13 @@ public partial class BoardController
                         row
                     );
 
-                if (gem == null ||
-                    gem == gemToExclude)
+                if (gem == null)
+                {
+                    continue;
+                }
+
+                if (gemsToExclude != null &&
+                    gemsToExclude.Contains(gem))
                 {
                     continue;
                 }
