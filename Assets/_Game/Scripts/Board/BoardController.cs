@@ -731,25 +731,14 @@ public partial class BoardController : MonoBehaviour
             );
 
             /*
-             * The original bomb explosion clears first. Any crystal
-             * reached by that explosion then activates before the
-             * board collapses and refills.
+             * Crystals crossed by the explosion remain protected.
+             * They charge while the board refills, then activate
+             * against the newly populated board.
              */
-            foreach (
-                BombTriggeredCrystalRequest request
-                in triggeredCrystalRequests)
-            {
-                if (!request.IsValid)
-                {
-                    continue;
-                }
-
-                yield return
-                    ResolveBombTriggeredCrystalSequence(
-                        request
-                    );
-            }
-
+            yield return
+                ResolveBombTriggeredCrystalRequests(
+                    triggeredCrystalRequests
+                );
             if (cascadePause > 0f)
             {
                 yield return

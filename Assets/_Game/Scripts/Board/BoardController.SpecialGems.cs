@@ -3,7 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public partial class BoardController
+
 {
+
+    [Header("Bomb-Triggered Crystal Charge")]
+
+    [SerializeField, Range(1f, 1.5f)]
+    [Tooltip(
+        "Maximum scale reached while a crystal waits " +
+        "for the board to refill."
+    )]
+    private float triggeredCrystalChargeScale =
+        1.16f;
+
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Speed of the charging crystal pulse."
+    )]
+    private float triggeredCrystalChargePulseSpeed =
+        4f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Small pause after the refill settles before " +
+        "the queued crystal activates."
+    )]
+    private float triggeredCrystalSettlePause =
+        0.12f;
+
+    private readonly HashSet<Gem>
+        chargingTriggeredCrystals =
+            new HashSet<Gem>();
+
     private List<SpecialGemCreationRequest>
         BuildSpecialGemCreationRequests(
             HashSet<Gem> matches,
@@ -1045,19 +1076,126 @@ public partial class BoardController
             BombTriggeredCrystalRequest request =
                 triggeredCrystalRequests[index];
 
+            if (!request.IsValid)
+            {
+                continue;
+            }
+
+            Gem waitingCrystal =
+                request.CrystalGem;
+
             /*
-             * Another crystal activation may already have
-             * destroyed this crystal before its queued turn.
+             * Start visibly charging before the board begins
+             * collapsing and refilling.
+             */
+            Coroutine chargeRoutine =
+                StartCoroutine(
+                    AnimateTriggeredCrystalCharge(
+                        waitingCrystal
+                    )
+                );
+
+            /*
+             * The explosion that found this crystal has already
+             * created empty spaces. Refill them before selecting
+             * gems of the triggering bomb's color.
+             *
+             * The crystal remains alive and moves normally with
+             * the collapsing board.
+             */
+            yield return CollapseAndRefillBoard();
+
+            if (triggeredCrystalSettlePause > 0f)
+            {
+                yield return new WaitForSeconds(
+                    triggeredCrystalSettlePause
+                );
+            }
+
+            /*
+             * End the charge animation while keeping the crystal
+             * at its new settled board position.
+             */
+            chargingTriggeredCrystals.Remove(
+                waitingCrystal
+            );
+
+            if (chargeRoutine != null)
+            {
+                yield return chargeRoutine;
+            }
+
+            /*
+             * Another part of the chain may already have consumed
+             * this crystal while the board was resolving.
              */
             if (!request.IsValid)
             {
                 continue;
             }
 
+            /*
+             * BuildBombTriggeredCrystalTargetSet is called inside
+             * this sequence, so it now scans the newly refilled
+             * board rather than the depleted board.
+             */
             yield return
                 ResolveBombTriggeredCrystalSequence(
                     request
                 );
+        }
+    }
+
+    private IEnumerator
+        AnimateTriggeredCrystalCharge(
+            Gem crystal)
+    {
+        if (crystal == null)
+        {
+            yield break;
+        }
+
+        Vector3 originalScale =
+            crystal.transform.localScale;
+
+        chargingTriggeredCrystals.Add(
+            crystal
+        );
+
+        while (crystal != null &&
+               chargingTriggeredCrystals.Contains(
+                   crystal))
+        {
+            float pulse =
+                (
+                    Mathf.Sin(
+                        Time.time *
+                        triggeredCrystalChargePulseSpeed *
+                        Mathf.PI *
+                        2f
+                    ) +
+                    1f
+                ) *
+                0.5f;
+
+            float scaleMultiplier =
+                Mathf.Lerp(
+                    1f,
+                    triggeredCrystalChargeScale,
+                    pulse
+                );
+
+            crystal.transform.localScale =
+                originalScale *
+                scaleMultiplier;
+
+            yield return null;
+        }
+
+        if (crystal != null)
+        {
+            crystal.transform.localScale =
+                originalScale;
         }
     }
 
