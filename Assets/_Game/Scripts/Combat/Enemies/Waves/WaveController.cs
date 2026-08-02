@@ -320,11 +320,21 @@ public sealed class WaveController : MonoBehaviour
             }
         }
 
+        /*
+         * The complete spawn loop has now finished.
+         */
         isSpawningWave = false;
 
         IsWaveActive =
             spawnedEnemyCount > 0;
 
+        /*
+         * This is the no-enemies-spawned block.
+         *
+         * isSpawningWave was already set to false directly
+         * above, so this failed wave cannot remain marked
+         * as spawning.
+         */
         if (!IsWaveActive)
         {
             Debug.LogError(
@@ -335,6 +345,13 @@ public sealed class WaveController : MonoBehaviour
             waveSpawnCoroutine = null;
             yield break;
         }
+
+        /*
+         * The first enemy may have been defeated before the
+         * remaining enemies finished spawning. Recheck wave
+         * completion now that spawning has ended.
+         */
+        TryCompleteWaveAfterDeaths();
 
         Debug.Log(
             $"Wave {currentWave} started using rule " +
