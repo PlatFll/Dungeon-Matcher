@@ -641,32 +641,7 @@ public partial class BoardController
         );
     }
 
-    private void StartQueuedDoubleCrystalCharge(
-    Gem crystal)
-    {
-        if (crystal == null ||
-            queuedDoubleCrystalChargeRoutines
-                .ContainsKey(crystal))
-        {
-            return;
-        }
 
-        chargingQueuedDoubleCrystals.Add(
-            crystal
-        );
-
-        Coroutine chargeRoutine =
-            StartCoroutine(
-                AnimateQueuedDoubleCrystalCharge(
-                    crystal
-                )
-            );
-
-        queuedDoubleCrystalChargeRoutines.Add(
-            crystal,
-            chargeRoutine
-        );
-    }
 
     private IEnumerator
     StopQueuedDoubleCrystalCharge(
