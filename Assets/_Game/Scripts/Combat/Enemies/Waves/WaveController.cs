@@ -110,6 +110,8 @@ public sealed class WaveController : MonoBehaviour
     private Coroutine advanceWaveCoroutine;
     private Coroutine waveSpawnCoroutine;
 
+    private bool isSpawningWave;
+
     private static readonly EnemyCategory[]
         fallbackCategoryOrder =
         {
@@ -177,11 +179,13 @@ public sealed class WaveController : MonoBehaviour
 
         if (!ValidateReferences())
         {
+            isSpawningWave = false;
             waveSpawnCoroutine = null;
             yield break;
         }
 
         ClearCurrentWave();
+        isSpawningWave = true;
 
         CurrentPlan =
             waveSpawnProfile.CreatePlan(currentWave);
@@ -194,6 +198,7 @@ public sealed class WaveController : MonoBehaviour
                 this
             );
 
+            isSpawningWave = false;
             waveSpawnCoroutine = null;
             yield break;
         }
@@ -294,9 +299,16 @@ public sealed class WaveController : MonoBehaviour
             selectedDefinitions.Add(definition);
             activeEnemies.Add(enemy);
 
-            EnemySpawned?.Invoke(enemy);
-
             spawnedEnemyCount++;
+
+            /*
+             * Combat becomes active as soon as the first enemy
+             * successfully enters the wave. The remaining enemies
+             * may continue spawning afterward.
+             */
+            IsWaveActive = true;
+
+            EnemySpawned?.Invoke(enemy);
 
             if (slotIndex < plannedEnemyCount - 1 &&
                 delayBetweenEnemySpawns > 0f)
@@ -307,6 +319,8 @@ public sealed class WaveController : MonoBehaviour
                     );
             }
         }
+
+        isSpawningWave = false;
 
         IsWaveActive =
             spawnedEnemyCount > 0;
@@ -676,6 +690,15 @@ public sealed class WaveController : MonoBehaviour
     private void TryCompleteWaveAfterDeaths()
     {
         if (!waitingForDeathEffects)
+        {
+            return;
+        }
+
+        /*
+         * Do not complete the wave while later planned enemies
+         * are still waiting to spawn.
+         */
+        if (isSpawningWave)
         {
             return;
         }
