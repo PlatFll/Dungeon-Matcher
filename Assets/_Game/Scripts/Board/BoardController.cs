@@ -739,6 +739,7 @@ public partial class BoardController : MonoBehaviour
                 ResolveBombTriggeredCrystalRequests(
                     triggeredCrystalRequests
                 );
+
             if (cascadePause > 0f)
             {
                 yield return

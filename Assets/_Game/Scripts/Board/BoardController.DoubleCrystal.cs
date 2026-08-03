@@ -642,7 +642,6 @@ public partial class BoardController
     }
 
 
-
     private IEnumerator
     StopQueuedDoubleCrystalCharge(
         Gem crystal)
