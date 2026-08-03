@@ -1787,8 +1787,7 @@ public partial class BoardController : MonoBehaviour
     {
         /*
          * A color crystal can be activated by swapping it
-         * with any adjacent non-crystal gem, regardless of
-         * the crystal's hidden original GemType.
+         * with any adjacent gem, including another crystal.
          */
         for (int row = 0;
              row < height;
@@ -1856,9 +1855,11 @@ public partial class BoardController : MonoBehaviour
     private static bool IsValidCrystalSwapTarget(
         Gem gem)
     {
-        return gem != null &&
-               gem.SpecialType !=
-                   GemSpecialType.ColorCrystal;
+        /*
+         * Crystals can activate with ordinary gems, bombs,
+         * and other crystals.
+         */
+        return gem != null;
     }
 
     private bool HasAvailableMove(

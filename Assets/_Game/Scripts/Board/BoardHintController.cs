@@ -295,21 +295,14 @@ public sealed class BoardHintController :
             return false;
         }
 
-        int columnDistance =
-            Mathf.Abs(
-                sourceGem.Column -
-                targetGem.Column
-            );
-
-        int rowDistance =
-            Mathf.Abs(
-                sourceGem.Row -
-                targetGem.Row
-            );
-
-        return
-            columnDistance +
-            rowDistance == 1;
+        /*
+         * Recheck the actual move rather than merely checking
+         * whether the two objects are still adjacent.
+         */
+        return boardController.IsHintMoveStillValid(
+            sourceGem,
+            targetGem
+        );
     }
 
     private static float GetPixelsPerUnit(
