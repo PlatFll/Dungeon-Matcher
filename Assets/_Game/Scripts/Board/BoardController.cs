@@ -110,6 +110,15 @@ public partial class BoardController : MonoBehaviour
     private float crystalActivationStagger =
         0.10f;
 
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Brief pause after a crystal swap creates an " +
+        "earned special gem, allowing it to appear before " +
+        "the crystal interaction begins."
+    )]
+    private float crystalSwapSpecialRevealPause =
+        0.10f;
+
     [Header("Falling Animation")]
     [SerializeField, Min(0.01f)]
     private float fallDurationPerCell = 0.075f;
@@ -602,6 +611,10 @@ public partial class BoardController : MonoBehaviour
             second
         );
 
+        /*
+         * Existing crystal + crystal swaps still immediately
+         * use the full-board double-crystal interaction.
+         */
         if (IsDoubleColorCrystalSwap(
                 first,
                 second))
@@ -616,8 +629,64 @@ public partial class BoardController : MonoBehaviour
             yield break;
         }
 
+        Gem crystalGem;
+        Gem crystalTargetGem;
+
+        GemSpecialType createdSpecialType;
+
+        bool createdSpecial =
+            TryCreateEarnedSpecialBeforeCrystalActivation(
+                first,
+                second,
+                out crystalGem,
+                out crystalTargetGem,
+                out createdSpecialType
+            );
+
+        if (createdSpecial)
+        {
+            /*
+             * Allow the newly created bomb or crystal to be
+             * visibly rendered before activation begins.
+             */
+            yield return null;
+
+            if (crystalSwapSpecialRevealPause > 0f)
+            {
+                yield return new WaitForSeconds(
+                    crystalSwapSpecialRevealPause
+                );
+            }
+
+            /*
+             * A straight five, L, or T creates a new crystal.
+             * The swap has therefore become crystal + crystal.
+             */
+            if (createdSpecialType ==
+                GemSpecialType.ColorCrystal)
+            {
+                yield return
+                    ResolveDoubleColorCrystalActivation(
+                        crystalGem,
+                        crystalTargetGem
+                    );
+
+                isBusy = false;
+                yield break;
+            }
+
+            /*
+             * Row and column bombs continue below. Because the
+             * target gem is now marked as that bomb type,
+             * TryBuildColorCrystalClearSet will select the
+             * correct crystal + bomb interaction.
+             */
+        }
+
         HashSet<Gem> crystalClearSet;
+
         GemType crystalTargetType;
+
         GemSpecialType crystalTargetSpecialType;
 
         bool activatedColorCrystal =
@@ -641,6 +710,10 @@ public partial class BoardController : MonoBehaviour
             yield break;
         }
 
+        /*
+         * No crystal interaction occurred. Resolve an ordinary
+         * swap using the existing match and cascade logic.
+         */
         HashSet<Gem> matches =
             FindMatchesFrom(
                 first,

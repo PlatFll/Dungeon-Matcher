@@ -206,6 +206,132 @@ public partial class BoardController
         return GemSpecialType.None;
     }
 
+    private bool
+        TryCreateEarnedSpecialBeforeCrystalActivation(
+            Gem first,
+            Gem second,
+            out Gem crystalGem,
+            out Gem targetGem,
+            out GemSpecialType createdSpecialType)
+    {
+        crystalGem = null;
+        targetGem = null;
+
+        createdSpecialType =
+            GemSpecialType.None;
+
+        if (first == null ||
+            second == null)
+        {
+            return false;
+        }
+
+        bool firstIsCrystal =
+            first.SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        bool secondIsCrystal =
+            second.SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        /*
+         * This helper only handles exactly one crystal.
+         * Existing crystal + crystal swaps are handled by
+         * ResolveDoubleColorCrystalActivation.
+         */
+        if (firstIsCrystal ==
+            secondIsCrystal)
+        {
+            return false;
+        }
+
+        crystalGem =
+            firstIsCrystal
+                ? first
+                : second;
+
+        targetGem =
+            firstIsCrystal
+                ? second
+                : first;
+
+        /*
+         * Do not replace an existing row bomb, column bomb,
+         * or other special. Its existing crystal interaction
+         * should continue normally.
+         */
+        if (targetGem.SpecialType !=
+            GemSpecialType.None)
+        {
+            return false;
+        }
+
+        /*
+         * The crystal itself is ignored by AddMatchesAt.
+         * Only inspect the ordinary gem after the completed
+         * swap.
+         */
+        HashSet<Gem> targetMatches =
+            FindMatchesFrom(
+                targetGem,
+                null
+            );
+
+        if (targetMatches.Count < 4)
+        {
+            return false;
+        }
+
+        /*
+         * Passing targetGem as the preferred gem ensures the
+         * swapped gem becomes the earned special.
+         */
+        List<SpecialGemCreationRequest>
+            creationRequests =
+                BuildSpecialGemCreationRequests(
+                    targetMatches,
+                    targetGem,
+                    null
+                );
+
+        foreach (
+            SpecialGemCreationRequest request
+            in creationRequests)
+        {
+            if (!request.IsValid ||
+                request.GemToPreserve !=
+                    targetGem ||
+                request.SpecialType ==
+                    GemSpecialType.None)
+            {
+                continue;
+            }
+
+            createdSpecialType =
+                request.SpecialType;
+
+            /*
+             * Create the earned special immediately without
+             * clearing the match yet. The following crystal
+             * interaction will process the matching color.
+             */
+            targetGem.SetSpecialType(
+                createdSpecialType
+            );
+
+            Debug.Log(
+                $"Crystal swap created " +
+                $"{createdSpecialType} at " +
+                $"({targetGem.Column}, " +
+                $"{targetGem.Row}) before activation."
+            );
+
+            return true;
+        }
+
+        return false;
+    }
+
     private bool TryBuildColorCrystalClearSet(
         Gem first,
         Gem second,
