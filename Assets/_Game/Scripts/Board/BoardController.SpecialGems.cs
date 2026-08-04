@@ -89,6 +89,7 @@ public partial class BoardController
             Gem gemToPreserve =
                 SelectGemToPreserve(
                     group,
+                    matchType,
                     preferredGem,
                     fallbackGem
                 );
@@ -111,6 +112,7 @@ public partial class BoardController
 
     private static Gem SelectGemToPreserve(
         List<Gem> group,
+        BoardMatchType matchType,
         Gem preferredGem,
         Gem fallbackGem)
     {
@@ -121,8 +123,8 @@ public partial class BoardController
         }
 
         /*
-         * For a player-created match, prioritize
-         * the gem the player moved.
+         * Player-created specials continue to prioritize the
+         * gem moved by the player.
          */
         if (preferredGem != null &&
             group.Contains(preferredGem))
@@ -131,8 +133,8 @@ public partial class BoardController
         }
 
         /*
-         * The other swapped gem is used when it
-         * is the one belonging to the four-match.
+         * Use the other swapped gem when that is the gem that
+         * belongs to the special-producing match.
          */
         if (fallbackGem != null &&
             group.Contains(fallbackGem))
@@ -141,13 +143,223 @@ public partial class BoardController
         }
 
         /*
-         * Cascade-created four-matches have no
-         * moved gem, so preserve a central gem.
+         * Automatic cascades have no preferred swapped gem.
+         * Choose a meaningful position based on match geometry.
          */
-        int automaticIndex =
-            (group.Count - 1) / 2;
+        switch (matchType)
+        {
+            case BoardMatchType.LShape:
+            case BoardMatchType.TShape:
+                {
+                    Gem shapePivot =
+                        FindShapePivotGem(group);
 
-        return group[automaticIndex];
+                    if (shapePivot != null)
+                    {
+                        return shapePivot;
+                    }
+
+                    break;
+                }
+
+            case BoardMatchType.StraightFive:
+                return FindGemNearestGroupCenter(
+                    group
+                );
+        }
+
+        /*
+         * Straight-four cascades and unexpected shapes use
+         * the most central available gem.
+         */
+        return FindGemNearestGroupCenter(
+            group
+        );
+    }
+
+    private static Gem FindShapePivotGem(
+        List<Gem> group)
+    {
+        if (group == null ||
+            group.Count == 0)
+        {
+            return null;
+        }
+
+        Gem bestPivot = null;
+
+        foreach (Gem candidate in group)
+        {
+            if (candidate == null)
+            {
+                continue;
+            }
+
+            bool hasHorizontalNeighbour = false;
+            bool hasVerticalNeighbour = false;
+
+            foreach (Gem other in group)
+            {
+                if (other == null ||
+                    other == candidate)
+                {
+                    continue;
+                }
+
+                if (other.Row == candidate.Row)
+                {
+                    hasHorizontalNeighbour = true;
+                }
+
+                if (other.Column ==
+                    candidate.Column)
+                {
+                    hasVerticalNeighbour = true;
+                }
+
+                if (hasHorizontalNeighbour &&
+                    hasVerticalNeighbour)
+                {
+                    break;
+                }
+            }
+
+            /*
+             * The T intersection and L corner are the only gems
+             * connected in both the horizontal and vertical axes.
+             */
+            if (!hasHorizontalNeighbour ||
+                !hasVerticalNeighbour)
+            {
+                continue;
+            }
+
+            if (bestPivot == null ||
+                IsEarlierGridPosition(
+                    candidate,
+                    bestPivot))
+            {
+                bestPivot = candidate;
+            }
+        }
+
+        return bestPivot;
+    }
+
+    private static Gem FindGemNearestGroupCenter(
+        List<Gem> group)
+    {
+        if (group == null ||
+            group.Count == 0)
+        {
+            return null;
+        }
+
+        float totalColumn = 0f;
+        float totalRow = 0f;
+        int validGemCount = 0;
+
+        foreach (Gem gem in group)
+        {
+            if (gem == null)
+            {
+                continue;
+            }
+
+            totalColumn += gem.Column;
+            totalRow += gem.Row;
+            validGemCount++;
+        }
+
+        if (validGemCount == 0)
+        {
+            return null;
+        }
+
+        float centerColumn =
+            totalColumn /
+            validGemCount;
+
+        float centerRow =
+            totalRow /
+            validGemCount;
+
+        Gem bestGem = null;
+        float bestDistance =
+            float.MaxValue;
+
+        foreach (Gem gem in group)
+        {
+            if (gem == null)
+            {
+                continue;
+            }
+
+            float columnDistance =
+                gem.Column -
+                centerColumn;
+
+            float rowDistance =
+                gem.Row -
+                centerRow;
+
+            float squaredDistance =
+                columnDistance *
+                columnDistance +
+                rowDistance *
+                rowDistance;
+
+            bool isCloser =
+                squaredDistance <
+                bestDistance;
+
+            bool isEqualDistance =
+                Mathf.Approximately(
+                    squaredDistance,
+                    bestDistance
+                );
+
+            if (bestGem == null ||
+                isCloser ||
+                (
+                    isEqualDistance &&
+                    IsEarlierGridPosition(
+                        gem,
+                        bestGem
+                    )
+                ))
+            {
+                bestGem = gem;
+                bestDistance =
+                    squaredDistance;
+            }
+        }
+
+        return bestGem;
+    }
+
+    private static bool IsEarlierGridPosition(
+        Gem candidate,
+        Gem current)
+    {
+        if (candidate == null)
+        {
+            return false;
+        }
+
+        if (current == null)
+        {
+            return true;
+        }
+
+        if (candidate.Row != current.Row)
+        {
+            return candidate.Row <
+                   current.Row;
+        }
+
+        return candidate.Column <
+               current.Column;
     }
 
     private static GemSpecialType
