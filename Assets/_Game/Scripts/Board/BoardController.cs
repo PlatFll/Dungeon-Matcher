@@ -646,25 +646,17 @@ public partial class BoardController : MonoBehaviour
         if (createdSpecial)
         {
             /*
-             * Allow the newly created bomb or crystal to be
-             * visibly rendered before activation begins.
-             */
-            yield return null;
-
-            if (crystalSwapSpecialRevealPause > 0f)
-            {
-                yield return new WaitForSeconds(
-                    crystalSwapSpecialRevealPause
-                );
-            }
-
-            /*
              * A straight five, L, or T creates a new crystal.
-             * The swap has therefore become crystal + crystal.
+             * Materialize it before beginning the resulting
+             * crystal + crystal interaction.
              */
             if (createdSpecialType ==
                 GemSpecialType.ColorCrystal)
             {
+                yield return
+                    crystalTargetGem
+                        .PlayColorCrystalMaterialization();
+
                 yield return
                     ResolveDoubleColorCrystalActivation(
                         crystalGem,
@@ -676,10 +668,22 @@ public partial class BoardController : MonoBehaviour
             }
 
             /*
-             * Row and column bombs continue below. Because the
-             * target gem is now marked as that bomb type,
-             * TryBuildColorCrystalClearSet will select the
-             * correct crystal + bomb interaction.
+             * Row and column bombs use the existing brief reveal
+             * pause before their crystal interaction starts.
+             */
+            yield return null;
+
+            if (crystalSwapSpecialRevealPause > 0f)
+            {
+                yield return new WaitForSeconds(
+                    crystalSwapSpecialRevealPause
+                );
+            }
+
+            /*
+             * The target gem is now marked as its earned row or
+             * column bomb. The normal crystal-clear setup below
+             * will select the corresponding bomb interaction.
              */
         }
 
@@ -1100,6 +1104,18 @@ public partial class BoardController : MonoBehaviour
             gem.SetSpecialType(
                 specialGem.Value
             );
+
+            if (specialGem.Value ==
+                GemSpecialType.ColorCrystal)
+            {
+                /*
+                 * The match and any refill movement have already
+                 * settled, so the crystal materializes inside its
+                 * final visible board cell.
+                 */
+                yield return
+                    gem.PlayColorCrystalMaterialization();
+            }
         }
 
         yield return null;
