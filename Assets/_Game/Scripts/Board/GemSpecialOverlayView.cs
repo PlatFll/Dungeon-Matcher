@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -66,6 +67,43 @@ public sealed class GemSpecialOverlayView :
     [SerializeField, Range(0f, 1f)]
     private float shimmerWhiteness = 0.75f;
 
+    [Header("Crystal Materialization")]
+
+    [SerializeField, Range(0.05f, 1f)]
+    [Tooltip(
+        "Horizontal width of the initial white spire."
+    )]
+    private float crystalSpireWidthScale =
+        0.22f;
+
+    [SerializeField, Range(1f, 2f)]
+    [Tooltip(
+        "Vertical height of the initial white spire."
+    )]
+    private float crystalSpireHeightScale =
+        1.35f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "How long the initial white spire remains visible."
+    )]
+    private float crystalSpireHoldDuration =
+        0.08f;
+
+    [SerializeField, Min(0.01f)]
+    [Tooltip(
+        "How long the spire takes to expand into the crystal."
+    )]
+    private float crystalMaterializeDuration =
+        0.12f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "How long the crystal disappears during its quick blink."
+    )]
+    private float crystalBlinkDuration =
+        0.04f;
+
     private SpriteRenderer overlayRenderer;
 
     private Vector3 normalScale;
@@ -77,6 +115,8 @@ public sealed class GemSpecialOverlayView :
     private float shimmerStartTime = -1f;
 
     private float nextShimmerTime;
+
+    private bool isMaterializing;
 
     private void Awake()
     {
@@ -98,7 +138,8 @@ public sealed class GemSpecialOverlayView :
     private void Update()
     {
         if (overlayRenderer == null ||
-            !overlayRenderer.enabled)
+            !overlayRenderer.enabled ||
+            isMaterializing)
         {
             return;
         }
@@ -185,6 +226,8 @@ public sealed class GemSpecialOverlayView :
                     ? Color.white
                     : GetGemTint(gemType);
 
+        isMaterializing = false;
+
         overlayRenderer.enabled =
             true;
 
@@ -196,8 +239,122 @@ public sealed class GemSpecialOverlayView :
         ScheduleNextShimmer();
     }
 
+    public IEnumerator
+        PlayColorCrystalMaterialization()
+    {
+        if (overlayRenderer == null)
+        {
+            overlayRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (overlayRenderer == null ||
+            overlayRenderer.sprite !=
+                colorCrystalSprite)
+        {
+            yield break;
+        }
+
+        isMaterializing = true;
+
+        shimmerStartTime = -1f;
+
+        overlayRenderer.enabled = true;
+        overlayRenderer.color =
+            Color.white;
+
+        Vector3 spireScale =
+            new Vector3(
+                normalScale.x *
+                crystalSpireWidthScale,
+
+                normalScale.y *
+                crystalSpireHeightScale,
+
+                normalScale.z
+            );
+
+        /*
+         * Begin as a narrow, fully white magical spire.
+         */
+        transform.localScale =
+            spireScale;
+
+        if (crystalSpireHoldDuration > 0f)
+        {
+            yield return new WaitForSeconds(
+                crystalSpireHoldDuration
+            );
+        }
+
+        /*
+         * Expand the spire into the crystal's normal shape.
+         */
+        float elapsedTime = 0f;
+
+        while (elapsedTime <
+               crystalMaterializeDuration)
+        {
+            float progress =
+                Mathf.Clamp01(
+                    elapsedTime /
+                    crystalMaterializeDuration
+                );
+
+            float easedProgress =
+                Mathf.SmoothStep(
+                    0f,
+                    1f,
+                    progress
+                );
+
+            transform.localScale =
+                Vector3.Lerp(
+                    spireScale,
+                    normalScale,
+                    easedProgress
+                );
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.localScale =
+            normalScale;
+
+        /*
+         * One fast blink makes the final crystal feel as though
+         * it has locked into the board.
+         */
+        overlayRenderer.enabled = false;
+
+        if (crystalBlinkDuration > 0f)
+        {
+            yield return new WaitForSeconds(
+                crystalBlinkDuration
+            );
+        }
+
+        overlayRenderer.enabled = true;
+        overlayRenderer.color =
+            currentTint;
+
+        transform.localScale =
+            normalScale;
+
+        isMaterializing = false;
+
+        shimmerStartTime = -1f;
+
+        ScheduleNextShimmer();
+    }
+
     public void Hide()
     {
+        isMaterializing = false;
+
         if (overlayRenderer == null)
         {
             overlayRenderer =
@@ -360,6 +517,38 @@ public sealed class GemSpecialOverlayView :
             Mathf.Max(
                 minimumShimmerDelay,
                 maximumShimmerDelay
+            );
+
+        crystalSpireWidthScale =
+            Mathf.Clamp(
+                crystalSpireWidthScale,
+                0.05f,
+                1f
+            );
+
+        crystalSpireHeightScale =
+            Mathf.Clamp(
+                crystalSpireHeightScale,
+                1f,
+                2f
+            );
+
+        crystalSpireHoldDuration =
+            Mathf.Max(
+                0f,
+                crystalSpireHoldDuration
+            );
+
+        crystalMaterializeDuration =
+            Mathf.Max(
+                0.01f,
+                crystalMaterializeDuration
+            );
+
+        crystalBlinkDuration =
+            Mathf.Max(
+                0f,
+                crystalBlinkDuration
             );
     }
 }
