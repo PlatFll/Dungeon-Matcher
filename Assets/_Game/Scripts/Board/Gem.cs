@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 public enum GemType
@@ -203,6 +204,33 @@ public class Gem :
             Type,
             SpecialType
         );
+    }
+
+    public IEnumerator
+        PlayColorCrystalMaterialization()
+    {
+        if (SpecialType !=
+            GemSpecialType.ColorCrystal)
+        {
+            yield break;
+        }
+
+        if (specialOverlayView == null)
+        {
+            specialOverlayView =
+                GetComponentInChildren<
+                    GemSpecialOverlayView
+                >(true);
+        }
+
+        if (specialOverlayView == null)
+        {
+            yield break;
+        }
+
+        yield return
+            specialOverlayView
+                .PlayColorCrystalMaterialization();
     }
 
     public void SetFlashAmount(
