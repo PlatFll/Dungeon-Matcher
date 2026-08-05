@@ -6,6 +6,12 @@ using UnityEngine;
 public sealed class GemSpecialOverlayView :
     MonoBehaviour
 {
+    private static readonly int
+        FlashAmountId =
+            Shader.PropertyToID(
+                "_FlashAmount"
+            );
+
     [Header("Overlay Sprites")]
     [SerializeField]
     private Sprite rowBombSprite;
@@ -69,42 +75,34 @@ public sealed class GemSpecialOverlayView :
 
     [Header("Crystal Materialization")]
 
-    [SerializeField, Range(0.05f, 1f)]
+    [SerializeField, Min(0.01f)]
     [Tooltip(
-        "Horizontal width of the initial white spire."
+        "How long the white crystal silhouette takes to " +
+        "fade from transparent to fully visible."
     )]
-    private float crystalSpireWidthScale =
-        0.22f;
-
-    [SerializeField, Range(1f, 2f)]
-    [Tooltip(
-        "Vertical height of the initial white spire."
-    )]
-    private float crystalSpireHeightScale =
-        1.35f;
+    private float crystalWhiteFadeDuration =
+        0.16f;
 
     [SerializeField, Min(0f)]
     [Tooltip(
-        "How long the initial white spire remains visible."
+        "How long the crystal remains fully white before " +
+        "its real colors begin appearing."
     )]
-    private float crystalSpireHoldDuration =
-        0.08f;
+    private float crystalWhiteHoldDuration =
+        0.06f;
 
     [SerializeField, Min(0.01f)]
     [Tooltip(
-        "How long the spire takes to expand into the crystal."
+        "How long the white silhouette takes to reveal " +
+        "the crystal's real colors."
     )]
-    private float crystalMaterializeDuration =
-        0.12f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "How long the crystal disappears during its quick blink."
-    )]
-    private float crystalBlinkDuration =
-        0.04f;
+    private float crystalColorRevealDuration =
+        0.18f;
 
     private SpriteRenderer overlayRenderer;
+
+    private MaterialPropertyBlock
+        materialPropertyBlock;
 
     private Vector3 normalScale;
 
@@ -228,6 +226,8 @@ public sealed class GemSpecialOverlayView :
 
         isMaterializing = false;
 
+        SetOverlayFlashAmount(0f);
+
         overlayRenderer.enabled =
             true;
 
@@ -259,46 +259,32 @@ public sealed class GemSpecialOverlayView :
 
         shimmerStartTime = -1f;
 
-        overlayRenderer.enabled = true;
-        overlayRenderer.color =
-            Color.white;
-
-        Vector3 spireScale =
-            new Vector3(
-                normalScale.x *
-                crystalSpireWidthScale,
-
-                normalScale.y *
-                crystalSpireHeightScale,
-
-                normalScale.z
-            );
-
         /*
-         * Begin as a narrow, fully white magical spire.
+         * The crystal always remains at its normal size.
+         * There is no stretching, squeezing, or popping.
          */
         transform.localScale =
-            spireScale;
+            normalScale;
 
-        if (crystalSpireHoldDuration > 0f)
-        {
-            yield return new WaitForSeconds(
-                crystalSpireHoldDuration
-            );
-        }
+        overlayRenderer.enabled =
+            true;
 
         /*
-         * Expand the spire into the crystal's normal shape.
+         * Stage one:
+         * Keep the sprite completely white while its alpha
+         * fades from invisible to fully visible.
          */
+        SetOverlayFlashAmount(1f);
+
         float elapsedTime = 0f;
 
         while (elapsedTime <
-               crystalMaterializeDuration)
+               crystalWhiteFadeDuration)
         {
             float progress =
                 Mathf.Clamp01(
                     elapsedTime /
-                    crystalMaterializeDuration
+                    crystalWhiteFadeDuration
                 );
 
             float easedProgress =
@@ -308,12 +294,14 @@ public sealed class GemSpecialOverlayView :
                     progress
                 );
 
-            transform.localScale =
-                Vector3.Lerp(
-                    spireScale,
-                    normalScale,
-                    easedProgress
-                );
+            Color whiteFade =
+                Color.white;
+
+            whiteFade.a =
+                easedProgress;
+
+            overlayRenderer.color =
+                whiteFade;
 
             elapsedTime +=
                 Time.deltaTime;
@@ -321,25 +309,66 @@ public sealed class GemSpecialOverlayView :
             yield return null;
         }
 
-        transform.localScale =
-            normalScale;
+        overlayRenderer.color =
+            Color.white;
+
+        SetOverlayFlashAmount(1f);
 
         /*
-         * One fast blink makes the final crystal feel as though
-         * it has locked into the board.
+         * Briefly hold the fully formed white silhouette.
          */
-        overlayRenderer.enabled = false;
-
-        if (crystalBlinkDuration > 0f)
+        if (crystalWhiteHoldDuration > 0f)
         {
             yield return new WaitForSeconds(
-                crystalBlinkDuration
+                crystalWhiteHoldDuration
             );
         }
 
-        overlayRenderer.enabled = true;
+        /*
+         * Stage two:
+         * Reduce the shader's white-flash amount from one
+         * to zero. The crystal's actual sprite colors are
+         * gradually revealed underneath.
+         */
+        elapsedTime = 0f;
+
+        while (elapsedTime <
+               crystalColorRevealDuration)
+        {
+            float progress =
+                Mathf.Clamp01(
+                    elapsedTime /
+                    crystalColorRevealDuration
+                );
+
+            float easedProgress =
+                Mathf.SmoothStep(
+                    0f,
+                    1f,
+                    progress
+                );
+
+            SetOverlayFlashAmount(
+                1f -
+                easedProgress
+            );
+
+            /*
+             * Alpha stays fully visible while color enters.
+             */
+            overlayRenderer.color =
+                Color.white;
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
+        }
+
+        SetOverlayFlashAmount(0f);
+
         overlayRenderer.color =
-            currentTint;
+            Color.white;
 
         transform.localScale =
             normalScale;
@@ -351,9 +380,45 @@ public sealed class GemSpecialOverlayView :
         ScheduleNextShimmer();
     }
 
+    private void SetOverlayFlashAmount(
+        float amount)
+    {
+        if (overlayRenderer == null)
+        {
+            overlayRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (overlayRenderer == null)
+        {
+            return;
+        }
+
+        if (materialPropertyBlock == null)
+        {
+            materialPropertyBlock =
+                new MaterialPropertyBlock();
+        }
+
+        overlayRenderer.GetPropertyBlock(
+            materialPropertyBlock
+        );
+
+        materialPropertyBlock.SetFloat(
+            FlashAmountId,
+            Mathf.Clamp01(amount)
+        );
+
+        overlayRenderer.SetPropertyBlock(
+            materialPropertyBlock
+        );
+    }
+
     public void Hide()
     {
         isMaterializing = false;
+
+        SetOverlayFlashAmount(0f);
 
         if (overlayRenderer == null)
         {
@@ -519,36 +584,22 @@ public sealed class GemSpecialOverlayView :
                 maximumShimmerDelay
             );
 
-        crystalSpireWidthScale =
-            Mathf.Clamp(
-                crystalSpireWidthScale,
-                0.05f,
-                1f
-            );
-
-        crystalSpireHeightScale =
-            Mathf.Clamp(
-                crystalSpireHeightScale,
-                1f,
-                2f
-            );
-
-        crystalSpireHoldDuration =
-            Mathf.Max(
-                0f,
-                crystalSpireHoldDuration
-            );
-
-        crystalMaterializeDuration =
+        crystalWhiteFadeDuration =
             Mathf.Max(
                 0.01f,
-                crystalMaterializeDuration
+                crystalWhiteFadeDuration
             );
 
-        crystalBlinkDuration =
+        crystalWhiteHoldDuration =
             Mathf.Max(
                 0f,
-                crystalBlinkDuration
+                crystalWhiteHoldDuration
+            );
+
+        crystalColorRevealDuration =
+            Mathf.Max(
+                0.01f,
+                crystalColorRevealDuration
             );
     }
 }
