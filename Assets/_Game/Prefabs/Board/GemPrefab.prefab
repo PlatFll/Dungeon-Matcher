@@ -211,7 +211,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 3c8c6512faf76f84c8fd1f3a42fb5613, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,3 +273,6 @@ MonoBehaviour:
   minimumShimmerDelay: 1.25
   maximumShimmerDelay: 2.75
   shimmerWhiteness: 0.75
+  crystalWhiteFadeDuration: 0.16
+  crystalWhiteHoldDuration: 0.06
+  crystalColorRevealDuration: 0.18
