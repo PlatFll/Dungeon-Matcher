@@ -99,6 +99,27 @@ public sealed class GemSpecialOverlayView :
     private float crystalColorRevealDuration =
         0.18f;
 
+    [Header("Crystal Activation")]
+    [SerializeField, Min(0.01f)]
+    private float crystalActivationPullInDuration =
+        0.035f;
+
+    [SerializeField, Range(0.5f, 1f)]
+    private float crystalActivationPullInScale =
+        0.85f;
+
+    [SerializeField, Min(0.01f)]
+    private float crystalActivationPopDuration =
+        0.055f;
+
+    [SerializeField, Range(1f, 1.5f)]
+    private float crystalActivationPopScale =
+        1.20f;
+
+    [SerializeField, Min(0.01f)]
+    private float crystalActivationSettleDuration =
+        0.03f;
+
     private SpriteRenderer overlayRenderer;
 
     private MaterialPropertyBlock
@@ -115,6 +136,7 @@ public sealed class GemSpecialOverlayView :
     private float nextShimmerTime;
 
     private bool isMaterializing;
+    private bool isActivationPulsing;
 
     private void Awake()
     {
@@ -137,7 +159,8 @@ public sealed class GemSpecialOverlayView :
     {
         if (overlayRenderer == null ||
             !overlayRenderer.enabled ||
-            isMaterializing)
+            isMaterializing ||
+            isActivationPulsing)
         {
             return;
         }
@@ -225,6 +248,7 @@ public sealed class GemSpecialOverlayView :
                     : GetGemTint(gemType);
 
         isMaterializing = false;
+        isActivationPulsing = false;
 
         SetOverlayFlashAmount(0f);
 
@@ -256,6 +280,7 @@ public sealed class GemSpecialOverlayView :
         }
 
         isMaterializing = true;
+        isActivationPulsing = false;
 
         shimmerStartTime = -1f;
 
@@ -380,6 +405,146 @@ public sealed class GemSpecialOverlayView :
         ScheduleNextShimmer();
     }
 
+    public IEnumerator
+        PlayColorCrystalActivationPulse()
+    {
+        if (overlayRenderer == null)
+        {
+            overlayRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (overlayRenderer == null ||
+            overlayRenderer.sprite !=
+                colorCrystalSprite)
+        {
+            yield break;
+        }
+
+        isActivationPulsing = true;
+
+        shimmerStartTime = -1f;
+
+        overlayRenderer.enabled =
+            true;
+
+        overlayRenderer.color =
+            Color.white;
+
+        SetOverlayFlashAmount(0f);
+
+        Vector3 pulledInScale =
+            normalScale *
+            crystalActivationPullInScale;
+
+        Vector3 poppedScale =
+            normalScale *
+            crystalActivationPopScale;
+
+        yield return AnimateCrystalActivationStage(
+            normalScale,
+            pulledInScale,
+            0f,
+            0.65f,
+            crystalActivationPullInDuration
+        );
+
+        yield return AnimateCrystalActivationStage(
+            pulledInScale,
+            poppedScale,
+            0.65f,
+            1f,
+            crystalActivationPopDuration
+        );
+
+        yield return AnimateCrystalActivationStage(
+            poppedScale,
+            normalScale,
+            1f,
+            0f,
+            crystalActivationSettleDuration
+        );
+
+        transform.localScale =
+            normalScale;
+
+        SetOverlayFlashAmount(0f);
+
+        overlayRenderer.color =
+            Color.white;
+
+        isActivationPulsing = false;
+
+        ScheduleNextShimmer();
+    }
+
+    private IEnumerator AnimateCrystalActivationStage(
+        Vector3 startingScale,
+        Vector3 targetScale,
+        float startingFlash,
+        float targetFlash,
+        float duration)
+    {
+        float safeDuration =
+            Mathf.Max(
+                0.01f,
+                duration
+            );
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < safeDuration)
+        {
+            float progress =
+                Mathf.Clamp01(
+                    elapsedTime /
+                    safeDuration
+                );
+
+            float easedProgress =
+                Mathf.SmoothStep(
+                    0f,
+                    1f,
+                    progress
+                );
+
+            transform.localScale =
+                Vector3.Lerp(
+                    startingScale,
+                    targetScale,
+                    easedProgress
+                );
+
+            SetOverlayFlashAmount(
+                Mathf.Lerp(
+                    startingFlash,
+                    targetFlash,
+                    easedProgress
+                )
+            );
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.localScale =
+            targetScale;
+
+        SetOverlayFlashAmount(
+            targetFlash
+        );
+    }
+
+    public void SetVFXFlashAmount(
+        float amount)
+    {
+        SetOverlayFlashAmount(
+            amount
+        );
+    }
+
     private void SetOverlayFlashAmount(
         float amount)
     {
@@ -417,6 +582,7 @@ public sealed class GemSpecialOverlayView :
     public void Hide()
     {
         isMaterializing = false;
+        isActivationPulsing = false;
 
         SetOverlayFlashAmount(0f);
 
@@ -600,6 +766,38 @@ public sealed class GemSpecialOverlayView :
             Mathf.Max(
                 0.01f,
                 crystalColorRevealDuration
+            );
+
+        crystalActivationPullInDuration =
+            Mathf.Max(
+                0.01f,
+                crystalActivationPullInDuration
+            );
+
+        crystalActivationPullInScale =
+            Mathf.Clamp(
+                crystalActivationPullInScale,
+                0.5f,
+                1f
+            );
+
+        crystalActivationPopDuration =
+            Mathf.Max(
+                0.01f,
+                crystalActivationPopDuration
+            );
+
+        crystalActivationPopScale =
+            Mathf.Clamp(
+                crystalActivationPopScale,
+                1f,
+                1.5f
+            );
+
+        crystalActivationSettleDuration =
+            Mathf.Max(
+                0.01f,
+                crystalActivationSettleDuration
             );
     }
 }
