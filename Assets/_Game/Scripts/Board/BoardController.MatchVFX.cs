@@ -95,6 +95,8 @@ public partial class BoardController
             return;
         }
 
+        EnsureBombVFXController();
+
         foreach (Gem gem in expandedClearSet)
         {
             if (gem == null ||
@@ -116,5 +118,25 @@ public partial class BoardController
                 )
             );
         }
+    }
+
+    private void EnsureBombVFXController()
+    {
+        if (GetComponent<BombVFXController>() !=
+            null)
+        {
+            return;
+        }
+
+        /*
+         * The effect is completely runtime-generated, so the
+         * board does not need a new prefab reference or scene
+         * setup. Adding the component here also means existing
+         * scenes automatically gain the VFX the first time a
+         * real row/column bomb detonates.
+         */
+        gameObject.AddComponent<
+            BombVFXController
+        >();
     }
 }
