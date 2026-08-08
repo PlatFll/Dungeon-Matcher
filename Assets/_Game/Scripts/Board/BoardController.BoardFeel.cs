@@ -39,10 +39,11 @@ public partial class BoardController
     [SerializeField, Range(0.5f, 1f)]
     [Tooltip(
         "Global multiplier applied after distance-based fall " +
-        "timing is calculated."
+        "timing is calculated. The landing rebound is included " +
+        "inside this total budget rather than added afterward."
     )]
     private float fallDurationMultiplier =
-        0.82f;
+        0.90f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
@@ -62,11 +63,11 @@ public partial class BoardController
 
     [SerializeField, Min(0.01f)]
     [Tooltip(
-        "Time used to rebound from the tiny landing overshoot " +
-        "back to the exact cell center."
+        "Time reserved inside the fall's total duration for the " +
+        "tiny rebound back to the exact cell center."
     )]
     private float landingSettleDuration =
-        0.06f;
+        0.05f;
 
     [SerializeField, Range(1f, 1.10f)]
     private float landingSquashX =
@@ -165,11 +166,23 @@ public partial class BoardController
             maximumFallDuration *
             safeMultiplier;
 
-        return Mathf.Clamp(
-            baseDuration *
-            safeMultiplier,
-            responsiveMinimum,
-            responsiveMaximum
+        float totalFallBudget =
+            Mathf.Clamp(
+                baseDuration *
+                safeMultiplier,
+                responsiveMinimum,
+                responsiveMaximum
+            );
+
+        /*
+         * AnimateGemMoves appends the landing phase after this travel phase.
+         * Reserve that time here so the bounce is part of the same total fall
+         * budget instead of making every refill slower just to add polish.
+         */
+        return Mathf.Max(
+            0.01f,
+            totalFallBudget -
+            GetLandingSettleDuration()
         );
     }
 
