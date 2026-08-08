@@ -9,9 +9,9 @@ public partial class BoardController
      * tuning has one obvious rollback/debug location. None of these helpers
      * decide matches, targets, rewards, bomb chains, or cascade outcomes.
      *
-     * These defaults intentionally favor readability over raw speed. Swaps,
-     * clear-to-gravity timing, deep refills and post-landing cadence all leave
-     * enough time for the player to visually follow what the board just did.
+     * Current profile: all non-swap board pacing is intentionally 1.5x longer
+     * than the previous readability-first profile. The actual swap animation
+     * remains at its full base duration and is not slowed by this pass.
      */
     [Header("Board Feel - Responsiveness")]
     [SerializeField, Range(0.5f, 1f)]
@@ -25,35 +25,34 @@ public partial class BoardController
     [SerializeField, Min(0f)]
     [Tooltip(
         "Upper limit for the dead pause before an invalid " +
-        "swap snaps back."
+        "swap snaps back. This pause is 1.5x the previous profile; " +
+        "the swap travel itself remains unchanged."
     )]
     private float maximumInvalidSwapPause =
-        0.06f;
+        0.09f;
 
-    [SerializeField, Range(0.25f, 2.5f)]
+    [SerializeField, Range(0.25f, 4f)]
     [Tooltip(
         "Controls the impact-to-gravity beat after cleared gems disappear. " +
-        "The current value turns the base 0.04s post-burst delay into about " +
-        "0.07s so the explosion finishes reading before gravity starts."
+        "The current multiplier makes the previous ~0.07s beat about 0.105s."
     )]
     private float matchPostBurstDelayMultiplier =
-        1.75f;
+        2.625f;
 
     [Header("Board Feel - Gravity")]
-    [SerializeField, Range(0.5f, 1f)]
+    [SerializeField, Range(0.5f, 2f)]
     [Tooltip(
-        "Global multiplier applied after distance-based fall " +
-        "timing is calculated. One keeps the full calculated duration."
+        "Global multiplier applied after distance-based fall timing is " +
+        "calculated. 1.5 makes every fall budget 50% longer than the " +
+        "previous profile while keeping the same gravity curve."
     )]
     private float fallDurationMultiplier =
-        1.00f;
+        1.50f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
-        "Controls how strongly long drops are compressed. This higher value " +
-        "keeps medium/deep refills substantially slower while still avoiding " +
-        "perfectly linear fall timing. Full-column drops can reach the normal " +
-        "maximum fall duration."
+        "Controls how strongly long drops are compressed. Keep the current " +
+        "shape so the slowdown is proportional across short and deep falls."
     )]
     private float fallDistanceExponent =
         0.90f;
@@ -69,10 +68,11 @@ public partial class BoardController
     [SerializeField, Min(0.01f)]
     [Tooltip(
         "Time reserved inside the fall's total duration for the " +
-        "tiny rebound back to the exact cell center."
+        "tiny rebound back to the exact cell center. This is also " +
+        "1.5x the previous profile."
     )]
     private float landingSettleDuration =
-        0.05f;
+        0.075f;
 
     [SerializeField, Range(1f, 1.10f)]
     private float landingSquashX =
@@ -85,10 +85,11 @@ public partial class BoardController
     [SerializeField, Min(0f)]
     [Tooltip(
         "Readable beat after every falling gem has fully landed " +
-        "before the next cascade is scanned."
+        "before the next cascade is scanned. This is 1.5x the " +
+        "previous profile."
     )]
     private float postFallSettlePause =
-        0.06f;
+        0.09f;
 
     private float GetResponsiveSwapDuration()
     {
@@ -119,7 +120,7 @@ public partial class BoardController
             Mathf.Clamp(
                 matchPostBurstDelayMultiplier,
                 0.25f,
-                2.5f
+                4f
             )
         );
     }
@@ -134,9 +135,10 @@ public partial class BoardController
             );
 
         /*
-         * Preserve more distance-based travel time than the earlier fast
-         * profile. Short falls stay concise, while wiped columns and other
-         * deep refills have enough screen time to remain readable.
+         * Preserve the same distance curve as the previous profile. The
+         * separate fall-duration multiplier now stretches the entire result
+         * by 1.5x, so a wiped column receives the same proportional slowdown
+         * as a short refill instead of another hand-tuned special case.
          */
         float compressedDistance =
             Mathf.Pow(
@@ -160,7 +162,7 @@ public partial class BoardController
             Mathf.Clamp(
                 fallDurationMultiplier,
                 0.5f,
-                1f
+                2f
             );
 
         float responsiveMinimum =
@@ -181,8 +183,9 @@ public partial class BoardController
 
         /*
          * AnimateGemMoves appends the landing phase after this travel phase.
-         * Reserve that time here so the bounce remains inside the total fall
-         * budget instead of adding extra latency after every refill.
+         * Reserve that time here so the rebound remains inside the total fall
+         * budget. Both travel and landing are slower, but the rebound still
+         * does not add extra time beyond the requested fall budget.
          */
         return Mathf.Max(
             0.01f,
@@ -239,9 +242,8 @@ public partial class BoardController
     }
 
     /*
-     * Gravity accelerates into the landing instead of using the old symmetric
-     * SmoothStep. Keeping this curve preserves the weight and responsiveness
-     * of the improved motion even though the overall timing is now slower.
+     * Gravity still accelerates into the landing rather than returning to the
+     * old floaty SmoothStep motion. This pass changes time, not motion shape.
      */
     private static float EaseInGravity(
         float progress)
