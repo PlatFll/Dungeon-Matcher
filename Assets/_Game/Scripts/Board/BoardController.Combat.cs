@@ -161,6 +161,17 @@ public partial class BoardController
             return;
         }
 
+        /*
+         * Presentation consumes the same final expanded set as
+         * combat, while every bomb gem still has its real world
+         * position and special type. This keeps VFX out of the
+         * bomb-expansion algorithm itself.
+         */
+        ReportBombClearSetToVFX(
+            expandedClearSet,
+            clearSource
+        );
+
         Dictionary<GemType, int>
             clearedGemCounts =
                 new Dictionary<GemType, int>();

@@ -7,6 +7,9 @@ public partial class BoardController
     public event Action<GemMatchVFXContext>
         GemMatchVFXRequested;
 
+    public event Action<BombVFXContext>
+        BombVFXRequested;
+
     private void ReportMatchesToVFX(
         HashSet<Gem> matches,
         int cascadeDepth)
@@ -16,6 +19,14 @@ public partial class BoardController
         {
             return;
         }
+
+        /*
+         * An earned bomb cannot detonate before some board
+         * interaction has happened. Lazily create and prewarm
+         * its small VFX pool on the first real match instead of
+         * paying that setup cost on the bomb's impact frame.
+         */
+        EnsureBombVFXController();
 
         List<List<Gem>> matchGroups =
             BuildConnectedMatchGroups(
@@ -66,5 +77,77 @@ public partial class BoardController
                 )
             );
         }
+    }
+
+    private void ReportBombClearSetToVFX(
+        HashSet<Gem> expandedClearSet,
+        BoardClearSource clearSource)
+    {
+        if (expandedClearSet == null ||
+            expandedClearSet.Count == 0)
+        {
+            return;
+        }
+
+        /*
+         * These are the two current pathways where a row or
+         * column bomb in the expanded set genuinely detonates.
+         *
+         * Double-crystal sweeps can erase a bomb without firing
+         * its directional effect, so they intentionally do not
+         * produce a row/column beam here.
+         */
+        if (clearSource != BoardClearSource.Bomb &&
+            clearSource != BoardClearSource.ColorCrystal)
+        {
+            return;
+        }
+
+        /*
+         * Future abilities may be able to create or detonate a
+         * bomb without a previous match, so retain this fallback.
+         */
+        EnsureBombVFXController();
+
+        foreach (Gem gem in expandedClearSet)
+        {
+            if (gem == null ||
+                (
+                    gem.SpecialType !=
+                        GemSpecialType.RowBomb &&
+                    gem.SpecialType !=
+                        GemSpecialType.ColumnBomb
+                ))
+            {
+                continue;
+            }
+
+            BombVFXRequested?.Invoke(
+                new BombVFXContext(
+                    gem.SpecialType,
+                    gem.transform.position,
+                    matchFlashDuration
+                )
+            );
+        }
+    }
+
+    private void EnsureBombVFXController()
+    {
+        if (GetComponent<BombVFXController>() !=
+            null)
+        {
+            return;
+        }
+
+        /*
+         * The effect is completely runtime-generated, so the
+         * board does not need a new prefab reference or scene
+         * setup. Existing scenes therefore receive it without
+         * any serialized migration.
+         */
+        gameObject.AddComponent<
+            BombVFXController
+        >();
     }
 }
