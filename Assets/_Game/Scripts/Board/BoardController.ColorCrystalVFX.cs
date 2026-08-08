@@ -8,40 +8,19 @@ public partial class BoardController
         colorCrystalVFXController;
 
     /*
-     * Color-crystal targets used to wait for the entire glint pass,
-     * then play the ordinary 0.12s ClearMatches animation one by one.
-     * That made the visual selector feel much faster than the board.
+     * Color-crystal presentation timing.
      *
-     * Synchronized mode keeps the quick travelling cadence, but the glint
-     * now receives a short visual lead before its target begins clearing.
-     * This lets the star visibly grow toward its 0.09s peak instead of the
-     * gem disappearing almost immediately underneath it.
+     * The star glint is now the visible target-clear effect. While a color
+     * crystal is active, the normal ClearMatches flash/hold is suppressed so
+     * it does not compete with that star or add a second little explosion.
+     * ClearMatches still owns the actual board-state removal and final yield.
      *
-     * The values below are deliberately tuned around Unity's coroutine
-     * frame scheduling. ClearMatches always has a final yield, so a 0.01s
-     * flash plus that final frame continues to track the 0.02s travelling
-     * cadence closely at 60/90/120 FPS once the fixed lead is established.
-     *
-     * Keeping this override here avoids changing crystal target selection,
-     * damage/reward reporting, bomb expansion, or ClearMatches itself.
+     * Presentation order:
+     * crystal pulse -> adaptive star sweep -> lightweight board clears.
      */
     private const float
         SynchronizedCrystalFlashDuration =
-            0.01f;
-
-    private const float
-        SynchronizedCrystalTargetCadence =
-            0.02f;
-
-    /*
-     * Stars begin immediately after the source crystal pulse. Gameplay
-     * waits briefly before starting the source-crystal clear. The source
-     * clear then adds a couple of frames of its own, placing the first
-     * target disappearance close to the target star's 0.09s visual peak.
-     */
-    private const float
-        SynchronizedCrystalTargetClearLeadIn =
-            0.05f;
+            0f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
@@ -51,18 +30,37 @@ public partial class BoardController
         SynchronizedCrystalPostBurstDelay =
             0f;
 
+    /*
+     * Stars live for about 0.24 seconds. Give the sweep the same-sized head
+     * start before gameplay begins removing targets. This keeps every target
+     * star readable without extending the total activation, because the VFX
+     * and gameplay clear loop continue in parallel after this point.
+     */
     private const float
-        SynchronizedCrystalActivationStagger =
-            0f;
+        SynchronizedCrystalTargetClearLeadIn =
+            0.24f;
 
     /*
-     * Leave enough room for the final fast ClearMatches coroutine to finish
-     * before restoring the normal match timings. This prevents the last
-     * selected gems from suddenly reverting to the old slow animation.
+     * At 90/120 FPS the one-frame ClearMatches handoff can run noticeably
+     * faster than the visual sweep. Add a tiny frame-aware wait there only;
+     * 30/60 FPS need no extra target delay.
+     */
+    private const float
+        HighFrameRateThreshold =
+            1f / 75f;
+
+    private const float
+        VeryHighFrameRateThreshold =
+            1f / 110f;
+
+    /*
+     * This guard covers the final color-crystal clear tail, but remains short
+     * enough that ordinary refill cascades recover normal match timings.
+     * Nested crystal sweeps are rechecked below and extend the guard safely.
      */
     private const float
         SynchronizedCrystalRestoreSafetyDelay =
-            0.25f;
+            0.20f;
 
     private bool
         synchronizedCrystalTimingsActive;
@@ -145,16 +143,19 @@ public partial class BoardController
             yield break;
         }
 
+        float targetSweepDuration =
+            colorCrystalVFXController
+                .CalculateCoordinatedSweepDuration(
+                    validTargets.Count
+                );
+
         BeginSynchronizedCrystalTimings();
 
         /*
-         * Start the target stars immediately after the source crystal pulse.
-         * The fixed lead below then gives those stars time to become readable
-         * before ResolveNormalColorCrystalSequence begins destroying gems.
+         * Await only the source crystal pulse. The target stars then launch
+         * in the background across one elapsed-time sweep, allowing the VFX
+         * and gameplay clear loop to read as one continuous event.
          */
-        const float targetStartDelay =
-            0f;
-
         yield return
             colorCrystalVFXController
                 .PlaySynchronizedActivation(
@@ -162,8 +163,8 @@ public partial class BoardController
                         crystalGem,
                         validTargets.ToArray()
                     ),
-                    targetStartDelay,
-                    SynchronizedCrystalTargetCadence
+                    0f,
+                    targetSweepDuration
                 );
 
         if (SynchronizedCrystalTargetClearLeadIn >
@@ -174,11 +175,6 @@ public partial class BoardController
             );
         }
 
-        /*
-         * PlaySynchronizedActivation starts target glints in the background.
-         * Start restoration only after the visual lead, when gameplay is
-         * about to begin clearing the source crystal and selected targets.
-         */
         if (restoreCrystalTimingsRoutine ==
             null)
         {
@@ -218,20 +214,44 @@ public partial class BoardController
             SynchronizedCrystalPostBurstDelay;
 
         crystalActivationStagger =
-            SynchronizedCrystalActivationStagger;
+            CalculateCrystalActivationStagger();
 
         synchronizedCrystalTimingsActive =
             true;
     }
 
+    private float CalculateCrystalActivationStagger()
+    {
+        float frameDuration =
+            Mathf.Max(
+                Time.deltaTime,
+                1f / 240f
+            );
+
+        if (frameDuration >=
+            HighFrameRateThreshold)
+        {
+            return 0f;
+        }
+
+        /*
+         * Request roughly one rendered frame of spacing at 90 FPS and two
+         * at 120 FPS. WaitForSeconds is frame-quantized, so using fractions
+         * of the current frame asks Unity for the desired number of frames
+         * without slowing the normal 60 FPS path.
+         */
+        if (frameDuration <=
+            VeryHighFrameRateThreshold)
+        {
+            return frameDuration * 1.5f;
+        }
+
+        return frameDuration * 0.75f;
+    }
+
     private IEnumerator
         RestoreCrystalTimingsAfterTargets()
     {
-        /*
-         * A bomb-triggered crystal can start another target sequence while
-         * the current one is resolving. Keep the fast timings until no
-         * synchronized target-launch sequence remains active.
-         */
         while (true)
         {
             while (colorCrystalVFXController !=
@@ -250,11 +270,6 @@ public partial class BoardController
                 );
             }
 
-            /*
-             * A nested crystal may have started during the safety window.
-             * If so, wait through that target sequence as well instead of
-             * restoring timings underneath it.
-             */
             if (colorCrystalVFXController !=
                     null &&
                 colorCrystalVFXController
