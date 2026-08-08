@@ -58,12 +58,13 @@ public partial class BoardController
             0.01f;
 
     /*
-     * Keep the temporary fast timings alive until the final target clear and
-     * any short nested crystal/bomb presentation has safely finished.
+     * This guard covers the final color-crystal clear tail, but remains short
+     * enough that ordinary refill cascades recover the normal match timings.
+     * Nested crystal sweeps are rechecked below and extend the guard safely.
      */
     private const float
         SynchronizedCrystalRestoreSafetyDelay =
-            0.35f;
+            0.20f;
 
     private bool
         synchronizedCrystalTimingsActive;
