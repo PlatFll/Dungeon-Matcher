@@ -227,7 +227,7 @@ public sealed class RoyalDecreeMarkView :
     private void HandleHitResolved(
         EnemyActor damagedEnemy,
         int damage,
-        BoardMatchContext matchContext)
+        BoardClearContext clearContext)
     {
         if (!isVisible ||
             damage <= 0)

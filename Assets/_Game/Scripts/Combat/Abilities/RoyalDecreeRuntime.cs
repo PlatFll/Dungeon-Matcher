@@ -7,7 +7,7 @@ using UnityEngine;
 public sealed class RoyalDecreeRuntime :
     MonoBehaviour,
     IPlayerAbilityRuntime,
-    IMatchDrivenEnemyHitSource
+    IBoardClearDrivenEnemyHitSource
 {
     [Header("References")]
     [SerializeField]
@@ -16,9 +16,13 @@ public sealed class RoyalDecreeRuntime :
     [SerializeField]
     private WaveController waveController;
 
-    private RoyalDecreeAbilityDefinition activeDefinition;
+    private RoyalDecreeAbilityDefinition
+        activeDefinition;
+
     private EnemyActor currentTarget;
+
     private Coroutine durationCoroutine;
+
     private float abilityEndTime;
 
     public event Action StateChanged;
@@ -26,13 +30,20 @@ public sealed class RoyalDecreeRuntime :
     public event Action<EnemyActor>
         TargetChanged;
 
+    /*
+     * Fired for every individual Royal Decree gem hit.
+     */
     public event Action<
         EnemyActor,
         int,
-        BoardMatchContext
+        BoardClearContext
     > HitResolved;
 
-    public bool IsActive { get; private set; }
+    public bool IsActive
+    {
+        get;
+        private set;
+    }
 
     public EnemyActor CurrentTarget =>
         currentTarget;
@@ -41,7 +52,8 @@ public sealed class RoyalDecreeRuntime :
         IsActive
             ? Mathf.Max(
                 0f,
-                abilityEndTime - Time.time
+                abilityEndTime -
+                Time.time
             )
             : 0f;
 
@@ -90,7 +102,7 @@ public sealed class RoyalDecreeRuntime :
     {
         if (!(definition is
                 RoyalDecreeAbilityDefinition
-                royalDecreeDefinition) ||
+                    royalDecreeDefinition) ||
             !CanActivate(definition))
         {
             return false;
@@ -113,7 +125,9 @@ public sealed class RoyalDecreeRuntime :
             Time.time +
             activeDefinition.Duration;
 
-        SetTarget(selectedTarget);
+        SetTarget(
+            selectedTarget
+        );
 
         if (durationCoroutine != null)
         {
@@ -169,7 +183,9 @@ public sealed class RoyalDecreeRuntime :
             IsActive;
 
         IsActive = false;
+
         abilityEndTime = 0f;
+
         activeDefinition = null;
 
         SetTarget(null);
@@ -184,11 +200,11 @@ public sealed class RoyalDecreeRuntime :
     {
         if (boardController != null)
         {
-            boardController.BoardMatchResolved -=
-                HandleBoardMatchResolved;
+            boardController.BoardClearResolved -=
+                HandleBoardClearResolved;
 
-            boardController.BoardMatchResolved +=
-                HandleBoardMatchResolved;
+            boardController.BoardClearResolved +=
+                HandleBoardClearResolved;
         }
 
         if (waveController != null)
@@ -217,8 +233,8 @@ public sealed class RoyalDecreeRuntime :
     {
         if (boardController != null)
         {
-            boardController.BoardMatchResolved -=
-                HandleBoardMatchResolved;
+            boardController.BoardClearResolved -=
+                HandleBoardClearResolved;
         }
 
         if (waveController != null)
@@ -234,64 +250,90 @@ public sealed class RoyalDecreeRuntime :
         }
     }
 
-    private void HandleBoardMatchResolved(
-        BoardMatchContext context)
+    private void HandleBoardClearResolved(
+        BoardClearContext context)
     {
         if (!IsActive ||
-            activeDefinition == null)
+            activeDefinition == null ||
+            context.GemCount <= 0)
         {
             return;
         }
 
-        EnsureValidTarget();
+        int requestedDamagePerGem =
+            activeDefinition
+                .CalculateDamagePerGem(
+                    context
+                );
 
-        if (currentTarget == null)
+        if (requestedDamagePerGem <= 0)
         {
             return;
         }
 
-        int requestedDamage =
-            activeDefinition.CalculateDamage(
+        /*
+         * Each genuinely destroyed gem creates one Royal
+         * Decree hit.
+         *
+         * If the marked enemy dies during the sequence,
+         * its Defeated event can select another valid target
+         * before the next gem hit is processed.
+         */
+        for (int gemIndex = 0;
+             gemIndex < context.GemCount;
+             gemIndex++)
+        {
+            if (!IsActive ||
+                activeDefinition == null)
+            {
+                break;
+            }
+
+            EnsureValidTarget();
+
+            if (currentTarget == null)
+            {
+                break;
+            }
+
+            EnemyActor damagedTarget =
+                currentTarget;
+
+            int healthBeforeDamage =
+                damagedTarget.CurrentHealth;
+
+            bool damageSucceeded =
+                damagedTarget.TryTakeDamage(
+                    requestedDamagePerGem
+                );
+
+            if (!damageSucceeded)
+            {
+                continue;
+            }
+
+            int actualDamage =
+                Mathf.Max(
+                    0,
+                    healthBeforeDamage -
+                    damagedTarget.CurrentHealth
+                );
+
+            if (actualDamage <= 0)
+            {
+                continue;
+            }
+
+            HitResolved?.Invoke(
+                damagedTarget,
+                actualDamage,
                 context
             );
-
-        if (requestedDamage <= 0)
-        {
-            return;
         }
-
-        EnemyActor damagedTarget =
-            currentTarget;
-
-        int healthBeforeDamage =
-            damagedTarget.CurrentHealth;
-
-        bool damageSucceeded =
-            damagedTarget.TryTakeDamage(
-                requestedDamage
-            );
-
-        if (!damageSucceeded)
-        {
-            return;
-        }
-
-        int actualDamage =
-            Mathf.Max(
-                0,
-                healthBeforeDamage -
-                damagedTarget.CurrentHealth
-            );
-
-        HitResolved?.Invoke(
-            damagedTarget,
-            actualDamage,
-            context
-        );
     }
 
     private void HandleWaveStarted(
-    int startedWave)
+        int startedWave)
     {
         StateChanged?.Invoke();
     }
@@ -313,13 +355,16 @@ public sealed class RoyalDecreeRuntime :
             return;
         }
 
-        SetTarget(spawnedEnemy);
+        SetTarget(
+            spawnedEnemy
+        );
     }
 
     private void HandleTargetDefeated(
         EnemyActor defeatedEnemy)
     {
-        if (defeatedEnemy != currentTarget)
+        if (defeatedEnemy !=
+            currentTarget)
         {
             return;
         }
@@ -362,7 +407,8 @@ public sealed class RoyalDecreeRuntime :
                 HandleTargetDefeated;
         }
 
-        currentTarget = newTarget;
+        currentTarget =
+            newTarget;
 
         if (currentTarget != null)
         {

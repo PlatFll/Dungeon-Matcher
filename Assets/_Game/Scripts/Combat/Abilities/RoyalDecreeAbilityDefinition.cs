@@ -15,62 +15,76 @@ public sealed class RoyalDecreeAbilityDefinition :
     [SerializeField, Min(0.1f)]
     private float duration = 7f;
 
-    [Header("Match Damage")]
+    [Header("Per-Gem Damage")]
     [SerializeField, Min(0)]
     [Tooltip(
-        "The single bonus hit caused by a connected " +
-        "group of exactly three gems."
+        "Damage caused by Royal Decree for each " +
+        "rewardable colored gem genuinely destroyed."
     )]
-    private int threeGemDamage = 15;
-
-    [SerializeField, Min(0)]
-    [Tooltip(
-        "Damage added to the same single hit for " +
-        "every connected gem beyond three."
-    )]
-    private int additionalDamagePerGem = 8;
+    private int damagePerGem = 5;
 
     [SerializeField, Range(0f, 1f)]
     [Tooltip(
-        "Additional damage per cascade depth. " +
-        "0.15 means fifteen percent per depth."
+        "Additional Royal Decree damage for each " +
+        "cascade depth."
     )]
     private float cascadeDamageBonusPerDepth =
         0.15f;
 
-    public override int EnergyCost => energyCost;
+    public override int EnergyCost =>
+        energyCost;
 
-    public float Duration => duration;
+    public float Duration =>
+        duration;
 
-    public int CalculateDamage(
-        BoardMatchContext context)
+    public int DamagePerGem =>
+        damagePerGem;
+
+    public int CalculateDamagePerGem(
+        BoardClearContext context)
     {
-        int safeGemCount =
-            Mathf.Max(
-                3,
-                context.GemCount
-            );
-
-        int baseDamage =
-            threeGemDamage +
-            Mathf.Max(
-                0,
-                safeGemCount - 3
-            ) *
-            additionalDamagePerGem;
-
         float cascadeMultiplier =
             1f +
-            context.CascadeDepth *
+            Mathf.Max(
+                0,
+                context.CascadeDepth
+            ) *
             cascadeDamageBonusPerDepth;
 
         return Mathf.Max(
             0,
             Mathf.RoundToInt(
-                baseDamage *
+                damagePerGem *
                 cascadeMultiplier
             )
         );
+    }
+
+    /*
+     * Temporary compatibility helper for any older code
+     * that still asks for match-based total damage.
+     */
+    public int CalculateDamage(
+        BoardMatchContext context)
+    {
+        BoardClearContext clearContext =
+            new BoardClearContext(
+                context.GemType,
+                context.GemCount,
+                context.CascadeDepth,
+                BoardClearSource.Match,
+                context.MatchType,
+                context.GemCount
+            );
+
+        return
+            CalculateDamagePerGem(
+                clearContext
+            ) *
+            Mathf.Max(
+                0,
+                context.GemCount
+            );
     }
 
     protected override void OnValidate()
@@ -89,16 +103,16 @@ public sealed class RoyalDecreeAbilityDefinition :
                 duration
             );
 
-        threeGemDamage =
+        damagePerGem =
             Mathf.Max(
                 0,
-                threeGemDamage
+                damagePerGem
             );
 
-        additionalDamagePerGem =
+        cascadeDamageBonusPerDepth =
             Mathf.Max(
-                0,
-                additionalDamagePerGem
+                0f,
+                cascadeDamageBonusPerDepth
             );
     }
 }

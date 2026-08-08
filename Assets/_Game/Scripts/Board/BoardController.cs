@@ -788,7 +788,8 @@ public partial class BoardController : MonoBehaviour
 
             ReportMatchesToCombat(
                 matches,
-                cascadeDepth
+                cascadeDepth,
+                specialGemCreationRequests
             );
 
             ReportBombClearsToCombat(

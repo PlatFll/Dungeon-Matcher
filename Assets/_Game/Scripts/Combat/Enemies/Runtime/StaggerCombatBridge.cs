@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class StaggerCombatBridge : MonoBehaviour
+public sealed class StaggerCombatBridge :
+    MonoBehaviour
 {
     [Header("Combat Reference")]
     [SerializeField]
@@ -11,33 +12,27 @@ public sealed class StaggerCombatBridge : MonoBehaviour
 
     [Header("Stagger Durations")]
     [SerializeField, Min(0f)]
-    [Tooltip(
-        "Stagger applied when an enemy was not already staggered."
-    )]
-    private float initialStaggerDuration = 1f;
+    private float initialStaggerDuration =
+        1f;
 
     [SerializeField, Min(0f)]
-    [Tooltip(
-        "Extra stagger added when an already-staggered " +
-        "enemy receives another damaging hit."
-    )]
-    private float additionalStaggerDuration = 0.75f;
+    private float additionalStaggerDuration =
+        0.75f;
 
     [SerializeField, Min(0f)]
-    [Tooltip(
-        "Additional stagger for each cascade depth."
-    )]
-    private float cascadeStaggerBonusPerDepth = 0.25f;
+    private float cascadeStaggerBonusPerDepth =
+        0.25f;
 
     [SerializeField, Min(0f)]
-    [Tooltip(
-        "Maximum stagger time that can be stored at once."
-    )]
-    private float maximumStoredStaggerDuration = 3f;
+    private float maximumStoredStaggerDuration =
+        3f;
 
-    private readonly List<IMatchDrivenEnemyHitSource>
-        matchDrivenHitSources =
-            new List<IMatchDrivenEnemyHitSource>();
+    private readonly
+        List<IBoardClearDrivenEnemyHitSource>
+        boardClearDrivenHitSources =
+            new List<
+                IBoardClearDrivenEnemyHitSource
+            >();
 
     public event Action<
         EnemyActor,
@@ -67,70 +62,78 @@ public sealed class StaggerCombatBridge : MonoBehaviour
     {
         if (combatController != null)
         {
-            combatController.EnemyDamagedByGemMatch -=
-                HandleEnemyDamaged;
+            combatController
+                .EnemyDamagedByGemClear -=
+                    HandleEnemyDamagedByClear;
 
-            combatController.EnemyDamagedByGemMatch +=
-                HandleEnemyDamaged;
+            combatController
+                .EnemyDamagedByGemClear +=
+                    HandleEnemyDamagedByClear;
         }
 
-        SubscribeToMatchDrivenHitSources();
+        SubscribeToBoardClearDrivenHitSources();
     }
 
     private void Unsubscribe()
     {
         if (combatController != null)
         {
-            combatController.EnemyDamagedByGemMatch -=
-                HandleEnemyDamaged;
+            combatController
+                .EnemyDamagedByGemClear -=
+                    HandleEnemyDamagedByClear;
         }
 
-        UnsubscribeFromMatchDrivenHitSources();
+        UnsubscribeFromBoardClearDrivenHitSources();
     }
 
-    private void SubscribeToMatchDrivenHitSources()
+    private void
+        SubscribeToBoardClearDrivenHitSources()
     {
-        UnsubscribeFromMatchDrivenHitSources();
+        UnsubscribeFromBoardClearDrivenHitSources();
 
         MonoBehaviour[] components =
-            GetComponentsInChildren<MonoBehaviour>(
-                true
-            );
+            GetComponentsInChildren<
+                MonoBehaviour
+            >(true);
 
-        foreach (MonoBehaviour component in components)
+        foreach (MonoBehaviour component
+                 in components)
         {
             if (!(component is
-                    IMatchDrivenEnemyHitSource hitSource))
+                    IBoardClearDrivenEnemyHitSource
+                        hitSource))
             {
                 continue;
             }
 
             hitSource.HitResolved -=
-                HandleMatchDrivenAbilityHit;
+                HandleBoardClearDrivenAbilityHit;
 
             hitSource.HitResolved +=
-                HandleMatchDrivenAbilityHit;
+                HandleBoardClearDrivenAbilityHit;
 
-            matchDrivenHitSources.Add(
+            boardClearDrivenHitSources.Add(
                 hitSource
             );
         }
     }
 
-    private void UnsubscribeFromMatchDrivenHitSources()
+    private void
+        UnsubscribeFromBoardClearDrivenHitSources()
     {
         foreach (
-            IMatchDrivenEnemyHitSource hitSource
-            in matchDrivenHitSources)
+            IBoardClearDrivenEnemyHitSource
+                hitSource
+            in boardClearDrivenHitSources)
         {
             hitSource.HitResolved -=
-                HandleMatchDrivenAbilityHit;
+                HandleBoardClearDrivenAbilityHit;
         }
 
-        matchDrivenHitSources.Clear();
+        boardClearDrivenHitSources.Clear();
     }
 
-    private void HandleEnemyDamaged(
+    private void HandleEnemyDamagedByClear(
         EnemyActor enemy,
         GemDamageContext damageContext,
         int actualDamage)
@@ -140,26 +143,27 @@ public sealed class StaggerCombatBridge : MonoBehaviour
                 ? damageContext.CascadeDepth
                 : 0;
 
-        ApplyMatchStagger(
+        ApplyClearDrivenStagger(
             enemy,
             actualDamage,
             cascadeDepth
         );
     }
 
-    private void HandleMatchDrivenAbilityHit(
-        EnemyActor enemy,
-        int actualDamage,
-        BoardMatchContext matchContext)
+    private void
+        HandleBoardClearDrivenAbilityHit(
+            EnemyActor enemy,
+            int actualDamage,
+            BoardClearContext clearContext)
     {
-        ApplyMatchStagger(
+        ApplyClearDrivenStagger(
             enemy,
             actualDamage,
-            matchContext.CascadeDepth
+            clearContext.CascadeDepth
         );
     }
 
-    private void ApplyMatchStagger(
+    private void ApplyClearDrivenStagger(
         EnemyActor enemy,
         int actualDamage,
         int cascadeDepth)
@@ -172,13 +176,15 @@ public sealed class StaggerCombatBridge : MonoBehaviour
         }
 
         EnemyStagger stagger =
-            enemy.GetComponent<EnemyStagger>();
+            enemy.GetComponent<
+                EnemyStagger
+            >();
 
         if (stagger == null)
         {
             Debug.LogWarning(
-                $"{enemy.name} received match-driven damage " +
-                "but has no EnemyStagger component.",
+                $"{enemy.name} received clear-driven " +
+                "damage but has no EnemyStagger component.",
                 enemy
             );
 
@@ -217,7 +223,8 @@ public sealed class StaggerCombatBridge : MonoBehaviour
         Debug.Log(
             $"{enemy.Definition.DisplayName} was staggered. " +
             $"Added: {actualAddedDuration:0.00}s. " +
-            $"Stored: {stagger.RemainingStaggerTime:0.00}s.",
+            $"Stored: " +
+            $"{stagger.RemainingStaggerTime:0.00}s.",
             enemy
         );
     }
@@ -230,7 +237,8 @@ public sealed class StaggerCombatBridge : MonoBehaviour
         }
 
         Debug.LogError(
-            "StaggerCombatBridge requires a CombatController.",
+            "StaggerCombatBridge requires a " +
+            "CombatController.",
             this
         );
 

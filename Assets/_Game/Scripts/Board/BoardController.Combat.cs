@@ -42,7 +42,9 @@ public partial class BoardController
 
     private void ReportMatchesToCombat(
         HashSet<Gem> matches,
-        int cascadeDepth)
+        int cascadeDepth,
+        List<SpecialGemCreationRequest>
+            specialGemCreationRequests)
     {
         if (matches == null ||
             matches.Count == 0)
@@ -75,8 +77,45 @@ public partial class BoardController
             GemType gemType =
                 firstGem.Type;
 
-            int gemCount =
+            int triggerGemCount =
                 group.Count;
+
+            /*
+             * Count gems in this match that survive because
+             * they are becoming newly created specials.
+             */
+            int preservedGemCount = 0;
+
+            if (specialGemCreationRequests != null)
+            {
+                foreach (
+                    SpecialGemCreationRequest request
+                    in specialGemCreationRequests)
+                {
+                    if (!request.IsValid ||
+                        request.GemToPreserve == null ||
+                        !group.Contains(
+                            request.GemToPreserve
+                        ))
+                    {
+                        continue;
+                    }
+
+                    preservedGemCount++;
+                }
+            }
+
+            int destroyedGemCount =
+                Mathf.Max(
+                    0,
+                    triggerGemCount -
+                    preservedGemCount
+                );
+
+            if (destroyedGemCount <= 0)
+            {
+                continue;
+            }
 
             int safeCascadeDepth =
                 Mathf.Max(
@@ -92,29 +131,26 @@ public partial class BoardController
             BoardClearContext clearContext =
                 new BoardClearContext(
                     gemType,
-                    gemCount,
+                    destroyedGemCount,
                     safeCascadeDepth,
                     BoardClearSource.Match,
-                    matchType
+                    matchType,
+                    triggerGemCount
                 );
 
-            /*
-             * New unified notification.
-             *
-             * Healing, Royal Decree and future passives can
-             * respond even when no enemy has this color.
-             */
             BoardClearResolved?.Invoke(
                 clearContext
             );
 
             /*
-             * Legacy match notification.
+             * Legacy match context intentionally retains the
+             * full triggering match size until old systems are
+             * completely removed.
              */
             BoardMatchContext matchContext =
                 new BoardMatchContext(
                     gemType,
-                    gemCount,
+                    triggerGemCount,
                     safeCascadeDepth,
                     matchType
                 );
@@ -133,9 +169,6 @@ public partial class BoardController
                     );
             }
 
-            /*
-             * New unified combat outcome.
-             */
             BoardClearOutcome clearOutcome =
                 new BoardClearOutcome(
                     clearContext,
@@ -146,9 +179,6 @@ public partial class BoardController
                 clearOutcome
             );
 
-            /*
-             * Legacy match outcome.
-             */
             BoardMatchOutcome matchOutcome =
                 new BoardMatchOutcome(
                     matchContext,
