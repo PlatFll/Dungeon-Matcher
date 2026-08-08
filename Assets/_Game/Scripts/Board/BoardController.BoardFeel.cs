@@ -8,6 +8,10 @@ public partial class BoardController
      * Keep presentation-only responsiveness values in this partial so future
      * tuning has one obvious rollback/debug location. None of these helpers
      * decide matches, targets, rewards, bomb chains, or cascade outcomes.
+     *
+     * These defaults intentionally target a readable "normal" match-3 pace:
+     * keep the responsive gravity/bounce architecture from the previous pass,
+     * but leave slightly more time for the eye to follow swaps and landings.
      */
     [Header("Board Feel - Responsiveness")]
     [SerializeField, Range(0.5f, 1f)]
@@ -17,7 +21,7 @@ public partial class BoardController
         "changing the serialized base timing."
     )]
     private float swapDurationMultiplier =
-        0.80f;
+        0.90f;
 
     [SerializeField, Min(0f)]
     [Tooltip(
@@ -25,7 +29,7 @@ public partial class BoardController
         "swap snaps back."
     )]
     private float maximumInvalidSwapPause =
-        0.03f;
+        0.04f;
 
     [SerializeField, Range(0.25f, 1f)]
     [Tooltip(
@@ -43,7 +47,7 @@ public partial class BoardController
         "inside this total budget rather than added afterward."
     )]
     private float fallDurationMultiplier =
-        0.86f;
+        0.94f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
@@ -83,7 +87,7 @@ public partial class BoardController
         "landed before the next cascade is scanned."
     )]
     private float postFallSettlePause =
-        0.025f;
+        0.04f;
 
     private float GetResponsiveSwapDuration()
     {
