@@ -12,11 +12,11 @@ public sealed class ColorCrystalVFXController :
     private float glintSpawnStagger =
         0.02f;
 
-    [SerializeField, Min(0.05f)]
+    [SerializeField, Min(0.06f)]
     private float glintDuration =
         0.15f;
 
-    [SerializeField, Min(0.01f)]
+    [SerializeField, Min(0.041f)]
     private float glintPeakTime =
         0.09f;
 
@@ -477,15 +477,16 @@ public sealed class ColorCrystalVFXController :
 
         glintDuration =
             Mathf.Max(
-                0.05f,
+                0.06f,
                 glintDuration
             );
 
         glintPeakTime =
             Mathf.Clamp(
                 glintPeakTime,
-                0.01f,
-                glintDuration
+                0.041f,
+                glintDuration -
+                    0.01f
             );
 
         targetFlashDuration =
