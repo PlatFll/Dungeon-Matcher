@@ -26,6 +26,12 @@ public sealed class ColorCrystalGlintVFX :
     private Action<ColorCrystalGlintVFX>
         releaseAction;
 
+    private const float FirstGrowEnd =
+        0.04f;
+
+    private const float MinimumShrinkDuration =
+        0.01f;
+
     private void Awake()
     {
         CacheReferences();
@@ -84,15 +90,25 @@ public sealed class ColorCrystalGlintVFX :
 
         duration =
             Mathf.Max(
-                0.05f,
+                FirstGrowEnd +
+                MinimumShrinkDuration +
+                0.01f,
                 glintDuration
             );
+
+        float minimumPeakTime =
+            FirstGrowEnd +
+            0.001f;
+
+        float maximumPeakTime =
+            duration -
+            MinimumShrinkDuration;
 
         peakTime =
             Mathf.Clamp(
                 glintPeakTime,
-                0.01f,
-                duration
+                minimumPeakTime,
+                maximumPeakTime
             );
 
         flashDuration =
@@ -193,14 +209,12 @@ public sealed class ColorCrystalGlintVFX :
     {
         float visualScale;
 
-        const float firstGrowEnd = 0.04f;
-
-        if (elapsedTime < firstGrowEnd)
+        if (elapsedTime < FirstGrowEnd)
         {
             float progress =
                 Mathf.InverseLerp(
                     0f,
-                    firstGrowEnd,
+                    FirstGrowEnd,
                     elapsedTime
                 );
 
@@ -215,7 +229,7 @@ public sealed class ColorCrystalGlintVFX :
         {
             float progress =
                 Mathf.InverseLerp(
-                    firstGrowEnd,
+                    FirstGrowEnd,
                     peakTime,
                     elapsedTime
                 );
