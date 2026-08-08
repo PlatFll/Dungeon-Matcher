@@ -78,9 +78,6 @@ public sealed class ColorCrystalVFXController :
     private const string SortingLayerName =
         "Gems";
 
-    public float TargetSpawnStagger =>
-        glintSpawnStagger;
-
     public bool IsTargetLaunchSequenceActive =>
         activeTargetLaunchSequences > 0;
 
@@ -148,18 +145,18 @@ public sealed class ColorCrystalVFXController :
     }
 
     /*
-     * Synchronized mode is used by the board when the selected
-     * gems should begin clearing at the same travelling cadence
-     * as the star glints instead of waiting for every glint first.
+     * Synchronized mode is used by the board when selected gems
+     * should begin clearing at the same travelling cadence as the
+     * star glints instead of waiting for every glint first.
      *
-     * The crystal anticipation is still awaited. Target glints are
-     * then launched in a background sequence after a tiny lead-in,
-     * allowing the existing board clear coroutine to advance in
-     * parallel without giving VFX ownership of gameplay state.
+     * BoardController supplies the synchronized cadence explicitly.
+     * The normal glintSpawnStagger stays unchanged for any caller that
+     * still wants the original standalone VFX timing.
      */
     public IEnumerator PlaySynchronizedActivation(
         ColorCrystalVFXContext context,
-        float targetStartDelay)
+        float targetStartDelay,
+        float synchronizedTargetStagger)
     {
         if (!context.IsValid ||
             boardController == null)
@@ -177,6 +174,10 @@ public sealed class ColorCrystalVFXController :
                 Mathf.Max(
                     0f,
                     targetStartDelay
+                ),
+                Mathf.Max(
+                    0f,
+                    synchronizedTargetStagger
                 )
             )
         );
@@ -201,7 +202,8 @@ public sealed class ColorCrystalVFXController :
 
     private IEnumerator PlayTargetGlintSequence(
         Gem[] targetGems,
-        float startDelay)
+        float startDelay,
+        float targetStagger)
     {
         if (targetGems == null ||
             targetGems.Length == 0)
@@ -226,12 +228,12 @@ public sealed class ColorCrystalVFXController :
                 targetGems[index]
             );
 
-            if (glintSpawnStagger > 0f &&
+            if (targetStagger > 0f &&
                 index <
                     targetGems.Length - 1)
             {
                 yield return new WaitForSeconds(
-                    glintSpawnStagger
+                    targetStagger
                 );
             }
         }
