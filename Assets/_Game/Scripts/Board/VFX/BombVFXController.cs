@@ -9,7 +9,7 @@ public sealed class BombVFXController :
 {
     [Header("Beam")]
     [SerializeField, Min(0.05f)]
-    private float beamDuration = 0.24f;
+    private float beamDuration = 0.36f;
 
     [SerializeField, Min(0f)]
     [Tooltip(
@@ -42,15 +42,15 @@ public sealed class BombVFXController :
     [SerializeField]
     private Vector2 pixelSpeedRange =
         new Vector2(
-            1.5f,
-            2.5f
+            1.0f,
+            1.6667f
         );
 
     [SerializeField]
     private Vector2 pixelLifetimeRange =
         new Vector2(
-            0.17f,
-            0.25f
+            0.255f,
+            0.375f
         );
 
     [SerializeField, Min(0f)]
