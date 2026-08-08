@@ -54,7 +54,7 @@ public sealed class ColorCrystalVFXController :
         "Total target-sweep time for a large color-crystal clear."
     )]
     private float maximumSweepDuration =
-        0.46f;
+        0.42f;
 
     [SerializeField, Min(1)]
     private int minimumSweepTargetCount =
