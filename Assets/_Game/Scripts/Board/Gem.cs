@@ -233,6 +233,33 @@ public class Gem :
                 .PlayColorCrystalMaterialization();
     }
 
+    public IEnumerator
+        PlayColorCrystalActivationPulse()
+    {
+        if (SpecialType !=
+            GemSpecialType.ColorCrystal)
+        {
+            yield break;
+        }
+
+        if (specialOverlayView == null)
+        {
+            specialOverlayView =
+                GetComponentInChildren<
+                    GemSpecialOverlayView
+                >(true);
+        }
+
+        if (specialOverlayView == null)
+        {
+            yield break;
+        }
+
+        yield return
+            specialOverlayView
+                .PlayColorCrystalActivationPulse();
+    }
+
     public void SetFlashAmount(
         float amount)
     {
@@ -260,6 +287,32 @@ public class Gem :
         spriteRenderer.SetPropertyBlock(
             materialPropertyBlock
         );
+    }
+
+    public void SetVFXFlashAmount(
+        float amount)
+    {
+        SetFlashAmount(
+            amount
+        );
+
+        if (specialOverlayView == null)
+        {
+            specialOverlayView =
+                GetComponentInChildren<
+                    GemSpecialOverlayView
+                >(true);
+        }
+
+        if (specialOverlayView != null &&
+            SpecialType !=
+                GemSpecialType.None)
+        {
+            specialOverlayView
+                .SetVFXFlashAmount(
+                    amount
+                );
+        }
     }
 
     public void OnPointerDown(

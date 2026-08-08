@@ -1642,6 +1642,11 @@ public partial class BoardController
                 request
             );
 
+        yield return
+            PlayColorCrystalActivationVFX(
+                crystalTargetSet
+            );
+
         Gem crystalGem;
 
         List<Gem> orderedTargets =
@@ -1802,6 +1807,11 @@ public partial class BoardController
         {
             yield break;
         }
+
+        yield return
+            PlayColorCrystalActivationVFX(
+                crystalClearSet
+            );
 
         if (targetSpecialType ==
             GemSpecialType.None)
