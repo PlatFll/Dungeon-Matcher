@@ -43,7 +43,7 @@ public partial class BoardController
         "inside this total budget rather than added afterward."
     )]
     private float fallDurationMultiplier =
-        0.90f;
+        0.86f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
@@ -236,7 +236,8 @@ public partial class BoardController
     /*
      * Gravity should accelerate into the landing rather than using the old
      * symmetric SmoothStep, which eased both into and out of a fall and made
-     * gems feel floaty just before impact.
+     * gems feel floaty just before impact. The 1.45 exponent keeps that
+     * acceleration while still giving the first frames visible movement.
      */
     private static float EaseInGravity(
         float progress)
@@ -246,7 +247,7 @@ public partial class BoardController
 
         return Mathf.Pow(
             safeProgress,
-            1.65f
+            1.45f
         );
     }
 
