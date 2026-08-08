@@ -23,7 +23,7 @@ public partial class BoardController
      */
     private const float
         SynchronizedCrystalFlashDuration =
-            0.015f;
+            0.02f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
