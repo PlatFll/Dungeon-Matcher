@@ -146,11 +146,11 @@ public sealed class BoardHintController :
         boardController.BoardActivityStarted +=
             HandleBoardActivity;
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleClearResolved;
 
-        boardController.BoardMatchResolved +=
-            HandleMatchResolved;
+        boardController.BoardClearResolved +=
+            HandleClearResolved;
     }
 
     private void UnsubscribeFromBoard()
@@ -163,8 +163,8 @@ public sealed class BoardHintController :
         boardController.BoardActivityStarted -=
             HandleBoardActivity;
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleClearResolved;
     }
 
     private void HandleBoardActivity()
@@ -172,11 +172,11 @@ public sealed class BoardHintController :
         ResetHintTimer();
     }
 
-    private void HandleMatchResolved(
-        BoardMatchContext context)
+    private void HandleClearResolved(
+        BoardClearContext context)
     {
         /*
-         * Any normal match or cascade resets the
+         * Any board clear or cascade resets the
          * inactivity countdown.
          */
         ResetHintTimer();
