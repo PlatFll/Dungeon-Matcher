@@ -29,8 +29,6 @@ public sealed class PlayerAffinityHealing :
         0.15f;
 
     /*
-     * New scalable event.
-     *
      * Future passives, VFX and cards can inspect exactly
      * what kind of clear caused the healing.
      */
@@ -38,19 +36,6 @@ public sealed class PlayerAffinityHealing :
         BoardClearContext,
         int
     > AffinityClearHealingResolved;
-
-    /*
-     * Legacy compatibility event.
-     *
-     * Keep this for now in case an existing UI or effect
-     * listens to the old signature.
-     */
-    public event Action<
-        GemType,
-        int,
-        int,
-        int
-    > AffinityHealingResolved;
 
     private void OnEnable()
     {
@@ -132,21 +117,8 @@ public sealed class PlayerAffinityHealing :
                 attemptedHealing
             );
 
-        /*
-         * New context-rich event.
-         */
         AffinityClearHealingResolved?.Invoke(
             context,
-            actualHealing
-        );
-
-        /*
-         * Old event remains temporarily compatible.
-         */
-        AffinityHealingResolved?.Invoke(
-            context.GemType,
-            context.GemCount,
-            context.CascadeDepth,
             actualHealing
         );
 
@@ -197,28 +169,6 @@ public sealed class PlayerAffinityHealing :
                 baseHealing *
                 cascadeMultiplier
             )
-        );
-    }
-
-    /*
-     * Compatibility overload for any old caller that
-     * directly calculates healing.
-     */
-    public int CalculateHealing(
-        int gemCount,
-        int cascadeDepth)
-    {
-        BoardClearContext context =
-            new BoardClearContext(
-                default(GemType),
-                gemCount,
-                cascadeDepth,
-                BoardClearSource.Match,
-                BoardMatchType.Other
-            );
-
-        return CalculateHealing(
-            context
         );
     }
 
