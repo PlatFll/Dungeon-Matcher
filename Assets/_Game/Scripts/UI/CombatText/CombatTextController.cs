@@ -5,6 +5,34 @@ using UnityEngine;
 public sealed class CombatTextController :
     MonoBehaviour
 {
+    /*
+     * Enemy damage spread tuning.
+     *
+     * Rapid multi-hit attacks can emit many numbers in the same frame.
+     * Instead of relying on random jitter, assign each enemy its own
+     * repeating left/right fan. Four horizontal bands provide eight
+     * distinct lanes; later hits reuse those lanes with a small extra
+     * vertical lift so large Royal Decree-style bursts remain readable.
+     *
+     * These are presentation-only constants on purpose. If playtesting
+     * shows the fan is too narrow or too wide, this is the single tuning
+     * block to revisit without changing damage or combat logic.
+     */
+    private const float
+        EnemyDamageBaseHorizontalSpread = 24f;
+
+    private const float
+        EnemyDamageHorizontalSpreadStep = 8f;
+
+    private const int
+        EnemyDamageHorizontalSpreadBands = 4;
+
+    private const float
+        EnemyDamageVerticalTierStep = 6f;
+
+    private const int
+        EnemyDamageVerticalTierCount = 3;
+
     [Header("UI References")]
     [SerializeField]
     private Canvas rootCanvas;
@@ -51,6 +79,10 @@ public sealed class CombatTextController :
     private readonly HashSet<EnemyActor>
         boundEnemies =
             new HashSet<EnemyActor>();
+
+    private readonly Dictionary<EnemyActor, int>
+        enemyDamageSequenceByTarget =
+            new Dictionary<EnemyActor, int>();
 
     private void Awake()
     {
@@ -162,7 +194,7 @@ public sealed class CombatTextController :
     }
 
     private void HandleEnemySpawned(
-    EnemyActor spawnedEnemy)
+        EnemyActor spawnedEnemy)
     {
         BindEnemy(spawnedEnemy);
     }
@@ -199,6 +231,8 @@ public sealed class CombatTextController :
             return;
         }
 
+        enemyDamageSequenceByTarget[enemy] = 0;
+
         enemy.DamageReceived +=
             HandleEnemyDamaged;
 
@@ -221,6 +255,7 @@ public sealed class CombatTextController :
             HandleEnemyDefeated;
 
         boundEnemies.Remove(enemy);
+        enemyDamageSequenceByTarget.Remove(enemy);
     }
 
     private void UnbindAllEnemies()
@@ -245,6 +280,7 @@ public sealed class CombatTextController :
         }
 
         boundEnemies.Clear();
+        enemyDamageSequenceByTarget.Clear();
     }
 
     private void HandlePlayerDamaged(
@@ -293,11 +329,73 @@ public sealed class CombatTextController :
             return;
         }
 
+        Vector2 damageTravelOffset =
+            GetNextEnemyDamageTravelOffset(
+                enemy
+            );
+
         ShowText(
             $"-{actualDamage}",
             CombatTextKind.Damage,
             enemy.transform,
-            enemyTextOffset
+            enemyTextOffset,
+            damageTravelOffset
+        );
+    }
+
+    /*
+     * Alternate left/right on every hit, then widen the fan every pair.
+     * After all eight horizontal lanes are used, reuse them slightly
+     * higher. The style's existing +/-4 px jitter is still added by
+     * FloatingCombatText, preventing repeated lanes from looking rigid.
+     */
+    private Vector2 GetNextEnemyDamageTravelOffset(
+        EnemyActor enemy)
+    {
+        if (!enemyDamageSequenceByTarget.TryGetValue(
+                enemy,
+                out int sequenceIndex))
+        {
+            sequenceIndex = 0;
+        }
+
+        enemyDamageSequenceByTarget[enemy] =
+            sequenceIndex + 1;
+
+        bool travelLeft =
+            sequenceIndex % 2 == 0;
+
+        int pairIndex =
+            sequenceIndex / 2;
+
+        int horizontalBand =
+            pairIndex %
+            EnemyDamageHorizontalSpreadBands;
+
+        float horizontalMagnitude =
+            EnemyDamageBaseHorizontalSpread +
+            horizontalBand *
+            EnemyDamageHorizontalSpreadStep;
+
+        float horizontalTravel =
+            travelLeft
+                ? -horizontalMagnitude
+                : horizontalMagnitude;
+
+        int verticalTier =
+            (
+                pairIndex /
+                EnemyDamageHorizontalSpreadBands
+            ) %
+            EnemyDamageVerticalTierCount;
+
+        float verticalTravel =
+            verticalTier *
+            EnemyDamageVerticalTierStep;
+
+        return new Vector2(
+            horizontalTravel,
+            verticalTravel
         );
     }
 
@@ -313,6 +411,22 @@ public sealed class CombatTextController :
         Transform anchor,
         Vector2 localOffset)
     {
+        ShowText(
+            displayedText,
+            kind,
+            anchor,
+            localOffset,
+            Vector2.zero
+        );
+    }
+
+    private void ShowText(
+        string displayedText,
+        CombatTextKind kind,
+        Transform anchor,
+        Vector2 localOffset,
+        Vector2 additionalTravelDistance)
+    {
         if (anchor == null ||
             string.IsNullOrWhiteSpace(
                 displayedText
@@ -325,7 +439,8 @@ public sealed class CombatTextController :
             displayedText,
             kind,
             anchor.position,
-            localOffset
+            localOffset,
+            additionalTravelDistance
         );
     }
 
@@ -334,6 +449,22 @@ public sealed class CombatTextController :
         CombatTextKind kind,
         Vector3 worldPosition,
         Vector2 localOffset)
+    {
+        ShowTextAtWorldPosition(
+            displayedText,
+            kind,
+            worldPosition,
+            localOffset,
+            Vector2.zero
+        );
+    }
+
+    private void ShowTextAtWorldPosition(
+        string displayedText,
+        CombatTextKind kind,
+        Vector3 worldPosition,
+        Vector2 localOffset,
+        Vector2 additionalTravelDistance)
     {
         if (!TryConvertToLayerPosition(
                 worldPosition,
@@ -362,6 +493,7 @@ public sealed class CombatTextController :
             displayedText,
             style,
             layerPosition + localOffset,
+            additionalTravelDistance,
             ReleaseText
         );
     }
