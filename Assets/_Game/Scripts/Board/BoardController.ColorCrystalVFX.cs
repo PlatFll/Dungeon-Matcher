@@ -12,13 +12,15 @@ public partial class BoardController
      * then play the ordinary 0.12s ClearMatches animation one by one.
      * That made the visual selector feel much faster than the board.
      *
-     * During a color-crystal activation only, temporarily shorten the
-     * existing clear animation and launch target glints in parallel.
+     * Synchronized mode keeps the quick travelling cadence, but the glint
+     * now receives a short visual lead before its target begins clearing.
+     * This lets the star visibly grow toward its 0.09s peak instead of the
+     * gem disappearing almost immediately underneath it.
      *
-     * The synchronized values below are deliberately tuned around Unity's
-     * coroutine frame scheduling rather than raw seconds alone. ClearMatches
-     * always has a final yield, so a 0.01s flash plus that final frame tracks
-     * the original 0.02s glint cadence closely at 60/90/120 FPS.
+     * The values below are deliberately tuned around Unity's coroutine
+     * frame scheduling. ClearMatches always has a final yield, so a 0.01s
+     * flash plus that final frame continues to track the 0.02s travelling
+     * cadence closely at 60/90/120 FPS once the fixed lead is established.
      *
      * Keeping this override here avoids changing crystal target selection,
      * damage/reward reporting, bomb expansion, or ClearMatches itself.
@@ -30,6 +32,16 @@ public partial class BoardController
     private const float
         SynchronizedCrystalTargetCadence =
             0.02f;
+
+    /*
+     * Stars begin immediately after the source crystal pulse. Gameplay
+     * waits briefly before starting the source-crystal clear. The source
+     * clear then adds a couple of frames of its own, placing the first
+     * target disappearance close to the target star's 0.09s visual peak.
+     */
+    private const float
+        SynchronizedCrystalTargetClearLeadIn =
+            0.05f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
@@ -136,13 +148,12 @@ public partial class BoardController
         BeginSynchronizedCrystalTimings();
 
         /*
-         * ResolveNormalColorCrystalSequence removes the source crystal
-         * first. Delay the first target glint by one synchronized cadence
-         * so the first target visual cue and first target clear begin on
-         * the same beat.
+         * Start the target stars immediately after the source crystal pulse.
+         * The fixed lead below then gives those stars time to become readable
+         * before ResolveNormalColorCrystalSequence begins destroying gems.
          */
-        float targetStartDelay =
-            SynchronizedCrystalTargetCadence;
+        const float targetStartDelay =
+            0f;
 
         yield return
             colorCrystalVFXController
@@ -155,10 +166,18 @@ public partial class BoardController
                     SynchronizedCrystalTargetCadence
                 );
 
+        if (SynchronizedCrystalTargetClearLeadIn >
+            0f)
+        {
+            yield return new WaitForSeconds(
+                SynchronizedCrystalTargetClearLeadIn
+            );
+        }
+
         /*
-         * PlaySynchronizedActivation returns after the crystal pulse and
-         * starts target glints in the background. Start restoration only
-         * now, when the controller has registered that launch sequence.
+         * PlaySynchronizedActivation starts target glints in the background.
+         * Start restoration only after the visual lead, when gameplay is
+         * about to begin clearing the source crystal and selected targets.
          */
         if (restoreCrystalTimingsRoutine ==
             null)
