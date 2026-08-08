@@ -46,8 +46,8 @@ public partial class BoardController
 
     /*
      * Small target sets need a little spacing because ClearMatches has a
-     * mandatory final yielded frame. Large sets already naturally land on a
-     * useful cadence, so adding another wait there would make them sluggish.
+     * mandatory final yielded frame. Large sets derive any required spacing
+     * from the adaptive sweep and current frame duration instead.
      */
     private const int
         SmallCrystalTargetCount =
@@ -153,7 +153,8 @@ public partial class BoardController
                 );
 
         BeginSynchronizedCrystalTimings(
-            validTargets.Count
+            validTargets.Count,
+            targetSweepDuration
         );
 
         /*
@@ -197,7 +198,8 @@ public partial class BoardController
     }
 
     private void BeginSynchronizedCrystalTimings(
-        int targetCount)
+        int targetCount,
+        float targetSweepDuration)
     {
         if (synchronizedCrystalTimingsActive)
         {
@@ -226,13 +228,82 @@ public partial class BoardController
             SynchronizedCrystalPostBurstDelay;
 
         crystalActivationStagger =
-            targetCount <=
-                SmallCrystalTargetCount
-                ? SmallCrystalTargetActivationStagger
-                : 0f;
+            CalculateCrystalActivationStagger(
+                targetCount,
+                targetSweepDuration
+            );
 
         synchronizedCrystalTimingsActive =
             true;
+    }
+
+    private float CalculateCrystalActivationStagger(
+        int targetCount,
+        float targetSweepDuration)
+    {
+        if (targetCount <= 1)
+        {
+            return 0f;
+        }
+
+        if (targetCount <=
+            SmallCrystalTargetCount)
+        {
+            return SmallCrystalTargetActivationStagger;
+        }
+
+        /*
+         * ClearMatches spends one or more frames in its flash loop and then
+         * always yields one final frame. Estimate that frame cost so very
+         * high frame rates do not let the gameplay clear sequence outrun the
+         * elapsed-time star sweep. At 60/90 FPS this normally resolves to
+         * zero extra delay; at 120 FPS it adds only the small amount needed.
+         */
+        float frameDuration =
+            Mathf.Max(
+                Time.deltaTime,
+                1f / 240f
+            );
+
+        int flashFrameCount =
+            Mathf.Max(
+                1,
+                Mathf.CeilToInt(
+                    SynchronizedCrystalFlashDuration /
+                    frameDuration
+                )
+            );
+
+        float estimatedClearDuration =
+            (
+                flashFrameCount +
+                1
+            ) *
+            frameDuration;
+
+        float desiredTargetCadence =
+            targetSweepDuration /
+            (targetCount - 1);
+
+        float requiredStagger =
+            Mathf.Max(
+                0f,
+                desiredTargetCadence -
+                estimatedClearDuration
+            );
+
+        /*
+         * A sub-frame WaitForSeconds still costs a rendered frame, so only
+         * request an explicit wait when the gap is large enough to justify
+         * one. This avoids accidentally slowing the 60 FPS path.
+         */
+        if (requiredStagger <
+            frameDuration * 0.75f)
+        {
+            return 0f;
+        }
+
+        return requiredStagger;
     }
 
     private IEnumerator
