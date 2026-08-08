@@ -14,14 +14,30 @@ public partial class BoardController
     )]
     private CombatController combatController;
 
+    /*
+     * Unified events used by all new gameplay systems.
+     */
+    public event Action<BoardClearContext>
+        BoardClearResolved;
+
+    public event Action<BoardClearOutcome>
+        BoardClearOutcomeResolved;
+
+    /*
+     * Legacy compatibility events.
+     *
+     * Keep these until every existing subscriber has been
+     * migrated to BoardClearResolved or
+     * BoardClearOutcomeResolved.
+     */
     public event Action<BoardMatchContext>
-    BoardMatchResolved;
+        BoardMatchResolved;
 
     public event Action<BoardMatchOutcome>
-    BoardMatchOutcomeResolved;
+        BoardMatchOutcomeResolved;
 
     public event Action<BoardBombClearOutcome>
-    BoardBombClearOutcomeResolved;
+        BoardBombClearOutcomeResolved;
 
 
     private void ReportMatchesToCombat(
@@ -35,9 +51,12 @@ public partial class BoardController
         }
 
         List<List<Gem>> matchGroups =
-            BuildConnectedMatchGroups(matches);
+            BuildConnectedMatchGroups(
+                matches
+            );
 
-        foreach (List<Gem> group in matchGroups)
+        foreach (List<Gem> group
+                 in matchGroups)
         {
             if (group == null ||
                 group.Count < 3)
@@ -45,7 +64,8 @@ public partial class BoardController
                 continue;
             }
 
-            Gem firstGem = group[0];
+            Gem firstGem =
+                group[0];
 
             if (firstGem == null)
             {
@@ -59,11 +79,38 @@ public partial class BoardController
                 group.Count;
 
             int safeCascadeDepth =
-                Mathf.Max(0, cascadeDepth);
+                Mathf.Max(
+                    0,
+                    cascadeDepth
+                );
 
             BoardMatchType matchType =
-                DetermineMatchType(group);
+                DetermineMatchType(
+                    group
+                );
 
+            BoardClearContext clearContext =
+                new BoardClearContext(
+                    gemType,
+                    gemCount,
+                    safeCascadeDepth,
+                    BoardClearSource.Match,
+                    matchType
+                );
+
+            /*
+             * New unified notification.
+             *
+             * Healing, Royal Decree and future passives can
+             * respond even when no enemy has this color.
+             */
+            BoardClearResolved?.Invoke(
+                clearContext
+            );
+
+            /*
+             * Legacy match notification.
+             */
             BoardMatchContext matchContext =
                 new BoardMatchContext(
                     gemType,
@@ -81,21 +128,35 @@ public partial class BoardController
             if (combatController != null)
             {
                 damagedMatchingEnemy =
-                    combatController.ResolveGemMatch(
-                        gemType,
-                        gemCount,
-                        safeCascadeDepth
+                    combatController.ResolveGemClear(
+                        clearContext
                     );
             }
 
-            BoardMatchOutcome outcome =
+            /*
+             * New unified combat outcome.
+             */
+            BoardClearOutcome clearOutcome =
+                new BoardClearOutcome(
+                    clearContext,
+                    damagedMatchingEnemy
+                );
+
+            BoardClearOutcomeResolved?.Invoke(
+                clearOutcome
+            );
+
+            /*
+             * Legacy match outcome.
+             */
+            BoardMatchOutcome matchOutcome =
                 new BoardMatchOutcome(
                     matchContext,
                     damagedMatchingEnemy
                 );
 
             BoardMatchOutcomeResolved?.Invoke(
-                outcome
+                matchOutcome
             );
         }
     }
@@ -103,7 +164,9 @@ public partial class BoardController
     private void ReportBombClearsToCombat(
         HashSet<Gem> originalMatches,
         HashSet<Gem> expandedClearSet,
-        int cascadeDepth)
+        int cascadeDepth,
+        BoardClearSource clearSource =
+            BoardClearSource.Bomb)
     {
         if (expandedClearSet == null ||
             expandedClearSet.Count == 0)
@@ -112,7 +175,7 @@ public partial class BoardController
         }
 
         Dictionary<GemType, int>
-            explosionGemCounts =
+            clearedGemCounts =
                 new Dictionary<GemType, int>();
 
         foreach (Gem gem in expandedClearSet)
@@ -123,8 +186,9 @@ public partial class BoardController
             }
 
             /*
-             * Gems belonging to the original match already
-             * received normal match damage and energy.
+             * These gems were already reported by the normal
+             * match reporter or were explicitly excluded because
+             * their hidden color must not grant rewards.
              */
             if (originalMatches != null &&
                 originalMatches.Contains(gem))
@@ -132,15 +196,26 @@ public partial class BoardController
                 continue;
             }
 
-            if (!explosionGemCounts.ContainsKey(
+            /*
+             * A crystal itself has a hidden original GemType,
+             * but that hidden color must never cause damage,
+             * healing, energy, poison or Royal Decree damage.
+             */
+            if (gem.SpecialType ==
+                GemSpecialType.ColorCrystal)
+            {
+                continue;
+            }
+
+            if (!clearedGemCounts.ContainsKey(
                     gem.Type))
             {
-                explosionGemCounts[
+                clearedGemCounts[
                     gem.Type
                 ] = 0;
             }
 
-            explosionGemCounts[
+            clearedGemCounts[
                 gem.Type
             ]++;
         }
@@ -152,33 +227,56 @@ public partial class BoardController
             );
 
         foreach (
-            KeyValuePair<GemType, int>
-                explosionResult
-            in explosionGemCounts)
+            KeyValuePair<GemType, int> result
+            in clearedGemCounts)
         {
+            BoardClearContext clearContext =
+                new BoardClearContext(
+                    result.Key,
+                    result.Value,
+                    safeCascadeDepth,
+                    clearSource,
+                    BoardMatchType.Other
+                );
+
+            BoardClearResolved?.Invoke(
+                clearContext
+            );
+
             bool damagedMatchingEnemy = false;
 
             if (combatController != null)
             {
                 damagedMatchingEnemy =
-                    combatController
-                        .ResolveBombGemClear(
-                            explosionResult.Key,
-                            explosionResult.Value,
-                            safeCascadeDepth
-                        );
+                    combatController.ResolveGemClear(
+                        clearContext
+                    );
             }
 
-            BoardBombClearOutcome outcome =
+            BoardClearOutcome clearOutcome =
+                new BoardClearOutcome(
+                    clearContext,
+                    damagedMatchingEnemy
+                );
+
+            BoardClearOutcomeResolved?.Invoke(
+                clearOutcome
+            );
+
+            /*
+             * Keep the old bomb outcome alive temporarily for
+             * the existing energy component.
+             */
+            BoardBombClearOutcome legacyOutcome =
                 new BoardBombClearOutcome(
-                    explosionResult.Key,
-                    explosionResult.Value,
+                    result.Key,
+                    result.Value,
                     safeCascadeDepth,
                     damagedMatchingEnemy
                 );
 
             BoardBombClearOutcomeResolved?.Invoke(
-                outcome
+                legacyOutcome
             );
         }
     }

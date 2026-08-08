@@ -933,7 +933,8 @@ public partial class BoardController
         ReportBombClearsToCombat(
             rewardExclusions,
             sweepTargets,
-            0
+            0,
+            BoardClearSource.DoubleColorCrystal
         );
     }
 }

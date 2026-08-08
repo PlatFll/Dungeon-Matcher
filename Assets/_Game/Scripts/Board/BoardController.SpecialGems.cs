@@ -953,7 +953,8 @@ public partial class BoardController
             ReportBombClearsToCombat(
                 noRewardExclusions,
                 activationSet,
-                0
+                0,
+                BoardClearSource.ColorCrystal
             );
 
             foreach (Gem clearedGem in activationSet)
@@ -1320,7 +1321,8 @@ public partial class BoardController
             ReportBombClearsToCombat(
                 noRewardExclusions,
                 activationSet,
-                0
+                0,
+                BoardClearSource.ColorCrystal
             );
 
             foreach (Gem clearedGem in activationSet)
@@ -1657,7 +1659,8 @@ public partial class BoardController
             ReportBombClearsToCombat(
                 noRewardExclusions,
                 activationSet,
-                0
+                0,
+                BoardClearSource.ColorCrystal
             );
 
             foreach (Gem clearedGem in activationSet)
@@ -1772,7 +1775,8 @@ public partial class BoardController
         ReportBombClearsToCombat(
             rewardExclusions,
             expandedClearSet,
-            0
+            0,
+            BoardClearSource.ColorCrystal
         );
 
         Debug.Log(
