@@ -20,6 +20,14 @@ public partial class BoardController
             return;
         }
 
+        /*
+         * An earned bomb cannot detonate before some board
+         * interaction has happened. Lazily create and prewarm
+         * its small VFX pool on the first real match instead of
+         * paying that setup cost on the bomb's impact frame.
+         */
+        EnsureBombVFXController();
+
         List<List<Gem>> matchGroups =
             BuildConnectedMatchGroups(
                 matches
@@ -95,6 +103,10 @@ public partial class BoardController
             return;
         }
 
+        /*
+         * Future abilities may be able to create or detonate a
+         * bomb without a previous match, so retain this fallback.
+         */
         EnsureBombVFXController();
 
         foreach (Gem gem in expandedClearSet)
@@ -131,9 +143,8 @@ public partial class BoardController
         /*
          * The effect is completely runtime-generated, so the
          * board does not need a new prefab reference or scene
-         * setup. Adding the component here also means existing
-         * scenes automatically gain the VFX the first time a
-         * real row/column bomb detonates.
+         * setup. Existing scenes therefore receive it without
+         * any serialized migration.
          */
         gameObject.AddComponent<
             BombVFXController
