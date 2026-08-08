@@ -12,17 +12,17 @@ public sealed class ColorCrystalVFXController :
     private float glintSpawnStagger =
         0.02f;
 
-    [SerializeField, Min(0.06f)]
+    [SerializeField, Min(0.08f)]
     private float glintDuration =
-        0.15f;
+        0.24f;
 
     [SerializeField, Min(0.041f)]
     private float glintPeakTime =
-        0.09f;
+        0.12f;
 
     [SerializeField, Min(0f)]
     private float targetFlashDuration =
-        0.04f;
+        0.05f;
 
     [SerializeField, Min(0.01f)]
     private float glintSizeInCells =
@@ -40,6 +40,29 @@ public sealed class ColorCrystalVFXController :
             1f,
             1f
         );
+
+    [Header("Coordinated Sweep")]
+    [SerializeField, Min(0.05f)]
+    [Tooltip(
+        "Total target-sweep time for a small color-crystal clear."
+    )]
+    private float minimumSweepDuration =
+        0.22f;
+
+    [SerializeField, Min(0.05f)]
+    [Tooltip(
+        "Total target-sweep time for a large color-crystal clear."
+    )]
+    private float maximumSweepDuration =
+        0.46f;
+
+    [SerializeField, Min(1)]
+    private int minimumSweepTargetCount =
+        5;
+
+    [SerializeField, Min(2)]
+    private int maximumSweepTargetCount =
+        15;
 
     [Header("Rendering")]
     [SerializeField]
@@ -68,10 +91,9 @@ public sealed class ColorCrystalVFXController :
     private int createdGlintCount;
 
     /*
-     * Counts target-launch sequences rather than active glints.
-     * BoardController uses this to know when every selected gem
-     * has received its visual cue and the temporary fast-clear
-     * timings can safely be restored.
+     * Counts target-launch sweeps rather than active stars. BoardController
+     * uses this to avoid restoring normal match timings while a nested
+     * crystal is still distributing its target VFX.
      */
     private int activeTargetLaunchSequences;
 
@@ -90,6 +112,10 @@ public sealed class ColorCrystalVFXController :
         PrewarmPool();
     }
 
+    /*
+     * Standalone version retained for compatibility/debug use. The board's
+     * live Color Bomb path uses PlaySynchronizedActivation below.
+     */
     public IEnumerator PlayActivation(
         ColorCrystalVFXContext context)
     {
@@ -130,11 +156,6 @@ public sealed class ColorCrystalVFXController :
             }
         }
 
-        /*
-         * Resume gameplay when the final glint reaches its
-         * brightest/large state. Its short shrink tail can finish
-         * while the crystal's normal clear animation begins.
-         */
         if (spawnedGlintCount > 0 &&
             glintPeakTime > 0f)
         {
@@ -144,19 +165,56 @@ public sealed class ColorCrystalVFXController :
         }
     }
 
+    public float CalculateCoordinatedSweepDuration(
+        int targetCount)
+    {
+        if (targetCount <= 1)
+        {
+            return 0f;
+        }
+
+        int safeMinimumCount =
+            Mathf.Max(
+                1,
+                minimumSweepTargetCount
+            );
+
+        int safeMaximumCount =
+            Mathf.Max(
+                safeMinimumCount + 1,
+                maximumSweepTargetCount
+            );
+
+        float normalizedTargetCount =
+            Mathf.InverseLerp(
+                safeMinimumCount,
+                safeMaximumCount,
+                targetCount
+            );
+
+        return Mathf.Lerp(
+            minimumSweepDuration,
+            maximumSweepDuration,
+            normalizedTargetCount
+        );
+    }
+
     /*
-     * Synchronized mode is used by the board when selected gems
-     * should begin clearing at the same travelling cadence as the
-     * star glints instead of waiting for every glint first.
+     * Candy-style coordinated mode:
      *
-     * BoardController supplies the synchronized cadence explicitly.
-     * The normal glintSpawnStagger stays unchanged for any caller that
-     * still wants the original standalone VFX timing.
+     * 1. Await the source crystal anticipation/pop.
+     * 2. Launch target stars in the background across one total sweep window.
+     * 3. Let BoardController start its existing gameplay clear loop after a
+     *    readable lead, so the VFX and destruction overlap as one event.
+     *
+     * targetSweepDuration is a TOTAL duration, not a per-gem delay. This is
+     * important: repeated WaitForSeconds calls accumulate frame rounding and
+     * make a large clear feel inconsistent across frame rates.
      */
     public IEnumerator PlaySynchronizedActivation(
         ColorCrystalVFXContext context,
         float targetStartDelay,
-        float synchronizedTargetStagger)
+        float targetSweepDuration)
     {
         if (!context.IsValid ||
             boardController == null)
@@ -169,7 +227,7 @@ public sealed class ColorCrystalVFXController :
         );
 
         StartCoroutine(
-            PlayTargetGlintSequence(
+            PlayTargetGlintSweep(
                 context.TargetGems,
                 Mathf.Max(
                     0f,
@@ -177,7 +235,7 @@ public sealed class ColorCrystalVFXController :
                 ),
                 Mathf.Max(
                     0f,
-                    synchronizedTargetStagger
+                    targetSweepDuration
                 )
             )
         );
@@ -200,10 +258,10 @@ public sealed class ColorCrystalVFXController :
                 .PlayColorCrystalActivationPulse();
     }
 
-    private IEnumerator PlayTargetGlintSequence(
+    private IEnumerator PlayTargetGlintSweep(
         Gem[] targetGems,
         float startDelay,
-        float targetStagger)
+        float sweepDuration)
     {
         if (targetGems == null ||
             targetGems.Length == 0)
@@ -220,22 +278,78 @@ public sealed class ColorCrystalVFXController :
             );
         }
 
-        for (int index = 0;
-             index < targetGems.Length;
-             index++)
-        {
-            TryPlayTargetGlint(
-                targetGems[index]
-            );
+        int targetCount =
+            targetGems.Length;
 
-            if (targetStagger > 0f &&
-                index <
-                    targetGems.Length - 1)
+        if (targetCount == 1 ||
+            sweepDuration <= 0f)
+        {
+            for (int index = 0;
+                 index < targetCount;
+                 index++)
             {
-                yield return new WaitForSeconds(
-                    targetStagger
+                TryPlayTargetGlint(
+                    targetGems[index]
                 );
             }
+
+            activeTargetLaunchSequences =
+                Mathf.Max(
+                    0,
+                    activeTargetLaunchSequences - 1
+                );
+
+            yield break;
+        }
+
+        int nextTargetIndex = 0;
+        float elapsedTime = 0f;
+
+        /*
+         * Drive the entire sweep from elapsed time. If a frame crosses more
+         * than one scheduled target time, launch every target that is due on
+         * that frame instead of adding another WaitForSeconds and drifting.
+         */
+        while (nextTargetIndex <
+               targetCount)
+        {
+            while (nextTargetIndex <
+                   targetCount)
+            {
+                float targetProgress =
+                    nextTargetIndex /
+                    (float)(targetCount - 1);
+
+                float scheduledTime =
+                    targetProgress *
+                    sweepDuration;
+
+                if (elapsedTime +
+                        0.0001f <
+                    scheduledTime)
+                {
+                    break;
+                }
+
+                TryPlayTargetGlint(
+                    targetGems[
+                        nextTargetIndex
+                    ]
+                );
+
+                nextTargetIndex++;
+            }
+
+            if (nextTargetIndex >=
+                targetCount)
+            {
+                break;
+            }
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
         }
 
         activeTargetLaunchSequences =
@@ -597,7 +711,7 @@ public sealed class ColorCrystalVFXController :
 
         glintDuration =
             Mathf.Max(
-                0.06f,
+                0.08f,
                 glintDuration
             );
 
@@ -619,6 +733,30 @@ public sealed class ColorCrystalVFXController :
             Mathf.Max(
                 0.01f,
                 glintSizeInCells
+            );
+
+        minimumSweepDuration =
+            Mathf.Max(
+                0.05f,
+                minimumSweepDuration
+            );
+
+        maximumSweepDuration =
+            Mathf.Max(
+                minimumSweepDuration,
+                maximumSweepDuration
+            );
+
+        minimumSweepTargetCount =
+            Mathf.Max(
+                1,
+                minimumSweepTargetCount
+            );
+
+        maximumSweepTargetCount =
+            Mathf.Max(
+                minimumSweepTargetCount + 1,
+                maximumSweepTargetCount
             );
 
         maximumGlintCount =
