@@ -1335,9 +1335,6 @@ public partial class BoardController : MonoBehaviour
 
             move.Gem.transform.localPosition =
                 move.StartPosition;
-
-            move.Gem.transform.localScale =
-                move.RestingScale;
         }
 
         float elapsedTime = 0f;
@@ -1360,9 +1357,6 @@ public partial class BoardController : MonoBehaviour
                 {
                     move.Gem.transform.localPosition =
                         move.StartPosition;
-
-                    move.Gem.transform.localScale =
-                        move.RestingScale;
 
                     continue;
                 }
@@ -1411,9 +1405,6 @@ public partial class BoardController : MonoBehaviour
                             )
                         );
 
-                    move.Gem.transform.localScale =
-                        move.RestingScale;
-
                     continue;
                 }
 
@@ -1439,20 +1430,25 @@ public partial class BoardController : MonoBehaviour
                     );
 
                 /*
-                 * The squash happens exactly at impact, then relaxes while
-                 * the gem rebounds to its final cell. It is deliberately
-                 * tiny so the pixel sprite stays crisp rather than rubbery.
+                 * Color crystals may be running an independent charging
+                 * scale coroutine while they move. Never fight that effect;
+                 * they still receive the positional bounce, while ordinary
+                 * gems and row/column bombs receive the tiny impact squash.
                  */
-                move.Gem.transform.localScale =
-                    Vector3.Lerp(
-                        GetLandingSquashScale(
-                            move.RestingScale
-                        ),
-                        move.RestingScale,
-                        SmoothStep(
-                            landingProgress
-                        )
-                    );
+                if (move.Gem.SpecialType !=
+                    GemSpecialType.ColorCrystal)
+                {
+                    move.Gem.transform.localScale =
+                        Vector3.Lerp(
+                            GetLandingSquashScale(
+                                move.RestingScale
+                            ),
+                            move.RestingScale,
+                            SmoothStep(
+                                landingProgress
+                            )
+                        );
+                }
             }
 
             elapsedTime +=
@@ -1463,11 +1459,17 @@ public partial class BoardController : MonoBehaviour
 
         foreach (GemMove move in moves)
         {
-            if (move.Gem != null)
+            if (move.Gem == null)
             {
-                move.Gem.transform.localPosition =
-                    move.TargetPosition;
+                continue;
+            }
 
+            move.Gem.transform.localPosition =
+                move.TargetPosition;
+
+            if (move.Gem.SpecialType !=
+                GemSpecialType.ColorCrystal)
+            {
                 move.Gem.transform.localScale =
                     move.RestingScale;
             }
