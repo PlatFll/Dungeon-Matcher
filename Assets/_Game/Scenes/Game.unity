@@ -704,11 +704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatController
   playerActor: {fileID: 748065086}
   waveController: {fileID: 362587654}
-  minimumMatchSize: 3
-  threeGemMatchDamage: 30
-  additionalDamagePerGem: 15
+  damagePerGem: 10
   cascadeDamageBonusPerDepth: 0.2
-  bombDamagePerGem: 5
   debugGemType: 0
   debugGemCount: 3
   debugCascadeDepth: 0
@@ -726,10 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAffinityHealing
   boardController: {fileID: 1775734119}
   playerActor: {fileID: 748065086}
-  threeGemHealing: 8
-  fourGemHealing: 12
-  fiveGemHealing: 18
-  additionalHealingPerGem: 6
+  healingPerGem: 3
   cascadeHealingBonusPerDepth: 0.15
 --- !u!114 &362587657
 MonoBehaviour:
@@ -1945,8 +1939,8 @@ MonoBehaviour:
   nonDamagingTShapeEnergy: 5
   damagingOtherEnergy: 5
   nonDamagingOtherEnergy: 1
-  damagingBombEnergyPerGem: 2
-  nonDamagingBombEnergyPerGem: 1
+  damagingSpecialEnergyPerGem: 2
+  nonDamagingSpecialEnergyPerGem: 1
 --- !u!114 &748065089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,6 +3536,9 @@ MonoBehaviour:
   doubleCrystalShakeSpeed: 34
   doubleCrystalSettlePause: 0.18
   doubleCrystalRefillStagger: 0.015
+  triggeredCrystalChargeScale: 1.16
+  triggeredCrystalChargePulseSpeed: 4
+  triggeredCrystalSettlePause: 0.12
   width: 7
   height: 8
   cellSize: 1
@@ -3566,7 +3563,8 @@ MonoBehaviour:
   matchPostBurstDelay: 0.04
   matchBurstScale: 1.04
   cascadePause: 0.06
-  crystalActivationStagger: 0.03
+  crystalActivationStagger: 0.001
+  crystalSwapSpecialRevealPause: 0.1
   fallDurationPerCell: 0.075
   minimumFallDuration: 0.14
   maximumFallDuration: 0.45
