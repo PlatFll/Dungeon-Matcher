@@ -7,6 +7,9 @@ public partial class BoardController
     public event Action<GemMatchVFXContext>
         GemMatchVFXRequested;
 
+    public event Action<BombVFXContext>
+        BombVFXRequested;
+
     private void ReportMatchesToVFX(
         HashSet<Gem> matches,
         int cascadeDepth)
@@ -62,6 +65,53 @@ public partial class BoardController
                     group.Count,
                     cascadeDepth,
                     worldPositions,
+                    matchFlashDuration
+                )
+            );
+        }
+    }
+
+    private void ReportBombClearSetToVFX(
+        HashSet<Gem> expandedClearSet,
+        BoardClearSource clearSource)
+    {
+        if (expandedClearSet == null ||
+            expandedClearSet.Count == 0)
+        {
+            return;
+        }
+
+        /*
+         * These are the two current pathways where a row or
+         * column bomb in the expanded set genuinely detonates.
+         *
+         * Double-crystal sweeps can erase a bomb without firing
+         * its directional effect, so they intentionally do not
+         * produce a row/column beam here.
+         */
+        if (clearSource != BoardClearSource.Bomb &&
+            clearSource != BoardClearSource.ColorCrystal)
+        {
+            return;
+        }
+
+        foreach (Gem gem in expandedClearSet)
+        {
+            if (gem == null ||
+                (
+                    gem.SpecialType !=
+                        GemSpecialType.RowBomb &&
+                    gem.SpecialType !=
+                        GemSpecialType.ColumnBomb
+                ))
+            {
+                continue;
+            }
+
+            BombVFXRequested?.Invoke(
+                new BombVFXContext(
+                    gem.SpecialType,
+                    gem.transform.position,
                     matchFlashDuration
                 )
             );
