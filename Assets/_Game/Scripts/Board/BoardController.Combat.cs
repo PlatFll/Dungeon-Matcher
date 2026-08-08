@@ -23,22 +23,6 @@ public partial class BoardController
     public event Action<BoardClearOutcome>
         BoardClearOutcomeResolved;
 
-    /*
-     * Legacy compatibility events.
-     *
-     * Keep these until every existing subscriber has been
-     * migrated to BoardClearResolved or
-     * BoardClearOutcomeResolved.
-     */
-    public event Action<BoardMatchContext>
-        BoardMatchResolved;
-
-    public event Action<BoardMatchOutcome>
-        BoardMatchOutcomeResolved;
-
-    public event Action<BoardBombClearOutcome>
-        BoardBombClearOutcomeResolved;
-
 
     private void ReportMatchesToCombat(
         HashSet<Gem> matches,
@@ -142,23 +126,6 @@ public partial class BoardController
                 clearContext
             );
 
-            /*
-             * Legacy match context intentionally retains the
-             * full triggering match size until old systems are
-             * completely removed.
-             */
-            BoardMatchContext matchContext =
-                new BoardMatchContext(
-                    gemType,
-                    triggerGemCount,
-                    safeCascadeDepth,
-                    matchType
-                );
-
-            BoardMatchResolved?.Invoke(
-                matchContext
-            );
-
             bool damagedMatchingEnemy = false;
 
             if (combatController != null)
@@ -177,16 +144,6 @@ public partial class BoardController
 
             BoardClearOutcomeResolved?.Invoke(
                 clearOutcome
-            );
-
-            BoardMatchOutcome matchOutcome =
-                new BoardMatchOutcome(
-                    matchContext,
-                    damagedMatchingEnemy
-                );
-
-            BoardMatchOutcomeResolved?.Invoke(
-                matchOutcome
             );
         }
     }
@@ -291,22 +248,6 @@ public partial class BoardController
 
             BoardClearOutcomeResolved?.Invoke(
                 clearOutcome
-            );
-
-            /*
-             * Keep the old bomb outcome alive temporarily for
-             * the existing energy component.
-             */
-            BoardBombClearOutcome legacyOutcome =
-                new BoardBombClearOutcome(
-                    result.Key,
-                    result.Value,
-                    safeCascadeDepth,
-                    damagedMatchingEnemy
-                );
-
-            BoardBombClearOutcomeResolved?.Invoke(
-                legacyOutcome
             );
         }
     }

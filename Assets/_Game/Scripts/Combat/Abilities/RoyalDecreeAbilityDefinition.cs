@@ -60,32 +60,6 @@ public sealed class RoyalDecreeAbilityDefinition :
         );
     }
 
-    /*
-     * Temporary compatibility helper for any older code
-     * that still asks for match-based total damage.
-     */
-    public int CalculateDamage(
-        BoardMatchContext context)
-    {
-        BoardClearContext clearContext =
-            new BoardClearContext(
-                context.GemType,
-                context.GemCount,
-                context.CascadeDepth,
-                BoardClearSource.Match,
-                context.MatchType,
-                context.GemCount
-            );
-
-        return
-            CalculateDamagePerGem(
-                clearContext
-            ) *
-            Mathf.Max(
-                0,
-                context.GemCount
-            );
-    }
 
     protected override void OnValidate()
     {

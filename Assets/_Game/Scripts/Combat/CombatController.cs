@@ -143,15 +143,6 @@ public sealed class CombatController :
         int
     > EnemyDamagedByGemClear;
 
-    /*
-     * Legacy compatibility event used by the current
-     * StaggerCombatBridge.
-     */
-    public event Action<
-        EnemyActor,
-        GemDamageContext,
-        int
-    > EnemyDamagedByGemMatch;
 
     public PlayerActor PlayerActor =>
         playerActor;
@@ -258,15 +249,6 @@ public sealed class CombatController :
             enemiesHit++;
 
             EnemyDamagedByGemClear?.Invoke(
-                enemy,
-                damageContext,
-                actualDamage
-            );
-
-            /*
-             * Keep the old event alive during migration.
-             */
-            EnemyDamagedByGemMatch?.Invoke(
                 enemy,
                 damageContext,
                 actualDamage
