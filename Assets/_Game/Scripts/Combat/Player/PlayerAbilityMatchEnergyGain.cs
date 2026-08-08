@@ -278,33 +278,6 @@ public sealed class PlayerAbilityMatchEnergyGain :
         );
     }
 
-    /*
-     * Compatibility method for any old code that directly
-     * calls CalculateEnergyGain with BoardMatchOutcome.
-     */
-    public int CalculateEnergyGain(
-        BoardMatchOutcome outcome)
-    {
-        BoardMatchContext oldContext =
-            outcome.MatchContext;
-
-        BoardClearContext clearContext =
-            new BoardClearContext(
-                oldContext.GemType,
-                oldContext.GemCount,
-                oldContext.CascadeDepth,
-                BoardClearSource.Match,
-                oldContext.MatchType
-            );
-
-        return CalculateEnergyGain(
-            new BoardClearOutcome(
-                clearContext,
-                outcome.DamagedMatchingEnemy
-            )
-        );
-    }
-
     private void ResolveReferences()
     {
         if (playerActor == null)
