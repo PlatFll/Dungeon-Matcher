@@ -57,30 +57,6 @@ public sealed class GemDamageContext
             OriginalDamage;
     }
 
-    /*
-     * Compatibility overload for older systems that may
-     * still construct GemDamageContext directly.
-     */
-    public GemDamageContext(
-        PlayerActor player,
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth,
-        int damage)
-        : this(
-            player,
-            new BoardClearContext(
-                gemType,
-                gemCount,
-                cascadeDepth,
-                BoardClearSource.Match,
-                BoardMatchType.Other
-            ),
-            damage
-        )
-    {
-    }
-
     public void Cancel()
     {
         IsCancelled = true;
@@ -133,16 +109,11 @@ public sealed class CombatController :
         int
     > GemDamageResolved;
 
-    /*
-     * New event name. This includes matches, bombs,
-     * crystals and future board-clear sources.
-     */
     public event Action<
         EnemyActor,
         GemDamageContext,
         int
     > EnemyDamagedByGemClear;
-
 
     public PlayerActor PlayerActor =>
         playerActor;
@@ -310,68 +281,6 @@ public sealed class CombatController :
                 baseDamage *
                 cascadeMultiplier
             )
-        );
-    }
-
-    /*
-     * Compatibility wrappers.
-     *
-     * Leave these in place until every external caller has
-     * migrated to ResolveGemClear.
-     */
-    public bool ResolveGemMatch(
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth = 0)
-    {
-        BoardClearContext clearContext =
-            new BoardClearContext(
-                gemType,
-                gemCount,
-                cascadeDepth,
-                BoardClearSource.Match,
-                BoardMatchType.Other
-            );
-
-        return ResolveGemClear(
-            clearContext
-        );
-    }
-
-    public bool ResolveBombGemClear(
-        GemType gemType,
-        int gemCount,
-        int cascadeDepth = 0)
-    {
-        BoardClearContext clearContext =
-            new BoardClearContext(
-                gemType,
-                gemCount,
-                cascadeDepth,
-                BoardClearSource.Bomb,
-                BoardMatchType.Other
-            );
-
-        return ResolveGemClear(
-            clearContext
-        );
-    }
-
-    public int CalculateGemMatchDamage(
-        int gemCount,
-        int cascadeDepth)
-    {
-        BoardClearContext clearContext =
-            new BoardClearContext(
-                debugGemType,
-                gemCount,
-                cascadeDepth,
-                BoardClearSource.Match,
-                BoardMatchType.Other
-            );
-
-        return CalculateGemClearDamage(
-            clearContext
         );
     }
 
