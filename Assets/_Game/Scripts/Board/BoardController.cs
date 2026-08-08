@@ -157,6 +157,13 @@ public partial class BoardController : MonoBehaviour
         public Vector3 TargetPosition;
         public float Delay;
         public float Duration;
+
+        /*
+         * Only true gravity/refill moves receive the landing overshoot.
+         * Entrance and reshuffle animations keep their existing motion.
+         */
+        public bool UseGravityMotion;
+        public Vector3 RestingScale;
     }
 
     private class ClearVisual
@@ -726,9 +733,15 @@ public partial class BoardController : MonoBehaviour
 
         if (matches.Count == 0)
         {
-            yield return new WaitForSeconds(
-                invalidSwapPause
-            );
+            float responsiveInvalidPause =
+                GetResponsiveInvalidSwapPause();
+
+            if (responsiveInvalidPause > 0f)
+            {
+                yield return new WaitForSeconds(
+                    responsiveInvalidPause
+                );
+            }
 
             yield return AnimateSwap(
                 first,
@@ -818,23 +831,28 @@ public partial class BoardController : MonoBehaviour
                     triggeredCrystalRequests
                 );
 
-            if (cascadePause > 0f)
-            {
-                yield return
-                    new WaitForSeconds(
-                        cascadePause
-                    );
-            }
-
+            /*
+             * Start gravity immediately after the clear. The old cascadePause
+             * ran both before and after every refill, creating a noticeable
+             * dead beat. Candy-style cascades feel better when the empty space
+             * is answered by motion right away.
+             */
             yield return
                 CollapseAndRefillBoard();
 
-            if (cascadePause > 0f)
+            /*
+             * Settle-first rule: AnimateGemMoves includes every landing
+             * rebound, then this tiny pause lets the finished board register
+             * visually before scanning for the next cascade.
+             */
+            float settlePause =
+                GetPostFallSettlePause();
+
+            if (settlePause > 0f)
             {
-                yield return
-                    new WaitForSeconds(
-                        cascadePause
-                    );
+                yield return new WaitForSeconds(
+                    settlePause
+                );
             }
 
             matches = FindAllMatches();
@@ -1044,10 +1062,13 @@ public partial class BoardController : MonoBehaviour
             }
         }
 
-        if (matchPostBurstDelay > 0f)
+        float responsivePostBurstDelay =
+            GetResponsiveMatchPostBurstDelay();
+
+        if (responsivePostBurstDelay > 0f)
         {
             yield return new WaitForSeconds(
-                matchPostBurstDelay
+                responsivePostBurstDelay
             );
         }
 
@@ -1184,7 +1205,10 @@ public partial class BoardController : MonoBehaviour
                                 CalculateFallDuration(
                                     startPosition,
                                     targetPosition
-                                )
+                                ),
+
+                            UseGravityMotion =
+                                true
                         }
                     );
                 }
@@ -1242,7 +1266,10 @@ public partial class BoardController : MonoBehaviour
                             CalculateFallDuration(
                                 startPosition,
                                 targetPosition
-                            )
+                            ),
+
+                        UseGravityMotion =
+                            true
                     }
                 );
 
@@ -1265,14 +1292,8 @@ public partial class BoardController : MonoBehaviour
                 targetPosition.y
             ) / cellSize;
 
-        float duration =
-            distanceInCells *
-            fallDurationPerCell;
-
-        return Mathf.Clamp(
-            duration,
-            minimumFallDuration,
-            maximumFallDuration
+        return CalculateResponsiveFallDuration(
+            distanceInCells
         );
     }
 
@@ -1285,13 +1306,31 @@ public partial class BoardController : MonoBehaviour
         }
 
         float totalDuration = 0f;
+        float landingDuration =
+            GetLandingSettleDuration();
 
         foreach (GemMove move in moves)
         {
+            if (move.Gem == null)
+            {
+                continue;
+            }
+
+            move.RestingScale =
+                move.Gem.transform.localScale;
+
+            float moveTotalDuration =
+                move.Duration +
+                (
+                    move.UseGravityMotion
+                        ? landingDuration
+                        : 0f
+                );
+
             totalDuration = Mathf.Max(
                 totalDuration,
                 move.Delay +
-                move.Duration
+                moveTotalDuration
             );
 
             move.Gem.transform.localPosition =
@@ -1322,21 +1361,94 @@ public partial class BoardController : MonoBehaviour
                     continue;
                 }
 
-                float progress =
-                    Mathf.Clamp01(
-                        moveElapsed /
-                        move.Duration
+                if (!move.UseGravityMotion)
+                {
+                    float progress =
+                        Mathf.Clamp01(
+                            moveElapsed /
+                            move.Duration
+                        );
+
+                    float easedProgress =
+                        SmoothStep(progress);
+
+                    move.Gem.transform.localPosition =
+                        Vector3.Lerp(
+                            move.StartPosition,
+                            move.TargetPosition,
+                            easedProgress
+                        );
+
+                    continue;
+                }
+
+                Vector3 overshootPosition =
+                    GetLandingOvershootPosition(
+                        move.TargetPosition
                     );
 
-                float easedProgress =
-                    SmoothStep(progress);
+                if (moveElapsed <
+                    move.Duration)
+                {
+                    float fallProgress =
+                        Mathf.Clamp01(
+                            moveElapsed /
+                            move.Duration
+                        );
+
+                    move.Gem.transform.localPosition =
+                        Vector3.Lerp(
+                            move.StartPosition,
+                            overshootPosition,
+                            EaseInGravity(
+                                fallProgress
+                            )
+                        );
+
+                    continue;
+                }
+
+                float landingProgress =
+                    Mathf.Clamp01(
+                        (
+                            moveElapsed -
+                            move.Duration
+                        ) /
+                        landingDuration
+                    );
+
+                float landingEase =
+                    EaseOutCubic(
+                        landingProgress
+                    );
 
                 move.Gem.transform.localPosition =
                     Vector3.Lerp(
-                        move.StartPosition,
+                        overshootPosition,
                         move.TargetPosition,
-                        easedProgress
+                        landingEase
                     );
+
+                /*
+                 * Color crystals may be running an independent charging
+                 * scale coroutine while they move. Never fight that effect;
+                 * they still receive the positional bounce, while ordinary
+                 * gems and row/column bombs receive the tiny impact squash.
+                 */
+                if (move.Gem.SpecialType !=
+                    GemSpecialType.ColorCrystal)
+                {
+                    move.Gem.transform.localScale =
+                        Vector3.Lerp(
+                            GetLandingSquashScale(
+                                move.RestingScale
+                            ),
+                            move.RestingScale,
+                            SmoothStep(
+                                landingProgress
+                            )
+                        );
+                }
             }
 
             elapsedTime +=
@@ -1347,10 +1459,19 @@ public partial class BoardController : MonoBehaviour
 
         foreach (GemMove move in moves)
         {
-            if (move.Gem != null)
+            if (move.Gem == null)
             {
-                move.Gem.transform.localPosition =
-                    move.TargetPosition;
+                continue;
+            }
+
+            move.Gem.transform.localPosition =
+                move.TargetPosition;
+
+            if (move.Gem.SpecialType !=
+                GemSpecialType.ColorCrystal)
+            {
+                move.Gem.transform.localScale =
+                    move.RestingScale;
             }
         }
     }
@@ -1401,19 +1522,27 @@ public partial class BoardController : MonoBehaviour
             firstRow
         );
 
+        float effectiveSwapDuration =
+            GetResponsiveSwapDuration();
+
         float elapsedTime = 0f;
 
         while (elapsedTime <
-               swapDuration)
+               effectiveSwapDuration)
         {
             float progress =
                 Mathf.Clamp01(
                     elapsedTime /
-                    swapDuration
+                    effectiveSwapDuration
                 );
 
+            /*
+             * Ease-out gives immediate response to the swipe, then softly
+             * settles into the neighboring cell instead of spending the
+             * first half of the swap accelerating from almost zero.
+             */
             float easedProgress =
-                SmoothStep(progress);
+                EaseOutCubic(progress);
 
             first.transform.localPosition =
                 Vector3.Lerp(

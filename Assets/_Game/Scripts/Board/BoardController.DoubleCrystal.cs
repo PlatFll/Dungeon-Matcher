@@ -467,7 +467,15 @@ public partial class BoardController
                             CalculateFallDuration(
                                 startPosition,
                                 targetPosition
-                            )
+                            ),
+
+                        /*
+                         * This is a true refill, so use the same gravity
+                         * acceleration and tiny landing rebound as ordinary
+                         * cascade refills.
+                         */
+                        UseGravityMotion =
+                            true
                     }
                 );
 
