@@ -48,8 +48,7 @@ public partial class BoardController
             );
 
         if (crystalGem == null ||
-            orderedTargets == null ||
-            orderedTargets.Count == 0)
+            orderedTargets == null)
         {
             yield break;
         }
@@ -68,11 +67,6 @@ public partial class BoardController
                     targetGem
                 );
             }
-        }
-
-        if (validTargets.Count == 0)
-        {
-            yield break;
         }
 
         EnsureColorCrystalVFXController();
