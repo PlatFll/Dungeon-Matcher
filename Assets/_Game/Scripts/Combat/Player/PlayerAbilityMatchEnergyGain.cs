@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(PlayerAbilityController))]
+[RequireComponent(
+    typeof(PlayerAbilityController)
+)]
 public sealed class PlayerAbilityMatchEnergyGain :
     MonoBehaviour
 {
@@ -13,7 +16,8 @@ public sealed class PlayerAbilityMatchEnergyGain :
     private PlayerActor playerActor;
 
     [SerializeField]
-    private PlayerAbilityEnergy playerAbilityEnergy;
+    private PlayerAbilityEnergy
+        playerAbilityEnergy;
 
     [SerializeField]
     private PlayerAbilityController
@@ -61,21 +65,31 @@ public sealed class PlayerAbilityMatchEnergyGain :
     [SerializeField, Min(0)]
     private int nonDamagingOtherEnergy = 1;
 
-    [Header("Bomb Clear Energy")]
+    [Header("Special Clear Energy")]
+
+    /*
+     * FormerlySerializedAs preserves the existing Inspector
+     * values currently stored under the bomb-only names.
+     */
+    [FormerlySerializedAs(
+        "damagingBombEnergyPerGem"
+    )]
     [SerializeField, Min(0)]
     [Tooltip(
-        "Energy per explosion-only gem when that " +
+        "Energy per special-cleared gem when that " +
         "gem damages a matching-color enemy."
     )]
-    private int damagingBombEnergyPerGem = 2;
+    private int damagingSpecialEnergyPerGem = 2;
 
+    [FormerlySerializedAs(
+        "nonDamagingBombEnergyPerGem"
+    )]
     [SerializeField, Min(0)]
     [Tooltip(
-        "Energy per explosion-only gem when no " +
+        "Energy per special-cleared gem when no " +
         "matching-color enemy is damaged."
     )]
-    private int nonDamagingBombEnergyPerGem = 1;
-
+    private int nonDamagingSpecialEnergyPerGem = 1;
 
     private void Awake()
     {
@@ -108,17 +122,15 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
-        boardController.BoardMatchOutcomeResolved -=
-            HandleBoardMatchOutcomeResolved;
+        /*
+         * One unified subscription now handles matches,
+         * bombs and every crystal clear.
+         */
+        boardController.BoardClearOutcomeResolved -=
+            HandleBoardClearOutcomeResolved;
 
-        boardController.BoardMatchOutcomeResolved +=
-            HandleBoardMatchOutcomeResolved;
-
-        boardController.BoardBombClearOutcomeResolved -=
-            HandleBoardBombClearOutcomeResolved;
-
-        boardController.BoardBombClearOutcomeResolved +=
-            HandleBoardBombClearOutcomeResolved;
+        boardController.BoardClearOutcomeResolved +=
+            HandleBoardClearOutcomeResolved;
     }
 
     private void UnsubscribeFromBoard()
@@ -128,15 +140,12 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
-        boardController.BoardMatchOutcomeResolved -=
-            HandleBoardMatchOutcomeResolved;
-
-        boardController.BoardBombClearOutcomeResolved -=
-            HandleBoardBombClearOutcomeResolved;
+        boardController.BoardClearOutcomeResolved -=
+            HandleBoardClearOutcomeResolved;
     }
 
-    private void HandleBoardMatchOutcomeResolved(
-        BoardMatchOutcome outcome)
+    private void HandleBoardClearOutcomeResolved(
+        BoardClearOutcome outcome)
     {
         if (playerActor == null ||
             playerAbilityEnergy == null ||
@@ -149,37 +158,14 @@ public sealed class PlayerAbilityMatchEnergyGain :
         }
 
         int gainedEnergy =
-            CalculateEnergyGain(outcome);
-
-        playerAbilityEnergy.AddEnergy(
-            gainedEnergy
-        );
-    }
-
-    private void HandleBoardBombClearOutcomeResolved(
-        BoardBombClearOutcome outcome)
-    {
-        if (playerActor == null ||
-            playerAbilityEnergy == null ||
-            playerAbilityController == null ||
-            playerAbilityController.IsAbilityActive ||
-            !playerActor.IsInitialized ||
-            playerActor.IsDefeated)
-        {
-            return;
-        }
-
-        int energyPerGem =
-            outcome.DamagedMatchingEnemy
-                ? damagingBombEnergyPerGem
-                : nonDamagingBombEnergyPerGem;
-
-        int gainedEnergy =
-            Mathf.Max(
-                0,
-                outcome.GemCount *
-                energyPerGem
+            CalculateEnergyGain(
+                outcome
             );
+
+        if (gainedEnergy <= 0)
+        {
+            return;
+        }
 
         playerAbilityEnergy.AddEnergy(
             gainedEnergy
@@ -187,12 +173,59 @@ public sealed class PlayerAbilityMatchEnergyGain :
     }
 
     public int CalculateEnergyGain(
-        BoardMatchOutcome outcome)
+        BoardClearOutcome outcome)
     {
-        bool damagedMatchingEnemy =
-            outcome.DamagedMatchingEnemy;
+        BoardClearContext context =
+            outcome.ClearContext;
 
-        switch (outcome.MatchContext.MatchType)
+        if (context.GemCount <= 0)
+        {
+            return 0;
+        }
+
+        switch (context.Source)
+        {
+            /*
+             * Ordinary matches retain the intentional
+             * shape-based energy design.
+             */
+            case BoardClearSource.Match:
+                return CalculateMatchEnergy(
+                    context.MatchType,
+                    outcome.DamagedMatchingEnemy
+                );
+
+            /*
+             * Every gem destroyed by board specials uses
+             * the same per-gem rule.
+             */
+            case BoardClearSource.Bomb:
+            case BoardClearSource.ColorCrystal:
+            case BoardClearSource.DoubleColorCrystal:
+                return CalculateSpecialClearEnergy(
+                    context.GemCount,
+                    outcome.DamagedMatchingEnemy
+                );
+
+            /*
+             * Ability-generated clears currently grant no
+             * energy by default. This prevents future
+             * abilities from refunding themselves or
+             * creating infinite energy loops.
+             */
+            case BoardClearSource.Ability:
+                return 0;
+
+            default:
+                return 0;
+        }
+    }
+
+    private int CalculateMatchEnergy(
+        BoardMatchType matchType,
+        bool damagedMatchingEnemy)
+    {
+        switch (matchType)
         {
             case BoardMatchType.NormalThree:
                 return damagedMatchingEnemy
@@ -226,6 +259,52 @@ public sealed class PlayerAbilityMatchEnergyGain :
         }
     }
 
+    private int CalculateSpecialClearEnergy(
+        int gemCount,
+        bool damagedMatchingEnemy)
+    {
+        int energyPerGem =
+            damagedMatchingEnemy
+                ? damagingSpecialEnergyPerGem
+                : nonDamagingSpecialEnergyPerGem;
+
+        return Mathf.Max(
+            0,
+            Mathf.Max(
+                0,
+                gemCount
+            ) *
+            energyPerGem
+        );
+    }
+
+    /*
+     * Compatibility method for any old code that directly
+     * calls CalculateEnergyGain with BoardMatchOutcome.
+     */
+    public int CalculateEnergyGain(
+        BoardMatchOutcome outcome)
+    {
+        BoardMatchContext oldContext =
+            outcome.MatchContext;
+
+        BoardClearContext clearContext =
+            new BoardClearContext(
+                oldContext.GemType,
+                oldContext.GemCount,
+                oldContext.CascadeDepth,
+                BoardClearSource.Match,
+                oldContext.MatchType
+            );
+
+        return CalculateEnergyGain(
+            new BoardClearOutcome(
+                clearContext,
+                outcome.DamagedMatchingEnemy
+            )
+        );
+    }
+
     private void ResolveReferences()
     {
         if (playerActor == null)
@@ -237,7 +316,9 @@ public sealed class PlayerAbilityMatchEnergyGain :
         if (playerAbilityEnergy == null)
         {
             playerAbilityEnergy =
-                GetComponent<PlayerAbilityEnergy>();
+                GetComponent<
+                    PlayerAbilityEnergy
+                >();
         }
 
         if (playerAbilityController == null)
@@ -303,51 +384,87 @@ public sealed class PlayerAbilityMatchEnergyGain :
     private void OnValidate()
     {
         damagingThreeEnergy =
-            Mathf.Max(0, damagingThreeEnergy);
-
-        nonDamagingThreeEnergy =
-            Mathf.Max(0, nonDamagingThreeEnergy);
-
-        damagingFourEnergy =
-            Mathf.Max(0, damagingFourEnergy);
-
-        nonDamagingFourEnergy =
-            Mathf.Max(0, nonDamagingFourEnergy);
-
-        damagingFiveEnergy =
-            Mathf.Max(0, damagingFiveEnergy);
-
-        nonDamagingFiveEnergy =
-            Mathf.Max(0, nonDamagingFiveEnergy);
-
-        damagingLShapeEnergy =
-            Mathf.Max(0, damagingLShapeEnergy);
-
-        nonDamagingLShapeEnergy =
-            Mathf.Max(0, nonDamagingLShapeEnergy);
-
-        damagingTShapeEnergy =
-            Mathf.Max(0, damagingTShapeEnergy);
-
-        nonDamagingTShapeEnergy =
-            Mathf.Max(0, nonDamagingTShapeEnergy);
-
-        damagingOtherEnergy =
-            Mathf.Max(0, damagingOtherEnergy);
-
-        nonDamagingOtherEnergy =
-            Mathf.Max(0, nonDamagingOtherEnergy);
-
-        damagingBombEnergyPerGem =
             Mathf.Max(
                 0,
-                damagingBombEnergyPerGem
+                damagingThreeEnergy
             );
 
-        nonDamagingBombEnergyPerGem =
+        nonDamagingThreeEnergy =
             Mathf.Max(
                 0,
-                nonDamagingBombEnergyPerGem
+                nonDamagingThreeEnergy
+            );
+
+        damagingFourEnergy =
+            Mathf.Max(
+                0,
+                damagingFourEnergy
+            );
+
+        nonDamagingFourEnergy =
+            Mathf.Max(
+                0,
+                nonDamagingFourEnergy
+            );
+
+        damagingFiveEnergy =
+            Mathf.Max(
+                0,
+                damagingFiveEnergy
+            );
+
+        nonDamagingFiveEnergy =
+            Mathf.Max(
+                0,
+                nonDamagingFiveEnergy
+            );
+
+        damagingLShapeEnergy =
+            Mathf.Max(
+                0,
+                damagingLShapeEnergy
+            );
+
+        nonDamagingLShapeEnergy =
+            Mathf.Max(
+                0,
+                nonDamagingLShapeEnergy
+            );
+
+        damagingTShapeEnergy =
+            Mathf.Max(
+                0,
+                damagingTShapeEnergy
+            );
+
+        nonDamagingTShapeEnergy =
+            Mathf.Max(
+                0,
+                nonDamagingTShapeEnergy
+            );
+
+        damagingOtherEnergy =
+            Mathf.Max(
+                0,
+                damagingOtherEnergy
+            );
+
+        nonDamagingOtherEnergy =
+            Mathf.Max(
+                0,
+                nonDamagingOtherEnergy
+            );
+
+        damagingSpecialEnergyPerGem =
+            Mathf.Max(
+                0,
+                damagingSpecialEnergyPerGem
+            );
+
+        nonDamagingSpecialEnergyPerGem =
+            Mathf.Max(
+                0,
+                nonDamagingSpecialEnergyPerGem
             );
     }
 }

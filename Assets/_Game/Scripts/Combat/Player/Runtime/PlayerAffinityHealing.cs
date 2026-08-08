@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class PlayerAffinityHealing : MonoBehaviour
+public sealed class PlayerAffinityHealing :
+    MonoBehaviour
 {
     [Header("References")]
     [SerializeField]
@@ -11,21 +12,13 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
     [SerializeField]
     private PlayerActor playerActor;
 
-    [Header("Healing Values")]
-    [SerializeField, Min(0)]
-    private int threeGemHealing = 8;
-
-    [SerializeField, Min(0)]
-    private int fourGemHealing = 12;
-
-    [SerializeField, Min(0)]
-    private int fiveGemHealing = 18;
-
+    [Header("Per-Gem Healing")]
     [SerializeField, Min(0)]
     [Tooltip(
-        "Healing added for every gem beyond five."
+        "Base HP restored for every affinity-color gem " +
+        "that is genuinely destroyed."
     )]
-    private int additionalHealingPerGem = 6;
+    private int healingPerGem = 3;
 
     [SerializeField, Range(0f, 1f)]
     [Tooltip(
@@ -35,6 +28,23 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
     private float cascadeHealingBonusPerDepth =
         0.15f;
 
+    /*
+     * New scalable event.
+     *
+     * Future passives, VFX and cards can inspect exactly
+     * what kind of clear caused the healing.
+     */
+    public event Action<
+        BoardClearContext,
+        int
+    > AffinityClearHealingResolved;
+
+    /*
+     * Legacy compatibility event.
+     *
+     * Keep this for now in case an existing UI or effect
+     * listens to the old signature.
+     */
     public event Action<
         GemType,
         int,
@@ -67,11 +77,11 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleBoardClearResolved;
 
-        boardController.BoardMatchResolved +=
-            HandleMatchResolved;
+        boardController.BoardClearResolved +=
+            HandleBoardClearResolved;
     }
 
     private void UnsubscribeFromBoard()
@@ -81,40 +91,58 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleBoardClearResolved;
     }
 
-    private void HandleMatchResolved(
-        BoardMatchContext context)
+    private void HandleBoardClearResolved(
+        BoardClearContext context)
     {
         if (playerActor == null ||
             !playerActor.IsInitialized ||
             playerActor.IsDefeated ||
-            playerActor.Definition == null)
+            playerActor.Definition == null ||
+            context.GemCount <= 0)
         {
             return;
         }
 
         GemType affinityGemType =
-            playerActor.Definition.AffinityGemType;
+            playerActor.Definition
+                .AffinityGemType;
 
-        if (context.GemType != affinityGemType)
+        if (context.GemType !=
+            affinityGemType)
         {
             return;
         }
 
         int attemptedHealing =
             CalculateHealing(
-                context.GemCount,
-                context.CascadeDepth
+                context
             );
+
+        if (attemptedHealing <= 0)
+        {
+            return;
+        }
 
         int actualHealing =
             playerActor.Heal(
                 attemptedHealing
             );
 
+        /*
+         * New context-rich event.
+         */
+        AffinityClearHealingResolved?.Invoke(
+            context,
+            actualHealing
+        );
+
+        /*
+         * Old event remains temporarily compatible.
+         */
         AffinityHealingResolved?.Invoke(
             context.GemType,
             context.GemCount,
@@ -128,57 +156,39 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
                 $"{playerActor.Definition.DisplayName} " +
                 $"healed {actualHealing} HP from " +
                 $"{context.GemCount} " +
-                $"{context.GemType} gems. " +
+                $"{context.GemType} gem(s) cleared by " +
+                $"{context.Source}. " +
                 $"Cascade depth: " +
                 $"{context.CascadeDepth}.",
-                playerActor
-            );
-        }
-        else
-        {
-            Debug.Log(
-                $"{context.GemCount} " +
-                $"{context.GemType} gems matched the " +
-                "player affinity, but the player was " +
-                "already at full health.",
                 playerActor
             );
         }
     }
 
     public int CalculateHealing(
-        int gemCount,
-        int cascadeDepth)
+        BoardClearContext context)
     {
-        gemCount =
-            Mathf.Max(3, gemCount);
+        int safeGemCount =
+            Mathf.Max(
+                0,
+                context.GemCount
+            );
 
-        cascadeDepth =
-            Mathf.Max(0, cascadeDepth);
+        if (safeGemCount == 0)
+        {
+            return 0;
+        }
 
-        int baseHealing;
-
-        if (gemCount == 3)
-        {
-            baseHealing =
-                threeGemHealing;
-        }
-        else if (gemCount == 4)
-        {
-            baseHealing =
-                fourGemHealing;
-        }
-        else
-        {
-            baseHealing =
-                fiveGemHealing +
-                Mathf.Max(0, gemCount - 5) *
-                additionalHealingPerGem;
-        }
+        int baseHealing =
+            safeGemCount *
+            healingPerGem;
 
         float cascadeMultiplier =
             1f +
-            cascadeDepth *
+            Mathf.Max(
+                0,
+                context.CascadeDepth
+            ) *
             cascadeHealingBonusPerDepth;
 
         return Mathf.Max(
@@ -187,6 +197,28 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
                 baseHealing *
                 cascadeMultiplier
             )
+        );
+    }
+
+    /*
+     * Compatibility overload for any old caller that
+     * directly calculates healing.
+     */
+    public int CalculateHealing(
+        int gemCount,
+        int cascadeDepth)
+    {
+        BoardClearContext context =
+            new BoardClearContext(
+                default(GemType),
+                gemCount,
+                cascadeDepth,
+                BoardClearSource.Match,
+                BoardMatchType.Other
+            );
+
+        return CalculateHealing(
+            context
         );
     }
 
@@ -221,19 +253,16 @@ public sealed class PlayerAffinityHealing : MonoBehaviour
 
     private void OnValidate()
     {
-        threeGemHealing =
-            Mathf.Max(0, threeGemHealing);
-
-        fourGemHealing =
-            Mathf.Max(0, fourGemHealing);
-
-        fiveGemHealing =
-            Mathf.Max(0, fiveGemHealing);
-
-        additionalHealingPerGem =
+        healingPerGem =
             Mathf.Max(
                 0,
-                additionalHealingPerGem
+                healingPerGem
+            );
+
+        cascadeHealingBonusPerDepth =
+            Mathf.Max(
+                0f,
+                cascadeHealingBonusPerDepth
             );
     }
 }
