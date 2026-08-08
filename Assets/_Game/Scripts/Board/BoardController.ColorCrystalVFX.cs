@@ -18,7 +18,7 @@ public partial class BoardController
      * The synchronized values below are deliberately tuned around Unity's
      * coroutine frame scheduling rather than raw seconds alone. ClearMatches
      * always has a final yield, so a 0.01s flash plus that final frame tracks
-     * a 0.025s glint cadence closely at the project's likely 60/120 FPS.
+     * the original 0.02s glint cadence closely at 60/90/120 FPS.
      *
      * Keeping this override here avoids changing crystal target selection,
      * damage/reward reporting, bomb expansion, or ClearMatches itself.
@@ -29,7 +29,7 @@ public partial class BoardController
 
     private const float
         SynchronizedCrystalTargetCadence =
-            0.025f;
+            0.02f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
