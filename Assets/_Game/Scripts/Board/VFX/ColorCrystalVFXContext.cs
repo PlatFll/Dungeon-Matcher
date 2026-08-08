@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public readonly struct ColorCrystalVFXContext
 {
     public Gem CrystalGem { get; }
@@ -8,8 +6,7 @@ public readonly struct ColorCrystalVFXContext
 
     public bool IsValid =>
         CrystalGem != null &&
-        TargetGems != null &&
-        TargetGems.Length > 0;
+        TargetGems != null;
 
     public ColorCrystalVFXContext(
         Gem crystalGem,
