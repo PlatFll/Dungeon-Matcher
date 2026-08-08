@@ -48,10 +48,36 @@ public sealed class FloatingCombatText :
         }
     }
 
+    /*
+     * Keep the original API for ordinary combat text. Callers that do
+     * not need directional spreading continue to use the style's travel
+     * distance and jitter exactly as before.
+     */
     public void Play(
         string displayedText,
         CombatTextStyle style,
         Vector2 localPosition,
+        Action<FloatingCombatText> onFinished)
+    {
+        Play(
+            displayedText,
+            style,
+            localPosition,
+            Vector2.zero,
+            onFinished
+        );
+    }
+
+    /*
+     * Presentation controllers can add a deliberate travel offset on top
+     * of the shared style. Enemy damage uses this to fan rapid multi-hit
+     * numbers left and right without changing healing or other text kinds.
+     */
+    public void Play(
+        string displayedText,
+        CombatTextStyle style,
+        Vector2 localPosition,
+        Vector2 additionalTravelDistance,
         Action<FloatingCombatText> onFinished)
     {
         CacheReferences();
@@ -122,6 +148,7 @@ public sealed class FloatingCombatText :
 
         travelDistance =
             style.TravelDistance +
+            additionalTravelDistance +
             Vector2.right *
             horizontalJitter;
 
