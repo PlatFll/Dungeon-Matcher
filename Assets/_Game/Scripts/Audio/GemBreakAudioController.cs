@@ -51,7 +51,7 @@ public sealed class GemBreakAudioController :
     private int nextAudioSourceIndex;
 
     /*
-     * MatchResolved can be invoked multiple times in one frame
+     * BoardClearResolved can be invoked multiple times in one frame
      * when separate match groups clear simultaneously.
      *
      * These values combine them into one break sound.
@@ -97,11 +97,11 @@ public sealed class GemBreakAudioController :
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleClearResolved;
 
-        boardController.BoardMatchResolved +=
-            HandleMatchResolved;
+        boardController.BoardClearResolved +=
+            HandleClearResolved;
     }
 
     private void Unsubscribe()
@@ -111,21 +111,32 @@ public sealed class GemBreakAudioController :
             return;
         }
 
-        boardController.BoardMatchResolved -=
-            HandleMatchResolved;
+        boardController.BoardClearResolved -=
+            HandleClearResolved;
     }
 
-    private void HandleMatchResolved(
-        BoardMatchContext context)
+    private void HandleClearResolved(
+        BoardClearContext context)
     {
         /*
-         * Multiple match groups reported during the same
-         * clear step are combined into one sound.
+         * This controller is the ordinary match-break sound.
+         * Bomb/crystal clears can use their own SFX later.
          */
+        if (context.Source !=
+            BoardClearSource.Match)
+        {
+            return;
+        }
+
         hasPendingBreak = true;
 
+        /*
+         * Preserve the old audio behaviour: a straight four
+         * still sounds like a four-gem match even though one
+         * gem survives as the newly created bomb.
+         */
         pendingGemCount +=
-            context.GemCount;
+            context.TriggerGemCount;
 
         pendingCascadeDepth =
             Mathf.Max(
