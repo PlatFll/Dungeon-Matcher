@@ -13,17 +13,23 @@ public partial class BoardController
      * That made the visual selector feel much faster than the board.
      *
      * During a color-crystal activation only, temporarily shorten the
-     * existing clear animation so the gameplay loop advances at roughly
-     * the same travelling cadence as the 0.02s star glints. The original
-     * match timings are restored as soon as every target glint has been
-     * launched, before normal refill/cascade presentation continues.
+     * existing clear animation and launch target glints in parallel.
+     *
+     * The synchronized values below are deliberately tuned around Unity's
+     * coroutine frame scheduling rather than raw seconds alone. ClearMatches
+     * always has a final yield, so a 0.01s flash plus that final frame tracks
+     * a 0.025s glint cadence closely at the project's likely 60/120 FPS.
      *
      * Keeping this override here avoids changing crystal target selection,
      * damage/reward reporting, bomb expansion, or ClearMatches itself.
      */
     private const float
         SynchronizedCrystalFlashDuration =
-            0.02f;
+            0.01f;
+
+    private const float
+        SynchronizedCrystalTargetCadence =
+            0.025f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
@@ -37,9 +43,14 @@ public partial class BoardController
         SynchronizedCrystalActivationStagger =
             0f;
 
+    /*
+     * Leave enough room for the final fast ClearMatches coroutine to finish
+     * before restoring the normal match timings. This prevents the last
+     * selected gems from suddenly reverting to the old slow animation.
+     */
     private const float
         SynchronizedCrystalRestoreSafetyDelay =
-            0.04f;
+            0.25f;
 
     private bool
         synchronizedCrystalTimingsActive;
@@ -125,17 +136,13 @@ public partial class BoardController
         BeginSynchronizedCrystalTimings();
 
         /*
-         * The target sequence begins after roughly one fast clear frame.
          * ResolveNormalColorCrystalSequence removes the source crystal
-         * first, so the first target glint and first target clear begin
-         * together instead of the glints racing ahead of gameplay.
+         * first. Delay the first target glint by one synchronized cadence
+         * so the first target visual cue and first target clear begin on
+         * the same beat.
          */
         float targetStartDelay =
-            Mathf.Max(
-                SynchronizedCrystalFlashDuration,
-                colorCrystalVFXController
-                    .TargetSpawnStagger
-            );
+            SynchronizedCrystalTargetCadence;
 
         yield return
             colorCrystalVFXController
@@ -144,7 +151,8 @@ public partial class BoardController
                         crystalGem,
                         validTargets.ToArray()
                     ),
-                    targetStartDelay
+                    targetStartDelay,
+                    SynchronizedCrystalTargetCadence
                 );
 
         /*
@@ -223,13 +231,20 @@ public partial class BoardController
                 );
             }
 
-            if (colorCrystalVFXController ==
-                    null ||
-                !colorCrystalVFXController
+            /*
+             * A nested crystal may have started during the safety window.
+             * If so, wait through that target sequence as well instead of
+             * restoring timings underneath it.
+             */
+            if (colorCrystalVFXController !=
+                    null &&
+                colorCrystalVFXController
                     .IsTargetLaunchSequenceActive)
             {
-                break;
+                continue;
             }
+
+            break;
         }
 
         RestoreCrystalTimings();
