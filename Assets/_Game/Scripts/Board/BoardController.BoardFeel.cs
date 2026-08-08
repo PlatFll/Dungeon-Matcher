@@ -33,11 +33,12 @@ public partial class BoardController
 
     [SerializeField, Range(0.25f, 1f)]
     [Tooltip(
-        "Reduces normal match post-burst dead time so gravity " +
-        "starts sooner after the visual impact."
+        "Controls the tiny impact-to-gravity beat after cleared gems " +
+        "disappear. A full multiplier keeps the original 0.04s pause, " +
+        "giving the explosion time to read before the column moves."
     )]
     private float matchPostBurstDelayMultiplier =
-        0.50f;
+        1.00f;
 
     [Header("Board Feel - Gravity")]
     [SerializeField, Range(0.5f, 1f)]
@@ -51,11 +52,12 @@ public partial class BoardController
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
-        "Compresses long fall durations. 0.5 is approximately " +
-        "square-root scaling, keeping deep refills fast."
+        "Controls how strongly long drops are compressed. Higher values " +
+        "preserve more distance-based travel time, so deep column refills " +
+        "remain readable while short 1-3 cell falls stay responsive."
     )]
     private float fallDistanceExponent =
-        0.52f;
+        0.65f;
 
     [SerializeField, Range(0f, 0.12f)]
     [Tooltip(
