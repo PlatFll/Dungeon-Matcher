@@ -67,8 +67,22 @@ public sealed class ColorCrystalVFXController :
 
     private int createdGlintCount;
 
+    /*
+     * Counts target-launch sequences rather than active glints.
+     * BoardController uses this to know when every selected gem
+     * has received its visual cue and the temporary fast-clear
+     * timings can safely be restored.
+     */
+    private int activeTargetLaunchSequences;
+
     private const string SortingLayerName =
         "Gems";
+
+    public float TargetSpawnStagger =>
+        glintSpawnStagger;
+
+    public bool IsTargetLaunchSequenceActive =>
+        activeTargetLaunchSequences > 0;
 
     private void Awake()
     {
@@ -88,16 +102,9 @@ public sealed class ColorCrystalVFXController :
             yield break;
         }
 
-        /*
-         * Anticipation belongs to the already-selected crystal.
-         * It does not decide targets or alter board state.
-         */
-        if (context.CrystalGem != null)
-        {
-            yield return
-                context.CrystalGem
-                    .PlayColorCrystalActivationPulse();
-        }
+        yield return PlayCrystalPulse(
+            context.CrystalGem
+        );
 
         int spawnedGlintCount = 0;
 
@@ -108,41 +115,11 @@ public sealed class ColorCrystalVFXController :
             Gem targetGem =
                 context.TargetGems[index];
 
-            if (targetGem == null)
+            if (!TryPlayTargetGlint(
+                    targetGem))
             {
                 continue;
             }
-
-            ColorCrystalGlintVFX glint =
-                GetAvailableGlint();
-
-            if (glint == null)
-            {
-                break;
-            }
-
-            Vector3 localPosition =
-                boardController.transform
-                    .InverseTransformPoint(
-                        targetGem.transform.position
-                    );
-
-            activeGlints.Add(
-                glint
-            );
-
-            glint.Play(
-                targetGem,
-                localPosition,
-                boardController.CellSize *
-                    glintSizeInCells,
-                glintDuration,
-                glintPeakTime,
-                targetFlashDuration,
-                glintRotationDegrees,
-                glintColor,
-                ReleaseGlint
-            );
 
             spawnedGlintCount++;
 
@@ -168,6 +145,145 @@ public sealed class ColorCrystalVFXController :
                 glintPeakTime
             );
         }
+    }
+
+    /*
+     * Synchronized mode is used by the board when the selected
+     * gems should begin clearing at the same travelling cadence
+     * as the star glints instead of waiting for every glint first.
+     *
+     * The crystal anticipation is still awaited. Target glints are
+     * then launched in a background sequence after a tiny lead-in,
+     * allowing the existing board clear coroutine to advance in
+     * parallel without giving VFX ownership of gameplay state.
+     */
+    public IEnumerator PlaySynchronizedActivation(
+        ColorCrystalVFXContext context,
+        float targetStartDelay)
+    {
+        if (!context.IsValid ||
+            boardController == null)
+        {
+            yield break;
+        }
+
+        yield return PlayCrystalPulse(
+            context.CrystalGem
+        );
+
+        StartCoroutine(
+            PlayTargetGlintSequence(
+                context.TargetGems,
+                Mathf.Max(
+                    0f,
+                    targetStartDelay
+                )
+            )
+        );
+    }
+
+    private IEnumerator PlayCrystalPulse(
+        Gem crystalGem)
+    {
+        if (crystalGem == null)
+        {
+            yield break;
+        }
+
+        /*
+         * Anticipation belongs to the already-selected crystal.
+         * It does not decide targets or alter board state.
+         */
+        yield return
+            crystalGem
+                .PlayColorCrystalActivationPulse();
+    }
+
+    private IEnumerator PlayTargetGlintSequence(
+        Gem[] targetGems,
+        float startDelay)
+    {
+        if (targetGems == null ||
+            targetGems.Length == 0)
+        {
+            yield break;
+        }
+
+        activeTargetLaunchSequences++;
+
+        if (startDelay > 0f)
+        {
+            yield return new WaitForSeconds(
+                startDelay
+            );
+        }
+
+        for (int index = 0;
+             index < targetGems.Length;
+             index++)
+        {
+            TryPlayTargetGlint(
+                targetGems[index]
+            );
+
+            if (glintSpawnStagger > 0f &&
+                index <
+                    targetGems.Length - 1)
+            {
+                yield return new WaitForSeconds(
+                    glintSpawnStagger
+                );
+            }
+        }
+
+        activeTargetLaunchSequences =
+            Mathf.Max(
+                0,
+                activeTargetLaunchSequences - 1
+            );
+    }
+
+    private bool TryPlayTargetGlint(
+        Gem targetGem)
+    {
+        if (targetGem == null ||
+            boardController == null)
+        {
+            return false;
+        }
+
+        ColorCrystalGlintVFX glint =
+            GetAvailableGlint();
+
+        if (glint == null)
+        {
+            return false;
+        }
+
+        Vector3 localPosition =
+            boardController.transform
+                .InverseTransformPoint(
+                    targetGem.transform.position
+                );
+
+        activeGlints.Add(
+            glint
+        );
+
+        glint.Play(
+            targetGem,
+            localPosition,
+            boardController.CellSize *
+                glintSizeInCells,
+            glintDuration,
+            glintPeakTime,
+            targetFlashDuration,
+            glintRotationDegrees,
+            glintColor,
+            ReleaseGlint
+        );
+
+        return true;
     }
 
     private ColorCrystalGlintVFX
@@ -443,6 +559,8 @@ public sealed class ColorCrystalVFXController :
                 glint
             );
         }
+
+        activeTargetLaunchSequences = 0;
     }
 
     private void OnDisable()
