@@ -10,22 +10,17 @@ public partial class BoardController
     /*
      * Color-crystal presentation timing.
      *
-     * The earlier implementation tried to keep every target on a fixed
-     * 0.02-second cadence. That made small clears unreadably fast and also
-     * made the VFX duration depend too heavily on coroutine frame rounding.
+     * The star glint is now the visible target-clear effect. While a color
+     * crystal is active, the normal ClearMatches flash/hold is suppressed so
+     * it does not compete with that star or add a second little explosion.
+     * ClearMatches still owns the actual board-state removal and final yield.
      *
-     * The revised presentation follows one coordinated event:
-     *
-     * crystal pulse -> adaptive star sweep -> fast overlapping clears.
-     *
-     * The VFX controller owns only the visual sweep. Gameplay still owns
-     * target selection, rewards, bomb expansion and the actual ClearMatches
-     * calls. These temporary values only shorten the ordinary clear animation
-     * while the color-crystal sequence is active.
+     * Presentation order:
+     * crystal pulse -> adaptive star sweep -> lightweight board clears.
      */
     private const float
         SynchronizedCrystalFlashDuration =
-            0.015f;
+            0f;
 
     private const float
         SynchronizedCrystalWhiteHoldDuration =
@@ -36,30 +31,31 @@ public partial class BoardController
             0f;
 
     /*
-     * Let each target star visibly grow before its gem starts disappearing.
-     * The star currently peaks at about 0.12 seconds, so gameplay receives
-     * the same lead before entering the sequential crystal-clear loop.
+     * Stars live for about 0.24 seconds. Give the sweep the same-sized head
+     * start before gameplay begins removing targets. This keeps every target
+     * star readable without extending the total activation, because the VFX
+     * and gameplay clear loop continue in parallel after this point.
      */
     private const float
         SynchronizedCrystalTargetClearLeadIn =
-            0.12f;
+            0.24f;
 
     /*
-     * Small target sets need a little spacing because ClearMatches has a
-     * mandatory final yielded frame. Large sets derive any required spacing
-     * from the adaptive sweep and current frame duration instead.
+     * At 90/120 FPS the one-frame ClearMatches handoff can run noticeably
+     * faster than the visual sweep. Add a tiny frame-aware wait there only;
+     * 30/60 FPS need no extra target delay.
      */
-    private const int
-        SmallCrystalTargetCount =
-            7;
+    private const float
+        HighFrameRateThreshold =
+            1f / 75f;
 
     private const float
-        SmallCrystalTargetActivationStagger =
-            0.01f;
+        VeryHighFrameRateThreshold =
+            1f / 110f;
 
     /*
      * This guard covers the final color-crystal clear tail, but remains short
-     * enough that ordinary refill cascades recover the normal match timings.
+     * enough that ordinary refill cascades recover normal match timings.
      * Nested crystal sweeps are rechecked below and extend the guard safely.
      */
     private const float
@@ -153,16 +149,12 @@ public partial class BoardController
                     validTargets.Count
                 );
 
-        BeginSynchronizedCrystalTimings(
-            validTargets.Count,
-            targetSweepDuration
-        );
+        BeginSynchronizedCrystalTimings();
 
         /*
-         * The source crystal pulse is still awaited, but the target sweep
-         * itself launches in the background. This lets the star wave and
-         * the existing gameplay clear loop overlap instead of playing as
-         * two separate animations back-to-back.
+         * Await only the source crystal pulse. The target stars then launch
+         * in the background across one elapsed-time sweep, allowing the VFX
+         * and gameplay clear loop to read as one continuous event.
          */
         yield return
             colorCrystalVFXController
@@ -183,11 +175,6 @@ public partial class BoardController
             );
         }
 
-        /*
-         * Restoration runs independently so ResolveColorCrystalActivation
-         * can continue into its existing gameplay path without waiting for
-         * the complete visual tail.
-         */
         if (restoreCrystalTimingsRoutine ==
             null)
         {
@@ -198,9 +185,7 @@ public partial class BoardController
         }
     }
 
-    private void BeginSynchronizedCrystalTimings(
-        int targetCount,
-        float targetSweepDuration)
+    private void BeginSynchronizedCrystalTimings()
     {
         if (synchronizedCrystalTimingsActive)
         {
@@ -229,92 +214,44 @@ public partial class BoardController
             SynchronizedCrystalPostBurstDelay;
 
         crystalActivationStagger =
-            CalculateCrystalActivationStagger(
-                targetCount,
-                targetSweepDuration
-            );
+            CalculateCrystalActivationStagger();
 
         synchronizedCrystalTimingsActive =
             true;
     }
 
-    private float CalculateCrystalActivationStagger(
-        int targetCount,
-        float targetSweepDuration)
+    private float CalculateCrystalActivationStagger()
     {
-        if (targetCount <= 1)
-        {
-            return 0f;
-        }
-
-        if (targetCount <=
-            SmallCrystalTargetCount)
-        {
-            return SmallCrystalTargetActivationStagger;
-        }
-
-        /*
-         * ClearMatches spends one or more frames in its flash loop and then
-         * always yields one final frame. Estimate that frame cost so very
-         * high frame rates do not let the gameplay clear sequence outrun the
-         * elapsed-time star sweep. At 60/90 FPS this normally resolves to
-         * zero extra delay; at 120 FPS it adds only the small amount needed.
-         */
         float frameDuration =
             Mathf.Max(
                 Time.deltaTime,
                 1f / 240f
             );
 
-        int flashFrameCount =
-            Mathf.Max(
-                1,
-                Mathf.CeilToInt(
-                    SynchronizedCrystalFlashDuration /
-                    frameDuration
-                )
-            );
-
-        float estimatedClearDuration =
-            (
-                flashFrameCount +
-                1
-            ) *
-            frameDuration;
-
-        float desiredTargetCadence =
-            targetSweepDuration /
-            (targetCount - 1);
-
-        float requiredStagger =
-            Mathf.Max(
-                0f,
-                desiredTargetCadence -
-                estimatedClearDuration
-            );
-
-        /*
-         * A sub-frame WaitForSeconds still costs a rendered frame, so only
-         * request an explicit wait when the gap is large enough to justify
-         * one. This avoids accidentally slowing the 60 FPS path.
-         */
-        if (requiredStagger <
-            frameDuration * 0.75f)
+        if (frameDuration >=
+            HighFrameRateThreshold)
         {
             return 0f;
         }
 
-        return requiredStagger;
+        /*
+         * Request roughly one rendered frame of spacing at 90 FPS and two
+         * at 120 FPS. WaitForSeconds is frame-quantized, so using fractions
+         * of the current frame asks Unity for the desired number of frames
+         * without slowing the normal 60 FPS path.
+         */
+        if (frameDuration <=
+            VeryHighFrameRateThreshold)
+        {
+            return frameDuration * 1.5f;
+        }
+
+        return frameDuration * 0.75f;
     }
 
     private IEnumerator
         RestoreCrystalTimingsAfterTargets()
     {
-        /*
-         * A bomb-triggered crystal can begin another sweep while the current
-         * crystal is resolving. Never restore the ordinary match timings
-         * underneath an active target-launch sequence.
-         */
         while (true)
         {
             while (colorCrystalVFXController !=
