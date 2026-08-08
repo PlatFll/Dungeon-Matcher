@@ -544,6 +544,75 @@ public partial class BoardController
         return false;
     }
 
+    /*
+     * Reward-first crystal/bomb exception.
+     *
+     * A direct crystal + ordinary-gem swap normally activates the
+     * crystal immediately. That can waste an already-existing bomb
+     * when the ordinary gem simultaneously creates a normal three.
+     *
+     * For exactly that case, allow the ordinary three-match to resolve
+     * first only when one of its existing row/column bombs will actually
+     * cross the crystal's current cell. ResolveCascades already preserves
+     * bomb-hit crystals, records the triggering bomb's GemType, refills,
+     * then converts that color into random bombs.
+     *
+     * Scope this to exact three-matches and an ordinary swapped gem so
+     * direct crystal+bomb swaps and the carefully-defined 4/5/L/T special
+     * creation interactions keep their existing behavior.
+     */
+    private bool ShouldResolveMatchedBombBeforeCrystal(
+        Gem crystalGem,
+        Gem targetGem)
+    {
+        if (crystalGem == null ||
+            targetGem == null ||
+            targetGem.SpecialType !=
+                GemSpecialType.None)
+        {
+            return false;
+        }
+
+        HashSet<Gem> targetMatches =
+            FindMatchesFrom(
+                targetGem,
+                null
+            );
+
+        if (targetMatches.Count != 3)
+        {
+            return false;
+        }
+
+        foreach (Gem matchedGem in targetMatches)
+        {
+            if (matchedGem == null)
+            {
+                continue;
+            }
+
+            bool rowBombReachesCrystal =
+                matchedGem.SpecialType ==
+                    GemSpecialType.RowBomb &&
+                matchedGem.Row ==
+                    crystalGem.Row;
+
+            bool columnBombReachesCrystal =
+                matchedGem.SpecialType ==
+                    GemSpecialType.ColumnBomb &&
+                matchedGem.Column ==
+                    crystalGem.Column;
+
+            if (rowBombReachesCrystal ||
+                columnBombReachesCrystal)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private bool TryBuildColorCrystalClearSet(
         Gem first,
         Gem second,
@@ -595,6 +664,26 @@ public partial class BoardController
             firstIsCrystal
                 ? second
                 : first;
+
+        /*
+         * If this crystal swap also created a normal three whose
+         * existing bomb will hit the crystal, deliberately decline
+         * the direct crystal activation here. TrySwap will then fall
+         * through to the ordinary match path, where ResolveCascades
+         * explodes the bomb first and queues this crystal from the hit.
+         */
+        if (ShouldResolveMatchedBombBeforeCrystal(
+                crystalGem,
+                targetGem))
+        {
+            Debug.Log(
+                "Crystal swap created a three-match whose existing " +
+                "bomb reaches the crystal. Resolving the match and " +
+                "bomb before the crystal activation."
+            );
+
+            return false;
+        }
 
         targetGemType =
             targetGem.Type;
