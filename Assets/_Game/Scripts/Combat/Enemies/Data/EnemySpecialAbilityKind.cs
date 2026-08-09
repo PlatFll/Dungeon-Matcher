@@ -1,5 +1,6 @@
 public enum EnemySpecialAbilityKind
 {
     None = 0,
-    Miner = 1
+    Miner = 1,
+    CrossbowGuardBolt = 2
 }
