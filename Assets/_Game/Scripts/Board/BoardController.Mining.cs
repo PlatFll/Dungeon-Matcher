@@ -32,6 +32,7 @@ public partial class BoardController
         public int OwnerInstanceId;
         public int MaximumOwnedMines;
         public int MaximumOwnedPins;
+        public Gem TargetGem;
     }
 
     /*
