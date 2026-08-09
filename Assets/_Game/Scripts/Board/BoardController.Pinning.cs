@@ -51,6 +51,20 @@ public partial class BoardController
                pinnedGemOwners.ContainsKey(gem);
     }
 
+    public void CancelPointerInteraction(
+        Gem gem)
+    {
+        if (pointerStartGem == gem)
+        {
+            pointerStartGem = null;
+        }
+
+        if (selectedGem == gem)
+        {
+            ClearSelection();
+        }
+    }
+
     private bool IsCellPinned(
         int column,
         int row)
