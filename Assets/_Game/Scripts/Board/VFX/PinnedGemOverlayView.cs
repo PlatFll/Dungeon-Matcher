@@ -18,6 +18,7 @@ public sealed class PinnedGemOverlayView :
     private BoardController boardController;
     private int ownerInstanceId;
 
+    private GameObject overlayObject;
     private SpriteRenderer overlayRenderer;
     private MaterialPropertyBlock propertyBlock;
 
@@ -185,9 +186,11 @@ public sealed class PinnedGemOverlayView :
         released = true;
         RestoreGemVisuals();
 
-        if (overlayRenderer != null)
+        if (overlayObject != null)
         {
-            overlayRenderer.enabled = false;
+            Destroy(overlayObject);
+            overlayObject = null;
+            overlayRenderer = null;
         }
     }
 
@@ -266,7 +269,7 @@ public sealed class PinnedGemOverlayView :
     private void CreateOverlay(
         Sprite boltSprite)
     {
-        GameObject overlayObject =
+        overlayObject =
             new GameObject(
                 OverlayObjectName
             );
@@ -353,6 +356,13 @@ public sealed class PinnedGemOverlayView :
     private void OnDestroy()
     {
         RestoreGemVisuals();
+
+        if (overlayObject != null)
+        {
+            Destroy(overlayObject);
+            overlayObject = null;
+            overlayRenderer = null;
+        }
 
         /*
          * A bomb, crystal, Miner or ordinary clear can destroy a pinned gem
