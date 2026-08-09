@@ -40,6 +40,15 @@ public partial class BoardController
         pinnedGemOwners =
             new Dictionary<Gem, int>();
 
+    /*
+     * A Bolt Shot chooses its target before entering the serialized mutation
+     * queue. This reservation prevents multiple guards (or a Miner processed
+     * later on the same player turn) from racing for the same Gem.
+     */
+    private readonly Dictionary<Gem, int>
+        pendingPinTargetOwners =
+            new Dictionary<Gem, int>();
+
     private readonly HashSet<int>
         pendingPinReleaseOwners =
             new HashSet<int>();
@@ -48,7 +57,10 @@ public partial class BoardController
         Gem gem)
     {
         return gem != null &&
-               pinnedGemOwners.ContainsKey(gem);
+               (
+                   pinnedGemOwners.ContainsKey(gem) ||
+                   pendingPinTargetOwners.ContainsKey(gem)
+               );
     }
 
     public void CancelPointerInteraction(
@@ -118,6 +130,17 @@ public partial class BoardController
             }
         }
 
+        foreach (
+            KeyValuePair<Gem, int> entry
+            in pendingPinTargetOwners)
+        {
+            if (entry.Value ==
+                ownerInstanceId)
+            {
+                count++;
+            }
+        }
+
         return count;
     }
 
@@ -129,6 +152,17 @@ public partial class BoardController
             owner.IsDefeated ||
             !owner.IsInitialized ||
             gems == null)
+        {
+            return false;
+        }
+
+        /*
+         * Do not select a target against a board that is already being
+         * structurally changed by mining/restoration/pin release. Leaving the
+         * enemy ready lets it retry on the next valid player turn. Multiple
+         * Bolt Shots themselves are safe because their targets are reserved.
+         */
+        if (HasStructuralBoardMutationInFlight())
         {
             return false;
         }
@@ -149,10 +183,30 @@ public partial class BoardController
             return false;
         }
 
-        if (!HasSafePinnableGem())
+        List<Gem> candidates =
+            BuildSafePinnableGemList();
+
+        if (candidates.Count == 0)
         {
             return false;
         }
+
+        Gem selectedGem =
+            candidates[
+                Random.Range(
+                    0,
+                    candidates.Count
+                )
+            ];
+
+        if (selectedGem == null ||
+            IsGemPinned(selectedGem))
+        {
+            return false;
+        }
+
+        pendingPinTargetOwners[selectedGem] =
+            ownerInstanceId;
 
         pendingBoardMutations.Enqueue(
             new BoardMutationRequest
@@ -166,7 +220,10 @@ public partial class BoardController
                     ownerInstanceId,
 
                 MaximumOwnedPins =
-                    safeMaximum
+                    safeMaximum,
+
+                TargetGem =
+                    selectedGem
             }
         );
 
@@ -204,10 +261,25 @@ public partial class BoardController
     private IEnumerator ExecutePinRequest(
         BoardMutationRequest request)
     {
-        if (request == null ||
-            request.OwnerActor == null ||
+        if (request == null)
+        {
+            yield break;
+        }
+
+        Gem selectedGem =
+            request.TargetGem;
+
+        if (selectedGem != null)
+        {
+            pendingPinTargetOwners.Remove(
+                selectedGem
+            );
+        }
+
+        if (request.OwnerActor == null ||
             request.OwnerActor.IsDefeated ||
-            request.OwnerInstanceId == 0)
+            request.OwnerInstanceId == 0 ||
+            selectedGem == null)
         {
             yield break;
         }
@@ -219,35 +291,39 @@ public partial class BoardController
             yield break;
         }
 
-        List<Gem> candidates =
-            BuildSafePinnableGemList();
-
-        if (candidates.Count == 0)
-        {
-            yield break;
-        }
-
-        Gem selectedGem =
-            candidates[
-                Random.Range(
-                    0,
-                    candidates.Count
-                )
-            ];
-
-        if (selectedGem == null ||
-            IsGemPinned(selectedGem))
+        if (!IsCellPlayable(
+                selectedGem.Column,
+                selectedGem.Row) ||
+            GetGem(
+                selectedGem.Column,
+                selectedGem.Row) !=
+                selectedGem ||
+            pinnedGemOwners.ContainsKey(
+                selectedGem))
         {
             yield break;
         }
 
         /*
-         * Reserve ownership before the asynchronous impact animation starts.
-         * Multiple guards becoming ready on the same move therefore cannot
-         * select the same Gem.
+         * Ownership becomes authoritative before presentation starts. A later
+         * board mutation therefore sees this gem as fixed immediately.
          */
         pinnedGemOwners[selectedGem] =
             request.OwnerInstanceId;
+
+        /*
+         * Defensive recheck. With structural mutations gated before target
+         * reservation this should remain true, but never keep a pin that would
+         * eliminate the final legal move if another system changed the board.
+         */
+        if (!HasAvailableMove())
+        {
+            pinnedGemOwners.Remove(
+                selectedGem
+            );
+
+            yield break;
+        }
 
         PinnedGemOverlayView view =
             selectedGem.GetComponent<
@@ -291,6 +367,10 @@ public partial class BoardController
     private IEnumerator ExecuteReleasePinsRequest(
         int ownerInstanceId)
     {
+        RemovePendingPinReservationsForOwner(
+            ownerInstanceId
+        );
+
         List<Gem> pinsToRelease =
             new List<Gem>();
 
@@ -327,10 +407,28 @@ public partial class BoardController
         }
     }
 
-    private bool HasSafePinnableGem()
+    private bool HasStructuralBoardMutationInFlight()
     {
-        return BuildSafePinnableGemList()
-            .Count > 0;
+        if (activeBoardMutationKind.HasValue &&
+            activeBoardMutationKind.Value !=
+                BoardMutationKind.PinRandomGem)
+        {
+            return true;
+        }
+
+        foreach (
+            BoardMutationRequest request
+            in pendingBoardMutations)
+        {
+            if (request != null &&
+                request.Kind !=
+                    BoardMutationKind.PinRandomGem)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private List<Gem>
@@ -473,6 +571,10 @@ public partial class BoardController
             return;
         }
 
+        pendingPinTargetOwners.Remove(
+            destroyedGem
+        );
+
         if (!pinnedGemOwners.TryGetValue(
                 destroyedGem,
                 out int actualOwner))
@@ -514,6 +616,34 @@ public partial class BoardController
         }
     }
 
+    private void RemovePendingPinReservationsForOwner(
+        int ownerInstanceId)
+    {
+        List<Gem> reservationsToRemove =
+            new List<Gem>();
+
+        foreach (
+            KeyValuePair<Gem, int> entry
+            in pendingPinTargetOwners)
+        {
+            if (entry.Value ==
+                ownerInstanceId)
+            {
+                reservationsToRemove.Add(
+                    entry.Key
+                );
+            }
+        }
+
+        foreach (Gem reservedGem
+                 in reservationsToRemove)
+        {
+            pendingPinTargetOwners.Remove(
+                reservedGem
+            );
+        }
+    }
+
     /*
      * Emergency anti-softlock policy: reshuffling a board breaks every active
      * bolt first. A reshuffle is already a global board correction, and moving
@@ -522,6 +652,8 @@ public partial class BoardController
      */
     private void ReleaseAllPinsForEmergencyReshuffle()
     {
+        pendingPinTargetOwners.Clear();
+
         if (pinnedGemOwners.Count == 0)
         {
             return;
@@ -548,42 +680,72 @@ public partial class BoardController
 
     private void CleanupDestroyedPinEntries()
     {
-        if (pinnedGemOwners.Count == 0)
+        if (pinnedGemOwners.Count > 0)
         {
-            return;
-        }
+            List<Gem> destroyedKeys =
+                null;
 
-        List<Gem> destroyedKeys =
-            null;
-
-        foreach (Gem gem
-                 in pinnedGemOwners.Keys)
-        {
-            if (gem != null)
+            foreach (Gem gem
+                     in pinnedGemOwners.Keys)
             {
-                continue;
+                if (gem != null)
+                {
+                    continue;
+                }
+
+                if (destroyedKeys == null)
+                {
+                    destroyedKeys =
+                        new List<Gem>();
+                }
+
+                destroyedKeys.Add(gem);
             }
 
-            if (destroyedKeys == null)
+            if (destroyedKeys != null)
             {
-                destroyedKeys =
-                    new List<Gem>();
+                foreach (Gem destroyedGem
+                         in destroyedKeys)
+                {
+                    pinnedGemOwners.Remove(
+                        destroyedGem
+                    );
+                }
+            }
+        }
+
+        if (pendingPinTargetOwners.Count > 0)
+        {
+            List<Gem> destroyedReservations =
+                null;
+
+            foreach (Gem gem
+                     in pendingPinTargetOwners.Keys)
+            {
+                if (gem != null)
+                {
+                    continue;
+                }
+
+                if (destroyedReservations == null)
+                {
+                    destroyedReservations =
+                        new List<Gem>();
+                }
+
+                destroyedReservations.Add(gem);
             }
 
-            destroyedKeys.Add(gem);
-        }
-
-        if (destroyedKeys == null)
-        {
-            return;
-        }
-
-        foreach (Gem destroyedGem
-                 in destroyedKeys)
-        {
-            pinnedGemOwners.Remove(
-                destroyedGem
-            );
+            if (destroyedReservations != null)
+            {
+                foreach (Gem destroyedGem
+                         in destroyedReservations)
+                {
+                    pendingPinTargetOwners.Remove(
+                        destroyedGem
+                    );
+                }
+            }
         }
     }
 }
