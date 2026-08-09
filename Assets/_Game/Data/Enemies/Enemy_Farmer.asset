@@ -17,7 +17,8 @@ MonoBehaviour:
   category: 0
   description: A frightened farmer who is the first enemy encountered in the dungeon.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  staticVisualSprite: {fileID: -312738567421119420, guid: 13d0c6a208700954998154a79390784e, type: 3}
+  fallbackVisualSprite: {fileID: -312738567421119420, guid: 13d0c6a208700954998154a79390784e, type: 3}
+  animationControllerOverride: {fileID: 0}
   baseMaxHealth: 50
   baseDamage: 1
   baseAttackInterval: 10

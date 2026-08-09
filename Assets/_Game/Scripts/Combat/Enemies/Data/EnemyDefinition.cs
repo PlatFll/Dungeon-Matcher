@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(
     fileName = "Enemy_",
@@ -28,18 +29,31 @@ public sealed class EnemyDefinition : ScriptableObject
     [Header("Prefab")]
 
     [SerializeField]
-    [Tooltip("Prefab spawned by the wave controller.")]
+    [Tooltip(
+        "Shared enemy shell prefab in most cases. Use a dedicated prefab only " +
+        "when the enemy has genuinely different hierarchy/UI requirements."
+    )]
     private GameObject enemyPrefab;
 
-    [Header("Visual Override")]
+    [Header("Visuals")]
+
+    [SerializeField]
+    [FormerlySerializedAs("staticVisualSprite")]
+    [Tooltip(
+        "Single-frame fallback/preview artwork. This is used when no animation " +
+        "controller override has been assigned yet, and also gives the Image a " +
+        "safe frame before an Animator begins driving it."
+    )]
+    private Sprite fallbackVisualSprite;
 
     [SerializeField]
     [Tooltip(
-        "Optional static character sprite. When assigned, the shared enemy " +
-        "shell keeps its health/timer/VFX UI while its prefab-native character " +
-        "animation is disabled and replaced by this sprite."
+        "Optional per-enemy Runtime Animator Controller. An Animator Override " +
+        "Controller is recommended when enemies share the same states but use " +
+        "different clips. When assigned, it replaces the shared prefab's " +
+        "controller and animation playback remains enabled."
     )]
-    private Sprite staticVisualSprite;
+    private RuntimeAnimatorController animationControllerOverride;
 
     [Header("Base Combat Stats")]
 
@@ -140,8 +154,19 @@ public sealed class EnemyDefinition : ScriptableObject
     public GameObject EnemyPrefab =>
         enemyPrefab;
 
+    public Sprite FallbackVisualSprite =>
+        fallbackVisualSprite;
+
+    public RuntimeAnimatorController
+        AnimationControllerOverride =>
+            animationControllerOverride;
+
+    /*
+     * Compatibility property for the current WaveController spawn path.
+     * New visual setup is finalized by EnemyVisualPresenter from EnemyActor.
+     */
     public Sprite StaticVisualSprite =>
-        staticVisualSprite;
+        fallbackVisualSprite;
 
     public int BaseMaxHealth =>
         baseMaxHealth;

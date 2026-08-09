@@ -148,6 +148,23 @@ public sealed class EnemyActor : MonoBehaviour
         RuntimeStats = runtimeStats;
         assignedGemType = gemType;
 
+        /*
+         * Finalize the character presentation after the definition is known.
+         * This lets the shared enemy shell use a different Animator Controller
+         * or Animator Override Controller for every enemy without duplicating
+         * the health/timer/VFX prefab hierarchy.
+         */
+        if (!EnemyVisualPresenter.TryApply(
+                gameObject,
+                definition))
+        {
+            Debug.LogWarning(
+                $"Could not fully apply the visual profile for " +
+                $"{definition.DisplayName}.",
+                this
+            );
+        }
+
         currentHealth =
             RuntimeStats.MaxHealth;
 
