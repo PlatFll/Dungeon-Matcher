@@ -58,6 +58,14 @@ public static class EnemyVisualPresenter
 
             animator.enabled = true;
 
+            /*
+             * Evaluate the newly assigned controller immediately so the spawn
+             * VFX never exposes a stale frame from the shared prefab or the
+             * fallback sprite for one rendered frame.
+             */
+            animator.Rebind();
+            animator.Update(0f);
+
             if (playback != null)
             {
                 playback.enabled = true;
