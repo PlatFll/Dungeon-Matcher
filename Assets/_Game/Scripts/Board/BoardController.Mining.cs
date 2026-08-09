@@ -20,7 +20,9 @@ public partial class BoardController
     private enum BoardMutationKind
     {
         MineRandomCell,
-        RestoreOwnerCells
+        RestoreOwnerCells,
+        PinRandomGem,
+        ReleaseOwnerPins
     }
 
     private sealed class BoardMutationRequest
@@ -29,6 +31,7 @@ public partial class BoardController
         public EnemyActor OwnerActor;
         public int OwnerInstanceId;
         public int MaximumOwnedMines;
+        public int MaximumOwnedPins;
     }
 
     /*
@@ -226,9 +229,14 @@ public partial class BoardController
                     continue;
                 }
 
-                if (GetGem(
+                Gem gem =
+                    GetGem(
                         column,
-                        row) != null)
+                        row
+                    );
+
+                if (gem != null &&
+                    !IsGemPinned(gem))
                 {
                     return true;
                 }
@@ -255,9 +263,9 @@ public partial class BoardController
     private IEnumerator ProcessBoardMutations()
     {
         /*
-         * If a Miner died during a match/cascade, wait for that player action
-         * to release the board. HasPendingBoardMutation keeps new input from
-         * entering during the one-frame handoff.
+         * If an enemy queued board work during a match/cascade, wait for that
+         * player action to release the board. HasPendingBoardMutation keeps new
+         * input and wave transitions out of the one-frame handoff.
          */
         while (isBusy)
         {
@@ -287,6 +295,24 @@ public partial class BoardController
 
                     yield return
                         ExecuteRestoreRequest(
+                            request.OwnerInstanceId
+                        );
+                    break;
+
+                case BoardMutationKind.PinRandomGem:
+                    yield return
+                        ExecutePinRequest(
+                            request
+                        );
+                    break;
+
+                case BoardMutationKind.ReleaseOwnerPins:
+                    pendingPinReleaseOwners.Remove(
+                        request.OwnerInstanceId
+                    );
+
+                    yield return
+                        ExecuteReleasePinsRequest(
                             request.OwnerInstanceId
                         );
                     break;
@@ -337,7 +363,8 @@ public partial class BoardController
                 selectedCell.y
             );
 
-        if (minedGem == null)
+        if (minedGem == null ||
+            IsGemPinned(minedGem))
         {
             yield break;
         }
@@ -413,10 +440,19 @@ public partial class BoardController
             {
                 if (!IsCellPlayable(
                         column,
-                        row) ||
+                        row))
+                {
+                    continue;
+                }
+
+                Gem gem =
                     GetGem(
                         column,
-                        row) == null)
+                        row
+                    );
+
+                if (gem == null ||
+                    IsGemPinned(gem))
                 {
                     continue;
                 }
