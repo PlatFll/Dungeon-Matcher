@@ -54,6 +54,7 @@ public partial class BoardController
             new HashSet<int>();
 
     private Coroutine boardMutationCoroutine;
+    private BoardMutationKind? activeBoardMutationKind;
     private int completedValidPlayerMoves;
 
     public bool HasPendingBoardMutation =>
@@ -280,6 +281,9 @@ public partial class BoardController
             BoardMutationRequest request =
                 pendingBoardMutations.Dequeue();
 
+            activeBoardMutationKind =
+                request.Kind;
+
             switch (request.Kind)
             {
                 case BoardMutationKind.MineRandomCell:
@@ -318,8 +322,11 @@ public partial class BoardController
                         );
                     break;
             }
+
+            activeBoardMutationKind = null;
         }
 
+        activeBoardMutationKind = null;
         isBusy = false;
         boardMutationCoroutine = null;
     }
