@@ -3528,6 +3528,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b636ddf24c435d4b84c632f076c6bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardController
+  swapDurationMultiplier: 1
+  maximumInvalidSwapPause: 0.07
+  matchPostBurstDelayMultiplier: 2
+  fallDurationMultiplier: 1.1
+  fallDistanceExponent: 0.82
+  landingOvershootInCells: 0.045
+  landingSettleDuration: 0.06
+  landingSquashX: 1.025
+  landingSquashY: 0.97
+  postFallSettlePause: 0.06
   combatController: {fileID: 362587655}
   doubleCrystalSweepDelay: 0.08
   doubleCrystalChargeScale: 1.18
@@ -3563,7 +3573,7 @@ MonoBehaviour:
   matchPostBurstDelay: 0.04
   matchBurstScale: 1.04
   cascadePause: 0.06
-  crystalActivationStagger: 0.001
+  crystalActivationStagger: 0.03
   crystalSwapSpecialRevealPause: 0.1
   fallDurationPerCell: 0.075
   minimumFallDuration: 0.14
