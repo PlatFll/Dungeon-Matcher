@@ -48,6 +48,23 @@ public static class EnemySpecialAbilityRuntimeFactory
                 runtime = minerAbility;
                 break;
 
+            case EnemySpecialAbilityKind.CrossbowGuardBolt:
+                CrossbowGuardEnemyAbility crossbowAbility =
+                    enemyObject.GetComponent<
+                        CrossbowGuardEnemyAbility
+                    >();
+
+                if (crossbowAbility == null)
+                {
+                    crossbowAbility =
+                        enemyObject.AddComponent<
+                            CrossbowGuardEnemyAbility
+                        >();
+                }
+
+                runtime = crossbowAbility;
+                break;
+
             default:
                 Debug.LogError(
                     $"No runtime factory is registered for " +
