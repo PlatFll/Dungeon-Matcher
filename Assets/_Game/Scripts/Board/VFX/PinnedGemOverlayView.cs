@@ -36,6 +36,10 @@ public sealed class PinnedGemOverlayView :
         lastDimmedRendererColors =
             new Dictionary<SpriteRenderer, Color>();
 
+    private readonly List<SpriteRenderer>
+        trackedRenderers =
+            new List<SpriteRenderer>();
+
     private GemSpecialOverlayView specialOverlayView;
     private bool specialOverlayWasEnabled;
 
@@ -96,19 +100,18 @@ public sealed class PinnedGemOverlayView :
     {
         if (released ||
             gem == null ||
-            sourceRendererColors.Count == 0)
+            trackedRenderers.Count == 0)
         {
             return;
         }
 
-        List<SpriteRenderer> renderers =
-            new List<SpriteRenderer>(
-                sourceRendererColors.Keys
-            );
-
-        foreach (SpriteRenderer renderer
-                 in renderers)
+        for (int index = 0;
+             index < trackedRenderers.Count;
+             index++)
         {
+            SpriteRenderer renderer =
+                trackedRenderers[index];
+
             if (renderer == null)
             {
                 continue;
@@ -260,6 +263,8 @@ public sealed class PinnedGemOverlayView :
             return;
         }
 
+        trackedRenderers.Clear();
+
         SpriteRenderer[] renderers =
             gem.GetComponentsInChildren<SpriteRenderer>(
                 true
@@ -271,6 +276,8 @@ public sealed class PinnedGemOverlayView :
             {
                 continue;
             }
+
+            trackedRenderers.Add(renderer);
 
             Color sourceColor =
                 renderer.color;
@@ -340,6 +347,7 @@ public sealed class PinnedGemOverlayView :
 
         sourceRendererColors.Clear();
         lastDimmedRendererColors.Clear();
+        trackedRenderers.Clear();
 
         if (specialOverlayView != null)
         {
