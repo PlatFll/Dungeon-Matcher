@@ -3533,6 +3533,8 @@ MonoBehaviour:
   matchPostBurstDelayMultiplier: 2
   fallDurationMultiplier: 1.1
   fallDistanceExponent: 0.82
+  gravityAccelerationExponent: 1.18
+  refillSpawnStagger: 0.035
   landingOvershootInCells: 0.045
   landingSettleDuration: 0.06
   landingSquashX: 1.025
