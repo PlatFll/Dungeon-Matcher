@@ -73,6 +73,13 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private int baseSpecialTurnRequirement = 5;
 
+    [SerializeField]
+    [Tooltip(
+        "When enabled, this enemy always uses the exact base special-turn " +
+        "requirement. Global difficulty scaling cannot shorten its cadence."
+    )]
+    private bool lockSpecialTurnRequirement;
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]
@@ -153,6 +160,9 @@ public sealed class EnemyDefinition : ScriptableObject
 
     public int BaseSpecialTurnRequirement =>
         baseSpecialTurnRequirement;
+
+    public bool LockSpecialTurnRequirement =>
+        lockSpecialTurnRequirement;
 
     public int MinimumWave =>
         minimumWave;
@@ -252,6 +262,8 @@ public sealed class EnemyDefinition : ScriptableObject
         {
             specialAbilityKind =
                 EnemySpecialAbilityKind.None;
+
+            lockSpecialTurnRequirement = false;
         }
     }
 }
