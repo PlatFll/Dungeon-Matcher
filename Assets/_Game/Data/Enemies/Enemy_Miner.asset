@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_Miner
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: miner
+  displayName: Miner
+  category: 1
+  description: The first special enemy. Every five valid player moves he permanently mines one board tile until he is defeated.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  staticVisualSprite: {fileID: 3876497900317922485, guid: 5ba3c33aa2b00f446b0808bdb03e79e0, type: 3}
+  baseMaxHealth: 70
+  baseDamage: 3
+  baseAttackInterval: 10
+  hasSpecialAbility: 1
+  specialAbilityKind: 1
+  baseSpecialTurnRequirement: 5
+  minimumWave: 5
+  spawnWeight: 1
+  healthMultiplier: 0.6666667
+  damageMultiplier: 0.8116883
+  attackSpeedMultiplier: 0.932929
+  staggerDurationMultiplier: 1
