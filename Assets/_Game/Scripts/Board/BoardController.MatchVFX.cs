@@ -25,6 +25,15 @@ public partial class BoardController
         DirectionalBombMaximumVisualLifetime =
             0.375f;
 
+    /*
+     * Coroutine waits and Update-driven particles land on rendered frames,
+     * not exact floating-point timestamps. A tiny safety beat guarantees
+     * gravity starts after the final VFX frame even at low frame rates.
+     */
+    private const float
+        DirectionalBombRefillSafetyPadding =
+            0.015f;
+
     private float
         directionalBombRefillHoldUntilTime;
 
@@ -170,7 +179,8 @@ public partial class BoardController
                 0f,
                 vfxStartDelay
             ) +
-            DirectionalBombMaximumVisualLifetime;
+            DirectionalBombMaximumVisualLifetime +
+            DirectionalBombRefillSafetyPadding;
 
         directionalBombRefillHoldUntilTime =
             Mathf.Max(
