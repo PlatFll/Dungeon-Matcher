@@ -129,14 +129,30 @@ public partial class BoardController
 
     private float GetResponsiveMatchPostBurstDelay()
     {
+        float normalPostBurstDelay =
+            Mathf.Max(
+                0f,
+                matchPostBurstDelay *
+                Mathf.Clamp(
+                    matchPostBurstDelayMultiplier,
+                    0.25f,
+                    4f
+                )
+            );
+
+        /*
+         * A normal row/column bomb can keep drawing its beam and white pixel
+         * fragments after the matched gems have already disappeared. If that
+         * bomb registered a refill hold, extend only this clear's final wait
+         * until the directional VFX window is finished. Ordinary matches keep
+         * using the normal post-burst delay above.
+         */
+        float directionalBombHoldRemaining =
+            GetDirectionalBombRefillHoldRemaining();
+
         return Mathf.Max(
-            0f,
-            matchPostBurstDelay *
-            Mathf.Clamp(
-                matchPostBurstDelayMultiplier,
-                0.25f,
-                4f
-            )
+            normalPostBurstDelay,
+            directionalBombHoldRemaining
         );
     }
 
