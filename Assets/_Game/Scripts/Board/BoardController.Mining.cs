@@ -359,6 +359,24 @@ public partial class BoardController
         );
 
         /*
+         * Reuse the existing shard presentation without calling any gameplay
+         * clear reporter. The burst is delayed by the same flash lead used by
+         * ordinary matches, so it coincides with the mined gem disappearing.
+         */
+        GemMatchVFXRequested?.Invoke(
+            new GemMatchVFXContext(
+                minedGem.Type,
+                1,
+                0,
+                new[]
+                {
+                    minedGem.transform.position
+                },
+                matchFlashDuration
+            )
+        );
+
+        /*
          * Deliberately bypass every BoardClearResolved/combat/reward reporter.
          * The gem shatters visually, but grants no damage, healing, energy,
          * poison, Royal Decree hit, or other per-gem reward. A special gem is
