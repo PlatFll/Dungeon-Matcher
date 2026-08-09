@@ -152,6 +152,17 @@ public sealed class MinerEnemyAbility :
             return;
         }
 
+        RefreshOwnedMineCount();
+
+        /*
+         * A Miner killed before its first activation owns no persistent
+         * board state, so do not briefly lock the board for a no-op restore.
+         */
+        if (ownedMinedTileCount <= 0)
+        {
+            return;
+        }
+
         restoreQueued = true;
 
         boardController.QueueRestoreMinedCells(
