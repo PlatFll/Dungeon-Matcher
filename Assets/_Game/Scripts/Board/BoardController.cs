@@ -467,7 +467,9 @@ public partial class BoardController : MonoBehaviour
         Vector2 screenPosition)
     {
         if (isBusy ||
-            HasPendingBoardMutation)
+            HasPendingBoardMutation ||
+            gem == null ||
+            IsGemPinned(gem))
         {
             return;
         }
@@ -485,6 +487,8 @@ public partial class BoardController : MonoBehaviour
     {
         if (isBusy ||
             HasPendingBoardMutation ||
+            gem == null ||
+            IsGemPinned(gem) ||
             pointerStartGem != gem)
         {
             pointerStartGem = null;
@@ -514,7 +518,9 @@ public partial class BoardController : MonoBehaviour
     public void SelectGem(Gem gem)
     {
         if (isBusy ||
-            HasPendingBoardMutation)
+            HasPendingBoardMutation ||
+            gem == null ||
+            IsGemPinned(gem))
         {
             return;
         }
@@ -561,6 +567,12 @@ public partial class BoardController : MonoBehaviour
         Gem startingGem,
         Vector2 swipeDelta)
     {
+        if (startingGem == null ||
+            IsGemPinned(startingGem))
+        {
+            return;
+        }
+
         int columnDirection = 0;
         int rowDirection = 0;
 
@@ -594,7 +606,8 @@ public partial class BoardController : MonoBehaviour
                 targetRow
             );
 
-        if (targetGem == null)
+        if (targetGem == null ||
+            IsGemPinned(targetGem))
         {
             return;
         }
@@ -613,6 +626,15 @@ public partial class BoardController : MonoBehaviour
         Gem first,
         Gem second)
     {
+        if (first == null ||
+            second == null ||
+            IsGemPinned(first) ||
+            IsGemPinned(second))
+        {
+            pointerStartGem = null;
+            yield break;
+        }
+
         isBusy = true;
         pointerStartGem = null;
 
@@ -1168,42 +1190,61 @@ public partial class BoardController : MonoBehaviour
              column < width;
              column++)
         {
-            List<int> playableRows =
+            List<int> gravityTargetRows =
                 new List<int>();
 
-            List<Gem> existingGems =
+            List<Gem> movableExistingGems =
                 new List<Gem>();
 
             for (int row = 0;
                  row < height;
                  row++)
             {
-                if (IsCellPlayable(
+                if (!IsCellPlayable(
                         column,
                         row))
                 {
-                    playableRows.Add(row);
+                    /*
+                     * Miner holes are not real board cells and can never hold
+                     * a Gem or receive gravity.
+                     */
+                    gems[column, row] = null;
+                    continue;
                 }
 
                 Gem gem =
                     gems[column, row];
 
+                if (gem != null &&
+                    IsGemPinned(gem))
+                {
+                    /*
+                     * The bolt fixes this Gem at its exact coordinate. Its row
+                     * is excluded as a destination, but movable gems above it
+                     * may still travel visually through this height to lower
+                     * target rows.
+                     */
+                    continue;
+                }
+
+                gravityTargetRows.Add(row);
+
                 if (gem != null)
                 {
-                    existingGems.Add(gem);
+                    movableExistingGems.Add(gem);
                 }
 
                 /*
-                 * Rebuild this column from one authoritative playable-row
-                 * list. Mined coordinates remain null and are never targets.
+                 * Rebuild every non-pinned position from the ordered movable
+                 * Gem list. Pinned Gems are deliberately left in the grid.
                  */
                 gems[column, row] = null;
             }
 
             int existingGemCount =
                 Mathf.Min(
-                    existingGems.Count,
-                    playableRows.Count
+                    movableExistingGems.Count,
+                    gravityTargetRows.Count
                 );
 
             for (int index = 0;
@@ -1211,7 +1252,7 @@ public partial class BoardController : MonoBehaviour
                  index++)
             {
                 Gem gem =
-                    existingGems[index];
+                    movableExistingGems[index];
 
                 if (gem == null)
                 {
@@ -1219,7 +1260,7 @@ public partial class BoardController : MonoBehaviour
                 }
 
                 int targetRow =
-                    playableRows[index];
+                    gravityTargetRows[index];
 
                 Vector3 startPosition =
                     gem.transform.localPosition;
@@ -1275,11 +1316,11 @@ public partial class BoardController : MonoBehaviour
             int newGemIndex = 0;
 
             for (int index = existingGemCount;
-                 index < playableRows.Count;
+                 index < gravityTargetRows.Count;
                  index++)
             {
                 int targetRow =
-                    playableRows[index];
+                    gravityTargetRows[index];
 
                 Vector3 targetPosition =
                     GetLocalPosition(
@@ -1641,6 +1682,13 @@ public partial class BoardController : MonoBehaviour
     private IEnumerator ReshuffleBoard()
     {
         ClearSelection();
+
+        /*
+         * An emergency reshuffle is the only non-combat condition that breaks
+         * bolts. Keeping them while relocating every Gem would visibly move a
+         * supposedly pinned piece and can preserve an unwinnable layout.
+         */
+        ReleaseAllPinsForEmergencyReshuffle();
 
         Debug.Log(
             "No valid moves remain. " +
@@ -2079,7 +2127,7 @@ public partial class BoardController : MonoBehaviour
     {
         /*
          * A color crystal can be activated by swapping it
-         * with any adjacent gem, including another crystal.
+         * with any adjacent movable gem, including another crystal.
          */
         for (int row = 0;
              row < height;
@@ -2096,6 +2144,7 @@ public partial class BoardController : MonoBehaviour
                     );
 
                 if (crystal == null ||
+                    IsGemPinned(crystal) ||
                     crystal.SpecialType !=
                         GemSpecialType.ColorCrystal)
                 {
@@ -2144,14 +2193,15 @@ public partial class BoardController : MonoBehaviour
         );
     }
 
-    private static bool IsValidCrystalSwapTarget(
+    private bool IsValidCrystalSwapTarget(
         Gem gem)
     {
         /*
          * Crystals can activate with ordinary gems, bombs,
-         * and other crystals.
+         * and other crystals, but a pinned target cannot move.
          */
-        return gem != null;
+        return gem != null &&
+               !IsGemPinned(gem);
     }
 
     private bool HasAvailableMove(
@@ -2167,6 +2217,9 @@ public partial class BoardController : MonoBehaviour
             {
                 if (!IsCellPlayable(
                         column,
+                        row) ||
+                    IsCellPinned(
+                        column,
                         row))
                 {
                     continue;
@@ -2174,6 +2227,10 @@ public partial class BoardController : MonoBehaviour
 
                 if (column + 1 < width &&
                     IsCellPlayable(
+                        column + 1,
+                        row
+                    ) &&
+                    !IsCellPinned(
                         column + 1,
                         row
                     ) &&
@@ -2190,6 +2247,10 @@ public partial class BoardController : MonoBehaviour
 
                 if (row + 1 < height &&
                     IsCellPlayable(
+                        column,
+                        row + 1
+                    ) &&
+                    !IsCellPinned(
                         column,
                         row + 1
                     ) &&
@@ -2220,6 +2281,11 @@ public partial class BoardController : MonoBehaviour
                 firstColumn,
                 firstRow) ||
             !IsCellPlayable(
+                secondColumn,
+                secondRow) ||
+            IsSwapBlockedByPin(
+                firstColumn,
+                firstRow,
                 secondColumn,
                 secondRow))
         {

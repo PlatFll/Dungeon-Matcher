@@ -318,6 +318,16 @@ public class Gem :
     public void OnPointerDown(
         PointerEventData eventData)
     {
+        if (board == null ||
+            board.IsGemPinned(this))
+        {
+            board?.CancelPointerInteraction(
+                this
+            );
+
+            return;
+        }
+
         board.BeginPointer(
             this,
             eventData.position
@@ -327,6 +337,16 @@ public class Gem :
     public void OnPointerUp(
         PointerEventData eventData)
     {
+        if (board == null ||
+            board.IsGemPinned(this))
+        {
+            board?.CancelPointerInteraction(
+                this
+            );
+
+            return;
+        }
+
         board.EndPointer(
             this,
             eventData.position
