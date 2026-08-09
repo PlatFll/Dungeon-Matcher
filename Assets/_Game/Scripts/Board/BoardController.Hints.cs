@@ -166,7 +166,9 @@ public partial class BoardController
             );
 
         if (firstGem == null ||
-            secondGem == null)
+            secondGem == null ||
+            IsGemPinned(firstGem) ||
+            IsGemPinned(secondGem))
         {
             return;
         }
@@ -469,14 +471,16 @@ public partial class BoardController
     }
 
     public bool IsHintMoveStillValid(
-    Gem sourceGem,
-    Gem targetGem)
+        Gem sourceGem,
+        Gem targetGem)
     {
         if (isBusy ||
             HasPendingBoardMutation ||
             gems == null ||
             sourceGem == null ||
-            targetGem == null)
+            targetGem == null ||
+            IsGemPinned(sourceGem) ||
+            IsGemPinned(targetGem))
         {
             return false;
         }
