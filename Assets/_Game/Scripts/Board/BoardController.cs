@@ -1260,7 +1260,15 @@ public partial class BoardController : MonoBehaviour
                         TargetPosition =
                             targetPosition,
 
-                        Delay = 0f,
+                        /*
+                         * Newly spawned replacement gems enter as a short
+                         * stream instead of one rigid column. Existing gems
+                         * already on the board still start falling together.
+                         */
+                        Delay =
+                            GetRefillSpawnDelay(
+                                newGemIndex
+                            ),
 
                         Duration =
                             CalculateFallDuration(
