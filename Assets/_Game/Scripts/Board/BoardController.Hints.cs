@@ -40,6 +40,7 @@ public partial class BoardController
         targetGem = null;
 
         if (isBusy ||
+            HasPendingBoardMutation ||
             gems == null)
         {
             return false;
@@ -142,6 +143,16 @@ public partial class BoardController
         int secondRow,
         List<HintMoveCandidate> candidates)
     {
+        if (!IsCellPlayable(
+                firstColumn,
+                firstRow) ||
+            !IsCellPlayable(
+                secondColumn,
+                secondRow))
+        {
+            return;
+        }
+
         Gem firstGem =
             GetGem(
                 firstColumn,
@@ -332,6 +343,17 @@ public partial class BoardController
         int row)
     {
         /*
+         * Mined cells are not board cells. They terminate match lines just
+         * like null Gem references terminate the runtime match collector.
+         */
+        if (!IsCellPlayable(
+                column,
+                row))
+        {
+            return false;
+        }
+
+        /*
          * A color crystal is colorless for ordinary matching,
          * regardless of the GemType it had before conversion.
          */
@@ -421,6 +443,10 @@ public partial class BoardController
                column < width &&
                row >= 0 &&
                row < height &&
+               IsCellPlayable(
+                   column,
+                   row
+               ) &&
                !crystalGrid[
                    column,
                    row
@@ -447,9 +473,20 @@ public partial class BoardController
     Gem targetGem)
     {
         if (isBusy ||
+            HasPendingBoardMutation ||
             gems == null ||
             sourceGem == null ||
             targetGem == null)
+        {
+            return false;
+        }
+
+        if (!IsCellPlayable(
+                sourceGem.Column,
+                sourceGem.Row) ||
+            !IsCellPlayable(
+                targetGem.Column,
+                targetGem.Row))
         {
             return false;
         }
