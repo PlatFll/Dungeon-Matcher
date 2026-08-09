@@ -38,6 +38,16 @@ public partial class BoardController
             return;
         }
 
+        /*
+         * Bolt Shot breaks when the pinned gem itself is matched or when a
+         * real match occurs one orthogonal cell away. Do this before clear
+         * rewards/presentation; the normal cascade gravity will then move a
+         * newly released suspended gem if space exists beneath it.
+         */
+        BreakPinsAdjacentToMatches(
+            matches
+        );
+
         List<List<Gem>> matchGroups =
             BuildConnectedMatchGroups(
                 matches
@@ -382,6 +392,7 @@ public partial class BoardController
 
         pending.Enqueue(neighbour);
     }
+
     private static BoardMatchType DetermineMatchType(
         List<Gem> group)
     {
