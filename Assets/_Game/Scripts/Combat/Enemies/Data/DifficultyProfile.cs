@@ -305,30 +305,49 @@ public sealed class DifficultyProfile : ScriptableObject
                 calculatedAttackInterval
             );
 
-        int specialTurnReduction =
-            Mathf.Clamp(
-                Mathf.RoundToInt(
-                    specialTurnReductionByWave.Evaluate(
-                        Mathf.Min(
-                            wave,
-                            configuredCurveWaveLimit
+        int calculatedSpecialTurns;
+
+        if (definition.LockSpecialTurnRequirement)
+        {
+            /*
+             * Some enemy abilities define their gameplay rhythm around a
+             * specific number of player decisions. Preserve that identity
+             * instead of letting late-wave pressure silently rewrite it.
+             */
+            calculatedSpecialTurns =
+                Mathf.Max(
+                    1,
+                    definition
+                        .BaseSpecialTurnRequirement
+                );
+        }
+        else
+        {
+            int specialTurnReduction =
+                Mathf.Clamp(
+                    Mathf.RoundToInt(
+                        specialTurnReductionByWave.Evaluate(
+                            Mathf.Min(
+                                wave,
+                                configuredCurveWaveLimit
+                            )
                         )
-                    )
-                ),
-                0,
-                maximumSpecialTurnReduction
-            );
+                    ),
+                    0,
+                    maximumSpecialTurnReduction
+                );
 
-        int calculatedSpecialTurns =
-            definition.BaseSpecialTurnRequirement +
-            categoryModifier.SpecialTurnAdjustment -
-            specialTurnReduction;
+            calculatedSpecialTurns =
+                definition.BaseSpecialTurnRequirement +
+                categoryModifier.SpecialTurnAdjustment -
+                specialTurnReduction;
 
-        calculatedSpecialTurns =
-            Mathf.Max(
-                minimumSpecialTurnRequirement,
-                calculatedSpecialTurns
-            );
+            calculatedSpecialTurns =
+                Mathf.Max(
+                    minimumSpecialTurnRequirement,
+                    calculatedSpecialTurns
+                );
+        }
 
         int calculatedLevel =
             Mathf.Max(
@@ -379,7 +398,8 @@ public sealed class DifficultyProfile : ScriptableObject
         int extraWaves =
             Mathf.Max(
                 0,
-                wave - configuredCurveWaveLimit
+                wave -
+                configuredCurveWaveLimit
             );
 
         float extraGrowthMultiplier =
@@ -390,12 +410,14 @@ public sealed class DifficultyProfile : ScriptableObject
                 growthPerWaveAfterLimit
             );
 
-        return baseValue *
-               extraGrowthMultiplier;
+        return
+            baseValue *
+            extraGrowthMultiplier;
     }
 
-    private float CalculatePlayerPowerHealthMultiplier(
-        float playerPowerRatio)
+    private float
+        CalculatePlayerPowerHealthMultiplier(
+            float playerPowerRatio)
     {
         if (!usePlayerPowerCorrection)
         {
@@ -415,13 +437,11 @@ public sealed class DifficultyProfile : ScriptableObject
             );
 
         float healthBoost =
-            excessPower *
-            playerPowerResponse;
-
-        healthBoost =
-            Mathf.Min(
-                maximumPlayerPowerHealthBoost,
-                healthBoost
+            Mathf.Clamp(
+                excessPower *
+                playerPowerResponse,
+                0f,
+                maximumPlayerPowerHealthBoost
             );
 
         return 1f + healthBoost;

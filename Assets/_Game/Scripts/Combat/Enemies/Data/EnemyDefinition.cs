@@ -31,6 +31,16 @@ public sealed class EnemyDefinition : ScriptableObject
     [Tooltip("Prefab spawned by the wave controller.")]
     private GameObject enemyPrefab;
 
+    [Header("Visual Override")]
+
+    [SerializeField]
+    [Tooltip(
+        "Optional static character sprite. When assigned, the shared enemy " +
+        "shell keeps its health/timer/VFX UI while its prefab-native character " +
+        "animation is disabled and replaced by this sprite."
+    )]
+    private Sprite staticVisualSprite;
+
     [Header("Base Combat Stats")]
 
     [SerializeField, Min(1)]
@@ -48,12 +58,27 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField]
     private bool hasSpecialAbility;
 
+    [SerializeField]
+    [Tooltip(
+        "Runtime behavior attached for this enemy's special ability. " +
+        "Keep None for enemies without a special."
+    )]
+    private EnemySpecialAbilityKind specialAbilityKind =
+        EnemySpecialAbilityKind.None;
+
     [SerializeField, Min(1)]
     [Tooltip(
         "Number of valid player turns required before " +
         "the enemy uses its special ability."
     )]
     private int baseSpecialTurnRequirement = 5;
+
+    [SerializeField]
+    [Tooltip(
+        "When enabled, this enemy always uses the exact base special-turn " +
+        "requirement. Global difficulty scaling cannot shorten its cadence."
+    )]
+    private bool lockSpecialTurnRequirement;
 
     [Header("Spawn Rules")]
 
@@ -115,6 +140,9 @@ public sealed class EnemyDefinition : ScriptableObject
     public GameObject EnemyPrefab =>
         enemyPrefab;
 
+    public Sprite StaticVisualSprite =>
+        staticVisualSprite;
+
     public int BaseMaxHealth =>
         baseMaxHealth;
 
@@ -127,8 +155,14 @@ public sealed class EnemyDefinition : ScriptableObject
     public bool HasSpecialAbility =>
         hasSpecialAbility;
 
+    public EnemySpecialAbilityKind SpecialAbilityKind =>
+        specialAbilityKind;
+
     public int BaseSpecialTurnRequirement =>
         baseSpecialTurnRequirement;
+
+    public bool LockSpecialTurnRequirement =>
+        lockSpecialTurnRequirement;
 
     public int MinimumWave =>
         minimumWave;
@@ -223,5 +257,13 @@ public sealed class EnemyDefinition : ScriptableObject
                 0f,
                 2f
             );
+
+        if (!hasSpecialAbility)
+        {
+            specialAbilityKind =
+                EnemySpecialAbilityKind.None;
+
+            lockSpecialTurnRequirement = false;
+        }
     }
 }

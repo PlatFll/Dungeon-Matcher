@@ -124,6 +124,7 @@ public sealed class WaveController : MonoBehaviour
     private void OnEnable()
     {
         SubscribeToSlots();
+        SubscribeToBoard();
     }
 
     private void Start()
@@ -133,6 +134,12 @@ public sealed class WaveController : MonoBehaviour
             enabled = false;
             return;
         }
+
+        /*
+         * OnEnable runs before Start. Subscribe again after reference
+         * validation so runtime-assigned references are also covered.
+         */
+        SubscribeToBoard();
 
         if (spawnWaveOnStart)
         {
@@ -144,6 +151,7 @@ public sealed class WaveController : MonoBehaviour
     {
         CancelPendingWaveAdvance();
         UnsubscribeFromSlots();
+        UnsubscribeFromBoard();
     }
 
     public void SpawnCurrentWave()
@@ -451,9 +459,8 @@ public sealed class WaveController : MonoBehaviour
         }
 
         /*
-         * Second attempt: duplicates are allowed.
-         * This is required while the database contains
-         * only one Knight definition.
+         * Second attempt: duplicates are allowed when the available content
+         * for a requested category is smaller than the wave composition.
          */
         List<EnemyDefinition> allCandidates =
             enemyDatabase.GetEligibleEnemies(
@@ -512,6 +519,17 @@ public sealed class WaveController : MonoBehaviour
             false
         );
 
+        enemyObject.name =
+            $"Enemy_{definition.DisplayName}";
+
+        if (definition.StaticVisualSprite != null)
+        {
+            EnemyStaticSpritePresenter.TryApply(
+                enemyObject,
+                definition.StaticVisualSprite
+            );
+        }
+
         EnemyActor enemy =
             enemyObject.GetComponent<EnemyActor>();
 
@@ -526,7 +544,6 @@ public sealed class WaveController : MonoBehaviour
             Destroy(enemyObject);
             return null;
         }
-
 
         enemy.Initialize(
             definition,
@@ -544,22 +561,47 @@ public sealed class WaveController : MonoBehaviour
         }
 
         EnemyAutoAttack autoAttack =
-        enemyObject.GetComponent<EnemyAutoAttack>();
+            enemyObject.GetComponent<
+                EnemyAutoAttack
+            >();
 
-            if (autoAttack != null)
+        if (autoAttack != null)
+        {
+            autoAttack.Initialize(
+                enemy,
+                playerActor
+            );
+        }
+        else
+        {
+            Debug.LogWarning(
+                $"The prefab {definition.EnemyPrefab.name} " +
+                "does not contain an EnemyAutoAttack component.",
+                enemyObject
+            );
+        }
+
+        if (definition.HasSpecialAbility)
+        {
+            if (definition.SpecialAbilityKind ==
+                EnemySpecialAbilityKind.None)
             {
-                autoAttack.Initialize(
-                    enemy,
-                    playerActor
+                Debug.LogWarning(
+                    $"{definition.DisplayName} enables a special ability " +
+                    "but has no special ability kind assigned.",
+                    definition
                 );
             }
             else
             {
-                Debug.LogWarning(
-                    $"The prefab {definition.EnemyPrefab.name} " +
-                    "does not contain an EnemyAutoAttack component.",
-                    enemyObject
-                );
+                EnemySpecialAbilityRuntimeFactory
+                    .CreateAndInitialize(
+                        definition.SpecialAbilityKind,
+                        enemyObject,
+                        enemy,
+                        boardController
+                    );
+            }
         }
 
         EnemyLifecycleVFX lifecycleVFX =
@@ -701,6 +743,38 @@ public sealed class WaveController : MonoBehaviour
             waitingForDeathEffects = true;
 
             TryCompleteWaveAfterDeaths();
+        }
+    }
+
+    private void HandleValidPlayerMoveCompleted(
+        int completedMoveNumber)
+    {
+        if (!IsWaveActive ||
+            activeEnemies.Count == 0)
+        {
+            return;
+        }
+
+        /*
+         * Snapshot the list because a special becoming ready is allowed to
+         * queue board work immediately. Each active special enemy receives
+         * exactly one turn here, regardless of how many cascades the move had.
+         */
+        List<EnemyActor> enemySnapshot =
+            new List<EnemyActor>(
+                activeEnemies
+            );
+
+        foreach (EnemyActor enemy
+                 in enemySnapshot)
+        {
+            if (enemy == null ||
+                enemy.IsDefeated)
+            {
+                continue;
+            }
+
+            enemy.RegisterValidPlayerTurn();
         }
     }
 
@@ -914,6 +988,31 @@ public sealed class WaveController : MonoBehaviour
             slot.EnemyDefeated -=
                 HandleEnemyDefeated;
         }
+    }
+
+    private void SubscribeToBoard()
+    {
+        if (boardController == null)
+        {
+            return;
+        }
+
+        boardController.ValidPlayerMoveCompleted -=
+            HandleValidPlayerMoveCompleted;
+
+        boardController.ValidPlayerMoveCompleted +=
+            HandleValidPlayerMoveCompleted;
+    }
+
+    private void UnsubscribeFromBoard()
+    {
+        if (boardController == null)
+        {
+            return;
+        }
+
+        boardController.ValidPlayerMoveCompleted -=
+            HandleValidPlayerMoveCompleted;
     }
 
     private bool ValidateReferences()

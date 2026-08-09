@@ -415,7 +415,10 @@ public partial class BoardController
                  row < height;
                  row++)
             {
-                if (gems[column, row] != null)
+                if (!IsCellPlayable(
+                        column,
+                        row) ||
+                    gems[column, row] != null)
                 {
                     continue;
                 }

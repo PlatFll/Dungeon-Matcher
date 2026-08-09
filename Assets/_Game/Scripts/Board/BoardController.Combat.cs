@@ -4,7 +4,9 @@ using UnityEngine;
 
 public partial class BoardController
 {
-    public bool IsBusy => isBusy;
+    public bool IsBusy =>
+        isBusy ||
+        HasPendingBoardMutation;
 
     [Header("Combat")]
     [SerializeField]

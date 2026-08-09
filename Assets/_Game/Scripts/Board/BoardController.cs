@@ -466,7 +466,8 @@ public partial class BoardController : MonoBehaviour
         Gem gem,
         Vector2 screenPosition)
     {
-        if (isBusy)
+        if (isBusy ||
+            HasPendingBoardMutation)
         {
             return;
         }
@@ -483,6 +484,7 @@ public partial class BoardController : MonoBehaviour
         Vector2 screenPosition)
     {
         if (isBusy ||
+            HasPendingBoardMutation ||
             pointerStartGem != gem)
         {
             pointerStartGem = null;
@@ -511,7 +513,8 @@ public partial class BoardController : MonoBehaviour
 
     public void SelectGem(Gem gem)
     {
-        if (isBusy)
+        if (isBusy ||
+            HasPendingBoardMutation)
         {
             return;
         }
@@ -633,6 +636,7 @@ public partial class BoardController : MonoBehaviour
                 );
 
             isBusy = false;
+            NotifyValidPlayerMoveCompleted();
             yield break;
         }
 
@@ -671,6 +675,7 @@ public partial class BoardController : MonoBehaviour
                     );
 
                 isBusy = false;
+                NotifyValidPlayerMoveCompleted();
                 yield break;
             }
 
@@ -718,6 +723,7 @@ public partial class BoardController : MonoBehaviour
             );
 
             isBusy = false;
+            NotifyValidPlayerMoveCompleted();
             yield break;
         }
 
@@ -730,6 +736,9 @@ public partial class BoardController : MonoBehaviour
                 first,
                 second
             );
+
+        bool completedValidPlayerMove =
+            false;
 
         if (matches.Count == 0)
         {
@@ -759,9 +768,16 @@ public partial class BoardController : MonoBehaviour
                 first,
                 second
             );
+
+            completedValidPlayerMove = true;
         }
 
         isBusy = false;
+
+        if (completedValidPlayerMove)
+        {
+            NotifyValidPlayerMoveCompleted();
+        }
     }
 
     private IEnumerator ResolveCascades(
@@ -1152,80 +1168,123 @@ public partial class BoardController : MonoBehaviour
              column < width;
              column++)
         {
-            int targetRow = 0;
+            List<int> playableRows =
+                new List<int>();
+
+            List<Gem> existingGems =
+                new List<Gem>();
 
             for (int row = 0;
                  row < height;
                  row++)
             {
+                if (IsCellPlayable(
+                        column,
+                        row))
+                {
+                    playableRows.Add(row);
+                }
+
                 Gem gem =
                     gems[column, row];
+
+                if (gem != null)
+                {
+                    existingGems.Add(gem);
+                }
+
+                /*
+                 * Rebuild this column from one authoritative playable-row
+                 * list. Mined coordinates remain null and are never targets.
+                 */
+                gems[column, row] = null;
+            }
+
+            int existingGemCount =
+                Mathf.Min(
+                    existingGems.Count,
+                    playableRows.Count
+                );
+
+            for (int index = 0;
+                 index < existingGemCount;
+                 index++)
+            {
+                Gem gem =
+                    existingGems[index];
 
                 if (gem == null)
                 {
                     continue;
                 }
 
-                if (row != targetRow)
-                {
-                    Vector3 startPosition =
-                        gem.transform.localPosition;
+                int targetRow =
+                    playableRows[index];
 
-                    Vector3 targetPosition =
-                        GetLocalPosition(
-                            column,
-                            targetRow
-                        );
+                Vector3 startPosition =
+                    gem.transform.localPosition;
 
-                    gems[column, targetRow] =
-                        gem;
-
-                    gems[column, row] =
-                        null;
-
-                    gem.SetGridPosition(
+                Vector3 targetPosition =
+                    GetLocalPosition(
                         column,
                         targetRow
                     );
 
-                    fallingMoves.Add(
-                        new GemMove
-                        {
-                            Gem = gem,
+                gems[column, targetRow] =
+                    gem;
 
-                            StartPosition =
-                                startPosition,
+                bool changedCell =
+                    gem.Column != column ||
+                    gem.Row != targetRow;
 
-                            TargetPosition =
-                                targetPosition,
+                gem.SetGridPosition(
+                    column,
+                    targetRow
+                );
 
-                            Delay = 0f,
-
-                            Duration =
-                                CalculateFallDuration(
-                                    startPosition,
-                                    targetPosition
-                                ),
-
-                            UseGravityMotion =
-                                true
-                        }
-                    );
+                if (!changedCell)
+                {
+                    continue;
                 }
 
-                targetRow++;
+                fallingMoves.Add(
+                    new GemMove
+                    {
+                        Gem = gem,
+
+                        StartPosition =
+                            startPosition,
+
+                        TargetPosition =
+                            targetPosition,
+
+                        Delay = 0f,
+
+                        Duration =
+                            CalculateFallDuration(
+                                startPosition,
+                                targetPosition
+                            ),
+
+                        UseGravityMotion =
+                            true
+                    }
+                );
             }
 
             int newGemIndex = 0;
 
-            for (int row = targetRow;
-                 row < height;
-                 row++)
+            for (int index = existingGemCount;
+                 index < playableRows.Count;
+                 index++)
             {
+                int targetRow =
+                    playableRows[index];
+
                 Vector3 targetPosition =
                     GetLocalPosition(
                         column,
-                        row
+                        targetRow
                     );
 
                 Vector3 topPosition =
@@ -1244,7 +1303,7 @@ public partial class BoardController : MonoBehaviour
 
                 Gem gem = CreateGem(
                     column,
-                    row,
+                    targetRow,
                     GetRandomGemType(),
                     startPosition
                 );
@@ -1638,6 +1697,25 @@ public partial class BoardController : MonoBehaviour
                  column < width;
                  column++)
             {
+                if (!IsCellPlayable(
+                        column,
+                        row))
+                {
+                    continue;
+                }
+
+                if (index >=
+                    shuffledLayout.Count)
+                {
+                    Debug.LogError(
+                        "Reshuffle layout contains fewer gems than " +
+                        "the number of playable board cells.",
+                        this
+                    );
+
+                    yield break;
+                }
+
                 Gem gem =
                     shuffledLayout[index];
 
@@ -1696,6 +1774,18 @@ public partial class BoardController : MonoBehaviour
 
                 index++;
             }
+        }
+
+        if (index !=
+            shuffledLayout.Count)
+        {
+            Debug.LogError(
+                "Reshuffle layout contains more gems than " +
+                "the number of playable board cells.",
+                this
+            );
+
+            yield break;
         }
 
         gems = newGrid;
@@ -1816,8 +1906,21 @@ public partial class BoardController : MonoBehaviour
                  column < width;
                  column++)
             {
-                typeGrid[column, row] =
-                    gems[column, row].Type;
+                if (!IsCellPlayable(
+                        column,
+                        row))
+                {
+                    continue;
+                }
+
+                Gem gem =
+                    gems[column, row];
+
+                if (gem != null)
+                {
+                    typeGrid[column, row] =
+                        gem.Type;
+                }
             }
         }
 
@@ -1843,6 +1946,18 @@ public partial class BoardController : MonoBehaviour
                  column < width;
                  column++)
             {
+                if (!IsCellPlayable(
+                        column,
+                        row))
+                {
+                    continue;
+                }
+
+                if (index >= layout.Count)
+                {
+                    return typeGrid;
+                }
+
                 typeGrid[column, row] =
                     layout[index].Type;
 
@@ -1873,6 +1988,13 @@ public partial class BoardController : MonoBehaviour
                      column < width;
                      column++)
                 {
+                    if (!IsCellPlayable(
+                            column,
+                            row))
+                    {
+                        continue;
+                    }
+
                     List<GemType> allowedTypes =
                         new List<GemType>();
 
@@ -1885,6 +2007,14 @@ public partial class BoardController : MonoBehaviour
 
                         bool horizontalMatch =
                             column >= 2 &&
+                            IsCellPlayable(
+                                column - 1,
+                                row
+                            ) &&
+                            IsCellPlayable(
+                                column - 2,
+                                row
+                            ) &&
                             typeGrid[
                                 column - 1,
                                 row
@@ -1896,6 +2026,14 @@ public partial class BoardController : MonoBehaviour
 
                         bool verticalMatch =
                             row >= 2 &&
+                            IsCellPlayable(
+                                column,
+                                row - 1
+                            ) &&
+                            IsCellPlayable(
+                                column,
+                                row - 2
+                            ) &&
                             typeGrid[
                                 column,
                                 row - 1
@@ -2027,7 +2165,18 @@ public partial class BoardController : MonoBehaviour
                  column < width;
                  column++)
             {
+                if (!IsCellPlayable(
+                        column,
+                        row))
+                {
+                    continue;
+                }
+
                 if (column + 1 < width &&
+                    IsCellPlayable(
+                        column + 1,
+                        row
+                    ) &&
                     SwapCreatesMatch(
                         typeGrid,
                         column,
@@ -2040,6 +2189,10 @@ public partial class BoardController : MonoBehaviour
                 }
 
                 if (row + 1 < height &&
+                    IsCellPlayable(
+                        column,
+                        row + 1
+                    ) &&
                     SwapCreatesMatch(
                         typeGrid,
                         column,
@@ -2063,6 +2216,16 @@ public partial class BoardController : MonoBehaviour
         int secondColumn,
         int secondRow)
     {
+        if (!IsCellPlayable(
+                firstColumn,
+                firstRow) ||
+            !IsCellPlayable(
+                secondColumn,
+                secondRow))
+        {
+            return false;
+        }
+
         GemType firstType =
             typeGrid[
                 firstColumn,
@@ -2144,6 +2307,13 @@ public partial class BoardController : MonoBehaviour
         int column,
         int row)
     {
+        if (!IsCellPlayable(
+                column,
+                row))
+        {
+            return false;
+        }
+
         GemType type =
             typeGrid[column, row];
 
@@ -2215,6 +2385,10 @@ public partial class BoardController : MonoBehaviour
                column < width &&
                row >= 0 &&
                row < height &&
+               IsCellPlayable(
+                   column,
+                   row
+               ) &&
                typeGrid[column, row] == type)
         {
             count++;
@@ -2453,6 +2627,7 @@ public partial class BoardController : MonoBehaviour
     {
         if (!Application.isPlaying ||
             isBusy ||
+            HasPendingBoardMutation ||
             gems == null)
         {
             return;

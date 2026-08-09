@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: Enemy_Knight
+  m_Name: Enemy_Miner
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  enemyId: knight
-  displayName: Knight
-  category: 0
-  description: 
+  enemyId: miner
+  displayName: Miner
+  category: 1
+  description: The first special enemy. Every five valid player moves he permanently mines one board tile until he is defeated.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  staticVisualSprite: {fileID: 0}
-  baseMaxHealth: 100
-  baseDamage: 5
+  staticVisualSprite: {fileID: 3876497900317922485, guid: 5ba3c33aa2b00f446b0808bdb03e79e0, type: 3}
+  baseMaxHealth: 70
+  baseDamage: 3
   baseAttackInterval: 10
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
+  hasSpecialAbility: 1
+  specialAbilityKind: 1
   baseSpecialTurnRequirement: 5
-  minimumWave: 6
+  lockSpecialTurnRequirement: 1
+  minimumWave: 5
   spawnWeight: 1
-  healthMultiplier: 1
-  damageMultiplier: 1
-  attackSpeedMultiplier: 1
+  healthMultiplier: 0.6666667
+  damageMultiplier: 0.8116883
+  attackSpeedMultiplier: 0.932929
   staggerDurationMultiplier: 1

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: Enemy_Knight
+  m_Name: Enemy_TorchVillager
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  enemyId: knight
-  displayName: Knight
+  enemyId: torch_villager
+  displayName: Torch Villager
   category: 0
-  description: 
+  description: A scared villager swinging a torch quickly in panic.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  staticVisualSprite: {fileID: 0}
-  baseMaxHealth: 100
-  baseDamage: 5
-  baseAttackInterval: 10
+  staticVisualSprite: {fileID: -997914999480578509, guid: 5815c27a5857c804d864bfa2053b237a, type: 3}
+  baseMaxHealth: 45
+  baseDamage: 1
+  baseAttackInterval: 7
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
-  minimumWave: 6
-  spawnWeight: 1
+  minimumWave: 2
+  spawnWeight: 1.2
   healthMultiplier: 1
   damageMultiplier: 1
   attackSpeedMultiplier: 1
