@@ -9,70 +9,86 @@ public partial class BoardController
      * tuning has one obvious rollback/debug location. None of these helpers
      * decide matches, targets, rewards, bomb chains, or cascade outcomes.
      *
-     * Current profile: all non-swap board pacing is intentionally 1.5x longer
-     * than the previous readability-first profile. The actual swap animation
-     * remains at its full base duration and is not slowed by this pass.
+     * This profile sits between the earlier fast board and the later 1.5x
+     * slowdown. New refill gems also enter as a short stream instead of a
+     * rigid column, while gravity keeps a gentle sense of acceleration.
      */
     [Header("Board Feel - Responsiveness")]
     [SerializeField, Range(0.5f, 1f)]
     [Tooltip(
         "Multiplier applied to the existing swap duration. " +
-        "One uses the full serialized base timing."
+        "One keeps the full serialized 0.15s swap timing."
     )]
     private float swapDurationMultiplier =
         1.00f;
 
     [SerializeField, Min(0f)]
     [Tooltip(
-        "Upper limit for the dead pause before an invalid " +
-        "swap snaps back. This pause is 1.5x the previous profile; " +
-        "the swap travel itself remains unchanged."
+        "Upper limit for the dead pause before an invalid swap snaps back. " +
+        "This does not change the swap travel speed itself."
     )]
     private float maximumInvalidSwapPause =
-        0.09f;
+        0.07f;
 
     [SerializeField, Range(0.25f, 4f)]
     [Tooltip(
         "Controls the impact-to-gravity beat after cleared gems disappear. " +
-        "The current multiplier makes the previous ~0.07s beat about 0.105s."
+        "With the base 0.04s post-burst delay, 2.0 produces about 0.08s."
     )]
     private float matchPostBurstDelayMultiplier =
-        2.625f;
+        2.00f;
 
     [Header("Board Feel - Gravity")]
     [SerializeField, Range(0.5f, 2f)]
     [Tooltip(
         "Global multiplier applied after distance-based fall timing is " +
-        "calculated. 1.5 makes every fall budget 50% longer than the " +
-        "previous profile while keeping the same gravity curve."
+        "calculated. 1.10 is the current middle-ground fall speed."
     )]
     private float fallDurationMultiplier =
-        1.50f;
+        1.10f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
-        "Controls how strongly long drops are compressed. Keep the current " +
-        "shape so the slowdown is proportional across short and deep falls."
+        "Controls how strongly long drops are compressed. Lower values make " +
+        "deep drops closer in duration to short drops; higher values preserve " +
+        "more distance-based travel time."
     )]
     private float fallDistanceExponent =
-        0.90f;
+        0.82f;
+
+    [SerializeField, Range(1f, 1.5f)]
+    [Tooltip(
+        "Shape of the downward acceleration. 1 is linear motion. The current " +
+        "1.18 keeps a gravity feel without saving too much distance for the " +
+        "last part of the fall."
+    )]
+    private float gravityAccelerationExponent =
+        1.18f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Delay between newly spawned refill gems in the same column. Existing " +
+        "gems above holes still begin falling together, while replacement " +
+        "gems enter as a readable stream."
+    )]
+    private float refillSpawnStagger =
+        0.035f;
 
     [SerializeField, Range(0f, 0.12f)]
     [Tooltip(
-        "How far a falling gem briefly travels below its cell " +
-        "before settling, measured in cell sizes."
+        "How far a falling gem briefly travels below its cell before settling, " +
+        "measured in cell sizes."
     )]
     private float landingOvershootInCells =
         0.045f;
 
     [SerializeField, Min(0.01f)]
     [Tooltip(
-        "Time reserved inside the fall's total duration for the " +
-        "tiny rebound back to the exact cell center. This is also " +
-        "1.5x the previous profile."
+        "Time reserved inside the fall budget for the tiny rebound back to the " +
+        "exact cell center."
     )]
     private float landingSettleDuration =
-        0.075f;
+        0.06f;
 
     [SerializeField, Range(1f, 1.10f)]
     private float landingSquashX =
@@ -84,12 +100,11 @@ public partial class BoardController
 
     [SerializeField, Min(0f)]
     [Tooltip(
-        "Readable beat after every falling gem has fully landed " +
-        "before the next cascade is scanned. This is 1.5x the " +
-        "previous profile."
+        "Readable beat after every falling gem has fully landed before the " +
+        "next cascade is scanned."
     )]
     private float postFallSettlePause =
-        0.09f;
+        0.06f;
 
     private float GetResponsiveSwapDuration()
     {
@@ -135,10 +150,9 @@ public partial class BoardController
             );
 
         /*
-         * Preserve the same distance curve as the previous profile. The
-         * separate fall-duration multiplier now stretches the entire result
-         * by 1.5x, so a wiped column receives the same proportional slowdown
-         * as a short refill instead of another hand-tuned special case.
+         * Keep some distance-based timing so a deep refill still has more
+         * weight than a one-cell drop, but compress it enough that a large
+         * clear does not become a long cutscene.
          */
         float compressedDistance =
             Mathf.Pow(
@@ -183,9 +197,8 @@ public partial class BoardController
 
         /*
          * AnimateGemMoves appends the landing phase after this travel phase.
-         * Reserve that time here so the rebound remains inside the total fall
-         * budget. Both travel and landing are slower, but the rebound still
-         * does not add extra time beyond the requested fall budget.
+         * Reserve its duration here so the little bounce stays inside the
+         * requested fall budget rather than adding hidden extra latency.
          */
         return Mathf.Max(
             0.01f,
@@ -199,6 +212,19 @@ public partial class BoardController
         return Mathf.Max(
             0.01f,
             landingSettleDuration
+        );
+    }
+
+    private float GetRefillSpawnDelay(
+        int spawnedGemIndex)
+    {
+        return Mathf.Max(
+            0,
+            spawnedGemIndex
+        ) *
+        Mathf.Max(
+            0f,
+            refillSpawnStagger
         );
     }
 
@@ -242,10 +268,12 @@ public partial class BoardController
     }
 
     /*
-     * Gravity still accelerates into the landing rather than returning to the
-     * old floaty SmoothStep motion. This pass changes time, not motion shape.
+     * A mild exponent keeps the idea of gravity without the old 1.45 curve,
+     * which held gems back early and made the final part of the fall look much
+     * faster. At 1.18 the gem is already visibly moving early in the fall and
+     * the final 20% no longer carries such a large share of the distance.
      */
-    private static float EaseInGravity(
+    private float EaseInGravity(
         float progress)
     {
         float safeProgress =
@@ -253,7 +281,11 @@ public partial class BoardController
 
         return Mathf.Pow(
             safeProgress,
-            1.45f
+            Mathf.Clamp(
+                gravityAccelerationExponent,
+                1f,
+                1.5f
+            )
         );
     }
 
