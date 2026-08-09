@@ -22,8 +22,18 @@ public sealed class PinnedGemOverlayView :
     private SpriteRenderer overlayRenderer;
     private MaterialPropertyBlock propertyBlock;
 
+    /*
+     * Store the latest undimmed color separately from the color we applied.
+     * If another system changes a gem's visual while it is pinned (for example
+     * a Color Crystal converts it into a bomb), LateUpdate detects that new
+     * source color and reapplies the pin dim instead of letting it pop bright.
+     */
     private readonly Dictionary<SpriteRenderer, Color>
-        originalRendererColors =
+        sourceRendererColors =
+            new Dictionary<SpriteRenderer, Color>();
+
+    private readonly Dictionary<SpriteRenderer, Color>
+        lastDimmedRendererColors =
             new Dictionary<SpriteRenderer, Color>();
 
     private GemSpecialOverlayView specialOverlayView;
@@ -80,6 +90,55 @@ public sealed class PinnedGemOverlayView :
 
         CacheAndDimGemVisuals();
         CreateOverlay(boltSprite);
+    }
+
+    private void LateUpdate()
+    {
+        if (released ||
+            gem == null ||
+            sourceRendererColors.Count == 0)
+        {
+            return;
+        }
+
+        List<SpriteRenderer> renderers =
+            new List<SpriteRenderer>(
+                sourceRendererColors.Keys
+            );
+
+        foreach (SpriteRenderer renderer
+                 in renderers)
+        {
+            if (renderer == null)
+            {
+                continue;
+            }
+
+            Color currentColor =
+                renderer.color;
+
+            if (lastDimmedRendererColors.TryGetValue(
+                    renderer,
+                    out Color lastDimmed) &&
+                ColorsApproximatelyEqual(
+                    currentColor,
+                    lastDimmed))
+            {
+                continue;
+            }
+
+            /*
+             * Something intentionally changed the renderer while pinned.
+             * Treat that as the new real source color, then dim that state.
+             */
+            sourceRendererColors[renderer] =
+                currentColor;
+
+            ApplyDimmedColor(
+                renderer,
+                currentColor
+            );
+        }
     }
 
     public IEnumerator PlayBoltImpact()
@@ -213,17 +272,16 @@ public sealed class PinnedGemOverlayView :
                 continue;
             }
 
-            originalRendererColors[renderer] =
+            Color sourceColor =
                 renderer.color;
 
-            Color dimmed =
-                renderer.color;
+            sourceRendererColors[renderer] =
+                sourceColor;
 
-            dimmed.r *= dimBrightness;
-            dimmed.g *= dimBrightness;
-            dimmed.b *= dimBrightness;
-
-            renderer.color = dimmed;
+            ApplyDimmedColor(
+                renderer,
+                sourceColor
+            );
         }
 
         specialOverlayView =
@@ -237,18 +295,41 @@ public sealed class PinnedGemOverlayView :
                 specialOverlayView.enabled;
 
             /*
-             * Prevent its pulse/shimmer Update from overwriting the dim color
-             * while the bolt is attached. The renderer itself stays visible.
+             * Prevent pulse/shimmer Update from continuously overwriting the
+             * dim. Direct Show/Hide calls can still change its SpriteRenderer;
+             * LateUpdate above detects those changes and dims the new state.
              */
             specialOverlayView.enabled = false;
         }
+    }
+
+    private void ApplyDimmedColor(
+        SpriteRenderer renderer,
+        Color sourceColor)
+    {
+        if (renderer == null)
+        {
+            return;
+        }
+
+        Color dimmed =
+            sourceColor;
+
+        dimmed.r *= dimBrightness;
+        dimmed.g *= dimBrightness;
+        dimmed.b *= dimBrightness;
+
+        renderer.color = dimmed;
+
+        lastDimmedRendererColors[renderer] =
+            dimmed;
     }
 
     private void RestoreGemVisuals()
     {
         foreach (
             KeyValuePair<SpriteRenderer, Color> entry
-            in originalRendererColors)
+            in sourceRendererColors)
         {
             if (entry.Key != null)
             {
@@ -257,13 +338,39 @@ public sealed class PinnedGemOverlayView :
             }
         }
 
-        originalRendererColors.Clear();
+        sourceRendererColors.Clear();
+        lastDimmedRendererColors.Clear();
 
         if (specialOverlayView != null)
         {
             specialOverlayView.enabled =
                 specialOverlayWasEnabled;
         }
+
+        if (gem != null)
+        {
+            /*
+             * Rebuild from the Gem's current state instead of assuming it has
+             * the same special type/color it had when the bolt was fired.
+             */
+            gem.SetSelected(false);
+            gem.SetSpecialType(
+                gem.SpecialType
+            );
+        }
+    }
+
+    private static bool ColorsApproximatelyEqual(
+        Color first,
+        Color second)
+    {
+        const float epsilon = 0.001f;
+
+        return
+            Mathf.Abs(first.r - second.r) <= epsilon &&
+            Mathf.Abs(first.g - second.g) <= epsilon &&
+            Mathf.Abs(first.b - second.b) <= epsilon &&
+            Mathf.Abs(first.a - second.a) <= epsilon;
     }
 
     private void CreateOverlay(
