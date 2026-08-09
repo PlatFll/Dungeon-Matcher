@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d2b410687169d4cbcc3b360b81b031, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c18ed1a934e0f9448a47364ef06d04c, type: 3}
   m_Name: EnemyDatabase_Main
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDatabase
   enemies:
+  - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+  - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+  - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+  - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
   - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
