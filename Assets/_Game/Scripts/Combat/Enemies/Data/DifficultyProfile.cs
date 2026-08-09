@@ -424,6 +424,12 @@ public sealed class DifficultyProfile : ScriptableObject
             return 1f;
         }
 
+        playerPowerRatio =
+            Mathf.Max(
+                0.01f,
+                playerPowerRatio
+            );
+
         float excessPower =
             Mathf.Max(
                 0f,
