@@ -15,9 +15,10 @@ MonoBehaviour:
   enemyId: miner
   displayName: Miner
   category: 1
-  description: The first special enemy. Every five valid player moves he permanently mines one board tile until he is defeated.
+  description: The first special enemy. Every five valid player moves he permanently
+    mines one board tile until he is defeated.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 3876497900317922485, guid: 5ba3c33aa2b00f446b0808bdb03e79e0, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 5ba3c33aa2b00f446b0808bdb03e79e0, type: 3}
   animationControllerOverride: {fileID: 0}
   baseMaxHealth: 70
   baseDamage: 3

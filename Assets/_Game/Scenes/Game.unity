@@ -3548,6 +3548,11 @@ MonoBehaviour:
   doubleCrystalShakeSpeed: 34
   doubleCrystalSettlePause: 0.18
   doubleCrystalRefillStagger: 0.015
+  pinnedGemOverlaySprite: {fileID: 21300000, guid: 2fc8c2f75f0e70543bc5cc6ec905aef3, type: 3}
+  pinnedGemBrightness: 0.55
+  pinMaterializeDuration: 0.1
+  pinShakeDistanceInCells: 0.04
+  pinShakeDuration: 0.12
   triggeredCrystalChargeScale: 1.16
   triggeredCrystalChargePulseSpeed: 4
   triggeredCrystalSettlePause: 0.12
