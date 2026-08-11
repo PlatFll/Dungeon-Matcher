@@ -44,6 +44,9 @@ public sealed class EnemyActor : MonoBehaviour
         SpecialBecameReady;
 
     public event Action<EnemyActor>
+        SpecialAbilityUsed;
+
+    public event Action<EnemyActor>
         Defeated;
 
     public EnemyDefinition Definition =>
@@ -325,6 +328,19 @@ public sealed class EnemyActor : MonoBehaviour
 
             SpecialBecameReady?.Invoke(this);
         }
+    }
+
+    public void NotifySpecialAbilityUsed()
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            !HasSpecialAbility ||
+            !isSpecialReady)
+        {
+            return;
+        }
+
+        SpecialAbilityUsed?.Invoke(this);
     }
 
     public void ResetSpecialCounter()
