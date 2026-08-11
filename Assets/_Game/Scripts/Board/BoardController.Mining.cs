@@ -33,6 +33,8 @@ public partial class BoardController
         public int MaximumOwnedMines;
         public int MaximumOwnedPins;
         public Gem TargetGem;
+        public bool WaitForAnimationImpact;
+        public bool AnimationImpactReached;
     }
 
     /*
@@ -55,6 +57,7 @@ public partial class BoardController
 
     private Coroutine boardMutationCoroutine;
     private BoardMutationKind? activeBoardMutationKind;
+    private BoardMutationRequest activeBoardMutationRequest;
     private int completedValidPlayerMoves;
 
     public bool HasPendingBoardMutation =>
@@ -124,7 +127,8 @@ public partial class BoardController
 
     public bool TryQueueMineRandomCell(
         EnemyActor owner,
-        int maximumOwnedMines)
+        int maximumOwnedMines,
+        bool waitForAnimationImpact = false)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -150,6 +154,13 @@ public partial class BoardController
             return false;
         }
 
+        if (waitForAnimationImpact &&
+            HasPendingAnimationTimedMineRequest(
+                ownerInstanceId))
+        {
+            return false;
+        }
+
         if (!HasMineableCell())
         {
             return false;
@@ -167,12 +178,47 @@ public partial class BoardController
                     ownerInstanceId,
 
                 MaximumOwnedMines =
-                    safeMaximum
+                    safeMaximum,
+
+                WaitForAnimationImpact =
+                    waitForAnimationImpact
             }
         );
 
         TryStartBoardMutationProcessor();
         return true;
+    }
+
+    public bool NotifyMineAnimationImpact(
+        EnemyActor owner)
+    {
+        if (owner == null)
+        {
+            return false;
+        }
+
+        int ownerInstanceId =
+            owner.GetInstanceID();
+
+        if (TryReleaseMineRequest(
+                activeBoardMutationRequest,
+                ownerInstanceId))
+        {
+            return true;
+        }
+
+        foreach (BoardMutationRequest request
+                 in pendingBoardMutations)
+        {
+            if (TryReleaseMineRequest(
+                    request,
+                    ownerInstanceId))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void QueueRestoreMinedCells(
@@ -248,6 +294,58 @@ public partial class BoardController
         return false;
     }
 
+    private bool HasPendingAnimationTimedMineRequest(
+        int ownerInstanceId)
+    {
+        if (IsAnimationTimedMineRequestForOwner(
+                activeBoardMutationRequest,
+                ownerInstanceId))
+        {
+            return true;
+        }
+
+        foreach (BoardMutationRequest request
+                 in pendingBoardMutations)
+        {
+            if (IsAnimationTimedMineRequestForOwner(
+                    request,
+                    ownerInstanceId))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool TryReleaseMineRequest(
+        BoardMutationRequest request,
+        int ownerInstanceId)
+    {
+        if (!IsAnimationTimedMineRequestForOwner(
+                request,
+                ownerInstanceId))
+        {
+            return false;
+        }
+
+        request.AnimationImpactReached = true;
+        return true;
+    }
+
+    private bool IsAnimationTimedMineRequestForOwner(
+        BoardMutationRequest request,
+        int ownerInstanceId)
+    {
+        return
+            request != null &&
+            request.Kind ==
+                BoardMutationKind.MineRandomCell &&
+            request.WaitForAnimationImpact &&
+            request.OwnerInstanceId ==
+                ownerInstanceId;
+    }
+
     private void TryStartBoardMutationProcessor()
     {
         if (boardMutationCoroutine != null ||
@@ -281,6 +379,7 @@ public partial class BoardController
             BoardMutationRequest request =
                 pendingBoardMutations.Dequeue();
 
+            activeBoardMutationRequest = request;
             activeBoardMutationKind =
                 request.Kind;
 
@@ -324,9 +423,11 @@ public partial class BoardController
             }
 
             activeBoardMutationKind = null;
+            activeBoardMutationRequest = null;
         }
 
         activeBoardMutationKind = null;
+        activeBoardMutationRequest = null;
         isBusy = false;
         boardMutationCoroutine = null;
     }
@@ -347,6 +448,23 @@ public partial class BoardController
             request.MaximumOwnedMines)
         {
             yield break;
+        }
+
+        /*
+         * The request is already accepted and the board is now owned by this
+         * mutation. For animation-timed abilities, hold that ownership until
+         * the pickaxe impact frame releases the request.
+         */
+        while (request.WaitForAnimationImpact &&
+               !request.AnimationImpactReached)
+        {
+            if (request.OwnerActor == null ||
+                request.OwnerActor.IsDefeated)
+            {
+                yield break;
+            }
+
+            yield return null;
         }
 
         List<Vector2Int> candidates =

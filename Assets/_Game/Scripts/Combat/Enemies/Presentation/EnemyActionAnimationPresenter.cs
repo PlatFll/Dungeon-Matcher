@@ -18,6 +18,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
     private EnemyActor enemyActor;
     private EnemyAutoAttack enemyAutoAttack;
+    private CharacterAnimationPlayback animationPlayback;
 
     public static EnemyActionAnimationPresenter EnsureInstalled(
         GameObject enemyObject)
@@ -62,6 +63,15 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
             enemyActor.SpecialAbilityUsed +=
                 HandleSpecialAbilityUsed;
         }
+
+        if (animationPlayback != null)
+        {
+            animationPlayback.AutoAttackImpactReached +=
+                HandleAutoAttackImpactReached;
+
+            animationPlayback.AbilityImpactReached +=
+                HandleAbilityImpactReached;
+        }
     }
 
     private void OnDisable()
@@ -76,6 +86,15 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         {
             enemyActor.SpecialAbilityUsed -=
                 HandleSpecialAbilityUsed;
+        }
+
+        if (animationPlayback != null)
+        {
+            animationPlayback.AutoAttackImpactReached -=
+                HandleAutoAttackImpactReached;
+
+            animationPlayback.AbilityImpactReached -=
+                HandleAbilityImpactReached;
         }
     }
 
@@ -93,16 +112,26 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
                 GetComponent<EnemyAutoAttack>();
         }
 
+        Transform visualRoot =
+            transform.Find(VisualRootName);
+
+        if (visualRoot == null)
+        {
+            return;
+        }
+
         if (animator == null)
         {
-            Transform visualRoot =
-                transform.Find(VisualRootName);
+            animator =
+                visualRoot.GetComponent<Animator>();
+        }
 
-            if (visualRoot != null)
-            {
-                animator =
-                    visualRoot.GetComponent<Animator>();
-            }
+        if (animationPlayback == null)
+        {
+            animationPlayback =
+                visualRoot.GetComponent<
+                    CharacterAnimationPlayback
+                >();
         }
     }
 
@@ -116,6 +145,22 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         EnemyActor enemy)
     {
         PlayTrigger(AbilityTrigger);
+    }
+
+    private void HandleAutoAttackImpactReached()
+    {
+        if (enemyAutoAttack != null)
+        {
+            enemyAutoAttack.ResolveAnimationImpact();
+        }
+    }
+
+    private void HandleAbilityImpactReached()
+    {
+        if (enemyActor != null)
+        {
+            enemyActor.NotifySpecialAbilityImpactReached();
+        }
     }
 
     private void PlayTrigger(int triggerHash)

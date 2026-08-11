@@ -73,6 +73,12 @@ public sealed class MinerEnemyAbility :
         enemyActor.SpecialBecameReady +=
             HandleSpecialBecameReady;
 
+        enemyActor.SpecialAbilityImpactReached -=
+            HandleSpecialAbilityImpactReached;
+
+        enemyActor.SpecialAbilityImpactReached +=
+            HandleSpecialAbilityImpactReached;
+
         enemyActor.Defeated -=
             HandleEnemyDefeated;
 
@@ -89,6 +95,9 @@ public sealed class MinerEnemyAbility :
 
         enemyActor.SpecialBecameReady -=
             HandleSpecialBecameReady;
+
+        enemyActor.SpecialAbilityImpactReached -=
+            HandleSpecialAbilityImpactReached;
 
         enemyActor.Defeated -=
             HandleEnemyDefeated;
@@ -117,10 +126,16 @@ public sealed class MinerEnemyAbility :
             return;
         }
 
+        bool timeFromAnimation =
+            readyEnemy.Definition != null &&
+            readyEnemy.Definition
+                .TimeSpecialAbilityFromAnimation;
+
         bool queued =
             boardController.TryQueueMineRandomCell(
                 readyEnemy,
-                MaximumOwnedMines
+                MaximumOwnedMines,
+                timeFromAnimation
             );
 
         if (!queued)
@@ -136,6 +151,25 @@ public sealed class MinerEnemyAbility :
          * of silently consuming another five player moves.
          */
         readyEnemy.ResetSpecialCounter();
+    }
+
+    private void HandleSpecialAbilityImpactReached(
+        EnemyActor impactEnemy)
+    {
+        if (impactEnemy == null ||
+            impactEnemy != enemyActor ||
+            impactEnemy.IsDefeated ||
+            boardController == null ||
+            impactEnemy.Definition == null ||
+            !impactEnemy.Definition
+                .TimeSpecialAbilityFromAnimation)
+        {
+            return;
+        }
+
+        boardController.NotifyMineAnimationImpact(
+            impactEnemy
+        );
     }
 
     private void HandleEnemyDefeated(

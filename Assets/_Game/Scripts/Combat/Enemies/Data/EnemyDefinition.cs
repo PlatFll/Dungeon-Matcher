@@ -57,11 +57,27 @@ public sealed class EnemyDefinition : ScriptableObject
 
     [SerializeField]
     [Tooltip(
-    "Display size of this enemy's VisualRoot. " +
-    "Use a larger size for animation canvases that need extra room."
-)]
+        "Display size of this enemy's VisualRoot. " +
+        "Use a larger size for animation canvases that need extra room."
+    )]
     private Vector2 visualSize =
-    new Vector2(112f, 112f);
+        new Vector2(112f, 112f);
+
+    [Header("Animation Impact Timing")]
+
+    [SerializeField]
+    [Tooltip(
+        "When enabled, auto-attack damage waits for the AutoAttackImpact " +
+        "Animation Event instead of resolving when the attack animation starts."
+    )]
+    private bool timeAutoAttackFromAnimation;
+
+    [SerializeField]
+    [Tooltip(
+        "When enabled, the special ability waits for the AbilityImpact " +
+        "Animation Event before applying its gameplay effect."
+    )]
+    private bool timeSpecialAbilityFromAnimation;
 
     [Header("Base Combat Stats")]
 
@@ -170,10 +186,16 @@ public sealed class EnemyDefinition : ScriptableObject
             animationControllerOverride;
 
     public Vector2 VisualSize =>
-    visualSize.x > 0f &&
-    visualSize.y > 0f
-        ? visualSize
-        : new Vector2(112f, 112f);
+        visualSize.x > 0f &&
+        visualSize.y > 0f
+            ? visualSize
+            : new Vector2(112f, 112f);
+
+    public bool TimeAutoAttackFromAnimation =>
+        timeAutoAttackFromAnimation;
+
+    public bool TimeSpecialAbilityFromAnimation =>
+        timeSpecialAbilityFromAnimation;
 
     /*
      * Compatibility property for the current WaveController spawn path.
@@ -303,6 +325,7 @@ public sealed class EnemyDefinition : ScriptableObject
                 EnemySpecialAbilityKind.None;
 
             lockSpecialTurnRequirement = false;
+            timeSpecialAbilityFromAnimation = false;
         }
     }
 }

@@ -24,6 +24,12 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     [SerializeField]
     private bool isRunning;
 
+    [SerializeField]
+    private bool isWaitingForAnimationImpact;
+
+    [SerializeField]
+    private int pendingAttackDamage;
+
     private EnemyActor enemyActor;
     private EnemyStagger enemyStagger;
     private PlayerActor playerTarget;
@@ -49,6 +55,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool IsRunning =>
         isRunning;
+
+    public bool IsWaitingForAnimationImpact =>
+        isWaitingForAnimationImpact;
 
     public bool IsPausedByStagger =>
         enemyStagger != null &&
@@ -148,6 +157,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             attackCoroutine = null;
         }
 
+        CancelPendingAnimationImpact();
         isRunning = false;
         remainingAttackTime = 0f;
     }
@@ -159,14 +169,56 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             return false;
         }
 
-        AttackStarted?.Invoke(this);
-
         int attackDamage =
             Mathf.Max(
                 0,
                 enemyActor.Damage
             );
 
+        if (ShouldTimeAttackFromAnimation())
+        {
+            /*
+             * Store the payload before starting the animation so the Animation
+             * Event can resolve this exact attack once and only once.
+             */
+            pendingAttackDamage = attackDamage;
+            isWaitingForAnimationImpact = true;
+
+            AttackStarted?.Invoke(this);
+            return true;
+        }
+
+        AttackStarted?.Invoke(this);
+        return ResolveAttackDamage(attackDamage);
+    }
+
+    public bool ResolveAnimationImpact()
+    {
+        if (!isWaitingForAnimationImpact)
+        {
+            return false;
+        }
+
+        int attackDamage =
+            pendingAttackDamage;
+
+        /*
+         * Clear the pending flag before applying damage. This protects against
+         * duplicate Animation Events or re-entrant listeners resolving twice.
+         */
+        CancelPendingAnimationImpact();
+
+        if (!CanContinueAttackLoop())
+        {
+            return false;
+        }
+
+        return ResolveAttackDamage(attackDamage);
+    }
+
+    private bool ResolveAttackDamage(
+        int attackDamage)
+    {
         bool damageApplied =
             playerTarget.TryTakeDamage(
                 attackDamage,
@@ -197,6 +249,12 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             if (CanPerformAttack())
             {
                 PerformAttackImmediately();
+            }
+
+            while (CanContinueAttackLoop() &&
+                   isWaitingForAnimationImpact)
+            {
+                yield return null;
             }
         }
 
@@ -253,9 +311,34 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             }
 
             PerformAttackImmediately();
+
+            /*
+             * Animation-timed attacks begin their next cooldown after their
+             * impact, matching the old immediate-resolution cadence.
+             */
+            while (CanContinueAttackLoop() &&
+                   isWaitingForAnimationImpact)
+            {
+                yield return null;
+            }
         }
 
         FinishCoroutine();
+    }
+
+    private bool ShouldTimeAttackFromAnimation()
+    {
+        return
+            enemyActor != null &&
+            enemyActor.Definition != null &&
+            enemyActor.Definition
+                .TimeAutoAttackFromAnimation;
+    }
+
+    private void CancelPendingAnimationImpact()
+    {
+        isWaitingForAnimationImpact = false;
+        pendingAttackDamage = 0;
     }
 
     private bool CanContinueAttackLoop()
@@ -274,7 +357,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         return
             CanContinueAttackLoop() &&
-            !IsPausedByStagger;
+            !IsPausedByStagger &&
+            !isWaitingForAnimationImpact;
     }
 
     private void Subscribe()
