@@ -44,6 +44,9 @@ public sealed class EnemyActor : MonoBehaviour
         SpecialBecameReady;
 
     public event Action<EnemyActor>
+        SpecialAbilityUsed;
+
+    public event Action<EnemyActor>
         Defeated;
 
     public EnemyDefinition Definition =>
@@ -147,6 +150,15 @@ public sealed class EnemyActor : MonoBehaviour
         definition = enemyDefinition;
         RuntimeStats = runtimeStats;
         assignedGemType = gemType;
+
+        /*
+         * Action animation playback is generic for every enemy. Install the
+         * presenter here so the shared enemy shell does not need another
+         * manually-maintained component just to support attack/ability clips.
+         */
+        EnemyActionAnimationPresenter.EnsureInstalled(
+            gameObject
+        );
 
         /*
          * Finalize the character presentation after the definition is known.
@@ -325,6 +337,19 @@ public sealed class EnemyActor : MonoBehaviour
 
             SpecialBecameReady?.Invoke(this);
         }
+    }
+
+    public void NotifySpecialAbilityUsed()
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            !HasSpecialAbility ||
+            !isSpecialReady)
+        {
+            return;
+        }
+
+        SpecialAbilityUsed?.Invoke(this);
     }
 
     public void ResetSpecialCounter()
