@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -12,6 +13,9 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
 
     private float speedBeforePause = 1f;
     private bool isPaused;
+
+    public event Action AutoAttackImpactReached;
+    public event Action AbilityImpactReached;
 
     public bool IsPaused => isPaused;
 
@@ -71,6 +75,21 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
         animator.speed = defaultPlaybackSpeed;
         speedBeforePause = defaultPlaybackSpeed;
         isPaused = false;
+    }
+
+    /*
+     * Unity Animation Events call these methods on the VisualRoot object.
+     * They intentionally contain no combat logic; they only relay the exact
+     * impact frame to the enemy runtime components on the parent object.
+     */
+    public void AutoAttackImpact()
+    {
+        AutoAttackImpactReached?.Invoke();
+    }
+
+    public void AbilityImpact()
+    {
+        AbilityImpactReached?.Invoke();
     }
 
     private void OnDisable()
