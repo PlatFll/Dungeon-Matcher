@@ -19,6 +19,29 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private EnemyActor enemyActor;
     private EnemyAutoAttack enemyAutoAttack;
 
+    public static EnemyActionAnimationPresenter EnsureInstalled(
+        GameObject enemyObject)
+    {
+        if (enemyObject == null)
+        {
+            return null;
+        }
+
+        EnemyActionAnimationPresenter existingPresenter =
+            enemyObject.GetComponent<
+                EnemyActionAnimationPresenter
+            >();
+
+        if (existingPresenter != null)
+        {
+            return existingPresenter;
+        }
+
+        return enemyObject.AddComponent<
+            EnemyActionAnimationPresenter
+        >();
+    }
+
     private void Awake()
     {
         ResolveReferences();
