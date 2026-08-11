@@ -55,6 +55,14 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private RuntimeAnimatorController animationControllerOverride;
 
+    [SerializeField]
+    [Tooltip(
+    "Display size of this enemy's VisualRoot. " +
+    "Use a larger size for animation canvases that need extra room."
+)]
+    private Vector2 visualSize =
+    new Vector2(112f, 112f);
+
     [Header("Base Combat Stats")]
 
     [SerializeField, Min(1)]
@@ -160,6 +168,12 @@ public sealed class EnemyDefinition : ScriptableObject
     public RuntimeAnimatorController
         AnimationControllerOverride =>
             animationControllerOverride;
+
+    public Vector2 VisualSize =>
+    visualSize.x > 0f &&
+    visualSize.y > 0f
+        ? visualSize
+        : new Vector2(112f, 112f);
 
     /*
      * Compatibility property for the current WaveController spawn path.

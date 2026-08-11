@@ -25,6 +25,9 @@ public static class EnemyVisualPresenter
             return false;
         }
 
+        enemyImage.rectTransform.sizeDelta =
+            definition.VisualSize;
+
         Sprite fallbackSprite =
             definition.FallbackVisualSprite;
 
