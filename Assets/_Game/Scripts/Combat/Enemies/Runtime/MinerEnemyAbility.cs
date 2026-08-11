@@ -17,6 +17,7 @@ public sealed class MinerEnemyAbility :
 
     private int ownerInstanceId;
     private bool restoreQueued;
+    private bool isAttemptingReadyAbility;
 
     public void InitializeSpecialAbility(
         EnemyActor initializedEnemy,
@@ -28,6 +29,7 @@ public sealed class MinerEnemyAbility :
         boardController = initializedBoard;
 
         restoreQueued = false;
+        isAttemptingReadyAbility = false;
 
         ownerInstanceId =
             enemyActor != null
@@ -147,7 +149,8 @@ public sealed class MinerEnemyAbility :
 
     private void TryUseReadyAbility()
     {
-        if (enemyActor == null ||
+        if (isAttemptingReadyAbility ||
+            enemyActor == null ||
             boardController == null ||
             enemyActor.IsDefeated ||
             !enemyActor.IsSpecialReady)
@@ -155,74 +158,88 @@ public sealed class MinerEnemyAbility :
             return;
         }
 
-        RefreshOwnedMineCount();
+        isAttemptingReadyAbility = true;
 
-        /*
-         * The cap belongs to this Miner, not to the board globally.
-         * Other Miners may still own up to three different holes each.
-         */
-        if (ownedMinedTileCount >=
-            MaximumOwnedMines)
+        try
         {
-            return;
-        }
+            RefreshOwnedMineCount();
 
-        bool timeFromAnimation =
-            enemyActor.Definition != null &&
-            enemyActor.Definition
-                .TimeSpecialAbilityFromAnimation;
-
-        /*
-         * Never start an Ability animation over a gameplay-critical auto attack.
-         * If that attack is waiting for AutoAttackImpact, the ready special is
-         * retained and AnimationActionReleased retries this method afterward.
-         */
-        if (enemyActor
-                .IsAutoAttackAnimationActionActive)
-        {
-            return;
-        }
-
-        bool ownsSpecialAnimationAction = false;
-
-        if (timeFromAnimation)
-        {
-            ownsSpecialAnimationAction =
-                enemyActor
-                    .TryBeginSpecialAbilityAnimationAction();
-
-            if (!ownsSpecialAnimationAction)
+            /*
+             * The cap belongs to this Miner, not to the board globally.
+             * Other Miners may still own up to three different holes each.
+             */
+            if (ownedMinedTileCount >=
+                MaximumOwnedMines)
             {
                 return;
             }
-        }
 
-        bool queued =
-            boardController.TryQueueMineRandomCell(
-                enemyActor,
-                MaximumOwnedMines,
-                timeFromAnimation
-            );
+            bool timeFromAnimation =
+                enemyActor.Definition != null &&
+                enemyActor.Definition
+                    .TimeSpecialAbilityFromAnimation;
 
-        if (!queued)
-        {
-            if (ownsSpecialAnimationAction)
+            /*
+             * Never start an Ability animation over a gameplay-critical auto
+             * attack. If that attack is waiting for AutoAttackImpact, the ready
+             * special is retained and AnimationActionReleased retries afterward.
+             */
+            if (enemyActor
+                    .IsAutoAttackAnimationActionActive)
             {
-                enemyActor
-                    .EndSpecialAbilityAnimationAction();
+                return;
             }
 
-            return;
+            bool ownsSpecialAnimationAction = false;
+
+            if (timeFromAnimation)
+            {
+                ownsSpecialAnimationAction =
+                    enemyActor
+                        .TryBeginSpecialAbilityAnimationAction();
+
+                if (!ownsSpecialAnimationAction)
+                {
+                    return;
+                }
+            }
+
+            bool queued =
+                boardController.TryQueueMineRandomCell(
+                    enemyActor,
+                    MaximumOwnedMines,
+                    timeFromAnimation
+                );
+
+            if (!queued)
+            {
+                if (ownsSpecialAnimationAction)
+                {
+                    /*
+                     * Releasing action ownership raises AnimationActionReleased.
+                     * The re-entrancy guard above prevents a failed queue attempt
+                     * from recursively retrying itself on the same call stack.
+                     */
+                    enemyActor
+                        .EndSpecialAbilityAnimationAction();
+                }
+
+                return;
+            }
+
+            enemyActor.NotifySpecialAbilityUsed();
+
+            /*
+             * Reset only after the board accepts the request. If no valid tile
+             * can be mined, the ready state remains visible/debuggable instead
+             * of silently consuming another five player moves.
+             */
+            enemyActor.ResetSpecialCounter();
         }
-
-        enemyActor.NotifySpecialAbilityUsed();
-
-        /*
-         * Reset only after the board accepts the request. If no valid tile
-         * can be mined, the ready state remains visible/debuggable instead
-         * of silently consuming another five player moves.
-         */
-        enemyActor.ResetSpecialCounter();
+        finally
+        {
+            isAttemptingReadyAbility = false;
+        }
     }
 
     private void HandleSpecialAbilityImpactReached(
