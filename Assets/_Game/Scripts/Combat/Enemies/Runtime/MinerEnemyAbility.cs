@@ -128,6 +128,8 @@ public sealed class MinerEnemyAbility :
             return;
         }
 
+        readyEnemy.NotifySpecialAbilityUsed();
+
         /*
          * Reset only after the board accepts the request. If no valid tile
          * can be mined, the ready state remains visible/debuggable instead
