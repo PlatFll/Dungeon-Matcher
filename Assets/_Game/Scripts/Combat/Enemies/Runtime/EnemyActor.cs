@@ -47,6 +47,9 @@ public sealed class EnemyActor : MonoBehaviour
         SpecialAbilityUsed;
 
     public event Action<EnemyActor>
+        SpecialAbilityImpactReached;
+
+    public event Action<EnemyActor>
         Defeated;
 
     public EnemyDefinition Definition =>
@@ -350,6 +353,18 @@ public sealed class EnemyActor : MonoBehaviour
         }
 
         SpecialAbilityUsed?.Invoke(this);
+    }
+
+    public void NotifySpecialAbilityImpactReached()
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            !HasSpecialAbility)
+        {
+            return;
+        }
+
+        SpecialAbilityImpactReached?.Invoke(this);
     }
 
     public void ResetSpecialCounter()
