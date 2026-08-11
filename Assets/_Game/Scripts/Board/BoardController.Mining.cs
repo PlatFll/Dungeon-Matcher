@@ -8,6 +8,9 @@ public partial class BoardController
     private const float MiningTileFlashDuration =
         0.10f;
 
+    private const float AnimationImpactFailsafeSeconds =
+        3f;
+
     public event Action<int>
         ValidPlayerMoveCompleted;
 
@@ -362,74 +365,93 @@ public partial class BoardController
 
     private IEnumerator ProcessBoardMutations()
     {
-        /*
-         * If an enemy queued board work during a match/cascade, wait for that
-         * player action to release the board. HasPendingBoardMutation keeps new
-         * input and wave transitions out of the one-frame handoff.
-         */
-        while (isBusy)
+        bool acquiredBoardBusy = false;
+
+        try
         {
-            yield return null;
-        }
-
-        isBusy = true;
-
-        while (pendingBoardMutations.Count > 0)
-        {
-            BoardMutationRequest request =
-                pendingBoardMutations.Dequeue();
-
-            activeBoardMutationRequest = request;
-            activeBoardMutationKind =
-                request.Kind;
-
-            switch (request.Kind)
+            /*
+             * If an enemy queued board work during a match/cascade, wait for
+             * that player action to release the board. HasPendingBoardMutation
+             * keeps new input and wave transitions out of the handoff.
+             */
+            while (isBusy)
             {
-                case BoardMutationKind.MineRandomCell:
-                    yield return
-                        ExecuteMineRequest(
-                            request
-                        );
-                    break;
-
-                case BoardMutationKind.RestoreOwnerCells:
-                    pendingRestoreOwners.Remove(
-                        request.OwnerInstanceId
-                    );
-
-                    yield return
-                        ExecuteRestoreRequest(
-                            request.OwnerInstanceId
-                        );
-                    break;
-
-                case BoardMutationKind.PinRandomGem:
-                    yield return
-                        ExecutePinRequest(
-                            request
-                        );
-                    break;
-
-                case BoardMutationKind.ReleaseOwnerPins:
-                    pendingPinReleaseOwners.Remove(
-                        request.OwnerInstanceId
-                    );
-
-                    yield return
-                        ExecuteReleasePinsRequest(
-                            request.OwnerInstanceId
-                        );
-                    break;
+                yield return null;
             }
 
+            isBusy = true;
+            acquiredBoardBusy = true;
+
+            while (pendingBoardMutations.Count > 0)
+            {
+                BoardMutationRequest request =
+                    pendingBoardMutations.Dequeue();
+
+                activeBoardMutationRequest = request;
+                activeBoardMutationKind =
+                    request.Kind;
+
+                switch (request.Kind)
+                {
+                    case BoardMutationKind.MineRandomCell:
+                        yield return
+                            ExecuteMineRequest(
+                                request
+                            );
+                        break;
+
+                    case BoardMutationKind.RestoreOwnerCells:
+                        pendingRestoreOwners.Remove(
+                            request.OwnerInstanceId
+                        );
+
+                        yield return
+                            ExecuteRestoreRequest(
+                                request.OwnerInstanceId
+                            );
+                        break;
+
+                    case BoardMutationKind.PinRandomGem:
+                        yield return
+                            ExecutePinRequest(
+                                request
+                            );
+                        break;
+
+                    case BoardMutationKind.ReleaseOwnerPins:
+                        pendingPinReleaseOwners.Remove(
+                            request.OwnerInstanceId
+                        );
+
+                        yield return
+                            ExecuteReleasePinsRequest(
+                                request.OwnerInstanceId
+                            );
+                        break;
+                }
+
+                activeBoardMutationKind = null;
+                activeBoardMutationRequest = null;
+            }
+        }
+        finally
+        {
+            /*
+             * Never leave global board input owned by this processor if the
+             * coroutine is stopped or exits unexpectedly. Only clear isBusy if
+             * this coroutine actually acquired it; while waiting, another board
+             * operation still owns that flag.
+             */
             activeBoardMutationKind = null;
             activeBoardMutationRequest = null;
-        }
 
-        activeBoardMutationKind = null;
-        activeBoardMutationRequest = null;
-        isBusy = false;
-        boardMutationCoroutine = null;
+            if (acquiredBoardBusy)
+            {
+                isBusy = false;
+            }
+
+            boardMutationCoroutine = null;
+        }
     }
 
     private IEnumerator ExecuteMineRequest(
@@ -452,9 +474,13 @@ public partial class BoardController
 
         /*
          * The request is already accepted and the board is now owned by this
-         * mutation. For animation-timed abilities, hold that ownership until
-         * the pickaxe impact frame releases the request.
+         * mutation. For animation-timed abilities, wait for the impact frame,
+         * but never allow a missing/interrupted Animation Event to own global
+         * board input forever.
          */
+        float animationWaitStartedAt =
+            Time.realtimeSinceStartup;
+
         while (request.WaitForAnimationImpact &&
                !request.AnimationImpactReached)
         {
@@ -462,6 +488,24 @@ public partial class BoardController
                 request.OwnerActor.IsDefeated)
             {
                 yield break;
+            }
+
+            if (Time.realtimeSinceStartup -
+                animationWaitStartedAt >=
+                AnimationImpactFailsafeSeconds)
+            {
+                Debug.LogWarning(
+                    $"{request.OwnerActor.name} waited " +
+                    $"{AnimationImpactFailsafeSeconds:0.##}s for its " +
+                    "AbilityImpact Animation Event. Forcing the gameplay " +
+                    "impact so the board cannot remain soft-locked.",
+                    request.OwnerActor
+                );
+
+                request.AnimationImpactReached = true;
+                request.OwnerActor
+                    .EndSpecialAbilityAnimationAction();
+                break;
             }
 
             yield return null;

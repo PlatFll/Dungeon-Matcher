@@ -26,6 +26,12 @@ public sealed class EnemyActor : MonoBehaviour
     [SerializeField]
     private bool isDefeated;
 
+    [SerializeField]
+    private bool isAutoAttackAnimationActionActive;
+
+    [SerializeField]
+    private bool isSpecialAbilityAnimationActionActive;
+
     public event Action<EnemyActor> Initialized;
 
     public event Action<EnemyActor, int, int>
@@ -48,6 +54,9 @@ public sealed class EnemyActor : MonoBehaviour
 
     public event Action<EnemyActor>
         SpecialAbilityImpactReached;
+
+    public event Action<EnemyActor>
+        AnimationActionReleased;
 
     public event Action<EnemyActor>
         Defeated;
@@ -116,6 +125,16 @@ public sealed class EnemyActor : MonoBehaviour
     public bool CanReceiveDamage =>
         isInitialized &&
         !isDefeated;
+
+    public bool IsAutoAttackAnimationActionActive =>
+        isAutoAttackAnimationActionActive;
+
+    public bool IsSpecialAbilityAnimationActionActive =>
+        isSpecialAbilityAnimationActionActive;
+
+    public bool HasAnimationActionInProgress =>
+        isAutoAttackAnimationActionActive ||
+        isSpecialAbilityAnimationActionActive;
 
     public float HealthNormalized
     {
@@ -187,6 +206,8 @@ public sealed class EnemyActor : MonoBehaviour
         isSpecialReady = false;
         isDefeated = false;
         isInitialized = true;
+        isAutoAttackAnimationActionActive = false;
+        isSpecialAbilityAnimationActionActive = false;
 
         gameObject.name =
             $"{definition.DisplayName}_Level_{RuntimeStats.Level}";
@@ -342,6 +363,54 @@ public sealed class EnemyActor : MonoBehaviour
         }
     }
 
+    public bool TryBeginAutoAttackAnimationAction()
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            HasAnimationActionInProgress)
+        {
+            return false;
+        }
+
+        isAutoAttackAnimationActionActive = true;
+        return true;
+    }
+
+    public bool TryBeginSpecialAbilityAnimationAction()
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            HasAnimationActionInProgress)
+        {
+            return false;
+        }
+
+        isSpecialAbilityAnimationActionActive = true;
+        return true;
+    }
+
+    public void EndAutoAttackAnimationAction()
+    {
+        if (!isAutoAttackAnimationActionActive)
+        {
+            return;
+        }
+
+        isAutoAttackAnimationActionActive = false;
+        AnimationActionReleased?.Invoke(this);
+    }
+
+    public void EndSpecialAbilityAnimationAction()
+    {
+        if (!isSpecialAbilityAnimationActionActive)
+        {
+            return;
+        }
+
+        isSpecialAbilityAnimationActionActive = false;
+        AnimationActionReleased?.Invoke(this);
+    }
+
     public void NotifySpecialAbilityUsed()
     {
         if (!isInitialized ||
@@ -394,6 +463,17 @@ public sealed class EnemyActor : MonoBehaviour
 
         isDefeated = true;
         isSpecialReady = false;
+
+        bool hadAnimationAction =
+            HasAnimationActionInProgress;
+
+        isAutoAttackAnimationActionActive = false;
+        isSpecialAbilityAnimationActionActive = false;
+
+        if (hadAnimationAction)
+        {
+            AnimationActionReleased?.Invoke(this);
+        }
 
         Defeated?.Invoke(this);
     }
