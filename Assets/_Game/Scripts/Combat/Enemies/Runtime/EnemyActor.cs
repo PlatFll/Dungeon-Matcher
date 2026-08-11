@@ -152,6 +152,15 @@ public sealed class EnemyActor : MonoBehaviour
         assignedGemType = gemType;
 
         /*
+         * Action animation playback is generic for every enemy. Install the
+         * presenter here so the shared enemy shell does not need another
+         * manually-maintained component just to support attack/ability clips.
+         */
+        EnemyActionAnimationPresenter.EnsureInstalled(
+            gameObject
+        );
+
+        /*
          * Finalize the character presentation after the definition is known.
          * This lets the shared enemy shell use a different Animator Controller
          * or Animator Override Controller for every enemy without duplicating
