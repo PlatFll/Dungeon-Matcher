@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefe044da59309e4fa3761c79d4209d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemSpecialOverlayView
-  rowBombSprite: {fileID: 21300000, guid: add4394cdd3e69e4aaacbccb5016fbdc, type: 3}
-  columnBombSprite: {fileID: 21300000, guid: ed27ff90dba85c74991bc560227e24b0, type: 3}
+  rowBombSprite: {fileID: 21300000, guid: 0970d8da5e2b72a4ab7c848622c6762b, type: 3}
+  columnBombSprite: {fileID: 21300000, guid: 82fd1fdada871a541aa0663d20ba3f09, type: 3}
   colorCrystalSprite: {fileID: 21300000, guid: 41f42566bab4dda40842e0607a0f5404, type: 3}
   rubyTint: {r: 1, g: 0.2, b: 0.2, a: 1}
   amberTint: {r: 1, g: 0.55, b: 0.12, a: 1}
@@ -276,3 +276,8 @@ MonoBehaviour:
   crystalWhiteFadeDuration: 0.16
   crystalWhiteHoldDuration: 0.06
   crystalColorRevealDuration: 0.18
+  crystalActivationPullInDuration: 0.035
+  crystalActivationPullInScale: 0.85
+  crystalActivationPopDuration: 0.055
+  crystalActivationPopScale: 1.2
+  crystalActivationSettleDuration: 0.03
