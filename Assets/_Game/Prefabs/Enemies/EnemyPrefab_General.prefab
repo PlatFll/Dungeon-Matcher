@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 2090934418872691995}
   - component: {fileID: 8783168744018771146}
   m_Layer: 5
-  m_Name: EnemyPrefab_Knight
+  m_Name: EnemyPrefab_General
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2249090854666133268, guid: 1446307ad59e91c46b1767c670e9b754, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
