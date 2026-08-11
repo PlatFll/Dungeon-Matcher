@@ -79,6 +79,12 @@ public sealed class MinerEnemyAbility :
         enemyActor.SpecialAbilityImpactReached +=
             HandleSpecialAbilityImpactReached;
 
+        enemyActor.AnimationActionReleased -=
+            HandleAnimationActionReleased;
+
+        enemyActor.AnimationActionReleased +=
+            HandleAnimationActionReleased;
+
         enemyActor.Defeated -=
             HandleEnemyDefeated;
 
@@ -99,6 +105,9 @@ public sealed class MinerEnemyAbility :
         enemyActor.SpecialAbilityImpactReached -=
             HandleSpecialAbilityImpactReached;
 
+        enemyActor.AnimationActionReleased -=
+            HandleAnimationActionReleased;
+
         enemyActor.Defeated -=
             HandleEnemyDefeated;
     }
@@ -110,6 +119,38 @@ public sealed class MinerEnemyAbility :
             readyEnemy != enemyActor ||
             readyEnemy.IsDefeated ||
             boardController == null)
+        {
+            return;
+        }
+
+        TryUseReadyAbility();
+    }
+
+    private void HandleAnimationActionReleased(
+        EnemyActor releasedEnemy)
+    {
+        if (releasedEnemy == null ||
+            releasedEnemy != enemyActor ||
+            releasedEnemy.IsDefeated ||
+            !releasedEnemy.IsSpecialReady)
+        {
+            return;
+        }
+
+        /*
+         * If the Miner became ready while an animation-timed auto attack still
+         * owned the enemy, preserve the ready charge and retry immediately after
+         * that impact releases the shared action window.
+         */
+        TryUseReadyAbility();
+    }
+
+    private void TryUseReadyAbility()
+    {
+        if (enemyActor == null ||
+            boardController == null ||
+            enemyActor.IsDefeated ||
+            !enemyActor.IsSpecialReady)
         {
             return;
         }
@@ -127,30 +168,61 @@ public sealed class MinerEnemyAbility :
         }
 
         bool timeFromAnimation =
-            readyEnemy.Definition != null &&
-            readyEnemy.Definition
+            enemyActor.Definition != null &&
+            enemyActor.Definition
                 .TimeSpecialAbilityFromAnimation;
+
+        /*
+         * Never start an Ability animation over a gameplay-critical auto attack.
+         * If that attack is waiting for AutoAttackImpact, the ready special is
+         * retained and AnimationActionReleased retries this method afterward.
+         */
+        if (enemyActor
+                .IsAutoAttackAnimationActionActive)
+        {
+            return;
+        }
+
+        bool ownsSpecialAnimationAction = false;
+
+        if (timeFromAnimation)
+        {
+            ownsSpecialAnimationAction =
+                enemyActor
+                    .TryBeginSpecialAbilityAnimationAction();
+
+            if (!ownsSpecialAnimationAction)
+            {
+                return;
+            }
+        }
 
         bool queued =
             boardController.TryQueueMineRandomCell(
-                readyEnemy,
+                enemyActor,
                 MaximumOwnedMines,
                 timeFromAnimation
             );
 
         if (!queued)
         {
+            if (ownsSpecialAnimationAction)
+            {
+                enemyActor
+                    .EndSpecialAbilityAnimationAction();
+            }
+
             return;
         }
 
-        readyEnemy.NotifySpecialAbilityUsed();
+        enemyActor.NotifySpecialAbilityUsed();
 
         /*
          * Reset only after the board accepts the request. If no valid tile
          * can be mined, the ready state remains visible/debuggable instead
          * of silently consuming another five player moves.
          */
-        readyEnemy.ResetSpecialCounter();
+        enemyActor.ResetSpecialCounter();
     }
 
     private void HandleSpecialAbilityImpactReached(
@@ -170,6 +242,12 @@ public sealed class MinerEnemyAbility :
         boardController.NotifyMineAnimationImpact(
             impactEnemy
         );
+
+        /*
+         * The gameplay-critical frame has happened. Release action ownership so
+         * a ready auto attack may proceed even if the visual clip has a tail.
+         */
+        impactEnemy.EndSpecialAbilityAnimationAction();
     }
 
     private void HandleEnemyDefeated(
@@ -226,6 +304,12 @@ public sealed class MinerEnemyAbility :
          * permanent mined cells behind.
          */
         QueueOwnedTileRestoration();
+
+        if (enemyActor != null)
+        {
+            enemyActor.EndSpecialAbilityAnimationAction();
+        }
+
         Unsubscribe();
     }
 }
