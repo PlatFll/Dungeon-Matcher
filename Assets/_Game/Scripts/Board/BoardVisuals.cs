@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [DefaultExecutionOrder(-100)]
 [RequireComponent(typeof(BoardController))]
@@ -7,7 +8,28 @@ public sealed class BoardVisuals : MonoBehaviour
     [Header("Board Frame")]
 
     [SerializeField]
-    private Sprite boardFrameSprite;
+    [Tooltip(
+        "Top-left L-shaped corner sprite. Designed for the new 80x80 board " +
+        "corner art. It is mirrored automatically for the other three corners."
+    )]
+    private Sprite cornerPiece;
+
+    [SerializeField]
+    [Tooltip(
+        "Straight top-edge sprite. Designed for the new 64x16 board frame " +
+        "piece. It is repeated without stretching and rotated/flipped for the " +
+        "other three sides."
+    )]
+    private Sprite normalPiece;
+
+    /*
+     * Preserve the old full-frame assignment when older scenes deserialize.
+     * Once Corner Piece + Normal Piece are assigned, the modular frame is used
+     * and this legacy sprite is ignored.
+     */
+    [FormerlySerializedAs("boardFrameSprite")]
+    [SerializeField, HideInInspector]
+    private Sprite legacyBoardFrameSprite;
 
     [SerializeField]
     private Color boardFrameColor =
@@ -34,9 +56,9 @@ public sealed class BoardVisuals : MonoBehaviour
 
     [SerializeField]
     [Tooltip(
-    "Visual tile variations randomly assigned across " +
-    "the board."
-)]
+        "Visual tile variations randomly assigned across " +
+        "the board."
+    )]
     private Sprite[] cellTileSprites;
 
     [SerializeField, Range(0.1f, 1.2f)]
@@ -76,32 +98,79 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private BoardController board;
 
+    private const string BoardFrameContainerName =
+        "BoardFrame";
+
     private const string CellTileContainerName =
-    "CellTiles";
+        "CellTiles";
 
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
 
+    public float OuterLocalWidth
+    {
+        get
+        {
+            EnsureBoardReference();
 
-    public float OuterLocalWidth =>
-        boardFrameSprite != null
-            ? boardFrameSprite.bounds.size.x
-            : board.LocalBoardWidth;
+            if (board == null)
+            {
+                return 0f;
+            }
 
-    public float OuterLocalHeight =>
-        boardFrameSprite != null
-            ? boardFrameSprite.bounds.size.y
-            : board.LocalBoardHeight;
+            if (HasValidModularFrame())
+            {
+                return
+                    board.LocalBoardWidth +
+                    GetFrameThickness() * 2f;
+            }
 
+            return legacyBoardFrameSprite != null
+                ? legacyBoardFrameSprite.bounds.size.x
+                : board.LocalBoardWidth;
+        }
+    }
+
+    public float OuterLocalHeight
+    {
+        get
+        {
+            EnsureBoardReference();
+
+            if (board == null)
+            {
+                return 0f;
+            }
+
+            if (HasValidModularFrame())
+            {
+                return
+                    board.LocalBoardHeight +
+                    GetFrameThickness() * 2f;
+            }
+
+            return legacyBoardFrameSprite != null
+                ? legacyBoardFrameSprite.bounds.size.y
+                : board.LocalBoardHeight;
+        }
+    }
 
     private void Awake()
     {
-        board = GetComponent<BoardController>();
+        EnsureBoardReference();
 
         CreateSquareSprite();
         CreateBoardFrame();
         CreateBoardMask();
         CreateCellTiles();
+    }
+
+    private void EnsureBoardReference()
+    {
+        if (board == null)
+        {
+            board = GetComponent<BoardController>();
+        }
     }
 
     private void CreateSquareSprite()
@@ -144,8 +213,8 @@ public sealed class BoardVisuals : MonoBehaviour
     private void CreateBoardFrame()
     {
         /*
-         * Dark backing behind tiles. This covers the small
-         * transparent gaps that may exist between tile sprites.
+         * Dark backing behind tiles. This covers the small transparent gaps
+         * that may exist between tile sprites.
          */
         CreateSpriteObject(
             "BoardBackground",
@@ -160,18 +229,320 @@ public sealed class BoardVisuals : MonoBehaviour
             1
         );
 
-        if (boardFrameSprite == null)
-        {
-            Debug.LogWarning(
-                "BoardVisuals has no board frame sprite.",
-                this
-            );
+        RemoveExistingBoardFrame();
 
+        if (HasValidModularFrame())
+        {
+            CreateModularBoardFrame();
             return;
         }
 
+        if (legacyBoardFrameSprite != null)
+        {
+            CreateLegacyBoardFrame();
+            return;
+        }
+
+        Debug.LogWarning(
+            "BoardVisuals needs both Corner Piece and Normal Piece for the " +
+            "modular board frame.",
+            this
+        );
+    }
+
+    private bool HasValidModularFrame()
+    {
+        if (cornerPiece == null ||
+            normalPiece == null)
+        {
+            return false;
+        }
+
+        Vector2 normalSize =
+            normalPiece.bounds.size;
+
+        Vector2 cornerSize =
+            cornerPiece.bounds.size;
+
+        return
+            normalSize.x > 0f &&
+            normalSize.y > 0f &&
+            cornerSize.x > 0f &&
+            cornerSize.y > 0f;
+    }
+
+    private float GetFrameThickness()
+    {
+        if (board == null ||
+            normalPiece == null)
+        {
+            return 0f;
+        }
+
+        Vector2 normalSize =
+            normalPiece.bounds.size;
+
+        if (normalSize.x <= 0f)
+        {
+            return 0f;
+        }
+
+        /*
+         * The normal piece spans exactly one board cell horizontally. Its
+         * aspect ratio therefore defines the frame thickness. With the intended
+         * 64x16 art this becomes 16/64 = one quarter of a cell.
+         *
+         * Deriving the value from the sprite ratio also keeps the layout correct
+         * if the import PPU is accidentally changed, although 64 PPU is still
+         * recommended for pixel-perfect rendering.
+         */
+        return
+            board.CellSize *
+            (normalSize.y / normalSize.x);
+    }
+
+    private void CreateModularBoardFrame()
+    {
+        if (board.Width < 2 ||
+            board.Height < 2)
+        {
+            Debug.LogWarning(
+                "The modular board frame is designed for boards at least 2x2. " +
+                "The current board will still be drawn, but corner pieces may " +
+                "overlap.",
+                this
+            );
+        }
+
+        GameObject frameRoot =
+            new GameObject(
+                BoardFrameContainerName
+            );
+
+        frameRoot.transform.SetParent(
+            transform,
+            false
+        );
+
+        frameRoot.transform.localPosition =
+            Vector3.zero;
+
+        frameRoot.transform.localScale =
+            Vector3.one;
+
+        float cellSize =
+            board.CellSize;
+
+        float frameThickness =
+            GetFrameThickness();
+
+        float cornerTargetSize =
+            cellSize +
+            frameThickness;
+
+        float normalScale =
+            cellSize /
+            normalPiece.bounds.size.x;
+
+        float cornerScale =
+            cornerTargetSize /
+            cornerPiece.bounds.size.x;
+
+        float halfBoardWidth =
+            board.LocalBoardWidth * 0.5f;
+
+        float halfBoardHeight =
+            board.LocalBoardHeight * 0.5f;
+
+        float halfFrameThickness =
+            frameThickness * 0.5f;
+
+        float leftCellCenterX =
+            -halfBoardWidth +
+            cellSize * 0.5f;
+
+        float rightCellCenterX =
+            halfBoardWidth -
+            cellSize * 0.5f;
+
+        float bottomCellCenterY =
+            -halfBoardHeight +
+            cellSize * 0.5f;
+
+        float topCellCenterY =
+            halfBoardHeight -
+            cellSize * 0.5f;
+
+        /*
+         * Each 80x80 corner contains the entire top/side L shape around one
+         * 64x64 cell span. Its center is therefore shifted half the exterior
+         * frame thickness away from that corner cell's center.
+         */
+        CreateFramePiece(
+            frameRoot.transform,
+            "TopLeftCorner",
+            cornerPiece,
+            new Vector2(
+                leftCellCenterX -
+                halfFrameThickness,
+
+                topCellCenterY +
+                halfFrameThickness
+            ),
+            cornerScale,
+            0f,
+            false,
+            false
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "TopRightCorner",
+            cornerPiece,
+            new Vector2(
+                rightCellCenterX +
+                halfFrameThickness,
+
+                topCellCenterY +
+                halfFrameThickness
+            ),
+            cornerScale,
+            0f,
+            true,
+            false
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "BottomLeftCorner",
+            cornerPiece,
+            new Vector2(
+                leftCellCenterX -
+                halfFrameThickness,
+
+                bottomCellCenterY -
+                halfFrameThickness
+            ),
+            cornerScale,
+            0f,
+            false,
+            true
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "BottomRightCorner",
+            cornerPiece,
+            new Vector2(
+                rightCellCenterX +
+                halfFrameThickness,
+
+                bottomCellCenterY -
+                halfFrameThickness
+            ),
+            cornerScale,
+            0f,
+            true,
+            true
+        );
+
+        /*
+         * Corners already cover the first and last cell span on each side, so
+         * straight pieces are only needed for cells between those corners.
+         */
+        for (int column = 1;
+             column < board.Width - 1;
+             column++)
+        {
+            float cellCenterX =
+                board.GetCellLocalPosition(
+                    column,
+                    0
+                ).x;
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"TopEdge_{column}",
+                normalPiece,
+                new Vector2(
+                    cellCenterX,
+                    halfBoardHeight +
+                    halfFrameThickness
+                ),
+                normalScale,
+                0f,
+                false,
+                false
+            );
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"BottomEdge_{column}",
+                normalPiece,
+                new Vector2(
+                    cellCenterX,
+                    -halfBoardHeight -
+                    halfFrameThickness
+                ),
+                normalScale,
+                0f,
+                false,
+                true
+            );
+        }
+
+        for (int row = 1;
+             row < board.Height - 1;
+             row++)
+        {
+            float cellCenterY =
+                board.GetCellLocalPosition(
+                    0,
+                    row
+                ).y;
+
+            /*
+             * The original normal sprite is the top edge. +90 degrees maps its
+             * outward-facing top to the left side; -90 maps it to the right.
+             */
+            CreateFramePiece(
+                frameRoot.transform,
+                $"LeftEdge_{row}",
+                normalPiece,
+                new Vector2(
+                    -halfBoardWidth -
+                    halfFrameThickness,
+                    cellCenterY
+                ),
+                normalScale,
+                90f,
+                false,
+                false
+            );
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"RightEdge_{row}",
+                normalPiece,
+                new Vector2(
+                    halfBoardWidth +
+                    halfFrameThickness,
+                    cellCenterY
+                ),
+                normalScale,
+                -90f,
+                false,
+                false
+            );
+        }
+    }
+
+    private void CreateLegacyBoardFrame()
+    {
         GameObject frameObject =
-            new GameObject("BoardFrame");
+            new GameObject(
+                BoardFrameContainerName
+            );
 
         frameObject.transform.SetParent(
             transform,
@@ -187,28 +558,113 @@ public sealed class BoardVisuals : MonoBehaviour
         SpriteRenderer frameRenderer =
             frameObject.AddComponent<SpriteRenderer>();
 
-        frameRenderer.sprite =
-            boardFrameSprite;
+        ConfigureFrameRenderer(
+            frameRenderer,
+            legacyBoardFrameSprite
+        );
+    }
 
-        frameRenderer.color =
-            boardFrameColor;
+    private void CreateFramePiece(
+        Transform parent,
+        string objectName,
+        Sprite sprite,
+        Vector2 localPosition,
+        float uniformScale,
+        float rotationDegrees,
+        bool flipX,
+        bool flipY)
+    {
+        GameObject pieceObject =
+            new GameObject(objectName);
+
+        pieceObject.transform.SetParent(
+            parent,
+            false
+        );
+
+        pieceObject.transform.localPosition =
+            new Vector3(
+                localPosition.x,
+                localPosition.y,
+                0f
+            );
+
+        pieceObject.transform.localRotation =
+            Quaternion.Euler(
+                0f,
+                0f,
+                rotationDegrees
+            );
+
+        pieceObject.transform.localScale =
+            new Vector3(
+                uniformScale,
+                uniformScale,
+                1f
+            );
+
+        SpriteRenderer renderer =
+            pieceObject.AddComponent<SpriteRenderer>();
+
+        ConfigureFrameRenderer(
+            renderer,
+            sprite
+        );
+
+        renderer.flipX = flipX;
+        renderer.flipY = flipY;
+    }
+
+    private void ConfigureFrameRenderer(
+        SpriteRenderer renderer,
+        Sprite sprite)
+    {
+        renderer.sprite = sprite;
+        renderer.color = boardFrameColor;
 
         /*
-         * The frame renders above gems. Its transparent
-         * center means it only visually covers the border.
+         * The frame renders above gems. Its transparent interior leaves the
+         * playable board visible while the decorative border stays on top.
          */
-        frameRenderer.sortingLayerName =
+        renderer.sortingLayerName =
             boardFrameSortingLayer;
 
-        frameRenderer.sortingOrder =
+        renderer.sortingOrder =
             boardFrameSortingOrder;
 
         /*
-         * The frame extends outside the board mask, so it
-         * must not be restricted by that mask.
+         * Frame pieces extend outside the board mask and must never be clipped.
          */
-        frameRenderer.maskInteraction =
+        renderer.maskInteraction =
             SpriteMaskInteraction.None;
+    }
+
+    private void RemoveExistingBoardFrame()
+    {
+        Transform existingFrame =
+            transform.Find(
+                BoardFrameContainerName
+            );
+
+        if (existingFrame == null)
+        {
+            return;
+        }
+
+        existingFrame.gameObject.SetActive(false);
+
+        if (Application.isPlaying)
+        {
+            Destroy(
+                existingFrame.gameObject
+            );
+        }
+        else
+        {
+            DestroyImmediate(
+                existingFrame.gameObject
+            );
+        }
     }
 
     private void RemoveExistingCellTileContainers()
@@ -229,9 +685,8 @@ public sealed class BoardVisuals : MonoBehaviour
             }
 
             /*
-             * Disable immediately so an older tile layer
-             * cannot remain visible until Destroy finishes
-             * at the end of the frame.
+             * Disable immediately so an older tile layer cannot remain visible
+             * until Destroy finishes at the end of the frame.
              */
             descendant.gameObject.SetActive(false);
 
@@ -253,8 +708,8 @@ public sealed class BoardVisuals : MonoBehaviour
     private void CreateCellTiles()
     {
         /*
-         * Remove any tile grid left behind by an earlier
-         * initialization or a Play Mode script reload.
+         * Remove any tile grid left behind by an earlier initialization or a
+         * Play Mode script reload.
          */
         RemoveExistingCellTileContainers();
 
@@ -284,8 +739,8 @@ public sealed class BoardVisuals : MonoBehaviour
                 : tileLayoutSeed;
 
         /*
-         * Use a separate random generator so visual tile
-         * selection cannot change gameplay randomness.
+         * Use a separate random generator so visual tile selection cannot change
+         * gameplay randomness.
          */
         System.Random tileRandom =
             new System.Random(selectedSeed);
@@ -434,8 +889,8 @@ public sealed class BoardVisuals : MonoBehaviour
                 : null;
 
         /*
-         * Multiple attempts reduce visible clusters while
-         * still allowing layouts to remain naturally random.
+         * Multiple attempts reduce visible clusters while still allowing layouts
+         * to remain naturally random.
          */
         const int maximumSelectionAttempts = 12;
 
@@ -479,8 +934,8 @@ public sealed class BoardVisuals : MonoBehaviour
         }
 
         /*
-         * This can happen when there is only one valid
-         * variation or when every alternative conflicts.
+         * This can happen when there is only one valid variation or when every
+         * alternative conflicts.
          */
         if (fallbackSprite != null)
         {
