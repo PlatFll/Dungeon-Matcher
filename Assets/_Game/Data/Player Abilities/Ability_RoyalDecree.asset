@@ -16,11 +16,10 @@ MonoBehaviour:
   displayName: RoyalDecree
   description: Marks an enemy for 7 seconds. Every connected gem match deals bonus
     damage to the marked enemy regardless of gem color.
-  icon: {fileID: 21300000, guid: 19b43340c9cc7c144a79221693bcebf2, type: 3}
+  icon: {fileID: 21300000, guid: c021a495cd371e0499a421be52bc1369, type: 3}
   buttonLabel: 
   meterDisplay: 1
   energyCost: 100
   duration: 7
-  threeGemDamage: 15
-  additionalDamagePerGem: 8
+  damagePerGem: 5
   cascadeDamageBonusPerDepth: 0.15
