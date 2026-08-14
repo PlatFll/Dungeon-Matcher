@@ -7,8 +7,13 @@ public sealed class AbilityButtonUI : MonoBehaviour
 {
     private const float BottomHudHeight = 88f;
     private const float BottomHudPieceSize = 44f;
+    private const float AbilityButtonWidth = 176f;
+    private const float AbilityButtonHeight = 64f;
+    private const float AbilityEnergyBarGap = 15f;
     private const string GeneratedBottomHudFrameName =
         "GeneratedBottomHudFrame";
+    private const string AbilityEnergyBarName =
+        "AbilityEnergyBar";
 
     [Header("References")]
     [SerializeField]
@@ -81,7 +86,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
                 energyBarFillMask.rect.width;
         }
 
-        ApplyBottomHudHeight();
+        ApplyBottomHudLayout();
         BuildBottomHudFrame();
     }
 
@@ -131,7 +136,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
     private void OnValidate()
     {
-        ApplyBottomHudHeight();
+        ApplyBottomHudLayout();
     }
 
     private void Update()
@@ -282,6 +287,63 @@ public sealed class AbilityButtonUI : MonoBehaviour
                 energyBarMaximumWidth *
                 normalizedCharge
             );
+    }
+
+    private void ApplyBottomHudLayout()
+    {
+        ApplyBottomHudHeight();
+        ApplyAbilityButtonSize();
+        RepositionAbilityEnergyBar();
+    }
+
+    private void ApplyAbilityButtonSize()
+    {
+        RectTransform buttonRect =
+            transform as RectTransform;
+
+        if (buttonRect == null)
+        {
+            return;
+        }
+
+        buttonRect.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Horizontal,
+            AbilityButtonWidth
+        );
+
+        buttonRect.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Vertical,
+            AbilityButtonHeight
+        );
+    }
+
+    private void RepositionAbilityEnergyBar()
+    {
+        Transform energyBarTransform =
+            transform.Find(
+                AbilityEnergyBarName
+            );
+
+        if (energyBarTransform is not RectTransform energyBarRect)
+        {
+            return;
+        }
+
+        Vector2 anchoredPosition =
+            energyBarRect.anchoredPosition;
+
+        float side =
+            anchoredPosition.x < 0f
+                ? -1f
+                : 1f;
+
+        anchoredPosition.x =
+            side *
+            (AbilityButtonWidth * 0.5f +
+             AbilityEnergyBarGap);
+
+        energyBarRect.anchoredPosition =
+            anchoredPosition;
     }
 
     private void ApplyBottomHudHeight()
