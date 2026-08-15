@@ -195,14 +195,21 @@ public sealed class TopBattleLayoutController : MonoBehaviour
         LayoutPlayerPanel();
         LayoutEnemyArea();
 
+        /*
+         * Match the mockup hierarchy: one frame surrounds the entire battle
+         * arena, then the player receives an additional inner frame that visually
+         * separates Rattlebones from the enemy side. The enemy side uses the
+         * outer frame plus the player's right-hand divider rather than a second
+         * nested box.
+         */
         BuildFrame(
-            playerSection,
-            "PlayerSectionFrame"
+            layoutRoot,
+            "BattleArenaFrame"
         );
 
         BuildFrame(
-            enemySection,
-            "EnemySectionFrame"
+            playerSection,
+            "PlayerSectionFrame"
         );
 
         layoutBuilt = true;
@@ -428,6 +435,9 @@ public sealed class TopBattleLayoutController : MonoBehaviour
                 new Vector2(106f, 124f),
                 Vector2.zero
             );
+
+            spawnAnchor.localScale =
+                new Vector3(1.08f, 1.08f, 1f);
         }
 
         RectTransform enemyBase =
