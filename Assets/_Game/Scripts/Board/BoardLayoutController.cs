@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [DefaultExecutionOrder(-50)]
 [RequireComponent(typeof(BoardController))]
@@ -15,29 +14,6 @@ public sealed class BoardLayoutController : MonoBehaviour
     [Header("Sizing")]
     [SerializeField, Range(0.1f, 2.5f)]
     private float maximumScale = 2f;
-
-    [FormerlySerializedAs("areaPaddingPixels")]
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "Vertical breathing room, in reference UI pixels, kept between the " +
-        "board and the top/bottom of its Board Area."
-    )]
-    private float verticalAreaPaddingPixels = 8f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "Horizontal breathing room, in reference UI pixels, between the outer " +
-        "board frame and the phone safe-area edges."
-    )]
-    private float horizontalScreenPaddingPixels = 10f;
-
-    [SerializeField, Range(0f, 0.25f)]
-    [Tooltip(
-        "Allows the board to grow slightly beyond the Board Area's vertical " +
-        "fit when that is needed to reach the desired near-edge-to-edge width. " +
-        "This is useful for tall boards while keeping the board visually large."
-    )]
-    private float maximumVerticalOverflowFraction = 0.12f;
 
     private BoardController board;
     private BoardVisuals boardVisuals;
@@ -85,81 +61,24 @@ public sealed class BoardLayoutController : MonoBehaviour
             parentCanvas.renderMode !=
             RenderMode.ScreenSpaceOverlay)
         {
-            uiCamera = parentCanvas.worldCamera;
+            uiCamera =
+                parentCanvas.worldCamera;
         }
 
-        Vector2 areaScreenBottomLeft =
+        Vector2 screenBottomLeft =
             RectTransformUtility.WorldToScreenPoint(
                 uiCamera,
                 areaCorners[0]
             );
 
-        Vector2 areaScreenTopRight =
+        Vector2 screenTopRight =
             RectTransformUtility.WorldToScreenPoint(
                 uiCamera,
                 areaCorners[2]
             );
 
-        float referenceToScreenScale =
-            GetReferenceToScreenPixelScale();
-
-        float verticalPadding =
-            verticalAreaPaddingPixels *
-            referenceToScreenScale;
-
-        float horizontalPadding =
-            horizontalScreenPaddingPixels *
-            referenceToScreenScale;
-
-        Rect safeArea =
-            Screen.safeArea;
-
-        if (safeArea.width <= 0f ||
-            safeArea.height <= 0f)
-        {
-            safeArea =
-                new Rect(
-                    0f,
-                    0f,
-                    Screen.width,
-                    Screen.height
-                );
-        }
-
-        /*
-         * Width is intentionally based on the full phone safe area rather than
-         * the narrower Board Area RectTransform. This lets the match board read
-         * as the main interaction surface and brings its frame close to the
-         * screen edges like the final mockup.
-         */
-        float screenLeft =
-            safeArea.xMin +
-            horizontalPadding;
-
-        float screenRight =
-            safeArea.xMax -
-            horizontalPadding;
-
-        /*
-         * The Board Area still controls vertical placement. Its padding keeps a
-         * small visual gap from the battle area and Bottom HUD.
-         */
-        float screenBottom =
-            Mathf.Max(
-                areaScreenBottomLeft.y +
-                verticalPadding,
-                safeArea.yMin
-            );
-
-        float screenTop =
-            Mathf.Min(
-                areaScreenTopRight.y -
-                verticalPadding,
-                safeArea.yMax
-            );
-
-        if (screenRight <= screenLeft ||
-            screenTop <= screenBottom)
+        if (screenTopRight.x <= screenBottomLeft.x ||
+            screenTopRight.y <= screenBottomLeft.y)
         {
             return;
         }
@@ -173,8 +92,8 @@ public sealed class BoardLayoutController : MonoBehaviour
         Vector3 worldBottomLeft =
             worldCamera.ScreenToWorldPoint(
                 new Vector3(
-                    screenLeft,
-                    screenBottom,
+                    screenBottomLeft.x,
+                    screenBottomLeft.y,
                     distanceFromCamera
                 )
             );
@@ -182,8 +101,8 @@ public sealed class BoardLayoutController : MonoBehaviour
         Vector3 worldTopRight =
             worldCamera.ScreenToWorldPoint(
                 new Vector3(
-                    screenRight,
-                    screenTop,
+                    screenTopRight.x,
+                    screenTopRight.y,
                     distanceFromCamera
                 )
             );
@@ -210,12 +129,20 @@ public sealed class BoardLayoutController : MonoBehaviour
                 ? boardVisuals.OuterLocalHeight
                 : board.LocalBoardHeight;
 
-        if (localBoardWidth <= 0f ||
+        if (availableWidth <= 0f ||
+            availableHeight <= 0f ||
+            localBoardWidth <= 0f ||
             localBoardHeight <= 0f)
         {
             return;
         }
 
+        /*
+         * GameplayScreen/TopBattlePresentationController already computes an
+         * aspect-correct BoardArea from the phone safe area. Fit uniformly into
+         * that exact slot: no independent X/Y scaling, no deliberate overflow,
+         * and no second set of layout paddings competing with the UI stack.
+         */
         float widthScale =
             availableWidth /
             localBoardWidth;
@@ -224,25 +151,10 @@ public sealed class BoardLayoutController : MonoBehaviour
             availableHeight /
             localBoardHeight;
 
-        /*
-         * Prefer the large, near-edge-to-edge width. For taller board shapes we
-         * allow a modest amount of vertical bleed beyond the nominal Board Area
-         * instead of shrinking the entire board and leaving large side gutters.
-         */
-        float heightScaleWithBleed =
-            heightScale *
-            (1f +
-             maximumVerticalOverflowFraction);
-
         float targetScale =
             Mathf.Min(
                 widthScale,
-                heightScaleWithBleed
-            );
-
-        targetScale =
-            Mathf.Min(
-                targetScale,
+                heightScale,
                 maximumScale
             );
 
@@ -259,12 +171,7 @@ public sealed class BoardLayoutController : MonoBehaviour
                 1f
             );
 
-        /*
-         * Center horizontally in the safe area and vertically in the Board Area.
-         * The modular frame grows with the board because BoardVisuals reports its
-         * full outer dimensions, including the frame thickness.
-         */
-        Vector3 targetPosition =
+        transform.position =
             new Vector3(
                 (
                     worldBottomLeft.x +
@@ -276,19 +183,5 @@ public sealed class BoardLayoutController : MonoBehaviour
                 ) * 0.5f,
                 transform.position.z
             );
-
-        transform.position =
-            targetPosition;
-    }
-
-    private float GetReferenceToScreenPixelScale()
-    {
-        if (parentCanvas == null ||
-            parentCanvas.scaleFactor <= 0f)
-        {
-            return 1f;
-        }
-
-        return parentCanvas.scaleFactor;
     }
 }

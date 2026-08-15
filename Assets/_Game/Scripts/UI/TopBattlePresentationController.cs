@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-[DefaultExecutionOrder(25)]
+[DefaultExecutionOrder(-75)]
 [DisallowMultipleComponent]
 public sealed class TopBattlePresentationController : MonoBehaviour
 {
@@ -10,18 +11,30 @@ public sealed class TopBattlePresentationController : MonoBehaviour
     private const string TopHudName = "TopHUD";
     private const string GameAreaName = "GameArea";
     private const string BottomHudName = "BottomHUD";
+    private const string GeneratedLayoutName =
+        "GeneratedTopBattleLayout";
 
-    private const float FallbackBattleAreaHeight = 290f;
-    private const float FallbackGapBelowBattleArea = 15f;
-    private const float FallbackGapAboveBottomHud = 7f;
-    private const float FallbackHorizontalGameAreaInset = 16f;
-    private const float FallbackEnemyVisualScale = 0.9f;
+    private const float FallbackReferenceBattleHeight = 290f;
+    private const float FallbackMinimumBattleHeight = 220f;
+    private const float FallbackGapBelowBattleArea = 8f;
+    private const float FallbackGapAboveBottomHud = 8f;
+    private const float FallbackBoardHorizontalInset = 10f;
+    private const float FallbackPlayerVisualScale = 1f;
+    private const float FallbackEnemyVisualScale = 0.802f;
+    private const float FallbackCharacterScaleResponse = 0.45f;
+    private const float FallbackMinimumResponsiveScale = 0.88f;
+    private const float FallbackMaximumResponsiveScale = 1.25f;
+
+    private const float PlayerCharacterFloorOffset = 43f;
+    private const float PlayerBaseFloorOffset = 48f;
+    private const float EnemyCharacterFloorOffset = 43f;
+    private const float EnemyBaseFloorOffset = 48f;
 
     [Header("Presentation Profile")]
     [SerializeField]
     [Tooltip(
-        "Optional profile override. When empty, the shared Resources/UI/" +
-        "TopBattlePresentationProfile asset is loaded automatically."
+        "Optional profile override. When empty, Resources/UI/" +
+        "TopBattlePresentationProfile is loaded automatically."
     )]
     private TopBattlePresentationProfile profileOverride;
 
@@ -30,13 +43,19 @@ public sealed class TopBattlePresentationController : MonoBehaviour
     private RectTransform safeArea;
     private RectTransform gameArea;
     private RectTransform bottomHud;
-    private EnemySlotUI[] enemySlots;
+    private BoardVisuals boardVisuals;
 
     private Vector2 lastSafeAreaSize =
         new Vector2(float.NaN, float.NaN);
 
     private float lastBottomHudHeight = float.NaN;
-    private bool enemyScaleApplied;
+    private Vector2 lastBoardOuterSize =
+        new Vector2(float.NaN, float.NaN);
+
+    private float currentBattleHeight =
+        FallbackReferenceBattleHeight;
+
+    private bool battlePresentationDirty = true;
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
@@ -63,54 +82,49 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
     private void Awake()
     {
-        ResolveReferences();
         ResolveProfile();
-        ApplyLayoutMetrics();
+        ResolveReferences();
+        ApplyResponsiveStackLayout();
     }
 
     private void OnEnable()
     {
-        ResolveReferences();
         ResolveProfile();
-        ApplyLayoutMetrics();
-        enemyScaleApplied = false;
+        ResolveReferences();
+        ApplyResponsiveStackLayout();
+        battlePresentationDirty = true;
     }
 
     private void LateUpdate()
     {
         if (topHud == null ||
+            safeArea == null ||
             gameArea == null ||
-            bottomHud == null)
+            bottomHud == null ||
+            boardVisuals == null)
         {
             ResolveReferences();
         }
 
         if (HasResponsiveLayoutChanged())
         {
-            ApplyLayoutMetrics();
+            ApplyResponsiveStackLayout();
+            battlePresentationDirty = true;
         }
 
-        /*
-         * TopBattleLayoutController lays out the enemy spawn anchors in Start.
-         * Apply the presentation scale once in LateUpdate so this controller
-         * owns the final visual scale without affecting slot geometry, bases,
-         * health bars, targeting, or combat logic.
-         */
-        if (!enemyScaleApplied)
+        if (battlePresentationDirty &&
+            TryApplyBattlePresentation())
         {
-            ApplyEnemyVisualScale();
-            enemyScaleApplied = true;
+            battlePresentationDirty = false;
         }
     }
 
     public void RefreshPresentation()
     {
-        ResolveReferences();
         ResolveProfile();
-        ApplyLayoutMetrics();
-        RefreshEnemySlots();
-        ApplyEnemyVisualScale();
-        enemyScaleApplied = true;
+        ResolveReferences();
+        ApplyResponsiveStackLayout();
+        battlePresentationDirty = true;
     }
 
     private void ResolveProfile()
@@ -150,54 +164,136 @@ public sealed class TopBattlePresentationController : MonoBehaviour
                 BottomHudName
             );
 
-        RefreshEnemySlots();
+        boardVisuals =
+            FindFirstObjectByType<BoardVisuals>();
     }
 
-    private void RefreshEnemySlots()
-    {
-        if (topHud == null)
-        {
-            enemySlots = null;
-            return;
-        }
-
-        enemySlots =
-            topHud.GetComponentsInChildren<
-                EnemySlotUI
-            >(true);
-    }
-
-    private void ApplyLayoutMetrics()
+    private void ApplyResponsiveStackLayout()
     {
         if (topHud == null ||
+            safeArea == null ||
             gameArea == null ||
             bottomHud == null)
         {
             return;
         }
 
-        float battleAreaHeight =
-            profile != null
-                ? profile.BattleAreaHeight
-                : FallbackBattleAreaHeight;
+        Vector2 safeSize =
+            safeArea.rect.size;
 
-        float gapBelowBattleArea =
+        if (safeSize.x <= 0f ||
+            safeSize.y <= 0f)
+        {
+            return;
+        }
+
+        float bottomHudHeight =
+            Mathf.Max(
+                0f,
+                bottomHud.rect.height
+            );
+
+        float referenceBattleHeight =
+            profile != null
+                ? profile.ReferenceBattleAreaHeight
+                : FallbackReferenceBattleHeight;
+
+        float minimumBattleHeight =
+            profile != null
+                ? profile.MinimumBattleAreaHeight
+                : FallbackMinimumBattleHeight;
+
+        float gapBelowBattle =
             profile != null
                 ? profile.GapBelowBattleArea
                 : FallbackGapBelowBattleArea;
 
-        float gapAboveBottomHud =
+        float gapAboveBottom =
             profile != null
                 ? profile.GapAboveBottomHud
                 : FallbackGapAboveBottomHud;
 
         float horizontalInset =
             profile != null
-                ? profile.HorizontalGameAreaInset
-                : FallbackHorizontalGameAreaInset;
+                ? profile.BoardHorizontalInset
+                : FallbackBoardHorizontalInset;
 
-        battleAreaHeight =
-            Mathf.Max(200f, battleAreaHeight);
+        referenceBattleHeight =
+            Mathf.Max(1f, referenceBattleHeight);
+
+        minimumBattleHeight =
+            Mathf.Clamp(
+                minimumBattleHeight,
+                1f,
+                referenceBattleHeight
+            );
+
+        horizontalInset =
+            Mathf.Clamp(
+                horizontalInset,
+                0f,
+                safeSize.x * 0.45f
+            );
+
+        float boardAspect =
+            GetBoardOuterAspectRatio();
+
+        float preferredBoardWidth =
+            Mathf.Max(
+                1f,
+                safeSize.x -
+                horizontalInset * 2f
+            );
+
+        float preferredBoardHeight =
+            preferredBoardWidth *
+            boardAspect;
+
+        float availableForBattleAndBoard =
+            Mathf.Max(
+                1f,
+                safeSize.y -
+                bottomHudHeight -
+                gapBelowBattle -
+                gapAboveBottom
+            );
+
+        /*
+         * The board is width-driven on normal portrait phones. Only unusually
+         * short windows can make height the limiting constraint, and even then
+         * the battle area keeps a defined minimum before the board is reduced.
+         */
+        float maximumBoardHeight =
+            Mathf.Max(
+                1f,
+                availableForBattleAndBoard -
+                minimumBattleHeight
+            );
+
+        float boardHeight =
+            Mathf.Min(
+                preferredBoardHeight,
+                maximumBoardHeight
+            );
+
+        float boardWidth =
+            boardAspect > 0f
+                ? boardHeight /
+                  boardAspect
+                : preferredBoardWidth;
+
+        boardWidth =
+            Mathf.Min(
+                boardWidth,
+                preferredBoardWidth
+            );
+
+        currentBattleHeight =
+            Mathf.Max(
+                1f,
+                availableForBattleAndBoard -
+                boardHeight
+            );
 
         topHud.anchorMin =
             new Vector2(0f, 1f);
@@ -209,14 +305,21 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             Vector2.zero;
         topHud.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Vertical,
-            battleAreaHeight
+            currentBattleHeight
         );
 
+        float horizontalBoardMargin =
+            Mathf.Max(
+                0f,
+                (safeSize.x - boardWidth) *
+                0.5f
+            );
+
         /*
-         * Define the board's usable area by semantic edge offsets instead of
-         * magic anchored-position/size pairs. This keeps the board between the
-         * top battle arena and BottomHUD when either section changes size and
-         * remains stable under CanvasScaler/SafeArea scaling.
+         * GameArea becomes the exact slot reserved for the width-driven board.
+         * This prevents extra device height from turning into dead space around
+         * the board; all remaining height is intentionally given to the battle
+         * presentation above it.
          */
         gameArea.anchorMin =
             Vector2.zero;
@@ -226,61 +329,228 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             new Vector2(0.5f, 0.5f);
         gameArea.offsetMin =
             new Vector2(
-                horizontalInset,
-                bottomHud.rect.height +
-                gapAboveBottomHud
+                horizontalBoardMargin,
+                bottomHudHeight +
+                gapAboveBottom
             );
         gameArea.offsetMax =
             new Vector2(
-                -horizontalInset,
-                -(battleAreaHeight +
-                  gapBelowBattleArea)
+                -horizontalBoardMargin,
+                -(currentBattleHeight +
+                  gapBelowBattle)
             );
 
-        lastSafeAreaSize =
-            safeArea != null
-                ? safeArea.rect.size
-                : Vector2.zero;
-
-        lastBottomHudHeight =
-            bottomHud.rect.height;
+        lastSafeAreaSize = safeSize;
+        lastBottomHudHeight = bottomHudHeight;
+        lastBoardOuterSize =
+            GetBoardOuterSize();
     }
 
-    private void ApplyEnemyVisualScale()
+    private bool TryApplyBattlePresentation()
     {
-        if (enemySlots == null ||
-            enemySlots.Length == 0)
+        if (topHud == null)
         {
-            RefreshEnemySlots();
+            return false;
         }
 
-        if (enemySlots == null)
+        Transform generatedLayout =
+            topHud.Find(GeneratedLayoutName);
+
+        if (generatedLayout == null)
         {
-            return;
+            return false;
         }
 
-        float scale =
+        float responsiveScale =
+            CalculateResponsiveCharacterScale();
+
+        float playerMultiplier =
+            profile != null
+                ? profile.PlayerVisualScale
+                : FallbackPlayerVisualScale;
+
+        float enemyMultiplier =
             profile != null
                 ? profile.EnemyVisualScale
                 : FallbackEnemyVisualScale;
 
-        scale =
-            Mathf.Clamp(scale, 0.5f, 1.5f);
+        float playerScale =
+            responsiveScale *
+            playerMultiplier;
 
-        Vector3 visualScale =
-            new Vector3(scale, scale, 1f);
+        float enemyScale =
+            responsiveScale *
+            enemyMultiplier;
 
-        foreach (EnemySlotUI slot in enemySlots)
+        RectTransform playerCharacter =
+            FindRectTransform(
+                generatedLayout,
+                "PlayerCharacter"
+            );
+
+        if (playerCharacter != null)
         {
-            if (slot == null ||
-                slot.EnemySpawnAnchor == null)
+            AnchorVisualToFloor(
+                playerCharacter,
+                PlayerCharacterFloorOffset,
+                playerScale,
+                useBottomPivot: true
+            );
+        }
+
+        RectTransform playerBase =
+            FindRectTransform(
+                generatedLayout,
+                "PlayerBase"
+            );
+
+        if (playerBase != null)
+        {
+            AnchorVisualToFloor(
+                playerBase,
+                PlayerBaseFloorOffset,
+                playerScale,
+                useBottomPivot: false
+            );
+        }
+
+        EnemySlotUI[] slots =
+            topHud.GetComponentsInChildren<
+                EnemySlotUI
+            >(true);
+
+        foreach (EnemySlotUI slot in slots)
+        {
+            if (slot == null)
             {
                 continue;
             }
 
-            slot.EnemySpawnAnchor.localScale =
-                visualScale;
+            RectTransform spawnAnchor =
+                slot.EnemySpawnAnchor;
+
+            if (spawnAnchor != null)
+            {
+                AnchorVisualToFloor(
+                    spawnAnchor,
+                    EnemyCharacterFloorOffset,
+                    enemyScale,
+                    useBottomPivot: true
+                );
+            }
+
+            RectTransform enemyBase =
+                FindRectTransform(
+                    slot.transform,
+                    "EnemyBase"
+                );
+
+            if (enemyBase != null)
+            {
+                AnchorVisualToFloor(
+                    enemyBase,
+                    EnemyBaseFloorOffset,
+                    enemyScale,
+                    useBottomPivot: false
+                );
+            }
         }
+
+        EnsureBackgroundFitter(
+            generatedLayout,
+            "PlayerSectionBackground"
+        );
+
+        EnsureBackgroundFitter(
+            generatedLayout,
+            "EnemySectionBackground"
+        );
+
+        EnsureFrameFitter(
+            generatedLayout,
+            "BattleArenaFrame"
+        );
+
+        EnsureFrameFitter(
+            generatedLayout,
+            "PlayerSectionFrame"
+        );
+
+        return true;
+    }
+
+    private float CalculateResponsiveCharacterScale()
+    {
+        float referenceHeight =
+            profile != null
+                ? profile.ReferenceBattleAreaHeight
+                : FallbackReferenceBattleHeight;
+
+        float response =
+            profile != null
+                ? profile.CharacterScaleResponse
+                : FallbackCharacterScaleResponse;
+
+        float minimumScale =
+            profile != null
+                ? profile.MinimumResponsiveCharacterScale
+                : FallbackMinimumResponsiveScale;
+
+        float maximumScale =
+            profile != null
+                ? profile.MaximumResponsiveCharacterScale
+                : FallbackMaximumResponsiveScale;
+
+        referenceHeight =
+            Mathf.Max(1f, referenceHeight);
+
+        float heightRatio =
+            currentBattleHeight /
+            referenceHeight;
+
+        float responsiveScale =
+            Mathf.Lerp(
+                1f,
+                heightRatio,
+                Mathf.Clamp01(response)
+            );
+
+        return Mathf.Clamp(
+            responsiveScale,
+            minimumScale,
+            Mathf.Max(
+                minimumScale,
+                maximumScale
+            )
+        );
+    }
+
+    private float GetBoardOuterAspectRatio()
+    {
+        Vector2 size =
+            GetBoardOuterSize();
+
+        if (size.x <= 0f ||
+            size.y <= 0f)
+        {
+            return 1f;
+        }
+
+        return size.y /
+               size.x;
+    }
+
+    private Vector2 GetBoardOuterSize()
+    {
+        if (boardVisuals == null)
+        {
+            return Vector2.zero;
+        }
+
+        return new Vector2(
+            boardVisuals.OuterLocalWidth,
+            boardVisuals.OuterLocalHeight
+        );
     }
 
     private bool HasResponsiveLayoutChanged()
@@ -291,36 +561,124 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             return false;
         }
 
-        Vector2 safeAreaSize =
+        Vector2 safeSize =
             safeArea.rect.size;
 
-        float bottomHudHeight =
+        float bottomHeight =
             bottomHud.rect.height;
+
+        Vector2 boardOuterSize =
+            GetBoardOuterSize();
 
         return
             !Approximately(
-                safeAreaSize,
+                safeSize,
                 lastSafeAreaSize
             ) ||
             !Mathf.Approximately(
-                bottomHudHeight,
+                bottomHeight,
                 lastBottomHudHeight
+            ) ||
+            !Approximately(
+                boardOuterSize,
+                lastBoardOuterSize
             );
     }
 
-    private static bool Approximately(
-        Vector2 left,
-        Vector2 right)
+    private static void AnchorVisualToFloor(
+        RectTransform visual,
+        float floorOffset,
+        float uniformScale,
+        bool useBottomPivot)
     {
-        return
-            Mathf.Approximately(
-                left.x,
-                right.x
-            ) &&
-            Mathf.Approximately(
-                left.y,
-                right.y
+        if (visual == null)
+        {
+            return;
+        }
+
+        visual.anchorMin =
+            new Vector2(0.5f, 0f);
+        visual.anchorMax =
+            new Vector2(0.5f, 0f);
+        visual.pivot =
+            useBottomPivot
+                ? new Vector2(0.5f, 0f)
+                : new Vector2(0.5f, 0.5f);
+        visual.anchoredPosition =
+            new Vector2(
+                0f,
+                floorOffset
             );
+        visual.localScale =
+            new Vector3(
+                uniformScale,
+                uniformScale,
+                1f
+            );
+    }
+
+    private static void EnsureBackgroundFitter(
+        Transform root,
+        string objectName)
+    {
+        RectTransform rect =
+            FindRectTransform(
+                root,
+                objectName
+            );
+
+        if (rect == null ||
+            !rect.TryGetComponent(
+                out Image image
+            ))
+        {
+            return;
+        }
+
+        BottomAnchoredBackgroundFitter fitter;
+
+        if (!rect.TryGetComponent(
+                out fitter
+            ))
+        {
+            fitter =
+                rect.gameObject.AddComponent<
+                    BottomAnchoredBackgroundFitter
+                >();
+        }
+
+        image.raycastTarget = false;
+        fitter.RefreshLayout();
+    }
+
+    private static void EnsureFrameFitter(
+        Transform root,
+        string objectName)
+    {
+        RectTransform frame =
+            FindRectTransform(
+                root,
+                objectName
+            );
+
+        if (frame == null)
+        {
+            return;
+        }
+
+        ResponsiveModularFrameFitter fitter;
+
+        if (!frame.TryGetComponent(
+                out fitter
+            ))
+        {
+            fitter =
+                frame.gameObject.AddComponent<
+                    ResponsiveModularFrameFitter
+                >();
+        }
+
+        fitter.RefreshFrame();
     }
 
     private static RectTransform FindDirectChildRect(
@@ -332,9 +690,48 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             return null;
         }
 
-        Transform child =
-            parent.Find(childName);
+        return parent.Find(childName) as RectTransform;
+    }
 
-        return child as RectTransform;
+    private static RectTransform FindRectTransform(
+        Transform root,
+        string objectName)
+    {
+        if (root == null)
+        {
+            return null;
+        }
+
+        if (root.name == objectName)
+        {
+            return root as RectTransform;
+        }
+
+        for (int index = 0;
+             index < root.childCount;
+             index++)
+        {
+            RectTransform match =
+                FindRectTransform(
+                    root.GetChild(index),
+                    objectName
+                );
+
+            if (match != null)
+            {
+                return match;
+            }
+        }
+
+        return null;
+    }
+
+    private static bool Approximately(
+        Vector2 left,
+        Vector2 right)
+    {
+        return
+            Mathf.Approximately(left.x, right.x) &&
+            Mathf.Approximately(left.y, right.y);
     }
 }
