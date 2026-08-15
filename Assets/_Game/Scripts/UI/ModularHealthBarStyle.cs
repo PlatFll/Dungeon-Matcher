@@ -23,6 +23,12 @@ public sealed class ModularHealthBarStyle : ScriptableObject
 
     [Header("Fill")]
     [SerializeField]
+    [Tooltip("Color shown in the missing-health portion inside the frame.")]
+    private Color emptyFillColor =
+        new Color32(42, 20, 25, 255);
+
+    [SerializeField]
+    [Tooltip("Color shown for current health.")]
     private Color fillColor =
         new Color32(224, 45, 45, 255);
 
@@ -40,13 +46,14 @@ public sealed class ModularHealthBarStyle : ScriptableObject
     [SerializeField, Min(0f)]
     [Tooltip(
         "Normalized health per second used by the visible fill. Set to zero for " +
-        "instant updates. The final fill width is snapped to reference pixels."
+        "instant updates. The moving edge is snapped to reference pixels."
     )]
     private float fillAnimationSpeed = 4f;
 
     public Sprite StartPiece => startPiece;
     public Sprite MiddlePiece => middlePiece;
     public Sprite EndPiece => endPiece;
+    public Color EmptyFillColor => emptyFillColor;
     public Color FillColor => fillColor;
     public float FillInsetLeft => fillInsetLeft;
     public float FillInsetRight => fillInsetRight;
