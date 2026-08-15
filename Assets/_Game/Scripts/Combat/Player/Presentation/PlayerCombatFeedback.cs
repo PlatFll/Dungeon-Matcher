@@ -163,6 +163,20 @@ public sealed class PlayerCombatFeedback :
             return;
         }
 
+        /*
+         * The top battle layout can reposition the player after this component's
+         * Awake has already run. Capture the current settled position immediately
+         * before a new shake begins so damage feedback always returns the player
+         * to the layout's latest position instead of the old scene position.
+         *
+         * Do not recapture while a shake is already running because the visual
+         * root may currently be sitting on a temporary shake offset.
+         */
+        if (damageFeedbackCoroutine == null)
+        {
+            CaptureCurrentRestingPosition();
+        }
+
         StopDamageFeedback();
 
         damageFeedbackCoroutine =
@@ -250,18 +264,38 @@ public sealed class PlayerCombatFeedback :
         damageFeedbackCoroutine = null;
     }
 
+    private void CaptureCurrentRestingPosition()
+    {
+        if (visualRoot == null)
+        {
+            return;
+        }
+
+        restingPosition =
+            visualRoot.anchoredPosition;
+    }
+
     private void StopDamageFeedback()
     {
-        if (damageFeedbackCoroutine != null)
+        bool wasRunning =
+            damageFeedbackCoroutine != null;
+
+        if (wasRunning)
         {
             StopCoroutine(
                 damageFeedbackCoroutine
             );
 
             damageFeedbackCoroutine = null;
+
+            /*
+             * Only restore when an actual shake was interrupted. If no feedback
+             * is active, the layout may have intentionally moved the visual root
+             * since Awake and restoring the old cached value would undo it.
+             */
+            RestoreVisualPosition();
         }
 
-        RestoreVisualPosition();
         SetWhiteFlash(0f);
         characterAnimation?.Resume();
     }
