@@ -23,8 +23,8 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private Image legacyFill;
 
     private RectTransform generatedRoot;
-    private RectTransform fillRect;
-    private Image fillImage;
+    private RectTransform emptyFillRect;
+    private RectTransform healthFillRect;
     private RectTransform startRect;
     private RectTransform middleRect;
     private RectTransform endRect;
@@ -32,6 +32,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private float targetNormalized = 1f;
     private float displayedNormalized = 1f;
     private float lastRenderedNormalized = float.NaN;
+
     private Vector2 lastRootSize =
         new Vector2(float.NaN, float.NaN);
 
@@ -70,19 +71,12 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
     private void Awake()
     {
-        ResolveReferences();
-        ResolveStyle();
-        CaptureLegacyValue();
-        TryBuildModularVisual();
+        Initialize();
     }
 
     private void OnEnable()
     {
-        ResolveReferences();
-        ResolveStyle();
-        CaptureLegacyValue();
-        TryBuildModularVisual();
-        RefreshGeometry();
+        Initialize();
     }
 
     private void LateUpdate()
@@ -99,18 +93,15 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
         CaptureLegacyValue();
 
-        if (!modularVisualBuilt)
+        if (!modularVisualBuilt ||
+            rootRect == null ||
+            style == null)
         {
             return;
         }
 
-        Vector2 rootSize =
-            rootRect != null
-                ? rootRect.rect.size
-                : Vector2.zero;
-
         if (!Approximately(
-                rootSize,
+                rootRect.rect.size,
                 lastRootSize
             ))
         {
@@ -118,58 +109,41 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         }
 
         float speed =
-            style != null
-                ? style.FillAnimationSpeed
-                : 0f;
+            style.FillAnimationSpeed;
 
-        if (speed <= 0f)
-        {
-            displayedNormalized =
-                targetNormalized;
-        }
-        else
-        {
-            displayedNormalized =
-                Mathf.MoveTowards(
+        displayedNormalized =
+            speed <= 0f
+                ? targetNormalized
+                : Mathf.MoveTowards(
                     displayedNormalized,
                     targetNormalized,
-                    speed *
-                    Time.unscaledDeltaTime
+                    speed * Time.unscaledDeltaTime
                 );
-        }
 
         if (!Mathf.Approximately(
                 displayedNormalized,
                 lastRenderedNormalized
             ))
         {
-            RefreshFillWidth();
+            RefreshHealthFillWidth();
         }
     }
 
     public void RefreshStyle()
     {
         ResolveStyle();
-
-        if (generatedRoot != null)
-        {
-            Destroy(generatedRoot.gameObject);
-            generatedRoot = null;
-        }
-
-        modularVisualBuilt = false;
+        RemoveGeneratedVisual();
         RestoreLegacyVisuals();
         TryBuildModularVisual();
     }
 
-    private void ResolveStyle()
+    private void Initialize()
     {
-        style =
-            styleOverride != null
-                ? styleOverride
-                : Resources.Load<ModularHealthBarStyle>(
-                    DefaultStyleResourcePath
-                );
+        ResolveReferences();
+        ResolveStyle();
+        CaptureLegacyValue();
+        TryBuildModularVisual();
+        RefreshGeometry();
     }
 
     private void ResolveReferences()
@@ -183,8 +157,20 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         if (legacyFill == null)
         {
             legacyFill =
-                FindLegacyFillImage(transform);
+                FindLegacyFillImage(
+                    transform
+                );
         }
+    }
+
+    private void ResolveStyle()
+    {
+        style =
+            styleOverride != null
+                ? styleOverride
+                : Resources.Load<ModularHealthBarStyle>(
+                    DefaultStyleResourcePath
+                );
     }
 
     private void CaptureLegacyValue()
@@ -192,7 +178,9 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         if (legacyFill == null)
         {
             legacyFill =
-                FindLegacyFillImage(transform);
+                FindLegacyFillImage(
+                    transform
+                );
         }
 
         if (legacyFill == null)
@@ -222,16 +210,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
             return;
         }
 
-        Transform staleRoot =
-            transform.Find(
-                GeneratedRootName
-            );
-
-        if (staleRoot != null)
-        {
-            staleRoot.gameObject.SetActive(false);
-            Destroy(staleRoot.gameObject);
-        }
+        RemoveStaleGeneratedRoot();
 
         generatedRoot =
             CreateRectTransform(
@@ -245,18 +224,31 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
         generatedRoot.SetAsFirstSibling();
 
-        fillImage =
+        Image emptyFill =
             CreateImage(
-                "HealthFill",
+                "EmptyHealthFill",
                 generatedRoot,
                 null
             );
 
-        fillRect =
-            fillImage.rectTransform;
-        fillImage.color =
+        emptyFill.color =
+            style.EmptyFillColor;
+        emptyFill.raycastTarget = false;
+        emptyFillRect =
+            emptyFill.rectTransform;
+
+        Image currentFill =
+            CreateImage(
+                "CurrentHealthFill",
+                generatedRoot,
+                null
+            );
+
+        currentFill.color =
             style.FillColor;
-        fillImage.raycastTarget = false;
+        currentFill.raycastTarget = false;
+        healthFillRect =
+            currentFill.rectTransform;
 
         Image startImage =
             CreateImage(
@@ -279,13 +271,6 @@ public sealed class ModularHealthBarUI : MonoBehaviour
                 style.EndPiece
             );
 
-        startRect =
-            startImage.rectTransform;
-        middleRect =
-            middleImage.rectTransform;
-        endRect =
-            endImage.rectTransform;
-
         startImage.type =
             Image.Type.Simple;
         middleImage.type =
@@ -297,11 +282,20 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         middleImage.raycastTarget = false;
         endImage.raycastTarget = false;
 
+        startRect =
+            startImage.rectTransform;
+        middleRect =
+            middleImage.rectTransform;
+        endRect =
+            endImage.rectTransform;
+
         HideLegacyVisuals();
 
         modularVisualBuilt = true;
-        displayedNormalized = targetNormalized;
-        lastRenderedNormalized = float.NaN;
+        displayedNormalized =
+            targetNormalized;
+        lastRenderedNormalized =
+            float.NaN;
 
         RefreshGeometry();
     }
@@ -316,10 +310,16 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         }
 
         float rootWidth =
-            Mathf.Max(0f, rootRect.rect.width);
+            Mathf.Max(
+                0f,
+                rootRect.rect.width
+            );
 
         float rootHeight =
-            Mathf.Max(0f, rootRect.rect.height);
+            Mathf.Max(
+                0f,
+                rootRect.rect.height
+            );
 
         float startWidth =
             GetPieceWidthAtHeight(
@@ -335,14 +335,14 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
         ConfigureCap(
             startRect,
-            leftSide: true,
+            true,
             startWidth,
             rootHeight
         );
 
         ConfigureCap(
             endRect,
-            leftSide: false,
+            false,
             endWidth,
             rootHeight
         );
@@ -369,55 +369,82 @@ public sealed class ModularHealthBarUI : MonoBehaviour
                 Vector3.one;
         }
 
-        if (fillRect != null)
-        {
-            float fillHeight =
-                Mathf.Max(
-                    0f,
-                    rootHeight -
-                    style.FillInsetVertical *
-                    2f
-                );
-
-            fillRect.anchorMin =
-                new Vector2(0f, 0.5f);
-            fillRect.anchorMax =
-                new Vector2(0f, 0.5f);
-            fillRect.pivot =
-                new Vector2(0f, 0.5f);
-            fillRect.anchoredPosition =
-                new Vector2(
-                    style.FillInsetLeft,
-                    0f
-                );
-            fillRect.SetSizeWithCurrentAnchors(
-                RectTransform.Axis.Vertical,
-                fillHeight
+        float innerWidth =
+            Mathf.Max(
+                0f,
+                rootWidth -
+                style.FillInsetLeft -
+                style.FillInsetRight
             );
-            fillRect.localScale =
-                Vector3.one;
-        }
+
+        float innerHeight =
+            Mathf.Max(
+                0f,
+                rootHeight -
+                style.FillInsetVertical *
+                2f
+            );
+
+        ConfigureInnerFillRect(
+            emptyFillRect,
+            innerWidth,
+            innerHeight
+        );
+
+        ConfigureInnerFillRect(
+            healthFillRect,
+            innerWidth,
+            innerHeight
+        );
 
         lastRootSize =
-            new Vector2(
-                rootWidth,
-                rootHeight
-            );
+            rootRect.rect.size;
 
-        RefreshFillWidth();
+        RefreshHealthFillWidth();
     }
 
-    private void RefreshFillWidth()
+    private void ConfigureInnerFillRect(
+        RectTransform fillRect,
+        float width,
+        float height)
     {
-        if (!modularVisualBuilt ||
-            rootRect == null ||
-            fillRect == null ||
+        if (fillRect == null ||
             style == null)
         {
             return;
         }
 
-        float availableFillWidth =
+        fillRect.anchorMin =
+            new Vector2(0f, 0.5f);
+        fillRect.anchorMax =
+            new Vector2(0f, 0.5f);
+        fillRect.pivot =
+            new Vector2(0f, 0.5f);
+        fillRect.anchoredPosition =
+            new Vector2(
+                style.FillInsetLeft,
+                0f
+            );
+        fillRect.sizeDelta =
+            new Vector2(
+                width,
+                height
+            );
+        fillRect.localScale =
+            Vector3.one;
+    }
+
+    private void RefreshHealthFillWidth()
+    {
+        if (!modularVisualBuilt ||
+            rootRect == null ||
+            healthFillRect == null ||
+            style == null)
+        {
+            return;
+        }
+
+        float availableWidth =
             Mathf.Max(
                 0f,
                 rootRect.rect.width -
@@ -425,20 +452,15 @@ public sealed class ModularHealthBarUI : MonoBehaviour
                 style.FillInsetRight
             );
 
-        /*
-         * Snap the moving edge to reference UI pixels. The CanvasScaler can
-         * still scale the complete bar for the device, but the authored health
-         * fill never ends on an arbitrary fractional reference pixel.
-         */
         float visibleWidth =
             Mathf.Round(
-                availableFillWidth *
+                availableWidth *
                 Mathf.Clamp01(
                     displayedNormalized
                 )
             );
 
-        fillRect.SetSizeWithCurrentAnchors(
+        healthFillRect.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Horizontal,
             visibleWidth
         );
@@ -473,6 +495,39 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         }
     }
 
+    private void RemoveGeneratedVisual()
+    {
+        if (generatedRoot != null)
+        {
+            generatedRoot.gameObject.SetActive(false);
+            Destroy(generatedRoot.gameObject);
+        }
+
+        generatedRoot = null;
+        emptyFillRect = null;
+        healthFillRect = null;
+        startRect = null;
+        middleRect = null;
+        endRect = null;
+        modularVisualBuilt = false;
+    }
+
+    private void RemoveStaleGeneratedRoot()
+    {
+        Transform staleRoot =
+            transform.Find(
+                GeneratedRootName
+            );
+
+        if (staleRoot == null)
+        {
+            return;
+        }
+
+        staleRoot.gameObject.SetActive(false);
+        Destroy(staleRoot.gameObject);
+    }
+
     private static void ConfigureCap(
         RectTransform cap,
         bool leftSide,
@@ -503,10 +558,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         cap.anchoredPosition =
             Vector2.zero;
         cap.sizeDelta =
-            new Vector2(
-                width,
-                height
-            );
+            new Vector2(width, height);
         cap.localScale =
             Vector3.one;
     }
