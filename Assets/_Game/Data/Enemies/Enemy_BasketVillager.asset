@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: Enemy_TorchVillager
+  m_Name: Enemy_BasketVillager
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  enemyId: torch_villager
-  displayName: Torch Villager
+  enemyId: basket_villager
+  displayName: Basket Villager
   category: 0
-  description: A scared villager swinging a torch quickly in panic.
+  description: A villager with a basket of berries.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 5815c27a5857c804d864bfa2053b237a, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 635a187484ae8244d8cdf57ff33729a1, type: 3}
   animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
   baseMaxHealth: 45
   baseDamage: 1
   baseAttackInterval: 7

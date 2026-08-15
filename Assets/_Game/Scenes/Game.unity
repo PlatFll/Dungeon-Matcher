@@ -3558,7 +3558,7 @@ MonoBehaviour:
   triggeredCrystalChargeScale: 1.16
   triggeredCrystalChargePulseSpeed: 4
   triggeredCrystalSettlePause: 0.12
-  width: 7
+  width: 8
   height: 8
   cellSize: 1
   gemScale: 0.9
@@ -3606,7 +3606,9 @@ MonoBehaviour:
   worldCamera: {fileID: 519420031}
   boardArea: {fileID: 961790276}
   maximumScale: 1.5
-  areaPaddingPixels: 8
+  verticalAreaPaddingPixels: 8
+  horizontalScreenPaddingPixels: 10
+  maximumVerticalOverflowFraction: 0.12
 --- !u!114 &1775734121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3619,18 +3621,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85068aa6cd070b64fad72ac497093558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardVisuals
-  boardFrameSprite: {fileID: 21300000, guid: e6d69ce84643e6f4e86fd5940630b19e, type: 3}
+  cornerPiece: {fileID: 21300000, guid: cab4b11e87109174eaafe18a9ec5fd38, type: 3}
+  normalPiece: {fileID: 21300000, guid: 8f34f65d7fe20c34289e032cdd9bc00e, type: 3}
+  legacyBoardFrameSprite: {fileID: 21300000, guid: e6d69ce84643e6f4e86fd5940630b19e, type: 3}
   boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
   boardFrameSortingLayer: Gems
   boardFrameSortingOrder: 100
   backgroundPadding: 0.04
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
   cellTileSprites:
-  - {fileID: 21300000, guid: efd22062d9bf35040ac4922249ea6a7b, type: 3}
-  - {fileID: 21300000, guid: 8d1272af1ad6c4c42acffc6f3b3e0ad5, type: 3}
-  - {fileID: 21300000, guid: d3d57d54fd0d503418ec909442ad307b, type: 3}
-  - {fileID: 21300000, guid: aa8c190c2c6a43748b9b7b624143f829, type: 3}
-  - {fileID: 21300000, guid: bb22801d24fa11748bb9f079f6f2fc9b, type: 3}
+  - {fileID: 21300000, guid: 728a47ad2dcea7f4aa4cc34547447217, type: 3}
+  - {fileID: 21300000, guid: e9a257105c7ad0d4a8332e7ef7ac3128, type: 3}
+  - {fileID: 21300000, guid: b253236e9b59d024080e568418b53847, type: 3}
   cellTileScale: 1
   cellTileColor: {r: 1, g: 1, b: 1, a: 1}
   randomizeTileLayoutEachRun: 1
