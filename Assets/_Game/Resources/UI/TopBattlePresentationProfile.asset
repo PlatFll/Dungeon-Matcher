@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c2d8a1e9b34f4ab68c6a75d9221c30, type: 3}
   m_Name: TopBattlePresentationProfile
   m_EditorClassIdentifier: Assembly-CSharp::TopBattlePresentationProfile
-  battleAreaHeight: 290
-  gapBelowBattleArea: 15
-  gapAboveBottomHud: 7
-  horizontalGameAreaInset: 16
+  referenceBattleAreaHeight: 290
+  minimumBattleAreaHeight: 220
+  gapBelowBattleArea: 8
+  gapAboveBottomHud: 8
+  boardHorizontalInset: 10
+  playerVisualScale: 1
   enemyVisualScale: 0.802
+  characterScaleResponse: 0.45
+  minimumResponsiveCharacterScale: 0.88
+  maximumResponsiveCharacterScale: 1.25
