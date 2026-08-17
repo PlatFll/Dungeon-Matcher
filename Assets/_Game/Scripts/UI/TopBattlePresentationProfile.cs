@@ -42,6 +42,45 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     )]
     private float boardHorizontalInset = 10f;
 
+    [Header("Shared Battle Floor")]
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Single walkable-floor baseline, measured upward from the bottom of the " +
+        "complete battle area in reference UI pixels. Player and enemies are " +
+        "placed on this exact world-space line."
+    )]
+    private float battleFloorOffsetFromBottom = 58f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Floor location inside the player background sprite, measured in SOURCE " +
+        "sprite pixels upward from its bottom edge. Set this to the pixel row " +
+        "where characters should stand."
+    )]
+    private float playerBackgroundFloorPixelsFromBottom = 200f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Floor location inside the enemy dungeon background sprite, measured in " +
+        "SOURCE sprite pixels upward from its bottom edge. The current temporary " +
+        "1672x941 dungeon art is initially tuned near 200px."
+    )]
+    private float enemyBackgroundFloorPixelsFromBottom = 200f;
+
+    [SerializeField]
+    [Tooltip(
+        "Small visual correction applied equally to the feet of player and enemy " +
+        "character anchors after they are aligned to the shared floor."
+    )]
+    private float characterFeetOffsetFromFloor = 0f;
+
+    [SerializeField]
+    [Tooltip(
+        "Vertical offset of the colored character/enemy base center relative to " +
+        "the shared floor. Negative values place the ellipse slightly below feet."
+    )]
+    private float baseCenterOffsetFromFloor = -3f;
+
     [Header("Responsive Character Presentation")]
     [SerializeField, Range(0.5f, 1.5f)]
     [Tooltip(
@@ -73,6 +112,13 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     public float GapBelowBattleArea => gapBelowBattleArea;
     public float GapAboveBottomHud => gapAboveBottomHud;
     public float BoardHorizontalInset => boardHorizontalInset;
+    public float BattleFloorOffsetFromBottom => battleFloorOffsetFromBottom;
+    public float PlayerBackgroundFloorPixelsFromBottom =>
+        playerBackgroundFloorPixelsFromBottom;
+    public float EnemyBackgroundFloorPixelsFromBottom =>
+        enemyBackgroundFloorPixelsFromBottom;
+    public float CharacterFeetOffsetFromFloor => characterFeetOffsetFromFloor;
+    public float BaseCenterOffsetFromFloor => baseCenterOffsetFromFloor;
     public float PlayerVisualScale => playerVisualScale;
     public float EnemyVisualScale => enemyVisualScale;
     public float CharacterScaleResponse => characterScaleResponse;
@@ -91,6 +137,34 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
         gapBelowBattleArea = Mathf.Max(0f, gapBelowBattleArea);
         gapAboveBottomHud = Mathf.Max(0f, gapAboveBottomHud);
         boardHorizontalInset = Mathf.Max(0f, boardHorizontalInset);
+
+        battleFloorOffsetFromBottom = Mathf.Clamp(
+            battleFloorOffsetFromBottom,
+            0f,
+            referenceBattleAreaHeight
+        );
+
+        playerBackgroundFloorPixelsFromBottom = Mathf.Max(
+            0f,
+            playerBackgroundFloorPixelsFromBottom
+        );
+
+        enemyBackgroundFloorPixelsFromBottom = Mathf.Max(
+            0f,
+            enemyBackgroundFloorPixelsFromBottom
+        );
+
+        characterFeetOffsetFromFloor = Mathf.Clamp(
+            characterFeetOffsetFromFloor,
+            -64f,
+            64f
+        );
+
+        baseCenterOffsetFromFloor = Mathf.Clamp(
+            baseCenterOffsetFromFloor,
+            -64f,
+            64f
+        );
 
         playerVisualScale = Mathf.Clamp(playerVisualScale, 0.5f, 1.5f);
         enemyVisualScale = Mathf.Clamp(enemyVisualScale, 0.5f, 1.5f);
