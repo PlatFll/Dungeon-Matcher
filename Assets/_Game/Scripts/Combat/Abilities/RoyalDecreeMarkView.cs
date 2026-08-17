@@ -20,8 +20,13 @@ public sealed class RoyalDecreeMarkView :
 
     [Header("Position")]
     [SerializeField]
+    [Tooltip(
+        "Reference-UI offset from the marked enemy. The vertical component is " +
+        "always treated as distance above the target so legacy negative values " +
+        "from older scenes migrate safely without putting the mark below enemies."
+    )]
     private Vector2 anchoredOffset =
-        new Vector2(0f, -45f);
+        new Vector2(0f, 70f);
 
     [Header("Hit Animation")]
     [SerializeField, Min(1f)]
@@ -108,6 +113,18 @@ public sealed class RoyalDecreeMarkView :
 
         ResetHitVisuals();
         SetVisible(false);
+    }
+
+    private void OnValidate()
+    {
+        /*
+         * Royal Decree is an overhead target indicator. Keep the authored value
+         * normalized to that semantic meaning while preserving the horizontal
+         * tuning value. Existing scenes that serialized -70 are also protected
+         * at runtime in FollowTarget, so this change is migration-safe.
+         */
+        anchoredOffset.y =
+            Mathf.Abs(anchoredOffset.y);
     }
 
     private void Update()
@@ -293,9 +310,15 @@ public sealed class RoyalDecreeMarkView :
             return;
         }
 
+        Vector2 overheadOffset =
+            new Vector2(
+                anchoredOffset.x,
+                Mathf.Abs(anchoredOffset.y)
+            );
+
         markRect.anchoredPosition =
             localPosition +
-            anchoredOffset;
+            overheadOffset;
     }
 
     private IEnumerator PlayHitPulse()
