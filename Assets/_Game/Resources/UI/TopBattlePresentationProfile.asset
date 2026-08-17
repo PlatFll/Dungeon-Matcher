@@ -17,6 +17,11 @@ MonoBehaviour:
   gapBelowBattleArea: 8
   gapAboveBottomHud: 8
   boardHorizontalInset: 10
+  battleFloorOffsetFromBottom: 58
+  playerBackgroundFloorPixelsFromBottom: 200
+  enemyBackgroundFloorPixelsFromBottom: 200
+  characterFeetOffsetFromFloor: 0
+  baseCenterOffsetFromFloor: -3
   playerVisualScale: 1
   enemyVisualScale: 0.802
   characterScaleResponse: 0.45

@@ -19,16 +19,16 @@ public sealed class TopBattlePresentationController : MonoBehaviour
     private const float FallbackGapBelowBattleArea = 8f;
     private const float FallbackGapAboveBottomHud = 8f;
     private const float FallbackBoardHorizontalInset = 10f;
+    private const float FallbackBattleFloorOffsetFromBottom = 58f;
+    private const float FallbackPlayerBackgroundFloorPixels = 200f;
+    private const float FallbackEnemyBackgroundFloorPixels = 200f;
+    private const float FallbackCharacterFeetOffsetFromFloor = 0f;
+    private const float FallbackBaseCenterOffsetFromFloor = -3f;
     private const float FallbackPlayerVisualScale = 1f;
     private const float FallbackEnemyVisualScale = 0.802f;
     private const float FallbackCharacterScaleResponse = 0.45f;
     private const float FallbackMinimumResponsiveScale = 0.88f;
     private const float FallbackMaximumResponsiveScale = 1.25f;
-
-    private const float PlayerCharacterFloorOffset = 43f;
-    private const float PlayerBaseFloorOffset = 48f;
-    private const float EnemyCharacterFloorOffset = 43f;
-    private const float EnemyBaseFloorOffset = 48f;
 
     [Header("Presentation Profile")]
     [SerializeField]
@@ -353,8 +353,9 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             return false;
         }
 
-        Transform generatedLayout =
-            topHud.Find(GeneratedLayoutName);
+        RectTransform generatedLayout =
+            topHud.Find(GeneratedLayoutName)
+                as RectTransform;
 
         if (generatedLayout == null)
         {
@@ -382,6 +383,27 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             responsiveScale *
             enemyMultiplier;
 
+        float floorOffsetFromBattleBottom =
+            profile != null
+                ? profile.BattleFloorOffsetFromBottom
+                : FallbackBattleFloorOffsetFromBottom;
+
+        float feetOffsetFromFloor =
+            profile != null
+                ? profile.CharacterFeetOffsetFromFloor
+                : FallbackCharacterFeetOffsetFromFloor;
+
+        float baseOffsetFromFloor =
+            profile != null
+                ? profile.BaseCenterOffsetFromFloor
+                : FallbackBaseCenterOffsetFromFloor;
+
+        Vector3 sharedFloorWorld =
+            GetSharedFloorWorldPosition(
+                generatedLayout,
+                floorOffsetFromBattleBottom
+            );
+
         RectTransform playerCharacter =
             FindRectTransform(
                 generatedLayout,
@@ -390,9 +412,10 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
         if (playerCharacter != null)
         {
-            AnchorVisualToFloor(
+            AnchorVisualToSharedFloor(
                 playerCharacter,
-                PlayerCharacterFloorOffset,
+                sharedFloorWorld,
+                feetOffsetFromFloor,
                 playerScale,
                 useBottomPivot: true
             );
@@ -406,9 +429,10 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
         if (playerBase != null)
         {
-            AnchorVisualToFloor(
+            AnchorVisualToSharedFloor(
                 playerBase,
-                PlayerBaseFloorOffset,
+                sharedFloorWorld,
+                baseOffsetFromFloor,
                 playerScale,
                 useBottomPivot: false
             );
@@ -431,9 +455,10 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
             if (spawnAnchor != null)
             {
-                AnchorVisualToFloor(
+                AnchorVisualToSharedFloor(
                     spawnAnchor,
-                    EnemyCharacterFloorOffset,
+                    sharedFloorWorld,
+                    feetOffsetFromFloor,
                     enemyScale,
                     useBottomPivot: true
                 );
@@ -447,23 +472,38 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
             if (enemyBase != null)
             {
-                AnchorVisualToFloor(
+                AnchorVisualToSharedFloor(
                     enemyBase,
-                    EnemyBaseFloorOffset,
+                    sharedFloorWorld,
+                    baseOffsetFromFloor,
                     enemyScale,
                     useBottomPivot: false
                 );
             }
         }
 
+        float playerBackgroundFloorPixels =
+            profile != null
+                ? profile.PlayerBackgroundFloorPixelsFromBottom
+                : FallbackPlayerBackgroundFloorPixels;
+
+        float enemyBackgroundFloorPixels =
+            profile != null
+                ? profile.EnemyBackgroundFloorPixelsFromBottom
+                : FallbackEnemyBackgroundFloorPixels;
+
         EnsureBackgroundFitter(
             generatedLayout,
-            "PlayerSectionBackground"
+            "PlayerSectionBackground",
+            playerBackgroundFloorPixels,
+            sharedFloorWorld
         );
 
         EnsureBackgroundFitter(
             generatedLayout,
-            "EnemySectionBackground"
+            "EnemySectionBackground",
+            enemyBackgroundFloorPixels,
+            sharedFloorWorld
         );
 
         EnsureFrameFitter(
@@ -585,16 +625,54 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             );
     }
 
-    private static void AnchorVisualToFloor(
+    private static Vector3 GetSharedFloorWorldPosition(
+        RectTransform battleRoot,
+        float floorOffsetFromBottom)
+    {
+        float clampedOffset =
+            Mathf.Clamp(
+                floorOffsetFromBottom,
+                0f,
+                Mathf.Max(
+                    0f,
+                    battleRoot.rect.height
+                )
+            );
+
+        float localFloorY =
+            battleRoot.rect.yMin +
+            clampedOffset;
+
+        return battleRoot.TransformPoint(
+            new Vector3(
+                0f,
+                localFloorY,
+                0f
+            )
+        );
+    }
+
+    private static void AnchorVisualToSharedFloor(
         RectTransform visual,
-        float floorOffset,
+        Vector3 sharedFloorWorld,
+        float visualOffsetFromFloor,
         float uniformScale,
         bool useBottomPivot)
     {
-        if (visual == null)
+        if (visual == null ||
+            visual.parent is not RectTransform parent)
         {
             return;
         }
+
+        Vector3 localFloor =
+            parent.InverseTransformPoint(
+                sharedFloorWorld
+            );
+
+        float floorFromParentBottom =
+            localFloor.y -
+            parent.rect.yMin;
 
         visual.anchorMin =
             new Vector2(0.5f, 0f);
@@ -604,11 +682,16 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             useBottomPivot
                 ? new Vector2(0.5f, 0f)
                 : new Vector2(0.5f, 0.5f);
+
         visual.anchoredPosition =
             new Vector2(
                 0f,
-                floorOffset
+                Mathf.Round(
+                    floorFromParentBottom +
+                    visualOffsetFromFloor
+                )
             );
+
         visual.localScale =
             new Vector3(
                 uniformScale,
@@ -619,7 +702,9 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
     private static void EnsureBackgroundFitter(
         Transform root,
-        string objectName)
+        string objectName,
+        float sourceFloorPixelsFromBottom,
+        Vector3 sharedFloorWorld)
     {
         RectTransform rect =
             FindRectTransform(
@@ -630,7 +715,8 @@ public sealed class TopBattlePresentationController : MonoBehaviour
         if (rect == null ||
             !rect.TryGetComponent(
                 out Image image
-            ))
+            ) ||
+            rect.parent is not RectTransform viewport)
         {
             return;
         }
@@ -647,8 +733,21 @@ public sealed class TopBattlePresentationController : MonoBehaviour
                 >();
         }
 
+        Vector3 localFloor =
+            viewport.InverseTransformPoint(
+                sharedFloorWorld
+            );
+
+        float targetFloorFromViewportBottom =
+            localFloor.y -
+            viewport.rect.yMin;
+
         image.raycastTarget = false;
-        fitter.RefreshLayout();
+
+        fitter.ConfigureFloorAlignment(
+            sourceFloorPixelsFromBottom,
+            targetFloorFromViewportBottom
+        );
     }
 
     private static void EnsureFrameFitter(
