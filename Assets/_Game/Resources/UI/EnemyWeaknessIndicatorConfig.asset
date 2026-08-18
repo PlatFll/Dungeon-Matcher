@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1415b58f74d941f5932650fe3a77384c, type: 3}
   m_Name: EnemyWeaknessIndicatorConfig
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWeaknessIndicatorConfig
-  rubySprite: {fileID: 21300000, guid: 972b2597f0674634791ae3e1c778e262, type: 3}
-  amberSprite: {fileID: 21300000, guid: 75f133ce7df3f9f49a72d24a7fbaaf3a, type: 3}
-  topazSprite: {fileID: 21300000, guid: 0f4ef75550fe59c47a942a8626e97318, type: 3}
-  emeraldSprite: {fileID: 21300000, guid: ec8579bea3fc9804b8232713ed37c74b, type: 3}
-  sapphireSprite: {fileID: 21300000, guid: a41ef461856a5984a9bf4d22a029fd9f, type: 3}
-  amethystSprite: {fileID: 21300000, guid: 18fb82c80f65ef241a2b3a0516758214, type: 3}
+  rubySprite: {fileID: 21300000, guid: 65a1d1ef9138c6a4689a84ad0440e12f, type: 3}
+  amberSprite: {fileID: 21300000, guid: 84fe6227a3c55a949bb28e7c1455d0fd, type: 3}
+  topazSprite: {fileID: 21300000, guid: ab99e326d2f1be346a49fc4a59ff9602, type: 3}
+  emeraldSprite: {fileID: 21300000, guid: 4ae805e491bf75d4b9f911172c90b221, type: 3}
+  sapphireSprite: {fileID: 21300000, guid: 65b7f0c33b0f2434fa871b96b0fb273b, type: 3}
+  amethystSprite: {fileID: 21300000, guid: 1838e78f5f5d6704d89f0fc3c7345727, type: 3}
   whiteFlashShader: {fileID: 4800000, guid: 7eefe9b8f4e537a42906f128e73e5caf, type: 3}
-  iconSize: 16
+  iconSize: 24
   gapBelowHealthBar: 2
   materializeDuration: 0.24
   materializeStartScale: 0.35
