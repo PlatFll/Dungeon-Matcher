@@ -13,6 +13,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private const float FallbackAffinityGapAboveCharacter = 8f;
     private const float FallbackAffinityIconSize = 16f;
+    private const float HealthTextMaximumFontSize = 10f;
+    private const float HealthTextMinimumFontSize = 6f;
 
     [Header("Runtime Player")]
     [SerializeField]
@@ -71,12 +73,14 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 TopBattlePresentationProfilePath
             );
 
+        ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
     }
 
     private void OnEnable()
     {
+        ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
         BindPlayer(playerActor);
@@ -357,6 +361,41 @@ public sealed class PlayerPanelUI : MonoBehaviour
         }
     }
 
+    private void ApplyHealthTextPresentation()
+    {
+        if (playerHealthText == null)
+        {
+            return;
+        }
+
+        /*
+         * Match the compact enemy HP label instead of keeping the player's old
+         * 16px text setup. The player bar is only 20 reference pixels tall at
+         * runtime, so the old larger text and its +2px vertical offset visibly
+         * escaped the modular frame.
+         */
+        playerHealthText.enableAutoSizing = true;
+        playerHealthText.fontSize = HealthTextMaximumFontSize;
+        playerHealthText.fontSizeMin = HealthTextMinimumFontSize;
+        playerHealthText.fontSizeMax = HealthTextMaximumFontSize;
+        playerHealthText.alignment =
+            TextAlignmentOptions.Center;
+        playerHealthText.raycastTarget = false;
+
+        if (playerHealthText.transform is not RectTransform textRect)
+        {
+            return;
+        }
+
+        textRect.anchorMin = Vector2.zero;
+        textRect.anchorMax = Vector2.one;
+        textRect.pivot =
+            new Vector2(0.5f, 0.5f);
+        textRect.anchoredPosition = Vector2.zero;
+        textRect.sizeDelta = Vector2.zero;
+        textRect.localScale = Vector3.one;
+    }
+
     private void CreateAffinityGemIndicator()
     {
         if (affinityGemRect != null ||
@@ -565,5 +604,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
             playerHealthFill.fillOrigin =
                 (int)Image.OriginHorizontal.Left;
         }
+
+        ApplyHealthTextPresentation();
     }
 }
