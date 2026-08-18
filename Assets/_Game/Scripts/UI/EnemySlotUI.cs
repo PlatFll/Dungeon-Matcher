@@ -6,12 +6,19 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class EnemySlotUI : MonoBehaviour
 {
+    private const string WeaknessIndicatorConfigPath =
+        "UI/EnemyWeaknessIndicatorConfig";
+
     [Header("Spawn Anchor")]
     [SerializeField]
     private RectTransform enemySpawnAnchor;
 
     [Header("Slot UI")]
     [SerializeField]
+    [Tooltip(
+        "Legacy colored weakness circle. It is kept only so existing scenes " +
+        "migrate safely and is disabled at runtime."
+    )]
     private Image enemyBase;
 
     [SerializeField]
@@ -23,8 +30,12 @@ public sealed class EnemySlotUI : MonoBehaviour
     [SerializeField]
     private TMP_Text enemyHealthText;
 
-    [Header("Shared Visual Data")]
+    [Header("Legacy Shared Visual Data")]
     [SerializeField]
+    [Tooltip(
+        "Legacy palette used by the old colored weakness circles. " +
+        "The new weakness indicator uses 16x16 gem sprites instead."
+    )]
     private GemColorPalette gemColorPalette;
 
     [Header("Defeat Prototype")]
@@ -49,8 +60,12 @@ public sealed class EnemySlotUI : MonoBehaviour
         CurrentEnemy.IsInitialized &&
         !CurrentEnemy.IsDefeated;
 
+    private EnemyWeaknessIndicatorUI weaknessIndicator;
+
     private void Awake()
     {
+        DisableLegacyWeaknessCircle();
+        CreateWeaknessIndicator();
         ShowEmptyState();
     }
 
@@ -114,8 +129,9 @@ public sealed class EnemySlotUI : MonoBehaviour
             enemy.MaxHealth
         );
 
-        UpdateGemColor(
-            enemy.AssignedGemType
+        ShowWeaknessIndicator(
+            enemy.AssignedGemType,
+            animate: true
         );
 
         EnemyBound?.Invoke(this, enemy);
@@ -249,7 +265,10 @@ public sealed class EnemySlotUI : MonoBehaviour
             return;
         }
 
-        UpdateGemColor(gemType);
+        ShowWeaknessIndicator(
+            gemType,
+            animate: true
+        );
     }
 
     private void HandleEnemyDefeated(
@@ -260,11 +279,21 @@ public sealed class EnemySlotUI : MonoBehaviour
             return;
         }
 
+        /*
+         * Start the weakness gem's white-pop burst before the health bar is
+         * hidden. The indicator is parented to the slot rather than the bar,
+         * so its short death effect can finish independently.
+         */
+        if (weaknessIndicator != null)
+        {
+            weaknessIndicator.PlayDefeat();
+        }
+
         UnsubscribeFromEnemy(enemy);
 
         CurrentEnemy = null;
 
-        SetBaseToEmptyColor();
+        DisableLegacyWeaknessCircle();
 
         if (enemyHealthBar != null)
         {
@@ -284,6 +313,8 @@ public sealed class EnemySlotUI : MonoBehaviour
 
     private void ShowOccupiedState()
     {
+        DisableLegacyWeaknessCircle();
+
         if (enemyHealthBar != null)
         {
             enemyHealthBar.SetActive(true);
@@ -292,7 +323,7 @@ public sealed class EnemySlotUI : MonoBehaviour
 
     private void ShowEmptyState()
     {
-        SetBaseToEmptyColor();
+        DisableLegacyWeaknessCircle();
 
         if (enemyHealthBar != null)
         {
@@ -307,6 +338,17 @@ public sealed class EnemySlotUI : MonoBehaviour
         if (enemyHealthText != null)
         {
             enemyHealthText.text = string.Empty;
+        }
+
+        /*
+         * A defeated indicator is allowed to finish its tiny burst even if
+         * the slot is cleared as part of wave cleanup. A future BindEnemy call
+         * will immediately replace it with the new enemy's weakness sprite.
+         */
+        if (weaknessIndicator != null &&
+            !weaknessIndicator.IsDefeating)
+        {
+            weaknessIndicator.HideImmediate();
         }
     }
 
@@ -338,31 +380,104 @@ public sealed class EnemySlotUI : MonoBehaviour
         }
     }
 
-    private void UpdateGemColor(
-        GemType gemType)
+    private void CreateWeaknessIndicator()
     {
-        if (enemyBase == null)
+        if (weaknessIndicator != null)
         {
             return;
         }
 
-        enemyBase.color =
-            gemColorPalette != null
-                ? gemColorPalette.GetColor(gemType)
-                : Color.white;
+        RectTransform slotRect =
+            transform as RectTransform;
+
+        RectTransform healthBarRect =
+            enemyHealthBar != null
+                ? enemyHealthBar.transform as RectTransform
+                : null;
+
+        if (slotRect == null ||
+            healthBarRect == null)
+        {
+            Debug.LogError(
+                $"{name} needs RectTransform-based slot and health bar " +
+                "objects to place its weakness gem indicator.",
+                this
+            );
+
+            return;
+        }
+
+        EnemyWeaknessIndicatorConfig config =
+            Resources.Load<EnemyWeaknessIndicatorConfig>(
+                WeaknessIndicatorConfigPath
+            );
+
+        if (config == null)
+        {
+            Debug.LogError(
+                $"Could not load {WeaknessIndicatorConfigPath} from Resources.",
+                this
+            );
+
+            return;
+        }
+
+        GameObject indicatorObject =
+            new GameObject(
+                "EnemyWeaknessIndicator",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(Image),
+                typeof(CanvasGroup)
+            );
+
+        indicatorObject.layer =
+            gameObject.layer;
+
+        indicatorObject.transform.SetParent(
+            transform,
+            false
+        );
+
+        indicatorObject.transform.SetAsLastSibling();
+
+        weaknessIndicator =
+            indicatorObject.AddComponent<
+                EnemyWeaknessIndicatorUI
+            >();
+
+        weaknessIndicator.Initialize(
+            slotRect,
+            healthBarRect,
+            config
+        );
     }
 
-    private void SetBaseToEmptyColor()
+    private void ShowWeaknessIndicator(
+        GemType gemType,
+        bool animate)
+    {
+        DisableLegacyWeaknessCircle();
+
+        if (weaknessIndicator == null)
+        {
+            return;
+        }
+
+        weaknessIndicator.Show(
+            gemType,
+            animate
+        );
+    }
+
+    private void DisableLegacyWeaknessCircle()
     {
         if (enemyBase == null)
         {
             return;
         }
 
-        enemyBase.color =
-            gemColorPalette != null
-                ? gemColorPalette.EmptyColor
-                : Color.gray;
+        enemyBase.gameObject.SetActive(false);
     }
 
     private void OnValidate()

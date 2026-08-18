@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1415b58f74d941f5932650fe3a77384c, type: 3}
+  m_Name: EnemyWeaknessIndicatorConfig
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyWeaknessIndicatorConfig
+  rubySprite: {fileID: 21300000, guid: 972b2597f0674634791ae3e1c778e262, type: 3}
+  amberSprite: {fileID: 21300000, guid: 75f133ce7df3f9f49a72d24a7fbaaf3a, type: 3}
+  topazSprite: {fileID: 21300000, guid: 0f4ef75550fe59c47a942a8626e97318, type: 3}
+  emeraldSprite: {fileID: 21300000, guid: ec8579bea3fc9804b8232713ed37c74b, type: 3}
+  sapphireSprite: {fileID: 21300000, guid: a41ef461856a5984a9bf4d22a029fd9f, type: 3}
+  amethystSprite: {fileID: 21300000, guid: 18fb82c80f65ef241a2b3a0516758214, type: 3}
+  whiteFlashShader: {fileID: 4800000, guid: 7eefe9b8f4e537a42906f128e73e5caf, type: 3}
+  iconSize: 16
+  gapBelowHealthBar: 2
+  materializeDuration: 0.24
+  materializeStartScale: 0.35
+  materializeOvershootScale: 1.28
+  deathWhiteHoldDuration: 0.055
+  deathPopScale: 1.35
+  deathParticleCount: 9
+  particleMinimumLifetime: 0.2
+  particleMaximumLifetime: 0.3
+  particleMinimumSpeed: 48
+  particleMaximumSpeed: 76
+  particleMinimumSize: 2
+  particleMaximumSize: 3.5
+  particleEndScale: 0.2
+  particleUpwardBias: 0.16
