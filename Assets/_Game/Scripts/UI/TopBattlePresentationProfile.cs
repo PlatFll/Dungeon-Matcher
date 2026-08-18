@@ -76,10 +76,26 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
 
     [SerializeField]
     [Tooltip(
-        "Vertical offset of the colored character/enemy base center relative to " +
-        "the shared floor. Negative values place the ellipse slightly below feet."
+        "Vertical offset of the legacy colored character/enemy base center relative " +
+        "to the shared floor. Kept for migration while those bases are retired."
     )]
     private float baseCenterOffsetFromFloor = -3f;
+
+    [Header("Battle HUD Positioning")]
+    [SerializeField]
+    [Tooltip(
+        "Vertical position of every enemy health bar's bottom edge, measured in " +
+        "reference UI pixels upward from the bottom of its enemy slot. Change " +
+        "this to move all enemy health bars up or down without editing the scene."
+    )]
+    private float enemyHealthBarBottomOffset = 14f;
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Clear-space gap between the top of the player's character rect and the " +
+        "bottom of the 16x16 affinity gem."
+    )]
+    private float playerAffinityGapAboveCharacter = 8f;
 
     [Header("Responsive Character Presentation")]
     [SerializeField, Range(0.5f, 1.5f)]
@@ -119,6 +135,8 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
         enemyBackgroundFloorPixelsFromBottom;
     public float CharacterFeetOffsetFromFloor => characterFeetOffsetFromFloor;
     public float BaseCenterOffsetFromFloor => baseCenterOffsetFromFloor;
+    public float EnemyHealthBarBottomOffset => enemyHealthBarBottomOffset;
+    public float PlayerAffinityGapAboveCharacter => playerAffinityGapAboveCharacter;
     public float PlayerVisualScale => playerVisualScale;
     public float EnemyVisualScale => enemyVisualScale;
     public float CharacterScaleResponse => characterScaleResponse;
@@ -164,6 +182,18 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
             baseCenterOffsetFromFloor,
             -64f,
             64f
+        );
+
+        enemyHealthBarBottomOffset = Mathf.Clamp(
+            enemyHealthBarBottomOffset,
+            -128f,
+            256f
+        );
+
+        playerAffinityGapAboveCharacter = Mathf.Clamp(
+            playerAffinityGapAboveCharacter,
+            0f,
+            128f
         );
 
         playerVisualScale = Mathf.Clamp(playerVisualScale, 0.5f, 1.5f);
