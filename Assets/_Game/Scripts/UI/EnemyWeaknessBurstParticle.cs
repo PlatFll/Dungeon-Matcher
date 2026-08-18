@@ -29,7 +29,7 @@ public sealed class EnemyWeaknessBurstParticle :
     }
 
     public void Play(
-        Vector2 anchoredPosition,
+        Vector2 localPosition,
         Vector2 initialVelocity,
         float duration,
         float size,
@@ -56,8 +56,12 @@ public sealed class EnemyWeaknessBurstParticle :
         particleRect.pivot =
             new Vector2(0.5f, 0.5f);
 
-        particleRect.anchoredPosition =
-            anchoredPosition;
+        particleRect.localPosition =
+            new Vector3(
+                localPosition.x,
+                localPosition.y,
+                0f
+            );
 
         particleRect.sizeDelta =
             Vector2.one *
@@ -88,9 +92,17 @@ public sealed class EnemyWeaknessBurstParticle :
                 lifetime
             );
 
-        particleRect.anchoredPosition +=
-            velocity *
-            deltaTime;
+        Vector3 localPosition =
+            particleRect.localPosition;
+
+        localPosition.x +=
+            velocity.x * deltaTime;
+
+        localPosition.y +=
+            velocity.y * deltaTime;
+
+        particleRect.localPosition =
+            localPosition;
 
         /*
          * A small amount of damping makes the square fragments feel like
