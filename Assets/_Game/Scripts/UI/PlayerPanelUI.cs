@@ -5,6 +5,15 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class PlayerPanelUI : MonoBehaviour
 {
+    private const string GemIndicatorConfigPath =
+        "UI/EnemyWeaknessIndicatorConfig";
+
+    private const string TopBattlePresentationProfilePath =
+        "UI/TopBattlePresentationProfile";
+
+    private const float FallbackAffinityGapAboveCharacter = 8f;
+    private const float FallbackAffinityIconSize = 16f;
+
     [Header("Runtime Player")]
     [SerializeField]
     private PlayerActor playerActor;
@@ -17,10 +26,18 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private Image playerCharacter;
 
     [SerializeField]
+    [Tooltip(
+        "Legacy colored player affinity circle. It is retained only so old " +
+        "scene references migrate safely and is disabled at runtime."
+    )]
     private Image playerBase;
 
-    [Header("Shared Visual Data")]
+    [Header("Legacy Shared Visual Data")]
     [SerializeField]
+    [Tooltip(
+        "Legacy palette used by the retired colored player base. The player " +
+        "affinity is now shown with the matching 16x16 gem sprite."
+    )]
     private GemColorPalette gemColorPalette;
 
     [Header("Health Bar")]
@@ -34,18 +51,46 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private TMP_Text playerHealthText;
 
     private PlayerActor boundPlayer;
+    private EnemyWeaknessIndicatorConfig gemIndicatorConfig;
+    private TopBattlePresentationProfile presentationProfile;
+    private RectTransform affinityGemRect;
+    private Image affinityGemImage;
 
     public PlayerActor BoundPlayer =>
         boundPlayer;
 
+    private void Awake()
+    {
+        gemIndicatorConfig =
+            Resources.Load<EnemyWeaknessIndicatorConfig>(
+                GemIndicatorConfigPath
+            );
+
+        presentationProfile =
+            Resources.Load<TopBattlePresentationProfile>(
+                TopBattlePresentationProfilePath
+            );
+
+        DisableLegacyPlayerBase();
+        CreateAffinityGemIndicator();
+    }
+
     private void OnEnable()
     {
+        DisableLegacyPlayerBase();
+        CreateAffinityGemIndicator();
         BindPlayer(playerActor);
     }
 
     private void Start()
     {
         RefreshAll();
+    }
+
+    private void LateUpdate()
+    {
+        DisableLegacyPlayerBase();
+        FollowPlayerCharacter();
     }
 
     private void OnDisable()
@@ -201,6 +246,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private void RefreshAll()
     {
+        DisableLegacyPlayerBase();
+
         if (boundPlayer == null ||
             !boundPlayer.IsInitialized)
         {
@@ -239,17 +286,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
             preserveAspect: true
         );
 
-        if (playerBase != null)
-        {
-            playerBase.gameObject.SetActive(true);
+        DisableLegacyPlayerBase();
 
-            playerBase.color =
-                gemColorPalette != null
-                    ? gemColorPalette.GetColor(
-                        definition.AffinityGemType
-                    )
-                    : Color.white;
-        }
+        ShowAffinityGem(
+            definition.AffinityGemType
+        );
 
         if (playerHealthBar != null)
         {
@@ -292,12 +333,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private void ShowUninitializedState()
     {
-        if (playerBase != null)
+        DisableLegacyPlayerBase();
+
+        if (affinityGemImage != null)
         {
-            playerBase.color =
-                gemColorPalette != null
-                    ? gemColorPalette.EmptyColor
-                    : Color.gray;
+            affinityGemImage.enabled = false;
         }
 
         if (playerHealthBar != null)
@@ -315,6 +355,186 @@ public sealed class PlayerPanelUI : MonoBehaviour
             playerHealthText.text =
                 string.Empty;
         }
+    }
+
+    private void CreateAffinityGemIndicator()
+    {
+        if (affinityGemRect != null ||
+            affinityGemImage != null)
+        {
+            return;
+        }
+
+        RectTransform panelRect =
+            transform as RectTransform;
+
+        if (panelRect == null)
+        {
+            return;
+        }
+
+        if (gemIndicatorConfig == null)
+        {
+            gemIndicatorConfig =
+                Resources.Load<EnemyWeaknessIndicatorConfig>(
+                    GemIndicatorConfigPath
+                );
+        }
+
+        if (presentationProfile == null)
+        {
+            presentationProfile =
+                Resources.Load<TopBattlePresentationProfile>(
+                    TopBattlePresentationProfilePath
+                );
+        }
+
+        if (gemIndicatorConfig == null)
+        {
+            Debug.LogError(
+                $"Could not load {GemIndicatorConfigPath}; player affinity gem " +
+                "cannot be displayed.",
+                this
+            );
+
+            return;
+        }
+
+        GameObject indicatorObject =
+            new GameObject(
+                "PlayerAffinityGem",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(Image)
+            );
+
+        indicatorObject.layer =
+            gameObject.layer;
+
+        indicatorObject.transform.SetParent(
+            transform,
+            false
+        );
+
+        indicatorObject.transform.SetAsLastSibling();
+
+        affinityGemRect =
+            indicatorObject.transform as RectTransform;
+
+        affinityGemImage =
+            indicatorObject.GetComponent<Image>();
+
+        affinityGemRect.anchorMin =
+            new Vector2(0.5f, 0.5f);
+
+        affinityGemRect.anchorMax =
+            new Vector2(0.5f, 0.5f);
+
+        affinityGemRect.pivot =
+            new Vector2(0.5f, 0.5f);
+
+        float iconSize =
+            gemIndicatorConfig != null
+                ? gemIndicatorConfig.IconSize
+                : FallbackAffinityIconSize;
+
+        affinityGemRect.sizeDelta =
+            Vector2.one * iconSize;
+
+        affinityGemImage.raycastTarget = false;
+        affinityGemImage.preserveAspect = true;
+        affinityGemImage.enabled = false;
+    }
+
+    private void ShowAffinityGem(
+        GemType affinityGemType)
+    {
+        CreateAffinityGemIndicator();
+
+        if (affinityGemImage == null ||
+            gemIndicatorConfig == null)
+        {
+            return;
+        }
+
+        Sprite affinitySprite =
+            gemIndicatorConfig.GetSprite(
+                affinityGemType
+            );
+
+        affinityGemImage.sprite =
+            affinitySprite;
+
+        affinityGemImage.enabled =
+            affinitySprite != null;
+
+        FollowPlayerCharacter();
+    }
+
+    private void FollowPlayerCharacter()
+    {
+        if (affinityGemRect == null ||
+            affinityGemImage == null ||
+            !affinityGemImage.enabled ||
+            playerCharacter == null)
+        {
+            return;
+        }
+
+        RectTransform characterRect =
+            playerCharacter.rectTransform;
+
+        RectTransform panelRect =
+            transform as RectTransform;
+
+        if (characterRect == null ||
+            panelRect == null)
+        {
+            return;
+        }
+
+        Vector3 characterTopCenterWorld =
+            characterRect.TransformPoint(
+                new Vector3(
+                    characterRect.rect.center.x,
+                    characterRect.rect.yMax,
+                    0f
+                )
+            );
+
+        Vector3 panelLocalPosition =
+            panelRect.InverseTransformPoint(
+                characterTopCenterWorld
+            );
+
+        float iconSize =
+            gemIndicatorConfig != null
+                ? gemIndicatorConfig.IconSize
+                : FallbackAffinityIconSize;
+
+        float gap =
+            presentationProfile != null
+                ? presentationProfile.PlayerAffinityGapAboveCharacter
+                : FallbackAffinityGapAboveCharacter;
+
+        affinityGemRect.localPosition =
+            new Vector3(
+                panelLocalPosition.x,
+                panelLocalPosition.y +
+                gap +
+                iconSize * 0.5f,
+                0f
+            );
+    }
+
+    private void DisableLegacyPlayerBase()
+    {
+        if (playerBase == null)
+        {
+            return;
+        }
+
+        playerBase.gameObject.SetActive(false);
     }
 
     private static void SetImageSprite(
