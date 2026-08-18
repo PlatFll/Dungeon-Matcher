@@ -9,6 +9,11 @@ public sealed class EnemySlotUI : MonoBehaviour
     private const string WeaknessIndicatorConfigPath =
         "UI/EnemyWeaknessIndicatorConfig";
 
+    private const string TopBattlePresentationProfilePath =
+        "UI/TopBattlePresentationProfile";
+
+    private const float FallbackEnemyHealthBarBottomOffset = 14f;
+
     [Header("Spawn Anchor")]
     [SerializeField]
     private RectTransform enemySpawnAnchor;
@@ -61,12 +66,29 @@ public sealed class EnemySlotUI : MonoBehaviour
         !CurrentEnemy.IsDefeated;
 
     private EnemyWeaknessIndicatorUI weaknessIndicator;
+    private TopBattlePresentationProfile presentationProfile;
+    private RectTransform enemyHealthBarRect;
 
     private void Awake()
     {
+        presentationProfile =
+            Resources.Load<TopBattlePresentationProfile>(
+                TopBattlePresentationProfilePath
+            );
+
+        enemyHealthBarRect =
+            enemyHealthBar != null
+                ? enemyHealthBar.transform as RectTransform
+                : null;
+
         DisableLegacyWeaknessCircle();
         CreateWeaknessIndicator();
         ShowEmptyState();
+    }
+
+    private void LateUpdate()
+    {
+        ApplyHealthBarPosition();
     }
 
     private void OnDestroy()
@@ -378,6 +400,33 @@ public sealed class EnemySlotUI : MonoBehaviour
             enemyHealthText.text =
                 $"{currentHealth} / {maximumHealth}";
         }
+    }
+
+    private void ApplyHealthBarPosition()
+    {
+        if (enemyHealthBarRect == null)
+        {
+            return;
+        }
+
+        float bottomOffset =
+            presentationProfile != null
+                ? presentationProfile.EnemyHealthBarBottomOffset
+                : FallbackEnemyHealthBarBottomOffset;
+
+        Vector2 position =
+            enemyHealthBarRect.anchoredPosition;
+
+        if (Mathf.Approximately(
+                position.y,
+                bottomOffset))
+        {
+            return;
+        }
+
+        position.y = bottomOffset;
+        enemyHealthBarRect.anchoredPosition =
+            position;
     }
 
     private void CreateWeaknessIndicator()
