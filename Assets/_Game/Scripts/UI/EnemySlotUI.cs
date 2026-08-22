@@ -71,19 +71,42 @@ public sealed class EnemySlotUI : MonoBehaviour
 
     private void Awake()
     {
-        presentationProfile =
-            Resources.Load<TopBattlePresentationProfile>(
-                TopBattlePresentationProfilePath
-            );
+        /*
+         * EnemySlotUI is part of the authoritative wave-spawn path. Optional
+         * UI setup must never be able to prevent WaveController from using the
+         * slot, especially on device builds where a shader/material/resource
+         * can behave differently from the Editor.
+         */
+        RunPresentationSafely(
+            "initial slot presentation",
+            () =>
+            {
+                presentationProfile =
+                    Resources.Load<TopBattlePresentationProfile>(
+                        TopBattlePresentationProfilePath
+                    );
 
-        enemyHealthBarRect =
-            enemyHealthBar != null
-                ? enemyHealthBar.transform as RectTransform
-                : null;
+                enemyHealthBarRect =
+                    enemyHealthBar != null
+                        ? enemyHealthBar.transform as RectTransform
+                        : null;
 
-        DisableLegacyWeaknessCircle();
-        CreateWeaknessIndicator();
-        ShowEmptyState();
+                DisableLegacyWeaknessCircle();
+                CreateWeaknessIndicator();
+                ShowEmptyState();
+            }
+        );
+
+        /*
+         * This reference is harmless to resolve even if presentation setup
+         * above failed before reaching it. LateUpdate simply no-ops if null.
+         */
+        if (enemyHealthBarRect == null &&
+            enemyHealthBar != null)
+        {
+            enemyHealthBarRect =
+                enemyHealthBar.transform as RectTransform;
+        }
     }
 
     private void LateUpdate()
@@ -137,26 +160,56 @@ public sealed class EnemySlotUI : MonoBehaviour
             );
         }
 
+        /*
+         * Everything above this line is validation/cleanup. Everything below
+         * establishes gameplay ownership before optional presentation runs.
+         * A health-bar or weakness-indicator exception therefore cannot turn a
+         * successfully-created EnemyActor into a failed wave spawn.
+         */
         CurrentEnemy = enemy;
 
-        PlaceEnemyAtAnchor(enemy);
-        SubscribeToEnemy(enemy);
+        try
+        {
+            PlaceEnemyAtAnchor(enemy);
+            SubscribeToEnemy(enemy);
+            enemy.gameObject.SetActive(true);
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                $"{name} failed to establish core binding for {enemy.name}.",
+                this
+            );
 
-        enemy.gameObject.SetActive(true);
+            Debug.LogException(
+                exception,
+                this
+            );
 
-        ShowOccupiedState();
+            UnsubscribeFromEnemy(enemy);
+            CurrentEnemy = null;
+            return false;
+        }
 
-        UpdateHealthDisplay(
-            enemy.CurrentHealth,
-            enemy.MaxHealth
+        RunPresentationSafely(
+            $"occupied presentation for {enemy.name}",
+            () =>
+            {
+                ShowOccupiedState();
+
+                UpdateHealthDisplay(
+                    enemy.CurrentHealth,
+                    enemy.MaxHealth
+                );
+
+                ShowWeaknessIndicator(
+                    enemy.AssignedGemType,
+                    animate: true
+                );
+            }
         );
 
-        ShowWeaknessIndicator(
-            enemy.AssignedGemType,
-            animate: true
-        );
-
-        EnemyBound?.Invoke(this, enemy);
+        InvokeEnemyBoundSafely(enemy);
 
         return true;
     }
@@ -173,6 +226,11 @@ public sealed class EnemySlotUI : MonoBehaviour
             UnsubscribeFromEnemy(previousEnemy);
         }
 
+        /*
+         * Clear gameplay ownership before touching any UI. SpawnCurrentWave
+         * calls this during its first setup step, so presentation must not be
+         * able to abort the wave coroutine here.
+         */
         CurrentEnemy = null;
 
         if (previousEnemy != null)
@@ -187,11 +245,14 @@ public sealed class EnemySlotUI : MonoBehaviour
             }
         }
 
-        ShowEmptyState();
+        RunPresentationSafely(
+            "empty slot presentation",
+            ShowEmptyState
+        );
 
         if (notifyListeners)
         {
-            SlotCleared?.Invoke(this);
+            InvokeSlotClearedSafely();
         }
     }
 
@@ -272,9 +333,15 @@ public sealed class EnemySlotUI : MonoBehaviour
             return;
         }
 
-        UpdateHealthDisplay(
-            currentHealth,
-            maximumHealth
+        RunPresentationSafely(
+            $"health display update for {enemy.name}",
+            () =>
+            {
+                UpdateHealthDisplay(
+                    currentHealth,
+                    maximumHealth
+                );
+            }
         );
     }
 
@@ -287,9 +354,15 @@ public sealed class EnemySlotUI : MonoBehaviour
             return;
         }
 
-        ShowWeaknessIndicator(
-            gemType,
-            animate: true
+        RunPresentationSafely(
+            $"weakness display update for {enemy.name}",
+            () =>
+            {
+                ShowWeaknessIndicator(
+                    gemType,
+                    animate: true
+                );
+            }
         );
     }
 
@@ -302,35 +375,42 @@ public sealed class EnemySlotUI : MonoBehaviour
         }
 
         /*
-         * Start the weakness gem's white-pop burst before the health bar is
-         * hidden. The indicator is parented to the slot rather than the bar,
-         * so its short death effect can finish independently.
+         * Gameplay lifecycle comes first. In particular, WaveController listens
+         * to EnemyDefeated and must always receive that notification even if a
+         * weakness-gem death pop or health-bar operation fails on a device.
          */
-        if (weaknessIndicator != null)
-        {
-            weaknessIndicator.PlayDefeat();
-        }
-
         UnsubscribeFromEnemy(enemy);
-
         CurrentEnemy = null;
 
-        DisableLegacyWeaknessCircle();
+        RunPresentationSafely(
+            $"defeat presentation for {enemy.name}",
+            () =>
+            {
+                /*
+                 * Start the weakness gem's white-pop burst before the health
+                 * bar is hidden. The indicator is parented to the slot rather
+                 * than the bar so its short death effect can finish separately.
+                 */
+                if (weaknessIndicator != null)
+                {
+                    weaknessIndicator.PlayDefeat();
+                }
 
-        if (enemyHealthBar != null)
-        {
-            enemyHealthBar.SetActive(false);
-        }
+                DisableLegacyWeaknessCircle();
 
-        if (hideEnemyImmediatelyOnDefeat)
-        {
-            enemy.gameObject.SetActive(false);
-        }
+                if (enemyHealthBar != null)
+                {
+                    enemyHealthBar.SetActive(false);
+                }
 
-        EnemyDefeated?.Invoke(
-            this,
-            enemy
+                if (hideEnemyImmediatelyOnDefeat)
+                {
+                    enemy.gameObject.SetActive(false);
+                }
+            }
         );
+
+        InvokeEnemyDefeatedSafely(enemy);
     }
 
     private void ShowOccupiedState()
@@ -527,6 +607,125 @@ public sealed class EnemySlotUI : MonoBehaviour
         }
 
         enemyBase.gameObject.SetActive(false);
+    }
+
+    private void RunPresentationSafely(
+        string operation,
+        Action presentationAction)
+    {
+        if (presentationAction == null)
+        {
+            return;
+        }
+
+        try
+        {
+            presentationAction();
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                $"{name} failed during {operation}. " +
+                "Gameplay will continue without that presentation step.",
+                this
+            );
+
+            Debug.LogException(
+                exception,
+                this
+            );
+        }
+    }
+
+    private void InvokeEnemyBoundSafely(
+        EnemyActor enemy)
+    {
+        Action<EnemySlotUI, EnemyActor> handlers =
+            EnemyBound;
+
+        if (handlers == null)
+        {
+            return;
+        }
+
+        foreach (Delegate callback
+                 in handlers.GetInvocationList())
+        {
+            try
+            {
+                ((Action<EnemySlotUI, EnemyActor>)callback)(
+                    this,
+                    enemy
+                );
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(
+                    exception,
+                    this
+                );
+            }
+        }
+    }
+
+    private void InvokeEnemyDefeatedSafely(
+        EnemyActor enemy)
+    {
+        Action<EnemySlotUI, EnemyActor> handlers =
+            EnemyDefeated;
+
+        if (handlers == null)
+        {
+            return;
+        }
+
+        foreach (Delegate callback
+                 in handlers.GetInvocationList())
+        {
+            try
+            {
+                ((Action<EnemySlotUI, EnemyActor>)callback)(
+                    this,
+                    enemy
+                );
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(
+                    exception,
+                    this
+                );
+            }
+        }
+    }
+
+    private void InvokeSlotClearedSafely()
+    {
+        Action<EnemySlotUI> handlers =
+            SlotCleared;
+
+        if (handlers == null)
+        {
+            return;
+        }
+
+        foreach (Delegate callback
+                 in handlers.GetInvocationList())
+        {
+            try
+            {
+                ((Action<EnemySlotUI>)callback)(
+                    this
+                );
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(
+                    exception,
+                    this
+                );
+            }
+        }
     }
 
     private void OnValidate()
