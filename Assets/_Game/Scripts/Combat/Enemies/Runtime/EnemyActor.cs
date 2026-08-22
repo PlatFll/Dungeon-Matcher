@@ -169,35 +169,14 @@ public sealed class EnemyActor : MonoBehaviour
             return;
         }
 
+        /*
+         * Gameplay state is authoritative. Establish it before touching any
+         * optional animation or visual presenter so a presentation failure on
+         * a device can never prevent the enemy from existing in the wave.
+         */
         definition = enemyDefinition;
         RuntimeStats = runtimeStats;
         assignedGemType = gemType;
-
-        /*
-         * Action animation playback is generic for every enemy. Install the
-         * presenter here so the shared enemy shell does not need another
-         * manually-maintained component just to support attack/ability clips.
-         */
-        EnemyActionAnimationPresenter.EnsureInstalled(
-            gameObject
-        );
-
-        /*
-         * Finalize the character presentation after the definition is known.
-         * This lets the shared enemy shell use a different Animator Controller
-         * or Animator Override Controller for every enemy without duplicating
-         * the health/timer/VFX prefab hierarchy.
-         */
-        if (!EnemyVisualPresenter.TryApply(
-                gameObject,
-                definition))
-        {
-            Debug.LogWarning(
-                $"Could not fully apply the visual profile for " +
-                $"{definition.DisplayName}.",
-                this
-            );
-        }
 
         currentHealth =
             RuntimeStats.MaxHealth;
@@ -211,6 +190,43 @@ public sealed class EnemyActor : MonoBehaviour
 
         gameObject.name =
             $"{definition.DisplayName}_Level_{RuntimeStats.Level}";
+
+        try
+        {
+            /*
+             * Action animation playback is generic for every enemy. Install
+             * the presenter after gameplay initialization so it remains
+             * presentation-only.
+             */
+            EnemyActionAnimationPresenter.EnsureInstalled(
+                gameObject
+            );
+
+            if (!EnemyVisualPresenter.TryApply(
+                    gameObject,
+                    definition))
+            {
+                Debug.LogWarning(
+                    $"Could not fully apply the visual profile for " +
+                    $"{definition.DisplayName}.",
+                    this
+                );
+            }
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                $"Enemy presentation setup failed for " +
+                $"{definition.DisplayName}. Gameplay initialization " +
+                "will continue.",
+                this
+            );
+
+            Debug.LogException(
+                exception,
+                this
+            );
+        }
 
         Initialized?.Invoke(this);
 

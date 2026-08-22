@@ -54,13 +54,14 @@ public partial class BoardController
             1f / 110f;
 
     /*
-     * This guard covers the final color-crystal clear tail, but remains short
-     * enough that ordinary refill cascades recover normal match timings.
-     * Nested crystal sweeps are rechecked below and extend the guard safely.
+     * Mobile clears can take several rendered frames because ClearMatches
+     * intentionally yields once per target. Keep the synchronized zero-stagger
+     * timing alive long enough for that gameplay tail instead of restoring the
+     * old serialized 0.10 second stagger halfway through the activation.
      */
     private const float
         SynchronizedCrystalRestoreSafetyDelay =
-            0.20f;
+            0.65f;
 
     private bool
         synchronizedCrystalTimingsActive;
