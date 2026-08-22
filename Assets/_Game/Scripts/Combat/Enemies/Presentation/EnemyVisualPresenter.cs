@@ -25,10 +25,6 @@ public static class EnemyVisualPresenter
             return false;
         }
 
-        NormalizeVisualRoot(
-            enemyImage.rectTransform
-        );
-
         enemyImage.rectTransform.sizeDelta =
             definition.VisualSize;
 
@@ -130,10 +126,6 @@ public static class EnemyVisualPresenter
             return false;
         }
 
-        NormalizeVisualRoot(
-            enemyImage.rectTransform
-        );
-
         enemyImage.sprite =
             fallbackSprite;
 
@@ -151,30 +143,6 @@ public static class EnemyVisualPresenter
         }
 
         return true;
-    }
-
-    private static void NormalizeVisualRoot(
-        RectTransform visualRoot)
-    {
-        if (visualRoot == null)
-        {
-            return;
-        }
-
-        /*
-         * VisualRoot is presentation-only. Position belongs to the enemy actor
-         * and its slot, while temporary movement belongs to VFX/feedback.
-         * Keeping this root at an exact local origin removes the shared prefab's
-         * old (0.5, 0.5) half-pixel offset before a sprite is ever presented.
-         */
-        visualRoot.anchoredPosition =
-            Vector2.zero;
-
-        visualRoot.localRotation =
-            Quaternion.identity;
-
-        visualRoot.localScale =
-            Vector3.one;
     }
 
     private static bool TryResolveVisualComponents(
