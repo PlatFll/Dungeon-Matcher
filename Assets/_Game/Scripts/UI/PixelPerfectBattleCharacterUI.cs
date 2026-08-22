@@ -618,10 +618,9 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             correctedScale;
 
         /*
-         * A changed root scale changes the logical distance represented by one
-         * physical screen pixel. Re-snap immediately against the corrected
-         * hierarchy so a resolution transition cannot leave one bad frame of
-         * half/sub-pixel placement.
+         * A changed root scale changes the final screen-space presentation.
+         * Re-snap immediately so a resolution transition cannot leave one bad
+         * frame before this component's next LateUpdate.
          */
         SnapRectToPhysicalPixelGrid(
             scaleRoot
@@ -672,9 +671,9 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
          * Several static enemies are imported from a 64x64 source image but
          * their Sprite rect is tightly trimmed around the opaque pixels. Using
          * the next power-of-two art extent reconstructs the intended 64x64 art
-         * cell for scale calculations, so Farmer, Villager, Knight, Miner, etc.
-         * all participate in the same pixel policy instead of each rounding from
-         * a different cropped width/height.
+         * cell for scale calculations, so enemy swaps do not each choose a
+         * different global scale merely because their transparent margins were
+         * sliced differently.
          */
         float logicalSourcePixelMagnification =
             Mathf.Min(
@@ -788,70 +787,68 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         if (rect == null ||
             rootCanvas == null ||
             rootCanvas.renderMode ==
-            RenderMode.WorldSpace)
+            RenderMode.WorldSpace ||
+            rect.parent is not RectTransform parentRect)
         {
             return;
         }
 
-        float parentPhysicalScale =
-            GetParentPhysicalScale(rect);
+        Camera canvasCamera =
+            rootCanvas.renderMode ==
+            RenderMode.ScreenSpaceOverlay
+                ? null
+                : rootCanvas.worldCamera;
 
-        if (parentPhysicalScale <=
-            MinimumScale)
-        {
-            return;
-        }
-
-        Vector2 position =
-            rect.anchoredPosition;
-
-        position.x =
-            Mathf.Round(
-                position.x *
-                parentPhysicalScale
-            ) /
-            parentPhysicalScale;
-
-        position.y =
-            Mathf.Round(
-                position.y *
-                parentPhysicalScale
-            ) /
-            parentPhysicalScale;
-
-        rect.anchoredPosition = position;
-    }
-
-    private float GetParentPhysicalScale(
-        RectTransform rect)
-    {
-        float scale =
-            Mathf.Max(
-                MinimumScale,
-                rootCanvas.scaleFactor
+        /*
+         * Snap the actual rendered pivot in physical screen pixels rather than
+         * rounding anchoredPosition. Enemy slots use fractional anchors (thirds
+         * of the enemy section), so a locally-integer anchoredPosition can still
+         * land on a half/sub-pixel after the parent layout and CanvasScaler are
+         * applied. Screen-space snapping removes that entire parent-chain error.
+         */
+        Vector2 currentScreenPoint =
+            RectTransformUtility.WorldToScreenPoint(
+                canvasCamera,
+                rect.position
             );
 
-        Transform current =
-            rect.parent;
+        Vector2 snappedScreenPoint =
+            new Vector2(
+                Mathf.Round(currentScreenPoint.x),
+                Mathf.Round(currentScreenPoint.y)
+            );
 
-        Transform canvasTransform =
-            rootCanvas.transform;
-
-        while (current != null &&
-               current != canvasTransform)
+        if (Mathf.Approximately(
+                currentScreenPoint.x,
+                snappedScreenPoint.x
+            ) &&
+            Mathf.Approximately(
+                currentScreenPoint.y,
+                snappedScreenPoint.y
+            ))
         {
-            scale *=
-                GetUniformMagnitude(
-                    current.localScale
-                );
-
-            current = current.parent;
+            return;
         }
 
-        return Mathf.Max(
-            MinimumScale,
-            scale
-        );
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                parentRect,
+                currentScreenPoint,
+                canvasCamera,
+                out Vector2 currentParentPoint
+            ) ||
+            !RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                parentRect,
+                snappedScreenPoint,
+                canvasCamera,
+                out Vector2 snappedParentPoint
+            ))
+        {
+            return;
+        }
+
+        rect.anchoredPosition +=
+            snappedParentPoint -
+            currentParentPoint;
     }
 
     private static float GetUniformMagnitude(
