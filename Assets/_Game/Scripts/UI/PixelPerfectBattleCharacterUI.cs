@@ -349,15 +349,7 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             }
         }
 
-        /*
-         * Do not let a temporarily-empty enemy area move the player's scale on
-         * its own. Once both roles are available, the policy evaluates them as
-         * two equal presentation groups no matter how many enemies are alive.
-         * This prevents a three-enemy wave from overpowering the player in the
-         * scale calculation.
-         */
-        if (playerMagnitudeCount == 0 ||
-            enemyMagnitudeCount == 0)
+        if (playerMagnitudeCount == 0)
         {
             ApplyCorrectionToCanvasGroup(
                 rootCanvas,
@@ -370,6 +362,34 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             return;
         }
 
+        /*
+         * Empty enemy slots are normal between waves. Keep the last established
+         * shared correction during that gap instead of shrinking/growing the
+         * player back to 1x and then changing size again on the next spawn.
+         */
+        if (enemyMagnitudeCount == 0)
+        {
+            float heldCorrection =
+                SharedCorrectionByCanvas.TryGetValue(
+                    canvasId,
+                    out float storedCorrection
+                )
+                    ? storedCorrection
+                    : 1f;
+
+            ApplyCorrectionToCanvasGroup(
+                rootCanvas,
+                heldCorrection
+            );
+
+            return;
+        }
+
+        /*
+         * Once both roles are available, evaluate them as two equal presentation
+         * groups no matter how many enemies are alive. This prevents a
+         * three-enemy wave from overpowering the player in the scale calculation.
+         */
         float playerMagnitude =
             playerMagnitudeTotal /
             playerMagnitudeCount;
@@ -381,9 +401,9 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         float previousCorrection =
             SharedCorrectionByCanvas.TryGetValue(
                 canvasId,
-                out float storedCorrection
+                out float previousStoredCorrection
             )
-                ? storedCorrection
+                ? previousStoredCorrection
                 : 1f;
 
         float correction =
