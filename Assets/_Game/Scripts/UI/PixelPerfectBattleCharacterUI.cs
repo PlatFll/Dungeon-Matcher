@@ -120,6 +120,7 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         }
 
         EnsurePixelPerfectCanvas();
+        SnapCharacterHierarchyToLogicalPixels();
 
         if (characterImage == null ||
             characterImage.sprite == null ||
@@ -163,27 +164,33 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             presentationDirty = true;
         }
 
-        if (!presentationDirty)
+        if (presentationDirty)
         {
-            return;
+            ApplyIntegerPixelMagnification(
+                sourcePixelSize,
+                imageRectSize,
+                canvasScaleFactor,
+                hierarchyScale
+            );
+
+            lastSourcePixelSize =
+                sourcePixelSize;
+            lastImageRectSize =
+                imageRectSize;
+            lastCanvasScaleFactor =
+                canvasScaleFactor;
+            lastHierarchyScale =
+                hierarchyScale;
+            presentationDirty = false;
         }
 
-        ApplyIntegerPixelMagnification(
-            sourcePixelSize,
-            imageRectSize,
-            canvasScaleFactor,
-            hierarchyScale
-        );
-
-        lastSourcePixelSize =
-            sourcePixelSize;
-        lastImageRectSize =
-            imageRectSize;
-        lastCanvasScaleFactor =
-            canvasScaleFactor;
-        lastHierarchyScale =
-            hierarchyScale;
-        presentationDirty = false;
+        /*
+         * VFX coroutines can move VisualRoot after the layout has settled.
+         * Run this component very late and quantize those temporary positions too,
+         * so spawn rise, attack lunge, damage shake and their resting pose never
+         * finish on a half logical pixel.
+         */
+        SnapCharacterHierarchyToLogicalPixels();
     }
 
     private void CaptureRequestedScaleFromLayout()
@@ -263,6 +270,59 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         if (!rootCanvas.pixelPerfect)
         {
             rootCanvas.pixelPerfect = true;
+        }
+    }
+
+    private void SnapCharacterHierarchyToLogicalPixels()
+    {
+        RoundAnchoredPosition(
+            scaleRoot
+        );
+
+        if (characterImage == null)
+        {
+            return;
+        }
+
+        RectTransform current =
+            characterImage.rectTransform;
+
+        while (current != null &&
+               current != scaleRoot)
+        {
+            RoundAnchoredPosition(
+                current
+            );
+
+            current =
+                current.parent as RectTransform;
+        }
+    }
+
+    private static void RoundAnchoredPosition(
+        RectTransform rect)
+    {
+        if (rect == null)
+        {
+            return;
+        }
+
+        Vector2 position =
+            rect.anchoredPosition;
+
+        Vector2 rounded =
+            new Vector2(
+                Mathf.Round(position.x),
+                Mathf.Round(position.y)
+            );
+
+        if (!Approximately(
+                position,
+                rounded
+            ))
+        {
+            rect.anchoredPosition =
+                rounded;
         }
     }
 
