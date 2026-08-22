@@ -321,6 +321,14 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
             instance.ResolveDynamicVisualReferences();
 
+            /*
+             * The first PixelPerfectBattleCharacterUI that reaches LateUpdate
+             * evaluates the entire Canvas. Other roots may not have executed
+             * their own LateUpdate yet, so capture every layout-authored scale
+             * here before scoring the shared correction.
+             */
+            instance.CaptureExternalScaleRequest();
+
             if (instance.rootCanvas != rootCanvas ||
                 !instance.TryGetRequestedPhysicalMagnification(
                     out float magnitude
@@ -608,6 +616,24 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
         lastAppliedUniformScale =
             correctedScale;
+
+        /*
+         * A changed root scale changes the logical distance represented by one
+         * physical screen pixel. Re-snap immediately against the corrected
+         * hierarchy so a resolution transition cannot leave one bad frame of
+         * half/sub-pixel placement.
+         */
+        SnapRectToPhysicalPixelGrid(
+            scaleRoot
+        );
+
+        if (movingVisualRoot != null &&
+            movingVisualRoot != scaleRoot)
+        {
+            SnapRectToPhysicalPixelGrid(
+                movingVisualRoot
+            );
+        }
     }
 
     private bool TryGetRequestedPhysicalMagnification(
