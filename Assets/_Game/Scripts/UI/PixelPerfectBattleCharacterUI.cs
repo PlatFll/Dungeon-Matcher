@@ -1,17 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Keeps the battle-character presentation physically pixel-aligned without
-/// allowing per-character scale rounding to distort the tuned player/enemy
-/// size relationship.
+/// Pixel-perfect presentation for the player and enemy character artwork.
 ///
-/// The policy deliberately uses one shared, bounded scale correction for the
-/// player/enemy group. If a nearby correction materially improves integer-pixel
-/// magnification, everybody receives the same correction. If the closest clean
-/// integer step would require a large size jump, the requested layout scale is
-/// preserved instead.
+/// The layout remains the authority for character scale. Designers can keep
+/// tuning PlayerVisualScale, EnemyVisualScale, per-enemy VisualSize, and the
+/// responsive battle scale normally. This component never replaces those
+/// values with coarse integer scale tiers.
+///
+/// Instead, it treats those values as the requested presentation and snaps the
+/// final rendered character rectangle to whole physical screen pixels. With
+/// Point-filtered sprites this removes fractional UI bounds/sub-pixel placement
+/// while preserving the requested player/enemy size relationship.
 /// </summary>
 [DefaultExecutionOrder(10000)]
 [DisallowMultipleComponent]
@@ -26,59 +27,32 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private const string EnemyVisualRootName =
         "VisualRoot";
 
-    private const float MinimumScale = 0.0001f;
+    private const float MinimumPhysicalScale = 0.0001f;
+    private const float SizeComparisonEpsilon = 0.01f;
 
     /*
-     * A hard safety limit. The pixel policy is never allowed to change the
-     * layout-authored character sizes by more than eight percent. This is the
-     * guard that prevents the old 20-30% size jumps that independent integer
-     * rounding can cause near a resolution threshold.
+     * A small dead-band around the currently selected physical size prevents
+     * +/- one-pixel chatter if a device reports tiny floating-point scale
+     * changes around a rounding boundary.
      */
-    private const float MaximumSharedScaleCorrection = 0.08f;
-
-    /*
-     * Do not make a visible scale correction for a tiny mathematical win. The
-     * nearest-integer score has to improve by a meaningful amount first.
-     */
-    private const float MinimumScoreImprovement = 0.04f;
-
-    /*
-     * Slightly prefer keeping the exact authored presentation size when two
-     * candidate corrections produce almost the same pixel quality.
-     */
-    private const float ScaleChangePenalty = 0.35f;
-
-    private const float CandidateStep = 0.001f;
-
-    private static readonly List<
-        PixelPerfectBattleCharacterUI
-    > ActiveInstances = new();
-
-    private static readonly Dictionary<int, int>
-        LastProcessedFrameByCanvas = new();
-
-    private static readonly Dictionary<int, float>
-        SharedCorrectionByCanvas = new();
+    private const float PhysicalPixelHysteresis = 0.60f;
 
     private RectTransform scaleRoot;
     private RectTransform movingVisualRoot;
     private Image characterImage;
     private Canvas rootCanvas;
 
-    private float requestedUniformScale = 1f;
-    private float lastAppliedUniformScale = float.NaN;
+    private RectTransform observedVisualRoot;
+    private Image observedImage;
 
+    private Vector2 requestedVisualBoxSize;
+    private Vector2 lastAppliedVisualSize;
+    private Vector2 lastSourceSpriteSize;
+    private Vector2Int lastAppliedPhysicalSize;
+
+    private bool hasRequestedVisualBox;
+    private bool hasAppliedGeometry;
     private bool isPlayerRoot;
-
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.SubsystemRegistration
-    )]
-    private static void ResetStaticState()
-    {
-        ActiveInstances.Clear();
-        LastProcessedFrameByCanvas.Clear();
-        SharedCorrectionByCanvas.Clear();
-    }
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
@@ -114,61 +88,46 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private void Awake()
     {
         ResolveReferences();
-        CaptureRequestedScaleFromLayout();
         EnsurePixelPerfectCanvas();
     }
 
     private void OnEnable()
     {
-        if (!ActiveInstances.Contains(this))
-        {
-            ActiveInstances.Add(this);
-        }
-
         ResolveReferences();
-        CaptureRequestedScaleFromLayout();
         EnsurePixelPerfectCanvas();
-    }
-
-    private void OnDisable()
-    {
-        ActiveInstances.Remove(this);
-    }
-
-    private void OnDestroy()
-    {
-        ActiveInstances.Remove(this);
     }
 
     private void LateUpdate()
     {
-        if (scaleRoot == null)
-        {
-            ResolveReferences();
-        }
+        ResolveReferences();
 
-        if (scaleRoot == null)
+        if (scaleRoot == null ||
+            movingVisualRoot == null ||
+            characterImage == null ||
+            rootCanvas == null)
         {
             return;
         }
 
-        CaptureExternalScaleRequest();
-        ResolveDynamicVisualReferences();
         EnsurePixelPerfectCanvas();
+        CaptureExternalVisualBoxRequest();
 
-        SnapRectToPhysicalPixelGrid(
+        /*
+         * The gameplay/layout root owns the character's floor position. Snap it
+         * first, then quantize/snap the actual artwork inside that root.
+         */
+        SnapRectPivotToPhysicalPixelGrid(
             scaleRoot
         );
 
-        if (movingVisualRoot != null &&
-            movingVisualRoot != scaleRoot)
+        ApplyPixelPerfectVisualGeometry();
+
+        if (movingVisualRoot != scaleRoot)
         {
-            SnapRectToPhysicalPixelGrid(
+            SnapRectPivotToPhysicalPixelGrid(
                 movingVisualRoot
             );
         }
-
-        ApplySharedScalePolicyOncePerCanvas();
     }
 
     private void ResolveReferences()
@@ -180,43 +139,85 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             scaleRoot != null &&
             scaleRoot.name == PlayerCharacterName;
 
-        ResolveDynamicVisualReferences();
-    }
+        RectTransform resolvedVisualRoot = null;
+        Image resolvedImage = null;
 
-    private void ResolveDynamicVisualReferences()
-    {
-        if (scaleRoot == null)
+        if (scaleRoot != null)
         {
-            return;
+            if (isPlayerRoot)
+            {
+                resolvedVisualRoot =
+                    scaleRoot;
+
+                resolvedImage =
+                    scaleRoot.GetComponent<Image>();
+            }
+            else
+            {
+                Transform visualTransform =
+                    FindDescendantByName(
+                        scaleRoot,
+                        EnemyVisualRootName
+                    );
+
+                resolvedVisualRoot =
+                    visualTransform as RectTransform;
+
+                resolvedImage =
+                    visualTransform != null
+                        ? visualTransform.GetComponent<Image>()
+                        : null;
+            }
         }
 
-        if (isPlayerRoot)
+        if (resolvedVisualRoot != observedVisualRoot ||
+            resolvedImage != observedImage)
         {
-            movingVisualRoot = scaleRoot;
+            observedVisualRoot =
+                resolvedVisualRoot;
+
+            observedImage =
+                resolvedImage;
+
+            movingVisualRoot =
+                resolvedVisualRoot;
+
             characterImage =
-                scaleRoot.GetComponent<Image>();
+                resolvedImage;
+
+            ResetVisualGeometryState();
         }
         else
         {
-            Transform visualTransform =
-                FindDescendantByName(
-                    scaleRoot,
-                    EnemyVisualRootName
-                );
-
             movingVisualRoot =
-                visualTransform as RectTransform;
+                resolvedVisualRoot;
 
             characterImage =
-                visualTransform != null
-                    ? visualTransform.GetComponent<Image>()
-                    : null;
+                resolvedImage;
         }
 
         rootCanvas =
             characterImage != null
                 ? characterImage.canvas
                 : GetComponentInParent<Canvas>();
+    }
+
+    private void ResetVisualGeometryState()
+    {
+        requestedVisualBoxSize =
+            Vector2.zero;
+
+        lastAppliedVisualSize =
+            Vector2.zero;
+
+        lastSourceSpriteSize =
+            Vector2.zero;
+
+        lastAppliedPhysicalSize =
+            Vector2Int.zero;
+
+        hasRequestedVisualBox = false;
+        hasAppliedGeometry = false;
     }
 
     private void EnsurePixelPerfectCanvas()
@@ -234,580 +235,304 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         }
     }
 
-    private void CaptureRequestedScaleFromLayout()
+    private void CaptureExternalVisualBoxRequest()
     {
-        if (scaleRoot == null)
+        if (movingVisualRoot == null ||
+            characterImage == null)
         {
             return;
         }
 
-        requestedUniformScale =
-            GetUniformMagnitude(
-                scaleRoot.localScale
-            );
-    }
+        Vector2 currentSize =
+            movingVisualRoot.rect.size;
 
-    private void CaptureExternalScaleRequest()
-    {
-        if (scaleRoot == null)
+        if (currentSize.x <= 0f ||
+            currentSize.y <= 0f)
         {
             return;
         }
 
-        float currentScale =
-            GetUniformMagnitude(
-                scaleRoot.localScale
+        bool externalSizeChange =
+            hasAppliedGeometry &&
+            !Approximately(
+                currentSize,
+                lastAppliedVisualSize,
+                SizeComparisonEpsilon
             );
 
         /*
-         * TopBattlePresentationController is the authority for the requested
-         * responsive scale. Ignore our own previously-applied shared correction,
-         * but immediately accept a genuinely new scale written by the layout.
+         * EnemyVisualPresenter intentionally sets preserveAspect=true whenever
+         * it applies a fresh EnemyDefinition. After this component has already
+         * taken ownership of the final geometry, seeing that flag become true
+         * again is also a reliable signal that a new authored presentation was
+         * supplied, even when its box happens to match the previous dimensions.
          */
-        if (float.IsNaN(
-                lastAppliedUniformScale
-            ) ||
-            !Mathf.Approximately(
-                currentScale,
-                lastAppliedUniformScale
+        bool externalAspectFitRequest =
+            hasAppliedGeometry &&
+            characterImage.preserveAspect;
+
+        if (!hasRequestedVisualBox ||
+            externalSizeChange ||
+            externalAspectFitRequest)
+        {
+            requestedVisualBoxSize =
+                currentSize;
+
+            hasRequestedVisualBox = true;
+            hasAppliedGeometry = false;
+            lastAppliedPhysicalSize =
+                Vector2Int.zero;
+        }
+    }
+
+    private void ApplyPixelPerfectVisualGeometry()
+    {
+        if (!hasRequestedVisualBox ||
+            movingVisualRoot == null ||
+            characterImage == null ||
+            characterImage.sprite == null)
+        {
+            return;
+        }
+
+        Vector2 sourceSpriteSize =
+            characterImage.sprite.rect.size;
+
+        if (sourceSpriteSize.x <= 0f ||
+            sourceSpriteSize.y <= 0f)
+        {
+            return;
+        }
+
+        Vector2 idealLocalDrawSize =
+            FitInside(
+                sourceSpriteSize,
+                requestedVisualBoxSize
+            );
+
+        if (!TryGetPhysicalPixelsPerLocalUnit(
+                movingVisualRoot,
+                out Vector2 physicalScale
             ))
         {
-            requestedUniformScale =
-                currentScale;
-        }
-    }
-
-    private void ApplySharedScalePolicyOncePerCanvas()
-    {
-        if (rootCanvas == null)
-        {
             return;
         }
 
-        int canvasId =
-            rootCanvas.GetInstanceID();
-
-        if (LastProcessedFrameByCanvas.TryGetValue(
-                canvasId,
-                out int processedFrame
-            ) &&
-            processedFrame == Time.frameCount)
-        {
-            return;
-        }
-
-        LastProcessedFrameByCanvas[canvasId] =
-            Time.frameCount;
-
-        float playerMagnitudeTotal = 0f;
-        int playerMagnitudeCount = 0;
-
-        float enemyMagnitudeTotal = 0f;
-        int enemyMagnitudeCount = 0;
-
-        for (int index =
-                 ActiveInstances.Count - 1;
-             index >= 0;
-             index--)
-        {
-            PixelPerfectBattleCharacterUI instance =
-                ActiveInstances[index];
-
-            if (instance == null)
-            {
-                ActiveInstances.RemoveAt(index);
-                continue;
-            }
-
-            instance.ResolveDynamicVisualReferences();
-
-            /*
-             * The first PixelPerfectBattleCharacterUI that reaches LateUpdate
-             * evaluates the entire Canvas. Other roots may not have executed
-             * their own LateUpdate yet, so capture every layout-authored scale
-             * here before scoring the shared correction.
-             */
-            instance.CaptureExternalScaleRequest();
-
-            if (instance.rootCanvas != rootCanvas ||
-                !instance.TryGetRequestedPhysicalMagnification(
-                    out float magnitude
-                ))
-            {
-                continue;
-            }
-
-            if (instance.isPlayerRoot)
-            {
-                playerMagnitudeTotal += magnitude;
-                playerMagnitudeCount++;
-            }
-            else
-            {
-                enemyMagnitudeTotal += magnitude;
-                enemyMagnitudeCount++;
-            }
-        }
-
-        if (playerMagnitudeCount == 0)
-        {
-            ApplyCorrectionToCanvasGroup(
-                rootCanvas,
-                1f
+        Vector2 idealPhysicalSize =
+            new Vector2(
+                idealLocalDrawSize.x *
+                physicalScale.x,
+                idealLocalDrawSize.y *
+                physicalScale.y
             );
 
-            SharedCorrectionByCanvas[canvasId] =
-                1f;
+        bool sourceGeometryChanged =
+            !Approximately(
+                sourceSpriteSize,
+                lastSourceSpriteSize,
+                SizeComparisonEpsilon
+            );
 
-            return;
-        }
+        int physicalWidth =
+            QuantizePhysicalDimension(
+                idealPhysicalSize.x,
+                sourceGeometryChanged
+                    ? 0
+                    : lastAppliedPhysicalSize.x
+            );
 
-        /*
-         * Empty enemy slots are normal between waves. Keep the last established
-         * shared correction during that gap instead of shrinking/growing the
-         * player back to 1x and then changing size again on the next spawn.
-         */
-        if (enemyMagnitudeCount == 0)
-        {
-            float heldCorrection =
-                SharedCorrectionByCanvas.TryGetValue(
-                    canvasId,
-                    out float storedCorrection
+        int physicalHeight =
+            QuantizePhysicalDimension(
+                idealPhysicalSize.y,
+                sourceGeometryChanged
+                    ? 0
+                    : lastAppliedPhysicalSize.y
+            );
+
+        Vector2 appliedLocalSize =
+            new Vector2(
+                physicalWidth /
+                Mathf.Max(
+                    MinimumPhysicalScale,
+                    physicalScale.x
+                ),
+                physicalHeight /
+                Mathf.Max(
+                    MinimumPhysicalScale,
+                    physicalScale.y
                 )
-                    ? storedCorrection
-                    : 1f;
-
-            ApplyCorrectionToCanvasGroup(
-                rootCanvas,
-                heldCorrection
             );
 
+        if (!IsFinitePositive(appliedLocalSize))
+        {
             return;
         }
 
-        /*
-         * Once both roles are available, evaluate them as two equal presentation
-         * groups no matter how many enemies are alive. This prevents a
-         * three-enemy wave from overpowering the player in the scale calculation.
-         */
-        float playerMagnitude =
-            playerMagnitudeTotal /
-            playerMagnitudeCount;
-
-        float enemyMagnitude =
-            enemyMagnitudeTotal /
-            enemyMagnitudeCount;
-
-        float previousCorrection =
-            SharedCorrectionByCanvas.TryGetValue(
-                canvasId,
-                out float previousStoredCorrection
-            )
-                ? previousStoredCorrection
-                : 1f;
-
-        float correction =
-            CalculateSharedCorrection(
-                playerMagnitude,
-                enemyMagnitude,
-                previousCorrection
-            );
-
-        SharedCorrectionByCanvas[canvasId] =
-            correction;
-
-        ApplyCorrectionToCanvasGroup(
-            rootCanvas,
-            correction
+        movingVisualRoot.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Horizontal,
+            appliedLocalSize.x
         );
-    }
 
-    private static float CalculateSharedCorrection(
-        float playerMagnitude,
-        float enemyMagnitude,
-        float previousCorrection)
-    {
-        float minimumCorrection =
-            1f - MaximumSharedScaleCorrection;
-
-        float maximumCorrection =
-            1f + MaximumSharedScaleCorrection;
-
-        previousCorrection =
-            Mathf.Clamp(
-                previousCorrection,
-                minimumCorrection,
-                maximumCorrection
-            );
-
-        float uncorrectedScore =
-            ScoreCorrection(
-                playerMagnitude,
-                enemyMagnitude,
-                1f
-            );
-
-        float bestCorrection = 1f;
-        float bestScore = uncorrectedScore;
-
-        for (float candidate = minimumCorrection;
-             candidate <=
-             maximumCorrection +
-             CandidateStep * 0.5f;
-             candidate += CandidateStep)
-        {
-            float score =
-                ScoreCorrection(
-                    playerMagnitude,
-                    enemyMagnitude,
-                    candidate
-                );
-
-            if (score < bestScore)
-            {
-                bestScore = score;
-                bestCorrection = candidate;
-            }
-        }
-
-        float improvement =
-            uncorrectedScore -
-            bestScore;
-
-        if (improvement <
-            MinimumScoreImprovement)
-        {
-            bestCorrection = 1f;
-            bestScore = uncorrectedScore;
-        }
+        movingVisualRoot.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Vertical,
+            appliedLocalSize.y
+        );
 
         /*
-         * Hysteresis: if the previous shared correction is effectively as good
-         * as the new optimum, retain it. This prevents repeated +/- one-pixel
-         * presentation toggles around a resolution boundary.
+         * We already performed the aspect fit above. Disabling Image's own
+         * preserveAspect pass prevents it from reintroducing a fractional inner
+         * rectangle after the outer RectTransform has been quantized.
          */
-        float previousScore =
-            ScoreCorrection(
-                playerMagnitude,
-                enemyMagnitude,
-                previousCorrection
+        characterImage.preserveAspect = false;
+
+        lastAppliedVisualSize =
+            movingVisualRoot.rect.size;
+
+        lastAppliedPhysicalSize =
+            new Vector2Int(
+                physicalWidth,
+                physicalHeight
             );
 
-        if (Mathf.Abs(
-                previousCorrection -
-                bestCorrection
-            ) <= 0.01f ||
-            previousScore <=
-            bestScore + 0.004f)
-        {
-            return previousCorrection;
-        }
+        lastSourceSpriteSize =
+            sourceSpriteSize;
 
-        return Mathf.Clamp(
-            bestCorrection,
-            minimumCorrection,
-            maximumCorrection
-        );
+        hasAppliedGeometry = true;
     }
 
-    private static float ScoreCorrection(
-        float playerMagnitude,
-        float enemyMagnitude,
-        float correction)
+    private static Vector2 FitInside(
+        Vector2 sourceSize,
+        Vector2 boxSize)
     {
-        float correctedPlayer =
-            playerMagnitude * correction;
-
-        float correctedEnemy =
-            enemyMagnitude * correction;
-
-        float playerIntegerError =
-            DistanceToNearestInteger(
-                correctedPlayer
-            );
-
-        float enemyIntegerError =
-            DistanceToNearestInteger(
-                correctedEnemy
-            );
-
-        float scaleChange =
-            correction - 1f;
-
-        return
-            playerIntegerError *
-            playerIntegerError +
-            enemyIntegerError *
-            enemyIntegerError +
-            scaleChange *
-            scaleChange *
-            ScaleChangePenalty;
-    }
-
-    private static float DistanceToNearestInteger(
-        float value)
-    {
-        if (value <= 0f)
+        if (sourceSize.x <= 0f ||
+            sourceSize.y <= 0f ||
+            boxSize.x <= 0f ||
+            boxSize.y <= 0f)
         {
-            return 1f;
+            return Vector2.zero;
         }
 
-        int nearestInteger =
+        float fitScale =
+            Mathf.Min(
+                boxSize.x /
+                sourceSize.x,
+                boxSize.y /
+                sourceSize.y
+            );
+
+        return sourceSize *
+               Mathf.Max(
+                   0f,
+                   fitScale
+               );
+    }
+
+    private static int QuantizePhysicalDimension(
+        float idealPhysicalSize,
+        int previousPhysicalSize)
+    {
+        if (!IsFinite(idealPhysicalSize) ||
+            idealPhysicalSize <= 0f)
+        {
+            return 1;
+        }
+
+        int nearestPhysicalSize =
             Mathf.Max(
                 1,
-                Mathf.RoundToInt(value)
-            );
-
-        return Mathf.Abs(
-            value -
-            nearestInteger
-        );
-    }
-
-    private static void ApplyCorrectionToCanvasGroup(
-        Canvas canvas,
-        float correction)
-    {
-        for (int index =
-                 ActiveInstances.Count - 1;
-             index >= 0;
-             index--)
-        {
-            PixelPerfectBattleCharacterUI instance =
-                ActiveInstances[index];
-
-            if (instance == null)
-            {
-                ActiveInstances.RemoveAt(index);
-                continue;
-            }
-
-            if (instance.rootCanvas != canvas ||
-                instance.scaleRoot == null)
-            {
-                continue;
-            }
-
-            instance.ApplySharedCorrection(
-                correction
-            );
-        }
-    }
-
-    private void ApplySharedCorrection(
-        float correction)
-    {
-        if (scaleRoot == null)
-        {
-            return;
-        }
-
-        float correctedScale =
-            Mathf.Max(
-                MinimumScale,
-                requestedUniformScale *
-                correction
-            );
-
-        Vector3 currentScale =
-            scaleRoot.localScale;
-
-        float signX =
-            currentScale.x < 0f
-                ? -1f
-                : 1f;
-
-        float signY =
-            currentScale.y < 0f
-                ? -1f
-                : 1f;
-
-        scaleRoot.localScale =
-            new Vector3(
-                correctedScale * signX,
-                correctedScale * signY,
-                Mathf.Approximately(
-                    currentScale.z,
-                    0f
+                Mathf.RoundToInt(
+                    idealPhysicalSize
                 )
-                    ? 1f
-                    : currentScale.z
             );
 
-        lastAppliedUniformScale =
-            correctedScale;
-
-        /*
-         * A changed root scale changes the final screen-space presentation.
-         * Re-snap immediately so a resolution transition cannot leave one bad
-         * frame before this component's next LateUpdate.
-         */
-        SnapRectToPhysicalPixelGrid(
-            scaleRoot
-        );
-
-        if (movingVisualRoot != null &&
-            movingVisualRoot != scaleRoot)
+        if (previousPhysicalSize > 0 &&
+            Mathf.Abs(
+                idealPhysicalSize -
+                previousPhysicalSize
+            ) < PhysicalPixelHysteresis)
         {
-            SnapRectToPhysicalPixelGrid(
-                movingVisualRoot
-            );
+            return previousPhysicalSize;
         }
+
+        return nearestPhysicalSize;
     }
 
-    private bool TryGetRequestedPhysicalMagnification(
-        out float magnitude)
+    private bool TryGetPhysicalPixelsPerLocalUnit(
+        RectTransform rect,
+        out Vector2 physicalScale)
     {
-        magnitude = 0f;
+        physicalScale =
+            Vector2.zero;
 
-        if (scaleRoot == null ||
-            characterImage == null ||
-            characterImage.sprite == null ||
+        if (rect == null ||
             rootCanvas == null)
         {
             return false;
         }
 
-        Vector2 imageSize =
-            characterImage.rectTransform.rect.size;
+        Camera canvasCamera =
+            rootCanvas.renderMode ==
+            RenderMode.ScreenSpaceOverlay
+                ? null
+                : rootCanvas.worldCamera;
 
-        if (imageSize.x <= 0f ||
-            imageSize.y <= 0f)
-        {
-            return false;
-        }
-
-        int sourceArtExtent =
-            GetSourceArtExtent(
-                characterImage.sprite
+        Vector3 originWorld =
+            rect.TransformPoint(
+                Vector3.zero
             );
 
-        if (sourceArtExtent <= 0)
-        {
-            return false;
-        }
-
-        /*
-         * Several static enemies are imported from a 64x64 source image but
-         * their Sprite rect is tightly trimmed around the opaque pixels. Using
-         * the next power-of-two art extent reconstructs the intended 64x64 art
-         * cell for scale calculations, so enemy swaps do not each choose a
-         * different global scale merely because their transparent margins were
-         * sliced differently.
-         */
-        float logicalSourcePixelMagnification =
-            Mathf.Min(
-                imageSize.x /
-                sourceArtExtent,
-                imageSize.y /
-                sourceArtExtent
+        Vector3 xWorld =
+            rect.TransformPoint(
+                Vector3.right
             );
 
-        float hierarchyScaleWithoutRoot =
-            GetHierarchyScaleExcludingRoot();
-
-        float canvasScale =
-            Mathf.Max(
-                MinimumScale,
-                rootCanvas.scaleFactor
+        Vector3 yWorld =
+            rect.TransformPoint(
+                Vector3.up
             );
 
-        magnitude =
-            logicalSourcePixelMagnification *
-            hierarchyScaleWithoutRoot *
-            canvasScale *
-            Mathf.Max(
-                MinimumScale,
-                requestedUniformScale
+        Vector2 originScreen =
+            RectTransformUtility.WorldToScreenPoint(
+                canvasCamera,
+                originWorld
             );
 
-        return magnitude > MinimumScale;
-    }
+        Vector2 xScreen =
+            RectTransformUtility.WorldToScreenPoint(
+                canvasCamera,
+                xWorld
+            );
 
-    private static int GetSourceArtExtent(
-        Sprite sprite)
-    {
-        if (sprite == null)
-        {
-            return 0;
-        }
+        Vector2 yScreen =
+            RectTransformUtility.WorldToScreenPoint(
+                canvasCamera,
+                yWorld
+            );
 
-        int visibleExtent =
-            Mathf.Max(
-                1,
-                Mathf.CeilToInt(
-                    Mathf.Max(
-                        sprite.rect.width,
-                        sprite.rect.height
-                    )
+        physicalScale =
+            new Vector2(
+                Vector2.Distance(
+                    originScreen,
+                    xScreen
+                ),
+                Vector2.Distance(
+                    originScreen,
+                    yScreen
                 )
             );
 
-        return Mathf.NextPowerOfTwo(
-            visibleExtent
-        );
+        return
+            IsFinite(physicalScale.x) &&
+            IsFinite(physicalScale.y) &&
+            physicalScale.x >= MinimumPhysicalScale &&
+            physicalScale.y >= MinimumPhysicalScale;
     }
 
-    private float GetHierarchyScaleExcludingRoot()
-    {
-        if (scaleRoot == null ||
-            characterImage == null)
-        {
-            return 1f;
-        }
-
-        float scale = 1f;
-
-        Transform current =
-            characterImage.rectTransform;
-
-        while (current != null &&
-               current != scaleRoot)
-        {
-            scale *=
-                GetUniformMagnitude(
-                    current.localScale
-                );
-
-            current = current.parent;
-        }
-
-        if (current != scaleRoot)
-        {
-            return 1f;
-        }
-
-        current = scaleRoot.parent;
-
-        Transform canvasTransform =
-            rootCanvas != null
-                ? rootCanvas.transform
-                : null;
-
-        while (current != null &&
-               current != canvasTransform)
-        {
-            scale *=
-                GetUniformMagnitude(
-                    current.localScale
-                );
-
-            current = current.parent;
-        }
-
-        return Mathf.Max(
-            MinimumScale,
-            scale
-        );
-    }
-
-    private void SnapRectToPhysicalPixelGrid(
+    private void SnapRectPivotToPhysicalPixelGrid(
         RectTransform rect)
     {
         if (rect == null ||
             rootCanvas == null ||
-            rootCanvas.renderMode ==
-            RenderMode.WorldSpace ||
             rect.parent is not RectTransform parentRect)
         {
             return;
@@ -819,13 +544,6 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                 ? null
                 : rootCanvas.worldCamera;
 
-        /*
-         * Snap the actual rendered pivot in physical screen pixels rather than
-         * rounding anchoredPosition. Enemy slots use fractional anchors (thirds
-         * of the enemy section), so a locally-integer anchoredPosition can still
-         * land on a half/sub-pixel after the parent layout and CanvasScaler are
-         * applied. Screen-space snapping removes that entire parent-chain error.
-         */
         Vector2 currentScreenPoint =
             RectTransformUtility.WorldToScreenPoint(
                 canvasCamera,
@@ -834,17 +552,18 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
         Vector2 snappedScreenPoint =
             new Vector2(
-                Mathf.Round(currentScreenPoint.x),
-                Mathf.Round(currentScreenPoint.y)
+                Mathf.Round(
+                    currentScreenPoint.x
+                ),
+                Mathf.Round(
+                    currentScreenPoint.y
+                )
             );
 
-        if (Mathf.Approximately(
-                currentScreenPoint.x,
-                snappedScreenPoint.x
-            ) &&
-            Mathf.Approximately(
-                currentScreenPoint.y,
-                snappedScreenPoint.y
+        if (Approximately(
+                currentScreenPoint,
+                snappedScreenPoint,
+                0.001f
             ))
         {
             return;
@@ -871,16 +590,32 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             currentParentPoint;
     }
 
-    private static float GetUniformMagnitude(
-        Vector3 scale)
+    private static bool IsFinitePositive(
+        Vector2 value)
     {
-        float x = Mathf.Abs(scale.x);
-        float y = Mathf.Abs(scale.y);
+        return
+            IsFinite(value.x) &&
+            IsFinite(value.y) &&
+            value.x > 0f &&
+            value.y > 0f;
+    }
 
-        return Mathf.Max(
-            MinimumScale,
-            Mathf.Min(x, y)
-        );
+    private static bool IsFinite(
+        float value)
+    {
+        return
+            !float.IsNaN(value) &&
+            !float.IsInfinity(value);
+    }
+
+    private static bool Approximately(
+        Vector2 left,
+        Vector2 right,
+        float epsilon)
+    {
+        return
+            Mathf.Abs(left.x - right.x) <= epsilon &&
+            Mathf.Abs(left.y - right.y) <= epsilon;
     }
 
     private static Transform FindDescendantByName(
@@ -922,6 +657,5 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private void OnTransformParentChanged()
     {
         ResolveReferences();
-        CaptureRequestedScaleFromLayout();
     }
 }

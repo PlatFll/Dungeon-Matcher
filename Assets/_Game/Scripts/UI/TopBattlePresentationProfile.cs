@@ -98,15 +98,19 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     private float playerAffinityGapAboveCharacter = 8f;
 
     [Header("Responsive Character Presentation")]
-    [SerializeField, Range(0.5f, 1.5f)]
+    [SerializeField, Min(0.1f)]
     [Tooltip(
-        "Authored player multiplier. The responsive screen scale is applied on top of this value."
+        "Authored player multiplier. Tune this freely; the responsive screen scale " +
+        "is applied on top and the final rendered character bounds are snapped to " +
+        "the physical pixel grid without replacing this requested scale."
     )]
     private float playerVisualScale = 1f;
 
-    [SerializeField, Range(0.5f, 1.5f)]
+    [SerializeField, Min(0.1f)]
     [Tooltip(
-        "Authored enemy multiplier. The responsive screen scale is applied on top of this value."
+        "Authored enemy multiplier. Tune this freely; the responsive screen scale " +
+        "is applied on top and the final rendered character bounds are snapped to " +
+        "the physical pixel grid without replacing this requested scale."
     )]
     private float enemyVisualScale = 0.802f;
 
@@ -117,10 +121,18 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     )]
     private float characterScaleResponse = 0.45f;
 
-    [SerializeField, Range(0.5f, 1.5f)]
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Smallest responsive character multiplier. This is intentionally not capped " +
+        "at 1.5 so presentation scale can be tuned without fighting the pixel system."
+    )]
     private float minimumResponsiveCharacterScale = 0.88f;
 
-    [SerializeField, Range(0.5f, 1.75f)]
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Largest responsive character multiplier. The only enforced rule is that it " +
+        "cannot be lower than Minimum Responsive Character Scale."
+    )]
     private float maximumResponsiveCharacterScale = 1.25f;
 
     public float ReferenceBattleAreaHeight => referenceBattleAreaHeight;
@@ -196,17 +208,16 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
             128f
         );
 
-        playerVisualScale = Mathf.Clamp(playerVisualScale, 0.5f, 1.5f);
-        enemyVisualScale = Mathf.Clamp(enemyVisualScale, 0.5f, 1.5f);
+        playerVisualScale = Mathf.Max(0.1f, playerVisualScale);
+        enemyVisualScale = Mathf.Max(0.1f, enemyVisualScale);
         characterScaleResponse = Mathf.Clamp01(characterScaleResponse);
-        minimumResponsiveCharacterScale = Mathf.Clamp(
-            minimumResponsiveCharacterScale,
-            0.5f,
-            1.5f
+        minimumResponsiveCharacterScale = Mathf.Max(
+            0.1f,
+            minimumResponsiveCharacterScale
         );
         maximumResponsiveCharacterScale = Mathf.Max(
             minimumResponsiveCharacterScale,
-            Mathf.Clamp(maximumResponsiveCharacterScale, 0.5f, 1.75f)
+            maximumResponsiveCharacterScale
         );
     }
 }
