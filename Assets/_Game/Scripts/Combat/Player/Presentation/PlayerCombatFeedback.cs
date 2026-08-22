@@ -56,6 +56,12 @@ public sealed class PlayerCombatFeedback :
     private Vector2 restingPosition;
     private Coroutine damageFeedbackCoroutine;
 
+    public RectTransform VisualRoot =>
+        visualRoot;
+
+    public Image PlayerImage =>
+        playerImage;
+
     private void Awake()
     {
 
@@ -262,6 +268,19 @@ public sealed class PlayerCombatFeedback :
         characterAnimation?.Resume();
 
         damageFeedbackCoroutine = null;
+    }
+
+    public void EnterDefeatedVisualState()
+    {
+        /*
+         * Lethal damage raises DamageTaken immediately before PlayerActor raises
+         * Defeated. Cancel that normal hit reaction first so it cannot fight the
+         * death presentation for position, animation playback, or flash amount.
+         */
+        StopDamageFeedback();
+
+        characterAnimation?.Pause();
+        SetWhiteFlash(1f);
     }
 
     private void CaptureCurrentRestingPosition()
