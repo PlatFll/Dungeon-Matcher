@@ -17,6 +17,7 @@ public enum GemType
 public class Gem :
     MonoBehaviour,
     IPointerDownHandler,
+    IDragHandler,
     IPointerUpHandler
 {
     private static readonly int
@@ -329,6 +330,25 @@ public class Gem :
         }
 
         board.BeginPointer(
+            this,
+            eventData.position
+        );
+    }
+
+    public void OnDrag(
+        PointerEventData eventData)
+    {
+        if (board == null ||
+            board.IsGemPinned(this))
+        {
+            board?.CancelPointerInteraction(
+                this
+            );
+
+            return;
+        }
+
+        board.UpdatePointerDrag(
             this,
             eventData.position
         );
