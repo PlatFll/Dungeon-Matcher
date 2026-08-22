@@ -1,11 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Keeps battle character Images on an integer physical-pixel magnification.
-/// The responsive layout is still free to request any logical scale; this
-/// component snaps that request to the nearest scale at which one source-art
-/// pixel maps to exactly 1, 2, 3... screen pixels.
+/// Keeps the battle-character presentation physically pixel-aligned without
+/// allowing per-character scale rounding to distort the tuned player/enemy
+/// size relationship.
+///
+/// The policy deliberately uses one shared, bounded scale correction for the
+/// player/enemy group. If a nearby correction materially improves integer-pixel
+/// magnification, everybody receives the same correction. If the closest clean
+/// integer step would require a large size jump, the requested layout scale is
+/// preserved instead.
 /// </summary>
 [DefaultExecutionOrder(10000)]
 [DisallowMultipleComponent]
@@ -22,22 +28,57 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
     private const float MinimumScale = 0.0001f;
 
+    /*
+     * A hard safety limit. The pixel policy is never allowed to change the
+     * layout-authored character sizes by more than eight percent. This is the
+     * guard that prevents the old 20-30% size jumps that independent integer
+     * rounding can cause near a resolution threshold.
+     */
+    private const float MaximumSharedScaleCorrection = 0.08f;
+
+    /*
+     * Do not make a visible scale correction for a tiny mathematical win. The
+     * nearest-integer score has to improve by a meaningful amount first.
+     */
+    private const float MinimumScoreImprovement = 0.04f;
+
+    /*
+     * Slightly prefer keeping the exact authored presentation size when two
+     * candidate corrections produce almost the same pixel quality.
+     */
+    private const float ScaleChangePenalty = 0.35f;
+
+    private const float CandidateStep = 0.001f;
+
+    private static readonly List<
+        PixelPerfectBattleCharacterUI
+    > ActiveInstances = new();
+
+    private static readonly Dictionary<int, int>
+        LastProcessedFrameByCanvas = new();
+
+    private static readonly Dictionary<int, float>
+        SharedCorrectionByCanvas = new();
+
     private RectTransform scaleRoot;
+    private RectTransform movingVisualRoot;
     private Image characterImage;
     private Canvas rootCanvas;
 
     private float requestedUniformScale = 1f;
     private float lastAppliedUniformScale = float.NaN;
-    private float lastCanvasScaleFactor = float.NaN;
-    private float lastHierarchyScale = float.NaN;
 
-    private Vector2 lastSourcePixelSize =
-        new Vector2(float.NaN, float.NaN);
+    private bool isPlayerRoot;
 
-    private Vector2 lastImageRectSize =
-        new Vector2(float.NaN, float.NaN);
-
-    private bool presentationDirty = true;
+    [RuntimeInitializeOnLoadMethod(
+        RuntimeInitializeLoadType.SubsystemRegistration
+    )]
+    private static void ResetStaticState()
+    {
+        ActiveInstances.Clear();
+        LastProcessedFrameByCanvas.Clear();
+        SharedCorrectionByCanvas.Clear();
+    }
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
@@ -72,186 +113,106 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
     private void Awake()
     {
-        scaleRoot =
-            transform as RectTransform;
-
+        ResolveReferences();
         CaptureRequestedScaleFromLayout();
-        ResolveCharacterImage();
-        ResolveCanvas();
         EnsurePixelPerfectCanvas();
-        presentationDirty = true;
     }
 
     private void OnEnable()
     {
-        if (scaleRoot == null)
+        if (!ActiveInstances.Contains(this))
         {
-            scaleRoot =
-                transform as RectTransform;
+            ActiveInstances.Add(this);
         }
 
+        ResolveReferences();
         CaptureRequestedScaleFromLayout();
-        ResolveCharacterImage();
-        ResolveCanvas();
         EnsurePixelPerfectCanvas();
-        presentationDirty = true;
+    }
+
+    private void OnDisable()
+    {
+        ActiveInstances.Remove(this);
+    }
+
+    private void OnDestroy()
+    {
+        ActiveInstances.Remove(this);
     }
 
     private void LateUpdate()
     {
         if (scaleRoot == null)
         {
+            ResolveReferences();
+        }
+
+        if (scaleRoot == null)
+        {
             return;
         }
 
         CaptureExternalScaleRequest();
-
-        if (characterImage == null ||
-            !characterImage.transform.IsChildOf(scaleRoot))
-        {
-            ResolveCharacterImage();
-            presentationDirty = true;
-        }
-
-        if (rootCanvas == null)
-        {
-            ResolveCanvas();
-            presentationDirty = true;
-        }
-
+        ResolveDynamicVisualReferences();
         EnsurePixelPerfectCanvas();
-        SnapCharacterHierarchyToLogicalPixels();
 
-        if (characterImage == null ||
-            characterImage.sprite == null ||
-            rootCanvas == null)
+        SnapRectToPhysicalPixelGrid(
+            scaleRoot
+        );
+
+        if (movingVisualRoot != null &&
+            movingVisualRoot != scaleRoot)
         {
-            return;
-        }
-
-        Vector2 sourcePixelSize =
-            characterImage.sprite.rect.size;
-
-        Vector2 imageRectSize =
-            characterImage.rectTransform.rect.size;
-
-        float canvasScaleFactor =
-            Mathf.Max(
-                MinimumScale,
-                rootCanvas.scaleFactor
+            SnapRectToPhysicalPixelGrid(
+                movingVisualRoot
             );
-
-        float hierarchyScale =
-            GetHierarchyScaleExcludingRoot();
-
-        if (!Approximately(
-                sourcePixelSize,
-                lastSourcePixelSize
-            ) ||
-            !Approximately(
-                imageRectSize,
-                lastImageRectSize
-            ) ||
-            !Mathf.Approximately(
-                canvasScaleFactor,
-                lastCanvasScaleFactor
-            ) ||
-            !Mathf.Approximately(
-                hierarchyScale,
-                lastHierarchyScale
-            ))
-        {
-            presentationDirty = true;
         }
 
-        if (presentationDirty)
-        {
-            ApplyIntegerPixelMagnification(
-                sourcePixelSize,
-                imageRectSize,
-                canvasScaleFactor,
-                hierarchyScale
-            );
-
-            lastSourcePixelSize =
-                sourcePixelSize;
-            lastImageRectSize =
-                imageRectSize;
-            lastCanvasScaleFactor =
-                canvasScaleFactor;
-            lastHierarchyScale =
-                hierarchyScale;
-            presentationDirty = false;
-        }
-
-        /*
-         * VFX coroutines can move VisualRoot after the layout has settled.
-         * Run this component very late and quantize those temporary positions too,
-         * so spawn rise, attack lunge, damage shake and their resting pose never
-         * finish on a half logical pixel.
-         */
-        SnapCharacterHierarchyToLogicalPixels();
+        ApplySharedScalePolicyOncePerCanvas();
     }
 
-    private void CaptureRequestedScaleFromLayout()
+    private void ResolveReferences()
+    {
+        scaleRoot =
+            transform as RectTransform;
+
+        isPlayerRoot =
+            scaleRoot != null &&
+            scaleRoot.name == PlayerCharacterName;
+
+        ResolveDynamicVisualReferences();
+    }
+
+    private void ResolveDynamicVisualReferences()
     {
         if (scaleRoot == null)
         {
             return;
         }
 
-        requestedUniformScale =
-            GetUniformMagnitude(
-                scaleRoot.localScale
-            );
-    }
-
-    private void CaptureExternalScaleRequest()
-    {
-        float currentScale =
-            GetUniformMagnitude(
-                scaleRoot.localScale
-            );
-
-        if (float.IsNaN(
-                lastAppliedUniformScale
-            ) ||
-            !Mathf.Approximately(
-                currentScale,
-                lastAppliedUniformScale
-            ))
+        if (isPlayerRoot)
         {
-            requestedUniformScale =
-                currentScale;
-            presentationDirty = true;
-        }
-    }
-
-    private void ResolveCharacterImage()
-    {
-        characterImage =
-            GetComponent<Image>();
-
-        if (characterImage != null)
-        {
-            return;
-        }
-
-        Transform visualRoot =
-            FindDescendantByName(
-                transform,
-                EnemyVisualRootName
-            );
-
-        if (visualRoot != null)
-        {
+            movingVisualRoot = scaleRoot;
             characterImage =
-                visualRoot.GetComponent<Image>();
+                scaleRoot.GetComponent<Image>();
         }
-    }
+        else
+        {
+            Transform visualTransform =
+                FindDescendantByName(
+                    scaleRoot,
+                    EnemyVisualRootName
+                );
 
-    private void ResolveCanvas()
-    {
+            movingVisualRoot =
+                visualTransform as RectTransform;
+
+            characterImage =
+                visualTransform != null
+                    ? visualTransform.GetComponent<Image>()
+                    : null;
+        }
+
         rootCanvas =
             characterImage != null
                 ? characterImage.canvas
@@ -273,121 +234,352 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         }
     }
 
-    private void SnapCharacterHierarchyToLogicalPixels()
+    private void CaptureRequestedScaleFromLayout()
     {
-        RoundAnchoredPosition(
-            scaleRoot
-        );
-
-        if (characterImage == null)
+        if (scaleRoot == null)
         {
             return;
         }
 
-        RectTransform current =
-            characterImage.rectTransform;
-
-        while (current != null &&
-               current != scaleRoot)
-        {
-            RoundAnchoredPosition(
-                current
+        requestedUniformScale =
+            GetUniformMagnitude(
+                scaleRoot.localScale
             );
-
-            current =
-                current.parent as RectTransform;
-        }
     }
 
-    private static void RoundAnchoredPosition(
-        RectTransform rect)
+    private void CaptureExternalScaleRequest()
     {
-        if (rect == null)
+        if (scaleRoot == null)
         {
             return;
         }
 
-        Vector2 position =
-            rect.anchoredPosition;
-
-        Vector2 rounded =
-            new Vector2(
-                Mathf.Round(position.x),
-                Mathf.Round(position.y)
+        float currentScale =
+            GetUniformMagnitude(
+                scaleRoot.localScale
             );
 
-        if (!Approximately(
-                position,
-                rounded
+        /*
+         * TopBattlePresentationController is the authority for the requested
+         * responsive scale. Ignore our own previously-applied shared correction,
+         * but immediately accept a genuinely new scale written by the layout.
+         */
+        if (float.IsNaN(
+                lastAppliedUniformScale
+            ) ||
+            !Mathf.Approximately(
+                currentScale,
+                lastAppliedUniformScale
             ))
         {
-            rect.anchoredPosition =
-                rounded;
+            requestedUniformScale =
+                currentScale;
         }
     }
 
-    private void ApplyIntegerPixelMagnification(
-        Vector2 sourcePixelSize,
-        Vector2 imageRectSize,
-        float canvasScaleFactor,
-        float hierarchyScale)
+    private void ApplySharedScalePolicyOncePerCanvas()
     {
-        if (sourcePixelSize.x <= 0f ||
-            sourcePixelSize.y <= 0f ||
-            imageRectSize.x <= 0f ||
-            imageRectSize.y <= 0f)
+        if (rootCanvas == null)
         {
             return;
+        }
+
+        int canvasId =
+            rootCanvas.GetInstanceID();
+
+        if (LastProcessedFrameByCanvas.TryGetValue(
+                canvasId,
+                out int processedFrame
+            ) &&
+            processedFrame == Time.frameCount)
+        {
+            return;
+        }
+
+        LastProcessedFrameByCanvas[canvasId] =
+            Time.frameCount;
+
+        float playerMagnitudeTotal = 0f;
+        int playerMagnitudeCount = 0;
+
+        float enemyMagnitudeTotal = 0f;
+        int enemyMagnitudeCount = 0;
+
+        for (int index =
+                 ActiveInstances.Count - 1;
+             index >= 0;
+             index--)
+        {
+            PixelPerfectBattleCharacterUI instance =
+                ActiveInstances[index];
+
+            if (instance == null)
+            {
+                ActiveInstances.RemoveAt(index);
+                continue;
+            }
+
+            instance.ResolveDynamicVisualReferences();
+
+            if (instance.rootCanvas != rootCanvas ||
+                !instance.TryGetRequestedPhysicalMagnification(
+                    out float magnitude
+                ))
+            {
+                continue;
+            }
+
+            if (instance.isPlayerRoot)
+            {
+                playerMagnitudeTotal += magnitude;
+                playerMagnitudeCount++;
+            }
+            else
+            {
+                enemyMagnitudeTotal += magnitude;
+                enemyMagnitudeCount++;
+            }
         }
 
         /*
-         * Character Images use Preserve Aspect. The smaller axis ratio therefore
-         * describes the actual source-pixel magnification inside the Image rect.
-         * This is the piece the previous 112x112 presentation was missing: a
-         * 47x58 or 54x61 sprite otherwise lands on a fractional magnification.
+         * Do not let a temporarily-empty enemy area move the player's scale on
+         * its own. Once both roles are available, the policy evaluates them as
+         * two equal presentation groups no matter how many enemies are alive.
+         * This prevents a three-enemy wave from overpowering the player in the
+         * scale calculation.
          */
-        characterImage.preserveAspect = true;
-
-        float logicalSpriteMagnification =
-            Mathf.Min(
-                imageRectSize.x /
-                sourcePixelSize.x,
-                imageRectSize.y /
-                sourcePixelSize.y
+        if (playerMagnitudeCount == 0 ||
+            enemyMagnitudeCount == 0)
+        {
+            ApplyCorrectionToCanvasGroup(
+                rootCanvas,
+                1f
             );
 
-        float physicalMagnificationWithoutRoot =
-            logicalSpriteMagnification *
-            Mathf.Max(
-                MinimumScale,
-                hierarchyScale
-            ) *
-            canvasScaleFactor;
+            SharedCorrectionByCanvas[canvasId] =
+                1f;
 
-        if (physicalMagnificationWithoutRoot <=
-            MinimumScale)
+            return;
+        }
+
+        float playerMagnitude =
+            playerMagnitudeTotal /
+            playerMagnitudeCount;
+
+        float enemyMagnitude =
+            enemyMagnitudeTotal /
+            enemyMagnitudeCount;
+
+        float previousCorrection =
+            SharedCorrectionByCanvas.TryGetValue(
+                canvasId,
+                out float storedCorrection
+            )
+                ? storedCorrection
+                : 1f;
+
+        float correction =
+            CalculateSharedCorrection(
+                playerMagnitude,
+                enemyMagnitude,
+                previousCorrection
+            );
+
+        SharedCorrectionByCanvas[canvasId] =
+            correction;
+
+        ApplyCorrectionToCanvasGroup(
+            rootCanvas,
+            correction
+        );
+    }
+
+    private static float CalculateSharedCorrection(
+        float playerMagnitude,
+        float enemyMagnitude,
+        float previousCorrection)
+    {
+        float minimumCorrection =
+            1f - MaximumSharedScaleCorrection;
+
+        float maximumCorrection =
+            1f + MaximumSharedScaleCorrection;
+
+        previousCorrection =
+            Mathf.Clamp(
+                previousCorrection,
+                minimumCorrection,
+                maximumCorrection
+            );
+
+        float uncorrectedScore =
+            ScoreCorrection(
+                playerMagnitude,
+                enemyMagnitude,
+                1f
+            );
+
+        float bestCorrection = 1f;
+        float bestScore = uncorrectedScore;
+
+        for (float candidate = minimumCorrection;
+             candidate <=
+             maximumCorrection +
+             CandidateStep * 0.5f;
+             candidate += CandidateStep)
+        {
+            float score =
+                ScoreCorrection(
+                    playerMagnitude,
+                    enemyMagnitude,
+                    candidate
+                );
+
+            if (score < bestScore)
+            {
+                bestScore = score;
+                bestCorrection = candidate;
+            }
+        }
+
+        float improvement =
+            uncorrectedScore -
+            bestScore;
+
+        if (improvement <
+            MinimumScoreImprovement)
+        {
+            bestCorrection = 1f;
+            bestScore = uncorrectedScore;
+        }
+
+        /*
+         * Hysteresis: if the previous shared correction is effectively as good
+         * as the new optimum, retain it. This prevents repeated +/- one-pixel
+         * presentation toggles around a resolution boundary.
+         */
+        float previousScore =
+            ScoreCorrection(
+                playerMagnitude,
+                enemyMagnitude,
+                previousCorrection
+            );
+
+        if (Mathf.Abs(
+                previousCorrection -
+                bestCorrection
+            ) <= 0.01f ||
+            previousScore <=
+            bestScore + 0.004f)
+        {
+            return previousCorrection;
+        }
+
+        return Mathf.Clamp(
+            bestCorrection,
+            minimumCorrection,
+            maximumCorrection
+        );
+    }
+
+    private static float ScoreCorrection(
+        float playerMagnitude,
+        float enemyMagnitude,
+        float correction)
+    {
+        float correctedPlayer =
+            playerMagnitude * correction;
+
+        float correctedEnemy =
+            enemyMagnitude * correction;
+
+        float playerIntegerError =
+            DistanceToNearestInteger(
+                correctedPlayer
+            );
+
+        float enemyIntegerError =
+            DistanceToNearestInteger(
+                correctedEnemy
+            );
+
+        float scaleChange =
+            correction - 1f;
+
+        return
+            playerIntegerError *
+            playerIntegerError +
+            enemyIntegerError *
+            enemyIntegerError +
+            scaleChange *
+            scaleChange *
+            ScaleChangePenalty;
+    }
+
+    private static float DistanceToNearestInteger(
+        float value)
+    {
+        if (value <= 0f)
+        {
+            return 1f;
+        }
+
+        int nearestInteger =
+            Mathf.Max(
+                1,
+                Mathf.RoundToInt(value)
+            );
+
+        return Mathf.Abs(
+            value -
+            nearestInteger
+        );
+    }
+
+    private static void ApplyCorrectionToCanvasGroup(
+        Canvas canvas,
+        float correction)
+    {
+        for (int index =
+                 ActiveInstances.Count - 1;
+             index >= 0;
+             index--)
+        {
+            PixelPerfectBattleCharacterUI instance =
+                ActiveInstances[index];
+
+            if (instance == null)
+            {
+                ActiveInstances.RemoveAt(index);
+                continue;
+            }
+
+            if (instance.rootCanvas != canvas ||
+                instance.scaleRoot == null)
+            {
+                continue;
+            }
+
+            instance.ApplySharedCorrection(
+                correction
+            );
+        }
+    }
+
+    private void ApplySharedCorrection(
+        float correction)
+    {
+        if (scaleRoot == null)
         {
             return;
         }
 
-        float idealPhysicalMagnification =
-            physicalMagnificationWithoutRoot *
+        float correctedScale =
             Mathf.Max(
                 MinimumScale,
-                requestedUniformScale
+                requestedUniformScale *
+                correction
             );
-
-        int integerPhysicalMagnification =
-            Mathf.Max(
-                1,
-                Mathf.RoundToInt(
-                    idealPhysicalMagnification
-                )
-            );
-
-        float snappedRootScale =
-            integerPhysicalMagnification /
-            physicalMagnificationWithoutRoot;
 
         Vector3 currentScale =
             scaleRoot.localScale;
@@ -404,8 +596,8 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 
         scaleRoot.localScale =
             new Vector3(
-                snappedRootScale * signX,
-                snappedRootScale * signY,
+                correctedScale * signX,
+                correctedScale * signY,
                 Mathf.Approximately(
                     currentScale.z,
                     0f
@@ -415,7 +607,100 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             );
 
         lastAppliedUniformScale =
-            snappedRootScale;
+            correctedScale;
+    }
+
+    private bool TryGetRequestedPhysicalMagnification(
+        out float magnitude)
+    {
+        magnitude = 0f;
+
+        if (scaleRoot == null ||
+            characterImage == null ||
+            characterImage.sprite == null ||
+            rootCanvas == null)
+        {
+            return false;
+        }
+
+        Vector2 imageSize =
+            characterImage.rectTransform.rect.size;
+
+        if (imageSize.x <= 0f ||
+            imageSize.y <= 0f)
+        {
+            return false;
+        }
+
+        int sourceArtExtent =
+            GetSourceArtExtent(
+                characterImage.sprite
+            );
+
+        if (sourceArtExtent <= 0)
+        {
+            return false;
+        }
+
+        /*
+         * Several static enemies are imported from a 64x64 source image but
+         * their Sprite rect is tightly trimmed around the opaque pixels. Using
+         * the next power-of-two art extent reconstructs the intended 64x64 art
+         * cell for scale calculations, so Farmer, Villager, Knight, Miner, etc.
+         * all participate in the same pixel policy instead of each rounding from
+         * a different cropped width/height.
+         */
+        float logicalSourcePixelMagnification =
+            Mathf.Min(
+                imageSize.x /
+                sourceArtExtent,
+                imageSize.y /
+                sourceArtExtent
+            );
+
+        float hierarchyScaleWithoutRoot =
+            GetHierarchyScaleExcludingRoot();
+
+        float canvasScale =
+            Mathf.Max(
+                MinimumScale,
+                rootCanvas.scaleFactor
+            );
+
+        magnitude =
+            logicalSourcePixelMagnification *
+            hierarchyScaleWithoutRoot *
+            canvasScale *
+            Mathf.Max(
+                MinimumScale,
+                requestedUniformScale
+            );
+
+        return magnitude > MinimumScale;
+    }
+
+    private static int GetSourceArtExtent(
+        Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            return 0;
+        }
+
+        int visibleExtent =
+            Mathf.Max(
+                1,
+                Mathf.CeilToInt(
+                    Mathf.Max(
+                        sprite.rect.width,
+                        sprite.rect.height
+                    )
+                )
+            );
+
+        return Mathf.NextPowerOfTwo(
+            visibleExtent
+        );
     }
 
     private float GetHierarchyScaleExcludingRoot()
@@ -439,8 +724,7 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                     current.localScale
                 );
 
-            current =
-                current.parent;
+            current = current.parent;
         }
 
         if (current != scaleRoot)
@@ -448,8 +732,7 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             return 1f;
         }
 
-        current =
-            scaleRoot.parent;
+        current = scaleRoot.parent;
 
         Transform canvasTransform =
             rootCanvas != null
@@ -464,8 +747,79 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                     current.localScale
                 );
 
-            current =
-                current.parent;
+            current = current.parent;
+        }
+
+        return Mathf.Max(
+            MinimumScale,
+            scale
+        );
+    }
+
+    private void SnapRectToPhysicalPixelGrid(
+        RectTransform rect)
+    {
+        if (rect == null ||
+            rootCanvas == null ||
+            rootCanvas.renderMode ==
+            RenderMode.WorldSpace)
+        {
+            return;
+        }
+
+        float parentPhysicalScale =
+            GetParentPhysicalScale(rect);
+
+        if (parentPhysicalScale <=
+            MinimumScale)
+        {
+            return;
+        }
+
+        Vector2 position =
+            rect.anchoredPosition;
+
+        position.x =
+            Mathf.Round(
+                position.x *
+                parentPhysicalScale
+            ) /
+            parentPhysicalScale;
+
+        position.y =
+            Mathf.Round(
+                position.y *
+                parentPhysicalScale
+            ) /
+            parentPhysicalScale;
+
+        rect.anchoredPosition = position;
+    }
+
+    private float GetParentPhysicalScale(
+        RectTransform rect)
+    {
+        float scale =
+            Mathf.Max(
+                MinimumScale,
+                rootCanvas.scaleFactor
+            );
+
+        Transform current =
+            rect.parent;
+
+        Transform canvasTransform =
+            rootCanvas.transform;
+
+        while (current != null &&
+               current != canvasTransform)
+        {
+            scale *=
+                GetUniformMagnitude(
+                    current.localScale
+                );
+
+            current = current.parent;
         }
 
         return Mathf.Max(
@@ -477,11 +831,8 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private static float GetUniformMagnitude(
         Vector3 scale)
     {
-        float x =
-            Mathf.Abs(scale.x);
-
-        float y =
-            Mathf.Abs(scale.y);
+        float x = Mathf.Abs(scale.x);
+        float y = Mathf.Abs(scale.y);
 
         return Mathf.Max(
             MinimumScale,
@@ -525,30 +876,9 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         return null;
     }
 
-    private static bool Approximately(
-        Vector2 left,
-        Vector2 right)
-    {
-        return
-            Mathf.Approximately(
-                left.x,
-                right.x
-            ) &&
-            Mathf.Approximately(
-                left.y,
-                right.y
-            );
-    }
-
-    private void OnRectTransformDimensionsChange()
-    {
-        presentationDirty = true;
-    }
-
     private void OnTransformParentChanged()
     {
-        rootCanvas = null;
-        characterImage = null;
-        presentationDirty = true;
+        ResolveReferences();
+        CaptureRequestedScaleFromLayout();
     }
 }
