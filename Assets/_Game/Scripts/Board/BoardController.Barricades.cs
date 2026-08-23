@@ -50,10 +50,6 @@ public partial class BoardController
         barricadeCells =
             new Dictionary<Vector2Int, BarricadeCellState>();
 
-    private readonly HashSet<int>
-        pendingBarricadeRemovalOwners =
-            new HashSet<int>();
-
     private Sprite barricadeFallbackSprite;
 
     public bool IsCellBarricaded(
@@ -96,6 +92,32 @@ public partial class BoardController
         }
 
         return count;
+    }
+
+    public void OrphanBarricadesForOwner(
+        int ownerInstanceId)
+    {
+        if (ownerInstanceId == 0)
+        {
+            return;
+        }
+
+        foreach (
+            KeyValuePair<Vector2Int, BarricadeCellState> entry
+            in barricadeCells)
+        {
+            if (entry.Value != null &&
+                entry.Value.OwnerInstanceId ==
+                    ownerInstanceId)
+            {
+                /*
+                 * Zero means the obstacle no longer participates in a living
+                 * enemy's ownership cap. Its durability and board state remain
+                 * authoritative until the player actually breaks it.
+                 */
+                entry.Value.OwnerInstanceId = 0;
+            }
+        }
     }
 
     public bool TryQueuePlaceBarricades(
@@ -183,33 +205,6 @@ public partial class BoardController
 
         TryStartBoardMutationProcessor();
         return true;
-    }
-
-    public void QueueRemoveBarricades(
-        int ownerInstanceId)
-    {
-        if (ownerInstanceId == 0 ||
-            GetBarricadeCountForOwner(
-                ownerInstanceId) <= 0 ||
-            !pendingBarricadeRemovalOwners.Add(
-                ownerInstanceId))
-        {
-            return;
-        }
-
-        pendingBoardMutations.Enqueue(
-            new BoardMutationRequest
-            {
-                Kind =
-                    BoardMutationKind
-                        .RemoveOwnerBarricades,
-
-                OwnerInstanceId =
-                    ownerInstanceId
-            }
-        );
-
-        TryStartBoardMutationProcessor();
     }
 
     private int GetPendingBarricadePlacementCount(
@@ -461,43 +456,6 @@ public partial class BoardController
                     state
                 );
             }
-        }
-
-        yield return
-            ResolveEnvironmentalBoardChange();
-    }
-
-    private IEnumerator ExecuteRemoveBarricadesRequest(
-        int ownerInstanceId)
-    {
-        List<Vector2Int> cellsToRemove =
-            new List<Vector2Int>();
-
-        foreach (
-            KeyValuePair<Vector2Int, BarricadeCellState> entry
-            in barricadeCells)
-        {
-            if (entry.Value != null &&
-                entry.Value.OwnerInstanceId ==
-                    ownerInstanceId)
-            {
-                cellsToRemove.Add(
-                    entry.Key
-                );
-            }
-        }
-
-        if (cellsToRemove.Count == 0)
-        {
-            yield break;
-        }
-
-        foreach (Vector2Int cell
-                 in cellsToRemove)
-        {
-            RemoveBarricadeInternal(
-                cell
-            );
         }
 
         yield return
