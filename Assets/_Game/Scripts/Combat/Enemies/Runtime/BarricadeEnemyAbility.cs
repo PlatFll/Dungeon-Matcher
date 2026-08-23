@@ -14,7 +14,7 @@ public sealed class BarricadeEnemyAbility :
     private BoardController boardController;
 
     private int ownerInstanceId;
-    private bool removalQueued;
+    private bool ownershipReleased;
 
     public void InitializeSpecialAbility(
         EnemyActor initializedEnemy,
@@ -24,7 +24,7 @@ public sealed class BarricadeEnemyAbility :
 
         enemyActor = initializedEnemy;
         boardController = initializedBoard;
-        removalQueued = false;
+        ownershipReleased = false;
 
         ownerInstanceId =
             enemyActor != null
@@ -178,29 +178,28 @@ public sealed class BarricadeEnemyAbility :
     private void HandleEnemyDefeated(
         EnemyActor defeatedEnemy)
     {
-        QueueOwnedBarricadeRemoval();
+        ReleaseOwnershipWithoutRemovingBarricades();
         Unsubscribe();
     }
 
-    private void QueueOwnedBarricadeRemoval()
+    private void ReleaseOwnershipWithoutRemovingBarricades()
     {
-        if (removalQueued ||
+        if (ownershipReleased ||
             boardController == null ||
             ownerInstanceId == 0)
         {
             return;
         }
 
-        RefreshOwnedBarricadeCount();
+        ownershipReleased = true;
 
-        if (ownedBarricadeCount <= 0)
-        {
-            return;
-        }
-
-        removalQueued = true;
-
-        boardController.QueueRemoveBarricades(
+        /*
+         * Barricades are persistent board obstacles: defeating their creator
+         * does not remove them. Orphan their ownership instead so a recycled
+         * Unity instance ID can never make old barricades count against a new
+         * enemy's six-barricade cap.
+         */
+        boardController.OrphanBarricadesForOwner(
             ownerInstanceId
         );
     }
@@ -219,7 +218,7 @@ public sealed class BarricadeEnemyAbility :
 
     private void OnDestroy()
     {
-        QueueOwnedBarricadeRemoval();
+        ReleaseOwnershipWithoutRemovingBarricades();
         Unsubscribe();
     }
 }
