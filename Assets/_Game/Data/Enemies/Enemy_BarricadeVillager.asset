@@ -15,9 +15,11 @@ MonoBehaviour:
   enemyId: barricade_villager
   displayName: Barricade Villager
   category: 1
-  description: A stubborn villager who throws together wooden barricades. Every two valid player moves he places two one-hit wooden blockades, up to six of his own on the board.
+  description: A stubborn villager who throws together wooden barricades. Every two
+    valid player moves he places two one-hit wooden blockades, up to six of his own
+    on the board.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 635a187484ae8244d8cdf57ff33729a1, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 3e7a809da9b74f340b80150b62b76e12, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0

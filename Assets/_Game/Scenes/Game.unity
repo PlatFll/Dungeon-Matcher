@@ -1048,7 +1048,7 @@ MonoBehaviour:
   royalDecreeRuntime: {fileID: 748065089}
   visualRoot: {fileID: 463597145}
   eyeGlowGraphic: {fileID: 1538521016}
-  anchoredOffset: {x: 0, y: -70}
+  anchoredOffset: {x: 0, y: 70}
   hitPulseScale: 1.25
   hitPulseDuration: 0.14
   blinkStartTime: 1.5
@@ -3530,6 +3530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b636ddf24c435d4b84c632f076c6bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardController
+  woodenBarricadeSprite: {fileID: 2737031938212846523, guid: 2fb304409ecff4b4e871a57c8fb2b9b7, type: 3}
+  stoneBarricadeSprite: {fileID: 771805744522752283, guid: 90db8076f24697a43a6c9d7bf37e782d, type: 3}
+  barricadeWhiteHoldDuration: 0.05
+  barricadeMaterializeDuration: 0.14
+  barricadeHitFlashDuration: 0.08
   swapDurationMultiplier: 1
   maximumInvalidSwapPause: 0.07
   matchPostBurstDelayMultiplier: 2
@@ -3550,7 +3555,7 @@ MonoBehaviour:
   doubleCrystalShakeSpeed: 34
   doubleCrystalSettlePause: 0.18
   doubleCrystalRefillStagger: 0.015
-  pinnedGemOverlaySprite: {fileID: 21300000, guid: 2fc8c2f75f0e70543bc5cc6ec905aef3, type: 3}
+  pinnedGemOverlaySprite: {fileID: 6999939906866651835, guid: 3f274db4cbf951f4cb325182a9bbb45f, type: 3}
   pinnedGemBrightness: 0.55
   pinMaterializeDuration: 0.1
   pinShakeDistanceInCells: 0.04
@@ -3606,9 +3611,6 @@ MonoBehaviour:
   worldCamera: {fileID: 519420031}
   boardArea: {fileID: 961790276}
   maximumScale: 1.5
-  verticalAreaPaddingPixels: 8
-  horizontalScreenPaddingPixels: 10
-  maximumVerticalOverflowFraction: 0.12
 --- !u!114 &1775734121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4485,8 +4487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: -2}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010084971
 MonoBehaviour:
@@ -4502,7 +4504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4535,12 +4537,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 10
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 8
-  m_fontSizeMax: 16
+  m_fontSizeMin: 6
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

@@ -15,9 +15,11 @@ MonoBehaviour:
   enemyId: barricade_guard
   displayName: Barricade Guard
   category: 1
-  description: A fortified guard who drops heavy stone barricades. Every three valid player moves he places three two-hit stone blockades, up to six of his own on the board.
+  description: A fortified guard who drops heavy stone barricades. Every three valid
+    player moves he places three two-hit stone blockades, up to six of his own on
+    the board.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: a7f258e9c06e6024f931abcfd5f0bbba, type: 3}
+  fallbackVisualSprite: {fileID: -5604500335505110302, guid: 35065250f26735e48b3a616668daf087, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
