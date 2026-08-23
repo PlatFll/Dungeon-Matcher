@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ed27ff90dba85c74991bc560227e24b0
+guid: 90db8076f24697a43a6c9d7bf37e782d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4225224661873564886
-    second: ColumnBombOverlay_0
+      213: 771805744522752283
+    second: StoneBarricade_NEW_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ColumnBombOverlay_0
+      name: StoneBarricade_NEW_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 2
+        y: 7
+        width: 59
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dc913b917303aa30800000000000000
-      internalID: 4225224661873564886
+      spriteID: b1172e54c3106ba00800000000000000
+      internalID: 771805744522752283
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ColumnBombOverlay_0: 4225224661873564886
+      StoneBarricade_NEW_0: 771805744522752283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
