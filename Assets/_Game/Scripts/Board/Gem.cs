@@ -396,6 +396,26 @@ public class Gem :
                 : 0;
     }
 
+    private void OnDestroy()
+    {
+        /*
+         * Every actual board clear ultimately destroys its Gem object after
+         * the clear flash. Reporting here gives pin/chain obstacles one common
+         * physical-clear signal regardless of whether the gem was removed by
+         * a normal match, cascade, bomb, crystal, ability, or environmental
+         * board mutation.
+         */
+        if (!Application.isPlaying ||
+            board == null)
+        {
+            return;
+        }
+
+        board.NotifyGemDestroyedForPins(
+            this
+        );
+    }
+
     [ContextMenu("Debug/Show Row Bomb")]
     private void DebugShowRowBomb()
     {
