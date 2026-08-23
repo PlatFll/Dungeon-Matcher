@@ -26,8 +26,7 @@ public partial class BoardController
         RestoreOwnerCells,
         PinRandomGem,
         ReleaseOwnerPins,
-        PlaceBarricades,
-        RemoveOwnerBarricades
+        PlaceBarricades
     }
 
     private sealed class BoardMutationRequest
@@ -445,17 +444,6 @@ public partial class BoardController
                         yield return
                             ExecutePlaceBarricadesRequest(
                                 request
-                            );
-                        break;
-
-                    case BoardMutationKind.RemoveOwnerBarricades:
-                        pendingBarricadeRemovalOwners.Remove(
-                            request.OwnerInstanceId
-                        );
-
-                        yield return
-                            ExecuteRemoveBarricadesRequest(
-                                request.OwnerInstanceId
                             );
                         break;
                 }
