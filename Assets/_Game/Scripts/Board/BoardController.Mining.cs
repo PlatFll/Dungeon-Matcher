@@ -25,7 +25,8 @@ public partial class BoardController
         MineRandomCell,
         RestoreOwnerCells,
         PinRandomGem,
-        ReleaseOwnerPins
+        ReleaseOwnerPins,
+        PlaceBarricades
     }
 
     private sealed class BoardMutationRequest
@@ -38,18 +39,26 @@ public partial class BoardController
         public Gem TargetGem;
         public bool WaitForAnimationImpact;
         public bool AnimationImpactReached;
+
+        public int BarricadeCount;
+        public int MaximumOwnedBarricades;
+        public int BarricadeDurability;
+        public EnemyBarricadeStyle BarricadeStyle;
     }
 
     /*
      * One source of truth for permanent enemy-created holes.
      * The value is the EnemyActor instance ID that owns the cell.
-     * This lets multiple Miners coexist while restoring only the
-     * cells belonging to the Miner that died.
      */
     private readonly Dictionary<Vector2Int, int>
         minedCellOwners =
             new Dictionary<Vector2Int, int>();
 
+    /*
+     * Mining, pinning and barricades all share this queue. Enemy board
+     * manipulation is therefore serialized behind one authoritative mutation
+     * pipeline instead of racing independent coroutines against gravity.
+     */
     private readonly Queue<BoardMutationRequest>
         pendingBoardMutations =
             new Queue<BoardMutationRequest>();
@@ -79,12 +88,15 @@ public partial class BoardController
             return false;
         }
 
-        return !minedCellOwners.ContainsKey(
+        Vector2Int cell =
             new Vector2Int(
                 column,
                 row
-            )
-        );
+            );
+
+        return
+            !minedCellOwners.ContainsKey(cell) &&
+            !barricadeCells.ContainsKey(cell);
     }
 
     public bool IsCellMined(
@@ -251,8 +263,7 @@ public partial class BoardController
 
     /*
      * Called exactly once after a successful player swap has completely
-     * resolved. Cascades never call this method themselves, so a ten-step
-     * cascade still advances enemy move counters by only one.
+     * resolved. Cascades never call this method themselves.
      */
     private void NotifyValidPlayerMoveCompleted()
     {
@@ -370,9 +381,9 @@ public partial class BoardController
         try
         {
             /*
-             * If an enemy queued board work during a match/cascade, wait for
-             * that player action to release the board. HasPendingBoardMutation
-             * keeps new input and wave transitions out of the handoff.
+             * Enemy board work may be queued while a player move is finishing.
+             * Wait for that resolution, then own the board until every queued
+             * structural mutation has settled.
              */
             while (isBusy)
             {
@@ -428,6 +439,13 @@ public partial class BoardController
                                 request.OwnerInstanceId
                             );
                         break;
+
+                    case BoardMutationKind.PlaceBarricades:
+                        yield return
+                            ExecutePlaceBarricadesRequest(
+                                request
+                            );
+                        break;
                 }
 
                 activeBoardMutationKind = null;
@@ -436,12 +454,6 @@ public partial class BoardController
         }
         finally
         {
-            /*
-             * Never leave global board input owned by this processor if the
-             * coroutine is stopped or exits unexpectedly. Only clear isBusy if
-             * this coroutine actually acquired it; while waiting, another board
-             * operation still owns that flag.
-             */
             activeBoardMutationKind = null;
             activeBoardMutationRequest = null;
 
@@ -472,12 +484,6 @@ public partial class BoardController
             yield break;
         }
 
-        /*
-         * The request is already accepted and the board is now owned by this
-         * mutation. For animation-timed abilities, wait for the impact frame,
-         * but never allow a missing/interrupted Animation Event to own global
-         * board input forever.
-         */
         float animationWaitStartedAt =
             Time.realtimeSinceStartup;
 
@@ -539,11 +545,6 @@ public partial class BoardController
             yield break;
         }
 
-        /*
-         * Reserve ownership before any asynchronous presentation starts.
-         * A second Miner processed after this one therefore cannot select
-         * the same cell even when both became ready on the same player move.
-         */
         minedCellOwners[selectedCell] =
             request.OwnerInstanceId;
 
@@ -555,11 +556,6 @@ public partial class BoardController
             MiningTileFlashDuration
         );
 
-        /*
-         * Reuse the existing shard presentation without calling any gameplay
-         * clear reporter. The burst is delayed by the same flash lead used by
-         * ordinary matches, so it coincides with the mined gem disappearing.
-         */
         GemMatchVFXRequested?.Invoke(
             new GemMatchVFXContext(
                 minedGem.Type,
@@ -574,10 +570,8 @@ public partial class BoardController
         );
 
         /*
-         * Deliberately bypass every BoardClearResolved/combat/reward reporter.
-         * The gem shatters visually, but grants no damage, healing, energy,
-         * poison, Royal Decree hit, or other per-gem reward. A special gem is
-         * also destroyed directly here and therefore never activates.
+         * Environmental destruction deliberately bypasses combat/reward
+         * reporters. A mined special gem also never activates.
          */
         HashSet<Gem> minedGemOnly =
             new HashSet<Gem>

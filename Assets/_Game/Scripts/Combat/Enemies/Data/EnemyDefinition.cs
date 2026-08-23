@@ -118,6 +118,33 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private bool lockSpecialTurnRequirement;
 
+    [Header("Barricade Ability")]
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Number of barricades placed by one accepted barricade ability use."
+    )]
+    private int barricadesPerUse = 2;
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Maximum number of barricades this enemy may own on the board at once."
+    )]
+    private int maximumOwnedBarricades = 6;
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Number of adjacent clear hits required to break each barricade."
+    )]
+    private int barricadeDurability = 1;
+
+    [SerializeField]
+    [Tooltip(
+        "Visual/material family used by barricades placed by this enemy."
+    )]
+    private EnemyBarricadeStyle barricadeStyle =
+        EnemyBarricadeStyle.Wood;
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]
@@ -225,6 +252,18 @@ public sealed class EnemyDefinition : ScriptableObject
     public bool LockSpecialTurnRequirement =>
         lockSpecialTurnRequirement;
 
+    public int BarricadesPerUse =>
+        barricadesPerUse;
+
+    public int MaximumOwnedBarricades =>
+        maximumOwnedBarricades;
+
+    public int BarricadeDurability =>
+        barricadeDurability;
+
+    public EnemyBarricadeStyle BarricadeStyle =>
+        barricadeStyle;
+
     public int MinimumWave =>
         minimumWave;
 
@@ -280,6 +319,30 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 1,
                 baseSpecialTurnRequirement
+            );
+
+        barricadesPerUse =
+            Mathf.Max(
+                1,
+                barricadesPerUse
+            );
+
+        maximumOwnedBarricades =
+            Mathf.Max(
+                1,
+                maximumOwnedBarricades
+            );
+
+        barricadesPerUse =
+            Mathf.Min(
+                barricadesPerUse,
+                maximumOwnedBarricades
+            );
+
+        barricadeDurability =
+            Mathf.Max(
+                1,
+                barricadeDurability
             );
 
         minimumWave =

@@ -39,12 +39,15 @@ public partial class BoardController
         }
 
         /*
-         * Bolt Shot breaks when the pinned gem itself is matched or when a
-         * real match occurs one orthogonal cell away. Do this before clear
-         * rewards/presentation; the normal cascade gravity will then move a
-         * newly released suspended gem if space exists beneath it.
+         * Board obstacles react to the authoritative resolved match set before
+         * clear rewards/presentation. Released cells then participate in the
+         * normal gravity/refill that follows this resolution.
          */
         BreakPinsAdjacentToMatches(
+            matches
+        );
+
+        DamageBarricadesAdjacentToClears(
             matches
         );
 
@@ -172,6 +175,17 @@ public partial class BoardController
         {
             return;
         }
+
+        /*
+         * The original match already applied one obstacle impact through the
+         * normal match reporter. Only additional bomb/crystal-cleared gems are
+         * considered here, preventing the same physical match from damaging a
+         * stone barricade twice merely because it also triggered a special.
+         */
+        DamageBarricadesAdjacentToClears(
+            expandedClearSet,
+            originalMatches
+        );
 
         /*
          * Presentation consumes the same final expanded set as
@@ -421,15 +435,9 @@ public partial class BoardController
         }
 
         /*
-         * Highest priority:
-         *
-         * Search for any gem that belongs to both a
-         * horizontal line of at least three and a
-         * vertical line of at least three.
-         *
-         * This detects L, T, cross, and extended
-         * versions of those shapes even when the
-         * connected group contains more than five gems.
+         * Highest priority: search for any gem that belongs to both a
+         * horizontal line of at least three and a vertical line of at least
+         * three. This detects L, T, cross, and extended variants.
          */
         foreach (Gem intersection in group)
         {
@@ -491,30 +499,15 @@ public partial class BoardController
                 belowCount > 0 &&
                 aboveCount > 0;
 
-            /*
-             * End of both lines means an L shape.
-             */
             if (!isHorizontalMiddle &&
                 !isVerticalMiddle)
             {
                 return BoardMatchType.LShape;
             }
 
-            /*
-             * Middle of one line means a T shape.
-             *
-             * Middle of both lines means a cross.
-             * Cross currently uses TShape because both
-             * produce the same color crystal and use
-             * the same energy reward.
-             */
             return BoardMatchType.TShape;
         }
 
-        /*
-         * No intersection was found, so check whether
-         * the entire group is one straight line.
-         */
         int firstRow =
             group[0].Row;
 
