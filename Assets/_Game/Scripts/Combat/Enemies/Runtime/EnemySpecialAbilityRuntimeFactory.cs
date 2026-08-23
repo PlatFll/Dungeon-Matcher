@@ -65,6 +65,23 @@ public static class EnemySpecialAbilityRuntimeFactory
                 runtime = crossbowAbility;
                 break;
 
+            case EnemySpecialAbilityKind.Barricade:
+                BarricadeEnemyAbility barricadeAbility =
+                    enemyObject.GetComponent<
+                        BarricadeEnemyAbility
+                    >();
+
+                if (barricadeAbility == null)
+                {
+                    barricadeAbility =
+                        enemyObject.AddComponent<
+                            BarricadeEnemyAbility
+                        >();
+                }
+
+                runtime = barricadeAbility;
+                break;
+
             default:
                 Debug.LogError(
                     $"No runtime factory is registered for " +
