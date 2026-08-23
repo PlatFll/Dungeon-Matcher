@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_BarricadeGuard
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: barricade_guard
+  displayName: Barricade Guard
+  category: 1
+  description: A fortified guard who drops heavy stone barricades. Every three valid player moves he places three two-hit stone blockades, up to six of his own on the board.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: a7f258e9c06e6024f931abcfd5f0bbba, type: 3}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
+  baseMaxHealth: 85
+  baseDamage: 5
+  baseAttackInterval: 7
+  hasSpecialAbility: 1
+  specialAbilityKind: 3
+  baseSpecialTurnRequirement: 3
+  lockSpecialTurnRequirement: 1
+  barricadesPerUse: 3
+  maximumOwnedBarricades: 6
+  barricadeDurability: 2
+  barricadeStyle: 1
+  minimumWave: 7
+  spawnWeight: 1
+  healthMultiplier: 0.6452
+  damageMultiplier: 0.7947
+  attackSpeedMultiplier: 0.9254
+  staggerDurationMultiplier: 1
