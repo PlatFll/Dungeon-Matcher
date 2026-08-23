@@ -8,24 +8,17 @@ public partial class BoardController
 
     [SerializeField]
     [Tooltip(
-        "Optional final wooden barricade artwork. When empty, a simple brown " +
-        "runtime placeholder is used so the mechanic remains testable."
+        "Level-1 barricade artwork. Used by wooden Villager barricades and by " +
+        "damaged level-2 stone barricades after their first hit."
     )]
     private Sprite woodenBarricadeSprite;
 
     [SerializeField]
     [Tooltip(
-        "Optional intact stone barricade artwork. When empty, a simple stone " +
-        "runtime placeholder is used."
+        "Level-2 stone barricade artwork. A stone barricade downgrades to the " +
+        "level-1 wooden sprite after taking its first hit."
     )]
     private Sprite stoneBarricadeSprite;
-
-    [SerializeField]
-    [Tooltip(
-        "Optional cracked stone sprite shown after a two-durability stone " +
-        "barricade takes its first hit."
-    )]
-    private Sprite damagedStoneBarricadeSprite;
 
     private sealed class BarricadeCellState
     {
@@ -465,8 +458,8 @@ public partial class BoardController
     /*
      * A resolved clear damages each orthogonally adjacent barricade at most
      * once, even when several gems from the same clear touch the same cell.
-     * Two-durability stone barricades therefore require two distinct clear
-     * impacts instead of accidentally losing multiple layers to one match.
+     * A level-2 stone barricade therefore drops to the level-1 wooden visual
+     * after its first hit and is destroyed by the second distinct clear.
      */
     private void DamageBarricadesAdjacentToClears(
         HashSet<Gem> clearedGems,
@@ -677,23 +670,19 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
-        if (state != null &&
+        bool isLevelTwoStone =
+            state != null &&
             state.Style ==
-                EnemyBarricadeStyle.Stone)
-        {
-            if (state.RemainingDurability <
-                    state.MaximumDurability &&
-                damagedStoneBarricadeSprite != null)
-            {
-                return damagedStoneBarricadeSprite;
-            }
+                EnemyBarricadeStyle.Stone &&
+            state.RemainingDurability >= 2;
 
-            if (stoneBarricadeSprite != null)
-            {
-                return stoneBarricadeSprite;
-            }
+        if (isLevelTwoStone &&
+            stoneBarricadeSprite != null)
+        {
+            return stoneBarricadeSprite;
         }
-        else if (woodenBarricadeSprite != null)
+
+        if (woodenBarricadeSprite != null)
         {
             return woodenBarricadeSprite;
         }
@@ -728,16 +717,14 @@ public partial class BoardController
     private static Color GetBarricadeFallbackColor(
         BarricadeCellState state)
     {
-        if (state != null &&
+        bool isLevelTwoStone =
+            state != null &&
             state.Style ==
-                EnemyBarricadeStyle.Stone)
-        {
-            return state.RemainingDurability <
-                   state.MaximumDurability
-                ? new Color(0.62f, 0.60f, 0.58f, 1f)
-                : new Color(0.42f, 0.43f, 0.46f, 1f);
-        }
+                EnemyBarricadeStyle.Stone &&
+            state.RemainingDurability >= 2;
 
-        return new Color(0.55f, 0.30f, 0.14f, 1f);
+        return isLevelTwoStone
+            ? new Color(0.42f, 0.43f, 0.46f, 1f)
+            : new Color(0.55f, 0.30f, 0.14f, 1f);
     }
 }
