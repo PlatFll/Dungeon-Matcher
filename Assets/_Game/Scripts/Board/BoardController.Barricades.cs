@@ -4,6 +4,12 @@ using UnityEngine;
 
 public partial class BoardController
 {
+    private static readonly int
+        BarricadeFlashAmountId =
+            Shader.PropertyToID(
+                "_FlashAmount"
+            );
+
     [Header("Barricade Obstacles")]
 
     [SerializeField]
@@ -20,6 +26,32 @@ public partial class BoardController
     )]
     private Sprite stoneBarricadeSprite;
 
+    [Header("Barricade VFX")]
+
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "How long a newly placed barricade holds as a fully white silhouette " +
+        "before its real colors begin materializing."
+    )]
+    private float barricadeWhiteHoldDuration =
+        0.05f;
+
+    [SerializeField, Min(0.01f)]
+    [Tooltip(
+        "How long a white barricade silhouette takes to reveal its real " +
+        "level artwork."
+    )]
+    private float barricadeMaterializeDuration =
+        0.14f;
+
+    [SerializeField, Min(0.01f)]
+    [Tooltip(
+        "How quickly a barricade flashes from its normal colors to white when " +
+        "it takes a durability hit."
+    )]
+    private float barricadeHitFlashDuration =
+        0.08f;
+
     private sealed class BarricadeCellState
     {
         public int OwnerInstanceId;
@@ -28,6 +60,8 @@ public partial class BoardController
         public EnemyBarricadeStyle Style;
         public GameObject ViewObject;
         public SpriteRenderer Renderer;
+        public MaterialPropertyBlock PropertyBlock;
+        public Coroutine VisualRoutine;
     }
 
     private static readonly Vector2Int[]
@@ -44,6 +78,7 @@ public partial class BoardController
             new Dictionary<Vector2Int, BarricadeCellState>();
 
     private Sprite barricadeFallbackSprite;
+    private Material barricadeFlashMaterial;
 
     public bool IsCellBarricaded(
         int column,
@@ -448,6 +483,10 @@ public partial class BoardController
                     cell,
                     state
                 );
+
+                StartBarricadeMaterialization(
+                    state
+                );
             }
         }
 
@@ -458,8 +497,8 @@ public partial class BoardController
     /*
      * A resolved clear damages each orthogonally adjacent barricade at most
      * once, even when several gems from the same clear touch the same cell.
-     * A level-2 stone barricade therefore drops to the level-1 wooden visual
-     * after its first hit and is destroyed by the second distinct clear.
+     * A level-2 stone barricade therefore flashes white, becomes the level-1
+     * wooden visual, and is destroyed by the next distinct clear.
      */
     private void DamageBarricadesAdjacentToClears(
         HashSet<Gem> clearedGems,
@@ -535,15 +574,30 @@ public partial class BoardController
 
             if (state.RemainingDurability <= 0)
             {
-                RemoveBarricadeInternal(
+                /*
+                 * Gameplay removal is immediate. Presentation is allowed to
+                 * finish its short white hit flash independently, so VFX never
+                 * owns board occupancy or gravity timing.
+                 */
+                barricadeCells.Remove(
                     cell
+                );
+
+                StartBarricadeHitVFX(
+                    state,
+                    true
                 );
             }
             else
             {
-                CreateOrRefreshBarricadeView(
-                    cell,
-                    state
+                /*
+                 * Keep the current stone sprite visible for the hit flash.
+                 * The VFX coroutine swaps to level 1 only at peak white, then
+                 * reveals the wooden sprite from the white silhouette.
+                 */
+                StartBarricadeHitVFX(
+                    state,
+                    false
                 );
             }
         }
@@ -563,29 +617,6 @@ public partial class BoardController
             : first.x.CompareTo(
                 second.x
             );
-    }
-
-    private void RemoveBarricadeInternal(
-        Vector2Int cell)
-    {
-        if (!barricadeCells.TryGetValue(
-                cell,
-                out BarricadeCellState state))
-        {
-            return;
-        }
-
-        barricadeCells.Remove(
-            cell
-        );
-
-        if (state != null &&
-            state.ViewObject != null)
-        {
-            Destroy(
-                state.ViewObject
-            );
-        }
     }
 
     private void CreateOrRefreshBarricadeView(
@@ -624,11 +655,40 @@ public partial class BoardController
                     .VisibleInsideMask;
         }
 
+        if (state.Renderer == null)
+        {
+            return;
+        }
+
+        Material flashMaterial =
+            GetBarricadeFlashMaterial();
+
+        if (flashMaterial != null)
+        {
+            state.Renderer.sharedMaterial =
+                flashMaterial;
+        }
+
         state.ViewObject.transform.localPosition =
             GetCellLocalPosition(
                 cell.x,
                 cell.y
             );
+
+        ApplyBarricadeLevelVisual(
+            state
+        );
+    }
+
+    private void ApplyBarricadeLevelVisual(
+        BarricadeCellState state)
+    {
+        if (state == null ||
+            state.ViewObject == null ||
+            state.Renderer == null)
+        {
+            return;
+        }
 
         Sprite sprite =
             GetBarricadeSprite(
@@ -636,6 +696,7 @@ public partial class BoardController
             );
 
         state.Renderer.sprite = sprite;
+        state.Renderer.enabled = true;
 
         bool usingFallback =
             sprite == GetBarricadeFallbackSprite();
@@ -665,6 +726,349 @@ public partial class BoardController
 
         state.ViewObject.transform.localScale =
             Vector3.one * scale;
+    }
+
+    private void StartBarricadeMaterialization(
+        BarricadeCellState state)
+    {
+        if (!CanPlayBarricadeVFX(state))
+        {
+            return;
+        }
+
+        CancelBarricadeVisualRoutine(
+            state
+        );
+
+        state.VisualRoutine =
+            StartCoroutine(
+                PlayBarricadeMaterialization(
+                    state
+                )
+            );
+    }
+
+    private void StartBarricadeHitVFX(
+        BarricadeCellState state,
+        bool destroyAfterFlash)
+    {
+        if (!CanPlayBarricadeVFX(state))
+        {
+            if (destroyAfterFlash)
+            {
+                DestroyBarricadeView(
+                    state
+                );
+            }
+
+            return;
+        }
+
+        CancelBarricadeVisualRoutine(
+            state
+        );
+
+        SetBarricadeFlashAmount(
+            state,
+            0f
+        );
+
+        state.VisualRoutine =
+            StartCoroutine(
+                PlayBarricadeHitVFX(
+                    state,
+                    destroyAfterFlash
+                )
+            );
+    }
+
+    private IEnumerator PlayBarricadeMaterialization(
+        BarricadeCellState state)
+    {
+        if (!CanPlayBarricadeVFX(state))
+        {
+            yield break;
+        }
+
+        /*
+         * Spawn as a fully white silhouette first, matching the game's other
+         * materialization language, then reveal the actual wood/stone colors.
+         */
+        SetBarricadeFlashAmount(
+            state,
+            1f
+        );
+
+        if (barricadeWhiteHoldDuration > 0f)
+        {
+            yield return new WaitForSeconds(
+                barricadeWhiteHoldDuration
+            );
+        }
+
+        yield return RevealBarricadeFromWhite(
+            state
+        );
+
+        if (state != null)
+        {
+            state.VisualRoutine = null;
+        }
+    }
+
+    private IEnumerator PlayBarricadeHitVFX(
+        BarricadeCellState state,
+        bool destroyAfterFlash)
+    {
+        if (!CanPlayBarricadeVFX(state))
+        {
+            yield break;
+        }
+
+        float safeFlashDuration =
+            Mathf.Max(
+                0.01f,
+                barricadeHitFlashDuration
+            );
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime <
+               safeFlashDuration)
+        {
+            if (!CanPlayBarricadeVFX(state))
+            {
+                yield break;
+            }
+
+            float progress =
+                Mathf.Clamp01(
+                    elapsedTime /
+                    safeFlashDuration
+                );
+
+            float easedProgress =
+                Mathf.SmoothStep(
+                    0f,
+                    1f,
+                    progress
+                );
+
+            SetBarricadeFlashAmount(
+                state,
+                easedProgress
+            );
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
+        }
+
+        SetBarricadeFlashAmount(
+            state,
+            1f
+        );
+
+        if (destroyAfterFlash)
+        {
+            state.VisualRoutine = null;
+
+            DestroyBarricadeView(
+                state
+            );
+
+            yield break;
+        }
+
+        /*
+         * Durability already changed authoritatively. Swap the art only while
+         * the sprite is completely white, then materialize the new level-1
+         * wooden barricade out of that silhouette.
+         */
+        ApplyBarricadeLevelVisual(
+            state
+        );
+
+        SetBarricadeFlashAmount(
+            state,
+            1f
+        );
+
+        if (barricadeWhiteHoldDuration > 0f)
+        {
+            yield return new WaitForSeconds(
+                barricadeWhiteHoldDuration
+            );
+        }
+
+        yield return RevealBarricadeFromWhite(
+            state
+        );
+
+        if (state != null)
+        {
+            state.VisualRoutine = null;
+        }
+    }
+
+    private IEnumerator RevealBarricadeFromWhite(
+        BarricadeCellState state)
+    {
+        float safeDuration =
+            Mathf.Max(
+                0.01f,
+                barricadeMaterializeDuration
+            );
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime <
+               safeDuration)
+        {
+            if (!CanPlayBarricadeVFX(state))
+            {
+                yield break;
+            }
+
+            float progress =
+                Mathf.Clamp01(
+                    elapsedTime /
+                    safeDuration
+                );
+
+            float easedProgress =
+                Mathf.SmoothStep(
+                    0f,
+                    1f,
+                    progress
+                );
+
+            SetBarricadeFlashAmount(
+                state,
+                1f -
+                easedProgress
+            );
+
+            elapsedTime +=
+                Time.deltaTime;
+
+            yield return null;
+        }
+
+        SetBarricadeFlashAmount(
+            state,
+            0f
+        );
+    }
+
+    private void CancelBarricadeVisualRoutine(
+        BarricadeCellState state)
+    {
+        if (state == null ||
+            state.VisualRoutine == null)
+        {
+            return;
+        }
+
+        StopCoroutine(
+            state.VisualRoutine
+        );
+
+        state.VisualRoutine = null;
+    }
+
+    private bool CanPlayBarricadeVFX(
+        BarricadeCellState state)
+    {
+        return
+            state != null &&
+            state.ViewObject != null &&
+            state.Renderer != null;
+    }
+
+    private void SetBarricadeFlashAmount(
+        BarricadeCellState state,
+        float amount)
+    {
+        if (!CanPlayBarricadeVFX(state))
+        {
+            return;
+        }
+
+        if (state.PropertyBlock == null)
+        {
+            state.PropertyBlock =
+                new MaterialPropertyBlock();
+        }
+
+        state.Renderer.GetPropertyBlock(
+            state.PropertyBlock
+        );
+
+        state.PropertyBlock.SetFloat(
+            BarricadeFlashAmountId,
+            Mathf.Clamp01(amount)
+        );
+
+        state.Renderer.SetPropertyBlock(
+            state.PropertyBlock
+        );
+    }
+
+    private Material GetBarricadeFlashMaterial()
+    {
+        if (barricadeFlashMaterial != null)
+        {
+            return barricadeFlashMaterial;
+        }
+
+        if (gemPrefab == null)
+        {
+            return null;
+        }
+
+        SpriteRenderer gemRenderer =
+            gemPrefab.GetComponent<
+                SpriteRenderer
+            >();
+
+        if (gemRenderer != null)
+        {
+            /*
+             * Reuse the board gem's existing white-flash material instead of
+             * introducing another shader/material dependency for barricades.
+             */
+            barricadeFlashMaterial =
+                gemRenderer.sharedMaterial;
+        }
+
+        return barricadeFlashMaterial;
+    }
+
+    private void DestroyBarricadeView(
+        BarricadeCellState state)
+    {
+        if (state == null)
+        {
+            return;
+        }
+
+        if (state.VisualRoutine != null)
+        {
+            state.VisualRoutine = null;
+        }
+
+        if (state.ViewObject != null)
+        {
+            Destroy(
+                state.ViewObject
+            );
+        }
+
+        state.ViewObject = null;
+        state.Renderer = null;
+        state.PropertyBlock = null;
     }
 
     private Sprite GetBarricadeSprite(
