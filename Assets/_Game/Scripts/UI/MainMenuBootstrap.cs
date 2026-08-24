@@ -253,13 +253,11 @@ public static class MainMenuBootstrap
             return;
         }
 
-        GameObject eventSystemObject = new GameObject(
+        new GameObject(
             "EventSystem",
             typeof(EventSystem),
             typeof(InputSystemUIInputModule)
         );
-
-        Object.DontDestroyOnLoad(eventSystemObject);
     }
 
     private static void EnsureAudioListener()
