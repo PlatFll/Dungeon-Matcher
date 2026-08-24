@@ -45,6 +45,17 @@ public static class MainMenuBootstrap
         SceneManager.sceneLoaded += HandleSceneLoaded;
     }
 
+    [RuntimeInitializeOnLoadMethod(
+        RuntimeInitializeLoadType.AfterSceneLoad
+    )]
+    private static void BuildInitialMenu()
+    {
+        if (SceneManager.GetActiveScene().name == MainMenuSceneName)
+        {
+            BuildMenuIfNeeded();
+        }
+    }
+
     private static void HandleSceneLoaded(
         Scene scene,
         LoadSceneMode loadSceneMode
