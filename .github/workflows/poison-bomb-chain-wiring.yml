@@ -1,0 +1,299 @@
+name: Poison Bomb Chain Wiring
+
+on:
+  push:
+    branches:
+      - feature/poison-bomb-chain-wiring
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/poison-bomb-chain-wiring
+
+      - name: Apply targeted Poison Bomb integration
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('Assets/_Game/Scripts/Board/BoardController.SpecialGems.cs')
+          text = path.read_text()
+
+          def replace_once(old, new, label):
+              global text
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f'{label}: expected exactly 1 match, found {count}')
+              text = text.replace(old, new, 1)
+
+          replace_once(
+          '''            if (targetGem.SpecialType ==
+                              GemSpecialType.RowBomb ||
+                          targetGem.SpecialType ==
+                              GemSpecialType.ColumnBomb)
+          ''',
+          '''            if (IsChainReactiveBomb(
+                          targetGem.SpecialType))
+          ''',
+          'normal color crystal special activation'
+          )
+
+          replace_once(
+          '''            gemsToClear.Add(gem);
+
+                      if (gem.SpecialType ==
+                              GemSpecialType.RowBomb ||
+                          gem.SpecialType ==
+                              GemSpecialType.ColumnBomb)
+                      {
+                          pendingBombs.Enqueue(gem);
+                      }
+          ''',
+          '''            gemsToClear.Add(gem);
+
+                      if (IsChainReactiveBomb(
+                              gem.SpecialType))
+                      {
+                          pendingBombs.Enqueue(gem);
+                      }
+          ''',
+          'seed chain-reactive bombs'
+          )
+
+          replace_once(
+          '''                case GemSpecialType.ColumnBomb:
+                              for (int row = 0;
+                                   row < height;
+                                   row++)
+                              {
+                                  TryAddGemToBombClearSet(
+                                      bomb.Column,
+                                      row,
+                                      bomb,
+                                      preserveTriggeredCrystals,
+                                      triggeredCrystalRequests,
+                                      gemsToClear,
+                                      pendingBombs
+                                  );
+                              }
+
+                              break;
+                      }
+          ''',
+          '''                case GemSpecialType.ColumnBomb:
+                              for (int row = 0;
+                                   row < height;
+                                   row++)
+                              {
+                                  TryAddGemToBombClearSet(
+                                      bomb.Column,
+                                      row,
+                                      bomb,
+                                      preserveTriggeredCrystals,
+                                      triggeredCrystalRequests,
+                                      gemsToClear,
+                                      pendingBombs
+                                  );
+                              }
+
+                              break;
+
+                          case GemSpecialType.PoisonBomb:
+                              AddPoisonBombAreaToClearSet(
+                                  bomb,
+                                  preserveTriggeredCrystals,
+                                  triggeredCrystalRequests,
+                                  gemsToClear,
+                                  pendingBombs
+                              );
+
+                              break;
+                      }
+          ''',
+          'normal bomb switch'
+          )
+
+          replace_once(
+          '''        if (wasAdded &&
+                      (
+                          gem.SpecialType ==
+                              GemSpecialType.RowBomb ||
+                          gem.SpecialType ==
+                              GemSpecialType.ColumnBomb
+                      ))
+                  {
+                      pendingBombs.Enqueue(gem);
+                  }
+          ''',
+          '''        if (wasAdded &&
+                      IsChainReactiveBomb(
+                          gem.SpecialType))
+                  {
+                      pendingBombs.Enqueue(gem);
+                  }
+          ''',
+          'normal chained bomb enqueue'
+          )
+
+          replace_once(
+          '''                case GemSpecialType.ColumnBomb:
+                              for (int row = 0;
+                                   row < height;
+                                   row++)
+                              {
+                                  TryAddGemToConvertedBombClearSet(
+                                      bomb.Column,
+                                      row,
+                                      activatedBomb,
+                                      pendingConvertedBombs,
+                                      triggeredCrystalRequests,
+                                      gemsToClear,
+                                      pendingBombs
+                                  );
+                              }
+
+                              break;
+                      }
+          ''',
+          '''                case GemSpecialType.ColumnBomb:
+                              for (int row = 0;
+                                   row < height;
+                                   row++)
+                              {
+                                  TryAddGemToConvertedBombClearSet(
+                                      bomb.Column,
+                                      row,
+                                      activatedBomb,
+                                      pendingConvertedBombs,
+                                      triggeredCrystalRequests,
+                                      gemsToClear,
+                                      pendingBombs
+                                  );
+                              }
+
+                              break;
+
+                          case GemSpecialType.PoisonBomb:
+                              AddPoisonBombAreaToConvertedClearSet(
+                                  bomb,
+                                  activatedBomb,
+                                  pendingConvertedBombs,
+                                  triggeredCrystalRequests,
+                                  gemsToClear,
+                                  pendingBombs
+                              );
+
+                              break;
+                      }
+          ''',
+          'converted bomb switch'
+          )
+
+          replace_once(
+          '''        if (wasAdded &&
+                      (
+                          gem.SpecialType ==
+                              GemSpecialType.RowBomb ||
+                          gem.SpecialType ==
+                              GemSpecialType.ColumnBomb
+                      ))
+                  {
+                      pendingBombs.Enqueue(gem);
+                  }
+          ''',
+          '''        if (wasAdded &&
+                      IsChainReactiveBomb(
+                          gem.SpecialType))
+                  {
+                      pendingBombs.Enqueue(gem);
+                  }
+          ''',
+          'converted chained bomb enqueue'
+          )
+
+          replace_once(
+          '''            GemSpecialType randomBombType =
+                          Random.Range(0, 2) == 0
+                              ? GemSpecialType.RowBomb
+                              : GemSpecialType.ColumnBomb;
+
+                      targetGem.SetSpecialType(
+                          randomBombType
+                      );
+
+                      pendingConvertedBombs.Add(
+                          targetGem
+                      );
+          ''',
+          '''            if (targetGem.SpecialType ==
+                          GemSpecialType.PoisonBomb)
+                      {
+                          pendingConvertedBombs.Add(
+                              targetGem
+                          );
+
+                          continue;
+                      }
+
+                      GemSpecialType randomBombType =
+                          Random.Range(0, 2) == 0
+                              ? GemSpecialType.RowBomb
+                              : GemSpecialType.ColumnBomb;
+
+                      targetGem.SetSpecialType(
+                          randomBombType
+                      );
+
+                      pendingConvertedBombs.Add(
+                          targetGem
+                      );
+          ''',
+          'preserve poison bomb in random conversion'
+          )
+
+          replace_once(
+          '''            targetGem.SetSpecialType(
+                          convertedBombType
+                      );
+
+                      pendingConvertedBombs.Add(
+                          targetGem
+                      );
+          ''',
+          '''            if (targetGem.SpecialType !=
+                          GemSpecialType.PoisonBomb)
+                      {
+                          targetGem.SetSpecialType(
+                              convertedBombType
+                          );
+                      }
+
+                      pendingConvertedBombs.Add(
+                          targetGem
+                      );
+          ''',
+          'preserve poison bomb in fixed conversion'
+          )
+
+          path.write_text(text)
+
+          workflow = Path('.github/workflows/poison-bomb-chain-wiring.yml')
+          if workflow.exists():
+              workflow.unlink()
+          PY
+
+      - name: Commit targeted integration
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Wire Poison Bomb into special-gem chain resolution"
+          git push origin HEAD:feature/poison-bomb-chain-wiring
