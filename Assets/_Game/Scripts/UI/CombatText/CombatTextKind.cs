@@ -4,6 +4,7 @@ public enum CombatTextKind
     Healing,
     Critical,
     Poison,
+    PoisonDamage = Poison,
     Block,
     Miss,
     Shield,
