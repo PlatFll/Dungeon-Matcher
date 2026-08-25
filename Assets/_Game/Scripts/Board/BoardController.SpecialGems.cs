@@ -72,10 +72,15 @@ public partial class BoardController
                     break;
 
                 case BoardMatchType.StraightFive:
+                    specialType =
+                        GemSpecialType.ColorCrystal;
+
+                    break;
+
                 case BoardMatchType.LShape:
                 case BoardMatchType.TShape:
                     specialType =
-                        GemSpecialType.ColorCrystal;
+                        GemSpecialType.PoisonBomb;
 
                     break;
             }
