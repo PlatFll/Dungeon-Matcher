@@ -45,6 +45,9 @@ public class Gem :
     private GemSpecialOverlayView
     specialOverlayView;
 
+    private PoisonBombGemView
+    poisonBombView;
+
     private MaterialPropertyBlock
         materialPropertyBlock;
 
@@ -78,6 +81,11 @@ public class Gem :
         specialOverlayView =
             GetComponentInChildren<
                 GemSpecialOverlayView
+            >(true);
+
+        poisonBombView =
+            GetComponentInChildren<
+                PoisonBombGemView
             >(true);
 
         normalScale =
@@ -144,6 +152,12 @@ public class Gem :
             true;
 
         SetFlashAmount(0f);
+
+        if (SpecialType ==
+            GemSpecialType.PoisonBomb)
+        {
+            RefreshPoisonBombVisual();
+        }
     }
 
     public void SetSpecialType(
@@ -156,6 +170,14 @@ public class Gem :
             specialOverlayView =
                 GetComponentInChildren<
                     GemSpecialOverlayView
+                >(true);
+        }
+
+        if (poisonBombView == null)
+        {
+            poisonBombView =
+                GetComponentInChildren<
+                    PoisonBombGemView
                 >(true);
         }
 
@@ -178,7 +200,34 @@ public class Gem :
                 specialOverlayView.Hide();
             }
 
+            if (poisonBombView != null)
+            {
+                poisonBombView.Hide();
+            }
+
             return;
+        }
+
+        if (SpecialType ==
+            GemSpecialType.PoisonBomb)
+        {
+            if (specialOverlayView != null)
+            {
+                specialOverlayView.Hide();
+            }
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = false;
+            }
+
+            RefreshPoisonBombVisual();
+            return;
+        }
+
+        if (poisonBombView != null)
+        {
+            poisonBombView.Hide();
         }
 
         if (specialOverlayView == null)
@@ -187,9 +236,8 @@ public class Gem :
         }
 
         /*
-         * Bombs are overlays, so keep the gem visible.
-         * Crystal is a full visual replacement,
-         * so hide the normal gem sprite.
+         * Row/column bombs are overlays, so keep the gem visible.
+         * Color crystals replace the normal gem sprite.
          */
         bool isCrystal =
             SpecialType ==
@@ -204,6 +252,44 @@ public class Gem :
         specialOverlayView.Show(
             Type,
             SpecialType
+        );
+    }
+
+    private void RefreshPoisonBombVisual()
+    {
+        if (SpecialType !=
+            GemSpecialType.PoisonBomb ||
+            board == null)
+        {
+            return;
+        }
+
+        if (spriteRenderer == null)
+        {
+            spriteRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (poisonBombView == null)
+        {
+            poisonBombView =
+                PoisonBombGemView.GetOrCreate(
+                    transform,
+                    spriteRenderer
+                );
+        }
+
+        if (poisonBombView == null)
+        {
+            return;
+        }
+
+        poisonBombView.Show(
+            board.PoisonBombSprite,
+            board.GetSpecialBombSourceIcon(
+                Type
+            ),
+            spriteRenderer
         );
     }
 
@@ -288,6 +374,15 @@ public class Gem :
         spriteRenderer.SetPropertyBlock(
             materialPropertyBlock
         );
+
+        if (poisonBombView != null &&
+            SpecialType ==
+                GemSpecialType.PoisonBomb)
+        {
+            poisonBombView.SetFlashAmount(
+                amount
+            );
+        }
     }
 
     public void SetVFXFlashAmount(
@@ -307,7 +402,9 @@ public class Gem :
 
         if (specialOverlayView != null &&
             SpecialType !=
-                GemSpecialType.None)
+                GemSpecialType.None &&
+            SpecialType !=
+                GemSpecialType.PoisonBomb)
         {
             specialOverlayView
                 .SetVFXFlashAmount(
@@ -465,6 +562,19 @@ public class Gem :
 
         SetSpecialType(
             GemSpecialType.ColorCrystal
+        );
+    }
+
+    [ContextMenu("Debug/Show Poison Bomb")]
+    private void DebugShowPoisonBomb()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.PoisonBomb
         );
     }
 }
