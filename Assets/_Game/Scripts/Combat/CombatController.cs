@@ -91,6 +91,26 @@ public sealed class CombatController :
     private float cascadeDamageBonusPerDepth =
         0.20f;
 
+    [Header("Poison")]
+    [SerializeField, Min(0.05f)]
+    [Tooltip(
+        "How long Poison Bomb poison remains active."
+    )]
+    private float poisonDuration = 7f;
+
+    [SerializeField, Min(0.05f)]
+    [Tooltip(
+        "Seconds between poison damage ticks."
+    )]
+    private float poisonTickInterval = 1f;
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Prototype damage dealt by each poison tick. " +
+        "This is intentionally data-tunable for later balance passes."
+    )]
+    private int poisonTickDamage = 5;
+
     [Header("Prototype Debugging")]
     [SerializeField]
     private GemType debugGemType;
@@ -254,6 +274,73 @@ public sealed class CombatController :
         return enemiesHit > 0;
     }
 
+    public int ApplyPoisonToGemType(
+        GemType gemType)
+    {
+        if (!CanResolveCombat())
+        {
+            return 0;
+        }
+
+        List<EnemyActor> enemySnapshot =
+            new List<EnemyActor>(
+                waveController.ActiveEnemies
+            );
+
+        int enemiesPoisoned = 0;
+
+        foreach (EnemyActor enemy
+                 in enemySnapshot)
+        {
+            if (enemy == null ||
+                !enemy.IsInitialized ||
+                enemy.IsDefeated ||
+                enemy.AssignedGemType !=
+                    gemType)
+            {
+                continue;
+            }
+
+            EnemyPoisonStatus poisonStatus =
+                enemy.GetComponent<
+                    EnemyPoisonStatus
+                >();
+
+            if (poisonStatus == null)
+            {
+                poisonStatus =
+                    enemy.gameObject.AddComponent<
+                        EnemyPoisonStatus
+                    >();
+            }
+
+            poisonStatus.Apply(
+                poisonDuration,
+                poisonTickInterval,
+                poisonTickDamage
+            );
+
+            if (!poisonStatus.IsPoisoned)
+            {
+                continue;
+            }
+
+            enemiesPoisoned++;
+        }
+
+        if (enemiesPoisoned > 0)
+        {
+            Debug.Log(
+                $"Poison applied to {enemiesPoisoned} " +
+                $"active {gemType}-weak enemy/enemies for " +
+                $"{poisonDuration:0.##}s.",
+                this
+            );
+        }
+
+        return enemiesPoisoned;
+    }
+
     public int CalculateGemClearDamage(
         BoardClearContext clearContext)
     {
@@ -327,6 +414,24 @@ public sealed class CombatController :
             Mathf.Max(
                 0f,
                 cascadeDamageBonusPerDepth
+            );
+
+        poisonDuration =
+            Mathf.Max(
+                0.05f,
+                poisonDuration
+            );
+
+        poisonTickInterval =
+            Mathf.Max(
+                0.05f,
+                poisonTickInterval
+            );
+
+        poisonTickDamage =
+            Mathf.Max(
+                1,
+                poisonTickDamage
             );
 
         debugGemCount =
