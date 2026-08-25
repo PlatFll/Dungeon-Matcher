@@ -405,6 +405,41 @@ public sealed class CombatTextController :
         UnbindEnemy(enemy);
     }
 
+    public static void ShowText(
+        string displayedText,
+        Vector3 worldPosition,
+        CombatTextKind kind,
+        bool useEnemyOffset)
+    {
+        CombatTextController controller =
+            Object.FindFirstObjectByType<
+                CombatTextController
+            >();
+
+        if (controller == null)
+        {
+            return;
+        }
+
+        string resolvedText = displayedText;
+
+        if (kind == CombatTextKind.Poison &&
+            !string.IsNullOrWhiteSpace(displayedText) &&
+            !displayedText.StartsWith("-"))
+        {
+            resolvedText = $"-{displayedText}";
+        }
+
+        controller.ShowTextAtWorldPosition(
+            resolvedText,
+            kind,
+            worldPosition,
+            useEnemyOffset
+                ? controller.enemyTextOffset
+                : Vector2.zero
+        );
+    }
+
     public void ShowText(
         string displayedText,
         CombatTextKind kind,
