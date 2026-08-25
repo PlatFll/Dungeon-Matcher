@@ -28,6 +28,10 @@ public partial class BoardController
             return;
         }
 
+        ApplyPoisonBombStatus(
+            poisonBomb
+        );
+
         /*
          * Poison Bombs use a compact 3x3 blast centered on the
          * bomb. Every cell still enters the same authoritative
@@ -74,6 +78,10 @@ public partial class BoardController
             return;
         }
 
+        ApplyPoisonBombStatus(
+            poisonBomb
+        );
+
         /*
          * Color-crystal conversion sequences deliberately protect
          * converted bombs until their own activation turn. Route
@@ -101,5 +109,19 @@ public partial class BoardController
                 );
             }
         }
+    }
+
+    private void ApplyPoisonBombStatus(
+        Gem poisonBomb)
+    {
+        if (poisonBomb == null ||
+            combatController == null)
+        {
+            return;
+        }
+
+        combatController.ApplyPoisonToGemType(
+            poisonBomb.Type
+        );
     }
 }
