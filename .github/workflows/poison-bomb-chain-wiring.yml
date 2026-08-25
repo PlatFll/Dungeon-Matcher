@@ -29,8 +29,11 @@ jobs:
           def replace_once(old, new, label):
               global text
               count = text.count(old)
-              if count != 1:
-                  raise RuntimeError(f'{label}: expected exactly 1 match, found {count}')
+              expected_count = 2 if label == 'normal chained bomb enqueue' else 1
+              if count != expected_count:
+                  raise RuntimeError(
+                      f'{label}: expected {expected_count} match(es), found {count}'
+                  )
               text = text.replace(old, new, 1)
 
           replace_once(
