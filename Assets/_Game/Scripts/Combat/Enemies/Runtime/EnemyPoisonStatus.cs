@@ -226,6 +226,9 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
 
         if (enemyActor != null)
         {
+            enemyActor.Initialized +=
+                HandleEnemyInitialized;
+
             enemyActor.Defeated +=
                 HandleEnemyDefeated;
         }
@@ -235,9 +238,23 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
     {
         if (enemyActor != null)
         {
+            enemyActor.Initialized -=
+                HandleEnemyInitialized;
+
             enemyActor.Defeated -=
                 HandleEnemyDefeated;
         }
+    }
+
+    private void HandleEnemyInitialized(
+        EnemyActor enemy)
+    {
+        /*
+         * Enemy objects may eventually be pooled. A fresh runtime
+         * initialization must never inherit poison from a previous
+         * enemy occupying the same GameObject.
+         */
+        ClearPoison(false);
     }
 
     private void HandleEnemyDefeated(
