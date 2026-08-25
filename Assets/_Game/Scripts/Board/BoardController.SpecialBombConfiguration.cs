@@ -34,6 +34,10 @@ public partial class BoardController
     public Sprite PoisonedStatusIcon =>
         poisonedStatusIcon;
 
+    // Compatibility alias used by the poison-status presenter.
+    public Sprite PoisonedStatusEffectSprite =>
+        poisonedStatusIcon;
+
     public Sprite GetSpecialBombSourceIcon(
         GemType gemType)
     {
