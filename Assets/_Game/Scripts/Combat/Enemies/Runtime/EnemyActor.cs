@@ -250,6 +250,25 @@ public sealed class EnemyActor : MonoBehaviour
 
     public bool TryTakeDamage(int amount)
     {
+        return TryTakeDamageInternal(
+            amount,
+            true
+        );
+    }
+
+    public bool TryTakeDamageWithoutFeedback(
+        int amount)
+    {
+        return TryTakeDamageInternal(
+            amount,
+            false
+        );
+    }
+
+    private bool TryTakeDamageInternal(
+        int amount,
+        bool notifyDamageReceived)
+    {
         if (!CanReceiveDamage ||
             amount <= 0)
         {
@@ -273,10 +292,19 @@ public sealed class EnemyActor : MonoBehaviour
             return false;
         }
 
-        DamageReceived?.Invoke(
-            this,
-            actualDamage
-        );
+        /*
+         * Normal direct/clear damage uses DamageReceived to drive the
+         * existing hit shake. Damage-over-time sources can deliberately
+         * suppress that presentation event while still sharing the same
+         * authoritative health and defeat path.
+         */
+        if (notifyDamageReceived)
+        {
+            DamageReceived?.Invoke(
+                this,
+                actualDamage
+            );
+        }
 
         HealthChanged?.Invoke(
             this,
