@@ -708,6 +708,9 @@ MonoBehaviour:
   waveController: {fileID: 362587654}
   damagePerGem: 10
   cascadeDamageBonusPerDepth: 0.2
+  poisonDuration: 7
+  poisonTickInterval: 1
+  poisonTickDamage: 5
   debugGemType: 0
   debugGemCount: 3
   debugCascadeDepth: 0
@@ -3560,6 +3563,14 @@ MonoBehaviour:
   pinMaterializeDuration: 0.1
   pinShakeDistanceInCells: 0.04
   pinShakeDuration: 0.12
+  rubySpecialBombIcon: {fileID: 21300000, guid: 972b2597f0674634791ae3e1c778e262, type: 3}
+  amberSpecialBombIcon: {fileID: 21300000, guid: 75f133ce7df3f9f49a72d24a7fbaaf3a, type: 3}
+  topazSpecialBombIcon: {fileID: 21300000, guid: 0f4ef75550fe59c47a942a8626e97318, type: 3}
+  emeraldSpecialBombIcon: {fileID: 21300000, guid: ec8579bea3fc9804b8232713ed37c74b, type: 3}
+  sapphireSpecialBombIcon: {fileID: 21300000, guid: a41ef461856a5984a9bf4d22a029fd9f, type: 3}
+  amethystSpecialBombIcon: {fileID: 21300000, guid: 18fb82c80f65ef241a2b3a0516758214, type: 3}
+  poisonBombSprite: {fileID: 70096992603834462, guid: eaa2acad08830064a802adff1c23f8a2, type: 3}
+  poisonedStatusIcon: {fileID: 5398691586455000922, guid: 2e727c2fe13c64341ba0525abae8bdb6, type: 3}
   triggeredCrystalChargeScale: 1.16
   triggeredCrystalChargePulseSpeed: 4
   triggeredCrystalSettlePause: 0.12
