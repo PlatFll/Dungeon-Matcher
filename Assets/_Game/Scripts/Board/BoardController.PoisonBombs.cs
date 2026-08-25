@@ -57,4 +57,49 @@ public partial class BoardController
             }
         }
     }
+
+    private void AddPoisonBombAreaToConvertedClearSet(
+        Gem poisonBomb,
+        Gem activatedBomb,
+        HashSet<Gem> pendingConvertedBombs,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (poisonBomb == null ||
+            poisonBomb.SpecialType !=
+                GemSpecialType.PoisonBomb)
+        {
+            return;
+        }
+
+        /*
+         * Color-crystal conversion sequences deliberately protect
+         * converted bombs until their own activation turn. Route
+         * Poison Bomb cells through that same converted-bomb helper
+         * so the established sequencing rules remain intact.
+         */
+        for (int rowOffset = -1;
+             rowOffset <= 1;
+             rowOffset++)
+        {
+            for (int columnOffset = -1;
+                 columnOffset <= 1;
+                 columnOffset++)
+            {
+                TryAddGemToConvertedBombClearSet(
+                    poisonBomb.Column +
+                        columnOffset,
+                    poisonBomb.Row +
+                        rowOffset,
+                    activatedBomb,
+                    pendingConvertedBombs,
+                    triggeredCrystalRequests,
+                    gemsToClear,
+                    pendingBombs
+                );
+            }
+        }
+    }
 }

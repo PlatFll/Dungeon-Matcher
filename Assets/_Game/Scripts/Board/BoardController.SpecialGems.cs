@@ -828,6 +828,16 @@ public partial class BoardController
                 continue;
             }
 
+            if (targetGem.SpecialType ==
+                GemSpecialType.PoisonBomb)
+            {
+                pendingConvertedBombs.Add(
+                    targetGem
+                );
+
+                continue;
+            }
+
             GemSpecialType randomBombType =
                 Random.Range(0, 2) == 0
                     ? GemSpecialType.RowBomb
@@ -1011,10 +1021,8 @@ public partial class BoardController
              * Any crystal crossed by the bomb is preserved and
              * queued instead of being silently removed.
              */
-            if (targetGem.SpecialType ==
-                    GemSpecialType.RowBomb ||
-                targetGem.SpecialType ==
-                    GemSpecialType.ColumnBomb)
+            if (IsChainReactiveBomb(
+                targetGem.SpecialType))
             {
                 activationSet =
                     BuildBombExpandedClearSet(
@@ -1201,6 +1209,18 @@ public partial class BoardController
                     }
 
                     break;
+
+                case GemSpecialType.PoisonBomb:
+                    AddPoisonBombAreaToConvertedClearSet(
+                        bomb,
+                        activatedBomb,
+                        pendingConvertedBombs,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
             }
         }
 
@@ -1268,12 +1288,8 @@ public partial class BoardController
          * explosion chain.
          */
         if (wasAdded &&
-            (
-                gem.SpecialType ==
-                    GemSpecialType.RowBomb ||
-                gem.SpecialType ==
-                    GemSpecialType.ColumnBomb
-            ))
+            IsChainReactiveBomb(
+                gem.SpecialType))
         {
             pendingBombs.Enqueue(gem);
         }
@@ -1343,9 +1359,13 @@ public partial class BoardController
                 continue;
             }
 
-            targetGem.SetSpecialType(
-                convertedBombType
-            );
+            if (targetGem.SpecialType !=
+                GemSpecialType.PoisonBomb)
+            {
+                targetGem.SetSpecialType(
+                    convertedBombType
+                );
+            }
 
             pendingConvertedBombs.Add(
                 targetGem
@@ -1984,10 +2004,8 @@ public partial class BoardController
 
             gemsToClear.Add(gem);
 
-            if (gem.SpecialType ==
-                    GemSpecialType.RowBomb ||
-                gem.SpecialType ==
-                    GemSpecialType.ColumnBomb)
+            if (IsChainReactiveBomb(
+                    gem.SpecialType))
             {
                 pendingBombs.Enqueue(gem);
             }
@@ -2041,6 +2059,17 @@ public partial class BoardController
                     }
 
                     break;
+
+                case GemSpecialType.PoisonBomb:
+                    AddPoisonBombAreaToClearSet(
+                        bomb,
+                        preserveTriggeredCrystals,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
             }
         }
 
@@ -2090,12 +2119,8 @@ public partial class BoardController
             gemsToClear.Add(gem);
 
         if (wasAdded &&
-            (
-                gem.SpecialType ==
-                    GemSpecialType.RowBomb ||
-                gem.SpecialType ==
-                    GemSpecialType.ColumnBomb
-            ))
+            IsChainReactiveBomb(
+                gem.SpecialType))
         {
             pendingBombs.Enqueue(gem);
         }
