@@ -314,6 +314,33 @@ public sealed class CombatController :
                     >();
             }
 
+            /*
+             * Presentation subscribes before Apply so the very first
+             * PoisonApplied event gets the icon materialization. A visual
+             * setup failure must never block the gameplay status itself.
+             */
+            try
+            {
+                EnemyPoisonStatusPresenter
+                    .EnsureInstalled(
+                        enemy.gameObject,
+                        poisonStatus
+                    );
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError(
+                    $"Poison presentation setup failed for " +
+                    $"{enemy.name}. Gameplay Poison will continue.",
+                    enemy
+                );
+
+                Debug.LogException(
+                    exception,
+                    enemy
+                );
+            }
+
             poisonStatus.Apply(
                 poisonDuration,
                 poisonTickInterval,
