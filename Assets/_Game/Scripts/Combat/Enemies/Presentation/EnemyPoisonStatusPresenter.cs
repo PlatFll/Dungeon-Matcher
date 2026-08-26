@@ -4,13 +4,10 @@ using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyActor))]
-public sealed class EnemyPoisonStatusPresenter :
-    MonoBehaviour
+public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
 {
     private static readonly int FlashAmountId =
-        Shader.PropertyToID(
-            "_FlashAmount"
-        );
+        Shader.PropertyToID("_FlashAmount");
 
     [Header("Status Icon")]
     [SerializeField]
@@ -19,13 +16,10 @@ public sealed class EnemyPoisonStatusPresenter :
         "Sixteen UI pixels keeps status information readable " +
         "without covering the enemy."
     )]
-    private Vector2 iconSize =
-        new Vector2(16f, 16f);
+    private Vector2 iconSize = new Vector2(16f, 16f);
 
     [SerializeField]
-    [Tooltip(
-        "Vertical gap above the enemy sprite in UI pixels."
-    )]
+    [Tooltip("Vertical gap above the enemy sprite in UI pixels.")]
     private float iconOffsetY = 2f;
 
     [SerializeField, Min(0f)]
@@ -47,10 +41,11 @@ public sealed class EnemyPoisonStatusPresenter :
     [Header("Poison Tick Feedback")]
     [SerializeField, Min(0.01f)]
     [Tooltip(
-        "Shorter than the normal hit reaction so one-second " +
-        "Poison ticks feel punchy without becoming noisy."
+        "Brief white flash shown for each poison tick. " +
+        "0.10 seconds is long enough to read clearly at 60 FPS " +
+        "without becoming a full normal-hit reaction."
     )]
-    private float poisonTickWhiteFlashDuration = 0.055f;
+    private float poisonTickWhiteFlashDuration = 0.10f;
 
     private EnemyActor enemyActor;
     private EnemyPoisonStatus poisonStatus;
@@ -72,23 +67,18 @@ public sealed class EnemyPoisonStatusPresenter :
         GameObject enemyObject,
         EnemyPoisonStatus status)
     {
-        if (enemyObject == null ||
-            status == null)
+        if (enemyObject == null || status == null)
         {
             return null;
         }
 
         EnemyPoisonStatusPresenter presenter =
-            enemyObject.GetComponent<
-                EnemyPoisonStatusPresenter
-            >();
+            enemyObject.GetComponent<EnemyPoisonStatusPresenter>();
 
         if (presenter == null)
         {
             presenter =
-                enemyObject.AddComponent<
-                    EnemyPoisonStatusPresenter
-                >();
+                enemyObject.AddComponent<EnemyPoisonStatusPresenter>();
         }
 
         presenter.Bind(status);
@@ -105,8 +95,7 @@ public sealed class EnemyPoisonStatusPresenter :
         ResolveReferences();
         Subscribe();
 
-        if (poisonStatus != null &&
-            poisonStatus.IsPoisoned)
+        if (poisonStatus != null && poisonStatus.IsPoisoned)
         {
             ShowAppliedState();
         }
@@ -117,8 +106,7 @@ public sealed class EnemyPoisonStatusPresenter :
         UpdateExpirationBlink();
     }
 
-    public void Bind(
-        EnemyPoisonStatus status)
+    public void Bind(EnemyPoisonStatus status)
     {
         if (status == null)
         {
@@ -146,40 +134,33 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         if (enemyActor == null)
         {
-            enemyActor =
-                GetComponent<EnemyActor>();
+            enemyActor = GetComponent<EnemyActor>();
         }
 
         if (poisonStatus == null)
         {
-            poisonStatus =
-                GetComponent<EnemyPoisonStatus>();
+            poisonStatus = GetComponent<EnemyPoisonStatus>();
         }
 
         if (enemyStagger == null)
         {
-            enemyStagger =
-                GetComponent<EnemyStagger>();
+            enemyStagger = GetComponent<EnemyStagger>();
         }
 
         if (enemyImage == null)
         {
-            enemyImage =
-                FindEnemyImage();
+            enemyImage = FindEnemyImage();
         }
     }
 
     private Image FindEnemyImage()
     {
         CharacterAnimationPlayback playback =
-            GetComponentInChildren<
-                CharacterAnimationPlayback
-            >(true);
+            GetComponentInChildren<CharacterAnimationPlayback>(true);
 
         if (playback != null)
         {
-            Image playbackImage =
-                playback.GetComponent<Image>();
+            Image playbackImage = playback.GetComponent<Image>();
 
             if (playbackImage != null)
             {
@@ -187,30 +168,19 @@ public sealed class EnemyPoisonStatusPresenter :
             }
         }
 
-        /*
-         * Static enemies may not have animation playback. The enemy
-         * combat image is the UI Image using the game's white-flash
-         * material, so that is a safe presentation-only fallback.
-         */
-        Image[] images =
-            GetComponentsInChildren<Image>(true);
+        Image[] images = GetComponentsInChildren<Image>(true);
 
-        foreach (Image candidate
-                 in images)
+        foreach (Image candidate in images)
         {
-            if (candidate == null ||
-                candidate == poisonIcon)
+            if (candidate == null || candidate == poisonIcon)
             {
                 continue;
             }
 
-            Material candidateMaterial =
-                candidate.material;
+            Material candidateMaterial = candidate.material;
 
             if (candidateMaterial != null &&
-                candidateMaterial.HasProperty(
-                    FlashAmountId
-                ))
+                candidateMaterial.HasProperty(FlashAmountId))
             {
                 return candidate;
             }
@@ -223,62 +193,98 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         ResolveReferences();
 
+        RectTransform actorRect = GetComponent<RectTransform>();
+        RectTransform parentRect =
+            actorRect != null
+                ? actorRect
+                : enemyImage != null
+                    ? enemyImage.rectTransform
+                    : null;
+
+        if (parentRect == null)
+        {
+            return;
+        }
+
         if (poisonIcon == null)
         {
-            RectTransform parentRect =
-                enemyImage != null
-                    ? enemyImage.rectTransform
-                    : GetComponent<RectTransform>();
-
-            if (parentRect == null)
-            {
-                return;
-            }
-
-            GameObject iconObject =
-                new GameObject(
-                    "PoisonStatusIcon",
-                    typeof(RectTransform),
-                    typeof(CanvasRenderer),
-                    typeof(Image)
-                );
-
-            iconObject.transform.SetParent(
-                parentRect,
-                false
+            GameObject iconObject = new GameObject(
+                "PoisonStatusIcon",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(Image)
             );
 
+            // Runtime-created UI objects start on Default. Match the enemy
+            // hierarchy explicitly so the icon behaves like the rest of the UI.
+            iconObject.layer = parentRect.gameObject.layer;
+            iconObject.transform.SetParent(parentRect, false);
+
             RectTransform iconRect =
-                iconObject.GetComponent<
-                    RectTransform
-                >();
+                iconObject.GetComponent<RectTransform>();
 
-            iconRect.anchorMin =
-                new Vector2(0.5f, 1f);
-            iconRect.anchorMax =
-                new Vector2(0.5f, 1f);
-            iconRect.pivot =
-                new Vector2(0.5f, 0f);
-            iconRect.anchoredPosition =
-                new Vector2(0f, iconOffsetY);
-            iconRect.sizeDelta =
-                new Vector2(
-                    Mathf.Max(1f, iconSize.x),
-                    Mathf.Max(1f, iconSize.y)
-                );
+            iconRect.anchorMin = new Vector2(0.5f, 0.5f);
+            iconRect.anchorMax = new Vector2(0.5f, 0.5f);
+            iconRect.pivot = new Vector2(0.5f, 0f);
+            iconRect.sizeDelta = new Vector2(
+                Mathf.Max(1f, iconSize.x),
+                Mathf.Max(1f, iconSize.y)
+            );
 
-            poisonIcon =
-                iconObject.GetComponent<Image>();
-
+            poisonIcon = iconObject.GetComponent<Image>();
             poisonIcon.raycastTarget = false;
             poisonIcon.preserveAspect = true;
+            poisonIcon.maskable = false;
             poisonIcon.enabled = false;
+            poisonIcon.canvasRenderer.cullTransparentMesh = false;
 
+            // Keep status information above the enemy sprite, health bar and
+            // other presentation children rather than burying it inside the
+            // animated sprite Image hierarchy.
             iconObject.transform.SetAsLastSibling();
         }
 
+        PositionStatusIcon(parentRect);
         RefreshStatusSprite();
         EnsureIconFlashMaterial();
+    }
+
+    private void PositionStatusIcon(RectTransform parentRect)
+    {
+        if (poisonIcon == null || parentRect == null)
+        {
+            return;
+        }
+
+        RectTransform iconRect = poisonIcon.rectTransform;
+        float x = 0f;
+        float y = parentRect.rect.height * 0.5f + iconOffsetY;
+
+        if (enemyImage != null)
+        {
+            RectTransform enemyRect = enemyImage.rectTransform;
+
+            if (enemyRect == parentRect)
+            {
+                y = enemyRect.rect.height * 0.5f + iconOffsetY;
+            }
+            else
+            {
+                Bounds enemyBounds =
+                    RectTransformUtility.CalculateRelativeRectTransformBounds(
+                        parentRect,
+                        enemyRect
+                    );
+
+                x = enemyBounds.center.x;
+                y = enemyBounds.max.y + iconOffsetY;
+            }
+        }
+
+        iconRect.anchoredPosition = new Vector2(
+            Mathf.Round(x),
+            Mathf.Round(y)
+        );
     }
 
     private void RefreshStatusSprite()
@@ -289,20 +295,16 @@ public sealed class EnemyPoisonStatusPresenter :
         }
 
         BoardController boardController =
-            Object.FindFirstObjectByType<
-                BoardController
-            >();
+            Object.FindFirstObjectByType<BoardController>();
 
         Sprite statusSprite =
             boardController != null
-                ? boardController
-                    .PoisonedStatusEffectSprite
+                ? boardController.PoisonedStatusEffectSprite
                 : null;
 
         poisonIcon.sprite = statusSprite;
 
-        if (statusSprite == null &&
-            !warnedMissingStatusSprite)
+        if (statusSprite == null && !warnedMissingStatusSprite)
         {
             warnedMissingStatusSprite = true;
 
@@ -323,27 +325,22 @@ public sealed class EnemyPoisonStatusPresenter :
             return;
         }
 
-        Material sourceMaterial =
-            enemyImage.material;
+        Material sourceMaterial = enemyImage.material;
 
         if (sourceMaterial == null ||
-            !sourceMaterial.HasProperty(
-                FlashAmountId
-            ))
+            !sourceMaterial.HasProperty(FlashAmountId))
         {
+            // A missing flash shader must never prevent the icon from rendering.
+            poisonIcon.material = null;
             return;
         }
 
-        poisonIconFlashMaterial =
-            new Material(sourceMaterial)
-            {
-                name =
-                    $"Poison Status Flash ({name})"
-            };
+        poisonIconFlashMaterial = new Material(sourceMaterial)
+        {
+            name = $"Poison Status Flash ({name})"
+        };
 
-        poisonIcon.material =
-            poisonIconFlashMaterial;
-
+        poisonIcon.material = poisonIconFlashMaterial;
         SetIconWhiteFlash(0f);
     }
 
@@ -356,12 +353,9 @@ public sealed class EnemyPoisonStatusPresenter :
             return;
         }
 
-        poisonStatus.PoisonApplied +=
-            HandlePoisonApplied;
-        poisonStatus.TickDamageApplied +=
-            HandleTickDamageApplied;
-        poisonStatus.PoisonExpired +=
-            HandlePoisonExpired;
+        poisonStatus.PoisonApplied += HandlePoisonApplied;
+        poisonStatus.TickDamageApplied += HandleTickDamageApplied;
+        poisonStatus.PoisonExpired += HandlePoisonExpired;
     }
 
     private void Unsubscribe()
@@ -371,12 +365,9 @@ public sealed class EnemyPoisonStatusPresenter :
             return;
         }
 
-        poisonStatus.PoisonApplied -=
-            HandlePoisonApplied;
-        poisonStatus.TickDamageApplied -=
-            HandleTickDamageApplied;
-        poisonStatus.PoisonExpired -=
-            HandlePoisonExpired;
+        poisonStatus.PoisonApplied -= HandlePoisonApplied;
+        poisonStatus.TickDamageApplied -= HandleTickDamageApplied;
+        poisonStatus.PoisonExpired -= HandlePoisonExpired;
     }
 
     private void HandlePoisonApplied(
@@ -390,8 +381,7 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         EnsureStatusIcon();
 
-        if (poisonIcon == null ||
-            poisonIcon.sprite == null)
+        if (poisonIcon == null || poisonIcon.sprite == null)
         {
             return;
         }
@@ -400,9 +390,7 @@ public sealed class EnemyPoisonStatusPresenter :
         StopMaterialization();
 
         materializeCoroutine =
-            StartCoroutine(
-                MaterializeStatusIcon()
-            );
+            StartCoroutine(MaterializeStatusIcon());
     }
 
     private IEnumerator MaterializeStatusIcon()
@@ -416,16 +404,13 @@ public sealed class EnemyPoisonStatusPresenter :
         isMaterializing = true;
         poisonIcon.enabled = true;
 
-        Color iconColor =
-            poisonIcon.color;
+        Color iconColor = poisonIcon.color;
         iconColor.a = 1f;
         poisonIcon.color = iconColor;
 
         bool canWhiteFlash =
             poisonIconFlashMaterial != null &&
-            poisonIconFlashMaterial.HasProperty(
-                FlashAmountId
-            );
+            poisonIconFlashMaterial.HasProperty(FlashAmountId);
 
         if (canWhiteFlash)
         {
@@ -433,30 +418,21 @@ public sealed class EnemyPoisonStatusPresenter :
 
             if (materializeWhiteHoldDuration > 0f)
             {
-                yield return
-                    new WaitForSeconds(
-                        materializeWhiteHoldDuration
-                    );
+                yield return new WaitForSeconds(
+                    materializeWhiteHoldDuration
+                );
             }
 
             float elapsedTime = 0f;
 
-            while (elapsedTime <
-                   materializeDuration)
+            while (elapsedTime < materializeDuration)
             {
-                float progress =
-                    Mathf.Clamp01(
-                        elapsedTime /
-                        materializeDuration
-                    );
-
-                SetIconWhiteFlash(
-                    1f - progress
+                float progress = Mathf.Clamp01(
+                    elapsedTime / materializeDuration
                 );
 
-                elapsedTime +=
-                    Time.deltaTime;
-
+                SetIconWhiteFlash(1f - progress);
+                elapsedTime += Time.deltaTime;
                 yield return null;
             }
 
@@ -464,35 +440,24 @@ public sealed class EnemyPoisonStatusPresenter :
         }
         else
         {
-            /*
-             * Graceful fallback if a scene loses the flash shader:
-             * gameplay remains intact and the status still appears.
-             */
+            // Reliable fallback when the white-flash material is unavailable.
             float elapsedTime = 0f;
 
-            while (elapsedTime <
-                   materializeDuration)
+            while (elapsedTime < materializeDuration)
             {
-                float progress =
-                    Mathf.Clamp01(
-                        elapsedTime /
-                        materializeDuration
-                    );
+                float progress = Mathf.Clamp01(
+                    elapsedTime / materializeDuration
+                );
 
-                Color fadedColor =
-                    poisonIcon.color;
+                Color fadedColor = poisonIcon.color;
                 fadedColor.a = progress;
-                poisonIcon.color =
-                    fadedColor;
+                poisonIcon.color = fadedColor;
 
-                elapsedTime +=
-                    Time.deltaTime;
-
+                elapsedTime += Time.deltaTime;
                 yield return null;
             }
 
-            Color finalColor =
-                poisonIcon.color;
+            Color finalColor = poisonIcon.color;
             finalColor.a = 1f;
             poisonIcon.color = finalColor;
         }
@@ -527,71 +492,55 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         ResolveReferences();
 
-        if (enemyImage == null ||
-            enemyImage.material == null ||
-            !enemyImage.material.HasProperty(
-                FlashAmountId
-            ))
+        if (enemyImage == null)
+        {
+            return;
+        }
+
+        Material flashMaterial = enemyImage.material;
+
+        if (flashMaterial == null ||
+            !flashMaterial.HasProperty(FlashAmountId))
         {
             return;
         }
 
         if (tickFlashCoroutine != null)
         {
-            StopCoroutine(
-                tickFlashCoroutine
-            );
+            StopCoroutine(tickFlashCoroutine);
+            tickFlashCoroutine = null;
         }
 
         tickFlashCoroutine =
-            StartCoroutine(
-                PoisonTickWhiteFlashRoutine()
-            );
+            StartCoroutine(PoisonTickWhiteFlashRoutine(flashMaterial));
     }
 
-    private IEnumerator PoisonTickWhiteFlashRoutine()
+    private IEnumerator PoisonTickWhiteFlashRoutine(Material flashMaterial)
     {
-        Material flashMaterial =
-            enemyImage != null
-                ? enemyImage.material
-                : null;
-
         if (flashMaterial == null ||
-            !flashMaterial.HasProperty(
-                FlashAmountId
-            ))
+            !flashMaterial.HasProperty(FlashAmountId))
         {
             tickFlashCoroutine = null;
             yield break;
         }
 
-        float previousFlashAmount =
-            flashMaterial.GetFloat(
-                FlashAmountId
-            );
-
-        flashMaterial.SetFloat(
-            FlashAmountId,
-            1f
+        float previousFlashAmount = Mathf.Clamp01(
+            flashMaterial.GetFloat(FlashAmountId)
         );
 
-        yield return
-            new WaitForSeconds(
-                poisonTickWhiteFlashDuration
-            );
+        flashMaterial.SetFloat(FlashAmountId, 1f);
 
-        /*
-         * Stagger owns its own ongoing white blink. Do not clear
-         * that presentation if a Poison tick happens simultaneously.
-         */
-        if (enemyStagger == null ||
-            !enemyStagger.IsStaggered)
+        yield return new WaitForSeconds(
+            Mathf.Max(0.01f, poisonTickWhiteFlashDuration)
+        );
+
+        // Stagger owns its ongoing white blink. Do not clear it if a poison
+        // tick lands at the same time.
+        if (enemyStagger == null || !enemyStagger.IsStaggered)
         {
             flashMaterial.SetFloat(
                 FlashAmountId,
-                Mathf.Clamp01(
-                    previousFlashAmount
-                )
+                previousFlashAmount
             );
         }
 
@@ -609,18 +558,15 @@ public sealed class EnemyPoisonStatusPresenter :
             return;
         }
 
-        if (poisonStatus.RemainingDuration >
-            expirationBlinkLeadTime)
+        if (poisonStatus.RemainingDuration > expirationBlinkLeadTime)
         {
             ResetBlink();
             return;
         }
 
-        blinkElapsedTime +=
-            Time.deltaTime;
+        blinkElapsedTime += Time.deltaTime;
 
-        if (blinkElapsedTime <
-            expirationBlinkInterval)
+        if (blinkElapsedTime < expirationBlinkInterval)
         {
             return;
         }
@@ -644,8 +590,7 @@ public sealed class EnemyPoisonStatusPresenter :
         }
     }
 
-    private void HandlePoisonExpired(
-        EnemyPoisonStatus status)
+    private void HandlePoisonExpired(EnemyPoisonStatus status)
     {
         HideStatusIcon();
     }
@@ -667,10 +612,7 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         if (materializeCoroutine != null)
         {
-            StopCoroutine(
-                materializeCoroutine
-            );
-
+            StopCoroutine(materializeCoroutine);
             materializeCoroutine = null;
         }
 
@@ -678,13 +620,10 @@ public sealed class EnemyPoisonStatusPresenter :
         SetIconWhiteFlash(0f);
     }
 
-    private void SetIconWhiteFlash(
-        float amount)
+    private void SetIconWhiteFlash(float amount)
     {
         if (poisonIconFlashMaterial == null ||
-            !poisonIconFlashMaterial.HasProperty(
-                FlashAmountId
-            ))
+            !poisonIconFlashMaterial.HasProperty(FlashAmountId))
         {
             return;
         }
@@ -699,11 +638,16 @@ public sealed class EnemyPoisonStatusPresenter :
     {
         if (tickFlashCoroutine != null)
         {
-            StopCoroutine(
-                tickFlashCoroutine
-            );
-
+            StopCoroutine(tickFlashCoroutine);
             tickFlashCoroutine = null;
+        }
+
+        if (enemyImage != null &&
+            enemyImage.material != null &&
+            enemyImage.material.HasProperty(FlashAmountId) &&
+            (enemyStagger == null || !enemyStagger.IsStaggered))
+        {
+            enemyImage.material.SetFloat(FlashAmountId, 0f);
         }
     }
 
@@ -722,50 +666,41 @@ public sealed class EnemyPoisonStatusPresenter :
 
         if (poisonIconFlashMaterial != null)
         {
-            Destroy(
-                poisonIconFlashMaterial
-            );
-
+            Destroy(poisonIconFlashMaterial);
             poisonIconFlashMaterial = null;
         }
     }
 
     private void OnValidate()
     {
-        iconSize =
-            new Vector2(
-                Mathf.Max(1f, iconSize.x),
-                Mathf.Max(1f, iconSize.y)
-            );
+        iconSize = new Vector2(
+            Mathf.Max(1f, iconSize.x),
+            Mathf.Max(1f, iconSize.y)
+        );
 
-        materializeWhiteHoldDuration =
-            Mathf.Max(
-                0f,
-                materializeWhiteHoldDuration
-            );
+        materializeWhiteHoldDuration = Mathf.Max(
+            0f,
+            materializeWhiteHoldDuration
+        );
 
-        materializeDuration =
-            Mathf.Max(
-                0.01f,
-                materializeDuration
-            );
+        materializeDuration = Mathf.Max(
+            0.01f,
+            materializeDuration
+        );
 
-        expirationBlinkLeadTime =
-            Mathf.Max(
-                0f,
-                expirationBlinkLeadTime
-            );
+        expirationBlinkLeadTime = Mathf.Max(
+            0f,
+            expirationBlinkLeadTime
+        );
 
-        expirationBlinkInterval =
-            Mathf.Max(
-                0.02f,
-                expirationBlinkInterval
-            );
+        expirationBlinkInterval = Mathf.Max(
+            0.02f,
+            expirationBlinkInterval
+        );
 
-        poisonTickWhiteFlashDuration =
-            Mathf.Max(
-                0.01f,
-                poisonTickWhiteFlashDuration
-            );
+        poisonTickWhiteFlashDuration = Mathf.Max(
+            0.01f,
+            poisonTickWhiteFlashDuration
+        );
     }
 }
