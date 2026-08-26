@@ -28,9 +28,7 @@ public partial class BoardController
             return;
         }
 
-        ApplyPoisonBombStatus(
-            poisonBomb
-        );
+        ApplyPoisonBombStatus();
 
         /*
          * Poison Bombs use a compact 3x3 blast centered on the
@@ -78,9 +76,7 @@ public partial class BoardController
             return;
         }
 
-        ApplyPoisonBombStatus(
-            poisonBomb
-        );
+        ApplyPoisonBombStatus();
 
         /*
          * Color-crystal conversion sequences deliberately protect
@@ -111,17 +107,13 @@ public partial class BoardController
         }
     }
 
-    private void ApplyPoisonBombStatus(
-        Gem poisonBomb)
+    private void ApplyPoisonBombStatus()
     {
-        if (poisonBomb == null ||
-            combatController == null)
+        if (combatController == null)
         {
             return;
         }
 
-        combatController.ApplyPoisonToGemType(
-            poisonBomb.Type
-        );
+        combatController.ApplyPoisonToAllEnemies();
     }
 }
