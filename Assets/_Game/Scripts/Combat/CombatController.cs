@@ -274,8 +274,7 @@ public sealed class CombatController :
         return enemiesHit > 0;
     }
 
-    public int ApplyPoisonToGemType(
-        GemType gemType)
+    public int ApplyPoisonToAllEnemies()
     {
         if (!CanResolveCombat())
         {
@@ -294,9 +293,7 @@ public sealed class CombatController :
         {
             if (enemy == null ||
                 !enemy.IsInitialized ||
-                enemy.IsDefeated ||
-                enemy.AssignedGemType !=
-                    gemType)
+                enemy.IsDefeated)
             {
                 continue;
             }
@@ -359,7 +356,7 @@ public sealed class CombatController :
         {
             Debug.Log(
                 $"Poison applied to {enemiesPoisoned} " +
-                $"active {gemType}-weak enemy/enemies for " +
+                $"active enemy/enemies for " +
                 $"{poisonDuration:0.##}s.",
                 this
             );
