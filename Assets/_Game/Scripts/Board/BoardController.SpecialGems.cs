@@ -56,7 +56,10 @@ public partial class BoardController
         foreach (List<Gem> group in matchGroups)
         {
             BoardMatchType matchType =
-                DetermineMatchType(group);
+                DetermineMatchType(
+                    group,
+                    true
+                );
 
             GemSpecialType specialType =
                 GemSpecialType.None;
@@ -72,15 +75,14 @@ public partial class BoardController
                     break;
 
                 case BoardMatchType.StraightFive:
-                    specialType =
-                        GemSpecialType.ColorCrystal;
-
-                    break;
-
                 case BoardMatchType.LShape:
                 case BoardMatchType.TShape:
+                case BoardMatchType.CrossShape:
                     specialType =
-                        GemSpecialType.PoisonBomb;
+                        GemMasteryRuntimeResolver
+                            .ResolveSpecialType(
+                                matchType
+                            );
 
                     break;
             }
@@ -155,6 +157,7 @@ public partial class BoardController
         {
             case BoardMatchType.LShape:
             case BoardMatchType.TShape:
+            case BoardMatchType.CrossShape:
                 {
                     Gem shapePivot =
                         FindShapePivotGem(group);
@@ -230,8 +233,8 @@ public partial class BoardController
             }
 
             /*
-             * The T intersection and L corner are the only gems
-             * connected in both the horizontal and vertical axes.
+             * L corners, T intersections, and Cross centers are the
+             * meaningful pivot gems connected on both board axes.
              */
             if (!hasHorizontalNeighbour ||
                 !hasVerticalNeighbour)
@@ -563,8 +566,8 @@ public partial class BoardController
      * then converts that color into random bombs.
      *
      * Scope this to exact three-matches and an ordinary swapped gem so
-     * direct crystal+bomb swaps and the carefully-defined 4/5/L/T special
-     * creation interactions keep their existing behavior.
+     * direct crystal+bomb swaps and mastery-shaped special creation
+     * interactions keep their existing behavior.
      */
     private bool ShouldResolveMatchedBombBeforeCrystal(
         Gem crystalGem,
