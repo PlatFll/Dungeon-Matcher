@@ -124,7 +124,8 @@ public partial class BoardController
 
             BoardMatchType matchType =
                 DetermineMatchType(
-                    group
+                    group,
+                    true
                 );
 
             BoardClearContext clearContext =
@@ -408,7 +409,8 @@ public partial class BoardController
     }
 
     private static BoardMatchType DetermineMatchType(
-        List<Gem> group)
+        List<Gem> group,
+        bool distinguishCrossShape = false)
     {
         if (group == null ||
             group.Count < 3)
@@ -505,6 +507,18 @@ public partial class BoardController
                 return BoardMatchType.LShape;
             }
 
+            if (distinguishCrossShape &&
+                isHorizontalMiddle &&
+                isVerticalMiddle)
+            {
+                return BoardMatchType.CrossShape;
+            }
+
+            /*
+             * Compatibility default: until Gem Mastery owns special creation,
+             * existing callers continue treating a cross like the old T-shape
+             * path so the current Poison Bomb reward cannot disappear.
+             */
             return BoardMatchType.TShape;
         }
 
