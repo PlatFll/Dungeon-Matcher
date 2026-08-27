@@ -5,5 +5,6 @@ public enum BoardMatchType
     StraightFive = 2,
     LShape = 3,
     TShape = 4,
-    Other = 5
+    Other = 5,
+    CrossShape = 6
 }
