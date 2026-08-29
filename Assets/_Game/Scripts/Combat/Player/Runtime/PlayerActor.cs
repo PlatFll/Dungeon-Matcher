@@ -37,6 +37,21 @@ public sealed class PlayerActor : MonoBehaviour
     [SerializeField]
     private bool initializeOnStart = true;
 
+    [Header("Shield")]
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Maximum shield the player may hold at once. Shield Bombs top this " +
+        "resource up but can never stack beyond this cap."
+    )]
+    private int maximumShield = 30;
+
+    [SerializeField, Range(0f, 0.95f)]
+    [Tooltip(
+        "Incoming damage reduction applied to an attack when the player had " +
+        "shield at the start of that attack. 0.25 means 25 percent."
+    )]
+    private float shieldDamageReduction = 0.25f;
+
     [Header("Runtime Debug Information")]
     [SerializeField]
     private PlayerDefinition definition;
@@ -46,6 +61,9 @@ public sealed class PlayerActor : MonoBehaviour
 
     [SerializeField]
     private int currentHealth;
+
+    [SerializeField]
+    private int currentShield;
 
     [SerializeField]
     private int revivalCount;
@@ -65,6 +83,12 @@ public sealed class PlayerActor : MonoBehaviour
 
     public event Action<PlayerActor, int>
         DamageTaken;
+
+    public event Action<PlayerActor, int>
+        ShieldDamaged;
+
+    public event Action<PlayerActor, int, int>
+        ShieldChanged;
 
     public event Action<PlayerActor, int>
         Healed;
@@ -100,6 +124,18 @@ public sealed class PlayerActor : MonoBehaviour
     public int MaximumHealth =>
         maximumHealth;
 
+    public int CurrentShield =>
+        currentShield;
+
+    public int MaximumShield =>
+        maximumShield;
+
+    public float ShieldDamageReduction =>
+        shieldDamageReduction;
+
+    public bool HasShield =>
+        currentShield > 0;
+
     public int RevivalCount =>
         revivalCount;
 
@@ -126,6 +162,23 @@ public sealed class PlayerActor : MonoBehaviour
             return Mathf.Clamp01(
                 (float)currentHealth /
                 maximumHealth
+            );
+        }
+    }
+
+    public float ShieldNormalized
+    {
+        get
+        {
+            if (!isInitialized ||
+                maximumShield <= 0)
+            {
+                return 0f;
+            }
+
+            return Mathf.Clamp01(
+                (float)currentShield /
+                maximumShield
             );
         }
     }
@@ -164,7 +217,11 @@ public sealed class PlayerActor : MonoBehaviour
         maximumHealth =
             Mathf.Max(1, maximumHealth);
 
+        maximumShield =
+            Mathf.Max(1, maximumShield);
+
         currentHealth = maximumHealth;
+        currentShield = 0;
         revivalCount = 0;
         isDefeated = false;
         isInitialized = true;
@@ -184,6 +241,12 @@ public sealed class PlayerActor : MonoBehaviour
             this,
             currentHealth,
             maximumHealth
+        );
+
+        ShieldChanged?.Invoke(
+            this,
+            currentShield,
+            maximumShield
         );
 
         Debug.Log(
@@ -228,40 +291,119 @@ public sealed class PlayerActor : MonoBehaviour
             return false;
         }
 
-        int previousHealth =
-            currentHealth;
+        bool shieldWasActive =
+            currentShield > 0;
 
-        currentHealth =
-            Mathf.Max(
-                0,
-                currentHealth - finalDamage
-            );
-
-        int actualDamage =
-            previousHealth - currentHealth;
-
-        if (actualDamage <= 0)
+        if (shieldWasActive)
         {
-            return false;
+            finalDamage =
+                Mathf.Max(
+                    1,
+                    Mathf.CeilToInt(
+                        finalDamage *
+                        (1f - shieldDamageReduction)
+                    )
+                );
         }
 
-        DamageTaken?.Invoke(
-            this,
-            actualDamage
-        );
+        int shieldDamage =
+            Mathf.Min(
+                currentShield,
+                finalDamage
+            );
 
-        HealthChanged?.Invoke(
-            this,
-            currentHealth,
-            maximumHealth
-        );
+        if (shieldDamage > 0)
+        {
+            currentShield -= shieldDamage;
+
+            ShieldDamaged?.Invoke(
+                this,
+                shieldDamage
+            );
+
+            ShieldChanged?.Invoke(
+                this,
+                currentShield,
+                maximumShield
+            );
+        }
+
+        int healthDamage =
+            finalDamage - shieldDamage;
+
+        int actualHealthDamage = 0;
+
+        if (healthDamage > 0)
+        {
+            int previousHealth =
+                currentHealth;
+
+            currentHealth =
+                Mathf.Max(
+                    0,
+                    currentHealth - healthDamage
+                );
+
+            actualHealthDamage =
+                previousHealth - currentHealth;
+
+            if (actualHealthDamage > 0)
+            {
+                DamageTaken?.Invoke(
+                    this,
+                    actualHealthDamage
+                );
+
+                HealthChanged?.Invoke(
+                    this,
+                    currentHealth,
+                    maximumHealth
+                );
+            }
+        }
 
         if (currentHealth == 0)
         {
             HandleDefeat();
         }
 
-        return true;
+        return shieldDamage > 0 ||
+               actualHealthDamage > 0;
+    }
+
+    public int GrantShield(int amount)
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            amount <= 0)
+        {
+            return 0;
+        }
+
+        int previousShield =
+            currentShield;
+
+        currentShield =
+            Mathf.Min(
+                maximumShield,
+                currentShield + amount
+            );
+
+        int actualShieldGranted =
+            currentShield - previousShield;
+
+        if (actualShieldGranted <= 0)
+        {
+            return 0;
+        }
+
+        ShieldChanged?.Invoke(
+            this,
+            currentShield,
+            maximumShield
+        );
+
+        return actualShieldGranted;
     }
 
     public int Heal(int amount)
@@ -335,6 +477,7 @@ public sealed class PlayerActor : MonoBehaviour
                 maximumHealth
             );
 
+        currentShield = 0;
         revivalCount++;
 
         Revived?.Invoke(
@@ -346,6 +489,12 @@ public sealed class PlayerActor : MonoBehaviour
             this,
             currentHealth,
             maximumHealth
+        );
+
+        ShieldChanged?.Invoke(
+            this,
+            currentShield,
+            maximumShield
         );
 
         return true;
@@ -398,6 +547,17 @@ public sealed class PlayerActor : MonoBehaviour
 
         isDefeated = true;
 
+        if (currentShield > 0)
+        {
+            currentShield = 0;
+
+            ShieldChanged?.Invoke(
+                this,
+                currentShield,
+                maximumShield
+            );
+        }
+
         Defeated?.Invoke(this);
     }
 
@@ -413,6 +573,23 @@ public sealed class PlayerActor : MonoBehaviour
                 maximumHealth
             );
 
+        maximumShield =
+            Mathf.Max(1, maximumShield);
+
+        currentShield =
+            Mathf.Clamp(
+                currentShield,
+                0,
+                maximumShield
+            );
+
+        shieldDamageReduction =
+            Mathf.Clamp(
+                shieldDamageReduction,
+                0f,
+                0.95f
+            );
+
         revivalCount =
             Mathf.Max(0, revivalCount);
     }
@@ -423,6 +600,15 @@ public sealed class PlayerActor : MonoBehaviour
         if (Application.isPlaying)
         {
             TryTakeDamage(25);
+        }
+    }
+
+    [ContextMenu("Prototype/Grant 30 Shield")]
+    private void DebugGrantShield()
+    {
+        if (Application.isPlaying)
+        {
+            GrantShield(30);
         }
     }
 

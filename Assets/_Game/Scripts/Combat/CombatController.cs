@@ -119,6 +119,14 @@ public sealed class CombatController :
     )]
     private int healingBombHealAmount = 30;
 
+    [Header("Shield Bomb")]
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Shield granted by each activated Shield Bomb. PlayerActor owns " +
+        "the maximum shield cap and damage-reduction rules."
+    )]
+    private int shieldBombShieldAmount = 30;
+
     [Header("Prototype Debugging")]
     [SerializeField]
     private GemType debugGemType;
@@ -175,17 +183,6 @@ public sealed class CombatController :
                 calculatedDamage
             );
 
-        /*
-         * Cards, passives, buffs and debuffs can inspect:
-         *
-         * damageContext.ClearSource
-         * damageContext.MatchType
-         * damageContext.GemType
-         * damageContext.GemCount
-         * damageContext.CascadeDepth
-         *
-         * They may modify Damage or cancel the result.
-         */
         BeforeGemDamage?.Invoke(
             damageContext
         );
@@ -319,11 +316,6 @@ public sealed class CombatController :
                     >();
             }
 
-            /*
-             * Presentation subscribes before Apply so the very first
-             * PoisonApplied event gets the icon materialization. A visual
-             * setup failure must never block the gameplay status itself.
-             */
             try
             {
                 EnemyPoisonStatusPresenter
@@ -395,6 +387,30 @@ public sealed class CombatController :
         }
 
         return actualHealing;
+    }
+
+    public int GrantPlayerShieldFromBomb()
+    {
+        if (!CanResolveCombat())
+        {
+            return 0;
+        }
+
+        int actualShieldGranted =
+            playerActor.GrantShield(
+                shieldBombShieldAmount
+            );
+
+        if (actualShieldGranted > 0)
+        {
+            Debug.Log(
+                $"Shield Bomb granted " +
+                $"{actualShieldGranted} shield to the player.",
+                playerActor
+            );
+        }
+
+        return actualShieldGranted;
     }
 
     public int CalculateGemClearDamage(
@@ -494,6 +510,12 @@ public sealed class CombatController :
             Mathf.Max(
                 1,
                 healingBombHealAmount
+            );
+
+        shieldBombShieldAmount =
+            Mathf.Max(
+                1,
+                shieldBombShieldAmount
             );
 
         debugGemCount =

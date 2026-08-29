@@ -259,7 +259,9 @@ public class Gem :
             SpecialType ==
                 GemSpecialType.PoisonBomb ||
             SpecialType ==
-                GemSpecialType.HealingBomb;
+                GemSpecialType.HealingBomb ||
+            SpecialType ==
+                GemSpecialType.ShieldBomb;
     }
 
     private void RefreshSpecialBombVisual()
@@ -611,6 +613,19 @@ public class Gem :
 
         SetSpecialType(
             GemSpecialType.HealingBomb
+        );
+    }
+
+    [ContextMenu("Debug/Show Shield Bomb")]
+    private void DebugShowShieldBomb()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.ShieldBomb
         );
     }
 }

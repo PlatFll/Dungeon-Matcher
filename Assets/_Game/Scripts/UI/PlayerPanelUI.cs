@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,10 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private const float FallbackAffinityIconSize = 16f;
     private const float HealthTextMaximumFontSize = 10f;
     private const float HealthTextMinimumFontSize = 6f;
+    private const float ShieldBarGap = 2f;
+
+    private static readonly Color ShieldFillColor =
+        new Color32(58, 123, 213, 255);
 
     [Header("Runtime Player")]
     [SerializeField]
@@ -58,6 +63,10 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private RectTransform affinityGemRect;
     private Image affinityGemImage;
 
+    private GameObject playerShieldBar;
+    private Image playerShieldFill;
+    private TMP_Text playerShieldText;
+
     public PlayerActor BoundPlayer =>
         boundPlayer;
 
@@ -76,6 +85,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
+        CreateShieldBar();
     }
 
     private void OnEnable()
@@ -83,6 +93,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
+        CreateShieldBar();
         BindPlayer(playerActor);
     }
 
@@ -95,6 +106,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
     {
         DisableLegacyPlayerBase();
         FollowPlayerCharacter();
+        PositionShieldBar();
     }
 
     private void OnDisable()
@@ -138,6 +150,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
         player.MaximumHealthChanged +=
             HandleMaximumHealthChanged;
 
+        player.ShieldChanged +=
+            HandleShieldChanged;
+
         player.Defeated +=
             HandlePlayerDefeated;
 
@@ -162,6 +177,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
         player.MaximumHealthChanged -=
             HandleMaximumHealthChanged;
 
+        player.ShieldChanged -=
+            HandleShieldChanged;
+
         player.Defeated -=
             HandlePlayerDefeated;
 
@@ -184,6 +202,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
         UpdateHealthDisplay(
             player.CurrentHealth,
             player.MaximumHealth
+        );
+
+        UpdateShieldDisplay(
+            player.CurrentShield,
+            player.MaximumShield
         );
     }
 
@@ -219,6 +242,22 @@ public sealed class PlayerPanelUI : MonoBehaviour
         );
     }
 
+    private void HandleShieldChanged(
+        PlayerActor player,
+        int currentShield,
+        int maximumShield)
+    {
+        if (player != boundPlayer)
+        {
+            return;
+        }
+
+        UpdateShieldDisplay(
+            currentShield,
+            maximumShield
+        );
+    }
+
     private void HandlePlayerDefeated(
         PlayerActor player)
     {
@@ -230,6 +269,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
         UpdateHealthDisplay(
             0,
             player.MaximumHealth
+        );
+
+        UpdateShieldDisplay(
+            0,
+            player.MaximumShield
         );
     }
 
@@ -246,11 +290,17 @@ public sealed class PlayerPanelUI : MonoBehaviour
             player.CurrentHealth,
             player.MaximumHealth
         );
+
+        UpdateShieldDisplay(
+            player.CurrentShield,
+            player.MaximumShield
+        );
     }
 
     private void RefreshAll()
     {
         DisableLegacyPlayerBase();
+        CreateShieldBar();
 
         if (boundPlayer == null ||
             !boundPlayer.IsInitialized)
@@ -266,6 +316,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
         UpdateHealthDisplay(
             boundPlayer.CurrentHealth,
             boundPlayer.MaximumHealth
+        );
+
+        UpdateShieldDisplay(
+            boundPlayer.CurrentShield,
+            boundPlayer.MaximumShield
         );
     }
 
@@ -332,7 +387,249 @@ public sealed class PlayerPanelUI : MonoBehaviour
         {
             playerHealthText.text =
                 $"{currentHealth} / {maximumHealth}";
+
+            playerHealthText.enabled =
+                boundPlayer == null ||
+                !boundPlayer.HasShield;
         }
+    }
+
+    private void UpdateShieldDisplay(
+        int currentShield,
+        int maximumShield)
+    {
+        CreateShieldBar();
+
+        maximumShield =
+            Mathf.Max(1, maximumShield);
+
+        currentShield =
+            Mathf.Clamp(
+                currentShield,
+                0,
+                maximumShield
+            );
+
+        bool hasShield =
+            currentShield > 0;
+
+        if (playerShieldBar != null)
+        {
+            playerShieldBar.SetActive(
+                hasShield
+            );
+        }
+
+        if (playerShieldFill != null)
+        {
+            playerShieldFill.fillAmount =
+                (float)currentShield /
+                maximumShield;
+        }
+
+        if (playerShieldText != null)
+        {
+            playerShieldText.text =
+                hasShield
+                    ? $"{currentShield} / {maximumShield}"
+                    : string.Empty;
+        }
+
+        if (playerHealthText != null)
+        {
+            playerHealthText.enabled =
+                !hasShield;
+        }
+
+        PositionShieldBar();
+    }
+
+    private void CreateShieldBar()
+    {
+        if (playerShieldBar != null ||
+            playerHealthBar == null ||
+            playerHealthFill == null ||
+            playerHealthText == null)
+        {
+            return;
+        }
+
+        string fillPath =
+            GetRelativePath(
+                playerHealthBar.transform,
+                playerHealthFill.transform
+            );
+
+        string textPath =
+            GetRelativePath(
+                playerHealthBar.transform,
+                playerHealthText.transform
+            );
+
+        if (fillPath == null ||
+            textPath == null)
+        {
+            Debug.LogError(
+                "Player shield bar could not mirror the health bar because " +
+                "its fill or text is not a child of the health bar root.",
+                this
+            );
+
+            return;
+        }
+
+        playerShieldBar =
+            Instantiate(
+                playerHealthBar,
+                playerHealthBar.transform.parent
+            );
+
+        playerShieldBar.name =
+            "PlayerShieldBar";
+
+        Transform shieldFillTransform =
+            playerShieldBar.transform.Find(
+                fillPath
+            );
+
+        Transform shieldTextTransform =
+            playerShieldBar.transform.Find(
+                textPath
+            );
+
+        playerShieldFill =
+            shieldFillTransform != null
+                ? shieldFillTransform.GetComponent<Image>()
+                : null;
+
+        playerShieldText =
+            shieldTextTransform != null
+                ? shieldTextTransform.GetComponent<TMP_Text>()
+                : null;
+
+        if (playerShieldFill == null ||
+            playerShieldText == null)
+        {
+            Debug.LogError(
+                "Player shield bar clone is missing its expected fill or text.",
+                this
+            );
+
+            Destroy(playerShieldBar);
+            playerShieldBar = null;
+            playerShieldFill = null;
+            playerShieldText = null;
+            return;
+        }
+
+        playerShieldFill.color =
+            ShieldFillColor;
+
+        playerShieldFill.type =
+            Image.Type.Filled;
+
+        playerShieldFill.fillMethod =
+            Image.FillMethod.Horizontal;
+
+        playerShieldFill.fillOrigin =
+            (int)Image.OriginHorizontal.Left;
+
+        playerShieldText.enableAutoSizing = true;
+        playerShieldText.fontSize = HealthTextMaximumFontSize;
+        playerShieldText.fontSizeMin = HealthTextMinimumFontSize;
+        playerShieldText.fontSizeMax = HealthTextMaximumFontSize;
+        playerShieldText.alignment =
+            TextAlignmentOptions.Center;
+        playerShieldText.raycastTarget = false;
+
+        playerShieldBar.transform.SetAsLastSibling();
+        PositionShieldBar();
+        playerShieldBar.SetActive(false);
+    }
+
+    private void PositionShieldBar()
+    {
+        if (playerShieldBar == null ||
+            playerHealthBar == null ||
+            playerShieldBar.transform is not RectTransform shieldRect ||
+            playerHealthBar.transform is not RectTransform healthRect)
+        {
+            return;
+        }
+
+        shieldRect.anchorMin =
+            healthRect.anchorMin;
+
+        shieldRect.anchorMax =
+            healthRect.anchorMax;
+
+        shieldRect.pivot =
+            healthRect.pivot;
+
+        shieldRect.sizeDelta =
+            healthRect.sizeDelta;
+
+        shieldRect.localScale =
+            healthRect.localScale;
+
+        float healthBarHeight =
+            healthRect.rect.height;
+
+        if (healthBarHeight <= 0f)
+        {
+            healthBarHeight =
+                Mathf.Abs(
+                    healthRect.sizeDelta.y
+                );
+        }
+
+        shieldRect.anchoredPosition =
+            healthRect.anchoredPosition +
+            Vector2.up *
+            (healthBarHeight + ShieldBarGap);
+    }
+
+    private static string GetRelativePath(
+        Transform root,
+        Transform target)
+    {
+        if (root == null ||
+            target == null)
+        {
+            return null;
+        }
+
+        if (target == root)
+        {
+            return string.Empty;
+        }
+
+        Stack<string> pathParts =
+            new Stack<string>();
+
+        Transform current =
+            target;
+
+        while (current != null &&
+               current != root)
+        {
+            pathParts.Push(
+                current.name
+            );
+
+            current =
+                current.parent;
+        }
+
+        if (current != root)
+        {
+            return null;
+        }
+
+        return string.Join(
+            "/",
+            pathParts
+        );
     }
 
     private void ShowUninitializedState()
@@ -349,14 +646,31 @@ public sealed class PlayerPanelUI : MonoBehaviour
             playerHealthBar.SetActive(false);
         }
 
+        if (playerShieldBar != null)
+        {
+            playerShieldBar.SetActive(false);
+        }
+
         if (playerHealthFill != null)
         {
             playerHealthFill.fillAmount = 0f;
         }
 
+        if (playerShieldFill != null)
+        {
+            playerShieldFill.fillAmount = 0f;
+        }
+
         if (playerHealthText != null)
         {
             playerHealthText.text =
+                string.Empty;
+            playerHealthText.enabled = true;
+        }
+
+        if (playerShieldText != null)
+        {
+            playerShieldText.text =
                 string.Empty;
         }
     }
@@ -368,12 +682,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
             return;
         }
 
-        /*
-         * Match the compact enemy HP label instead of keeping the player's old
-         * 16px text setup. The player bar is only 20 reference pixels tall at
-         * runtime, so the old larger text and its +2px vertical offset visibly
-         * escaped the modular frame.
-         */
         playerHealthText.enableAutoSizing = true;
         playerHealthText.fontSize = HealthTextMaximumFontSize;
         playerHealthText.fontSizeMin = HealthTextMinimumFontSize;

@@ -32,11 +32,18 @@ public partial class BoardController
     [SerializeField]
     private Sprite healingBombSprite;
 
+    [Header("Shield Bomb Visuals")]
+    [SerializeField]
+    private Sprite shieldBombSprite;
+
     public Sprite PoisonBombSprite =>
         poisonBombSprite;
 
     public Sprite HealingBombSprite =>
         healingBombSprite;
+
+    public Sprite ShieldBombSprite =>
+        shieldBombSprite;
 
     public Sprite PoisonedStatusIcon =>
         poisonedStatusIcon;
@@ -55,6 +62,9 @@ public partial class BoardController
 
             case GemSpecialType.HealingBomb:
                 return healingBombSprite;
+
+            case GemSpecialType.ShieldBomb:
+                return shieldBombSprite;
 
             default:
                 return null;

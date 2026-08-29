@@ -25,10 +25,10 @@ public static class GemMasteryRuntimeResolver
         }
 
         /*
-         * Shield and damage bombs already exist in the mastery data model
-         * so save data and UI can be built incrementally. Until their
-         * gameplay implementations exist, never let one of those future
-         * selections silently remove the special earned by a five-gem shape.
+         * Damage Bomb already exists in the mastery data model so save data
+         * and UI can be built incrementally. Until its gameplay implementation
+         * exists, never let that future selection silently remove the special
+         * earned by a five-gem shape.
          */
         GemMasteryReward fallbackReward =
             GemMasteryLoadout.Default.GetReward(
@@ -116,6 +116,11 @@ public static class GemMasteryRuntimeResolver
                 return true;
 
             case GemMasteryReward.ShieldBomb:
+                specialType =
+                    GemSpecialType.ShieldBomb;
+
+                return true;
+
             case GemMasteryReward.DamageBomb:
             default:
                 specialType =

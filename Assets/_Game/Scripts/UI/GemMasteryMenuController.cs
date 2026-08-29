@@ -294,6 +294,22 @@ public sealed class GemMasteryMenuController : MonoBehaviour
             button.interactable =
                 isImplemented;
 
+            Text label =
+                button.GetComponentInChildren<Text>(
+                    true
+                );
+
+            if (label != null)
+            {
+                label.text =
+                    GetRewardDisplayName(reward) +
+                    (
+                        isImplemented
+                            ? string.Empty
+                            : " (LOCKED)"
+                    );
+            }
+
             bool isSelected =
                 reward == effectiveReward;
 
