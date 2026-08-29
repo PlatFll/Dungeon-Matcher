@@ -185,10 +185,21 @@ public sealed class PlayerActor : MonoBehaviour
 
     private void Start()
     {
-        if (initializeOnStart &&
-            startingDefinition != null)
+        if (!initializeOnStart)
         {
-            Initialize(startingDefinition);
+            return;
+        }
+
+        PlayerDefinition definitionToInitialize =
+            PlayerDefinitionRegistry.ResolveSelectedOrFallback(
+                startingDefinition
+            );
+
+        if (definitionToInitialize != null)
+        {
+            Initialize(
+                definitionToInitialize
+            );
         }
     }
 
