@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public sealed class CharacterSelectMenuController : MonoBehaviour
 {
     private static readonly Color SelectedColor =
-        new Color32(151, 91, 170, 255);
+        new Color32(240, 177, 255, 255);
 
     private static readonly Color UnselectedColor =
-        new Color32(91, 46, 105, 255);
+        new Color32(244, 231, 246, 255);
 
     private static readonly Color UnavailableColor =
-        new Color32(55, 39, 63, 255);
+        new Color32(139, 116, 146, 255);
 
     private Button rattlebonesButton;
     private Button bardleyButton;
@@ -218,7 +218,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         bool available)
     {
         if (button == null ||
-            button.targetGraphic is not Image image)
+            button.targetGraphic == null)
         {
             return;
         }
@@ -229,11 +229,12 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
                 StringComparison.Ordinal
             ))
         {
-            image.color = SelectedColor;
+            button.targetGraphic.color =
+                SelectedColor;
             return;
         }
 
-        image.color =
+        button.targetGraphic.color =
             available
                 ? UnselectedColor
                 : UnavailableColor;
@@ -243,27 +244,27 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     {
         rattlebonesButton =
             FindComponent<Button>(
-                "Panel/RattlebonesButton"
+                "RattlebonesButton"
             );
 
         bardleyButton =
             FindComponent<Button>(
-                "Panel/BardleyButton"
+                "BardleyButton"
             );
 
         startButton =
             FindComponent<Button>(
-                "Panel/StartButton"
+                "StartButton"
             );
 
         backButton =
             FindComponent<Button>(
-                "Panel/BackButton"
+                "BackButton"
             );
 
         statusText =
             FindComponent<Text>(
-                "Panel/Status"
+                "Status"
             );
 
         bool hasAllReferences =
