@@ -111,6 +111,14 @@ public sealed class CombatController :
     )]
     private int poisonTickDamage = 5;
 
+    [Header("Healing Bomb")]
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Prototype HP restored by each activated Healing Bomb. " +
+        "This is intentionally data-tunable for later balance passes."
+    )]
+    private int healingBombHealAmount = 20;
+
     [Header("Prototype Debugging")]
     [SerializeField]
     private GemType debugGemType;
@@ -365,6 +373,30 @@ public sealed class CombatController :
         return enemiesPoisoned;
     }
 
+    public int HealPlayerFromBomb()
+    {
+        if (!CanResolveCombat())
+        {
+            return 0;
+        }
+
+        int actualHealing =
+            playerActor.Heal(
+                healingBombHealAmount
+            );
+
+        if (actualHealing > 0)
+        {
+            Debug.Log(
+                $"Healing Bomb restored " +
+                $"{actualHealing} HP to the player.",
+                playerActor
+            );
+        }
+
+        return actualHealing;
+    }
+
     public int CalculateGemClearDamage(
         BoardClearContext clearContext)
     {
@@ -456,6 +488,12 @@ public sealed class CombatController :
             Mathf.Max(
                 1,
                 poisonTickDamage
+            );
+
+        healingBombHealAmount =
+            Mathf.Max(
+                1,
+                healingBombHealAmount
             );
 
         debugGemCount =

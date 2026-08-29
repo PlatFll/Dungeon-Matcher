@@ -25,8 +25,8 @@ public static class GemMasteryRuntimeResolver
         }
 
         /*
-         * Shield, heal, and damage bombs already exist in the mastery data
-         * model so save data and UI can be built incrementally. Until their
+         * Shield and damage bombs already exist in the mastery data model
+         * so save data and UI can be built incrementally. Until their
          * gameplay implementations exist, never let one of those future
          * selections silently remove the special earned by a five-gem shape.
          */
@@ -109,8 +109,13 @@ public static class GemMasteryRuntimeResolver
 
                 return true;
 
-            case GemMasteryReward.ShieldBomb:
             case GemMasteryReward.HealBomb:
+                specialType =
+                    GemSpecialType.HealingBomb;
+
+                return true;
+
+            case GemMasteryReward.ShieldBomb:
             case GemMasteryReward.DamageBomb:
             default:
                 specialType =
