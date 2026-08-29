@@ -12,7 +12,9 @@ public partial class BoardController
                specialType ==
                    GemSpecialType.PoisonBomb ||
                specialType ==
-                   GemSpecialType.HealingBomb;
+                   GemSpecialType.HealingBomb ||
+               specialType ==
+                   GemSpecialType.ShieldBomb;
     }
 
     private void AddPoisonBombAreaToClearSet(
@@ -32,34 +34,13 @@ public partial class BoardController
 
         ApplyPoisonBombStatus();
 
-        /*
-         * Poison Bombs use a compact 3x3 blast centered on the
-         * bomb. Every cell still enters the same authoritative
-         * bomb-clear set as row/column bombs, so normal gem color
-         * damage, obstacles and future chain reactions remain
-         * owned by the existing board-resolution pipeline.
-         */
-        for (int rowOffset = -1;
-             rowOffset <= 1;
-             rowOffset++)
-        {
-            for (int columnOffset = -1;
-                 columnOffset <= 1;
-                 columnOffset++)
-            {
-                TryAddGemToBombClearSet(
-                    poisonBomb.Column +
-                        columnOffset,
-                    poisonBomb.Row +
-                        rowOffset,
-                    poisonBomb,
-                    preserveTriggeredCrystals,
-                    triggeredCrystalRequests,
-                    gemsToClear,
-                    pendingBombs
-                );
-            }
-        }
+        AddSpecialBombAreaToClearSet(
+            poisonBomb,
+            preserveTriggeredCrystals,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
     }
 
     private void AddPoisonBombAreaToConvertedClearSet(
@@ -80,33 +61,14 @@ public partial class BoardController
 
         ApplyPoisonBombStatus();
 
-        /*
-         * Color-crystal conversion sequences deliberately protect
-         * converted bombs until their own activation turn. Route
-         * Poison Bomb cells through that same converted-bomb helper
-         * so the established sequencing rules remain intact.
-         */
-        for (int rowOffset = -1;
-             rowOffset <= 1;
-             rowOffset++)
-        {
-            for (int columnOffset = -1;
-                 columnOffset <= 1;
-                 columnOffset++)
-            {
-                TryAddGemToConvertedBombClearSet(
-                    poisonBomb.Column +
-                        columnOffset,
-                    poisonBomb.Row +
-                        rowOffset,
-                    activatedBomb,
-                    pendingConvertedBombs,
-                    triggeredCrystalRequests,
-                    gemsToClear,
-                    pendingBombs
-                );
-            }
-        }
+        AddSpecialBombAreaToConvertedClearSet(
+            poisonBomb,
+            activatedBomb,
+            pendingConvertedBombs,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
     }
 
     private void AddHealingBombAreaToClearSet(
@@ -126,27 +88,13 @@ public partial class BoardController
 
         ApplyHealingBombEffect();
 
-        for (int rowOffset = -1;
-             rowOffset <= 1;
-             rowOffset++)
-        {
-            for (int columnOffset = -1;
-                 columnOffset <= 1;
-                 columnOffset++)
-            {
-                TryAddGemToBombClearSet(
-                    healingBomb.Column +
-                        columnOffset,
-                    healingBomb.Row +
-                        rowOffset,
-                    healingBomb,
-                    preserveTriggeredCrystals,
-                    triggeredCrystalRequests,
-                    gemsToClear,
-                    pendingBombs
-                );
-            }
-        }
+        AddSpecialBombAreaToClearSet(
+            healingBomb,
+            preserveTriggeredCrystals,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
     }
 
     private void AddHealingBombAreaToConvertedClearSet(
@@ -167,6 +115,129 @@ public partial class BoardController
 
         ApplyHealingBombEffect();
 
+        AddSpecialBombAreaToConvertedClearSet(
+            healingBomb,
+            activatedBomb,
+            pendingConvertedBombs,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
+    }
+
+    private void AddShieldBombAreaToClearSet(
+        Gem shieldBomb,
+        bool preserveTriggeredCrystals,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (shieldBomb == null ||
+            shieldBomb.SpecialType !=
+                GemSpecialType.ShieldBomb)
+        {
+            return;
+        }
+
+        ApplyShieldBombEffect();
+
+        AddSpecialBombAreaToClearSet(
+            shieldBomb,
+            preserveTriggeredCrystals,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
+    }
+
+    private void AddShieldBombAreaToConvertedClearSet(
+        Gem shieldBomb,
+        Gem activatedBomb,
+        HashSet<Gem> pendingConvertedBombs,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (shieldBomb == null ||
+            shieldBomb.SpecialType !=
+                GemSpecialType.ShieldBomb)
+        {
+            return;
+        }
+
+        ApplyShieldBombEffect();
+
+        AddSpecialBombAreaToConvertedClearSet(
+            shieldBomb,
+            activatedBomb,
+            pendingConvertedBombs,
+            triggeredCrystalRequests,
+            gemsToClear,
+            pendingBombs
+        );
+    }
+
+    private void AddSpecialBombAreaToClearSet(
+        Gem bomb,
+        bool preserveTriggeredCrystals,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (bomb == null)
+        {
+            return;
+        }
+
+        /*
+         * Socket-style special bombs share one compact centered 3x3 blast.
+         * Every affected cell still enters the authoritative bomb-clear set,
+         * so color damage, obstacles, crystals and chain reactions keep using
+         * the same deterministic resolution pipeline.
+         */
+        for (int rowOffset = -1;
+             rowOffset <= 1;
+             rowOffset++)
+        {
+            for (int columnOffset = -1;
+                 columnOffset <= 1;
+                 columnOffset++)
+            {
+                TryAddGemToBombClearSet(
+                    bomb.Column + columnOffset,
+                    bomb.Row + rowOffset,
+                    bomb,
+                    preserveTriggeredCrystals,
+                    triggeredCrystalRequests,
+                    gemsToClear,
+                    pendingBombs
+                );
+            }
+        }
+    }
+
+    private void AddSpecialBombAreaToConvertedClearSet(
+        Gem bomb,
+        Gem activatedBomb,
+        HashSet<Gem> pendingConvertedBombs,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (bomb == null)
+        {
+            return;
+        }
+
+        /*
+         * Color-crystal conversion sequences protect converted bombs until
+         * their own activation turn. All socket-style bombs route through the
+         * same converted-bomb helper so that sequencing rule stays intact.
+         */
         for (int rowOffset = -1;
              rowOffset <= 1;
              rowOffset++)
@@ -176,10 +247,8 @@ public partial class BoardController
                  columnOffset++)
             {
                 TryAddGemToConvertedBombClearSet(
-                    healingBomb.Column +
-                        columnOffset,
-                    healingBomb.Row +
-                        rowOffset,
+                    bomb.Column + columnOffset,
+                    bomb.Row + rowOffset,
                     activatedBomb,
                     pendingConvertedBombs,
                     triggeredCrystalRequests,
@@ -208,5 +277,15 @@ public partial class BoardController
         }
 
         combatController.HealPlayerFromBomb();
+    }
+
+    private void ApplyShieldBombEffect()
+    {
+        if (combatController == null)
+        {
+            return;
+        }
+
+        combatController.GrantPlayerShieldFromBomb();
     }
 }
