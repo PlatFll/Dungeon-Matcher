@@ -14,6 +14,9 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private static readonly Color UnavailableColor =
         new Color32(139, 116, 146, 255);
 
+    private static readonly Color SecondaryColor =
+        new Color32(204, 184, 212, 255);
+
     private Button rattlebonesButton;
     private Button bardleyButton;
     private Button startButton;
@@ -31,6 +34,8 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     {
         startRequested = onStartRequested;
         backRequested = onBackRequested;
+
+        EnsureInitialControls();
 
         if (!ResolveReferences())
         {
@@ -190,7 +195,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         if (!selectedAvailable)
         {
             statusText.text =
-                "BARDLEY\nCHARACTER DATA COMING NEXT";
+                "BARDLEY\nCHARACTER DATA COMING NEXT\nSTART LOCKED UNTIL BARDLEY IS BUILT";
             return;
         }
 
@@ -240,6 +245,196 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
                 : UnavailableColor;
     }
 
+    private void EnsureInitialControls()
+    {
+        if (transform.Find("RattlebonesButton") != null)
+        {
+            return;
+        }
+
+        CreateText(
+            "Title",
+            "CHOOSE YOUR CHARACTER",
+            new Vector2(0.08f, 0.85f),
+            new Vector2(0.92f, 0.96f),
+            32,
+            FontStyle.Bold,
+            UnselectedColor,
+            false
+        );
+
+        CreateText(
+            "Instruction",
+            "WHO ENTERS THE DUNGEON?",
+            new Vector2(0.08f, 0.77f),
+            new Vector2(0.92f, 0.84f),
+            17,
+            FontStyle.Normal,
+            SecondaryColor,
+            false
+        );
+
+        CreateButton(
+            "RattlebonesButton",
+            "RATTLEBONES",
+            new Vector2(0.08f, 0.56f),
+            new Vector2(0.47f, 0.72f),
+            22,
+            UnselectedColor
+        );
+
+        CreateButton(
+            "BardleyButton",
+            "BARDLEY",
+            new Vector2(0.53f, 0.56f),
+            new Vector2(0.92f, 0.72f),
+            22,
+            UnavailableColor
+        );
+
+        statusText =
+            CreateText(
+                "Status",
+                "RATTLEBONES",
+                new Vector2(0.08f, 0.31f),
+                new Vector2(0.92f, 0.52f),
+                18,
+                FontStyle.Bold,
+                UnselectedColor,
+                false
+            );
+
+        CreateButton(
+            "StartButton",
+            "START",
+            new Vector2(0.25f, 0.18f),
+            new Vector2(0.75f, 0.28f),
+            22,
+            UnselectedColor
+        );
+
+        CreateButton(
+            "BackButton",
+            "BACK",
+            new Vector2(0.25f, 0.07f),
+            new Vector2(0.75f, 0.15f),
+            18,
+            SecondaryColor
+        );
+    }
+
+    private Text CreateText(
+        string objectName,
+        string textValue,
+        Vector2 anchorMin,
+        Vector2 anchorMax,
+        int fontSize,
+        FontStyle fontStyle,
+        Color color,
+        bool raycastTarget)
+    {
+        GameObject textObject =
+            new GameObject(
+                objectName,
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(Text)
+            );
+
+        textObject.layer = gameObject.layer;
+        textObject.transform.SetParent(
+            transform,
+            false
+        );
+
+        RectTransform rect =
+            textObject.GetComponent<RectTransform>();
+
+        ConfigureRect(
+            rect,
+            anchorMin,
+            anchorMax
+        );
+
+        Text text =
+            textObject.GetComponent<Text>();
+
+        text.font =
+            Resources.GetBuiltinResource<Font>(
+                "LegacyRuntime.ttf"
+            );
+
+        text.text = textValue;
+        text.fontSize = fontSize;
+        text.fontStyle = fontStyle;
+        text.alignment = TextAnchor.MiddleCenter;
+        text.resizeTextForBestFit = true;
+        text.resizeTextMinSize = 10;
+        text.resizeTextMaxSize = fontSize;
+        text.horizontalOverflow = HorizontalWrapMode.Wrap;
+        text.verticalOverflow = VerticalWrapMode.Overflow;
+        text.color = color;
+        text.raycastTarget = raycastTarget;
+
+        return text;
+    }
+
+    private Button CreateButton(
+        string objectName,
+        string label,
+        Vector2 anchorMin,
+        Vector2 anchorMax,
+        int fontSize,
+        Color color)
+    {
+        Text text =
+            CreateText(
+                objectName,
+                label,
+                anchorMin,
+                anchorMax,
+                fontSize,
+                FontStyle.Bold,
+                color,
+                true
+            );
+
+        Button button =
+            text.gameObject.AddComponent<Button>();
+
+        button.targetGraphic = text;
+
+        ColorBlock colors =
+            button.colors;
+
+        colors.normalColor = Color.white;
+        colors.highlightedColor = Color.white;
+        colors.selectedColor = Color.white;
+        colors.pressedColor =
+            new Color(0.7f, 0.7f, 0.7f, 1f);
+        colors.disabledColor =
+            new Color(0.45f, 0.45f, 0.45f, 0.7f);
+        colors.fadeDuration = 0.08f;
+
+        button.colors = colors;
+
+        return button;
+    }
+
+    private static void ConfigureRect(
+        RectTransform rect,
+        Vector2 anchorMin,
+        Vector2 anchorMax)
+    {
+        rect.anchorMin = anchorMin;
+        rect.anchorMax = anchorMax;
+        rect.pivot =
+            new Vector2(0.5f, 0.5f);
+        rect.anchoredPosition = Vector2.zero;
+        rect.sizeDelta = Vector2.zero;
+        rect.localScale = Vector3.one;
+    }
+
     private bool ResolveReferences()
     {
         rattlebonesButton =
@@ -277,7 +472,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         if (!hasAllReferences)
         {
             Debug.LogError(
-                "CharacterSelectMenuController could not resolve its authored UI hierarchy.",
+                "CharacterSelectMenuController could not resolve its character-select controls.",
                 this
             );
         }
