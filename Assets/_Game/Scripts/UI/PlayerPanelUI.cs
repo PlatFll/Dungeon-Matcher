@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +19,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private const float ShieldBreakFlashDuration = 0.1f;
 
     private static readonly Color ShieldFillColor =
-        new Color32(49, 126, 230, 255);
+        new Color32(39, 124, 255, 255);
+
+    private static Sprite shieldSolidSprite;
 
     [Header("Runtime Player")]
     [SerializeField]
@@ -106,7 +107,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     {
         DisableLegacyPlayerBase();
         FollowPlayerCharacter();
-        PositionShieldBar();
     }
 
     private void OnDisable()
@@ -414,6 +414,16 @@ public sealed class PlayerPanelUI : MonoBehaviour
             StopShieldBreakRoutine();
             CreateShieldBar();
 
+            if (playerHealthFill != null)
+            {
+                playerHealthFill.enabled = false;
+            }
+
+            if (playerHealthText != null)
+            {
+                playerHealthText.enabled = false;
+            }
+
             if (playerShieldBar != null)
             {
                 playerShieldBar.SetActive(true);
@@ -421,10 +431,13 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
             if (playerShieldFill != null)
             {
-                playerShieldFill.sprite = null;
+                playerShieldFill.sprite =
+                    GetShieldSolidSprite();
+
                 playerShieldFill.material = null;
                 playerShieldFill.color =
                     ShieldFillColor;
+
                 playerShieldFill.fillAmount =
                     (float)currentShield /
                     maximumShield;
@@ -437,12 +450,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
                     $"{currentShield} / {maximumShield}";
             }
 
-            if (playerHealthText != null)
-            {
-                playerHealthText.enabled = false;
-            }
-
-            PositionShieldBar();
             return;
         }
 
@@ -461,11 +468,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         }
 
         DestroyShieldBarImmediately();
-
-        if (playerHealthText != null)
-        {
-            playerHealthText.enabled = true;
-        }
+        RestoreHealthBarPresentation();
     }
 
     private void CreateShieldBar()
@@ -478,64 +481,81 @@ public sealed class PlayerPanelUI : MonoBehaviour
             return;
         }
 
-        string fillPath =
-            GetRelativePath(
-                playerHealthBar.transform,
-                playerHealthFill.transform
+        GameObject shieldRoot =
+            new GameObject(
+                "PlayerShieldBar",
+                typeof(RectTransform)
             );
 
-        string textPath =
-            GetRelativePath(
-                playerHealthBar.transform,
-                playerHealthText.transform
-            );
+        shieldRoot.layer =
+            playerHealthBar.layer;
 
-        if (fillPath == null ||
-            textPath == null)
+        shieldRoot.transform.SetParent(
+            playerHealthBar.transform,
+            false
+        );
+
+        RectTransform shieldRootRect =
+            shieldRoot.transform as RectTransform;
+
+        if (shieldRootRect == null)
         {
-            Debug.LogError(
-                "Player shield bar could not mirror the health bar because " +
-                "its fill or text is not a child of the health bar root.",
-                this
-            );
-
+            Destroy(shieldRoot);
             return;
         }
 
-        playerShieldBar =
+        shieldRootRect.anchorMin =
+            Vector2.zero;
+
+        shieldRootRect.anchorMax =
+            Vector2.one;
+
+        shieldRootRect.pivot =
+            new Vector2(0.5f, 0.5f);
+
+        shieldRootRect.anchoredPosition =
+            Vector2.zero;
+
+        shieldRootRect.sizeDelta =
+            Vector2.zero;
+
+        shieldRootRect.localScale =
+            Vector3.one;
+
+        GameObject shieldFillObject =
             Instantiate(
-                playerHealthBar,
-                playerHealthBar.transform.parent
+                playerHealthFill.gameObject,
+                shieldRoot.transform,
+                false
             );
 
-        playerShieldBar.name =
-            "PlayerShieldBar";
+        shieldFillObject.name =
+            "PlayerShieldBarFill";
 
-        Transform shieldFillTransform =
-            playerShieldBar.transform.Find(
-                fillPath
+        GameObject shieldTextObject =
+            Instantiate(
+                playerHealthText.gameObject,
+                shieldRoot.transform,
+                false
             );
 
-        Transform shieldTextTransform =
-            playerShieldBar.transform.Find(
-                textPath
-            );
+        shieldTextObject.name =
+            "PlayerShieldBarText";
+
+        playerShieldBar =
+            shieldRoot;
 
         playerShieldFill =
-            shieldFillTransform != null
-                ? shieldFillTransform.GetComponent<Image>()
-                : null;
+            shieldFillObject.GetComponent<Image>();
 
         playerShieldText =
-            shieldTextTransform != null
-                ? shieldTextTransform.GetComponent<TMP_Text>()
-                : null;
+            shieldTextObject.GetComponent<TMP_Text>();
 
         if (playerShieldFill == null ||
             playerShieldText == null)
         {
             Debug.LogError(
-                "Player shield bar clone is missing its expected fill or text.",
+                "Player shield overlay could not clone the HP fill/text presentation.",
                 this
             );
 
@@ -543,12 +563,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
             return;
         }
 
-        /*
-         * The HP fill sprite contains red artwork, so tinting that sprite blue
-         * still leaves red/magenta pixels visible. Shield uses the exact same
-         * cloned frame and fill RectTransform, but a sprite-free solid fill.
-         */
-        playerShieldFill.sprite = null;
+        playerShieldFill.sprite =
+            GetShieldSolidSprite();
+
         playerShieldFill.material = null;
         playerShieldFill.color =
             ShieldFillColor;
@@ -564,6 +581,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
         playerShieldFill.fillClockwise = true;
         playerShieldFill.raycastTarget = false;
+        playerShieldFill.enabled = true;
 
         playerShieldText.enableAutoSizing = true;
         playerShieldText.fontSize = HealthTextMaximumFontSize;
@@ -572,47 +590,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
         playerShieldText.alignment =
             TextAlignmentOptions.Center;
         playerShieldText.raycastTarget = false;
+        playerShieldText.enabled = true;
 
-        int healthSiblingIndex =
-            playerHealthBar.transform.GetSiblingIndex();
-
-        playerShieldBar.transform.SetSiblingIndex(
-            healthSiblingIndex + 1
-        );
-
-        PositionShieldBar();
-    }
-
-    private void PositionShieldBar()
-    {
-        if (playerShieldBar == null ||
-            playerHealthBar == null ||
-            playerShieldBar.transform is not RectTransform shieldRect ||
-            playerHealthBar.transform is not RectTransform healthRect)
-        {
-            return;
-        }
-
-        shieldRect.anchorMin =
-            healthRect.anchorMin;
-
-        shieldRect.anchorMax =
-            healthRect.anchorMax;
-
-        shieldRect.pivot =
-            healthRect.pivot;
-
-        shieldRect.anchoredPosition =
-            healthRect.anchoredPosition;
-
-        shieldRect.sizeDelta =
-            healthRect.sizeDelta;
-
-        shieldRect.localScale =
-            healthRect.localScale;
-
-        shieldRect.localRotation =
-            healthRect.localRotation;
+        shieldRoot.transform.SetAsLastSibling();
     }
 
     private IEnumerator PlayShieldBreakAndDestroy()
@@ -620,32 +600,37 @@ public sealed class PlayerPanelUI : MonoBehaviour
         if (playerShieldBar == null)
         {
             shieldBreakRoutine = null;
+            RestoreHealthBarPresentation();
             yield break;
         }
 
-        /*
-         * A depleted shield gets one very short full-white frame-state before
-         * the cloned bar is destroyed. This reads like a crisp shield break
-         * instead of the blue fill simply vanishing.
-         */
+        if (playerHealthFill != null)
+        {
+            playerHealthFill.enabled = false;
+        }
+
+        if (playerHealthText != null)
+        {
+            playerHealthText.enabled = false;
+        }
+
         if (playerShieldFill != null)
         {
-            playerShieldFill.sprite = null;
+            playerShieldFill.sprite =
+                GetShieldSolidSprite();
+
             playerShieldFill.material = null;
             playerShieldFill.fillAmount = 1f;
             playerShieldFill.color = Color.white;
+            playerShieldFill.enabled = true;
         }
 
         if (playerShieldText != null)
         {
             playerShieldText.text =
                 string.Empty;
-            playerShieldText.enabled = false;
-        }
 
-        if (playerHealthText != null)
-        {
-            playerHealthText.enabled = false;
+            playerShieldText.enabled = false;
         }
 
         yield return new WaitForSecondsRealtime(
@@ -654,11 +639,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
         shieldBreakRoutine = null;
         DestroyShieldBarImmediately();
-
-        if (playerHealthText != null)
-        {
-            playerHealthText.enabled = true;
-        }
+        RestoreHealthBarPresentation();
     }
 
     private void StopShieldBreakRoutine()
@@ -689,6 +670,19 @@ public sealed class PlayerPanelUI : MonoBehaviour
         playerShieldText = null;
     }
 
+    private void RestoreHealthBarPresentation()
+    {
+        if (playerHealthFill != null)
+        {
+            playerHealthFill.enabled = true;
+        }
+
+        if (playerHealthText != null)
+        {
+            playerHealthText.enabled = true;
+        }
+    }
+
     private bool ShouldHideHealthText()
     {
         return shieldBreakRoutine != null ||
@@ -698,47 +692,64 @@ public sealed class PlayerPanelUI : MonoBehaviour
                );
     }
 
-    private static string GetRelativePath(
-        Transform root,
-        Transform target)
+    private static Sprite GetShieldSolidSprite()
     {
-        if (root == null ||
-            target == null)
+        if (shieldSolidSprite != null)
         {
-            return null;
+            return shieldSolidSprite;
         }
 
-        if (target == root)
-        {
-            return string.Empty;
-        }
-
-        Stack<string> pathParts =
-            new Stack<string>();
-
-        Transform current =
-            target;
-
-        while (current != null &&
-               current != root)
-        {
-            pathParts.Push(
-                current.name
+        Texture2D texture =
+            new Texture2D(
+                1,
+                1,
+                TextureFormat.RGBA32,
+                false
             );
 
-            current =
-                current.parent;
-        }
+        texture.name =
+            "ShieldBarSolidTexture";
 
-        if (current != root)
-        {
-            return null;
-        }
+        texture.filterMode =
+            FilterMode.Point;
 
-        return string.Join(
-            "/",
-            pathParts
+        texture.wrapMode =
+            TextureWrapMode.Clamp;
+
+        texture.SetPixel(
+            0,
+            0,
+            Color.white
         );
+
+        texture.Apply(
+            false,
+            true
+        );
+
+        texture.hideFlags =
+            HideFlags.HideAndDontSave;
+
+        shieldSolidSprite =
+            Sprite.Create(
+                texture,
+                new Rect(
+                    0f,
+                    0f,
+                    1f,
+                    1f
+                ),
+                new Vector2(0.5f, 0.5f),
+                1f
+            );
+
+        shieldSolidSprite.name =
+            "ShieldBarSolidSprite";
+
+        shieldSolidSprite.hideFlags =
+            HideFlags.HideAndDontSave;
+
+        return shieldSolidSprite;
     }
 
     private void ShowUninitializedState()
@@ -759,6 +770,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
         if (playerHealthFill != null)
         {
+            playerHealthFill.enabled = true;
             playerHealthFill.fillAmount = 0f;
         }
 
@@ -766,6 +778,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         {
             playerHealthText.text =
                 string.Empty;
+
             playerHealthText.enabled = true;
         }
     }
