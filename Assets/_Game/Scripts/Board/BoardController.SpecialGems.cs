@@ -832,7 +832,9 @@ public partial class BoardController
             }
 
             if (targetGem.SpecialType ==
-                GemSpecialType.PoisonBomb)
+                    GemSpecialType.PoisonBomb ||
+                targetGem.SpecialType ==
+                    GemSpecialType.HealingBomb)
             {
                 pendingConvertedBombs.Add(
                     targetGem
@@ -1224,6 +1226,18 @@ public partial class BoardController
                     );
 
                     break;
+
+                case GemSpecialType.HealingBomb:
+                    AddHealingBombAreaToConvertedClearSet(
+                        bomb,
+                        activatedBomb,
+                        pendingConvertedBombs,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
             }
         }
 
@@ -1363,7 +1377,9 @@ public partial class BoardController
             }
 
             if (targetGem.SpecialType !=
-                GemSpecialType.PoisonBomb)
+                    GemSpecialType.PoisonBomb &&
+                targetGem.SpecialType !=
+                    GemSpecialType.HealingBomb)
             {
                 targetGem.SetSpecialType(
                     convertedBombType
@@ -2065,6 +2081,17 @@ public partial class BoardController
 
                 case GemSpecialType.PoisonBomb:
                     AddPoisonBombAreaToClearSet(
+                        bomb,
+                        preserveTriggeredCrystals,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
+
+                case GemSpecialType.HealingBomb:
+                    AddHealingBombAreaToClearSet(
                         bomb,
                         preserveTriggeredCrystals,
                         triggeredCrystalRequests,
