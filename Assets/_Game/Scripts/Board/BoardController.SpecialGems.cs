@@ -129,30 +129,18 @@ public partial class BoardController
             return null;
         }
 
-        /*
-         * Player-created specials continue to prioritize the
-         * gem moved by the player.
-         */
         if (preferredGem != null &&
             group.Contains(preferredGem))
         {
             return preferredGem;
         }
 
-        /*
-         * Use the other swapped gem when that is the gem that
-         * belongs to the special-producing match.
-         */
         if (fallbackGem != null &&
             group.Contains(fallbackGem))
         {
             return fallbackGem;
         }
 
-        /*
-         * Automatic cascades have no preferred swapped gem.
-         * Choose a meaningful position based on match geometry.
-         */
         switch (matchType)
         {
             case BoardMatchType.LShape:
@@ -176,10 +164,6 @@ public partial class BoardController
                 );
         }
 
-        /*
-         * Straight-four cascades and unexpected shapes use
-         * the most central available gem.
-         */
         return FindGemNearestGroupCenter(
             group
         );
@@ -232,10 +216,6 @@ public partial class BoardController
                 }
             }
 
-            /*
-             * L corners, T intersections, and Cross centers are the
-             * meaningful pivot gems connected on both board axes.
-             */
             if (!hasHorizontalNeighbour ||
                 !hasVerticalNeighbour)
             {
@@ -454,11 +434,6 @@ public partial class BoardController
             second.SpecialType ==
             GemSpecialType.ColorCrystal;
 
-        /*
-         * This helper only handles exactly one crystal.
-         * Existing crystal + crystal swaps are handled by
-         * ResolveDoubleColorCrystalActivation.
-         */
         if (firstIsCrystal ==
             secondIsCrystal)
         {
@@ -475,22 +450,12 @@ public partial class BoardController
                 ? second
                 : first;
 
-        /*
-         * Do not replace an existing row bomb, column bomb,
-         * or other special. Its existing crystal interaction
-         * should continue normally.
-         */
         if (targetGem.SpecialType !=
             GemSpecialType.None)
         {
             return false;
         }
 
-        /*
-         * The crystal itself is ignored by AddMatchesAt.
-         * Only inspect the ordinary gem after the completed
-         * swap.
-         */
         HashSet<Gem> targetMatches =
             FindMatchesFrom(
                 targetGem,
@@ -502,10 +467,6 @@ public partial class BoardController
             return false;
         }
 
-        /*
-         * Passing targetGem as the preferred gem ensures the
-         * swapped gem becomes the earned special.
-         */
         List<SpecialGemCreationRequest>
             creationRequests =
                 BuildSpecialGemCreationRequests(
@@ -530,11 +491,6 @@ public partial class BoardController
             createdSpecialType =
                 request.SpecialType;
 
-            /*
-             * Create the earned special immediately without
-             * clearing the match yet. The following crystal
-             * interaction will process the matching color.
-             */
             targetGem.SetSpecialType(
                 createdSpecialType
             );
@@ -552,23 +508,6 @@ public partial class BoardController
         return false;
     }
 
-    /*
-     * Reward-first crystal/bomb exception.
-     *
-     * A direct crystal + ordinary-gem swap normally activates the
-     * crystal immediately. That can waste an already-existing bomb
-     * when the ordinary gem simultaneously creates a normal three.
-     *
-     * For exactly that case, allow the ordinary three-match to resolve
-     * first only when one of its existing row/column bombs will actually
-     * cross the crystal's current cell. ResolveCascades already preserves
-     * bomb-hit crystals, records the triggering bomb's GemType, refills,
-     * then converts that color into random bombs.
-     *
-     * Scope this to exact three-matches and an ordinary swapped gem so
-     * direct crystal+bomb swaps and mastery-shaped special creation
-     * interactions keep their existing behavior.
-     */
     private bool ShouldResolveMatchedBombBeforeCrystal(
         Gem crystalGem,
         Gem targetGem)
@@ -651,12 +590,6 @@ public partial class BoardController
             second.SpecialType ==
             GemSpecialType.ColorCrystal;
 
-        /*
-         * Exactly one of the swapped gems must currently
-         * be a color crystal.
-         *
-         * Crystal + crystal will be handled separately later.
-         */
         if (firstIsCrystal ==
             secondIsCrystal)
         {
@@ -673,13 +606,6 @@ public partial class BoardController
                 ? second
                 : first;
 
-        /*
-         * If this crystal swap also created a normal three whose
-         * existing bomb will hit the crystal, deliberately decline
-         * the direct crystal activation here. TrySwap will then fall
-         * through to the ordinary match path, where ResolveCascades
-         * explodes the bomb first and queues this crystal from the hit.
-         */
         if (ShouldResolveMatchedBombBeforeCrystal(
                 crystalGem,
                 targetGem))
@@ -699,9 +625,6 @@ public partial class BoardController
         targetSpecialType =
             targetGem.SpecialType;
 
-        /*
-         * The activated crystal always destroys itself.
-         */
         gemsToClear.Add(
             crystalGem
         );
@@ -727,11 +650,6 @@ public partial class BoardController
                     continue;
                 }
 
-                /*
-                 * Other crystals do not count as colored gems.
-                 * Row and column bombs of the selected color
-                 * are included and can chain-react later.
-                 */
                 if (gem.SpecialType ==
                     GemSpecialType.ColorCrystal)
                 {
@@ -762,11 +680,6 @@ public partial class BoardController
         Gem crystalGem =
             request.CrystalGem;
 
-        /*
-         * The triggered crystal must also be destroyed as part
-         * of its activation, but its hidden GemType will not
-         * receive damage or energy rewards.
-         */
         targetSet.Add(
             crystalGem
         );
@@ -793,10 +706,6 @@ public partial class BoardController
                     continue;
                 }
 
-                /*
-                 * Other crystals remain colorless and are not
-                 * selected through their hidden original type.
-                 */
                 if (gem.SpecialType ==
                     GemSpecialType.ColorCrystal)
                 {
@@ -834,7 +743,9 @@ public partial class BoardController
             if (targetGem.SpecialType ==
                     GemSpecialType.PoisonBomb ||
                 targetGem.SpecialType ==
-                    GemSpecialType.HealingBomb)
+                    GemSpecialType.HealingBomb ||
+                targetGem.SpecialType ==
+                    GemSpecialType.ShieldBomb)
             {
                 pendingConvertedBombs.Add(
                     targetGem
@@ -968,10 +879,6 @@ public partial class BoardController
         HashSet<Gem> alreadyCleared =
             new HashSet<Gem>();
 
-        /*
-         * Remove the crystal first without granting rewards
-         * for its hidden underlying color.
-         */
         if (crystalGem != null)
         {
             HashSet<Gem> crystalOnly =
@@ -1019,13 +926,6 @@ public partial class BoardController
             List<BombTriggeredCrystalRequest>
                 triggeredCrystalRequests = null;
 
-            /*
-             * Existing row or column bombs of the selected
-             * color still activate normally when reached.
-             *
-             * Any crystal crossed by the bomb is preserved and
-             * queued instead of being silently removed.
-             */
             if (IsChainReactiveBomb(
                 targetGem.SpecialType))
             {
@@ -1053,10 +953,6 @@ public partial class BoardController
                 continue;
             }
 
-            /*
-             * Reward only gems that are actually being
-             * destroyed during this individual activation.
-             */
             ReportBombClearsToCombat(
                 noRewardExclusions,
                 activationSet,
@@ -1079,18 +975,13 @@ public partial class BoardController
                 null
             );
 
-            /*
-             * The bomb explosion has finished, so activate any
-             * crystals that it crossed before continuing the
-             * original crystal sequence.
-             */
             yield return
                 ResolveBombTriggeredCrystalRequests(
                     triggeredCrystalRequests
                 );
 
             if (crystalActivationStagger > 0f &&
-                            index <
+                index <
                     orderedTargets.Count - 1)
             {
                 yield return new WaitForSeconds(
@@ -1238,6 +1129,18 @@ public partial class BoardController
                     );
 
                     break;
+
+                case GemSpecialType.ShieldBomb:
+                    AddShieldBombAreaToConvertedClearSet(
+                        bomb,
+                        activatedBomb,
+                        pendingConvertedBombs,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
             }
         }
 
@@ -1265,11 +1168,6 @@ public partial class BoardController
             return;
         }
 
-        /*
-         * A crystal hit by this explosion must not be added
-         * to the clear set. Keep it on the board and queue
-         * its own activation instead.
-         */
         if (gem.SpecialType ==
             GemSpecialType.ColorCrystal)
         {
@@ -1282,11 +1180,6 @@ public partial class BoardController
             return;
         }
 
-        /*
-         * Converted bombs that have not reached their own
-         * activation turn remain protected when an earlier
-         * converted bomb crosses them.
-         */
         bool isProtectedConvertedBomb =
             gem != activatedBomb &&
             pendingConvertedBombs != null &&
@@ -1300,10 +1193,6 @@ public partial class BoardController
         bool wasAdded =
             gemsToClear.Add(gem);
 
-        /*
-         * Ordinary pre-existing bombs may still join the
-         * explosion chain.
-         */
         if (wasAdded &&
             IsChainReactiveBomb(
                 gem.SpecialType))
@@ -1337,10 +1226,6 @@ public partial class BoardController
         HashSet<Gem> alreadyCleared =
             new HashSet<Gem>();
 
-        /*
-         * Remove the crystal without rewarding its hidden
-         * underlying gem color.
-         */
         if (crystalGem != null)
         {
             HashSet<Gem> crystalOnly =
@@ -1359,10 +1244,6 @@ public partial class BoardController
             );
         }
 
-        /*
-         * Convert every gem of the selected color before
-         * any of the converted bombs begin detonating.
-         */
         HashSet<Gem> pendingConvertedBombs =
             new HashSet<Gem>();
 
@@ -1379,7 +1260,9 @@ public partial class BoardController
             if (targetGem.SpecialType !=
                     GemSpecialType.PoisonBomb &&
                 targetGem.SpecialType !=
-                    GemSpecialType.HealingBomb)
+                    GemSpecialType.HealingBomb &&
+                targetGem.SpecialType !=
+                    GemSpecialType.ShieldBomb)
             {
                 targetGem.SetSpecialType(
                     convertedBombType
@@ -1425,10 +1308,6 @@ public partial class BoardController
                 continue;
             }
 
-            /*
-             * It is no longer protected because its own
-             * activation turn has now begun.
-             */
             pendingConvertedBombs.Remove(
                 activatedBomb
             );
@@ -1482,11 +1361,6 @@ public partial class BoardController
             }
         }
 
-        /*
-         * All converted bombs have finished. Crystals
-         * crossed by those explosions now activate in
-         * the order in which they were reached.
-         */
         yield return
             ResolveBombTriggeredCrystalRequests(
                 triggeredCrystalRequests
@@ -1557,10 +1431,6 @@ public partial class BoardController
             Gem waitingCrystal =
                 request.CrystalGem;
 
-            /*
-             * Start visibly charging before the board begins
-             * collapsing and refilling.
-             */
             Coroutine chargeRoutine =
                 StartCoroutine(
                     AnimateTriggeredCrystalCharge(
@@ -1568,14 +1438,6 @@ public partial class BoardController
                     )
                 );
 
-            /*
-             * The explosion that found this crystal has already
-             * created empty spaces. Refill them before selecting
-             * gems of the triggering bomb's color.
-             *
-             * The crystal remains alive and moves normally with
-             * the collapsing board.
-             */
             yield return CollapseAndRefillBoard();
 
             if (triggeredCrystalSettlePause > 0f)
@@ -1585,10 +1447,6 @@ public partial class BoardController
                 );
             }
 
-            /*
-             * End the charge animation while keeping the crystal
-             * at its new settled board position.
-             */
             chargingTriggeredCrystals.Remove(
                 waitingCrystal
             );
@@ -1598,20 +1456,11 @@ public partial class BoardController
                 yield return chargeRoutine;
             }
 
-            /*
-             * Another part of the chain may already have consumed
-             * this crystal while the board was resolving.
-             */
             if (!request.IsValid)
             {
                 continue;
             }
 
-            /*
-             * BuildBombTriggeredCrystalTargetSet is called inside
-             * this sequence, so it now scans the newly refilled
-             * board rather than the depleted board.
-             */
             yield return
                 ResolveBombTriggeredCrystalSequence(
                     request
@@ -1702,10 +1551,6 @@ public partial class BoardController
         HashSet<Gem> alreadyCleared =
             new HashSet<Gem>();
 
-        /*
-         * Destroy the triggered crystal without rewarding its
-         * hidden original GemType.
-         */
         if (crystalGem != null)
         {
             HashSet<Gem> crystalOnly =
@@ -1724,10 +1569,6 @@ public partial class BoardController
             );
         }
 
-        /*
-         * Every remaining gem matching the triggering bomb's
-         * color becomes a randomly oriented bomb.
-         */
         HashSet<Gem> pendingConvertedBombs =
             ConvertCrystalTargetsToRandomBombs(
                 orderedTargets
@@ -1768,10 +1609,6 @@ public partial class BoardController
                 continue;
             }
 
-            /*
-             * This converted bomb has reached its activation
-             * turn and no longer needs protection.
-             */
             pendingConvertedBombs.Remove(
                 activatedBomb
             );
@@ -1825,10 +1662,6 @@ public partial class BoardController
             }
         }
 
-        /*
-         * Continue the chain if any of these converted
-         * bombs crossed another crystal.
-         */
         yield return
             ResolveBombTriggeredCrystalRequests(
                 triggeredCrystalRequests
@@ -1884,20 +1717,11 @@ public partial class BoardController
             yield break;
         }
 
-        /*
-         * Selected-color bombs are included in the initial
-         * set. Expanding it here allows them to chain-react.
-         */
         HashSet<Gem> expandedClearSet =
             BuildBombExpandedClearSet(
                 crystalClearSet
             );
 
-        /*
-         * The crystal has an underlying GemType from the
-         * match that created it, but it should not grant
-         * damage or energy for that hidden color.
-         */
         HashSet<Gem> rewardExclusions =
             new HashSet<Gem>();
 
@@ -1911,10 +1735,6 @@ public partial class BoardController
             }
         }
 
-        /*
-         * All actual colored gems use the existing
-         * per-cleared-gem damage and energy rules.
-         */
         ReportBombClearsToCombat(
             rewardExclusions,
             expandedClearSet,
@@ -1977,13 +1797,6 @@ public partial class BoardController
         List<BombTriggeredCrystalRequest>
             ignoredCrystalRequests;
 
-        /*
-         * Existing callers retain their current behaviour:
-         * crystals caught in explosions are cleared normally.
-         *
-         * A later caller can enable preservation and receive
-         * activation requests instead.
-         */
         return BuildBombExpandedClearSet(
             matchedGems,
             false,
@@ -2100,6 +1913,17 @@ public partial class BoardController
                     );
 
                     break;
+
+                case GemSpecialType.ShieldBomb:
+                    AddShieldBombAreaToClearSet(
+                        bomb,
+                        preserveTriggeredCrystals,
+                        triggeredCrystalRequests,
+                        gemsToClear,
+                        pendingBombs
+                    );
+
+                    break;
             }
         }
 
@@ -2127,11 +1951,6 @@ public partial class BoardController
             return;
         }
 
-        /*
-         * When requested, a crystal hit by this bomb remains
-         * on the board temporarily and produces an activation
-         * request containing the bomb's color.
-         */
         if (preserveTriggeredCrystals &&
             gem.SpecialType ==
                 GemSpecialType.ColorCrystal)
@@ -2170,10 +1989,6 @@ public partial class BoardController
             return;
         }
 
-        /*
-         * A crystal may be crossed by several explosions in
-         * the same chain. Only create one request for it.
-         */
         foreach (
             BombTriggeredCrystalRequest request
             in triggeredCrystalRequests)
