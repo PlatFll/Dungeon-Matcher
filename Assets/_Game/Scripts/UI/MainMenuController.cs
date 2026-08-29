@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public sealed class MainMenuController : MonoBehaviour
 {
     private const string GameSceneName = "Game";
+    private const string CharacterSelectPrefabPath =
+        "UI/CharacterSelectScreen";
 
     [Header("Screens")]
     [SerializeField]
@@ -24,6 +26,9 @@ public sealed class MainMenuController : MonoBehaviour
     [SerializeField]
     private Button gemMasteryBackButton;
 
+    private CharacterSelectMenuController
+        characterSelectScreen;
+
     private bool isLoadingGame;
 
     private void Awake()
@@ -34,7 +39,7 @@ public sealed class MainMenuController : MonoBehaviour
         }
 
         playButton.onClick.AddListener(
-            PlayGame
+            ShowCharacterSelect
         );
 
         gemMasteryButton.onClick.AddListener(
@@ -53,7 +58,7 @@ public sealed class MainMenuController : MonoBehaviour
         if (playButton != null)
         {
             playButton.onClick.RemoveListener(
-                PlayGame
+                ShowCharacterSelect
             );
         }
 
@@ -82,6 +87,13 @@ public sealed class MainMenuController : MonoBehaviour
 
         homeScreen.SetActive(true);
         gemMasteryScreen.SetActive(false);
+
+        if (characterSelectScreen != null)
+        {
+            characterSelectScreen.gameObject.SetActive(
+                false
+            );
+        }
     }
 
     public void ShowGemMastery()
@@ -94,12 +106,43 @@ public sealed class MainMenuController : MonoBehaviour
 
         homeScreen.SetActive(false);
         gemMasteryScreen.SetActive(true);
+
+        if (characterSelectScreen != null)
+        {
+            characterSelectScreen.gameObject.SetActive(
+                false
+            );
+        }
+    }
+
+    public void ShowCharacterSelect()
+    {
+        if (!EnsureCharacterSelectScreen())
+        {
+            return;
+        }
+
+        homeScreen.SetActive(false);
+        gemMasteryScreen.SetActive(false);
+        characterSelectScreen.gameObject.SetActive(true);
     }
 
     public void PlayGame()
     {
         if (isLoadingGame)
         {
+            return;
+        }
+
+        if (!PlayerDefinitionRegistry.IsAvailable(
+                CharacterSelectionSettings.SelectedPlayerId
+            ))
+        {
+            Debug.LogWarning(
+                "The selected character does not have a PlayerDefinition yet.",
+                this
+            );
+
             return;
         }
 
@@ -122,6 +165,68 @@ public sealed class MainMenuController : MonoBehaviour
             GameSceneName,
             LoadSceneMode.Single
         );
+    }
+
+    private bool EnsureCharacterSelectScreen()
+    {
+        if (characterSelectScreen != null)
+        {
+            characterSelectScreen.Initialize(
+                PlayGame,
+                ShowHome
+            );
+
+            return true;
+        }
+
+        GameObject prefab =
+            Resources.Load<GameObject>(
+                CharacterSelectPrefabPath
+            );
+
+        if (prefab == null)
+        {
+            Debug.LogError(
+                $"Could not load character select prefab at Resources/{CharacterSelectPrefabPath}.",
+                this
+            );
+
+            return false;
+        }
+
+        Transform screenParent =
+            homeScreen.transform.parent;
+
+        GameObject instance =
+            Instantiate(
+                prefab,
+                screenParent,
+                false
+            );
+
+        instance.name =
+            "CharacterSelectScreen";
+
+        characterSelectScreen =
+            instance.GetComponent<CharacterSelectMenuController>();
+
+        if (characterSelectScreen == null)
+        {
+            Debug.LogError(
+                "Character select prefab is missing CharacterSelectMenuController.",
+                this
+            );
+
+            Destroy(instance);
+            return false;
+        }
+
+        characterSelectScreen.Initialize(
+            PlayGame,
+            ShowHome
+        );
+
+        return true;
     }
 
     private bool HasRequiredReferences()
