@@ -117,7 +117,7 @@ public sealed class CombatController :
         "Prototype HP restored by each activated Healing Bomb. " +
         "This is intentionally data-tunable for later balance passes."
     )]
-    private int healingBombHealAmount = 20;
+    private int healingBombHealAmount = 30;
 
     [Header("Prototype Debugging")]
     [SerializeField]

@@ -45,8 +45,13 @@ public class Gem :
     private GemSpecialOverlayView
     specialOverlayView;
 
+    /*
+     * Legacy class name retained for serialized/runtime compatibility.
+     * The view itself is intentionally shared by every socket-style
+     * special bomb (shell + centered 16x16 source gem icon).
+     */
     private PoisonBombGemView
-    poisonBombView;
+    specialBombView;
 
     private MaterialPropertyBlock
         materialPropertyBlock;
@@ -83,7 +88,7 @@ public class Gem :
                 GemSpecialOverlayView
             >(true);
 
-        poisonBombView =
+        specialBombView =
             GetComponentInChildren<
                 PoisonBombGemView
             >(true);
@@ -153,10 +158,9 @@ public class Gem :
 
         SetFlashAmount(0f);
 
-        if (SpecialType ==
-            GemSpecialType.PoisonBomb)
+        if (UsesSpecialBombShellVisual())
         {
-            RefreshPoisonBombVisual();
+            RefreshSpecialBombVisual();
         }
     }
 
@@ -173,9 +177,9 @@ public class Gem :
                 >(true);
         }
 
-        if (poisonBombView == null)
+        if (specialBombView == null)
         {
-            poisonBombView =
+            specialBombView =
                 GetComponentInChildren<
                     PoisonBombGemView
                 >(true);
@@ -200,34 +204,28 @@ public class Gem :
                 specialOverlayView.Hide();
             }
 
-            if (poisonBombView != null)
+            if (specialBombView != null)
             {
-                poisonBombView.Hide();
+                specialBombView.Hide();
             }
 
             return;
         }
 
-        if (SpecialType ==
-            GemSpecialType.PoisonBomb)
+        if (UsesSpecialBombShellVisual())
         {
             if (specialOverlayView != null)
             {
                 specialOverlayView.Hide();
             }
 
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = false;
-            }
-
-            RefreshPoisonBombVisual();
+            RefreshSpecialBombVisual();
             return;
         }
 
-        if (poisonBombView != null)
+        if (specialBombView != null)
         {
-            poisonBombView.Hide();
+            specialBombView.Hide();
         }
 
         if (specialOverlayView == null)
@@ -255,11 +253,18 @@ public class Gem :
         );
     }
 
-    private void RefreshPoisonBombVisual()
+    private bool UsesSpecialBombShellVisual()
     {
-        if (SpecialType !=
-            GemSpecialType.PoisonBomb ||
-            board == null)
+        return
+            SpecialType ==
+                GemSpecialType.PoisonBomb ||
+            SpecialType ==
+                GemSpecialType.HealingBomb;
+    }
+
+    private void RefreshSpecialBombVisual()
+    {
+        if (!UsesSpecialBombShellVisual())
         {
             return;
         }
@@ -270,22 +275,42 @@ public class Gem :
                 GetComponent<SpriteRenderer>();
         }
 
-        if (poisonBombView == null)
+        if (specialBombView == null)
         {
-            poisonBombView =
+            specialBombView =
                 PoisonBombGemView.GetOrCreate(
                     transform,
                     spriteRenderer
                 );
         }
 
-        if (poisonBombView == null)
+        Sprite bombSprite =
+            board != null
+                ? board.GetSpecialBombSprite(
+                    SpecialType
+                )
+                : null;
+
+        if (specialBombView == null ||
+            bombSprite == null)
         {
+            if (specialBombView != null)
+            {
+                specialBombView.Hide();
+            }
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = true;
+            }
+
             return;
         }
 
-        poisonBombView.Show(
-            board.PoisonBombSprite,
+        spriteRenderer.enabled = false;
+
+        specialBombView.Show(
+            bombSprite,
             board.GetSpecialBombSourceIcon(
                 Type
             ),
@@ -375,11 +400,10 @@ public class Gem :
             materialPropertyBlock
         );
 
-        if (poisonBombView != null &&
-            SpecialType ==
-                GemSpecialType.PoisonBomb)
+        if (specialBombView != null &&
+            UsesSpecialBombShellVisual())
         {
-            poisonBombView.SetFlashAmount(
+            specialBombView.SetFlashAmount(
                 amount
             );
         }
@@ -403,8 +427,7 @@ public class Gem :
         if (specialOverlayView != null &&
             SpecialType !=
                 GemSpecialType.None &&
-            SpecialType !=
-                GemSpecialType.PoisonBomb)
+            !UsesSpecialBombShellVisual())
         {
             specialOverlayView
                 .SetVFXFlashAmount(
@@ -575,6 +598,19 @@ public class Gem :
 
         SetSpecialType(
             GemSpecialType.PoisonBomb
+        );
+    }
+
+    [ContextMenu("Debug/Show Healing Bomb")]
+    private void DebugShowHealingBomb()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
+        SetSpecialType(
+            GemSpecialType.HealingBomb
         );
     }
 }

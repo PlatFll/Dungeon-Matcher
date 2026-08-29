@@ -28,8 +28,15 @@ public partial class BoardController
     [SerializeField]
     private Sprite poisonedStatusIcon;
 
+    [Header("Healing Bomb Visuals")]
+    [SerializeField]
+    private Sprite healingBombSprite;
+
     public Sprite PoisonBombSprite =>
         poisonBombSprite;
+
+    public Sprite HealingBombSprite =>
+        healingBombSprite;
 
     public Sprite PoisonedStatusIcon =>
         poisonedStatusIcon;
@@ -37,6 +44,22 @@ public partial class BoardController
     // Compatibility alias used by the poison-status presenter.
     public Sprite PoisonedStatusEffectSprite =>
         poisonedStatusIcon;
+
+    public Sprite GetSpecialBombSprite(
+        GemSpecialType specialType)
+    {
+        switch (specialType)
+        {
+            case GemSpecialType.PoisonBomb:
+                return poisonBombSprite;
+
+            case GemSpecialType.HealingBomb:
+                return healingBombSprite;
+
+            default:
+                return null;
+        }
+    }
 
     public Sprite GetSpecialBombSourceIcon(
         GemType gemType)
