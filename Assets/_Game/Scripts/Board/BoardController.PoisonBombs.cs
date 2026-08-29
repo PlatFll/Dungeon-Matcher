@@ -10,7 +10,9 @@ public partial class BoardController
                specialType ==
                    GemSpecialType.ColumnBomb ||
                specialType ==
-                   GemSpecialType.PoisonBomb;
+                   GemSpecialType.PoisonBomb ||
+               specialType ==
+                   GemSpecialType.HealingBomb;
     }
 
     private void AddPoisonBombAreaToClearSet(
@@ -107,6 +109,87 @@ public partial class BoardController
         }
     }
 
+    private void AddHealingBombAreaToClearSet(
+        Gem healingBomb,
+        bool preserveTriggeredCrystals,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (healingBomb == null ||
+            healingBomb.SpecialType !=
+                GemSpecialType.HealingBomb)
+        {
+            return;
+        }
+
+        ApplyHealingBombEffect();
+
+        for (int rowOffset = -1;
+             rowOffset <= 1;
+             rowOffset++)
+        {
+            for (int columnOffset = -1;
+                 columnOffset <= 1;
+                 columnOffset++)
+            {
+                TryAddGemToBombClearSet(
+                    healingBomb.Column +
+                        columnOffset,
+                    healingBomb.Row +
+                        rowOffset,
+                    healingBomb,
+                    preserveTriggeredCrystals,
+                    triggeredCrystalRequests,
+                    gemsToClear,
+                    pendingBombs
+                );
+            }
+        }
+    }
+
+    private void AddHealingBombAreaToConvertedClearSet(
+        Gem healingBomb,
+        Gem activatedBomb,
+        HashSet<Gem> pendingConvertedBombs,
+        List<BombTriggeredCrystalRequest>
+            triggeredCrystalRequests,
+        HashSet<Gem> gemsToClear,
+        Queue<Gem> pendingBombs)
+    {
+        if (healingBomb == null ||
+            healingBomb.SpecialType !=
+                GemSpecialType.HealingBomb)
+        {
+            return;
+        }
+
+        ApplyHealingBombEffect();
+
+        for (int rowOffset = -1;
+             rowOffset <= 1;
+             rowOffset++)
+        {
+            for (int columnOffset = -1;
+                 columnOffset <= 1;
+                 columnOffset++)
+            {
+                TryAddGemToConvertedBombClearSet(
+                    healingBomb.Column +
+                        columnOffset,
+                    healingBomb.Row +
+                        rowOffset,
+                    activatedBomb,
+                    pendingConvertedBombs,
+                    triggeredCrystalRequests,
+                    gemsToClear,
+                    pendingBombs
+                );
+            }
+        }
+    }
+
     private void ApplyPoisonBombStatus()
     {
         if (combatController == null)
@@ -115,5 +198,15 @@ public partial class BoardController
         }
 
         combatController.ApplyPoisonToAllEnemies();
+    }
+
+    private void ApplyHealingBombEffect()
+    {
+        if (combatController == null)
+        {
+            return;
+        }
+
+        combatController.HealPlayerFromBomb();
     }
 }
