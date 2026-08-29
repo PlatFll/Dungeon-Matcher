@@ -712,6 +712,7 @@ MonoBehaviour:
   poisonTickInterval: 1
   poisonTickDamage: 5
   healingBombHealAmount: 20
+  shieldBombShieldAmount: 30
   debugGemType: 0
   debugGemCount: 3
   debugCascadeDepth: 0
@@ -1897,9 +1898,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerActor
   startingDefinition: {fileID: 11400000, guid: 265e9b1cec447874d8ec61b6ec5232a8, type: 2}
   initializeOnStart: 1
+  maximumShield: 30
+  shieldDamageReduction: 0.25
   definition: {fileID: 0}
   maximumHealth: 0
   currentHealth: 0
+  currentShield: 0
   revivalCount: 0
   isInitialized: 0
   isDefeated: 0
@@ -3573,6 +3577,7 @@ MonoBehaviour:
   poisonBombSprite: {fileID: 21300000, guid: eaa2acad08830064a802adff1c23f8a2, type: 3}
   poisonedStatusIcon: {fileID: 21300000, guid: 2e727c2fe13c64341ba0525abae8bdb6, type: 3}
   healingBombSprite: {fileID: 21300000, guid: e42b86f80191708418c18ed46d74666e, type: 3}
+  shieldBombSprite: {fileID: 21300000, guid: ec15e9038453e2044b4f1eb640cc3185, type: 3}
   triggeredCrystalChargeScale: 1.16
   triggeredCrystalChargePulseSpeed: 4
   triggeredCrystalSettlePause: 0.12
