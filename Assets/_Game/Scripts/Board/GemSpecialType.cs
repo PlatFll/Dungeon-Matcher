@@ -4,5 +4,6 @@ public enum GemSpecialType
     RowBomb = 1,
     ColumnBomb = 2,
     ColorCrystal = 3,
-    PoisonBomb = 4
+    PoisonBomb = 4,
+    HealingBomb = 5
 }
