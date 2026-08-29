@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,10 +17,10 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private const float FallbackAffinityIconSize = 16f;
     private const float HealthTextMaximumFontSize = 10f;
     private const float HealthTextMinimumFontSize = 6f;
-    private const float ShieldBarGap = 2f;
+    private const float ShieldBreakFlashDuration = 0.1f;
 
     private static readonly Color ShieldFillColor =
-        new Color32(58, 123, 213, 255);
+        new Color32(49, 126, 230, 255);
 
     [Header("Runtime Player")]
     [SerializeField]
@@ -66,6 +67,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private GameObject playerShieldBar;
     private Image playerShieldFill;
     private TMP_Text playerShieldText;
+    private Coroutine shieldBreakRoutine;
 
     public PlayerActor BoundPlayer =>
         boundPlayer;
@@ -85,7 +87,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
         ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
-        CreateShieldBar();
     }
 
     private void OnEnable()
@@ -93,7 +94,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
         ApplyHealthTextPresentation();
         DisableLegacyPlayerBase();
         CreateAffinityGemIndicator();
-        CreateShieldBar();
         BindPlayer(playerActor);
     }
 
@@ -113,6 +113,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
     {
         UnsubscribeFromPlayer(boundPlayer);
         boundPlayer = null;
+
+        StopShieldBreakRoutine();
+        DestroyShieldBarImmediately();
     }
 
     public void BindPlayer(
@@ -300,7 +303,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private void RefreshAll()
     {
         DisableLegacyPlayerBase();
-        CreateShieldBar();
 
         if (boundPlayer == null ||
             !boundPlayer.IsInitialized)
@@ -389,8 +391,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 $"{currentHealth} / {maximumHealth}";
 
             playerHealthText.enabled =
-                boundPlayer == null ||
-                !boundPlayer.HasShield;
+                !ShouldHideHealthText();
         }
     }
 
@@ -398,8 +399,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
         int currentShield,
         int maximumShield)
     {
-        CreateShieldBar();
-
         maximumShield =
             Mathf.Max(1, maximumShield);
 
@@ -410,38 +409,63 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 maximumShield
             );
 
-        bool hasShield =
-            currentShield > 0;
-
-        if (playerShieldBar != null)
+        if (currentShield > 0)
         {
-            playerShieldBar.SetActive(
-                hasShield
-            );
+            StopShieldBreakRoutine();
+            CreateShieldBar();
+
+            if (playerShieldBar != null)
+            {
+                playerShieldBar.SetActive(true);
+            }
+
+            if (playerShieldFill != null)
+            {
+                playerShieldFill.sprite = null;
+                playerShieldFill.material = null;
+                playerShieldFill.color =
+                    ShieldFillColor;
+                playerShieldFill.fillAmount =
+                    (float)currentShield /
+                    maximumShield;
+            }
+
+            if (playerShieldText != null)
+            {
+                playerShieldText.enabled = true;
+                playerShieldText.text =
+                    $"{currentShield} / {maximumShield}";
+            }
+
+            if (playerHealthText != null)
+            {
+                playerHealthText.enabled = false;
+            }
+
+            PositionShieldBar();
+            return;
         }
 
-        if (playerShieldFill != null)
+        if (playerShieldBar != null &&
+            playerShieldBar.activeSelf)
         {
-            playerShieldFill.fillAmount =
-                (float)currentShield /
-                maximumShield;
+            if (shieldBreakRoutine == null)
+            {
+                shieldBreakRoutine =
+                    StartCoroutine(
+                        PlayShieldBreakAndDestroy()
+                    );
+            }
+
+            return;
         }
 
-        if (playerShieldText != null)
-        {
-            playerShieldText.text =
-                hasShield
-                    ? $"{currentShield} / {maximumShield}"
-                    : string.Empty;
-        }
+        DestroyShieldBarImmediately();
 
         if (playerHealthText != null)
         {
-            playerHealthText.enabled =
-                !hasShield;
+            playerHealthText.enabled = true;
         }
-
-        PositionShieldBar();
     }
 
     private void CreateShieldBar()
@@ -515,13 +539,17 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 this
             );
 
-            Destroy(playerShieldBar);
-            playerShieldBar = null;
-            playerShieldFill = null;
-            playerShieldText = null;
+            DestroyShieldBarImmediately();
             return;
         }
 
+        /*
+         * The HP fill sprite contains red artwork, so tinting that sprite blue
+         * still leaves red/magenta pixels visible. Shield uses the exact same
+         * cloned frame and fill RectTransform, but a sprite-free solid fill.
+         */
+        playerShieldFill.sprite = null;
+        playerShieldFill.material = null;
         playerShieldFill.color =
             ShieldFillColor;
 
@@ -534,6 +562,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
         playerShieldFill.fillOrigin =
             (int)Image.OriginHorizontal.Left;
 
+        playerShieldFill.fillClockwise = true;
+        playerShieldFill.raycastTarget = false;
+
         playerShieldText.enableAutoSizing = true;
         playerShieldText.fontSize = HealthTextMaximumFontSize;
         playerShieldText.fontSizeMin = HealthTextMinimumFontSize;
@@ -542,9 +573,14 @@ public sealed class PlayerPanelUI : MonoBehaviour
             TextAlignmentOptions.Center;
         playerShieldText.raycastTarget = false;
 
-        playerShieldBar.transform.SetAsLastSibling();
+        int healthSiblingIndex =
+            playerHealthBar.transform.GetSiblingIndex();
+
+        playerShieldBar.transform.SetSiblingIndex(
+            healthSiblingIndex + 1
+        );
+
         PositionShieldBar();
-        playerShieldBar.SetActive(false);
     }
 
     private void PositionShieldBar()
@@ -566,27 +602,100 @@ public sealed class PlayerPanelUI : MonoBehaviour
         shieldRect.pivot =
             healthRect.pivot;
 
+        shieldRect.anchoredPosition =
+            healthRect.anchoredPosition;
+
         shieldRect.sizeDelta =
             healthRect.sizeDelta;
 
         shieldRect.localScale =
             healthRect.localScale;
 
-        float healthBarHeight =
-            healthRect.rect.height;
+        shieldRect.localRotation =
+            healthRect.localRotation;
+    }
 
-        if (healthBarHeight <= 0f)
+    private IEnumerator PlayShieldBreakAndDestroy()
+    {
+        if (playerShieldBar == null)
         {
-            healthBarHeight =
-                Mathf.Abs(
-                    healthRect.sizeDelta.y
-                );
+            shieldBreakRoutine = null;
+            yield break;
         }
 
-        shieldRect.anchoredPosition =
-            healthRect.anchoredPosition +
-            Vector2.up *
-            (healthBarHeight + ShieldBarGap);
+        /*
+         * A depleted shield gets one very short full-white frame-state before
+         * the cloned bar is destroyed. This reads like a crisp shield break
+         * instead of the blue fill simply vanishing.
+         */
+        if (playerShieldFill != null)
+        {
+            playerShieldFill.sprite = null;
+            playerShieldFill.material = null;
+            playerShieldFill.fillAmount = 1f;
+            playerShieldFill.color = Color.white;
+        }
+
+        if (playerShieldText != null)
+        {
+            playerShieldText.text =
+                string.Empty;
+            playerShieldText.enabled = false;
+        }
+
+        if (playerHealthText != null)
+        {
+            playerHealthText.enabled = false;
+        }
+
+        yield return new WaitForSecondsRealtime(
+            ShieldBreakFlashDuration
+        );
+
+        shieldBreakRoutine = null;
+        DestroyShieldBarImmediately();
+
+        if (playerHealthText != null)
+        {
+            playerHealthText.enabled = true;
+        }
+    }
+
+    private void StopShieldBreakRoutine()
+    {
+        if (shieldBreakRoutine == null)
+        {
+            return;
+        }
+
+        StopCoroutine(
+            shieldBreakRoutine
+        );
+
+        shieldBreakRoutine = null;
+    }
+
+    private void DestroyShieldBarImmediately()
+    {
+        if (playerShieldBar != null)
+        {
+            Destroy(
+                playerShieldBar
+            );
+        }
+
+        playerShieldBar = null;
+        playerShieldFill = null;
+        playerShieldText = null;
+    }
+
+    private bool ShouldHideHealthText()
+    {
+        return shieldBreakRoutine != null ||
+               (
+                   boundPlayer != null &&
+                   boundPlayer.HasShield
+               );
     }
 
     private static string GetRelativePath(
@@ -635,6 +744,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private void ShowUninitializedState()
     {
         DisableLegacyPlayerBase();
+        StopShieldBreakRoutine();
+        DestroyShieldBarImmediately();
 
         if (affinityGemImage != null)
         {
@@ -646,19 +757,9 @@ public sealed class PlayerPanelUI : MonoBehaviour
             playerHealthBar.SetActive(false);
         }
 
-        if (playerShieldBar != null)
-        {
-            playerShieldBar.SetActive(false);
-        }
-
         if (playerHealthFill != null)
         {
             playerHealthFill.fillAmount = 0f;
-        }
-
-        if (playerShieldFill != null)
-        {
-            playerShieldFill.fillAmount = 0f;
         }
 
         if (playerHealthText != null)
@@ -666,12 +767,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
             playerHealthText.text =
                 string.Empty;
             playerHealthText.enabled = true;
-        }
-
-        if (playerShieldText != null)
-        {
-            playerShieldText.text =
-                string.Empty;
         }
     }
 
