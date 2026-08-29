@@ -711,6 +711,7 @@ MonoBehaviour:
   poisonDuration: 7
   poisonTickInterval: 1
   poisonTickDamage: 5
+  healingBombHealAmount: 20
   debugGemType: 0
   debugGemCount: 3
   debugCascadeDepth: 0
@@ -3571,6 +3572,7 @@ MonoBehaviour:
   amethystSpecialBombIcon: {fileID: 21300000, guid: 18fb82c80f65ef241a2b3a0516758214, type: 3}
   poisonBombSprite: {fileID: 21300000, guid: eaa2acad08830064a802adff1c23f8a2, type: 3}
   poisonedStatusIcon: {fileID: 21300000, guid: 2e727c2fe13c64341ba0525abae8bdb6, type: 3}
+  healingBombSprite: {fileID: 21300000, guid: e42b86f80191708418c18ed46d74666e, type: 3}
   triggeredCrystalChargeScale: 1.16
   triggeredCrystalChargePulseSpeed: 4
   triggeredCrystalSettlePause: 0.12
