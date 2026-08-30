@@ -8,6 +8,10 @@ public sealed class CrackedGemBubbleVFX :
 {
     private const int TextureSize = 16;
     private const float PixelsPerUnit = 16f;
+    private const string GemsSortingLayer = "Gems";
+    private const int BubbleSortingOrder = 100;
+    private const float SideSpawnMarginInCells = 0.75f;
+    private const float SideVerticalOffsetInCells = 0.18f;
 
     private static Sprite cachedBubbleSprite;
 
@@ -119,19 +123,23 @@ public sealed class CrackedGemBubbleVFX :
             return;
         }
 
-        Vector3 origin =
-            originTransform != null
-                ? originTransform.position
-                : transform.position;
-
         for (int index = 0;
              index < targetPositions.Count;
              index++)
         {
+            Vector3 target =
+                targetPositions[index];
+
+            Vector3 origin =
+                GetSideOrigin(
+                    target,
+                    index
+                );
+
             StartCoroutine(
                 PlayBubble(
                     origin,
-                    targetPositions[index],
+                    target,
                     Mathf.Max(
                         0f,
                         travelDuration
@@ -144,6 +152,77 @@ public sealed class CrackedGemBubbleVFX :
                 )
             );
         }
+    }
+
+    private Vector3 GetSideOrigin(
+        Vector3 target,
+        int sequenceIndex)
+    {
+        if (boardController == null)
+        {
+            return
+                originTransform != null
+                    ? originTransform.position
+                    : transform.position;
+        }
+
+        Vector3 targetLocal =
+            boardController.transform
+                .InverseTransformPoint(target);
+
+        float side =
+            sequenceIndex % 2 == 0
+                ? -1f
+                : 1f;
+
+        float cellSize =
+            Mathf.Max(
+                0.01f,
+                boardController.CellSize
+            );
+
+        float halfBoardWidth =
+            boardController.LocalBoardWidth *
+            0.5f;
+
+        float halfBoardHeight =
+            boardController.LocalBoardHeight *
+            0.5f;
+
+        float verticalDirection =
+            sequenceIndex % 3 - 1;
+
+        float localY =
+            targetLocal.y +
+            verticalDirection *
+            cellSize *
+            SideVerticalOffsetInCells;
+
+        float verticalInset =
+            cellSize * 0.5f;
+
+        localY =
+            Mathf.Clamp(
+                localY,
+                -halfBoardHeight + verticalInset,
+                halfBoardHeight - verticalInset
+            );
+
+        Vector3 localOrigin =
+            new Vector3(
+                side *
+                (
+                    halfBoardWidth +
+                    cellSize *
+                    SideSpawnMarginInCells
+                ),
+                localY,
+                targetLocal.z
+            );
+
+        return
+            boardController.transform
+                .TransformPoint(localOrigin);
     }
 
     private IEnumerator PlayBubble(
@@ -190,7 +269,22 @@ public sealed class CrackedGemBubbleVFX :
                     0.92f
                 );
 
-        renderer.sortingOrder = 50;
+        /*
+         * Board gems render on the Gems sorting layer while the board itself
+         * sits above Default. A high sortingOrder on Default therefore still
+         * leaves the bubbles hidden behind the board. Put the travelling VFX
+         * on the same presentation layer as gems, above gem sprites, and do
+         * not clip it to the board mask so it remains visible while entering
+         * from just outside the left/right edges.
+         */
+        renderer.sortingLayerName =
+            GemsSortingLayer;
+
+        renderer.sortingOrder =
+            BubbleSortingOrder;
+
+        renderer.maskInteraction =
+            SpriteMaskInteraction.None;
 
         if (travelDuration > 0f)
         {
