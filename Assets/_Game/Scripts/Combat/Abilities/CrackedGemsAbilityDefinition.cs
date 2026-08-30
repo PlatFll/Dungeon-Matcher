@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(
@@ -40,6 +41,9 @@ public sealed class CrackedGemsAbilityDefinition :
 
     public override int EnergyCost =>
         energyCost;
+
+    public override Type RuntimeType =>
+        typeof(CrackedGemsRuntime);
 
     public int TargetGemCount =>
         targetGemCount;
