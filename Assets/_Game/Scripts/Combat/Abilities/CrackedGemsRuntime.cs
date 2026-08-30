@@ -240,6 +240,10 @@ public sealed class CrackedGemsRuntime :
             boardController,
             transform
         );
+
+        CrackedGemOverlayPresenter.EnsureInstalled(
+            boardController
+        );
     }
 
     private bool ValidateReferences()
