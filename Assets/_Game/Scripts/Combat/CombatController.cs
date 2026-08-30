@@ -171,7 +171,40 @@ public sealed class CombatController :
                 clearContext
             );
 
-        if (calculatedDamage <= 0)
+        return ResolveGemDamage(
+            clearContext,
+            calculatedDamage
+        );
+    }
+
+    public bool ResolveFixedGemDamage(
+        BoardClearContext clearContext,
+        int fixedDamage)
+    {
+        if (!CanResolveCombat() ||
+            clearContext.GemCount <= 0 ||
+            fixedDamage <= 0)
+        {
+            return false;
+        }
+
+        return ResolveGemDamage(
+            clearContext,
+            fixedDamage
+        );
+    }
+
+    private bool ResolveGemDamage(
+        BoardClearContext clearContext,
+        int requestedDamage)
+    {
+        int safeDamage =
+            Mathf.Max(
+                0,
+                requestedDamage
+            );
+
+        if (safeDamage <= 0)
         {
             return false;
         }
@@ -180,7 +213,7 @@ public sealed class CombatController :
             new GemDamageContext(
                 playerActor,
                 clearContext,
-                calculatedDamage
+                safeDamage
             );
 
         BeforeGemDamage?.Invoke(
