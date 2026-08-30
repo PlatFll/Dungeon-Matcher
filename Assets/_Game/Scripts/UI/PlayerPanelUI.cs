@@ -341,10 +341,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
             preserveAspect: true
         );
 
-        SetImageSprite(
-            playerCharacter,
-            definition.BattleCharacterSprite,
-            preserveAspect: true
+        ApplyCharacterPresentation(
+            definition
         );
 
         DisableLegacyPlayerBase();
@@ -755,6 +753,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private void ShowUninitializedState()
     {
         DisableLegacyPlayerBase();
+        ClearCharacterPresentation();
         StopShieldBreakRoutine();
         DestroyShieldBarImmediately();
 
@@ -990,6 +989,67 @@ public sealed class PlayerPanelUI : MonoBehaviour
         }
 
         playerBase.gameObject.SetActive(false);
+    }
+
+    private void ApplyCharacterPresentation(
+        PlayerDefinition definition)
+    {
+        if (playerCharacter == null ||
+            definition == null)
+        {
+            ClearCharacterPresentation();
+            return;
+        }
+
+        Animator animator =
+            playerCharacter.GetComponent<Animator>();
+
+        RuntimeAnimatorController controller =
+            definition.BattleAnimatorController;
+
+        if (animator != null)
+        {
+            animator.enabled = false;
+            animator.runtimeAnimatorController =
+                controller;
+        }
+
+        SetImageSprite(
+            playerCharacter,
+            definition.BattleCharacterSprite,
+            preserveAspect: true
+        );
+
+        if (animator != null &&
+            controller != null)
+        {
+            animator.enabled = true;
+            animator.Rebind();
+            animator.Update(0f);
+        }
+    }
+
+    private void ClearCharacterPresentation()
+    {
+        if (playerCharacter == null)
+        {
+            return;
+        }
+
+        Animator animator =
+            playerCharacter.GetComponent<Animator>();
+
+        if (animator != null)
+        {
+            animator.enabled = false;
+            animator.runtimeAnimatorController = null;
+        }
+
+        SetImageSprite(
+            playerCharacter,
+            null,
+            preserveAspect: true
+        );
     }
 
     private static void SetImageSprite(
