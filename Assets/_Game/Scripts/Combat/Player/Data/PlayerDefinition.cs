@@ -43,6 +43,13 @@ public sealed class PlayerDefinition : ScriptableObject
 
     [SerializeField]
     [Tooltip(
+        "Optional Animator Controller used by this character in battle. " +
+        "Leave empty for a static battle character sprite."
+    )]
+    private RuntimeAnimatorController battleAnimatorController;
+
+    [SerializeField]
+    [Tooltip(
         "Optional separate portrait for menus or future " +
         "character selection screens."
     )]
@@ -76,6 +83,9 @@ public sealed class PlayerDefinition : ScriptableObject
     public Sprite BattleFrameSprite => battleFrameSprite;
     public Sprite BattleCharacterSprite =>
         battleCharacterSprite;
+
+    public RuntimeAnimatorController BattleAnimatorController =>
+        battleAnimatorController;
 
     public Sprite MenuPortrait => menuPortrait;
 
