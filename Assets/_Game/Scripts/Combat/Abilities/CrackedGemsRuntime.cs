@@ -79,7 +79,9 @@ public sealed class CrackedGemsRuntime :
             return false;
         }
 
-        EnsurePresentation();
+        EnsurePresentation(
+            crackedDefinition.BubbleSprite
+        );
 
         HashSet<GemType> preferredGemTypes =
             BuildPreferredGemTypes();
@@ -229,7 +231,8 @@ public sealed class CrackedGemsRuntime :
         }
     }
 
-    private void EnsurePresentation()
+    private void EnsurePresentation(
+        Sprite bubbleSprite = null)
     {
         if (boardController == null)
         {
@@ -238,7 +241,8 @@ public sealed class CrackedGemsRuntime :
 
         CrackedGemBubbleVFX.EnsureInstalled(
             boardController,
-            transform
+            transform,
+            bubbleSprite
         );
 
         CrackedGemOverlayPresenter.EnsureInstalled(

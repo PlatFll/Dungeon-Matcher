@@ -23,6 +23,13 @@ public sealed class CrackedGemsAbilityDefinition :
     )]
     private int crackedGemDamage = 50;
 
+    [Header("Presentation")]
+    [SerializeField]
+    [Tooltip(
+        "Optional sprite used for Bardley's travelling bubbles. Leave empty to use the generated fallback bubble."
+    )]
+    private Sprite bubbleSprite;
+
     [Header("Timing")]
     [SerializeField, Min(0f)]
     private float bubbleTravelDuration = 0.35f;
@@ -50,6 +57,9 @@ public sealed class CrackedGemsAbilityDefinition :
 
     public int CrackedGemDamage =>
         crackedGemDamage;
+
+    public Sprite BubbleSprite =>
+        bubbleSprite;
 
     public float BubbleTravelDuration =>
         bubbleTravelDuration;

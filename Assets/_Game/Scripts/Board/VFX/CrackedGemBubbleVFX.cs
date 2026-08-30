@@ -13,10 +13,12 @@ public sealed class CrackedGemBubbleVFX :
 
     private BoardController boardController;
     private Transform originTransform;
+    private Sprite bubbleSprite;
 
     public static CrackedGemBubbleVFX EnsureInstalled(
         BoardController board,
-        Transform origin)
+        Transform origin,
+        Sprite customBubbleSprite = null)
     {
         if (board == null)
         {
@@ -38,7 +40,8 @@ public sealed class CrackedGemBubbleVFX :
 
         vfx.Configure(
             board,
-            origin
+            origin,
+            customBubbleSprite
         );
 
         return vfx;
@@ -57,7 +60,8 @@ public sealed class CrackedGemBubbleVFX :
 
     public void Configure(
         BoardController board,
-        Transform origin)
+        Transform origin,
+        Sprite customBubbleSprite = null)
     {
         if (boardController != board)
         {
@@ -67,6 +71,7 @@ public sealed class CrackedGemBubbleVFX :
         }
 
         originTransform = origin;
+        bubbleSprite = customBubbleSprite;
     }
 
     private void ResolveReferences()
@@ -167,16 +172,23 @@ public sealed class CrackedGemBubbleVFX :
                 SpriteRenderer
             >();
 
+        bool usesCustomSprite =
+            bubbleSprite != null;
+
         renderer.sprite =
-            GetOrCreateBubbleSprite();
+            usesCustomSprite
+                ? bubbleSprite
+                : GetOrCreateBubbleSprite();
 
         renderer.color =
-            new Color(
-                0.90f,
-                0.98f,
-                1f,
-                0.92f
-            );
+            usesCustomSprite
+                ? Color.white
+                : new Color(
+                    0.90f,
+                    0.98f,
+                    1f,
+                    0.92f
+                );
 
         renderer.sortingOrder = 50;
 
