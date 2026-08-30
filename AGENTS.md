@@ -6,6 +6,27 @@ Dungeon Matcher is a mobile pixel-art match-3 dungeon battler built in Unity.
 
 Before making changes, inspect the relevant existing implementation and follow established architecture rather than creating parallel systems.
 
+## Project documentation
+
+Before implementing gameplay features or changing gameplay behavior, read the relevant sections of:
+
+- `Docs/GAME_DESIGN.md` for approved intended gameplay behavior and finalized mechanic specifications.
+- `Docs/ARCHITECTURE.md` for authoritative system ownership, implementation boundaries, and technical invariants.
+
+The documents have distinct responsibilities:
+
+- `AGENTS.md` defines how work must be performed.
+- `Docs/GAME_DESIGN.md` defines approved intended gameplay behavior.
+- `Docs/ARCHITECTURE.md` defines authoritative system ownership and important technical flows.
+
+Do not silently resolve disagreements between design documentation, architecture documentation, serialized Unity state, and implementation. Identify and report the discrepancy before changing behavior.
+
+Do not treat prototype values or accidental implementation details as finalized game design unless `GAME_DESIGN.md` explicitly establishes them.
+
+When an explicitly approved feature permanently changes finalized gameplay rules or architecture, update the relevant documentation as part of the same pull request.
+
+Do not rewrite documentation merely to make it agree with an accidental bug or implementation detail.
+
 ## Core gameplay philosophy
 
 - The match-3 layer itself must remain satisfying, decision-rich, readable, fast, and responsive.
