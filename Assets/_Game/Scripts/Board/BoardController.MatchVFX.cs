@@ -16,10 +16,10 @@ public partial class BoardController
      * live for 0.375s. Keep the board still until that longest visible
      * piece has finished so refill gems never fall through the blast.
      *
-     * This hold is registered only for normal BoardClearSource.Bomb
-     * detonations. Color-crystal bomb sequences already own their own
-     * presentation cadence and should not be serialized into one slow
-     * bomb-at-a-time sequence by this refill gate.
+     * This hold is registered for ordinary bomb detonations and for ability
+     * chains that genuinely activate a directional bomb. Color-crystal bomb
+     * sequences already own their own presentation cadence and should not be
+     * serialized into one slow bomb-at-a-time sequence by this refill gate.
      */
     private const float
         DirectionalBombMaximumVisualLifetime =
@@ -117,15 +117,13 @@ public partial class BoardController
         }
 
         /*
-         * These are the two current pathways where a row or
-         * column bomb in the expanded set genuinely detonates.
-         *
-         * Double-crystal sweeps can erase a bomb without firing
-         * its directional effect, so they intentionally do not
-         * produce a row/column beam here.
+         * These are the pathways where a row or column bomb in the expanded
+         * set genuinely detonates. Double-crystal sweeps can erase a bomb
+         * without firing its directional effect, so they remain excluded.
          */
         if (clearSource != BoardClearSource.Bomb &&
-            clearSource != BoardClearSource.ColorCrystal)
+            clearSource != BoardClearSource.ColorCrystal &&
+            clearSource != BoardClearSource.Ability)
         {
             return;
         }
@@ -161,7 +159,9 @@ public partial class BoardController
             );
 
             if (clearSource ==
-                BoardClearSource.Bomb)
+                    BoardClearSource.Bomb ||
+                clearSource ==
+                    BoardClearSource.Ability)
             {
                 RegisterDirectionalBombRefillHold(
                     context.StartDelay
