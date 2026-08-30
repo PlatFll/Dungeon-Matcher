@@ -83,9 +83,15 @@ Before making changes, inspect the relevant existing implementation and follow e
 
 ## Validation
 
-- Check for compile errors introduced by the change whenever a usable Unity validation method is available.
+- For changes to C# gameplay/runtime/editor code, run:
+  `powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1`
+- Run the validator after implementation and before opening the pull request.
+- If validation fails, do not open the PR as completed work. Diagnose and fix errors caused by the change first.
+- If validation cannot run because the Unity project is already open, report that validation was blocked rather than claiming success.
+- Documentation-only changes do not require Unity validation.
+- Art-only changes that do not affect Unity serialization or runtime code do not require Unity validation.
+- Never claim Unity validation passed unless `Tools/Validate-Unity.ps1` actually completed successfully.
 - Run relevant automated tests when they exist.
-- If Unity Editor/playmode validation cannot actually be run, state that clearly instead of claiming it was tested.
 - Distinguish code review/static validation from actual Unity runtime validation.
 
 ## Safety when editing
