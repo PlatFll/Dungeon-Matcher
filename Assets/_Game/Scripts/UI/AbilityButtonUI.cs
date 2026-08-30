@@ -141,6 +141,8 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
     private void Update()
     {
+        RefreshAvailability();
+
         if (!hasInitializedCharge)
         {
             return;
@@ -205,10 +207,6 @@ public sealed class AbilityButtonUI : MonoBehaviour
                     .ChargeNormalized
                 : 0f;
 
-        bool canActivate =
-            playerAbilityController != null &&
-            playerAbilityController.CanActivate;
-
         normalizedCharge =
             Mathf.Clamp01(
                 normalizedCharge
@@ -234,6 +232,23 @@ public sealed class AbilityButtonUI : MonoBehaviour
                 normalizedCharge;
         }
 
+        if (abilityIcon != null &&
+            ability != null &&
+            ability.Icon != null)
+        {
+            abilityIcon.sprite =
+                ability.Icon;
+        }
+
+        RefreshAvailability();
+    }
+
+    private void RefreshAvailability()
+    {
+        bool canActivate =
+            playerAbilityController != null &&
+            playerAbilityController.CanActivate;
+
         if (abilityButton != null)
         {
             abilityButton.interactable =
@@ -242,13 +257,6 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         if (abilityIcon != null)
         {
-            if (ability != null &&
-                ability.Icon != null)
-            {
-                abilityIcon.sprite =
-                    ability.Icon;
-            }
-
             abilityIcon.color =
                 canActivate
                     ? readyIconColor
