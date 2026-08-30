@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum AbilityMeterDisplay
@@ -54,6 +55,14 @@ public abstract class CharacterAbilityDefinition : ScriptableObject
         meterDisplay;
 
     public abstract int EnergyCost { get; }
+
+    /*
+     * Definitions may optionally declare the runtime component that executes
+     * them. PlayerAbilityController installs that component generically when a
+     * selected character needs it, keeping the controller character-agnostic
+     * while avoiding fragile scene-only wiring for future abilities.
+     */
+    public virtual Type RuntimeType => null;
 
     protected virtual void OnValidate()
     {
