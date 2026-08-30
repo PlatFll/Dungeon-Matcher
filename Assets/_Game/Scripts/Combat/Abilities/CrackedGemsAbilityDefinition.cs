@@ -9,13 +9,8 @@ public sealed class CrackedGemsAbilityDefinition :
     CharacterAbilityDefinition
 {
     [Header("Activation")]
-    [SerializeField, Min(0)]
-    [Tooltip(
-        "Bardley's energy cost is intentionally left at 0 until the final " +
-        "design value is chosen. The runtime refuses to activate while this " +
-        "value is 0 so an unfinished balance value cannot ship silently."
-    )]
-    private int energyCost;
+    [SerializeField, Min(1)]
+    private int energyCost = 80;
 
     [SerializeField, Min(1)]
     private int targetGemCount = 5;
@@ -72,7 +67,7 @@ public sealed class CrackedGemsAbilityDefinition :
         base.OnValidate();
 
         energyCost =
-            Mathf.Max(0, energyCost);
+            Mathf.Max(1, energyCost);
 
         targetGemCount =
             Mathf.Max(1, targetGemCount);
