@@ -155,7 +155,7 @@ Do not merge these responsibilities. In particular, a board clear should describ
 - `WaveSpawnProfile` produces a category-based `WaveSpawnPlan`; `DifficultyProfile` converts a definition, wave, category modifiers, and player-power input into `EnemyRuntimeStats`.
 - `WaveController` selects definitions, instantiates the configured prefab, initializes `EnemyActor`, assigns a gem weakness, initializes `EnemyAutoAttack`, and asks `EnemySpecialAbilityRuntimeFactory` to install the configured runtime.
 - `EnemyActor` owns runtime HP, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
-- `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`.
+- `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`. Definitions may optionally provide one follow-up auto-attack hit; the primary and follow-up are independently scaled and resolved as separate `PlayerActor.TryTakeDamage` calls inside the same attack cadence.
 - `MinerEnemyAbility`, `CrossbowGuardEnemyAbility`, and `BarricadeEnemyAbility` react to runtime events and request BoardController-owned mutations. They do not directly change the grid.
 
 Shared board code must never switch on a concrete enemy identity. Add enemy behavior through definition data and an enemy runtime that requests generic operations.

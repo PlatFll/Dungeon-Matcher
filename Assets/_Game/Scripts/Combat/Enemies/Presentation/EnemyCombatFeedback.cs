@@ -102,6 +102,8 @@ public sealed class EnemyCombatFeedback :
     private Coroutine shakeCoroutine;
     private Coroutine blinkCoroutine;
 
+    private int queuedAttackLunges;
+
     private void Awake()
     {
         ResolveReferences();
@@ -343,8 +345,11 @@ public sealed class EnemyCombatFeedback :
             return;
         }
 
-        StopAttackLunge();
-        RestoreVisualPosition();
+        if (attackLungeCoroutine != null)
+        {
+            queuedAttackLunges++;
+            return;
+        }
 
         attackLungeCoroutine =
             StartCoroutine(
@@ -436,6 +441,18 @@ public sealed class EnemyCombatFeedback :
         RestoreVisualPosition();
 
         attackLungeCoroutine = null;
+
+        if (queuedAttackLunges > 0 &&
+            enemyActor != null &&
+            !enemyActor.IsDefeated)
+        {
+            queuedAttackLunges--;
+
+            attackLungeCoroutine =
+                StartCoroutine(
+                    AttackLungeRoutine()
+                );
+        }
     }
 
     private void ApplyRoundedVisualOffset(
@@ -456,6 +473,8 @@ public sealed class EnemyCombatFeedback :
 
     private void StopAttackLunge()
     {
+        queuedAttackLunges = 0;
+
         if (attackLungeCoroutine != null)
         {
             StopCoroutine(

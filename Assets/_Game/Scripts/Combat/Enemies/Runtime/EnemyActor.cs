@@ -86,6 +86,11 @@ public sealed class EnemyActor : MonoBehaviour
             ? RuntimeStats.Damage
             : 0;
 
+    public int FollowUpDamage =>
+        isInitialized
+            ? RuntimeStats.FollowUpDamage
+            : 0;
+
     public int Level =>
         isInitialized
             ? RuntimeStats.Level
