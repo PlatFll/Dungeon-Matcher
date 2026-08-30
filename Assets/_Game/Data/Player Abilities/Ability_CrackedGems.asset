@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrackedGemsAbilityDefinition
   abilityId: cracked_gems
   displayName: Cracked Gems
-  description: Target up to 5 ordinary gems, prioritizing colors matching active enemy weaknesses. Each becomes cracked and detonates in a 3x3 blast. Every cracked gem deals 50 fixed matching-color damage. Cracked blasts chain other specials, and striking a Color Crystal cracks every gem of that color.
-  icon: {fileID: 0}
+  description: Target up to 5 ordinary gems, prioritizing colors matching active
+    enemy weaknesses. Each becomes cracked and detonates in a 3x3 blast. Every cracked
+    gem deals 50 fixed matching-color damage. Cracked blasts chain other specials,
+    and striking a Color Crystal cracks every gem of that color.
+  icon: {fileID: 21300000, guid: cf56b51998fdb6744bf5fd67c0623822, type: 3}
   buttonLabel: 
   meterDisplay: 1
   energyCost: 80
   targetGemCount: 5
   crackedGemDamage: 50
-  bubbleSprite: {fileID: 0}
+  bubbleSprite: {fileID: 21300000, guid: 9f3d68ab97505b24bb1823916adda1cd, type: 3}
   bubbleTravelDuration: 0.35
   bubbleHoverDuration: 0.2
   crackedShakeDuration: 1
