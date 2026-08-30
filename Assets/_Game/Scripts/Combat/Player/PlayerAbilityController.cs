@@ -242,6 +242,8 @@ public sealed class PlayerAbilityController :
             return null;
         }
 
+        EnsureDeclaredRuntime(definition);
+
         MonoBehaviour[] components =
             GetComponents<MonoBehaviour>();
 
@@ -257,6 +259,48 @@ public sealed class PlayerAbilityController :
         }
 
         return null;
+    }
+
+    private void EnsureDeclaredRuntime(
+        CharacterAbilityDefinition definition)
+    {
+        if (definition == null)
+        {
+            return;
+        }
+
+        Type runtimeType =
+            definition.RuntimeType;
+
+        if (runtimeType == null)
+        {
+            return;
+        }
+
+        bool isValidRuntimeType =
+            typeof(MonoBehaviour)
+                .IsAssignableFrom(runtimeType) &&
+            typeof(IPlayerAbilityRuntime)
+                .IsAssignableFrom(runtimeType);
+
+        if (!isValidRuntimeType)
+        {
+            Debug.LogError(
+                $"Ability '{definition.DisplayName}' declares invalid " +
+                $"runtime type '{runtimeType.FullName}'. Runtime types must " +
+                "derive from MonoBehaviour and implement IPlayerAbilityRuntime.",
+                definition
+            );
+
+            return;
+        }
+
+        if (GetComponent(runtimeType) != null)
+        {
+            return;
+        }
+
+        gameObject.AddComponent(runtimeType);
     }
 
     private void ResolveReferences()
