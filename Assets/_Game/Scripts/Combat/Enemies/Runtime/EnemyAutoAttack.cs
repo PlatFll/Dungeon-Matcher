@@ -17,13 +17,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     )]
     private bool waitBeforeFirstAttack = true;
 
-    [Header("Animation Safety")]
+    [Header("Presentation Safety")]
     [SerializeField]
     [Min(0.1f)]
     [Tooltip(
-        "Maximum real-time wait for an AutoAttackImpact Animation Event. " +
-        "If the event is missing or the animation is interrupted, the " +
-        "attack resolves automatically so the enemy cannot stall forever."
+        "Maximum real-time wait for an auto-attack presentation checkpoint. " +
+        "If feedback or an Animation Event is missing or interrupted, the " +
+        "attack advances automatically so the enemy cannot stall forever."
     )]
     private float animationImpactTimeout = 3f;
 
@@ -38,19 +38,29 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool isWaitingForAnimationImpact;
 
     [SerializeField]
+    private bool isWaitingForPresentationImpact;
+
+    [SerializeField]
+    private bool isWaitingForPresentationCompletion;
+
+    [SerializeField]
     private bool isAttackSequenceInProgress;
 
     [SerializeField]
     private int pendingAttackDamage;
 
     [SerializeField]
-    private bool pendingAnimationHitIsFinal;
+    private bool pendingHitFinishesSequence;
+
+    [SerializeField]
+    private int activeAttackPresentationId;
 
     private EnemyActor enemyActor;
     private EnemyStagger enemyStagger;
     private PlayerActor playerTarget;
     private Coroutine attackCoroutine;
     private Coroutine attackSequenceCoroutine;
+    private int nextAttackPresentationId;
 
     public event Action<EnemyAutoAttack>
         AttackStarted;
@@ -75,6 +85,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool IsWaitingForAnimationImpact =>
         isWaitingForAnimationImpact;
+
+    public int ActiveAttackPresentationId =>
+        activeAttackPresentationId;
 
     public bool IsAttackSequenceInProgress =>
         isAttackSequenceInProgress;
@@ -204,31 +217,18 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 enemyActor.FollowUpDamage
             );
 
-        if (!timeFromAnimation)
+        if (!timeFromAnimation &&
+            followUpDamage <= 0)
         {
-            isAttackSequenceInProgress = true;
-
-            bool primaryDamageApplied =
-                PerformImmediateHit(
-                    primaryDamage
-                );
-
-            if (followUpDamage > 0 &&
-                CanContinueAttackLoop())
-            {
-                PerformImmediateHit(
-                    followUpDamage
-                );
-            }
-
-            isAttackSequenceInProgress = false;
-            return primaryDamageApplied;
+            return PerformImmediateHit(
+                primaryDamage
+            );
         }
 
         /*
          * One gameplay-critical action owns the complete attack sequence.
          * A special ability therefore cannot replace either hit before its
-         * AutoAttackImpact has had a chance to fire.
+         * synchronized impact and return checkpoints have completed.
          */
         if (!enemyActor
                 .TryBeginAutoAttackAnimationAction())
@@ -240,9 +240,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
         attackSequenceCoroutine =
             StartCoroutine(
-                PerformAnimationTimedAttackSequence(
+                PerformTimedAttackSequence(
                     primaryDamage,
-                    followUpDamage
+                    followUpDamage,
+                    timeFromAnimation
                 )
             );
 
@@ -251,7 +252,52 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool ResolveAnimationImpact()
     {
-        if (!isWaitingForAnimationImpact)
+        return ResolvePendingAttackImpact(
+            activeAttackPresentationId,
+            fromAnimation: true
+        );
+    }
+
+    public bool ResolvePresentationImpact(
+        int presentationId)
+    {
+        return ResolvePendingAttackImpact(
+            presentationId,
+            fromAnimation: false
+        );
+    }
+
+    public bool CompleteAttackPresentation(
+        int presentationId)
+    {
+        if (!isAttackSequenceInProgress ||
+            presentationId <= 0 ||
+            presentationId !=
+                activeAttackPresentationId ||
+            !isWaitingForPresentationCompletion)
+        {
+            return false;
+        }
+
+        isWaitingForPresentationCompletion = false;
+        ClearPresentationIdIfComplete();
+        return true;
+    }
+
+    private bool ResolvePendingAttackImpact(
+        int presentationId,
+        bool fromAnimation)
+    {
+        bool isWaitingForExpectedImpact =
+            fromAnimation
+                ? isWaitingForAnimationImpact
+                : isWaitingForPresentationImpact;
+
+        if (!isAttackSequenceInProgress ||
+            presentationId <= 0 ||
+            presentationId !=
+                activeAttackPresentationId ||
+            !isWaitingForExpectedImpact)
         {
             return false;
         }
@@ -260,16 +306,17 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             pendingAttackDamage;
 
         bool isFinalHit =
-            pendingAnimationHitIsFinal;
+            pendingHitFinishesSequence;
 
         /*
-         * Clear the pending payload before applying damage. Duplicate Animation
-         * Events cannot resolve twice, but the action ownership remains held
-         * until the complete attack sequence has finished.
+         * Clear the pending payload before applying damage. Duplicate feedback
+         * callbacks or Animation Events cannot resolve the same hit twice, but
+         * action ownership remains held until the complete sequence finishes.
          */
         isWaitingForAnimationImpact = false;
+        isWaitingForPresentationImpact = false;
         pendingAttackDamage = 0;
-        pendingAnimationHitIsFinal = false;
+        pendingHitFinishesSequence = false;
 
         if (!CanContinueAttackLoop())
         {
@@ -285,19 +332,28 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         {
             FinishAttackSequence();
         }
+        else
+        {
+            ClearPresentationIdIfComplete();
+        }
 
         return damageApplied;
     }
 
     private IEnumerator
-        PerformAnimationTimedAttackSequence(
+        PerformTimedAttackSequence(
             int primaryDamage,
-            int followUpDamage)
+            int followUpDamage,
+            bool timeFromAnimation)
     {
         yield return
-            PerformAnimationTimedHit(
+            PerformTimedHit(
                 primaryDamage,
-                followUpDamage <= 0
+                timeFromAnimation,
+                finishSequenceAtImpact:
+                    followUpDamage <= 0,
+                waitForPresentationCompletion:
+                    followUpDamage > 0
             );
 
         if (!isAttackSequenceInProgress)
@@ -308,22 +364,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (followUpDamage > 0 &&
             CanContinueAttackLoop())
         {
-            /*
-             * Arm the second impact on a later frame. Duplicate Animation
-             * Events emitted by the first strike therefore see no pending
-             * payload and cannot consume the follow-up hit.
-             */
-            yield return null;
-
-            if (isAttackSequenceInProgress &&
-                CanContinueAttackLoop())
-            {
-                yield return
-                    PerformAnimationTimedHit(
-                        followUpDamage,
-                        isFinalHit: true
-                    );
-            }
+            yield return
+                PerformTimedHit(
+                    followUpDamage,
+                    timeFromAnimation,
+                    finishSequenceAtImpact: false,
+                    waitForPresentationCompletion: true
+                );
         }
 
         if (isAttackSequenceInProgress)
@@ -332,23 +379,82 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         }
     }
 
-    private IEnumerator PerformAnimationTimedHit(
+    private IEnumerator PerformTimedHit(
         int attackDamage,
-        bool isFinalHit)
+        bool timeFromAnimation,
+        bool finishSequenceAtImpact,
+        bool waitForPresentationCompletion)
     {
         if (!CanContinueAttackLoop())
         {
             yield break;
         }
 
-        pendingAttackDamage = attackDamage;
-        pendingAnimationHitIsFinal = isFinalHit;
-        isWaitingForAnimationImpact = true;
+        int presentationId =
+            BeginTimedHit(
+                attackDamage,
+                timeFromAnimation,
+                finishSequenceAtImpact,
+                waitForPresentationCompletion
+            );
 
         AttackStarted?.Invoke(this);
 
-        yield return
-            WaitForAnimationImpactOrTimeout();
+        if (timeFromAnimation)
+        {
+            yield return
+                WaitForAnimationImpactOrTimeout(
+                    presentationId
+                );
+        }
+        else
+        {
+            yield return
+                WaitForPresentationImpactOrTimeout(
+                    presentationId
+                );
+        }
+
+        if (!isAttackSequenceInProgress ||
+            !CanContinueAttackLoop())
+        {
+            yield break;
+        }
+
+        if (waitForPresentationCompletion)
+        {
+            yield return
+                WaitForPresentationCompletionOrTimeout(
+                    presentationId
+                );
+        }
+    }
+
+    private int BeginTimedHit(
+        int attackDamage,
+        bool timeFromAnimation,
+        bool finishSequenceAtImpact,
+        bool waitForPresentationCompletion)
+    {
+        nextAttackPresentationId =
+            nextAttackPresentationId == int.MaxValue
+                ? 1
+                : nextAttackPresentationId + 1;
+
+        activeAttackPresentationId =
+            nextAttackPresentationId;
+
+        pendingAttackDamage = attackDamage;
+        pendingHitFinishesSequence =
+            finishSequenceAtImpact;
+        isWaitingForAnimationImpact =
+            timeFromAnimation;
+        isWaitingForPresentationImpact =
+            !timeFromAnimation;
+        isWaitingForPresentationCompletion =
+            waitForPresentationCompletion;
+
+        return activeAttackPresentationId;
     }
 
     private bool PerformImmediateHit(
@@ -488,7 +594,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     }
 
     private IEnumerator
-        WaitForAnimationImpactOrTimeout()
+        WaitForAnimationImpactOrTimeout(
+            int presentationId)
     {
         float timeout =
             Mathf.Max(
@@ -500,7 +607,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             Time.realtimeSinceStartup;
 
         while (CanContinueAttackLoop() &&
-               isWaitingForAnimationImpact)
+               isWaitingForAnimationImpact &&
+               activeAttackPresentationId ==
+                   presentationId)
         {
             if (Time.realtimeSinceStartup -
                 waitStartedAt >= timeout)
@@ -513,16 +622,117 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 );
 
                 ResolveAnimationImpact();
+
+                if (isWaitingForPresentationCompletion)
+                {
+                    CompleteAttackPresentation(
+                        presentationId
+                    );
+                }
+
                 yield break;
             }
 
             yield return null;
         }
 
-        if (isWaitingForAnimationImpact)
+        if (isWaitingForAnimationImpact &&
+            activeAttackPresentationId ==
+                presentationId)
         {
-            CancelPendingAnimationImpact();
+            CancelAttackSequence();
         }
+    }
+
+    private IEnumerator
+        WaitForPresentationImpactOrTimeout(
+            int presentationId)
+    {
+        float timeout = GetPresentationTimeout();
+        float waitStartedAt =
+            Time.realtimeSinceStartup;
+
+        while (CanContinueAttackLoop() &&
+               isWaitingForPresentationImpact &&
+               activeAttackPresentationId ==
+                   presentationId)
+        {
+            if (Time.realtimeSinceStartup -
+                waitStartedAt >= timeout)
+            {
+                Debug.LogWarning(
+                    $"{name} waited {timeout:0.##}s for its " +
+                    "attack-lunge impact. Resolving the hit and return " +
+                    "through the failsafe so feedback cannot stall its runtime.",
+                    this
+                );
+
+                ResolvePresentationImpact(
+                    presentationId
+                );
+                CompleteAttackPresentation(
+                    presentationId
+                );
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        if (isWaitingForPresentationImpact &&
+            activeAttackPresentationId ==
+                presentationId)
+        {
+            CancelAttackSequence();
+        }
+    }
+
+    private IEnumerator
+        WaitForPresentationCompletionOrTimeout(
+            int presentationId)
+    {
+        float timeout = GetPresentationTimeout();
+        float waitStartedAt =
+            Time.realtimeSinceStartup;
+
+        while (CanContinueAttackLoop() &&
+               isWaitingForPresentationCompletion &&
+               activeAttackPresentationId ==
+                   presentationId)
+        {
+            if (Time.realtimeSinceStartup -
+                waitStartedAt >= timeout)
+            {
+                Debug.LogWarning(
+                    $"{name} waited {timeout:0.##}s for its attack " +
+                    "presentation to return to rest. Advancing through the " +
+                    "failsafe so feedback cannot stall its runtime.",
+                    this
+                );
+
+                CompleteAttackPresentation(
+                    presentationId
+                );
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        if (isWaitingForPresentationCompletion &&
+            activeAttackPresentationId ==
+                presentationId)
+        {
+            CancelAttackSequence();
+        }
+    }
+
+    private float GetPresentationTimeout()
+    {
+        return Mathf.Max(
+            0.1f,
+            animationImpactTimeout
+        );
     }
 
     private bool ShouldTimeAttackFromAnimation()
@@ -534,12 +744,24 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 .TimeAutoAttackFromAnimation;
     }
 
-    private void CancelPendingAnimationImpact()
+    private void ResetPendingAttackPresentation()
     {
         isWaitingForAnimationImpact = false;
+        isWaitingForPresentationImpact = false;
+        isWaitingForPresentationCompletion = false;
         pendingAttackDamage = 0;
-        pendingAnimationHitIsFinal = false;
-        ReleaseAutoAttackAnimationAction();
+        pendingHitFinishesSequence = false;
+        activeAttackPresentationId = 0;
+    }
+
+    private void ClearPresentationIdIfComplete()
+    {
+        if (!isWaitingForAnimationImpact &&
+            !isWaitingForPresentationImpact &&
+            !isWaitingForPresentationCompletion)
+        {
+            activeAttackPresentationId = 0;
+        }
     }
 
     private void CancelAttackSequence()
@@ -551,14 +773,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         }
 
         isAttackSequenceInProgress = false;
-        CancelPendingAnimationImpact();
+        ResetPendingAttackPresentation();
+        ReleaseAutoAttackAnimationAction();
     }
 
     private void FinishAttackSequence()
     {
-        isWaitingForAnimationImpact = false;
-        pendingAttackDamage = 0;
-        pendingAnimationHitIsFinal = false;
+        ResetPendingAttackPresentation();
         isAttackSequenceInProgress = false;
         attackSequenceCoroutine = null;
 
@@ -592,6 +813,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             !IsPausedByStagger &&
             !isAttackSequenceInProgress &&
             !isWaitingForAnimationImpact &&
+            !isWaitingForPresentationImpact &&
+            !isWaitingForPresentationCompletion &&
             !enemyActor
                 .IsSpecialAbilityAnimationActionActive;
     }

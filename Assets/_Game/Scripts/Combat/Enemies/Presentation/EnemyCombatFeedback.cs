@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -102,7 +103,9 @@ public sealed class EnemyCombatFeedback :
     private Coroutine shakeCoroutine;
     private Coroutine blinkCoroutine;
 
-    private int queuedAttackLunges;
+    private readonly Queue<int>
+        queuedAttackLungePresentationIds =
+            new Queue<int>();
 
     private void Awake()
     {
@@ -326,7 +329,7 @@ public sealed class EnemyCombatFeedback :
     }
 
     private void HandleAttackStarted(
-    EnemyAutoAttack autoAttack)
+        EnemyAutoAttack autoAttack)
     {
         if (visualRoot == null ||
             enemyActor == null ||
@@ -347,17 +350,36 @@ public sealed class EnemyCombatFeedback :
 
         if (attackLungeCoroutine != null)
         {
-            queuedAttackLunges++;
+            queuedAttackLungePresentationIds.Enqueue(
+                autoAttack != null
+                    ? autoAttack
+                        .ActiveAttackPresentationId
+                    : 0
+            );
             return;
         }
 
+        StartAttackLunge(
+            autoAttack != null
+                ? autoAttack
+                    .ActiveAttackPresentationId
+                : 0
+        );
+    }
+
+    private void StartAttackLunge(
+        int presentationId)
+    {
         attackLungeCoroutine =
             StartCoroutine(
-                AttackLungeRoutine()
+                AttackLungeRoutine(
+                    presentationId
+                )
             );
     }
 
-    private IEnumerator AttackLungeRoutine()
+    private IEnumerator AttackLungeRoutine(
+        int presentationId)
     {
         float distance =
             Mathf.Round(
@@ -402,6 +424,14 @@ public sealed class EnemyCombatFeedback :
             targetOffset
         );
 
+        if (presentationId > 0)
+        {
+            enemyAutoAttack
+                ?.ResolvePresentationImpact(
+                    presentationId
+                );
+        }
+
         if (attackLungeHoldDuration > 0f)
         {
             yield return
@@ -442,16 +472,22 @@ public sealed class EnemyCombatFeedback :
 
         attackLungeCoroutine = null;
 
-        if (queuedAttackLunges > 0 &&
+        if (presentationId > 0)
+        {
+            enemyAutoAttack
+                ?.CompleteAttackPresentation(
+                    presentationId
+                );
+        }
+
+        if (queuedAttackLungePresentationIds.Count > 0 &&
             enemyActor != null &&
             !enemyActor.IsDefeated)
         {
-            queuedAttackLunges--;
-
-            attackLungeCoroutine =
-                StartCoroutine(
-                    AttackLungeRoutine()
-                );
+            StartAttackLunge(
+                queuedAttackLungePresentationIds
+                    .Dequeue()
+            );
         }
     }
 
@@ -473,7 +509,7 @@ public sealed class EnemyCombatFeedback :
 
     private void StopAttackLunge()
     {
-        queuedAttackLunges = 0;
+        queuedAttackLungePresentationIds.Clear();
 
         if (attackLungeCoroutine != null)
         {
