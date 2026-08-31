@@ -3,5 +3,6 @@ public enum EnemySpecialAbilityKind
     None = 0,
     Miner = 1,
     CrossbowGuardBolt = 2,
-    Barricade = 3
+    Barricade = 3,
+    ShieldingAllies = 4
 }

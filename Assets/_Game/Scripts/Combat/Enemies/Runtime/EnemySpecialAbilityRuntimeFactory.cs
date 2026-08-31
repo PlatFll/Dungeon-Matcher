@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class EnemySpecialAbilityRuntimeFactory
@@ -7,7 +8,8 @@ public static class EnemySpecialAbilityRuntimeFactory
             EnemySpecialAbilityKind abilityKind,
             GameObject enemyObject,
             EnemyActor enemyActor,
-            BoardController boardController)
+            BoardController boardController,
+            IReadOnlyList<EnemyActor> activeEnemies)
     {
         if (abilityKind ==
             EnemySpecialAbilityKind.None)
@@ -17,7 +19,8 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         if (enemyObject == null ||
             enemyActor == null ||
-            boardController == null)
+            boardController == null ||
+            activeEnemies == null)
         {
             Debug.LogError(
                 "Cannot create an enemy special ability runtime " +
@@ -82,6 +85,23 @@ public static class EnemySpecialAbilityRuntimeFactory
                 runtime = barricadeAbility;
                 break;
 
+            case EnemySpecialAbilityKind.ShieldingAllies:
+                ShieldingAlliesEnemyAbility shieldingAbility =
+                    enemyObject.GetComponent<
+                        ShieldingAlliesEnemyAbility
+                    >();
+
+                if (shieldingAbility == null)
+                {
+                    shieldingAbility =
+                        enemyObject.AddComponent<
+                            ShieldingAlliesEnemyAbility
+                        >();
+                }
+
+                runtime = shieldingAbility;
+                break;
+
             default:
                 Debug.LogError(
                     $"No runtime factory is registered for " +
@@ -94,7 +114,8 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         runtime.InitializeSpecialAbility(
             enemyActor,
-            boardController
+            boardController,
+            activeEnemies
         );
 
         return runtime;
