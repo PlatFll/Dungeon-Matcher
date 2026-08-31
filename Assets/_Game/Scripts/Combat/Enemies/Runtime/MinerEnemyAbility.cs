@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -21,7 +22,8 @@ public sealed class MinerEnemyAbility :
 
     public void InitializeSpecialAbility(
         EnemyActor initializedEnemy,
-        BoardController initializedBoard)
+        BoardController initializedBoard,
+        IReadOnlyList<EnemyActor> activeEnemies)
     {
         Unsubscribe();
 

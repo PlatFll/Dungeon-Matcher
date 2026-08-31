@@ -599,7 +599,8 @@ public sealed class WaveController : MonoBehaviour
                         definition.SpecialAbilityKind,
                         enemyObject,
                         enemy,
-                        boardController
+                        boardController,
+                        activeEnemies
                     );
             }
         }

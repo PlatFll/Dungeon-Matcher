@@ -100,7 +100,7 @@ For normal and special board clears:
 2. It invokes `BoardClearResolved` for systems that consume the clear itself, including `PlayerAffinityHealing` and active clear-driven ability effects.
 3. It passes the context to `CombatController.ResolveGemClear`, or to `ResolveFixedGemDamage` for the established fixed-damage ability path.
 4. `CombatController` creates a `GemDamageContext`, raises `BeforeGemDamage`, and targets each active initialized enemy whose `AssignedGemType` matches the clear's gem type.
-5. `EnemyActor.TryTakeDamage` is the final authority for enemy HP mutation and defeat.
+5. `EnemyActor.TryTakeDamage` is the final authority for shield-aware enemy damage, HP mutation, and defeat.
 6. `BoardController` emits `BoardClearOutcomeResolved` with whether a matching enemy was damaged. Energy generation consumes this outcome rather than trying to infer combat success separately.
 
 This ordering keeps clear identity, weakness matching, damage modifiers, actual health mutation, and downstream rewards distinct while preventing duplicate reports.
@@ -154,9 +154,10 @@ Do not merge these responsibilities. In particular, a board clear should describ
 - `EnemyDatabase` supplies eligible weighted definitions.
 - `WaveSpawnProfile` produces a category-based `WaveSpawnPlan`; `DifficultyProfile` converts a definition, wave, category modifiers, and player-power input into `EnemyRuntimeStats`.
 - `WaveController` selects definitions, instantiates the configured prefab, initializes `EnemyActor`, assigns a gem weakness, initializes `EnemyAutoAttack`, and asks `EnemySpecialAbilityRuntimeFactory` to install the configured runtime.
-- `EnemyActor` owns runtime HP, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
+- `EnemyActor` owns runtime HP, shield, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
 - `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`. Definitions may optionally provide one follow-up auto-attack hit and a non-negative delay after the primary presentation's completed-return acknowledgement. The primary and follow-up are independently scaled and resolved as separate `PlayerActor.TryTakeDamage` calls inside the same attack cadence. For a follow-up sequence, `EnemyAutoAttack` retains action ownership while `EnemyCombatFeedback` acknowledges each generic lunge's impact and completed return using that hit's presentation ID. The next hit cannot begin before the required return acknowledgement and configured follow-up delay, and the cooldown cannot begin before the final return; one-shot guards and real-time fallbacks prevent duplicate damage or presentation-dependent stalls. Definitions with no follow-up retain the established single-hit path.
 - `MinerEnemyAbility`, `CrossbowGuardEnemyAbility`, and `BarricadeEnemyAbility` react to runtime events and request BoardController-owned mutations. They do not directly change the grid.
+- `ShieldingAlliesEnemyAbility` consumes the authoritative active-enemy roster supplied by `WaveController` and grants shield through each living target's `EnemyActor`. It does not mutate the board, HP, or UI directly.
 
 Shared board code must never switch on a concrete enemy identity. Add enemy behavior through definition data and an enemy runtime that requests generic operations.
 
@@ -182,6 +183,14 @@ Shared board code must never switch on a concrete enemy identity. Add enemy beha
 - `CombatController.HealPlayerFromBomb` and `GrantPlayerShieldFromBomb` call the corresponding distinct actor methods.
 
 Never reuse HP fields/events for shield or change shield rules as a side effect of unrelated combat work.
+
+`EnemyActor` independently owns enemy `currentHealth` and `currentShield` state. Enemy shields are distinct from HP and use their own cap, normalized value, grant API, and change/damage events.
+
+- All established damage sources remain shield-aware by entering through `EnemyActor.TryTakeDamage` or `TryTakeDamageWithoutFeedback`.
+- If shield was active at the start of a hit, `EnemyActor` applies the enemy shield reduction and ceiling rounding once to the whole hit, consumes shield first, and sends reduced overflow to HP. Breaking shield does not remove the reduction from that hit; the next separate unshielded hit uses full damage.
+- `GrantShield` changes shield only and clamps it to the enemy shield cap. Ability runtimes must use this API rather than changing HP or presentation.
+- Enemy defeat remains based on HP reaching zero. Initialization resets shield so it cannot persist between enemy instances or waves.
+- `EnemySlotUI` observes enemy shield events and presents shield in place of HP while shield is active. It is presentation-only, and missing shield presentation cannot prevent gameplay resolution.
 
 ## Gameplay and VFX/presentation separation
 

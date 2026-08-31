@@ -4,6 +4,9 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class EnemyActor : MonoBehaviour
 {
+    private const int EnemyMaximumShield = 30;
+    private const float EnemyShieldDamageReduction = 0.25f;
+
     [Header("Runtime Debug Information")]
     [SerializeField]
     private EnemyDefinition definition;
@@ -13,6 +16,9 @@ public sealed class EnemyActor : MonoBehaviour
 
     [SerializeField]
     private int currentHealth;
+
+    [SerializeField]
+    private int currentShield;
 
     [SerializeField]
     private int currentSpecialTurnCount;
@@ -39,6 +45,12 @@ public sealed class EnemyActor : MonoBehaviour
 
     public event Action<EnemyActor, int>
         DamageReceived;
+
+    public event Action<EnemyActor, int>
+        ShieldDamaged;
+
+    public event Action<EnemyActor, int, int>
+        ShieldChanged;
 
     public event Action<EnemyActor, GemType>
         GemTypeChanged;
@@ -75,6 +87,18 @@ public sealed class EnemyActor : MonoBehaviour
 
     public int CurrentHealth =>
         currentHealth;
+
+    public int CurrentShield =>
+        currentShield;
+
+    public int MaximumShield =>
+        EnemyMaximumShield;
+
+    public float ShieldDamageReduction =>
+        EnemyShieldDamageReduction;
+
+    public bool HasShield =>
+        currentShield > 0;
 
     public int MaxHealth =>
         isInitialized
@@ -158,6 +182,23 @@ public sealed class EnemyActor : MonoBehaviour
         }
     }
 
+    public float ShieldNormalized
+    {
+        get
+        {
+            if (!isInitialized ||
+                EnemyMaximumShield <= 0)
+            {
+                return 0f;
+            }
+
+            return Mathf.Clamp01(
+                (float)currentShield /
+                EnemyMaximumShield
+            );
+        }
+    }
+
     public void Initialize(
         EnemyDefinition enemyDefinition,
         EnemyRuntimeStats runtimeStats,
@@ -185,6 +226,8 @@ public sealed class EnemyActor : MonoBehaviour
 
         currentHealth =
             RuntimeStats.MaxHealth;
+
+        currentShield = 0;
 
         currentSpecialTurnCount = 0;
         isSpecialReady = false;
@@ -241,6 +284,12 @@ public sealed class EnemyActor : MonoBehaviour
             RuntimeStats.MaxHealth
         );
 
+        ShieldChanged?.Invoke(
+            this,
+            currentShield,
+            EnemyMaximumShield
+        );
+
         GemTypeChanged?.Invoke(
             this,
             assignedGemType
@@ -280,21 +329,66 @@ public sealed class EnemyActor : MonoBehaviour
             return false;
         }
 
-        int previousHealth =
-            currentHealth;
+        int finalDamage = amount;
 
-        currentHealth =
-            Mathf.Max(
-                0,
-                currentHealth - amount
+        bool shieldWasActive =
+            currentShield > 0;
+
+        if (shieldWasActive)
+        {
+            finalDamage =
+                Mathf.Max(
+                    1,
+                    Mathf.CeilToInt(
+                        finalDamage *
+                        (1f - EnemyShieldDamageReduction)
+                    )
+                );
+        }
+
+        int shieldDamage =
+            Mathf.Min(
+                currentShield,
+                finalDamage
             );
 
-        int actualDamage =
-            previousHealth - currentHealth;
-
-        if (actualDamage <= 0)
+        if (shieldDamage > 0)
         {
-            return false;
+            currentShield -= shieldDamage;
+
+            if (notifyDamageReceived)
+            {
+                ShieldDamaged?.Invoke(
+                    this,
+                    shieldDamage
+                );
+            }
+
+            ShieldChanged?.Invoke(
+                this,
+                currentShield,
+                EnemyMaximumShield
+            );
+        }
+
+        int healthDamage =
+            finalDamage - shieldDamage;
+
+        int actualHealthDamage = 0;
+
+        if (healthDamage > 0)
+        {
+            int previousHealth =
+                currentHealth;
+
+            currentHealth =
+                Mathf.Max(
+                    0,
+                    currentHealth - healthDamage
+                );
+
+            actualHealthDamage =
+                previousHealth - currentHealth;
         }
 
         /*
@@ -303,26 +397,66 @@ public sealed class EnemyActor : MonoBehaviour
          * suppress that presentation event while still sharing the same
          * authoritative health and defeat path.
          */
-        if (notifyDamageReceived)
+        if (notifyDamageReceived &&
+            actualHealthDamage > 0)
         {
             DamageReceived?.Invoke(
                 this,
-                actualDamage
+                actualHealthDamage
             );
         }
 
-        HealthChanged?.Invoke(
-            this,
-            currentHealth,
-            RuntimeStats.MaxHealth
-        );
+        if (actualHealthDamage > 0)
+        {
+            HealthChanged?.Invoke(
+                this,
+                currentHealth,
+                RuntimeStats.MaxHealth
+            );
+        }
 
         if (currentHealth == 0)
         {
             HandleDefeat();
         }
 
-        return true;
+        return shieldDamage > 0 ||
+               actualHealthDamage > 0;
+    }
+
+    public int GrantShield(int amount)
+    {
+        if (!isInitialized ||
+            isDefeated ||
+            amount <= 0)
+        {
+            return 0;
+        }
+
+        int previousShield =
+            currentShield;
+
+        currentShield =
+            Mathf.Min(
+                EnemyMaximumShield,
+                currentShield + amount
+            );
+
+        int actualShieldGranted =
+            currentShield - previousShield;
+
+        if (actualShieldGranted <= 0)
+        {
+            return 0;
+        }
+
+        ShieldChanged?.Invoke(
+            this,
+            currentShield,
+            EnemyMaximumShield
+        );
+
+        return actualShieldGranted;
     }
 
     public int RestoreHealth(int amount)
@@ -512,6 +646,17 @@ public sealed class EnemyActor : MonoBehaviour
 
         isDefeated = true;
         isSpecialReady = false;
+
+        if (currentShield > 0)
+        {
+            currentShield = 0;
+
+            ShieldChanged?.Invoke(
+                this,
+                currentShield,
+                EnemyMaximumShield
+            );
+        }
 
         bool hadAnimationAction =
             HasAnimationActionInProgress;

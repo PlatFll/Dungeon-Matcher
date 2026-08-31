@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,12 @@ public sealed class EnemySlotUI : MonoBehaviour
         "UI/TopBattlePresentationProfile";
 
     private const float FallbackEnemyHealthBarBottomOffset = 14f;
+    private const float ShieldBreakFlashDuration = 0.1f;
+
+    private static readonly Color ShieldFillColor =
+        new Color32(39, 124, 255, 255);
+
+    private static Sprite shieldSolidSprite;
 
     [Header("Spawn Anchor")]
     [SerializeField]
@@ -69,6 +76,19 @@ public sealed class EnemySlotUI : MonoBehaviour
     private TopBattlePresentationProfile presentationProfile;
     private RectTransform enemyHealthBarRect;
 
+    private Sprite healthFillSprite;
+    private Material healthFillMaterial;
+    private Color healthFillColor;
+    private Image.Type healthFillType;
+    private Image.FillMethod healthFillMethod;
+    private int healthFillOrigin;
+    private bool healthFillClockwise;
+    private bool hasCapturedHealthFillPresentation;
+    private bool isShieldPresentationActive;
+    private int displayedCurrentHealth;
+    private int displayedMaximumHealth = 1;
+    private Coroutine shieldBreakRoutine;
+
     private void Awake()
     {
         /*
@@ -117,6 +137,7 @@ public sealed class EnemySlotUI : MonoBehaviour
     private void OnDestroy()
     {
         UnsubscribeFromEnemy(CurrentEnemy);
+        StopShieldBreakRoutine();
     }
 
     public bool BindEnemy(EnemyActor enemy)
@@ -200,6 +221,11 @@ public sealed class EnemySlotUI : MonoBehaviour
                 UpdateHealthDisplay(
                     enemy.CurrentHealth,
                     enemy.MaxHealth
+                );
+
+                UpdateShieldDisplay(
+                    enemy.CurrentShield,
+                    enemy.MaximumShield
                 );
 
                 ShowWeaknessIndicator(
@@ -298,6 +324,9 @@ public sealed class EnemySlotUI : MonoBehaviour
         enemy.HealthChanged +=
             HandleHealthChanged;
 
+        enemy.ShieldChanged +=
+            HandleShieldChanged;
+
         enemy.GemTypeChanged +=
             HandleGemTypeChanged;
 
@@ -315,6 +344,9 @@ public sealed class EnemySlotUI : MonoBehaviour
 
         enemy.HealthChanged -=
             HandleHealthChanged;
+
+        enemy.ShieldChanged -=
+            HandleShieldChanged;
 
         enemy.GemTypeChanged -=
             HandleGemTypeChanged;
@@ -366,6 +398,28 @@ public sealed class EnemySlotUI : MonoBehaviour
         );
     }
 
+    private void HandleShieldChanged(
+        EnemyActor enemy,
+        int currentShield,
+        int maximumShield)
+    {
+        if (enemy != CurrentEnemy)
+        {
+            return;
+        }
+
+        RunPresentationSafely(
+            $"shield display update for {enemy.name}",
+            () =>
+            {
+                UpdateShieldDisplay(
+                    currentShield,
+                    maximumShield
+                );
+            }
+        );
+    }
+
     private void HandleEnemyDefeated(
         EnemyActor enemy)
     {
@@ -398,6 +452,10 @@ public sealed class EnemySlotUI : MonoBehaviour
 
                 DisableLegacyWeaknessCircle();
 
+                StopShieldBreakRoutine();
+                isShieldPresentationActive = false;
+                RestoreHealthBarPresentation();
+
                 if (enemyHealthBar != null)
                 {
                     enemyHealthBar.SetActive(false);
@@ -426,6 +484,9 @@ public sealed class EnemySlotUI : MonoBehaviour
     private void ShowEmptyState()
     {
         DisableLegacyWeaknessCircle();
+        StopShieldBreakRoutine();
+        isShieldPresentationActive = false;
+        RestoreHealthBarPresentation();
 
         if (enemyHealthBar != null)
         {
@@ -468,6 +529,18 @@ public sealed class EnemySlotUI : MonoBehaviour
                 maximumHealth
             );
 
+        displayedCurrentHealth =
+            currentHealth;
+
+        displayedMaximumHealth =
+            maximumHealth;
+
+        if (isShieldPresentationActive ||
+            shieldBreakRoutine != null)
+        {
+            return;
+        }
+
         if (enemyHealthFill != null)
         {
             enemyHealthFill.fillAmount =
@@ -480,6 +553,262 @@ public sealed class EnemySlotUI : MonoBehaviour
             enemyHealthText.text =
                 $"{currentHealth} / {maximumHealth}";
         }
+    }
+
+    private void UpdateShieldDisplay(
+        int currentShield,
+        int maximumShield)
+    {
+        maximumShield =
+            Mathf.Max(1, maximumShield);
+
+        currentShield =
+            Mathf.Clamp(
+                currentShield,
+                0,
+                maximumShield
+            );
+
+        if (currentShield > 0)
+        {
+            StopShieldBreakRoutine();
+            CaptureHealthFillPresentation();
+            isShieldPresentationActive = true;
+
+            if (enemyHealthFill != null)
+            {
+                enemyHealthFill.sprite =
+                    GetShieldSolidSprite();
+
+                enemyHealthFill.material = null;
+                enemyHealthFill.color =
+                    ShieldFillColor;
+
+                enemyHealthFill.type =
+                    Image.Type.Filled;
+
+                enemyHealthFill.fillMethod =
+                    Image.FillMethod.Horizontal;
+
+                enemyHealthFill.fillOrigin =
+                    (int)Image.OriginHorizontal.Left;
+
+                enemyHealthFill.fillClockwise = true;
+                enemyHealthFill.enabled = true;
+
+                enemyHealthFill.fillAmount =
+                    (float)currentShield /
+                    maximumShield;
+            }
+
+            if (enemyHealthText != null)
+            {
+                enemyHealthText.enabled = true;
+                enemyHealthText.text =
+                    $"{currentShield} / {maximumShield}";
+            }
+
+            return;
+        }
+
+        if (isShieldPresentationActive)
+        {
+            if (shieldBreakRoutine == null)
+            {
+                shieldBreakRoutine =
+                    StartCoroutine(
+                        PlayShieldBreakAndDestroy()
+                    );
+            }
+
+            return;
+        }
+
+        RestoreHealthBarPresentation();
+    }
+
+    private IEnumerator PlayShieldBreakAndDestroy()
+    {
+        if (enemyHealthFill != null)
+        {
+            enemyHealthFill.sprite =
+                GetShieldSolidSprite();
+
+            enemyHealthFill.material = null;
+            enemyHealthFill.fillAmount = 1f;
+            enemyHealthFill.color = Color.white;
+            enemyHealthFill.enabled = true;
+        }
+
+        if (enemyHealthText != null)
+        {
+            enemyHealthText.text =
+                string.Empty;
+
+            enemyHealthText.enabled = false;
+        }
+
+        yield return new WaitForSecondsRealtime(
+            ShieldBreakFlashDuration
+        );
+
+        shieldBreakRoutine = null;
+        isShieldPresentationActive = false;
+        RestoreHealthBarPresentation();
+    }
+
+    private void StopShieldBreakRoutine()
+    {
+        if (shieldBreakRoutine == null)
+        {
+            return;
+        }
+
+        StopCoroutine(
+            shieldBreakRoutine
+        );
+
+        shieldBreakRoutine = null;
+    }
+
+    private void CaptureHealthFillPresentation()
+    {
+        if (hasCapturedHealthFillPresentation ||
+            enemyHealthFill == null)
+        {
+            return;
+        }
+
+        healthFillSprite =
+            enemyHealthFill.sprite;
+
+        healthFillMaterial =
+            enemyHealthFill.material;
+
+        healthFillColor =
+            enemyHealthFill.color;
+
+        healthFillType =
+            enemyHealthFill.type;
+
+        healthFillMethod =
+            enemyHealthFill.fillMethod;
+
+        healthFillOrigin =
+            enemyHealthFill.fillOrigin;
+
+        healthFillClockwise =
+            enemyHealthFill.fillClockwise;
+
+        hasCapturedHealthFillPresentation = true;
+    }
+
+    private void RestoreHealthBarPresentation()
+    {
+        if (enemyHealthFill != null)
+        {
+            if (hasCapturedHealthFillPresentation)
+            {
+                enemyHealthFill.sprite =
+                    healthFillSprite;
+
+                enemyHealthFill.material =
+                    healthFillMaterial;
+
+                enemyHealthFill.color =
+                    healthFillColor;
+
+                enemyHealthFill.type =
+                    healthFillType;
+
+                enemyHealthFill.fillMethod =
+                    healthFillMethod;
+
+                enemyHealthFill.fillOrigin =
+                    healthFillOrigin;
+
+                enemyHealthFill.fillClockwise =
+                    healthFillClockwise;
+            }
+
+            enemyHealthFill.fillAmount =
+                (float)displayedCurrentHealth /
+                Mathf.Max(
+                    1,
+                    displayedMaximumHealth
+                );
+
+            enemyHealthFill.enabled = true;
+        }
+
+        if (enemyHealthText != null)
+        {
+            enemyHealthText.text =
+                $"{displayedCurrentHealth} / " +
+                $"{displayedMaximumHealth}";
+
+            enemyHealthText.enabled = true;
+        }
+    }
+
+    private static Sprite GetShieldSolidSprite()
+    {
+        if (shieldSolidSprite != null)
+        {
+            return shieldSolidSprite;
+        }
+
+        Texture2D texture =
+            new Texture2D(
+                1,
+                1,
+                TextureFormat.RGBA32,
+                false
+            );
+
+        texture.name =
+            "EnemyShieldBarSolidTexture";
+
+        texture.filterMode =
+            FilterMode.Point;
+
+        texture.wrapMode =
+            TextureWrapMode.Clamp;
+
+        texture.SetPixel(
+            0,
+            0,
+            Color.white
+        );
+
+        texture.Apply(
+            false,
+            true
+        );
+
+        texture.hideFlags =
+            HideFlags.HideAndDontSave;
+
+        shieldSolidSprite =
+            Sprite.Create(
+                texture,
+                new Rect(
+                    0f,
+                    0f,
+                    1f,
+                    1f
+                ),
+                new Vector2(0.5f, 0.5f),
+                1f
+            );
+
+        shieldSolidSprite.name =
+            "EnemyShieldBarSolidSprite";
+
+        shieldSolidSprite.hideFlags =
+            HideFlags.HideAndDontSave;
+
+        return shieldSolidSprite;
     }
 
     private void ApplyHealthBarPosition()

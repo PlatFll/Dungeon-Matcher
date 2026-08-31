@@ -134,6 +134,16 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - The two hits are separate damage instances, so player shield and defeat handling apply independently to each hit.
 - Spear Knight has no special ability.
 
+### Shield Knight
+
+- Shield Knight is a late-game Normal enemy eligible starting at wave 8.
+- At its wave-8 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. It has no follow-up attack.
+- Shielding Allies casts after every 7 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
+- A cast grants +10 shield to every other living enemy and +15 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
+- Enemy shield grants stack up to a maximum of 30 shield.
+- When an enemy had shield at the start of a damage instance, that entire instance receives the same 25% reduction and ceiling-rounding semantics as the player's shield, even if the hit breaks the shield.
+- Reduced damage consumes enemy shield first and any remainder overflows into HP. A later separate hit is unreduced when no shield remains.
+
 ### Bardley
 
 #### Identity

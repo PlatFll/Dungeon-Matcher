@@ -132,6 +132,20 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private bool lockSpecialTurnRequirement;
 
+    [Header("Shielding Allies Ability")]
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Shield granted to each other living enemy by one successful cast."
+    )]
+    private int allyShieldAmount = 10;
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Shield granted to the casting enemy by one successful cast."
+    )]
+    private int selfShieldAmount = 15;
+
     [Header("Barricade Ability")]
 
     [SerializeField, Min(1)]
@@ -272,6 +286,12 @@ public sealed class EnemyDefinition : ScriptableObject
     public bool LockSpecialTurnRequirement =>
         lockSpecialTurnRequirement;
 
+    public int AllyShieldAmount =>
+        allyShieldAmount;
+
+    public int SelfShieldAmount =>
+        selfShieldAmount;
+
     public int BarricadesPerUse =>
         barricadesPerUse;
 
@@ -351,6 +371,18 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 1,
                 baseSpecialTurnRequirement
+            );
+
+        allyShieldAmount =
+            Mathf.Max(
+                1,
+                allyShieldAmount
+            );
+
+        selfShieldAmount =
+            Mathf.Max(
+                1,
+                selfShieldAmount
             );
 
         barricadesPerUse =
