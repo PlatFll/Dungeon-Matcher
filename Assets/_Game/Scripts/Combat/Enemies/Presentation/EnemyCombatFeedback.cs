@@ -103,6 +103,9 @@ public sealed class EnemyCombatFeedback :
     private Coroutine shakeCoroutine;
     private Coroutine blinkCoroutine;
 
+    private int activeAttackLungePresentationId;
+    private bool damageShakePending;
+
     private readonly Queue<int>
         queuedAttackLungePresentationIds =
             new Queue<int>();
@@ -130,6 +133,7 @@ public sealed class EnemyCombatFeedback :
     private void Update()
     {
         UpdateAttackTimer();
+        TryStartDeferredFeedback();
     }
 
     private void ResolveReferences()
@@ -338,44 +342,72 @@ public sealed class EnemyCombatFeedback :
             return;
         }
 
-        /*
-         * An enemy should not normally attack while being
-         * staggered, but this also protects against overlapping
-         * visual movement.
-         */
-        if (shakeCoroutine != null)
-        {
-            return;
-        }
+        int presentationId =
+            autoAttack != null
+                ? autoAttack
+                    .ActiveAttackPresentationId
+                : 0;
 
-        if (attackLungeCoroutine != null)
+        if (attackLungeCoroutine != null ||
+            shakeCoroutine != null)
         {
-            queuedAttackLungePresentationIds.Enqueue(
-                autoAttack != null
-                    ? autoAttack
-                        .ActiveAttackPresentationId
-                    : 0
+            /*
+             * visualRoot has one movement owner. Preserve this request until
+             * the current movement completes instead of dropping its impact
+             * and return acknowledgements.
+             */
+            QueueAttackLunge(
+                presentationId
             );
             return;
         }
 
-        StartAttackLunge(
-            autoAttack != null
-                ? autoAttack
-                    .ActiveAttackPresentationId
-                : 0
+        TryStartAttackLunge(
+            presentationId
         );
     }
 
-    private void StartAttackLunge(
+    private void QueueAttackLunge(
         int presentationId)
     {
+        if (presentationId > 0 &&
+            (presentationId ==
+                activeAttackLungePresentationId ||
+             queuedAttackLungePresentationIds.Contains(
+                 presentationId
+             )))
+        {
+            return;
+        }
+
+        queuedAttackLungePresentationIds.Enqueue(
+            presentationId
+        );
+    }
+
+    private bool TryStartAttackLunge(
+        int presentationId)
+    {
+        if (attackLungeCoroutine != null ||
+            shakeCoroutine != null ||
+            !IsAttackPresentationCurrent(
+                presentationId
+            ))
+        {
+            return false;
+        }
+
+        activeAttackLungePresentationId =
+            presentationId;
+
         attackLungeCoroutine =
             StartCoroutine(
                 AttackLungeRoutine(
                     presentationId
                 )
             );
+
+        return true;
     }
 
     private IEnumerator AttackLungeRoutine(
@@ -470,6 +502,7 @@ public sealed class EnemyCombatFeedback :
 
         RestoreVisualPosition();
 
+        activeAttackLungePresentationId = 0;
         attackLungeCoroutine = null;
 
         if (presentationId > 0)
@@ -480,15 +513,80 @@ public sealed class EnemyCombatFeedback :
                 );
         }
 
-        if (queuedAttackLungePresentationIds.Count > 0 &&
-            enemyActor != null &&
-            !enemyActor.IsDefeated)
+        TryStartDeferredFeedback();
+    }
+
+    private void TryStartDeferredFeedback()
+    {
+        if (attackLungeCoroutine != null ||
+            shakeCoroutine != null)
         {
-            StartAttackLunge(
-                queuedAttackLungePresentationIds
-                    .Dequeue()
-            );
+            return;
         }
+
+        if (enemyActor == null ||
+            !enemyActor.IsInitialized ||
+            enemyActor.IsDefeated)
+        {
+            queuedAttackLungePresentationIds.Clear();
+            damageShakePending = false;
+            return;
+        }
+
+        while (queuedAttackLungePresentationIds.Count > 0)
+        {
+            int presentationId =
+                queuedAttackLungePresentationIds
+                    .Dequeue();
+
+            if (TryStartAttackLunge(
+                    presentationId))
+            {
+                return;
+            }
+
+            /*
+             * A synchronized request may have timed out or been cancelled
+             * while it waited behind a shake. Its presentation ID no longer
+             * matches, so discarding it cannot affect gameplay.
+             */
+        }
+
+        if (!damageShakePending ||
+            (enemyAutoAttack != null &&
+             enemyAutoAttack
+                 .IsAttackSequenceInProgress))
+        {
+            return;
+        }
+
+        StartDamageShake();
+    }
+
+    private bool IsAttackPresentationCurrent(
+        int presentationId)
+    {
+        if (enemyActor == null ||
+            !enemyActor.IsInitialized ||
+            enemyActor.IsDefeated ||
+            enemyAutoAttack == null ||
+            enemyAutoAttack.PlayerTarget == null ||
+            enemyAutoAttack.PlayerTarget.IsDefeated)
+        {
+            return false;
+        }
+
+        if (presentationId <= 0)
+        {
+            return true;
+        }
+
+        return
+            enemyAutoAttack
+                .IsAttackSequenceInProgress &&
+            enemyAutoAttack
+                .ActiveAttackPresentationId ==
+                    presentationId;
     }
 
     private void ApplyRoundedVisualOffset(
@@ -510,6 +608,7 @@ public sealed class EnemyCombatFeedback :
     private void StopAttackLunge()
     {
         queuedAttackLungePresentationIds.Clear();
+        activeAttackLungePresentationId = 0;
 
         if (attackLungeCoroutine != null)
         {
@@ -533,7 +632,39 @@ public sealed class EnemyCombatFeedback :
             return;
         }
 
-        StopAttackLunge();
+        if (attackLungeCoroutine != null ||
+            queuedAttackLungePresentationIds.Count > 0 ||
+            (enemyAutoAttack != null &&
+             enemyAutoAttack
+                 .IsAttackSequenceInProgress))
+        {
+            /*
+             * Never interrupt a lunge or insert shake movement between hits
+             * of one accepted sequence. Coalesce normal damage feedback and
+             * play it after the sequence releases visual ownership.
+             */
+            damageShakePending = true;
+            return;
+        }
+
+        StartDamageShake();
+    }
+
+    private void StartDamageShake()
+    {
+        if (enemyActor == null ||
+            enemyActor.IsDefeated ||
+            visualRoot == null)
+        {
+            damageShakePending = false;
+            return;
+        }
+
+        if (attackLungeCoroutine != null)
+        {
+            damageShakePending = true;
+            return;
+        }
 
         if (shakeCoroutine != null)
         {
@@ -542,8 +673,8 @@ public sealed class EnemyCombatFeedback :
             );
         }
 
+        damageShakePending = false;
         RestoreVisualPosition();
-
         shakeCoroutine =
             StartCoroutine(
                 ShakeRoutine()
@@ -616,6 +747,7 @@ public sealed class EnemyCombatFeedback :
         RestoreVisualPosition();
 
         shakeCoroutine = null;
+        TryStartDeferredFeedback();
     }
 
     private void HandleStaggerApplied(
@@ -726,6 +858,7 @@ public sealed class EnemyCombatFeedback :
 
     private void StopAllFeedback()
     {
+        damageShakePending = false;
         StopAttackLunge();
 
         if (shakeCoroutine != null)
