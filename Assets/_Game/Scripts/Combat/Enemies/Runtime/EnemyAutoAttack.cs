@@ -217,6 +217,16 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 enemyActor.FollowUpDamage
             );
 
+        float followUpAttackDelay =
+            followUpDamage > 0 &&
+            enemyActor.Definition != null
+                ? Mathf.Max(
+                    0f,
+                    enemyActor.Definition
+                        .FollowUpAttackDelay
+                )
+                : 0f;
+
         if (!timeFromAnimation &&
             followUpDamage <= 0)
         {
@@ -243,6 +253,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 PerformTimedAttackSequence(
                     primaryDamage,
                     followUpDamage,
+                    followUpAttackDelay,
                     timeFromAnimation
                 )
             );
@@ -344,6 +355,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         PerformTimedAttackSequence(
             int primaryDamage,
             int followUpDamage,
+            float followUpAttackDelay,
             bool timeFromAnimation)
     {
         yield return
@@ -364,6 +376,20 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (followUpDamage > 0 &&
             CanContinueAttackLoop())
         {
+            if (followUpAttackDelay > 0f)
+            {
+                yield return
+                    WaitForFollowUpAttackDelay(
+                        followUpAttackDelay
+                    );
+            }
+
+            if (!isAttackSequenceInProgress ||
+                !CanContinueAttackLoop())
+            {
+                yield break;
+            }
+
             yield return
                 PerformTimedHit(
                     followUpDamage,
@@ -376,6 +402,35 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (isAttackSequenceInProgress)
         {
             FinishAttackSequence();
+        }
+    }
+
+    private IEnumerator WaitForFollowUpAttackDelay(
+        float delay)
+    {
+        float remainingDelay =
+            Mathf.Max(
+                0f,
+                delay
+            );
+
+        /*
+         * The accepted auto-attack action remains owned throughout this
+         * recovery beat. Specials and another cooldown-driven attack cannot
+         * enter between hits, while defeat or cancellation ends the combo.
+         */
+        while (remainingDelay > 0f &&
+               isAttackSequenceInProgress &&
+               CanContinueAttackLoop())
+        {
+            remainingDelay =
+                Mathf.Max(
+                    0f,
+                    remainingDelay -
+                    Time.deltaTime
+                );
+
+            yield return null;
         }
     }
 

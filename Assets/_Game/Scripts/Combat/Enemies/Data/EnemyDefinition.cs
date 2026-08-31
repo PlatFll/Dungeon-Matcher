@@ -94,6 +94,13 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private int baseFollowUpDamage;
 
+    [SerializeField, Min(0f)]
+    [Tooltip(
+        "Optional delay after the first automatic-attack presentation has " +
+        "returned to rest and before the follow-up attack begins."
+    )]
+    private float followUpAttackDelay;
+
     [SerializeField, Min(0.1f)]
     [Tooltip("Seconds between automatic attacks.")]
     private float baseAttackInterval = 3f;
@@ -247,6 +254,9 @@ public sealed class EnemyDefinition : ScriptableObject
     public int BaseFollowUpDamage =>
         baseFollowUpDamage;
 
+    public float FollowUpAttackDelay =>
+        followUpAttackDelay;
+
     public float BaseAttackInterval =>
         baseAttackInterval;
 
@@ -323,6 +333,12 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 0,
                 baseFollowUpDamage
+            );
+
+        followUpAttackDelay =
+            Mathf.Max(
+                0f,
+                followUpAttackDelay
             );
 
         baseAttackInterval =

@@ -129,7 +129,7 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 - Spear Knight is a late-game Normal enemy eligible starting at wave 8.
 - Base maximum HP: 120.
-- Its normal auto-attack is a two-hit combo once every 10 seconds: lunge, deal 5 base damage at the first impact, return completely to rest, then immediately lunge again, deal 7 base damage at the second impact, and return completely to rest again.
+- Its normal auto-attack is a two-hit combo once every 10 seconds: lunge, deal 5 base damage at the first impact, return completely to rest, take a brief recovery/readability beat, then lunge again, deal 7 base damage at the second impact, and return completely to rest again.
 - The next 10-second auto-attack cooldown begins only after the second return finishes; there is no normal cooldown between the two lunges.
 - The two hits are separate damage instances, so player shield and defeat handling apply independently to each hit.
 - Spear Knight has no special ability.
