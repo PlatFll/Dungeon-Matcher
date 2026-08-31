@@ -125,6 +125,14 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ## Finalized mechanic specifications
 
+### Spear Knight
+
+- Spear Knight is a late-game Normal enemy eligible starting at wave 8.
+- Base maximum HP: 120.
+- Its normal auto-attack is a two-hit combo once every 10 seconds: the first hit deals 5 base damage and the immediate second hit deals 7 base damage.
+- The two hits are separate damage instances, so player shield and defeat handling apply independently to each hit.
+- Spear Knight has no special ability.
+
 ### Bardley
 
 #### Identity

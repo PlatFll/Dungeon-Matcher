@@ -38,12 +38,19 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool isWaitingForAnimationImpact;
 
     [SerializeField]
+    private bool isAttackSequenceInProgress;
+
+    [SerializeField]
     private int pendingAttackDamage;
+
+    [SerializeField]
+    private bool pendingAnimationHitIsFinal;
 
     private EnemyActor enemyActor;
     private EnemyStagger enemyStagger;
     private PlayerActor playerTarget;
     private Coroutine attackCoroutine;
+    private Coroutine attackSequenceCoroutine;
 
     public event Action<EnemyAutoAttack>
         AttackStarted;
@@ -68,6 +75,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool IsWaitingForAnimationImpact =>
         isWaitingForAnimationImpact;
+
+    public bool IsAttackSequenceInProgress =>
+        isAttackSequenceInProgress;
 
     public bool IsPausedByStagger =>
         enemyStagger != null &&
@@ -167,7 +177,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             attackCoroutine = null;
         }
 
-        CancelPendingAnimationImpact();
+        CancelAttackSequence();
         isRunning = false;
         remainingAttackTime = 0f;
     }
@@ -179,34 +189,64 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             return false;
         }
 
-        int attackDamage =
+        bool timeFromAnimation =
+            ShouldTimeAttackFromAnimation();
+
+        int primaryDamage =
             Mathf.Max(
                 0,
                 enemyActor.Damage
             );
 
-        if (ShouldTimeAttackFromAnimation())
+        int followUpDamage =
+            Mathf.Max(
+                0,
+                enemyActor.FollowUpDamage
+            );
+
+        if (!timeFromAnimation)
         {
-            /*
-             * A gameplay-critical attack owns the enemy's action window until
-             * its impact resolves. A special ability therefore cannot replace
-             * this animation before AutoAttackImpact has had a chance to fire.
-             */
-            if (!enemyActor
-                    .TryBeginAutoAttackAnimationAction())
+            isAttackSequenceInProgress = true;
+
+            bool primaryDamageApplied =
+                PerformImmediateHit(
+                    primaryDamage
+                );
+
+            if (followUpDamage > 0 &&
+                CanContinueAttackLoop())
             {
-                return false;
+                PerformImmediateHit(
+                    followUpDamage
+                );
             }
 
-            pendingAttackDamage = attackDamage;
-            isWaitingForAnimationImpact = true;
-
-            AttackStarted?.Invoke(this);
-            return true;
+            isAttackSequenceInProgress = false;
+            return primaryDamageApplied;
         }
 
-        AttackStarted?.Invoke(this);
-        return ResolveAttackDamage(attackDamage);
+        /*
+         * One gameplay-critical action owns the complete attack sequence.
+         * A special ability therefore cannot replace either hit before its
+         * AutoAttackImpact has had a chance to fire.
+         */
+        if (!enemyActor
+                .TryBeginAutoAttackAnimationAction())
+        {
+            return false;
+        }
+
+        isAttackSequenceInProgress = true;
+
+        attackSequenceCoroutine =
+            StartCoroutine(
+                PerformAnimationTimedAttackSequence(
+                    primaryDamage,
+                    followUpDamage
+                )
+            );
+
+        return true;
     }
 
     public bool ResolveAnimationImpact()
@@ -219,17 +259,20 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         int attackDamage =
             pendingAttackDamage;
 
+        bool isFinalHit =
+            pendingAnimationHitIsFinal;
+
         /*
          * Clear the pending payload before applying damage. Duplicate Animation
          * Events cannot resolve twice, but the action ownership remains held
-         * until the gameplay impact itself has completed.
+         * until the complete attack sequence has finished.
          */
         isWaitingForAnimationImpact = false;
         pendingAttackDamage = 0;
+        pendingAnimationHitIsFinal = false;
 
         if (!CanContinueAttackLoop())
         {
-            ReleaseAutoAttackAnimationAction();
             return false;
         }
 
@@ -238,8 +281,89 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 attackDamage
             );
 
-        ReleaseAutoAttackAnimationAction();
+        if (isFinalHit)
+        {
+            FinishAttackSequence();
+        }
+
         return damageApplied;
+    }
+
+    private IEnumerator
+        PerformAnimationTimedAttackSequence(
+            int primaryDamage,
+            int followUpDamage)
+    {
+        yield return
+            PerformAnimationTimedHit(
+                primaryDamage,
+                followUpDamage <= 0
+            );
+
+        if (!isAttackSequenceInProgress)
+        {
+            yield break;
+        }
+
+        if (followUpDamage > 0 &&
+            CanContinueAttackLoop())
+        {
+            /*
+             * Arm the second impact on a later frame. Duplicate Animation
+             * Events emitted by the first strike therefore see no pending
+             * payload and cannot consume the follow-up hit.
+             */
+            yield return null;
+
+            if (isAttackSequenceInProgress &&
+                CanContinueAttackLoop())
+            {
+                yield return
+                    PerformAnimationTimedHit(
+                        followUpDamage,
+                        isFinalHit: true
+                    );
+            }
+        }
+
+        if (isAttackSequenceInProgress)
+        {
+            FinishAttackSequence();
+        }
+    }
+
+    private IEnumerator PerformAnimationTimedHit(
+        int attackDamage,
+        bool isFinalHit)
+    {
+        if (!CanContinueAttackLoop())
+        {
+            yield break;
+        }
+
+        pendingAttackDamage = attackDamage;
+        pendingAnimationHitIsFinal = isFinalHit;
+        isWaitingForAnimationImpact = true;
+
+        AttackStarted?.Invoke(this);
+
+        yield return
+            WaitForAnimationImpactOrTimeout();
+    }
+
+    private bool PerformImmediateHit(
+        int attackDamage)
+    {
+        AttackStarted?.Invoke(this);
+
+        if (!CanContinueAttackLoop())
+        {
+            return false;
+        }
+
+        return ResolveAttackDamage(
+            attackDamage
+        );
     }
 
     private bool ResolveAttackDamage(
@@ -273,10 +397,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 PerformAttackImmediately();
             }
 
-            if (isWaitingForAnimationImpact)
+            if (isAttackSequenceInProgress)
             {
                 yield return
-                    WaitForAnimationImpactOrTimeout();
+                    WaitForAttackSequenceToFinish();
             }
         }
 
@@ -335,10 +459,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 PerformAttackImmediately();
             }
 
-            if (isWaitingForAnimationImpact)
+            if (isAttackSequenceInProgress)
             {
                 yield return
-                    WaitForAnimationImpactOrTimeout();
+                    WaitForAttackSequenceToFinish();
             }
         }
 
@@ -349,6 +473,15 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         while (CanContinueAttackLoop() &&
                !CanPerformAttack())
+        {
+            yield return null;
+        }
+    }
+
+    private IEnumerator WaitForAttackSequenceToFinish()
+    {
+        while (CanContinueAttackLoop() &&
+               isAttackSequenceInProgress)
         {
             yield return null;
         }
@@ -405,6 +538,30 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         isWaitingForAnimationImpact = false;
         pendingAttackDamage = 0;
+        pendingAnimationHitIsFinal = false;
+        ReleaseAutoAttackAnimationAction();
+    }
+
+    private void CancelAttackSequence()
+    {
+        if (attackSequenceCoroutine != null)
+        {
+            StopCoroutine(attackSequenceCoroutine);
+            attackSequenceCoroutine = null;
+        }
+
+        isAttackSequenceInProgress = false;
+        CancelPendingAnimationImpact();
+    }
+
+    private void FinishAttackSequence()
+    {
+        isWaitingForAnimationImpact = false;
+        pendingAttackDamage = 0;
+        pendingAnimationHitIsFinal = false;
+        isAttackSequenceInProgress = false;
+        attackSequenceCoroutine = null;
+
         ReleaseAutoAttackAnimationAction();
     }
 
@@ -433,6 +590,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         return
             CanContinueAttackLoop() &&
             !IsPausedByStagger &&
+            !isAttackSequenceInProgress &&
             !isWaitingForAnimationImpact &&
             !enemyActor
                 .IsSpecialAbilityAnimationActionActive;
@@ -513,7 +671,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     private void FinishCoroutine()
     {
-        CancelPendingAnimationImpact();
+        CancelAttackSequence();
         attackCoroutine = null;
         isRunning = false;
         remainingAttackTime = 0f;

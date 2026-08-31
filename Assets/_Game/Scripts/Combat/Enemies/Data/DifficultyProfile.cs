@@ -233,6 +233,7 @@ public sealed class DifficultyProfile : ScriptableObject
                 level: 1,
                 maxHealth: 1,
                 damage: 0,
+                followUpDamage: 0,
                 attackInterval: minimumAttackInterval,
                 specialTurnRequirement:
                     minimumSpecialTurnRequirement
@@ -281,11 +282,18 @@ public sealed class DifficultyProfile : ScriptableObject
             definition.HealthMultiplier *
             playerPowerHealthMultiplier;
 
-        float calculatedDamage =
-            definition.BaseDamage *
+        float totalDamageMultiplier =
             waveDamageMultiplier *
             categoryModifier.DamageMultiplier *
             definition.DamageMultiplier;
+
+        float calculatedDamage =
+            definition.BaseDamage *
+            totalDamageMultiplier;
+
+        float calculatedFollowUpDamage =
+            definition.BaseFollowUpDamage *
+            totalDamageMultiplier;
 
         float totalAttackSpeedMultiplier =
             waveAttackSpeedMultiplier *
@@ -365,6 +373,12 @@ public sealed class DifficultyProfile : ScriptableObject
             damage: Mathf.Max(
                 0,
                 Mathf.RoundToInt(calculatedDamage)
+            ),
+            followUpDamage: Mathf.Max(
+                0,
+                Mathf.RoundToInt(
+                    calculatedFollowUpDamage
+                )
             ),
             attackInterval: calculatedAttackInterval,
             specialTurnRequirement:

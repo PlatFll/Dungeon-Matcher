@@ -87,6 +87,13 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(0)]
     private int baseDamage = 10;
 
+    [SerializeField, Min(0)]
+    [Tooltip(
+        "Optional second automatic-attack hit. Keep at zero for the " +
+        "established single-hit behavior."
+    )]
+    private int baseFollowUpDamage;
+
     [SerializeField, Min(0.1f)]
     [Tooltip("Seconds between automatic attacks.")]
     private float baseAttackInterval = 3f;
@@ -237,6 +244,9 @@ public sealed class EnemyDefinition : ScriptableObject
     public int BaseDamage =>
         baseDamage;
 
+    public int BaseFollowUpDamage =>
+        baseFollowUpDamage;
+
     public float BaseAttackInterval =>
         baseAttackInterval;
 
@@ -307,6 +317,12 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 0,
                 baseDamage
+            );
+
+        baseFollowUpDamage =
+            Mathf.Max(
+                0,
+                baseFollowUpDamage
             );
 
         baseAttackInterval =

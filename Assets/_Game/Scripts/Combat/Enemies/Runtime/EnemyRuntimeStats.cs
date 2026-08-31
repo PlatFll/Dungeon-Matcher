@@ -7,6 +7,7 @@ public readonly struct EnemyRuntimeStats
 
     public int MaxHealth { get; }
     public int Damage { get; }
+    public int FollowUpDamage { get; }
 
     public float AttackInterval { get; }
 
@@ -17,6 +18,7 @@ public readonly struct EnemyRuntimeStats
         int level,
         int maxHealth,
         int damage,
+        int followUpDamage,
         float attackInterval,
         int specialTurnRequirement)
     {
@@ -25,6 +27,10 @@ public readonly struct EnemyRuntimeStats
 
         MaxHealth = Mathf.Max(1, maxHealth);
         Damage = Mathf.Max(0, damage);
+        FollowUpDamage = Mathf.Max(
+            0,
+            followUpDamage
+        );
 
         AttackInterval = Mathf.Max(
             0.25f,
@@ -42,6 +48,7 @@ public readonly struct EnemyRuntimeStats
         return
             $"Wave {Wave}, Level {Level}, " +
             $"HP {MaxHealth}, Damage {Damage}, " +
+            $"Follow-up Damage {FollowUpDamage}, " +
             $"Attack Interval {AttackInterval:0.00}s, " +
             $"Special Turns {SpecialTurnRequirement}";
     }
