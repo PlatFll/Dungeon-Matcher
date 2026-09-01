@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,6 +47,12 @@ public sealed class EnemyCombatFeedback :
         "The Image that fills toward the next attack."
     )]
     private Image attackTimerFill;
+
+    [SerializeField]
+    [Tooltip(
+        "Remaining valid player moves before this enemy's special is ready."
+    )]
+    private TMP_Text specialAbilityCounterText;
 
     [Header("Attack Timer")]
     [SerializeField]
@@ -128,6 +135,7 @@ public sealed class EnemyCombatFeedback :
     {
         ResolveReferences();
         Subscribe();
+        RefreshSpecialAbilityCounter();
     }
 
     private void Update()
@@ -173,6 +181,9 @@ public sealed class EnemyCombatFeedback :
             enemyActor.DamageReceived +=
                 HandleDamageReceived;
 
+            enemyActor.SpecialCounterChanged +=
+                HandleSpecialCounterChanged;
+
             enemyActor.Defeated +=
                 HandleEnemyDefeated;
         }
@@ -199,6 +210,9 @@ public sealed class EnemyCombatFeedback :
         {
             enemyActor.DamageReceived -=
                 HandleDamageReceived;
+
+            enemyActor.SpecialCounterChanged -=
+                HandleSpecialCounterChanged;
 
             enemyActor.Defeated -=
                 HandleEnemyDefeated;
@@ -287,6 +301,86 @@ public sealed class EnemyCombatFeedback :
          */
         attackTimerFill.fillAmount =
             1f - remainingNormalized;
+    }
+
+    private void RefreshSpecialAbilityCounter()
+    {
+        if (enemyActor == null ||
+            !enemyActor.IsInitialized)
+        {
+            HideSpecialAbilityCounter();
+            return;
+        }
+
+        UpdateSpecialAbilityCounter(
+            enemyActor.CurrentSpecialTurnCount,
+            enemyActor.SpecialTurnRequirement
+        );
+    }
+
+    private void HandleSpecialCounterChanged(
+        EnemyActor enemy,
+        int currentTurnCount,
+        int turnRequirement)
+    {
+        if (enemy != enemyActor)
+        {
+            return;
+        }
+
+        UpdateSpecialAbilityCounter(
+            currentTurnCount,
+            turnRequirement
+        );
+    }
+
+    private void UpdateSpecialAbilityCounter(
+        int currentTurnCount,
+        int turnRequirement)
+    {
+        bool hasDisplayableSpecial =
+            enemyActor != null &&
+            enemyActor.IsInitialized &&
+            !enemyActor.IsDefeated &&
+            enemyActor.HasSpecialAbility &&
+            enemyActor.Definition != null &&
+            enemyActor.Definition.SpecialAbilityKind !=
+                EnemySpecialAbilityKind.None;
+
+        if (specialAbilityCounterText == null ||
+            !hasDisplayableSpecial)
+        {
+            HideSpecialAbilityCounter();
+            return;
+        }
+
+        turnRequirement =
+            Mathf.Max(0, turnRequirement);
+
+        int remainingMoves =
+            Mathf.Clamp(
+                turnRequirement - currentTurnCount,
+                0,
+                turnRequirement
+            );
+
+        specialAbilityCounterText.text =
+            remainingMoves.ToString();
+
+        specialAbilityCounterText.enabled = true;
+    }
+
+    private void HideSpecialAbilityCounter()
+    {
+        if (specialAbilityCounterText == null)
+        {
+            return;
+        }
+
+        specialAbilityCounterText.text =
+            string.Empty;
+
+        specialAbilityCounterText.enabled = false;
     }
 
     private void CreateRuntimeFlashMaterial()
@@ -834,6 +928,7 @@ public sealed class EnemyCombatFeedback :
         EnemyActor enemy)
     {
         StopAllFeedback();
+        HideSpecialAbilityCounter();
 
         if (attackTimerFill != null)
         {
@@ -902,6 +997,7 @@ public sealed class EnemyCombatFeedback :
     {
         Unsubscribe();
         StopAllFeedback();
+        HideSpecialAbilityCounter();
     }
 
     private void OnDestroy()
