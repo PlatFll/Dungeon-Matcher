@@ -15,6 +15,8 @@ public sealed class MinerEnemyAbility :
 
     private EnemyActor enemyActor;
     private BoardController boardController;
+    private EnemySpecialActionAvailability
+        specialActionAvailability;
 
     private int ownerInstanceId;
     private bool restoreQueued;
@@ -25,6 +27,7 @@ public sealed class MinerEnemyAbility :
         BoardController initializedBoard,
         IReadOnlyList<EnemyActor> activeEnemies)
     {
+        specialActionAvailability?.Dispose();
         Unsubscribe();
 
         enemyActor = initializedEnemy;
@@ -60,6 +63,14 @@ public sealed class MinerEnemyAbility :
                 this
             );
         }
+
+        specialActionAvailability =
+            new EnemySpecialActionAvailability(
+                this,
+                enemyActor,
+                boardController,
+                TryUseReadyAbility
+            );
 
         Subscribe();
     }
@@ -127,7 +138,7 @@ public sealed class MinerEnemyAbility :
             return;
         }
 
-        TryUseReadyAbility();
+        specialActionAvailability?.RequestExecution();
     }
 
     private void HandleAnimationActionReleased(
@@ -146,10 +157,10 @@ public sealed class MinerEnemyAbility :
          * owned the enemy, preserve the ready charge and retry immediately after
          * that impact releases the shared action window.
          */
-        TryUseReadyAbility();
+        specialActionAvailability?.RequestExecution();
     }
 
-    private void TryUseReadyAbility()
+    private bool TryUseReadyAbility()
     {
         if (isAttemptingReadyAbility ||
             enemyActor == null ||
@@ -157,7 +168,7 @@ public sealed class MinerEnemyAbility :
             enemyActor.IsDefeated ||
             !enemyActor.IsSpecialReady)
         {
-            return;
+            return false;
         }
 
         isAttemptingReadyAbility = true;
@@ -173,7 +184,7 @@ public sealed class MinerEnemyAbility :
             if (ownedMinedTileCount >=
                 MaximumOwnedMines)
             {
-                return;
+                return false;
             }
 
             bool timeFromAnimation =
@@ -189,7 +200,7 @@ public sealed class MinerEnemyAbility :
             if (enemyActor
                     .IsAutoAttackAnimationActionActive)
             {
-                return;
+                return false;
             }
 
             bool ownsSpecialAnimationAction = false;
@@ -202,7 +213,7 @@ public sealed class MinerEnemyAbility :
 
                 if (!ownsSpecialAnimationAction)
                 {
-                    return;
+                    return false;
                 }
             }
 
@@ -226,7 +237,7 @@ public sealed class MinerEnemyAbility :
                         .EndSpecialAbilityAnimationAction();
                 }
 
-                return;
+                return false;
             }
 
             enemyActor.NotifySpecialAbilityUsed();
@@ -237,6 +248,7 @@ public sealed class MinerEnemyAbility :
              * of silently consuming another five player moves.
              */
             enemyActor.ResetSpecialCounter();
+            return true;
         }
         finally
         {
@@ -272,6 +284,7 @@ public sealed class MinerEnemyAbility :
     private void HandleEnemyDefeated(
         EnemyActor defeatedEnemy)
     {
+        specialActionAvailability?.Dispose();
         QueueOwnedTileRestoration();
         Unsubscribe();
     }
@@ -317,6 +330,8 @@ public sealed class MinerEnemyAbility :
 
     private void OnDestroy()
     {
+        specialActionAvailability?.Dispose();
+
         /*
          * Defeat normally restores the holes first. This fallback also keeps
          * prototype wave-clears or unexpected object destruction from leaving

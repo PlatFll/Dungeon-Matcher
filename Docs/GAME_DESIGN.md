@@ -102,6 +102,7 @@ Exact shield capacity and reduction values remain balance data.
 - Enemy identity should come from understandable behavior, cadence, weakness, and counterplay rather than hidden exceptions.
 - Shared board logic must not hard-code individual enemies.
 - Enemy board actions occur only at safe board-resolution points.
+- Stagger prevents an enemy from starting a new auto attack or special ability. A special that becomes ready during stagger remains ready at 0, is not consumed or reset, and begins only after the final stagger ends and the board reaches a safe idle point. An action that already legitimately owns its gameplay flow before stagger retains that ownership.
 
 Detailed enemy kits and encounter compositions require explicit finalized specifications; current assets are implementation evidence, not a complete design bible.
 

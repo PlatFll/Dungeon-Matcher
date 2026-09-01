@@ -11,6 +11,8 @@ public sealed class ShieldingAlliesEnemyAbility :
     private EnemyActor enemyActor;
     private BoardController boardController;
     private IReadOnlyList<EnemyActor> activeEnemies;
+    private EnemySpecialActionAvailability
+        specialActionAvailability;
 
     private Coroutine readyAbilityCoroutine;
     private bool isAttemptingReadyAbility;
@@ -21,6 +23,7 @@ public sealed class ShieldingAlliesEnemyAbility :
         IReadOnlyList<EnemyActor> initializedActiveEnemies)
     {
         CancelReadyAbilityCoroutine();
+        specialActionAvailability?.Dispose();
         Unsubscribe();
 
         enemyActor = initializedEnemy;
@@ -42,6 +45,14 @@ public sealed class ShieldingAlliesEnemyAbility :
 
             return;
         }
+
+        specialActionAvailability =
+            new EnemySpecialActionAvailability(
+                this,
+                enemyActor,
+                boardController,
+                TryUseReadyAbility
+            );
 
         Subscribe();
     }
@@ -99,7 +110,7 @@ public sealed class ShieldingAlliesEnemyAbility :
             return;
         }
 
-        TryUseReadyAbility();
+        specialActionAvailability?.RequestExecution();
     }
 
     private void HandleAnimationActionReleased(
@@ -113,10 +124,10 @@ public sealed class ShieldingAlliesEnemyAbility :
             return;
         }
 
-        TryUseReadyAbility();
+        specialActionAvailability?.RequestExecution();
     }
 
-    private void TryUseReadyAbility()
+    private bool TryUseReadyAbility()
     {
         if (isAttemptingReadyAbility ||
             enemyActor == null ||
@@ -126,14 +137,14 @@ public sealed class ShieldingAlliesEnemyAbility :
             enemyActor.IsDefeated ||
             !enemyActor.IsSpecialReady)
         {
-            return;
+            return false;
         }
 
         if (boardController.IsBusy ||
             enemyActor.HasAnimationActionInProgress)
         {
             EnsureReadyAbilityCoroutine();
-            return;
+            return false;
         }
 
         CancelReadyAbilityCoroutine();
@@ -142,7 +153,7 @@ public sealed class ShieldingAlliesEnemyAbility :
                 .TryBeginSpecialAbilityAnimationAction())
         {
             EnsureReadyAbilityCoroutine();
-            return;
+            return false;
         }
 
         isAttemptingReadyAbility = true;
@@ -165,6 +176,7 @@ public sealed class ShieldingAlliesEnemyAbility :
              * granted by any individual EnemyActor.
              */
             enemyActor.ResetSpecialCounter();
+            return true;
         }
         finally
         {
@@ -233,7 +245,8 @@ public sealed class ShieldingAlliesEnemyAbility :
                 !enemyActor.HasAnimationActionInProgress)
             {
                 readyAbilityCoroutine = null;
-                TryUseReadyAbility();
+                specialActionAvailability
+                    ?.RequestExecution();
                 yield break;
             }
 
@@ -261,12 +274,14 @@ public sealed class ShieldingAlliesEnemyAbility :
         EnemyActor defeatedEnemy)
     {
         CancelReadyAbilityCoroutine();
+        specialActionAvailability?.Dispose();
         Unsubscribe();
     }
 
     private void OnDestroy()
     {
         CancelReadyAbilityCoroutine();
+        specialActionAvailability?.Dispose();
 
         if (enemyActor != null)
         {

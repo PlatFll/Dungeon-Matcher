@@ -15,6 +15,8 @@ public sealed class CrossbowGuardEnemyAbility :
 
     private EnemyActor enemyActor;
     private BoardController boardController;
+    private EnemySpecialActionAvailability
+        specialActionAvailability;
 
     private int ownerInstanceId;
     private bool releaseQueued;
@@ -24,6 +26,7 @@ public sealed class CrossbowGuardEnemyAbility :
         BoardController initializedBoard,
         IReadOnlyList<EnemyActor> activeEnemies)
     {
+        specialActionAvailability?.Dispose();
         Unsubscribe();
 
         enemyActor = initializedEnemy;
@@ -49,6 +52,14 @@ public sealed class CrossbowGuardEnemyAbility :
 
             return;
         }
+
+        specialActionAvailability =
+            new EnemySpecialActionAvailability(
+                this,
+                enemyActor,
+                boardController,
+                TryFireBolt
+            );
 
         Subscribe();
     }
@@ -108,7 +119,7 @@ public sealed class CrossbowGuardEnemyAbility :
             return;
         }
 
-        TryFireBolt();
+        specialActionAvailability?.RequestExecution();
     }
 
     private void HandleValidPlayerMoveCompleted(
@@ -127,17 +138,17 @@ public sealed class CrossbowGuardEnemyAbility :
          * board state; the ready charge is retained until a later valid move
          * produces a legal target.
          */
-        TryFireBolt();
+        specialActionAvailability?.RequestExecution();
     }
 
-    private void TryFireBolt()
+    private bool TryFireBolt()
     {
         if (enemyActor == null ||
             boardController == null ||
             enemyActor.IsDefeated ||
             !enemyActor.IsSpecialReady)
         {
-            return;
+            return false;
         }
 
         RefreshOwnedPinCount();
@@ -151,7 +162,7 @@ public sealed class CrossbowGuardEnemyAbility :
              * Once a bolt breaks, a fresh three-turn cycle is required.
              */
             enemyActor.ResetSpecialCounter();
-            return;
+            return true;
         }
 
         bool queued =
@@ -162,15 +173,17 @@ public sealed class CrossbowGuardEnemyAbility :
 
         if (!queued)
         {
-            return;
+            return false;
         }
 
         enemyActor.ResetSpecialCounter();
+        return true;
     }
 
     private void HandleEnemyDefeated(
         EnemyActor defeatedEnemy)
     {
+        specialActionAvailability?.Dispose();
         QueueOwnedPinRelease();
         Unsubscribe();
     }
@@ -212,6 +225,7 @@ public sealed class CrossbowGuardEnemyAbility :
 
     private void OnDestroy()
     {
+        specialActionAvailability?.Dispose();
         QueueOwnedPinRelease();
         Unsubscribe();
     }
