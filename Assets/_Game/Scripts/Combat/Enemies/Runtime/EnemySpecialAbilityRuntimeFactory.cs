@@ -9,7 +9,8 @@ public static class EnemySpecialAbilityRuntimeFactory
             GameObject enemyObject,
             EnemyActor enemyActor,
             BoardController boardController,
-            IReadOnlyList<EnemyActor> activeEnemies)
+            IReadOnlyList<EnemyActor> activeEnemies,
+            IEnemySummonService summonService = null)
     {
         if (abilityKind ==
             EnemySpecialAbilityKind.None)
@@ -100,6 +101,37 @@ public static class EnemySpecialAbilityRuntimeFactory
                 }
 
                 runtime = shieldingAbility;
+                break;
+
+            case EnemySpecialAbilityKind.TownMarshal:
+                if (summonService == null)
+                {
+                    Debug.LogError(
+                        "Town Marshal ability requires an enemy summon service.",
+                        enemyObject
+                    );
+
+                    return null;
+                }
+
+                TownMarshalEnemyAbility marshalAbility =
+                    enemyObject.GetComponent<
+                        TownMarshalEnemyAbility
+                    >();
+
+                if (marshalAbility == null)
+                {
+                    marshalAbility =
+                        enemyObject.AddComponent<
+                            TownMarshalEnemyAbility
+                        >();
+                }
+
+                marshalAbility.ConfigureSummonService(
+                    summonService
+                );
+
+                runtime = marshalAbility;
                 break;
 
             default:
