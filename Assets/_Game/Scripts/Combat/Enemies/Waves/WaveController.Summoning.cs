@@ -86,15 +86,34 @@ public sealed partial class WaveController
             EnemySlotUI slot =
                 enemySlots[index];
 
-            if (slot != null &&
-                !slot.IsOccupied &&
-                slot.CurrentEnemy == null)
+            if (IsSlotReadyForSummon(slot))
             {
                 return slot;
             }
         }
 
         return null;
+    }
+
+    private static bool IsSlotReadyForSummon(
+        EnemySlotUI slot)
+    {
+        if (slot == null ||
+            slot.IsOccupied ||
+            slot.CurrentEnemy != null ||
+            slot.EnemySpawnAnchor == null)
+        {
+            return false;
+        }
+
+        /*
+         * EnemySlotUI releases gameplay ownership as soon as an enemy is
+         * defeated, while EnemyLifecycleVFX may deliberately keep the defeated
+         * object alive under the spawn anchor for a short death presentation.
+         * Do not bind a summon on top of that object. A ready summon simply
+         * waits until the old enemy has actually left the anchor.
+         */
+        return slot.EnemySpawnAnchor.childCount == 0;
     }
 
     private GemType ChooseSummonGemType()
