@@ -16,6 +16,9 @@ MonoBehaviour:
   - wave: 5
     ruleName: First Special Encounter
     enemyCategories: 000000000000000001000000
+  - wave: 8
+    ruleName: Town Marshal Miniboss
+    enemyCategories: 02000000
   waveBands:
   - ruleName: Introduction
     minimumWave: 1

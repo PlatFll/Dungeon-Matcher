@@ -31,6 +31,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     [SerializeField]
     private float remainingAttackTime;
 
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Additional runtime speed applied to the cooldown countdown. " +
+        "1 is normal speed; 1.4 counts down 40% faster."
+    )]
+    private float runtimeAttackSpeedMultiplier = 1f;
+
     [SerializeField]
     private bool isRunning;
 
@@ -80,6 +87,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     public float RemainingAttackTime =>
         remainingAttackTime;
 
+    public float RuntimeAttackSpeedMultiplier =>
+        runtimeAttackSpeedMultiplier;
+
     public bool IsRunning =>
         isRunning;
 
@@ -122,6 +132,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
         enemyActor = enemy;
         playerTarget = target;
+        runtimeAttackSpeedMultiplier = 1f;
 
         enemyStagger =
             GetComponent<EnemyStagger>();
@@ -162,6 +173,22 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         {
             TryStartAttacking();
         }
+    }
+
+    public void SetRuntimeAttackSpeedMultiplier(
+        float multiplier)
+    {
+        runtimeAttackSpeedMultiplier =
+            Mathf.Clamp(
+                multiplier,
+                0.1f,
+                5f
+            );
+    }
+
+    public void ResetRuntimeAttackSpeedMultiplier()
+    {
+        runtimeAttackSpeedMultiplier = 1f;
     }
 
     public void TryStartAttacking()
@@ -595,7 +622,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                     Mathf.Max(
                         0f,
                         remainingAttackTime -
-                        Time.deltaTime
+                        Time.deltaTime *
+                        runtimeAttackSpeedMultiplier
                     );
 
                 yield return null;

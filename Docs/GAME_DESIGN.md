@@ -189,3 +189,62 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - Genuine Topaz destruction may still trigger Bardley's normal affinity healing through the established affinity-healing system.
 
 These are finalized gameplay rules. Timing and presentation numeric values not listed above remain tunable unless separately documented.
+
+### Town Marshal
+
+#### Identity and encounter role
+
+- Town Marshal is the first Mini-boss of Chapter 1, The Locals, and is introduced as a solo Mini-boss encounter on wave 8 in the current first-pass progression.
+- He is a pompous, cowardly local authority figure whose danger comes from rallying townsfolk rather than from personal combat strength.
+- He deliberately does not manipulate the match-3 board. Miner owns Chapter 1's board-interference lesson; Town Marshal teaches summoning, enemy-slot pressure, coordination, and target priority.
+- His presentation direction is a short/fat town official with a huge moustache and oversized hand bell. Final sprite/animation art is not yet wired into the current definition.
+
+#### First-pass combat balance
+
+- Target runtime maximum HP at the wave-8 introduction is approximately 400 under the expected-player-power baseline. The serialized base/scaling values are chosen to reach that target through the normal `DifficultyProfile` pipeline rather than bypassing global scaling.
+- His personal auto-attack is intentionally pathetic: approximately 1 damage at introduction with a very slow roughly 12-13 second runtime cadence.
+- He has no follow-up auto-attack hit.
+
+These numeric values are first-pass balance and should be playtested rather than treated as immutable final balance.
+
+#### Shared special cadence and ability selection
+
+- The Marshal receives one special-action opportunity every 3 valid completed player moves.
+- Invalid swaps and cascades do not advance this cadence, and the three-move requirement is locked against global special-turn shortening.
+- Ability choice is deterministic rather than random so the introductory Mini-boss remains learnable and readable.
+- His initial preference is `Ring the Bell`. After a successful Ring cast, his next preference is `Citizens, Seize Him!`; after a successful Citizens cast, his next preference returns to Ring.
+- If the preferred ability is currently invalid, he may use the other valid ability instead.
+- If neither ability is currently legal, the ready special is held until an ability becomes legal rather than consuming the action on a no-op.
+
+#### Passive — Big Man in Town
+
+- `Ring the Bell` designates the newly summoned local as the Marshal's protector.
+- The Marshal visibly retreats behind that protector for up to 2 valid completed player moves.
+- Retreat ends early if that specific protector is defeated.
+- While retreated, ordinary direct/clear damage that would normally hit the Marshal is fully intercepted by the protector. The damage is not discarded; it enters the protector's normal `EnemyActor` damage path.
+- Damage-over-time already applied to the Marshal is not redirected.
+- Retreat presentation is non-authoritative: the current first-pass fallback moves him slightly back/up, scales him down, and dims him. Gameplay must remain correct if final retreat art/animation is missing.
+- If a special was being held ready because all enemy slots were full when the protector dies, the Marshal's shared special counter resets. This prevents an immediate replacement summon and guarantees a real opening after the player removes his meat shield.
+
+#### Ability 1 — Ring the Bell
+
+- Ring the Bell requires a free enemy spawn slot and summons exactly one local per successful cast.
+- There are only three active enemy slots total; the ability can never create an invisible or fourth active enemy.
+- Current implementation candidates are Farmer, Pan Villager, and Basket Villager because those are the existing Chapter-1 local assets. The newer roster concept may later replace Basket Villager with Torch Villager; that content/naming change is deliberately not folded into the Marshal feature.
+- The candidate list is data-driven in the Marshal's `EnemyDefinition` so the roster can change without rewriting the runtime.
+- Summoned townsfolk are real independent enemies. They are added to the authoritative active-wave roster, count toward wave completion, and remain alive if the Marshal dies.
+
+#### Ability 2 — Citizens, Seize Him!
+
+- Citizens, Seize Him! affects all currently living local allies matching the Marshal's configured local candidate set, whether they were part of the original encounter or were summoned by him.
+- It increases those allies' real-time auto-attack speed by 40% for 5 seconds in the first-pass balance.
+- It does not increase attack damage and does not buff the Marshal himself.
+- The buff does not stack with itself. The ability is invalid while its current rally is active.
+- The ability is invalid when no qualifying local ally is alive.
+- A local summoned after an already-running rally begins does not retroactively receive that existing rally; a future valid cast may include it.
+
+#### Summon lifetime rule established by this encounter
+
+- Summon persistence is a property of the summon fiction/mechanic, not a universal rule that all summoned entities vanish with their owner.
+- Town Marshal's rallied townsfolk are independent physical enemies and persist after his death.
+- Future owner-bound magical summons, such as a spirit familiar, may explicitly despawn when their summoner dies.
