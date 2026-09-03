@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_TownMarshal
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: town_marshal
+  displayName: Town Marshal
+  category: 2
+  description: A pompous local official who rings his enormous bell, rallies the townsfolk, and hides behind whoever answers.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 0}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
+  baseMaxHealth: 120
+  baseDamage: 1
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 12
+  hasSpecialAbility: 1
+  specialAbilityKind: 5
+  baseSpecialTurnRequirement: 3
+  lockSpecialTurnRequirement: 1
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates:
+  - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+  - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+  - {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  minimumWave: 8
+  spawnWeight: 1
+  healthMultiplier: 1.00394
+  damageMultiplier: 0.63
+  attackSpeedMultiplier: 1
+  staggerDurationMultiplier: 1
