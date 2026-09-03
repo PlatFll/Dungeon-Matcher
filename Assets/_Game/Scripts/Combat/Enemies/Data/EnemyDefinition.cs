@@ -173,6 +173,35 @@ public sealed class EnemyDefinition : ScriptableObject
     private EnemyBarricadeStyle barricadeStyle =
         EnemyBarricadeStyle.Wood;
 
+    [Header("Town Marshal Ability")]
+
+    [SerializeField]
+    [Tooltip(
+        "Independent local enemies that Ring the Bell may summon into a free " +
+        "enemy slot. They remain in the wave if the Marshal is defeated."
+    )]
+    private EnemyDefinition[] townMarshalSummonCandidates =
+        new EnemyDefinition[0];
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Accepted player moves that Big Man in Town can keep the Marshal " +
+        "retreated behind the newly summoned protector."
+    )]
+    private int townMarshalRetreatMoveCount = 2;
+
+    [SerializeField, Min(1f)]
+    [Tooltip(
+        "Real-time auto-attack speed multiplier applied by Citizens, Seize Him!"
+    )]
+    private float townMarshalRallyAttackSpeedMultiplier = 1.4f;
+
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Real-time duration in seconds of Citizens, Seize Him!"
+    )]
+    private float townMarshalRallyDuration = 5f;
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]
@@ -304,6 +333,18 @@ public sealed class EnemyDefinition : ScriptableObject
     public EnemyBarricadeStyle BarricadeStyle =>
         barricadeStyle;
 
+    public EnemyDefinition[] TownMarshalSummonCandidates =>
+        townMarshalSummonCandidates;
+
+    public int TownMarshalRetreatMoveCount =>
+        townMarshalRetreatMoveCount;
+
+    public float TownMarshalRallyAttackSpeedMultiplier =>
+        townMarshalRallyAttackSpeedMultiplier;
+
+    public float TownMarshalRallyDuration =>
+        townMarshalRallyDuration;
+
     public int MinimumWave =>
         minimumWave;
 
@@ -407,6 +448,24 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 1,
                 barricadeDurability
+            );
+
+        townMarshalRetreatMoveCount =
+            Mathf.Max(
+                1,
+                townMarshalRetreatMoveCount
+            );
+
+        townMarshalRallyAttackSpeedMultiplier =
+            Mathf.Max(
+                1f,
+                townMarshalRallyAttackSpeedMultiplier
+            );
+
+        townMarshalRallyDuration =
+            Mathf.Max(
+                0.1f,
+                townMarshalRallyDuration
             );
 
         minimumWave =
