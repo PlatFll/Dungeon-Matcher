@@ -214,6 +214,20 @@ Unity serialization is part of the architecture, not an incidental editor detail
 - All `BoardController` partial fields serialize onto the single `BoardController` component in the scene.
 - Runtime-added components are not a substitute for required serialized data unless the architecture explicitly provides safe discovery/default behavior.
 
+## Enemy summoning, interception, and temporary attack-speed modifiers
+
+The Town Marshal feature adds three reusable enemy-runtime capabilities without moving ownership into `BoardController`:
+
+- `IEnemySummonService` is the narrow contract used by enemy runtimes that need to request a real enemy spawn. `WaveController` implements it because the wave system owns enemy slots, active-enemy membership, weakness assignment, scaled runtime stats, prefab initialization, lifecycle VFX, and wave-completion accounting.
+- `WaveController.TrySummonEnemy` may only use a genuinely free configured enemy slot. A successful summon is initialized through the same `CreateEnemy` path as normal wave enemies, added to `activeEnemies`, and therefore remains an independent wave member until defeated. Enemy runtimes must not instantiate enemy prefabs or mutate the active roster themselves.
+- `EnemySpecialAbilityRuntimeFactory` may pass the summon service to runtimes that require it. Runtimes that do not summon remain unaware of this capability.
+- `EnemyActor` owns optional one-hop damage interception through `SetDamageRedirectTarget` / `ClearDamageRedirectTarget`. Normal `TryTakeDamage` may redirect one incoming damage instance to the designated living enemy, but the redirected hit is resolved with further redirection disabled so interception cannot recurse through a chain. `TryTakeDamageWithoutFeedback` bypasses interception, preserving already-applied damage-over-time behavior.
+- Damage interception changes only the destination of the established actor damage call. The receiving actor still owns shield reduction, HP mutation, feedback, and defeat. Combat and board systems do not special-case the Town Marshal.
+- `EnemyAutoAttack` owns a runtime attack-speed multiplier in addition to the definition/difficulty-derived base interval. Temporary buffs accelerate the existing countdown rather than creating a second attack loop, changing attack damage, or rewriting serialized base stats. Resetting the multiplier returns the same attack loop to normal speed.
+- Town Marshal's retreat visual is presentation-only. The runtime's authoritative protection state is the `EnemyActor` redirect target and its move-limited lifetime; missing or replaced art cannot change whether damage is intercepted.
+
+These capabilities are generic infrastructure. Future summoners, bodyguards, or temporary speed buffs may reuse them, but their lifetime, ownership, persistence, targeting, and balance rules must remain explicit per mechanic rather than inferred from Town Marshal.
+
 ## Validation workflow
 
 For C# gameplay, runtime, or editor changes, run from the repository root:
