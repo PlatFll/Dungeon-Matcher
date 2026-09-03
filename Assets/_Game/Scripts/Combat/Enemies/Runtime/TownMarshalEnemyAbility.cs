@@ -551,10 +551,25 @@ public sealed class TownMarshalEnemyAbility :
     private void HandleProtectorDefeated(
         EnemyActor defeatedProtector)
     {
-        if (defeatedProtector ==
+        if (defeatedProtector !=
             currentProtector)
         {
-            EndRetreat();
+            return;
+        }
+
+        EndRetreat();
+
+        /*
+         * If the Marshal had a special held ready because every slot was full,
+         * killing his protector must create a real opening instead of allowing
+         * an immediate replacement summon into the newly-empty slot. Resetting
+         * the shared three-move counter guarantees that breathing room.
+         */
+        if (enemyActor != null &&
+            !enemyActor.IsDefeated &&
+            enemyActor.IsSpecialReady)
+        {
+            enemyActor.ResetSpecialCounter();
         }
     }
 
