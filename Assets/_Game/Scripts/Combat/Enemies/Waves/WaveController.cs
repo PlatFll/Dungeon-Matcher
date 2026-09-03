@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class WaveController : MonoBehaviour
+public sealed partial class WaveController :
+    MonoBehaviour,
+    IEnemySummonService
 {
     [Header("Enemy Data")]
     [SerializeField]
@@ -600,7 +602,8 @@ public sealed class WaveController : MonoBehaviour
                         enemyObject,
                         enemy,
                         boardController,
-                        activeEnemies
+                        activeEnemies,
+                        this
                     );
             }
         }
