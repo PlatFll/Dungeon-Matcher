@@ -19,6 +19,11 @@ MonoBehaviour:
   - wave: 8
     ruleName: Town Marshal Miniboss
     enemyCategories: 02000000
+  - wave: 16
+    ruleName: Siege Sergeant Miniboss
+    enemyCategories: 02000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
   waveBands:
   - ruleName: Introduction
     minimumWave: 1

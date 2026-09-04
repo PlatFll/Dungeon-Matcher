@@ -254,13 +254,21 @@ public sealed partial class WaveController :
             EnemyCategory requestedCategory =
                 CurrentPlan.Categories[slotIndex];
 
-            bool foundEnemy =
-                TrySelectEnemyDefinition(
-                    requestedCategory,
-                    selectedDefinitions,
-                    out EnemyDefinition definition,
-                    out EnemyCategory selectedCategory
-                );
+            EnemyDefinition definition = waveSpawnProfile.GetFixedEnemy(currentWave, slotIndex);
+            EnemyCategory selectedCategory = requestedCategory;
+            bool foundEnemy;
+            if (definition != null)
+            {
+                foundEnemy = definition.EnemyPrefab != null &&
+                    definition.MinimumWave <= currentWave &&
+                    definition.Category == requestedCategory &&
+                    enemyDatabase.ContainsEnemy(definition);
+            }
+            else
+            {
+                foundEnemy = TrySelectEnemyDefinition(requestedCategory,
+                    selectedDefinitions, out definition, out selectedCategory);
+            }
 
             if (!foundEnemy ||
                 definition == null)

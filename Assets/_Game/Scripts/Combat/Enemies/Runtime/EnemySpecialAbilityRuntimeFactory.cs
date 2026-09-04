@@ -134,6 +134,14 @@ public static class EnemySpecialAbilityRuntimeFactory
                 runtime = marshalAbility;
                 break;
 
+            case EnemySpecialAbilityKind.SiegeSergeant:
+                SiegeSergeantEnemyAbility sergeant =
+                    enemyObject.GetComponent<SiegeSergeantEnemyAbility>();
+                if (sergeant == null)
+                    sergeant = enemyObject.AddComponent<SiegeSergeantEnemyAbility>();
+                runtime = sergeant;
+                break;
+
             default:
                 Debug.LogError(
                     $"No runtime factory is registered for " +

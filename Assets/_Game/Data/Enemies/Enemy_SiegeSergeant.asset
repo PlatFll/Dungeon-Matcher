@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_SiegeSergeant
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: siege_sergeant
+  displayName: Siege Sergeant
+  category: 2
+  description: Builds blockade lines and marks a pair of gems for a hammer strike.
+    Clear either marked gem within two moves to interrupt. His own blockades
+    grant him twenty percent damage reduction.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: bdd56084ae2f413ca54e04f10e3d7dda, type: 3}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
+  baseMaxHealth: 600
+  baseDamage: 5
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 10
+  hasSpecialAbility: 1
+  specialAbilityKind: 6
+  baseSpecialTurnRequirement: 3
+  lockSpecialTurnRequirement: 1
+  minimumWave: 16
+  spawnWeight: 1
+  healthMultiplier: 0.200629173
+  damageMultiplier: 0.468823254
+  attackSpeedMultiplier: 1.014379849
+  staggerDurationMultiplier: 1
+  barricadesPerUse: 4
+  maximumOwnedBarricades: 8
+  barricadeDurability: 1
+  barricadeStyle: 0
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2

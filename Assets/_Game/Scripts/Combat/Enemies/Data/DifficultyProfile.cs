@@ -382,7 +382,8 @@ public sealed class DifficultyProfile : ScriptableObject
             ),
             attackInterval: calculatedAttackInterval,
             specialTurnRequirement:
-                calculatedSpecialTurns
+                calculatedSpecialTurns,
+            damageMultiplier: totalDamageMultiplier
         );
     }
 

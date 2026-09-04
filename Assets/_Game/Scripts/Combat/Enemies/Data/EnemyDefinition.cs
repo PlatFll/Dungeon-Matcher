@@ -202,6 +202,20 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private float townMarshalRallyDuration = 5f;
 
+    [Header("Siege Sergeant Ability")]
+    [SerializeField, Min(1)]
+    private int hammerWarningMoves = 2;
+
+    [SerializeField, Min(0)]
+    private int hammerBaseDamage = 12;
+
+    [SerializeField, Range(0f, 0.9f)]
+    private float barricadeDamageReduction = 0.2f;
+
+    public int HammerWarningMoves => Mathf.Max(1, hammerWarningMoves);
+    public int HammerBaseDamage => Mathf.Max(0, hammerBaseDamage);
+    public float BarricadeDamageReduction => Mathf.Clamp(barricadeDamageReduction, 0f, 0.9f);
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]

@@ -5,5 +5,6 @@ public enum EnemySpecialAbilityKind
     CrossbowGuardBolt = 2,
     Barricade = 3,
     ShieldingAllies = 4,
-    TownMarshal = 5
+    TownMarshal = 5,
+    SiegeSergeant = 6
 }
