@@ -125,6 +125,16 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ## Finalized mechanic specifications
 
+### Spear Guard
+
+- Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. He becomes eligible starting at wave 9.
+- His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
+- First-pass runtime targets at wave 9 with the standard difficulty profile and expected player power are 100 maximum HP, 5 damage per attack, and an 8-second attack interval.
+- The definition's individual scaling modifiers normalize the global wave-9 curves to those introduction targets. Later waves continue to scale through the existing difficulty pipeline. These numbers are tunable prototype balance, not permanent progression gates.
+- His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a wave-9 spawn.
+- Until his own art is imported, his definition uses the existing Spear Knight sprite as temporary fallback artwork, with the shared single-lunge presentation and no animation override.
+- The broader chapter encounter pools are still pending migration: existing guards and knights retain their previous unlocks in this focused addition. The Spear Knight and Shield Knight wave-8 entries below describe that earlier implementation; they are not the intended order for the new chapter plan.
+
 ### Spear Knight
 
 - Spear Knight is a late-game Normal enemy eligible starting at wave 8.
