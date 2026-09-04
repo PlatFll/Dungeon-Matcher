@@ -45,6 +45,9 @@ public sealed class EnemyActor : MonoBehaviour
     )]
     private EnemyActor damageRedirectTarget;
 
+    // Evaluated at impact, so conditional defence cannot lag behind board state.
+    public Func<float> IncomingDamageMultiplier { private get; set; }
+
     public event Action<EnemyActor> Initialized;
 
     public event Action<EnemyActor, int, int>
@@ -246,6 +249,7 @@ public sealed class EnemyActor : MonoBehaviour
 
         currentShield = 0;
         damageRedirectTarget = null;
+        IncomingDamageMultiplier = null;
 
         currentSpecialTurnCount = 0;
         isSpecialReady = false;
@@ -397,7 +401,10 @@ public sealed class EnemyActor : MonoBehaviour
             damageRedirectTarget = null;
         }
 
-        int finalDamage = amount;
+        float incomingMultiplier = IncomingDamageMultiplier != null
+            ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
+        int finalDamage = Mathf.Max(1,
+            Mathf.CeilToInt(amount * incomingMultiplier));
 
         bool shieldWasActive =
             currentShield > 0;

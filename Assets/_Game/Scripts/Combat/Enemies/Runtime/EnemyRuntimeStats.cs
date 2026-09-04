@@ -8,6 +8,7 @@ public readonly struct EnemyRuntimeStats
     public int MaxHealth { get; }
     public int Damage { get; }
     public int FollowUpDamage { get; }
+    public float DamageMultiplier { get; }
 
     public float AttackInterval { get; }
 
@@ -20,8 +21,10 @@ public readonly struct EnemyRuntimeStats
         int damage,
         int followUpDamage,
         float attackInterval,
-        int specialTurnRequirement)
+        int specialTurnRequirement,
+        float damageMultiplier = 1f)
     {
+        DamageMultiplier = Mathf.Max(0f, damageMultiplier);
         Wave = Mathf.Max(1, wave);
         Level = Mathf.Max(1, level);
 
