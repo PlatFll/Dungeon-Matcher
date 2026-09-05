@@ -36,22 +36,26 @@ public static class EnemySpecialAbilityRuntimeFactory
         switch (abilityKind)
         {
             case EnemySpecialAbilityKind.KnightCaptain:
-                var captain = enemyObject.GetComponent<KnightCaptainEnemyAbility>();
-                if (captain == null) captain = enemyObject.AddComponent<KnightCaptainEnemyAbility>();
+                var captain =
+                    enemyObject.GetComponent<KnightCaptainEnemyAbility>();
+
+                if (captain == null)
+                {
+                    captain =
+                        enemyObject.AddComponent<KnightCaptainEnemyAbility>();
+                }
+
                 runtime = captain;
                 break;
+
             case EnemySpecialAbilityKind.Miner:
                 MinerEnemyAbility minerAbility =
-                    enemyObject.GetComponent<
-                        MinerEnemyAbility
-                    >();
+                    enemyObject.GetComponent<MinerEnemyAbility>();
 
                 if (minerAbility == null)
                 {
                     minerAbility =
-                        enemyObject.AddComponent<
-                            MinerEnemyAbility
-                        >();
+                        enemyObject.AddComponent<MinerEnemyAbility>();
                 }
 
                 runtime = minerAbility;
@@ -59,16 +63,12 @@ public static class EnemySpecialAbilityRuntimeFactory
 
             case EnemySpecialAbilityKind.CrossbowGuardBolt:
                 CrossbowGuardEnemyAbility crossbowAbility =
-                    enemyObject.GetComponent<
-                        CrossbowGuardEnemyAbility
-                    >();
+                    enemyObject.GetComponent<CrossbowGuardEnemyAbility>();
 
                 if (crossbowAbility == null)
                 {
                     crossbowAbility =
-                        enemyObject.AddComponent<
-                            CrossbowGuardEnemyAbility
-                        >();
+                        enemyObject.AddComponent<CrossbowGuardEnemyAbility>();
                 }
 
                 runtime = crossbowAbility;
@@ -76,16 +76,12 @@ public static class EnemySpecialAbilityRuntimeFactory
 
             case EnemySpecialAbilityKind.Barricade:
                 BarricadeEnemyAbility barricadeAbility =
-                    enemyObject.GetComponent<
-                        BarricadeEnemyAbility
-                    >();
+                    enemyObject.GetComponent<BarricadeEnemyAbility>();
 
                 if (barricadeAbility == null)
                 {
                     barricadeAbility =
-                        enemyObject.AddComponent<
-                            BarricadeEnemyAbility
-                        >();
+                        enemyObject.AddComponent<BarricadeEnemyAbility>();
                 }
 
                 runtime = barricadeAbility;
@@ -93,16 +89,12 @@ public static class EnemySpecialAbilityRuntimeFactory
 
             case EnemySpecialAbilityKind.ShieldingAllies:
                 ShieldingAlliesEnemyAbility shieldingAbility =
-                    enemyObject.GetComponent<
-                        ShieldingAlliesEnemyAbility
-                    >();
+                    enemyObject.GetComponent<ShieldingAlliesEnemyAbility>();
 
                 if (shieldingAbility == null)
                 {
                     shieldingAbility =
-                        enemyObject.AddComponent<
-                            ShieldingAlliesEnemyAbility
-                        >();
+                        enemyObject.AddComponent<ShieldingAlliesEnemyAbility>();
                 }
 
                 runtime = shieldingAbility;
@@ -120,31 +112,57 @@ public static class EnemySpecialAbilityRuntimeFactory
                 }
 
                 TownMarshalEnemyAbility marshalAbility =
-                    enemyObject.GetComponent<
-                        TownMarshalEnemyAbility
-                    >();
+                    enemyObject.GetComponent<TownMarshalEnemyAbility>();
 
                 if (marshalAbility == null)
                 {
                     marshalAbility =
-                        enemyObject.AddComponent<
-                            TownMarshalEnemyAbility
-                        >();
+                        enemyObject.AddComponent<TownMarshalEnemyAbility>();
                 }
 
-                marshalAbility.ConfigureSummonService(
-                    summonService
-                );
-
+                marshalAbility.ConfigureSummonService(summonService);
                 runtime = marshalAbility;
                 break;
 
             case EnemySpecialAbilityKind.SiegeSergeant:
                 SiegeSergeantEnemyAbility sergeant =
                     enemyObject.GetComponent<SiegeSergeantEnemyAbility>();
+
                 if (sergeant == null)
-                    sergeant = enemyObject.AddComponent<SiegeSergeantEnemyAbility>();
+                {
+                    sergeant =
+                        enemyObject.AddComponent<SiegeSergeantEnemyAbility>();
+                }
+
                 runtime = sergeant;
+                break;
+
+            case EnemySpecialAbilityKind.RoyalStandardBearer:
+                RoyalStandardBearerEnemyAbility standardBearer =
+                    enemyObject.GetComponent<
+                        RoyalStandardBearerEnemyAbility>();
+
+                if (standardBearer == null)
+                {
+                    standardBearer =
+                        enemyObject.AddComponent<
+                            RoyalStandardBearerEnemyAbility>();
+                }
+
+                runtime = standardBearer;
+                break;
+
+            case EnemySpecialAbilityKind.CourtMage:
+                CourtMageEnemyAbility courtMage =
+                    enemyObject.GetComponent<CourtMageEnemyAbility>();
+
+                if (courtMage == null)
+                {
+                    courtMage =
+                        enemyObject.AddComponent<CourtMageEnemyAbility>();
+                }
+
+                runtime = courtMage;
                 break;
 
             default:
