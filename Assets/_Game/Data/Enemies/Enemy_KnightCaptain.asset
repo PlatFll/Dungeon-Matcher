@@ -10,47 +10,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: Enemy_PanVillager
+  m_Name: Enemy_KnightCaptain
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  enemyId: pan_villager
-  displayName: Pan Villager
-  category: 0
-  description: A beginner villager who hits harder with a frying pan but attacks
-    slowly.
+  enemyId: knight_captain
+  displayName: Knight Captain
+  category: 2
+  description: 
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 067d7a9136c23af439fe5138248ae38c, type: 3}
-  animationControllerOverride: {fileID: 0}
-  baseMaxHealth: 55
-  baseDamage: 3
+  fallbackVisualSprite: {fileID: 0}
+  animationControllerOverride: {fileID: 9100000, guid: f5c9fcbf8c820fa4291a59f17dff8b2c, type: 2}
+  baseMaxHealth: 240
+  baseDamage: 8
   baseAttackInterval: 10
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
-  baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
-  minimumWave: 3
+  hasSpecialAbility: 1
+  specialAbilityKind: 7
+  baseSpecialTurnRequirement: 4
+  minimumWave: 21
   spawnWeight: 1
   healthMultiplier: 1
   damageMultiplier: 1
   attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
-  maximumWave: 16
+  crownSoldier: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: -0.06
-      outSlope: -0.06
+      value: 0.6
+      inSlope: 0.2
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 15
-      value: 0.1
-      inSlope: -0.06
-      outSlope: -0.06
+      time: 7
+      value: 2
+      inSlope: 0.2
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -58,3 +56,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  lockSpecialTurnRequirement: 1
+  encounterEscorts:
+  - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+  - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+  - {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+  maximumSpecialEscorts: 1

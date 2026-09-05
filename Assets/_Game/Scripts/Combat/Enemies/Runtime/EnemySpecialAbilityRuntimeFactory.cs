@@ -35,6 +35,11 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.KnightCaptain:
+                var captain = enemyObject.GetComponent<KnightCaptainEnemyAbility>();
+                if (captain == null) captain = enemyObject.AddComponent<KnightCaptainEnemyAbility>();
+                runtime = captain;
+                break;
             case EnemySpecialAbilityKind.Miner:
                 MinerEnemyAbility minerAbility =
                     enemyObject.GetComponent<

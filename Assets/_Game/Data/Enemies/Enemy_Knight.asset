@@ -13,21 +13,46 @@ MonoBehaviour:
   m_Name: Enemy_Knight
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   enemyId: knight
-  displayName: Knight
+  displayName: Sword Knight
   category: 0
   description: 
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 0}
   animationControllerOverride: {fileID: 9100000, guid: f5c9fcbf8c820fa4291a59f17dff8b2c, type: 2}
-  baseMaxHealth: 100
+  baseMaxHealth: 120
   baseDamage: 5
   baseAttackInterval: 10
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
-  minimumWave: 6
+  minimumWave: 17
   spawnWeight: 1
   healthMultiplier: 1
   damageMultiplier: 1
   attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
+  crownSoldier: 1
+  progressionWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 7
+      value: 2
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

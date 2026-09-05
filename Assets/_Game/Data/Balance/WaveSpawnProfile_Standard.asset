@@ -19,58 +19,13 @@ MonoBehaviour:
   - wave: 8
     ruleName: Town Marshal Miniboss
     enemyCategories: 02000000
-  - wave: 9
-    ruleName: Chapter 2 - Reinforcements Arrive
-    enemyCategories: 0000000000000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-  - wave: 10
-    ruleName: Chapter 2 - Guard Line
-    enemyCategories: 0000000000000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-  - wave: 11
-    ruleName: Chapter 2 - Ranged Support
-    enemyCategories: 0000000001000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
-  - wave: 12
-    ruleName: Chapter 2 - Field Engineering
-    enemyCategories: 0000000001000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
-  - wave: 13
-    ruleName: Chapter 2 - Coordinated Patrol
-    enemyCategories: 000000000000000001000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
-    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
-  - wave: 14
-    ruleName: Chapter 2 - Reinforced Guard Line
-    enemyCategories: 000000000000000001000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
-  - wave: 15
-    ruleName: Chapter 2 - Siege Vanguard
-    enemyCategories: 000000000100000001000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
-    - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
-    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
   - wave: 16
     ruleName: Siege Sergeant Miniboss
     enemyCategories: 02000000
     fixedEnemies:
     - {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
   waveBands:
-  - ruleName: Introduction
+  - ruleName: Locals - Introduction
     minimumWave: 1
     maximumWave: 2
     minimumEnemyCount: 1
@@ -79,72 +34,69 @@ MonoBehaviour:
     categoryWeights:
     - category: 0
       weight: 100
-      maximumPerWave: 0
-  - ruleName: Early Combat
+      maximumPerWave: 3
+  - ruleName: Locals - Patrols
     minimumWave: 3
     maximumWave: 4
     minimumEnemyCount: 2
     maximumEnemyCount: 2
-    guaranteedCategories: 0000000000000000
+    guaranteedCategories: 00000000
     categoryWeights:
     - category: 0
       weight: 100
-      maximumPerWave: 0
-  - ruleName: Developing
+      maximumPerWave: 3
+  - ruleName: Locals - Resistance
     minimumWave: 6
-    maximumWave: 9
+    maximumWave: 7
     minimumEnemyCount: 2
     maximumEnemyCount: 3
     guaranteedCategories: 00000000
     categoryWeights:
     - category: 0
       weight: 75
-      maximumPerWave: 0
+      maximumPerWave: 3
     - category: 1
       weight: 25
       maximumPerWave: 1
-  - ruleName: Escalation
-    minimumWave: 10
-    maximumWave: 14
-    minimumEnemyCount: 3
+  - ruleName: Town Calls for Help
+    minimumWave: 9
+    maximumWave: 15
+    minimumEnemyCount: 2
+    maximumEnemyCount: 3
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 65
+      maximumPerWave: 3
+    - category: 1
+      weight: 35
+      maximumPerWave: 1
+  - ruleName: Crown - Knights Arrive
+    minimumWave: 17
+    maximumWave: 20
+    minimumEnemyCount: 2
+    maximumEnemyCount: 3
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 70
+      maximumPerWave: 3
+    - category: 1
+      weight: 30
+      maximumPerWave: 1
+  - ruleName: Crown - Coordinated Formations
+    minimumWave: 21
+    maximumWave: 0
+    minimumEnemyCount: 2
     maximumEnemyCount: 3
     guaranteedCategories: 00000000
     categoryWeights:
     - category: 0
       weight: 55
-      maximumPerWave: 0
+      maximumPerWave: 3
     - category: 1
-      weight: 45
-      maximumPerWave: 2
-  - ruleName: Miniboss Introduction
-    minimumWave: 15
-    maximumWave: 19
-    minimumEnemyCount: 3
-    maximumEnemyCount: 3
-    guaranteedCategories: 
-    categoryWeights:
-    - category: 0
-      weight: 45
-      maximumPerWave: 0
-    - category: 1
-      weight: 45
-      maximumPerWave: 2
-    - category: 2
-      weight: 10
+      weight: 25
       maximumPerWave: 1
-  - ruleName: Endless Pressure
-    minimumWave: 20
-    maximumWave: 0
-    minimumEnemyCount: 3
-    maximumEnemyCount: 3
-    guaranteedCategories: 
-    categoryWeights:
-    - category: 0
-      weight: 35
-      maximumPerWave: 0
-    - category: 1
-      weight: 50
-      maximumPerWave: 2
     - category: 2
-      weight: 15
+      weight: 20
       maximumPerWave: 1

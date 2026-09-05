@@ -6,5 +6,6 @@ public enum EnemySpecialAbilityKind
     Barricade = 3,
     ShieldingAllies = 4,
     TownMarshal = 5,
-    SiegeSergeant = 6
+    SiegeSergeant = 6,
+    KnightCaptain = 7
 }

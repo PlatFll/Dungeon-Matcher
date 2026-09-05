@@ -4,6 +4,45 @@ using UnityEngine;
 
 public partial class BoardController
 {
+    private readonly HashSet<Gem> movablePinnedGems = new HashSet<Gem>();
+
+    private bool IsGemFixedByPin(Gem gem) => IsGemPinned(gem) && !movablePinnedGems.Contains(gem);
+
+    public void ReleaseMovablePinOnReplacement(Gem gem)
+    {
+        if (movablePinnedGems.Contains(gem)) ReleasePinInternal(gem);
+    }
+
+    public bool TryQueueTopUpMovablePins(EnemyActor owner, int cap,
+        System.Action<bool> completed, System.Func<bool> cancelled)
+    {
+        if (owner == null || owner.IsDefeated || !owner.IsInitialized || gems == null) return false;
+        pendingBoardMutations.Enqueue(new BoardMutationRequest
+        {
+            Kind = BoardMutationKind.TopUpMovablePins, OwnerActor = owner,
+            OwnerInstanceId = owner.GetInstanceID(), MaximumOwnedPins = Mathf.Clamp(cap, 1, 3),
+            Completed = completed, IsCancelled = cancelled, MovablePin = true
+        });
+        TryStartBoardMutationProcessor();
+        return true;
+    }
+
+    private IEnumerator ExecuteTopUpMovablePins(BoardMutationRequest request)
+    {
+        while (request.OwnerActor != null && !request.OwnerActor.IsDefeated &&
+            (request.IsCancelled == null || !request.IsCancelled()) &&
+            GetPinnedGemCountForOwner(request.OwnerInstanceId) < request.MaximumOwnedPins)
+        {
+            Gem target = null;
+            foreach (Gem candidate in BuildSafePinnableGemList())
+                if (IsOrdinaryGemOnBoard(candidate)) { target = candidate; break; }
+            if (target == null) yield break;
+            request.TargetGem = target;
+            yield return ExecutePinRequest(request);
+            if (!pinnedGemOwners.ContainsKey(target)) yield break;
+            request.Succeeded = true;
+        }
+    }
     [Header("Crossbow Guard Pin")]
 
     [SerializeField]
@@ -310,6 +349,7 @@ public partial class BoardController
          */
         pinnedGemOwners[selectedGem] =
             request.OwnerInstanceId;
+        if (request.MovablePin) movablePinnedGems.Add(selectedGem);
 
         /*
          * Defensive recheck. With structural mutations gated before target
@@ -318,6 +358,7 @@ public partial class BoardController
          */
         if (!HasAvailableMove())
         {
+            movablePinnedGems.Remove(selectedGem);
             pinnedGemOwners.Remove(
                 selectedGem
             );
@@ -541,7 +582,7 @@ public partial class BoardController
                         matchedGem.Row
                     );
 
-                if (distance <= 1)
+                if (distance <= 1 && !movablePinnedGems.Contains(pinnedGem))
                 {
                     pinsToRelease.Add(
                         pinnedGem
@@ -597,6 +638,7 @@ public partial class BoardController
     private void ReleasePinInternal(
         Gem pinnedGem)
     {
+        movablePinnedGems.Remove(pinnedGem);
         if (pinnedGem == null ||
             !pinnedGemOwners.Remove(
                 pinnedGem))
@@ -680,6 +722,7 @@ public partial class BoardController
 
     private void CleanupDestroyedPinEntries()
     {
+        movablePinnedGems.RemoveWhere(gem => gem == null || !pinnedGemOwners.ContainsKey(gem));
         if (pinnedGemOwners.Count > 0)
         {
             List<Gem> destroyedKeys =

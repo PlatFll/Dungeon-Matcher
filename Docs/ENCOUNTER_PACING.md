@@ -1,34 +1,20 @@
 # Dungeon Matcher Encounter Pacing
 
-This document records finalized curated encounter pacing that complements `GAME_DESIGN.md`. Exact fixed waves are authored in `WaveSpawnProfile_Standard.asset`; this document explains the intended teaching sequence rather than replacing the serialized source of truth.
+Chapters are weighted progression/spawn eras. This supersedes the old fixed Chapter 2 teaching script; ordinary waves do not prescribe exact enemy identities. Current tunable data lives in `WaveSpawnProfile_Standard.asset` and the enemy definitions.
 
-## Chapter structure
+| Era | First-pass progression | Pool and capacity |
+| --- | --- | --- |
+| Locals | 1–7 | Farmer, Pan/Basket Villagers and existing local Specials. One enemy initially, two by wave 3, two or three from 6. At most one Special. Wave 5 retains a category-only introduction to Specials. |
+| Town Calls for Help | 9–15 | Spear Guard, Crossbow Guard and Barricade Guard become eligible at 9; older locals fade. Two or three enemies, at least one Normal, at most one Special. |
+| Crown / Knights | 17–20 | Sword and Spear Knights are Normal; Shield Knight is Special. Crown weights rise while returning Guards decline. Two or three enemies, at least one Normal, at most one Special. |
+| Crown formations | 21 onward | Knight Captain becomes eligible as a Mini-boss. Two or three enemies; at most one Mini-boss and one Special. Guards leave after 24. |
 
-- Chapter 1 — **The Locals**: waves 1–7.
-- Wave 8: **Town Marshal** Mini-boss.
-- Chapter 2 — **The Town Calls for Help**: waves 9–15.
-- Wave 16: **Siege Sergeant** Mini-boss.
-- Chapter 3 — **The Crown Responds** begins at wave 17, where the proper knight escalation starts.
+The solo Town Marshal checkpoint at 8 and solo Siege Sergeant checkpoint at 16 remain encounter exceptions. Their eligibility ends at their respective checkpoints. No ordinary Chapter 2 or Chapter 3 wave has a fixed enemy composition.
 
-The escalation should read as a story: familiar locals are followed by organized town reinforcements, then the Crown responds with knights. Chapters should introduce a pressure clearly, remix it with already-understood enemies, and only then combine it into harder compositions. Do not add a completely new mechanic every wave.
+Each definition has minimum/optional maximum eligibility and an age-relative weight curve multiplied by its spawn weight. Locals fade from 1 to 0.1 over 15 progression steps after their unlock; Guards do the same across waves 9–24. Crown soldiers rise from 0.6 to 2 over waves 17–24. These weights are relative within a category, not spawn probabilities. Category weights separately control how often Normal/Special/Mini-boss slots are requested.
 
-## Chapter 2 — The Town Calls for Help
+A Captain selection constrains the entire remaining encounter to his configured Crown escort pool. Escorts are weighted draws with replacement: Sword/Spear duplicates are legal, and at most one Shield Knight is allowed. Two-slot encounters contain Captain plus one escort; three-slot encounters contain two. The spawner respects configured slot capacity. Escort choice never depends on entrance-animation timing or deaths during spawning.
 
-Chapter 2 deliberately reuses familiar Chapter 1 enemies while introducing organized military pressure. Spear Guard is the chapter's straightforward frontline, Crossbow Guard adds targeted board restraint, Miner returns as familiar board interference in a more dangerous composition, and Siege Sergeant closes the chapter by combining fortification pressure with telegraphed counterplay.
+`WaveController.encounterSeed` accepts a nonzero seed for repeatable encounter generation. Zero chooses and records a fresh seed at run initialization. Composition and weakness shuffling share that private RNG; presentation and board randomness cannot perturb encounter draws. Repeatability assumes the same initial progression and sequence of generation calls.
 
-| Wave | Fixed encounter | Pacing purpose |
-| ---: | --- | --- |
-| 9 | Pan Villager + Spear Guard | Transition from locals to trained reinforcements without introducing multiple new threats at once. |
-| 10 | Spear Guard + Spear Guard | Establish the basic guard frontline cleanly. |
-| 11 | Spear Guard + Crossbow Guard | Add ranged/restraint pressure beside a familiar frontline. |
-| 12 | Spear Guard + Miner | Reuse the already-learned mining mechanic in a more disciplined encounter. |
-| 13 | Spear Guard + Pan Villager + Crossbow Guard | First full three-enemy mixed patrol: familiar local, frontline guard, and special pressure. |
-| 14 | Spear Guard + Spear Guard + Crossbow Guard | Raise military pressure without adding another mechanic. |
-| 15 | Spear Guard + Miner + Crossbow Guard | Chapter 2's hardest pre-Mini-boss composition, combining frontline pressure with two already-learned board constraints. |
-| 16 | Siege Sergeant | Solo Chapter 2 Mini-boss and capstone. |
-
-These waves are intentionally fixed instead of drawn from the weighted pool. The goal is a readable teaching curve and reliable narrative escalation, not surprise composition difficulty during the chapter's introductory pass.
-
-## Chapter boundary
-
-Wave 16 ends the organized-town-response chapter. Knights are not part of the curated Chapter 2 sequence. Wave 17 is the start of Chapter 3, **The Crown Responds**, and should be the point where proper knight enemies begin their intended progression.
+Manual Unity testing should cover pool variation across seeds, boundary waves 8/9/16/17/21/25, Captain with one/two escorts, command cancellation during wind-up and between spear hits, cooldown restart, Shield Knight seven-move casts, and chain gravity/destruction/replacement/legal-move safety.

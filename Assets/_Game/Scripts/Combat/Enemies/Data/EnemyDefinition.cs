@@ -221,6 +221,20 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(1)]
     private int minimumWave = 1;
 
+    [SerializeField, Min(0), Tooltip("Last eligible wave; zero keeps the enemy eligible indefinitely.")]
+    private int maximumWave;
+    [SerializeField, Tooltip("Weight multiplier by waves since Minimum Wave. Zero disables selection.")]
+    private AnimationCurve progressionWeight = AnimationCurve.Linear(0, 1, 8, 1);
+    [SerializeField] private bool crownSoldier;
+    [SerializeField] private EnemyDefinition[] encounterEscorts = new EnemyDefinition[0];
+    [SerializeField, Range(0, 2)] private int maximumSpecialEscorts = 1;
+    public bool CrownSoldier => crownSoldier;
+    public EnemyDefinition[] EncounterEscorts => encounterEscorts ?? System.Array.Empty<EnemyDefinition>();
+    public int MaximumSpecialEscorts => Mathf.Clamp(maximumSpecialEscorts, 0, 2);
+    public float GetSpawnWeight(int wave) => wave < minimumWave ||
+        (maximumWave > 0 && wave > maximumWave) ? 0f :
+        Mathf.Max(0f, spawnWeight * (progressionWeight == null ? 1f : progressionWeight.Evaluate(wave - minimumWave)));
+
     [SerializeField, Min(0.01f)]
     [Tooltip(
         "Relative selection weight among other eligible " +

@@ -28,7 +28,8 @@ public partial class BoardController
         ReleaseOwnerPins,
         PlaceBarricades,
         MarkGemPair,
-        ResolveGemPair
+        ResolveGemPair,
+        TopUpMovablePins
     }
 
     private sealed class BoardMutationRequest
@@ -47,6 +48,7 @@ public partial class BoardController
         public Action<bool> Completed;
         public Func<bool> IsCancelled;
         public bool Succeeded;
+        public bool MovablePin;
         public GemPairThreat PairThreat;
         public int WarningMoves;
         public int PlayerDamage;
@@ -426,6 +428,9 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.TopUpMovablePins:
+                        yield return ExecuteTopUpMovablePins(request);
+                        break;
                     case BoardMutationKind.MineRandomCell:
                         yield return
                             ExecuteMineRequest(
