@@ -64,6 +64,17 @@ public partial class BoardController
                 continue;
             }
 
+            /*
+             * Captain chains move with their gem and Court Mage freezes are
+             * intentionally not broken by neighboring destruction. Only the
+             * Crossbow Guard's fixed bolt uses the orthogonal-clear break rule.
+             */
+            if (movablePinnedGems.Contains(pinnedGem) ||
+                frozenPinnedGems.Contains(pinnedGem))
+            {
+                continue;
+            }
+
             int orthogonalDistance =
                 Mathf.Abs(
                     pinnedGem.Column -
@@ -74,7 +85,7 @@ public partial class BoardController
                     destroyedRow
                 );
 
-            if (orthogonalDistance == 1 && !movablePinnedGems.Contains(pinnedGem))
+            if (orthogonalDistance == 1)
             {
                 adjacentPinsToRelease.Add(
                     pinnedGem
