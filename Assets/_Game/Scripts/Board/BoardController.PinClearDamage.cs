@@ -6,21 +6,21 @@ public partial class BoardController
     /*
      * Physical gem destruction is the common denominator for every clear path:
      * normal matches, cascades, bombs, color crystals, abilities, and enemy
-     * board mutations all eventually destroy a Gem. A Crossbow Guard chain is
-     * therefore released whenever one of those destroyed gems occupied the
-     * pinned gem's own cell or an orthogonally adjacent cell.
+     * board mutations all eventually destroy a Gem. This one notification is
+     * therefore also the deterministic signal used by Royal Standard gravity.
      *
-     * The existing match-time pin release remains harmless and makes ordinary
-     * matches react slightly earlier; by the time this notification arrives
-     * that pin has already been removed and cannot be processed twice.
+     * Crossbow Guard bolts additionally break when an orthogonally adjacent gem
+     * is physically destroyed. The existing match-time pin release remains
+     * harmless and makes ordinary matches react slightly earlier; by the time
+     * this notification arrives that bolt has already been removed and cannot
+     * be processed twice.
      */
     internal void NotifyGemDestroyedForPins(
         Gem destroyedGem)
     {
         if (ReferenceEquals(
                 destroyedGem,
-                null) ||
-            pinnedGemOwners.Count == 0)
+                null))
         {
             return;
         }
@@ -30,6 +30,22 @@ public partial class BoardController
 
         int destroyedRow =
             destroyedGem.Row;
+
+        /*
+         * Royal standards react to actual cleared gem identities, not to an
+         * Update-time scan of transient null cells. Structural exclusions in
+         * the banner runtime make mined holes and reserved barricades remain
+         * non-destinations exactly like normal gravity.
+         */
+        NotifyGemDestroyedForRoyalBanners(
+            destroyedColumn,
+            destroyedRow
+        );
+
+        if (pinnedGemOwners.Count == 0)
+        {
+            return;
+        }
 
         List<Gem> adjacentPinsToRelease =
             new List<Gem>();
