@@ -4,5 +4,8 @@ public enum EnemySpecialAbilityKind
     Miner = 1,
     CrossbowGuardBolt = 2,
     Barricade = 3,
-    ShieldingAllies = 4
+    ShieldingAllies = 4,
+    TownMarshal = 5,
+    SiegeSergeant = 6,
+    KnightCaptain = 7
 }

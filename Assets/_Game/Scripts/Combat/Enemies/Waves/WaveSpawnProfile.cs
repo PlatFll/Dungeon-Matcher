@@ -179,6 +179,11 @@ public sealed class ExactWaveRule
             EnemyCategory.Special
         };
 
+    [SerializeField]
+    [Tooltip("Optional fixed enemy per slot. Empty slots retain weighted category selection.")]
+    private List<EnemyDefinition> fixedEnemies = new List<EnemyDefinition>();
+
+    public IReadOnlyList<EnemyDefinition> FixedEnemies => fixedEnemies;
     public int Wave => wave;
     public string RuleName => ruleName;
 
@@ -421,6 +426,13 @@ public sealed class WaveSpawnProfile : ScriptableObject
                 }
             )
         };
+
+    public EnemyDefinition GetFixedEnemy(int wave, int slot)
+    {
+        ExactWaveRule rule = FindExactWaveRule(wave);
+        return rule != null && rule.FixedEnemies != null && slot >= 0 &&
+            slot < rule.FixedEnemies.Count ? rule.FixedEnemies[slot] : null;
+    }
 
     public WaveSpawnPlan CreatePlan(
         int wave,

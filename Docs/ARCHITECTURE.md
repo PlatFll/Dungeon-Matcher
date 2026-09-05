@@ -156,7 +156,6 @@ Do not merge these responsibilities. In particular, a board clear should describ
 - `WaveController` selects definitions, instantiates the configured prefab, initializes `EnemyActor`, assigns a gem weakness, initializes `EnemyAutoAttack`, and asks `EnemySpecialAbilityRuntimeFactory` to install the configured runtime.
 - `EnemyActor` owns runtime HP, shield, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
 - `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`. Definitions may optionally provide one follow-up auto-attack hit and a non-negative delay after the primary presentation's completed-return acknowledgement. The primary and follow-up are independently scaled and resolved as separate `PlayerActor.TryTakeDamage` calls inside the same attack cadence. For a follow-up sequence, `EnemyAutoAttack` retains action ownership while `EnemyCombatFeedback` acknowledges each generic lunge's impact and completed return using that hit's presentation ID. The next hit cannot begin before the required return acknowledgement and configured follow-up delay, and the cooldown cannot begin before the final return; one-shot guards and real-time fallbacks prevent duplicate damage or presentation-dependent stalls. Definitions with no follow-up retain the established single-hit path.
-- `EnemySpecialActionAvailability` is the shared start gate used by every special runtime. It preserves `EnemyActor` readiness while `EnemyStagger` is active, retries from the final `StaggerEnded`, and waits without acquiring board ownership if `BoardController.IsBusy`. The runtime requests its existing action or board mutation only after that gate opens.
 - `MinerEnemyAbility`, `CrossbowGuardEnemyAbility`, and `BarricadeEnemyAbility` react to runtime events and request BoardController-owned mutations. They do not directly change the grid.
 - `ShieldingAlliesEnemyAbility` consumes the authoritative active-enemy roster supplied by `WaveController` and grants shield through each living target's `EnemyActor`. It does not mutate the board, HP, or UI directly.
 
@@ -166,7 +165,7 @@ Shared board code must never switch on a concrete enemy identity. Add enemy beha
 
 - `BoardController.NotifyValidPlayerMoveCompleted` is called once after a successful player swap has completely resolved. Cascades never call it independently.
 - `WaveController` snapshots active enemies and calls `EnemyActor.RegisterValidPlayerTurn` once per active enemy for that completed move.
-- Ready enemy runtimes may immediately queue board work when the enemy is allowed to begin a new action. A special that becomes ready while staggered stays ready without queuing a mutation; after the final stagger ends, its shared availability gate waits for board idle before retrying. All mining, pinning, cleanup, and barricade requests share `pendingBoardMutations` and `ProcessBoardMutations`.
+- Ready enemy runtimes may immediately queue board work. All mining, pinning, cleanup, and barricade requests share `pendingBoardMutations` and `ProcessBoardMutations`.
 - The mutation processor waits until the player's resolution releases `isBusy`, then owns the board until every queued structural change, refill, resulting cascade, and reshuffle has settled.
 - Cascades caused by enemy/environmental board changes do not count as additional player turns.
 - Some enemy runtimes also listen to `ValidPlayerMoveCompleted` to retry a ready action when an earlier board state had no legal target; the ready state is not permission to mutate outside the queue.
@@ -215,6 +214,20 @@ Unity serialization is part of the architecture, not an incidental editor detail
 - All `BoardController` partial fields serialize onto the single `BoardController` component in the scene.
 - Runtime-added components are not a substitute for required serialized data unless the architecture explicitly provides safe discovery/default behavior.
 
+## Enemy summoning, interception, and temporary attack-speed modifiers
+
+The Town Marshal feature adds three reusable enemy-runtime capabilities without moving ownership into `BoardController`:
+
+- `IEnemySummonService` is the narrow contract used by enemy runtimes that need to request a real enemy spawn. `WaveController` implements it because the wave system owns enemy slots, active-enemy membership, weakness assignment, scaled runtime stats, prefab initialization, lifecycle VFX, and wave-completion accounting.
+- `WaveController.TrySummonEnemy` may only use a genuinely free configured enemy slot. A successful summon is initialized through the same `CreateEnemy` path as normal wave enemies, added to `activeEnemies`, and therefore remains an independent wave member until defeated. Enemy runtimes must not instantiate enemy prefabs or mutate the active roster themselves.
+- `EnemySpecialAbilityRuntimeFactory` may pass the summon service to runtimes that require it. Runtimes that do not summon remain unaware of this capability.
+- `EnemyActor` owns optional one-hop damage interception through `SetDamageRedirectTarget` / `ClearDamageRedirectTarget`. Normal `TryTakeDamage` may redirect one incoming damage instance to the designated living enemy, but the redirected hit is resolved with further redirection disabled so interception cannot recurse through a chain. `TryTakeDamageWithoutFeedback` bypasses interception, preserving already-applied damage-over-time behavior.
+- Damage interception changes only the destination of the established actor damage call. The receiving actor still owns shield reduction, HP mutation, feedback, and defeat. Combat and board systems do not special-case the Town Marshal.
+- `EnemyAutoAttack` owns a runtime attack-speed multiplier in addition to the definition/difficulty-derived base interval. Temporary buffs accelerate the existing countdown rather than creating a second attack loop, changing attack damage, or rewriting serialized base stats. Resetting the multiplier returns the same attack loop to normal speed.
+- Town Marshal's retreat visual is presentation-only. The runtime's authoritative protection state is the `EnemyActor` redirect target and its move-limited lifetime; missing or replaced art cannot change whether damage is intercepted.
+
+These capabilities are generic infrastructure. Future summoners, bodyguards, or temporary speed buffs may reuse them, but their lifetime, ownership, persistence, targeting, and balance rules must remain explicit per mechanic rather than inferred from Town Marshal.
+
 ## Validation workflow
 
 For C# gameplay, runtime, or editor changes, run from the repository root:
@@ -231,3 +244,22 @@ The script reads the exact editor version from `ProjectSettings/ProjectVersion.t
 - Distinguish static/code review from Unity runtime verification.
 - Never claim Unity validation passed unless the script actually completed successfully.
 - Documentation-only changes do not require Unity validation. Art-only changes that do not affect Unity serialization or runtime code also do not require it.
+
+## Siege Sergeant integration
+
+- `SiegeSergeantEnemyAbility` owns the alternating cadence, one pending warning, stagger/action availability, cleanup and conditional defence. Definition data supplies warning moves, base hammer damage and defence reduction alongside the existing barricade fields.
+- `BoardController` remains character-agnostic. `TryQueuePlaceBarricades` has opt-in straight-line preference and special-gem protection; existing callers keep their old defaults. Candidate selection is repeated at execution to account for preceding mining or obstacle requests.
+- `BoardController.TargetedClears` adds generic gem-pair marking and environmental clearing to the existing mutation queue. `GemPairThreat` retains gem identity, owner, deadline and consumed state. A due strike is queued from valid-move notification where possible and revalidated at execution; refill cannot inherit a warning. The queue holds board ownership through both-target removal and complete settlement. The processor yields initially so instant metadata-only requests cannot leave a stale coroutine handle.
+- `EnemyActor.IncomingDamageMultiplier` is an optional runtime provider, reset on initialization. It is evaluated after interception and before shield handling inside the authoritative damage path. The Sergeant supplies a live owner-count-based provider and clears it during cleanup. No board logic knows which enemy uses this hook.
+- `EnemyRuntimeStats.DamageMultiplier` carries the unrounded difficulty/category/individual damage scale so special damage does not inherit rounding error from the basic attack. Existing constructor callers default to multiplier 1.
+- `BoardHammerThreatVFX` listens to board marking/impact events, procedurally creates its pixel hammer texture and white sweep, tracks warning identities for presentation, and cleans up its sprites/textures/transient objects. Gameplay never waits for VFX completion.
+- `ExactWaveRule.fixedEnemies` optionally specifies per-slot identities while preserving category-based rules. `WaveController` validates fixed definitions against category, minimum wave, prefab and database membership. The wave-16 rule requests one Mini-boss and fixes its identity to the Sergeant; no concrete enemy identity is hard-coded into the spawner.
+- Unity editor validation is available at `Dungeon Matcher > Validation > Siege Sergeant`, or `-executeMethod SiegeSergeantValidation.Run`. It exercises actual target-selection helpers, gem identity/cancellation, ownership-based defence, direct/DoT damage, asset references, baseline stats and the fixed checkpoint. Run the normal `Tools/Validate-Unity.ps1` compilation gate first; Play Mode VFX/pacing verification remains separate.
+
+## Weighted chapter pools and formation commands
+
+- `WaveSpawnProfile` remains the category/count planner; `EnemyDatabase` filters eligible definitions and evaluates their age-relative weight curves. `WaveController.BuildEncounter` resolves the complete composition before spawning through `CreateEnemy`. Definition-owned escort pools constrain all other slots when a Mini-boss is selected; they never create a second spawn path. Ordinary fixed overrides are removed from the standard profile, while the existing solo checkpoints remain.
+- `WaveController` owns a private `System.Random` initialized from its recorded encounter seed. Category planning, definition/escort draws and weakness shuffling use that same instance. Existing board randomness remains Unity-based; full-run replay determinism is not claimed.
+- `KnightCaptainEnemyAbility` owns preference, one shared four-move special opportunity, participant snapshot, wind-up/sequencing and cancellation. It uses `EnemyActor` action ownership and `EnemyAutoAttack.TryReserveCommand` / `PerformCommandStrike` / `ReleaseCommand`. Reservation suspends the existing timer; release preserves an unspent cooldown or restarts a consumed attack. All hits still use the existing auto-attack sequence and player damage API, including Spear Knight's two-hit lifecycle.
+- `TryQueueTopUpMovablePins` extends the single board mutation queue. It selects ordinary gems at execution, uses existing pin ownership and `HasAvailableMove`, and tops up only to the cap. A separate movable-pin set distinguishes swap-only chains from fixed bolts. Gravity skips fixed pins only; input/legal-move checks reject both. Adjacent clears release bolts only. Gem destruction, special conversion, owner cleanup and emergency reshuffles release chains through established ownership cleanup. No board code identifies a Captain.
+- Shield Knight's category is Special; its asset compensates category/wave multipliers for the wave-17 introduction baseline. Shield grants and shield-aware damage remain owned by the existing runtime and `EnemyActor`; player shields are unchanged.

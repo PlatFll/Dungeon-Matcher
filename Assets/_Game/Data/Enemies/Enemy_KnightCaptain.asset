@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_KnightCaptain
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: knight_captain
+  displayName: Knight Captain
+  category: 2
+  description: 
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 6b44ede4db9553b42b206e6257ec243e, type: 3}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
+  baseMaxHealth: 240
+  baseDamage: 8
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 10
+  hasSpecialAbility: 1
+  specialAbilityKind: 7
+  baseSpecialTurnRequirement: 4
+  lockSpecialTurnRequirement: 1
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
+  minimumWave: 21
+  maximumWave: 0
+  progressionWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 7
+      value: 2
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  crownSoldier: 0
+  encounterEscorts:
+  - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+  - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+  - {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+  maximumSpecialEscorts: 1
+  spawnWeight: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  staggerDurationMultiplier: 1

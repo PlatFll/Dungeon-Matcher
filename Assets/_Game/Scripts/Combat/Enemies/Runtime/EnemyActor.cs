@@ -38,6 +38,16 @@ public sealed class EnemyActor : MonoBehaviour
     [SerializeField]
     private bool isSpecialAbilityAnimationActionActive;
 
+    [SerializeField]
+    [Tooltip(
+        "Optional living enemy that intercepts normal direct/clear damage " +
+        "before it reaches this actor. Damage-over-time bypasses interception."
+    )]
+    private EnemyActor damageRedirectTarget;
+
+    // Evaluated at impact, so conditional defence cannot lag behind board state.
+    public Func<float> IncomingDamageMultiplier { private get; set; }
+
     public event Action<EnemyActor> Initialized;
 
     public event Action<EnemyActor, int, int>
@@ -155,6 +165,16 @@ public sealed class EnemyActor : MonoBehaviour
         isInitialized &&
         !isDefeated;
 
+    public EnemyActor DamageRedirectTarget =>
+        IsValidDamageRedirectTarget(
+            damageRedirectTarget
+        )
+            ? damageRedirectTarget
+            : null;
+
+    public bool IsRedirectingDamage =>
+        DamageRedirectTarget != null;
+
     public bool IsAutoAttackAnimationActionActive =>
         isAutoAttackAnimationActionActive;
 
@@ -228,6 +248,8 @@ public sealed class EnemyActor : MonoBehaviour
             RuntimeStats.MaxHealth;
 
         currentShield = 0;
+        damageRedirectTarget = null;
+        IncomingDamageMultiplier = null;
 
         currentSpecialTurnCount = 0;
         isSpecialReady = false;
@@ -306,7 +328,8 @@ public sealed class EnemyActor : MonoBehaviour
     {
         return TryTakeDamageInternal(
             amount,
-            true
+            true,
+            allowDamageRedirect: true
         );
     }
 
@@ -315,13 +338,40 @@ public sealed class EnemyActor : MonoBehaviour
     {
         return TryTakeDamageInternal(
             amount,
-            false
+            false,
+            allowDamageRedirect: false
         );
+    }
+
+    public bool SetDamageRedirectTarget(
+        EnemyActor target)
+    {
+        if (!CanReceiveDamage ||
+            !IsValidDamageRedirectTarget(target))
+        {
+            return false;
+        }
+
+        damageRedirectTarget = target;
+        return true;
+    }
+
+    public void ClearDamageRedirectTarget(
+        EnemyActor expectedTarget = null)
+    {
+        if (expectedTarget != null &&
+            damageRedirectTarget != expectedTarget)
+        {
+            return;
+        }
+
+        damageRedirectTarget = null;
     }
 
     private bool TryTakeDamageInternal(
         int amount,
-        bool notifyDamageReceived)
+        bool notifyDamageReceived,
+        bool allowDamageRedirect)
     {
         if (!CanReceiveDamage ||
             amount <= 0)
@@ -329,7 +379,32 @@ public sealed class EnemyActor : MonoBehaviour
             return false;
         }
 
-        int finalDamage = amount;
+        if (allowDamageRedirect &&
+            damageRedirectTarget != null)
+        {
+            if (IsValidDamageRedirectTarget(
+                    damageRedirectTarget))
+            {
+                /*
+                 * Interception is intentionally one hop. A bodyguard may take
+                 * the hit, but its own redirect rules cannot recursively bounce
+                 * the same damage through an arbitrary enemy chain.
+                 */
+                return damageRedirectTarget
+                    .TryTakeDamageInternal(
+                        amount,
+                        notifyDamageReceived,
+                        allowDamageRedirect: false
+                    );
+            }
+
+            damageRedirectTarget = null;
+        }
+
+        float incomingMultiplier = IncomingDamageMultiplier != null
+            ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
+        int finalDamage = Mathf.Max(1,
+            Mathf.CeilToInt(amount * incomingMultiplier));
 
         bool shieldWasActive =
             currentShield > 0;
@@ -422,6 +497,16 @@ public sealed class EnemyActor : MonoBehaviour
 
         return shieldDamage > 0 ||
                actualHealthDamage > 0;
+    }
+
+    private bool IsValidDamageRedirectTarget(
+        EnemyActor target)
+    {
+        return target != null &&
+               target != this &&
+               target.IsInitialized &&
+               !target.IsDefeated &&
+               target.CanReceiveDamage;
     }
 
     public int GrantShield(int amount)
@@ -646,6 +731,7 @@ public sealed class EnemyActor : MonoBehaviour
 
         isDefeated = true;
         isSpecialReady = false;
+        damageRedirectTarget = null;
 
         if (currentShield > 0)
         {

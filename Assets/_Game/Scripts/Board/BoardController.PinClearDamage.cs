@@ -74,7 +74,7 @@ public partial class BoardController
                     destroyedRow
                 );
 
-            if (orthogonalDistance == 1)
+            if (orthogonalDistance == 1 && !movablePinnedGems.Contains(pinnedGem))
             {
                 adjacentPinsToRelease.Add(
                     pinnedGem

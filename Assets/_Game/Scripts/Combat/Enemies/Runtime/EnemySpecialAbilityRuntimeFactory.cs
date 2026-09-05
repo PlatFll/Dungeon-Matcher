@@ -9,7 +9,8 @@ public static class EnemySpecialAbilityRuntimeFactory
             GameObject enemyObject,
             EnemyActor enemyActor,
             BoardController boardController,
-            IReadOnlyList<EnemyActor> activeEnemies)
+            IReadOnlyList<EnemyActor> activeEnemies,
+            IEnemySummonService summonService = null)
     {
         if (abilityKind ==
             EnemySpecialAbilityKind.None)
@@ -34,6 +35,11 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.KnightCaptain:
+                var captain = enemyObject.GetComponent<KnightCaptainEnemyAbility>();
+                if (captain == null) captain = enemyObject.AddComponent<KnightCaptainEnemyAbility>();
+                runtime = captain;
+                break;
             case EnemySpecialAbilityKind.Miner:
                 MinerEnemyAbility minerAbility =
                     enemyObject.GetComponent<
@@ -100,6 +106,45 @@ public static class EnemySpecialAbilityRuntimeFactory
                 }
 
                 runtime = shieldingAbility;
+                break;
+
+            case EnemySpecialAbilityKind.TownMarshal:
+                if (summonService == null)
+                {
+                    Debug.LogError(
+                        "Town Marshal ability requires an enemy summon service.",
+                        enemyObject
+                    );
+
+                    return null;
+                }
+
+                TownMarshalEnemyAbility marshalAbility =
+                    enemyObject.GetComponent<
+                        TownMarshalEnemyAbility
+                    >();
+
+                if (marshalAbility == null)
+                {
+                    marshalAbility =
+                        enemyObject.AddComponent<
+                            TownMarshalEnemyAbility
+                        >();
+                }
+
+                marshalAbility.ConfigureSummonService(
+                    summonService
+                );
+
+                runtime = marshalAbility;
+                break;
+
+            case EnemySpecialAbilityKind.SiegeSergeant:
+                SiegeSergeantEnemyAbility sergeant =
+                    enemyObject.GetComponent<SiegeSergeantEnemyAbility>();
+                if (sergeant == null)
+                    sergeant = enemyObject.AddComponent<SiegeSergeantEnemyAbility>();
+                runtime = sergeant;
                 break;
 
             default:

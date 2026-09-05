@@ -1216,7 +1216,7 @@ public partial class BoardController : MonoBehaviour
                     gems[column, row];
 
                 if (gem != null &&
-                    IsGemPinned(gem))
+                    IsGemFixedByPin(gem))
                 {
                     /*
                      * The bolt fixes this Gem at its exact coordinate. Its row

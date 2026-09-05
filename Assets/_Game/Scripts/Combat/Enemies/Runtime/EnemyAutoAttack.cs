@@ -31,6 +31,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     [SerializeField]
     private float remainingAttackTime;
 
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Additional runtime speed applied to the cooldown countdown. " +
+        "1 is normal speed; 1.4 counts down 40% faster."
+    )]
+    private float runtimeAttackSpeedMultiplier = 1f;
+
     [SerializeField]
     private bool isRunning;
 
@@ -61,6 +68,47 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private Coroutine attackCoroutine;
     private Coroutine attackSequenceCoroutine;
     private int nextAttackPresentationId;
+    private object commandOwner;
+    private bool commandStrike;
+    private bool resumeCooldown;
+    private bool commandedAttackStarting;
+    public bool IsCommandReservedBy(object owner) => ReferenceEquals(commandOwner, owner);
+
+    public bool TryReserveCommand(object owner)
+    {
+        if (owner == null || commandOwner != null || !CanPerformAttack() ||
+            enemyActor.HasAnimationActionInProgress) return false;
+        commandOwner = owner;
+        commandStrike = false;
+        if (attackCoroutine != null) StopCoroutine(attackCoroutine);
+        attackCoroutine = null;
+        return true;
+    }
+
+    public bool PerformCommandStrike(object owner)
+    {
+        if (!ReferenceEquals(commandOwner, owner) || commandStrike) return false;
+        // Mark consumption before callbacks can synchronously cancel the owner.
+        commandStrike = true;
+        commandedAttackStarting = true;
+        bool accepted = PerformAttackImmediately();
+        commandedAttackStarting = false;
+        if (ReferenceEquals(commandOwner, owner)) commandStrike = accepted;
+        return accepted;
+    }
+
+    public void ReleaseCommand(object owner)
+    {
+        if (!ReferenceEquals(commandOwner, owner)) return;
+        if (commandStrike)
+        {
+            CancelAttackSequence();
+            remainingAttackTime = enemyActor != null ? enemyActor.AttackInterval : 0f;
+        }
+        commandOwner = null;
+        resumeCooldown = true;
+        if (attackAutomatically) TryStartAttacking();
+    }
 
     public event Action<EnemyAutoAttack>
         AttackStarted;
@@ -79,6 +127,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public float RemainingAttackTime =>
         remainingAttackTime;
+
+    public float RuntimeAttackSpeedMultiplier =>
+        runtimeAttackSpeedMultiplier;
 
     public bool IsRunning =>
         isRunning;
@@ -122,6 +173,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
         enemyActor = enemy;
         playerTarget = target;
+        runtimeAttackSpeedMultiplier = 1f;
 
         enemyStagger =
             GetComponent<EnemyStagger>();
@@ -164,6 +216,22 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         }
     }
 
+    public void SetRuntimeAttackSpeedMultiplier(
+        float multiplier)
+    {
+        runtimeAttackSpeedMultiplier =
+            Mathf.Clamp(
+                multiplier,
+                0.1f,
+                5f
+            );
+    }
+
+    public void ResetRuntimeAttackSpeedMultiplier()
+    {
+        runtimeAttackSpeedMultiplier = 1f;
+    }
+
     public void TryStartAttacking()
     {
         if (attackCoroutine != null)
@@ -184,6 +252,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public void StopAttacking()
     {
+        commandOwner = null;
         if (attackCoroutine != null)
         {
             StopCoroutine(attackCoroutine);
@@ -228,7 +297,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 : 0f;
 
         if (!timeFromAnimation &&
-            followUpDamage <= 0)
+            followUpDamage <= 0 && !commandedAttackStarting)
         {
             return PerformImmediateHit(
                 primaryDamage
@@ -254,7 +323,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                     primaryDamage,
                     followUpDamage,
                     followUpAttackDelay,
-                    timeFromAnimation
+                    timeFromAnimation,
+                    commandedAttackStarting
                 )
             );
 
@@ -356,16 +426,17 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             int primaryDamage,
             int followUpDamage,
             float followUpAttackDelay,
-            bool timeFromAnimation)
+            bool timeFromAnimation,
+            bool waitForCommandReturn)
     {
         yield return
             PerformTimedHit(
                 primaryDamage,
                 timeFromAnimation,
                 finishSequenceAtImpact:
-                    followUpDamage <= 0,
+                    followUpDamage <= 0 && !waitForCommandReturn,
                 waitForPresentationCompletion:
-                    followUpDamage > 0
+                    followUpDamage > 0 || waitForCommandReturn
             );
 
         if (!isAttackSequenceInProgress)
@@ -549,7 +620,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         isRunning = true;
 
-        if (!waitBeforeFirstAttack)
+        if (!waitBeforeFirstAttack && !resumeCooldown)
         {
             yield return WaitUntilAttackCanStart();
 
@@ -567,11 +638,12 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
         while (CanContinueAttackLoop())
         {
-            remainingAttackTime =
+            if (!resumeCooldown) remainingAttackTime =
                 Mathf.Max(
                     0.1f,
                     enemyActor.AttackInterval
                 );
+            resumeCooldown = false;
 
             while (remainingAttackTime > 0f)
             {
@@ -595,7 +667,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                     Mathf.Max(
                         0f,
                         remainingAttackTime -
-                        Time.deltaTime
+                        Time.deltaTime *
+                        runtimeAttackSpeedMultiplier
                     );
 
                 yield return null;
@@ -865,6 +938,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         return
             CanContinueAttackLoop() &&
+            (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&
             !isAttackSequenceInProgress &&
             !isWaitingForAnimationImpact &&

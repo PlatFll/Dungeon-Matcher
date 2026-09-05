@@ -102,7 +102,6 @@ Exact shield capacity and reduction values remain balance data.
 - Enemy identity should come from understandable behavior, cadence, weakness, and counterplay rather than hidden exceptions.
 - Shared board logic must not hard-code individual enemies.
 - Enemy board actions occur only at safe board-resolution points.
-- Stagger prevents an enemy from starting a new auto attack or special ability. A special that becomes ready during stagger remains ready at 0, is not consumed or reset, and begins only after the final stagger ends and the board reaches a safe idle point. An action that already legitimately owns its gameplay flow before stagger retains that ownership.
 
 Detailed enemy kits and encounter compositions require explicit finalized specifications; current assets are implementation evidence, not a complete design bible.
 
@@ -126,9 +125,19 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ## Finalized mechanic specifications
 
+### Spear Guard
+
+- Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. He becomes eligible starting at wave 9.
+- His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
+- First-pass runtime targets at wave 9 with the standard difficulty profile and expected player power are 100 maximum HP, 5 damage per attack, and an 8-second attack interval.
+- The definition's individual scaling modifiers normalize the global wave-9 curves to those introduction targets. Later waves continue to scale through the existing difficulty pipeline. These numbers are tunable prototype balance, not permanent progression gates.
+- His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a wave-9 spawn.
+- Until his own art is imported, his definition uses the existing Spear Knight sprite as temporary fallback artwork, with the shared single-lunge presentation and no animation override.
+- Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
+
 ### Spear Knight
 
-- Spear Knight is a late-game Normal enemy eligible starting at wave 8.
+- Spear Knight is a Chapter 3 Normal enemy eligible starting at wave 17.
 - Base maximum HP: 120.
 - Its normal auto-attack is a two-hit combo once every 10 seconds: lunge, deal 5 base damage at the first impact, return completely to rest, take a brief recovery/readability beat, then lunge again, deal 7 base damage at the second impact, and return completely to rest again.
 - The next 10-second auto-attack cooldown begins only after the second return finishes; there is no normal cooldown between the two lunges.
@@ -137,8 +146,8 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ### Shield Knight
 
-- Shield Knight is a late-game Normal enemy eligible starting at wave 8.
-- At its wave-8 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. It has no follow-up attack.
+- Shield Knight is a Chapter 3 Special enemy eligible starting at wave 17.
+- At its wave-17 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. Individual scaling compensates for the Special classification and new introduction wave. It has no follow-up attack.
 - Shielding Allies casts after every 7 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
 - A cast grants +10 shield to every other living enemy and +15 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
@@ -190,3 +199,93 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - Genuine Topaz destruction may still trigger Bardley's normal affinity healing through the established affinity-healing system.
 
 These are finalized gameplay rules. Timing and presentation numeric values not listed above remain tunable unless separately documented.
+
+### Town Marshal
+
+#### Identity and encounter role
+
+- Town Marshal is the first Mini-boss of Chapter 1, The Locals, and is introduced as a solo Mini-boss encounter on wave 8 in the current first-pass progression.
+- He is a pompous, cowardly local authority figure whose danger comes from rallying townsfolk rather than from personal combat strength.
+- He deliberately does not manipulate the match-3 board. Miner owns Chapter 1's board-interference lesson; Town Marshal teaches summoning, enemy-slot pressure, coordination, and target priority.
+- His presentation direction is a short/fat town official with a huge moustache and oversized hand bell. Final sprite/animation art is not yet wired into the current definition.
+
+#### First-pass combat balance
+
+- Target runtime maximum HP at the wave-8 introduction is approximately 400 under the expected-player-power baseline. The serialized base/scaling values are chosen to reach that target through the normal `DifficultyProfile` pipeline rather than bypassing global scaling.
+- His personal auto-attack is intentionally pathetic: approximately 1 damage at introduction with a very slow roughly 12-13 second runtime cadence.
+- He has no follow-up auto-attack hit.
+
+These numeric values are first-pass balance and should be playtested rather than treated as immutable final balance.
+
+#### Shared special cadence and ability selection
+
+- The Marshal receives one special-action opportunity every 3 valid completed player moves.
+- Invalid swaps and cascades do not advance this cadence, and the three-move requirement is locked against global special-turn shortening.
+- Ability choice is deterministic rather than random so the introductory Mini-boss remains learnable and readable.
+- His initial preference is `Ring the Bell`. After a successful Ring cast, his next preference is `Citizens, Seize Him!`; after a successful Citizens cast, his next preference returns to Ring.
+- If the preferred ability is currently invalid, he may use the other valid ability instead.
+- If neither ability is currently legal, the ready special is held until an ability becomes legal rather than consuming the action on a no-op.
+
+#### Passive — Big Man in Town
+
+- `Ring the Bell` designates the newly summoned local as the Marshal's protector.
+- The Marshal visibly retreats behind that protector for up to 2 valid completed player moves.
+- Retreat ends early if that specific protector is defeated.
+- While retreated, ordinary direct/clear damage that would normally hit the Marshal is fully intercepted by the protector. The damage is not discarded; it enters the protector's normal `EnemyActor` damage path.
+- Damage-over-time already applied to the Marshal is not redirected.
+- Retreat presentation is non-authoritative: the current first-pass fallback moves him slightly back/up, scales him down, and dims him. Gameplay must remain correct if final retreat art/animation is missing.
+- If a special was being held ready because all enemy slots were full when the protector dies, the Marshal's shared special counter resets. This prevents an immediate replacement summon and guarantees a real opening after the player removes his meat shield.
+
+#### Ability 1 — Ring the Bell
+
+- Ring the Bell requires a free enemy spawn slot and summons exactly one local per successful cast.
+- There are only three active enemy slots total; the ability can never create an invisible or fourth active enemy.
+- Current implementation candidates are Farmer, Pan Villager, and Basket Villager because those are the existing Chapter-1 local assets. The newer roster concept may later replace Basket Villager with Torch Villager; that content/naming change is deliberately not folded into the Marshal feature.
+- The candidate list is data-driven in the Marshal's `EnemyDefinition` so the roster can change without rewriting the runtime.
+- Summoned townsfolk are real independent enemies. They are added to the authoritative active-wave roster, count toward wave completion, and remain alive if the Marshal dies.
+
+#### Ability 2 — Citizens, Seize Him!
+
+- Citizens, Seize Him! affects all currently living local allies matching the Marshal's configured local candidate set, whether they were part of the original encounter or were summoned by him.
+- It increases those allies' real-time auto-attack speed by 40% for 5 seconds in the first-pass balance.
+- It does not increase attack damage and does not buff the Marshal himself.
+- The buff does not stack with itself. The ability is invalid while its current rally is active.
+- The ability is invalid when no qualifying local ally is alive.
+- A local summoned after an already-running rally begins does not retroactively receive that existing rally; a future valid cast may include it.
+
+#### Summon lifetime rule established by this encounter
+
+- Summon persistence is a property of the summon fiction/mechanic, not a universal rule that all summoned entities vanish with their owner.
+- Town Marshal's rallied townsfolk are independent physical enemies and persist after his death.
+- Future owner-bound magical summons, such as a spirit familiar, may explicitly despawn when their summoner dies.
+
+### Siege Sergeant
+
+- Chapter 2 Mini-boss, introduced alone at the wave-16 checkpoint. The current pool ends his eligibility there; Chapter 3 introduces the Crown roster.
+- First-pass wave-16 baseline: 600 HP, a single 5-damage auto-attack every 10 seconds, normal stagger, and 12 damage for a failed hammer warning. The standard difficulty profile scales later appearances; individual modifiers normalize the introduction values. These are prototype balance targets.
+- One special opportunity every 3 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the eight-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
+- **Hold the Line:** place four one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose four distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at eight blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
+- **Hammer Time:** mark two orthogonally adjacent ordinary unpinned gems after prior board mutations settle. Give two full valid moves after marking; invalid swaps and cascades do not advance the warning. Markers follow gem identities through movement, gravity and reshuffles, never replacement gems in the same cells. If either gem is removed, pinned or becomes special, cancel the entire strike. A moved pair may no longer be adjacent at impact; it still targets those same two gems and the sweep connects their current positions.
+- A surviving warning resolves after the second move settles and the Sergeant is free to act. Stagger or another enemy animation action may delay impact, giving additional opportunity to interrupt. Only one warning per Sergeant may be pending.
+- A failed warning makes one shield-aware player damage call, removes exactly the two targets with no direct damage/healing/energy rewards or special activation, then reuses ordinary environmental refill/cascade/reshuffle resolution. Subsequent genuine cascades keep existing reward semantics.
+- **Behind the Barricades:** while at least one blockade owned by this Sergeant remains, incoming damage is multiplied by 0.8 and rounded up, including damage-over-time. This reduction is fixed, never multiplied by block count, and is applied before the existing enemy-shield calculation. Other owners' and orphaned blockades do not grant defence. The block count is checked at each hit so breaking the last blockade immediately removes the passive.
+- Defeat/disable cancels the warning and releases the passive. Surviving blockades persist and their ownership is orphaned, consistent with existing barricade lifetime rules.
+- Presentation uses the supplied 64x64 sprite. White pixel hammer icons have dark outlines and two countdown pips; a faster pulse signals the last move. The strike is a short, broad, squared white sweep between both current gem positions, timed to their clear flash, with a small body tilt. These visuals are non-authoritative and do not require external VFX assets.
+
+### Chapters and Crown escalation
+
+Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
+
+First-pass thresholds are tunable: Locals occupy waves 1–7; Town Marshal is a solo checkpoint at 8; Guards enter at 9; Siege Sergeant is a solo checkpoint at 16; Crown Knights enter at 17. Locals fade through Chapter 2 and leave after 16. Guards fade into early/mid Chapter 3 and leave after 24. Captain becomes eligible at 21, without a guaranteed exact composition or appearance wave. See `ENCOUNTER_PACING.md` for current pool data and caps.
+
+Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
+
+### Knight Captain
+
+- A straightforward sword attack, stronger than Sword Knight, at a medium cadence. Initial base values are 240 HP, 8 damage and a 10-second interval, modified by the normal difficulty/category pipeline. These are tunable balance data, not finalized runtime targets. Existing Knight animation is temporary presentation until Captain art is available.
+- One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Invalid swaps, cascades and settling do not count. Prefer Hold Fast first, then On My Mark, alternating after successful casts. If the preferred command cannot execute, try the other. If neither can execute, retain readiness and retry after another completed move.
+- **Hold Fast!** tops up to 3 owned chains on ordinary, unpinned gems. Chained gems cannot be manually swapped but can fall with gravity and be cleared by matches, specials or abilities. Chains follow gem identity, disappear on destruction/replacement, and do not break from adjacent clears. Each placement passes the authoritative legal-move check with earlier placements included. No legal placement means no chain is added. Existing pin overlay/dimming is the presentation fallback. Captain defeat releases his chains through queued board cleanup; emergency reshuffles also release them.
+- **On My Mark!** reserves the Captain and eligible living Crown soldiers present when the command starts. Enemies already performing an action or staggered cannot join. The Captain telegraphs, then participants execute their existing normal attack sequences in roster order, Captain first, with a brief gap. Spear Knight retains both separate hits and complete returns. This consumes each participant's next normal attack: its cooldown restarts after its command sequence. Reserved allies cannot start another normal or special attack during the wind-up.
+- Allies defeated during the wind-up are skipped. Captain defeat/despawn cancels unfinished command attacks and releases surviving participants; unspent reservations retain their stored cooldown, while participants that already struck restart theirs. No stale damage callbacks may survive cancellation.
+- No passive immunity, protector interception, forced target order, or escort-first rule. Matching the Captain's weakness damages him through the normal pipeline. Burning down the Captain and dismantling escorts are both valid strategies.
+- Captain encounters procedurally choose one or two escorts from Sword, Spear and Shield Knights, within available enemy slots. Sword/Spear duplicates are allowed; at most one Shield Knight accompanies him. No threat-budget system is introduced: slot and category caps remain the existing capacity model.

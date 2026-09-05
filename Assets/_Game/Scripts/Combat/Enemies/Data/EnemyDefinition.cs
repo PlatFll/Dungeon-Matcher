@@ -173,10 +173,67 @@ public sealed class EnemyDefinition : ScriptableObject
     private EnemyBarricadeStyle barricadeStyle =
         EnemyBarricadeStyle.Wood;
 
+    [Header("Town Marshal Ability")]
+
+    [SerializeField]
+    [Tooltip(
+        "Independent local enemies that Ring the Bell may summon into a free " +
+        "enemy slot. They remain in the wave if the Marshal is defeated."
+    )]
+    private EnemyDefinition[] townMarshalSummonCandidates =
+        new EnemyDefinition[0];
+
+    [SerializeField, Min(1)]
+    [Tooltip(
+        "Accepted player moves that Big Man in Town can keep the Marshal " +
+        "retreated behind the newly summoned protector."
+    )]
+    private int townMarshalRetreatMoveCount = 2;
+
+    [SerializeField, Min(1f)]
+    [Tooltip(
+        "Real-time auto-attack speed multiplier applied by Citizens, Seize Him!"
+    )]
+    private float townMarshalRallyAttackSpeedMultiplier = 1.4f;
+
+    [SerializeField, Min(0.1f)]
+    [Tooltip(
+        "Real-time duration in seconds of Citizens, Seize Him!"
+    )]
+    private float townMarshalRallyDuration = 5f;
+
+    [Header("Siege Sergeant Ability")]
+    [SerializeField, Min(1)]
+    private int hammerWarningMoves = 2;
+
+    [SerializeField, Min(0)]
+    private int hammerBaseDamage = 12;
+
+    [SerializeField, Range(0f, 0.9f)]
+    private float barricadeDamageReduction = 0.2f;
+
+    public int HammerWarningMoves => Mathf.Max(1, hammerWarningMoves);
+    public int HammerBaseDamage => Mathf.Max(0, hammerBaseDamage);
+    public float BarricadeDamageReduction => Mathf.Clamp(barricadeDamageReduction, 0f, 0.9f);
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]
     private int minimumWave = 1;
+
+    [SerializeField, Min(0), Tooltip("Last eligible wave; zero keeps the enemy eligible indefinitely.")]
+    private int maximumWave;
+    [SerializeField, Tooltip("Weight multiplier by waves since Minimum Wave. Zero disables selection.")]
+    private AnimationCurve progressionWeight = AnimationCurve.Linear(0, 1, 8, 1);
+    [SerializeField] private bool crownSoldier;
+    [SerializeField] private EnemyDefinition[] encounterEscorts = new EnemyDefinition[0];
+    [SerializeField, Range(0, 2)] private int maximumSpecialEscorts = 1;
+    public bool CrownSoldier => crownSoldier;
+    public EnemyDefinition[] EncounterEscorts => encounterEscorts ?? System.Array.Empty<EnemyDefinition>();
+    public int MaximumSpecialEscorts => Mathf.Clamp(maximumSpecialEscorts, 0, 2);
+    public float GetSpawnWeight(int wave) => wave < minimumWave ||
+        (maximumWave > 0 && wave > maximumWave) ? 0f :
+        Mathf.Max(0f, spawnWeight * (progressionWeight == null ? 1f : progressionWeight.Evaluate(wave - minimumWave)));
 
     [SerializeField, Min(0.01f)]
     [Tooltip(
@@ -304,6 +361,18 @@ public sealed class EnemyDefinition : ScriptableObject
     public EnemyBarricadeStyle BarricadeStyle =>
         barricadeStyle;
 
+    public EnemyDefinition[] TownMarshalSummonCandidates =>
+        townMarshalSummonCandidates;
+
+    public int TownMarshalRetreatMoveCount =>
+        townMarshalRetreatMoveCount;
+
+    public float TownMarshalRallyAttackSpeedMultiplier =>
+        townMarshalRallyAttackSpeedMultiplier;
+
+    public float TownMarshalRallyDuration =>
+        townMarshalRallyDuration;
+
     public int MinimumWave =>
         minimumWave;
 
@@ -407,6 +476,24 @@ public sealed class EnemyDefinition : ScriptableObject
             Mathf.Max(
                 1,
                 barricadeDurability
+            );
+
+        townMarshalRetreatMoveCount =
+            Mathf.Max(
+                1,
+                townMarshalRetreatMoveCount
+            );
+
+        townMarshalRallyAttackSpeedMultiplier =
+            Mathf.Max(
+                1f,
+                townMarshalRallyAttackSpeedMultiplier
+            );
+
+        townMarshalRallyDuration =
+            Mathf.Max(
+                0.1f,
+                townMarshalRallyDuration
             );
 
         minimumWave =

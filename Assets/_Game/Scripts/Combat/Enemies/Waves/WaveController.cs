@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class WaveController : MonoBehaviour
+public sealed partial class WaveController :
+    MonoBehaviour,
+    IEnemySummonService
 {
     [Header("Enemy Data")]
     [SerializeField]
@@ -48,6 +50,22 @@ public sealed class WaveController : MonoBehaviour
     [SerializeField, Min(1)]
     private int currentWave = 1;
 
+    [SerializeField] private int encounterSeed;
+    private System.Random encounterRandom;
+    public int EncounterSeed => encounterSeed;
+    private System.Random EncounterRandom
+    {
+        get
+        {
+            if (encounterRandom == null)
+            {
+                if (encounterSeed == 0) encounterSeed = Environment.TickCount;
+                encounterRandom = new System.Random(encounterSeed);
+            }
+            return encounterRandom;
+        }
+    }
+
     [SerializeField, Min(0.01f)]
     [Tooltip(
         "Keep this at 1 for now. The small capped " +
@@ -71,12 +89,6 @@ public sealed class WaveController : MonoBehaviour
     )]
     private bool avoidDuplicateEnemyTypesWhenPossible = true;
 
-    [SerializeField]
-    [Tooltip(
-        "If a requested category has no available enemy, " +
-        "the controller temporarily substitutes another category."
-    )]
-    private bool allowCategoryFallback = true;
 
     [Header("Prototype Testing")]
     [SerializeField, Min(1)]
@@ -111,15 +123,6 @@ public sealed class WaveController : MonoBehaviour
     private Coroutine waveSpawnCoroutine;
 
     private bool isSpawningWave;
-
-    private static readonly EnemyCategory[]
-        fallbackCategoryOrder =
-        {
-            EnemyCategory.Normal,
-            EnemyCategory.Special,
-            EnemyCategory.Miniboss,
-            EnemyCategory.Boss
-        };
 
     private void OnEnable()
     {
@@ -196,7 +199,7 @@ public sealed class WaveController : MonoBehaviour
         isSpawningWave = true;
 
         CurrentPlan =
-            waveSpawnProfile.CreatePlan(currentWave);
+            waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
 
         if (CurrentPlan == null ||
             CurrentPlan.EnemyCount == 0)
@@ -221,11 +224,8 @@ public sealed class WaveController : MonoBehaviour
                 availableGemTypes.Count
             );
 
-        HashSet<EnemyDefinition>
-            selectedDefinitions =
-                new HashSet<EnemyDefinition>();
-
         int spawnedEnemyCount = 0;
+        List<EnemyDefinition> encounter = BuildEncounter(plannedEnemyCount);
 
         for (int slotIndex = 0;
              slotIndex < enemySlots.Length;
@@ -252,13 +252,10 @@ public sealed class WaveController : MonoBehaviour
             EnemyCategory requestedCategory =
                 CurrentPlan.Categories[slotIndex];
 
-            bool foundEnemy =
-                TrySelectEnemyDefinition(
-                    requestedCategory,
-                    selectedDefinitions,
-                    out EnemyDefinition definition,
-                    out EnemyCategory selectedCategory
-                );
+            EnemyDefinition definition = encounter[slotIndex];
+            EnemyCategory selectedCategory = requestedCategory;
+            bool foundEnemy = definition != null;
+            if (foundEnemy) selectedCategory = definition.Category;
 
             if (!foundEnemy ||
                 definition == null)
@@ -283,8 +280,8 @@ public sealed class WaveController : MonoBehaviour
                 Debug.LogWarning(
                     $"Wave {currentWave} requested a " +
                     $"{requestedCategory} enemy for " +
-                    $"{slot.name}, but none were available. " +
-                    $"{selectedCategory} was substituted.",
+                    $"{slot.name}; composition constraints selected " +
+                    $"{selectedCategory} instead.",
                     this
                 );
             }
@@ -304,7 +301,6 @@ public sealed class WaveController : MonoBehaviour
                 continue;
             }
 
-            selectedDefinitions.Add(definition);
             activeEnemies.Add(enemy);
 
             spawnedEnemyCount++;
@@ -374,59 +370,6 @@ public sealed class WaveController : MonoBehaviour
         WaveStarted?.Invoke(currentWave);
     }
 
-    private bool TrySelectEnemyDefinition(
-        EnemyCategory requestedCategory,
-        HashSet<EnemyDefinition> selectedDefinitions,
-        out EnemyDefinition selectedDefinition,
-        out EnemyCategory selectedCategory)
-    {
-        if (TrySelectFromCategory(
-                requestedCategory,
-                selectedDefinitions,
-                out selectedDefinition))
-        {
-            selectedCategory =
-                requestedCategory;
-
-            return true;
-        }
-
-        if (!allowCategoryFallback)
-        {
-            selectedDefinition = null;
-            selectedCategory = requestedCategory;
-
-            return false;
-        }
-
-        foreach (
-            EnemyCategory fallbackCategory
-            in fallbackCategoryOrder)
-        {
-            if (fallbackCategory ==
-                requestedCategory)
-            {
-                continue;
-            }
-
-            if (TrySelectFromCategory(
-                    fallbackCategory,
-                    selectedDefinitions,
-                    out selectedDefinition))
-            {
-                selectedCategory =
-                    fallbackCategory;
-
-                return true;
-            }
-        }
-
-        selectedDefinition = null;
-        selectedCategory = requestedCategory;
-
-        return false;
-    }
-
     private bool TrySelectFromCategory(
         EnemyCategory category,
         HashSet<EnemyDefinition> selectedDefinitions,
@@ -451,7 +394,8 @@ public sealed class WaveController : MonoBehaviour
                     category,
                     currentWave,
                     out selectedDefinition,
-                    selectedDefinitions
+                    selectedDefinitions,
+                    EncounterRandom
                 ))
             {
                 return true;
@@ -477,7 +421,8 @@ public sealed class WaveController : MonoBehaviour
         return enemyDatabase.TryGetRandomWeightedEnemy(
             category,
             currentWave,
-            out selectedDefinition
+            out selectedDefinition,
+            deterministicRandom: EncounterRandom
         );
     }
 
@@ -600,7 +545,8 @@ public sealed class WaveController : MonoBehaviour
                         enemyObject,
                         enemy,
                         boardController,
-                        activeEnemies
+                        activeEnemies,
+                        this
                     );
             }
         }
@@ -656,7 +602,7 @@ public sealed class WaveController : MonoBehaviour
              index--)
         {
             int randomIndex =
-                UnityEngine.Random.Range(
+                EncounterRandom.Next(
                     0,
                     index + 1
                 );

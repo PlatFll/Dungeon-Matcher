@@ -26,7 +26,10 @@ public partial class BoardController
         RestoreOwnerCells,
         PinRandomGem,
         ReleaseOwnerPins,
-        PlaceBarricades
+        PlaceBarricades,
+        MarkGemPair,
+        ResolveGemPair,
+        TopUpMovablePins
     }
 
     private sealed class BoardMutationRequest
@@ -39,6 +42,16 @@ public partial class BoardController
         public Gem TargetGem;
         public bool WaitForAnimationImpact;
         public bool AnimationImpactReached;
+
+        public bool PreferStraightLine;
+        public bool ProtectSpecialGems;
+        public Action<bool> Completed;
+        public Func<bool> IsCancelled;
+        public bool Succeeded;
+        public bool MovablePin;
+        public GemPairThreat PairThreat;
+        public int WarningMoves;
+        public int PlayerDamage;
 
         public int BarricadeCount;
         public int MaximumOwnedBarricades;
@@ -376,6 +389,9 @@ public partial class BoardController
 
     private IEnumerator ProcessBoardMutations()
     {
+        // Always yield once so StartCoroutine can store its handle even when
+        // a metadata-only mutation completes without yielding in the switch.
+        yield return null;
         bool acquiredBoardBusy = false;
 
         try
@@ -402,8 +418,19 @@ public partial class BoardController
                 activeBoardMutationKind =
                     request.Kind;
 
+                if (request.IsCancelled != null && request.IsCancelled())
+                {
+                    request.Completed?.Invoke(false);
+                    activeBoardMutationKind = null;
+                    activeBoardMutationRequest = null;
+                    continue;
+                }
+
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.TopUpMovablePins:
+                        yield return ExecuteTopUpMovablePins(request);
+                        break;
                     case BoardMutationKind.MineRandomCell:
                         yield return
                             ExecuteMineRequest(
@@ -440,6 +467,14 @@ public partial class BoardController
                             );
                         break;
 
+                    case BoardMutationKind.MarkGemPair:
+                        ExecuteMarkGemPair(request);
+                        break;
+
+                    case BoardMutationKind.ResolveGemPair:
+                        yield return ExecuteResolveGemPair(request);
+                        break;
+
                     case BoardMutationKind.PlaceBarricades:
                         yield return
                             ExecutePlaceBarricadesRequest(
@@ -448,6 +483,7 @@ public partial class BoardController
                         break;
                 }
 
+                request.Completed?.Invoke(request.Succeeded);
                 activeBoardMutationKind = null;
                 activeBoardMutationRequest = null;
             }

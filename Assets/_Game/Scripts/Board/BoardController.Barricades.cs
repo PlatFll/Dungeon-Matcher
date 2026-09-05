@@ -153,7 +153,11 @@ public partial class BoardController
         int barricadesPerUse,
         int maximumOwnedBarricades,
         int durability,
-        EnemyBarricadeStyle style)
+        EnemyBarricadeStyle style,
+        bool preferStraightLine = false,
+        bool protectSpecialGems = false,
+        System.Action<bool> completed = null,
+        System.Func<bool> isCancelled = null)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -193,7 +197,8 @@ public partial class BoardController
         }
 
         int availableCells =
-            CountBarricadableCells();
+            protectSpecialGems ? BuildBarricadableCellList(true).Count :
+                CountBarricadableCells();
 
         if (availableCells <= 0)
         {
@@ -227,7 +232,11 @@ public partial class BoardController
                 BarricadeDurability =
                     Mathf.Max(1, durability),
 
-                BarricadeStyle = style
+                BarricadeStyle = style,
+                PreferStraightLine = preferStraightLine && requestedCount == barricadesPerUse,
+                ProtectSpecialGems = protectSpecialGems,
+                Completed = completed,
+                IsCancelled = isCancelled
             }
         );
 
@@ -294,7 +303,7 @@ public partial class BoardController
     }
 
     private List<Vector2Int>
-        BuildBarricadableCellList()
+        BuildBarricadableCellList(bool protectSpecialGems = false)
     {
         List<Vector2Int> candidates =
             new List<Vector2Int>();
@@ -313,6 +322,10 @@ public partial class BoardController
                 {
                     continue;
                 }
+
+                if (protectSpecialGems &&
+                    GetGem(column, row).SpecialType != GemSpecialType.None)
+                    continue;
 
                 candidates.Add(
                     new Vector2Int(
@@ -370,7 +383,7 @@ public partial class BoardController
         }
 
         List<Vector2Int> candidates =
-            BuildBarricadableCellList();
+            BuildBarricadableCellList(request.ProtectSpecialGems);
 
         int placementCount =
             Mathf.Min(
@@ -382,6 +395,17 @@ public partial class BoardController
         if (placementCount <= 0)
         {
             yield break;
+        }
+
+        // Pick a full requested-length formation only when capacity allows it.
+        // Otherwise use distinct random legal cells, never overwrite obstacles.
+        if (request.PreferStraightLine &&
+            placementCount == request.BarricadeCount)
+        {
+            List<Vector2Int> line = ChooseStraightCellRun(
+                candidates, request.BarricadeCount);
+            if (line != null)
+                candidates = line;
         }
 
         List<Vector2Int> selectedCells =
@@ -467,6 +491,7 @@ public partial class BoardController
          * manipulation. It deliberately bypasses combat/reward reporters, so
          * this destruction grants no damage, energy, healing or special proc.
          */
+        request.Succeeded = true;
         yield return ClearMatches(
             gemsToDestroy,
             null
