@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Enemy_CourtMage
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: court_mage
+  displayName: Court Mage
+  category: 1
+  description: A Royal spellcaster who freezes ordinary gems in place while the rest of the column continues falling past them.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 0}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
+  baseMaxHealth: 180
+  baseDamage: 6
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 10
+  hasSpecialAbility: 1
+  specialAbilityKind: 9
+  baseSpecialTurnRequirement: 5
+  lockSpecialTurnRequirement: 1
+  minimumWave: 24
+  maximumWave: 0
+  progressionWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.45
+      inSlope: 0.175
+      outSlope: 0.175
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4
+      value: 1.15
+      inSlope: 0.175
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 12
+      value: 1.15
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  crownSoldier: 1
+  encounterEscorts: []
+  maximumSpecialEscorts: 1
+  spawnWeight: 0.75
+  healthMultiplier: 0.2705628
+  damageMultiplier: 0.4208754
+  attackSpeedMultiplier: 0.8354219
+  staggerDurationMultiplier: 1
