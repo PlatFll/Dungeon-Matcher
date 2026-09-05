@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public sealed class RoyalBannerAuraRuntime : MonoBehaviour
 {
     private BoardController boardController;
     private IReadOnlyList<EnemyActor> activeEnemies;
-    private int bannerId;
     private float attackSpeedMultiplier = 1f;
+    private bool isInitialized;
+    private bool isCleanedUp;
+
+    private readonly HashSet<int>
+        activeBannerIds =
+            new HashSet<int>();
 
     private readonly HashSet<EnemyAutoAttack>
         affectedAutoAttacks =
@@ -26,9 +32,16 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         }
 
         RoyalBannerAuraRuntime runtime =
-            board.gameObject.AddComponent<RoyalBannerAuraRuntime>();
+            board.GetComponent<RoyalBannerAuraRuntime>();
 
-        runtime.Initialize(
+        if (runtime == null)
+        {
+            runtime =
+                board.gameObject.AddComponent<
+                    RoyalBannerAuraRuntime>();
+        }
+
+        runtime.RegisterBanner(
             board,
             enemies,
             installedBannerId,
@@ -36,32 +49,55 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         );
     }
 
-    private void Initialize(
+    private void RegisterBanner(
         BoardController board,
         IReadOnlyList<EnemyActor> enemies,
         int installedBannerId,
         float speedMultiplier)
     {
-        boardController = board;
-        activeEnemies = enemies;
-        bannerId = installedBannerId;
-        attackSpeedMultiplier =
-            Mathf.Clamp(speedMultiplier, 1f, 5f);
+        if (!isInitialized)
+        {
+            boardController = board;
+            activeEnemies = enemies;
+            attackSpeedMultiplier =
+                Mathf.Clamp(speedMultiplier, 1f, 5f);
+            isInitialized = true;
+            isCleanedUp = false;
 
-        boardController.RoyalBannerRemoved +=
-            HandleBannerRemoved;
+            boardController.RoyalBannerRemoved +=
+                HandleBannerRemoved;
+        }
+        else
+        {
+            /*
+             * All current standards use the same aura value. Keeping the
+             * strongest registered value makes this coordinator safe if that
+             * tuning later becomes data-driven without allowing duplicate
+             * standards to stack multiplicatively.
+             */
+            attackSpeedMultiplier =
+                Mathf.Max(
+                    attackSpeedMultiplier,
+                    Mathf.Clamp(speedMultiplier, 1f, 5f)
+                );
+        }
 
+        activeBannerIds.Add(installedBannerId);
         RefreshAffectedEnemies();
     }
 
     private void Update()
     {
-        RefreshAffectedEnemies();
+        if (activeBannerIds.Count > 0)
+        {
+            RefreshAffectedEnemies();
+        }
     }
 
     private void RefreshAffectedEnemies()
     {
-        if (activeEnemies == null)
+        if (activeEnemies == null ||
+            activeBannerIds.Count == 0)
         {
             return;
         }
@@ -117,25 +153,43 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
             EnemyAutoAttack autoAttack =
                 actor.GetComponent<EnemyAutoAttack>();
 
-            if (autoAttack == null ||
-                affectedAutoAttacks.Contains(autoAttack))
+            if (autoAttack == null)
             {
                 continue;
             }
 
-            autoAttack.SetRuntimeAttackSpeedMultiplier(
-                attackSpeedMultiplier
-            );
+            if (!affectedAutoAttacks.Contains(autoAttack))
+            {
+                affectedAutoAttacks.Add(autoAttack);
+            }
 
-            affectedAutoAttacks.Add(autoAttack);
+            if (!Mathf.Approximately(
+                    autoAttack.RuntimeAttackSpeedMultiplier,
+                    attackSpeedMultiplier))
+            {
+                autoAttack.SetRuntimeAttackSpeedMultiplier(
+                    attackSpeedMultiplier
+                );
+            }
         }
     }
 
     private void HandleBannerRemoved(
         int removedBannerId)
     {
-        if (removedBannerId != bannerId)
+        if (!activeBannerIds.Remove(removedBannerId))
         {
+            return;
+        }
+
+        /*
+         * Multiple standards do not stack their speed bonus, but either one
+         * keeps the shared Crown aura alive. Removing one banner therefore
+         * never clears the remaining standard's effect.
+         */
+        if (activeBannerIds.Count > 0)
+        {
+            RefreshAffectedEnemies();
             return;
         }
 
@@ -152,10 +206,8 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         }
 
         /*
-         * Never erase a later system's different runtime modifier. With the
-         * current Royal encounter constraints only one Standard Bearer can be
-         * active, but this guard also keeps cleanup safe if another modifier is
-         * introduced later.
+         * Never erase a later system's different runtime modifier. Only undo
+         * the value that this aura is still visibly responsible for.
          */
         if (Mathf.Approximately(
                 autoAttack.RuntimeAttackSpeedMultiplier,
@@ -167,6 +219,13 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
 
     private void Cleanup()
     {
+        if (isCleanedUp)
+        {
+            return;
+        }
+
+        isCleanedUp = true;
+
         if (boardController != null)
         {
             boardController.RoyalBannerRemoved -=
@@ -180,6 +239,7 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         }
 
         affectedAutoAttacks.Clear();
+        activeBannerIds.Clear();
     }
 
     private void OnDestroy()
