@@ -19,6 +19,51 @@ MonoBehaviour:
   - wave: 8
     ruleName: Town Marshal Miniboss
     enemyCategories: 02000000
+  - wave: 9
+    ruleName: Chapter 2 - Reinforcements Arrive
+    enemyCategories: 0000000000000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+  - wave: 10
+    ruleName: Chapter 2 - Guard Line
+    enemyCategories: 0000000000000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+  - wave: 11
+    ruleName: Chapter 2 - Ranged Support
+    enemyCategories: 0000000001000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+  - wave: 12
+    ruleName: Chapter 2 - Field Engineering
+    enemyCategories: 0000000001000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+  - wave: 13
+    ruleName: Chapter 2 - Coordinated Patrol
+    enemyCategories: 000000000000000001000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+  - wave: 14
+    ruleName: Chapter 2 - Reinforced Guard Line
+    enemyCategories: 000000000000000001000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+  - wave: 15
+    ruleName: Chapter 2 - Siege Vanguard
+    enemyCategories: 000000000100000001000000
+    fixedEnemies:
+    - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+    - {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+    - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
   - wave: 16
     ruleName: Siege Sergeant Miniboss
     enemyCategories: 02000000
