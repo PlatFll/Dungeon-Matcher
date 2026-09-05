@@ -104,9 +104,15 @@ Do not rewrite documentation merely to make it agree with an accidental bug or i
 
 ## Validation
 
+### Environment-specific workflow rule
+
+- **Normal ChatGPT GitHub workflow:** implement, commit, PR and merge without Unity validation when Ali explicitly asks for implementation/merge. Clearly report that Unity validation was not run; Ali performs the Unity runtime test afterward.
+- **Codex workflow:** because Codex has the local environment, it must continue running `Tools/Validate-Unity.ps1` before merging changes that require Unity validation.
+- The Normal ChatGPT exception above overrides the generic pre-PR validator requirement below only for work performed through normal ChatGPT GitHub tools. It does not permit claiming Unity validation or runtime testing that did not occur.
+
 - For changes to C# gameplay/runtime/editor code, run:
   `powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1`
-- Run the validator after implementation and before opening the pull request.
+- Run the validator after implementation and before opening the pull request, except when the Normal ChatGPT GitHub workflow exception above applies.
 - If validation fails, do not open the PR as completed work. Diagnose and fix errors caused by the change first.
 - If validation cannot run because the Unity project is already open, report that validation was blocked rather than claiming success.
 - Documentation-only changes do not require Unity validation.
@@ -124,7 +130,7 @@ Before implementing a requested feature:
 3. Check for serialized Unity references that may affect the behavior.
 4. Make the smallest coherent implementation.
 5. Review the resulting diff for unintended changes.
-6. Run available validation.
+6. Run available validation, subject to the environment-specific workflow rule above.
 7. Open a PR.
 8. Stop before merging unless explicitly instructed.
 
