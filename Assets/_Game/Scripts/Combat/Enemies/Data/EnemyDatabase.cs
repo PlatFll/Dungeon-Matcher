@@ -41,7 +41,7 @@ public sealed class EnemyDatabase : ScriptableObject
                 continue;
             }
 
-            if (wave < definition.MinimumWave)
+            if (definition.GetSpawnWeight(wave) <= 0f)
             {
                 continue;
             }
@@ -67,7 +67,8 @@ public sealed class EnemyDatabase : ScriptableObject
         EnemyCategory category,
         int wave,
         out EnemyDefinition selectedEnemy,
-        ISet<EnemyDefinition> excludedEnemies = null)
+        ISet<EnemyDefinition> excludedEnemies = null,
+        System.Random deterministicRandom = null)
     {
         List<EnemyDefinition> eligibleEnemies =
             GetEligibleEnemies(
@@ -95,12 +96,12 @@ public sealed class EnemyDatabase : ScriptableObject
         {
             totalWeight += Mathf.Max(
                 0.01f,
-                definition.SpawnWeight
+                definition.GetSpawnWeight(wave)
             );
         }
 
         float randomValue =
-            Random.Range(0f, totalWeight);
+            (float)(deterministicRandom ?? new System.Random()).NextDouble() * totalWeight;
 
         float accumulatedWeight = 0f;
 
@@ -108,7 +109,7 @@ public sealed class EnemyDatabase : ScriptableObject
         {
             accumulatedWeight += Mathf.Max(
                 0.01f,
-                definition.SpawnWeight
+                definition.GetSpawnWeight(wave)
             );
 
             if (randomValue <= accumulatedWeight)

@@ -133,11 +133,11 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - The definition's individual scaling modifiers normalize the global wave-9 curves to those introduction targets. Later waves continue to scale through the existing difficulty pipeline. These numbers are tunable prototype balance, not permanent progression gates.
 - His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a wave-9 spawn.
 - Until his own art is imported, his definition uses the existing Spear Knight sprite as temporary fallback artwork, with the shared single-lunge presentation and no animation override.
-- The broader chapter encounter pools are still pending migration: existing guards and knights retain their previous unlocks in this focused addition. The Spear Knight and Shield Knight wave-8 entries below describe that earlier implementation; they are not the intended order for the new chapter plan.
+- Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
 
 ### Spear Knight
 
-- Spear Knight is a late-game Normal enemy eligible starting at wave 8.
+- Spear Knight is a Chapter 3 Normal enemy eligible starting at wave 17.
 - Base maximum HP: 120.
 - Its normal auto-attack is a two-hit combo once every 10 seconds: lunge, deal 5 base damage at the first impact, return completely to rest, take a brief recovery/readability beat, then lunge again, deal 7 base damage at the second impact, and return completely to rest again.
 - The next 10-second auto-attack cooldown begins only after the second return finishes; there is no normal cooldown between the two lunges.
@@ -146,8 +146,8 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ### Shield Knight
 
-- Shield Knight is a late-game Normal enemy eligible starting at wave 8.
-- At its wave-8 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. It has no follow-up attack.
+- Shield Knight is a Chapter 3 Special enemy eligible starting at wave 17.
+- At its wave-17 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. Individual scaling compensates for the Special classification and new introduction wave. It has no follow-up attack.
 - Shielding Allies casts after every 7 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
 - A cast grants +10 shield to every other living enemy and +15 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
@@ -261,7 +261,7 @@ These numeric values are first-pass balance and should be playtested rather than
 
 ### Siege Sergeant
 
-- Chapter 2 Mini-boss, introduced alone at wave 16 through a fixed encounter entry. Afterwards he is eligible for the existing weighted Mini-boss pool. The full chapter-pool migration is still separate.
+- Chapter 2 Mini-boss, introduced alone at the wave-16 checkpoint. The current pool ends his eligibility there; Chapter 3 introduces the Crown roster.
 - First-pass wave-16 baseline: 600 HP, a single 5-damage auto-attack every 10 seconds, normal stagger, and 12 damage for a failed hammer warning. The standard difficulty profile scales later appearances; individual modifiers normalize the introduction values. These are prototype balance targets.
 - One special opportunity every 3 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the eight-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
 - **Hold the Line:** place four one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose four distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at eight blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
@@ -271,3 +271,21 @@ These numeric values are first-pass balance and should be playtested rather than
 - **Behind the Barricades:** while at least one blockade owned by this Sergeant remains, incoming damage is multiplied by 0.8 and rounded up, including damage-over-time. This reduction is fixed, never multiplied by block count, and is applied before the existing enemy-shield calculation. Other owners' and orphaned blockades do not grant defence. The block count is checked at each hit so breaking the last blockade immediately removes the passive.
 - Defeat/disable cancels the warning and releases the passive. Surviving blockades persist and their ownership is orphaned, consistent with existing barricade lifetime rules.
 - Presentation uses the supplied 64x64 sprite. White pixel hammer icons have dark outlines and two countdown pips; a faster pulse signals the last move. The strike is a short, broad, squared white sweep between both current gem positions, timed to their clear flash, with a small body tilt. These visuals are non-authoritative and do not require external VFX assets.
+
+### Chapters and Crown escalation
+
+Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
+
+First-pass thresholds are tunable: Locals occupy waves 1–7; Town Marshal is a solo checkpoint at 8; Guards enter at 9; Siege Sergeant is a solo checkpoint at 16; Crown Knights enter at 17. Locals fade through Chapter 2 and leave after 16. Guards fade into early/mid Chapter 3 and leave after 24. Captain becomes eligible at 21, without a guaranteed exact composition or appearance wave. See `ENCOUNTER_PACING.md` for current pool data and caps.
+
+Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
+
+### Knight Captain
+
+- A straightforward sword attack, stronger than Sword Knight, at a medium cadence. Initial base values are 240 HP, 8 damage and a 10-second interval, modified by the normal difficulty/category pipeline. These are tunable balance data, not finalized runtime targets. Existing Knight animation is temporary presentation until Captain art is available.
+- One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Invalid swaps, cascades and settling do not count. Prefer Hold Fast first, then On My Mark, alternating after successful casts. If the preferred command cannot execute, try the other. If neither can execute, retain readiness and retry after another completed move.
+- **Hold Fast!** tops up to 3 owned chains on ordinary, unpinned gems. Chained gems cannot be manually swapped but can fall with gravity and be cleared by matches, specials or abilities. Chains follow gem identity, disappear on destruction/replacement, and do not break from adjacent clears. Each placement passes the authoritative legal-move check with earlier placements included. No legal placement means no chain is added. Existing pin overlay/dimming is the presentation fallback. Captain defeat releases his chains through queued board cleanup; emergency reshuffles also release them.
+- **On My Mark!** reserves the Captain and eligible living Crown soldiers present when the command starts. Enemies already performing an action or staggered cannot join. The Captain telegraphs, then participants execute their existing normal attack sequences in roster order, Captain first, with a brief gap. Spear Knight retains both separate hits and complete returns. This consumes each participant's next normal attack: its cooldown restarts after its command sequence. Reserved allies cannot start another normal or special attack during the wind-up.
+- Allies defeated during the wind-up are skipped. Captain defeat/despawn cancels unfinished command attacks and releases surviving participants; unspent reservations retain their stored cooldown, while participants that already struck restart theirs. No stale damage callbacks may survive cancellation.
+- No passive immunity, protector interception, forced target order, or escort-first rule. Matching the Captain's weakness damages him through the normal pipeline. Burning down the Captain and dismantling escorts are both valid strategies.
+- Captain encounters procedurally choose one or two escorts from Sword, Spear and Shield Knights, within available enemy slots. Sword/Spear duplicates are allowed; at most one Shield Knight accompanies him. No threat-budget system is introduced: slot and category caps remain the existing capacity model.

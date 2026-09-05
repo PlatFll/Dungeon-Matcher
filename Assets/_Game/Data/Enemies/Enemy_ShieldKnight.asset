@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   enemyId: shield_knight
   displayName: Shield Knight
-  category: 0
+  category: 1
   description: A late-game knight that repeatedly shields itself and every other
     living enemy.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
@@ -38,9 +38,34 @@ MonoBehaviour:
   maximumOwnedBarricades: 6
   barricadeDurability: 1
   barricadeStyle: 0
-  minimumWave: 8
+  minimumWave: 17
   spawnWeight: 1
-  healthMultiplier: 0.6626027
-  damageMultiplier: 0.78799725
-  attackSpeedMultiplier: 0.95813894
+  healthMultiplier: 0.347976170591838
+  damageMultiplier: 0.510381152644795
+  attackSpeedMultiplier: 0.861976823167179
   staggerDurationMultiplier: 1
+  crownSoldier: 1
+  progressionWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 7
+      value: 2
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
