@@ -13,6 +13,8 @@ public sealed class BarricadeEnemyAbility :
 
     private EnemyActor enemyActor;
     private BoardController boardController;
+    private EnemySpecialActionAvailability
+        specialActionAvailability;
 
     private int ownerInstanceId;
     private bool ownershipReleased;
@@ -22,6 +24,7 @@ public sealed class BarricadeEnemyAbility :
         BoardController initializedBoard,
         IReadOnlyList<EnemyActor> activeEnemies)
     {
+        specialActionAvailability?.Dispose();
         Unsubscribe();
 
         enemyActor = initializedEnemy;
@@ -47,6 +50,14 @@ public sealed class BarricadeEnemyAbility :
 
             return;
         }
+
+        specialActionAvailability =
+            new EnemySpecialActionAvailability(
+                this,
+                enemyActor,
+                boardController,
+                TryPlaceBarricades
+            );
 
         Subscribe();
     }
@@ -106,7 +117,7 @@ public sealed class BarricadeEnemyAbility :
             return;
         }
 
-        TryPlaceBarricades();
+        specialActionAvailability?.RequestExecution();
     }
 
     private void HandleValidPlayerMoveCompleted(
@@ -123,10 +134,10 @@ public sealed class BarricadeEnemyAbility :
          * Keep a ready charge when the exact board state has no legal target.
          * A later player move may open cells that make the placement valid.
          */
-        TryPlaceBarricades();
+        specialActionAvailability?.RequestExecution();
     }
 
-    private void TryPlaceBarricades()
+    private bool TryPlaceBarricades()
     {
         if (enemyActor == null ||
             boardController == null ||
@@ -134,7 +145,7 @@ public sealed class BarricadeEnemyAbility :
             enemyActor.IsDefeated ||
             !enemyActor.IsSpecialReady)
         {
-            return;
+            return false;
         }
 
         EnemyDefinition definition =
@@ -157,7 +168,7 @@ public sealed class BarricadeEnemyAbility :
              * required, matching the Crossbow Guard cap policy.
              */
             enemyActor.ResetSpecialCounter();
-            return;
+            return true;
         }
 
         bool queued =
@@ -171,15 +182,17 @@ public sealed class BarricadeEnemyAbility :
 
         if (!queued)
         {
-            return;
+            return false;
         }
 
         enemyActor.ResetSpecialCounter();
+        return true;
     }
 
     private void HandleEnemyDefeated(
         EnemyActor defeatedEnemy)
     {
+        specialActionAvailability?.Dispose();
         ReleaseOwnershipWithoutRemovingBarricades();
         Unsubscribe();
     }
@@ -220,6 +233,7 @@ public sealed class BarricadeEnemyAbility :
 
     private void OnDestroy()
     {
+        specialActionAvailability?.Dispose();
         ReleaseOwnershipWithoutRemovingBarricades();
         Unsubscribe();
     }
