@@ -141,18 +141,23 @@ public partial class BoardController
             );
 
         /*
-         * A normal row/column bomb can keep drawing its beam and white pixel
-         * fragments after the matched gems have already disappeared. If that
-         * bomb registered a refill hold, extend only this clear's final wait
-         * until the directional VFX window is finished. Ordinary matches keep
-         * using the normal post-burst delay above.
+         * Bomb presentation may extend beyond the ordinary shatter pause. Hold
+         * normal refill only until the visible primary blast is complete. The
+         * poison residue is explicitly excluded so it can linger underneath
+         * gravity and disappear as replacement gems actually land.
          */
         float directionalBombHoldRemaining =
             GetDirectionalBombRefillHoldRemaining();
 
+        float poisonBombHoldRemaining =
+            GetPoisonBombRefillHoldRemaining();
+
         return Mathf.Max(
             normalPostBurstDelay,
-            directionalBombHoldRemaining
+            Mathf.Max(
+                directionalBombHoldRemaining,
+                poisonBombHoldRemaining
+            )
         );
     }
 
