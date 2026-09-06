@@ -120,7 +120,11 @@ public sealed class RunUpgradeSystemTests
         Assert.That(fixture.Runtime.TryApply(damage, 5), Is.True);
         Assert.That(fixture.Runtime.TryApply(damage, 10), Is.True);
         Assert.That(
-            RunUpgradeResolver.ResolveGemDamage(100, default),
+            RunUpgradeResolver.ResolveGemDamage(
+                100,
+                default,
+                fixture.Runtime
+            ),
             Is.EqualTo(130)
         );
 
@@ -132,7 +136,8 @@ public sealed class RunUpgradeSystemTests
         Assert.That(
             RunUpgradeResolver.ResolveAbilityEnergyCost(
                 fixture.Player.ActiveAbility.EnergyCost,
-                fixture.Player.ActiveAbility
+                fixture.Player.ActiveAbility,
+                fixture.Runtime
             ),
             Is.EqualTo(72)
         );
@@ -166,7 +171,10 @@ public sealed class RunUpgradeSystemTests
             Is.False
         );
         Assert.That(
-            RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1),
+            RunUpgradeResolver.ResolveBarricadeDurabilityDamage(
+                1,
+                fixture.Runtime
+            ),
             Is.EqualTo(1 + siege.MaxStacks)
         );
     }
