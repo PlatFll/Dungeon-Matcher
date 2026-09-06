@@ -9,21 +9,24 @@ public sealed class PoisonBombVFXController : MonoBehaviour
     [Header("Poison Burst Animation")]
     [SerializeField]
     [Tooltip(
-        "Ordered poison explosion frames. Slice the 384x64 sheet into six " +
-        "64x64 sprites and assign them from ignition through final particles."
+        "Ordered poison explosion frames. The current PoisonExplosion.png is " +
+        "448x64, so slice it into seven 64x64 sprites and assign them from " +
+        "ignition through final particles."
     )]
     private Sprite[] poisonExplosionFrames =
-        new Sprite[6];
+        new Sprite[7];
 
     [SerializeField, Min(0.01f)]
     [Tooltip("Seconds displayed per poison explosion frame.")]
     private float frameDuration = 0.055f;
 
-    [SerializeField, Range(1f, 4f)]
+    [SerializeField, Range(0.5f, 4f)]
     [Tooltip(
-        "Maximum rendered size of the main explosion relative to one board cell."
+        "Rendered size of the main explosion relative to one board cell. " +
+        "The source frames are 64x64 like the board art, so 1.15 preserves " +
+        "roughly the same pixel density while allowing a small overshoot."
     )]
-    private float burstSizeInCells = 3f;
+    private float burstSizeInCells = 1.15f;
 
     [SerializeField]
     private int burstSortingOrder = 12;
@@ -38,8 +41,8 @@ public sealed class PoisonBombVFXController : MonoBehaviour
 
     [SerializeField]
     [Tooltip(
-        "Optional dedicated residue sprite. When empty, the last usable burst " +
-        "frame is reused at a small translucent size."
+        "Optional dedicated residue sprite. The current final sheet frame is a " +
+        "good first choice. When empty, the last usable burst frame is reused."
     )]
     private Sprite poisonResidueSprite;
 
@@ -47,10 +50,10 @@ public sealed class PoisonBombVFXController : MonoBehaviour
     private float residueDuration = 0.25f;
 
     [SerializeField, Range(0f, 1f)]
-    private float residueAlpha = 0.35f;
+    private float residueAlpha = 0.30f;
 
     [SerializeField, Range(0.2f, 1.25f)]
-    private float residueSizeInCells = 0.65f;
+    private float residueSizeInCells = 1f;
 
     [SerializeField]
     [Tooltip(
@@ -347,7 +350,7 @@ public sealed class PoisonBombVFXController : MonoBehaviour
         burstSizeInCells =
             Mathf.Clamp(
                 burstSizeInCells,
-                1f,
+                0.5f,
                 4f
             );
 
