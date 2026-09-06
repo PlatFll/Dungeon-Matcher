@@ -466,7 +466,8 @@ public partial class BoardController : MonoBehaviour
         Gem gem,
         Vector2 screenPosition)
     {
-        if (isBusy ||
+        if (IsExternalInputBlocked ||
+            isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
             IsGemPinned(gem))
@@ -485,7 +486,8 @@ public partial class BoardController : MonoBehaviour
         Gem gem,
         Vector2 screenPosition)
     {
-        if (isBusy ||
+        if (IsExternalInputBlocked ||
+            isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
             IsGemPinned(gem) ||
@@ -517,7 +519,8 @@ public partial class BoardController : MonoBehaviour
 
     public void SelectGem(Gem gem)
     {
-        if (isBusy ||
+        if (IsExternalInputBlocked ||
+            isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
             IsGemPinned(gem))
@@ -567,7 +570,8 @@ public partial class BoardController : MonoBehaviour
         Gem startingGem,
         Vector2 swipeDelta)
     {
-        if (startingGem == null ||
+        if (IsExternalInputBlocked ||
+            startingGem == null ||
             IsGemPinned(startingGem))
         {
             return;
@@ -626,7 +630,8 @@ public partial class BoardController : MonoBehaviour
         Gem first,
         Gem second)
     {
-        if (first == null ||
+        if (IsExternalInputBlocked ||
+            first == null ||
             second == null ||
             IsGemPinned(first) ||
             IsGemPinned(second))

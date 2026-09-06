@@ -129,16 +129,18 @@ The King should not be delayed deep into a long sequence of Mercenary and Guild 
 
 ## Cards and run rhythm
 
-A card choice approximately every **5 waves** is the preferred first-pass cadence.
-
-This is also a tuning anchor rather than a rule that cannot change, but the design goal is frequent build evolution.
+The first complete run-upgrade system presents a card choice after every **5
+completed waves**: 5, 10, 15, 20, and so on. The choice occurs after the old
+board resolution settles and before the next encounter spawns. This exact
+first-pass cadence may still be revisited by an explicitly approved design
+change; ordinary encounter composition remains weighted rather than scripted.
 
 A representative opening rhythm is:
 
-- around wave 5: card choice
-- around wave 10: card choice
-- around wave 15: card choice
-- around wave 20: card choice
+- after wave 5: card choice
+- after wave 10: card choice
+- after wave 15: card choice
+- after wave 20: card choice
 - around wave 25: King / major boss reward moment
 
 By the first major Boss, the player should usually have made several meaningful build decisions so the current run already feels distinct.

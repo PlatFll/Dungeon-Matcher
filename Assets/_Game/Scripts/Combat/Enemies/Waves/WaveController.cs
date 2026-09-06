@@ -126,6 +126,9 @@ public sealed partial class WaveController :
 
     private bool isSpawningWave;
 
+    private readonly HashSet<IWaveProgressionGate> progressionGates =
+        new HashSet<IWaveProgressionGate>();
+
     private void OnEnable()
     {
         SubscribeToSlots();
@@ -184,6 +187,41 @@ public sealed partial class WaveController :
             StartCoroutine(
                 SpawnCurrentWaveRoutine()
             );
+    }
+
+    public void RegisterProgressionGate(IWaveProgressionGate gate)
+    {
+        if (gate != null)
+        {
+            progressionGates.Add(gate);
+        }
+    }
+
+    public void UnregisterProgressionGate(IWaveProgressionGate gate)
+    {
+        if (gate != null)
+        {
+            progressionGates.Remove(gate);
+        }
+    }
+
+    private bool IsWaveProgressionBlocked()
+    {
+        progressionGates.RemoveWhere(
+            gate => gate == null ||
+                    (gate is UnityEngine.Object unityObject &&
+                     unityObject == null)
+        );
+
+        foreach (IWaveProgressionGate gate in progressionGates)
+        {
+            if (gate.IsBlockingWaveProgression)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private IEnumerator SpawnCurrentWaveRoutine()
@@ -844,6 +882,19 @@ public sealed partial class WaveController :
              * Give the defeated enemy objects and UI one frame
              * to finish cleaning themselves up.
              */
+            yield return null;
+        }
+
+        while (IsWaveProgressionBlocked())
+        {
+            if (!isActiveAndEnabled ||
+                playerActor == null ||
+                playerActor.IsDefeated)
+            {
+                advanceWaveCoroutine = null;
+                yield break;
+            }
+
             yield return null;
         }
 

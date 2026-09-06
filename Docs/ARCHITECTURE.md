@@ -19,6 +19,7 @@ This document describes the current authoritative gameplay architecture and the 
 | Energy generation | `PlayerAbilityMatchEnergyGain` |
 | Enemy data and runtime | `EnemyDefinition`, `EnemyDatabase`, `EnemyActor`, `EnemyAutoAttack`, `IEnemySpecialAbilityRuntime` |
 | Waves and scaling | `WaveController`, `WaveSpawnProfile`, `DifficultyProfile`, `EnemyRuntimeStats` |
+| Run upgrades | `RunUpgradeDefinition`, `RunUpgradeCatalog`, `RunUpgradeRuntime`, `RunUpgradeResolver`, `UpgradeDraftGenerator` |
 | Presentation | Board VFX controllers, enemy/player presenters, combat-text controllers, and UI components |
 
 ## BoardController ownership
@@ -175,6 +176,39 @@ Shared board code must never switch on a concrete enemy identity. Add enemy beha
 - Cascades caused by enemy/environmental board changes do not count as additional player turns.
 - Some enemy runtimes also listen to `ValidPlayerMoveCompleted` to retry a ready action when an earlier board state had no legal target; the ready state is not permission to mutate outside the queue.
 - When a final enemy dies during board resolution, `WaveController.AdvanceToNextWaveWhenReady` waits for `BoardController.IsBusy` to become false before spawning the next wave. This prevents old cascades from damaging new-wave enemies.
+
+Wave transitions also expose generic registered `IWaveProgressionGate`
+instances. The run-upgrade coordinator holds this gate after waves divisible by
+five, waits for the board to settle, presents the choice, and releases the gate
+after one accepted selection. `WaveController` does not know about upgrade UI,
+and the UI never increments waves or spawns encounters.
+
+External modal gameplay input uses disposable reference-counted tokens owned by
+`BoardController`. These block pointer begin/end, selection, drag/swipe, and swap
+acceptance without marking an already-running resolution busy or interrupting
+it.
+
+## Run upgrade ownership and resolution
+
+`RunUpgradeRuntime` is scene/run scoped and is the authority for selected stable
+upgrade IDs and stack counts. It resets on a new battle-scene run and never
+persists temporary upgrades through `PlayerPrefs`. Definitions and the catalog
+are immutable `ScriptableObject` data; runtime application never mutates them.
+
+`UpgradeDraftGenerator` filters wave bounds, stable `PlayerId`/`AbilityId`, max
+stacks, prerequisites, and bidirectional exclusions, then performs weighted
+selection without replacement. Its dedicated `System.Random` is seeded from the
+encounter seed through a stable mix but never reads or advances the encounter
+RNG instance.
+
+Gameplay systems query the side-effect-free `RunUpgradeResolver` only at their
+existing authoritative resolution point. Numeric ordering is base, summed flat,
+summed additive percentage, stable-ID multiplicative, then clamp/round. Missing
+runtime state returns the base value. Current hooks are normal gem-clear damage
+(fixed ability damage remains distinct), maximum HP, healing, shield grants,
+ability-energy gain/cost, barricade durability damage, and Cracked Gems target
+count. Typed mechanic capabilities are the extension boundary for non-numeric
+behavior.
 
 ## HP and shield system separation
 

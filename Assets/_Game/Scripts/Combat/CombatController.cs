@@ -407,7 +407,9 @@ public sealed class CombatController :
 
         int actualHealing =
             playerActor.Heal(
-                healingBombHealAmount
+                RunUpgradeResolver.ResolveHealing(
+                    healingBombHealAmount
+                )
             );
 
         if (actualHealing > 0)
@@ -431,7 +433,9 @@ public sealed class CombatController :
 
         int actualShieldGranted =
             playerActor.GrantShield(
-                shieldBombShieldAmount
+                RunUpgradeResolver.ResolveShieldGranted(
+                    shieldBombShieldAmount
+                )
             );
 
         if (actualShieldGranted > 0)
@@ -467,12 +471,17 @@ public sealed class CombatController :
             ) *
             cascadeDamageBonusPerDepth;
 
-        return Mathf.Max(
+        int calculatedDamage = Mathf.Max(
             0,
             Mathf.RoundToInt(
                 baseDamage *
                 cascadeMultiplier
             )
+        );
+
+        return RunUpgradeResolver.ResolveGemDamage(
+            calculatedDamage,
+            clearContext
         );
     }
 

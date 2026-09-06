@@ -30,9 +30,9 @@ public sealed class PlayerAbilityController :
 
     public int RequiredEnergy =>
         ActiveAbility != null
-            ? Mathf.Max(
-                1,
-                ActiveAbility.EnergyCost
+            ? RunUpgradeResolver.ResolveAbilityEnergyCost(
+                ActiveAbility.EnergyCost,
+                ActiveAbility
             )
             : 0;
 
@@ -77,11 +77,7 @@ public sealed class PlayerAbilityController :
                 return false;
             }
 
-            int energyCost =
-                Mathf.Max(
-                    1,
-                    definition.EnergyCost
-                );
+            int energyCost = RequiredEnergy;
 
             return
                 playerAbilityEnergy.CurrentEnergy >=
@@ -152,11 +148,7 @@ public sealed class PlayerAbilityController :
             return false;
         }
 
-        int energyCost =
-            Mathf.Max(
-                1,
-                definition.EnergyCost
-            );
+        int energyCost = RequiredEnergy;
 
         if (playerAbilityEnergy.CurrentEnergy <
             energyCost)
