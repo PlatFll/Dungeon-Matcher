@@ -5,56 +5,25 @@ using UnityEngine;
 public sealed class GemDamageContext
 {
     public PlayerActor Player { get; }
-
-    public BoardClearContext ClearContext
-    {
-        get;
-    }
-
-    public GemType GemType =>
-        ClearContext.GemType;
-
-    public int GemCount =>
-        ClearContext.GemCount;
-
-    public int CascadeDepth =>
-        ClearContext.CascadeDepth;
-
-    public BoardClearSource ClearSource =>
-        ClearContext.Source;
-
-    public BoardMatchType MatchType =>
-        ClearContext.MatchType;
-
+    public BoardClearContext ClearContext { get; }
+    public GemType GemType => ClearContext.GemType;
+    public int GemCount => ClearContext.GemCount;
+    public int CascadeDepth => ClearContext.CascadeDepth;
+    public BoardClearSource ClearSource => ClearContext.Source;
+    public BoardMatchType MatchType => ClearContext.MatchType;
     public int OriginalDamage { get; }
-
     public int Damage { get; set; }
-
-    public bool IsCancelled
-    {
-        get;
-        private set;
-    }
+    public bool IsCancelled { get; private set; }
 
     public GemDamageContext(
         PlayerActor player,
         BoardClearContext clearContext,
         int damage)
     {
-        Player =
-            player;
-
-        ClearContext =
-            clearContext;
-
-        OriginalDamage =
-            Mathf.Max(
-                0,
-                damage
-            );
-
-        Damage =
-            OriginalDamage;
+        Player = player;
+        ClearContext = clearContext;
+        OriginalDamage = Mathf.Max(0, damage);
+        Damage = OriginalDamage;
     }
 
     public void Cancel()
@@ -65,8 +34,7 @@ public sealed class GemDamageContext
 }
 
 [DisallowMultipleComponent]
-public sealed class CombatController :
-    MonoBehaviour
+public sealed class CombatController : MonoBehaviour
 {
     [Header("Combat References")]
     [SerializeField]
@@ -88,20 +56,15 @@ public sealed class CombatController :
         "Extra damage for each cascade depth. " +
         "0.20 means twenty percent per depth."
     )]
-    private float cascadeDamageBonusPerDepth =
-        0.20f;
+    private float cascadeDamageBonusPerDepth = 0.20f;
 
     [Header("Poison")]
     [SerializeField, Min(0.05f)]
-    [Tooltip(
-        "How long Poison Bomb poison remains active."
-    )]
+    [Tooltip("How long Poison Bomb poison remains active.")]
     private float poisonDuration = 7f;
 
     [SerializeField, Min(0.05f)]
-    [Tooltip(
-        "Seconds between poison damage ticks."
-    )]
+    [Tooltip("Seconds between poison damage ticks.")]
     private float poisonTickInterval = 1f;
 
     [SerializeField, Min(1)]
@@ -137,44 +100,23 @@ public sealed class CombatController :
     [SerializeField, Min(0)]
     private int debugCascadeDepth;
 
-    public event Action<GemDamageContext>
-        BeforeGemDamage;
+    public event Action<GemDamageContext> BeforeGemDamage;
+    public event Action<GemDamageContext, int> GemDamageResolved;
+    public event Action<EnemyActor, GemDamageContext, int>
+        EnemyDamagedByGemClear;
 
-    public event Action<
-        GemDamageContext,
-        int
-    > GemDamageResolved;
+    public PlayerActor PlayerActor => playerActor;
+    public WaveController WaveController => waveController;
 
-    public event Action<
-        EnemyActor,
-        GemDamageContext,
-        int
-    > EnemyDamagedByGemClear;
-
-    public PlayerActor PlayerActor =>
-        playerActor;
-
-    public WaveController WaveController =>
-        waveController;
-
-    public bool ResolveGemClear(
-        BoardClearContext clearContext)
+    public bool ResolveGemClear(BoardClearContext clearContext)
     {
-        if (!CanResolveCombat() ||
-            clearContext.GemCount <= 0)
+        if (!CanResolveCombat() || clearContext.GemCount <= 0)
         {
             return false;
         }
 
-        int calculatedDamage =
-            CalculateGemClearDamage(
-                clearContext
-            );
-
-        return ResolveGemDamage(
-            clearContext,
-            calculatedDamage
-        );
+        int calculatedDamage = CalculateGemClearDamage(clearContext);
+        return ResolveGemDamage(clearContext, calculatedDamage);
     }
 
     public bool ResolveFixedGemDamage(
@@ -188,21 +130,14 @@ public sealed class CombatController :
             return false;
         }
 
-        return ResolveGemDamage(
-            clearContext,
-            fixedDamage
-        );
+        return ResolveGemDamage(clearContext, fixedDamage);
     }
 
     private bool ResolveGemDamage(
         BoardClearContext clearContext,
         int requestedDamage)
     {
-        int safeDamage =
-            Mathf.Max(
-                0,
-                requestedDamage
-            );
+        int safeDamage = Mathf.Max(0, requestedDamage);
 
         if (safeDamage <= 0)
         {
@@ -216,20 +151,14 @@ public sealed class CombatController :
                 safeDamage
             );
 
-        BeforeGemDamage?.Invoke(
-            damageContext
-        );
+        BeforeGemDamage?.Invoke(damageContext);
 
         if (damageContext.IsCancelled)
         {
             return false;
         }
 
-        damageContext.Damage =
-            Mathf.Max(
-                0,
-                damageContext.Damage
-            );
+        damageContext.Damage = Mathf.Max(0, damageContext.Damage);
 
         if (damageContext.Damage == 0)
         {
@@ -237,43 +166,45 @@ public sealed class CombatController :
         }
 
         List<EnemyActor> enemySnapshot =
-            new List<EnemyActor>(
-                waveController.ActiveEnemies
-            );
+            new List<EnemyActor>(waveController.ActiveEnemies);
 
         int enemiesHit = 0;
 
-        foreach (EnemyActor enemy
-                 in enemySnapshot)
+        foreach (EnemyActor enemy in enemySnapshot)
         {
             if (enemy == null ||
                 enemy.IsDefeated ||
                 !enemy.IsInitialized ||
-                enemy.AssignedGemType !=
-                    clearContext.GemType)
+                enemy.AssignedGemType != clearContext.GemType)
             {
                 continue;
             }
 
-            int healthBeforeDamage =
-                enemy.CurrentHealth;
+            int resolvedTargetDamage =
+                RunUpgradeResolver.ResolveEnemyDamage(
+                    damageContext.Damage,
+                    enemy
+                );
+
+            if (resolvedTargetDamage <= 0)
+            {
+                continue;
+            }
+
+            int healthBeforeDamage = enemy.CurrentHealth;
 
             bool damageApplied =
-                enemy.TryTakeDamage(
-                    damageContext.Damage
-                );
+                enemy.TryTakeDamage(resolvedTargetDamage);
 
             if (!damageApplied)
             {
                 continue;
             }
 
-            int actualDamage =
-                Mathf.Max(
-                    0,
-                    healthBeforeDamage -
-                    enemy.CurrentHealth
-                );
+            int actualDamage = Mathf.Max(
+                0,
+                healthBeforeDamage - enemy.CurrentHealth
+            );
 
             enemiesHit++;
 
@@ -293,10 +224,7 @@ public sealed class CombatController :
             );
         }
 
-        GemDamageResolved?.Invoke(
-            damageContext,
-            enemiesHit
-        );
+        GemDamageResolved?.Invoke(damageContext, enemiesHit);
 
         if (enemiesHit == 0)
         {
@@ -319,15 +247,17 @@ public sealed class CombatController :
             return 0;
         }
 
+        float effectiveDuration =
+            RunUpgradeResolver.ResolvePoisonDuration(poisonDuration);
+        int effectiveTickDamage =
+            RunUpgradeResolver.ResolvePoisonTickDamage(poisonTickDamage);
+
         List<EnemyActor> enemySnapshot =
-            new List<EnemyActor>(
-                waveController.ActiveEnemies
-            );
+            new List<EnemyActor>(waveController.ActiveEnemies);
 
         int enemiesPoisoned = 0;
 
-        foreach (EnemyActor enemy
-                 in enemySnapshot)
+        foreach (EnemyActor enemy in enemySnapshot)
         {
             if (enemy == null ||
                 !enemy.IsInitialized ||
@@ -337,25 +267,20 @@ public sealed class CombatController :
             }
 
             EnemyPoisonStatus poisonStatus =
-                enemy.GetComponent<
-                    EnemyPoisonStatus
-                >();
+                enemy.GetComponent<EnemyPoisonStatus>();
 
             if (poisonStatus == null)
             {
                 poisonStatus =
-                    enemy.gameObject.AddComponent<
-                        EnemyPoisonStatus
-                    >();
+                    enemy.gameObject.AddComponent<EnemyPoisonStatus>();
             }
 
             try
             {
-                EnemyPoisonStatusPresenter
-                    .EnsureInstalled(
-                        enemy.gameObject,
-                        poisonStatus
-                    );
+                EnemyPoisonStatusPresenter.EnsureInstalled(
+                    enemy.gameObject,
+                    poisonStatus
+                );
             }
             catch (Exception exception)
             {
@@ -364,17 +289,13 @@ public sealed class CombatController :
                     $"{enemy.name}. Gameplay Poison will continue.",
                     enemy
                 );
-
-                Debug.LogException(
-                    exception,
-                    enemy
-                );
+                Debug.LogException(exception, enemy);
             }
 
             poisonStatus.Apply(
-                poisonDuration,
+                effectiveDuration,
                 poisonTickInterval,
-                poisonTickDamage
+                effectiveTickDamage
             );
 
             if (!poisonStatus.IsPoisoned)
@@ -390,7 +311,7 @@ public sealed class CombatController :
             Debug.Log(
                 $"Poison applied to {enemiesPoisoned} " +
                 $"active enemy/enemies for " +
-                $"{poisonDuration:0.##}s.",
+                $"{effectiveDuration:0.##}s.",
                 this
             );
         }
@@ -407,7 +328,7 @@ public sealed class CombatController :
 
         int actualHealing =
             playerActor.Heal(
-                RunUpgradeResolver.ResolveHealing(
+                RunUpgradeResolver.ResolveHealingBombHealing(
                     healingBombHealAmount
                 )
             );
@@ -433,7 +354,7 @@ public sealed class CombatController :
 
         int actualShieldGranted =
             playerActor.GrantShield(
-                RunUpgradeResolver.ResolveShieldGranted(
+                RunUpgradeResolver.ResolveShieldBombShield(
                     shieldBombShieldAmount
                 )
             );
@@ -450,33 +371,19 @@ public sealed class CombatController :
         return actualShieldGranted;
     }
 
-    public int CalculateGemClearDamage(
-        BoardClearContext clearContext)
+    public int CalculateGemClearDamage(BoardClearContext clearContext)
     {
-        int safeGemCount =
-            Mathf.Max(
-                0,
-                clearContext.GemCount
-            );
-
-        int baseDamage =
-            safeGemCount *
-            damagePerGem;
+        int safeGemCount = Mathf.Max(0, clearContext.GemCount);
+        int baseDamage = safeGemCount * damagePerGem;
 
         float cascadeMultiplier =
             1f +
-            Mathf.Max(
-                0,
-                clearContext.CascadeDepth
-            ) *
+            Mathf.Max(0, clearContext.CascadeDepth) *
             cascadeDamageBonusPerDepth;
 
         int calculatedDamage = Mathf.Max(
             0,
-            Mathf.RoundToInt(
-                baseDamage *
-                cascadeMultiplier
-            )
+            Mathf.RoundToInt(baseDamage * cascadeMultiplier)
         );
 
         return RunUpgradeResolver.ResolveGemDamage(
@@ -493,7 +400,6 @@ public sealed class CombatController :
                 "CombatController requires a PlayerActor.",
                 this
             );
-
             return false;
         }
 
@@ -503,12 +409,10 @@ public sealed class CombatController :
                 "CombatController requires a WaveController.",
                 this
             );
-
             return false;
         }
 
-        if (!playerActor.IsInitialized ||
-            playerActor.IsDefeated)
+        if (!playerActor.IsInitialized || playerActor.IsDefeated)
         {
             return false;
         }
@@ -518,64 +422,19 @@ public sealed class CombatController :
 
     private void OnValidate()
     {
-        damagePerGem =
-            Mathf.Max(
-                0,
-                damagePerGem
-            );
-
+        damagePerGem = Mathf.Max(0, damagePerGem);
         cascadeDamageBonusPerDepth =
-            Mathf.Max(
-                0f,
-                cascadeDamageBonusPerDepth
-            );
-
-        poisonDuration =
-            Mathf.Max(
-                0.05f,
-                poisonDuration
-            );
-
-        poisonTickInterval =
-            Mathf.Max(
-                0.05f,
-                poisonTickInterval
-            );
-
-        poisonTickDamage =
-            Mathf.Max(
-                1,
-                poisonTickDamage
-            );
-
-        healingBombHealAmount =
-            Mathf.Max(
-                1,
-                healingBombHealAmount
-            );
-
-        shieldBombShieldAmount =
-            Mathf.Max(
-                1,
-                shieldBombShieldAmount
-            );
-
-        debugGemCount =
-            Mathf.Max(
-                1,
-                debugGemCount
-            );
-
-        debugCascadeDepth =
-            Mathf.Max(
-                0,
-                debugCascadeDepth
-            );
+            Mathf.Max(0f, cascadeDamageBonusPerDepth);
+        poisonDuration = Mathf.Max(0.05f, poisonDuration);
+        poisonTickInterval = Mathf.Max(0.05f, poisonTickInterval);
+        poisonTickDamage = Mathf.Max(1, poisonTickDamage);
+        healingBombHealAmount = Mathf.Max(1, healingBombHealAmount);
+        shieldBombShieldAmount = Mathf.Max(1, shieldBombShieldAmount);
+        debugGemCount = Mathf.Max(1, debugGemCount);
+        debugCascadeDepth = Mathf.Max(0, debugCascadeDepth);
     }
 
-    [ContextMenu(
-        "Prototype/Resolve Debug Gem Clear"
-    )]
+    [ContextMenu("Prototype/Resolve Debug Gem Clear")]
     private void DebugResolveGemClear()
     {
         if (!Application.isPlaying)
@@ -592,28 +451,20 @@ public sealed class CombatController :
                 BoardMatchType.Other
             );
 
-        ResolveGemClear(
-            clearContext
-        );
+        ResolveGemClear(clearContext);
     }
 
-    [ContextMenu(
-        "Prototype/Match First Enemy Weakness"
-    )]
+    [ContextMenu("Prototype/Match First Enemy Weakness")]
     private void DebugMatchFirstEnemyWeakness()
     {
-        if (!Application.isPlaying ||
-            waveController == null)
+        if (!Application.isPlaying || waveController == null)
         {
             return;
         }
 
-        foreach (
-            EnemyActor enemy
-            in waveController.ActiveEnemies)
+        foreach (EnemyActor enemy in waveController.ActiveEnemies)
         {
-            if (enemy == null ||
-                enemy.IsDefeated)
+            if (enemy == null || enemy.IsDefeated)
             {
                 continue;
             }
@@ -627,10 +478,7 @@ public sealed class CombatController :
                     BoardMatchType.Other
                 );
 
-            ResolveGemClear(
-                clearContext
-            );
-
+            ResolveGemClear(clearContext);
             return;
         }
     }

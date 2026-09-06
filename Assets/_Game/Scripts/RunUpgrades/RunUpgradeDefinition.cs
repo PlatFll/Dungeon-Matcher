@@ -96,6 +96,14 @@ public sealed class RunUpgradeDefinition : ScriptableObject
         maximumWave = Mathf.Max(0, maximumWave);
         requiredPlayerId = NormalizeId(requiredPlayerId);
         requiredAbilityId = NormalizeId(requiredAbilityId);
+
+        // Ability-modifying cards are always Epic. Keep this invariant in the
+        // data model so a misconfigured asset cannot render/draft as a lower tier.
+        if (!string.IsNullOrEmpty(requiredAbilityId))
+        {
+            rarity = RunUpgradeRarity.Epic;
+        }
+
         NormalizeIds(prerequisiteUpgradeIds);
         NormalizeIds(excludedUpgradeIds);
     }

@@ -44,9 +44,15 @@ public static class RunUpgradeBootstrap
             Object.FindFirstObjectByType<BoardController>();
         PlayerActor player =
             Object.FindFirstObjectByType<PlayerActor>();
+        CombatController combat =
+            Object.FindFirstObjectByType<CombatController>();
         Canvas canvas = ResolveOverlayCanvas();
 
-        if (waves == null || board == null || player == null || canvas == null)
+        if (waves == null ||
+            board == null ||
+            player == null ||
+            combat == null ||
+            canvas == null)
         {
             return;
         }
@@ -72,6 +78,22 @@ public static class RunUpgradeBootstrap
         }
 
         runtime.Configure(catalog, player, waves);
+
+        RunUpgradeGameplayHooks gameplayHooks;
+
+        if (!waves.TryGetComponent(out gameplayHooks))
+        {
+            gameplayHooks =
+                waves.gameObject.AddComponent<RunUpgradeGameplayHooks>();
+        }
+
+        gameplayHooks.Configure(
+            runtime,
+            board,
+            combat,
+            player,
+            waves
+        );
 
         UpgradeChoiceUI ui;
 
