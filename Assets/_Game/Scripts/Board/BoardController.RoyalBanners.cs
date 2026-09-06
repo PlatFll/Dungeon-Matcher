@@ -27,6 +27,7 @@ public partial class BoardController
         public SpriteRenderer Renderer;
         public Coroutine MoveRoutine;
         public bool ReachedBottom;
+        public int PendingGravitySteps;
     }
 
     private readonly Dictionary<Vector2Int, RoyalBannerState>
@@ -307,27 +308,24 @@ public partial class BoardController
     }
 
     /*
-     * A banner is a true gravity occupant rather than a turn timer. Whenever a
-     * playable gem slot below it is emptied, move the banner down by one
-     * gravity slot before the normal collapse runs. The gem displaced from the
-     * banner's destination is moved into the banner's old grid slot; the normal
-     * authoritative collapse then compacts that ordered gem stream exactly as
-     * if the banner had participated in gravity itself.
+     * Gem destruction is reported at the end of the clear frame. Accumulate
+     * every gravity opening from that clear first, then consume the complete
+     * batch in Update before the board-resolution coroutine resumes. A vertical
+     * clear or column bomb can therefore pull a standard through several rows
+     * in one gravity resolution instead of limiting it to one row per clear.
      */
     public void NotifyGemDestroyedForRoyalBanners(
         int column,
         int row)
     {
-        if (!IsStructurallyOpenForRoyalBannerGravity(
-                column,
-                row))
-        {
-            return;
-        }
-
-        AdvanceRoyalBannersForOpenedSlot(column, row);
+        QueueRoyalBannerGravityOpening(column, row);
     }
 
+    /*
+     * Restoring a Miner hole happens synchronously immediately before an
+     * environmental collapse. It opens one real gravity destination, so apply
+     * that opening immediately rather than waiting for the next Update.
+     */
     private void NotifyRoyalBannerSpaceOpened(
         int column,
         int row)
@@ -339,12 +337,41 @@ public partial class BoardController
             return;
         }
 
-        AdvanceRoyalBannersForOpenedSlot(column, row);
+        QueueRoyalBannerGravityOpening(column, row);
+        ResolvePendingRoyalBannerGravity();
     }
 
-    private void AdvanceRoyalBannersForOpenedSlot(
+    private void QueueRoyalBannerGravityOpening(
         int column,
         int openedRow)
+    {
+        if (!IsStructurallyOpenForRoyalBannerGravity(
+                column,
+                openedRow) ||
+            royalBannerCells.Count == 0)
+        {
+            return;
+        }
+
+        foreach (RoyalBannerState state
+                 in royalBannerCells.Values)
+        {
+            if (state != null &&
+                !state.ReachedBottom &&
+                state.Cell.x == column &&
+                openedRow < state.Cell.y)
+            {
+                state.PendingGravitySteps++;
+            }
+        }
+    }
+
+    private void Update()
+    {
+        ResolvePendingRoyalBannerGravity();
+    }
+
+    private void ResolvePendingRoyalBannerGravity()
     {
         if (royalBannerCells.Count == 0)
         {
@@ -359,14 +386,17 @@ public partial class BoardController
         {
             if (state != null &&
                 !state.ReachedBottom &&
-                state.Cell.x == column &&
-                openedRow < state.Cell.y)
+                state.PendingGravitySteps > 0)
             {
                 affected.Add(state);
             }
         }
 
-        /* Lower banners move first so two standards in one column never pass. */
+        /*
+         * Lower standards resolve first. An upper standard may never pass a
+         * lower standard, while normal gems are still free to compact through
+         * either standard's height during the authoritative board collapse.
+         */
         affected.Sort(
             (left, right) =>
                 left.Cell.y.CompareTo(right.Cell.y)
@@ -374,11 +404,23 @@ public partial class BoardController
 
         foreach (RoyalBannerState state in affected)
         {
-            AdvanceRoyalBannerOneGravitySlot(state);
+            int requestedSteps = state.PendingGravitySteps;
+            state.PendingGravitySteps = 0;
+
+            for (int step = 0;
+                 step < requestedSteps &&
+                 !state.ReachedBottom;
+                 step++)
+            {
+                if (!AdvanceRoyalBannerOneGravitySlot(state))
+                {
+                    break;
+                }
+            }
         }
     }
 
-    private void AdvanceRoyalBannerOneGravitySlot(
+    private bool AdvanceRoyalBannerOneGravitySlot(
         RoyalBannerState state)
     {
         if (state == null ||
@@ -388,7 +430,7 @@ public partial class BoardController
                 out RoyalBannerState current) ||
             current != state)
         {
-            return;
+            return false;
         }
 
         int column = state.Cell.x;
@@ -399,10 +441,15 @@ public partial class BoardController
              row >= 0;
              row--)
         {
+            if (IsCellRoyalBanner(column, row))
+            {
+                /* Standards never fall through one another. */
+                return false;
+            }
+
             if (!IsStructurallyOpenForRoyalBannerGravity(
                     column,
-                    row) ||
-                IsCellRoyalBanner(column, row))
+                    row))
             {
                 continue;
             }
@@ -422,7 +469,7 @@ public partial class BoardController
 
         if (targetRow < 0)
         {
-            return;
+            return false;
         }
 
         Vector2Int oldCell = state.Cell;
@@ -441,6 +488,8 @@ public partial class BoardController
              * Keep the current transform position. CollapseAndRefillBoard will
              * animate the displaced gem from that visible position to its final
              * compacted row; only its authoritative grid slot changes here.
+             * This is what allows gems above a standard to flow through its old
+             * height and settle into open rows below it.
              */
             displacedGem.SetGridPosition(column, oldRow);
         }
@@ -463,6 +512,8 @@ public partial class BoardController
             royalBannerCells[targetCell] = state;
             ScheduleRoyalBannerVisualMove(state, removeAtEnd: false);
         }
+
+        return true;
     }
 
     private bool IsStructurallyOpenForRoyalBannerGravity(
