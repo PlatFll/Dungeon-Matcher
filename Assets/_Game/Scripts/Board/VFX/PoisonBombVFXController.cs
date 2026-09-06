@@ -23,10 +23,10 @@ public sealed class PoisonBombVFXController : MonoBehaviour
     [SerializeField, Range(0.5f, 4f)]
     [Tooltip(
         "Rendered size of the main explosion relative to one board cell. " +
-        "The source frames are 64x64 like the board art, so 1.15 preserves " +
-        "roughly the same pixel density while allowing a small overshoot."
+        "The source frames are 64x64 like the board art, so 1.0 preserves " +
+        "the source pixel density. Increase only if the burst needs more reach."
     )]
-    private float burstSizeInCells = 1.15f;
+    private float burstSizeInCells = 1f;
 
     [SerializeField]
     private int burstSortingOrder = 12;
