@@ -11,7 +11,8 @@ public partial class BoardController
         Gem gem,
         Vector2 screenPosition)
     {
-        if (isBusy ||
+        if (IsExternalInputBlocked ||
+            isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
             IsGemPinned(gem) ||

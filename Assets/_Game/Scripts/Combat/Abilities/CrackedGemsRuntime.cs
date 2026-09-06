@@ -64,7 +64,10 @@ public sealed class CrackedGemsRuntime :
             waveController.IsWaveActive &&
             HasAliveEnemy() &&
             boardController.CanActivateCrackedGems(
-                crackedDefinition.TargetGemCount
+                RunUpgradeResolver.ResolveCrackedGemsTargetCount(
+                    crackedDefinition.TargetGemCount,
+                    crackedDefinition
+                )
             );
     }
 
@@ -86,12 +89,18 @@ public sealed class CrackedGemsRuntime :
         HashSet<GemType> preferredGemTypes =
             BuildPreferredGemTypes();
 
+        int targetGemCount =
+            RunUpgradeResolver.ResolveCrackedGemsTargetCount(
+                crackedDefinition.TargetGemCount,
+                crackedDefinition
+            );
+
         IsActive = true;
 
         bool accepted =
             boardController.TryActivateCrackedGems(
                 preferredGemTypes,
-                crackedDefinition.TargetGemCount,
+                targetGemCount,
                 crackedDefinition.CrackedGemDamage,
                 crackedDefinition.BubbleTravelDuration,
                 crackedDefinition.BubbleHoverDuration,

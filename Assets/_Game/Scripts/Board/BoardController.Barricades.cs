@@ -595,7 +595,10 @@ public partial class BoardController
                 continue;
             }
 
-            state.RemainingDurability--;
+            int durabilityDamage =
+                RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
+
+            state.RemainingDurability -= durabilityDamage;
 
             if (state.RemainingDurability <= 0)
             {

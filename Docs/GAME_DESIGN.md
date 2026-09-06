@@ -16,7 +16,9 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-The wider run structure, end condition, and metagame loop need finalized design input.
+The run now includes a choice of one from up to three legal run-upgrade cards
+after every fifth completed wave. The end condition and wider metagame loop still
+need finalized design input.
 
 ## Core match-3 design philosophy
 
@@ -114,7 +116,15 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - Wave composition and numerical scaling are data-driven so pacing and balance can change without rewriting shared gameplay logic.
 - Increasing difficulty should not remove meaningful player choices or replace the match-3 game with a sequence of predetermined solutions.
 
-**Needs finalized design input:** run length, progression economy, unlock structure, difficulty milestones, boss cadence, failure/retry rules, and long-term scaling targets.
+Run upgrades are temporary, stackable build choices owned only by the current
+run. Numerical cards use deterministic typed modifier channels; genuinely new
+behavior uses explicit mechanic capabilities. Draft eligibility may depend on
+stable player and active-ability IDs, but never display names. Card drafting has
+its own deterministic random stream and cannot perturb encounter generation.
+
+**Needs finalized design input:** run length, persistent progression economy,
+unlock structure, difficulty milestones, boss cadence, failure/retry rules, and
+long-term scaling targets.
 
 ## Presentation and pixel-art readability principles
 

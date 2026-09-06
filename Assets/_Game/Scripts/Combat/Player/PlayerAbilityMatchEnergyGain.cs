@@ -163,6 +163,11 @@ public sealed class PlayerAbilityMatchEnergyGain :
                 outcome
             );
 
+        gainedEnergy =
+            RunUpgradeResolver.ResolveAbilityEnergyGain(
+                gainedEnergy
+            );
+
         if (gainedEnergy <= 0)
         {
             return;
