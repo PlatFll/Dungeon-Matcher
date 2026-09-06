@@ -43,7 +43,7 @@ public static class UpgradeDraftGenerator
 
             for (int index = 0; index < eligible.Count; index++)
             {
-                totalWeight += Math.Max(0d, eligible[index].Weight);
+                totalWeight += GetEffectiveWeight(eligible[index]);
             }
 
             int selectedIndex;
@@ -59,7 +59,7 @@ public static class UpgradeDraftGenerator
 
                 for (int index = 0; index < eligible.Count; index++)
                 {
-                    roll -= Math.Max(0d, eligible[index].Weight);
+                    roll -= GetEffectiveWeight(eligible[index]);
 
                     if (roll < 0d)
                     {
@@ -74,5 +74,31 @@ public static class UpgradeDraftGenerator
         }
 
         return choices;
+    }
+
+    public static double GetRarityWeightMultiplier(RunUpgradeRarity rarity)
+    {
+        switch (rarity)
+        {
+            case RunUpgradeRarity.Uncommon:
+                return 0.65d;
+            case RunUpgradeRarity.Rare:
+                return 0.35d;
+            case RunUpgradeRarity.Epic:
+                return 0.20d;
+            default:
+                return 1d;
+        }
+    }
+
+    private static double GetEffectiveWeight(RunUpgradeDefinition definition)
+    {
+        if (definition == null)
+        {
+            return 0d;
+        }
+
+        return Math.Max(0d, definition.Weight) *
+               GetRarityWeightMultiplier(definition.Rarity);
     }
 }

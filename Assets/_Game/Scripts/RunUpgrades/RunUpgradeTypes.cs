@@ -5,7 +5,8 @@ public enum RunUpgradeRarity
 {
     Common = 0,
     Uncommon = 1,
-    Rare = 2
+    Rare = 2,
+    Epic = 3
 }
 
 public enum RunUpgradeStat
@@ -17,7 +18,15 @@ public enum RunUpgradeStat
     AbilityEnergyGain = 4,
     AbilityEnergyCost = 5,
     BarricadeDurabilityDamage = 6,
-    CrackedGemsTargetCount = 7
+    CrackedGemsTargetCount = 7,
+    AbilityDamage = 8,
+    PoisonTickDamage = 9,
+    PoisonDuration = 10,
+    HealingBombHealing = 11,
+    ShieldBombShield = 12,
+    CrackedGemDamage = 13,
+    RoyalDecreeDuration = 14,
+    RoyalDecreeDamage = 15
 }
 
 public enum RunUpgradeModifierOperation
@@ -29,7 +38,18 @@ public enum RunUpgradeModifierOperation
 
 public enum RunUpgradeMechanic
 {
-    None = 0
+    None = 0,
+    CascadeCatalyst = 1,
+    Bombsmith = 2,
+    ChromaticConductor = 3,
+    ChainReaction = 4,
+    ToxicMomentum = 5,
+    EmergencyPlating = 6,
+    BossHunter = 7,
+    Executioner = 8,
+    OpeningVolley = 9,
+    PreparedCasting = 10,
+    ResonantCracks = 11
 }
 
 [Serializable]

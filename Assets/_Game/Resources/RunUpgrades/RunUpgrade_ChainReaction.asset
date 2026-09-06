@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a6fd06b25614f26955cabf2c123a002, type: 3}
-  m_Name: Prototype_HorribleEncore
+  m_Name: RunUpgrade_ChainReaction
   m_EditorClassIdentifier: Assembly-CSharp::RunUpgradeDefinition
-  upgradeId: prototype_horrible_encore
-  displayTitle: Horrible Encore
-  description: +1 Cracked Gems target
+  upgradeId: chain_reaction
+  displayTitle: Chain Reaction
+  description: Special chains gain +10% damage per extra detonation, up to +30%.
   artwork: {fileID: 0}
-  rarity: 3
+  rarity: 2
   weight: 1
-  maxStacks: 3
+  maxStacks: 1
   minimumWave: 1
   maximumWave: 0
-  requiredPlayerId: bardley
-  requiredAbilityId: cracked_gems
+  requiredPlayerId: 
+  requiredAbilityId: 
   prerequisiteUpgradeIds: []
   excludedUpgradeIds: []
-  modifiers:
-  - stat: 7
-    operation: 0
-    value: 1
-  mechanicGrants: []
+  modifiers: []
+  mechanicGrants:
+  - mechanic: 4

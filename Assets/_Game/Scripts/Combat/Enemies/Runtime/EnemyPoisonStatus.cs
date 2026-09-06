@@ -23,36 +23,24 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
     private float nextTickTime;
     private float tickInterval = 1f;
 
-    public event Action<EnemyPoisonStatus, bool>
-        PoisonApplied;
+    public event Action<EnemyPoisonStatus, bool> PoisonApplied;
+    public event Action<EnemyPoisonStatus, int> TickDamageApplied;
+    public event Action<EnemyPoisonStatus> PoisonExpired;
 
-    public event Action<EnemyPoisonStatus, int>
-        TickDamageApplied;
-
-    public event Action<EnemyPoisonStatus>
-        PoisonExpired;
-
-    public EnemyActor EnemyActor =>
-        enemyActor;
-
+    public EnemyActor EnemyActor => enemyActor;
     public bool IsPoisoned =>
         isPoisoned &&
         enemyActor != null &&
         enemyActor.IsInitialized &&
         !enemyActor.IsDefeated;
-
     public float RemainingDuration =>
         IsPoisoned
-            ? Mathf.Max(
-                0f,
-                expirationTime - Time.time
-            )
+            ? Mathf.Max(0f, expirationTime - Time.time)
             : 0f;
 
     private void Awake()
     {
-        enemyActor =
-            GetComponent<EnemyActor>();
+        enemyActor = GetComponent<EnemyActor>();
     }
 
     private void OnEnable()
@@ -69,28 +57,17 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
             return;
         }
 
-        float currentTime =
-            Time.time;
+        float currentTime = Time.time;
 
-        /*
-         * Tick before expiration so a seven-second poison with
-         * a one-second cadence produces ticks at 1..7 seconds.
-         * A frame arriving slightly after the exact timestamp is
-         * still allowed to resolve the final scheduled tick.
-         */
-        while (nextTickTime <=
-                   expirationTime + 0.0001f &&
+        while (nextTickTime <= expirationTime + 0.0001f &&
                currentTime >= nextTickTime &&
                IsPoisoned)
         {
             ApplyTick();
-
-            nextTickTime +=
-                tickInterval;
+            nextTickTime += tickInterval;
         }
 
-        if (IsPoisoned &&
-            currentTime >= expirationTime)
+        if (IsPoisoned && currentTime >= expirationTime)
         {
             ClearPoison(true);
             return;
@@ -116,48 +93,19 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
             return;
         }
 
-        bool wasAlreadyPoisoned =
-            IsPoisoned;
+        bool wasAlreadyPoisoned = IsPoisoned;
+        tickInterval = Mathf.Max(0.05f, interval);
+        tickDamage = Mathf.Max(1, damagePerTick);
+        expirationTime = Time.time + Mathf.Max(0.05f, duration);
 
-        tickInterval =
-            Mathf.Max(
-                0.05f,
-                interval
-            );
-
-        tickDamage =
-            Mathf.Max(
-                1,
-                damagePerTick
-            );
-
-        expirationTime =
-            Time.time +
-            Mathf.Max(
-                0.05f,
-                duration
-            );
-
-        /*
-         * Refresh only the duration. Do not reset an existing
-         * tick cadence; repeatedly reapplying poison immediately
-         * before a tick should not postpone that tick forever.
-         */
         if (!wasAlreadyPoisoned)
         {
-            nextTickTime =
-                Time.time +
-                tickInterval;
+            nextTickTime = Time.time + tickInterval;
         }
 
         isPoisoned = true;
-
         SyncDebugState();
-
-        PoisonApplied?.Invoke(
-            this,
-            wasAlreadyPoisoned
-        );
+        PoisonApplied?.Invoke(this, wasAlreadyPoisoned);
     }
 
     public void ClearPoison()
@@ -167,56 +115,45 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
 
     private void ApplyTick()
     {
-        if (enemyActor == null ||
-            enemyActor.IsDefeated ||
-            tickDamage <= 0)
+        if (enemyActor == null || enemyActor.IsDefeated || tickDamage <= 0)
         {
             return;
         }
 
-        int healthBeforeDamage =
-            enemyActor.CurrentHealth;
+        int resolvedTickDamage =
+            RunUpgradeResolver.ResolveEnemyDamage(
+                tickDamage,
+                enemyActor
+            );
+
+        int healthBeforeDamage = enemyActor.CurrentHealth;
 
         bool damageApplied =
-            enemyActor.TryTakeDamageWithoutFeedback(
-                tickDamage
-            );
+            enemyActor.TryTakeDamageWithoutFeedback(resolvedTickDamage);
 
         if (!damageApplied)
         {
             return;
         }
 
-        int actualDamage =
-            Mathf.Max(
-                0,
-                healthBeforeDamage -
-                enemyActor.CurrentHealth
-            );
+        int actualDamage = Mathf.Max(
+            0,
+            healthBeforeDamage - enemyActor.CurrentHealth
+        );
 
         if (actualDamage <= 0)
         {
             return;
         }
 
-        /*
-         * This event is presentation-specific input for the
-         * future quick white flash and dark-green number. It is
-         * deliberately separate from the normal DamageReceived
-         * event, so poison ticks do not trigger the full hit shake.
-         */
-        TickDamageApplied?.Invoke(
-            this,
-            actualDamage
-        );
+        TickDamageApplied?.Invoke(this, actualDamage);
     }
 
     private void ResolveEnemyActor()
     {
         if (enemyActor == null)
         {
-            enemyActor =
-                GetComponent<EnemyActor>();
+            enemyActor = GetComponent<EnemyActor>();
         }
     }
 
@@ -226,11 +163,8 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
 
         if (enemyActor != null)
         {
-            enemyActor.Initialized +=
-                HandleEnemyInitialized;
-
-            enemyActor.Defeated +=
-                HandleEnemyDefeated;
+            enemyActor.Initialized += HandleEnemyInitialized;
+            enemyActor.Defeated += HandleEnemyDefeated;
         }
     }
 
@@ -238,37 +172,24 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
     {
         if (enemyActor != null)
         {
-            enemyActor.Initialized -=
-                HandleEnemyInitialized;
-
-            enemyActor.Defeated -=
-                HandleEnemyDefeated;
+            enemyActor.Initialized -= HandleEnemyInitialized;
+            enemyActor.Defeated -= HandleEnemyDefeated;
         }
     }
 
-    private void HandleEnemyInitialized(
-        EnemyActor enemy)
+    private void HandleEnemyInitialized(EnemyActor enemy)
     {
-        /*
-         * Enemy objects may eventually be pooled. A fresh runtime
-         * initialization must never inherit poison from a previous
-         * enemy occupying the same GameObject.
-         */
         ClearPoison(false);
     }
 
-    private void HandleEnemyDefeated(
-        EnemyActor enemy)
+    private void HandleEnemyDefeated(EnemyActor enemy)
     {
         ClearPoison(true);
     }
 
-    private void ClearPoison(
-        bool notify)
+    private void ClearPoison(bool notify)
     {
-        bool wasPoisoned =
-            isPoisoned;
-
+        bool wasPoisoned = isPoisoned;
         isPoisoned = false;
         expirationTime = 0f;
         nextTickTime = 0f;
@@ -276,8 +197,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         remainingTimeUntilTick = 0f;
         tickDamage = 0;
 
-        if (notify &&
-            wasPoisoned)
+        if (notify && wasPoisoned)
         {
             PoisonExpired?.Invoke(this);
         }
@@ -292,17 +212,8 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
             return;
         }
 
-        remainingDuration =
-            Mathf.Max(
-                0f,
-                expirationTime - Time.time
-            );
-
-        remainingTimeUntilTick =
-            Mathf.Max(
-                0f,
-                nextTickTime - Time.time
-            );
+        remainingDuration = Mathf.Max(0f, expirationTime - Time.time);
+        remainingTimeUntilTick = Mathf.Max(0f, nextTickTime - Time.time);
     }
 
     private void OnDisable()
