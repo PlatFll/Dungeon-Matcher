@@ -9,5 +9,7 @@ public enum EnemySpecialAbilityKind
     SiegeSergeant = 6,
     KnightCaptain = 7,
     RoyalStandardBearer = 8,
-    CourtMage = 9
+    CourtMage = 9,
+    RoyalArchbishop = 10,
+    King = 11
 }

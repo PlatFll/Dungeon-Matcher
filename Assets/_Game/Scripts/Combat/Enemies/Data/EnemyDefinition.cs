@@ -216,6 +216,50 @@ public sealed class EnemyDefinition : ScriptableObject
     public int HammerBaseDamage => Mathf.Max(0, hammerBaseDamage);
     public float BarricadeDamageReduction => Mathf.Clamp(barricadeDamageReduction, 0f, 0.9f);
 
+    [Header("Royal Milestone Abilities (first-pass tuning)")]
+    [SerializeField] private bool royalAssaultParticipant;
+    [SerializeField, Min(1)] private int royalMarkCount = 3;
+    [SerializeField, Min(1)] private int royalMarkMoves = 3;
+    [SerializeField, Range(0f, 0.1f)] private float restorationHealFraction = 0.033f;
+    [SerializeField] private Vector4 triageRankWeights = new Vector4(1f, 1.15f, 1.35f, 1.6f);
+    [SerializeField, Range(0f, 1f)] private float triageSelfWeightWithWoundedAllies = 0.5f;
+    [SerializeField, Range(0f, 1f)] private float triageMeaningfulWound = 0.1f;
+    [SerializeField, Min(1)] private int benedictionTargets = 2;
+    [SerializeField, Min(1f)] private float benedictionDamageMultiplier = 1.4f;
+    [SerializeField] private Sprite benedictionHaloSprite;
+    [SerializeField, Min(0)] private int judgmentBaseDamage = 12;
+    [SerializeField, Min(1)] private int bombardmentWarningMoves = 2;
+    [SerializeField, Min(0)] private int bombardmentBaseDamage = 6;
+    [SerializeField, Min(1f)] private float assaultDamageMultiplier = 1.1f;
+    [SerializeField, Min(0f)] private float royalCommandWindup = 0.6f;
+    [SerializeField, Min(0f)] private float royalCommandSpacing = 0.12f;
+    [SerializeField, Min(1f)] private float enrageDamageMultiplier = 1.2f;
+    [SerializeField, Min(1f)] private float enrageSpeedMultiplier = 1.25f;
+    [SerializeField, Min(1)] private int enragedSpecialMoves = 3;
+    [SerializeField] private EnemyDefinition[] royalReinforcements = new EnemyDefinition[0];
+    [SerializeField] private EnemyDefinition requiredBossEscort;
+    public bool RoyalAssaultParticipant => royalAssaultParticipant;
+    public int RoyalMarkCount => Mathf.Max(1, royalMarkCount);
+    public int RoyalMarkMoves => Mathf.Max(1, royalMarkMoves);
+    public float RestorationHealFraction => Mathf.Clamp01(restorationHealFraction);
+    public Vector4 TriageRankWeights => triageRankWeights;
+    public float TriageSelfWeightWithWoundedAllies => Mathf.Clamp01(triageSelfWeightWithWoundedAllies);
+    public float TriageMeaningfulWound => Mathf.Clamp01(triageMeaningfulWound);
+    public int BenedictionTargets => Mathf.Max(1, benedictionTargets);
+    public float BenedictionDamageMultiplier => Mathf.Max(1f, benedictionDamageMultiplier);
+    public Sprite BenedictionHaloSprite => benedictionHaloSprite;
+    public int JudgmentBaseDamage => Mathf.Max(0, judgmentBaseDamage);
+    public int BombardmentWarningMoves => Mathf.Max(1, bombardmentWarningMoves);
+    public int BombardmentBaseDamage => Mathf.Max(0, bombardmentBaseDamage);
+    public float AssaultDamageMultiplier => Mathf.Max(1f, assaultDamageMultiplier);
+    public float RoyalCommandWindup => Mathf.Max(0f, royalCommandWindup);
+    public float RoyalCommandSpacing => Mathf.Max(0f, royalCommandSpacing);
+    public float EnrageDamageMultiplier => Mathf.Max(1f, enrageDamageMultiplier);
+    public float EnrageSpeedMultiplier => Mathf.Max(1f, enrageSpeedMultiplier);
+    public int EnragedSpecialMoves => Mathf.Max(1, enragedSpecialMoves);
+    public EnemyDefinition[] RoyalReinforcements => royalReinforcements;
+    public EnemyDefinition RequiredBossEscort => requiredBossEscort;
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]

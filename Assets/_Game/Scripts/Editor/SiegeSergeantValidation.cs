@@ -96,7 +96,14 @@ public static class SiegeSergeantValidation
             Gem first = threat.First;
             Gem second = threat.Second;
             // Move the original gem by swapping identity/coordinates: warning survives.
-            Gem replacement = grid[3,3] == first || grid[3,3] == second ? grid[2,3] : grid[3,3];
+            Gem replacement = null;
+            foreach (Gem candidate in grid)
+                if (candidate != first && candidate != second && board.IsOrdinaryGemOnBoard(candidate))
+                {
+                    replacement = candidate;
+                    break;
+                }
+            Check(replacement != null, "An unmarked replacement exists");
             int oldX=first.Column,oldY=first.Row,newX=replacement.Column,newY=replacement.Row;
             grid[oldX,oldY]=replacement; replacement.SetGridPosition(oldX,oldY);
             grid[newX,newY]=first; first.SetGridPosition(newX,newY);

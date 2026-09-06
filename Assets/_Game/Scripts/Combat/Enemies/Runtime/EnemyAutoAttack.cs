@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -70,28 +71,76 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private int nextAttackPresentationId;
     private object commandOwner;
     private bool commandStrike;
+    private bool commandMadeReady;
+    private float reservedAttackTime;
     private bool resumeCooldown;
     private bool commandedAttackStarting;
+    private float commandDamageMultiplier = 1f;
+    private readonly Dictionary<object, float> damageModifiers = new Dictionary<object, float>();
+    private readonly Dictionary<object, float> speedModifiers = new Dictionary<object, float>();
+    private readonly Dictionary<object, float> nextSequenceModifiers = new Dictionary<object, float>();
+    public event Action<EnemyAutoAttack> NextSequenceModifiersChanged;
+    public bool HasNextSequenceModifier(object owner) => nextSequenceModifiers.ContainsKey(owner);
+    public void SetNextSequenceModifier(object owner, float multiplier)
+    {
+        if (owner == null) return;
+        nextSequenceModifiers[owner] = Mathf.Max(1f, multiplier);
+        NextSequenceModifiersChanged?.Invoke(this);
+    }
+    public void RemoveNextSequenceModifier(object owner)
+    {
+        if (owner != null && nextSequenceModifiers.Remove(owner)) NextSequenceModifiersChanged?.Invoke(this);
+    }
+    public void SetNormalAttackModifiers(object owner, float damage, float speed)
+    {
+        if (owner == null) return;
+        damageModifiers[owner] = Mathf.Max(0f, damage);
+        speedModifiers[owner] = Mathf.Max(0.1f, speed);
+    }
+    public void RemoveNormalAttackModifiers(object owner)
+    {
+        if (owner == null) return;
+        damageModifiers.Remove(owner);
+        speedModifiers.Remove(owner);
+    }
+    private static float Product(Dictionary<object, float> modifiers)
+    {
+        float result = 1f;
+        foreach (float value in modifiers.Values) result *= value;
+        return result;
+    }
+    private float ConsumeSequenceDamageMultiplier()
+    {
+        float result = Product(damageModifiers) * Product(nextSequenceModifiers) * commandDamageMultiplier;
+        nextSequenceModifiers.Clear();
+        NextSequenceModifiersChanged?.Invoke(this);
+        return result;
+    }
     public bool IsCommandReservedBy(object owner) => ReferenceEquals(commandOwner, owner);
 
-    public bool TryReserveCommand(object owner)
+    public bool TryReserveCommand(object owner, bool makeReady = false)
     {
         if (owner == null || commandOwner != null || !CanPerformAttack() ||
             enemyActor.HasAnimationActionInProgress) return false;
         commandOwner = owner;
         commandStrike = false;
+        commandMadeReady = makeReady;
+        reservedAttackTime = remainingAttackTime;
+        if (makeReady) remainingAttackTime = 0f;
         if (attackCoroutine != null) StopCoroutine(attackCoroutine);
         attackCoroutine = null;
         return true;
     }
 
-    public bool PerformCommandStrike(object owner)
+    public bool PerformCommandStrike(object owner, float damageMultiplier = 1f)
     {
         if (!ReferenceEquals(commandOwner, owner) || commandStrike) return false;
         // Mark consumption before callbacks can synchronously cancel the owner.
         commandStrike = true;
         commandedAttackStarting = true;
+        commandDamageMultiplier = Mathf.Max(0f, damageMultiplier);
         bool accepted = PerformAttackImmediately();
+        commandDamageMultiplier = 1f;
         commandedAttackStarting = false;
         if (ReferenceEquals(commandOwner, owner)) commandStrike = accepted;
         return accepted;
@@ -105,6 +154,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             CancelAttackSequence();
             remainingAttackTime = enemyActor != null ? enemyActor.AttackInterval : 0f;
         }
+        else if (commandMadeReady) remainingAttackTime = reservedAttackTime;
+        commandMadeReady = false;
         commandOwner = null;
         resumeCooldown = true;
         if (attackAutomatically) TryStartAttacking();
@@ -174,6 +225,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         enemyActor = enemy;
         playerTarget = target;
         runtimeAttackSpeedMultiplier = 1f;
+        damageModifiers.Clear();
+        speedModifiers.Clear();
+        nextSequenceModifiers.Clear();
 
         enemyStagger =
             GetComponent<EnemyStagger>();
@@ -299,6 +353,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (!timeFromAnimation &&
             followUpDamage <= 0 && !commandedAttackStarting)
         {
+            primaryDamage = Mathf.RoundToInt(primaryDamage * ConsumeSequenceDamageMultiplier());
             return PerformImmediateHit(
                 primaryDamage
             );
@@ -316,6 +371,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         }
 
         isAttackSequenceInProgress = true;
+        float sequenceMultiplier = ConsumeSequenceDamageMultiplier();
+        primaryDamage = Mathf.RoundToInt(primaryDamage * sequenceMultiplier);
+        followUpDamage = Mathf.RoundToInt(followUpDamage * sequenceMultiplier);
 
         attackSequenceCoroutine =
             StartCoroutine(
@@ -668,7 +726,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                         0f,
                         remainingAttackTime -
                         Time.deltaTime *
-                        runtimeAttackSpeedMultiplier
+                        runtimeAttackSpeedMultiplier * Product(speedModifiers)
                     );
 
                 yield return null;

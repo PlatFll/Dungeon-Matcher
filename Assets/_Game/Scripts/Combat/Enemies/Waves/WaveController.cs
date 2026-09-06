@@ -52,6 +52,8 @@ public sealed partial class WaveController :
 
     [SerializeField] private int encounterSeed;
     private System.Random encounterRandom;
+    private readonly HashSet<EnemyDefinition> seenMilestoneLeaders = new HashSet<EnemyDefinition>();
+    private EnemyDefinition selectedMilestoneLeader;
     public int EncounterSeed => encounterSeed;
     private System.Random EncounterRandom
     {
@@ -200,6 +202,14 @@ public sealed partial class WaveController :
 
         CurrentPlan =
             waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
+        selectedMilestoneLeader = waveSpawnProfile.SelectMilestone(currentWave, EncounterRandom,
+            seenMilestoneLeaders, out int milestoneCount);
+        if (selectedMilestoneLeader != null)
+        {
+            var categories = new List<EnemyCategory> { selectedMilestoneLeader.Category };
+            while (categories.Count < milestoneCount) categories.Add(EnemyCategory.Normal);
+            CurrentPlan = new WaveSpawnPlan(currentWave, "Weighted milestone opportunity", categories);
+        }
 
         if (CurrentPlan == null ||
             CurrentPlan.EnemyCount == 0)
@@ -302,6 +312,7 @@ public sealed partial class WaveController :
             }
 
             activeEnemies.Add(enemy);
+            seenMilestoneLeaders.Add(definition);
 
             spawnedEnemyCount++;
 

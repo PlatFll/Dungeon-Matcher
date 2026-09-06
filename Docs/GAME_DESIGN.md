@@ -125,6 +125,10 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 
 ## Finalized mechanic specifications
 
+### Royal Archbishop and the King
+
+The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPECIALS.md): Archbishop's missing-health/rank-based Sacred Triage, individually breakable Restoration runes and one-normal-sequence Benediction; King's one-time surviving 50%/25% reinforcement crossings, Enrage and deterministic Judgment → United Royal Assault → Bombardment cycle. King + Archbishop is the opening Boss composition, with both targets always damageable. Three-move gem warnings follow identities; Bombardment's two-move row/column warning cannot be cancelled by clearing gems and preserves player specials and structural occupants. Every countdown uses accepted valid completed player moves. Numeric HP, damage, cadence, weights and milestone windows remain first-pass serialized tuning.
+
 ### Spear Guard
 
 - Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. He becomes eligible starting at wave 9.
