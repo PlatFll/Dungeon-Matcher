@@ -15,9 +15,9 @@ MonoBehaviour:
   enemyId: king
   displayName: The King
   category: 3
-  description:
+  description: 
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 6b44ede4db9553b42b206e6257ec243e, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 4b866ebc11e18f54b9bf7ab8245acad2, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
@@ -44,6 +44,32 @@ MonoBehaviour:
   hammerWarningMoves: 2
   hammerBaseDamage: 12
   barricadeDamageReduction: 0.2
+  royalAssaultParticipant: 1
+  royalMarkCount: 3
+  royalMarkMoves: 3
+  restorationHealFraction: 0.033
+  triageRankWeights: {x: 1, y: 1.15, z: 1.35, w: 1.6}
+  triageSelfWeightWithWoundedAllies: 0.5
+  triageMeaningfulWound: 0.1
+  benedictionTargets: 2
+  benedictionDamageMultiplier: 1.4
+  benedictionHaloSprite: {fileID: 0}
+  judgmentBaseDamage: 12
+  bombardmentWarningMoves: 2
+  bombardmentBaseDamage: 6
+  assaultDamageMultiplier: 1.1
+  royalCommandWindup: 0.6
+  royalCommandSpacing: 0.12
+  enrageDamageMultiplier: 1.2
+  enrageSpeedMultiplier: 1.25
+  enragedSpecialMoves: 3
+  royalReinforcements:
+  - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+  - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+  - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+  - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+  - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+  requiredBossEscort: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
   minimumWave: 24
   maximumWave: 0
   progressionWeight:
@@ -78,29 +104,3 @@ MonoBehaviour:
   damageMultiplier: 0.316
   attackSpeedMultiplier: 1.02
   staggerDurationMultiplier: 1
-  royalAssaultParticipant: 1
-  requiredBossEscort: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
-  royalReinforcements:
-  - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
-  - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
-  - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
-  - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
-  - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
-  royalMarkCount: 3
-  royalMarkMoves: 3
-  restorationHealFraction: 0.033
-  triageRankWeights: {x: 1, y: 1.15, z: 1.35, w: 1.6}
-  triageSelfWeightWithWoundedAllies: 0.5
-  triageMeaningfulWound: 0.1
-  benedictionTargets: 2
-  benedictionDamageMultiplier: 1.4
-  benedictionHaloSprite: {fileID: 0}
-  judgmentBaseDamage: 12
-  bombardmentWarningMoves: 2
-  bombardmentBaseDamage: 6
-  assaultDamageMultiplier: 1.1
-  royalCommandWindup: 0.6
-  royalCommandSpacing: 0.12
-  enrageDamageMultiplier: 1.2
-  enrageSpeedMultiplier: 1.25
-  enragedSpecialMoves: 3
