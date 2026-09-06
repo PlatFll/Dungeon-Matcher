@@ -5,6 +5,14 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class PoisonBombBurstVFX : MonoBehaviour
 {
+    private sealed class BurstSlot
+    {
+        public SpriteRenderer Renderer;
+        public int Column;
+        public int Row;
+        public bool Active;
+    }
+
     private sealed class ResidueSlot
     {
         public SpriteRenderer Renderer;
@@ -13,9 +21,12 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
         public bool Active;
     }
 
+    private const int MaximumBurstCells = 9;
     private const int MaximumResidueCells = 9;
 
-    private SpriteRenderer burstRenderer;
+    private readonly BurstSlot[] burstSlots =
+        new BurstSlot[MaximumBurstCells];
+
     private readonly ResidueSlot[] residueSlots =
         new ResidueSlot[MaximumResidueCells];
 
@@ -30,10 +41,20 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
     {
         EnsureRenderers();
 
-        if (burstRenderer != null)
+        for (int index = 0;
+             index < burstSlots.Length;
+             index++)
         {
+            BurstSlot slot = burstSlots[index];
+
+            if (slot == null ||
+                slot.Renderer == null)
+            {
+                continue;
+            }
+
             ConfigureRenderer(
-                burstRenderer,
+                slot.Renderer,
                 sortingLayerName,
                 burstSortingOrder
             );
@@ -127,13 +148,7 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
             playRoutine = null;
         }
 
-        if (burstRenderer != null)
-        {
-            burstRenderer.enabled = false;
-            burstRenderer.sprite = null;
-            burstRenderer.color = Color.white;
-        }
-
+        HideAllBursts();
         HideAllResidue();
 
         releaseCallback = null;
@@ -153,32 +168,58 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
     {
         EnsureRenderers();
 
-        if (burstRenderer == null ||
-            boardController == null)
+        if (boardController == null)
         {
             Finish();
             yield break;
         }
 
-        burstRenderer.color = Color.white;
-        burstRenderer.enabled = true;
+        int activeBurstCount =
+            context.HasGridPosition
+                ? ShowBurstFootprint(
+                    context.Column,
+                    context.Row
+                )
+                : ShowFallbackCenterBurst();
 
-        for (int index = 0;
-             index < burstFrames.Length;
-             index++)
+        if (activeBurstCount <= 0)
         {
-            Sprite frame = burstFrames[index];
+            Finish();
+            yield break;
+        }
 
-            burstRenderer.sprite = frame;
-            burstRenderer.enabled = frame != null;
+        for (int frameIndex = 0;
+             frameIndex < burstFrames.Length;
+             frameIndex++)
+        {
+            Sprite frame = burstFrames[frameIndex];
 
-            if (frame != null)
+            for (int slotIndex = 0;
+                 slotIndex < burstSlots.Length;
+                 slotIndex++)
             {
-                SetRendererSizeInCells(
-                    burstRenderer,
-                    frame,
-                    burstSizeInCells
-                );
+                BurstSlot slot =
+                    burstSlots[slotIndex];
+
+                if (slot == null ||
+                    !slot.Active ||
+                    slot.Renderer == null)
+                {
+                    continue;
+                }
+
+                slot.Renderer.sprite = frame;
+                slot.Renderer.color = Color.white;
+                slot.Renderer.enabled = frame != null;
+
+                if (frame != null)
+                {
+                    SetRendererSizeInCells(
+                        slot.Renderer,
+                        frame,
+                        burstSizeInCells
+                    );
+                }
             }
 
             yield return new WaitForSeconds(
@@ -186,8 +227,7 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
             );
         }
 
-        burstRenderer.enabled = false;
-        burstRenderer.sprite = null;
+        HideAllBursts();
 
         if (!enableResidue ||
             !context.HasGridPosition ||
@@ -290,6 +330,124 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
 
         HideAllResidue();
         Finish();
+    }
+
+    private int ShowBurstFootprint(
+        int centerColumn,
+        int centerRow)
+    {
+        HideAllBursts();
+
+        if (boardController == null)
+        {
+            return 0;
+        }
+
+        int slotIndex = 0;
+
+        for (int rowOffset = -1;
+             rowOffset <= 1;
+             rowOffset++)
+        {
+            for (int columnOffset = -1;
+                 columnOffset <= 1;
+                 columnOffset++)
+            {
+                int column =
+                    centerColumn +
+                    columnOffset;
+
+                int row =
+                    centerRow +
+                    rowOffset;
+
+                /*
+                 * ClearMatches removes genuinely destroyed gems from the grid
+                 * before the poison burst begins. A preserved/protected gem is
+                 * still visibly settled in its cell, so skip it. This keeps the
+                 * presentation aligned with the cells the 3x3 poison clear
+                 * actually emptied rather than painting over survivors.
+                 */
+                if (!boardController
+                        .IsCellEligibleForPoisonResidue(
+                            column,
+                            row
+                        ) ||
+                    boardController
+                        .IsGemVisuallySettledInCell(
+                            column,
+                            row
+                        ))
+                {
+                    continue;
+                }
+
+                if (slotIndex >= burstSlots.Length)
+                {
+                    return slotIndex;
+                }
+
+                BurstSlot slot =
+                    burstSlots[slotIndex];
+
+                if (slot == null ||
+                    slot.Renderer == null)
+                {
+                    slotIndex++;
+                    continue;
+                }
+
+                slot.Column = column;
+                slot.Row = row;
+                slot.Active = true;
+
+                slot.Renderer.transform.localPosition =
+                    boardController
+                        .GetCellLocalPosition(
+                            column,
+                            row
+                        ) -
+                    transform.localPosition;
+
+                slot.Renderer.transform.localRotation =
+                    Quaternion.identity;
+
+                slot.Renderer.flipX =
+                    ((column + row) & 1) != 0;
+
+                slot.Renderer.flipY =
+                    ((column - row) & 1) != 0;
+
+                slotIndex++;
+            }
+        }
+
+        return slotIndex;
+    }
+
+    private int ShowFallbackCenterBurst()
+    {
+        HideAllBursts();
+
+        if (burstSlots.Length == 0 ||
+            burstSlots[0] == null ||
+            burstSlots[0].Renderer == null)
+        {
+            return 0;
+        }
+
+        BurstSlot slot = burstSlots[0];
+        slot.Active = true;
+        slot.Column = -1;
+        slot.Row = -1;
+
+        slot.Renderer.transform.localPosition =
+            Vector3.zero;
+
+        slot.Renderer.transform.localRotation =
+            Quaternion.identity;
+
+        return 1;
     }
 
     private int ShowResidueFootprint(
@@ -403,15 +561,27 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
 
     private void EnsureRenderers()
     {
-        if (burstRenderer == null)
+        for (int index = 0;
+             index < burstSlots.Length;
+             index++)
         {
+            if (burstSlots[index] != null &&
+                burstSlots[index].Renderer != null)
+            {
+                continue;
+            }
+
             Transform burstTransform =
-                transform.Find("Burst");
+                transform.Find(
+                    $"Burst_{index}"
+                );
 
             if (burstTransform == null)
             {
                 GameObject burstObject =
-                    new GameObject("Burst");
+                    new GameObject(
+                        $"Burst_{index}"
+                    );
 
                 burstObject.transform.SetParent(
                     transform,
@@ -422,16 +592,24 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
                     burstObject.transform;
             }
 
-            burstRenderer =
+            SpriteRenderer renderer =
                 burstTransform
                     .GetComponent<SpriteRenderer>();
 
-            if (burstRenderer == null)
+            if (renderer == null)
             {
-                burstRenderer =
+                renderer =
                     burstTransform.gameObject
                         .AddComponent<SpriteRenderer>();
             }
+
+            renderer.enabled = false;
+
+            burstSlots[index] =
+                new BurstSlot
+                {
+                    Renderer = renderer
+                };
         }
 
         for (int index = 0;
@@ -554,6 +732,40 @@ public sealed class PoisonBombBurstVFX : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void HideAllBursts()
+    {
+        for (int index = 0;
+             index < burstSlots.Length;
+             index++)
+        {
+            HideBurstSlot(
+                burstSlots[index]
+            );
+        }
+    }
+
+    private static void HideBurstSlot(
+        BurstSlot slot)
+    {
+        if (slot == null)
+        {
+            return;
+        }
+
+        slot.Active = false;
+
+        if (slot.Renderer == null)
+        {
+            return;
+        }
+
+        slot.Renderer.enabled = false;
+        slot.Renderer.sprite = null;
+        slot.Renderer.color = Color.white;
+        slot.Renderer.flipX = false;
+        slot.Renderer.flipY = false;
     }
 
     private void HideAllResidue()
