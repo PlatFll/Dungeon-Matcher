@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a6fd06b25614f26955cabf2c123a002, type: 3}
-  m_Name: Prototype_HorribleEncore
+  m_Name: RunUpgrade_CorrosiveFormula
   m_EditorClassIdentifier: Assembly-CSharp::RunUpgradeDefinition
-  upgradeId: prototype_horrible_encore
-  displayTitle: Horrible Encore
-  description: +1 Cracked Gems target
+  upgradeId: corrosive_formula
+  displayTitle: Corrosive Formula
+  description: Poison ticks deal +30% damage.
   artwork: {fileID: 0}
-  rarity: 3
+  rarity: 0
   weight: 1
   maxStacks: 3
   minimumWave: 1
   maximumWave: 0
-  requiredPlayerId: bardley
-  requiredAbilityId: cracked_gems
+  requiredPlayerId: 
+  requiredAbilityId: 
   prerequisiteUpgradeIds: []
   excludedUpgradeIds: []
   modifiers:
-  - stat: 7
-    operation: 0
-    value: 1
+  - stat: 9
+    operation: 1
+    value: 0.3
   mechanicGrants: []
