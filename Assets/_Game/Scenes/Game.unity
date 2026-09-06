@@ -3503,6 +3503,7 @@ GameObject:
   - component: {fileID: 1775734122}
   - component: {fileID: 1775734123}
   - component: {fileID: 1775734124}
+  - component: {fileID: 1775734125}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -3578,13 +3579,6 @@ MonoBehaviour:
   pinShakeDuration: 0.12
   frozenGemOverlaySprite: {fileID: -3535702354972669770, guid: 91dff541d6cfb8d44ae44c81f6a01e68, type: 3}
   royalBannerBoardSprite: {fileID: 21300000, guid: 23b79872045c7a24e8dd27fde2ada950, type: 3}
-  archbishopRestorationRuneOverlay: {fileID: 0}
-  kingRoyalJudgmentExclamationOverlay: {fileID: 0}
-  royalBombardmentRowWarning: {fileID: 0}
-  royalBombardmentColumnWarning: {fileID: 0}
-  royalBombardmentRowSlash: {fileID: 0}
-  royalBombardmentColumnSlash: {fileID: 0}
-  royalBombardmentWarningAlpha: 0.12
   royalBannerBoardScale: 0.9
   rubySpecialBombIcon: {fileID: 21300000, guid: 972b2597f0674634791ae3e1c778e262, type: 3}
   amberSpecialBombIcon: {fileID: 21300000, guid: 75f133ce7df3f9f49a72d24a7fbaaf3a, type: 3}
@@ -3632,6 +3626,13 @@ MonoBehaviour:
   reshuffleDuration: 0.45
   reshuffleStagger: 0.04
   maximumReshuffleAttempts: 250
+  archbishopRestorationRuneOverlay: {fileID: 0}
+  kingRoyalJudgmentExclamationOverlay: {fileID: 0}
+  royalBombardmentRowWarning: {fileID: 0}
+  royalBombardmentColumnWarning: {fileID: 0}
+  royalBombardmentRowSlash: {fileID: 0}
+  royalBombardmentColumnSlash: {fileID: 0}
+  royalBombardmentWarningAlpha: 0.12
 --- !u!114 &1775734120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3756,6 +3757,37 @@ MonoBehaviour:
   maximumPitch: 1.26
   randomPitchVariation: 0.01
   audioSourceCount: 4
+--- !u!114 &1775734125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775734117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a61b78650ea48f88cfdf79bc562529a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoisonBombVFXController
+  poisonExplosionFrames:
+  - {fileID: 5046345940187704252, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: -4876212308907155984, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: 5749636013255478128, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: 6623979893282228527, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: 1982117550155952382, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: 6955701828816984014, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  - {fileID: 1885528850405874092, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  frameDuration: 0.055
+  burstSizeInCells: 1
+  burstSortingOrder: 12
+  enableResidue: 1
+  poisonResidueSprite: {fileID: 1885528850405874092, guid: 9ccd50bce14500343bd0c2ab2841e072, type: 3}
+  residueDuration: 0.25
+  residueAlpha: 0.3
+  residueSizeInCells: 1
+  residueSortingOrder: -1
+  prewarmCount: 6
+  maximumEffectCount: 32
 --- !u!1 &1796838451
 GameObject:
   m_ObjectHideFlags: 0
