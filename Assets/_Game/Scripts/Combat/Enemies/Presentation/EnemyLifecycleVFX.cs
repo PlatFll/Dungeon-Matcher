@@ -662,6 +662,13 @@ public sealed class EnemyLifecycleVFX :
     private void SetFlashAmount(
         float amount)
     {
+        var feedback = GetComponent<EnemyCombatFeedback>();
+        if (feedback != null)
+        {
+            feedback.SetLifecycleFlash(amount);
+            return;
+        }
+
         if (flashMaterial == null)
         {
             return;
@@ -766,6 +773,7 @@ public sealed class EnemyLifecycleVFX :
 
     private void OnDisable()
     {
+        SetFlashAmount(0f);
         if (spawnCoroutine != null)
         {
             StopCoroutine(

@@ -3,21 +3,41 @@ using UnityEngine;
 
 public sealed partial class WaveController
 {
+    private readonly HashSet<EnemyDefinition> previousEncounterLeaders = new HashSet<EnemyDefinition>();
+
+    private HashSet<EnemyDefinition> GetRepeatExclusions()
+    {
+        var excluded = new HashSet<EnemyDefinition>(previousEncounterLeaders);
+        foreach (var definition in seenMilestoneLeaders)
+            if (definition != null && definition.Category == EnemyCategory.Boss)
+                excluded.Add(definition);
+        // A required escort is part of the encounter too. Defer its leader
+        // rather than bypass repeat protection or break the required pairing.
+        if (enemyDatabase != null)
+            foreach (var definition in enemyDatabase.Enemies)
+                if (definition != null && definition.RequiredBossEscort != null &&
+                    previousEncounterLeaders.Contains(definition.RequiredBossEscort))
+                    excluded.Add(definition);
+        return excluded;
+    }
+
     // Resolve the whole composition before spawning: timing and deaths during
     // entrance animations cannot alter escort constraints or random selection.
     private List<EnemyDefinition> BuildEncounter(int count)
     {
         var result = new List<EnemyDefinition>(new EnemyDefinition[count]);
         var selected = new HashSet<EnemyDefinition>();
+        var repeatExclusions = GetRepeatExclusions();
         EnemyDefinition leader = null;
         for (int i = 0; i < count; i++)
         {
             EnemyCategory leaderCategory = CurrentPlan.Categories[i];
             if (leaderCategory != EnemyCategory.Miniboss && leaderCategory != EnemyCategory.Boss) continue;
             leader = selectedMilestoneLeader != null ? selectedMilestoneLeader : waveSpawnProfile.GetFixedEnemy(currentWave, i);
+            if (leader != null && repeatExclusions.Contains(leader)) leader = null;
             if (leader == null)
                 enemyDatabase.TryGetRandomWeightedEnemy(leaderCategory,
-                    currentWave, out leader, deterministicRandom: EncounterRandom);
+                    currentWave, out leader, repeatExclusions, EncounterRandom);
             if (leader != null && leader.EnemyPrefab != null &&
                 leader.Category == leaderCategory &&
                 leader.GetSpawnWeight(currentWave) > 0 && enemyDatabase.ContainsEnemy(leader))

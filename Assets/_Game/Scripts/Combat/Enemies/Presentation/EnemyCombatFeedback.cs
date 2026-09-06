@@ -103,6 +103,9 @@ public sealed class EnemyCombatFeedback :
     private float whiteFlashAmount = 1f;
 
     private Material runtimeFlashMaterial;
+    private float hitFlashUntil;
+    private float staggerFlashAmount;
+    private float lifecycleFlashAmount;
 
     private Vector2 restingPosition;
 
@@ -142,6 +145,7 @@ public sealed class EnemyCombatFeedback :
     {
         UpdateAttackTimer();
         TryStartDeferredFeedback();
+        RefreshWhiteFlash();
     }
 
     private void ResolveReferences()
@@ -953,6 +957,7 @@ public sealed class EnemyCombatFeedback :
 
     private void StopAllFeedback()
     {
+        hitFlashUntil = 0f;
         damageShakePending = false;
         StopAttackLunge();
 
@@ -982,6 +987,27 @@ public sealed class EnemyCombatFeedback :
     private void SetWhiteFlash(
         float amount)
     {
+        staggerFlashAmount = Mathf.Clamp01(amount);
+        RefreshWhiteFlash();
+    }
+
+    public void RefreshHitFlash(float duration)
+    {
+        if (!isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated)
+            return;
+
+        hitFlashUntil = Mathf.Max(hitFlashUntil, Time.time + Mathf.Max(0.01f, duration));
+        RefreshWhiteFlash();
+    }
+
+    public void SetLifecycleFlash(float amount)
+    {
+        lifecycleFlashAmount = Mathf.Clamp01(amount);
+        RefreshWhiteFlash();
+    }
+
+    private void RefreshWhiteFlash()
+    {
         if (runtimeFlashMaterial == null)
         {
             return;
@@ -989,7 +1015,7 @@ public sealed class EnemyCombatFeedback :
 
         runtimeFlashMaterial.SetFloat(
             FlashAmountId,
-            Mathf.Clamp01(amount)
+            Mathf.Max(lifecycleFlashAmount, Time.time < hitFlashUntil ? 1f : staggerFlashAmount)
         );
     }
 

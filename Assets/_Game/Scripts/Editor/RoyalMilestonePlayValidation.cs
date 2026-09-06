@@ -155,6 +155,8 @@ public static class RoyalMilestonePlayValidation
         yield return Delay(0.3f); yield return Until(()=>!board.IsBusy,"old owner cleanup");
         Set(waves,"currentWave",26);
         var seen=(HashSet<EnemyDefinition>)Get(waves,"seenMilestoneLeaders"); seen.Clear(); seen.Add(Data("RoyalArchbishop"));
+        // Each scenario is an independent run fixture, not a repeated encounter.
+        ((HashSet<EnemyDefinition>)Get(waves,"previousEncounterLeaders")).Clear();
         waves.SpawnCurrentWave();
         yield return Until(()=>waves.ActiveEnemies.Count==2 && !(bool)Get(waves,"isSpawningWave"),"King opening composition");
         king=Find("King"); bishop=Find("RoyalArchbishop"); Check(king!=null && bishop!=null,"King plus Archbishop");

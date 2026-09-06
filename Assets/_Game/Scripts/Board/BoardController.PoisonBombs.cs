@@ -32,8 +32,6 @@ public partial class BoardController
             return;
         }
 
-        ApplyPoisonBombStatus();
-
         AddSpecialBombAreaToClearSet(
             poisonBomb,
             preserveTriggeredCrystals,
@@ -58,8 +56,6 @@ public partial class BoardController
         {
             return;
         }
-
-        ApplyPoisonBombStatus();
 
         AddSpecialBombAreaToConvertedClearSet(
             poisonBomb,
@@ -86,8 +82,6 @@ public partial class BoardController
             return;
         }
 
-        ApplyHealingBombEffect();
-
         AddSpecialBombAreaToClearSet(
             healingBomb,
             preserveTriggeredCrystals,
@@ -112,8 +106,6 @@ public partial class BoardController
         {
             return;
         }
-
-        ApplyHealingBombEffect();
 
         AddSpecialBombAreaToConvertedClearSet(
             healingBomb,
@@ -140,8 +132,6 @@ public partial class BoardController
             return;
         }
 
-        ApplyShieldBombEffect();
-
         AddSpecialBombAreaToClearSet(
             shieldBomb,
             preserveTriggeredCrystals,
@@ -166,8 +156,6 @@ public partial class BoardController
         {
             return;
         }
-
-        ApplyShieldBombEffect();
 
         AddSpecialBombAreaToConvertedClearSet(
             shieldBomb,
@@ -256,6 +244,17 @@ public partial class BoardController
                     pendingBombs
                 );
             }
+        }
+    }
+
+    private void CommitSpecialBombEffect(Gem gem)
+    {
+        if (gem == null) return;
+        switch (gem.SpecialType)
+        {
+            case GemSpecialType.PoisonBomb: ApplyPoisonBombStatus(); break;
+            case GemSpecialType.HealingBomb: ApplyHealingBombEffect(); break;
+            case GemSpecialType.ShieldBomb: ApplyShieldBombEffect(); break;
         }
     }
 

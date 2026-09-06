@@ -972,7 +972,7 @@ public partial class BoardController
 
             yield return ClearMatches(
                 activationSet,
-                null
+                null, activateSpecials: true
             );
 
             yield return
@@ -1207,10 +1207,7 @@ public partial class BoardController
             GemType targetGemType,
             GemSpecialType convertedBombType)
     {
-        if (convertedBombType !=
-                GemSpecialType.RowBomb &&
-            convertedBombType !=
-                GemSpecialType.ColumnBomb)
+        if (!IsChainReactiveBomb(convertedBombType))
         {
             yield break;
         }
@@ -1257,12 +1254,14 @@ public partial class BoardController
                 continue;
             }
 
-            if (targetGem.SpecialType !=
+            if ((convertedBombType != GemSpecialType.RowBomb &&
+                 convertedBombType != GemSpecialType.ColumnBomb) ||
+                (targetGem.SpecialType !=
                     GemSpecialType.PoisonBomb &&
                 targetGem.SpecialType !=
                     GemSpecialType.HealingBomb &&
                 targetGem.SpecialType !=
-                    GemSpecialType.ShieldBomb)
+                    GemSpecialType.ShieldBomb))
             {
                 targetGem.SetSpecialType(
                     convertedBombType
@@ -1349,7 +1348,7 @@ public partial class BoardController
 
             yield return ClearMatches(
                 activationSet,
-                null
+                null, activateSpecials: true
             );
 
             if (crystalActivationStagger > 0f &&
@@ -1650,7 +1649,7 @@ public partial class BoardController
 
             yield return ClearMatches(
                 activationSet,
-                null
+                null, activateSpecials: true
             );
 
             if (crystalActivationStagger > 0f &&
@@ -1702,10 +1701,7 @@ public partial class BoardController
             yield break;
         }
 
-        if (targetSpecialType ==
-                GemSpecialType.RowBomb ||
-            targetSpecialType ==
-                GemSpecialType.ColumnBomb)
+        if (IsChainReactiveBomb(targetSpecialType))
         {
             yield return
                 ResolveBombColorCrystalSequence(
@@ -1751,7 +1747,7 @@ public partial class BoardController
 
         yield return ClearMatches(
             expandedClearSet,
-            null
+            null, activateSpecials: true
         );
 
         if (cascadePause > 0f)

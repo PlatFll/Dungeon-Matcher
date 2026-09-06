@@ -138,6 +138,9 @@ public sealed class CombatTextController :
         playerActor.DamageTaken +=
             HandlePlayerDamaged;
 
+        playerActor.ShieldDamaged -= HandlePlayerShieldDamaged;
+        playerActor.ShieldDamaged += HandlePlayerShieldDamaged;
+
         playerActor.Healed -=
             HandlePlayerHealed;
 
@@ -154,6 +157,7 @@ public sealed class CombatTextController :
 
         playerActor.DamageTaken -=
             HandlePlayerDamaged;
+        playerActor.ShieldDamaged -= HandlePlayerShieldDamaged;
 
         playerActor.Healed -=
             HandlePlayerHealed;
@@ -299,6 +303,16 @@ public sealed class CombatTextController :
             playerTextAnchor,
             playerTextOffset
         );
+    }
+
+    private void HandlePlayerShieldDamaged(PlayerActor player, int actualDamage)
+    {
+        if (actualDamage <= 0 || playerTextAnchor == null) return;
+
+        // Actor reports actual shield loss after mitigation. A separate lane
+        // keeps a simultaneous HP spill readable without double-counting it.
+        ShowText($"-{actualDamage}", CombatTextKind.Shield,
+            playerTextAnchor, playerTextOffset + new Vector2(28f, 12f));
     }
 
     private void HandlePlayerHealed(

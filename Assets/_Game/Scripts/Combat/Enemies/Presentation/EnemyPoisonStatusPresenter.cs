@@ -49,14 +49,12 @@ public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
 
     private EnemyActor enemyActor;
     private EnemyPoisonStatus poisonStatus;
-    private EnemyStagger enemyStagger;
     private Image enemyImage;
 
     private Image poisonIcon;
     private Material poisonIconFlashMaterial;
 
     private Coroutine materializeCoroutine;
-    private Coroutine tickFlashCoroutine;
 
     private bool isMaterializing;
     private bool blinkVisible = true;
@@ -140,11 +138,6 @@ public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
         if (poisonStatus == null)
         {
             poisonStatus = GetComponent<EnemyPoisonStatus>();
-        }
-
-        if (enemyStagger == null)
-        {
-            enemyStagger = GetComponent<EnemyStagger>();
         }
 
         if (enemyImage == null)
@@ -490,63 +483,8 @@ public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
 
     private void PlayPoisonTickWhiteFlash()
     {
-        ResolveReferences();
-
-        if (enemyImage == null)
-        {
-            return;
-        }
-
-        Material flashMaterial = enemyImage.material;
-
-        if (flashMaterial == null ||
-            !flashMaterial.HasProperty(FlashAmountId))
-        {
-            return;
-        }
-
-        if (tickFlashCoroutine != null)
-        {
-            StopCoroutine(tickFlashCoroutine);
-            tickFlashCoroutine = null;
-        }
-
-        tickFlashCoroutine =
-            StartCoroutine(PoisonTickWhiteFlashRoutine(flashMaterial));
+        GetComponent<EnemyCombatFeedback>()?.RefreshHitFlash(poisonTickWhiteFlashDuration);
     }
-
-    private IEnumerator PoisonTickWhiteFlashRoutine(Material flashMaterial)
-    {
-        if (flashMaterial == null ||
-            !flashMaterial.HasProperty(FlashAmountId))
-        {
-            tickFlashCoroutine = null;
-            yield break;
-        }
-
-        float previousFlashAmount = Mathf.Clamp01(
-            flashMaterial.GetFloat(FlashAmountId)
-        );
-
-        flashMaterial.SetFloat(FlashAmountId, 1f);
-
-        yield return new WaitForSeconds(
-            Mathf.Max(0.01f, poisonTickWhiteFlashDuration)
-        );
-
-        // Stagger owns its ongoing white blink. Do not clear it if a poison
-        // tick lands at the same time.
-        if (enemyStagger == null || !enemyStagger.IsStaggered)
-        {
-            flashMaterial.SetFloat(
-                FlashAmountId,
-                previousFlashAmount
-            );
-        }
-
-        tickFlashCoroutine = null;
-    }
-
     private void UpdateExpirationBlink()
     {
         if (poisonStatus == null ||
@@ -634,34 +572,17 @@ public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
         );
     }
 
-    private void StopTickFlash()
-    {
-        if (tickFlashCoroutine != null)
-        {
-            StopCoroutine(tickFlashCoroutine);
-            tickFlashCoroutine = null;
-        }
-
-        if (enemyImage != null &&
-            enemyImage.material != null &&
-            enemyImage.material.HasProperty(FlashAmountId) &&
-            (enemyStagger == null || !enemyStagger.IsStaggered))
-        {
-            enemyImage.material.SetFloat(FlashAmountId, 0f);
-        }
-    }
-
     private void OnDisable()
     {
         Unsubscribe();
-        StopTickFlash();
+
         HideStatusIcon();
     }
 
     private void OnDestroy()
     {
         Unsubscribe();
-        StopTickFlash();
+
         HideStatusIcon();
 
         if (poisonIconFlashMaterial != null)

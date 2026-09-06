@@ -211,6 +211,8 @@ Until a dedicated threat-budget implementation exists, current slot/category con
 
 ## Replayability rules
 
+The same Mini-boss identity cannot appear in immediately adjacent encounters. After at least one different encounter it may roll again while eligible. WaveController tracks successfully spawned leaders independently of wave number, and applies the guard to weighted selection and fallbacks. A Boss whose required escort would repeat is deferred with its pairing intact; an unseen guaranteed milestone remains eligible after that intervening encounter. Major Boss identities already encountered do not re-enter ordinary weighted spawning. Normal and Special enemies retain their existing repeat eligibility.
+
 Replayability is a core pacing requirement, not a secondary bonus.
 
 Ordinary runs should differ in:

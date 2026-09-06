@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private const float FallbackAffinityIconSize = 16f;
     private const float HealthTextMaximumFontSize = 10f;
     private const float HealthTextMinimumFontSize = 6f;
-    private const float ShieldBreakFlashDuration = 0.1f;
 
     private static readonly Color ShieldFillColor =
         new Color32(39, 124, 255, 255);
@@ -68,7 +66,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private GameObject playerShieldBar;
     private Image playerShieldFill;
     private TMP_Text playerShieldText;
-    private Coroutine shieldBreakRoutine;
 
     public PlayerActor BoundPlayer =>
         boundPlayer;
@@ -114,7 +111,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
         UnsubscribeFromPlayer(boundPlayer);
         boundPlayer = null;
 
-        StopShieldBreakRoutine();
         DestroyShieldBarImmediately();
     }
 
@@ -409,7 +405,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
         if (currentShield > 0)
         {
-            StopShieldBreakRoutine();
             CreateShieldBar();
 
             if (playerHealthFill != null)
@@ -446,20 +441,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 playerShieldText.enabled = true;
                 playerShieldText.text =
                     $"{currentShield} / {maximumShield}";
-            }
-
-            return;
-        }
-
-        if (playerShieldBar != null &&
-            playerShieldBar.activeSelf)
-        {
-            if (shieldBreakRoutine == null)
-            {
-                shieldBreakRoutine =
-                    StartCoroutine(
-                        PlayShieldBreakAndDestroy()
-                    );
             }
 
             return;
@@ -593,71 +574,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
         shieldRoot.transform.SetAsLastSibling();
     }
 
-    private IEnumerator PlayShieldBreakAndDestroy()
-    {
-        if (playerShieldBar == null)
-        {
-            shieldBreakRoutine = null;
-            RestoreHealthBarPresentation();
-            yield break;
-        }
-
-        if (playerHealthFill != null)
-        {
-            playerHealthFill.enabled = false;
-        }
-
-        if (playerHealthText != null)
-        {
-            playerHealthText.enabled = false;
-        }
-
-        if (playerShieldFill != null)
-        {
-            playerShieldFill.sprite =
-                GetShieldSolidSprite();
-
-            playerShieldFill.material = null;
-            playerShieldFill.fillAmount = 1f;
-            playerShieldFill.color = Color.white;
-            playerShieldFill.enabled = true;
-        }
-
-        if (playerShieldText != null)
-        {
-            playerShieldText.text =
-                string.Empty;
-
-            playerShieldText.enabled = false;
-        }
-
-        yield return new WaitForSecondsRealtime(
-            ShieldBreakFlashDuration
-        );
-
-        shieldBreakRoutine = null;
-        DestroyShieldBarImmediately();
-        RestoreHealthBarPresentation();
-    }
-
-    private void StopShieldBreakRoutine()
-    {
-        if (shieldBreakRoutine == null)
-        {
-            return;
-        }
-
-        StopCoroutine(
-            shieldBreakRoutine
-        );
-
-        shieldBreakRoutine = null;
-    }
-
     private void DestroyShieldBarImmediately()
     {
         if (playerShieldBar != null)
         {
+            playerShieldBar.SetActive(false);
             Destroy(
                 playerShieldBar
             );
@@ -683,11 +604,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private bool ShouldHideHealthText()
     {
-        return shieldBreakRoutine != null ||
-               (
-                   boundPlayer != null &&
-                   boundPlayer.HasShield
-               );
+        return boundPlayer != null && boundPlayer.HasShield;
     }
 
     private static Sprite GetShieldSolidSprite()
@@ -754,7 +671,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     {
         DisableLegacyPlayerBase();
         ClearCharacterPresentation();
-        StopShieldBreakRoutine();
         DestroyShieldBarImmediately();
 
         if (affinityGemImage != null)

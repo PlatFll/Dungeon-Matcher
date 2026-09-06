@@ -59,7 +59,7 @@ Exact damage values, cascade multipliers, targeting exceptions, and future damag
 - Established match energy distinguishes match shape and whether the clear damaged a matching enemy.
 - Established special-gem energy is awarded per rewardable gem cleared and also distinguishes whether a matching enemy was damaged.
 - Ability-source board clears grant no energy by default. This prevents self-refunds and energy loops unless a future mechanic explicitly defines otherwise.
-- Energy is not generated while an ability is active under the current model.
+- Player-owned bomb destruction generates the existing per-gem special energy even while an ability is active, including Cracked explosions and crystal-driven chains. Ability clears without this explicit explosion entitlement still grant no energy; ordinary match energy remains paused during an active ability. Enemy/environmental removal grants no direct rewards.
 - Energy is spent only after the selected ability runtime accepts activation. A rejected activation costs nothing.
 
 Exact gain rates, capacity, and ability costs are tunable data and are not frozen by this reference.
@@ -82,6 +82,8 @@ Exact shield capacity and reduction values remain balance data.
 - Straight-four matches currently create directional bombs. Higher-order shape rewards are selected through the Gem Mastery model rather than being hard-coded as one universal mapping.
 - Special activation must preserve one clear source, one reward report, and one board mutation for each resolved outcome.
 - A special's hidden or preserved gem data must not accidentally create unintended damage, healing, or energy.
+- Color Crystal + a mastery bomb converts eligible gems of the partner's color into that exact bomb type, then detonates every converted bomb. Directional combinations retain their existing treatment of pre-existing mastery bombs.
+- Mastery-bomb effects commit at the board-owned shatter moment, after preparation, once per detonated bomb. Scheduling a clear does not activate it.
 
 **Needs finalized design input:** permanent shape-to-special mappings, activation footprints, combination rules, creation-position rules, individual secondary effects, and final balance. Current prototype mappings must not be promoted to finalized design without approval.
 
@@ -194,12 +196,12 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 
 #### Color Crystal interaction
 
-- When a Cracked explosion triggers a Color Crystal, every eligible non-crystal gem of the triggering color becomes Cracked as part of that same ability resolution.
+- When a Cracked explosion triggers a Color Crystal, eligible ordinary gems of the triggering color become Cracked as part of that same ability resolution; existing bombs activate with their own effects rather than being overwritten. If the all-special targeting fallback selects a crystal directly, it uses the existing protected remote-crystal sequence with a Unity-RNG-selected available color (any valid color if only crystals remain).
 - Existing ordinary bomb-to-Color-Crystal behavior remains unchanged.
 
 #### Energy and affinity
 
-- Board clears whose source is the ability do not generate ability energy.
+- Cracked explosions are explicitly player-owned bomb destruction and generate per-gem special energy once per destroyed colored gem. Their source remains Ability for damage and affinity consumers. The crystal itself grants no hidden-color rewards.
 - Genuine Topaz destruction may still trigger Bardley's normal affinity healing through the established affinity-healing system.
 
 These are finalized gameplay rules. Timing and presentation numeric values not listed above remain tunable unless separately documented.
