@@ -119,6 +119,8 @@ The King is different because he is a major narrative Boss and progression gate.
 
 ## The King target
 
+The Royal milestone implementation uses definition-based opportunities in `WaveSpawnProfile_Standard`, tracked once per run by `WaveController`. First-pass Archbishop opportunity weights rise from 45% at wave 21 to 100% by 23; King opportunities rise from 25% at 24 to 100% by 26. These are adjustable windows with a last-opportunity guarantee, not exact-wave encounter scripts. Seeing an eligible Archbishop through ordinary weighted selection also satisfies his milestone. The Archbishop remains eligible afterward. The King opens with exactly his required Archbishop escort; this narrow narrative composition is explicitly allowed. Ordinary overlapping pools and existing older eligibility remain intact. Guild content is not added by this milestone.
+
 The first-pass pacing target is for the King to appear around **wave 25**, with a small tuning window around that point.
 
 This creates a major payoff before the opening arc becomes overlong and gives the player enough time to form a meaningful run build.

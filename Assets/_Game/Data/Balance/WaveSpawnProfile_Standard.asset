@@ -100,3 +100,14 @@ MonoBehaviour:
     - category: 2
       weight: 20
       maximumPerWave: 1
+  milestoneOpportunities:
+  - leader: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
+    firstWave: 21
+    finalWave: 23
+    initialChance: 0.45
+    enemyCount: 2
+  - leader: {fileID: 11400000, guid: b9de130924cb44f3b77befc8fa1c0438, type: 2}
+    firstWave: 24
+    finalWave: 26
+    initialChance: 0.25
+    enemyCount: 2

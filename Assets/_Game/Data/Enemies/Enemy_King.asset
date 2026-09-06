@@ -10,27 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: Enemy_RoyalStandardBearer
+  m_Name: Enemy_King
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  enemyId: royal_standard_bearer
-  displayName: Royal Standard Bearer
-  category: 1
-  description: A Royal support soldier who plants a falling standard that speeds
-    up Crown attacks until the banner reaches the bottom of the board.
+  enemyId: king
+  displayName: The King
+  category: 3
+  description:
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 9362013988df8294cbbdaf5d2beec45b, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 6b44ede4db9553b42b206e6257ec243e, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 200
-  baseDamage: 6
+  baseMaxHealth: 630
+  baseDamage: 10
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
   baseAttackInterval: 10
   hasSpecialAbility: 1
-  specialAbilityKind: 8
-  baseSpecialTurnRequirement: 5
+  specialAbilityKind: 11
+  baseSpecialTurnRequirement: 4
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
@@ -45,34 +44,25 @@ MonoBehaviour:
   hammerWarningMoves: 2
   hammerBaseDamage: 12
   barricadeDamageReduction: 0.2
-  minimumWave: 23
+  minimumWave: 24
   maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
-      inSlope: 0.175
-      outSlope: 0.175
+      value: 0.6
+      inSlope: 0.2
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 4
-      value: 1.2
-      inSlope: 0.175
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 12
-      value: 1.2
-      inSlope: 0
-      outSlope: 0
+      time: 7
+      value: 2
+      inSlope: 0.2
+      outSlope: 0.2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -83,9 +73,34 @@ MonoBehaviour:
   crownSoldier: 1
   encounterEscorts: []
   maximumSpecialEscorts: 1
-  spawnWeight: 0.8
-  healthMultiplier: 0.2815315
-  damageMultiplier: 0.4339336
-  attackSpeedMultiplier: 0.8390954
+  spawnWeight: 1
+  healthMultiplier: 0.1
+  damageMultiplier: 0.316
+  attackSpeedMultiplier: 1.02
   staggerDurationMultiplier: 1
-  royalAssaultParticipant: 0
+  royalAssaultParticipant: 1
+  requiredBossEscort: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
+  royalReinforcements:
+  - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+  - {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+  - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+  - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+  - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+  royalMarkCount: 3
+  royalMarkMoves: 3
+  restorationHealFraction: 0.033
+  triageRankWeights: {x: 1, y: 1.15, z: 1.35, w: 1.6}
+  triageSelfWeightWithWoundedAllies: 0.5
+  triageMeaningfulWound: 0.1
+  benedictionTargets: 2
+  benedictionDamageMultiplier: 1.4
+  benedictionHaloSprite: {fileID: 0}
+  judgmentBaseDamage: 12
+  bombardmentWarningMoves: 2
+  bombardmentBaseDamage: 6
+  assaultDamageMultiplier: 1.1
+  royalCommandWindup: 0.6
+  royalCommandSpacing: 0.12
+  enrageDamageMultiplier: 1.2
+  enrageSpeedMultiplier: 1.25
+  enragedSpecialMoves: 3

@@ -22,7 +22,11 @@ public partial class BoardController
         MarkGemPair,
         ResolveGemPair,
         TopUpMovablePins,
-        PlaceRoyalBanner
+        PlaceRoyalBanner,
+        MarkGemSet,
+        ResolveGemSet,
+        MarkLanes,
+        ResolveLanes
     }
 
     private sealed class BoardMutationRequest
@@ -45,6 +49,11 @@ public partial class BoardController
         public GemPairThreat PairThreat;
         public int WarningMoves;
         public int PlayerDamage;
+        public GemSetThreat SetThreat;
+        public LaneThreat Lanes;
+        public int TargetCount;
+        public Action Pulse;
+        public bool RestorationPresentation;
 
         public int BarricadeCount;
         public int MaximumOwnedBarricades;
@@ -338,6 +347,18 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.MarkGemSet:
+                        ExecuteMarkGemSet(request);
+                        break;
+                    case BoardMutationKind.ResolveGemSet:
+                        yield return ExecuteResolveGemSet(request);
+                        break;
+                    case BoardMutationKind.MarkLanes:
+                        ExecuteMarkLanes(request);
+                        break;
+                    case BoardMutationKind.ResolveLanes:
+                        yield return ExecuteResolveLanes(request);
+                        break;
                     case BoardMutationKind.TopUpMovablePins:
                         yield return ExecuteTopUpMovablePins(request);
                         break;

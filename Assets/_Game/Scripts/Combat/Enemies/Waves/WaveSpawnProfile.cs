@@ -253,6 +253,30 @@ public sealed class WaveSpawnPlan
 )]
 public sealed class WaveSpawnProfile : ScriptableObject
 {
+    [Serializable]
+    public sealed class MilestoneOpportunity
+    {
+        public EnemyDefinition leader;
+        [Min(1)] public int firstWave = 21;
+        [Min(1)] public int finalWave = 23;
+        [Range(0f,1f)] public float initialChance = 0.45f;
+        [Range(1,3)] public int enemyCount = 2;
+    }
+    [SerializeField] private List<MilestoneOpportunity> milestoneOpportunities = new List<MilestoneOpportunity>();
+    public EnemyDefinition SelectMilestone(int wave, System.Random random, ISet<EnemyDefinition> seen, out int count)
+    {
+        count = 0;
+        foreach (var opportunity in milestoneOpportunities)
+        {
+            if (opportunity == null || opportunity.leader == null || seen.Contains(opportunity.leader) ||
+                wave < opportunity.firstWave || opportunity.leader.GetSpawnWeight(wave) <= 0) continue;
+            float chance = Mathf.Lerp(opportunity.initialChance, 1f,
+                Mathf.InverseLerp(opportunity.firstWave, Mathf.Max(opportunity.firstWave+1, opportunity.finalWave), wave));
+            if (random.NextDouble() >= chance) continue;
+            count = Mathf.Clamp(opportunity.enemyCount,1,3); return opportunity.leader;
+        }
+        return null;
+    }
     [Header("Exact Wave Overrides")]
     [SerializeField]
     private List<ExactWaveRule> exactWaveRules =

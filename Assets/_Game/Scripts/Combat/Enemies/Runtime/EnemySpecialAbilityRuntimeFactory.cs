@@ -35,6 +35,17 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.RoyalArchbishop:
+                var archbishop = enemyObject.GetComponent<RoyalArchbishopEnemyAbility>();
+                if (archbishop == null) archbishop = enemyObject.AddComponent<RoyalArchbishopEnemyAbility>();
+                runtime = archbishop;
+                break;
+            case EnemySpecialAbilityKind.King:
+                var king = enemyObject.GetComponent<KingEnemyAbility>();
+                if (king == null) king = enemyObject.AddComponent<KingEnemyAbility>();
+                king.ConfigureSummonService(summonService);
+                runtime = king;
+                break;
             case EnemySpecialAbilityKind.KnightCaptain:
                 var captain =
                     enemyObject.GetComponent<KnightCaptainEnemyAbility>();

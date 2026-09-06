@@ -12,13 +12,14 @@ public sealed partial class WaveController
         EnemyDefinition leader = null;
         for (int i = 0; i < count; i++)
         {
-            if (CurrentPlan.Categories[i] != EnemyCategory.Miniboss) continue;
-            leader = waveSpawnProfile.GetFixedEnemy(currentWave, i);
+            EnemyCategory leaderCategory = CurrentPlan.Categories[i];
+            if (leaderCategory != EnemyCategory.Miniboss && leaderCategory != EnemyCategory.Boss) continue;
+            leader = selectedMilestoneLeader != null ? selectedMilestoneLeader : waveSpawnProfile.GetFixedEnemy(currentWave, i);
             if (leader == null)
-                enemyDatabase.TryGetRandomWeightedEnemy(EnemyCategory.Miniboss,
+                enemyDatabase.TryGetRandomWeightedEnemy(leaderCategory,
                     currentWave, out leader, deterministicRandom: EncounterRandom);
             if (leader != null && leader.EnemyPrefab != null &&
-                leader.Category == EnemyCategory.Miniboss &&
+                leader.Category == leaderCategory &&
                 leader.GetSpawnWeight(currentWave) > 0 && enemyDatabase.ContainsEnemy(leader))
             {
                 result[i] = leader;
@@ -28,6 +29,19 @@ public sealed partial class WaveController
             break;
         }
         int specials = 0;
+        if (leader != null && leader.RequiredBossEscort != null)
+        {
+            var escort = leader.RequiredBossEscort;
+            if (count < 2 || !enemyDatabase.ContainsEnemy(escort) || escort.EnemyPrefab == null || escort.GetSpawnWeight(currentWave) <= 0)
+            {
+                Debug.LogError("Boss encounter requires an eligible escort and two configured slots.", this);
+                return new List<EnemyDefinition>(new EnemyDefinition[count]);
+            }
+            // Narrative boss composition is exactly leader + required escort.
+            result.Clear(); result.Add(leader); result.Add(escort);
+            while (result.Count < count) result.Add(null);
+            return result;
+        }
         for (int i = 0; i < count; i++)
         {
             if (result[i] != null) continue;

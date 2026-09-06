@@ -49,6 +49,15 @@ public sealed class EnemyActor : MonoBehaviour
     public Func<float> IncomingDamageMultiplier { private get; set; }
 
     public event Action<EnemyActor> Initialized;
+    // HP before/after one surviving damage instance, including damage-over-time.
+    public event Action<EnemyActor, int, int> SurvivedHealthDamage;
+    private int specialTurnRequirementOverride;
+    public void SetSpecialTurnRequirement(int moves)
+    {
+        specialTurnRequirementOverride = Mathf.Max(1, moves);
+        if (currentSpecialTurnCount >= SpecialTurnRequirement) isSpecialReady = true;
+        SpecialCounterChanged?.Invoke(this, currentSpecialTurnCount, SpecialTurnRequirement);
+    }
 
     public event Action<EnemyActor, int, int>
         HealthChanged;
@@ -142,7 +151,7 @@ public sealed class EnemyActor : MonoBehaviour
 
     public int SpecialTurnRequirement =>
         isInitialized
-            ? RuntimeStats.SpecialTurnRequirement
+            ? (specialTurnRequirementOverride > 0 ? specialTurnRequirementOverride : RuntimeStats.SpecialTurnRequirement)
             : 0;
 
     public int CurrentSpecialTurnCount =>
@@ -250,6 +259,7 @@ public sealed class EnemyActor : MonoBehaviour
         currentShield = 0;
         damageRedirectTarget = null;
         IncomingDamageMultiplier = null;
+        specialTurnRequirementOverride = 0;
 
         currentSpecialTurnCount = 0;
         isSpecialReady = false;
@@ -320,7 +330,7 @@ public sealed class EnemyActor : MonoBehaviour
         SpecialCounterChanged?.Invoke(
             this,
             currentSpecialTurnCount,
-            RuntimeStats.SpecialTurnRequirement
+            SpecialTurnRequirement
         );
     }
 
@@ -450,6 +460,7 @@ public sealed class EnemyActor : MonoBehaviour
             finalDamage - shieldDamage;
 
         int actualHealthDamage = 0;
+        int healthBeforeDamage = currentHealth;
 
         if (healthDamage > 0)
         {
@@ -493,6 +504,10 @@ public sealed class EnemyActor : MonoBehaviour
         if (currentHealth == 0)
         {
             HandleDefeat();
+        }
+        else if (actualHealthDamage > 0 && !isDefeated)
+        {
+            SurvivedHealthDamage?.Invoke(this, healthBeforeDamage, currentHealth);
         }
 
         return shieldDamage > 0 ||
@@ -613,17 +628,17 @@ public sealed class EnemyActor : MonoBehaviour
         currentSpecialTurnCount =
             Mathf.Min(
                 currentSpecialTurnCount + 1,
-                RuntimeStats.SpecialTurnRequirement
+                SpecialTurnRequirement
             );
 
         SpecialCounterChanged?.Invoke(
             this,
             currentSpecialTurnCount,
-            RuntimeStats.SpecialTurnRequirement
+            SpecialTurnRequirement
         );
 
         if (currentSpecialTurnCount >=
-            RuntimeStats.SpecialTurnRequirement)
+            SpecialTurnRequirement)
         {
             isSpecialReady = true;
 
@@ -718,7 +733,7 @@ public sealed class EnemyActor : MonoBehaviour
         SpecialCounterChanged?.Invoke(
             this,
             currentSpecialTurnCount,
-            RuntimeStats.SpecialTurnRequirement
+            SpecialTurnRequirement
         );
     }
 

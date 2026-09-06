@@ -168,7 +168,10 @@ public class Gem :
         GemSpecialType specialType)
     {
         if (board != null && specialType != SpecialType)
+        {
+            board.CancelTelegraphGem(this);
             board.ReleaseMovablePinOnReplacement(this);
+        }
         SpecialType = specialType;
 
         if (specialOverlayView == null)
