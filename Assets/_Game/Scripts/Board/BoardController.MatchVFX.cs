@@ -211,6 +211,7 @@ public partial class BoardController
                 );
             }
             else if (poisonController != null &&
+                     poisonController.isActiveAndEnabled &&
                      poisonController
                          .HasUsablePoisonBurstFrames)
             {
@@ -251,7 +252,7 @@ public partial class BoardController
         }
 
         /*
-         * Only the six-frame main burst delays normal refill. The optional
+         * Only the main sprite burst delays normal refill. The optional
          * residue deliberately continues while gravity runs and removes itself
          * cell-by-cell as replacement gems visibly land.
          */
