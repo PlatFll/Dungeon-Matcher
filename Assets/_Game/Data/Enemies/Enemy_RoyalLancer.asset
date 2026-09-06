@@ -15,9 +15,10 @@ MonoBehaviour:
   enemyId: royal_lancer
   displayName: Royal Lancer
   category: 0
-  description: An elite Royal lancer whose normal attack probes with a light thrust before committing to a much heavier second strike.
+  description: An elite Royal lancer whose normal attack probes with a light thrust
+    before committing to a much heavier second strike.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: c29a0df9aa007884fa6e31dd1a7d6150, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: 8363e8d1de39ac94592e6a17a05dfcb5, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
@@ -31,6 +32,19 @@ MonoBehaviour:
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 0
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
   minimumWave: 21
   maximumWave: 0
   progressionWeight:

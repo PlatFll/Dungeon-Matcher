@@ -686,11 +686,11 @@ MonoBehaviour:
   - {fileID: 1268935519}
   - {fileID: 40744151}
   currentWave: 1
+  encounterSeed: 0
   playerPowerRatio: 1
   spawnWaveOnStart: 1
   delayBetweenEnemySpawns: 0.5
   avoidDuplicateEnemyTypesWhenPossible: 1
-  allowCategoryFallback: 1
   debugDamageAmount: 25
 --- !u!114 &362587655
 MonoBehaviour:
@@ -3556,6 +3556,14 @@ MonoBehaviour:
   landingSquashY: 0.97
   postFallSettlePause: 0.06
   combatController: {fileID: 362587655}
+  crackedGemSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  crackedShakeAmplitudeInCells: 0.045
   doubleCrystalSweepDelay: 0.08
   doubleCrystalChargeScale: 1.18
   doubleCrystalGrowDuration: 0.22
@@ -3568,6 +3576,9 @@ MonoBehaviour:
   pinMaterializeDuration: 0.1
   pinShakeDistanceInCells: 0.04
   pinShakeDuration: 0.12
+  frozenGemOverlaySprite: {fileID: -3535702354972669770, guid: 91dff541d6cfb8d44ae44c81f6a01e68, type: 3}
+  royalBannerBoardSprite: {fileID: 21300000, guid: 23b79872045c7a24e8dd27fde2ada950, type: 3}
+  royalBannerBoardScale: 0.9
   rubySpecialBombIcon: {fileID: 21300000, guid: 972b2597f0674634791ae3e1c778e262, type: 3}
   amberSpecialBombIcon: {fileID: 21300000, guid: 75f133ce7df3f9f49a72d24a7fbaaf3a, type: 3}
   topazSpecialBombIcon: {fileID: 21300000, guid: 0f4ef75550fe59c47a942a8626e97318, type: 3}

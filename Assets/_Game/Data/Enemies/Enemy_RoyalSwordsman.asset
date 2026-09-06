@@ -15,10 +15,11 @@ MonoBehaviour:
   enemyId: royal_swordsman
   displayName: Royal Swordsman
   category: 0
-  description: An elite Royal soldier whose disciplined normal attack is a fast balanced two-slash combo.
+  description: An elite Royal soldier whose disciplined normal attack is a fast balanced
+    two-slash combo.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 0}
-  animationControllerOverride: {fileID: 9100000, guid: f5c9fcbf8c820fa4291a59f17dff8b2c, type: 2}
+  fallbackVisualSprite: {fileID: 21300000, guid: 4a5f56e30f61eb34097ef280af6ff1af, type: 3}
+  animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
@@ -31,6 +32,19 @@ MonoBehaviour:
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 0
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
   minimumWave: 20
   maximumWave: 0
   progressionWeight:

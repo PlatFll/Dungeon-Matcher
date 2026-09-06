@@ -17,21 +17,35 @@ MonoBehaviour:
   category: 0
   description: 
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 0}
-  animationControllerOverride: {fileID: 9100000, guid: f5c9fcbf8c820fa4291a59f17dff8b2c, type: 2}
+  fallbackVisualSprite: {fileID: 21300000, guid: 85c17275f29dac84286569b83effe28f, type: 3}
+  animationControllerOverride: {fileID: 0}
+  visualSize: {x: 112, y: 112}
+  timeAutoAttackFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 0
   baseMaxHealth: 120
   baseDamage: 5
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
   baseAttackInterval: 10
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
+  lockSpecialTurnRequirement: 0
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
   minimumWave: 17
-  spawnWeight: 1
-  healthMultiplier: 1
-  damageMultiplier: 1
-  attackSpeedMultiplier: 1
-  staggerDurationMultiplier: 1
-  crownSoldier: 1
+  maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
@@ -56,3 +70,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  crownSoldier: 1
+  encounterEscorts: []
+  maximumSpecialEscorts: 1
+  spawnWeight: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  staggerDurationMultiplier: 1

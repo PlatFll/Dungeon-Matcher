@@ -15,9 +15,10 @@ MonoBehaviour:
   enemyId: royal_standard_bearer
   displayName: Royal Standard Bearer
   category: 1
-  description: A Royal support soldier who plants a falling standard that speeds up Crown attacks until the banner reaches the bottom of the board.
+  description: A Royal support soldier who plants a falling standard that speeds
+    up Crown attacks until the banner reaches the bottom of the board.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 0}
+  fallbackVisualSprite: {fileID: 21300000, guid: 9362013988df8294cbbdaf5d2beec45b, type: 3}
   animationControllerOverride: {fileID: 0}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
@@ -31,6 +32,19 @@ MonoBehaviour:
   specialAbilityKind: 8
   baseSpecialTurnRequirement: 5
   lockSpecialTurnRequirement: 1
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
   minimumWave: 23
   maximumWave: 0
   progressionWeight:
