@@ -204,6 +204,8 @@ public sealed partial class WaveController :
             waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
         selectedMilestoneLeader = waveSpawnProfile.SelectMilestone(currentWave, EncounterRandom,
             seenMilestoneLeaders, out int milestoneCount);
+        if (selectedMilestoneLeader != null && GetRepeatExclusions().Contains(selectedMilestoneLeader))
+            selectedMilestoneLeader = null;
         if (selectedMilestoneLeader != null)
         {
             var categories = new List<EnemyCategory> { selectedMilestoneLeader.Category };
@@ -236,6 +238,7 @@ public sealed partial class WaveController :
 
         int spawnedEnemyCount = 0;
         List<EnemyDefinition> encounter = BuildEncounter(plannedEnemyCount);
+        previousEncounterLeaders.Clear();
 
         for (int slotIndex = 0;
              slotIndex < enemySlots.Length;
@@ -313,6 +316,8 @@ public sealed partial class WaveController :
 
             activeEnemies.Add(enemy);
             seenMilestoneLeaders.Add(definition);
+            if (definition.Category == EnemyCategory.Miniboss || definition.Category == EnemyCategory.Boss)
+                previousEncounterLeaders.Add(definition);
 
             spawnedEnemyCount++;
 
@@ -386,6 +391,9 @@ public sealed partial class WaveController :
         HashSet<EnemyDefinition> selectedDefinitions,
         out EnemyDefinition selectedDefinition)
     {
+        var excluded = GetRepeatExclusions();
+        var uniqueExcluded = new HashSet<EnemyDefinition>(excluded);
+        if (selectedDefinitions != null) uniqueExcluded.UnionWith(selectedDefinitions);
         /*
          * First attempt: avoid duplicate enemy definitions.
          */
@@ -397,7 +405,7 @@ public sealed partial class WaveController :
                 enemyDatabase.GetEligibleEnemies(
                     category,
                     currentWave,
-                    selectedDefinitions
+                    uniqueExcluded
                 );
 
             if (uniqueCandidates.Count > 0 &&
@@ -405,7 +413,7 @@ public sealed partial class WaveController :
                     category,
                     currentWave,
                     out selectedDefinition,
-                    selectedDefinitions,
+                    uniqueExcluded,
                     EncounterRandom
                 ))
             {
@@ -420,7 +428,8 @@ public sealed partial class WaveController :
         List<EnemyDefinition> allCandidates =
             enemyDatabase.GetEligibleEnemies(
                 category,
-                currentWave
+                currentWave,
+                excluded
             );
 
         if (allCandidates.Count == 0)
@@ -433,6 +442,7 @@ public sealed partial class WaveController :
             category,
             currentWave,
             out selectedDefinition,
+            excludedEnemies: excluded,
             deterministicRandom: EncounterRandom
         );
     }

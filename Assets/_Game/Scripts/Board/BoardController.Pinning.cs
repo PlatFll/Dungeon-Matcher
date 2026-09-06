@@ -79,22 +79,14 @@ public partial class BoardController
                    request.OwnerInstanceId) <
                request.MaximumOwnedPins)
         {
-            Gem target = null;
-
-            foreach (Gem candidate
-                     in BuildSafePinnableGemList())
-            {
-                if (IsOrdinaryGemOnBoard(candidate))
-                {
-                    target = candidate;
-                    break;
-                }
-            }
-
-            if (target == null)
+            List<Gem> candidates = BuildSafePinnableGemList();
+            candidates.RemoveAll(gem => !IsOrdinaryGemOnBoard(gem));
+            if (candidates.Count == 0)
             {
                 yield break;
             }
+
+            Gem target = candidates[Random.Range(0, candidates.Count)];
 
             request.TargetGem = target;
             yield return ExecutePinRequest(request);

@@ -162,7 +162,8 @@ public partial class BoardController
                     continue;
                 }
 
-                SetGemCracked(target);
+                if (target.SpecialType == GemSpecialType.None)
+                    SetGemCracked(target);
                 validTargets.Add(target);
             }
 
@@ -182,6 +183,19 @@ public partial class BoardController
                     out triggeredCrystalRequests
                 );
 
+            // Preserve the approved same-wave cracked conversion, but visibly
+            // activate its crystals instead of consuming an unanimated star.
+            EnsureColorCrystalVFXController();
+            List<Gem> activatedCrystals = new List<Gem>();
+            foreach (Gem gem in expandedClearSet)
+                if (gem != null && gem.SpecialType == GemSpecialType.ColorCrystal)
+                    activatedCrystals.Add(gem);
+            activatedCrystals.Sort(CompareGemsByGridPosition);
+            foreach (Gem crystal in activatedCrystals)
+                if (colorCrystalVFXController != null)
+                    yield return colorCrystalVFXController.PlayActivation(
+                        new ColorCrystalVFXContext(crystal, new List<Gem>(crackedCenters).ToArray()));
+
             yield return AnimateCrackedGems(
                 crackedCenters,
                 shakeDuration,
@@ -197,7 +211,8 @@ public partial class BoardController
 
             yield return ClearMatches(
                 expandedClearSet,
-                null
+                null,
+                activateSpecials: true
             );
 
             yield return
@@ -467,6 +482,25 @@ public partial class BoardController
                 continue;
             }
 
+            if (seed.SpecialType == GemSpecialType.ColorCrystal)
+            {
+                // Preserve a directly selected crystal in the all-special
+                // fallback and reuse the protected remote activation sequence.
+                List<GemType> colors = new List<GemType>();
+                for (int row = 0; row < height; row++)
+                    for (int column = 0; column < width; column++)
+                    {
+                        Gem candidate = GetGem(column, row);
+                        if (candidate != null && candidate.SpecialType != GemSpecialType.ColorCrystal &&
+                            !colors.Contains(candidate.Type)) colors.Add(candidate.Type);
+                    }
+                GemType color = colors.Count > 0
+                    ? colors[UnityEngine.Random.Range(0, colors.Count)]
+                    : GetRandomGemType();
+                triggeredCrystalRequests.Add(new BombTriggeredCrystalRequest(seed, color));
+                continue;
+            }
+
             gemsToClear.Add(seed);
             pendingSpecials.Enqueue(seed);
         }
@@ -532,7 +566,6 @@ public partial class BoardController
                     break;
 
                 case GemSpecialType.PoisonBomb:
-                    ApplyPoisonBombStatus();
                     AddAreaToCrackedClearSet(
                         special,
                         pendingSpecials,
@@ -543,7 +576,6 @@ public partial class BoardController
                     break;
 
                 case GemSpecialType.HealingBomb:
-                    ApplyHealingBombEffect();
                     AddAreaToCrackedClearSet(
                         special,
                         pendingSpecials,
@@ -554,7 +586,6 @@ public partial class BoardController
                     break;
 
                 case GemSpecialType.ShieldBomb:
-                    ApplyShieldBombEffect();
                     AddAreaToCrackedClearSet(
                         special,
                         pendingSpecials,
@@ -696,7 +727,8 @@ public partial class BoardController
                     continue;
                 }
 
-                SetGemCracked(target);
+                if (target.SpecialType == GemSpecialType.None)
+                    SetGemCracked(target);
                 gemsToClear.Add(target);
                 pendingSpecials.Enqueue(target);
             }
@@ -889,7 +921,8 @@ public partial class BoardController
                     result.Value,
                     0,
                     BoardClearSource.Ability,
-                    BoardMatchType.Other
+                    BoardMatchType.Other,
+                    grantsSpecialEnergy: true
                 );
 
             ReportCrackedCombatContext(
@@ -924,7 +957,8 @@ public partial class BoardController
                     1,
                     0,
                     BoardClearSource.Ability,
-                    BoardMatchType.Other
+                    BoardMatchType.Other,
+                    grantsSpecialEnergy: true
                 );
 
             ReportCrackedCombatContext(

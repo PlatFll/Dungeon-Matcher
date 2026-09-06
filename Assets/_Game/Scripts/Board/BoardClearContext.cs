@@ -27,6 +27,9 @@ public readonly struct BoardClearContext
 
     public BoardMatchType MatchType { get; }
 
+    // Explicitly opted-in player explosions retain Ability source attribution.
+    public bool GrantsSpecialEnergy { get; }
+
     public bool IsMatchClear =>
         Source == BoardClearSource.Match;
 
@@ -42,7 +45,8 @@ public readonly struct BoardClearContext
         BoardClearSource source,
         BoardMatchType matchType =
             BoardMatchType.Other,
-        int triggerGemCount = -1)
+        int triggerGemCount = -1,
+        bool grantsSpecialEnergy = false)
     {
         GemType =
             gemType;
@@ -69,6 +73,11 @@ public readonly struct BoardClearContext
 
         Source =
             source;
+
+        GrantsSpecialEnergy = grantsSpecialEnergy ||
+            source == BoardClearSource.Bomb ||
+            source == BoardClearSource.ColorCrystal ||
+            source == BoardClearSource.DoubleColorCrystal;
 
         MatchType =
             matchType;

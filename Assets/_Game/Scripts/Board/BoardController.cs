@@ -856,7 +856,8 @@ public partial class BoardController : MonoBehaviour
 
             yield return ClearMatches(
                 expandedClearSet,
-                specialGemCreationRequests
+                specialGemCreationRequests,
+                activateSpecials: true
             );
 
             /*
@@ -912,7 +913,8 @@ public partial class BoardController : MonoBehaviour
     private IEnumerator ClearMatches(
         HashSet<Gem> matches,
         List<SpecialGemCreationRequest>
-            specialGemCreationRequests)
+            specialGemCreationRequests,
+        bool activateSpecials = false)
     {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
@@ -1095,9 +1097,18 @@ public partial class BoardController : MonoBehaviour
         {
             if (visual.SpriteRenderer != null)
             {
-                visual.SpriteRenderer.enabled =
-                    false;
+                foreach (SpriteRenderer renderer in visual.Gem.GetComponentsInChildren<SpriteRenderer>())
+                    renderer.enabled = false;
             }
+        }
+
+        // Commit only at the board-owned shatter moment, after the preparation
+        // flash. Environmental removal and double-crystal sweeps do not activate.
+        if (activateSpecials)
+        {
+            visuals.Sort((a, b) => CompareGemsByGridPosition(a.Gem, b.Gem));
+            foreach (ClearVisual visual in visuals)
+                CommitSpecialBombEffect(visual.Gem);
         }
 
         float responsivePostBurstDelay =

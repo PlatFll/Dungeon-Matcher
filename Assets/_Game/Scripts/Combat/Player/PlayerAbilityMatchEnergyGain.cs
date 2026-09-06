@@ -150,7 +150,8 @@ public sealed class PlayerAbilityMatchEnergyGain :
         if (playerActor == null ||
             playerAbilityEnergy == null ||
             playerAbilityController == null ||
-            playerAbilityController.IsAbilityActive ||
+            (playerAbilityController.IsAbilityActive &&
+             !outcome.ClearContext.GrantsSpecialEnergy) ||
             !playerActor.IsInitialized ||
             playerActor.IsDefeated)
         {
@@ -208,13 +209,13 @@ public sealed class PlayerAbilityMatchEnergyGain :
                 );
 
             /*
-             * Ability-generated clears currently grant no
-             * energy by default. This prevents future
-             * abilities from refunding themselves or
-             * creating infinite energy loops.
+             * Ability clears require an explicit player-explosion entitlement;
+             * their source remains Ability for all other reward consumers.
              */
             case BoardClearSource.Ability:
-                return 0;
+                return context.GrantsSpecialEnergy
+                    ? CalculateSpecialClearEnergy(context.GemCount, outcome.DamagedMatchingEnemy)
+                    : 0;
 
             default:
                 return 0;

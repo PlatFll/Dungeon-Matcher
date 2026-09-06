@@ -89,6 +89,7 @@ Environmental mutations call `ResolveEnvironmentalBoardChange`, which reuses col
 - `SpecialGemCreationRequest` identifies the one matched gem preserved as the new special. Only genuinely destroyed colored gems are rewardable.
 - A color crystal's hidden original `GemType` is explicitly excluded from damage, healing, energy, and other color-based rewards.
 - Expanded clear sets and visited sets are authoritative. Presentation must not independently discover or add gameplay targets.
+- Expansion computes targets without applying bomb effects. Genuine activation paths opt into `ClearMatches` special activation; it commits effects when all gem shell/icon renderers hide at shatter. Environmental removal and double-crystal sweeps retain non-activating removal semantics.
 
 Preserve current chaining and obstacle interaction semantics unless an approved feature explicitly changes them.
 
@@ -142,11 +143,15 @@ Known implementation boundary: `BoardController.CrackedGems.cs` currently contai
 
 Energy has three separate owners:
 
-- **Generation:** `PlayerAbilityMatchEnergyGain` subscribes to `BoardClearOutcomeResolved` and calculates gains from clear source, match shape, cleared count, and whether a matching enemy was damaged. It awards no energy for `BoardClearSource.Ability` and currently pauses generation while an ability is active.
+- **Generation:** `PlayerAbilityMatchEnergyGain` subscribes to `BoardClearOutcomeResolved` and calculates gains from clear source, match shape, cleared count, and whether a matching enemy was damaged. `BoardClearContext.GrantsSpecialEnergy` permits player-owned bomb/crystal clears and explicitly opted-in Cracked explosions during abilities. Other Ability clears remain ineligible and ordinary match energy remains paused during active abilities.
 - **Storage:** `PlayerAbilityEnergy` owns current energy, maximum energy, clamping, reset, addition, spending, and `EnergyChanged`.
 - **Spending:** `PlayerAbilityController` checks the definition's cost and spends only after runtime acceptance.
 
 Do not merge these responsibilities. In particular, a board clear should describe its source accurately; changing it to `Match` or `Bomb` to obtain energy would create an unintended refund path.
+
+Enemy white-flash presentation has one material writer, `EnemyCombatFeedback`. Poison requests a timed hit flash from that owner; expiry combines with current stagger state instead of restoring a captured temporary value. Disable and defeat clear temporary state.
+
+Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains actual shield loss after mitigation. HP numbers continue to consume actual `DamageTaken`, in a separate display lane. At zero shield, `PlayerPanelUI` deactivates and destroys the complete runtime shield overlay immediately.
 
 ## Enemy data and runtime responsibilities
 
@@ -257,6 +262,8 @@ The script reads the exact editor version from `ProjectSettings/ProjectVersion.t
 - Unity editor validation is available at `Dungeon Matcher > Validation > Siege Sergeant`, or `-executeMethod SiegeSergeantValidation.Run`. It exercises actual target-selection helpers, gem identity/cancellation, ownership-based defence, direct/DoT damage, asset references, baseline stats and the fixed checkpoint. Run the normal `Tools/Validate-Unity.ps1` compilation gate first; Play Mode VFX/pacing verification remains separate.
 
 ## Weighted chapter pools and formation commands
+
+- `WaveController` records successfully spawned Mini-boss/Boss definitions for adjacent-encounter exclusion. All weighted/fallback draws share that exclusion; already seen major Bosses remain excluded. Independent validation run fixtures reset both milestone and encounter history explicitly.
 
 - `WaveSpawnProfile` remains the category/count planner; `EnemyDatabase` filters eligible definitions and evaluates their age-relative weight curves. `WaveController.BuildEncounter` resolves the complete composition before spawning through `CreateEnemy`. Definition-owned escort pools constrain all other slots when a Mini-boss is selected; they never create a second spawn path. Ordinary fixed overrides are removed from the standard profile, while the existing solo checkpoints remain.
 - `WaveController` owns a private `System.Random` initialized from its recorded encounter seed. Category planning, definition/escort draws and weakness shuffling use that same instance. Existing board randomness remains Unity-based; full-run replay determinism is not claimed.
