@@ -135,11 +135,11 @@ public sealed class RunUpgradeSystemTests
         Assert.That(fixture.Runtime.TryApply(cost, 5), Is.True);
         Assert.That(
             RunUpgradeResolver.ResolveAbilityEnergyCost(
-                fixture.Player.ActiveAbility.EnergyCost,
+                100,
                 fixture.Player.ActiveAbility,
                 fixture.Runtime
             ),
-            Is.EqualTo(72)
+            Is.EqualTo(90)
         );
     }
 
