@@ -31,11 +31,14 @@ public partial class BoardController
      * gravity starts after the final VFX frame even at low frame rates.
      */
     private const float
-        DirectionalBombRefillSafetyPadding =
+        BombRefillSafetyPadding =
             0.015f;
 
     private float
         directionalBombRefillHoldUntilTime;
+
+    private float
+        poisonBombRefillHoldUntilTime;
 
     private void ReportMatchesToVFX(
         HashSet<Gem> matches,
@@ -48,10 +51,10 @@ public partial class BoardController
         }
 
         /*
-         * An earned bomb cannot detonate before some board
-         * interaction has happened. Lazily create and prewarm
-         * its small VFX pool on the first real match instead of
-         * paying that setup cost on the bomb's impact frame.
+         * An earned directional bomb cannot detonate before some board
+         * interaction has happened. Lazily create and prewarm its small VFX
+         * pool on the first real match instead of paying that setup cost on
+         * the bomb's impact frame.
          */
         EnsureBombVFXController();
 
@@ -117,9 +120,9 @@ public partial class BoardController
         }
 
         /*
-         * These are the pathways where a row or column bomb in the expanded
-         * set genuinely detonates. Double-crystal sweeps can erase a bomb
-         * without firing its directional effect, so they remain excluded.
+         * These are pathways where bombs in the expanded clear set genuinely
+         * activate. Double-crystal/environmental sweeps can erase a special
+         * without activating it and therefore remain excluded.
          */
         if (clearSource != BoardClearSource.Bomb &&
             clearSource != BoardClearSource.ColorCrystal &&
@@ -128,43 +131,93 @@ public partial class BoardController
             return;
         }
 
-        /*
-         * Future abilities may be able to create or detonate a
-         * bomb without a previous match, so retain this fallback.
-         */
-        EnsureBombVFXController();
+        PoisonBombVFXController poisonController =
+            null;
 
         foreach (Gem gem in expandedClearSet)
         {
-            if (gem == null ||
-                (
-                    gem.SpecialType !=
-                        GemSpecialType.RowBomb &&
-                    gem.SpecialType !=
-                        GemSpecialType.ColumnBomb
-                ))
+            if (gem == null)
             {
                 continue;
             }
+
+            bool isDirectionalBomb =
+                gem.SpecialType ==
+                    GemSpecialType.RowBomb ||
+                gem.SpecialType ==
+                    GemSpecialType.ColumnBomb;
+
+            bool isPoisonBomb =
+                gem.SpecialType ==
+                    GemSpecialType.PoisonBomb;
+
+            if (!isDirectionalBomb &&
+                !isPoisonBomb)
+            {
+                continue;
+            }
+
+            if (isDirectionalBomb)
+            {
+                EnsureBombVFXController();
+            }
+            else
+            {
+                poisonController =
+                    poisonController != null
+                        ? poisonController
+                        : EnsurePoisonBombVFXController();
+            }
+
+            /*
+             * Poison's sprite burst begins at the same board-owned shatter
+             * moment that commits its status effect: after the white flash and
+             * hold. Directional beams retain their established flash timing.
+             */
+            float startDelay =
+                isPoisonBomb
+                    ? matchFlashDuration +
+                      matchWhiteHoldDuration
+                    : matchFlashDuration;
 
             BombVFXContext context =
                 new BombVFXContext(
                     gem.SpecialType,
                     gem.transform.position,
-                    matchFlashDuration
+                    startDelay,
+                    gem.Column,
+                    gem.Row
                 );
 
             BombVFXRequested?.Invoke(
                 context
             );
 
-            if (clearSource ==
+            bool shouldHoldNormalRefill =
+                clearSource ==
                     BoardClearSource.Bomb ||
                 clearSource ==
-                    BoardClearSource.Ability)
+                    BoardClearSource.Ability;
+
+            if (!shouldHoldNormalRefill)
+            {
+                continue;
+            }
+
+            if (isDirectionalBomb)
             {
                 RegisterDirectionalBombRefillHold(
                     context.StartDelay
+                );
+            }
+            else if (poisonController != null &&
+                     poisonController.isActiveAndEnabled &&
+                     poisonController
+                         .HasUsablePoisonBurstFrames)
+            {
+                RegisterPoisonBombRefillHold(
+                    context.StartDelay,
+                    poisonController.MainBurstDuration
                 );
             }
         }
@@ -180,11 +233,38 @@ public partial class BoardController
                 vfxStartDelay
             ) +
             DirectionalBombMaximumVisualLifetime +
-            DirectionalBombRefillSafetyPadding;
+            BombRefillSafetyPadding;
 
         directionalBombRefillHoldUntilTime =
             Mathf.Max(
                 directionalBombRefillHoldUntilTime,
+                visualEndTime
+            );
+    }
+
+    private void RegisterPoisonBombRefillHold(
+        float vfxStartDelay,
+        float mainBurstDuration)
+    {
+        if (mainBurstDuration <= 0f)
+        {
+            return;
+        }
+
+        /*
+         * Only the main sprite burst delays normal refill. The optional
+         * residue deliberately continues while gravity runs and removes itself
+         * cell-by-cell as replacement gems visibly land.
+         */
+        float visualEndTime =
+            Time.time +
+            Mathf.Max(0f, vfxStartDelay) +
+            mainBurstDuration +
+            BombRefillSafetyPadding;
+
+        poisonBombRefillHoldUntilTime =
+            Mathf.Max(
+                poisonBombRefillHoldUntilTime,
                 visualEndTime
             );
     }
@@ -199,6 +279,16 @@ public partial class BoardController
         );
     }
 
+    private float
+        GetPoisonBombRefillHoldRemaining()
+    {
+        return Mathf.Max(
+            0f,
+            poisonBombRefillHoldUntilTime -
+            Time.time
+        );
+    }
+
     private void EnsureBombVFXController()
     {
         if (GetComponent<BombVFXController>() !=
@@ -208,13 +298,32 @@ public partial class BoardController
         }
 
         /*
-         * The effect is completely runtime-generated, so the
-         * board does not need a new prefab reference or scene
-         * setup. Existing scenes therefore receive it without
-         * any serialized migration.
+         * The directional effect is completely runtime-generated, so the board
+         * does not need a prefab reference or scene migration.
          */
         gameObject.AddComponent<
             BombVFXController
+        >();
+    }
+
+    private PoisonBombVFXController
+        EnsurePoisonBombVFXController()
+    {
+        PoisonBombVFXController controller =
+            GetComponent<PoisonBombVFXController>();
+
+        if (controller != null)
+        {
+            return controller;
+        }
+
+        /*
+         * Runtime fallback keeps missing optional presentation harmless. A
+         * scene/prefab should serialize this component when final sprite frames
+         * are assigned; an auto-added empty controller simply skips the effect.
+         */
+        return gameObject.AddComponent<
+            PoisonBombVFXController
         >();
     }
 }
