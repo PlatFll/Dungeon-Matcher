@@ -3660,8 +3660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85068aa6cd070b64fad72ac497093558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardVisuals
-  cornerPiece: {fileID: 21300000, guid: cab4b11e87109174eaafe18a9ec5fd38, type: 3}
-  normalPiece: {fileID: 21300000, guid: 8f34f65d7fe20c34289e032cdd9bc00e, type: 3}
+  cornerPiece: {fileID: 21300000, guid: 0d6d49171032d3347adebcc2243a401d, type: 3}
+  normalPiece: {fileID: 21300000, guid: cce394462a932974a80f89c6f2b50bf5, type: 3}
+  tileCanvasFrameThickness: 0.25
   legacyBoardFrameSprite: {fileID: 21300000, guid: e6d69ce84643e6f4e86fd5940630b19e, type: 3}
   boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
   boardFrameSortingLayer: Gems
