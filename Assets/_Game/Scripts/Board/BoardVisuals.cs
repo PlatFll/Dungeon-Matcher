@@ -9,18 +9,27 @@ public sealed class BoardVisuals : MonoBehaviour
 
     [SerializeField]
     [Tooltip(
-        "Top-left L-shaped corner sprite. Designed for the new 80x80 board " +
-        "corner art. It is mirrored automatically for the other three corners."
+        "Canonical top-left corner sprite. The preferred format is a square " +
+        "64x64 tile canvas whose visible corner art sits on the bottom and " +
+        "right edges. The other corners are produced with rotation only."
     )]
     private Sprite cornerPiece;
 
     [SerializeField]
     [Tooltip(
-        "Straight top-edge sprite. Designed for the new 64x16 board frame " +
-        "piece. It is repeated without stretching and rotated/flipped for the " +
-        "other three sides."
+        "Canonical left-edge sprite. The preferred format is a square 64x64 " +
+        "tile canvas whose visible frame art sits on the right edge. The other " +
+        "sides are produced with rotation only."
     )]
     private Sprite normalPiece;
+
+    [SerializeField, Range(0.01f, 0.5f)]
+    [Tooltip(
+        "Visible frame thickness as a fraction of one board cell when square " +
+        "tile-canvas frame sprites are used. 0.25 matches a 16px border inside " +
+        "a 64px canvas. Transparent canvas space does not count as thickness."
+    )]
+    private float tileCanvasFrameThickness = 0.25f;
 
     /*
      * Preserve the old full-frame assignment when older scenes deserialize.
@@ -118,7 +127,7 @@ public sealed class BoardVisuals : MonoBehaviour
                 return 0f;
             }
 
-            if (HasValidModularFrame())
+            if (HasValidFramePieces())
             {
                 return
                     board.LocalBoardWidth +
@@ -142,7 +151,7 @@ public sealed class BoardVisuals : MonoBehaviour
                 return 0f;
             }
 
-            if (HasValidModularFrame())
+            if (HasValidFramePieces())
             {
                 return
                     board.LocalBoardHeight +
@@ -231,9 +240,23 @@ public sealed class BoardVisuals : MonoBehaviour
 
         RemoveExistingBoardFrame();
 
-        if (HasValidModularFrame())
+        if (HasValidFramePieces())
         {
-            CreateModularBoardFrame();
+            if (UsesSquareTileCanvasFrame())
+            {
+                CreateSquareTileCanvasBoardFrame();
+            }
+            else
+            {
+                /*
+                 * Existing scenes still use the previous 80x80 corner + 64x16
+                 * normal-piece format. Keep that path intact so merging this
+                 * change does not break the current board before the new art is
+                 * assigned in the Inspector.
+                 */
+                CreateLegacyModularBoardFrame();
+            }
+
             return;
         }
 
@@ -250,7 +273,7 @@ public sealed class BoardVisuals : MonoBehaviour
         );
     }
 
-    private bool HasValidModularFrame()
+    private bool HasValidFramePieces()
     {
         if (cornerPiece == null ||
             normalPiece == null)
@@ -271,12 +294,59 @@ public sealed class BoardVisuals : MonoBehaviour
             cornerSize.y > 0f;
     }
 
+    private bool UsesSquareTileCanvasFrame()
+    {
+        if (!HasValidFramePieces())
+        {
+            return false;
+        }
+
+        return
+            IsApproximatelySquare(
+                normalPiece.bounds.size
+            ) &&
+            IsApproximatelySquare(
+                cornerPiece.bounds.size
+            );
+    }
+
+    private static bool IsApproximatelySquare(
+        Vector2 size)
+    {
+        if (size.x <= 0f ||
+            size.y <= 0f)
+        {
+            return false;
+        }
+
+        float maximumDimension =
+            Mathf.Max(size.x, size.y);
+
+        float difference =
+            Mathf.Abs(size.x - size.y);
+
+        return
+            difference <=
+            maximumDimension * 0.01f;
+    }
+
     private float GetFrameThickness()
     {
         if (board == null ||
             normalPiece == null)
         {
             return 0f;
+        }
+
+        if (UsesSquareTileCanvasFrame())
+        {
+            return
+                board.CellSize *
+                Mathf.Clamp(
+                    tileCanvasFrameThickness,
+                    0.01f,
+                    0.5f
+                );
         }
 
         Vector2 normalSize =
@@ -288,32 +358,16 @@ public sealed class BoardVisuals : MonoBehaviour
         }
 
         /*
-         * The normal piece spans exactly one board cell horizontally. Its
-         * aspect ratio therefore defines the frame thickness. With the intended
-         * 64x16 art this becomes 16/64 = one quarter of a cell.
-         *
-         * Deriving the value from the sprite ratio also keeps the layout correct
-         * if the import PPU is accidentally changed, although 64 PPU is still
-         * recommended for pixel-perfect rendering.
+         * Compatibility for the previous 64x16 normal-piece format. Its aspect
+         * ratio encoded the visible thickness directly.
          */
         return
             board.CellSize *
             (normalSize.y / normalSize.x);
     }
 
-    private void CreateModularBoardFrame()
+    private GameObject CreateFrameRoot()
     {
-        if (board.Width < 2 ||
-            board.Height < 2)
-        {
-            Debug.LogWarning(
-                "The modular board frame is designed for boards at least 2x2. " +
-                "The current board will still be drawn, but corner pieces may " +
-                "overlap.",
-                this
-            );
-        }
-
         GameObject frameRoot =
             new GameObject(
                 BoardFrameContainerName
@@ -329,6 +383,212 @@ public sealed class BoardVisuals : MonoBehaviour
 
         frameRoot.transform.localScale =
             Vector3.one;
+
+        return frameRoot;
+    }
+
+    private void CreateSquareTileCanvasBoardFrame()
+    {
+        GameObject frameRoot =
+            CreateFrameRoot();
+
+        float cellSize =
+            board.CellSize;
+
+        float halfCellSize =
+            cellSize * 0.5f;
+
+        float normalScale =
+            cellSize /
+            normalPiece.bounds.size.x;
+
+        float cornerScale =
+            cellSize /
+            cornerPiece.bounds.size.x;
+
+        float halfBoardWidth =
+            board.LocalBoardWidth * 0.5f;
+
+        float halfBoardHeight =
+            board.LocalBoardHeight * 0.5f;
+
+        float leftCanvasCenterX =
+            -halfBoardWidth -
+            halfCellSize;
+
+        float rightCanvasCenterX =
+            halfBoardWidth +
+            halfCellSize;
+
+        float bottomCanvasCenterY =
+            -halfBoardHeight -
+            halfCellSize;
+
+        float topCanvasCenterY =
+            halfBoardHeight +
+            halfCellSize;
+
+        /*
+         * Canonical corner is TOP-LEFT: its visible L lives on the bottom and
+         * right edges of the square canvas. Rotating the whole square produces
+         * all other corners without mirroring pixel art.
+         */
+        CreateFramePiece(
+            frameRoot.transform,
+            "TopLeftCorner",
+            cornerPiece,
+            new Vector2(
+                leftCanvasCenterX,
+                topCanvasCenterY
+            ),
+            cornerScale,
+            0f,
+            false,
+            false
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "TopRightCorner",
+            cornerPiece,
+            new Vector2(
+                rightCanvasCenterX,
+                topCanvasCenterY
+            ),
+            cornerScale,
+            -90f,
+            false,
+            false
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "BottomRightCorner",
+            cornerPiece,
+            new Vector2(
+                rightCanvasCenterX,
+                bottomCanvasCenterY
+            ),
+            cornerScale,
+            180f,
+            false,
+            false
+        );
+
+        CreateFramePiece(
+            frameRoot.transform,
+            "BottomLeftCorner",
+            cornerPiece,
+            new Vector2(
+                leftCanvasCenterX,
+                bottomCanvasCenterY
+            ),
+            cornerScale,
+            90f,
+            false,
+            false
+        );
+
+        /*
+         * The square normal piece is canonical LEFT: visible art sits on its
+         * right edge. One complete square canvas is placed outside every board
+         * cell. Its transparent area provides the fixed tile footprint while the
+         * visible strip touches the playable board boundary.
+         */
+        for (int column = 0;
+             column < board.Width;
+             column++)
+        {
+            float cellCenterX =
+                board.GetCellLocalPosition(
+                    column,
+                    0
+                ).x;
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"TopEdge_{column}",
+                normalPiece,
+                new Vector2(
+                    cellCenterX,
+                    topCanvasCenterY
+                ),
+                normalScale,
+                -90f,
+                false,
+                false
+            );
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"BottomEdge_{column}",
+                normalPiece,
+                new Vector2(
+                    cellCenterX,
+                    bottomCanvasCenterY
+                ),
+                normalScale,
+                90f,
+                false,
+                false
+            );
+        }
+
+        for (int row = 0;
+             row < board.Height;
+             row++)
+        {
+            float cellCenterY =
+                board.GetCellLocalPosition(
+                    0,
+                    row
+                ).y;
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"LeftEdge_{row}",
+                normalPiece,
+                new Vector2(
+                    leftCanvasCenterX,
+                    cellCenterY
+                ),
+                normalScale,
+                0f,
+                false,
+                false
+            );
+
+            CreateFramePiece(
+                frameRoot.transform,
+                $"RightEdge_{row}",
+                normalPiece,
+                new Vector2(
+                    rightCanvasCenterX,
+                    cellCenterY
+                ),
+                normalScale,
+                180f,
+                false,
+                false
+            );
+        }
+    }
+
+    private void CreateLegacyModularBoardFrame()
+    {
+        if (board.Width < 2 ||
+            board.Height < 2)
+        {
+            Debug.LogWarning(
+                "The legacy modular board frame is designed for boards at " +
+                "least 2x2. The current board will still be drawn, but corner " +
+                "pieces may overlap.",
+                this
+            );
+        }
+
+        GameObject frameRoot =
+            CreateFrameRoot();
 
         float cellSize =
             board.CellSize;
@@ -373,11 +633,6 @@ public sealed class BoardVisuals : MonoBehaviour
             halfBoardHeight -
             cellSize * 0.5f;
 
-        /*
-         * Each 80x80 corner contains the entire top/side L shape around one
-         * 64x64 cell span. Its center is therefore shifted half the exterior
-         * frame thickness away from that corner cell's center.
-         */
         CreateFramePiece(
             frameRoot.transform,
             "TopLeftCorner",
@@ -446,10 +701,6 @@ public sealed class BoardVisuals : MonoBehaviour
             true
         );
 
-        /*
-         * Corners already cover the first and last cell span on each side, so
-         * straight pieces are only needed for cells between those corners.
-         */
         for (int column = 1;
              column < board.Width - 1;
              column++)
@@ -501,10 +752,6 @@ public sealed class BoardVisuals : MonoBehaviour
                     row
                 ).y;
 
-            /*
-             * The original normal sprite is the top edge. +90 degrees maps its
-             * outward-facing top to the left side; -90 maps it to the right.
-             */
             CreateFramePiece(
                 frameRoot.transform,
                 $"LeftEdge_{row}",
@@ -622,19 +869,12 @@ public sealed class BoardVisuals : MonoBehaviour
         renderer.sprite = sprite;
         renderer.color = boardFrameColor;
 
-        /*
-         * The frame renders above gems. Its transparent interior leaves the
-         * playable board visible while the decorative border stays on top.
-         */
         renderer.sortingLayerName =
             boardFrameSortingLayer;
 
         renderer.sortingOrder =
             boardFrameSortingOrder;
 
-        /*
-         * Frame pieces extend outside the board mask and must never be clipped.
-         */
         renderer.maskInteraction =
             SpriteMaskInteraction.None;
     }
@@ -684,10 +924,6 @@ public sealed class BoardVisuals : MonoBehaviour
                 continue;
             }
 
-            /*
-             * Disable immediately so an older tile layer cannot remain visible
-             * until Destroy finishes at the end of the frame.
-             */
             descendant.gameObject.SetActive(false);
 
             if (Application.isPlaying)
@@ -707,10 +943,6 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private void CreateCellTiles()
     {
-        /*
-         * Remove any tile grid left behind by an earlier initialization or a
-         * Play Mode script reload.
-         */
         RemoveExistingCellTileContainers();
 
         if (!HasValidCellTileSprite())
@@ -888,10 +1120,6 @@ public sealed class BoardVisuals : MonoBehaviour
                 ]
                 : null;
 
-        /*
-         * Multiple attempts reduce visible clusters while still allowing layouts
-         * to remain naturally random.
-         */
         const int maximumSelectionAttempts = 12;
 
         Sprite fallbackSprite = null;
@@ -933,10 +1161,6 @@ public sealed class BoardVisuals : MonoBehaviour
             }
         }
 
-        /*
-         * This can happen when there is only one valid variation or when every
-         * alternative conflicts.
-         */
         if (fallbackSprite != null)
         {
             return fallbackSprite;
