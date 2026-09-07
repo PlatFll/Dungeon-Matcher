@@ -17,6 +17,8 @@ public sealed class BoardLayoutController : MonoBehaviour
 
     private BoardController board;
     private BoardVisuals boardVisuals;
+    private TileCanvasBoardFrameController
+        tileCanvasFrame;
     private Canvas parentCanvas;
 
     private readonly Vector3[] areaCorners =
@@ -26,6 +28,10 @@ public sealed class BoardLayoutController : MonoBehaviour
     {
         board = GetComponent<BoardController>();
         boardVisuals = GetComponent<BoardVisuals>();
+        tileCanvasFrame =
+            GetComponent<
+                TileCanvasBoardFrameController
+            >();
 
         if (worldCamera == null)
         {
@@ -51,6 +57,13 @@ public sealed class BoardLayoutController : MonoBehaviour
             board == null)
         {
             return;
+        }
+
+        if (tileCanvasFrame == null)
+        {
+            TryGetComponent(
+                out tileCanvasFrame
+            );
         }
 
         boardArea.GetWorldCorners(areaCorners);
@@ -119,15 +132,23 @@ public sealed class BoardLayoutController : MonoBehaviour
                 worldBottomLeft.y
             );
 
+        bool useTileCanvasBounds =
+            tileCanvasFrame != null &&
+            tileCanvasFrame.IsUsingTileCanvasFrame;
+
         float localBoardWidth =
-            boardVisuals != null
-                ? boardVisuals.OuterLocalWidth
-                : board.LocalBoardWidth;
+            useTileCanvasBounds
+                ? tileCanvasFrame.OuterLocalWidth
+                : boardVisuals != null
+                    ? boardVisuals.OuterLocalWidth
+                    : board.LocalBoardWidth;
 
         float localBoardHeight =
-            boardVisuals != null
-                ? boardVisuals.OuterLocalHeight
-                : board.LocalBoardHeight;
+            useTileCanvasBounds
+                ? tileCanvasFrame.OuterLocalHeight
+                : boardVisuals != null
+                    ? boardVisuals.OuterLocalHeight
+                    : board.LocalBoardHeight;
 
         if (availableWidth <= 0f ||
             availableHeight <= 0f ||
