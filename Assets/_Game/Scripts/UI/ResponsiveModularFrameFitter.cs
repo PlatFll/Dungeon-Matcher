@@ -36,8 +36,12 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
 
     private void OnEnable()
     {
+        /*
+         * Awake already performs the initial build. Avoid rebuilding a second
+         * time during AddComponent's Awake/OnEnable sequence; explicit callers
+         * can still request RefreshFrame after configuring the component.
+         */
         ResolveReferences();
-        RefreshFrame();
     }
 
     private void LateUpdate()
@@ -197,7 +201,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
     private void RefreshTileCanvasFrame()
     {
         DisableLegacyTemplatePieces();
-        RemoveGeneratedTileCanvasRoot();
+        RemoveGeneratedTileCanvasRoots();
 
         RectTransform generatedRoot =
             CreateRectTransform(
@@ -291,46 +295,40 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
             (coveredWidth -
              targetRect.width) *
             0.5f +
-            canvasSize * 0.5f;
+            canvasSize *
+            0.5f;
 
         float firstVerticalCenter =
             targetRect.yMin -
             (coveredHeight -
              targetRect.height) *
             0.5f +
-            canvasSize * 0.5f;
+            canvasSize *
+            0.5f;
 
         Rect leftBounds =
-            TileCanvasFrameSpriteUtility
-                .GetRotatedVisibleBoundsRelativeToCanvas(
-                    tileCanvasNormalSprite,
-                    pixelsPerSpritePixel,
-                    0f
-                );
+            GetNormalBounds(
+                0f,
+                pixelsPerSpritePixel
+            );
 
         Rect topBounds =
-            TileCanvasFrameSpriteUtility
-                .GetRotatedVisibleBoundsRelativeToCanvas(
-                    tileCanvasNormalSprite,
-                    pixelsPerSpritePixel,
-                    -90f
-                );
+            GetNormalBounds(
+                -90f,
+                pixelsPerSpritePixel
+            );
 
         Rect rightBounds =
-            TileCanvasFrameSpriteUtility
-                .GetRotatedVisibleBoundsRelativeToCanvas(
-                    tileCanvasNormalSprite,
-                    pixelsPerSpritePixel,
-                    180f
-                );
+            GetNormalBounds(
+                180f,
+                pixelsPerSpritePixel
+            );
 
         Rect bottomBounds =
-            TileCanvasFrameSpriteUtility
-                .GetRotatedVisibleBoundsRelativeToCanvas(
-                    tileCanvasNormalSprite,
-                    pixelsPerSpritePixel,
-                    90f
-                );
+            GetNormalBounds(
+                90f,
+                pixelsPerSpritePixel
+            );
 
         float leftCanvasCenterX =
             targetRect.xMin -
@@ -417,6 +415,18 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         }
     }
 
+    private Rect GetNormalBounds(
+        float rotationDegrees,
+        float pixelsPerSpritePixel)
+    {
+        return TileCanvasFrameSpriteUtility
+            .GetRotatedVisibleBoundsRelativeToCanvas(
+                tileCanvasNormalSprite,
+                pixelsPerSpritePixel,
+                rotationDegrees
+            );
+    }
+
     private void CreateTileCanvasCorners(
         RectTransform parent,
         Rect targetRect,
@@ -430,8 +440,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 targetRect.yMax
             ),
             90f,
-            horizontalSide: -1,
-            verticalSide: 1,
+            -1,
+            1,
             pixelsPerSpritePixel
         );
 
@@ -443,8 +453,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 targetRect.yMax
             ),
             0f,
-            horizontalSide: 1,
-            verticalSide: 1,
+            1,
+            1,
             pixelsPerSpritePixel
         );
 
@@ -456,8 +466,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 targetRect.yMin
             ),
             180f,
-            horizontalSide: -1,
-            verticalSide: -1,
+            -1,
+            -1,
             pixelsPerSpritePixel
         );
 
@@ -469,8 +479,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 targetRect.yMin
             ),
             -90f,
-            horizontalSide: 1,
-            verticalSide: -1,
+            1,
+            -1,
             pixelsPerSpritePixel
         );
     }
@@ -580,6 +590,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
 
         image.type =
             Image.Type.Simple;
+        image.color =
+            tileCanvasColor;
         image.raycastTarget = false;
     }
 
@@ -631,36 +643,48 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         }
     }
 
-    private void RemoveGeneratedTileCanvasRoot()
+    private void RemoveGeneratedTileCanvasRoots()
     {
         if (frameRoot == null)
         {
             return;
         }
 
-        Transform existing =
-            frameRoot.Find(
-                GeneratedTileCanvasRootName
-            );
+        int removalIndex = 0;
 
-        if (existing == null)
+        while (true)
         {
-            return;
-        }
+            Transform existing =
+                frameRoot.Find(
+                    GeneratedTileCanvasRootName
+                );
 
-        existing.gameObject.SetActive(false);
+            if (existing == null)
+            {
+                break;
+            }
 
-        if (Application.isPlaying)
-        {
-            Destroy(
-                existing.gameObject
-            );
-        }
-        else
-        {
-            DestroyImmediate(
-                existing.gameObject
-            );
+            existing.name =
+                GeneratedTileCanvasRootName +
+                "_Removing_" +
+                removalIndex;
+
+            removalIndex++;
+
+            existing.gameObject.SetActive(false);
+
+            if (Application.isPlaying)
+            {
+                Destroy(
+                    existing.gameObject
+                );
+            }
+            else
+            {
+                DestroyImmediate(
+                    existing.gameObject
+                );
+            }
         }
     }
 
@@ -705,7 +729,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 Mathf.Min(
                     framedTarget.rect.width,
                     framedTarget.rect.height
-                ) * 0.48f
+                ) *
+                0.48f
             );
 
         float cornerSize =
@@ -769,28 +794,28 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
 
         ConfigureHorizontalEdge(
             topEdge,
-            top: true,
+            true,
             cornerSize,
             thickness
         );
 
         ConfigureHorizontalEdge(
             bottomEdge,
-            top: false,
+            false,
             cornerSize,
             thickness
         );
 
         ConfigureVerticalEdge(
             leftEdge,
-            left: true,
+            true,
             cornerSize,
             thickness
         );
 
         ConfigureVerticalEdge(
             rightEdge,
-            left: false,
+            false,
             cornerSize,
             thickness
         );
@@ -813,22 +838,38 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         }
 
         topLeftCorner =
-            FindDirectChild("TopLeftCorner");
+            FindDirectChild(
+                "TopLeftCorner"
+            );
         topRightCorner =
-            FindDirectChild("TopRightCorner");
+            FindDirectChild(
+                "TopRightCorner"
+            );
         bottomLeftCorner =
-            FindDirectChild("BottomLeftCorner");
+            FindDirectChild(
+                "BottomLeftCorner"
+            );
         bottomRightCorner =
-            FindDirectChild("BottomRightCorner");
+            FindDirectChild(
+                "BottomRightCorner"
+            );
 
         topEdge =
-            FindDirectChild("TopEdge");
+            FindDirectChild(
+                "TopEdge"
+            );
         bottomEdge =
-            FindDirectChild("BottomEdge");
+            FindDirectChild(
+                "BottomEdge"
+            );
         leftEdge =
-            FindDirectChild("LeftEdge");
+            FindDirectChild(
+                "LeftEdge"
+            );
         rightEdge =
-            FindDirectChild("RightEdge");
+            FindDirectChild(
+                "RightEdge"
+            );
     }
 
     private static void ConfigureCorner(
@@ -846,12 +887,13 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         corner.anchorMax = anchor;
         corner.pivot =
             new Vector2(0.5f, 0.5f);
-        corner.anchoredPosition = position;
+        corner.anchoredPosition =
+            position;
         corner.sizeDelta =
             new Vector2(size, size);
     }
 
-    private void ConfigureHorizontalEdge(
+    private static void ConfigureHorizontalEdge(
         RectTransform edge,
         bool top,
         float cornerSize,
@@ -1000,8 +1042,9 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         }
 
         return
-            frameRoot.Find(childName)
-            as RectTransform;
+            frameRoot.Find(
+                childName
+            ) as RectTransform;
     }
 
     private static RectTransform CreateRectTransform(
@@ -1057,9 +1100,6 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
 
         image.sprite = sprite;
         image.color = Color.white;
-        image.color = image.color *
-                      Color.white;
-        image.color = Color.white;
         image.raycastTarget = false;
         image.preserveAspect = false;
         image.pixelsPerUnitMultiplier = 1f;
@@ -1087,7 +1127,13 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         Vector2 right)
     {
         return
-            Mathf.Approximately(left.x, right.x) &&
-            Mathf.Approximately(left.y, right.y);
+            Mathf.Approximately(
+                left.x,
+                right.x
+            ) &&
+            Mathf.Approximately(
+                left.y,
+                right.y
+            );
     }
 }
