@@ -32,6 +32,9 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private const float SectionGap =
         12f;
 
+    private const float PlayerFrameLeftInset =
+        16f;
+
     private RectTransform topHud;
     private RectTransform playerSection;
     private RectTransform enemySection;
@@ -172,12 +175,12 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
             new Vector2(0.5f, 0.5f);
         playerSection.offsetMin =
             new Vector2(
-                SectionOuterInset,
+                PlayerFrameLeftInset,
                 SectionOuterInset
             );
         playerSection.offsetMax =
             new Vector2(
-                SectionOuterInset +
+                PlayerFrameLeftInset +
                 playerWidth,
                 -SectionOuterInset
             );
