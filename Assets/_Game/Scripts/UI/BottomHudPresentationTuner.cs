@@ -8,11 +8,13 @@ public sealed class BottomHudPresentationTuner : MonoBehaviour
     private const string BottomHudName = "BottomHUD";
     private const string GeneratedFrameName = "GeneratedBottomHudFrame";
 
-    // Use the same visual scale as the battle arena instead of shrinking the
-    // shared modular frame to fit the old compact BottomHUD.
+    // Keep the larger 104px BottomHUD and 50px corners, but render the straight
+    // pieces slightly thinner so their visible band lines up with the outgoing
+    // arms of the shared corner art. This tuning is BottomHUD-only; the board
+    // and battle arena keep their existing modular frame sizing.
     private const float TargetHudHeight = 104f;
     private const float FrameCornerSize = 50f;
-    private const float FrameThickness = 10f;
+    private const float FrameThickness = 8f;
     private const float EdgePixelsPerUnitMultiplier = 1f;
 
     private RectTransform bottomHud;
