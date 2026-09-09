@@ -24,6 +24,7 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Board and modular frame presentation
 
+- Modular board sprites use Full Rect import meshes. Tight corner triangulation can distort the one-pixel border under pixel snapping and make its join with a rectangular straight strip look stepped, despite matching sprite bounds and transforms.
 - `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 - `BottomHudModularFrameController` owns the 104-reference-pixel bottom enclosure and its frame. `AbilityButtonUI` owns button/energy presentation, not the enclosing border. `BottomHudPresentationTuner` has been removed.

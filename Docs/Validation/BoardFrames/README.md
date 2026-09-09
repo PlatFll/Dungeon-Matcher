@@ -1,5 +1,15 @@
 # Board frame and HUD verification — 2026-09-09
 
+## Corner-join follow-up — 2026-09-10
+
+The user identified a remaining one-pixel step along the top-left corner arm. The earlier visual review missed it. Unity's imported corner had a ten-vertex Tight mesh with diagonal interior edges, while the straight strip had a four-vertex rectangle; rect dimensions, bounds, and centered pivots matched their expected values. Changing the corner import to Full Rect removed the distortion in the rendered border. Both modular sprite imports now explicitly use Full Rect, with no texture-pixel, PPU, filtering, position, or gameplay changes.
+
+[Magnified join comparison](corner-join-before-after.png): before on the left, after on the right, using nearest-neighbor 3x enlargement of native 540x960 captures. The corner arm's lower border now continues straight across the join. The editor fixture also checks rectangular meshes and waits through a normal wave-spawn delay before testing enemy-owned obstacles (a previous run encountered that delay and failed the fixture's immediate owner check).
+
+The completed follow-up suite passed at 540x960 and 1080x2400, with four cascaded clears in each run, including mesh, ordering, production swaps, obstacles, and HUD join checks. Native captures were visually reviewed. Local evidence: `.utmp/FrameVerification/20260910-023051-540x960` and `.utmp/FrameVerification/20260910-023224-1080x2400`. The full-size screenshots below document the earlier implementation stage; use the magnified comparison above for the final corner-mesh correction.
+
+The required `Tools/Validate-Unity.ps1` passed again on 2026-09-10 with Unity 6000.3.19f1, exit zero. Log: `DungeonMatcher-UnityValidation-ef09f9e9-32a2-4427-bcab-572221aed3d9.log` in the local temporary directory.
+
 ## Diagnosis in the actual Game scene
 
 Before editing, the running editor showed `BoardFrame/TopLeftCorner` on `Default / 0`. Its loaded sorting-layer dropdown did not contain `BoardFrame`, although PR #113 had added that layer to the on-disk TagManager. The guard repeatedly replaced BoardVisuals' valid initialized sorting with the unavailable layer name and order zero. The frame consequently rendered behind board tiles and gems. This was an editor/project-settings mismatch, not evidence that sorting layers themselves cannot order these sprites.

@@ -118,9 +118,17 @@ public static class BoardFramePlayValidation
             yield return Swap(a, b, "cascade-" + i);
         }
         Check(cascades > 1, "several cascaded clears observed");
-        var owner = UnityEngine.Object.FindObjectsByType<EnemyActor>(FindObjectsSortMode.None)
-            .FirstOrDefault(enemy => enemy.IsInitialized && !enemy.IsDefeated);
-        Check(owner != null, "obstacle test owner exists");
+        EnemyActor owner = null;
+        float ownerDeadline = Time.realtimeSinceStartup + 10f;
+        // The last swap can defeat the wave. Wait for the next wave's actor
+        // instead of treating the normal spawn delay as a rendering failure.
+        while (owner == null)
+        {
+            owner = UnityEngine.Object.FindObjectsByType<EnemyActor>(FindObjectsSortMode.None)
+                .FirstOrDefault(enemy => enemy.IsInitialized && !enemy.IsDefeated);
+            Check(Time.realtimeSinceStartup < ownerDeadline, "obstacle test owner spawns");
+            yield return null;
+        }
         Check(board.TryQueuePlaceBarricades(owner, 3, 3, 2, (EnemyBarricadeStyle)0), "barricades queued");
         yield return Settle();
         Check(board.TryQueuePinRandomGem(owner, 3), "chain queued");
@@ -186,6 +194,7 @@ public static class BoardFramePlayValidation
         {
             Check(piece.maskInteraction == SpriteMaskInteraction.None, "frame is unmasked");
             Check(piece.sortingLayerName == "Effects", "frame uses loaded Effects layer");
+            Check(piece.sprite.vertices.Length == 4, "frame uses rectangular mesh for uniform pixel snapping");
         }
         int frameLayer = SortingLayer.GetLayerValueFromID(pieces[0].sortingLayerID);
         foreach (var renderer in board.GetComponentsInChildren<Renderer>())
