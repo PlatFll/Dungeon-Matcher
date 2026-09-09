@@ -20,6 +20,14 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
     private Vector2 lastTargetSize =
         new Vector2(float.NaN, float.NaN);
 
+    private float preferredCornerSize;
+
+    public void SetPreferredCornerSize(float size)
+    {
+        preferredCornerSize = Mathf.Max(0f, size);
+        RefreshFrame();
+    }
+
     private void Awake()
     {
         ResolveReferences();
@@ -98,12 +106,12 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 Mathf.Min(
                     framedTarget.rect.width,
                     framedTarget.rect.height
-                ) * 0.48f
+                ) * 0.5f
             );
 
         float cornerSize =
             Mathf.Min(
-                nativeCornerSize,
+                preferredCornerSize > 0f ? preferredCornerSize : nativeCornerSize,
                 maximumCornerSize
             );
 
@@ -280,6 +288,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                     ? 0f
                     : thickness
             );
+        ConfigureTileScale(edge, thickness);
     }
 
     private void ConfigureVerticalEdge(
@@ -322,6 +331,16 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                 verticalLength,
                 thickness
             );
+        ConfigureTileScale(edge, thickness);
+    }
+
+    private void ConfigureTileScale(RectTransform edge, float thickness)
+    {
+        if (!edge.TryGetComponent(out Image image) || image.sprite == null) return;
+        // Image.Type.Tiled crops rather than scales tiles to a smaller rect.
+        // Match its native tile height to the corner's derived border height,
+        // including Canvas reference PPU, so all source pixels share one scale.
+        image.pixelsPerUnitMultiplier = GetNativeUiHeight(edge) / thickness;
     }
 
     private float GetNativeUiWidth(

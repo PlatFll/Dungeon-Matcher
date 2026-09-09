@@ -583,8 +583,6 @@ MonoBehaviour:
   energyFill: {fileID: 2114041982}
   energyBarFillMask: {fileID: 0}
   playerAbilityController: {fileID: 748065090}
-  cornerPiece: {fileID: 21300000, guid: 7a0e911f79e20ff48ac0fab20d2bed07, type: 3}
-  normalPiece: {fileID: 21300000, guid: 7bea7272cd5b9b94196fd5b807554076, type: 3}
   energyFillSmoothTime: 0.18
   unavailableIconColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
   readyIconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3664,8 +3662,6 @@ MonoBehaviour:
   normalPiece: {fileID: 21300000, guid: a2006b22f56942040abaad9f048dbd8f, type: 3}
   legacyBoardFrameSprite: {fileID: 21300000, guid: e6d69ce84643e6f4e86fd5940630b19e, type: 3}
   boardFrameColor: {r: 1, g: 1, b: 1, a: 1}
-  boardFrameSortingLayer: Gems
-  boardFrameSortingOrder: 100
   backgroundPadding: 0.04
   backgroundColor: {r: 0.07450981, g: 0.09019608, b: 0.12156863, a: 1}
   cellTileSprites:

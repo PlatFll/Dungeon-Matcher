@@ -35,13 +35,12 @@ public sealed class BoardVisuals : MonoBehaviour
     private Color boardFrameColor =
         Color.white;
 
-    [SerializeField]
-    private string boardFrameSortingLayer =
-        "Gems";
-
-    [SerializeField]
-    private int boardFrameSortingOrder =
-        100;
+    // Board sprites/obstacles/VFX use BoardBackground and Gems. Keep the
+    // border above those layers, but below WorldUI and overlay canvases.
+    // Use the established Effects layer: an unknown layer name silently
+    // resolves to Default in an editor that has not reloaded TagManager.
+    private const string BoardFrameSortingLayer = "Effects";
+    private const int BoardFrameSortingOrder = 100;
 
     [Header("Board Background")]
 
@@ -627,10 +626,10 @@ public sealed class BoardVisuals : MonoBehaviour
          * playable board visible while the decorative border stays on top.
          */
         renderer.sortingLayerName =
-            boardFrameSortingLayer;
+            BoardFrameSortingLayer;
 
         renderer.sortingOrder =
-            boardFrameSortingOrder;
+            BoardFrameSortingOrder;
 
         /*
          * Frame pieces extend outside the board mask and must never be clipped.

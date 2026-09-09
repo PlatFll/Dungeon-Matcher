@@ -8,16 +8,13 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
     private const string BottomHudName = "BottomHUD";
     private const string GeneratedFrameName = "GeneratedBottomHudFrame";
 
-    /*
-     * The BottomHUD is only 88 reference pixels tall, so use the same modular
-     * frame artwork as the board/battle arena at a slightly smaller presentation
-     * scale. The source board corner is 80x80 and the straight piece is 64x16;
-     * 40/8 preserves the exact same 5:1 corner-to-border ratio while leaving a
-     * comfortable 72px interior for the existing 64px ability button.
-     */
-    private const float FrameCornerSize = 40f;
-    private const float FrameThickness = 8f;
-    private const float EdgePixelsPerUnitMultiplier = 2f;
+    // Preserve the existing 104px enclosure and 50px corner footprint. The
+    // shared fitter derives edge thickness and tile pitch from the same scale.
+    private const float HudHeight = 104f;
+    private const float FrameCornerSize = 50f;
+    private float FrameThickness => normalPiece != null && cornerPiece != null
+        ? FrameCornerSize * normalPiece.rect.height / cornerPiece.rect.width
+        : 0f;
 
     private RectTransform bottomHud;
     private Sprite cornerPiece;
@@ -50,6 +47,8 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
     private void Awake()
     {
         bottomHud = transform as RectTransform;
+        if (bottomHud != null)
+            bottomHud.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, HudHeight);
     }
 
     private void Start()
@@ -261,6 +260,9 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             "RightEdge",
             false
         );
+
+        frameRoot.gameObject.AddComponent<ResponsiveModularFrameFitter>()
+            .SetPreferredCornerSize(FrameCornerSize);
     }
 
     private void CreateCorner(
@@ -329,8 +331,6 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
         }
 
         image.type = Image.Type.Tiled;
-        image.pixelsPerUnitMultiplier =
-            EdgePixelsPerUnitMultiplier;
     }
 
     private void CreateVerticalEdge(
@@ -382,8 +382,6 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             );
 
         image.type = Image.Type.Tiled;
-        image.pixelsPerUnitMultiplier =
-            EdgePixelsPerUnitMultiplier;
     }
 
     private void KeepAbilityContentInsideFrame()
@@ -404,25 +402,9 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             return;
         }
 
-        /*
-         * The existing button is 176x64. An 88px HUD with 8px borders leaves
-         * 72px of clear interior height, so preserve the authored 64px button
-         * rather than shrinking it. Only clamp accidental vertical drift.
-         */
-        float maximumY =
-            Mathf.Max(
-                0f,
-                (bottomHud.rect.height -
-                 FrameThickness * 2f -
-                 abilityRect.rect.height) * 0.5f
-            );
-
+        // Keep the authored 176x64 button centered in the existing enclosure.
         Vector2 position = abilityRect.anchoredPosition;
-        position.y = Mathf.Clamp(
-            position.y,
-            -maximumY,
-            maximumY
-        );
+        position.y = 0f;
         abilityRect.anchoredPosition = position;
     }
 
