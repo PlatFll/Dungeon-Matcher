@@ -13,13 +13,9 @@ public sealed class PlayerAreaFrameSpacingController : MonoBehaviour
     private const string ThreeSliceFrameName =
         "PlayerAreaThreeSliceFrame";
 
-    /*
-     * BattleArenaFrame uses a 10-reference-pixel edge. Keeping the player frame
-     * 16 pixels in from the arena edge leaves a deliberate 6-pixel visual gap
-     * above and below it instead of letting the two borders touch or overlap.
-     */
-    private const float VerticalInsetFromArenaEdge =
-        16f;
+    // The arena fitter derives its thickness from the imported sprite. Keep
+    // the intended six-reference-pixel gap after that actual border.
+    private const float GapInsideArena = 6f;
 
     private bool applied;
 
@@ -90,11 +86,15 @@ public sealed class PlayerAreaFrameSpacingController : MonoBehaviour
         Vector2 offsetMax =
             playerSection.offsetMax;
 
+        RectTransform arenaEdge = generatedLayout.Find("BattleArenaFrame/TopEdge") as RectTransform;
+        if (arenaEdge == null) return;
+        float verticalInset = arenaEdge.rect.height + GapInsideArena;
+
         offsetMin.y =
-            VerticalInsetFromArenaEdge;
+            verticalInset;
 
         offsetMax.y =
-            -VerticalInsetFromArenaEdge;
+            -verticalInset;
 
         playerSection.offsetMin =
             offsetMin;

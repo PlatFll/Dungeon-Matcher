@@ -22,6 +22,15 @@ This document describes the current authoritative gameplay architecture and the 
 | Run upgrades | `RunUpgradeDefinition`, `RunUpgradeCatalog`, `RunUpgradeRuntime`, `RunUpgradeResolver`, `UpgradeDraftGenerator` |
 | Presentation | Board VFX controllers, enemy/player presenters, combat-text controllers, and UI components |
 
+## Board and modular frame presentation
+
+- `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.
+- There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
+- `BottomHudModularFrameController` owns the 104-reference-pixel bottom enclosure and its frame. `AbilityButtonUI` owns button/energy presentation, not the enclosing border. `BottomHudPresentationTuner` has been removed.
+- `ResponsiveModularFrameFitter` sizes modular UI corners and edges from sprite dimensions/PPU and target bounds. The bottom enclosure preserves its 50-reference-pixel corner footprint; its 80:16 source ratio therefore requires 10-reference-pixel edges. Tiled `Image` density must follow the same scale as corners: shrinking only an edge RectTransform crops its texture and creates mismatched joins.
+- `TopBattleLayoutController` constructs the arena frame; the responsive fitter maintains its geometry. `PlayerAreaThreeSliceFrameController` owns the inner player enclosure, and `PlayerAreaFrameSpacingController` derives its vertical inset from the actual arena border plus the intended six-reference-pixel gap. The board retains its symmetric inset relative to the full-width top and bottom HUDs.
+- `Dungeon Matcher > Validation > Board Frame Play Mode` exercises production swaps using temporary Play Mode fixtures and saves native Game View screenshots plus a renderer report under `.utmp/FrameVerification`. Passing renderer assertions does not replace visual inspection of the captured frames.
+
 ## BoardController ownership
 
 `BoardController` is the authority for board rules and mutable grid state. Its partial files divide implementation by concern, but compile into one component and one ownership domain.
