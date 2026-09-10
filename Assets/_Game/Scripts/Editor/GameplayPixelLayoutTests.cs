@@ -49,7 +49,9 @@ public static class GameplayPixelLayoutTests
                 g.Viewport.xMax <= safe.xMax - 4*g.Scale && g.Viewport.yMax <= safe.yMax - 4*g.Scale, "Safe insets");
             Check(g.Bottom.height == 176, "Native bottom height");
             Check(g.Top.height >= 220 && g.Top.height <= 320, "Bounded battle");
-            Check(g.Top.yMin-g.Board.yMax == 6 && g.Board.yMin-g.Bottom.yMax == 6, "Exact gaps");
+            float upperGap = g.Top.yMin - g.Board.yMax, lowerGap = g.Board.yMin - g.Bottom.yMax;
+            Check(upperGap >= 6 && lowerGap >= 6 && Mathf.Abs(upperGap - lowerGap) <= 1, "Balanced minimum gaps");
+            Check(g.Top.yMax == g.Viewport.height / g.Scale, "Top anchored below safe edge");
             Check(g.Board.xMin >= 0 && g.Board.xMax <= g.Viewport.width / g.Scale, "Board rectangle stays inside viewport");
             Check(g.Bottom.yMin == 0, "Bottom anchored to viewport");
             float maximum = Mathf.Min(g.Viewport.width, g.Viewport.height - (176 + 12 + 220)*g.Scale);

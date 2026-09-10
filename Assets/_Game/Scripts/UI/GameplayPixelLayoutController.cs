@@ -85,12 +85,14 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
                 h - BottomHeight - 2 * Gap - boardHeight);
             if (battleHeight < MinimumBattleHeight) continue;
             battleHeight = Mathf.Min(PreferredBattleHeight, battleHeight);
-            // Anchor to the bottom safe inset; surplus background belongs above the stack.
+            // Pin both HUDs to safe edges and balance spare height around the square board.
             float bottom = 0;
             result.Bottom = new Rect(0, bottom, w, BottomHeight);
-            result.Board = new Rect(Mathf.Floor((w - boardWidth) / 2), bottom + BottomHeight + Gap,
+            float topY = h - battleHeight;
+            float boardY = BottomHeight + Mathf.Floor((topY - BottomHeight - boardHeight) / 2);
+            result.Board = new Rect(Mathf.Floor((w - boardWidth) / 2), boardY,
                 boardWidth, boardHeight);
-            result.Top = new Rect(0, result.Board.yMax + Gap, w, battleHeight);
+            result.Top = new Rect(0, topY, w, battleHeight);
             result.Fits = true;
             return result;
         }

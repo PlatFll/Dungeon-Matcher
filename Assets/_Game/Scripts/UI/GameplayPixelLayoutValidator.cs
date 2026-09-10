@@ -30,8 +30,11 @@ public static class GameplayPixelLayoutValidator
             "Bottom enters additional safe inset", errors);
         Require(Contains(g.Viewport, top) && Contains(g.Viewport, board), "Top/board leaves gameplay viewport", errors);
         Require(!top.Overlaps(board) && !board.Overlaps(bottom) && !top.Overlaps(bottom), "Sections overlap", errors);
-        Require(Near(top.yMin - board.yMax, GameplayPixelLayoutController.Gap * g.Scale) &&
-            Near(board.yMin - bottom.yMax, GameplayPixelLayoutController.Gap * g.Scale), "Incorrect section gaps", errors);
+        float upperGap = top.yMin - board.yMax, lowerGap = board.yMin - bottom.yMax;
+        Require(upperGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
+            lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
+            Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon, "Incorrect section gaps", errors);
+        Require(Near(top.yMax, g.Viewport.yMax), "Top is not anchored to safe viewport", errors);
         Require(Near(canvas.scaleFactor, g.Scale) && Integral(canvas.scaleFactor), "Fractional Canvas scale", errors);
         if (worldBoard == null) errors.Add("Missing board layout consumer");
         else
