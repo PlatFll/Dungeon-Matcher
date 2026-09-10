@@ -1,187 +1,54 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
-[DefaultExecutionOrder(-50)]
 [RequireComponent(typeof(BoardController))]
 public sealed class BoardLayoutController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField]
-    private Camera worldCamera;
+    [SerializeField] private Camera worldCamera;
+    [SerializeField] private RectTransform boardArea;
+    private BoardVisuals visuals;
+    private GameplayPixelLayoutController layout;
+    public float PhysicalTexelRatio { get; private set; }
+    public Vector2 PhysicalOrigin { get; private set; }
 
-    [SerializeField]
-    private RectTransform boardArea;
-
-    [Header("Sizing")]
-    [SerializeField, Range(0.1f, 2.5f)]
-    private float maximumScale = 2f;
-
-    private BoardController board;
-    private BoardVisuals boardVisuals;
-    private Canvas parentCanvas;
-
-    private readonly Vector3[] areaCorners =
-        new Vector3[4];
-
-    private void Awake()
+    private void Start()
     {
-        board = GetComponent<BoardController>();
-        boardVisuals = GetComponent<BoardVisuals>();
-
-        if (worldCamera == null)
-        {
-            worldCamera = Camera.main;
-        }
-
-        if (boardArea != null)
-        {
-            parentCanvas =
-                boardArea.GetComponentInParent<Canvas>();
-        }
+        if (worldCamera == null) worldCamera = Camera.main;
+        visuals = GetComponent<BoardVisuals>();
+        if (boardArea == null) return;
+        layout = boardArea.GetComponentInParent<GameplayPixelLayoutController>();
+        // PPC subscribes in OnEnable. Register in Start so our projection query
+        // runs after PPC updates its matrix, including the first resized frame.
+        RenderPipelineManager.beginCameraRendering += BeforeCamera;
     }
 
-    private void LateUpdate()
+    private void OnDestroy() => RenderPipelineManager.beginCameraRendering -= BeforeCamera;
+
+    private void BeforeCamera(ScriptableRenderContext context, Camera camera)
     {
-        ApplyLayout();
-    }
-
-    private void ApplyLayout()
-    {
-        if (worldCamera == null ||
-            boardArea == null ||
-            board == null)
-        {
-            return;
-        }
-
-        boardArea.GetWorldCorners(areaCorners);
-
-        Camera uiCamera = null;
-
-        if (parentCanvas != null &&
-            parentCanvas.renderMode !=
-            RenderMode.ScreenSpaceOverlay)
-        {
-            uiCamera =
-                parentCanvas.worldCamera;
-        }
-
-        Vector2 screenBottomLeft =
-            RectTransformUtility.WorldToScreenPoint(
-                uiCamera,
-                areaCorners[0]
-            );
-
-        Vector2 screenTopRight =
-            RectTransformUtility.WorldToScreenPoint(
-                uiCamera,
-                areaCorners[2]
-            );
-
-        if (screenTopRight.x <= screenBottomLeft.x ||
-            screenTopRight.y <= screenBottomLeft.y)
-        {
-            return;
-        }
-
-        float distanceFromCamera =
-            Mathf.Abs(
-                transform.position.z -
-                worldCamera.transform.position.z
-            );
-
-        Vector3 worldBottomLeft =
-            worldCamera.ScreenToWorldPoint(
-                new Vector3(
-                    screenBottomLeft.x,
-                    screenBottomLeft.y,
-                    distanceFromCamera
-                )
-            );
-
-        Vector3 worldTopRight =
-            worldCamera.ScreenToWorldPoint(
-                new Vector3(
-                    screenTopRight.x,
-                    screenTopRight.y,
-                    distanceFromCamera
-                )
-            );
-
-        float availableWidth =
-            Mathf.Abs(
-                worldTopRight.x -
-                worldBottomLeft.x
-            );
-
-        float availableHeight =
-            Mathf.Abs(
-                worldTopRight.y -
-                worldBottomLeft.y
-            );
-
-        float localBoardWidth =
-            boardVisuals != null
-                ? boardVisuals.OuterLocalWidth
-                : board.LocalBoardWidth;
-
-        float localBoardHeight =
-            boardVisuals != null
-                ? boardVisuals.OuterLocalHeight
-                : board.LocalBoardHeight;
-
-        if (availableWidth <= 0f ||
-            availableHeight <= 0f ||
-            localBoardWidth <= 0f ||
-            localBoardHeight <= 0f)
-        {
-            return;
-        }
-
-        /*
-         * GameplayScreen/TopBattlePresentationController already computes an
-         * aspect-correct BoardArea from the phone safe area. Fit uniformly into
-         * that exact slot: no independent X/Y scaling, no deliberate overflow,
-         * and no second set of layout paddings competing with the UI stack.
-         */
-        float widthScale =
-            availableWidth /
-            localBoardWidth;
-
-        float heightScale =
-            availableHeight /
-            localBoardHeight;
-
-        float targetScale =
-            Mathf.Min(
-                widthScale,
-                heightScale,
-                maximumScale
-            );
-
-        targetScale =
-            Mathf.Max(
-                targetScale,
-                0.01f
-            );
-
-        transform.localScale =
-            new Vector3(
-                targetScale,
-                targetScale,
-                1f
-            );
-
-        transform.position =
-            new Vector3(
-                (
-                    worldBottomLeft.x +
-                    worldTopRight.x
-                ) * 0.5f,
-                (
-                    worldBottomLeft.y +
-                    worldTopRight.y
-                ) * 0.5f,
-                transform.position.z
-            );
+        if (!isActiveAndEnabled || camera != worldCamera || boardArea == null || visuals == null || layout == null) return;
+        if (!layout.Current.Fits) return;
+        Rect area = GameplayPixelLayoutController.ScreenRect(boardArea);
+        Vector3 origin = worldCamera.WorldToScreenPoint(Vector3.zero);
+        float pixelsPerUnit = Vector3.Distance(origin, worldCamera.WorldToScreenPoint(Vector3.right));
+        if (pixelsPerUnit <= 0) return;
+        float sourcePPU = worldCamera.TryGetComponent(out PixelPerfectCamera ppc) ? ppc.assetsPPU : 64;
+        float fit = Mathf.Min(area.width / (visuals.OuterLocalWidth * sourcePPU),
+            area.height / (visuals.OuterLocalHeight * sourcePPU));
+        float ratio = layout.Current.NarrowBoardFallback ? Mathf.Min(1, fit) : Mathf.Floor(fit + 0.00001f);
+        if (ratio <= 0) return;
+        PhysicalTexelRatio = ratio;
+        float scale = ratio * sourcePPU / pixelsPerUnit;
+        transform.localScale = new Vector3(scale, scale, 1);
+        Vector2 center = area.center;
+        // Board art has even native dimensions and centered sprite pivots.
+        // Snap in physical screen coordinates, after PPC's camera phase is known.
+        center = new Vector2(Mathf.Round(center.x), Mathf.Round(center.y));
+        Vector3 position = worldCamera.ScreenToWorldPoint(new Vector3(center.x, center.y,
+            Mathf.Abs(transform.position.z - worldCamera.transform.position.z)));
+        position.z = transform.position.z;
+        transform.position = position;
+        PhysicalOrigin = worldCamera.WorldToScreenPoint(transform.position);
     }
 }

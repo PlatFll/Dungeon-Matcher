@@ -42,29 +42,6 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private bool configured;
     private bool missingArtWarningShown;
 
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.AfterSceneLoad
-    )]
-    private static void InstallOnGameScene()
-    {
-        GameObject topHudObject =
-            GameObject.Find("TopHUD");
-
-        if (topHudObject == null)
-        {
-            return;
-        }
-
-        if (!topHudObject.TryGetComponent(
-                out PlayerAreaThreeSliceFrameController _
-            ))
-        {
-            topHudObject.AddComponent<
-                PlayerAreaThreeSliceFrameController
-            >();
-        }
-    }
-
     private void Awake()
     {
         topHud =
@@ -176,13 +153,13 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         playerSection.offsetMin =
             new Vector2(
                 PlayerFrameLeftInset,
-                SectionOuterInset
+                16f + 6f
             );
         playerSection.offsetMax =
             new Vector2(
                 PlayerFrameLeftInset +
                 playerWidth,
-                -SectionOuterInset
+                -(16f + 6f)
             );
 
         enemySection.anchorMin =

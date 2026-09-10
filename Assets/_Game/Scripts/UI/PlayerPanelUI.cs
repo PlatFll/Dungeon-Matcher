@@ -104,6 +104,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
     {
         DisableLegacyPlayerBase();
         FollowPlayerCharacter();
+        if (affinityGemImage != null && affinityGemImage.enabled)
+            GameplayPixelGrid.FitImage(affinityGemImage, Vector2.one * (gemIndicatorConfig != null ? gemIndicatorConfig.IconSize : FallbackAffinityIconSize));
     }
 
     private void OnDisable()
@@ -839,6 +841,8 @@ public sealed class PlayerPanelUI : MonoBehaviour
             affinitySprite != null;
 
         FollowPlayerCharacter();
+        if (affinityGemImage != null && affinityGemImage.enabled)
+            GameplayPixelGrid.FitImage(affinityGemImage, Vector2.one * (gemIndicatorConfig != null ? gemIndicatorConfig.IconSize : FallbackAffinityIconSize));
     }
 
     private void FollowPlayerCharacter()

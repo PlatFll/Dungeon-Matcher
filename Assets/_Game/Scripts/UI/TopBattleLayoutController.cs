@@ -15,10 +15,10 @@ public sealed class TopBattleLayoutController : MonoBehaviour
         6f;
 
     private const float FrameThickness =
-        10f;
+        16f;
 
     private const float FrameCornerSize =
-        50f;
+        80f;
 
     private const float HealthBarHeight =
         20f;
@@ -72,29 +72,6 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     private Sprite normalPiece;
     private Sprite temporaryDungeonBackground;
     private bool layoutBuilt;
-
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.AfterSceneLoad
-    )]
-    private static void InstallOnGameScene()
-    {
-        GameObject topHudObject =
-            GameObject.Find("TopHUD");
-
-        if (topHudObject == null)
-        {
-            return;
-        }
-
-        if (!topHudObject.TryGetComponent(
-                out TopBattleLayoutController _
-            ))
-        {
-            topHudObject.AddComponent<
-                TopBattleLayoutController
-            >();
-        }
-    }
 
     private void Start()
     {
@@ -349,7 +326,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
         }
     }
 
-    private void LayoutEnemyArea()
+    public void LayoutEnemyArea()
     {
         EnemySlotUI[] slots =
             enemyArea.GetComponentsInChildren<
@@ -386,32 +363,10 @@ public sealed class TopBattleLayoutController : MonoBehaviour
                 continue;
             }
 
-            float start =
-                (float)index /
-                slotCount;
-
-            float end =
-                (float)(index + 1) /
-                slotCount;
-
-            slotRect.anchorMin =
-                new Vector2(start, 0f);
-
-            slotRect.anchorMax =
-                new Vector2(end, 1f);
-
-            slotRect.pivot =
-                new Vector2(0.5f, 0.5f);
-
-            slotRect.offsetMin =
-                new Vector2(3f, 0f);
-
-            slotRect.offsetMax =
-                new Vector2(-3f, 0f);
-
-            slotRect.localScale =
-                Vector3.one;
-
+            float start = Mathf.Round(enemyArea.rect.width * index / slotCount);
+            float end = Mathf.Round(enemyArea.rect.width * (index + 1) / slotCount);
+            GameplayPixelLayoutController.SetRect(slotRect,
+                new Rect(start + 3, 0, end - start - 6, enemyArea.rect.height));
             LayoutEnemySlot(
                 slotRect
             );
@@ -437,7 +392,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
             );
 
             spawnAnchor.localScale =
-                new Vector3(1.08f, 1.08f, 1f);
+                Vector3.one;
         }
 
         RectTransform enemyBase =

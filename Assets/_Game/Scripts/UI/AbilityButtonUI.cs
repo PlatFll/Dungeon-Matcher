@@ -68,6 +68,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         }
 
         ApplyBottomHudLayout();
+        energyBarMaximumWidth = 64f;
     }
 
     private void OnEnable()
@@ -218,6 +219,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         {
             abilityIcon.sprite =
                 ability.Icon;
+            GameplayPixelGrid.FitImage(abilityIcon, abilityIcon.rectTransform.rect.size);
         }
 
         RefreshAvailability();
@@ -255,7 +257,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         if (energyFill != null)
         {
             energyFill.fillAmount =
-                normalizedCharge;
+                Mathf.Round(normalizedCharge * 64f) / 64f;
         }
 
         if (energyBarFillMask == null)
@@ -272,8 +274,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         energyBarFillMask
             .SetSizeWithCurrentAnchors(
                 RectTransform.Axis.Horizontal,
-                energyBarMaximumWidth *
-                normalizedCharge
+                Mathf.Round(energyBarMaximumWidth * normalizedCharge)
             );
     }
 
@@ -293,6 +294,9 @@ public sealed class AbilityButtonUI : MonoBehaviour
             return;
         }
 
+        buttonRect.localScale = Vector3.one;
+        buttonRect.anchorMin = buttonRect.anchorMax = buttonRect.pivot = new Vector2(0.5f, 0.5f);
+        buttonRect.anchoredPosition = Vector2.zero;
         buttonRect.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Horizontal,
             AbilityButtonWidth
@@ -316,6 +320,13 @@ public sealed class AbilityButtonUI : MonoBehaviour
             return;
         }
 
+        energyBarRect.localScale = Vector3.one;
+        energyBarRect.sizeDelta = new Vector2(64f, 64f);
+        foreach (RectTransform child in energyBarRect)
+        {
+            child.localScale = Vector3.one;
+            if (child.anchorMin == child.anchorMax) child.sizeDelta = new Vector2(64f, 64f);
+        }
         Vector2 anchoredPosition =
             energyBarRect.anchoredPosition;
 
@@ -327,7 +338,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         anchoredPosition.x =
             side *
             (AbilityButtonWidth * 0.5f +
-             AbilityEnergyBarGap);
+             AbilityEnergyBarGap + 32f);
 
         energyBarRect.anchoredPosition =
             anchoredPosition;

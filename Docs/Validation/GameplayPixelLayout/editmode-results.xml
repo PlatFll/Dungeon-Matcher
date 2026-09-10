@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Passed" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.0580346">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.058035" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1008" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.052426" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="25540" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="RunUpgradeSystemTests" fullname="RunUpgradeSystemTests" classname="RunUpgradeSystemTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.051569" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1004" name="AbilityEligibilityUsesStablePlayerAndAbilityIds" fullname="RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds" methodname="AbilityEligibilityUsesStablePlayerAndAbilityIds" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1633152749" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.030832" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player SirRattlebone. HP: 100/100.
+Initialized player Bardley. HP: 80/80.
+]]></output>
+        </test-case>
+        <test-case id="1003" name="DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" fullname="RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" methodname="DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" classname="RunUpgradeSystemTests" runstate="Runnable" seed="171145648" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.004710" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player SirRattlebone. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1007" name="ExternalInputBlockUsesDisposableTokens" fullname="RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens" methodname="ExternalInputBlockUsesDisposableTokens" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1953634347" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.001771" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" fullname="RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" methodname="MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1987524559" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.001906" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player SirRattlebone. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1005" name="StackCountModifiersAndMaximumHealthApplyAuthoritatively" fullname="RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively" methodname="StackCountModifiersAndMaximumHealthApplyAuthoritatively" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1230990666" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.001499" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player Bardley. HP: 80/80.
+]]></output>
+        </test-case>
+        <test-case id="1002" name="UpgradeCadenceIsEveryFiveCompletedWaves" fullname="RunUpgradeSystemTests.UpgradeCadenceIsEveryFiveCompletedWaves" methodname="UpgradeCadenceIsEveryFiveCompletedWaves" classname="RunUpgradeSystemTests" runstate="Runnable" seed="410747801" result="Passed" start-time="2026-09-10 17:27:52Z" end-time="2026-09-10 17:27:52Z" duration="0.000203" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

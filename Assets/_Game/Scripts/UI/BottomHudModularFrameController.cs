@@ -5,13 +5,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class BottomHudModularFrameController : MonoBehaviour
 {
-    private const string BottomHudName = "BottomHUD";
+
     private const string GeneratedFrameName = "GeneratedBottomHudFrame";
 
-    // Preserve the existing 104px enclosure and 50px corner footprint. The
-    // shared fitter derives edge thickness and tile pitch from the same scale.
-    private const float HudHeight = 104f;
-    private const float FrameCornerSize = 50f;
+    // The screen layout owns the enclosure; this component owns frame internals.
+
+    private const float FrameCornerSize = 80f;
     private float FrameThickness => normalPiece != null && cornerPiece != null
         ? FrameCornerSize * normalPiece.rect.height / cornerPiece.rect.width
         : 0f;
@@ -21,36 +20,10 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
     private Sprite normalPiece;
     private bool frameBuilt;
 
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.AfterSceneLoad
-    )]
-    private static void InstallOnGameScene()
-    {
-        GameObject bottomHudObject =
-            GameObject.Find(BottomHudName);
-
-        if (bottomHudObject == null)
-        {
-            return;
-        }
-
-        if (!bottomHudObject.TryGetComponent(
-                out BottomHudModularFrameController _
-            ))
-        {
-            bottomHudObject.AddComponent<
-                BottomHudModularFrameController
-            >();
-        }
-    }
-
     private void Awake()
     {
         bottomHud = transform as RectTransform;
-        if (bottomHud != null)
-            bottomHud.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, HudHeight);
     }
-
     private void Start()
     {
         TryBuildFrame();
@@ -86,7 +59,7 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
 
         RemoveExistingFrame();
         BuildFrame();
-        KeepAbilityContentInsideFrame();
+
 
         frameBuilt = true;
     }
@@ -261,8 +234,7 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             false
         );
 
-        frameRoot.gameObject.AddComponent<ResponsiveModularFrameFitter>()
-            .SetPreferredCornerSize(FrameCornerSize);
+        frameRoot.gameObject.AddComponent<ResponsiveModularFrameFitter>();
     }
 
     private void CreateCorner(
@@ -382,30 +354,6 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             );
 
         image.type = Image.Type.Tiled;
-    }
-
-    private void KeepAbilityContentInsideFrame()
-    {
-        AbilityButtonUI abilityUi =
-            bottomHud.GetComponentInChildren<AbilityButtonUI>(true);
-
-        if (abilityUi == null)
-        {
-            return;
-        }
-
-        RectTransform abilityRect =
-            abilityUi.transform as RectTransform;
-
-        if (abilityRect == null)
-        {
-            return;
-        }
-
-        // Keep the authored 176x64 button centered in the existing enclosure.
-        Vector2 position = abilityRect.anchoredPosition;
-        position.y = 0f;
-        abilityRect.anchoredPosition = position;
     }
 
     private void RemoveExistingFrame()
