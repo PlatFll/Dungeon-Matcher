@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 public static class RuntimeScenePresentationBootstrap
 {
     private const string TopHudName = "TopHUD";
+    private const string BottomHudName = "BottomHUD";
     private const string PlayerHealthBarName = "PlayerHPBarBackground";
     private const string EnemyHealthBarName = "EnemyHPBarBackground";
     private const string PlayerCharacterName = "PlayerCharacter";
@@ -63,6 +64,7 @@ public static class RuntimeScenePresentationBootstrap
     private static void EnsureRuntimePresentationInstalled()
     {
         InstallTopBattleControllers();
+        InstallBottomHudFrame();
         InstallModularHealthBars();
         InstallPixelPerfectBattleCharacters();
         InstallGameOverController();
@@ -95,6 +97,24 @@ public static class RuntimeScenePresentationBootstrap
             ))
         {
             topHud.AddComponent<TopBattlePresentationController>();
+        }
+    }
+
+    private static void InstallBottomHudFrame()
+    {
+        GameObject bottomHud =
+            GameObject.Find(BottomHudName);
+
+        if (bottomHud == null)
+        {
+            return;
+        }
+
+        if (!bottomHud.TryGetComponent(
+                out BottomHudModularFrameController _
+            ))
+        {
+            bottomHud.AddComponent<BottomHudModularFrameController>();
         }
     }
 
