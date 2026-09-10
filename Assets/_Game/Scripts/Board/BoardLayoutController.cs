@@ -36,7 +36,7 @@ public sealed class BoardLayoutController : MonoBehaviour
         float sourcePPU = worldCamera.TryGetComponent(out PixelPerfectCamera ppc) ? ppc.assetsPPU : 64;
         float fit = Mathf.Min(area.width / (visuals.OuterLocalWidth * sourcePPU),
             area.height / (visuals.OuterLocalHeight * sourcePPU));
-        float ratio = layout.Current.NarrowBoardFallback ? Mathf.Min(1, fit) : Mathf.Floor(fit + 0.00001f);
+        float ratio = Mathf.Min(layout.Current.BoardTexelRatio, fit);
         if (ratio <= 0) return;
         PhysicalTexelRatio = ratio;
         float scale = ratio * sourcePPU / pixelsPerUnit;

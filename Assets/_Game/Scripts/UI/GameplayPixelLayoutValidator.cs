@@ -22,8 +22,9 @@ public static class GameplayPixelLayoutValidator
             $"gaps={top.yMin - board.yMax},{board.yMin - bottom.yMax}; " +
             $"bottom display clearance={bottom.yMin}; safe clearance={bottom.yMin - g.Safe.yMin}; " +
             $"board texel ratio={worldBoard?.PhysicalTexelRatio}; origin={worldBoard?.PhysicalOrigin}; " +
-            $"narrow fallback={g.NarrowBoardFallback}\n";
+            $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
+        Require(Near(bottom.yMin, g.Viewport.yMin), "Bottom is not anchored to safe viewport", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
         Require(bottom.yMin - g.Safe.yMin >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
             "Bottom enters additional safe inset", errors);
@@ -35,8 +36,8 @@ public static class GameplayPixelLayoutValidator
         if (worldBoard == null) errors.Add("Missing board layout consumer");
         else
         {
-            Require(worldBoard.PhysicalTexelRatio > 0 && (g.NarrowBoardFallback || Integral(worldBoard.PhysicalTexelRatio)),
-                "Noninteger board source texel ratio", errors);
+            Require(worldBoard.PhysicalTexelRatio > 0 && Near(worldBoard.PhysicalTexelRatio, g.BoardTexelRatio),
+                "Board scale differs from assigned fit", errors);
             Require(Integral(worldBoard.PhysicalOrigin.x) && Integral(worldBoard.PhysicalOrigin.y), "Off-grid board origin", errors);
             Transform border = worldBoard.transform.Find("BoardFrame");
             Require(border != null, "Missing world board frame", errors);
@@ -52,7 +53,7 @@ public static class GameplayPixelLayoutValidator
                 report += $"World frame {piece.name}: min={lo}, max={hi}, source={source}, ratios={pixels / source}\n";
                 Require(Near(pixels.x / source.x, worldBoard.PhysicalTexelRatio) && Near(pixels.y / source.y, worldBoard.PhysicalTexelRatio),
                     "World frame texel mismatch: " + piece.name, errors);
-                Require(g.NarrowBoardFallback || (Integral(lo.x) && Integral(lo.y) && Integral(hi.x) && Integral(hi.y)),
+                Require(g.FractionalBoardScale || (Integral(lo.x) && Integral(lo.y) && Integral(hi.x) && Integral(hi.y)),
                     "Fractional world frame vertices: " + piece.name, errors);
             }
         }

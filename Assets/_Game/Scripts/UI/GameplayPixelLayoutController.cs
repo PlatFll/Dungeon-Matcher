@@ -24,7 +24,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         public int Scale;
         public Rect Safe, Viewport, Top, Board, Bottom;
         public float BoardTexelRatio;
-        public bool NarrowBoardFallback;
+        public bool FractionalBoardScale;
         public bool Fits;
     }
 
@@ -73,21 +73,20 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             float h = Mathf.Floor((safe.yMax - Inset * scale - y) / (2 * scale)) * 2;
             float available = h - BottomHeight - 2 * Gap - MinimumBattleHeight;
             float fit = Mathf.Min(w * scale / boardPixels.x, available * scale / boardPixels.y);
-            bool narrow = safe.width < boardPixels.x + 2 * Inset;
-            float ratio = narrow ? Mathf.Min(1, fit) : Mathf.Floor(fit + 0.00001f);
+            // Fill available space uniformly; whole texel steps made phone boards too small.
+            float ratio = Mathf.Floor(fit * boardPixels.y / scale) * scale / boardPixels.y;
             result = new Geometry { Scale = scale, Safe = safe,
                 Viewport = new Rect(x, y, w * scale, h * scale),
-                BoardTexelRatio = ratio, NarrowBoardFallback = narrow };
+                BoardTexelRatio = ratio, FractionalBoardScale = Mathf.Abs(ratio - Mathf.Round(ratio)) > 0.00001f };
             if (w < MinimumViewportWidth || ratio <= 0) continue;
-            float boardWidth = Mathf.Ceil(boardPixels.x * ratio / scale);
-            float boardHeight = Mathf.Ceil(boardPixels.y * ratio / scale);
+            float boardWidth = Mathf.Ceil(boardPixels.x * ratio / scale - 0.0001f);
+            float boardHeight = Mathf.Ceil(boardPixels.y * ratio / scale - 0.0001f);
             float battleHeight = Mathf.Min(MaximumBattleHeight,
                 h - BottomHeight - 2 * Gap - boardHeight);
             if (battleHeight < MinimumBattleHeight) continue;
             battleHeight = Mathf.Min(PreferredBattleHeight, battleHeight);
-            float usedHeight = battleHeight + boardHeight + BottomHeight + 2 * Gap;
-            // Center the complete stack. Surplus space is harmless background.
-            float bottom = Mathf.Floor((h - usedHeight) / 2);
+            // Anchor to the bottom safe inset; surplus background belongs above the stack.
+            float bottom = 0;
             result.Bottom = new Rect(0, bottom, w, BottomHeight);
             result.Board = new Rect(Mathf.Floor((w - boardWidth) / 2), bottom + BottomHeight + Gap,
                 boardWidth, boardHeight);
