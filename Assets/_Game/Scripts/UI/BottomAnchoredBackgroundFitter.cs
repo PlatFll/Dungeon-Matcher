@@ -220,6 +220,7 @@ public sealed class BottomAnchoredBackgroundFitter : MonoBehaviour
                 sourceToUiScale
             );
 
+        sourceToUiScale = Mathf.Max(1, Mathf.Ceil(sourceToUiScale));
         float fittedWidth =
             sourceWidth *
             sourceToUiScale;
@@ -279,6 +280,9 @@ public sealed class BottomAnchoredBackgroundFitter : MonoBehaviour
                 spriteAspect;
         }
 
+        float sourceScale = Mathf.Max(1, Mathf.Ceil(Mathf.Max(fittedWidth / sourceWidth, fittedHeight / sourceHeight)));
+        fittedWidth = sourceWidth * sourceScale;
+        fittedHeight = sourceHeight * sourceScale;
         backgroundRect.anchoredPosition =
             Vector2.zero;
 

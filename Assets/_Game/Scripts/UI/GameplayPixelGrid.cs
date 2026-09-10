@@ -1,0 +1,35 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>Shared physical phase for UI artwork inside assigned rectangles.</summary>
+public static class GameplayPixelGrid
+{
+    public static void Snap(RectTransform rect)
+    {
+        Canvas canvas = rect.GetComponentInParent<Canvas>();
+        if (canvas == null || rect.parent is not RectTransform parent) return;
+        Camera camera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+        Vector2 point = RectTransformUtility.WorldToScreenPoint(camera,
+            rect.TransformPoint(new Vector3(rect.rect.xMin, rect.rect.yMin, 0)));
+        Vector2 rounded = new Vector2(Mathf.Round(point.x), Mathf.Round(point.y));
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parent, point, camera, out Vector2 before);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parent, rounded, camera, out Vector2 after);
+        rect.anchoredPosition += after - before;
+    }
+
+    public static void FitImage(Image image, Vector2 requestedSize)
+    {
+        if (image == null || image.sprite == null || image.canvas == null) return;
+        RectTransform rect = image.rectTransform;
+        rect.localScale = Vector3.one;
+        Vector2 source = image.sprite.rect.size;
+        float canvasScale = image.canvas.rootCanvas.scaleFactor;
+        int ratio = Mathf.Max(1, Mathf.FloorToInt(Mathf.Min(requestedSize.x / source.x,
+            requestedSize.y / source.y) * canvasScale + 0.00001f));
+        Vector2 size = source * ratio / canvasScale;
+        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size.x);
+        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size.y);
+        image.preserveAspect = false;
+        Snap(rect);
+    }
+}

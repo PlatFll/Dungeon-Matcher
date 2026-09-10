@@ -38,37 +38,6 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
     private bool modularVisualBuilt;
 
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.AfterSceneLoad
-    )]
-    private static void InstallOnGameScene()
-    {
-        RectTransform[] rects =
-            Object.FindObjectsByType<RectTransform>(
-                FindObjectsInactive.Include,
-                FindObjectsSortMode.None
-            );
-
-        foreach (RectTransform rect in rects)
-        {
-            if (rect == null ||
-                (rect.name != "PlayerHPBarBackground" &&
-                 rect.name != "EnemyHPBarBackground"))
-            {
-                continue;
-            }
-
-            if (!rect.TryGetComponent(
-                    out ModularHealthBarUI _
-                ))
-            {
-                rect.gameObject.AddComponent<
-                    ModularHealthBarUI
-                >();
-            }
-        }
-    }
-
     private void Awake()
     {
         Initialize();
@@ -127,6 +96,9 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         {
             RefreshHealthFillWidth();
         }
+        // Parent slots can move without changing bar dimensions. Snap our
+        // generated artwork, not the enclosing rectangle owned by the slot.
+        GameplayPixelGrid.Snap(generatedRoot);
     }
 
     public void RefreshStyle()

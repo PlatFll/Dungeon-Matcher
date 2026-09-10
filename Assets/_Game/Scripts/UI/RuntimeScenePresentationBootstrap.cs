@@ -63,6 +63,16 @@ public static class RuntimeScenePresentationBootstrap
 
     private static void EnsureRuntimePresentationInstalled()
     {
+        GameObject top = GameObject.Find(TopHudName);
+        if (top != null && top.transform.parent != null)
+        {
+            GameObject root = top.transform.parent.gameObject;
+            if (!root.TryGetComponent(out GameplayPixelLayoutController layout))
+                layout = root.AddComponent<GameplayPixelLayoutController>();
+            layout.Initialize();
+            if (!top.TryGetComponent(out PlayerAreaThreeSliceFrameController _))
+                top.AddComponent<PlayerAreaThreeSliceFrameController>();
+        }
         InstallTopBattleControllers();
         InstallBottomHudFrame();
         InstallModularHealthBars();

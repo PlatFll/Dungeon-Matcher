@@ -20,14 +20,6 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
     private Vector2 lastTargetSize =
         new Vector2(float.NaN, float.NaN);
 
-    private float preferredCornerSize;
-
-    public void SetPreferredCornerSize(float size)
-    {
-        preferredCornerSize = Mathf.Max(0f, size);
-        RefreshFrame();
-    }
-
     private void Awake()
     {
         ResolveReferences();
@@ -100,20 +92,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
                     : 0f;
         }
 
-        float maximumCornerSize =
-            Mathf.Max(
-                1f,
-                Mathf.Min(
-                    framedTarget.rect.width,
-                    framedTarget.rect.height
-                ) * 0.5f
-            );
-
-        float cornerSize =
-            Mathf.Min(
-                preferredCornerSize > 0f ? preferredCornerSize : nativeCornerSize,
-                maximumCornerSize
-            );
+        float cornerSize = nativeCornerSize;
 
         float frameScale =
             nativeCornerSize > 0f

@@ -273,12 +273,14 @@ public sealed class EnemyWeaknessIndicatorUI :
             config.GapBelowHealthBar +
             config.IconSize * 0.5f;
 
+        GameplayPixelGrid.FitImage(indicatorImage, Vector2.one * config.IconSize);
         indicatorRect.localPosition =
             new Vector3(
                 slotLocalPosition.x,
                 slotLocalPosition.y - centerDrop,
                 0f
             );
+        GameplayPixelGrid.Snap(indicatorRect);
     }
 
     private IEnumerator MaterializeRoutine()
@@ -291,9 +293,7 @@ public sealed class EnemyWeaknessIndicatorUI :
 
         float elapsed = 0f;
 
-        indicatorRect.localScale =
-            Vector3.one *
-            config.MaterializeStartScale;
+        indicatorRect.localScale = Vector3.one;
 
         canvasGroup.alpha = 0f;
         SetFlashAmount(1f);
@@ -350,8 +350,7 @@ public sealed class EnemyWeaknessIndicatorUI :
                     );
             }
 
-            indicatorRect.localScale =
-                Vector3.one * scale;
+            indicatorRect.localScale = Vector3.one;
 
             canvasGroup.alpha =
                 Mathf.InverseLerp(
@@ -414,8 +413,7 @@ public sealed class EnemyWeaknessIndicatorUI :
                     EaseOutCubic(progress)
                 );
 
-            indicatorRect.localScale =
-                Vector3.one * scale;
+            indicatorRect.localScale = Vector3.one;
 
             yield return null;
         }
