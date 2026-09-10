@@ -12,7 +12,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     // has 40px clear space above/below it inside the 16px border.
     public const int BottomHeight = 176;
     public const int MinimumBattleHeight = 220;
-    public const int PreferredBattleHeight = 290;
+    public const int PreferredBattleHeight = 320;
     public const int MaximumBattleHeight = 320;
     public const int AssetsPPU = 64;
     // Player section + section margins + enemy content padding + three 80px
