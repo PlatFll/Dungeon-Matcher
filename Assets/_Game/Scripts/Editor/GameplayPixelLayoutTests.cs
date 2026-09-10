@@ -50,7 +50,10 @@ public static class GameplayPixelLayoutTests
             Check(g.Bottom.height == 176, "Native bottom height");
             Check(g.Top.height >= 220 && g.Top.height <= 320, "Bounded battle");
             Check(g.Top.yMin-g.Board.yMax == 6 && g.Board.yMin-g.Bottom.yMax == 6, "Exact gaps");
-            Check(g.NarrowBoardFallback ? safe.width < 552 : GameplayPixelLayoutValidator.Integral(g.BoardTexelRatio), "Only narrow exception");
+            Check(g.Board.xMin >= 0 && g.Board.xMax <= g.Viewport.width / g.Scale, "Board rectangle stays inside viewport");
+            Check(g.Bottom.yMin == 0, "Bottom anchored to viewport");
+            float maximum = Mathf.Min(g.Viewport.width, g.Viewport.height - (176 + 12 + 220)*g.Scale);
+            Check(Mathf.Abs(g.BoardTexelRatio * 544 - maximum) < g.Scale + 0.01f, "Board fills available space");
             Check(g.BoardTexelRatio * 544 <= g.Board.width*g.Scale + 0.01f, "Board fits assigned width");
             count++;
         }
@@ -180,7 +183,7 @@ public static class GameplayPixelLayoutTests
         PropertyInfo ratio = typeof(BoardLayoutController).GetProperty("PhysicalTexelRatio");
         float savedRatio = board.PhysicalTexelRatio;
         ratio.SetValue(board, 1.137f);
-        Check(GameplayPixelLayoutValidator.Validate(layout, out _).Exists(e => e.Contains("Noninteger board")), "Fractional board ratio detected");
+        Check(GameplayPixelLayoutValidator.Validate(layout, out _).Exists(e => e.Contains("Board scale differs")), "Incorrect board ratio detected");
         ratio.SetValue(board, savedRatio);
         Check(GameplayPixelLayoutValidator.Validate(layout, out _).Count == 0, "All intentional violations restored");
         File.AppendAllText(Output + "/report.txt", "Intentional violations detected and restored.\n");
