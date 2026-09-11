@@ -181,7 +181,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             );
 
         Vector3 playerFloorWorld = sharedFloorWorld + generatedLayout.TransformVector(
-            Vector3.up * Mathf.Max(0, generatedLayout.rect.height - 290f));
+            Vector3.up * Mathf.Ceil(Mathf.Max(0, generatedLayout.rect.height - 290f) / 2f));
 
         RectTransform playerCharacter =
             FindRectTransform(

@@ -123,6 +123,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     {
         lastLayoutHeight = generatedLayout.rect.height;
         float playerHeight = Mathf.Min(290f, lastLayoutHeight);
+        float extraTopInset = Mathf.Floor((lastLayoutHeight - playerHeight) / 2f);
         float playerWidth =
             profile != null
                 ? profile.PlayerSectionWidth
@@ -158,13 +159,13 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         playerSection.offsetMin =
             new Vector2(
                 PlayerFrameLeftInset,
-                -playerHeight + 16f + 6f
+                -playerHeight + 16f + 6f - extraTopInset
             );
         playerSection.offsetMax =
             new Vector2(
                 PlayerFrameLeftInset +
                 playerWidth,
-                -(16f + 6f)
+                -(16f + 6f) - extraTopInset
             );
 
         enemySection.anchorMin =
