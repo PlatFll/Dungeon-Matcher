@@ -20,7 +20,8 @@ public static class GameplayPixelLayoutValidator
             $"canvas scale={canvas.scaleFactor}; logical/physical={g.Scale}; " +
             $"Top={top}; BoardArea={board}; Bottom={bottom}; " +
             $"gaps={top.yMin - board.yMax},{board.yMin - bottom.yMax}; " +
-            $"bottom bezel lift={owner.BottomHudLift}; cutouts={(Screen.cutouts == null ? 0 : Screen.cutouts.Length)}; " +
+            $"top cutout drop={owner.TopHudDrop}; bottom bezel lift={owner.BottomHudLift}; " +
+            $"cutouts={(Screen.cutouts == null ? 0 : Screen.cutouts.Length)}; " +
             $"bottom display clearance={bottom.yMin}; safe clearance={bottom.yMin - g.Safe.yMin}; " +
             $"board texel ratio={worldBoard?.PhysicalTexelRatio}; origin={worldBoard?.PhysicalOrigin}; " +
             $"fractional board scale={g.FractionalBoardScale}\n";
@@ -44,10 +45,23 @@ public static class GameplayPixelLayoutValidator
         float upperGap = top.yMin - board.yMax, lowerGap = board.yMin - bottom.yMax;
         Require(upperGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
             lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon, "Incorrect section gaps", errors);
-        if (owner.BottomHudLift == 0)
+        if (owner.TopHudDrop == 0 && owner.BottomHudLift == 0)
             Require(Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon,
-                "Unbalanced section gaps without a BottomHUD bezel lift", errors);
-        Require(Near(top.yMax, g.Viewport.yMax), "Top is not anchored to safe viewport", errors);
+                "Unbalanced section gaps without device-edge adjustments", errors);
+        float expectedTopY = g.Viewport.yMin + g.Top.yMax * g.Scale;
+        Require(Near(top.yMax, expectedTopY), "Top does not match assigned cutout-aware position", errors);
+        Rect[] cutouts = Screen.cutouts;
+        if (cutouts != null)
+        {
+            float padding = GameplayPixelLayoutController.CutoutClearance * g.Scale;
+            foreach (Rect cutout in cutouts)
+            {
+                if (cutout.width <= 0f || cutout.height <= 0f) continue;
+                Rect paddedCutout = Rect.MinMaxRect(cutout.xMin - padding, cutout.yMin - padding,
+                    cutout.xMax + padding, cutout.yMax + padding);
+                Require(!top.Overlaps(paddedCutout), $"TopHUD overlaps display cutout: top={top}, cutout={cutout}", errors);
+            }
+        }
         Require(Near(canvas.scaleFactor, g.Scale) && Integral(canvas.scaleFactor), "Fractional Canvas scale", errors);
         if (worldBoard == null) errors.Add("Missing board layout consumer");
         else

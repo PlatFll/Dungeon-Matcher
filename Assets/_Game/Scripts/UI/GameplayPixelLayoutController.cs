@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public sealed class GameplayPixelLayoutController : MonoBehaviour
 {
     public const int Inset = 4;
-    public const int Gap = 6;
+    public const int Gap = 4;
     // Two native 80px corners plus a 16px straight segment. The 64px button
     // has 40px clear space above/below it inside the 16px border.
     public const int BottomHeight = 176;
@@ -35,6 +35,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 
     public Geometry Current { get; private set; }
+    public int TopHudDrop { get; private set; }
     public int BottomHudLift { get; private set; }
     public RectTransform TopHud { get; private set; }
     public RectTransform BoardArea { get; private set; }
@@ -105,6 +106,36 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             return result;
         }
         return result;
+    }
+
+    /// <summary>
+    /// Moves only the TopHUD down when a reported top display cutout would enter
+    /// the battle frame. The movement consumes the existing TopHUD-to-board gap
+    /// first, so the board and BottomHUD stay exactly where they were. A minimum
+    /// section gap is always preserved.
+    /// </summary>
+    public static int CalculateTopHudDrop(Geometry geometry, Rect[] cutouts)
+    {
+        if (!geometry.Fits || geometry.Scale <= 0 || cutouts == null || cutouts.Length == 0) return 0;
+        float scale = geometry.Scale;
+        float baselineBottom = geometry.Viewport.yMin + geometry.Top.yMin * scale;
+        float baselineTop = geometry.Viewport.yMin + geometry.Top.yMax * scale;
+        float allowedTop = baselineTop;
+
+        foreach (Rect cutout in cutouts)
+        {
+            if (cutout.width <= 0f || cutout.height <= 0f) continue;
+            if (cutout.xMax <= geometry.Viewport.xMin || cutout.xMin >= geometry.Viewport.xMax) continue;
+            // Ignore bottom/side cutouts and top cutouts already outside the HUD.
+            if (cutout.yMax <= baselineBottom || cutout.yMin >= baselineTop) continue;
+            allowedTop = Mathf.Min(allowedTop, cutout.yMin - CutoutClearance * scale);
+        }
+
+        int desiredDrop = Mathf.Max(0, Mathf.CeilToInt(
+            (baselineTop - allowedTop) / scale - 0.00001f));
+        int availableDrop = Mathf.Max(0, Mathf.FloorToInt(
+            geometry.Top.yMin - geometry.Board.yMax - Gap));
+        return Mathf.Min(desiredDrop, availableDrop);
     }
 
     /// <summary>
@@ -179,6 +210,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard && cutoutHash == lastCutoutHash) return;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCutoutHash = cutoutHash;
         Current = Calculate(Screen.width, Screen.height, safe, source);
+        TopHudDrop = 0;
         BottomHudLift = 0;
         if (!Current.Fits)
         {
@@ -186,13 +218,23 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             return;
         }
 
+        TopHudDrop = CalculateTopHudDrop(Current, cutouts);
         BottomHudLift = CalculateBottomHudLift(Current, cutouts, Application.isMobilePlatform);
-        if (BottomHudLift > 0)
+        if (TopHudDrop > 0 || BottomHudLift > 0)
         {
             Geometry adjusted = Current;
-            Rect bottom = adjusted.Bottom;
-            bottom.y += BottomHudLift;
-            adjusted.Bottom = bottom;
+            if (TopHudDrop > 0)
+            {
+                Rect top = adjusted.Top;
+                top.y -= TopHudDrop;
+                adjusted.Top = top;
+            }
+            if (BottomHudLift > 0)
+            {
+                Rect bottom = adjusted.Bottom;
+                bottom.y += BottomHudLift;
+                adjusted.Bottom = bottom;
+            }
             Current = adjusted;
         }
 
