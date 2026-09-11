@@ -6,6 +6,11 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
 {
+    // Enemy body scale is authored against the normal 64x64 character canvas.
+    // Larger animation frames (for example the Miner's 80x80 frames) keep the
+    // same source-texel scale and are allowed to extend outside that envelope.
+    private static readonly Vector2 EnemyReferenceCanvasSize = new Vector2(64f, 64f);
+
     private RectTransform root;
     private Image observedImage;
     private Vector2 requestedBox;
@@ -34,7 +39,10 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         root.localScale = Vector3.one;
         visual.localScale = Vector3.one;
         GameplayPixelGrid.Snap(root);
-        GameplayPixelGrid.FitImage(image, available);
+        if (isPlayer)
+            GameplayPixelGrid.FitImage(image, available);
+        else
+            GameplayPixelGrid.FitImage(image, available, EnemyReferenceCanvasSize);
         appliedSize = visual.rect.size;
         hasApplied = true;
     }
