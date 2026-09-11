@@ -20,6 +20,7 @@ public static class GameplayPixelLayoutValidator
             $"canvas scale={canvas.scaleFactor}; logical/physical={g.Scale}; " +
             $"Top={top}; BoardArea={board}; Bottom={bottom}; " +
             $"gaps={top.yMin - board.yMax},{board.yMin - bottom.yMax}; " +
+            $"bottom bezel lift={owner.BottomHudLift}; cutouts={(Screen.cutouts == null ? 0 : Screen.cutouts.Length)}; " +
             $"bottom display clearance={bottom.yMin}; safe clearance={bottom.yMin - g.Safe.yMin}; " +
             $"board texel ratio={worldBoard?.PhysicalTexelRatio}; origin={worldBoard?.PhysicalOrigin}; " +
             $"fractional board scale={g.FractionalBoardScale}\n";
@@ -30,16 +31,22 @@ public static class GameplayPixelLayoutValidator
         if (player != null)
             Require(Mathf.Abs(GameplayPixelLayoutController.ScreenRect(player).center.y - top.center.y) <= g.Scale / 2f + Epsilon,
                 "Player frame is not vertically centered in battle area", errors);
-        Require(Near(bottom.yMin, g.Viewport.yMin), "Bottom is not anchored to safe viewport", errors);
+        float expectedBottomY = g.Viewport.yMin + g.Bottom.yMin * g.Scale;
+        Require(Near(bottom.yMin, expectedBottomY), "Bottom does not match assigned bezel-aware position", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
         Require(bottom.yMin - g.Safe.yMin >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
             "Bottom enters additional safe inset", errors);
+        if (Application.isMobilePlatform)
+            Require(bottom.yMin >= GameplayPixelLayoutController.MinimumMobileBottomCornerClearance * g.Scale - Epsilon,
+                "Bottom does not clear the rounded-corner mobile fallback", errors);
         Require(Contains(g.Viewport, top) && Contains(g.Viewport, board), "Top/board leaves gameplay viewport", errors);
         Require(!top.Overlaps(board) && !board.Overlaps(bottom) && !top.Overlaps(bottom), "Sections overlap", errors);
         float upperGap = top.yMin - board.yMax, lowerGap = board.yMin - bottom.yMax;
         Require(upperGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
-            lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
-            Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon, "Incorrect section gaps", errors);
+            lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon, "Incorrect section gaps", errors);
+        if (owner.BottomHudLift == 0)
+            Require(Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon,
+                "Unbalanced section gaps without a BottomHUD bezel lift", errors);
         Require(Near(top.yMax, g.Viewport.yMax), "Top is not anchored to safe viewport", errors);
         Require(Near(canvas.scaleFactor, g.Scale) && Integral(canvas.scaleFactor), "Fractional Canvas scale", errors);
         if (worldBoard == null) errors.Add("Missing board layout consumer");

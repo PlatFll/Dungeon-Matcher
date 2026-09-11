@@ -15,6 +15,12 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     public const int PreferredBattleHeight = 320;
     public const int MaximumBattleHeight = 320;
     public const int AssetsPPU = 64;
+    // Minimum physical-screen clearance expressed in gameplay logical pixels.
+    // Android does not consistently expose the curved glass/display contour as
+    // a cutout, so this is the fallback only when the OS safe area has not
+    // already moved the HUD this far inward.
+    public const int MinimumMobileBottomCornerClearance = 16;
+    public const int CutoutClearance = 2;
     // Player section + section margins + enemy content padding + three 80px
     // slot allocations. Each slot includes its two 3px authored side gaps.
     public const int MinimumViewportWidth = 146 + 6 + 12 + 6 + 2 * 19 + 3 * 80;
@@ -29,6 +35,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 
     public Geometry Current { get; private set; }
+    public int BottomHudLift { get; private set; }
     public RectTransform TopHud { get; private set; }
     public RectTransform BoardArea { get; private set; }
     public RectTransform BottomHud { get; private set; }
@@ -39,6 +46,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     private Vector2 lastScreen;
     private Rect lastSafe;
     private Vector2 lastBoard;
+    private int lastCutoutHash;
     private bool initialized;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
     public static Rect? ValidationSafeArea;
@@ -99,6 +107,44 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         return result;
     }
 
+    /// <summary>
+    /// Returns a BottomHUD-only logical lift. Screen.safeArea remains the first
+    /// authority, reported bottom cutouts add exact clearance when available,
+    /// and mobile devices get a small fallback for rounded corners that Android
+    /// commonly does not describe as a rectangular cutout. The board/top rects
+    /// are deliberately not reflowed.
+    /// </summary>
+    public static int CalculateBottomHudLift(Geometry geometry, Rect[] cutouts, bool mobilePlatform)
+    {
+        if (!geometry.Fits || geometry.Scale <= 0) return 0;
+        float scale = geometry.Scale;
+        float baselineBottom = geometry.Viewport.yMin + geometry.Bottom.yMin * scale;
+        float baselineTop = geometry.Viewport.yMin + geometry.Bottom.yMax * scale;
+        float requiredBottom = baselineBottom;
+
+        if (mobilePlatform)
+            requiredBottom = Mathf.Max(requiredBottom, MinimumMobileBottomCornerClearance * scale);
+
+        if (cutouts != null)
+        {
+            foreach (Rect cutout in cutouts)
+            {
+                if (cutout.width <= 0f || cutout.height <= 0f) continue;
+                if (cutout.xMax <= geometry.Viewport.xMin || cutout.xMin >= geometry.Viewport.xMax) continue;
+                // Only cutouts that actually enter the current BottomHUD band matter;
+                // this excludes camera notches at the top of the display.
+                if (cutout.yMax <= baselineBottom || cutout.yMin >= baselineTop) continue;
+                requiredBottom = Mathf.Max(requiredBottom, cutout.yMax + CutoutClearance * scale);
+            }
+        }
+
+        int desiredLift = Mathf.Max(0, Mathf.CeilToInt(
+            (requiredBottom - baselineBottom) / scale - 0.00001f));
+        int availableLift = Mathf.Max(0, Mathf.FloorToInt(
+            geometry.Board.yMin - geometry.Bottom.yMax - Gap));
+        return Mathf.Min(desiredLift, availableLift);
+    }
+
     public void Initialize()
     {
         safeRoot = (RectTransform)transform;
@@ -125,17 +171,31 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         Vector2 screen = new Vector2(Screen.width, Screen.height);
         Vector2 source = new Vector2(board.OuterLocalWidth, board.OuterLocalHeight) * AssetsPPU;
         Rect safe = Screen.safeArea;
+        Rect[] cutouts = Screen.cutouts;
+        int cutoutHash = CutoutHash(cutouts);
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         safe = ValidationSafeArea ?? safe;
 #endif
-        if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard) return;
-        lastScreen = screen; lastSafe = safe; lastBoard = source;
+        if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard && cutoutHash == lastCutoutHash) return;
+        lastScreen = screen; lastSafe = safe; lastBoard = source; lastCutoutHash = cutoutHash;
         Current = Calculate(Screen.width, Screen.height, safe, source);
+        BottomHudLift = 0;
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);
             return;
         }
+
+        BottomHudLift = CalculateBottomHudLift(Current, cutouts, Application.isMobilePlatform);
+        if (BottomHudLift > 0)
+        {
+            Geometry adjusted = Current;
+            Rect bottom = adjusted.Bottom;
+            bottom.y += BottomHudLift;
+            adjusted.Bottom = bottom;
+            Current = adjusted;
+        }
+
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
         scaler.scaleFactor = Current.Scale;
         scaler.referencePixelsPerUnit = AssetsPPU;
@@ -167,6 +227,17 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         validationFrames = 5;
 #endif
+    }
+
+    private static int CutoutHash(Rect[] cutouts)
+    {
+        unchecked
+        {
+            int hash = 17;
+            if (cutouts == null) return hash;
+            foreach (Rect cutout in cutouts) hash = hash * 31 + cutout.GetHashCode();
+            return hash;
+        }
     }
 
     private void OnDestroy()
