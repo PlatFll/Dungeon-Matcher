@@ -24,6 +24,9 @@ public static class GameplayPixelLayoutValidator
             $"board texel ratio={worldBoard?.PhysicalTexelRatio}; origin={worldBoard?.PhysicalOrigin}; " +
             $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
+        var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
+        Require(player != null && Near(player.rect.height, Mathf.Min(290, g.Top.height) - 44),
+            "Player frame changed with battle height", errors);
         Require(Near(bottom.yMin, g.Viewport.yMin), "Bottom is not anchored to safe viewport", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
         Require(bottom.yMin - g.Safe.yMin >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
