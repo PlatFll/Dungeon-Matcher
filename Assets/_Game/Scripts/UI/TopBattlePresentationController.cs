@@ -180,6 +180,9 @@ public sealed class TopBattlePresentationController : MonoBehaviour
                 floorOffsetFromBattleBottom
             );
 
+        Vector3 playerFloorWorld = sharedFloorWorld + generatedLayout.TransformVector(
+            Vector3.up * Mathf.Max(0, generatedLayout.rect.height - 290f));
+
         RectTransform playerCharacter =
             FindRectTransform(
                 generatedLayout,
@@ -190,7 +193,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
         {
             AnchorVisualToSharedFloor(
                 playerCharacter,
-                sharedFloorWorld,
+                playerFloorWorld,
                 feetOffsetFromFloor,
                 useBottomPivot: true
             );
@@ -206,7 +209,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
         {
             AnchorVisualToSharedFloor(
                 playerBase,
-                sharedFloorWorld,
+                playerFloorWorld,
                 baseOffsetFromFloor,
                 useBottomPivot: false
             );
@@ -268,7 +271,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             generatedLayout,
             "PlayerSectionBackground",
             playerBackgroundFloorPixels,
-            sharedFloorWorld
+            playerFloorWorld
         );
 
         EnsureBackgroundFitter(

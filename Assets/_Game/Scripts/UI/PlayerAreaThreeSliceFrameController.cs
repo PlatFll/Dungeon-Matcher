@@ -40,6 +40,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private RectTransform enemySection;
     private PlayerAreaFrameProfile profile;
     private bool configured;
+    private float lastLayoutHeight;
     private bool missingArtWarningShown;
 
     private void Awake()
@@ -64,6 +65,8 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         {
             TryConfigure();
         }
+        if (configured && playerSection != null && playerSection.parent is RectTransform root && root.rect.height != lastLayoutHeight)
+            ApplySectionGeometry(root);
     }
 
     private void TryConfigure()
@@ -118,6 +121,8 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private void ApplySectionGeometry(
         RectTransform generatedLayout)
     {
+        lastLayoutHeight = generatedLayout.rect.height;
+        float playerHeight = Mathf.Min(290f, lastLayoutHeight);
         float playerWidth =
             profile != null
                 ? profile.PlayerSectionWidth
@@ -145,7 +150,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
             );
 
         playerSection.anchorMin =
-            new Vector2(0f, 0f);
+            new Vector2(0f, 1f);
         playerSection.anchorMax =
             new Vector2(0f, 1f);
         playerSection.pivot =
@@ -153,7 +158,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         playerSection.offsetMin =
             new Vector2(
                 PlayerFrameLeftInset,
-                16f + 6f
+                -playerHeight + 16f + 6f
             );
         playerSection.offsetMax =
             new Vector2(
