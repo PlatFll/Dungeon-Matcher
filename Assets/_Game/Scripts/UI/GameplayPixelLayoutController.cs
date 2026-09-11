@@ -15,6 +15,8 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     public const int PreferredBattleHeight = 320;
     public const int MaximumBattleHeight = 320;
     public const int AssetsPPU = 64;
+    public const int NativeFrameThickness = 16;
+    public static readonly Vector2 WaveTrackerLogicalSize = new Vector2(264f, 44f);
     // Minimum physical-screen clearance expressed in gameplay logical pixels.
     // Android does not consistently expose the curved glass/display contour as
     // a cutout, so this is the fallback only when the OS safe area has not
@@ -252,17 +254,17 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         SetRect(TopHud, Current.Top);
         SetRect(BoardArea, Current.Board);
         SetRect(BottomHud, Current.Bottom);
-        // The authored wave tracker was a sibling of TopHUD and otherwise
-        // remained at the screen edge when the stack was letterboxed.
+        // Keep the wave banner centered inside the battle area, directly under
+        // the native 16px top frame instead of overlapping that border.
         RectTransform wave = safeRoot.Find("WaveTracker") as RectTransform;
         if (wave != null) wave.SetParent(TopHud, false);
         wave = TopHud.Find("WaveTracker") as RectTransform;
         if (wave != null)
         {
             wave.anchorMin = wave.anchorMax = wave.pivot = new Vector2(0.5f, 1);
-            wave.anchoredPosition = Vector2.zero;
+            wave.anchoredPosition = new Vector2(0f, -NativeFrameThickness);
             wave.localScale = Vector3.one;
-            if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage, new Vector2(264,44));
+            if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage, WaveTrackerLogicalSize);
         }
         Canvas.ForceUpdateCanvases();
         if (TopHud.TryGetComponent(out TopBattlePresentationController presentation)) presentation.RefreshPresentation();
