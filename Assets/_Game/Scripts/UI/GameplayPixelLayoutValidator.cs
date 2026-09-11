@@ -27,6 +27,9 @@ public static class GameplayPixelLayoutValidator
         var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
         Require(player != null && Near(player.rect.height, Mathf.Min(290, g.Top.height) - 44),
             "Player frame changed with battle height", errors);
+        if (player != null)
+            Require(Mathf.Abs(GameplayPixelLayoutController.ScreenRect(player).center.y - top.center.y) <= g.Scale / 2f + Epsilon,
+                "Player frame is not vertically centered in battle area", errors);
         Require(Near(bottom.yMin, g.Viewport.yMin), "Bottom is not anchored to safe viewport", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
         Require(bottom.yMin - g.Safe.yMin >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
