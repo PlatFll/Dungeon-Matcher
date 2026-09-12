@@ -41,6 +41,8 @@ The intended renderer order is:
 
 The Grid is rectangular with cell size `1 x 1`, zero cell gap, and transform scale `1 x 1 x 1`.
 
+Prefab TilemapRenderers use Mask Interaction `None` so painted tiles remain visible in isolated Prefab Mode. The scene controller applies `Visible Inside Mask` to the environment instance when positioning it in the battle viewport. Do not apply that scene mask override back to the source prefab.
+
 ## Pixel-art scale invariant
 
 Battle environment sprites must use `GameplayPixelLayoutController.AssetsPPU`, currently 64 PPU.
