@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Tilemaps;
 
 /// <summary>Positions a world-space map; cell size and transform scale stay authored.</summary>
 [ExecuteAlways]
@@ -20,6 +21,47 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     private void OnDisable()
     {
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
+        SetRenderingSuppressed(true);
+    }
+
+    // The empty Phase-1 hierarchy is not an available background. Keep the
+    // legacy UI fallback until an active layer contains an actual 64-PPU sprite.
+    // This selects presentation only: no tiles, cell sizes or scales are changed.
+    public bool TryUseBackground(RectTransform arena)
+    {
+        bool available = isActiveAndEnabled && battleArea != null && battleArea == arena &&
+            battleFloorAnchor != null && worldCamera != null &&
+            worldCamera.isActiveAndEnabled &&
+            battleArea.GetComponentInParent<Canvas>() != null &&
+            HasRenderableTiles();
+        SetRenderingSuppressed(!available);
+        return available;
+    }
+
+    private bool HasRenderableTiles()
+    {
+        foreach (Tilemap map in GetComponentsInChildren<Tilemap>())
+        {
+            if (!map.TryGetComponent(out TilemapRenderer renderer) ||
+                !renderer.enabled || map.color.a <= 0f ||
+                (worldCamera.cullingMask & (1 << map.gameObject.layer)) == 0)
+                continue;
+
+            foreach (Vector3Int cell in map.cellBounds.allPositionsWithin)
+            {
+                Sprite sprite = map.GetSprite(cell);
+                if (sprite != null && map.GetColor(cell).a > 0f &&
+                    Mathf.Approximately(sprite.pixelsPerUnit, GameplayPixelLayoutController.AssetsPPU))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private void SetRenderingSuppressed(bool suppressed)
+    {
+        foreach (TilemapRenderer renderer in GetComponentsInChildren<TilemapRenderer>(true))
+            renderer.forceRenderingOff = suppressed;
     }
 
     private void LateUpdate() => Align();

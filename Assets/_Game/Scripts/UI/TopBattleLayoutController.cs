@@ -43,16 +43,13 @@ public sealed class TopBattleLayoutController : MonoBehaviour
 
     [SerializeField]
     [Tooltip(
-        "Optional player-side background. This is intentionally independent " +
-        "from the enemy-side background so each character can later have its " +
-        "own presentation."
+        "Legacy player background, visible only while the authored Tilemap is unavailable."
     )]
     private Sprite playerBackgroundSprite;
 
     [SerializeField]
     [Tooltip(
-        "Optional enemy-side background. When empty, the current dungeon " +
-        "battle background is reused for this prototype layout."
+        "Legacy enemy fallback. When empty, reuses BattleBackgroundWorld's sprite."
     )]
     private Sprite enemyBackgroundSprite;
 
@@ -72,6 +69,32 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     private Sprite normalPiece;
     private Sprite temporaryDungeonBackground;
     private bool layoutBuilt;
+    private BattleBackgroundTilemapController tilemapBackground;
+    private Image playerFallback;
+    private Image enemyFallback;
+
+    private void LateUpdate()
+    {
+        if (layoutBuilt) RefreshBackgroundVisibility();
+    }
+
+    private void RefreshBackgroundVisibility()
+    {
+        if (tilemapBackground == null)
+            tilemapBackground = FindFirstObjectByType<BattleBackgroundTilemapController>(FindObjectsInactive.Include);
+
+        bool useTilemap = tilemapBackground != null && tilemapBackground.TryUseBackground(topHud);
+        SetFallbackVisible(playerFallback, !useTilemap);
+        SetFallbackVisible(enemyFallback, !useTilemap);
+    }
+
+    private static void SetFallbackVisible(Image image, bool visible)
+    {
+        if (image == null) return;
+        image.enabled = visible;
+        if (image.TryGetComponent(out BottomAnchoredBackgroundFitter fitter))
+            fitter.enabled = visible;
+    }
 
     private void Start()
     {
@@ -190,6 +213,9 @@ public sealed class TopBattleLayoutController : MonoBehaviour
         );
 
         layoutBuilt = true;
+        playerFallback = FindImage(playerSection, "PlayerSectionBackground");
+        enemyFallback = FindImage(enemySection, "EnemySectionBackground");
+        RefreshBackgroundVisibility();
     }
 
     private RectTransform CreateSection(
@@ -481,9 +507,8 @@ public sealed class TopBattleLayoutController : MonoBehaviour
             renderer.sprite;
 
         /*
-         * The new battle arena owns its two backgrounds. Leaving the old world
-         * background active would make the prototype look like one continuous
-         * scene behind both framed sections.
+         * Only the legacy UI images provide the empty-map fallback. Never also
+         * draw the old fitted world sprite behind the shared Tilemap arena.
          */
         renderer.enabled = false;
     }

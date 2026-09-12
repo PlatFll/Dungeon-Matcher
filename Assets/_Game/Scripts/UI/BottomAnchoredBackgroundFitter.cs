@@ -38,6 +38,7 @@ public sealed class BottomAnchoredBackgroundFitter : MonoBehaviour
         }
 
         if (backgroundImage == null ||
+            !backgroundImage.enabled ||
             backgroundRect == null ||
             viewportRect == null)
         {
@@ -72,6 +73,7 @@ public sealed class BottomAnchoredBackgroundFitter : MonoBehaviour
         ResolveReferences();
 
         if (backgroundImage == null ||
+            !backgroundImage.enabled ||
             backgroundRect == null ||
             viewportRect == null)
         {
