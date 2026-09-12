@@ -2,12 +2,18 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
-/// <summary>Positions a world-space map; cell size and transform scale stay authored.</summary>
+/// <summary>
+/// Positions the active authored battle-environment prefab in world space.
+/// Tile cell size and prefab transform scale remain authored at 1:1.
+/// </summary>
 [ExecuteAlways]
 [DefaultExecutionOrder(100)]
 [DisallowMultipleComponent]
 public sealed class BattleBackgroundTilemapController : MonoBehaviour
 {
+    private const string DefaultEnvironmentResourcePath =
+        "BattleEnvironments/Dungeon_Default";
+
     [SerializeField] private RectTransform battleFloorAnchor;
     [SerializeField] private RectTransform battleArea;
     [SerializeField] private Camera worldCamera;
@@ -15,14 +21,18 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     private SpriteMask viewportMask;
     private Sprite maskSprite;
     private Texture2D maskTexture;
+    private BattleEnvironmentRoot activeEnvironment;
 
     private Tilemap[] cachedTilemaps = System.Array.Empty<Tilemap>();
     private TilemapRenderer[] cachedRenderers = System.Array.Empty<TilemapRenderer>();
     private bool[] cachedValidTileContent = System.Array.Empty<bool>();
     private bool tileContentCacheDirty = true;
 
+    public BattleEnvironmentRoot ActiveEnvironment => activeEnvironment;
+
     private void Awake()
     {
+        EnsureEnvironmentInstance();
         CacheTilemapHierarchy();
     }
 
@@ -39,6 +49,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
         RegisterTileChangeListener();
+        EnsureEnvironmentInstance();
         CacheTilemapHierarchy();
         MarkTileContentDirty();
         Align();
@@ -54,14 +65,91 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void OnValidate()
     {
+        ResolveEnvironmentInstance();
         CacheTilemapHierarchy();
         MarkTileContentDirty();
     }
 
     private void OnTransformChildrenChanged()
     {
+        ResolveEnvironmentInstance();
         CacheTilemapHierarchy();
         MarkTileContentDirty();
+    }
+
+    /// <summary>
+    /// Uses whichever BattleEnvironmentRoot is currently placed beneath this
+    /// controller. If a scene has none, the default Resources prefab is created
+    /// once. In the editor it is created as a real prefab instance so artists can
+    /// open the source prefab in Prefab Mode and paint at natural Tilemap scale.
+    /// </summary>
+    private void EnsureEnvironmentInstance()
+    {
+        ResolveEnvironmentInstance();
+        if (activeEnvironment != null) return;
+
+        GameObject prefab = Resources.Load<GameObject>(DefaultEnvironmentResourcePath);
+        if (prefab == null)
+        {
+            Debug.LogWarning(
+                $"Battle background default environment was not found at Resources/{DefaultEnvironmentResourcePath}.",
+                this);
+            return;
+        }
+
+        if (prefab.GetComponent<BattleEnvironmentRoot>() == null)
+        {
+            Debug.LogError(
+                $"Battle environment prefab '{prefab.name}' is missing {nameof(BattleEnvironmentRoot)}.",
+                prefab);
+            return;
+        }
+
+        GameObject instance;
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            instance = UnityEditor.PrefabUtility.InstantiatePrefab(prefab, transform)
+                as GameObject;
+        }
+        else
+#endif
+        {
+            instance = Instantiate(prefab, transform);
+        }
+
+        if (instance == null)
+        {
+            Debug.LogError("Failed to instantiate the default battle environment prefab.", this);
+            return;
+        }
+
+        Transform instanceTransform = instance.transform;
+        instanceTransform.localPosition = Vector3.zero;
+        instanceTransform.localRotation = Quaternion.identity;
+        instanceTransform.localScale = Vector3.one;
+        activeEnvironment = instance.GetComponent<BattleEnvironmentRoot>();
+        MarkTileContentDirty();
+    }
+
+    private void ResolveEnvironmentInstance()
+    {
+        BattleEnvironmentRoot[] environments =
+            GetComponentsInChildren<BattleEnvironmentRoot>(true);
+
+        activeEnvironment = null;
+        BattleEnvironmentRoot inactiveFallback = null;
+
+        foreach (BattleEnvironmentRoot environment in environments)
+        {
+            if (environment == null) continue;
+            inactiveFallback ??= environment;
+            if (!environment.gameObject.activeInHierarchy) continue;
+            activeEnvironment = environment;
+            return;
+        }
+
+        activeEnvironment = inactiveFallback;
     }
 
     // Render only when an active layer contains an actual 64-PPU sprite.
@@ -154,7 +242,10 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void CacheTilemapHierarchy()
     {
-        cachedTilemaps = GetComponentsInChildren<Tilemap>(true);
+        ResolveEnvironmentInstance();
+        cachedTilemaps = activeEnvironment != null
+            ? activeEnvironment.GetComponentsInChildren<Tilemap>(true)
+            : GetComponentsInChildren<Tilemap>(true);
         cachedRenderers = new TilemapRenderer[cachedTilemaps.Length];
 
         for (int index = 0; index < cachedTilemaps.Length; index++)
@@ -180,8 +271,13 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         Tilemap changedTilemap,
         Tilemap.SyncTile[] changes)
     {
-        if (changedTilemap != null &&
-            changedTilemap.transform.IsChildOf(transform))
+        if (changedTilemap == null) return;
+
+        Transform authoredRoot = activeEnvironment != null
+            ? activeEnvironment.transform
+            : transform;
+        if (changedTilemap.transform == authoredRoot ||
+            changedTilemap.transform.IsChildOf(authoredRoot))
         {
             MarkTileContentDirty();
         }
