@@ -30,8 +30,16 @@ public static class GameplayPixelLayoutValidator
         Require(player != null && Near(player.rect.height, Mathf.Min(290, g.Top.height) - 44),
             "Player frame changed with battle height", errors);
         if (player != null)
-            Require(Mathf.Abs(GameplayPixelLayoutController.ScreenRect(player).center.y - top.center.y) <= g.Scale / 2f + Epsilon,
+        {
+            Rect playerBounds = GameplayPixelLayoutController.ScreenRect(player);
+            Require(Mathf.Abs(playerBounds.center.y - top.center.y) <= g.Scale / 2f + Epsilon,
                 "Player frame is not vertically centered in battle area", errors);
+            var playerContent = player.Find("PlayerPanel") as RectTransform;
+            Require(playerContent != null, "Missing player content container", errors);
+            if (playerContent != null)
+                Require(Mathf.Abs(GameplayPixelLayoutController.ScreenRect(playerContent).center.y - playerBounds.center.y) <= g.Scale / 2f + Epsilon,
+                    "Player content is not vertically centered with player frame", errors);
+        }
         float expectedBottomY = g.Viewport.yMin + g.Bottom.yMin * g.Scale;
         Require(Near(bottom.yMin, expectedBottomY), "Bottom does not match assigned bezel-aware position", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
@@ -45,9 +53,9 @@ public static class GameplayPixelLayoutValidator
         float upperGap = top.yMin - board.yMax, lowerGap = board.yMin - bottom.yMax;
         Require(upperGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
             lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon, "Incorrect section gaps", errors);
-        if (owner.TopHudDrop == 0 && owner.BottomHudLift == 0)
-            Require(Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon,
-                "Unbalanced section gaps without device-edge adjustments", errors);
+        if (upperGap >= lowerGap - Epsilon)
+            Require(Mathf.Abs(upperGap - lowerGap) <= Epsilon,
+                "TopHUD-to-board gap is larger than board-to-BottomHUD gap", errors);
         float expectedTopY = g.Viewport.yMin + g.Top.yMax * g.Scale;
         Require(Near(top.yMax, expectedTopY), "Top does not match assigned cutout-aware position", errors);
         Rect[] cutouts = Screen.cutouts;
