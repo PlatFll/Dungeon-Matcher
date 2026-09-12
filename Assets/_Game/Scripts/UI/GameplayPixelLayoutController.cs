@@ -144,8 +144,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     /// Returns a BottomHUD-only logical lift. Screen.safeArea remains the first
     /// authority, reported bottom cutouts add exact clearance when available,
     /// and mobile devices get a small fallback for rounded corners that Android
-    /// commonly does not describe as a rectangular cutout. The board/top rects
-    /// are deliberately not reflowed.
+    /// commonly does not describe as a rectangular cutout. The board position
+    /// remains fixed; Refresh may expand the TopHUD downward afterward to keep
+    /// the board-to-HUD gaps visually balanced.
     /// </summary>
     public static int CalculateBottomHudLift(Geometry geometry, Rect[] cutouts, bool mobilePlatform)
     {
@@ -222,23 +223,35 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 
         TopHudDrop = CalculateTopHudDrop(Current, cutouts);
         BottomHudLift = CalculateBottomHudLift(Current, cutouts, Application.isMobilePlatform);
-        if (TopHudDrop > 0 || BottomHudLift > 0)
+
+        Geometry adjusted = Current;
+        if (TopHudDrop > 0)
         {
-            Geometry adjusted = Current;
-            if (TopHudDrop > 0)
-            {
-                Rect top = adjusted.Top;
-                top.y -= TopHudDrop;
-                adjusted.Top = top;
-            }
-            if (BottomHudLift > 0)
-            {
-                Rect bottom = adjusted.Bottom;
-                bottom.y += BottomHudLift;
-                adjusted.Bottom = bottom;
-            }
-            Current = adjusted;
+            Rect top = adjusted.Top;
+            top.y -= TopHudDrop;
+            adjusted.Top = top;
         }
+        if (BottomHudLift > 0)
+        {
+            Rect bottom = adjusted.Bottom;
+            bottom.y += BottomHudLift;
+            adjusted.Bottom = bottom;
+        }
+
+        // Device-specific bottom clearance can make the lower gap smaller than
+        // the upper one. Keep the battle area's top edge fixed, then grow only
+        // its bottom edge until both board-to-HUD gaps match. This leaves the
+        // wave tracker in place while the player-area controller keeps its fixed
+        // frame centered inside the newly taller TopHUD.
+        float upperGap = adjusted.Top.yMin - adjusted.Board.yMax;
+        float lowerGap = adjusted.Board.yMin - adjusted.Bottom.yMax;
+        if (upperGap > lowerGap)
+        {
+            Rect top = adjusted.Top;
+            top.yMin -= upperGap - lowerGap;
+            adjusted.Top = top;
+        }
+        Current = adjusted;
 
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
         scaler.scaleFactor = Current.Scale;
