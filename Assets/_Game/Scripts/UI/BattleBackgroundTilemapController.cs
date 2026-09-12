@@ -35,8 +35,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         if (viewportMask != null) viewportMask.enabled = false;
     }
 
-    // The empty Phase-1 hierarchy is not an available background. Keep the
-    // legacy UI fallback until an active layer contains an actual 64-PPU sprite.
+    // Render only when an active layer contains an actual 64-PPU sprite.
     // This selects presentation only: no tiles, cell sizes or scales are changed.
     public bool TryUseBackground(RectTransform arena)
     {

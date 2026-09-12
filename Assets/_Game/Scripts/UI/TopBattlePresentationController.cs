@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 [DefaultExecutionOrder(-75)]
 [DisallowMultipleComponent]
@@ -16,8 +15,6 @@ public sealed class TopBattlePresentationController : MonoBehaviour
 
 
     private const float FallbackBattleFloorOffsetFromBottom = 58f;
-    private const float FallbackPlayerBackgroundFloorPixels = 200f;
-    private const float FallbackEnemyBackgroundFloorPixels = 200f;
     private const float FallbackCharacterFeetOffsetFromFloor = 0f;
     private const float FallbackBaseCenterOffsetFromFloor = -3f;
 
@@ -267,30 +264,6 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             }
         }
 
-        float playerBackgroundFloorPixels =
-            profile != null
-                ? profile.PlayerBackgroundFloorPixelsFromBottom
-                : FallbackPlayerBackgroundFloorPixels;
-
-        float enemyBackgroundFloorPixels =
-            profile != null
-                ? profile.EnemyBackgroundFloorPixelsFromBottom
-                : FallbackEnemyBackgroundFloorPixels;
-
-        EnsureBackgroundFitter(
-            generatedLayout,
-            "PlayerSectionBackground",
-            playerBackgroundFloorPixels,
-            playerFloorWorld
-        );
-
-        EnsureBackgroundFitter(
-            generatedLayout,
-            "EnemySectionBackground",
-            enemyBackgroundFloorPixels,
-            sharedFloorWorld
-        );
-
         EnsureFrameFitter(
             generatedLayout,
             "BattleArenaFrame"
@@ -416,56 +389,6 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             );
 
         visual.localScale = Vector3.one;
-    }
-
-    private static void EnsureBackgroundFitter(
-        Transform root,
-        string objectName,
-        float sourceFloorPixelsFromBottom,
-        Vector3 sharedFloorWorld)
-    {
-        RectTransform rect =
-            FindRectTransform(
-                root,
-                objectName
-            );
-
-        if (rect == null ||
-            !rect.TryGetComponent(
-                out Image image
-            ) ||
-            rect.parent is not RectTransform viewport)
-        {
-            return;
-        }
-
-        BottomAnchoredBackgroundFitter fitter;
-
-        if (!rect.TryGetComponent(
-                out fitter
-            ))
-        {
-            fitter =
-                rect.gameObject.AddComponent<
-                    BottomAnchoredBackgroundFitter
-                >();
-        }
-
-        Vector3 localFloor =
-            viewport.InverseTransformPoint(
-                sharedFloorWorld
-            );
-
-        float targetFloorFromViewportBottom =
-            localFloor.y -
-            viewport.rect.yMin;
-
-        image.raycastTarget = false;
-
-        fitter.ConfigureFloorAlignment(
-            sourceFloorPixelsFromBottom,
-            targetFloorFromViewportBottom
-        );
     }
 
     private static void EnsureFrameFitter(
