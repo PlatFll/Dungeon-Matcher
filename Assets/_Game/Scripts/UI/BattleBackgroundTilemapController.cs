@@ -11,32 +11,62 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     [SerializeField] private RectTransform battleFloorAnchor;
     [SerializeField] private RectTransform battleArea;
     [SerializeField] private Camera worldCamera;
+
     private SpriteMask viewportMask;
     private Sprite maskSprite;
     private Texture2D maskTexture;
+
+    private Tilemap[] cachedTilemaps = System.Array.Empty<Tilemap>();
+    private TilemapRenderer[] cachedRenderers = System.Array.Empty<TilemapRenderer>();
+    private bool[] cachedValidTileContent = System.Array.Empty<bool>();
+    private bool tileContentCacheDirty = true;
+
+    private void Awake()
+    {
+        CacheTilemapHierarchy();
+    }
 
     private void Start()
     {
         // Register after PPC's OnEnable so its final projection is authoritative.
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
+        RegisterTileChangeListener();
     }
 
     private void OnEnable()
     {
+        RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
+        RegisterTileChangeListener();
+        CacheTilemapHierarchy();
+        MarkTileContentDirty();
         Align();
     }
 
     private void OnDisable()
     {
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
+        Tilemap.tilemapTileChanged -= OnTilemapTileChanged;
         SetRenderingSuppressed(true);
         if (viewportMask != null) viewportMask.enabled = false;
     }
 
+    private void OnValidate()
+    {
+        CacheTilemapHierarchy();
+        MarkTileContentDirty();
+    }
+
+    private void OnTransformChildrenChanged()
+    {
+        CacheTilemapHierarchy();
+        MarkTileContentDirty();
+    }
+
     // Render only when an active layer contains an actual 64-PPU sprite.
-    // This selects presentation only: no tiles, cell sizes or scales are changed.
+    // Tile contents are cached and invalidated by Tilemap's change event, so the
+    // normal LateUpdate availability check never walks every painted cell.
     public bool TryUseBackground(RectTransform arena)
     {
         bool available = isActiveAndEnabled && battleArea != null && battleArea == arena &&
@@ -50,28 +80,132 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private bool HasRenderableTiles()
     {
-        foreach (Tilemap map in GetComponentsInChildren<Tilemap>())
+        RefreshTileContentCacheIfNeeded();
+
+        for (int index = 0; index < cachedTilemaps.Length; index++)
         {
-            if (!map.TryGetComponent(out TilemapRenderer renderer) ||
+            Tilemap map = cachedTilemaps[index];
+            TilemapRenderer renderer =
+                index < cachedRenderers.Length
+                    ? cachedRenderers[index]
+                    : null;
+
+            if (map == null || renderer == null ||
+                !map.gameObject.activeInHierarchy ||
                 !renderer.enabled || map.color.a <= 0f ||
                 (worldCamera.cullingMask & (1 << map.gameObject.layer)) == 0)
-                continue;
-
-            foreach (Vector3Int cell in map.cellBounds.allPositionsWithin)
             {
-                Sprite sprite = map.GetSprite(cell);
-                if (sprite != null && map.GetColor(cell).a > 0f &&
-                    Mathf.Approximately(sprite.pixelsPerUnit, GameplayPixelLayoutController.AssetsPPU))
-                    return true;
+                continue;
+            }
+
+            if (index < cachedValidTileContent.Length &&
+                cachedValidTileContent[index])
+            {
+                return true;
             }
         }
+
         return false;
+    }
+
+    private void RefreshTileContentCacheIfNeeded()
+    {
+        if (!tileContentCacheDirty &&
+            cachedValidTileContent.Length == cachedTilemaps.Length)
+        {
+            return;
+        }
+
+        if (cachedValidTileContent.Length != cachedTilemaps.Length)
+        {
+            cachedValidTileContent = new bool[cachedTilemaps.Length];
+        }
+
+        for (int index = 0; index < cachedTilemaps.Length; index++)
+        {
+            cachedValidTileContent[index] =
+                HasValid64PpuTile(cachedTilemaps[index]);
+        }
+
+        tileContentCacheDirty = false;
+    }
+
+    private static bool HasValid64PpuTile(Tilemap map)
+    {
+        if (map == null)
+        {
+            return false;
+        }
+
+        foreach (Vector3Int cell in map.cellBounds.allPositionsWithin)
+        {
+            Sprite sprite = map.GetSprite(cell);
+            if (sprite != null && map.GetColor(cell).a > 0f &&
+                Mathf.Approximately(
+                    sprite.pixelsPerUnit,
+                    GameplayPixelLayoutController.AssetsPPU))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void CacheTilemapHierarchy()
+    {
+        cachedTilemaps = GetComponentsInChildren<Tilemap>(true);
+        cachedRenderers = new TilemapRenderer[cachedTilemaps.Length];
+
+        for (int index = 0; index < cachedTilemaps.Length; index++)
+        {
+            if (cachedTilemaps[index] != null)
+            {
+                cachedTilemaps[index].TryGetComponent(
+                    out cachedRenderers[index]);
+            }
+        }
+
+        cachedValidTileContent = new bool[cachedTilemaps.Length];
+        tileContentCacheDirty = true;
+    }
+
+    private void RegisterTileChangeListener()
+    {
+        Tilemap.tilemapTileChanged -= OnTilemapTileChanged;
+        Tilemap.tilemapTileChanged += OnTilemapTileChanged;
+    }
+
+    private void OnTilemapTileChanged(
+        Tilemap changedTilemap,
+        Tilemap.SyncTile[] changes)
+    {
+        if (changedTilemap != null &&
+            changedTilemap.transform.IsChildOf(transform))
+        {
+            MarkTileContentDirty();
+        }
+    }
+
+    private void MarkTileContentDirty()
+    {
+        tileContentCacheDirty = true;
     }
 
     private void SetRenderingSuppressed(bool suppressed)
     {
-        foreach (TilemapRenderer renderer in GetComponentsInChildren<TilemapRenderer>(true))
-            renderer.forceRenderingOff = suppressed;
+        if (cachedRenderers.Length == 0 && transform.childCount > 0)
+        {
+            CacheTilemapHierarchy();
+        }
+
+        foreach (TilemapRenderer renderer in cachedRenderers)
+        {
+            if (renderer != null)
+            {
+                renderer.forceRenderingOff = suppressed;
+            }
+        }
     }
 
     private void LateUpdate() => Align();
@@ -124,8 +258,13 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         viewportMask.transform.localScale = new Vector3(
             Mathf.Max(0, max.x - min.x), Mathf.Max(0, max.y - min.y), 1);
         viewportMask.enabled = interior.width > 0 && interior.height > 0;
-        foreach (TilemapRenderer renderer in GetComponentsInChildren<TilemapRenderer>(true))
-            renderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        foreach (TilemapRenderer renderer in cachedRenderers)
+        {
+            if (renderer != null)
+            {
+                renderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            }
+        }
     }
 
     private Vector3 Project(Vector2 point, Camera uiCamera, Plane plane)
@@ -160,6 +299,8 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void OnDestroy()
     {
+        RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
+        Tilemap.tilemapTileChanged -= OnTilemapTileChanged;
         Release(viewportMask != null ? viewportMask.gameObject : null);
         Release(maskSprite);
         Release(maskTexture);
