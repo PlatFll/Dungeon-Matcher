@@ -29,6 +29,11 @@ public sealed class TopBattlePresentationController : MonoBehaviour
     )]
     private TopBattlePresentationProfile profileOverride;
 
+    [Header("Battle Floor")]
+    [SerializeField, Tooltip("Authoritative floor. Defaults to the serialized TopHUD/BattleFloorAnchor child.")]
+    private RectTransform battleFloorAnchor;
+    private Vector3 lastFloorWorld = new Vector3(float.NaN, float.NaN, float.NaN);
+
     private TopBattlePresentationProfile profile;
     private RectTransform topHud;
     private RectTransform safeArea;
@@ -71,7 +76,8 @@ public sealed class TopBattlePresentationController : MonoBehaviour
             ResolveReferences();
         }
 
-        if (HasResponsiveLayoutChanged())
+        if (HasResponsiveLayoutChanged() ||
+            (battleFloorAnchor != null && battleFloorAnchor.position != lastFloorWorld))
         {
             CacheAssignedGeometry();
             battlePresentationDirty = true;
@@ -107,6 +113,9 @@ public sealed class TopBattlePresentationController : MonoBehaviour
         topHud =
             transform as RectTransform;
 
+        if (battleFloorAnchor == null && topHud != null)
+            battleFloorAnchor = topHud.Find("BattleFloorAnchor") as RectTransform;
+
         safeArea =
             topHud != null
                 ? topHud.parent as RectTransform
@@ -141,6 +150,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
         lastSafeAreaSize = safeArea.rect.size;
         lastBottomHudHeight = bottomHud.rect.height;
         lastBoardOuterSize = GetBoardOuterSize();
+        if (battleFloorAnchor != null) lastFloorWorld = battleFloorAnchor.position;
     }
     private bool TryApplyBattlePresentation()
     {
@@ -175,7 +185,7 @@ public sealed class TopBattlePresentationController : MonoBehaviour
                 : FallbackBaseCenterOffsetFromFloor;
 
         Vector3 sharedFloorWorld =
-            GetSharedFloorWorldPosition(
+            battleFloorAnchor != null ? battleFloorAnchor.position : GetSharedFloorWorldPosition(
                 generatedLayout,
                 floorOffsetFromBattleBottom
             );

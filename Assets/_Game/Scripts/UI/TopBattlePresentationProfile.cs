@@ -10,9 +10,9 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     [Header("Shared Battle Floor")]
     [SerializeField, Min(0f)]
     [Tooltip(
-        "Single walkable-floor baseline, measured upward from the bottom of the " +
-        "complete battle area in reference UI pixels. Player and enemies are " +
-        "placed on this exact world-space line."
+        "Migration/fallback floor height in reference UI pixels above the battle " +
+        "area bottom. Used only when TopHUD has no BattleFloorAnchor. " +
+        "Edit the scene anchor to position the battle floor."
     )]
     private float battleFloorOffsetFromBottom = 58f;
 
