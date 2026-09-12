@@ -1016,6 +1016,13 @@ public sealed class BoardVisuals : MonoBehaviour
             runtimeSquareSprite;
 
         spriteMask.alphaCutoff = 0.01f;
+        // The world battle Tilemaps now opt into masking. Exclude their
+        // Default-layer range while retaining every existing board layer/order.
+        spriteMask.isCustomRangeActive = true;
+        spriteMask.frontSortingLayerID = SortingLayer.NameToID("WorldUI");
+        spriteMask.frontSortingOrder = short.MaxValue;
+        spriteMask.backSortingLayerID = SortingLayer.NameToID("BoardBackground");
+        spriteMask.backSortingOrder = short.MinValue;
     }
 
     private void OnDestroy()
