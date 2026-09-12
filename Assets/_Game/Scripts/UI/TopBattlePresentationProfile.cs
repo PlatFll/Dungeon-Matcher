@@ -10,27 +10,11 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     [Header("Shared Battle Floor")]
     [SerializeField, Min(0f)]
     [Tooltip(
-        "Single walkable-floor baseline, measured upward from the bottom of the " +
-        "complete battle area in reference UI pixels. Player and enemies are " +
-        "placed on this exact world-space line."
+        "Migration/fallback floor height in reference UI pixels above the battle " +
+        "area bottom. Used only when TopHUD has no BattleFloorAnchor. " +
+        "Edit the scene anchor to position the battle floor."
     )]
     private float battleFloorOffsetFromBottom = 58f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "Floor location inside the player background sprite, measured in SOURCE " +
-        "sprite pixels upward from its bottom edge. Set this to the pixel row " +
-        "where characters should stand."
-    )]
-    private float playerBackgroundFloorPixelsFromBottom = 200f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "Floor location inside the enemy dungeon background sprite, measured in " +
-        "SOURCE sprite pixels upward from its bottom edge. The current temporary " +
-        "1672x941 dungeon art is initially tuned near 200px."
-    )]
-    private float enemyBackgroundFloorPixelsFromBottom = 200f;
 
     [SerializeField]
     [Tooltip(
@@ -63,10 +47,6 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
     private float playerAffinityGapAboveCharacter = 8f;
 
     public float BattleFloorOffsetFromBottom => battleFloorOffsetFromBottom;
-    public float PlayerBackgroundFloorPixelsFromBottom =>
-        playerBackgroundFloorPixelsFromBottom;
-    public float EnemyBackgroundFloorPixelsFromBottom =>
-        enemyBackgroundFloorPixelsFromBottom;
     public float CharacterFeetOffsetFromFloor => characterFeetOffsetFromFloor;
     public float BaseCenterOffsetFromFloor => baseCenterOffsetFromFloor;
     public float EnemyHealthBarBottomOffset => enemyHealthBarBottomOffset;
@@ -77,16 +57,6 @@ public sealed class TopBattlePresentationProfile : ScriptableObject
             battleFloorOffsetFromBottom,
             0f,
             GameplayPixelLayoutController.MaximumBattleHeight
-        );
-
-        playerBackgroundFloorPixelsFromBottom = Mathf.Max(
-            0f,
-            playerBackgroundFloorPixelsFromBottom
-        );
-
-        enemyBackgroundFloorPixelsFromBottom = Mathf.Max(
-            0f,
-            enemyBackgroundFloorPixelsFromBottom
         );
 
         characterFeetOffsetFromFloor = Mathf.Clamp(

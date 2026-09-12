@@ -41,37 +41,26 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     )]
     private Sprite normalPieceOverride;
 
-    [SerializeField]
-    [Tooltip(
-        "Optional player-side background. This is intentionally independent " +
-        "from the enemy-side background so each character can later have its " +
-        "own presentation."
-    )]
-    private Sprite playerBackgroundSprite;
-
-    [SerializeField]
-    [Tooltip(
-        "Optional enemy-side background. When empty, the current dungeon " +
-        "battle background is reused for this prototype layout."
-    )]
-    private Sprite enemyBackgroundSprite;
-
-    [Header("Temporary Background Colors")]
-    [SerializeField]
-    private Color playerBackgroundColor =
-        new Color32(25, 21, 31, 255);
-
-    [SerializeField]
-    private Color enemyBackgroundColor =
-        Color.white;
-
     private RectTransform topHud;
     private RectTransform playerPanel;
     private RectTransform enemyArea;
     private Sprite cornerPiece;
     private Sprite normalPiece;
-    private Sprite temporaryDungeonBackground;
     private bool layoutBuilt;
+    private BattleBackgroundTilemapController tilemapBackground;
+
+    private void LateUpdate()
+    {
+        if (layoutBuilt) RefreshTilemapBackground();
+    }
+
+    private void RefreshTilemapBackground()
+    {
+        if (tilemapBackground == null)
+            tilemapBackground = FindFirstObjectByType<BattleBackgroundTilemapController>(FindObjectsInactive.Include);
+
+        if (tilemapBackground != null) tilemapBackground.TryUseBackground(topHud);
+    }
 
     private void Start()
     {
@@ -114,7 +103,6 @@ public sealed class TopBattleLayoutController : MonoBehaviour
             return;
         }
 
-        ResolveTemporaryBackground();
         ResolveFrameSprites();
 
         RectTransform layoutRoot =
@@ -139,9 +127,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
                 new Vector2(
                     PlayerSectionRatio,
                     1f
-                ),
-                playerBackgroundSprite,
-                playerBackgroundColor
+                )
             );
 
         RectTransform enemySection =
@@ -152,11 +138,7 @@ public sealed class TopBattleLayoutController : MonoBehaviour
                     PlayerSectionRatio,
                     0f
                 ),
-                new Vector2(1f, 1f),
-                enemyBackgroundSprite != null
-                    ? enemyBackgroundSprite
-                    : temporaryDungeonBackground,
-                enemyBackgroundColor
+                new Vector2(1f, 1f)
             );
 
         ReparentAndStretchContent(
@@ -190,15 +172,14 @@ public sealed class TopBattleLayoutController : MonoBehaviour
         );
 
         layoutBuilt = true;
+        RefreshTilemapBackground();
     }
 
     private RectTransform CreateSection(
         string objectName,
         RectTransform parent,
         Vector2 anchorMin,
-        Vector2 anchorMax,
-        Sprite backgroundSprite,
-        Color backgroundColor)
+        Vector2 anchorMax)
     {
         RectTransform section =
             CreateRectTransform(
@@ -218,26 +199,6 @@ public sealed class TopBattleLayoutController : MonoBehaviour
                 -SectionInset,
                 -SectionInset
             );
-
-        Image background =
-            CreateImage(
-                objectName + "Background",
-                section,
-                backgroundSprite
-            );
-
-        StretchToParent(
-            background.rectTransform,
-            Vector2.zero,
-            Vector2.zero
-        );
-
-        background.color =
-            backgroundColor;
-
-        background.preserveAspect = false;
-        background.raycastTarget = false;
-        background.rectTransform.SetAsFirstSibling();
 
         return section;
     }
@@ -453,39 +414,6 @@ public sealed class TopBattleLayoutController : MonoBehaviour
 
         healthBar.localScale =
             Vector3.one;
-    }
-
-    private void ResolveTemporaryBackground()
-    {
-        GameObject backgroundObject =
-            GameObject.Find(
-                "BattleBackgroundWorld"
-            );
-
-        if (backgroundObject == null)
-        {
-            return;
-        }
-
-        SpriteRenderer renderer =
-            backgroundObject.GetComponent<
-                SpriteRenderer
-            >();
-
-        if (renderer == null)
-        {
-            return;
-        }
-
-        temporaryDungeonBackground =
-            renderer.sprite;
-
-        /*
-         * The new battle arena owns its two backgrounds. Leaving the old world
-         * background active would make the prototype look like one continuous
-         * scene behind both framed sections.
-         */
-        renderer.enabled = false;
     }
 
     private void ResolveFrameSprites()
