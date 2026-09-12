@@ -77,6 +77,7 @@ public static class RuntimeScenePresentationBootstrap
         InstallBottomHudFrame();
         InstallModularHealthBars();
         InstallPixelPerfectBattleCharacters();
+        InstallPlayerHudCentering();
         InstallGameOverController();
     }
 
@@ -177,6 +178,30 @@ public static class RuntimeScenePresentationBootstrap
             {
                 rect.gameObject.AddComponent<PixelPerfectBattleCharacterUI>();
             }
+        }
+    }
+
+    private static void InstallPlayerHudCentering()
+    {
+        PlayerPanelUI[] playerPanels =
+            Object.FindObjectsByType<PlayerPanelUI>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+
+        foreach (PlayerPanelUI playerPanel in playerPanels)
+        {
+            if (playerPanel == null ||
+                playerPanel.TryGetComponent(
+                    out PlayerHudCenteringController _
+                ))
+            {
+                continue;
+            }
+
+            playerPanel.gameObject.AddComponent<
+                PlayerHudCenteringController
+            >();
         }
     }
 

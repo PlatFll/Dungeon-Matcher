@@ -37,8 +37,19 @@ public static class GameplayPixelLayoutValidator
             var playerContent = player.Find("PlayerPanel") as RectTransform;
             Require(playerContent != null, "Missing player content container", errors);
             if (playerContent != null)
+            {
                 Require(Mathf.Abs(GameplayPixelLayoutController.ScreenRect(playerContent).center.y - playerBounds.center.y) <= g.Scale / 2f + Epsilon,
-                    "Player content is not vertically centered with player frame", errors);
+                    "Player content container is not vertically centered with player frame", errors);
+
+                PlayerHudCenteringController centering =
+                    playerContent.GetComponent<PlayerHudCenteringController>();
+                Require(centering != null, "Missing player HUD centering controller", errors);
+                if (centering != null && centering.TryGetStackLocalBounds(out Rect stackBounds))
+                {
+                    Require(Mathf.Abs(stackBounds.center.y - playerContent.rect.center.y) <= 0.5f + Epsilon,
+                        "Player sprite/affinity/health stack is not vertically centered inside player frame", errors);
+                }
+            }
         }
         float expectedBottomY = g.Viewport.yMin + g.Bottom.yMin * g.Scale;
         Require(Near(bottom.yMin, expectedBottomY), "Bottom does not match assigned bezel-aware position", errors);
