@@ -1293,7 +1293,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.375
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3491,12 +3491,12 @@ MonoBehaviour:
   gemScale: 0.9
   gemPrefab: {fileID: 2436599767616786368, guid: 3ce9495f8b649cb4bb59bdc0f781f4c1, type: 3}
   gemSprites:
-  - {fileID: 21300000, guid: 65a1d1ef9138c6a4689a84ad0440e12f, type: 3}
-  - {fileID: 21300000, guid: 84fe6227a3c55a949bb28e7c1455d0fd, type: 3}
-  - {fileID: 21300000, guid: ab99e326d2f1be346a49fc4a59ff9602, type: 3}
-  - {fileID: 21300000, guid: 4ae805e491bf75d4b9f911172c90b221, type: 3}
-  - {fileID: 21300000, guid: 65b7f0c33b0f2434fa871b96b0fb273b, type: 3}
-  - {fileID: 21300000, guid: 1838e78f5f5d6704d89f0fc3c7345727, type: 3}
+  - {fileID: 21300000, guid: 9a22612233ec77441871888a44fc5a8c, type: 3}
+  - {fileID: 21300000, guid: ec4caeefdd13e504db84e48b96811872, type: 3}
+  - {fileID: 21300000, guid: 6632d83a6c5833842a416467a47c1ff5, type: 3}
+  - {fileID: 21300000, guid: 679c26fd95f197c4488846d5e8f8f3d3, type: 3}
+  - {fileID: 21300000, guid: 3b95815b85717ba4d8dca4b502263055, type: 3}
+  - {fileID: 21300000, guid: 736bd1feae8605d488aa88bcf27829ba, type: 3}
   swipeMinDistance: 40
   swapDuration: 0.15
   invalidSwapPause: 0.08
@@ -4787,7 +4787,7 @@ Transform:
   m_GameObject: {fileID: 2200000100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 2}
+  m_LocalPosition: {x: 0, y: 7.0625, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
