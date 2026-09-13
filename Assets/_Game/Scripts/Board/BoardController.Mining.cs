@@ -468,6 +468,14 @@ public partial class BoardController
             yield return null;
         }
 
+        // Impact can be acknowledged and the owner defeated/destroyed before
+        // this coroutine resumes. In that case the while body is skipped, so
+        // its in-loop owner check alone cannot prevent a posthumous new hole.
+        if (request.OwnerActor == null || request.OwnerActor.IsDefeated)
+        {
+            yield break;
+        }
+
         List<Vector2Int> candidates = BuildMineableCellList();
 
         if (candidates.Count == 0)
