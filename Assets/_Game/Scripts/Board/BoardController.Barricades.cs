@@ -611,6 +611,11 @@ public partial class BoardController
                     cell
                 );
 
+                // A broken obstacle opens a real gravity slot just like a
+                // destroyed gem. Queue it with this clear's other openings;
+                // do not move banners while clear targets are being reported.
+                QueueRoyalBannerGravityOpening(cell.x, cell.y);
+
                 StartBarricadeHitVFX(
                     state,
                     true
