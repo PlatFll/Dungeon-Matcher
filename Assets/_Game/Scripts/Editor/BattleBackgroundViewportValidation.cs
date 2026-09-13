@@ -84,6 +84,14 @@ public static class BattleBackgroundViewportValidation
         grid.transform.SetParent(root.transform, false);
         var layer = new GameObject("Tiles", typeof(Tilemap), typeof(TilemapRenderer));
         layer.transform.SetParent(grid.transform, false);
+        var legacyMap = layer.GetComponent<Tilemap>();
+        var legacyRenderer = layer.GetComponent<TilemapRenderer>();
+        legacyRenderer.sortingOrder = -100;
+        var prefab = Resources.Load<GameObject>("BattleEnvironments/Dungeon_Default");
+        Check(prefab != null, "default environment prefab exists");
+        var environment = (GameObject)PrefabUtility.InstantiatePrefab(prefab, root.transform);
+        var map = environment.transform.Find("BackWall").GetComponent<Tilemap>();
+        var renderer = map.GetComponent<TilemapRenderer>();
         var texture = new Texture2D(64, 64);
         var colors = new Color[64 * 64];
         Array.Fill(colors, Color.red);
@@ -92,21 +100,30 @@ public static class BattleBackgroundViewportValidation
         var sprite = Sprite.Create(texture, new Rect(0, 0, 64, 64), Vector2.one / 2, 64);
         var tile = ScriptableObject.CreateInstance<Tile>();
         tile.sprite = sprite;
-        var map = layer.GetComponent<Tilemap>();
-        layer.GetComponent<TilemapRenderer>().sortingOrder = -100;
         for (int y = -45; y <= 45; y++)
-            for (int x = -20; x <= 20; x++) map.SetTile(new Vector3Int(x, y), tile);
+            for (int x = -20; x <= 20; x++)
+            {
+                map.SetTile(new Vector3Int(x, y), tile);
+                // Keep painted legacy content to detect accidental double rendering.
+                legacyMap.SetTile(new Vector3Int(x, y), tile);
+            }
         root.SetActive(true);
         Check(controller.TryUseBackground(area), "64 PPU map available");
+        Check(controller.ActiveEnvironment == environment.GetComponent<BattleEnvironmentRoot>(),
+            "authored prefab selected");
+        Check(root.GetComponentsInChildren<BattleEnvironmentRoot>(true).Length == 1,
+            "exactly one environment instance");
+        Check(legacyRenderer.forceRenderingOff && !renderer.forceRenderingOff,
+            "only prefab tiles render");
         typeof(BattleBackgroundTilemapController).GetMethod("Align", BindingFlags.Instance | BindingFlags.NonPublic)
             .Invoke(controller, null);
-        Check(root.transform.lossyScale == Vector3.one && layer.transform.lossyScale == Vector3.one,
+        Check(root.transform.lossyScale == Vector3.one && map.transform.lossyScale == Vector3.one,
             "world map scale remains one");
         Check(Mathf.Abs(root.transform.position.y - floor.position.y) < 0.00001f, "floor equals tile Y=0");
         Check(Mathf.Abs(root.transform.position.x * 64 - Mathf.Round(root.transform.position.x * 64)) < 0.0001f &&
             Mathf.Abs(root.transform.position.y * 64 - Mathf.Round(root.transform.position.y * 64)) < 0.0001f,
             "map origin snapped to 64 PPU");
-        Check(layer.GetComponent<TilemapRenderer>().maskInteraction == SpriteMaskInteraction.VisibleInsideMask,
+        Check(renderer.maskInteraction == SpriteMaskInteraction.VisibleInsideMask,
             "tile renderer masked");
         // Exercise the production board-mask setup, not a duplicate of its settings.
         var boardVisuals = new GameObject("BoardFixture").AddComponent<BoardVisuals>();

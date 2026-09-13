@@ -25,6 +25,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private Tilemap[] cachedTilemaps = System.Array.Empty<Tilemap>();
     private TilemapRenderer[] cachedRenderers = System.Array.Empty<TilemapRenderer>();
+    private TilemapRenderer[] allRenderers = System.Array.Empty<TilemapRenderer>();
     private bool[] cachedValidTileContent = System.Array.Empty<bool>();
     private bool tileContentCacheDirty = true;
 
@@ -57,6 +58,9 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void OnDisable()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.delayCall -= InitializeAfterImport;
+#endif
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         Tilemap.tilemapTileChanged -= OnTilemapTileChanged;
         SetRenderingSuppressed(true);
@@ -85,6 +89,17 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     /// </summary>
     private void EnsureEnvironmentInstance()
     {
+#if UNITY_EDITOR
+        // OnEnable can run during domain reload before new prefabs are imported.
+        // Instantiate only after the asset database has finished refreshing.
+        if (!Application.isPlaying &&
+            (UnityEditor.EditorApplication.isCompiling || UnityEditor.EditorApplication.isUpdating))
+        {
+            UnityEditor.EditorApplication.delayCall -= InitializeAfterImport;
+            UnityEditor.EditorApplication.delayCall += InitializeAfterImport;
+            return;
+        }
+#endif
         ResolveEnvironmentInstance();
         if (activeEnvironment != null) return;
 
@@ -131,6 +146,16 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         activeEnvironment = instance.GetComponent<BattleEnvironmentRoot>();
         MarkTileContentDirty();
     }
+
+#if UNITY_EDITOR
+    private void InitializeAfterImport()
+    {
+        if (this == null || !isActiveAndEnabled || Application.isPlaying) return;
+        EnsureEnvironmentInstance();
+        CacheTilemapHierarchy();
+        Align();
+    }
+#endif
 
     private void ResolveEnvironmentInstance()
     {
@@ -243,6 +268,16 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     private void CacheTilemapHierarchy()
     {
         ResolveEnvironmentInstance();
+        allRenderers = GetComponentsInChildren<TilemapRenderer>(true);
+        // Unselected environments and legacy scene maps must not double-render.
+        foreach (TilemapRenderer renderer in allRenderers)
+        {
+            if (activeEnvironment != null &&
+                !renderer.transform.IsChildOf(activeEnvironment.transform))
+            {
+                renderer.forceRenderingOff = true;
+            }
+        }
         cachedTilemaps = activeEnvironment != null
             ? activeEnvironment.GetComponentsInChildren<Tilemap>(true)
             : GetComponentsInChildren<Tilemap>(true);
@@ -295,11 +330,13 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
             CacheTilemapHierarchy();
         }
 
-        foreach (TilemapRenderer renderer in cachedRenderers)
+        foreach (TilemapRenderer renderer in allRenderers)
         {
             if (renderer != null)
             {
-                renderer.forceRenderingOff = suppressed;
+                renderer.forceRenderingOff = suppressed ||
+                    (activeEnvironment != null &&
+                     !renderer.transform.IsChildOf(activeEnvironment.transform));
             }
         }
     }
