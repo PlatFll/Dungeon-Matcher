@@ -1111,9 +1111,14 @@ public partial class BoardController : MonoBehaviour
         // flash. Environmental removal and double-crystal sweeps do not activate.
         if (activateSpecials)
         {
-            visuals.Sort((a, b) => CompareGemsByGridPosition(a.Gem, b.Gem));
-            foreach (ClearVisual visual in visuals)
-                CommitSpecialBombEffect(visual.Gem);
+            // A bomb may occupy the cell preserved for a newly earned special.
+            // Its footprint was already expanded, so consume its OLD effect
+            // once as well. The replacement is assigned only after this loop;
+            // it must survive and must not activate as part of its own creation.
+            List<Gem> activationSeeds = new List<Gem>(matches);
+            activationSeeds.Sort(CompareGemsByGridPosition);
+            foreach (Gem gem in activationSeeds)
+                CommitSpecialBombEffect(gem);
         }
 
         float responsivePostBurstDelay =
