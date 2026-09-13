@@ -233,6 +233,87 @@ public class Gem :
             specialBombView.Hide();
         }
 
+        if (specialOverlayView == null)
+        {
+            return;
+        }
+
+        /*
+         * Row/column bombs are overlays, so keep the gem visible.
+         * Color crystals replace the normal gem sprite.
+         */
+        bool isCrystal =
+            SpecialType ==
+            GemSpecialType.ColorCrystal;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled =
+                !isCrystal;
+        }
+
+        specialOverlayView.Show(
+            Type,
+            SpecialType
+        );
+    }
+
+    private bool UsesSpecialBombShellVisual()
+    {
+        return
+            SpecialType ==
+                GemSpecialType.PoisonBomb ||
+            SpecialType ==
+                GemSpecialType.HealingBomb ||
+            SpecialType ==
+                GemSpecialType.ShieldBomb;
+    }
+
+    private void RefreshSpecialBombVisual()
+    {
+        if (!UsesSpecialBombShellVisual())
+        {
+            return;
+        }
+
+        if (spriteRenderer == null)
+        {
+            spriteRenderer =
+                GetComponent<SpriteRenderer>();
+        }
+
+        if (specialBombView == null)
+        {
+            specialBombView =
+                PoisonBombGemView.GetOrCreate(
+                    transform,
+                    spriteRenderer
+                );
+        }
+
+        Sprite bombSprite =
+            board != null
+                ? board.GetSpecialBombSprite(
+                    SpecialType
+                )
+                : null;
+
+        if (specialBombView == null ||
+            bombSprite == null)
+        {
+            if (specialBombView != null)
+            {
+                specialBombView.Hide();
+            }
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = true;
+            }
+
+            return;
+        }
+
         spriteRenderer.enabled = false;
 
         specialBombView.Show(
