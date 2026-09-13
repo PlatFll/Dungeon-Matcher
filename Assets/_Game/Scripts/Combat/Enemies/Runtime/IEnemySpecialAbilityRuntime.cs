@@ -171,9 +171,12 @@ internal sealed class EnemySpecialActionAvailability
 
     private bool CanRetryReadyAbility()
     {
+        // Actor/board delegates can still call a disabled runtime. Gate the
+        // execution callback itself, not just creation of its retry coroutine.
         return
             !isDisposed &&
             coroutineHost != null &&
+            coroutineHost.isActiveAndEnabled &&
             enemyActor != null &&
             boardController != null &&
             enemyActor.IsInitialized &&
