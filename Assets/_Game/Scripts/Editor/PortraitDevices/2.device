@@ -1,0 +1,38 @@
+{
+  "friendlyName": "Portrait / Samsung Galaxy Note20 Ultra 5G",
+  "version": 1,
+  "screens": [
+    {
+      "width": 1440,
+      "height": 3088,
+      "navigationBarHeight": 168,
+      "dpi": 560,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "serializedVersion": "2",
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 2999
+          },
+          "cutouts": [
+            {
+              "serializedVersion": "2",
+              "x": 685,
+              "y": 2999,
+              "width": 70,
+              "height": 89
+            }
+          ]
+        }
+      ],
+      "presentation": {}
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "samsung SM-N986B",
+    "operatingSystem": "Android OS 11 / API-30 (RP1A.200720.012/N986BXXS1DUC1)"
+  }
+}

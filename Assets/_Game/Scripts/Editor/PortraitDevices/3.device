@@ -1,0 +1,38 @@
+{
+  "friendlyName": "Portrait / Motorola Moto G7 Power",
+  "version": 1,
+  "screens": [
+    {
+      "width": 720,
+      "height": 1520,
+      "navigationBarHeight": 96,
+      "dpi": 320,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "serializedVersion": "2",
+            "x": 0,
+            "y": 0,
+            "width": 720,
+            "height": 1467
+          },
+          "cutouts": [
+            {
+              "serializedVersion": "2",
+              "x": 230,
+              "y": 1467,
+              "width": 260,
+              "height": 53
+            }
+          ]
+        }
+      ],
+      "presentation": {}
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "motorola moto g(7) power",
+    "operatingSystem": "Android OS 9 / API-28 (PPO29.80-27/f8f05)"
+  }
+}
