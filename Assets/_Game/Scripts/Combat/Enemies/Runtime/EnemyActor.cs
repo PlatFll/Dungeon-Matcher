@@ -336,17 +336,30 @@ public sealed class EnemyActor : MonoBehaviour
 
     public bool TryTakeDamage(int amount)
     {
-        return TryTakeDamageInternal(
+        return ResolveDirectDamage(amount).Applied;
+    }
+
+    public bool TryTakeDamageWithoutFeedback(
+        int amount)
+    {
+        return ResolveDamageWithoutFeedback(amount).Applied;
+    }
+
+    // Both APIs use the same actor damage path as the existing bool wrappers.
+    // Callers that report hits need the recipient selected by interception,
+    // not a before/after comparison of the originally targeted actor's HP.
+    public EnemyDamageResult ResolveDirectDamage(int amount)
+    {
+        return ResolveDamageInternal(
             amount,
             true,
             allowDamageRedirect: true
         );
     }
 
-    public bool TryTakeDamageWithoutFeedback(
-        int amount)
+    public EnemyDamageResult ResolveDamageWithoutFeedback(int amount)
     {
-        return TryTakeDamageInternal(
+        return ResolveDamageInternal(
             amount,
             false,
             allowDamageRedirect: false
@@ -378,7 +391,7 @@ public sealed class EnemyActor : MonoBehaviour
         damageRedirectTarget = null;
     }
 
-    private bool TryTakeDamageInternal(
+    private EnemyDamageResult ResolveDamageInternal(
         int amount,
         bool notifyDamageReceived,
         bool allowDamageRedirect)
@@ -386,7 +399,7 @@ public sealed class EnemyActor : MonoBehaviour
         if (!CanReceiveDamage ||
             amount <= 0)
         {
-            return false;
+            return default;
         }
 
         if (allowDamageRedirect &&
@@ -401,7 +414,7 @@ public sealed class EnemyActor : MonoBehaviour
                  * the same damage through an arbitrary enemy chain.
                  */
                 return damageRedirectTarget
-                    .TryTakeDamageInternal(
+                    .ResolveDamageInternal(
                         amount,
                         notifyDamageReceived,
                         allowDamageRedirect: false
@@ -477,6 +490,14 @@ public sealed class EnemyActor : MonoBehaviour
                 previousHealth - currentHealth;
         }
 
+        // Capture this hit before health/defeat listeners can heal, apply a
+        // separate hit, clear redirection, or destroy the receiving object.
+        EnemyDamageResult result = new EnemyDamageResult(
+            this,
+            actualHealthDamage,
+            shieldDamage
+        );
+
         /*
          * Normal direct/clear damage uses DamageReceived to drive the
          * existing hit shake. Damage-over-time sources can deliberately
@@ -510,8 +531,7 @@ public sealed class EnemyActor : MonoBehaviour
             SurvivedHealthDamage?.Invoke(this, healthBeforeDamage, currentHealth);
         }
 
-        return shieldDamage > 0 ||
-               actualHealthDamage > 0;
+        return result;
     }
 
     private bool IsValidDamageRedirectTarget(
