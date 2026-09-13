@@ -104,12 +104,13 @@ public sealed class EnemyLifecycleVFX :
     private Coroutine deathCoroutine;
 
     private Action deathCompletionCallback;
+    private bool deathCompletionPending;
 
     public bool IsSpawning =>
         spawnCoroutine != null;
 
     public bool IsDying =>
-        deathCoroutine != null;
+        deathCompletionPending;
 
     private void Awake()
     {
@@ -174,6 +175,7 @@ public sealed class EnemyLifecycleVFX :
     public void PlaySpawnEffect()
     {
         if (!isActiveAndEnabled ||
+            deathCompletionPending ||
             visualRoot == null ||
             enemyImage == null)
         {
@@ -203,8 +205,12 @@ public sealed class EnemyLifecycleVFX :
         Action onFinished = null)
     {
         if (!isActiveAndEnabled ||
-            deathCoroutine != null)
+            deathCompletionPending ||
+            visualRoot == null ||
+            enemyImage == null)
         {
+            // False leaves completion/cleanup with the caller. Missing optional
+            // visuals must never register a coroutine that fails before ack.
             return false;
         }
 
@@ -219,13 +225,12 @@ public sealed class EnemyLifecycleVFX :
 
         deathCompletionCallback =
             onFinished;
+        deathCompletionPending = true;
 
         RefreshFlashMaterial();
 
-        deathCoroutine =
-            StartCoroutine(
-                DeathRoutine()
-            );
+        Coroutine started = StartCoroutine(DeathRoutine());
+        if (deathCompletionPending) deathCoroutine = started;
 
         return true;
     }
@@ -460,10 +465,11 @@ public sealed class EnemyLifecycleVFX :
 
         HideSpawnPortal();
 
-        visualRoot.anchoredPosition =
-            visualRestingPosition;
-
-        enemyImage.enabled = true;
+        if (visualRoot != null)
+        {
+            visualRoot.anchoredPosition = visualRestingPosition;
+        }
+        if (enemyImage != null) enemyImage.enabled = true;
 
         SetEnemyAlpha(1f);
         SetFlashAmount(1f);
@@ -478,7 +484,7 @@ public sealed class EnemyLifecycleVFX :
         SpawnDeathParticles();
 
         SetEnemyAlpha(0f);
-        enemyImage.enabled = false;
+        if (enemyImage != null) enemyImage.enabled = false;
 
         float remainingDuration =
             Mathf.Max(
@@ -495,22 +501,33 @@ public sealed class EnemyLifecycleVFX :
         }
 
         SetFlashAmount(0f);
+        CompleteDeathEffect(notifyPresentationFinished: true);
+    }
 
+    private void CompleteDeathEffect(bool notifyPresentationFinished)
+    {
+        if (!deathCompletionPending) return;
+
+        // Consume before invoking observers. Disable/destroy/reentrant cleanup
+        // cannot lose or duplicate the wave owner's completion acknowledgement.
+        deathCompletionPending = false;
         deathCoroutine = null;
-
-        DeathFinished?.Invoke(this);
-
-        Action callback =
-            deathCompletionCallback;
-
+        Action callback = deathCompletionCallback;
         deathCompletionCallback = null;
-
-        callback?.Invoke();
+        try
+        {
+            if (notifyPresentationFinished) DeathFinished?.Invoke(this);
+        }
+        finally
+        {
+            callback?.Invoke();
+        }
     }
 
     private void SpawnDeathParticles()
     {
-        if (particleContainer == null ||
+        if (visualRoot == null ||
+            particleContainer == null ||
             pixelParticlePrefab == null)
         {
             return;
@@ -766,7 +783,7 @@ public sealed class EnemyLifecycleVFX :
             deathCoroutine = null;
         }
 
-        deathCompletionCallback = null;
+        CompleteDeathEffect(notifyPresentationFinished: false);
 
         RestoreSpawnVisuals();
     }
@@ -791,6 +808,8 @@ public sealed class EnemyLifecycleVFX :
 
             deathCoroutine = null;
         }
+
+        CompleteDeathEffect(notifyPresentationFinished: false);
     }
 
     private void OnValidate()
