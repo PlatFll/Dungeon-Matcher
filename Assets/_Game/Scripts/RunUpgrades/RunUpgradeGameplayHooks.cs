@@ -315,45 +315,31 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
 
     private void HandleBoardClearOutcomeResolved(BoardClearOutcome outcome)
     {
-        if (energy == null ||
-            player == null ||
+        BoardClearContext clear = outcome.ClearContext;
+        if (player == null ||
             !player.IsInitialized ||
             player.IsDefeated ||
-            outcome.ClearContext.Source != BoardClearSource.ColorCrystal ||
-            outcome.ClearContext.GemCount <= 0 ||
-            !RunUpgradeResolver.HasMechanic(
+            clear.GemCount <= 0)
+        {
+            return;
+        }
+
+        if (energy != null &&
+            clear.Source == BoardClearSource.ColorCrystal &&
+            RunUpgradeResolver.HasMechanic(
                 RunUpgradeMechanic.ChromaticConductor,
                 runtime
             ))
         {
-            return;
+            energy.AddEnergy(clear.GemCount);
         }
 
-        energy.AddEnergy(outcome.ClearContext.GemCount);
-    }
-
-    private void HandleBeforeGemDamage(GemDamageContext context)
-    {
-        if (context == null ||
-            player == null ||
-            context.Player != player ||
-            !(player.ActiveAbility is CrackedGemsAbilityDefinition cracked) ||
-            context.ClearSource != BoardClearSource.Ability ||
-            !context.ClearContext.GrantsSpecialEnergy ||
-            context.GemCount != 1 ||
-            context.OriginalDamage != cracked.CrackedGemDamage)
-        {
-            return;
-        }
-
-        context.Damage =
-            RunUpgradeResolver.ResolveCrackedGemDamage(
-                context.Damage,
-                cracked,
-                runtime
-            );
-
-        if (!RunUpgradeResolver.HasMechanic(
+        // Count the actual board-reported center once, not a damage attempt.
+        // A committed explosion still resolves if poison/earlier clears have
+        // already ended the encounter. No enemy hit is required for this card.
+        if (!(player.ActiveAbility is CrackedGemsAbilityDefinition) ||
+            !IsFixedAbilityExplosionCenter(clear) ||
+            !RunUpgradeResolver.HasMechanic(
                 RunUpgradeMechanic.ResonantCracks,
                 runtime
             ))
@@ -362,16 +348,40 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         }
 
         resonantCrackCount++;
-
         if (resonantCrackCount >= ResonantCracksFrequency)
         {
             resonantCrackCount = 0;
-
-            if (energy != null)
-            {
-                energy.AddEnergy(ResonantCracksEnergy);
-            }
+            if (energy != null) energy.AddEnergy(ResonantCracksEnergy);
         }
+    }
+
+    private static bool IsFixedAbilityExplosionCenter(BoardClearContext clear)
+    {
+        return clear.Source == BoardClearSource.Ability &&
+               clear.GrantsSpecialEnergy &&
+               clear.IsFixedDamageExplosionCenter &&
+               clear.GemCount == 1;
+    }
+
+    private void HandleBeforeGemDamage(GemDamageContext context)
+    {
+        if (context == null ||
+            player == null ||
+            context.Player != player ||
+            !(player.ActiveAbility is CrackedGemsAbilityDefinition cracked) ||
+            !IsFixedAbilityExplosionCenter(context.ClearContext))
+        {
+            return;
+        }
+
+        // Damage modifiers remain in the existing pre-damage hook. Only
+        // detonation-based reward bookkeeping moved to the board outcome.
+        context.Damage =
+            RunUpgradeResolver.ResolveCrackedGemDamage(
+                context.Damage,
+                cracked,
+                runtime
+            );
     }
 
     private bool CheckAnyPoisonedEnemy()

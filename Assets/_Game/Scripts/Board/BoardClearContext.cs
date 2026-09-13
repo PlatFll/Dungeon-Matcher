@@ -30,6 +30,11 @@ public readonly struct BoardClearContext
     // Explicitly opted-in player explosions retain Ability source attribution.
     public bool GrantsSpecialEnergy { get; }
 
+    // Set by the authoritative explosion reporter for a fixed-damage center,
+    // never inferred from a damage amount that collateral may also happen to do.
+    // This classification does not grant energy or change the clear's source.
+    public bool IsFixedDamageExplosionCenter { get; }
+
     public bool IsMatchClear =>
         Source == BoardClearSource.Match;
 
@@ -46,7 +51,8 @@ public readonly struct BoardClearContext
         BoardMatchType matchType =
             BoardMatchType.Other,
         int triggerGemCount = -1,
-        bool grantsSpecialEnergy = false)
+        bool grantsSpecialEnergy = false,
+        bool isFixedDamageExplosionCenter = false)
     {
         GemType =
             gemType;
@@ -78,6 +84,8 @@ public readonly struct BoardClearContext
             source == BoardClearSource.Bomb ||
             source == BoardClearSource.ColorCrystal ||
             source == BoardClearSource.DoubleColorCrystal;
+
+        IsFixedDamageExplosionCenter = isFixedDamageExplosionCenter;
 
         MatchType =
             matchType;
