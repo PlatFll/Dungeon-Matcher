@@ -75,6 +75,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private float reservedAttackTime;
     private bool resumeCooldown;
     private bool commandedAttackStarting;
+    private bool isStopping;
     private float commandDamageMultiplier = 1f;
     private readonly Dictionary<object, float> damageModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> speedModifiers = new Dictionary<object, float>();
@@ -116,7 +117,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         NextSequenceModifiersChanged?.Invoke(this);
         return result;
     }
-    public bool IsCommandReservedBy(object owner) => ReferenceEquals(commandOwner, owner);
+    public bool IsCommandReservedBy(object owner) => owner != null && ReferenceEquals(commandOwner, owner);
 
     public bool TryReserveCommand(object owner, bool makeReady = false)
     {
@@ -134,7 +135,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool PerformCommandStrike(object owner, float damageMultiplier = 1f)
     {
-        if (!ReferenceEquals(commandOwner, owner) || commandStrike) return false;
+        if (owner == null || !ReferenceEquals(commandOwner, owner) || commandStrike) return false;
         // Mark consumption before callbacks can synchronously cancel the owner.
         commandStrike = true;
         commandedAttackStarting = true;
@@ -148,7 +149,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public void ReleaseCommand(object owner)
     {
-        if (!ReferenceEquals(commandOwner, owner)) return;
+        if (owner == null || !ReferenceEquals(commandOwner, owner)) return;
         if (commandStrike)
         {
             CancelAttackSequence();
@@ -212,6 +213,17 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 remainingAttackTime /
                 enemyActor.AttackInterval
             );
+        }
+    }
+
+    private void OnEnable()
+    {
+        // OnDisable stops the loop; re-enabling an initialized automatic
+        // attacker must restart it. Initial prefab enable is harmless because
+        // CanContinueAttackLoop rejects references not assigned by Initialize.
+        if (attackAutomatically)
+        {
+            TryStartAttacking();
         }
     }
 
@@ -288,7 +300,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public void TryStartAttacking()
     {
-        if (attackCoroutine != null)
+        // A command owns the stored cooldown until its matching release.
+        if (attackCoroutine != null || commandOwner != null || isStopping)
         {
             return;
         }
@@ -306,16 +319,41 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public void StopAttacking()
     {
-        commandOwner = null;
-        if (attackCoroutine != null)
+        if (isStopping)
         {
-            StopCoroutine(attackCoroutine);
-            attackCoroutine = null;
+            return;
         }
 
-        CancelAttackSequence();
-        isRunning = false;
-        remainingAttackTime = 0f;
+        isStopping = true;
+        try
+        {
+            // This is a full stop/reset, unlike ReleaseCommand, which resumes
+            // a valid reservation. No old command may leak into a new life.
+            commandOwner = null;
+            commandStrike = false;
+            commandMadeReady = false;
+            reservedAttackTime = 0f;
+            resumeCooldown = false;
+            commandedAttackStarting = false;
+            commandDamageMultiplier = 1f;
+
+            if (attackCoroutine != null)
+            {
+                StopCoroutine(attackCoroutine);
+                attackCoroutine = null;
+            }
+
+            isRunning = false;
+            remainingAttackTime = 0f;
+            // Releasing the actor action invokes listeners synchronously.
+            // Do not allow those callbacks to start/reserve another attack
+            // while this stop operation is still clearing its ownership.
+            CancelAttackSequence();
+        }
+        finally
+        {
+            isStopping = false;
+        }
     }
 
     public bool PerformAttackImmediately()
@@ -983,6 +1021,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool CanContinueAttackLoop()
     {
         return
+            !isStopping &&
             isActiveAndEnabled &&
             enemyActor != null &&
             enemyActor.IsInitialized &&
