@@ -279,7 +279,6 @@ public sealed class CrystalBoardValidityTests
         grid = new Gem[width, height];
         Set("gems", grid);
         Set("gemSprites", new Sprite[6]);
-        const string names = "RATE SM"; // Mapping below is explicit, not dependent on this string.
         for (int y = 0; y < height; y++)
             for (int x = 0; x < width; x++)
             {
