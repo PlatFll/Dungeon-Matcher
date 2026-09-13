@@ -958,7 +958,8 @@ public partial class BoardController
                     0,
                     BoardClearSource.Ability,
                     BoardMatchType.Other,
-                    grantsSpecialEnergy: true
+                    grantsSpecialEnergy: true,
+                    isFixedDamageExplosionCenter: true
                 );
 
             ReportCrackedCombatContext(
