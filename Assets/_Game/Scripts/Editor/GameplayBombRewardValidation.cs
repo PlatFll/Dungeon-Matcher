@@ -130,8 +130,6 @@ public static class GameplayBombRewardValidation
 
         // All changes below belong only to the disposable Play Mode scene.
         Set(waves, "advanceWavesAutomatically", false);
-        Set(player, "maximumHealth", 100000);
-        Set(player, "currentHealth", 50000);
         enemy = waves.ActiveEnemies[0];
         foreach (EnemyActor actor in waves.ActiveEnemies)
         {
@@ -144,6 +142,8 @@ public static class GameplayBombRewardValidation
         {
             ValidateCrossEnergy();
             ValidateAffinityHealingUpgrade();
+            Set(player, "maximumHealth", 100000);
+            Set(player, "currentHealth", 50000);
 
             GemSpecialType[] bombs =
             {
@@ -157,12 +157,16 @@ public static class GameplayBombRewardValidation
             foreach (GemSpecialType bomb in bombs)
             {
                 // First use the player's ACTUAL mastery selection, read-only.
-                yield return PreservedBomb(bomb, null, true, false);
+                foreach (BoardMatchType shape in new[] { BoardMatchType.StraightFive,
+                    BoardMatchType.LShape, BoardMatchType.TShape, BoardMatchType.CrossShape })
+                    yield return PreservedBomb(bomb, null, true, false, shape);
                 foreach (GemSpecialType reward in rewards)
                     yield return PreservedBomb(bomb, reward, true, true);
                 yield return PreservedBomb(bomb, GemSpecialType.RowBomb, false, true);
             }
-            yield return PreservedBomb(GemSpecialType.None, GemSpecialType.HealingBomb, true, false);
+            foreach (BoardMatchType shape in new[] { BoardMatchType.StraightFive,
+                BoardMatchType.LShape, BoardMatchType.TShape, BoardMatchType.CrossShape })
+                yield return PreservedBomb(GemSpecialType.None, null, true, false, shape);
 
             // End the encounter through its real damage/death completion path.
             foreach (EnemyActor actor in new List<EnemyActor>(waves.ActiveEnemies))
@@ -174,10 +178,10 @@ public static class GameplayBombRewardValidation
             yield return PreservedBomb(GemSpecialType.HealingBomb, GemSpecialType.RowBomb, true, true);
             yield return PreservedBomb(GemSpecialType.ShieldBomb, GemSpecialType.RowBomb, true, true);
             ValidateInactiveWaveAndCaps();
-            ValidateWaveTransition(false, 0f);
-            ValidateWaveTransition(false, 0.15f);
-            ValidateWaveTransition(true, 0f);
-            ValidateWaveTransition(true, 0.15f);
+            yield return ValidateWaveTransition(false, 0f);
+            yield return ValidateWaveTransition(false, 0.15f);
+            yield return ValidateWaveTransition(true, 0f);
+            yield return ValidateWaveTransition(true, 0.15f);
         }
     }
 
@@ -217,12 +221,21 @@ public static class GameplayBombRewardValidation
             int expected = RunUpgradeResolver.ResolveHealing(baseline);
             Check(expected > baseline, "global upgrade increases healing");
             Check(affinity.CalculateHealing(context) == expected, "affinity modifier applied exactly once");
-            Set(player, "currentHealth", 50000);
+            Check(player.MaximumHealth > expected, "healing fixture has enough health capacity");
+            Set(player, "currentHealth", player.MaximumHealth - expected);
             int before = player.CurrentHealth;
             Call(affinity, "HandleBoardClearResolved", context);
             Check(player.CurrentHealth - before == expected, "actual affinity HP reward uses modifier");
             Check(affinity.CalculateHealing(new BoardClearContext(context.GemType, 0, 0, BoardClearSource.Match)) == 0,
                 "zero cleared gems never grant healing");
+            var flask = Resources.Load<RunUpgradeDefinition>("RunUpgrades/RunUpgrade_ReinforcedFlask");
+            Check(flask != null && runtime.TryApply(flask, 5), "bomb-specific healing upgrade accepted");
+            Check(affinity.CalculateHealing(context) == expected, "bomb-specific modifier does not affect affinity");
+            int bombExpected = Mathf.RoundToInt(Mathf.RoundToInt((int)Get(combat, "healingBombHealAmount") * 1.2f) * 1.3f);
+            Check(player.MaximumHealth > bombExpected, "bomb healing fixture has enough capacity");
+            Set(player, "currentHealth", player.MaximumHealth - bombExpected);
+            Check(combat.HealPlayerFromBomb() == bombExpected,
+                "Healing Bomb retains one global and one bomb-specific modifier");
         }
         finally { runtime.ResetRun(); }
         Check(affinity.CalculateHealing(context) == baseline, "no-upgrade behavior restored");
@@ -230,13 +243,19 @@ public static class GameplayBombRewardValidation
     }
 
     private static IEnumerator PreservedBomb(GemSpecialType oldType, GemSpecialType? overrideReward,
-        bool activateSpecials, bool chain)
+        bool activateSpecials, bool chain, BoardMatchType shape = BoardMatchType.CrossShape)
     {
         ResetBoard();
         Set(player, "currentHealth", 50000);
         Set(player, "currentShield", 0);
         Gem first = At(3, 3), second = At(4, 3);
         var match = new HashSet<Gem> { first, second, At(2, 3), At(3, 2), At(3, 4) };
+        if (shape == BoardMatchType.StraightFive)
+            match = new HashSet<Gem> { first, second, At(0, 3), At(1, 3), At(2, 3) };
+        else if (shape == BoardMatchType.LShape)
+            match = new HashSet<Gem> { first, second, At(2, 3), At(2, 2), At(2, 1) };
+        else if (shape == BoardMatchType.TShape)
+            match = new HashSet<Gem> { first, second, At(2, 3), At(3, 2), At(3, 1) };
         Sprite[] sprites = (Sprite[])Get(board, "gemSprites");
         foreach (Gem gem in match) gem.SetType(GemType.Ruby, sprites[(int)GemType.Ruby]);
         first.SetSpecialType(oldType);
@@ -245,6 +264,10 @@ public static class GameplayBombRewardValidation
         var requests = (List<SpecialGemCreationRequest>)Call(board, "BuildSpecialGemCreationRequests", match, first, null);
         Check(requests.Count == 1 && requests[0].GemToPreserve == first,
             "real shape selection preserves the existing bomb cell");
+        Check((BoardMatchType)Call(board, "DetermineMatchType", new List<Gem>(match), true) == shape,
+            "fixture classified as " + shape);
+        Check(requests[0].SpecialType == GemMasteryRuntimeResolver.ResolveSpecialType(shape),
+            "actual saved mastery controls " + shape + " creation");
         GemSpecialType reward = overrideReward ?? requests[0].SpecialType;
         requests[0] = new SpecialGemCreationRequest(first, reward);
 
@@ -281,6 +304,10 @@ public static class GameplayBombRewardValidation
             Call(board, "BuildBombExpandedClearSet", args);
             Check(effects == 0, "repeated blast planning is effect-free");
             Check(expanded.Contains(first), "preserved bomb belongs to authoritative activation set");
+            if (oldType != GemSpecialType.None)
+                for (int y = 2; y <= 4; y++)
+                    for (int x = 2; x <= 4; x++)
+                        Check(expanded.Contains(At(x, y)), "old bomb retains its complete 3x3 footprint");
             yield return BoardRoutine((IEnumerator)Call(board, "ClearMatches", expanded, requests, activateSpecials));
             int expected = activateSpecials && oldType != GemSpecialType.None ? (chain ? 2 : 1) : 0;
             Check(effects == expected, $"{oldType} -> {reward}: expected {expected} commits, got {effects}");
@@ -340,7 +367,7 @@ public static class GameplayBombRewardValidation
         public bool IsBlockingWaveProgression => Holding;
     }
 
-    private static void ValidateWaveTransition(bool withGate, float delay)
+    private static IEnumerator ValidateWaveTransition(bool withGate, float delay)
     {
         Check(!waves.IsWaveActive && !board.IsBusy, "transition fixture starts idle between encounters");
         float originalDelay = (float)Get(waves, "delayBeforeNextWave");
@@ -348,25 +375,50 @@ public static class GameplayBombRewardValidation
         waves.RegisterProgressionGate(gate);
         int completedWave = waves.CurrentWave;
         Set(waves, "delayBeforeNextWave", delay);
-        IEnumerator transition = (IEnumerator)Call(waves, "AdvanceToNextWaveWhenReady", completedWave);
+        int starts = 0;
+        void Started(int wave) { Check(wave == completedWave + 1 && !board.IsBusy, "next wave starts on idle board"); starts++; }
+        void Spawned(EnemyActor actor) { Check(!board.IsBusy, "enemy spawn never overlaps old board work"); actor.GetComponent<EnemyAutoAttack>()?.StopAttacking(); }
+        waves.WaveStarted += Started;
+        waves.EnemySpawned += Spawned;
+        Coroutine transition = waves.StartCoroutine((IEnumerator)Call(waves, "AdvanceToNextWaveWhenReady", completedWave));
         try
         {
-            // Deliberately drive the IEnumerator at yield boundaries: the bug
-            // is a missing condition AFTER the delay, not the duration of it.
-            Check(transition.MoveNext(), "transition reaches its delay/cleanup yield");
-            if (withGate) Check(transition.MoveNext(), "held progression gate waits");
+            // Acquire the board AFTER the transition reached its initial delay.
             Set(board, "isBusy", true);
+            double deadline = EditorApplication.timeSinceStartup + delay + 0.1d;
+            yield return Until(() => EditorApplication.timeSinceStartup >= deadline, "real transition delay");
+            Check(starts == 0 && waves.CurrentWave == completedWave && !waves.IsWaveActive,
+                "transition cannot spawn into newly acquired board ownership");
+            if (withGate)
+            {
+                Set(board, "isBusy", false);
+                yield return null;
+                yield return null;
+                Check(starts == 0 && !waves.IsWaveActive, "idle board still waits for held upgrade gate");
+                Set(board, "isBusy", true);
+            }
             gate.Holding = false;
             for (int frame = 0; frame < 3; frame++)
             {
-                Check(transition.MoveNext() && transition.Current == null, "transition waits for newly busy board");
+                yield return null;
                 Check(waves.CurrentWave == completedWave && !waves.IsWaveActive,
                     "no next-wave spawn during the new board resolution");
             }
+            Set(board, "isBusy", false);
+            yield return Until(() => starts == 1 && !(bool)Get(waves, "isSpawningWave"), "progression resumes after ownership release");
+            yield return null;
+            Check(starts == 1 && waves.CurrentWave == completedWave + 1, "progression resumes exactly once");
+            foreach (EnemyActor actor in waves.ActiveEnemies)
+                Check(actor.CurrentHealth == actor.MaxHealth &&
+                    !(actor.GetComponent<EnemyPoisonStatus>()?.IsPoisoned ?? false), "new enemies have fresh HP and no old poison");
         }
         finally
         {
-            (transition as IDisposable)?.Dispose();
+            waves.StopCoroutine(transition);
+            waves.WaveStarted -= Started;
+            waves.EnemySpawned -= Spawned;
+            waves.ClearCurrentWave();
+            Set(waves, "currentWave", completedWave);
             Set(board, "isBusy", false);
             Set(waves, "delayBeforeNextWave", originalDelay);
             waves.UnregisterProgressionGate(gate);
@@ -435,7 +487,7 @@ public static class GameplayBombRewardValidation
     }
     private static object Call(object target, string name, params object[] args)
     {
-        foreach (MethodInfo method in target.GetType().GetMethods(Flags))
+        foreach (MethodInfo method in target.GetType().GetMethods(Flags | BindingFlags.Static))
             if (method.Name == name && method.GetParameters().Length == args.Length)
                 return method.Invoke(target, args);
         throw new MissingMethodException(target.GetType().Name, name);

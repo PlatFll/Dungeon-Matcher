@@ -5,7 +5,7 @@ Branch: `fix/gameplay-bomb-reward-audit`.
 
 ## Status and scope
 
-This is a source-level audit with proposed fixes. Unity compilation, execution of the new validator, existing validators, visual playtesting and physical-device testing have **NOT RUN** in the GitHub-only editing environment. Do not treat the existence of a validator as a passing result. Keep this work in a draft PR until local validation is recorded.
+The original GitHub-only source audit was followed by local Unity 6000.3.19f1 compilation, automated validation, and pointer-driven Game-scene playtesting on 2026-09-13. Local results and fixture corrections are recorded below. Physical-device testing was not performed.
 
 The repository tree was inventoried. Detailed review focused on the gameplay paths involved in the reported symptom: ordinary match/cascade resolution, special creation, bomb expansion and shatter-time commitment, single/double/remote crystal paths, Cracked Gems, mining/targeted environmental removals, clear reporting, player HP/shield and affinity healing, ability activation/energy, enemy damage/poison, wave completion and intermission gates, Gem Mastery loadouts/settings/resolution, run-upgrade ownership/resolvers/hooks/drafting, existing regression fixtures, and relevant serialized Game-scene/upgrade values.
 
@@ -77,20 +77,40 @@ The opt-in fixture uses disposable Play Mode state and requires scene reload. It
 
 Coverage includes:
 
-- real special-creation selection retaining an old bomb's coordinate;
+- real L/T/Cross/Straight-5 classification and special-creation selection retaining an old bomb's coordinate, using the player's saved mastery choices read-only;
 - Healing/Shield/Poison seeds, each paired with Row/Column/Crystal/Healing/Shield/Poison replacement rewards;
 - repeated expansion remaining effect-free;
 - two overlapping bombs committing twice total, not once or more than twice;
 - old effect before replacement assignment, correct shatter timing for destroyed chained bombs, replacement survival;
-- an ordinary preserved gem not activating its newly created Healing Bomb;
+- an ordinary preserved gem not activating its newly created special for each saved high-order mastery choice;
 - explicit non-activation paths;
 - utility commitments after the real encounter's damage/death completion;
 - inactive-wave enemy damage/poison rejection, living-player utility acceptance, caps, defeat and initialization guards;
 - Cross energy in damaging/non-damaging cases and ordinary Ability-source exclusion;
-- Strong Remedy affecting calculated and actual affinity HP reward once, with baseline restoration;
-- transition yield-boundary checks for zero/nonzero delay and held/released gates when the board becomes busy again.
+- Strong Remedy affecting calculated and actual affinity HP reward once, with baseline restoration; combined Strong Remedy/Reinforced Flask retaining the existing global and bomb-specific Healing Bomb modifier path;
+- real-time transition checks for zero/nonzero delay and held/released gates when the board becomes busy again, followed by exactly one successful next-wave start with fresh enemy HP and poison state.
 
-The transition fixture drives the existing IEnumerator at yield boundaries to test the missing condition; it is not a real-time duration test. Also manually test an actual next-wave spawn after release, ordinary gameplay swaps during the transition window, and the wave-5 choice UI.
+The transition fixture runs the production coroutine on Unity and acquires board ownership after its initial delay begins. It verifies both a held gate with an idle board and a released gate with a busy board, then releases ownership and observes successful spawning. The actual wave-5 choice UI is covered separately by the manual session.
+
+## Local validation record
+
+The original validator's HP fixture was invalidated by upgrade callbacks restoring the player's normal maximum HP. The large temporary HP fixture now starts after affinity-upgrade validation. Actual affinity healing first asserts sufficient maximum HP, then starts exactly the expected healing amount below that cap. Production HP, healing values, shield capacity, and upgrade balance were not changed.
+
+The expanded Gameplay Bomb Rewards suite passed 46 scenarios. Gameplay Edge Cases, Gameplay Supplementary Cases, and Enemy Stagger Meter passed. Unity Test Runner passed all six RunUpgradeSystemTests with zero failures or skipped tests. The other existing NUnit suite is for pixel layout, outside this gameplay change; board, crystal, ability, and wave regressions are exercised by the named Play Mode validators.
+
+Saved mastery remained Straight-5 = Color Crystal, L = Healing Bomb, T = Shield Bomb, Cross = Poison Bomb. No PlayerPrefs writes or preference resets were used.
+
+Pointer-driven playtests used disposable runtime board fixtures in the actual Game scene and observed visual effects alongside actor events, energy totals, move completion, and wave events:
+
+- Normal Poison, Healing, and Shield Bomb activation; two-bomb chains for each type. Healing granted 20 HP per bomb, poison applied once per bomb, and shield stopped at the existing 30 cap.
+- Row Bomb collateral into Healing Bomb, Column Bomb collateral into Poison Bomb, and Shield Bomb collateral into a protected/refilled Color Crystal. Broader directional/crystal permutations also passed the existing automated validator.
+- Color Crystal combined with each mastery bomb: the fixture's 14 Ruby gems converted and detonated; Healing and Poison produced 14 utility events, while Shield correctly saturated its cap.
+- Bardley's actual ability button triggered Healing, Poison, and Shield collateral. The two Healing/Poison bombs each committed once; shield respected its cap. Ability energy matched entitled clears.
+- Each old utility bomb participated in a real T-shaped swap, applied its effect once, and survived as the newly earned Shield Bomb without immediate self-activation.
+- Wave-ending Healing and Shield Bombs were tested with a disposable longer shatter hold to ensure the encounter ended before utility commitment. Logs showed wave completion while the board was busy, the utility event while the wave was inactive, board settlement, and only then the next-wave spawn. The new enemies retained full HP.
+- A runtime wave-5 completion fixture displayed the actual three-card choice and held progression for over 20 seconds. One pointer selection released it and wave 6 started once.
+
+Every completed manual board action settled; recorded energy matched expected clear rewards. No new production defect was found. Temporary execution adapters, runtime fixtures, logs, and screenshots are excluded from the PR. The repository-required Unity-closed compilation result is recorded in the final PR validation report.
 
 ## Required local merge gate
 
