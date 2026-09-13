@@ -37,7 +37,7 @@ public sealed class PlayerAbilityController :
             : 0;
 
     public bool IsAbilityActive =>
-        activeRuntime != null &&
+        IsRuntimeAlive(activeRuntime) &&
         activeRuntime.IsActive;
 
     public float ChargeNormalized
@@ -66,12 +66,13 @@ public sealed class PlayerAbilityController :
             CharacterAbilityDefinition definition =
                 ActiveAbility;
 
-            if (definition == null ||
+            if (!isActiveAndEnabled ||
+                definition == null ||
                 playerActor == null ||
                 playerAbilityEnergy == null ||
                 !playerActor.IsInitialized ||
                 playerActor.IsDefeated ||
-                activeRuntime == null ||
+                !IsRuntimeAvailable(activeRuntime) ||
                 activeRuntime.IsActive)
             {
                 return false;
@@ -110,7 +111,7 @@ public sealed class PlayerAbilityController :
 
     private void OnDisable()
     {
-        if (activeRuntime != null &&
+        if (IsRuntimeAlive(activeRuntime) &&
             activeRuntime.IsActive)
         {
             activeRuntime.Cancel();
@@ -126,7 +127,8 @@ public sealed class PlayerAbilityController :
         CharacterAbilityDefinition definition =
             ActiveAbility;
 
-        if (definition == null ||
+        if (!isActiveAndEnabled ||
+            definition == null ||
             playerActor == null ||
             playerAbilityEnergy == null ||
             !playerActor.IsInitialized ||
@@ -135,13 +137,13 @@ public sealed class PlayerAbilityController :
             return false;
         }
 
-        if (activeRuntime == null ||
+        if (!IsRuntimeAlive(activeRuntime) ||
             !activeRuntime.Supports(definition))
         {
             RefreshRuntime();
         }
 
-        if (activeRuntime == null ||
+        if (!IsRuntimeAvailable(activeRuntime) ||
             activeRuntime.IsActive ||
             !activeRuntime.CanActivate(definition))
         {
@@ -186,7 +188,7 @@ public sealed class PlayerAbilityController :
 
     public void CancelActiveAbility()
     {
-        if (activeRuntime == null ||
+        if (!IsRuntimeAlive(activeRuntime) ||
             !activeRuntime.IsActive)
         {
             return;
@@ -197,6 +199,13 @@ public sealed class PlayerAbilityController :
 
     public void RefreshRuntime()
     {
+        // A disabled coordinator must not reinstall callbacks or runtimes.
+        // OnEnable performs the normal discovery and subscription again.
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         CharacterAbilityDefinition definition =
             ActiveAbility;
 
@@ -207,11 +216,14 @@ public sealed class PlayerAbilityController :
                 activeRuntime,
                 newRuntime))
         {
+            // OnDisable removed this subscription even when the runtime
+            // instance survived. The idempotent helper restores it once.
+            SubscribeToRuntime();
             StateChanged?.Invoke();
             return;
         }
 
-        if (activeRuntime != null &&
+        if (IsRuntimeAlive(activeRuntime) &&
             activeRuntime.IsActive)
         {
             activeRuntime.Cancel();
@@ -224,6 +236,21 @@ public sealed class PlayerAbilityController :
         SubscribeToRuntime();
 
         StateChanged?.Invoke();
+    }
+
+    private static bool IsRuntimeAlive(IPlayerAbilityRuntime runtime)
+    {
+        // Interface references do not use Unity's destroyed-object null check.
+        return runtime != null &&
+               (!(runtime is UnityEngine.Object unityObject) ||
+                unityObject != null);
+    }
+
+    private static bool IsRuntimeAvailable(IPlayerAbilityRuntime runtime)
+    {
+        return IsRuntimeAlive(runtime) &&
+               (!(runtime is Behaviour behaviour) ||
+                behaviour.isActiveAndEnabled);
     }
 
     private IPlayerAbilityRuntime FindRuntimeFor(
@@ -242,7 +269,8 @@ public sealed class PlayerAbilityController :
         foreach (MonoBehaviour component
                  in components)
         {
-            if (component is
+            if (component != null &&
+                component is
                     IPlayerAbilityRuntime runtime &&
                 runtime.Supports(definition))
             {
@@ -371,7 +399,7 @@ public sealed class PlayerAbilityController :
 
     private void SubscribeToRuntime()
     {
-        if (activeRuntime == null)
+        if (!isActiveAndEnabled || !IsRuntimeAlive(activeRuntime))
         {
             return;
         }
@@ -385,7 +413,7 @@ public sealed class PlayerAbilityController :
 
     private void UnsubscribeFromRuntime()
     {
-        if (activeRuntime == null)
+        if (!IsRuntimeAlive(activeRuntime))
         {
             return;
         }
@@ -397,7 +425,7 @@ public sealed class PlayerAbilityController :
     private void HandlePlayerInitialized(
         PlayerActor initializedPlayer)
     {
-        if (activeRuntime != null &&
+        if (IsRuntimeAlive(activeRuntime) &&
             activeRuntime.IsActive)
         {
             activeRuntime.Cancel();

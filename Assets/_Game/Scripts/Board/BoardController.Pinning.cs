@@ -761,6 +761,20 @@ public partial class BoardController
 
     private void ReleaseAllPinsForEmergencyReshuffle()
     {
+        // Retire the concrete targets as well as their reservation metadata.
+        // Otherwise a queued freeze can return after reshuffling as a bolt,
+        // because its frozen tag was cleared while its TargetGem survived.
+        // Keep requests in the queue for normal completion/ownership cleanup;
+        // execution-time top-ups and other mutation kinds are not cancelled.
+        foreach (BoardMutationRequest request in pendingBoardMutations)
+        {
+            if (request != null &&
+                request.Kind == BoardMutationKind.PinRandomGem)
+            {
+                request.TargetGem = null;
+            }
+        }
+
         pendingPinTargetOwners.Clear();
         pendingFrozenPinTargets.Clear();
 

@@ -456,9 +456,10 @@ public class Gem :
             return;
         }
 
-        board.BeginPointer(
+        board.BeginPointerGesture(
             this,
-            eventData.position
+            eventData.position,
+            eventData.pointerId
         );
     }
 
@@ -475,9 +476,10 @@ public class Gem :
             return;
         }
 
-        board.UpdatePointerDrag(
+        board.UpdatePointerGesture(
             this,
-            eventData.position
+            eventData.position,
+            eventData.pointerId
         );
     }
 
@@ -494,9 +496,10 @@ public class Gem :
             return;
         }
 
-        board.EndPointer(
+        board.EndPointerGesture(
             this,
-            eventData.position
+            eventData.position,
+            eventData.pointerId
         );
     }
 

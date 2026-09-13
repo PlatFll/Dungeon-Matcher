@@ -179,6 +179,18 @@ public sealed class TownMarshalEnemyAbility :
         }
     }
 
+    private bool IsStaggerBlockingSpecial()
+    {
+        EnemyStagger stagger = enemyActor != null
+            ? enemyActor.GetComponent<EnemyStagger>()
+            : null;
+
+        // Buildup and post-stagger immunity do not prevent acting. Only an
+        // active stagger defers a new summon/rally; existing effects keep
+        // their established lifetimes.
+        return stagger != null && stagger.IsStaggered;
+    }
+
     private void TryUseReadyAbility()
     {
         if (isAttemptingReadyAbility ||
@@ -191,7 +203,8 @@ public sealed class TownMarshalEnemyAbility :
             return;
         }
 
-        if (boardController.IsBusy ||
+        if (IsStaggerBlockingSpecial() ||
+            boardController.IsBusy ||
             enemyActor.HasAnimationActionInProgress ||
             !CanUseAnyAbility())
         {
@@ -675,7 +688,8 @@ public sealed class TownMarshalEnemyAbility :
                !enemyActor.IsDefeated &&
                enemyActor.IsSpecialReady)
         {
-            if (!boardController.IsBusy &&
+            if (!IsStaggerBlockingSpecial() &&
+                !boardController.IsBusy &&
                 !enemyActor.HasAnimationActionInProgress &&
                 CanUseAnyAbility())
             {

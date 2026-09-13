@@ -102,6 +102,8 @@ public sealed class CombatController : MonoBehaviour
 
     public event Action<GemDamageContext> BeforeGemDamage;
     public event Action<GemDamageContext, int> GemDamageResolved;
+    // Actual receiving actor and HP loss; shield-only hits still report zero HP.
+    // The clear context retains the originally matched gem color/source.
     public event Action<EnemyActor, GemDamageContext, int>
         EnemyDamagedByGemClear;
 
@@ -191,25 +193,24 @@ public sealed class CombatController : MonoBehaviour
                 continue;
             }
 
-            int healthBeforeDamage = enemy.CurrentHealth;
+            EnemyDamageResult result =
+                enemy.ResolveDirectDamage(resolvedTargetDamage);
 
-            bool damageApplied =
-                enemy.TryTakeDamage(resolvedTargetDamage);
-
-            if (!damageApplied)
+            if (!result.Applied)
             {
                 continue;
             }
 
-            int actualDamage = Mathf.Max(
-                0,
-                healthBeforeDamage - enemy.CurrentHealth
-            );
+            EnemyActor damagedEnemy = result.Recipient;
+            int actualDamage = result.HealthDamage;
+            string damagedEnemyName = damagedEnemy != null && damagedEnemy.Definition != null
+                ? damagedEnemy.Definition.DisplayName
+                : "defeated enemy";
 
             enemiesHit++;
 
             EnemyDamagedByGemClear?.Invoke(
-                enemy,
+                damagedEnemy,
                 damageContext,
                 actualDamage
             );
@@ -219,8 +220,8 @@ public sealed class CombatController : MonoBehaviour
                 $"{clearContext.GemType} gem(s) from " +
                 $"{clearContext.Source} dealt " +
                 $"{actualDamage} damage to " +
-                $"{enemy.Definition.DisplayName}.",
-                enemy
+                $"{damagedEnemyName}.",
+                damagedEnemy
             );
         }
 

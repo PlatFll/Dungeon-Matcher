@@ -213,7 +213,6 @@ public sealed class RoyalDecreeRuntime :
             }
 
             EnemyActor damagedTarget = currentTarget;
-            int healthBeforeDamage = damagedTarget.CurrentHealth;
 
             int resolvedTargetDamage =
                 RunUpgradeResolver.ResolveEnemyDamage(
@@ -221,27 +220,19 @@ public sealed class RoyalDecreeRuntime :
                     damagedTarget
                 );
 
-            bool damageSucceeded =
-                damagedTarget.TryTakeDamage(resolvedTargetDamage);
+            EnemyDamageResult result =
+                damagedTarget.ResolveDirectDamage(resolvedTargetDamage);
 
-            if (!damageSucceeded)
-            {
-                continue;
-            }
-
-            int actualDamage = Mathf.Max(
-                0,
-                healthBeforeDamage - damagedTarget.CurrentHealth
-            );
-
-            if (actualDamage <= 0)
+            // Keep the established HP-only hit event, but report intercepted
+            // HP loss on its real recipient rather than the unchanged target.
+            if (result.HealthDamage <= 0)
             {
                 continue;
             }
 
             HitResolved?.Invoke(
-                damagedTarget,
-                actualDamage,
+                result.Recipient,
+                result.HealthDamage,
                 context
             );
         }

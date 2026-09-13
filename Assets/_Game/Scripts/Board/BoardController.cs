@@ -1747,7 +1747,9 @@ public partial class BoardController : MonoBehaviour
             ShuffleList(shuffledLayout);
 
             replacementTypes =
-                GeneratePlayableTypeGrid();
+                GeneratePlayableTypeGridInSnapshot(
+                    BuildCrystalGrid(shuffledLayout)
+                );
         }
 
         Gem[,] newGrid =
@@ -1886,15 +1888,19 @@ public partial class BoardController : MonoBehaviour
 
             GemType[,] candidateGrid =
                 BuildTypeGrid(candidate);
+            bool[,] candidateCrystals =
+                BuildCrystalGrid(candidate);
 
-            if (HasAnyMatches(
-                    candidateGrid))
+            if (HasAnyMatchesInSnapshot(
+                    candidateGrid,
+                    candidateCrystals))
             {
                 continue;
             }
 
-            if (!HasAvailableMove(
-                    candidateGrid))
+            if (!HasAvailableMoveInSnapshot(
+                    candidateGrid,
+                    candidateCrystals))
             {
                 continue;
             }
@@ -2037,7 +2043,33 @@ public partial class BoardController : MonoBehaviour
         return typeGrid;
     }
 
+    private bool[,] BuildCrystalGrid(List<Gem> layout)
+    {
+        // Match BuildTypeGrid's candidate ordering, not the gems' old live
+        // coordinates. Reshuffling preserves special identities while moving
+        // them, so the candidate needs its own colorless-crystal mask.
+        bool[,] crystalGrid = new bool[width, height];
+        int index = 0;
+        for (int row = 0; row < height; row++)
+        {
+            for (int column = 0; column < width; column++)
+            {
+                if (!IsCellPlayable(column, row)) continue;
+                if (index >= layout.Count) return crystalGrid;
+                Gem gem = layout[index++];
+                crystalGrid[column, row] = gem != null &&
+                    gem.SpecialType == GemSpecialType.ColorCrystal;
+            }
+        }
+        return crystalGrid;
+    }
+
     private GemType[,] GeneratePlayableTypeGrid()
+    {
+        return GeneratePlayableTypeGridInSnapshot(null);
+    }
+
+    private GemType[,] GeneratePlayableTypeGridInSnapshot(bool[,] crystalGrid)
     {
         for (int attempt = 0;
              attempt < 500;
@@ -2131,7 +2163,7 @@ public partial class BoardController : MonoBehaviour
                 }
             }
 
-            if (HasAvailableMove(typeGrid))
+            if (HasAvailableMoveInSnapshot(typeGrid, crystalGrid))
             {
                 return typeGrid;
             }
@@ -2146,71 +2178,14 @@ public partial class BoardController : MonoBehaviour
 
     private bool HasAvailableMove()
     {
-        /*
-         * A color crystal can be activated by swapping it
-         * with any adjacent movable gem, including another crystal.
-         */
-        for (int row = 0;
-             row < height;
-             row++)
-        {
-            for (int column = 0;
-                 column < width;
-                 column++)
-            {
-                Gem crystal =
-                    GetGem(
-                        column,
-                        row
-                    );
+        if (gems == null) return false;
 
-                if (crystal == null ||
-                    IsGemPinned(crystal) ||
-                    crystal.SpecialType !=
-                        GemSpecialType.ColorCrystal)
-                {
-                    continue;
-                }
-
-                Gem left =
-                    GetGem(
-                        column - 1,
-                        row
-                    );
-
-                Gem right =
-                    GetGem(
-                        column + 1,
-                        row
-                    );
-
-                Gem below =
-                    GetGem(
-                        column,
-                        row - 1
-                    );
-
-                Gem above =
-                    GetGem(
-                        column,
-                        row + 1
-                    );
-
-                bool hasValidCrystalSwap =
-                    IsValidCrystalSwapTarget(left) ||
-                    IsValidCrystalSwapTarget(right) ||
-                    IsValidCrystalSwapTarget(below) ||
-                    IsValidCrystalSwapTarget(above);
-
-                if (hasValidCrystalSwap)
-                {
-                    return true;
-                }
-            }
-        }
-
-        return HasAvailableMove(
-            BuildCurrentTypeGrid()
+        // Reuse the crystal-aware matching predicate already used by hints.
+        // A pinned/inaccessible crystal is not an ordinary gem of its hidden
+        // color and must not manufacture a move for dead-board or pin safety.
+        return HasAvailableMoveInSnapshot(
+            BuildCurrentTypeGrid(),
+            BuildCurrentCrystalGrid()
         );
     }
 
@@ -2227,6 +2202,13 @@ public partial class BoardController : MonoBehaviour
 
     private bool HasAvailableMove(
         GemType[,] typeGrid)
+    {
+        return HasAvailableMoveInSnapshot(typeGrid, null);
+    }
+
+    private bool HasAvailableMoveInSnapshot(
+        GemType[,] typeGrid,
+        bool[,] crystalGrid)
     {
         for (int row = 0;
              row < height;
@@ -2255,8 +2237,9 @@ public partial class BoardController : MonoBehaviour
                         column + 1,
                         row
                     ) &&
-                    SwapCreatesMatch(
+                    SwapCreatesMoveInSnapshot(
                         typeGrid,
+                        crystalGrid,
                         column,
                         row,
                         column + 1,
@@ -2275,8 +2258,9 @@ public partial class BoardController : MonoBehaviour
                         column,
                         row + 1
                     ) &&
-                    SwapCreatesMatch(
+                    SwapCreatesMoveInSnapshot(
                         typeGrid,
+                        crystalGrid,
                         column,
                         row,
                         column,
@@ -2298,6 +2282,19 @@ public partial class BoardController : MonoBehaviour
         int secondColumn,
         int secondRow)
     {
+        return SwapCreatesMoveInSnapshot(
+            typeGrid, null, firstColumn, firstRow, secondColumn, secondRow
+        );
+    }
+
+    private bool SwapCreatesMoveInSnapshot(
+        GemType[,] typeGrid,
+        bool[,] crystalGrid,
+        int firstColumn,
+        int firstRow,
+        int secondColumn,
+        int secondRow)
+    {
         if (!IsCellPlayable(
                 firstColumn,
                 firstRow) ||
@@ -2311,6 +2308,15 @@ public partial class BoardController : MonoBehaviour
                 secondRow))
         {
             return false;
+        }
+
+        // Any movable adjacent crystal swap activates a special, even if the
+        // two hidden colors are equal. Check this before ordinary color equality.
+        if (crystalGrid != null &&
+            (crystalGrid[firstColumn, firstRow] ||
+             crystalGrid[secondColumn, secondRow]))
+        {
+            return true;
         }
 
         GemType firstType =
@@ -2341,13 +2347,15 @@ public partial class BoardController : MonoBehaviour
         ] = firstType;
 
         bool createsMatch =
-            HasMatchAt(
+            HasMatchAtInSnapshot(
                 typeGrid,
+                crystalGrid,
                 firstColumn,
                 firstRow
             ) ||
-            HasMatchAt(
+            HasMatchAtInSnapshot(
                 typeGrid,
+                crystalGrid,
                 secondColumn,
                 secondRow
             );
@@ -2368,6 +2376,24 @@ public partial class BoardController : MonoBehaviour
     private bool HasAnyMatches(
         GemType[,] typeGrid)
     {
+        return HasAnyMatchesInSnapshot(typeGrid, null);
+    }
+
+    private bool HasMatchAtInSnapshot(
+        GemType[,] typeGrid,
+        bool[,] crystalGrid,
+        int column,
+        int row)
+    {
+        return crystalGrid == null
+            ? HasMatchAt(typeGrid, column, row)
+            : HasHintMatchAt(typeGrid, crystalGrid, column, row);
+    }
+
+    private bool HasAnyMatchesInSnapshot(
+        GemType[,] typeGrid,
+        bool[,] crystalGrid)
+    {
         for (int row = 0;
              row < height;
              row++)
@@ -2376,8 +2402,9 @@ public partial class BoardController : MonoBehaviour
                  column < width;
                  column++)
             {
-                if (HasMatchAt(
+                if (HasMatchAtInSnapshot(
                         typeGrid,
+                        crystalGrid,
                         column,
                         row))
                 {

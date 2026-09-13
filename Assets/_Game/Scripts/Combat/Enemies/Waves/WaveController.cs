@@ -125,6 +125,7 @@ public sealed partial class WaveController :
     private Coroutine waveSpawnCoroutine;
 
     private bool isSpawningWave;
+    private object encounterIdentity = new object();
 
     private readonly HashSet<IWaveProgressionGate> progressionGates =
         new HashSet<IWaveProgressionGate>();
@@ -174,19 +175,23 @@ public sealed partial class WaveController :
             return;
         }
 
-        if (waveSpawnCoroutine != null)
+        if (!isActiveAndEnabled)
         {
-            StopCoroutine(
-                waveSpawnCoroutine
-            );
-
-            waveSpawnCoroutine = null;
+            return;
         }
 
-        waveSpawnCoroutine =
-            StartCoroutine(
-                SpawnCurrentWaveRoutine()
-            );
+        // Clear before starting, not from inside the new coroutine: a public
+        // clear must also cancel an old spawn loop waiting between enemies.
+        ClearCurrentWave();
+        object identity = encounterIdentity;
+        Coroutine started = StartCoroutine(SpawnCurrentWaveRoutine());
+
+        // The routine may finish synchronously, or a spawn callback may clear
+        // or replace the encounter before StartCoroutine returns.
+        if (ReferenceEquals(identity, encounterIdentity) && isSpawningWave)
+        {
+            waveSpawnCoroutine = started;
+        }
     }
 
     public void RegisterProgressionGate(IWaveProgressionGate gate)
@@ -235,7 +240,8 @@ public sealed partial class WaveController :
             yield break;
         }
 
-        ClearCurrentWave();
+        object identity = encounterIdentity;
+        int spawningWave = currentWave;
         isSpawningWave = true;
 
         CurrentPlan =
@@ -282,6 +288,8 @@ public sealed partial class WaveController :
              slotIndex < enemySlots.Length;
              slotIndex++)
         {
+            if (!IsCurrentSpawn(identity, spawningWave)) yield break;
+
             EnemySlotUI slot =
                 enemySlots[slotIndex];
 
@@ -347,6 +355,12 @@ public sealed partial class WaveController :
                     assignedGemType
                 );
 
+            if (!IsCurrentSpawn(identity, spawningWave))
+            {
+                if (enemy != null) Destroy(enemy.gameObject);
+                yield break;
+            }
+
             if (enemy == null)
             {
                 continue;
@@ -367,6 +381,7 @@ public sealed partial class WaveController :
             IsWaveActive = true;
 
             EnemySpawned?.Invoke(enemy);
+            if (!IsCurrentSpawn(identity, spawningWave)) yield break;
 
             if (slotIndex < plannedEnemyCount - 1 &&
                 delayBetweenEnemySpawns > 0f)
@@ -377,6 +392,8 @@ public sealed partial class WaveController :
                     );
             }
         }
+
+        if (!IsCurrentSpawn(identity, spawningWave)) yield break;
 
         /*
          * The complete spawn loop has now finished.
@@ -405,13 +422,6 @@ public sealed partial class WaveController :
             yield break;
         }
 
-        /*
-         * The first enemy may have been defeated before the
-         * remaining enemies finished spawning. Recheck wave
-         * completion now that spawning has ended.
-         */
-        TryCompleteWaveAfterDeaths();
-
         Debug.Log(
             $"Wave {currentWave} started using rule " +
             $"'{CurrentPlan.SourceRuleName}'. " +
@@ -421,8 +431,20 @@ public sealed partial class WaveController :
         );
 
         waveSpawnCoroutine = null;
+        WaveStarted?.Invoke(spawningWave);
 
-        WaveStarted?.Invoke(currentWave);
+        // Fast kills during spawning may have queued completion already.
+        // Publish start first, and never finalize a replacement encounter.
+        if (ReferenceEquals(identity, encounterIdentity) && currentWave == spawningWave)
+        {
+            TryCompleteWaveAfterDeaths();
+        }
+    }
+
+    private bool IsCurrentSpawn(object identity, int spawningWave)
+    {
+        return ReferenceEquals(identity, encounterIdentity) &&
+               currentWave == spawningWave && isSpawningWave;
     }
 
     private bool TrySelectFromCategory(
@@ -684,60 +706,28 @@ public sealed partial class WaveController :
         EnemySlotUI slot,
         EnemyActor enemy)
     {
-        if (enemy != null)
+        // An old slot notification or duplicate delivery cannot count a death
+        // twice, or complete a wave to which the enemy never belonged.
+        if (enemy == null || !activeEnemies.Remove(enemy)) return;
+        object identity = encounterIdentity;
+
+        EnemyLifecycleVFX lifecycleVFX =
+            enemy.GetComponent<EnemyLifecycleVFX>();
+
+        if (lifecycleVFX != null)
         {
-            activeEnemies.Remove(enemy);
-
-            EnemyLifecycleVFX lifecycleVFX =
-                enemy.GetComponent<
-                    EnemyLifecycleVFX
-                >();
-
-            if (lifecycleVFX != null)
+            Action completeDeath = TrackEnemyDeathCompletion(enemy);
+            if (!lifecycleVFX.PlayDeathEffect(completeDeath))
             {
-                pendingDeathEffects++;
-
-                bool effectStarted =
-                    lifecycleVFX.PlayDeathEffect(
-                        () =>
-                        {
-                            pendingDeathEffects =
-                                Mathf.Max(
-                                    0,
-                                    pendingDeathEffects - 1
-                                );
-
-                            if (enemy != null)
-                            {
-                                Destroy(
-                                    enemy.gameObject
-                                );
-                            }
-
-                            TryCompleteWaveAfterDeaths();
-                        }
-                    );
-
-                if (!effectStarted)
-                {
-                    pendingDeathEffects =
-                        Mathf.Max(
-                            0,
-                            pendingDeathEffects - 1
-                        );
-
-                    Destroy(
-                        enemy.gameObject
-                    );
-                }
-            }
-            else
-            {
-                Destroy(
-                    enemy.gameObject
-                );
+                completeDeath();
             }
         }
+        else
+        {
+            Destroy(enemy.gameObject);
+        }
+
+        if (!ReferenceEquals(identity, encounterIdentity)) return;
 
         Debug.Log(
             $"Enemy defeated in {slot.name}. " +
@@ -751,6 +741,26 @@ public sealed partial class WaveController :
 
             TryCompleteWaveAfterDeaths();
         }
+    }
+
+    private Action TrackEnemyDeathCompletion(EnemyActor enemy)
+    {
+        object identity = encounterIdentity;
+        bool completed = false;
+        pendingDeathEffects++;
+        return () =>
+        {
+            if (completed) return;
+            completed = true;
+
+            // Old presentation may still finish after its slot was released.
+            // Clean up its own object, but never decrement a newer wave's debt.
+            if (enemy != null) Destroy(enemy.gameObject);
+            if (this == null || !ReferenceEquals(identity, encounterIdentity)) return;
+
+            pendingDeathEffects = Mathf.Max(0, pendingDeathEffects - 1);
+            TryCompleteWaveAfterDeaths();
+        };
     }
 
     private void HandleValidPlayerMoveCompleted(
@@ -823,6 +833,7 @@ public sealed partial class WaveController :
 
         int completedWave =
             currentWave;
+        object identity = encounterIdentity;
 
         Debug.Log(
             $"Wave {completedWave} completed.",
@@ -830,6 +841,9 @@ public sealed partial class WaveController :
         );
 
         WaveCompleted?.Invoke(completedWave);
+
+        // Completion listeners may clear/restart even the same wave number.
+        if (!ReferenceEquals(identity, encounterIdentity)) return;
 
         if (!advanceWavesAutomatically)
         {
@@ -858,6 +872,7 @@ public sealed partial class WaveController :
     private IEnumerator AdvanceToNextWaveWhenReady(
     int completedWave)
     {
+        object identity = encounterIdentity;
         /*
          * The final enemy may die while BoardController is still
          * clearing gems, dropping new gems, or resolving cascades.
@@ -915,7 +930,8 @@ public sealed partial class WaveController :
          * Stop this old transition if something else already
          * changed the wave or spawned enemies.
          */
-        if (currentWave != completedWave ||
+        if (!ReferenceEquals(identity, encounterIdentity) ||
+            currentWave != completedWave ||
             IsWaveActive)
         {
             advanceWaveCoroutine = null;
@@ -946,7 +962,16 @@ public sealed partial class WaveController :
 
     public void ClearCurrentWave()
     {
+        // Reusing a wave number is still a new encounter identity. Invalidate
+        // callbacks before stopping work or destroying any bound objects.
+        encounterIdentity = new object();
         CancelPendingWaveAdvance();
+        if (waveSpawnCoroutine != null)
+        {
+            StopCoroutine(waveSpawnCoroutine);
+            waveSpawnCoroutine = null;
+        }
+        isSpawningWave = false;
 
         pendingDeathEffects = 0;
         waitingForDeathEffects = false;

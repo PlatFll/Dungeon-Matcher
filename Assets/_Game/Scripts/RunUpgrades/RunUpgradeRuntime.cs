@@ -21,13 +21,17 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
     private int cardSeed;
     private int baseMaximumHealth;
     private bool observedPlayerInitialization;
+    private bool isConfigured;
 
     public static RunUpgradeRuntime Current { get; private set; }
 
     public event Action<RunUpgradeDefinition, int> UpgradeChanged;
+    public event Action RunReset;
 
     public RunUpgradeCatalog Catalog => catalog;
     public int CardSeed => cardSeed;
+    public int BaseMaximumHealth => baseMaximumHealth;
+    public int RunRevision { get; private set; }
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.SubsystemRegistration
@@ -68,20 +72,32 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
         PlayerActor runPlayer,
         WaveController waves)
     {
+        // Bootstrap can revisit an already installed system. Rebinding the
+        // same run is not a new run and must not erase cards or reseed drafts.
+        if (isConfigured && catalog == upgradeCatalog &&
+            playerActor == runPlayer && waveController == waves)
+        {
+            SubscribeToPlayer();
+            return;
+        }
+
         UnsubscribeFromPlayer();
+
+        if (isConfigured)
+        {
+            ClearOwnedRunState();
+            RestoreBaseMaximumHealth();
+        }
 
         catalog = upgradeCatalog;
         playerActor = runPlayer;
         waveController = waves;
+        baseMaximumHealth = 0;
+        observedPlayerInitialization = false;
+        isConfigured = true;
 
         ResetRun();
         SubscribeToPlayer();
-
-        if (playerActor != null && playerActor.IsInitialized)
-        {
-            baseMaximumHealth = playerActor.MaximumHealth;
-            observedPlayerInitialization = true;
-        }
 
         if (catalog != null)
         {
@@ -91,11 +107,41 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
 
     public void ResetRun()
     {
+        // Keep the pre-upgrade baseline until the actor has been restored.
+        // Forgetting it first lets temporary max HP become the next run's base.
+        EnsureBaseMaximumHealth();
+        ClearOwnedRunState();
+        RestoreBaseMaximumHealth();
+        observedPlayerInitialization = playerActor != null && playerActor.IsInitialized;
+        if (!observedPlayerInitialization)
+        {
+            baseMaximumHealth = 0;
+        }
+
+        PublishRunReset();
+    }
+
+    private void ClearOwnedRunState()
+    {
         ownedUpgrades.Clear();
         draftRandom = null;
         cardSeed = 0;
-        baseMaximumHealth = 0;
-        observedPlayerInitialization = false;
+    }
+
+    private void RestoreBaseMaximumHealth()
+    {
+        if (playerActor != null && playerActor.IsInitialized && baseMaximumHealth > 0)
+        {
+            // Reset is not a heal or revival. PlayerActor clamps current HP
+            // if needed and continues to own all HP and shield storage.
+            playerActor.SetMaximumHealth(baseMaximumHealth, healAddedAmount: false);
+        }
+    }
+
+    private void PublishRunReset()
+    {
+        RunRevision = unchecked(RunRevision + 1);
+        RunReset?.Invoke();
     }
 
     public int GetStackCount(string upgradeId)
@@ -339,7 +385,7 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
 
     private void SubscribeToPlayer()
     {
-        if (playerActor == null)
+        if (playerActor == null || !isActiveAndEnabled)
         {
             return;
         }
@@ -362,11 +408,14 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
         {
             if (observedPlayerInitialization)
             {
-                ResetRun();
+                ClearOwnedRunState();
             }
 
+            // Initialize has already installed the NEW actor baseline. Never
+            // restore the previous character/override's HP over this value.
             baseMaximumHealth = initializedPlayer.MaximumHealth;
             observedPlayerInitialization = true;
+            PublishRunReset();
         }
     }
 }
