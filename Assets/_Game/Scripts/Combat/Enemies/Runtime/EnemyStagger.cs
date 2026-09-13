@@ -189,7 +189,9 @@ public sealed class EnemyStagger : MonoBehaviour
 
         float added = Mathf.Max(0f, staggerMeterNormalized - before);
 
-        if (staggerMeterNormalized >= 1f)
+        // Fractions such as 50 HP * 0.30 can round just above 15, leaving
+        // an exact-threshold hit a floating-point step below a full meter.
+        if (staggerMeterNormalized >= 1f || Mathf.Approximately(staggerMeterNormalized, 1f))
         {
             float multiplier = enemyActor.Definition != null
                 ? Mathf.Max(0f, enemyActor.Definition.StaggerDurationMultiplier)
@@ -279,7 +281,7 @@ public sealed class EnemyStagger : MonoBehaviour
             case EnemyCategory.Special:
                 healthFraction = specialHealthFraction;
                 break;
-            case EnemyCategory.MiniBoss:
+            case EnemyCategory.Miniboss:
                 healthFraction = miniBossHealthFraction;
                 break;
             case EnemyCategory.Boss:

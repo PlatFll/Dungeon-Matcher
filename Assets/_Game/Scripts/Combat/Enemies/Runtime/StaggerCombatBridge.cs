@@ -42,7 +42,10 @@ public sealed class StaggerCombatBridge :
 
     private void OnEnable()
     {
-        Subscribe();
+        // Retain this component for existing scene references. EnemyStagger
+        // now consumes effective actor damage directly; the legacy clear-hit
+        // subscription would force a stagger before its meter reaches full.
+        enabled = false;
     }
 
     private void Start()
