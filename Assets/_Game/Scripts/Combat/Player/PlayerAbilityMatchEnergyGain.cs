@@ -253,6 +253,9 @@ public sealed class PlayerAbilityMatchEnergyGain :
                     ? damagingLShapeEnergy
                     : nonDamagingLShapeEnergy;
 
+            // Crosses previously shared the T-shape classification. Keeping
+            // a separate mastery reward must not demote their energy to Other.
+            case BoardMatchType.CrossShape:
             case BoardMatchType.TShape:
                 return damagedMatchingEnemy
                     ? damagingTShapeEnergy

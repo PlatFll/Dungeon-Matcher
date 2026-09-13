@@ -400,6 +400,7 @@ public sealed partial class WaveController :
                 this
             );
 
+            isSpawningWave = false;
             waveSpawnCoroutine = null;
             yield break;
         }
@@ -885,7 +886,11 @@ public sealed partial class WaveController :
             yield return null;
         }
 
-        while (IsWaveProgressionBlocked())
+        // A new swap or ability can acquire the board during the delay or
+        // while an intermission gate is held. Both conditions must be clear
+        // in the same frame immediately before spawning the next encounter.
+        while ((boardController != null && boardController.IsBusy) ||
+               IsWaveProgressionBlocked())
         {
             if (!isActiveAndEnabled ||
                 playerActor == null ||
