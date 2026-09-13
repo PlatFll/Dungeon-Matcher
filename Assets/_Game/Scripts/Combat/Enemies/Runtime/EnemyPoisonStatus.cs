@@ -126,27 +126,17 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
                 enemyActor
             );
 
-        int healthBeforeDamage = enemyActor.CurrentHealth;
+        EnemyDamageResult result =
+            enemyActor.ResolveDamageWithoutFeedback(resolvedTickDamage);
 
-        bool damageApplied =
-            enemyActor.TryTakeDamageWithoutFeedback(resolvedTickDamage);
-
-        if (!damageApplied)
+        // HP-only poison feedback stays unchanged. Do not include shield loss
+        // or a separate heal/hit performed by a synchronous actor listener.
+        if (result.HealthDamage <= 0)
         {
             return;
         }
 
-        int actualDamage = Mathf.Max(
-            0,
-            healthBeforeDamage - enemyActor.CurrentHealth
-        );
-
-        if (actualDamage <= 0)
-        {
-            return;
-        }
-
-        TickDamageApplied?.Invoke(this, actualDamage);
+        TickDamageApplied?.Invoke(this, result.HealthDamage);
     }
 
     private void ResolveEnemyActor()
