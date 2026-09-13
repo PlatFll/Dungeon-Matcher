@@ -76,7 +76,17 @@ The authored origin `(0, 0)` is the battle-floor baseline after runtime placemen
 
 Names `Backwall_R01_C01` through `Backwall_R04_C08` identify rows from top to bottom and columns from left to right. Preserve this 8 x 4 arrangement: stones cross slice boundaries, so individual slices are not interchangeable random variants. Extend the wall by repeating the complete pattern without mirroring or rotating it.
 
-`Dungeon_Default/BackWall` contains 16 x 8 cells at x = -8 through 7 and y = 0 through 7, providing overscan for the existing viewport mask. The source pattern is centered across x = -4 through 3 and starts at the floor baseline. The other environment layers remain available for architecture, floor art, and decoration.
+`Dungeon_Default/BackWall` contains 16 x 8 cells at x = -8 through 7 and y = 0 through 7, providing overscan for the existing viewport mask. The source pattern is centered across x = -4 through 3 and starts at the floor baseline.
+
+### Finished default environment art
+
+The recolored wall and new scenery share the 14-color palette at `ArtSource/DungeonEnvironment/Dungeon_Matcher_Environment_Final.gpl`. Editable LibreSprite sources, a protected original, a layered preview and the tile-library index are alongside it.
+
+`Assets/_Game/Art/Backgrounds/BattleArea/EnvironmentFinal/` contains eight compatible floor edges, four normal foundation variants plus one cracked variant, modular pillar/arch/alcove/buttress pieces, and six restrained decor accents. These use the same 64-PPU, Point-filtered, uncompressed, full-rectangle import settings as the connected wall. Tile assets have no colliders.
+
+The `Floor` Tilemap holds the walkable ledge at cell y = -1 across x = -8 through 7, with foundation continuing through cell y = -5. Its local Y offset is 48/64 world units: the tile's upper 48 pixels form a walkable flagstone plane above the shared floor baseline, and its lower 16 pixels form the ledge face. This accommodates the existing character placement at different portrait heights through artwork. `Architecture` uses the same local Y offset so its supports meet the back edge of that plane. These are pixel-aligned authored offsets; Grid and Tilemap scales remain 1.
+
+Foundation cells can repeat horizontally and vertically. `Architecture` contains a shallow central arch with two supports and a smaller side alcove. `BackDecor` adds sparse iron fixtures and a worn monster relief. Foundation remains part of the existing Floor layer; the four-layer hierarchy and runtime placement/masking ownership are unchanged.
 
 ## Adding another environment
 
