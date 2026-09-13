@@ -35,6 +35,7 @@ public partial class BoardController
             new Dictionary<Vector2Int, RoyalBannerState>();
 
     private int nextRoyalBannerId;
+    private bool royalBannerClearBatchReady;
 
     public event Action<int> RoyalBannerRemoved;
 
@@ -319,6 +320,7 @@ public partial class BoardController
         int row)
     {
         QueueRoyalBannerGravityOpening(column, row);
+        royalBannerClearBatchReady = true;
     }
 
     /*
@@ -368,6 +370,16 @@ public partial class BoardController
 
     private void Update()
     {
+        // Barricade damage is reported before ClearMatches finishes removing
+        // its gems. Do not consume that partial batch during the clear flash:
+        // moving a banner early could make later gem openings appear above it.
+        // The existing physical-destruction notification releases the batch.
+        if (!royalBannerClearBatchReady)
+        {
+            return;
+        }
+
+        royalBannerClearBatchReady = false;
         ResolvePendingRoyalBannerGravity();
     }
 
