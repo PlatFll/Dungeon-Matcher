@@ -321,7 +321,7 @@ public sealed class CombatController : MonoBehaviour
 
     public int HealPlayerFromBomb()
     {
-        if (!CanResolveCombat())
+        if (!CanResolvePlayerEffect())
         {
             return 0;
         }
@@ -347,7 +347,7 @@ public sealed class CombatController : MonoBehaviour
 
     public int GrantPlayerShieldFromBomb()
     {
-        if (!CanResolveCombat())
+        if (!CanResolvePlayerEffect())
         {
             return 0;
         }
@@ -392,7 +392,7 @@ public sealed class CombatController : MonoBehaviour
         );
     }
 
-    private bool CanResolveCombat()
+    private bool CanResolvePlayerEffect()
     {
         if (playerActor == null)
         {
@@ -400,6 +400,19 @@ public sealed class CombatController : MonoBehaviour
                 "CombatController requires a PlayerActor.",
                 this
             );
+            return false;
+        }
+
+        // Bombs commit their utility effect at shatter, after clear damage.
+        // The last enemy may already have ended the wave while that same
+        // board resolution is still running. Player rewards need no enemy.
+        return playerActor.IsInitialized && !playerActor.IsDefeated;
+    }
+
+    private bool CanResolveCombat()
+    {
+        if (!CanResolvePlayerEffect())
+        {
             return false;
         }
 
@@ -412,11 +425,7 @@ public sealed class CombatController : MonoBehaviour
             return false;
         }
 
-        if (!playerActor.IsInitialized || playerActor.IsDefeated)
-        {
-            return false;
-        }
-
+        // Enemy damage and poison must still belong to an active encounter.
         return waveController.IsWaveActive;
     }
 
