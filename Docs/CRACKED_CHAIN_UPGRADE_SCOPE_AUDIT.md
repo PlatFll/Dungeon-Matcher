@@ -43,19 +43,20 @@ Fixtures use real Resources assets read-only, the current runtime/hooks and boar
 
 These synchronous tests do not execute actual ability acceptance/spending, shatter, refill, cascades, poison timing or whole-scene progression. Their existence is not a PASS.
 
-## Additional read-only coverage and an unresolved configuration discrepancy
+## Additional read-only coverage and confirmed testing override
 
 Reviewed the current GameManager/bootstrap paths, EnemyDatabase eligibility/weighting, encounter composition, spawn profile/standard data, run-upgrade bootstrap/catalog, and relevant Game-scene player/wave fields. Traced Game's enemy database, difficulty profile and wave profile GUIDs to their corresponding assets; traced both Resources player definitions' active-ability GUIDs to their ability assets. This is targeted reference coverage, not proof that every repository GUID or file has been checked.
 
-**Bardley energy cost needs user confirmation, not an automatic balance edit.**
+**User decision, 2026-09-14: Bardley's 1-energy cost is intentional. Keep it unchanged for now.**
 
-- Current referenced `Data/Player Abilities/Ability_CrackedGems.asset` serializes `energyCost: 1`.
-- `CrackedGemsAbilityDefinition` initializes that field to 80, and `Docs/GAME_DESIGN.md` records 80 for Bardley.
+- The user reduced the cost to speed through waves and test later-wave enemies. It is an authorized testing override, not an activation bug or unresolved configuration question.
+- Current referenced `Data/Player Abilities/Ability_CrackedGems.asset` serializes `energyCost: 1`. Preserve that value during this audit, integration and combined validation.
+- `CrackedGemsAbilityDefinition` initializes that field to 80, and `Docs/GAME_DESIGN.md` records 80 for Bardley. The temporary override does not replace the documented non-testing balance or authorize changing the C# default.
 - The asset at `d65f982752a28e3c7bb8b859e74fe4ccd2dec12f` had 80. Its subsequent path history includes `4a161eb7481f0636ee90ddbffc1f1a4bf40b84b0` ("Adding shield knight"), after which the current serialized value is 1.
-- Serialization supplies the runtime getter; changing the C# default would not change this existing asset. The current scene energy capacity is 100, and Royal Decree's asset remains 100 cost.
-- The source/history do not establish whether 1 is an intentional user testing override. Leave the asset unchanged until that intent is confirmed. Do not call it an automatically fixed bug, silently restore 80, or certify production energy pacing using fixtures that assume 80 while the live asset uses 1.
+- Report the actual tested cost. Test fixtures may exercise controlled costs without saving changes, but do not certify normal 80-energy pacing from accelerated 1-energy playtesting.
+- Do not restore 80 until the user explicitly requests removal of the testing override. Royal Decree's cost and the current scene energy capacity remain 100.
 
-The earlier Aegis Reservoir shield-cap observation also remains unchanged.
+This decision supersedes the original PR/backlog request for confirmation. The earlier Aegis Reservoir shield-cap observation remains unchanged.
 
 ## Final combined validation backlog
 
@@ -67,6 +68,6 @@ Integrate #142 then #146 then this branch, alongside the other audit groups, bef
 4. Confirm the next unrelated clear receives no stale counts. Test a batch without centers and an encounter ending during accepted board work. Do not reopen combat or leak damage to the next wave.
 5. Play-test actual shatter-time Healing/Shield/Poison commitment, crystal conversion, refill/cascades, recovery and board locking with the prior fixes. Reporting must not become a second activation point.
 6. Run all 20 new cases with PR #146 and #142 suites, existing Bardley/upgrade/board/gameplay regressions and `Tools/Validate-Unity.ps1` in the authorized final combined pass. Investigate skipped/missing tests instead of counting them as passes.
-7. Record the tested production ability cost separately. Obtain the user's decision before changing the serialized 1-versus-80 setting. Do not commit temporary cost overrides or other fixture scene changes.
+7. Preserve Bardley's user-authorized serialized cost of 1 and record it in the result. No automatic restoration to 80. Do not commit fixture cost overrides or other temporary scene changes.
 
 The source audit remains incomplete: coverage reconciliation and remaining static/serialized-reference checks are separate work. No whole-repository bug-free certification is implied.
