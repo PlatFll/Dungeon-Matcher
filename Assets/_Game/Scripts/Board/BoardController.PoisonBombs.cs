@@ -238,6 +238,7 @@ public partial class BoardController
                     bomb.Column + columnOffset,
                     bomb.Row + rowOffset,
                     activatedBomb,
+                    bomb,
                     pendingConvertedBombs,
                     triggeredCrystalRequests,
                     gemsToClear,

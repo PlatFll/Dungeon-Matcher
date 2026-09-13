@@ -142,8 +142,13 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             if (released || actor == null || actor.IsDefeated) yield break;
             if (attack == null || attack.EnemyActor == null || attack.EnemyActor.IsDefeated) continue;
             // A player resolution or new stagger during the windup must finish first.
-            while (!released && (board.IsBusy || attack.IsPausedByStagger)) yield return null;
+            // The waiting participant can die and finish its death presentation
+            // during that resolution. Never retain an unchecked actor across a yield.
+            while (!released && attack != null && attack.EnemyActor != null &&
+                   !attack.EnemyActor.IsDefeated &&
+                   (board.IsBusy || attack.IsPausedByStagger)) yield return null;
             if (released || actor == null || actor.IsDefeated) yield break;
+            if (attack == null || attack.EnemyActor == null || attack.EnemyActor.IsDefeated) continue;
             attack.EnemyActor.EndSpecialAbilityAnimationAction(); locks.Remove(attack.EnemyActor);
             if (attack.PerformCommandStrike(this, actor.Definition.AssaultDamageMultiplier))
             {

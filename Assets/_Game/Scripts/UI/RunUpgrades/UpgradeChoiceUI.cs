@@ -32,15 +32,28 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         new UpgradeCardView[UpgradeDraftGenerator.DefaultChoiceCount];
     private Func<RunUpgradeDefinition, bool> trySelect;
     private bool selectionPending;
+    private object choiceSession;
     private TMP_FontAsset uiFont;
     private Sprite fallbackArtwork;
     private Texture2D fallbackArtworkTexture;
 
-    public bool IsOpen => overlayRect != null && overlayRect.gameObject.activeSelf;
+    public event Action Hidden;
+    public bool IsOpen => isActiveAndEnabled && overlayRect != null &&
+                          overlayRect.gameObject.activeInHierarchy;
 
     public void Configure(Canvas canvas)
     {
+        // Bootstrap may configure the same run again. Do not hide a live choice
+        // while its coordinator still owns the board/progression gate.
+        if (rootCanvas == canvas && overlayRect != null) return;
+
+        Hide();
         rootCanvas = canvas;
+        if (overlayRect != null && rootCanvas != null)
+        {
+            overlayRect.SetParent(rootCanvas.transform, false);
+            StretchToParent(overlayRect, 0f);
+        }
         BuildIfNeeded();
         Hide();
     }
@@ -49,19 +62,36 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         IReadOnlyList<RunUpgradeDefinition> choices,
         Func<RunUpgradeDefinition, bool> selectionHandler)
     {
+        int count = Mathf.Min(
+            cardViews.Length,
+            choices != null ? choices.Count : 0
+        );
+        if (!isActiveAndEnabled || selectionHandler == null || count == 0)
+        {
+            Hide();
+            return false;
+        }
+        for (int index = 0; index < count; index++)
+        {
+            if (choices[index] == null)
+            {
+                Hide();
+                return false;
+            }
+        }
+
         BuildIfNeeded();
 
         if (overlayRect == null)
         {
+            Hide();
             return false;
         }
 
         trySelect = selectionHandler;
         selectionPending = false;
-        int count = Mathf.Min(
-            cardViews.Length,
-            choices != null ? choices.Count : 0
-        );
+        object session = new object();
+        choiceSession = session;
 
         for (int index = 0; index < cardViews.Length; index++)
         {
@@ -74,7 +104,10 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
                     (index - (count - 1) * 0.5f) * CardStep,
                     -24f
                 );
-                card.Bind(choices[index], HandleCardSelected);
+                card.Bind(choices[index], definition =>
+                {
+                    if (ReferenceEquals(choiceSession, session)) HandleCardSelected(definition);
+                });
                 ApplyArtwork(card, choices[index]);
             }
             else
@@ -85,11 +118,13 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
 
         overlayRect.gameObject.SetActive(true);
         overlayRect.SetAsLastSibling();
-        return count > 0;
+        return true;
     }
 
     public void Hide()
     {
+        bool hadChoice = choiceSession != null;
+        choiceSession = null;
         trySelect = null;
         selectionPending = false;
 
@@ -97,19 +132,41 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         {
             overlayRect.gameObject.SetActive(false);
         }
+
+        // State is cleared before callbacks; repeated/reentrant Hide is safe.
+        if (hadChoice) Hidden?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        Hide();
+    }
+
+    private void Update()
+    {
+        // The generated overlay is a child, not this component's GameObject.
+        // External removal/deactivation must not leave an invisible modal held.
+        if (choiceSession != null && !IsOpen) Hide();
     }
 
     private void HandleCardSelected(RunUpgradeDefinition definition)
     {
-        if (selectionPending || definition == null || trySelect == null)
+        if (!IsOpen || selectionPending || definition == null || trySelect == null)
         {
             return;
         }
 
+        object session = choiceSession;
+        Func<RunUpgradeDefinition, bool> handler = trySelect;
         selectionPending = true;
         SetCardsInteractable(false);
 
-        if (trySelect(definition))
+        bool accepted = handler(definition);
+        // Applying a card can synchronously hide/reset/rebind the UI. An old
+        // callback must never hide or re-enable a replacement choice.
+        if (!ReferenceEquals(choiceSession, session)) return;
+
+        if (accepted)
         {
             Hide();
             return;
@@ -202,6 +259,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         {
             cardViews[index] = CreateCard(index);
         }
+        overlayRect.gameObject.SetActive(false);
     }
 
     private UpgradeCardView CreateCard(int index)
@@ -454,6 +512,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        Hide();
         if (fallbackArtwork != null)
         {
             Destroy(fallbackArtwork);

@@ -19,6 +19,9 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
     private int observedShield;
     private int resonantCrackCount;
     private bool emergencyPlatingUsedThisWave;
+    private bool isConfigured;
+    private int observedRunRevision;
+    private int observedWave;
 
     public static RunUpgradeGameplayHooks Current { get; private set; }
 
@@ -51,11 +54,14 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         }
 
         Current = this;
+        SynchronizeTrackingAfterEnable();
+        Subscribe();
     }
 
     private void OnDisable()
     {
         Unsubscribe();
+        HandleSpecialClearFinished();
 
         if (Current == this)
         {
@@ -70,6 +76,13 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         PlayerActor runPlayer,
         WaveController waveController)
     {
+        if (isConfigured && runtime == runRuntime && board == boardController &&
+            combat == combatController && player == runPlayer && waves == waveController)
+        {
+            Subscribe();
+            return;
+        }
+
         Unsubscribe();
 
         runtime = runRuntime;
@@ -80,26 +93,61 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         energy = player != null
             ? player.GetComponent<PlayerAbilityEnergy>()
             : null;
+        isConfigured = true;
 
-        baseMaximumHealth =
-            player != null && player.IsInitialized
-                ? player.MaximumHealth
-                : 0;
+        ResetRunTracking();
+        Subscribe();
+    }
+
+    private void ResetRunTracking()
+    {
+        baseMaximumHealth = runtime != null && runtime.BaseMaximumHealth > 0
+            ? runtime.BaseMaximumHealth
+            : player != null && player.IsInitialized ? player.MaximumHealth : 0;
+        observedRunRevision = runtime != null ? runtime.RunRevision : 0;
+        observedWave = waves != null ? waves.CurrentWave : 0;
         observedShield = player != null ? player.CurrentShield : 0;
         resonantCrackCount = 0;
         emergencyPlatingUsedThisWave = false;
-        currentSpecialClearCount = 0;
-        currentDirectionalBombCount = 0;
+        HandleSpecialClearFinished();
+    }
 
-        Subscribe();
+    private void SynchronizeTrackingAfterEnable()
+    {
+        if (runtime != null && observedRunRevision != runtime.RunRevision)
+        {
+            // ResetRun may have happened while this observer was disabled.
+            ResetRunTracking();
+            return;
+        }
+
+        int wave = waves != null ? waves.CurrentWave : 0;
+        if (observedWave != wave)
+        {
+            observedWave = wave;
+            resonantCrackCount = 0;
+            emergencyPlatingUsedThisWave = false;
+        }
+
+        // A temporary disable is NOT a fresh wave or a shield break. Preserve
+        // same-wave usage counters and never replay energy/shield rewards.
+        observedShield = player != null ? player.CurrentShield : 0;
+        HandleSpecialClearFinished();
     }
 
     private void Subscribe()
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         if (runtime != null)
         {
             runtime.UpgradeChanged -= HandleUpgradeChanged;
             runtime.UpgradeChanged += HandleUpgradeChanged;
+            runtime.RunReset -= ResetRunTracking;
+            runtime.RunReset += ResetRunTracking;
         }
 
         if (board != null)
@@ -144,6 +192,7 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         if (runtime != null)
         {
             runtime.UpgradeChanged -= HandleUpgradeChanged;
+            runtime.RunReset -= ResetRunTracking;
         }
 
         if (board != null)
@@ -216,14 +265,15 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
             return;
         }
 
+        ResetRunTracking();
+        // Player.Initialized and runtime.RunReset subscription order may vary.
+        // The actor has already installed its new unmodified baseline here.
         baseMaximumHealth = player.MaximumHealth;
-        observedShield = player.CurrentShield;
-        resonantCrackCount = 0;
-        emergencyPlatingUsedThisWave = false;
     }
 
     private void HandleWaveStarted(int wave)
     {
+        observedWave = wave;
         emergencyPlatingUsedThisWave = false;
         resonantCrackCount = 0;
 
@@ -265,45 +315,31 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
 
     private void HandleBoardClearOutcomeResolved(BoardClearOutcome outcome)
     {
-        if (energy == null ||
-            player == null ||
+        BoardClearContext clear = outcome.ClearContext;
+        if (player == null ||
             !player.IsInitialized ||
             player.IsDefeated ||
-            outcome.ClearContext.Source != BoardClearSource.ColorCrystal ||
-            outcome.ClearContext.GemCount <= 0 ||
-            !RunUpgradeResolver.HasMechanic(
+            clear.GemCount <= 0)
+        {
+            return;
+        }
+
+        if (energy != null &&
+            clear.Source == BoardClearSource.ColorCrystal &&
+            RunUpgradeResolver.HasMechanic(
                 RunUpgradeMechanic.ChromaticConductor,
                 runtime
             ))
         {
-            return;
+            energy.AddEnergy(clear.GemCount);
         }
 
-        energy.AddEnergy(outcome.ClearContext.GemCount);
-    }
-
-    private void HandleBeforeGemDamage(GemDamageContext context)
-    {
-        if (context == null ||
-            player == null ||
-            context.Player != player ||
-            !(player.ActiveAbility is CrackedGemsAbilityDefinition cracked) ||
-            context.ClearSource != BoardClearSource.Ability ||
-            !context.ClearContext.GrantsSpecialEnergy ||
-            context.GemCount != 1 ||
-            context.OriginalDamage != cracked.CrackedGemDamage)
-        {
-            return;
-        }
-
-        context.Damage =
-            RunUpgradeResolver.ResolveCrackedGemDamage(
-                context.Damage,
-                cracked,
-                runtime
-            );
-
-        if (!RunUpgradeResolver.HasMechanic(
+        // Count the actual board-reported center once, not a damage attempt.
+        // A committed explosion still resolves if poison/earlier clears have
+        // already ended the encounter. No enemy hit is required for this card.
+        if (!(player.ActiveAbility is CrackedGemsAbilityDefinition) ||
+            !IsFixedAbilityExplosionCenter(clear) ||
+            !RunUpgradeResolver.HasMechanic(
                 RunUpgradeMechanic.ResonantCracks,
                 runtime
             ))
@@ -312,16 +348,40 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         }
 
         resonantCrackCount++;
-
         if (resonantCrackCount >= ResonantCracksFrequency)
         {
             resonantCrackCount = 0;
-
-            if (energy != null)
-            {
-                energy.AddEnergy(ResonantCracksEnergy);
-            }
+            if (energy != null) energy.AddEnergy(ResonantCracksEnergy);
         }
+    }
+
+    private static bool IsFixedAbilityExplosionCenter(BoardClearContext clear)
+    {
+        return clear.Source == BoardClearSource.Ability &&
+               clear.GrantsSpecialEnergy &&
+               clear.IsFixedDamageExplosionCenter &&
+               clear.GemCount == 1;
+    }
+
+    private void HandleBeforeGemDamage(GemDamageContext context)
+    {
+        if (context == null ||
+            player == null ||
+            context.Player != player ||
+            !(player.ActiveAbility is CrackedGemsAbilityDefinition cracked) ||
+            !IsFixedAbilityExplosionCenter(context.ClearContext))
+        {
+            return;
+        }
+
+        // Damage modifiers remain in the existing pre-damage hook. Only
+        // detonation-based reward bookkeeping moved to the board outcome.
+        context.Damage =
+            RunUpgradeResolver.ResolveCrackedGemDamage(
+                context.Damage,
+                cracked,
+                runtime
+            );
     }
 
     private bool CheckAnyPoisonedEnemy()

@@ -88,6 +88,12 @@ public sealed class GameOverPresentationController : MonoBehaviour
     private bool timeFrozen;
     private bool sequenceStarted;
     private bool retryRequested;
+    private bool isCleaningUp;
+    private Image defeatedPlayerImage;
+    private bool defeatedImageWasEnabled;
+    private PlayerCombatFeedback defeatedFeedback;
+    private GameObject hiddenAffinityGem;
+    private bool affinityWasActive;
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
@@ -121,22 +127,31 @@ public sealed class GameOverPresentationController : MonoBehaviour
     {
         ResolveReferences();
         Subscribe();
+        if (Application.isPlaying) SynchronizePlayerState();
     }
 
     private void Start()
     {
-        if (playerActor != null &&
-            playerActor.IsDefeated)
-        {
-            HandlePlayerDefeated(
-                playerActor
-            );
-        }
+        SynchronizePlayerState();
+    }
+
+    private void SynchronizePlayerState()
+    {
+        if (playerActor == null) return;
+
+        // Start runs once, but defeat/revival may occur while this observer is
+        // disabled. Reconcile on enable without granting health or restarting
+        // any board/ability operation.
+        if (playerActor.IsDefeated)
+            HandlePlayerDefeated(playerActor);
+        else
+            CleanupGameOver();
     }
 
     private void OnDisable()
     {
         Unsubscribe();
+        CleanupGameOver();
     }
 
     private void ResolveReferences()
@@ -195,16 +210,17 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
     private void Subscribe()
     {
-        if (playerActor == null)
+        if (playerActor == null || !isActiveAndEnabled)
         {
             return;
         }
 
-        playerActor.Defeated -=
-            HandlePlayerDefeated;
-
-        playerActor.Defeated +=
-            HandlePlayerDefeated;
+        playerActor.Defeated -= HandlePlayerDefeated;
+        playerActor.Defeated += HandlePlayerDefeated;
+        playerActor.Revived -= HandlePlayerRevived;
+        playerActor.Revived += HandlePlayerRevived;
+        playerActor.Initialized -= HandlePlayerInitialized;
+        playerActor.Initialized += HandlePlayerInitialized;
     }
 
     private void Unsubscribe()
@@ -214,15 +230,27 @@ public sealed class GameOverPresentationController : MonoBehaviour
             return;
         }
 
-        playerActor.Defeated -=
-            HandlePlayerDefeated;
+        playerActor.Defeated -= HandlePlayerDefeated;
+        playerActor.Revived -= HandlePlayerRevived;
+        playerActor.Initialized -= HandlePlayerInitialized;
+    }
+
+    private void HandlePlayerRevived(PlayerActor player, int revivalCount)
+    {
+        if (player != null && player == playerActor && !player.IsDefeated) CleanupGameOver();
+    }
+
+    private void HandlePlayerInitialized(PlayerActor player)
+    {
+        if (player != null && player == playerActor && !player.IsDefeated) CleanupGameOver();
     }
 
     private void HandlePlayerDefeated(
         PlayerActor defeatedPlayer)
     {
-        if (defeatedPlayer != playerActor ||
-            sequenceStarted)
+        if (!isActiveAndEnabled || isCleaningUp ||
+            defeatedPlayer == null || defeatedPlayer != playerActor ||
+            !defeatedPlayer.IsDefeated || sequenceStarted)
         {
             return;
         }
@@ -249,12 +277,12 @@ public sealed class GameOverPresentationController : MonoBehaviour
             );
     }
 
-    private IEnumerator GameOverSequence()
+    private Image BeginPlayerDeathVisual()
     {
-        Image playerImage =
-            combatFeedback != null
-                ? combatFeedback.PlayerImage
-                : null;
+        Image playerImage = combatFeedback != null ? combatFeedback.PlayerImage : null;
+        defeatedPlayerImage = playerImage;
+        defeatedImageWasEnabled = playerImage != null && playerImage.enabled;
+        defeatedFeedback = combatFeedback;
 
         if (combatFeedback != null)
         {
@@ -270,10 +298,13 @@ public sealed class GameOverPresentationController : MonoBehaviour
             );
         }
 
-        if (playerImage != null)
-        {
-            playerImage.enabled = true;
-        }
+        if (playerImage != null) playerImage.enabled = true;
+        return playerImage;
+    }
+
+    private IEnumerator GameOverSequence()
+    {
+        Image playerImage = BeginPlayerDeathVisual();
 
         yield return
             new WaitForSecondsRealtime(
@@ -345,12 +376,76 @@ public sealed class GameOverPresentationController : MonoBehaviour
             return;
         }
 
-        Time.timeScale =
-            previousTimeScale > 0f
-                ? previousTimeScale
-                : 1f;
-
         timeFrozen = false;
+        // Restore only the value we replaced, including an already-paused
+        // clock. Do not overwrite a newer nonzero time-scale decision.
+        if (Time.timeScale == 0f) Time.timeScale = previousTimeScale;
+    }
+
+    private void CleanupGameOver()
+    {
+        if (isCleaningUp) return;
+        isCleaningUp = true;
+        try
+        {
+            sequenceStarted = false;
+            retryRequested = false;
+            if (sequenceCoroutine != null)
+            {
+                StopCoroutine(sequenceCoroutine);
+                sequenceCoroutine = null;
+            }
+            if (particleCoroutine != null)
+            {
+                StopCoroutine(particleCoroutine);
+                particleCoroutine = null;
+            }
+
+            if (retryButton != null)
+            {
+                retryButton.interactable = false;
+                retryButton.onClick.RemoveListener(RetryCurrentGame);
+            }
+            retryButton = null;
+            ClearBurstParticles();
+
+            // The overlay belongs to the Canvas, not the PlayerActor. Removing
+            // just this component otherwise leaves a raycast-blocking orphan.
+            if (overlayRect != null)
+            {
+                GameObject overlay = overlayRect.gameObject;
+                overlayRect = null;
+                overlay.SetActive(false);
+                DestroyGeneratedObject(overlay);
+            }
+            particleLayer = null;
+            dimmerImage = null;
+            gameOverPanel = null;
+
+            Image image = defeatedPlayerImage;
+            PlayerCombatFeedback feedback = defeatedFeedback;
+            GameObject affinity = hiddenAffinityGem;
+            defeatedPlayerImage = null;
+            defeatedFeedback = null;
+            hiddenAffinityGem = null;
+
+            if (image != null) image.enabled = defeatedImageWasEnabled;
+            if (affinity != null) affinity.SetActive(affinityWasActive);
+            if (feedback != null) feedback.ExitDefeatedVisualState();
+        }
+        finally
+        {
+            RestoreGameplayTime();
+            isCleaningUp = false;
+        }
+    }
+
+    private static void DestroyGeneratedObject(GameObject generated)
+    {
+        if (generated == null) return;
+        // Only this controller's generated overlay/particles use this helper.
+        if (Application.isPlaying) Object.Destroy(generated);
+        else Object.DestroyImmediate(generated);
     }
 
     private void BuildOverlay()
@@ -1060,7 +1155,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
     private void HidePlayerAffinityGem()
     {
-        if (playerPanel == null)
+        if (playerPanel == null || hiddenAffinityGem != null)
         {
             return;
         }
@@ -1072,49 +1167,51 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
         if (affinityGem != null)
         {
-            affinityGem.gameObject.SetActive(
-                false
-            );
+            hiddenAffinityGem = affinityGem.gameObject;
+            affinityWasActive = hiddenAffinityGem.activeSelf;
+            hiddenAffinityGem.SetActive(false);
         }
+    }
+
+    private bool IsRetryAvailable()
+    {
+        return isActiveAndEnabled && sequenceStarted && !retryRequested &&
+               playerActor != null && playerActor.IsDefeated &&
+               retryButton != null && retryButton.interactable;
     }
 
     private void RetryCurrentGame()
     {
-        if (retryRequested)
+        if (!IsRetryAvailable()) return;
+
+        Scene activeScene = SceneManager.GetActiveScene();
+        if (!activeScene.IsValid() ||
+            string.IsNullOrWhiteSpace(activeScene.name) ||
+            !Application.CanStreamedLevelBeLoaded(activeScene.name))
         {
+            // Keep the death freeze and retry button usable on a failed
+            // preflight; never unlock the old board before a valid retry.
+            Debug.LogError(
+                "Cannot retry because the active scene is invalid or unavailable.",
+                this
+            );
             return;
         }
 
         retryRequested = true;
-
-        if (retryButton != null)
+        retryButton.interactable = false;
+        try
         {
-            retryButton.interactable = false;
+            RestoreGameplayTime();
+            SceneManager.LoadScene(activeScene.name, LoadSceneMode.Single);
         }
-
-        RestoreGameplayTime();
-
-        Scene activeScene =
-            SceneManager.GetActiveScene();
-
-        if (!activeScene.IsValid() ||
-            string.IsNullOrWhiteSpace(
-                activeScene.name
-            ))
+        catch (System.Exception exception)
         {
-            Debug.LogError(
-                "Cannot retry because the active scene is invalid.",
-                this
-            );
-
             retryRequested = false;
-            return;
+            FreezeGameplay();
+            if (retryButton != null) retryButton.interactable = true;
+            Debug.LogException(exception, this);
         }
-
-        SceneManager.LoadScene(
-            activeScene.name,
-            LoadSceneMode.Single
-        );
     }
 
     private static float EaseOutBack(
@@ -1207,9 +1304,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
             if (particle != null &&
                 particle.Rect != null)
             {
-                Destroy(
-                    particle.Rect.gameObject
-                );
+                DestroyGeneratedObject(particle.Rect.gameObject);
             }
         }
 
@@ -1219,15 +1314,6 @@ public sealed class GameOverPresentationController : MonoBehaviour
     private void OnDestroy()
     {
         Unsubscribe();
-
-        if (retryButton != null)
-        {
-            retryButton.onClick.RemoveListener(
-                RetryCurrentGame
-            );
-        }
-
-        RestoreGameplayTime();
-        ClearBurstParticles();
+        CleanupGameOver();
     }
 }

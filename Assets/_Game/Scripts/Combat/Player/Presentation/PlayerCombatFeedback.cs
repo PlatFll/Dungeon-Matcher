@@ -283,6 +283,14 @@ public sealed class PlayerCombatFeedback :
         SetWhiteFlash(1f);
     }
 
+    public void ExitDefeatedVisualState()
+    {
+        // The game-over owner calls this only to release a death visual it
+        // entered. Reuse the existing flash/animation cleanup; do not restore
+        // an old layout position unless a real hit shake was still running.
+        StopDamageFeedback();
+    }
+
     private void CaptureCurrentRestingPosition()
     {
         if (visualRoot == null)

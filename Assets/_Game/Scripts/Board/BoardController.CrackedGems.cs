@@ -442,7 +442,6 @@ public partial class BoardController
 
         SpriteRenderer renderer =
             gem.GetComponent<SpriteRenderer>();
-
         if (renderer != null)
         {
             renderer.sprite =
@@ -882,6 +881,29 @@ public partial class BoardController
             expandedClearSet
         );
 
+        // Use the same authoritative special counts as ordinary bomb reporting.
+        // Cracked collateral retains Ability source and its explicit entitlement;
+        // no synthetic Bomb clear or additional damage/reward report is emitted.
+        try
+        {
+            ReportRunUpgradeSpecialClearPrepared(expandedClearSet);
+            ReportPreparedCrackedClearSetToCombat(
+                expandedClearSet,
+                crackedCenters,
+                fixedDamagePerCrackedGem
+            );
+        }
+        finally
+        {
+            ReportRunUpgradeSpecialClearFinished();
+        }
+    }
+
+    private void ReportPreparedCrackedClearSetToCombat(
+        HashSet<Gem> expandedClearSet,
+        HashSet<Gem> crackedCenters,
+        int fixedDamagePerCrackedGem)
+    {
         ReportBombClearSetToVFX(
             expandedClearSet,
             BoardClearSource.Ability
@@ -958,7 +980,8 @@ public partial class BoardController
                     0,
                     BoardClearSource.Ability,
                     BoardMatchType.Other,
-                    grantsSpecialEnergy: true
+                    grantsSpecialEnergy: true,
+                    isFixedDamageExplosionCenter: true
                 );
 
             ReportCrackedCombatContext(
