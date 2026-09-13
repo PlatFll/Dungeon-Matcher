@@ -528,6 +528,11 @@ public sealed class TownMarshalEnemyAbility :
         currentProtector = protector;
         retreatMovesRemaining = retreatMoves;
 
+        currentProtector.Defeated -=
+            HandleProtectorDefeated;
+        currentProtector.Defeated +=
+            HandleProtectorDefeated;
+
         ApplyRetreatVisual(
             true
         );
