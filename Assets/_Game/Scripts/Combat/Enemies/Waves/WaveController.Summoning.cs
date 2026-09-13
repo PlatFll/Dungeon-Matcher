@@ -7,7 +7,9 @@ public sealed partial class WaveController
     {
         get
         {
-            if (!IsWaveActive ||
+            if (!isActiveAndEnabled ||
+                isSpawningWave ||
+                !IsWaveActive ||
                 enemySlots == null ||
                 activeEnemies.Count >=
                     enemySlots.Length)
@@ -25,11 +27,17 @@ public sealed partial class WaveController
     {
         summonedEnemy = null;
 
+        // An empty slot during the staged spawn loop is not yet free: it may
+        // still belong to a planned enemy or the loop's unused-slot cleanup.
         if (!Application.isPlaying ||
+            !isActiveAndEnabled ||
+            isSpawningWave ||
             !IsWaveActive ||
             definition == null ||
             difficultyProfile == null ||
             playerActor == null ||
+            !playerActor.IsInitialized ||
+            playerActor.IsDefeated ||
             boardController == null)
         {
             return false;
@@ -45,6 +53,7 @@ public sealed partial class WaveController
 
         GemType assignedGemType =
             ChooseSummonGemType();
+        object identity = encounterIdentity;
 
         EnemyActor enemy =
             CreateEnemy(
@@ -52,6 +61,12 @@ public sealed partial class WaveController
                 freeSlot,
                 assignedGemType
             );
+
+        if (!ReferenceEquals(identity, encounterIdentity))
+        {
+            if (enemy != null) Destroy(enemy.gameObject);
+            return false;
+        }
 
         if (enemy == null)
         {
