@@ -1079,6 +1079,7 @@ public partial class BoardController
                             column,
                             bomb.Row,
                             activatedBomb,
+                            bomb,
                             pendingConvertedBombs,
                             triggeredCrystalRequests,
                             gemsToClear,
@@ -1097,6 +1098,7 @@ public partial class BoardController
                             bomb.Column,
                             row,
                             activatedBomb,
+                            bomb,
                             pendingConvertedBombs,
                             triggeredCrystalRequests,
                             gemsToClear,
@@ -1151,6 +1153,7 @@ public partial class BoardController
         int column,
         int row,
         Gem activatedBomb,
+        Gem triggeringBomb,
         HashSet<Gem> pendingConvertedBombs,
         List<BombTriggeredCrystalRequest>
             triggeredCrystalRequests,
@@ -1171,9 +1174,11 @@ public partial class BoardController
         if (gem.SpecialType ==
             GemSpecialType.ColorCrystal)
         {
+            // Protection belongs to the sequence's activated bomb, but the
+            // crystal's color belongs to the bomb whose footprint reached it.
             TryAddBombTriggeredCrystalRequest(
                 gem,
-                activatedBomb,
+                triggeringBomb,
                 triggeredCrystalRequests
             );
 
@@ -1823,7 +1828,11 @@ public partial class BoardController
             return gemsToClear;
         }
 
-        foreach (Gem gem in matchedGems)
+        // Requests retain the first bomb to reach each crystal. Seed the
+        // existing FIFO in board order, never HashSet enumeration order.
+        List<Gem> orderedSeeds = new List<Gem>(matchedGems);
+        orderedSeeds.Sort(CompareGemsByGridPosition);
+        foreach (Gem gem in orderedSeeds)
         {
             if (gem == null)
             {
