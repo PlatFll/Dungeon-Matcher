@@ -393,16 +393,21 @@ public static class GameplayBombRewardValidation
 
     private static IEnumerator BoardRoutine(IEnumerator routine)
     {
+        BoardController owner = board;
         bool done = false;
-        Check(!board.IsBusy, "single board coroutine owner");
-        Set(board, "isBusy", true);
-        board.StartCoroutine(Complete());
+        Check(owner != null && !owner.IsBusy, "single board coroutine owner");
+        Set(owner, "isBusy", true);
+        owner.StartCoroutine(Complete());
         IEnumerator Complete()
         {
             try { yield return routine; }
-            finally { Set(board, "isBusy", false); done = true; }
+            finally
+            {
+                if (owner != null) Set(owner, "isBusy", false);
+                done = true;
+            }
         }
-        yield return Until(() => done && !board.IsBusy, "production board coroutine");
+        yield return Until(() => done && (owner == null || !owner.IsBusy), "production board coroutine");
     }
 
     private static IEnumerator Until(Func<bool> predicate, string label)
