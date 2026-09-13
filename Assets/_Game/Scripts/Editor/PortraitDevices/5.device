@@ -1,0 +1,37 @@
+{
+  "friendlyName": "Portrait / 2026 large shape (custom)",
+  "version": 1,
+  "screens": [
+    {
+      "width": 1320,
+      "height": 2868,
+      "dpi": 460,
+      "navigationBarHeight": 0,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "x": 0,
+            "y": 114,
+            "width": 1320,
+            "height": 2556,
+            "serializedVersion": "2"
+          },
+          "cutouts": [
+            {
+              "x": 480,
+              "y": 2688,
+              "width": 360,
+              "height": 100,
+              "serializedVersion": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "Custom layout fixture",
+    "operatingSystem": "iOS 17"
+  }
+}

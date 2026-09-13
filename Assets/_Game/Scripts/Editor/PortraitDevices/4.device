@@ -1,0 +1,37 @@
+{
+  "friendlyName": "Portrait / Dynamic Island shape (custom)",
+  "version": 1,
+  "screens": [
+    {
+      "width": 1179,
+      "height": 2556,
+      "dpi": 460,
+      "navigationBarHeight": 0,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "x": 0,
+            "y": 102,
+            "width": 1179,
+            "height": 2277,
+            "serializedVersion": "2"
+          },
+          "cutouts": [
+            {
+              "x": 409.5,
+              "y": 2397,
+              "width": 360,
+              "height": 100,
+              "serializedVersion": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "Custom layout fixture",
+    "operatingSystem": "iOS 17"
+  }
+}

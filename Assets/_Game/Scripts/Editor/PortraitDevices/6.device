@@ -1,0 +1,37 @@
+{
+  "friendlyName": "Portrait / 2026 tall shape (custom)",
+  "version": 1,
+  "screens": [
+    {
+      "width": 1440,
+      "height": 3200,
+      "dpi": 460,
+      "navigationBarHeight": 0,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "x": 0,
+            "y": 144,
+            "width": 1440,
+            "height": 2936,
+            "serializedVersion": "2"
+          },
+          "cutouts": [
+            {
+              "x": 685,
+              "y": 3098,
+              "width": 70,
+              "height": 52,
+              "serializedVersion": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "Custom layout fixture",
+    "operatingSystem": "Android 16"
+  }
+}

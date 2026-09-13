@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Screen = UnityEngine.Device.Screen;
 
 /// <summary>Only owner of the safe gameplay root and the three screen sections.</summary>
 [DefaultExecutionOrder(-200)]
@@ -7,22 +8,20 @@ using UnityEngine.UI;
 public sealed class GameplayPixelLayoutController : MonoBehaviour
 {
     public const int Inset = 4;
-    public const int Gap = 4;
+    public const int Gap = 6;
     // Two native 80px corners plus a 16px straight segment. The 64px button
     // has 40px clear space above/below it inside the 16px border.
     public const int BottomHeight = 176;
-    public const int MinimumBattleHeight = 220;
+    public const int MaximumBottomHeight = BottomHeight + 64;
+    // Four native art cells keep the wave banner above the character band on
+    // short safe viewports without changing character texel scale or proportions.
+    public const int MinimumBattleHeight = 4 * AssetsPPU;
     public const int PreferredBattleHeight = 320;
-    public const int MaximumBattleHeight = 320;
+    public const int MaximumBattleHeight = PreferredBattleHeight + PreferredBattleHeight / 2;
     public const int AssetsPPU = 64;
     public const int NativeFrameThickness = 16;
+    public const int PreferredGap = 2 * NativeFrameThickness;
     public static readonly Vector2 WaveTrackerLogicalSize = new Vector2(264f, 44f);
-    // Minimum physical-screen clearance expressed in gameplay logical pixels.
-    // Android does not consistently expose the curved glass/display contour as
-    // a cutout, so this is the fallback only when the OS safe area has not
-    // already moved the HUD this far inward.
-    public const int MinimumMobileBottomCornerClearance = 16;
-    public const int CutoutClearance = 2;
     // Player section + section margins + enemy content padding + three 80px
     // slot allocations. Each slot includes its two 3px authored side gaps.
     public const int MinimumViewportWidth = 146 + 6 + 12 + 6 + 2 * 19 + 3 * 80;
@@ -37,8 +36,6 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 
     public Geometry Current { get; private set; }
-    public int TopHudDrop { get; private set; }
-    public int BottomHudLift { get; private set; }
     public RectTransform TopHud { get; private set; }
     public RectTransform BoardArea { get; private set; }
     public RectTransform BottomHud { get; private set; }
@@ -48,8 +45,8 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     private BoardVisuals board;
     private Vector2 lastScreen;
     private Rect lastSafe;
+    private Rect lastCanvasRect;
     private Vector2 lastBoard;
-    private int lastCutoutHash;
     private bool initialized;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
     public static Rect? ValidationSafeArea;
@@ -68,13 +65,19 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 
     public static Geometry Calculate(int width, int height, Rect safe, Vector2 boardPixels)
     {
+        // Transient zero/invalid device reports must not produce negative sizes,
+        // divide by zero, or overwrite the last usable scene geometry.
+        if (width <= 0 || height <= 0 || !Finite(safe.x) || !Finite(safe.y) ||
+            !Finite(safe.width) || !Finite(safe.height) || safe.width <= 0 || safe.height <= 0 ||
+            !Finite(boardPixels.x) || !Finite(boardPixels.y) || boardPixels.x <= 0 || boardPixels.y <= 0)
+            return default;
         safe = Rect.MinMaxRect(Mathf.Ceil(Mathf.Max(0, safe.xMin)),
             Mathf.Ceil(Mathf.Max(0, safe.yMin)), Mathf.Floor(Mathf.Min(width, safe.xMax)),
             Mathf.Floor(Mathf.Min(height, safe.yMax)));
         // Start with the largest integer fitting actual native battle content.
         // Feasibility below includes the board and all vertical requirements.
         int scale = Mathf.Max(1, Mathf.FloorToInt(safe.width / (MinimumViewportWidth + 2 * Inset)));
-        Geometry result = default;
+        if (safe.width <= 0 || safe.height <= 0) return default;
         for (; scale >= 1; scale--)
         {
             float x = Mathf.Ceil(safe.xMin / scale) * scale + Inset * scale;
@@ -86,98 +89,36 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             float fit = Mathf.Min(w * scale / boardPixels.x, available * scale / boardPixels.y);
             // Fill available space uniformly; whole texel steps made phone boards too small.
             float ratio = Mathf.Floor(fit * boardPixels.y / scale) * scale / boardPixels.y;
-            result = new Geometry { Scale = scale, Safe = safe,
+            if (w < MinimumViewportWidth || h <= 0 || ratio <= 0) continue;
+            Geometry result = new Geometry { Scale = scale, Safe = safe,
                 Viewport = new Rect(x, y, w * scale, h * scale),
                 BoardTexelRatio = ratio, FractionalBoardScale = Mathf.Abs(ratio - Mathf.Round(ratio)) > 0.00001f };
-            if (w < MinimumViewportWidth || ratio <= 0) continue;
             float boardWidth = Mathf.Ceil(boardPixels.x * ratio / scale - 0.0001f);
             float boardHeight = Mathf.Ceil(boardPixels.y * ratio / scale - 0.0001f);
-            float battleHeight = Mathf.Min(MaximumBattleHeight,
-                h - BottomHeight - 2 * Gap - boardHeight);
+            float remainingHeight = h - BottomHeight - boardHeight;
+            // Grow the enclosures only when the preferred battle would leave
+            // excessive blank gutters. Art stays native; frame edges tile.
+            float desiredBattle = Mathf.Clamp(remainingHeight - 2 * PreferredGap,
+                PreferredBattleHeight, MaximumBattleHeight);
+            float battleHeight = Mathf.Min(desiredBattle, remainingHeight - 2 * Gap);
             if (battleHeight < MinimumBattleHeight) continue;
-            battleHeight = Mathf.Min(PreferredBattleHeight, battleHeight);
+            float bottomHeight = BottomHeight + Mathf.Clamp(
+                remainingHeight - battleHeight - 2 * PreferredGap, 0, MaximumBottomHeight - BottomHeight);
             // Pin both HUDs to safe edges and balance spare height around the square board.
             float bottom = 0;
-            result.Bottom = new Rect(0, bottom, w, BottomHeight);
+            result.Bottom = new Rect(0, bottom, w, bottomHeight);
             float topY = h - battleHeight;
-            float boardY = BottomHeight + Mathf.Floor((topY - BottomHeight - boardHeight) / 2);
+            float boardY = bottomHeight + Mathf.Floor((topY - bottomHeight - boardHeight) / 2);
             result.Board = new Rect(Mathf.Floor((w - boardWidth) / 2), boardY,
                 boardWidth, boardHeight);
             result.Top = new Rect(0, topY, w, battleHeight);
             result.Fits = true;
             return result;
         }
-        return result;
+        return default;
     }
 
-    /// <summary>
-    /// Moves only the TopHUD down when a reported top display cutout would enter
-    /// the battle frame. The movement consumes the existing TopHUD-to-board gap
-    /// first, so the board and BottomHUD stay exactly where they were. A minimum
-    /// section gap is always preserved.
-    /// </summary>
-    public static int CalculateTopHudDrop(Geometry geometry, Rect[] cutouts)
-    {
-        if (!geometry.Fits || geometry.Scale <= 0 || cutouts == null || cutouts.Length == 0) return 0;
-        float scale = geometry.Scale;
-        float baselineBottom = geometry.Viewport.yMin + geometry.Top.yMin * scale;
-        float baselineTop = geometry.Viewport.yMin + geometry.Top.yMax * scale;
-        float allowedTop = baselineTop;
-
-        foreach (Rect cutout in cutouts)
-        {
-            if (cutout.width <= 0f || cutout.height <= 0f) continue;
-            if (cutout.xMax <= geometry.Viewport.xMin || cutout.xMin >= geometry.Viewport.xMax) continue;
-            // Ignore bottom/side cutouts and top cutouts already outside the HUD.
-            if (cutout.yMax <= baselineBottom || cutout.yMin >= baselineTop) continue;
-            allowedTop = Mathf.Min(allowedTop, cutout.yMin - CutoutClearance * scale);
-        }
-
-        int desiredDrop = Mathf.Max(0, Mathf.CeilToInt(
-            (baselineTop - allowedTop) / scale - 0.00001f));
-        int availableDrop = Mathf.Max(0, Mathf.FloorToInt(
-            geometry.Top.yMin - geometry.Board.yMax - Gap));
-        return Mathf.Min(desiredDrop, availableDrop);
-    }
-
-    /// <summary>
-    /// Returns a BottomHUD-only logical lift. Screen.safeArea remains the first
-    /// authority, reported bottom cutouts add exact clearance when available,
-    /// and mobile devices get a small fallback for rounded corners that Android
-    /// commonly does not describe as a rectangular cutout. The board position
-    /// remains fixed; Refresh may expand the TopHUD downward afterward to keep
-    /// the board-to-HUD gaps visually balanced.
-    /// </summary>
-    public static int CalculateBottomHudLift(Geometry geometry, Rect[] cutouts, bool mobilePlatform)
-    {
-        if (!geometry.Fits || geometry.Scale <= 0) return 0;
-        float scale = geometry.Scale;
-        float baselineBottom = geometry.Viewport.yMin + geometry.Bottom.yMin * scale;
-        float baselineTop = geometry.Viewport.yMin + geometry.Bottom.yMax * scale;
-        float requiredBottom = baselineBottom;
-
-        if (mobilePlatform)
-            requiredBottom = Mathf.Max(requiredBottom, MinimumMobileBottomCornerClearance * scale);
-
-        if (cutouts != null)
-        {
-            foreach (Rect cutout in cutouts)
-            {
-                if (cutout.width <= 0f || cutout.height <= 0f) continue;
-                if (cutout.xMax <= geometry.Viewport.xMin || cutout.xMin >= geometry.Viewport.xMax) continue;
-                // Only cutouts that actually enter the current BottomHUD band matter;
-                // this excludes camera notches at the top of the display.
-                if (cutout.yMax <= baselineBottom || cutout.yMin >= baselineTop) continue;
-                requiredBottom = Mathf.Max(requiredBottom, cutout.yMax + CutoutClearance * scale);
-            }
-        }
-
-        int desiredLift = Mathf.Max(0, Mathf.CeilToInt(
-            (requiredBottom - baselineBottom) / scale - 0.00001f));
-        int availableLift = Mathf.Max(0, Mathf.FloorToInt(
-            geometry.Board.yMin - geometry.Bottom.yMax - Gap));
-        return Mathf.Min(desiredLift, availableLift);
-    }
+    private static bool Finite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
 
     public void Initialize()
     {
@@ -205,53 +146,20 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         Vector2 screen = new Vector2(Screen.width, Screen.height);
         Vector2 source = new Vector2(board.OuterLocalWidth, board.OuterLocalHeight) * AssetsPPU;
         Rect safe = Screen.safeArea;
-        Rect[] cutouts = Screen.cutouts;
-        int cutoutHash = CutoutHash(cutouts);
+        Rect canvasRect = canvas.pixelRect;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         safe = ValidationSafeArea ?? safe;
 #endif
-        if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard && cutoutHash == lastCutoutHash) return;
-        lastScreen = screen; lastSafe = safe; lastBoard = source; lastCutoutHash = cutoutHash;
+        // The simulator may publish Screen before resizing the actual Canvas.
+        // Refit static art once that projection catches up on the next frame.
+        if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;
         Current = Calculate(Screen.width, Screen.height, safe, source);
-        TopHudDrop = 0;
-        BottomHudLift = 0;
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);
             return;
         }
-
-        TopHudDrop = CalculateTopHudDrop(Current, cutouts);
-        BottomHudLift = CalculateBottomHudLift(Current, cutouts, Application.isMobilePlatform);
-
-        Geometry adjusted = Current;
-        if (TopHudDrop > 0)
-        {
-            Rect top = adjusted.Top;
-            top.y -= TopHudDrop;
-            adjusted.Top = top;
-        }
-        if (BottomHudLift > 0)
-        {
-            Rect bottom = adjusted.Bottom;
-            bottom.y += BottomHudLift;
-            adjusted.Bottom = bottom;
-        }
-
-        // Device-specific bottom clearance can make the lower gap smaller than
-        // the upper one. Keep the battle area's top edge fixed, then grow only
-        // its bottom edge until both board-to-HUD gaps match. This leaves the
-        // wave tracker in place while the player-area controller keeps its fixed
-        // frame centered inside the newly taller TopHUD.
-        float upperGap = adjusted.Top.yMin - adjusted.Board.yMax;
-        float lowerGap = adjusted.Board.yMin - adjusted.Bottom.yMax;
-        if (upperGap > lowerGap)
-        {
-            Rect top = adjusted.Top;
-            top.yMin -= upperGap - lowerGap;
-            adjusted.Top = top;
-        }
-        Current = adjusted;
 
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
         scaler.scaleFactor = Current.Scale;
@@ -267,6 +175,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         SetRect(TopHud, Current.Top);
         SetRect(BoardArea, Current.Board);
         SetRect(BottomHud, Current.Bottom);
+        // Device Simulator and device resize can update the Canvas one frame
+        // after Screen. Resolve its new geometry before snapping static artwork.
+        Canvas.ForceUpdateCanvases();
         // Keep the wave banner centered inside the battle area, directly under
         // the native 16px top frame instead of overlapping that border.
         RectTransform wave = safeRoot.Find("WaveTracker") as RectTransform;
@@ -279,22 +190,10 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             wave.localScale = Vector3.one;
             if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage, WaveTrackerLogicalSize);
         }
-        Canvas.ForceUpdateCanvases();
         if (TopHud.TryGetComponent(out TopBattlePresentationController presentation)) presentation.RefreshPresentation();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         validationFrames = 5;
 #endif
-    }
-
-    private static int CutoutHash(Rect[] cutouts)
-    {
-        unchecked
-        {
-            int hash = 17;
-            if (cutouts == null) return hash;
-            foreach (Rect cutout in cutouts) hash = hash * 31 + cutout.GetHashCode();
-            return hash;
-        }
     }
 
     private void OnDestroy()

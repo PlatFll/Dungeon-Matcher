@@ -1,0 +1,38 @@
+{
+  "friendlyName": "Portrait / Google Pixel 5",
+  "version": 1,
+  "screens": [
+    {
+      "width": 1080,
+      "height": 2340,
+      "navigationBarHeight": 132,
+      "dpi": 440,
+      "orientations": [
+        {
+          "orientation": 1,
+          "safeArea": {
+            "serializedVersion": "2",
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 2204
+          },
+          "cutouts": [
+            {
+              "serializedVersion": "2",
+              "x": 0,
+              "y": 2204,
+              "width": 136,
+              "height": 136
+            }
+          ]
+        }
+      ],
+      "presentation": {}
+    }
+  ],
+  "systemInfo": {
+    "deviceModel": "Google Pixel 5",
+    "operatingSystem": "Android OS 11 / API-30 (RQ1A.201205.011/6966805)"
+  }
+}

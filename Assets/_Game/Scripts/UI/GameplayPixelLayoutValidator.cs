@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Screen = UnityEngine.Device.Screen;
 
 public static class GameplayPixelLayoutValidator
 {
@@ -20,7 +21,6 @@ public static class GameplayPixelLayoutValidator
             $"canvas scale={canvas.scaleFactor}; logical/physical={g.Scale}; " +
             $"Top={top}; BoardArea={board}; Bottom={bottom}; " +
             $"gaps={top.yMin - board.yMax},{board.yMin - bottom.yMax}; " +
-            $"top cutout drop={owner.TopHudDrop}; bottom bezel lift={owner.BottomHudLift}; " +
             $"cutouts={(Screen.cutouts == null ? 0 : Screen.cutouts.Length)}; " +
             $"bottom display clearance={bottom.yMin}; safe clearance={bottom.yMin - g.Safe.yMin}; " +
             $"board texel ratio={worldBoard?.PhysicalTexelRatio}; origin={worldBoard?.PhysicalOrigin}; " +
@@ -52,33 +52,35 @@ public static class GameplayPixelLayoutValidator
             }
         }
         float expectedBottomY = g.Viewport.yMin + g.Bottom.yMin * g.Scale;
-        Require(Near(bottom.yMin, expectedBottomY), "Bottom does not match assigned bezel-aware position", errors);
+        Require(Near(bottom.yMin, expectedBottomY), "Bottom does not match assigned safe-area position", errors);
         Require(Contains(g.Viewport, bottom), $"Bottom leaves gameplay viewport: {bottom} vs {g.Viewport}", errors);
         Require(bottom.yMin - g.Safe.yMin >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
             "Bottom enters additional safe inset", errors);
-        if (Application.isMobilePlatform)
-            Require(bottom.yMin >= GameplayPixelLayoutController.MinimumMobileBottomCornerClearance * g.Scale - Epsilon,
-                "Bottom does not clear the rounded-corner mobile fallback", errors);
+        Require(Contains(g.Safe, top) && Contains(g.Safe, bottom) && Contains(g.Safe, board),
+            "Framed section leaves device safe area", errors);
+        Require(g.Safe.yMax - top.yMax >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
+            "Top enters additional safe inset", errors);
+        Require(Near(board.width, board.height), "Board is not square", errors);
+        Require(g.Top.height >= GameplayPixelLayoutController.MinimumBattleHeight &&
+            g.Top.height <= GameplayPixelLayoutController.MaximumBattleHeight, "Battle height outside bounds", errors);
+        Require(g.Bottom.height >= GameplayPixelLayoutController.BottomHeight &&
+            g.Bottom.height <= GameplayPixelLayoutController.MaximumBottomHeight, "Bottom height outside bounds", errors);
         Require(Contains(g.Viewport, top) && Contains(g.Viewport, board), "Top/board leaves gameplay viewport", errors);
         Require(!top.Overlaps(board) && !board.Overlaps(bottom) && !top.Overlaps(bottom), "Sections overlap", errors);
         float upperGap = top.yMin - board.yMax, lowerGap = board.yMin - bottom.yMax;
         Require(upperGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon &&
             lowerGap >= GameplayPixelLayoutController.Gap * g.Scale - Epsilon, "Incorrect section gaps", errors);
-        if (upperGap >= lowerGap - Epsilon)
-            Require(Mathf.Abs(upperGap - lowerGap) <= Epsilon,
-                "TopHUD-to-board gap is larger than board-to-BottomHUD gap", errors);
+        Require(Mathf.Abs(upperGap - lowerGap) <= g.Scale + Epsilon, "Unbalanced board gaps", errors);
         float expectedTopY = g.Viewport.yMin + g.Top.yMax * g.Scale;
         Require(Near(top.yMax, expectedTopY), "Top does not match assigned cutout-aware position", errors);
         Rect[] cutouts = Screen.cutouts;
         if (cutouts != null)
         {
-            float padding = GameplayPixelLayoutController.CutoutClearance * g.Scale;
             foreach (Rect cutout in cutouts)
             {
                 if (cutout.width <= 0f || cutout.height <= 0f) continue;
-                Rect paddedCutout = Rect.MinMaxRect(cutout.xMin - padding, cutout.yMin - padding,
-                    cutout.xMax + padding, cutout.yMax + padding);
-                Require(!top.Overlaps(paddedCutout), $"TopHUD overlaps display cutout: top={top}, cutout={cutout}", errors);
+                Require(!top.Overlaps(cutout), $"TopHUD overlaps display cutout: top={top}, cutout={cutout}", errors);
+                Require(!bottom.Overlaps(cutout), "BottomHUD overlaps display cutout", errors);
             }
         }
         Require(Near(canvas.scaleFactor, g.Scale) && Integral(canvas.scaleFactor), "Fractional Canvas scale", errors);
@@ -130,6 +132,7 @@ public static class GameplayPixelLayoutValidator
                 if (piece == null || !piece.TryGetComponent(out Image image) || image.sprite == null)
                 { errors.Add($"Missing frame piece {Path(frame.transform)}/{name}"); continue; }
                 Rect bounds = GameplayPixelLayoutController.ScreenRect(piece);
+                Require(Contains(g.Safe, bounds), "Frame piece leaves safe area: " + Path(piece), errors);
                 report += $"{Path(piece)} physical={bounds}; source={image.sprite.rect.size}; tilePPU={image.pixelsPerUnitMultiplier}\n";
                 Require(Integral(bounds.xMin) && Integral(bounds.yMin) && Integral(bounds.xMax) && Integral(bounds.yMax),
                     $"Fractional frame vertices {Path(piece)}: {bounds}", errors);
@@ -143,10 +146,21 @@ public static class GameplayPixelLayoutValidator
         Require(owner.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame") != null, "Missing generated battle frame", errors);
         foreach (Image image in owner.GetComponentsInChildren<Image>(false))
         {
+            if (image.enabled && image.color.a > 0 && image.sprite != null && !IsTransientPresentation(image.transform))
+            {
+                // Unity's legacy vector-like UI primitives are not imported game art.
+                Require(IsBuiltinPrimitive(image.sprite) || image.sprite.texture.filterMode == FilterMode.Point,
+                    "Non-Point sprite: " + Path(image.transform) + " (" + image.sprite.name + ")", errors);
+                Require(Contains(g.Safe, GameplayPixelLayoutController.ScreenRect(image.rectTransform)),
+                    "UI artwork leaves safe area: " + Path(image.transform), errors);
+            }
             if (!image.enabled || image.sprite == null || image.type != Image.Type.Simple ||
                 IsTransientPresentation(image.transform) || image.name.Contains("Base") ||
-                image.sprite.name == "Knob" || image.sprite.name == "UISprite" || image.sprite.name == "Background") continue;
+                IsBuiltinPrimitive(image.sprite)) continue;
             Rect bounds = GameplayPixelLayoutController.ScreenRect(image.rectTransform);
+            if (image.name == "VisualRoot" && owner.TopHud.Find("WaveTracker") is RectTransform wave)
+                Require(!bounds.Overlaps(GameplayPixelLayoutController.ScreenRect(wave)),
+                    "Character overlaps wave badge: " + Path(image.transform), errors);
             Vector2 source = image.sprite.rect.size;
             float xRatio = bounds.width / source.x, yRatio = bounds.height / source.y;
             report += $"UI art {Path(image.transform)} bounds={bounds}, source={source}, ratios=({xRatio},{yRatio})\n";
@@ -155,9 +169,15 @@ public static class GameplayPixelLayoutValidator
             Require(Near(xRatio, yRatio) && Integral(xRatio) && xRatio >= 1,
                 $"Fractional UI source texels {Path(image.transform)}: ({xRatio},{yRatio})", errors);
         }
+        foreach (TMPro.TMP_Text text in owner.GetComponentsInChildren<TMPro.TMP_Text>(false))
+            if (text.enabled && !IsTransientPresentation(text.transform))
+                Require(Contains(g.Safe, GameplayPixelLayoutController.ScreenRect(text.rectTransform)),
+                    "Text leaves safe area: " + Path(text.transform), errors);
         return errors;
     }
     public static bool Integral(float value) => Near(value, Mathf.Round(value));
+    private static bool IsBuiltinPrimitive(Sprite sprite) =>
+        sprite.name == "Knob" || sprite.name == "UISprite" || sprite.name == "Background";
     private static bool IsTransientPresentation(Transform target)
     {
         for (Transform node = target; node != null; node = node.parent)
