@@ -70,6 +70,14 @@ Author scenery in Prefab Mode rather than painting the Tilemaps while viewing th
 
 The authored origin `(0, 0)` is the battle-floor baseline after runtime placement. Back-wall cells normally extend upward from that line. Floor art can extend at or below the baseline according to the tile artwork.
 
+### Connected default backwall
+
+`Assets/_Game/Art/Backgrounds/BattleArea/ConnectedBackwall/Connected_Backwall.png` is a 512 x 256 sheet sliced into 32 full-rectangle 64 x 64 sprites at 64 PPU, with Point filtering, no mipmaps, and no texture compression. Matching Tile assets have no colliders.
+
+Names `Backwall_R01_C01` through `Backwall_R04_C08` identify rows from top to bottom and columns from left to right. Preserve this 8 x 4 arrangement: stones cross slice boundaries, so individual slices are not interchangeable random variants. Extend the wall by repeating the complete pattern without mirroring or rotating it.
+
+`Dungeon_Default/BackWall` contains 16 x 8 cells at x = -8 through 7 and y = 0 through 7, providing overscan for the existing viewport mask. The source pattern is centered across x = -4 through 3 and starts at the floor baseline. The other environment layers remain available for architecture, floor art, and decoration.
+
 ## Adding another environment
 
 Create another environment by duplicating an existing valid environment prefab, then edit the duplicate in Prefab Mode. Preserve:
