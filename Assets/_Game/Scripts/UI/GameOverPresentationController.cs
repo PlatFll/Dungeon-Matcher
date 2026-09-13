@@ -237,12 +237,12 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
     private void HandlePlayerRevived(PlayerActor player, int revivalCount)
     {
-        if (player == playerActor && !player.IsDefeated) CleanupGameOver();
+        if (player != null && player == playerActor && !player.IsDefeated) CleanupGameOver();
     }
 
     private void HandlePlayerInitialized(PlayerActor player)
     {
-        if (player == playerActor && !player.IsDefeated) CleanupGameOver();
+        if (player != null && player == playerActor && !player.IsDefeated) CleanupGameOver();
     }
 
     private void HandlePlayerDefeated(
@@ -1229,6 +1229,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
         return 1f +
                overshootPlusOne *
+               shifted *
                shifted *
                shifted +
                overshoot *
