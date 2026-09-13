@@ -163,13 +163,17 @@ public sealed class PlayerAffinityHealing :
             ) *
             cascadeHealingBonusPerDepth;
 
-        return Mathf.Max(
+        int calculatedHealing = Mathf.Max(
             0,
             Mathf.RoundToInt(
                 baseHealing *
                 cascadeMultiplier
             )
         );
+
+        // PlayerActor.Heal owns storage/capping, not upgrade calculations.
+        // Global healing upgrades apply to affinity as well as Healing Bombs.
+        return RunUpgradeResolver.ResolveHealing(calculatedHealing);
     }
 
     private bool ValidateReferences()
