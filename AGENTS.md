@@ -8,26 +8,31 @@ Before making changes, inspect the relevant existing implementation and follow e
 
 ## Project documentation
 
-Before implementing gameplay features or changing gameplay behavior, read the relevant sections of:
+Before implementing gameplay features or changing gameplay behavior:
 
-- `Docs/GAME_DESIGN.md` for approved intended gameplay behavior and finalized mechanic specifications.
-- `Docs/PROGRESSION_PACING.md` for approved run pacing, chapter/era semantics, encounter replayability, faction escalation, milestone cadence, and progression philosophy.
-- `Docs/ARCHITECTURE.md` for authoritative system ownership, implementation boundaries, and technical invariants.
+1. Read `Docs/PROJECT_STATE.md` completely for the current game definition, implementation checkpoint, intentional temporary overrides, known risks, and next priorities. This is the living orientation document and should prevent reconstructing project history from old chats.
+2. Then read the relevant detailed sections of:
+   - `Docs/GAME_DESIGN.md` for approved intended gameplay behavior and finalized mechanic specifications.
+   - `Docs/PROGRESSION_PACING.md` for approved run pacing, chapter/era semantics, encounter replayability, faction escalation, milestone cadence, and progression philosophy.
+   - `Docs/ARCHITECTURE.md` for authoritative system ownership, implementation boundaries, and technical invariants.
+   - `Docs/BALANCE_V1.md` and its validation record when working on the current progression/economy/encounter balance implementation.
 
 The documents have distinct responsibilities:
 
 - `AGENTS.md` defines how work must be performed.
+- `Docs/PROJECT_STATE.md` defines the current high-level project snapshot: what the game is now, what is implemented, what is intentionally temporary, what remains, and where detailed authority lives.
 - `Docs/GAME_DESIGN.md` defines approved intended gameplay behavior and finalized mechanic specifications.
 - `Docs/PROGRESSION_PACING.md` defines approved progression/run pacing and is authoritative when older prototype wording treats chapters as exact deterministic wave scripts.
 - `Docs/ARCHITECTURE.md` defines authoritative system ownership and important technical flows.
+- `Docs/BALANCE_V1.md` records the current first-pass numerical balance/economy/encounter tables; its validation record distinguishes measured evidence from hypotheses.
 
-Do not silently resolve disagreements between design documentation, architecture documentation, serialized Unity state, and implementation. Identify and report the discrepancy before changing behavior.
+`Docs/PROJECT_STATE.md` is a summary/orientation layer, not a replacement for the detailed owner documents. If it disagrees with a detailed authoritative document, serialized Unity state, or implementation, identify and report the discrepancy before changing behavior.
 
 For progression work, `Docs/PROGRESSION_PACING.md` explicitly supersedes older exact-wave/checkpoint interpretations that conflict with its finalized weighted-era model. Exact wave numbers elsewhere may remain temporary tuning anchors unless separately finalized as a guaranteed narrative/tutorial/boss gate.
 
 Do not treat prototype values or accidental implementation details as finalized game design unless the relevant authoritative design documentation explicitly establishes them.
 
-When an explicitly approved feature permanently changes finalized gameplay rules or architecture, update the relevant documentation as part of the same pull request.
+When an explicitly approved feature permanently changes finalized gameplay rules or architecture, update the relevant documentation as part of the same pull request. When a meaningful feature, balance milestone, art direction, current risk, or intentional development override changes, also update `Docs/PROJECT_STATE.md` so the next session can resume from the actual current state.
 
 Do not rewrite documentation merely to make it agree with an accidental bug or implementation detail.
 
