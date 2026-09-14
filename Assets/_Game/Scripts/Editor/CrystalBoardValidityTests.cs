@@ -113,7 +113,7 @@ public sealed class CrystalBoardValidityTests
         Assert.That(LiveHasMove(), Is.True);
 
         List<Gem> safe = (List<Gem>)Call("BuildSafePinnableGemList");
-        Assert.That(safe, Does.Not.Contain(grid[1, 0]));
+        Assert.That(safe.Contains(grid[1, 0]), Is.False);
         Assert.That(Pins.Count, Is.EqualTo(1), "Simulation must restore temporary pin state.");
         Assert.That(LiveHasMove(), Is.True);
     }
