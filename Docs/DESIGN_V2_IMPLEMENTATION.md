@@ -1,6 +1,6 @@
 # Revised design implementation — 2026-09-15
 
-The user approved implementation of the revised design, explicitly retired Bardley's 1-energy testing override, requested restoration of SmallHold startup with 1.5 extra seconds on white, and authorized merging after validation. Earlier updates were merged first: PR #157 (Balance v1) and #152 (historical audit documentation). The implementation branch began from updated main `6ec402a`. The startup stage is commit `33f7af8`.
+The user approved implementation of the revised design, explicitly retired Bardley's 1-energy testing override, requested restoration of SmallHold startup with 1.5 extra seconds on white, and authorized merging after validation. Earlier updates were merged first: PR #157 (Balance v1) and #152 (historical audit documentation). The implementation branch began from updated main `6ec402a`. The startup stage is commit `33f7af8`; the remaining runtime/data stage is `5bef5fe`. The implementation and evidence are in [PR #158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
 
 The user’s current instructions supersede the older attachment’s preserve-cost-1 instruction and the research handoff’s design-only wording. Balance v1’s stat growth, prices, unlocks, shields, damage attribution and earlier gameplay fixes remain the base. The changes below implement the approved revised proposal through the existing gameplay owners.
 

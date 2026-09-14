@@ -23,6 +23,7 @@ The newer rules in this status and the owning design/architecture documents supe
 - **Date:** 2026-09-15
 - **Current milestone:** Revised balance, resumable combat and restored SmallHold startup
 - **Current implementation branch:** `codex/design-v2-resumable-combat`
+- **Implementation PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
 - **Base:** updated `main` at `6ec402a4947fc3bc70bf7d25e0c38e80f1d85e48`
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
 - **Release status:** User authorized merging after validation; final evidence is in `DESIGN_V2_IMPLEMENTATION.md` and `DESIGN_V2_PLAYTESTS.md`.
