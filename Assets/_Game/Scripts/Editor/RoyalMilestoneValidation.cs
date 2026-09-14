@@ -34,8 +34,8 @@ public static class RoyalMilestoneValidation
             Check(kingData.RoyalReinforcements.Length == 5, "Five reinforcement definitions");
             foreach (var data in kingData.RoyalReinforcements)
                 Check(data != null && database.ContainsEnemy(data) && data != bishopData && data.Category <= EnemyCategory.Special, "Legal reinforcement pool");
-            var kingStats = difficulty.CalculateStats(kingData,25); var bishopStats = difficulty.CalculateStats(bishopData,21);
-            Check(kingStats.MaxHealth >= 700 && kingStats.MaxHealth <= 850 && bishopStats.MaxHealth >= 300 && bishopStats.MaxHealth <= 400, "Normalized HP pacing");
+            var kingStats = difficulty.CalculateStats(kingData,30); var bishopStats = difficulty.CalculateStats(bishopData,24);
+            Check(kingStats.MaxHealth == 619 && bishopStats.MaxHealth == 258, "Balance v1 HP scaling");
             Debug.Log("Royal first-pass stats: King " + kingStats + "; Archbishop " + bishopStats);
 
             var kingWaves = new HashSet<int>(); var bishopWaves = new HashSet<int>();
@@ -46,7 +46,7 @@ public static class RoyalMilestoneValidation
                 {
                     var selected = waves.SelectMilestone(wave,rng,seen,out int count);
                     if (selected == null) continue;
-                    Check(count == 2 && !seen.Contains(selected), "One-time two-unit milestone");
+                    Check(count >= 2 && count <= 3 && !seen.Contains(selected), "One-time escorted milestone");
                     seen.Add(selected);
                     if (selected == kingData) { kingWaves.Add(wave); Check(seen.Contains(bishopData), "Archbishop precedes King"); }
                     if (selected == bishopData) bishopWaves.Add(wave);
@@ -54,7 +54,7 @@ public static class RoyalMilestoneValidation
                 Check(seen.Contains(kingData) && seen.Contains(bishopData), "Milestones reached");
             }
             Check(kingWaves.Count > 1 && bishopWaves.Count > 1, "Variable milestone timing across seeds");
-            foreach(int wave in kingWaves) Check(wave >= 24 && wave <= 26,"King tuning window");
+            foreach(int wave in kingWaves) Check(wave >= 29 && wave <= 30,"King tuning window");
 
             var king = Actor(root, kingData,1000,990); var bishop = Actor(root,bishopData,1000,500);
             var special = Actor(root,Data("CourtMage"),1000,200);

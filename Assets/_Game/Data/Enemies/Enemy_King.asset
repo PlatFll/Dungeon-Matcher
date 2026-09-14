@@ -22,11 +22,11 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 630
-  baseDamage: 10
+  baseMaxHealth: 480
+  baseDamage: 9
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 10
+  baseAttackInterval: 11
   hasSpecialAbility: 1
   specialAbilityKind: 11
   baseSpecialTurnRequirement: 4
@@ -70,25 +70,43 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
   - {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
   requiredBossEscort: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
-  minimumWave: 24
+  minimumWave: 29
   maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.6
-      inSlope: 0.2
-      outSlope: 0.2
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      time: 4
+      value: 1.5
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -100,7 +118,10 @@ MonoBehaviour:
   encounterEscorts: []
   maximumSpecialEscorts: 1
   spawnWeight: 1
-  healthMultiplier: 0.1
-  damageMultiplier: 0.316
-  attackSpeedMultiplier: 1.02
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
+  threatCost: 7
+  isBoardDisruptor: 1
+  isSupport: 0

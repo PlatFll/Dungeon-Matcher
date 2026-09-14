@@ -29,6 +29,7 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
     public event Action RunReset;
 
     public RunUpgradeCatalog Catalog => catalog;
+    public PlayerActor Player => playerActor;
     public int CardSeed => cardSeed;
     public int BaseMaximumHealth => baseMaximumHealth;
     public int RunRevision { get; private set; }
@@ -135,6 +136,7 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
             // Reset is not a heal or revival. PlayerActor clamps current HP
             // if needed and continues to own all HP and shield storage.
             playerActor.SetMaximumHealth(baseMaximumHealth, healAddedAmount: false);
+            playerActor.RefreshShieldCap(this);
         }
     }
 
@@ -179,8 +181,11 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
 
         PlayerDefinition playerDefinition =
             runPlayer != null ? runPlayer.Definition : null;
+        if (definition.RequiredSpecial != GemSpecialType.None &&
+            !GemMasterySettings.IsAvailableInRun(definition.RequiredSpecial)) return false;
         CharacterAbilityDefinition abilityDefinition =
             runPlayer != null ? runPlayer.ActiveAbility : null;
+        if (definition.RequiresEnergyBudget && (abilityDefinition == null || abilityDefinition.EnergyCost <= 1)) return false;
 
         if (!string.IsNullOrEmpty(definition.RequiredPlayerId) &&
             (playerDefinition == null ||
@@ -256,12 +261,6 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
 
         EnsureBaseMaximumHealth();
 
-        int maximumHealthBefore =
-            RunUpgradeResolver.ResolveMaximumHealth(
-                baseMaximumHealth,
-                this
-            );
-
         if (!ownedUpgrades.TryGetValue(
                 definition.UpgradeId,
                 out OwnedUpgrade owned))
@@ -282,17 +281,11 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
                 this
             );
 
-        int addedMaximumHealth =
-            Mathf.Max(0, maximumHealthAfter - maximumHealthBefore);
+        // Recalculate from the immutable run base, including tradeoffs such as
+        // Glass Cannon. Never apply a percentage to the already-modified HP.
+        if (playerActor != null) playerActor.SetMaximumHealth(maximumHealthAfter, healAddedAmount: true);
 
-        if (addedMaximumHealth > 0 && playerActor != null)
-        {
-            playerActor.IncreaseMaximumHealth(
-                addedMaximumHealth,
-                healAddedAmount: true
-            );
-        }
-
+        if (playerActor != null) playerActor.RefreshShieldCap(this);
         UpgradeChanged?.Invoke(definition, owned.Stacks);
         return true;
     }

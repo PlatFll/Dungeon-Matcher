@@ -12,20 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02340d02869c16c4499945ab235ee3b2, type: 3}
   m_Name: WaveSpawnProfile_Standard
   m_EditorClassIdentifier: Assembly-CSharp::WaveSpawnProfile
-  exactWaveRules:
-  - wave: 5
-    ruleName: First Special Encounter
-    enemyCategories: 000000000000000001000000
-  - wave: 8
-    ruleName: Town Marshal Miniboss
-    enemyCategories: 02000000
-  - wave: 16
-    ruleName: Siege Sergeant Miniboss
-    enemyCategories: 02000000
-    fixedEnemies:
-    - {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
+  exactWaveRules: []
   waveBands:
-  - ruleName: Locals - Introduction
+  - ruleName: Locals - Learning
     minimumWave: 1
     maximumWave: 2
     minimumEnemyCount: 1
@@ -35,45 +24,22 @@ MonoBehaviour:
     - category: 0
       weight: 100
       maximumPerWave: 3
-  - ruleName: Locals - Patrols
+  - ruleName: Locals - Practice
     minimumWave: 3
-    maximumWave: 4
+    maximumWave: 5
     minimumEnemyCount: 2
     maximumEnemyCount: 2
     guaranteedCategories: 00000000
     categoryWeights:
     - category: 0
-      weight: 100
+      weight: 80
       maximumPerWave: 3
-  - ruleName: Locals - Resistance
+    - category: 1
+      weight: 20
+      maximumPerWave: 2
+  - ruleName: Guards - Mixed patrols
     minimumWave: 6
-    maximumWave: 7
-    minimumEnemyCount: 2
-    maximumEnemyCount: 3
-    guaranteedCategories: 00000000
-    categoryWeights:
-    - category: 0
-      weight: 75
-      maximumPerWave: 3
-    - category: 1
-      weight: 25
-      maximumPerWave: 1
-  - ruleName: Town Calls for Help
-    minimumWave: 9
-    maximumWave: 15
-    minimumEnemyCount: 2
-    maximumEnemyCount: 3
-    guaranteedCategories: 00000000
-    categoryWeights:
-    - category: 0
-      weight: 65
-      maximumPerWave: 3
-    - category: 1
-      weight: 35
-      maximumPerWave: 1
-  - ruleName: Crown - Knights Arrive
-    minimumWave: 17
-    maximumWave: 20
+    maximumWave: 10
     minimumEnemyCount: 2
     maximumEnemyCount: 3
     guaranteedCategories: 00000000
@@ -83,31 +49,321 @@ MonoBehaviour:
       maximumPerWave: 3
     - category: 1
       weight: 30
-      maximumPerWave: 1
-  - ruleName: Crown - Coordinated Formations
-    minimumWave: 21
+      maximumPerWave: 2
+  - ruleName: Knights - Formations
+    minimumWave: 11
+    maximumWave: 18
+    minimumEnemyCount: 2
+    maximumEnemyCount: 3
+    guaranteedCategories: 00000000
+    categoryWeights:
+    - category: 0
+      weight: 65
+      maximumPerWave: 3
+    - category: 1
+      weight: 35
+      maximumPerWave: 2
+  - ruleName: Royal forces - Combined pressure
+    minimumWave: 19
     maximumWave: 0
     minimumEnemyCount: 2
     maximumEnemyCount: 3
     guaranteedCategories: 00000000
     categoryWeights:
     - category: 0
-      weight: 55
+      weight: 60
       maximumPerWave: 3
     - category: 1
-      weight: 25
-      maximumPerWave: 1
-    - category: 2
-      weight: 20
-      maximumPerWave: 1
+      weight: 40
+      maximumPerWave: 2
   milestoneOpportunities:
-  - leader: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
-    firstWave: 21
-    finalWave: 23
-    initialChance: 0.45
+  - leader: {fileID: 11400000, guid: a8912c080c9d415082ff439864aefd06, type: 2}
+    firstWave: 7
+    finalWave: 8
+    initialChance: 0.35
     enemyCount: 2
-  - leader: {fileID: 11400000, guid: b9de130924cb44f3b77befc8fa1c0438, type: 2}
+  - leader: {fileID: 11400000, guid: 9e704135ac48432c9bdb148a30da3e8a, type: 2}
+    firstWave: 12
+    finalWave: 14
+    initialChance: 0.35
+    enemyCount: 2
+  - leader: {fileID: 11400000, guid: cb5b4ce0108940d788ee9a219b2fe946, type: 2}
+    firstWave: 18
+    finalWave: 20
+    initialChance: 0.35
+    enemyCount: 3
+  - leader: {fileID: 11400000, guid: 8d684cf2178442b8b6e3d160fb5fac79, type: 2}
     firstWave: 24
     finalWave: 26
-    initialChance: 0.25
+    initialChance: 0.35
     enemyCount: 2
+  - leader: {fileID: 11400000, guid: b9de130924cb44f3b77befc8fa1c0438, type: 2}
+    firstWave: 29
+    finalWave: 30
+    initialChance: 0.35
+    enemyCount: 2
+  authoredEncounterChance: 0.45
+  threatBudgetByWave:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 2
+      inSlope: 0.5
+      outSlope: 0.5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3
+      value: 3
+      inSlope: 0.8
+      outSlope: 0.8
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6
+      value: 6
+      inSlope: 0.625
+      outSlope: 0.625
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 11
+      value: 8
+      inSlope: 0.2916666666666667
+      outSlope: 0.2916666666666667
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 18
+      value: 9.5
+      inSlope: 0.17647058823529413
+      outSlope: 0.17647058823529413
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 28
+      value: 11
+      inSlope: 0.20833333333333334
+      outSlope: 0.20833333333333334
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 12
+      inSlope: 0.5
+      outSlope: 0.5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  encounterRecipes:
+  - id: curious-locals
+    purpose: Practice target priority
+    minimumWave: 3
+    maximumWave: 6
+    weight: 2
+    threatBudget: 3
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}
+      count: 1
+  - id: first-excavation
+    purpose: Learn mining counterplay
+    minimumWave: 4
+    maximumWave: 6
+    weight: 3
+    threatBudget: 3
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+      count: 1
+  - id: two-miners
+    purpose: Combine two small mining threats
+    minimumWave: 6
+    maximumWave: 12
+    weight: 1
+    threatBudget: 4
+    maximumDisruptors: 2
+    members:
+    - enemy: {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+      count: 2
+  - id: village-wall
+    purpose: Break the fragile wall
+    minimumWave: 5
+    maximumWave: 9
+    weight: 2
+    threatBudget: 3
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: cf3b9a8c35434f72afc9567d6c0835de, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 655f6b9c480740719f00f56e0169908d, type: 2}
+      count: 1
+  - id: chain-lesson
+    purpose: Clear the chained gem
+    minimumWave: 7
+    maximumWave: 11
+    weight: 3
+    threatBudget: 3.5
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+      count: 1
+  - id: guard-wall
+    purpose: Choose wall breaker or attacker
+    minimumWave: 8
+    maximumWave: 15
+    weight: 2
+    threatBudget: 3.5
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+      count: 1
+  - id: mining-fortification
+    purpose: Test structural priority with capped obstacles
+    minimumWave: 10
+    maximumWave: 16
+    weight: 0.6
+    threatBudget: 6
+    maximumDisruptors: 3
+    members:
+    - enemy: {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+      count: 2
+  - id: knight-patrol
+    purpose: Breathing room against direct attackers
+    minimumWave: 11
+    maximumWave: 23
+    weight: 2
+    threatBudget: 4
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+      count: 2
+  - id: shield-lesson
+    purpose: Focus the shield support
+    minimumWave: 13
+    maximumWave: 18
+    weight: 3
+    threatBudget: 4.5
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+      count: 1
+  - id: chains-and-spears
+    purpose: Practice chains before the Captain
+    minimumWave: 14
+    maximumWave: 20
+    weight: 2
+    threatBudget: 6
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+      count: 1
+  - id: royal-vanguard
+    purpose: Learn two-hit royal attacks
+    minimumWave: 19
+    maximumWave: 27
+    weight: 2
+    threatBudget: 5
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+      count: 1
+  - id: royal-fireline
+    purpose: Target ranged pressure
+    minimumWave: 21
+    maximumWave: 28
+    weight: 2
+    threatBudget: 7
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+      count: 1
+  - id: banner-lesson
+    purpose: Break a banner before combined pressure
+    minimumWave: 22
+    maximumWave: 25
+    weight: 3
+    threatBudget: 5.5
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+      count: 1
+  - id: ice-lesson
+    purpose: Learn freeze counterplay
+    minimumWave: 23
+    maximumWave: 26
+    weight: 3
+    threatBudget: 5
+    maximumDisruptors: 1
+    members:
+    - enemy: {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
+      count: 1
+  - id: court-formation
+    purpose: Test freeze and banner priority
+    minimumWave: 26
+    maximumWave: 28
+    weight: 1
+    threatBudget: 8.5
+    maximumDisruptors: 2
+    members:
+    - enemy: {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+      count: 1
+  - id: last-breath
+    purpose: A readable attacker patrol before the King
+    minimumWave: 27
+    maximumWave: 28
+    weight: 3
+    threatBudget: 5
+    maximumDisruptors: 0
+    members:
+    - enemy: {fileID: 11400000, guid: 574ae9bff3c2431fb01239e7b48856f7, type: 2}
+      count: 1
+    - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+      count: 1

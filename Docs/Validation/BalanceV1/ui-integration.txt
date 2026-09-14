@@ -1,0 +1,58 @@
+PASS disposable profile installed before scene bootstrap
+Captured 01-main-menu 720x1280; visual review required.
+Captured 02-characters-fresh 720x1280; visual review required.
+PASS unique enabled button: LevelUp
+PASS Level Up UI updates independent level and wallet
+PASS shared directional unlock
+Captured 03-characters-upgraded 720x1280; visual review required.
+Captured 04-mastery-locks 720x1280; visual review required.
+Captured 05-shop 720x1280; visual review required.
+PASS shop contains only the two authorized items
+PASS both item types equip together
+Captured 06-shop-equipped 720x1280; visual review required.
+PASS Game scene initializes
+PASS independent three-use run snapshots
+Captured 07-hud-short 540x960; visual review required.
+PASS Settings inside physical safe area
+PASS HealthPotion inside physical safe area
+PASS Bomb inside physical safe area
+Captured 08-hud-tall-cutout 720x1600; visual review required.
+PASS full-health potion does not spend
+PASS Bomb accepts target selection
+PASS target cancellation spends nothing
+PASS accepted potion heals through PlayerActor
+PASS repeat potion rejected on cooldown
+PASS Bomb independent from potion cooldown
+PASS accepted Bomb uses authoritative board pipeline
+PASS board settles
+Captured 09-consumable-cooldowns 720x1600; visual review required.
+PASS settings pause
+PASS cooldown freezes with gameplay
+PASS paused consumables rejected
+PASS unique enabled button: Music
+PASS Music control independent
+PASS unique enabled button: SFX
+PASS SFX control independent
+Captured 10-settings 720x1600; visual review required.
+PASS closing settings preserves another owner's block
+PASS input owner released
+PASS Bomb becomes usable after cooldown/transition
+PASS Bomb use 2
+PASS Bomb use 3
+PASS ten owned / three uses leaves seven
+PASS fourth use does not refill from stock
+PASS unique enabled button: Retry
+PASS unique enabled button: Confirm
+PASS Retry loads new run charges and restores time
+PASS Retry payout attributed once
+PASS unique enabled button: Quit
+PASS Quit to Menu cleans run runtime
+PASS wallet persists on reload
+PASS audio choices survive scene transitions
+PASS reach wave 3 through real swaps
+PASS death credits completed-wave payout exactly once
+Captured 11-death-rewards 720x1600; visual review required.
+PASS unique enabled button: QuitToMenu
+PASS death Quit restores scene/time
+PASS death Quit does not duplicate payout
+INTEGRATION PASSED

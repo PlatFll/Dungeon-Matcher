@@ -23,15 +23,15 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 175
-  baseDamage: 5
-  baseFollowUpDamage: 5
+  baseMaxHealth: 115
+  baseDamage: 4
+  baseFollowUpDamage: 4
   followUpAttackDelay: 0.12
-  baseAttackInterval: 8
+  baseAttackInterval: 10
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
+  lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
   barricadesPerUse: 2
@@ -45,34 +45,43 @@ MonoBehaviour:
   hammerWarningMoves: 2
   hammerBaseDamage: 12
   barricadeDamageReduction: 0.2
-  minimumWave: 22
+  minimumWave: 21
   maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
-      inSlope: 0.5
-      outSlope: 0.5
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 2
+      time: 4
       value: 1.5
-      inSlope: 0.5
-      outSlope: 0
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 10
-      value: 1.5
-      inSlope: 0
-      outSlope: 0
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -84,8 +93,11 @@ MonoBehaviour:
   encounterEscorts: []
   maximumSpecialEscorts: 1
   spawnWeight: 0.9
-  healthMultiplier: 0.374925
-  damageMultiplier: 0.5164222
-  attackSpeedMultiplier: 0.89063054
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
   royalAssaultParticipant: 1
+  threatCost: 2.5
+  isBoardDisruptor: 0
+  isSupport: 0

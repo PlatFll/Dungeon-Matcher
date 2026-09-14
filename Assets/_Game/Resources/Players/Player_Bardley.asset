@@ -21,6 +21,12 @@ MonoBehaviour:
   battleAnimatorController: {fileID: 0}
   menuPortrait: {fileID: 0}
   baseMaxHealth: 80
+  healthPerLevel: 8
+  baseGemDamage: 10
+  gemDamagePerLevel: 0.65
+  abilityDamageGrowth: 0.07
+  baseShieldCap: 40
+  shieldCapPerLevel: 3
   affinityGemType: 2
   activeAbility: {fileID: 11400000, guid: 75f6751d83fa4dbba61f89d530079a81, type: 2}
   passiveAbility: {fileID: 0}

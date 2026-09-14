@@ -47,6 +47,11 @@ public sealed class RunUpgradeDefinition : ScriptableObject
     [Tooltip("Stable CharacterAbilityDefinition.AbilityId. Empty means any ability.")]
     private string requiredAbilityId;
 
+    [SerializeField] private GemSpecialType requiredSpecial;
+    public GemSpecialType RequiredSpecial => requiredSpecial;
+    [SerializeField] private bool requiresEnergyBudget;
+    public bool RequiresEnergyBudget => requiresEnergyBudget;
+
     [SerializeField]
     private string[] prerequisiteUpgradeIds = new string[0];
 

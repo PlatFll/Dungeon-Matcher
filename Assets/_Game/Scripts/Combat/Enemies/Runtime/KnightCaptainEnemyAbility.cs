@@ -45,7 +45,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
     {
         if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
         pending = true;
-        if (!board.TryQueueTopUpMovablePins(actor, 3, success =>
+        if (!board.TryQueueTopUpMovablePins(actor, actor.Definition.ChainCap, success =>
         {
             if (released) return;
             actor.EndSpecialAbilityAnimationAction();

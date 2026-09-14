@@ -12,6 +12,8 @@ public sealed class CrackedChainUpgradeScopeTests
     private const BindingFlags Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
     private GameObject root;
     private EnemyDefinition enemyDefinition;
+    private PlayerDefinition playerDefinition;
+    private CharacterAbilityDefinition abilityDefinition;
     private PlayerActor player;
     private PlayerAbilityEnergy energy;
     private BoardController board;
@@ -34,8 +36,12 @@ public sealed class CrackedChainUpgradeScopeTests
         Assert.That(RunUpgradeGameplayHooks.Current, Is.Null);
         root = new GameObject("CrackedChainScopeFixture");
         player = Child("Player").AddComponent<PlayerActor>();
-        var definition = Resources.Load<PlayerDefinition>("Players/Player_Bardley");
+        var definition = playerDefinition = UnityEngine.Object.Instantiate(Resources.Load<PlayerDefinition>("Players/Player_Bardley"));
         Assert.That(definition, Is.Not.Null);
+        abilityDefinition=UnityEngine.Object.Instantiate(definition.ActiveAbility);
+        abilityDefinition.GetType().GetField("energyCost",Flags).SetValue(abilityDefinition,80);
+        Set(definition,"activeAbility",abilityDefinition);
+        Set(definition,"baseGemDamage",100f); // Preserve the fixture's unrounded 100-damage arithmetic.
         player.Initialize(definition, 100);
         energy = player.gameObject.AddComponent<PlayerAbilityEnergy>();
         board = Child("Board").AddComponent<BoardController>();
@@ -75,6 +81,8 @@ public sealed class CrackedChainUpgradeScopeTests
     {
         if (root != null) { root.SetActive(false); UnityEngine.Object.DestroyImmediate(root); }
         if (enemyDefinition != null) UnityEngine.Object.DestroyImmediate(enemyDefinition);
+        if (playerDefinition != null) UnityEngine.Object.DestroyImmediate(playerDefinition);
+        if (abilityDefinition != null) UnityEngine.Object.DestroyImmediate(abilityDefinition);
         damage.Clear(); outcomes.Clear();
         preparedCalls = finishedCalls = 0;
         UnityEngine.Random.state = randomState;

@@ -18,7 +18,7 @@ public sealed class PlayerAffinityHealing :
         "Base HP restored for every affinity-color gem " +
         "that is genuinely destroyed."
     )]
-    private int healingPerGem = 3;
+    private int healingPerGem = 1;
 
     [SerializeField, Range(0f, 1f)]
     [Tooltip(

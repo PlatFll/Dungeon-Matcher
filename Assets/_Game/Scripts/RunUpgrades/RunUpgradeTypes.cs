@@ -26,7 +26,8 @@ public enum RunUpgradeStat
     ShieldBombShield = 12,
     CrackedGemDamage = 13,
     RoyalDecreeDuration = 14,
-    RoyalDecreeDamage = 15
+    RoyalDecreeDamage = 15,
+    MaximumShield = 16
 }
 
 public enum RunUpgradeModifierOperation

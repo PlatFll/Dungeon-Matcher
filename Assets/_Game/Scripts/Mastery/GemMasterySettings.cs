@@ -5,6 +5,20 @@ public static class GemMasterySettings
 {
     private const string KeyPrefix =
         "DungeonMatcher.GemMastery.v1.";
+    private static GemMasteryLoadout? temporaryLoadout;
+
+    // Scoped non-persistent configuration for diagnostic Play Mode runs.
+    public static IDisposable UseTemporaryLoadout(GemMasteryLoadout loadout)
+    {
+        var prior = temporaryLoadout; temporaryLoadout = loadout;
+        return new TemporarySelection(() => temporaryLoadout = prior);
+    }
+    private sealed class TemporarySelection : IDisposable
+    {
+        private Action restore;
+        public TemporarySelection(Action action) { restore = action; }
+        public void Dispose() { restore?.Invoke(); restore = null; }
+    }
 
     public static event Action<
         GemMasteryShape,
@@ -27,9 +41,23 @@ public static class GemMasterySettings
             )
         );
 
+    public static bool IsAvailableInRun(GemSpecialType special)
+    {
+        if (!AccountProgression.Current.IsUnlocked(special)) return false;
+        if (special == GemSpecialType.RowBomb || special == GemSpecialType.ColumnBomb) return true;
+        foreach (GemMasteryShape shape in Enum.GetValues(typeof(GemMasteryShape)))
+            if (GemMasteryRuntimeResolver.TryGetSpecialType(GetReward(shape), out var selected) && selected == special) return true;
+        return false;
+    }
+
     public static GemMasteryReward GetReward(
         GemMasteryShape shape)
     {
+        if (temporaryLoadout.HasValue)
+        {
+            var selected = temporaryLoadout.Value.GetReward(shape);
+            return AccountProgression.Current.IsUnlocked(selected) ? selected : GemMasteryReward.ColorCrystal;
+        }
         string key =
             GetKey(shape);
 
@@ -56,7 +84,8 @@ public static class GemMasterySettings
             return defaultReward;
         }
 
-        return (GemMasteryReward)storedValue;
+        var reward = (GemMasteryReward)storedValue;
+        return AccountProgression.Current.IsUnlocked(reward) ? reward : GemMasteryReward.ColorCrystal;
     }
 
     public static bool SetReward(
@@ -79,6 +108,15 @@ public static class GemMasterySettings
 
         GemMasteryReward currentReward =
             GetReward(shape);
+
+        if (!AccountProgression.Current.IsUnlocked(reward)) return false;
+
+        if (temporaryLoadout.HasValue)
+        {
+            temporaryLoadout = temporaryLoadout.Value.WithReward(shape, reward);
+            Changed?.Invoke(shape, reward);
+            return currentReward != reward;
+        }
 
         if (currentReward == reward)
         {

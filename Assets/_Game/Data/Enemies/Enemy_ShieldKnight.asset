@@ -23,26 +23,26 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 160
-  baseDamage: 5
+  baseMaxHealth: 90
+  baseDamage: 4
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 10
+  baseAttackInterval: 11
   hasSpecialAbility: 1
   specialAbilityKind: 4
-  baseSpecialTurnRequirement: 7
+  baseSpecialTurnRequirement: 6
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
-  selfShieldAmount: 15
+  selfShieldAmount: 12
   barricadesPerUse: 2
   maximumOwnedBarricades: 6
   barricadeDurability: 1
   barricadeStyle: 0
-  minimumWave: 17
+  minimumWave: 13
   spawnWeight: 1
-  healthMultiplier: 0.347976170591838
-  damageMultiplier: 0.510381152644795
-  attackSpeedMultiplier: 0.861976823167179
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
   crownSoldier: 1
   progressionWeight:
@@ -50,18 +50,36 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.6
-      inSlope: 0.2
-      outSlope: 0.2
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      time: 4
+      value: 1.5
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -69,3 +87,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  maximumWave: 0
+  threatCost: 2.5
+  isBoardDisruptor: 0
+  isSupport: 1

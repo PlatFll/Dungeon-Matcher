@@ -64,6 +64,8 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
             >();
 
         ConfigureAudioSource();
+        AudioPreferences.Changed += RefreshMute;
+        RefreshMute();
         TryStartMusic();
     }
 
@@ -156,9 +158,12 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
 
     private void OnDestroy()
     {
+        AudioPreferences.Changed -= RefreshMute;
         if (instance == this)
         {
             instance = null;
         }
     }
+
+    private void RefreshMute() { if (audioSource != null) audioSource.mute = AudioPreferences.MusicMuted; }
 }

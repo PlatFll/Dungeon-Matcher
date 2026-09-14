@@ -22,11 +22,11 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 350
-  baseDamage: 6
+  baseMaxHealth: 210
+  baseDamage: 5
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 10
+  baseAttackInterval: 12
   hasSpecialAbility: 1
   specialAbilityKind: 10
   baseSpecialTurnRequirement: 4
@@ -65,25 +65,43 @@ MonoBehaviour:
   enragedSpecialMoves: 3
   royalReinforcements: []
   requiredBossEscort: {fileID: 0}
-  minimumWave: 21
+  minimumWave: 24
   maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      time: 4
+      value: 1.5
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -92,10 +110,15 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   crownSoldier: 0
-  encounterEscorts: []
+  encounterEscorts:
+  - {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
+  - {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
   maximumSpecialEscorts: 1
   spawnWeight: 2
-  healthMultiplier: 0.174
-  damageMultiplier: 0.42
-  attackSpeedMultiplier: 0.96
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
+  threatCost: 4
+  isBoardDisruptor: 1
+  isSupport: 1

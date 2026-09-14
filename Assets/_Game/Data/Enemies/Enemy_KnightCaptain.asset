@@ -22,11 +22,12 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 240
-  baseDamage: 8
+  baseMaxHealth: 250
+  chainCap: 3
+  baseDamage: 7
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 10
+  baseAttackInterval: 11
   hasSpecialAbility: 1
   specialAbilityKind: 7
   baseSpecialTurnRequirement: 4
@@ -44,25 +45,43 @@ MonoBehaviour:
   hammerWarningMoves: 2
   hammerBaseDamage: 12
   barricadeDamageReduction: 0.2
-  minimumWave: 21
+  minimumWave: 18
   maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.6
-      inSlope: 0.2
-      outSlope: 0.2
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      time: 4
+      value: 1.5
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -74,10 +93,12 @@ MonoBehaviour:
   encounterEscorts:
   - {fileID: 11400000, guid: 6615ee48f5122354fb3bb48ee8cd8b8f, type: 2}
   - {fileID: 11400000, guid: 3446e21fb60447829950580946a51eff, type: 2}
-  - {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
   maximumSpecialEscorts: 1
   spawnWeight: 1
   healthMultiplier: 1
   damageMultiplier: 1
   attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
+  threatCost: 4.5
+  isBoardDisruptor: 1
+  isSupport: 0

@@ -28,8 +28,7 @@ public sealed class RunUpgradeCoordinator :
 
     public static bool ShouldOfferUpgradeAfterWave(int completedWave)
     {
-        return completedWave > 0 &&
-               completedWave % WavesPerChoice == 0;
+        return BalanceV1.Current.OffersCard(completedWave);
     }
 
     private void OnEnable()

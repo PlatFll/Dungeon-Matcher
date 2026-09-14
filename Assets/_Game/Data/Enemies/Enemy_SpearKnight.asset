@@ -23,24 +23,24 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 120
-  baseDamage: 5
-  baseFollowUpDamage: 7
+  baseMaxHealth: 100
+  baseDamage: 3
+  baseFollowUpDamage: 5
   followUpAttackDelay: 0.3
-  baseAttackInterval: 10
+  baseAttackInterval: 11
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
+  lockSpecialTurnRequirement: 1
   barricadesPerUse: 2
   maximumOwnedBarricades: 6
   barricadeDurability: 1
   barricadeStyle: 0
-  minimumWave: 17
+  minimumWave: 12
   spawnWeight: 1
-  healthMultiplier: 0.6626027
-  damageMultiplier: 0.78799725
-  attackSpeedMultiplier: 0.95813894
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
   crownSoldier: 1
   progressionWeight:
@@ -48,18 +48,36 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.6
-      inSlope: 0.2
-      outSlope: 0.2
+      value: 0.8
+      inSlope: 0.175
+      outSlope: 0.175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7
-      value: 2
-      inSlope: 0.2
-      outSlope: 0.2
+      time: 4
+      value: 1.5
+      inSlope: -0.045000000000000005
+      outSlope: -0.045000000000000005
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0.35
+      inSlope: -0.054615384615384614
+      outSlope: -0.054615384615384614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.013499999999999998
+      outSlope: -0.013499999999999998
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -67,3 +85,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  maximumWave: 0
+  threatCost: 2
+  isBoardDisruptor: 0
+  isSupport: 0

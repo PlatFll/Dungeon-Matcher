@@ -147,6 +147,8 @@ public sealed class GemBreakAudioController :
 
     private void LateUpdate()
     {
+        if (audioSources != null)
+            foreach (var source in audioSources) if (source != null) source.mute = AudioPreferences.SfxMuted;
         if (!hasPendingBreak)
         {
             return;
