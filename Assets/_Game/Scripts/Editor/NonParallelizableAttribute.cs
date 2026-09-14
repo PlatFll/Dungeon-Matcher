@@ -1,17 +1,13 @@
 using System;
-using NUnit.Framework;
 
 /// <summary>
-/// Compatibility shim for the NUnit version bundled with this Unity project.
+/// Source-compatibility marker for audit fixtures on the NUnit build bundled
+/// with this Unity project. This NUnit version does not expose the newer
+/// NonParallelizableAttribute type, and its ParallelizableAttribute is sealed.
 ///
-/// The project uses Unity Test Framework 1.6.0 / com.unity.ext.nunit 2.0.5,
-/// whose NUnit API supports Parallelizable(ParallelScope.None) but does not
-/// expose the newer NonParallelizableAttribute shorthand used by several
-/// gameplay-audit fixtures.
-///
-/// NUnit's native NonParallelizableAttribute is equivalent to
-/// Parallelizable(ParallelScope.None), so deriving from the existing attribute
-/// preserves the intended test scheduling without changing production code.
+/// Unity/NUnit test execution is non-parallel by default unless tests are
+/// explicitly marked parallelizable, so this marker preserves the current
+/// project behavior without changing gameplay/runtime code.
 /// </summary>
 [AttributeUsage(
     AttributeTargets.Assembly |
@@ -20,10 +16,6 @@ using NUnit.Framework;
     AllowMultiple = false,
     Inherited = true
 )]
-internal sealed class NonParallelizableAttribute : ParallelizableAttribute
+internal sealed class NonParallelizableAttribute : Attribute
 {
-    public NonParallelizableAttribute()
-        : base(ParallelScope.None)
-    {
-    }
 }
