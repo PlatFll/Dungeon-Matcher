@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player_Skeleton
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDefinition
   playerId: skeleton
-  displayName: SirRattlebone
+  displayName: RattleBones
   description: 
   playerPrefab: {fileID: 0}
   battleFrameSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
@@ -21,6 +21,12 @@ MonoBehaviour:
   battleAnimatorController: {fileID: 9100000, guid: eea964b4c3964e94ea35646813df699f, type: 2}
   menuPortrait: {fileID: 0}
   baseMaxHealth: 100
+  healthPerLevel: 10
+  baseGemDamage: 11
+  gemDamagePerLevel: 0.55
+  abilityDamageGrowth: 0.2
+  baseShieldCap: 45
+  shieldCapPerLevel: 3
   affinityGemType: 3
   activeAbility: {fileID: 11400000, guid: d54ce1cae64399a48bb7b95b0a2580cb, type: 2}
   passiveAbility: {fileID: 0}

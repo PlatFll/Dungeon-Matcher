@@ -79,6 +79,7 @@ public partial class BoardController
                    request.OwnerInstanceId) <
                request.MaximumOwnedPins)
         {
+            if (pinnedGemOwners.Count >= BalanceV1.Current.maximumGlobalChains) yield break;
             List<Gem> candidates = BuildSafePinnableGemList();
             candidates.RemoveAll(gem => !IsOrdinaryGemOnBoard(gem));
             if (candidates.Count == 0)

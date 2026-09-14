@@ -1,6 +1,6 @@
 # Royal Special Enemies
 
-This document records the Royal Special enemies and the Royal Archbishop / King milestone mechanics. Numerical combat values, milestone windows, and spawn weights below are first-pass serialized tuning and remain adjustable; the mechanic rules are the durable part of this implementation.
+This document records the Royal Special enemies and the Royal Archbishop / King milestone mechanics. The September 2026 Balance v1 values below replace the earlier prototype numbers. Full roster, formations and measured pacing are in [BALANCE_V1.md](BALANCE_V1.md); numerical tuning remains adjustable.
 
 ## Royal Standard Bearer
 
@@ -20,11 +20,11 @@ This document records the Royal Special enemies and the Royal Archbishop / King 
 - Placement uses the shared board-mutation queue and legal-move check. It cannot begin while the owner is staggered.
 - `BoardController.royalBannerBoardSprite` is optional presentation data. Missing artwork does not change gameplay.
 
-First-pass serialized tuning:
-- minimum eligible wave: 23;
-- base HP target before the normal difficulty pipeline normalization: 200;
-- single-hit base damage: 6;
-- base attack interval: 10 seconds;
+Balance v1 serialized tuning:
+- minimum eligible wave: 22;
+- base HP: 105, multiplied by `1 + 0.01 * (wave - 1)`;
+- single-hit base damage: 5, using the same gradual wave multiplier;
+- base attack interval: 12 seconds;
 - special cadence: 5 valid completed player moves, locked against global special-turn reduction;
 - relative spawn weight: 0.8.
 
@@ -42,11 +42,11 @@ First-pass serialized tuning:
 - Freeze requests use the shared board-mutation queue and cannot begin while the Mage is staggered.
 - `BoardController.frozenGemOverlaySprite` is the assignable frozen-gem artwork slot. Missing artwork logs a warning but the gameplay freeze still functions.
 
-First-pass serialized tuning:
-- minimum eligible wave: 24;
-- base HP target before the normal difficulty pipeline normalization: 180;
-- single-hit base damage: 6;
-- base attack interval: 10 seconds;
+Balance v1 serialized tuning:
+- minimum eligible wave: 23;
+- base HP: 95, multiplied by `1 + 0.01 * (wave - 1)`;
+- single-hit base damage: 5, using the same gradual wave multiplier;
+- base attack interval: 12 seconds;
 - special cadence: 5 valid completed player moves, locked against global special-turn reduction;
 - relative spawn weight: 0.75.
 
@@ -56,7 +56,7 @@ Both mechanics preserve the existing ownership model:
 
 - `EnemySpecialActionAvailability` gates special startup around stagger and waits for board idle without claiming board ownership early.
 - `BoardController` remains the sole authority for structural board mutation, gravity, legal-move checks, refill, cascades and emergency reshuffle.
-- Court Mage freeze is represented as a distinct frozen tag layered on the existing pin ownership system. Frozen gems use fixed-pin gravity semantics but have their own overlay and do not use Crossbow Guard adjacency-break behavior.
+- Court Mage freeze is represented as a distinct frozen tag layered on the existing pin ownership system. Frozen gems use fixed-pin gravity semantics and their own overlay. Crossbow Guard and Knight Captain now share falling-chain rules; neither chains nor freezes break from adjacency alone.
 - Royal standards are non-gem occupants tracked by `BoardController.RoyalBanners`. Physical gem-destruction notifications are batched for the current clear before the normal collapse resumes, so a standard consumes all gravity openings created beneath it in that resolution. Presentation never owns the gameplay lifetime.
 - `RoyalBannerAuraRuntime` is a board-level coordinator rather than one independent runtime per standard, so duplicate Standard Bearers cannot incorrectly clear each other's aura.
 - Both new enemy definitions are registered in `EnemyDatabase_Main` and use weighted eligibility rather than exact-wave scripted encounters.
@@ -71,10 +71,10 @@ The Archbishop uses one normal attack and alternates Restoration then Benedictio
 
 **Benediction:** bless up to two other living allies in roster order, excluding targets already holding this caster's blessing. Blessing affects their next accepted normal attack sequence; both hits of a two-hit Royal receive it. It composes multiplicatively with command and persistent normal-damage modifiers, is consumed once at sequence acceptance, and never affects special damage or attack speed. Caster cleanup removes its unspent blessings. A blessing granted during an existing attack applies to the following sequence.
 
-First-pass tuning (serialized on `Enemy_RoyalArchbishop`):
+Balance v1 tuning (serialized on `Enemy_RoyalArchbishop`):
 
-- Eligibility starts at 21, with elevated Mini-boss weight and a milestone opportunity window of 21–23. Existing older eligibility is unchanged.
-- Approximately 350 HP at introduction, one approximately 6-damage attack per 10 seconds through the existing difficulty pipeline.
+- Eligibility and the milestone opportunity window begin at 24; guarantee by 26 with one Royal escort. The later King's required Archbishop escort is the explicit exception to unique milestone non-repetition.
+- Base 210 HP and 5 damage per 12 seconds: approximately 258 HP and 6 damage at wave 24 through the gradual difficulty pipeline.
 - Shared special cadence: 4 valid completed moves. Three runes last 3 complete subsequent moves.
 - Each surviving rune restores 3.3% of the selected target's maximum HP, rounded to the nearest whole HP (minimum 1). Three King-targeted pulses restore approximately 9.9% before missing-HP clamping.
 - Rank weights: Normal 1.00, Special 1.15, Mini-boss 1.35, Boss 1.60. An ally missing at least 10% HP makes self-priority use a 0.5 multiplier.
@@ -100,10 +100,10 @@ One deterministic special cycle is **Royal Judgment → United Royal Assault →
 
 Environmental removal itself reports no player clear rewards, combat damage, healing or energy. Genuine resulting cascades retain the established environmental-settlement cascade semantics, as with Siege Sergeant.
 
-First-pass tuning (serialized on `Enemy_King`):
+Balance v1 tuning (serialized on `Enemy_King`):
 
-- Variable milestone window 24–26, centered around the approximate wave-25 narrative anchor; no exact-wave King override.
-- Approximately 750 HP and 10 normal damage per roughly 10 seconds near wave 25, normalized through standard difficulty/category scaling rather than multiplying a full Boss-sized HP target again.
+- Variable milestone window 29–30, centered around the brief's approximate wave-30 anchor; no exact-wave King override.
+- Base 480 HP and 9 normal damage per 11 seconds: approximately 619 HP and 12 damage at wave 30. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
 - Special cadence 4 moves, shortened to 3 in Enrage.
 - Enrage: normal damage 1.20x, cooldown progress speed 1.25x. Banner speed remains a separate multiplier.
 - Judgment: 3 targets, 3-move countdown, base 12 damage per survivor scaled by the existing unrounded difficulty damage multiplier.

@@ -292,7 +292,7 @@ public sealed class GemMasteryMenuController : MonoBehaviour
                     .IsRewardImplemented(reward);
 
             button.interactable =
-                isImplemented;
+                isImplemented && AccountProgression.Current.IsUnlocked(reward);
 
             Text label =
                 button.GetComponentInChildren<Text>(
@@ -304,9 +304,8 @@ public sealed class GemMasteryMenuController : MonoBehaviour
                 label.text =
                     GetRewardDisplayName(reward) +
                     (
-                        isImplemented
-                            ? string.Empty
-                            : " (LOCKED)"
+                        !isImplemented ? " (Coming later)" : button.interactable ? string.Empty :
+                            " (Any character Lv " + BalanceV1.Current.UnlockLevel(GetSpecial(reward)) + ")"
                     );
             }
 
@@ -325,6 +324,12 @@ public sealed class GemMasteryMenuController : MonoBehaviour
                 buttonColor
             );
         }
+    }
+
+    private static GemSpecialType GetSpecial(GemMasteryReward reward)
+    {
+        GemMasteryRuntimeResolver.TryGetSpecialType(reward, out var type);
+        return type;
     }
 
     private static GemMasteryReward

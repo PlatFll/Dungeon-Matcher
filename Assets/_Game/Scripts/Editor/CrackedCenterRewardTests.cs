@@ -30,8 +30,12 @@ public sealed class CrackedCenterRewardTests
         Assert.That(RunUpgradeGameplayHooks.Current, Is.Null);
         root = new GameObject("CrackedRewardFixture");
         player = Child("Player").AddComponent<PlayerActor>();
-        PlayerDefinition definition = Resources.Load<PlayerDefinition>("Players/Player_Bardley");
+        PlayerDefinition definition = UnityEngine.Object.Instantiate(Resources.Load<PlayerDefinition>("Players/Player_Bardley"));
         Assert.That(definition, Is.Not.Null);
+        var ability=UnityEngine.Object.Instantiate(definition.ActiveAbility);
+        ability.GetType().GetField("energyCost",Flags).SetValue(ability,80);
+        Set(definition,"activeAbility",ability);
+        temporaryAssets.Add(definition);temporaryAssets.Add(ability);
         player.Initialize(definition, 100);
         Assert.That(player.ActiveAbility, Is.InstanceOf<CrackedGemsAbilityDefinition>());
         energy = player.gameObject.AddComponent<PlayerAbilityEnergy>();

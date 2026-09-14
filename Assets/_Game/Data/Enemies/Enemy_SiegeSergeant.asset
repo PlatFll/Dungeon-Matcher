@@ -24,26 +24,32 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
-  baseMaxHealth: 600
+  baseMaxHealth: 240
   baseDamage: 5
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 10
+  baseAttackInterval: 11
   hasSpecialAbility: 1
   specialAbilityKind: 6
-  baseSpecialTurnRequirement: 3
+  baseSpecialTurnRequirement: 4
   lockSpecialTurnRequirement: 1
-  minimumWave: 16
+  minimumWave: 12
   spawnWeight: 1
-  healthMultiplier: 0.200629173
-  damageMultiplier: 0.468823254
-  attackSpeedMultiplier: 1.014379849
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
-  barricadesPerUse: 4
-  maximumOwnedBarricades: 8
+  barricadesPerUse: 3
+  maximumOwnedBarricades: 6
   barricadeDurability: 1
   barricadeStyle: 0
   hammerWarningMoves: 2
-  hammerBaseDamage: 12
+  hammerBaseDamage: 10
   barricadeDamageReduction: 0.2
-  maximumWave: 16
+  maximumWave: 0
+  threatCost: 4
+  isBoardDisruptor: 1
+  isSupport: 0
+  encounterEscorts:
+  - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
+  - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}

@@ -113,8 +113,11 @@ try {
         -FilePath $unityExe `
         -ArgumentList $unityArguments `
         -WindowStyle Hidden `
-        -Wait `
         -PassThru
+    # Wait for the editor, not its process tree. Unity may launch a persistent
+    # licensing client; Start-Process -Wait otherwise hangs after a clean exit.
+    $unityProcess.WaitForExit()
+    $unityProcess.Refresh()
     $unityExitCode = $unityProcess.ExitCode
 
     if (-not (Test-Path -LiteralPath $logPath -PathType Leaf)) {

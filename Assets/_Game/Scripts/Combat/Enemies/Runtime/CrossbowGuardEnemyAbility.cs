@@ -7,7 +7,7 @@ public sealed class CrossbowGuardEnemyAbility :
     MonoBehaviour,
     IEnemySpecialAbilityRuntime
 {
-    private const int MaximumOwnedPins = 2;
+    private int MaximumOwnedPins => enemyActor != null && enemyActor.Definition != null ? enemyActor.Definition.ChainCap : 2;
 
     [Header("Runtime Debug Information")]
     [SerializeField]
@@ -166,9 +166,11 @@ public sealed class CrossbowGuardEnemyAbility :
         }
 
         bool queued =
-            boardController.TryQueuePinRandomGem(
+            boardController.TryQueueTopUpMovablePins(
                 enemyActor,
-                MaximumOwnedPins
+                Mathf.Min(MaximumOwnedPins, ownedPinCount + 1),
+                null,
+                () => this == null || !isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated
             );
 
         if (!queued)

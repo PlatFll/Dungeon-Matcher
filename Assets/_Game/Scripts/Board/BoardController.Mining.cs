@@ -476,6 +476,9 @@ public partial class BoardController
             yield break;
         }
 
+        if (minedCellOwners.Count >= BalanceV1.Current.maximumGlobalMines ||
+            minedCellOwners.Count + barricadeCells.Count >= BalanceV1.Current.maximumGlobalStructures) yield break;
+
         List<Vector2Int> candidates = BuildMineableCellList();
 
         if (candidates.Count == 0)
@@ -534,12 +537,17 @@ public partial class BoardController
 
                 Gem gem = GetGem(column, row);
 
-                if (gem == null || IsGemPinned(gem))
+                if (gem == null || IsGemPinned(gem) || gem.SpecialType != GemSpecialType.None)
                 {
                     continue;
                 }
-
-                candidates.Add(new Vector2Int(column, row));
+                var cell = new Vector2Int(column, row);
+                // Test against every already-reserved structure, including other
+                // owners. This is a bounded local check, never a future-board search.
+                minedCellOwners[cell] = int.MinValue;
+                bool retainsResponse = HasAvailableMove();
+                minedCellOwners.Remove(cell);
+                if (retainsResponse) candidates.Add(cell);
             }
         }
 

@@ -63,6 +63,8 @@ public sealed class PlayerAbilityController :
     {
         get
         {
+            if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
+                (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;
             CharacterAbilityDefinition definition =
                 ActiveAbility;
 
@@ -124,6 +126,8 @@ public sealed class PlayerAbilityController :
 
     public bool TryActivate()
     {
+        if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
+            (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;
         CharacterAbilityDefinition definition =
             ActiveAbility;
 

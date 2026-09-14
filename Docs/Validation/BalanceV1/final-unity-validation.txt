@@ -1,0 +1,11 @@
+Executed 2026-09-14 on Windows after closing the final Unity pacing editor.
+Command: powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1
+Process exit code: 0
+Output:
+Validating with Unity 6000.3.19f1...
+Unity validation succeeded with Unity 6000.3.19f1.
+Original log: C:\Users\USER\AppData\Local\Temp\DungeonMatcher-UnityValidation-fcd195d7-0ee9-4c85-bad3-1ca56fd622cf.log
+
+This is compilation/import validation. Actual Play Mode, automated assertions,
+manual pointer controls, UI renders, restart persistence and pacing evidence
+are recorded separately in BALANCE_V1_VALIDATION.md and adjacent artifacts.

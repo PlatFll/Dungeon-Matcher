@@ -18,53 +18,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.010000000000000002
+      outSlope: 0.010000000000000002
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 5
-      value: 1.25
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 1.65
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 20
-      value: 2.6
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 40
-      value: 5
-      inSlope: 0
-      outSlope: 0
+      time: 30
+      value: 1.29
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 100
-      value: 12
-      inSlope: 0
-      outSlope: 0
+      value: 1.99
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -78,53 +51,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.010000000000000002
+      outSlope: 0.010000000000000002
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 5
-      value: 1.12
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 1.35
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 20
-      value: 1.9
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 40
-      value: 3.2
-      inSlope: 0
-      outSlope: 0
+      time: 30
+      value: 1.29
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 100
-      value: 7
-      inSlope: 0
-      outSlope: 0
+      value: 1.99
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -138,44 +84,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 1.05
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 20
-      value: 1.12
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 40
-      value: 1.22
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.0
+      outSlope: 0.0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 100
-      value: 1.35
-      inSlope: 0
-      outSlope: 0
+      value: 1
+      inSlope: 0.0
+      outSlope: 0.0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -189,71 +108,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 9
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 24
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 25
-      value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 49
-      value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 50
-      value: 3
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.0
+      outSlope: 0.0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 100
-      value: 3
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 0.0
+      outSlope: 0.0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -267,7 +132,7 @@ MonoBehaviour:
   minimumAttackInterval: 1.25
   minimumSpecialTurnRequirement: 2
   maximumSpecialTurnReduction: 3
-  usePlayerPowerCorrection: 1
+  usePlayerPowerCorrection: 0
   maximumPlayerPowerHealthBoost: 0.15
   playerPowerResponse: 0.25
   categoryModifiers:
@@ -278,20 +143,20 @@ MonoBehaviour:
     levelOffset: 0
     specialTurnAdjustment: 0
   - category: 1
-    healthMultiplier: 1.2
-    damageMultiplier: 1.1
-    attackSpeedMultiplier: 1.05
+    healthMultiplier: 1
+    damageMultiplier: 1
+    attackSpeedMultiplier: 1
     levelOffset: 0
     specialTurnAdjustment: 0
   - category: 2
-    healthMultiplier: 2.2
-    damageMultiplier: 1.25
-    attackSpeedMultiplier: 0.9
+    healthMultiplier: 1
+    damageMultiplier: 1
+    attackSpeedMultiplier: 1
     levelOffset: 2
-    specialTurnAdjustment: -1
+    specialTurnAdjustment: 0
   - category: 3
-    healthMultiplier: 4
-    damageMultiplier: 1.5
-    attackSpeedMultiplier: 0.85
+    healthMultiplier: 1
+    damageMultiplier: 1
+    attackSpeedMultiplier: 1
     levelOffset: 5
-    specialTurnAdjustment: -1
+    specialTurnAdjustment: 0

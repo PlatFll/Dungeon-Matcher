@@ -7,7 +7,6 @@ public sealed class AbilityButtonUI : MonoBehaviour
 {
     private const float AbilityButtonWidth = 176f;
     private const float AbilityButtonHeight = 64f;
-    private const float AbilityEnergyBarGap = 15f;
     private const string AbilityEnergyBarName =
         "AbilityEnergyBar";
 
@@ -52,6 +51,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private float targetCharge;
     private float chargeVelocity;
     private bool hasInitializedCharge;
+    private Text energyAmount;
 
     private void Awake()
     {
@@ -69,6 +69,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         ApplyBottomHudLayout();
         energyBarMaximumWidth = 64f;
+        energyAmount=GameUi.Label("EnergyAmount",transform,"",new Vector2(176,22),new Vector2(0,86),17);
     }
 
     private void OnEnable()
@@ -123,6 +124,8 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private void Update()
     {
         RefreshAvailability();
+        if(energyAmount!=null&&playerAbilityController!=null)
+            energyAmount.text=$"Energy {playerAbilityController.CurrentEnergy} / {playerAbilityController.RequiredEnergy}";
 
         if (!hasInitializedCharge)
         {
@@ -296,7 +299,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         buttonRect.localScale = Vector3.one;
         buttonRect.anchorMin = buttonRect.anchorMax = buttonRect.pivot = new Vector2(0.5f, 0.5f);
-        buttonRect.anchoredPosition = Vector2.zero;
+        buttonRect.anchoredPosition = new Vector2(0f, -24f);
         buttonRect.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Horizontal,
             AbilityButtonWidth
@@ -327,21 +330,9 @@ public sealed class AbilityButtonUI : MonoBehaviour
             child.localScale = Vector3.one;
             if (child.anchorMin == child.anchorMax) child.sizeDelta = new Vector2(64f, 64f);
         }
-        Vector2 anchoredPosition =
-            energyBarRect.anchoredPosition;
-
-        float side =
-            anchoredPosition.x < 0f
-                ? -1f
-                : 1f;
-
-        anchoredPosition.x =
-            side *
-            (AbilityButtonWidth * 0.5f +
-             AbilityEnergyBarGap + 32f);
-
-        energyBarRect.anchoredPosition =
-            anchoredPosition;
+        energyBarRect.anchorMin = energyBarRect.anchorMax = energyBarRect.pivot = new Vector2(.5f,.5f);
+        energyBarRect.anchoredPosition = new Vector2(0f,64f);
+        energyBarRect.localRotation = Quaternion.Euler(0,0,-90);
     }
 
 }

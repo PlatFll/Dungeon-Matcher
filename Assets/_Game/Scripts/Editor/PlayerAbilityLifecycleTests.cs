@@ -44,7 +44,10 @@ public sealed class PlayerAbilityLifecycleTests
         energy.ResetEnergy();
         energy.AddEnergy(energy.MaximumEnergy);
         Assert.That(controller.RequiredEnergy, Is.GreaterThan(0).And.LessThanOrEqualTo(energy.MaximumEnergy));
-        Assert.That(controller.CanActivate, Is.True, "Fixture starts with a usable funded runtime.");
+        Assert.That(controller.CanActivate, Is.True, "Fixture starts with a usable funded runtime: " +
+            $"energy={energy.CurrentEnergy}/{controller.RequiredEnergy}, controller={controller.isActiveAndEnabled}, " +
+            $"player={player.IsInitialized}/{player.IsDefeated}, probe={runtime.isActiveAndEnabled}/{runtime.IsActive}, " +
+            $"selected={typeof(PlayerAbilityController).GetField("activeRuntime",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(controller)}, run={RunSession.Current}");
     }
 
     [TearDown]

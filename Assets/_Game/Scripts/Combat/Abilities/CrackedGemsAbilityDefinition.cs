@@ -21,7 +21,7 @@ public sealed class CrackedGemsAbilityDefinition :
     [Tooltip(
         "Fixed base color damage dealt by each cracked gem when it detonates."
     )]
-    private int crackedGemDamage = 50;
+    private int crackedGemDamage = 20;
 
     [Header("Presentation")]
     [SerializeField]

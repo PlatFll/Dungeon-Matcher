@@ -17,8 +17,9 @@ MonoBehaviour:
   description: Begin each wave with +15 ability energy.
   artwork: {fileID: 0}
   rarity: 1
-  weight: 1
+  weight: 1.5
   maxStacks: 1
+  requiresEnergyBudget: 1
   minimumWave: 1
   maximumWave: 0
   requiredPlayerId: 
@@ -28,3 +29,4 @@ MonoBehaviour:
   modifiers: []
   mechanicGrants:
   - mechanic: 10
+  requiredSpecial: 0

@@ -10,11 +10,25 @@ public static class CharacterSelectionSettings
         "DungeonMatcher.CharacterSelection.v1.SelectedPlayer";
 
     public static event Action Changed;
+    private static string temporarySelection;
+    public static IDisposable UseTemporarySelection(string playerId)
+    {
+        if (!IsKnownCharacter(playerId)) throw new ArgumentException(nameof(playerId));
+        var prior = temporarySelection; temporarySelection = playerId;
+        return new TemporarySelection(() => temporarySelection = prior);
+    }
+    private sealed class TemporarySelection : IDisposable
+    {
+        private Action restore;
+        public TemporarySelection(Action action) { restore = action; }
+        public void Dispose() { restore?.Invoke(); restore = null; }
+    }
 
     public static string SelectedPlayerId
     {
         get
         {
+            if (temporarySelection != null) return temporarySelection;
             string storedPlayerId =
                 PlayerPrefs.GetString(
                     SelectedPlayerKey,
@@ -45,6 +59,11 @@ public static class CharacterSelectionSettings
                 StringComparison.Ordinal))
         {
             return false;
+        }
+
+        if (temporarySelection != null)
+        {
+            temporarySelection = playerId; Changed?.Invoke(); return true;
         }
 
         if (string.Equals(

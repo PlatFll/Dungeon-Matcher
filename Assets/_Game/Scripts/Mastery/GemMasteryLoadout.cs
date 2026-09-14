@@ -10,9 +10,9 @@ public readonly struct GemMasteryLoadout
     public static GemMasteryLoadout Default =>
         new GemMasteryLoadout(
             GemMasteryReward.ColorCrystal,
-            GemMasteryReward.PoisonBomb,
-            GemMasteryReward.PoisonBomb,
-            GemMasteryReward.PoisonBomb
+            GemMasteryReward.ColorCrystal,
+            GemMasteryReward.ColorCrystal,
+            GemMasteryReward.ColorCrystal
         );
 
     public GemMasteryLoadout(

@@ -16,9 +16,7 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-The run now includes a choice of one from up to three legal run-upgrade cards
-after every fifth completed wave. The end condition and wider metagame loop still
-need finalized design input.
+The approved Balance v1 loop awards a choice of one from up to three legal run cards after waves 2, 5, 9, 13, 17, 21, 25 and 28. Defeating the King formation ends the supported opening arc. Completed waves earn shared Gold Coins on death, victory, Retry, menu exit or recovery from interruption. Gold buys independent character levels or optional consumables; see [BALANCE_V1.md](BALANCE_V1.md) for editable numerical decisions and measured evidence.
 
 ## Core match-3 design philosophy
 
@@ -81,7 +79,7 @@ Exact shield capacity and reduction values remain balance data.
 - Special gems are part of the authoritative board-resolution sequence and may chain into other specials.
 - The normal special-gem set contains the established Row Bomb, Column Bomb, Poison Bomb, Healing Bomb, and Shield Bomb types, plus Color Crystal.
 - Cracked is not an ordinary special gem. It is a temporary gem state used by Bardley's Cracked Gems ability.
-- Straight-four matches currently create directional bombs. Higher-order shape rewards are selected through the Gem Mastery model rather than being hard-coded as one universal mapping.
+- On a fresh account, five-gem shapes create Color Crystals; locked straight-four shapes still clear and reward all four gems. Reaching level 2 on any one character permanently unlocks directional bombs account-wide; levels 3, 4 and 5 unlock Poison, Healing and Shield. Levels are never summed. Higher-order shape rewards use the chosen unlocked Gem Mastery loadout. Color Crystals and bombs have no separate upgrade levels. Valid explicit legacy selections are preserved through migration.
 - Special activation must preserve one clear source, one reward report, and one board mutation for each resolved outcome.
 - A special's hidden or preserved gem data must not accidentally create unintended damage, healing, or energy.
 - Color Crystal + a mastery bomb converts eligible gems of the partner's color into that exact bomb type, then detonates every converted bomb. Directional combinations retain their existing treatment of pre-existing mastery bombs.
@@ -122,9 +120,7 @@ behavior uses explicit mechanic capabilities. Draft eligibility may depend on
 stable player and active-ability IDs, but never display names. Card drafting has
 its own deterministic random stream and cannot perturb encounter generation.
 
-**Needs finalized design input:** run length, persistent progression economy,
-unlock structure, difficulty milestones, boss cadence, failure/retry rules, and
-long-term scaling targets.
+Balance v1 authorizes independent gold-purchased character levels (cap 20), shared one-time mastery unlocks, optional equipped consumables, hybrid authored/weighted formations, escorted milestones and a King opportunity at waves 29–30. No XP, hidden level gate or adaptive player-power scaling is used. Permanent levels set starting strength; run cards reset each run. The economy and pacing targets remain adjustable balance data in [BALANCE_V1.md](BALANCE_V1.md). Post-King content remains future work.
 
 ## Presentation and pixel-art readability principles
 
@@ -143,29 +139,28 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 
 ### Spear Guard
 
-- Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. He becomes eligible starting at wave 9.
+- Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. Balance v1 eligibility starts at wave 6.
 - His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
-- First-pass runtime targets at wave 9 with the standard difficulty profile and expected player power are 100 maximum HP, 5 damage per attack, and an 8-second attack interval.
-- The definition's individual scaling modifiers normalize the global wave-9 curves to those introduction targets. Later waves continue to scale through the existing difficulty pipeline. These numbers are tunable prototype balance, not permanent progression gates.
-- His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a wave-9 spawn.
+- Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP/damage scale by 1% per wave beyond the first; attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
+- His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a particular wave composition.
 - Until his own art is imported, his definition uses the existing Spear Knight sprite as temporary fallback artwork, with the shared single-lunge presentation and no animation override.
 - Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
 
 ### Spear Knight
 
-- Spear Knight is a Chapter 3 Normal enemy eligible starting at wave 17.
-- Base maximum HP: 120.
-- Its normal auto-attack is a two-hit combo once every 10 seconds: lunge, deal 5 base damage at the first impact, return completely to rest, take a brief recovery/readability beat, then lunge again, deal 7 base damage at the second impact, and return completely to rest again.
-- The next 10-second auto-attack cooldown begins only after the second return finishes; there is no normal cooldown between the two lunges.
+- Spear Knight is a Chapter 3 Normal enemy eligible starting at wave 12.
+- Balance v1 base maximum HP: 100.
+- Its normal auto-attack is a two-hit combo once every 11 seconds: lunge, deal 3 base damage at the first impact, return completely to rest, take a brief recovery/readability beat, then lunge again, deal 5 base damage at the second impact, and return completely to rest again.
+- The next 11-second auto-attack cooldown begins only after the second return finishes; there is no normal cooldown between the two lunges.
 - The two hits are separate damage instances, so player shield and defeat handling apply independently to each hit.
 - Spear Knight has no special ability.
 
 ### Shield Knight
 
-- Shield Knight is a Chapter 3 Special enemy eligible starting at wave 17.
-- At its wave-17 introduction under the expected-player-power baseline, it has 160 maximum HP and its normal single-hit auto-attack deals 5 damage every 10 seconds. Individual scaling compensates for the Special classification and new introduction wave. It has no follow-up attack.
-- Shielding Allies casts after every 7 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
-- A cast grants +10 shield to every other living enemy and +15 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
+- Shield Knight is a Chapter 3 Special enemy eligible starting at wave 13.
+- Balance v1 base stats: 90 HP, one 4-damage hit every 11 seconds. Standard 1% wave scaling applies; it has no follow-up attack.
+- Shielding Allies casts after every 6 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
+- A cast grants +10 shield to every other living enemy and +12 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
 - When an enemy had shield at the start of a damage instance, that entire instance receives the same 25% reduction and ceiling-rounding semantics as the player's shield, even if the hit breaks the shield.
 - Reduced damage consumes enemy shield first and any remainder overflows into HP. A later separate hit is unreduced when no shield remains.
@@ -178,7 +173,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 - Maximum HP: 80.
 - Affinity: Topaz.
 - Active ability: Cracked Gems.
-- Energy cost: 80.
+- Committed development energy cost: **1**, intentionally preserved for rapid testing. Intended normal-cost measurements use a disposable **80**-energy configuration. Changing the release cost requires deliberate cleanup; never compensate for the override by inflating enemy HP.
 
 #### Cracked Gems targeting
 
@@ -199,7 +194,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 #### Resolution
 
 - Each cracked center produces a 3x3 explosion.
-- Each cracked center deals 50 fixed matching-color damage to enemies whose weakness matches that cracked gem's color.
+- Each cracked center deals 20 base matching-color damage to enemies whose weakness matches that cracked gem's color, scaled by permanent ability growth and current run modifiers. This Balance v1 tuning preserves the five-target chain mechanics and intentional 1-energy development override.
 - Ordinary collateral destruction follows the established normal board/combat-clear behavior.
 - Existing specials caught in the explosion chain using their established behavior.
 - Obstacles use their established interaction semantics.
@@ -220,23 +215,20 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 #### Identity and encounter role
 
-- Town Marshal is the first Mini-boss of Chapter 1, The Locals, and is introduced as a solo Mini-boss encounter on wave 8 in the current first-pass progression.
+- Town Marshal is the first Mini-boss of Chapter 1, The Locals. Balance v1 gives him one Farmer/Pan escort in a weighted wave-7–8 opportunity; surrounding waves vary.
 - He is a pompous, cowardly local authority figure whose danger comes from rallying townsfolk rather than from personal combat strength.
 - He deliberately does not manipulate the match-3 board. Miner owns Chapter 1's board-interference lesson; Town Marshal teaches summoning, enemy-slot pressure, coordination, and target priority.
 - His presentation direction is a short/fat town official with a huge moustache and oversized hand bell. Final sprite/animation art is not yet wired into the current definition.
 
 #### First-pass combat balance
 
-- Target runtime maximum HP at the wave-8 introduction is approximately 400 under the expected-player-power baseline. The serialized base/scaling values are chosen to reach that target through the normal `DifficultyProfile` pipeline rather than bypassing global scaling.
-- His personal auto-attack is intentionally pathetic: approximately 1 damage at introduction with a very slow roughly 12-13 second runtime cadence.
-- He has no follow-up auto-attack hit.
-
-These numeric values are first-pass balance and should be playtested rather than treated as immutable final balance.
+- Balance v1 base stats: 120 HP, 6 damage, 10-second normal attack interval and no follow-up hit. The standard 1% per-wave HP/damage scaling applies.
+- The whole formation, including its local escort, fits the shared threat budget. Summons fill only the remaining three-slot capacity.
 
 #### Shared special cadence and ability selection
 
-- The Marshal receives one special-action opportunity every 3 valid completed player moves.
-- Invalid swaps and cascades do not advance this cadence, and the three-move requirement is locked against global special-turn shortening.
+- The Marshal receives one special-action opportunity every 4 valid completed player moves.
+- Invalid swaps and cascades do not advance this cadence, and the four-move requirement is locked against global special-turn shortening.
 - Ability choice is deterministic rather than random so the introductory Mini-boss remains learnable and readable.
 - His initial preference is `Ring the Bell`. After a successful Ring cast, his next preference is `Citizens, Seize Him!`; after a successful Citizens cast, his next preference returns to Ring.
 - If the preferred ability is currently invalid, he may use the other valid ability instead.
@@ -277,10 +269,10 @@ These numeric values are first-pass balance and should be playtested rather than
 
 ### Siege Sergeant
 
-- Chapter 2 Mini-boss, introduced alone at the wave-16 checkpoint. The current pool ends his eligibility there; Chapter 3 introduces the Crown roster.
-- First-pass wave-16 baseline: 600 HP, a single 5-damage auto-attack every 10 seconds, normal stagger, and 12 damage for a failed hammer warning. The standard difficulty profile scales later appearances; individual modifiers normalize the introduction values. These are prototype balance targets.
-- One special opportunity every 3 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the eight-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
-- **Hold the Line:** place four one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose four distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at eight blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
+- Chapter 2 Mini-boss with a Spear/Crossbow Guard escort, appearing once in a weighted wave-12–14 opportunity.
+- Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Standard 1% wave scaling applies.
+- One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the six-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
+- **Hold the Line:** place three one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose three distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at six blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
 - **Hammer Time:** mark two orthogonally adjacent ordinary unpinned gems after prior board mutations settle. Give two full valid moves after marking; invalid swaps and cascades do not advance the warning. Markers follow gem identities through movement, gravity and reshuffles, never replacement gems in the same cells. If either gem is removed, pinned or becomes special, cancel the entire strike. A moved pair may no longer be adjacent at impact; it still targets those same two gems and the sweep connects their current positions.
 - A surviving warning resolves after the second move settles and the Sergeant is free to act. Stagger or another enemy animation action may delay impact, giving additional opportunity to interrupt. Only one warning per Sergeant may be pending.
 - A failed warning makes one shield-aware player damage call, removes exactly the two targets with no direct damage/healing/energy rewards or special activation, then reuses ordinary environmental refill/cascade/reshuffle resolution. Subsequent genuine cascades keep existing reward semantics.
@@ -292,16 +284,22 @@ These numeric values are first-pass balance and should be playtested rather than
 
 Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
 
-First-pass thresholds are tunable: Locals occupy waves 1–7; Town Marshal is a solo checkpoint at 8; Guards enter at 9; Siege Sergeant is a solo checkpoint at 16; Crown Knights enter at 17. Locals fade through Chapter 2 and leave after 16. Guards fade into early/mid Chapter 3 and leave after 24. Captain becomes eligible at 21, without a guaranteed exact composition or appearance wave. See `ENCOUNTER_PACING.md` for current pool data and caps.
+Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Archbishop appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
 
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 
 ### Knight Captain
 
-- A straightforward sword attack, stronger than Sword Knight, at a medium cadence. Initial base values are 240 HP, 8 damage and a 10-second interval, modified by the normal difficulty/category pipeline. These are tunable balance data, not finalized runtime targets. Existing Knight animation is temporary presentation until Captain art is available.
+- A straightforward sword attack, stronger than Sword Knight, at a medium cadence. Balance v1 base values are 250 HP, 7 damage and an 11-second interval, modified by the normal difficulty/category pipeline. These are tunable balance data, not finalized runtime targets. Existing Knight animation is temporary presentation until Captain art is available.
 - One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Invalid swaps, cascades and settling do not count. Prefer Hold Fast first, then On My Mark, alternating after successful casts. If the preferred command cannot execute, try the other. If neither can execute, retain readiness and retry after another completed move.
 - **Hold Fast!** tops up to 3 owned chains on ordinary, unpinned gems. Chained gems cannot be manually swapped but can fall with gravity and be cleared by matches, specials or abilities. Chains follow gem identity, disappear on destruction/replacement, and do not break from adjacent clears. Each placement passes the authoritative legal-move check with earlier placements included. No legal placement means no chain is added. Existing pin overlay/dimming is the presentation fallback. Captain defeat releases his chains through queued board cleanup; emergency reshuffles also release them.
 - **On My Mark!** reserves the Captain and eligible living Crown soldiers present when the command starts. Enemies already performing an action or staggered cannot join. The Captain telegraphs, then participants execute their existing normal attack sequences in roster order, Captain first, with a brief gap. Spear Knight retains both separate hits and complete returns. This consumes each participant's next normal attack: its cooldown restarts after its command sequence. Reserved allies cannot start another normal or special attack during the wind-up.
 - Allies defeated during the wind-up are skipped. Captain defeat/despawn cancels unfinished command attacks and releases surviving participants; unspent reservations retain their stored cooldown, while participants that already struck restart theirs. No stale damage callbacks may survive cancellation.
 - No passive immunity, protector interception, forced target order, or escort-first rule. Matching the Captain's weakness damages him through the normal pipeline. Burning down the Captain and dismantling escorts are both valid strategies.
-- Captain encounters procedurally choose one or two escorts from Sword, Spear and Shield Knights, within available enemy slots. Sword/Spear duplicates are allowed; at most one Shield Knight accompanies him. No threat-budget system is introduced: slot and category caps remain the existing capacity model.
+- Balance v1 Captain encounters choose two escorts from Sword/Spear Knights within the whole-formation threat budget and three-slot limit. Their shared falling-chain behavior is taught earlier by Crossbow Guard: cap 2 for the Guard, 3 for the Captain, 6 globally. Mage freezes remain distinct.
+
+## Account, consumables and menus
+
+Gold is shared; each character level is independent. Shop purchases and equip state persist. Each equipped potion/Bomb loads `min(3, owned)` charges at run start, independently. Inventory is spent exactly once only on accepted use; unused stock remains owned and the same run never reloads charges. Potion heals 35% max HP and cannot be used at full HP. Bomb targets a gem and clears a 3×3 footprint through existing bomb chains, obstacle damage and cascades. Cancellation/invalid use spends nothing. Each slot has its own five-second paused-game-time cooldown.
+
+The main menu provides Play, Characters, Shop and Gem Mastery. Characters shows current/next stats, price, shared gold, independent selection and a short level-up flash. Settings sits inside the upper-right safe area and provides Resume, confirmed Retry/Quit, and separate persistent music/SFX mute controls. Death offers Retry and Quit to Menu with exactly-once completed-wave rewards. All runtime text uses the centrally configured non-pixel font family; sprites retain Point filtering and existing frame/gem art.

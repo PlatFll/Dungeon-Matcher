@@ -34,7 +34,7 @@ Ordinary encounters should be procedurally composed from overlapping weighted po
 
 New factions rise in weight as the run progresses. Previous factions decline in weight rather than disappearing immediately. Different runs should therefore produce different enemy sequences and mixed compositions while still communicating a clear escalation.
 
-Eligibility, weights, encounter constraints, category limits, active-slot limits, milestone rules, and future threat-budget rules should shape the composition without turning the run into a fixed encounter script.
+Eligibility, weights, encounter constraints, category limits, active-slot limits, milestone rules, and threat budgets shape the composition without turning the run into a fixed encounter script.
 
 ## Finalized opening escalation
 
@@ -96,18 +96,17 @@ For example, early Royal progression might still be mostly Knights, while later 
 
 Approximate wave positions are useful for pacing and tuning, but they are **not exact chapter boundaries or deterministic scripts**.
 
-A good first-pass target is:
+Balance v1 starts Locals at wave 1, Guards at 6, Knights at 11, and Royals at 19, retaining declining older-faction weight tails. Sixteen authored recipes (45% opportunity) mix with constrained random rolls. Milestones use the following once-per-run windows, starting at 35% and rising to certainty at the window end:
 
-| Era | Approximate run position | Dominant content |
-| --- | ---: | --- |
-| Locals | ~1–6 | Farmers, villagers, Miner and local troublemakers |
-| Guards | ~5–12 | Spear Guard, Crossbow Guard, Barricade Guard and local carryover |
-| Knights | ~10–18 | Sword Knight, Spear Knight, Shield Knight and Guard carryover |
-| Royal Forces | ~17–25 | Elite Royal units with Knight carryover |
-| The King | ~24–26 | First major Boss and opening-arc climax |
-| Guild era | ~26+ | Adventurer parties plus the full legacy pool |
+| Leader | Window | Opening escorts |
+| --- | --- | --- |
+| Town Marshal | 7–8 | One local |
+| Siege Sergeant | 12–14 | One guard |
+| Knight Captain | 18–20 | Two knights |
+| Royal Archbishop | 24–26 | One royal |
+| King | 29–30 | Required Archbishop |
 
-The overlap is intentional. These are pacing anchors for spawn weights and encounter-generation logic, not instructions that wave 12 must contain one exact composition.
+The King/Archbishop pairing deliberately permits an Archbishop who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation currently completes a run. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
 
 ## Milestone mini-bosses
 
@@ -119,37 +118,11 @@ The King is different because he is a major narrative Boss and progression gate.
 
 ## The King target
 
-The Royal milestone implementation uses definition-based opportunities in `WaveSpawnProfile_Standard`, tracked once per run by `WaveController`. First-pass Archbishop opportunity weights rise from 45% at wave 21 to 100% by 23; King opportunities rise from 25% at 24 to 100% by 26. These are adjustable windows with a last-opportunity guarantee, not exact-wave encounter scripts. Seeing an eligible Archbishop through ordinary weighted selection also satisfies his milestone. The Archbishop remains eligible afterward. The King opens with exactly his required Archbishop escort; this narrow narrative composition is explicitly allowed. Ordinary overlapping pools and existing older eligibility remain intact. Guild content is not added by this milestone.
-
-The first-pass pacing target is for the King to appear around **wave 25**, with a small tuning window around that point.
-
-This creates a major payoff before the opening arc becomes overlong and gives the player enough time to form a meaningful run build.
-
-The King should not be delayed deep into a long sequence of Mercenary and Guild chapters before the first true Boss.
+Balance v1 targets a King encounter around **wave 30**, before the opening arc becomes overlong. An eligible run reaches him in the wave-29–30 opportunity with the required Archbishop escort. The complete formation fits its threat budget. Current measured timings and remaining tuning risks are in [BALANCE_V1.md](BALANCE_V1.md).
 
 ## Cards and run rhythm
 
-The first complete run-upgrade system presents a card choice after every **5
-completed waves**: 5, 10, 15, 20, and so on. The choice occurs after the old
-board resolution settles and before the next encounter spawns. This exact
-first-pass cadence may still be revisited by an explicitly approved design
-change; ordinary encounter composition remains weighted rather than scripted.
-
-A representative opening rhythm is:
-
-- after wave 5: card choice
-- after wave 10: card choice
-- after wave 15: card choice
-- after wave 20: card choice
-- around wave 25: King / major boss reward moment
-
-By the first major Boss, the player should usually have made several meaningful build decisions so the current run already feels distinct.
-
-The desired pacing loop is roughly:
-
-**combat → combat → interesting composition → combat → card/build decision → repeat**
-
-The player should not spend a long uninterrupted stretch doing nothing except matching against similar enemies.
+Cards appear after completed waves **2, 5, 9, 13, 17, 21, 25 and 28**, after the board settles and before the next encounter. An early choice starts build differentiation; later stretches contain three or four encounters between choices. Eight choices are available before the King. A successful unusually strong run may clear faster; there is no artificial delay, death wave or hidden level gate.
 
 ## Encounter duration philosophy
 
@@ -157,13 +130,15 @@ Dungeon Matcher should avoid slow, repetitive HP-sponge combat.
 
 Approximate experience targets are:
 
-| Encounter type | Desired first-pass feel |
+| Encounter type | Balance v1 target |
 | --- | --- |
-| Easy/basic wave | ~15–30 seconds |
-| Typical wave | ~25–45 seconds |
-| Difficult composition | ~40–60 seconds |
-| Mini-boss | ~45–75 seconds |
-| Major Boss | ~60–120 seconds |
+| Regular wave | 12–24 seconds |
+| Pressure formation | 20–35 seconds |
+| Mini-boss formation | 30–50 seconds |
+| King formation | 45–80 seconds |
+| Beginner attempt | 2–4 minutes |
+| Ordinary repeat attempt | 4–8 minutes |
+| Successful opening arc, including choices/transitions | 10–14 minutes |
 
 These are not hard timers and should not be enforced mechanically. They are pacing targets for balance review.
 
@@ -189,9 +164,9 @@ Do not simultaneously inflate enemy HP, enemy count, action frequency, and board
 
 ## Encounter threat budget direction
 
-The long-term encounter generator should use a **threat budget** or equivalent composition-cost system in addition to active-slot and category constraints.
+Balance v1 implements a **threat budget** in addition to active-slot and category constraints, with bounded random retries and legal fallback compositions. Authored recipes also specify their complete formation cost and restrictions.
 
-Each enemy should eventually consume a threat cost based on how much pressure it contributes. A simple Normal enemy may cost little; a high-impact Special or Mini-boss costs more.
+Each enemy consumes a threat cost based on its pressure. A simple Normal enemy costs little; a high-impact Special or Mini-boss costs more. Current values are in [BALANCE_V1.md](BALANCE_V1.md).
 
 Illustrative only:
 
@@ -209,11 +184,11 @@ This prevents the generator from accidentally creating combinations such as thre
 
 The threat budget should rise over the run, but complexity and dangerous synergies should consume budget too.
 
-Until a dedicated threat-budget implementation exists, current slot/category constraints remain valid temporary encounter-safety mechanisms. Future work should not interpret that temporary state as a rejection of the threat-budget design.
+Threat budgets complement the existing slot/category constraints and safe board-placement checks; no single cost value substitutes for validating mechanical combinations.
 
 ## Replayability rules
 
-The same Mini-boss identity cannot appear in immediately adjacent encounters. After at least one different encounter it may roll again while eligible. WaveController tracks successfully spawned leaders independently of wave number, and applies the guard to weighted selection and fallbacks. A Boss whose required escort would repeat is deferred with its pairing intact; an unseen guaranteed milestone remains eligible after that intervening encounter. Major Boss identities already encountered do not re-enter ordinary weighted spawning. Normal and Special enemies retain their existing repeat eligibility.
+Named Mini-boss and Boss identities appear once per run as leaders. WaveController tracks successfully spawned leaders independently of wave number and applies exclusions to weighted selection and fallbacks. The King's required Archbishop escort is the explicit narrative exception; if that escort appeared in the immediately preceding encounter, the King pairing is deferred intact. Normal and Special enemies remain repeatable. Authored recipes avoid an immediate repeat, while the overlapping weighted pools provide variety between runs.
 
 Replayability is a core pacing requirement, not a secondary bonus.
 
@@ -274,7 +249,7 @@ When adding or balancing a chapter, enemy pool, milestone, card cadence, or enco
 
 The finalized progression philosophy is:
 
-**weighted overlapping spawn eras + procedural encounter composition + milestone mini-bosses + cards roughly every five waves + fast combat + a first major King boss around wave 25 + persistent eligibility for older factions + post-King expansion into the Adventurer Guild and wider fantasy world.**
+**weighted overlapping spawn eras + procedural encounter composition + milestone mini-bosses + an early card followed by longer play stretches + fast combat + a first major King boss around wave 30 + persistent eligibility for older factions + post-King expansion into the Adventurer Guild and wider fantasy world.**
 
 The finalized opening narrative order is:
 

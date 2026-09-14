@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Row and Column Bomb chains deal +25% gem damage.
   artwork: {fileID: 0}
   rarity: 0
-  weight: 1
+  weight: 1.5
   maxStacks: 1
   minimumWave: 1
   maximumWave: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   modifiers: []
   mechanicGrants:
   - mechanic: 2
+  requiredSpecial: 1

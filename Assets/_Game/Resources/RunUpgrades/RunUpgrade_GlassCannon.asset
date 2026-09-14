@@ -17,7 +17,7 @@ MonoBehaviour:
   description: +30% gem and ability damage. -15% maximum HP.
   artwork: {fileID: 0}
   rarity: 2
-  weight: 1
+  weight: 1.5
   maxStacks: 1
   minimumWave: 1
   maximumWave: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
     operation: 1
     value: -0.15
   mechanicGrants: []
+  requiredSpecial: 0

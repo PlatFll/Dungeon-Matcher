@@ -19,6 +19,7 @@ MonoBehaviour:
   rarity: 3
   weight: 1
   maxStacks: 1
+  requiresEnergyBudget: 1
   minimumWave: 1
   maximumWave: 0
   requiredPlayerId: bardley
@@ -28,3 +29,4 @@ MonoBehaviour:
   modifiers: []
   mechanicGrants:
   - mechanic: 11
+  requiredSpecial: 0
