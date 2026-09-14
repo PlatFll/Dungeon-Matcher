@@ -59,6 +59,18 @@ public sealed class PlayerDefinition : ScriptableObject
     [SerializeField, Min(1)]
     private int baseMaxHealth = 100;
 
+    [SerializeField, Min(0)] private int healthPerLevel = 10;
+    [SerializeField, Min(1)] private float baseGemDamage = 11f;
+    [SerializeField, Min(0)] private float gemDamagePerLevel = 0.55f;
+    [SerializeField, Min(0)] private float abilityDamageGrowth = 0.06f;
+    [SerializeField, Min(1)] private int baseShieldCap = 45;
+    [SerializeField, Min(0)] private int shieldCapPerLevel = 3;
+
+    public int HealthAtLevel(int level) => baseMaxHealth + healthPerLevel * (Mathf.Clamp(level, 1, BalanceV1.Current.levelCap) - 1);
+    public float GemDamageAtLevel(int level) => baseGemDamage + gemDamagePerLevel * (Mathf.Clamp(level, 1, BalanceV1.Current.levelCap) - 1);
+    public float AbilityMultiplierAtLevel(int level) => 1f + abilityDamageGrowth * (Mathf.Clamp(level, 1, BalanceV1.Current.levelCap) - 1);
+    public int ShieldCapAtLevel(int level) => baseShieldCap + shieldCapPerLevel * (Mathf.Clamp(level, 1, BalanceV1.Current.levelCap) - 1);
+
     [Header("Gem Affinity")]
     [SerializeField]
     [Tooltip(

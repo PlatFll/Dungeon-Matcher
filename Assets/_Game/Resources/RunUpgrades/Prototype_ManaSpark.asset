@@ -18,7 +18,7 @@ MonoBehaviour:
   artwork: {fileID: 0}
   rarity: 0
   weight: 1
-  maxStacks: 5
+  maxStacks: 3
   minimumWave: 1
   maximumWave: 0
   requiredPlayerId:
@@ -30,3 +30,5 @@ MonoBehaviour:
     operation: 1
     value: 0.2
   mechanicGrants: []
+  requiredSpecial: 0
+  requiresEnergyBudget: 1

@@ -205,6 +205,10 @@ public partial class BoardController
             return false;
         }
 
+        remainingCapacity = Mathf.Min(remainingCapacity,
+            BalanceV1.Current.maximumGlobalStructures - minedCellOwners.Count - barricadeCells.Count);
+        if (remainingCapacity <= 0) return false;
+
         int requestedCount =
             Mathf.Min(
                 Mathf.Max(1, barricadesPerUse),
@@ -376,6 +380,10 @@ public partial class BoardController
             GetBarricadeCountForOwner(
                 request.OwnerInstanceId
             );
+        // Other owners can have queued first. Re-evaluate the shared budget
+        // when this mutation owns the settled board, before reserving cells.
+        remainingCapacity = Mathf.Min(remainingCapacity,
+            BalanceV1.Current.maximumGlobalStructures - minedCellOwners.Count - barricadeCells.Count);
 
         if (remainingCapacity <= 0)
         {
@@ -471,6 +479,12 @@ public partial class BoardController
              */
             barricadeCells[selectedCell] =
                 state;
+
+            if (!HasAvailableMove())
+            {
+                barricadeCells.Remove(selectedCell);
+                continue;
+            }
 
             selectedCells.Add(
                 selectedCell

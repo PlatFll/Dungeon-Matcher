@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class RunUpgradeResolver
 {
+    public static int ResolveMaximumShield(int baseValue, RunUpgradeRuntime runtime = null) =>
+        ResolveInt(RunUpgradeStat.MaximumShield, baseValue, 1, runtime);
     private const float CascadeCatalystBonusPerDepth = 0.10f;
     private const float BombsmithDamageBonus = 0.25f;
     private const float ChainReactionBonusPerExtraSpecial = 0.10f;
@@ -249,6 +251,9 @@ public static class RunUpgradeResolver
         CharacterAbilityDefinition ability,
         RunUpgradeRuntime runtime = null)
     {
+        PlayerActor player = ResolveRuntime(runtime)?.Player;
+        if (player != null && player.ActiveAbility == ability)
+            baseValue = Mathf.RoundToInt(baseValue * player.AbilityDamageMultiplier);
         return ResolveInt(
             RunUpgradeStat.AbilityDamage,
             baseValue,

@@ -54,6 +54,8 @@ public sealed partial class WaveController :
     private System.Random encounterRandom;
     private readonly HashSet<EnemyDefinition> seenMilestoneLeaders = new HashSet<EnemyDefinition>();
     private EnemyDefinition selectedMilestoneLeader;
+    private readonly List<EnemyDefinition> originalEncounterDefinitions = new List<EnemyDefinition>();
+    public IReadOnlyList<EnemyDefinition> OriginalEncounterDefinitions => originalEncounterDefinitions;
     public int EncounterSeed => encounterSeed;
     private System.Random EncounterRandom
     {
@@ -244,6 +246,7 @@ public sealed partial class WaveController :
         int spawningWave = currentWave;
         isSpawningWave = true;
 
+        selectedRecipeMembers = null;
         CurrentPlan =
             waveSpawnProfile.CreatePlan(currentWave, EncounterRandom);
         selectedMilestoneLeader = waveSpawnProfile.SelectMilestone(currentWave, EncounterRandom,
@@ -255,6 +258,17 @@ public sealed partial class WaveController :
             var categories = new List<EnemyCategory> { selectedMilestoneLeader.Category };
             while (categories.Count < milestoneCount) categories.Add(EnemyCategory.Normal);
             CurrentPlan = new WaveSpawnPlan(currentWave, "Weighted milestone opportunity", categories);
+        }
+
+        if (selectedMilestoneLeader == null && waveSpawnProfile.GetFixedEnemy(currentWave, 0) == null &&
+            waveSpawnProfile.TrySelectRecipe(currentWave, enemySlots.Length, enemyDatabase, EncounterRandom,
+                GetRepeatExclusions(), previousRecipeId, out var recipe, out var recipeMembers))
+        {
+            selectedRecipeMembers = recipeMembers;
+            previousRecipeId = recipe.id;
+            var categories = new List<EnemyCategory>();
+            foreach (var member in recipeMembers) categories.Add(member.Category);
+            CurrentPlan = new WaveSpawnPlan(currentWave, recipe.id + ": " + recipe.purpose, categories);
         }
 
         if (CurrentPlan == null ||
@@ -282,6 +296,8 @@ public sealed partial class WaveController :
 
         int spawnedEnemyCount = 0;
         List<EnemyDefinition> encounter = BuildEncounter(plannedEnemyCount);
+        originalEncounterDefinitions.Clear();
+        plannedEnemyCount = Mathf.Min(plannedEnemyCount, encounter.Count);
         previousEncounterLeaders.Clear();
 
         for (int slotIndex = 0;
@@ -367,6 +383,7 @@ public sealed partial class WaveController :
             }
 
             activeEnemies.Add(enemy);
+            originalEncounterDefinitions.Add(definition);
             seenMilestoneLeaders.Add(definition);
             if (definition.Category == EnemyCategory.Miniboss || definition.Category == EnemyCategory.Boss)
                 previousEncounterLeaders.Add(definition);

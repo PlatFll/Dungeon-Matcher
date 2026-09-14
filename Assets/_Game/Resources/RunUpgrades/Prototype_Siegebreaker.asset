@@ -18,8 +18,8 @@ MonoBehaviour:
   artwork: {fileID: 0}
   rarity: 0
   weight: 1
-  maxStacks: 3
-  minimumWave: 1
+  maxStacks: 1
+  minimumWave: 5
   maximumWave: 0
   requiredPlayerId:
   requiredAbilityId:
@@ -30,3 +30,4 @@ MonoBehaviour:
     operation: 0
     value: 1
   mechanicGrants: []
+  requiredSpecial: 0

@@ -253,6 +253,31 @@ public sealed class WaveSpawnPlan
 )]
 public sealed class WaveSpawnProfile : ScriptableObject
 {
+    [Header("Hybrid Encounter Library")]
+    [SerializeField, Range(0, 1)] private float authoredEncounterChance = 0.45f;
+    [SerializeField] private List<EncounterRecipe> encounterRecipes = new List<EncounterRecipe>();
+    [SerializeField] private AnimationCurve threatBudgetByWave = AnimationCurve.Linear(1, 2, 30, 12);
+    public float ThreatBudget(int wave) => Mathf.Max(1, threatBudgetByWave.Evaluate(wave));
+    public IReadOnlyList<EncounterRecipe> Recipes => encounterRecipes;
+
+    public bool TrySelectRecipe(int wave, int slots, EnemyDatabase database, System.Random random,
+        ISet<EnemyDefinition> excluded, string previousId, out EncounterRecipe recipe, out List<EnemyDefinition> members)
+    {
+        recipe = null; members = null;
+        if (random.NextDouble() >= authoredEncounterChance) return false;
+        var candidates = new List<EncounterRecipe>();
+        float total = 0;
+        foreach (var item in encounterRecipes)
+            if (item != null && item.id != previousId && item.TryBuild(wave, slots, database, excluded, out var ignored))
+            { candidates.Add(item); total += item.weight; }
+        float roll = (float)random.NextDouble() * total;
+        foreach (var item in candidates)
+        {
+            recipe = item; roll -= item.weight;
+            if (roll < 0) break;
+        }
+        return recipe != null && recipe.TryBuild(wave, slots, database, excluded, out members);
+    }
     [Serializable]
     public sealed class MilestoneOpportunity
     {

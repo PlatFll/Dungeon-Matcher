@@ -11,6 +11,12 @@ public partial class BoardController
         Vector2 screenPosition,
         int pointerId)
     {
+        if (targetSelection != null)
+        {
+            if (!IsBusy && !IsExternalInputBlocked && Time.timeScale > 0)
+                targetSelection.Invoke(gem);
+            return;
+        }
         // BeginPointer has no acceptance return value. Mirror its guards so a
         // rejected contact cannot steal the ID of an existing gesture.
         if (IsExternalInputBlocked ||

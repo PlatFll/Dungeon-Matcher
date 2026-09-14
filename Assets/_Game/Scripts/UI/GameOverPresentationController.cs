@@ -31,7 +31,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
     private const float DimTargetAlpha = 0.72f;
 
     private const float PanelWidth = 300f;
-    private const float PanelHeight = 178f;
+    private const float PanelHeight = 360f;
     private const float PanelTopClearance = 24f;
 
     private const float ParticleMinimumSpeed = 72f;
@@ -579,7 +579,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
             "GAME OVER",
             font,
             34f,
-            new Vector2(0f, 37f),
+            new Vector2(0f, 125f),
             new Vector2(250f, 54f)
         );
 
@@ -590,6 +590,17 @@ public sealed class GameOverPresentationController : MonoBehaviour
             );
 
         retryButton.interactable = false;
+        ((RectTransform)retryButton.transform).anchoredPosition=new Vector2(0,-67);
+        var reward=AccountProgression.Current.PreviewReward("Defeat");
+        CreateLabel("RunReward",faceRect,reward != null ? reward.ToString() : "No completed-wave reward",GameUi.TmpFont,18,
+            new Vector2(0,25),new Vector2(260,125));
+        GameUi.Button("QuitToMenu",faceRect,"Quit to Menu",new Vector2(230,44),new Vector2(0,-125),()=>
+        {
+            if (!IsRetryAvailable()) return;
+            RestoreGameplayTime();
+            if(RunSession.Current!=null) { if(!RunSession.Current.ExitTo("MainMenu")) FreezeGameplay(); }
+            else SceneManager.LoadScene("MainMenu");
+        });
         retryButton.onClick.AddListener(
             RetryCurrentGame
         );
@@ -1203,7 +1214,16 @@ public sealed class GameOverPresentationController : MonoBehaviour
         try
         {
             RestoreGameplayTime();
-            SceneManager.LoadScene(activeScene.name, LoadSceneMode.Single);
+            if(RunSession.Current!=null)
+            {
+                if(!RunSession.Current.ExitTo(activeScene.name))
+                {
+                    retryRequested=false;
+                    FreezeGameplay();
+                    retryButton.interactable=true;
+                }
+            }
+            else SceneManager.LoadScene(activeScene.name, LoadSceneMode.Single);
         }
         catch (System.Exception exception)
         {

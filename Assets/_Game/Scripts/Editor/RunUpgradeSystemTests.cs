@@ -22,24 +22,12 @@ public sealed class RunUpgradeSystemTests
     }
 
     [Test]
-    public void UpgradeCadenceIsEveryFiveCompletedWaves()
+    public void UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay()
     {
-        for (int wave = 1; wave <= 4; wave++)
-        {
-            Assert.That(
-                RunUpgradeCoordinator.ShouldOfferUpgradeAfterWave(wave),
-                Is.False
-            );
-        }
-
-        Assert.That(
-            RunUpgradeCoordinator.ShouldOfferUpgradeAfterWave(5),
-            Is.True
-        );
-        Assert.That(
-            RunUpgradeCoordinator.ShouldOfferUpgradeAfterWave(10),
-            Is.True
-        );
+        int[] expected = { 2, 5, 9, 13, 17, 21, 25, 28 };
+        for (int wave = 0; wave <= 31; wave++)
+            Assert.That(RunUpgradeCoordinator.ShouldOfferUpgradeAfterWave(wave),
+                Is.EqualTo(Array.IndexOf(expected, wave) >= 0), "completed wave " + wave);
     }
 
     [Test]
@@ -101,7 +89,7 @@ public sealed class RunUpgradeSystemTests
     [Test]
     public void StackCountModifiersAndMaximumHealthApplyAuthoritatively()
     {
-        Fixture fixture = CreateFixture("Players/Player_Bardley", 20);
+        Fixture fixture = CreateFixture("Players/Player_Skeleton", 20);
         RunUpgradeDefinition damage = FindUpgrade(
             fixture.Runtime.Catalog,
             "prototype_gem_grinder"

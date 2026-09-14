@@ -4,12 +4,14 @@ using UnityEngine;
 public sealed partial class WaveController
 {
     private readonly HashSet<EnemyDefinition> previousEncounterLeaders = new HashSet<EnemyDefinition>();
+    private string previousRecipeId;
+    private List<EnemyDefinition> selectedRecipeMembers;
 
     private HashSet<EnemyDefinition> GetRepeatExclusions()
     {
         var excluded = new HashSet<EnemyDefinition>(previousEncounterLeaders);
         foreach (var definition in seenMilestoneLeaders)
-            if (definition != null && definition.Category == EnemyCategory.Boss)
+            if (definition != null && (definition.Category == EnemyCategory.Boss || definition.Category == EnemyCategory.Miniboss))
                 excluded.Add(definition);
         // A required escort is part of the encounter too. Defer its leader
         // rather than bypass repeat protection or break the required pairing.
@@ -24,6 +26,60 @@ public sealed partial class WaveController
     // Resolve the whole composition before spawning: timing and deaths during
     // entrance animations cannot alter escort constraints or random selection.
     private List<EnemyDefinition> BuildEncounter(int count)
+    {
+        if (selectedRecipeMembers != null) return new List<EnemyDefinition>(selectedRecipeMembers);
+        List<EnemyDefinition> formation = null;
+        for (int attempt = 0; attempt < 24; attempt++)
+        {
+            formation = BuildWeightedEncounter(count);
+            if (IsWithinThreatBudget(formation)) return formation;
+        }
+        // Deterministic bounded fallback: retain narrative members and fill with
+        // the cheapest eligible escorts that fit. Never return an over-budget roll.
+        var fallback = new List<EnemyDefinition>();
+        EnemyDefinition leader = formation?.Find(e => e != null &&
+            (e.Category == EnemyCategory.Miniboss || e.Category == EnemyCategory.Boss));
+        if (leader != null)
+        {
+            fallback.Add(leader);
+            if (leader.RequiredBossEscort != null) fallback.Add(leader.RequiredBossEscort);
+        }
+        if (!IsWithinThreatBudget(fallback))
+        {
+            Debug.LogError("Required encounter exceeds its whole-formation budget; correct the spawn profile.", this);
+            return new List<EnemyDefinition>();
+        }
+        var candidates = new List<EnemyDefinition>();
+        foreach (var enemy in enemyDatabase.Enemies)
+            if (enemy != null && enemy.EnemyPrefab != null && enemy.Category == EnemyCategory.Normal &&
+                enemy.GetSpawnWeight(currentWave) > 0 &&
+                (leader == null || leader.EncounterEscorts.Length == 0 || System.Array.IndexOf(leader.EncounterEscorts, enemy) >= 0))
+                candidates.Add(enemy);
+        candidates.Sort((a,b) => a.ThreatCost.CompareTo(b.ThreatCost));
+        if (leader == null || leader.RequiredBossEscort == null)
+            foreach (var enemy in candidates)
+            {
+                if (fallback.Count >= count) break;
+                fallback.Add(enemy);
+                if (!IsWithinThreatBudget(fallback)) fallback.RemoveAt(fallback.Count - 1);
+            }
+        return fallback;
+    }
+
+    private bool IsWithinThreatBudget(List<EnemyDefinition> formation)
+    {
+        float threat = 0; int disruptors = 0, supports = 0;
+        foreach (var enemy in formation)
+        {
+            if (enemy == null) continue;
+            threat += enemy.ThreatCost;
+            if (enemy.IsBoardDisruptor) disruptors++;
+            if (enemy.IsSupport) supports++;
+        }
+        return threat <= waveSpawnProfile.ThreatBudget(currentWave) && disruptors <= 2 && supports <= 1;
+    }
+
+    private List<EnemyDefinition> BuildWeightedEncounter(int count)
     {
         var result = new List<EnemyDefinition>(new EnemyDefinition[count]);
         var selected = new HashSet<EnemyDefinition>();

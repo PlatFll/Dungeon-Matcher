@@ -15,6 +15,16 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private string enemyId = "enemy_id";
 
+    [Header("Encounter Budget")]
+    [SerializeField, Min(0.1f)] private float threatCost = 1f;
+    [SerializeField] private bool isBoardDisruptor;
+    [SerializeField] private bool isSupport;
+    [SerializeField, Range(1, 3)] private int chainCap = 2;
+    public float ThreatCost => Mathf.Max(0.1f, threatCost);
+    public bool IsBoardDisruptor => isBoardDisruptor;
+    public bool IsSupport => isSupport;
+    public int ChainCap => chainCap;
+
     [SerializeField]
     private string displayName = "Enemy";
 

@@ -331,7 +331,7 @@ public sealed class RunUpgradeLifecycleTests
 
     private void CreateFixture(bool hooksEnabled = true)
     {
-        Assert.That(Application.isPlaying, Is.False, "Run in EditMode, not in a live run.");
+        Assert.That(RunSession.Current, Is.Null, "Use an isolated fixture, never remove a live gameplay run.");
         Assert.That(RunUpgradeRuntime.Current == null && RunUpgradeGameplayHooks.Current == null,
             Is.True, "Requires an isolated editor fixture; do not modify another run.");
         root = new GameObject("RunUpgradeLifecycleFixture");

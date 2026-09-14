@@ -7,7 +7,7 @@
 when the battle scene loads. Nothing is stored in `PlayerPrefs`, and a scene
 reload starts a fresh run.
 
-Every fifth completed wave, the coordinator immediately holds the generic
+After completed waves 2, 5, 9, 13, 17, 21, 25 and 28 (editable in BalanceV1.json), the coordinator immediately holds the generic
 `IWaveProgressionGate`. It waits for `BoardController.IsBusy` to become false,
 acquires a disposable external input block, and opens the draft. Selecting one
 legal card applies it once, closes the modal, releases input, and releases the
@@ -170,3 +170,7 @@ No manual scene setup is required. The bootstrap follows the project's existing
 runtime-installed presentation convention and locates the battle wave, board,
 combat controller, player, root overlay Canvas, and Resources catalog.
 Production artwork remains an Inspector assignment on each definition.
+
+## Balance v1 integration
+
+The reviewed 27-card table is in [BALANCE_V1.md](BALANCE_V1.md). Permanent character stats form the immutable run baseline; temporary cards reset independently. Special-dependent cards require an unlocked mechanic present in the loadout. Energy-budget cards are ineligible for the intentional 1-energy Bardley configuration. Maximum HP tradeoffs and shield capacity changes apply immediately from base stats, including negative values. Aegis raises both Shield Bomb grant and maximum shield.

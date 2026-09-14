@@ -1,0 +1,1147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<test-run id="2" testcasecount="231" result="Passed" total="231" passed="231" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-14 03:37:53Z" end-time="2026-09-14 03:37:54Z" duration="0.611668">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="339" result="Passed" start-time="2026-09-14 03:37:53Z" end-time="2026-09-14 03:37:54Z" duration="0.611668" total="231" passed="231" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1419" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="339" result="Passed" start-time="2026-09-14 03:37:53Z" end-time="2026-09-14 03:37:54Z" duration="0.559795" total="231" passed="231" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="51872" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="BalanceDisruptionPlayTests" fullname="BalanceDisruptionPlayTests" classname="BalanceDisruptionPlayTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:12Z" end-time="2026-09-14 03:37:35Z" duration="23.603460" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="ConcurrentOwnersRespectCapsResponsesAndDeathCleanup" fullname="BalanceDisruptionPlayTests.ConcurrentOwnersRespectCapsResponsesAndDeathCleanup" methodname="ConcurrentOwnersRespectCapsResponsesAndDeathCleanup" classname="BalanceDisruptionPlayTests" runstate="Runnable" seed="1894753260" result="Passed" start-time="2026-09-14 03:36:57Z" end-time="2026-09-14 03:37:09Z" duration="11.559690" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1003" name="RoyalMechanicsResolveWithEscortsInActualPlayMode" fullname="BalanceDisruptionPlayTests.RoyalMechanicsResolveWithEscortsInActualPlayMode" methodname="RoyalMechanicsResolveWithEscortsInActualPlayMode" classname="BalanceDisruptionPlayTests" runstate="Runnable" seed="508369354" result="Passed" start-time="2026-09-14 03:37:09Z" end-time="2026-09-14 03:37:35Z" duration="26.418187" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1004" name="BalanceFreshShapesPlayTests" fullname="BalanceFreshShapesPlayTests" classname="BalanceFreshShapesPlayTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-14 03:37:38Z" end-time="2026-09-14 03:37:46Z" duration="8.074353" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1005" name="FreshAndUnlockedShapesResolveThroughRealSwaps" fullname="BalanceFreshShapesPlayTests.FreshAndUnlockedShapesResolveThroughRealSwaps" methodname="FreshAndUnlockedShapesResolveThroughRealSwaps" classname="BalanceFreshShapesPlayTests" runstate="Runnable" seed="2008115192" result="Passed" start-time="2026-09-14 03:37:35Z" end-time="2026-09-14 03:37:46Z" duration="10.709946" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1006" name="BalanceLifecyclePlayTests" fullname="BalanceLifecyclePlayTests" classname="BalanceLifecyclePlayTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:49Z" duration="0.493859" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1007" name="ExistingLifecycleAssertionsWithActualUnityCallbacks" fullname="BalanceLifecyclePlayTests.ExistingLifecycleAssertionsWithActualUnityCallbacks" methodname="ExistingLifecycleAssertionsWithActualUnityCallbacks" classname="BalanceLifecyclePlayTests" runstate="Runnable" seed="1520852596" result="Passed" start-time="2026-09-14 03:37:46Z" end-time="2026-09-14 03:37:49Z" duration="3.124180" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1008" name="BalanceV1Tests" fullname="BalanceV1Tests" classname="BalanceV1Tests" runstate="Runnable" testcasecount="23" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:50Z" duration="0.997922" total="23" passed="23" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1031" name="BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals" fullname="BalanceV1Tests.BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals" methodname="BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals" classname="BalanceV1Tests" runstate="Runnable" seed="95642450" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:49Z" duration="0.014433" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1027" name="CardTradeoffsStackCapsAndEligibilityRespectActualMechanics" fullname="BalanceV1Tests.CardTradeoffsStackCapsAndEligibilityRespectActualMechanics" methodname="CardTradeoffsStackCapsAndEligibilityRespectActualMechanics" classname="BalanceV1Tests" runstate="Runnable" seed="1381748967" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:49Z" duration="0.009545" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1010" name="CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel" fullname="BalanceV1Tests.CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel" methodname="CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel" classname="BalanceV1Tests" runstate="Runnable" seed="1813092469" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:49Z" duration="0.019875" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1029" name="ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" fullname="BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" methodname="ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" classname="BalanceV1Tests" runstate="Runnable" seed="2018514569" result="Passed" start-time="2026-09-14 03:37:49Z" end-time="2026-09-14 03:37:50Z" duration="0.107280" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1028" name="EveryRecipeHasValidMembersAndFitsBudgetAndSlots" fullname="BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots" methodname="EveryRecipeHasValidMembersAndFitsBudgetAndSlots" classname="BalanceV1Tests" runstate="Runnable" seed="1860516575" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002153" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1033" name="ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1" fullname="BalanceV1Tests.ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1" methodname="ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1" classname="BalanceV1Tests" runstate="Runnable" seed="1851202444" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.019764" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1025" name="FailedDiskWriteDoesNotSpendWalletOrInventory" fullname="BalanceV1Tests.FailedDiskWriteDoesNotSpendWalletOrInventory" methodname="FailedDiskWriteDoesNotSpendWalletOrInventory" classname="BalanceV1Tests" runstate="Runnable" seed="417956657" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.025667" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1032" name="FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged" fullname="BalanceV1Tests.FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged" methodname="FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged" classname="BalanceV1Tests" runstate="Runnable" seed="1810360247" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.004218" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1009" name="FreshProfileHasOnlyCrystalAndMatchingFallsBackWithoutTouchingPrefs" fullname="BalanceV1Tests.FreshProfileHasOnlyCrystalAndMatchingFallsBackWithoutTouchingPrefs" methodname="FreshProfileHasOnlyCrystalAndMatchingFallsBackWithoutTouchingPrefs" classname="BalanceV1Tests" runstate="Runnable" seed="582411141" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000967" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1024" name="InterruptedJournalPaysOnceAndKingFirstClearCannotRepeat" fullname="BalanceV1Tests.InterruptedJournalPaysOnceAndKingFirstClearCannotRepeat" methodname="InterruptedJournalPaysOnceAndKingFirstClearCannotRepeat" classname="BalanceV1Tests" runstate="Runnable" seed="569449432" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.407123" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1030" name="LegacySelectionsMigrateWithoutWritingOrSummingProgress" fullname="BalanceV1Tests.LegacySelectionsMigrateWithoutWritingOrSummingProgress" methodname="LegacySelectionsMigrateWithoutWritingOrSummingProgress" classname="BalanceV1Tests" runstate="Runnable" seed="2037478699" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002614" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1017" name="PermanentStatsRecalculateFromUnmodifiedAssets" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.020845" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1011" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,1,80,10.0f,40)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,1,80,10.0f,40)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="1091051792" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003897" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1012" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,5,112,12.6f,52)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,5,112,12.6f,52)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="1299722639" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002881" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1013" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,20,232,22.35f,97)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;bardley&quot;,20,232,22.35f,97)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="168389412" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002887" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1014" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,1,100,11.0f,45)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,1,100,11.0f,45)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="1876530113" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.004040" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1015" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,5,140,13.2f,57)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,5,140,13.2f,57)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="1062704977" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002793" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1016" name="PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,20,290,21.45f,102)" fullname="BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(&quot;skeleton&quot;,20,290,21.45f,102)" methodname="PermanentStatsRecalculateFromUnmodifiedAssets" classname="BalanceV1Tests" runstate="Runnable" seed="1604721765" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002522" asserts="0">
+            <properties />
+            </test-case>
+        </test-suite>
+        <test-case id="1018" name="PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent" fullname="BalanceV1Tests.PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent" methodname="PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent" classname="BalanceV1Tests" runstate="Runnable" seed="1254498962" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.054351" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1023" name="RewardsCreditExactlyOnceAndPartialWavesNeverCount" fullname="BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount" classname="BalanceV1Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.302263" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1019" name="RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Defeat&quot;)" fullname="BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Defeat&quot;)" methodname="RewardsCreditExactlyOnceAndPartialWavesNeverCount" classname="BalanceV1Tests" runstate="Runnable" seed="394564107" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.074502" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1020" name="RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Retry&quot;)" fullname="BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Retry&quot;)" methodname="RewardsCreditExactlyOnceAndPartialWavesNeverCount" classname="BalanceV1Tests" runstate="Runnable" seed="630707376" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.076207" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1021" name="RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Quit to Menu&quot;)" fullname="BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Quit to Menu&quot;)" methodname="RewardsCreditExactlyOnceAndPartialWavesNeverCount" classname="BalanceV1Tests" runstate="Runnable" seed="322802013" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.075594" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1022" name="RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Victory&quot;)" fullname="BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(&quot;Victory&quot;)" methodname="RewardsCreditExactlyOnceAndPartialWavesNeverCount" classname="BalanceV1Tests" runstate="Runnable" seed="1306876633" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.074787" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1026" name="ShieldOverflowAndAegisCapDeliverUsefulValueAndReset" fullname="BalanceV1Tests.ShieldOverflowAndAegisCapDeliverUsefulValueAndReset" methodname="ShieldOverflowAndAegisCapDeliverUsefulValueAndReset" classname="BalanceV1Tests" runstate="Runnable" seed="381938874" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002781" asserts="0">
+          <properties />
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1034" name="BarricadeBannerGravityTests" fullname="BarricadeBannerGravityTests" classname="BarricadeBannerGravityTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.019647" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1048" name="BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior" fullname="BarricadeBannerGravityTests.BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior" methodname="BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1857029125" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.004597" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1040" name="BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves" fullname="BarricadeBannerGravityTests.BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves" methodname="BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="456410603" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002371" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1047" name="OneOpeningIsCountedForEachStandardAboveIt" fullname="BarricadeBannerGravityTests.OneOpeningIsCountedForEachStandardAboveIt" methodname="OneOpeningIsCountedForEachStandardAboveIt" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1717306443" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000498" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1043" name="OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt" fullname="BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt" classname="BarricadeBannerGravityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001940" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1041" name="OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)" fullname="BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)" methodname="OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="459498849" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000471" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1042" name="OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)" fullname="BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)" methodname="OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="632355616" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000276" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1046" name="OrphaningEitherObstaclePreservesGravityInteraction" fullname="BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction" classname="BarricadeBannerGravityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002519" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1044" name="OrphaningEitherObstaclePreservesGravityInteraction(True,False)" fullname="BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(True,False)" methodname="OrphaningEitherObstaclePreservesGravityInteraction" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1125824531" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000738" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1045" name="OrphaningEitherObstaclePreservesGravityInteraction(False,True)" fullname="BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(False,True)" methodname="OrphaningEitherObstaclePreservesGravityInteraction" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1169395623" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000684" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1039" name="RemovedBarricadeCannotQueueItsOpeningAgain" fullname="BarricadeBannerGravityTests.RemovedBarricadeCannotQueueItsOpeningAgain" methodname="RemovedBarricadeCannotQueueItsOpeningAgain" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="421866695" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000497" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1037" name="SecondDistinctHitCreatesExactlyOneStoneOpening" fullname="BarricadeBannerGravityTests.SecondDistinctHitCreatesExactlyOneStoneOpening" methodname="SecondDistinctHitCreatesExactlyOneStoneOpening" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1556541343" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000437" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1038" name="SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone" fullname="BarricadeBannerGravityTests.SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone" methodname="SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="526470176" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000624" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1035" name="SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash" fullname="BarricadeBannerGravityTests.SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash" methodname="SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="1025412335" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000808" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1036" name="SurvivingStoneBarricadeDoesNotCreateAnOpening" fullname="BarricadeBannerGravityTests.SurvivingStoneBarricadeDoesNotCreateAnOpening" methodname="SurvivingStoneBarricadeDoesNotCreateAnOpening" classname="BarricadeBannerGravityTests" runstate="Runnable" seed="124868920" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000490" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1049" name="BoardPointerIdentityTests" fullname="BoardPointerIdentityTests" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.025531" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1061" name="BusyRejectedDownDoesNotStealExistingPointerIdentity" fullname="BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity" methodname="BusyRejectedDownDoesNotStealExistingPointerIdentity" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1438461429" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003135" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1070" name="DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" fullname="BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" methodname="DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1934099956" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000692" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1072" name="ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" fullname="BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" methodname="ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1427426768" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000628" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1063" name="ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" fullname="BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" methodname="ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1760893887" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000577" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1071" name="FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" fullname="BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" methodname="FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1822829721" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000512" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1058" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002627" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1056" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)" methodname="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="22042639" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000913" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1057" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)" methodname="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1622648218" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000363" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1055" name="OlderDragCannotUseLatestContactsOrigin" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002140" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1053" name="OlderDragCannotUseLatestContactsOrigin(False)" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)" methodname="OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1722605568" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000635" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1054" name="OlderDragCannotUseLatestContactsOrigin(True)" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)" methodname="OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="102525500" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000320" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1052" name="OlderReleaseCannotCancelLatestContact" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002139" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1050" name="OlderReleaseCannotCancelLatestContact(False)" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)" methodname="OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1857873621" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000613" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1051" name="OlderReleaseCannotCancelLatestContact(True)" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)" methodname="OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" seed="791951060" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000301" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1066" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002434" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1064" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)" methodname="OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" seed="307415183" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000652" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1065" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)" methodname="OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1246192686" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000594" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1059" name="OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" fullname="BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" methodname="OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1826329528" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000668" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1062" name="PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" fullname="BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" methodname="PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1052108850" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000511" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1069" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002155" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1067" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)" methodname="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" seed="47302149" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000554" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1068" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)" methodname="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" seed="17334201" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000319" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1060" name="SubthresholdOwningDragRetainsTheGesture" fullname="BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture" methodname="SubthresholdOwningDragRetainsTheGesture" classname="BoardPointerIdentityTests" runstate="Runnable" seed="2080336891" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000494" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1123" name="CrystalBoardValidityTests" fullname="CrystalBoardValidityTests" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.060980" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1147" name="ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" fullname="CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" methodname="ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1713550820" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003868" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1138" name="ACrystalSwapCannotMoveEitherPinnedEndpoint" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002532" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1136" name="ACrystalSwapCannotMoveEitherPinnedEndpoint(False)" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)" methodname="ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" seed="568411778" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001010" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1137" name="ACrystalSwapCannotMoveEitherPinnedEndpoint(True)" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)" methodname="ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1388742762" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000422" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1145" name="AHiddenCrystalTripleIsNotAnExistingMatch" fullname="CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch" methodname="AHiddenCrystalTripleIsNotAnExistingMatch" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1887590460" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002047" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1146" name="ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" fullname="CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" methodname="ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" classname="CrystalBoardValidityTests" runstate="Runnable" seed="166028564" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000762" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1142" name="BlockedCellsAreNotCrystalSwapPartners" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.004865" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1139" name="BlockedCellsAreNotCrystalSwapPartners(&quot;minedCellOwners&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;minedCellOwners&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="663357322" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002130" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1140" name="BlockedCellsAreNotCrystalSwapPartners(&quot;barricadeCells&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;barricadeCells&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="617946505" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000668" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1141" name="BlockedCellsAreNotCrystalSwapPartners(&quot;royalBannerCells&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;royalBannerCells&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="777387873" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000638" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1144" name="CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" fullname="CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" methodname="CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1433704305" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000938" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1135" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003272" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1132" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2062047365" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000968" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1133" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1284310691" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000504" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1134" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="925967624" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000457" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1127" name="InaccessibleCrystalDoesNotUseItsHiddenColor" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002060" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1125" name="InaccessibleCrystalDoesNotUseItsHiddenColor(False)" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)" methodname="InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" seed="956495579" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000667" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1126" name="InaccessibleCrystalDoesNotUseItsHiddenColor(True)" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)" methodname="InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" seed="631551786" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000556" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1152" name="LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" fullname="CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" methodname="LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" classname="CrystalBoardValidityTests" runstate="Runnable" seed="235085993" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.019810" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1124" name="PinnedCrystalDoesNotManufactureAnOrdinaryMove" fullname="CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove" methodname="PinnedCrystalDoesNotManufactureAnOrdinaryMove" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2134181856" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001378" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1131" name="PinnedOrdinaryColorsStillParticipateInMatches" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003918" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1128" name="PinnedOrdinaryColorsStillParticipateInMatches(0)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1682666175" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001126" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1129" name="PinnedOrdinaryColorsStillParticipateInMatches(1)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="234192324" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000656" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1130" name="PinnedOrdinaryColorsStillParticipateInMatches(2)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1923563197" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000586" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1143" name="PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" fullname="CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" methodname="PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1318332783" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002071" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1151" name="ProspectiveSwapRestoresTheTypeSnapshot" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.003865" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1149" name="ProspectiveSwapRestoresTheTypeSnapshot(False)" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)" methodname="ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" seed="648213904" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001792" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1150" name="ProspectiveSwapRestoresTheTypeSnapshot(True)" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)" methodname="ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1967157408" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.000806" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1153" name="ReadOnlyInspectionDoesNotEmitClearRewards" fullname="CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards" methodname="ReadOnlyInspectionDoesNotEmitClearRewards" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2074790255" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001791" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1148" name="RecolorFallbackCanValidateACrystalOnlyMove" fullname="CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove" methodname="RecolorFallbackCanValidateACrystalOnlyMove" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1900445293" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001785" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1154" name="CrystalChainAttributionTests" fullname="CrystalChainAttributionTests" classname="CrystalChainAttributionTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.036912" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1160" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.013543" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1155" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)" methodname="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1874315518" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.005163" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1156" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)" methodname="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" seed="458126346" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001654" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1157" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)" methodname="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" seed="264759849" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001698" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1158" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)" methodname="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" seed="757443027" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001645" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1159" name="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)" fullname="CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)" methodname="ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal" classname="CrystalChainAttributionTests" runstate="Runnable" seed="330553962" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001586" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1166" name="DirectConvertedBombStillUsesItsOwnColor" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.009216" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1161" name="DirectConvertedBombStillUsesItsOwnColor(RowBomb)" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)" methodname="DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1517603995" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001547" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1162" name="DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)" methodname="DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1595568283" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001574" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1163" name="DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)" methodname="DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1896802828" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001435" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1164" name="DirectConvertedBombStillUsesItsOwnColor(HealingBomb)" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)" methodname="DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1401745520" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001300" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1165" name="DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)" fullname="CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)" methodname="DirectConvertedBombStillUsesItsOwnColor" classname="CrystalChainAttributionTests" runstate="Runnable" seed="240845693" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001380" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1172" name="NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics" fullname="CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics" methodname="NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1015229271" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001982" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1168" name="OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState" fullname="CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState" methodname="OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState" classname="CrystalChainAttributionTests" runstate="Runnable" seed="923984355" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002480" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1167" name="PendingConvertedBombRemainsProtectedUntilItsOwnTurn" fullname="CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn" methodname="PendingConvertedBombRemainsProtectedUntilItsOwnTurn" classname="CrystalChainAttributionTests" runstate="Runnable" seed="919332092" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.002377" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1171" name="SimultaneousSeedsChooseTheSameTriggerInGridOrder" fullname="CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder" classname="CrystalChainAttributionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.004411" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1169" name="SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)" fullname="CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)" methodname="SimultaneousSeedsChooseTheSameTriggerInGridOrder" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1093652549" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001838" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1170" name="SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)" fullname="CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)" methodname="SimultaneousSeedsChooseTheSameTriggerInGridOrder" classname="CrystalChainAttributionTests" runstate="Runnable" seed="1512018153" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001444" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1173" name="EnemyDamageResultTests" fullname="EnemyDamageResultTests" classname="EnemyDamageResultTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:51Z" duration="0.028022" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1179" name="BreakingShieldDoesNotReduceTheFollowingHit" fullname="EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit" methodname="BreakingShieldDoesNotReduceTheFollowingHit" classname="EnemyDamageResultTests" runstate="Runnable" seed="1750390672" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:50Z" duration="0.001463" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1194" name="CombatReportsActualRecipientAndPreservesOriginalClearContext" fullname="EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext" classname="EnemyDamageResultTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:50Z" end-time="2026-09-14 03:37:51Z" duration="0.005437" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1191" name="CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)" fullname="EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)" methodname="CombatReportsActualRecipientAndPreservesOriginalClearContext" classname="EnemyDamageResultTests" runstate="Runnable" seed="382458869" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.002288" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1192" name="CombatReportsActualRecipientAndPreservesOriginalClearContext(10,5)" fullname="EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,5)" methodname="CombatReportsActualRecipientAndPreservesOriginalClearContext" classname="EnemyDamageResultTests" runstate="Runnable" seed="297766499" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000902" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1193" name="CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)" fullname="EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)" methodname="CombatReportsActualRecipientAndPreservesOriginalClearContext" classname="EnemyDamageResultTests" runstate="Runnable" seed="50376316" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000920" asserts="0">
+            <properties />
+            </test-case>
+        </test-suite>
+        <test-case id="1196" name="CombatReportsHitRatherThanNetHealthChangeAfterCallbacks" fullname="EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks" methodname="CombatReportsHitRatherThanNetHealthChangeAfterCallbacks" classname="EnemyDamageResultTests" runstate="Runnable" seed="1378519641" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001175" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1195" name="CombatStillRejectsUnmatchedAndInactiveWaveDamage" fullname="EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage" methodname="CombatStillRejectsUnmatchedAndInactiveWaveDamage" classname="EnemyDamageResultTests" runstate="Runnable" seed="904945052" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001007" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1180" name="ConditionalDefencePrecedesShieldExactlyOnce" fullname="EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce" methodname="ConditionalDefencePrecedesShieldExactlyOnce" classname="EnemyDamageResultTests" runstate="Runnable" seed="860902870" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000439" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1178" name="DirectDamageKeepsShieldRoundingAndSeparateEvents" fullname="EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents" classname="EnemyDamageResultTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.002828" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1174" name="DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)" fullname="EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)" methodname="DirectDamageKeepsShieldRoundingAndSeparateEvents" classname="EnemyDamageResultTests" runstate="Runnable" seed="959312032" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000759" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1175" name="DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,6)" fullname="EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,6)" methodname="DirectDamageKeepsShieldRoundingAndSeparateEvents" classname="EnemyDamageResultTests" runstate="Runnable" seed="36034921" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000251" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1176" name="DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,5,10)" fullname="EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,5,10)" methodname="DirectDamageKeepsShieldRoundingAndSeparateEvents" classname="EnemyDamageResultTests" runstate="Runnable" seed="153149400" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000191" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1177" name="DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)" fullname="EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)" methodname="DirectDamageKeepsShieldRoundingAndSeparateEvents" classname="EnemyDamageResultTests" runstate="Runnable" seed="1704702682" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000172" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1181" name="InterceptionReportsProtectorAndStopsAfterOneHop" fullname="EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop" methodname="InterceptionReportsProtectorAndStopsAfterOneHop" classname="EnemyDamageResultTests" runstate="Runnable" seed="1942436844" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000747" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1187" name="LegacyBoolWrappersApplyOneHitAndRetainDotBypass" fullname="EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass" methodname="LegacyBoolWrappersApplyOneHitAndRetainDotBypass" classname="EnemyDamageResultTests" runstate="Runnable" seed="1921892911" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000645" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1182" name="LethalInterceptionRetainsRecipientAfterRetreatCleanup" fullname="EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup" methodname="LethalInterceptionRetainsRecipientAfterRetreatCleanup" classname="EnemyDamageResultTests" runstate="Runnable" seed="1966963757" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000888" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1185" name="NonPositiveDamageReturnsEmptyResult" fullname="EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult" classname="EnemyDamageResultTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001606" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1183" name="NonPositiveDamageReturnsEmptyResult(0)" fullname="EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)" methodname="NonPositiveDamageReturnsEmptyResult" classname="EnemyDamageResultTests" runstate="Runnable" seed="283092774" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000486" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1184" name="NonPositiveDamageReturnsEmptyResult(-1)" fullname="EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)" methodname="NonPositiveDamageReturnsEmptyResult" classname="EnemyDamageResultTests" runstate="Runnable" seed="1723750753" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000184" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1200" name="PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass" fullname="EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass" methodname="PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass" classname="EnemyDamageResultTests" runstate="Runnable" seed="559274273" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001136" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1199" name="RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits" fullname="EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits" classname="EnemyDamageResultTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.002925" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1197" name="RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)" fullname="EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)" methodname="RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits" classname="EnemyDamageResultTests" runstate="Runnable" seed="2019363361" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001531" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1198" name="RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)" fullname="EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)" methodname="RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits" classname="EnemyDamageResultTests" runstate="Runnable" seed="2115006030" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000440" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1201" name="ShieldOnlyPoisonKeepsHpOnlyFeedbackContract" fullname="EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract" methodname="ShieldOnlyPoisonKeepsHpOnlyFeedbackContract" classname="EnemyDamageResultTests" runstate="Runnable" seed="431525354" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000511" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1189" name="SnapshotDoesNotIncludeASeparateSynchronousHit" fullname="EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit" methodname="SnapshotDoesNotIncludeASeparateSynchronousHit" classname="EnemyDamageResultTests" runstate="Runnable" seed="1155765327" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000466" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1188" name="SnapshotDoesNotSubtractSynchronousHealing" fullname="EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing" methodname="SnapshotDoesNotSubtractSynchronousHealing" classname="EnemyDamageResultTests" runstate="Runnable" seed="433849231" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000422" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1190" name="SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs" fullname="EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs" methodname="SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs" classname="EnemyDamageResultTests" runstate="Runnable" seed="232699283" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000674" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1186" name="UninitializedAndDefeatedActorsRejectDamage" fullname="EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage" methodname="UninitializedAndDefeatedActorsRejectDamage" classname="EnemyDamageResultTests" runstate="Runnable" seed="414524860" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000372" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1202" name="EnemySpecialExecutionGuardTests" fullname="EnemySpecialExecutionGuardTests" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.040495" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1218" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.005847" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1216" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)" methodname="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="102967223" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003839" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1217" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)" methodname="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="86072570" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001006" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1215" name="AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" fullname="EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" methodname="AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1676353907" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.002147" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1227" name="AnotherActorsImpactDoesNotReleaseTheWaitingMine" fullname="EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine" methodname="AnotherActorsImpactDoesNotReleaseTheWaitingMine" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="682967222" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.004010" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1205" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003498" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1203" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)" methodname="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="321346673" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001288" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1204" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)" methodname="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1384144881" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000891" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1214" name="ExistingUnavailableOwnerGuardsStillRejectExecution" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.007112" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1209" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;disposed&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;disposed&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="638074414" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001195" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1210" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;defeated&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;defeated&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1053481691" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000815" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1211" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;destroyedHost&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;destroyedHost&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="529010934" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000995" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1212" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;uninitialized&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;uninitialized&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="26959960" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000956" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1213" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;notReady&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;notReady&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1485141392" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000818" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1226" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003667" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1224" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)" methodname="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="600354843" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001511" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1225" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)" methodname="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="2113944209" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000930" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1223" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.006190" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1219" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1471972035" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001553" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1220" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="851618029" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000902" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1221" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="243913468" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000833" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1222" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1441668251" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000801" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1208" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003657" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1206" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)" methodname="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="96922684" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001443" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1207" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)" methodname="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="651903840" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000843" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1228" name="GameOverRecoveryTests" fullname="GameOverRecoveryTests" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="28" result="Passed" start-time="2026-09-14 03:37:53Z" end-time="2026-09-14 03:37:54Z" duration="0.342040" total="28" passed="28" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1250" name="AStaleDefeatNotificationCannotStartGameOverForALivingPlayer" fullname="GameOverRecoveryTests.AStaleDefeatNotificationCannotStartGameOverForALivingPlayer" methodname="AStaleDefeatNotificationCannotStartGameOverForALivingPlayer" classname="GameOverRecoveryTests" runstate="Runnable" seed="940524748" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003588" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1233" name="CleanupDoesNotOverwriteANewerNonzeroTimeScale" fullname="GameOverRecoveryTests.CleanupDoesNotOverwriteANewerNonzeroTimeScale" methodname="CleanupDoesNotOverwriteANewerNonzeroTimeScale" classname="GameOverRecoveryTests" runstate="Runnable" seed="1022819937" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000853" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1255" name="CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens" fullname="GameOverRecoveryTests.CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens" methodname="CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens" classname="GameOverRecoveryTests" runstate="Runnable" seed="1697084357" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001476" asserts="0">
+          <properties />
+          </test-case>
+        <test-suite type="ParameterizedMethod" id="1232" name="CleanupRestoresExactlyTheCapturedTimeScale" fullname="GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.003605" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1229" name="CleanupRestoresExactlyTheCapturedTimeScale(0.0f)" fullname="GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.0f)" methodname="CleanupRestoresExactlyTheCapturedTimeScale" classname="GameOverRecoveryTests" runstate="Runnable" seed="1746428161" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001202" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1230" name="CleanupRestoresExactlyTheCapturedTimeScale(0.5f)" fullname="GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.5f)" methodname="CleanupRestoresExactlyTheCapturedTimeScale" classname="GameOverRecoveryTests" runstate="Runnable" seed="1719717614" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000602" asserts="0">
+            <properties />
+            </test-case>
+          <test-case id="1231" name="CleanupRestoresExactlyTheCapturedTimeScale(1.0f)" fullname="GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(1.0f)" methodname="CleanupRestoresExactlyTheCapturedTimeScale" classname="GameOverRecoveryTests" runstate="Runnable" seed="544893036" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.000551" asserts="0">
+            <properties />
+            </test-case>
+        </test-suite>
+        <test-case id="1248" name="DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition" fullname="GameOverRecoveryTests.DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition" methodname="DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition" classname="GameOverRecoveryTests" runstate="Runnable" seed="534513189" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.008786" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1249" name="DestroyedVisualReferencesCannotStrandTheTimeFreeze" fullname="GameOverRecoveryTests.DestroyedVisualReferencesCannotStrandTheTimeFreeze" methodname="DestroyedVisualReferencesCannotStrandTheTimeFreeze" classname="GameOverRecoveryTests" runstate="Runnable" seed="2059719846" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:51Z" duration="0.001246" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1241" name="DestroyingTheComponentDoesNotOrphanItsCanvasOverlay" fullname="GameOverRecoveryTests.DestroyingTheComponentDoesNotOrphanItsCanvasOverlay" methodname="DestroyingTheComponentDoesNotOrphanItsCanvasOverlay" classname="GameOverRecoveryTests" runstate="Runnable" seed="97555177" result="Passed" start-time="2026-09-14 03:37:51Z" end-time="2026-09-14 03:37:54Z" duration="2.990926" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1253" name="DisabledComponentCannotResubscribeThroughRefresh" fullname="GameOverRecoveryTests.DisabledComponentCannotResubscribeThroughRefresh" methodname="DisabledComponentCannotResubscribeThroughRefresh" classname="GameOverRecoveryTests" runstate="Runnable" seed="1049658961" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002423" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-suite type="ParameterizedMethod" id="1261" name="ExistingMenuEasingIsUnchanged" fullname="GameOverRecoveryTests.ExistingMenuEasingIsUnchanged" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.004678" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1258" name="ExistingMenuEasingIsUnchanged(0.0f,0.0f)" fullname="GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.0f,0.0f)" methodname="ExistingMenuEasingIsUnchanged" classname="GameOverRecoveryTests" runstate="Runnable" seed="670944203" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001418" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1259" name="ExistingMenuEasingIsUnchanged(0.5f,1.087698f)" fullname="GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.5f,1.087698f)" methodname="ExistingMenuEasingIsUnchanged" classname="GameOverRecoveryTests" runstate="Runnable" seed="1208050880" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000644" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1260" name="ExistingMenuEasingIsUnchanged(1.0f,1.0f)" fullname="GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(1.0f,1.0f)" methodname="ExistingMenuEasingIsUnchanged" classname="GameOverRecoveryTests" runstate="Runnable" seed="716625975" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000564" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-case id="1252" name="FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler" fullname="GameOverRecoveryTests.FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler" methodname="FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler" classname="GameOverRecoveryTests" runstate="Runnable" seed="84042056" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001558" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-suite type="ParameterizedMethod" id="1240" name="LifecycleCleanupReleasesOnlyItsPresentation" fullname="GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002825" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1238" name="LifecycleCleanupReleasesOnlyItsPresentation(&quot;OnDisable&quot;)" fullname="GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(&quot;OnDisable&quot;)" methodname="LifecycleCleanupReleasesOnlyItsPresentation" classname="GameOverRecoveryTests" runstate="Runnable" seed="1637028751" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001207" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1239" name="LifecycleCleanupReleasesOnlyItsPresentation(&quot;OnDestroy&quot;)" fullname="GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(&quot;OnDestroy&quot;)" methodname="LifecycleCleanupReleasesOnlyItsPresentation" classname="GameOverRecoveryTests" runstate="Runnable" seed="1502072176" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000738" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-case id="1236" name="PlayerReinitializationKeepsTheNewHealthOverride" fullname="GameOverRecoveryTests.PlayerReinitializationKeepsTheNewHealthOverride" methodname="PlayerReinitializationKeepsTheNewHealthOverride" classname="GameOverRecoveryTests" runstate="Runnable" seed="1015842263" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001237" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1235" name="RealReviveEventClearsOverlayWithoutChangingRestoredHealth" fullname="GameOverRecoveryTests.RealReviveEventClearsOverlayWithoutChangingRestoredHealth" methodname="RealReviveEventClearsOverlayWithoutChangingRestoredHealth" classname="GameOverRecoveryTests" runstate="Runnable" seed="1620966743" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000826" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1251" name="RecoveryOfAnotherPlayerDoesNotClearThisDeath" fullname="GameOverRecoveryTests.RecoveryOfAnotherPlayerDoesNotClearThisDeath" methodname="RecoveryOfAnotherPlayerDoesNotClearThisDeath" classname="GameOverRecoveryTests" runstate="Runnable" seed="464684618" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001470" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-suite type="ParameterizedMethod" id="1247" name="RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState" fullname="GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.004747" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1245" name="RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(True)" fullname="GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(True)" methodname="RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState" classname="GameOverRecoveryTests" runstate="Runnable" seed="1553620297" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002903" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1246" name="RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(False)" fullname="GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(False)" methodname="RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState" classname="GameOverRecoveryTests" runstate="Runnable" seed="1713240566" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000881" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1244" name="RecoveryRestoresTheImageEnabledStateItChanged" fullname="GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged" classname="GameOverRecoveryTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.012612" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1242" name="RecoveryRestoresTheImageEnabledStateItChanged(True)" fullname="GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(True)" methodname="RecoveryRestoresTheImageEnabledStateItChanged" classname="GameOverRecoveryTests" runstate="Runnable" seed="614753525" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.010646" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1243" name="RecoveryRestoresTheImageEnabledStateItChanged(False)" fullname="GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(False)" methodname="RecoveryRestoresTheImageEnabledStateItChanged" classname="GameOverRecoveryTests" runstate="Runnable" seed="543572770" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001016" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-case id="1254" name="ReenableReconciliationDoesNotReopenAMissedRevival" fullname="GameOverRecoveryTests.ReenableReconciliationDoesNotReopenAMissedRevival" methodname="ReenableReconciliationDoesNotReopenAMissedRevival" classname="GameOverRecoveryTests" runstate="Runnable" seed="355695283" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000973" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1237" name="RejectedReviveDoesNotRemoveGameOver" fullname="GameOverRecoveryTests.RejectedReviveDoesNotRemoveGameOver" methodname="RejectedReviveDoesNotRemoveGameOver" classname="GameOverRecoveryTests" runstate="Runnable" seed="1905048330" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000883" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1234" name="RepeatedCleanupDoesNotOwnTheClockAgain" fullname="GameOverRecoveryTests.RepeatedCleanupDoesNotOwnTheClockAgain" methodname="RepeatedCleanupDoesNotOwnTheClockAgain" classname="GameOverRecoveryTests" runstate="Runnable" seed="1847851489" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000787" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1256" name="RetryGuardRequiresADeadReadyUncommittedSession" fullname="GameOverRecoveryTests.RetryGuardRequiresADeadReadyUncommittedSession" methodname="RetryGuardRequiresADeadReadyUncommittedSession" classname="GameOverRecoveryTests" runstate="Runnable" seed="1007593047" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001025" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1257" name="StaleRetryAfterRecoveryCannotRequestASceneLoad" fullname="GameOverRecoveryTests.StaleRetryAfterRecoveryCannotRequestASceneLoad" methodname="StaleRetryAfterRecoveryCannotRequestASceneLoad" classname="GameOverRecoveryTests" runstate="Runnable" seed="1138029050" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001037" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1278" name="ReshufflePinReservationTests" fullname="ReshufflePinReservationTests" classname="ReshufflePinReservationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.060041" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1284" name="ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait" fullname="ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait" classname="ReshufflePinReservationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.019800" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1282" name="ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(False)" fullname="ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(False)" methodname="ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait" classname="ReshufflePinReservationTests" runstate="Runnable" seed="486416250" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.015346" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1283" name="ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(True)" fullname="ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(True)" methodname="ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait" classname="ReshufflePinReservationTests" runstate="Runnable" seed="893506598" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.003554" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-case id="1285" name="BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet" fullname="ReshufflePinReservationTests.BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet" methodname="BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet" classname="ReshufflePinReservationTests" runstate="Runnable" seed="1959311412" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.005266" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1293" name="ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled" fullname="ReshufflePinReservationTests.ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled" methodname="ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled" classname="ReshufflePinReservationTests" runstate="Runnable" seed="377960732" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.004661" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1289" name="ExistingBoltChainAndFreezeReleaseRulesArePreserved" fullname="ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved" classname="ReshufflePinReservationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.009591" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1286" name="ExistingBoltChainAndFreezeReleaseRulesArePreserved(0)" fullname="ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(0)" methodname="ExistingBoltChainAndFreezeReleaseRulesArePreserved" classname="ReshufflePinReservationTests" runstate="Runnable" seed="1719144849" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.003151" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1287" name="ExistingBoltChainAndFreezeReleaseRulesArePreserved(1)" fullname="ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(1)" methodname="ExistingBoltChainAndFreezeReleaseRulesArePreserved" classname="ReshufflePinReservationTests" runstate="Runnable" seed="58223250" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002263" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1288" name="ExistingBoltChainAndFreezeReleaseRulesArePreserved(2)" fullname="ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(2)" methodname="ExistingBoltChainAndFreezeReleaseRulesArePreserved" classname="ReshufflePinReservationTests" runstate="Runnable" seed="2083997593" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002530" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1292" name="NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest" fullname="ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest" classname="ReshufflePinReservationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.007198" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1290" name="NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(False)" fullname="ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(False)" methodname="NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest" classname="ReshufflePinReservationTests" runstate="Runnable" seed="1316138282" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002939" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1291" name="NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(True)" fullname="ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(True)" methodname="NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest" classname="ReshufflePinReservationTests" runstate="Runnable" seed="1335178677" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.003062" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1281" name="ReleasedReservationCannotExecuteOrChangeItsOldTarget" fullname="ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget" classname="ReshufflePinReservationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.006823" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1279" name="ReleasedReservationCannotExecuteOrChangeItsOldTarget(False)" fullname="ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(False)" methodname="ReleasedReservationCannotExecuteOrChangeItsOldTarget" classname="ReshufflePinReservationTests" runstate="Runnable" seed="1668639719" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002797" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1280" name="ReleasedReservationCannotExecuteOrChangeItsOldTarget(True)" fullname="ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(True)" methodname="ReleasedReservationCannotExecuteOrChangeItsOldTarget" classname="ReshufflePinReservationTests" runstate="Runnable" seed="456886010" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002849" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1294" name="RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards" fullname="ReshufflePinReservationTests.RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards" methodname="RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards" classname="ReshufflePinReservationTests" runstate="Runnable" seed="51595420" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002384" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1295" name="RoyalAssaultParticipantLifetimeTests" fullname="RoyalAssaultParticipantLifetimeTests" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.022108" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1310" name="AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" fullname="RoyalAssaultParticipantLifetimeTests.AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" methodname="AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1986509279" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.004660" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1311" name="AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" fullname="RoyalAssaultParticipantLifetimeTests.AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" methodname="AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1029156198" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000936" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1301" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002761" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1299" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)" methodname="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1968481283" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000965" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1300" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)" methodname="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="434701100" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000524" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1303" name="DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" methodname="DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="97249311" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000580" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1298" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002178" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1296" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)" methodname="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1998732561" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000638" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1297" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)" methodname="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1463371989" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000413" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1308" name="LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" fullname="RoyalAssaultParticipantLifetimeTests.LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" methodname="LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="252950090" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001639" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1307" name="LivingParticipantStillWaitsAndKeepsItsReservation" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.003524" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1304" name="LivingParticipantStillWaitsAndKeepsItsReservation(True,False)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,False)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="2032812639" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000924" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1305" name="LivingParticipantStillWaitsAndKeepsItsReservation(False,True)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(False,True)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="274129634" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000454" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1306" name="LivingParticipantStillWaitsAndKeepsItsReservation(True,True)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,True)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1950609435" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000379" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1302" name="MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" methodname="MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="761192041" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000605" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1309" name="OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" fullname="RoyalAssaultParticipantLifetimeTests.OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" methodname="OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="2131407975" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000752" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1337" name="RunUpgradeSystemTests" fullname="RunUpgradeSystemTests" classname="RunUpgradeSystemTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.017287" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1340" name="AbilityEligibilityUsesStablePlayerAndAbilityIds" fullname="RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds" methodname="AbilityEligibilityUsesStablePlayerAndAbilityIds" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1568252933" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.008647" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1339" name="DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" fullname="RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" methodname="DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng" classname="RunUpgradeSystemTests" runstate="Runnable" seed="2071538426" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002459" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1343" name="ExternalInputBlockUsesDisposableTokens" fullname="RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens" methodname="ExternalInputBlockUsesDisposableTokens" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1992575661" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000571" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1342" name="MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" fullname="RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" methodname="MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues" classname="RunUpgradeSystemTests" runstate="Runnable" seed="352284907" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001393" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1341" name="StackCountModifiersAndMaximumHealthApplyAuthoritatively" fullname="RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively" methodname="StackCountModifiersAndMaximumHealthApplyAuthoritatively" classname="RunUpgradeSystemTests" runstate="Runnable" seed="57350784" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001598" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1338" name="UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay" fullname="RunUpgradeSystemTests.UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay" methodname="UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay" classname="RunUpgradeSystemTests" runstate="Runnable" seed="1835668408" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000605" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1344" name="TownMarshalStaggerTests" fullname="TownMarshalStaggerTests" classname="TownMarshalStaggerTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.016880" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1346" name="AutoAttackReleaseCannotBypassStagger" fullname="TownMarshalStaggerTests.AutoAttackReleaseCannotBypassStagger" methodname="AutoAttackReleaseCannotBypassStagger" classname="TownMarshalStaggerTests" runstate="Runnable" seed="616185053" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.003176" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1350" name="BuildupOrPostStaggerImmunityDoesNotBlockSpecial" fullname="TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial" classname="TownMarshalStaggerTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.004302" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1348" name="BuildupOrPostStaggerImmunityDoesNotBlockSpecial(False)" fullname="TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(False)" methodname="BuildupOrPostStaggerImmunityDoesNotBlockSpecial" classname="TownMarshalStaggerTests" runstate="Runnable" seed="96415766" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001974" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+          <test-case id="1349" name="BuildupOrPostStaggerImmunityDoesNotBlockSpecial(True)" fullname="TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(True)" methodname="BuildupOrPostStaggerImmunityDoesNotBlockSpecial" classname="TownMarshalStaggerTests" runstate="Runnable" seed="1543671838" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000893" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            </test-case>
+        </test-suite>
+        <test-case id="1353" name="MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal" fullname="TownMarshalStaggerTests.MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal" methodname="MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal" classname="TownMarshalStaggerTests" runstate="Runnable" seed="1986250850" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000987" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1354" name="ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger" fullname="TownMarshalStaggerTests.ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger" methodname="ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger" classname="TownMarshalStaggerTests" runstate="Runnable" seed="363346240" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000675" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1352" name="RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger" fullname="TownMarshalStaggerTests.RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger" methodname="RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger" classname="TownMarshalStaggerTests" runstate="Runnable" seed="144940122" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001095" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1345" name="ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge" fullname="TownMarshalStaggerTests.ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge" methodname="ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge" classname="TownMarshalStaggerTests" runstate="Runnable" seed="588623201" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000577" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1347" name="ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce" fullname="TownMarshalStaggerTests.ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce" methodname="ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce" classname="TownMarshalStaggerTests" runstate="Runnable" seed="1667763195" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001236" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1351" name="ReadyRallyCannotStartWhileStaggered" fullname="TownMarshalStaggerTests.ReadyRallyCannotStartWhileStaggered" methodname="ReadyRallyCannotStartWhileStaggered" classname="TownMarshalStaggerTests" runstate="Runnable" seed="1683826018" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000855" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1392" name="WaveDeathLifecycleTests" fullname="WaveDeathLifecycleTests" classname="WaveDeathLifecycleTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.027709" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1395" name="ClearingSameWaveNumberStillInvalidatesOldCompletion" fullname="WaveDeathLifecycleTests.ClearingSameWaveNumberStillInvalidatesOldCompletion" methodname="ClearingSameWaveNumberStillInvalidatesOldCompletion" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="900613911" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001653" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1403" name="CompletionListenerClearPreventsSchedulingOldAutomaticAdvance" fullname="WaveDeathLifecycleTests.CompletionListenerClearPreventsSchedulingOldAutomaticAdvance" methodname="CompletionListenerClearPreventsSchedulingOldAutomaticAdvance" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="508406731" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001098" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1393" name="DeathCompletionAcknowledgesExactlyOnce" fullname="WaveDeathLifecycleTests.DeathCompletionAcknowledgesExactlyOnce" methodname="DeathCompletionAcknowledgesExactlyOnce" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1888977140" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000408" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1415" name="DeathCoroutineToleratesVisualsRemovedAfterAcceptance" fullname="WaveDeathLifecycleTests.DeathCoroutineToleratesVisualsRemovedAfterAcceptance" methodname="DeathCoroutineToleratesVisualsRemovedAfterAcceptance" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1177886401" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001384" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1417" name="DisabledWaveControllerDoesNotAdvertiseSummonAvailability" fullname="WaveDeathLifecycleTests.DisabledWaveControllerDoesNotAdvertiseSummonAvailability" methodname="DisabledWaveControllerDoesNotAdvertiseSummonAvailability" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1215341574" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000921" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1418" name="DyingObjectUnderAnchorStillBlocksSummonSlotReuse" fullname="WaveDeathLifecycleTests.DyingObjectUnderAnchorStillBlocksSummonSlotReuse" methodname="DyingObjectUnderAnchorStillBlocksSummonSlotReuse" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="683380738" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000427" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1401" name="ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave" fullname="WaveDeathLifecycleTests.ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave" methodname="ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1848259828" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000667" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1407" name="InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation" fullname="WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation" classname="WaveDeathLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002284" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1405" name="InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(False)" fullname="WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(False)" methodname="InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1294860978" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000844" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1406" name="InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(True)" fullname="WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(True)" methodname="InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="473195606" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000288" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1396" name="LastCurrentDeathCompletesWaveExactlyOnce" fullname="WaveDeathLifecycleTests.LastCurrentDeathCompletesWaveExactlyOnce" methodname="LastCurrentDeathCompletesWaveExactlyOnce" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="594874742" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000837" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1397" name="LivingRosterMemberPreventsDeathCompletionFromEndingWave" fullname="WaveDeathLifecycleTests.LivingRosterMemberPreventsDeathCompletionFromEndingWave" methodname="LivingRosterMemberPreventsDeathCompletionFromEndingWave" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1581559499" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000544" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1413" name="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership" fullname="WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership" classname="WaveDeathLifecycleTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.002933" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1410" name="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,False)" fullname="WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,False)" methodname="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1502236289" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000908" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1411" name="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(True,False)" fullname="WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(True,False)" methodname="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1585823387" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000314" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1412" name="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,True)" fullname="WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,True)" methodname="MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="184752133" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000264" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1404" name="NormalDeathFinishesPresentationAndAcknowledgesOnce" fullname="WaveDeathLifecycleTests.NormalDeathFinishesPresentationAndAcknowledgesOnce" methodname="NormalDeathFinishesPresentationAndAcknowledgesOnce" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1030844293" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000601" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1394" name="OldCompletionDoesNotConsumeNewEncounterDeath" fullname="WaveDeathLifecycleTests.OldCompletionDoesNotConsumeNewEncounterDeath" methodname="OldCompletionDoesNotConsumeNewEncounterDeath" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1350944253" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000281" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1402" name="OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber" fullname="WaveDeathLifecycleTests.OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber" methodname="OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1673870917" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001263" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1398" name="PlannedSpawnsPreventPrematureCompletion" fullname="WaveDeathLifecycleTests.PlannedSpawnsPreventPrematureCompletion" methodname="PlannedSpawnsPreventPrematureCompletion" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="775844356" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000974" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1399" name="PublicClearRevokesSpawnOwnershipAndPendingDeathState" fullname="WaveDeathLifecycleTests.PublicClearRevokesSpawnOwnershipAndPendingDeathState" methodname="PublicClearRevokesSpawnOwnershipAndPendingDeathState" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="909161371" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000538" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1409" name="ReentrantDisableDuringDeathFinishedCannotLoseCallback" fullname="WaveDeathLifecycleTests.ReentrantDisableDuringDeathFinishedCannotLoseCallback" methodname="ReentrantDisableDuringDeathFinishedCannotLoseCallback" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="997013765" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000532" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1400" name="SpawnGuardRejectsOldIdentityAndDifferentWaveNumber" fullname="WaveDeathLifecycleTests.SpawnGuardRejectsOldIdentityAndDifferentWaveNumber" methodname="SpawnGuardRejectsOldIdentityAndDifferentWaveNumber" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="881882125" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000386" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1414" name="SpawnRequestCannotDiscardAnAcceptedDeath" fullname="WaveDeathLifecycleTests.SpawnRequestCannotDiscardAnAcceptedDeath" methodname="SpawnRequestCannotDiscardAnAcceptedDeath" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="2121651758" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000668" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1416" name="StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons" fullname="WaveDeathLifecycleTests.StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons" methodname="StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="2060637366" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.000384" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1408" name="ThrowingPresentationObserverStillAcknowledgesGameplay" fullname="WaveDeathLifecycleTests.ThrowingPresentationObserverStillAcknowledgesGameplay" methodname="ThrowingPresentationObserverStillAcknowledgesGameplay" classname="WaveDeathLifecycleTests" runstate="Runnable" seed="1298790285" result="Passed" start-time="2026-09-14 03:37:54Z" end-time="2026-09-14 03:37:54Z" duration="0.001134" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

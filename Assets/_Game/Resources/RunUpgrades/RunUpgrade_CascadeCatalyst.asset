@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Each cascade depth adds +10% gem damage.
   artwork: {fileID: 0}
   rarity: 0
-  weight: 1
+  weight: 1.5
   maxStacks: 1
   minimumWave: 1
   maximumWave: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   modifiers: []
   mechanicGrants:
   - mechanic: 1
+  requiredSpecial: 0

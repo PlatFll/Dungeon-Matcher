@@ -153,8 +153,11 @@ public static class RoyalMilestonePlayValidation
     {
         yield return Until(()=>!board.IsBusy,"board idle before fixture"); waves.ClearCurrentWave();
         yield return Delay(0.3f); yield return Until(()=>!board.IsBusy,"old owner cleanup");
-        Set(waves,"currentWave",26);
-        var seen=(HashSet<EnemyDefinition>)Get(waves,"seenMilestoneLeaders"); seen.Clear(); seen.Add(Data("RoyalArchbishop"));
+        Set(waves,"currentWave",30);
+        var seen=(HashSet<EnemyDefinition>)Get(waves,"seenMilestoneLeaders"); seen.Clear();
+        // This fixture starts directly at the King; prior opening-arc leaders
+        // have already been defeated, as they would be in a real wave-30 run.
+        foreach(string prior in new[]{"TownMarshal","SiegeSergeant","KnightCaptain","RoyalArchbishop"})seen.Add(Data(prior));
         // Each scenario is an independent run fixture, not a repeated encounter.
         ((HashSet<EnemyDefinition>)Get(waves,"previousEncounterLeaders")).Clear();
         waves.SpawnCurrentWave();

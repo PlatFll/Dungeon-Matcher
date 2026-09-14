@@ -87,6 +87,9 @@ public partial class BoardController
                     break;
             }
 
+            if (specialType != GemSpecialType.None && !AccountProgression.Current.IsUnlocked(specialType))
+                specialType = matchType == BoardMatchType.StraightFour ? GemSpecialType.None : GemSpecialType.ColorCrystal;
+
             if (specialType ==
                 GemSpecialType.None)
             {

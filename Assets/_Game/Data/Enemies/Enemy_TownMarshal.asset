@@ -24,13 +24,13 @@ MonoBehaviour:
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
   baseMaxHealth: 120
-  baseDamage: 1
+  baseDamage: 6
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 12
+  baseAttackInterval: 10
   hasSpecialAbility: 1
   specialAbilityKind: 5
-  baseSpecialTurnRequirement: 3
+  baseSpecialTurnRequirement: 4
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
@@ -45,10 +45,16 @@ MonoBehaviour:
   townMarshalRetreatMoveCount: 2
   townMarshalRallyAttackSpeedMultiplier: 1.4
   townMarshalRallyDuration: 5
-  minimumWave: 8
+  minimumWave: 7
   spawnWeight: 1
-  healthMultiplier: 1.00394
-  damageMultiplier: 0.63
+  healthMultiplier: 1
+  damageMultiplier: 1
   attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
-  maximumWave: 8
+  maximumWave: 0
+  threatCost: 4
+  isBoardDisruptor: 0
+  isSupport: 1
+  encounterEscorts:
+  - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+  - {fileID: 11400000, guid: 36c47a216df94b9fae10c869929010fa, type: 2}

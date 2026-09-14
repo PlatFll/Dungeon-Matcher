@@ -89,6 +89,10 @@ public sealed class PlayerActor : MonoBehaviour
     public int MaximumHealth => maximumHealth;
     public int CurrentShield => currentShield;
     public int MaximumShield => maximumShield;
+    public int PermanentLevel { get; private set; } = 1;
+    public int BaseShieldCap { get; private set; }
+    public float GemDamage => definition != null ? definition.GemDamageAtLevel(PermanentLevel) : 10f;
+    public float AbilityDamageMultiplier => definition != null ? definition.AbilityMultiplierAtLevel(PermanentLevel) : 1f;
     public float ShieldDamageReduction => shieldDamageReduction;
     public bool HasShield => currentShield > 0;
     public int RevivalCount => revivalCount;
@@ -154,11 +158,13 @@ public sealed class PlayerActor : MonoBehaviour
         }
 
         definition = playerDefinition;
+        PermanentLevel = AccountProgression.Current.Level(definition.PlayerId);
         maximumHealth = maximumHealthOverride > 0
             ? maximumHealthOverride
-            : definition.BaseMaxHealth;
+            : definition.HealthAtLevel(PermanentLevel);
         maximumHealth = Mathf.Max(1, maximumHealth);
-        maximumShield = Mathf.Max(1, maximumShield);
+        BaseShieldCap = definition.ShieldCapAtLevel(PermanentLevel);
+        maximumShield = BaseShieldCap;
         currentHealth = maximumHealth;
         currentShield = 0;
         revivalCount = 0;
@@ -268,6 +274,14 @@ public sealed class PlayerActor : MonoBehaviour
 
         ShieldChanged?.Invoke(this, currentShield, maximumShield);
         return actualShieldGranted;
+    }
+
+    public void RefreshShieldCap(RunUpgradeRuntime runtime = null)
+    {
+        if (!isInitialized) return;
+        maximumShield = RunUpgradeResolver.ResolveMaximumShield(BaseShieldCap, runtime);
+        currentShield = Mathf.Min(currentShield, maximumShield);
+        ShieldChanged?.Invoke(this, currentShield, maximumShield);
     }
 
     public int Heal(int amount)

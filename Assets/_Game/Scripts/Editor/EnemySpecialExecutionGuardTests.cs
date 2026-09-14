@@ -40,11 +40,19 @@ public sealed class EnemySpecialExecutionGuardTests
         board = Child("Board").AddComponent<BoardController>();
         // Never start the real board/entrance coroutines from these fixtures.
         board.gameObject.SetActive(false);
-        Set(board, "width", 1);
-        Set(board, "height", 1);
-        Gem gem = Child("Gem", board.transform).AddComponent<Gem>();
-        gem.Initialize(board, 0, 0, GemType.Ruby, null, 1f);
-        Set(board, "gems", new Gem[,] { { gem } });
+        // One mineable cell plus protected crystal responses. A 1x1 board has
+        // no legal response and must now be rejected by placement safety.
+        Set(board, "width", 4);
+        Set(board, "height", 4);
+        var grid=new Gem[4,4];
+        for(int y=0;y<4;y++)for(int x=0;x<4;x++)
+        {
+            Gem gem=Child("Gem",board.transform).AddComponent<Gem>();
+            gem.Initialize(board,x,y,(GemType)((x+y)%6),null,1f);
+            if(x!=0||y!=0)gem.SetSpecialType(GemSpecialType.ColorCrystal);
+            grid[x,y]=gem;
+        }
+        Set(board,"gems",grid);
         board.CellMiningStarted += (_, __, ___) => mineEvents++;
         board.BoardClearResolved += _ => clearRewards++;
         board.ValidPlayerMoveCompleted += _ => completedMoves++;

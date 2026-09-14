@@ -31,12 +31,12 @@ public sealed class GameOverRecoveryTests
     {
         savedTimeScale = Time.timeScale;
         savedRandom = UnityEngine.Random.state;
-        if (Application.isPlaying ||
+        if (RunSession.Current != null ||
             UnityEngine.Object.FindObjectsByType<PlayerActor>(FindObjectsInactive.Include,
                 FindObjectsSortMode.None).Length > 0 ||
             UnityEngine.Object.FindObjectsByType<GameOverPresentationController>(FindObjectsInactive.Include,
                 FindObjectsSortMode.None).Length > 0)
-            Assert.Ignore("Run GameOverRecoveryTests in an isolated EditMode scene; do not remove live gameplay objects.");
+            Assert.Ignore("Run GameOverRecoveryTests in an isolated scene; do not remove live gameplay objects.");
 
         definition = Resources.Load<PlayerDefinition>("Players/Player_Bardley");
         Assert.That(definition, Is.Not.Null);
@@ -151,14 +151,21 @@ public sealed class GameOverRecoveryTests
         Assert.That(player.IsDefeated, Is.True, "cleanup is not a revive");
     }
 
-    [Test]
-    public void DestroyingTheComponentDoesNotOrphanItsCanvasOverlay()
+    [UnityEngine.TestTools.UnityTest]
+    public System.Collections.IEnumerator DestroyingTheComponentDoesNotOrphanItsCanvasOverlay()
     {
+        TearDown();
+        yield return new UnityEngine.TestTools.EnterPlayMode();
+        // The test runner invokes SetUp again after the domain reload.
+        Assert.That(player, Is.Not.Null);
         GameObject overlay = SeedDeath();
         UnityEngine.Object.DestroyImmediate(controller);
+        yield return null; // Runtime Destroy of the Canvas-owned overlay completes this frame.
         Assert.That(overlay == null, Is.True);
         Assert.That(canvas != null && root != null, Is.True);
         Assert.That(Time.timeScale, Is.EqualTo(1f));
+        TearDown();
+        yield return new UnityEngine.TestTools.ExitPlayMode();
     }
 
     [TestCase(true)]

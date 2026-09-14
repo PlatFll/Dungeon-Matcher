@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private Action backRequested;
     private string selectedPlayerId;
     private bool initialized;
+    private Button levelUpButton;
+    private Text progressionFeedback;
+    private Coroutine levelFlash;
+    private Color previewColor = Color.white;
 
     public void Initialize(
         Action onStartRequested,
@@ -72,6 +77,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
             );
 
             initialized = true;
+            ConfigureProgression();
         }
 
         selectedPlayerId =
@@ -91,6 +97,13 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
             CharacterSelectionSettings.SelectedPlayerId;
 
         Refresh();
+    }
+
+    private void OnDisable()
+    {
+        if(levelFlash!=null)StopCoroutine(levelFlash);
+        levelFlash=null;
+        if(characterPreview!=null)characterPreview.color=previewColor;
     }
 
     private void OnDestroy()
@@ -223,12 +236,22 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
                 ? selectedDefinition.PassiveAbility.DisplayName
                 : "NONE";
 
-        statusText.text =
-            $"{GetMenuDisplayName(selectedPlayerId)}\n" +
-            $"HP {selectedDefinition.BaseMaxHealth}   " +
-            $"AFFINITY {selectedDefinition.AffinityGemType}\n" +
-            $"ACTIVE {activeAbilityName}\n" +
-            $"PASSIVE {passiveAbilityName}";
+        int level=AccountProgression.Current.Level(selectedPlayerId);
+        int next=Mathf.Min(BalanceV1.Current.levelCap,level+1);
+        int cost=BalanceV1.Current.UpgradeCost(level);
+        int baseAbility=selectedDefinition.ActiveAbility is CrackedGemsAbilityDefinition cracks?cracks.CrackedGemDamage:
+            selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:0;
+        statusText.text=$"{GetMenuDisplayName(selectedPlayerId)} - Level {level}\n"+
+            $"HP  {selectedDefinition.HealthAtLevel(level)}  >  {selectedDefinition.HealthAtLevel(next)}\n"+
+            $"Gem damage  {selectedDefinition.GemDamageAtLevel(level):0.##}  >  {selectedDefinition.GemDamageAtLevel(next):0.##}\n"+
+            $"Ability damage  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n"+
+            $"Shield cap  {selectedDefinition.ShieldCapAtLevel(level)}  >  {selectedDefinition.ShieldCapAtLevel(next)}\n"+
+            $"Gold Coins: {AccountProgression.Current.Gold}";
+        if(levelUpButton!=null)
+        {
+            levelUpButton.GetComponentInChildren<Text>().text=level>=BalanceV1.Current.levelCap?"Maximum Level":$"Level Up - {cost} gold";
+            levelUpButton.interactable=level<BalanceV1.Current.levelCap&&AccountProgression.Current.Gold>=cost;
+        }
     }
 
     private void RefreshCharacterPreview(
@@ -254,6 +277,53 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
 
         characterPreview.enabled =
             previewSprite != null;
+        GameplayPixelGrid.FitImage(characterPreview,new Vector2(112,112));
+    }
+
+    private void ConfigureProgression()
+    {
+        previewColor=characterPreview.color;
+        Place(rattlebonesButton.transform,new Vector2(-110,210),new Vector2(205,50));
+        Place(bardleyButton.transform,new Vector2(110,210),new Vector2(205,50));
+        Place(characterPreview.transform,new Vector2(0,117),new Vector2(112,112));characterPreview.preserveAspect=true;
+        Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.Font;
+        Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
+        Place(backButton.transform,new Vector2(110,-245),new Vector2(200,48));
+        levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(330,48),new Vector2(0,-150),LevelUp);
+        progressionFeedback=GameUi.Label("UnlockFeedback",transform,"Shared bombs unlock at levels 2, 3, 4 and 5.",new Vector2(440,55),new Vector2(0,-200),17);
+    }
+    private static void Place(Transform target,Vector2 position,Vector2 size)
+    {
+        var rect=target as RectTransform;if(rect==null)return;
+        rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(0.5f,0.5f);rect.anchoredPosition=position;rect.sizeDelta=size;
+    }
+    private void LevelUp()
+    {
+        int highest=AccountProgression.Current.HighestLevel;
+        if(!AccountProgression.Current.TryLevelUp(selectedPlayerId))
+        {if(AccountProgression.Current.LastError!=null)progressionFeedback.text="Save failed. Check storage, then try again.";return;}
+        Refresh();
+        string unlocked="";
+        foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
+            if(BalanceV1.Current.UnlockLevel(type)>highest&&AccountProgression.Current.IsUnlocked(type))
+            {
+                if(type==GemSpecialType.ColumnBomb)continue;
+                unlocked+=type==GemSpecialType.RowBomb?"Directional Bombs":type==GemSpecialType.PoisonBomb?"Poison Bomb":type==GemSpecialType.HealingBomb?"Healing Bomb":"Shield Bomb";
+            }
+        progressionFeedback.text=unlocked.Length>0?$"Unlocked for every character: {unlocked}":"Level up! Permanent stats increased.";
+        if(levelFlash!=null)StopCoroutine(levelFlash);
+        levelFlash=StartCoroutine(LevelFlash());
+    }
+    private IEnumerator LevelFlash()
+    {
+        var original=previewColor;
+        for(float time=0;time<0.3f;time+=Time.unscaledDeltaTime)
+        {
+            characterPreview.color=Color.Lerp(new Color(1.8f,1.8f,1.8f),original,time/0.3f);
+            yield return null;
+        }
+        characterPreview.color=original;
+        levelFlash=null;
     }
 
     private void SetButtonColor(

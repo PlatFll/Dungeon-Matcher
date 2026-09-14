@@ -356,7 +356,7 @@ public sealed class CombatController : MonoBehaviour
         int actualShieldGranted =
             playerActor.GrantShield(
                 RunUpgradeResolver.ResolveShieldBombShield(
-                    shieldBombShieldAmount
+                    BalanceV1.Current.shieldBombBase + BalanceV1.Current.shieldBombGrowth * (playerActor.PermanentLevel - 1)
                 )
             );
 
@@ -375,7 +375,7 @@ public sealed class CombatController : MonoBehaviour
     public int CalculateGemClearDamage(BoardClearContext clearContext)
     {
         int safeGemCount = Mathf.Max(0, clearContext.GemCount);
-        int baseDamage = safeGemCount * damagePerGem;
+        float baseDamage = safeGemCount * (playerActor != null && playerActor.IsInitialized ? playerActor.GemDamage : damagePerGem);
 
         float cascadeMultiplier =
             1f +

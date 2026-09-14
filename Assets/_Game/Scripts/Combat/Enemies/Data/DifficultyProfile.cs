@@ -151,7 +151,7 @@ public sealed class DifficultyProfile : ScriptableObject
 
     [Header("Player Power Correction")]
     [SerializeField]
-    private bool usePlayerPowerCorrection = true;
+    private bool usePlayerPowerCorrection = false;
 
     [SerializeField, Range(0f, 0.3f)]
     [Tooltip(

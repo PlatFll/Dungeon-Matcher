@@ -20,37 +20,55 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 067d7a9136c23af439fe5138248ae38c, type: 3}
   animationControllerOverride: {fileID: 0}
-  baseMaxHealth: 55
-  baseDamage: 3
+  baseMaxHealth: 40
+  baseDamage: 6
   baseAttackInterval: 10
   hasSpecialAbility: 0
   specialAbilityKind: 0
   baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
+  lockSpecialTurnRequirement: 1
   minimumWave: 3
   spawnWeight: 1
   healthMultiplier: 1
   damageMultiplier: 1
   attackSpeedMultiplier: 1
   staggerDurationMultiplier: 1
-  maximumWave: 16
+  maximumWave: 0
   progressionWeight:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: -0.06
-      outSlope: -0.06
+      value: 0.8
+      inSlope: 0.2333333333333333
+      outSlope: 0.2333333333333333
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 15
-      value: 0.1
-      inSlope: -0.06
-      outSlope: -0.06
+      time: 3
+      value: 1.5
+      inSlope: -0.05000000000000001
+      outSlope: -0.05000000000000001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 9
+      value: 0.35
+      inSlope: -0.05259259259259259
+      outSlope: -0.05259259259259259
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 30
+      value: 0.08
+      inSlope: -0.012857142857142855
+      outSlope: -0.012857142857142855
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -58,3 +76,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  baseFollowUpDamage: 0
+  threatCost: 1
+  isBoardDisruptor: 0
+  isSupport: 0
