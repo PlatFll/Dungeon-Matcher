@@ -19,12 +19,73 @@ public sealed class RunUpgradeCoordinator :
     private Coroutine openRoutine;
     private bool isHoldingProgression;
     private bool selectionCommitted;
+    private bool refinementUsed;
     private int heldCompletedWave;
     private object activeChoiceSession;
     private readonly HashSet<RunUpgradeDefinition> offeredChoices =
         new HashSet<RunUpgradeDefinition>();
 
     public bool IsBlockingWaveProgression => isHoldingProgression;
+    public bool CanRefine => isHoldingProgression && !selectionCommitted && !refinementUsed &&
+        !(AccountProgression.Current.ActiveRun?.refinementUsed ?? false);
+
+    public bool TryRefine(RunUpgradeTheme theme)
+    {
+        if (!CanRefineTheme(theme) || !IsCurrentIntermission(activeChoiceSession, heldCompletedWave)) return false;
+        if(RunSession.Current?.Continuation!=null && !RunSession.Current.Continuation.RecordAction(new RunRecordedAction {kind=RunActionKind.RefineDraft,theme=theme})) return false;
+        var choices = UpgradeDraftGenerator.Refine(runtime.Catalog, runtime, playerActor, heldCompletedWave,
+            runtime.GetDraftRandom(), theme, offeredChoices);
+        if (choices.Count == 0) return false;
+        // Accepted direction is already durable in the action journal. A later
+        // snapshot failure must not permit another refinement.
+        PersistDraft(choices,true);
+        refinementUsed = true;
+        offeredChoices.Clear(); offeredChoices.UnionWith(choices);
+        RunSession.Current?.Continuation?.SaveNow();
+        object session = activeChoiceSession;
+        return choiceUI.Show(choices, card => ReferenceEquals(activeChoiceSession, session) && TrySelectUpgrade(card));
+    }
+    public bool CanRefineTheme(RunUpgradeTheme theme)
+    {
+        if(!CanRefine || runtime?.Catalog==null) return false;
+        foreach(var definition in runtime.Catalog.Upgrades)
+            if(definition!=null && definition.Theme==theme && !offeredChoices.Contains(definition) && runtime.IsEligible(definition,playerActor,heldCompletedWave)) return true;
+        return false;
+    }
+
+    public void CaptureContinuation(RunCombatSnapshot saved)
+    {
+        saved.refinementUsed=refinementUsed || (AccountProgression.Current.ActiveRun?.refinementUsed ?? false);
+        saved.draft.Clear(); saved.draftWave=0;
+        if(!isHoldingProgression || selectionCommitted) return;
+        saved.draftWave=heldCompletedWave;
+        foreach(var card in offeredChoices) saved.draft.Add(card.UpgradeId);
+    }
+
+    public void RestoreContinuation(RunCombatSnapshot saved)
+    {
+        CleanupIntermission(); refinementUsed=saved.refinementUsed;
+        if(saved.waveActive || saved.draftWave!=saved.wave || saved.draft.Count==0) return;
+        var choices=new List<RunUpgradeDefinition>();
+        foreach(string id in saved.draft)
+            foreach(var definition in runtime.Catalog.Upgrades)
+                if(definition.UpgradeId==id) choices.Add(definition);
+        if(choices.Count!=saved.draft.Count) throw new InvalidOperationException("A saved card offer is unavailable.");
+        isHoldingProgression=true; selectionCommitted=false; heldCompletedWave=saved.wave;
+        activeChoiceSession=new object(); offeredChoices.UnionWith(choices);
+        object session=activeChoiceSession;
+        inputBlock=boardController.AcquireExternalInputBlock(); choiceUI.SetRefinement(this);
+        if(!choiceUI.Show(choices,card=>ReferenceEquals(activeChoiceSession,session)&&TrySelectUpgrade(card)))
+            throw new InvalidOperationException("The saved card choice could not be presented.");
+    }
+
+    private bool PersistDraft(List<RunUpgradeDefinition> choices, bool refined)
+    {
+        var run = RunSession.Current;
+        if (run == null) return true;
+        return AccountProgression.Current.StoreDraft(run.RunId, heldCompletedWave,
+            choices.ConvertAll(card => card.UpgradeId), refined);
+    }
 
     public static bool ShouldOfferUpgradeAfterWave(int completedWave)
     {
@@ -179,6 +240,16 @@ public sealed class RunUpgradeCoordinator :
 
         offeredChoices.Clear();
         offeredChoices.UnionWith(choices);
+        if (!PersistDraft(choices, false))
+        {
+            // Keep the progression gate; retry the same offer, never reroll on a write failure.
+            while (!PersistDraft(choices, false))
+            {
+                if (!IsCurrentIntermission(session, completedWave)) yield break;
+                yield return new WaitForSecondsRealtime(1f);
+            }
+        }
+        choiceUI.SetRefinement(this);
         inputBlock = boardController != null
             ? boardController.AcquireExternalInputBlock()
             : null;
@@ -210,6 +281,7 @@ public sealed class RunUpgradeCoordinator :
             return false;
         }
 
+        if(RunSession.Current?.Continuation!=null && !RunSession.Current.Continuation.RecordAction(new RunRecordedAction {kind=RunActionKind.ChooseCard,card=definition.UpgradeId})) return false;
         object session = activeChoiceSession;
         // TryApply publishes synchronous callbacks. Own selection BEFORE those
         // callbacks so re-entry cannot award another card from this choice.
@@ -227,7 +299,12 @@ public sealed class RunUpgradeCoordinator :
 
         // A callback may already have reset/rebound the run. Do not release a
         // different, newer choice's gate when the old application returns.
-        if (ReferenceEquals(activeChoiceSession, session)) ReleaseProgression();
+        if (ReferenceEquals(activeChoiceSession, session))
+        {
+            var run=RunSession.Current;
+            if(run!=null) { AccountProgression.Current.ClearDraft(run.RunId); run.Continuation?.SaveNow(); }
+            ReleaseProgression();
+        }
         return true;
     }
 
@@ -241,7 +318,7 @@ public sealed class RunUpgradeCoordinator :
 
     private void HandlePlayerInitialized(PlayerActor initializedPlayer)
     {
-        if (initializedPlayer == playerActor) CleanupIntermission();
+        if (initializedPlayer == playerActor) { refinementUsed = false; CleanupIntermission(); }
     }
 
     private void HandleChoiceHidden()
@@ -267,6 +344,20 @@ public sealed class RunUpgradeCoordinator :
             choiceUI.Hide();
         }
     }
+
+    public bool SelectRecordedCard(string id)
+    {
+        foreach(var definition in new List<RunUpgradeDefinition>(offeredChoices))
+            if(definition.UpgradeId==id)
+            {
+                bool accepted=TrySelectUpgrade(definition);
+                if(accepted) choiceUI.Hide();
+                return accepted;
+            }
+        return false;
+    }
+
+    private void HandleRunReset() { refinementUsed=false; CleanupIntermission(); }
 
     private void ReleaseProgression()
     {
@@ -317,8 +408,8 @@ public sealed class RunUpgradeCoordinator :
 
         if (runtime != null)
         {
-            runtime.RunReset -= CleanupIntermission;
-            runtime.RunReset += CleanupIntermission;
+            runtime.RunReset -= HandleRunReset;
+            runtime.RunReset += HandleRunReset;
         }
 
         if (choiceUI != null)
@@ -345,7 +436,7 @@ public sealed class RunUpgradeCoordinator :
 
     private void Unsubscribe()
     {
-        if (runtime != null) runtime.RunReset -= CleanupIntermission;
+        if (runtime != null) runtime.RunReset -= HandleRunReset;
         if (choiceUI != null) choiceUI.Hidden -= HandleChoiceHidden;
 
         if (waveController != null)

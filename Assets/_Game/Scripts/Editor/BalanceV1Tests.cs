@@ -96,7 +96,7 @@ public sealed class BalanceV1Tests
         Assert.That(player.MaximumHealth,Is.EqualTo(hp)); Assert.That(player.GemDamage,Is.EqualTo(damage).Within(.001f));
         Assert.That(player.MaximumShield,Is.EqualTo(shield)); Assert.That(player.AbilityDamageMultiplier,Is.EqualTo(def.AbilityMultiplierAtLevel(level)));
         player.Initialize(def);Assert.That(player.MaximumHealth,Is.EqualTo(hp));Assert.That(def.BaseMaxHealth,Is.EqualTo(immutableHp));
-        Assert.That(Resources.Load<PlayerDefinition>("Players/Player_Bardley").ActiveAbility.EnergyCost,Is.EqualTo(1),"intentional development override");
+        Assert.That(Resources.Load<PlayerDefinition>("Players/Player_Bardley").ActiveAbility.EnergyCost,Is.EqualTo(80),"production cost; testing override retired");
     }
     [Test] public void PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent()
     {
@@ -132,12 +132,14 @@ public sealed class BalanceV1Tests
         Assert.That(Account.Gold,Is.EqualTo(94)); Assert.That(Account.FinalizeRun(run,reason),Is.False);
         Assert.That(new AccountProgression(path).Gold,Is.EqualTo(94));
     }
-    [Test] public void InterruptedJournalPaysOnceAndKingFirstClearCannotRepeat()
+    [Test] public void InterruptedRunSurvivesUntilExplicitSettlementAndKingFirstClearCannotRepeat()
     {
         string run=Account.BeginRun("skeleton");
         for(int wave=1;wave<=30;wave++)Assert.That(Account.RecordWave(run,wave,new[]{7,12,18,24}.Contains(wave),wave==30),Is.True);
         var preview=Account.PreviewReward("interrupted");
-        var reloaded=new AccountProgression(path);Assert.That(reloaded.Gold,Is.EqualTo(preview.Total));
+        var reloaded=new AccountProgression(path);Assert.That(reloaded.Gold,Is.Zero);
+        Assert.That(reloaded.ActiveRun.id,Is.EqualTo(run));
+        Assert.That(reloaded.FinalizeRun(run,"Victory"),Is.True);
         Assert.That(new AccountProgression(path).Gold,Is.EqualTo(preview.Total));
         Assert.That(reloaded.ActiveRun,Is.Null);
         run=reloaded.BeginRun("skeleton");
@@ -176,7 +178,7 @@ public sealed class BalanceV1Tests
         Assert.That(runtime.IsEligible(Card("RunUpgrade_CorrosiveFormula"),player,5),Is.False,"unlocked but unequipped");
         GemMasterySettings.SetReward(GemMasteryShape.LShape,GemMasteryReward.PoisonBomb);
         Assert.That(runtime.IsEligible(Card("RunUpgrade_CorrosiveFormula"),player,5),Is.True);
-        Assert.That(runtime.IsEligible(Card("Prototype_ManaSpark"),player,5),Is.False,"one-energy development configuration");
+        Assert.That(runtime.IsEligible(Card("Prototype_ManaSpark"),player,5),Is.True,"production cost supports energy builds");
         var glass=Card("RunUpgrade_GlassCannon");
         Assert.That(runtime.TryApply(glass,5),Is.True);Assert.That(player.MaximumHealth,Is.EqualTo(95));
         Assert.That(runtime.TryApply(glass,5),Is.False);runtime.ResetRun();Assert.That(player.MaximumHealth,Is.EqualTo(112));

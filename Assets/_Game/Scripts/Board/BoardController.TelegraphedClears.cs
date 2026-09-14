@@ -24,6 +24,7 @@ public partial class BoardController
         internal bool Queued;
     }
     private readonly List<GemSetThreat> gemSetThreats = new List<GemSetThreat>();
+    private readonly List<LaneThreat> laneThreats = new List<LaneThreat>();
     public event Action<GemSetThreat> GemSetMarked;
     public event Action<LaneThreat> LanesMarked;
     public event Action<bool, int, float> LaneSlash;
@@ -49,7 +50,7 @@ public partial class BoardController
         threat.Ended = true;
         gemSetThreats.Remove(threat);
     }
-    public void CancelLaneThreat(LaneThreat threat) { if (threat != null) threat.Ended = true; }
+    public void CancelLaneThreat(LaneThreat threat) { if (threat != null) { threat.Ended = true; laneThreats.Remove(threat); } }
 
     public bool TryQueueMarkGemSet(EnemyActor owner, int count, int moves, bool restoration,
         Action<GemSetThreat> completed, Func<bool> cancelled)
@@ -67,22 +68,23 @@ public partial class BoardController
     {
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) return;
         gemSetThreats.RemoveAll(t => t.Ended || t.Owner == null || t.Owner.IsDefeated);
+        var clearable = ImmediatelyClearableOrdinaryGems();
         var candidates = new List<Gem>();
         for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
         {
             Gem gem = GetGem(x,y);
-            if (!IsOrdinaryGemOnBoard(gem)) continue;
+            if (!IsOrdinaryGemOnBoard(gem) || !clearable.Contains(gem)) continue;
             bool marked = false;
             foreach (var existing in gemSetThreats) if (existing.Targets.Contains(gem)) { marked = true; break; }
             if (!marked) candidates.Add(gem);
         }
         if (candidates.Count == 0) return;
         var threat = new GemSetThreat { Owner = request.OwnerActor,
-            DueMove = completedValidPlayerMoves + request.WarningMoves,
+            DueMove = ReserveWarningDeadline(request.WarningMoves),
             RestorationPresentation = request.RestorationPresentation };
         while (threat.Targets.Count < request.TargetCount && candidates.Count > 0)
         {
-            int index = UnityEngine.Random.Range(0, candidates.Count);
+            int index = GameplayRandom.Range(0, candidates.Count);
             threat.Targets.Add(candidates[index]); candidates.RemoveAt(index);
         }
         // Metadata only: no swap/match legality changes, so no new dead board.
@@ -133,8 +135,9 @@ public partial class BoardController
     {
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) return;
         request.Lanes = new LaneThreat { Owner = request.OwnerActor,
-            Row = UnityEngine.Random.Range(0,height), Column = UnityEngine.Random.Range(0,width),
-            DueMove = completedValidPlayerMoves + request.WarningMoves };
+            Row = GameplayRandom.Range(0,height), Column = GameplayRandom.Range(0,width),
+            DueMove = ReserveWarningDeadline(request.WarningMoves) };
+        laneThreats.Add(request.Lanes);
         request.Succeeded = true;
         EnsureTelegraphPresentation(); LanesMarked?.Invoke(request.Lanes);
     }
@@ -152,7 +155,7 @@ public partial class BoardController
         if (threat != null) threat.Queued = false;
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) yield break;
         if (threat == null || threat.Ended || request.OwnerActor == null || request.OwnerActor.IsDefeated) yield break;
-        threat.Ended = true;
+        CancelLaneThreat(threat);
         bool cleared = false;
         var visited = new HashSet<Gem>();
         for (int lane = 0; lane < 2; lane++)

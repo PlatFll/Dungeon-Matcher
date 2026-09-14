@@ -260,6 +260,29 @@ public sealed class WaveSpawnProfile : ScriptableObject
     public float ThreatBudget(int wave) => Mathf.Max(1, threatBudgetByWave.Evaluate(wave));
     public IReadOnlyList<EncounterRecipe> Recipes => encounterRecipes;
 
+    [Serializable]
+    public sealed class TeachingOpportunity
+    {
+        public EnemyDefinition enemy;
+        [Min(1)] public int finalWave;
+    }
+    [SerializeField] private List<TeachingOpportunity> teachingOpportunities = new List<TeachingOpportunity>();
+
+    public EnemyDefinition SelectIntroduction(int wave, System.Random random, ISet<EnemyDefinition> seen, bool onlyDue = false)
+    {
+        TeachingOpportunity earliest = null;
+        foreach (var lesson in teachingOpportunities)
+            if (lesson.enemy != null && !seen.Contains(lesson.enemy) && lesson.enemy.GetSpawnWeight(wave) > 0 &&
+                (earliest == null || lesson.finalWave < earliest.finalWave)) earliest = lesson;
+        if (earliest == null) return null;
+        return wave >= earliest.finalWave || (!onlyDue && random.NextDouble() < .55) ? earliest.enemy : null;
+    }
+
+    public bool NeedsIntroduction(EnemyDefinition enemy, ISet<EnemyDefinition> seen)
+    {
+        return enemy != null && !seen.Contains(enemy) && teachingOpportunities.Exists(lesson => lesson.enemy == enemy);
+    }
+
     public bool TrySelectRecipe(int wave, int slots, EnemyDatabase database, System.Random random,
         ISet<EnemyDefinition> excluded, string previousId, out EncounterRecipe recipe, out List<EnemyDefinition> members)
     {

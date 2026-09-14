@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class EnemyActor : MonoBehaviour
+public sealed partial class EnemyActor : MonoBehaviour
 {
     private const int EnemyMaximumShield = 30;
     private const float EnemyShieldDamageReduction = 0.25f;

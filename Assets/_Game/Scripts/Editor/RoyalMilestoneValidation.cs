@@ -122,17 +122,19 @@ public static class RoyalMilestoneValidation
 
             var board=root.AddComponent<BoardController>(); Set(board,"width",4); Set(board,"height",4);
             var grid=new Gem[4,4]; Set(board,"gems",grid); Set(board,"completedValidPlayerMoves",7);
+            int[,] colors={{0,1,0,0},{2,0,3,4},{1,1,2,1},{3,4,1,5}};
             for(int y=0;y<4;y++) for(int x=0;x<4;x++)
             {
                 var go=new GameObject("Gem"); go.transform.SetParent(root.transform);
-                var gem=go.AddComponent<Gem>(); gem.SetGridPosition(x,y); grid[x,y]=gem;
+                var gem=go.AddComponent<Gem>(); gem.SetGridPosition(x,y); gem.SetType((GemType)colors[y,x],null); grid[x,y]=gem;
             }
             object request=NewRequest(bishop,3,3);
             Call(board,"ExecuteMarkGemSet",request);
             var first=(BoardController.GemSetThreat)Get(request,"SetThreat");
-            Check(first.Targets.Count==3 && first.DueMove==10,"Three independently tracked marks and exact deadline");
+            Check(first!=null && first.Targets.Count==3 && first.DueMove==10,"Three answerable marks and exact deadline");
             request=NewRequest(special,3,3); Call(board,"ExecuteMarkGemSet",request);
             var second=(BoardController.GemSetThreat)Get(request,"SetThreat");
+            Check(second!=null && second.Targets.Count==3 && second.DueMove==13,"Second cast gets a separate response window");
             foreach(var gem in second.Targets) Check(!first.Targets.Contains(gem),"Simultaneous casts do not overlap marks");
             Gem moved=first.Targets[0]; int oldX=moved.Column,oldY=moved.Row;
             Gem other=grid[(oldX+1)%4,oldY]; grid[oldX,oldY]=other; other.SetGridPosition(oldX,oldY);

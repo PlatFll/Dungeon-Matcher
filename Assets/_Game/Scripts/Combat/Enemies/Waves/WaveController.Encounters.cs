@@ -27,12 +27,19 @@ public sealed partial class WaveController
     // entrance animations cannot alter escort constraints or random selection.
     private List<EnemyDefinition> BuildEncounter(int count)
     {
-        if (selectedRecipeMembers != null) return new List<EnemyDefinition>(selectedRecipeMembers);
+        if (selectedMilestoneLeader == null)
+        {
+            var introduction = waveSpawnProfile.SelectIntroduction(currentWave, EncounterRandom, seenMilestoneLeaders,
+                onlyDue: previousEncounterLeaders.Count > 0);
+            if (introduction != null || previousEncounterLeaders.Count > 0)
+                return BuildReadableEncounter(introduction, count);
+        }
+        if (selectedRecipeMembers != null) return IntroduceOneMechanic(new List<EnemyDefinition>(selectedRecipeMembers), count);
         List<EnemyDefinition> formation = null;
         for (int attempt = 0; attempt < 24; attempt++)
         {
             formation = BuildWeightedEncounter(count);
-            if (IsWithinThreatBudget(formation)) return formation;
+            if (IsWithinThreatBudget(formation)) return IntroduceOneMechanic(formation, count);
         }
         // Deterministic bounded fallback: retain narrative members and fill with
         // the cheapest eligible escorts that fit. Never return an over-budget roll.
@@ -64,6 +71,32 @@ public sealed partial class WaveController
                 if (!IsWithinThreatBudget(fallback)) fallback.RemoveAt(fallback.Count - 1);
             }
         return fallback;
+    }
+
+    private List<EnemyDefinition> IntroduceOneMechanic(List<EnemyDefinition> formation, int count)
+    {
+        if (selectedMilestoneLeader != null) return formation;
+        foreach (var enemy in formation)
+            if (waveSpawnProfile.NeedsIntroduction(enemy, seenMilestoneLeaders)) return BuildReadableEncounter(enemy, count);
+        return formation;
+    }
+
+    private List<EnemyDefinition> BuildReadableEncounter(EnemyDefinition lesson, int slots)
+    {
+        var result = new List<EnemyDefinition>();
+        if (lesson != null) result.Add(lesson);
+        var excluded = new HashSet<EnemyDefinition>();
+        int target = Mathf.Min(2, slots);
+        for (int attempt = 0; attempt < 30 && result.Count < target; attempt++)
+        {
+            if (!enemyDatabase.TryGetRandomWeightedEnemy(EnemyCategory.Normal, currentWave, out var candidate, excluded, EncounterRandom)) break;
+            excluded.Add(candidate);
+            result.Add(candidate);
+            if (!IsWithinThreatBudget(result)) result.RemoveAt(result.Count - 1);
+        }
+        CurrentPlan = new WaveSpawnPlan(currentWave, lesson != null ? "Introduction: " + lesson.DisplayName : "Relief patrol",
+            result.ConvertAll(enemy => enemy.Category));
+        return result;
     }
 
     private bool IsWithinThreatBudget(List<EnemyDefinition> formation)

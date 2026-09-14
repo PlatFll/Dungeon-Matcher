@@ -13,6 +13,9 @@ public sealed class CrackedGemsAbilityDefinition :
     [SerializeField, Min(1)]
     private int energyCost = 80;
 
+    [SerializeField, Range(0f, 0.5f)]
+    private float maximumSelfRefundFraction = 0.5f;
+
     [SerializeField, Min(1)]
     private int targetGemCount = 5;
 
@@ -48,6 +51,8 @@ public sealed class CrackedGemsAbilityDefinition :
 
     public override int EnergyCost =>
         energyCost;
+
+    public override float MaximumSelfRefundFraction => maximumSelfRefundFraction;
 
     public override Type RuntimeType =>
         typeof(CrackedGemsRuntime);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyActor))]
-public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime
+public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     [SerializeField, Min(0.1f)] private float commandWindup = 0.8f;
     [SerializeField, Min(0f)] private float strikeSpacing = 0.2f;
@@ -15,6 +15,10 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
     private readonly HashSet<EnemyActor> commandLocks = new HashSet<EnemyActor>();
     private bool released, pending, preferChains = true;
     private int retryAfterMove = -1;
+    public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
+    { saved.preferPrimary=preferChains; saved.retryAfterMove=retryAfterMove; }
+    public void RestoreContinuation(EnemyCombatSnapshot saved, System.Func<int,EnemyActor> enemyAt)
+    { preferChains=saved.preferPrimary; retryAfterMove=saved.retryAfterMove; }
 
     public void InitializeSpecialAbility(EnemyActor enemy, BoardController initializedBoard,
         IReadOnlyList<EnemyActor> activeEnemies)
@@ -32,7 +36,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private void Update()
     {
-        if (released || pending || actor == null || actor.IsDefeated || board == null ||
+        if (Time.timeScale<=0 || released || pending || actor == null || actor.IsDefeated || board == null ||
             !actor.IsSpecialReady || board.IsBusy || board.HasPendingBoardMutation ||
             actor.HasAnimationActionInProgress || board.CompletedValidPlayerMoves <= retryAfterMove) return;
         var stagger = actor.GetComponent<EnemyStagger>();

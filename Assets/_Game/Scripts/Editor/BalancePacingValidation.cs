@@ -66,11 +66,11 @@ public static class BalancePacingValidation
     }
     private static IEnumerator Checks()
     {
-        File.WriteAllText(Path.Combine(output,"report.txt"),"Real Unity Game scenes at 6x time scale. Reported seconds are game time plus 3 seconds per card choice. Policies are synthetic input, not human retention evidence. Bardley uses a disposable 80-energy ability clone; committed cost remains 1. No HP/damage/encounter changes. 20-minute observations are censored, never forced deaths.\n");
+        File.WriteAllText(Path.Combine(output,"report.txt"),"Real Unity Game scenes at 6x time scale. Reported seconds are game time plus 3 seconds per card choice. Policies are synthetic input, not human retention evidence. Production Bardley costs 80 with the shared 50% refund ceiling. Matched character seeds and fixed policies; no HP/damage overrides. 20-minute observations are censored, never forced deaths.\n");
         for(int mode=0;mode<4;mode++)
         foreach(string id in new[]{"skeleton","bardley"})
         {
-            int level=mode<2?1:5;bool skilled=mode>0,items=mode==3;int seed=id=="skeleton"?3101:3102;
+            int level=mode<2?1:5;bool skilled=mode>0,items=mode==3;int seed=3101;
             yield return Play(id,level,skilled,items,seed);
         }
     }
@@ -91,14 +91,8 @@ public static class BalancePacingValidation
         while(RunSession.Current==null||!RunSession.Current.Player.IsInitialized)
         {Require(Time.realtimeSinceStartup<waitEnd,"scene initialized");yield return null;}
         run=RunSession.Current;
-        Set(run.Waves,"encounterRandom",new System.Random(seed));
-        if(id=="bardley")
-        {
-            var definition=UnityEngine.Object.Instantiate(run.Player.Definition);
-            var ability=UnityEngine.Object.Instantiate(definition.ActiveAbility);
-            clones.Add(definition);clones.Add(ability);Set(ability,"energyCost",80);Set(definition,"activeAbility",ability);run.Player.Initialize(definition);
-            Require(run.Player.ActiveAbility.EnergyCost==80,"disposable production-cost Bardley");
-        }
+        Set(run.Waves,"encounterRandom",new SavedRandom(seed));
+        if(id=="bardley") Require(run.Player.ActiveAbility.EnergyCost==80,"production-cost Bardley");
         started=Time.time;waveStarted=Time.time;hpLost=waveLoss=menuSeconds=0;choices=abilities=specialMoves=0;movesAtStart=0;
         run.Waves.WaveStarted+=WaveStarted;run.Waves.WaveCompleted+=WaveCompleted;run.Player.DamageTaken+=Damage;
         var controller=UnityEngine.Object.FindFirstObjectByType<PlayerAbilityController>();
@@ -198,5 +192,14 @@ public static class BalancePacingValidation
     {if(type==LogType.Exception||type==LogType.Error){failed=true;File.AppendAllText(Path.Combine(output,"errors.txt"),message+"\n"+trace+"\n");}}
     private static void Cleanup(){mastery?.Dispose();selection?.Dispose();profile?.Dispose();foreach(var clone in clones)if(clone!=null)UnityEngine.Object.Destroy(clone);clones.Clear();}
     private static void Finish()
-    {EditorApplication.update-=Tick;steps.Clear();File.AppendAllText(Path.Combine(output,"report.txt"),failed?"CHECK FAILED; inspect errors.\n":"ENGINE PLAYTHROUGHS COMPLETED.\n");Debug.Log("Pacing evidence: "+output);}
+    {
+        EditorApplication.update-=Tick;steps.Clear();
+        File.AppendAllText(Path.Combine(output,"report.txt"),failed?"CHECK FAILED; inspect errors.\n":"ENGINE PLAYTHROUGHS COMPLETED.\n");
+        Debug.Log("Pacing evidence: "+output);
+        if(Application.isBatchMode)
+        {
+            Application.logMessageReceived-=Log;Cleanup();SessionState.SetBool(Pending,false);
+            EditorApplication.Exit(failed?1:0);
+        }
+    }
 }

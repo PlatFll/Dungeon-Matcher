@@ -429,7 +429,7 @@ public partial class BoardController
              index++)
         {
             int candidateIndex =
-                Random.Range(
+                GameplayRandom.Range(
                     0,
                     candidates.Count
                 );
@@ -480,7 +480,7 @@ public partial class BoardController
             barricadeCells[selectedCell] =
                 state;
 
-            if (!HasAvailableMove())
+            if (!RetainsUsefulResponse())
             {
                 barricadeCells.Remove(selectedCell);
                 continue;

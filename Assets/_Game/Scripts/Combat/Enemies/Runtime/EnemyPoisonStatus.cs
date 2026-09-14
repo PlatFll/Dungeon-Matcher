@@ -43,6 +43,20 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         enemyActor = GetComponent<EnemyActor>();
     }
 
+    public void CaptureContinuation(EnemyCombatSnapshot saved)
+    {
+        saved.poisoned=IsPoisoned; saved.poisonRemaining=RemainingDuration;
+        saved.poisonNextTick=Mathf.Max(0,nextTickTime-Time.time);
+        saved.poisonInterval=tickInterval; saved.poisonDamage=tickDamage;
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved)
+    {
+        isPoisoned=saved.poisoned; tickInterval=Mathf.Max(.05f,saved.poisonInterval);
+        tickDamage=saved.poisonDamage; expirationTime=Time.time+saved.poisonRemaining;
+        nextTickTime=Time.time+saved.poisonNextTick; SyncDebugState();
+        if(isPoisoned) PoisonApplied?.Invoke(this,false);
+    }
+
     private void OnEnable()
     {
         ResolveEnemyActor();
@@ -51,6 +65,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
 
     private void Update()
     {
+        if(Time.timeScale<=0) return;
         if (!IsPoisoned)
         {
             SyncDebugState();

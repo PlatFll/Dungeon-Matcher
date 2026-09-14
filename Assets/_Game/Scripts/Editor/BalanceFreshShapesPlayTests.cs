@@ -35,8 +35,16 @@ public sealed class BalanceFreshShapesPlayTests
                 var original=new List<Gem>();for(int x=0;x<length;x++)original.Add(x==2?grid[2,6]:grid[x,7]);
                 int rewarded=0;board.BoardClearResolved+=clear=>{if(clear.Source==BoardClearSource.Match&&clear.CascadeDepth==0)rewarded+=clear.GemCount;};
                 int moves=board.CompletedValidPlayerMoves;
+                var expected=scenario==1?GemSpecialType.ColorCrystal:GemSpecialType.RowBomb;
+                bool created=false;
                 board.StartCoroutine((IEnumerator)typeof(BoardController).GetMethod("TrySwap",Flags).Invoke(board,new object[]{grid[2,6],grid[2,7]}));
-                yield return Until(()=>board.CompletedValidPlayerMoves==moves+1&&!board.IsBusy&&!board.HasPendingBoardMutation,"accepted fixture swap settles");
+                yield return Until(()=>
+                {
+                    // A later refill cascade may legitimately activate the new
+                    // bomb. Observe its creation while the real action resolves.
+                    foreach(var gem in grid) if(gem!=null&&gem.SpecialType==expected) created=true;
+                    return board.CompletedValidPlayerMoves==moves+1&&!board.IsBusy&&!board.HasPendingBoardMutation;
+                },"accepted fixture swap settles");
                 if(scenario==0)
                 {
                     Assert.That(rewarded,Is.GreaterThanOrEqualTo(4),"locked straight four rewards every destroyed gem");
@@ -45,9 +53,7 @@ public sealed class BalanceFreshShapesPlayTests
                 }
                 else
                 {
-                    var expected=scenario==1?GemSpecialType.ColorCrystal:GemSpecialType.RowBomb;
-                    bool found=false;foreach(var gem in grid)if(gem!=null&&gem.SpecialType==expected)found=true;
-                    Assert.That(found,Is.True,"shape creates its permitted special: "+expected);
+                    Assert.That(created,Is.True,"shape creates its permitted special: "+expected);
                 }
                 Assert.That(RunSession.Current.ExitTo("MainMenu"),Is.True);yield return null;
             }

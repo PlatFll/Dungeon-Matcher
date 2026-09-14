@@ -71,6 +71,19 @@ public sealed class EnemyStagger : MonoBehaviour
         enemyActor = GetComponent<EnemyActor>();
     }
 
+    public void CaptureContinuation(EnemyCombatSnapshot saved)
+    {
+        saved.staggerMeter=staggerMeterNormalized; saved.staggerRemaining=remainingStaggerTime;
+        saved.staggerDuration=activeStaggerDuration; saved.staggerImmunity=remainingImmunityTime;
+        saved.staggerGrace=remainingBuildupGraceTime;
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved)
+    {
+        remainingStaggerTime=saved.staggerRemaining; activeStaggerDuration=saved.staggerDuration;
+        remainingImmunityTime=saved.staggerImmunity; remainingBuildupGraceTime=saved.staggerGrace;
+        isStaggered=remainingStaggerTime>0; SetMeterNormalized(saved.staggerMeter);
+    }
+
     private void OnEnable()
     {
         if (enemyActor == null)

@@ -1,8 +1,10 @@
-param([string]$LibreSpritePath = 'C:/Users/USER/Downloads/libresprite-development-windows-x86_64/libresprite.exe')
+[CmdletBinding()]
+param([string]$LibreSpritePath = 'libresprite')
+Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
 $root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
-$source=Join-Path $root 'ArtSource/SmallHoldGames/SmallHold_Games_Ident.aseprite'
 $script=Join-Path $PSScriptRoot 'SmallHold-WhiteHold.js'
+New-Item -ItemType Directory -Path (Join-Path $root '.utmp') -Force | Out-Null
 $log=Join-Path $root '.utmp/SmallHold-WhiteHold.log'
 $arguments=@('-b','--script',('"{0}"' -f $script))
 $process=Start-Process -FilePath $LibreSpritePath -ArgumentList $arguments -WorkingDirectory $root -WindowStyle Hidden -Wait -PassThru -RedirectStandardOutput $log

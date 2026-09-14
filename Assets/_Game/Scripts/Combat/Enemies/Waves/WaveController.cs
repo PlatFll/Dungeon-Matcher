@@ -64,7 +64,7 @@ public sealed partial class WaveController :
             if (encounterRandom == null)
             {
                 if (encounterSeed == 0) encounterSeed = Environment.TickCount;
-                encounterRandom = new System.Random(encounterSeed);
+                encounterRandom = new SavedRandom(encounterSeed);
             }
             return encounterRandom;
         }

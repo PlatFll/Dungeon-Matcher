@@ -19,6 +19,7 @@ public partial class BoardController
     public int CompletedValidPlayerMoves => completedValidPlayerMoves;
     public event Action<GemPairThreat> GemPairMarked;
     public event Action<EnemyActor, Vector3, Vector3, float> GemPairImpact;
+    private readonly List<GemPairThreat> gemPairThreats = new List<GemPairThreat>();
 
     public bool IsOrdinaryGemOnBoard(Gem gem)
     {
@@ -37,7 +38,7 @@ public partial class BoardController
 
     public void CancelGemPairThreat(GemPairThreat threat)
     {
-        if (threat != null) threat.Ended = true;
+        if (threat != null) { threat.Ended = true; gemPairThreats.Remove(threat); }
     }
 
     // Caller owns enemy cadence; the board chooses targets only once it owns
@@ -84,16 +85,27 @@ public partial class BoardController
     {
         if (request.OwnerActor == null || request.OwnerActor.IsDefeated) return;
         List<Vector2Int> candidates = BuildBarricadableCellList(true);
-        List<Vector2Int> pair = ChooseStraightCellRun(candidates, 2);
+        var clearable = ImmediatelyClearableOrdinaryGems();
+        List<Vector2Int> pair = null;
+        // Keep the marked pair adjacent, with an immediate match-based interrupt.
+        while (candidates.Count > 1)
+        {
+            var possible = ChooseStraightCellRun(candidates, 2);
+            if (possible == null) break;
+            if (clearable.Contains(GetGem(possible[0].x,possible[0].y)) || clearable.Contains(GetGem(possible[1].x,possible[1].y))) { pair=possible; break; }
+            candidates.Remove(possible[0]);
+        }
         if (pair == null) return;
         request.PairThreat = new GemPairThreat
         {
             First = GetGem(pair[0].x, pair[0].y),
             Second = GetGem(pair[1].x, pair[1].y),
-            DueMove = completedValidPlayerMoves + request.WarningMoves,
+            DueMove = ReserveWarningDeadline(request.WarningMoves),
             Owner = request.OwnerActor
         };
         request.Succeeded = true;
+        gemPairThreats.RemoveAll(t => t.Ended || t.Owner == null || t.Owner.IsDefeated);
+        gemPairThreats.Add(request.PairThreat);
         GemPairMarked?.Invoke(request.PairThreat);
     }
 
@@ -110,11 +122,12 @@ public partial class BoardController
         Vector3 second = threat.Second.transform.position;
         HashSet<Gem> targets = new HashSet<Gem> { threat.First, threat.Second };
         threat.Ended = true; // Consume before callbacks; one strike, one damage call.
+        gemPairThreats.Remove(threat);
         request.Succeeded = true;
         GemPairImpact?.Invoke(request.OwnerActor, first, second,
             matchFlashDuration + matchWhiteHoldDuration);
         if (combatController != null && combatController.PlayerActor != null)
-            combatController.PlayerActor.TryTakeDamage(request.PlayerDamage);
+            combatController.PlayerActor.TryTakeDamage(request.PlayerDamage, request.OwnerActor);
 
         // Environmental removal: no clear report, rewards, adjacent-obstacle
         // damage or special activation. Resulting cascades use the normal path.
@@ -142,6 +155,6 @@ public partial class BoardController
                 if (run.Count == length) runs.Add(run);
             }
         }
-        return runs.Count > 0 ? runs[UnityEngine.Random.Range(0, runs.Count)] : null;
+        return runs.Count > 0 ? runs[GameplayRandom.Range(0, runs.Count)] : null;
     }
 }

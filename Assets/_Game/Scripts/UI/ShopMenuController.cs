@@ -40,7 +40,7 @@ public sealed class ShopMenuController : MonoBehaviour
         if (wallet == null) return;
         var account = AccountProgression.Current;
         wallet.text = $"Gold Coins: {account.Gold}";
-        feedback.text=account.LastError!=null?"Save failed. Check storage, then try again.":"";
+        feedback.text=account.LastError!=null?"Save failed. Check storage, then try again.":account.ActiveRun!=null?"Continue or end your run before changing supplies.":"Supplies are optional; purchases also delay permanent upgrades.";
         for (int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;
@@ -48,9 +48,9 @@ public sealed class ShopMenuController : MonoBehaviour
             int width=BalanceV1.Current.consumableBombRadius*2+1;
             quantities[i].text=$"Owned: {account.Owned(kind)}\n"+(i==0?$"Restore {BalanceV1.Current.potionHealthFraction*100:0}% maximum HP":$"Choose a gem: clear a {width} x {width} area");
             buy[i].GetComponentInChildren<Text>().text=$"Buy 1 - {price} gold";
-            buy[i].interactable=account.Gold>=price&&account.Owned(kind)<9999;
+            buy[i].interactable=account.ActiveRun==null&&account.Gold>=price&&account.Owned(kind)<9999;
             equip[i].GetComponentInChildren<Text>().text=account.Equipped(kind)?"Unequip":"Equip";
-            equip[i].interactable=account.Owned(kind)>0||account.Equipped(kind);
+            equip[i].interactable=account.ActiveRun==null&&(account.Owned(kind)>0||account.Equipped(kind));
         }
     }
 }

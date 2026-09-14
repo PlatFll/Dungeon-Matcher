@@ -3,7 +3,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyActor))]
-public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime
+public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     private EnemyActor actor;
     private BoardController board;
@@ -14,6 +14,10 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
     private bool released;
     private int ownerId;
     private int retryAfterMove = -1;
+    public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
+    { saved.preferPrimary=preferFortification; saved.retryAfterMove=retryAfterMove; }
+    public void RestoreContinuation(EnemyCombatSnapshot saved, System.Func<int,EnemyActor> enemyAt)
+    { preferFortification=saved.preferPrimary; retryAfterMove=saved.retryAfterMove; warning=board.RestoredPair(actor); }
 
     public void InitializeSpecialAbility(EnemyActor initializedEnemy,
         BoardController initializedBoard, IReadOnlyList<EnemyActor> activeEnemies)
@@ -53,7 +57,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private void Update()
     {
-        if (released || actor == null || actor.IsDefeated || board == null) return;
+        if (Time.timeScale<=0 || released || actor == null || actor.IsDefeated || board == null) return;
         CheckWarning();
         TryResolveWarning();
         if (actionPending || warning != null || !actor.IsSpecialReady ||

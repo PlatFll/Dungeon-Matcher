@@ -113,7 +113,7 @@ public sealed class RunUpgradeLifecycleTests
         CreateFixture();
         Apply(health);
         System.Random random = runtime.GetDraftRandom();
-        var expected = new System.Random(runtime.CardSeed);
+        var expected = new SavedRandom(runtime.CardSeed);
         Assert.That(random.Next(), Is.EqualTo(expected.Next()));
         int revision = runtime.RunRevision;
         Set(hooks, "emergencyPlatingUsedThisWave", true);
@@ -171,7 +171,7 @@ public sealed class RunUpgradeLifecycleTests
         System.Random after = runtime.GetDraftRandom();
         Assert.That(after, Is.Not.SameAs(before));
         Assert.That(runtime.CardSeed, Is.EqualTo(seed));
-        Assert.That(after.Next(), Is.EqualTo(new System.Random(seed).Next()));
+        Assert.That(after.Next(), Is.EqualTo(new SavedRandom(seed).Next()));
         Assert.That(RunUpgradeResolver.ResolveGemDamage(100, default, runtime), Is.EqualTo(100));
     }
 

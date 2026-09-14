@@ -103,6 +103,19 @@ MonoBehaviour:
     initialChance: 0.35
     enemyCount: 2
   authoredEncounterChance: 0.45
+  teachingOpportunities:
+  - enemy: {fileID: 11400000, guid: 84831a37e3ae4a6aa1147fb4b1f8e6b9, type: 2}
+    finalWave: 6
+  - enemy: {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+    finalWave: 10
+  - enemy: {fileID: 11400000, guid: 1b41367eaef540e7b4fbc553bf6d5a28, type: 2}
+    finalWave: 11
+  - enemy: {fileID: 11400000, guid: 7e5bdc7d5c3140a3a3fe37dc861dd4f0, type: 2}
+    finalWave: 16
+  - enemy: {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
+    finalWave: 22
+  - enemy: {fileID: 11400000, guid: b2a9fefd5490455182d2f6f2740862f2, type: 2}
+    finalWave: 23
   threatBudgetByWave:
     serializedVersion: 2
     m_Curve:

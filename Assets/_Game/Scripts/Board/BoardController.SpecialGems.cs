@@ -758,7 +758,7 @@ public partial class BoardController
             }
 
             GemSpecialType randomBombType =
-                Random.Range(0, 2) == 0
+                GameplayRandom.Range(0, 2) == 0
                     ? GemSpecialType.RowBomb
                     : GemSpecialType.ColumnBomb;
 

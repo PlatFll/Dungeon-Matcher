@@ -74,9 +74,11 @@ public static class RoyalMilestonePlayValidation
         Check(judgment.Targets.Count==3 && runes.Targets.Count==3,"three marks per owner");
         foreach(var gem in runes.Targets) Check(!judgment.Targets.Contains(gem),"readable non-overlap");
         int moveBefore=board.CompletedValidPlayerMoves;
-        for(int i=0;i<3;i++) yield return PlayerMove();
+        int warningMoves=Mathf.Max(judgment.DueMove,runes.DueMove)-moveBefore;
+        Check(warningMoves>=3,"shared warnings retain each minimum response window");
+        for(int i=0;i<warningMoves;i++) yield return PlayerMove();
         yield return Until(()=>judgment.Ended && runes.Ended && !board.IsBusy,"warnings resolve after moves");
-        Check(board.CompletedValidPlayerMoves==moveBefore+3,"cascades and enemy clears add no player moves");
+        Check(board.CompletedValidPlayerMoves==moveBefore+warningMoves,"cascades and enemy clears add no player moves");
         Debug.Log("Royal Play Mode: King + Archbishop + Standard Bearer, simultaneous marks and three real completed moves passed.");
 
         yield return SpawnBoss("CourtMage");

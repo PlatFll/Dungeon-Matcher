@@ -487,7 +487,7 @@ public partial class BoardController
         }
 
         Vector2Int selectedCell =
-            candidates[UnityEngine.Random.Range(0, candidates.Count)];
+            candidates[GameplayRandom.Range(0, candidates.Count)];
 
         Gem minedGem = GetGem(selectedCell.x, selectedCell.y);
 
@@ -545,7 +545,7 @@ public partial class BoardController
                 // Test against every already-reserved structure, including other
                 // owners. This is a bounded local check, never a future-board search.
                 minedCellOwners[cell] = int.MinValue;
-                bool retainsResponse = HasAvailableMove();
+                bool retainsResponse = RetainsUsefulResponse();
                 minedCellOwners.Remove(cell);
                 if (retainsResponse) candidates.Add(cell);
             }

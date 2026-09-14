@@ -82,6 +82,20 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private readonly Dictionary<object, float> nextSequenceModifiers = new Dictionary<object, float>();
     public event Action<EnemyAutoAttack> NextSequenceModifiersChanged;
     public bool HasNextSequenceModifier(object owner) => nextSequenceModifiers.ContainsKey(owner);
+    public bool CanCaptureContinuation => !isAttackSequenceInProgress && commandOwner==null;
+    public void CaptureContinuation(EnemyCombatSnapshot saved)
+    {
+        saved.attackRemaining=remainingAttackTime; saved.attackSpeed=runtimeAttackSpeedMultiplier;
+        saved.attackRunning=isRunning;
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved)
+    {
+        StopAttacking(); remainingAttackTime=saved.attackRemaining;
+        runtimeAttackSpeedMultiplier=saved.attackSpeed; resumeCooldown=true;
+        if(saved.attackRunning) TryStartAttacking();
+        // StartCoroutine can consume the current frame's delta synchronously.
+        remainingAttackTime=saved.attackRemaining;
+    }
     public void SetNextSequenceModifier(object owner, float multiplier)
     {
         if (owner == null) return;
@@ -1034,6 +1048,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool CanPerformAttack()
     {
         return
+            Time.timeScale>0 &&
             CanContinueAttackLoop() &&
             (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&
