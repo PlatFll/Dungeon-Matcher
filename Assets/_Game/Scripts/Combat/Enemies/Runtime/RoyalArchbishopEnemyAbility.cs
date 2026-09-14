@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime
+public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     private EnemyActor actor;
     private BoardController board;
@@ -12,6 +12,22 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private readonly List<EnemyAutoAttack> blessed = new List<EnemyAutoAttack>();
     private bool released = true, pending, preferRunes = true;
     private int retryAfterMove = -1;
+    public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
+    {
+        saved.preferPrimary=preferRunes; saved.retryAfterMove=retryAfterMove;
+        foreach(var attack in blessed) if(attack!=null && attack.HasNextSequenceModifier(this)) saved.blessingTargets.Add(slotOf(attack.EnemyActor));
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved, System.Func<int,EnemyActor> enemyAt)
+    {
+        preferRunes=saved.preferPrimary; retryAfterMove=saved.retryAfterMove; runes=board.RestoredSet(actor);
+        blessed.Clear();
+        foreach(int slot in saved.blessingTargets)
+        {
+            var attack=enemyAt(slot)?.GetComponent<EnemyAutoAttack>(); if(attack==null) continue;
+            attack.SetNextSequenceModifier(this,actor.Definition.BenedictionDamageMultiplier); blessed.Add(attack);
+            EnemyBlessingView.Show(attack,this,actor.Definition.BenedictionHaloSprite);
+        }
+    }
 
     public void InitializeSpecialAbility(EnemyActor enemy, BoardController initializedBoard, IReadOnlyList<EnemyActor> enemies)
     {
@@ -20,7 +36,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
         actor.Defeated += Defeated;
         availability = new EnemySpecialActionAvailability(this, actor, board, TryCast);
     }
-    private bool CanAct() => !released && !pending && actor != null && !actor.IsDefeated &&
+    private bool CanAct() => Time.timeScale>0 && !released && !pending && actor != null && !actor.IsDefeated &&
         board != null && !board.IsBusy && !actor.HasAnimationActionInProgress &&
         (actor.GetComponent<EnemyStagger>() == null || !actor.GetComponent<EnemyStagger>().IsStaggered);
     private void Update()

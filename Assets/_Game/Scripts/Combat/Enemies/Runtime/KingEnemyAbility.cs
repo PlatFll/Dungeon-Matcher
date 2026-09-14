@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime
+public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     private EnemyActor actor;
     private EnemyAutoAttack ownAttack;
@@ -20,6 +20,22 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private bool crossedHalf, crossedQuarter, released = true, pending;
     private int cycle, retryAfterMove = -1;
     public bool IsEnraged => crossedHalf;
+    public void CaptureContinuation(EnemyCombatSnapshot saved, Func<EnemyActor,int> slotOf)
+    {
+        saved.crossedHalf=crossedHalf; saved.crossedQuarter=crossedQuarter; saved.cycle=cycle;
+        saved.retryAfterMove=retryAfterMove; saved.thresholds.AddRange(thresholds);
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved, Func<int,EnemyActor> enemyAt)
+    {
+        crossedHalf=saved.crossedHalf; crossedQuarter=saved.crossedQuarter; cycle=saved.cycle;
+        retryAfterMove=saved.retryAfterMove; thresholds.Clear(); foreach(int threshold in saved.thresholds) thresholds.Enqueue(threshold);
+        judgment=board.RestoredSet(actor); bombardment=board.RestoredLanes(actor);
+        if(crossedHalf)
+        {
+            ownAttack?.SetNormalAttackModifiers(this,actor.Definition.EnrageDamageMultiplier,actor.Definition.EnrageSpeedMultiplier);
+            Enraged?.Invoke(this);
+        }
+    }
     public event Action<KingEnemyAbility> Enraged;
     public event Action<KingEnemyAbility> CommandIssued;
     public event Action<KingEnemyAbility> HeavyStrike;
@@ -48,7 +64,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (!crossedQuarter && before * 4L >= enemy.MaxHealth && after * 4L < enemy.MaxHealth)
         { crossedQuarter = true; thresholds.Enqueue(25); }
     }
-    private bool CanAct() => !released && !pending && actor != null && !actor.IsDefeated &&
+    private bool CanAct() => Time.timeScale>0 && !released && !pending && actor != null && !actor.IsDefeated &&
         board != null && !board.IsBusy && !actor.HasAnimationActionInProgress &&
         (actor.GetComponent<EnemyStagger>() == null || !actor.GetComponent<EnemyStagger>().IsStaggered);
     private void Update()
@@ -90,7 +106,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         }
         while (!released && !actor.IsDefeated && summons.HasFreeEnemySlot && candidates.Count > 0)
         {
-            int index = UnityEngine.Random.Range(0, candidates.Count);
+            int index = GameplayRandom.Range(0, candidates.Count);
             var data = candidates[index];
             if ((specialAdded && data.Category == EnemyCategory.Special) || !summons.TrySummonEnemy(data, out _))
             { candidates.RemoveAt(index); continue; }

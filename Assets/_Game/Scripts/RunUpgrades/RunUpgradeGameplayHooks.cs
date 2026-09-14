@@ -24,6 +24,16 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
     private int observedWave;
 
     public static RunUpgradeGameplayHooks Current { get; private set; }
+    public void CaptureContinuation(RunCombatSnapshot saved)
+    {
+        saved.resonantCount=resonantCrackCount; saved.emergencyUsed=emergencyPlatingUsedThisWave;
+    }
+    public void RestoreContinuation(RunCombatSnapshot saved)
+    {
+        baseMaximumHealth=saved.baseHealth; observedRunRevision=runtime.RunRevision;
+        observedWave=saved.wave; observedShield=player.CurrentShield;
+        resonantCrackCount=saved.resonantCount; emergencyPlatingUsedThisWave=saved.emergencyUsed;
+    }
 
     public static int CurrentSpecialClearCount =>
         Current != null ? Current.currentSpecialClearCount : 0;
@@ -331,7 +341,7 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
                 runtime
             ))
         {
-            energy.AddEnergy(clear.GemCount);
+            GrantClearEnergy(clear.GemCount);
         }
 
         // Count the actual board-reported center once, not a damage attempt.
@@ -351,8 +361,15 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
         if (resonantCrackCount >= ResonantCracksFrequency)
         {
             resonantCrackCount = 0;
-            if (energy != null) energy.AddEnergy(ResonantCracksEnergy);
+            if (energy != null) GrantClearEnergy(ResonantCracksEnergy);
         }
+    }
+
+    private void GrantClearEnergy(int amount)
+    {
+        var generation = player != null ? player.GetComponent<PlayerAbilityMatchEnergyGain>() : null;
+        if (generation != null) generation.GrantGeneratedEnergy(amount);
+        else if (energy != null) energy.AddEnergy(amount);
     }
 
     private static bool IsFixedAbilityExplosionCenter(BoardClearContext clear)

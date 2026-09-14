@@ -87,7 +87,7 @@ public partial class BoardController
                 yield break;
             }
 
-            Gem target = candidates[Random.Range(0, candidates.Count)];
+            Gem target = candidates[GameplayRandom.Range(0, candidates.Count)];
 
             request.TargetGem = target;
             yield return ExecutePinRequest(request);
@@ -273,7 +273,7 @@ public partial class BoardController
         }
 
         Gem selectedGem =
-            candidates[Random.Range(0, candidates.Count)];
+            candidates[GameplayRandom.Range(0, candidates.Count)];
 
         return QueueReservedPin(
             owner,
@@ -315,7 +315,7 @@ public partial class BoardController
         }
 
         Gem selectedGem =
-            candidates[Random.Range(0, candidates.Count)];
+            candidates[GameplayRandom.Range(0, candidates.Count)];
 
         return QueueReservedPin(
             owner,
@@ -465,7 +465,7 @@ public partial class BoardController
             movablePinnedGems.Add(selectedGem);
         }
 
-        if (!HasAvailableMove())
+        if (!RetainsUsefulResponse())
         {
             movablePinnedGems.Remove(selectedGem);
             frozenPinnedGems.Remove(selectedGem);
@@ -527,7 +527,7 @@ public partial class BoardController
             pinnedGemOverlaySprite,
             pinnedGemBrightness,
             pinMaterializeDuration,
-            pinShakeDistanceInCells * cellSize,
+            PresentationPreferences.ReducedMotion ? 0 : pinShakeDistanceInCells * cellSize,
             pinShakeDuration
         );
 
@@ -608,7 +608,7 @@ public partial class BoardController
                 }
 
                 pinnedGemOwners[candidate] = int.MinValue;
-                bool leavesPlayableMove = HasAvailableMove();
+                bool leavesPlayableMove = RetainsUsefulResponse();
                 pinnedGemOwners.Remove(candidate);
 
                 if (leavesPlayableMove)

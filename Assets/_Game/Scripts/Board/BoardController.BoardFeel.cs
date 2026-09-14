@@ -252,6 +252,7 @@ public partial class BoardController
     private Vector3 GetLandingOvershootPosition(
         Vector3 targetPosition)
     {
+        if (PresentationPreferences.ReducedMotion) return targetPosition;
         return targetPosition +
                Vector3.down *
                cellSize *
@@ -264,6 +265,7 @@ public partial class BoardController
     private Vector3 GetLandingSquashScale(
         Vector3 restingScale)
     {
+        if (PresentationPreferences.ReducedMotion) return restingScale;
         return new Vector3(
             restingScale.x *
                 Mathf.Max(

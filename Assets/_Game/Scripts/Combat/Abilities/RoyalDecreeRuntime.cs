@@ -26,6 +26,14 @@ public sealed class RoyalDecreeRuntime :
     public event Action<EnemyActor, int, BoardClearContext> HitResolved;
 
     public bool IsActive { get; private set; }
+    public void RestoreContinuation(float remaining, EnemyActor target, CharacterAbilityDefinition definition)
+    {
+        Cancel();
+        if(remaining<=0 || !(definition is RoyalDecreeAbilityDefinition royal)) return;
+        activeDefinition=royal; IsActive=true; abilityEndTime=Time.time+remaining;
+        SetTarget(target); durationCoroutine=StartCoroutine(EndAfterDuration(remaining));
+        StateChanged?.Invoke();
+    }
     public EnemyActor CurrentTarget => currentTarget;
     public float RemainingDuration =>
         IsActive
@@ -358,7 +366,7 @@ public sealed class RoyalDecreeRuntime :
         }
 
         int selectedAliveIndex =
-            UnityEngine.Random.Range(0, aliveEnemyCount);
+            GameplayRandom.Range(0, aliveEnemyCount);
 
         for (int index = 0; index < enemies.Count; index++)
         {

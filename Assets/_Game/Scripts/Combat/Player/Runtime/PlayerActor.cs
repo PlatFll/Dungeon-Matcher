@@ -23,7 +23,7 @@ public sealed class PlayerDamageContext
 }
 
 [DisallowMultipleComponent]
-public sealed class PlayerActor : MonoBehaviour
+public sealed partial class PlayerActor : MonoBehaviour
 {
     [Header("Prototype Startup")]
     [SerializeField]
@@ -90,6 +90,7 @@ public sealed class PlayerActor : MonoBehaviour
     public int CurrentShield => currentShield;
     public int MaximumShield => maximumShield;
     public int PermanentLevel { get; private set; } = 1;
+    public string LastDamageSummary { get; private set; } = "";
     public int BaseShieldCap { get; private set; }
     public float GemDamage => definition != null ? definition.GemDamageAtLevel(PermanentLevel) : 10f;
     public float AbilityDamageMultiplier => definition != null ? definition.AbilityMultiplierAtLevel(PermanentLevel) : 1f;
@@ -158,7 +159,10 @@ public sealed class PlayerActor : MonoBehaviour
         }
 
         definition = playerDefinition;
+        LastDamageSummary = "";
         PermanentLevel = AccountProgression.Current.Level(definition.PlayerId);
+        var activeRun=AccountProgression.Current.ActiveRun;
+        if(activeRun!=null && activeRun.playerId==definition.PlayerId) PermanentLevel=activeRun.level;
         maximumHealth = maximumHealthOverride > 0
             ? maximumHealthOverride
             : definition.HealthAtLevel(PermanentLevel);
@@ -234,6 +238,10 @@ public sealed class PlayerActor : MonoBehaviour
 
         int healthDamage = finalDamage - shieldDamage;
         int actualHealthDamage = 0;
+        EnemyActor attacker = source as EnemyActor;
+        if (attacker == null && source is Component component) attacker = component.GetComponent<EnemyActor>();
+        string cause = attacker != null && attacker.Definition != null ? attacker.Definition.DisplayName : "Damage";
+        LastDamageSummary = $"Last hit: {cause}\n{Mathf.Min(currentHealth, healthDamage)} HP lost · {shieldDamage} shield absorbed";
 
         if (healthDamage > 0)
         {

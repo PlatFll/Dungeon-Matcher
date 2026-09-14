@@ -56,6 +56,10 @@ public abstract class CharacterAbilityDefinition : ScriptableObject
 
     public abstract int EnergyCost { get; }
 
+    // Negative means unrestricted. A limited ability shares one budget across
+    // its complete board action, including chained specials and card refunds.
+    public virtual float MaximumSelfRefundFraction => -1f;
+
     /*
      * Definitions may optionally declare the runtime component that executes
      * them. PlayerAbilityController installs that component generically when a

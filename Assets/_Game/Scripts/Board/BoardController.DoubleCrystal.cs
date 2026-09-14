@@ -554,11 +554,11 @@ public partial class BoardController
 
             crystal.transform.localPosition =
                 originalPosition +
-                new Vector3(
+                (PresentationPreferences.ReducedMotion ? Vector3.zero : new Vector3(
                     horizontalShake,
                     verticalShake,
                     0f
-                );
+                ));
 
             elapsedTime += Time.deltaTime;
 

@@ -36,6 +36,10 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
     private TMP_FontAsset uiFont;
     private Sprite fallbackArtwork;
     private Texture2D fallbackArtworkTexture;
+    private RunUpgradeCoordinator refinement;
+    private readonly List<Button> refineButtons = new List<Button>();
+    private Text refineHelp;
+    public void SetRefinement(RunUpgradeCoordinator coordinator) { refinement = coordinator; }
 
     public event Action Hidden;
     public bool IsOpen => isActiveAndEnabled && overlayRect != null &&
@@ -117,6 +121,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         }
 
         overlayRect.gameObject.SetActive(true);
+        for(int i=0;i<refineButtons.Count;i++) refineButtons[i].interactable = refinement != null && refinement.CanRefineTheme((RunUpgradeTheme)i);
+        if(refineHelp!=null) refineHelp.text=refinement!=null && refinement.CanRefine ? "Free, once per run: redraw toward a theme" : "Refine used this run";
         overlayRect.SetAsLastSibling();
         return true;
     }
@@ -258,6 +264,14 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         for (int index = 0; index < cardViews.Length; index++)
         {
             cardViews[index] = CreateCard(index);
+        }
+        refineHelp=GameUi.Label("RefineHelp", overlayRect, "Free, once per run: redraw toward a theme", new Vector2(500,26), new Vector2(0,-206), 16);
+        foreach (RunUpgradeTheme theme in Enum.GetValues(typeof(RunUpgradeTheme)))
+        {
+            var selectedTheme = theme;
+            refineButtons.Add(GameUi.Button("Refine" + theme, overlayRect, "Refine " + theme,
+                new Vector2(170,38), new Vector2(((int)theme-1)*180,-240),
+                () => { if (refinement != null) refinement.TryRefine(selectedTheme); }));
         }
         overlayRect.gameObject.SetActive(false);
     }

@@ -198,7 +198,7 @@ public sealed class PlayerCombatFeedback :
         float elapsedTime = 0f;
 
         SetWhiteFlash(
-            whiteFlashAmount
+            PresentationPreferences.ReducedMotion ? whiteFlashAmount * .25f : whiteFlashAmount
         );
 
         while (elapsedTime <
@@ -241,10 +241,10 @@ public sealed class PlayerCombatFeedback :
 
             visualRoot.anchoredPosition =
                 restingPosition +
-                new Vector2(
+                (PresentationPreferences.ReducedMotion ? Vector2.zero : new Vector2(
                     horizontalOffset,
                     verticalOffset
-                );
+                ));
 
             float stepDuration =
                 Mathf.Min(

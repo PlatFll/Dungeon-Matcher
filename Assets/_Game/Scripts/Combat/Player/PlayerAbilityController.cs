@@ -63,6 +63,7 @@ public sealed class PlayerAbilityController :
     {
         get
         {
+            if (RunSession.Current != null && RunSession.Current.Challenge == RunChallenge.BoardOnly) return false;
             if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
                 (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;
             CharacterAbilityDefinition definition =
@@ -126,6 +127,7 @@ public sealed class PlayerAbilityController :
 
     public bool TryActivate()
     {
+        if (RunSession.Current != null && RunSession.Current.Challenge == RunChallenge.BoardOnly) return false;
         if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
             (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;
         CharacterAbilityDefinition definition =
@@ -162,6 +164,10 @@ public sealed class PlayerAbilityController :
             return false;
         }
 
+        var recordedAction=new RunRecordedAction {kind=RunActionKind.Ability};
+        if(RunSession.Current?.Continuation!=null && !RunSession.Current.Continuation.RecordAction(recordedAction)) return false;
+        var generation = GetComponent<PlayerAbilityMatchEnergyGain>();
+        if (generation != null) generation.BeginAbilityRefund(energyCost, definition.MaximumSelfRefundFraction);
         bool activationSucceeded =
             activeRuntime.TryActivate(
                 definition
@@ -169,6 +175,8 @@ public sealed class PlayerAbilityController :
 
         if (!activationSucceeded)
         {
+            RunSession.Current?.Continuation?.DiscardRejectedAction(recordedAction);
+            if (generation != null) generation.RejectAbilityRefund();
             return false;
         }
 

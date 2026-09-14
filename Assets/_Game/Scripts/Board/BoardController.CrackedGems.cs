@@ -388,7 +388,7 @@ public partial class BoardController
                    maximumTotalCount)
         {
             int selectedIndex =
-                UnityEngine.Random.Range(
+                GameplayRandom.Range(
                     0,
                     source.Count
                 );
@@ -494,7 +494,7 @@ public partial class BoardController
                             !colors.Contains(candidate.Type)) colors.Add(candidate.Type);
                     }
                 GemType color = colors.Count > 0
-                    ? colors[UnityEngine.Random.Range(0, colors.Count)]
+                    ? colors[GameplayRandom.Range(0, colors.Count)]
                     : GetRandomGemType();
                 triggeredCrystalRequests.Add(new BombTriggeredCrystalRequest(seed, color));
                 continue;
@@ -789,6 +789,7 @@ public partial class BoardController
             float amplitude =
                 cellSize *
                 crackedShakeAmplitudeInCells;
+            if (PresentationPreferences.ReducedMotion) amplitude = 0;
 
             while (elapsed < shakeDuration)
             {

@@ -32,6 +32,13 @@ public sealed class MainMenuController : MonoBehaviour
     private bool isLoadingGame;
     private ShopMenuController shopScreen;
     private Text accountLabel;
+    private RectTransform challengePanel;
+    private Button endSavedRun;
+
+    private void Start()
+    {
+        if (RunLaunchOptions.ChangeBuild) { RunLaunchOptions.ChangeBuild = false; ShowCharacterSelect(); }
+    }
 
     private void Awake()
     {
@@ -194,6 +201,9 @@ public sealed class MainMenuController : MonoBehaviour
         masteryRect.anchorMin=masteryRect.anchorMax=new Vector2(0.5f,0.5f);masteryRect.anchoredPosition=new Vector2(0,-170);masteryRect.sizeDelta=new Vector2(300,56);
         GameUi.Button("CharactersButton",homeScreen.transform,"Characters",new Vector2(300,56),new Vector2(0,-30),ShowCharacterSelect);
         GameUi.Button("ShopButton",homeScreen.transform,"Shop",new Vector2(300,56),new Vector2(0,-100),ShowShop);
+        GameUi.Button("PracticeButton",homeScreen.transform,"Free practice",new Vector2(145,48),new Vector2(-78,-238),()=>{RunLaunchOptions.Practice=true;PlayGame();});
+        GameUi.Button("ChallengesButton",homeScreen.transform,"Challenges",new Vector2(145,48),new Vector2(78,-238),ShowChallenges);
+        endSavedRun=GameUi.Button("EndSavedRun",homeScreen.transform,"End saved run",new Vector2(300,44),new Vector2(0,-302),ConfirmEndSavedRun);
         accountLabel=GameUi.Label("AccountSummary",homeScreen.transform,"",new Vector2(420,76),new Vector2(0,130),21);
         AccountProgression.Current.Changed += RefreshAccount;
         CharacterSelectionSettings.Changed += RefreshAccount;
@@ -201,9 +211,45 @@ public sealed class MainMenuController : MonoBehaviour
     private void RefreshAccount()
     {
         if(accountLabel==null)return;
-        string id=CharacterSelectionSettings.SelectedPlayerId;
+        var run=AccountProgression.Current.ActiveRun;
+        string id=run?.playerId ?? CharacterSelectionSettings.SelectedPlayerId;
         PlayerDefinitionRegistry.TryGetDefinition(id,out var definition);
-        accountLabel.text=$"{(definition != null ? definition.DisplayName : id)} - Level {AccountProgression.Current.Level(id)}\nGold Coins: {AccountProgression.Current.Gold}";
+        accountLabel.text=$"{(run!=null?"Saved: ":"")}{(definition != null ? definition.DisplayName : id)} - Level {run?.level ?? AccountProgression.Current.Level(id)}\nGold Coins: {AccountProgression.Current.Gold}";
+        playButton.GetComponentInChildren<Text>().text=run==null?"Play":"Continue wave "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
+        if(endSavedRun!=null) endSavedRun.gameObject.SetActive(run!=null);
+    }
+    private void ConfirmEndSavedRun()
+    {
+        var account=AccountProgression.Current; var run=account.ActiveRun;
+        if(run==null || challengePanel!=null) return;
+        homeScreen.SetActive(false);
+        challengePanel=GameUi.Panel("EndRunConfirmation",homeScreen.transform.parent,new Vector2(440,460));
+        GameUi.Label("Title",challengePanel,"End this attempt?",new Vector2(400,55),new Vector2(0,175),28);
+        GameUi.Label("Reward",challengePanel,account.PreviewReward("End Run")+"\n\nYour saved board and build will end.\nUnused items stay owned.",new Vector2(390,225),new Vector2(0,25),19);
+        GameUi.Button("End",challengePanel,"End run and collect gold",new Vector2(350,46),new Vector2(0,-125),()=>
+        {
+            if(!account.FinalizeRun(run.id,"End Run")) return;
+            Destroy(challengePanel.gameObject); challengePanel=null; ShowHome();
+        });
+        GameUi.Button("Back",challengePanel,"Keep saved run",new Vector2(350,46),new Vector2(0,-185),()=>
+        {Destroy(challengePanel.gameObject);challengePanel=null;ShowHome();});
+    }
+    public void ShowChallenges()
+    {
+        if (challengePanel != null) return;
+        homeScreen.SetActive(false);
+        challengePanel=GameUi.Panel("Challenges",homeScreen.transform.parent,new Vector2(480,580));
+        GameUi.Label("Title",challengePanel,"Personal challenges",new Vector2(440,55),new Vector2(0,230),28);
+        bool unlocked=AccountProgression.Current.HasClearedKing;
+        GameUi.Label("Rules",challengePanel,unlocked ? "Always available. No expiry or attendance rewards.\nNormal rewards; personal records stay separate." : "Defeat the King to unlock optional challenge runs.\nFree practice is already available from Home.",new Vector2(430,90),new Vector2(0,150),20);
+        for(int i=1;i<=2;i++)
+        {
+            var challenge=(RunChallenge)i;var record=AccountProgression.Current.Record(challenge);
+            string label=i==1?"No Supplies — abilities allowed":"Board Only — no ability or supplies";
+            var button=GameUi.Button("Challenge"+i,challengePanel,label+ $"\nBest wave {record.bestWave} · Wins {record.victories}",new Vector2(420,80),new Vector2(0,40-(i-1)*105),()=>{RunLaunchOptions.Challenge=challenge;PlayGame();});
+            button.interactable=unlocked && AccountProgression.Current.ActiveRun==null;
+        }
+        GameUi.Button("Back",challengePanel,"Back",new Vector2(280,48),new Vector2(0,-215),()=>{Destroy(challengePanel.gameObject);challengePanel=null;ShowHome();});
     }
     public void ShowShop()
     {

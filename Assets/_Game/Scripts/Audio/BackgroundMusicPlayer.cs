@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public sealed class BackgroundMusicPlayer : MonoBehaviour
@@ -14,13 +15,29 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
     public static BackgroundMusicPlayer Instance =>
         instance;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetSceneSubscription()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void RegisterForSceneLoads()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+    }
+
+    private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode) => Install();
+
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
     )]
     private static void Install()
     {
         if (!Application.isPlaying ||
-            instance != null)
+            instance != null ||
+            SceneManager.GetActiveScene().path == StudioIdentPlayer.ScenePath)
         {
             return;
         }

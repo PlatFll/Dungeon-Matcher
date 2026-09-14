@@ -37,6 +37,20 @@ public static class UpgradeDraftGenerator
         List<RunUpgradeDefinition> choices =
             new List<RunUpgradeDefinition>(choiceCount);
 
+        // The first draft establishes distinct, usable directions. Subsequent
+        // offers retain weighted variety and all normal eligibility rules.
+        if (BalanceV1.Current.cardWaves.Length > 0 && currentWave == BalanceV1.Current.cardWaves[0] && choiceCount >= 3)
+        {
+            foreach (RunUpgradeTheme theme in Enum.GetValues(typeof(RunUpgradeTheme)))
+            {
+                var themed = eligible.FindAll(card => card.Theme == theme);
+                if (themed.Count == 0) continue;
+                var card = PickWeighted(themed, random);
+                choices.Add(card);
+                eligible.Remove(card);
+            }
+        }
+
         while (eligible.Count > 0 && choices.Count < choiceCount)
         {
             double totalWeight = 0d;
@@ -74,6 +88,35 @@ public static class UpgradeDraftGenerator
         }
 
         return choices;
+    }
+
+    public static List<RunUpgradeDefinition> Refine(RunUpgradeCatalog catalog, RunUpgradeRuntime runtime,
+        PlayerActor player, int wave, Random random, RunUpgradeTheme theme,
+        IReadOnlyCollection<RunUpgradeDefinition> prior)
+    {
+        var candidates = new List<RunUpgradeDefinition>();
+        if (catalog == null || runtime == null || random == null) return candidates;
+        foreach (var card in catalog.Upgrades)
+            if (card != null && card.Theme == theme && runtime.IsEligible(card, player, wave) &&
+                (prior == null || !System.Linq.Enumerable.Contains(prior, card))) candidates.Add(card);
+        var result = new List<RunUpgradeDefinition>();
+        while (candidates.Count > 0 && result.Count < DefaultChoiceCount)
+        {
+            var card = PickWeighted(candidates, random);
+            result.Add(card);
+            candidates.Remove(card);
+        }
+        return result;
+    }
+
+    private static RunUpgradeDefinition PickWeighted(List<RunUpgradeDefinition> cards, Random random)
+    {
+        double total = 0;
+        foreach (var card in cards) total += GetEffectiveWeight(card);
+        if (total <= 0) return cards[random.Next(cards.Count)];
+        double roll = random.NextDouble() * total;
+        foreach (var card in cards) { roll -= GetEffectiveWeight(card); if (roll < 0) return card; }
+        return cards[cards.Count - 1];
     }
 
     public static double GetRarityWeightMultiplier(RunUpgradeRarity rarity)

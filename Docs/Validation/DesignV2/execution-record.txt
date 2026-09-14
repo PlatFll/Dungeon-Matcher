@@ -1,0 +1,14 @@
+2026-09-15, Unity 6000.3.19f1
+Tools/Test-Balance.ps1: exit 0, wall time 140.8 seconds; 243 passed, 0 failed, 0 skipped.
+Tools/Validate-Unity.ps1: completed successfully.
+Final validator log: C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-416a055f-79c1-49a8-af56-b854edc9a65e.log
+Graphics scene UI: DesignV2PlayValidation.UI passed twice; final run .utmp/DesignV2/ui-final.log.
+Restart writer: PASS (22.5 seconds). Restart reader in a separate Unity process: PASS (20.6 seconds).
+Windows build: DesignV2PlayValidation.BuildWindows, exit 0, 113.7 seconds.
+Startup validator: PASS (22.9 seconds), details in startup-validation.txt.
+LibreSprite: Tools/Prepare-SmallHoldWhiteHold.ps1 and atlas export executed successfully using the installed executable.
+Production engine: eight completed gameplay rows; see runs.csv and DESIGN_V2_PLAYTESTS.md for the completed-run wrapper cleanup limitation.
+Native Windows UI: 600x1000, separate Blank Validation profile. Started a run; manual match dealt 33 damage (35 -> 2 enemy HP), healed 3 HP and added 6 energy (20 -> 26). Paused at player HP 79; suspended to menu, closed process, reopened and continued with the same board, enemy HP 2, player HP 79, energy 26 and a 5.3-second attack countdown. Music Muted / SFX On / Reduced motion On persisted independently. Native startup observations showed night/day castle animation, final dark SmallHold silhouette/wordmark on white for multiple observations ~0.7 seconds apart, then menu; no Unity splash appeared.
+Native log: no managed exceptions or gameplay errors. Graphics driver reported unavailable D3D12 info-queue interface, and shutdown reported a ComputeBuffer disposal warning; neither prevented rendering or the executed checks.
+Android adb devices -l: no connected devices. No claim of physical mobile testing.
+All test processes closed. User's real account was not used by disposable-profile checks.

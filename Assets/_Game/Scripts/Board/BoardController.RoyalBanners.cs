@@ -206,7 +206,7 @@ public partial class BoardController
         }
 
         Vector2Int cell =
-            candidates[UnityEngine.Random.Range(0, candidates.Count)];
+            candidates[GameplayRandom.Range(0, candidates.Count)];
 
         Gem replacedGem = GetGem(cell.x, cell.y);
 
@@ -296,7 +296,7 @@ public partial class BoardController
                 };
 
             royalBannerCells[cell] = simulation;
-            bool leavesPlayableMove = HasAvailableMove();
+            bool leavesPlayableMove = RetainsUsefulResponse();
             royalBannerCells.Remove(cell);
 
             if (leavesPlayableMove)

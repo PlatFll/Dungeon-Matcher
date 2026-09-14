@@ -33,6 +33,31 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
     public int CardSeed => cardSeed;
     public int BaseMaximumHealth => baseMaximumHealth;
     public int RunRevision { get; private set; }
+    public void CaptureContinuation(RunCombatSnapshot saved)
+    {
+        saved.baseHealth=baseMaximumHealth;
+        var random=GetDraftRandom() as SavedRandom;
+        saved.cardSeed=cardSeed; saved.cardRandom=random.State;
+        foreach(var owned in ownedUpgrades.Values)
+            saved.cards.Add(new OwnedCardSnapshot { id=owned.Definition.UpgradeId, stacks=owned.Stacks });
+    }
+    public void RestoreContinuation(RunCombatSnapshot saved)
+    {
+        ownedUpgrades.Clear(); baseMaximumHealth=saved.baseHealth;
+        cardSeed=saved.cardSeed; draftRandom=new SavedRandom(saved.cardRandom);
+        foreach(var card in saved.cards)
+        {
+            bool found=false;
+            foreach(var definition in catalog.Upgrades)
+                if(definition.UpgradeId==card.id)
+                {
+                    ownedUpgrades.Add(card.id,new OwnedUpgrade { Definition=definition, Stacks=card.stacks });
+                    found=true;break;
+                }
+            if(!found) throw new System.InvalidOperationException("A saved build card is unavailable: "+card.id);
+        }
+        // Do not reapply purchase effects or heal the actor during restoration.
+    }
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.SubsystemRegistration
@@ -181,6 +206,8 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
 
         PlayerDefinition playerDefinition =
             runPlayer != null ? runPlayer.Definition : null;
+        if (RunSession.Current != null && RunSession.Current.Challenge == RunChallenge.BoardOnly &&
+            definition.Theme == RunUpgradeTheme.Ability) return false;
         if (definition.RequiredSpecial != GemSpecialType.None &&
             !GemMasterySettings.IsAvailableInRun(definition.RequiredSpecial)) return false;
         CharacterAbilityDefinition abilityDefinition =
@@ -362,7 +389,7 @@ public sealed class RunUpgradeRuntime : MonoBehaviour
             cardSeed = 1;
         }
 
-        draftRandom = new System.Random(cardSeed);
+        draftRandom = new SavedRandom(cardSeed);
         return draftRandom;
     }
 

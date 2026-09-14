@@ -10,7 +10,7 @@ $outputRoot = Join-Path $projectRoot '.utmp'
 New-Item -Path $outputRoot -ItemType Directory -Force | Out-Null
 $resultPath = Join-Path $outputRoot 'balance-editmode.xml'
 $logPath = Join-Path $outputRoot 'balance-editmode.log'
-$testFilter = 'BalanceV1Tests;BalanceLifecyclePlayTests;BalanceDisruptionPlayTests;BalanceFreshShapesPlayTests;RunUpgradeSystemTests;GameOverRecoveryTests;EnemyDamageResultTests;CrystalChainAttributionTests;CrystalBoardValidityTests;ReshufflePinReservationTests;WaveDeathLifecycleTests;EnemySpecialExecutionGuardTests;BarricadeBannerGravityTests;RoyalAssaultParticipantLifetimeTests;TownMarshalStaggerTests;BoardPointerIdentityTests'
+$testFilter = 'DesignV2ContinuationTests;DesignV2Tests;BalanceV1Tests;BalanceLifecyclePlayTests;BalanceDisruptionPlayTests;BalanceFreshShapesPlayTests;RunUpgradeSystemTests;GameOverRecoveryTests;EnemyDamageResultTests;CrystalChainAttributionTests;CrystalBoardValidityTests;ReshufflePinReservationTests;WaveDeathLifecycleTests;EnemySpecialExecutionGuardTests;BarricadeBannerGravityTests;RoyalAssaultParticipantLifetimeTests;TownMarshalStaggerTests;BoardPointerIdentityTests'
 $started = Get-Date
 $arguments = @('-batchmode', '-nographics', '-projectPath', ('"{0}"' -f $projectRoot), '-runTests', '-testPlatform', 'EditMode', '-testFilter', $testFilter, '-testResults', ('"{0}"' -f $resultPath), '-logFile', ('"{0}"' -f $logPath))
 $process = Start-Process -FilePath $UnityPath -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru

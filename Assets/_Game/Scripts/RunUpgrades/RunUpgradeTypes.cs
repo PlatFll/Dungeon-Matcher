@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+public enum RunUpgradeTheme { Board, Ability, Survival }
+
 public enum RunUpgradeRarity
 {
     Common = 0,

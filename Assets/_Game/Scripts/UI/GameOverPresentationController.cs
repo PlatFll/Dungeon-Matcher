@@ -30,8 +30,8 @@ public sealed class GameOverPresentationController : MonoBehaviour
     private const float MenuDropDuration = 0.48f;
     private const float DimTargetAlpha = 0.72f;
 
-    private const float PanelWidth = 300f;
-    private const float PanelHeight = 360f;
+    private const float PanelWidth = 440f;
+    private const float PanelHeight = 640f;
     private const float PanelTopClearance = 24f;
 
     private const float ParticleMinimumSpeed = 72f;
@@ -579,7 +579,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
             "GAME OVER",
             font,
             34f,
-            new Vector2(0f, 125f),
+            new Vector2(0f, 265f),
             new Vector2(250f, 54f)
         );
 
@@ -590,13 +590,26 @@ public sealed class GameOverPresentationController : MonoBehaviour
             );
 
         retryButton.interactable = false;
-        ((RectTransform)retryButton.transform).anchoredPosition=new Vector2(0,-67);
+        ((RectTransform)retryButton.transform).anchoredPosition=new Vector2(0,-200);
         var reward=AccountProgression.Current.PreviewReward("Defeat");
         CreateLabel("RunReward",faceRect,reward != null ? reward.ToString() : "No completed-wave reward",GameUi.TmpFont,18,
-            new Vector2(0,25),new Vector2(260,125));
-        GameUi.Button("QuitToMenu",faceRect,"Quit to Menu",new Vector2(230,44),new Vector2(0,-125),()=>
+            new Vector2(0,85),new Vector2(400,110));
+        CreateLabel("FailureCause",faceRect,$"Ended at wave {RunSession.Current?.Waves.CurrentWave}\n{playerActor.LastDamageSummary}",GameUi.TmpFont,19,new Vector2(0,198),new Vector2(400,64));
+        var account=AccountProgression.Current;
+        CreateLabel("SupplyRecap",faceRect,(reward?.SupplyComparison??"")+$"\nStill owned: {account.Owned(ConsumableKind.HealthPotion)} Potions / {account.Owned(ConsumableKind.Bomb)} Bombs",GameUi.TmpFont,16,new Vector2(0,-12),new Vector2(400,66));
+        var viewport=GameUi.Rect("BuildViewport",faceRect,new Vector2(400,90),new Vector2(0,-110));
+        viewport.gameObject.AddComponent<Image>().color=Color.clear;
+        viewport.gameObject.AddComponent<RectMask2D>();
+        var recap=GameUi.Label("BuildRecap",viewport,"Your build: "+BuildNames(),new Vector2(390,90),Vector2.zero,17);
+        recap.alignment=TextAnchor.UpperLeft;
+        recap.rectTransform.anchorMin=recap.rectTransform.anchorMax=recap.rectTransform.pivot=new Vector2(.5f,1);
+        recap.rectTransform.anchoredPosition=Vector2.zero;
+        recap.rectTransform.sizeDelta=new Vector2(390,Mathf.Max(90,recap.preferredHeight));
+        var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.viewport=viewport;scroll.content=recap.rectTransform;scroll.horizontal=false;
+        GameUi.Button("QuitToMenu",faceRect,"Change build",new Vector2(230,44),new Vector2(0,-265),()=>
         {
             if (!IsRetryAvailable()) return;
+            RunLaunchOptions.ChangeBuild=true;
             RestoreGameplayTime();
             if(RunSession.Current!=null) { if(!RunSession.Current.ExitTo("MainMenu")) FreezeGameplay(); }
             else SceneManager.LoadScene("MainMenu");
@@ -623,6 +636,16 @@ public sealed class GameOverPresentationController : MonoBehaviour
                 0f,
                 Mathf.Round(startY)
             );
+    }
+
+    private string BuildNames()
+    {
+        var names=new List<string>();
+        var runtime=RunUpgradeRuntime.Current;
+        if(runtime!=null && runtime.Catalog!=null)
+            foreach(var card in runtime.Catalog.Upgrades)
+                if(runtime.GetStackCount(card)>0) names.Add(card.DisplayTitle);
+        return names.Count>0 ? string.Join(", ",names) : "No cards selected";
     }
 
     private RectTransform CreateInsetPanel(
@@ -1091,7 +1114,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         }
 
         float startY =
-            gameOverPanel.anchoredPosition.y;
+            PresentationPreferences.ReducedMotion ? 0 : gameOverPanel.anchoredPosition.y;
 
         float elapsed = 0f;
         float duration =

@@ -57,6 +57,12 @@ internal sealed class EnemySpecialActionAvailability
             return;
         }
 
+        if(Time.timeScale<=0)
+        {
+            wasDeferredByStagger=true;
+            EnsureBoardIdleRetry();
+            return;
+        }
         if (enemyStagger != null &&
             enemyStagger.IsStaggered)
         {
@@ -149,6 +155,7 @@ internal sealed class EnemySpecialActionAvailability
         while (CanRetryReadyAbility() &&
                wasDeferredByStagger)
         {
+            if(Time.timeScale<=0) { yield return null; continue; }
             if (enemyStagger != null &&
                 enemyStagger.IsStaggered)
             {

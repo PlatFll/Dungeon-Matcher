@@ -91,6 +91,23 @@ public sealed class PlayerAbilityMatchEnergyGain :
     )]
     private int nonDamagingSpecialEnergyPerGem = 1;
 
+    private readonly AbilityRefundBudget refundBudget = new AbilityRefundBudget();
+
+    public void BeginAbilityRefund(int cost, float fraction) => refundBudget.Begin(cost, fraction);
+    public void RejectAbilityRefund() => refundBudget.End();
+
+    private void Update()
+    {
+        // Cancelling a runtime does not release the board's accepted action.
+        if (refundBudget.IsLimited && (boardController == null || !boardController.IsBusy) &&
+            (playerAbilityController == null || !playerAbilityController.IsAbilityActive)) refundBudget.End();
+    }
+
+    public void GrantGeneratedEnergy(int amount)
+    {
+        if (playerAbilityEnergy != null) playerAbilityEnergy.AddEnergy(refundBudget.Take(amount));
+    }
+
     private void Awake()
     {
         ResolveReferences();
@@ -173,7 +190,7 @@ public sealed class PlayerAbilityMatchEnergyGain :
             return;
         }
 
-        playerAbilityEnergy.AddEnergy(
+        GrantGeneratedEnergy(
             gainedEnergy
         );
     }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(EnemyActor))]
 public sealed class TownMarshalEnemyAbility :
     MonoBehaviour,
-    IEnemySpecialAbilityRuntime
+    IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
 {
     private const float RetreatVisualScale = 0.88f;
     private const float RetreatVisualYOffset = 12f;
@@ -34,6 +34,34 @@ public sealed class TownMarshalEnemyAbility :
     private Coroutine rallyCoroutine;
     private bool isAttemptingReadyAbility;
     private bool isRallyActive;
+    private float rallyEndsAt;
+    public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
+    {
+        saved.cycle=(int)preferredAbility; saved.protector=slotOf(currentProtector); saved.retreatMoves=retreatMovesRemaining;
+        saved.rallyRemaining=isRallyActive?Mathf.Max(0,rallyEndsAt-Time.time):0;
+        foreach(var attack in ralliedAutoAttacks) if(attack!=null) saved.rallyTargets.Add(slotOf(attack.EnemyActor));
+    }
+    public void RestoreContinuation(EnemyCombatSnapshot saved, System.Func<int,EnemyActor> enemyAt)
+    {
+        preferredAbility=(PreferredAbility)saved.cycle;
+        var protector=enemyAt(saved.protector);
+        if(protector!=null && saved.retreatMoves>0 && enemyActor.SetDamageRedirectTarget(protector))
+        {
+            currentProtector=protector; retreatMovesRemaining=saved.retreatMoves;
+            protector.Defeated+=HandleProtectorDefeated; ApplyRetreatVisual(true);
+        }
+        if(saved.rallyRemaining>0)
+        {
+            float multiplier=enemyActor.Definition.TownMarshalRallyAttackSpeedMultiplier;
+            foreach(int slot in saved.rallyTargets)
+            {
+                var attack=enemyAt(slot)?.GetComponent<EnemyAutoAttack>(); if(attack==null) continue;
+                attack.SetRuntimeAttackSpeedMultiplier(multiplier); ralliedAutoAttacks.Add(attack);
+            }
+            isRallyActive=true;
+            rallyCoroutine=StartCoroutine(RallyDurationRoutine(saved.rallyRemaining,multiplier));
+        }
+    }
 
     private readonly List<EnemyAutoAttack>
         ralliedAutoAttacks =
@@ -282,7 +310,7 @@ public sealed class TownMarshalEnemyAbility :
                 .TownMarshalSummonCandidates;
 
         int startIndex =
-            Random.Range(
+            GameplayRandom.Range(
                 0,
                 candidates.Length
             );
@@ -590,6 +618,7 @@ public sealed class TownMarshalEnemyAbility :
         float duration,
         float appliedMultiplier)
     {
+        rallyEndsAt=Time.time+Mathf.Max(.1f,duration);
         yield return
             new WaitForSeconds(
                 Mathf.Max(

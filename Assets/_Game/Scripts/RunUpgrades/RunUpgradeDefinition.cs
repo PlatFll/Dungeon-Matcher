@@ -25,6 +25,9 @@ public sealed class RunUpgradeDefinition : ScriptableObject
     [SerializeField]
     private RunUpgradeRarity rarity = RunUpgradeRarity.Common;
 
+    [SerializeField] private RunUpgradeTheme theme;
+    public RunUpgradeTheme Theme => theme;
+
     [Header("Drafting / Eligibility")]
     [SerializeField, Min(0f)]
     private float weight = 1f;

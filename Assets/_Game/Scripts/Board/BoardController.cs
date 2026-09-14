@@ -178,6 +178,7 @@ public partial class BoardController : MonoBehaviour
 
     private void Start()
     {
+        if (restoreInsteadOfGenerate) return;
         if (!ValidateGemAssets())
         {
             enabled = false;
@@ -443,7 +444,7 @@ public partial class BoardController : MonoBehaviour
         }
 
         int randomIndex =
-            Random.Range(
+            GameplayRandom.Range(
                 0,
                 allowedTypes.Count
             );
@@ -454,7 +455,7 @@ public partial class BoardController : MonoBehaviour
     private GemType GetRandomGemType()
     {
         int typeIndex =
-            Random.Range(
+            GameplayRandom.Range(
                 0,
                 gemSprites.Length
             );
@@ -639,6 +640,8 @@ public partial class BoardController : MonoBehaviour
             pointerStartGem = null;
             yield break;
         }
+
+        if(BeforePlayerSwap!=null && !BeforePlayerSwap(first,second)) yield break;
 
         isBusy = true;
         pointerStartGem = null;
@@ -1833,7 +1836,7 @@ public partial class BoardController : MonoBehaviour
                             targetPosition,
 
                         Delay =
-                            Random.Range(
+                            GameplayRandom.Range(
                                 0f,
                                 reshuffleStagger
                             ),
@@ -1949,7 +1952,7 @@ public partial class BoardController : MonoBehaviour
              index--)
         {
             int randomIndex =
-                Random.Range(
+                GameplayRandom.Range(
                     0,
                     index + 1
                 );
@@ -2155,7 +2158,7 @@ public partial class BoardController : MonoBehaviour
 
                     typeGrid[column, row] =
                         allowedTypes[
-                            Random.Range(
+                            GameplayRandom.Range(
                                 0,
                                 allowedTypes.Count
                             )
@@ -2690,11 +2693,11 @@ public partial class BoardController : MonoBehaviour
         return line;
     }
 
-    private Gem GetGem(
+    public Gem GetGem(
         int column,
         int row)
     {
-        if (column < 0 ||
+        if (gems == null || column < 0 ||
             column >= width ||
             row < 0 ||
             row >= height)
