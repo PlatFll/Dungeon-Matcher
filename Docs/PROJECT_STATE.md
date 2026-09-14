@@ -1,3 +1,11 @@
+# Revised implementation status — 2026-09-15
+
+The user approved implementation of the revised design, retired Bardley's testing override and authorized merging after validation. Yesterday's Balance v1 PR #157 and documentation PR #152 were merged first. See [DESIGN_V2_IMPLEMENTATION.md](DESIGN_V2_IMPLEMENTATION.md) for the exact scope, balance decisions and executed evidence.
+
+Delivered systems include resumable combat with typed snapshots and accepted-input recovery, first-draft Board/Ability/Survival directions, one free persistent refinement, gentle mechanic introductions and post-milestone relief, useful-response checks for interference, paused inspection and learning tips, confirmed Bomb footprint, free practice, two optional post-King challenges, clearer loss/economy recap, independent audio settings and reduced motion. SmallHold's editable 30-frame ident is restored; its final white pose holds 1.5 extra seconds, with the Unity splash disabled.
+
+The newer rules in this status and the owning design/architecture documents supersede the historical Balance v1 observations below. Target fight lengths remain review bands, never minimums; a deliberate early loss is not a design objective. Physical-device and human-comprehension evidence must be distinguished from automated Unity evidence.
+
 # Dungeon Matcher — Canonical Project State
 
 > **Read this first after `AGENTS.md`.**
@@ -12,13 +20,12 @@
 
 ### Last updated
 
-- **Date:** 2026-09-14
-- **Current milestone:** Balance v1 — connected progression/economy/encounters/HUD first implementation
-- **Current working PR:** **#157 — Implement Balance v1 progression, economy, encounters and HUD**
-- **Current working branch:** `codex/balance-v1-connected-progression`
-- **Last gameplay implementation checkpoint when this document was created:** `f6619e743fd9f2b2480b40e896ee8488af897e19`
-- **Base used by that implementation:** `main` at `007c7b225f176560b3c43adccb35cad2801da00f`
-- **Merge status:** PR #157 is open and not merged at the time of this snapshot.
+- **Date:** 2026-09-15
+- **Current milestone:** Revised balance, resumable combat and restored SmallHold startup
+- **Current implementation branch:** `codex/design-v2-resumable-combat`
+- **Base:** updated `main` at `6ec402a4947fc3bc70bf7d25e0c38e80f1d85e48`
+- **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
+- **Release status:** User authorized merging after validation; final evidence is in `DESIGN_V2_IMPLEMENTATION.md` and `DESIGN_V2_PLAYTESTS.md`.
 
 ### What this document is
 
@@ -262,14 +269,11 @@ Current exact tables and cost formula live in `Docs/BALANCE_V1.md`.
 
 These are **not bugs** unless the user explicitly changes direction.
 
-## Bardley energy cost = 1
+## Bardley production balance (testing override retired)
 
-Bardley’s serialized Cracked Gems energy cost is intentionally **1** during development so later waves/enemies can be reached quickly.
+The user explicitly retired the 1-energy testing override on 2026-09-15. The committed Cracked Gems cost is now **80**, with five 20-damage cracked centers and a **50% shared cast-refund ceiling**. At effective cost 64, the complete cast returns at most 32 energy. New runs start with 20% charge. These are production control values for human tuning, not a reason to force an early defeat.
 
-- Keep the committed development value at 1.
-- Do not inflate enemy HP or otherwise rebalance the game around this override.
-- Balance/measurement work that needs intended production behavior should use an explicitly temporary normal-cost configuration (currently **80**) and label it clearly.
-- Before release, deliberately choose/finalize the production energy cost and rerun balance/card eligibility tests.
+Energy cards are eligible at normal costs. Tests may use isolated low-cost fixtures but must not restore a testing override to the production asset.
 
 ## Temporary global font
 
@@ -344,7 +348,7 @@ Current implementation:
 - Draft RNG is separate from encounter RNG.
 - Cards reset with the run.
 - Card eligibility can depend on character, ability, permanent shared unlocks, equipped mastery and meaningful mechanic availability.
-- Cost/energy cards are deliberately excluded when Bardley is using the 1-energy development override because they would be functionally dead choices.
+- Cost/energy cards are eligible for production Bardley at cost 80. Generic eligibility still excludes dead energy choices in isolated low-cost test fixtures.
 
 Current card milestones after completed waves:
 
@@ -406,7 +410,7 @@ Current reward model pays for completed run progress rather than enemy farming:
 
 No ordinary kill or summon farming income is used.
 
-The run journal/settlement system must finalize rewards exactly once across death, victory, Retry, menu exit or interrupted-run recovery. Partial unfinished waves pay nothing.
+The run journal settles rewards exactly once on death, victory or explicit End Run/Retry. Suspend and current-version interruption preserve the same attempt; only legacy journals without combat state settle on load. Partial unfinished waves pay nothing.
 
 The economy goal is:
 
@@ -602,11 +606,13 @@ Current connected UI flow includes:
 
 ## Main menu
 
-- Play
+- Play / Continue with the saved character and run recap
 - Characters
 - Gem Mastery
 - Shop
-- selected character presentation
+- free Practice
+- post-King No Supplies / Board Only challenges
+- selected or saved character presentation
 - shared Gold display where relevant
 
 ## Characters
@@ -631,16 +637,17 @@ Current connected UI flow includes:
 Top-right settings control with:
 
 - Resume / close
-- Retry
-- Quit to Menu
+- Suspend to Menu (preserves the exact attempt)
+- End & Retry / End Run (settles once)
 - Music mute
 - SFX mute
+- reduced motion
 
 Music and SFX preferences persist independently.
 
 ## Death/end-of-run
 
-Death UI includes reward information and Retry / Quit to Menu options. Reward settlement must remain exactly-once.
+Death UI shows ending wave, last actual damage, earned gold, supply replacement value, remaining owned stock, scrollable build and Retry / Change Build. Reward settlement remains exactly-once.
 
 ---
 
@@ -670,7 +677,7 @@ Read `Docs/ARCHITECTURE.md` before implementation work that touches these system
 
 # 22. What Balance v1 currently implemented
 
-PR #157 is the first connected implementation of the requested meta/balance layer. It currently includes:
+Merged PR #157 supplied the first connected meta/balance layer, extended by the revised implementation above. Its base systems include:
 
 - persistent shared account save/progression;
 - shared Gold Coins;
@@ -737,7 +744,7 @@ These are the most important unresolved Balance v1 questions right now.
 
 ## Bardley is substantially stronger in synthetic testing
 
-The current normal-cost test clone still performs much better than the desired beginner-wall philosophy. A casual Bardley sample reached approximately wave 28 in ~13.7 minutes, while casual RattleBones died after 10 completed waves around ~5.5 minutes.
+Historical Balance v1 measurements used an uncapped normal-cost clone, before the current refund ceiling and revised encounter teaching. They do not measure the current implementation. A casual Bardley sample reached approximately wave 28 in ~13.7 minutes, while casual RattleBones died after 10 completed waves around ~5.5 minutes.
 
 Do **not** “fix” this by secretly scaling enemy HP based on character/player power.
 
@@ -758,9 +765,9 @@ Several ordinary/miniboss/King formations currently resolve faster or slower tha
 
 Synthetic policies are not beginner humans. The intended “readable early soft wall → useful Gold → stronger retry” loop still needs human playtest evidence.
 
-## Release Bardley energy cost is unresolved
+## Current Bardley control values
 
-The current committed cost=1 is a development convenience. Release cost and energy-card eligibility must be deliberately finalized later.
+The 80-energy production cost and 50% cast-refund ceiling are implemented. Further tuning should compare meaningful cast timing, board decisions and both characters at matched progression. Synthetic performance alone does not establish human enjoyment or justify a mandatory beginner loss.
 
 ---
 
@@ -768,13 +775,13 @@ The current committed cost=1 is a development convenience. Release cost and ener
 
 Unless the user explicitly changes direction, the most sensible next work after Balance v1 is:
 
-1. **User review and iteration on PR #157 / Balance v1 UX.**
+1. **User play and iteration on the merged revised-design implementation.** PR #157 was merged before this work.
 2. **Human-feel balance passes**, especially Bardley vs RattleBones and early soft-wall pacing.
 3. **Tune encounter outliers** using real player behavior rather than only synthetic runs.
 4. **Physical mobile validation**: Android touch, cutouts/safe areas, audio behavior and performance.
 5. **Polish the progression/menu UX** after the user has lived with the first implementation.
 6. **Finalize typography** later; current font is intentionally temporary.
-7. **Finalize release ability costs**, especially Bardley, only when development fast-forwarding is no longer needed.
+7. **Tune production abilities** using the current 80-energy Bardley cost and shared refund ceiling as the control.
 8. **Build post-King content**: Adventurer Guild, wider fantasy factions, later bosses, additional authored formations and cards as needed.
 9. Near feature completion, perform another **repo-wide Astra audit/validation** rather than repeatedly re-auditing the evolving prototype after every feature.
 
@@ -788,7 +795,7 @@ Not currently complete as supported gameplay:
 - wider-world factions and long-run content;
 - final release roster beyond the current 21 implemented opening enemies;
 - final global font;
-- final release energy cost for Bardley;
+- further human tuning of Bardley and RattleBones;
 - broad real-player balance telemetry/distributions;
 - monetization systems (none are required for the current game loop);
 - any future difficulty modes / starting-depth acceleration for very high permanent progression.
