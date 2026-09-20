@@ -119,7 +119,7 @@ The current player cast includes the crowned skeleton **Sir RattleBones / Rattle
 
 ## Combat-animation art checkpoint
 
-The prior four-idle integration is on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159). The current action pass is built on that branch. Idle sources remain nine 64×64 frames at 130 ms (1.17 seconds). Farmer now uses the user's own subsequent LibreSprite adjustment, preserved exactly. Pan Villager's approved head/body rhythm and scarf-tail polish and Rattlebones' idle are unchanged.
+The prior four-idle integration is on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159). The current action pass is on unmerged [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160), stacked on that branch. Idle sources remain nine 64×64 frames at 130 ms (1.17 seconds). Farmer now uses the user's own subsequent LibreSprite adjustment, preserved exactly. Pan Villager's approved head/body rhythm and scarf-tail polish and Rattlebones' idle are unchanged.
 
 `ArtSource/CombatActions/` adds Farmer's rigid pitchfork thrust, the supplied Pan Villager overhead pan strike with its clipped disk completed, and polished/recolored Bardley and Rattlebones ability casts. Auto-attacks use eight frames / 680 ms with the visible hit at 320 ms (frame five); player casts use ten frames / 880 ms. The persistent source guide is [ArtDirection/Dungeon_Matcher_Art_Direction.txt](ArtDirection/Dungeon_Matcher_Art_Direction.txt), v1.2. The same approved palettes and pixel material treatment apply across every frame.
 
