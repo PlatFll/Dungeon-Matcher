@@ -20,13 +20,13 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-09-15
-- **Current milestone:** Revised balance, resumable combat and restored SmallHold startup
-- **Current implementation branch:** `codex/design-v2-resumable-combat`
-- **Implementation PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
-- **Base:** updated `main` at `6ec402a4947fc3bc70bf7d25e0c38e80f1d85e48`
+- **Date:** 2026-09-20
+- **Current milestone:** Revised gameplay baseline plus a unified combat-idle art-source delivery
+- **Current implementation branch:** `codex/idle-animation-family-recolor`
+- **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
+- **Art-pass base:** updated `main` at `6cfbde36a922c1b8fe4c262cba21ae9fe8c848cb`
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** User authorized merging after validation; final evidence is in `DESIGN_V2_IMPLEMENTATION.md` and `DESIGN_V2_PLAYTESTS.md`.
+- **Release status:** The idle pass is art-source only and is not wired into Unity. Its editable files, sprite sheets, GIFs, comparison preview, and validation are in `ArtSource/CombatIdles/`. The earlier gameplay validation is in `DESIGN_V2_IMPLEMENTATION.md` and `DESIGN_V2_PLAYTESTS.md`; its merge authorization does not apply to this new art pass.
 
 ### What this document is
 
@@ -116,6 +116,12 @@ Current visual direction:
 - gameplay readability takes priority over decorative noise.
 
 The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones** and the green slime bard **Bardley**. Their silhouettes and personalities should remain distinct.
+
+## Combat-idle art checkpoint
+
+`ArtSource/CombatIdles/` contains edited Rattlebones, Farmer, Pan Villager and Bardley idle sources, each with nine 64×64 frames at 130 ms (1.17 seconds). Rattlebones's motion is preserved as the reference; Farmer has restrained pitchfork follow-through; Pan Villager uses a more upright stance dip; Bardley has a fuller settle/recovery arc. Every frame uses its approved material palette, with the shared `#0A0D11` outline and binary transparency. See the [delivery notes](../ArtSource/CombatIdles/README.md) and [byte-level checks](../ArtSource/CombatIdles/Validation.json).
+
+This is a source-art checkpoint, not a change to the shipped animation setup. Existing Unity imports, animator clips, scenes and gameplay are untouched. Bardley retains the animation's native y=51 contact line; the static palette reference's unresolved 12-pixel downward translation has not been adopted. Check pivots/alignment explicitly when this set is integrated into Unity. Visual review and frame/export checks were performed; Unity validation/runtime testing was not required or run for this art-only pass.
 
 ## Locked/preserved art direction
 

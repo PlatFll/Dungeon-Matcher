@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Matcher — Combat Idle Review</title>
+<style>
+:root{color-scheme:dark;font:15px system-ui,sans-serif;background:#15131f;color:#eee8dc}*{box-sizing:border-box}body{margin:32px auto;padding:0 24px;max-width:1248px}h1{font-size:28px;margin:8px 0}p{color:#bcb4c8;line-height:1.5}.eyebrow{font-size:12px;letter-spacing:.15em;color:#dcbf80}nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 0;margin-bottom:8px}button,select{font:inherit;padding:8px 14px;border:1px solid #61576d;border-radius:6px;background:#2b2539;color:inherit;cursor:pointer}button:hover{background:#42334c}output{min-width:90px;font-variant-numeric:tabular-nums}input{width:170px}main{display:grid;grid-template-columns:repeat(4,minmax(256px,1fr));gap:18px}.card{margin:0}h2{font-size:17px;margin:14px 0 6px}.note{font-size:12px;min-height:34px;color:#bbb0c7}.stage{background:#242030;border:1px solid #494153;display:flex;align-items:center;justify-content:center;height:280px}.native{display:flex;align-items:center;gap:16px;margin-top:14px;background:#242030;padding:12px;border:1px solid #494153;height:92px}.native span{font-size:12px;color:#bfb3cc}.sprite{width:64px;height:64px;background-repeat:no-repeat;image-rendering:pixelated;flex:none}.big{width:256px;height:256px;background-size:2304px 256px}.light .stage,.light .native{background:#ded9cf}.footer{margin-top:26px;border-top:1px solid #494153;padding-top:14px;font-size:13px}a{color:#e4c996}.links{display:flex;gap:12px;margin-top:12px;font-size:12px}@media(max-width:1150px){main{grid-template-columns:repeat(2,minmax(256px,1fr))}}@media(max-width:620px){main{grid-template-columns:1fr}body{padding:0 16px}}
+.light .native span{color:#514858}
+</style>
+<div class="eyebrow">DUNGEON MATCHER / CHARACTER ART</div><h1>Combat idle family</h1>
+<p>Nine frames · 130 ms per frame · 1.17-second loop · 64 × 64 transparent canvases</p>
+<nav><button id="play">Pause</button><button id="prev" aria-label="Previous frame">←</button><button id="next" aria-label="Next frame">→</button><input id="frame" aria-label="Frame" type="range" min="1" max="9" value="1"><output id="position">Frame 1 / 9</output><label>Speed <select id="speed"><option value="1">100%</option><option value="0.5">50%</option></select></label><button id="background">Light background</button><button id="seam">Loop seam: 9 → 1</button></nav>
+<main>
+<article class="card" data-name="Rattlebones"><h2>Rattlebones</h2><div class="note">Gold-standard motion · 15 colors</div></article>
+<article class="card" data-name="Farmer"><h2>Farmer</h2><div class="note">Planted stance · pitchfork follow-through · 14 colors</div></article>
+<article class="card" data-name="PanVillager"><h2>Pan Villager</h2><div class="note">Upright stance dip · cool iron pan · 16 colors</div></article>
+<article class="card" data-name="Bardley"><h2>Bardley</h2><div class="note">Fuller settle and recovery · anchored base · 15 colors</div></article>
+</main>
+<div class="footer"><p>Large views are exact 4× pixels; small views are native 1×. Canvas placement is unchanged. Bardley retains the source animation's ground contact at y=51; the others retain y=63. No automatic bottom alignment is applied.</p><p>Files: <a href="README.md">Delivery notes</a> · <a href="Validation.json">Frame and export checks</a></p></div>
+<script>
+for(const card of document.querySelectorAll('.card')){const name=card.dataset.name;card.insertAdjacentHTML('beforeend',`<div class="stage"><div class="sprite big" style="background-image:url('${name}_Idle.png')" role="img" aria-label="${name} at four times native size"></div></div><div class="native"><div class="sprite" style="background-image:url('${name}_Idle.png')" role="img" aria-label="${name} at native size"></div><span>Native 64 × 64<br>1× pixels</span></div><div class="links"><a href="${name}_Idle.aseprite">LibreSprite</a><a href="${name}_Idle.png">Sheet</a><a href="${name}_Idle.gif">GIF</a></div>`)}
+let frame=0,playing=true,rate=1,last=performance.now(),seamMode=false;
+const play=document.querySelector('#play'),slider=document.querySelector('#frame'),position=document.querySelector('#position');
+function draw(){for(const s of document.querySelectorAll('.sprite'))s.style.backgroundPosition=`${-frame*(s.classList.contains('big')?256:64)}px 0`;slider.value=frame+1;position.textContent=`Frame ${frame+1} / 9`}
+function pause(){playing=false;play.textContent='Play'}
+play.onclick=()=>{playing=!playing;play.textContent=playing?'Pause':'Play';last=performance.now()};
+document.querySelector('#next').onclick=()=>{pause();seamMode=false;frame=(frame+1)%9;draw()};
+document.querySelector('#prev').onclick=()=>{pause();seamMode=false;frame=(frame+8)%9;draw()};
+slider.oninput=()=>{pause();seamMode=false;frame=+slider.value-1;draw()};
+document.querySelector('#speed').onchange=e=>{rate=+e.target.value;last=performance.now()};
+document.querySelector('#background').onclick=e=>{document.body.classList.toggle('light');e.target.textContent=document.body.classList.contains('light')?'Dark background':'Light background'};
+document.querySelector('#seam').onclick=()=>{seamMode=!seamMode;frame=8;playing=true;play.textContent='Pause';last=performance.now();draw()};
+function tick(t){if(playing&&t-last>=130/rate){const count=Math.floor((t-last)/(130/rate));last+=count*130/rate;frame=seamMode?(frame===8?0:8):(frame+count)%9;draw()}requestAnimationFrame(tick)}draw();requestAnimationFrame(tick);
+</script></html>
