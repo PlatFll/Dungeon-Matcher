@@ -1,0 +1,65 @@
+{
+  "frames": 9,
+  "canvas": [
+    64,
+    64
+  ],
+  "frame_ms": [
+    130,
+    130,
+    130,
+    130,
+    130,
+    130,
+    130,
+    130,
+    130
+  ],
+  "loop_ms": 1170,
+  "approved_opaque_colors": 14,
+  "off_palette_pixels": 0,
+  "head_top_y": [
+    6,
+    6,
+    7,
+    8,
+    9,
+    9,
+    9,
+    8,
+    7
+  ],
+  "head_changed_pixels_per_frame": [
+    11,
+    89,
+    245,
+    525,
+    508,
+    546,
+    657,
+    417,
+    283
+  ],
+  "distinct_face_drawings_after_removing_translation": 9,
+  "previous_revision_distinct_face_drawings": 1,
+  "torso_hands_lower_shaft_and_boots_identical_to_previous_revision": true,
+  "pitchfork_and_grips_dy": [
+    0,
+    0,
+    1,
+    2,
+    3,
+    3,
+    2,
+    1,
+    0
+  ],
+  "rigid_prop_pixels_preserved": true,
+  "comparison_reference_sheets_match_original_files": true,
+  "other_character_aseprite_sha256_unchanged": {
+    "Rattlebones": "77750e6542abb6131be3d4816048b8b6a80ed27ff506340e3c197e0d5cf74d4d",
+    "PanVillager": "396a2c70e6c268b85a7dcc4685d939f5840bf3e39abb4e241751b2fc2ad738b6",
+    "Bardley": "9f32f4e922f5a9e0f4cffa5ebd17b9b4bbf018f35a7ac8dd424f3f2fe4089de8"
+  },
+  "visual_review_required": "Head/body rhythm, attached neck and hat, native-size readability and loop seam are reviewed in FarmerHeadReview.html."
+}

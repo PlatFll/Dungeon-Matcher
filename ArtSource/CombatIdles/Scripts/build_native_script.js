@@ -16,3 +16,4 @@ const preamble='var ROOT = '+JSON.stringify(root.replaceAll('\\','/')+'/')+';\nv
 fs.writeFileSync(path.join(dir,'RestoreIdleMaterials.js'),preamble+fs.readFileSync(path.join(dir,'restore_materials_body.js'),'utf8'));
 fs.writeFileSync(path.join(dir,'UnifyIdleFamily.js'),'var ROOT = '+JSON.stringify(root.replaceAll('\\','/')+'/')+';\nvar PALETTES = '+JSON.stringify(palettes)+';\n'+fs.readFileSync(path.join(dir,'family_motion_body.js'),'utf8'));
 fs.writeFileSync(path.join(dir,'RefineIdleMotion.js'),'var ROOT = '+JSON.stringify(root.replaceAll('\\','/')+'/')+';\n'+fs.readFileSync(path.join(dir,'refine_motion_body.js'),'utf8'));
+fs.writeFileSync(path.join(dir,'RestoreFarmerHead.js'),preamble+fs.readFileSync(path.join(dir,'restore_farmer_head_body.js'),'utf8'));
