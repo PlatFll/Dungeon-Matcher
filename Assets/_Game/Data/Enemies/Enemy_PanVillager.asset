@@ -18,8 +18,8 @@ MonoBehaviour:
   description: A beginner villager who hits harder with a frying pan but attacks
     slowly.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 067d7a9136c23af439fe5138248ae38c, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: 2638720417487856195, guid: 3c27279675a73fa4483e90748a589ab2, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: b339712cb61c07049997c2aff9980e41, type: 2}
   baseMaxHealth: 40
   baseDamage: 6
   baseAttackInterval: 10

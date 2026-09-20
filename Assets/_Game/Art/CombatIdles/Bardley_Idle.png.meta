@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 71c2b336ade678a43ae3eabda2ceaf36
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3808432656773258898
+    second: Bardley_Idle_0
+  - first:
+      213: -1057358110083458693
+    second: Bardley_Idle_1
+  - first:
+      213: 9166170318765389366
+    second: Bardley_Idle_2
+  - first:
+      213: 2573115753400075741
+    second: Bardley_Idle_3
+  - first:
+      213: -192526084541309450
+    second: Bardley_Idle_4
+  - first:
+      213: 7746411594680620035
+    second: Bardley_Idle_5
+  - first:
+      213: -5902874389345504468
+    second: Bardley_Idle_6
+  - first:
+      213: 3337400343893075683
+    second: Bardley_Idle_7
+  - first:
+      213: 1419883100311364820
+    second: Bardley_Idle_8
+  - first:
+      213: 5549314180388903926
+    second: Bardley_Idle_00
+  - first:
+      213: -7781997348241706183
+    second: Bardley_Idle_01
+  - first:
+      213: -4237159349064806221
+    second: Bardley_Idle_02
+  - first:
+      213: -2835796407952094468
+    second: Bardley_Idle_03
+  - first:
+      213: 6216688540164130055
+    second: Bardley_Idle_04
+  - first:
+      213: -7170314353493437984
+    second: Bardley_Idle_05
+  - first:
+      213: -276822404402707638
+    second: Bardley_Idle_06
+  - first:
+      213: 6334145529588023974
+    second: Bardley_Idle_07
+  - first:
+      213: 4660957186651826255
+    second: Bardley_Idle_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bardley_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb5e1578df130d40800000000000000
+      internalID: 5549314180388903926
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933750f74aac00490800000000000000
+      internalID: -7781997348241706183
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0544e75069235c0800000000000000
+      internalID: -4237159349064806221
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfacfa0113a35a8d0800000000000000
+      internalID: -2835796407952094468
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70589b33a4d164650800000000000000
+      internalID: 6216688540164130055
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e19320e51ded7c90800000000000000
+      internalID: -7170314353493437984
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4305b76d77882cf0800000000000000
+      internalID: -276822404402707638
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a209b6acc767e750800000000000000
+      internalID: 6334145529588023974
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bardley_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 12
+        width: 64
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48afafcddb0fa040800000000000000
+      internalID: 4660957186651826255
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bardley_Idle_0: 3808432656773258898
+      Bardley_Idle_00: 5549314180388903926
+      Bardley_Idle_01: -7781997348241706183
+      Bardley_Idle_02: -4237159349064806221
+      Bardley_Idle_03: -2835796407952094468
+      Bardley_Idle_04: 6216688540164130055
+      Bardley_Idle_05: -7170314353493437984
+      Bardley_Idle_06: -276822404402707638
+      Bardley_Idle_07: 6334145529588023974
+      Bardley_Idle_08: 4660957186651826255
+      Bardley_Idle_1: -1057358110083458693
+      Bardley_Idle_2: 9166170318765389366
+      Bardley_Idle_3: 2573115753400075741
+      Bardley_Idle_4: -192526084541309450
+      Bardley_Idle_5: 7746411594680620035
+      Bardley_Idle_6: -5902874389345504468
+      Bardley_Idle_7: 3337400343893075683
+      Bardley_Idle_8: 1419883100311364820
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
