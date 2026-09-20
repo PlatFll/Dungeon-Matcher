@@ -1,0 +1,378 @@
+# Dungeon Matcher — Art Direction & Sprite Production Guide
+
+**Version:** 1.1
+**Compiled:** 2026-09-19
+**Updated for production idles:** 2026-09-20
+**Scope:** visual identity, palettes, sprite editing, review, and idle-animation direction.
+**Owner:** the user; new design approvals remain the user's decision.
+
+This repository edition is the durable source of truth for the art direction established in this project conversation. It records the versions carried forward as working references, the rejected approaches, and unresolved issues. It does not retroactively approve every historical suggestion or authorize changes to shipped assets.
+
+The PNG and ASE assets in the accompanying pack are byte-for-byte copies of supplied files. No character artwork was edited to create this documentation. Reference boards are labeled inspection layouts, not replacement sprite sheets. Versioning, status labels, and review templates are organizational conventions introduced by this guide.
+
+## 1. Start here in every new art task
+
+1. Read this guide and inspect `Dungeon_Matcher_Art_References.png`; use individual PNGs for exact pixels.
+2. Identify the actual target file, character identity, task scope, and applicable reference status.
+3. Separate what is locked from what the user has authorized you to change.
+4. Choose material colors and shading based on the character's role, not a generic fantasy preset.
+5. Review the output visually AND check the file's actual dimensions, palette, alpha, and placement.
+6. Record the result as a candidate, working reference, or approved replacement only as warranted.
+
+The latest explicit user decision controls. The original target controls character identity and geometry; the working reference cast controls rendering. Neither a generated lookalike nor a persuasive description overrides the actual original pixels. If sources conflict or a required target is unavailable, surface that specific gap instead of silently improvising.
+
+This guide does not supersede gameplay, balance, story, or repository-safety instructions outside its art scope.
+
+## 2. Theme and aesthetic
+
+### Core fantasy
+
+Dungeon Matcher reverses the usual dungeon story: the player is a dungeon monster/denizen defending a powerful magical artifact from outsiders. The world gradually takes that defender more seriously. Locals give way to guards, knights, royal forces, and the King, with wider adventuring factions and contextual mixtures later. This escalation should be visible in costume, equipment, discipline, and silhouette, not merely larger numbers.
+
+### Visual promise
+
+Cute, whimsical, nostalgic fantasy pixel art with a mysterious dungeon atmosphere and clear combat readability. Characters can be threatening or determined without becoming photorealistic, grim, over-rendered, or generic military figures. Ordinary people's improvised equipment is part of the charm: a pitchfork and a frying pan are meaningful character identities.
+
+The current visual combination is:
+- compact, readable character sprites with strong silhouettes and simple faces;
+- dark purple dungeon frames and a restrained dark interface;
+- bright, faceted, differentiated gems;
+- readable material shading and selective magical/hero accents.
+
+This is not painterly fantasy illustration, smooth HD pixel imitation, or a requirement to give all characters identical anatomy. A skeleton, slime, and human can have different proportions while sharing pixel density, outline treatment, shading discipline, and visual-noise level.
+
+Earlier world-direction notes describe modest, scrappy locals/novices and coordinated, heraldic royal forces. These are identity guides, not finalized palettes for every future faction. Do not invent unapproved enemy designs to complete this document.
+
+## 3. Rendering rules
+
+### Pixel scale and silhouettes
+
+Current character reference canvases are 64 × 64 pixels. Preserve the native size and occupied footprint of an existing target. A 64 × 64 image with the character shrunk inside it is not equivalent. Do not move the art to the bottom edge merely to match a comparison layout.
+
+Preserve the established chunky contour language. Existing outlines are generally one source pixel along exposed edges, with thicker contact or corner clusters where the drawing already uses them. Do not mechanically thicken everything or force every contour into identical thickness. The actual reference art governs.
+
+Oversized heads and compact human/skeletal bodies are common in the cast; Bardley's nonhuman body remains asymmetrical, curled, and low-spreading. Preserve distinguishing shapes instead of making every character a standard chibi doll.
+
+### Outlines and faces
+
+The shared CHARACTER outline/deepest separation color is `#0A0D11`. Use it for the external contour and necessary overlap/face separations, not as a new border around every interior detail. Merge accidental near-black noise in character recolors.
+
+Preserve the original face's geometry, expression, eye shapes, and eye-light placements. Human faces may differ from monster faces. Earlier discussions explored human eye treatments; there is no universal instruction to replace every face with large black rectangles or identical white eyes. Do not add stereotyped gender cues to the Pan Villager: her existing design is the authority.
+
+### Lighting and material clusters
+
+Use top-left lighting for new character shading and recolor cleanup. Favor broad, connected base/shadow/light clusters. Put shadows on turning-away planes, overlaps, undersides, and recesses. Put sparse highlights on lit planes. Avoid an evenly shaded border around every object, scattered highlight noise, and smooth gradients.
+
+Most materials need two or three visibly useful tones; a large focal material may use four. A small feature may need only one or two. Do not use every palette shade on every body part.
+
+Material differences matter: bone is matte and broad; cloth has restrained folds; straw is warm but not metallic; iron is cool and dull with selective rim light; gold has sparse bright accents; slime is rounded through cluster shapes, not angular facets. Gem faceting is not the shading model for a skull, tunic, or slime.
+
+### Prohibited by default in these sprite passes
+
+No blur, gradients, dithering, painterly texture, semi-transparent edge anti-aliasing, resampling, subpixel softness, unnecessary isolated pixel noise, or automatic globally thick outlines. Keep hard native pixels. Intentional small eye glints or material accents are not forbidden simply because they occupy one pixel.
+
+## 4. Palette philosophy and visual hierarchy
+
+There is NOT one universal fixed palette for the entire game. Cohesion comes from compatible hue/value relationships, shared material ramps where appropriate, outline discipline, clean clusters, native pixel scale, and similar detail density.
+
+Use the same ramp when the material is meant to relate: Farmer/Pan Villager skin and clothes; Rattlebones/Bardley gold. Allow character-specific colors: Bardley's yellow-green/plum, Rattlebones's bone/red/cyan, the Pan Villager's cool iron.
+
+Current character references contain 14–16 opaque colors. This is a useful working range, NOT a rule that heroes must have more colors than enemies or that every future sprite must have exactly 16. The Pan Villager has 16 while Rattlebones has 15. Avoid new colors that serve no distinct material or shape purpose; authorize exceptions deliberately.
+
+Common enemies should be modest, practical, and less extravagant—not muddy, invisible, shrunken, or carelessly shaded. Heroes can have stronger signature accents without making every surface bright. Preserve enough contrast for each face, silhouette, and gameplay-identifying prop to read.
+
+Do not copy the gems' saturation onto an entire human outfit. Do not force heroes into brown village palettes to make them match. Design hierarchy by focal area and material, not by lowering all enemy contrast.
+
+## 5. Working reference register
+
+Use these specific versions, not filenames that merely sound final. The asset manifest contains source filenames, SHA-256 checksums, exact palettes, masks, bounds, and copy status.
+
+| Character | Reference file in `references/characters/` | Status |
+|---|---|---|
+| Rattlebones | `Rattlebones_Reference.png` | Working visual reference carried forward after the small cape/crown cleanup |
+| Farmer | `Farmer_Reference.png` | Working common-enemy reference; later supplied approved Farmer image |
+| Pan Villager | `Pan_Villager_Reference.png` | Working recolor of the original female pan-wielding villager; original scale/mask retained |
+| Bardley | `Bardley_Palette_Reference_Placement_Pending.png` | Palette/rendering reference only; placement remains unresolved |
+
+The originals in `source_originals/` are edit/geometry history, not the current palette references. Rejected generated Pan Villager illustrations are intentionally excluded from the positive reference pack.
+
+### Verified static reference properties
+
+Bounds below are zero-based, inclusive `(left, top)–(right, bottom)`. They describe these assets, not mandatory bounds for all future characters.
+
+| Reference | Canvas | Occupied solid bounds | Opaque colors | Alpha |
+|---|---|---|---:|---|
+| Rattlebones | 64 × 64 | (11, 6)–(51, 63) | 15 | 0 or 255 |
+| Farmer | 64 × 64 | (8, 7)–(62, 63) | 14 | 0 or 255 |
+| Pan Villager | 64 × 64 | (5, 10)–(51, 63) | 16 | 0 or 255 |
+| Bardley recolor | 64 × 64 | (4, 23)–(57, 63) | 15 | 0 or 255 |
+
+Rattlebones and the successful Pan Villager recolor preserve their original alpha masks exactly. The approved Farmer artwork has its own small geometry/position differences from the earlier raw source; use the current Farmer reference as delivered, not as proof that every past pass was mask-identical.
+
+## 6. Exact character palettes and material direction
+
+All hex colors below are opaque RGB. Transparency is additional. Palette order is by material role, not a nearest-color conversion recipe. Do not force every allowed color to appear if the task does not need it.
+
+### Rattlebones
+
+| Material | Colors in role order |
+|---|---|
+| Outline / deepest dark | `#0A0D11` |
+| Bone | `#8D725C` → `#B7A393` → `#FDF5E5` → `#FEFBEF` |
+| Royal cape | `#4B1127` → `#7C1A30` → `#C74A5A` → `#FF98A0` |
+| Gold | `#8A5622` → `#C58826` → `#FBEA90` |
+| Eyes | `#0084C4` → `#23DAFF` |
+| Utility brown | `#5B3627` |
+
+**Identity:** tiny royal skeleton protagonist; crown, large skull, small skeleton body, red cape, cyan eyes. Face/skull dominate; crown and eyes are clear accents; cape and body support the read.
+
+**Bone:** `#FDF5E5` carries the main bone area; `#B7A393` is the broad shadow/mid plane; `#8D725C` is the deepest bone recess; `#FEFBEF` is a restrained highest light. Do not restore dozens of nearly identical creams or add soft gradient bands.
+
+**Cape:** use the dark reds/plum for folds and `#C74A5A` for readable lit cloth. `#FF98A0` is selective, not a continuous glossy stripe. **Gold:** `#C58826` is the main gold with `#8A5622` shadow and small `#FBEA90` highlights. **Eyes:** keep the existing small cyan/blue pattern; no halos or extra eye colors. The utility brown belongs only where the existing drawing uses it.
+
+The current file is the reference for actual shade placement. Earlier suggested highlight-pixel counts were local review suggestions, not universal quotas.
+
+### Farmer
+
+| Material | Colors in role order |
+|---|---|
+| Outline / deepest dark | `#0A0D11` |
+| Straw hat | `#7A5A2C` → `#B88A46` → `#E7C979` → `#F9E7B4` |
+| Skin | `#7C5238` → `#B9825D` → `#E6B08A` |
+| Clothing | `#3E312A` → `#6C5A4A` → `#9A856F` |
+| Wood / leather | `#4A2C1C` → `#7A4D2E` → `#B07A43` |
+
+**Identity:** ordinary farmer with broad straw hat and pitchfork. Preserve the hat silhouette, face, clothing, pitchfork angle, and grip. He is not a warrior in straw-colored armor.
+
+**Read:** straw hat → face → farming tool → subdued clothing. Use the hat's cream highlight sparingly; the hat should read as straw, not gold. Skin and clothes use their own shared rustic ramps. Use broad clothing clusters rather than alternating tiny brown pixels.
+
+**Tool:** wooden shaft and leather use the warm browns. The small pitchfork head in this reference borrows the subdued clothing values; do not add a whole metal ramp by default for a few pixels. Keep prongs and the shaft-to-head transition readable. A selective head-edge cleanup was suggested; it is not permission to redesign the tool.
+
+### Pan Villager
+
+| Material | Colors in role order |
+|---|---|
+| Outline / deepest dark | `#0A0D11` |
+| Skin | `#7C5238` → `#B9825D` → `#E6B08A` |
+| Headscarf | `#5B5145` → `#9F907A` → `#E0D2B8` |
+| Clothing | `#3E312A` → `#6C5A4A` → `#9A856F` |
+| Iron pan | `#2B313A` → `#55606E` → `#93A1B0` |
+| Hair / leather / wood | `#4A2C1C` → `#7A4D2E` → `#B07A43` |
+
+**Identity:** a female village character with an existing headscarf, hair, face, practical clothes, boots, and a household frying pan. She is NOT a shield-bearing guard. Do not change her face or gender presentation to fit a generic character template.
+
+**Shared style:** use the Farmer's skin, clothing, and leather relationships. Her taupe headscarf and cool iron distinguish her without breaking cohesion. Preserve the original face/headscarf/pan size relationship.
+
+**Pan:** the face and rim use the iron ramp, not brown headscarf colors. Keep it dull cookware with a dark interior, restrained midtone form, and a short upper-left rim highlight. No bright ring around the full circumference, central shield boss, emblem, polished reflections, or enlarged weapon. Preserve the original handle/grip.
+
+**Optional, not mandatory:** the successful recolor's pan center is still quite centered/flat. A future tiny internal shading pass may move some midtone emphasis upper-left and deepen the lower-right. Do not restart the full sprite, add colors, or change geometry to address this small preference.
+
+### Bardley
+
+| Material | Colors in role order |
+|---|---|
+| Outline / deepest dark | `#0A0D11` |
+| Slime | `#176747` → `#4A9B3F` → `#86C83C` → `#D5FFAD` |
+| Plum cloth | `#450635` → `#7F1650` → `#BD2169` |
+| Gold | `#8A5622` → `#C58826` → `#FBEA90` |
+| Blue details | `#2E568F` → `#A9E0FF` |
+| Feather / eye catchlights | `#B7A393` → `#FDF5E5` |
+
+**Identity:** cheerful, slightly mischievous slime bard; distinctive asymmetric yellow-green body, upper-right curled tip, low spreading base, tilted hat, feather, plum cape, gold trim, small blue details, and pipe/flute-like instrument. Do not make him a generic round blob or a humanoid.
+
+**Slime:** `#86C83C` remains the dominant exposed body color. `#4A9B3F` is the broad form shadow; `#176747` is used more sparingly in deep overlaps. `#D5FFAD` is a small coherent lit cluster, not a thick shiny edge or an extra face marking. Rounded cluster shapes imply volume; no gemstone facets, bubbles, spots, or translucent patches.
+
+**Costume:** mostly `#7F1650`, deep `#450635` folds, selective `#BD2169` lit cloth. **Gold:** share Rattlebones's warm gold; reduce the old neon-yellow edging without making the instrument disappear. **Blue:** keep existing tiny details only. **Feather/eyes:** use the pale feather colors and preserve existing catchlights; Bardley does not inherit Rattlebones's glowing eyes.
+
+**This supersedes the earlier proposed emerald-green body palette.** The current yellow-green ramp is the direction carried forward. Keep his friendly, saturated identity while following the same rendering discipline as the villagers.
+
+## 7. Locked gems and UI frames
+
+Do not recolor these reference assets merely to fit the character palette rules. Their actual PNGs are authoritative.
+
+The gems have stronger saturation, intentional faceting, and their own palettes. The common gem outline in these files is `#303030`, NOT the character outline `#0A0D11`. Do not “correct” this distinction automatically. The number of colors varies with gem design.
+
+The interface uses layered purple/dark ramps with small luminous purple jewel accents. Main frame colors include `#060709`, `#0A0D11`, `#151423`, `#241F3A`, `#4E3D6C`, and `#846A95`, with additional join/socket/jewel shades in particular assets. Multiple dark shades are intentional in these locked UI assets; the character near-black cleanup instruction is not a global UI palette reduction.
+
+The exact measured palettes are listed below so future chats do not have to guess. Order is numerical RGB order, not lighting/material order. Any near-duplicates in a locked asset remain part of that source until separately reviewed.
+
+| Locked gem | Opaque colors | Actual color set |
+|---|---:|---|
+| Amber gem | 8 | `#303030`, `#7C2400`, `#A33200`, `#C94D08`, `#E56B12`, `#F5923D`, `#FFB870`, `#FFE0B3` |
+| Amethyst gem | 8 | `#2B0B5F`, `#303030`, `#4A1590`, `#6E27BF`, `#9139D9`, `#B75AEB`, `#DD92F7`, `#F4DEFF` |
+| Emerald gem | 7 | `#176747`, `#218C50`, `#303030`, `#31B45D`, `#56D76B`, `#91ED72`, `#D5FFAD` |
+| Ruby gem | 9 | `#303030`, `#412C35`, `#472A35`, `#632733`, `#8F3340`, `#D64C57`, `#E95050`, `#F06B70`, `#FF98A0` |
+| Sapphire gem | 8 | `#223A6B`, `#2C4A78`, `#2E568F`, `#303030`, `#3E75B8`, `#4E96DB`, `#75BCEF`, `#A9E0FF` |
+| Topaz gem | 6 | `#303030`, `#EDA95C`, `#F7BC69`, `#FACF84`, `#FFDB8F`, `#FFECB4` |
+
+| Locked UI asset | Canvas | Actual color set |
+|---|---|---|
+| Player frame | 146 × 25 | `#060709`, `#0A0D11`, `#241F3A`, `#2B0D46`, `#4E3D6C`, `#65038D`, `#67537D`, `#68168A`, `#846A95`, `#C22BEA`, `#F078FF`, `#F9F5EB` |
+| Wave counter | 151 × 44 | `#060709`, `#0A0D11`, `#151423`, `#241F3A`, `#4E3D6C`, `#846A95` |
+| Board corner | 80 × 80 | `#060709`, `#0A0D11`, `#11101B`, `#151423`, `#241F3A`, `#2B0D46`, `#382D55`, `#421A5A`, `#4E3D6C`, `#68168A`, `#846A95`, `#C22BEA`, `#F078FF`, `#F9F5EB` |
+| Board bar | 64 × 16 | `#060709`, `#382D55`, `#4E3D6C`, `#846A95` |
+
+## 8. How to direct the next character
+
+Start with identity, not colors. Name the actual species/person, prop, costume, personality, and visual role. Use the user's terms. A frying pan is not a shield; a musical pipe is not a wand. Identify the silhouette landmarks and facial features that must survive.
+
+Next, compare the target to the working cast at the same pixel scale. Diagnose actual mismatches: pixel density, overly smooth shading, outline weight, near-duplicate noise, face complexity, material separation, or uncontrolled highlights. Do not call a sprite inconsistent just because it has a different hue, body shape, or necessary material.
+
+Build the palette by material. Reuse a shared ramp where appropriate, then add only the distinct material ramp needed for that character. Choose a dominant color area, supporting materials, and small accents. Document exact hex values and shading roles before handing the task to Astra.
+
+Decide the edit scope:
+- **Review:** inspect and explain; do not edit unsolicited.
+- **Recolor:** palette/material assignment; preserve geometry, pose, alpha mask, and placement.
+- **Internal cleanup:** simplify clusters and improve form shading within the existing silhouette.
+- **Localized redesign:** when explicitly allowed, adjust named features or silhouettes for readability while protecting character identity. Record the changes.
+- **New design / major redesign:** when requested, explore new geometry separately from the original. A candidate is not a replacement until approved.
+
+Do not demand approval for every one-pixel shading decision within an authorized cleanup. Do surface changes to identity, face design, species, equipment concept, proportions, canvas footprint, or silhouette when they exceed the requested scope. “Act as art director” is not permission to discard a recognizable original during a recolor.
+
+### Tool/workflow preference
+
+Follow the current task's explicit editing-tool and scope instructions. The production idle passes use LibreSprite's native pixel/cel API and LibreSprite exports. Read-only scripts inspect pixels, palettes and frame integrity; generated reinterpretations are not substitutes for these sprites. Earlier direct-script recolor preferences do not override an explicit request to use LibreSprite.
+
+## 9. Direct recolor workflow and quality gates
+
+### Inspect before editing
+
+Open the actual image file. Record its native dimensions, opaque palette, alpha values, occupied bounds, and mask. Identify each material by location and meaning. Near-identical original RGB values may belong to different materials and need different replacements.
+
+Preserve the source file and edit a copy. Do not silently overwrite the original, game assets, or animation sources. Work at native resolution; enlarge with nearest-neighbor only for inspection. A global nearest-color conversion may assist an initial pass, but it is not sufficient art direction or material assignment.
+
+### Edit by material
+
+Map original regions to the approved role colors. Keep the outline/facial geometry stable. Refine internal shadows/highlights deliberately. Do not infer new anatomy from shading. Preserve hand-to-prop contact and material boundaries.
+
+For opaque character sprites, retain binary transparency when present. For a source with contaminated alpha, inspect it and document the specific allowed cleanup. Never assume a screenshot's black/checkerboard background is the actual alpha channel.
+
+### Verify technical claims from bytes
+
+Check actual output dimensions, allowed palette membership, number of unique opaque colors, alpha values, occupied bounds, source-mask agreement, and placement. Palette entries alone do not prove pixel colors; dimensions alone do not prove the character stayed the same size. Compare occupied masks directly when the task requires preservation.
+
+A reference checksum helps identify the correct source version. Do not claim an exact palette count, pixel offset, preserved silhouette, or completed validation from visual impression alone. Report unperformed checks as unperformed.
+
+### Review visually
+
+Check at native 1×, an integer nearest-neighbor enlargement, and on both light and dark backgrounds. Compare the source, candidate, and relevant reference characters at the same native scale. A comparison board must not silently bottom-align or normalize character sizes; label any presentation transform.
+
+Assess identity, face, silhouette, material separation, focal hierarchy, cluster simplicity, lighting, appropriate saturation, and prop readability. Mechanical validation is necessary but cannot prove artistic quality. Give a specific verdict: working reference, candidate requiring named changes, or rejected. Avoid invented numerical “style match” percentages.
+
+Respect requested output format. When the user requests only the edited transparent PNG, deliver that file rather than a tutorial, large generated illustration, or enlarged preview presented as a 64 × 64 sprite.
+
+## 10. Bardley exception: alpha cleanup and placement
+
+The original Bardley source includes almost-opaque pixels plus a few faint alpha artifacts. For THAT source, the recolor brief explicitly authorized:
+- original alpha ≥ 128 becomes fully opaque;
+- original alpha < 128 becomes fully transparent;
+- preserve the resulting solid silhouette.
+
+This is a source-specific exception, not a global threshold rule for every sprite, effect, shadow, or UI file.
+
+The current Bardley recolor preserves that solid shape but moves it 12 pixels downward. Original solid bounds are `(4, 11)–(57, 51)`; current recolor bounds are `(4, 23)–(57, 63)`. Its palette and rendering were carried forward, but that alignment is not settled.
+
+Do not silently repair or canonize the offset while documenting it. Before replacement in animation/game assets, either restore the original alignment without scaling or deliberately adopt a new baseline across all relevant frames and placement settings. That historical static file remains **palette reference / placement pending**. The current production animation keeps the original alignment and resolves UI placement through the fixed import rectangle documented in section 11, under the user's request to integrate without centering issues.
+
+## 11. Idle-animation direction
+
+### Established movement language
+
+Classic planted turn-based RPG battle idle: tiny stance compression downward and controlled recovery, centered body, anchored feet/ground contact, and restrained character-specific secondary motion. It is not a jumping, floating, breathing/inflating, or wide side-to-side swaying animation.
+
+Move the pose above the feet: slight knee/hip settling, torso/head follow-through, and a small response in held items or clothing. Do not translate the whole sprite vertically. A stable bottom bound alone does not prove both feet stayed anchored; check their actual pixel positions through the frames.
+
+Rattlebones's skull/crown and cape express his personality. Farmer's straw hat and firmly held pitchfork express his. Do not turn secondary motion into an attack, large weapon swing, detached grip, or independently flying accessory. A slime can move differently anatomically while sharing the same restrained battle cadence; the current grounded Bardley idle is in ArtSource/CombatIdles/Bardley_Idle.aseprite.
+
+### Production idle timing — 2026-09-20
+
+The art-direction choice for the current cast is **130 ms for every frame**, nine frames, **1,170 ms per loop** (approximately 7.69 drawings per second). This retains Rattlebones' established waiting-for-a-turn cadence and keeps the villagers and slime in the same restrained family. The selected cadence gives the dip, blink and recovery room to read without a prolonged pause.
+
+| Idle | Frame durations 1 through 9 (ms) | Loop |
+|---|---|---|
+| Rattlebones | 130, 130, 130, 130, 130, 130, 130, 130, 130 | 1,170 ms |
+| Farmer | 130, 130, 130, 130, 130, 130, 130, 130, 130 | 1,170 ms |
+| Pan Villager | 130, 130, 130, 130, 130, 130, 130, 130, 130 | 1,170 ms |
+| Bardley | 130, 130, 130, 130, 130, 130, 130, 130, 130 | 1,170 ms |
+
+Use this as the game's default battle-idle cadence. For future body types, review roughly 120–150 ms exposures and about 1.1–1.35 seconds per complete settle/recovery loop; those are review ranges, not automatic retiming rules. Start at nine × 130 ms and deviate only when the actual pose spacing needs it. Do not add duplicate frames solely to match a count or apply idle timing to attacks, hit reactions or VFX.
+
+Keep feet/slime contact planted, close the blink through the low pose and reopen during recovery. Tiny scarf/cape responses trail the body by approximately one pose. Repeated ready poses can form an intentional short hold, but account for both sides of the loop seam; never add another endpoint hold during Unity export.
+
+### Current production files and Unity placement
+
+The current editable sources, 576×64 PNG sheets, GIFs, JSON timing and pixel-validation reports live in ArtSource/CombatIdles/. The PNG sheets remain nine 64×64 cells. The latest localized correction changes only Farmer's lower cheek contour in frames 1 and 9 and Pan Villager's rear scarf tail. Eyes, mouths, other Farmer frames, and Rattlebones/Bardley pixels stay unchanged in that pass.
+
+Unity imports exact copies under Assets/_Game/Art/CombatIdles/, with looping UI Image clips/controllers in Assets/_Game/Animations/CombatIdles/. PlayerDefinition and EnemyDefinition remain the owners of the animation references. Idle clips contain no attack events, transform curves, root motion, scale or position keys.
+
+Use Point filtering, no mipmaps/compression, 64 PPU and Full Rect meshes. Every frame in one character's loop has the same rectangle and bottom-center pivot. Rattlebones, Farmer and Pan Villager use fixed 64×64 rectangles.
+
+Bardley's source has 12 transparent bottom rows and actual contact at source y=51. Its Unity slices use one fixed 64×52 rectangle at texture y=12 for ALL frames, excluding only that empty padding. The 64×64 source cells and PNG bytes are unchanged. This resolves the earlier placement-pending warning for these production idles without moving, rescaling or recentering artwork per frame. The existing UI floor anchoring places each sprite's actual contact at its assigned floor.
+
+The historical static reference register and hashes elsewhere in this guide describe the original reference pack, not the later animated assets. Current animation hashes and provenance are in ArtSource/CombatIdles/Validation.json and its neighboring reports. Dungeon_Matcher_Art_References.png remains the supplied static reference board.
+
+### Animation review convention
+
+Inspect the loop at its actual timing, not only as a contact sheet. Check native-size readability, stable feet/contact points, body centering, grip continuity, silhouette, palette consistency, secondary-motion amplitude, and final-to-first transition. Matching frame counts alone does not establish matching style.
+
+Do not require an identical alpha mask across animation frames: pose changes naturally alter silhouettes. Do preserve canvas dimensions and the intended world/pivot alignment. Do not force duplicate first/last poses if they create an unintended double hold; the goal is a continuous transition.
+
+Recolor a whole animation with consistent material assignments across frames. Avoid frame-by-frame hue shifts, highlight flicker, new facial features, and asynchronous palette variants.
+
+## 12. Rejected approaches and lessons that must survive
+
+- Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
+- Generated high-resolution “pixel-style” reinterpretations changed her face, body, pose/proportions, and rendering. They are not approved references or substitutes for exact native pixel editing.
+- Keeping a 64 × 64 canvas while shrinking the character fails size preservation. Check occupied bounds/masks, not just image dimensions.
+- Bardley's 12-pixel translation shows that even an excellent recolor can have a production-placement issue.
+- A matching palette does not guarantee matching art. Geometry, face design, pixel density, shading shapes, and detail level also matter.
+- “Common enemy” does not mean “less carefully drawn” or “automatically smaller.” “Playable character” does not mean a larger arbitrary color count.
+- Do not apply character outline cleanup to locked gem/UI files or make all materials shiny like gems.
+- Do not preserve every early suggestion as a permanent rule: old Bardley green ramps, early idle timing, optional pan shading, and unresolved alignment must remain clearly distinguished.
+
+## 13. Documentation and approval workflow
+
+These are proposed organizational conventions for keeping future work consistent.
+
+Keep one clearly marked CURRENT guide. Store prior versions in an archive, not alongside the current source with ambiguous names. Use `reference`, `candidate`, `rejected`, `superseded`, and `pending` status labels; do not describe every attractive draft as locked.
+
+For each newly approved or carried-forward reference, record:
+- character identity and gameplay/visual role;
+- exact original and output filenames, hashes, native dimensions, bounds, and alignment;
+- exact palette grouped by material;
+- protected design landmarks and authorized changes;
+- positive reference, optional refinement notes, and unresolved issues;
+- approval/working-reference status, guide version, and change reason;
+- animation timing and pivot/baseline implications when relevant.
+
+Update the guide, palette data, reference board, and manifest together when the user approves a material change. Log what changed and what the new version supersedes. A minor clarification can increment a patch/minor version; a change to shared rendering or production defaults should be called out explicitly. Do not auto-publish a new global standard from one experimental sprite.
+
+Current repository location: `Docs/ArtDirection/`. Keep native reference PNGs, palette JSON, and the guide under version control; preserve originals separately. Reference boards are for inspection, not game imports. Do not edit synced read-only Project sources or commit anything merely because this guide proposes a folder layout.
+
+### New-chat handoff
+
+Keep the guide and the visual reference board in the Dungeon Matcher Project sources. Keep exact individual reference files available for pixel-level editing. A message that only links to a file is not the file's contents; attach the actual guide/reference file.
+
+Start the next task with the template in `templates/NEW_CHAT_STARTER.txt`. Use `templates/PROJECT_INSTRUCTIONS.txt` as a compact read-first rule. The full palettes and exceptions belong in the source guide, not just in a memory summary. A separate session needs the relevant files supplied or otherwise accessible; do not assume a prior sandbox path is available there.
+
+## 14. Evidence and provenance
+
+This guide synthesizes the current Dungeon Matcher art-direction conversation, its uploaded original/working assets, and retrieved earlier project context. Exact colors, sizes, alpha distributions, static mask comparisons, and animation timing tables were checked from the mounted files when this pack was created. The checksums and measurements are in `validation/Asset_Manifest.json`.
+
+Core world/visual framing comes from the project conversation and earlier project context. The provided pacing-and-balance document supports story-coherent escalation, not the exact art palettes. The attached `Design.txt` items visible in Project search contain link/creation messages rather than the full linked vision or roster documents; this guide does not pretend their missing full contents were reviewed. No new enemy roster, rank system, or balance rule is established here.
+
+Current working PNGs, copied unchanged:
+- Rattlebones: `137b1d66-1679-4902-88a4-0586b9279332.png` → `references/characters/Rattlebones_Reference.png`; SHA-256 `4c722f117439db7bb39ead27bded9b9910a4b72c001b8450fdf0815c56ca37bd`.
+- Farmer: `Pitchfork Farmer(2).png` → `references/characters/Farmer_Reference.png`; SHA-256 `f52904a316ebbdce1fab07ea3630e8241629f5603b43ce980c7ce51c2330c308`.
+- Pan Villager: `f1fcf215-46e1-4e02-8a07-3ff289f1d5ed.png` → `references/characters/Pan_Villager_Reference.png`; SHA-256 `83f12fb15b102f3b9f8f35d52ce3d5e80fc6b5e9940bcc54bc23cadc4f9e47e7`.
+- Bardley: `5ae5d12a-1394-4b49-b546-a3c903bdc851.png` → `references/characters/Bardley_Palette_Reference_Placement_Pending.png`; SHA-256 `a518f07a398c626510c357fe37bbba3ae9d00aa3e0e63c023a1603c49cebe728`.
+
+### v1.0 change record
+
+Initial consolidated art guide. Records exact working palettes for Rattlebones, Farmer, Pan Villager, and Bardley; locked gem/UI colors; editing boundaries; direct-file/no-GUI recolor preference; review checks; planted idle language; rejected redraw approaches; and Bardley's unresolved placement. Introduces explicit reference statuses, source manifest, and reusable task instructions. No art asset changes, game integration, repository commit, or Project-source upload were performed as part of making the pack.
+
+### v1.1 change record — 2026-09-20
+
+Moved the current guide and unchanged reference board into Docs/ArtDirection/. Documented the production nine-frame, 130 ms cadence for all four battle idles and the general review range for future idles. Recorded the scoped cheek/scarf polish, actual source/import paths, fixed Bardley padding exclusion and sprite-only Unity integration. The existing player HUD owner now spaces the full character/gem/health-bar stack before centering. Static-pack references and v1.0 measurements remain historical evidence; current animation checks live beside the production sources.
+
+**End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.

@@ -134,7 +134,7 @@
       0,
       255
     ],
-    "unique_frames": 6,
+    "unique_frames": 7,
     "png_matches_aseprite": true,
     "gif_matches_aseprite": true,
     "gif_loops_forever": true,
@@ -195,21 +195,21 @@
       ]
     ],
     "adjacent_pixel_differences_including_seam": [
-      0,
+      13,
       400,
       616,
       530,
       375,
       552,
       621,
-      400,
+      390,
       0
     ],
     "source_sha256": "ca7f60f64ced14fbc5f3a9aeb2118d9a6878569cf05ebf7d6d465c16387531bf",
     "files": {
-      "aseprite": "cf866241391a75d6111bc97c79fe526d9f20e8604cbc566f65ac5513709ddfd3",
-      "png": "621ae01f60e3cb676a99eeb61298ed987a1d9b636a1fedc8620a407dbb6b0341",
-      "gif": "69b6d98c017f5bc26690f1877548077509674886123adcca2b6b83cf0ffed619",
+      "aseprite": "86b7b8a30739ed4aabfc6f378efa1d85006559f25fa0f3a5a9cec74eb294b63b",
+      "png": "01164e329d584f8a4959e9c38e3f08f73a5ecf9ee3e83a7ad85752d78dcfc985",
+      "gif": "dfe636f35cd26e00fe9a8a267819c50a5c516991f79c34a1e82cdc98fe5ebc50",
       "json": "7a48f90a53ced7b8f659b570b29eda7f2f91832fcf75f7bbe65cfb4eecc1b627"
     }
   },
@@ -304,19 +304,19 @@
     "adjacent_pixel_differences_including_seam": [
       0,
       709,
-      692,
-      856,
-      365,
-      716,
+      693,
+      860,
+      371,
+      712,
       826,
-      806,
+      808,
       0
     ],
     "source_sha256": "6fc8d04390398c3589dbc5a510168e5343ad5bfc3017e16845f03884c531fe15",
     "files": {
-      "aseprite": "7f4710a92a2e280a90bdccb47c89989a1a474a712983d93d4595faf8a2db2dce",
-      "png": "33fe18e0c2bda21561a91ab5c588c556da3b1cb8908318b19b8c2abeb3486f0d",
-      "gif": "d62f89ec6bfd4091ac3c46d78b134ca38bb3af6e99dab77c161aac20ab8f21d4",
+      "aseprite": "5e1d3b718493229dcf2d503e0b30c632936da6b8b3f9c9657222a8e55f74e05e",
+      "png": "dc7e7b3695a191864c538b2b88cedba2cac100d6cb38ec5e6b544b32f0906470",
+      "gif": "1ea7018348c927a20997235354dec9d8c69440fb61701bce4c1eed988c20f8a9",
       "json": "d08626746c8c284f595fd4a3830105a1740568bd7c5ddb4724942881e1f8377d"
     }
   },

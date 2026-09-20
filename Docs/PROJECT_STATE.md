@@ -21,12 +21,12 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-09-20
-- **Current milestone:** Revised gameplay baseline plus a unified combat-idle art-source delivery
+- **Current milestone:** Revised gameplay baseline plus four unified combat idles integrated into Unity
 - **Current implementation branch:** `codex/idle-animation-family-recolor`
 - **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
 - **Art-pass base:** updated `main` at `6cfbde36a922c1b8fe4c262cba21ae9fe8c848cb`
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** The idle pass is art-source only and is not wired into Unity. Its editable files, sprite sheets, GIFs, comparison preview, and validation are in `ArtSource/CombatIdles/`. The earlier gameplay validation is in `DESIGN_V2_IMPLEMENTATION.md` and `DESIGN_V2_PLAYTESTS.md`; its merge authorization does not apply to this new art pass.
+- **Release status:** The four combat idles are wired into the existing player/enemy definitions on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159). Editable files, sheets, GIFs and art checks are in `ArtSource/CombatIdles/`; the production guide is in `Docs/ArtDirection/`. Integration evidence is recorded in `Docs/Validation/COMBAT_IDLE_VALIDATION.md`. Earlier gameplay merge authorization does not apply to this PR.
 
 ### What this document is
 
@@ -121,7 +121,9 @@ The current player cast includes the crowned skeleton **Sir RattleBones / Rattle
 
 `ArtSource/CombatIdles/` contains edited Rattlebones, Farmer, Pan Villager and Bardley idle sources, each with nine 64×64 frames at 130 ms (1.17 seconds). The latest correction in [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) coordinates Farmer and Pan Villager's head, blink and body dip with Rattlebones' turn-based idle rhythm. Farmer now uses complete connected poses from the user's open LibreSprite reference, replacing the preceding head/body splice that continued nodding during recovery. Pan Villager gains shoulder/waist compression while her pan and grip move together. Both close their eyes on frame six and reopen as they rise; repeated ready poses provide a short settled hold. Rattlebones and Bardley are unchanged by this latest pass; Bardley's existing face correction still follows its body in steps of at most one pixel. Every frame uses its approved palette, shared `#0A0D11` outline and binary transparency. See the [delivery notes](../ArtSource/CombatIdles/README.md), [family comparison](../ArtSource/CombatIdles/Preview.html), [frame/export checks](../ArtSource/CombatIdles/Validation.json), and [current motion checks](../ArtSource/CombatIdles/TurnBasedValidation.json). Earlier refinement/head-only reports now explicitly describe archived revisions.
 
-This is a source-art checkpoint, not a change to the shipped animation setup. Existing Unity imports, animator clips, scenes and gameplay are untouched. Bardley retains the animation's native y=51 contact line; the static palette reference's unresolved 12-pixel downward translation has not been adopted. Check pivots/alignment explicitly when this set is integrated into Unity. Visual review and frame/export checks were performed; Unity validation/runtime testing was not required or run for this art-only pass.
+The final localized polish changes only Farmer's lower-cheek roundness in frames 1 and 9 and Pan Villager's rear scarf-tail movement. All other pixels, including Rattlebones and Bardley, are unchanged from the preceding motion pass. The chosen shared timing remains 130 ms per frame, documented with general idle guidance in [the art-direction guide](ArtDirection/Dungeon_Matcher_Art_Direction.txt).
+
+The source PNGs are imported unchanged under `Assets/_Game/Art/CombatIdles/`, with new sprite-only UI clips/controllers selected by the existing four definitions. Bardley's source retains its y=51 contact line; one fixed Unity rectangle excludes the 12 transparent bottom rows in every frame. All pivots are bottom-center, and no pose is individually centered. The existing `PlayerHudCenteringController` now spaces and centers the complete sprite/gem/health-bar stack, including the modular bar whose legacy root Image is disabled. Scenes, prefabs and gameplay rules are unchanged. See [the Unity validation record](Validation/COMBAT_IDLE_VALIDATION.md) for actual checks and known limits.
 
 ## Locked/preserved art direction
 

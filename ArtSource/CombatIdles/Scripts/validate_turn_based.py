@@ -19,8 +19,10 @@ for n,fs in [('Farmer',farmer),('PanVillager',pan)]:
 # Every Farmer pose retains the complete user reference's silhouette, including
 # shoulders, torso, arms, prop and legs. No independently delayed head cutout.
 source_frames=[4,4,5,6,7,8,6,5,4]
-for im,i in zip(farmer,source_frames):
-    assert im.getchannel('A').tobytes()==reference[i].getchannel('A').tobytes(),'Farmer reference geometry'
+for f,(im,i) in enumerate(zip(farmer,source_frames)):
+    # Final user-requested cheek rounding changes three contour pixels in 1/9.
+    cheek_alpha={(21,31),(22,33),(24,34)} if f in (0,8) else set()
+    assert all(im.getpixel((x,y))[3]==reference[i].getpixel((x,y))[3] for y in range(64) for x in range(64) if (x,y) not in cheek_alpha),'Farmer reference geometry'
 farmer_eye=[]
 for im,top,bottom in zip(farmer,[26,26,26,28,30,31,28,26,26],[28,28,29,30,32,33,30,29,28]):
     farmer_eye.append(sum(rgb(im,24,y)=='0A0D11' for y in range(top,bottom+1)))
@@ -60,7 +62,7 @@ for n in ['Rattlebones','Bardley']:
     unchanged[n]=previous[n]['files']
 report={'frame_ms':130,'loop_ms':1170,'canvas':[64,64],
  'Farmer':{'original_reference_frames_one_based':[i+1 for i in source_frames],
-   'entire_reference_pose_alpha_preserved':True,'head_top_y':farmer_top,'eye_height_px':farmer_eye,
+   'reference_pose_alpha_preserved_except_authorized_cheek_rounding':True,'head_top_y':farmer_top,'eye_height_px':farmer_eye,
    'closed_eye_frame':6,'reopens_during_recovery':True,'off_palette_pixels':0},
  'PanVillager':{'head_top_y':pan_top,'eye_height_px':pan_eye,'closed_eye_frame':6,
    'reopens_during_recovery':True,'pan_and_grip_offset_y':offsets,'rigid_pan_pixels_preserved':True,

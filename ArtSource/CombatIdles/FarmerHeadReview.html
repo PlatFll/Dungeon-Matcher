@@ -9,13 +9,13 @@
 <nav><button id="play">Pause</button><button id="back">Previous frame</button><button id="next">Next frame</button><button id="restart">Restart aligned</button><button id="seam">Inspect loop seams</button><button id="background">Light background</button></nav>
 <main>
 <article data-count="11" data-offset="4" data-path="Comparisons/Farmer_Original.png"><h2>Original Farmer</h2><p>Original expressive poses and original body.<br>11 frames · 1.43-second loop.</p></article>
-<article data-count="9" data-offset="0" data-path="Comparisons/Farmer_PreTurnBased.png"><h2>Previous revision</h2><p>Separate head timing with a late recovery nod.<br>9 frames · 1.17-second loop.</p></article>
-<article data-count="9" data-offset="0" data-path="Farmer_Idle.png" id="corrected"><h2>New correction</h2><p>Connected reference poses; blink at the bottom.<br>9 frames · 1.17-second loop.</p></article>
+<article data-count="9" data-offset="0" data-path="Comparisons/Farmer_PreFinalPolish.png"><h2>Previous revision</h2><p>Before the localized cheek correction.<br>9 frames · 1.17-second loop.</p></article>
+<article data-count="9" data-offset="0" data-path="Farmer_Idle.png" id="corrected"><h2>New correction</h2><p>Fuller cheeks in frames 1 and 9 only.<br>9 frames · 1.17-second loop.</p></article>
 </main>
 <footer><p>The original starts on its raised fifth frame for an initial pose comparison, then runs its entire original loop. The two revised loops stay synchronized. No timing is stretched to force the original into nine frames. “Inspect loop seams” alternates each animation’s own final and first frames at 130 ms.</p><p><a href="Farmer_Idle.aseprite">Revised LibreSprite file</a> · <a href="Farmer_Idle.png">Sprite sheet</a> · <a href="Farmer_Idle.gif">GIF</a> · <a href="Preview.html">Full idle family</a></p></footer>
 <script>
 const candidate=new URLSearchParams(location.search).has('candidate');
-if(candidate)document.querySelector('#corrected').dataset.path='Review/Farmer_TurnBased.png';
+if(candidate)document.querySelector('#corrected').dataset.path='Review/Farmer_FinalPolish.png';
 const cards=[...document.querySelectorAll('article')];
 for(const card of cards){const n=+card.dataset.count,path=card.dataset.path;card.insertAdjacentHTML('beforeend',`<div class="stage"><div class="sprite big" role="img" aria-label="${card.querySelector('h2').textContent} at 4x" style="background-image:url('${path}');background-size:${n*256}px 256px"></div></div><div class="native"><div class="sprite" role="img" aria-label="${card.querySelector('h2').textContent} at native size" style="background-image:url('${path}')"></div><span>Native 64 × 64<br>1× pixels</span></div><output></output>`)}
 let elapsed=0,playing=true,seams=false,last=performance.now();const play=document.querySelector('#play');
