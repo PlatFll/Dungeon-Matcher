@@ -1,9 +1,9 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.1
+**Version:** 1.2
 **Compiled:** 2026-09-19
-**Updated for production idles:** 2026-09-20
-**Scope:** visual identity, palettes, sprite editing, review, and idle-animation direction.
+**Updated for production combat animations:** 2026-09-20
+**Scope:** visual identity, palettes, sprite editing, review, idle and combat-action animation direction.
 **Owner:** the user; new design approvals remain the user's decision.
 
 This repository edition is the durable source of truth for the art direction established in this project conversation. It records the versions carried forward as working references, the rejected approaches, and unresolved issues. It does not retroactively approve every historical suggestion or authorize changes to shipped assets.
@@ -272,7 +272,7 @@ This is a source-specific exception, not a global threshold rule for every sprit
 
 The current Bardley recolor preserves that solid shape but moves it 12 pixels downward. Original solid bounds are `(4, 11)–(57, 51)`; current recolor bounds are `(4, 23)–(57, 63)`. Its palette and rendering were carried forward, but that alignment is not settled.
 
-Do not silently repair or canonize the offset while documenting it. Before replacement in animation/game assets, either restore the original alignment without scaling or deliberately adopt a new baseline across all relevant frames and placement settings. That historical static file remains **palette reference / placement pending**. The current production animation keeps the original alignment and resolves UI placement through the fixed import rectangle documented in section 11, under the user's request to integrate without centering issues.
+Do not silently repair or canonize the offset while documenting it. Before replacement in animation/game assets, either restore the original alignment without scaling or deliberately adopt a new baseline across all relevant frames and placement settings. That historical static file remains **palette reference / placement pending**. The current production animations deliberately adopt the y=63 baseline across Bardley's idle and ability, as documented in section 11. The old static-file label remains historical provenance.
 
 ## 11. Idle-animation direction
 
@@ -301,15 +301,15 @@ Keep feet/slime contact planted, close the blink through the low pose and reopen
 
 ### Current production files and Unity placement
 
-The current editable sources, 576×64 PNG sheets, GIFs, JSON timing and pixel-validation reports live in ArtSource/CombatIdles/. The PNG sheets remain nine 64×64 cells. The latest localized correction changes only Farmer's lower cheek contour in frames 1 and 9 and Pan Villager's rear scarf tail. Eyes, mouths, other Farmer frames, and Rattlebones/Bardley pixels stay unchanged in that pass.
+The current editable sources, 576×64 PNG sheets, GIFs, JSON timing and pixel-validation reports live in ArtSource/CombatIdles/. The PNG sheets remain nine 64×64 cells. The earlier cheek/scarf pass is archived. The current Farmer idle is the user's subsequently hand-adjusted LibreSprite version, preserved pixel-for-pixel and at its original nine × 130 ms timing. Pan Villager's scarf polish and Rattlebones' idle remain unchanged. Bardley's idle is translated down exactly 12 pixels, without rescaling or lost pixels, to share the ability's baseline.
 
 Unity imports exact copies under Assets/_Game/Art/CombatIdles/, with looping UI Image clips/controllers in Assets/_Game/Animations/CombatIdles/. PlayerDefinition and EnemyDefinition remain the owners of the animation references. Idle clips contain no attack events, transform curves, root motion, scale or position keys.
 
 Use Point filtering, no mipmaps/compression, 64 PPU and Full Rect meshes. Every frame in one character's loop has the same rectangle and bottom-center pivot. Rattlebones, Farmer and Pan Villager use fixed 64×64 rectangles.
 
-Bardley's source has 12 transparent bottom rows and actual contact at source y=51. Its Unity slices use one fixed 64×52 rectangle at texture y=12 for ALL frames, excluding only that empty padding. The 64×64 source cells and PNG bytes are unchanged. This resolves the earlier placement-pending warning for these production idles without moving, rescaling or recentering artwork per frame. The existing UI floor anchoring places each sprite's actual contact at its assigned floor.
+All four current production idles now use fixed 64×64 slices. Bardley's idle and ability contact source y=63; the previous idle-only 64×52 padding crop is superseded. Idle and cast therefore retain identical source size, pixel scale and floor position. Never trim or recenter individual poses. Enemy attacks expand symmetrically to 96×64: the original 64-pixel pose moves 16 pixels right, and the bottom-center pivot moves from (32,0) to (48,0) in Unity. This preserves the same world center and floor.
 
-The historical static reference register and hashes elsewhere in this guide describe the original reference pack, not the later animated assets. Current animation hashes and provenance are in ArtSource/CombatIdles/Validation.json and its neighboring reports. Dungeon_Matcher_Art_References.png remains the supplied static reference board.
+The historical static reference register and hashes elsewhere in this guide describe the original reference pack, not the later animated assets. Current action and revised-idle checks are in ArtSource/CombatActions/Validation.json and AssetManifest.json. Earlier idle reports describe their archived revisions. Dungeon_Matcher_Art_References.png remains the supplied static reference board.
 
 ### Animation review convention
 
@@ -318,6 +318,45 @@ Inspect the loop at its actual timing, not only as a contact sheet. Check native
 Do not require an identical alpha mask across animation frames: pose changes naturally alter silhouettes. Do preserve canvas dimensions and the intended world/pivot alignment. Do not force duplicate first/last poses if they create an unintended double hold; the goal is a continuous transition.
 
 Recolor a whole animation with consistent material assignments across frames. Avoid frame-by-frame hue shifts, highlight flicker, new facial features, and asynchronous palette variants.
+
+## 11A. Combat-action family — production defaults, 2026-09-20
+
+The user delegated frame count, timing, attack design and ability polish to art direction for this pass. These are the current production defaults, open to later user refinement. The game is a real-time match-3 battler; the **visual acting** borrows the patient, planted charm of classic turn-based RPGs.
+
+Keep the same recognizable head, body proportions, material ramps, dark outline and top-left lighting as the approved idles. Anticipation compresses the shoulders/body over planted feet; action travels through the torso into the held prop; recovery settles back to the exact ready pose. Faces belong to the body. Tools remain rigid, with hands visibly carrying them. Secondary cape/scarf/feather motion supports the action and follows the body. Do not add elastic handles, detached hands, floating feet, unrelated face motion, blur, subpixel interpolation or palette drift.
+
+### Default auto-attacks
+
+Eight drawings, **680 ms**, played once:
+
+| Frame | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| Exposure (ms) | 80 | 80 | 120 | 40 | 120 | 80 | 80 | 80 |
+| Acting | Ready | Gather | Anticipation | Fast travel | Impact | Follow-through | Recovery | Ready |
+
+**Impact is frame 5, beginning at 320 ms.** Damage reaches the player on that rendered pose, once per accepted attack. Do not damage on frame 1 or attach the hit to an arbitrary timer unrelated to the clip. Keep the recovery within the existing enemy action ownership. The final sample emits completion at 670 ms, and the controller returns to idle at 680 ms. The runtime retains a pause-aware missing-event fallback, cancellation and duplicate guards.
+
+Pan Villager uses a readable overhead wind-up and decisive iron-pan strike. The left edge of the pan disk is completed where the supplied source was clipped. Farmer uses a short diagonal pitchfork thrust, both hands and the entire fork moving together, with a shoulder lean and planted boots. Both use 96×64 action canvases; expand space around the body without shrinking it. Do not stack the old generic UI lunge on top of authored movement.
+
+### Default player ability casts
+
+Ten drawings, **880 ms**, played once on accepted activation:
+
+| Frame | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Exposure (ms) | 80 | 80 | 120 | 80 | 120 | 80 | 80 | 80 | 80 | 80 |
+
+Frame 5 begins at **360 ms** and holds the expressive release. Rattlebones gives a compact royal command, with bone, gold and cape remaining distinct. Bardley brings the pipe to his face, plays with closed eyes, and returns to his established smile; his slime base remains on the bottom row throughout. Current casts use 64×64 cells. Ability effects remain owned by the accepted gameplay runtime; this presentation pass does not delay Royal Decree or Cracked Gems gameplay to a new animation event.
+
+A persistent ability effect must not loop or retrigger the cast. Rejected or unfunded activations do not animate. Return to the selected character's existing idle automatically.
+
+### Authoring, placement and review
+
+Start new ordinary attacks at eight drawings and casts at ten, then choose distinct useful key poses. Frame count is a production default, not a reason to insert duplicates or discard a necessary action pose. Fast travel, a readable contact/release hold and controlled recovery matter more than evenly spaced drawings. Deliberate heavy attacks may need a different anticipation, documented with their impact frame and total duration.
+
+Sources: ArtSource/CombatActions/. Preserve supplied originals there. Edit cels and timings in LibreSprite, export untrimmed horizontal PNG sheets plus JSON durations, and verify every exported frame against its native cel. Keep clean binary alpha for these characters and only their approved colors. Fixed full rectangles, bottom-center pivots, Point filtering, no mipmaps/compression and 64 PPU apply to idle and action. Unity uses 100 Hz clip sampling to preserve millisecond exposures without an extra endpoint tick.
+
+Review actual idle → action → idle playback at game speed and native size, then inspect each pose. Verify palette/materials, alpha, unclipped props, hand contact, stable ground, fixed center and scale across all states. In the production scene test both portrait heights, all frames, actual ability activation, hit-frame damage, duplicate events, pause longer than the fallback timeout, cancellation/restart and absent animation. Numeric palette checks do not replace visual shading review.
 
 ## 12. Rejected approaches and lessons that must survive
 
@@ -374,5 +413,9 @@ Initial consolidated art guide. Records exact working palettes for Rattlebones, 
 ### v1.1 change record — 2026-09-20
 
 Moved the current guide and unchanged reference board into Docs/ArtDirection/. Documented the production nine-frame, 130 ms cadence for all four battle idles and the general review range for future idles. Recorded the scoped cheek/scarf polish, actual source/import paths, fixed Bardley padding exclusion and sprite-only Unity integration. The existing player HUD owner now spaces the full character/gem/health-bar stack before centering. Static-pack references and v1.0 measurements remain historical evidence; current animation checks live beside the production sources.
+
+### v1.2 change record — 2026-09-20
+
+Adopts the user's adjusted Farmer idle unchanged. Adds the eight-frame Farmer/Pan auto-attack and ten-frame Bardley/Rattlebones cast defaults, exact timing/impact checkpoints, rigid-prop acting, full-canvas source exports and in-game lifecycle review. Bardley now consistently stands at y=63 in 64×64 idle and ability frames, superseding the prior Unity padding crop. Palette/reference-board files are unchanged because no palette or character redesign was introduced.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.

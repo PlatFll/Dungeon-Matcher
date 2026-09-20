@@ -83,6 +83,10 @@ public sealed class EnemyDefinition : ScriptableObject
     private bool timeAutoAttackFromAnimation;
 
     [SerializeField]
+    [Tooltip("The sprite clip supplies the attack movement and AutoAttackComplete event. Suppresses the generic UI lunge.")]
+    private bool useAuthoredAutoAttackMotion;
+
+    [SerializeField]
     [Tooltip(
         "When enabled, the special ability waits for the AbilityImpact " +
         "Animation Event before applying its gameplay effect."
@@ -359,6 +363,9 @@ public sealed class EnemyDefinition : ScriptableObject
 
     public bool TimeAutoAttackFromAnimation =>
         timeAutoAttackFromAnimation;
+
+    public bool UseAuthoredAutoAttackMotion =>
+        timeAutoAttackFromAnimation && useAuthoredAutoAttackMotion;
 
     public bool TimeSpecialAbilityFromAnimation =>
         timeSpecialAbilityFromAnimation;

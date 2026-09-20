@@ -70,8 +70,7 @@ public static class CombatIdleValidation
             Check(frames.Length == 9, name + " nine imported frames");
             for (int i = 0; i < 9; i++)
             {
-                int padding = name == "Bardley" ? 12 : 0;
-                Check(frames[i].rect == new Rect(i * 64, padding, 64, 64 - padding), name + " fixed frame rectangle");
+                Check(frames[i].rect == new Rect(i * 64, 0, 64, 64), name + " fixed frame rectangle");
                 Check(frames[i].pivot == new Vector2(32, 0), name + " fixed bottom-center pivot");
             }
             var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(CombatIdleImporter.AnimationRoot + "/" + name + "_Idle.anim");

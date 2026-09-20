@@ -50,14 +50,12 @@ public static class CombatIdleImporter
             var sheet = JsonUtility.FromJson<Sheet>(File.ReadAllText(source + ".json"));
             if (sheet.frames == null || sheet.frames.Length != 9 || sheet.frames.Any(f => f.duration <= 0))
                 throw new InvalidDataException("Invalid combat idle timing: " + character);
-            // One fixed crop excludes Bardley's 12 empty bottom rows. The PNG
-            // stays byte-identical and no frame is individually trimmed/centered.
-            int bottomPadding = character == "Bardley" ? 12 : 0;
+            // All production sources share a fixed 64px canvas and drawn floor.
 #pragma warning disable CS0618 // Supported TextureImporter authoring API; retain named sprite IDs on reimport.
             importer.spritesheet = Enumerable.Range(0, 9).Select(i => new SpriteMetaData
             {
                 name = stem + "_" + i.ToString("00"),
-                rect = new Rect(i * 64, bottomPadding, 64, 64 - bottomPadding),
+                rect = new Rect(i * 64, 0, 64, 64),
                 alignment = (int)SpriteAlignment.BottomCenter,
                 pivot = new Vector2(0.5f, 0f)
             }).ToArray();

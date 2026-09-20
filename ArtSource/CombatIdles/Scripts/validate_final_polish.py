@@ -2,11 +2,11 @@
 import json,hashlib
 from inspect_idles import ROOT,read_ase
 
-report={}
+report={'status':'Historical final-cheek/scarf pass; checked against Originals/BeforeCombatActions'}
 cheeks={(21,31),(22,31),(23,32),(22,33),(23,33),(24,33),(38,33),(39,33),(40,33),(24,34),(26,34),(27,34),(37,34)}
 for name in ['Farmer','PanVillager']:
     before,old_ms=read_ase(ROOT/'Originals/BeforeFinalPolish'/f'{name}_Idle.aseprite')
-    after,ms=read_ase(ROOT/f'{name}_Idle.aseprite')
+    after,ms=read_ase(ROOT/'Originals/BeforeCombatActions'/f'{name}_Idle.aseprite')
     assert ms==old_ms==[130]*9
     changes=[]
     for f,(a,b) in enumerate(zip(before,after)):
@@ -22,7 +22,7 @@ for name in ['Farmer','PanVillager']:
     report[name]={'changed_pixels_per_frame':changes,'outside_authorized_scope':0,'durations_ms':ms}
 previous=json.loads((ROOT/'TurnBasedValidation.json').read_text())['unchanged_character_files']
 for name in ['Rattlebones','Bardley']:
-    assert all(hashlib.sha256((ROOT/f'{name}_Idle.{ext}').read_bytes()).hexdigest()==digest for ext,digest in previous[name].items())
+    assert all(hashlib.sha256((ROOT/'Originals/BeforeCombatActions'/f'{name}_Idle.{ext}').read_bytes()).hexdigest()==digest for ext,digest in previous[name].items())
     report[name]={'all_delivery_files_unchanged':True}
 (ROOT/'FinalPolishValidation.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

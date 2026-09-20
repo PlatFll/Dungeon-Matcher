@@ -19,6 +19,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private EnemyActor enemyActor;
     private EnemyAutoAttack enemyAutoAttack;
     private CharacterAnimationPlayback animationPlayback;
+    private int queuedImpactPresentationId;
 
     public static EnemyActionAnimationPresenter EnsureInstalled(
         GameObject enemyObject)
@@ -68,6 +69,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         {
             animationPlayback.AutoAttackImpactReached +=
                 HandleAutoAttackImpactReached;
+            animationPlayback.AutoAttackCompleted += HandleAutoAttackCompleted;
 
             animationPlayback.AbilityImpactReached +=
                 HandleAbilityImpactReached;
@@ -76,6 +78,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
     private void OnDisable()
     {
+        queuedImpactPresentationId = 0;
         if (enemyAutoAttack != null)
         {
             enemyAutoAttack.AttackStarted -=
@@ -92,6 +95,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         {
             animationPlayback.AutoAttackImpactReached -=
                 HandleAutoAttackImpactReached;
+            animationPlayback.AutoAttackCompleted -= HandleAutoAttackCompleted;
 
             animationPlayback.AbilityImpactReached -=
                 HandleAbilityImpactReached;
@@ -138,6 +142,19 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private void HandleAttackStarted(
         EnemyAutoAttack attack)
     {
+        queuedImpactPresentationId = 0;
+        // Restart the authored clip for this accepted hit. A cancelled prior
+        // action must not donate its later impact event to a new sequence.
+        int state = Animator.StringToHash("Base Layer.AutoAttack");
+        if (enemyActor != null && enemyActor.Definition != null &&
+            enemyActor.Definition.UseAuthoredAutoAttackMotion && animator != null &&
+            animator.isActiveAndEnabled && animator.runtimeAnimatorController != null &&
+            animator.HasState(0, state))
+        {
+            animator.ResetTrigger(AutoAttackTrigger);
+            animator.Play(state, 0, 0f);
+            return;
+        }
         PlayTrigger(AutoAttackTrigger);
     }
 
@@ -151,8 +168,22 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     {
         if (enemyAutoAttack != null)
         {
-            enemyAutoAttack.ResolveAnimationImpact();
+            if (enemyActor != null && enemyActor.Definition != null &&
+                enemyActor.Definition.UseAuthoredAutoAttackMotion)
+                queuedImpactPresentationId = enemyAutoAttack.ActiveAttackPresentationId;
+            else enemyAutoAttack.ResolveAnimationImpact();
         }
+    }
+
+    private void LateUpdate()
+    {
+        // Unity emits Animation Events before applying this update's Image
+        // sprite curve. Resolve later in the SAME rendered frame, once the
+        // impact drawing is applied, retaining the accepted action's identity.
+        int id = queuedImpactPresentationId;
+        queuedImpactPresentationId = 0;
+        if (id > 0 && enemyAutoAttack != null && enemyAutoAttack.ActiveAttackPresentationId == id)
+            enemyAutoAttack.ResolveAnimationImpact();
     }
 
     private void HandleAbilityImpactReached()
@@ -161,6 +192,13 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         {
             enemyActor.NotifySpecialAbilityImpactReached();
         }
+    }
+
+    private void HandleAutoAttackCompleted()
+    {
+        if (enemyAutoAttack != null && enemyActor != null &&
+            enemyActor.Definition != null && enemyActor.Definition.UseAuthoredAutoAttackMotion)
+            enemyAutoAttack.CompleteAttackPresentation(enemyAutoAttack.ActiveAttackPresentationId);
     }
 
     private void PlayTrigger(int triggerHash)

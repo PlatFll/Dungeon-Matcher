@@ -3,7 +3,7 @@ import hashlib,json,sys
 from inspect_idles import ROOT,read_ase,color_counts
 
 candidate='--candidate' in sys.argv
-def frames(n):return read_ase(ROOT/(f'Review/{n}_TurnBased.aseprite' if candidate else f'{n}_Idle.aseprite'))
+def frames(n):return read_ase(ROOT/(f'Review/{n}_TurnBased.aseprite' if candidate else f'Originals/BeforeCombatActions/{n}_Idle.aseprite'))
 def rgb(im,x,y):return '%02X%02X%02X'%im.getpixel((x,y))[:3]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 palette=json.loads((ROOT/'Scripts/palettes.json').read_text())
@@ -55,12 +55,12 @@ assert pan_eye==[4,4,4,4,2,1,2,4,4]
 assert pan_top[:6]==sorted(pan_top[:6]) and pan_top[5:]==sorted(pan_top[5:],reverse=True)
 
 unchanged={}
-previous=json.loads((ROOT/'Validation.json').read_text())
+previous=json.loads((ROOT/'Originals/BeforeCombatActions/Validation.json').read_text())
 for n in ['Rattlebones','Bardley']:
     for ext,h in previous[n]['files'].items():
-        assert sha(ROOT/f'{n}_Idle.{ext}')==h,(n,ext,'changed')
+        assert sha(ROOT/'Originals/BeforeCombatActions'/f'{n}_Idle.{ext}')==h,(n,ext,'changed')
     unchanged[n]=previous[n]['files']
-report={'frame_ms':130,'loop_ms':1170,'canvas':[64,64],
+report={'status':'Historical motion pass; non-candidate checks target Originals/BeforeCombatActions','frame_ms':130,'loop_ms':1170,'canvas':[64,64],
  'Farmer':{'original_reference_frames_one_based':[i+1 for i in source_frames],
    'reference_pose_alpha_preserved_except_authorized_cheek_rounding':True,'head_top_y':farmer_top,'eye_height_px':farmer_eye,
    'closed_eye_frame':6,'reopens_during_recovery':True,'off_palette_pixels':0},
