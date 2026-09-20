@@ -20,7 +20,8 @@ for name,allowed in palettes.items():
     if name=='Rattlebones':
         assert all(a.getchannel('A').tobytes()==b.getchannel('A').tobytes() for a,b in zip(frames,original))
     if name=='Farmer':
-        assert all(im.getchannel('A').crop((0,62,64,64)).tobytes()==original[0].getchannel('A').crop((0,62,64,64)).tobytes() for im in frames)
+        # The rigid tool can descend beside the boots; compare the foot region itself.
+        assert all(im.getchannel('A').crop((20,62,43,64)).tobytes()==original[0].getchannel('A').crop((20,62,43,64)).tobytes() for im in frames)
     if name=='PanVillager':
         assert len(set(im.crop((0,63,64,64)).tobytes() for im in frames))==1
     if name=='Bardley':

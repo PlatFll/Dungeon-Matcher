@@ -159,25 +159,13 @@
       ],
       [
         1,
+        7,
+        56,
+        64
+      ],
+      [
+        1,
         8,
-        56,
-        64
-      ],
-      [
-        1,
-        9,
-        56,
-        64
-      ],
-      [
-        1,
-        9,
-        56,
-        64
-      ],
-      [
-        1,
-        9,
         56,
         64
       ],
@@ -192,24 +180,36 @@
         7,
         56,
         64
+      ],
+      [
+        1,
+        7,
+        56,
+        64
+      ],
+      [
+        1,
+        7,
+        56,
+        64
       ]
     ],
     "adjacent_pixel_differences_including_seam": [
-      127,
-      399,
-      742,
-      452,
-      209,
-      356,
-      687,
-      475,
-      727
+      25,
+      798,
+      434,
+      786,
+      4,
+      799,
+      446,
+      407,
+      387
     ],
     "source_sha256": "ca7f60f64ced14fbc5f3a9aeb2118d9a6878569cf05ebf7d6d465c16387531bf",
     "files": {
-      "aseprite": "1a6b58cbab8f57d1de9c38c225185bc81e7600d8a78763e31b3d2b56f4a469ba",
-      "png": "557df34cfbcc77d029385e010548f84e4c46086de901c4889980aa24d91760f1",
-      "gif": "e8430ee324d3b2e0c0c8abc67f3362f37848b5cd2f9135c99bc0412085066df7",
+      "aseprite": "aed04b1edc0e63d378c9c8dd262b20b0684368197253dd5ca3b174ed267c93ef",
+      "png": "237ef6905f4c46cfc66a257950ab44e03c79ae864af2055bae43f904daf64d57",
+      "gif": "68c6caf49a9a642d9650cf525368b825273421a74c21ab6625d0468a44e0dd3d",
       "json": "7a48f90a53ced7b8f659b570b29eda7f2f91832fcf75f7bbe65cfb4eecc1b627"
     }
   },
@@ -409,21 +409,21 @@
       ]
     ],
     "adjacent_pixel_differences_including_seam": [
-      258,
-      737,
+      226,
+      707,
       537,
-      847,
-      578,
-      208,
+      850,
+      581,
+      211,
       648,
-      599,
+      565,
       561
     ],
     "source_sha256": "8d1d6e2f36d48c40174d773589d5fc1ce716376c54446b64e01e2e4fea2f79d9",
     "files": {
-      "aseprite": "5660290fa91d054ee364b86af82879b55690f3c636de75abb883afcf09a0bdbe",
-      "png": "51b03beaef1a10eb07f4bde0894fa273f93d21a1d4b0a749b75f2009321d09b4",
-      "gif": "e792cb8fed7e4c9cb9fed92b937d0b8dc4c4ac9ca2c506c7f1c16db7e619ae54",
+      "aseprite": "9f32f4e922f5a9e0f4cffa5ebd17b9b4bbf018f35a7ac8dd424f3f2fe4089de8",
+      "png": "85a5523168c5292e2c8eb57561f17b89800646136a2d1afe7a7f47130b951213",
+      "gif": "4c738b77b24859e0022b9d8b0e8a0be3115d04f09bca945f365db5bacff14711",
       "json": "dbe96b4fc8a0fd6124500311df997bab239cc587a589d807179c84ee7467ff5a"
     }
   }
