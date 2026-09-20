@@ -18,11 +18,13 @@ MonoBehaviour:
   description: The first special enemy. Every five valid player moves he permanently
     mines one board tile until he is defeated.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 5ba3c33aa2b00f446b0808bdb03e79e0, type: 3}
-  animationControllerOverride: {fileID: 9100000, guid: 0acfaf813008cd94bac86692786e7e6d, type: 2}
+  fallbackVisualSprite: {fileID: 937209471109302820, guid: 3c018a83580437240a72db0c116663b2, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 9bb7f877f96d88041a5634c3ca9bf9aa, type: 2}
   visualSize: {x: 140, y: 140}
   timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
   timeSpecialAbilityFromAnimation: 1
+  useAuthoredSpecialAbilityMotion: 1
   baseMaxHealth: 50
   baseDamage: 6
   baseAttackInterval: 11

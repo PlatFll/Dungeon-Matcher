@@ -14,20 +14,27 @@ public static class CombatIdleImporter
     public const string ArtRoot = "Assets/_Game/Art/CombatIdles";
     public const string AnimationRoot = "Assets/_Game/Animations/CombatIdles";
     public static readonly string[] Characters = { "Rattlebones", "Farmer", "PanVillager", "Bardley" };
+    public static readonly string[] LocalEnemies = { "Miner", "BasketVillager", "BarricadeVillager" };
 
-    [Serializable] private sealed class Frame { public int duration; }
+    [Serializable] private sealed class Size { public int w, h; }
+    [Serializable] private sealed class Frame { public int duration; public Size sourceSize; }
     [Serializable] private sealed class Sheet { public Frame[] frames; }
 
     [MenuItem("Dungeon Matcher/Art/Import Combat Idles")]
     public static void Run()
+        => Import(Characters);
+
+    public static void ImportLocalEnemies() => Import(LocalEnemies);
+
+    private static void Import(IEnumerable<string> characters)
     {
         Directory.CreateDirectory(ArtRoot);
         Directory.CreateDirectory(AnimationRoot);
         var definitionTexts = new Dictionary<string, string>();
-        foreach (string character in Characters)
+        foreach (string character in characters)
         {
             string stem = character + "_Idle";
-            string source = "ArtSource/CombatIdles/" + stem;
+            string source = (LocalEnemies.Contains(character) ? "ArtSource/LocalEnemies/" : "ArtSource/CombatIdles/") + stem;
             string atlasPath = ArtRoot + "/" + stem + ".png";
             File.Copy(source + ".png", atlasPath, true);
             AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceSynchronousImport);
@@ -50,12 +57,15 @@ public static class CombatIdleImporter
             var sheet = JsonUtility.FromJson<Sheet>(File.ReadAllText(source + ".json"));
             if (sheet.frames == null || sheet.frames.Length != 9 || sheet.frames.Any(f => f.duration <= 0))
                 throw new InvalidDataException("Invalid combat idle timing: " + character);
-            // All production sources share a fixed 64px canvas and drawn floor.
+            int width = sheet.frames[0].sourceSize.w, height = sheet.frames[0].sourceSize.h;
+            if (width <= 0 || height <= 0 || sheet.frames.Any(f => f.sourceSize.w != width || f.sourceSize.h != height))
+                throw new InvalidDataException("Inconsistent idle canvases: " + character);
+            // Extra prop room changes the canvas, never the character's texel scale.
 #pragma warning disable CS0618 // Supported TextureImporter authoring API; retain named sprite IDs on reimport.
             importer.spritesheet = Enumerable.Range(0, 9).Select(i => new SpriteMetaData
             {
                 name = stem + "_" + i.ToString("00"),
-                rect = new Rect(i * 64, 0, 64, 64),
+                rect = new Rect(i * width, 0, width, height),
                 alignment = (int)SpriteAlignment.BottomCenter,
                 pivot = new Vector2(0.5f, 0f)
             }).ToArray();
@@ -123,7 +133,7 @@ public static class CombatIdleImporter
             File.WriteAllText(pair.Key, preserved);
             AssetDatabase.ImportAsset(pair.Key, ImportAssetOptions.ForceSynchronousImport);
         }
-        Debug.Log("Combat idle import complete: four controllers, nine frames each; source pixels preserved.");
+        Debug.Log("Combat idle import complete: nine frames per controller; source pixels preserved.");
     }
 
     public static Sprite[] LoadFrames(string character) => AssetDatabase.LoadAllAssetsAtPath(

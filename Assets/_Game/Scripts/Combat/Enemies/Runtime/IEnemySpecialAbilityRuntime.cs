@@ -76,9 +76,15 @@ internal sealed class EnemySpecialActionAvailability
             return;
         }
 
-        if (wasDeferredByStagger &&
+        // Authored contact must occur while this request owns a settled board.
+        // Starting the clip behind another queued mutation could play its hit
+        // before the board is able to apply the corresponding effect.
+        bool needsBoardForContact = enemyActor.Definition != null &&
+            enemyActor.Definition.UseAuthoredSpecialAbilityMotion;
+        if ((wasDeferredByStagger || needsBoardForContact) &&
             boardController.IsBusy)
         {
+            wasDeferredByStagger = true;
             EnsureBoardIdleRetry();
             return;
         }

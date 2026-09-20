@@ -93,6 +93,10 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private bool timeSpecialAbilityFromAnimation;
 
+    [SerializeField]
+    [Tooltip("The authored Ability clip owns recovery until AbilityComplete. Missing events retain a bounded gameplay fallback.")]
+    private bool useAuthoredSpecialAbilityMotion;
+
     [Header("Base Combat Stats")]
 
     [SerializeField, Min(1)]
@@ -369,6 +373,9 @@ public sealed class EnemyDefinition : ScriptableObject
 
     public bool TimeSpecialAbilityFromAnimation =>
         timeSpecialAbilityFromAnimation;
+
+    public bool UseAuthoredSpecialAbilityMotion =>
+        timeSpecialAbilityFromAnimation && useAuthoredSpecialAbilityMotion;
 
     /*
      * Compatibility property for the current WaveController spawn path.

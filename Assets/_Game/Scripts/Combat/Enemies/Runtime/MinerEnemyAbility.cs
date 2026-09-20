@@ -274,11 +274,10 @@ public sealed class MinerEnemyAbility :
             impactEnemy
         );
 
-        /*
-         * The gameplay-critical frame has happened. Release action ownership so
-         * a ready auto attack may proceed even if the visual clip has a tail.
-         */
-        impactEnemy.EndSpecialAbilityAnimationAction();
+        // Authored clips keep the shared action window through recovery.
+        // Older controllers retain their original impact-release behavior.
+        if (!impactEnemy.Definition.UseAuthoredSpecialAbilityMotion)
+            impactEnemy.EndSpecialAbilityAnimationAction();
     }
 
     private void HandleEnemyDefeated(

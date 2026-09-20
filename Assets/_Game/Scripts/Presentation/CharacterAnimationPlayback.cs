@@ -17,6 +17,7 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
     public event Action AutoAttackImpactReached;
     public event Action AutoAttackCompleted;
     public event Action AbilityImpactReached;
+    public event Action AbilityCompleted;
 
     public bool IsPaused => isPaused;
 
@@ -96,6 +97,11 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
     public void AutoAttackComplete()
     {
         AutoAttackCompleted?.Invoke();
+    }
+
+    public void AbilityComplete()
+    {
+        AbilityCompleted?.Invoke();
     }
 
     private void OnDisable()

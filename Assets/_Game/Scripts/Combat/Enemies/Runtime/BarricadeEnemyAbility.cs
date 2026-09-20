@@ -18,6 +18,7 @@ public sealed class BarricadeEnemyAbility :
 
     private int ownerInstanceId;
     private bool ownershipReleased;
+    private bool isAttemptingReadyAbility;
 
     public void InitializeSpecialAbility(
         EnemyActor initializedEnemy,
@@ -30,6 +31,7 @@ public sealed class BarricadeEnemyAbility :
         enemyActor = initializedEnemy;
         boardController = initializedBoard;
         ownershipReleased = false;
+        isAttemptingReadyAbility = false;
 
         ownerInstanceId =
             enemyActor != null
@@ -76,6 +78,9 @@ public sealed class BarricadeEnemyAbility :
         enemyActor.SpecialBecameReady +=
             HandleSpecialBecameReady;
 
+        enemyActor.SpecialAbilityImpactReached += HandleSpecialAbilityImpactReached;
+        enemyActor.AnimationActionReleased += HandleAnimationActionReleased;
+
         enemyActor.Defeated -=
             HandleEnemyDefeated;
 
@@ -95,6 +100,9 @@ public sealed class BarricadeEnemyAbility :
         {
             enemyActor.SpecialBecameReady -=
                 HandleSpecialBecameReady;
+
+            enemyActor.SpecialAbilityImpactReached -= HandleSpecialAbilityImpactReached;
+            enemyActor.AnimationActionReleased -= HandleAnimationActionReleased;
 
             enemyActor.Defeated -=
                 HandleEnemyDefeated;
@@ -139,7 +147,7 @@ public sealed class BarricadeEnemyAbility :
 
     private bool TryPlaceBarricades()
     {
-        if (enemyActor == null ||
+        if (isAttemptingReadyAbility || enemyActor == null ||
             boardController == null ||
             enemyActor.Definition == null ||
             enemyActor.IsDefeated ||
@@ -148,45 +156,73 @@ public sealed class BarricadeEnemyAbility :
             return false;
         }
 
-        EnemyDefinition definition =
-            enemyActor.Definition;
-
-        RefreshOwnedBarricadeCount();
-
-        int maximumOwned =
-            Mathf.Max(
-                1,
-                definition.MaximumOwnedBarricades
-            );
-
-        if (ownedBarricadeCount >=
-            maximumOwned)
+        isAttemptingReadyAbility = true;
+        try
         {
-            /*
-             * Do not stockpile a hidden ready cast while the board is already
-             * at this enemy's cap. Once a barricade breaks, a fresh cadence is
-             * required, matching the Crossbow Guard cap policy.
-             */
+
+            EnemyDefinition definition =
+                enemyActor.Definition;
+
+            RefreshOwnedBarricadeCount();
+
+            int maximumOwned =
+                Mathf.Max(
+                    1,
+                    definition.MaximumOwnedBarricades
+                );
+
+            if (ownedBarricadeCount >=
+                maximumOwned)
+            {
+                /*
+                 * Do not stockpile a hidden ready cast while the board is already
+                 * at this enemy's cap. Once a barricade breaks, a fresh cadence is
+                 * required, matching the Crossbow Guard cap policy.
+                 */
+                enemyActor.ResetSpecialCounter();
+                return true;
+            }
+
+            bool timed = definition.TimeSpecialAbilityFromAnimation;
+            if (timed && (enemyActor.IsAutoAttackAnimationActionActive ||
+                !enemyActor.TryBeginSpecialAbilityAnimationAction())) return false;
+
+            bool queued =
+                boardController.TryQueuePlaceBarricades(
+                    enemyActor,
+                    definition.BarricadesPerUse,
+                    maximumOwned,
+                    definition.BarricadeDurability,
+                    definition.BarricadeStyle,
+                    waitForAnimationImpact: timed
+                );
+
+            if (!queued)
+            {
+                if (timed) enemyActor.EndSpecialAbilityAnimationAction();
+                return false;
+            }
+
+            if (timed) enemyActor.NotifySpecialAbilityUsed();
             enemyActor.ResetSpecialCounter();
             return true;
         }
+        finally { isAttemptingReadyAbility = false; }
+    }
 
-        bool queued =
-            boardController.TryQueuePlaceBarricades(
-                enemyActor,
-                definition.BarricadesPerUse,
-                maximumOwned,
-                definition.BarricadeDurability,
-                definition.BarricadeStyle
-            );
+    private void HandleSpecialAbilityImpactReached(EnemyActor enemy)
+    {
+        if (enemy != enemyActor || enemy == null || enemy.IsDefeated || boardController == null ||
+            enemy.Definition == null || !enemy.Definition.TimeSpecialAbilityFromAnimation) return;
+        boardController.NotifyBarricadeAnimationImpact(enemy);
+        if (!enemy.Definition.UseAuthoredSpecialAbilityMotion) enemy.EndSpecialAbilityAnimationAction();
+    }
 
-        if (!queued)
-        {
-            return false;
-        }
-
-        enemyActor.ResetSpecialCounter();
-        return true;
+    private void HandleAnimationActionReleased(EnemyActor enemy)
+    {
+        if (enemy == enemyActor && enemy != null && !enemy.IsDefeated && enemy.IsSpecialReady &&
+            enemy.Definition != null && enemy.Definition.TimeSpecialAbilityFromAnimation)
+            specialActionAvailability?.RequestExecution();
     }
 
     private void HandleEnemyDefeated(
@@ -236,5 +272,6 @@ public sealed class BarricadeEnemyAbility :
         specialActionAvailability?.Dispose();
         ReleaseOwnershipWithoutRemovingBarricades();
         Unsubscribe();
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 }
