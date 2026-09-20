@@ -68,10 +68,13 @@ public sealed class PlayerAbilityLifecycleTests
     [Test]
     public void AcceptedCastSpendsOnceAndRejectsRepeatedAttempt()
     {
+        int presentationCues = 0;
+        controller.AbilityActivated += () => presentationCues++;
         int before = energy.CurrentEnergy;
         int cost = controller.RequiredEnergy;
         Assert.That(controller.TryActivate(), Is.True);
         Assert.That(energy.CurrentEnergy, Is.EqualTo(before - cost));
+        Assert.That(presentationCues, Is.EqualTo(1), "One cast cue, independent of state/energy notifications.");
         Assert.That(controller.IsAbilityActive, Is.True);
         Assert.That(controller.TryActivate(), Is.False);
         Assert.That(runtime.ActivationAttempts, Is.EqualTo(1));
@@ -92,12 +95,15 @@ public sealed class PlayerAbilityLifecycleTests
     [Test]
     public void RuntimeRejectionDoesNotSpendEnergy()
     {
+        int presentationCues = 0;
+        controller.AbilityActivated += () => presentationCues++;
         int before = energy.CurrentEnergy;
         runtime.RejectActivation = true;
         Assert.That(controller.TryActivate(), Is.False);
         Assert.That(runtime.ActivationAttempts, Is.EqualTo(1));
         Assert.That(runtime.AcceptedActivations, Is.Zero);
         Assert.That(energy.CurrentEnergy, Is.EqualTo(before));
+        Assert.That(presentationCues, Is.Zero, "Rejected casts never animate.");
     }
 
     [Test]

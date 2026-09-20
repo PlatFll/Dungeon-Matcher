@@ -112,6 +112,14 @@ public static class EnemyAttackLifecycleValidation
         yield return CompletedCommand(true);
     }
 
+    internal static IEnumerator ValidateForAutomation()
+    {
+        runtimeError = null;
+        scenarios = 0;
+        yield return Validate();
+        Check(scenarios == 14, "all 14 lifecycle scenarios completed");
+    }
+
     private static IEnumerator Reenable(bool wholeRoot)
     {
         using (var f = new Fixture(true))

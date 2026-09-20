@@ -1,16 +1,16 @@
-"""Historical refinement checks: archived Farmer/Pan and unchanged current Bardley."""
+"""Historical refinement checks: archived Farmer/Pan and unchanged archived Bardley."""
 import hashlib,json,sys
 from inspect_idles import ROOT,read_ase,color_counts
 
 candidate='--candidate' in sys.argv
 def frames(name):
-    path=ROOT/'Review'/(name+'_Correction.aseprite') if candidate else ROOT/('Originals/BeforeTurnBasedPass' if name=='Farmer' else '')/(name+'_Idle.aseprite')
+    path=ROOT/'Review'/(name+'_Correction.aseprite') if candidate else ROOT/('Originals/BeforeTurnBasedPass' if name=='Farmer' else 'Originals/BeforeCombatActions')/(name+'_Idle.aseprite')
     return read_ase(path)[0]
 def source(name):return read_ase(ROOT/'Originals/FamilyPass1'/(name+'_Idle.aseprite'))[0]
 def rgb(im,x,y):return '#%02X%02X%02X'%im.getpixel((x,y))[:3]
 def delta(values):return [values[(i+1)%9]-values[i] for i in range(9)]
 palettes=json.loads((ROOT/'Scripts/palettes.json').read_text())
-report={'scope':'Historical pre-turn-based Farmer/Pan revision; current Bardley facial correction.'}
+report={'scope':'Historical pre-turn-based Farmer/Pan revision; archived Bardley facial correction.'}
 farmer=frames('Farmer');ref=source('Farmer')[0]
 part_boxes={'tines':(0,23,19,39),'left_grip':(20,39,26,43),'right_grip':(41,49,46,53),'lower_shaft':(43,53,57,60)}
 offsets=[]

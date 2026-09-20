@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -16,11 +17,22 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
     private Animator characterAnimator;
     private PlayerActor playerActor;
     private PlayerActor subscribedPlayer;
+    private PlayerAbilityController subscribedAbility;
+    private static readonly int AbilityTrigger = Animator.StringToHash("Ability");
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
     )]
     private static void InstallForPlayerCharacter()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+        InstallInLoadedScene();
+    }
+
+    private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode) => InstallInLoadedScene();
+
+    private static void InstallInLoadedScene()
     {
         RectTransform[] rects =
             Object.FindObjectsByType<RectTransform>(
@@ -110,11 +122,17 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
         {
             subscribedPlayer.Initialized +=
                 HandlePlayerInitialized;
+            subscribedAbility = subscribedPlayer.GetComponent<PlayerAbilityController>();
+            if (subscribedAbility != null)
+                subscribedAbility.AbilityActivated += HandleAbilityActivated;
         }
     }
 
     private void UnsubscribeFromPlayer()
     {
+        if (subscribedAbility != null)
+            subscribedAbility.AbilityActivated -= HandleAbilityActivated;
+        subscribedAbility = null;
         if (subscribedPlayer != null)
         {
             subscribedPlayer.Initialized -=
@@ -122,6 +140,19 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
         }
 
         subscribedPlayer = null;
+    }
+
+    private void HandleAbilityActivated()
+    {
+        if (characterAnimator == null || !characterAnimator.isActiveAndEnabled ||
+            characterAnimator.runtimeAnimatorController == null) return;
+        foreach (var parameter in characterAnimator.parameters)
+        {
+            if (parameter.nameHash != AbilityTrigger ||
+                parameter.type != AnimatorControllerParameterType.Trigger) continue;
+            characterAnimator.SetTrigger(AbilityTrigger);
+            break;
+        }
     }
 
     private void HandlePlayerInitialized(
