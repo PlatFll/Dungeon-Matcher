@@ -1,62 +1,61 @@
 # Dungeon Matcher combat idle set
 
-Edited in LibreSprite 1.1-dev on 2026-09-20 using its native pixel/cel API and visually reviewed at native 1× and integer 4×. All exports were produced by LibreSprite.
+Edited in LibreSprite 1.1-dev on 2026-09-20 using its native pixel/cel API and reviewed at native 1× and integer 4×. All editable files and image exports were saved by LibreSprite.
 
-Each character has an editable `.aseprite`, a transparent horizontal `.png` sprite sheet, an animated `.gif`, and `.json` frame metadata. Every animation is **nine unique 64×64 frames at 130 ms each (1.17 seconds)**. Each sheet is **576×64**, with no trimming, padding, or scaling.
+Each character has an editable `.aseprite`, a transparent horizontal `.png` sprite sheet, an animated `.gif`, and `.json` frame metadata. Every animation has **nine 64×64 frames at 130 ms each (1.17 seconds)**. Each sheet is **576×64**, without trimming, padding, or scaling. Farmer and Pan Villager deliberately hold their raised ready pose across the loop seam; they have six and seven distinct drawings respectively.
 
-Open `Preview.html` for synchronized playback, frame stepping, 50% speed, dark/light backgrounds, and a frame-nine/frame-one seam view. The HTML also works directly from disk.
+Open `Preview.html` for synchronized playback, frame stepping, half speed, dark/light backgrounds, loop-seam inspection, and a previous/current Farmer and Pan comparison. It also works directly from disk. `FarmerHeadReview.html` compares the original 11-frame Farmer, the preceding nine-frame revision, and the current correction.
 
-Open `FarmerHeadReview.html` for the original Farmer, the previous static-head revision, and the restored-head correction side by side at native 1× and integer 4×. Each uses its recorded 130 ms durations: the original has 11 frames, and both revisions have nine. The original begins on its raised fifth frame for the initial comparison, then plays its full loop.
-
-| Character | Changes | Opaque palette |
+| Character | Current motion and materials | Opaque palette |
 | --- | --- | --- |
-| Rattlebones | Removed generated color drift; kept every original pose, mask, frame order, and duration. | 15 colors |
-| Farmer | Restored the original raised, dipping, nodding, and recovering head/hat/face drawings, coordinated with the latest stance cycle. Preserved the improved torso, both grips, complete rigid pitchfork, and fixed boots. | 14 colors |
-| Pan Villager | Restored all material ramps; used upright source poses with a three-pixel stance dip, leg compression, and rigid pan movement. Recovery uses a distinct source pose. | 16 colors |
-| Bardley | Preserved the restored materials, body compression and anchored base; retimed the exact existing eyes/catchlights/smile together so the face follows the body with at most a one-pixel step. | 15 colors |
+| Rattlebones | Original gold-standard geometry, frame order and timing, with approved bone, cape, crown and cyan-eye ramps. Unchanged in the latest pass. | 15 colors |
+| Farmer | Complete connected poses from the Farmer reference open in LibreSprite: head, shoulders, torso, hands and pitchfork retain their relationship. The blink closes at the bottom and opens on recovery. | 14 colors |
+| Pan Villager | Head follows the downward/upward phase of Rattlebones, with shoulder and waist compression, planted feet, and a blink at the bottom. The iron pan and gripping arm move together. | 16 colors |
+| Bardley | Approved material separation, grounded slime compression and existing eyes/smile retimed to follow the body with at most a one-pixel face step. Unchanged in the latest pass. | 15 colors |
 
-The first refinement corrected tip-only pitchfork movement and Bardley's premature eye drop. The subsequent Farmer-only correction replaces the overly static head with distinct original head drawings. The deepest nod falls on the low stance, followed by a short recovery lag. The head sequence uses original frames 5, 11, 6, 1, 2, 9, 8, 7, and 4 at the existing nine-frame cadence. No extra nod or lateral translation was added. All Farmer pixels below the lowest chin remain identical to the preceding revision, and the fork and grips retain their rigid three-pixel motion. Rattlebones, Pan Villager, and Bardley are byte-for-byte unchanged by this latest correction.
+The latest correction addresses Farmer's nod continuing while the body rose. His cycle now selects whole reference poses in source-frame order **5, 5, 6, 7, 8, 9, 7, 6, 5** (one-based). There is no independently delayed head cutout or extra tip-only motion. This replaces the preceding revision's body and tool drawings with those from the user-selected reference; it does not preserve that revision's exact rigid tool translation. The original reference's complete silhouette is retained in every selected pose. Palette cleanup and the closing/reopening eyelids are applied within those poses.
 
-## Alignment and source preservation
+Farmer and Pan Villager close their eyes on **frame six**, matching Rattlebones' lowest blink phase, and reopen during the upward recovery. Pan Villager's torso shortens from shoulders toward waist rather than translating as a rigid block. Her head remains connected to the collar; her pan and gripping arm translate without deformation. The pan naturally passes in front of part of the left boot at the deepest dip, while the sole contact stays fixed.
 
-- Canvas dimensions and native pixel scale are unchanged.
-- Farmer and Pan Villager retain their source ground contact at y=63. Rattlebones retains its complete original geometry and timing.
-- Bardley's base remains at **y=51**, matching the source animation. The static recolor's unresolved 12-pixel downward offset was not carried into the animation.
-- `Originals/` contains snapshots saved directly from all four open LibreSprite documents before editing, including their in-memory edits. The original Downloads files were not overwritten.
-- `Originals/FamilyPass1/` preserves the reviewed Farmer/Bardley delivery before this correction, and supplies the correction script's reproducible inputs.
-- `Originals/BeforeHeadRestore/` preserves the exact latest Farmer body/prop revision before the head restoration. `Comparisons/` contains unmodified reference-sheet exports for the three-way preview.
-- These are art-source deliverables, outside Unity's `Assets/` directory. No runtime behavior, animator, sprite import settings, GUIDs, or serialized scene/prefab references were changed.
+## Sources and alignment
+
+- All canvases remain 64×64 with integer pixel placement and binary transparency.
+- Rattlebones, Farmer and Pan Villager retain ground contact at y=63. Bardley's base remains at **y=51**, as in its source animation. The static recolor's unresolved 12-pixel offset was not adopted.
+- `Originals/TurnBasedReference/Farmer_OpenReference.aseprite` is the exact reference saved from the user's open LibreSprite tab for this pass. The original Downloads file was not overwritten.
+- `Originals/BeforeTurnBasedPass/` preserves the Farmer and Pan Villager files immediately before the latest pass. Their unmodified comparison sheets are in `Comparisons/`.
+- Earlier snapshots in `Originals/`, `Originals/FamilyPass1/` and `Originals/BeforeHeadRestore/` remain available as production history.
+- These deliverables are outside Unity's `Assets/`. No animation clip, importer, GUID, serialized scene/prefab reference or runtime code changed.
 
 ## Color and shading authority
 
-The supplied `Dungeon_Matcher_Art_Direction.txt` and `Dungeon_Matcher_Art_References.png` were inspected before editing. Exact material palettes are recorded in `Scripts/palettes.json` and the four `.gpl` files. `Scripts/material_map.json` documents deliberate replacements for every source color, grouped by destination material tone; it is not an unrestricted nearest-color quantizer.
+The supplied `Dungeon_Matcher_Art_Direction.txt` and `Dungeon_Matcher_Art_References.png` were inspected before editing. Exact palettes are recorded in `Scripts/palettes.json` and the four `.gpl` files. `Scripts/material_map.json` records explicit source-to-material replacements, rather than unrestricted nearest-color quantization.
 
-Bardley's individual `BardleyFinal.png` supplied the spatial material-shading reference, read in the original animation alignment. An unchanged copy is retained as `References/Bardley_Palette_Reference_Placement_Pending.png`. Every shade remains in the approved palette. Source outlines, eyes, material boundaries and animation shapes were retained during recoloring. The subsequent motion edits use integer pixel placement only.
+Bardley's individual `BardleyFinal.png` supplied the spatial shading reference, read in the original animation alignment. An unchanged copy is retained as `References/Bardley_Palette_Reference_Placement_Pending.png`. All characters use the approved `#0A0D11` outline and existing material ramps. No new colors, antialiasing or blur were introduced.
 
-## Validation performed
+## Validation
 
-`Validation.json` records measurements and SHA-256 checksums. `Scripts/validate_idles.py` verifies all 36 frames:
+`Scripts/validate_idles.py` and `Validation.json` cover all 36 delivered frames:
 
-- 64×64 canvas, nine distinct poses, 130 ms duration, and 1,170 ms loop;
+- 64×64 canvases, nine frames at 130 ms and a 1,170 ms loop;
 - zero off-palette pixels and only alpha 0/255;
-- exact frame-by-frame equivalence between ASE, PNG strip, and decoded GIF;
-- infinite GIF looping and matching JSON timing/size metadata;
-- unchanged Rattlebones masks and stable Farmer soles / Pan Villager sole row / Bardley base row.
+- exact frame-by-frame equivalence between ASE, PNG strip and decoded GIF;
+- infinite GIF looping and matching JSON frame sizes/timing;
+- original Rattlebones masks and stable Farmer soles, Pan Villager soles and Bardley base.
 
-`Scripts/validate_refinement.py` and `RefinementValidation.json` additionally check rigid translation of the fork tines, both grips and lower shaft, fixed Farmer boot pixels, Bardley's exact facial glyph, one-pixel maximum face steps, and preservation of Bardley's non-face pixels. The face-to-body curl offset varies by only one pixel across the loop. The check also pins the unchanged Rattlebones and Pan Villager editable-file hashes.
+`Scripts/validate_turn_based.py` and `TurnBasedValidation.json` additionally verify Farmer's full reference-pose silhouettes, downward/upward head order, both villagers' blink phase, rigid Pan Villager pan and grip pixels, visible boot preservation, and unchanged Rattlebones/Bardley file hashes. The source frame selection and measured head/eye positions are included in the report.
 
-`Scripts/validate_farmer_head.py` and `FarmerHeadValidation.json` verify that edits stay within the head area, every pixel below the lowest chin is unchanged, and the actual prop/grip pixels retain their rigid movement. The check distinguishes nine different face drawings after removing vertical translation from the previous revision's one repeated face drawing. It also verifies the comparison sheets against their original ASE files and pins all three unchanged characters. These preservation checks complement the visual comparison; they do not determine whether the motion feels natural.
+Visual review covered all poses, full-speed side-by-side playback at 1×/4×, the closed-eye low pose, upward recovery, previous/current comparisons, dark/light backgrounds and the final-to-first transition. Pixel checks establish asset integrity; they do not determine whether an artistic loop feels natural.
 
-Visual review covered each frame, material separation, native-size readability, dark/light backgrounds, side-by-side cadence, and the final-to-first transition. Numeric pixel-difference measurements are inspection aids, not a claim that an artistic loop is objectively perfect.
+`RefinementValidation.json` and `FarmerHeadValidation.json` are explicitly **historical** reports for the preserved preceding revision. Their scripts read the archived Farmer/Pan files. The former also checks the still-current Bardley facial correction. They do not claim the new Farmer keeps the superseded body's pixels.
 
-Unity validation/runtime testing was not run: this is an art-only delivery with no Unity serialization or code changes.
+Unity validation/runtime testing was not run: this is art-only work without Unity serialization or code changes.
 
 ## Production helpers
 
-- Run `inspect_idles.py` first, then `build_native_script.js` to assemble the native scripts and palettes. `RestoreIdleMaterials.js` followed by `UnifyIdleFamily.js` reproduces the first pass. `RefineIdleMotion.js` reads the preserved `Originals/FamilyPass1/` inputs and saves the corrected Farmer/Bardley candidates under `Review/`; review and save those as the matching root `_Idle.aseprite` files before exporting.
-- `RestoreFarmerHead.js` reads the preserved original head poses and `Originals/BeforeHeadRestore/Farmer_Idle.aseprite`, and saves `Review/Farmer_HeadRestored.aseprite`. Review it with `FarmerHeadReview.html?candidate=1`, then save/export only Farmer to the root delivery files.
-- `restore_materials_body.js`, `family_motion_body.js`, `refine_motion_body.js`, and `restore_farmer_head_body.js` record the native LibreSprite edit operations.
-- `export_idles.ps1` exports the final editable files using the local LibreSprite executable.
-- `inspect_idles.py`, `validate_idles.py`, `validate_refinement.py`, and `validate_farmer_head.py` are read-only artwork inspection/validation helpers. They do not recolor or generate the edited sprites. Use `validate_farmer_head.py --candidate` for the latest Farmer working copy; `validate_refinement.py --candidate` checks the preceding Farmer/Bardley review files.
+- Run `inspect_idles.py`, then `build_native_script.js` to assemble the native LibreSprite scripts and palettes.
+- `TuneBattleIdles.js`, assembled from `turn_based_motion_body.js`, reads the saved open Farmer reference and pre-pass Pan Villager. Run it in LibreSprite to save `Review/Farmer_TurnBased.aseprite` and `Review/PanVillager_TurnBased.aseprite`. After exporting matching candidate sheets, inspect them with `Preview.html?candidate=1` and run `validate_turn_based.py --candidate`. Save approved editable files to the root and export through LibreSprite.
+- `export_idles.ps1` exports the root editable files using LibreSprite. `validate_idles.py` checks all final exports; `validate_turn_based.py` checks the current motion correction.
+- `RestoreIdleMaterials.js`, `UnifyIdleFamily.js`, `RefineIdleMotion.js` and `RestoreFarmerHead.js` reproduce earlier stages from their retained inputs. Their body scripts and historical validators remain for traceability.
+- Python helpers inspect artwork and write reports/contact sheets; they do not edit the delivered sprites.
 
-The local `Review/` directory and temporary UI helpers are working evidence, excluded from the committed delivery. The final files at this directory's root are authoritative for this pass.
+The local `Review/` directory and generated UI scripts are excluded from the committed delivery. The root `_Idle` files are the current deliverables.

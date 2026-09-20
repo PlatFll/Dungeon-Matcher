@@ -134,7 +134,7 @@
       0,
       255
     ],
-    "unique_frames": 9,
+    "unique_frames": 6,
     "png_matches_aseprite": true,
     "gif_matches_aseprite": true,
     "gif_loops_forever": true,
@@ -177,12 +177,6 @@
       ],
       [
         1,
-        9,
-        56,
-        64
-      ],
-      [
-        1,
         8,
         56,
         64
@@ -192,24 +186,30 @@
         7,
         56,
         64
+      ],
+      [
+        1,
+        6,
+        56,
+        64
       ]
     ],
     "adjacent_pixel_differences_including_seam": [
-      105,
-      741,
-      963,
-      774,
-      264,
-      692,
-      874,
-      726,
-      511
+      0,
+      400,
+      616,
+      530,
+      375,
+      552,
+      621,
+      400,
+      0
     ],
     "source_sha256": "ca7f60f64ced14fbc5f3a9aeb2118d9a6878569cf05ebf7d6d465c16387531bf",
     "files": {
-      "aseprite": "88fda04f48c500558bcbabd790e10c192578599b80429e6b318ae3d38b1cbb34",
-      "png": "ce315c9ec811a443538cceccec36a9140dc3f41f3517c08e747376ee7da00afd",
-      "gif": "e5fd0bee8fa7379a136ccefe316937182ca0eee5b32839762e55c427887fb400",
+      "aseprite": "cf866241391a75d6111bc97c79fe526d9f20e8604cbc566f65ac5513709ddfd3",
+      "png": "621ae01f60e3cb676a99eeb61298ed987a1d9b636a1fedc8620a407dbb6b0341",
+      "gif": "69b6d98c017f5bc26690f1877548077509674886123adcca2b6b83cf0ffed619",
       "json": "7a48f90a53ced7b8f659b570b29eda7f2f91832fcf75f7bbe65cfb4eecc1b627"
     }
   },
@@ -241,7 +241,7 @@
       0,
       255
     ],
-    "unique_frames": 9,
+    "unique_frames": 7,
     "png_matches_aseprite": true,
     "gif_matches_aseprite": true,
     "gif_loops_forever": true,
@@ -253,70 +253,70 @@
         64
       ],
       [
-        3,
+        4,
         7,
-        50,
+        51,
         64
       ],
       [
-        2,
+        4,
         8,
-        49,
+        51,
         64
       ],
       [
-        2,
+        4,
         9,
-        50,
+        51,
         64
       ],
       [
-        3,
-        10,
-        50,
+        4,
+        11,
+        51,
         64
       ],
       [
-        2,
-        10,
-        50,
+        4,
+        12,
+        51,
         64
       ],
       [
-        2,
+        4,
+        11,
+        51,
+        64
+      ],
+      [
+        4,
         9,
-        49,
+        51,
         64
       ],
       [
-        3,
-        8,
-        50,
-        64
-      ],
-      [
-        5,
+        4,
         7,
-        52,
+        51,
         64
       ]
     ],
     "adjacent_pixel_differences_including_seam": [
-      739,
-      729,
-      786,
-      896,
-      344,
-      779,
-      735,
-      842,
-      407
+      0,
+      709,
+      692,
+      856,
+      365,
+      716,
+      826,
+      806,
+      0
     ],
     "source_sha256": "6fc8d04390398c3589dbc5a510168e5343ad5bfc3017e16845f03884c531fe15",
     "files": {
-      "aseprite": "396a2c70e6c268b85a7dcc4685d939f5840bf3e39abb4e241751b2fc2ad738b6",
-      "png": "aa61e9de1bbef9b2c2607a01260bbb4bf87421965691fd1464a862819eeb0cf4",
-      "gif": "a0fb358194d0f64db71d6390f469f4239cca7e0907e7d07f1fe70db425720568",
+      "aseprite": "7f4710a92a2e280a90bdccb47c89989a1a474a712983d93d4595faf8a2db2dce",
+      "png": "33fe18e0c2bda21561a91ab5c588c556da3b1cb8908318b19b8c2abeb3486f0d",
+      "gif": "d62f89ec6bfd4091ac3c46d78b134ca38bb3af6e99dab77c161aac20ab8f21d4",
       "json": "d08626746c8c284f595fd4a3830105a1740568bd7c5ddb4724942881e1f8377d"
     }
   },

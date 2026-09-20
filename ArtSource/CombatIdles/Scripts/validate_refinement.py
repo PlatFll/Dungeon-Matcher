@@ -1,16 +1,16 @@
-"""Read-only checks for connected props, preserved facial pixels and stable contacts."""
+"""Historical refinement checks: archived Farmer/Pan and unchanged current Bardley."""
 import hashlib,json,sys
 from inspect_idles import ROOT,read_ase,color_counts
 
 candidate='--candidate' in sys.argv
 def frames(name):
-    path=ROOT/'Review'/(name+'_Correction.aseprite') if candidate else ROOT/(name+'_Idle.aseprite')
+    path=ROOT/'Review'/(name+'_Correction.aseprite') if candidate else ROOT/('Originals/BeforeTurnBasedPass' if name=='Farmer' else '')/(name+'_Idle.aseprite')
     return read_ase(path)[0]
 def source(name):return read_ase(ROOT/'Originals/FamilyPass1'/(name+'_Idle.aseprite'))[0]
 def rgb(im,x,y):return '#%02X%02X%02X'%im.getpixel((x,y))[:3]
 def delta(values):return [values[(i+1)%9]-values[i] for i in range(9)]
 palettes=json.loads((ROOT/'Scripts/palettes.json').read_text())
-report={}
+report={'scope':'Historical pre-turn-based Farmer/Pan revision; current Bardley facial correction.'}
 farmer=frames('Farmer');ref=source('Farmer')[0]
 part_boxes={'tines':(0,23,19,39),'left_grip':(20,39,26,43),'right_grip':(41,49,46,53),'lower_shaft':(43,53,57,60)}
 offsets=[]
@@ -59,7 +59,8 @@ report['Bardley']={'eye_top_before_y':old_tops,'eye_top_after_y':tops,'body_curl
     'body_alpha_and_non_face_pixels_preserved':True}
 for name,digest in {'Rattlebones':'77750e6542abb6131be3d4816048b8b6a80ed27ff506340e3c197e0d5cf74d4d',
                     'PanVillager':'396a2c70e6c268b85a7dcc4685d939f5840bf3e39abb4e241751b2fc2ad738b6'}.items():
-    assert hashlib.sha256((ROOT/(name+'_Idle.aseprite')).read_bytes()).hexdigest()==digest
+    path=ROOT/('Originals/BeforeTurnBasedPass' if name=='PanVillager' else '')/(name+'_Idle.aseprite')
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==digest
     report[name]={'editable_file_unchanged':True}
 out=ROOT/'Review/RefinementValidation.json' if candidate else ROOT/'RefinementValidation.json'
 out.write_text(json.dumps(report,indent=2)+'\n')

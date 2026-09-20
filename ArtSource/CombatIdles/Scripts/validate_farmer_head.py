@@ -1,10 +1,10 @@
-"""Read-only preservation checks for the Farmer head-pose correction."""
+"""Historical preservation checks for the superseded Farmer head-only correction."""
 import hashlib,json,sys
 from PIL import Image
 from inspect_idles import ROOT,read_ase,color_counts
 
 candidate='--candidate' in sys.argv
-path=ROOT/('Review/Farmer_HeadRestored.aseprite' if candidate else 'Farmer_Idle.aseprite')
+path=ROOT/('Review/Farmer_HeadRestored.aseprite' if candidate else 'Originals/BeforeTurnBasedPass/Farmer_Idle.aseprite')
 before_path=ROOT/'Originals/BeforeHeadRestore/Farmer_Idle.aseprite'
 assert hashlib.sha256(before_path.read_bytes()).hexdigest()=='aed04b1edc0e63d378c9c8dd262b20b0684368197253dd5ca3b174ed267c93ef'
 before,old_ms=read_ase(before_path)
@@ -54,14 +54,16 @@ for name,digest in {
  'Rattlebones':'77750e6542abb6131be3d4816048b8b6a80ed27ff506340e3c197e0d5cf74d4d',
  'PanVillager':'396a2c70e6c268b85a7dcc4685d939f5840bf3e39abb4e241751b2fc2ad738b6',
  'Bardley':'9f32f4e922f5a9e0f4cffa5ebd17b9b4bbf018f35a7ac8dd424f3f2fe4089de8'}.items():
-    assert hashlib.sha256((ROOT/(name+'_Idle.aseprite')).read_bytes()).hexdigest()==digest,name
+    checked_path=ROOT/('Originals/BeforeTurnBasedPass' if name=='PanVillager' else '')/(name+'_Idle.aseprite')
+    assert hashlib.sha256(checked_path.read_bytes()).hexdigest()==digest,name
     unchanged[name]=digest
 for filename,frames in [('Farmer_Original.png',original),('Farmer_Before.png',before)]:
     strip=Image.open(ROOT/'Comparisons'/filename).convert('RGBA')
     assert strip.size==(len(frames)*64,64)
     assert all(strip.crop((i*64,0,(i+1)*64,64)).tobytes()==im.tobytes() for i,im in enumerate(frames)),filename
 
-report={'frames':9,'canvas':[64,64],'frame_ms':ms,'loop_ms':sum(ms),
+report={'scope':'Historical head-only revision preserved in Originals/BeforeTurnBasedPass; superseded by TurnBasedValidation.json.',
+ 'frames':9,'canvas':[64,64],'frame_ms':ms,'loop_ms':sum(ms),
  'approved_opaque_colors':len(color_counts(after)),'off_palette_pixels':0,
  'head_top_y':tops,'head_changed_pixels_per_frame':changes,
  'distinct_face_drawings_after_removing_translation':len(face_drawings(after)),
