@@ -44,24 +44,30 @@ public static class CombatIdleValidation
         };
     }
 
-    public static void Run()
+    public static void Run() => Start(false);
+    public static void RunGuards() => Start(true);
+
+    private static void Start(bool guards)
     {
         if (!Application.isBatchMode) throw new InvalidOperationException("Use an isolated graphics-enabled batch editor.");
         Directory.CreateDirectory(Output);
-        ValidateAssets();
+        SessionState.SetBool(Key + ".guards", guards);
+        ValidateAssets(guards);
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
         SessionState.SetBool(Key, true);
         EditorApplication.EnterPlaymode();
     }
 
     public static void ImportAndRun() { CombatIdleImporter.Run(); Run(); }
+    public static void ImportGuardsAndRun() { CombatIdleImporter.ImportGuards(); RunGuards(); }
 
-    private static void ValidateAssets()
+    private static void ValidateAssets(bool guards)
     {
-        foreach (string name in CombatIdleImporter.Characters)
+        foreach (string name in guards ? CombatIdleImporter.Guards : CombatIdleImporter.Characters)
         {
             string path = CombatIdleImporter.ArtRoot + "/" + name + "_Idle.png";
-            Check(File.ReadAllBytes(path).SequenceEqual(File.ReadAllBytes("ArtSource/CombatIdles/" + name + "_Idle.png")), name + " source PNG byte preservation");
+            string sourceRoot = guards ? "ArtSource/GuardIdles/" : "ArtSource/CombatIdles/";
+            Check(File.ReadAllBytes(path).SequenceEqual(File.ReadAllBytes(sourceRoot + name + "_Idle.png")), name + " source PNG byte preservation");
             var importer = (TextureImporter)AssetImporter.GetAtPath(path);
             Check(importer.filterMode == FilterMode.Point && !importer.mipmapEnabled && importer.spritePixelsPerUnit == 64 && importer.textureCompression == TextureImporterCompression.Uncompressed, name + " pixel import");
             var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);
@@ -83,12 +89,22 @@ public static class CombatIdleValidation
             for (int i = 0; i < 9; i++)
                 Check(keys[i].value == frames[i] && Mathf.Abs(keys[i].time - i * .13f) < .0001f, name + " frame order and 130ms timing");
             Check(keys[9].value == frames[8] && Mathf.Abs(keys[9].time - 1.16f) < .0001f, name + " final sample holds frame nine without an extra loop tick");
+            if (guards)
+            {
+                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_" + name + ".asset");
+                var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(CombatIdleImporter.AnimationRoot + "/" + name + "_Idle.controller");
+                Check(definition.FallbackVisualSprite == frames[0] && definition.AnimationControllerOverride == controller, name + " definition references selected guard art");
+                Check(controller.layers[0].stateMachine.defaultState.motion == clip, name + " idle is the default state");
+                Check(!definition.TimeAutoAttackFromAnimation && !definition.UseAuthoredAutoAttackMotion && !definition.UseAuthoredSpecialAbilityMotion, name + " existing gameplay and fallback action timing retained");
+            }
         }
-        File.WriteAllText(Path.Combine(Output, "asset-validation.txt"), "PASS: source bytes, fixed rectangles/pivots, Point/FullRect import, Image curves, 130ms frames and 1.17s loops.\n");
+        File.WriteAllText(Path.Combine(Output, guards ? "guard-asset-validation.txt" : "asset-validation.txt"), "PASS: source bytes, fixed rectangles/pivots, Point/FullRect import, Image curves, 130ms frames and 1.17s loops.\n");
     }
 
     private static IEnumerator Cases()
     {
+        if (SessionState.GetBool(Key + ".guards", false))
+        { yield return GuardCases(); yield break; }
         foreach (string player in new[] { "skeleton", "bardley" })
         {
             string profilePath = Path.Combine(Output, player + "-profile.json");
@@ -195,6 +211,81 @@ public static class CombatIdleValidation
         File.WriteAllText(Path.Combine(Output, "play-validation.txt"), "PASS: " + assertions + " checks; both players with Farmer/Pan Villager in Game, live playback, all nine poses at 1080x1920 and 1080x2400, stable rectangles, integer pixels and grounded contacts.\n");
     }
 
+    private static IEnumerator GuardCases()
+    {
+        Application.runInBackground = true;
+        string profilePath = Path.Combine(Output, "guards-" + Guid.NewGuid().ToString("N") + ".json");
+        File.WriteAllText(profilePath, JsonUtility.ToJson(new AccountSave()));
+        profile = AccountProgression.UseDisposableProfile(profilePath);
+        selection = CharacterSelectionSettings.UseTemporarySelection("skeleton");
+        for (int batch = 0; batch < CombatIdleImporter.Guards.Length; batch += 2)
+        {
+            Time.timeScale = 1; SetSize(1080, 1920);
+            // Game View applies a selected fixed resolution on a later editor
+            // frame. Do not load production layout against its startup size.
+            yield return Until(() => UnityEngine.Device.Screen.width == 1080 && UnityEngine.Device.Screen.height == 1920, "guard Game View reaches 1080x1920");
+            SceneManager.LoadScene("Game");
+            yield return Until(() => RunSession.Current != null && RunSession.Current.Continuation.CanCapture && RunSession.Current.Waves.IsWaveActive, "guard production scene ready");
+            var run = RunSession.Current;
+            if (UnityEngine.EventSystems.EventSystem.current != null) UnityEngine.EventSystems.EventSystem.current.enabled = false;
+            foreach (var controls in Object.FindObjectsByType<RunControlsUI>(FindObjectsSortMode.None))
+            { controls.Close(); controls.enabled = false; }
+            var initial = run.Waves.ActiveEnemies.ToArray();
+            foreach (var actor in initial) actor.GetComponent<EnemyAutoAttack>().StopAttacking();
+            var actors = new Dictionary<string, EnemyActor>();
+            foreach (string name in CombatIdleImporter.Guards.Skip(batch).Take(2))
+            {
+                yield return Until(() => run.Waves.HasFreeEnemySlot, "free slot for " + name);
+                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_" + name + ".asset");
+                Check(run.Waves.TrySummonEnemy(definition, out EnemyActor actor), name + " production spawn");
+                actor.GetComponent<EnemyAutoAttack>().StopAttacking(); actors[name] = actor;
+                if (actors.Count == 1) foreach (var old in initial) old.TryTakeDamageWithoutFeedback(100000);
+            }
+            yield return Wait(.5f);
+            var images = actors.ToDictionary(p => p.Key, p => p.Value.transform.Find("VisualRoot").GetComponent<Image>());
+            var seen = images.ToDictionary(p => p.Key, p => new HashSet<Sprite>());
+            float end = Time.realtimeSinceStartup + 1.5f;
+            while (Time.realtimeSinceStartup < end)
+            { foreach (var pair in images) seen[pair.Key].Add(pair.Value.sprite); yield return null; }
+            foreach (var pair in seen) Check(pair.Value.Count >= 8, pair.Key + " live idle playback");
+            Time.timeScale = 0;
+            var paused = images.ToDictionary(p => p.Key, p => p.Value.sprite);
+            yield return Wait(.25f);
+            foreach (var pair in images) Check(pair.Value.sprite == paused[pair.Key], pair.Key + " pauses with gameplay");
+            foreach (int height in new[] { 1920, 2400 })
+            {
+                SetSize(1080, height);
+                yield return Until(() => UnityEngine.Device.Screen.width == 1080 && UnityEngine.Device.Screen.height == height, "guard portrait resolution applied");
+                yield return Wait(.3f);
+                var baseline = images.ToDictionary(p => p.Key, p => ScreenRect(p.Value));
+                for (int frame = 0; frame < 9; frame++)
+                {
+                    foreach (var image in images.Values)
+                    { var animator = image.GetComponent<Animator>(); animator.Play("Idle", 0, (frame * .13f + .065f) / 1.17f); animator.Update(0); }
+                    yield return Wait(.025f); Canvas.ForceUpdateCanvases();
+                    foreach (var pair in images)
+                    {
+                        string name = pair.Key; Image image = pair.Value; Rect rect = ScreenRect(image);
+                        Check(image.sprite == CombatIdleImporter.LoadFrames(name)[frame], name + " displayed frame " + frame);
+                        Check((rect.position - baseline[name].position).sqrMagnitude < .01f && (rect.size - baseline[name].size).sqrMagnitude < .01f, name + " fixed center and ground across poses");
+                        Check(rect.xMin >= 0 && rect.xMax <= 1080 && rect.yMin >= 0 && rect.yMax <= height, name + " portrait containment");
+                        Check(Mathf.Abs(rect.width / 64f - Mathf.Round(rect.width / 64f)) < .001f, name + " integer texel scale");
+                        var health = actors[name].GetComponentInParent<EnemySlotUI>().transform.Find("EnemyHPBarBackground").GetComponent<Image>();
+                        Check(rect.yMin > ScreenRect(health).yMax, name + " feet clear health bar");
+                        foreach (var mask in image.GetComponentsInParent<RectMask2D>())
+                        { var corners = new Vector3[4]; image.rectTransform.GetWorldCorners(corners); Check(corners.All(c => mask.rectTransform.rect.Contains((Vector2)mask.rectTransform.InverseTransformPoint(c))), name + " uncut by UI masks"); }
+                    }
+                    Check(images.Values.Select(ScreenRect).Max(r => r.yMin) - images.Values.Select(ScreenRect).Min(r => r.yMin) < .1f, "guards share a floor");
+                    if (frame == 0 || frame == 5 || frame == 8)
+                    { ScreenCapture.CaptureScreenshot(Path.Combine(Output, "guards-" + batch + "-" + height + "-frame" + (frame + 1) + ".png")); yield return Wait(.15f); }
+                }
+            }
+            Time.timeScale = 1; SceneManager.LoadScene("MainMenu"); yield return Wait(.2f);
+        }
+        selection.Dispose(); selection = null; profile.Dispose(); profile = null;
+        File.WriteAllText(Path.Combine(Output, "guard-play-validation.txt"), "PASS: four restored guards in production Game, live playback and pause, 36 poses at two portrait sizes, fixed rectangles/shared floor, integer texels and health-bar/mask clearance. " + assertions + " checks.\n");
+    }
+
     private static Rect ScreenRect(Image image)
     {
         var corners = new Vector3[4]; image.rectTransform.GetWorldCorners(corners);
@@ -220,7 +311,7 @@ public static class CombatIdleValidation
     {
         EditorApplication.update -= Tick; Application.logMessageReceived -= Log;
         Time.timeScale = 1;
-        if (result != 0) File.WriteAllText(Path.Combine(Output, "play-validation.txt"), "FAIL: " + error);
+        if (result != 0) File.WriteAllText(Path.Combine(Output, SessionState.GetBool(Key + ".guards", false) ? "guard-play-validation.txt" : "play-validation.txt"), "FAIL: " + error);
         EditorApplication.ExitPlaymode();
     }
     private static void Log(string text, string trace, LogType type)

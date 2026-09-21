@@ -143,7 +143,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 - His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
 - Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP/damage scale by 1% per wave beyond the first; attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
 - His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a particular wave composition.
-- Until his own art is imported, his definition uses the existing Spear Knight sprite as temporary fallback artwork, with the shared single-lunge presentation and no animation override.
+- His definition now uses the restored Spear Guard idle and its matching ready-frame fallback. The shared single-lunge action presentation and gameplay timing are unchanged; the idle contains no combat events.
 - Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
 
 ### Spear Knight
