@@ -133,7 +133,7 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
-The working guide is v1.5. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
+The working guide is v1.6. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
 
 Thirteen original short combat sounds cover grouped gem matches/landings, explosions, poison, hits, healing, shields and abilities. A bounded six-voice mix prioritizes impacts and player casts. Android/iOS haptics provide short grouped landing/impact/cast pulses with independent persistent vibration control. Feedback is suppressed during pause, focus loss and snapshot restore/replay. Physical-device vibration feel and speaker/headphone mix approval remain outstanding. Current validation evidence is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`; previous pass evidence remains historical.
 
@@ -141,11 +141,15 @@ Thirteen original short combat sounds cover grouped gem matches/landings, explos
 
 `ArtSource/RemainingCast/` now preserves the 18 supplied LibreSprite tabs and adds
 17 recolored stills plus 17 nine-frame, 130 ms idles for the guards, knights, royal
-cast and Minotaur. Recolors preserve original masks and reuse guide colors; idles
-coordinate head/eyes, shoulders and body over planted soles, with rigid tools and
-subtle cloth follow-through. The supplied Rattlebones idle is unchanged. Native
+cast and Minotaur. The correction enlarges the Royal Lancer and Royal Arbalist
+helmets; the other fifteen recolored masks and all approved palettes are unchanged.
+All seventeen idles have stronger coordinated lift/compression/recovery, repaired
+arm/cape and wrist joins, and complete rigid tools. The supplied Rattlebones idle is unchanged. Native
 files, exact PNG/GIF exports, per-character palettes and a synchronized native-size
-preview are included. The guide's current version is v1.5.
+preview with a before/after selector are included. The guide's current version is
+v1.6. Correction checks cover exposed rigid prop pixels, complete part bounds,
+body soles with prop occlusion, and exact native/PNG/GIF exports. See the validation
+record for the limits of those checks and the earlier missed visual defects.
 
 This checkpoint is source artwork only: none of these seventeen new idles has been
 assigned to Unity definitions in this pass. Visual approval and later integration

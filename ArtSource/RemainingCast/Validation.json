@@ -27,10 +27,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        33,
+        41
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 377,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "cd45211c380349b790a9a48c356a9e3f49cbe7008cc6842f5fafdf9ef7c51455",
-      "idle_sha256": "286ccd2270b81a743b4a568f9e507461004ddacd9e5ed3892519d73d9714771a"
+      "idle_sha256": "24201b465339666cbd12d42a21301bc4e659cb193eb1ff9bc3226ed22f846406"
     },
     "BarricadeGuard": {
       "source": "BarricadeGuard",
@@ -57,10 +108,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        24,
+        41
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 247,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "edee47d8ab7989bcd8d939d462a8fee15870779ed82dc6426a8a5a6fafd98e1c",
-      "idle_sha256": "f14ad896006a1eaa203fdcf2357512dc65f367158113fae15a9bcecd6b8ccdc4"
+      "idle_sha256": "bfb4b017887a8ce8137764c8c352952c4f0d9b500870aee6bd6fad06d085691c"
     },
     "SpearGuard": {
       "source": "spearGuard_1",
@@ -87,10 +189,104 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        25,
+        31
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 280,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "shield": {
+          "exposed_pixels_checked_per_frame": 302,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "a9bbc8bec5e82e30badfea63a7d3e72a4890b342ebfcc12449cad72c2e35aae6",
-      "idle_sha256": "0127a0c91f3fbe2f17c744c56ea84779824f93424c9d104ac274b6270ccdcb60"
+      "idle_sha256": "db2cb2e6002bc4aec4b5e97913fc888074029563ccf72ca8d321390d9fa1c6aa"
     },
     "TownMarshal": {
       "source": "Marshall_1",
@@ -117,10 +313,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        24,
+        45
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 451,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "9d93b6f29f03e235a261dbcc14ac09f944df99f057de4890695235ec192b600c",
-      "idle_sha256": "b17b89071d942f7f32ec3de2ca7bfcf7a0ba8646b2d6d16ffb7df1a4c62e42d0"
+      "idle_sha256": "a2ba16485178081a20fe6f59056c32959ea63f0139e7dae9b9690ee1d8bd1af6"
     },
     "SiegeSergeant": {
       "source": "SiegeSergeant",
@@ -147,10 +394,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        25,
+        45
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 311,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "fc4fa1ee765154ac8bf9c5d719b726453a5a1b96b6773110009bcfbb243164d5",
-      "idle_sha256": "4a2f6f93c1bf173c94b44522160980d050938b21772afeec9be9a1b74f5c0412"
+      "idle_sha256": "53251ea95d459f3dfb235a233a7edce17f54ede22cfa8b39c15e620af95b5a38"
     },
     "SwordKnight": {
       "source": "SwordKnight_1",
@@ -177,10 +475,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        26,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 231,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "791a3420262325836b661e873a0008e0df3b563ef8030ba4a47f0289a7349b13",
-      "idle_sha256": "b49c93e8f66bdc413ff2a21d857a3b4efb3bb60f49075d91481143b3f3865efc"
+      "idle_sha256": "20c691f16000bfe8df81302e04d7f0459b8683740b7b8291a0afc50b591b9fb6"
     },
     "SpearKnight": {
       "source": "SpearKnight_1",
@@ -207,10 +556,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        24,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 331,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "6b5739fdec2b2be8deefb81fd746e174a8e0413269ab70b283bf6886f225e58e",
-      "idle_sha256": "81b28ad778b99a8cf86efd5c389a0dd1915b2d8d59dc99d5148be9d6946a7d41"
+      "idle_sha256": "a76d543460610e3323cf58668b0f642950ae234d41031e0c953e02c7b6937414"
     },
     "ShieldKnight": {
       "source": "ShieldKnight_1",
@@ -237,10 +637,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        23,
+        42
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 630,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "d452c5381dcce66b68f669c6385d55cba2c476ab7c61b499731b33aa023a713a",
-      "idle_sha256": "259d77b8985b4f68e4d325ef763bebddcfff02d24004b429800ee1e6f6c4fdd6"
+      "idle_sha256": "bd2a6190b3bac772f52c8ae28ead3e7172bde6a6242cba544d1d102dd8560aa8"
     },
     "KnightCaptain": {
       "source": "KnightCaptain1",
@@ -267,10 +718,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        24,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 247,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "4eecf2a2ba6948118ebaa82cefdbb8499f770fd073e1d99248dc58822e239505",
-      "idle_sha256": "b417dc2e85789acddac2bf138ee3ce79f8a7972b160fa9d51a946515c52b5b04"
+      "idle_sha256": "16ea3bddccfa929bbc4f233b9f618f3fac66dde6bbb1ee554f3dcfab974e29e9"
     },
     "RoyalSwordsman": {
       "source": "SwordRoyalKnight1",
@@ -297,10 +799,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        26,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 293,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "047ab9de762b994c51aa7fcb3c2cea8148a9fcb9ea57bbcc8a982e67de6df04f",
-      "idle_sha256": "095ed697811916a7cc6139835a7931d309cde3ae3c855b7c315021ce462fab9e"
+      "idle_sha256": "b6d3521f59394bed7b7281f15b0697382874966ac02a9cdd55624d976493970b"
     },
     "RoyalLancer": {
       "source": "spearRoaylKnight1",
@@ -326,11 +879,68 @@
         0,
         255
       ],
-      "static_mask_unchanged": true,
+      "static_mask_unchanged": false,
+      "helmet_resized": true,
+      "helmet_edit_bounds": [
+        21,
+        4,
+        51,
+        37
+      ],
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        28,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 450,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "84f1ff91de7c55efade244d05f0918c86efeca2dc02f86aa1f07d7aee2c2a50b",
-      "idle_sha256": "59c62bbf31c44a36c37aa48e0076e3b321d30b0f7acc05bfa9e76150f001fbbf"
+      "idle_sha256": "16bec0bbf609a6a630606dfa9ca5f15c6486ccbdd1474973b89e7222555aea73"
     },
     "RoyalArbalist": {
       "source": "RoyalArbalist1",
@@ -356,11 +966,68 @@
         0,
         255
       ],
-      "static_mask_unchanged": true,
+      "static_mask_unchanged": false,
+      "helmet_resized": true,
+      "helmet_edit_bounds": [
+        18,
+        2,
+        51,
+        36
+      ],
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        34,
+        40
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 498,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "919d4079b5485769e1589a828fbdaa588f20191b2ef43fe89c453683f475b4e8",
-      "idle_sha256": "ab3ea44f437fe6b6dc550ee134b88f5c35f24d1a762c175aa575c312ee7ae1b1"
+      "idle_sha256": "52352280a68cdaab120d6d27ef8908bef7dc398dbc35067af08cf8c344ce5b05"
     },
     "RoyalStandardBearer": {
       "source": "BannerRoyalKnight1",
@@ -387,10 +1054,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        26,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 237,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "1a4130b32ffbb607b79326db5c7ea0b06a8b2497e37bf08feb06ed1563c4eecc",
-      "idle_sha256": "f5f20157de2e353bf6d8bd05d345ea8463550884c274c8a653e414dbf44ee5d6"
+      "idle_sha256": "a430173b39d172918da1a681712f8d35ecb59a590c1179b18c0aa83cace4ef43"
     },
     "RoyalArcanist": {
       "source": "RoyalArcanist",
@@ -417,10 +1135,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        27,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 322,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "b57ed58dea86ae9b27672f204876e161258ee3c6267493d730042fca7dfcaf28",
-      "idle_sha256": "77708efc70204accd890ef817267e56a42b346972390fdb07a85e8e2f104b75b"
+      "idle_sha256": "28bf40e9f822362e70eb36d4b86537fdef8f72b30860f51421d6f37af721d830"
     },
     "RoyalMage": {
       "source": "RoyalMage1",
@@ -447,10 +1216,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        28,
+        46
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 318,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "f632ea3a150275d473637a6dbfb64cd9d7def2bd1da342195985b9a563a46bc7",
-      "idle_sha256": "21bd850cd81e53eea43478cf2fa7809ddc0ad7ee8fa9ea4bb2f86db02de955e2"
+      "idle_sha256": "6a8a8398aba1c63538127ff45bd1f2c6d10b953ca622a2018521e608260e9da1"
     },
     "King": {
       "source": "TheKing",
@@ -477,10 +1297,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        23,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 395,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "3b7d0b208ffce5f51a6823ac425f8fedded89d36d9f56ff8a60d8134f40d34e1",
-      "idle_sha256": "58dff31f65b13f07c618764c28db021091249a5153945735578c3121686a5d74"
+      "idle_sha256": "e58c36fd3374da0e7488632cf46521ade4f3de2f08d5e2f92dca8fb2daec32ba"
     },
     "Minotaur": {
       "source": "Minotaur64x64",
@@ -507,10 +1378,61 @@
         255
       ],
       "static_mask_unchanged": true,
+      "helmet_resized": false,
       "native_sheet_gif_exact": true,
-      "sole_pixels_unchanged": true,
+      "visible_sole_pixels_unchanged": true,
+      "visible_sole_x_range": [
+        20,
+        43
+      ],
+      "rigid_geometry": {
+        "prop": {
+          "exposed_pixels_checked_per_frame": 92,
+          "translation_only": true,
+          "no_part_pixels_outside_canvas": true,
+          "offsets": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              -1,
+              3
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "body_soles_fixed_with_exact_prop_occlusion": true
+      },
       "source_sha256": "81fa09d7109ff438f443686a0d81ada9711e05b73e121ca8490b6db8cde3005d",
-      "idle_sha256": "76290db974998238f385d39fa033718be72eff396623e2ee494bf0adfcf45540"
+      "idle_sha256": "72da0f5ea6563fe7b1c874ee2591a79ae4fbf8b811af4fc67c9b0c8e4e85001c"
     }
   }
 }

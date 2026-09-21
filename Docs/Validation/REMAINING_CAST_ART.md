@@ -1,13 +1,20 @@
-# Remaining cast art validation — 2026-09-22
+# Remaining cast correction validation — 2026-09-22
 
 Scope: seventeen supplied static sprites recolored, then seventeen idle animations
 authored in LibreSprite. RattleBones_FluidIdle is preserved as the motion reference.
 Sources and machine-readable evidence live in `ArtSource/RemainingCast/`.
 
+The first pass's palette/export checks passed but missed internal anatomy cuts,
+incomplete prop selections and weak articulation. Those earlier checks did not
+establish visual acceptance. This record describes the corrected files; previous
+native outputs are preserved in `BeforeCorrection/` for direct comparison.
+
 ## Executed checks
 
-- `review_recolors.py`: all 17 recolored stills preserve the original 64×64 alpha
-  masks, bounds and placement. Only existing guide RGB colors are used.
+- `review_recolors.py`: fifteen stills preserve their original alpha masks. The
+  requested Royal Lancer/Arbalist helmet enlargements are explicit exceptions:
+  changes stay inside their head regions, retain the exact previous palette and
+  leave all pixels outside those regions unchanged. All canvases remain 64×64.
 - `inspect_idles.py`: all 153 native frames have binary alpha, the expected palette,
   fixed dimensions and timing, preserved original captures, and exact ready-pose
   return. No frame introduces an additional disconnected cluster of three or more
@@ -17,21 +24,34 @@ Sources and machine-readable evidence live in `ArtSource/RemainingCast/`.
   Every exposure is 130 ms, every loop is 1170 ms, and all PNG sheets are 576×64.
   Sheet JSON uses portable image filenames. Every frame uses only that character's
   recolored-still palette; no opaque color drift or partial alpha was found.
-- Grounding: the selected sole regions on source row 63 remain pixel-identical in
-  every frame. First and last frames equal the recolored ready pose exactly.
+- `validate_geometry.py`, also called by the export validator: each exposed prop
+  region matches its native part drawing under a single translation, with no
+  rescaling or lost pixels. This includes both lower crossbow loops. The regions
+  exclude upper surfaces legitimately hidden by the dipping head; their exact
+  definitions and per-character pixel counts are recorded in the script/report.
+  Every pixel of the complete rigid part stays inside the canvas at that offset.
+- Grounding: visible sole regions on row 63 remain pixel-identical. All remaining
+  body-sole pixels are also checked against exact prop compositing where a bow or
+  carried shield passes in front of a foot. This replaces the earlier assumption
+  that every bottom-row pixel near a foot was itself a foot. First and last frames
+  equal the corrected recolored ready pose exactly; each loop has eight distinct
+  drawings and a deliberate duplicate ready exposure across the seam.
 - Preservation: hashes of all native original captures remain unchanged. The user's
   original RattleBones_FluidIdle.ase also matches the captured pixels and timings.
 
 ## Visual review
 
-Compared original/recolored stills and every idle contact sheet; checked palette
-separation, face identity, head/body rhythm, exposed-eye blinks, rigid props and
-planted feet. Compared playback with the unchanged Rattlebones reference in the
-synchronized local preview at native size and enlarged nearest-pixel views.
-Checked the low pose on light and dark backgrounds. Corrected split pole/shaft
-outlines, the Marshal's scalp contour, the Spear Guard's shield contour, and flag
-attachment before the final export. Helmets retain their original visor designs;
-heavy King/Minotaur poses retain a smaller compression amplitude.
+Compared all nine poses of all seventeen corrected idles against Rattlebones on
+the correction boards, and reviewed synchronized playback in faction groups with
+native-size and enlarged views on light/dark backgrounds. Inspected separated
+native body/head/prop drawings and the King's arm/cape, both enlarged helmets,
+Arbalist lower crossbow, Marshal wrist joins and complete helmet/hood outlines.
+The torso now compresses continuously, with shoulder roll and a restrained neck
+pivot; visible eyes close on the low beat. The King/Minotaur retain heavier acting.
+The corrected passes share the reference's compact lift, compressed blink and
+recovery. This is an art-direction judgment for review, not an automated guarantee
+or the user's final approval. `Review/Correction/AllFrames_*.png` and the preview's
+Pass selector make the full comparison available.
 
 ## Limits
 
