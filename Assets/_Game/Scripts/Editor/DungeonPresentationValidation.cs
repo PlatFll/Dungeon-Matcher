@@ -142,6 +142,7 @@ public static class DungeonPresentationValidation
             ObserveAudio(RunSession.Current.Board);
             yield return DelayedMatchPauseCase(RunSession.Current.Board);
             Time.timeScale = 0; yield return Shot(height + "-game"); Time.timeScale = 1;
+            PrepareDurableTargets(RunSession.Current);
             foreach (TileBurstKind kind in Enum.GetValues(typeof(TileBurstKind)))
                 yield return BurstCase(height, kind);
             StopObservingAudio();
@@ -269,6 +270,8 @@ public static class DungeonPresentationValidation
         yield return Until(() => !board.IsBusy && ActiveBursts(board).Length == 0, kind + " cleanup and authoritative settlement");
         board.TileBurstVFXRequested -= handler;
         Check(cues >= 1, kind + " actual event observed");
+        Check(run.Waves.IsWaveActive && run.Waves.ActiveEnemies.Any() && run.Waves.ActiveEnemies.All(enemy => enemy != null && !enemy.IsDefeated),
+            kind + " durable presentation fixture remains in its active wave");
         StopEnemies();
     }
 
@@ -333,6 +336,23 @@ public static class DungeonPresentationValidation
     private static void StopEnemies()
     {
         foreach (var attack in Object.FindObjectsByType<EnemyAutoAttack>(FindObjectsSortMode.None)) attack.StopAttacking();
+    }
+
+    private static void PrepareDurableTargets(RunSession run)
+    {
+        const int fixtureHealth = 10000;
+        var enemies = run.Waves.ActiveEnemies.Where(enemy => enemy != null && enemy.IsInitialized && !enemy.IsDefeated).ToArray();
+        Check(enemies.Length > 0, "living enemy available for durable presentation fixture");
+        foreach (var enemy in enemies)
+        {
+            var stats = enemy.RuntimeStats;
+            var durable = new EnemyRuntimeStats(stats.Wave, stats.Level, fixtureHealth, stats.Damage, stats.FollowUpDamage,
+                stats.AttackInterval, stats.SpecialTurnRequirement, stats.DamageMultiplier);
+            typeof(EnemyActor).GetProperty(nameof(EnemyActor.RuntimeStats), Flags).SetValue(enemy, durable);
+            enemy.RestoreHealth(fixtureHealth);
+            Check(enemy.MaxHealth == fixtureHealth && enemy.CurrentHealth == fixtureHealth, "durable target runtime HP installed");
+        }
+        Report.AppendLine("COMBAT FIXTURE: scene-local enemy maximum/current HP raised to 10000 after the native Game screenshot, preventing defeat/card-draft interruption across burst cases. Real damage, hit feedback, board rules and resolver timing remain active; definitions and user profiles are unchanged.");
     }
 
     private static void ValidateMenu(int height)
