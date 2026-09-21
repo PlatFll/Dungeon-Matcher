@@ -19,6 +19,8 @@ entries=json.loads(path.read_text())
 for name in entries:
     entries[name]=fingerprint(root/name)
 entries['Scripts/refinement_materials.json']=fingerprint(root/'Scripts/refinement_materials.json')
+for name in ['Scripts/polish_native.js', 'Scripts/check_polish.py']:
+    entries[name]=fingerprint(root/name)
 path.write_text(json.dumps(dict(sorted(entries.items())),indent=2)+'\n')
 originals=json.loads((root/'Originals/Manifest.json').read_text())
 assert all(fingerprint(root/'Originals'/name)==entry for name,entry in originals.items())

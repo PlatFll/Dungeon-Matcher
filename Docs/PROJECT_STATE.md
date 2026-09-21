@@ -21,12 +21,12 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-09-21
-- **Current milestone:** Revised gameplay baseline, original four-character animation family, and Miner/local-villager animation integration
-- **Current implementation branch:** `codex/miner-villager-animation-family`
+- **Current milestone:** Dungeon presentation polish, native tile bursts, connected local-enemy animation repairs, combat audio and mobile haptics
+- **Current implementation branch:** `codex/dungeon-presentation-polish`
 - **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
-- **Current art-pass base:** `codex/combat-action-animation-family` at `6fb8f2717b7100efe41178579da49d4f3a2ea6a2` (PR #160).
+- **Current art-pass base:** `codex/miner-villager-animation-family` at `cbd7f65` (PR #161).
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** The original idles and first combat-action pass are on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). The current local-enemy pass extends that stack; merge requires a new explicit instruction. Sources live in `ArtSource/CombatIdles/`, `ArtSource/CombatActions/`, and `ArtSource/LocalEnemies/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.3.1). Current-pass verification is recorded in `Docs/Validation/LOCAL_ENEMY_ANIMATIONS.md`.
+- **Release status:** The original idles and first combat-action pass are on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). The local-enemy pass on [PR #161](https://github.com/PlatFll/Dungeon-Matcher/pull/161) and current presentation pass extend that stack; merge requires a new explicit instruction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.4). Current-pass verification is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`.
 
 ### What this document is
 
@@ -121,15 +121,21 @@ The current player cast includes the crowned skeleton **Sir RattleBones / Rattle
 
 The prior four-idle integration is on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159). The current action pass is on unmerged [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160), stacked on that branch. Idle sources remain nine 64×64 frames at 130 ms (1.17 seconds). Farmer now uses the user's own subsequent LibreSprite adjustment, preserved exactly. Pan Villager's approved head/body rhythm and scarf-tail polish and Rattlebones' idle are unchanged.
 
-`ArtSource/CombatActions/` adds Farmer's rigid pitchfork thrust, the supplied Pan Villager overhead pan strike with its clipped disk completed, and polished/recolored Bardley and Rattlebones ability casts. Auto-attacks use eight frames / 680 ms with the visible hit at 320 ms (frame five); player casts use ten frames / 880 ms. The persistent source guide is [ArtDirection/Dungeon_Matcher_Art_Direction.txt](ArtDirection/Dungeon_Matcher_Art_Direction.txt), now v1.3.1. The same approved palettes and pixel material treatment apply across every frame.
+`ArtSource/CombatActions/` adds Farmer's rigid pitchfork thrust, the supplied Pan Villager overhead pan strike with its clipped disk completed, and polished/recolored Bardley and Rattlebones ability casts. Auto-attacks use eight frames / 680 ms with the visible hit at 320 ms (frame five); player casts use ten frames / 880 ms. The persistent source guide is [ArtDirection/Dungeon_Matcher_Art_Direction.txt](ArtDirection/Dungeon_Matcher_Art_Direction.txt), now v1.4. The same approved palettes and pixel material treatment apply across every frame.
 
 All four idles and both player casts now stand at source row 63 in full 64×64 rectangles. Bardley's idle moves down exactly 12 pixels, without changing any drawing or losing pixels; this supersedes the previous idle-only 64×52 Unity crop. Farmer/Pan attack canvases expand symmetrically to 96×64 while retaining the same 64-pixel body scale and fixed floor/center.
 
 The existing definition-selected controllers own idle/action playback. Accepted player activations emit one cast cue; persistent effects and rejected casts do not repeat it. Farmer/Pan use the existing enemy impact/damage flow with the clip's hit event, protected against duplicates, pause and cancellation. Their authored sprite movement replaces the generic UI lunge. Ability gameplay effects, board resolution, HP/shield rules and balance numbers are unchanged. See [the action source notes](../ArtSource/CombatActions/README.md) and [validation record](Validation/COMBAT_ACTION_VALIDATION.md). Earlier idle-pass evidence remains historical and does not describe the later user-edited Farmer or the new Bardley baseline.
 
-The 2026-09-21 local-enemy pass extends the animation checkpoint above: Miner, Basket Villager (berries farmer), and Barricade Villager now have matching material palettes and nine-frame idles. All three have eight-frame attacks with damage on frame five; Miner and Barricade Villager have ten-frame abilities with board contact at 360 ms. The Miner swings sideways to attack and leaps into a ground strike to mine. Basket Villager gathers/releases a berry with no travelling projectile. Barricade Villager uses an axe attack and a compact kneeling plank-set ability. Sources and exact exports are in `ArtSource/LocalEnemies/`; the current guide is v1.3.1. Fixed 96×80 Miner canvases and 64×64/96×64 villager canvases preserve source scale and bottom-center alignment. The pixel UI presenter compensates taller canvases without moving the shared battle-floor anchor; every pose is checked for health-bar clearance after portrait resizing. Earlier four-character art remains unchanged. Ability contact/recovery extends the existing actor action ownership and authoritative board queue; HP/shield, special cadence, caps and balance are unchanged. See [local-enemy verification](Validation/LOCAL_ENEMY_ANIMATIONS.md).
+The 2026-09-21 local-enemy pass extends the animation checkpoint above: Miner, Basket Villager (berries farmer), and Barricade Villager now have matching material palettes and nine-frame idles. All three have eight-frame attacks with damage on frame five; Miner and Barricade Villager have ten-frame abilities with board contact at 360 ms. The Miner swings sideways to attack and leaps into a ground strike to mine. Basket Villager gathers/releases a berry with no travelling projectile. Barricade Villager uses an axe attack and a compact kneeling plank-set ability. Sources and exact exports are in `ArtSource/LocalEnemies/`; the current guide is v1.4. Fixed 96×80 Miner canvases and 64×64/96×64 villager canvases preserve source scale and bottom-center alignment. The pixel UI presenter compensates taller canvases without moving the shared battle-floor anchor; every pose is checked for health-bar clearance after portrait resizing. Earlier four-character art remains unchanged. Ability contact/recovery extends the existing actor action ownership and authoritative board queue; HP/shield, special cadence, caps and balance are unchanged. See [local-enemy verification](Validation/LOCAL_ENEMY_ANIMATIONS.md).
 
-The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle drafts for connected head pitch, eye closure, shoulder changes and torso compression in all three local-enemy idles. It also improves the builder axe windup/follow-through and corrects the kneeling leg locally. Ready poses, palettes, dimensions, frame exposures, event times and runtime code remain unchanged; the earlier four-character art and the other local-enemy action drawings are preserved.
+The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle drafts for connected head pitch, eye closure, shoulder changes and torso compression in all three local-enemy idles. It also improves the builder axe windup/follow-through and corrects the kneeling leg locally. The current presentation pass repairs disconnected candle/boot pixels, preserves the basket as a rigid carried prop, articulates the berry throw and rounds the builder's folded rear boot. Ready poses, palettes, dimensions and impact times remain unchanged. Earlier four-character art and the Miner's action drawings are preserved.
+
+## Current presentation and feedback checkpoint
+
+The working guide is v1.4. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
+
+Thirteen original short combat sounds cover grouped gem matches/landings, explosions, poison, hits, healing, shields and abilities. A bounded six-voice mix prioritizes impacts and player casts. Android/iOS haptics provide short grouped landing/impact/cast pulses with independent persistent vibration control. Feedback is suppressed during pause, focus loss and snapshot restore/replay. Physical-device vibration feel and speaker/headphone mix approval remain outstanding. Current validation evidence is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`; previous pass evidence remains historical.
 
 ## Locked/preserved art direction
 
@@ -656,9 +662,10 @@ Top-right settings control with:
 - End & Retry / End Run (settles once)
 - Music mute
 - SFX mute
+- vibration on/off
 - reduced motion
 
-Music and SFX preferences persist independently.
+Music, SFX and vibration preferences persist independently.
 
 ## Death/end-of-run
 

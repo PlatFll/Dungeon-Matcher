@@ -151,6 +151,16 @@ public sealed class GemBreakAudioController :
 
     private void LateUpdate()
     {
+        if (!CombatAudioController.FeedbackAllowed)
+        {
+            StopAllCoroutines();
+            hasPendingBreak = false;
+            pendingGemCount = 0;
+            pendingCascadeDepth = 0;
+            if (audioSources != null)
+                foreach (var source in audioSources) if (source != null) source.Stop();
+            return;
+        }
         if (audioSources != null)
             foreach (var source in audioSources) if (source != null) source.mute = AudioPreferences.SfxMuted;
         if (!hasPendingBreak)

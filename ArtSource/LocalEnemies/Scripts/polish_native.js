@@ -2,6 +2,7 @@
 // All raster work happens in native cels. The output directory must exist.
 // This is a local repair of the 2026-09-21 reviewed poses, not a draft generator.
 var ROOT = 'C:/UnityProjects/Dungeon Matcher/ArtSource/LocalEnemies/';
+var SOURCE = ROOT + 'Originals/BeforePresentationPolish/';
 var DEST = ROOT + 'Review/Polished/';
 var OUT = '0A0D11';
 
@@ -30,7 +31,7 @@ function stroke(a,w,h,x0,y0,x1,y1,r,c){
  }
 }
 function read(name,w,h,count){
- app.open(ROOT+name+'.aseprite');var s=app.activeSprite,frames=[];
+ app.open(SOURCE+name+'.aseprite');var s=app.activeSprite,frames=[];
  if(s.width!==w||s.height!==h||s.layer(0).celCount!==count)throw Error('Unexpected source '+name);
  for(var f=0;f<count;f++){
   var cel=s.layer(0).cel(f);
@@ -40,7 +41,7 @@ function read(name,w,h,count){
  app.activeDocument.close();return frames;
 }
 function save(name,w,h,frames){
- app.open(ROOT+name+'.aseprite');var s=app.activeSprite;
+ app.open(SOURCE+name+'.aseprite');var s=app.activeSprite;
  if(s.width!==w||s.height!==h||s.layer(0).celCount!==frames.length)throw Error('Timing template changed '+name);
  s.saveAs(DEST+name+'.aseprite',false);
  for(var f=0;f<frames.length;f++)s.layer(0).cel(f).image.putImageData(frames[f]);

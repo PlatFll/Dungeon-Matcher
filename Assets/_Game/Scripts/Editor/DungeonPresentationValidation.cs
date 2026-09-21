@@ -141,6 +141,7 @@ public static class DungeonPresentationValidation
             ValidateBattle(height);
             ObserveAudio(RunSession.Current.Board);
             yield return DelayedMatchPauseCase(RunSession.Current.Board);
+            yield return CombatAudioRuntimeValidation.Cases(Check, line => Report.AppendLine(line));
             Time.timeScale = 0; yield return Shot(height + "-game"); Time.timeScale = 1;
             PrepareDurableTargets(RunSession.Current);
             foreach (TileBurstKind kind in Enum.GetValues(typeof(TileBurstKind)))

@@ -205,6 +205,7 @@ public sealed class MainMenuController : MonoBehaviour
         GameUi.Button("ChallengesButton",homeScreen.transform,"Challenges",new Vector2(145,48),new Vector2(78,-238),ShowChallenges);
         endSavedRun=GameUi.Button("EndSavedRun",homeScreen.transform,"End saved run",new Vector2(300,44),new Vector2(0,-302),ConfirmEndSavedRun);
         accountLabel=GameUi.Label("AccountSummary",homeScreen.transform,"",new Vector2(420,76),new Vector2(0,130),21);
+        DungeonPresentationArt.InstallMenu(homeScreen, title);
         AccountProgression.Current.Changed += RefreshAccount;
         CharacterSelectionSettings.Changed += RefreshAccount;
     }
