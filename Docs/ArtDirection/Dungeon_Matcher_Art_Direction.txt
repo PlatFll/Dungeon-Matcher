@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.2
+**Version:** 1.3.1
 **Compiled:** 2026-09-19
-**Updated for production combat animations:** 2026-09-20
+**Updated for production combat animations:** 2026-09-21
 **Scope:** visual identity, palettes, sprite editing, review, idle and combat-action animation direction.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -358,6 +358,55 @@ Sources: ArtSource/CombatActions/. Preserve supplied originals there. Edit cels 
 
 Review actual idle → action → idle playback at game speed and native size, then inspect each pose. Verify palette/materials, alpha, unclipped props, hand contact, stable ground, fixed center and scale across all states. In the production scene test both portrait heights, all frames, actual ability activation, hit-frame damage, duplicate events, pause longer than the fallback timeout, cancellation/restart and absent animation. Numeric palette checks do not replace visual shading review.
 
+## 11B. Local villagers and Miner — 2026-09-21
+
+This pass extends the established family under the user's delegated art direction. The berries farmer is the existing Basket Villager definition. Preserve these villagers' recognizable faces, hats, workwear and tools. The static historical reference board remains an archive; current local-enemy material references are the ready poses in ArtSource/LocalEnemies/ and the exact palette data in Scripts/palettes.json beside them.
+
+### Shared material assignments
+
+Use dark outline **#0A0D11**. Skin: **#7C5238 / #B9825D / #E6B08A**. Rustic cloth: **#3E312A / #6C5A4A / #9A856F**. Wood/leather: **#4A2C1C / #7A4D2E / #B07A43**. Cool iron: **#2B313A / #55606E / #93A1B0**. Keep the established top-left lighting and discrete, unblended shading clusters. These colors are reused from the existing cast's material vocabulary; do not substitute generic gray, orange skin, or brown metal.
+
+Miner: muted work cap and clothing, warm face, wooden pick handle and cool iron head. The candle uses pale **#FDF5E5** and warm flame **#FBEA90**. Do not spread the flame highlight into skin or cap shading.
+
+Basket Villager: the straw hat remains the focal point, using **#7A5A2C / #B88A46 / #E7C979 / #F9E7B4**. The basket stays woven wood, clothing stays subdued, and berries use **#7C1A30 / #C74A5A**. The red cluster in the attack belongs to the hand until release.
+
+Barricade Villager: subdued cloth cap/workwear, warm skin, a clearly wooden log bundle, and a cool iron axe. Keep the log highlights less bright than the face; do not turn the axe into a gold or brown object.
+
+### Acting and impact decisions
+
+All three idles use nine 130 ms exposures, 1170 ms total. The body, shoulders and face share the down-up motion; a brief closed-eye pose sits in the compressed beat. Knees compress over planted soles. Keep compact pose changes and visible holds, not interpolated bobbing or a face that moves ahead of the torso.
+
+The revised idle acting uses the user's newer LibreSprite drafts, preserved in ArtSource/LocalEnemies/Originals/IdleRefinement/. A vertical translation of a single ready drawing is insufficient. Show changing hat/head pitch, shoulder angle, elbow position and torso compression together. Frames 1–2 establish the ready hold; 3–4 gather into the dip; 5–6 compress with narrowing/closed eyes; 7–8 reopen and recover; 9 returns to ready. Small differences between characters are welcome, but the face must remain embedded in the body action. The Miner candle follows the hat without an unrelated bright flare or gasping mouth. The berries farmer's free shoulder opens slightly while the basket arm carries its load. The builder's axe and timber bundle keep their original shapes while his head and shoulders articulate. Preserve the exact ready pose so existing attacks and abilities still enter cleanly.
+
+Builder refinement: the axe winds behind/above the head, travels quickly over the front shoulder, strikes outward on frame 5, and settles through a lower follow-through. Keep the hand at the shaft pivot. During the build, show a rounded cloth knee, a folded rear shin and a compact boot, with the other foot planted behind the foreground plank. Do not stretch a boot into a leg or flatten both legs into an ambiguous floor slab. The knee correction is confined to the lower body; plank/tool contact remains on frame 5.
+
+All three auto-attacks use the eight-frame, 680 ms table in 11A. Frame 5 begins at 320 ms and supplies the only damage cue.
+- Miner: a two-handed sideways swing with a broad waist-height follow-through. Its silhouette differs from the mining strike.
+- Basket Villager: gather from the basket, lift the berry in the free hand, snap the arm forward, and open the empty hand on frame 5. The berry disappears at release. No travelling projectile or independent red particle trail is authored.
+- Barricade Villager: a compact axe wind-up, decisive strike, then controlled recovery while the other arm retains the timber bundle.
+
+Miner and Barricade Villager abilities use ten frames and the 880 ms table in 11A. Frame 5 begins at **360 ms**; AbilityImpact releases the accepted board request. AbilityComplete at **870 ms** releases recovery, with the final exposure ending at 880 ms.
+- Miner: gather low, lift the pick, briefly lift both feet, then drive the pickaxe head into the ground. Frame 4 is intentionally airborne. Frame 5 has the pick touching the floor while the legs recoil. The actor anchor never follows the airborne silhouette. The tile-breaking flash begins on contact; the existing environmental clear/refill owns the rest.
+- Barricade Villager: crouch into a compact kneel, set a short plank, lift the axe, make one decisive wooden-joint contact on frame 5, then rise. The board blocker begins materializing on this contact. Avoid adding a long construction pantomime or a separate hammer identity.
+
+### Canvas and integration
+
+Miner idle, attack and ability use **96×80**. Basket/Barricade idles use **64×64**, with **96×64** action canvases. Drawn pixels retain their original size. Fixed full-frame rectangles and bottom-center pivots preserve the same actor center and floor through every state. Never crop each pose independently or shift a pivot to follow a swinging tool. Deliberate Miner flight is an acting exception, not a centering correction.
+
+Unity UI Images also need a stable height compensation for taller canvases: sprite pivot metadata alone does not ground a center-pivoted Image. PixelPerfectBattleCharacterUI applies this to the actor root while retaining the authoritative battle-floor anchor and normal feedback motion. Check the shared floor, clear feet above health bars, and unchanged pixel scale after portrait resizing as well as through each animation.
+
+Native sources, horizontal sheets, GIFs, millisecond JSON, material maps and validation live in **ArtSource/LocalEnemies/**. Import with **CombatActionImporter.ImportLocalEnemies**; this extends the existing importers/controllers without rewriting the earlier four characters. BoardController remains the sole mutation owner, and EnemyAutoAttack remains the damage owner. Missing impact/completion events must have bounded, pause-aware fallback behavior. A cancelled/dead/disabled owner must not create a delayed hole or blocker.
+
+If multiple board abilities become ready together, start each authored animation only when the board can accept its contact. Retain the ready charge while waiting; do not play an early hit pose and apply its effect after the animation has already finished.
+
+### Reference reasoning
+
+Slynyrd's primary pixel-animation tutorials support the chosen emphasis on key poses, strong anticipation, short travel, readable contact, overshoot and recovery:
+- https://www.slynyrd.com/blog/2018/8/19/pixelblog-8-intro-to-animation
+- https://www.slynyrd.com/blog/2018/9/8/pixelblog-9-melee-attacks
+
+The berry release and kneeling plank-set are original acting decisions for these characters, informed by those timing principles. The research is not a source for new palettes or character designs.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -417,5 +466,13 @@ Moved the current guide and unchanged reference board into Docs/ArtDirection/. D
 ### v1.2 change record — 2026-09-20
 
 Adopts the user's adjusted Farmer idle unchanged. Adds the eight-frame Farmer/Pan auto-attack and ten-frame Bardley/Rattlebones cast defaults, exact timing/impact checkpoints, rigid-prop acting, full-canvas source exports and in-game lifecycle review. Bardley now consistently stands at y=63 in 64×64 idle and ability frames, superseding the prior Unity padding crop. Palette/reference-board files are unchanged because no palette or character redesign was introduced.
+
+### v1.3 change record — 2026-09-21
+
+Adds the Miner and two local villagers, shared material assignments, side-swing/berry-release/build acting, deliberate mining flight, expanded fixed canvases, and contact-timed enemy board abilities. The earlier four characters and player ability gameplay timing remain unchanged.
+
+### v1.3.1 change record — 2026-09-21
+
+Replaces the three insufficiently articulated first-draft idles with cleaned poses from the user's newer LibreSprite drafts. Clarifies shared head/eye/shoulder/body acting, preserves rigid props and planted soles, improves the builder's axe swing and folded knee, and retains all existing timings, canvas sizes, ready poses and palettes. These are reviewable refinements, not a new palette or character-design approval.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.

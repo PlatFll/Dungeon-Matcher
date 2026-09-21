@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8"><title>Dungeon Matcher · Local enemy animations</title>
+<style>
+:root{color-scheme:dark;font:15px system-ui;background:#171321;color:#f4eee3}body{margin:32px auto;max-width:1100px;padding:0 20px}h1{font-size:27px}p{color:#bdb1c9;max-width:850px;line-height:1.6}button,select{font:inherit;padding:9px 16px;background:#372846;color:inherit;border:1px solid #756184;border-radius:6px;margin-right:8px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}article{display:flex;flex-direction:column;background:#221c2c;border:1px solid #493754;border-radius:10px;padding:16px}h2{font-size:17px;margin:0 0 12px}canvas{image-rendering:pixelated;display:block;margin:auto auto 0;background:repeating-conic-gradient(#292330 0 25%,#26202d 0 50%) 0/16px 16px}small{display:block;color:#d3bc84;margin-top:10px}footer{margin-top:24px}a{color:#dabd8a}label{display:inline-block;margin:8px 0 18px} @media(max-width:750px){.grid{grid-template-columns:1fr}}
+@media(min-width:751px){body.zoom4 .grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<h1>Local villagers & Miner</h1><p>Shared RPG battle rhythm, warm rustic materials, cool iron tools. Auto-attacks contact on frame 5 at 320 ms; abilities contact on frame 5 at 360 ms. The Miner's brief mining leap is intentional. No berry projectile is drawn.</p>
+<label>View <select id="scale"><option value="3">3× pixels</option><option value="1">Native size</option><option value="4">4× pixels</option></select></label><button id="toggle">Pause</button><button id="restart">Restart together</button><button id="contact">Contact poses</button>
+<div class="grid" id="grid"></div><footer><a href="README.md">Source notes</a> · <a href="Validation.json">Frame validation</a></footer>
+<script>
+const names=['Miner_Idle','BasketVillager_Idle','BarricadeVillager_Idle','Miner_AutoAttack','BasketVillager_AutoAttack','BarricadeVillager_AutoAttack','Miner_Ability','BarricadeVillager_Ability'];
+const assets=[];let elapsed=0,last=performance.now(),running=true,forcedContact=false;
+Promise.all(names.map(async name=>{
+ const data=await(await fetch(name+'.json')).json(),img=new Image();img.src=name+'.png';await img.decode();
+ const article=document.createElement('article'),title=document.createElement('h2');title.textContent=name.replaceAll('_',' · ').replace('AutoAttack','Auto attack').replace('BasketVillager','Berries farmer').replace('BarricadeVillager','Barricade villager');article.append(title);
+ const canvas=document.createElement('canvas'),info=document.createElement('small');article.append(canvas,info);grid.append(article);
+ const size=data.frames[0].sourceSize;canvas.width=size.w;canvas.height=size.h;
+ assets.push({name,img,canvas,info,frames:data.frames,total:data.frames.reduce((sum,f)=>sum+f.duration,0)});
+})).then(()=>{assets.sort((a,b)=>names.indexOf(a.name)-names.indexOf(b.name));for(const a of assets)grid.append(a.canvas.parentElement);resize();requestAnimationFrame(draw)});
+function resize(){document.body.classList.toggle("zoom4",scale.value==="4");for(const a of assets){a.canvas.style.width=a.canvas.width*Number(scale.value)+'px';a.canvas.style.height=a.canvas.height*Number(scale.value)+'px'}}
+function draw(now){if(running)elapsed+=now-last;last=now;for(const a of assets){const idle=a.name.endsWith('Idle'),cycle=a.total+(idle?0:700);let t=elapsed%cycle,f=0;if(t<a.total){while(f<a.frames.length-1&&t>=a.frames[f].duration)t-=a.frames[f++].duration;}if(forcedContact)f=4;const r=a.frames[f].frame,ctx=a.canvas.getContext('2d');ctx.clearRect(0,0,a.canvas.width,a.canvas.height);ctx.drawImage(a.img,r.x,r.y,r.w,r.h,0,0,r.w,r.h);a.info.textContent=`Frame ${f+1}/${a.frames.length} · ${a.frames[f].duration} ms${!idle&&f===4?' · CONTACT':''}`;}requestAnimationFrame(draw)}
+scale.onchange=resize;toggle.onclick=()=>{forcedContact=false;running=!running;toggle.textContent=running?'Pause':'Play'};restart.onclick=()=>{elapsed=0;forcedContact=false;running=true;toggle.textContent="Pause"};contact.onclick=()=>{forcedContact=true;running=false;toggle.textContent="Play"};
+</script>

@@ -37,6 +37,7 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     [SerializeField]
     private bool isSpecialAbilityAnimationActionActive;
+    private int specialAbilityAnimationActionId;
 
     [SerializeField]
     [Tooltip(
@@ -189,6 +190,9 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     public bool IsSpecialAbilityAnimationActionActive =>
         isSpecialAbilityAnimationActionActive;
+
+    public int ActiveSpecialAbilityAnimationActionId =>
+        isSpecialAbilityAnimationActionActive ? specialAbilityAnimationActionId : 0;
 
     public bool HasAnimationActionInProgress =>
         isAutoAttackAnimationActionActive ||
@@ -689,6 +693,8 @@ public sealed partial class EnemyActor : MonoBehaviour
         }
 
         isSpecialAbilityAnimationActionActive = true;
+        specialAbilityAnimationActionId = specialAbilityAnimationActionId == int.MaxValue
+            ? 1 : specialAbilityAnimationActionId + 1;
         return true;
     }
 

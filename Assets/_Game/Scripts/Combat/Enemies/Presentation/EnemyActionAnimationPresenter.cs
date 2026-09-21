@@ -20,6 +20,12 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private EnemyAutoAttack enemyAutoAttack;
     private CharacterAnimationPlayback animationPlayback;
     private int queuedImpactPresentationId;
+    private int abilityPresentationId, queuedAbilityImpactId;
+    private bool abilityImpactDelivered;
+    private float abilityStartedAt;
+
+    private bool UsesAuthoredAbility => enemyActor != null && enemyActor.Definition != null &&
+        enemyActor.Definition.UseAuthoredSpecialAbilityMotion;
 
     public static EnemyActionAnimationPresenter EnsureInstalled(
         GameObject enemyObject)
@@ -73,12 +79,15 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
             animationPlayback.AbilityImpactReached +=
                 HandleAbilityImpactReached;
+            animationPlayback.AbilityCompleted += HandleAbilityCompleted;
         }
     }
 
     private void OnDisable()
     {
         queuedImpactPresentationId = 0;
+        queuedAbilityImpactId = 0;
+        abilityPresentationId = 0;
         if (enemyAutoAttack != null)
         {
             enemyAutoAttack.AttackStarted -=
@@ -99,6 +108,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
             animationPlayback.AbilityImpactReached -=
                 HandleAbilityImpactReached;
+            animationPlayback.AbilityCompleted -= HandleAbilityCompleted;
         }
     }
 
@@ -161,6 +171,18 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private void HandleSpecialAbilityUsed(
         EnemyActor enemy)
     {
+        queuedAbilityImpactId = 0;
+        abilityPresentationId = enemy.ActiveSpecialAbilityAnimationActionId;
+        abilityImpactDelivered = false;
+        abilityStartedAt = Time.time;
+        int state = Animator.StringToHash("Base Layer.Ability");
+        if (UsesAuthoredAbility && animator != null && animator.isActiveAndEnabled &&
+            animator.runtimeAnimatorController != null && animator.HasState(0, state))
+        {
+            animator.ResetTrigger(AbilityTrigger);
+            animator.Play(state, 0, 0f);
+            return;
+        }
         PlayTrigger(AbilityTrigger);
     }
 
@@ -184,14 +206,44 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         queuedImpactPresentationId = 0;
         if (id > 0 && enemyAutoAttack != null && enemyAutoAttack.ActiveAttackPresentationId == id)
             enemyAutoAttack.ResolveAnimationImpact();
+
+        int abilityId = queuedAbilityImpactId;
+        queuedAbilityImpactId = 0;
+        if (Time.timeScale > 0f && abilityId > 0 && enemyActor != null &&
+            enemyActor.isActiveAndEnabled && !enemyActor.IsDefeated &&
+            enemyActor.ActiveSpecialAbilityAnimationActionId == abilityId && !abilityImpactDelivered)
+        {
+            abilityImpactDelivered = true;
+            enemyActor.NotifySpecialAbilityImpactReached();
+        }
+        // The board supplies the missing-impact fallback. This only covers a
+        // missing completion event after contact, without interrupting recovery.
+        if (UsesAuthoredAbility && abilityImpactDelivered && Time.time - abilityStartedAt >= 3f)
+            HandleAbilityCompleted();
     }
 
     private void HandleAbilityImpactReached()
     {
         if (enemyActor != null)
         {
-            enemyActor.NotifySpecialAbilityImpactReached();
+            if (UsesAuthoredAbility)
+            {
+                if (Time.timeScale > 0f && abilityPresentationId > 0 &&
+                    enemyActor.ActiveSpecialAbilityAnimationActionId == abilityPresentationId)
+                    queuedAbilityImpactId = abilityPresentationId;
+            }
+            else enemyActor.NotifySpecialAbilityImpactReached();
         }
+    }
+
+    private void HandleAbilityCompleted()
+    {
+        if (!UsesAuthoredAbility || Time.timeScale <= 0f || !abilityImpactDelivered ||
+            abilityPresentationId <= 0 || enemyActor.ActiveSpecialAbilityAnimationActionId != abilityPresentationId)
+            return;
+        abilityPresentationId = 0;
+        queuedAbilityImpactId = 0;
+        enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void HandleAutoAttackCompleted()
