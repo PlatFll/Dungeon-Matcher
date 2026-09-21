@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.4
+**Version:** 1.5
 **Compiled:** 2026-09-19
-**Updated for production combat animations:** 2026-09-21
+**Updated for cast recolors and idle sources:** 2026-09-22
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -469,6 +469,43 @@ constant vibration on every damage tick. Music, SFX and vibration are independen
 settings. Pause, focus loss and saved-run replay suppress feedback. Sound/haptics
 must never own damage, targets, board resolution or animation-completion timing.
 
+## 11D. Remaining cast recolors and idles — 2026-09-22
+
+ArtSource/RemainingCast/ contains the seventeen static sprites supplied open in
+LibreSprite alongside RattleBones_FluidIdle.ase: five guards/Marshal, four knights,
+seven royal characters including the King, and the Minotaur. The source README
+maps exact supplied filenames to output names. This is a working art-source pass,
+not a new gameplay roster or a completed Unity assignment.
+
+The still recolors preserve every source alpha pixel and design landmark. Reuse
+the established cool iron, warm skin, wood/leather, linen, gold and deep-red ramps.
+Royal steel may use the existing pale bone light as its sparse brightest accent;
+that does not make cloth, fur or faces metallic. Keep the Mage's pale fabric/cyan
+staff, the Arcanist's gold staff head/wood shaft, and the Minotaur's warm fur/pale
+horns distinct. Exact per-character colors are in Palettes.json. No new RGB colors
+were added to the guide. These assignments remain reviewable, rather than locking
+every future member of a faction to an experimental palette.
+
+The exact open Rattlebones animation is the protected motion reference and was
+not recolored. All seventeen new idles use nine 130 ms frames (1170 ms total), a
+compact rise/dip/recovery, coordinated face and shoulder action, knee compression,
+and planted soles. Visible eyes close in the compressed sixth frame; enclosed
+helmets retain their visors. King/Minotaur compression is restrained for weight.
+Frames 1 and 9 are the exact recolored ready pose, giving a deliberate seam hold.
+
+Separate whole rigid tools and grips from the flexing torso. Include their entire
+outer contour: an omitted one-pixel shaft edge can appear to vibrate even when
+the colored center is rigid. Plant tall staves, spears and the banner pole; let
+cloth/plume/flag tips trail by a small amount. Inspect scalp/beard outlines and
+helmet-to-shoulder joins at maximum compression on both dark and light backgrounds.
+Preserve all 64×64 canvases, native scale and row-63 soles. Future imports must use
+full rectangles and fixed bottom-center alignment, not per-frame tight cropping.
+
+Original native captures, recolored stills, idle files, exact sheets/GIFs, synchronized
+preview and measured checks live together in ArtSource/RemainingCast/. The source
+reference board and earlier characters remain unchanged. Final visual approval
+and any later in-game assignment remain separate from this art-source delivery.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -540,5 +577,12 @@ Replaces the three insufficiently articulated first-draft idles with cleaned pos
 ### v1.4 change record — 2026-09-21
 
 Adds the supplied native per-tile explosion families, 13 × 30 ms VFX timing, dungeon dressing and masonry surrounds, polished consumables, pink-gem menu logo, and a bounded combat sound/haptic family. Repairs disconnected candle/boot pixels, rigid basket motion, berry-throw articulation and the builder's rear knee/boot contour without changing character palettes, ready poses or impact timing. New presentation art remains a reviewable working pass. Physical-device haptics and listening approval remain separate from automated Unity evidence.
+
+### v1.5 change record — 2026-09-22
+
+Documents the seventeen supplied remaining-cast recolors and nine-frame idle sources,
+their reused material ramps, protected Rattlebones motion reference, rigid-prop
+contour checks and fixed-ground exports. No historical reference palette, earlier
+character, gameplay definition or Unity assignment is changed by this source pass.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.
