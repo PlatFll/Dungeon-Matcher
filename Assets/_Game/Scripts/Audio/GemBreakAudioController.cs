@@ -75,6 +75,9 @@ public sealed class GemBreakAudioController :
     private void OnDisable()
     {
         Unsubscribe();
+        StopAllCoroutines();
+        if (audioSources != null)
+            foreach (var source in audioSources) if (source != null) source.Stop();
 
         hasPendingBreak = false;
         pendingGemCount = 0;
@@ -118,9 +121,10 @@ public sealed class GemBreakAudioController :
     private void HandleClearResolved(
         BoardClearContext context)
     {
+        if (!CombatAudioController.FeedbackAllowed) return;
         /*
-         * This controller is the ordinary match-break sound.
-         * Bomb/crystal clears can use their own SFX later.
+         * This controller owns ordinary-match grouping and flash timing.
+         * CombatAudioController handles special/actor sounds and the shared mix.
          */
         if (context.Source !=
             BoardClearSource.Match)
@@ -193,6 +197,9 @@ public sealed class GemBreakAudioController :
         int gemCount,
         int cascadeDepth)
     {
+        if (!CombatAudioController.FeedbackAllowed) return;
+        if (CombatAudioController.TryPlayMatch(gemCount, cascadeDepth)) return;
+        if (AudioPreferences.SfxMuted) return;
         if (gemBreakClip == null ||
             audioSources == null ||
             audioSources.Length == 0)
