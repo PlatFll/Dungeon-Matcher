@@ -15,6 +15,7 @@ public static class CombatIdleImporter
     public const string AnimationRoot = "Assets/_Game/Animations/CombatIdles";
     public static readonly string[] Characters = { "Rattlebones", "Farmer", "PanVillager", "Bardley" };
     public static readonly string[] LocalEnemies = { "Miner", "BasketVillager", "BarricadeVillager" };
+    public static readonly string[] Guards = { "CrossbowGuard", "BarricadeGuard", "SpearGuard", "SiegeSergeant" };
 
     [Serializable] private sealed class Size { public int w, h; }
     [Serializable] private sealed class Frame { public int duration; public Size sourceSize; }
@@ -26,6 +27,9 @@ public static class CombatIdleImporter
 
     public static void ImportLocalEnemies() => Import(LocalEnemies);
 
+    [MenuItem("Dungeon Matcher/Art/Import Restored Guard Idles")]
+    public static void ImportGuards() => Import(Guards);
+
     private static void Import(IEnumerable<string> characters)
     {
         Directory.CreateDirectory(ArtRoot);
@@ -34,7 +38,8 @@ public static class CombatIdleImporter
         foreach (string character in characters)
         {
             string stem = character + "_Idle";
-            string source = (LocalEnemies.Contains(character) ? "ArtSource/LocalEnemies/" : "ArtSource/CombatIdles/") + stem;
+            string source = (Guards.Contains(character) ? "ArtSource/GuardIdles/" :
+                LocalEnemies.Contains(character) ? "ArtSource/LocalEnemies/" : "ArtSource/CombatIdles/") + stem;
             string atlasPath = ArtRoot + "/" + stem + ".png";
             File.Copy(source + ".png", atlasPath, true);
             AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceSynchronousImport);

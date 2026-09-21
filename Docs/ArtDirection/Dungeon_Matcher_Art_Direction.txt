@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.6
+**Version:** 1.7
 **Compiled:** 2026-09-19
-**Updated for cast anatomy, prop rigidity and idle corrections:** 2026-09-22
+**Updated for rejected correction and restored guard selection:** 2026-09-22
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -471,6 +471,33 @@ must never own damage, targets, board resolution or animation-completion timing.
 
 ## 11D. Remaining cast recolors and idles — 2026-09-22
 
+CURRENT USER DECISION: the stronger correction below was rejected as worse.
+Its numerical checks do not establish the desired animation feel. Preserve the
+files as a rejected candidate; do not use them as the motion authority for later
+work. The user selected the immediately preceding animations if available.
+The four guard backups are available and now selected in ArtSource/GuardIdles/.
+Only Crossbow Guard, Barricade Guard, Spear Guard and Siege Sergeant are in this
+Unity integration. Their native files, drawings and nine 130 ms exposures are
+preserved exactly. Remaining cast work is deferred.
+
+For future idle generation/editing, follow the user's Rattlebones prompt:
+- Firmly planted feet and almost stationary legs; no whole-sprite vertical bob,
+  jumping, hovering, breathing/inflation or squash-and-stretch.
+- Very small pose changes: about one pixel of torso/pelvis, head-relative-to-body,
+  shoulder and arm adjustment. Heads/helmets retain their shape and identity.
+- Cloth may react by about one pixel with a tiny delay. Held tools stay rigid and
+  connected to their hands. Keep the character alert, grounded and ready to act.
+- Preserve exact materials, palette and pixel clusters; no blur, antialiasing,
+  interpolation, added colors or redesign. Loop into the original neutral pose.
+- The supplied generation brief uses eight frames: neutral, slight shoulder
+  settle, tiny head settle/cloth reaction, subtle low stance, return, tiny relative
+  lift, cloth settle, neutral. This does not authorize changing the exposure count
+  of the existing nine-frame backups chosen for restoration.
+- Use actual reference playback as the authority. Do not equate a common timing
+  curve or passing asset checks with matching the Rattlebones animation family.
+
+Historical correction description (rejected as a motion treatment):
+
 ArtSource/RemainingCast/ contains the seventeen static sprites supplied open in
 LibreSprite alongside RattleBones_FluidIdle.ase: five guards/Marshal, four knights,
 seven royal characters including the King, and the Minotaur. The source README
@@ -510,7 +537,7 @@ preview and measured checks live together in ArtSource/RemainingCast/. The sourc
 reference board and earlier characters remain unchanged. Final visual approval
 and any later in-game assignment remain separate from this art-source delivery.
 
-Correction requirements, 2026-09-22:
+Historical correction requirements, 2026-09-22 (motion treatment superseded above):
 - Matching timing alone is insufficient. Use distinct lift, shoulder/chest
   compression, a restrained neck pivot, low-point blink and recovery. The body
   carries the face; preserve visor/eye identity and planted weight.

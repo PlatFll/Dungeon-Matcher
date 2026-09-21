@@ -19,8 +19,8 @@ MonoBehaviour:
     Clear either marked gem within two moves to interrupt. His own blockades
     grant him twenty percent damage reduction.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: bdd56084ae2f413ca54e04f10e3d7dda, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: -4069726668885731209, guid: 7d704b820702cd24f91bacd80e95d9d6, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 9b26ec9e52641fa488ab0650fa67074c, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0
