@@ -1,0 +1,516 @@
+{
+  "rattlebones_capture_unchanged": true,
+  "external_rattlebones_checked": true,
+  "sprites": {
+    "CrossbowGuard": {
+      "source": "CrossBow_Guard",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "cd45211c380349b790a9a48c356a9e3f49cbe7008cc6842f5fafdf9ef7c51455",
+      "idle_sha256": "286ccd2270b81a743b4a568f9e507461004ddacd9e5ed3892519d73d9714771a"
+    },
+    "BarricadeGuard": {
+      "source": "BarricadeGuard",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "edee47d8ab7989bcd8d939d462a8fee15870779ed82dc6426a8a5a6fafd98e1c",
+      "idle_sha256": "f14ad896006a1eaa203fdcf2357512dc65f367158113fae15a9bcecd6b8ccdc4"
+    },
+    "SpearGuard": {
+      "source": "spearGuard_1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "a9bbc8bec5e82e30badfea63a7d3e72a4890b342ebfcc12449cad72c2e35aae6",
+      "idle_sha256": "0127a0c91f3fbe2f17c744c56ea84779824f93424c9d104ac274b6270ccdcb60"
+    },
+    "TownMarshal": {
+      "source": "Marshall_1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "9d93b6f29f03e235a261dbcc14ac09f944df99f057de4890695235ec192b600c",
+      "idle_sha256": "b17b89071d942f7f32ec3de2ca7bfcf7a0ba8646b2d6d16ffb7df1a4c62e42d0"
+    },
+    "SiegeSergeant": {
+      "source": "SiegeSergeant",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "fc4fa1ee765154ac8bf9c5d719b726453a5a1b96b6773110009bcfbb243164d5",
+      "idle_sha256": "4a2f6f93c1bf173c94b44522160980d050938b21772afeec9be9a1b74f5c0412"
+    },
+    "SwordKnight": {
+      "source": "SwordKnight_1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 9,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "791a3420262325836b661e873a0008e0df3b563ef8030ba4a47f0289a7349b13",
+      "idle_sha256": "b49c93e8f66bdc413ff2a21d857a3b4efb3bb60f49075d91481143b3f3865efc"
+    },
+    "SpearKnight": {
+      "source": "SpearKnight_1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "6b5739fdec2b2be8deefb81fd746e174a8e0413269ab70b283bf6886f225e58e",
+      "idle_sha256": "81b28ad778b99a8cf86efd5c389a0dd1915b2d8d59dc99d5148be9d6946a7d41"
+    },
+    "ShieldKnight": {
+      "source": "ShieldKnight_1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "d452c5381dcce66b68f669c6385d55cba2c476ab7c61b499731b33aa023a713a",
+      "idle_sha256": "259d77b8985b4f68e4d325ef763bebddcfff02d24004b429800ee1e6f6c4fdd6"
+    },
+    "KnightCaptain": {
+      "source": "KnightCaptain1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "4eecf2a2ba6948118ebaa82cefdbb8499f770fd073e1d99248dc58822e239505",
+      "idle_sha256": "b417dc2e85789acddac2bf138ee3ce79f8a7972b160fa9d51a946515c52b5b04"
+    },
+    "RoyalSwordsman": {
+      "source": "SwordRoyalKnight1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "047ab9de762b994c51aa7fcb3c2cea8148a9fcb9ea57bbcc8a982e67de6df04f",
+      "idle_sha256": "095ed697811916a7cc6139835a7931d309cde3ae3c855b7c315021ce462fab9e"
+    },
+    "RoyalLancer": {
+      "source": "spearRoaylKnight1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "84f1ff91de7c55efade244d05f0918c86efeca2dc02f86aa1f07d7aee2c2a50b",
+      "idle_sha256": "59c62bbf31c44a36c37aa48e0076e3b321d30b0f7acc05bfa9e76150f001fbbf"
+    },
+    "RoyalArbalist": {
+      "source": "RoyalArbalist1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "919d4079b5485769e1589a828fbdaa588f20191b2ef43fe89c453683f475b4e8",
+      "idle_sha256": "ab3ea44f437fe6b6dc550ee134b88f5c35f24d1a762c175aa575c312ee7ae1b1"
+    },
+    "RoyalStandardBearer": {
+      "source": "BannerRoyalKnight1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "1a4130b32ffbb607b79326db5c7ea0b06a8b2497e37bf08feb06ed1563c4eecc",
+      "idle_sha256": "f5f20157de2e353bf6d8bd05d345ea8463550884c274c8a653e414dbf44ee5d6"
+    },
+    "RoyalArcanist": {
+      "source": "RoyalArcanist",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "b57ed58dea86ae9b27672f204876e161258ee3c6267493d730042fca7dfcaf28",
+      "idle_sha256": "77708efc70204accd890ef817267e56a42b346972390fdb07a85e8e2f104b75b"
+    },
+    "RoyalMage": {
+      "source": "RoyalMage1",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 22,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "f632ea3a150275d473637a6dbfb64cd9d7def2bd1da342195985b9a563a46bc7",
+      "idle_sha256": "21bd850cd81e53eea43478cf2fa7809ddc0ad7ee8fa9ea4bb2f86db02de955e2"
+    },
+    "King": {
+      "source": "TheKing",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "3b7d0b208ffce5f51a6823ac425f8fedded89d36d9f56ff8a60d8134f40d34e1",
+      "idle_sha256": "58dff31f65b13f07c618764c28db021091249a5153945735578c3121686a5d74"
+    },
+    "Minotaur": {
+      "source": "Minotaur64x64",
+      "canvas": [
+        64,
+        64
+      ],
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop_ms": 1170,
+      "opaque_colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "static_mask_unchanged": true,
+      "native_sheet_gif_exact": true,
+      "sole_pixels_unchanged": true,
+      "source_sha256": "81fa09d7109ff438f443686a0d81ada9711e05b73e121ca8490b6db8cde3005d",
+      "idle_sha256": "76290db974998238f385d39fa033718be72eff396623e2ee494bf0adfcf45540"
+    }
+  }
+}
