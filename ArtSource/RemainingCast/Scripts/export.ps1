@@ -16,6 +16,10 @@ try {
   $metadata.meta.image=$source.BaseName+'.png'
   [IO.File]::WriteAllText($jsonPath,($metadata | ConvertTo-Json -Depth 20),[Text.UTF8Encoding]::new($false))
  }
+ foreach($source in Get-ChildItem -LiteralPath 'BeforeCorrection/Idles' -Filter '*.aseprite') {
+  rtk proxy $LibreSprite --batch $source.FullName --sheet-type horizontal --sheet (Join-Path $source.DirectoryName ($source.BaseName+'.png'))
+  if($LASTEXITCODE -ne 0){throw "Before-correction export failed: $($source.Name)"}
+ }
  rtk proxy $LibreSprite --batch 'Originals/RattleBones_FluidIdle.aseprite' --save-as 'Review/Rattlebones_Reference.gif' --sheet-type horizontal --sheet 'Review/Rattlebones_Reference.png' --format json-array --data 'Review/Rattlebones_Reference.json'
  if($LASTEXITCODE -ne 0){throw 'Reference export failed'}
  $referencePath=Join-Path $artRoot 'Review/Rattlebones_Reference.json'

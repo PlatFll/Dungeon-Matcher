@@ -42,6 +42,7 @@ for page in range((len(pairs)+3)//4):
    x=285+col*196;im=fs[f].resize((192,192),Image.Resampling.NEAREST);board.paste(im,(x,y),im)
    d.text((x,y+198),f'Frame {f+1}',fill='#D3CBCD')
   trouble=[i+1 for i,c in enumerate(comps)if len(c)>len(comps[0])]
+  assert not trouble,(name,'new detached clusters',trouble)
   d.text((8,y+20),f'{len(allowed)} colors | 1170 ms',fill='#D3CBCD')
   d.text((8,y+36),'Extra components: '+str(trouble),fill='#FF98A0' if trouble else '#B7A393')
   reader.sheet(fs,ds,name,ROOT/'Review'/f'{name}_frames.png')

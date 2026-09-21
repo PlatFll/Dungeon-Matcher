@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.5
+**Version:** 1.6
 **Compiled:** 2026-09-19
-**Updated for cast recolors and idle sources:** 2026-09-22
+**Updated for cast anatomy, prop rigidity and idle corrections:** 2026-09-22
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -477,7 +477,10 @@ seven royal characters including the King, and the Minotaur. The source README
 maps exact supplied filenames to output names. This is a working art-source pass,
 not a new gameplay roster or a completed Unity assignment.
 
-The still recolors preserve every source alpha pixel and design landmark. Reuse
+The initial still recolors preserve source alpha pixels and design landmarks.
+The correction enlarges only Royal Lancer and Royal Arbalist helmets (approximately
+22% wider and 9% taller about the neck, with their original plume drawing attached).
+The other fifteen still masks remain exact. Reuse
 the established cool iron, warm skin, wood/leather, linen, gold and deep-red ramps.
 Royal steel may use the existing pale bone light as its sparse brightest accent;
 that does not make cloth, fur or faces metallic. Keep the Mage's pale fabric/cyan
@@ -496,7 +499,8 @@ Frames 1 and 9 are the exact recolored ready pose, giving a deliberate seam hold
 Separate whole rigid tools and grips from the flexing torso. Include their entire
 outer contour: an omitted one-pixel shaft edge can appear to vibrate even when
 the colored center is rigid. Plant tall staves, spears and the banner pole; let
-cloth/plume/flag tips trail by a small amount. Inspect scalp/beard outlines and
+cloth/flag tips trail by a small amount. Keep each plume attached to its helmet;
+do not split a thin plume root into a disconnected delayed segment. Inspect scalp/beard outlines and
 helmet-to-shoulder joins at maximum compression on both dark and light backgrounds.
 Preserve all 64×64 canvases, native scale and row-63 soles. Future imports must use
 full rectangles and fixed bottom-center alignment, not per-frame tight cropping.
@@ -506,6 +510,26 @@ preview and measured checks live together in ArtSource/RemainingCast/. The sourc
 reference board and earlier characters remain unchanged. Final visual approval
 and any later in-game assignment remain separate from this art-source delivery.
 
+Correction requirements, 2026-09-22:
+- Matching timing alone is insufficient. Use distinct lift, shoulder/chest
+  compression, a restrained neck pivot, low-point blink and recovery. The body
+  carries the face; preserve visor/eye identity and planted weight.
+- Keep torso, arms and attached cape as a continuous drawing through compression.
+  The King's previous arm/cape cut came from a rectangular cape extraction plus
+  an abrupt deformation boundary. Never leave exposed background at that seam.
+- Select every pixel of rigid tools, including outlines, strings, stirrups and
+  grips. The Arbalist's lower crossbow loop belongs to the bow, not the compressing
+  leg. Keep cloth behind it as body material. Hands need sleeve overlap at the rise.
+- Give a carried shield its own arm motion; a planted spear must not freeze the
+  other hand. Clamp whole rigid parts to available space rather than clipping
+  individual pixels. Expand the canvas with consistent registration if the intended
+  motion cannot fit; never squash a weapon to fit.
+- Inspect all nine poses against Rattlebones and playback at native size on light
+  and dark stages. Palette, alpha, component counts and export checks do not prove
+  anatomy or acting quality. Review isolated part drawings as well as composites.
+- Preserve before/after files for review. This correction remains a working
+  source-art candidate; the user's visual approval is not implied by test results.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -513,6 +537,7 @@ and any later in-game assignment remain separate from this art-source delivery.
 - Keeping a 64 × 64 canvas while shrinking the character fails size preservation. Check occupied bounds/masks, not just image dimensions.
 - Bardley's 12-pixel translation shows that even an excellent recolor can have a production-placement issue.
 - A matching palette does not guarantee matching art. Geometry, face design, pixel density, shading shapes, and detail level also matter.
+- A connected silhouette can still contain an internal cut. Check compressed arm/cape seams and whole prop contours visually, not only connected-component counts.
 - “Common enemy” does not mean “less carefully drawn” or “automatically smaller.” “Playable character” does not mean a larger arbitrary color count.
 - Do not apply character outline cleanup to locked gem/UI files or make all materials shiny like gems.
 - Do not preserve every early suggestion as a permanent rule: old Bardley green ramps, early idle timing, optional pan shading, and unresolved alignment must remain clearly distinguished.
