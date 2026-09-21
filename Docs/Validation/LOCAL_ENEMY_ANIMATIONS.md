@@ -2,6 +2,20 @@
 
 Scope: Miner idle/side-swing attack/mining ability; Basket Villager (berries farmer) idle/berry-release attack; Barricade Villager idle/axe attack/kneeling build. The original four-character art is unchanged.
 
+## Follow-up movement refinement — 2026-09-21
+
+The first draft's largely translated ready poses did not supply enough head, eye, shoulder and torso articulation. The three current idles use cleaned poses from the user's newer LibreSprite drafts. Builder attack anticipation/travel/follow-through was revised; the build ability correction is restricted to lower-leg pixels in frames 3–7. First/last ready poses, palettes, exposures, dimensions and Unity event/controller/import settings remain unchanged. No runtime C# changed in this refinement.
+
+Executed on the revised art:
+
+- `Scripts/validate.py`: **PASS, 71 frames**, exact native/PNG/GIF pixels and durations, approved palettes, binary alpha, margins, ground contact and ready-pose continuity.
+- `Scripts/check_refinement.py`: **PASS**. Idle bottom two rows are pixel-identical throughout each loop; first poses match the earlier reference PNGs; all eight Unity sheets exactly match exports. Builder ability differences stay within x=42–63, y=58–63, only frames 3–7; upper-body, timber and left contact pixels remain intact. Detailed per-frame bounds are in `ArtSource/LocalEnemies/RefinementValidation.json`.
+- `LocalEnemyAnimationValidation.Run`: **PASS / exit 0**, including actual impact damage, mining/build effects, simultaneous readiness, pause/fallback/cancellation/recovery and the 14 attack lifecycle cases. Log: `.utmp/LocalEnemies/refinement-play.log`; report preserved as `refinement-full-validation.txt`.
+- After the final knee-boundary cleanup, `RunAlignmentOnly`: **PASS / exit 0**, all 71 final poses at 1080×1920 and 1080×2400. Log: `.utmp/LocalEnemies/refinement-alignment-final.log`; report: `alignment-validation.txt`. This run validates final artwork placement; it does not rerun the combat cases above. An earlier attempt failed because the editor started with a transient 321×531 Game view; it is preserved in `refinement-alignment-startup-viewport.log`. The successful rerun specified `-screen-width 1080 -screen-height 1920`, and the harness exercised both required portrait sizes without changing or suppressing checks.
+- Side-by-side native-size playback against Rattlebones/Farmer/Pan, enlarged contact sheets and final Unity renders were inspected. The final source captures and their hashes live in `Originals/IdleRefinement/`. Earlier supplied source hashes remain intact.
+
+The required validator, 68-test code regression and original-four idle checks listed below belong to the initial runtime integration. They were not repeated for this art-only refinement, which changes no C#, serialized settings, clips or controllers. Physical Android testing remains unperformed. The current guide is v1.3.1.
+
 ## Sources and timing
 
 All eight editable LibreSprite files, exact PNG sheets, GIFs, JSON exposures, ready-pose references and palette data are in `ArtSource/LocalEnemies/`. Supplied originals are preserved separately. `AssetManifest.json` and `Originals/Manifest.json` record SHA-256 provenance. The original Miner attack PNG and ASE represent different drawing revisions; the native ASE supplied the motion used in this pass.

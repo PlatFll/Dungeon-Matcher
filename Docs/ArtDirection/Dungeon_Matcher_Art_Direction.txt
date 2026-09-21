@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.3
+**Version:** 1.3.1
 **Compiled:** 2026-09-19
 **Updated for production combat animations:** 2026-09-21
 **Scope:** visual identity, palettes, sprite editing, review, idle and combat-action animation direction.
@@ -376,6 +376,10 @@ Barricade Villager: subdued cloth cap/workwear, warm skin, a clearly wooden log 
 
 All three idles use nine 130 ms exposures, 1170 ms total. The body, shoulders and face share the down-up motion; a brief closed-eye pose sits in the compressed beat. Knees compress over planted soles. Keep compact pose changes and visible holds, not interpolated bobbing or a face that moves ahead of the torso.
 
+The revised idle acting uses the user's newer LibreSprite drafts, preserved in ArtSource/LocalEnemies/Originals/IdleRefinement/. A vertical translation of a single ready drawing is insufficient. Show changing hat/head pitch, shoulder angle, elbow position and torso compression together. Frames 1–2 establish the ready hold; 3–4 gather into the dip; 5–6 compress with narrowing/closed eyes; 7–8 reopen and recover; 9 returns to ready. Small differences between characters are welcome, but the face must remain embedded in the body action. The Miner candle follows the hat without an unrelated bright flare or gasping mouth. The berries farmer's free shoulder opens slightly while the basket arm carries its load. The builder's axe and timber bundle keep their original shapes while his head and shoulders articulate. Preserve the exact ready pose so existing attacks and abilities still enter cleanly.
+
+Builder refinement: the axe winds behind/above the head, travels quickly over the front shoulder, strikes outward on frame 5, and settles through a lower follow-through. Keep the hand at the shaft pivot. During the build, show a rounded cloth knee, a folded rear shin and a compact boot, with the other foot planted behind the foreground plank. Do not stretch a boot into a leg or flatten both legs into an ambiguous floor slab. The knee correction is confined to the lower body; plank/tool contact remains on frame 5.
+
 All three auto-attacks use the eight-frame, 680 ms table in 11A. Frame 5 begins at 320 ms and supplies the only damage cue.
 - Miner: a two-handed sideways swing with a broad waist-height follow-through. Its silhouette differs from the mining strike.
 - Basket Villager: gather from the basket, lift the berry in the free hand, snap the arm forward, and open the empty hand on frame 5. The berry disappears at release. No travelling projectile or independent red particle trail is authored.
@@ -466,5 +470,9 @@ Adopts the user's adjusted Farmer idle unchanged. Adds the eight-frame Farmer/Pa
 ### v1.3 change record — 2026-09-21
 
 Adds the Miner and two local villagers, shared material assignments, side-swing/berry-release/build acting, deliberate mining flight, expanded fixed canvases, and contact-timed enemy board abilities. The earlier four characters and player ability gameplay timing remain unchanged.
+
+### v1.3.1 change record — 2026-09-21
+
+Replaces the three insufficiently articulated first-draft idles with cleaned poses from the user's newer LibreSprite drafts. Clarifies shared head/eye/shoulder/body acting, preserves rigid props and planted soles, improves the builder's axe swing and folded knee, and retains all existing timings, canvas sizes, ready poses and palettes. These are reviewable refinements, not a new palette or character-design approval.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.
