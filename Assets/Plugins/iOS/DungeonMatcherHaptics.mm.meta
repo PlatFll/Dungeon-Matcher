@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 1e9e07113ad45e5ca8c24a900cf5f1ab
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 3
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any:
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      iPhone: iOS
+    second:
+      enabled: 1
+      settings:
+        AddToEmbeddedBinaries: false
+        CPU: AnyCPU
+        CompileFlags: -fobjc-arc
+        FrameworkDependencies: UIKit
+  userData:
+  assetBundleName:
+  assetBundleVariant:

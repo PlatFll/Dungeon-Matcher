@@ -20,6 +20,8 @@ The current refinement supersedes the initial three idles, builder attack and bu
 
 The action sources use frame 5 for gameplay contact: auto attacks at 320 ms, abilities at 360 ms. Recovery completes at 670/870 ms; the final exposure ends at 680/880 ms. Idles use nine 130 ms frames. Consult the project art direction for the full acting and palette rules.
 
+The presentation polish repairs candle/boot disconnections, removes the basket's stretched base, articulates the berry throw with the established body poses, and rounds the builder's folded rear boot. `Scripts/polish_native.js` reads the exact preserved `Originals/BeforePresentationPolish/` files and writes candidates under `Review/Polished/` inside LibreSprite. `Scripts/check_polish.py --candidate . --baseline Originals/BeforePresentationPolish` (from this directory) verifies the scoped changes. Its checks supersede the earlier refinement-only pixel constraints; `Scripts/validate.py` remains the production export/palette/timing gate.
+
 The berry stays attached to the throwing hand until release; there is no travelling projectile. The build gesture sets a plank with a compact axe contact. The Miner uses a broad side swing for ordinary attacks and a lifted overhead ground strike for mining.
 
 Open `Preview.html` through a local HTTP server for synchronized playback at native or integer zoom, or open the GIFs directly. Unity integration and executed evidence are described in `Docs/Validation/LOCAL_ENEMY_ANIMATIONS.md`. The production native files are in this directory; `Review/` is ignored scratch output. Only the initial `build_native.js` draft workflow requires the explicit native layer conversion above.

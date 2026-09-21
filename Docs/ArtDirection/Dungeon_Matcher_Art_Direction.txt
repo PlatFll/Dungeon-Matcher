@@ -1,9 +1,9 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.3.1
+**Version:** 1.4
 **Compiled:** 2026-09-19
 **Updated for production combat animations:** 2026-09-21
-**Scope:** visual identity, palettes, sprite editing, review, idle and combat-action animation direction.
+**Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
 This repository edition is the durable source of truth for the art direction established in this project conversation. It records the versions carried forward as working references, the rejected approaches, and unresolved issues. It does not retroactively approve every historical suggestion or authorize changes to shipped assets.
@@ -407,6 +407,68 @@ Slynyrd's primary pixel-animation tutorials support the chosen emphasis on key p
 
 The berry release and kneeling plank-set are original acting decisions for these characters, informed by those timing principles. The research is not a source for new palettes or character designs.
 
+## 11C. Dungeon presentation and feedback — 2026-09-21
+
+The current production-polish pass uses the supplied four LibreSprite effects and
+the existing dungeon tilemap system. Sources are ArtSource/TileVfx/ and
+ArtSource/Presentation/. Rattlebones remains the animation-family reference.
+
+### Tile VFX
+
+All four bursts use 64×64 full rectangles, center pivots, thirteen 30 ms exposures
+(390 ms total), Point filtering and no compression/mipmaps. Preserve the supplied
+effect colors and recognizable flash → peak → breakup arc. Fit the complete
+footprint with hard pixel clusters. Generic explosions are warm with cool smoke;
+poison is green gas; shield is a cool blue crest; healing is a warm ring with pale
+restorative sparkles. Do not apply character outline rules to these luminous VFX.
+
+Every affected cleared tile plays its appropriate burst at the shatter event.
+Directional bombs, Bardley explosions and the Bomb consumable share the generic
+burst. Poison, Shield and Healing Bombs keep their distinct effects. Do not stack
+multiple opaque effects on one collateral cell or hide a preserved special with
+a destruction animation. The dissipating tail can overlap refill; do not slow the
+board for the effect. Source JSON owns exposures, not an arbitrary Unity FPS.
+
+### Dungeon composition and title
+
+Keep the established battle wall, arches and floor as real tilemap art. Add sparse
+warm torches, restrained plum/gold banners, barrels and skulls at the same native
+pixel density. Props support the actors and never compete with the face/tool read.
+Dark violet masonry fills surrounding gutters and the bottom HUD. The player
+frame uses a darker version so bone, slime and health information remain clear.
+
+The menu's dark recessed doorway leaves a quiet area for controls. Its brightest
+feature is the pink story gem between the two lines of the Dungeon Matcher logo.
+Use warm bone/gold lettering, a dark outline and violet depth. No dithered glitter,
+blur or painted gameplay labels. Keep important dressing inside tall-phone crops.
+Potion glass/liquid and the iron fantasy bomb must read at their native 24×24 size.
+
+### Combat correction lesson
+
+Grounding checks must include connected anatomy, not just bottom-row equality.
+Inspect trouser-to-boot contact through every compressed pose, candle/hat contact,
+and rigid baskets/tools. Patching an entire lower row to plant feet can stretch a
+held basket or detach a shin. Plant only the intended foot regions. The current
+repair preserves ready poses and exposure tables, restores those connections,
+uses the articulated body poses for the berry throw, and clarifies the builder's
+folded knee. Miner auto-attack and the earlier four characters remain references.
+
+### Sound and phone feedback
+
+Keep sounds compact and readable: gem ticks/landings quietest; ordinary impacts
+in the middle; player damage, explosions and the two player signatures prominent.
+Use a short dry explosion, a bubbling poison puff, restrained heal/shield tones,
+and distinct Bardley plucks and Rattlebones crown/bone accents. Shared enemy ability
+sound provides a consistent warning. Current original synthesized sources and
+measured waveform provenance live in ArtSource/Audio/.
+
+Group simultaneous tile events, cap voices and preserve mix headroom. Never play
+one explosion sound per tile. Landings may receive a very soft grouped phone tick;
+hits, explosions and accepted player casts get stronger short feedback. Avoid
+constant vibration on every damage tick. Music, SFX and vibration are independent
+settings. Pause, focus loss and saved-run replay suppress feedback. Sound/haptics
+must never own damage, targets, board resolution or animation-completion timing.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -474,5 +536,9 @@ Adds the Miner and two local villagers, shared material assignments, side-swing/
 ### v1.3.1 change record — 2026-09-21
 
 Replaces the three insufficiently articulated first-draft idles with cleaned poses from the user's newer LibreSprite drafts. Clarifies shared head/eye/shoulder/body acting, preserves rigid props and planted soles, improves the builder's axe swing and folded knee, and retains all existing timings, canvas sizes, ready poses and palettes. These are reviewable refinements, not a new palette or character-design approval.
+
+### v1.4 change record — 2026-09-21
+
+Adds the supplied native per-tile explosion families, 13 × 30 ms VFX timing, dungeon dressing and masonry surrounds, polished consumables, pink-gem menu logo, and a bounded combat sound/haptic family. Repairs disconnected candle/boot pixels, rigid basket motion, berry-throw articulation and the builder's rear knee/boot contour without changing character palettes, ready poses or impact timing. New presentation art remains a reviewable working pass. Physical-device haptics and listening approval remain separate from automated Unity evidence.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.

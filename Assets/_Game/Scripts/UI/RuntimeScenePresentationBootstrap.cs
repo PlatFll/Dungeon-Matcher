@@ -70,6 +70,7 @@ public static class RuntimeScenePresentationBootstrap
             if (!root.TryGetComponent(out GameplayPixelLayoutController layout))
                 layout = root.AddComponent<GameplayPixelLayoutController>();
             layout.Initialize();
+            DungeonPresentationArt.InstallBattle(root);
             if (!top.TryGetComponent(out PlayerAreaThreeSliceFrameController _))
                 top.AddComponent<PlayerAreaThreeSliceFrameController>();
         }

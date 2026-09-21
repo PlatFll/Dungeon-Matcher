@@ -1,0 +1,126 @@
+{
+  "Barrel": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 8,
+    "exact_native_export": true
+  },
+  "Bomb": {
+    "canvas": [
+      24,
+      24
+    ],
+    "colors": 13,
+    "exact_native_export": true
+  },
+  "DungeonBackdropTile": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 6,
+    "exact_native_export": true
+  },
+  "DungeonMatcherLogo": {
+    "canvas": [
+      210,
+      88
+    ],
+    "colors": 12,
+    "exact_native_export": true
+  },
+  "MenuDungeon": {
+    "canvas": [
+      320,
+      480
+    ],
+    "colors": 25,
+    "exact_native_export": true
+  },
+  "Potion": {
+    "canvas": [
+      24,
+      24
+    ],
+    "colors": 12,
+    "exact_native_export": true
+  },
+  "RoyalBanner": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 6,
+    "exact_native_export": true
+  },
+  "SkullPile": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 5,
+    "exact_native_export": true
+  },
+  "Torch": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 10,
+    "exact_native_export": true
+  },
+  "TorchAlt": {
+    "canvas": [
+      64,
+      64
+    ],
+    "colors": 10,
+    "exact_native_export": true
+  },
+  "Explosion": {
+    "canvas": [
+      64,
+      64
+    ],
+    "frames": 13,
+    "total_ms": 390,
+    "source_palette_only": true,
+    "exact_native_exports": true,
+    "clear_canvas_margin": true
+  },
+  "PoisonExplosion": {
+    "canvas": [
+      64,
+      64
+    ],
+    "frames": 13,
+    "total_ms": 390,
+    "source_palette_only": true,
+    "exact_native_exports": true,
+    "clear_canvas_margin": true
+  },
+  "ShieldExplosion": {
+    "canvas": [
+      64,
+      64
+    ],
+    "frames": 13,
+    "total_ms": 390,
+    "source_palette_only": true,
+    "exact_native_exports": true,
+    "clear_canvas_margin": true
+  },
+  "HealingExplosion": {
+    "canvas": [
+      64,
+      64
+    ],
+    "frames": 13,
+    "total_ms": 390,
+    "source_palette_only": true,
+    "exact_native_exports": true,
+    "clear_canvas_margin": true
+  }
+}
