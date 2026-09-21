@@ -209,10 +209,11 @@ public partial class BoardController
                 fixedDamagePerCrackedGem
             );
 
-            yield return ClearMatches(
+            yield return ClearMatchesWithBurstTargets(
                 expandedClearSet,
                 null,
-                activateSpecials: true
+                activateSpecials: true,
+                genericBurstTargets: expandedClearSet
             );
 
             yield return
