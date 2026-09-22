@@ -1,0 +1,70 @@
+Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1400.00, width:1064.00, height:512.00); BoardArea=(x:32.00, y:372.00, width:1016.00, height:1016.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:352.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.867647; origin=(540.00, 880.00); fractional board scale=True
+World frame TopLeftCorner: min=(32.00, 1238.59, 9.90), max=(181.41, 1388.00, 10.10), source=(80.00, 80.00), ratios=(1.87, 1.87)
+World frame TopRightCorner: min=(898.59, 1238.59, 9.90), max=(1048.00, 1388.00, 10.10), source=(80.00, 80.00), ratios=(1.87, 1.87)
+World frame BottomLeftCorner: min=(32.00, 372.00, 9.90), max=(181.41, 521.41, 10.10), source=(80.00, 80.00), ratios=(1.87, 1.87)
+World frame BottomRightCorner: min=(898.59, 372.00, 9.90), max=(1048.00, 521.41, 10.10), source=(80.00, 80.00), ratios=(1.87, 1.87)
+World frame TopEdge_1: min=(181.41, 1358.12, 9.90), max=(300.94, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_1: min=(181.41, 372.00, 9.90), max=(300.94, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame TopEdge_2: min=(300.94, 1358.12, 9.90), max=(420.47, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_2: min=(300.94, 372.00, 9.90), max=(420.47, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame TopEdge_3: min=(420.47, 1358.12, 9.90), max=(540.00, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_3: min=(420.47, 372.00, 9.90), max=(540.00, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame TopEdge_4: min=(540.00, 1358.12, 9.90), max=(659.53, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_4: min=(540.00, 372.00, 9.90), max=(659.53, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame TopEdge_5: min=(659.53, 1358.12, 9.90), max=(779.06, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_5: min=(659.53, 372.00, 9.90), max=(779.06, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame TopEdge_6: min=(779.06, 1358.12, 9.90), max=(898.59, 1388.00, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame BottomEdge_6: min=(779.06, 372.00, 9.90), max=(898.59, 401.88, 10.10), source=(64.00, 16.00), ratios=(1.87, 1.87)
+World frame LeftEdge_1: min=(32.00, 521.41, 9.90), max=(61.88, 640.94, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_1: min=(1018.12, 521.41, 9.90), max=(1048.00, 640.94, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame LeftEdge_2: min=(32.00, 640.94, 9.90), max=(61.88, 760.47, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_2: min=(1018.12, 640.94, 9.90), max=(1048.00, 760.47, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame LeftEdge_3: min=(32.00, 760.47, 9.90), max=(61.88, 880.00, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_3: min=(1018.12, 760.47, 9.90), max=(1048.00, 880.00, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame LeftEdge_4: min=(32.00, 880.00, 9.90), max=(61.88, 999.53, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_4: min=(1018.12, 880.00, 9.90), max=(1048.00, 999.53, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame LeftEdge_5: min=(32.00, 999.53, 9.90), max=(61.88, 1119.06, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_5: min=(1018.12, 999.53, 9.90), max=(1048.00, 1119.06, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame LeftEdge_6: min=(32.00, 1119.06, 9.90), max=(61.88, 1238.59, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+World frame RightEdge_6: min=(1018.12, 1119.06, 9.90), max=(1048.00, 1238.59, 10.10), source=(16.00, 64.00), ratios=(1.87, 1.87)
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner physical=(x:8.00, y:1752.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner physical=(x:912.00, y:1752.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner physical=(x:8.00, y:1400.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner physical=(x:912.00, y:1400.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopEdge physical=(x:168.00, y:1880.00, width:744.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomEdge physical=(x:168.00, y:1400.00, width:744.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/LeftEdge physical=(x:8.00, y:1560.00, width:32.00, height:192.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/RightEdge physical=(x:1040.00, y:1560.00, width:32.00, height:192.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner physical=(x:8.00, y:200.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner physical=(x:912.00, y:200.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner physical=(x:8.00, y:8.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomRightCorner physical=(x:912.00, y:8.00, width:160.00, height:160.00); source=(80.00, 80.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopEdge physical=(x:168.00, y:328.00, width:744.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomEdge physical=(x:168.00, y:8.00, width:744.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/LeftEdge physical=(x:8.00, y:168.00, width:32.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/RightEdge physical=(x:1040.00, y:168.00, width:32.00, height:32.00); source=(64.00, 16.00); tilePPU=1
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:90.00, y:1548.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:98.00, y:1500.00, width:16.00, height:40.00), source=(8.00, 20.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:258.00, y:1500.00, width:16.00, height:40.00), source=(8.00, 20.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:154.00, y:1748.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerAreaThreeSliceFrame/TopPiece bounds=(x:40.00, y:1818.00, width:292.00, height:50.00), source=(146.00, 25.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerAreaThreeSliceFrame/BottomPiece bounds=(x:40.00, y:1444.00, width:292.00, height:44.00), source=(146.00, 22.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:385.00, y:1577.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:394.00, y:1526.00, width:16.00, height:40.00), source=(8.00, 20.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:550.00, y:1526.00, width:16.00, height:40.00), source=(8.00, 20.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:448.00, y:1458.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner bounds=(x:8.00, y:1752.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner bounds=(x:912.00, y:1752.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner bounds=(x:8.00, y:1400.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner bounds=(x:912.00, y:1400.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:389.00, y:1792.00, width:302.00, height:88.00), source=(151.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner bounds=(x:8.00, y:200.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner bounds=(x:912.00, y:200.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner bounds=(x:8.00, y:8.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomRightCorner bounds=(x:912.00, y:8.00, width:160.00, height:160.00), source=(80.00, 80.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:364.00, y:72.00, width:352.00, height:128.00), source=(176.00, 64.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/AbilityEnergyBarEmpty bounds=(x:476.00, y:200.00, width:128.00, height:128.00), source=(64.00, 64.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:204.00, y:72.00, width:128.00, height:128.00), source=(32.00, 32.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:220.00, y:88.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:748.00, y:72.00, width:128.00, height:128.00), source=(32.00, 32.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:764.00, y:88.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
