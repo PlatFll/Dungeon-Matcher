@@ -21,12 +21,12 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-09-22
-- **Current milestone:** Restore the preceding four guard idles and integrate them into Unity; stronger cast correction rejected
-- **Current implementation branch:** `codex/restore-guard-idles-unity`
+- **Current milestone:** Extend the accepted guard idle style across nineteen enemies from Miner through King, repair Crossbow Guard, and verify Unity alignment
+- **Current implementation branch:** `codex/cast-grounded-idle-family`
 - **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
-- **Current art-pass base:** `codex/cast-idle-articulation-fixes` at `ce84c6a` (PR #164); its stronger idle motion is rejected and not selected for this integration.
+- **Current art-pass base:** `codex/restore-guard-idles-unity` at `f018644` (PR #165); its restored guard motion is the user-selected target. The stronger PR #164 motion remains rejected.
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** The original idles and first combat-action pass are on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). The local-enemy pass on [PR #161](https://github.com/PlatFll/Dungeon-Matcher/pull/161), presentation pass on [PR #162](https://github.com/PlatFll/Dungeon-Matcher/pull/162), and remaining-cast source passes extend that stack; merge requires a new explicit instruction. The stronger motion in [PR #164](https://github.com/PlatFll/Dungeon-Matcher/pull/164) was rejected. This integration selects the preceding guard backups. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.7). Current guard evidence is in `Docs/Validation/RESTORED_GUARD_IDLES.md`; prior Unity presentation evidence remains in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`.
+- **Release status:** The original idles and first combat-action pass are on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). The local-enemy pass on [PR #161](https://github.com/PlatFll/Dungeon-Matcher/pull/161), presentation pass on [PR #162](https://github.com/PlatFll/Dungeon-Matcher/pull/162), and remaining-cast source passes extend that stack; merge requires a new explicit instruction. The stronger motion in [PR #164](https://github.com/PlatFll/Dungeon-Matcher/pull/164) was rejected. The restored guard motion in [PR #165](https://github.com/PlatFll/Dungeon-Matcher/pull/165) was accepted as the target; the current pass extends it through King. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.8). Current family evidence is in `Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md`; prior Unity presentation evidence remains in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`.
 
 ### What this document is
 
@@ -133,7 +133,7 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
-The working guide is v1.7. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
+The working guide is v1.8. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
 
 Thirteen original short combat sounds cover grouped gem matches/landings, explosions, poison, hits, healing, shields and abilities. A bounded six-voice mix prioritizes impacts and player casts. Android/iOS haptics provide short grouped landing/impact/cast pulses with independent persistent vibration control. Feedback is suppressed during pause, focus loss and snapshot restore/replay. Physical-device vibration feel and speaker/headphone mix approval remain outstanding. Current validation evidence is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`; previous pass evidence remains historical.
 
@@ -144,20 +144,25 @@ remain preserved under `ArtSource/RemainingCast/` as a rejected candidate, not a
 approved motion references. Passing numerical art checks did not establish the
 desired feel. Rattlebones is still the unchanged motion authority.
 
-The immediately preceding guard animations are preserved exactly in
-`ArtSource/GuardIdles/`: Crossbow Guard, Barricade Guard, Spear Guard and Siege
-Sergeant. These four nine-frame, 130 ms loops are selected for Unity through the
-existing CombatIdleImporter and definition-driven presentation. Import changes
-only their visual references; combat rules and action timing are preserved.
-Other remaining-cast characters are outside this integration, including Town
-Marshal (a local leader). No PixelLab regeneration was needed because the backups
-were available. The guide is v1.7 and records the user's tiny grounded pose-change
-brief: no whole-sprite bob, breathing, hover or squash-and-stretch.
+The user accepted the restored guard style and requested it across the opening
+enemy cast. Nineteen idles from Miner through King now use this restrained cadence
+and are assigned in Unity. Crossbow Guard's lower weapon contour and moving joins
+are repaired. Miner, Basket Villager and Barricade Villager now use coordinated
+head/body settling and low-pose blinks over anchored boots. The other three guards
+are unchanged. Town Marshal, four knights, six royal units and King use
+`ArtSource/RemainingCast/SelectedIdles/`; the enlarged royal helmets are retained.
+Guards and local workers keep their existing source folders. All ready poses and
+palettes are preserved; local attack/ability art and gameplay timing are unchanged.
 
-See [selected sources](../ArtSource/GuardIdles/README.md) and
-[guard integration checks](Validation/RESTORED_GUARD_IDLES.md). Prior source-only
-checks in [REMAINING_CAST_ART.md](Validation/REMAINING_CAST_ART.md) are historical
-evidence for the rejected correction, not approval.
+The existing importer/controller/definition presentation path remains authoritative.
+Unity compile and actual-scene playback/pause checks passed, including all 171
+poses at 1080x1920 and 1080x2400, fixed centers/floors, integer texels and mask/HP
+clearance. No device test was performed. The guide is v1.8. Rattlebones, Farmer,
+Pan Villager, Bardley and Minotaur remain outside this refinement.
+
+See [selected sources](../ArtSource/RemainingCast/SelectedIdles/README.md) and
+[family integration checks](Validation/GROUNDED_ENEMY_IDLE_FAMILY.md). Prior
+guard restoration and rejected correction records remain historical evidence.
 
 ## Locked/preserved art direction
 

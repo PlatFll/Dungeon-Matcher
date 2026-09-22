@@ -1,5 +1,10 @@
 # Restored guard idles — 2026-09-22
 
+Subsequent follow-up: the user accepted this restored style and requested it for
+the remaining enemies. Crossbow Guard then received a local contour/join repair;
+the other three guard sources remain exact. Current evidence is in
+`GROUNDED_ENEMY_IDLE_FAMILY.md`. The checks below describe the preceding restoration.
+
 The user rejected the stronger motion in the preceding cast correction and
 requested the earlier animations if available. Exact backups existed. This pass
 selects only Crossbow Guard, Barricade Guard, Spear Guard and Siege Sergeant.

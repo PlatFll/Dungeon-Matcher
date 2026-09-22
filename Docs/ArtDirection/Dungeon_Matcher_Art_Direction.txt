@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.7
+**Version:** 1.8
 **Compiled:** 2026-09-19
-**Updated for rejected correction and restored guard selection:** 2026-09-22
+**Updated for accepted guard style across the enemy idle family:** 2026-09-22
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -470,6 +470,35 @@ settings. Pause, focus loss and saved-run replay suppress feedback. Sound/haptic
 must never own damage, targets, board resolution or animation-completion timing.
 
 ## 11D. Remaining cast recolors and idles — 2026-09-22
+
+CURRENT FOLLOW-UP: the user accepted the restored guard motion as better and
+requested that same style from Miner through King. The production selection is
+now nineteen enemy idles: three local workers, four guards, Town Marshal, four
+knights, six royal units and King. Rattlebones, Farmer, Pan Villager and Bardley
+remain unchanged; the beyond-King Minotaur is outside this pass.
+
+Use ArtSource/RemainingCast/SelectedIdles/ for the twelve newly integrated
+Marshal/knight/royal/King sources, ArtSource/GuardIdles/ for guards, and
+ArtSource/LocalEnemies/ for the three workers. FamilyPreview.html compares each
+group with unchanged Rattlebones. The stronger Idles/ candidate remains rejected.
+
+Preserve the accepted nine x 130 ms cadence and restrained stance offsets.
+The source head moves by -1 to +3 pixels through lift/settle/recovery, while the
+torso moves by -1 to +2 above fixed feet; the heavier King uses less. These are
+the measured accepted guard spacings, not permission to add the rejected deeper
+compression or independent head tilt. Face/helmet clusters translate intact.
+Blink near the low pose; cloth follows modestly. Neither ready pose is redrawn.
+
+The crossbow's complete lower wood/string contour stays with the held weapon;
+never assign its lower edge to the leg deformation. Overlap necks and sleeves
+behind moving parts so separation cannot expose transparent row cuts. Keep rigid
+tools, basket, log load, crowns and helmets intact. Retain the enlarged Royal
+Lancer and Royal Arbalist helmets and existing material palettes. Miner retains
+96x80 cells; other idles retain 64x64. All frames use fixed bottom-center pivots
+and native source scale in Unity. Local attack/ability cels and hit events remain
+unchanged. See Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md for executed checks.
+
+Earlier restoration decision (now extended by the follow-up above):
 
 CURRENT USER DECISION: the stronger correction below was rejected as worse.
 Its numerical checks do not establish the desired animation feel. Preserve the
