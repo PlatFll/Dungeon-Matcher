@@ -18,8 +18,8 @@ MonoBehaviour:
   description: A late-game knight that repeatedly shields itself and every other
     living enemy.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: f10020c6c8fc21349990cef2d84374bb, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: 8398212291481329675, guid: ec4064b78a341f24095dfb21beff0d5b, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 724078336aa31174c91a2a4265407337, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0

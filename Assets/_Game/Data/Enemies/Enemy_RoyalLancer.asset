@@ -18,8 +18,8 @@ MonoBehaviour:
   description: An elite Royal lancer whose normal attack probes with a light thrust
     before committing to a much heavier second strike.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 8363e8d1de39ac94592e6a17a05dfcb5, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: -3702564891517298924, guid: 9032acbb835afed4eb1d2924e885a529, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 118a69b3251efd64d9ec6936bd167256, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0

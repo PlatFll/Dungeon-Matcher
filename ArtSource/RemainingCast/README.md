@@ -1,10 +1,10 @@
 # Remaining cast — recolors and idle family
 
-**Current selection:** the user rejected the later correction pass as worse.
-`Idles/` and its corrected preview remain a rejected candidate, not approved
-production artwork. The earlier four guard idles were selected for Unity and
-preserved unchanged in `../GuardIdles/`. The rest of this cast is not part of that
-guard-only integration. Use the selected guard folder for future guard imports.
+**Current selection:** the user accepted the restored guard style. Nineteen enemy
+idles from Miner through King now share that restrained rhythm and are integrated
+in Unity. See `SelectedIdles/README.md` and `FamilyPreview.html` for the current
+sources, scope and comparison. `Idles/` remains the rejected stronger candidate;
+the historical production description below refers to that earlier pass.
 
 Working art pass, 2026-09-22. All 17 static character tabs supplied alongside
 `RattleBones_FluidIdle.ase` were recolored, then given a matching idle in LibreSprite.

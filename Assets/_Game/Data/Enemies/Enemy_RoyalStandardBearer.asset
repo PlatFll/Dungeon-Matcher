@@ -18,8 +18,8 @@ MonoBehaviour:
   description: A Royal support soldier who plants a falling standard that speeds
     up Crown attacks until the banner reaches the bottom of the board.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 21300000, guid: 9362013988df8294cbbdaf5d2beec45b, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: -5383921616495776229, guid: 3e1002f00d4c23f4dbc2eb2376ed6232, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 12f4d8e06dc79714d8c6bf846dc652f2, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0

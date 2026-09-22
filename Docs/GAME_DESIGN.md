@@ -218,7 +218,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 - Town Marshal is the first Mini-boss of Chapter 1, The Locals. Balance v1 gives him one Farmer/Pan escort in a weighted wave-7–8 opportunity; surrounding waves vary.
 - He is a pompous, cowardly local authority figure whose danger comes from rallying townsfolk rather than from personal combat strength.
 - He deliberately does not manipulate the match-3 board. Miner owns Chapter 1's board-interference lesson; Town Marshal teaches summoning, enemy-slot pressure, coordination, and target priority.
-- His presentation direction is a short/fat town official with a huge moustache and oversized hand bell. Final sprite/animation art is not yet wired into the current definition.
+- His presentation uses the supplied stout town-official art with facial hair and an oversized hand bell. His recolored, grounded idle and matching ready-frame fallback are now assigned through the existing definition; his combat rules are unchanged.
 
 #### First-pass combat balance
 

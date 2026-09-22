@@ -16,6 +16,20 @@ public static class CombatIdleImporter
     public static readonly string[] Characters = { "Rattlebones", "Farmer", "PanVillager", "Bardley" };
     public static readonly string[] LocalEnemies = { "Miner", "BasketVillager", "BarricadeVillager" };
     public static readonly string[] Guards = { "CrossbowGuard", "BarricadeGuard", "SpearGuard", "SiegeSergeant" };
+    public static readonly string[] RemainingEnemies = { "TownMarshal", "SwordKnight", "SpearKnight", "ShieldKnight", "KnightCaptain", "RoyalSwordsman", "RoyalLancer", "RoyalArbalist", "RoyalStandardBearer", "RoyalArcanist", "RoyalMage", "King" };
+    public static string[] EnemyFamily => LocalEnemies.Concat(Guards).Concat(RemainingEnemies).ToArray();
+
+    public static string SourceRoot(string character) => Guards.Contains(character) ? "ArtSource/GuardIdles/" :
+        LocalEnemies.Contains(character) ? "ArtSource/LocalEnemies/" :
+        RemainingEnemies.Contains(character) ? "ArtSource/RemainingCast/SelectedIdles/" : "ArtSource/CombatIdles/";
+
+    // Source-art names differ from three historical serialized definition names.
+    public static string EnemyDefinitionPath(string character)
+    {
+        string definition = character == "SwordKnight" ? "Knight" : character == "RoyalMage" ? "CourtMage" :
+            character == "RoyalArcanist" ? "RoyalArchbishop" : character;
+        return "Assets/_Game/Data/Enemies/Enemy_" + definition + ".asset";
+    }
 
     [Serializable] private sealed class Size { public int w, h; }
     [Serializable] private sealed class Frame { public int duration; public Size sourceSize; }
@@ -30,6 +44,9 @@ public static class CombatIdleImporter
     [MenuItem("Dungeon Matcher/Art/Import Restored Guard Idles")]
     public static void ImportGuards() => Import(Guards);
 
+    [MenuItem("Dungeon Matcher/Art/Import Grounded Enemy Idle Family")]
+    public static void ImportEnemyFamily() => Import(EnemyFamily);
+
     private static void Import(IEnumerable<string> characters)
     {
         Directory.CreateDirectory(ArtRoot);
@@ -38,8 +55,7 @@ public static class CombatIdleImporter
         foreach (string character in characters)
         {
             string stem = character + "_Idle";
-            string source = (Guards.Contains(character) ? "ArtSource/GuardIdles/" :
-                LocalEnemies.Contains(character) ? "ArtSource/LocalEnemies/" : "ArtSource/CombatIdles/") + stem;
+            string source = SourceRoot(character) + stem;
             string atlasPath = ArtRoot + "/" + stem + ".png";
             File.Copy(source + ".png", atlasPath, true);
             AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceSynchronousImport);
@@ -118,7 +134,7 @@ public static class CombatIdleImporter
             bool player = character == "Rattlebones" || character == "Bardley";
             string definitionPath = player
                 ? "Assets/_Game/Resources/Players/Player_" + (character == "Rattlebones" ? "Skeleton" : "Bardley") + ".asset"
-                : "Assets/_Game/Data/Enemies/Enemy_" + character + ".asset";
+                : EnemyDefinitionPath(character);
             var definition = AssetDatabase.LoadMainAssetAtPath(definitionPath);
             definitionTexts[definitionPath] = File.ReadAllText(definitionPath);
             var serialized = new SerializedObject(definition);

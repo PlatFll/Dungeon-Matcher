@@ -1,8 +1,8 @@
 {
   "CrossbowGuard": {
     "selected_source": "ArtSource/RemainingCast/BeforeCorrection/Idles/CrossbowGuard_Idle.aseprite",
-    "native_sha256": "286ccd2270b81a743b4a568f9e507461004ddacd9e5ed3892519d73d9714771a",
-    "sheet_sha256": "25b280866305a92443d292dd32cd3b74ad8fe3ae1b73599aa4f405841f39a760",
+    "native_sha256": "c708a7a5a1d34680705014d22021f8199e5a03dcebae236b38e2127bf33903dc",
+    "sheet_sha256": "6742e68fbe43b54624fa5a64753a3fb1ff40d296ff6d18b80e5617ff758e1c0a",
     "frames": 9,
     "duration_ms": 130,
     "loop_ms": 1170,
@@ -10,7 +10,9 @@
       64,
       64
     ],
-    "exact_backup_preserved": true,
+    "original_backup_preserved": true,
+    "production_matches_backup": false,
+    "crossbow_contour_repaired": true,
     "exact_unity_sheet": true
   },
   "BarricadeGuard": {
@@ -24,7 +26,9 @@
       64,
       64
     ],
-    "exact_backup_preserved": true,
+    "original_backup_preserved": true,
+    "production_matches_backup": true,
+    "crossbow_contour_repaired": false,
     "exact_unity_sheet": true
   },
   "SpearGuard": {
@@ -38,7 +42,9 @@
       64,
       64
     ],
-    "exact_backup_preserved": true,
+    "original_backup_preserved": true,
+    "production_matches_backup": true,
+    "crossbow_contour_repaired": false,
     "exact_unity_sheet": true
   },
   "SiegeSergeant": {
@@ -52,7 +58,9 @@
       64,
       64
     ],
-    "exact_backup_preserved": true,
+    "original_backup_preserved": true,
+    "production_matches_backup": true,
+    "crossbow_contour_repaired": false,
     "exact_unity_sheet": true
   }
 }
