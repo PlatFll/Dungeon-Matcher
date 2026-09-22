@@ -79,7 +79,7 @@ Exact shield capacity and reduction values remain balance data.
 - Special gems are part of the authoritative board-resolution sequence and may chain into other specials.
 - The normal special-gem set contains the established Row Bomb, Column Bomb, Poison Bomb, Healing Bomb, and Shield Bomb types, plus Color Crystal.
 - Cracked is not an ordinary special gem. It is a temporary gem state used by Bardley's Cracked Gems ability.
-- On a fresh account, five-gem shapes create Color Crystals; locked straight-four shapes still clear and reward all four gems. Reaching level 2 on any one character permanently unlocks directional bombs account-wide; levels 3, 4 and 5 unlock Poison, Healing and Shield. Levels are never summed. Higher-order shape rewards use the chosen unlocked Gem Mastery loadout. Color Crystals and bombs have no separate upgrade levels. Valid explicit legacy selections are preserved through migration.
+- Row and Column bombs are available from level 1, without a progression gate. Fresh five-gem shapes create Color Crystals (the classic star), also available from the start. Reaching level 3 on any one character permanently unlocks Poison account-wide; level 5 unlocks Healing and level 7 unlocks Shield. Levels are never summed. These rewards become selectable in Gem Mastery for every character. Higher-order shape rewards use the chosen unlocked Gem Mastery loadout. Color Crystals and bombs have no separate upgrade levels. Previously earned unlocks and valid explicit legacy selections are preserved through migration.
 - Special activation must preserve one clear source, one reward report, and one board mutation for each resolved outcome.
 - A special's hidden or preserved gem data must not accidentally create unintended damage, healing, or energy.
 - Color Crystal + a mastery bomb converts eligible gems of the partner's color into that exact bomb type, then detonates every converted bomb. Directional combinations retain their existing treatment of pre-existing mastery bombs.
@@ -299,6 +299,8 @@ Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown mel
 - Balance v1 Captain encounters choose two escorts from Sword/Spear Knights within the whole-formation threat budget and three-slot limit. Their shared falling-chain behavior is taught earlier by Crossbow Guard: cap 2 for the Guard, 3 for the Captain, 6 globally. Mage freezes remain distinct.
 
 ## Account, consumables and menus
+
+Characters includes a confirmed **Reset to Lv 1** action for the selected character. It resets only that character's permanent level between runs, retaining other characters, wallet, inventory, equipment, records and earned account-wide bomb unlocks. Upgrade gold is not refunded. Reset is disabled at level 1 and while a saved run exists.
 
 Gold is shared; each character level is independent. Shop purchases and equip state persist. Each equipped potion/Bomb loads `min(3, owned)` charges at run start, independently. Inventory is spent exactly once only on accepted use; unused stock remains owned and the same run never reloads charges. Potion heals 35% max HP and cannot be used at full HP. Bomb targets a gem and clears a 3×3 footprint through existing bomb chains, obstacle damage and cascades. Cancellation/invalid use spends nothing. Each slot has its own five-second paused-game-time cooldown.
 

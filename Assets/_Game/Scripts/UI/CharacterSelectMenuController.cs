@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,6 +42,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private string selectedPlayerId;
     private bool initialized;
     private Button levelUpButton;
+    private Button resetLevelButton;
+    private GameObject resetConfirmation;
+    private Text resetConfirmationText;
+    private string resetPlayerId;
     private Text progressionFeedback;
     private Coroutine levelFlash;
     private Color previewColor = Color.white;
@@ -101,6 +106,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
 
     private void OnDisable()
     {
+        CloseResetConfirmation();
         if(levelFlash!=null)StopCoroutine(levelFlash);
         levelFlash=null;
         if(characterPreview!=null)characterPreview.color=previewColor;
@@ -147,6 +153,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private void SelectCharacter(
         string playerId)
     {
+        CloseResetConfirmation();
         selectedPlayerId = playerId;
 
         CharacterSelectionSettings.SetSelectedPlayerId(
@@ -250,8 +257,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         if(levelUpButton!=null)
         {
             levelUpButton.GetComponentInChildren<Text>().text=level>=BalanceV1.Current.levelCap?"Maximum Level":$"Level Up - {cost} gold";
-            levelUpButton.interactable=level<BalanceV1.Current.levelCap&&AccountProgression.Current.Gold>=cost;
+            levelUpButton.interactable=AccountProgression.Current.ActiveRun==null&&level<BalanceV1.Current.levelCap&&AccountProgression.Current.Gold>=cost;
         }
+        if(resetLevelButton!=null)
+            resetLevelButton.interactable=AccountProgression.Current.ActiveRun==null&&level>1;
     }
 
     private void RefreshCharacterPreview(
@@ -289,8 +298,21 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.Font;
         Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
         Place(backButton.transform,new Vector2(110,-245),new Vector2(200,48));
-        levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(330,48),new Vector2(0,-150),LevelUp);
-        progressionFeedback=GameUi.Label("UnlockFeedback",transform,"Shared bombs unlock at levels 2, 3, 4 and 5.",new Vector2(440,55),new Vector2(0,-200),17);
+        levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(240,48),new Vector2(-95,-150),LevelUp);
+        resetLevelButton=GameUi.Button("ResetLevel",transform,"Reset to Lv 1",new Vector2(180,48),new Vector2(125,-150),OpenResetConfirmation);
+        var balance=BalanceV1.Current;
+        progressionFeedback=GameUi.Label("UnlockFeedback",transform,
+            $"Shared mastery: Poison Lv {balance.poisonLevel}, Heal Lv {balance.healingLevel}, Shield Lv {balance.shieldLevel}.\nRow, column and color bombs available from Lv 1.",
+            new Vector2(440,55),new Vector2(0,-200),17);
+        var overlay=GameUi.Rect("ResetLevelConfirmation",transform,Vector2.zero,Vector2.zero);
+        overlay.anchorMin=Vector2.zero;overlay.anchorMax=Vector2.one;
+        overlay.gameObject.AddComponent<Image>().color=new Color(0,0,0,.85f);
+        resetConfirmation=overlay.gameObject;
+        var panel=GameUi.Panel("ResetLevelPanel",overlay,new Vector2(440,300));
+        resetConfirmationText=GameUi.Label("Message",panel,"",new Vector2(400,180),new Vector2(0,40),21);
+        GameUi.Button("CancelResetLevel",panel,"Cancel",new Vector2(180,48),new Vector2(-100,-105),CloseResetConfirmation);
+        GameUi.Button("ConfirmResetLevel",panel,"Reset level",new Vector2(180,48),new Vector2(100,-105),ResetLevel);
+        resetConfirmation.SetActive(false);
     }
     private static void Place(Transform target,Vector2 position,Vector2 size)
     {
@@ -299,13 +321,15 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     }
     private void LevelUp()
     {
-        int highest=AccountProgression.Current.HighestLevel;
+        var previous=new HashSet<GemSpecialType>();
+        foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
+            if(AccountProgression.Current.IsUnlocked(type))previous.Add(type);
         if(!AccountProgression.Current.TryLevelUp(selectedPlayerId))
         {if(AccountProgression.Current.LastError!=null)progressionFeedback.text="Save failed. Check storage, then try again.";return;}
         Refresh();
         string unlocked="";
         foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
-            if(BalanceV1.Current.UnlockLevel(type)>highest&&AccountProgression.Current.IsUnlocked(type))
+            if(!previous.Contains(type)&&AccountProgression.Current.IsUnlocked(type))
             {
                 if(type==GemSpecialType.ColumnBomb)continue;
                 unlocked+=type==GemSpecialType.RowBomb?"Directional Bombs":type==GemSpecialType.PoisonBomb?"Poison Bomb":type==GemSpecialType.HealingBomb?"Healing Bomb":"Shield Bomb";
@@ -313,6 +337,32 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         progressionFeedback.text=unlocked.Length>0?$"Unlocked for every character: {unlocked}":"Level up! Permanent stats increased.";
         if(levelFlash!=null)StopCoroutine(levelFlash);
         levelFlash=StartCoroutine(LevelFlash());
+    }
+    private void OpenResetConfirmation()
+    {
+        if(AccountProgression.Current.ActiveRun!=null||AccountProgression.Current.Level(selectedPlayerId)<=1)return;
+        resetPlayerId=selectedPlayerId;
+        resetConfirmationText.text=$"Reset {GetMenuDisplayName(resetPlayerId)} to Level 1?\n\n"+
+            "Earned bomb unlocks and inventory stay.\nUpgrade gold is not refunded.";
+        resetConfirmation.SetActive(true);
+    }
+    private void CloseResetConfirmation()
+    {
+        resetPlayerId=null;
+        if(resetConfirmation!=null)resetConfirmation.SetActive(false);
+    }
+    private void ResetLevel()
+    {
+        string id=resetPlayerId;
+        CloseResetConfirmation();
+        if(!AccountProgression.Current.TryResetLevel(id))
+        {
+            progressionFeedback.text=AccountProgression.Current.LastError!=null?
+                "Save failed. Level unchanged. Check storage, then try again.":"Level could not be reset.";
+            Refresh();return;
+        }
+        Refresh();
+        progressionFeedback.text=$"{GetMenuDisplayName(id)} reset to Level 1.\nEarned bomb unlocks kept.";
     }
     private IEnumerator LevelFlash()
     {
