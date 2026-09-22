@@ -163,7 +163,8 @@ public sealed class AccountProgression
     }
     public int Owned(ConsumableKind kind) => kind == ConsumableKind.HealthPotion ? state.potions : state.bombs;
     public bool Equipped(ConsumableKind kind) => kind == ConsumableKind.HealthPotion ? state.equipPotions : state.equipBombs;
-    public bool IsUnlocked(GemSpecialType type) => type == GemSpecialType.ColorCrystal || state.unlocked.Contains(type);
+    public bool IsUnlocked(GemSpecialType type) => type == GemSpecialType.ColorCrystal ||
+        type == GemSpecialType.RowBomb || type == GemSpecialType.ColumnBomb || state.unlocked.Contains(type);
     public bool IsUnlocked(GemMasteryReward reward) => GemMasteryRuntimeResolver.TryGetSpecialType(reward, out var type) && IsUnlocked(type);
     public int Charges(string runId, ConsumableKind kind) => state.run == null || state.run.id != runId ? 0 :
         kind == ConsumableKind.HealthPotion ? state.run.potionCharges : state.run.bombCharges;
@@ -184,6 +185,14 @@ public sealed class AccountProgression
         })) return false;
         foreach (var type in state.unlocked) if (!previous.Contains(type)) Unlocked?.Invoke(type);
         return true;
+    }
+
+    public bool TryResetLevel(string id)
+    {
+        if (!CharacterSelectionSettings.IsKnownCharacter(id) || state.run != null || Level(id) <= 1) return false;
+        // Earned account unlocks and paid upgrade costs are retained. A saved
+        // run keeps its original level snapshot until explicitly finished.
+        return Commit(next => next.characters.Find(p => p.id == id).level = 1);
     }
 
     public bool TryPurchase(ConsumableKind kind)
@@ -362,7 +371,7 @@ public sealed class AccountProgression
         }
         catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException)
         {
-            LastError = "Could not save account. No purchase, upgrade or item use was committed.";
+            LastError = "Could not save account. No account changes were committed.";
             Debug.LogError(LastError + " " + exception.Message);
             return false;
         }

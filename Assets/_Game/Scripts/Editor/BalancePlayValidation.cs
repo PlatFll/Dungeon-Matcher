@@ -81,7 +81,7 @@ public static class BalancePlayValidation
         menu.ShowCharacterSelect();yield return Capture("02-characters-fresh");
         Click("LevelUp");yield return Wait(.4f);
         Check(AccountProgression.Current.Level("skeleton")==2&&AccountProgression.Current.Gold==475,"Level Up UI updates independent level and wallet");
-        Check(AccountProgression.Current.IsUnlocked(GemSpecialType.RowBomb),"shared directional unlock");
+        Check(AccountProgression.Current.IsUnlocked(GemSpecialType.RowBomb),"directional bombs available from level 1");
         yield return Capture("03-characters-upgraded");
         menu.ShowHome();menu.ShowGemMastery();yield return Capture("04-mastery-locks");
         menu.ShowHome();menu.ShowShop();yield return Capture("05-shop");

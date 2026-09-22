@@ -55,11 +55,11 @@ public sealed class BalanceV1Tests
     private static RunUpgradeDefinition Card(string name) => Resources.Load<RunUpgradeDefinition>("RunUpgrades/"+name);
     private static T Data<T>(string path) where T:UnityEngine.Object => AssetDatabase.LoadAssetAtPath<T>("Assets/_Game/"+path+".asset");
 
-    [Test] public void FreshProfileHasOnlyCrystalAndMatchingFallsBackWithoutTouchingPrefs()
+    [Test] public void FreshProfileHasDirectionalBombsAndCrystalButMasteryBombsStayLocked()
     {
         Assert.That(Account.Gold,Is.Zero);
         foreach(GemSpecialType type in Enum.GetValues(typeof(GemSpecialType)))
-            Assert.That(Account.IsUnlocked(type),Is.EqualTo(type==GemSpecialType.ColorCrystal),type.ToString());
+            Assert.That(Account.IsUnlocked(type),Is.EqualTo(type==GemSpecialType.ColorCrystal||type==GemSpecialType.RowBomb||type==GemSpecialType.ColumnBomb),type.ToString());
         foreach(GemMasteryShape shape in Enum.GetValues(typeof(GemMasteryShape)))
         {
             Assert.That(GemMasterySettings.GetReward(shape),Is.EqualTo(GemMasteryReward.ColorCrystal));
@@ -76,12 +76,87 @@ public sealed class BalanceV1Tests
         Assert.That(Account.IsUnlocked(GemSpecialType.RowBomb),Is.True);
         Assert.That(Account.TryLevelUp("skeleton"),Is.True);
         Assert.That(Account.IsUnlocked(GemSpecialType.PoisonBomb),Is.False,"levels must not sum");
-        for(int level=2;level<5;level++)Assert.That(Account.TryLevelUp("bardley"),Is.True);
+        for(int level=2;level<7;level++)Assert.That(Account.TryLevelUp("bardley"),Is.True);
         foreach(var type in new[]{GemSpecialType.PoisonBomb,GemSpecialType.HealingBomb,GemSpecialType.ShieldBomb})Assert.That(Account.IsUnlocked(type),Is.True);
         var loaded=new AccountProgression(path);
-        Assert.That(loaded.Level("bardley"),Is.EqualTo(5)); Assert.That(loaded.Level("skeleton"),Is.EqualTo(2));
+        Assert.That(loaded.Level("bardley"),Is.EqualTo(7)); Assert.That(loaded.Level("skeleton"),Is.EqualTo(2));
         Assert.That(loaded.IsUnlocked(GemSpecialType.ShieldBomb),Is.True);
         Assert.That(loaded.Gold,Is.EqualTo(Account.Gold));
+    }
+    [TestCase("bardley", "skeleton")]
+    [TestCase("skeleton", "bardley")]
+    public void EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(string upgraded,string other)
+    {
+        Seed();
+        var notifications=new List<GemSpecialType>();Account.Unlocked+=notifications.Add;
+        using(CharacterSelectionSettings.UseTemporarySelection(other))
+        {
+            for(int level=1;level<=7;level++)
+            {
+                if(level>1)Assert.That(Account.TryLevelUp(upgraded),Is.True);
+                Assert.That(Account.Level(other),Is.EqualTo(1));
+                foreach(var pair in new[]{(GemMasteryReward.PoisonBomb,3),(GemMasteryReward.HealBomb,5),(GemMasteryReward.ShieldBomb,7)})
+                {
+                    Assert.That(Account.IsUnlocked(pair.Item1),Is.EqualTo(level>=pair.Item2),$"{pair.Item1} at level {level}");
+                    GemMasterySettings.SetReward(GemMasteryShape.LShape,GemMasteryReward.ColorCrystal);
+                    Assert.That(GemMasterySettings.SetReward(GemMasteryShape.LShape,pair.Item1),Is.EqualTo(level>=pair.Item2));
+                }
+            }
+        }
+        CollectionAssert.AreEqual(new[]{GemSpecialType.PoisonBomb,GemSpecialType.HealingBomb,GemSpecialType.ShieldBomb},notifications);
+    }
+    [TestCase("bardley", "skeleton")]
+    [TestCase("skeleton", "bardley")]
+    public void ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(string reset,string other)
+    {
+        Seed(bardley:7,skeleton:7,potions:4,bombs:6);
+        Assert.That(Account.SetEquipped(ConsumableKind.Bomb,true),Is.True);
+        GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb);
+        int notifications=0;Account.Unlocked+=_=>notifications++;
+        Assert.That(Account.TryResetLevel(reset),Is.True);
+        Assert.That(Account.Level(reset),Is.EqualTo(1));Assert.That(Account.Level(other),Is.EqualTo(7));
+        Assert.That(Account.TryResetLevel(other),Is.True);
+        var loaded=new AccountProgression(path);
+        Assert.That(loaded.HighestLevel,Is.EqualTo(1));Assert.That(loaded.Gold,Is.EqualTo(10000),"no refund or fee");
+        Assert.That(loaded.Owned(ConsumableKind.HealthPotion),Is.EqualTo(4));Assert.That(loaded.Owned(ConsumableKind.Bomb),Is.EqualTo(6));
+        Assert.That(loaded.Equipped(ConsumableKind.Bomb),Is.True);
+        foreach(var type in new[]{GemSpecialType.PoisonBomb,GemSpecialType.HealingBomb,GemSpecialType.ShieldBomb})Assert.That(loaded.IsUnlocked(type),Is.True);
+        Assert.That(GemMasterySettings.GetReward(GemMasteryShape.CrossShape),Is.EqualTo(GemMasteryReward.ShieldBomb));
+        Assert.That(Player(reset).MaximumHealth,Is.EqualTo(reset=="bardley"?80:100));
+        for(int level=1;level<7;level++)Assert.That(Account.TryLevelUp(reset),Is.True);
+        Assert.That(notifications,Is.Zero,"reset/relevel must not issue already earned unlocks again");
+    }
+    [Test] public void ResetRejectsInvalidCharactersLevelOneAndActiveRuns()
+    {
+        Seed(bardley:7);
+        Assert.That(Account.TryResetLevel(null),Is.False);Assert.That(Account.TryResetLevel("unknown"),Is.False);
+        Assert.That(Account.TryResetLevel("skeleton"),Is.False);
+        string run=Account.BeginRun("bardley");string before=File.ReadAllText(path);
+        Assert.That(Account.TryResetLevel("bardley"),Is.False);
+        Assert.That(Account.Level("bardley"),Is.EqualTo(7));Assert.That(Account.ActiveRun.id,Is.EqualTo(run));
+        Assert.That(File.ReadAllText(path),Is.EqualTo(before));
+    }
+    [Test] public void FailedResetDoesNotPublishOrChangeDiskOrMemory()
+    {
+        Seed(bardley:7);string before=File.ReadAllText(path);int changed=0;Account.Changed+=()=>changed++;
+        using(var locked=new FileStream(path+".tmp",FileMode.Create,FileAccess.ReadWrite,FileShare.None))
+        {
+            LogAssert.Expect(LogType.Error,new System.Text.RegularExpressions.Regex("Could not save account"));
+            Assert.That(Account.TryResetLevel("bardley"),Is.False);
+        }
+        Assert.That(changed,Is.Zero);Assert.That(Account.Level("bardley"),Is.EqualTo(7));
+        Assert.That(File.ReadAllText(path),Is.EqualTo(before));
+        Assert.That(Account.TryResetLevel("bardley"),Is.True);Assert.That(changed,Is.EqualTo(1));
+    }
+    [Test] public void PreviouslyEarnedLowerThresholdUnlocksRemainOwnedOnLoad()
+    {
+        Seed(bardley:5);
+        var save=JsonUtility.FromJson<AccountSave>(File.ReadAllText(path));
+        save.unlocked.Add(GemSpecialType.HealingBomb);save.unlocked.Add(GemSpecialType.ShieldBomb);
+        File.WriteAllText(path,JsonUtility.ToJson(save));
+        var loaded=new AccountProgression(path);
+        Assert.That(loaded.IsUnlocked(GemSpecialType.HealingBomb),Is.True);
+        Assert.That(loaded.IsUnlocked(GemSpecialType.ShieldBomb),Is.True);
     }
     [TestCase("bardley",1,80,10f,40)]
     [TestCase("bardley",5,112,12.6f,52)]
@@ -162,7 +237,7 @@ public sealed class BalanceV1Tests
     }
     [Test] public void ShieldOverflowAndAegisCapDeliverUsefulValueAndReset()
     {
-        Seed(bardley:5);GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb);
+        Seed(bardley:5,skeleton:7);GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb);
         var player=Player("bardley");var runtime=Runtime(player);
         Assert.That(runtime.TryApply(Card("RunUpgrade_AegisReservoir"),5),Is.True);
         Assert.That(player.MaximumShield,Is.EqualTo(68));
@@ -247,7 +322,7 @@ public sealed class BalanceV1Tests
         var migrated=new AccountProgression(path);
         Assert.That(migrated.Level("bardley"),Is.EqualTo(1));Assert.That(migrated.Level("skeleton"),Is.EqualTo(1));
         Assert.That(migrated.IsUnlocked(GemSpecialType.PoisonBomb),Is.True);Assert.That(migrated.IsUnlocked(GemSpecialType.ShieldBomb),Is.True);
-        Assert.That(migrated.IsUnlocked(GemSpecialType.HealingBomb),Is.False);Assert.That(migrated.IsUnlocked(GemSpecialType.RowBomb),Is.False);
+        Assert.That(migrated.IsUnlocked(GemSpecialType.HealingBomb),Is.False);Assert.That(migrated.IsUnlocked(GemSpecialType.RowBomb),Is.True);
         Assert.That(legacy.Count,Is.EqualTo(3));Assert.That(legacy["DungeonMatcher.GemMastery.v1.TShape"],Is.EqualTo(999));
     }
     [Test] public void BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals()
