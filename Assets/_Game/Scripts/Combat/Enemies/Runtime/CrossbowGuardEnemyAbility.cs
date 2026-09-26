@@ -169,7 +169,11 @@ public sealed class CrossbowGuardEnemyAbility :
             boardController.TryQueueTopUpMovablePins(
                 enemyActor,
                 Mathf.Min(MaximumOwnedPins, ownedPinCount + 1),
-                null,
+                succeeded =>
+                {
+                    if (succeeded && this != null && isActiveAndEnabled && enemyActor != null)
+                        enemyActor.NotifySpecialAbilityEffectApplied();
+                },
                 () => this == null || !isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated
             );
 

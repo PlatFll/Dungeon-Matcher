@@ -50,6 +50,21 @@ public sealed partial class EnemyActor : MonoBehaviour
     public Func<float> IncomingDamageMultiplier { private get; set; }
 
     public event Action<EnemyActor> Initialized;
+    public event Action<EnemyActor, int> Healed;
+    public event Action<EnemyActor, int> ShieldGranted;
+    // Separate from HP-only poison text and normal hit/stagger feedback.
+    public event Action<EnemyActor, int> StatusDamageReceived;
+    // Immediate board abilities can finish after their move counter was reset.
+    public event Action<EnemyActor> SpecialAbilityEffectApplied;
+    public void NotifySpecialAbilityEffectApplied()
+    {
+        if (isInitialized && !isDefeated && HasSpecialAbility)
+            SpecialAbilityEffectApplied?.Invoke(this);
+    }
+    internal void NotifyStatusDamageReceived(int amount)
+    {
+        if (amount > 0) StatusDamageReceived?.Invoke(this, amount);
+    }
     // HP before/after one surviving damage instance, including damage-over-time.
     public event Action<EnemyActor, int, int> SurvivedHealthDamage;
     private int specialTurnRequirementOverride;
@@ -580,6 +595,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             EnemyMaximumShield
         );
 
+        ShieldGranted?.Invoke(this, actualShieldGranted);
         return actualShieldGranted;
     }
 
@@ -613,6 +629,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             );
         }
 
+        if (restoredAmount > 0) Healed?.Invoke(this, restoredAmount);
         return restoredAmount;
     }
 

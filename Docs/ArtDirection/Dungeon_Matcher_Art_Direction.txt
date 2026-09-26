@@ -1,9 +1,9 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.3.1
+**Version:** 1.9
 **Compiled:** 2026-09-19
-**Updated for production combat animations:** 2026-09-21
-**Scope:** visual identity, palettes, sprite editing, review, idle and combat-action animation direction.
+**Updated for background-only dungeon refinement:** 2026-09-22
+**Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
 This repository edition is the durable source of truth for the art direction established in this project conversation. It records the versions carried forward as working references, the rejected approaches, and unresolved issues. It does not retroactively approve every historical suggestion or authorize changes to shipped assets.
@@ -407,6 +407,221 @@ Slynyrd's primary pixel-animation tutorials support the chosen emphasis on key p
 
 The berry release and kneeling plank-set are original acting decisions for these characters, informed by those timing principles. The research is not a source for new palettes or character designs.
 
+## 11C. Dungeon presentation and feedback — 2026-09-21
+
+The current production-polish pass uses the supplied four LibreSprite effects and
+the existing dungeon tilemap system. Sources are ArtSource/TileVfx/ and
+ArtSource/Presentation/. Rattlebones remains the animation-family reference.
+
+### Tile VFX
+
+All four bursts use 64×64 full rectangles, center pivots, thirteen 30 ms exposures
+(390 ms total), Point filtering and no compression/mipmaps. Preserve the supplied
+effect colors and recognizable flash → peak → breakup arc. Fit the complete
+footprint with hard pixel clusters. Generic explosions are warm with cool smoke;
+poison is green gas; shield is a cool blue crest; healing is a warm ring with pale
+restorative sparkles. Do not apply character outline rules to these luminous VFX.
+
+Every affected cleared tile plays its appropriate burst at the shatter event.
+Directional bombs, Bardley explosions and the Bomb consumable share the generic
+burst. Poison, Shield and Healing Bombs keep their distinct effects. Do not stack
+multiple opaque effects on one collateral cell or hide a preserved special with
+a destruction animation. The dissipating tail can overlap refill; do not slow the
+board for the effect. Source JSON owns exposures, not an arbitrary Unity FPS.
+
+### Dungeon composition and title
+
+Keep the established battle wall, arches and floor as real tilemap art. Add sparse
+warm torches, restrained plum/gold banners, barrels and skulls at the same native
+pixel density. Props support the actors and never compete with the face/tool read.
+Dark violet masonry fills surrounding gutters and the bottom HUD. The player
+frame uses a darker version so bone, slime and health information remain clear.
+
+The menu's dark recessed doorway leaves a quiet area for controls. Its brightest
+feature is the pink story gem between the two lines of the Dungeon Matcher logo.
+Use warm bone/gold lettering, a dark outline and violet depth. No dithered glitter,
+blur or painted gameplay labels. Keep important dressing inside tall-phone crops.
+Potion glass/liquid and the iron fantasy bomb must read at their native 24×24 size.
+
+### Combat correction lesson
+
+Grounding checks must include connected anatomy, not just bottom-row equality.
+Inspect trouser-to-boot contact through every compressed pose, candle/hat contact,
+and rigid baskets/tools. Patching an entire lower row to plant feet can stretch a
+held basket or detach a shin. Plant only the intended foot regions. The current
+repair preserves ready poses and exposure tables, restores those connections,
+uses the articulated body poses for the berry throw, and clarifies the builder's
+folded knee. Miner auto-attack and the earlier four characters remain references.
+
+### Sound and phone feedback
+
+Keep sounds compact and readable: gem ticks/landings quietest; ordinary impacts
+in the middle; player damage, explosions and the two player signatures prominent.
+Use a short dry explosion, a bubbling poison puff, restrained heal/shield tones,
+and distinct Bardley plucks and Rattlebones crown/bone accents. Shared enemy ability
+sound provides a consistent warning. Current original synthesized sources and
+measured waveform provenance live in ArtSource/Audio/.
+
+Group simultaneous tile events, cap voices and preserve mix headroom. Never play
+one explosion sound per tile. Landings may receive a very soft grouped phone tick;
+hits, explosions and accepted player casts get stronger short feedback. Avoid
+constant vibration on every damage tick. Music, SFX and vibration are independent
+settings. Pause, focus loss and saved-run replay suppress feedback. Sound/haptics
+must never own damage, targets, board resolution or animation-completion timing.
+
+## 11D. Remaining cast recolors and idles — 2026-09-22
+
+CURRENT FOLLOW-UP: the user accepted the restored guard motion as better and
+requested that same style from Miner through King. The production selection is
+now nineteen enemy idles: three local workers, four guards, Town Marshal, four
+knights, six royal units and King. Rattlebones, Farmer, Pan Villager and Bardley
+remain unchanged; the beyond-King Minotaur is outside this pass.
+
+Use ArtSource/RemainingCast/SelectedIdles/ for the twelve newly integrated
+Marshal/knight/royal/King sources, ArtSource/GuardIdles/ for guards, and
+ArtSource/LocalEnemies/ for the three workers. FamilyPreview.html compares each
+group with unchanged Rattlebones. The stronger Idles/ candidate remains rejected.
+
+Preserve the accepted nine x 130 ms cadence and restrained stance offsets.
+The source head moves by -1 to +3 pixels through lift/settle/recovery, while the
+torso moves by -1 to +2 above fixed feet; the heavier King uses less. These are
+the measured accepted guard spacings, not permission to add the rejected deeper
+compression or independent head tilt. Face/helmet clusters translate intact.
+Blink near the low pose; cloth follows modestly. Neither ready pose is redrawn.
+
+The crossbow's complete lower wood/string contour stays with the held weapon;
+never assign its lower edge to the leg deformation. Overlap necks and sleeves
+behind moving parts so separation cannot expose transparent row cuts. Keep rigid
+tools, basket, log load, crowns and helmets intact. Retain the enlarged Royal
+Lancer and Royal Arbalist helmets and existing material palettes. Miner retains
+96x80 cells; other idles retain 64x64. All frames use fixed bottom-center pivots
+and native source scale in Unity. Local attack/ability cels and hit events remain
+unchanged. See Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md for executed checks.
+
+Earlier restoration decision (now extended by the follow-up above):
+
+CURRENT USER DECISION: the stronger correction below was rejected as worse.
+Its numerical checks do not establish the desired animation feel. Preserve the
+files as a rejected candidate; do not use them as the motion authority for later
+work. The user selected the immediately preceding animations if available.
+The four guard backups are available and now selected in ArtSource/GuardIdles/.
+Only Crossbow Guard, Barricade Guard, Spear Guard and Siege Sergeant are in this
+Unity integration. Their native files, drawings and nine 130 ms exposures are
+preserved exactly. Remaining cast work is deferred.
+
+For future idle generation/editing, follow the user's Rattlebones prompt:
+- Firmly planted feet and almost stationary legs; no whole-sprite vertical bob,
+  jumping, hovering, breathing/inflation or squash-and-stretch.
+- Very small pose changes: about one pixel of torso/pelvis, head-relative-to-body,
+  shoulder and arm adjustment. Heads/helmets retain their shape and identity.
+- Cloth may react by about one pixel with a tiny delay. Held tools stay rigid and
+  connected to their hands. Keep the character alert, grounded and ready to act.
+- Preserve exact materials, palette and pixel clusters; no blur, antialiasing,
+  interpolation, added colors or redesign. Loop into the original neutral pose.
+- The supplied generation brief uses eight frames: neutral, slight shoulder
+  settle, tiny head settle/cloth reaction, subtle low stance, return, tiny relative
+  lift, cloth settle, neutral. This does not authorize changing the exposure count
+  of the existing nine-frame backups chosen for restoration.
+- Use actual reference playback as the authority. Do not equate a common timing
+  curve or passing asset checks with matching the Rattlebones animation family.
+
+Historical correction description (rejected as a motion treatment):
+
+ArtSource/RemainingCast/ contains the seventeen static sprites supplied open in
+LibreSprite alongside RattleBones_FluidIdle.ase: five guards/Marshal, four knights,
+seven royal characters including the King, and the Minotaur. The source README
+maps exact supplied filenames to output names. This is a working art-source pass,
+not a new gameplay roster or a completed Unity assignment.
+
+The initial still recolors preserve source alpha pixels and design landmarks.
+The correction enlarges only Royal Lancer and Royal Arbalist helmets (approximately
+22% wider and 9% taller about the neck, with their original plume drawing attached).
+The other fifteen still masks remain exact. Reuse
+the established cool iron, warm skin, wood/leather, linen, gold and deep-red ramps.
+Royal steel may use the existing pale bone light as its sparse brightest accent;
+that does not make cloth, fur or faces metallic. Keep the Mage's pale fabric/cyan
+staff, the Arcanist's gold staff head/wood shaft, and the Minotaur's warm fur/pale
+horns distinct. Exact per-character colors are in Palettes.json. No new RGB colors
+were added to the guide. These assignments remain reviewable, rather than locking
+every future member of a faction to an experimental palette.
+
+The exact open Rattlebones animation is the protected motion reference and was
+not recolored. All seventeen new idles use nine 130 ms frames (1170 ms total), a
+compact rise/dip/recovery, coordinated face and shoulder action, knee compression,
+and planted soles. Visible eyes close in the compressed sixth frame; enclosed
+helmets retain their visors. King/Minotaur compression is restrained for weight.
+Frames 1 and 9 are the exact recolored ready pose, giving a deliberate seam hold.
+
+Separate whole rigid tools and grips from the flexing torso. Include their entire
+outer contour: an omitted one-pixel shaft edge can appear to vibrate even when
+the colored center is rigid. Plant tall staves, spears and the banner pole; let
+cloth/flag tips trail by a small amount. Keep each plume attached to its helmet;
+do not split a thin plume root into a disconnected delayed segment. Inspect scalp/beard outlines and
+helmet-to-shoulder joins at maximum compression on both dark and light backgrounds.
+Preserve all 64×64 canvases, native scale and row-63 soles. Future imports must use
+full rectangles and fixed bottom-center alignment, not per-frame tight cropping.
+
+Original native captures, recolored stills, idle files, exact sheets/GIFs, synchronized
+preview and measured checks live together in ArtSource/RemainingCast/. The source
+reference board and earlier characters remain unchanged. Final visual approval
+and any later in-game assignment remain separate from this art-source delivery.
+
+Historical correction requirements, 2026-09-22 (motion treatment superseded above):
+- Matching timing alone is insufficient. Use distinct lift, shoulder/chest
+  compression, a restrained neck pivot, low-point blink and recovery. The body
+  carries the face; preserve visor/eye identity and planted weight.
+- Keep torso, arms and attached cape as a continuous drawing through compression.
+  The King's previous arm/cape cut came from a rectangular cape extraction plus
+  an abrupt deformation boundary. Never leave exposed background at that seam.
+- Select every pixel of rigid tools, including outlines, strings, stirrups and
+  grips. The Arbalist's lower crossbow loop belongs to the bow, not the compressing
+  leg. Keep cloth behind it as body material. Hands need sleeve overlap at the rise.
+- Give a carried shield its own arm motion; a planted spear must not freeze the
+  other hand. Clamp whole rigid parts to available space rather than clipping
+  individual pixels. Expand the canvas with consistent registration if the intended
+  motion cannot fit; never squash a weapon to fit.
+- Inspect all nine poses against Rattlebones and playback at native size on light
+  and dark stages. Palette, alpha, component counts and export checks do not prove
+  anatomy or acting quality. Review isolated part drawings as well as composites.
+- Preserve before/after files for review. This correction remains a working
+  source-art candidate; the user's visual approval is not implied by test results.
+
+## 11E. Background-only dungeon refinement — 2026-09-22
+
+ArtSource/Backgrounds/ is the current reviewable battleground/background source.
+The supplied top-scene and general-background mockups are the primary composition
+references. Their characters, gems, labels, frames and buttons are not source art
+to copy. Rebuild useful environmental motifs at native scale in LibreSprite.
+
+Use cool charcoal/violet masonry, recessed iron, muted plum cloth, restrained
+wood/bone and small warm fire accents. Keep connected top-left stone planes and
+subtle wear; avoid bright texture on every brick. Warm lighting is a local palette
+shift on stone clusters, never a blurred halo. The exact generated palette for
+each file is recorded in Backgrounds/Validation/AssetManifest.json. This does not
+change the approved character, gem or UI palettes.
+
+The top scene is 512x384: a 512x256 dressed wall, 64-pixel floor strip and 64-pixel
+foundation. Four 64x64 wall/floor variants plus separate gate, shrine, banners,
+torch, crate, candle, skull and chain modules remain editable. Bake a selected
+composition into 64-pixel Unity tile cells without scaling those pixels.
+
+Keep the fighter floor readable and the center available for silhouettes. Place
+small focal accents in the lower visible wall band: the existing short-phone HUD
+obscures upper courses. Tall views may reveal more quiet wall above. Architectural
+crops behind the HUD are intentional; do not move UI or actors to expose props.
+Props must have coherent overlaps and ground contacts. Keep flames clear of crates.
+
+The general background is a four-shade 128x128 dark violet masonry repeat. It fills
+the outer gutters and existing panel backgrounds, with no new bright focal points
+behind gems or controls. Preserve frame art, native pixel scale, existing masks,
+sorting and the shared actor floor. Point filtering, FullRect sprites, 64 PPU,
+no compression/mipmaps, binary source transparency and exact PNG exports apply.
+
+Use the background-only importer, not the importer for all presentation assets.
+Review the real Game scene at 1080x1920 and 1080x2400. Inspect crop, prop overlap,
+tile joins, dark gutters and readable silhouettes; numerical layout checks alone
+cannot approve the art. Evidence is in Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -414,6 +629,7 @@ The berry release and kneeling plank-set are original acting decisions for these
 - Keeping a 64 × 64 canvas while shrinking the character fails size preservation. Check occupied bounds/masks, not just image dimensions.
 - Bardley's 12-pixel translation shows that even an excellent recolor can have a production-placement issue.
 - A matching palette does not guarantee matching art. Geometry, face design, pixel density, shading shapes, and detail level also matter.
+- A connected silhouette can still contain an internal cut. Check compressed arm/cape seams and whole prop contours visually, not only connected-component counts.
 - “Common enemy” does not mean “less carefully drawn” or “automatically smaller.” “Playable character” does not mean a larger arbitrary color count.
 - Do not apply character outline cleanup to locked gem/UI files or make all materials shiny like gems.
 - Do not preserve every early suggestion as a permanent rule: old Bardley green ramps, early idle timing, optional pan shading, and unresolved alignment must remain clearly distinguished.
@@ -474,5 +690,23 @@ Adds the Miner and two local villagers, shared material assignments, side-swing/
 ### v1.3.1 change record — 2026-09-21
 
 Replaces the three insufficiently articulated first-draft idles with cleaned poses from the user's newer LibreSprite drafts. Clarifies shared head/eye/shoulder/body acting, preserves rigid props and planted soles, improves the builder's axe swing and folded knee, and retains all existing timings, canvas sizes, ready poses and palettes. These are reviewable refinements, not a new palette or character-design approval.
+
+### v1.4 change record — 2026-09-21
+
+Adds the supplied native per-tile explosion families, 13 × 30 ms VFX timing, dungeon dressing and masonry surrounds, polished consumables, pink-gem menu logo, and a bounded combat sound/haptic family. Repairs disconnected candle/boot pixels, rigid basket motion, berry-throw articulation and the builder's rear knee/boot contour without changing character palettes, ready poses or impact timing. New presentation art remains a reviewable working pass. Physical-device haptics and listening approval remain separate from automated Unity evidence.
+
+### v1.5 change record — 2026-09-22
+
+Documents the seventeen supplied remaining-cast recolors and nine-frame idle sources,
+their reused material ramps, protected Rattlebones motion reference, rigid-prop
+contour checks and fixed-ground exports. No historical reference palette, earlier
+character, gameplay definition or Unity assignment is changed by this source pass.
+
+### v1.9 change record — 2026-09-22
+
+Adds the background-only native module library, composed battleground, quieter
+masonry surround, scoped Unity import and actual-screen review. Preserves all
+character, animation, gem, frame, menu, consumable, VFX and audio assets. The
+reference board and approved character palettes remain unchanged.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.

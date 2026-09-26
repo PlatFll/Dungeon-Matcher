@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Matcher — restored guard idles</title>
+<style>
+:root{color-scheme:dark;font:15px/1.5 system-ui;background:#100e18;color:#f4eee4;--stage:#211d2b;--scale:3}*{box-sizing:border-box}body{margin:0}header{padding:24px 28px 16px;background:#191522}h1{font-size:24px;margin:0 0 6px}p{margin:0;color:#c1b0cb}.controls{padding:14px 28px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#191522;border-bottom:1px solid #67537d}button,select{font:inherit;padding:7px 12px;border:1px solid #67537d;border-radius:6px;background:#30263e;color:#f4eee4}label{display:flex;gap:8px;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;padding:24px;max-width:1500px;margin:auto}article{border:1px solid #42334c;border-radius:8px;overflow:hidden;background:#191522}article:first-child{border-color:#b88a46}h2{font-size:16px;margin:12px 16px 4px}.stage{background:var(--stage);height:230px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}.stage canvas{width:calc(64px * var(--scale));height:calc(64px * var(--scale));border-bottom:1px solid #695d70}.native{background:var(--stage);border-top:1px solid #42334c;display:flex;align-items:center;justify-content:center;gap:16px;height:90px}.native span{font-size:12px;color:#a99cb5}canvas{image-rendering:pixelated;width:64px;height:64px}footer{padding:12px 28px 28px;color:#c1b0cb}a{color:#e7c979}.light{--stage:#d7d1c5}.light .native span{color:#4e3d6c}
+</style></head><body>
+<header><h1>Restored guard idles</h1><p>The versions from before the rejected correction, preserved exactly and selected for Unity.</p></header>
+<div class="controls"><button id="play">Pause</button><label>Frame <select id="frame"></select></label><label>Zoom <select id="zoom"><option value="1">1×</option><option value="2">2×</option><option value="3" selected>3×</option></select></label><button id="background">Light background</button><span>9 × 130 ms · 1.17-second loop</span></div>
+<main class="grid" id="grid"></main><footer>Rattlebones is the unchanged reference. <a href="README.md">Source and integration notes</a></footer>
+<script>
+const cast=[['Rattlebones reference','../RemainingCast/Review/Rattlebones_Reference.png'],['Crossbow Guard','CrossbowGuard_Idle.png'],['Barricade Guard','BarricadeGuard_Idle.png'],['Spear Guard','SpearGuard_Idle.png'],['Siege Sergeant','SiegeSergeant_Idle.png']];
+const frame=document.getElementById('frame'),play=document.getElementById('play'),views=[];
+let running=true,current=0,start=performance.now();
+for(let i=0;i<9;i++)frame.add(new Option(String(i+1),String(i)));
+for(const [name,path] of cast){const a=document.createElement('article');a.innerHTML=`<h2>${name}</h2><div class="stage"><canvas width="64" height="64" aria-label="${name} enlarged"></canvas></div><div class="native"><span>Native size</span><canvas width="64" height="64" aria-label="${name} native"></canvas></div>`;document.getElementById('grid').append(a);const im=new Image();views.push({im,canvases:a.querySelectorAll('canvas')});im.onload=paint;im.onerror=()=>a.append('Image failed to load');im.src=path;}
+function paint(){for(const v of views)if(v.im.complete&&v.im.naturalWidth)for(const c of v.canvases){const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,64,64);ctx.drawImage(v.im,current*64,0,64,64,0,0,64,64);}frame.value=String(current);}
+play.onclick=()=>{running=!running;play.textContent=running?'Pause':'Play';start=performance.now()-current*130;};
+frame.onchange=()=>{running=false;play.textContent='Play';current=Number(frame.value);paint();};
+document.getElementById('zoom').onchange=e=>document.documentElement.style.setProperty('--scale',e.target.value);
+document.getElementById('background').onclick=e=>{document.body.classList.toggle('light');e.target.textContent=document.body.classList.contains('light')?'Dark background':'Light background';};
+function tick(t){if(running){const f=Math.floor((t-start)/130)%9;if(f!==current){current=f;paint();}}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+</script></body></html>

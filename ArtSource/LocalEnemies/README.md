@@ -2,6 +2,16 @@
 
 Native LibreSprite sources for Miner, Basket Villager (the berries farmer), and Barricade Villager. Original supplied files are preserved in `Originals/`.
 
+The current idle family pass replaces only the three idles with the user's
+accepted restored-guard rhythm: restrained head/shoulder settling, low-pose blink,
+anchored boots and complete held props. It preserves each ready pose, palette,
+canvas and nine 130 ms timings. Earlier idles are in `Originals/BeforeGroundedFamily/`.
+Attack and ability drawings, controllers and impact timing are unchanged.
+Current evidence: `Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md`.
+The refinement/polish descriptions below are history for the preserved action art
+and preceding idle revisions; their old motion-specific checks are superseded by
+`../RemainingCast/Scripts/verify_family.py` for these idles.
+
 | Character | Idle source | Auto attack source | Ability source |
 | --- | --- | --- | --- |
 | Miner | [Idle](Miner_Idle.aseprite) | [Side swing](Miner_AutoAttack.aseprite) | [Ground strike](Miner_Ability.aseprite) |
@@ -19,6 +29,8 @@ Production exports are generated with `Scripts/export.ps1`. `Scripts/validate.py
 The current refinement supersedes the initial three idles, builder attack and builder knee. Its acting drafts are captured from the user's live LibreSprite tabs in `Originals/IdleRefinement/`; the Miner supplied sheet begins with a blank cell, which is excluded. `Scripts/assemble_refinement.py` combines native helper text, explicit material corrections and `refine_native.js` into ignored `Review/RefinementWork.js`. Run that script inside LibreSprite to create `Review/Refined/` native files, inspect them, then promote and export. This refinement reuses already-transparent full-canvas production cels, so **no Background conversion is needed**. The ready poses remain exact. New head/shoulder/eye acting comes from the supplied drawings; soles and rigid builder props are corrected separately. The preserved pre-refinement builder ability makes its localized knee correction reproducible.
 
 The action sources use frame 5 for gameplay contact: auto attacks at 320 ms, abilities at 360 ms. Recovery completes at 670/870 ms; the final exposure ends at 680/880 ms. Idles use nine 130 ms frames. Consult the project art direction for the full acting and palette rules.
+
+The presentation polish repairs candle/boot disconnections, removes the basket's stretched base, articulates the berry throw with the established body poses, and rounds the builder's folded rear boot. `Scripts/polish_native.js` reads the exact preserved `Originals/BeforePresentationPolish/` files and writes candidates under `Review/Polished/` inside LibreSprite. `Scripts/check_polish.py --candidate . --baseline Originals/BeforePresentationPolish` (from this directory) verifies the scoped changes. Its checks supersede the earlier refinement-only pixel constraints; `Scripts/validate.py` remains the production export/palette/timing gate.
 
 The berry stays attached to the throwing hand until release; there is no travelling projectile. The build gesture sets a plank with a compact axe contact. The Miner uses a broad side swing for ordinary attacks and a lifted overhead ground strike for mining.
 

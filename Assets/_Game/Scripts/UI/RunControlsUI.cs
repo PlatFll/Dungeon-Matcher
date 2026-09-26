@@ -11,7 +11,7 @@ public sealed class RunControlsUI : MonoBehaviour
     private readonly Image[] icons = new Image[2], cooldownFills = new Image[2];
     private readonly Text[] charges = new Text[2];
     private Text hint, music, sfx, saveError;
-    private Text motion;
+    private Text motion, vibration;
     private Button confirmBomb;
     private RectTransform abilityRect;
     private readonly System.Collections.Generic.Dictionary<Button, EnemySlotUI> enemyInspectButtons = new System.Collections.Generic.Dictionary<Button, EnemySlotUI>();
@@ -129,8 +129,8 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         if(session==null||session.IsFinished||overlay!=null)return;
         session.CancelTargeting();BuildOverlay("Settings");Pause();
-        panel.sizeDelta=new Vector2(420,630);
-        panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,260);
+        panel.sizeDelta=new Vector2(420,690);
+        panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,292);
         GameUi.Button("Resume",panel,"Resume",new Vector2(320,44),new Vector2(0,195),Close);
         GameUi.Button("Suspend",panel,session.IsPractice?"Leave practice":"Suspend to Menu",new Vector2(320,44),new Vector2(0,137),Suspend);
         GameUi.Button("Retry",panel,"End run and retry",new Vector2(320,44),new Vector2(0,79),()=>ConfirmExit("Game"));
@@ -138,7 +138,8 @@ public sealed class RunControlsUI : MonoBehaviour
         var m=GameUi.Button("Music",panel,"",new Vector2(320,44),new Vector2(0,-60),()=>{AudioPreferences.SetMusicMuted(!AudioPreferences.MusicMuted);RefreshAudio();});music=m.GetComponentInChildren<Text>();
         var s=GameUi.Button("SFX",panel,"",new Vector2(320,44),new Vector2(0,-118),()=>{AudioPreferences.SetSfxMuted(!AudioPreferences.SfxMuted);RefreshAudio();});sfx=s.GetComponentInChildren<Text>();RefreshAudio();
         var mtn=GameUi.Button("ReducedMotion",panel,"",new Vector2(320,44),new Vector2(0,-176),()=>{PresentationPreferences.SetReducedMotion(!PresentationPreferences.ReducedMotion);RefreshAudio();});motion=mtn.GetComponentInChildren<Text>();RefreshAudio();
-        GameUi.Label("SuspendHint",panel,"Suspend keeps your board and build.\nNo combat time passes while you are away.",new Vector2(360,52),new Vector2(0,-250),17);
+        var vib=GameUi.Button("Vibration",panel,"",new Vector2(320,44),new Vector2(0,-234),()=>{AudioPreferences.SetVibrationMuted(!AudioPreferences.VibrationMuted);RefreshAudio();});vibration=vib.GetComponentInChildren<Text>();RefreshAudio();
+        GameUi.Label("SuspendHint",panel,"Suspend keeps your board and build.\nNo combat time passes while you are away.",new Vector2(360,52),new Vector2(0,-300),17);
     }
     private void UpdateLesson()
     {
@@ -199,7 +200,7 @@ public sealed class RunControlsUI : MonoBehaviour
         if(paused&&Time.timeScale==0)Time.timeScale=priorTimeScale;
         paused=false;
     }
-    private void RefreshAudio(){if(music!=null)music.text="Music: "+(AudioPreferences.MusicMuted?"Muted":"On");if(sfx!=null)sfx.text="SFX: "+(AudioPreferences.SfxMuted?"Muted":"On");if(motion!=null)motion.text="Reduced motion: "+(PresentationPreferences.ReducedMotion?"On":"Off");}
+    private void RefreshAudio(){if(music!=null)music.text="Music: "+(AudioPreferences.MusicMuted?"Muted":"On");if(sfx!=null)sfx.text="SFX: "+(AudioPreferences.SfxMuted?"Muted":"On");if(motion!=null)motion.text="Reduced motion: "+(PresentationPreferences.ReducedMotion?"On":"Off");if(vibration!=null)vibration.text="Vibration: "+(AudioPreferences.VibrationMuted?"Off":"On");}
     private void ConfirmExit(string scene)
     {
         if(overlay!=null){Destroy(overlay.gameObject);overlay=null;}
