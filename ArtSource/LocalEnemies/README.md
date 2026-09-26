@@ -2,6 +2,16 @@
 
 Native LibreSprite sources for Miner, Basket Villager (the berries farmer), and Barricade Villager. Original supplied files are preserved in `Originals/`.
 
+The current idle family pass replaces only the three idles with the user's
+accepted restored-guard rhythm: restrained head/shoulder settling, low-pose blink,
+anchored boots and complete held props. It preserves each ready pose, palette,
+canvas and nine 130 ms timings. Earlier idles are in `Originals/BeforeGroundedFamily/`.
+Attack and ability drawings, controllers and impact timing are unchanged.
+Current evidence: `Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md`.
+The refinement/polish descriptions below are history for the preserved action art
+and preceding idle revisions; their old motion-specific checks are superseded by
+`../RemainingCast/Scripts/verify_family.py` for these idles.
+
 | Character | Idle source | Auto attack source | Ability source |
 | --- | --- | --- | --- |
 | Miner | [Idle](Miner_Idle.aseprite) | [Side swing](Miner_AutoAttack.aseprite) | [Ground strike](Miner_Ability.aseprite) |

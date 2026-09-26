@@ -1,0 +1,821 @@
+{
+  "Miner": {
+    "source": "ArtSource/LocalEnemies/Miner_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      96,
+      80
+    ],
+    "sha256": "5c72355a31e06f9c9556cd36f1738f8cbeca84f3f39a5baadbd25cb69a6a94d5",
+    "geometry": {
+      "boots_fixed": true
+    },
+    "unity_checked": true
+  },
+  "BasketVillager": {
+    "source": "ArtSource/LocalEnemies/BasketVillager_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "c6ecbc470eb5a5cb6b8579ef9af15483461da0299a4f805863526374ed5d22eb",
+    "geometry": {
+      "boots_fixed": true
+    },
+    "unity_checked": true
+  },
+  "BarricadeVillager": {
+    "source": "ArtSource/LocalEnemies/BarricadeVillager_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "1a03bc74f5fc2621b2a0cd2d259da6e1e82494df5b68fce05964fa287e39c5ae",
+    "geometry": {
+      "boots_fixed": true
+    },
+    "unity_checked": true
+  },
+  "CrossbowGuard": {
+    "source": "ArtSource/GuardIdles/CrossbowGuard_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "c708a7a5a1d34680705014d22021f8199e5a03dcebae236b38e2127bf33903dc",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 377,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "BarricadeGuard": {
+    "source": "ArtSource/GuardIdles/BarricadeGuard_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "f14ad896006a1eaa203fdcf2357512dc65f367158113fae15a9bcecd6b8ccdc4",
+    "geometry": {},
+    "unity_checked": true
+  },
+  "SpearGuard": {
+    "source": "ArtSource/GuardIdles/SpearGuard_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "0127a0c91f3fbe2f17c744c56ea84779824f93424c9d104ac274b6270ccdcb60",
+    "geometry": {},
+    "unity_checked": true
+  },
+  "SiegeSergeant": {
+    "source": "ArtSource/GuardIdles/SiegeSergeant_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "4a2f6f93c1bf173c94b44522160980d050938b21772afeec9be9a1b74f5c0412",
+    "geometry": {},
+    "unity_checked": true
+  },
+  "TownMarshal": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/TownMarshal_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "3d590282f9c43b324a06c482d39503a35b875abd074c5fa612fe869e5dfc5f25",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 451,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "SwordKnight": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/SwordKnight_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "4f42e9968f78aaac079a627dd4de408289725cf080bc8dfb7346d3a601754d09",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 231,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "SpearKnight": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/SpearKnight_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "6ccc10f174d01a3e702be8218cebd78138cf38d5a06b0d0f902f478db9364cbb",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 331,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "ShieldKnight": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/ShieldKnight_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "f94eb0920dacc1efa766bba902d8037be480df5ddb3e44be78ad2130f81d75d2",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 630,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "KnightCaptain": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/KnightCaptain_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "9d7b3cb788a9ed24ccb7607420f82f08a674c122d3463f33702a05ca601897ff",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 247,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalSwordsman": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalSwordsman_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "8fd5a168ed9f062b2d46df96fa319c935867c5affdcc6018c5ee3fb506c2b58c",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 293,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalLancer": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalLancer_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "daf6b99f453a401681f990d6b91c5731146cd3960223a5fe42a3609001039588",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 450,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalArbalist": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalArbalist_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "5aa7699c624d650e0ae89a727a4458a18636d32cc208d31df1a69a135cd22da6",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 498,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalStandardBearer": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalStandardBearer_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "4da06c36736f293015e4bbca1545ab5ca9b0733f5bc34a0fb063c12f34b08ec2",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 237,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalArcanist": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalArcanist_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "c2255e809499d6cabe018036f9648738da95e5984dd19cb5f158998350327cbb",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 322,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "RoyalMage": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/RoyalMage_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "4f4ebe661688cd059f9822a6a5a2c14b6eaf764c64395039c699a86e7636cd9f",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 318,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  },
+  "King": {
+    "source": "ArtSource/RemainingCast/SelectedIdles/King_Idle.aseprite",
+    "frames": 9,
+    "duration_ms": 130,
+    "canvas": [
+      64,
+      64
+    ],
+    "sha256": "ff4db991dbe35ee2f6c09ab27c3cbfedaa5142bcee71e7dad0ba98d24e0db020",
+    "geometry": {
+      "prop": {
+        "exposed_pixels_checked_per_frame": 395,
+        "translation_only": true,
+        "no_part_pixels_outside_canvas": true,
+        "offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "body_soles_fixed_with_exact_prop_occlusion": true
+    },
+    "unity_checked": true
+  }
+}

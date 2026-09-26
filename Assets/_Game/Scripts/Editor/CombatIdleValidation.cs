@@ -46,12 +46,17 @@ public static class CombatIdleValidation
 
     public static void Run() => Start(false);
     public static void RunGuards() => Start(true);
+    public static void RunEnemyFamily() => Start(true, true);
+    private static bool Family => SessionState.GetBool(Key + ".family", false);
+    private static string EnemyPrefix => Family ? "family" : "guard";
+    private static string[] EnemyNames => Family ? CombatIdleImporter.EnemyFamily : CombatIdleImporter.Guards;
 
-    private static void Start(bool guards)
+    private static void Start(bool guards, bool family = false)
     {
         if (!Application.isBatchMode) throw new InvalidOperationException("Use an isolated graphics-enabled batch editor.");
         Directory.CreateDirectory(Output);
         SessionState.SetBool(Key + ".guards", guards);
+        SessionState.SetBool(Key + ".family", family);
         ValidateAssets(guards);
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
         SessionState.SetBool(Key, true);
@@ -60,13 +65,14 @@ public static class CombatIdleValidation
 
     public static void ImportAndRun() { CombatIdleImporter.Run(); Run(); }
     public static void ImportGuardsAndRun() { CombatIdleImporter.ImportGuards(); RunGuards(); }
+    public static void ImportEnemyFamilyAndRun() { CombatIdleImporter.ImportEnemyFamily(); RunEnemyFamily(); }
 
     private static void ValidateAssets(bool guards)
     {
-        foreach (string name in guards ? CombatIdleImporter.Guards : CombatIdleImporter.Characters)
+        foreach (string name in guards ? EnemyNames : CombatIdleImporter.Characters)
         {
             string path = CombatIdleImporter.ArtRoot + "/" + name + "_Idle.png";
-            string sourceRoot = guards ? "ArtSource/GuardIdles/" : "ArtSource/CombatIdles/";
+            string sourceRoot = CombatIdleImporter.SourceRoot(name);
             Check(File.ReadAllBytes(path).SequenceEqual(File.ReadAllBytes(sourceRoot + name + "_Idle.png")), name + " source PNG byte preservation");
             var importer = (TextureImporter)AssetImporter.GetAtPath(path);
             Check(importer.filterMode == FilterMode.Point && !importer.mipmapEnabled && importer.spritePixelsPerUnit == 64 && importer.textureCompression == TextureImporterCompression.Uncompressed, name + " pixel import");
@@ -74,10 +80,11 @@ public static class CombatIdleValidation
             Check(settings.spriteMeshType == SpriteMeshType.FullRect, name + " full rectangular mesh");
             Sprite[] frames = CombatIdleImporter.LoadFrames(name);
             Check(frames.Length == 9, name + " nine imported frames");
+            int width = name == "Miner" ? 96 : 64, height = name == "Miner" ? 80 : 64;
             for (int i = 0; i < 9; i++)
             {
-                Check(frames[i].rect == new Rect(i * 64, 0, 64, 64), name + " fixed frame rectangle");
-                Check(frames[i].pivot == new Vector2(32, 0), name + " fixed bottom-center pivot");
+                Check(frames[i].rect == new Rect(i * width, 0, width, height), name + " fixed frame rectangle");
+                Check(frames[i].pivot == new Vector2(width / 2f, 0), name + " fixed bottom-center pivot");
             }
             var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(CombatIdleImporter.AnimationRoot + "/" + name + "_Idle.anim");
             Check(clip != null && clip.isLooping && Mathf.Abs(clip.length - 1.17f) < .0001f, name + " exact full loop duration");
@@ -91,14 +98,20 @@ public static class CombatIdleValidation
             Check(keys[9].value == frames[8] && Mathf.Abs(keys[9].time - 1.16f) < .0001f, name + " final sample holds frame nine without an extra loop tick");
             if (guards)
             {
-                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_" + name + ".asset");
+                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>(CombatIdleImporter.EnemyDefinitionPath(name));
                 var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(CombatIdleImporter.AnimationRoot + "/" + name + "_Idle.controller");
                 Check(definition.FallbackVisualSprite == frames[0] && definition.AnimationControllerOverride == controller, name + " definition references selected guard art");
                 Check(controller.layers[0].stateMachine.defaultState.motion == clip, name + " idle is the default state");
-                Check(!definition.TimeAutoAttackFromAnimation && !definition.UseAuthoredAutoAttackMotion && !definition.UseAuthoredSpecialAbilityMotion, name + " existing gameplay and fallback action timing retained");
+                bool authored = CombatIdleImporter.LocalEnemies.Contains(name);
+                Check(definition.TimeAutoAttackFromAnimation == authored && definition.UseAuthoredAutoAttackMotion == authored && definition.UseAuthoredSpecialAbilityMotion == (authored && name != "BasketVillager"), name + " existing gameplay and action timing retained");
+                if (authored)
+                {
+                    foreach (string action in name == "BasketVillager" ? new[] { "AutoAttack" } : new[] { "AutoAttack", "Ability" })
+                        Check(controller.layers[0].stateMachine.states.Any(s => s.state.name == action && s.state.motion != null), name + " existing " + action + " retained");
+                }
             }
         }
-        File.WriteAllText(Path.Combine(Output, guards ? "guard-asset-validation.txt" : "asset-validation.txt"), "PASS: source bytes, fixed rectangles/pivots, Point/FullRect import, Image curves, 130ms frames and 1.17s loops.\n");
+        File.WriteAllText(Path.Combine(Output, guards ? EnemyPrefix + "-asset-validation.txt" : "asset-validation.txt"), "PASS: source bytes, fixed rectangles/pivots, Point/FullRect import, Image curves, 130ms frames and 1.17s loops.\n");
     }
 
     private static IEnumerator Cases()
@@ -218,7 +231,8 @@ public static class CombatIdleValidation
         File.WriteAllText(profilePath, JsonUtility.ToJson(new AccountSave()));
         profile = AccountProgression.UseDisposableProfile(profilePath);
         selection = CharacterSelectionSettings.UseTemporarySelection("skeleton");
-        for (int batch = 0; batch < CombatIdleImporter.Guards.Length; batch += 2)
+        string[] names = EnemyNames;
+        for (int batch = 0; batch < names.Length; batch += 2)
         {
             Time.timeScale = 1; SetSize(1080, 1920);
             // Game View applies a selected fixed resolution on a later editor
@@ -233,10 +247,10 @@ public static class CombatIdleValidation
             var initial = run.Waves.ActiveEnemies.ToArray();
             foreach (var actor in initial) actor.GetComponent<EnemyAutoAttack>().StopAttacking();
             var actors = new Dictionary<string, EnemyActor>();
-            foreach (string name in CombatIdleImporter.Guards.Skip(batch).Take(2))
+            foreach (string name in names.Skip(batch).Take(2))
             {
                 yield return Until(() => run.Waves.HasFreeEnemySlot, "free slot for " + name);
-                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_" + name + ".asset");
+                var definition = AssetDatabase.LoadAssetAtPath<EnemyDefinition>(CombatIdleImporter.EnemyDefinitionPath(name));
                 Check(run.Waves.TrySummonEnemy(definition, out EnemyActor actor), name + " production spawn");
                 actor.GetComponent<EnemyAutoAttack>().StopAttacking(); actors[name] = actor;
                 if (actors.Count == 1) foreach (var old in initial) old.TryTakeDamageWithoutFeedback(100000);
@@ -269,7 +283,8 @@ public static class CombatIdleValidation
                         Check(image.sprite == CombatIdleImporter.LoadFrames(name)[frame], name + " displayed frame " + frame);
                         Check((rect.position - baseline[name].position).sqrMagnitude < .01f && (rect.size - baseline[name].size).sqrMagnitude < .01f, name + " fixed center and ground across poses");
                         Check(rect.xMin >= 0 && rect.xMax <= 1080 && rect.yMin >= 0 && rect.yMax <= height, name + " portrait containment");
-                        Check(Mathf.Abs(rect.width / 64f - Mathf.Round(rect.width / 64f)) < .001f, name + " integer texel scale");
+                        float texelScale = rect.width / image.sprite.rect.width;
+                        Check(Mathf.Abs(texelScale - Mathf.Round(texelScale)) < .001f && Mathf.Abs(rect.height / image.sprite.rect.height - texelScale) < .001f, name + " integer uniform texel scale");
                         var health = actors[name].GetComponentInParent<EnemySlotUI>().transform.Find("EnemyHPBarBackground").GetComponent<Image>();
                         Check(rect.yMin > ScreenRect(health).yMax, name + " feet clear health bar");
                         foreach (var mask in image.GetComponentsInParent<RectMask2D>())
@@ -277,13 +292,13 @@ public static class CombatIdleValidation
                     }
                     Check(images.Values.Select(ScreenRect).Max(r => r.yMin) - images.Values.Select(ScreenRect).Min(r => r.yMin) < .1f, "guards share a floor");
                     if (frame == 0 || frame == 5 || frame == 8)
-                    { ScreenCapture.CaptureScreenshot(Path.Combine(Output, "guards-" + batch + "-" + height + "-frame" + (frame + 1) + ".png")); yield return Wait(.15f); }
+                    { ScreenCapture.CaptureScreenshot(Path.Combine(Output, EnemyPrefix + "s-" + batch + "-" + height + "-frame" + (frame + 1) + ".png")); yield return Wait(.15f); }
                 }
             }
             Time.timeScale = 1; SceneManager.LoadScene("MainMenu"); yield return Wait(.2f);
         }
         selection.Dispose(); selection = null; profile.Dispose(); profile = null;
-        File.WriteAllText(Path.Combine(Output, "guard-play-validation.txt"), "PASS: four restored guards in production Game, live playback and pause, 36 poses at two portrait sizes, fixed rectangles/shared floor, integer texels and health-bar/mask clearance. " + assertions + " checks.\n");
+        File.WriteAllText(Path.Combine(Output, EnemyPrefix + "-play-validation.txt"), "PASS: " + names.Length + " enemies in production Game, live playback and pause, " + (names.Length * 9) + " poses at two portrait sizes, fixed rectangles/shared floor, integer texels and health-bar/mask clearance. " + assertions + " checks.\n");
     }
 
     private static Rect ScreenRect(Image image)
@@ -311,7 +326,7 @@ public static class CombatIdleValidation
     {
         EditorApplication.update -= Tick; Application.logMessageReceived -= Log;
         Time.timeScale = 1;
-        if (result != 0) File.WriteAllText(Path.Combine(Output, SessionState.GetBool(Key + ".guards", false) ? "guard-play-validation.txt" : "play-validation.txt"), "FAIL: " + error);
+        if (result != 0) File.WriteAllText(Path.Combine(Output, SessionState.GetBool(Key + ".guards", false) ? EnemyPrefix + "-play-validation.txt" : "play-validation.txt"), "FAIL: " + error);
         EditorApplication.ExitPlaymode();
     }
     private static void Log(string text, string trace, LogType type)

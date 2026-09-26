@@ -10,11 +10,18 @@ report={}
 for name in ['CrossbowGuard','BarricadeGuard','SpearGuard','SiegeSergeant']:
     stem=name+'_Idle';source=ROOT/(stem+'.aseprite')
     backup=ROOT.parent/'RemainingCast/BeforeCorrection/Idles'/(stem+'.aseprite')
-    assert source.read_bytes()==backup.read_bytes(),(name,'native backup changed')
+    repaired=name=='CrossbowGuard'
+    preserved=ROOT/'BeforeCrossbowRepair'/source.name if repaired else source
+    assert preserved.read_bytes()==backup.read_bytes(),(name,'native backup changed')
     frames,ms=read_ase(source)
     sheet=Image.open(ROOT/(stem+'.png')).convert('RGBA')
     prior=Image.open(backup.with_suffix('.png')).convert('RGBA')
-    assert sheet.tobytes()==prior.tobytes(),(name,'backup pixels changed')
+    if not repaired:assert sheet.tobytes()==prior.tobytes(),(name,'backup pixels changed')
+    else:
+        sys.path.insert(0,str(ROOT.parent/'RemainingCast/Scripts'))
+        from validate_geometry import check_parts
+        check_parts(name,frames)
+        assert sheet.crop((0,0,64,64)).tobytes()==prior.crop((0,0,64,64)).tobytes(),(name,'ready pose changed')
     allowed=set(json.loads((ROOT.parent/'RemainingCast/Palettes.json').read_text())[name])
     assert set(color_counts(frames))<=allowed,(name,'palette drift')
     assert len(frames)==9 and ms==[130]*9 and sheet.size==(576,64)
@@ -32,6 +39,6 @@ for name in ['CrossbowGuard','BarricadeGuard','SpearGuard','SiegeSergeant']:
     assert frames[0].tobytes()==frames[-1].tobytes(),(name,'loop closure')
     unity=PROJECT/'Assets/_Game/Art/CombatIdles'/(stem+'.png')
     if unity.exists():assert unity.read_bytes()==(ROOT/(stem+'.png')).read_bytes(),(name,'Unity sheet differs')
-    report[name]={'selected_source':str(backup.relative_to(PROJECT)).replace('\\','/'),'native_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'sheet_sha256':hashlib.sha256((ROOT/(stem+'.png')).read_bytes()).hexdigest(),'frames':9,'duration_ms':130,'loop_ms':1170,'canvas':[64,64],'exact_backup_preserved':True,'exact_unity_sheet':unity.exists()}
+    report[name]={'selected_source':str(backup.relative_to(PROJECT)).replace('\\','/'),'native_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'sheet_sha256':hashlib.sha256((ROOT/(stem+'.png')).read_bytes()).hexdigest(),'frames':9,'duration_ms':130,'loop_ms':1170,'canvas':[64,64],'original_backup_preserved':True,'production_matches_backup':not repaired,'crossbow_contour_repaired':repaired,'exact_unity_sheet':unity.exists()}
 (ROOT/'Verification.json').write_text(json.dumps(report,indent=2)+'\n')
-print('PASS: four original guard backups preserved, 36 exact frames, approved palettes, clean alpha, 130ms timing and grounded loop closure. Unity copies checked when present.')
+print('PASS: guard backups preserved; repaired crossbow rigid contour, 36 exact native/export frames, approved palettes, clean alpha and 130ms grounded loops. Unity copies checked when present.')

@@ -1,11 +1,14 @@
 # Restored guard idles — selected for Unity
 
-The user rejected the stronger remaining-cast correction pass and requested the
-animations from immediately before it. These four sources are exact native-file
-copies from `../RemainingCast/BeforeCorrection/Idles/`: Crossbow Guard, Barricade
-Guard, Spear Guard and Siege Sergeant. Town Marshal is a local leader, so he is
-outside this guard-only integration. No new generation or pixel edits were needed.
-The rejected files remain preserved for history, not as the active guard source.
+The user accepted the restored motion as the target for the rest of the cast.
+The subsequent family pass repairs Crossbow Guard's lower bow contour and body
+joins while retaining this cadence and exact ready pose. His preceding file is in
+`BeforeCrossbowRepair/`. Barricade Guard, Spear Guard and Siege Sergeant remain
+exact copies from `../RemainingCast/BeforeCorrection/Idles/`.
+
+The rejected stronger motion remains archived. Current wider scope and evidence:
+`../RemainingCast/SelectedIdles/README.md` and
+`Docs/Validation/GROUNDED_ENEMY_IDLE_FAMILY.md`.
 
 Each selected idle retains nine 64×64 frames at 130 ms, a 1.17-second loop, the
 existing recolor palette and identical first/last ready poses. The user's supplied
@@ -21,9 +24,9 @@ Unity clips/controllers: `Assets/_Game/Animations/CombatIdles/`.
 
 Use `Export.ps1` for native LibreSprite exports. `verify_sources.py` checks exact
 backup preservation, all exported pixels, palettes, alpha, timing and Unity sheet
-bytes. `Verification.json` records the selected file hashes. These are preservation
-checks, not a claim that the earlier art is flawless or that the rejected correction
-was visually approved.
+bytes. `Verification.json` records the selected file hashes and distinguishes the
+repaired crossbow from the three exact restored sources. The stronger correction
+remains rejected.
 
 Run `CombatIdleValidation.ImportGuardsAndRun` in a graphics-enabled batch Unity
 editor (without `-quit` or `-nographics`) for production-scene import/playback,
