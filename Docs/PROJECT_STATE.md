@@ -20,13 +20,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-09-22
-- **Current milestone:** Seventeen remaining-cast recolors and matching idle sources, with the prior dungeon presentation/audio pass preserved
-- **Current implementation branch:** `codex/remaining-cast-recolors-idles`
-- **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
-- **Current art-pass base:** `codex/dungeon-presentation-polish` at `454cd5a` (PR #162).
+- **Date:** 2026-09-27
+- **Current milestone:** Per-character level reset and shared mastery unlocks at 3/5/7; directional bombs available from level 1
+- **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
+- **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
+- **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
+- **Current art-pass base:** `codex/cast-grounded-idle-family` at `feca180` (PR #166), which extends the accepted guard motion through King. No character art is changed by the background pass. The stronger PR #164 motion remains rejected.
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** The original idles and first combat-action pass are on unmerged [PR #159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [PR #160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). The local-enemy pass on [PR #161](https://github.com/PlatFll/Dungeon-Matcher/pull/161), presentation pass on [PR #162](https://github.com/PlatFll/Dungeon-Matcher/pull/162), and current art-source pass extend that stack; merge requires a new explicit instruction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.5). Current source-art verification is in `Docs/Validation/REMAINING_CAST_ART.md`; prior Unity presentation evidence remains in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`.
+- **Release scope:** The approved main checkpoint includes combat idles/actions (#159–#160), local enemies (#161), presentation/VFX/audio/haptics (#162), remaining-cast sources and corrections (#163–#166), backgrounds (#167), and level reset/shared mastery (#168). The stronger PR #164 motion remains rejected; the restored guard motion in #165 and final Miner-through-King corrections in #166 are the active direction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.9). Separate uncommitted background-source edits and local repository guidance are preserved outside this release. Art evidence is in `Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md`; family and earlier presentation validation records remain available separately.
+- **Merge verification:** `Tools/Validate-Unity.ps1` passed again on 2026-09-27 with Unity 6000.3.19f1 (log suffix `7574ee9a-ad68-49b5-9a1a-e725f96faf16`). The production code/configuration is unchanged from the 251-test and rendered-menu validation recorded above; that evidence is reused. Integration preserves the final tree and commit ancestry, including the later corrections.
 
 ### What this document is
 
@@ -133,25 +135,36 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
-The working guide is v1.5. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` contains native dungeon props, quiet masonry gutters/panel fills, polished consumables, a menu doorway and the pink-gem title logo. The existing battle tilemap prefab and layout owners remain authoritative.
+The working guide is v1.9. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` retains its earlier native props, consumables, menu doorway and pink-gem title logo. The current battleground and masonry sources are in `ArtSource/Backgrounds/`: cool stone wall/floor modules, subdued dungeon dressing and a dark 128×128 repeat. They replace only the selected background composition and existing surround resource. The existing battle tilemap prefab, mask, sorting and layout owners remain authoritative. No runtime, character, animation, gem, frame, menu, VFX or sound change is part of this background pass. See [background validation](Validation/DUNGEON_BACKGROUND_REFINEMENT.md) for compile, asset and actual-scene checks at 1080×1920 and 1080×2400; physical-device review remains separate.
 
 Thirteen original short combat sounds cover grouped gem matches/landings, explosions, poison, hits, healing, shields and abilities. A bounded six-voice mix prioritizes impacts and player casts. Android/iOS haptics provide short grouped landing/impact/cast pulses with independent persistent vibration control. Feedback is suppressed during pause, focus loss and snapshot restore/replay. Physical-device vibration feel and speaker/headphone mix approval remain outstanding. Current validation evidence is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`; previous pass evidence remains historical.
 
 ## Remaining-cast source checkpoint
 
-`ArtSource/RemainingCast/` now preserves the 18 supplied LibreSprite tabs and adds
-17 recolored stills plus 17 nine-frame, 130 ms idles for the guards, knights, royal
-cast and Minotaur. Recolors preserve original masks and reuse guide colors; idles
-coordinate head/eyes, shoulders and body over planted soles, with rigid tools and
-subtle cloth follow-through. The supplied Rattlebones idle is unchanged. Native
-files, exact PNG/GIF exports, per-character palettes and a synchronized native-size
-preview are included. The guide's current version is v1.5.
+The user rejected the stronger remaining-cast correction as worse. Those files
+remain preserved under `ArtSource/RemainingCast/` as a rejected candidate, not as
+approved motion references. Passing numerical art checks did not establish the
+desired feel. Rattlebones is still the unchanged motion authority.
 
-This checkpoint is source artwork only: none of these seventeen new idles has been
-assigned to Unity definitions in this pass. Visual approval and later integration
-remain next art steps; the Minotaur source does not imply a new playable definition.
-See [source notes](../ArtSource/RemainingCast/README.md) and
-[executed art checks](Validation/REMAINING_CAST_ART.md).
+The user accepted the restored guard style and requested it across the opening
+enemy cast. Nineteen idles from Miner through King now use this restrained cadence
+and are assigned in Unity. Crossbow Guard's lower weapon contour and moving joins
+are repaired. Miner, Basket Villager and Barricade Villager now use coordinated
+head/body settling and low-pose blinks over anchored boots. The other three guards
+are unchanged. Town Marshal, four knights, six royal units and King use
+`ArtSource/RemainingCast/SelectedIdles/`; the enlarged royal helmets are retained.
+Guards and local workers keep their existing source folders. All ready poses and
+palettes are preserved; local attack/ability art and gameplay timing are unchanged.
+
+The existing importer/controller/definition presentation path remains authoritative.
+Unity compile and actual-scene playback/pause checks passed, including all 171
+poses at 1080x1920 and 1080x2400, fixed centers/floors, integer texels and mask/HP
+clearance. No device test was performed. The guide is v1.8. Rattlebones, Farmer,
+Pan Villager, Bardley and Minotaur remain outside this refinement.
+
+See [selected sources](../ArtSource/RemainingCast/SelectedIdles/README.md) and
+[family integration checks](Validation/GROUNDED_ENEMY_IDLE_FAMILY.md). Prior
+guard restoration and rejected correction records remain historical evidence.
 
 ## Locked/preserved art direction
 
@@ -291,6 +304,7 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 ## Permanent levels
 
 - Each character levels **independently**.
+- Characters offers a confirmed **Reset to Lv 1** action for the selected character between runs. Other characters, gold, inventory, records and earned account unlocks stay; upgrade gold is not refunded. A saved run blocks reset.
 - Shared Gold Coins pay for level-ups.
 - There is no XP gate in Balance v1.
 - Current level cap: **20**.
@@ -361,12 +375,12 @@ Fresh-profile state:
 
 Current Balance v1 first-time account unlocks use the **highest individual character level** (levels are never summed):
 
-- Level 2: directional bombs
+- Level 1: Row and Column bombs are always available, with no progression gate
 - Level 3: Poison Bomb
-- Level 4: Healing Bomb
-- Level 5: Shield Bomb
+- Level 5: Healing Bomb
+- Level 7: Shield Bomb
 
-Reaching the threshold on **any one character** unlocks it account-wide for every character.
+Reaching the threshold on **any one character** unlocks it account-wide and makes it selectable in Gem Mastery for every character. Earned unlocks remain available after a level reset; previously earned access is preserved when thresholds change.
 
 Locked shapes must still behave safely and reward ordinary matching rather than becoming dead inputs.
 
@@ -660,6 +674,7 @@ Current connected UI flow includes:
 - next-level improvements;
 - level-up Gold price;
 - affordability/max-level handling;
+- confirmed reset to level 1 for the selected character, disabled during a saved run;
 - small level-up feedback/VFX.
 
 ## Shop

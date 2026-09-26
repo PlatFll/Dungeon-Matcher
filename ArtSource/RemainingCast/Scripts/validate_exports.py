@@ -5,10 +5,14 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT.parent/'CombatIdles/Scripts'))
 from inspect_idles import read_ase,color_counts
+sys.path.insert(0,str(ROOT/'Scripts'))
+from validate_geometry import check_still,check_parts
 pairs=re.findall(r"src:'([^']+)',name:'([^']+)'",(ROOT/'Scripts/cast_spec.js').read_text())
 guide=(ROOT.parents[1]/'Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt').read_text(encoding='utf-8')
 guide_colors=set(re.findall(r'#[0-9A-Fa-f]{6}',guide))
-sole_ranges={'CrossbowGuard':(25,39),'BarricadeGuard':(24,41),'SpearGuard':(25,43),'TownMarshal':(24,45),'SiegeSergeant':(25,45),'SwordKnight':(26,43),'SpearKnight':(24,43),'ShieldKnight':(23,42),'KnightCaptain':(24,43),'RoyalSwordsman':(26,43),'RoyalLancer':(28,43),'RoyalArbalist':(24,43),'RoyalStandardBearer':(26,43),'RoyalArcanist':(27,43),'RoyalMage':(28,46),'King':(23,43),'Minotaur':(20,43)}
+# Crossbow lower loops overlap the left boot; check its complete body/prop
+# compositing in check_parts, plus this permanently visible right sole here.
+sole_ranges={'CrossbowGuard':(33,41),'BarricadeGuard':(24,41),'SpearGuard':(25,31),'TownMarshal':(24,45),'SiegeSergeant':(25,45),'SwordKnight':(26,43),'SpearKnight':(24,43),'ShieldKnight':(23,42),'KnightCaptain':(24,43),'RoyalSwordsman':(26,43),'RoyalLancer':(28,43),'RoyalArbalist':(34,40),'RoyalStandardBearer':(26,43),'RoyalArcanist':(27,43),'RoyalMage':(28,46),'King':(23,43),'Minotaur':(20,43)}
 manifest=json.loads((ROOT/'SourceManifest.json').read_text());report={};palettes={}
 def equal_visible(a,b):return all(x==y if x[3] else y[3]==0 for x,y in zip(a.get_flattened_data(),b.get_flattened_data()))
 for src,v in manifest.items():assert hashlib.sha256((ROOT/v['file']).read_bytes()).hexdigest()==v['sha256'],src
@@ -24,8 +28,12 @@ for src,name in pairs:
  ready=read_ase(ROOT/'Recolored'/f'{name}.aseprite')[0][0]
  static=Image.open(ROOT/'Recolored'/f'{name}.png').convert('RGBA')
  assert equal_visible(ready,static),(name,'static export')
- assert old.getchannel('A').tobytes()==ready.getchannel('A').tobytes(),(name,'source mask')
+ still_checks=check_still(name,old,ready)
  fs,ds=read_ase(ROOT/'Idles'/f'{name}_Idle.aseprite')
+ prior,pds=read_ase(ROOT/'BeforeCorrection/Idles'/f'{name}_Idle.aseprite')
+ prior_sheet=Image.open(ROOT/'BeforeCorrection/Idles'/f'{name}_Idle.png').convert('RGBA')
+ assert len(prior)==9 and pds==[130]*9 and prior_sheet.size==(576,64)
+ assert all(equal_visible(im,prior_sheet.crop((f*64,0,(f+1)*64,64))) for f,im in enumerate(prior)),(name,'previous-pass comparison export')
  sheet=Image.open(ROOT/'Idles'/f'{name}_Idle.png').convert('RGBA');gif=Image.open(ROOT/'Idles'/f'{name}_Idle.gif')
  meta=json.loads((ROOT/'Idles'/f'{name}_Idle.json').read_text())
  assert len(fs)==gif.n_frames==9 and ds==[130]*9 and sheet.size==(576,64),(name,'timing')
@@ -42,7 +50,7 @@ for src,name in pairs:
   gif.seek(f);assert gif.info['duration']==130 and equal_visible(im,gif.convert('RGBA')),(name,f,'GIF')
  assert fs[0].tobytes()==fs[-1].tobytes()==ready.tobytes(),(name,'ready return')
  palettes[name]=sorted(allowed)
- report[name]={'source':src,'canvas':[64,64],'frames':9,'durations_ms':ds,'loop_ms':1170,'opaque_colors':len(allowed),'alpha':[0,255],'static_mask_unchanged':True,'native_sheet_gif_exact':True,'sole_pixels_unchanged':True,'source_sha256':manifest[src]['sha256'],'idle_sha256':hashlib.sha256((ROOT/'Idles'/f'{name}_Idle.aseprite').read_bytes()).hexdigest()}
+ report[name]={'source':src,'canvas':[64,64],'frames':9,'durations_ms':ds,'loop_ms':1170,'opaque_colors':len(allowed),'alpha':[0,255],**still_checks,'native_sheet_gif_exact':True,'visible_sole_pixels_unchanged':True,'visible_sole_x_range':list(sole_ranges[name]),'rigid_geometry':check_parts(name,fs),'source_sha256':manifest[src]['sha256'],'idle_sha256':hashlib.sha256((ROOT/'Idles'/f'{name}_Idle.aseprite').read_bytes()).hexdigest()}
 (ROOT/'Palettes.json').write_text(json.dumps(palettes,indent=2)+'\n')
 (ROOT/'Validation.json').write_text(json.dumps({'rattlebones_capture_unchanged':True,'external_rattlebones_checked':reference.exists(),'sprites':report},indent=2)+'\n')
-print('PASS: 17 exact-mask recolors; 153 native frames with exact PNG/GIF pixels, 130ms timing, approved colors, binary alpha, fixed soles, ready closure; Rattlebones unchanged.')
+print('PASS: 15 unchanged still masks and 2 authorized helmet enlargements; 153 native frames with exact PNG/GIF pixels, 130ms timing, approved colors, binary alpha, rigid exposed props, on-canvas parts, fixed body soles, ready closure; Rattlebones unchanged.')

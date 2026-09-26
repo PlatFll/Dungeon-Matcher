@@ -16,7 +16,8 @@
       "#5B5145": 5,
       "#4B1127": 3
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -44,7 +45,8 @@
       "#7F1650": 3,
       "#C58826": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -72,7 +74,8 @@
       "#5B5145": 18,
       "#7C5238": 14
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -103,7 +106,8 @@
       "#E0D2B8": 3,
       "#5B5145": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -135,7 +139,8 @@
       "#E0D2B8": 2,
       "#9F907A": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -159,7 +164,8 @@
       "#7A4D2E": 25,
       "#B07A43": 24
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -186,7 +192,8 @@
       "#B07A43": 9,
       "#7A4D2E": 7
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -213,7 +220,8 @@
       "#4A2C1C": 12,
       "#8A5622": 11
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -242,7 +250,8 @@
       "#7A4D2E": 3,
       "#C74A5A": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -268,7 +277,8 @@
       "#B07A43": 5,
       "#7A4D2E": 3
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -282,40 +292,47 @@
   },
   "RoyalLancer": {
     "colors": {
-      "#0A0D11": 528,
-      "#55606E": 363,
-      "#FDF5E5": 240,
-      "#93A1B0": 211,
-      "#2B313A": 106,
+      "#0A0D11": 551,
+      "#55606E": 387,
+      "#FDF5E5": 273,
+      "#93A1B0": 232,
+      "#2B313A": 116,
       "#7C1A30": 57,
-      "#C58826": 25,
-      "#B07A43": 16,
+      "#C58826": 23,
+      "#B07A43": 17,
       "#7A4D2E": 16,
       "#4B1127": 16,
-      "#450635": 13,
+      "#450635": 14,
       "#FBEA90": 2
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": false,
+    "helmet_resized": true,
+    "helmet_edit_bounds": [
+      21,
+      4,
+      51,
+      37
+    ],
     "canvas": [
       64,
       64
     ],
     "bounds": [
       5,
-      5,
+      4,
       51,
       64
     ]
   },
   "RoyalArbalist": {
     "colors": {
-      "#0A0D11": 581,
-      "#93A1B0": 212,
-      "#55606E": 159,
-      "#FDF5E5": 140,
+      "#0A0D11": 596,
+      "#93A1B0": 245,
+      "#FDF5E5": 171,
+      "#55606E": 171,
       "#7C1A30": 111,
       "#4B1127": 81,
-      "#2B313A": 53,
+      "#2B313A": 58,
       "#FBEA90": 50,
       "#B07A43": 41,
       "#C58826": 31,
@@ -323,15 +340,22 @@
       "#7A4D2E": 15,
       "#450635": 2
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": false,
+    "helmet_resized": true,
+    "helmet_edit_bounds": [
+      18,
+      2,
+      51,
+      36
+    ],
     "canvas": [
       64,
       64
     ],
     "bounds": [
       0,
-      3,
-      50,
+      2,
+      51,
       64
     ]
   },
@@ -352,7 +376,8 @@
       "#B07A43": 7,
       "#7F1650": 5
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -385,7 +410,8 @@
       "#2E568F": 15,
       "#8A5622": 2
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -422,7 +448,8 @@
       "#2B313A": 2,
       "#75BCEF": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -453,7 +480,8 @@
       "#7F1650": 5,
       "#C74A5A": 1
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
@@ -482,7 +510,8 @@
       "#3E312A": 3,
       "#C58826": 2
     },
-    "mask_unchanged": true,
+    "static_mask_unchanged": true,
+    "helmet_resized": false,
     "canvas": [
       64,
       64
