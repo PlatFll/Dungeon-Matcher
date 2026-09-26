@@ -434,7 +434,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                     followUpDamage,
                     followUpAttackDelay,
                     timeFromAnimation,
-                    commandedAttackStarting
+                    commandedAttackStarting || (timeFromAnimation &&
+                        enemyActor.Definition != null &&
+                        enemyActor.Definition.UseAuthoredAutoAttackMotion)
                 )
             );
 
@@ -484,7 +486,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 ? isWaitingForAnimationImpact
                 : isWaitingForPresentationImpact;
 
-        if (!isAttackSequenceInProgress ||
+        if (Time.timeScale <= 0f || !isAttackSequenceInProgress ||
             presentationId <= 0 ||
             presentationId !=
                 activeAttackPresentationId ||
@@ -841,15 +843,16 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 animationImpactTimeout
             );
 
-        float waitStartedAt =
-            Time.realtimeSinceStartup;
+        // Match the scaled Animator clock: pausing cannot spend the failsafe
+        // budget and deliver an off-frame hit while the sprite is frozen.
+        float waitStartedAt = Time.time;
 
         while (CanContinueAttackLoop() &&
                isWaitingForAnimationImpact &&
                activeAttackPresentationId ==
                    presentationId)
         {
-            if (Time.realtimeSinceStartup -
+            if (Time.time -
                 waitStartedAt >= timeout)
             {
                 Debug.LogWarning(
@@ -887,15 +890,14 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             int presentationId)
     {
         float timeout = GetPresentationTimeout();
-        float waitStartedAt =
-            Time.realtimeSinceStartup;
+        float waitStartedAt = Time.time;
 
         while (CanContinueAttackLoop() &&
                isWaitingForPresentationImpact &&
                activeAttackPresentationId ==
                    presentationId)
         {
-            if (Time.realtimeSinceStartup -
+            if (Time.time -
                 waitStartedAt >= timeout)
             {
                 Debug.LogWarning(
@@ -930,15 +932,14 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             int presentationId)
     {
         float timeout = GetPresentationTimeout();
-        float waitStartedAt =
-            Time.realtimeSinceStartup;
+        float waitStartedAt = Time.time;
 
         while (CanContinueAttackLoop() &&
                isWaitingForPresentationCompletion &&
                activeAttackPresentationId ==
                    presentationId)
         {
-            if (Time.realtimeSinceStartup -
+            if (Time.time -
                 waitStartedAt >= timeout)
             {
                 Debug.LogWarning(

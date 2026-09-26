@@ -924,6 +924,15 @@ public partial class BoardController : MonoBehaviour
             specialGemCreationRequests,
         bool activateSpecials = false)
     {
+        return ClearMatchesWithBurstTargets(matches, specialGemCreationRequests, activateSpecials, null);
+    }
+
+    private IEnumerator ClearMatchesWithBurstTargets(
+        HashSet<Gem> matches,
+        List<SpecialGemCreationRequest> specialGemCreationRequests,
+        bool activateSpecials,
+        HashSet<Gem> genericBurstTargets)
+    {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
 
@@ -953,6 +962,10 @@ public partial class BoardController : MonoBehaviour
                 ] = request.SpecialType;
             }
         }
+
+        TileBurstVFXContext[] tileBursts = activateSpecials
+            ? BuildTileBurstContexts(matches, specialGemsToCreate, genericBurstTargets)
+            : null;
 
         foreach (Gem gem in matches)
         {
@@ -1114,6 +1127,7 @@ public partial class BoardController : MonoBehaviour
         // flash. Environmental removal and double-crystal sweeps do not activate.
         if (activateSpecials)
         {
+            ReportTileBursts(tileBursts);
             // A bomb may occupy the cell preserved for a newly earned special.
             // Its footprint was already expanded, so consume its OLD effect
             // once as well. The replacement is assigned only after this loop;
@@ -1437,6 +1451,7 @@ public partial class BoardController : MonoBehaviour
             yield break;
         }
 
+        var landedMoves = new HashSet<GemMove>();
         float totalDuration = 0f;
         float landingDuration =
             GetLandingSettleDuration();
@@ -1474,6 +1489,7 @@ public partial class BoardController : MonoBehaviour
         while (elapsedTime <
                totalDuration)
         {
+            int landedThisFrame = 0;
             foreach (GemMove move in moves)
             {
                 if (move.Gem == null)
@@ -1540,6 +1556,7 @@ public partial class BoardController : MonoBehaviour
                     continue;
                 }
 
+                if (landedMoves.Add(move)) landedThisFrame++;
                 float landingProgress =
                     Mathf.Clamp01(
                         (
@@ -1583,12 +1600,14 @@ public partial class BoardController : MonoBehaviour
                 }
             }
 
+            if (landedThisFrame > 0) GemsLanded?.Invoke(landedThisFrame);
             elapsedTime +=
                 Time.deltaTime;
 
             yield return null;
         }
 
+        int finalLandings = 0;
         foreach (GemMove move in moves)
         {
             if (move.Gem == null)
@@ -1599,6 +1618,8 @@ public partial class BoardController : MonoBehaviour
             move.Gem.transform.localPosition =
                 move.TargetPosition;
 
+            if (move.UseGravityMotion && landedMoves.Add(move)) finalLandings++;
+
             if (move.Gem.SpecialType !=
                 GemSpecialType.ColorCrystal)
             {
@@ -1606,6 +1627,7 @@ public partial class BoardController : MonoBehaviour
                     move.RestingScale;
             }
         }
+        if (finalLandings > 0) GemsLanded?.Invoke(finalLandings);
     }
 
     private float SmoothStep(

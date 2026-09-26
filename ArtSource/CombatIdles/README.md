@@ -1,5 +1,8 @@
 # Dungeon Matcher combat idle set
 
+**Current revision:** The combat-action pass replaces Farmer with the user’s subsequent hand-edited idle, preserving every pixel and timing. Bardley moves down exactly 12 pixels to a shared y=63 floor in idle and ability, without scaling or lost pixels. All four now import as fixed 64×64. See [current action delivery](../CombatActions/README.md). The older motion/cheek/scarf descriptions below record the preceding pass; its exact outputs are preserved in `Originals/BeforeCombatActions/`.
+
+
 Edited in LibreSprite 1.1-dev on 2026-09-20 using its native pixel/cel API and reviewed at native 1× and integer 4×. All editable files and image exports were saved by LibreSprite.
 
 Each character has an editable `.aseprite`, a transparent horizontal `.png` sprite sheet, an animated `.gif`, and `.json` frame metadata. Every animation has **nine 64×64 frames at 130 ms each (1.17 seconds)**. Each sheet is **576×64**, without trimming, padding, or scaling. Farmer and Pan Villager retain their raised ready pose across the loop seam; both have seven distinct drawings. The production cadence is recorded per character/frame in [the project art-direction guide](../../Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt).
@@ -22,7 +25,7 @@ Farmer and Pan Villager close their eyes on **frame six**, matching Rattlebones'
 ## Sources and alignment
 
 - All canvases remain 64×64 with integer pixel placement and binary transparency.
-- Rattlebones, Farmer and Pan Villager retain ground contact at y=63. Bardley's base remains at **y=51**, as in its source animation. The static recolor's unresolved 12-pixel offset was not adopted.
+- Rattlebones, Farmer and Pan Villager retain ground contact at y=63. Bardley's base now stands at **y=63** in both idle and ability; the deliberate 12-pixel translation supersedes the old padding crop.
 - `Originals/TurnBasedReference/Farmer_OpenReference.aseprite` is the exact reference saved from the user's open LibreSprite tab for this pass. The original Downloads file was not overwritten.
 - `Originals/BeforeTurnBasedPass/` preserves the Farmer and Pan Villager files immediately before the latest pass. Their unmodified comparison sheets are in `Comparisons/`.
 - Earlier snapshots in `Originals/`, `Originals/FamilyPass1/` and `Originals/BeforeHeadRestore/` remain available as production history.
@@ -44,19 +47,19 @@ Bardley's individual `BardleyFinal.png` supplied the spatial shading reference, 
 - infinite GIF looping and matching JSON frame sizes/timing;
 - original Rattlebones masks and stable Farmer soles, Pan Villager soles and Bardley base.
 
-`Scripts/validate_turn_based.py` and `TurnBasedValidation.json` additionally verify Farmer's full reference-pose silhouettes, downward/upward head order, both villagers' blink phase, rigid Pan Villager pan and grip pixels, visible boot preservation, and unchanged Rattlebones/Bardley file hashes. The source frame selection and measured head/eye positions are included in the report.
+`Scripts/validate_turn_based.py` and `TurnBasedValidation.json` historically verify Farmer's full reference-pose silhouettes, downward/upward head order, both villagers' blink phase, rigid Pan Villager pan and grip pixels, visible boot preservation, and unchanged Rattlebones/Bardley file hashes. The source frame selection and measured head/eye positions are included in the report.
 
 Visual review covered all poses, full-speed side-by-side playback at 1×/4×, the closed-eye low pose, upward recovery, previous/current comparisons, dark/light backgrounds and the final-to-first transition. Pixel checks establish asset integrity; they do not determine whether an artistic loop feels natural.
 
 `RefinementValidation.json` and `FarmerHeadValidation.json` are explicitly **historical** reports for the preserved preceding revision. Their scripts read the archived Farmer/Pan files. The former also checks the still-current Bardley facial correction. They do not claim the new Farmer keeps the superseded body's pixels.
 
-`Scripts/validate_final_polish.py` and `FinalPolishValidation.json` verify the exact authorized cheek coordinates and scarf-tail region, unchanged other frames/features, unchanged Rattlebones/Bardley files, and identical first/last poses for both villagers.
+`Scripts/validate_final_polish.py` and `FinalPolishValidation.json` verify the archived prior outputs to establish the exact authorized cheek coordinates and scarf-tail region, unchanged other frames/features, unchanged Rattlebones/Bardley files, and identical first/last poses for both villagers.
 
 ## Unity integration
 
 `CombatIdleImporter.Run` imports the source PNGs unchanged, reads JSON timing and assigns the existing `PlayerDefinition`/`EnemyDefinition` visual fields. Clips animate only `Image.m_Sprite`. Their 100 Hz authoring clock represents each 130 ms exposure exactly; a final held sample ends at 1.17 seconds without adding a first-frame tick. Existing combat triggers, damage/impact timing and UI layout retain their owners.
 
-All imports use Point filtering, uncompressed textures, no mipmaps, 64 PPU and Full Rect meshes with fixed bottom-center pivots. Rattlebones/Farmer/Pan use 64×64 import rectangles. Bardley uses one fixed 64×52 rectangle at texture y=12 across every frame, excluding its 12 empty bottom rows. The PNG remains a 576×64 sheet; its art pixels and source placement are unchanged. The existing UI floor anchoring aligns the actual contact without a new positioning component or animated transform.
+All imports use Point filtering, uncompressed textures, no mipmaps, 64 PPU and Full Rect meshes with fixed bottom-center pivots. Rattlebones/Farmer/Pan use 64×64 import rectangles. Bardley now uses the same 64×64 rectangle as the other characters; its source art was moved down exactly 12 pixels. The PNG remains a 576×64 sheet. The existing UI floor anchoring aligns the actual contact without a new positioning component or animated transform.
 
 `PlayerHudCenteringController` keeps four logical pixels between the character, affinity gem and health-bar containers, then centers their combined bounds. It includes the modular health bar's visible children even though its legacy root Image is disabled. This prevents hidden feet and excessive gaps when the selected player's fixed sprite rectangle changes.
 
@@ -66,7 +69,7 @@ Engine checks and portrait playback evidence are recorded in [the Unity validati
 
 - Run `inspect_idles.py`, then `build_native_script.js` to assemble the native LibreSprite scripts and palettes.
 - `TuneBattleIdles.js`, assembled from `turn_based_motion_body.js`, reads the saved open Farmer reference and pre-pass Pan Villager. Run it in LibreSprite to save `Review/Farmer_TurnBased.aseprite` and `Review/PanVillager_TurnBased.aseprite`. After exporting matching candidate sheets, inspect them with `Preview.html?candidate=1` and run `validate_turn_based.py --candidate`. Save approved editable files to the root and export through LibreSprite.
-- `export_idles.ps1` exports the root editable files using LibreSprite. `validate_idles.py` checks all final exports; `validate_turn_based.py` checks the current motion correction.
+- `export_idles.ps1` exports the root editable files using LibreSprite. `validate_idles.py` checks all final exports; `validate_turn_based.py` checks the archived preceding motion correction.
 - `RestoreIdleMaterials.js`, `UnifyIdleFamily.js`, `RefineIdleMotion.js` and `RestoreFarmerHead.js` reproduce earlier stages from their retained inputs. Their body scripts and historical validators remain for traceability.
 - Python helpers inspect artwork and write reports/contact sheets; they do not edit the delivered sprites.
 - `final_polish_body.js` applies the final scoped cheek/scarf edits through LibreSprite. `validate_final_polish.py` checks their pixel boundaries. `CombatIdleImporter` and `CombatIdleValidation` are Unity editor-only import and integration helpers.

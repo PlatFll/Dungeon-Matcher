@@ -9,10 +9,9 @@ public sealed class BalanceV1
     public int upgradeBase = 25;
     public int upgradeLinear = 15;
     public int upgradeQuadratic = 5;
-    public int directionalLevel = 2;
     public int poisonLevel = 3;
-    public int healingLevel = 4;
-    public int shieldLevel = 5;
+    public int healingLevel = 5;
+    public int shieldLevel = 7;
     public int potionPrice = 18;
     public int bombPrice = 24;
     public float potionHealthFraction = 0.35f;
@@ -57,7 +56,7 @@ public sealed class BalanceV1
         switch (type)
         {
             case GemSpecialType.RowBomb:
-            case GemSpecialType.ColumnBomb: return directionalLevel;
+            case GemSpecialType.ColumnBomb: return 1;
             case GemSpecialType.PoisonBomb: return poisonLevel;
             case GemSpecialType.HealingBomb: return healingLevel;
             case GemSpecialType.ShieldBomb: return shieldLevel;

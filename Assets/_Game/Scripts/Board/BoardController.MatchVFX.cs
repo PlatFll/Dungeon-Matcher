@@ -189,9 +189,11 @@ public partial class BoardController
                     gem.Row
                 );
 
-            BombVFXRequested?.Invoke(
-                context
-            );
+            // Imported tile art takes over drawing; keep the established refill
+            // gates below independent of whether optional art is available.
+            TileBurstVFXController tilePresenter = EnsureTileBurstVFXController();
+            if (!tilePresenter.isActiveAndEnabled || !tilePresenter.HasSequence(BurstKindFor(gem.SpecialType)))
+                BombVFXRequested?.Invoke(context);
 
             bool shouldHoldNormalRefill =
                 clearSource ==

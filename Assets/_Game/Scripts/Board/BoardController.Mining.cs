@@ -39,6 +39,7 @@ public partial class BoardController
         public Gem TargetGem;
         public bool WaitForAnimationImpact;
         public bool AnimationImpactReached;
+        public int AnimationActionId;
 
         public bool PreferStraightLine;
         public bool ProtectSpecialGems;
@@ -168,7 +169,8 @@ public partial class BoardController
                 OwnerActor = owner,
                 OwnerInstanceId = ownerInstanceId,
                 MaximumOwnedMines = safeMaximum,
-                WaitForAnimationImpact = waitForAnimationImpact
+                WaitForAnimationImpact = waitForAnimationImpact,
+                AnimationActionId = owner.ActiveSpecialAbilityAnimationActionId
             }
         );
 
@@ -176,32 +178,32 @@ public partial class BoardController
         return true;
     }
 
-    public bool NotifyMineAnimationImpact(EnemyActor owner)
+    public bool NotifyMineAnimationImpact(EnemyActor owner) =>
+        NotifyBoardMutationAnimationImpact(owner, BoardMutationKind.MineRandomCell);
+
+    public bool NotifyBarricadeAnimationImpact(EnemyActor owner) =>
+        NotifyBoardMutationAnimationImpact(owner, BoardMutationKind.PlaceBarricades);
+
+    private bool NotifyBoardMutationAnimationImpact(EnemyActor owner, BoardMutationKind kind)
     {
-        if (owner == null)
-        {
+        if (owner == null || owner.IsDefeated || !owner.isActiveAndEnabled || Time.timeScale <= 0f)
             return false;
-        }
-
-        int ownerInstanceId = owner.GetInstanceID();
-
-        if (TryReleaseMineRequest(
-                activeBoardMutationRequest,
-                ownerInstanceId))
-        {
-            return true;
-        }
-
-        foreach (BoardMutationRequest request
-                 in pendingBoardMutations)
-        {
-            if (TryReleaseMineRequest(request, ownerInstanceId))
-            {
-                return true;
-            }
-        }
-
+        if (TryReleaseAnimationRequest(activeBoardMutationRequest, owner, kind)) return true;
+        foreach (var request in pendingBoardMutations)
+            if (TryReleaseAnimationRequest(request, owner, kind)) return true;
         return false;
+    }
+
+    private static bool TryReleaseAnimationRequest(BoardMutationRequest request, EnemyActor owner, BoardMutationKind kind)
+    {
+        if (request == null || request.Kind != kind || !request.WaitForAnimationImpact ||
+            request.OwnerActor != owner ||
+            (request.AnimationActionId > 0 && request.AnimationActionId != owner.ActiveSpecialAbilityAnimationActionId))
+            return false;
+        // Acknowledging the same request twice is idempotent; there is still
+        // only one mutation in the authoritative queue.
+        request.AnimationImpactReached = true;
+        return true;
     }
 
     public void QueueRestoreMinedCells(int ownerInstanceId)
@@ -274,21 +276,6 @@ public partial class BoardController
         }
 
         return false;
-    }
-
-    private bool TryReleaseMineRequest(
-        BoardMutationRequest request,
-        int ownerInstanceId)
-    {
-        if (!IsAnimationTimedMineRequestForOwner(
-                request,
-                ownerInstanceId))
-        {
-            return false;
-        }
-
-        request.AnimationImpactReached = true;
-        return true;
     }
 
     private bool IsAnimationTimedMineRequestForOwner(
@@ -421,6 +408,46 @@ public partial class BoardController
         }
     }
 
+    private static bool IsAnimationRequestCancelled(BoardMutationRequest request)
+    {
+        return request.OwnerActor == null || request.OwnerActor.IsDefeated ||
+            !request.OwnerActor.isActiveAndEnabled ||
+            (request.IsCancelled != null && request.IsCancelled()) ||
+            (request.WaitForAnimationImpact && !request.AnimationImpactReached &&
+             request.AnimationActionId > 0 &&
+             request.OwnerActor.ActiveSpecialAbilityAnimationActionId != request.AnimationActionId);
+    }
+
+    private IEnumerator WaitForBoardMutationAnimationImpact(BoardMutationRequest request)
+    {
+        float started = Time.time;
+        while (request.WaitForAnimationImpact && !request.AnimationImpactReached)
+        {
+            if (IsAnimationRequestCancelled(request))
+            {
+                ReleaseCancelledAnimationAction(request);
+                yield break;
+            }
+            if (Time.time - started >= AnimationImpactFailsafeSeconds)
+            {
+                Debug.LogWarning(request.OwnerActor.name +
+                    " missed AbilityImpact; resolving through the board fallback.", request.OwnerActor);
+                request.AnimationImpactReached = true;
+                request.OwnerActor.EndSpecialAbilityAnimationAction();
+                break;
+            }
+            yield return null;
+        }
+        if (IsAnimationRequestCancelled(request)) ReleaseCancelledAnimationAction(request);
+    }
+
+    private static void ReleaseCancelledAnimationAction(BoardMutationRequest request)
+    {
+        if (request.AnimationActionId > 0 && request.OwnerActor != null &&
+            request.OwnerActor.ActiveSpecialAbilityAnimationActionId == request.AnimationActionId)
+            request.OwnerActor.EndSpecialAbilityAnimationAction();
+    }
+
     private IEnumerator ExecuteMineRequest(
         BoardMutationRequest request)
     {
@@ -438,43 +465,9 @@ public partial class BoardController
             yield break;
         }
 
-        float animationWaitStartedAt = Time.realtimeSinceStartup;
-
-        while (request.WaitForAnimationImpact &&
-               !request.AnimationImpactReached)
-        {
-            if (request.OwnerActor == null ||
-                request.OwnerActor.IsDefeated)
-            {
-                yield break;
-            }
-
-            if (Time.realtimeSinceStartup - animationWaitStartedAt >=
-                AnimationImpactFailsafeSeconds)
-            {
-                Debug.LogWarning(
-                    $"{request.OwnerActor.name} waited " +
-                    $"{AnimationImpactFailsafeSeconds:0.##}s for its " +
-                    "AbilityImpact Animation Event. Forcing the gameplay " +
-                    "impact so the board cannot remain soft-locked.",
-                    request.OwnerActor
-                );
-
-                request.AnimationImpactReached = true;
-                request.OwnerActor.EndSpecialAbilityAnimationAction();
-                break;
-            }
-
-            yield return null;
-        }
-
-        // Impact can be acknowledged and the owner defeated/destroyed before
-        // this coroutine resumes. In that case the while body is skipped, so
-        // its in-loop owner check alone cannot prevent a posthumous new hole.
-        if (request.OwnerActor == null || request.OwnerActor.IsDefeated)
-        {
-            yield break;
-        }
+        var impactWait = WaitForBoardMutationAnimationImpact(request);
+        while (impactWait.MoveNext()) yield return impactWait.Current;
+        if (IsAnimationRequestCancelled(request)) yield break;
 
         if (minedCellOwners.Count >= BalanceV1.Current.maximumGlobalMines ||
             minedCellOwners.Count + barricadeCells.Count >= BalanceV1.Current.maximumGlobalStructures) yield break;

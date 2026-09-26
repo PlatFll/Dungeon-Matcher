@@ -28,8 +28,8 @@ for name,allowed in palettes.items():
         # The pan can descend beside the foot; the boot sole stays planted.
         assert len(set(im.crop((19,63,47,64)).tobytes() for im in frames))==1
     if name=='Bardley':
-        assert len(set(im.crop((0,51,64,52)).tobytes() for im in frames))==1
-        assert all(im.getbbox()[3]==52 for im in frames)
+        assert len(set(im.crop((0,63,64,64)).tobytes() for im in frames))==1
+        assert all(im.getbbox()[3]==64 for im in frames)
     atlas=Image.open(ROOT/(name+'_Idle.png')).convert('RGBA')
     assert atlas.size==(576,64),(name,atlas.size)
     assert all(normalized(im)==normalized(atlas.crop((i*64,0,(i+1)*64,64))) for i,im in enumerate(frames)),(name,'sheet pixels')

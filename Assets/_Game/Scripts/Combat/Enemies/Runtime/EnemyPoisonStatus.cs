@@ -144,6 +144,8 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         EnemyDamageResult result =
             enemyActor.ResolveDamageWithoutFeedback(resolvedTickDamage);
 
+        enemyActor.NotifyStatusDamageReceived(result.HealthDamage + result.ShieldDamage);
+
         // HP-only poison feedback stays unchanged. Do not include shield loss
         // or a separate heal/hit performed by a synchronous actor listener.
         if (result.HealthDamage <= 0)

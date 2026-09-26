@@ -433,6 +433,9 @@ public sealed class EnemyCombatFeedback :
     private void HandleAttackStarted(
         EnemyAutoAttack autoAttack)
     {
+        if (enemyActor != null && enemyActor.Definition != null &&
+            enemyActor.Definition.UseAuthoredAutoAttackMotion) return;
+
         if (visualRoot == null ||
             enemyActor == null ||
             enemyActor.IsDefeated)
