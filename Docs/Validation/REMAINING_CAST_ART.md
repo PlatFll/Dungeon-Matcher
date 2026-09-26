@@ -1,5 +1,10 @@
 # Remaining cast correction validation — 2026-09-22
 
+**Subsequent user decision:** this stronger motion pass was rejected as worse.
+The evidence below describes checks that ran; it does not establish visual
+acceptance. The immediately preceding four guard sources were selected for Unity.
+See `RESTORED_GUARD_IDLES.md` for that separate integration.
+
 Scope: seventeen supplied static sprites recolored, then seventeen idle animations
 authored in LibreSprite. RattleBones_FluidIdle is preserved as the motion reference.
 Sources and machine-readable evidence live in `ArtSource/RemainingCast/`.

@@ -19,8 +19,8 @@ MonoBehaviour:
     player moves he places three two-hit stone blockades, up to six of his own on
     the board.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: -5604500335505110302, guid: 35065250f26735e48b3a616668daf087, type: 3}
-  animationControllerOverride: {fileID: 0}
+  fallbackVisualSprite: {fileID: -7936037143926299356, guid: 44c342da30dad024691d7440b41952b8, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 3e2c79490ad66c14b894bd8684a91c15, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 0
   timeSpecialAbilityFromAnimation: 0

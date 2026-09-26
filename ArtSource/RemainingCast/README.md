@@ -1,5 +1,11 @@
 # Remaining cast — recolors and idle family
 
+**Current selection:** the user accepted the restored guard style. Nineteen enemy
+idles from Miner through King now share that restrained rhythm and are integrated
+in Unity. See `SelectedIdles/README.md` and `FamilyPreview.html` for the current
+sources, scope and comparison. `Idles/` remains the rejected stronger candidate;
+the historical production description below refers to that earlier pass.
+
 Working art pass, 2026-09-22. All 17 static character tabs supplied alongside
 `RattleBones_FluidIdle.ase` were recolored, then given a matching idle in LibreSprite.
 The correction pass enlarges Royal Lancer/Arbalist helmets, repairs cut anatomy
