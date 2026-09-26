@@ -35,7 +35,9 @@ No time limit, death wave, damage cap or adaptive enemy scaling enforces these t
 
 Upgrade from level L costs `25 + 15*(L-1) + 5*(L-1)^2` shared gold. No XP. Stats are recomputed from immutable definitions, a run-start permanent level snapshot, then temporary card modifiers. No multiplication of already modified values.
 
-Shared unlocks use the highest individual character level, never summed levels: directional bombs 2, Poison 3, Healing 4, Shield 5. Fresh five-gem shapes create Color Crystals; locked straight-four shapes clear all four gems with normal rewards. Color Crystals have no levels. Valid explicit legacy selections are grandfathered account-wide.
+Row and Column bombs are always available from level 1; straight-four matches create them on fresh accounts. Fresh five-gem shapes create Color Crystals, also available from the start. Shared mastery unlocks use the highest individual character level, never summed levels: Poison 3, Healing 5, Shield 7. Color Crystals have no levels. Previously earned unlocks and valid explicit legacy selections are grandfathered account-wide.
+
+Characters offers a confirmed **Reset to Lv 1** action for the selected character between runs. It resets only that character's permanent level; gold, inventory, equipment, records, mastery selections and earned account unlocks stay. Upgrade gold is not refunded. Reset is unavailable at level 1 and while a run is saved, preserving the run's level snapshot.
 
 Cards after completed waves **2, 5, 9, 13, 17, 21, 25, 28**. First choice arrives early, with increasingly long play stretches. Potion price 18, Bomb price 24. Potion heals 35% maximum HP. Each equipped type loads at most three charges once per run; stock is deducted only on accepted use. Independent five-second game-time cooldowns pause with gameplay.
 
@@ -102,7 +104,7 @@ Normal pools overlap; a declining weight tail retains older enemies. Milestone w
 
 ## Complete card review
 
-All 27 catalog entries are retained. Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from Bardley's 1-energy development configuration. Special-dependent cards require both an account unlock and a compatible equipped mastery shape (directional bombs need the unlock). Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
+All 27 catalog entries are retained. Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from Bardley's 1-energy development configuration. Special-dependent cards require both an account unlock and a compatible equipped mastery shape; directional bombs are always available and need no mastery slot. Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
 
 | Card | Effect per stack / mechanic | Cap | Rarity | Asset weight | Additional eligibility |
 | --- | --- | ---: | --- | ---: | --- |

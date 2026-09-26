@@ -20,13 +20,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-09-22
-- **Current milestone:** Background-only battleground and masonry refinement, integrated and reviewed at two portrait sizes
-- **Current implementation branch:** `codex/dungeon-background-refinement`
-- **Latest gameplay PR:** [#158 — Balance Bardley, add resumable combat and restore SmallHold startup](https://github.com/PlatFll/Dungeon-Matcher/pull/158)
+- **Date:** 2026-09-27
+- **Current milestone:** Per-character level reset and shared mastery unlocks at 3/5/7; directional bombs available from level 1
+- **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
+- **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
+- **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
 - **Current art-pass base:** `codex/cast-grounded-idle-family` at `feca180` (PR #166), which extends the accepted guard motion through King. No character art is changed by the background pass. The stronger PR #164 motion remains rejected.
 - **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release status:** The original idles and combat-action pass are on unmerged PRs [#159](https://github.com/PlatFll/Dungeon-Matcher/pull/159) and [#160](https://github.com/PlatFll/Dungeon-Matcher/pull/160). Local enemies ([#161](https://github.com/PlatFll/Dungeon-Matcher/pull/161)), presentation ([#162](https://github.com/PlatFll/Dungeon-Matcher/pull/162)) and subsequent art passes extend that stack; merge requires a new explicit instruction. The stronger PR #164 motion was rejected. Restored guard motion in [#165](https://github.com/PlatFll/Dungeon-Matcher/pull/165) was accepted as the target and extended through King in [#166](https://github.com/PlatFll/Dungeon-Matcher/pull/166). The current background-only branch extends #166. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.9). Current evidence is in `Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md`; family and earlier presentation validation records remain available separately.
+- **Release scope:** The approved main checkpoint includes combat idles/actions (#159–#160), local enemies (#161), presentation/VFX/audio/haptics (#162), remaining-cast sources and corrections (#163–#166), backgrounds (#167), and level reset/shared mastery (#168). The stronger PR #164 motion remains rejected; the restored guard motion in #165 and final Miner-through-King corrections in #166 are the active direction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.9). Separate uncommitted background-source edits and local repository guidance are preserved outside this release. Art evidence is in `Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md`; family and earlier presentation validation records remain available separately.
+- **Merge verification:** `Tools/Validate-Unity.ps1` passed again on 2026-09-27 with Unity 6000.3.19f1 (log suffix `7574ee9a-ad68-49b5-9a1a-e725f96faf16`). The production code/configuration is unchanged from the 251-test and rendered-menu validation recorded above; that evidence is reused. Integration preserves the final tree and commit ancestry, including the later corrections.
 
 ### What this document is
 
@@ -302,6 +304,7 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 ## Permanent levels
 
 - Each character levels **independently**.
+- Characters offers a confirmed **Reset to Lv 1** action for the selected character between runs. Other characters, gold, inventory, records and earned account unlocks stay; upgrade gold is not refunded. A saved run blocks reset.
 - Shared Gold Coins pay for level-ups.
 - There is no XP gate in Balance v1.
 - Current level cap: **20**.
@@ -372,12 +375,12 @@ Fresh-profile state:
 
 Current Balance v1 first-time account unlocks use the **highest individual character level** (levels are never summed):
 
-- Level 2: directional bombs
+- Level 1: Row and Column bombs are always available, with no progression gate
 - Level 3: Poison Bomb
-- Level 4: Healing Bomb
-- Level 5: Shield Bomb
+- Level 5: Healing Bomb
+- Level 7: Shield Bomb
 
-Reaching the threshold on **any one character** unlocks it account-wide for every character.
+Reaching the threshold on **any one character** unlocks it account-wide and makes it selectable in Gem Mastery for every character. Earned unlocks remain available after a level reset; previously earned access is preserved when thresholds change.
 
 Locked shapes must still behave safely and reward ordinary matching rather than becoming dead inputs.
 
@@ -671,6 +674,7 @@ Current connected UI flow includes:
 - next-level improvements;
 - level-up Gold price;
 - affordability/max-level handling;
+- confirmed reset to level 1 for the selected character, disabled during a saved run;
 - small level-up feedback/VFX.
 
 ## Shop
