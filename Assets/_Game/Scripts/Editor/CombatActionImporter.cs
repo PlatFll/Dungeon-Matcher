@@ -15,27 +15,48 @@ public static class CombatActionImporter
     public static readonly string[] Names = {
         "Farmer_AutoAttack", "PanVillager_AutoAttack", "Rattlebones_Ability", "Bardley_Ability"
     };
-    [Serializable] private sealed class Frame { public int duration; }
+    public static readonly string[] LocalEnemyNames = {
+        "Miner_AutoAttack", "Miner_Ability", "BasketVillager_AutoAttack",
+        "BarricadeVillager_AutoAttack", "BarricadeVillager_Ability"
+    };
+    [Serializable] private sealed class Size { public int w, h; }
+    [Serializable] private sealed class Frame { public int duration; public Size sourceSize; }
     [Serializable] private sealed class Sheet { public Frame[] frames; }
 
     [MenuItem("Dungeon Matcher/Art/Import Combat Actions")]
     public static void Run()
     {
         CombatIdleImporter.Run();
+        Import(Names);
+    }
+
+    [MenuItem("Dungeon Matcher/Art/Import Local Enemy Animations")]
+    public static void ImportLocalEnemies()
+    {
+        CombatIdleImporter.ImportLocalEnemies();
+        Import(LocalEnemyNames);
+    }
+
+    private static void Import(string[] names)
+    {
         Directory.CreateDirectory(ArtRoot);
         Directory.CreateDirectory(AnimationRoot);
-        foreach (string name in Names)
+        foreach (string name in names)
         {
             bool attack = name.EndsWith("_AutoAttack");
             string character = name.Split('_')[0];
             string action = attack ? "AutoAttack" : "Ability";
-            int width = attack ? 96 : 64, count = attack ? 8 : 10;
+            bool localEnemy = LocalEnemyNames.Contains(name);
+            int count = attack ? 8 : 10;
             int[] expected = attack ? new[] {80,80,120,40,120,80,80,80}
                 : new[] {80,80,120,80,120,80,80,80,80,80};
-            string source = "ArtSource/CombatActions/" + name;
+            string source = (localEnemy ? "ArtSource/LocalEnemies/" : "ArtSource/CombatActions/") + name;
             var sheet = JsonUtility.FromJson<Sheet>(File.ReadAllText(source + ".json"));
             if (sheet.frames == null || !sheet.frames.Select(f => f.duration).SequenceEqual(expected))
                 throw new InvalidDataException("Unexpected native timing for " + name);
+            int width = sheet.frames[0].sourceSize.w, height = sheet.frames[0].sourceSize.h;
+            if (width <= 0 || height <= 0 || sheet.frames.Any(f => f.sourceSize.w != width || f.sourceSize.h != height))
+                throw new InvalidDataException("Inconsistent action canvases: " + name);
             string atlasPath = ArtRoot + "/" + name + ".png";
             File.Copy(source + ".png", atlasPath, true);
             AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceSynchronousImport);
@@ -54,7 +75,7 @@ public static class CombatActionImporter
             settings.spriteMeshType = SpriteMeshType.FullRect; importer.SetTextureSettings(settings);
 #pragma warning disable CS0618
             importer.spritesheet = Enumerable.Range(0, count).Select(i => new SpriteMetaData {
-                name = name + "_" + i.ToString("00"), rect = new Rect(i * width, 0, width, 64),
+                name = name + "_" + i.ToString("00"), rect = new Rect(i * width, 0, width, height),
                 alignment = (int)SpriteAlignment.BottomCenter, pivot = new Vector2(.5f, 0)
             }).ToArray();
 #pragma warning restore CS0618
@@ -80,6 +101,9 @@ public static class CombatActionImporter
             AnimationUtility.SetAnimationEvents(clip, attack ? new[] {
                 new AnimationEvent { time = .32f, functionName = "AutoAttackImpact" },
                 new AnimationEvent { time = .67f, functionName = "AutoAttackComplete" }
+            } : localEnemy ? new[] {
+                new AnimationEvent { time = .36f, functionName = "AbilityImpact" },
+                new AnimationEvent { time = .87f, functionName = "AbilityComplete" }
             } : Array.Empty<AnimationEvent>());
             EditorUtility.SetDirty(clip);
 
@@ -102,7 +126,7 @@ public static class CombatActionImporter
             EditorUtility.SetDirty(controller);
         }
         AssetDatabase.SaveAssets();
-        foreach (string character in new[] {"Farmer", "PanVillager"})
+        foreach (string character in names.Where(n => n.EndsWith("_AutoAttack")).Select(n => n.Split('_')[0]))
         {
             // Patch only the opted-in presentation flags. Do not let OnValidate
             // rewrite historical enemy balance or ability configuration.
@@ -114,6 +138,13 @@ public static class CombatActionImporter
             if (text.Contains("  useAuthoredAutoAttackMotion:"))
                 text = Regex.Replace(text, @"(?m)^  useAuthoredAutoAttackMotion:.*$", "  useAuthoredAutoAttackMotion: 1");
             else text = text.Replace("  timeAutoAttackFromAnimation: 1", "  timeAutoAttackFromAnimation: 1\n  useAuthoredAutoAttackMotion: 1");
+            if (names.Contains(character + "_Ability"))
+            {
+                text = Regex.Replace(text, @"(?m)^  timeSpecialAbilityFromAnimation:[^\r\n]*", "  timeSpecialAbilityFromAnimation: 1");
+                if (text.Contains("  useAuthoredSpecialAbilityMotion:"))
+                    text = Regex.Replace(text, @"(?m)^  useAuthoredSpecialAbilityMotion:[^\r\n]*", "  useAuthoredSpecialAbilityMotion: 1");
+                else text = text.Replace("  timeSpecialAbilityFromAnimation: 1", "  timeSpecialAbilityFromAnimation: 1\n  useAuthoredSpecialAbilityMotion: 1");
+            }
             File.WriteAllText(path, text);
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport);
         }

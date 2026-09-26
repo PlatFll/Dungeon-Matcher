@@ -143,6 +143,7 @@ public sealed class CourtMageEnemyAbility :
             return false;
         }
 
+        enemyActor.NotifySpecialAbilityUsed();
         enemyActor.ResetSpecialCounter();
         return true;
     }

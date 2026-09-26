@@ -75,6 +75,7 @@ public sealed partial class PlayerActor : MonoBehaviour
     public event Action<PlayerActor, int> ShieldDamaged;
     public event Action<PlayerActor, int, int> ShieldChanged;
     public event Action<PlayerActor, int> Healed;
+    public event Action<PlayerActor, int> ShieldGranted;
     public event Action<PlayerActor, int, int> HealthChanged;
     public event Action<PlayerActor, int, int> MaximumHealthChanged;
     public event Action<PlayerActor> Defeated;
@@ -281,6 +282,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         ShieldChanged?.Invoke(this, currentShield, maximumShield);
+        ShieldGranted?.Invoke(this, actualShieldGranted);
         return actualShieldGranted;
     }
 

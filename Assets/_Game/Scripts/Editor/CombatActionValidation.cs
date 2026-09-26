@@ -199,7 +199,7 @@ public static class CombatActionValidation
         File.WriteAllText(Path.Combine(Output,"play-validation.txt"),"PASS: "+assertions+" checks; 14 existing enemy lifecycle scenarios and 15 ability lifecycle cases in Play Mode. Production attack damage at frame five, duplicate guard, pause beyond timeout, cancellation/restart, missing-animation fallback, actual accepted player casts, idle return, every action pose at 1080x1920 and 1080x2400 with fixed ground/center/scale.\n");
     }
 
-    private static IEnumerator AttackCase(string name,EnemyActor enemy,PlayerActor player,bool extra)
+    internal static IEnumerator AttackCase(string name,EnemyActor enemy,PlayerActor player,bool extra)
     {
         var attack=enemy.GetComponent<EnemyAutoAttack>();var image=enemy.transform.Find("VisualRoot").GetComponent<Image>();var animator=image.GetComponent<Animator>();
         var frames=CombatActionImporter.LoadFrames(name+"_AutoAttack");

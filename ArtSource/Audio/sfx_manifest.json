@@ -1,0 +1,86 @@
+{
+  "sample_rate": 44100,
+  "channels": 1,
+  "sample_bits": 16,
+  "authorship": "Original local deterministic synthesis; no external samples.",
+  "clips": {
+    "GemMatch": {
+      "seconds": 0.19,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -19.348,
+      "sha256": "f15ea7b37d58033d514d50293517c1029ab0561d07a2ea20e70ab2d9cac10823"
+    },
+    "GemLand": {
+      "seconds": 0.08501133786848072,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -17.57,
+      "sha256": "975ccc8304a4293bcc56b23062bea24f53e04b4ff51ddbc16f1b5b9e3e6b706e"
+    },
+    "Explosion": {
+      "seconds": 0.23501133786848072,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -20.014,
+      "sha256": "52933758e0818ea58785fafa329d1b8bbb34e13214c53c8c2ab798a5661cc2a2"
+    },
+    "PoisonBurst": {
+      "seconds": 0.34,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -20.137,
+      "sha256": "ad59cc57a952d70344724e00acce8fd26c260bb257c507b294c361673bb883ab"
+    },
+    "Healing": {
+      "seconds": 0.43,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -14.976,
+      "sha256": "3a46c3d1b9f4b3db2660ccbd154d3c8761bc885876354b64d0ccfdf437cec0c0"
+    },
+    "ShieldGain": {
+      "seconds": 0.3,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -17.521,
+      "sha256": "47acd801762f06e6495623ba70843c8fb6f9ea7f6e9c330324d0783d2c622593"
+    },
+    "ShieldHit": {
+      "seconds": 0.15501133786848073,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -18.767,
+      "sha256": "d5f21420493a9ab42f9c833dd5238d9a9d6b4ae2aa977f58af8fc873ceab8fe4"
+    },
+    "PlayerHit": {
+      "seconds": 0.16,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -16.334,
+      "sha256": "e25840e93b94b925f6c2cb3711ac5d9543a70beeaa9342318c8add89b884b362"
+    },
+    "EnemyHit": {
+      "seconds": 0.12,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -16.893,
+      "sha256": "55d7ee72b8bb87c686bb1938bb45c3a9d7c9596a07be2150ab2524a38fa238b8"
+    },
+    "PoisonTick": {
+      "seconds": 0.10498866213151928,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -17.022,
+      "sha256": "d2684ff41c13c969bbf0ef0a6a9e6ca1569d6500f5678486b37c6e57bda25285"
+    },
+    "BardleyAbility": {
+      "seconds": 0.57,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -16.675,
+      "sha256": "1b1fe5a6b38c1ac5df48d51f95f39ef71f0ce4e58651643ce92f3d20f6f98827"
+    },
+    "RattlebonesAbility": {
+      "seconds": 0.52,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -15.016,
+      "sha256": "fdd9bc05934f5d0c785405e541e8b2fc313c2f5e281cf6e052689724fa1212a4"
+    },
+    "EnemyAbility": {
+      "seconds": 0.2849886621315193,
+      "peak_dbfs": -3.35,
+      "rms_dbfs": -17.66,
+      "sha256": "447614c6d8d5bfe3f1185d7465e762b753e43bdf623976c141ae8d46f5635403"
+    }
+  }
+}
