@@ -157,7 +157,8 @@ public partial class BoardController
         bool preferStraightLine = false,
         bool protectSpecialGems = false,
         System.Action<bool> completed = null,
-        System.Func<bool> isCancelled = null)
+        System.Func<bool> isCancelled = null,
+        bool waitForAnimationImpact = false)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -240,7 +241,9 @@ public partial class BoardController
                 PreferStraightLine = preferStraightLine && requestedCount == barricadesPerUse,
                 ProtectSpecialGems = protectSpecialGems,
                 Completed = completed,
-                IsCancelled = isCancelled
+                IsCancelled = isCancelled,
+                WaitForAnimationImpact = waitForAnimationImpact,
+                AnimationActionId = owner.ActiveSpecialAbilityAnimationActionId
             }
         );
 
@@ -375,6 +378,10 @@ public partial class BoardController
             yield break;
         }
 
+        var impactWait = WaitForBoardMutationAnimationImpact(request);
+        while (impactWait.MoveNext()) yield return impactWait.Current;
+        if (IsAnimationRequestCancelled(request)) yield break;
+
         int remainingCapacity =
             request.MaximumOwnedBarricades -
             GetBarricadeCountForOwner(
@@ -506,31 +513,22 @@ public partial class BoardController
          * this destruction grants no damage, energy, healing or special proc.
          */
         request.Succeeded = true;
-        yield return ClearMatches(
-            gemsToDestroy,
-            null
-        );
-
-        foreach (Vector2Int cell
-                 in selectedCells)
-        {
-            if (barricadeCells.TryGetValue(
-                    cell,
-                    out BarricadeCellState state))
-            {
-                CreateOrRefreshBarricadeView(
-                    cell,
-                    state
-                );
-
-                StartBarricadeMaterialization(
-                    state
-                );
-            }
-        }
+        if (request.WaitForAnimationImpact) MaterializeBarricades(selectedCells);
+        yield return ClearMatches(gemsToDestroy, null);
+        if (!request.WaitForAnimationImpact) MaterializeBarricades(selectedCells);
 
         yield return
             ResolveEnvironmentalBoardChange();
+    }
+
+    private void MaterializeBarricades(List<Vector2Int> cells)
+    {
+        foreach (Vector2Int cell in cells)
+            if (barricadeCells.TryGetValue(cell, out BarricadeCellState state))
+            {
+                CreateOrRefreshBarricadeView(cell, state);
+                StartBarricadeMaterialization(state);
+            }
     }
 
     /*

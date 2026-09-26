@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmer — Head Motion Comparison</title>
+<style>
+:root{color-scheme:dark;font:15px system-ui;background:#15131f;color:#eee8dc}*{box-sizing:border-box}body{max-width:1080px;margin:32px auto;padding:0 24px}h1{font-size:28px;margin:8px 0}p{color:#bcb4c8;line-height:1.5}.eyebrow{font-size:12px;letter-spacing:.15em;color:#dcbf80}nav{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}button{font:inherit;padding:8px 14px;border:1px solid #61576d;border-radius:6px;background:#2b2539;color:inherit;cursor:pointer}main{display:grid;grid-template-columns:repeat(3,minmax(256px,1fr));gap:20px}h2{font-size:17px}article p{font-size:13px;min-height:40px}.stage,.native{background:#242030;border:1px solid #494153;display:flex;align-items:center;justify-content:center}.stage{height:280px}.native{height:92px;gap:18px;margin-top:14px}.native span{font-size:12px;color:#bfb3cc}.sprite{width:64px;height:64px;image-rendering:pixelated;background-repeat:no-repeat;flex:none}.big{width:256px;height:256px}output{display:block;font-size:13px;margin-top:10px;font-variant-numeric:tabular-nums}.light .stage,.light .native{background:#ded9cf}.light .native span{color:#514858}a{color:#e4c996}footer{border-top:1px solid #494153;margin-top:28px;padding-top:10px;font-size:13px}@media(max-width:900px){main{grid-template-columns:1fr}}
+</style>
+<div class="eyebrow">DUNGEON MATCHER / FARMER CORRECTION</div><h1>Connected head and body motion</h1>
+<p>Original reference → previous revision → new correction. All play at their recorded 130 ms per frame, with exact 1× and 4× pixels.</p>
+<nav><button id="play">Pause</button><button id="back">Previous frame</button><button id="next">Next frame</button><button id="restart">Restart aligned</button><button id="seam">Inspect loop seams</button><button id="background">Light background</button></nav>
+<main>
+<article data-count="11" data-offset="4" data-path="Comparisons/Farmer_Original.png"><h2>Original Farmer</h2><p>Original expressive poses and original body.<br>11 frames · 1.43-second loop.</p></article>
+<article data-count="9" data-offset="0" data-path="Comparisons/Farmer_PreFinalPolish.png"><h2>Previous revision</h2><p>Before the localized cheek correction.<br>9 frames · 1.17-second loop.</p></article>
+<article data-count="9" data-offset="0" data-path="Farmer_Idle.png" id="corrected"><h2>New correction</h2><p>Fuller cheeks in frames 1 and 9 only.<br>9 frames · 1.17-second loop.</p></article>
+</main>
+<footer><p>The original starts on its raised fifth frame for an initial pose comparison, then runs its entire original loop. The two revised loops stay synchronized. No timing is stretched to force the original into nine frames. “Inspect loop seams” alternates each animation’s own final and first frames at 130 ms.</p><p><a href="Farmer_Idle.aseprite">Revised LibreSprite file</a> · <a href="Farmer_Idle.png">Sprite sheet</a> · <a href="Farmer_Idle.gif">GIF</a> · <a href="Preview.html">Full idle family</a></p></footer>
+<script>
+const candidate=new URLSearchParams(location.search).has('candidate');
+if(candidate)document.querySelector('#corrected').dataset.path='Review/Farmer_FinalPolish.png';
+const cards=[...document.querySelectorAll('article')];
+for(const card of cards){const n=+card.dataset.count,path=card.dataset.path;card.insertAdjacentHTML('beforeend',`<div class="stage"><div class="sprite big" role="img" aria-label="${card.querySelector('h2').textContent} at 4x" style="background-image:url('${path}');background-size:${n*256}px 256px"></div></div><div class="native"><div class="sprite" role="img" aria-label="${card.querySelector('h2').textContent} at native size" style="background-image:url('${path}')"></div><span>Native 64 × 64<br>1× pixels</span></div><output></output>`)}
+let elapsed=0,playing=true,seams=false,last=performance.now();const play=document.querySelector('#play');
+function draw(){for(const card of cards){const n=+card.dataset.count,f=seams?(elapsed%2===0?n-1:0):((elapsed+ +card.dataset.offset)%n+n)%n;for(const s of card.querySelectorAll('.sprite'))s.style.backgroundPosition=`${-f*(s.classList.contains('big')?256:64)}px 0`;card.querySelector('output').textContent=`Frame ${f+1} / ${n} · 130 ms`}}
+function pause(){playing=false;play.textContent='Play'}
+play.onclick=()=>{playing=!playing;play.textContent=playing?'Pause':'Play';last=performance.now()};
+document.querySelector('#back').onclick=()=>{pause();elapsed--;draw()};document.querySelector('#next').onclick=()=>{pause();elapsed++;draw()};
+document.querySelector('#restart').onclick=()=>{seams=false;elapsed=0;playing=true;play.textContent='Pause';last=performance.now();draw()};
+document.querySelector('#seam').onclick=()=>{seams=true;elapsed=0;playing=true;play.textContent='Pause';last=performance.now();draw()};
+document.querySelector('#background').onclick=e=>{document.body.classList.toggle('light');e.target.textContent=document.body.classList.contains('light')?'Dark background':'Light background'};
+function tick(t){if(playing&&t-last>=130){const steps=Math.floor((t-last)/130);elapsed+=steps;last+=steps*130;draw()}requestAnimationFrame(tick)}draw();requestAnimationFrame(tick);
+</script></html>

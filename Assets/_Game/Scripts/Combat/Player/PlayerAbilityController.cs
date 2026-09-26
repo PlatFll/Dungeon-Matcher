@@ -17,6 +17,8 @@ public sealed class PlayerAbilityController :
     private IPlayerAbilityRuntime activeRuntime;
 
     public event Action StateChanged;
+    // One presentation cue per accepted activation, after energy is spent.
+    public event Action AbilityActivated;
 
     public CharacterAbilityDefinition ActiveAbility =>
         playerActor != null
@@ -193,6 +195,7 @@ public sealed class PlayerAbilityController :
             return false;
         }
 
+        AbilityActivated?.Invoke();
         StateChanged?.Invoke();
 
         return true;

@@ -1,0 +1,102 @@
+{
+  "Farmer_AutoAttack": {
+    "frames": 8,
+    "canvas": [
+      96,
+      64
+    ],
+    "durations_ms": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      80,
+      80,
+      80
+    ],
+    "total_ms": 680,
+    "impact_frame": 5,
+    "impact_ms": 320,
+    "colors": 14,
+    "all_frames_grounded": true,
+    "native_export_exact": true
+  },
+  "PanVillager_AutoAttack": {
+    "frames": 8,
+    "canvas": [
+      96,
+      64
+    ],
+    "durations_ms": [
+      80,
+      80,
+      120,
+      40,
+      120,
+      80,
+      80,
+      80
+    ],
+    "total_ms": 680,
+    "impact_frame": 5,
+    "impact_ms": 320,
+    "colors": 16,
+    "all_frames_grounded": true,
+    "native_export_exact": true
+  },
+  "Rattlebones_Ability": {
+    "frames": 10,
+    "canvas": [
+      64,
+      64
+    ],
+    "durations_ms": [
+      80,
+      80,
+      120,
+      80,
+      120,
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "total_ms": 880,
+    "impact_frame": null,
+    "impact_ms": null,
+    "colors": 15,
+    "all_frames_grounded": true,
+    "native_export_exact": true
+  },
+  "Bardley_Ability": {
+    "frames": 10,
+    "canvas": [
+      64,
+      64
+    ],
+    "durations_ms": [
+      80,
+      80,
+      120,
+      80,
+      120,
+      80,
+      80,
+      80,
+      80,
+      80
+    ],
+    "total_ms": 880,
+    "impact_frame": null,
+    "impact_ms": null,
+    "colors": 15,
+    "all_frames_grounded": true,
+    "native_export_exact": true
+  },
+  "idle_preservation": {
+    "Farmer": "exact user pixels and timing",
+    "Bardley": "exact 12px downward translation, no crop loss"
+  }
+}

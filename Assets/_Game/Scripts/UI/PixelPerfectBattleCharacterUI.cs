@@ -16,6 +16,8 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
     private Vector2 requestedBox;
     private Vector2 appliedSize;
     private bool hasApplied;
+    private RectTransform enemyRoot;
+    private Vector2 enemyRestPosition;
 
     private void Awake() => root = (RectTransform)transform;
 
@@ -25,6 +27,11 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         Image image = isPlayer ? GetComponent<Image>() : FindCharacterImage();
         if (image == null || image.sprite == null || image.canvas == null) return;
         RectTransform visual = image.rectTransform;
+        if (!isPlayer && image != observedImage)
+        {
+            enemyRoot = image.GetComponentInParent<EnemyActor>()?.transform as RectTransform;
+            if (enemyRoot != null) enemyRestPosition = enemyRoot.anchoredPosition;
+        }
         // A new definition supplies an authored box and preserveAspect=true.
         // Animation sprite changes do not replace that box with our last result.
         if (image != observedImage || !hasApplied || image.preserveAspect ||
@@ -42,7 +49,19 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         if (isPlayer)
             GameplayPixelGrid.FitImage(image, available);
         else
+        {
             GameplayPixelGrid.FitImage(image, available, EnemyReferenceCanvasSize);
+            // The center-pivoted Image grows downward with taller canvases.
+            // Compensate on the actor, leaving the layout-owned spawn anchor
+            // and the feedback-owned VisualRoot untouched, including resizes.
+            if (enemyRoot != null)
+            {
+                float canvasGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
+                    (visual.rect.height / image.sprite.rect.height) * visual.pivot.y;
+                enemyRoot.anchoredPosition = enemyRestPosition + Vector2.up * canvasGroundOffset;
+                GameplayPixelGrid.Snap(enemyRoot);
+            }
+        }
         appliedSize = visual.rect.size;
         hasApplied = true;
     }

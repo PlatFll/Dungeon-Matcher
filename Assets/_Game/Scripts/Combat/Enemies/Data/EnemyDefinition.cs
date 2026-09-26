@@ -83,11 +83,19 @@ public sealed class EnemyDefinition : ScriptableObject
     private bool timeAutoAttackFromAnimation;
 
     [SerializeField]
+    [Tooltip("The sprite clip supplies the attack movement and AutoAttackComplete event. Suppresses the generic UI lunge.")]
+    private bool useAuthoredAutoAttackMotion;
+
+    [SerializeField]
     [Tooltip(
         "When enabled, the special ability waits for the AbilityImpact " +
         "Animation Event before applying its gameplay effect."
     )]
     private bool timeSpecialAbilityFromAnimation;
+
+    [SerializeField]
+    [Tooltip("The authored Ability clip owns recovery until AbilityComplete. Missing events retain a bounded gameplay fallback.")]
+    private bool useAuthoredSpecialAbilityMotion;
 
     [Header("Base Combat Stats")]
 
@@ -360,8 +368,14 @@ public sealed class EnemyDefinition : ScriptableObject
     public bool TimeAutoAttackFromAnimation =>
         timeAutoAttackFromAnimation;
 
+    public bool UseAuthoredAutoAttackMotion =>
+        timeAutoAttackFromAnimation && useAuthoredAutoAttackMotion;
+
     public bool TimeSpecialAbilityFromAnimation =>
         timeSpecialAbilityFromAnimation;
+
+    public bool UseAuthoredSpecialAbilityMotion =>
+        timeSpecialAbilityFromAnimation && useAuthoredSpecialAbilityMotion;
 
     /*
      * Compatibility property for the current WaveController spawn path.

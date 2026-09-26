@@ -13,6 +13,7 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
     private const string AffinityGemName = "PlayerAffinityGem";
     private const string HealthBarName = "PlayerHPBarBackground";
     private const float Epsilon = 0.01f;
+    private const float StackGap = 4f;
 
     private RectTransform panel;
     private RectTransform character;
@@ -45,6 +46,11 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
 
         ResolveReferences();
 
+        // Fixed animation canvases include the full feet/base. Keep them above
+        // the health bar before centering the stack; never fit individual poses.
+        KeepAbove(character, healthBar);
+        KeepAbove(affinityGem, character);
+
         if (!TryGetStackLocalBounds(out Rect bounds))
         {
             return;
@@ -66,6 +72,18 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
         Shift(character, worldShift);
         Shift(affinityGem, worldShift);
         Shift(healthBar, worldShift);
+    }
+
+    private void KeepAbove(RectTransform upper, RectTransform lower)
+    {
+        if (!IsVisible(upper) || !IsVisible(lower)) return;
+        upper.GetWorldCorners(worldCorners);
+        float upperBottom = panel.InverseTransformPoint(worldCorners[0]).y;
+        lower.GetWorldCorners(worldCorners);
+        float lowerTop = panel.InverseTransformPoint(worldCorners[1]).y;
+        float clearance = lowerTop + StackGap - upperBottom;
+        if (Mathf.Abs(clearance) > Epsilon)
+            Shift(upper, panel.TransformVector(Vector3.up * Mathf.Ceil(clearance)));
     }
 
     /// <summary>
@@ -210,7 +228,16 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
                 out Graphic graphic
             ))
         {
-            return graphic.enabled;
+            if (graphic.enabled) return true;
+
+            // Modular health bars disable the legacy root Image but render
+            // through children. Their container still belongs in the stack.
+            for (int index = 0; index < rect.childCount; index++)
+            {
+                if (IsVisible(rect.GetChild(index) as RectTransform)) return true;
+            }
+
+            return false;
         }
 
         return true;

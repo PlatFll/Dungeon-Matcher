@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Dungeon Matcher — Combat Action Review</title>
+<style>body{margin:32px;background:#191622;color:#f4eddc;font:16px system-ui}h1{font-size:25px}p{color:#c7bdd1}button,select{font:inherit;background:#393044;color:inherit;border:1px solid #81718e;padding:8px 14px;border-radius:5px;margin-right:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(310px,1fr));gap:20px}.card{padding:18px;border:1px solid #52465e;background:#262132}canvas{display:block;image-rendering:pixelated;margin:0 auto}.stage{height:210px;display:flex;align-items:end;justify-content:center;border-bottom:1px solid #766287;background:repeating-conic-gradient(#292434 0% 25%,#2c2738 0% 50%) 0 0/32px 32px}.native{height:74px;display:flex;align-items:end;border-bottom:1px solid #766287}small{color:#cbbfd3}.status{height:28px;color:#f4d587}a{color:#f4d587}h2{font-size:19px}</style>
+<h1>Dungeon Matcher · Combat actions</h1><p>Grounded poses, crisp transitions, one visible impact. Native pixels are shown below each enlarged animation.</p>
+<p><button id="replay">Play actions together</button><button id="pause">Pause</button><label>Speed <select id="speed"><option value="1">1× · Game timing</option><option value="0.25">¼× · Inspect motion</option></select></label></p>
+<div class="grid" id="grid"></div>
+<script>
+const names=['Farmer_AutoAttack','PanVillager_AutoAttack','Rattlebones_Ability','Bardley_Ability'];
+let entries=[],start=performance.now(),paused=false,pausedAt=0;
+async function setup(){for(const name of names){const character=name.split('_')[0],attack=name.endsWith('AutoAttack'),w=attack?96:64;
+const [data,idle]=await Promise.all([fetch(name+'.json').then(r=>r.json()),fetch('../CombatIdles/'+character+'_Idle.json').then(r=>r.json())]);
+const art=new Image(),idleArt=new Image();art.src=name+'.png';idleArt.src='../CombatIdles/'+character+'_Idle.png';await Promise.all([art.decode(),idleArt.decode()]);
+const card=document.createElement('section');card.className='card';card.innerHTML=`<h2>${character} · ${attack?'Auto-attack':'Ability'}</h2><p>${data.frames.length} frames · ${data.frames.reduce((a,b)=>a+b.duration,0)} ms ${attack?'· Hit on frame 5':''}</p><div class="stage"><canvas width="${w}" height="64" style="width:${w*3}px;height:192px"></canvas></div><div class="status"></div><div class="native"><canvas width="${w}" height="64"></canvas></div><p><a href="${name}.aseprite">LibreSprite</a> · <a href="${name}.png">Sheet</a> · <a href="${name}.gif">GIF</a></p>`;grid.append(card);
+entries.push({name,attack,w,data,idle,art,idleArt,canvases:[...card.querySelectorAll('canvas')],status:card.querySelector('.status')});}start=performance.now();requestAnimationFrame(draw);}
+function frameAt(frames,t){let sum=0;for(let i=0;i<frames.length;i++){sum+=frames[i].duration;if(t<sum)return i;}return frames.length-1;}
+function draw(now){let t=((paused?pausedAt:now)-start)*Number(speed.value)%3000;for(const e of entries){let active=t>=1170&&t<1170+e.data.frames.reduce((a,b)=>a+b.duration,0),elapsed=active?t-1170:t,frames=active?e.data.frames:e.idle.frames;let f=frameAt(frames,active?elapsed:elapsed%1170),sheet=active?e.art:e.idleArt,sw=active?e.w:64;for(const c of e.canvases){const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,c.width,64);ctx.drawImage(sheet,f*sw,0,sw,64,(e.w-sw)/2,0,sw,64);}e.status.textContent=active?`Frame ${f+1} · ${frames[f].duration} ms${e.attack&&f===4?' · IMPACT':''}`:'Idle · feet fixed to ground';}requestAnimationFrame(draw);}
+replay.onclick=()=>{start=performance.now()-1170/Number(speed.value);paused=false;pause.textContent='Pause';};
+pause.onclick=()=>{if(!paused){pausedAt=performance.now();paused=true;pause.textContent='Resume';}else{start+=performance.now()-pausedAt;paused=false;pause.textContent='Pause';}};
+speed.onchange=()=>{start=performance.now();paused=false;pause.textContent='Pause';};setup();
+</script></html>

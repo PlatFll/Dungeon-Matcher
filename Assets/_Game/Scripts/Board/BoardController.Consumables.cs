@@ -48,7 +48,7 @@ public partial class BoardController
         {
             var expanded = BuildBombExpandedClearSet(targets, true, out var crystals);
             ReportBombClearsToCombat(null, expanded, 0, BoardClearSource.Bomb);
-            yield return ClearMatches(expanded, null, activateSpecials: true);
+            yield return ClearMatchesWithBurstTargets(expanded, null, activateSpecials: true, genericBurstTargets: targets);
             yield return ResolveBombTriggeredCrystalRequests(crystals);
             yield return CollapseAndRefillBoard();
             var matches = FindAllMatches();
