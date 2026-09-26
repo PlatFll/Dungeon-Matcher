@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.8
+**Version:** 1.9
 **Compiled:** 2026-09-19
-**Updated for accepted guard style across the enemy idle family:** 2026-09-22
+**Updated for background-only dungeon refinement:** 2026-09-22
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -586,6 +586,42 @@ Historical correction requirements, 2026-09-22 (motion treatment superseded abov
 - Preserve before/after files for review. This correction remains a working
   source-art candidate; the user's visual approval is not implied by test results.
 
+## 11E. Background-only dungeon refinement — 2026-09-22
+
+ArtSource/Backgrounds/ is the current reviewable battleground/background source.
+The supplied top-scene and general-background mockups are the primary composition
+references. Their characters, gems, labels, frames and buttons are not source art
+to copy. Rebuild useful environmental motifs at native scale in LibreSprite.
+
+Use cool charcoal/violet masonry, recessed iron, muted plum cloth, restrained
+wood/bone and small warm fire accents. Keep connected top-left stone planes and
+subtle wear; avoid bright texture on every brick. Warm lighting is a local palette
+shift on stone clusters, never a blurred halo. The exact generated palette for
+each file is recorded in Backgrounds/Validation/AssetManifest.json. This does not
+change the approved character, gem or UI palettes.
+
+The top scene is 512x384: a 512x256 dressed wall, 64-pixel floor strip and 64-pixel
+foundation. Four 64x64 wall/floor variants plus separate gate, shrine, banners,
+torch, crate, candle, skull and chain modules remain editable. Bake a selected
+composition into 64-pixel Unity tile cells without scaling those pixels.
+
+Keep the fighter floor readable and the center available for silhouettes. Place
+small focal accents in the lower visible wall band: the existing short-phone HUD
+obscures upper courses. Tall views may reveal more quiet wall above. Architectural
+crops behind the HUD are intentional; do not move UI or actors to expose props.
+Props must have coherent overlaps and ground contacts. Keep flames clear of crates.
+
+The general background is a four-shade 128x128 dark violet masonry repeat. It fills
+the outer gutters and existing panel backgrounds, with no new bright focal points
+behind gems or controls. Preserve frame art, native pixel scale, existing masks,
+sorting and the shared actor floor. Point filtering, FullRect sprites, 64 PPU,
+no compression/mipmaps, binary source transparency and exact PNG exports apply.
+
+Use the background-only importer, not the importer for all presentation assets.
+Review the real Game scene at 1080x1920 and 1080x2400. Inspect crop, prop overlap,
+tile joins, dark gutters and readable silhouettes; numerical layout checks alone
+cannot approve the art. Evidence is in Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md.
+
 ## 12. Rejected approaches and lessons that must survive
 
 - Calling the Pan Villager a shield-bearing guard changed the brief's identity. Use the real prop and the user's character terminology.
@@ -665,5 +701,12 @@ Documents the seventeen supplied remaining-cast recolors and nine-frame idle sou
 their reused material ramps, protected Rattlebones motion reference, rigid-prop
 contour checks and fixed-ground exports. No historical reference palette, earlier
 character, gameplay definition or Unity assignment is changed by this source pass.
+
+### v1.9 change record — 2026-09-22
+
+Adds the background-only native module library, composed battleground, quieter
+masonry surround, scoped Unity import and actual-screen review. Preserves all
+character, animation, gem, frame, menu, consumable, VFX and audio assets. The
+reference board and approved character palettes remain unchanged.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.
