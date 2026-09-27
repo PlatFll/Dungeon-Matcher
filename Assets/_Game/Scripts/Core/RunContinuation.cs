@@ -69,6 +69,7 @@ public sealed class RunContinuation : MonoBehaviour
         session.CaptureContinuation(saved);
         session.Waves.GetComponent<RunUpgradeCoordinator>()?.CaptureContinuation(saved);
         var decree=session.Player.GetComponent<RoyalDecreeRuntime>();
+        saved.boardMemory=session.Player.GetComponent<ChronoShutterRuntime>()?.CaptureContinuation();
         if(decree!=null) { saved.decreeRemaining=decree.RemainingDuration; saved.decreeTarget=session.Waves.ContinuationSlot(decree.CurrentTarget); }
         return saved;
     }
@@ -163,6 +164,7 @@ public sealed class RunContinuation : MonoBehaviour
             session.RestoreContinuation(saved);
             session.Player.GetComponent<RoyalDecreeRuntime>()?.RestoreContinuation(saved.decreeRemaining,
                 session.Waves.ContinuationEnemy(saved.decreeTarget),session.Player.ActiveAbility);
+            session.Player.GetComponent<ChronoShutterRuntime>()?.RestoreContinuation(saved.boardMemory);
             var coordinator=session.Waves.GetComponent<RunUpgradeCoordinator>();
             coordinator?.RestoreContinuation(saved);
             account.BeginContinuationReplay(saved);

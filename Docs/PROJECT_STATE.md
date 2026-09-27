@@ -21,7 +21,7 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-09-27
-- **Current milestone:** Per-character level reset and shared mastery unlocks at 3/5/7; directional bombs available from level 1
+- **Current milestone:** Gideon Glass / ChronoShutter on `codex/gideon-glass`, following the user's definitive second design. Art/animation, eight targeted gameplay/card tests and integrated review at two portrait sizes passed. Full discovery has the same 49 direct-Edit-Mode fixture failures as unchanged main; the supported 108-case Play Mode lifecycle wrapper passes. See [Gideon validation](Validation/GIDEON_GLASS.md). Main remains at the release checkpoint below; merging requires explicit user approval.
 - **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
 - **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
 - **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
@@ -117,7 +117,7 @@ Current visual direction:
 - short, snappy animation cycles instead of highly fluid animation for its own sake;
 - gameplay readability takes priority over decorative noise.
 
-The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones** and the green slime bard **Bardley**. Their silhouettes and personalities should remain distinct.
+The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones**, the green slime bard **Bardley**, and brass photographer automaton **Gideon Glass**. Gideon's selected reference and native source are in `ArtSource/GideonGlass/`; the earlier simplified redraw was rejected and is superseded. His 64×64, 16-color right-facing design preserves the large hat/feather, blue lens eye, split coat and thin cane. His nine-frame idle uses 130 ms exposures; cast/hold/recovery use dedicated clips. Their silhouettes and personalities should remain distinct.
 
 ## Combat-animation art checkpoint
 
@@ -301,6 +301,15 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 - Cracked Gems targets ordinary gems first, cracks them, then resolves 3×3 explosions and established special/crystal interactions.
 - Current Balance v1 cracked-center base damage: **20** before permanent/run modifiers.
 
+### Gideon Glass
+
+- Brass automaton photographer; his camera is his eye.
+- Initial Level 1 HP **90**, gem damage **10.5**, shield cap **40**, Sapphire affinity.
+- **ChronoShutter**, cost **100**: photograph board/refill state, play five accepted manual moves, finish resolution, then restore the photograph while retaining combat gains.
+- Enemy/combat time, damage, healing, shield, energy, rewards and deaths persist. Normal matching continues to charge energy. Encounter completion and death cancel the photograph; Continue preserves active phases and the remaining move count.
+- **Long Exposure** adds one move. **Developing Fluid** grants 12 shield once per successful rewind. Both are one-stack Epic character cards. Starting numbers need human balance feedback.
+- Detailed rules are in `GAME_DESIGN.md`; board ownership and save compatibility are in `ARCHITECTURE.md`.
+
 ## Permanent levels
 
 - Each character levels **independently**.
@@ -394,7 +403,7 @@ Cards are intended to be the **main reason two runs with the same character and 
 
 Current implementation:
 
-- 27 card definitions retained in the catalog.
+- 29 card definitions: the previous 27 plus Gideon's Long Exposure and Developing Fluid.
 - Draft offers up to three distinct eligible cards.
 - Draft RNG is separate from encounter RNG.
 - Cards reset with the run.

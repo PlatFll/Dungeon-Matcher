@@ -1068,6 +1068,8 @@ public sealed partial class WaveController :
 
         boardController.ValidPlayerMoveCompleted +=
             HandleValidPlayerMoveCompleted;
+        boardController.BoardStateRestored -= HandleBoardStateRestored;
+        boardController.BoardStateRestored += HandleBoardStateRestored;
     }
 
     private void UnsubscribeFromBoard()
@@ -1079,7 +1081,11 @@ public sealed partial class WaveController :
 
         boardController.ValidPlayerMoveCompleted -=
             HandleValidPlayerMoveCompleted;
+        boardController.BoardStateRestored -= HandleBoardStateRestored;
     }
+
+    private void HandleBoardStateRestored() =>
+        RoyalBannerAuraRuntime.SynchronizeBoardState(boardController, activeEnemies);
 
     private bool ValidateReferences()
     {

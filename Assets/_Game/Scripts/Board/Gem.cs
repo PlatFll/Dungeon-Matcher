@@ -27,6 +27,16 @@ public class Gem :
             );
 
     public int Column { get; private set; }
+    public int BoardIdentity { get; internal set; }
+
+    // Replacing a saved state is not a physical clear. In particular it must
+    // not release adjacent bolts or enqueue Royal Standard gravity.
+    internal void RetireForStateRestoration()
+    {
+        board = null;
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
 
     public int Row { get; private set; }
 

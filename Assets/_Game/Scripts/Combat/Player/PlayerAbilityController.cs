@@ -15,6 +15,8 @@ public sealed class PlayerAbilityController :
     private PlayerAbilityEnergy playerAbilityEnergy;
 
     private IPlayerAbilityRuntime activeRuntime;
+    public IPlayerAbilityPresentation AbilityPresentation =>
+        IsRuntimeAlive(activeRuntime) ? activeRuntime as IPlayerAbilityPresentation : null;
 
     public event Action StateChanged;
     // One presentation cue per accepted activation, after energy is spent.

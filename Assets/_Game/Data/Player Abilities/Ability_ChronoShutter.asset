@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5c308d8b05d6f4fb5a01109b75ccec, type: 3}
+  m_Name: Ability_ChronoShutter
+  m_EditorClassIdentifier: Assembly-CSharp::ChronoShutterAbilityDefinition
+  abilityId: chronoshutter
+  displayName: ChronoShutter
+  description: Photograph the board. After five valid manual moves, restore its gems
+    and refill future. Keep all damage, healing, shield and rewards earned along
+    the way.
+  icon: {fileID: 21300000, guid: 149cda7507f823c4b85b54daa8e752f9, type: 3}
+  buttonLabel: SHUTTER
+  meterDisplay: 1
+  energyCost: 100
+  manualMoves: 5

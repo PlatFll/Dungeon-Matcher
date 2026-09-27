@@ -27,6 +27,7 @@ public sealed class RunCombatSnapshot
     public float potionCooldown, bombCooldown;
     public float decreeRemaining;
     public int decreeTarget = -1;
+    public BoardMemoryAbilitySnapshot boardMemory;
     public int completedWaves, milestones, potionCharges, bombCharges;
     public bool kingCleared, refinementUsed;
     public int draftWave;
@@ -40,13 +41,14 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class BoardCombatSnapshot
 {
-    public int width, height, moves, nextBanner;
+    public int width, height, moves, nextBanner, nextGem;
+    public uint refillRandom;
     public List<BoardCellSnapshot> cells = new List<BoardCellSnapshot>();
     public List<BoardWarningSnapshot> warnings = new List<BoardWarningSnapshot>();
 }
 [Serializable] public sealed class BoardCellSnapshot
 {
-    public int x,y;
+    public int x,y,identity;
     public bool hasGem;
     public GemType type;
     public GemSpecialType special;

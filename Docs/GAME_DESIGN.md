@@ -165,6 +165,26 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 - When an enemy had shield at the start of a damage instance, that entire instance receives the same 25% reduction and ceiling-rounding semantics as the player's shield, even if the hit breaks the shield.
 - Reduced damage consumes enemy shield first and any remainder overflows into HP. A later separate hit is unreduced when no shield remains.
 
+### Gideon Glass — ChronoShutter
+
+Gideon is a theatrical brass automaton whose blue camera lens is his eye. His right-facing 64×64 design follows the user's selected hat, feather, split coat and cane reference, with no torso camera. Level-one starting values are 90 HP, 10.5 gem damage, 40 shield capacity and Sapphire affinity. These are initial balance values.
+
+- ChronoShutter costs 100 energy. Activation requires a settled board and enemy-action queue in a live encounter. Energy is spent only after acceptance; recasting while active is rejected.
+- Activation photographs the grid and its refill generator state. After the 850 ms cast, Gideon keeps a dedicated hold pose with a small countdown above his head. Five accepted valid manual swaps count down to zero. Invalid swaps, cascades, automatic special chains and consumables do not count.
+- The fifth move finishes its complete cascade, refill and queued enemy board effects before the photograph returns. A 300 ms board pulse and 370 ms recovery lead back to idle. Presentation callbacks never own the restore.
+- Restore replaces gem colors, positions, special types, pins/freezes, mines, barricades (including durability), standards and board refill RNG. Restoring state does not clear gems, resolve matches or emit clear rewards.
+- Damage, healing, shield, energy, statuses, enemy deaths, rewards, elapsed combat time and completed enemy-turn counters persist. Normal matching still earns energy during the photograph. Enemy warnings retain their current deadlines and surviving logical gem targets; consumed warnings do not return.
+- Dead owners cannot regain their pins/freezes/mines. Reopened mine cells receive safe ordinary gems from the restored board stream; barricades and standards retain their existing orphan rules. Ending the encounter or run, player defeat, cancellation and scene unload discard the photograph.
+- Repeating the same swaps reproduces the same refill/cascade future when other board interference is unchanged. Unrelated enemy, encounter, draft and presentation randomness is not rewound. Owner-death cleanup or different intervening board effects can legitimately change that future.
+- Pause freezes the phase timer. Continue preserves the photograph, move count, owner references, presentation phase and timer; interrupted fifth-move resolution replays through the existing continuation journal exactly once.
+
+Two Gideon-only, one-stack Epic cards use the Ability theme:
+
+| Card | Effect |
+| --- | --- |
+| Long Exposure | One extra accepted manual move before rewind: six total. |
+| Developing Fluid | Grant 12 shield once on a successful rewind, with normal shield-grant modifiers and capacity. Cancellation and resumed recovery grant nothing. |
+
 ### Bardley
 
 #### Identity
@@ -201,7 +221,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 
 #### Color Crystal interaction
 
-- When a Cracked explosion triggers a Color Crystal, eligible ordinary gems of the triggering color become Cracked as part of that same ability resolution; existing bombs activate with their own effects rather than being overwritten. If the all-special targeting fallback selects a crystal directly, it uses the existing protected remote-crystal sequence with a Unity-RNG-selected available color (any valid color if only crystals remain).
+- When a Cracked explosion triggers a Color Crystal, eligible ordinary gems of the triggering color become Cracked as part of that same ability resolution; existing bombs activate with their own effects rather than being overwritten. If the all-special targeting fallback selects a crystal directly, it uses the existing protected remote-crystal sequence with a board-RNG-selected available color (any valid color if only crystals remain).
 - Existing ordinary bomb-to-Color-Crystal behavior remains unchanged.
 
 #### Energy and affinity

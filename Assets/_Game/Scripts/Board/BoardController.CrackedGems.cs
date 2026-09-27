@@ -379,7 +379,7 @@ public partial class BoardController
         return selected;
     }
 
-    private static void TakeRandomUniqueGems(
+    private void TakeRandomUniqueGems(
         List<Gem> source,
         List<Gem> destination,
         int maximumTotalCount)
@@ -389,7 +389,7 @@ public partial class BoardController
                    maximumTotalCount)
         {
             int selectedIndex =
-                GameplayRandom.Range(
+                BoardRandomRange(
                     0,
                     source.Count
                 );
@@ -495,7 +495,7 @@ public partial class BoardController
                             !colors.Contains(candidate.Type)) colors.Add(candidate.Type);
                     }
                 GemType color = colors.Count > 0
-                    ? colors[GameplayRandom.Range(0, colors.Count)]
+                    ? colors[BoardRandomRange(0, colors.Count)]
                     : GetRandomGemType();
                 triggeredCrystalRequests.Add(new BombTriggeredCrystalRequest(seed, color));
                 continue;

@@ -22,16 +22,18 @@ The approved September 14 brief supersedes older every-fifth-wave rewards, solo 
 
 No time limit, death wave, damage cap or adaptive enemy scaling enforces these targets. Bardley's committed ability cost stays **1**; normal-cost measurements must explicitly use a temporary 80-energy configuration and report that distinction.
 
-| Permanent progression | Bardley | Rattlebones |
-| --- | ---: | ---: |
-| Level 1 HP | 80 | 100 |
-| HP per level | 8 | 10 |
-| Level 1 gem damage | 10 | 11 |
-| Gem damage per level | 0.65 | 0.55 |
-| Ability damage increase per level | 7% of base | 20% of base |
-| Shield cap at level 1 | 40 | 45 |
-| Shield cap per level | 3 | 3 |
-| Level cap | 20 | 20 |
+| Permanent progression | Bardley | Rattlebones | Gideon Glass |
+| --- | ---: | ---: | ---: |
+| Level 1 HP | 80 | 100 | 90 |
+| HP per level | 8 | 10 | 9 |
+| Level 1 gem damage | 10 | 11 | 10.5 |
+| Gem damage per level | 0.65 | 0.55 | 0.6 |
+| Ability damage increase per level | 7% of base | 20% of base | No direct ability damage |
+| Shield cap at level 1 | 40 | 45 | 40 |
+| Shield cap per level | 3 | 3 | 3 |
+| Level cap | 20 | 20 | 20 |
+
+Gideon's initial tuning uses 100 energy and five accepted manual moves per ChronoShutter photograph, with normal match energy during the hold. Two one-stack Epic Ability cards extend the catalog to 29: **Long Exposure** adds one move; **Developing Fluid** grants 12 shield once per successful rewind, subject to normal grant modifiers and capacity. Both require `gideon_glass` / `chronoshutter`. These are starting values, not measured human pacing conclusions; the ability preserves first-timeline combat gains while restoring only board state and its refill future.
 
 Upgrade from level L costs `25 + 15*(L-1) + 5*(L-1)^2` shared gold. No XP. Stats are recomputed from immutable definitions, a run-start permanent level snapshot, then temporary card modifiers. No multiplication of already modified values.
 
@@ -104,7 +106,7 @@ Normal pools overlap; a declining weight tail retains older enemies. Milestone w
 
 ## Complete card review
 
-All 27 catalog entries are retained. Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from Bardley's 1-energy development configuration. Special-dependent cards require both an account unlock and a compatible equipped mastery shape; directional bombs are always available and need no mastery slot. Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
+All 27 earlier catalog entries are retained, with two Gideon entries added (29 total). Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from isolated 1-energy testing configurations. Special-dependent cards require both an account unlock and a compatible equipped mastery shape; directional bombs are always available and need no mastery slot. Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
 
 | Card | Effect per stack / mechanic | Cap | Rarity | Asset weight | Additional eligibility |
 | --- | --- | ---: | --- | ---: | --- |

@@ -18,6 +18,8 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
     private PlayerActor playerActor;
     private PlayerActor subscribedPlayer;
     private PlayerAbilityController subscribedAbility;
+    private Text moveCounter;
+    private string abilityAnimation;
     private static readonly int AbilityTrigger = Animator.StringToHash("Ability");
 
     [RuntimeInitializeOnLoadMethod(
@@ -124,14 +126,21 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
                 HandlePlayerInitialized;
             subscribedAbility = subscribedPlayer.GetComponent<PlayerAbilityController>();
             if (subscribedAbility != null)
+            {
                 subscribedAbility.AbilityActivated += HandleAbilityActivated;
+                subscribedAbility.StateChanged += RefreshAbilityPresentation;
+            }
         }
     }
 
     private void UnsubscribeFromPlayer()
     {
         if (subscribedAbility != null)
+        {
             subscribedAbility.AbilityActivated -= HandleAbilityActivated;
+            subscribedAbility.StateChanged -= RefreshAbilityPresentation;
+        }
+        if (moveCounter != null) moveCounter.gameObject.SetActive(false);
         subscribedAbility = null;
         if (subscribedPlayer != null)
         {
@@ -144,6 +153,7 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
 
     private void HandleAbilityActivated()
     {
+        if (subscribedAbility?.AbilityPresentation != null) { RefreshAbilityPresentation(); return; }
         if (characterAnimator == null || !characterAnimator.isActiveAndEnabled ||
             characterAnimator.runtimeAnimatorController == null) return;
         foreach (var parameter in characterAnimator.parameters)
@@ -209,5 +219,32 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
         characterAnimator.enabled = true;
         characterAnimator.Rebind();
         characterAnimator.Update(0f);
+        abilityAnimation = null;
+        RefreshAbilityPresentation();
+    }
+
+    private void RefreshAbilityPresentation()
+    {
+        var presentation = subscribedAbility?.AbilityPresentation;
+        bool show = presentation != null && presentation.ShowMoveCounter;
+        if (show && moveCounter == null)
+        {
+            moveCounter = GameUi.Label("AbilityMoveCounter", transform, "", new Vector2(20,18), new Vector2(40,12), 16);
+            moveCounter.rectTransform.anchorMin = moveCounter.rectTransform.anchorMax = new Vector2(.5f,1);
+            moveCounter.gameObject.AddComponent<Outline>().effectColor = new Color32(10,13,17,255);
+        }
+        if (moveCounter != null)
+        {
+            moveCounter.gameObject.SetActive(show);
+            if (show) moveCounter.text = presentation.RemainingMoveCount.ToString();
+        }
+        if (presentation == null || characterAnimator == null || !characterAnimator.isActiveAndEnabled ||
+            characterAnimator.runtimeAnimatorController == null) return;
+        string state = presentation.AnimationState;
+        int hash = Animator.StringToHash("Base Layer." + state);
+        if (state == abilityAnimation || !characterAnimator.HasState(0, hash)) return;
+        abilityAnimation = state;
+        characterAnimator.Play(hash, 0, Mathf.Clamp01(presentation.AnimationNormalizedTime));
+        characterAnimator.Update(0);
     }
 }
