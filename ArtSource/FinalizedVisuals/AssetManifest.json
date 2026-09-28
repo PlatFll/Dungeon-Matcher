@@ -1,0 +1,6447 @@
+{
+  "status": "review_candidate_pending_user_screenshot_approval",
+  "branch": "codex/finalized-visual-targets",
+  "base": "651fe50266a8be6fd5a9682202c99d83b09f2153",
+  "user_approval": "PixelLab art references/specifications/prompts authorized 2026-09-28; final Unity screenshots still require visual approval.",
+  "starting_balance": {
+    "generations_remaining": 823,
+    "credits_usd": 0,
+    "subscription": "Tier 1 active",
+    "reset": "2026-09-29"
+  },
+  "generations": [
+    {
+      "asset": "Environment composition candidate",
+      "tool": "create_image_pro",
+      "job_id": "f45d0ede-b293-41d8-a252-d5cba77eefbb",
+      "asset_id": "a3d2d917-6d0d-5d1e-9f97-98aff27dc179",
+      "prompt": "Native 512x384 pixel-art dungeon battle backdrop, front elevation with shallow visible floor. Recreate the supplied composition faithfully with clean deliberate one-pixel clusters at the requested native resolution, suitable behind compact 64x64 characters. EXACT horizontal bands: y0-255 dressed back wall, y256-319 broad walkable stone platform/ledge, y320-383 quiet dark repeatable foundation. Eight 64px columns. Central tall stone arch with horned skull keystone, paired square supports with small skull reliefs, recessed iron barred grille and brass locks, hanging chains; matching plum/gold banners and paired compact wall torches; heavy outer pillars near x32 and x480; crates/skull/bone at far left foot, barrel/pot/rocks far right. Rich layered stone construction as reference, keep all motifs. Quiet combat standing areas and low-contrast center behind fighters. Charcoal muted cool violet/plum masonry, near-black recesses, restrained brown wood, dull iron, tiny brass and orange fire accents. Discrete top-left plane highlights and local warm-lit stone clusters around torches. Hard pixels, limited coherent material ramps, broad connected clusters, crisp edges, no gradients/antialiasing/blur/bloom/dithering/random speckles. Opaque background. No characters, no portraits, no gems or HUD, no text, no grid overlay. This is newly authored native production candidate art; the supplied high-resolution mockup is composition guidance only.",
+      "native_size": [
+        512,
+        384
+      ],
+      "cost": 40,
+      "status": "review_candidate",
+      "corrections": [],
+      "source": "Candidates/Environment_01.png",
+      "export": null,
+      "review": "Unity production Game screenshots at 1080x1920 and 1080x2400; layout checks pass. User approval pending."
+    },
+    {
+      "asset": "Terrain tile family",
+      "tool": "create_tiles_pro",
+      "job_id": "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+      "native_size": [
+        64,
+        64
+      ],
+      "count": 16,
+      "cost": 25,
+      "status": "review_candidate",
+      "prompt": "Create a coherent reusable dungeon TILE LIBRARY. Every tile is a full opaque native 64x64 SQUARE rectangle, no perspective diamond or tile slab, no spacing/outline frame. Front-facing flat wall textures and shallow side-view platform strips as specified below. All use hard one-pixel edges, large connected color clusters, restrained top-left light, NO antialias, gradients, dithering, random speckles. Palette: near-black #090618 #161227 #1f1934; cool violet stone #26203f #312c4d #42395c #544766, sparse #6f5a77; warm stone #504153 #5f4a52 #6b5056. Keep low contrast behind bright 64x64 characters. 1). cool violet brick back-wall variant A, staggered large rectangular stones, mortar courses every16px, seamlessly repeatable horizontally and vertically. 2). matching cool wall B, same edges, subtle broad wear. 3). matching cool wall C, same edges, one quiet crack. 4). matching cool wall D, same edges, slightly irregular broad stone planes. 5). platform floor A, TOP48 pixels walkable plane of shallow receding violet flagstones, BOTTOM16 pixels vertical ledge face, horizontal neighbor edges align, no vertical repeating intended. 6). floor B same exact plane/ledge boundaries with different restrained slab wear. 7). floor C same boundaries. 8). floor D same boundaries. 9). very dark quiet foundation A, chunky rectangular masonry seamless both axes, no bright details. 10). foundation B same edges. 11). foundation C same edges. 12). warm-lit wall A, same geometry/edges as cool wall, local muted brown stone-plane accents only, no flame or halo. 13). warm-lit wall B same. 14). cool wall A alternate. 15). floor alternate same48/16 boundary. 16). quiet foundation alternate. No props, torches, banners, arch, text, characters, or interface. Transparent pixels not permitted in these opaque terrain tiles.",
+      "source": "Candidates/Tiles_01",
+      "corrections": [
+        "LibreSprite FinishTiles.js: shared edge strips, quieter wall palette, exact floor/ledge boundary at y48."
+      ],
+      "exports": "Environment/Tiles",
+      "review": "Unity production scene viewed at 1080x1920 and 1080x2400. Finished tiles pass all 61 intended neighbor-pair edge checks."
+    },
+    {
+      "asset": "Gate architecture",
+      "tool": "create_1_direction_object",
+      "job_id": "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+      "native_size": [
+        128,
+        128
+      ],
+      "count": 4,
+      "cost": 20,
+      "status": "review_candidate",
+      "prompt": {
+        "description": "Native pixel-art dungeon architecture modules, isolated on transparent background. Match the reference's low-contrast charcoal violet stone and horned-skull dungeon mood. Front elevation, perfectly straight perspective, heavy block construction, hard single-pixel clusters, dark outlines, restrained top-left planes, no gradients/antialias/dithering/noise. Keep masonry quieter than 64px characters. Each object fits native128x128 with transparent negative space, no floor/background/text. Modules need aligned flat join faces, for a 512x384 modular scene.",
+        "item_descriptions": [
+          "Upper stone arch/crown, 128px wide, occupying upper100px; curved voussoir blocks, large horned skull keystone centered above arch. Open transparent archway void, no gate bars or lower supports. Straight flat bottom ends connect to two32px supports.",
+          "Recessed iron barred gate,128px square, front elevation, six thick vertical iron bars with muted highlights, two horizontal braces, two small brass padlocks, near-black recess behind bars. Simple rectangular edge connects under crown.",
+          "Left arch support pier,32px wide by128px tall centered in128px square transparent canvas. Stacked cool violet stone blocks, ornamental small skull relief centered near top, squared plinth bottom. No adjacent wall or arch.",
+          "Outer pillar assembled,40px wide128px tall centered, square layered capital, block shaft, broad plinth base. Cool muted violet, hard chunky stepped silhouette. No wall behind."
+        ]
+      },
+      "source": "Candidates/ObjectSelection.json",
+      "export": "Environment/Props/",
+      "corrections": [
+        "edit_image_pixen d572223b-70b7-4e59-88f7-07722cdc8406 re-authored crown at192x128 (1generation); workbench45c9bad4-de02-4608-be11-d7f07d1ccf8b removed isolated unwanted inner gate in observed region[52,72,139,127]; LibreSprite palette and modular assembly."
+      ]
+    },
+    {
+      "asset": "Furniture and modular dressing",
+      "tool": "create_1_direction_object",
+      "job_id": "7a0e4e20-2c1f-4263-b51e-71ae2abc037a",
+      "native_size": [
+        64,
+        64
+      ],
+      "count": 16,
+      "cost": 20,
+      "status": "review_candidate",
+      "prompt": {
+        "description": "Reusable props for a whimsical dark dungeon. Every object isolated on transparent native64x64 canvas, front facing sidescroller view, ALL contours inside canvas, hard chunky one-pixel clusters. Match reference's 64px character scale and low-contrast muted material palette: nearblack090618, charcoal violet161227 26203f 312c4d 42395c 544766; wood563739 744435; bone89756b; brass896348. Tiny restrained flame accents only. No background, floor, text, characters, gradients, soft shadow, dithering or speckles. Consistent top-left light.",
+        "item_descriptions": [
+          "Straight hanging iron and brass chain,8px wide52px long, vertical alternating chunky links. Transparent surround.",
+          "Plum fabric dungeon banner with dullgold edging and small golden skull emblem,28px wide52px high, bracket pole across top, two pointed tails.",
+          "Wall mounted darkiron torch/sconce,24px wide40px high, compact stepped amber flame, tiny cream core, no glow halo.",
+          "One wooden crate,32px square with diagonal plank brace, muted brown, heavy connected edges.",
+          "Stack of three wooden crates,52px wide48px high, two bottom and one upper, diagonal plank braces.",
+          "Wooden barrel with darkiron hoops,32px wide40px high, restrained brown staves, thin top rim.",
+          "Squat earthenware pot,28px wide28px high, cool muted violet, broken rim, black opening, no handle.",
+          "Small skull and crossed bone cluster,32px wide20px high, old dull ivory brown, whimsical skull, no glow.",
+          "Small quiet rock cluster, three cool violet stones,32px wide16px tall, distinct angular silhouettes.",
+          "Pillar base or plinth,48px wide24px high, three stepped darkviolet stone courses, flat top join.",
+          "Pillar shaft segment,32px wide64px tall extending from top to bottom edge, stacked square darkviolet stone blocks, flat top and bottom join.",
+          "Pillar capital,48px wide24px high, square tiered darkviolet stone crown, flat bottom join.",
+          "Brass iron dungeon padlock,12px wide18px tall, readable squared bow and keyhole.",
+          "Small horned skull stone relief,32px wide24px high, cool muted violet sculpted stone face, no color brighter than544766.",
+          "Small pointed arch stone finial,28px wide24px high, violet stone, restrained top-left bevel.",
+          "Pile of three old long bones,32px wide12px high, dull ivory brown, quiet small decoration."
+        ]
+      },
+      "source": "Candidates/ObjectSelection.json",
+      "export": "Environment/Props/",
+      "corrections": [
+        "edit_image_pixen effd3e19-7d63-48b1-b26a-05f9954c1a31 filled incorrect transparent crate interior (1generation); rejected mismatched perspective pillar pieces9-11; native pillar base/shaft/capital extracted from128px architecture object instead."
+      ]
+    },
+    {
+      "asset": "UI base button",
+      "tool": "create_ui_asset",
+      "job_id": "64138ddc-31b7-4a2c-b670-bfb951aa5bc0",
+      "native_size": [
+        192,
+        192
+      ],
+      "export_size": [
+        176,
+        64
+      ],
+      "cost": 20,
+      "prompt": "ONE isolated blank horizontal fantasy button in the center of this transparent native192x192 canvas. Button artwork192x48 maximum, centered vertically at y72..119; keep all remaining canvas transparent. Match supplied purple jeweled Dungeon Matcher UI target: rich thick stepped purple stone/metal frame, 1px nearblack outer edge, bevel planes from upper-left, inset charcoal-plum blank face, layered lavender/violet rim, two small sparse bright amethyst diamond corner sockets at left/right edges. Clearly pixel art for64px cast: crisp individual pixels, connected clusters, limited palette. Corners stepped not rounded smooth. Quiet uniform blank center reserved for runtime text. NO letters, symbols in center, words, labels, portraits, shadows outside frame, gradients, antialias, blur or noise. This is one native production component, not an assembled UI screenshot. Keep frame construction readable and ornate, do not simplify to flat rectangle.",
+      "status": "review_candidate",
+      "corrections": [
+        "PixelLab workbench ddf2199f-5d9f-42be-9848-d7e8691d1c64 removed unrequested center diamond with observed face color. LibreSprite native crop and established purple palette finishing."
+      ],
+      "source": "UI/ButtonLargeNormal.aseprite",
+      "export": "UI/ButtonLargeNormal.png",
+      "review": "Final control family reviewed in the real Game/MainMenu screens at both portrait sizes; button states verified. User approval pending."
+    },
+    {
+      "name": "PlayerBadge",
+      "tool": "create_image_pixen",
+      "job_id": "15ac3028-8c12-4870-890e-4fcde186cd46",
+      "native_size": [
+        24,
+        24
+      ],
+      "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Universal ruby-red HEART in ornate purple and dullgold socket. Exactly one clean symmetric red heart shape, small pale upper-left glint. NO skull, face, portrait, crown, initials or character symbols.",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        3,
+        4,
+        21,
+        21
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/PlayerBadge.png"
+    },
+    {
+      "name": "NormalBadge",
+      "tool": "create_image_pixen",
+      "job_id": "e2b50f8f-26d7-46aa-bbbd-daa737bafaa5",
+      "native_size": [
+        24,
+        24
+      ],
+      "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Plain pale grey skull in simple dull iron socket. Restrained least ornate rank. Skull has two dark eyes and compact jaw. No horns, no crown, no gold or purple gem.",
+      "cost": 1,
+      "status": "corrected_by_followup",
+      "bounds": [
+        2,
+        2,
+        22,
+        21
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/NormalBadge.png"
+    },
+    {
+      "name": "SpecialBadge",
+      "tool": "create_image_pixen",
+      "job_id": "1c60d426-b5e1-42d4-b58b-93a35e1ba94c",
+      "native_size": [
+        24,
+        24
+      ],
+      "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. One faceted AMETHYST DIAMOND in a purple iron socket. Strong violet accent and small pink highlight. No skull, no face, no crown.",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        6,
+        2,
+        19,
+        21
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/SpecialBadge.png"
+    },
+    {
+      "name": "MinibossBadge",
+      "tool": "create_image_pixen",
+      "job_id": "0f57b1ef-8a1d-4c26-a381-48e709c9d7fa",
+      "native_size": [
+        24,
+        24
+      ],
+      "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Heavy HORNED SKULL in dark iron socket. Two clearly visible outward horns and broad skull face, heavier silhouette than plain skull. Cool pale grey, restrained violet metal. No crown, no ruby.",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        4,
+        3,
+        20,
+        21
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/MinibossBadge.png"
+    },
+    {
+      "name": "BossBadge",
+      "tool": "create_image_pixen",
+      "job_id": "de0217a2-0918-4a51-a9ad-e741d27a1006",
+      "native_size": [
+        24,
+        24
+      ],
+      "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Prestigious crowned RUBY crest, bright red faceted jewel below a small three-point gold crown, gold frame over deep purple iron. No skull, no face, no letters.",
+      "cost": 1,
+      "status": "corrected_by_followup",
+      "bounds": [
+        2,
+        2,
+        22,
+        22
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/BossBadge.png"
+    },
+    {
+      "name": "HealthBarBase",
+      "tool": "create_image_pixen",
+      "job_id": "0dcdfe52-525a-4e19-a8f8-778651a01355",
+      "native_size": [
+        128,
+        32
+      ],
+      "prompt": "One native128x24 horizontal HEALTH BAR centered in a transparent128x32 canvas, with4px empty rows above and below. No badge, no icons or text. Rich stepped charcoal-purple frame, sparse tiny amethyst sockets at outer corners, layered top-left bevel in #4e3d6c #846a95, nearblack #0a0d11 outline, inner red ruby HP fill strip with hard three-tone horizontal shading, dark burgundy empty-track edge. Rectangular quiet fill area x8..119 y12..19, frame ornament outside fill. Hard pixels, clean connected clusters, no gradients, blur, antialias, shine streaks or noise. Matches ornate purple dungeon menu buttons.",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        6,
+        3,
+        122,
+        30
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/HealthBarBase.png"
+    },
+    {
+      "name": "EnergyBarBase",
+      "tool": "create_image_pixen",
+      "job_id": "94d73167-95ea-4afd-9805-54d167175248",
+      "native_size": [
+        144,
+        32
+      ],
+      "prompt": "One native144x24 horizontal ABILITY ENERGY BAR centered in a transparent144x32 canvas with4px empty rows above and below. Left end has a faceted purple amethyst diamond emblem, rightward track filled teal/turquoise, never red. Stepped purple layered frame #151423 #241f3a #4e3d6c #846a95 with tiny corner glints, nearblack outline. Quiet horizontal fill x28..135 y12..19, clean three-tone teal strip. Rich nostalgic dungeon UI, native hard connected pixels, no text, no portrait, no skull, no gradients/blur/antialias/noise.",
+      "cost": 1,
+      "status": "corrected_by_followup",
+      "bounds": [
+        56,
+        6,
+        138,
+        26
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/EnergyBarBase.png"
+    },
+    {
+      "name": "WavePlaque",
+      "tool": "create_image_pixen",
+      "job_id": "e266c51d-d05e-4516-b88e-84b1b8a302a1",
+      "native_size": [
+        128,
+        32
+      ],
+      "prompt": "One blank ornate horizontal WAVE PLAQUE, native128x32 transparent canvas. Chunky stepped charcoal purple stone-metal frame, layered bevel #151423 #241f3a #4e3d6c #846a95, dark #0a0d11 outline, tiny amethyst jewel sockets at left and right ends. Quiet uniform dark violet blank inner field wide enough for runtime wave text. Entire silhouette fits with1px margin. Hard connected pixels, restrained upper-left highlight, no lettering, no icons in center, no blur/gradient/antialias/noise.",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        2,
+        1,
+        126,
+        31
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/WavePlaque.png"
+    },
+    {
+      "name": "ButtonSmallNormal",
+      "tool": "edit_image_pixen",
+      "prompt": "Re-author as a native96x40 compact blank button. Match purple material, stepped corners and tiny amethyst corner jewels. Use thin6px frame so the uniform dark center has ample space for runtime text. Entire silhouette inside1px margin. Hard pixels, no text, no central gem/icon, no blur or gradient. Consistent top-left bevel; modest connected highlights.",
+      "native_size": [
+        96,
+        40
+      ],
+      "job_id": "ef09a895-e1bc-40fc-bc89-4effdf4f5e57",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        1,
+        1,
+        95,
+        39
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/ButtonSmallNormal.png"
+    },
+    {
+      "name": "SettingsNormal",
+      "tool": "edit_image_pixen",
+      "prompt": "Re-author as a native48x48 square settings icon button. Match rich stepped purple corners and small amethyst sockets. Center a clear pale lavender mechanical GEAR with8teeth and round dark center hole, no lettering. Gear silhouette24px wide, sufficient padding, upper-left light, connected hard pixels, dark outline, no blur, gradients, antialias or extra ornaments.",
+      "native_size": [
+        48,
+        48
+      ],
+      "job_id": "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0",
+      "cost": 1,
+      "status": "review_candidate",
+      "bounds": [
+        1,
+        1,
+        47,
+        47
+      ],
+      "source": "ArtSource/FinalizedVisuals/Candidates/UI/SettingsNormal.png"
+    },
+    {
+      "name": "NormalBadgeFixed",
+      "tool": "edit_image_pixen",
+      "prompt": "Remove BOTH horns completely. This rank must be a PLAIN human skull in a simple dull iron socket. Rounded compact cranium, two dark eye sockets and small jaw. No protrusions above or beside the skull. Keep native24x24 transparent canvas, chunky crisp pixels, cool pale grey, dark outline. This is the least ornate enemy rank.",
+      "native_size": [
+        24,
+        24
+      ],
+      "source_job": "e2b50f8f-26d7-46aa-bbbd-daa737bafaa5",
+      "job_id": "03000673-bd79-4ce1-806e-d717b8c0b66c",
+      "cost": 1,
+      "status": "completed_review_candidate"
+    },
+    {
+      "name": "BossBadgeFixed",
+      "tool": "edit_image_pixen",
+      "prompt": "Replace the entire face-like lower crest with one LARGE bright red faceted RUBY gemstone surrounded by GOLD. Keep the gold three-point crown above. The ruby must occupy the main central12x12 area and be clearly recognizable. Remove all black eye-like sockets: this is a jewel heraldic crest, no skull, mask or face. Native24x24 transparent, darkpurple outline, hard connected pixels.",
+      "native_size": [
+        24,
+        24
+      ],
+      "source_job": "de0217a2-0918-4a51-a9ad-e741d27a1006",
+      "job_id": "109345ea-e8bf-4349-b2a9-ac7c689079b6",
+      "cost": 1,
+      "status": "completed_review_candidate"
+    },
+    {
+      "name": "EnergyBarFixed",
+      "tool": "edit_image_pixen",
+      "prompt": "Re-author this ornate health frame as an ability energy bar, native144x32. Full-width rectangle nearly edge to edge. Move all badge identity to one large purple amethyst DIAMOND on LEFT end. Inner track is TEAL turquoise only, no red. Rich stepped purple frame, thicker squared corners, dark inset track. Uniform fill color bands, no arrowhead. No text or portrait. Binary transparent surround, crisp native pixels.",
+      "native_size": [
+        144,
+        32
+      ],
+      "source_job": "0dcdfe52-525a-4e19-a8f8-778651a01355",
+      "job_id": "5a96b4de-7652-4ed7-b652-0b48d33f241d",
+      "cost": 1,
+      "status": "completed_review_candidate"
+    },
+    {
+      "name": "Logo",
+      "tool": "create_image_pro",
+      "job_id": "e31c9dab-57a6-43bf-ad4e-6254873cbbce",
+      "native_size": [
+        212,
+        88
+      ],
+      "cost": 20,
+      "prompt": "Native212x88 transparent pixel-art game logo, exact readable wording DUNGEON on the top line and MATCHER on the bottom line, ALL letters correct. Bold chunky old dungeon arcade lettering in pale gold with darker gold lower planes, deep-purple extrusion, nearblack outlines; top-left light. Between the two word lines at center: the distinctive SPLIT PINK STORY GEM from the supplied reference, TWO OPPOSED pink faceted halves facing each other across a bright narrow central diagonal seam, clearly split yet together forming one diamond. Short purple horizontal ornaments to sides of gem. Rich purple frame language, sparse tiny amethyst accents. Keep full logo inside2px safe margin. Deliberate hard native pixels and connected clusters, limited palette, no gradients/blur/antialias/noise, no other words, no characters or backdrop. Re-author at this exact native resolution; reference is guidance only.",
+      "status": "completed_review_candidate"
+    }
+  ],
+  "assets": [
+    {
+      "file": "Environment/Baked/CellAA.png",
+      "source": "Environment/Baked/CellAA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "295d7d92e5a6d2f15d3aa0c63553f04a9af42bfb14edf1f36fedfaa16e4a1d19",
+      "source_sha256": "a2ca77eae60f09693548920102f59f8a1eb53cf27666f4fb01ce12ffde854c44",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAB.png",
+      "source": "Environment/Baked/CellAB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#744435ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff"
+      ],
+      "sha256": "9f0cc3dc955237bc82aca373ea46c33531974ac986360d4427eca228dcdd8158",
+      "source_sha256": "57a21830755a8f6ff7f6035d967158588bf46ed689dc18fe68fdf23bd6a1201f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAC.png",
+      "source": "Environment/Baked/CellAC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "5b090b98826f96df005e1aa6240dc7e233d5e0805fc6815773f2c35299b3e0bf",
+      "source_sha256": "ba99c782359eb24803097befcde5d7190a58715b414ab2a7154754144039803e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAD.png",
+      "source": "Environment/Baked/CellAD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "5c1737b220ea6d0128b21854b9ef20b1b3c010f9f61b9bdb38d2aad9220fa0f0",
+      "source_sha256": "3f9bb88c12e3801ffadc74e2907c60c54f36ba500265f58fd9ab03db64f5df3e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAE.png",
+      "source": "Environment/Baked/CellAE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "489db8fb8d75b06dde303266a26ae9acf75f57efafa7ba659bb9bba05bb7dd35",
+      "source_sha256": "a58583e5e86189b59f8d3339c000f121e3283031f5493b968324026e5a2e9425",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAF.png",
+      "source": "Environment/Baked/CellAF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "8aae96d7df311bae21584f0de673012f751d190a4743c2375efece940ad035cb",
+      "source_sha256": "1e29c8795ee7d8728fa6b87dbb6bba0542d7335de856fa3f94f9718f320b014a",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAG.png",
+      "source": "Environment/Baked/CellAG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff"
+      ],
+      "sha256": "792d05e844cbe875f1e94aded661137a139e1f6d11e7f268bb5f5446e739266e",
+      "source_sha256": "8e45ff5df9cd0f26b91628ba26561a243eaaa6632fa5b33b69c3990bc275be21",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellAH.png",
+      "source": "Environment/Baked/CellAH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "a514226d70469bdfbdb00736837fa06bfaeaf4137c74cab7c9b9d936212f755a",
+      "source_sha256": "317188b0ecbad55e52582ea60aa7b640d0791d8f564fe780f26cf6e8f5344279",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBA.png",
+      "source": "Environment/Baked/CellBA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "3fcfe611ef86568d416c7b025150b87c6dafa6a5f222b47f6c3636dc6071b96d",
+      "source_sha256": "c72d575bb068aee6ccaba7399f6bc2db5e56182e9f26b832f440addd0ca7cb94",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBB.png",
+      "source": "Environment/Baked/CellBB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff",
+        "#e4944bff"
+      ],
+      "sha256": "45f0500daad8cb1e528d0fb1ba584c2aa875c6fd11904433af1949915871f5b2",
+      "source_sha256": "be9cc5cf5831df6d365988b188cb41abd54721823d33c6c1171890590a4a9e18",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBC.png",
+      "source": "Environment/Baked/CellBC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#c49662ff"
+      ],
+      "sha256": "2c2933223d7518f44d6731b0bd3f9277c796e6078efcd7c63bfb88752ef21919",
+      "source_sha256": "1e318e52b6566bef55cd4ee768adee179a372ae1d8d0d8d8757b5e48aa4dcb38",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBD.png",
+      "source": "Environment/Baked/CellBD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "12d667b4deeb5edf17977b4b0e5f1551aa24fe024cfae75fa44cd1a76e9e8117",
+      "source_sha256": "1c91465216e0334eec686f33ba0f4a4c4c2a78c94f1b02d952b0ca25a1f340bc",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBE.png",
+      "source": "Environment/Baked/CellBE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "64c1e3f3e7617ec38c2bd45e2a0563aa6e703434c8ed291b32ffa3fe5828a5f0",
+      "source_sha256": "4bcee9e7be17f3b6666fb190e0177951d0325178b71749ace623f9e8ad1ee730",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBF.png",
+      "source": "Environment/Baked/CellBF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#744435ff",
+        "#9b8062ff",
+        "#c49662ff"
+      ],
+      "sha256": "5f01fbbfb71b56252ad269c48248d792a2e44af8168c3e65ba3142fa8421a0de",
+      "source_sha256": "b180fef39d1a9baf1a90f6792cc6cba4571e5f58d0774d995fc982a86b87b7da",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBG.png",
+      "source": "Environment/Baked/CellBG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff",
+        "#e4944bff"
+      ],
+      "sha256": "03bf1f9561ac5364bb88a9f01581a05c2f419217cd589f15a60dfc67f1aaeca2",
+      "source_sha256": "00ca84bda500648c83aba607dd9d824538568e8cac793d65303a6e16dbb5264a",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellBH.png",
+      "source": "Environment/Baked/CellBH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "d068d6c1cd0cfae0d209a4e6fb646d79fe49dcb2afe6be442f9360b2e9578d42",
+      "source_sha256": "158ff4adc216db6d02c30a58f7c935b25781c7e032c3f7370e74414521c67bf1",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCA.png",
+      "source": "Environment/Baked/CellCA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "d068d6c1cd0cfae0d209a4e6fb646d79fe49dcb2afe6be442f9360b2e9578d42",
+      "source_sha256": "761f88a8e9436feeae6da9ab905377d497c374a01713ec6c153ed9d9cf51fda9",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCB.png",
+      "source": "Environment/Baked/CellCB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896348ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "f9bae29f74969bcd40515abfbd5a951ea6d3ae8127d91aadcc93623c9b02c119",
+      "source_sha256": "f06f9289b2c39ed67a4b505c955952fcdf1baf340a853b6f0c3e822f21f86990",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCC.png",
+      "source": "Environment/Baked/CellCC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#b36e45ff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "e25b8d3513e28143ffca98f11fc6a024c2f2f579dade112f28e783291207b9a1",
+      "source_sha256": "d442196ad1c38c6bb6378e3da3b626e5ad6c4a9776ee4c1780d74c7b4cd1be62",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCD.png",
+      "source": "Environment/Baked/CellCD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "8bfbe11d2612ea138e3dafa0f25d2824327611b370e5dc328bd859d36f531e63",
+      "source_sha256": "a000526ae1813cbd6a5389155fbf35537412d2dca7f5e12287e3b55839f40a8d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCE.png",
+      "source": "Environment/Baked/CellCE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6b5056ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "bc0e4ce78435240d766385803fd83c2a72824c1a8aee7eff70e2ec34095e7fbc",
+      "source_sha256": "f815b8247f410f63622765d93d3efc6a3d843eaeab4cc338a0a38709ab8265f3",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCF.png",
+      "source": "Environment/Baked/CellCF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#896348ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "012cd062684eb432414b911926af55fbc6ef453bc6edf9beafa55b5410b6d3be",
+      "source_sha256": "5a1e4997ddf3ff4b0e578d812d4c08530af1e3a2b23557f564f996da94dfc025",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCG.png",
+      "source": "Environment/Baked/CellCG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896348ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "e46f806f8017e96c8fb1f48e4feab26a699d53046ab07b6b65bcb4b4d72d354d",
+      "source_sha256": "ed545f022645eb9db4b0b866da7be2d32dd0821d3fb7c05cdb63176db7a4823c",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellCH.png",
+      "source": "Environment/Baked/CellCH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "c6e8a99e6afb0659aa4d5dc833cc393237c23bc4f656f6e91082dc983429afdf",
+      "source_sha256": "a76f688d875a3986666665da79fca9a880c4c73d61c21cffc49589a042565dad",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDA.png",
+      "source": "Environment/Baked/CellDA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#542c42ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#ac8050ff"
+      ],
+      "sha256": "7de1aa11de791dff65b60687ca09962a8b39f62e8e0d1d6f38c30e83ec188de1",
+      "source_sha256": "6fd241ddab6fc33501ba588310ad755abd226e7e60aedcdc51e60d82293f90ed",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDB.png",
+      "source": "Environment/Baked/CellDB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#542c42ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#b89a6eff"
+      ],
+      "sha256": "523f776441c0a486b6524e67b01d6e82fd5f0451c5452520a98098c14727e66c",
+      "source_sha256": "484a2f04e051655ca2e41e74825b776eb1af907af5bf31e00b051026b4509248",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDC.png",
+      "source": "Environment/Baked/CellDC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "e078639d5e25b5b3a8e334ff3286bef733f8a6a9bbb1cbfad99dbaf6f5d070de",
+      "source_sha256": "41f2e4f910ad129b994fcbb96a2e266d55489e78e160cd093f4d1978c06b2a8e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDD.png",
+      "source": "Environment/Baked/CellDD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#563739ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#9b8062ff"
+      ],
+      "sha256": "f97913583306b66ba7938b3540c70ec9a7257c2f05ae914a22aa9e180025a01d",
+      "source_sha256": "0d123341ef1a992d261218af3abf9073909d16933c694b0f08a3afec88d14e7a",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDE.png",
+      "source": "Environment/Baked/CellDE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#563739ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#9b8062ff"
+      ],
+      "sha256": "ffe0ecf865fdd0bb6ca1edcca80f425d82be017b0d2d7e728649b14ad0f06819",
+      "source_sha256": "95fd74892a1d60ec48a7220d30cd59e26666f0201b2f6ad3a9e9931844ae1bac",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDF.png",
+      "source": "Environment/Baked/CellDF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "fe58ad1334c4ec8bbd1057d6d2631e86c2175f3a24425662f74cd9ec5b2d12eb",
+      "source_sha256": "bfd1f92c5c8ee6c97e78e9d719e2c29495d474bbf5995ebec1915b210a921611",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDG.png",
+      "source": "Environment/Baked/CellDG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#ac8050ff"
+      ],
+      "sha256": "2c10a724e605a161b8a2c905053c586eb17a6facb81d552e0dae1566c9de19a6",
+      "source_sha256": "1343037c01d293e4686abe250dea4818e162674705d7f8d0e0fdda133f22321b",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellDH.png",
+      "source": "Environment/Baked/CellDH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#896c84ff",
+        "#ac8050ff"
+      ],
+      "sha256": "69354ecc5e25d67b4a30d1e304f50eeb365b02a97109b7f47e85e78ecc4b8737",
+      "source_sha256": "249b3c38ab4cd58f4a94e51f2f67a9b3fb3957bfca8ee6742539675bfc4dedeb",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEA.png",
+      "source": "Environment/Baked/CellEA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#896348ff"
+      ],
+      "sha256": "0a4a3e7771c5bb7ef86d574042cdec118ae0fd4d56a878e47e9507b9ad9eaf6a",
+      "source_sha256": "171b4be699792a603ac66cab710421d97b4d2ea9a6af0b271d4e1ee5fd929047",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEB.png",
+      "source": "Environment/Baked/CellEB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#896348ff"
+      ],
+      "sha256": "0c81e41e61ccc78d8261e198f0e3018bf478dcae621902fae57231aedc87bcc9",
+      "source_sha256": "982d9c8c6ff6af70b4bafdcfaeb7eed889e95299e23f4538087644ce235fb564",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEC.png",
+      "source": "Environment/Baked/CellEC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "32152901a4621889082f01aebb0e367575d638c17f8ec78223555cb73feb312f",
+      "source_sha256": "c19a1ac127b4ce6d03a98fb024bec5ed6b83f2c3f347fc49027f0baf47005aea",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellED.png",
+      "source": "Environment/Baked/CellED.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "dc8b4c213c38b30be85a5ed747abb7a386bd9502c325bfcdca9759aca3b9c813",
+      "source_sha256": "9f2f9ce0f32e9026b169519558cd6a155e0dc04c37b6f5d5f3d7c7b68e080930",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEE.png",
+      "source": "Environment/Baked/CellEE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "04881be5e763e5a7bde4318ed6b94e204e2780730077e06c693f9f753292fde7",
+      "source_sha256": "bd24717d448406c2f3541989908b71478bb39392844c6f33f7b19cbb533a7006",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEF.png",
+      "source": "Environment/Baked/CellEF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "c9058720c62d7c6ff3d7bfca1d17f8bd276258c48f46c2d4ce360df358d2107a",
+      "source_sha256": "416893036c158b3ff8ac28fa4e2945208bc8a1677f186ac33bae93c89bed3b02",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEG.png",
+      "source": "Environment/Baked/CellEG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "32152901a4621889082f01aebb0e367575d638c17f8ec78223555cb73feb312f",
+      "source_sha256": "8807ec19a639f38dc264ae9ae607707cf4eb7d861f920e7bbe3f6efc0fee7d9f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellEH.png",
+      "source": "Environment/Baked/CellEH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "cc5041e3001f54271928fd0e04baa93b677c7d1fc7db802a176b6dfb41579e48",
+      "source_sha256": "f04c844c9d64a0b9b63929afbf569fccfd95d5cc5d8c3f42251ae390f63577d0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFA.png",
+      "source": "Environment/Baked/CellFA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "aeb170183215350d749cb38454adf522607d5aaa321dd9daa516c58a6ec6a375",
+      "source_sha256": "370fce2a83963bfaf9dd4a1d755554253c988d4731586946e18ae1ce479c31ad",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFB.png",
+      "source": "Environment/Baked/CellFB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "0007c567113fbe10cd86aadb593d8e30bf722ab4a84e69ebfd6bf04cd1ffcae9",
+      "source_sha256": "49e05484bc6121f13cd0af216455d78ac8caff98f5797ac0f06c53fe48bc2e25",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFC.png",
+      "source": "Environment/Baked/CellFC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "137e5e25821f7b651f2983fc85752271de339f412f96b5a6a1b3ca198deebb60",
+      "source_sha256": "7eaf8147d53c11dd2153289bdf4f934fe384d7d4e11d56402d1d85993ec3a43b",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFD.png",
+      "source": "Environment/Baked/CellFD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "aeb170183215350d749cb38454adf522607d5aaa321dd9daa516c58a6ec6a375",
+      "source_sha256": "a9effd166332a1b8da354bddb99edb01bc9f63c6e9d9c99a4ce86e34356e87b5",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFE.png",
+      "source": "Environment/Baked/CellFE.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "0007c567113fbe10cd86aadb593d8e30bf722ab4a84e69ebfd6bf04cd1ffcae9",
+      "source_sha256": "ea6855ce21107d798eae607a5eac336471bf4f1b6eefa0945860c8f11dea3926",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFF.png",
+      "source": "Environment/Baked/CellFF.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "137e5e25821f7b651f2983fc85752271de339f412f96b5a6a1b3ca198deebb60",
+      "source_sha256": "e89fddfe210603d1ae0d01edd1865a3b5beb8707c5406bbc5e6423ffde0366dc",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFG.png",
+      "source": "Environment/Baked/CellFG.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "aeb170183215350d749cb38454adf522607d5aaa321dd9daa516c58a6ec6a375",
+      "source_sha256": "73777f88945f7f8581540b6c06ca882295355a7c3367d431789b6298f0dd64f0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Baked/CellFH.png",
+      "source": "Environment/Baked/CellFH.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "0007c567113fbe10cd86aadb593d8e30bf722ab4a84e69ebfd6bf04cd1ffcae9",
+      "source_sha256": "ba24963d5a38da3803236d07b0756f8f2617d5212135683e56be7bacc374f5de",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/DungeonMaster.png",
+      "source": "Environment/DungeonMaster.aseprite",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#896c84ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "7c324b9922f6ec58f1e8feb08fa0e47a87fce5d41bfefebf5fd7fbd7637e256f",
+      "source_sha256": "46a1bda6e460908f649d82d218414675646ca6609a6b4dec53e70832e7cebfbb",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46",
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6",
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/ArchCrown.png",
+      "source": "Environment/Props/ArchCrown.aseprite",
+      "size": [
+        192,
+        128
+      ],
+      "bounds": [
+        0,
+        3,
+        192,
+        127
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#896c84ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "ff3739909d67f8c91976114f9b2dca1db3eedbeb806e9786561873ff2a0cd7e4",
+      "source_sha256": "f790cb24b7147e36e389ab7ed74f5211a6614409f6a09e53194c74c96fe3ba3e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/ArchFinial.png",
+      "source": "Environment/Props/ArchFinial.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        16,
+        14,
+        48,
+        52
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "a12802881ef7ca9c47be6e588c11a855da068b6b47f81a62b327773efc79c7a7",
+      "source_sha256": "5efdf6a5d29cd7fb4c13a9c8a34487540913511e164e2a3d5e560985b6c81a5d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/ArchSupport.png",
+      "source": "Environment/Props/ArchSupport.aseprite",
+      "size": [
+        36,
+        128
+      ],
+      "bounds": [
+        0,
+        0,
+        36,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "670fc1057bafcd8dbf6ecb370fed2631635760bb543c24e523f9dbfac9e10c9c",
+      "source_sha256": "024a6ffed16434647e932134b10e0dfbf5b315abd875a8840cf0a505ee52bf93",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Banner.png",
+      "source": "Environment/Props/Banner.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        10,
+        6,
+        54,
+        59
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#c49662ff",
+        "#e4944bff"
+      ],
+      "sha256": "a97e8f5a36d2e717edb9b50214e0ff24c399b421268db1093cc393fd5af96606",
+      "source_sha256": "b719e1deef8c01c71831a6230b8102d7d9036a68aff0f1cc2944dacb5e7b8eb3",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Barrel.png",
+      "source": "Environment/Props/Barrel.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        14,
+        9,
+        50,
+        56
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#504153ff",
+        "#542c42ff",
+        "#544766ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#ac8050ff"
+      ],
+      "sha256": "d7cb2826afe01c171bd6c5c6ad89b540851757ddea210808842f305788f85055",
+      "source_sha256": "fec0aebd1b0331c1f4b0dcbdeba6c17ec7dad011cfd376f8cec5d36478135f90",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Bones.png",
+      "source": "Environment/Props/Bones.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        7,
+        19,
+        57,
+        50
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#504153ff",
+        "#542c42ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#744435ff",
+        "#896348ff"
+      ],
+      "sha256": "b0e15a57b375a9a6850692f615d8b84ea94e6908ca92ee44b5bdae2bae7f01f1",
+      "source_sha256": "99bdaa89e7980681ddd6622246918b53806c404f9d30dd9259fe8f8da68307af",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Chain.png",
+      "source": "Environment/Props/Chain.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        27,
+        2,
+        38,
+        62
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#26203fff",
+        "#312c4dff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#b89a6eff",
+        "#c49662ff"
+      ],
+      "sha256": "ce0232c921c26c4c24db0734d64cd43c5943e9f18bfb4a5e8eb0d1c2e7385515",
+      "source_sha256": "cb1b74b7b56e7c4202133bba00b09243fdfea07bca8c40a12fae915e154140b7",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Crate.png",
+      "source": "Environment/Props/Crate.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        12,
+        12,
+        52,
+        52
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#542c42ff",
+        "#563739ff",
+        "#744435ff"
+      ],
+      "sha256": "58ae1b1f51326f26de7aca8ca519b14731e796c107138d92e2a01bd10d204fc2",
+      "source_sha256": "7fdf51c791801da004d663f8ad714de926718de6d5e32fdd486f392645bc67d0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/CrateStack.png",
+      "source": "Environment/Props/CrateStack.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        2,
+        4,
+        62,
+        60
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#542c42ff",
+        "#563739ff",
+        "#744435ff",
+        "#896348ff",
+        "#ac8050ff"
+      ],
+      "sha256": "c904908f93251de75a4c550e9fce41289090dcf43367fd0dd4f7bc739fdccbb0",
+      "source_sha256": "3e6bb7209cac1060793480afee36475cc22c3786a3213b0421a25ae2acf5dbf8",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/IronGrille.png",
+      "source": "Environment/Props/IronGrille.aseprite",
+      "size": [
+        128,
+        128
+      ],
+      "bounds": [
+        11,
+        10,
+        117,
+        118
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#563739ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#9b8062ff"
+      ],
+      "sha256": "fcda203efc6251db4e0e5533106edec04eaae8d3d0d8fe0037cc6b0fffe528a5",
+      "source_sha256": "94dded3081487f1d365216551c94f35c4854d395ebb7c66d92c1651ee955f1d3",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Lock.png",
+      "source": "Environment/Props/Lock.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        20,
+        16,
+        44,
+        51
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#312c4dff",
+        "#504153ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#c49662ff"
+      ],
+      "sha256": "f5d6157f24e56e2dbe6c65f4b1f8618a0d33b9487afbd37a7980c8ee391e0477",
+      "source_sha256": "689b1fe8aa3c53b6cfc55fcd4e145353306854a4f2362c72b393ac4ed53f11e4",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/PillarBase.png",
+      "source": "Environment/Props/PillarBase.aseprite",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        48,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "0b7f8ffeeb499f6b160ecb58f97ca4dc5bddc57848c0fdc479112c6db3f81561",
+      "source_sha256": "6970b504666186f6f33ea186959b55a8ca46fb1d5e546adeb94ab3df6951d44d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/PillarCapital.png",
+      "source": "Environment/Props/PillarCapital.aseprite",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        48,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "9dcfb438569df0898b95b2c2f6bbec0e8b3444f6d170eedd0e34ec84ed785042",
+      "source_sha256": "3a22ee1ace7177312a006e41e467b8e3c0c47a6f75329c566a09a9a1757c498e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/PillarShaft.png",
+      "source": "Environment/Props/PillarShaft.aseprite",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": [
+        9,
+        0,
+        39,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "c4be2051fcbeab129a7745d0c4e1fb84b3e98f45a9f29d51f22e1980bcda3148",
+      "source_sha256": "a8536fe3d2dedb7db4e42dc3f503b6be86e744fa56800f94071d26e8b06666bb",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "dce0194e-6e11-4cf9-89f6-f78ca537dcd6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Pot.png",
+      "source": "Environment/Props/Pot.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        15,
+        13,
+        49,
+        53
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "4573532a1cffe1a05e6d4f8da39257c2018348a48cda926371fa8bbf79c06181",
+      "source_sha256": "1409322fdff929a4119229cd2ff8b0f6d3f6773115b77fbf6a378cfe6a660c97",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Rocks.png",
+      "source": "Environment/Props/Rocks.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        7,
+        18,
+        57,
+        50
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "fb486e61a6b2cad854c8cc3ed750cf9e2c952cd06676dfc6542c2e3a0b65da82",
+      "source_sha256": "18f83bddd328232e0b7d2ad619b8c504c6d456de8bb2c5f1b4dbb2fb47bf2475",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/SkullBones.png",
+      "source": "Environment/Props/SkullBones.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        12,
+        15,
+        52,
+        53
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#542c42ff",
+        "#563739ff",
+        "#5f4a52ff",
+        "#6b5056ff",
+        "#6f5a77ff",
+        "#744435ff",
+        "#896348ff",
+        "#9b8062ff",
+        "#ac8050ff",
+        "#b89a6eff"
+      ],
+      "sha256": "b10045f4a88936a40a7dc29585d96e8162b724f4d2d123ce22383eb7a2c306c4",
+      "source_sha256": "0dd965ebbff4b9b926df9521b8b966dcd3260786f93a1b3c78ecef1a03f8b6fe",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/SkullRelief.png",
+      "source": "Environment/Props/SkullRelief.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        10,
+        14,
+        54,
+        50
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#504153ff",
+        "#544766ff",
+        "#5f4a52ff",
+        "#6f5a77ff",
+        "#896c84ff"
+      ],
+      "sha256": "46803151c9fef6d64fc349959194939bfe4289c8893b289e552c002ec4b52518",
+      "source_sha256": "97e053e0ac4ee8f7f19b34ff254cd46f783549c2b7cc2c83c2a8c917682e36b7",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Props/Torch.png",
+      "source": "Environment/Props/Torch.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        22,
+        6,
+        42,
+        58
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#090618ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff",
+        "#544766ff",
+        "#6f5a77ff",
+        "#896348ff",
+        "#ac8050ff",
+        "#b36e45ff",
+        "#c49662ff",
+        "#e4944bff",
+        "#ffca75ff",
+        "#fff0b0ff"
+      ],
+      "sha256": "572932381e67937d85a53d61042791da519bd194c844ec9e671998cab9c6c939",
+      "source_sha256": "aaf1903a4f75f95d7a9d455183052e89317581209fbdf05062f8399a9e877aac",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "7a0e4e20-2c1f-4263-b51e-71ae2abc037a"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FloorA.png",
+      "source": "Environment/Tiles/FloorA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "04881be5e763e5a7bde4318ed6b94e204e2780730077e06c693f9f753292fde7",
+      "source_sha256": "6eb98473c51b149443b8dec97c43bbeffffcad5d56c05342a5e213c0e6f3b154",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FloorB.png",
+      "source": "Environment/Tiles/FloorB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "c9058720c62d7c6ff3d7bfca1d17f8bd276258c48f46c2d4ce360df358d2107a",
+      "source_sha256": "a46a193b70143059c6879d7f03847ef567d5ec0e9e3c3ae4e6132a9ca6c9c108",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FloorC.png",
+      "source": "Environment/Tiles/FloorC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "32152901a4621889082f01aebb0e367575d638c17f8ec78223555cb73feb312f",
+      "source_sha256": "268eff1796d3cce3d7062d3c07d20c490d134d839b33e9f7300a78c4f0f36684",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FloorD.png",
+      "source": "Environment/Tiles/FloorD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#544766ff",
+        "#6f5a77ff"
+      ],
+      "sha256": "dc8b4c213c38b30be85a5ed747abb7a386bd9502c325bfcdca9759aca3b9c813",
+      "source_sha256": "649d3f6a4bcc9aaf81059fa1c589ca220006b48128e11f7203affa4b4877ec7e",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FoundationA.png",
+      "source": "Environment/Tiles/FoundationA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "aeb170183215350d749cb38454adf522607d5aaa321dd9daa516c58a6ec6a375",
+      "source_sha256": "98993bdab8a0eb9808e81b3f11851e3e489c4293169c80a56443beb506dd9296",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FoundationB.png",
+      "source": "Environment/Tiles/FoundationB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "0007c567113fbe10cd86aadb593d8e30bf722ab4a84e69ebfd6bf04cd1ffcae9",
+      "source_sha256": "2a572367068bd350201dd0d51861f0048f498cb1a25abde749fde41ceca31b32",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/FoundationC.png",
+      "source": "Environment/Tiles/FoundationC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff"
+      ],
+      "sha256": "137e5e25821f7b651f2983fc85752271de339f412f96b5a6a1b3ca198deebb60",
+      "source_sha256": "a386ee556aea405f1245e91d11d330e613e26102ec3ba4465c4726246d0bafbd",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallA.png",
+      "source": "Environment/Tiles/WallA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff"
+      ],
+      "sha256": "8fd78ccc6e321a18f134d94deadd929d3f9a3775ebe1bc4e7a04d0585644454d",
+      "source_sha256": "7203909dca3d5cf5d601876cc0b4ee27a8929c97f695b6629f7b46255f754cfd",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallB.png",
+      "source": "Environment/Tiles/WallB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff"
+      ],
+      "sha256": "114c82be32b100681d7de747c22902ef3aa0db0ee341125a69b0970bd4e6571c",
+      "source_sha256": "c211f6a9690a66bbef0df6e42e75a680ca364c116669a2d1c300e6113078b197",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallC.png",
+      "source": "Environment/Tiles/WallC.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff"
+      ],
+      "sha256": "b90fc8295fd1beeec702910ad4f4a3e8a81bbbd24f590a6c7cdbe375f8d5e5ce",
+      "source_sha256": "7da825c9bc02457b5f5f4e0dd8a5897525fb2d5ffc1b444eac79ad61245374dc",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallD.png",
+      "source": "Environment/Tiles/WallD.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff"
+      ],
+      "sha256": "033b99d84accaef3ca349f1028f383802ca24dd15f6b260202d081dcbd4d6628",
+      "source_sha256": "6285dd57d63dbaf09481f75ae87da9217a57a35cbfdb43d5d9253261f368c270",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallWarmA.png",
+      "source": "Environment/Tiles/WallWarmA.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff"
+      ],
+      "sha256": "cf32c419f2cb9ee20d0341c2c7d410767913cbac1b481018c6303fb296b7c629",
+      "source_sha256": "7305fe6e9a1c6e3642f741f4525fe26a711f2567613d757374e9275e4a4c9b61",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "Environment/Tiles/WallWarmB.png",
+      "source": "Environment/Tiles/WallWarmB.aseprite",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#090618ff",
+        "#161227ff",
+        "#1f1934ff",
+        "#26203fff",
+        "#312c4dff",
+        "#42395cff",
+        "#504153ff"
+      ],
+      "sha256": "08e1995febb625ce8f236c32dd58ddf27ba22ded328329ba146b8d3e7cf149c4",
+      "source_sha256": "347fd93e61d935aa147a58cc47a47070392142c2b2e52ef9caa83ea0b95f8f57",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "37cbdcac-6172-4bb6-91cb-54748afb8f46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/BossBadge.png",
+      "source": "UI/BossBadge.aseprite",
+      "size": [
+        24,
+        24
+      ],
+      "bounds": [
+        5,
+        2,
+        19,
+        22
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#241f3aff",
+        "#591e36ff",
+        "#982541ff",
+        "#ad793dff",
+        "#d63850ff",
+        "#ddb75dff",
+        "#e0e2cbff",
+        "#ef666dff",
+        "#ffe3a0ff"
+      ],
+      "sha256": "dd3417b4f39f3c1e8e6f5f99a533db0b32616b14e215f01d943d390e2ddc680e",
+      "source_sha256": "2ed2130425a802f11832295f63249ad9a0a0c0104499b87b224babc897591ceb",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "109345ea-e8bf-4349-b2a9-ac7c689079b6"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/BossHealthEnd.png",
+      "source": "UI/BossHealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#241f3aff",
+        "#ddb75dff"
+      ],
+      "sha256": "f34373fb4fb0afe4c37322fffb8401ffc0bdb9dbb9116a6d9baa5a7f3c6ff752",
+      "source_sha256": "784b36d429f12f285d0ee7344461d0c92a028156cb49c5eb2c851f05a0a6cb5c",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/BossHealthMiddle.png",
+      "source": "UI/BossHealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#241f3aff",
+        "#ddb75dff"
+      ],
+      "sha256": "4d86058849af3e6550d6af18c836fcd1b91c275c94ebe78b7c2e71763268a234",
+      "source_sha256": "4e14c23b9d6650a947c4d1aad1d4fc0900b83e4578431f4bc48a7c34d5c9c233",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/BossHealthStart.png",
+      "source": "UI/BossHealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#241f3aff",
+        "#ddb75dff"
+      ],
+      "sha256": "0198b5cd243e2a339ddb15c43a5448860ba6e9fb267c4a3e8a672099a5583581",
+      "source_sha256": "294062f154ecb04baf18a1f998d8e5dd0d1abdf60260cd75ca1b291bf9191ccb",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonLargeDisabled.png",
+      "source": "UI/ButtonLargeDisabled.aseprite",
+      "size": [
+        176,
+        64
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "9cb2f3c6d3394858a6d5709c792d8b78db9a4d34cd165f474b348aa678e2bd6d",
+      "source_sha256": "da216396fbab6de590605dd644611ec290195949eaa1a92a29bcc1b8584a4bf3",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonLargeHighlighted.png",
+      "source": "UI/ButtonLargeHighlighted.aseprite",
+      "size": [
+        176,
+        64
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "dfc9e88bf9144c4c0dc635efec8f59946457279c815555a7475a121df805421c",
+      "source_sha256": "c79fcd802dd6391d59643c698df0d4d8a354a43af2a98acbb9afe195abbf3d08",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonLargeNormal.png",
+      "source": "UI/ButtonLargeNormal.aseprite",
+      "size": [
+        176,
+        64
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "e6d33650b294698efff51361ebd337576c8b1a0b60216a99697eaa05651df34f",
+      "source_sha256": "361dedcf45b5c02dbed46e84e8a40c87b20e54d4bc96893c9ce542cb272a221f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonLargePressed.png",
+      "source": "UI/ButtonLargePressed.aseprite",
+      "size": [
+        176,
+        64
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "3f2b39a777bbc8e4014aebc2492baa8d813bab8908f391941c78cad769fae402",
+      "source_sha256": "46c3a49c0ec6e5f399cce846c66e6d24d9d0d4dae4e0cbefc8a875be39f5474f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonSmallDisabled.png",
+      "source": "UI/ButtonSmallDisabled.aseprite",
+      "size": [
+        96,
+        40
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        39
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "2b7b13d99fb70e6a449d29b5f090c83d61faa19cf911e5b0443e5115916f987f",
+      "source_sha256": "31bc2cd3b25d28a3e2342de72b90d77c65e78e2a1528f401f65bb7d21b0c7848",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "ef09a895-e1bc-40fc-bc89-4effdf4f5e57"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonSmallHighlighted.png",
+      "source": "UI/ButtonSmallHighlighted.aseprite",
+      "size": [
+        96,
+        40
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        39
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "7ba93dc1c40614e240c9584ebade8ab63f06dd18e3e35c788d3c940c38b1021c",
+      "source_sha256": "f17fe2418972a248d516ec1c2b03d4810599019fca0a381b168270d8cd842a34",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "ef09a895-e1bc-40fc-bc89-4effdf4f5e57"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonSmallNormal.png",
+      "source": "UI/ButtonSmallNormal.aseprite",
+      "size": [
+        96,
+        40
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        39
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "1847fe51df1969a591b8df2a658939a477d1f4dde463cf8b5d87c4af196a370d",
+      "source_sha256": "34088664045ab67155ac299201a59c4b1d2b87ee79fd472a01fe292d4cc1ce77",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "ef09a895-e1bc-40fc-bc89-4effdf4f5e57"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/ButtonSmallPressed.png",
+      "source": "UI/ButtonSmallPressed.aseprite",
+      "size": [
+        96,
+        40
+      ],
+      "bounds": [
+        1,
+        1,
+        95,
+        39
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "4b398106e4992c8cfad3bf8f6774ada4f6855d054158b05bc7f8d789a5d729cb",
+      "source_sha256": "bfff049c0692ef1bb2e8cc932cbac046f9625e5ac49d1e48f8169ae4d0a4786d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "ef09a895-e1bc-40fc-bc89-4effdf4f5e57"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/DungeonMatcherLogo.png",
+      "source": "UI/DungeonMatcherLogo.aseprite",
+      "size": [
+        160,
+        92
+      ],
+      "bounds": [
+        3,
+        2,
+        157,
+        90
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#591e36ff",
+        "#653285ff",
+        "#67537eff",
+        "#6e4a2fff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#ad793dff",
+        "#d63850ff",
+        "#ddb75dff",
+        "#e0e2cbff",
+        "#e5a9f4ff",
+        "#ffb6b9ff",
+        "#ffe0ffff",
+        "#ffe3a0ff"
+      ],
+      "sha256": "5cce6ac8a0710f1ae6141499b17acefc6de4f20e7f2211b88bad158d7c4e8066",
+      "source_sha256": "1615f57db21e202c84a0ebef012d4683c514096e0ac008ee7fc6315f38d6fcc5",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "e31c9dab-57a6-43bf-ad4e-6254873cbbce"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/EnergyFill.png",
+      "source": "UI/EnergyFill.aseprite",
+      "size": [
+        1,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        1,
+        8
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#060709ff",
+        "#279babff"
+      ],
+      "sha256": "f7ba65472d1a60bc6fd577aa416fe89834b3b07b4d879d25418cab75899009d0",
+      "source_sha256": "f833c38b5e6fda9a06767a2d102a1425dba77e6b5e0c759c328cb18db07dda43",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "5a96b4de-7652-4ed7-b652-0b48d33f241d"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/EnergyFrame.png",
+      "source": "UI/EnergyFrame.aseprite",
+      "size": [
+        144,
+        32
+      ],
+      "bounds": [
+        5,
+        3,
+        135,
+        30
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#151423ff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#8c44b3ff",
+        "#b466d9ff"
+      ],
+      "sha256": "8fde70ed1e7a7a9839def5b73cb03e4f97933e392f0ed47436fb2f68df8225d0",
+      "source_sha256": "c42f38cffcbd1cd82c96ae8a2f4efbf11e184ccd0e05095f18f56d2d7cf39449",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "5a96b4de-7652-4ed7-b652-0b48d33f241d"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/EnergyTrack.png",
+      "source": "UI/EnergyTrack.aseprite",
+      "size": [
+        1,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        1,
+        8
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#0d3c47ff",
+        "#151423ff"
+      ],
+      "sha256": "def3743e4405cfc812474a826388373fc42c8fa06cd0b0331828c9a1746ebc51",
+      "source_sha256": "9686fefec9a09196115c1ae5e516c699ebb5ab3529be51522d31fd86eebab0af",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "5a96b4de-7652-4ed7-b652-0b48d33f241d"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthEnd.png",
+      "source": "UI/HealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "5951de2022b6db26bb9b3b4c5a8b000f8a3c5644287615f663261e59082403ce",
+      "source_sha256": "af980f45e26d35f5ee09714f973667f9d3d402fb9f9ead6d7724b320151c000f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthFill.png",
+      "source": "UI/HealthFill.aseprite",
+      "size": [
+        1,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        1,
+        8
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#591e36ff",
+        "#982541ff",
+        "#d63850ff",
+        "#ef666dff",
+        "#ffb6b9ff"
+      ],
+      "sha256": "9b48d666f85b85116c46340dd38272da2a13de62b62671c362880a20a82ad70e",
+      "source_sha256": "0ca82fe214de355e2478774fd0e76784557233fa0fab0ff868c8c82a44426ca0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthFrame.png",
+      "source": "UI/HealthFrame.aseprite",
+      "size": [
+        128,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        122,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "bc32b6a00fb33550f1fbdaf2221837b57bc62a566e60542b3dd174f1506abd53",
+      "source_sha256": "44862a211f08783bc77a177a7f950e7cd9243f9a3f05826f015648f87a4718ca",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthMiddle.png",
+      "source": "UI/HealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "abdeec2e7a5ea95bf61ee314857a781b639d61d5041e9ebceb24241464c86a0e",
+      "source_sha256": "4614d457f3bafd2b40853f4b935891120fc241af2a9aefb4e8a31d97ff1223d7",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthStart.png",
+      "source": "UI/HealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "b4b677ab4ab1262dd98e764526de6dd6bf70cc56a5162e4a28e1d726f855f903",
+      "source_sha256": "7dd076c3e80a938a68b12c6ebb05713d742f40d18f033c61ffbfe86f2eb813ad",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/HealthTrack.png",
+      "source": "UI/HealthTrack.aseprite",
+      "size": [
+        1,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        1,
+        8
+      ],
+      "alpha": [
+        255
+      ],
+      "palette": [
+        "#151423ff",
+        "#591e36ff"
+      ],
+      "sha256": "31668d15b9c2d1a55f672f21220466d82dbb30bed176c4e91c40131c9809ebef",
+      "source_sha256": "a5145273a17dd62d834365389fee6112ebf1e5b3b9d44218a749a1ee62677462",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/MinibossBadge.png",
+      "source": "UI/MinibossBadge.aseprite",
+      "size": [
+        24,
+        24
+      ],
+      "bounds": [
+        4,
+        3,
+        20,
+        21
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#151423ff",
+        "#241f3aff",
+        "#39414bff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#67537eff",
+        "#69737aff",
+        "#846a95ff",
+        "#a9b2a8ff"
+      ],
+      "sha256": "e8add980a73704ff892243bdc7c9e7092e06547641e6cb080f788fd2e7007109",
+      "source_sha256": "ccd7fdceeafa7e1fecbc113c112cb9fb6a090b821ae23b7d7c62a6463ec36ce4",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0f57b1ef-8a1d-4c26-a381-48e709c9d7fa"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/MinibossHealthEnd.png",
+      "source": "UI/MinibossHealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "c57964b2f913590578e2dd8620e95ad9596c1ff336709edba78fcf416fdce634",
+      "source_sha256": "2381027fecf45f1ae5e7f644e2d91896791c85c8c72a5aec3e885b5a9958775a",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/MinibossHealthMiddle.png",
+      "source": "UI/MinibossHealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "55f34bdde80eda97657fb6c4b202dd0bff60caef33b3f0432ca0ab191b9f4482",
+      "source_sha256": "67c656f736c63f06781b1840d17d647232e03fe80d356002d94dcacf0f1d4dc2",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/MinibossHealthStart.png",
+      "source": "UI/MinibossHealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "b0d8c76ec4133647e0338a398c04d065289756427a90af1c8b107e2b3621989d",
+      "source_sha256": "84e299bc8706967f8a1bb39c92c273d13d38039d3d14820cd50885da538df89c",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/NormalBadge.png",
+      "source": "UI/NormalBadge.aseprite",
+      "size": [
+        24,
+        24
+      ],
+      "bounds": [
+        5,
+        4,
+        19,
+        21
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#39414bff",
+        "#69737aff",
+        "#846a95ff"
+      ],
+      "sha256": "71e04aa6fb4692772dc146ba40a53cf6bed9df5e6fd5367ebb24506e6f0719bb",
+      "source_sha256": "d18c7f25b678e788ffbbd9522be4ed4c3481b83421d86163fa43d4cc377916b2",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "03000673-bd79-4ce1-806e-d717b8c0b66c"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/NormalHealthEnd.png",
+      "source": "UI/NormalHealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "c57964b2f913590578e2dd8620e95ad9596c1ff336709edba78fcf416fdce634",
+      "source_sha256": "70c7737a8572db34b037328c9f60abe1d67f3fc0af5169bf482b4275ae8ce244",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/NormalHealthMiddle.png",
+      "source": "UI/NormalHealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "55f34bdde80eda97657fb6c4b202dd0bff60caef33b3f0432ca0ab191b9f4482",
+      "source_sha256": "f3d961cc3b07f55c4f46a016f70f0c5ab41efd5bbda7e112589b077063c8e2d0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/NormalHealthStart.png",
+      "source": "UI/NormalHealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#69737aff"
+      ],
+      "sha256": "b0d8c76ec4133647e0338a398c04d065289756427a90af1c8b107e2b3621989d",
+      "source_sha256": "b790d74d8096967a9182a0bb93904df11ca6c2435ef9f1aa3052e8b49db5ea9d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PanelInset.png",
+      "source": "UI/PanelInset.aseprite",
+      "size": [
+        176,
+        128
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        127
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#3a2d51ff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "8f3be7594f6507ca53c57207b0cc9572ae731138fff4d145f2adb79e2a5cb360",
+      "source_sha256": "4e1d846907f519db08e5f198c983e151225445ba7b4ade5d4325ab490f35c552",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PanelTall.png",
+      "source": "UI/PanelTall.aseprite",
+      "size": [
+        176,
+        256
+      ],
+      "bounds": [
+        2,
+        1,
+        173,
+        255
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#3a2d51ff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "6e63f06bf6f0334333cac5dc6ba3d4c3a96ff21f2c2c25615a64b158f580723b",
+      "source_sha256": "784becc4ce35789545690c8ac6025fbb4e4dad7c1505b1bdc44e7ee8af36f13c",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "64138ddc-31b7-4a2c-b670-bfb951aa5bc0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PlayerBadge.png",
+      "source": "UI/PlayerBadge.aseprite",
+      "size": [
+        24,
+        24
+      ],
+      "bounds": [
+        3,
+        4,
+        21,
+        21
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#6e4a2fff",
+        "#8c44b3ff",
+        "#982541ff",
+        "#aa8bb9ff",
+        "#ad793dff",
+        "#b466d9ff",
+        "#d63850ff",
+        "#ffb6b9ff"
+      ],
+      "sha256": "c49f78dd5214031a09d454e1e50e4d6b8894b7695d899b46d8bb48e474e958dd",
+      "source_sha256": "73ca5f79a0704f9a6b412fa6d4dcc11514e2e4c3de032989783db72a3dada46b",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "15ac3028-8c12-4870-890e-4fcde186cd46"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PlayerHealthEnd.png",
+      "source": "UI/PlayerHealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "5951de2022b6db26bb9b3b4c5a8b000f8a3c5644287615f663261e59082403ce",
+      "source_sha256": "408a40b685a1e792aec0b3e8518a4286890c624838103495bc3ab19e53c14e84",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PlayerHealthMiddle.png",
+      "source": "UI/PlayerHealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "abdeec2e7a5ea95bf61ee314857a781b639d61d5041e9ebceb24241464c86a0e",
+      "source_sha256": "c8bdbc14af0a076a619fffe2ad6192e4344fe70b2d7b3e8bea7556efb20875c0",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/PlayerHealthStart.png",
+      "source": "UI/PlayerHealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "b4b677ab4ab1262dd98e764526de6dd6bf70cc56a5162e4a28e1d726f855f903",
+      "source_sha256": "2d3f6c0796aa1674a6cb2765d8b56008ae4165a349cb2eff852d9d3f1238d18c",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SettingsDisabled.png",
+      "source": "UI/SettingsDisabled.aseprite",
+      "size": [
+        48,
+        48
+      ],
+      "bounds": [
+        1,
+        1,
+        47,
+        47
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "f6ab6dde1f49c83e139c4352df31ac4061c91972c429347cbf120e540bded18c",
+      "source_sha256": "92254605ebb6d923cb5d17a8c661074cf5caff05842228911c85dd1e9701dcde",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SettingsHighlighted.png",
+      "source": "UI/SettingsHighlighted.aseprite",
+      "size": [
+        48,
+        48
+      ],
+      "bounds": [
+        1,
+        1,
+        47,
+        47
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "e7b64ebe401ca08bd58fccb60905dc02820fd776079a9c148bea35361ac17c93",
+      "source_sha256": "671753a501c324783efdb79637ae9c4eaf7715d361080c3dd81766e67a52a650",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SettingsNormal.png",
+      "source": "UI/SettingsNormal.aseprite",
+      "size": [
+        48,
+        48
+      ],
+      "bounds": [
+        1,
+        1,
+        47,
+        47
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#aa8bb9ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "8fc5dd504e03ab03e1944cafaed851f20c1362290cbfd5d7821cf3ae38a48d4f",
+      "source_sha256": "157f83f59451d785b86bd35ffa45087a681009825e70625b6a3f5207eb45d6d1",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SettingsPressed.png",
+      "source": "UI/SettingsPressed.aseprite",
+      "size": [
+        48,
+        48
+      ],
+      "bounds": [
+        1,
+        1,
+        47,
+        47
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "d4b1e01b2c846a2f4a7bc2500d27a349c01f35875160d82f0dc8ccf7bdaf38a7",
+      "source_sha256": "1c67b668b7d4d43a13ef55da37d3e9c715b405144cdab36616fbc9430477b17d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SpecialBadge.png",
+      "source": "UI/SpecialBadge.aseprite",
+      "size": [
+        24,
+        24
+      ],
+      "bounds": [
+        6,
+        2,
+        19,
+        21
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#151423ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff",
+        "#b466d9ff",
+        "#e5a9f4ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "dbdfb284c6c4f06c8a5128cc5b47892bff9b1b1195ae5e454c398b49cf894fc0",
+      "source_sha256": "3ea5f8be780e6209715d6536a7fe297bf83c386d2cc06b33780c101e7597e53f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "1c60d426-b5e1-42d4-b58b-93a35e1ba94c"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SpecialHealthEnd.png",
+      "source": "UI/SpecialHealthEnd.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "5951de2022b6db26bb9b3b4c5a8b000f8a3c5644287615f663261e59082403ce",
+      "source_sha256": "f45a164472a984234b9e3075fd715d8a9101516bf6110f6881aaf0c767ff5573",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SpecialHealthMiddle.png",
+      "source": "UI/SpecialHealthMiddle.aseprite",
+      "size": [
+        1,
+        24
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#67537eff",
+        "#846a95ff"
+      ],
+      "sha256": "abdeec2e7a5ea95bf61ee314857a781b639d61d5041e9ebceb24241464c86a0e",
+      "source_sha256": "f7b52e5e09a82d9bb07ffdf09bd21eaffc0d8566cdb11237c5eb1982ecef0a2d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SpecialHealthStart.png",
+      "source": "UI/SpecialHealthStart.aseprite",
+      "size": [
+        16,
+        24
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#67537eff",
+        "#846a95ff",
+        "#8c44b3ff"
+      ],
+      "sha256": "b4b677ab4ab1262dd98e764526de6dd6bf70cc56a5162e4a28e1d726f855f903",
+      "source_sha256": "07fe217bb59c665409a64cc9a5efae337d2a6fd9f707bdff42ac31331d4118ae",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "0dcdfe52-525a-4e19-a8f8-778651a01355"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/SplitStoryGem.png",
+      "source": "UI/SplitStoryGem.aseprite",
+      "size": [
+        40,
+        36
+      ],
+      "bounds": [
+        0,
+        2,
+        40,
+        31
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#0a0d11ff",
+        "#151423ff",
+        "#241f3aff",
+        "#653285ff",
+        "#d63850ff",
+        "#e0e2cbff",
+        "#ffb6b9ff",
+        "#ffe0ffff"
+      ],
+      "sha256": "026194cbe4095abd4d71d8a148a16a2e84844c43634e26f78b53f8a0ef0da5bf",
+      "source_sha256": "8de800f8207523c57c99aad3a7966fad48740f10bc11c87e0d0dc8dd218e327f",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "e31c9dab-57a6-43bf-ad4e-6254873cbbce"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    },
+    {
+      "file": "UI/WavePlaque.png",
+      "source": "UI/WavePlaque.aseprite",
+      "size": [
+        128,
+        32
+      ],
+      "bounds": [
+        2,
+        1,
+        126,
+        31
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "palette": [
+        "#00000000",
+        "#060709ff",
+        "#241f3aff",
+        "#3a2d51ff",
+        "#4e3d6cff",
+        "#653285ff",
+        "#846a95ff",
+        "#aa8bb9ff",
+        "#e5a9f4ff"
+      ],
+      "sha256": "0f27ec5292e66000ba0a769ee18a3e868068afdc96c6698d87065b5e1b6fad3e",
+      "source_sha256": "2cd64e29226796f8d532c22d05412fc7359d47c16e2c4cad40d5032b1835183d",
+      "ppu": 64,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        16,
+        8,
+        16,
+        8
+      ],
+      "status": "review_candidate",
+      "generation_jobs": [
+        "e266c51d-d05e-4516-b88e-84b1b8a302a1"
+      ],
+      "finishing": "LibreSprite native pixel edits; source-layer metadata normalized; PNG exported by LibreSprite."
+    }
+  ],
+  "generation_log_files": [
+    "Candidates/ObjectSelection.json",
+    "Candidates/UIJobs.json",
+    "Candidates/UIEdits.json"
+  ],
+  "asset_audit": "Validation/AssetAudit.json",
+  "assembly_validation": "Validation/EnvironmentAssembly.json",
+  "latest_checkpoint": "Native assets and Unity integration complete; final validation results recorded in Docs/Validation/FINALIZED_VISUAL_TARGETS_V2.md.",
+  "ending_balance": {
+    "generations_remaining": 663,
+    "credits_usd": 0
+  },
+  "generations_consumed": 160,
+  "source_export_notes": [
+    "All 127 PNGs match the decompressed RGBA cels in their editable sources exactly.",
+    "Normalize-FinalizedSourceLayers.ps1 clears only ASE background/position-lock flags. Pixel data is unchanged.",
+    "Settings and both button families share identical alpha silhouettes across four states.",
+    "Baked cells preserve cross-cell composition; reusable terrain and transparent prop sources remain separate.",
+    "Character sprites, animation, gems, locked board frames and combat rules retain their prior source assets."
+  ]
+}

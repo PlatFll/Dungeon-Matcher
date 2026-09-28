@@ -38,7 +38,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
     private Texture2D fallbackArtworkTexture;
     private RunUpgradeCoordinator refinement;
     private readonly List<Button> refineButtons = new List<Button>();
-    private Text refineHelp;
+    private TMP_Text refineHelp;
     public void SetRefinement(RunUpgradeCoordinator coordinator) { refinement = coordinator; }
 
     public event Action Hidden;
@@ -319,6 +319,17 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             BodyColor,
             4f
         );
+        if (FinalizedUiSkin.Load("PanelTall") != null)
+        {
+            FinalizedUiSkin.Panel(border, true);
+            body.GetComponent<Image>().enabled = false;
+            var cardColors = button.colors;
+            cardColors.normalColor = Color.white;
+            cardColors.highlightedColor = new Color(1.15f,1.15f,1.15f);
+            cardColors.selectedColor = cardColors.highlightedColor;
+            cardColors.pressedColor = new Color(.75f,.75f,.75f);
+            button.colors = cardColors;
+        }
 
         TMP_Text title = CreateLabel(
             "Title",
@@ -351,6 +362,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         art.sprite = fallbackArtwork;
         art.preserveAspect = true;
         art.raycastTarget = false;
+        art.gameObject.AddComponent<NativePixelUiSurface>();
 
         TMP_Text description = CreateLabel(
             "Description",
@@ -485,6 +497,8 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
 
     private Sprite CreateFallbackArtwork()
     {
+        var nativeGem = FinalizedUiSkin.Load("SplitStoryGem");
+        if (nativeGem != null) return nativeGem;
         fallbackArtworkTexture = new Texture2D(
             64,
             64,
@@ -527,7 +541,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
     private void OnDestroy()
     {
         Hide();
-        if (fallbackArtwork != null)
+        if (fallbackArtwork != null && fallbackArtworkTexture != null)
         {
             Destroy(fallbackArtwork);
         }

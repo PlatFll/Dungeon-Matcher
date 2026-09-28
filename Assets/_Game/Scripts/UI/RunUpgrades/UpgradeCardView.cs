@@ -106,6 +106,25 @@ public sealed class UpgradeCardView : MonoBehaviour
         Image artworkSection = transform
             .Find("CardBody/ArtworkSection")?.GetComponent<Image>();
 
+        if (frame != null && frame.sprite != null && frame.sprite == FinalizedUiSkin.Load("PanelTall"))
+        {
+            frame.color = Color.white;
+            if (body != null) body.enabled = false;
+            FinalizedUiSkin.Panel(artworkSection);
+            if (titleText != null) titleText.color = Color.Lerp(rarityColor, Color.white, .7f);
+            if (descriptionText != null) descriptionText.color = LightTextColor;
+            if (button != null)
+            {
+                var skinColors = button.colors;
+                skinColors.normalColor = Color.white;
+                skinColors.highlightedColor = skinColors.selectedColor = new Color(1.15f,1.15f,1.15f);
+                skinColors.pressedColor = new Color(.8f,.8f,.8f);
+                skinColors.disabledColor = new Color(.55f,.55f,.55f);
+                button.colors = skinColors;
+            }
+            return;
+        }
+
         if (frame != null)
         {
             frame.color = rarityColor;

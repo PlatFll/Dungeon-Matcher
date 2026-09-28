@@ -1,11 +1,12 @@
+using TMPro;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public sealed class ShopMenuController : MonoBehaviour
 {
-    private Text wallet, feedback;
-    private readonly Text[] quantities = new Text[2];
+    private TMP_Text wallet, feedback;
+    private readonly TMP_Text[] quantities = new TMP_Text[2];
     private readonly Button[] buy = new Button[2], equip = new Button[2];
     private Action back;
 
@@ -47,9 +48,9 @@ public sealed class ShopMenuController : MonoBehaviour
             int price=i==0?BalanceV1.Current.potionPrice:BalanceV1.Current.bombPrice;
             int width=BalanceV1.Current.consumableBombRadius*2+1;
             quantities[i].text=$"Owned: {account.Owned(kind)}\n"+(i==0?$"Restore {BalanceV1.Current.potionHealthFraction*100:0}% maximum HP":$"Choose a gem: clear a {width} x {width} area");
-            buy[i].GetComponentInChildren<Text>().text=$"Buy 1 - {price} gold";
+            buy[i].GetComponentInChildren<TMP_Text>().text=$"Buy 1 - {price} gold";
             buy[i].interactable=account.ActiveRun==null&&account.Gold>=price&&account.Owned(kind)<9999;
-            equip[i].GetComponentInChildren<Text>().text=account.Equipped(kind)?"Unequip":"Equip";
+            equip[i].GetComponentInChildren<TMP_Text>().text=account.Equipped(kind)?"Unequip":"Equip";
             equip[i].interactable=account.ActiveRun==null&&(account.Owned(kind)>0||account.Equipped(kind));
         }
     }

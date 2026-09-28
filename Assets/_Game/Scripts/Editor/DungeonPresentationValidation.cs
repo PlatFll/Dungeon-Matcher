@@ -185,6 +185,11 @@ public static class DungeonPresentationValidation
         }
         var environment = Object.FindFirstObjectByType<BattleBackgroundTilemapController>()?.ActiveEnvironment;
         Check(environment != null, "existing tilemap environment remains the battle scenery owner");
+        if (environment.name.StartsWith("Dungeon_Finalized"))
+        {
+            FinalizedVisualTargetsReview.ValidateEnvironment(environment);
+            return;
+        }
         var props = environment.transform.Find("AtmosphereProps")?.GetComponent<Tilemap>();
         Check(props != null, "native battle props imported into existing environment");
         var renderer = props.GetComponent<TilemapRenderer>();

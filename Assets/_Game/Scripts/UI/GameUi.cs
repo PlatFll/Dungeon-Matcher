@@ -23,13 +23,13 @@ public static class GameUi
         rect.sizeDelta = size; rect.anchoredPosition = position;
         return rect;
     }
-    public static Text Label(string name, Transform parent, string value, Vector2 size, Vector2 position, int fontSize = 20)
+    public static TMP_Text Label(string name, Transform parent, string value, Vector2 size, Vector2 position, int fontSize = 20)
     {
         var rect = Rect(name, parent, size, position);
-        var text = rect.gameObject.AddComponent<Text>();
-        text.font = Font; text.fontSize = fontSize; text.text = value;
-        text.color = Color.white; text.alignment = TextAnchor.MiddleCenter;
-        text.raycastTarget = false; text.horizontalOverflow = HorizontalWrapMode.Wrap;
+        var text = rect.gameObject.AddComponent<TextMeshProUGUI>();
+        text.font = TmpFont; text.fontSize = fontSize; text.text = value;
+        text.color = Color.white; text.alignment = TextAlignmentOptions.Center;
+        text.raycastTarget = false; text.textWrappingMode = TextWrappingModes.Normal; text.overflowMode = TextOverflowModes.Overflow;
         return text;
     }
     public static Button Button(string name, Transform parent, string text, Vector2 size, Vector2 position, UnityEngine.Events.UnityAction action)
@@ -41,6 +41,7 @@ public static class GameUi
         button.navigation = new Navigation { mode = Navigation.Mode.None };
         button.onClick.AddListener(action);
         Label("Label", rect, text, size - new Vector2(12, 4), Vector2.zero);
+        FinalizedUiSkin.Button(button, size.x < 180);
         return button;
     }
     public static RectTransform Panel(string name, Transform parent, Vector2 size)
@@ -48,6 +49,7 @@ public static class GameUi
         var rect = Rect(name, parent, size, Vector2.zero);
         var image = rect.gameObject.AddComponent<Image>(); image.color = Face;
         var outline = rect.gameObject.AddComponent<Outline>(); outline.effectColor = Purple; outline.effectDistance = new Vector2(3, -3);
+        FinalizedUiSkin.Panel(image, size.y > size.x);
         return rect;
     }
 }

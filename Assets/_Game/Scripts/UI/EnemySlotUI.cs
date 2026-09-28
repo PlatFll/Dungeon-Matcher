@@ -63,6 +63,7 @@ public sealed class EnemySlotUI : MonoBehaviour
     public event Action<EnemySlotUI> SlotCleared;
 
     public EnemyActor CurrentEnemy { get; private set; }
+    public bool IsShieldPresentationActive => isShieldPresentationActive;
 
     public RectTransform EnemySpawnAnchor =>
         enemySpawnAnchor;

@@ -1,0 +1,204 @@
+[
+  {
+    "name": "PlayerBadge",
+    "tool": "create_image_pixen",
+    "job_id": "15ac3028-8c12-4870-890e-4fcde186cd46",
+    "native_size": [
+      24,
+      24
+    ],
+    "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Universal ruby-red HEART in ornate purple and dullgold socket. Exactly one clean symmetric red heart shape, small pale upper-left glint. NO skull, face, portrait, crown, initials or character symbols.",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      3,
+      4,
+      21,
+      21
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/PlayerBadge.png"
+  },
+  {
+    "name": "NormalBadge",
+    "tool": "create_image_pixen",
+    "job_id": "e2b50f8f-26d7-46aa-bbbd-daa737bafaa5",
+    "native_size": [
+      24,
+      24
+    ],
+    "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Plain pale grey skull in simple dull iron socket. Restrained least ornate rank. Skull has two dark eyes and compact jaw. No horns, no crown, no gold or purple gem.",
+    "cost": 1,
+    "status": "corrected_by_followup",
+    "bounds": [
+      2,
+      2,
+      22,
+      21
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/NormalBadge.png"
+  },
+  {
+    "name": "SpecialBadge",
+    "tool": "create_image_pixen",
+    "job_id": "1c60d426-b5e1-42d4-b58b-93a35e1ba94c",
+    "native_size": [
+      24,
+      24
+    ],
+    "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. One faceted AMETHYST DIAMOND in a purple iron socket. Strong violet accent and small pink highlight. No skull, no face, no crown.",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      6,
+      2,
+      19,
+      21
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/SpecialBadge.png"
+  },
+  {
+    "name": "MinibossBadge",
+    "tool": "create_image_pixen",
+    "job_id": "0f57b1ef-8a1d-4c26-a381-48e709c9d7fa",
+    "native_size": [
+      24,
+      24
+    ],
+    "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Heavy HORNED SKULL in dark iron socket. Two clearly visible outward horns and broad skull face, heavier silhouette than plain skull. Cool pale grey, restrained violet metal. No crown, no ruby.",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      4,
+      3,
+      20,
+      21
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/MinibossBadge.png"
+  },
+  {
+    "name": "BossBadge",
+    "tool": "create_image_pixen",
+    "job_id": "de0217a2-0918-4a51-a9ad-e741d27a1006",
+    "native_size": [
+      24,
+      24
+    ],
+    "prompt": "Native24x24 pixel-art UI rank badge isolated on transparent background, entire silhouette within1px margin. Whimsical dungeon fantasy matching stepped purple UI. Chunky connected hard pixels, dark #0a0d11 outline, upper-left planes, limited colors, no blur, gradients, antialias, text or floor shadow. Prestigious crowned RUBY crest, bright red faceted jewel below a small three-point gold crown, gold frame over deep purple iron. No skull, no face, no letters.",
+    "cost": 1,
+    "status": "corrected_by_followup",
+    "bounds": [
+      2,
+      2,
+      22,
+      22
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/BossBadge.png"
+  },
+  {
+    "name": "HealthBarBase",
+    "tool": "create_image_pixen",
+    "job_id": "0dcdfe52-525a-4e19-a8f8-778651a01355",
+    "native_size": [
+      128,
+      32
+    ],
+    "prompt": "One native128x24 horizontal HEALTH BAR centered in a transparent128x32 canvas, with4px empty rows above and below. No badge, no icons or text. Rich stepped charcoal-purple frame, sparse tiny amethyst sockets at outer corners, layered top-left bevel in #4e3d6c #846a95, nearblack #0a0d11 outline, inner red ruby HP fill strip with hard three-tone horizontal shading, dark burgundy empty-track edge. Rectangular quiet fill area x8..119 y12..19, frame ornament outside fill. Hard pixels, clean connected clusters, no gradients, blur, antialias, shine streaks or noise. Matches ornate purple dungeon menu buttons.",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      6,
+      3,
+      122,
+      30
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/HealthBarBase.png"
+  },
+  {
+    "name": "EnergyBarBase",
+    "tool": "create_image_pixen",
+    "job_id": "94d73167-95ea-4afd-9805-54d167175248",
+    "native_size": [
+      144,
+      32
+    ],
+    "prompt": "One native144x24 horizontal ABILITY ENERGY BAR centered in a transparent144x32 canvas with4px empty rows above and below. Left end has a faceted purple amethyst diamond emblem, rightward track filled teal/turquoise, never red. Stepped purple layered frame #151423 #241f3a #4e3d6c #846a95 with tiny corner glints, nearblack outline. Quiet horizontal fill x28..135 y12..19, clean three-tone teal strip. Rich nostalgic dungeon UI, native hard connected pixels, no text, no portrait, no skull, no gradients/blur/antialias/noise.",
+    "cost": 1,
+    "status": "corrected_by_followup",
+    "bounds": [
+      56,
+      6,
+      138,
+      26
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/EnergyBarBase.png"
+  },
+  {
+    "name": "WavePlaque",
+    "tool": "create_image_pixen",
+    "job_id": "e266c51d-d05e-4516-b88e-84b1b8a302a1",
+    "native_size": [
+      128,
+      32
+    ],
+    "prompt": "One blank ornate horizontal WAVE PLAQUE, native128x32 transparent canvas. Chunky stepped charcoal purple stone-metal frame, layered bevel #151423 #241f3a #4e3d6c #846a95, dark #0a0d11 outline, tiny amethyst jewel sockets at left and right ends. Quiet uniform dark violet blank inner field wide enough for runtime wave text. Entire silhouette fits with1px margin. Hard connected pixels, restrained upper-left highlight, no lettering, no icons in center, no blur/gradient/antialias/noise.",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      2,
+      1,
+      126,
+      31
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/WavePlaque.png"
+  },
+  {
+    "name": "ButtonSmallNormal",
+    "tool": "edit_image_pixen",
+    "prompt": "Re-author as a native96x40 compact blank button. Match purple material, stepped corners and tiny amethyst corner jewels. Use thin6px frame so the uniform dark center has ample space for runtime text. Entire silhouette inside1px margin. Hard pixels, no text, no central gem/icon, no blur or gradient. Consistent top-left bevel; modest connected highlights.",
+    "native_size": [
+      96,
+      40
+    ],
+    "job_id": "ef09a895-e1bc-40fc-bc89-4effdf4f5e57",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      1,
+      1,
+      95,
+      39
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/ButtonSmallNormal.png"
+  },
+  {
+    "name": "SettingsNormal",
+    "tool": "edit_image_pixen",
+    "prompt": "Re-author as a native48x48 square settings icon button. Match rich stepped purple corners and small amethyst sockets. Center a clear pale lavender mechanical GEAR with8teeth and round dark center hole, no lettering. Gear silhouette24px wide, sufficient padding, upper-left light, connected hard pixels, dark outline, no blur, gradients, antialias or extra ornaments.",
+    "native_size": [
+      48,
+      48
+    ],
+    "job_id": "8323bb50-9fb4-4b17-b46b-56f0d3b03ae0",
+    "cost": 1,
+    "status": "review_candidate",
+    "bounds": [
+      1,
+      1,
+      47,
+      47
+    ],
+    "source": "ArtSource/FinalizedVisuals/Candidates/UI/SettingsNormal.png"
+  },
+  {
+    "name": "Logo",
+    "tool": "create_image_pro",
+    "job_id": null,
+    "prompt": "Native212x88 transparent pixel-art game logo, exact readable wording DUNGEON on the top line and MATCHER on the bottom line, ALL letters correct. Bold chunky old dungeon arcade lettering in pale gold with darker gold lower planes, deep-purple extrusion, nearblack outlines; top-left light. Between the two word lines at center: the distinctive SPLIT PINK STORY GEM from the supplied reference, TWO OPPOSED pink faceted halves facing each other across a bright narrow central diagonal seam, clearly split yet together forming one diamond. Short purple horizontal ornaments to sides of gem. Rich purple frame language, sparse tiny amethyst accents. Keep full logo inside2px safe margin. Deliberate hard native pixels and connected clusters, limited palette, no gradients/blur/antialias/noise, no other words, no characters or backdrop. Re-author at this exact native resolution; reference is guidance only.",
+    "native_size": [
+      212,
+      88
+    ],
+    "status": "not_queued_rate_limit",
+    "cost": 0
+  }
+]

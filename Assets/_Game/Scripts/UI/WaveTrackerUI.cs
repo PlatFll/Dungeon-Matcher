@@ -21,6 +21,13 @@ public sealed class WaveTrackerUI :
 
     private void Awake()
     {
+        var plaque = FinalizedUiSkin.Load("WavePlaque");
+        if (plaque != null && TryGetComponent<UnityEngine.UI.Image>(out var image))
+        {
+            image.sprite = plaque;
+            image.color = Color.white;
+            image.type = UnityEngine.UI.Image.Type.Simple;
+        }
         RefreshFromController();
     }
 

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +24,7 @@ public sealed class GemMasteryMenuController : MonoBehaviour
 
     [Header("Status")]
     [SerializeField]
-    private Text selectionText;
+    private TMP_Text selectionText;
 
     private GemMasteryShape selectedShape =
         GemMasteryShape.StraightFive;
@@ -32,6 +33,7 @@ public sealed class GemMasteryMenuController : MonoBehaviour
 
     private void Awake()
     {
+        FinalizedUiSkin.ApplyScreen(gameObject);
         if (!HasRequiredReferences())
         {
             enabled = false;
@@ -294,8 +296,8 @@ public sealed class GemMasteryMenuController : MonoBehaviour
             button.interactable =
                 isImplemented && AccountProgression.Current.IsUnlocked(reward);
 
-            Text label =
-                button.GetComponentInChildren<Text>(
+            TMP_Text label =
+                button.GetComponentInChildren<TMP_Text>(
                     true
                 );
 
@@ -360,6 +362,7 @@ public sealed class GemMasteryMenuController : MonoBehaviour
         }
 
         button.targetGraphic.color = color;
+        FinalizedUiSkin.Button(button, true, color == SelectedButtonColor);
     }
 
     private bool HasRequiredReferences()
@@ -372,7 +375,7 @@ public sealed class GemMasteryMenuController : MonoBehaviour
         {
             Debug.LogError(
                 "GemMasteryMenuController requires exactly four shape " +
-                "buttons, five reward buttons, and one selection Text.",
+                "buttons, five reward buttons, and one selection TMP_Text.",
                 this
             );
 

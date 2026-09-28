@@ -135,6 +135,17 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
+**Finalized visuals v2 — review candidate (2026-09-28):** `Game.unity` now selects
+`Dungeon_Finalized` through the existing background controller's optional prefab
+reference. The native 512×384 modular scene and shared purple UI family live in
+`ArtSource/FinalizedVisuals/`. Player/enemy bars use a universal heart and four
+category badges; HP remains red and ability energy teal. Existing menu and
+runtime labels use TextMeshPro. The source manifest records PixelLab lineage,
+127 editable exports and pending visual approval. See
+[validation and screenshots](Validation/FINALIZED_VISUAL_TARGETS_V2.md).
+Current cast, animations, gems, locked board frames and gameplay rules are
+preserved. The background-only checkpoint below describes the earlier pass.
+
 The working guide is v1.9. `ArtSource/TileVfx/` preserves the four supplied LibreSprite effects and exports thirteen-frame, 390 ms tile bursts. Actual cleared tiles receive centered generic, poison, healing or shield effects at shatter; the existing board pipeline still owns gameplay and refill timing. `ArtSource/Presentation/` retains its earlier native props, consumables, menu doorway and pink-gem title logo. The current battleground and masonry sources are in `ArtSource/Backgrounds/`: cool stone wall/floor modules, subdued dungeon dressing and a dark 128×128 repeat. They replace only the selected background composition and existing surround resource. The existing battle tilemap prefab, mask, sorting and layout owners remain authoritative. No runtime, character, animation, gem, frame, menu, VFX or sound change is part of this background pass. See [background validation](Validation/DUNGEON_BACKGROUND_REFINEMENT.md) for compile, asset and actual-scene checks at 1080×1920 and 1080×2400; physical-device review remains separate.
 
 Thirteen original short combat sounds cover grouped gem matches/landings, explosions, poison, hits, healing, shields and abilities. A bounded six-voice mix prioritizes impacts and player casts. Android/iOS haptics provide short grouped landing/impact/cast pulses with independent persistent vibration control. Feedback is suppressed during pause, focus loss and snapshot restore/replay. Physical-device vibration feel and speaker/headphone mix approval remain outstanding. Current validation evidence is recorded in `Docs/Validation/DUNGEON_PRESENTATION_POLISH.md`; previous pass evidence remains historical.

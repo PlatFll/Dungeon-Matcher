@@ -1,0 +1,53 @@
+[
+  {
+    "name": "NormalBadgeFixed",
+    "tool": "edit_image_pixen",
+    "prompt": "Remove BOTH horns completely. This rank must be a PLAIN human skull in a simple dull iron socket. Rounded compact cranium, two dark eye sockets and small jaw. No protrusions above or beside the skull. Keep native24x24 transparent canvas, chunky crisp pixels, cool pale grey, dark outline. This is the least ornate enemy rank.",
+    "native_size": [
+      24,
+      24
+    ],
+    "source_job": "e2b50f8f-26d7-46aa-bbbd-daa737bafaa5",
+    "job_id": "03000673-bd79-4ce1-806e-d717b8c0b66c",
+    "cost": 1,
+    "status": "completed_review_candidate"
+  },
+  {
+    "name": "BossBadgeFixed",
+    "tool": "edit_image_pixen",
+    "prompt": "Replace the entire face-like lower crest with one LARGE bright red faceted RUBY gemstone surrounded by GOLD. Keep the gold three-point crown above. The ruby must occupy the main central12x12 area and be clearly recognizable. Remove all black eye-like sockets: this is a jewel heraldic crest, no skull, mask or face. Native24x24 transparent, darkpurple outline, hard connected pixels.",
+    "native_size": [
+      24,
+      24
+    ],
+    "source_job": "de0217a2-0918-4a51-a9ad-e741d27a1006",
+    "job_id": "109345ea-e8bf-4349-b2a9-ac7c689079b6",
+    "cost": 1,
+    "status": "completed_review_candidate"
+  },
+  {
+    "name": "EnergyBarFixed",
+    "tool": "edit_image_pixen",
+    "prompt": "Re-author this ornate health frame as an ability energy bar, native144x32. Full-width rectangle nearly edge to edge. Move all badge identity to one large purple amethyst DIAMOND on LEFT end. Inner track is TEAL turquoise only, no red. Rich stepped purple frame, thicker squared corners, dark inset track. Uniform fill color bands, no arrowhead. No text or portrait. Binary transparent surround, crisp native pixels.",
+    "native_size": [
+      144,
+      32
+    ],
+    "source_job": "0dcdfe52-525a-4e19-a8f8-778651a01355",
+    "job_id": "5a96b4de-7652-4ed7-b652-0b48d33f241d",
+    "cost": 1,
+    "status": "completed_review_candidate"
+  },
+  {
+    "name": "Logo",
+    "tool": "create_image_pro",
+    "job_id": "e31c9dab-57a6-43bf-ad4e-6254873cbbce",
+    "native_size": [
+      212,
+      88
+    ],
+    "cost": 20,
+    "prompt": "Native212x88 transparent pixel-art game logo, exact readable wording DUNGEON on the top line and MATCHER on the bottom line, ALL letters correct. Bold chunky old dungeon arcade lettering in pale gold with darker gold lower planes, deep-purple extrusion, nearblack outlines; top-left light. Between the two word lines at center: the distinctive SPLIT PINK STORY GEM from the supplied reference, TWO OPPOSED pink faceted halves facing each other across a bright narrow central diagonal seam, clearly split yet together forming one diamond. Short purple horizontal ornaments to sides of gem. Rich purple frame language, sparse tiny amethyst accents. Keep full logo inside2px safe margin. Deliberate hard native pixels and connected clusters, limited palette, no gradients/blur/antialias/noise, no other words, no characters or backdrop. Re-author at this exact native resolution; reference is guidance only.",
+    "status": "completed_review_candidate"
+  }
+]

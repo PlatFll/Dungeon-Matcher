@@ -1,3 +1,4 @@
+using TMPro;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +10,16 @@ public sealed class RunControlsUI : MonoBehaviour
     private RectTransform safeRoot, overlay, panel;
     private readonly Button[] slots = new Button[2];
     private readonly Image[] icons = new Image[2], cooldownFills = new Image[2];
-    private readonly Text[] charges = new Text[2];
-    private Text hint, music, sfx, saveError;
-    private Text motion, vibration;
+    private readonly TMP_Text[] charges = new TMP_Text[2];
+    private TMP_Text hint, music, sfx, saveError;
+    private TMP_Text motion, vibration;
     private Button confirmBomb;
     private RectTransform abilityRect;
     private readonly System.Collections.Generic.Dictionary<Button, EnemySlotUI> enemyInspectButtons = new System.Collections.Generic.Dictionary<Button, EnemySlotUI>();
     private IDisposable inputBlock;
     private bool paused, victoryShown;
     private bool restoringOverlay;
-    private Text recovery;
+    private TMP_Text recovery;
     private bool recoveryFailed;
     private string lesson;
     private float lessonUntil;
@@ -42,6 +43,9 @@ public sealed class RunControlsUI : MonoBehaviour
             { if(kind==ConsumableKind.HealthPotion) session.TryUsePotion();else session.ToggleBombTargeting(); });
             slots[i].image.sprite=Resources.Load<Sprite>("UI/Consumables/Slot");
             slots[i].image.color=Color.white;
+            slots[i].image.type=Image.Type.Simple;
+            slots[i].transition=Selectable.Transition.ColorTint;
+            slots[i].spriteState=default;
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
             icons[i].sprite=Resources.Load<Sprite>(i==0?"UI/Consumables/Potion":"UI/Consumables/Bomb");
@@ -56,11 +60,12 @@ public sealed class RunControlsUI : MonoBehaviour
         hint=GameUi.Label("ConsumableHint",ability.transform.parent,"",new Vector2(400,28),Vector2.zero,16);
         confirmBomb=GameUi.Button("ConfirmBomb",safeRoot,"Use Bomb",new Vector2(150,40),new Vector2(0,-100),()=>session.ConfirmBomb());
         gameObject.AddComponent<BombTargetPreview>();
-        var settings=GameUi.Button("Settings",safeRoot,"Settings",new Vector2(90,36),Vector2.zero,OpenSettings);
+        var settings=GameUi.Button("Settings",safeRoot,"",new Vector2(48,48),Vector2.zero,OpenSettings);
+        FinalizedUiSkin.Button(settings, gear:true);
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
         settingsRect.anchoredPosition=new Vector2(-20,-18);
-        var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(70,36),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
-        var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);guideRect.anchoredPosition=new Vector2(-120,-18);
+        var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
+        var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);guideRect.anchoredPosition=new Vector2(-78,-22);
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))
         {
             if (slot.EnemySpawnAnchor == null) continue;
@@ -70,10 +75,11 @@ public sealed class RunControlsUI : MonoBehaviour
             var inspect=GameUi.Button("InspectEnemy",slot.transform,"",new Vector2(100,120),Vector2.zero,
                 ()=>OpenGuide(CombatGuide.Enemy(selectedSlot.CurrentEnemy)));
             inspect.image.color=Color.clear;
+            inspect.transition=Selectable.Transition.None;
             enemyInspectButtons.Add(inspect,slot);
         }
         var saveRetry=GameUi.Button("RetrySave",safeRoot,"Retry save",new Vector2(180,40),new Vector2(0,280),()=>session.RetrySave());
-        saveError=saveRetry.GetComponentInChildren<Text>();
+        saveError=saveRetry.GetComponentInChildren<TMP_Text>();
         saveRetry.gameObject.SetActive(false);
     }
     private static Sprite TextureSprite()
@@ -111,10 +117,10 @@ public sealed class RunControlsUI : MonoBehaviour
             cooldownFills[i].fillAmount=count==0?1:cooldown/BalanceV1.Current.consumableCooldown;
             charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}s":count.ToString();
         }
-        hint.rectTransform.anchoredPosition=new Vector2(0,((RectTransform)hint.transform.parent).rect.height*.5f-65);
+        hint.rectTransform.anchoredPosition=new Vector2(0,-((RectTransform)hint.transform.parent).rect.height*.5f+31);
         UpdateLesson();
         hint.rectTransform.sizeDelta=new Vector2(430,28);
-        hint.fontSize=13;
+        hint.fontSize=9;
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
         confirmBomb.gameObject.SetActive(session.HasBombPreview && session.Board.IsSelectingTarget);
         if (confirmBomb.gameObject.activeSelf)
@@ -135,10 +141,10 @@ public sealed class RunControlsUI : MonoBehaviour
         GameUi.Button("Suspend",panel,session.IsPractice?"Leave practice":"Suspend to Menu",new Vector2(320,44),new Vector2(0,137),Suspend);
         GameUi.Button("Retry",panel,"End run and retry",new Vector2(320,44),new Vector2(0,79),()=>ConfirmExit("Game"));
         GameUi.Button("Quit",panel,"End run",new Vector2(320,44),new Vector2(0,21),()=>ConfirmExit("MainMenu"));
-        var m=GameUi.Button("Music",panel,"",new Vector2(320,44),new Vector2(0,-60),()=>{AudioPreferences.SetMusicMuted(!AudioPreferences.MusicMuted);RefreshAudio();});music=m.GetComponentInChildren<Text>();
-        var s=GameUi.Button("SFX",panel,"",new Vector2(320,44),new Vector2(0,-118),()=>{AudioPreferences.SetSfxMuted(!AudioPreferences.SfxMuted);RefreshAudio();});sfx=s.GetComponentInChildren<Text>();RefreshAudio();
-        var mtn=GameUi.Button("ReducedMotion",panel,"",new Vector2(320,44),new Vector2(0,-176),()=>{PresentationPreferences.SetReducedMotion(!PresentationPreferences.ReducedMotion);RefreshAudio();});motion=mtn.GetComponentInChildren<Text>();RefreshAudio();
-        var vib=GameUi.Button("Vibration",panel,"",new Vector2(320,44),new Vector2(0,-234),()=>{AudioPreferences.SetVibrationMuted(!AudioPreferences.VibrationMuted);RefreshAudio();});vibration=vib.GetComponentInChildren<Text>();RefreshAudio();
+        var m=GameUi.Button("Music",panel,"",new Vector2(320,44),new Vector2(0,-60),()=>{AudioPreferences.SetMusicMuted(!AudioPreferences.MusicMuted);RefreshAudio();});music=m.GetComponentInChildren<TMP_Text>();
+        var s=GameUi.Button("SFX",panel,"",new Vector2(320,44),new Vector2(0,-118),()=>{AudioPreferences.SetSfxMuted(!AudioPreferences.SfxMuted);RefreshAudio();});sfx=s.GetComponentInChildren<TMP_Text>();RefreshAudio();
+        var mtn=GameUi.Button("ReducedMotion",panel,"",new Vector2(320,44),new Vector2(0,-176),()=>{PresentationPreferences.SetReducedMotion(!PresentationPreferences.ReducedMotion);RefreshAudio();});motion=mtn.GetComponentInChildren<TMP_Text>();RefreshAudio();
+        var vib=GameUi.Button("Vibration",panel,"",new Vector2(320,44),new Vector2(0,-234),()=>{AudioPreferences.SetVibrationMuted(!AudioPreferences.VibrationMuted);RefreshAudio();});vibration=vib.GetComponentInChildren<TMP_Text>();RefreshAudio();
         GameUi.Label("SuspendHint",panel,"Suspend keeps your board and build.\nNo combat time passes while you are away.",new Vector2(360,52),new Vector2(0,-300),17);
     }
     private void UpdateLesson()
@@ -171,7 +177,7 @@ public sealed class RunControlsUI : MonoBehaviour
         viewport.gameObject.AddComponent<Image>().color=GameUi.Face;
         viewport.gameObject.AddComponent<Mask>().showMaskGraphic=false;
         var content=GameUi.Label("GuideText",viewport,text,new Vector2(440,410),Vector2.zero,20);
-        content.alignment=TextAnchor.UpperLeft;
+        content.alignment=TextAlignmentOptions.TopLeft;
         content.rectTransform.anchorMin=content.rectTransform.anchorMax=content.rectTransform.pivot=new Vector2(.5f,1);
         content.rectTransform.anchoredPosition=Vector2.zero;
         content.rectTransform.sizeDelta=new Vector2(440,Mathf.Max(410,content.preferredHeight));

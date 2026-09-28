@@ -79,14 +79,16 @@ public static class DungeonBackgroundValidation
             Check(environment != null && environment.transform.localScale == Vector3.one, "existing environment and native scale");
             var back = environment.transform.Find("BackWall").GetComponent<Tilemap>();
             var ground = environment.transform.Find("Floor").GetComponent<Tilemap>();
-            Check(back.GetUsedTilesCount() == 32 && ground.GetUsedTilesCount() == 9, "complete selected wall and floor tiles");
+            bool finalized = environment.name.StartsWith("Dungeon_Finalized");
+            if (finalized) FinalizedVisualTargetsReview.ValidateEnvironment(environment);
+            else Check(back.GetUsedTilesCount() == 32 && ground.GetUsedTilesCount() == 9, "complete selected wall and floor tiles");
             foreach (var map in new[] { back, ground })
             {
                 var renderer = map.GetComponent<TilemapRenderer>();
                 Check(renderer.enabled && !renderer.forceRenderingOff && renderer.maskInteraction == SpriteMaskInteraction.VisibleInsideMask, "background uses existing viewport mask");
                 foreach (var tile in map.GetTilesBlock(map.cellBounds).OfType<Tile>().Distinct()) ValidateSprite(tile.sprite);
             }
-            foreach (string name in new[] { "Architecture", "BackDecor", "AtmosphereProps" })
+            foreach (string name in finalized ? new[] { "Architecture", "BackDecor" } : new[] { "Architecture", "BackDecor", "AtmosphereProps" })
                 Check(environment.transform.Find(name).GetComponent<Tilemap>().GetUsedTilesCount() == 0, "previous dressing not doubled: " + name);
             var surround = GameObject.Find("DungeonSurroundingMasonry").GetComponent<SpriteRenderer>();
             Check(surround.sortingOrder == -200 && surround.drawMode == SpriteDrawMode.Tiled, "surrounds stay behind gameplay");

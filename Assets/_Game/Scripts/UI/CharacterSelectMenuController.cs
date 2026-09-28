@@ -1,3 +1,4 @@
+using TMPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private Image characterPreview;
 
     [SerializeField]
-    private Text statusText;
+    private TMP_Text statusText;
 
     [Header("Navigation")]
     [SerializeField]
@@ -44,9 +45,9 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private Button levelUpButton;
     private Button resetLevelButton;
     private GameObject resetConfirmation;
-    private Text resetConfirmationText;
+    private TMP_Text resetConfirmationText;
     private string resetPlayerId;
-    private Text progressionFeedback;
+    private TMP_Text progressionFeedback;
     private Coroutine levelFlash;
     private Color previewColor = Color.white;
 
@@ -56,6 +57,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     {
         startRequested = onStartRequested;
         backRequested = onBackRequested;
+        FinalizedUiSkin.ApplyScreen(gameObject);
 
         if (!HasRequiredReferences())
         {
@@ -256,7 +258,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
             $"Gold Coins: {AccountProgression.Current.Gold}";
         if(levelUpButton!=null)
         {
-            levelUpButton.GetComponentInChildren<Text>().text=level>=BalanceV1.Current.levelCap?"Maximum Level":$"Level Up - {cost} gold";
+            levelUpButton.GetComponentInChildren<TMP_Text>().text=level>=BalanceV1.Current.levelCap?"Maximum Level":$"Level Up - {cost} gold";
             levelUpButton.interactable=AccountProgression.Current.ActiveRun==null&&level<BalanceV1.Current.levelCap&&AccountProgression.Current.Gold>=cost;
         }
         if(resetLevelButton!=null)
@@ -295,7 +297,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         Place(rattlebonesButton.transform,new Vector2(-110,210),new Vector2(205,50));
         Place(bardleyButton.transform,new Vector2(110,210),new Vector2(205,50));
         Place(characterPreview.transform,new Vector2(0,117),new Vector2(112,112));characterPreview.preserveAspect=true;
-        Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.Font;
+        Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.TmpFont;
         Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
         Place(backButton.transform,new Vector2(110,-245),new Vector2(200,48));
         levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(240,48),new Vector2(-95,-150),LevelUp);
@@ -395,6 +397,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         {
             button.targetGraphic.color =
                 SelectedColor;
+            FinalizedUiSkin.Button(button, true, true);
             return;
         }
 
@@ -402,6 +405,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
             available
                 ? UnselectedColor
                 : UnavailableColor;
+        FinalizedUiSkin.Button(button, true);
     }
 
     private bool HasRequiredReferences()

@@ -28,6 +28,11 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private RectTransform startRect;
     private RectTransform middleRect;
     private RectTransform endRect;
+    private RectTransform badgeRect;
+    private EnemySlotUI enemySlot;
+    private bool shieldWasVisible;
+    private static readonly System.Collections.Generic.Dictionary<string, ModularHealthBarStyle> RankStyles =
+        new System.Collections.Generic.Dictionary<string, ModularHealthBarStyle>();
 
     private float targetNormalized = 1f;
     private float displayedNormalized = 1f;
@@ -50,14 +55,27 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (style == null)
+        var desired = ResolveContextStyle();
+        if (style != desired)
         {
-            ResolveStyle();
+            style = desired;
+            RemoveGeneratedVisual();
+            RestoreLegacyVisuals();
         }
 
         if (!modularVisualBuilt)
         {
             TryBuildModularVisual();
+        }
+
+        // Enemy shields retain their existing separate presentation, including its break flash.
+        bool shieldVisible = enemySlot != null && enemySlot.IsShieldPresentationActive;
+        if (shieldVisible || shieldWasVisible)
+        {
+            if (generatedRoot != null) generatedRoot.gameObject.SetActive(!shieldVisible);
+            if (shieldVisible) RestoreLegacyVisuals(); else HideLegacyVisuals();
+            shieldWasVisible = shieldVisible;
+            if (shieldVisible) return;
         }
 
         CaptureLegacyValue();
@@ -68,6 +86,10 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         {
             return;
         }
+
+        // Slot/player owners may re-enable their legacy fill after initialization.
+        // Keep it as the value source, with only the generated HP art visible.
+        HideLegacyVisuals();
 
         if (!Approximately(
                 rootRect.rect.size,
@@ -112,7 +134,9 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private void Initialize()
     {
         ResolveReferences();
+        var previousStyle = style;
         ResolveStyle();
+        if (previousStyle != style && modularVisualBuilt) RemoveGeneratedVisual();
         CaptureLegacyValue();
         TryBuildModularVisual();
         RefreshGeometry();
@@ -120,6 +144,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
     private void ResolveReferences()
     {
+        enemySlot = GetComponentInParent<EnemySlotUI>();
         rootRect =
             transform as RectTransform;
 
@@ -137,12 +162,35 @@ public sealed class ModularHealthBarUI : MonoBehaviour
 
     private void ResolveStyle()
     {
-        style =
-            styleOverride != null
-                ? styleOverride
-                : Resources.Load<ModularHealthBarStyle>(
-                    DefaultStyleResourcePath
-                );
+        style = ResolveContextStyle();
+    }
+
+    private ModularHealthBarStyle ResolveContextStyle()
+    {
+        if (styleOverride != null) return styleOverride;
+        var rankStyle = enemySlot != null
+            ? LoadRankStyle(enemySlot.CurrentEnemy != null && enemySlot.CurrentEnemy.Definition != null
+                ? enemySlot.CurrentEnemy.Definition.Category : EnemyCategory.Normal)
+            : LoadStyle("Player");
+        return rankStyle != null ? rankStyle : Resources.Load<ModularHealthBarStyle>(DefaultStyleResourcePath);
+    }
+
+    public static ModularHealthBarStyle LoadRankStyle(EnemyCategory category)
+    {
+        string name = category switch
+        {
+            EnemyCategory.Special => "Special", EnemyCategory.Miniboss => "Miniboss",
+            EnemyCategory.Boss => "Boss", _ => "Normal"
+        };
+        return LoadStyle(name);
+    }
+
+    private static ModularHealthBarStyle LoadStyle(string name)
+    {
+        if (RankStyles.TryGetValue(name, out var found) && found != null) return found;
+        var result = Resources.Load<ModularHealthBarStyle>("UI/Finalized/Health/" + name);
+        if (result != null) RankStyles[name] = result;
+        return result;
     }
 
     private void CaptureLegacyValue()
@@ -200,11 +248,11 @@ public sealed class ModularHealthBarUI : MonoBehaviour
             CreateImage(
                 "EmptyHealthFill",
                 generatedRoot,
-                null
+                style.EmptyTrack
             );
 
-        emptyFill.color =
-            style.EmptyFillColor;
+        emptyFill.color = style.EmptyTrack != null ? Color.white : style.EmptyFillColor;
+        if (style.EmptyTrack != null) emptyFill.type = Image.Type.Tiled;
         emptyFill.raycastTarget = false;
         emptyFillRect =
             emptyFill.rectTransform;
@@ -213,11 +261,11 @@ public sealed class ModularHealthBarUI : MonoBehaviour
             CreateImage(
                 "CurrentHealthFill",
                 generatedRoot,
-                null
+                style.FillStrip
             );
 
-        currentFill.color =
-            style.FillColor;
+        currentFill.color = style.FillStrip != null ? Color.white : style.FillColor;
+        if (style.FillStrip != null) currentFill.type = Image.Type.Tiled;
         currentFill.raycastTarget = false;
         healthFillRect =
             currentFill.rectTransform;
@@ -261,6 +309,12 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         endRect =
             endImage.rectTransform;
 
+        if (style.Badge != null)
+        {
+            var badge = CreateImage("RankBadge", generatedRoot, style.Badge);
+            badge.raycastTarget = false; badgeRect = badge.rectTransform;
+        }
+
         HideLegacyVisuals();
 
         modularVisualBuilt = true;
@@ -293,6 +347,20 @@ public sealed class ModularHealthBarUI : MonoBehaviour
                 rootRect.rect.height
             );
 
+        float badgeWidth = 0f;
+        if (style.Badge != null)
+        {
+            // Preserve source pixels. The surrounding slot continues to own placement.
+            rootWidth = Mathf.Max(rootWidth, 104);
+            generatedRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rootWidth);
+            rootHeight = style.StartPiece.rect.height * Mathf.Max(1, Mathf.FloorToInt(rootHeight / style.StartPiece.rect.height));
+            generatedRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rootHeight);
+            badgeWidth = Mathf.Round(rootHeight * style.Badge.rect.width / style.Badge.rect.height);
+            ConfigureCap(badgeRect, true, badgeWidth, rootHeight);
+            var label = rootRect.GetComponentInChildren<TMPro.TMP_Text>();
+            if (label != null) label.rectTransform.anchoredPosition = new Vector2(7, label.rectTransform.anchoredPosition.y);
+        }
+
         float startWidth =
             GetPieceWidthAtHeight(
                 style.StartPiece,
@@ -318,6 +386,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
             endWidth,
             rootHeight
         );
+        if (startRect != null && badgeWidth > 0) startRect.anchoredPosition = new Vector2(badgeWidth - 10, 0);
 
         if (middleRect != null)
         {
@@ -329,7 +398,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
                 new Vector2(0.5f, 0.5f);
             middleRect.offsetMin =
                 new Vector2(
-                    startWidth,
+                    startWidth + Mathf.Max(0, badgeWidth - 10),
                     0f
                 );
             middleRect.offsetMax =
@@ -419,7 +488,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         float availableWidth =
             Mathf.Max(
                 0f,
-                rootRect.rect.width -
+                generatedRoot.rect.width -
                 style.FillInsetLeft -
                 style.FillInsetRight
             );
@@ -481,6 +550,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         startRect = null;
         middleRect = null;
         endRect = null;
+        badgeRect = null;
         modularVisualBuilt = false;
     }
 
