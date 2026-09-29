@@ -58,7 +58,7 @@ public sealed class CombatTextController :
 
     [SerializeField]
     private Vector2 playerTextOffset =
-        new Vector2(0f, 45f);
+        new Vector2(0f, 92f);
 
     [Header("Enemies")]
     [SerializeField]
@@ -66,7 +66,7 @@ public sealed class CombatTextController :
 
     [SerializeField]
     private Vector2 enemyTextOffset =
-        new Vector2(0f, 40f);
+        new Vector2(0f, 52f);
 
     [Header("Pooling")]
     [SerializeField, Min(0)]
@@ -93,6 +93,7 @@ public sealed class CombatTextController :
     {
         SubscribeToPlayer();
         SubscribeToWaves();
+        BindCurrentEnemies();
     }
 
     private void Start()
@@ -146,6 +147,8 @@ public sealed class CombatTextController :
 
         playerActor.Healed +=
             HandlePlayerHealed;
+        playerActor.ShieldGranted -= HandlePlayerShieldGranted;
+        playerActor.ShieldGranted += HandlePlayerShieldGranted;
     }
 
     private void UnsubscribeFromPlayer()
@@ -161,6 +164,7 @@ public sealed class CombatTextController :
 
         playerActor.Healed -=
             HandlePlayerHealed;
+        playerActor.ShieldGranted -= HandlePlayerShieldGranted;
     }
 
     private void SubscribeToWaves()
@@ -239,6 +243,9 @@ public sealed class CombatTextController :
 
         enemy.DamageReceived +=
             HandleEnemyDamaged;
+        enemy.Healed += HandleEnemyHealed;
+        enemy.ShieldGranted += HandleEnemyShieldGranted;
+        enemy.ShieldDamaged += HandleEnemyShieldDamaged;
 
         enemy.Defeated +=
             HandleEnemyDefeated;
@@ -254,6 +261,9 @@ public sealed class CombatTextController :
 
         enemy.DamageReceived -=
             HandleEnemyDamaged;
+        enemy.Healed -= HandleEnemyHealed;
+        enemy.ShieldGranted -= HandleEnemyShieldGranted;
+        enemy.ShieldDamaged -= HandleEnemyShieldDamaged;
 
         enemy.Defeated -=
             HandleEnemyDefeated;
@@ -277,6 +287,9 @@ public sealed class CombatTextController :
             {
                 enemy.DamageReceived -=
                     HandleEnemyDamaged;
+                enemy.Healed -= HandleEnemyHealed;
+                enemy.ShieldGranted -= HandleEnemyShieldGranted;
+                enemy.ShieldDamaged -= HandleEnemyShieldDamaged;
 
                 enemy.Defeated -=
                     HandleEnemyDefeated;
@@ -312,7 +325,7 @@ public sealed class CombatTextController :
         // Actor reports actual shield loss after mitigation. A separate lane
         // keeps a simultaneous HP spill readable without double-counting it.
         ShowText($"-{actualDamage}", CombatTextKind.Shield,
-            playerTextAnchor, playerTextOffset + new Vector2(28f, 12f));
+            playerTextAnchor, playerTextOffset + new Vector2(28f, 0f));
     }
 
     private void HandlePlayerHealed(
@@ -331,6 +344,30 @@ public sealed class CombatTextController :
             playerTextAnchor,
             playerTextOffset
         );
+    }
+
+    private void HandlePlayerShieldGranted(PlayerActor player, int amount)
+    {
+        if (amount > 0) ShowText($"+{amount}", CombatTextKind.Shield,
+            playerTextAnchor, playerTextOffset + new Vector2(22, 0));
+    }
+
+    private void HandleEnemyHealed(EnemyActor enemy, int amount)
+    {
+        if (enemy != null && amount > 0) ShowText($"+{amount}", CombatTextKind.Healing,
+            enemy.transform, enemyTextOffset);
+    }
+
+    private void HandleEnemyShieldGranted(EnemyActor enemy, int amount)
+    {
+        if (enemy != null && amount > 0) ShowText($"+{amount}", CombatTextKind.Shield,
+            enemy.transform, enemyTextOffset + new Vector2(22, 10));
+    }
+
+    private void HandleEnemyShieldDamaged(EnemyActor enemy, int amount)
+    {
+        if (enemy != null && amount > 0) ShowText($"-{amount}", CombatTextKind.Shield,
+            enemy.transform, enemyTextOffset + new Vector2(22, 10));
     }
 
     private void HandleEnemyDamaged(

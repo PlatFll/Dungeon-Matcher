@@ -1,8 +1,8 @@
 # LibreSprite scripting preserves RGBA cels but its LayerFromBackground command
 # can leave background flags set. Normalize layer metadata only, before exporting
 # through LibreSprite. No pixels, palette, dimensions or cel bytes are changed.
+param([string]$SourceRoot = (Join-Path $PSScriptRoot '../ArtSource/FinalizedVisuals'))
 $ErrorActionPreference = 'Stop'
-$sourceRoot = Join-Path $PSScriptRoot '../ArtSource/FinalizedVisuals'
 foreach ($sourceFile in Get-ChildItem -LiteralPath $sourceRoot -Filter '*.aseprite' -Recurse) {
     $bytes = [IO.File]::ReadAllBytes($sourceFile.FullName)
     if ([BitConverter]::ToUInt16($bytes,4) -ne 0xA5E0) { throw "Invalid ASE: $($sourceFile.Name)" }

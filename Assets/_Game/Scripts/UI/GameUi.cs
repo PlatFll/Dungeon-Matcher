@@ -30,6 +30,7 @@ public static class GameUi
         text.font = TmpFont; text.fontSize = fontSize; text.text = value;
         text.color = Color.white; text.alignment = TextAlignmentOptions.Center;
         text.raycastTarget = false; text.textWrappingMode = TextWrappingModes.Normal; text.overflowMode = TextOverflowModes.Overflow;
+        PixelTextFitter.Apply(text, fontSize);
         return text;
     }
     public static Button Button(string name, Transform parent, string text, Vector2 size, Vector2 position, UnityEngine.Events.UnityAction action)

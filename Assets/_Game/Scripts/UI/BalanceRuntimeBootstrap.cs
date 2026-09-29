@@ -30,6 +30,6 @@ public sealed class BalanceRuntimeBootstrap : MonoBehaviour
         foreach (var label in FindObjectsByType<Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
             if (label.font != GameUi.Font) label.font = GameUi.Font;
         foreach (var label in FindObjectsByType<TMP_Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
-            if (label.font != GameUi.TmpFont) label.font = GameUi.TmpFont;
+            PixelTextFitter.Apply(label);
     }
 }

@@ -39,13 +39,22 @@ public sealed class RunControlsUI : MonoBehaviour
         for(int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;
-            slots[i]=GameUi.Button(kind.ToString(),ability.transform.parent,"",new Vector2(64,64),new Vector2(i==0?-136:136,-24),()=>
+            slots[i]=GameUi.Button(kind.ToString(),ability.transform.parent,"",new Vector2(64,64),new Vector2(i==0?-136:136,-17),()=>
             { if(kind==ConsumableKind.HealthPotion) session.TryUsePotion();else session.ToggleBombTargeting(); });
             slots[i].image.sprite=Resources.Load<Sprite>("UI/Consumables/Slot");
             slots[i].image.color=Color.white;
             slots[i].image.type=Image.Type.Simple;
-            slots[i].transition=Selectable.Transition.ColorTint;
-            slots[i].spriteState=default;
+            var tile = Resources.Load<Sprite>("UI/Consumables/SlotHighlighted");
+            if (tile != null)
+            {
+                slots[i].transition=Selectable.Transition.SpriteSwap;
+                slots[i].image.CrossFadeColor(Color.white,0,true,true);
+                slots[i].spriteState=new SpriteState {
+                    highlightedSprite=tile, selectedSprite=tile,
+                    pressedSprite=Resources.Load<Sprite>("UI/Consumables/SlotPressed"),
+                    disabledSprite=Resources.Load<Sprite>("UI/Consumables/SlotDisabled") };
+            }
+            else { slots[i].transition=Selectable.Transition.ColorTint; slots[i].spriteState=default; }
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
             icons[i].sprite=Resources.Load<Sprite>(i==0?"UI/Consumables/Potion":"UI/Consumables/Bomb");
@@ -55,7 +64,10 @@ public sealed class RunControlsUI : MonoBehaviour
             cooldownFills[i].sprite=TextureSprite();cooldownFills[i].type=Image.Type.Filled;
             cooldownFills[i].fillMethod=Image.FillMethod.Vertical;cooldownFills[i].fillOrigin=0;
             cooldownFills[i].color=new Color(0.05f,0.02f,0.09f,0.75f);cooldownFills[i].raycastTarget=false;
-            charges[i]=GameUi.Label("Charges",slots[i].transform,"",new Vector2(60,24),new Vector2(0,-19),19);
+            var countBacking=GameUi.Rect("CountBacking",slots[i].transform,new Vector2(22,16),new Vector2(23,-24));
+            countBacking.gameObject.AddComponent<Image>().color=GameUi.Face;
+            countBacking.GetComponent<Image>().raycastTarget=false;
+            charges[i]=GameUi.Label("Charges",countBacking,"",new Vector2(22,16),Vector2.zero,12);
         }
         hint=GameUi.Label("ConsumableHint",ability.transform.parent,"",new Vector2(400,28),Vector2.zero,16);
         confirmBomb=GameUi.Button("ConfirmBomb",safeRoot,"Use Bomb",new Vector2(150,40),new Vector2(0,-100),()=>session.ConfirmBomb());
@@ -116,6 +128,10 @@ public sealed class RunControlsUI : MonoBehaviour
             icons[i].color=count>0?Color.white:new Color(0.3f,0.3f,0.3f,0.6f);
             cooldownFills[i].fillAmount=count==0?1:cooldown/BalanceV1.Current.consumableCooldown;
             charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}s":count.ToString();
+            Vector2 countSize=new Vector2(cooldown>0?60:22,16);
+            charges[i].rectTransform.sizeDelta=countSize;
+            ((RectTransform)charges[i].transform.parent).sizeDelta=countSize;
+            ((RectTransform)charges[i].transform.parent).anchoredPosition=new Vector2(cooldown>0?0:23,-24);
         }
         hint.rectTransform.anchoredPosition=new Vector2(0,-((RectTransform)hint.transform.parent).rect.height*.5f+31);
         UpdateLesson();

@@ -135,6 +135,8 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
+**HUD, typography and effect feedback (2026-09-29):** Bottom HUD now shares the player panel's dark tiled treatment. Energy is a bar with centered ability/supply controls. New PixelLab potion, bomb and bright borderless tile states have editable native sources in `ArtSource/HudTypography/`. Thaleah covers all runtime text; healing is green, shield changes blue, damage white and poison dark green. Beneficial numbers subscribe to actual actor events, retain clamping, rise above actors and fade through the existing pool. See [validation](Validation/HUD_THALEAH_FEEDBACK.md).
+
 **Finalized visuals v2 — review candidate (2026-09-28):** `Game.unity` now selects
 `Dungeon_Finalized` through the existing background controller's optional prefab
 reference. The native 512×384 modular scene and shared purple UI family live in
@@ -186,7 +188,7 @@ guard restoration and rejected correction records remain historical evidence.
 
 ## Text
 
-For now, game text and numbers use a **readable non-pixel runtime font**. Text must be rendered by Unity UI rather than painted into sprites. The final global font is intentionally not decided yet and should remain centrally replaceable.
+Game text and numbers use **Thaleah Fat by Tiny Worlds**, with a Point-filtered monochrome TextMeshPro atlas. `UiTypography` remains the shared font authority; `PixelTextFitter` fits whole screen-pixel glyph sizes to each container. Labels remain runtime text, including wave counters, buttons, HP and combat feedback.
 
 ## Current HUD direction
 
@@ -337,9 +339,9 @@ The user explicitly retired the 1-energy testing override on 2026-09-15. The com
 
 Energy cards are eligible at normal costs. Tests may use isolated low-cost fixtures but must not restore a testing override to the production asset.
 
-## Temporary global font
+## Global font
 
-The current non-pixel font is a placeholder global typography choice. Preserve centralized runtime text and replace the font later rather than baking text into pixel assets.
+Thaleah Fat is the approved global face (2026-09-29). The unmodified TTF and attribution are in `Assets/_Game/Fonts/Thaleah/`. The static bitmap atlas uses a native 16-point em, Point filtering and a bitmap shader. Runtime fitting preserves integer physical glyph scales; long guides scroll at a readable size. All game-owned TMP scene/prefab references and the TMP default use Thaleah. The raster logo remains authored brand artwork.
 
 ## Supported run endpoint
 
@@ -771,7 +773,7 @@ Merged PR #157 supplied the first connected meta/balance layer, extended by the 
 - paused in-run settings;
 - independent persistent Music/SFX controls;
 - consumable HUD slots and pixel-art sources;
-- centralized temporary non-pixel typography;
+- centralized Thaleah bitmap typography with container fitting;
 - focused Balance v1 validation tooling and evidence.
 
 Detailed values: `Docs/BALANCE_V1.md`.
@@ -844,7 +846,7 @@ Unless the user explicitly changes direction, the most sensible next work after 
 3. **Tune encounter outliers** using real player behavior rather than only synthetic runs.
 4. **Physical mobile validation**: Android touch, cutouts/safe areas, audio behavior and performance.
 5. **Polish the progression/menu UX** after the user has lived with the first implementation.
-6. **Finalize typography** later; current font is intentionally temporary.
+6. **Review Thaleah on physical devices**; the global face and portrait Editor layouts are implemented.
 7. **Tune production abilities** using the current 80-energy Bardley cost and shared refund ceiling as the control.
 8. **Build post-King content**: Adventurer Guild, wider fantasy factions, later bosses, additional authored formations and cards as needed.
 9. Near feature completion, perform another **repo-wide Astra audit/validation** rather than repeatedly re-auditing the evolving prototype after every feature.
@@ -858,7 +860,7 @@ Not currently complete as supported gameplay:
 - Adventurer Guild era after the King;
 - wider-world factions and long-run content;
 - final release roster beyond the current 21 implemented opening enemies;
-- final global font;
+- physical-device typography review;
 - further human tuning of Bardley and RattleBones;
 - broad real-player balance telemetry/distributions;
 - monetization systems (none are required for the current game loop);

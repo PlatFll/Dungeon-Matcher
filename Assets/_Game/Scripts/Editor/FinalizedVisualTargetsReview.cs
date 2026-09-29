@@ -78,6 +78,8 @@ public static class FinalizedVisualTargetsReview
             Check(issues.Count == 0, "production layout: " + string.Join("; ", issues));
             ValidateEnvironment(Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment);
             yield return Shot(height + "-game");
+            HudTypographyReview.ValidateHud();
+            yield return HudTypographyReview.Feedback(height, Shot);
             var abilityEnergy = Object.FindFirstObjectByType<PlayerAbilityEnergy>();
             abilityEnergy.ResetEnergy(); yield return Wait(.8f);
             Check(GameObject.Find("EnergyFillMask").GetComponent<RectTransform>().rect.width == 0, "empty energy is fully cropped");
@@ -186,6 +188,7 @@ public static class FinalizedVisualTargetsReview
     {
         yield return Wait(.4f);
         Canvas.ForceUpdateCanvases();
+        HudTypographyReview.ValidateText(name, Output);
         Check(!Object.FindObjectsByType<Text>(FindObjectsSortMode.None).Any(t => t.enabled && !string.IsNullOrEmpty(t.text)), "runtime labels use TMP: " + name);
         foreach (var image in Object.FindObjectsByType<Image>(FindObjectsSortMode.None).Where(i => i.enabled && i.sprite != null && AssetDatabase.GetAssetPath(i.sprite).Contains("/Finalized/")))
             Check(image.sprite.texture.filterMode == FilterMode.Point, "UI Point import");
