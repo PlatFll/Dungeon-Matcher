@@ -159,11 +159,11 @@ public sealed class BalanceV1Tests
         Assert.That(loaded.IsUnlocked(GemSpecialType.ShieldBomb),Is.True);
     }
     [TestCase("bardley",1,80,10f,40)]
-    [TestCase("bardley",5,112,12.6f,52)]
-    [TestCase("bardley",20,232,22.35f,97)]
+    [TestCase("bardley",5,110,12.6f,50)]
+    [TestCase("bardley",20,230,22.35f,95)]
     [TestCase("skeleton",1,100,11f,45)]
-    [TestCase("skeleton",5,140,13.2f,57)]
-    [TestCase("skeleton",20,290,21.45f,102)]
+    [TestCase("skeleton",5,140,13.2f,55)]
+    [TestCase("skeleton",20,290,21.45f,100)]
     public void PermanentStatsRecalculateFromUnmodifiedAssets(string id,int level,int hp,float damage,int shield)
     {
         Seed(bardley:level,skeleton:level);var player=Player(id);var def=player.Definition;
@@ -235,17 +235,17 @@ public sealed class BalanceV1Tests
         Assert.That(Account.Charges(run,ConsumableKind.HealthPotion),Is.EqualTo(3));
         Assert.That(Account.TrySpendCharge(run,ConsumableKind.HealthPotion),Is.True);
     }
-    [Test] public void ShieldOverflowAndAegisCapDeliverUsefulValueAndReset()
+    [Test] public void ShieldGateAndAegisCapDeliverUsefulValueAndReset()
     {
         Seed(bardley:5,skeleton:7);GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb);
         var player=Player("bardley");var runtime=Runtime(player);
         Assert.That(runtime.TryApply(Card("RunUpgrade_AegisReservoir"),5),Is.True);
-        Assert.That(player.MaximumShield,Is.EqualTo(68));
+        Assert.That(player.MaximumShield,Is.EqualTo(70));
         Assert.That(RunUpgradeResolver.ResolveShieldBombShield(33,runtime),Is.EqualTo(43));
-        player.GrantShield(999);Assert.That(player.CurrentShield,Is.EqualTo(68));
+        player.GrantShield(999);Assert.That(player.CurrentShield,Is.EqualTo(70));
         int hp=player.CurrentHealth;player.TryTakeDamage(100);
-        Assert.That(player.CurrentShield,Is.Zero);Assert.That(player.CurrentHealth,Is.EqualTo(hp-7),"25% reduction, then shield, then HP overflow");
-        runtime.ResetRun();Assert.That(player.MaximumShield,Is.EqualTo(52));Assert.That(player.MaximumHealth,Is.EqualTo(112));
+        Assert.That(player.CurrentShield,Is.Zero);Assert.That(player.CurrentHealth,Is.EqualTo(hp),"The shield break gates the whole hit");
+        runtime.ResetRun();Assert.That(player.MaximumShield,Is.EqualTo(50));Assert.That(player.MaximumHealth,Is.EqualTo(110));
     }
     [Test] public void CardTradeoffsStackCapsAndEligibilityRespectActualMechanics()
     {
@@ -256,7 +256,7 @@ public sealed class BalanceV1Tests
         Assert.That(runtime.IsEligible(Card("Prototype_ManaSpark"),player,5),Is.True,"production cost supports energy builds");
         var glass=Card("RunUpgrade_GlassCannon");
         Assert.That(runtime.TryApply(glass,5),Is.True);Assert.That(player.MaximumHealth,Is.EqualTo(95));
-        Assert.That(runtime.TryApply(glass,5),Is.False);runtime.ResetRun();Assert.That(player.MaximumHealth,Is.EqualTo(112));
+        Assert.That(runtime.TryApply(glass,5),Is.False);runtime.ResetRun();Assert.That(player.MaximumHealth,Is.EqualTo(110));
     }
     [Test] public void EveryRecipeHasValidMembersAndFitsBudgetAndSlots()
     {

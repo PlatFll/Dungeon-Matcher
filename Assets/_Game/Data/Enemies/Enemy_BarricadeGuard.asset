@@ -22,7 +22,8 @@ MonoBehaviour:
   fallbackVisualSprite: {fileID: -7936037143926299356, guid: 44c342da30dad024691d7440b41952b8, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 3e2c79490ad66c14b894bd8684a91c15, type: 2}
   visualSize: {x: 112, y: 112}
-  timeAutoAttackFromAnimation: 0
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
   timeSpecialAbilityFromAnimation: 0
   baseMaxHealth: 60
   baseDamage: 6

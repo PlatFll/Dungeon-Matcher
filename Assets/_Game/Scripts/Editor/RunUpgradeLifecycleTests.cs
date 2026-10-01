@@ -67,7 +67,7 @@ public sealed class RunUpgradeLifecycleTests
         runtime.ResetRun();
         Assert.That(player.CurrentHealth, Is.EqualTo(100));
         Assert.That(player.MaximumHealth, Is.EqualTo(100));
-        Assert.That(player.CurrentShield, Is.EqualTo(12));
+        Assert.That(player.CurrentShield, Is.EqualTo(10));
         Assert.That(energy.CurrentEnergy, Is.EqualTo(23));
     }
 

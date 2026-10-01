@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 39380dbc3a1efef449f4b347b8458bdc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6949441097981044028
+    second: RoyalSwordsman_AutoAttack_0
+  - first:
+      213: -7957307891076222702
+    second: RoyalSwordsman_AutoAttack_1
+  - first:
+      213: -8622658151448268706
+    second: RoyalSwordsman_AutoAttack_2
+  - first:
+      213: -114149536169469581
+    second: RoyalSwordsman_AutoAttack_3
+  - first:
+      213: 6573408023485158462
+    second: RoyalSwordsman_AutoAttack_4
+  - first:
+      213: -7270163787892840026
+    second: RoyalSwordsman_AutoAttack_5
+  - first:
+      213: -7305400634860752347
+    second: RoyalSwordsman_AutoAttack_6
+  - first:
+      213: -514575259354555984
+    second: RoyalSwordsman_AutoAttack_7
+  - first:
+      213: 8921480785528560577
+    second: RoyalSwordsman_AutoAttack_8
+  - first:
+      213: 4763520636049671205
+    second: RoyalSwordsman_AutoAttack_9
+  - first:
+      213: -5021161136636543848
+    second: RoyalSwordsman_AutoAttack_00
+  - first:
+      213: -2478401470744621170
+    second: RoyalSwordsman_AutoAttack_01
+  - first:
+      213: -510657453188598405
+    second: RoyalSwordsman_AutoAttack_02
+  - first:
+      213: -6756600524201261962
+    second: RoyalSwordsman_AutoAttack_03
+  - first:
+      213: 8230865924830812694
+    second: RoyalSwordsman_AutoAttack_04
+  - first:
+      213: -6641131746644806796
+    second: RoyalSwordsman_AutoAttack_05
+  - first:
+      213: -3032882666225611263
+    second: RoyalSwordsman_AutoAttack_06
+  - first:
+      213: 1342560870318641072
+    second: RoyalSwordsman_AutoAttack_07
+  - first:
+      213: 7589526209724342087
+    second: RoyalSwordsman_AutoAttack_08
+  - first:
+      213: 4123203877689338411
+    second: RoyalSwordsman_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c38caac80415ab0800000000000000
+      internalID: -5021161136636543848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f06755ef2fa9dd0800000000000000
+      internalID: -2478401470744621170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75b9cc70c7c9e8f0800000000000000
+      internalID: -510657453188598405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67404c90f9bbb32a0800000000000000
+      internalID: -6756600524201261962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a586b13f8e93270800000000000000
+      internalID: 8230865924830812694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473baa6dcd5f5d3a0800000000000000
+      internalID: -6641131746644806796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ece22b84909e5d0800000000000000
+      internalID: -3032882666225611263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf8ea49ffbb1a210800000000000000
+      internalID: 1342560870318641072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fd22070e9635960800000000000000
+      internalID: 7589526209724342087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalSwordsman_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2aaf22c410983930800000000000000
+      internalID: 4123203877689338411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RoyalSwordsman_AutoAttack_0: 6949441097981044028
+      RoyalSwordsman_AutoAttack_00: -5021161136636543848
+      RoyalSwordsman_AutoAttack_01: -2478401470744621170
+      RoyalSwordsman_AutoAttack_02: -510657453188598405
+      RoyalSwordsman_AutoAttack_03: -6756600524201261962
+      RoyalSwordsman_AutoAttack_04: 8230865924830812694
+      RoyalSwordsman_AutoAttack_05: -6641131746644806796
+      RoyalSwordsman_AutoAttack_06: -3032882666225611263
+      RoyalSwordsman_AutoAttack_07: 1342560870318641072
+      RoyalSwordsman_AutoAttack_08: 7589526209724342087
+      RoyalSwordsman_AutoAttack_09: 4123203877689338411
+      RoyalSwordsman_AutoAttack_1: -7957307891076222702
+      RoyalSwordsman_AutoAttack_2: -8622658151448268706
+      RoyalSwordsman_AutoAttack_3: -114149536169469581
+      RoyalSwordsman_AutoAttack_4: 6573408023485158462
+      RoyalSwordsman_AutoAttack_5: -7270163787892840026
+      RoyalSwordsman_AutoAttack_6: -7305400634860752347
+      RoyalSwordsman_AutoAttack_7: -514575259354555984
+      RoyalSwordsman_AutoAttack_8: 8921480785528560577
+      RoyalSwordsman_AutoAttack_9: 4763520636049671205
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

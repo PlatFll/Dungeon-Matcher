@@ -134,7 +134,8 @@ public static class GameplayEdgeCaseValidation
     private static IEnumerator ShieldCases()
     {
         var panel = UnityEngine.Object.FindFirstObjectByType<PlayerPanelUI>();
-        Check(Get(panel, "playerShieldBar") == null, "no shield overlay at initialization");
+        Func<bool> shieldVisible = () => Array.Exists(panel.GetComponentsInChildren<ShieldBarUI>(true), v => v.IsVisible);
+        Check(!shieldVisible(), "no shield track at initialization");
         int shieldLoss = 0, hpLoss = 0;
         Action<PlayerActor, int> shield = (p, n) => shieldLoss += n;
         Action<PlayerActor, int> hp = (p, n) => hpLoss += n;
@@ -142,22 +143,24 @@ public static class GameplayEdgeCaseValidation
         try
         {
             player.GrantShield(10);
-            Check(((GameObject)Get(panel, "playerShieldBar")).activeSelf, "shield appears");
+            Check(shieldVisible(), "shield appears");
             player.TryTakeDamage(4);
-            Check(shieldLoss == 3 && hpLoss == 0 && player.CurrentShield == 7, "mitigated absorption");
+            Check(shieldLoss == 5 && hpLoss == 0 && player.CurrentShield == 5, "mitigated absorption uses steps of five");
             player.TryTakeDamage(12);
-            Check(shieldLoss == 10 && hpLoss == 2 && player.CurrentShield == 0, "shield overflow exact feedback");
-            Check(Get(panel, "playerShieldBar") == null, "zero shield hides immediately");
+            Check(shieldLoss == 10 && hpLoss == 0 && player.CurrentShield == 0, "shield break gates the entire hit");
+            Check(!shieldVisible(), "zero shield hides immediately");
+            player.TryTakeDamage(5);
+            Check(hpLoss == 5, "later independent hit reaches HP");
             player.GrantShield(3); player.TryTakeDamage(4);
-            Check(shieldLoss == 13 && hpLoss == 2, "exact shield break");
+            Check(shieldLoss == 15 && hpLoss == 5, "exact shield break");
             Check(!player.TryTakeDamage(0), "zero event ignored");
             yield return Delay(0.3f);
             Check(panel.transform.Find("PlayerHPBarBackground/PlayerShieldBar") == null, "no orphan overlay");
             player.GrantShield(4);
             player.TryTakeDamage(8);
             yield return Delay(0.2f);
-            Check(Get(panel, "playerShieldBar") == null, "regrant and break lifecycle");
-            Note("Shield: initialization, mitigation, absorption, overflow, exact break, zero damage and regrant passed");
+            Check(!shieldVisible(), "regrant and break lifecycle");
+            Note("Shield: initialization, mitigation, absorption, whole-hit gating, exact break, zero damage and regrant passed");
         }
         finally { player.ShieldDamaged -= shield; player.DamageTaken -= hp; }
     }

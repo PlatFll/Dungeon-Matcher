@@ -11,10 +11,10 @@ public sealed partial class PlayerActor
 
     public void RestoreContinuation(PlayerCombatSnapshot saved)
     {
-        maximumHealth=Mathf.Max(1,saved.maximumHealth);
-        maximumShield=Mathf.Max(0,saved.maximumShield);
-        currentHealth=Mathf.Clamp(saved.health,1,maximumHealth);
-        currentShield=Mathf.Clamp(saved.shield,0,maximumShield);
+        maximumHealth=CombatAmounts.Health(saved.maximumHealth);
+        maximumShield=CombatAmounts.Round(saved.maximumShield);
+        currentHealth=Mathf.Min(CombatAmounts.Health(saved.health),maximumHealth);
+        currentShield=Mathf.Min(CombatAmounts.Round(saved.shield),maximumShield);
         revivalCount=Mathf.Max(0,saved.revivalCount);
         LastDamageSummary=saved.lastDamage ?? "";
         isDefeated=false;

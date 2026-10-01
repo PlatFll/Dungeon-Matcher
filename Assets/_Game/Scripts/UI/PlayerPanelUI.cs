@@ -16,10 +16,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private const float HealthTextMaximumFontSize = 10f;
     private const float HealthTextMinimumFontSize = 6f;
 
-    private static readonly Color ShieldFillColor =
-        new Color32(39, 124, 255, 255);
-
-    private static Sprite shieldSolidSprite;
 
     [Header("Runtime Player")]
     [SerializeField]
@@ -63,9 +59,6 @@ public sealed class PlayerPanelUI : MonoBehaviour
     private RectTransform affinityGemRect;
     private Image affinityGemImage;
 
-    private GameObject playerShieldBar;
-    private Image playerShieldFill;
-    private TMP_Text playerShieldText;
 
     public PlayerActor BoundPlayer =>
         boundPlayer;
@@ -113,7 +106,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         UnsubscribeFromPlayer(boundPlayer);
         boundPlayer = null;
 
-        DestroyShieldBarImmediately();
+        ShieldBarUI.Show(playerHealthBar, 0, 1);
     }
 
     public void BindPlayer(
@@ -387,208 +380,14 @@ public sealed class PlayerPanelUI : MonoBehaviour
                 $"{currentHealth} / {maximumHealth}";
 
             playerHealthText.enabled =
-                !ShouldHideHealthText();
+                true;
         }
     }
 
-    private void UpdateShieldDisplay(
-        int currentShield,
-        int maximumShield)
+    private void UpdateShieldDisplay(int currentShield, int maximumShield)
     {
-        maximumShield =
-            Mathf.Max(1, maximumShield);
-
-        currentShield =
-            Mathf.Clamp(
-                currentShield,
-                0,
-                maximumShield
-            );
-
-        if (currentShield > 0)
-        {
-            CreateShieldBar();
-
-            if (playerHealthFill != null)
-            {
-                playerHealthFill.enabled = false;
-            }
-
-            if (playerHealthText != null)
-            {
-                playerHealthText.enabled = false;
-            }
-
-            if (playerShieldBar != null)
-            {
-                playerShieldBar.SetActive(true);
-            }
-
-            if (playerShieldFill != null)
-            {
-                playerShieldFill.sprite =
-                    GetShieldSolidSprite();
-
-                playerShieldFill.material = null;
-                playerShieldFill.color =
-                    ShieldFillColor;
-
-                playerShieldFill.fillAmount =
-                    (float)currentShield /
-                    maximumShield;
-            }
-
-            if (playerShieldText != null)
-            {
-                playerShieldText.enabled = true;
-                playerShieldText.text =
-                    $"{currentShield} / {maximumShield}";
-            }
-
-            return;
-        }
-
-        DestroyShieldBarImmediately();
         RestoreHealthBarPresentation();
-    }
-
-    private void CreateShieldBar()
-    {
-        if (playerShieldBar != null ||
-            playerHealthBar == null ||
-            playerHealthFill == null ||
-            playerHealthText == null)
-        {
-            return;
-        }
-
-        GameObject shieldRoot =
-            new GameObject(
-                "PlayerShieldBar",
-                typeof(RectTransform)
-            );
-
-        shieldRoot.layer =
-            playerHealthBar.layer;
-
-        shieldRoot.transform.SetParent(
-            playerHealthBar.transform,
-            false
-        );
-
-        RectTransform shieldRootRect =
-            shieldRoot.transform as RectTransform;
-
-        if (shieldRootRect == null)
-        {
-            Destroy(shieldRoot);
-            return;
-        }
-
-        shieldRootRect.anchorMin =
-            Vector2.zero;
-
-        shieldRootRect.anchorMax =
-            Vector2.one;
-
-        shieldRootRect.pivot =
-            new Vector2(0.5f, 0.5f);
-
-        shieldRootRect.anchoredPosition =
-            Vector2.zero;
-
-        shieldRootRect.sizeDelta =
-            Vector2.zero;
-
-        shieldRootRect.localScale =
-            Vector3.one;
-
-        GameObject shieldFillObject =
-            Instantiate(
-                playerHealthFill.gameObject,
-                shieldRoot.transform,
-                false
-            );
-
-        shieldFillObject.name =
-            "PlayerShieldBarFill";
-
-        GameObject shieldTextObject =
-            Instantiate(
-                playerHealthText.gameObject,
-                shieldRoot.transform,
-                false
-            );
-
-        shieldTextObject.name =
-            "PlayerShieldBarText";
-
-        playerShieldBar =
-            shieldRoot;
-
-        playerShieldFill =
-            shieldFillObject.GetComponent<Image>();
-
-        playerShieldText =
-            shieldTextObject.GetComponent<TMP_Text>();
-
-        if (playerShieldFill == null ||
-            playerShieldText == null)
-        {
-            Debug.LogError(
-                "Player shield overlay could not clone the HP fill/text presentation.",
-                this
-            );
-
-            DestroyShieldBarImmediately();
-            return;
-        }
-
-        playerShieldFill.sprite =
-            GetShieldSolidSprite();
-
-        playerShieldFill.material = null;
-        playerShieldFill.color =
-            ShieldFillColor;
-
-        playerShieldFill.type =
-            Image.Type.Filled;
-
-        playerShieldFill.fillMethod =
-            Image.FillMethod.Horizontal;
-
-        playerShieldFill.fillOrigin =
-            (int)Image.OriginHorizontal.Left;
-
-        playerShieldFill.fillClockwise = true;
-        playerShieldFill.raycastTarget = false;
-        playerShieldFill.enabled = true;
-
-        playerShieldText.enableAutoSizing = true;
-        playerShieldText.fontSize = HealthTextMaximumFontSize;
-        playerShieldText.fontSizeMin = HealthTextMinimumFontSize;
-        playerShieldText.fontSizeMax = HealthTextMaximumFontSize;
-        playerShieldText.alignment =
-            TextAlignmentOptions.Center;
-        playerShieldText.raycastTarget = false;
-        playerShieldText.enabled = true;
-
-        shieldRoot.transform.SetAsLastSibling();
-    }
-
-    private void DestroyShieldBarImmediately()
-    {
-        if (playerShieldBar != null)
-        {
-            playerShieldBar.SetActive(false);
-            Destroy(
-                playerShieldBar
-            );
-        }
-
-        playerShieldBar = null;
-        playerShieldFill = null;
-        playerShieldText = null;
+        ShieldBarUI.Show(playerHealthBar, currentShield, maximumShield);
     }
 
     private void RestoreHealthBarPresentation()
@@ -604,76 +403,11 @@ public sealed class PlayerPanelUI : MonoBehaviour
         }
     }
 
-    private bool ShouldHideHealthText()
-    {
-        return boundPlayer != null && boundPlayer.HasShield;
-    }
-
-    private static Sprite GetShieldSolidSprite()
-    {
-        if (shieldSolidSprite != null)
-        {
-            return shieldSolidSprite;
-        }
-
-        Texture2D texture =
-            new Texture2D(
-                1,
-                1,
-                TextureFormat.RGBA32,
-                false
-            );
-
-        texture.name =
-            "ShieldBarSolidTexture";
-
-        texture.filterMode =
-            FilterMode.Point;
-
-        texture.wrapMode =
-            TextureWrapMode.Clamp;
-
-        texture.SetPixel(
-            0,
-            0,
-            Color.white
-        );
-
-        texture.Apply(
-            false,
-            true
-        );
-
-        texture.hideFlags =
-            HideFlags.HideAndDontSave;
-
-        shieldSolidSprite =
-            Sprite.Create(
-                texture,
-                new Rect(
-                    0f,
-                    0f,
-                    1f,
-                    1f
-                ),
-                new Vector2(0.5f, 0.5f),
-                1f
-            );
-
-        shieldSolidSprite.name =
-            "ShieldBarSolidSprite";
-
-        shieldSolidSprite.hideFlags =
-            HideFlags.HideAndDontSave;
-
-        return shieldSolidSprite;
-    }
-
     private void ShowUninitializedState()
     {
         DisableLegacyPlayerBase();
         ClearCharacterPresentation();
-        DestroyShieldBarImmediately();
+        ShieldBarUI.Show(playerHealthBar, 0, 1);
 
         if (affinityGemImage != null)
         {

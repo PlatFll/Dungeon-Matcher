@@ -1,0 +1,954 @@
+{
+  "provider": "PixelLab",
+  "status": "16 basic attacks integrated; 11 ability concepts await user selection",
+  "production": [
+    {
+      "name": "CrossbowGuard",
+      "jobId": "79c856e9-e188-4712-87a6-c77537b16e32",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "bc6dfa550c1e1843eea6191fb11ac7c79bc7f54b2c3bd9ba9a5dd140547e39ed"
+    },
+    {
+      "name": "CourtMage",
+      "jobId": "d0eda778-7603-498b-a80b-72b740498da6",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "ce0947bfc63c896981f88d9b79ed29a2a11d7dcdeef8d7017511e2a0816a61cf"
+    },
+    {
+      "name": "Knight",
+      "jobId": "98bd3840-a2f7-480f-9f08-4f7975d9f512",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        100,
+        140,
+        40,
+        80,
+        60,
+        60,
+        40,
+        80
+      ],
+      "impactFrame": 3,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "5cf5233ffac297bdc2cd624f79b4306b22f7ab716ad03d9c4ba8f54077e240eb"
+    },
+    {
+      "name": "BarricadeGuard",
+      "jobId": "e43466e2-bf20-4b4c-b2a1-30daa2aa6a7c",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        14,
+        15,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "5b1ef0acd3bd532598504e9ca62624ff0109f108d62308989ea57bd38b885f34"
+    },
+    {
+      "name": "RoyalArbalist",
+      "jobId": "05c379a5-b288-4ec2-a829-3dedfd4a36a0",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "21b844363676f063ef4b132f9dbc674de2c79edf9f667e1bc05289f51a3e3559"
+    },
+    {
+      "name": "RoyalStandardBearer",
+      "jobId": "5fe91151-9f4d-4514-83db-629e206c1864",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "84c4e6113fbdba79d87ceb3be76ff2b0f2245bdc85b72fae7738c807cf1d09a8"
+    },
+    {
+      "name": "ShieldKnight",
+      "jobId": "e5d6e339-e845-4fee-876d-0b23874d0356",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "cd949146428a0cdf603cedc94fd7bb4754384b9c48e6bc83e7b59275013eac5c"
+    },
+    {
+      "name": "RoyalLancer",
+      "jobId": "80872bd4-1d5c-483c-9e03-e0b9a2af6c54",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        60,
+        60
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "8cea0cba4242f281f8d8b738e421b8a7a537a6415b1f1a2be558295cce4de80f"
+    },
+    {
+      "name": "RoyalArchbishop",
+      "jobId": "30c3afb4-e835-41e6-b25c-ba247b1944a4",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "durationsMs": [
+        80,
+        100,
+        140,
+        40,
+        80,
+        60,
+        60,
+        40,
+        80
+      ],
+      "impactFrame": 3,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "63b2562b9f2858ff8b27a8ffc7072cc218b7c378d112bf04b59413bddc7ce4aa"
+    },
+    {
+      "name": "King",
+      "jobId": "b6d59b58-cea7-4de7-992b-6b52a97230da",
+      "canvas": {
+        "w": 96,
+        "h": 80
+      },
+      "selectedFrames": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8,
+        11,
+        12,
+        14,
+        16
+      ],
+      "durationsMs": [
+        80,
+        80,
+        120,
+        40,
+        40,
+        70,
+        60,
+        50,
+        60,
+        80
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "207d5ae3efa6e0d88381168894890e25aa3dac006a8e9a9d592e3365744e8293"
+    },
+    {
+      "name": "KnightCaptain",
+      "jobId": "e2a75e50-e1e3-4580-9fd6-9378ea7e8223",
+      "canvas": {
+        "w": 96,
+        "h": 80
+      },
+      "selectedFrames": [
+        0,
+        3,
+        4,
+        5,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16
+      ],
+      "durationsMs": [
+        80,
+        80,
+        120,
+        40,
+        40,
+        70,
+        60,
+        50,
+        60,
+        80
+      ],
+      "impactFrame": 4,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "60f51c8a555f6b35bf77f4914149eb2b0797e9ff539b0caae8f1e6060c7c6a50"
+    },
+    {
+      "name": "TownMarshal",
+      "jobId": "2372f3fb-8c77-4040-9910-1e822176ed20",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        11,
+        14,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "3e49c814efc8ee0a8b6a245063e8ceec533f8ded0a0fe15b676f556c8b83533e"
+    },
+    {
+      "name": "SpearGuard",
+      "jobId": "92643e46-c07b-4c6c-b139-fd788c616e23",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "5d9d809f5a66a90be28b5e4dd8d58b666c17204e6e8a2cafcd7113fe8f0b56b7"
+    },
+    {
+      "name": "SpearKnight",
+      "jobId": "a7f8efa0-74a1-4237-973c-bfe854aefd69",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        10,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "1f87757c160c4d80b908f7e021321945df08595c8bc1f458cc4b58509ba847d8"
+    },
+    {
+      "name": "RoyalSwordsman",
+      "jobId": "c16cc4b9-9ce0-4fd6-b2dc-60b5dc2d46ba",
+      "canvas": {
+        "w": 96,
+        "h": 80
+      },
+      "selectedFrames": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        13,
+        15,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "3fc050212f75e985554bc0ed0d6a8ff81a68e5221c86848671c4434605c1efc0"
+    },
+    {
+      "name": "SiegeSergeant",
+      "jobId": "8e462e44-b949-48b5-9aa7-efeba08883a2",
+      "canvas": {
+        "w": 64,
+        "h": 64
+      },
+      "selectedFrames": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        13,
+        15,
+        16
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        100,
+        40,
+        70,
+        60,
+        50,
+        80,
+        100
+      ],
+      "impactFrame": 5,
+      "impactMs": 320,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "sha256": "7d68eddd9579efafb43399954af0ae16014a0ff63c7edad33e0310b4861d8ef4"
+    }
+  ],
+  "concepts": [
+    {
+      "name": "King_GroundThrust",
+      "enemy": "King",
+      "prompt": "Grip the sword in both hands, rotate the blade to point straight down. Raise the hilt to chest height while the sword remains pointing toward the ground. Pause in anticipation. Forcefully thrust the blade straight down into the ground with a deep knee bend. Hold briefly, then pull the sword back out of the ground and return exactly to the original ready stance. Clear forceful body mechanics; sword remains one rigid blade. No horizontal slash. Fixed feet and camera.",
+      "jobId": "48912fcd-69f1-4321-8573-e93697a87257",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "CourtMage_FrostSeal",
+      "enemy": "CourtMage",
+      "prompt": "Raise the icy staff high with one hand while the other hand traces a small cyan rune. Snap the staff downward, releasing a short icy pulse and three sharp cyan shards toward the left. Recover the exact starting pose. Brief crisp spell, restrained particle count.",
+      "jobId": "6f908437-78d9-48fe-9ab2-9e3232cd154d",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "CrossbowGuard_ChainShot",
+      "enemy": "CrossbowGuard",
+      "prompt": "Draw the crossbow back, lift and aim it left, then fire a single dark steel hooked bolt attached to a chain rapidly toward the left. Recoil visibly, loose chain links whip outward and disappear, then lower back to the start. Fixed camera.",
+      "jobId": "e05889e4-3a4d-4651-88f2-5ccba43bf861",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "Archbishop_Benediction",
+      "enemy": "RoyalArchbishop",
+      "prompt": "Lift the golden staff overhead while opening the free palm. A compact golden halo brightens around the staff head, then a warm green healing pulse expands from the free hand. Hold the blessing pose briefly and return to the exact ready stance. Keep face, robes, equipment consistent.",
+      "jobId": "72fbd0b2-28d9-4e03-8594-d106a98a1a84",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "StandardBearer_Plant",
+      "enemy": "RoyalStandardBearer",
+      "prompt": "Lift the banner pole up slightly with both hands, then drive the butt firmly into the ground. The banner snaps outward with a single strong cloth ripple. A narrow warm gold pulse travels out along the ground. Return to the exact initial pose, same flag emblem and rigid pole.",
+      "jobId": "c9774835-f46b-4083-96ea-0ebb53d59530",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "ShieldKnight_Bulwark",
+      "enemy": "ShieldKnight",
+      "prompt": "Bring the shield firmly forward and brace behind it. A narrow bright cyan rim lights the edge and expands briefly into a protective shield arc. Hold the defensive stance, then relax and return exactly to the starting pose. Controlled weight shift, no new equipment.",
+      "jobId": "9a04a093-00cf-4df7-8910-807c3551056b",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "Marshal_Rally",
+      "enemy": "TownMarshal",
+      "prompt": "Lift and vigorously ring the hand bell twice while raising the mace to signal the troops. Two short concentric gold sound rings radiate from the bell. Beard, body and blue cape follow the emphatic motion, then return exactly to the starting pose.",
+      "jobId": "3c0bc749-812e-486d-a71b-41723e0802ca",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "BarricadeGuard_RaiseWall",
+      "enemy": "BarricadeGuard",
+      "prompt": "Kneel with a firm weight drop, lift the hammer and hammer the ground once. Two small rough timber uprights rise in front of the builder as a brief warm dust puff disperses. Stand back up to the exact initial stance. Preserve rigid hammer, square body and costume.",
+      "jobId": "0d4b7a26-ad4e-4eae-9315-59e6eb2dd354",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "SiegeSergeant_HammerTime",
+      "enemy": "SiegeSergeant",
+      "prompt": "Grip the giant hammer, lift it over the shoulder with strong shoulder and knee anticipation, pause, then slam it forcefully into the ground to the left. Compact stone chips and a sharp amber shockwave burst outward. Pull the hammer free and recover the exact ready pose. Clear impact and recovery.",
+      "jobId": "8e462e44-b949-48b5-9aa7-efeba08883a2",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "KnightCaptain_Command",
+      "enemy": "KnightCaptain",
+      "prompt": "Raise the sword upright as a command signal, point it sharply toward the LEFT edge of the image while the free fist closes at the chest, then return to ready. A compact amber signal glints at the blade tip. Stern rallying command, no speech bubble.",
+      "jobId": "0d6b93dd-0d9d-44e8-be31-60a722d64629",
+      "purpose": "Ability concept; user selection pending"
+    },
+    {
+      "name": "King_RoyalCommand",
+      "enemy": "King",
+      "prompt": "Raise the sword upright in a commanding salute, then point its tip sharply toward the LEFT edge of the image to order the army to charge. Crown and shoulders tilt with conviction and the red cape snaps once. A brief gold flare travels down the blade. Return to the exact original pose.",
+      "jobId": "7bee43fa-e1a0-44c3-ad3f-56dc69370759",
+      "purpose": "Ability concept; user selection pending"
+    }
+  ],
+  "rejectedCandidates": {
+    "BarricadeGuard": "Windup without a complete strike.",
+    "King": "Blade clipped by the original canvas.",
+    "KnightCaptain": "Pointing gesture; replaced with a sword cut.",
+    "RoyalSwordsman": "Windup without a complete strike.",
+    "SiegeSergeant": "Windup without a complete strike."
+  },
+  "downloads": [
+    {
+      "name": "BarricadeGuard",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/BarricadeGuard",
+      "url": "https://api.pixellab.ai/mcp/images/717838ae-4049-4039-a839-95c93da8ea60/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "CrossbowGuard",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/CrossbowGuard",
+      "url": "https://api.pixellab.ai/mcp/images/79c856e9-e188-4712-87a6-c77537b16e32/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "King",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/King",
+      "url": "https://api.pixellab.ai/mcp/images/c050e931-b656-4a93-904d-e3e1ded143e5/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "CourtMage",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/CourtMage",
+      "url": "https://api.pixellab.ai/mcp/images/d0eda778-7603-498b-a80b-72b740498da6/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "KnightCaptain",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/KnightCaptain",
+      "url": "https://api.pixellab.ai/mcp/images/6764653d-dc0e-4e6d-a480-9afc2245d0ed/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "Knight",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/Knight",
+      "url": "https://api.pixellab.ai/mcp/images/98bd3840-a2f7-480f-9f08-4f7975d9f512/download?index=",
+      "durations": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        60,
+        60,
+        60,
+        80
+      ]
+    },
+    {
+      "name": "BarricadeGuardRevision",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/BarricadeGuardRevision",
+      "url": "https://api.pixellab.ai/mcp/images/e43466e2-bf20-4b4c-b2a1-30daa2aa6a7c/download?index="
+    },
+    {
+      "name": "RoyalArbalist",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalArbalist",
+      "url": "https://api.pixellab.ai/mcp/images/05c379a5-b288-4ec2-a829-3dedfd4a36a0/download?index="
+    },
+    {
+      "name": "RoyalArchbishop",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalArchbishop",
+      "url": "https://api.pixellab.ai/mcp/images/30c3afb4-e835-41e6-b25c-ba247b1944a4/download?index="
+    },
+    {
+      "name": "RoyalStandardBearer",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalStandardBearer",
+      "url": "https://api.pixellab.ai/mcp/images/5fe91151-9f4d-4514-83db-629e206c1864/download?index="
+    },
+    {
+      "name": "RoyalSwordsman",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalSwordsman",
+      "url": "https://api.pixellab.ai/mcp/images/6a913189-b408-49e0-93af-0bd8b8950867/download?index="
+    },
+    {
+      "name": "SpearGuard",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/SpearGuard",
+      "url": "https://api.pixellab.ai/mcp/images/92643e46-c07b-4c6c-b139-fd788c616e23/download?index="
+    },
+    {
+      "name": "TownMarshal",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/TownMarshal",
+      "url": "https://api.pixellab.ai/mcp/images/2372f3fb-8c77-4040-9910-1e822176ed20/download?index="
+    },
+    {
+      "name": "KingRevision",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/KingRevision",
+      "url": "https://api.pixellab.ai/mcp/images/b6d59b58-cea7-4de7-992b-6b52a97230da/download?index="
+    },
+    {
+      "name": "SpearKnight",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/SpearKnight",
+      "url": "https://api.pixellab.ai/mcp/images/a7f8efa0-74a1-4237-973c-bfe854aefd69/download?index="
+    },
+    {
+      "name": "RoyalLancer",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalLancer",
+      "url": "https://api.pixellab.ai/mcp/images/80872bd4-1d5c-483c-9e03-e0b9a2af6c54/download?index="
+    },
+    {
+      "name": "KnightCaptainRevision",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/KnightCaptainRevision",
+      "url": "https://api.pixellab.ai/mcp/images/e2a75e50-e1e3-4580-9fd6-9378ea7e8223/download?index="
+    },
+    {
+      "name": "ShieldKnight",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/ShieldKnight",
+      "url": "https://api.pixellab.ai/mcp/images/e5d6e339-e845-4fee-876d-0b23874d0356/download?index="
+    },
+    {
+      "name": "SiegeSergeant",
+      "frames": 9,
+      "directory": "ArtSource/EnemyAttacks/Candidates/SiegeSergeant",
+      "url": "https://api.pixellab.ai/mcp/images/bf8be53a-73c2-4f27-bc17-049f9550026c/download?index="
+    },
+    {
+      "name": "King_GroundThrust",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/King_GroundThrust",
+      "url": "https://api.pixellab.ai/mcp/images/48912fcd-69f1-4321-8573-e93697a87257/download?index="
+    },
+    {
+      "name": "CourtMage_FrostSeal",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/CourtMage_FrostSeal",
+      "url": "https://api.pixellab.ai/mcp/images/6f908437-78d9-48fe-9ab2-9e3232cd154d/download?index="
+    },
+    {
+      "name": "CrossbowGuard_ChainShot",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/CrossbowGuard_ChainShot",
+      "url": "https://api.pixellab.ai/mcp/images/e05889e4-3a4d-4651-88f2-5ccba43bf861/download?index="
+    },
+    {
+      "name": "Archbishop_Benediction",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/Archbishop_Benediction",
+      "url": "https://api.pixellab.ai/mcp/images/72fbd0b2-28d9-4e03-8594-d106a98a1a84/download?index="
+    },
+    {
+      "name": "StandardBearer_Plant",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/StandardBearer_Plant",
+      "url": "https://api.pixellab.ai/mcp/images/c9774835-f46b-4083-96ea-0ebb53d59530/download?index="
+    },
+    {
+      "name": "ShieldKnight_Bulwark",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/ShieldKnight_Bulwark",
+      "url": "https://api.pixellab.ai/mcp/images/9a04a093-00cf-4df7-8910-807c3551056b/download?index="
+    },
+    {
+      "name": "Marshal_Rally",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/Marshal_Rally",
+      "url": "https://api.pixellab.ai/mcp/images/3c0bc749-812e-486d-a71b-41723e0802ca/download?index="
+    },
+    {
+      "name": "BarricadeGuard_RaiseWall",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/BarricadeGuard_RaiseWall",
+      "url": "https://api.pixellab.ai/mcp/images/0d4b7a26-ad4e-4eae-9315-59e6eb2dd354/download?index="
+    },
+    {
+      "name": "SiegeSergeant_HammerTime",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/SiegeSergeant_HammerTime",
+      "url": "https://api.pixellab.ai/mcp/images/8e462e44-b949-48b5-9aa7-efeba08883a2/download?index="
+    },
+    {
+      "name": "RoyalSwordsmanRevision",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/RoyalSwordsmanRevision",
+      "url": "https://api.pixellab.ai/mcp/images/c16cc4b9-9ce0-4fd6-b2dc-60b5dc2d46ba/download?index="
+    },
+    {
+      "name": "KnightCaptain_Command",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/KnightCaptain_Command",
+      "url": "https://api.pixellab.ai/mcp/images/0d6b93dd-0d9d-44e8-be31-60a722d64629/download?index="
+    },
+    {
+      "name": "King_RoyalCommand",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/King_RoyalCommand",
+      "url": "https://api.pixellab.ai/mcp/images/7bee43fa-e1a0-44c3-ad3f-56dc69370759/download?index="
+    }
+  ]
+}

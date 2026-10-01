@@ -35,7 +35,7 @@ public static class RoyalMilestoneValidation
             foreach (var data in kingData.RoyalReinforcements)
                 Check(data != null && database.ContainsEnemy(data) && data != bishopData && data.Category <= EnemyCategory.Special, "Legal reinforcement pool");
             var kingStats = difficulty.CalculateStats(kingData,30); var bishopStats = difficulty.CalculateStats(bishopData,24);
-            Check(kingStats.MaxHealth == 619 && bishopStats.MaxHealth == 258, "Balance v1 HP scaling");
+            Check(kingStats.MaxHealth == 620 && bishopStats.MaxHealth == 260, "Clean HP scaling");
             Debug.Log("Royal first-pass stats: King " + kingStats + "; Archbishop " + bishopStats);
 
             var kingWaves = new HashSet<int>(); var bishopWaves = new HashSet<int>();

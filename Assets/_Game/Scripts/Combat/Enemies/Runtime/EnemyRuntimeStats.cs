@@ -28,12 +28,9 @@ public readonly struct EnemyRuntimeStats
         Wave = Mathf.Max(1, wave);
         Level = Mathf.Max(1, level);
 
-        MaxHealth = Mathf.Max(1, maxHealth);
-        Damage = Mathf.Max(0, damage);
-        FollowUpDamage = Mathf.Max(
-            0,
-            followUpDamage
-        );
+        MaxHealth = CombatAmounts.Health(maxHealth);
+        Damage = CombatAmounts.Round(damage);
+        FollowUpDamage = CombatAmounts.Round(followUpDamage);
 
         AttackInterval = Mathf.Max(
             0.25f,

@@ -16,7 +16,7 @@ The established battle loop is:
 4. Once the accepted move has completely settled, enemies advance turn-counted pressure and may queue board interference. Enemy auto-attacks provide separate real-time pressure.
 5. Defeating the active enemies completes the wave; the next wave begins only after the old board resolution has finished.
 
-The approved Balance v1 loop awards a choice of one from up to three legal run cards after waves 2, 5, 9, 13, 17, 21, 25 and 28. Defeating the King formation ends the supported opening arc. Completed waves earn shared Gold Coins on death, victory, Retry, menu exit or recovery from interruption. Gold buys independent character levels or optional consumables; see [BALANCE_V1.md](BALANCE_V1.md) for editable numerical decisions and measured evidence.
+The approved Balance v1 loop awards a choice of one from up to three legal run cards after waves 2, 5, 9, 13, 17, 21, 25 and 28. Defeating the King formation completes the opening milestone and the same run continues until death or an explicit End Run. The current Normal/Special roster continues in weighted formations; Guild zones remain future content. Further card opportunities occur every four completed waves from wave 32. Completed waves are journaled during combat and pay shared Gold Coins once on death or an explicit End Run/Retry. Suspend preserves the same attempt; legacy journals without a combat snapshot settle once during recovery. Gold buys independent character levels or optional consumables; see [BALANCE_V1.md](BALANCE_V1.md) for editable numerical decisions and measured evidence.
 
 ## Core match-3 design philosophy
 
@@ -69,10 +69,10 @@ Exact gain rates, capacity, and ability costs are tunable data and are not froze
 - HP and shield are separate resources.
 - Healing changes HP; shield grants change shield. Neither is a synonym for the other.
 - Shield has its own cap, damage handling, events, and presentation.
-- Damage that exhausts shield may continue into HP according to the shield damage rules owned by `PlayerActor`.
+- For both players and enemies, shield present at the start of a hit gates that entire hit. Apply the existing shield mitigation, consume shield, and discard excess damage. HP is untouched even when shield breaks. Each later hit, including a separate combo hit or poison tick, checks shield again.
 - Changes unrelated to shield must not alter shield behavior or presentation.
 
-Exact shield capacity and reduction values remain balance data.
+Exact shield capacity and reduction values remain balance data. HP, shield, final damage, healing and grants use five-point steps: nearest five with positive effects at least five, after the relevant modifiers. Zero remains zero. Resource caps, revival and legacy continuation restoration enforce the same rule. Fractions used internally for scaling are not rounded per gem. Energy, gold, timing, counts and obstacle durability retain their own units.
 
 ## Special gems
 
@@ -163,7 +163,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 - A cast grants +10 shield to every other living enemy and +12 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
 - When an enemy had shield at the start of a damage instance, that entire instance receives the same 25% reduction and ceiling-rounding semantics as the player's shield, even if the hit breaks the shield.
-- Reduced damage consumes enemy shield first and any remainder overflows into HP. A later separate hit is unreduced when no shield remains.
+- Reduced damage consumes shield and excess is discarded. The shield-breaking hit never damages HP. A later separate hit is unreduced when no shield remains.
 
 ### Bardley
 

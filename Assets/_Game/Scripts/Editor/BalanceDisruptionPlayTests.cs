@@ -43,8 +43,10 @@ public sealed class BalanceDisruptionPlayTests
 
             var miner=Owner<MinerEnemyAbility>("Miner");var wallA=Owner<BarricadeEnemyAbility>("BarricadeGuard");var wallB=Owner<BarricadeEnemyAbility>("BarricadeGuard");
             for(int attempt=0;attempt<3;attempt++)board.TryQueueMineRandomCell(miner,3);
-            Assert.That(board.TryQueuePlaceBarricades(wallA,4,4,2,EnemyBarricadeStyle.Stone),Is.True);
-            Assert.That(board.TryQueuePlaceBarricades(wallB,4,4,2,EnemyBarricadeStyle.Stone),Is.True);
+            // This fixture measures the shared placement cap. Refill cascades may
+            // damage adjacent walls, so keep them alive until the count assertion.
+            Assert.That(board.TryQueuePlaceBarricades(wallA,4,4,100,EnemyBarricadeStyle.Stone),Is.True);
+            Assert.That(board.TryQueuePlaceBarricades(wallB,4,4,100,EnemyBarricadeStyle.Stone),Is.True);
             yield return Settle();
             Assert.That(Count("minedCellOwners")+Count("barricadeCells"),Is.EqualTo(10),"shared cap rechecked when each queued owner executes");
             AssertResponse();int walls=Count("barricadeCells");

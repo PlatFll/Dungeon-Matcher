@@ -251,10 +251,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         int baseAbility=selectedDefinition.ActiveAbility is CrackedGemsAbilityDefinition cracks?cracks.CrackedGemDamage:
             selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:0;
         statusText.text=$"{GetMenuDisplayName(selectedPlayerId)} - Level {level}\n"+
-            $"HP  {selectedDefinition.HealthAtLevel(level)}  >  {selectedDefinition.HealthAtLevel(next)}\n"+
-            $"Gem damage  {selectedDefinition.GemDamageAtLevel(level):0.##}  >  {selectedDefinition.GemDamageAtLevel(next):0.##}\n"+
-            $"Ability damage  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n"+
-            $"Shield cap  {selectedDefinition.ShieldCapAtLevel(level)}  >  {selectedDefinition.ShieldCapAtLevel(next)}\n"+
+            $"HP  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(level))}  >  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(next))}\n"+
+            $"3-gem hit  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(level)*3)}  >  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(next)*3)}\n"+
+            $"Ability damage  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n"+
+            $"Shield cap  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(level))}  >  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(next))}\n"+
             $"Gold Coins: {AccountProgression.Current.Gold}";
         if(levelUpButton!=null)
         {

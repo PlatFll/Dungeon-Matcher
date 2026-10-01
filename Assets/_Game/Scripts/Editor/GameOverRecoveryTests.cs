@@ -109,7 +109,7 @@ public sealed class GameOverRecoveryTests
         Assert.That(player.TryRevive(37), Is.True);
         AssertClean();
         Assert.That(overlay == null, Is.True);
-        Assert.That(player.CurrentHealth, Is.EqualTo(37));
+        Assert.That(player.CurrentHealth, Is.EqualTo(35));
         Assert.That(player.MaximumHealth, Is.EqualTo(100));
         Assert.That(player.CurrentShield, Is.Zero);
         Assert.That(player.RevivalCount, Is.EqualTo(1));
@@ -121,8 +121,8 @@ public sealed class GameOverRecoveryTests
         SeedDeath();
         player.Initialize(definition, 173);
         AssertClean();
-        Assert.That(player.CurrentHealth, Is.EqualTo(173));
-        Assert.That(player.MaximumHealth, Is.EqualTo(173));
+        Assert.That(player.CurrentHealth, Is.EqualTo(175));
+        Assert.That(player.MaximumHealth, Is.EqualTo(175));
         Assert.That(player.RevivalCount, Is.Zero);
     }
 
@@ -281,7 +281,7 @@ public sealed class GameOverRecoveryTests
         Call(controller, "OnEnable");
         Call(controller, "SynchronizePlayerState");
         AssertClean();
-        Assert.That(player.CurrentHealth, Is.EqualTo(28));
+        Assert.That(player.CurrentHealth, Is.EqualTo(30));
     }
 
     [Test]

@@ -185,7 +185,7 @@ Do not merge these responsibilities. In particular, a board clear should describ
 
 Enemy white-flash presentation has one material writer, `EnemyCombatFeedback`. Poison requests a timed hit flash from that owner; expiry combines with current stagger state instead of restoring a captured temporary value. Disable and defeat clear temporary state.
 
-Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains actual shield loss after mitigation. HP numbers continue to consume actual `DamageTaken`, in a separate display lane. At zero shield, `PlayerPanelUI` deactivates and destroys the complete runtime shield overlay immediately.
+Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains actual shield loss after mitigation. HP numbers continue to consume actual `DamageTaken`, in a separate display lane. At zero shield, `PlayerPanelUI` hides the compact `ShieldBarUI` track immediately. Both actor presentations retain their HP fill and text. The shared shield geometry uses the modular HP frame's content insets, preventing the legacy full-size blue overlay.
 
 ## Enemy data and runtime responsibilities
 
@@ -245,11 +245,15 @@ behavior.
 
 ## HP and shield system separation
 
+`CombatAmounts` defines final combat quantities in five-point steps. Actor damage, healing, grants, caps and revival enforce it; `EnemyRuntimeStats` and `DifficultyProfile` normalize scaled enemy values. Continuation restores old odd-valued resources into the same units. Float scaling coefficients remain internal until resolution. Energy and board durability are outside this policy.
+
+King completion updates the existing run journal without setting `RunSession.IsFinished` or finalizing rewards. The wave gate releases normally; normal death/explicit-end settlement pays the King bonus once. Existing roster selection, named-leader exclusions and endless difficulty curves continue beyond wave 30.
+
 `PlayerActor` owns separate `currentHealth`/`maximumHealth` and `currentShield`/`maximumShield` values, normalized values, and event streams.
 
 - `Heal` affects HP only.
 - `GrantShield` affects shield only and enforces the shield cap.
-- `TryTakeDamage` applies the configured reduction when shield was active at the start of the attack, consumes shield, and applies any remaining damage to HP.
+- `TryTakeDamage` applies the configured reduction when shield was active at the start of the attack, consumes shield, and gates the entire hit from HP whenever shield was initially present.
 - Defeat is determined by HP, not shield; revival restores HP and resets shield.
 - `PlayerPanelUI` presents shield separately from HP and consumes the separate events.
 - `CombatController.HealPlayerFromBomb` and `GrantPlayerShieldFromBomb` call the corresponding distinct actor methods.
@@ -259,10 +263,10 @@ Never reuse HP fields/events for shield or change shield rules as a side effect 
 `EnemyActor` independently owns enemy `currentHealth` and `currentShield` state. Enemy shields are distinct from HP and use their own cap, normalized value, grant API, and change/damage events.
 
 - All established damage sources remain shield-aware by entering through `EnemyActor.TryTakeDamage` or `TryTakeDamageWithoutFeedback`.
-- If shield was active at the start of a hit, `EnemyActor` applies the enemy shield reduction and ceiling rounding once to the whole hit, consumes shield first, and sends reduced overflow to HP. Breaking shield does not remove the reduction from that hit; the next separate unshielded hit uses full damage.
+- If shield was active at the start of a hit, `EnemyActor` applies the enemy shield reduction and final five-point rounding once to the whole hit, consumes shield, and discards excess. The next separate unshielded hit uses full damage. The initial shield state is captured before callbacks, so Emergency Plating cannot make the same hit consume a second shield pool.
 - `GrantShield` changes shield only and clamps it to the enemy shield cap. Ability runtimes must use this API rather than changing HP or presentation.
 - Enemy defeat remains based on HP reaching zero. Initialization resets shield so it cannot persist between enemy instances or waves.
-- `EnemySlotUI` observes enemy shield events and presents shield in place of HP while shield is active. It is presentation-only, and missing shield presentation cannot prevent gameplay resolution.
+- `EnemySlotUI` observes enemy shield events and updates the compact `ShieldBarUI` track below the HP frame while shield is active. HP and rank art remain visible. It is presentation-only, and missing shield presentation cannot prevent gameplay resolution.
 
 ## Gameplay and VFX/presentation separation
 
