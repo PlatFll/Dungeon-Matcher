@@ -235,6 +235,44 @@ public sealed class BalanceV1Tests
         Assert.That(Account.Charges(run,ConsumableKind.HealthPotion),Is.EqualTo(3));
         Assert.That(Account.TrySpendCharge(run,ConsumableKind.HealthPotion),Is.True);
     }
+    [Test] public void BriefSaveReplacementLockStillSettlesRewardExactlyOnce()
+    {
+        string run=Account.BeginRun("bardley");
+        Assert.That(Account.RecordWave(run,1,false,false),Is.True);
+        int reward=Account.PreviewReward("Retry").Total;
+        using(var held=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))
+        {
+            var unlock=new System.Threading.Thread(()=>{System.Threading.Thread.Sleep(35);held.Dispose();}){IsBackground=true};
+            unlock.Start();
+            try { Assert.That(Account.FinalizeRun(run,"Retry"),Is.True,Account.LastError); }
+            finally { unlock.Join(); }
+        }
+        Assert.That(Account.Gold,Is.EqualTo(reward));
+        Assert.That(Account.FinalizeRun(run,"Retry"),Is.False);
+        Assert.That(new AccountProgression(path).Gold,Is.EqualTo(reward));
+    }
+
+    [Test] public void PersistentSaveReplacementLockPreservesWalletAndJournal()
+    {
+        if(Application.platform!=RuntimePlatform.WindowsEditor && Application.platform!=RuntimePlatform.WindowsPlayer)
+            Assert.Ignore("Requires Windows delete-sharing semantics.");
+        string run=Account.BeginRun("bardley");
+        Assert.That(Account.RecordWave(run,1,false,false),Is.True);
+        int reward=Account.PreviewReward("Retry").Total;
+        string durable=File.ReadAllText(path);
+        using(var held=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))
+        {
+            LogAssert.Expect(LogType.Error,new System.Text.RegularExpressions.Regex("Could not save account"));
+            Assert.That(Account.FinalizeRun(run,"Retry"),Is.False);
+            Assert.That(Account.Gold,Is.Zero);
+            Assert.That(Account.ActiveRun.id,Is.EqualTo(run));
+            Assert.That(File.ReadAllText(path),Is.EqualTo(durable));
+        }
+        Assert.That(Account.FinalizeRun(run,"Retry"),Is.True);
+        Assert.That(Account.Gold,Is.EqualTo(reward));
+        Assert.That(new AccountProgression(path).Gold,Is.EqualTo(reward));
+    }
+
     [Test] public void ShieldGateAndAegisCapDeliverUsefulValueAndReset()
     {
         Seed(bardley:5,skeleton:7);GemMasterySettings.SetReward(GemMasteryShape.CrossShape,GemMasteryReward.ShieldBomb);

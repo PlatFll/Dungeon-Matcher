@@ -1,0 +1,98 @@
+{
+  "ready_sha256": "a3135327e0f2febead7e33b8256b0c66cce23445013ecd79852e5eced960a5f1",
+  "reference_sha256": "0ce4e9676be789d317f8c7c3fdd36b454fa3ec0f77b90796a853074207d697c9",
+  "clips": {
+    "Idle": {
+      "frames": 9,
+      "durations_ms": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "colors_per_frame": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "native_pixels_match_import": true,
+      "feet_and_cane_fixed": true
+    },
+    "Cast": {
+      "frames": 10,
+      "durations_ms": [
+        80,
+        80,
+        120,
+        80,
+        50,
+        40,
+        80,
+        120,
+        100,
+        100
+      ],
+      "colors_per_frame": [
+        16,
+        16,
+        16,
+        15,
+        14,
+        13,
+        16,
+        16,
+        16,
+        16
+      ],
+      "native_pixels_match_import": true,
+      "feet_and_cane_fixed": true
+    },
+    "Hold": {
+      "frames": 1,
+      "durations_ms": [
+        130
+      ],
+      "colors_per_frame": [
+        16
+      ],
+      "native_pixels_match_import": true,
+      "feet_and_cane_fixed": true
+    },
+    "Recovery": {
+      "frames": 4,
+      "durations_ms": [
+        80,
+        80,
+        80,
+        130
+      ],
+      "colors_per_frame": [
+        16,
+        15,
+        16,
+        16
+      ],
+      "native_pixels_match_import": true,
+      "feet_and_cane_fixed": true
+    }
+  },
+  "button": {
+    "size": [
+      176,
+      64
+    ],
+    "binary_alpha": true,
+    "native_pixels_match_import": true
+  }
+}

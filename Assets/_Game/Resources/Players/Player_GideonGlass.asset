@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc694b828c22224ca4b552b383f553b, type: 3}
+  m_Name: Player_GideonGlass
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDefinition
+  playerId: gideon_glass
+  displayName: Gideon Glass
+  description: A theatrical brass automaton whose camera eye preserves a second chance
+    at the board.
+  playerPrefab: {fileID: 0}
+  battleFrameSprite: {fileID: 0}
+  battleCharacterSprite: {fileID: -9042508896838679720, guid: 0233127993bd1d74a9c6bf59aaebea49, type: 3}
+  battleAnimatorController: {fileID: 9100000, guid: 5aec38216da9c3e41a08172932ba6856, type: 2}
+  menuPortrait: {fileID: -9042508896838679720, guid: 0233127993bd1d74a9c6bf59aaebea49, type: 3}
+  baseMaxHealth: 90
+  healthPerLevel: 9
+  baseGemDamage: 10.5
+  gemDamagePerLevel: 0.6
+  abilityDamageGrowth: 0.06
+  baseShieldCap: 40
+  shieldCapPerLevel: 3
+  affinityGemType: 4
+  activeAbility: {fileID: 11400000, guid: 71393770a9e133642918b72b74a864d4, type: 2}
+  passiveAbility: {fileID: 0}

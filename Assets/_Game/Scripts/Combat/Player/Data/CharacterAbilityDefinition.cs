@@ -60,6 +60,9 @@ public abstract class CharacterAbilityDefinition : ScriptableObject
     // its complete board action, including chained specials and card refunds.
     public virtual float MaximumSelfRefundFraction => -1f;
 
+    // Persistent abilities may leave ordinary manual-turn energy generation enabled.
+    public virtual bool AllowsMatchEnergyWhileActive => false;
+
     /*
      * Definitions may optionally declare the runtime component that executes
      * them. PlayerAbilityController installs that component generically when a

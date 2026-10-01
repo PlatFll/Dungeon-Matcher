@@ -4,6 +4,15 @@ using UnityEngine;
 
 public static class RunUpgradeResolver
 {
+    public static int ResolveBoardMemoryMoves(int baseValue, RunUpgradeRuntime runtime = null) =>
+        ResolveInt(RunUpgradeStat.BoardMemoryMoves, baseValue, 1, runtime);
+
+    public static int ResolveBoardMemoryRewindShield(RunUpgradeRuntime runtime = null)
+    {
+        int amount = ResolveInt(RunUpgradeStat.BoardMemoryRewindShield, 0, 0, runtime);
+        return amount > 0 ? ResolveShieldGranted(amount, runtime) : 0;
+    }
+
     public static int ResolveMaximumShield(int baseValue, RunUpgradeRuntime runtime = null) =>
         ResolveInt(RunUpgradeStat.MaximumShield, baseValue, 1, runtime);
     private const float CascadeCatalystBonusPerDepth = 0.10f;

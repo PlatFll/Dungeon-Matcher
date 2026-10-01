@@ -28,13 +28,17 @@ public sealed class BalanceDisruptionPlayTests
         {
             SceneManager.LoadScene("Game");yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Waves.IsWaveActive,"scene ready");
             board=RunSession.Current.Board;yield return Until(()=>RunSession.Current.Continuation.CanCapture,"initial board ready");yield return Settle();
+            PrepareCapFixtureResponse();
             var first=Owner<MinerEnemyAbility>("Miner");var second=Owner<MinerEnemyAbility>("Miner");
+            int startedMines=0,restoredMines=0;
+            board.CellMiningStarted+=(_,__,___)=>startedMines++;
+            board.CellRestored+=(_,__)=>restoredMines++;
             // Queue several owners in the same frame while one mutation owns the board.
             for(int attempt=0;attempt<3;attempt++)
             {Assert.That(board.TryQueueMineRandomCell(first,3),Is.True,"first Miner request accepted");Assert.That(board.TryQueueMineRandomCell(second,3),Is.True,"second Miner request accepted");}
             yield return Settle();
             Assert.That(first != null && second != null && !first.IsDefeated && !second.IsDefeated,Is.True,"both fixture owners remain alive");
-            Assert.That(Count("minedCellOwners"),Is.EqualTo(4));
+            Assert.That(Count("minedCellOwners"),Is.EqualTo(4),$"mines started={startedMines}, restored={restoredMines}, active owners={first.isActiveAndEnabled}/{second.isActiveAndEnabled}, responses={board.GetImmediateResponses().Count}, wave active={RunSession.Current.Waves.IsWaveActive}, player HP={RunSession.Current.Player.CurrentHealth}");
             Assert.That(board.GetMinedCellCountForOwner(first.GetInstanceID()),Is.LessThanOrEqualTo(3));
             Assert.That(board.GetMinedCellCountForOwner(second.GetInstanceID()),Is.LessThanOrEqualTo(3));
             AssertResponse();
@@ -42,6 +46,7 @@ public sealed class BalanceDisruptionPlayTests
             Assert.That(Count("minedCellOwners"),Is.Zero,"miner death restores its cells through the queue");
             DestroyOwners();
 
+            PrepareCapFixtureResponse();
             var miner=Owner<MinerEnemyAbility>("Miner");var wallA=Owner<BarricadeEnemyAbility>("BarricadeGuard");var wallB=Owner<BarricadeEnemyAbility>("BarricadeGuard");
             for(int attempt=0;attempt<3;attempt++)board.TryQueueMineRandomCell(miner,3);
             // This fixture measures the shared placement cap. Refill cascades may
@@ -61,7 +66,8 @@ public sealed class BalanceDisruptionPlayTests
             string previousRun=RunSession.Current.RunId;
             Assert.That(RunSession.Current.ExitTo("Game"),Is.True);
             yield return Until(()=>RunSession.Current!=null&&RunSession.Current.RunId!=previousRun&&RunSession.Current.Waves.IsWaveActive,"second scene ready");
-            board=RunSession.Current.Board;yield return Settle();
+            board=RunSession.Current.Board;yield return Until(()=>RunSession.Current.Continuation.CanCapture,"second board ready");yield return Settle();
+            PrepareCapFixtureResponse();
             var crossbowA=Owner<CrossbowGuardEnemyAbility>("CrossbowGuard");var crossbowB=Owner<CrossbowGuardEnemyAbility>("CrossbowGuard");var captain=Owner<KnightCaptainEnemyAbility>("KnightCaptain");
             Assert.That(crossbowA.Definition.ChainCap,Is.EqualTo(2));Assert.That(captain.Definition.ChainCap,Is.EqualTo(3));
             board.TryQueueTopUpMovablePins(crossbowA,crossbowA.Definition.ChainCap,null,null);board.TryQueueTopUpMovablePins(crossbowB,crossbowB.Definition.ChainCap,null,null);board.TryQueueTopUpMovablePins(captain,captain.Definition.ChainCap,null,null);
@@ -112,6 +118,17 @@ public sealed class BalanceDisruptionPlayTests
         (go.GetComponent<T>()??go.AddComponent<T>()).InitializeSpecialAbility(actor,board,owners);return actor;
     }
     private void DestroyOwners(){foreach(var owner in owners)if(owner!=null)UnityEngine.Object.Destroy(owner.gameObject);owners.Clear();}
+    private void PrepareCapFixtureResponse()
+    {
+        // This test measures placement caps. A random opening may have legal
+        // swaps but no useful damage/healing move, so counterplay correctly
+        // refuses every placement. Give the fixture a real crystal response;
+        // all production placement, response and ownership checks still run.
+        var corner=board.GetGem(0,0);
+        Assert.That(corner,Is.Not.Null);
+        corner.SetSpecialType(GemSpecialType.ColorCrystal);
+        Assert.That(CounterplayGuard.HasUsefulResponse(board.GetImmediateResponses(),RunSession.Current.Player,RunSession.Current.Waves),Is.True);
+    }
     private void AssertResponse(){Assert.That(board.TryGetRandomHintMove(out _,out _),Is.True,"at least one legal response remains");}
     private int Count(string name)=>((IDictionary)Get(board,name)).Count;
     private IEnumerator Settle()=>Until(()=>!board.IsBusy&&!board.HasPendingBoardMutation,"board settles");

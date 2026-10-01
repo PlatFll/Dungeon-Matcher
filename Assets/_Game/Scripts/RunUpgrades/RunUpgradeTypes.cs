@@ -29,7 +29,9 @@ public enum RunUpgradeStat
     CrackedGemDamage = 13,
     RoyalDecreeDuration = 14,
     RoyalDecreeDamage = 15,
-    MaximumShield = 16
+    MaximumShield = 16,
+    BoardMemoryMoves = 17,
+    BoardMemoryRewindShield = 18
 }
 
 public enum RunUpgradeModifierOperation

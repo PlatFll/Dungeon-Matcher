@@ -724,7 +724,7 @@ public partial class BoardController
         return targetSet;
     }
 
-    private static HashSet<Gem>
+    private HashSet<Gem>
         ConvertCrystalTargetsToRandomBombs(
             List<Gem> orderedTargets)
     {
@@ -758,7 +758,7 @@ public partial class BoardController
             }
 
             GemSpecialType randomBombType =
-                GameplayRandom.Range(0, 2) == 0
+                BoardRandomRange(0, 2) == 0
                     ? GemSpecialType.RowBomb
                     : GemSpecialType.ColumnBomb;
 

@@ -22,13 +22,11 @@ The newer rules in this status and the owning design/architecture documents supe
 
 - **Date:** 2026-10-01
 - **Current milestone:** Endless combat past the King; whole-hit shield gating; HP, shield and resolved damage in steps of five; clearer rank badges and remaining enemy attack animations. The user approved all ability concepts, selecting Royal Gold, a two-handed King thrust and the Shield Knight's raised blue shield. These motions are integrated; current verification is tracked in the combat-polish record.
-- **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
-- **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
-- **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
-- **Current art-pass base:** `codex/cast-grounded-idle-family` at `feca180` (PR #166), which extends the accepted guard motion through King. No character art is changed by the background pass. The stronger PR #164 motion remains rejected.
-- **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release scope:** The approved main checkpoint includes combat idles/actions (#159–#160), local enemies (#161), presentation/VFX/audio/haptics (#162), remaining-cast sources and corrections (#163–#166), backgrounds (#167), and level reset/shared mastery (#168). The stronger PR #164 motion remains rejected; the restored guard motion in #165 and final Miner-through-King corrections in #166 are the active direction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.9). Separate uncommitted background-source edits and local repository guidance are preserved outside this release. Art evidence is in `Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md`; family and earlier presentation validation records remain available separately.
-- **Merge verification:** `Tools/Validate-Unity.ps1` passed again on 2026-09-27 with Unity 6000.3.19f1 (log suffix `7574ee9a-ad68-49b5-9a1a-e725f96faf16`). The production code/configuration is unchanged from the 251-test and rendered-menu validation recorded above; that evidence is reused. Integration preserves the final tree and commit ancestry, including the later corrections.
+- **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
+- **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
+- **Current verification:** The combined candidate passed 278 regression tests, with zero failed or skipped, the rendered Gideon/menu review at both portrait sizes, all three enemy ability checks, and the required Unity 6000.3.19f1 validator. See [integration verification](Validation/PR_INTEGRATION_2026_10_01.md). Device and human pacing validation remain separate.
+- **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
+- **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
 ### What this document is
 
@@ -117,7 +115,7 @@ Current visual direction:
 - short, snappy animation cycles instead of highly fluid animation for its own sake;
 - gameplay readability takes priority over decorative noise.
 
-The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones** and the green slime bard **Bardley**. Their silhouettes and personalities should remain distinct.
+The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones**, the green slime bard **Bardley**, and brass photographer automaton **Gideon Glass**. Gideon's selected reference and native source are in `ArtSource/GideonGlass/`; the earlier simplified redraw was rejected and is superseded. His 64×64, 16-color right-facing design preserves the large hat/feather, blue lens eye, split coat and thin cane. His nine-frame idle uses 130 ms exposures; cast/hold/recovery use dedicated clips. Their silhouettes and personalities should remain distinct.
 
 ## Combat-animation art checkpoint
 
@@ -316,6 +314,15 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 - Cracked Gems targets ordinary gems first, cracks them, then resolves 3×3 explosions and established special/crystal interactions.
 - Current Balance v1 cracked-center base damage: **20** before permanent/run modifiers.
 
+### Gideon Glass
+
+- Brass automaton photographer; his camera is his eye.
+- Initial Level 1 HP **90**, gem damage **10.5**, shield cap **40**, Sapphire affinity.
+- **ChronoShutter**, cost **100**: photograph board/refill state, play five accepted manual moves, finish resolution, then restore the photograph while retaining combat gains.
+- Enemy/combat time, damage, healing, shield, energy, rewards and deaths persist. Normal matching continues to charge energy. Encounter completion and death cancel the photograph; Continue preserves active phases and the remaining move count.
+- **Long Exposure** adds one move. **Developing Fluid** grants 10 shield once per successful rewind. Both are one-stack Epic character cards. Starting numbers need human balance feedback.
+- Detailed rules are in `GAME_DESIGN.md`; board ownership and save compatibility are in `ARCHITECTURE.md`.
+
 ## Permanent levels
 
 - Each character levels **independently**.
@@ -409,7 +416,7 @@ Cards are intended to be the **main reason two runs with the same character and 
 
 Current implementation:
 
-- 27 card definitions retained in the catalog.
+- 29 card definitions: the previous 27 plus Gideon's Long Exposure and Developing Fluid.
 - Draft offers up to three distinct eligible cards.
 - Draft RNG is separate from encounter RNG.
 - Cards reset with the run.

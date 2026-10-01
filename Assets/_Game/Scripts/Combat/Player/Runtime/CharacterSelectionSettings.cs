@@ -5,6 +5,7 @@ public static class CharacterSelectionSettings
 {
     public const string RattlebonesPlayerId = "skeleton";
     public const string BardleyPlayerId = "bardley";
+    public const string GideonPlayerId = "gideon_glass";
 
     private const string SelectedPlayerKey =
         "DungeonMatcher.CharacterSelection.v1.SelectedPlayer";
@@ -92,6 +93,7 @@ public static class CharacterSelectionSettings
     public static bool IsKnownCharacter(
         string playerId)
     {
+        if (string.Equals(playerId, GideonPlayerId, StringComparison.Ordinal)) return true;
         return string.Equals(
                    playerId,
                    RattlebonesPlayerId,

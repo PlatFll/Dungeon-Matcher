@@ -86,9 +86,19 @@ public sealed class EnemyAbilityPlayTests
                 if(name=="RoyalArchbishop")
                 {
                     var bishop=owner.GetComponent<RoyalArchbishopEnemyAbility>();
-                    var runes=(BoardController.GemSetThreat)Get(bishop,"runes");ally.TryTakeDamageWithoutFeedback(10);
+                    var runes=(BoardController.GemSetThreat)Get(bishop,"runes");
+                    // Rune clears can legitimately cascade into player damage.
+                    // Keep the healing/blessing recipient alive through that refill.
+                    var stats=ally.RuntimeStats;
+                    SetProperty(ally,"RuntimeStats",new EnemyRuntimeStats(stats.Wave,stats.Level,30000,stats.Damage,stats.FollowUpDamage,stats.AttackInterval,stats.SpecialTurnRequirement,stats.DamageMultiplier));
+                    Set(ally,"currentHealth",30000);ally.TryTakeDamageWithoutFeedback(10000);
+                    int survivingRunes=runes.Targets.Count(g=>board.IsEnvironmentalOrdinaryGem(g));
+                    var heals=new List<int>();Action<EnemyActor,int> onHeal=(a,n)=>heals.Add(n);ally.Healed+=onHeal;
                     int before=ally.CurrentHealth;SetProperty(runes,"DueMove",board.CompletedValidPlayerMoves);
                     yield return Until(()=>runes.Ended&&!board.IsBusy&&!owner.HasAnimationActionInProgress,"Restoration heal");
+                    ally.Healed-=onHeal;
+                    int pulse=CombatAmounts.Round(Mathf.RoundToInt(ally.MaxHealth*owner.Definition.RestorationHealFraction));
+                    Assert.That(heals,Is.EqualTo(Enumerable.Repeat(pulse,survivingRunes).ToArray()),"one exact healing pulse per surviving rune");
                     Assert.That(ally.CurrentHealth,Is.GreaterThan(before));Set(bishop,"preferRunes",false);Prime(owner);
                     yield return Until(()=>ally.GetComponent<EnemyAutoAttack>().HasNextSequenceModifier(bishop)&&!owner.HasAnimationActionInProgress,"Benediction blessing");
                 }
