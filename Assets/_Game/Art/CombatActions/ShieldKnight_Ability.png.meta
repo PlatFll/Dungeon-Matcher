@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 36a199156997949429cb5d9447467324
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 10562339417778818
+    second: ShieldKnight_Ability_0
+  - first:
+      213: 800158624784495962
+    second: ShieldKnight_Ability_1
+  - first:
+      213: 6359496093276746336
+    second: ShieldKnight_Ability_2
+  - first:
+      213: 5212979683098703685
+    second: ShieldKnight_Ability_3
+  - first:
+      213: -1588925935949767581
+    second: ShieldKnight_Ability_4
+  - first:
+      213: -4343161665318293764
+    second: ShieldKnight_Ability_5
+  - first:
+      213: 3884926019859621549
+    second: ShieldKnight_Ability_6
+  - first:
+      213: 5034973217820005885
+    second: ShieldKnight_Ability_7
+  - first:
+      213: -1260562020648398912
+    second: ShieldKnight_Ability_8
+  - first:
+      213: -4891818537924175302
+    second: ShieldKnight_Ability_9
+  - first:
+      213: 5840315352381794470
+    second: ShieldKnight_Ability_10
+  - first:
+      213: 8186083189761226055
+    second: ShieldKnight_Ability_11
+  - first:
+      213: 8193214600942419838
+    second: ShieldKnight_Ability_12
+  - first:
+      213: -280854554062293167
+    second: ShieldKnight_Ability_13
+  - first:
+      213: -971992252753383002
+    second: ShieldKnight_Ability_14
+  - first:
+      213: -6991709172487553296
+    second: ShieldKnight_Ability_00
+  - first:
+      213: -6509498705000065977
+    second: ShieldKnight_Ability_01
+  - first:
+      213: 2212497956219841565
+    second: ShieldKnight_Ability_02
+  - first:
+      213: -4512858257104765394
+    second: ShieldKnight_Ability_03
+  - first:
+      213: 3533853755407271461
+    second: ShieldKnight_Ability_04
+  - first:
+      213: -8102577517054484729
+    second: ShieldKnight_Ability_05
+  - first:
+      213: 1214417722791810707
+    second: ShieldKnight_Ability_06
+  - first:
+      213: -3253245297419222239
+    second: ShieldKnight_Ability_07
+  - first:
+      213: 7466968795930103780
+    second: ShieldKnight_Ability_08
+  - first:
+      213: 737575678749900183
+    second: ShieldKnight_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fef9012d8578fe90800000000000000
+      internalID: -6991709172487553296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7441b96aa6d99a5a0800000000000000
+      internalID: -6509498705000065977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ce2ca3b2f54be10800000000000000
+      internalID: 2212497956219841565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ef497435b1f51c0800000000000000
+      internalID: -4512858257104765394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5260b337445ca0130800000000000000
+      internalID: 3533853755407271461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f96e27dacdd8f80800000000000000
+      internalID: -8102577517054484729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396d1ff0c7a7ad010800000000000000
+      internalID: 1214417722791810707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1230e1073a62ad2d0800000000000000
+      internalID: -3253245297419222239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef0756ee8000a760800000000000000
+      internalID: 7466968795930103780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79dfad60c256c3a00800000000000000
+      internalID: 737575678749900183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a82af2aed7fc0150800000000000000
+      internalID: 5840315352381794470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745b3831a4fca9170800000000000000
+      internalID: 8186083189761226055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f77b1254524b170800000000000000
+      internalID: 8193214600942419838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157f09765443a1cf0800000000000000
+      internalID: -280854554062293167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldKnight_Ability_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1f33a223ac282f0800000000000000
+      internalID: -971992252753383002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ShieldKnight_Ability_0: 10562339417778818
+      ShieldKnight_Ability_00: -6991709172487553296
+      ShieldKnight_Ability_01: -6509498705000065977
+      ShieldKnight_Ability_02: 2212497956219841565
+      ShieldKnight_Ability_03: -4512858257104765394
+      ShieldKnight_Ability_04: 3533853755407271461
+      ShieldKnight_Ability_05: -8102577517054484729
+      ShieldKnight_Ability_06: 1214417722791810707
+      ShieldKnight_Ability_07: -3253245297419222239
+      ShieldKnight_Ability_08: 7466968795930103780
+      ShieldKnight_Ability_09: 737575678749900183
+      ShieldKnight_Ability_1: 800158624784495962
+      ShieldKnight_Ability_10: 5840315352381794470
+      ShieldKnight_Ability_11: 8186083189761226055
+      ShieldKnight_Ability_12: 8193214600942419838
+      ShieldKnight_Ability_13: -280854554062293167
+      ShieldKnight_Ability_14: -971992252753383002
+      ShieldKnight_Ability_2: 6359496093276746336
+      ShieldKnight_Ability_3: 5212979683098703685
+      ShieldKnight_Ability_4: -1588925935949767581
+      ShieldKnight_Ability_5: -4343161665318293764
+      ShieldKnight_Ability_6: 3884926019859621549
+      ShieldKnight_Ability_7: 5034973217820005885
+      ShieldKnight_Ability_8: -1260562020648398912
+      ShieldKnight_Ability_9: -4891818537924175302
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

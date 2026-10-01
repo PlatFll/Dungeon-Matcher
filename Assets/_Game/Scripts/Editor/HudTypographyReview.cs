@@ -72,15 +72,15 @@ public static class HudTypographyReview
         // Re-enable twice to catch duplicate listeners and lost enemy bindings.
         controller.enabled=false; controller.enabled=true; controller.enabled=false; controller.enabled=true;
         int beforePlayer=player.CurrentHealth, beforeEnemy=enemy.CurrentHealth;
-        player.TryTakeDamage(7); enemy.TryTakeDamage(7);
+        player.TryTakeDamage(15); enemy.TryTakeDamage(15);
         CheckNumber("-"+(beforePlayer-player.CurrentHealth),CombatTextKind.Damage,2);
         Check(beforePlayer-player.CurrentHealth==beforeEnemy-enemy.CurrentHealth,"fixture damage equal");
         yield return shot(height+"-damage-white"); yield return Drain();
         Check(player.Heal(5)==5 && enemy.RestoreHealth(5)==5,"actual five HP restored");
         CheckNumber("+5",CombatTextKind.Healing,2);
         yield return shot(height+"-healing-green"); yield return Drain();
-        Check(player.Heal(500)==2 && enemy.RestoreHealth(500)==2,"healing capped to missing HP");
-        CheckNumber("+2",CombatTextKind.Healing,2);
+        Check(player.Heal(500)==10 && enemy.RestoreHealth(500)==10,"healing capped to missing HP");
+        CheckNumber("+10",CombatTextKind.Healing,2);
         Check(player.Heal(5)==0 && enemy.RestoreHealth(5)==0 && Numbers.Length==2,"no zero heal numbers");
         yield return Drain();
         Check(player.GrantShield(10)==10 && enemy.GrantShield(10)==10,"actual ten shield gained");
@@ -99,7 +99,7 @@ public static class HudTypographyReview
         Check(poison!=null,"production poison component");
         poison.Apply(2,1,3);
         typeof(EnemyPoisonStatus).GetMethod("ApplyTick",Private).Invoke(poison,null);
-        CheckNumber("-3",CombatTextKind.PoisonDamage,1);
+        CheckNumber("-5",CombatTextKind.PoisonDamage,1);
         yield return shot(height+"-poison-green"); poison.ClearPoison(); yield return Drain();
         enemy.RestoreHealth(999); yield return Drain();
     }

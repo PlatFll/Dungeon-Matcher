@@ -22,6 +22,42 @@ public static class CombatActionImporter
     [Serializable] private sealed class Size { public int w, h; }
     [Serializable] private sealed class Frame { public int duration; public Size sourceSize; }
     [Serializable] private sealed class Sheet { public Frame[] frames; }
+    [Serializable] private sealed class AttackSelection
+    {
+        public string name, character, state;
+        public int[] durations, impactFrames;
+        public int impactFrame;
+        public bool loop, legacyImpact;
+    }
+    [Serializable] private sealed class AttackSelections { public AttackSelection[] entries; }
+
+    [MenuItem("Dungeon Matcher/Art/Import PixelLab Enemy Attacks")]
+    public static void ImportPixelLabEnemies()
+    {
+        var selected = JsonUtility.FromJson<AttackSelections>("{\"entries\":" +
+            File.ReadAllText("ArtSource/EnemyAttacks/selected.json") + "}").entries;
+        foreach (var entry in selected) Import(new[] { entry.name + "_AutoAttack" }, entry);
+    }
+
+    [MenuItem("Dungeon Matcher/Art/Import Approved Enemy Abilities")]
+    public static void ImportPixelLabAbilities()
+    {
+        var selected = JsonUtility.FromJson<AttackSelections>("{\"entries\":" +
+            File.ReadAllText("ArtSource/EnemyAttacks/abilities.json") + "}").entries;
+        foreach (var entry in selected) Import(new[] { entry.name }, entry);
+        foreach (string character in selected.Select(e => e.character).Distinct())
+        {
+            string path = "Assets/_Game/Data/Enemies/Enemy_" + character + ".asset";
+            string text = File.ReadAllText(path);
+            foreach (string field in new[] { "timeSpecialAbilityFromAnimation", "useAuthoredSpecialAbilityMotion" })
+                text = text.Contains("  " + field + ":")
+                    ? Regex.Replace(text, @"(?m)^  " + field + @":[^\r\n]*", "  " + field + ": 1")
+                    : text.TrimEnd() + "\n  " + field + ": 1\n";
+            File.WriteAllText(path, text);
+            AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport);
+        }
+        AssetDatabase.SaveAssets();
+    }
 
     [MenuItem("Dungeon Matcher/Art/Import Combat Actions")]
     public static void Run()
@@ -37,7 +73,7 @@ public static class CombatActionImporter
         Import(LocalEnemyNames);
     }
 
-    private static void Import(string[] names)
+    private static void Import(string[] names, AttackSelection selection = null)
     {
         Directory.CreateDirectory(ArtRoot);
         Directory.CreateDirectory(AnimationRoot);
@@ -45,12 +81,14 @@ public static class CombatActionImporter
         {
             bool attack = name.EndsWith("_AutoAttack");
             string character = name.Split('_')[0];
-            string action = attack ? "AutoAttack" : "Ability";
+            string action = !string.IsNullOrEmpty(selection?.state) ? selection.state : attack ? "AutoAttack" : "Ability";
             bool localEnemy = LocalEnemyNames.Contains(name);
-            int count = attack ? 8 : 10;
             int[] expected = attack ? new[] {80,80,120,40,120,80,80,80}
                 : new[] {80,80,120,80,120,80,80,80,80,80};
-            string source = (localEnemy ? "ArtSource/LocalEnemies/" : "ArtSource/CombatActions/") + name;
+            if (selection != null) expected = selection.durations;
+            int count = expected.Length;
+            float impactTime = selection != null ? expected.Take(selection.impactFrame).Sum() / 1000f : .32f;
+            string source = (selection != null ? "ArtSource/EnemyAttacks/" : localEnemy ? "ArtSource/LocalEnemies/" : "ArtSource/CombatActions/") + name;
             var sheet = JsonUtility.FromJson<Sheet>(File.ReadAllText(source + ".json"));
             if (sheet.frames == null || !sheet.frames.Select(f => f.duration).SequenceEqual(expected))
                 throw new InvalidDataException("Unexpected native timing for " + name);
@@ -70,7 +108,7 @@ public static class CombatActionImporter
             importer.alphaIsTransparency = true;
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             importer.npotScale = TextureImporterNPOTScale.None;
-            importer.maxTextureSize = 1024;
+            importer.maxTextureSize = 4096;
             var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);
             settings.spriteMeshType = SpriteMeshType.FullRect; importer.SetTextureSettings(settings);
 #pragma warning disable CS0618
@@ -96,19 +134,27 @@ public static class CombatActionImporter
             AnimationUtility.SetObjectReferenceCurve(clip,
                 EditorCurveBinding.PPtrCurve("", typeof(Image), "m_Sprite"), keys);
             var clipSettings = AnimationUtility.GetAnimationClipSettings(clip);
-            clipSettings.loopTime = false; clipSettings.startTime = 0; clipSettings.stopTime = elapsed / 1000f;
+            clipSettings.loopTime = selection != null && selection.loop; clipSettings.startTime = 0; clipSettings.stopTime = elapsed / 1000f;
             AnimationUtility.SetAnimationClipSettings(clip, clipSettings);
+            AnimationEvent[] abilityEvents = selection?.impactFrames == null ? Array.Empty<AnimationEvent>() :
+                selection.impactFrames.Select((frame, index) => new AnimationEvent {
+                    time = expected.Take(frame).Sum() / 1000f,
+                    functionName = selection.legacyImpact ? "AbilityImpact" : "AbilityBeat", intParameter = index + 1
+                }).Concat(selection.loop ? Array.Empty<AnimationEvent>() : new[] {
+                    new AnimationEvent { time = (elapsed - 10) / 1000f, functionName = "AbilityComplete" }
+                }).ToArray();
             AnimationUtility.SetAnimationEvents(clip, attack ? new[] {
-                new AnimationEvent { time = .32f, functionName = "AutoAttackImpact" },
-                new AnimationEvent { time = .67f, functionName = "AutoAttackComplete" }
+                new AnimationEvent { time = impactTime, functionName = "AutoAttackImpact" },
+                new AnimationEvent { time = (elapsed - 10) / 1000f, functionName = "AutoAttackComplete" }
             } : localEnemy ? new[] {
                 new AnimationEvent { time = .36f, functionName = "AbilityImpact" },
                 new AnimationEvent { time = .87f, functionName = "AbilityComplete" }
-            } : Array.Empty<AnimationEvent>());
+            } : abilityEvents);
             EditorUtility.SetDirty(clip);
 
             var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(
-                CombatIdleImporter.AnimationRoot + "/" + character + "_Idle.controller");
+                CombatIdleImporter.AnimationRoot + "/" + ControllerName(character) + "_Idle.controller");
+            if (controller == null) throw new InvalidDataException("Missing existing idle controller: " + character);
             var machine = controller.layers[0].stateMachine;
             var idle = machine.states.Single(s => s.state.name == "Idle").state;
             var state = machine.states.Select(s => s.state).FirstOrDefault(s => s.name == action)
@@ -121,8 +167,11 @@ public static class CombatActionImporter
             var enter = idle.AddTransition(state);
             enter.hasExitTime = false; enter.duration = 0; enter.hasFixedDuration = true;
             enter.AddCondition(AnimatorConditionMode.If, 0, action);
-            var exit = state.AddTransition(idle);
-            exit.hasExitTime = true; exit.exitTime = 1; exit.duration = 0; exit.hasFixedDuration = true;
+            if (selection == null || !selection.loop)
+            {
+                var exit = state.AddTransition(idle);
+                exit.hasExitTime = true; exit.exitTime = 1; exit.duration = 0; exit.hasFixedDuration = true;
+            }
             EditorUtility.SetDirty(controller);
         }
         AssetDatabase.SaveAssets();
@@ -148,8 +197,11 @@ public static class CombatActionImporter
             File.WriteAllText(path, text);
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport);
         }
-        Debug.Log("Combat actions imported: 680ms attacks with 320ms impacts; 880ms ability casts.");
+        Debug.Log("Combat actions imported with native frame exposures and authored impact events: " + string.Join(", ", names));
     }
+
+    private static string ControllerName(string character) => character == "Knight" ? "SwordKnight"
+        : character == "CourtMage" ? "RoyalMage" : character == "RoyalArchbishop" ? "RoyalArcanist" : character;
 
     public static Sprite[] LoadFrames(string name) => AssetDatabase.LoadAllAssetsAtPath(
         ArtRoot + "/" + name + ".png").OfType<Sprite>().OrderBy(s => s.name).ToArray();

@@ -167,9 +167,9 @@ public sealed partial class PlayerActor : MonoBehaviour
         maximumHealth = maximumHealthOverride > 0
             ? maximumHealthOverride
             : definition.HealthAtLevel(PermanentLevel);
-        maximumHealth = Mathf.Max(1, maximumHealth);
+        maximumHealth = CombatAmounts.Health(maximumHealth);
         BaseShieldCap = definition.ShieldCapAtLevel(PermanentLevel);
-        maximumShield = BaseShieldCap;
+        maximumShield = CombatAmounts.Round(BaseShieldCap);
         currentHealth = maximumHealth;
         currentShield = 0;
         revivalCount = 0;
@@ -220,13 +220,9 @@ public sealed partial class PlayerActor : MonoBehaviour
 
         if (shieldWasActive)
         {
-            finalDamage = Mathf.Max(
-                1,
-                Mathf.CeilToInt(
-                    finalDamage * (1f - shieldDamageReduction)
-                )
-            );
+            finalDamage = CombatAmounts.Round(finalDamage * (1f - shieldDamageReduction));
         }
+        else finalDamage = CombatAmounts.Round(finalDamage);
 
         int shieldDamage = Mathf.Min(currentShield, finalDamage);
 
@@ -237,7 +233,9 @@ public sealed partial class PlayerActor : MonoBehaviour
             ShieldChanged?.Invoke(this, currentShield, maximumShield);
         }
 
-        int healthDamage = finalDamage - shieldDamage;
+        // Capture the gate before events: a break-triggered shield grant cannot
+        // make this same hit spill into HP or consume a second shield pool.
+        int healthDamage = shieldWasActive ? 0 : finalDamage;
         int actualHealthDamage = 0;
         EnemyActor attacker = source as EnemyActor;
         if (attacker == null && source is Component component) attacker = component.GetComponent<EnemyActor>();
@@ -273,7 +271,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         int previousShield = currentShield;
-        currentShield = Mathf.Min(maximumShield, currentShield + amount);
+        currentShield = (int)Math.Min(maximumShield, (long)currentShield + CombatAmounts.Round(amount));
         int actualShieldGranted = currentShield - previousShield;
 
         if (actualShieldGranted <= 0)
@@ -289,7 +287,7 @@ public sealed partial class PlayerActor : MonoBehaviour
     public void RefreshShieldCap(RunUpgradeRuntime runtime = null)
     {
         if (!isInitialized) return;
-        maximumShield = RunUpgradeResolver.ResolveMaximumShield(BaseShieldCap, runtime);
+        maximumShield = CombatAmounts.Round(RunUpgradeResolver.ResolveMaximumShield(BaseShieldCap, runtime));
         currentShield = Mathf.Min(currentShield, maximumShield);
         ShieldChanged?.Invoke(this, currentShield, maximumShield);
     }
@@ -302,7 +300,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         int previousHealth = currentHealth;
-        currentHealth = Mathf.Min(maximumHealth, currentHealth + amount);
+        currentHealth = (int)Math.Min(maximumHealth, (long)currentHealth + CombatAmounts.Round(amount));
         int actualHealing = currentHealth - previousHealth;
 
         if (actualHealing <= 0)
@@ -333,7 +331,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         isDefeated = false;
-        currentHealth = Mathf.Clamp(restoredHealth, 1, maximumHealth);
+        currentHealth = Mathf.Min(CombatAmounts.Health(restoredHealth), maximumHealth);
         currentShield = 0;
         revivalCount++;
 
@@ -352,7 +350,7 @@ public sealed partial class PlayerActor : MonoBehaviour
             return;
         }
 
-        int clampedMaximum = Mathf.Max(1, newMaximumHealth);
+        int clampedMaximum = CombatAmounts.Health(newMaximumHealth);
 
         if (clampedMaximum == maximumHealth)
         {

@@ -165,6 +165,8 @@ public sealed class CrossbowGuardEnemyAbility :
             return true;
         }
 
+        if (!enemyActor.TryBeginSpecialAbilityAnimationAction()) return false;
+        enemyActor.PrepareSpecialMotion();
         bool queued =
             boardController.TryQueueTopUpMovablePins(
                 enemyActor,
@@ -179,10 +181,12 @@ public sealed class CrossbowGuardEnemyAbility :
 
         if (!queued)
         {
+            enemyActor.EndSpecialAbilityAnimationAction();
             return false;
         }
 
         enemyActor.ResetSpecialCounter();
+        if (enemyActor.SpecialMotionId == 0) enemyActor.EndSpecialAbilityAnimationAction();
         return true;
     }
 
@@ -227,6 +231,11 @@ public sealed class CrossbowGuardEnemyAbility :
                         ownerInstanceId
                     )
                 : 0;
+    }
+
+    private void OnDisable()
+    {
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void OnDestroy()

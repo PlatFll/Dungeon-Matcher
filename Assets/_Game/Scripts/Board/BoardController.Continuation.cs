@@ -18,14 +18,14 @@ public partial class BoardController
     public BoardCombatSnapshot CaptureContinuation(Func<int,int> ownerSlot)
     {
         if(!CanCaptureContinuation) throw new InvalidOperationException("Board is resolving an action.");
-        var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId };
+        var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState };
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
             var value=new BoardCellSnapshot { x=x,y=y,hasGem=gem!=null };
             if(gem!=null)
             {
-                value.type=gem.Type; value.special=gem.SpecialType;
+                value.type=gem.Type; value.special=gem.SpecialType; value.identity=gem.BoardIdentity;
                 if(pinnedGemOwners.TryGetValue(gem,out int pin))
                 {
                     value.pinned=true; value.pinOwner=ownerSlot(pin);
@@ -67,12 +67,41 @@ public partial class BoardController
         if(gems!=null || saved.width!=width || saved.height!=height || saved.cells.Count!=width*height)
             throw new InvalidOperationException("Saved board does not match the scene layout.");
         gems=new Gem[width,height]; completedValidPlayerMoves=saved.moves; nextRoyalBannerId=saved.nextBanner;
+        RestoreRefillRandom(saved.refillRandom);
+        RestoreSnapshotCells(saved, ownerAtSlot);
+        nextGemIdentity=Mathf.Max(nextGemIdentity,saved.nextGem);
+        foreach(var warning in saved.warnings)
+        {
+            var owner=ownerAtSlot(warning.owner);
+            if(owner==null) throw new InvalidOperationException("Saved warning has no living owner.");
+            if(warning.kind==0)
+            {
+                var pair=new GemPairThreat { Owner=owner,First=SavedGem(warning.targets[0]),Second=SavedGem(warning.targets[1]),DueMove=warning.dueMove };
+                gemPairThreats.Add(pair); GemPairMarked?.Invoke(pair);
+            }
+            else if(warning.kind==1)
+            {
+                var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration };
+                foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
+                gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
+            }
+            else
+            {
+                var lane=new LaneThreat { Owner=owner,DueMove=warning.dueMove,Row=warning.row,Column=warning.column };
+                laneThreats.Add(lane); EnsureTelegraphPresentation(); LanesMarked?.Invoke(lane);
+            }
+        }
+        isBusy=false;
+    }
+    private void RestoreSnapshotCells(BoardCombatSnapshot saved, Func<int,EnemyActor> ownerAtSlot)
+    {
         foreach(var value in saved.cells)
         {
             var cell=new Vector2Int(value.x,value.y);
             if(value.hasGem)
             {
                 var gem=CreateGem(value.x,value.y,value.type,GetLocalPosition(value.x,value.y));
+                if(value.identity>0) { gem.BoardIdentity=value.identity; nextGemIdentity=Mathf.Max(nextGemIdentity-1,value.identity); }
                 gem.SetSpecialType(value.special);
                 if(value.pinned)
                 {
@@ -106,28 +135,6 @@ public partial class BoardController
                 royalBannerCells.Add(cell,banner); CreateOrRefreshRoyalBannerView(banner);
             }
         }
-        foreach(var warning in saved.warnings)
-        {
-            var owner=ownerAtSlot(warning.owner);
-            if(owner==null) throw new InvalidOperationException("Saved warning has no living owner.");
-            if(warning.kind==0)
-            {
-                var pair=new GemPairThreat { Owner=owner,First=SavedGem(warning.targets[0]),Second=SavedGem(warning.targets[1]),DueMove=warning.dueMove };
-                gemPairThreats.Add(pair); GemPairMarked?.Invoke(pair);
-            }
-            else if(warning.kind==1)
-            {
-                var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration };
-                foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
-                gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
-            }
-            else
-            {
-                var lane=new LaneThreat { Owner=owner,DueMove=warning.dueMove,Row=warning.row,Column=warning.column };
-                laneThreats.Add(lane); EnsureTelegraphPresentation(); LanesMarked?.Invoke(lane);
-            }
-        }
-        isBusy=false;
     }
     public GemPairThreat RestoredPair(EnemyActor owner) => gemPairThreats.Find(t=>t.Owner==owner&&!t.Ended);
     public GemSetThreat RestoredSet(EnemyActor owner) => gemSetThreats.Find(t=>t.Owner==owner&&!t.Ended);

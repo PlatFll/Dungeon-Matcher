@@ -65,6 +65,7 @@ public sealed class BalanceV1
         }
     }
 
-    public bool OffersCard(int completedWave) => Array.IndexOf(cardWaves, completedWave) >= 0;
+    public bool OffersCard(int completedWave) => Array.IndexOf(cardWaves, completedWave) >= 0 ||
+        (completedWave >= 32 && completedWave % 4 == 0);
     public int WaveGold(int wave) => waveGoldBase + Mathf.Max(0, wave - 1) / Mathf.Max(1, waveGoldDivisor);
 }

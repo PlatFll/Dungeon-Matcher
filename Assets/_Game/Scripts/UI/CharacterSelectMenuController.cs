@@ -44,6 +44,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private bool initialized;
     private Button levelUpButton;
     private Button resetLevelButton;
+    private Button gideonButton;
     private GameObject resetConfirmation;
     private TMP_Text resetConfirmationText;
     private string resetPlayerId;
@@ -185,6 +186,8 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
 
     private void Refresh()
     {
+        SetButtonColor(gideonButton, CharacterSelectionSettings.GideonPlayerId,
+            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.GideonPlayerId));
         bool rattlebonesAvailable =
             PlayerDefinitionRegistry.IsAvailable(
                 CharacterSelectionSettings.RattlebonesPlayerId
@@ -251,10 +254,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         int baseAbility=selectedDefinition.ActiveAbility is CrackedGemsAbilityDefinition cracks?cracks.CrackedGemDamage:
             selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:0;
         statusText.text=$"{GetMenuDisplayName(selectedPlayerId)} - Level {level}\n"+
-            $"HP  {selectedDefinition.HealthAtLevel(level)}  >  {selectedDefinition.HealthAtLevel(next)}\n"+
-            $"Gem damage  {selectedDefinition.GemDamageAtLevel(level):0.##}  >  {selectedDefinition.GemDamageAtLevel(next):0.##}\n"+
-            $"Ability damage  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {Mathf.RoundToInt(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n"+
-            $"Shield cap  {selectedDefinition.ShieldCapAtLevel(level)}  >  {selectedDefinition.ShieldCapAtLevel(next)}\n"+
+            $"HP  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(level))}  >  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(next))}\n"+
+            $"3-gem hit  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(level)*3)}  >  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(next)*3)}\n"+
+            (baseAbility > 0 ? $"Ability damage  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(level))}  >  {CombatAmounts.Round(baseAbility*selectedDefinition.AbilityMultiplierAtLevel(next))}\n" : $"Ability: {activeAbilityName}\n")+
+            $"Shield cap  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(level))}  >  {CombatAmounts.Round(selectedDefinition.ShieldCapAtLevel(next))}\n"+
             $"Gold Coins: {AccountProgression.Current.Gold}";
         if(levelUpButton!=null)
         {
@@ -294,8 +297,14 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private void ConfigureProgression()
     {
         previewColor=characterPreview.color;
-        Place(rattlebonesButton.transform,new Vector2(-110,210),new Vector2(205,50));
-        Place(bardleyButton.transform,new Vector2(110,210),new Vector2(205,50));
+        Place(rattlebonesButton.transform,new Vector2(-142,210),new Vector2(140,50));
+        Place(bardleyButton.transform,new Vector2(0,210),new Vector2(140,50));
+        rattlebonesButton.GetComponentInChildren<TMP_Text>().fontSize=16;
+        bardleyButton.GetComponentInChildren<TMP_Text>().fontSize=16;
+        gideonButton=GameUi.Button("GideonButton",transform,"GIDEON",new Vector2(140,50),new Vector2(142,210),
+            ()=>SelectCharacter(CharacterSelectionSettings.GideonPlayerId));
+        gideonButton.GetComponentInChildren<TMP_Text>().fontSize=16;
+        gideonButton.GetComponentInChildren<TMP_Text>().fontStyle=rattlebonesButton.GetComponentInChildren<TMP_Text>().fontStyle;
         Place(characterPreview.transform,new Vector2(0,117),new Vector2(112,112));characterPreview.preserveAspect=true;
         Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.TmpFont;
         Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
@@ -435,6 +444,8 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private static string GetMenuDisplayName(
         string playerId)
     {
+        if (PlayerDefinitionRegistry.TryGetDefinition(playerId, out var definition))
+            return definition.DisplayName.ToUpperInvariant();
         return string.Equals(
                 playerId,
                 CharacterSelectionSettings.BardleyPlayerId,

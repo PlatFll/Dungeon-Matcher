@@ -20,3 +20,12 @@ public interface IPlayerAbilityRuntime
 
     void Cancel();
 }
+
+// Optional presentation contract for abilities with persistent authored poses.
+public interface IPlayerAbilityPresentation
+{
+    string AnimationState { get; }
+    float AnimationNormalizedTime { get; }
+    bool ShowMoveCounter { get; }
+    int RemainingMoveCount { get; }
+}

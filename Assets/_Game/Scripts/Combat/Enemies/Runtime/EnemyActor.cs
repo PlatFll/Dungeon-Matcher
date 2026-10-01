@@ -445,23 +445,16 @@ public sealed partial class EnemyActor : MonoBehaviour
 
         float incomingMultiplier = IncomingDamageMultiplier != null
             ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
-        int finalDamage = Mathf.Max(1,
-            Mathf.CeilToInt(amount * incomingMultiplier));
+        double resolvedDamage = amount * (double)incomingMultiplier;
 
         bool shieldWasActive =
             currentShield > 0;
 
         if (shieldWasActive)
         {
-            finalDamage =
-                Mathf.Max(
-                    1,
-                    Mathf.CeilToInt(
-                        finalDamage *
-                        (1f - EnemyShieldDamageReduction)
-                    )
-                );
+            resolvedDamage *= 1f - EnemyShieldDamageReduction;
         }
+        int finalDamage = CombatAmounts.Round(resolvedDamage);
 
         int shieldDamage =
             Mathf.Min(
@@ -488,8 +481,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             );
         }
 
-        int healthDamage =
-            finalDamage - shieldDamage;
+        int healthDamage = shieldWasActive ? 0 : finalDamage;
 
         int actualHealthDamage = 0;
         int healthBeforeDamage = currentHealth;
@@ -578,7 +570,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         currentShield =
             Mathf.Min(
                 EnemyMaximumShield,
-                currentShield + amount
+                (int)Math.Min(EnemyMaximumShield, (long)currentShield + CombatAmounts.Round(amount))
             );
 
         int actualShieldGranted =
@@ -614,7 +606,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         currentHealth =
             Mathf.Min(
                 RuntimeStats.MaxHealth,
-                currentHealth + amount
+                (int)Math.Min(RuntimeStats.MaxHealth, (long)currentHealth + CombatAmounts.Round(amount))
             );
 
         int restoredAmount =
@@ -712,6 +704,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         isSpecialAbilityAnimationActionActive = true;
         specialAbilityAnimationActionId = specialAbilityAnimationActionId == int.MaxValue
             ? 1 : specialAbilityAnimationActionId + 1;
+        specialMotionId = 0;
         return true;
     }
 

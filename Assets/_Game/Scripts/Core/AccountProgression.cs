@@ -364,7 +364,7 @@ public sealed class AccountProgression
             {
                 writer.Write(JsonUtility.ToJson(next, true)); writer.Flush(); stream.Flush(true);
             }
-            if (File.Exists(file)) File.Replace(temporary, file, file + ".bak");
+            if (File.Exists(file)) ReplaceSaveFile(temporary);
             else File.Move(temporary, file);
             state = next;
             LastError = null;
@@ -372,11 +372,32 @@ public sealed class AccountProgression
         catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException)
         {
             LastError = "Could not save account. No account changes were committed.";
-            Debug.LogError(LastError + " " + exception.Message);
+            Debug.LogError(LastError + " " + exception.Message + " (0x" + exception.HResult.ToString("X8") + ")");
             return false;
         }
         PublishChanged();
         return true;
+    }
+
+    private void ReplaceSaveFile(string temporary)
+    {
+        // Windows readers can briefly deny delete/replace sharing. Retry only
+        // errors that leave both original filenames intact, using the same
+        // flushed transaction. Never publish wallet state before replacement.
+        for (int attempt = 0; ; attempt++)
+        {
+            try { File.Replace(temporary, file, file + ".bak"); return; }
+            catch (IOException exception) when (attempt < 3 && IsTemporaryReplaceLock(exception))
+            { System.Threading.Thread.Sleep(20 * (attempt + 1)); }
+        }
+    }
+
+    private static bool IsTemporaryReplaceLock(IOException exception)
+    {
+        if (Application.platform != RuntimePlatform.WindowsEditor &&
+            Application.platform != RuntimePlatform.WindowsPlayer) return false;
+        int code = exception.HResult & 0xffff;
+        return code == 32 || code == 33 || code == 1175;
     }
 
     private void PublishChanged()

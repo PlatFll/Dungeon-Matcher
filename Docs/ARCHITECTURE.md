@@ -73,7 +73,7 @@ Do not create a second resolver, gravity pass, special-chain engine, or obstacle
 
 ## Deterministic board-resolution pipeline
 
-“Deterministic” here means that one accepted board action follows one authoritative, ordered resolution pipeline. It does not claim that random gem generation or random enemy target selection is seeded for replay determinism; those currently use Unity random selection.
+One accepted board action follows one authoritative, ordered resolution pipeline. Seeded `SavedRandom` streams and the bounded continuation journal also reproduce accepted inputs across saved-run recovery. The board/refill stream can be restored independently for a board photograph; enemy and encounter randomness retain their present state. See combat continuation ownership below for scope and compatibility.
 
 For an ordinary player swap, `BoardController.TrySwap` performs this sequence:
 
@@ -185,7 +185,7 @@ Do not merge these responsibilities. In particular, a board clear should describ
 
 Enemy white-flash presentation has one material writer, `EnemyCombatFeedback`. Poison requests a timed hit flash from that owner; expiry combines with current stagger state instead of restoring a captured temporary value. Disable and defeat clear temporary state.
 
-Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains actual shield loss after mitigation. HP numbers continue to consume actual `DamageTaken`, in a separate display lane. At zero shield, `PlayerPanelUI` deactivates and destroys the complete runtime shield overlay immediately.
+Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains actual shield loss after mitigation. HP numbers continue to consume actual `DamageTaken`, in a separate display lane. At zero shield, `PlayerPanelUI` hides the compact `ShieldBarUI` track immediately. Both actor presentations retain their HP fill and text. The shared shield geometry uses the modular HP frame's content insets, preventing the legacy full-size blue overlay.
 
 ## Enemy data and runtime responsibilities
 
@@ -245,11 +245,15 @@ behavior.
 
 ## HP and shield system separation
 
+`CombatAmounts` defines final combat quantities in five-point steps. Actor damage, healing, grants, caps and revival enforce it; `EnemyRuntimeStats` and `DifficultyProfile` normalize scaled enemy values. Continuation restores old odd-valued resources into the same units. Float scaling coefficients remain internal until resolution. Energy and board durability are outside this policy.
+
+King completion updates the existing run journal without setting `RunSession.IsFinished` or finalizing rewards. The wave gate releases normally; normal death/explicit-end settlement pays the King bonus once. Existing roster selection, named-leader exclusions and endless difficulty curves continue beyond wave 30.
+
 `PlayerActor` owns separate `currentHealth`/`maximumHealth` and `currentShield`/`maximumShield` values, normalized values, and event streams.
 
 - `Heal` affects HP only.
 - `GrantShield` affects shield only and enforces the shield cap.
-- `TryTakeDamage` applies the configured reduction when shield was active at the start of the attack, consumes shield, and applies any remaining damage to HP.
+- `TryTakeDamage` applies the configured reduction when shield was active at the start of the attack, consumes shield, and gates the entire hit from HP whenever shield was initially present.
 - Defeat is determined by HP, not shield; revival restores HP and resets shield.
 - `PlayerPanelUI` presents shield separately from HP and consumes the separate events.
 - `CombatController.HealPlayerFromBomb` and `GrantPlayerShieldFromBomb` call the corresponding distinct actor methods.
@@ -259,10 +263,10 @@ Never reuse HP fields/events for shield or change shield rules as a side effect 
 `EnemyActor` independently owns enemy `currentHealth` and `currentShield` state. Enemy shields are distinct from HP and use their own cap, normalized value, grant API, and change/damage events.
 
 - All established damage sources remain shield-aware by entering through `EnemyActor.TryTakeDamage` or `TryTakeDamageWithoutFeedback`.
-- If shield was active at the start of a hit, `EnemyActor` applies the enemy shield reduction and ceiling rounding once to the whole hit, consumes shield first, and sends reduced overflow to HP. Breaking shield does not remove the reduction from that hit; the next separate unshielded hit uses full damage.
+- If shield was active at the start of a hit, `EnemyActor` applies the enemy shield reduction and final five-point rounding once to the whole hit, consumes shield, and discards excess. The next separate unshielded hit uses full damage. The initial shield state is captured before callbacks, so Emergency Plating cannot make the same hit consume a second shield pool.
 - `GrantShield` changes shield only and clamps it to the enemy shield cap. Ability runtimes must use this API rather than changing HP or presentation.
 - Enemy defeat remains based on HP reaching zero. Initialization resets shield so it cannot persist between enemy instances or waves.
-- `EnemySlotUI` observes enemy shield events and presents shield in place of HP while shield is active. It is presentation-only, and missing shield presentation cannot prevent gameplay resolution.
+- `EnemySlotUI` observes enemy shield events and updates the compact `ShieldBarUI` track below the HP frame while shield is active. HP and rank art remain visible. It is presentation-only, and missing shield presentation cannot prevent gameplay resolution.
 
 ## Gameplay and VFX/presentation separation
 
@@ -337,7 +341,7 @@ The script reads the exact editor version from `ProjectSettings/ProjectVersion.t
 - `WaveController` records successfully spawned Mini-boss/Boss definitions for adjacent-encounter exclusion. All weighted/fallback draws share that exclusion; already seen major Bosses remain excluded. Independent validation run fixtures reset both milestone and encounter history explicitly.
 
 - `WaveSpawnProfile` remains the category/count planner; `EnemyDatabase` filters eligible definitions and evaluates their age-relative weight curves. `WaveController.BuildEncounter` resolves the complete composition before spawning through `CreateEnemy`. Definition-owned escort pools constrain all other slots when a Mini-boss is selected; they never create a second spawn path. Ordinary fixed overrides are removed from the standard profile, while the existing solo checkpoints remain.
-- `WaveController` owns a private `System.Random` initialized from its recorded encounter seed. Category planning, definition/escort draws and weakness shuffling use that same instance. Existing board randomness remains Unity-based; full-run replay determinism is not claimed.
+- `WaveController` owns a private `SavedRandom` through its `System.Random` interface, initialized from its recorded encounter seed. Category planning, definition/escort draws and weakness shuffling use that same instance. The separate board/refill and gameplay streams are described under combat continuation ownership; rewinding a board does not rewind encounter selection.
 - `KnightCaptainEnemyAbility` owns preference, one shared four-move special opportunity, participant snapshot, wind-up/sequencing and cancellation. It uses `EnemyActor` action ownership and `EnemyAutoAttack.TryReserveCommand` / `PerformCommandStrike` / `ReleaseCommand`. Reservation suspends the existing timer; release preserves an unspent cooldown or restarts a consumed attack. All hits still use the existing auto-attack sequence and player damage API, including Spear Knight's two-hit lifecycle.
 - `TryQueueTopUpMovablePins` extends the single board mutation queue. It selects ordinary gems at execution, uses existing pin ownership and `HasAvailableMove`, and tops up only to the cap. A separate movable-pin set distinguishes swap-only chains from fixed bolts. Gravity skips fixed pins only; input/legal-move checks reject both. Adjacent clears release bolts only. Gem destruction, special conversion, owner cleanup and emergency reshuffles release chains through established ownership cleanup. No board code identifies a Captain.
 - Shield Knight's category is Special; its asset compensates category/wave multipliers for the wave-17 introduction baseline. Shield grants and shield-aware damage remain owned by the existing runtime and `EnemyActor`; player shields are unchanged.
@@ -369,9 +373,19 @@ Permanent HP/gem/ability/shield values derive from immutable `PlayerDefinition` 
 
 ### Combat continuation ownership
 
+Account persistence publishes wallet/journal changes only after the flushed temporary file replaces the durable save. Windows replacement sharing/lock errors (32, 33, 1175) receive at most three retries with 20/40/60 ms delays using that same transaction; other errors, including partial-move failures, are not retried. Persistent failures keep the current wallet/journal unchanged and return the existing save error.
+
 `RunContinuation` coordinates typed value snapshots; each board/combat/upgrade owner captures and restores its own fields. Snapshot boundaries exclude board mutation, enemy animation actions, attack reservations, spawns and death effects. The board snapshot maps gem/cell ownership to enemy slots, never persisted instance IDs. Enemy definitions and cards resolve through existing catalogs. Restore creates actors through the existing wave controller, restores cells/status/timers/build, reconnects owner abilities, and resumes readiness without replaying wave-start bonuses. No absence time advances combat.
 
-`SavedRandom` exposes stable encounter, draft and gameplay states. `GameplayRandom` isolates authoritative board/enemy draws from presentation randomness. `RunFrameRecorder` records frame deltas before gameplay Update; `RunContinuation` checkpoints in LateUpdate. Accepted swaps, abilities, supplies and card decisions are journaled before effects. A supply's debit and accepted-action record share one atomic account transaction. If interrupted between stable boundaries, a short frame journal replays accepted inputs through the existing gameplay pipeline from the last snapshot. Recovery uses an isolated in-memory account, restoring pre-action stock and counters; only successful replay publishes the recovered account. Failure retains the durable original and blocks play with a return-to-menu option. This is recovery of a saved attempt, not a second board resolver or a general network rollback system.
+`SavedRandom` exposes stable encounter, draft, gameplay and board-refill states. New boards seed a separate stream once from `GameplayRandom`; generation, refills, reshuffles and random board-special choices use that stream. Enemy board-target choices remain on `GameplayRandom`, isolated from presentation randomness. Older v1 checkpoints with no board-stream state keep their shared-stream behavior for continuation compatibility. `RunFrameRecorder` records frame deltas before gameplay Update; `RunContinuation` checkpoints in LateUpdate. Accepted swaps, abilities, supplies and card decisions are journaled before effects. A supply's debit and accepted-action record share one atomic account transaction. If interrupted between stable boundaries, a short frame journal replays accepted inputs through the existing gameplay pipeline from the last snapshot. Recovery uses an isolated in-memory account, restoring pre-action stock and counters; only successful replay publishes the recovered account. Failure retains the durable original and blocks play with a return-to-menu option. This is recovery of a saved attempt, not a second board resolver or a general network rollback system.
+
+### Board photographs and persistent ability presentation
+
+`BoardController.Memory` exposes generic capture/validate/restore operations using the existing `BoardCombatSnapshot` and shared cell reconstruction. It has no character/card rules. Logical gem identities let current enemy warnings follow surviving targets after reconstruction without rewinding their deadlines. `Gem.RetireForStateRestoration` skips physical destruction side effects: replacing a photograph must not release nearby pins or enqueue banner gravity. Board restoration emits one presentation/state event, never a clear, completion or reward event. WaveController resynchronizes the existing standard aura from the restored board.
+
+`ChronoShutterRuntime` owns the bounded photograph, owner references, accepted-move countdown, phase timers and temporary input lock. It waits for both board and enemy-action settlement before restoration. Encounter completion, defeat, disable and cancellation dispose its lock and photograph. Active state serializes through `RunContinuation`; owner instance IDs become encounter slots on disk and living actor references on resume. Rewinding/recovery snapshots contain no photograph and cannot grant Developing Fluid again. Typed `BoardMemoryMoves` and `BoardMemoryRewindShield` card channels use `RunUpgradeResolver`; shield storage and capacity remain in PlayerActor.
+
+Optional `IPlayerAbilityPresentation` supplies Idle/Ability/Hold/Recovery and a move counter to the existing player presenter. The generic definition flag `AllowsMatchEnergyWhileActive` permits ordinary energy gain during the hold without changing other abilities' behavior. `GideonGlassImporter` imports approved native PNGs and explicit timing from `ArtSource/GideonGlass`, creates point-filtered 64×64/bottom-center sprites, and authors image-only clips with no gameplay events. The fixed cast, rewind and recovery timers remain authoritative if optional presentation is unavailable.
 
 Snapshot versions/layouts and catalog references are validated during reconstruction. Fresh runs interrupted before their first snapshot may regenerate the initial board; no input is accepted without a durable checkpoint. See `DESIGN_V2_IMPLEMENTATION.md` for executed scenarios and the limits of validation.
 
@@ -384,3 +398,12 @@ Snapshot versions/layouts and catalog references are validated during reconstruc
 `UiTypography` supplies the Thaleah TTF and static 16-point bitmap TMP atlas. `GameUi` configures new labels, while `BalanceRuntimeBootstrap` applies the same family to scene and dynamically created text. `PixelTextFitter` measures containers and selects whole physical-pixel glyph scales; guides and build recaps keep a readable scrolling size. `HudTypographyImporter` binds serialized game labels and the TMP default to the same font/material.
 
 `CombatTextController` observes actual player/enemy healing, shield gain/loss and damage events. It does not calculate or apply combat changes. `EnemyPoisonStatusPresenter` retains poison-tick ownership, preventing duplicate ordinary damage numbers. `CombatTextStyles_Default` defines opaque type colors, rise and fade timing; `FloatingCombatText` uses the existing pool with immediate Thaleah setup. Re-enabling the controller rebinds current enemies without duplicate subscriptions.
+
+
+### Authored enemy ability contact and recovery (October 2026)
+
+`EnemyActor.SpecialMotion` extends the existing accepted special-action identity with a named animation state, numbered contact cues and completion. `EnemyActionAnimationPresenter` relays authored contacts after the current Image sprite is applied. Duplicate or stale action cues cannot release another cast. Ability runtimes still select effects and own cadence. Single-contact Miner/Barricade abilities retain their established event protocol.
+
+The existing board-mutation queue captures prepared special motions. It starts presentation only after acquiring the board, waits for the contact cue, performs the existing mutation and retains ownership through recovery. Missing animation events have scaled-time fallbacks; pause stops them. Royal Bombardment is one generic two-lane request: column, row, recovery, one environmental settlement. Death cancels later strikes and still settles prior holes. The board never selects character animation states, damage or balance rules.
+
+Non-board shields, summons and blessings wait for their owning actor's contact before applying through existing runtime/actor APIs. Commands finish the gesture before releasing reserved normal attack sequences. Definition flags and existing controllers select all authored art; missing optional visuals cannot stall gameplay indefinitely.

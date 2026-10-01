@@ -168,6 +168,7 @@ public sealed class PlayerAbilityMatchEnergyGain :
             playerAbilityEnergy == null ||
             playerAbilityController == null ||
             (playerAbilityController.IsAbilityActive &&
+             !playerAbilityController.ActiveAbility.AllowsMatchEnergyWhileActive &&
              !outcome.ClearContext.GrantsSpecialEnergy) ||
             !playerActor.IsInitialized ||
             playerActor.IsDefeated)

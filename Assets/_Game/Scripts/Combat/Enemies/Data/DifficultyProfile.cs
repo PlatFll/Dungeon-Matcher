@@ -366,20 +366,9 @@ public sealed class DifficultyProfile : ScriptableObject
         return new EnemyRuntimeStats(
             wave: wave,
             level: calculatedLevel,
-            maxHealth: Mathf.Max(
-                1,
-                Mathf.RoundToInt(calculatedHealth)
-            ),
-            damage: Mathf.Max(
-                0,
-                Mathf.RoundToInt(calculatedDamage)
-            ),
-            followUpDamage: Mathf.Max(
-                0,
-                Mathf.RoundToInt(
-                    calculatedFollowUpDamage
-                )
-            ),
+            maxHealth: CombatAmounts.Health(calculatedHealth),
+            damage: CombatAmounts.Round(calculatedDamage),
+            followUpDamage: CombatAmounts.Round(calculatedFollowUpDamage),
             attackInterval: calculatedAttackInterval,
             specialTurnRequirement:
                 calculatedSpecialTurns,

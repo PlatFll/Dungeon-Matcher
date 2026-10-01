@@ -381,6 +381,7 @@ public partial class BoardController : MonoBehaviour
         );
 
         gems[column, row] = gem;
+        gem.BoardIdentity = ++nextGemIdentity;
 
         return gem;
     }
@@ -444,7 +445,7 @@ public partial class BoardController : MonoBehaviour
         }
 
         int randomIndex =
-            GameplayRandom.Range(
+            BoardRandomRange(
                 0,
                 allowedTypes.Count
             );
@@ -455,7 +456,7 @@ public partial class BoardController : MonoBehaviour
     private GemType GetRandomGemType()
     {
         int typeIndex =
-            GameplayRandom.Range(
+            BoardRandomRange(
                 0,
                 gemSprites.Length
             );
@@ -631,9 +632,11 @@ public partial class BoardController : MonoBehaviour
         Gem first,
         Gem second)
     {
-        if (IsExternalInputBlocked ||
+        if (IsBusy || IsExternalInputBlocked ||
             first == null ||
             second == null ||
+            GetGem(first.Column, first.Row) != first || GetGem(second.Column, second.Row) != second ||
+            Mathf.Abs(first.Column - second.Column) + Mathf.Abs(first.Row - second.Row) != 1 ||
             IsGemPinned(first) ||
             IsGemPinned(second))
         {
@@ -659,6 +662,7 @@ public partial class BoardController : MonoBehaviour
                 first,
                 second))
         {
+            NotifyValidPlayerMoveAccepted();
             yield return
                 ResolveDoubleColorCrystalActivation(
                     first,
@@ -686,6 +690,7 @@ public partial class BoardController : MonoBehaviour
 
         if (createdSpecial)
         {
+            NotifyValidPlayerMoveAccepted();
             /*
              * A straight five, L, or T creates a new crystal.
              * Materialize it before beginning the resulting
@@ -746,6 +751,7 @@ public partial class BoardController : MonoBehaviour
 
         if (activatedColorCrystal)
         {
+            if (!createdSpecial) NotifyValidPlayerMoveAccepted();
             yield return ResolveColorCrystalActivation(
                 crystalClearSet,
                 crystalTargetType,
@@ -793,6 +799,7 @@ public partial class BoardController : MonoBehaviour
         }
         else
         {
+            NotifyValidPlayerMoveAccepted();
             yield return ResolveCascades(
                 matches,
                 first,
@@ -1858,7 +1865,7 @@ public partial class BoardController : MonoBehaviour
                             targetPosition,
 
                         Delay =
-                            GameplayRandom.Range(
+                            BoardRandomRange(
                                 0f,
                                 reshuffleStagger
                             ),
@@ -1974,7 +1981,7 @@ public partial class BoardController : MonoBehaviour
              index--)
         {
             int randomIndex =
-                GameplayRandom.Range(
+                BoardRandomRange(
                     0,
                     index + 1
                 );
@@ -2180,7 +2187,7 @@ public partial class BoardController : MonoBehaviour
 
                     typeGrid[column, row] =
                         allowedTypes[
-                            GameplayRandom.Range(
+                            BoardRandomRange(
                                 0,
                                 allowedTypes.Count
                             )

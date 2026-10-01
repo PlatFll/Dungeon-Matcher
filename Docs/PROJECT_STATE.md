@@ -20,15 +20,13 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-09-27
-- **Current milestone:** Per-character level reset and shared mastery unlocks at 3/5/7; directional bombs available from level 1
-- **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
-- **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
-- **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
-- **Current art-pass base:** `codex/cast-grounded-idle-family` at `feca180` (PR #166), which extends the accepted guard motion through King. No character art is changed by the background pass. The stronger PR #164 motion remains rejected.
-- **Earlier updates:** PR #157 (Balance v1) and #152 (historical audit documents) merged before this implementation.
-- **Release scope:** The approved main checkpoint includes combat idles/actions (#159–#160), local enemies (#161), presentation/VFX/audio/haptics (#162), remaining-cast sources and corrections (#163–#166), backgrounds (#167), and level reset/shared mastery (#168). The stronger PR #164 motion remains rejected; the restored guard motion in #165 and final Miner-through-King corrections in #166 are the active direction. Sources live under `ArtSource/`; the durable guide is `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` (v1.9). Separate uncommitted background-source edits and local repository guidance are preserved outside this release. Art evidence is in `Docs/Validation/DUNGEON_BACKGROUND_REFINEMENT.md`; family and earlier presentation validation records remain available separately.
-- **Merge verification:** `Tools/Validate-Unity.ps1` passed again on 2026-09-27 with Unity 6000.3.19f1 (log suffix `7574ee9a-ad68-49b5-9a1a-e725f96faf16`). The production code/configuration is unchanged from the 251-test and rendered-menu validation recorded above; that evidence is reused. Integration preserves the final tree and commit ancestry, including the later corrections.
+- **Date:** 2026-10-01
+- **Current milestone:** Endless combat past the King; whole-hit shield gating; HP, shield and resolved damage in steps of five; clearer rank badges and remaining enemy attack animations. The user approved all ability concepts, selecting Royal Gold, a two-handed King thrust and the Shield Knight's raised blue shield. These motions are integrated; current verification is tracked in the combat-polish record.
+- **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
+- **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
+- **Current verification:** The combined candidate passed 278 regression tests, with zero failed or skipped, the rendered Gideon/menu review at both portrait sizes, all three enemy ability checks, and the required Unity 6000.3.19f1 validator. See [integration verification](Validation/PR_INTEGRATION_2026_10_01.md). Device and human pacing validation remain separate.
+- **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
+- **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
 ### What this document is
 
@@ -117,7 +115,7 @@ Current visual direction:
 - short, snappy animation cycles instead of highly fluid animation for its own sake;
 - gameplay readability takes priority over decorative noise.
 
-The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones** and the green slime bard **Bardley**. Their silhouettes and personalities should remain distinct.
+The current player cast includes the crowned skeleton **Sir RattleBones / RattleBones**, the green slime bard **Bardley**, and brass photographer automaton **Gideon Glass**. Gideon's selected reference and native source are in `ArtSource/GideonGlass/`; the earlier simplified redraw was rejected and is superseded. His 64×64, 16-color right-facing design preserves the large hat/feather, blue lens eye, split coat and thin cane. His nine-frame idle uses 130 ms exposures; cast/hold/recovery use dedicated clips. Their silhouettes and personalities should remain distinct.
 
 ## Combat-animation art checkpoint
 
@@ -134,6 +132,8 @@ The 2026-09-21 local-enemy pass extends the animation checkpoint above: Miner, B
 The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle drafts for connected head pitch, eye closure, shoulder changes and torso compression in all three local-enemy idles. It also improves the builder axe windup/follow-through and corrects the kneeling leg locally. The current presentation pass repairs disconnected candle/boot pixels, preserves the basket as a rigid carried prop, articulates the berry throw and rounds the builder's folded rear boot. Ready poses, palettes, dimensions and impact times remain unchanged. Earlier four-character art and the Miner's action drawings are preserved.
 
 ## Current presentation and feedback checkpoint
+
+**Combat presentation (2026-10-01):** Normal, Special and Miniboss rank badges now use lime, cyan and amber respectively, preserving their silhouettes and dark outlines. The existing Boss badge is retained. Shield uses a separate six-pixel track below the HP frame. New attacks and approved abilities are tracked under `ArtSource/EnemyAttacks/`. The King uses a two-handed column-then-row Royal Gold strike with no intermediate refill. The Shield Knight raises his shield before the blue grant pulse. Other accepted concepts use their existing ability owners and shared board queue. See `Validation/ENDLESS_COMBAT_POLISH.md` for executed evidence.
 
 **HUD, typography and effect feedback (2026-09-29):** Bottom HUD now shares the player panel's dark tiled treatment. Energy is a bar with centered ability/supply controls. New PixelLab potion, bomb and bright borderless tile states have editable native sources in `ArtSource/HudTypography/`. Thaleah covers all runtime text; healing is green, shield changes blue, damage white and poison dark green. Beneficial numbers subscribe to actual actor events, retain clamping, rise above actors and fade through the existing pool. See [validation](Validation/HUD_THALEAH_FEEDBACK.md).
 
@@ -216,7 +216,7 @@ Detailed layout ownership lives in `Docs/ARCHITECTURE.md`.
 4. Buy/equip optional Potion and Bomb consumables in the Shop.
 5. Start a run.
 6. Progress through waves, choosing run cards at milestones.
-7. Die or defeat the King formation.
+7. Continue past the King until death or an explicit End Run.
 8. Receive Gold based on completed progress and milestone rewards.
 9. Spend Gold, change build preparation, and run again.
 
@@ -314,6 +314,15 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 - Cracked Gems targets ordinary gems first, cracks them, then resolves 3×3 explosions and established special/crystal interactions.
 - Current Balance v1 cracked-center base damage: **20** before permanent/run modifiers.
 
+### Gideon Glass
+
+- Brass automaton photographer; his camera is his eye.
+- Initial Level 1 HP **90**, gem damage **10.5**, shield cap **40**, Sapphire affinity.
+- **ChronoShutter**, cost **100**: photograph board/refill state, play five accepted manual moves, finish resolution, then restore the photograph while retaining combat gains.
+- Enemy/combat time, damage, healing, shield, energy, rewards and deaths persist. Normal matching continues to charge energy. Encounter completion and death cancel the photograph; Continue preserves active phases and the remaining move count.
+- **Long Exposure** adds one move. **Developing Fluid** grants 10 shield once per successful rewind. Both are one-stack Epic character cards. Starting numbers need human balance feedback.
+- Detailed rules are in `GAME_DESIGN.md`; board ownership and save compatibility are in `ARCHITECTURE.md`.
+
 ## Permanent levels
 
 - Each character levels **independently**.
@@ -345,7 +354,7 @@ Thaleah Fat is the approved global face (2026-09-29). The unmodified TTF and att
 
 ## Supported run endpoint
 
-The implemented run currently ends after the **King formation**. Post-King Guild/wider-world progression is designed directionally but not yet implemented as supported gameplay.
+The run continues after the **King formation**, using the existing weighted roster and difficulty scaling until the player dies or explicitly ends the attempt. The King clear is journaled once; rewards settle at the actual end of the run. Card opportunities continue at wave 32 and every four completed waves afterward. New zones, Guild enemies and later bosses remain future content.
 
 ---
 
@@ -407,7 +416,7 @@ Cards are intended to be the **main reason two runs with the same character and 
 
 Current implementation:
 
-- 27 card definitions retained in the catalog.
+- 29 card definitions: the previous 27 plus Gideon's Long Exposure and Developing Fluid.
 - Draft offers up to three distinct eligible cards.
 - Draft RNG is separate from encounter RNG.
 - Cards reset with the run.
@@ -445,7 +454,9 @@ Current Balance v1 direction:
 - Shield cap gains **+3 per permanent level**.
 - Shield Bomb grants **25 + 2 per permanent level** before run-card modifiers.
 - Aegis Reservoir increases both Shield Bomb grant and shield cap so its benefit is not lost against an unchanged cap.
-- Existing shield mitigation applies once to the damage instance when shield was present, with overflow continuing into HP according to actor damage rules.
+- Existing mitigation applies once when shield was present at the start of a damage instance. That shield gates the entire hit: shield break never overflows into HP. A subsequent independent hit can damage HP. This applies to both player and enemy shields.
+- `CombatAmounts` rounds final damage, healing, shields and actor HP to multiples of five (positive minimum five, nearest step after modifiers). Legacy combat snapshots normalize these resources on restore. Internal fractional scaling coefficients, energy, economy and board-obstacle durability remain separate.
+- A compact cyan shield track sits below the HP frame; HP text and rank remain visible.
 - Enemy shield users have their own grants/caps and must remain counterable; shielding must not create indefinite stalemates.
 
 Exact numbers remain balance data and should be tuned from real play evidence.
@@ -474,7 +485,7 @@ Current reward model pays for completed run progress rather than enemy farming:
 
 No ordinary kill or summon farming income is used.
 
-The run journal settles rewards exactly once on death, victory or explicit End Run/Retry. Suspend and current-version interruption preserve the same attempt; only legacy journals without combat state settle on load. Partial unfinished waves pay nothing.
+The run journal settles rewards exactly once on death or explicit End Run/Retry. King defeat records its reward flags without settling or stopping the attempt. Suspend and current-version interruption preserve the same attempt; only legacy journals without combat state settle on load. Partial unfinished waves pay nothing.
 
 The economy goal is:
 
@@ -632,7 +643,7 @@ Balance v1 currently tunes **21 implemented enemy definitions** through the King
 - Royal Archbishop
 - King
 
-The larger post-King roster/faction plan is future content and should not be mistaken for currently supported gameplay.
+Endless waves reuse this roster after the King; the larger post-King roster and new factions remain future content.
 
 ---
 
@@ -907,4 +918,4 @@ Before answering a broad project question or implementing a feature:
 
 If only a very short refresher is needed:
 
-**Dungeon Matcher** = portrait mobile pixel-art match-3 dungeon battler where the player is the dungeon monster defending an artifact. Match gems → exploit enemy weaknesses → heal via affinity → charge character abilities → create/chains specials → survive real-time attacks and turn-counted board interference → choose temporary run cards → defeat increasingly serious invaders. Permanent per-character levels bought with shared Gold raise the starting floor; account-wide Gem Mastery unlocks and optional Potion/Bomb consumables support progression. Runs use weighted overlapping factions plus authored formations, with miniboss escorts and the King around wave 30. Cards are the primary run-to-run differentiator. Skill must let strong players exceed the expected progression curve; permanent power creates soft walls, never hard gates. Visual identity is crisp dark-purple dungeon pixel art with charming monster characters, jewel gems and warm torch accents. Current supported arc ends at the King. Balance v1 exists but still needs human tuning, especially Bardley vs RattleBones.
+**Dungeon Matcher** = portrait mobile pixel-art match-3 dungeon battler where the player is the dungeon monster defending an artifact. Match gems → exploit enemy weaknesses → heal via affinity → charge character abilities → create/chains specials → survive real-time attacks and turn-counted board interference → choose temporary run cards → defeat increasingly serious invaders. Permanent per-character levels bought with shared Gold raise the starting floor; account-wide Gem Mastery unlocks and optional Potion/Bomb consumables support progression. Runs use weighted overlapping factions plus authored formations, with miniboss escorts and the King around wave 30. Cards are the primary run-to-run differentiator. Skill must let strong players exceed the expected progression curve; permanent power creates soft walls, never hard gates. Visual identity is crisp dark-purple dungeon pixel art with charming monster characters, jewel gems and warm torch accents. Runs continue past the King with the current roster until death or explicit End Run. Balance v1 exists but still needs human tuning, especially Bardley vs RattleBones.

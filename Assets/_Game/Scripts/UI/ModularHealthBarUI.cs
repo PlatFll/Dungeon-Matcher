@@ -30,7 +30,7 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private RectTransform endRect;
     private RectTransform badgeRect;
     private EnemySlotUI enemySlot;
-    private bool shieldWasVisible;
+    public Vector2 ContentInsets => style != null ? new Vector2(style.FillInsetLeft, style.FillInsetRight) : new Vector2(4, 4);
     private static readonly System.Collections.Generic.Dictionary<string, ModularHealthBarStyle> RankStyles =
         new System.Collections.Generic.Dictionary<string, ModularHealthBarStyle>();
 
@@ -66,16 +66,6 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         if (!modularVisualBuilt)
         {
             TryBuildModularVisual();
-        }
-
-        // Enemy shields retain their existing separate presentation, including its break flash.
-        bool shieldVisible = enemySlot != null && enemySlot.IsShieldPresentationActive;
-        if (shieldVisible || shieldWasVisible)
-        {
-            if (generatedRoot != null) generatedRoot.gameObject.SetActive(!shieldVisible);
-            if (shieldVisible) RestoreLegacyVisuals(); else HideLegacyVisuals();
-            shieldWasVisible = shieldVisible;
-            if (shieldVisible) return;
         }
 
         CaptureLegacyValue();

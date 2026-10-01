@@ -173,19 +173,8 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         if (journalWriteFailed) return;
         pendingWave = 0;
         RecordMetric(wave);
-        if (hasKing && !IsFinished)
-        {
-            IsVictory = true;
-            IsFinished = true; // Gate immediately; wait for the final board clear before presentation.
-            CancelTargeting();
-            StartCoroutine(CompleteVictory());
-        }
-    }
-    private IEnumerator CompleteVictory()
-    {
-        while (Board != null && Board.IsBusy) yield return null;
-        journalWriteFailed = !account.FinalizeRun(RunId, "Victory");
-        Finished?.Invoke();
+        // King completion is recorded in the same journal as later waves.
+        // The attempt continues until defeat or an explicit End Run.
     }
     private void OnDefeated(PlayerActor player)
     {

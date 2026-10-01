@@ -14,8 +14,8 @@ public sealed partial class EnemyActor
     };
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
-        currentHealth=Mathf.Clamp(saved.health,1,MaxHealth);
-        currentShield=Mathf.Clamp(saved.shield,0,MaximumShield);
+        currentHealth=Mathf.Min(CombatAmounts.Health(saved.health),MaxHealth);
+        currentShield=Mathf.Min(CombatAmounts.Round(saved.shield),MaximumShield);
         currentSpecialTurnCount=Mathf.Max(0,saved.specialTurns);
         specialTurnRequirementOverride=saved.specialRequirement;
         isSpecialReady=HasSpecialAbility && currentSpecialTurnCount>=SpecialTurnRequirement;

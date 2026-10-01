@@ -265,7 +265,7 @@ public static class EnemyStaggerValidation
             enemy.AssignedGemType, 1, 0, BoardClearSource.Match), 1),
             "production gem damage accepted");
         Check(!a.IsStaggered, "ordinary gem hit cannot bypass the buildup threshold");
-        Near(a.StaggerMeterNormalized, 1f / a.DamageThreshold,
+        Near(a.StaggerMeterNormalized, 5f / a.DamageThreshold,
             "production gem damage contributes once");
         Reset(a);
 
@@ -281,11 +281,12 @@ public static class EnemyStaggerValidation
         Near(a.StaggerMeterNormalized, (hp - enemy.CurrentHealth + shield - enemy.CurrentShield) / a.DamageThreshold,
             "effective shield damage contributes after mitigation");
         Reset(a);
-        Set(enemy, "currentShield", 3);
+        Set(enemy, "currentShield", 5);
         hp = enemy.CurrentHealth;
         enemy.TryTakeDamage(20);
-        Near(a.StaggerMeterNormalized, (hp - enemy.CurrentHealth + 3) / a.DamageThreshold,
-            "shield overflow adds shield and HP loss exactly once");
+        Check(enemy.CurrentHealth == hp && enemy.CurrentShield == 0, "shield break gates HP damage");
+        Near(a.StaggerMeterNormalized, 5f / a.DamageThreshold,
+            "shield break contributes only actual shield loss");
         Reset(a);
         enemy.GrantShield(30);
         enemy.TryTakeDamageWithoutFeedback(100);

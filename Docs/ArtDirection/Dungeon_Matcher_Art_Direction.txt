@@ -1,14 +1,22 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.9
+**Version:** 1.10
 **Compiled:** 2026-09-19
-**Updated for finalized visual target candidates:** 2026-09-28
+**Updated for combat polish and enemy attack production:** 2026-10-01
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
 This repository edition is the durable source of truth for the art direction established in this project conversation. It records the versions carried forward as working references, the rejected approaches, and unresolved issues. It does not retroactively approve every historical suggestion or authorize changes to shipped assets.
 
 The PNG and ASE assets in the accompanying pack are byte-for-byte copies of supplied files. No character artwork was edited to create this documentation. Reference boards are labeled inspection layouts, not replacement sprite sheets. Versioning, status labels, and review templates are organizational conventions introduced by this guide.
+
+## Current combat additions (2026-10-01)
+
+The user requested readable rank colors, compact shields and attacks for every enemy. Normal, Special and Miniboss badges now use lime, cyan and amber with their existing dark outlines and silhouettes. The Boss badge is retained. Shields occupy a separate six-pixel track below the HP frame; HP and rank remain visible.
+
+Sixteen new PixelLab basic attacks extend the existing authored roster. Sources, native palettes, selected frames and impact timing are recorded in `ArtSource/EnemyAttacks/README.md` and `manifest.json`. Every action retains the original character scale and bottom-center anchor; larger canvases add transparent weapon clearance. All attacks use the existing actor impact events and action ownership.
+
+The user accepted the eleven special-ability studies, selected Royal Gold, and requested a two-handed King thrust and raised blue Shield Knight shield. Production sources and fourteen controller states are recorded in `ArtSource/EnemyAttacks/abilities.json` and `ABILITY_SOURCES.md`. The original gallery remains review history.
 
 ## 1. Start here in every new art task
 
@@ -732,3 +740,9 @@ actual 1080×1920 and 1080×2400 evidence in
 `Docs/Validation/FINALIZED_VISUAL_TARGETS_V2.md` before approving replacements.
 The existing character reference board, cast/animation, gem and locked frame
 colors remain authoritative.
+
+
+APPROVED ENEMY ABILITY PRODUCTION — 2026-10-01
+User selected Royal Gold and accepted all other concepts with two revisions: King uses BOTH hands on the sword through lift, ground thrust, planted hold and extraction; Shield Knight raises his decorated shield before a blue glow grants shields.
+Sources: ArtSource/EnemyAttacks/abilities.json and ABILITY_SOURCES.md. Fourteen native controller states cover the ten remaining ability users, including King warning/raise/two-strike/command states and separate Archbishop green Restoration and gold Benediction. Preserve native character scale and fixed battle-floor anchor. Effects use restrained gold, cyan and green accents.
+King impacts clear column then row, with the board locked and unfilled until recovery finishes. The runtime board queue owns this timing. Optional animation/VFX is never the sole authority for completion. Initial one-handed King and front-bubble Shield Knight concepts are superseded.

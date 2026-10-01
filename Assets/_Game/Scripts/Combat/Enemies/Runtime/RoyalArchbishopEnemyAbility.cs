@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +47,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
         {
             if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
             pending = true;
+            actor.PrepareSpecialMotion();
             if (!board.TryQueueResolveGemSet(runes, HealPulse, success => EndAction(), () => released)) EndAction();
             return;
         }
@@ -59,6 +61,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
         {
             if (!actor.TryBeginSpecialAbilityAnimationAction()) return false;
             pending = true;
+            actor.PrepareSpecialMotion();
             if (board.TryQueueMarkGemSet(actor, actor.Definition.RoyalMarkCount, actor.Definition.RoyalMarkMoves,
                 true, result =>
                 {
@@ -75,6 +78,28 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     }
     private bool TryBless()
     {
+        bool eligible = false;
+        foreach (var ally in roster)
+            if (ally != null && ally != actor && !ally.IsDefeated &&
+                ally.GetComponent<EnemyAutoAttack>() is EnemyAutoAttack attack && !attack.HasNextSequenceModifier(this))
+                { eligible = true; break; }
+        if (!eligible || !actor.TryBeginSpecialAbilityAnimationAction()) return false;
+        pending = true;
+        int motion = actor.StartSpecialMotion("Benediction");
+        if (motion > 0) StartCoroutine(CastBlessing(motion));
+        else { ApplyBlessing(); EndAction(); }
+        return true;
+    }
+    private IEnumerator CastBlessing(int motion)
+    {
+        yield return actor.WaitForSpecialMotionBeat(motion);
+        if (!actor.IsSpecialMotionCurrent(motion) || released) yield break;
+        ApplyBlessing();
+        yield return actor.WaitForSpecialMotionComplete(motion);
+        EndAction();
+    }
+    private void ApplyBlessing()
+    {
         int count = 0;
         foreach (var ally in roster)
         {
@@ -86,8 +111,8 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
             EnemyBlessingView.Show(attack, this, actor.Definition.BenedictionHaloSprite);
             if (++count >= actor.Definition.BenedictionTargets) break;
         }
-        if (count == 0) return false;
-        Complete(true); return true;
+        if (count > 0) Complete(true);
+        else retryAfterMove = board.CompletedValidPlayerMoves;
     }
     public static EnemyActor SelectTriageTarget(EnemyActor healer, IReadOnlyList<EnemyActor> enemies)
     {
@@ -127,7 +152,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private void Defeated(EnemyActor enemy) => Cleanup();
     private void Cleanup()
     {
-        released = true; availability?.Dispose(); availability = null;
+        released = true; StopAllCoroutines(); availability?.Dispose(); availability = null;
         if (board != null) board.CancelGemSetThreat(runes);
         runes = null;
         foreach (var attack in blessed) if (attack != null) attack.RemoveNextSequenceModifier(this);

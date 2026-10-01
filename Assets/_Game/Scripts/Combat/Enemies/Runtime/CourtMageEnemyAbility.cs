@@ -132,6 +132,8 @@ public sealed class CourtMageEnemyAbility :
             return true;
         }
 
+        if (!enemyActor.TryBeginSpecialAbilityAnimationAction()) return false;
+        enemyActor.PrepareSpecialMotion();
         bool queued =
             boardController.TryQueueFreezeRandomGem(
                 enemyActor,
@@ -140,11 +142,13 @@ public sealed class CourtMageEnemyAbility :
 
         if (!queued)
         {
+            enemyActor.EndSpecialAbilityAnimationAction();
             return false;
         }
 
         enemyActor.NotifySpecialAbilityUsed();
         enemyActor.ResetSpecialCounter();
+        if (enemyActor.SpecialMotionId == 0) enemyActor.EndSpecialAbilityAnimationAction();
         return true;
     }
 
@@ -184,6 +188,11 @@ public sealed class CourtMageEnemyAbility :
                 ? boardController.GetFrozenGemCountForOwner(
                     ownerInstanceId)
                 : 0;
+    }
+
+    private void OnDisable()
+    {
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void OnDestroy()

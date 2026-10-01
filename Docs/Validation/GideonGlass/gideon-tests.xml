@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-27 00:42:56Z" end-time="2026-09-27 00:42:59Z" duration="3.7517716">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="390" result="Passed" start-time="2026-09-27 00:42:56Z" end-time="2026-09-27 00:42:59Z" duration="3.751772" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1480" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="390" result="Passed" start-time="2026-09-27 00:42:56Z" end-time="2026-09-27 00:42:59Z" duration="3.703537" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="35584" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1083" name="ChronoShutterTests" fullname="ChronoShutterTests" classname="ChronoShutterTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-27 00:42:56Z" end-time="2026-09-27 00:42:59Z" duration="3.699436" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1086" name="ActivePhotographAndInFlightFifthMoveSurviveRestart" fullname="ChronoShutterTests.ActivePhotographAndInFlightFifthMoveSurviveRestart" methodname="ActivePhotographAndInFlightFifthMoveSurviveRestart" classname="ChronoShutterTests" runstate="Runnable" seed="729460890" result="Passed" start-time="2026-09-27 00:41:33Z" end-time="2026-09-27 00:41:57Z" duration="24.179613" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1091" name="CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume" fullname="ChronoShutterTests.CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume" methodname="CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume" classname="ChronoShutterTests" runstate="Runnable" seed="2057398633" result="Passed" start-time="2026-09-27 00:41:57Z" end-time="2026-09-27 00:42:10Z" duration="12.861659" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1089" name="EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce" fullname="ChronoShutterTests.EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce" methodname="EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce" classname="ChronoShutterTests" runstate="Runnable" seed="1458415220" result="Passed" start-time="2026-09-27 00:42:10Z" end-time="2026-09-27 00:42:15Z" duration="4.852953" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1085" name="FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills" fullname="ChronoShutterTests.FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills" methodname="FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills" classname="ChronoShutterTests" runstate="Runnable" seed="1204961735" result="Passed" start-time="2026-09-27 00:42:15Z" end-time="2026-09-27 00:42:37Z" duration="21.552530" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1090" name="PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph" fullname="ChronoShutterTests.PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph" methodname="PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph" classname="ChronoShutterTests" runstate="Runnable" seed="1106528177" result="Passed" start-time="2026-09-27 00:42:37Z" end-time="2026-09-27 00:42:47Z" duration="10.692513" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1084" name="PlayableDefinitionUsesApprovedFramesAndDedicatedHold" fullname="ChronoShutterTests.PlayableDefinitionUsesApprovedFramesAndDedicatedHold" methodname="PlayableDefinitionUsesApprovedFramesAndDedicatedHold" classname="ChronoShutterTests" runstate="Runnable" seed="77811989" result="Passed" start-time="2026-09-27 00:42:47Z" end-time="2026-09-27 00:42:47Z" duration="0.010458" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1088" name="ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched" fullname="ChronoShutterTests.ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched" methodname="ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched" classname="ChronoShutterTests" runstate="Runnable" seed="1982423474" result="Passed" start-time="2026-09-27 00:42:47Z" end-time="2026-09-27 00:42:53Z" duration="5.918443" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1087" name="RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects" fullname="ChronoShutterTests.RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects" methodname="RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects" classname="ChronoShutterTests" runstate="Runnable" seed="1862338161" result="Passed" start-time="2026-09-27 00:42:53Z" end-time="2026-09-27 00:42:59Z" duration="6.244583" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

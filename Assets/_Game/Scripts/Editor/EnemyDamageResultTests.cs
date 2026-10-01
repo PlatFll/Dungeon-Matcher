@@ -26,8 +26,8 @@ public sealed class EnemyDamageResultTests
     }
 
     [TestCase(0, 20, 20, 0)]
-    [TestCase(30, 8, 0, 6)]
-    [TestCase(10, 20, 5, 10)]
+    [TestCase(30, 8, 0, 5)]
+    [TestCase(10, 20, 0, 10)]
     [TestCase(30, 40, 0, 30)]
     public void DirectDamageKeepsShieldRoundingAndSeparateEvents(
         int shield, int amount, int expectedHpLoss, int expectedShieldLoss)
@@ -54,9 +54,9 @@ public sealed class EnemyDamageResultTests
     {
         EnemyActor actor = Enemy("Target");
         actor.GrantShield(10);
-        AssertResult(actor.ResolveDirectDamage(20), actor, 5, 10);
+        AssertResult(actor.ResolveDirectDamage(20), actor, 0, 10);
         AssertResult(actor.ResolveDirectDamage(20), actor, 20, 0);
-        Assert.That(actor.CurrentHealth, Is.EqualTo(75));
+        Assert.That(actor.CurrentHealth, Is.EqualTo(80));
     }
 
     [Test]
@@ -66,7 +66,7 @@ public sealed class EnemyDamageResultTests
         int evaluations = 0;
         actor.IncomingDamageMultiplier = () => { evaluations++; return 0.8f; };
         actor.GrantShield(10);
-        AssertResult(actor.ResolveDirectDamage(20), actor, 2, 10);
+        AssertResult(actor.ResolveDirectDamage(20), actor, 0, 10);
         Assert.That(evaluations, Is.EqualTo(1));
     }
 
@@ -83,7 +83,7 @@ public sealed class EnemyDamageResultTests
         protector.IncomingDamageMultiplier = () => { protectorDefenceCalls++; return 0.8f; };
         protector.GrantShield(10);
 
-        AssertResult(original.ResolveDirectDamage(20), protector, 2, 10);
+        AssertResult(original.ResolveDirectDamage(20), protector, 0, 10);
         Assert.That(original.CurrentHealth, Is.EqualTo(100));
         Assert.That(third.CurrentHealth, Is.EqualTo(100));
         Assert.That(originalDefenceCalls, Is.Zero);
@@ -142,10 +142,10 @@ public sealed class EnemyDamageResultTests
         EnemyActor protector = Enemy("Protector", GemType.Sapphire);
         original.SetDamageRedirectTarget(protector);
         Assert.That(original.TryTakeDamage(7), Is.True);
-        Assert.That(protector.CurrentHealth, Is.EqualTo(93));
+        Assert.That(protector.CurrentHealth, Is.EqualTo(95));
         Assert.That(original.TryTakeDamageWithoutFeedback(9), Is.True);
-        Assert.That(original.CurrentHealth, Is.EqualTo(91));
-        Assert.That(protector.CurrentHealth, Is.EqualTo(93));
+        Assert.That(original.CurrentHealth, Is.EqualTo(90));
+        Assert.That(protector.CurrentHealth, Is.EqualTo(95));
     }
 
     [Test]
@@ -171,8 +171,8 @@ public sealed class EnemyDamageResultTests
         };
         EnemyDamageResult first = actor.ResolveDirectDamage(20);
         AssertResult(first, actor, 20, 0);
-        AssertResult(extra, actor, 3, 0);
-        Assert.That(actor.CurrentHealth, Is.EqualTo(77));
+        AssertResult(extra, actor, 5, 0);
+        Assert.That(actor.CurrentHealth, Is.EqualTo(75));
     }
 
     [Test]
@@ -188,15 +188,15 @@ public sealed class EnemyDamageResultTests
         actor.HealthChanged += (_, __, ___) => healthChanges++;
         actor.ShieldChanged += (_, __, ___) => shieldChanges++;
 
-        AssertResult(actor.ResolveDamageWithoutFeedback(20), actor, 5, 10);
+        AssertResult(actor.ResolveDamageWithoutFeedback(20), actor, 0, 10);
         Assert.That(protector.CurrentHealth, Is.EqualTo(100));
         Assert.That(hpFeedback + shieldFeedback, Is.Zero);
-        Assert.That(healthChanges, Is.EqualTo(1));
+        Assert.That(healthChanges, Is.Zero);
         Assert.That(shieldChanges, Is.EqualTo(1));
     }
 
     [TestCase(0, 20)]
-    [TestCase(10, 5)]
+    [TestCase(10, 0)]
     [TestCase(30, 0)]
     public void CombatReportsActualRecipientAndPreservesOriginalClearContext(int shield, int hpLoss)
     {
@@ -298,7 +298,7 @@ public sealed class EnemyDamageResultTests
         actor.DamageReceived += (_, __) => normalFeedback++;
         Call(poison, "ApplyTick");
         Assert.That(damageReported, Is.EqualTo(10));
-        Assert.That(actor.CurrentHealth, Is.EqualTo(94));
+        Assert.That(actor.CurrentHealth, Is.EqualTo(95));
         Assert.That(protector.CurrentHealth, Is.EqualTo(100));
         Assert.That(normalFeedback, Is.Zero);
     }
@@ -313,7 +313,7 @@ public sealed class EnemyDamageResultTests
         int reports = 0;
         poison.TickDamageApplied += (_, __) => reports++;
         Call(poison, "ApplyTick");
-        Assert.That(actor.CurrentShield, Is.EqualTo(24));
+        Assert.That(actor.CurrentShield, Is.EqualTo(25));
         Assert.That(actor.CurrentHealth, Is.EqualTo(100));
         Assert.That(reports, Is.Zero);
     }

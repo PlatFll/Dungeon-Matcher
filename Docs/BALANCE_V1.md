@@ -1,6 +1,6 @@
 # Balance v1 implementation record
 
-Status: connected Balance v1 implemented. Numerical targets remain design hypotheses; executed tests, final engine measurements and remaining tuning limits are recorded in [the validation record](Validation/BALANCE_V1_VALIDATION.md).
+Status: connected Balance v1 implemented. The 2026-10-01 clean-combat revision rounds final HP, damage, healing and shield to nearest five (positive minimum five), gates shield-breaking hits, and continues runs beyond the King. Tables below are base tuning inputs; fractional scaling coefficients remain internal until final resolution. Numerical targets remain design hypotheses; executed tests, final engine measurements and remaining tuning limits are recorded in [the validation record](Validation/BALANCE_V1_VALIDATION.md).
 
 ## Plan and authority
 
@@ -20,18 +20,20 @@ The approved September 14 brief supersedes older every-fifth-wave rewards, solo 
 | King formation | 45–80 seconds |
 | Successful opening arc | 10–14 minutes including transitions and choices |
 
-No time limit, death wave, damage cap or adaptive enemy scaling enforces these targets. Bardley's committed ability cost stays **1**; normal-cost measurements must explicitly use a temporary 80-energy configuration and report that distinction.
+No time limit, death wave, damage cap or adaptive enemy scaling enforces these targets. Bardley's production ability cost is **80**, with the approved shared refund ceiling. Earlier cost-1 measurements are historical.
 
-| Permanent progression | Bardley | Rattlebones |
-| --- | ---: | ---: |
-| Level 1 HP | 80 | 100 |
-| HP per level | 8 | 10 |
-| Level 1 gem damage | 10 | 11 |
-| Gem damage per level | 0.65 | 0.55 |
-| Ability damage increase per level | 7% of base | 20% of base |
-| Shield cap at level 1 | 40 | 45 |
-| Shield cap per level | 3 | 3 |
-| Level cap | 20 | 20 |
+| Permanent progression | Bardley | Rattlebones | Gideon Glass |
+| --- | ---: | ---: | ---: |
+| Level 1 HP | 80 | 100 | 90 |
+| HP per level | 8 | 10 | 9 |
+| Level 1 gem damage | 10 | 11 | 10.5 |
+| Gem damage per level | 0.65 | 0.55 | 0.6 |
+| Ability damage increase per level | 7% of base | 20% of base | No direct ability damage |
+| Shield cap at level 1 | 40 | 45 | 40 |
+| Shield cap per level | 3 | 3 | 3 |
+| Level cap | 20 | 20 | 20 |
+
+Gideon's initial tuning uses 100 energy and five accepted manual moves per ChronoShutter photograph, with normal match energy during the hold. Two one-stack Epic Ability cards extend the catalog to 29: **Long Exposure** adds one move; **Developing Fluid** grants 10 shield once per successful rewind, subject to normal grant modifiers and capacity. Both require `gideon_glass` / `chronoshutter`. These are starting values, not measured human pacing conclusions; the ability preserves first-timeline combat gains while restoring only board state and its refill future.
 
 Upgrade from level L costs `25 + 15*(L-1) + 5*(L-1)^2` shared gold. No XP. Stats are recomputed from immutable definitions, a run-start permanent level snapshot, then temporary card modifiers. No multiplication of already modified values.
 
@@ -39,11 +41,11 @@ Row and Column bombs are always available from level 1; straight-four matches cr
 
 Characters offers a confirmed **Reset to Lv 1** action for the selected character between runs. It resets only that character's permanent level; gold, inventory, equipment, records, mastery selections and earned account unlocks stay. Upgrade gold is not refunded. Reset is unavailable at level 1 and while a run is saved, preserving the run's level snapshot.
 
-Cards after completed waves **2, 5, 9, 13, 17, 21, 25, 28**. First choice arrives early, with increasingly long play stretches. Potion price 18, Bomb price 24. Potion heals 35% maximum HP. Each equipped type loads at most three charges once per run; stock is deducted only on accepted use. Independent five-second game-time cooldowns pause with gameplay.
+Cards after completed waves **2, 5, 9, 13, 17, 21, 25, 28**, then every four waves from **32** onward. First choice arrives early, with increasingly long play stretches. Potion price 18, Bomb price 24. Potion heals 35% maximum HP. Each equipped type loads at most three charges once per run; stock is deducted only on accepted use. Independent five-second game-time cooldowns pause with gameplay.
 
-Gold: each completed wave pays `5 + floor((wave-1)/3)`; milestone completion adds 12; defeating the King formation adds 60; each newly reached best wave adds 2; first King clear adds 80. No kill or summon income. Journal completed waves as they happen; finalize once on death, victory, Retry, menu exit or next startup after interruption. Partial current waves pay zero. Early 4-wave failures earn 29 gold, enough for the first upgrade; a new best of 10 waves earns 82 before milestone bonuses (94 with the Marshal). Deeper waves pay more per comparable combat time.
+Gold: each completed wave pays `5 + floor((wave-1)/3)`; milestone completion adds 12; defeating the King formation adds 60; each newly reached best wave adds 2; first King clear adds 80. No kill or summon income. Journal completed waves as they happen; finalize once on death or explicit End Run/Retry. Suspend preserves the same attempt; legacy journals without a combat snapshot settle once during recovery. Partial current waves pay zero. Early 4-wave failures earn 29 gold, enough for the first upgrade; a new best of 10 waves earns 82 before milestone bonuses (94 with the Marshal). Deeper waves pay more per comparable combat time.
 
-Shield Bomb starts at 25 plus 2 per permanent level. Shield grants add to the cap without duration refresh. Existing 25% mitigation applies once to the entire hit when shield was present; reduced overflow damages HP. Aegis Reservoir raises both grant and cap. HP and shield remain separate.
+Shield Bomb starts at 25 plus 2 per permanent level. Shield grants add to the cap without duration refresh. Existing 25% mitigation applies once when shield was present; final shield damage rounds to nearest five and excess is discarded. A shield-breaking hit deals no HP damage. Aegis Reservoir raises both grant and cap. HP and shield remain separate.
 
 ## Evidence
 
@@ -51,7 +53,7 @@ The focused Unity suite passed 231 tests with no failures/skips, including a Pla
 
 ## Enemy data
 
-All category and individual stat multipliers are 1. HP and damage multiply by `1 + 0.01*(wave-1)`, round once; attack intervals and special cadence do not accelerate. Player-power correction is disabled. Enemy slots remain three.
+All category and individual stat multipliers are 1. HP and damage multiply by `1 + 0.01*(wave-1)` through wave 100, then use the existing endless curves; final stats round to nearest five, with a positive minimum of five; attack intervals and special cadence do not accelerate. Player-power correction is disabled. Enemy slots remain three.
 
 | Enemy | Base HP | Hit(s) | Interval | Eligible from | Threat |
 | --- | ---: | --- | ---: | ---: | ---: |
@@ -77,7 +79,7 @@ All category and individual stat multipliers are 1. HP and damage multiply by `1
 | RoyalArchbishop | 210 | 5 | 12s | 24 | 4 |
 | King | 480 | 9 | 11s | 29 | 7 |
 
-Normal pools overlap; a declining weight tail retains older enemies. Milestone windows: Marshal 7–8 with one local escort; Sergeant 12–14 with one guard; Captain 18–20 with two knights; Archbishop 24–26 with one royal; King 29–30 with required Archbishop. King victory ends the supported opening arc. The Archbishop escort is an explicit narrative exception to leader repeat exclusion.
+Normal pools overlap; a declining weight tail retains older enemies. Milestone windows: Marshal 7–8 with one local escort; Sergeant 12–14 with one guard; Captain 18–20 with two knights; Archbishop 24–26 with one royal; King 29–30 with required Archbishop. King completion records its existing one-time run reward and continues into weighted Normal/Special formations. The attempt ends on death or explicit End Run; named leaders retain their existing once-per-run rule. The Archbishop escort is an explicit narrative exception to leader repeat exclusion.
 
 ## Authored library
 
@@ -104,7 +106,7 @@ Normal pools overlap; a declining weight tail retains older enemies. Milestone w
 
 ## Complete card review
 
-All 27 catalog entries are retained. Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from Bardley's 1-energy development configuration. Special-dependent cards require both an account unlock and a compatible equipped mastery shape; directional bombs are always available and need no mastery slot. Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
+All 27 earlier catalog entries are retained, with two Gideon entries added (29 total). Numeric general-purpose stacks are bounded; expensive ability/energy cards are excluded from isolated 1-energy testing configurations. Special-dependent cards require both an account unlock and a compatible equipped mastery shape; directional bombs are always available and need no mastery slot. Affinity healing remains available on a fresh account. Rarity multipliers are Common 1, Uncommon 0.65, Rare 0.35, Epic 0.20, multiplied by the editable asset weight. Character-specific cards remain Epic. Offers draw up to three distinct eligible cards without replacement using the separate draft RNG. No forced build or hidden pity selection.
 
 | Card | Effect per stack / mechanic | Cap | Rarity | Asset weight | Additional eligibility |
 | --- | --- | ---: | --- | ---: | --- |
@@ -153,7 +155,7 @@ Build routes: Gem Grinder / Cascade Catalyst / Chain Reaction reward board setup
 | 9 → 10 | 465 | 19 → 20 | 1915 |
 | 10 → 11 | 565 | 20 (cap) | — |
 
-At level 5, Bardley has 112 HP, 12.6 gem damage, 26 damage per cracked center and a 52 shield cap; RattleBones has 140 HP, 13.2 gem damage, 9 Decree damage per gem and a 57 shield cap. At level 20 those become 232 / 22.35 / 47 / 97 and 290 / 21.45 / 24 / 102 respectively. Ability values round at the existing damage resolver. RattleBones gains one full point of base Decree damage each level so every upgrade visibly improves the ability.
+At level 5, Bardley has 110 HP, a 50 shield cap and a baseline three-gem hit of 40; RattleBones has 140 HP, a 55 shield cap and a baseline three-gem hit of 40. At level 20 those become 230 / 95 / 65 and 290 / 100 / 65. Internal fractional growth accumulates before final combat rounding; some level increases therefore cross a five-point threshold later. The character menu shows clean baseline three-gem hits and clean ability/resource values. These revised values require human balance feedback; historical pacing measurements below do not validate them.
 
 ## Enemy ability quantities and counterplay
 
@@ -167,7 +169,7 @@ Cadences below count accepted completed matching moves, not invalid swaps, casca
 | Siege Sergeant | Alternates three wooden walls and Hammer Time every 4 moves | Prefers a complete straight run, otherwise random distinct legal cells; 6 walls per owner; specials protected | Hammer marks one adjacent ordinary pair for 2 moves. Remove/convert/pin either identity to cancel the entire strike. Failed warning deals base 10 through the shield-aware path, removes both targets environmentally and settles. One warning per owner. Owned walls grant the established 20% damage reduction. Death cancels warning/passive; walls persist orphaned. |
 | Crossbow Guard | Adds one chain every 3 moves, up to 2 owned | Ordinary unpinned gems; each placement must preserve a legal move | Same falling-chain rules as Captain: no manual swap, gravity allowed, matching/special destruction removes chain, adjacency alone does not. Death/disable queues release; emergency reshuffle can release pins. |
 | Knight Captain | Alternates top-up to 3 chains and On My Mark every 4 moves | Shared chain queue; command snapshots eligible available Crown allies in roster order | Command wind-up and spaced complete normal sequences. Kill/stagger an ally to interrupt participation; killing the Captain cancels outstanding commands and releases reservations/chains. No immunity or forced escort-first order. |
-| Shield Knight | Every 6 moves: +10 shield to each living ally, +12 to self | Enemy shield cap 30; caster never receives its ally grant | Grants add up to the cap, with no timed expiration or refresh. Shields live on the recipient and remain if the Knight dies. Shield VFX; focus support or break shields with damage. Existing 25% hit mitigation and reduced overflow remain centralized. |
+| Shield Knight | Every 6 moves: +10 shield to each living ally, +12 to self | Enemy shield cap 30; caster never receives its ally grant | Grants add up to the cap, with no timed expiration or refresh. Shields live on the recipient and remain if the Knight dies. Shield VFX; focus support or break shields with damage. Existing 25% hit mitigation and whole-hit shield gating remain centralized. |
 | Town Marshal | Alternates one summon and a rally opportunity every 4 moves | Farmer/Pan/Basket pool; only free slots within 3 total; roster-based local eligibility | Summon becomes protector for 2 moves; killing it ends interception and resets a held-ready special. Rally is +40% attack speed for 5 seconds, non-stacking. Summons survive Marshal death; no summon income. |
 | Royal Standard Bearer | One standard every 5 moves, at most one owned | Legal ordinary top-row cell; one non-gem occupant | Existing standard falls with actual gravity openings and leaves at the bottom. Clear below it to end its shared non-stacking +20% Crown attack-speed aura. It cannot be directly matched/bombed away; death orphans the standard rather than erasing it. |
 | Court Mage | One freeze every 5 moves; 3 per owner | Legal ordinary unpinned cell, preserving a move | Ice remains fixed under gravity and cannot be manually swapped. Matching/destroying that gem breaks the ice; adjacent clears do not. Owner death queues release and normal settlement. This is deliberately distinct from chains. |
@@ -178,7 +180,7 @@ Teaching order: Miner and local walls precede multiple-owner recipes; Crossbow c
 
 ## Healing, ability and economy reasoning
 
-Routine affinity healing is **1 HP per genuinely destroyed affinity gem**, retaining the existing +15% per cascade-depth multiplier and global healing-card channel. The initial trial at 3 HP allowed a casual policy to repair most low-rank damage; reducing the number preserves color-based defensive agency while making healing builds and optional potions useful.
+Routine affinity healing accumulates from a coefficient of **1 HP per genuinely destroyed affinity gem**, then rounds the complete healing event to nearest five (positive minimum five), retaining the existing +15% per cascade-depth multiplier and global healing-card channel. The initial trial at 3 HP allowed a casual policy to repair most low-rank damage; reducing the number preserves color-based defensive agency while making healing builds and optional potions useful.
 
 Bardley's five-target, 3×3 cracked-chain mechanics and energy entitlements are unchanged. Base fixed matching-color damage per cracked center is now **20**, plus level and existing ability/card modifiers. The initial 50-damage trial let normal-cost automated casts defeat the King formation in roughly 17–23 seconds. This change adjusts ability damage, never enemy HP to compensate for the development energy override. RattleBones retains a 100-energy, seven-second Royal Decree with base five bonus damage per gem; ability growth adds one base damage per permanent level.
 

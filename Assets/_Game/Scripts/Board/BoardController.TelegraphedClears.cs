@@ -19,12 +19,15 @@ public partial class BoardController
         public EnemyActor Owner { get; internal set; }
         public int Row { get; internal set; }
         public int Column { get; internal set; }
+        public bool ColumnStruck { get; internal set; }
+        public bool RowStruck { get; internal set; }
         public int DueMove { get; internal set; }
         public bool Ended { get; internal set; }
         internal bool Queued;
     }
     private readonly List<GemSetThreat> gemSetThreats = new List<GemSetThreat>();
     private readonly List<LaneThreat> laneThreats = new List<LaneThreat>();
+    private bool deferRoyalBannerGravity;
     public event Action<GemSetThreat> GemSetMarked;
     public event Action<LaneThreat> LanesMarked;
     public event Action<bool, int, float> LaneSlash;
@@ -60,7 +63,7 @@ public partial class BoardController
             OwnerActor = owner, TargetCount = Mathf.Max(1, count), WarningMoves = Mathf.Max(1, moves),
             RestorationPresentation = restoration, IsCancelled = cancelled };
         request.Completed = success => completed?.Invoke(success ? request.SetThreat : null);
-        pendingBoardMutations.Enqueue(request);
+        EnqueueBoardMutation(request);
         TryStartBoardMutationProcessor();
         return true;
     }
@@ -98,7 +101,7 @@ public partial class BoardController
     {
         if (threat == null || threat.Ended || threat.Queued || completedValidPlayerMoves < threat.DueMove) return false;
         threat.Queued = true;
-        pendingBoardMutations.Enqueue(new BoardMutationRequest { Kind = BoardMutationKind.ResolveGemSet,
+        EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.ResolveGemSet,
             OwnerActor = threat.Owner, SetThreat = threat, Pulse = pulse,
             Completed = completed, IsCancelled = cancelled });
         TryStartBoardMutationProcessor(); return true;
@@ -129,7 +132,7 @@ public partial class BoardController
         var request = new BoardMutationRequest { Kind = BoardMutationKind.MarkLanes,
             OwnerActor = owner, WarningMoves = Mathf.Max(1,moves), IsCancelled = cancelled };
         request.Completed = success => completed?.Invoke(success ? request.Lanes : null);
-        pendingBoardMutations.Enqueue(request); TryStartBoardMutationProcessor(); return true;
+        EnqueueBoardMutation(request); TryStartBoardMutationProcessor(); return true;
     }
     private void ExecuteMarkLanes(BoardMutationRequest request)
     {
@@ -145,7 +148,7 @@ public partial class BoardController
     {
         if (threat == null || threat.Ended || threat.Queued || completedValidPlayerMoves < threat.DueMove) return false;
         threat.Queued = true;
-        pendingBoardMutations.Enqueue(new BoardMutationRequest { Kind = BoardMutationKind.ResolveLanes,
+        EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.ResolveLanes,
             OwnerActor = threat.Owner, Lanes = threat, Pulse = impact, Completed = completed, IsCancelled = cancelled });
         TryStartBoardMutationProcessor(); return true;
     }
@@ -155,31 +158,44 @@ public partial class BoardController
         if (threat != null) threat.Queued = false;
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) yield break;
         if (threat == null || threat.Ended || request.OwnerActor == null || request.OwnerActor.IsDefeated) yield break;
-        CancelLaneThreat(threat);
         bool cleared = false;
         var visited = new HashSet<Gem>();
-        for (int lane = 0; lane < 2; lane++)
+        deferRoyalBannerGravity = true;
+        try
         {
-            if (request.OwnerActor == null || request.OwnerActor.IsDefeated) break;
-            bool row = lane == 0;
-            int length = row ? width : height;
-            LaneSlash?.Invoke(row, row ? threat.Row : threat.Column,
-                length * (matchFlashDuration + matchWhiteHoldDuration + GetResponsiveMatchPostBurstDelay()));
-            for (int i = 0; i < length; i++)
+            for (int lane = 0; lane < 2; lane++)
             {
-                if (request.OwnerActor == null || request.OwnerActor.IsDefeated ||
+                if (request.SpecialMotionId > 0 && !MotionCancelled(request))
+                    yield return request.OwnerActor.WaitForSpecialMotionBeat(request.SpecialMotionId, lane + 1);
+                else if (lane > 0) yield return new WaitForSeconds(.35f);
+                if (request.OwnerActor == null || request.OwnerActor.IsDefeated || MotionCancelled(request) ||
                     (request.IsCancelled != null && request.IsCancelled())) break;
-                Gem gem = GetGem(row ? i : threat.Column, row ? threat.Row : i);
-                if (!IsEnvironmentalOrdinaryGem(gem) || !visited.Add(gem))
+                bool row = lane == 1;
+                if (row) threat.RowStruck = true; else threat.ColumnStruck = true;
+                LaneSlash?.Invoke(row, row ? threat.Row : threat.Column, .18f);
+                var targets = new HashSet<Gem>();
+                int length = row ? width : height;
+                for (int i = 0; i < length; i++)
                 {
-                    yield return new WaitForSeconds(matchFlashDuration + matchWhiteHoldDuration + GetResponsiveMatchPostBurstDelay());
-                    continue;
+                    Gem gem = GetGem(row ? i : threat.Column, row ? threat.Row : i);
+                    if (IsEnvironmentalOrdinaryGem(gem) && visited.Add(gem)) targets.Add(gem);
                 }
-                yield return ClearMatches(new HashSet<Gem> { gem }, null);
-                cleared = true;
+                if (targets.Count > 0)
+                {
+                    yield return ClearMatches(targets, null);
+                    cleared = true;
+                }
             }
+            CancelLaneThreat(threat);
+            if (request.OwnerActor != null && !request.OwnerActor.IsDefeated && !MotionCancelled(request) &&
+                (request.IsCancelled == null || !request.IsCancelled())) request.Pulse?.Invoke();
+            // Recovery also belongs to this transaction. Nothing falls between
+            // strikes, and cancellation still settles any holes already produced.
+            if (request.SpecialMotionId > 0 && !MotionCancelled(request))
+                yield return request.OwnerActor.WaitForSpecialMotionComplete(request.SpecialMotionId);
         }
-        if (request.OwnerActor != null && !request.OwnerActor.IsDefeated) request.Pulse?.Invoke();
+        finally { deferRoyalBannerGravity = false; }
+        ResolvePendingRoyalBannerGravity();
         if (cleared) yield return ResolveEnvironmentalBoardChange();
         request.Succeeded = true;
     }

@@ -106,7 +106,7 @@ Balance v1 starts Locals at wave 1, Guards at 6, Knights at 11, and Royals at 19
 | Royal Archbishop | 24–26 | One royal |
 | King | 29–30 | Required Archbishop |
 
-The King/Archbishop pairing deliberately permits an Archbishop who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation currently completes a run. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
+The King/Archbishop pairing deliberately permits an Archbishop who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation continues the same endless run. Current Normal/Special factions remain eligible in weighted formations, with the existing named-leader exclusion and threat constraints. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
 
 ## Milestone mini-bosses
 
@@ -122,7 +122,7 @@ Balance v1 targets a King encounter around **wave 30**, before the opening arc b
 
 ## Cards and run rhythm
 
-Cards appear after completed waves **2, 5, 9, 13, 17, 21, 25 and 28**, after the board settles and before the next encounter. An early choice starts build differentiation; later stretches contain three or four encounters between choices. Eight choices are available before the King. A successful unusually strong run may clear faster; there is no artificial delay, death wave or hidden level gate.
+Cards appear after completed waves **2, 5, 9, 13, 17, 21, 25 and 28**, after the board settles and before the next encounter. An early choice starts build differentiation; later stretches contain three or four encounters between choices. Eight choices are available before the King. Afterward, card opportunities continue every four waves starting at completed wave 32; exhausted legal card pools skip safely through the existing draft path. A successful unusually strong run may clear faster; there is no artificial delay, death wave or hidden level gate.
 
 ## Encounter duration philosophy
 
@@ -211,7 +211,7 @@ Avoid exact-wave override tables for ordinary chapter progression unless a speci
 
 The revised implementation retains weighted eras, eight card choices and the King window at 29-30. Unseen mechanics receive gentler formations with at most two actors and a normal escort: Miner by 6, Crossbow by 10, Barricade by 11, Shield Knight by 16, Standard Bearer by 22 and Court Mage by 23. Their earlier opportunity windows remain weighted; these deadlines are teaching guarantees, not deterministic ordinary-wave scripts. Milestones take priority. The encounter immediately after a milestone prefers normal-enemy relief unless an introduction deadline is due. Combat interference must retain an immediate useful response (weakness damage, needed affinity healing, special use/creation or obstacle clearing), in addition to legal board motion. Interruptible marks require immediate board counterplay, and overlapping warnings receive separate minimum response windows.
 
-A run may span multiple visits through Suspend/Continue. Free practice and non-expiring No Supplies / Board Only challenges support voluntary replay after the King; no new currency, attendance timer or paid refill is introduced. The supported arc still ends at the King. Encounter-duration bands are tuning prompts, never minimum fight lengths; there is no mandatory early-loss timer.
+A run may span multiple visits through Suspend/Continue. Free practice and non-expiring No Supplies / Board Only challenges support voluntary replay after the King; no new currency, attendance timer or paid refill is introduced. The King ends the opening narrative milestone; combat continues until death or explicit End Run. The current roster supplies later waves while new zones are developed. Encounter-duration bands are tuning prompts, never minimum fight lengths; there is no mandatory early-loss timer.
 
 After the King loses, the game should deliberately become broader rather than simply introducing a stronger linear replacement faction.
 

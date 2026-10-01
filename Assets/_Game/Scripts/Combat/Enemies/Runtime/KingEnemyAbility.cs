@@ -30,6 +30,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         crossedHalf=saved.crossedHalf; crossedQuarter=saved.crossedQuarter; cycle=saved.cycle;
         retryAfterMove=saved.retryAfterMove; thresholds.Clear(); foreach(int threshold in saved.thresholds) thresholds.Enqueue(threshold);
         judgment=board.RestoredSet(actor); bombardment=board.RestoredLanes(actor);
+        actor.SpecialIdleState = bombardment != null && !bombardment.Ended ? "BombardmentReady" : null;
         if(crossedHalf)
         {
             ownAttack?.SetNormalAttackModifiers(this,actor.Definition.EnrageDamageMultiplier,actor.Definition.EnrageSpeedMultiplier);
@@ -72,11 +73,17 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (!CanAct()) return;
         if (thresholds.Count > 0)
         {
-            thresholds.Dequeue(); Reinforce(); return;
+            if (!BeginAction()) return;
+            thresholds.Dequeue();
+            int motion = actor.StartSpecialMotion("RoyalCommand");
+            if (motion > 0) StartCoroutine(ReinforceAfterCue(motion));
+            else { Reinforce(); EndAction(); }
+            return;
         }
         if (judgment != null && !judgment.Ended && board.CompletedValidPlayerMoves >= judgment.DueMove)
         {
             if (!BeginAction()) return;
+            actor.PrepareSpecialMotion("RoyalCommand");
             if (!board.TryQueueResolveGemSet(judgment, () => Strike(actor.Definition.JudgmentBaseDamage),
                 success => EndAction(), () => released)) EndAction();
             return;
@@ -84,11 +91,21 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (bombardment != null && !bombardment.Ended && board.CompletedValidPlayerMoves >= bombardment.DueMove)
         {
             if (!BeginAction()) return;
+            actor.SpecialIdleState = null;
+            actor.PrepareSpecialMotion("Bombardment");
             if (!board.TryQueueResolveLanes(bombardment, () => Strike(actor.Definition.BombardmentBaseDamage),
                 success => EndAction(), () => released)) EndAction();
             return;
         }
         if (actor.IsSpecialReady && board.CompletedValidPlayerMoves > retryAfterMove) availability.RequestExecution();
+    }
+    private IEnumerator ReinforceAfterCue(int motion)
+    {
+        yield return actor.WaitForSpecialMotionBeat(motion);
+        if (!actor.IsSpecialMotionCurrent(motion) || released) yield break;
+        Reinforce();
+        yield return actor.WaitForSpecialMotionComplete(motion);
+        EndAction();
     }
     private void Reinforce()
     {
@@ -124,11 +141,12 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if ((cycle == 0 && judgment != null && !judgment.Ended) ||
             (cycle == 2 && bombardment != null && !bombardment.Ended)) return false;
         if (!BeginAction()) return false;
+        actor.PrepareSpecialMotion(cycle == 2 ? "BombardmentRaise" : "RoyalCommand");
         bool accepted = cycle == 0
             ? board.TryQueueMarkGemSet(actor, actor.Definition.RoyalMarkCount, actor.Definition.RoyalMarkMoves,
                 false, result => { judgment = result; FinishCast(result != null); }, () => released)
             : board.TryQueueMarkLanes(actor, actor.Definition.BombardmentWarningMoves,
-                result => { bombardment = result; FinishCast(result != null); }, () => released);
+                result => { bombardment = result; actor.SpecialIdleState = result != null ? "BombardmentReady" : null; FinishCast(result != null); }, () => released);
         if (!accepted) FinishCast(false);
         return accepted;
     }
@@ -146,13 +164,14 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             else attack.ReleaseCommand(this);
         }
         if (!BeginAction()) { ReleaseParticipants(); return false; }
-        locks.Add(actor); actor.NotifySpecialAbilityUsed();
+        locks.Add(actor); actor.StartSpecialMotion("RoyalCommand"); actor.NotifySpecialAbilityUsed();
         CommandIssued?.Invoke(this);
         StartCoroutine(Assault()); return true;
     }
     private IEnumerator Assault()
     {
-        yield return new WaitForSeconds(actor.Definition.RoyalCommandWindup);
+        if (actor.SpecialMotionId > 0) yield return actor.WaitForSpecialMotionComplete(actor.SpecialMotionId);
+        else yield return new WaitForSeconds(actor.Definition.RoyalCommandWindup);
         foreach (var attack in participants)
         {
             if (released || actor == null || actor.IsDefeated) yield break;
@@ -207,6 +226,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         ReleaseParticipants(); thresholds.Clear();
         if (board != null) { board.CancelGemSetThreat(judgment); board.CancelLaneThreat(bombardment); }
         judgment = null; bombardment = null;
+        if (actor != null) actor.SpecialIdleState = null;
         ownAttack?.RemoveNormalAttackModifiers(this);
         if (actor != null) { actor.SurvivedHealthDamage -= OnHealthDamage; actor.Defeated -= Defeated; actor.EndSpecialAbilityAnimationAction(); }
     }

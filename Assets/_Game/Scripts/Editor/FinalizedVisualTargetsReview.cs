@@ -131,7 +131,8 @@ public static class FinalizedVisualTargetsReview
                     enemy.GrantShield(10); yield return Wait(.2f);
                     Check(slots[0].IsShieldPresentationActive, "shield presentation remains separate");
                     var bar = slots[0].GetComponentInChildren<ModularHealthBarUI>();
-                    Check(!bar.transform.Find("GeneratedModularHealthBar").gameObject.activeSelf, "HP art yields to shield");
+                    Check(bar.transform.Find("GeneratedModularHealthBar").gameObject.activeSelf, "HP remains visible with shield");
+                    Check(bar.GetComponent<ShieldBarUI>().IsVisible, "compact shield track active");
                     yield return Shot(height + "-shield");
                 }
             }
@@ -140,6 +141,7 @@ public static class FinalizedVisualTargetsReview
             var upgrades = Object.FindFirstObjectByType<UpgradeChoiceUI>(FindObjectsInactive.Include);
             var choices = AssetDatabase.FindAssets("t:RunUpgradeDefinition").Take(3).Select(AssetDatabase.GUIDToAssetPath).Select(AssetDatabase.LoadAssetAtPath<RunUpgradeDefinition>).ToArray();
             if (upgrades != null) { Check(upgrades.Show(choices, _ => true), "upgrade cards open"); yield return Shot(height + "-upgrades"); upgrades.Hide(); }
+            if (RunSession.Current.Player.HasShield) RunSession.Current.Player.TryTakeDamage(1000000);
             RunSession.Current.Player.TryTakeDamage(1000000);
             yield return Wait(3); yield return Shot(height + "-gameover");
 

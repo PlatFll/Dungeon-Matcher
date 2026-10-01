@@ -119,7 +119,7 @@ public partial class BoardController
             return false;
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.PlaceRoyalBanner,
@@ -385,7 +385,7 @@ public partial class BoardController
 
     private void ResolvePendingRoyalBannerGravity()
     {
-        if (royalBannerCells.Count == 0)
+        if (deferRoyalBannerGravity || royalBannerCells.Count == 0)
         {
             return;
         }

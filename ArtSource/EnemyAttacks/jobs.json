@@ -1,0 +1,106 @@
+{
+  "provider": "PixelLab",
+  "jobs": [
+    {
+      "name": "BarricadeGuard",
+      "prompt": "Draw the hammer back, twist shoulders, deliver one short forceful hammer swing toward the viewer's left, recoil, and recover to the exact starting stance. Eight-frame single attack: anticipation in first three frames, impact around frame four, clear follow-through and recovery. Fixed camera and native pixel scale, preserve exactly the same character, equipment, colors and facing. Keep full character and weapon within the canvas, no camera motion, no walking, no morphing.",
+      "frames": 8,
+      "jobId": "717838ae-4049-4039-a839-95c93da8ea60"
+    },
+    {
+      "name": "CourtMage",
+      "prompt": "Lean back and gather a small icy spark at the staff tip, then jab the staff forward with a crisp icy pulse and settle back. Feet stay planted. Eight-frame single attack: anticipation in first three frames, impact around frame four, clear follow-through and recovery. Fixed camera and native pixel scale, preserve exactly the same character, equipment, colors and facing. Keep full character and weapon within the canvas, no camera motion, no walking, no morphing.",
+      "frames": 8,
+      "jobId": "d0eda778-7603-498b-a80b-72b740498da6"
+    },
+    {
+      "name": "CrossbowGuard",
+      "prompt": "Raise and level the crossbow toward the viewer's left, squeeze the trigger with one sharp recoil, lower and reset the crossbow. Eight-frame single attack: anticipation in first three frames, impact around frame four, clear follow-through and recovery. Fixed camera and native pixel scale, preserve exactly the same character, equipment, colors and facing. Keep full character and weapon within the canvas, no camera motion, no walking, no morphing.",
+      "frames": 8,
+      "jobId": "79c856e9-e188-4712-87a6-c77537b16e32"
+    },
+    {
+      "name": "King",
+      "prompt": "Lift the sword into a compact windup, deliver one powerful downward diagonal sword cut toward the viewer's left, follow through and recover to the original stance. Eight-frame single attack: anticipation in first three frames, impact around frame four, clear follow-through and recovery. Fixed camera and native pixel scale, preserve exactly the same character, equipment, colors and facing. Keep full character and weapon within the canvas, no camera motion, no walking, no morphing.",
+      "frames": 8,
+      "jobId": "c050e931-b656-4a93-904d-e3e1ded143e5"
+    },
+    {
+      "name": "Knight",
+      "prompt": "Draw the sword back then deliver a decisive diagonal sword cut to the viewer's left, follow through and return to the original ready pose. Eight-frame single attack: anticipation in first three frames, impact around frame four, follow-through then recovery to the first pose. Fixed camera, native pixel scale, exact same character, equipment, palette and facing. Keep entire sprite within canvas. No morphing or walking.",
+      "frames": 8,
+      "jobId": "98bd3840-a2f7-480f-9f08-4f7975d9f512"
+    },
+    {
+      "name": "KnightCaptain",
+      "prompt": "Pull the sword back across the shoulder, lean forward into a quick commanding sword cut to the viewer's left, recover and reset. Eight-frame single attack: anticipation in first three frames, impact around frame four, follow-through then recovery to the first pose. Fixed camera, native pixel scale, exact same character, equipment, palette and facing. Keep entire sprite within canvas. No morphing or walking.",
+      "frames": 8,
+      "jobId": "6764653d-dc0e-4e6d-a480-9afc2245d0ed"
+    },
+    {
+      "name": "RoyalArbalist",
+      "prompt": "Lift and aim the crossbow to the viewer's left, fire with a crisp recoil, then lower and recover. Keep the bow rigid. Eight-frame single attack: anticipation in first three frames, impact around frame four, follow-through then recovery to the first pose. Fixed camera, native pixel scale, exact same character, equipment, palette and facing. Keep entire sprite within canvas. No morphing or walking.",
+      "frames": 8,
+      "jobId": "05c379a5-b288-4ec2-a829-3dedfd4a36a0"
+    },
+    {
+      "name": "RoyalArchbishop",
+      "prompt": "Raise the glowing staff slightly, push its tip forward to release a compact golden pulse, pull it back and settle. Eight-frame single attack: anticipation in first three frames, impact around frame four, follow-through then recovery to the first pose. Fixed camera, native pixel scale, exact same character, equipment, palette and facing. Keep entire sprite within canvas. No morphing or walking.",
+      "frames": 8,
+      "jobId": "30c3afb4-e835-41e6-b25c-ba247b1944a4"
+    },
+    {
+      "name": "RoyalLancer",
+      "prompt": "Draw the lance back, brace the rear foot, drive one straight lance thrust to the viewer's left, retract the rigid lance and recover. Eight-frame single attack: anticipation in first three frames, impact around frame four, follow-through then recovery to the first pose. Fixed camera, native pixel scale, exact same character, equipment, palette and facing. Keep entire sprite within canvas. No morphing or walking.",
+      "frames": 8,
+      "jobId": "80872bd4-1d5c-483c-9e03-e0b9a2af6c54"
+    },
+    {
+      "name": "RoyalStandardBearer",
+      "prompt": "Keep the banner upright, pull the free arm back and strike forward once with the fist, recover. Cloth responds subtly. Perform ONE complete attack with a clear strike at mid-clip, then fully return to the input pose. Hold feet fixed; articulate torso and weapon arm, preserve exact design and native pixel size. No weapon warping, camera motion, walking or zoom.",
+      "frames": 8,
+      "jobId": "5fe91151-9f4d-4514-83db-629e206c1864"
+    },
+    {
+      "name": "RoyalSwordsman",
+      "prompt": "Raise the sword into a compact anticipation, slash diagonally toward the viewer's left, follow through and return to ready. Perform ONE complete attack with a clear strike at mid-clip, then fully return to the input pose. Hold feet fixed; articulate torso and weapon arm, preserve exact design and native pixel size. No weapon warping, camera motion, walking or zoom.",
+      "frames": 8,
+      "jobId": "6a913189-b408-49e0-93af-0bd8b8950867"
+    },
+    {
+      "name": "ShieldKnight",
+      "prompt": "Brace behind the shield, draw it back slightly, drive one short shield bash toward the viewer's left and recover. Perform ONE complete attack with a clear strike at mid-clip, then fully return to the input pose. Hold feet fixed; articulate torso and weapon arm, preserve exact design and native pixel size. No weapon warping, camera motion, walking or zoom.",
+      "frames": 8,
+      "jobId": "e5d6e339-e845-4fee-876d-0b23874d0356"
+    },
+    {
+      "name": "SiegeSergeant",
+      "prompt": "Heave the heavy hammer back with shoulder and elbow movement, swing it down sharply to the viewer's left, recoil and reset. Perform ONE complete attack with a clear fully extended strike halfway through, then fully return to the input pose. Show anticipation, forceful contact, follow through, recovery. Preserve exact design, equipment and native pixel scale; no walking, camera motion or morphing.",
+      "frames": 8,
+      "jobId": "bf8be53a-73c2-4f27-bc17-049f9550026c"
+    },
+    {
+      "name": "SpearGuard",
+      "prompt": "Pull the spear back, thrust its rigid shaft horizontally to the viewer's left in one sharp hit, retract and reset. Shield stays in the other hand. One decisive thrust, full extension at mid-clip, follow-through then return to exactly the start pose. Planted feet, same design, equipment and palette.",
+      "frames": 16,
+      "jobId": "92643e46-c07b-4c6c-b139-fd788c616e23"
+    },
+    {
+      "name": "SpearKnight",
+      "prompt": "Draw back the spear then drive one strong straight thrust to the viewer's left, fully retract and return to the original stance. One clear complete attack: anticipate, fully strike halfway through, follow through, return to starting pose. Preserve rigid weapon shape, pixel density, character scale, facial landmarks and equipment. Fixed camera, no walking.",
+      "frames": 16,
+      "jobId": "a7f8efa0-74a1-4237-973c-bfe854aefd69"
+    },
+    {
+      "name": "TownMarshal",
+      "prompt": "Draw the mace back, lean into one brisk mace strike toward the viewer's left, recover. Keep the bell in the other hand. One clear complete attack: anticipate, fully strike halfway through, follow through, return to starting pose. Preserve rigid weapon shape, pixel density, character scale, facial landmarks and equipment. Fixed camera, no walking.",
+      "frames": 16,
+      "jobId": "2372f3fb-8c77-4040-9910-1e822176ed20"
+    },
+    {
+      "name": "BarricadeGuardRevision",
+      "frames": 16,
+      "jobId": "e43466e2-bf20-4b4c-b2a1-30daa2aa6a7c"
+    }
+  ]
+}

@@ -55,7 +55,7 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         int installedBannerId,
         float speedMultiplier)
     {
-        if (!isInitialized)
+        if (!isInitialized || isCleanedUp)
         {
             boardController = board;
             activeEnemies = enemies;
@@ -194,7 +194,8 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
         }
 
         Cleanup();
-        Destroy(this);
+        // Retain the coordinator so a restored or newly planted board banner
+        // can reuse it without racing Unity's deferred component destruction.
     }
 
     private void RemoveSpeedModifier(
@@ -245,5 +246,12 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
     private void OnDestroy()
     {
         Cleanup();
+    }
+
+    public static void SynchronizeBoardState(BoardController board, IReadOnlyList<EnemyActor> enemies)
+    {
+        var runtime = board.GetComponent<RoyalBannerAuraRuntime>();
+        if (runtime != null) runtime.Cleanup();
+        foreach (int id in board.ActiveRoyalBannerIds()) Install(board, enemies, id, 1.2f);
     }
 }

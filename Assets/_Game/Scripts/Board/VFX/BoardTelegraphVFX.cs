@@ -30,8 +30,8 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
         public SpriteRenderer Row, Column;
     }
     private BoardController board;
-    private Sprite solid, rune, warning;
-    private Texture2D runeTexture, warningTexture;
+    private Sprite solid, rune, warning, rowCut, columnCut;
+    private Texture2D runeTexture, warningTexture, rowCutTexture, columnCutTexture;
     private readonly List<MarkView> marks = new List<MarkView>();
     private readonly List<LaneView> lanes = new List<LaneView>();
     private readonly List<GameObject> slashes = new List<GameObject>();
@@ -61,6 +61,23 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
         solid = Sprite.Create(Texture2D.whiteTexture,new Rect(0,0,Texture2D.whiteTexture.width,Texture2D.whiteTexture.height),
             new Vector2(0.5f,0.5f),Texture2D.whiteTexture.width);
         rune = CreateIcon(true, out runeTexture); warning = CreateIcon(false,out warningTexture);
+        rowCut = CreateCut(false, out rowCutTexture); columnCut = CreateCut(true, out columnCutTexture);
+    }
+    private static Sprite CreateCut(bool vertical, out Texture2D texture)
+    {
+        int width=vertical?16:64, height=vertical?64:16;
+        texture=new Texture2D(width,height,TextureFormat.RGBA32,false) { filterMode=FilterMode.Point };
+        var pixels=new Color[width*height];
+        for(int y=0;y<height;y++)for(int x=0;x<width;x++)
+        {
+            int along=vertical?y:x, across=vertical?x:y;
+            int radius=Mathf.Max(1,7-Mathf.FloorToInt(Mathf.Abs(along-31.5f)*.2f));
+            bool streak=Mathf.Abs(across-7.5f)<radius;
+            bool spark=(along==12||along==47)&&(across==0||across==15);
+            pixels[y*width+x]=streak||spark?Color.white:Color.clear;
+        }
+        texture.SetPixels(pixels);texture.Apply();
+        return Sprite.Create(texture,new Rect(0,0,width,height),new Vector2(.5f,.5f),64);
     }
     private SpriteRenderer Make(string label, Sprite sprite, int order)
     {
@@ -114,8 +131,10 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
             var view=lanes[i];
             if(view.Threat.Ended || view.Threat.Owner==null || view.Threat.Owner.IsDefeated)
             { Destroy(view.Row.gameObject); Destroy(view.Column.gameObject); lanes.RemoveAt(i); continue; }
-            Color tint=new Color(1,1,1,board.royalBombardmentWarningAlpha*(0.85f+0.15f*Mathf.Sin(Time.time*4f)));
+            Color tint=new Color(1f,.73f,.20f,board.royalBombardmentWarningAlpha*(1.2f+.65f*Mathf.Sin(Time.time*9f)));
             view.Row.color=view.Column.color=tint;
+            view.Row.enabled = !view.Threat.RowStruck;
+            view.Column.enabled = !view.Threat.ColumnStruck;
         }
     }
     private void ShowSlash(bool row,int index,float duration) => StartCoroutine(Slash(row,index,Mathf.Max(0.1f,duration)));
@@ -123,14 +142,21 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     {
         EnsureSprites();
         Sprite art=row ? board.royalBombardmentRowSlash : board.royalBombardmentColumnSlash;
-        var effect=Make("Royal Bombardment White Slash",art != null ? art : solid,48); slashes.Add(effect.gameObject);
-        Vector3 start=board.GetCellLocalPosition(row ? 0 : index,row ? index : 0);
-        Vector3 end=board.GetCellLocalPosition(row ? board.Width-1 : index,row ? index : board.Height-1);
-        effect.transform.localScale=new Vector3((row ? 1.5f : 0.2f)*board.CellSize/effect.sprite.bounds.size.x,
-            (row ? 0.2f : 1.5f)*board.CellSize/effect.sprite.bounds.size.y,1);
+        Sprite cut=row?rowCut:columnCut;
+        var edge=Make("Royal Bombardment Gold Slash",art != null ? art : cut,48);
+        var core=Make("Royal Bombardment Flash",cut,49);
+        slashes.Add(edge.gameObject); slashes.Add(core.gameObject);
         for(float t=0;t<duration;t+=Time.deltaTime)
-        { effect.transform.localPosition=Vector3.Lerp(start,end,t/duration); yield return null; }
-        slashes.Remove(effect.gameObject); Destroy(effect.gameObject);
+        {
+            float progress=t/duration;
+            SetLane(edge,row,index,Mathf.Lerp(.60f,.08f,progress));
+            SetLane(core,row,index,Mathf.Lerp(.18f,.02f,progress));
+            edge.color=new Color(1f,.68f,.12f,1f-progress);
+            core.color=new Color(1f,.98f,.80f,1f-progress);
+            yield return null;
+        }
+        slashes.Remove(edge.gameObject); slashes.Remove(core.gameObject);
+        Destroy(edge.gameObject); Destroy(core.gameObject);
     }
     private void OnDisable()
     {
@@ -145,5 +171,7 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     {
         if(solid!=null) Destroy(solid); if(rune!=null) Destroy(rune); if(warning!=null) Destroy(warning);
         if(runeTexture!=null) Destroy(runeTexture); if(warningTexture!=null) Destroy(warningTexture);
+        if(rowCut!=null) Destroy(rowCut); if(columnCut!=null) Destroy(columnCut);
+        if(rowCutTexture!=null) Destroy(rowCutTexture); if(columnCutTexture!=null) Destroy(columnCutTexture);
     }
 }
