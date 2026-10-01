@@ -74,15 +74,15 @@ The Archbishop uses one normal attack and alternates Restoration then Benedictio
 Balance v1 tuning (serialized on `Enemy_RoyalArchbishop`):
 
 - Eligibility and the milestone opportunity window begin at 24; guarantee by 26 with one Royal escort. The later King's required Archbishop escort is the explicit exception to unique milestone non-repetition.
-- Base 210 HP and 5 damage per 12 seconds: approximately 258 HP and 6 damage at wave 24 through the gradual difficulty pipeline.
+- Base 210 HP and 5 damage per 12 seconds: approximately 260 HP and 5 damage at wave 24 through the gradual difficulty pipeline.
 - Shared special cadence: 4 valid completed moves. Three runes last 3 complete subsequent moves.
-- Each surviving rune restores 3.3% of the selected target's maximum HP, rounded to the nearest whole HP (minimum 1). Three King-targeted pulses restore approximately 9.9% before missing-HP clamping.
+- Each surviving rune restores 3.3% of the selected target's maximum HP, rounded to the nearest five HP (positive minimum 5). Three King-targeted pulses restore approximately 9.9% before missing-HP clamping.
 - Rank weights: Normal 1.00, Special 1.15, Mini-boss 1.35, Boss 1.60. An ally missing at least 10% HP makes self-priority use a 0.5 multiplier.
 - Benediction: 1.40x normal-sequence damage, maximum two allies.
 
 ## The King — Boss
 
-The opening composition is exactly **King + Archbishop**. Both are always directly damageable; there is no immunity, damage interception or required target order. Temporary character art uses the existing Captain and Court Mage sprites.
+The opening composition is exactly **King + Archbishop**. Both are always directly damageable; there is no immunity, damage interception or required target order. Both use their dedicated approved pixel-art characters and authored actions.
 
 **The Crown's Last Stand:** centralized surviving-health-damage notifications detect downward crossings strictly below 50% and 25%. Both trigger only once, including damage-over-time. Healing cannot rearm them. A surviving 60% → 20% hit queues 50% then 25%; a lethal crossing queues nothing. Pending batches are cancelled by death/disable and execute at safe action points.
 
@@ -96,19 +96,21 @@ One deterministic special cycle is **Royal Judgment → United Royal Assault →
 
 **United Royal Assault:** snapshot the King first, then eligible allies in authoritative roster order. The explicit `RoyalAssaultParticipant` flag is true for King, Royal Swordsman, Royal Lancer and Royal Arbalist. It is false for Standard Bearer, Court Mage, Archbishop and legacy Guards/Knights/Captain. Broad `CrownSoldier` membership alone is insufficient. Reserve each eligible available participant through `EnemyAutoAttack`, telegraph the command, then perform its existing full normal sequence. Busy/staggered participants cannot be reserved. A reserved participant newly staggered during windup waits before beginning; dead participants are skipped. Player board resolution finishes before the next commanded sequence starts. Commands consume the next normal attack and restart its normal cooldown after completion, with no immediately following stored ready attack. Owner death/disable cancels outstanding commands and stale impact callbacks. Unspent reservations retain their old cooldown.
 
-**Royal Bombardment:** warn one row and one column for two subsequent valid moves. Clearing gems cannot cancel the lanes. On expiry a white slash travels along the row, then the column, as ordinary gems are environmentally removed. The intersection is processed once. Player-created specials, mined holes, barricades and the Royal Standard survive. Frozen ordinary gems can be removed and use the existing physical-destruction ownership cleanup. Apply one moderate direct hit after both lanes, then settle once. Presentation uses translucent white warnings; no VFX object owns the countdown or grid mutation.
+**Royal Bombardment:** warn one row and one column for two subsequent valid moves. Clearing gems cannot cancel the lanes. During the warning, the King holds a downward-pointing sword raised in both hands. On expiry he thrusts it into the ground with both hands: a quick full-column Royal Gold slash removes ordinary column gems together. The board stays locked and empty in that column while he lifts the sword and thrusts again; the second slash removes the targeted row together. He extracts the sword and returns to idle, then the board refills once. The intersection is processed once. Player-created specials, mined holes, barricades and the Royal Standard survive. Frozen ordinary gems can be removed and use the existing physical-destruction ownership cleanup. Apply one moderate direct hit after both lanes, then settle once. The remaining lane warnings blink gold; each disappears when that lane is struck. Animation contact cues use the accepted actor action identity. The board queue owns both strikes and recovery, with a scaled-time missing-art fallback; no VFX object owns countdown or grid mutation. Owner cancellation suppresses later strikes but still settles any holes already cleared.
 
 Environmental removal itself reports no player clear rewards, combat damage, healing or energy. Genuine resulting cascades retain the established environmental-settlement cascade semantics, as with Siege Sergeant.
 
 Balance v1 tuning (serialized on `Enemy_King`):
 
 - Variable milestone window 29–30, centered around the brief's approximate wave-30 anchor; no exact-wave King override.
-- Base 480 HP and 9 normal damage per 11 seconds: approximately 619 HP and 12 damage at wave 30. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
+- Base 480 HP and 9 normal damage per 11 seconds: approximately 620 HP and 10 damage at wave 30. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
 - Special cadence 4 moves, shortened to 3 in Enrage.
 - Enrage: normal damage 1.20x, cooldown progress speed 1.25x. Banner speed remains a separate multiplier.
 - Judgment: 3 targets, 3-move countdown, base 12 damage per survivor scaled by the existing unrounded difficulty damage multiplier.
-- Assault: 1.10x for the commanded normal sequence; 0.6-second windup and 0.12-second inter-participant spacing.
+- Assault: 1.10x for the commanded normal sequence; authored Royal Command gesture (0.6-second fallback windup without authored motion) and 0.12-second inter-participant spacing.
 - Bombardment: 2-move warning, base 6 damage once after the lanes; set base damage to zero to disable that hit.
+
+Final HP, shields, damage and healing are rounded to multiples of five after modifiers. A shield present at hit start absorbs the entire hit; overflow is discarded.
 
 These values do not enforce encounter duration or minimum survival time. Strong builds can kill either encounter quickly.
 
@@ -118,8 +120,8 @@ On the `BoardController` in `Game.unity`, under **Royal Telegraph Art (optional)
 
 - `archbishopRestorationRuneOverlay`: pulsing holy circle; procedural golden rune fallback.
 - `kingRoyalJudgmentExclamationOverlay`: pulsing white exclamation; procedural white `!` fallback.
-- `royalBombardmentRowWarning` / `royalBombardmentColumnWarning`: low-opacity lane sprites; translucent white fallback.
-- `royalBombardmentRowSlash` / `royalBombardmentColumnSlash`: travelling white slash sprites; white sweep fallback.
+- `royalBombardmentRowWarning` / `royalBombardmentColumnWarning`: low-opacity lane sprites; blinking translucent gold fallback.
+- `royalBombardmentRowSlash` / `royalBombardmentColumnSlash`: full-lane slash sprites; quick gold edge and pale core fallback.
 - `royalBombardmentWarningAlpha`: initial 0.12; intersecting warnings remain translucent.
 
 On `Enemy_RoyalArchbishop`, `benedictionHaloSprite` supplies the gold blessing icon; an unobtrusive gold bar is the current unassigned-art fallback. Board sprites use the existing Gems sorting layer and board mask. The King's presentation observer displays a phase indicator, command callout and strike callout without owning gameplay timing.

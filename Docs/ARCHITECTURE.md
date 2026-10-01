@@ -388,3 +388,12 @@ Snapshot versions/layouts and catalog references are validated during reconstruc
 `UiTypography` supplies the Thaleah TTF and static 16-point bitmap TMP atlas. `GameUi` configures new labels, while `BalanceRuntimeBootstrap` applies the same family to scene and dynamically created text. `PixelTextFitter` measures containers and selects whole physical-pixel glyph scales; guides and build recaps keep a readable scrolling size. `HudTypographyImporter` binds serialized game labels and the TMP default to the same font/material.
 
 `CombatTextController` observes actual player/enemy healing, shield gain/loss and damage events. It does not calculate or apply combat changes. `EnemyPoisonStatusPresenter` retains poison-tick ownership, preventing duplicate ordinary damage numbers. `CombatTextStyles_Default` defines opaque type colors, rise and fade timing; `FloatingCombatText` uses the existing pool with immediate Thaleah setup. Re-enabling the controller rebinds current enemies without duplicate subscriptions.
+
+
+### Authored enemy ability contact and recovery (October 2026)
+
+`EnemyActor.SpecialMotion` extends the existing accepted special-action identity with a named animation state, numbered contact cues and completion. `EnemyActionAnimationPresenter` relays authored contacts after the current Image sprite is applied. Duplicate or stale action cues cannot release another cast. Ability runtimes still select effects and own cadence. Single-contact Miner/Barricade abilities retain their established event protocol.
+
+The existing board-mutation queue captures prepared special motions. It starts presentation only after acquiring the board, waits for the contact cue, performs the existing mutation and retains ownership through recovery. Missing animation events have scaled-time fallbacks; pause stops them. Royal Bombardment is one generic two-lane request: column, row, recovery, one environmental settlement. Death cancels later strikes and still settles prior holes. The board never selects character animation states, damage or balance rules.
+
+Non-board shields, summons and blessings wait for their owning actor's contact before applying through existing runtime/actor APIs. Commands finish the gesture before releasing reserved normal attack sequences. Definition flags and existing controllers select all authored art; missing optional visuals cannot stall gameplay indefinitely.

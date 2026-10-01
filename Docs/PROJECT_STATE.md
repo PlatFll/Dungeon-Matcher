@@ -21,7 +21,7 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-01
-- **Current milestone:** Endless combat past the King; whole-hit shield gating; HP, shield and resolved damage in steps of five; clearer rank badges and remaining enemy attack animations. Ability animation concepts require the user's selection before gameplay integration.
+- **Current milestone:** Endless combat past the King; whole-hit shield gating; HP, shield and resolved damage in steps of five; clearer rank badges and remaining enemy attack animations. The user approved all ability concepts, selecting Royal Gold, a two-handed King thrust and the Shield Knight's raised blue shield. These motions are integrated; current verification is tracked in the combat-polish record.
 - **Main release checkpoint:** The user authorized integrating the final cumulative state of PRs #159–#168 into `main` on 2026-09-27. The stack tip is `codex/character-reset-mastery-unlocks`; later corrections remain authoritative over earlier animation drafts.
 - **Progression verification:** Unity validation passed; 251 regression tests and a separate rendered menu test passed. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md).
 - **Latest gameplay PR:** [#168 — Character level reset and shared mastery unlocks](https://github.com/PlatFll/Dungeon-Matcher/pull/168). Earlier production ability/continuation work is in [#158](https://github.com/PlatFll/Dungeon-Matcher/pull/158).
@@ -135,7 +135,7 @@ The follow-up refinement on PR #161 uses the newly supplied LibreSprite idle dra
 
 ## Current presentation and feedback checkpoint
 
-**Combat presentation (2026-10-01):** Normal, Special and Miniboss rank badges now use lime, cyan and amber respectively, preserving their silhouettes and dark outlines. The existing Boss badge is retained. Shield uses a separate six-pixel track below the HP frame. New attacks and ability concepts are tracked under `ArtSource/EnemyAttacks/`; concept review is separate from the production ability pipeline.
+**Combat presentation (2026-10-01):** Normal, Special and Miniboss rank badges now use lime, cyan and amber respectively, preserving their silhouettes and dark outlines. The existing Boss badge is retained. Shield uses a separate six-pixel track below the HP frame. New attacks and approved abilities are tracked under `ArtSource/EnemyAttacks/`. The King uses a two-handed column-then-row Royal Gold strike with no intermediate refill. The Shield Knight raises his shield before the blue grant pulse. Other accepted concepts use their existing ability owners and shared board queue. See `Validation/ENDLESS_COMBAT_POLISH.md` for executed evidence.
 
 **HUD, typography and effect feedback (2026-09-29):** Bottom HUD now shares the player panel's dark tiled treatment. Energy is a bar with centered ability/supply controls. New PixelLab potion, bomb and bright borderless tile states have editable native sources in `ArtSource/HudTypography/`. Thaleah covers all runtime text; healing is green, shield changes blue, damage white and poison dark green. Beneficial numbers subscribe to actual actor events, retain clamping, rise above actors and fade through the existing pool. See [validation](Validation/HUD_THALEAH_FEEDBACK.md).
 

@@ -704,6 +704,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         isSpecialAbilityAnimationActionActive = true;
         specialAbilityAnimationActionId = specialAbilityAnimationActionId == int.MaxValue
             ? 1 : specialAbilityAnimationActionId + 1;
+        specialMotionId = 0;
         return true;
     }
 

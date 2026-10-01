@@ -27,12 +27,13 @@ public sealed class BalanceDisruptionPlayTests
         using(GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default))
         {
             SceneManager.LoadScene("Game");yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Waves.IsWaveActive,"scene ready");
-            board=RunSession.Current.Board;yield return Settle();
+            board=RunSession.Current.Board;yield return Until(()=>RunSession.Current.Continuation.CanCapture,"initial board ready");yield return Settle();
             var first=Owner<MinerEnemyAbility>("Miner");var second=Owner<MinerEnemyAbility>("Miner");
             // Queue several owners in the same frame while one mutation owns the board.
             for(int attempt=0;attempt<3;attempt++)
-            {board.TryQueueMineRandomCell(first,3);board.TryQueueMineRandomCell(second,3);}
+            {Assert.That(board.TryQueueMineRandomCell(first,3),Is.True,"first Miner request accepted");Assert.That(board.TryQueueMineRandomCell(second,3),Is.True,"second Miner request accepted");}
             yield return Settle();
+            Assert.That(first != null && second != null && !first.IsDefeated && !second.IsDefeated,Is.True,"both fixture owners remain alive");
             Assert.That(Count("minedCellOwners"),Is.EqualTo(4));
             Assert.That(board.GetMinedCellCountForOwner(first.GetInstanceID()),Is.LessThanOrEqualTo(3));
             Assert.That(board.GetMinedCellCountForOwner(second.GetInstanceID()),Is.LessThanOrEqualTo(3));

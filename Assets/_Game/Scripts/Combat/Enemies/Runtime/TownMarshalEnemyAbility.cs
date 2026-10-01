@@ -250,6 +250,23 @@ public sealed class TownMarshalEnemyAbility :
         }
 
         isAttemptingReadyAbility = true;
+        int motion = enemyActor.StartSpecialMotion();
+        if (motion > 0) { StartCoroutine(CastMarshal(motion)); return; }
+        ApplyReadyAbility();
+    }
+
+    private IEnumerator CastMarshal(int motion)
+    {
+        yield return enemyActor.WaitForSpecialMotionBeat(motion);
+        if (!enemyActor.IsSpecialMotionCurrent(motion)) yield break;
+        ApplyReadyAbility(releaseAction: false);
+        yield return enemyActor.WaitForSpecialMotionComplete(motion);
+        isAttemptingReadyAbility = false;
+        if (enemyActor.IsSpecialMotionCurrent(motion)) enemyActor.EndSpecialAbilityAnimationAction();
+    }
+
+    private void ApplyReadyAbility(bool releaseAction = true)
+    {
         bool abilityUsed = false;
 
         try
@@ -286,8 +303,11 @@ public sealed class TownMarshalEnemyAbility :
         }
         finally
         {
-            enemyActor.EndSpecialAbilityAnimationAction();
-            isAttemptingReadyAbility = false;
+            if (releaseAction)
+            {
+                enemyActor.EndSpecialAbilityAnimationAction();
+                isAttemptingReadyAbility = false;
+            }
 
             if (enemyActor != null &&
                 !enemyActor.IsDefeated &&
@@ -844,6 +864,16 @@ public sealed class TownMarshalEnemyAbility :
         EndRetreat();
         StopRally();
         Unsubscribe();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        readyAbilityCoroutine = null;
+        isAttemptingReadyAbility = false;
+        EndRetreat();
+        StopRally();
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void OnDestroy()

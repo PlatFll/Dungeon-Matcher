@@ -18,6 +18,7 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
     public event Action AutoAttackCompleted;
     public event Action AbilityImpactReached;
     public event Action AbilityCompleted;
+    public event Action<int> AbilityBeatReached;
 
     public bool IsPaused => isPaused;
 
@@ -98,6 +99,8 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
     {
         AutoAttackCompleted?.Invoke();
     }
+
+    public void AbilityBeat(int beat) => AbilityBeatReached?.Invoke(beat);
 
     public void AbilityComplete()
     {

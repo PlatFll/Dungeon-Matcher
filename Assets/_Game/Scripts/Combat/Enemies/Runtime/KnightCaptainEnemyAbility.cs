@@ -49,6 +49,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
     {
         if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
         pending = true;
+        actor.PrepareSpecialMotion();
         if (!board.TryQueueTopUpMovablePins(actor, actor.Definition.ChainCap, success =>
         {
             if (released) return;
@@ -91,6 +92,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         }
         pending = true;
         commandLocks.Add(actor);
+        actor.StartSpecialMotion();
         actor.NotifySpecialAbilityUsed();
         StartCoroutine(Command());
         return true;
@@ -98,7 +100,8 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private IEnumerator Command()
     {
-        yield return new WaitForSeconds(commandWindup);
+        if (actor.SpecialMotionId > 0) yield return actor.WaitForSpecialMotionComplete(actor.SpecialMotionId);
+        else yield return new WaitForSeconds(commandWindup);
         if (released || actor == null || actor.IsDefeated) yield break;
         actor.EndSpecialAbilityAnimationAction();
         commandLocks.Remove(actor);

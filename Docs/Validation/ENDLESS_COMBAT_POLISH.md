@@ -21,6 +21,26 @@ The disruption cap fixture now uses durable walls so random refill cascades cann
 
 These are Editor/Play Mode checks, not Android-device or human pacing tests. Nearest-five rounding intentionally creates upgrade plateaus and can increase small hits to five; the resulting pacing still needs human play review.
 
-## Approved ability direction; integration in progress
+## Approved ability production
 
-The user reviewed all eleven PixelLab studies in `ArtSource/EnemyAttacks/AbilityConcepts.html`. Royal Gold was selected for the King, with a required two-handed grip throughout the lift and both ground thrusts. The Shield Knight must raise his shield before it glows blue and applies shields. All other concepts were accepted. Revised King/Shield Knight art and actual ability integration are the remaining work; the initial gallery is a concept preview, not proof of Unity ability behavior.
+The user reviewed all eleven PixelLab studies in `ArtSource/EnemyAttacks/AbilityConcepts.html`. Royal Gold was selected for the King, with a two-handed grip throughout the lift and both ground thrusts. The revised Shield Knight raises his shield before the blue pulse grants shields. All other concepts were accepted.
+
+Fourteen native animation states now cover the ten remaining ability users. The existing controllers, actor action identities and shared board queue own playback and effects. The King holds his raised sword during the warning, strikes the column and row on distinct contact frames, recovers, then allows one refill. Royal Standard gravity is deferred across the whole sequence too. Protected specials and structures retain their existing rules. Death suppresses later strikes and settles prior holes.
+
+Sources and exact timing: `ArtSource/EnemyAttacks/abilities.json`, editable ASE files and `ABILITY_SOURCES.md`. `ApprovedAbilities.html` is a self-contained preview of the actual imported sprite exports. Four actual Unity captures are retained in `ArtSource/EnemyAttacks/Validation/`; the full pose/layout evidence is in `.utmp/EnemyAbilitiesReview/`.
+
+### Ability verification
+
+- Native audit: **14 sheets passed**, exact dimensions/frame exposures, binary transparency and source hashes recorded in the manifest.
+- `Tools/Review-EnemyAbilities.ps1 -SkipImport`: **3 checks passed after the final Royal Standard gravity correction**. Covers production metadata, stale/duplicate/paused cues, actual casts, shields on the blue frame, commands, healing, blessings, hammer strikes, missing-art fallback, disable/death cleanup, King column/row contact and all poses at both portrait sizes. Thirty-two actual Unity captures record contact/hold poses and the live lane strikes.
+- Basic-attack regression after the presenter extension: **16 attacks passed** through `Tools/Review-EnemyAttacks.ps1 -SkipImport`.
+- The broader regression run exposed Royal Standard gravity advancing between the two strikes. The fix preserves its accumulated gravity openings until final settlement; the focused Royal production scenario then passed. The mine-cap fixture now waits for the first stable board and asserts request acceptance, retaining its exact cap assertions.
+- A focused run accidentally included rendered layout checks with `-nographics`; those checks failed because Unity reported a zero-size viewport. The dedicated ability runner enables graphics and is used for final visual verification. No layout assertion was removed.
+- PixelLab: **47 subscription generations used, 1953 remaining** after all attacks, concepts and revisions. No paid credit balance was used.
+
+- Final full-suite rerun after the ability and Royal Standard gravity changes: **268 passed, zero failed/skipped** through `Tools/Test-CombatPolish.ps1 -Full`. Evidence: `.utmp/combat-polish-tests.xml` and `.utmp/combat-polish-tests.log`.
+
+- Installed and SHA-256 verified **220 ability files** in the combined main Unity checkout. Reviewed three-way merges preserved the local Gideon architecture and checkpoint. Backups: `.utmp/visual-targets-v2/.utmp/AbilityIntegration/`.
+- Final `Tools/Validate-Unity.ps1` **passed** in that combined checkout with Unity 6000.3.19f1. Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-70366be2-d9ed-4927-a964-1d7d67c9ef66.log`.
+
+No Android or physical-device test was performed. The implementation branch and local installation remain separate from a merge to main.

@@ -23,6 +23,8 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private int abilityPresentationId, queuedAbilityImpactId;
     private bool abilityImpactDelivered;
     private float abilityStartedAt;
+    private int queuedMotionId, queuedMotionBeat;
+    private string shownIdleState;
 
     private bool UsesAuthoredAbility => enemyActor != null && enemyActor.Definition != null &&
         enemyActor.Definition.UseAuthoredSpecialAbilityMotion;
@@ -67,6 +69,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
         if (enemyActor != null)
         {
+            enemyActor.SpecialMotionRequested += HandleSpecialMotionRequested;
             enemyActor.SpecialAbilityUsed +=
                 HandleSpecialAbilityUsed;
         }
@@ -80,6 +83,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
             animationPlayback.AbilityImpactReached +=
                 HandleAbilityImpactReached;
             animationPlayback.AbilityCompleted += HandleAbilityCompleted;
+            animationPlayback.AbilityBeatReached += HandleSpecialMotionBeat;
         }
     }
 
@@ -87,7 +91,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     {
         queuedImpactPresentationId = 0;
         queuedAbilityImpactId = 0;
-        abilityPresentationId = 0;
+        abilityPresentationId = queuedMotionId = queuedMotionBeat = 0;
         if (enemyAutoAttack != null)
         {
             enemyAutoAttack.AttackStarted -=
@@ -96,6 +100,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
         if (enemyActor != null)
         {
+            enemyActor.SpecialMotionRequested -= HandleSpecialMotionRequested;
             enemyActor.SpecialAbilityUsed -=
                 HandleSpecialAbilityUsed;
         }
@@ -109,6 +114,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
             animationPlayback.AbilityImpactReached -=
                 HandleAbilityImpactReached;
             animationPlayback.AbilityCompleted -= HandleAbilityCompleted;
+            animationPlayback.AbilityBeatReached -= HandleSpecialMotionBeat;
         }
     }
 
@@ -171,6 +177,7 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
     private void HandleSpecialAbilityUsed(
         EnemyActor enemy)
     {
+        if (enemy.SpecialMotionId > 0) return;
         queuedAbilityImpactId = 0;
         abilityPresentationId = enemy.ActiveSpecialAbilityAnimationActionId;
         abilityImpactDelivered = false;
@@ -184,6 +191,44 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
             return;
         }
         PlayTrigger(AbilityTrigger);
+    }
+
+    private void HandleSpecialMotionRequested(EnemyActor enemy)
+    {
+        queuedMotionId = queuedMotionBeat = queuedAbilityImpactId = 0;
+        abilityPresentationId = enemy.SpecialMotionId;
+        abilityImpactDelivered = false;
+        if (animator == null || !animator.isActiveAndEnabled || animator.runtimeAnimatorController == null) return;
+        int state = Animator.StringToHash("Base Layer." + enemy.SpecialMotionState);
+        if (!animator.HasState(0, state)) return;
+        animator.ResetTrigger(AbilityTrigger);
+        animator.Play(state, 0, 0f);
+    }
+
+    private void HandleSpecialMotionBeat(int beat)
+    {
+        if (enemyActor == null || !enemyActor.IsSpecialMotionCurrent(abilityPresentationId)) return;
+        queuedMotionId = abilityPresentationId;
+        queuedMotionBeat = Mathf.Max(queuedMotionBeat, beat);
+    }
+
+    private void UpdateWarningPose()
+    {
+        if (enemyActor == null || enemyActor.IsDefeated || enemyActor.HasAnimationActionInProgress ||
+            animator == null || !animator.isActiveAndEnabled || animator.runtimeAnimatorController == null) return;
+        string desired = enemyActor.SpecialIdleState;
+        var current = animator.GetCurrentAnimatorStateInfo(0);
+        if (!string.IsNullOrEmpty(desired))
+        {
+            int state = Animator.StringToHash("Base Layer." + desired);
+            if (animator.HasState(0, state) && !current.IsName("Base Layer." + desired)) animator.Play(state, 0, 0f);
+            shownIdleState = desired;
+        }
+        else if (!string.IsNullOrEmpty(shownIdleState))
+        {
+            if (current.IsName("Base Layer." + shownIdleState)) animator.Play("Base Layer.Idle", 0, 0f);
+            shownIdleState = null;
+        }
     }
 
     private void HandleAutoAttackImpactReached()
@@ -216,9 +261,13 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
             abilityImpactDelivered = true;
             enemyActor.NotifySpecialAbilityImpactReached();
         }
+        if (queuedMotionId > 0 && enemyActor != null)
+            enemyActor.NotifySpecialMotionBeat(queuedMotionId, queuedMotionBeat);
+        queuedMotionId = queuedMotionBeat = 0;
+        UpdateWarningPose();
         // The board supplies the missing-impact fallback. This only covers a
         // missing completion event after contact, without interrupting recovery.
-        if (UsesAuthoredAbility && abilityImpactDelivered && Time.time - abilityStartedAt >= 3f)
+        if (UsesAuthoredAbility && enemyActor.SpecialMotionId == 0 && abilityImpactDelivered && Time.time - abilityStartedAt >= 3f)
             HandleAbilityCompleted();
     }
 
@@ -238,6 +287,11 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
 
     private void HandleAbilityCompleted()
     {
+        if (enemyActor != null && enemyActor.IsSpecialMotionCurrent(abilityPresentationId))
+        {
+            enemyActor.NotifySpecialMotionComplete(abilityPresentationId);
+            return;
+        }
         if (!UsesAuthoredAbility || Time.timeScale <= 0f || !abilityImpactDelivered ||
             abilityPresentationId <= 0 || enemyActor.ActiveSpecialAbilityAnimationActionId != abilityPresentationId)
             return;

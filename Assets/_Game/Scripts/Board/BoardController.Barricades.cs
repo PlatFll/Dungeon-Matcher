@@ -217,7 +217,7 @@ public partial class BoardController
                 availableCells
             );
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind =

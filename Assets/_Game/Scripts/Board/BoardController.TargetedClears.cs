@@ -57,7 +57,7 @@ public partial class BoardController
         };
         request.Completed = success => completed?.Invoke(
             success ? request.PairThreat : null);
-        pendingBoardMutations.Enqueue(request);
+        EnqueueBoardMutation(request);
         TryStartBoardMutationProcessor();
         return true;
     }
@@ -69,7 +69,7 @@ public partial class BoardController
             threat.ResolutionQueued || completedValidPlayerMoves < threat.DueMove)
             return false;
         threat.ResolutionQueued = true;
-        pendingBoardMutations.Enqueue(new BoardMutationRequest
+        EnqueueBoardMutation(new BoardMutationRequest
         {
             Kind = BoardMutationKind.ResolveGemPair,
             OwnerActor = owner,

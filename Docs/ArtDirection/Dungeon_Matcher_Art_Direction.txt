@@ -16,7 +16,7 @@ The user requested readable rank colors, compact shields and attacks for every e
 
 Sixteen new PixelLab basic attacks extend the existing authored roster. Sources, native palettes, selected frames and impact timing are recorded in `ArtSource/EnemyAttacks/README.md` and `manifest.json`. Every action retains the original character scale and bottom-center anchor; larger canvases add transparent weapon clearance. All attacks use the existing actor impact events and action ownership.
 
-Eleven special-ability motion studies are available in `ArtSource/EnemyAttacks/AbilityConcepts.html`. They remain concepts awaiting the user's selection. The King preview illustrates column strike, held board, second thrust, row strike and final refill, with gold and steel VFX alternatives. Production ability integration follows that selection.
+The user accepted the eleven special-ability studies, selected Royal Gold, and requested a two-handed King thrust and raised blue Shield Knight shield. Production sources and fourteen controller states are recorded in `ArtSource/EnemyAttacks/abilities.json` and `ABILITY_SOURCES.md`. The original gallery remains review history.
 
 ## 1. Start here in every new art task
 
@@ -740,3 +740,9 @@ actual 1080×1920 and 1080×2400 evidence in
 `Docs/Validation/FINALIZED_VISUAL_TARGETS_V2.md` before approving replacements.
 The existing character reference board, cast/animation, gem and locked frame
 colors remain authoritative.
+
+
+APPROVED ENEMY ABILITY PRODUCTION — 2026-10-01
+User selected Royal Gold and accepted all other concepts with two revisions: King uses BOTH hands on the sword through lift, ground thrust, planted hold and extraction; Shield Knight raises his decorated shield before a blue glow grants shields.
+Sources: ArtSource/EnemyAttacks/abilities.json and ABILITY_SOURCES.md. Fourteen native controller states cover the ten remaining ability users, including King warning/raise/two-strike/command states and separate Archbishop green Restoration and gold Benediction. Preserve native character scale and fixed battle-floor anchor. Effects use restrained gold, cyan and green accents.
+King impacts clear column then row, with the board locked and unfilled until recovery finishes. The runtime board queue owns this timing. Optional animation/VFX is never the sole authority for completion. Initial one-handed King and front-bubble Shield Knight concepts are superseded.

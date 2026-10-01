@@ -68,6 +68,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
         if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
         actionPending = true;
+        actor.PrepareSpecialMotion();
         bool queued;
         if (preferFortification && board.GetBarricadeCountForOwner(ownerId) <
             actor.Definition.MaximumOwnedBarricades)
@@ -139,6 +140,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
             board.CompletedValidPlayerMoves < warning.DueMove) return;
         if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
         actionPending = true;
+        actor.PrepareSpecialMotion();
         // Use the same wave/category/individual damage scale as the normal hit.
         int damage = Mathf.RoundToInt(actor.Definition.HammerBaseDamage *
             actor.RuntimeStats.DamageMultiplier);

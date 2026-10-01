@@ -24,7 +24,7 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 1
   useAuthoredAutoAttackMotion: 1
-  timeSpecialAbilityFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 1
   baseMaxHealth: 240
   baseDamage: 5
   baseFollowUpDamage: 0
@@ -54,3 +54,4 @@ MonoBehaviour:
   encounterEscorts:
   - {fileID: 11400000, guid: 3e9ea0e381044e83b0b982c96c74c769, type: 2}
   - {fileID: 11400000, guid: 4b6fd7e690b34c219e51f1294a1b301a, type: 2}
+  useAuthoredSpecialAbilityMotion: 1

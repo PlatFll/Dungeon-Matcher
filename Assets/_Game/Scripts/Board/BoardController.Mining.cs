@@ -40,6 +40,7 @@ public partial class BoardController
         public bool WaitForAnimationImpact;
         public bool AnimationImpactReached;
         public int AnimationActionId;
+        public int SpecialMotionId;
 
         public bool PreferStraightLine;
         public bool ProtectSpecialGems;
@@ -162,7 +163,7 @@ public partial class BoardController
             return false;
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.MineRandomCell,
@@ -214,7 +215,7 @@ public partial class BoardController
             return;
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.RestoreOwnerCells,
@@ -289,6 +290,16 @@ public partial class BoardController
             request.OwnerInstanceId == ownerInstanceId;
     }
 
+    private void EnqueueBoardMutation(BoardMutationRequest request)
+    {
+        if (request.OwnerActor != null && request.OwnerActor.IsSpecialMotionCurrent(request.OwnerActor.SpecialMotionId))
+            request.SpecialMotionId = request.OwnerActor.SpecialMotionId;
+        pendingBoardMutations.Enqueue(request);
+    }
+
+    private static bool MotionCancelled(BoardMutationRequest request) => request.SpecialMotionId > 0 &&
+        (request.OwnerActor == null || !request.OwnerActor.IsSpecialMotionCurrent(request.SpecialMotionId));
+
     private void TryStartBoardMutationProcessor()
     {
         if (boardMutationCoroutine != null ||
@@ -324,9 +335,24 @@ public partial class BoardController
                 activeBoardMutationRequest = request;
                 activeBoardMutationKind = request.Kind;
 
-                if (request.IsCancelled != null && request.IsCancelled())
+                if (request.SpecialMotionId > 0 && !MotionCancelled(request))
                 {
+                    request.OwnerActor.PlaySpecialMotion(request.SpecialMotionId);
+                    if (request.Kind != BoardMutationKind.ResolveLanes)
+                        yield return request.OwnerActor.WaitForSpecialMotionBeat(request.SpecialMotionId);
+                }
+                if (MotionCancelled(request) || (request.IsCancelled != null && request.IsCancelled()))
+                {
+                    if (request.Kind == BoardMutationKind.PinRandomGem && request.TargetGem != null &&
+                        pendingPinTargetOwners.TryGetValue(request.TargetGem, out int reservedOwner) &&
+                        reservedOwner == request.OwnerInstanceId)
+                    {
+                        pendingPinTargetOwners.Remove(request.TargetGem);
+                        pendingFrozenPinTargets.Remove(request.TargetGem);
+                    }
                     request.Completed?.Invoke(false);
+                    if (request.SpecialMotionId > 0 && !MotionCancelled(request))
+                        request.OwnerActor.EndSpecialAbilityAnimationAction();
                     activeBoardMutationKind = null;
                     activeBoardMutationRequest = null;
                     continue;
@@ -389,7 +415,11 @@ public partial class BoardController
                         break;
                 }
 
+                if (request.SpecialMotionId > 0 && !MotionCancelled(request))
+                    yield return request.OwnerActor.WaitForSpecialMotionComplete(request.SpecialMotionId);
                 request.Completed?.Invoke(request.Succeeded);
+                if (request.SpecialMotionId > 0 && !MotionCancelled(request))
+                    request.OwnerActor.EndSpecialAbilityAnimationAction();
                 activeBoardMutationKind = null;
                 activeBoardMutationRequest = null;
             }

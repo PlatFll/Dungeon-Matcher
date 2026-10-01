@@ -14,10 +14,14 @@ PixelLab supplied the native poses. LibreSprite reduced each frame to the origin
 
 Rebuild with `Tools/Finish-EnemyAttacks.ps1`, then `Tools/Review-EnemyAttacks.ps1`. The latter imports through `CombatActionImporter` and exercises actual attacks in the Game scene at both portrait sizes. `Tools/Fetch-PixelLabFrames.py` can recover the original frames from the explicit service download URLs in the manifest.
 
-## Ability concepts awaiting selection
+## Ability concept review history
 
 Open `AbilityConcepts.html` in a browser. It embeds all eleven PixelLab motion studies and offers two King impact treatments: Royal gold and Steel flash. Pause/replay and per-card choices produce a summary to send in chat. Choices are not saved or transmitted automatically.
 
-The King's diagram demonstrates blinking warnings, a column strike, a held board, a second thrust and row strike, then refill. The board and VFX diagram are review illustrations. These special-ability timings and drawings are **not integrated into Unity**; the user requested selection first. Existing ability mechanics remain authoritative until a direction is chosen. The Siege Sergeant's selected, shortened hammer poses are also used for his basic attack; this does not activate the proposed Hammer Time ability presentation.
+The King's diagram demonstrates blinking warnings, a column strike, a held board, a second thrust and row strike, then refill. This gallery records the initial concepts; the user subsequently selected Royal Gold and all other motions, revising the King to a two-handed grip and Shield Knight to a raised blue shield.
 
-After selection, finish the approved ability palettes, contact/recovery poses and effects, connect them to existing actor/board ownership, and verify interrupted casts and the King's single held-board sequence in Unity.
+Production sources, timing and controller states now live in `abilities.json`. Unity uses the existing actor and board owners; executed integration evidence is recorded in `Docs/Validation/ENDLESS_COMBAT_POLISH.md`.
+
+## Approved abilities
+
+All concept choices are resolved. See [ABILITY_SOURCES.md](ABILITY_SOURCES.md) for the two-handed King and raised Shield Knight revisions, selected poses, editable sources and integration protocol. The original concept gallery is retained as review history.

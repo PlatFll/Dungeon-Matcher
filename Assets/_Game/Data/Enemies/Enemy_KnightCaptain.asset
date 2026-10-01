@@ -22,7 +22,7 @@ MonoBehaviour:
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 1
   useAuthoredAutoAttackMotion: 1
-  timeSpecialAbilityFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 1
   baseMaxHealth: 250
   chainCap: 3
   baseDamage: 7
@@ -103,3 +103,4 @@ MonoBehaviour:
   threatCost: 4.5
   isBoardDisruptor: 1
   isSupport: 0
+  useAuthoredSpecialAbilityMotion: 1

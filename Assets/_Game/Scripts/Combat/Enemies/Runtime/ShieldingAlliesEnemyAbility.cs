@@ -157,6 +157,13 @@ public sealed class ShieldingAlliesEnemyAbility :
         }
 
         isAttemptingReadyAbility = true;
+        int motion = enemyActor.StartSpecialMotion();
+        if (motion > 0)
+        {
+            enemyActor.NotifySpecialAbilityUsed();
+            StartCoroutine(CastShield(motion));
+            return true;
+        }
 
         try
         {
@@ -188,6 +195,26 @@ public sealed class ShieldingAlliesEnemyAbility :
                 EnsureReadyAbilityCoroutine();
             }
         }
+    }
+
+    private IEnumerator CastShield(int motion)
+    {
+        yield return enemyActor.WaitForSpecialMotionBeat(motion);
+        if (!enemyActor.IsSpecialMotionCurrent(motion)) yield break;
+        GrantShieldToLivingEnemies(enemyActor.Definition.AllyShieldAmount, enemyActor.Definition.SelfShieldAmount);
+        enemyActor.NotifySpecialAbilityEffectApplied();
+        enemyActor.ResetSpecialCounter();
+        yield return enemyActor.WaitForSpecialMotionComplete(motion);
+        isAttemptingReadyAbility = false;
+        if (enemyActor.IsSpecialMotionCurrent(motion)) enemyActor.EndSpecialAbilityAnimationAction();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        readyAbilityCoroutine = null;
+        isAttemptingReadyAbility = false;
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void GrantShieldToLivingEnemies(

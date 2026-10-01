@@ -129,6 +129,8 @@ public sealed class RoyalStandardBearerEnemyAbility :
             return true;
         }
 
+        if (!enemyActor.TryBeginSpecialAbilityAnimationAction()) return false;
+        enemyActor.PrepareSpecialMotion();
         bool queued =
             boardController.TryQueuePlaceRoyalBanner(
                 enemyActor,
@@ -137,10 +139,12 @@ public sealed class RoyalStandardBearerEnemyAbility :
 
         if (!queued)
         {
+            enemyActor.EndSpecialAbilityAnimationAction();
             return false;
         }
 
         enemyActor.ResetSpecialCounter();
+        if (enemyActor.SpecialMotionId == 0) enemyActor.EndSpecialAbilityAnimationAction();
         return true;
     }
 
@@ -199,6 +203,11 @@ public sealed class RoyalStandardBearerEnemyAbility :
         boardController.OrphanRoyalBannerForOwner(
             ownerInstanceId
         );
+    }
+
+    private void OnDisable()
+    {
+        if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
     }
 
     private void OnDestroy()

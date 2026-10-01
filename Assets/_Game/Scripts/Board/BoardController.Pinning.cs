@@ -51,7 +51,7 @@ public partial class BoardController
             return false;
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.TopUpMovablePins,
@@ -370,7 +370,7 @@ public partial class BoardController
             pendingFrozenPinTargets.Add(selectedGem);
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.PinRandomGem,
@@ -394,7 +394,7 @@ public partial class BoardController
             return;
         }
 
-        pendingBoardMutations.Enqueue(
+        EnqueueBoardMutation(
             new BoardMutationRequest
             {
                 Kind = BoardMutationKind.ReleaseOwnerPins,

@@ -1,6 +1,6 @@
 {
   "provider": "PixelLab",
-  "status": "16 basic attacks integrated; 11 ability concepts await user selection",
+  "status": "16 missing basic attacks and 14 approved ability states integrated",
   "production": [
     {
       "name": "CrossbowGuard",
@@ -949,6 +949,273 @@
       "frames": 17,
       "directory": "ArtSource/EnemyAttacks/Candidates/King_RoyalCommand",
       "url": "https://api.pixellab.ai/mcp/images/7bee43fa-e1a0-44c3-ad3f-56dc69370759/download?index="
+    },
+    {
+      "name": "King_TwoHandThrust",
+      "job_id": "0a97ecfb-1776-4c8f-bdb2-7619873c87b2",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/King_TwoHandThrust",
+      "url": "https://api.pixellab.ai/mcp/images/0a97ecfb-1776-4c8f-bdb2-7619873c87b2/download?index="
+    },
+    {
+      "name": "ShieldKnight_Raised",
+      "job_id": "44935141-2841-4c70-bf17-fbe12e19921b",
+      "frames": 17,
+      "directory": "ArtSource/EnemyAttacks/Candidates/ShieldKnight_Raised",
+      "url": "https://api.pixellab.ai/mcp/images/44935141-2841-4c70-bf17-fbe12e19921b/download?index="
+    },
+    {
+      "name": "King_TwoHandPose",
+      "job_id": "9fa02753-19eb-470c-9a50-be597d47f0cd",
+      "frames": 1,
+      "directory": "ArtSource/EnemyAttacks/Candidates/King_TwoHandPose",
+      "url": "https://api.pixellab.ai/mcp/images/9fa02753-19eb-470c-9a50-be597d47f0cd/download?index="
     }
-  ]
+  ],
+  "approved_ability_production": [
+    {
+      "name": "CourtMage_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 15,
+      "duration_ms": 900,
+      "impact_frames": [
+        7
+      ],
+      "sha256": {
+        "png": "94401475eb454973a59ac679feb2d066db2f2c6369b99d63c3430bcc2aa09d99",
+        "aseprite": "cda6fefdd0be1da1303cbf7456eb9f33df8f19b65349fca2ed9d3b8349d128cc",
+        "json": "2ca5c6ceecce35e03c333dd1d36a8b36b3b5afa22c2283949a9445117e649b4e"
+      }
+    },
+    {
+      "name": "CrossbowGuard_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 15,
+      "duration_ms": 900,
+      "impact_frames": [
+        8
+      ],
+      "sha256": {
+        "png": "225e990868ed57308b2ed31e14247e3ddc868003573289da16fed04a3d214fe6",
+        "aseprite": "e7076f77d00cab8dd4c3909875f2d02057600345770162f6aa3c065af3835648",
+        "json": "496106fd213bb1d4f8f438e7663f7f892b82a45e3ec0149952cdc2791f86eae5"
+      }
+    },
+    {
+      "name": "RoyalStandardBearer_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 13,
+      "duration_ms": 780,
+      "impact_frames": [
+        5
+      ],
+      "sha256": {
+        "png": "305b976daba34d1acb730734075f72354845d0846e97057ce009ebb4e9560c70",
+        "aseprite": "a7abe147caf341dfffe28781f099fcb06c993cb8f0656fbd40ee21ce7f2280de",
+        "json": "39eb56c3ccee325d22b98f31e38315888e260ddbc5e77341e59f0d40b6d9a02f"
+      }
+    },
+    {
+      "name": "ShieldKnight_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 15,
+      "duration_ms": 900,
+      "impact_frames": [
+        6
+      ],
+      "sha256": {
+        "png": "e3f8313a3efdc7cf81008370b3de05dd2557562cd39702a5ba5d3b6b348b8dd5",
+        "aseprite": "a65168b127499d2b304170130ff62e9abf1a83df532e382ad5db9853b59708be",
+        "json": "b994cfe558a229afd3f56e04e57b2cbfaf15859acd897675fab0f380018bbfd8"
+      }
+    },
+    {
+      "name": "TownMarshal_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 14,
+      "duration_ms": 840,
+      "impact_frames": [
+        2
+      ],
+      "sha256": {
+        "png": "145cce2fd885797825a593a5365777e3b78a8f91ff8677bd49ae9ac6e37f136c",
+        "aseprite": "22a1fa673581356f3b9df9b9a25229955c628cd15f6dd48e1c82eb417083db7b",
+        "json": "04de0bafd1497813a7b70d1b78f63e79aaefa5193e005ccf049a3837f7033799"
+      }
+    },
+    {
+      "name": "BarricadeGuard_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 13,
+      "duration_ms": 780,
+      "impact_frames": [
+        5
+      ],
+      "sha256": {
+        "png": "0d4ee70dc0550aab969bdc46281630bcc690bed1b53cbf11c822de5371143eca",
+        "aseprite": "94a51aaefd119b842b72c89cc1d99d517eafbb828a931d103d033e8d9a6abca8",
+        "json": "13e4536a64873238d3556898d89af0853622a6516c69267928e004a2d2538a0d"
+      }
+    },
+    {
+      "name": "SiegeSergeant_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 16,
+      "duration_ms": 960,
+      "impact_frames": [
+        7
+      ],
+      "sha256": {
+        "png": "a4f77fc65974aadf05e8a1371b2fdbdc8e5dbe59741f2fb96c60bf2047405ab4",
+        "aseprite": "9851decab62ed56324d0ba873c91589ff06c9a823d8a0322fbd49849a8674845",
+        "json": "d8a56947f5c63e08ffbfb9ba012bfaea30b22b46274618cc12cf15429768c7b5"
+      }
+    },
+    {
+      "name": "RoyalArchbishop_Ability",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 17,
+      "duration_ms": 1020,
+      "impact_frames": [
+        4
+      ],
+      "sha256": {
+        "png": "3d6139ad7b9150f55a7db9520cee0d8c448e7cc6c427744e8b6ef831372ee0b0",
+        "aseprite": "fd5379ec8d6bfc03be6cc6d4fdeba430bdbd02f72d58a6ebf60a3c9aa9afab06",
+        "json": "3a77895264a9ea0b660f10bb4867cdf6b2b1d52aa3f9183d9decc987986f4fbe"
+      }
+    },
+    {
+      "name": "RoyalArchbishop_Benediction",
+      "size": [
+        64,
+        64
+      ],
+      "frames": 17,
+      "duration_ms": 1020,
+      "impact_frames": [
+        4
+      ],
+      "sha256": {
+        "png": "56f79c599ed0b2f8bbd9b0f6ef0a05427233371138b3123165f438034dfe425b",
+        "aseprite": "a85de397daf48ae91d161f216c3e424688db8df3130da04313ebd9d64cfca6ff",
+        "json": "1249f0b0854d501b103dac9f39445ef730b214219cd1e758a58b25ea20ae3597"
+      }
+    },
+    {
+      "name": "KnightCaptain_Ability",
+      "size": [
+        96,
+        80
+      ],
+      "frames": 15,
+      "duration_ms": 900,
+      "impact_frames": [
+        5
+      ],
+      "sha256": {
+        "png": "7ee3534238ee9cb1f801f7f67ed4aa5a0f2ed709895c0ef1f175cae1df48a37f",
+        "aseprite": "d2a183dee56dbb26cb7314177af38e9e3d089ddf31bb4634c536fe0be49fd4ab",
+        "json": "52c95ce2d2e6d419de25c800565e8435986d7bdfe18494a92f62124abae549da"
+      }
+    },
+    {
+      "name": "King_RoyalCommand",
+      "size": [
+        96,
+        80
+      ],
+      "frames": 15,
+      "duration_ms": 900,
+      "impact_frames": [
+        10
+      ],
+      "sha256": {
+        "png": "fc991867b1ea56f1210d0d196c31a157282513947a0c1e049c17613319c80878",
+        "aseprite": "d736605eea7c4ae2d96041c0e2b1baa903d9228694aad4b67b7b476c88a6ebe3",
+        "json": "808684b061d7e9aea0fff09a390eeede46ec8dc9ea776c6f7162659b56f136b3"
+      }
+    },
+    {
+      "name": "King_BombardmentRaise",
+      "size": [
+        96,
+        80
+      ],
+      "frames": 5,
+      "duration_ms": 400,
+      "impact_frames": [
+        3
+      ],
+      "sha256": {
+        "png": "09bb6eeb5c6f9067492037703f6e903c2d14d09d570e74355d80a4e2d879bd72",
+        "aseprite": "45c223d5daf6d299d355dfd8ce84bdc04f89f1c6e9cfa6aaa546b76b77e05fbf",
+        "json": "54d0a978c47c90b22de7e8bba64dca5f5f18035ac51b6196e1ca54fc2ba19161"
+      }
+    },
+    {
+      "name": "King_BombardmentReady",
+      "size": [
+        96,
+        80
+      ],
+      "frames": 2,
+      "duration_ms": 320,
+      "impact_frames": [],
+      "sha256": {
+        "png": "055472fe4a30a7b8c43f7a48124a271a7e773e6076c223cd73fc060eaf440164",
+        "aseprite": "4bfe38a4776d0543c61530e76c959b2a446cd1262bd4119acc4f1b65484b43e5",
+        "json": "8f1b298470996701a0939a3bb701514bfa226946c17f0f51e997de52a6de69b2"
+      }
+    },
+    {
+      "name": "King_Bombardment",
+      "size": [
+        96,
+        80
+      ],
+      "frames": 20,
+      "duration_ms": 1400,
+      "impact_frames": [
+        3,
+        13
+      ],
+      "sha256": {
+        "png": "87d98c3f03e6f603997a70ba182207b04ce732b085114a38a7caa5d18f068439",
+        "aseprite": "82623b84b14d11748d35df7e3a9c47537590a0e924a4cbed63cb466e83820f9a",
+        "json": "3227ecc82ea76c4f9539551c3bd6102af938c3532e46779c3421726fb4678ea1"
+      }
+    }
+  ],
+  "ability_approval": "All concepts accepted; Royal Gold selected, with two-handed King thrust and raised blue Shield Knight revision.",
+  "pixellab_balance": {
+    "generations_used": 47,
+    "remaining": 1953,
+    "checked": "2026-10-01",
+    "paid_credit_balance_usd": 0
+  }
 }
