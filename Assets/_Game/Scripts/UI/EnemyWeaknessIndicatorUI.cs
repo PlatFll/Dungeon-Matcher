@@ -271,6 +271,9 @@ public sealed class EnemyWeaknessIndicatorUI :
 
         float centerDrop =
             config.GapBelowHealthBar +
+            // Reserve the shield lane even at zero shield, so the gem never
+            // overlaps it or jumps when a shield is granted or broken.
+            ShieldBarUI.ReservedSpaceBelowHealthBar +
             config.IconSize * 0.5f;
 
         GameplayPixelGrid.FitImage(indicatorImage, Vector2.one * config.IconSize);

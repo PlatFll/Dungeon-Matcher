@@ -262,6 +262,51 @@ public sealed class DesignV2ContinuationTests
         Time.timeScale=1;yield return new ExitPlayMode();
     }
 
+    [UnityTest] public IEnumerator RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold()
+    {
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        yield return new EnterPlayMode();
+        string path=Profile();
+        const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+        using(AccountProgression.UseDisposableProfile(path))
+        using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
+        {
+            SceneManager.LoadScene("Game");yield return Stable();var run=RunSession.Current;
+            foreach(var enemy in run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().StopAttacking();
+            var data=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset");
+            Assert.That(run.Waves.TrySummonEnemy(data,out var actor),Is.True);
+            var king=actor.GetComponent<KingEnemyAbility>();var attack=actor.GetComponent<EnemyAutoAttack>();
+            attack.RestoreContinuation(new EnemyCombatSnapshot {attackRemaining=1.5f,attackSpeed=1,attackRunning=true});
+            typeof(KingEnemyAbility).GetField("cycle",flags).SetValue(king,2);
+            actor.SetSpecialTurnRequirement(1);actor.ResetSpecialCounter();actor.RegisterValidPlayerTurn();
+            yield return Until(()=>actor.SpecialIdleState=="BombardmentReady"&&run.Continuation.CanCapture,"raised warning snapshot boundary");
+            float held=attack.RemainingAttackTime;
+            Time.timeScale=0;Assert.That(run.Continuation.SaveNow(),Is.True);
+            int slot=run.Waves.ContinuationOwnerSlot(actor.GetInstanceID());
+            Assert.That(run.SuspendToMenu(),Is.True);yield return null;
+            using(AccountProgression.UseDisposableProfile(path))
+            {
+                SceneManager.LoadScene("Game");yield return Restored();run=RunSession.Current;
+                actor=run.Waves.ContinuationEnemy(slot);king=actor.GetComponent<KingEnemyAbility>();attack=actor.GetComponent<EnemyAutoAttack>();
+                Assert.That(run.Board.RestoredLanes(actor),Is.Not.Null);
+                Assert.That(actor.SpecialIdleState,Is.EqualTo("BombardmentReady"));
+                Assert.That(attack.IsPausedByAction,Is.True);
+                run.GetComponent<RunControlsUI>().Close();Time.timeScale=1;
+                yield return new WaitForSeconds(1.7f);
+                Assert.That(attack.RemainingAttackTime,Is.EqualTo(held).Within(.001f),"restored cooldown remains paused during warning");
+                Assert.That(attack.PerformAttackImmediately(),Is.False);
+                object otherOwner=new object();attack.SetActionPaused(otherOwner,true);
+                king.enabled=false;
+                Assert.That(actor.SpecialIdleState,Is.Null);
+                Assert.That(attack.IsPausedByAction,Is.True,"another owner's pause survives cleanup");
+                attack.SetActionPaused(otherOwner,false);
+                Assert.That(attack.IsPausedByAction,Is.False,"King leaves no stale pause behind");
+                run.ExitTo("MainMenu");yield return null;
+            }
+        }
+        Time.timeScale=1;yield return new ExitPlayMode();
+    }
+
     private static string Colors(BoardController board)
     {
         var result=new System.Text.StringBuilder();

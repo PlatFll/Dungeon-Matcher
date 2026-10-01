@@ -56,6 +56,15 @@ TextureImporter:
   - first:
       213: 1844311636145709897
     second: RoyalLancer_AutoAttack_08
+  - first:
+      213: 4785631306858054594
+    second: RoyalLancer_AutoAttack_09
+  - first:
+      213: 8323313016790709477
+    second: RoyalLancer_AutoAttack_10
+  - first:
+      213: 3367241797616984071
+    second: RoyalLancer_AutoAttack_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,7 +132,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -169,12 +178,12 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -182,21 +191,21 @@ TextureImporter:
       spriteID: fc643c764783c5b00800000000000000
       internalID: 818591304882800335
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_01
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -204,21 +213,21 @@ TextureImporter:
       spriteID: f2399af4f6898bb30800000000000000
       internalID: 4303357047797814063
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_02
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -226,21 +235,21 @@ TextureImporter:
       spriteID: c50af4cb4c827c1b0800000000000000
       internalID: -5636491583192850340
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_03
       rect:
         serializedVersion: 2
-        x: 192
+        x: 576
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -248,21 +257,21 @@ TextureImporter:
       spriteID: 8102305852d94ca50800000000000000
       internalID: 6540525343319728152
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_04
       rect:
         serializedVersion: 2
-        x: 256
+        x: 768
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -270,21 +279,21 @@ TextureImporter:
       spriteID: d0a88aa4c99cd9320800000000000000
       internalID: 2566429035775691277
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_05
       rect:
         serializedVersion: 2
-        x: 320
+        x: 960
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -292,21 +301,21 @@ TextureImporter:
       spriteID: 02a6454787589a2e0800000000000000
       internalID: -2114011797679478240
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_06
       rect:
         serializedVersion: 2
-        x: 384
+        x: 1152
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -314,21 +323,21 @@ TextureImporter:
       spriteID: 438ec9c5d2cd67870800000000000000
       internalID: 8680367419188635700
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_07
       rect:
         serializedVersion: 2
-        x: 448
+        x: 1344
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -336,21 +345,21 @@ TextureImporter:
       spriteID: 15333bd3559e678b0800000000000000
       internalID: -5154676171162307759
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: RoyalLancer_AutoAttack_08
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1536
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -358,17 +367,83 @@ TextureImporter:
       spriteID: 943a59759af489910800000000000000
       internalID: 1844311636145709897
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalLancer_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c34347715af96240800000000000000
+      internalID: 4785631306858054594
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalLancer_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4f1380719528370800000000000000
+      internalID: 8323313016790709477
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalLancer_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700eec31398dabe20800000000000000
+      internalID: 3367241797616984071
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
@@ -385,7 +460,10 @@ TextureImporter:
       RoyalLancer_AutoAttack_06: 8680367419188635700
       RoyalLancer_AutoAttack_07: -5154676171162307759
       RoyalLancer_AutoAttack_08: 1844311636145709897
+      RoyalLancer_AutoAttack_09: 4785631306858054594
       RoyalLancer_AutoAttack_1: 5816019581020938597
+      RoyalLancer_AutoAttack_10: 8323313016790709477
+      RoyalLancer_AutoAttack_11: 3367241797616984071
       RoyalLancer_AutoAttack_2: 7225784332076785922
       RoyalLancer_AutoAttack_3: -410126237970282114
       RoyalLancer_AutoAttack_4: 8798742186344139050
@@ -393,8 +471,8 @@ TextureImporter:
       RoyalLancer_AutoAttack_6: 9010705591940348607
       RoyalLancer_AutoAttack_7: 3082504771361480797
       RoyalLancer_AutoAttack_8: 1245806028292866119
-  mipmapLimitGroupName: 
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

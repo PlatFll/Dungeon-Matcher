@@ -62,6 +62,9 @@ public sealed class PixelLabAttackPlayTests
                 var attack=enemy.GetComponent<EnemyAutoAttack>();attack.StopAttacking();
                 var image=enemy.transform.Find("VisualRoot").GetComponent<Image>();var animator=image.GetComponent<Animator>();
                 var frames=CombatActionImporter.LoadFrames(entry.name+"_AutoAttack");
+                var source=new Texture2D(2,2,TextureFormat.RGBA32,false);
+                source.LoadImage(File.ReadAllBytes(AssetDatabase.GetAssetPath(frames[0])));
+                var pixels=source.GetPixels32();int sourceWidth=source.width;Object.Destroy(source);
                 Assert.That(frames.Length,Is.EqualTo(entry.frames.Length),entry.name);
                 var clip=AssetDatabase.LoadAssetAtPath<AnimationClip>(CombatActionImporter.AnimationRoot+"/"+entry.name+"_AutoAttack.anim");
                 Assert.That(clip.length,Is.EqualTo(.68f).Within(.001f));
@@ -108,7 +111,10 @@ public sealed class PixelLabAttackPlayTests
                         Assert.That(scale,Is.EqualTo(Mathf.Round(scale)).Within(.01f),entry.name+" integer texels");
                         Assert.That(rect.center.x,Is.EqualTo(baseline.center.x).Within(.1f));
                         Assert.That(rect.yMin,Is.EqualTo(baseline.yMin).Within(.1f),entry.name+" floor");
-                        Assert.That(rect.xMin>=0&&rect.xMax<=1080&&rect.yMin>=0&&rect.yMax<=height,Is.True,entry.name+" screen bounds");
+                        // Expanded canvases deliberately contain empty side margins.
+                        // Check every visible texel, rather than the transparent rectangle.
+                        Rect ink=VisibleBounds(frames[f],pixels,sourceWidth,rect);
+                        Assert.That(ink.xMin>=0&&ink.xMax<=1080&&ink.yMin>=0&&ink.yMax<=height,Is.True,entry.name+" visible screen bounds "+ink);
                         if(f==entry.impactFrame)
                         {
                             ScreenCapture.CaptureScreenshot(Path.Combine(output,entry.name+"-"+height+".png"));
@@ -135,6 +141,18 @@ public sealed class PixelLabAttackPlayTests
         Assert.That(runtimeErrors,Is.Empty,string.Join("\n",runtimeErrors));
         Application.logMessageReceived-=CaptureLog;LogAssert.ignoreFailingMessages=false;
         Time.timeScale=1;yield return new ExitPlayMode();
+    }
+    private static Rect VisibleBounds(Sprite sprite,Color32[] pixels,int sheetWidth,Rect screen)
+    {
+        Rect r=sprite.rect;int left=(int)r.width,right=-1,bottom=(int)r.height,top=-1;
+        for(int y=0;y<(int)r.height;y++)for(int x=0;x<(int)r.width;x++)
+        {
+            if(pixels[((int)r.y+y)*sheetWidth+(int)r.x+x].a==0)continue;
+            left=Math.Min(left,x);right=Math.Max(right,x);bottom=Math.Min(bottom,y);top=Math.Max(top,y);
+        }
+        Assert.That(right,Is.GreaterThanOrEqualTo(left),"authored frame must contain visible pixels");
+        return Rect.MinMaxRect(screen.xMin+left*screen.width/r.width,screen.yMin+bottom*screen.height/r.height,
+            screen.xMin+(right+1)*screen.width/r.width,screen.yMin+(top+1)*screen.height/r.height);
     }
     private static Rect ScreenRect(Image image)
     {

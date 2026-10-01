@@ -159,7 +159,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 60
+    "duration": 70
    },
    {
     "filename": "King_Bombardment 18.aseprite",
@@ -168,11 +168,29 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 60
+    "duration": 70
    },
    {
     "filename": "King_Bombardment 19.aseprite",
     "frame": { "x": 1824, "y": 0, "w": 96, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
+    "sourceSize": { "w": 96, "h": 80 },
+    "duration": 70
+   },
+   {
+    "filename": "King_Bombardment 20.aseprite",
+    "frame": { "x": 1920, "y": 0, "w": 96, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
+    "sourceSize": { "w": 96, "h": 80 },
+    "duration": 70
+   },
+   {
+    "filename": "King_Bombardment 21.aseprite",
+    "frame": { "x": 2016, "y": 0, "w": 96, "h": 80 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
@@ -185,7 +203,7 @@
   "version": "1.1-dev",
   "image": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\visual-targets-v2\\ArtSource\\EnemyAttacks\\King_Bombardment.png",
   "format": "RGBA8888",
-  "size": { "w": 1920, "h": 80 },
+  "size": { "w": 2112, "h": 80 },
   "scale": "1"
  }
 }

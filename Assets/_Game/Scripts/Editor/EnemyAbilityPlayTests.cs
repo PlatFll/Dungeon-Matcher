@@ -50,6 +50,7 @@ public sealed class EnemyAbilityPlayTests
             foreach(string name in new[]{"CourtMage","CrossbowGuard","RoyalStandardBearer","ShieldKnight","TownMarshal","BarricadeGuard","SiegeSergeant","RoyalArchbishop","KnightCaptain"})
             {
                 yield return Spawn(name);
+                if(name=="ShieldKnight")yield return ReviewShieldClearance();
                 int ownerId=owner.GetInstanceID();bool signal=false;Sprite contact=null;
                 var image=owner.transform.Find("VisualRoot").GetComponent<Image>();
                 Action<EnemyActor,int> shield=(a,n)=>{signal=true;contact=image.sprite;};
@@ -140,11 +141,26 @@ public sealed class EnemyAbilityPlayTests
             owner.TryTakeDamageWithoutFeedback(CombatAmounts.Round(owner.MaxHealth*.6));
             yield return Until(()=>run.Waves.ActiveEnemies.Count==3&&!owner.HasAnimationActionInProgress,"King reinforcement gesture");
             yield return Spawn("King");king=owner.GetComponent<KingEnemyAbility>();Set(king,"cycle",2);
-            Prime(owner);yield return Until(()=>Get(king,"bombardment")!=null&&!board.IsBusy,"lane warning");
+            var heldAttack=owner.GetComponent<EnemyAutoAttack>();
+            heldAttack.RestoreContinuation(new EnemyCombatSnapshot {attackRemaining=1.5f,attackSpeed=1,attackRunning=true});
+            Prime(owner);yield return Until(()=>heldAttack.IsPausedByAction,"pause starts with accepted sword raise");
+            float heldTime=heldAttack.RemainingAttackTime;
+            int heldHits=0;heldAttack.AttackResolved+=(a,d,applied)=>heldHits++;
+            yield return Until(()=>Get(king,"bombardment")!=null&&!board.IsBusy,"lane warning");
             var threat=(BoardController.LaneThreat)Get(king,"bombardment");
             Assert.That(owner.SpecialIdleState,Is.EqualTo("BombardmentReady"));
             yield return new WaitForSeconds(.1f);var kingImage=owner.transform.Find("VisualRoot").GetComponent<Image>();
             Assert.That(kingImage.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BombardmentReady"),Is.True);
+            yield return new WaitForSeconds(1.7f);
+            Assert.That(heldAttack.RemainingAttackTime,Is.EqualTo(heldTime).Within(.001f),"warning preserves the cooldown, even past its remaining duration");
+            Assert.That(heldHits,Is.Zero);
+            Assert.That(heldAttack.PerformAttackImmediately(),Is.False,"direct auto attack cannot interrupt raised sword");
+            Assert.That(heldAttack.TryReserveCommand(this,true),Is.False,"command cannot interrupt raised sword");
+            // A threshold reached during the warning must wait for the complete lane action.
+            owner.TryTakeDamageWithoutFeedback(CombatAmounts.Round(owner.MaxHealth*.6));
+            yield return new WaitForSeconds(.2f);
+            Assert.That(run.Waves.ActiveEnemies.Count,Is.EqualTo(2),"reinforcements wait behind Bombardment");
+            Assert.That(owner.SpecialIdleState,Is.EqualTo("BombardmentReady"));
             var cells=GetGrid();
             // Select a protected special on the cross. Observe it before refill,
             // where genuine cascades may legitimately activate it later.
@@ -154,6 +170,8 @@ public sealed class EnemyAbilityPlayTests
             Action<bool,int,float> slash=(row,index,duration)=>
             {
                 Assert.That(board.IsBusy,Is.True);lanes.Add(row);impactSprites.Add(kingImage.sprite);
+                Assert.That(heldAttack.IsPausedByAction,Is.True,"both lane strikes retain the attack pause");
+                Assert.That(heldAttack.RemainingAttackTime,Is.EqualTo(heldTime).Within(.001f));
                 if(row)
                 {
                     Assert.That(originalColumn.All(g=>g==null),Is.True,"column gems removed together before row strike");
@@ -170,6 +188,11 @@ public sealed class EnemyAbilityPlayTests
             yield return Until(()=>threat.Ended&&!board.IsBusy&&!owner.HasAnimationActionInProgress,"second thrust and single settlement");
             board.LaneSlash-=slash;
             Assert.That(lanes,Is.EqualTo(new[]{false,true}),"column then row, once each");
+            Assert.That(heldHits,Is.Zero,"no attack during raise, warning, strikes or recovery");
+            Assert.That(heldAttack.IsPausedByAction,Is.False,"complete Bombardment releases its pause");
+            yield return Until(()=>heldAttack.RemainingAttackTime<heldTime-.1f,"cooldown resumes instead of resetting");
+            heldAttack.StopAttacking();
+            yield return Until(()=>run.Waves.ActiveEnemies.Count==3&&!owner.HasAnimationActionInProgress,"deferred reinforcement gesture");
             var bomb=EnemyAbilityMotionTests.ReadEntries().Single(e=>e.name=="King_Bombardment");var sprites=CombatActionImporter.LoadFrames(bomb.name);
             Assert.That(impactSprites,Is.EqualTo(bomb.impactFrames.Select(i=>sprites[i]).ToArray()),"each lane lands on its thrust drawing");
             for(int y=0;y<board.Height;y++)for(int x=0;x<board.Width;x++)if(board.IsCellPlayable(x,y))Assert.That(GetGrid()[x,y],Is.Not.Null,"final refill complete");
@@ -182,6 +205,7 @@ public sealed class EnemyAbilityPlayTests
             board.LaneSlash+=kill;SetProperty(threat,"DueMove",board.CompletedValidPlayerMoves);
             yield return Until(()=>owner.IsDefeated&&!board.IsBusy,"death settles partial footprint");board.LaneSlash-=kill;
             Assert.That(cancelledSlashes,Is.EqualTo(1));
+            Assert.That(heldAttack.IsPausedByAction,Is.False,"death releases Bombardment pause");
             Assert.That(errors,Is.Empty,string.Join("\n",errors));
             File.WriteAllText(Path.Combine(output,"validation.txt"),"PASS: approved ability states at both portrait sizes; actual queued casts, shield contact, pause, missing-art fallback, disable cancellation, King two-handed column/row contact, no intermediate refill, protected special and death cleanup.\n");
             SceneManager.LoadScene("MainMenu");yield return null;
@@ -200,7 +224,41 @@ public sealed class EnemyAbilityPlayTests
             var attack=actor.GetComponent<EnemyAutoAttack>();Set(attack,"attackAutomatically",false);attack.StopAttacking();
             actor.SetSpecialTurnRequirement(10000);actor.ResetSpecialCounter();
         }
+        // These cases measure animation contact, not random opening strength.
+        // Keep a real useful response available so interference placement is
+        // accepted by the production counterplay guard on every opening.
+        board.GetGem(0,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        Assert.That(CounterplayGuard.HasUsefulResponse(board.GetImmediateResponses(),run.Player,run.Waves),Is.True);
         yield return new WaitForSeconds(.4f);
+    }
+    private IEnumerator ReviewShieldClearance()
+    {
+        var slots=(EnemySlotUI[])Get(run.Waves,"enemySlots");
+        var slot=slots.First(s=>s.CurrentEnemy==owner);
+        var gem=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true);
+        var bar=slot.GetComponentInChildren<ModularHealthBarUI>();
+        var image=gem.GetComponent<Image>();
+        foreach(int height in new[]{1920,2400})
+        {
+            Resize(height);yield return Until(()=>Screen.width==1080&&Screen.height==height,"shield review viewport");
+            yield return null;yield return null;yield return null;
+            Vector3 before=bar.transform.InverseTransformPoint(gem.transform.position);
+            owner.GrantShield(10);yield return new WaitForSeconds(.6f);yield return null;
+            Assert.That(Vector3.Distance(bar.transform.InverseTransformPoint(gem.transform.position),before),Is.LessThan(.01f),"shield grant must not move the weakness gem relative to its HP bar");
+            var track=bar.transform.Find("ShieldTrack").GetComponent<Image>();
+            var config=(EnemyWeaknessIndicatorConfig)Get(gem,"config");
+            foreach(float scale in new[]{1f,config.MaterializeOvershootScale,config.DeathPopScale})
+            {
+                gem.transform.localScale=Vector3.one*scale;Canvas.ForceUpdateCanvases();
+                Assert.That(RectOf(image).yMax,Is.LessThan(RectOf(track).yMin),"shield must clear weakness gem at "+height+", scale "+scale);
+            }
+            gem.transform.localScale=Vector3.one;
+            ScreenCapture.CaptureScreenshot(Path.Combine(output,"ShieldKnight-clearance-"+height+".png"));
+            yield return new WaitForSecondsRealtime(.12f);
+            owner.TryTakeDamageWithoutFeedback(1000);yield return null;
+            Assert.That(bar.GetComponent<ShieldBarUI>().IsVisible,Is.False);
+            Assert.That(Vector3.Distance(bar.transform.InverseTransformPoint(gem.transform.position),before),Is.LessThan(.01f),"shield break must not move the weakness gem relative to its HP bar");
+        }
     }
     private IEnumerator ReviewPoses(string character)
     {

@@ -80,6 +80,13 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private readonly Dictionary<object, float> damageModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> speedModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> nextSequenceModifiers = new Dictionary<object, float>();
+    private readonly HashSet<object> actionPauses = new HashSet<object>();
+    public bool IsPausedByAction => actionPauses.Count > 0;
+    public void SetActionPaused(object owner, bool paused)
+    {
+        if (owner == null) return;
+        if (paused) actionPauses.Add(owner); else actionPauses.Remove(owner);
+    }
     public event Action<EnemyAutoAttack> NextSequenceModifiersChanged;
     public bool HasNextSequenceModifier(object owner) => nextSequenceModifiers.ContainsKey(owner);
     public bool CanCaptureContinuation => !isAttackSequenceInProgress && commandOwner==null;
@@ -254,6 +261,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         damageModifiers.Clear();
         speedModifiers.Clear();
         nextSequenceModifiers.Clear();
+        actionPauses.Clear();
 
         enemyStagger =
             GetComponent<EnemyStagger>();
@@ -766,10 +774,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                 }
 
                 /*
-                 * Stagger pauses the countdown without
+                 * Stagger and owned ability holds pause the countdown without
                  * resetting or reducing the stored time.
                  */
-                if (IsPausedByStagger)
+                if (IsPausedByStagger || IsPausedByAction)
                 {
                     yield return null;
                     continue;
@@ -1053,6 +1061,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             CanContinueAttackLoop() &&
             (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&
+            !IsPausedByAction &&
             !isAttackSequenceInProgress &&
             !isWaitingForAnimationImpact &&
             !isWaitingForPresentationImpact &&

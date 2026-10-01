@@ -62,6 +62,12 @@ TextureImporter:
   - first:
       213: -7517059748127231546
     second: SpearGuard_AutoAttack_09
+  - first:
+      213: 3338506227520737210
+    second: SpearGuard_AutoAttack_10
+  - first:
+      213: -4904810556885589956
+    second: SpearGuard_AutoAttack_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,7 +135,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -175,12 +181,12 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -188,21 +194,21 @@ TextureImporter:
       spriteID: a98ac308f6fd061e0800000000000000
       internalID: -2206518147425720166
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_01
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -210,21 +216,21 @@ TextureImporter:
       spriteID: e1cea5bff6853d750800000000000000
       internalID: 6328499139367332894
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_02
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -232,21 +238,21 @@ TextureImporter:
       spriteID: 08a22e89e63514320800000000000000
       internalID: 2540403399290137216
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_03
       rect:
         serializedVersion: 2
-        x: 192
+        x: 576
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -254,21 +260,21 @@ TextureImporter:
       spriteID: 834fccae5d2c32d20800000000000000
       internalID: 3252657579914753080
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_04
       rect:
         serializedVersion: 2
-        x: 256
+        x: 768
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -276,21 +282,21 @@ TextureImporter:
       spriteID: d5c5d989f10ef9210800000000000000
       internalID: 1342037640288754781
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_05
       rect:
         serializedVersion: 2
-        x: 320
+        x: 960
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -298,21 +304,21 @@ TextureImporter:
       spriteID: c11ce22e86eafb860800000000000000
       internalID: 7547943265990787356
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_06
       rect:
         serializedVersion: 2
-        x: 384
+        x: 1152
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -320,21 +326,21 @@ TextureImporter:
       spriteID: f9fb6129b2c9721e0800000000000000
       internalID: -2222636180135559265
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_07
       rect:
         serializedVersion: 2
-        x: 448
+        x: 1344
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -342,21 +348,21 @@ TextureImporter:
       spriteID: 5a370fe64f8665df0800000000000000
       internalID: -191850535074106459
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_08
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1536
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -364,21 +370,21 @@ TextureImporter:
       spriteID: d0203762f14a262f0800000000000000
       internalID: -981041315117334003
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearGuard_AutoAttack_09
       rect:
         serializedVersion: 2
-        x: 576
+        x: 1728
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -386,17 +392,61 @@ TextureImporter:
       spriteID: 6c13d757cf90ea790800000000000000
       internalID: -7517059748127231546
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf8dcbc9b1c45e20800000000000000
+      internalID: 3338506227520737210
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30af3a09cc9eebb0800000000000000
+      internalID: -4904810556885589956
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
@@ -415,6 +465,8 @@ TextureImporter:
       SpearGuard_AutoAttack_08: -981041315117334003
       SpearGuard_AutoAttack_09: -7517059748127231546
       SpearGuard_AutoAttack_1: -9216007792497231847
+      SpearGuard_AutoAttack_10: 3338506227520737210
+      SpearGuard_AutoAttack_11: -4904810556885589956
       SpearGuard_AutoAttack_2: -2935253096682595559
       SpearGuard_AutoAttack_3: -7528170719575514745
       SpearGuard_AutoAttack_4: 1472704754704027653
@@ -423,8 +475,8 @@ TextureImporter:
       SpearGuard_AutoAttack_7: -4396500835420491294
       SpearGuard_AutoAttack_8: -8619296456129941850
       SpearGuard_AutoAttack_9: 235858086028436896
-  mipmapLimitGroupName: 
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
