@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-02",
+  "method": "PixelLab exact pixel edits; no regenerated motions or timing changes",
+  "generations_spent": 0,
+  "assets": [
+    {
+      "name": "SpearKnight",
+      "source_commit": "216cb95cdd7c53f9d2861411dc4d1efe88a8ddcb",
+      "input": "SpearKnight_Original.gif",
+      "input_sha256": "566fb44bb7cedce5123fd9806c2514a522e822008795dbe0e54a0e0ecaeeac4d",
+      "operations": [
+        "SpearKnight_AutoAttack.edits.json",
+        "SpearKnight_AutoAttack.pass2.json"
+      ],
+      "pixel_tool_ids": [
+        "de6ea55c-6f9e-4a6c-b0e4-0d909dbf72aa",
+        "77f60445-849b-4559-8c75-bf2e57d7d2e9"
+      ],
+      "output_url": "https://api.pixellab.ai/mcp/pixel-tools/77f60445-849b-4559-8c75-bf2e57d7d2e9/animation.gif",
+      "output_sha256": "192d02145d81268031c84a6534143bb117729f805b68629b23695a75cca09dce"
+    },
+    {
+      "name": "RoyalLancer",
+      "source_commit": "216cb95cdd7c53f9d2861411dc4d1efe88a8ddcb",
+      "input": "RoyalLancer_Original.gif",
+      "input_sha256": "97815d3ef5d69c3f0e27bfae5381e87b40aba7e46e8839e96ed9bb223a454552",
+      "operations": [
+        "RoyalLancer_AutoAttack.edits.json",
+        "RoyalLancer_AutoAttack.pass2.json"
+      ],
+      "pixel_tool_ids": [
+        "3fe6d05d-0a00-4a51-8c1f-779573720022",
+        "bc29aeda-e709-4d56-9cc8-fc884666fe9f"
+      ],
+      "output_url": "https://api.pixellab.ai/mcp/pixel-tools/bc29aeda-e709-4d56-9cc8-fc884666fe9f/animation.gif",
+      "output_sha256": "4b3b3522ce085b00ef815c497ac53eee203e203ec070d718d538fbd5ac7e3810"
+    },
+    {
+      "name": "ShieldKnight",
+      "source_commit": "216cb95cdd7c53f9d2861411dc4d1efe88a8ddcb",
+      "input": "ShieldKnight_Original.gif",
+      "input_sha256": "9a3ed0653d19c91e7d3fcf96e6830e456b5a1f587f30f07e1f9688e8bfc1e170",
+      "operations": [
+        "ShieldKnight_AutoAttack.edits.json",
+        "ShieldKnight_AutoAttack.pass2.json"
+      ],
+      "pixel_tool_ids": [
+        "fffc6579-9969-457f-b6f4-95c2793cc0e6",
+        "adcd075a-51e3-48bd-bf97-92ab610a50b6"
+      ],
+      "output_url": "https://api.pixellab.ai/mcp/pixel-tools/adcd075a-51e3-48bd-bf97-92ab610a50b6/animation.gif",
+      "output_sha256": "099bd73361755e93b388a5593cc808671bb02bb937922ddfd6364eec8d0bce4f"
+    }
+  ]
+}

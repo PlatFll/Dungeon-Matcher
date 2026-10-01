@@ -175,21 +175,21 @@
   },
   {
     "name": "ShieldKnight",
-    "candidate": "ArtSource/EnemyAttacks/Refinements/ShieldKnightBash",
+    "candidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/ShieldKnight",
     "source": "ArtSource/RemainingCast/Recolored/ShieldKnight.png",
     "frames": [
       0,
+      1,
+      2,
       3,
+      4,
       5,
       6,
       7,
       8,
+      9,
       10,
-      12,
-      13,
-      14,
-      15,
-      0
+      11
     ],
     "durations": [
       80,
@@ -210,7 +210,7 @@
   },
   {
     "name": "RoyalLancer",
-    "candidate": "ArtSource/EnemyAttacks/Refinements/RoyalLancerPrepared",
+    "candidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/RoyalLancer",
     "source": "ArtSource/RemainingCast/Recolored/RoyalLancer.png",
     "frames": [
       0,
@@ -402,7 +402,7 @@
   },
   {
     "name": "SpearKnight",
-    "candidate": "ArtSource/EnemyAttacks/Refinements/SpearKnightPrepared",
+    "candidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/SpearKnight",
     "source": "ArtSource/RemainingCast/Recolored/SpearKnight.png",
     "frames": [
       0,

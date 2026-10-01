@@ -25,6 +25,8 @@ The original concept gallery is retained as review history. Current runtime beha
 
 ## October 2 motion refinements
 
+The equipment correction in `Refinements/EquipmentCleanup/` is the final production revision for Spear Knight, Royal Lancer and Shield Knight auto-attacks. It removes the invented back shields and sword, and keeps Spear Knight's original narrow helmet slit throughout the motion. `selected.json` points to these corrected frames. The Shield Knight ability and all motion timings remain the approved versions.
+
 `Refinements/jobs.json` and `pose-jobs.json` record PixelLab prompts and job IDs. The accepted source folders retain original downloaded PNGs and SHA-256 records. `selected.json` and `abilities.json` identify the production exposures. First-pass spear loops are rejected because they swing the weapon; the pinned `*Thrust` variants are authoritative.
 
 The three spear attacks use 192 × 80 production canvases. `StageThrusts.js` keeps the boots aligned and adds a short draw-back and straight upper-body extension in whole pixels before palette finishing. No character pixels are scaled. Every auto-attack still lasts 680 ms and applies damage at its authored contact.

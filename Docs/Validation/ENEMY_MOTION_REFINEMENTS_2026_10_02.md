@@ -27,3 +27,13 @@ Seven changed clips passed checks for native canvas dimensions, binary alpha and
 Desktop Editor and automated production-scene checks do not establish Android/device testing.
 
 The animation fixtures retain a real color-crystal response so the game's counterplay guard can accept interference on random openings. Viewport checks inspect every nontransparent texel of expanded canvases while still checking native scale, fixed floor and center. Empty margins may extend outside the viewport; visible artwork may not.
+
+## Equipment correction after visual review
+
+The user approved the motion and identified generated equipment that does not belong to the characters. Royal Lancer and Spear Knight now have no back shields; Shield Knight's bash has no sword. Spear Knight's original narrow helmet slit and brow are copied at the head's existing position in every frame. Armor, hands, spear shafts and cape edges were inspected after removal.
+
+PixelLab's exact pixel-edit workbench performed the repairs without regenerating the motion. This used zero additional generations. `ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/` retains the original loops, both edit passes, tool IDs, source/output hashes and corrected frames. `Tools/Stage-EquipmentCorrections.ps1` converts the reviewed GIFs to RGBA in LibreSprite and recreates the editable sources and game exports.
+
+All three clips retain 12 frames, their original per-frame exposures, 680 ms duration and exact idle endpoints. Every visible pixel in the production PNGs matches the edited PixelLab output. Native sources are RGBA; Unity PNGs match their source exports. Existing animation clips, importer settings and gameplay code were unchanged by this follow-up.
+
+The fresh `PixelLabAttackPlayTests` rendered check passed (1 passed, zero failed/skipped), exercising all 16 attacks at both portrait sizes. Results: `.utmp/equipment-visual-tests.xml` and `.log`; refreshed captures: `.utmp/EnemyAttacksReview/`. The earlier gameplay regression and required Unity validator evidence above remains applicable to the unchanged code.

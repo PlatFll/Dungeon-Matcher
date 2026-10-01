@@ -235,17 +235,17 @@
       },
       "selectedFrames": [
         0,
+        1,
+        2,
         3,
+        4,
         5,
         6,
         7,
         8,
+        9,
         10,
-        12,
-        13,
-        14,
-        15,
-        0
+        11
       ],
       "durationsMs": [
         80,
@@ -267,8 +267,8 @@
         0,
         255
       ],
-      "sha256": "a7681d5eb9dd6ee95b56e79ad430d716cf41bf0fa06f92ba839c64c9a23033e5",
-      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/ShieldKnightBash"
+      "sha256": "eff82a7ddc9dad10434b2a2f03b4e6f1ffe72d38d4451a7b1187a0295d3f55db",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/ShieldKnight"
     },
     {
       "name": "RoyalLancer",
@@ -311,8 +311,8 @@
         0,
         255
       ],
-      "sha256": "aba1dcfd255aa0e741a3f23e613345f6fd22713be85ca64ba09c6391b5f6694b",
-      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/RoyalLancerPrepared"
+      "sha256": "c9f3e5731c40fc3f54735425831fb9c43b19dcfa826732ea80210b370627beac",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/RoyalLancer"
     },
     {
       "name": "RoyalArchbishop",
@@ -553,8 +553,8 @@
         0,
         255
       ],
-      "sha256": "a187429a429415ca2ff74dd059817121d5d4d96a381d9a5769b571d35a147dce",
-      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/SpearKnightPrepared"
+      "sha256": "a885999b6400fe43576dbf4dee75992b6b1ddeef7149fc3c3df49d1023b39e27",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/SpearKnight"
     },
     {
       "name": "RoyalSwordsman",
@@ -1252,5 +1252,12 @@
     "finishing": "Refinements/StageThrusts.js",
     "spent_generations": 24,
     "changes": "Three two-handed spear thrusts, shield bash and moving shield raise, King preparation and idle recovery."
+  },
+  "equipment_correction": {
+    "date": "2026-10-02",
+    "provenance": "Refinements/EquipmentCleanup/provenance.json",
+    "finishing": "Tools/Stage-EquipmentCorrections.ps1",
+    "generations_spent": 0,
+    "changes": "Remove invented shields from Royal Lancer and Spear Knight; remove Shield Knight sword; pin Spear Knight narrow helmet slit to its original drawing."
   }
 }
