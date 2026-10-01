@@ -14,7 +14,7 @@ The fallback authored environment is:
 
 `Assets/_Game/Resources/BattleEnvironments/Dungeon_Default.prefab`
 
-When `BattleBackground` has no `BattleEnvironmentRoot` child, `BattleBackgroundTilemapController` loads this prefab from `Resources/BattleEnvironments/Dungeon_Default`.
+When `BattleBackground` has no `BattleEnvironmentRoot` child, `BattleBackgroundTilemapController` uses its optional serialized `environmentPrefab`. If missing, it loads `Resources/BattleEnvironments/Dungeon_Default`.
 
 In Edit Mode the controller instantiates it as a real prefab instance. In Play Mode it instantiates it normally. If an environment prefab instance is already present beneath `BattleBackground`, that instance is used instead of creating the default.
 
@@ -108,3 +108,21 @@ Do not create a second placement/masking controller per environment.
 `BattleBackgroundTilemapController` still falls back to direct descendant Tilemaps when no `BattleEnvironmentRoot` exists. This preserves compatibility with the pre-prefab scene hierarchy during migration.
 
 Once an environment prefab is present, only Tilemaps beneath that `BattleEnvironmentRoot` are treated as the authored battle environment. The older scene-owned Grid can therefore be removed after local painted content, if any, has been migrated into the prefab.
+
+## Finalized visual target candidate
+
+`Game.unity` selects `Resources/BattleEnvironments/Dungeon_Finalized.prefab`.
+It is a focused duplicate with the same unit Grid, four Tilemaps and renderer
+orders. The center 8×6 cells exactly reproduce the native 512×384 master.
+Connected architecture/dressing is baked into BackWall; Floor carries the ledge
+and foundation. Architecture and BackDecor remain available for future painting.
+Quiet wall/foundation modules extend into overscan; decorative crown art does
+not repeat above the scene. BackWall/Floor have an authored +0.75 y offset so
+the 48-pixel walk plane aligns with the established floor baseline. Actor
+transforms and runtime placement/masking algorithms are unchanged.
+
+Choose `FinalizedDungeonPalette` in Unity's Tile Palette window for the thirteen
+reusable terrain pieces. Separate transparent architecture and props are under
+`Assets/_Game/Art/FinalizedVisuals/Environment/Props`. Editable native sources,
+master, baked cells, palettes and hashes are in `ArtSource/FinalizedVisuals/`.
+All new visuals remain candidates pending approval of the real Unity screens.

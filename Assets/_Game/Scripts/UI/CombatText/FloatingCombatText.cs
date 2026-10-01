@@ -240,6 +240,7 @@ public sealed class FloatingCombatText :
         textLabel.color =
             baseColor;
 
+        PixelTextFitter.Apply(textLabel, style.FontSize);
         textLabel.alpha = 1f;
 
         if (textLabel.canvasRenderer != null)

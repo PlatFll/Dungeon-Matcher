@@ -15,7 +15,7 @@ MonoBehaviour:
   fallbackStyle:
     kind: 0
     color: {r: 1, g: 1, b: 1, a: 1}
-    fontSize: 32
+    fontSize: 20
     fontStyle: 0
     lifetime: 0.75
     travelDistance: {x: 0, y: 25}
@@ -25,21 +25,81 @@ MonoBehaviour:
     peakScale: 1
   styles:
   - kind: 0
-    color: {r: 1, g: 1, b: 1, a: 0}
-    fontSize: 32
+    color: {r: 1.000000, g: 1.000000, b: 1.000000, a: 1}
+    fontSize: 20
     fontStyle: 0
-    lifetime: 0.7
-    travelDistance: {x: 0, y: 25}
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
     horizontalJitter: 4
     fadeStartNormalized: 0.55
     startScale: 1
     peakScale: 1
   - kind: 1
-    color: {r: 0, g: 0.7075472, b: 0.075434856, a: 0}
-    fontSize: 32
+    color: {r: 0.384314, g: 0.874510, b: 0.513725, a: 1}
+    fontSize: 20
     fontStyle: 0
-    lifetime: 0.8
-    travelDistance: {x: 0, y: 25}
+    lifetime: .9
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 2
+    color: {r: 1.000000, g: 0.827451, b: 0.431373, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 3
+    color: {r: 0.223529, g: 0.501961, b: 0.266667, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 4
+    color: {r: 0.541176, g: 0.705882, b: 0.819608, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 5
+    color: {r: 0.705882, g: 0.662745, b: 0.768627, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 6
+    color: {r: 0.333333, g: 0.788235, b: 1.000000, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .9
+    travelDistance: {x: 0, y: 28}
+    horizontalJitter: 4
+    fadeStartNormalized: 0.55
+    startScale: 1
+    peakScale: 1
+  - kind: 7
+    color: {r: 0.937255, g: 0.643137, b: 0.356863, a: 1}
+    fontSize: 20
+    fontStyle: 0
+    lifetime: .75
+    travelDistance: {x: 0, y: 28}
     horizontalJitter: 4
     fadeStartNormalized: 0.55
     startScale: 1

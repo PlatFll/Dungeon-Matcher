@@ -51,7 +51,6 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private float targetCharge;
     private float chargeVelocity;
     private bool hasInitializedCharge;
-    private Text energyAmount;
 
     private void Awake()
     {
@@ -69,7 +68,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         ApplyBottomHudLayout();
         energyBarMaximumWidth = 64f;
-        energyAmount=GameUi.Label("EnergyAmount",transform,"",new Vector2(176,22),new Vector2(0,86),17);
+        BuildFinalizedEnergyBar();
     }
 
     private void OnEnable()
@@ -124,8 +123,6 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private void Update()
     {
         RefreshAvailability();
-        if(energyAmount!=null&&playerAbilityController!=null)
-            energyAmount.text=$"Energy {playerAbilityController.CurrentEnergy} / {playerAbilityController.RequiredEnergy}";
 
         if (!hasInitializedCharge)
         {
@@ -260,7 +257,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
         if (energyFill != null)
         {
             energyFill.fillAmount =
-                Mathf.Round(normalizedCharge * 64f) / 64f;
+                Mathf.Round(normalizedCharge * energyBarMaximumWidth) / Mathf.Max(1, energyBarMaximumWidth);
         }
 
         if (energyBarFillMask == null)
@@ -287,6 +284,39 @@ public sealed class AbilityButtonUI : MonoBehaviour
         RepositionAbilityEnergyBar();
     }
 
+    private void BuildFinalizedEnergyBar()
+    {
+        var frame = FinalizedUiSkin.Load("EnergyFrame");
+        var track = FinalizedUiSkin.Load("EnergyTrack");
+        var fill = FinalizedUiSkin.Load("EnergyFill");
+        if (frame == null || track == null || fill == null) return;
+        if (transform.Find(AbilityEnergyBarName) is not RectTransform root) return;
+        foreach (Transform child in root) child.gameObject.SetActive(false);
+        if (root.TryGetComponent<Image>(out var oldImage)) oldImage.enabled = false;
+        root.localRotation = Quaternion.identity; root.sizeDelta = new Vector2(144,32);
+        root.anchoredPosition = new Vector2(0,50);
+        energyBarMaximumWidth = 107;
+        var empty = EnergyImage("EmptyEnergyTrack", root, track, new Vector2(107,8), new Vector2(-.5f,-1));
+        empty.rectTransform.anchorMin = empty.rectTransform.anchorMax = new Vector2(0,.5f);
+        empty.rectTransform.pivot = new Vector2(0,.5f); empty.rectTransform.anchoredPosition = new Vector2(18,-1);
+        energyBarFillMask = GameUi.Rect("EnergyFillMask", root, new Vector2(107,8), Vector2.zero);
+        energyBarFillMask.anchorMin = energyBarFillMask.anchorMax = new Vector2(0,.5f);
+        energyBarFillMask.pivot = new Vector2(0,.5f); energyBarFillMask.anchoredPosition = new Vector2(18,-1);
+        energyBarFillMask.gameObject.AddComponent<RectMask2D>();
+        energyFill = EnergyImage("EnergyFill", energyBarFillMask, fill, new Vector2(107,8), Vector2.zero);
+        energyFill.rectTransform.anchorMin = energyFill.rectTransform.anchorMax = new Vector2(0,.5f);
+        energyFill.rectTransform.pivot = new Vector2(0,.5f);
+        EnergyImage("EnergyFrame", root, frame, new Vector2(144,32), Vector2.zero).type = Image.Type.Simple;
+    }
+
+    private static Image EnergyImage(string name, Transform parent, Sprite sprite, Vector2 size, Vector2 position)
+    {
+        var rect = GameUi.Rect(name,parent,size,position);
+        var image = rect.gameObject.AddComponent<Image>();
+        image.sprite = sprite; image.type = Image.Type.Tiled; image.color = Color.white; image.raycastTarget = false;
+        return image;
+    }
+
     private void ApplyAbilityButtonSize()
     {
         RectTransform buttonRect =
@@ -299,7 +329,8 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         buttonRect.localScale = Vector3.one;
         buttonRect.anchorMin = buttonRect.anchorMax = buttonRect.pivot = new Vector2(0.5f, 0.5f);
-        buttonRect.anchoredPosition = new Vector2(0f, -24f);
+        // Center the combined button and bar bounds (-32..66) in the enclosure.
+        buttonRect.anchoredPosition = new Vector2(0f, -17f);
         buttonRect.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Horizontal,
             AbilityButtonWidth
@@ -320,6 +351,15 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
         if (energyBarTransform is not RectTransform energyBarRect)
         {
+            return;
+        }
+
+        if (energyBarRect.Find("EnergyFrame") != null)
+        {
+            energyBarRect.localRotation = Quaternion.identity;
+            energyBarRect.localScale = Vector3.one;
+            energyBarRect.sizeDelta = new Vector2(144,32);
+            energyBarRect.anchoredPosition = new Vector2(0,50);
             return;
         }
 

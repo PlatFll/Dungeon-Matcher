@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-29",
+  "service": "PixelLab",
+  "balanceBefore": 663,
+  "cost": 4,
+  "reference": "FinalizedVisuals purple dungeon UI; supplied visual targets",
+  "requests": [
+    {
+      "key": "PowerupTile",
+      "width": 32,
+      "height": 32,
+      "seed": 290926,
+      "description": "One native 32x32 pixel-art powerup button backing for a whimsical purple dungeon game. A bright solid amethyst stone tile, front-facing square with gently stepped 2px corners. Full bright lavender-plum top face with a small top-left highlight plane and a thin darker lower thickness edge only. NOT a frame: no outline rim, no border around the face, no inset center, no icon, no gems or jewels or lettering. Quiet connected pixel clusters so a separate 24px potion or bomb sits clearly on it. Palette #846a95 #67537e #4e3d6c #aa8bb9 #3a2d51. Crisp native pixels and binary transparent background outside the tile, no gradients, antialiasing, noise, glow, cast shadow or perspective diamond."
+    },
+    {
+      "key": "HealthPotion",
+      "width": 24,
+      "height": 24,
+      "seed": 290927,
+      "description": "One native 24x24 pixel-art health potion icon for whimsical nostalgic Dungeon Matcher. A charming round squat glass flask filled with vivid ruby-red healing liquid, short neck with chunky brown cork, small brass lip, pale blue glass edge and one strong top-left cream reflection. Clear compact silhouette within 2px canvas margin. A single tiny white plus sign on the red liquid makes healing readable. Dark violet/nearblack outline #151423, ruby #d63850 #ef666d, glass #68d4cb #e0e2cb, cork #ad793d. Connected hard pixel clusters, medium detail at native scale, no tiny scattered pixels, no gradient, antialiasing, blur, glow, floor or background. Transparent outside bottle. Matches cute 64px dungeon characters and rich purple UI."
+    },
+    {
+      "key": "Bomb",
+      "width": 24,
+      "height": 24,
+      "seed": 290928,
+      "description": "One native 24x24 pixel-art powerup bomb icon for whimsical nostalgic Dungeon Matcher. Round plump charcoal-iron bomb body tilted slightly, short brass fuse socket at upper right, bent chunky rope fuse ending in a small crisp yellow-orange spark. Broad slate blue/purple iron facets with a bright pale upper-left reflection, readable dark outline, subtle brass rivet. Compact entire silhouette within1px margin; distinguish the spherical body from the dark dungeon with a lit top-left plane. Palette #151423 #39414b #69737a #a9b2a8 #ddb75d #ffe3a0 #ef666d. Clean connected hard pixels, no gradients, antialiasing, blur, glow, floor or background. Transparent outside icon. No text, no skull, no border or container."
+    }
+  ],
+  "results": [
+    {
+      "name": "PowerupTile",
+      "job": "11c5b28d-7215-47a9-ba69-34b067583273",
+      "accepted": false,
+      "reason": "Rounded jewel shape; requested solid tile."
+    },
+    {
+      "name": "Potion",
+      "job": "8f476f18-f6f6-4735-9163-22f5312a5398",
+      "accepted": true,
+      "native": [
+        24,
+        24
+      ]
+    },
+    {
+      "name": "Bomb",
+      "job": "5eba0de8-8ae6-4f92-a834-0e8cb3d826e7",
+      "accepted": true,
+      "native": [
+        24,
+        24
+      ]
+    },
+    {
+      "name": "PowerupTileFixed",
+      "job": "8ab2b5dc-abb9-4e65-87d5-d5d7adb6f273",
+      "accepted": true,
+      "native": [
+        32,
+        32
+      ],
+      "parent": "11c5b28d-7215-47a9-ba69-34b067583273"
+    }
+  ],
+  "finishing": "LibreSprite FinishHud.js: palette restriction, binary alpha, color-only interaction states, editable native ASE and PNG."
+}

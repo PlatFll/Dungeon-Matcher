@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -31,7 +32,7 @@ public sealed class MainMenuController : MonoBehaviour
 
     private bool isLoadingGame;
     private ShopMenuController shopScreen;
-    private Text accountLabel;
+    private TMP_Text accountLabel;
     private RectTransform challengePanel;
     private Button endSavedRun;
 
@@ -191,7 +192,7 @@ public sealed class MainMenuController : MonoBehaviour
             title.SetParent(homeScreen.transform, false);
             title.anchorMin=title.anchorMax=title.pivot=new Vector2(.5f,.5f);
             title.anchoredPosition=new Vector2(0,240);title.sizeDelta=new Vector2(420,100);
-            title.GetComponent<Text>().fontSize=36;
+            title.GetComponent<TMP_Text>().fontSize=36;
         }
         var playRect=(RectTransform)playButton.transform;
         playRect.SetParent(homeScreen.transform,false);
@@ -206,6 +207,9 @@ public sealed class MainMenuController : MonoBehaviour
         endSavedRun=GameUi.Button("EndSavedRun",homeScreen.transform,"End saved run",new Vector2(300,44),new Vector2(0,-302),ConfirmEndSavedRun);
         accountLabel=GameUi.Label("AccountSummary",homeScreen.transform,"",new Vector2(420,76),new Vector2(0,130),21);
         DungeonPresentationArt.InstallMenu(homeScreen, title);
+        FinalizedUiSkin.Button(playButton);
+        FinalizedUiSkin.Button(gemMasteryButton);
+        FinalizedUiSkin.Button(gemMasteryBackButton);
         AccountProgression.Current.Changed += RefreshAccount;
         CharacterSelectionSettings.Changed += RefreshAccount;
     }
@@ -216,7 +220,7 @@ public sealed class MainMenuController : MonoBehaviour
         string id=run?.playerId ?? CharacterSelectionSettings.SelectedPlayerId;
         PlayerDefinitionRegistry.TryGetDefinition(id,out var definition);
         accountLabel.text=$"{(run!=null?"Saved: ":"")}{(definition != null ? definition.DisplayName : id)} - Level {run?.level ?? AccountProgression.Current.Level(id)}\nGold Coins: {AccountProgression.Current.Gold}";
-        playButton.GetComponentInChildren<Text>().text=run==null?"Play":"Continue wave "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
+        playButton.GetComponentInChildren<TMP_Text>().text=run==null?"Play":"Continue wave "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
         if(endSavedRun!=null) endSavedRun.gameObject.SetActive(run!=null);
     }
     private void ConfirmEndSavedRun()

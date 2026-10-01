@@ -17,6 +17,8 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     [SerializeField] private RectTransform battleFloorAnchor;
     [SerializeField] private RectTransform battleArea;
     [SerializeField] private Camera worldCamera;
+    [SerializeField, Tooltip("Optional authored environment. The default dungeon is used when this is missing.")]
+    private GameObject environmentPrefab;
 
     private SpriteMask viewportMask;
     private Sprite maskSprite;
@@ -103,7 +105,8 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
         ResolveEnvironmentInstance();
         if (activeEnvironment != null) return;
 
-        GameObject prefab = Resources.Load<GameObject>(DefaultEnvironmentResourcePath);
+        GameObject prefab = environmentPrefab != null
+            ? environmentPrefab : Resources.Load<GameObject>(DefaultEnvironmentResourcePath);
         if (prefab == null)
         {
             Debug.LogWarning(

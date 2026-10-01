@@ -21,6 +21,11 @@ public sealed class ModularHealthBarStyle : ScriptableObject
     [Tooltip("Right/end cap sprite. This piece is never stretched.")]
     private Sprite endPiece;
 
+    [Header("Native Pixel Artwork (Optional)")]
+    [SerializeField] private Sprite badge;
+    [SerializeField] private Sprite emptyTrack;
+    [SerializeField] private Sprite fillStrip;
+
     [Header("Fill")]
     [SerializeField]
     [Tooltip("Color shown in the missing-health portion inside the frame.")]
@@ -53,6 +58,9 @@ public sealed class ModularHealthBarStyle : ScriptableObject
     public Sprite StartPiece => startPiece;
     public Sprite MiddlePiece => middlePiece;
     public Sprite EndPiece => endPiece;
+    public Sprite Badge => badge;
+    public Sprite EmptyTrack => emptyTrack;
+    public Sprite FillStrip => fillStrip;
     public Color EmptyFillColor => emptyFillColor;
     public Color FillColor => fillColor;
     public float FillInsetLeft => fillInsetLeft;

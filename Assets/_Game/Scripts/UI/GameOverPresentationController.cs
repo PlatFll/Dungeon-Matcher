@@ -570,6 +570,13 @@ public sealed class GameOverPresentationController : MonoBehaviour
                 4f
             );
 
+        if (FinalizedUiSkin.Load("PanelTall") != null)
+        {
+            FinalizedUiSkin.Panel(panelObject.GetComponent<Image>(), true);
+            accentRect.GetComponent<Image>().enabled = false;
+            faceRect.GetComponent<Image>().enabled = false;
+        }
+
         TMP_FontAsset font =
             ResolveUiFont();
 
@@ -601,7 +608,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         viewport.gameObject.AddComponent<Image>().color=Color.clear;
         viewport.gameObject.AddComponent<RectMask2D>();
         var recap=GameUi.Label("BuildRecap",viewport,"Your build: "+BuildNames(),new Vector2(390,90),Vector2.zero,17);
-        recap.alignment=TextAnchor.UpperLeft;
+        recap.alignment=TextAlignmentOptions.TopLeft;
         recap.rectTransform.anchorMin=recap.rectTransform.anchorMax=recap.rectTransform.pivot=new Vector2(.5f,1);
         recap.rectTransform.anchoredPosition=Vector2.zero;
         recap.rectTransform.sizeDelta=new Vector2(390,Mathf.Max(90,recap.preferredHeight));
@@ -763,6 +770,12 @@ public sealed class GameOverPresentationController : MonoBehaviour
             Vector2.zero,
             new Vector2(140f, 38f)
         );
+
+        if (FinalizedUiSkin.Load("ButtonSmallNormal") != null)
+        {
+            innerFace.GetComponent<Image>().enabled = false;
+            FinalizedUiSkin.Button(button, true);
+        }
 
         return button;
     }

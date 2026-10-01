@@ -45,7 +45,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         var bottom = GameObject.Find("BottomHUD");
         if (player == null || bottom == null) return;
         AddTiledPanel(player.transform, "PlayerDungeonBackdrop", 8, new Color(.55f,.55f,.65f,1));
-        AddTiledPanel(bottom.transform, "BottomDungeonBackdrop", 16, Color.white);
+        AddTiledPanel(bottom.transform, "BottomDungeonBackdrop", 16, new Color(.55f,.55f,.65f,1));
         panelsReady = true;
     }
 

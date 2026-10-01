@@ -2,7 +2,7 @@
 
 **Version:** 1.9
 **Compiled:** 2026-09-19
-**Updated for background-only dungeon refinement:** 2026-09-22
+**Updated for finalized visual target candidates:** 2026-09-28
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -710,3 +710,25 @@ character, animation, gem, frame, menu, consumable, VFX and audio assets. The
 reference board and approved character palettes remain unchanged.
 
 **End principle:** Preserve the recognizable character. Make every color and shading cluster serve a material or a readable form. Match the cast's visual language without turning distinct characters into copies of one another.
+
+### v2.0 review candidate — 2026-09-28
+
+The two visual targets in `references/FinalizedVisualTargets/` guide this pass.
+They are reference images, never game textures. `ArtSource/FinalizedVisuals/`
+contains the PixelLab lineage, 127 native PNGs and matching LibreSprite sources.
+The 512×384 scene uses four wall rows, one floor row and one foundation row;
+13 reusable terrain tiles and 19 transparent architecture/prop modules remain
+editable separately. The selected `Dungeon_Finalized` prefab preserves the
+existing projection, mask, floor anchor, unit Grid and four Tilemap roles.
+
+The shared UI family adds blank purple control states, inset/tall panels, wave
+plaque, gear, teal energy and the DUNGEON MATCHER wordmark with opposed pink
+facets. Runtime labels use TextMeshPro. Left badges distinguish Player heart,
+Normal skull, Special amethyst, Miniboss horned skull and Boss crowned ruby.
+All HP fills use the same red strip. Shield presentation remains separate.
+
+Status: review candidate. This entry does not approve the new art. Review the
+actual 1080×1920 and 1080×2400 evidence in
+`Docs/Validation/FINALIZED_VISUAL_TARGETS_V2.md` before approving replacements.
+The existing character reference board, cast/animation, gem and locked frame
+colors remain authoritative.
