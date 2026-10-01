@@ -228,10 +228,10 @@
     },
     {
       "name": "ShieldKnight",
-      "jobId": "e5d6e339-e845-4fee-876d-0b23874d0356",
+      "jobId": "52b14fe9-1eaa-4745-843f-b1f232389648",
       "canvas": {
-        "w": 64,
-        "h": 64
+        "w": 96,
+        "h": 80
       },
       "selectedFrames": [
         0,
@@ -242,33 +242,40 @@
         5,
         6,
         7,
-        8
+        8,
+        9,
+        10,
+        11
       ],
       "durationsMs": [
         80,
-        80,
-        80,
-        80,
-        80,
-        80,
-        80,
+        60,
+        60,
+        40,
+        40,
+        40,
+        60,
+        60,
+        60,
+        60,
         60,
         60
       ],
-      "impactFrame": 4,
+      "impactFrame": 6,
       "impactMs": 320,
       "alphaValues": [
         0,
         255
       ],
-      "sha256": "cd949146428a0cdf603cedc94fd7bb4754384b9c48e6bc83e7b59275013eac5c"
+      "sha256": "eff82a7ddc9dad10434b2a2f03b4e6f1ffe72d38d4451a7b1187a0295d3f55db",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/ShieldKnight"
     },
     {
       "name": "RoyalLancer",
-      "jobId": "80872bd4-1d5c-483c-9e03-e0b9a2af6c54",
+      "jobId": "cfc399dd-0765-4acb-87c8-34748f1dc267",
       "canvas": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 80
       },
       "selectedFrames": [
         0,
@@ -279,26 +286,33 @@
         5,
         6,
         7,
-        8
+        8,
+        9,
+        10,
+        11
       ],
       "durationsMs": [
-        80,
-        80,
-        80,
-        80,
-        80,
-        80,
-        80,
+        70,
+        50,
+        50,
+        50,
+        50,
+        30,
         60,
-        60
+        40,
+        60,
+        60,
+        60,
+        100
       ],
-      "impactFrame": 4,
-      "impactMs": 320,
+      "impactFrame": 6,
+      "impactMs": 300,
       "alphaValues": [
         0,
         255
       ],
-      "sha256": "8cea0cba4242f281f8d8b738e421b8a7a537a6415b1f1a2be558295cce4de80f"
+      "sha256": "c9f3e5731c40fc3f54735425831fb9c43b19dcfa826732ea80210b370627beac",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/RoyalLancer"
     },
     {
       "name": "RoyalArchbishop",
@@ -456,81 +470,91 @@
     },
     {
       "name": "SpearGuard",
-      "jobId": "92643e46-c07b-4c6c-b139-fd788c616e23",
+      "jobId": "1809224c-3708-4197-bcbe-72d996a4f1e6",
       "canvas": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 80
       },
       "selectedFrames": [
         0,
         1,
         2,
         3,
+        4,
+        5,
         6,
         7,
         8,
         9,
         10,
-        16
+        11
       ],
       "durationsMs": [
-        60,
-        60,
-        60,
-        100,
-        40,
         70,
-        60,
         50,
-        80,
+        50,
+        50,
+        50,
+        30,
+        60,
+        40,
+        60,
+        60,
+        60,
         100
       ],
-      "impactFrame": 5,
-      "impactMs": 320,
+      "impactFrame": 6,
+      "impactMs": 300,
       "alphaValues": [
         0,
         255
       ],
-      "sha256": "5d9d809f5a66a90be28b5e4dd8d58b666c17204e6e8a2cafcd7113fe8f0b56b7"
+      "sha256": "8ad67a4c2b05b6c84170d331a56b62a8fbbb8085de3b1621deaf664ff8c18131",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/SpearGuardPrepared"
     },
     {
       "name": "SpearKnight",
-      "jobId": "a7f8efa0-74a1-4237-973c-bfe854aefd69",
+      "jobId": "d08a026c-50e6-4bca-a7f0-4988265b6d4f",
       "canvas": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 80
       },
       "selectedFrames": [
         0,
         1,
         2,
         3,
+        4,
         5,
         6,
+        7,
         8,
         9,
         10,
-        16
+        11
       ],
       "durationsMs": [
-        60,
-        60,
-        60,
-        100,
-        40,
         70,
-        60,
         50,
-        80,
+        50,
+        50,
+        50,
+        30,
+        60,
+        40,
+        60,
+        60,
+        60,
         100
       ],
-      "impactFrame": 5,
-      "impactMs": 320,
+      "impactFrame": 6,
+      "impactMs": 300,
       "alphaValues": [
         0,
         255
       ],
-      "sha256": "1f87757c160c4d80b908f7e021321945df08595c8bc1f458cc4b58509ba847d8"
+      "sha256": "a885999b6400fe43576dbf4dee75992b6b1ddeef7149fc3c3df49d1023b39e27",
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/EquipmentCleanup/SpearKnight"
     },
     {
       "name": "RoyalSwordsman",
@@ -1027,19 +1051,20 @@
     {
       "name": "ShieldKnight_Ability",
       "size": [
-        64,
-        64
+        96,
+        80
       ],
-      "frames": 15,
-      "duration_ms": 900,
+      "frames": 13,
+      "duration_ms": 830,
       "impact_frames": [
         6
       ],
       "sha256": {
-        "png": "e3f8313a3efdc7cf81008370b3de05dd2557562cd39702a5ba5d3b6b348b8dd5",
-        "aseprite": "a65168b127499d2b304170130ff62e9abf1a83df532e382ad5db9853b59708be",
-        "json": "b994cfe558a229afd3f56e04e57b2cbfaf15859acd897675fab0f380018bbfd8"
-      }
+        "png": "42100a57a452d6f080c62a4115c4c4e1999382a1a66d2fc051d984d8b3b5d1d9",
+        "aseprite": "01d7ae77b51b07f9008dd8ce26eca62c920845145db40b97890e58e4808a460d",
+        "json": "f90d5dccee5bb01184d221ea05046d7ed893457025ae40101a53cd14069c76f4"
+      },
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/ShieldKnightGuard"
     },
     {
       "name": "TownMarshal_Ability",
@@ -1166,16 +1191,17 @@
         96,
         80
       ],
-      "frames": 5,
-      "duration_ms": 400,
+      "frames": 8,
+      "duration_ms": 490,
       "impact_frames": [
-        3
+        6
       ],
       "sha256": {
-        "png": "09bb6eeb5c6f9067492037703f6e903c2d14d09d570e74355d80a4e2d879bd72",
-        "aseprite": "45c223d5daf6d299d355dfd8ce84bdc04f89f1c6e9cfa6aaa546b76b77e05fbf",
-        "json": "54d0a978c47c90b22de7e8bba64dca5f5f18035ac51b6196e1ca54fc2ba19161"
-      }
+        "png": "8a193d8d7370af51a01a986f0b5c4b43e631ae5f61206aac77403d0eef47c5e7",
+        "aseprite": "a09e37952f93f96af7454c964fcc784872af62c9ff32603f54160369f7c3e732",
+        "json": "0e0f56d787ec6d254fcc0b5ff06876efc6b011c4162d40e16aa90948cc31bae9"
+      },
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/KingRaisePrepared"
     },
     {
       "name": "King_BombardmentReady",
@@ -1198,24 +1224,40 @@
         96,
         80
       ],
-      "frames": 20,
-      "duration_ms": 1400,
+      "frames": 22,
+      "duration_ms": 1560,
       "impact_frames": [
         3,
         13
       ],
       "sha256": {
-        "png": "87d98c3f03e6f603997a70ba182207b04ce732b085114a38a7caa5d18f068439",
-        "aseprite": "82623b84b14d11748d35df7e3a9c47537590a0e924a4cbed63cb466e83820f9a",
-        "json": "3227ecc82ea76c4f9539551c3bd6102af938c3532e46779c3421726fb4678ea1"
-      }
+        "png": "fa56ed5c9533e2232e9fd9a2f71514f52cc60c578914124d66a2b9b118aafeeb",
+        "aseprite": "507964bf970fffbc49d81708db3147db17c5da2cb56e52cfd071565293afed52",
+        "json": "fddc80c65a830ac8c03975c4f633c8685fcb4168911a8d33a2466cb0254b1d3b"
+      },
+      "sourceCandidate": "ArtSource/EnemyAttacks/Refinements/KingBombardmentPrepared"
     }
   ],
   "ability_approval": "All concepts accepted; Royal Gold selected, with two-handed King thrust and raised blue Shield Knight revision.",
   "pixellab_balance": {
-    "generations_used": 47,
-    "remaining": 1953,
-    "checked": "2026-10-01",
+    "generations_used": 71,
+    "remaining": 1929,
+    "checked": "2026-10-02",
     "paid_credit_balance_usd": 0
+  },
+  "motion_refinement": {
+    "date": "2026-10-02",
+    "provenance": "Refinements/jobs.json",
+    "pose_provenance": "Refinements/pose-jobs.json",
+    "finishing": "Refinements/StageThrusts.js",
+    "spent_generations": 24,
+    "changes": "Three two-handed spear thrusts, shield bash and moving shield raise, King preparation and idle recovery."
+  },
+  "equipment_correction": {
+    "date": "2026-10-02",
+    "provenance": "Refinements/EquipmentCleanup/provenance.json",
+    "finishing": "Tools/Stage-EquipmentCorrections.ps1",
+    "generations_spent": 0,
+    "changes": "Remove invented shields from Royal Lancer and Spear Knight; remove Shield Knight sword; pin Spear Knight narrow helmet slit to its original drawing."
   }
 }

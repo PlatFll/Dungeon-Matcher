@@ -6,7 +6,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 80
+    "duration": 50
    },
    {
     "filename": "King_BombardmentRaise 1.aseprite",
@@ -15,7 +15,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 80
+    "duration": 60
    },
    {
     "filename": "King_BombardmentRaise 2.aseprite",
@@ -24,7 +24,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 80
+    "duration": 60
    },
    {
     "filename": "King_BombardmentRaise 3.aseprite",
@@ -33,11 +33,38 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
     "sourceSize": { "w": 96, "h": 80 },
-    "duration": 80
+    "duration": 60
    },
    {
     "filename": "King_BombardmentRaise 4.aseprite",
     "frame": { "x": 384, "y": 0, "w": 96, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
+    "sourceSize": { "w": 96, "h": 80 },
+    "duration": 60
+   },
+   {
+    "filename": "King_BombardmentRaise 5.aseprite",
+    "frame": { "x": 480, "y": 0, "w": 96, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
+    "sourceSize": { "w": 96, "h": 80 },
+    "duration": 60
+   },
+   {
+    "filename": "King_BombardmentRaise 6.aseprite",
+    "frame": { "x": 576, "y": 0, "w": 96, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
+    "sourceSize": { "w": 96, "h": 80 },
+    "duration": 60
+   },
+   {
+    "filename": "King_BombardmentRaise 7.aseprite",
+    "frame": { "x": 672, "y": 0, "w": 96, "h": 80 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 80 },
@@ -50,7 +77,7 @@
   "version": "1.1-dev",
   "image": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\visual-targets-v2\\ArtSource\\EnemyAttacks\\King_BombardmentRaise.png",
   "format": "RGBA8888",
-  "size": { "w": 480, "h": 80 },
+  "size": { "w": 768, "h": 80 },
   "scale": "1"
  }
 }

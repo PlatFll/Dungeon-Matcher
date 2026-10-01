@@ -1,7 +1,8 @@
-param([string]$LibreSprite='C:\Users\USER\Downloads\libresprite-development-windows-x86_64\libresprite.exe')
+param([string]$LibreSprite='C:\Users\USER\Downloads\libresprite-development-windows-x86_64\libresprite.exe',[string[]]$Names)
 $ErrorActionPreference='Stop'
 $root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $jobs=Get-Content (Join-Path $root 'ArtSource/EnemyAttacks/selected.json') -Raw|ConvertFrom-Json
+if($Names){$jobs=@($jobs|Where-Object {$_.name -in $Names})}
 function Run-Libre([string[]]$arguments){
  $job=Start-Process -FilePath $LibreSprite -ArgumentList $arguments -WindowStyle Hidden -PassThru
  $job.WaitForExit();$job.Refresh();if($job.ExitCode -ne 0){throw "LibreSprite exit $($job.ExitCode)"}

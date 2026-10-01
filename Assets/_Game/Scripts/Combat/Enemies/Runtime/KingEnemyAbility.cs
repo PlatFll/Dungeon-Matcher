@@ -18,6 +18,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private readonly HashSet<EnemyActor> locks = new HashSet<EnemyActor>();
     private readonly Queue<int> thresholds = new Queue<int>();
     private bool crossedHalf, crossedQuarter, released = true, pending;
+    private bool bombardmentCommitted;
     private int cycle, retryAfterMove = -1;
     public bool IsEnraged => crossedHalf;
     public void CaptureContinuation(EnemyCombatSnapshot saved, Func<EnemyActor,int> slotOf)
@@ -30,6 +31,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         crossedHalf=saved.crossedHalf; crossedQuarter=saved.crossedQuarter; cycle=saved.cycle;
         retryAfterMove=saved.retryAfterMove; thresholds.Clear(); foreach(int threshold in saved.thresholds) thresholds.Enqueue(threshold);
         judgment=board.RestoredSet(actor); bombardment=board.RestoredLanes(actor);
+        SetBombardmentCommitted(bombardment != null && !bombardment.Ended);
         actor.SpecialIdleState = bombardment != null && !bombardment.Ended ? "BombardmentReady" : null;
         if(crossedHalf)
         {
@@ -71,6 +73,19 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private void Update()
     {
         if (!CanAct()) return;
+        // A raised sword commits this enemy to the lane attack. Thresholds and
+        // other specials remain queued while the player completes the warning.
+        if (bombardmentCommitted)
+        {
+            if (bombardment == null || bombardment.Ended) { FinishBombardment(); return; }
+            if (board.CompletedValidPlayerMoves < bombardment.DueMove) return;
+            if (!BeginAction()) return;
+            actor.SpecialIdleState = null;
+            actor.PrepareSpecialMotion("Bombardment");
+            if (!board.TryQueueResolveLanes(bombardment, () => Strike(actor.Definition.BombardmentBaseDamage),
+                success => FinishBombardment(), () => released)) EndAction();
+            return;
+        }
         if (thresholds.Count > 0)
         {
             if (!BeginAction()) return;
@@ -85,15 +100,6 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             if (!BeginAction()) return;
             actor.PrepareSpecialMotion("RoyalCommand");
             if (!board.TryQueueResolveGemSet(judgment, () => Strike(actor.Definition.JudgmentBaseDamage),
-                success => EndAction(), () => released)) EndAction();
-            return;
-        }
-        if (bombardment != null && !bombardment.Ended && board.CompletedValidPlayerMoves >= bombardment.DueMove)
-        {
-            if (!BeginAction()) return;
-            actor.SpecialIdleState = null;
-            actor.PrepareSpecialMotion("Bombardment");
-            if (!board.TryQueueResolveLanes(bombardment, () => Strike(actor.Definition.BombardmentBaseDamage),
                 success => EndAction(), () => released)) EndAction();
             return;
         }
@@ -132,7 +138,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     }
     private bool TryCast()
     {
-        if (!CanAct() || !actor.IsSpecialReady) return false;
+        if (!CanAct() || bombardmentCommitted || !actor.IsSpecialReady) return false;
         if (cycle == 1)
         {
             if (TryAssault()) return true;
@@ -141,13 +147,14 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if ((cycle == 0 && judgment != null && !judgment.Ended) ||
             (cycle == 2 && bombardment != null && !bombardment.Ended)) return false;
         if (!BeginAction()) return false;
+        if (cycle == 2) SetBombardmentCommitted(true);
         actor.PrepareSpecialMotion(cycle == 2 ? "BombardmentRaise" : "RoyalCommand");
         bool accepted = cycle == 0
             ? board.TryQueueMarkGemSet(actor, actor.Definition.RoyalMarkCount, actor.Definition.RoyalMarkMoves,
                 false, result => { judgment = result; FinishCast(result != null); }, () => released)
             : board.TryQueueMarkLanes(actor, actor.Definition.BombardmentWarningMoves,
-                result => { bombardment = result; actor.SpecialIdleState = result != null ? "BombardmentReady" : null; FinishCast(result != null); }, () => released);
-        if (!accepted) FinishCast(false);
+                result => { bombardment = result; if (result == null) SetBombardmentCommitted(false); actor.SpecialIdleState = result != null ? "BombardmentReady" : null; FinishCast(result != null); }, () => released);
+        if (!accepted) { if (cycle == 2) SetBombardmentCommitted(false); FinishCast(false); }
         return accepted;
     }
     private bool TryAssault()
@@ -206,6 +213,17 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         pending = true; return true;
     }
     private void EndAction() { pending = false; if (actor != null) actor.EndSpecialAbilityAnimationAction(); }
+    private void SetBombardmentCommitted(bool value)
+    {
+        bombardmentCommitted = value;
+        ownAttack?.SetActionPaused(this, value);
+    }
+    private void FinishBombardment()
+    {
+        SetBombardmentCommitted(false);
+        if (actor != null) actor.SpecialIdleState = null;
+        EndAction();
+    }
     private void FinishCast(bool success, bool announce = true)
     {
         EndAction(); if (released) return;
@@ -226,6 +244,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         ReleaseParticipants(); thresholds.Clear();
         if (board != null) { board.CancelGemSetThreat(judgment); board.CancelLaneThreat(bombardment); }
         judgment = null; bombardment = null;
+        SetBombardmentCommitted(false);
         if (actor != null) actor.SpecialIdleState = null;
         ownAttack?.RemoveNormalAttackModifiers(this);
         if (actor != null) { actor.SurvivedHealthDamage -= OnHealthDamage; actor.Defeated -= Defeated; actor.EndSpecialAbilityAnimationAction(); }

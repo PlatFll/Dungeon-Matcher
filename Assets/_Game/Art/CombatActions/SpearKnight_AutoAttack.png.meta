@@ -59,6 +59,12 @@ TextureImporter:
   - first:
       213: -3889167669549127796
     second: SpearKnight_AutoAttack_09
+  - first:
+      213: -2021131435795960491
+    second: SpearKnight_AutoAttack_10
+  - first:
+      213: -734568623391832188
+    second: SpearKnight_AutoAttack_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +132,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -172,12 +178,12 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -185,21 +191,21 @@ TextureImporter:
       spriteID: 190e5f1bcd40fb790800000000000000
       internalID: -7512280307505700719
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_01
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -207,21 +213,21 @@ TextureImporter:
       spriteID: 55d43a90e283d4170800000000000000
       internalID: 8164243469873925461
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_02
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -229,21 +235,21 @@ TextureImporter:
       spriteID: aea8177db1c3c39d0800000000000000
       internalID: -2793291578600224022
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_03
       rect:
         serializedVersion: 2
-        x: 192
+        x: 576
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -251,21 +257,21 @@ TextureImporter:
       spriteID: c2b8758a84c1de010800000000000000
       internalID: 1219662172474805036
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_04
       rect:
         serializedVersion: 2
-        x: 256
+        x: 768
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -273,21 +279,21 @@ TextureImporter:
       spriteID: 967c9f3b2791f82e0800000000000000
       internalID: -2121448919031756951
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_05
       rect:
         serializedVersion: 2
-        x: 320
+        x: 960
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -295,21 +301,21 @@ TextureImporter:
       spriteID: 5f792c2aa023628f0800000000000000
       internalID: -565709681926694923
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_06
       rect:
         serializedVersion: 2
-        x: 384
+        x: 1152
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -317,21 +323,21 @@ TextureImporter:
       spriteID: 0ba7f1774225fe080800000000000000
       internalID: -9156009200850077008
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_07
       rect:
         serializedVersion: 2
-        x: 448
+        x: 1344
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -339,21 +345,21 @@ TextureImporter:
       spriteID: ce6b4606ef9278b00800000000000000
       internalID: 830678828788791020
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_08
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1536
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -361,21 +367,21 @@ TextureImporter:
       spriteID: 94b067c2d2043e6c0800000000000000
       internalID: -4115375071722861751
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: SpearKnight_AutoAttack_09
       rect:
         serializedVersion: 2
-        x: 576
+        x: 1728
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 80
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -383,17 +389,61 @@ TextureImporter:
       spriteID: c8727983c96e60ac0800000000000000
       internalID: -3889167669549127796
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearKnight_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55da105eaaf73f3e0800000000000000
+      internalID: -2021131435795960491
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearKnight_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487059b9ab94ec5f0800000000000000
+      internalID: -734568623391832188
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
@@ -412,6 +462,8 @@ TextureImporter:
       SpearKnight_AutoAttack_08: -4115375071722861751
       SpearKnight_AutoAttack_09: -3889167669549127796
       SpearKnight_AutoAttack_1: 2662704314489619471
+      SpearKnight_AutoAttack_10: -2021131435795960491
+      SpearKnight_AutoAttack_11: -734568623391832188
       SpearKnight_AutoAttack_2: -7103496802785506649
       SpearKnight_AutoAttack_3: -3602210227302116743
       SpearKnight_AutoAttack_4: 738807456976025195
@@ -419,8 +471,8 @@ TextureImporter:
       SpearKnight_AutoAttack_6: 4397096240925647978
       SpearKnight_AutoAttack_7: -883826467495733317
       SpearKnight_AutoAttack_8: 7330600280320246637
-  mipmapLimitGroupName: 
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -56,12 +56,16 @@ AnimationClip:
       value: {fileID: 2413239282500831798, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
     - time: 1.18
       value: {fileID: -6247699936725239206, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
-    - time: 1.24
+    - time: 1.25
       value: {fileID: 2956262255579773452, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
-    - time: 1.3
+    - time: 1.32
       value: {fileID: -8813284475034388641, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
     - time: 1.39
-      value: {fileID: -8813284475034388641, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+      value: {fileID: -3107675171867879360, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+    - time: 1.46
+      value: {fileID: -2163302054471597636, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+    - time: 1.55
+      value: {fileID: -2163302054471597636, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -104,13 +108,15 @@ AnimationClip:
     - {fileID: -6247699936725239206, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
     - {fileID: 2956262255579773452, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
     - {fileID: -8813284475034388641, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
-    - {fileID: -8813284475034388641, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+    - {fileID: -3107675171867879360, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+    - {fileID: -2163302054471597636, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
+    - {fileID: -2163302054471597636, guid: 2906f87a97ac1d745b6315436785784e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4
+    m_StopTime: 1.56
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -144,7 +150,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
-  - time: 1.39
+  - time: 1.55
     functionName: AbilityComplete
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -32,6 +32,15 @@ TextureImporter:
   - first:
       213: 23485438743446160
     second: King_BombardmentRaise_04
+  - first:
+      213: -1856371988387351125
+    second: King_BombardmentRaise_05
+  - first:
+      213: -9186905150932476863
+    second: King_BombardmentRaise_06
+  - first:
+      213: 5236920335987575404
+    second: King_BombardmentRaise_07
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -150,7 +159,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -158,7 +167,7 @@ TextureImporter:
       spriteID: f3b0162fd9fe57b10800000000000000
       internalID: 1978751072954551103
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -172,7 +181,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -180,7 +189,7 @@ TextureImporter:
       spriteID: 15bf373be4d2cfd10800000000000000
       internalID: 2160651737272417105
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -194,7 +203,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -202,7 +211,7 @@ TextureImporter:
       spriteID: e4473791c8c831cf0800000000000000
       internalID: -282727818243902386
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -216,7 +225,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -224,7 +233,7 @@ TextureImporter:
       spriteID: 780f100648e289f20800000000000000
       internalID: 3429542262323933319
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -238,7 +247,7 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -246,17 +255,83 @@ TextureImporter:
       spriteID: 09282b1d1ef635000800000000000000
       internalID: 23485438743446160
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King_BombardmentRaise_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5bf251387dc36e0800000000000000
+      internalID: -1856371988387351125
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King_BombardmentRaise_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c9675807e818080800000000000000
+      internalID: -9186905150932476863
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King_BombardmentRaise_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a0f879c474da840800000000000000
+      internalID: 5236920335987575404
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
@@ -269,12 +344,15 @@ TextureImporter:
       King_BombardmentRaise_02: -282727818243902386
       King_BombardmentRaise_03: 3429542262323933319
       King_BombardmentRaise_04: 23485438743446160
+      King_BombardmentRaise_05: -1856371988387351125
+      King_BombardmentRaise_06: -9186905150932476863
+      King_BombardmentRaise_07: 5236920335987575404
       King_BombardmentRaise_1: -8648014600012142966
       King_BombardmentRaise_2: -8966016813797785627
       King_BombardmentRaise_3: -7460413365056654883
       King_BombardmentRaise_4: -2307203350255389923
-  mipmapLimitGroupName: 
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

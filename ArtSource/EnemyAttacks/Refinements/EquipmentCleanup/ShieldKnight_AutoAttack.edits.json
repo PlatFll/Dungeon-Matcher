@@ -1,0 +1,22 @@
+[
+  {"operation":"select_mask","layer":"image","frames":[3],"name":"remove_0","selector":{"kind":"polygon","points":[[59,39],[64,39],[64,43],[61,43],[59,42]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[3],"mask":"remove_0","points":[[61,41]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[4],"name":"remove_2","selector":{"kind":"polygon","points":[[63,41],[72,41],[72,49],[65,49],[65,48],[64,47],[64,46],[63,45]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[4],"mask":"remove_2","points":[[66,46]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[5],"name":"remove_4","selector":{"kind":"polygon","points":[[68,45],[74,45],[74,52],[69,52],[69,50],[68,49],[67,48],[65,47]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[5],"mask":"remove_4","points":[[69,48]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[6],"name":"remove_6","selector":{"kind":"polygon","points":[[68,49],[78,49],[78,54],[73,54],[72,53],[71,52],[71,51],[69,50]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[6],"mask":"remove_6","points":[[72,52]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[7],"name":"remove_8","selector":{"kind":"polygon","points":[[76,55],[82,55],[82,61],[75,61],[73,60],[75,59],[75,57]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[7],"mask":"remove_8","points":[[77,58]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[8],"name":"remove_10","selector":{"kind":"polygon","points":[[61,49],[64,49],[64,51],[63,51],[63,52],[76,49],[78,53],[73,57],[70,59],[65,59],[65,58],[64,57],[64,56],[63,55],[63,53],[62,52],[61,51]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[8],"mask":"remove_10","points":[[66,54]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"select_mask","layer":"image","frames":[9],"name":"remove_12","selector":{"kind":"polygon","points":[[63,47],[74,47],[74,51],[68,55],[66,57],[65,57],[65,55],[64,54],[64,50],[63,50]]},"reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[9],"mask":"remove_12","points":[[67,52]],"size":64,"shape":"square","mode":"erase","reason":"Remove invented sword behind the cape."},
+  {"operation":"brush","layer":"image","frames":[4],"points":[[62,44],[63,45],[64,47],[64,49]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."},
+  {"operation":"brush","layer":"image","frames":[5],"points":[[64,47],[67,49],[68,51]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."},
+  {"operation":"brush","layer":"image","frames":[6],"points":[[67,49],[70,51],[71,53]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."},
+  {"operation":"brush","layer":"image","frames":[7],"points":[[75,55],[75,58],[73,60]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."},
+  {"operation":"brush","layer":"image","frames":[8],"points":[[60,49],[61,51],[62,52],[62,55],[63,56],[64,58],[65,59]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."},
+  {"operation":"brush","layer":"image","frames":[9],"points":[[62,49],[63,52],[64,55],[64,57]],"color":"#0a0d11ff","size":1,"reason":"Close cape outline after sword removal."}
+]

@@ -8,7 +8,7 @@ The user accepted Royal Gold and the other concepts, with two revisions: the Kin
 
 - Preserve the original character palette, native scale, transparent canvas and bottom-center alignment.
 - Add restrained gold, blue or green effect colors. Benediction uses a gold version of the Archbishop's accepted green Restoration gesture.
-- Omit malformed Shield Knight source frames 6 and 8 and Mage frame 9. Shorten repeated holds and retain anticipation, contact and recovery.
+- The October 2 Shield Knight revision replaces the older static raise. Its selected poses include a torso shift, lifted shield, cyan contact pulse and a complete lowering motion. Mage frame 9 remains omitted.
 - King Bombardment uses two timed contacts from the revised two-handed source. Its raised warning pose loops separately. The board owns both lane clears and the single final refill.
 - Royal Command uses the accepted directional sword gesture; it is distinct from the two-handed ground thrust.
 - Barricade Guard keeps the existing single-contact board-animation protocol. Other new casts use named states and numbered contact cues on the same actor/presenter and board queue.
@@ -22,3 +22,13 @@ The user accepted Royal Gold and the other concepts, with two revisions: the Kin
 | Shield Knight raised shield | `44935141-2841-4c70-bf17-fbe12e19921b` | Raise the decorated shield, then a blue rim pulse; lower to the original stance. |
 
 The original concept gallery is retained as review history. Current runtime behavior and executed checks are recorded in `Docs/Validation/ENDLESS_COMBAT_POLISH.md`.
+
+## October 2 motion refinements
+
+The equipment correction in `Refinements/EquipmentCleanup/` is the final production revision for Spear Knight, Royal Lancer and Shield Knight auto-attacks. It removes the invented back shields and sword, and keeps Spear Knight's original narrow helmet slit throughout the motion. `selected.json` points to these corrected frames. The Shield Knight ability and all motion timings remain the approved versions.
+
+`Refinements/jobs.json` and `pose-jobs.json` record PixelLab prompts and job IDs. The accepted source folders retain original downloaded PNGs and SHA-256 records. `selected.json` and `abilities.json` identify the production exposures. First-pass spear loops are rejected because they swing the weapon; the pinned `*Thrust` variants are authoritative.
+
+The three spear attacks use 192 × 80 production canvases. `StageThrusts.js` keeps the boots aligned and adds a short draw-back and straight upper-body extension in whole pixels before palette finishing. No character pixels are scaled. Every auto-attack still lasts 680 ms and applies damage at its authored contact.
+
+Shield Knight uses `ShieldKnightBash` for his attack and `ShieldKnightGuard` for his ability. King preparation uses `KingRaise`; `KingBombardmentPrepared/sources.json` combines the approved two-handed contacts with selected `KingRecovery` frames. Recovery ends on the original idle pose, avoiding the previous abrupt return.
