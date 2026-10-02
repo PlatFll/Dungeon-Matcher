@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4e5713295b824488ff6709a525d707, type: 3}
+  m_Name: ForestTheme
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayThemeDefinition
+  generalBackground: {fileID: 21300000, guid: 25ee58f1bb5790743976b1da24e5ac67, type: 3}
+  panelBackground: {fileID: 21300000, guid: f962d98d696cbcf478ea4bc77c53d448, type: 3}
+  boardCells:
+  - {fileID: 21300000, guid: 6cde8360e2e954b41883e6cbab533f88, type: 3}
+  - {fileID: 21300000, guid: 80fca82b992039047adf6a446f10e980, type: 3}
+  - {fileID: 21300000, guid: 1f6b9897c78a51344b050d7d2789f82f, type: 3}
+  battleEnvironment: {fileID: 313150900070996151, guid: 3271fbf1c5ab70547ab5d55644ff276c, type: 3}
+  frameCorner: {fileID: 21300000, guid: 9bbd232333bca6243bf6208d028c77c5, type: 3}
+  frameEdge: {fileID: 21300000, guid: b34f3bf134ba8d24194dc5ec0814ef66, type: 3}
+  wavePlaque: {fileID: 21300000, guid: 8864211cabd98064887c2eda20af369f, type: 3}
+  playerFrame: {fileID: 11400000, guid: 3d776781be6046b46aaae2ec76aa09a5, type: 2}
+  healthStyles:
+  - {fileID: 11400000, guid: 7ff301d656472e3468bf76fc82eba3cd, type: 2}
+  - {fileID: 11400000, guid: dbd2bdaf15aab294d8027871c5e57d59, type: 2}
+  - {fileID: 11400000, guid: 96c8028dd3145674f8c39d2a113164c3, type: 2}
+  - {fileID: 11400000, guid: 1358ace7e0eee5e469c25bae5eab3985, type: 2}
+  - {fileID: 11400000, guid: 4a4a35b5fcf36ab4bad3fe255026965a, type: 2}

@@ -192,7 +192,9 @@ public sealed class EnemyLifecycleVFX :
              * The attack interval begins after the enemy
              * has completely entered the battle.
              */
-            enemyAutoAttack.StopAttacking();
+            // The move profile begins from declared logical readiness. A
+            // cosmetic spawn finishing later must not reset saved progress.
+            if (!CombatMoveClock.Active) enemyAutoAttack.StopAttacking();
         }
 
         spawnCoroutine =
@@ -305,7 +307,7 @@ public sealed class EnemyLifecycleVFX :
         if (attackTimerRoot != null)
         {
             attackTimerRoot.gameObject.SetActive(
-                true
+                !CombatMoveClock.Active
             );
         }
 

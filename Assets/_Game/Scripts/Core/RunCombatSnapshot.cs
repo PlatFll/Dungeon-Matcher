@@ -8,6 +8,8 @@ using UnityEngine;
 public sealed class RunCombatSnapshot
 {
     public int version = 1;
+    public CombatClockSnapshot clock;
+    public int decreeAppliedMove;
     public long sequence;
     public int wave;
     public bool waveActive;
@@ -45,6 +47,7 @@ public sealed class RunCombatSnapshot
     public uint refillRandom;
     public List<BoardCellSnapshot> cells = new List<BoardCellSnapshot>();
     public List<BoardWarningSnapshot> warnings = new List<BoardWarningSnapshot>();
+    public List<VineNodeSnapshot> vines = new List<VineNodeSnapshot>();
 }
 [Serializable] public sealed class BoardCellSnapshot
 {
@@ -61,12 +64,17 @@ public sealed class RunCombatSnapshot
 {
     // 0 pair / 1 set / 2 lanes. Target indices refer to saved cells.
     public int kind, owner, dueMove, row, column;
-    public bool restoration;
+    public bool restoration, vine, environmental;
+    public int vineLimit, parentGemId;
     public List<int> targets = new List<int>();
 }
 [Serializable] public sealed class EnemyCombatSnapshot
 {
     public string definition;
+    public long persistentId;
+    public int staggerHitMove, staggerAppliedMove, immunityAppliedMove;
+    public int poisonMoveTicks, poisonNextMove, rallyExpiryMove;
+    public EnemyChannelSnapshot channel;
     public int slot, health, shield, specialTurns, specialRequirement;
     public GemType weakness;
     public float attackRemaining, attackSpeed;

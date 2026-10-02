@@ -1,0 +1,397 @@
+using System;
+using System.Collections;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using NUnit.Framework;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TestTools;
+
+public sealed class ForestFoundationPlayTests
+{
+    private const BindingFlags Flags=BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic;
+    private IDisposable profile, character, mastery;
+    private string path;
+    private bool preserveCounterplayCrystal;
+    private RunSession Run=>RunSession.Current;
+    [UnitySetUp] public IEnumerator SetUp()
+    {
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        yield return new EnterPlayMode();
+        path=Path.GetFullPath(".utmp/ForestTestProfiles/"+Guid.NewGuid().ToString("N")+".json");
+        Directory.CreateDirectory(Path.GetDirectoryName(path));
+        File.WriteAllText(path,JsonUtility.ToJson(new AccountSave {potions=3,bombs=3,equipPotions=true,equipBombs=true}));
+        profile=AccountProgression.UseDisposableProfile(path);
+        character=CharacterSelectionSettings.UseTemporarySelection("skeleton");
+        mastery=GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default);
+    }
+    [UnityTearDown] public IEnumerator TearDown()
+    {
+        Time.timeScale=1;SceneManager.LoadScene("MainMenu");yield return null;
+        profile?.Dispose();character?.Dispose();mastery?.Dispose();
+        profile=character=mastery=null;RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.ForestEncounterOffset=0;
+        yield return new ExitPlayMode();
+    }
+    private IEnumerator Launch(int offset=0)
+    {
+        RunLaunchOptions.ForestPrototype=true;RunLaunchOptions.ForestEncounterOffset=offset;
+        SceneManager.LoadScene("Game");yield return Stable();
+        Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Zone.Definition.eligibleForLiveTravel,Is.False);
+        Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(3));
+    }
+    private IEnumerator Stable()
+    {
+        yield return null;
+        yield return Until(()=>Run!=null && Run.Continuation!=null && Run.Continuation.CanCapture && Run.Waves.IsWaveActive,"forest settles");
+    }
+    private static IEnumerator Until(Func<bool> ready,string why)
+    {float end=Time.realtimeSinceStartup+40;while(!ready()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(end),why);yield return null;}}
+    private EnemyActor Enemy(string name)=>Run.Waves.ActiveEnemies.First(e=>e.Definition.EnemyId==name);
+    private static object Get(object o,string field)=>o.GetType().GetField(field,Flags).GetValue(o);
+    private static void Set(object o,string field,object value)=>o.GetType().GetField(field,Flags).SetValue(o,value);
+    private static object Call(object o,string method,params object[] args)=>o.GetType().GetMethod(method,Flags).Invoke(o,args);
+    private void PrepareSafeMove()
+    {
+        var board=Run.Board;var sprites=(Sprite[])Get(board,"gemSprites");
+        // A controlled no-special opening isolates timing from random damage.
+        // Refill and all resolution still use the production deterministic path.
+        for(int x=0;x<board.Width;x++)for(int y=0;y<board.Height;y++)
+        {var g=board.GetGem(x,y);if(!(preserveCounterplayCrystal && x==board.Width-1 && y==0)) g.SetSpecialType(GemSpecialType.None);g.SetType((GemType)((x+2*y)%6),sprites[(x+2*y)%6]);}
+        var color=(GemType)Enumerable.Range(0,6).First(n=>Run.Waves.ActiveEnemies.All(e=>(int)e.AssignedGemType!=n));
+        int top=board.Height-1;
+        foreach(int x in new[]{0,1}) board.GetGem(x,top).SetType(color,sprites[(int)color]);
+        board.GetGem(3,top).SetType((GemType)(((int)color+2)%6),sprites[((int)color+2)%6]);
+        board.GetGem(2,top).SetType((GemType)(((int)color+1)%6),sprites[((int)color+1)%6]);
+        board.GetGem(2,top-1).SetType(color,sprites[(int)color]);
+        Set(board,"refillRandom",new SavedRandom(13579));
+    }
+    private IEnumerator Move(Action duringAccepted=null)
+    {
+        PrepareSafeMove();var board=Run.Board;int before=Run.MoveClock.Tick;
+        Action<int> callback=_=>duringAccepted?.Invoke();board.ValidPlayerMoveAccepted+=callback;
+        board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(2,board.Height-2),board.GetGem(2,board.Height-1)));
+        yield return Until(()=>Run.MoveClock.Tick==before+1 && Run.Continuation.CanCapture,"one accepted action settles");
+        board.ValidPlayerMoveAccepted-=callback;
+        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(before+1));
+    }
+    [UnityTest] public IEnumerator ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources()
+    {
+        yield return Launch();
+        Run.Player.TryTakeDamage(25);Assert.That(Run.TryUsePotion(),Is.True);
+        var energy=Run.Player.GetComponent<PlayerAbilityEnergy>();energy.AddEnergy(100);
+        Assert.That(Run.Player.GetComponent<PlayerAbilityController>().TryActivate(),Is.True);
+        var decree=Run.Player.GetComponent<RoyalDecreeRuntime>();Assert.That(decree.RemainingMoves,Is.EqualTo(3));
+        var target=Enemy("orc_trailguard");var poison=target.gameObject.AddComponent<EnemyPoisonStatus>();poison.Apply(10,1,5);
+        target.GetComponent<EnemyStagger>().ApplyStagger(2,2);
+        yield return Stable();var before=Run.Continuation.Capture();
+        yield return new WaitForSeconds(3.2f);
+        var after=Run.Continuation.Capture();
+        Assert.That(after.enemies.Select(JsonUtility.ToJson).ToArray(),Is.EqualTo(before.enemies.Select(JsonUtility.ToJson).ToArray()));
+        Assert.That(after.player.health,Is.EqualTo(before.player.health));Assert.That(after.player.energy,Is.EqualTo(before.player.energy));
+        Assert.That(Run.Cooldown(ConsumableKind.HealthPotion),Is.EqualTo(2));Assert.That(decree.RemainingMoves,Is.EqualTo(3));
+        Assert.That(poison.RemainingDuration,Is.EqualTo(3));Assert.That(Run.MoveClock.Tick,Is.Zero);
+        PrepareSafeMove();
+        Run.Board.StartCoroutine((IEnumerator)Call(Run.Board,"TrySwap",Run.Board.GetGem(0,0),Run.Board.GetGem(1,0)));
+        yield return new WaitForSeconds(.5f);yield return Stable();Assert.That(Run.MoveClock.Tick,Is.Zero,"invalid swap");
+        yield return Move();Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+        Assert.That(Run.Cooldown(ConsumableKind.HealthPotion),Is.EqualTo(1));Assert.That(decree.RemainingMoves,Is.EqualTo(2));
+        Assert.That(poison.RemainingDuration,Is.EqualTo(2));
+    }
+    [UnityTest] public IEnumerator ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume()
+    {
+        yield return Launch();
+        var mender=Enemy("elven_mender");var target=Enemy("orc_trailguard");
+        target.ResolveDamageWithoutFeedback(30);
+        yield return Move();yield return Move();
+        var channel=mender.GetComponent<EnemyChannelRuntime>();
+        Assert.That(channel.IsChanneling,Is.True);Assert.That(channel.Target,Is.SameAs(target));Assert.That(channel.ResponseMoves,Is.EqualTo(2));
+        float basic=mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime;
+        Assert.That(Run.Continuation.SaveNow(),Is.True);
+        var saved=Run.Continuation.Capture();string id=Run.RunId;long next=saved.clock.actions.nextActorId;
+        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;
+        SceneManager.LoadScene("Game");yield return Until(()=>Run!=null && Run.Continuation!=null && !Run.Continuation.IsRestoring,"channel resumes");
+        Run.GetComponent<RunControlsUI>().Close();yield return Stable();
+        mender=Enemy("elven_mender");target=Enemy("orc_trailguard");channel=mender.GetComponent<EnemyChannelRuntime>();
+        Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.MoveClock.Capture().actions.nextActorId,Is.EqualTo(next));
+        Assert.That(channel.Target,Is.SameAs(target));Assert.That(channel.ResponseMoves,Is.EqualTo(2));
+        yield return Move();Assert.That(channel.IsChanneling,Is.True);Assert.That(channel.ResponseMoves,Is.EqualTo(1));
+        int hp=target.CurrentHealth;yield return Move();
+        Assert.That(channel.Outcome,Is.EqualTo("Healed"));Assert.That(target.CurrentHealth,Is.EqualTo(Math.Min(target.MaxHealth,hp+20)));
+        Assert.That(mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic));
+        yield return Move();Assert.That(channel.BlocksBasic,Is.True);
+        yield return Move();Assert.That(channel.BlocksBasic,Is.False);
+        Assert.That(mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic),"recovery expiry grants no same-action basic");
+    }
+    [UnityTest] public IEnumerator DeadlineStaggerAndTargetDeathCancelExactlyOnce()
+    {
+        yield return Launch();var target=Enemy("orc_trailguard");var mender=Enemy("elven_mender");
+        target.ResolveDamageWithoutFeedback(30);
+        yield return Move();yield return Move();yield return Move();
+        var channel=mender.GetComponent<EnemyChannelRuntime>();Assert.That(channel.ResponseMoves,Is.EqualTo(1));
+        int hp=target.CurrentHealth;
+        yield return Move(()=>mender.GetComponent<EnemyStagger>().ApplyStagger(2,2));
+        Assert.That(channel.Outcome,Is.EqualTo("Interrupted"));Assert.That(target.CurrentHealth,Is.LessThanOrEqualTo(hp));
+        var state=new EnemyCombatSnapshot();channel.CaptureContinuation(state,_=>0);Assert.That(state.channel.lastOutcomeSequence,Is.EqualTo(1));
+        // A fresh channel fixture restores through its owner, then removes its
+        // recipient and puts a different persistent actor in that same slot.
+        var restored=new EnemyCombatSnapshot {channel=new EnemyChannelSnapshot{state=1,sequence=2,targetId=target.PersistentId,deadlineMove=Run.MoveClock.Tick+2}};
+        channel.RestoreContinuation(restored,_=>target);
+        int slot=Run.Waves.ContinuationSlot(target);long targetId=target.PersistentId;
+        target.ResolveDirectDamage(9999);yield return Stable();
+        Assert.That(channel.Outcome,Is.EqualTo("Target lost"));
+        Assert.That(channel.IsChanneling,Is.False);
+        Assert.That(Run.Waves.ContinuationEnemy(slot)==null || Run.Waves.ContinuationEnemy(slot).PersistentId!=targetId,Is.True);
+        Assert.That(Run.Waves.TrySummonEnemy(Run.Zone.FindEnemy("Orc_Trailguard"),out var replacement),Is.True);
+        Assert.That(Run.Waves.ContinuationSlot(replacement),Is.EqualTo(slot));Assert.That(replacement.PersistentId,Is.Not.EqualTo(targetId));
+        replacement.ResolveDamageWithoutFeedback(25);int replacementHp=replacement.CurrentHealth;
+        yield return Move();yield return Move();Assert.That(replacement.CurrentHealth,Is.LessThanOrEqualTo(replacementHp),"finished channel cannot heal the replacement");
+        mender.ResolveDirectDamage(9999);yield return Stable();
+        Assert.That(Run.MoveClock.Tick,Is.EqualTo(6),"free lethal actions create no tick");
+    }
+    [UnityTest] public IEnumerator FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels()
+    {
+        yield return Launch();
+        var mender=Enemy("elven_mender");var target=Enemy("orc_trailguard");
+        var channel=mender.GetComponent<EnemyChannelRuntime>();
+        target.ResolveDamageWithoutFeedback(30);
+        channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot
+            {state=1,sequence=1,targetId=target.PersistentId,deadlineMove=2}},_=>target);
+        mender.ResolveDirectDamage(5);
+        Assert.That(channel.IsChanneling,Is.True,"a hit below stagger threshold is not an interrupt");
+        target.RestoreHealth(999);
+        yield return Move();
+        Assert.That(channel.Target,Is.SameAs(target),"a full recipient does not cause retargeting");
+        yield return Move();
+        Assert.That(channel.Outcome,Is.EqualTo("Healed"));
+        var outcome=new EnemyCombatSnapshot();channel.CaptureContinuation(outcome,_=>0);
+        Assert.That(outcome.channel.lastOutcomeSequence,Is.EqualTo(1));
+
+        target.ResolveDamageWithoutFeedback(25);int health=target.CurrentHealth;
+        channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot
+            {state=1,sequence=2,targetId=target.PersistentId,deadlineMove=Run.MoveClock.Tick+1}},_=>target);
+        string terminal=null;int terminals=0;
+        channel.Changed+=()=>{if(!channel.IsChanneling){terminal=channel.Outcome;terminals++;}};
+        yield return Move(()=>mender.ResolveDamageWithoutFeedback(9999));
+        Assert.That(terminal,Is.EqualTo("Caster defeated"),"player-side lethal on the deadline precedes enemy completion");
+        Assert.That(terminals,Is.EqualTo(1));
+        Assert.That(target.CurrentHealth,Is.LessThanOrEqualTo(health),"the removed caster cannot heal later in that same action");
+    }
+    [UnityTest] public IEnumerator VinesSharePinsCapsGraceAndEnvironmentalOwnership()
+    {
+        yield return Launch(1);var board=Run.Board;var root=Enemy("orc_rootbinder");
+        board.GetGem(0,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        BoardController.GemSetThreat warning=null;
+        Assert.That(board.TryQueueVineWarning(root,2,3,w=>warning=w),Is.True);yield return Stable();
+        Assert.That(warning,Is.Not.Null);Assert.That(warning.Targets.Count,Is.InRange(1,2));
+        Assert.That(warning.DueMove,Is.GreaterThan(board.CompletedValidPlayerMoves));
+        // Preserve the target cells by placing the controlled move elsewhere.
+        typeof(BoardController.GemSetThreat).GetProperty("DueMove").SetValue(warning,board.CompletedValidPlayerMoves);
+        Assert.That(board.TryQueueResolveVines(warning,null),Is.True);yield return Stable();
+        Assert.That(board.VineCount,Is.GreaterThan(0));int seeds=board.VineCount;
+        var snapshot=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
+        foreach(var node in snapshot.vines)
+        {
+            var cell=snapshot.cells.First(c=>c.identity==node.gemId);var gem=board.GetGem(cell.x,cell.y);
+            Assert.That(board.IsGemPinned(gem),Is.True);Assert.That(board.IsGemFrozen(gem),Is.False);
+            Assert.That(board.IsHintMoveStillValid(gem,board.GetGem(Math.Max(0,cell.x-1),cell.y)),Is.False);
+        }
+        yield return board.AdvanceVineNetworks(0);Assert.That(board.VineCount,Is.EqualTo(seeds),"birth action cannot propagate");
+        board.GetGem(0,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        var environmental=Enumerable.Range(0,board.Width).Select(x=>board.GetGem(x,0)).First(g=>g.SpecialType==GemSpecialType.None&&!board.IsGemPinned(g));
+        board.QueueEnvironmentalVine(environmental);yield return Stable();
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.environmental),Is.True);
+        var environmentalId=environmental.BoardIdentity;
+        root.ResolveDirectDamage(9999);yield return Stable();
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.All(n=>n.environmental),Is.True);
+        Assert.That(board.IsGemPinned(environmental),Is.True,"unrelated producer death cannot remove environment vines");
+        Assert.That(Run.Continuation.SaveNow(),Is.True);Assert.That(Run.SuspendToMenu(),Is.True);yield return null;
+        SceneManager.LoadScene("Game");yield return Until(()=>Run!=null && Run.Continuation!=null&&!Run.Continuation.IsRestoring,"vine resumes");
+        Run.GetComponent<RunControlsUI>().Close();yield return Stable();board=Run.Board;
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.gemId==environmentalId&&n.environmental),Is.True);
+        board.RemoveVineSource(null);yield return Stable();Assert.That(board.VineCount,Is.Zero);
+        Assert.That(board.TryGetRandomHintMove(out _,out _),Is.True);
+    }
+    [UnityTest] public IEnumerator ActualMovesGrowAtMostOneChildAfterFullGraceAndRespectSharedCapacity()
+    {
+        yield return Launch(1);var board=Run.Board;
+        preserveCounterplayCrystal=true;
+        // Keep a useful response and test environmental growth independently
+        // from the caster. Neither helper alters placement/clear algorithms.
+        Enemy("orc_rootbinder").SetSpecialTurnRequirement(100);
+        PrepareSafeMove();board.GetGem(board.Width-1,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        board.QueueEnvironmentalVine(board.GetGem(0,1));yield return Stable();Assert.That(board.VineCount,Is.EqualTo(1));
+        yield return Move();Assert.That(board.VineCount,Is.EqualTo(1),"first future move only warns");
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).warnings.Any(w=>w.vine),Is.True);
+        yield return Move();Assert.That(board.VineCount,Is.EqualTo(2),"second response completes one child");
+        var saved=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
+        Assert.That(saved.vines.Count(n=>n.bornMove==Run.MoveClock.Tick),Is.GreaterThanOrEqualTo(1));
+        yield return Move();Assert.That(board.VineCount,Is.EqualTo(2),"newborn receives a full first response");
+        for(int x=1;x<board.Width-1;x++) board.QueueEnvironmentalVine(board.GetGem(x,0));
+        foreach(var owner in Run.Waves.ActiveEnemies) board.TryQueueTopUpMovablePins(owner,3,null,null);
+        yield return Stable();Assert.That(board.RestrictionCount,Is.LessThanOrEqualTo(6));
+        Assert.That(CounterplayGuard.HasUsefulResponse(board.GetImmediateResponses(),Run.Player,Run.Waves),Is.True);
+        // A bomb follows the normal clear/conversion release path and is free.
+        saved=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
+        var parent=saved.cells.First(c=>c.identity==saved.vines[0].gemId);
+        int tick=Run.MoveClock.Tick;int identity=parent.identity;
+        Assert.That(Run.TryUseBomb(board.GetGem(parent.x,parent.y)),Is.True);yield return Stable();
+        Assert.That(Run.MoveClock.Tick,Is.EqualTo(tick));
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.gemId==identity),Is.False);
+    }
+    [UnityTest] public IEnumerator AcceptedSwapReplayProducesSameLogicalStateExactlyOnce()
+    {
+        yield return Launch();PrepareSafeMove();Assert.That(Run.Continuation.SaveNow(),Is.True);
+        var board=Run.Board;
+        board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(2,board.Height-2),board.GetGem(2,board.Height-1)));
+        Assert.That(Run.Continuation.SaveNow(),Is.True);string pending=File.ReadAllText(path);
+        yield return Until(()=>Run.MoveClock.Tick==1 && Run.Continuation.CanCapture,"uninterrupted action");
+        var expected=Run.Continuation.Capture();
+        SceneManager.LoadScene("MainMenu");yield return null;
+        File.WriteAllText(path,pending);profile.Dispose();profile=AccountProgression.UseDisposableProfile(path);
+        SceneManager.LoadScene("Game");yield return null;
+        yield return Until(()=>Run!=null && Run.Continuation!=null&&!Run.Continuation.IsRestoring,"pending action replay");
+        Assert.That(Run.Continuation.Error,Is.Null);Run.GetComponent<RunControlsUI>().Close();yield return Stable();
+        var resumed=Run.Continuation.Capture();
+        File.WriteAllText(".utmp/ForestValidation/replay-expected.json",JsonUtility.ToJson(expected,true));
+        File.WriteAllText(".utmp/ForestValidation/replay-resumed.json",JsonUtility.ToJson(resumed,true));
+        Assert.That(resumed.clock.actions.completed,Is.EqualTo(1));
+        Assert.That(JsonUtility.ToJson(resumed.board),Is.EqualTo(JsonUtility.ToJson(expected.board)));
+        Assert.That(resumed.enemies.Select(JsonUtility.ToJson).ToArray(),Is.EqualTo(expected.enemies.Select(JsonUtility.ToJson).ToArray()));
+        Assert.That(JsonUtility.ToJson(resumed.player),Is.EqualTo(JsonUtility.ToJson(expected.player)));
+        Assert.That(Run.Continuation.SaveNow(),Is.True);
+        yield return new WaitForSeconds(1);Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+    }
+    [UnityTest] public IEnumerator MixedColorDamageKeepsAttributionAndFinalFiveStepRounding()
+    {
+        yield return Launch();var emerald=Enemy("orc_trailguard");var ruby=Enemy("elven_mender");
+        emerald.AssignGemType(GemType.Emerald);ruby.AssignGemType(GemType.Ruby);
+        Enemy("elven_scout").AssignGemType(GemType.Sapphire);
+        var combat=UnityEngine.Object.FindFirstObjectByType<CombatController>();
+        int first=emerald.CurrentHealth,second=ruby.CurrentHealth;
+        Assert.That(combat.ResolveFixedGemDamage(new BoardClearContext(GemType.Emerald,1,0,BoardClearSource.Bomb),30),Is.True);
+        Assert.That(combat.ResolveFixedGemDamage(new BoardClearContext(GemType.Ruby,1,0,BoardClearSource.Bomb),30),Is.True);
+        Assert.That(first-emerald.CurrentHealth,Is.EqualTo(35));Assert.That(second-ruby.CurrentHealth,Is.EqualTo(30));
+        Assert.That(Run.MoveClock.Tick,Is.Zero,"free attributed clear packets are not manual actions");
+        int hp=Run.Player.CurrentHealth;combat.ResolveFixedGemDamage(new BoardClearContext(GemType.Amethyst,1,0,BoardClearSource.Bomb),30);
+        Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp),"resonance does not change off-target or affinity routing");
+    }
+    [UnityTest] public IEnumerator FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged()
+    {
+        character.Dispose();character=CharacterSelectionSettings.UseTemporarySelection("bardley");
+        yield return Launch();
+        foreach(var enemy in Run.Waves.ActiveEnemies) Set(enemy,"currentHealth",9995);
+        var energy=Run.Player.GetComponent<PlayerAbilityEnergy>();
+        var ability=Run.Player.GetComponent<PlayerAbilityController>();
+        var clocks=Run.Waves.ActiveEnemies.Select(e=>e.GetComponent<EnemyAutoAttack>().RemainingAttackTime).ToArray();
+        int clears=0;Run.Board.BoardClearResolved+=_=>clears++;
+        for(int cast=0;cast<2;cast++)
+        {
+            energy.AddEnergy(100);Assert.That(ability.TryActivate(),Is.True);
+            yield return Until(()=>!ability.IsAbilityActive && Run.Continuation.CanCapture,"free cast and chain settle");
+            Assert.That(Run.MoveClock.Tick,Is.Zero);
+            Assert.That(Run.Waves.ActiveEnemies.Select(e=>e.GetComponent<EnemyAutoAttack>().RemainingAttackTime).ToArray(),Is.EqualTo(clocks));
+        }
+        Assert.That(clears,Is.GreaterThan(1),"actual ability and chained clears ran");
+    }
+    [UnityTest] public IEnumerator LargeCascadeAndSpecialChainConsumeOneManualAction()
+    {
+        yield return Launch();var board=Run.Board;var sprites=(Sprite[])Get(board,"gemSprites");
+        foreach(var enemy in Run.Waves.ActiveEnemies) Set(enemy,"currentHealth",9995);
+        for(int x=0;x<board.Width;x++)for(int y=0;y<board.Height;y++)
+        {var gem=board.GetGem(x,y);gem.SetSpecialType(GemSpecialType.None);gem.SetType(GemType.Ruby,sprites[(int)GemType.Ruby]);}
+        board.GetGem(2,0).SetType(GemType.Sapphire,sprites[(int)GemType.Sapphire]);
+        board.GetGem(5,3).SetSpecialType(GemSpecialType.RowBomb);
+        board.GetGem(6,3).SetSpecialType(GemSpecialType.ColumnBomb);
+        Set(board,"refillRandom",new SavedRandom(13579));
+        int accepted=0,completed=0,deepest=0,clears=0;
+        board.ValidPlayerMoveAccepted+=_=>accepted++;board.ValidPlayerMoveCompleted+=_=>completed++;
+        board.BoardClearResolved+=c=>{deepest=Math.Max(deepest,c.CascadeDepth);clears+=c.GemCount;};
+        board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(2,0),board.GetGem(2,1)));
+        yield return Until(()=>Run.MoveClock.Tick==1 && Run.Continuation.CanCapture,"large cascade settles");
+        Assert.That(accepted,Is.EqualTo(1));Assert.That(completed,Is.EqualTo(1));
+        Assert.That(clears,Is.GreaterThan(40));Assert.That(deepest,Is.GreaterThanOrEqualTo(2),"at least three cascade stages");
+    }
+    [UnityTest] public IEnumerator RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits()
+    {
+        yield return Launch();
+        Enemy("orc_trailguard").ResolveDirectDamage(9999);Enemy("elven_mender").ResolveDirectDamage(9999);
+        yield return Stable();
+        Assert.That(Run.Waves.TrySummonEnemy(AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset"),out var king),Is.True);
+        Assert.That(Run.Waves.TrySummonEnemy(AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_RoyalLancer.asset"),out var lancer),Is.True);
+        yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"command formation spawned");
+        Set(king.GetComponent<KingEnemyAbility>(),"cycle",1);king.SetSpecialTurnRequirement(1);
+        Set(lancer.GetComponent<EnemyAutoAttack>(),"remainingAttackTime",1f);
+        Set(Enemy("elven_scout").GetComponent<EnemyAutoAttack>(),"remainingAttackTime",100f);
+        int kingHits=0,lancerHits=0;
+        king.GetComponent<EnemyAutoAttack>().AttackResolved+=(_,__,___)=>kingHits++;
+        lancer.GetComponent<EnemyAutoAttack>().AttackResolved+=(_,__,___)=>lancerHits++;
+        Run.Player.GrantShield(10);int playerHp=Run.Player.CurrentHealth;
+        yield return Move();
+        Assert.That(kingHits,Is.EqualTo(1));
+        Assert.That(lancerHits,Is.EqualTo(lancer.RuntimeStats.FollowUpDamage>0?2:1),"commanded participant receives no extra ordinary sequence");
+        Assert.That(king.GetComponent<EnemyAutoAttack>().HasCommandReservation,Is.False);
+        Assert.That(lancer.GetComponent<EnemyAutoAttack>().HasCommandReservation,Is.False);
+        Assert.That(Run.Player.CurrentHealth,Is.LessThan(playerHp));Assert.That(Run.Player.CurrentShield,Is.Zero);
+        Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+
+        // A legitimate stagger during command windup must release the turn,
+        // because its move duration cannot expire inside that same turn.
+        king.GetComponent<KingEnemyAbility>().CommandIssued+=_=>lancer.GetComponent<EnemyStagger>().ApplyStagger(2,2);
+        Set(king.GetComponent<KingEnemyAbility>(),"cycle",1);king.SetSpecialTurnRequirement(1);
+        int previousLancerHits=lancerHits;
+        yield return Move();
+        Assert.That(lancerHits,Is.EqualTo(previousLancerHits));
+        Assert.That(lancer.GetComponent<EnemyAutoAttack>().HasCommandReservation,Is.False);
+        Assert.That(Run.MoveClock.IsBlockingWaveProgression,Is.False);
+    }
+    [UnityTest] public IEnumerator UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat()
+    {
+        yield return Launch();Assert.That(Run.Continuation.SaveNow(),Is.True);
+        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;
+        var saved=JsonUtility.FromJson<AccountSave>(File.ReadAllText(path));
+        saved.run.checkpoint.clock.profile="future-unavailable-profile";
+        string original=JsonUtility.ToJson(saved,true);File.WriteAllText(path,original);
+        profile.Dispose();profile=AccountProgression.UseDisposableProfile(path);
+        SceneManager.LoadScene("Game");yield return null;
+        yield return Until(()=>Run?.Continuation?.Error!=null,"explicit incompatibility");
+        Assert.That(Run.MoveClock,Is.Null);Assert.That(Time.timeScale,Is.Zero);
+        Assert.That(Run.Continuation.SaveNow(),Is.False);Assert.That(Run.Player.GetComponent<PlayerAbilityController>().CanActivate,Is.False);
+        yield return new WaitForSecondsRealtime(.4f);
+        Assert.That(File.ReadAllText(path),Is.EqualTo(original),"unsupported save is retained byte-for-byte");
+    }
+    [UnityTest] public IEnumerator PhotoKeepsPresentVineAgeAndWarningsWhileCasterRemovalCancelsHeal()
+    {
+        yield return Launch();var board=Run.Board;preserveCounterplayCrystal=true;PrepareSafeMove();
+        board.GetGem(board.Width-1,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        board.QueueEnvironmentalVine(board.GetGem(0,1));yield return Stable();
+        var photo=board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);
+        int identity=photo.vines.Single().gemId;
+        yield return Move();
+        var current=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
+        var warning=current.warnings.Single(w=>w.vine);int deadline=warning.dueMove;
+        Assert.That(board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);yield return Stable();
+        var restored=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
+        Assert.That(restored.moves,Is.EqualTo(1));Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+        Assert.That(restored.vines.Single(n=>n.gemId==identity).bornMove,Is.EqualTo(current.vines.Single().bornMove));
+        Assert.That(restored.warnings.Single(w=>w.vine).dueMove,Is.EqualTo(deadline));
+        // Independent casters share scheduling, retaining at least a future
+        // response and avoiding simultaneous restriction strikes.
+        BoardController.GemSetThreat one=null,two=null;
+        var mender=Enemy("elven_mender");var trail=Enemy("orc_trailguard");
+        Assert.That(board.TryQueueVineWarning(mender,1,3,w=>one=w),Is.True);yield return Stable();
+        Assert.That(board.TryQueueVineWarning(trail,1,3,w=>two=w),Is.True);yield return Stable();
+        Assert.That(one,Is.Not.Null);Assert.That(two,Is.Not.Null);
+        Assert.That(one.DueMove,Is.GreaterThan(deadline));Assert.That(two.DueMove,Is.GreaterThan(one.DueMove));
+        Assert.That(board.RestrictionCount,Is.LessThanOrEqualTo(6));
+        trail.ResolveDamageWithoutFeedback(30);
+        var channel=mender.GetComponent<EnemyChannelRuntime>();
+        channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot{state=1,sequence=1,targetId=trail.PersistentId,deadlineMove=3}},_=>trail);
+        int health=trail.CurrentHealth;string outcome=null;channel.Changed+=()=>outcome=channel.Outcome;
+        mender.ResolveDamageWithoutFeedback(9999);yield return Stable();
+        Assert.That(outcome,Is.EqualTo("Caster defeated"));Assert.That(trail.CurrentHealth,Is.EqualTo(health));
+        Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+    }
+}

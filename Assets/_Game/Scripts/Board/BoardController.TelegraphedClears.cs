@@ -13,6 +13,9 @@ public partial class BoardController
         public bool Ended { get; internal set; }
         internal bool Queued;
         public bool RestorationPresentation { get; internal set; }
+        public bool Vine { get; internal set; }
+        public bool Environmental { get; internal set; }
+        internal int VineLimit = 3, ParentGemId;
     }
     public sealed class LaneThreat
     {
@@ -40,7 +43,11 @@ public partial class BoardController
     }
     internal void CancelTelegraphGem(Gem gem)
     {
-        foreach (var threat in gemSetThreats) threat.Targets.Remove(gem);
+        foreach (var threat in new List<GemSetThreat>(gemSetThreats))
+        {
+            threat.Targets.Remove(gem);
+            if(threat.Vine && (threat.ParentGemId==gem.BoardIdentity || threat.Targets.Count==0)) CancelGemSetThreat(threat);
+        }
     }
 
     public bool IsEnvironmentalOrdinaryGem(Gem gem) => gem != null &&
@@ -70,7 +77,7 @@ public partial class BoardController
     private void ExecuteMarkGemSet(BoardMutationRequest request)
     {
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) return;
-        gemSetThreats.RemoveAll(t => t.Ended || t.Owner == null || t.Owner.IsDefeated);
+        gemSetThreats.RemoveAll(t => t.Ended || (!t.Environmental && (t.Owner == null || t.Owner.IsDefeated)));
         var clearable = ImmediatelyClearableOrdinaryGems();
         var candidates = new List<Gem>();
         for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
@@ -79,13 +86,17 @@ public partial class BoardController
             if (!IsOrdinaryGemOnBoard(gem) || !clearable.Contains(gem)) continue;
             bool marked = false;
             foreach (var existing in gemSetThreats) if (existing.Targets.Contains(gem)) { marked = true; break; }
+            if (request.Vine && (IsGemPinned(gem) || IsProtectedWarningTarget(gem))) marked=true;
             if (!marked) candidates.Add(gem);
         }
         if (candidates.Count == 0) return;
         var threat = new GemSetThreat { Owner = request.OwnerActor,
             DueMove = ReserveWarningDeadline(request.WarningMoves),
-            RestorationPresentation = request.RestorationPresentation };
-        while (threat.Targets.Count < request.TargetCount && candidates.Count > 0)
+            RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins };
+        int allowed=request.Vine ? Mathf.Min(request.TargetCount,BalanceV1.Current.maximumGlobalChains-RestrictionCount,
+            request.MaximumOwnedPins-GetPinnedGemCountForOwner(request.OwnerActor.GetInstanceID())) : request.TargetCount;
+        if(allowed<=0) return;
+        while (threat.Targets.Count < allowed && candidates.Count > 0)
         {
             int index = GameplayRandom.Range(0, candidates.Count);
             threat.Targets.Add(candidates[index]); candidates.RemoveAt(index);

@@ -423,10 +423,9 @@ public partial class BoardController
             pendingPinTargetOwners.Remove(selectedGem);
         }
 
-        if (request.OwnerActor == null ||
-            request.OwnerActor.IsDefeated ||
-            request.OwnerInstanceId == 0 ||
-            selectedGem == null)
+        if ((!request.EnvironmentalPin && (request.OwnerActor == null || request.OwnerActor.IsDefeated)) ||
+            request.OwnerInstanceId == 0 || selectedGem == null ||
+            RestrictionCount >= BalanceV1.Current.maximumGlobalChains)
         {
             yield break;
         }
@@ -602,7 +601,8 @@ public partial class BoardController
                 Gem candidate = GetGem(column, row);
 
                 if (candidate == null ||
-                    IsGemPinned(candidate))
+                    IsGemPinned(candidate) || IsReservedVine(candidate) ||
+                    RestrictionCount >= BalanceV1.Current.maximumGlobalChains)
                 {
                     continue;
                 }

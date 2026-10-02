@@ -35,6 +35,12 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.ChannelHeal:
+                runtime = enemyObject.GetComponent<EnemyChannelRuntime>() ?? enemyObject.AddComponent<EnemyChannelRuntime>();
+                break;
+            case EnemySpecialAbilityKind.SpreadingVines:
+                runtime = enemyObject.GetComponent<RootbinderEnemyAbility>() ?? enemyObject.AddComponent<RootbinderEnemyAbility>();
+                break;
             case EnemySpecialAbilityKind.RoyalArchbishop:
                 var archbishop = enemyObject.GetComponent<RoyalArchbishopEnemyAbility>();
                 if (archbishop == null) archbishop = enemyObject.AddComponent<RoyalArchbishopEnemyAbility>();

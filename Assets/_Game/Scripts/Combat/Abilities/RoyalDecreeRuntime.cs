@@ -20,6 +20,16 @@ public sealed class RoyalDecreeRuntime :
     private EnemyActor currentTarget;
     private Coroutine durationCoroutine;
     private float abilityEndTime;
+    private int moveRemaining, moveApplied;
+    public int RemainingMoves => moveRemaining;
+    public int AppliedMove => moveApplied;
+    public void RestoreMoveExpiry(int applied) { moveApplied = applied; }
+    public void ExpireAcceptedMove(int move)
+    {
+        if (!CombatMoveClock.Active || !IsActive || move <= moveApplied) return;
+        if (--moveRemaining <= 0) FinishAbility();
+        else StateChanged?.Invoke();
+    }
 
     public event Action StateChanged;
     public event Action<EnemyActor> TargetChanged;
@@ -31,13 +41,15 @@ public sealed class RoyalDecreeRuntime :
         Cancel();
         if(remaining<=0 || !(definition is RoyalDecreeAbilityDefinition royal)) return;
         activeDefinition=royal; IsActive=true; abilityEndTime=Time.time+remaining;
-        SetTarget(target); durationCoroutine=StartCoroutine(EndAfterDuration(remaining));
+        SetTarget(target);
+        if (CombatMoveClock.Active) { moveRemaining=Mathf.CeilToInt(remaining); moveApplied=CombatMoveClock.EffectAction; }
+        else durationCoroutine=StartCoroutine(EndAfterDuration(remaining));
         StateChanged?.Invoke();
     }
     public EnemyActor CurrentTarget => currentTarget;
     public float RemainingDuration =>
         IsActive
-            ? Mathf.Max(0f, abilityEndTime - Time.time)
+            ? (CombatMoveClock.Active ? moveRemaining : Mathf.Max(0f, abilityEndTime - Time.time))
             : 0f;
 
     private void OnEnable()
@@ -108,8 +120,12 @@ public sealed class RoyalDecreeRuntime :
             StopCoroutine(durationCoroutine);
         }
 
-        durationCoroutine =
-            StartCoroutine(EndAfterDuration(resolvedDuration));
+        if (CombatMoveClock.Active)
+        {
+            moveRemaining = 3 + Mathf.Min(1, RunUpgradeRuntime.Current?.GetStackCount("longer_reign") ?? 0);
+            moveApplied = CombatMoveClock.EffectAction;
+        }
+        else durationCoroutine = StartCoroutine(EndAfterDuration(resolvedDuration));
 
         StateChanged?.Invoke();
         return true;
@@ -138,6 +154,7 @@ public sealed class RoyalDecreeRuntime :
         bool wasActive = IsActive;
         IsActive = false;
         abilityEndTime = 0f;
+        moveRemaining = 0;
         activeDefinition = null;
         SetTarget(null);
 
@@ -191,7 +208,7 @@ public sealed class RoyalDecreeRuntime :
         }
 
         int requestedDamagePerGem =
-            activeDefinition.CalculateDamagePerGem(context);
+            CombatMoveClock.Active ? 5 : activeDefinition.CalculateDamagePerGem(context);
 
         requestedDamagePerGem =
             RunUpgradeResolver.ResolveRoyalDecreeDamage(

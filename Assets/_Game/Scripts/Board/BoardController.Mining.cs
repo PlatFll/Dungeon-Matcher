@@ -26,7 +26,8 @@ public partial class BoardController
         MarkGemSet,
         ResolveGemSet,
         MarkLanes,
-        ResolveLanes
+        ResolveLanes,
+        ResolveVines
     }
 
     private sealed class BoardMutationRequest
@@ -48,6 +49,7 @@ public partial class BoardController
         public Func<bool> IsCancelled;
         public bool Succeeded;
         public bool MovablePin;
+        public bool EnvironmentalPin, Vine;
         public GemPairThreat PairThreat;
         public int WarningMoves;
         public int PlayerDamage;
@@ -360,6 +362,9 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.ResolveVines:
+                        yield return ExecuteResolveVines(request);
+                        break;
                     case BoardMutationKind.MarkGemSet:
                         ExecuteMarkGemSet(request);
                         break;

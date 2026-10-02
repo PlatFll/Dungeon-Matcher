@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-02 02:33:59Z" end-time="2026-10-02 02:34:03Z" duration="3.6863286">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="433" result="Passed" start-time="2026-10-02 02:33:59Z" end-time="2026-10-02 02:34:03Z" duration="3.686329" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1534" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/.utmp/forest-foundation/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="433" result="Passed" start-time="2026-10-02 02:33:59Z" end-time="2026-10-02 02:34:03Z" duration="3.638101" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="41784" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1304" name="ForestFoundationPlayTests" fullname="ForestFoundationPlayTests" classname="ForestFoundationPlayTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-02 02:33:59Z" end-time="2026-10-02 02:34:03Z" duration="3.633966" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1308" name="FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" fullname="ForestFoundationPlayTests.FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" methodname="FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" classname="ForestFoundationPlayTests" runstate="Runnable" seed="251365372" result="Passed" start-time="2026-10-02 02:33:57Z" end-time="2026-10-02 02:34:03Z" duration="6.006696" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Orc Trailguard in EnemySlot1. Category: Normal. Gem type: Topaz. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Initialized player RattleBones. HP: 100/100.
+Spawned Elven Mender in EnemySlot2. Category: Special. Gem type: Amethyst. Wave 1, Level 1, HP 75, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 2
+Board entrance complete.
+Spawned Elven Scout in EnemySlot3. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Wave 1 started using rule 'Forest prototype: Forest · Heal response'. Planned: 3. Spawned: 3.
+Cascade 1: clearing 3 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+Cascade 1: clearing 3 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+Enemy defeated in EnemySlot2. 2 enemies remain.
+Cascade 1: clearing 3 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

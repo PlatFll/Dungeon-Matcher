@@ -31,9 +31,11 @@ public sealed class CombatPolishPlayTests
             for(int completed=1;completed<30;completed++)
                 Assert.That(AccountProgression.Current.RecordWave(run.RunId,completed,false,false),Is.True);
             var seen=(HashSet<EnemyDefinition>)typeof(WaveController).GetField("seenMilestoneLeaders",Flags).GetValue(waves);
-            foreach(string guid in AssetDatabase.FindAssets("t:EnemyDefinition"))
+            var database=(EnemyDatabase)typeof(WaveController).GetField("enemyDatabase",Flags).GetValue(waves);
+            // Seed only this run's roster. Unreleased zone references must not
+            // enter a dungeon save through broad Editor asset discovery.
+            foreach(var definition in database.Enemies)
             {
-                var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(guid));
                 if(definition.Category!=EnemyCategory.Boss) seen.Add(definition);
             }
             typeof(WaveController).GetField("currentWave",Flags).SetValue(waves,30);

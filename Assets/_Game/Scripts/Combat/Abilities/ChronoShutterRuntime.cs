@@ -100,7 +100,8 @@ public sealed class ChronoShutterRuntime : MonoBehaviour, IPlayerAbilityRuntime,
         {
             // Completed-turn subscribers and enemy animation impacts may enqueue
             // further mutations. Drain that same queue before replacing state.
-            if (!board.CanCaptureContinuation || !waves.CanCaptureContinuation) return;
+            if (!board.CanCaptureContinuation || !waves.CanCaptureContinuation ||
+                (CombatMoveClock.Current != null && CombatMoveClock.Current.IsBlockingWaveProgression)) return;
             if (!board.TryRestoreBoardMemory(photograph, Owner)) { Cancel(); return; }
             photograph = null;
             SetPhase(BoardMemoryPhase.Rewinding, RewindDuration);

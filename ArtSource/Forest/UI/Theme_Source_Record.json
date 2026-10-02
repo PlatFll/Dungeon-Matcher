@@ -1,0 +1,27 @@
+{
+  "source_frame": "Wood_Frame_Accepted.png",
+  "health": "Neutral_Health_Shell_128x24_Accepted.png",
+  "operations": "exact crops, transparent padding and repeated source strips; derived health modules clear alpha inside x6..121/y7..17 for runtime fill. Woodland exact upper96/lower32 crops for native-scale prototype tiling. No scaling, recolor or generation.",
+  "frame_module_sizes": {
+    "corner": [
+      80,
+      80
+    ],
+    "edge": [
+      64,
+      16
+    ],
+    "player_top": [
+      146,
+      24
+    ],
+    "player_middle": [
+      146,
+      1
+    ],
+    "player_bottom": [
+      146,
+      24
+    ]
+  }
+}

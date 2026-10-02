@@ -158,6 +158,9 @@ public sealed class ModularHealthBarUI : MonoBehaviour
     private ModularHealthBarStyle ResolveContextStyle()
     {
         if (styleOverride != null) return styleOverride;
+        var theme=RunSession.Current?.Zone?.Definition?.theme;
+        var themed=theme?.HealthStyle(enemySlot!=null ? (EnemyCategory?)(enemySlot.CurrentEnemy?.Definition?.Category ?? EnemyCategory.Normal) : null);
+        if(themed!=null) return themed;
         var rankStyle = enemySlot != null
             ? LoadRankStyle(enemySlot.CurrentEnemy != null && enemySlot.CurrentEnemy.Definition != null
                 ? enemySlot.CurrentEnemy.Definition.Category : EnemyCategory.Normal)

@@ -271,6 +271,13 @@ public sealed partial class WaveController :
             CurrentPlan = new WaveSpawnPlan(currentWave, recipe.id + ": " + recipe.purpose, categories);
         }
 
+        var developmentEncounter = RunSession.Current?.Zone?.TestEncounter(currentWave);
+        if (developmentEncounter != null)
+        {
+            var categories = new List<EnemyCategory>();
+            foreach (var member in developmentEncounter.members) categories.Add(member.Category);
+            CurrentPlan = new WaveSpawnPlan(currentWave, "Forest prototype: " + developmentEncounter.label, categories);
+        }
         if (CurrentPlan == null ||
             CurrentPlan.EnemyCount == 0)
         {
@@ -295,7 +302,8 @@ public sealed partial class WaveController :
             );
 
         int spawnedEnemyCount = 0;
-        List<EnemyDefinition> encounter = BuildEncounter(plannedEnemyCount);
+        List<EnemyDefinition> encounter = developmentEncounter != null
+            ? new List<EnemyDefinition>(developmentEncounter.members) : BuildEncounter(plannedEnemyCount);
         originalEncounterDefinitions.Clear();
         plannedEnemyCount = Mathf.Min(plannedEnemyCount, encounter.Count);
         previousEncounterLeaders.Clear();
@@ -595,6 +603,8 @@ public sealed partial class WaveController :
             assignedGemType
         );
 
+        enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : 0;
+        if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
         bool successfullyBound =
             slot.BindEnemy(enemy);
 
@@ -783,6 +793,7 @@ public sealed partial class WaveController :
     private void HandleValidPlayerMoveCompleted(
         int completedMoveNumber)
     {
+        if (CombatMoveClock.Active) return; // The coordinator advances each surviving actor once.
         if (!IsWaveActive ||
             activeEnemies.Count == 0)
         {

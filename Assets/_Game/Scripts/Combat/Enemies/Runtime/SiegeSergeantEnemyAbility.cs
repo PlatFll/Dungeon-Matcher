@@ -3,7 +3,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyActor))]
-public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
+public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner, IAcceptedMoveEnemyAbility
 {
     private EnemyActor actor;
     private BoardController board;
@@ -55,8 +55,10 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         TryResolveWarning();
     }
 
+    public void ResolveAcceptedMove() => Update();
     private void Update()
     {
+        if (!CombatMoveClock.CanOffer(actor)) return;
         if (Time.timeScale<=0 || released || actor == null || actor.IsDefeated || board == null) return;
         CheckWarning();
         TryResolveWarning();
@@ -134,6 +136,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private void TryResolveWarning()
     {
+        if (!CombatMoveClock.CanOffer(actor)) return;
         if (released || actionPending || warning == null || actor == null ||
             actor.IsDefeated || actor.HasAnimationActionInProgress ||
             (stagger != null && stagger.IsStaggered) ||

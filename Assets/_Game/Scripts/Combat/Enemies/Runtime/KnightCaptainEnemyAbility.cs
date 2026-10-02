@@ -4,7 +4,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyActor))]
-public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
+public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner, IAcceptedMoveEnemyAbility
 {
     [SerializeField, Min(0.1f)] private float commandWindup = 0.8f;
     [SerializeField, Min(0f)] private float strikeSpacing = 0.2f;
@@ -34,8 +34,10 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         if (actor != null) actor.Defeated += HandleDefeated;
     }
 
+    public void ResolveAcceptedMove() => Update();
     private void Update()
     {
+        if (!CombatMoveClock.CanOffer(actor)) return;
         if (Time.timeScale<=0 || released || pending || actor == null || actor.IsDefeated || board == null ||
             !actor.IsSpecialReady || board.IsBusy || board.HasPendingBoardMutation ||
             actor.HasAnimationActionInProgress || board.CompletedValidPlayerMoves <= retryAfterMove) return;

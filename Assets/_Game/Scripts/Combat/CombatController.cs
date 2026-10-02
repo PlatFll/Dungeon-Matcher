@@ -155,6 +155,10 @@ public sealed class CombatController : MonoBehaviour
 
         BeforeGemDamage?.Invoke(damageContext);
 
+        var zone = RunSession.Current?.Zone;
+        if (zone != null)
+            damageContext.Damage = Mathf.RoundToInt(damageContext.Damage * zone.EligibleDamageMultiplier(clearContext));
+
         if (damageContext.IsCancelled)
         {
             return false;

@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
 {
     public static RunSession Current { get; private set; }
+    public CombatMoveClock MoveClock { get; private set; }
+    public ZoneRuntimeContext Zone { get; private set; }
     public string RunId { get; private set; }
     public bool IsFinished { get; private set; }
     public bool IsVictory { get; private set; }
@@ -67,6 +69,15 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         }
         if (Player != null) { Player.Defeated += OnDefeated; Player.DamageTaken += OnDamage; }
         runStartedAt = Time.unscaledTime;
+        bool forestRequested=RunLaunchOptions.ForestPrototype && Debug.isDebugBuild;
+        RunLaunchOptions.ForestPrototype=false;
+        var clockSave=continued?.checkpoint?.version==2 ? continued.checkpoint.clock : null;
+        if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint) && Resources.Load<ZoneDefinition>("Zones/"+clockSave.zoneId)!=null) || (continued==null && forestRequested))
+        {
+            Zone=gameObject.AddComponent<ZoneRuntimeContext>();
+            Zone.Initialize(this,clockSave?.zoneId ?? "magical-forest");
+            MoveClock=gameObject.AddComponent<CombatMoveClock>();MoveClock.Initialize(this,clockSave);
+        }
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);
         gameObject.AddComponent<RunFrameRecorder>();
@@ -89,9 +100,15 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     }
     private void Update()
     {
+        if (CombatMoveClock.Active) return;
         for (int i = 0; i < cooldowns.Length; i++) cooldowns[i] = Mathf.Max(0, cooldowns[i] - Time.deltaTime);
     }
 
+    public void AdvanceSupplyCooldowns()
+    {
+        if (!CombatMoveClock.Active) return;
+        for (int i=0; i<cooldowns.Length; i++) cooldowns[i]=Mathf.Max(0,cooldowns[i]-1);
+    }
     public int Charges(ConsumableKind kind) => IsFinished ? 0 : account.Charges(RunId, kind);
     public float Cooldown(ConsumableKind kind) => cooldowns[(int)kind];
     public bool CanUse(ConsumableKind kind) => !IsFinished && !transitioning && !journalWriteFailed &&
@@ -143,7 +160,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         bool committed=Continuation==null || Continuation.ExecutingReplayAction
             ? account.TrySpendCharge(RunId,kind) : Continuation.RecordAction(action);
         if(!committed) return false;
-        cooldowns[(int)kind] = BalanceV1.Current.consumableCooldown;
+        cooldowns[(int)kind] = CombatMoveClock.Active ? 2 : BalanceV1.Current.consumableCooldown;
         return true;
     }
     private void OnWaveStarted(int wave)

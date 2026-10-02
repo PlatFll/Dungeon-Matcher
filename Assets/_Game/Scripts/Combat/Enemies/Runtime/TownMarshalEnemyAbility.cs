@@ -35,10 +35,16 @@ public sealed class TownMarshalEnemyAbility :
     private bool isAttemptingReadyAbility;
     private bool isRallyActive;
     private float rallyEndsAt;
+    private int rallyMoveExpiresAt;
+    public void ExpireAcceptedMove(int move)
+    {
+        if (CombatMoveClock.Active && isRallyActive && move >= rallyMoveExpiresAt) StopRally();
+    }
     public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
     {
         saved.cycle=(int)preferredAbility; saved.protector=slotOf(currentProtector); saved.retreatMoves=retreatMovesRemaining;
-        saved.rallyRemaining=isRallyActive?Mathf.Max(0,rallyEndsAt-Time.time):0;
+        saved.rallyRemaining=isRallyActive ? (CombatMoveClock.Active ? Mathf.Max(0,rallyMoveExpiresAt-CombatMoveClock.EffectAction) : Mathf.Max(0,rallyEndsAt-Time.time)) : 0;
+        saved.rallyExpiryMove=rallyMoveExpiresAt;
         foreach(var attack in ralliedAutoAttacks) if(attack!=null) saved.rallyTargets.Add(slotOf(attack.EnemyActor));
     }
     public void RestoreContinuation(EnemyCombatSnapshot saved, System.Func<int,EnemyActor> enemyAt)
@@ -59,7 +65,8 @@ public sealed class TownMarshalEnemyAbility :
                 attack.SetRuntimeAttackSpeedMultiplier(multiplier); ralliedAutoAttacks.Add(attack);
             }
             isRallyActive=true;
-            rallyCoroutine=StartCoroutine(RallyDurationRoutine(saved.rallyRemaining,multiplier));
+            if (CombatMoveClock.Active) rallyMoveExpiresAt=saved.rallyExpiryMove;
+            else rallyCoroutine=StartCoroutine(RallyDurationRoutine(saved.rallyRemaining,multiplier));
         }
     }
 
@@ -221,6 +228,7 @@ public sealed class TownMarshalEnemyAbility :
 
     private void TryUseReadyAbility()
     {
+        if (!CombatMoveClock.CanOffer(enemyActor)) return;
         if (isAttemptingReadyAbility ||
             enemyActor == null ||
             boardController == null ||
@@ -638,6 +646,7 @@ public sealed class TownMarshalEnemyAbility :
         float duration,
         float appliedMultiplier)
     {
+        if (CombatMoveClock.Active) { rallyMoveExpiresAt=CombatMoveClock.EffectAction+3; yield break; }
         rallyEndsAt=Time.time+Mathf.Max(.1f,duration);
         yield return
             new WaitForSeconds(

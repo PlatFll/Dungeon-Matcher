@@ -67,6 +67,7 @@ public sealed class PlayerAbilityController :
     {
         get
         {
+            if (CombatMoveClock.Current?.IsBlockingWaveProgression == true) return false;
             if (RunSession.Current != null && RunSession.Current.Challenge == RunChallenge.BoardOnly) return false;
             if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
                 (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;
@@ -131,6 +132,7 @@ public sealed class PlayerAbilityController :
 
     public bool TryActivate()
     {
+        if (CombatMoveClock.Current?.IsBlockingWaveProgression == true) return false;
         if (RunSession.Current != null && RunSession.Current.Challenge == RunChallenge.BoardOnly) return false;
         if (RunSession.Current != null && (Time.timeScale <= 0 || RunSession.Current.IsFinished ||
             (RunSession.Current.Board != null && RunSession.Current.Board.IsSelectingTarget))) return false;

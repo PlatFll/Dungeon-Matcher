@@ -69,10 +69,20 @@ public partial class BoardController
     {
         if (!CanCaptureContinuation || ownerAtKey == null || !IsValidBoardMemory(memory)) return false;
         var saved = JsonUtility.FromJson<BoardCombatSnapshot>(JsonUtility.ToJson(memory));
+        // Restored vines are board objects, but their clocks stay in the present.
+        // A removed/recreated node receives full future grace; surviving nodes
+        // keep their current age. Dead producers cannot be resurrected by a photo.
+        var currentVines=CaptureVines(_=>-1);
+        if(saved.vines!=null) foreach(var node in saved.vines)
+        {
+            var current=currentVines.Find(n=>n.gemId==node.gemId);
+            node.bornMove=current!=null?current.bornMove:completedValidPlayerMoves;
+        }
         var reopenedMines = new List<Vector2Int>();
         foreach (var cell in saved.cells)
         {
-            if (cell.pinned && !Living(ownerAtKey(cell.pinOwner)))
+            bool environmental=saved.vines!=null && saved.vines.Exists(n=>n.gemId==cell.identity && n.environmental);
+            if (cell.pinned && !environmental && !Living(ownerAtKey(cell.pinOwner)))
                 cell.pinned = cell.frozen = cell.movable = false;
             // Pins/mines expire with their owner; barricades and planted banners
             // persist as orphaned board objects under the existing enemy rules.
@@ -119,6 +129,7 @@ public partial class BoardController
         RestoreRefillRandom(saved.refillRandom);
         nextRoyalBannerId = Mathf.Max(nextRoyalBannerId, saved.nextBanner);
         RestoreSnapshotCells(saved, key => Living(ownerAtKey(key)) ? ownerAtKey(key) : null);
+        RestoreVines(saved.vines);
         foreach (var cell in reopenedMines)
             CreateGem(cell.x, cell.y, ChooseRestoredOpeningType(cell.x, cell.y), GetLocalPosition(cell.x, cell.y));
         var restored = new Dictionary<int, Gem>();

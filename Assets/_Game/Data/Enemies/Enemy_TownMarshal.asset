@@ -29,6 +29,8 @@ MonoBehaviour:
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
   baseAttackInterval: 10
+  firstAttackMoves: 4
+  attackMoves: 4
   hasSpecialAbility: 1
   specialAbilityKind: 5
   baseSpecialTurnRequirement: 4

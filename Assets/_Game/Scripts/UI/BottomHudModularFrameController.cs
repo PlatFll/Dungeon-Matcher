@@ -66,6 +66,13 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
 
     private void ResolveFrameSprites()
     {
+        var theme = RunSession.Current?.Zone?.Definition?.theme;
+        if (theme?.frameCorner != null && theme.frameEdge != null)
+        {
+            cornerPiece = theme.frameCorner;
+            normalPiece = theme.frameEdge;
+            return;
+        }
         if (cornerPiece != null &&
             normalPiece != null)
         {

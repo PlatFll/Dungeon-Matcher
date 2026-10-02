@@ -164,6 +164,20 @@ public sealed class BoardVisuals : MonoBehaviour
         CreateCellTiles();
     }
 
+    public void ApplyGameplayTheme(GameplayThemeDefinition theme)
+    {
+        if (theme == null || theme.boardCells == null || theme.boardCells.Length == 0) return;
+        cellTileSprites = theme.boardCells;
+        cellTileScale = 1f;
+        cellTileColor = Color.white;
+        if(theme.frameCorner!=null && theme.frameEdge!=null)
+        {
+            cornerPiece=theme.frameCorner;normalPiece=theme.frameEdge;
+            RemoveExistingBoardFrame();CreateModularBoardFrame();
+        }
+        CreateCellTiles();
+    }
+
     private void EnsureBoardReference()
     {
         if (board == null)

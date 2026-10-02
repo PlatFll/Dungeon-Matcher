@@ -1,0 +1,1307 @@
+{
+  "unity": "6000.3.19f1",
+  "base_commit": "d334b5278748dcd303ac931eb71b0aa7328dd15b",
+  "unique_test_cases": 298,
+  "outstanding_failed_cases": 0,
+  "runs": [
+    {
+      "file": "regression.xml",
+      "sha256": "bf2f2527f355310e4a2622e01ec4950aae6e1c6500b479c81c0e983e4e229486",
+      "engine_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\forest-foundation\\.utmp\\ForestValidation\\3d739ac8-72cd-41e2-ae0d-e3ef3dfac15c.log",
+      "result": "Failed(Child)",
+      "total": 296,
+      "passed": 295,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "file": "recheck.xml",
+      "sha256": "8e25eefcc9e68f799b52b6be2c0795990643c559af09ba8932d89e5b10293198",
+      "engine_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\forest-foundation\\.utmp\\ForestValidation\\672ac590-e804-4c76-894d-78dbed54d0e6.log",
+      "result": "Passed",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "channel-boundary.xml",
+      "sha256": "e2c6c93c2a95285b494ef0766240001d444642ef9a8b1f3ba77b9a54214d50f7",
+      "engine_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\forest-foundation\\.utmp\\ForestValidation\\4a058e15-31f1-46b5-9fe9-5b3ed7e64594.log",
+      "result": "Passed",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "latest_results": {
+    "AcceptedMoveStateTests.OnlyAcceptedSequentialActionCanCommitOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "AcceptedMoveStateTests.SnapshotPreservesActionAndStableActorIdentity": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceDisruptionPlayTests.ConcurrentOwnersRespectCapsResponsesAndDeathCleanup": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceDisruptionPlayTests.RoyalMechanicsResolveWithEscortsInActualPlayMode": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceFreshShapesPlayTests.CharacterResetAndSharedMasteryWorkThroughRealMenus": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceFreshShapesPlayTests.FreshRowColumnAndCrystalShapesResolveThroughRealSwaps": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceLifecyclePlayTests.ExistingLifecycleAssertionsWithActualUnityCallbacks": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.BriefSaveReplacementLockStillSettlesRewardExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.CardTradeoffsStackCapsAndEligibilityRespectActualMechanics": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"bardley\",\"skeleton\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"skeleton\",\"bardley\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.FailedDiskWriteDoesNotSpendWalletOrInventory": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.FailedResetDoesNotPublishOrChangeDiskOrMemory": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.FreshProfileHasDirectionalBombsAndCrystalButMasteryBombsStayLocked": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.InterruptedRunSurvivesUntilExplicitSettlementAndKingFirstClearCannotRepeat": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.LegacySelectionsMigrateWithoutWritingOrSummingProgress": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",1,80,10.0f,40)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",20,230,22.35f,95)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",5,110,12.6f,50)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",1,100,11.0f,45)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",20,290,21.45f,100)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",5,140,13.2f,55)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PersistentSaveReplacementLockPreservesWalletAndJournal": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PreviouslyEarnedLowerThresholdUnlocksRemainOwnedOnLoad": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"bardley\",\"skeleton\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"skeleton\",\"bardley\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ResetRejectsInvalidCharactersLevelOneAndActiveRuns": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Defeat\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Quit to Menu\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Retry\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Victory\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BalanceV1Tests.ShieldGateAndAegisCapDeliverUsefulValueAndReset": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.OneOpeningIsCountedForEachStandardAboveIt": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(False,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(True,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.RemovedBarricadeCannotQueueItsOpeningAgain": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.SecondDistinctHitCreatesExactlyOneStoneOpening": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BarricadeBannerGravityTests.SurvivingStoneBarricadeDoesNotCreateAnOpening": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.ActivePhotographAndInFlightFifthMoveSurviveRestart": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.PlayableDefinitionUsesApprovedFramesAndDedicatedHold": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ChronoShutterTests.RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishPlayTests.KingFormationContinuesAndSettlesOnlyOnDeath": {
+      "result": "Passed",
+      "source": "recheck.xml"
+    },
+    "CombatPolishTests.AllEnemyStatsRemainCleanAcrossOpeningAndEndlessWaves": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(0,0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(1,5)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(31,30)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(32.5d,35)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(7,5)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(8,10)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.CleanAmountsRoundNearestWithPositiveMinimum(98,100)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.DamageHealingShieldsAndLegacyContinuationRemainClean": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(100,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(1000,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(28,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(30,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(32,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.EndlessCardCadence(33,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CombatPolishTests.ShieldBreakGatesPlayerHitAndReentrantShieldGrant": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"barricadeCells\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"minedCellOwners\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"royalBannerCells\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.AcceptedBardleyCastKeepsRefundCapAfterCancellationAndBombPreviewDoesNotSpend": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.ChainedClearsAndCardRefundsShareEffectiveCostBudget": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.ChallengesRequireKingAndTrackSeparateDurableRecords": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.InitialDraftDirectionsAndRefinementRemainEligibleAndDistinct": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.PracticeUsesOwnedProgressionButNeverWritesInventoryOrRewards": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.RefundNeverPaysMoreThanRoundedBudgetAndRejectedCastReleasesIt": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "DesignV2Tests.TeachingDeadlinesPrecedeTheirMilestoneExamsAcrossSeeds": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,0,10)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,5)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"defeated\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"destroyedHost\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"disposed\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"notReady\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"uninitialized\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.AcceptedSwapReplayProducesSameLogicalStateExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.ActualMovesGrowAtMostOneChildAfterFullGraceAndRespectSharedCapacity": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.DeadlineStaggerAndTargetDeathCancelExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels": {
+      "result": "Passed",
+      "source": "channel-boundary.xml"
+    },
+    "ForestFoundationPlayTests.LargeCascadeAndSpecialChainConsumeOneManualAction": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.MixedColorDamageKeepsAttributionAndFinalFiveStepRounding": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.PhotoKeepsPresentVineAgeAndWarningsWhileCasterRemovalCancelsHeal": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationPlayTests.VinesSharePinsCapsGraceAndEnvironmentalOwnership": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationTests.ApprovedImportsKeepNativePixelsAndIndependentTaxonomy": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationTests.ResonanceUsesOnlyCurrentGemAndEligiblePlayerSources": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestFoundationTests.SaveProfilesAreExplicitAndUnknownVersionsAreRejected": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ForestVisualPlayTests.CaptureActualForestGameplayAndChannelIntent": {
+      "result": "Passed",
+      "source": "recheck.xml"
+    },
+    "GameOverRecoveryTests.AStaleDefeatNotificationCannotStartGameOverForALivingPlayer": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.CleanupDoesNotOverwriteANewerNonzeroTimeScale": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.0f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.5f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(1.0f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.DestroyedVisualReferencesCannotStrandTheTimeFreeze": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.DestroyingTheComponentDoesNotOrphanItsCanvasOverlay": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.DisabledComponentCannotResubscribeThroughRefresh": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.0f,0.0f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.5f,1.087698f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(1.0f,1.0f)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDestroy\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDisable\")": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.PlayerReinitializationKeepsTheNewHealthOverride": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RealReviveEventClearsOverlayWithoutChangingRestoredHealth": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RecoveryOfAnotherPlayerDoesNotClearThisDeath": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.ReenableReconciliationDoesNotReopenAMissedRevival": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RejectedReviveDoesNotRemoveGameOver": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RepeatedCleanupDoesNotOwnTheClockAgain": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.RetryGuardRequiresADeadReadyUncommittedSession": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "GameOverRecoveryTests.StaleRetryAfterRecoveryCannotRequestASceneLoad": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(0)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(1)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(2)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "ReshufflePinReservationTests.RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(False,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.MissingActorReferenceAfterEnteringStaggerWaitIsSkipped": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RoyalAssaultParticipantLifetimeTests.OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "RunUpgradeSystemTests.UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.AutoAttackReleaseCannotBypassStagger": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "TownMarshalStaggerTests.ReadyRallyCannotStartWhileStaggered": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.ClearingSameWaveNumberStillInvalidatesOldCompletion": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.CompletionListenerClearPreventsSchedulingOldAutomaticAdvance": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.DeathCompletionAcknowledgesExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.DeathCoroutineToleratesVisualsRemovedAfterAcceptance": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.DisabledWaveControllerDoesNotAdvertiseSummonAvailability": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.DyingObjectUnderAnchorStillBlocksSummonSlotReuse": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.LastCurrentDeathCompletesWaveExactlyOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.LivingRosterMemberPreventsDeathCompletionFromEndingWave": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,True)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(True,False)": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.NormalDeathFinishesPresentationAndAcknowledgesOnce": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.OldCompletionDoesNotConsumeNewEncounterDeath": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.PlannedSpawnsPreventPrematureCompletion": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.PublicClearRevokesSpawnOwnershipAndPendingDeathState": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.ReentrantDisableDuringDeathFinishedCannotLoseCallback": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.SpawnGuardRejectsOldIdentityAndDifferentWaveNumber": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.SpawnRequestCannotDiscardAnAcceptedDeath": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons": {
+      "result": "Passed",
+      "source": "regression.xml"
+    },
+    "WaveDeathLifecycleTests.ThrowingPresentationObserverStillAcknowledgesGameplay": {
+      "result": "Passed",
+      "source": "regression.xml"
+    }
+  },
+  "native_art_checks": {
+    "Elven_Scout": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 13,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6"
+    },
+    "Orc_Trailguard": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 14,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09"
+    },
+    "Elven_Mender": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 13,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d"
+    },
+    "Orc_Rootbinder": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 14,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "62d37be53cb3945bdc147319904f52dbf2f6c4ccd68eefeea29a26fd3477cd1b"
+    },
+    "Barkhide_Warden": {
+      "size": [
+        64,
+        64
+      ],
+      "opaque_colors": 14,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "cb5d2bf625bdb9ed411e92aeb26434d06231b201c7f3a26c81cfeb319bb7b699"
+    },
+    "Briar_Matriarch": {
+      "size": [
+        96,
+        96
+      ],
+      "opaque_colors": 17,
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "d884ba6a5848b7410e25b7f1cd3f274ed87aa709809218b61f44f9ff6eb06ddd"
+    }
+  },
+  "phase_4_pixellab_generations": 0
+}

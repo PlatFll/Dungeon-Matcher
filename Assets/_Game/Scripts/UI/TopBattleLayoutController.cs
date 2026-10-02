@@ -418,6 +418,13 @@ public sealed class TopBattleLayoutController : MonoBehaviour
 
     private void ResolveFrameSprites()
     {
+        var theme = RunSession.Current?.Zone?.Definition?.theme;
+        if (theme?.frameCorner != null && theme.frameEdge != null)
+        {
+            cornerPiece = theme.frameCorner;
+            normalPiece = theme.frameEdge;
+            return;
+        }
         cornerPiece =
             cornerPieceOverride;
 

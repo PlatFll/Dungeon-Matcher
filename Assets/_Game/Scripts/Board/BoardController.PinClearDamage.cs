@@ -28,6 +28,10 @@ public partial class BoardController
         int destroyedColumn =
             destroyedGem.Column;
 
+        // The physical-clear boundary also ends a vine's pending child. Free
+        // clears must not leave its reservation until the next manual move.
+        CancelTelegraphGem(destroyedGem);
+
         int destroyedRow =
             destroyedGem.Row;
 

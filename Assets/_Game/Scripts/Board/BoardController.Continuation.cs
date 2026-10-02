@@ -49,9 +49,11 @@ public partial class BoardController
         foreach(var pair in gemPairThreats) if(IsGemPairThreatValid(pair))
             saved.warnings.Add(new BoardWarningSnapshot { kind=0, owner=ownerSlot(pair.Owner.GetInstanceID()),dueMove=pair.DueMove,
                 targets=new List<int> { CellIndex(pair.First),CellIndex(pair.Second) } });
-        foreach(var set in gemSetThreats) if(!set.Ended && set.Owner!=null && !set.Owner.IsDefeated)
+        saved.vines=CaptureVines(ownerSlot);
+        foreach(var set in gemSetThreats) if(!set.Ended && (set.Environmental || (set.Owner!=null && !set.Owner.IsDefeated)))
         {
-            var warning=new BoardWarningSnapshot { kind=1,owner=ownerSlot(set.Owner.GetInstanceID()),dueMove=set.DueMove,restoration=set.RestorationPresentation };
+            var warning=new BoardWarningSnapshot { kind=1,owner=set.Owner!=null?ownerSlot(set.Owner.GetInstanceID()):-1,dueMove=set.DueMove,restoration=set.RestorationPresentation,
+                vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId };
             foreach(var gem in set.Targets) if(gem!=null && GetGem(gem.Column,gem.Row)==gem) warning.targets.Add(CellIndex(gem));
             saved.warnings.Add(warning);
         }
@@ -73,7 +75,7 @@ public partial class BoardController
         foreach(var warning in saved.warnings)
         {
             var owner=ownerAtSlot(warning.owner);
-            if(owner==null) throw new InvalidOperationException("Saved warning has no living owner.");
+            if(owner==null && !warning.environmental) throw new InvalidOperationException("Saved warning has no living owner.");
             if(warning.kind==0)
             {
                 var pair=new GemPairThreat { Owner=owner,First=SavedGem(warning.targets[0]),Second=SavedGem(warning.targets[1]),DueMove=warning.dueMove };
@@ -81,7 +83,8 @@ public partial class BoardController
             }
             else if(warning.kind==1)
             {
-                var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration };
+                var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration,Vine=warning.vine,Environmental=warning.environmental,
+                    VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId };
                 foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
                 gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
             }
@@ -91,6 +94,7 @@ public partial class BoardController
                 laneThreats.Add(lane); EnsureTelegraphPresentation(); LanesMarked?.Invoke(lane);
             }
         }
+        RestoreVines(saved.vines);
         isBusy=false;
     }
     private void RestoreSnapshotCells(BoardCombatSnapshot saved, Func<int,EnemyActor> ownerAtSlot)
@@ -105,7 +109,8 @@ public partial class BoardController
                 gem.SetSpecialType(value.special);
                 if(value.pinned)
                 {
-                    int owner=ownerAtSlot(value.pinOwner)?.GetInstanceID() ?? 0;
+                    bool environmental=saved.vines!=null && saved.vines.Exists(n=>n.gemId==value.identity && n.environmental);
+                    int owner=environmental?EnvironmentalVineOwner:ownerAtSlot(value.pinOwner)?.GetInstanceID() ?? 0;
                     pinnedGemOwners.Add(gem,owner);
                     if(value.movable) movablePinnedGems.Add(gem);
                     if(value.frozen)
