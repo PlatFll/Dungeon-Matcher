@@ -35,6 +35,10 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.GuardingRoots:
+            case EnemySpecialAbilityKind.GroveRenewal:
+                runtime=enemyObject.GetComponent<ForestMilestoneEnemyAbility>() ?? enemyObject.AddComponent<ForestMilestoneEnemyAbility>();
+                break;
             case EnemySpecialAbilityKind.ChannelHeal:
                 runtime = enemyObject.GetComponent<EnemyChannelRuntime>() ?? enemyObject.AddComponent<EnemyChannelRuntime>();
                 break;

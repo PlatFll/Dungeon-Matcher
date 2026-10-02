@@ -13,5 +13,7 @@ public enum EnemySpecialAbilityKind
     RoyalArchbishop = 10,
     King = 11,
     ChannelHeal = 12,
-    SpreadingVines = 13
+    SpreadingVines = 13,
+    GuardingRoots = 14,
+    GroveRenewal = 15
 }

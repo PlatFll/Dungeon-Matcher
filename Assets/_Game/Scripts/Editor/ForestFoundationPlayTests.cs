@@ -10,12 +10,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-public sealed class ForestFoundationPlayTests
+public sealed partial class ForestFoundationPlayTests
 {
     private const BindingFlags Flags=BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic;
     private IDisposable profile, character, mastery;
     private string path;
     private bool preserveCounterplayCrystal;
+    private Vector2Int safeMoveFrom,safeMoveTo;
     private RunSession Run=>RunSession.Current;
     [UnitySetUp] public IEnumerator SetUp()
     {
@@ -35,12 +36,13 @@ public sealed class ForestFoundationPlayTests
         profile=character=mastery=null;RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.ForestEncounterOffset=0;
         yield return new ExitPlayMode();
     }
-    private IEnumerator Launch(int offset=0)
+    private IEnumerator Launch(int offset=0, bool secondsBasics=false)
     {
+        RunLaunchOptions.ForestClockProfile=secondsBasics?CombatClockSnapshot.HybridProfile:CombatClockSnapshot.MoveProfile;
         RunLaunchOptions.ForestPrototype=true;RunLaunchOptions.ForestEncounterOffset=offset;
         SceneManager.LoadScene("Game");yield return Stable();
         Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Zone.Definition.eligibleForLiveTravel,Is.False);
-        Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(3));
+        Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(Run.Zone.TestEncounter(1).members.Length));
     }
     private IEnumerator Stable()
     {
@@ -61,18 +63,29 @@ public sealed class ForestFoundationPlayTests
         for(int x=0;x<board.Width;x++)for(int y=0;y<board.Height;y++)
         {var g=board.GetGem(x,y);if(!(preserveCounterplayCrystal && x==board.Width-1 && y==0)) g.SetSpecialType(GemSpecialType.None);g.SetType((GemType)((x+2*y)%6),sprites[(x+2*y)%6]);}
         var color=(GemType)Enumerable.Range(0,6).First(n=>Run.Waves.ActiveEnemies.All(e=>(int)e.AssignedGemType!=n));
-        int top=board.Height-1;
-        foreach(int x in new[]{0,1}) board.GetGem(x,top).SetType(color,sprites[(int)color]);
-        board.GetGem(3,top).SetType((GemType)(((int)color+2)%6),sprites[((int)color+2)%6]);
-        board.GetGem(2,top).SetType((GemType)(((int)color+1)%6),sprites[((int)color+1)%6]);
-        board.GetGem(2,top-1).SetType(color,sprites[(int)color]);
+        int top=-1,left=0;
+        // A ritual may pin the old fixed swap. Find an actual unrestrained
+        // response region instead of waiting forever on an invalid fixture.
+        for(int y=board.Height-1;y>=1&&top<0;y--)for(int x=0;x<=board.Width-4&&top<0;x++)
+        {
+            bool clear=true;
+            for(int px=x;px<x+4;px++)for(int py=Mathf.Max(0,y-2);py<=Mathf.Min(board.Height-1,y+1);py++)
+                clear&=!board.IsGemPinned(board.GetGem(px,py));
+            if(clear) {top=y;left=x;}
+        }
+        Assert.That(top,Is.GreaterThanOrEqualTo(1),"fixture has an unrestrained response");
+        foreach(int x in new[]{left,left+1}) board.GetGem(x,top).SetType(color,sprites[(int)color]);
+        board.GetGem(left+3,top).SetType((GemType)(((int)color+2)%6),sprites[((int)color+2)%6]);
+        board.GetGem(left+2,top).SetType((GemType)(((int)color+1)%6),sprites[((int)color+1)%6]);
+        board.GetGem(left+2,top-1).SetType(color,sprites[(int)color]);
+        safeMoveFrom=new Vector2Int(left+2,top-1);safeMoveTo=new Vector2Int(left+2,top);
         Set(board,"refillRandom",new SavedRandom(13579));
     }
     private IEnumerator Move(Action duringAccepted=null)
     {
         PrepareSafeMove();var board=Run.Board;int before=Run.MoveClock.Tick;
         Action<int> callback=_=>duringAccepted?.Invoke();board.ValidPlayerMoveAccepted+=callback;
-        board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(2,board.Height-2),board.GetGem(2,board.Height-1)));
+        board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(safeMoveFrom.x,safeMoveFrom.y),board.GetGem(safeMoveTo.x,safeMoveTo.y)));
         yield return Until(()=>Run.MoveClock.Tick==before+1 && Run.Continuation.CanCapture,"one accepted action settles");
         board.ValidPlayerMoveAccepted-=callback;
         Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(before+1));

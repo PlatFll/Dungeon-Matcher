@@ -64,7 +64,7 @@ public sealed class RunCombatSnapshot
 {
     // 0 pair / 1 set / 2 lanes. Target indices refer to saved cells.
     public int kind, owner, dueMove, row, column;
-    public bool restoration, vine, environmental;
+    public bool restoration, vine, environmental, nonSpreading;
     public int vineLimit, parentGemId;
     public List<int> targets = new List<int>();
 }
@@ -75,6 +75,7 @@ public sealed class RunCombatSnapshot
     public int staggerHitMove, staggerAppliedMove, immunityAppliedMove;
     public int poisonMoveTicks, poisonNextMove, rallyExpiryMove;
     public EnemyChannelSnapshot channel;
+    public ForestMilestoneSnapshot forestMilestone;
     public int slot, health, shield, specialTurns, specialRequirement;
     public GemType weakness;
     public float attackRemaining, attackSpeed;

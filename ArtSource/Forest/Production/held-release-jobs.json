@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Barkhide_Warden",
+    "state": "ChannelHold",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Barkhide_Warden_Held.png",
+      "last_frame_url": "Inputs/Barkhide_Warden_Held.png",
+      "frame_count": 4,
+      "no_background": true,
+      "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+    },
+    "result": "id: 4ea42806-fbc2-4f21-a244-c7040f9fd0dd\njob_id: 4ea42806-fbc2-4f21-a244-c7040f9fd0dd\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e9ea69ee-f4c9-5b85-aa79-5548bf07cd85\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4ea42806-fbc2-4f21-a244-c7040f9fd0dd\")"
+  },
+  {
+    "name": "Barkhide_Warden",
+    "state": "Release",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Barkhide_Warden_Held.png",
+      "last_frame_url": "Approved/Barkhide_Warden.png",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+    },
+    "result": "id: 539f9bfa-0bed-4336-8ea1-724e18cb4ed8\njob_id: 539f9bfa-0bed-4336-8ea1-724e18cb4ed8\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 25f891eb-f4db-5a5f-ac4f-a97d768ade2c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"539f9bfa-0bed-4336-8ea1-724e18cb4ed8\")"
+  },
+  {
+    "name": "Orc_Rootbinder",
+    "state": "ChannelHold",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+      "last_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+      "frame_count": 4,
+      "no_background": true,
+      "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+    },
+    "result": "id: 09620249-aaeb-46f8-99a6-2b019a5d4f9b\njob_id: 09620249-aaeb-46f8-99a6-2b019a5d4f9b\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0953e468-7c88-5c29-a5c3-4af1eff9d10a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"09620249-aaeb-46f8-99a6-2b019a5d4f9b\")"
+  },
+  {
+    "name": "Orc_Rootbinder",
+    "state": "Release",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+      "last_frame_url": "Approved/Orc_Rootbinder.png",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+    },
+    "result": "id: 84711757-b9f3-48a8-9730-3eeb9bdc2413\njob_id: 84711757-b9f3-48a8-9730-3eeb9bdc2413\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 2f6051e0-de99-59bb-8714-647d8ccb7510\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"84711757-b9f3-48a8-9730-3eeb9bdc2413\")"
+  },
+  {
+    "name": "Briar_Matriarch",
+    "state": "ChannelHold",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Briar_Matriarch_Held.png",
+      "last_frame_url": "Inputs/Briar_Matriarch_Held.png",
+      "frame_count": 4,
+      "no_background": true,
+      "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+    },
+    "result": "id: c8010a0b-230f-431d-a5d5-5240b3e03ada\njob_id: c8010a0b-230f-431d-a5d5-5240b3e03ada\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d5c5fab9-5781-58e3-ae7e-4c16058618ba\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c8010a0b-230f-431d-a5d5-5240b3e03ada\")"
+  },
+  {
+    "name": "Briar_Matriarch",
+    "state": "Release",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Briar_Matriarch_Held.png",
+      "last_frame_url": "Approved/Briar_Matriarch.png",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+    },
+    "result": "id: 55952b2a-44d1-4915-9c1c-3978f2c414bd\njob_id: 55952b2a-44d1-4915-9c1c-3978f2c414bd\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 83200b61-a7bc-5ddf-9a7b-515889733ea3\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"55952b2a-44d1-4915-9c1c-3978f2c414bd\")"
+  }
+]

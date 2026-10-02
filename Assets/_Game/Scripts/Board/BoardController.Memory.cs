@@ -73,6 +73,21 @@ public partial class BoardController
         // A removed/recreated node receives full future grace; surviving nodes
         // keep their current age. Dead producers cannot be resurrected by a photo.
         var currentVines=CaptureVines(_=>-1);
+        // A photo can rearrange surviving ritual anchors, but cannot resurrect
+        // a solved/finished cast or transfer old anchors into a newer cast.
+        // The board compares its own producer and creation epoch, independent
+        // of the character kit that created the nonspreading roots.
+        if(saved.vines!=null)
+        {
+            var expired=saved.vines.FindAll(n=>n.nonSpreading &&
+                !currentVines.Exists(c=>c.nonSpreading && c.ownerId==n.ownerId && c.bornMove==n.bornMove));
+            foreach(var node in expired)
+            {
+                var cell=saved.cells.Find(c=>c.identity==node.gemId);
+                if(cell!=null) cell.pinned=cell.frozen=cell.movable=false;
+                saved.vines.Remove(node);
+            }
+        }
         if(saved.vines!=null) foreach(var node in saved.vines)
         {
             var current=currentVines.Find(n=>n.gemId==node.gemId);

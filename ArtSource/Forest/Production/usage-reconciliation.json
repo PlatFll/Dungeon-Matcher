@@ -1,0 +1,706 @@
+{
+  "authorization": {
+    "total": 120,
+    "initial": 90,
+    "reservedAfterReview": 30,
+    "creditPurchases": false
+  },
+  "opening": {
+    "remaining": 1856,
+    "used": 144
+  },
+  "closing": {
+    "remaining": 1776,
+    "used": 224,
+    "total": 2000,
+    "creditsUSD": 0
+  },
+  "actualUsed": 80,
+  "unusedInitial": 10,
+  "untouchedReserve": 30,
+  "jobs": [
+    {
+      "name": "Barkhide_Warden",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "44debb46-c248-4ec0-b96e-c5b4dd0e4bfb",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 44debb46-c248-4ec0-b96e-c5b4dd0e4bfb\njob_id: 44debb46-c248-4ec0-b96e-c5b4dd0e4bfb\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ed95fdb6-006a-52f4-b697-48f3df6099b3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"44debb46-c248-4ec0-b96e-c5b4dd0e4bfb\")"
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "03247fda-4530-4f7c-9a31-91015fc63d08",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 03247fda-4530-4f7c-9a31-91015fc63d08\njob_id: 03247fda-4530-4f7c-9a31-91015fc63d08\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 535ca4f3-2f44-5b05-9da0-1d6b123c6209\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"03247fda-4530-4f7c-9a31-91015fc63d08\")"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "da6b6c93-f0a2-4ec0-9d35-b16e04871178",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: da6b6c93-f0a2-4ec0-9d35-b16e04871178\njob_id: da6b6c93-f0a2-4ec0-9d35-b16e04871178\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 42039c9a-d9a8-52f9-86df-65de5c76b7b5\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"da6b6c93-f0a2-4ec0-9d35-b16e04871178\")"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "b2e32653-d649-4625-8ea9-d6bd4a9652ac",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: b2e32653-d649-4625-8ea9-d6bd4a9652ac\njob_id: b2e32653-d649-4625-8ea9-d6bd4a9652ac\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 231e3009-320a-58d5-af87-653362135a59\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b2e32653-d649-4625-8ea9-d6bd4a9652ac\")"
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "c55a901c-895a-4f06-af49-be5baf9b22d6",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: c55a901c-895a-4f06-af49-be5baf9b22d6\njob_id: c55a901c-895a-4f06-af49-be5baf9b22d6\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 95caad9a-d2de-5590-9558-492b43a67c6f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c55a901c-895a-4f06-af49-be5baf9b22d6\")"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Idle",
+      "endpoint": "animate_image",
+      "jobId": "1f6502b4-4b95-41af-9046-e4318b91b8f4",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 1f6502b4-4b95-41af-9046-e4318b91b8f4\njob_id: 1f6502b4-4b95-41af-9046-e4318b91b8f4\naction: Restrained planted battle idle loop. Keep both feet planted at the exact same ground contacts. Tiny knee and hip settle, head follows by one pixel, subtle single blink, held equipment remains rigid and gripped. Return smoothly to the exact original ready pose. Preserve face, equipment, body proportions, species, native pixel scale, color palette, and original facing. No new weapon, shield or accessories. No walking, hopping, levitation, torso inflation or whole-sprite translation.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ccea6556-3e7c-5b74-889a-710e0d300bec\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1f6502b4-4b95-41af-9046-e4318b91b8f4\")"
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "3bd1109b-bbd4-43ae-9d73-6bee33101c52",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 3bd1109b-bbd4-43ae-9d73-6bee33101c52\njob_id: 3bd1109b-bbd4-43ae-9d73-6bee33101c52\naction: Draw the existing bow with one hand bracing the bow and the other pulling its string and arrow to the cheek. Brief anticipation, crisp arrow release to the left, small shoulder recoil, lower bow smoothly to exact ready pose. Keep quiver, bow and face unchanged. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: aff44e9a-f48f-539b-8dfc-6d029f4cf55c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3bd1109b-bbd4-43ae-9d73-6bee33101c52\")"
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "d67b8315-17bc-4b18-94e8-9f7a59c2cc70",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: d67b8315-17bc-4b18-94e8-9f7a59c2cc70\njob_id: d67b8315-17bc-4b18-94e8-9f7a59c2cc70\naction: Both hands firmly grip the existing axe shaft. Shoulders and hips wind back, then one sharp horizontal axe strike toward the left, follow through and smoothly recover to ready. Keep single axe length and head shape rigid; no extra weapon. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ac530c70-5680-5b8b-af52-214781b229b0\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d67b8315-17bc-4b18-94e8-9f7a59c2cc70\")"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "63ab0135-81e5-4e8f-aca7-61cc69cd0d37",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 63ab0135-81e5-4e8f-aca7-61cc69cd0d37\njob_id: 63ab0135-81e5-4e8f-aca7-61cc69cd0d37\naction: A modest staff jab toward the left with the existing crescent-tipped wooden staff, body leans forward and recovers. Free hand balances. Keep the staff shape rigid, face unchanged, no projectile or added weapon. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 55af781e-db1b-591e-aeed-1e83cc1d46e9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"63ab0135-81e5-4e8f-aca7-61cc69cd0d37\")"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "064673ef-816f-4ae3-8082-c980f88d138e",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 064673ef-816f-4ae3-8082-c980f88d138e\njob_id: 064673ef-816f-4ae3-8082-c980f88d138e\naction: A short grounded forward jab with the existing forked wooden staff toward the left, slight knee bend and shoulder movement, then smooth recovery to the original stance. Preserve staff shape and fur mantle, no extra weapon. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0d74df1c-41ef-5772-b437-99f457c70b5b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"064673ef-816f-4ae3-8082-c980f88d138e\")"
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "fe37cab6-20e4-4376-ae1c-bdaf9bc88aad",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: fe37cab6-20e4-4376-ae1c-bdaf9bc88aad\njob_id: fe37cab6-20e4-4376-ae1c-bdaf9bc88aad\naction: A forceful planted shield bash toward the left with the existing tall bark shield. Shoulder and hip drive together, compress the legs, thrust the shield forward, then smoothly settle back. The free hand balances. NO sword or extra weapon. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 952775d4-1692-5f55-9428-307a313a36a8\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fe37cab6-20e4-4376-ae1c-bdaf9bc88aad\")"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Attack",
+      "endpoint": "animate_image",
+      "jobId": "caf857e2-89ef-4e7b-9697-2cdadf6e7336",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: caf857e2-89ef-4e7b-9697-2cdadf6e7336\njob_id: caf857e2-89ef-4e7b-9697-2cdadf6e7336\naction: A controlled sharp jab of the existing seed-cage staff toward the left, torso turns slightly and open sleeve follows, then a smooth return to the original stance. Preserve long slender silhouette, staff cage, crown prongs, braid and face. No additional weapon. Battle attack: clear anticipation, fast impact around the middle, controlled recovery. Feet stay on the original ground line; no floating or sliding. Preserve original facing, face, materials, palette, native pixel density and anatomy; no new accessories or shields.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d52727df-1e6a-5e96-871e-4bdd2ade8540\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"caf857e2-89ef-4e7b-9697-2cdadf6e7336\")"
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "3f95a50d-ba88-4e75-a8bf-d506ded61f04",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: 3f95a50d-ba88-4e75-a8bf-d506ded61f04\njob_id: 3f95a50d-ba88-4e75-a8bf-d506ded61f04\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 91587d7d-ccdd-508f-ad64-b000b0fe39d2\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3f95a50d-ba88-4e75-a8bf-d506ded61f04\")"
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "a9cafae7-1bf3-4be4-99b7-7edca279e566",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: a9cafae7-1bf3-4be4-99b7-7edca279e566\njob_id: a9cafae7-1bf3-4be4-99b7-7edca279e566\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e638edf2-943d-5630-895a-7f9e5bf87de6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a9cafae7-1bf3-4be4-99b7-7edca279e566\")"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "52fbdd7d-a5c7-4f39-bbc0-bf8dcbbba9ef",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: 52fbdd7d-a5c7-4f39-bbc0-bf8dcbbba9ef\njob_id: 52fbdd7d-a5c7-4f39-bbc0-bf8dcbbba9ef\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 03c0781d-f407-5f8d-9f18-29b9e3da1dc7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"52fbdd7d-a5c7-4f39-bbc0-bf8dcbbba9ef\")"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "97364dc4-302e-48e3-9bc8-399465739ef0",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: 97364dc4-302e-48e3-9bc8-399465739ef0\njob_id: 97364dc4-302e-48e3-9bc8-399465739ef0\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 30a43b34-121e-558b-984f-f3ebff269977\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"97364dc4-302e-48e3-9bc8-399465739ef0\")"
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "3ba2d6fd-591f-49fc-8ca8-6bb58c2feda6",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: 3ba2d6fd-591f-49fc-8ca8-6bb58c2feda6\njob_id: 3ba2d6fd-591f-49fc-8ca8-6bb58c2feda6\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 1155cff9-f9db-58fe-9425-0986df79d177\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3ba2d6fd-591f-49fc-8ca8-6bb58c2feda6\")"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Hit",
+      "endpoint": "animate_image",
+      "jobId": "dc6bd99f-7b3a-425b-9ee2-20d28a13e58a",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 4,
+      "result": "id: dc6bd99f-7b3a-425b-9ee2-20d28a13e58a\njob_id: dc6bd99f-7b3a-425b-9ee2-20d28a13e58a\naction: A brief impact flinch: shoulders recoil and knees compress, then recover smoothly to the exact input pose. Both feet remain planted on the exact ground line. Existing held equipment stays rigid and firmly gripped. Preserve face identity, anatomy, original facing and material palettes. No new shield, weapon, effects, accessories, levitation or movement across the canvas.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3eb66c5d-0c62-5703-9fb7-89330c3bd7cb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"dc6bd99f-7b3a-425b-9ee2-20d28a13e58a\")"
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "501346ef-b392-486a-bb14-b75b6ccd2e12",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 501346ef-b392-486a-bb14-b75b6ccd2e12\njob_id: 501346ef-b392-486a-bb14-b75b6ccd2e12\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x64px\ntransparent: True\nasset_id: d0ead54b-2228-5206-aeb2-5f13b07b5fc0\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"501346ef-b392-486a-bb14-b75b6ccd2e12\")"
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "b4cb31a1-a7a3-49f3-8679-6ea380712fb1",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: b4cb31a1-a7a3-49f3-8679-6ea380712fb1\njob_id: b4cb31a1-a7a3-49f3-8679-6ea380712fb1\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x64px\ntransparent: True\nasset_id: fa292aab-f23d-5553-829a-b0a1365ddba0\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b4cb31a1-a7a3-49f3-8679-6ea380712fb1\")"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": null,
+      "generations": 0,
+      "status": "rejected before queue",
+      "requestedFrames": 8,
+      "result": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": null,
+      "generations": 0,
+      "status": "rejected before queue",
+      "requestedFrames": 8,
+      "result": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": null,
+      "generations": 0,
+      "status": "rejected before queue",
+      "requestedFrames": 8,
+      "result": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": null,
+      "generations": 0,
+      "status": "rejected before queue",
+      "requestedFrames": 8,
+      "result": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "448524d0-7426-4b8e-b579-95aa47563f28",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 448524d0-7426-4b8e-b579-95aa47563f28\njob_id: 448524d0-7426-4b8e-b579-95aa47563f28\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x96px\ntransparent: True\nasset_id: 7c9be299-a89d-5f05-9d0c-298a4d89b217\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"448524d0-7426-4b8e-b579-95aa47563f28\")"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "afd9683d-83fd-40d3-99a5-9ed74819ba0b",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: afd9683d-83fd-40d3-99a5-9ed74819ba0b\njob_id: afd9683d-83fd-40d3-99a5-9ed74819ba0b\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x64px\ntransparent: True\nasset_id: 189fa40c-bde1-52ae-a409-f15ed950d121\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"afd9683d-83fd-40d3-99a5-9ed74819ba0b\")"
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "e6bfe686-e33b-4a41-bdb8-8c0aee501501",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: e6bfe686-e33b-4a41-bdb8-8c0aee501501\njob_id: e6bfe686-e33b-4a41-bdb8-8c0aee501501\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x64px\ntransparent: True\nasset_id: 7b4528e9-7b8a-5bde-b4b9-edb3f0c45856\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e6bfe686-e33b-4a41-bdb8-8c0aee501501\")"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Death",
+      "endpoint": "animate_image",
+      "jobId": "b58fb53f-fb07-4615-8aae-95ec1571f9fc",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: b58fb53f-fb07-4615-8aae-95ec1571f9fc\njob_id: b58fb53f-fb07-4615-8aae-95ec1571f9fc\naction: Defeat animation: knees buckle, head lowers, the character sinks and slumps onto the ground in place with the existing held equipment resting beside or against the body. End lying or kneeling collapsed, never stand back up. Keep body attached, costume and weapon shapes recognizable, same face and palette. Preserve original facing and ground line. No blood, disintegration, smoke, new props, floating, jumping or movement outside the canvas.\nframes: 8\nsize: 96x64px\ntransparent: True\nasset_id: 20a6ff87-3f48-51db-b7a4-109e6240f64e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b58fb53f-fb07-4615-8aae-95ec1571f9fc\")"
+    },
+    {
+      "name": "Distant_Woodland",
+      "state": "Art",
+      "endpoint": "create_image_pro_flash",
+      "jobId": "d154a74e-cb7d-4675-9f76-a226ac68ddac",
+      "generations": 9,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "{\"background_job_id\":\"d154a74e-cb7d-4675-9f76-a226ac68ddac\",\"image_id\":\"b8892e9b-58a2-51d3-b73a-22b975bdb5fb\",\"status\":\"processing\",\"source_image_id\":\"b8892e9b-58a2-51d3-b73a-22b975bdb5fb\",\"job_id\":\"d154a74e-cb7d-4675-9f76-a226ac68ddac\",\"image_size\":{\"width\":256,\"height\":128},\"output_count\":1,\"estimated_generations\":9,\"pricing_provisional\":true,\"poll_tool\":\"get_image\",\"download_path\":\"/mcp/images/d154a74e-cb7d-4675-9f76-a226ac68ddac/download\"}",
+      "request": {
+        "width": 256,
+        "height": 128,
+        "no_background": false,
+        "style_image": {
+          "url": "data:image/png;base64,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",
+          "usage_description": "Use this approved forest's muted teal woodland depth, olive foliage, broad pixel clusters, and antique fantasy mood. This output is ONLY the quiet far background layer."
+        },
+        "description": "A seamlessly horizontally repeating distant magical woodland background layer for a pixel art RPG battle. Full opaque 256x128 native pixel canvas. Dense but quiet layered slender trunks and broad softly lit teal forest depth, muted dark blue-green silhouettes, only a few tiny distant pale gold fireflies, subdued moss at the bottom. Trees continue naturally through top edge. No foreground tree, floor, ledge, rocks, objects, border, framing vignette, interface, text or characters. Low contrast broad clusters leave combat characters readable. Hard pixels with restrained 12-color woodland palette; no gradients or dithering."
+      },
+      "costWasEstimated": true
+    },
+    {
+      "name": "Square_Log_Cell",
+      "state": "Art",
+      "endpoint": "create_image_pro_flash",
+      "jobId": "9a56f42b-62fc-46b6-a875-b25e476cb5cb",
+      "generations": 5,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "{\"background_job_id\":\"9a56f42b-62fc-46b6-a875-b25e476cb5cb\",\"image_id\":\"e2bc6309-3d0c-5cfa-ac79-b0457437187f\",\"status\":\"processing\",\"source_image_id\":\"e2bc6309-3d0c-5cfa-ac79-b0457437187f\",\"job_id\":\"9a56f42b-62fc-46b6-a875-b25e476cb5cb\",\"image_size\":{\"width\":64,\"height\":64},\"output_count\":1,\"estimated_generations\":5,\"pricing_provisional\":true,\"poll_tool\":\"get_image\",\"download_path\":\"/mcp/images/9a56f42b-62fc-46b6-a875-b25e476cb5cb/download\"}",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "no_background": false,
+        "style_image": {
+          "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEKElEQVR4nOVbvW4UMRD2GVegIC6RIp2EEEKJlIoiFRTX0eQdqHgHXoeKd+ABaKhSIyUFBdJJkS4gEHQENHeZlTOM7RnveO/vk6Ls7frv+zwza3vt0cvnz/66W8yvv7tdwMH+o+46xORfPB67o0O/+D3Zf+C2BbPrX9315dWN+/T1WydC4MjTTNuEJcdxJ0KIyb8/n7tdwOvTg04EDzfint8VIOfQX8mlXwEufnfxtDmsAravJQ5ug8ESiA9JnkbyPgjaDG9fPVkESDShd+c/2HRnT+85K3z48icrArUG7By1AAcZVaESII8mn+pxS+K0TKkQENxyODpcuq7KAtDfAZS8lLRmbMG9hrGeVMwBIbSxIcQ/UpnBpLDxsclLiNcOqDAfJwS63wVjEVoRQikBkJ+e7C0aEptgibzVSDInRMo1NCL43EMoCNTWkIcGtxhG58qE9tTGHi+pOCZ/fH+UTNd6/tCijlBKEPs8kKejxr6BjUOpTHiecgnsLKkbeKdAzZAZGop/lnlSIsWuIBks+dQDmpnzsVJPWcwoSyL0dQnvGsFyOq21oFSc4hAq25RUvtU6Qm1Pl2JBsFS0RJ4jIRUM03FlpIKiBEGSSBL5uQZIeo2mqSUSi7Bob2a+EsO7NUMpsFm7WCgloNFf0vsaU0+RzZk13C9ZF1gBN1cwt4BZD/L4TCtOqUwNvCaxZISWuh//cagRoU9aRHA9kOuFj59/3vkNM8rSDE9i2n3SNw2Ck0xDNOuFtW+TWgTrAnHyFI8d4BotooUlrNwCJorGUtdoUccgAswYU6W9zy2Xc+6wyu+Q3rrAmDwChcB7qaX0EloI5d2A0MzShvo4693A0Iiw0QIcE6Kca2ydAG9OH3bXMVEqRpyuxdR5peOA6cneIshR0iiIhPxGWMAk6iHaM0AyjvrwH+5x5LnJ0JCvxdCq4Jjs1GDY2+qt4DWJcz2lbaAFeQtL8W4FWKcNWGEdSNYsfFi9Jbw6h6AheF/y4aLFqg/uHzCxgMurm//2D5Z8lT6v8VXtZzGaXiqCV7dM0KA+Pl77TbD2O6YvJYB3ON2AIIng2s9ZqXJzdeTypfYTNQ2CE2Yp2yrir3RB5Iz5Mtzy3awpsyRwaY+Al2QEc+JMakgROHD157bwDToOmGQ2N2nyt0bIPQQriDdKgBXQbTKlFVytEBLi0p6XbJEJolYJGyQRwqquwYLgnKiIr0VuoNF6jJ/qeWhPTe+LLYC6Ql9r0EIrrOlO0RQWikdWQEdeFkKkiMfWV9vzagHmtwXHloCVQ2Ckc4Yh3KIv+SoL4Nyha0hCBCvkhre1J0i8MwQ3b7AAWFdudtfn+EyoycRVSMcLLWF5wNNbNmoTT54G6wI3TQSvXULaFiDnAL67PGQ0vnMuaJsRnx/2cANF2AVLoIenR7t+fP4fm4iZ/FLZY1YAAAAASUVORK5CYII=",
+          "usage_description": "Match only this approved log's warm wood palette and crisp shading. Replace its circular medallion composition with a single full-bleed rounded SQUARE wooden log face."
+        },
+        "description": "One full-canvas rounded SQUARE cross-cut wooden log tile for a match-3 board, exactly 64x64 pixels. The log itself fills the entire square, reaching every canvas edge with only tiny 2-pixel rounded corners in dark wood. Concentric irregular SQUARE tree growth rings with rounded corners follow the square outer shape all the way to the edges, like a squared-off tree trunk cross section. Quiet dark honey brown face, slightly lighter top-left edge and deep lower-right shade. No circle or oval, no circular disk inset, no frame, no border around a central object, no gap, no checkerboard, no grass, no decoration. Subtle broad 2-tone growth rings, clean readable center for a colorful gem."
+      },
+      "costWasEstimated": true
+    },
+    {
+      "name": "Elven_Scout",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "3a0ea377-e763-452e-bcc7-5fb7c30d5cc9",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: 3a0ea377-e763-452e-bcc7-5fb7c30d5cc9\njob_id: 3a0ea377-e763-452e-bcc7-5fb7c30d5cc9\ndescription: She braces her left foot, raises and aims the existing bow to the LEFT. Her bow arm extends while her other hand clearly PULLS THE BOWSTRING back to her cheek with a nocked arrow. She releases the arrow leftward in one fast snap, then lowers the bow and smoothly returns to her exact original battle stance. Show a fully drawn bow pose before release. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x64px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3a0ea377-e763-452e-bcc7-5fb7c30d5cc9\")\nasset_id: 20b3ba99-061e-5e93-8547-edb33f9c8313\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "726e2fbd-d9f7-4a89-91b1-5c52750fde3a",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: 726e2fbd-d9f7-4a89-91b1-5c52750fde3a\njob_id: 726e2fbd-d9f7-4a89-91b1-5c52750fde3a\ndescription: Keeping BOTH hands gripping the shaft, he draws the axe to the right, twists his shoulders, then swings it in one wide forceful HORIZONTAL arc toward the LEFT at waist height. Clear extended leftward impact pose, body follows, then returns smoothly to the exact original stance. This is a horizontal two-handed axe strike, never an overhead hold. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x64px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"726e2fbd-d9f7-4a89-91b1-5c52750fde3a\")\nasset_id: ced594d8-bb64-5544-9587-ad585d5736aa\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "acdf90d3-73b8-4b8e-8ac8-d1b828055c3f",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: acdf90d3-73b8-4b8e-8ac8-d1b828055c3f\njob_id: acdf90d3-73b8-4b8e-8ac8-d1b828055c3f\ndescription: She brings her free hand toward the staff grip, leans into a forward step without changing ground height, and thrusts the upper end of the crescent staff forcefully toward the LEFT. Show the staff diagonal toward the opponent with hands attached, then retract to the same original ready stance. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x64px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"acdf90d3-73b8-4b8e-8ac8-d1b828055c3f\")\nasset_id: b149d07f-71bd-5a54-a0f5-6cc63145bc8c\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "a0219d77-b83f-41b2-a957-6445ad626e83",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: a0219d77-b83f-41b2-a957-6445ad626e83\njob_id: a0219d77-b83f-41b2-a957-6445ad626e83\ndescription: He grips the branch staff with both hands, winds back at chest level then THRUSTS the staff horizontally forward to the LEFT with an extended-arm impact pose. His torso and knees drive the movement. He withdraws the staff and smoothly returns to the exact original pose. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x64px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a0219d77-b83f-41b2-a957-6445ad626e83\")\nasset_id: 7102012c-1f56-5cac-91b1-80b9ac3499b1\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "0683761f-4d93-4366-90f6-9973479d9dbf",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: 0683761f-4d93-4366-90f6-9973479d9dbf\njob_id: 0683761f-4d93-4366-90f6-9973479d9dbf\ndescription: He bends his knees and draws the existing bark shield back slightly, then drives his entire shoulder and hips FORWARD LEFT in a powerful SHIELD BASH. Shield moves clearly forward three to five pixels, front knee bends, free hand braces. One sharp impact, then smoothly pushes back into his original stance. No sword at any time. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x64px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0683761f-4d93-4366-90f6-9973479d9dbf\")\nasset_id: f2ff1b2b-5ec2-5321-94c0-84c7fe4f358b\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Attack_v2",
+      "endpoint": "animate_image_pixminimax",
+      "jobId": "a72d0b9c-ab90-4bcd-aec0-bdc6860d271e",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": 16,
+      "result": "id: a72d0b9c-ab90-4bcd-aec0-bdc6860d271e\njob_id: a72d0b9c-ab90-4bcd-aec0-bdc6860d271e\ndescription: She grips her existing seed-cage staff firmly and thrusts its caged head sharply diagonally forward LEFT, extending her arms and turning her shoulders. Her sleeves and braid follow. Show a clear diagonal leftward staff impact and then controlled smooth recovery to her exact original posture. Keep original face, material palette, silhouette proportions, native pixel size and original sole baseline. Equipment stays rigid and connected to hands. No extra weapons or shields, no teleporting or floating, no camera movement.\nframes: 16\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a72d0b9c-ab90-4bcd-aec0-bdc6860d271e\")\nasset_id: faae9b2d-d612-5d62-b744-d997811aca57\nasset_status: pending (saved to your gallery when generation completes)"
+    },
+    {
+      "name": "Woodland_Ground",
+      "state": "Art",
+      "endpoint": "create_image_pro_flash",
+      "jobId": "fbb63f28-f9dc-4001-b834-9d828af08dcd",
+      "generations": 6,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "{\"background_job_id\":\"fbb63f28-f9dc-4001-b834-9d828af08dcd\",\"image_id\":\"c6fd7665-4b62-5035-907e-fa3b79176478\",\"status\":\"processing\",\"source_image_id\":\"c6fd7665-4b62-5035-907e-fa3b79176478\",\"job_id\":\"fbb63f28-f9dc-4001-b834-9d828af08dcd\",\"image_size\":{\"width\":128,\"height\":64},\"output_count\":1,\"estimated_generations\":6,\"pricing_provisional\":true,\"poll_tool\":\"get_image\",\"download_path\":\"/mcp/images/fbb63f28-f9dc-4001-b834-9d828af08dcd/download\"}",
+      "request": {
+        "width": 128,
+        "height": 64,
+        "no_background": false,
+        "description": "A seamless horizontally AND vertically tiling quiet forest battle GROUND SURFACE texture, native 128x64 pixel art. Warm matte dark umber soil with broad subtle ochre dirt planes and very sparse tiny moss flecks near edges, occasional embedded flat stone. Viewed at shallow RPG battle angle: mostly open flat earth. Absolutely no cliff, platform edge, ledge, sky, horizon, tree, grass silhouette, raised mound, cast shadow, rim, border or vignette. Entire canvas opaque soil, including all corners. Continuous traversable ground for feet to stand on. Calm center, only 8-12 useful tones, crisp broad pixel clusters."
+      },
+      "costWasEstimated": true
+    },
+    {
+      "name": "Ancient_Tree",
+      "state": "Art",
+      "endpoint": "create_image_pro_flash",
+      "jobId": "3432f97b-6ff0-4417-93a4-b09585f74264",
+      "generations": 6,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "{\"background_job_id\":\"3432f97b-6ff0-4417-93a4-b09585f74264\",\"image_id\":\"246e6035-8a7e-5c5c-9ed0-8c0f5a5d70a6\",\"status\":\"processing\",\"source_image_id\":\"246e6035-8a7e-5c5c-9ed0-8c0f5a5d70a6\",\"job_id\":\"3432f97b-6ff0-4417-93a4-b09585f74264\",\"image_size\":{\"width\":128,\"height\":128},\"output_count\":1,\"estimated_generations\":6,\"pricing_provisional\":true,\"poll_tool\":\"get_image\",\"download_path\":\"/mcp/images/3432f97b-6ff0-4417-93a4-b09585f74264/download\"}",
+      "request": {
+        "width": 128,
+        "height": 128,
+        "no_background": true,
+        "description": "One isolated old magical woodland oak TREE module on transparent background, native 128x128 pixel art for a side-facing RPG battle. Tall thick twisting warm brown trunk on the LEFT side, wide root spread at its base along bottom, broad dark olive-green canopy arcing across top and extending right. A few clumps of soft moss on bark. Large quiet transparent open space on lower-right for combat. Strong silhouette and broad clusters, top-left lighting, muted teal-dark-green shadows and warm bark from the reference. No ground plane, rectangular background, characters, frame, text, lights or glowing symbols. Root base touches bottom edge; tree crown can extend to top edge."
+      },
+      "costWasEstimated": true
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "ChannelStart",
+      "endpoint": "animate_image",
+      "jobId": "60222489-15ba-4e6a-9f5c-fcc0aec9635f",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 60222489-15ba-4e6a-9f5c-fcc0aec9635f\njob_id: 60222489-15ba-4e6a-9f5c-fcc0aec9635f\naction: From the original battle stance, lower and plant the existing bark shield firmly on the ground. Bend knees and shift body weight visibly, then raise the FREE open hand to chest height as if commanding protective roots. End holding this planted-shield, raised-palm casting pose. Do not return to idle. Do not add a staff, sword or effects. Preserve exact face, species, crown or hair, palette, body proportions and native pixel density. The soles remain on the same baseline. Keep equipment rigid and attached to hands.\nframes: 8\nsize: 64x64px\ntransparent: True\nasset_id: 06596595-500c-548f-b793-99be57434e0d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"60222489-15ba-4e6a-9f5c-fcc0aec9635f\")"
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "ChannelStart",
+      "endpoint": "animate_image",
+      "jobId": "ecb33191-f345-4449-aa0d-3df2310a104c",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: ecb33191-f345-4449-aa0d-3df2310a104c\njob_id: ecb33191-f345-4449-aa0d-3df2310a104c\naction: From the original battle stance, bring the existing branch staff upright and plant its end on the ground. Shift shoulders and knees naturally and raise the free clawed open hand as if pulling roots upward. End in that casting pose with staff planted and palm held out. Do not return to idle or create new props or effects. Preserve exact face, species, crown or hair, palette, body proportions and native pixel density. The soles remain on the same baseline. Keep equipment rigid and attached to hands.\nframes: 8\nsize: 64x64px\ntransparent: True\nasset_id: dd3d4090-3374-50ef-8e55-1f8a4168e38b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ecb33191-f345-4449-aa0d-3df2310a104c\")"
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "ChannelStart",
+      "endpoint": "animate_image",
+      "jobId": "57312201-b059-4e50-8bba-016538bfbfa9",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": 8,
+      "result": "id: 57312201-b059-4e50-8bba-016538bfbfa9\njob_id: 57312201-b059-4e50-8bba-016538bfbfa9\naction: From the original stance, slowly raise the existing seed-cage staff slightly upright, lift the free open hand with elbow bent, tilt the head with solemn concentration, and gather the robe naturally. End holding the raised-palm ritual pose. Keep feet and robe base grounded. Do not return to idle or add effects or new props. Preserve exact face, species, crown or hair, palette, body proportions and native pixel density. The soles remain on the same baseline. Keep equipment rigid and attached to hands.\nframes: 8\nsize: 96x96px\ntransparent: True\nasset_id: 560f53b6-0aeb-5753-90c5-6cf54ce11a20\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"57312201-b059-4e50-8bba-016538bfbfa9\")"
+    },
+    {
+      "name": "Vine_Overlay",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "8865a356-e2e6-4af7-8b85-d7d4a97b1277",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 8865a356-e2e6-4af7-8b85-d7d4a97b1277\njob_id: 8865a356-e2e6-4af7-8b85-d7d4a97b1277\ndescription: A hostile vine restraint overlay for one match-3 gem, transparent native pixel art 64x64. Two wiry dark brown thorny vines wind diagonally around the outside of a square gem footprint, with a few sharp olive green leaves and pale lime thorn tips. Four corner tendrils, very OPEN transparent center: gem color must remain obvious. Flat side-on UI sprite. Crisp one-pixel dark outline, chunky restrained highlights. Not a wreath, circle, shield, icon inside a box or dense bush. No background, text or gem drawn.\nsize: 64x64px\ntransparent: True\nasset_id: 4c71ce37-c3a5-5838-939e-def16966c798\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8865a356-e2e6-4af7-8b85-d7d4a97b1277\")",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "description": "A hostile vine restraint overlay for one match-3 gem, transparent native pixel art 64x64. Two wiry dark brown thorny vines wind diagonally around the outside of a square gem footprint, with a few sharp olive green leaves and pale lime thorn tips. Four corner tendrils, very OPEN transparent center: gem color must remain obvious. Flat side-on UI sprite. Crisp one-pixel dark outline, chunky restrained highlights. Not a wreath, circle, shield, icon inside a box or dense bush. No background, text or gem drawn."
+      }
+    },
+    {
+      "name": "Vine_Anchor",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "8ecb934a-0c3f-47ba-9c42-7f25be2e978c",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 8ecb934a-0c3f-47ba-9c42-7f25be2e978c\njob_id: 8ecb934a-0c3f-47ba-9c42-7f25be2e978c\ndescription: A nonspreading ROOT ANCHOR overlay for a match-3 gem, transparent native pixel art 64x64. Thin dark brown thorny vines wrap the four edges around a largely OPEN transparent square center. One distinct small warm ochre root KNOT at the lower-right identifies this anchor; a few olive-green leaves. Restrained crisp lime thorn tips. Dark pixel outlines, simple connected clusters. The gem underneath must stay clearly visible. No background, text, square frame, circular wreath, shield, gem or solid center.\nsize: 64x64px\ntransparent: True\nasset_id: 8ae9b80b-60f3-57a5-a5f5-d5f6c7f468e1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8ecb934a-0c3f-47ba-9c42-7f25be2e978c\")",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "description": "A nonspreading ROOT ANCHOR overlay for a match-3 gem, transparent native pixel art 64x64. Thin dark brown thorny vines wrap the four edges around a largely OPEN transparent square center. One distinct small warm ochre root KNOT at the lower-right identifies this anchor; a few olive-green leaves. Restrained crisp lime thorn tips. Dark pixel outlines, simple connected clusters. The gem underneath must stay clearly visible. No background, text, square frame, circular wreath, shield, gem or solid center."
+      }
+    },
+    {
+      "name": "Leaf_Heal",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "7ee11441-5933-4da3-9963-b67ffb74799f",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 7ee11441-5933-4da3-9963-b67ffb74799f\njob_id: 7ee11441-5933-4da3-9963-b67ffb74799f\ndescription: One crisp restrained magical healing burst on transparent background, native 32x32 pixel art. Three small bright lime and emerald leaves spiralling upward around a tiny pale-green four-point glint. Sparse light mint pixels, dark-green shadow clusters, clean chunky shapes. Small airy effect, no circle, no bubble, no aura disk, no text, no character, no background. Clearly communicates beneficial green healing.\nsize: 32x32px\ntransparent: True\nasset_id: e139e71f-27bf-5c5c-9b9e-081aff8218da\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7ee11441-5933-4da3-9963-b67ffb74799f\")",
+      "request": {
+        "width": 32,
+        "height": 32,
+        "description": "One crisp restrained magical healing burst on transparent background, native 32x32 pixel art. Three small bright lime and emerald leaves spiralling upward around a tiny pale-green four-point glint. Sparse light mint pixels, dark-green shadow clusters, clean chunky shapes. Small airy effect, no circle, no bubble, no aura disk, no text, no character, no background. Clearly communicates beneficial green healing."
+      }
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "ChannelHold",
+      "endpoint": "animate_image",
+      "jobId": "4ea42806-fbc2-4f21-a244-c7040f9fd0dd",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 4ea42806-fbc2-4f21-a244-c7040f9fd0dd\njob_id: 4ea42806-fbc2-4f21-a244-c7040f9fd0dd\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e9ea69ee-f4c9-5b85-aa79-5548bf07cd85\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4ea42806-fbc2-4f21-a244-c7040f9fd0dd\")",
+      "request": {
+        "first_frame_url": "Inputs/Barkhide_Warden_Held.png",
+        "last_frame_url": "Inputs/Barkhide_Warden_Held.png",
+        "frame_count": 4,
+        "no_background": true,
+        "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+      }
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Release",
+      "endpoint": "animate_image",
+      "jobId": "539f9bfa-0bed-4336-8ea1-724e18cb4ed8",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 539f9bfa-0bed-4336-8ea1-724e18cb4ed8\njob_id: 539f9bfa-0bed-4336-8ea1-724e18cb4ed8\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 25f891eb-f4db-5a5f-ac4f-a97d768ade2c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"539f9bfa-0bed-4336-8ea1-724e18cb4ed8\")",
+      "request": {
+        "first_frame_url": "Inputs/Barkhide_Warden_Held.png",
+        "last_frame_url": "Approved/Barkhide_Warden.png",
+        "frame_count": 8,
+        "no_background": true,
+        "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+      }
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "ChannelHold",
+      "endpoint": "animate_image",
+      "jobId": "09620249-aaeb-46f8-99a6-2b019a5d4f9b",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 09620249-aaeb-46f8-99a6-2b019a5d4f9b\njob_id: 09620249-aaeb-46f8-99a6-2b019a5d4f9b\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0953e468-7c88-5c29-a5c3-4af1eff9d10a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"09620249-aaeb-46f8-99a6-2b019a5d4f9b\")",
+      "request": {
+        "first_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+        "last_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+        "frame_count": 4,
+        "no_background": true,
+        "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+      }
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Release",
+      "endpoint": "animate_image",
+      "jobId": "84711757-b9f3-48a8-9730-3eeb9bdc2413",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 84711757-b9f3-48a8-9730-3eeb9bdc2413\njob_id: 84711757-b9f3-48a8-9730-3eeb9bdc2413\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 2f6051e0-de99-59bb-8714-647d8ccb7510\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"84711757-b9f3-48a8-9730-3eeb9bdc2413\")",
+      "request": {
+        "first_frame_url": "Inputs/Orc_Rootbinder_Held.png",
+        "last_frame_url": "Approved/Orc_Rootbinder.png",
+        "frame_count": 8,
+        "no_background": true,
+        "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+      }
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "ChannelHold",
+      "endpoint": "animate_image",
+      "jobId": "c8010a0b-230f-431d-a5d5-5240b3e03ada",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: c8010a0b-230f-431d-a5d5-5240b3e03ada\njob_id: c8010a0b-230f-431d-a5d5-5240b3e03ada\naction: Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d5c5fab9-5781-58e3-ae7e-4c16058618ba\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c8010a0b-230f-431d-a5d5-5240b3e03ada\")",
+      "request": {
+        "first_frame_url": "Inputs/Briar_Matriarch_Held.png",
+        "last_frame_url": "Inputs/Briar_Matriarch_Held.png",
+        "frame_count": 4,
+        "no_background": true,
+        "action": "Hold this exact spell-preparation pose. Very restrained breathing, tiny hand and clothing shift, planted feet, steady unchanged face and held equipment. Finish in the EXACT input pose for a clean loop. No new objects, particles or magical glows. Keep the forked staff / shield / seed-cage staff EXACTLY as shown."
+      }
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Release",
+      "endpoint": "animate_image",
+      "jobId": "55952b2a-44d1-4915-9c1c-3978f2c414bd",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 55952b2a-44d1-4915-9c1c-3978f2c414bd\njob_id: 55952b2a-44d1-4915-9c1c-3978f2c414bd\naction: Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 83200b61-a7bc-5ddf-9a7b-515889733ea3\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"55952b2a-44d1-4915-9c1c-3978f2c414bd\")",
+      "request": {
+        "first_frame_url": "Inputs/Briar_Matriarch_Held.png",
+        "last_frame_url": "Approved/Briar_Matriarch.png",
+        "frame_count": 8,
+        "no_background": true,
+        "action": "Finish the spell with a brief confident forward palm push, then smoothly settle arms and body back to the EXACT provided final idle pose. Preserve face, outfit, exact staff or shield, feet and scale. No new objects, particles or painted effects. Never change equipment shape. Smooth short recovery, no spin."
+      }
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Attack_v3",
+      "endpoint": "animate_image",
+      "jobId": "ddab6661-7d9f-4863-a32c-c6dccb2abbee",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: ddab6661-7d9f-4863-a32c-c6dccb2abbee\njob_id: ddab6661-7d9f-4863-a32c-c6dccb2abbee\naction: A SHORT BASIC STAFF STRIKE towards the LEFT. The orc keeps his exact LONG forked WOODEN staff in his left hand throughout. Pull the whole staff back slightly then push its unchanged forked tip diagonally left-down once. Right palm balances. Small knee dip and body weight shift. Then smooth return to EXACT input idle. The staff has a long shaft and a two-pronged branch fork; never shorten it into a knife, never straighten away the fork, never add weapons or shields. No painted motion trails or particles. Same facial features and clothes.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 21c9ef91-0352-5875-b1ef-4c461d82b3bb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ddab6661-7d9f-4863-a32c-c6dccb2abbee\")",
+      "request": {
+        "first_frame_url": "Inputs/Orc_Rootbinder.png",
+        "last_frame_url": "Inputs/Orc_Rootbinder.png",
+        "frame_count": 8,
+        "no_background": true,
+        "action": "A SHORT BASIC STAFF STRIKE towards the LEFT. The orc keeps his exact LONG forked WOODEN staff in his left hand throughout. Pull the whole staff back slightly then push its unchanged forked tip diagonally left-down once. Right palm balances. Small knee dip and body weight shift. Then smooth return to EXACT input idle. The staff has a long shaft and a two-pronged branch fork; never shorten it into a knife, never straighten away the fork, never add weapons or shields. No painted motion trails or particles. Same facial features and clothes."
+      }
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Attack_v3",
+      "endpoint": "animate_image",
+      "jobId": "7b9bed1b-30e8-4ccc-8267-de612038ff49",
+      "generations": 2,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 7b9bed1b-30e8-4ccc-8267-de612038ff49\njob_id: 7b9bed1b-30e8-4ccc-8267-de612038ff49\naction: A SHORT BASIC STAFF CAST towards the LEFT. The elf keeps the exact long seed-cage staff in her left hand: the head is a hollow golden wooden cage, never a ball, blade or flame. Tilt the whole staff very slightly left, sharply extend the left arm with a small forward body lean, pause at extension then recover naturally to the EXACT input pose. Right palm counterbalances. Keep unchanged silver braid, three-prong twig crown, gown, face and scale. No particles, flames, staff stretching, spinning, new props or rightward strike.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3e41db7a-ea42-50f1-831a-d1c17e26884f\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7b9bed1b-30e8-4ccc-8267-de612038ff49\")",
+      "request": {
+        "first_frame_url": "Inputs/Briar_Matriarch.png",
+        "last_frame_url": "Inputs/Briar_Matriarch.png",
+        "frame_count": 8,
+        "no_background": true,
+        "action": "A SHORT BASIC STAFF CAST towards the LEFT. The elf keeps the exact long seed-cage staff in her left hand: the head is a hollow golden wooden cage, never a ball, blade or flame. Tilt the whole staff very slightly left, sharply extend the left arm with a small forward body lean, pause at extension then recover naturally to the EXACT input pose. Right palm counterbalances. Keep unchanged silver braid, three-prong twig crown, gown, face and scale. No particles, flames, staff stretching, spinning, new props or rightward strike."
+      }
+    },
+    {
+      "name": "Forest_Fern",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "897b8e05-26f4-44e8-8a74-4869bcef48fd",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 897b8e05-26f4-44e8-8a74-4869bcef48fd\njob_id: 897b8e05-26f4-44e8-8a74-4869bcef48fd\ndescription: Small low foreground cluster of three woodland ferns, moss and two dark rounded pebbles. Native pixel art, transparent background, side view, lying along the lower edge with open air above. Muted olive teal greens, dark warm gray stone, a little mossy gold. Broad calm clusters, very restrained contrast and detail. No tall plants, no flowers, no interface frame, no platform, no text. Woodland scenery, not a gameplay hazard.\nsize: 64x32px\ntransparent: True\nasset_id: fd0e8218-e20f-5d94-9d24-db213e134a61\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"897b8e05-26f4-44e8-8a74-4869bcef48fd\")",
+      "request": {
+        "width": 64,
+        "height": 32,
+        "description": "Small low foreground cluster of three woodland ferns, moss and two dark rounded pebbles. Native pixel art, transparent background, side view, lying along the lower edge with open air above. Muted olive teal greens, dark warm gray stone, a little mossy gold. Broad calm clusters, very restrained contrast and detail. No tall plants, no flowers, no interface frame, no platform, no text. Woodland scenery, not a gameplay hazard.",
+        "no_background": true,
+        "view": "side",
+        "detail": "low detail",
+        "shading": "basic shading"
+      }
+    },
+    {
+      "name": "Forest_Ruin",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "4bcfcb6c-4316-497a-9147-f48d66bb111d",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "id: 4bcfcb6c-4316-497a-9147-f48d66bb111d\njob_id: 4bcfcb6c-4316-497a-9147-f48d66bb111d\ndescription: A small abandoned ancient elven standing stone, irregular weathered curved slab with one faint carved spiral, half covered in moss at its foot. Quiet muted slate teal gray stone and sparse olive leaves. Native pixel art, transparent background, side view. Broad chunky shaded planes, dark outline, top-left pale cool light, low contrast distant scenery. One ruined stone prop, not a pillar made of dungeon bricks, not a UI icon, no glow, no text.\nsize: 64x64px\ntransparent: True\nasset_id: d81e2f3b-120f-528b-9505-5c5792360098\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"4bcfcb6c-4316-497a-9147-f48d66bb111d\")",
+      "request": {
+        "width": 64,
+        "height": 64,
+        "description": "A small abandoned ancient elven standing stone, irregular weathered curved slab with one faint carved spiral, half covered in moss at its foot. Quiet muted slate teal gray stone and sparse olive leaves. Native pixel art, transparent background, side view. Broad chunky shaded planes, dark outline, top-left pale cool light, low contrast distant scenery. One ruined stone prop, not a pillar made of dungeon bricks, not a UI icon, no glow, no text.",
+        "no_background": true,
+        "view": "side",
+        "detail": "low detail",
+        "shading": "basic shading"
+      }
+    },
+    {
+      "name": "Tall_Woodland",
+      "state": "Art",
+      "endpoint": "create_image_pixflux",
+      "jobId": "80ad6865-9992-45d1-8580-8c8b59c208a9",
+      "generations": 1,
+      "status": "completed",
+      "requestedFrames": null,
+      "result": "job_id: 80ad6865-9992-45d1-8580-8c8b59c208a9\ncost: 1 generation",
+      "request": {
+        "width": 256,
+        "height": 256,
+        "no_background": false,
+        "description": "Quiet tall magical woodland background module; continuous vertical teal trunks; canopy at top only, no horizontal bands. Forced accepted woodland palette.",
+        "color_image_url": "ArtSource/Forest/UI/Woodland_Study_Accepted.png"
+      }
+    }
+  ],
+  "note": "Per-job reported/estimated costs reconcile to the actual 80-generation balance change. Four rate-limit refusals were not queued or charged."
+}

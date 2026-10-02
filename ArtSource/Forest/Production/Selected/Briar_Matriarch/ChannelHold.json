@@ -1,0 +1,99 @@
+{
+  "name": "Briar_Matriarch",
+  "state": "ChannelHold",
+  "width": 96,
+  "height": 96,
+  "frameCount": 4,
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180
+  ],
+  "totalMs": 720,
+  "loop": true,
+  "impactFrame": -1,
+  "source": "Raw/Briar_Matriarch/ChannelHold",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 180,
+      "bounds": [
+        18,
+        17,
+        70,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "ea956d1e99d36086d7e01faba2d7a3c80ca5eed14aa09bd9cba70eb25b3470e4"
+    },
+    {
+      "index": 1,
+      "durationMs": 180,
+      "bounds": [
+        17,
+        16,
+        75,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "a2c09d246fa19028b1edc0db6c674a7b697efbdbf1b4ca0d4eb2ae3854edf0be"
+    },
+    {
+      "index": 2,
+      "durationMs": 180,
+      "bounds": [
+        16,
+        15,
+        75,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "94a1b268dea10cfaac53a05f9d33280ddeb30cec44ad6336c036a291f526704d"
+    },
+    {
+      "index": 3,
+      "durationMs": 180,
+      "bounds": [
+        17,
+        17,
+        71,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "dc1777408bb8be44fef0656bde56182a2e4fef1049e939cbe200355aacc87172"
+    }
+  ]
+}

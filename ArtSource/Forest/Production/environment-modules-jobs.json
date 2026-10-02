@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Woodland_Ground",
+    "state": "Art",
+    "endpoint": "create_image_pro_flash",
+    "request": {
+      "width": 128,
+      "height": 64,
+      "no_background": false,
+      "description": "A seamless horizontally AND vertically tiling quiet forest battle GROUND SURFACE texture, native 128x64 pixel art. Warm matte dark umber soil with broad subtle ochre dirt planes and very sparse tiny moss flecks near edges, occasional embedded flat stone. Viewed at shallow RPG battle angle: mostly open flat earth. Absolutely no cliff, platform edge, ledge, sky, horizon, tree, grass silhouette, raised mound, cast shadow, rim, border or vignette. Entire canvas opaque soil, including all corners. Continuous traversable ground for feet to stand on. Calm center, only 8-12 useful tones, crisp broad pixel clusters."
+    },
+    "result": {
+      "background_job_id": "fbb63f28-f9dc-4001-b834-9d828af08dcd",
+      "image_id": "c6fd7665-4b62-5035-907e-fa3b79176478",
+      "status": "processing",
+      "source_image_id": "c6fd7665-4b62-5035-907e-fa3b79176478",
+      "job_id": "fbb63f28-f9dc-4001-b834-9d828af08dcd",
+      "image_size": {
+        "width": 128,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/fbb63f28-f9dc-4001-b834-9d828af08dcd/download"
+    }
+  },
+  {
+    "name": "Ancient_Tree",
+    "state": "Art",
+    "endpoint": "create_image_pro_flash",
+    "request": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "description": "One isolated old magical woodland oak TREE module on transparent background, native 128x128 pixel art for a side-facing RPG battle. Tall thick twisting warm brown trunk on the LEFT side, wide root spread at its base along bottom, broad dark olive-green canopy arcing across top and extending right. A few clumps of soft moss on bark. Large quiet transparent open space on lower-right for combat. Strong silhouette and broad clusters, top-left lighting, muted teal-dark-green shadows and warm bark from the reference. No ground plane, rectangular background, characters, frame, text, lights or glowing symbols. Root base touches bottom edge; tree crown can extend to top edge."
+    },
+    "result": {
+      "background_job_id": "3432f97b-6ff0-4417-93a4-b09585f74264",
+      "image_id": "246e6035-8a7e-5c5c-9ed0-8c0f5a5d70a6",
+      "status": "processing",
+      "source_image_id": "246e6035-8a7e-5c5c-9ed0-8c0f5a5d70a6",
+      "job_id": "3432f97b-6ff0-4417-93a4-b09585f74264",
+      "image_size": {
+        "width": 128,
+        "height": 128
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/3432f97b-6ff0-4417-93a4-b09585f74264/download"
+    }
+  }
+]

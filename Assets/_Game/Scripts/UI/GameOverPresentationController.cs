@@ -573,6 +573,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         if (FinalizedUiSkin.Load("PanelTall") != null)
         {
             FinalizedUiSkin.Panel(panelObject.GetComponent<Image>(), true);
+            GameplayThemeSkin.Panel(panelObject.GetComponent<Image>());
             accentRect.GetComponent<Image>().enabled = false;
             faceRect.GetComponent<Image>().enabled = false;
         }
@@ -613,7 +614,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         recap.rectTransform.anchoredPosition=Vector2.zero;
         recap.rectTransform.sizeDelta=new Vector2(390,Mathf.Max(90,recap.preferredHeight));
         var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.viewport=viewport;scroll.content=recap.rectTransform;scroll.horizontal=false;
-        GameUi.Button("QuitToMenu",faceRect,"Change build",new Vector2(230,44),new Vector2(0,-265),()=>
+        var changeBuild=GameUi.Button("QuitToMenu",faceRect,"Change build",new Vector2(230,44),new Vector2(0,-265),()=>
         {
             if (!IsRetryAvailable()) return;
             RunLaunchOptions.ChangeBuild=true;
@@ -624,6 +625,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         retryButton.onClick.AddListener(
             RetryCurrentGame
         );
+        GameplayThemeSkin.Button(changeBuild);
 
         float canvasHeight =
             rootCanvas.transform is RectTransform canvasRect
@@ -775,6 +777,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
         {
             innerFace.GetComponent<Image>().enabled = false;
             FinalizedUiSkin.Button(button, true);
+            GameplayThemeSkin.Button(button);
         }
 
         return button;

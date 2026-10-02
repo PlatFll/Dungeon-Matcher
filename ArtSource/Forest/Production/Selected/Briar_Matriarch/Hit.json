@@ -1,0 +1,118 @@
+{
+  "name": "Briar_Matriarch",
+  "state": "Hit",
+  "width": 96,
+  "height": 96,
+  "frameCount": 5,
+  "durationsMs": [
+    45,
+    55,
+    70,
+    65,
+    45
+  ],
+  "totalMs": 280,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Briar_Matriarch/Hit",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 45,
+      "bounds": [
+        17,
+        17,
+        70,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "d884ba6a5848b7410e25b7f1cd3f274ed87aa709809218b61f44f9ff6eb06ddd"
+    },
+    {
+      "index": 1,
+      "durationMs": 55,
+      "bounds": [
+        17,
+        19,
+        70,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "2e6fd2fdcd71cc3391d1d054101f608af13c1719137989d9eba793756fea6558"
+    },
+    {
+      "index": 2,
+      "durationMs": 70,
+      "bounds": [
+        17,
+        20,
+        69,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "ea6dbd4cc3ea2221e267915016d0913797c7dae7636c0f24970608e4de25c99f"
+    },
+    {
+      "index": 3,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        18,
+        70,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "40b59e7bdd848a94cb6f8106fd95c8826668907fface8399582b0ca5ae914710"
+    },
+    {
+      "index": 4,
+      "durationMs": 45,
+      "bounds": [
+        17,
+        17,
+        70,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "d884ba6a5848b7410e25b7f1cd3f274ed87aa709809218b61f44f9ff6eb06ddd"
+    }
+  ]
+}

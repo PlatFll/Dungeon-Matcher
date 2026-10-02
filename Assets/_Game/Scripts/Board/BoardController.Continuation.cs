@@ -53,7 +53,7 @@ public partial class BoardController
         foreach(var set in gemSetThreats) if(!set.Ended && (set.Environmental || (set.Owner!=null && !set.Owner.IsDefeated)))
         {
             var warning=new BoardWarningSnapshot { kind=1,owner=set.Owner!=null?ownerSlot(set.Owner.GetInstanceID()):-1,dueMove=set.DueMove,restoration=set.RestorationPresentation,
-                vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId };
+                vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId,nonSpreading=set.NonSpreading };
             foreach(var gem in set.Targets) if(gem!=null && GetGem(gem.Column,gem.Row)==gem) warning.targets.Add(CellIndex(gem));
             saved.warnings.Add(warning);
         }
@@ -84,7 +84,7 @@ public partial class BoardController
             else if(warning.kind==1)
             {
                 var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration,Vine=warning.vine,Environmental=warning.environmental,
-                    VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId };
+                    VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId,NonSpreading=warning.nonSpreading };
                 foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
                 gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
             }

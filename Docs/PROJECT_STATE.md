@@ -21,10 +21,10 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-02
-- **Current milestone:** Forest Phase 4 is an isolated accepted-move prototype on `codex/forest-gameplay-foundation`, awaiting technical/playable review. Six approved stills match the material guide and remain byte-identical; four starter enemies are playable. The development entry uses a separate account, move-based readiness, interruptible fixed-target Mender healing, shared-cap growing vines, Emerald resonance and versioned continuation. Warden/Matriarch kits, finished environment production, full animation and live travel remain later work. See [forest test instructions](Forest/README.md), [timing contract](Forest/FOUNDATION_CONTRACT.md) and [validation](Validation/FOREST_FOUNDATION_PHASE_04.md). The source is based on main at `d334b527`; no Phase 4 merge or release is authorized.
+- **Current milestone:** Forest Phases 5–6 are on `codex/forest-enemy-production`, stacked on unmerged Phase 4 (#173). Six approved stills remain unchanged; six starter kits, 40 motion clips, modular woodland/ground, edge-to-edge rounded-square logs, gameplay timber UI and an original temporary cue await art/motion/kit/music review. New isolated tests use seconds basics and move-based abilities; older saves retain their recorded profiles. Warden/Matriarch use canonical nonspreading anchors and exactly-once cast outcomes. Actual PixelLab usage is 80 of 90 initial / 120 total generations, with the 30 correction reserve untouched. See [play instructions](Forest/README.md), [production review](Forest/PRODUCTION_REVIEW.md), [timing contract](Forest/FOUNDATION_CONTRACT.md) and [evidence](Validation/FOREST_PRODUCTION_PHASE_05_06.md). No merge or release is authorized.
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** Forest Phase 4 has passing results for 297 unique behavioral cases and one rendered scene check across the combined run and focused reruns, plus `Tools/Validate-Unity.ps1` with Unity 6000.3.19f1. Both 720×1280 and 1080×2400 layouts were checked, including intent/sprite separation and unchanged menu/settings skins. The original test-fixture failure and successful correction remain in [forest evidence](Validation/FOREST_FOUNDATION_PHASE_04.md). Previous main motion evidence covers all 16 auto-attacks and approved abilities; see [motion verification](Validation/ENEMY_MOTION_REFINEMENTS_2026_10_02.md) and [integration verification](Validation/PR_INTEGRATION_2026_10_01.md). Device and human pacing validation remain separate.
+- **Current verification:** Phase 5–6 evidence distinguishes passing forest behavior and rendered layout checks from broader-suite failures. The unchanged Phase 4 baseline reproduces 34 legacy lifecycle/audio failures; they remain unresolved and are not hidden or weakened. Current logs, baseline comparisons, final validator result and rendered evidence are in [production validation](Validation/FOREST_PRODUCTION_PHASE_05_06.md). Source checks cover all 304 selected frames and 40 imported sheets. Human motion/kit/music approval and physical-device behavior remain separate.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -342,14 +342,15 @@ Current exact tables and cost formula live in `Docs/BALANCE_V1.md`.
 
 These are **not bugs** unless the user explicitly changes direction.
 
-## Forest accepted-move prototype
+## Forest starter production test
 
 The Editor-only Forest menu starts or resumes a separate save under
-`.utmp/ForestPlaytest`. The three formations loop indefinitely using four starter
-kits. The new profile is a tuning experiment: production dungeon and version-1
-saves keep real-time basics. It introduces no public mode selector. The scenery
-is a repeated native-size study and vines use chain overlays/green warnings;
-these placeholders are declared, not finished forest art. Full content must
+`.utmp/ForestPlaytest`. Thirteen formations loop indefinitely using six starter
+kits. New basics count seconds and abilities count moves; older forest saves keep
+their profile. Buffs, stagger, poison and supplies retain prototype move durations.
+It introduces no public mode selector. Modular art and native battle motion are
+implemented for review. The original forest cue is explicitly temporary and needs
+listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.
 The launch plan is dungeon, magical forest and aquatic; crystal destinations
 will be random. Live travel and aquatic remain unimplemented.
@@ -862,10 +863,11 @@ The 80-energy production cost and 50% cast-refund ceiling are implemented. Furth
 
 # 25. Current next priorities
 
-The immediate gate is **technical/playable review of Forest Phase 4**. Assess
-move cadence, Mender interruption/recovery, vine counterplay, presentation and
-save/resume before full animation or later phases. Do not infer permission to
-merge or proceed from the approval of the six still designs.
+The immediate gate is **art, motion, kit and full-screen/music review of Forest
+Phases 5–6**. Assess seconds basics, move-based counterplay, milestone anchors,
+grounding, UI readability and the temporary cue. Address existing baseline test
+failures separately; validate Android touch/audio/performance before release.
+Do not infer permission to merge or proceed from this production allowance.
 
 Broader production priorities after that review remain:
 

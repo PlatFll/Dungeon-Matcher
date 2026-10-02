@@ -1,56 +1,57 @@
-# Forest foundation — Phase 4
+# Forest starter production — Phases 5–6
 
-Internal development prototype, awaiting technical and playable review.
-Base: `d334b5278748dcd303ac931eb71b0aa7328dd15b` (current main at start).
-Work branch: `codex/forest-gameplay-foundation`. The original dirty checkout is untouched.
+Branch: `codex/forest-enemy-production`, stacked on the unmerged Phase 4
+`codex/forest-gameplay-foundation`. Six starter kits and their battle animation
+sets, modular woodland, timber gameplay UI and a temporary original cue are ready
+for review. The user's original checkout and open foundation project are separate.
 
 ## Play
 
-Open this branch's Unity project in **Unity 6000.3.19f1**. Choose
-**Dungeon Matcher → Forest → Play new isolated test**. This creates a separate
-save under `.utmp/ForestPlaytest`, with three test Potions and Bombs. Production
-gold, supplies, run and character progression are untouched. Stop Play Mode,
-then use **Resume isolated test** to reopen that save. Suspend to Menu also works
-inside the test session. A new test gets a new file; older saves are retained.
+Open this branch's project in **Unity 6000.3.19f1**. Choose **Dungeon Matcher →
+Forest → Play new isolated test**. It creates a separate save under
+`.utmp/ForestPlaytest` with three test Potions and Bombs. Stop Play Mode, then
+choose **Resume isolated test** to reopen it. Suspend to Menu also works.
+Production gold, supplies and character progression are preserved.
 
-The first formation is Trailguard + Mender + Scout. The next formation adds
-Rootbinder, then a combined support/disruption formation. This small fixture
-loops through the existing endless wave pipeline. It is not the final forest
-roster, progression, zone travel or a claim of ten-minute content coverage.
-Forest is explicitly ineligible for live selection. No public mode selector
-or aquatic implementation was added.
+The **Fixtures** submenu starts any of the six enemies alone, Rootbinder with
+attackers, Warden with Scout/Trailguard, or Matriarch with attackers/Rootbinder.
+The default encounter demonstrates Trailguard + Mender + Scout. Thirteen small
+formations loop through the existing endless pipeline. Mender alone deliberately
+has no eligible heal recipient; damage Matriarch to demonstrate its self target.
 
-## Inspect
+New tests use **seconds basics and move-based abilities**. Earlier move-profile
+saves keep their recorded rules. Buffs, stagger, poison and supply cooldowns retain
+the Phase 4 move semantics. Paused inspection and accepted board resolution stop
+the basic countdown; a special hold resumes its stored seconds afterward.
 
-- [Approved art and technical review](ART_REVIEW.md)
-- [Resolution, timing and save contract](FOUNDATION_CONTRACT.md)
-- [Timer migration audit](CLOCK_IMPLEMENTATION.md)
-- [Executed validation and limits](../Validation/FOREST_FOUNDATION_PHASE_04.md)
-- `ArtSource/Forest/Approved/manifest.json`: six approved sprite identities.
-- `ArtSource/Forest/UI/Theme_Source_Record.json`: exact crops/repetition of
-  accepted wood and health-frame art. No generated replacement designs.
-- `Assets/_Game/Resources/Zones/magical-forest.asset`: explicit test eligibility,
-  Emerald affiliation, roster and gameplay theme.
+## Review materials
 
-The four starter enemies have playable test kits. Warden and Matriarch are
-imported approved still references; their milestone kits remain later work.
-Vines currently use the existing chain overlay and a green warning marker as
-**development presentation**, with canonical chain movement and removal.
-The forest environment repeats exact native-size crops of the approved small
-woodland study. Visible repeats and provisional vine markers remain development
-presentation pending later production. Runtime text, gems, ranks and menu/settings skins
-keep their existing ownership.
+- [Production inventory and kit values](PRODUCTION_REVIEW.md)
+- [Timing and save contract](FOUNDATION_CONTRACT.md)
+- [Timer ownership/profile details](CLOCK_IMPLEMENTATION.md)
+- [Executed evidence](../Validation/FOREST_PRODUCTION_PHASE_05_06.md)
+- `ArtSource/Forest/Production/Selected/Review.html`: true-timing animation player,
+  native/2×/3× display, still frames, modular art, Unity captures and music.
+- `ArtSource/Forest/Production/Selected/animation-manifest.json`: every native
+  frame's dimensions, palette count, alpha, bounds, contact row, hash and timing.
+- `ArtSource/Forest/Production/Raw`: original service outputs; `Selected`: repaired
+  exports. `Inputs/MenderPilot` preserves the already-approved pilot source.
+- `usage-reconciliation.json`: actual **80 / 90 initial / 120 total** generations.
+  Ten initial generations remain unused; the 30 correction reserve is untouched.
 
-`Starter_Kits.txt` and `Milestones_and_Pilot.txt` preserve the Phase 3 review
-specifications. Their historical implementation/approval notes describe that
-earlier phase. Current status: all six still designs are approved; the four
-starter kits are implemented here; milestone kits and full motion remain later
-work. This approval does not automatically approve the earlier motion samples.
+Serve the repository locally with Python's HTTP server to open the review page;
+its manifest loading needs HTTP. The current review server uses port 8881.
+`Tools/forest_export_production.py` reproduces native exports. Run **Import
+production art and kits** in the Forest menu to rebuild Unity bindings.
 
-## Review gate
+## Review gate and limits
 
-Review the move cadence, two-response heal, interruptions, vine counterplay,
-readability and save/resume. These numbers are tuning proposals. Human fun,
-Android hardware behavior and complete forest pacing are not established by
-automated tests. Full animation production and subsequent phases require the
-next approval. No new PixelLab generations or credits were used in Phase 4.
+Review faces/equipment, attack contact, channel interruption, ground placement,
+HUD readability, kit counterplay and the original temporary cue. Music is **not
+final**: human listening/mix approval remains open. Device performance and Android
+audio/touch behavior also remain unverified.
+
+This is a starter test roster, not the complete forest or proof of ten-minute
+visits. Full content, live random crystal travel, further progression and aquatic
+work remain later scope. No public mode selector, forced waits, HP padding or
+run cap was added. Stop for review; no merge or next phase is authorized.

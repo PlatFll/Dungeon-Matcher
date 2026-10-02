@@ -1,0 +1,194 @@
+{
+  "name": "Elven_Mender",
+  "state": "Interrupt",
+  "width": 96,
+  "height": 64,
+  "frameCount": 9,
+  "durationsMs": [
+    60,
+    60,
+    80,
+    60,
+    60,
+    80,
+    60,
+    80,
+    70
+  ],
+  "totalMs": 610,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "approved-phase-03-pilot/Release",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 60,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "60d75f43f13426ddeb085d50692c2ff56d68261dd3ff5ac9167093bd30a09251"
+    },
+    {
+      "index": 1,
+      "durationMs": 60,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "d658892ab44200e81cbe94e8ef1276824329b8eb66df2f2204ec469640d30d6d"
+    },
+    {
+      "index": 2,
+      "durationMs": 80,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "8996fadc405d8aac9f62bfa506cec285c72e40a4ebe1ac3352b74cb018332123"
+    },
+    {
+      "index": 3,
+      "durationMs": 60,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "46aa0b7eb7e4d400499435e7ce263eab399c6aa9f7bdd672240eee3bf8e9baf7"
+    },
+    {
+      "index": 4,
+      "durationMs": 60,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "113a0a38f5a87352e4e9b53fe8a0811378ee35ed2ca91ddfb8c6bcaa7179ac4e"
+    },
+    {
+      "index": 5,
+      "durationMs": 80,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "b5e5f197bf63202450b9100da2c7304a1f2e07cc6020441a1ff1bcfd7265daf6"
+    },
+    {
+      "index": 6,
+      "durationMs": 60,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "123847be7bf46c1a4fb89741b28da54f793caa3b369f8a9acd969266608550f4"
+    },
+    {
+      "index": 7,
+      "durationMs": 80,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "6743f6ffc984dccc9b6330f2eb6d14a2737451cbf07bfb9ca9d5eb4134918404"
+    },
+    {
+      "index": 8,
+      "durationMs": 70,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "fdf1ed6b756553d8189d551d6d4b214579d99e7cf186186458ea661be584ba9c"
+    }
+  ]
+}

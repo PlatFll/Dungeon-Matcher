@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>Inspection copy only; the actor, board and combat systems remain authoritative.</summary>
 public static class CombatGuide
 {
-    public static string Basics => CombatMoveClock.Active ? LegacyBasics.Replace("Enemy attacks count seconds. Special counters and warning deadlines count completed valid moves.", "FOREST TEST: attacks, channels, poison and supplies count accepted moves. Thinking is safe. Emerald damage gains 15%; affinity and weakness remain separate.") : LegacyBasics;
+    public static string Basics => CombatMoveClock.MoveBasics ? LegacyBasics.Replace("Enemy attacks count seconds. Special counters and warning deadlines count completed valid moves.", "LEGACY FOREST TEST: attacks, channels, poison and supplies count accepted moves. Thinking is safe. Emerald damage gains 15%; affinity and weakness remain separate.") : CombatMoveClock.Active ? LegacyBasics.Replace("Enemy attacks count seconds. Special counters and warning deadlines count completed valid moves.", "FOREST: basic attacks count seconds. Special abilities and channels count accepted moves. Basics pause during board resolution and owned ability holds. Buffs, stagger, poison and supply cooldowns retain their move durations. Emerald damage gains 15%; affinity and weakness remain separate.") : LegacyBasics;
     private const string LegacyBasics = "COMBAT BASICS\n\nMatch an enemy's weakness to damage and stagger it. A shield absorbs a whole hit, including the hit that breaks it. Later hits reach HP. Combat amounts use steps of five. Defeating the King continues the run; survive as long as you can. Affinity matches heal you. Make four or more to prepare specials.\n\nEnemy attacks count seconds. Special counters and warning deadlines count completed valid moves. Cascades, invalid swaps and inspection do not add moves.\n\nTap an enemy portrait to pause and inspect its current threat, marked cells and counter.\n\nAfter wave 2, choose a Board, Ability or Survival direction. One free Refine per run offers new cards in a chosen theme.\n\nBomb: preview the highlighted area, then confirm. Chains and ice break when their gem clears. Barricades take one hit per blast, including adjacent hits; banners fall when gems beneath them clear. Specials can extend the blast. Empty mined cells are not restored by a Bomb. Cancelling spends nothing.\n\nSuspend to Menu keeps this attempt. End Run pays completed waves once and starts over.\n\nFONT CREDIT\nThaleah by Rick Hoppmann (Tiny Worlds). CC BY 4.0.\ntinyworlds.itch.io/free-pixel-font-thaleah\ncreativecommons.org/licenses/by/4.0/";
     public static string Enemy(EnemyActor actor)
     {
@@ -12,18 +12,20 @@ public static class CombatGuide
         var attack = actor.GetComponent<EnemyAutoAttack>();
         string basic = $"{actor.Definition.DisplayName}\nHP {actor.CurrentHealth}/{actor.MaxHealth}   Shield {actor.CurrentShield}\n" +
             $"Weakness: {actor.AssignedGemType}\nNormal hit: {actor.Damage}" + (actor.FollowUpDamage > 0 ? $" + {actor.FollowUpDamage}" : "") +
-            (CombatMoveClock.Active ? $"   Every {actor.Definition.AttackMoves} moves\n" : $"   Every {actor.AttackInterval:0.#} seconds\n") +
-            (attack != null ? $"Next attack: {attack.RemainingAttackTime:0.#} {(CombatMoveClock.Active ? "moves" : "seconds")}\n" : "");
+            (CombatMoveClock.MoveBasics ? $"   Every {actor.Definition.AttackMoves} moves\n" : $"   Every {actor.AttackInterval:0.#} seconds\n") +
+            (attack != null ? $"Next attack: {attack.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}\n" : "");
         if (actor.HasSpecialAbility) basic += $"Special: {Mathf.Max(0,actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount)} valid moves to ready\n";
         return basic + "\n" + Counter(actor.Definition.SpecialAbilityKind) +
             (RunSession.Current?.Board != null ? "\n\n"+RunSession.Current.Board.DescribeOwnedBoardThreats(actor) : "") +
-            (CombatMoveClock.Active ? "\n\nOnly accepted manual actions advance combat. Thinking, cascades and free skills do not. Interrupt channels by staggering or defeating their caster." : "\n\nSeconds run during combat. Only completed valid swaps/taps advance move counters; cascades and invalid swaps do not.");
+            (CombatMoveClock.Active ? "\n\nOnly accepted manual actions advance special deadlines. Interrupt channels by staggering or defeating their caster. Free skills can solve threats without spending a move." : "\n\nSeconds run during combat. Only completed valid swaps/taps advance move counters; cascades and invalid swaps do not.");
     }
 
     public static string Counter(EnemySpecialAbilityKind kind)
     {
         switch (kind)
         {
+            case EnemySpecialAbilityKind.GuardingRoots: return "Warns two root anchors for one move. Active anchors grant one 25% damage reduction. Clear both to expose him to +25% weakness damage for two full future moves. Stagger preparation to expose him early. Anchors never spread; shared restriction cap is six.";
+            case EnemySpecialAbilityKind.GroveRenewal: return "Channels for two future moves with two seed anchors and a fixed wounded ally (herself only when no ally qualifies). Each surviving anchor grants 10 healing. Clear both or stagger her to cancel and expose her to +25% weakness damage for two moves. Target death fizzles; no retargeting. No basics during ritual or recovery.";
             case EnemySpecialAbilityKind.ChannelHeal: return "Heals a fixed wounded ally by 20 after two future moves. Stagger or defeat the Mender, or defeat its target, to cancel. Two recovery moves follow. No basics during channel or recovery.";
             case EnemySpecialAbilityKind.SpreadingVines: return "Warns two ordinary gems, then binds them next move. Vines fall and remain matchable; clear or convert them, or defeat their owner. Unaddressed vines can spread after two moves. Shared restriction cap: six.";
             case EnemySpecialAbilityKind.Miner: return "Mines remove board cells. Defeat their Miner to restore the holes he owns. Specials are protected from mining.";
@@ -70,7 +72,7 @@ public static class CombatGuide
         var text=new StringBuilder($"Continue wave {run.Waves.CurrentWave}\n{run.Player.Definition.DisplayName}: {run.Player.CurrentHealth} HP / {run.Player.CurrentShield} shield\n");
         text.AppendLine($"Supplies: {run.Charges(ConsumableKind.HealthPotion)} Potions / {run.Charges(ConsumableKind.Bomb)} Bombs\n");
         foreach(var enemy in run.Waves.ActiveEnemies)
-            text.AppendLine($"{enemy.Definition.DisplayName}: next attack in {enemy.GetComponent<EnemyAutoAttack>()?.RemainingAttackTime:0.#} {(CombatMoveClock.Active ? "moves" : "seconds")}");
+            text.AppendLine($"{enemy.Definition.DisplayName}: next attack in {enemy.GetComponent<EnemyAutoAttack>()?.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}");
         text.AppendLine("\nNo combat time passed while you were away. Resume when ready.\n");
         text.Append(Build(RunUpgradeRuntime.Current));return text.ToString();
     }

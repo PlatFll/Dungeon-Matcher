@@ -1,0 +1,76 @@
+{
+  "clips": 40,
+  "frames": 304,
+  "importedSheets": 40,
+  "paletteAndAlpha": true,
+  "idleContacts": {
+    "Elven_Scout": 63,
+    "Orc_Trailguard": 63,
+    "Elven_Mender": 63,
+    "Orc_Rootbinder": 63,
+    "Barkhide_Warden": 63,
+    "Briar_Matriarch": 95
+  },
+  "loopSeams": [
+    {
+      "name": "Elven_Scout",
+      "state": "Idle",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Orc_Trailguard",
+      "state": "Idle",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "Idle",
+      "duplicateEndpoint": true,
+      "note": "Approved Phase 3 pilot retained with its documented endpoint hold."
+    },
+    {
+      "name": "Elven_Mender",
+      "state": "ChannelHold",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "Idle",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Orc_Rootbinder",
+      "state": "ChannelHold",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "Idle",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Barkhide_Warden",
+      "state": "ChannelHold",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "Idle",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    },
+    {
+      "name": "Briar_Matriarch",
+      "state": "ChannelHold",
+      "duplicateEndpoint": false,
+      "note": "Distinct endpoints."
+    }
+  ]
+}

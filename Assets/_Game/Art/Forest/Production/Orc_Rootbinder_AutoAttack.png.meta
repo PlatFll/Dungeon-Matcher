@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 72ba649cf795ad94593ad27114493b92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 848531772554707157
+    second: Orc_Rootbinder_AutoAttack_0
+  - first:
+      213: -7540909630512437763
+    second: Orc_Rootbinder_AutoAttack_1
+  - first:
+      213: 1608380758529792534
+    second: Orc_Rootbinder_AutoAttack_2
+  - first:
+      213: 5278742480828843003
+    second: Orc_Rootbinder_AutoAttack_3
+  - first:
+      213: -8505499517888473698
+    second: Orc_Rootbinder_AutoAttack_4
+  - first:
+      213: -6052744692537149953
+    second: Orc_Rootbinder_AutoAttack_5
+  - first:
+      213: -824725639109295062
+    second: Orc_Rootbinder_AutoAttack_6
+  - first:
+      213: 4511739812504254601
+    second: Orc_Rootbinder_AutoAttack_7
+  - first:
+      213: 2934078547875546610
+    second: Orc_Rootbinder_AutoAttack_8
+  - first:
+      213: -8164188296675796952
+    second: Orc_Rootbinder_AutoAttack_00
+  - first:
+      213: 3212024505422128641
+    second: Orc_Rootbinder_AutoAttack_01
+  - first:
+      213: -4262873363678200464
+    second: Orc_Rootbinder_AutoAttack_02
+  - first:
+      213: 493825468389022648
+    second: Orc_Rootbinder_AutoAttack_03
+  - first:
+      213: 6381292055640132396
+    second: Orc_Rootbinder_AutoAttack_04
+  - first:
+      213: -4869776367982182011
+    second: Orc_Rootbinder_AutoAttack_05
+  - first:
+      213: -2213967321498148435
+    second: Orc_Rootbinder_AutoAttack_06
+  - first:
+      213: 685474541388155878
+    second: Orc_Rootbinder_AutoAttack_07
+  - first:
+      213: 5022202277209585453
+    second: Orc_Rootbinder_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828dc39fff9f2be80800000000000000
+      internalID: -8164188296675796952
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10629870547639c20800000000000000
+      internalID: 3212024505422128641
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d7c7be24b37d4c0800000000000000
+      internalID: -4262873363678200464
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb5e58a5ab6ad600800000000000000
+      internalID: 493825468389022648
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2bc378a057ee8850800000000000000
+      internalID: 6381292055640132396
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58184dac1341b6cb0800000000000000
+      internalID: -4869776367982182011
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1a7c183786641e0800000000000000
+      internalID: -2213967321498148435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebc30ea67b438900800000000000000
+      internalID: 685474541388155878
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Rootbinder_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d273c33cc5272b540800000000000000
+      internalID: 5022202277209585453
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc_Rootbinder_AutoAttack_0: 848531772554707157
+      Orc_Rootbinder_AutoAttack_00: -8164188296675796952
+      Orc_Rootbinder_AutoAttack_01: 3212024505422128641
+      Orc_Rootbinder_AutoAttack_02: -4262873363678200464
+      Orc_Rootbinder_AutoAttack_03: 493825468389022648
+      Orc_Rootbinder_AutoAttack_04: 6381292055640132396
+      Orc_Rootbinder_AutoAttack_05: -4869776367982182011
+      Orc_Rootbinder_AutoAttack_06: -2213967321498148435
+      Orc_Rootbinder_AutoAttack_07: 685474541388155878
+      Orc_Rootbinder_AutoAttack_08: 5022202277209585453
+      Orc_Rootbinder_AutoAttack_1: -7540909630512437763
+      Orc_Rootbinder_AutoAttack_2: 1608380758529792534
+      Orc_Rootbinder_AutoAttack_3: 5278742480828843003
+      Orc_Rootbinder_AutoAttack_4: -8505499517888473698
+      Orc_Rootbinder_AutoAttack_5: -6052744692537149953
+      Orc_Rootbinder_AutoAttack_6: -824725639109295062
+      Orc_Rootbinder_AutoAttack_7: 4511739812504254601
+      Orc_Rootbinder_AutoAttack_8: 2934078547875546610
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

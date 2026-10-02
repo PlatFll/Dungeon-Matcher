@@ -17,6 +17,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     private void Start()
     {
+        BackgroundMusicPlayer.Instance?.SetZoneMusic(Definition?.music);
         if(Definition?.theme==null) return;
         run.Board.GetComponent<BoardVisuals>()?.ApplyGameplayTheme(Definition.theme);
         FindFirstObjectByType<BattleBackgroundTilemapController>()?.ApplyGameplayTheme(Definition.theme);

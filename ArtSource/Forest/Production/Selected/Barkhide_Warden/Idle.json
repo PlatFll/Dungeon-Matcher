@@ -1,0 +1,175 @@
+{
+  "name": "Barkhide_Warden",
+  "state": "Idle",
+  "width": 96,
+  "height": 64,
+  "frameCount": 8,
+  "durationsMs": [
+    145,
+    145,
+    145,
+    145,
+    145,
+    145,
+    145,
+    145
+  ],
+  "totalMs": 1160,
+  "loop": true,
+  "impactFrame": -1,
+  "source": "Raw/Barkhide_Warden/Idle",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        6,
+        79,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4a6ad3f27ee623bcba609ad45bb4ed94796df15a3ff0f5431c5a194c7dc1f8ce"
+    },
+    {
+      "index": 1,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        7,
+        79,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "6e7dff563cf909f6f3bcd1afa45575509859c607513595019422d97a12ab2929"
+    },
+    {
+      "index": 2,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        5,
+        77,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "ef6db435b847a9bdeae538c8445f8c5fb95f91cd84c81635a3d31ef99de4a52f"
+    },
+    {
+      "index": 3,
+      "durationMs": 145,
+      "bounds": [
+        16,
+        4,
+        79,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "26005243a424bdbb6eb484c5c4aa922381758f8eb8a465e76a62167865266b81"
+    },
+    {
+      "index": 4,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        3,
+        77,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "8bb926c7e0bb111b8b5f0b09ef712788f821924a2299c0b73c86dd37e0851599"
+    },
+    {
+      "index": 5,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        4,
+        77,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4ad8711a6e2657d73e705023e8fd54f8a38d764a00af443f1d796956443446ec"
+    },
+    {
+      "index": 6,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        5,
+        79,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4df2fe4081baa28d2831de763f8c519d053a60dd351634407fdcf1851a1856a6"
+    },
+    {
+      "index": 7,
+      "durationMs": 145,
+      "bounds": [
+        17,
+        7,
+        79,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "3e8bcbaa9d8c8cc8481a77f2c0b01c8fcda713887a8ec332fd48c6e930dcd3c8"
+    }
+  ]
+}

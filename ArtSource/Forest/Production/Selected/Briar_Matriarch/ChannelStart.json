@@ -1,0 +1,118 @@
+{
+  "name": "Briar_Matriarch",
+  "state": "ChannelStart",
+  "width": 96,
+  "height": 96,
+  "frameCount": 5,
+  "durationsMs": [
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "totalMs": 500,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Briar_Matriarch/ChannelStart",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 100,
+      "bounds": [
+        17,
+        17,
+        70,
+        96
+      ],
+      "paletteCount": 17,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "d884ba6a5848b7410e25b7f1cd3f274ed87aa709809218b61f44f9ff6eb06ddd"
+    },
+    {
+      "index": 1,
+      "durationMs": 100,
+      "bounds": [
+        17,
+        17,
+        71,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "5e243418b4c2b87608a6482e1307413dbf3139f2f16cc6cc63677b87cbed8f52"
+    },
+    {
+      "index": 2,
+      "durationMs": 100,
+      "bounds": [
+        17,
+        17,
+        72,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "a01a2345bb160f494614b6933321eee10786efd6ef750dd5582c2361dec2f63c"
+    },
+    {
+      "index": 3,
+      "durationMs": 100,
+      "bounds": [
+        17,
+        17,
+        71,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "3e49c2286e2317b4436ba10b98bc4edb0c6825e0053115643a9bcedf4e3ab456"
+    },
+    {
+      "index": 4,
+      "durationMs": 100,
+      "bounds": [
+        18,
+        17,
+        70,
+        96
+      ],
+      "paletteCount": 16,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 95,
+      "hash": "ea956d1e99d36086d7e01faba2d7a3c80ca5eed14aa09bd9cba70eb25b3470e4"
+    }
+  ]
+}

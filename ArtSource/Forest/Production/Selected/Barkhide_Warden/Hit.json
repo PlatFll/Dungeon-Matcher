@@ -1,0 +1,118 @@
+{
+  "name": "Barkhide_Warden",
+  "state": "Hit",
+  "width": 96,
+  "height": 64,
+  "frameCount": 5,
+  "durationsMs": [
+    45,
+    55,
+    70,
+    65,
+    45
+  ],
+  "totalMs": 280,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Barkhide_Warden/Hit",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 45,
+      "bounds": [
+        17,
+        6,
+        79,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4a6ad3f27ee623bcba609ad45bb4ed94796df15a3ff0f5431c5a194c7dc1f8ce"
+    },
+    {
+      "index": 1,
+      "durationMs": 55,
+      "bounds": [
+        17,
+        4,
+        79,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "6c1201d16233d19f1ea7ac1af419c1d1e6cf5c8cd61330fc5581994e54ba4e94"
+    },
+    {
+      "index": 2,
+      "durationMs": 70,
+      "bounds": [
+        17,
+        1,
+        78,
+        62
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 61,
+      "hash": "7fc6fe42407c488d0435782db1ea84317f70a4b5695288dcfd2817f18aacb1d1"
+    },
+    {
+      "index": 3,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        4,
+        79,
+        63
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 62,
+      "hash": "57beec4f89c4cb354b932d77cff5dc79e1e45fd95aa83d4e77f8ae7c63e1047e"
+    },
+    {
+      "index": 4,
+      "durationMs": 45,
+      "bounds": [
+        17,
+        6,
+        79,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4a6ad3f27ee623bcba609ad45bb4ed94796df15a3ff0f5431c5a194c7dc1f8ce"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "name": "Orc_Trailguard",
+  "state": "Death",
+  "width": 96,
+  "height": 64,
+  "frameCount": 8,
+  "durationsMs": [
+    65,
+    65,
+    65,
+    65,
+    65,
+    65,
+    65,
+    100
+  ],
+  "totalMs": 555,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Orc_Trailguard/Death",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 65,
+      "bounds": [
+        18,
+        7,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "c5253f5e62be53e3cc437683dff631b2f05653dd95dea2b5a6a3951f68b839c6"
+    },
+    {
+      "index": 1,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        8,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4deadf227d1fe22aba3832af07ec2c79df2267091401008e824375421ba6da53"
+    },
+    {
+      "index": 2,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        9,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "7ce183e5209c9a1e443c7ae146d0178671cb1601ce51eb70ea208309f179e666"
+    },
+    {
+      "index": 3,
+      "durationMs": 65,
+      "bounds": [
+        15,
+        12,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "1a701b9f3a1272824daec076b36791538a13abc3359f679475bd3578aa341511"
+    },
+    {
+      "index": 4,
+      "durationMs": 65,
+      "bounds": [
+        14,
+        16,
+        75,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "6b0842169a46064d85daf4af9537386daad43b6c45d798686615b0d50aa1ebc0"
+    },
+    {
+      "index": 5,
+      "durationMs": 65,
+      "bounds": [
+        14,
+        28,
+        79,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "445e0dc55e284a166d1d126d424f83b8547beae1e0d485c7c9532d886ed7df54"
+    },
+    {
+      "index": 6,
+      "durationMs": 65,
+      "bounds": [
+        12,
+        34,
+        82,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "14b410e053bdd8e94feaa6ebf88e52cb83f1e0ed6222d8b4bfdfdefeec7e5ee2"
+    },
+    {
+      "index": 7,
+      "durationMs": 100,
+      "bounds": [
+        12,
+        39,
+        83,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "f4991063a01afb2bdb70f7be359ebbde7063432fccd39d5284d189af4930059f"
+    }
+  ]
+}
