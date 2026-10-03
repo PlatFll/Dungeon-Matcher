@@ -21,7 +21,7 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-03
-- **Current milestone:** Expanded forest roster on `codex/forest-roster-production`: the seven locked designs now have 39 motion clips and their approved kits, including Treant C (Old Stump). The user selected Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B; these replace the corresponding obstacle art with matching vine growth/recoil. See [the roster contract](Forest/EXPANDED_ROSTER.md). Dungeon ↔ forest travel, timed basics, move-based enemy readiness and existing live effect timing remain in place. This batch requires its own reviewed PR; no merge is authorized.
+- **Current milestone:** Expanded forest roster in [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176): the seven locked designs now have 39 motion clips and their approved kits, including Treant C (Old Stump). The user selected Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B; these replace the corresponding obstacle art with matching vine growth/recoil. See [the roster contract](Forest/EXPANDED_ROSTER.md). Dungeon ↔ forest travel, timed basics, move-based enemy readiness and existing live effect timing remain in place. The user approved merging this batch on 2026-10-03.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
@@ -877,8 +877,8 @@ The immediate priorities are **playtesting connected forest travel and reviewing
 the temporary music**. Assess seconds basics, move-based counterplay, structural roots and vine overlays,
 grounding, UI readability and the temporary cue. Address existing baseline test
 failures separately; validate Android touch/audio/performance before release.
-Travel/art was merged in #175. The new roster animation/kit batch is separately
-authorized and awaits its own PR review. This batch used **121/160 PixelLab
+Travel/art was merged in #175. The roster animation/kit batch is delivered in
+PR #176 with explicit merge approval. This batch used **121/160 PixelLab
 generations**, including retries and three recorded accidental duplicate samples;
 39 remain unused. All jobs settled and no credits were purchased. Earlier phase
 allowances stay separate; later-zone production remains outside this batch.

@@ -2,8 +2,9 @@
 
 Unity 6000.3.19f1, Windows Editor. Implementation is isolated on
 `codex/forest-roster-production`; the user's open main checkout and its three
-existing consumable import changes are preserved. This batch has no merge
-authorization.
+existing consumable import changes are preserved. The user approved merging
+PR #176 on 2026-10-03. The merge checkpoint changes documentation only; gameplay,
+art, serialized state and validation tooling match the tested `ebbac09` commit.
 
 ## Delivered
 
