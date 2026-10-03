@@ -15,5 +15,10 @@ public enum EnemySpecialAbilityKind
     ChannelHeal = 12,
     SpreadingVines = 13,
     GuardingRoots = 14,
-    GroveRenewal = 15
+    GroveRenewal = 15,
+    Bloodrage = 16,
+    CallSnapvine = 17,
+    WarRhythm = 18,
+    ThornVolley = 19,
+    AncientBough = 20
 }

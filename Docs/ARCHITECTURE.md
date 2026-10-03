@@ -69,6 +69,16 @@ an opened side after this clear's root-hit check; a later clear can hit through 
 The environment growth deadline advances independently of forced surges. Board
 photos preserve that deadline and solved/damaged root progress.
 
+The expanded roster uses definition-selected ForestCombatAbility (rage, independent
+summons, shared non-stacking rhythm) and ForestPressureAbility (fixed-cell warnings
+and ordinary Treant shield). BoardController.CellThreats owns response cells and
+exactly-once queued resolution. Removing a vine permanently answers its volley mark;
+clearing any Bough cell weakens that hit. Board snapshots use warning kind 3.
+Enemy continuation owners save persistent summon/buff targets, remaining effect
+units, rage and Treant cycle. Thorn barricades save one safe-side bit and reuse the
+structural pipeline; only opening manual clears carry the retaliation flag.
+See [expanded roster rules](Forest/EXPANDED_ROSTER.md).
+
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
 `accepted-moves-v1`, `seconds-basics-move-abilities-v1` or the travel
 `seconds-effects-move-abilities-v1` profile,

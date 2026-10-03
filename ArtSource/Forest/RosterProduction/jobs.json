@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: e634c154-6939-4775-aac2-86c027b1d7c8\njob_id: e634c154-6939-4775-aac2-86c027b1d7c8\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e65c38ff-1533-5607-a78f-aceaf2ba39a3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e634c154-6939-4775-aac2-86c027b1d7c8\")"
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Lean into a quick short sickle slash with the hand holding the sickle. Keep the thorn branch bundle carried in the other hand. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: ea8ad191-0c84-4840-9cad-eeb94c486f84\njob_id: ea8ad191-0c84-4840-9cad-eeb94c486f84\naction: Lean into a quick short sickle slash with the hand holding the sickle. Keep the thorn branch bundle carried in the other hand. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 697036f8-e823-5c08-b2a6-1ebc0df7f812\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ea8ad191-0c84-4840-9cad-eeb94c486f84\")"
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: b76ce5b8-7a17-43ff-9bc7-97080d919f79\njob_id: b76ce5b8-7a17-43ff-9bc7-97080d919f79\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 02292664-2617-5572-b704-dbb63c60489a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b76ce5b8-7a17-43ff-9bc7-97080d919f79\")"
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Grip the heavy cleaver firmly, draw it back with the shoulder and deliver a powerful chopping slash toward the left. Knees absorb the follow-through. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: ae3a6121-fad1-48d3-b316-acb33bc3e24f\njob_id: ae3a6121-fad1-48d3-b316-acb33bc3e24f\naction: Grip the heavy cleaver firmly, draw it back with the shoulder and deliver a powerful chopping slash toward the left. Knees absorb the follow-through. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 6a767f44-5dd4-5183-9aa3-21ed112d5d32\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ae3a6121-fad1-48d3-b316-acb33bc3e24f\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: fb7b757a-f0e3-4988-9fe4-243024a8b1f6\njob_id: fb7b757a-f0e3-4988-9fe4-243024a8b1f6\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d066d427-5c36-5aa9-8036-27efd6db673b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fb7b757a-f0e3-4988-9fe4-243024a8b1f6\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Swing the flower-tipped staff forward for a short grounded staff strike. Both body and arm move, the flowers stay attached. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: ee527ef1-0780-4e76-b188-e6cbe374400c\njob_id: ee527ef1-0780-4e76-b188-e6cbe374400c\naction: Swing the flower-tipped staff forward for a short grounded staff strike. Both body and arm move, the flowers stay attached. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 7c1e6653-50c8-5f26-b2b3-847ce05896ef\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ee527ef1-0780-4e76-b188-e6cbe374400c\")"
+  },
+  {
+    "name": "Snapvine",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 619269e8-3edf-449c-a75b-410bbf25aac3\njob_id: 619269e8-3edf-449c-a75b-410bbf25aac3\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: f68078ea-d669-538f-a7e0-c63f00b09963\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"619269e8-3edf-449c-a75b-410bbf25aac3\")"
+  },
+  {
+    "name": "Snapvine",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Pull the plant head back on its flexible stem then snap its toothed jaws forward to the left for one fast decisive bite. Root feet remain planted. Retract smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 52b80be8-0f3c-4371-aafa-7621d61f127c\njob_id: 52b80be8-0f3c-4371-aafa-7621d61f127c\naction: Pull the plant head back on its flexible stem then snap its toothed jaws forward to the left for one fast decisive bite. Root feet remain planted. Retract smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: b7ffc411-745a-5aba-b4a0-f1fe0cb9f26f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"52b80be8-0f3c-4371-aafa-7621d61f127c\")"
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: e4654805-1062-4623-abd0-4e380450ccc3\njob_id: e4654805-1062-4623-abd0-4e380450ccc3\naction: A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 4\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ac67cef6-bd0d-59e3-b229-0e37f1ed30fe\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e4654805-1062-4623-abd0-4e380450ccc3\")"
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "id: 80ebd5e0-a8dd-428b-899a-211ab6e79546\njob_id: 80ebd5e0-a8dd-428b-899a-211ab6e79546\naction: Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.\nframes: 8\nsize: 96x80px\ntransparent: True\nasset_id: 8114dc16-fc40-5849-b36d-6160102796e3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"80ebd5e0-a8dd-428b-899a-211ab6e79546\")"
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: e44828e8-7076-48a2-a615-c8e46725b6ad\njob_id: e44828e8-7076-48a2-a615-c8e46725b6ad\naction: A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 4\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 8018c43c-b9e9-5323-a117-d70f78d4c0b6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e44828e8-7076-48a2-a615-c8e46725b6ad\")"
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "id: 2fa77a41-43b5-4586-bfa3-8cd8e052ab9f\njob_id: 2fa77a41-43b5-4586-bfa3-8cd8e052ab9f\naction: Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.\nframes: 8\nsize: 96x80px\ntransparent: True\nasset_id: ff826a59-da7e-51e4-9556-d4e97d75546d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2fa77a41-43b5-4586-bfa3-8cd8e052ab9f\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 14d0dbf2-9333-4d29-b817-a319750e6436\njob_id: 14d0dbf2-9333-4d29-b817-a319750e6436\naction: A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 4\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d7dbe84d-d1e1-5e89-b8fa-558482b2b443\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"14d0dbf2-9333-4d29-b817-a319750e6436\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "id: 33178812-671c-4e7d-867a-4beec38e124a\njob_id: 33178812-671c-4e7d-867a-4beec38e124a\naction: Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.\nframes: 8\nsize: 96x80px\ntransparent: True\nasset_id: efeedee0-0c57-5460-8b85-ca00692cdc3a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"33178812-671c-4e7d-867a-4beec38e124a\")"
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 1c655062-0334-4a06-b083-3cec769efda2\njob_id: 1c655062-0334-4a06-b083-3cec769efda2\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 5a494bb8-dde8-5ec1-bdd5-7fac9a929db1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1c655062-0334-4a06-b083-3cec769efda2\")"
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Draw one drumstick back then strike outward toward the left, with a compact body lean, retaining the strapped drum and other stick. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 1684844e-75c9-4034-9bf1-989f9b43e643\njob_id: 1684844e-75c9-4034-9bf1-989f9b43e643\naction: Draw one drumstick back then strike outward toward the left, with a compact body lean, retaining the strapped drum and other stick. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ddb9fe57-0794-5edd-91c5-4ec37733c6cc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1684844e-75c9-4034-9bf1-989f9b43e643\")"
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 19396ff8-d35c-4c09-aea7-d6fbd1853922\njob_id: 19396ff8-d35c-4c09-aea7-d6fbd1853922\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 8bcfadea-9e94-500b-a55c-804b56cb73e5\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"19396ff8-d35c-4c09-aea7-d6fbd1853922\")"
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Draw the bowstring firmly with the rear hand while the bow arm stays extended to the left, release one arrow then lower back into the ready pose. No sword or shield. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: be1073c1-1a78-4e57-ae27-3db74b47291d\njob_id: be1073c1-1a78-4e57-ae27-3db74b47291d\naction: Draw the bowstring firmly with the rear hand while the bow arm stays extended to the left, release one arrow then lower back into the ready pose. No sword or shield. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 704a427d-a044-5fee-ac8c-b5ca255bd1dc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"be1073c1-1a78-4e57-ae27-3db74b47291d\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 863b07d1-5a1c-46b9-893e-2d49bf7b068f\njob_id: 863b07d1-5a1c-46b9-893e-2d49bf7b068f\naction: A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 128x112px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0179c349-9d3f-5d71-b115-ba02d41bdeff\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"863b07d1-5a1c-46b9-893e-2d49bf7b068f\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "The bulky old stump creature draws one massive branch arm up then swings it down and forward in a heavy grounded slam, root feet firmly planted. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+  },
+  {
+    "name": "Snapvine",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "job_id: f1fb9d1b-a694-4730-9a2d-7e33ed57ceba\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Snapvine",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "job_id: 1d9062bf-a104-4d23-b0d1-c30694b32d26\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "job_id: e5be969c-348e-449e-88ed-dc487c66055e\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "job_id: aff7555f-1662-474c-91af-202f29c8357a\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Snapvine",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "job_id: bcdbd1be-7d15-4ba2-a286-5984a28ed2a5\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Snapvine",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "job_id: fc1013c2-c612-4e4b-8ea9-bdfd1fabccaa\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "job_id: ddccb6d4-4871-4c30-a0f2-a65903a27b67\ncost: 1 generation\nstatus: processing",
+    "recoveredLedger": true
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: caa06c5e-1598-4000-8760-b00ef24b099d\njob_id: caa06c5e-1598-4000-8760-b00ef24b099d\naction: A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 4\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 105bdc0d-dfcc-5536-bac6-5ed6f07cb3fc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"caa06c5e-1598-4000-8760-b00ef24b099d\")"
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "id: 4403138a-1d26-4478-a6fa-d52f4b1b90a9\njob_id: 4403138a-1d26-4478-a6fa-d52f4b1b90a9\naction: Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.\nframes: 8\nsize: 96x80px\ntransparent: True\nasset_id: 70e730aa-b409-5d08-b0cc-0a61035ad5d7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4403138a-1d26-4478-a6fa-d52f4b1b90a9\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "The bulky old stump creature draws one massive branch arm up then swings it down and forward in a heavy grounded slam, root feet firmly planted. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 3d30cc7b-fc80-46bb-ab29-ddfddc715724\njob_id: 3d30cc7b-fc80-46bb-ab29-ddfddc715724\naction: The bulky old stump creature draws one massive branch arm up then swings it down and forward in a heavy grounded slam, root feet firmly planted. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 8\nsize: 128x112px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 77a8d9a1-db39-5fba-8fa2-85e7c3b4fe68\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3d30cc7b-fc80-46bb-ab29-ddfddc715724\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.",
+    "result": "id: 566423d4-450d-42ec-b50f-3c0b831682e6\njob_id: 566423d4-450d-42ec-b50f-3c0b831682e6\naction: A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose.\nframes: 4\nsize: 128x112px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: cee81c93-2ef6-5a29-a472-9b6775112729\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"566423d4-450d-42ec-b50f-3c0b831682e6\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.",
+    "result": "id: 5db093e0-fe2a-4aa9-9e9a-677233aa7a13\njob_id: 5db093e0-fe2a-4aa9-9e9a-677233aa7a13\naction: Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur.\nframes: 8\nsize: 128x112px\ntransparent: True\nasset_id: 36c3e977-81bb-55be-b361-3eab3cb434df\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5db093e0-fe2a-4aa9-9e9a-677233aa7a13\")"
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bramble spell: the slim elf crouches and sweeps her bundle of short branches down toward the floor, spreading her arms as if commanding a thorn wall, then stands back into her exact ready pose. Keep her sickle small and unchanged. No glow cloud or new equipment. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: 2e137443-be2f-4f29-95bc-5f36839da470\njob_id: 2e137443-be2f-4f29-95bc-5f36839da470\naction: Bramble spell: the slim elf crouches and sweeps her bundle of short branches down toward the floor, spreading her arms as if commanding a thorn wall, then stands back into her exact ready pose. Keep her sickle small and unchanged. No glow cloud or new equipment. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 9dd8aa05-c657-54bc-ba2d-cb4f84da3568\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2e137443-be2f-4f29-95bc-5f36839da470\")"
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bloodrage roar: the bulky orc lowers his cleaver, spreads his free hand, bends his knees and throws his head back roaring, shoulders tense. His skin remains the same olive green. Recover into the exact ready pose. No red body recolor or new weapon. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: 79f35b79-8fd8-43d0-9e8f-69b7867b4513\njob_id: 79f35b79-8fd8-43d0-9e8f-69b7867b4513\naction: Bloodrage roar: the bulky orc lowers his cleaver, spreads his free hand, bends his knees and throws his head back roaring, shoulders tense. His skin remains the same olive green. Recover into the exact ready pose. No red body recolor or new weapon. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d4f06210-5b6b-582c-8891-99d33ea2324e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"79f35b79-8fd8-43d0-9e8f-69b7867b4513\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Summoning gesture: bend both knees, extend the seed-holding left hand towards the floor on the left while lifting the flower-topped wooden staff vertically in the right hand, nod decisively then recover to ready. Preserve flowers, peach robe and cream cloth. No cyan light, no magical trails, no object spawned in this character layer. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: ab89c6a4-44d9-4adb-9d5d-f50df8c43983\njob_id: ab89c6a4-44d9-4adb-9d5d-f50df8c43983\naction: Summoning gesture: bend both knees, extend the seed-holding left hand towards the floor on the left while lifting the flower-topped wooden staff vertically in the right hand, nod decisively then recover to ready. Preserve flowers, peach robe and cream cloth. No cyan light, no magical trails, no object spawned in this character layer. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 392b4697-16c4-55a6-9e76-dc2cdc2a42ca\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ab89c6a4-44d9-4adb-9d5d-f50df8c43983\")"
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "War Rhythm: raise both drumsticks high with elbows wide, squat and strike the strapped drum vigorously with both sticks together, head and shoulders follow the emphatic beat, recover smoothly to ready. Feet remain planted. Keep drum and two sticks attached. No projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: 9c8ca556-d17c-42a5-9e79-92045e663347\njob_id: 9c8ca556-d17c-42a5-9e79-92045e663347\naction: War Rhythm: raise both drumsticks high with elbows wide, squat and strike the strapped drum vigorously with both sticks together, head and shoulders follow the emphatic beat, recover smoothly to ready. Feet remain planted. Keep drum and two sticks attached. No projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: b05970c5-09c3-5c78-8745-a9dc108b4c68\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9c8ca556-d17c-42a5-9e79-92045e663347\")"
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "ChannelSequence",
+    "frame_count": 12,
+    "action": "Thorn Volley: from the exact ready stance, pivot the bow up diagonally to the upper left and pull the bowstring far back to the cheek. Clearly HOLD the full draw during the middle four frames with a steady braced body. Then release a small three-arrow volley up-left in a quick snap, lowering the bow smoothly back to the exact ready pose. Feet stay planted. Existing bow and arrow colors only. No magic cloud, glow, or new props. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: f54e4e47-e0bb-4e64-9b35-182f4dac0354\njob_id: f54e4e47-e0bb-4e64-9b35-182f4dac0354\naction: Thorn Volley: from the exact ready stance, pivot the bow up diagonally to the upper left and pull the bowstring far back to the cheek. Clearly HOLD the full draw during the middle four frames with a steady braced body. Then release a small three-arrow volley up-left in a quick snap, lowering the bow smoothly back to the exact ready pose. Feet stay planted. Existing bow and arrow colors only. No magic cloud, glow, or new props. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 12\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 66a6677f-d684-5c65-8d3b-1132a78eac98\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f54e4e47-e0bb-4e64-9b35-182f4dac0354\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "ChannelSequence",
+    "frame_count": 12,
+    "action": "Falling Bough: the bulky old stump lifts both massive branch arms overhead slowly in anticipation, roots remain planted and its face remains exactly the approved stump face. HOLD both arms high for the middle four frames, then slam both branch arms forward and downward with a strong body dip, before recovering smoothly to the exact ready pose. No detached branches, no new vines, no expanding body or glow cloud. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: d7586105-f009-415e-86c9-da530fae652f\njob_id: d7586105-f009-415e-86c9-da530fae652f\naction: Falling Bough: the bulky old stump lifts both massive branch arms overhead slowly in anticipation, roots remain planted and its face remains exactly the approved stump face. HOLD both arms high for the middle four frames, then slam both branch arms forward and downward with a strong body dip, before recovering smoothly to the exact ready pose. No detached branches, no new vines, no expanding body or glow cloud. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 12\nsize: 128x112px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: b1bc51ad-54f3-57de-a0b2-843041c1dad0\nasset_status: pending (saved when generation completes)\ncost: 3 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d7586105-f009-415e-86c9-da530fae652f\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bark Armor: the bulky old stump draws its branch arms inward and crosses them protectively over its chest, knees and roots brace with a firm downward weight shift, then opens its arms and returns smoothly to the exact ready pose. Keep the approved face and stump silhouette, no new armor, no glow or background. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: 7fde4407-27ac-43b3-8659-ef393e8d5962\njob_id: 7fde4407-27ac-43b3-8659-ef393e8d5962\naction: Bark Armor: the bulky old stump draws its branch arms inward and crosses them protectively over its chest, knees and roots brace with a firm downward weight shift, then opens its arms and returns smoothly to the exact ready pose. Keep the approved face and stump silhouette, no new armor, no glow or background. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 128x112px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: ee2f413b-c5b1-5517-8d75-3b10c09cdb5b\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7fde4407-27ac-43b3-8659-ef393e8d5962\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "AutoAttackCorrected",
+    "frame_count": 8,
+    "action": "A simple physical STAFF JAB toward the left: keep both feet planted, lean forward and extend the flower-topped wooden staff leftward with both hands, pull it back to the exact ready pose. The staff is ONLY brown wood, green leaves and peach flowers. No cyan or blue pixels, no energy streaks, no particle effects, no arc, no glow, no head projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: a2e2aa50-6487-4d02-b029-2e2aa015452d\njob_id: a2e2aa50-6487-4d02-b029-2e2aa015452d\naction: A simple physical STAFF JAB toward the left: keep both feet planted, lean forward and extend the flower-topped wooden staff leftward with both hands, pull it back to the exact ready pose. The staff is ONLY brown wood, green leaves and peach flowers. No cyan or blue pixels, no energy streaks, no particle effects, no arc, no glow, no head projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: cf303e8b-3d4c-565c-b6c3-be85dcf5f120\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a2e2aa50-6487-4d02-b029-2e2aa015452d\")"
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "DeathCorrected",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat collapse of this EXACT old stump creature. Keep the little top twig firmly ATTACHED at the same short length throughout every frame. Do not grow any branch, do not detach any leaf or twig, no floating particles. The stump bends its branch arms downward, lowers its head and chest slowly, then settles into a low lifeless crouch with branch hands resting on the ground. Root feet stay in place. Preserve its exact stump face, broad trunk, bark ridges and colors. Static camera, native pixels, no new props, no glow, transparent background.",
+    "result": "id: f361e9e9-1e16-4a6b-a5f9-bae7566ee795\njob_id: f361e9e9-1e16-4a6b-a5f9-bae7566ee795\naction: Defeat collapse of this EXACT old stump creature. Keep the little top twig firmly ATTACHED at the same short length throughout every frame. Do not grow any branch, do not detach any leaf or twig, no floating particles. The stump bends its branch arms downward, lowers its head and chest slowly, then settles into a low lifeless crouch with branch hands resting on the ground. Root feet stay in place. Preserve its exact stump face, broad trunk, bark ridges and colors. Static camera, native pixels, no new props, no glow, transparent background.\nframes: 8\nsize: 128x112px\ntransparent: True\nasset_id: 83fcbb20-a04a-537e-84e8-88a7438aa7f2\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f361e9e9-1e16-4a6b-a5f9-bae7566ee795\")"
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "AbilityRetry",
+    "frame_count": 8,
+    "action": "War Rhythm: raise both drumsticks high with elbows wide, squat and strike the strapped drum vigorously with both sticks together, head and shoulders follow the emphatic beat, recover smoothly to ready. Feet remain planted. Keep drum and two sticks attached. No projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false,
+    "result": "id: e615e743-bdff-4e06-9a95-fa9e92d99fdb\njob_id: e615e743-bdff-4e06-9a95-fa9e92d99fdb\naction: War Rhythm: raise both drumsticks high with elbows wide, squat and strike the strapped drum vigorously with both sticks together, head and shoulders follow the emphatic beat, recover smoothly to ready. Feet remain planted. Keep drum and two sticks attached. No projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 667a0012-c162-5892-b6f2-39a28e82b938\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e615e743-bdff-4e06-9a95-fa9e92d99fdb\")"
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "AbilityCorrected",
+    "frame_count": 8,
+    "pinEnd": true,
+    "loop": false,
+    "action": "One grounded summoning gesture by this exact woodland orc. Slowly raise the wooden flower staff high overhead with one hand while opening the other palm, bow the head and flex the knees, then smoothly lower the staff back to the exact starting stance. Keep exactly the original flower staff, face, cream peach robes, earthy greens and brown wood. NO magical effects, NO circles, NO rings, NO glowing lines, NO cyan or blue, NO particles, NO detached shapes anywhere. Movement only of the character body and held staff. Static camera, transparent background, native pixel art.",
+    "result": "id: 71ffc8d8-df7c-40c6-873a-17fb1f40b318\njob_id: 71ffc8d8-df7c-40c6-873a-17fb1f40b318\naction: One grounded summoning gesture by this exact woodland orc. Slowly raise the wooden flower staff high overhead with one hand while opening the other palm, bow the head and flex the knees, then smoothly lower the staff back to the exact starting stance. Keep exactly the original flower staff, face, cream peach robes, earthy greens and brown wood. NO magical effects, NO circles, NO rings, NO glowing lines, NO cyan or blue, NO particles, NO detached shapes anywhere. Movement only of the character body and held staff. Static camera, transparent background, native pixel art.\nframes: 8\nsize: 96x80px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: bc1e794e-4a86-5d94-aed6-37d29cbefa31\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"71ffc8d8-df7c-40c6-873a-17fb1f40b318\")"
+  },
+  {
+    "name": "Vines_B",
+    "state": "Spread",
+    "frame_count": 8,
+    "action": "Animate this EXACT dense square mat of thick woodland vines growing inward across one game board tile. Begin with just a few vines at the four corners and edges, then rapidly curl and extend those SAME thick woody green vines toward the center, ending in the exact provided dense vine mat. Preserve the few small transparent gaps, brown wood and olive green leaves, heavy dark pixel outlines and chunky shading. No gem, no background, no particles, no glow, no cyan, no new props, fixed 64 by 64 canvas and static camera.",
+    "result": "id: 915b9f37-49b2-4044-acf6-dc3825d1eae3\njob_id: 915b9f37-49b2-4044-acf6-dc3825d1eae3\naction: Animate this EXACT dense square mat of thick woodland vines growing inward across one game board tile. Begin with just a few vines at the four corners and edges, then rapidly curl and extend those SAME thick woody green vines toward the center, ending in the exact provided dense vine mat. Preserve the few small transparent gaps, brown wood and olive green leaves, heavy dark pixel outlines and chunky shading. No gem, no background, no particles, no glow, no cyan, no new props, fixed 64 by 64 canvas and static camera.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 9131a922-2dc3-5193-ac19-8f21b03ad3ff\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"915b9f37-49b2-4044-acf6-dc3825d1eae3\")"
+  },
+  {
+    "name": "Vines_B",
+    "state": "Hit",
+    "frame_count": 8,
+    "action": "This exact dense woodland vine mat is struck and cut back. Start with the provided full dense mat, then make thick vines recoil sharply outward toward all four edges, branches snap and curl back leaving the center open, ending with only small vine tips at corners and mostly transparent empty canvas. Crisp fast impact and graceful recoil. Preserve chunky dark outlines, olive leaves and brown wood. NO new blue or cyan colors, NO particles, NO sparks, NO background, NO gems. Fixed native 64 by 64 canvas, static camera. Single nonlooping destruction animation.",
+    "result": "id: 9c8f9b5e-93a8-4997-9d94-61e4ce1fa186\njob_id: 9c8f9b5e-93a8-4997-9d94-61e4ce1fa186\naction: This exact dense woodland vine mat is struck and cut back. Start with the provided full dense mat, then make thick vines recoil sharply outward toward all four edges, branches snap and curl back leaving the center open, ending with only small vine tips at corners and mostly transparent empty canvas. Crisp fast impact and graceful recoil. Preserve chunky dark outlines, olive leaves and brown wood. NO new blue or cyan colors, NO particles, NO sparks, NO background, NO gems. Fixed native 64 by 64 canvas, static camera. Single nonlooping destruction animation.\nframes: 8\nsize: 64x64px\ntransparent: True\nasset_id: 2149cbff-b465-5aa5-84f3-8105ff176080\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9c8f9b5e-93a8-4997-9d94-61e4ce1fa186\")"
+  }
+]

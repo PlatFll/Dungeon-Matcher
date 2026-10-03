@@ -62,16 +62,18 @@ public sealed class RunCombatSnapshot
     public int durability, maximumDurability, bannerId;
     public EnemyBarricadeStyle barricadeStyle;
     public int rootId, openRootSides;
+    public int thornSafeSide, thornDamage;
     public long rootOwnerId;
     public bool rootSpreading;
 }
 [Serializable] public sealed class BoardWarningSnapshot
 {
-    // 0 pair / 1 set / 2 lanes. Target indices refer to saved cells.
+    // 0 pair / 1 set / 2 lanes / 3 fixed response cells. Target indices refer to saved cells.
     public int kind, owner, dueMove, row, column;
     public bool restoration, vine, environmental, nonSpreading;
     public int vineLimit, parentGemId;
     public int rootDurability;
+    public bool requiresVine, answered;
     public EnemyBarricadeStyle rootStyle;
     public bool rootSpreading, playerInterrupted;
     public List<int> targets = new List<int>();
@@ -84,6 +86,7 @@ public sealed class RunCombatSnapshot
     public int poisonMoveTicks, poisonNextMove, rallyExpiryMove;
     public EnemyChannelSnapshot channel;
     public ForestMilestoneSnapshot forestMilestone;
+    public ForestRosterSnapshot forestRoster;
     public string rootbinderOutcome;
     public int slot, health, shield, specialTurns, specialRequirement;
     public GemType weakness;

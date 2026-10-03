@@ -194,6 +194,7 @@ public sealed class BarricadeEnemyAbility :
                     maximumOwned,
                     definition.BarricadeDurability,
                     definition.BarricadeStyle,
+                    protectSpecialGems: definition.BarricadeStyle == EnemyBarricadeStyle.Thorn,
                     waitForAnimationImpact: timed
                 );
 

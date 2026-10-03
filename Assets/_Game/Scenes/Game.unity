@@ -3431,8 +3431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b636ddf24c435d4b84c632f076c6bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardController
-  woodenBarricadeSprite: {fileID: 21300000, guid: 4626c7fbe08debb42bccc8f94ef008d5, type: 3}
-  stoneBarricadeSprite: {fileID: 21300000, guid: 30381734dd605884dbfca837a485a78d, type: 3}
+  woodenBarricadeSprite: {fileID: 21300000, guid: d1154bb2b23e2ac4793ee1ec83dd9b3a, type: 3}
+  stoneBarricadeSprite: {fileID: 21300000, guid: 8b0b061cae5c5c449ba6acc00428d27c, type: 3}
+  thornBarricadeSprite: {fileID: 21300000, guid: 9058c41a73ea77647bc7194a5ca3295d, type: 3}
   barricadeWhiteHoldDuration: 0.05
   barricadeMaterializeDuration: 0.14
   barricadeHitFlashDuration: 0.08
@@ -3464,7 +3465,7 @@ MonoBehaviour:
   doubleCrystalShakeSpeed: 34
   doubleCrystalSettlePause: 0.18
   doubleCrystalRefillStagger: 0.015
-  pinnedGemOverlaySprite: {fileID: 6999939906866651835, guid: 3f274db4cbf951f4cb325182a9bbb45f, type: 3}
+  pinnedGemOverlaySprite: {fileID: 21300000, guid: 4fea6e5ec97456e4c897b8e233f9ee31, type: 3}
   pinnedGemBrightness: 0.55
   pinMaterializeDuration: 0.1
   pinShakeDistanceInCells: 0.04

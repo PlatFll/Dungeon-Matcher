@@ -28,6 +28,7 @@ public partial class BoardController
     private bool IsReservedVine(Gem gem) => gemSetThreats.Exists(t => t.Vine && !t.Ended && t.Targets.Contains(gem));
     private bool IsProtectedWarningTarget(Gem gem)
     {
+        if(gem!=null && cellResponseThreats.Exists(t=>!t.Ended && t.Cells.Contains(new Vector2Int(gem.Column,gem.Row)))) return true;
         foreach(var pair in gemPairThreats) if(!pair.Ended && (pair.First==gem || pair.Second==gem)) return true;
         foreach(var set in gemSetThreats) if(!set.Ended && set.Targets.Contains(gem)) return true;
         foreach(var lane in laneThreats) if(!lane.Ended && (lane.Row==gem.Row || lane.Column==gem.Column)) return true;
@@ -137,6 +138,7 @@ public partial class BoardController
     }
     private void RemoveVine(VineNodeSnapshot node,bool damaged=false)
     {
+        AnswerCellResponse(new Vector2Int(node.x,node.y),true);
         vineNodes.Remove(node);var cell=new Vector2Int(node.x,node.y);
         foreach(var d in BarricadeHitDirections)
             if(barricadeCells.TryGetValue(cell+d,out var root) && IsRoot(root)) root.OpenRootSides |= SideBit(-d);
@@ -157,6 +159,7 @@ public partial class BoardController
         foreach(var gem in cleared)
         {
             if(gem==null || (preserved!=null && preserved.Contains(gem))) continue;
+            AnswerCellResponse(new Vector2Int(gem.Column,gem.Row),false);
             var node=vineNodes.Find(n=>n.x==gem.Column && n.y==gem.Row);
             if(node==null) continue;
             // Opening is recorded after this clear's root-hit check. This clear

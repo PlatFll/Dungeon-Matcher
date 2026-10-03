@@ -26,7 +26,8 @@ public partial class BoardController
         HashSet<Gem> matches,
         int cascadeDepth,
         List<SpecialGemCreationRequest>
-            specialGemCreationRequests)
+            specialGemCreationRequests,
+        bool deliberatePlayerClear = false)
     {
         if (matches == null || matches.Count == 0)
         {
@@ -34,7 +35,7 @@ public partial class BoardController
         }
 
         BreakPinsAdjacentToMatches(matches);
-        DamageBarricadesAdjacentToClears(matches);
+        DamageBarricadesForClear(matches, null, deliberatePlayerClear);
 
         List<List<Gem>> matchGroups =
             BuildConnectedMatchGroups(matches);

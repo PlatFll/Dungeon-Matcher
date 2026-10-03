@@ -1,0 +1,765 @@
+{
+  "clips": [
+    {
+      "name": "Elven_Thornkeeper",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Elven_Thornkeeper",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        45,
+        80,
+        140
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Elven_Thornkeeper",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Elven_Thornkeeper",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Elven_Thornkeeper",
+      "state": "Ability",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 4,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Orc_Berserker",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Orc_Berserker",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        45,
+        80,
+        140
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Berserker",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Berserker",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Berserker",
+      "state": "Ability",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 4,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Orc_Bloomcaller",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Orc_Bloomcaller",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        45,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 5,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Bloomcaller",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Bloomcaller",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Bloomcaller",
+      "state": "Ability",
+      "width": 96,
+      "height": 80,
+      "frameCount": 7,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 3,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Snapvine",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Snapvine",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        45,
+        80,
+        140
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Snapvine",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Snapvine",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Drummer",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Orc_Drummer",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        45,
+        80,
+        80,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 3,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Drummer",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Drummer",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Orc_Drummer",
+      "state": "Ability",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 7,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "Idle",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "AutoAttack",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        80,
+        80,
+        80,
+        80,
+        45,
+        80,
+        80,
+        140
+      ],
+      "impactFrame": 5,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "Hit",
+      "width": 96,
+      "height": 80,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "Death",
+      "width": 96,
+      "height": 80,
+      "frameCount": 9,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "ChannelStart",
+      "width": 96,
+      "height": 80,
+      "frameCount": 7,
+      "durationsMs": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        140
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "ChannelHold",
+      "width": 96,
+      "height": 80,
+      "frameCount": 1,
+      "durationsMs": [
+        500
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Briar_Archer",
+      "state": "Release",
+      "width": 96,
+      "height": 80,
+      "frameCount": 7,
+      "durationsMs": [
+        55,
+        55,
+        55,
+        55,
+        55,
+        55,
+        150
+      ],
+      "impactFrame": 3,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "Idle",
+      "width": 128,
+      "height": 112,
+      "frameCount": 9,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 112,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        45,
+        100,
+        160
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "Hit",
+      "width": 128,
+      "height": 112,
+      "frameCount": 5,
+      "durationsMs": [
+        45,
+        65,
+        85,
+        65,
+        80
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "Death",
+      "width": 128,
+      "height": 112,
+      "frameCount": 5,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        240
+      ],
+      "impactFrame": -1,
+      "loop": false,
+      "special": false
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "Ability",
+      "width": 128,
+      "height": 112,
+      "frameCount": 9,
+      "durationsMs": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        160
+      ],
+      "impactFrame": 4,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 112,
+      "frameCount": 7,
+      "durationsMs": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        140
+      ],
+      "impactFrame": 6,
+      "loop": false,
+      "special": true
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 112,
+      "frameCount": 1,
+      "durationsMs": [
+        500
+      ],
+      "impactFrame": -1,
+      "loop": true,
+      "special": false
+    },
+    {
+      "name": "Ancient_Treant",
+      "state": "Release",
+      "width": 128,
+      "height": 112,
+      "frameCount": 7,
+      "durationsMs": [
+        55,
+        55,
+        55,
+        55,
+        55,
+        55,
+        150
+      ],
+      "impactFrame": 5,
+      "loop": false,
+      "special": true
+    }
+  ]
+}

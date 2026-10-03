@@ -22,6 +22,9 @@ public partial class BoardController
             text.AppendLine($"{(set.Vine?"Root":set.RestorationPresentation?"Restoration":"Judgment")}: {set.Targets.Count} marks remain, {Mathf.Max(0,set.DueMove-completedValidPlayerMoves)} moves left.");
         foreach(var lane in laneThreats) if(lane.Owner==owner && !lane.Ended)
             text.AppendLine($"Bombardment: row {lane.Row+1}, column {lane.Column+1}, {Mathf.Max(0,lane.DueMove-completedValidPlayerMoves)} moves left. Clearing the lane does not cancel it.");
+        foreach(var threat in cellResponseThreats) if(threat.Owner==owner && !threat.Ended)
+            text.AppendLine($"{(threat.RequiresVine?"Volley":"Bough")}: {threat.Cells.Count} marks, {Mathf.Max(0,threat.DueMove-completedValidPlayerMoves)} moves left. "+
+                (threat.RequiresVine?"Remove a marked vine to cancel its shot.":"Clear any marked cell to weaken the hit."));
         return text.ToString();
     }
     public sealed class ResponseOption
@@ -121,6 +124,9 @@ public partial class BoardController
         foreach (var threat in gemPairThreats)
             if (IsGemPairThreatValid(threat)) due = Mathf.Max(due, threat.DueMove + Mathf.Max(1, requestedMoves));
         foreach (var threat in laneThreats)
+            if (!threat.Ended && threat.Owner!=null && !threat.Owner.IsDefeated)
+                due=Mathf.Max(due,threat.DueMove+Mathf.Max(1,requestedMoves));
+        foreach (var threat in cellResponseThreats)
             if (!threat.Ended && threat.Owner!=null && !threat.Owner.IsDefeated)
                 due=Mathf.Max(due,threat.DueMove+Mathf.Max(1,requestedMoves));
         return due;

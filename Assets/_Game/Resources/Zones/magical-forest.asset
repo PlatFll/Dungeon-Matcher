@@ -23,6 +23,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
   - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
   - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+  - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+  - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+  - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+  - {fileID: 11400000, guid: b8875454b0603324fac0e6eb1f54dc0a, type: 2}
+  - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+  - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+  - {fileID: 11400000, guid: 4fa36e8f23aa3874f985d12c52f63be7, type: 2}
   developmentEncounters:
   - label: Heal response
     members:
@@ -99,6 +106,59 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Elven_Thornkeeper"
+    members:
+    - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Orc_Berserker"
+    members:
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Orc_Bloomcaller"
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Snapvine"
+    members:
+    - {fileID: 11400000, guid: b8875454b0603324fac0e6eb1f54dc0a, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Orc_Drummer"
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Briar_Archer"
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Ancient_Treant"
+    members:
+    - {fileID: 11400000, guid: 4fa36e8f23aa3874f985d12c52f63be7, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Drummer alone"
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: "Roster \xB7 Full summon slots"
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
     firstLocalWave: 1
     lastLocalWave: 999
   liveEncounters:
@@ -186,6 +246,55 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
     firstLocalWave: 18
     lastLocalWave: 999
+  - label: "Roster \xB7 Thorn sentry"
+    members:
+    - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 7
+  - label: "Roster \xB7 Berserker patrol"
+    members:
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 7
+  - label: "Roster \xB7 Bloomcaller patrol"
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 7
+  - label: "Roster \xB7 War party"
+    members:
+    - {fileID: 11400000, guid: 02fc1c169367a7947b48495b664c906a, type: 2}
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 13
+  - label: "Roster \xB7 Vine hunters"
+    members:
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 13
+  - label: "Roster \xB7 Deep thorns"
+    members:
+    - {fileID: 11400000, guid: b166b659b9320094f96e1e34c7bae8ff, type: 2}
+    - {fileID: 11400000, guid: 43fd10754c7d2854ea7d4dadafd5ff2f, type: 2}
+    firstLocalWave: 11
+    lastLocalWave: 13
+  - label: "Roster \xB7 Ancient crossing"
+    members:
+    - {fileID: 11400000, guid: 4fa36e8f23aa3874f985d12c52f63be7, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 14
+  - label: "Roster \xB7 Bloom and briar"
+    members:
+    - {fileID: 11400000, guid: 971fa3191157e494ba63eb4d5d30708d, type: 2}
+    - {fileID: 11400000, guid: 14217e8ae2fd5a741968a9f8dd53023a, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 17
   apexEnemy: {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
   apexLocalWave: 18
   affiliatedDamageMultiplier: 1.15

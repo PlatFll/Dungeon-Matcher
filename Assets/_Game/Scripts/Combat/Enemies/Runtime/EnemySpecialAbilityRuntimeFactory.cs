@@ -35,6 +35,17 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.Bloodrage:
+            case EnemySpecialAbilityKind.CallSnapvine:
+            case EnemySpecialAbilityKind.WarRhythm:
+                var support = enemyObject.GetComponent<ForestCombatAbility>() ?? enemyObject.AddComponent<ForestCombatAbility>();
+                support.ConfigureSummonService(summonService);
+                runtime = support;
+                break;
+            case EnemySpecialAbilityKind.ThornVolley:
+            case EnemySpecialAbilityKind.AncientBough:
+                runtime = enemyObject.GetComponent<ForestPressureAbility>() ?? enemyObject.AddComponent<ForestPressureAbility>();
+                break;
             case EnemySpecialAbilityKind.GuardingRoots:
             case EnemySpecialAbilityKind.GroveRenewal:
                 runtime=enemyObject.GetComponent<ForestMilestoneEnemyAbility>() ?? enemyObject.AddComponent<ForestMilestoneEnemyAbility>();

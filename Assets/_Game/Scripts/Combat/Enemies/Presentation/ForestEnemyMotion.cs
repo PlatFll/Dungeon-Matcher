@@ -43,6 +43,9 @@ public sealed class ForestEnemyMotion : MonoBehaviour
     private void LateUpdate()
     {
         if(actor==null || actor.IsDefeated || Time.timeScale<=0) return;
+        // An owned action supersedes any earlier hit recovery. Its presenter
+        // decides whether to resume idle or a held warning pose.
+        if(actor.HasAnimationActionInProgress) { pendingState=null;return; }
         if(pendingState!=null && Time.time>=nextStateAt && !actor.HasAnimationActionInProgress)
         {
             string state=pendingState;pendingState=null;
@@ -53,7 +56,8 @@ public sealed class ForestEnemyMotion : MonoBehaviour
     private void Hit(EnemyActor owner,int amount)
     {
         // Small hits cannot cancel a pending heal or replace an owned attack.
-        if(amount>0 && !actor.IsDefeated && !actor.HasAnimationActionInProgress && !Channeling)
+        if(amount>0 && !actor.IsDefeated && !actor.HasAnimationActionInProgress && !Channeling &&
+            string.IsNullOrEmpty(actor.SpecialIdleState))
             PlayThen("Hit","Idle");
     }
     private void Healed(EnemyActor owner,int amount) { if(amount>0) Burst(GameplayThemeSkin.Current?.healEffect); }

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bramble spell: the slim elf crouches and sweeps her bundle of short branches down toward the floor, spreading her arms as if commanding a thorn wall, then stands back into her exact ready pose. Keep her sickle small and unchanged. No glow cloud or new equipment. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bloodrage roar: the bulky orc lowers his cleaver, spreads his free hand, bends his knees and throws his head back roaring, shoulders tense. His skin remains the same olive green. Recover into the exact ready pose. No red body recolor or new weapon. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Summoning gesture: bend both knees, extend the seed-holding left hand towards the floor on the left while lifting the flower-topped wooden staff vertically in the right hand, nod decisively then recover to ready. Preserve flowers, peach robe and cream cloth. No cyan light, no magical trails, no object spawned in this character layer. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "War Rhythm: raise both drumsticks high with elbows wide, squat and strike the strapped drum vigorously with both sticks together, head and shoulders follow the emphatic beat, recover smoothly to ready. Feet remain planted. Keep drum and two sticks attached. No projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "ChannelSequence",
+    "frame_count": 12,
+    "action": "Thorn Volley: from the exact ready stance, pivot the bow up diagonally to the upper left and pull the bowstring far back to the cheek. Clearly HOLD the full draw during the middle four frames with a steady braced body. Then release a small three-arrow volley up-left in a quick snap, lowering the bow smoothly back to the exact ready pose. Feet stay planted. Existing bow and arrow colors only. No magic cloud, glow, or new props. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "ChannelSequence",
+    "frame_count": 12,
+    "action": "Falling Bough: the bulky old stump lifts both massive branch arms overhead slowly in anticipation, roots remain planted and its face remains exactly the approved stump face. HOLD both arms high for the middle four frames, then slam both branch arms forward and downward with a strong body dip, before recovering smoothly to the exact ready pose. No detached branches, no new vines, no expanding body or glow cloud. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Ability",
+    "frame_count": 8,
+    "action": "Bark Armor: the bulky old stump draws its branch arms inward and crosses them protectively over its chest, knees and roots brace with a firm downward weight shift, then opens its arms and returns smoothly to the exact ready pose. Keep the approved face and stump silhouette, no new armor, no glow or background. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "AutoAttackCorrected",
+    "frame_count": 8,
+    "action": "A simple physical STAFF JAB toward the left: keep both feet planted, lean forward and extend the flower-topped wooden staff leftward with both hands, pull it back to the exact ready pose. The staff is ONLY brown wood, green leaves and peach flowers. No cyan or blue pixels, no energy streaks, no particle effects, no arc, no glow, no head projectile. Preserve the exact face, costume, equipment, material colors, source pixel size and anchored foot placement. Static camera, no zoom, no blur, transparent background.",
+    "pinEnd": true,
+    "loop": false
+  }
+]

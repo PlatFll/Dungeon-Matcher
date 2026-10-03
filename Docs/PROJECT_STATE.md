@@ -21,11 +21,11 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-03
-- **Current milestone:** Dungeon ↔ forest travel with the approved split pink crystal and PixelLab smoke, preserving the run, board and resources. Settings stays usable. Treant C (Old Stump) is locked unchanged; all seven extra roster designs remain stills without new animations or kits. New distinct root tiers and transparent vine spread/recoil art are integrated. User authorized merging this work, including foundation #173 and production #174. See [travel contract](Forest/CRYSTAL_TRAVEL.md) and [validation](Validation/FOREST_CRYSTAL_TRAVEL.md).
+- **Current milestone:** Expanded forest roster in [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176): the seven locked designs now have 39 motion clips and their approved kits, including Treant C (Old Stump). The user selected Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B; these replace the corresponding obstacle art with matching vine growth/recoil. See [the roster contract](Forest/EXPANDED_ROSTER.md). Dungeon ↔ forest travel, timed basics, move-based enemy readiness and existing live effect timing remain in place. The user approved merging this batch on 2026-10-03.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** The current travel/root/vine work has **113 unique passing checks** and a successful final Unity validator; see [the validation record](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
+- **Current verification:** The expanded roster and selected blockers have **75 unique passing checks**, including a final 37-case affected rerun, plus a successful final Unity validator. See [the roster validation record](Validation/FOREST_EXPANDED_ROSTER.md). The earlier travel/root/vine milestone has [its separate evidence](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -346,8 +346,8 @@ These are **not bugs** unless the user explicitly changes direction.
 ## Forest starter production test
 
 The Editor-only Forest menu starts or resumes a separate save under
-`.utmp/ForestPlaytest`. Thirteen formations loop indefinitely using six starter
-kits. New basics count seconds and abilities count moves; older forest saves keep
+`.utmp/ForestPlaytest`. Twenty-two formations loop indefinitely using six starter
+kits and seven approved additions. New basics count seconds and abilities count moves; older forest saves keep
 their profile. Buffs, stagger, poison and supplies retain prototype move durations.
 It introduces no public mode selector. Modular art and native battle motion are
 implemented for review. The original forest cue is explicitly temporary and needs
@@ -358,7 +358,11 @@ are random among eligible regions. Dungeon and forest now connect after entire a
 formations; with two regions they alternate. Global depth continues. Live travel
 retains seconds effects from dungeon; isolated forest tests keep their saved
 profiles. Eighteen local starter encounters are temporary forest content anchors.
-Aquatic and expanded forest content remain unimplemented. See
+Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar Archer and Ancient
+Treant C now have definition-selected kits and nine added test formations. Eight
+live formations extend the existing temporary bands. The seven selected blocker
+designs and dense-vine motion replace their earlier bindings. Aquatic and
+substantial-visit pacing remain unfinished. See [the roster contract](Forest/EXPANDED_ROSTER.md) and
 [crystal travel](Forest/CRYSTAL_TRAVEL.md).
 
 ## Bardley production balance (testing override retired)
@@ -873,10 +877,11 @@ The immediate priorities are **playtesting connected forest travel and reviewing
 the temporary music**. Assess seconds basics, move-based counterplay, structural roots and vine overlays,
 grounding, UI readability and the temporary cue. Address existing baseline test
 failures separately; validate Android touch/audio/performance before release.
-The user explicitly authorized the current travel/art merge. New roster animation
-and later-zone production remain outside this approval. The Phase 5–6 PixelLab
-allowance has used **104/120 generations** (80 earlier +24 root/vine/smoke); 16
-remain. The separate extra-roster still allowance is **50/60**. No purchases.
+Travel/art was merged in #175. The roster animation/kit batch is delivered in
+PR #176 with explicit merge approval. This batch used **121/160 PixelLab
+generations**, including retries and three recorded accidental duplicate samples;
+39 remain unused. All jobs settled and no credits were purchased. Earlier phase
+allowances stay separate; later-zone production remains outside this batch.
 
 Broader production priorities after that review remain:
 

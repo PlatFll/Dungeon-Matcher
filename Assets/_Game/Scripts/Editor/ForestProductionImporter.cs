@@ -21,6 +21,7 @@ public static class ForestProductionImporter
         public int width,height,frameCount,impactFrame;
         public int[] durationsMs;
         public bool loop;
+        public bool special;
     }
     [Serializable] private sealed class Manifest { public ClipSpec[] clips; }
     [MenuItem("Dungeon Matcher/Forest/Import production art and kits")]
@@ -38,11 +39,15 @@ public static class ForestProductionImporter
         Debug.Log("Forest production art imported: native motion, modular woodland, timber UI, canonical vine art and temporary music.");
     }
     private static void ImportAnimations()
+        => ImportMotionSet(Names,Source+"Selected/",Art,Animation);
+
+    public static void ImportMotionSet(string[] names,string source,string art,string animation)
     {
-        var manifest=JsonUtility.FromJson<Manifest>(File.ReadAllText(Source+"Selected/animation-manifest.json"));
-        foreach(string name in Names)
+        Directory.CreateDirectory(art);Directory.CreateDirectory(animation);AssetDatabase.Refresh();
+        var manifest=JsonUtility.FromJson<Manifest>(File.ReadAllText(source+"animation-manifest.json"));
+        foreach(string name in names)
         {
-            string controllerPath=Animation+name+".controller";
+            string controllerPath=animation+name+".controller";
             var controller=AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath) ??
                 AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
             var machine=controller.layers[0].stateMachine;
@@ -51,8 +56,8 @@ public static class ForestProductionImporter
             foreach(var spec in manifest.clips.Where(c=>c.name==name))
             {
                 if(spec.durationsMs.Length!=spec.frameCount) throw new InvalidDataException(name+" "+spec.state+" timing mismatch.");
-                string key=name+"_"+spec.state,path=Art+key+".png";
-                File.Copy(Source+"Selected/"+name+"/"+spec.state+".png",path,true);
+                string key=name+"_"+spec.state,path=art+key+".png";
+                File.Copy(source+name+"/"+spec.state+".png",path,true);
                 AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
                 var importer=Configure(path);
                 importer.spriteImportMode=SpriteImportMode.Multiple;
@@ -64,7 +69,7 @@ public static class ForestProductionImporter
                 importer.SaveAndReimport();
                 var sprites=AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().OrderBy(s=>s.name).ToArray();
                 if(sprites.Length!=spec.frameCount) throw new InvalidDataException(key+" frame import mismatch.");
-                var clip=LoadOrCreate<AnimationClip>(Animation+key+".anim");clip.name=key;clip.frameRate=100;clip.ClearCurves();
+                var clip=LoadOrCreate<AnimationClip>(animation+key+".anim");clip.name=key;clip.frameRate=100;clip.ClearCurves();
                 var keys=new ObjectReferenceKeyframe[spec.frameCount+1];int elapsed=0;
                 for(int i=0;i<spec.frameCount;i++) { keys[i]=new ObjectReferenceKeyframe{time=elapsed/1000f,value=sprites[i]};elapsed+=spec.durationsMs[i]; }
                 keys[spec.frameCount]=new ObjectReferenceKeyframe{time=(elapsed-10)/1000f,value=sprites.Last()};
@@ -73,7 +78,10 @@ public static class ForestProductionImporter
                 AnimationUtility.SetAnimationClipSettings(clip,settings);
                 AnimationUtility.SetAnimationEvents(clip,spec.state=="AutoAttack"?new[]{
                     new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AutoAttackImpact"},
-                    new AnimationEvent{time=(elapsed-10)/1000f,functionName="AutoAttackComplete"}}:Array.Empty<AnimationEvent>());
+                    new AnimationEvent{time=(elapsed-10)/1000f,functionName="AutoAttackComplete"}}:spec.special?new[]{
+                    new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AbilityImpact"},
+                    new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AbilityBeat",intParameter=1},
+                    new AnimationEvent{time=(elapsed-10)/1000f,functionName="AbilityComplete"}}:Array.Empty<AnimationEvent>());
                 var state=machine.states.Select(s=>s.state).FirstOrDefault(s=>s.name==spec.state)??machine.AddState(spec.state);
                 state.motion=clip;state.speed=1;state.writeDefaultValues=true;
                 foreach(var transition in state.transitions.ToArray()) state.RemoveTransition(transition);
@@ -83,12 +91,23 @@ public static class ForestProductionImporter
             var idle=machine.states.Single(s=>s.state.name=="Idle").state;
             var attack=machine.states.Single(s=>s.state.name=="AutoAttack").state;
             var exit=attack.AddTransition(idle);exit.hasExitTime=true;exit.exitTime=1;exit.duration=0;
+            // Full authored casts finish in the exact ready pose. Held warnings
+            // retain ChannelStart's final pose until their owner selects ChannelHold.
+            foreach(var completed in machine.states.Select(s=>s.state).Where(s=>
+                manifest.clips.Any(c=>c.name==name && c.state==s.name && c.special &&
+                    (c.state=="Ability" || c.state=="Release"))))
+            {
+                var recovery=completed.AddTransition(idle);
+                recovery.hasExitTime=true;recovery.exitTime=1;recovery.duration=0;
+            }
             var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(Data+name+".asset");
             var so=new SerializedObject(definition);
             so.FindProperty("animationControllerOverride").objectReferenceValue=controller;
             so.FindProperty("timeAutoAttackFromAnimation").boolValue=true;
             so.FindProperty("useAuthoredAutoAttackMotion").boolValue=true;
-            so.FindProperty("useAuthoredSpecialAbilityMotion").boolValue=false;
+            bool specials=manifest.clips.Any(c=>c.name==name && c.special);
+            so.FindProperty("useAuthoredSpecialAbilityMotion").boolValue=specials;
+            if(specials) so.FindProperty("timeSpecialAbilityFromAnimation").boolValue=true;
             so.ApplyModifiedPropertiesWithoutUndo();EditorUtility.SetDirty(definition);EditorUtility.SetDirty(controller);
         }
     }

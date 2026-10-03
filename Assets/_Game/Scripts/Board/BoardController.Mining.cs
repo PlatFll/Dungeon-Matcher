@@ -27,7 +27,8 @@ public partial class BoardController
         ResolveGemSet,
         MarkLanes,
         ResolveLanes,
-        ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines
+        ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
+        MarkCellResponse, ResolveCellResponse
     }
 
     private sealed class BoardMutationRequest
@@ -62,6 +63,9 @@ public partial class BoardController
         public int TargetCount;
         public Action Pulse;
         public bool RestorationPresentation;
+        public bool RequiresVine;
+        public CellResponseThreat CellThreat;
+        public Action<int,bool> CellResponseImpact;
 
         public int BarricadeCount;
         public int MaximumOwnedBarricades;
@@ -366,6 +370,10 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.MarkCellResponse:
+                        ExecuteMarkCellResponse(request); break;
+                    case BoardMutationKind.ResolveCellResponse:
+                        ExecuteResolveCellResponse(request); break;
                     case BoardMutationKind.AdvanceVines:
                         ExecuteVineGrowth(request); break;
                     case BoardMutationKind.HarvestVines:
