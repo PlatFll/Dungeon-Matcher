@@ -31,7 +31,7 @@ public sealed class ZoneTravelTests
     {
         var theme=Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
         Assert.That(theme.rootLevelOne,Is.Not.Null);Assert.That(theme.rootLevelTwo,Is.Not.SameAs(theme.rootLevelOne));
-        Assert.That(theme.vineSpreadFrames.Length,Is.EqualTo(9));Assert.That(theme.vineHitFrames.Length,Is.EqualTo(12));
+        Assert.That(theme.vineSpreadFrames.Length,Is.EqualTo(9));Assert.That(theme.vineHitFrames.Length,Is.EqualTo(9));
         foreach(var sprite in theme.vineSpreadFrames.Concat(theme.vineHitFrames).Concat(new[]{theme.vineOverlay,theme.rootLevelOne,theme.rootLevelTwo}))
         {Assert.That(sprite.rect.size,Is.EqualTo(new Vector2(64,64)));Assert.That(sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(sprite.pixelsPerUnit,Is.EqualTo(64));}
         Assert.That(Resources.Load<Sprite>("UI/Transition/Smoke"),Is.Not.Null);

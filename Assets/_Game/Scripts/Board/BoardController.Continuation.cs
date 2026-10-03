@@ -40,6 +40,7 @@ public partial class BoardController
                 value.barricadeStyle=barricade.Style;
                 value.rootId=barricade.RootId;value.rootOwnerId=barricade.RootOwnerId;
                 value.openRootSides=barricade.OpenRootSides;value.rootSpreading=barricade.RootSpreading;
+                value.thornSafeSide=barricade.ThornSafeSide;value.thornDamage=barricade.ThornDamage;
             }
             if(royalBannerCells.TryGetValue(cell,out var banner))
             {
@@ -62,6 +63,13 @@ public partial class BoardController
         }
         foreach(var lane in laneThreats) if(!lane.Ended && lane.Owner!=null && !lane.Owner.IsDefeated)
             saved.warnings.Add(new BoardWarningSnapshot { kind=2,owner=ownerSlot(lane.Owner.GetInstanceID()),dueMove=lane.DueMove,row=lane.Row,column=lane.Column });
+        foreach(var threat in cellResponseThreats) if(!threat.Ended && threat.Owner!=null && !threat.Owner.IsDefeated)
+        {
+            var warning=new BoardWarningSnapshot {kind=3,owner=ownerSlot(threat.Owner.GetInstanceID()),dueMove=threat.DueMove,
+                requiresVine=threat.RequiresVine,answered=threat.Answered};
+            foreach(var cell in threat.Cells) warning.targets.Add(cell.y*width+cell.x);
+            saved.warnings.Add(warning);
+        }
         return saved;
     }
     private int CellIndex(Gem gem) => gem.Row*width+gem.Column;
@@ -94,6 +102,12 @@ public partial class BoardController
                     RootSpreading=warning.rootSpreading,PlayerInterrupted=warning.playerInterrupted };
                 foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
                 gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
+            }
+            else if(warning.kind==3)
+            {
+                var threat=new CellResponseThreat {Owner=owner,DueMove=warning.dueMove,RequiresVine=warning.requiresVine,Answered=warning.answered};
+                foreach(int index in warning.targets) threat.Cells.Add(new Vector2Int(index%width,index/width));
+                cellResponseThreats.Add(threat);EnsureTelegraphPresentation();CellResponseMarked?.Invoke(threat);
             }
             else
             {
@@ -138,7 +152,8 @@ public partial class BoardController
             {
                 var barrier=new BarricadeCellState { OwnerInstanceId=ownerAtSlot(value.barricadeOwner)?.GetInstanceID() ?? 0,
                     RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle,
-                    RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides };
+                    RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides,
+                    ThornSafeSide=value.thornSafeSide,ThornDamage=value.thornDamage };
                 nextRootId=Mathf.Max(nextRootId,value.rootId);
                 barricadeCells.Add(cell,barrier); CreateOrRefreshBarricadeView(cell,barrier);
             }

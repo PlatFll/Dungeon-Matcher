@@ -26,6 +26,8 @@ public partial class BoardController
     )]
     private Sprite stoneBarricadeSprite;
 
+    [SerializeField] private Sprite thornBarricadeSprite;
+
     [Header("Barricade VFX")]
 
     [SerializeField, Min(0f)]
@@ -59,6 +61,7 @@ public partial class BoardController
         public int MaximumDurability;
         public EnemyBarricadeStyle Style;
         public int RootId, OpenRootSides;
+        public int ThornSafeSide, ThornDamage;
         public long RootOwnerId;
         public bool RootSpreading;
         public GameObject ViewObject;
@@ -336,6 +339,9 @@ public partial class BoardController
                 if (protectSpecialGems &&
                     GetGem(column, row).SpecialType != GemSpecialType.None)
                     continue;
+                // A new structure cannot bury an active fixed-cell response.
+                if(cellResponseThreats.Exists(t=>!t.Ended && t.Cells.Contains(new Vector2Int(column,row))))
+                    continue;
 
                 candidates.Add(
                     new Vector2Int(
@@ -437,7 +443,8 @@ public partial class BoardController
             new HashSet<Gem>();
 
         for (int index = 0;
-             candidates.Count > 0 && (roots ? selectedCells.Count < placementCount : index < placementCount);
+             candidates.Count > 0 && ((roots || request.BarricadeStyle==EnemyBarricadeStyle.Thorn)
+                 ? selectedCells.Count < placementCount : index < placementCount);
              index++)
         {
             int candidateIndex =
@@ -493,6 +500,13 @@ public partial class BoardController
              */
             barricadeCells[selectedCell] =
                 state;
+
+            if(state.Style==EnemyBarricadeStyle.Thorn)
+            {
+                state.ThornSafeSide=ChooseThornSafeSide(selectedCell);
+                state.ThornDamage=CombatAmounts.Round(request.OwnerActor.Definition.ThornRetaliationDamage*request.OwnerActor.RuntimeStats.DamageMultiplier);
+                if(state.ThornSafeSide==0) {barricadeCells.Remove(selectedCell);continue;}
+            }
 
             if (!RetainsUsefulResponse())
             {
@@ -555,6 +569,12 @@ public partial class BoardController
     private void DamageBarricadesAdjacentToClears(
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems = null)
+        => DamageBarricadesForClear(clearedGems,ignoredGems,false);
+
+    private void DamageBarricadesForClear(
+        HashSet<Gem> clearedGems,
+        HashSet<Gem> ignoredGems,
+        bool deliberatePlayerClear = false)
     {
         if(clearedGems!=null) foreach(var threat in gemSetThreats)
             if(threat.Vine && threat.Targets.Exists(g=>g!=null && clearedGems.Contains(g) && (ignoredGems==null || !ignoredGems.Contains(g))))
@@ -568,6 +588,8 @@ public partial class BoardController
 
         HashSet<Vector2Int> cellsHit =
             new HashSet<Vector2Int>();
+        var thornHits=new HashSet<Vector2Int>();
+        var safeHits=new HashSet<Vector2Int>();
 
         foreach (Gem gem in clearedGems)
         {
@@ -596,6 +618,11 @@ public partial class BoardController
                     cellsHit.Add(
                         adjacentCell
                     );
+                    if(adjacent.Style==EnemyBarricadeStyle.Thorn && deliberatePlayerClear && gem.SpecialType==GemSpecialType.None)
+                    {
+                        if((adjacent.ThornSafeSide & SideBit(-direction))!=0) safeHits.Add(adjacentCell);
+                        else thornHits.Add(adjacentCell);
+                    }
                 }
             }
         }
@@ -641,6 +668,10 @@ public partial class BoardController
                 );
 
                 RootDestroyed(state);
+                // One retaliation per broken barrier; a simultaneous clear from
+                // its safe side is a valid safe answer. Cascades/blasts never retaliate.
+                if(state.Style==EnemyBarricadeStyle.Thorn && thornHits.Contains(cell) && !safeHits.Contains(cell))
+                    (combatController?.PlayerActor ?? RunSession.Current?.Player)?.TryTakeDamage(state.ThornDamage);
                 // A broken obstacle opens a real gravity slot just like a
                 // destroyed gem. Queue it with this clear's other openings;
                 // do not move banners while clear targets are being reported.
@@ -790,6 +821,7 @@ public partial class BoardController
         state.ViewObject.transform.localScale =
             Vector3.one * scale;
         if(IsRoot(state)) RefreshRootDurability(state,spriteExtent);
+        if(state.Style==EnemyBarricadeStyle.Thorn) RefreshThornSides(state,spriteExtent);
     }
 
     private void RefreshRootDurability(BarricadeCellState state,float extent)
@@ -1158,6 +1190,7 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
+        if(state?.Style==EnemyBarricadeStyle.Thorn && thornBarricadeSprite!=null) return thornBarricadeSprite;
         if(IsRoot(state))
         {
             var theme=GameplayThemeSkin.Current ?? Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");

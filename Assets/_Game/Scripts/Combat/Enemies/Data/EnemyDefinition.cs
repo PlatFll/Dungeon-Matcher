@@ -294,6 +294,26 @@ public sealed class EnemyDefinition : ScriptableObject
     public EnemyDefinition[] RoyalReinforcements => royalReinforcements;
     public EnemyDefinition RequiredBossEscort => requiredBossEscort;
 
+    [Header("Forest expanded roster")]
+    [SerializeField] private EnemyDefinition forestSummon;
+    [SerializeField, Min(0)] private int thornRetaliationDamage = 10;
+    [SerializeField, Min(1)] private float warRhythmSpeed = 1.4f;
+    [SerializeField, Min(.1f)] private float warRhythmSeconds = 5f;
+    [SerializeField, Min(1)] private int warRhythmMoves = 3;
+    [SerializeField, Min(0)] private int barkArmorShield = 30;
+    [SerializeField, Min(0)] private int thornVolleyDamage = 5;
+    [SerializeField, Min(0)] private int fallingBoughDamage = 30;
+    [SerializeField, Min(0)] private int fallingBoughWeakenedDamage = 15;
+    public EnemyDefinition ForestSummon => forestSummon;
+    public int ThornRetaliationDamage => CombatAmounts.Round(thornRetaliationDamage);
+    public float WarRhythmSpeed => Mathf.Max(1, warRhythmSpeed);
+    public float WarRhythmSeconds => Mathf.Max(.1f, warRhythmSeconds);
+    public int WarRhythmMoves => Mathf.Max(1, warRhythmMoves);
+    public int BarkArmorShield => CombatAmounts.Round(barkArmorShield);
+    public int ThornVolleyDamage => CombatAmounts.Round(thornVolleyDamage);
+    public int FallingBoughDamage => CombatAmounts.Round(fallingBoughDamage);
+    public int FallingBoughWeakenedDamage => CombatAmounts.Round(fallingBoughWeakenedDamage);
+
     [Header("Forest ritual tuning")]
     [SerializeField,Min(0)] private int forestRenewalBaseHeal=20;
     [SerializeField,Min(0)] private int forestHeartrootHealBonus=20;

@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Lean into a quick short sickle slash with the hand holding the sickle. Keep the thorn branch bundle carried in the other hand. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Elven_Thornkeeper",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Elven_Thornkeeper.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Grip the heavy cleaver firmly, draw it back with the shoulder and deliver a powerful chopping slash toward the left. Knees absorb the follow-through. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Berserker",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Berserker.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Swing the flower-tipped staff forward for a short grounded staff strike. Both body and arm move, the flowers stay attached. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Bloomcaller",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Bloomcaller.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Snapvine",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Snapvine",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Pull the plant head back on its flexible stem then snap its toothed jaws forward to the left for one fast decisive bite. Root feet remain planted. Retract smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Snapvine",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Snapvine",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Snapvine.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Draw one drumstick back then strike outward toward the left, with a compact body lean, retaining the strapped drum and other stick. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Orc_Drummer",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Orc_Drummer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "Draw the bowstring firmly with the rear hand while the bow arm stays extended to the left, release one arrow then lower back into the ready pose. No sword or shield. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Briar_Archer",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Briar_Archer.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Idle",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": true,
+    "pinEnd": true,
+    "action": "A very restrained planted battle idle: knees and torso settle slightly, shoulders follow, one tiny blink, recover. Both feet or root contacts stay anchored. Do not bounce the whole sprite. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "AutoAttack",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": true,
+    "action": "The bulky old stump creature draws one massive branch arm up then swings it down and forward in a heavy grounded slam, root feet firmly planted. Recover smoothly. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Hit",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 4,
+    "loop": false,
+    "pinEnd": true,
+    "action": "A short recoil from one hit: shoulders and head lean back together, knees brace, held equipment stays attached, then return to ready. Feet remain planted. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur. Return smoothly to the exact supplied ready pose."
+  },
+  {
+    "name": "Ancient_Treant",
+    "state": "Death",
+    "input": "ArtSource\\Forest\\RosterProduction\\Inputs\\Ancient_Treant.png",
+    "frame_count": 8,
+    "loop": false,
+    "pinEnd": false,
+    "action": "Defeat: body slumps downward, knees fold, held props settle with the hands, ending in a low collapsed pose. Plant creature withers or stump creature folds its branch arms and stoops. No disappearing pixels or new debris. Preserve the exact face, costume, equipment, material colors, source pixel size and fixed ground contact of this input. No new props, detached limbs, camera motion, zoom, glow cloud, background or motion blur."
+  }
+]

@@ -25,10 +25,13 @@ after their entire apex formations die and any card reward is chosen. The split
 pink crystal shakes, smoke covers gameplay, and the destination is restored under
 cover. Settings remains usable. The run, board, resources and global depth carry
 over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
-Forest now has six starter kits, their battle animation sets, modular woodland,
+Forest has six starter kits plus seven approved roster additions, modular woodland,
 gameplay-only timber UI and an original temporary music cue for review.
-The full roster, approximately ten-minute substantial visits and aquatic
-work remain later phases. Current forest visits use eighteen local starter
+The additions are Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar
+Archer and Ancient Treant (Old Stump variant C). Their finalized behavior and
+provisional values are in [the expanded roster contract](Forest/EXPANDED_ROSTER.md).
+Approximately ten-minute substantial visits and aquatic work remain later phases.
+Current forest visits use eighteen local starter
 encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu
 and settings screens retain their existing presentation.

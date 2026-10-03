@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
+  m_Name: Snapvine
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
+  enemyId: snapvine
+  race: Plant
+  faction: Woodland Clans
+  combatRole: Summon attacker
+  eligibleZones:
+  - magical-forest
+  threatCost: 1
+  isBoardDisruptor: 0
+  isSupport: 0
+  chainCap: 2
+  displayName: Snapvine
+  category: 0
+  description: Fragile summoned plant with fast bite attacks.
+  enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
+  fallbackVisualSprite: {fileID: 21300000, guid: e82deedf027c37f419dc93e393806383, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: 5b4ed635a4ee03e4d80d2b0dad4433b9, type: 2}
+  visualSize: {x: 168, y: 140}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
+  timeSpecialAbilityFromAnimation: 0
+  useAuthoredSpecialAbilityMotion: 0
+  baseMaxHealth: 20
+  baseDamage: 5
+  baseFollowUpDamage: 0
+  followUpAttackDelay: 0
+  baseAttackInterval: 2.5
+  firstAttackMoves: 1
+  attackMoves: 1
+  hasSpecialAbility: 0
+  specialAbilityKind: 0
+  baseSpecialTurnRequirement: 999
+  lockSpecialTurnRequirement: 0
+  allyShieldAmount: 10
+  selfShieldAmount: 15
+  barricadesPerUse: 2
+  maximumOwnedBarricades: 6
+  barricadeDurability: 1
+  barricadeStyle: 0
+  townMarshalSummonCandidates: []
+  townMarshalRetreatMoveCount: 2
+  townMarshalRallyAttackSpeedMultiplier: 1.4
+  townMarshalRallyDuration: 5
+  hammerWarningMoves: 2
+  hammerBaseDamage: 12
+  barricadeDamageReduction: 0.2
+  royalAssaultParticipant: 0
+  royalMarkCount: 3
+  royalMarkMoves: 3
+  restorationHealFraction: 0.033
+  triageRankWeights: {x: 1, y: 1.15, z: 1.35, w: 1.6}
+  triageSelfWeightWithWoundedAllies: 0.5
+  triageMeaningfulWound: 0.1
+  benedictionTargets: 2
+  benedictionDamageMultiplier: 1.4
+  benedictionHaloSprite: {fileID: 0}
+  judgmentBaseDamage: 12
+  bombardmentWarningMoves: 2
+  bombardmentBaseDamage: 6
+  assaultDamageMultiplier: 1.1
+  royalCommandWindup: 0.6
+  royalCommandSpacing: 0.12
+  enrageDamageMultiplier: 1.2
+  enrageSpeedMultiplier: 1.25
+  enragedSpecialMoves: 3
+  royalReinforcements: []
+  requiredBossEscort: {fileID: 0}
+  forestSummon: {fileID: 0}
+  thornRetaliationDamage: 10
+  warRhythmSpeed: 1.4
+  warRhythmSeconds: 5
+  warRhythmMoves: 3
+  barkArmorShield: 30
+  thornVolleyDamage: 5
+  fallingBoughDamage: 30
+  fallingBoughWeakenedDamage: 15
+  forestRenewalBaseHeal: 20
+  forestHeartrootHealBonus: 20
+  forestHarvestBaseDamage: 20
+  forestHarvestDamagePerVine: 5
+  forestRenewalChannelMoves: 2
+  forestHarvestChannelMoves: 3
+  minimumWave: 1
+  maximumWave: 0
+  progressionWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 8
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  crownSoldier: 0
+  encounterEscorts: []
+  maximumSpecialEscorts: 1
+  spawnWeight: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  staggerDurationMultiplier: 1
