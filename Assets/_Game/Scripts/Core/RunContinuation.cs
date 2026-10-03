@@ -46,7 +46,7 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null || saved.board?.forestRulesVersion>2) return false;
+        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>1) return false;
         if(saved.travel?.version>0 && (saved.travel.version!=1 || saved.travel.stage<0 || saved.travel.stage>2 ||
             (saved.travel.zoneId!="dungeon" && saved.travel.zoneId!="magical-forest") ||
             (saved.travel.stage==1 && saved.travel.destination!="dungeon" && saved.travel.destination!="magical-forest"))) return false;
@@ -112,6 +112,8 @@ public sealed class RunContinuation : MonoBehaviour
     {
         if(!CanCapture || session.Waves.IsWaveActive || session.Travel?.State.stage!=1 ||
             session.Travel.State.destination!=destination) return false;
+        var zone=Resources.Load<ZoneDefinition>("Zones/"+destination);
+        if(!ZoneTravelController.DestinationReady(zone)) return false;
         var saved=Capture();
         saved.travel.zoneId=destination;saved.travel.stage=2;saved.travel.visit++;
         saved.travel.visitStartWave=saved.wave+1;
@@ -120,6 +122,9 @@ public sealed class RunContinuation : MonoBehaviour
             saved.clock=new CombatClockSnapshot{profile=CombatClockSnapshot.LegacyEffectsProfile,
                 actions=new AcceptedMoveState{completed=saved.board.moves}};
         saved.version=2;saved.clock.zoneId=destination;
+        // Transform the detached destination board, so a failed write leaves
+        // both the visible source and its durable checkpoint untouched.
+        session.Board.PrepareZoneArrival(saved.board, zone);
         if(!SupportsSnapshot(saved)) return false;
         if(!account.StoreCheckpoint(session.RunId,saved)) {Error=account.LastError;return false;}
         checkpoint=saved;tape=new RunReplayTape();Error=null;return true;

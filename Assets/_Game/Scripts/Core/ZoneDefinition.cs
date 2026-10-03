@@ -26,6 +26,8 @@ public sealed class ZoneDefinition : ScriptableObject
     [Tooltip("Optional zone loop; temporary music remains labelled in its source manifest.")]
     public AudioClip music;
     public bool growsVines;
+    public bool crumblesTiles;
+    [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;
     [Range(4,64)] public int maximumVineOverlays = 24;
 }

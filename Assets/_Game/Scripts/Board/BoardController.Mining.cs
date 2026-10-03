@@ -28,7 +28,7 @@ public partial class BoardController
         MarkLanes,
         ResolveLanes,
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
-        MarkCellResponse, ResolveCellResponse
+        MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles
     }
 
     private sealed class BoardMutationRequest
@@ -50,6 +50,7 @@ public partial class BoardController
         public Func<bool> IsCancelled;
         public bool Succeeded;
         public bool MovablePin;
+        public bool SeparatePinMotionBeats;
         public bool EnvironmentalPin, Vine, NonSpreadingVine;
         public int RootDurability;
         public bool RootSpreading;
@@ -61,6 +62,7 @@ public partial class BoardController
         public GemSetThreat SetThreat;
         public LaneThreat Lanes;
         public int TargetCount;
+        public int EnvironmentMove;
         public Action Pulse;
         public bool RestorationPresentation;
         public bool RequiresVine;
@@ -370,6 +372,8 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.AdvanceCrumblingTiles:
+                        yield return ExecuteCrumblingTiles(request.EnvironmentMove); break;
                     case BoardMutationKind.MarkCellResponse:
                         ExecuteMarkCellResponse(request); break;
                     case BoardMutationKind.ResolveCellResponse:

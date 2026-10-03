@@ -47,6 +47,7 @@ public sealed class RunCombatSnapshot
     public int width, height, moves, nextBanner, nextGem;
     public uint refillRandom;
     public int forestRulesVersion, nextRootId, nextVineGrowthMove;
+    public int dungeonRulesVersion, nextCrumbleMove;
     public List<BoardCellSnapshot> cells = new List<BoardCellSnapshot>();
     public List<BoardWarningSnapshot> warnings = new List<BoardWarningSnapshot>();
     public List<VineNodeSnapshot> vines = new List<VineNodeSnapshot>();
@@ -65,6 +66,7 @@ public sealed class RunCombatSnapshot
     public int thornSafeSide, thornDamage;
     public long rootOwnerId;
     public bool rootSpreading;
+    public int crumbleRestoreMove;
 }
 [Serializable] public sealed class BoardWarningSnapshot
 {

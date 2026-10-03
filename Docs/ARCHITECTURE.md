@@ -57,6 +57,22 @@ to the gameplay scene canvas, never this temporary curtain. Scene restoration
 rebinds themes, audio and gameplay owners beneath opaque smoke. See
 [travel and carryover details](Forest/CRYSTAL_TRAVEL.md).
 
+`BoardController.ZoneEnvironment` uses the existing mutation queue and mined-cell
+occupancy for dungeon crumbling tiles. `ZoneRuntimeContext` queues it after legacy
+completed moves; `CombatMoveClock` advances it before actor opportunities in its
+profiles. Only one path runs per move. `BoardMiningVFX` observes shake, break and
+materialization cues; it never sets occupancy or deadlines. Snapshot schema
+`dungeonRulesVersion=1` saves the next pulse and each cell's restoration move.
+Board photographs preserve present zone-hole state and deadlines.
+
+Environmental vines have zone lifetime, independent of wave/reward UI lifetime.
+`PrepareZoneArrival` cleans a detached destination board snapshot inside the
+atomic travel commit. It clears source-zone overlays/roots/holes and safely fills
+reopened cells using the saved refill stream. Failed writes leave the source
+untouched. Older dungeon checkpoints carrying forest overlays discard those
+overlays during restore, before rendering the destination. ZoneRuntimeContext
+no longer queues global vine cleanup from scene destruction.
+
 The `seconds-effects-move-abilities-v1` profile preserves a travelling dungeon
 run's seconds for buffs, stagger, poison and supplies. `MoveEffects` selects effect
 units independently of move-coordinated abilities and `MoveBasics`. Existing

@@ -17,6 +17,8 @@ public sealed class CombatPolishPlayTests
 
     [UnityTest] public IEnumerator KingFormationContinuesAndSettlesOnlyOnDeath()
     {
+        typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
+            .Invoke(null,new object[]{new Vector2Int(1080,1920)});
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         yield return new EnterPlayMode();
         string path=Path.GetFullPath(".utmp/CombatPolish/endless-"+Guid.NewGuid().ToString("N")+".json");
@@ -48,7 +50,11 @@ public sealed class CombatPolishPlayTests
                 if(enemy.HasShield) enemy.TryTakeDamage(1000000);
                 enemy.TryTakeDamage(1000000);
             }
-            yield return Until(()=>waves.CurrentWave==31 && waves.IsWaveActive && run.Continuation.CanCapture);
+            // Live apex travel reloads Game; observe the destination owner,
+            // rather than retaining the destroyed dungeon WaveController.
+            yield return Until(()=>RunSession.Current!=null && RunSession.Current.Waves.CurrentWave==31 &&
+                RunSession.Current.Waves.IsWaveActive && RunSession.Current.Continuation.CanCapture);
+            run=RunSession.Current;waves=run.Waves;
             Assert.That(run.IsFinished,Is.False); Assert.That(run.IsVictory,Is.False);
             Assert.That(AccountProgression.Current.ActiveRun.id,Is.EqualTo(id));
             Assert.That(AccountProgression.Current.ActiveRun.kingCleared,Is.True);

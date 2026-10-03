@@ -13,7 +13,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
         Definition=Resources.Load<ZoneDefinition>("Zones/"+zoneId);
         if(Definition==null) throw new InvalidOperationException("Saved zone is unavailable: "+zoneId);
         run.Board.BoardClearResolved+=ObserveClear;
-        run.Waves.WaveCompleted+=WaveEnded;
+        run.Board.ValidPlayerMoveCompleted+=MoveEnded;
     }
     private void Start()
     {
@@ -51,11 +51,15 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     {
         if(context.GemCount>0 && context.GemType==CurrentGem && EligibleSource(context)) AffiliatedGemCleared?.Invoke(context);
     }
-    private void WaveEnded(int wave) => run.Board.RemoveVineSource(null);
+    private void MoveEnded(int move)
+    {
+        // Move-profile runs advance the environment before actor opportunities.
+        // The original dungeon seconds profile has no combat move coordinator.
+        if(!CombatMoveClock.Active) run.Board.QueueZoneEnvironment(move);
+    }
     private void OnDestroy()
     {
         if(run==null) return;
-        if(run.Board!=null) { run.Board.BoardClearResolved-=ObserveClear;run.Board.RemoveVineSource(null); }
-        if(run.Waves!=null) run.Waves.WaveCompleted-=WaveEnded;
+        if(run.Board!=null) { run.Board.BoardClearResolved-=ObserveClear;run.Board.ValidPlayerMoveCompleted-=MoveEnded; }
     }
 }

@@ -54,8 +54,12 @@ failure retains the gate and existing Retry Save control. A restore failure uses
 the existing recovery UI while the durable destination checkpoint is preserved.
 
 HP, shield, energy, cards, supply counts/cooldowns, ordinary gems, player-created
-specials, board identities and refill randomness carry over. Existing wave and
-producer cleanup removes old enemies and their local hazards before capture.
+specials and their board identities carry over. Environmental vines persist
+through ordinary waves and perk choices. The atomic destination checkpoint
+removes source-zone vines, roots and crumbling holes before reveal; it fills
+reopened cells with safe ordinary gems from the refill stream. That stream is
+otherwise unchanged. Existing producer cleanup removes old enemies and their
+owned hazards. Failed writes leave the source board untouched.
 Gideon's photograph retains its existing encounter-end cancellation rule.
 
 The run retains its effect clock profile. Existing forest saves keep move-based
@@ -66,14 +70,15 @@ accepted moves. No seconds value is interpreted as a move count.
 
 ## Art
 
-Treant C (Old Stump) is locked unchanged as a still. The seven extra approved
-designs have no newly authorized character animations or playable kits.
+Treant C (Old Stump) and the other six expanded-roster designs now have their
+approved motion and kits; see [the roster contract](EXPANDED_ROSTER.md).
 
 The two root sprites track remaining durability, retaining the existing pips.
-The vine weave is 81.64% transparent. Native spread/recoil clips consume board
+The selected dense Vines B weave is 17.7% transparent. Native spread/recoil clips consume board
 presentation cues and never own damage, occupancy, growth or refill. Restore
 shows static vines; reduced motion skips the transient clips and crystal shake.
-Sources and measured generation usage are in `ArtSource/Forest/VinesAndTransition`.
+Transition sources remain in `ArtSource/Forest/VinesAndTransition`; selected
+blockers and dense vine motion are in `ArtSource/Forest/RosterProduction`.
 
 Validation evidence is recorded separately after the implementation gates run.
 Final forest music approval, expanded content and physical-device testing remain

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.2642043">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="494" result="Passed" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.264204" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1597" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/.utmp/forest-production/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="494" result="Passed" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.253906" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="32900" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1012" name="BalanceV1Tests" fullname="BalanceV1Tests" classname="BalanceV1Tests" runstate="Runnable" testcasecount="32" result="Passed" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.240951" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1044" name="ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" fullname="BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" methodname="ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget" classname="BalanceV1Tests" runstate="Runnable" seed="994292117" result="Passed" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.220814" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1043" name="EveryRecipeHasValidMembersAndFitsBudgetAndSlots" fullname="BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots" methodname="EveryRecipeHasValidMembersAndFitsBudgetAndSlots" classname="BalanceV1Tests" runstate="Runnable" seed="499265153" result="Passed" start-time="2026-10-03 19:16:33Z" end-time="2026-10-03 19:16:33Z" duration="0.002323" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

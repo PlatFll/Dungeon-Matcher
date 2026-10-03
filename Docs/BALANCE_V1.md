@@ -101,8 +101,10 @@ Normal pools overlap; a declining weight tail retains older enemies. Milestone w
 | royal-fireline | 21–28 | 1 × RoyalArbalist, 1 × RoyalSwordsman, 1 × Knight | Target ranged pressure; threat ≤ 7 |
 | banner-lesson | 22–25 | 1 × RoyalStandardBearer, 1 × RoyalSwordsman | Break a banner before combined pressure; threat ≤ 5.5 |
 | ice-lesson | 23–26 | 1 × CourtMage, 1 × Knight | Learn freeze counterplay; threat ≤ 5 |
-| court-formation | 26–28 | 1 × CourtMage, 1 × RoyalStandardBearer, 1 × RoyalArbalist | Test freeze and banner priority; threat ≤ 8.5 |
+| court-formation | 26–28 | 1 × CourtMage, 1 × RoyalStandardBearer, 1 × RoyalSwordsman | Test freeze and banner priority; threat ≤ 8.5 |
 | last-breath | 27–28 | 1 × RoyalLancer, 1 × RoyalSwordsman | A readable attacker patrol before the King; threat ≤ 5 |
+
+Royal Arbalist now counts as a disruptor. `royal-fireline` allows its one disruptor; `court-formation` uses the same-cost Royal Swordsman escort so freeze and banner pressure stay within its two-disruptor limit. Global random formation caps are unchanged.
 
 ## Complete card review
 
@@ -168,6 +170,7 @@ Cadences below count accepted completed matching moves, not invalid swaps, casca
 | Barricade Guard | Two stone, two-hit walls every 4 moves | Controlled random legal cells; 4 per owner | First hit downgrades stone to wood. Same counterplay and orphan lifetime; earlier queued owners count toward the shared limit when each cast executes. |
 | Siege Sergeant | Alternates three wooden walls and Hammer Time every 4 moves | Prefers a complete straight run, otherwise random distinct legal cells; 6 walls per owner; specials protected | Hammer marks one adjacent ordinary pair for 2 moves. Remove/convert/pin either identity to cancel the entire strike. Failed warning deals base 10 through the shield-aware path, removes both targets environmentally and settles. One warning per owner. Owned walls grant the established 20% damage reduction. Death cancels warning/passive; walls persist orphaned. |
 | Crossbow Guard | Adds one chain every 3 moves, up to 2 owned | Ordinary unpinned gems; each placement must preserve a legal move | Same falling-chain rules as Captain: no manual swap, gravity allowed, matching/special destruction removes chain, adjacency alone does not. Death/disable queues release; emergency reshuffle can release pins. |
+| Royal Arbalist | Special; adds up to two chains every 4 moves, up to 2 owned | Ordinary unpinned gems, shared six-chain cap and safe-placement checks | Two authored chain-shot contacts; retains double-shot basics. Chains use the same breaking, falling and owner-cleanup rules as Crossbow Guard. Counted as a disruptor in encounter composition; HP/damage/threat cost retained. |
 | Knight Captain | Alternates top-up to 3 chains and On My Mark every 4 moves | Shared chain queue; command snapshots eligible available Crown allies in roster order | Command wind-up and spaced complete normal sequences. Kill/stagger an ally to interrupt participation; killing the Captain cancels outstanding commands and releases reservations/chains. No immunity or forced escort-first order. |
 | Shield Knight | Every 6 moves: +10 shield to each living ally, +12 to self | Enemy shield cap 30; caster never receives its ally grant | Grants add up to the cap, with no timed expiration or refresh. Shields live on the recipient and remain if the Knight dies. Shield VFX; focus support or break shields with damage. Existing 25% hit mitigation and whole-hit shield gating remain centralized. |
 | Town Marshal | Alternates one summon and a rally opportunity every 4 moves | Farmer/Pan/Basket pool; only free slots within 3 total; roster-based local eligibility | Summon becomes protector for 2 moves; killing it ends interception and resets a held-ready special. Rally is +40% attack speed for 5 seconds, non-stacking. Summons survive Marshal death; no summon income. |

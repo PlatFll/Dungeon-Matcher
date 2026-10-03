@@ -51,6 +51,10 @@ public sealed class ChronoShutterTests
             SceneManager.LoadScene("Game"); yield return Stable();
             var run = RunSession.Current; MakeDurableEnemies(run);
             var board = run.Board;
+            // This fixture compares identical refill inputs without independent
+            // interference. Live zone-hole deadlines and photo interactions are
+            // covered by EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles.
+            typeof(BoardController).GetField("nextCrumbleMove",Fields).SetValue(board,int.MaxValue);
             board.GetGem(0,0).SetSpecialType(GemSpecialType.RowBomb);
             board.GetGem(1,0).SetSpecialType(GemSpecialType.ColumnBomb);
             board.GetGem(2,0).SetSpecialType(GemSpecialType.ColorCrystal);

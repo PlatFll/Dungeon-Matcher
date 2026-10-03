@@ -322,7 +322,7 @@ MonoBehaviour:
     maximumWave: 28
     weight: 2
     threatBudget: 7
-    maximumDisruptors: 0
+    maximumDisruptors: 1
     members:
     - enemy: {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
       count: 1
@@ -366,7 +366,7 @@ MonoBehaviour:
       count: 1
     - enemy: {fileID: 11400000, guid: 39f0ae90d3b445afbf8f722502c90a05, type: 2}
       count: 1
-    - enemy: {fileID: 11400000, guid: e0401922f77142049ae15844298a5eb7, type: 2}
+    - enemy: {fileID: 11400000, guid: 103ebefdbf0b40dcbf8f1e7c1537c2a3, type: 2}
       count: 1
   - id: last-breath
     purpose: A readable attacker patrol before the King

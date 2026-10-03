@@ -88,15 +88,33 @@ migrate to overlays; old nonspreading anchor casts retire with a harmless fizzle
 Real chains remain intact. Photographs keep the present growth deadline and root
 durability/open sides, cannot resurrect destroyed roots or dead producers, and
 do not rewind channels or consumed effects. Root networks leave with their owner;
-environmental vines leave at wave/zone cleanup. Optional art never owns effects.
+environmental vines persist across waves, perk choices, pause and Continue. They
+leave when the run transitions to another zone. Optional art never owns effects.
 
-### Deferred dungeon and royal direction
+### Dungeon crumbling tiles and Royal Arbalist
 
-Purple Dungeon uses **crumbling/falling tiles** as its future zone effect. This
-revision records that decision only. Crossbow Guard remains the baseline Special
-with one chained gem per use; existing ownership caps remain separate. Royal
-Arbalist is planned as the stronger Special: retain double-shot attacks and add
-a two-gem chain ability. Its rank, data and runtime have not been changed here.
+Purple Dungeon uses **crumbling tiles**. The starting tuning is a pulse every
+four accepted player moves, choosing one or two safe ordinary cells. Tile and
+gem shake together for 480 ms, flash fully white and break. The holes skip gravity
+and refill until two further accepted moves finish; then they flash white,
+materialize and refill through normal board resolution. Invalid swaps, supplies,
+skills and cascades do not advance the deadline. Specials, pinned gems, active
+warning targets and existing structures are protected. Shared structure limits
+and useful-response checks may reduce or skip a pulse. Pause freezes presentation;
+reduced motion removes the shake. Hole deadlines persist through waves and saves,
+and Gideon's photograph cannot rewind or resurrect them. Cadence is provisional.
+
+Crossbow Guard remains the baseline Special with one chained gem per use. Royal
+Arbalist is a Special and board disruptor: retain double-shot basic attacks and
+chain up to two ordinary gems every four accepted moves, capped at two owned and
+the existing six restrictions globally. His dedicated two-shot ability animation
+uses approved native drawings with a separate contact for each chain. Normal
+chain counterplay, safe targeting, cancellation and owner cleanup apply.
+
+Travel removes the departing zone's vines, roots and crumbling holes before the
+destination is revealed. Ordinary gems and specials carry over. Reopened zone
+cells receive ordinary gems without a free match or reward during the atomic
+handoff. Failed checkpoint writes leave the source board intact.
 
 The following battle loop describes the production legacy profile.
 

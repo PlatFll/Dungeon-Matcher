@@ -21,12 +21,12 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-03
-- **Current milestone:** Temporary new-run zone picker, with implementation and merge authorized on 2026-10-03. Play, character-select Play, practice and challenges offer Dungeon or Magical Forest. Continue restores the saved zone directly; Retry restarts the current live zone. Forest starts use live encounters/travel with seconds basics/effects and move-based special abilities. Disable `RunLaunchOptions.TestingZonePickerEnabled` for the full release; this is an intentional testing override.
+- **Current milestone:** Zone-effect lifecycle fixes, dungeon crumbling tiles and Royal Arbalist's two-chain Special ability, with implementation and merge authorized on 2026-10-03. Environmental vines persist through waves and perk choices; travel cleans source-zone effects before reveal. Dungeon tiles pulse every four accepted moves and return after two further moves. The Arbalist retains double-shot basics and uses a dedicated two-contact chain animation. The cadence is initial tuning; see [the validation record](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md).
 - **Forest checkpoint:** [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176) is merged: seven locked designs have 39 motion clips and approved kits, including Treant C (Old Stump). Selected blockers are Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B. See [the roster contract](Forest/EXPANDED_ROSTER.md). Existing crystal travel and combat timing remain in place.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** The temporary zone picker has **17 passing checks**, actual portrait/menu input checks and a successful Unity validator; see [picker validation](Validation/TESTING_ZONE_PICKER.md). The preceding expanded roster has [75 unique passing checks](Validation/FOREST_EXPANDED_ROSTER.md), and the earlier travel milestone has [separate evidence](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
+- **Current verification:** Zone effects and Arbalist have **163 unique passing regression checks**, inspected portrait captures and a successful final Unity validator; see [the evidence and corrected test fixtures](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md). Earlier [picker](Validation/TESTING_ZONE_PICKER.md), [expanded-roster](Validation/FOREST_EXPANDED_ROSTER.md) and [travel](Validation/FOREST_CRYSTAL_TRAVEL.md) evidence remains available. The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -353,6 +353,14 @@ Retry starts a new attempt in the current live zone. The choice is consumed at
 scene handoff; ongoing zone and timing state use the existing checkpoint.
 The picker is deliberately enabled in the current build for testing and must be
 disabled with `RunLaunchOptions.TestingZonePickerEnabled` before full release.
+
+Dungeon's provisional zone pulse breaks one or two safe ordinary cells every four
+accepted moves. Holes return after two more moves; special gems, chains, warnings
+and structural safety limits are respected. Environment deadlines persist across
+waves, rewards and saves. Travel clears vines/roots and restores zone holes under
+smoke; it never adds a free clear reward. Royal Arbalist is now a Special disruptor
+with two chains per four-move cast and a two-owned cap. Other basic damage and
+attack intervals retain their current values.
 
 The Editor-only Forest menu starts or resumes a separate save under
 `.utmp/ForestPlaytest`. Twenty-two formations loop indefinitely using six starter
@@ -693,7 +701,9 @@ The current game includes or supports:
 - enemy shielding;
 - poison and other special-gem effects.
 
-Crossbow Guard and Knight Captain now share the same falling/movable chain family instead of behaving like unrelated versions of the same idea. They may differ in quantity/cadence by rank.
+Crossbow Guard, Royal Arbalist and Knight Captain share the falling/movable chain
+family. Arbalist adds two chains per use; Guard adds one, and Captain tops up to
+three. Their quantity/cadence and ownership caps remain definition data.
 
 Current Balance v1 structural safety direction includes:
 

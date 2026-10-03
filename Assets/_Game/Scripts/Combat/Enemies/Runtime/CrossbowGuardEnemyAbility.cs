@@ -170,13 +170,14 @@ public sealed class CrossbowGuardEnemyAbility :
         bool queued =
             boardController.TryQueueTopUpMovablePins(
                 enemyActor,
-                Mathf.Min(MaximumOwnedPins, ownedPinCount + 1),
+                Mathf.Min(MaximumOwnedPins, ownedPinCount + enemyActor.Definition.ChainsPerUse),
                 succeeded =>
                 {
                     if (succeeded && this != null && isActiveAndEnabled && enemyActor != null)
                         enemyActor.NotifySpecialAbilityEffectApplied();
                 },
-                () => this == null || !isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated
+                () => this == null || !isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated,
+                enemyActor.Definition.ChainsPerUse > 1
             );
 
         if (!queued)
@@ -236,6 +237,9 @@ public sealed class CrossbowGuardEnemyAbility :
     private void OnDisable()
     {
         if (enemyActor != null) enemyActor.EndSpecialAbilityAnimationAction();
+        specialActionAvailability?.Dispose();
+        QueueOwnedPinRelease();
+        Unsubscribe();
     }
 
     private void OnDestroy()
