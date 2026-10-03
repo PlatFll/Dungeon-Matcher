@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
@@ -47,111 +48,117 @@ public sealed partial class ForestFoundationPlayTests
         }
         finally {Time.timeScale=1;AudioPreferences.SetMusicMuted(muted);}
     }
+    private BoardCellSnapshot RootCell(EnemyActor owner) => Run.Board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).cells.First(c=>c.barricade&&c.rootOwnerId==owner.PersistentId);
+    private IEnumerator ClearRootSide(BoardCellSnapshot root)
+    {
+        PrepareSafeMove(); // Remove incidental matches/special chains from the single-hit fixture.
+        var board=Run.Board;var gem=board.GetGem(root.x-1,root.y);
+        Assert.That(gem,Is.Not.Null);
+        var cleared=new System.Collections.Generic.HashSet<Gem>{gem};
+        // Exercise the same hit-before-destruction ordering as rewardable clears.
+        Call(board,"DamageBarricadesAdjacentToClears",cleared,null);
+        yield return (IEnumerator)Call(board,"ClearMatches",cleared,null,false);
+        yield return (IEnumerator)Call(board,"CollapseAndRefillBoard");
+        yield return Stable();
+    }
+    [UnityTest] public IEnumerator ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread()
+    {
+        yield return Launch(1,true);QuietKitFixture();var owner=Enemy("orc_rootbinder");
+        Assert.That(Run.Board.TryQueuePlantRoots(owner,1,1,false,false,null),Is.True);yield return Stable();
+        var root=RootCell(owner);Assert.That(root.hasGem,Is.False);Assert.That(root.durability,Is.EqualTo(1));
+        Assert.That(Run.Board.OwnedVineCount(owner),Is.EqualTo(4));Assert.That(Run.Board.RestrictionCount,Is.Zero);
+        Run.Board.QueueVineSurge(owner,null);yield return Stable();Assert.That(Run.Board.OwnedVineCount(owner),Is.EqualTo(4));
+        yield return ClearRootSide(root);Assert.That(RootCell(owner).durability,Is.EqualTo(1),"first clear only opens a side");
+        yield return ClearRootSide(root);Assert.That(Run.Board.OwnedRootCount(owner),Is.Zero);
+        Assert.That(Run.Board.OwnedVineCount(owner),Is.Zero);Assert.That(Run.Board.GetGem(root.x,root.y),Is.Not.Null);
+    }
     [UnityTest] public IEnumerator ProductionWardenWarnsAndStaggerCancelsBeforePlanting()
     {
-        yield return Launch(9,true);QuietKitFixture();
-        var warden=Enemy("barkhide_warden");var kit=warden.GetComponent<ForestMilestoneEnemyAbility>();
-        yield return Move();Assert.That(kit.IsPreparing,Is.False);
-        yield return Move();Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.ResponseMoves,Is.EqualTo(1));
+        yield return Launch(9,true);QuietKitFixture();var warden=Enemy("barkhide_warden");var kit=warden.GetComponent<ForestMilestoneEnemyAbility>();
+        Set(warden,"currentHealth",9995); // This test isolates interruption from cascade lethals.
+        yield return Move();yield return Move();Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.ResponseMoves,Is.EqualTo(1));
         float basic=warden.GetComponent<EnemyAutoAttack>().RemainingAttackTime;
-        float began=Time.time;yield return Until(()=>Time.time>=began+.2f,"held basic observes game time");
-        Assert.That(warden.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic));
-        warden.GetComponent<EnemyStagger>().RestoreContinuation(new EnemyCombatSnapshot());
-        warden.GetComponent<EnemyStagger>().ApplyStagger(2,2);yield return Stable();
-        Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.IsExposed,Is.True);
-        Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));Assert.That(Run.Board.OwnedVineCount(warden),Is.Zero);
-        Assert.That(Run.Board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).warnings.Any(w=>w.vine),Is.False);
+        yield return new WaitForSeconds(.2f);Assert.That(warden.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic));
+        var stagger=warden.GetComponent<EnemyStagger>();stagger.RestoreContinuation(new EnemyCombatSnapshot());stagger.ApplyStagger(2,2);yield return Stable();
+        Assert.That(stagger.IsStaggered,Is.True);Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));
+        Assert.That(Run.Board.OwnedRootCount(warden),Is.Zero);
     }
-    [UnityTest] public IEnumerator ProductionAnchorsProtectOnceDoNotSpreadAndPhotoCannotRestoreFinishedCast()
+    [UnityTest] public IEnumerator ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt()
     {
-        yield return Launch(9,true);QuietKitFixture();
-        var warden=Enemy("barkhide_warden");var kit=warden.GetComponent<ForestMilestoneEnemyAbility>();
-        Assert.That(Run.Board.TryQueueVineAnchors(warden,2,null),Is.True);yield return Stable();
-        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{state=2,sequence=1}},_=>null);
-        Assert.That(kit.IsProtected,Is.True);
-        var nodes=Run.Board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines;
-        Assert.That(nodes.Count,Is.EqualTo(2));Assert.That(nodes.All(n=>n.nonSpreading),Is.True);
-        yield return Run.Board.AdvanceVineNetworks(100);
-        Assert.That(Run.Board.OwnedVineCount(warden),Is.EqualTo(2));
-        Assert.That(Run.Board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).warnings.Any(w=>w.vine),Is.False);
-        int hp=warden.CurrentHealth;warden.ResolveWeaknessDamage(40);
-        Assert.That(hp-warden.CurrentHealth,Is.EqualTo(30),"one 25% reduction, not once per anchor");
-        var photo=Run.Board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);
-        Run.Board.RemoveVineSource(warden);yield return Stable();yield return null;
-        Assert.That(kit.IsExposed,Is.True);Assert.That(kit.IsProtected,Is.False);
-        hp=warden.CurrentHealth;warden.ResolveWeaknessDamage(20);
-        Assert.That(hp-warden.CurrentHealth,Is.EqualTo(25),"free weakness hit benefits without advancing expiry");
-        hp=warden.CurrentHealth;warden.ResolveDirectDamage(20);
-        Assert.That(hp-warden.CurrentHealth,Is.EqualTo(20),"direct damage is not weakness damage");
-        Assert.That(Run.Board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);
-        Assert.That(Run.Board.OwnedVineCount(warden),Is.Zero,"finished cast cannot return through a photo");
-        Assert.That(Run.Board.RestrictionCount,Is.Zero);
-        yield return Move();Assert.That(kit.IsExposed,Is.True);
-        yield return Move();Assert.That(kit.IsExposed,Is.False);
+        yield return Launch(9,true);QuietKitFixture();var warden=Enemy("barkhide_warden");var scout=Enemy("elven_scout");
+        var kit=warden.GetComponent<ForestMilestoneEnemyAbility>();
+        Run.Board.TryQueuePlantRoots(warden,1,2,false,true,null);yield return Stable();
+        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=2,sequence=1}},_=>null);
+        Assert.That(kit.IsProtected,Is.True);Assert.That(Run.Board.OwnedVineCount(warden),Is.EqualTo(4));
+        foreach(var member in new[]{warden,scout}) {int hp=member.CurrentHealth;member.ResolveDirectDamage(20);Assert.That(hp-member.CurrentHealth,Is.EqualTo(15));}
+        Assert.That(Run.Waves.TrySummonEnemy(Run.Zone.FindEnemy("Orc_Trailguard"),out var summoned),Is.True);
+        int spawnedHp=summoned.CurrentHealth;summoned.ResolveDirectDamage(20);
+        Assert.That(spawnedHp-summoned.CurrentHealth,Is.EqualTo(15),"newly summoned allies are protected before their first LateUpdate");
+        Run.Board.QueueVineSurge(warden,null);yield return Stable();Assert.That(Run.Board.OwnedVineCount(warden),Is.GreaterThan(4));
+        var photo=Run.Board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);var root=RootCell(warden);
+        yield return ClearRootSide(root);yield return ClearRootSide(root);Assert.That(RootCell(warden).durability,Is.EqualTo(1));
+        Assert.That(Run.Board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);yield return Stable();
+        Assert.That(RootCell(warden).durability,Is.EqualTo(1),"photo cannot repair durability");
+        yield return ClearRootSide(root);
+        Assert.That(kit.IsProtected,Is.False);int hp2=warden.CurrentHealth;warden.ResolveDirectDamage(20);Assert.That(hp2-warden.CurrentHealth,Is.EqualTo(20),"no exposure multiplier");
+        Assert.That(Run.Board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);yield return Stable();
+        Assert.That(Run.Board.OwnedRootCount(warden),Is.Zero);Assert.That(Run.Board.GetGem(root.x,root.y),Is.Not.Null);
     }
-    [UnityTest] public IEnumerator ProductionMatriarchFixedTargetAndAnchorsSurviveSaveThenResolveOnce()
+    [UnityTest] public IEnumerator ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce()
     {
         yield return Launch(11,true);QuietKitFixture();
-        var boss=Enemy("briar_matriarch");var scout=Enemy("elven_scout");
-        scout.ResolveDamageWithoutFeedback(25);
+        var boss=Enemy("briar_matriarch");boss.ResolveDamageWithoutFeedback(80);
+        var scout=Enemy("elven_scout");scout.ResolveDamageWithoutFeedback(20);
         yield return Move();yield return Move();yield return Move();
-        var kit=boss.GetComponent<ForestMilestoneEnemyAbility>();
-        Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.Target,Is.SameAs(scout));Assert.That(kit.ResponseMoves,Is.EqualTo(2));
-        Assert.That(Run.Board.OwnedVineCount(boss),Is.EqualTo(2));long target=scout.PersistentId;
+        var kit=boss.GetComponent<ForestMilestoneEnemyAbility>();Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.ResponseMoves,Is.EqualTo(2));
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(2));
         Assert.That(Run.SuspendToMenu(),Is.True);yield return null;SceneManager.LoadScene("Game");
         yield return Until(()=>Run?.Continuation!=null&&!Run.Continuation.IsRestoring,"ritual restore");
         Run.GetComponent<RunControlsUI>().Close();yield return Stable();QuietKitFixture();
-        boss=Enemy("briar_matriarch");scout=Enemy("elven_scout");kit=boss.GetComponent<ForestMilestoneEnemyAbility>();
-        Assert.That(kit.Target.PersistentId,Is.EqualTo(target));Assert.That(kit.ResponseMoves,Is.EqualTo(2));
-        int heals=0;scout.Healed+=(_,amount)=>heals+=amount;
-        // Preserve the authored anchors through the response fixture, then
-        // explicitly offer its deadline through the same move coordinator.
-        yield return Move();
-        int dueAnchors=-1,missing=0;
-        System.Action<int> beforeConsequences=_=>{dueAnchors=Run.Board.OwnedVineCount(boss);missing=scout.MaxHealth-scout.CurrentHealth;};
-        Run.Board.ValidPlayerMoveCompleted+=beforeConsequences;
-        yield return Move();
-        Run.Board.ValidPlayerMoveCompleted-=beforeConsequences;
-        Assert.That(kit.IsPreparing,Is.False);
-        Assert.That(dueAnchors,Is.GreaterThan(0),"fixture must demonstrate a successful ritual, not only cancellation");
-        Assert.That(kit.Outcome,Is.EqualTo("Renewed"));
-        Assert.That(heals,Is.EqualTo(Mathf.Min(missing,dueAnchors*10)));
-        Assert.That(heals%10,Is.Zero);
-        Assert.That(Run.Board.OwnedVineCount(boss),Is.Zero);
-        int resolved=heals;float now=Time.time;yield return Until(()=>Time.time>=now+.8f,"release motion completes");
-        Assert.That(heals,Is.EqualTo(resolved),"presentation cannot produce a second heal");
-        Assert.That(kit.BlocksBasic,Is.True);
+        boss=Enemy("briar_matriarch");kit=boss.GetComponent<ForestMilestoneEnemyAbility>();Assert.That(kit.ResponseMoves,Is.EqualTo(2));
+        int heals=0;boss.Healed+=(_,amount)=>heals+=amount;int expected=0;
+        System.Action<int> due=_=>expected=Mathf.Min(boss.MaxHealth-boss.CurrentHealth,20+20*Run.Board.OwnedRootCount(boss));
+        yield return Move();Run.Board.ValidPlayerMoveCompleted+=due;yield return Move();Run.Board.ValidPlayerMoveCompleted-=due;
+        Assert.That(kit.Outcome,Is.EqualTo("Renewed"));Assert.That(heals,Is.EqualTo(expected));Assert.That(heals,Is.GreaterThan(0));
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(2));int resolved=heals;
+        kit.ResolveAcceptedMove();yield return new WaitForSeconds(.8f);Assert.That(heals,Is.EqualTo(resolved));
     }
-    [UnityTest] public IEnumerator ProductionRitualStaggerAndTargetDeathCancelWithoutRetarget()
+    [UnityTest] public IEnumerator ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines()
     {
-        yield return Launch(11,true);QuietKitFixture();
-        var boss=Enemy("briar_matriarch");var scout=Enemy("elven_scout");var kit=boss.GetComponent<ForestMilestoneEnemyAbility>();
-        Assert.That(Run.Board.TryQueueVineAnchors(boss,2,null),Is.True);yield return Stable();
-        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{state=1,sequence=1,targetId=scout.PersistentId,deadline=2}},_=>scout);
+        yield return Launch(8,true);QuietKitFixture();var boss=Enemy("briar_matriarch");var kit=boss.GetComponent<ForestMilestoneEnemyAbility>();
+        Run.Board.TryQueuePlantRoots(boss,2,2,true,true,null);yield return Stable();
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(2),"harvest fixture starts with its complete linked pair");
+        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,activeAbility=2,sequence=1,deadline=3,heartrootsArmed=true}},_=>null);
+        Assert.That(kit.ChannelMoves,Is.EqualTo(3));int damage=0;int count=-1;
+        int before=0;
+        System.Action<int> due=_=>{count=Run.Board.VineCount;before=Run.Player.CurrentHealth;};
+        yield return Move();Assert.That(kit.IsPreparing,Is.True,kit.Outcome);Assert.That(kit.ResponseMoves,Is.EqualTo(2));
+        yield return Move();Assert.That(kit.IsPreparing,Is.True,kit.Outcome);Assert.That(kit.ResponseMoves,Is.EqualTo(1));
+        Run.Board.ValidPlayerMoveCompleted+=due;yield return Move();Run.Board.ValidPlayerMoveCompleted-=due;
+        damage=before-Run.Player.CurrentHealth;Assert.That(kit.Outcome,Is.EqualTo("Harvested"));
+        Assert.That(damage,Is.EqualTo(Mathf.Min(before,20+5*count)));Assert.That(Run.Board.VineCount,Is.Zero);
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(2));
         boss.GetComponent<EnemyStagger>().RestoreContinuation(new EnemyCombatSnapshot());
-        boss.GetComponent<EnemyStagger>().ApplyStagger(2,2);yield return Stable();
-        Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));Assert.That(kit.IsExposed,Is.True);Assert.That(Run.Board.OwnedVineCount(boss),Is.Zero);
-        Assert.That(Run.Board.TryQueueVineAnchors(boss,2,null),Is.True);yield return Stable();
-        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{state=1,sequence=2,resolvedSequence=1,targetId=scout.PersistentId,deadline=2}},_=>scout);
-        scout.ResolveDirectDamage(9999);yield return Stable();
-        Assert.That(kit.Outcome,Is.EqualTo("Target lost"));Assert.That(kit.Target,Is.Null);
-        Assert.That(Run.Board.OwnedVineCount(boss),Is.Zero);Assert.That(kit.IsExposed,Is.False);
-        var snapshot=new EnemyCombatSnapshot();kit.CaptureContinuation(snapshot,_=>0);
-        Assert.That(snapshot.forestMilestone.resolvedSequence,Is.EqualTo(2));
+        var first=RootCell(boss);yield return ClearRootSide(first);yield return ClearRootSide(first);
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(1));Assert.That(boss.GetComponent<EnemyStagger>().IsStaggered,Is.False);
+        var second=RootCell(boss);yield return ClearRootSide(second);yield return ClearRootSide(second);
+        Assert.That(Run.Board.OwnedRootCount(boss),Is.Zero);Assert.That(boss.GetComponent<EnemyStagger>().IsStaggered,Is.True);
     }
     [UnityTest] public IEnumerator ProductionSoloMenderNeverHealsSelf()
     {
-        yield return Launch(5,true);QuietKitFixture();
-        var mender=Enemy("elven_mender");mender.ResolveDamageWithoutFeedback(20);
-        yield return Move();yield return Move();yield return Move();
-        Assert.That(mender.GetComponent<EnemyChannelRuntime>().IsChanneling,Is.False);
+        yield return Launch(5,true);QuietKitFixture();var mender=Enemy("elven_mender");mender.ResolveDamageWithoutFeedback(20);
+        var stats=mender.RuntimeStats;
+        typeof(EnemyActor).GetProperty("RuntimeStats").SetValue(mender,new EnemyRuntimeStats(stats.Wave,stats.Level,10000,stats.Damage,stats.FollowUpDamage,stats.AttackInterval,stats.SpecialTurnRequirement));
+        Set(mender,"currentHealth",7000); // Wounded throughout the fixture, with no eligible ally.
+        yield return Move();yield return Move();yield return Move();Assert.That(mender.GetComponent<EnemyChannelRuntime>().IsChanneling,Is.False);
     }
-    [UnityTest] public IEnumerator ProductionSoloMatriarchCanTargetSelf()
+    [UnityTest] public IEnumerator ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget()
     {
-        yield return Launch(8,true);QuietKitFixture();
-        var boss=Enemy("briar_matriarch");boss.ResolveDamageWithoutFeedback(30);
-        yield return Move();yield return Move();yield return Move();
-        Assert.That(boss.GetComponent<ForestMilestoneEnemyAbility>().Target,Is.SameAs(boss));
+        yield return Launch();QuietKitFixture();var mender=Enemy("elven_mender");var target=Enemy("orc_trailguard");
+        var channel=mender.GetComponent<EnemyChannelRuntime>();mender.GetComponent<EnemyStagger>().RestoreContinuation(new EnemyCombatSnapshot());
+        channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot{state=1,sequence=1,targetId=target.PersistentId,deadlineMove=2}},_=>target);
+        target.ResolveDirectDamage(9999);yield return Stable();Assert.That(channel.Outcome,Is.EqualTo("Target lost"));
+        Assert.That(mender.GetComponent<EnemyStagger>().IsStaggered,Is.False);Assert.That(channel.Target,Is.Null);
     }
     [UnityTest] public IEnumerator HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves()
     {
@@ -204,5 +211,40 @@ public sealed partial class ForestFoundationPlayTests
         yield return Until(()=>Time.time>=resumedAt+.25f,"a quarter-second of the resumed game clock");
         Assert.That(attacker.RemainingAttackTime,Is.LessThan(accepted-.15f));
         Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+    }
+    [UnityTest] public IEnumerator RootWarningPlayerClearStaggersButTargetFizzleDoesNot()
+    {
+        yield return Launch(9,true);QuietKitFixture();var owner=Enemy("barkhide_warden");
+        var kit=owner.GetComponent<ForestMilestoneEnemyAbility>();var stagger=owner.GetComponent<EnemyStagger>();
+        BoardController.GemSetThreat warning=null;
+        Run.Board.TryQueueRootWarning(owner,1,2,false,true,w=>warning=w);yield return Stable();Assert.That(warning,Is.Not.Null);
+        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=1,deadline=warning.DueMove}},_=>null);
+        stagger.RestoreContinuation(new EnemyCombatSnapshot());
+        var targets=new System.Collections.Generic.HashSet<Gem>(warning.Targets);
+        Call(Run.Board,"DamageBarricadesAdjacentToClears",targets,null);
+        yield return (IEnumerator)Call(Run.Board,"ClearMatches",targets,null,false);
+        yield return (IEnumerator)Call(Run.Board,"ResolveEnvironmentalBoardChange");yield return Stable();
+        Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));Assert.That(stagger.IsStaggered,Is.True);
+        stagger.RestoreContinuation(new EnemyCombatSnapshot());PrepareSafeMove();
+        Run.Board.TryQueueRootWarning(owner,1,2,false,true,w=>warning=w);yield return Stable();Assert.That(warning.Ended,Is.False);
+        kit.RestoreContinuation(new EnemyCombatSnapshot{forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=2,resolvedSequence=1,deadline=warning.DueMove}},_=>null);
+        Run.Board.CancelGemSetThreat(warning);yield return Stable();
+        Assert.That(kit.Outcome,Is.EqualTo("Target lost"));Assert.That(stagger.IsStaggered,Is.False);
+    }
+    [UnityTest] public IEnumerator LegacyVinePinsUpgradeWithoutRemovingRealChains()
+    {
+        yield return Launch(1);var board=Run.Board;
+        board.QueueEnvironmentalVine(board.GetGem(0,0));yield return Stable();
+        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;
+        var account=JsonUtility.FromJson<AccountSave>(File.ReadAllText(path));var saved=account.run.checkpoint.board;
+        saved.forestRulesVersion=0;saved.vines[0].cellOverlay=false;
+        var vine=saved.cells.First(c=>c.x==0&&c.y==0);vine.pinned=true;vine.movable=true;vine.pinOwner=-1;
+        var chain=saved.cells.First(c=>c.x==1&&c.y==0);chain.pinned=true;chain.movable=true;chain.pinOwner=0;
+        File.WriteAllText(path,JsonUtility.ToJson(account,true));profile.Dispose();profile=AccountProgression.UseDisposableProfile(path);
+        SceneManager.LoadScene("Game");yield return Until(()=>Run?.Continuation!=null&&!Run.Continuation.IsRestoring,"legacy vine migration");
+        Run.GetComponent<RunControlsUI>().Close();yield return Stable();board=Run.Board;
+        Assert.That(board.IsCellVined(0,0),Is.True);Assert.That(board.IsGemPinned(board.GetGem(0,0)),Is.False);
+        Assert.That(board.IsGemPinned(board.GetGem(1,0)),Is.True,"unrelated chain survives migration");
+        Assert.That(board.NextVineGrowthMove,Is.EqualTo(Run.MoveClock.Tick+2));
     }
 }

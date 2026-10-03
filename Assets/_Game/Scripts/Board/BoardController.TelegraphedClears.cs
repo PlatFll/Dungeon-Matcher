@@ -17,6 +17,10 @@ public partial class BoardController
         public bool NonSpreading { get; internal set; }
         public bool Environmental { get; internal set; }
         internal int VineLimit = 3, ParentGemId;
+        public bool PlayerInterrupted { get; internal set; }
+        public int RootDurability { get; internal set; }
+        public bool RootSpreading { get; internal set; }
+        public EnemyBarricadeStyle RootStyle { get; internal set; }
     }
     public sealed class LaneThreat
     {
@@ -88,14 +92,16 @@ public partial class BoardController
             bool marked = false;
             foreach (var existing in gemSetThreats) if (existing.Targets.Contains(gem)) { marked = true; break; }
             if (request.Vine && (IsGemPinned(gem) || IsProtectedWarningTarget(gem))) marked=true;
+            if(request.RootDurability>0 && !CanHostRoot(gem)) marked=true;
             if (!marked) candidates.Add(gem);
         }
         if (candidates.Count == 0) return;
         var threat = new GemSetThreat { Owner = request.OwnerActor,
             DueMove = ReserveWarningDeadline(request.WarningMoves),
-            RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins,NonSpreading=request.NonSpreadingVine };
-        int allowed=request.Vine ? Mathf.Min(request.TargetCount,BalanceV1.Current.maximumGlobalChains-RestrictionCount,
-            request.MaximumOwnedPins-GetPinnedGemCountForOwner(request.OwnerActor.GetInstanceID())) : request.TargetCount;
+            RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins,NonSpreading=request.NonSpreadingVine,
+            RootDurability=request.RootDurability,RootStyle=request.BarricadeStyle,RootSpreading=request.RootSpreading };
+        int allowed=request.TargetCount;
+        if(request.RootDurability>0) allowed=Mathf.Min(allowed,BalanceV1.Current.maximumGlobalStructures-minedCellOwners.Count-barricadeCells.Count);
         if(allowed<=0) return;
         while (threat.Targets.Count < allowed && candidates.Count > 0)
         {

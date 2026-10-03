@@ -14,15 +14,14 @@ Weakness assignment remains independent of skin/clothing, race and zone gem.
 | Elven Scout | Normal | 60 | 5 | 3s | Bow pressure; focus weakness/stagger |
 | Orc Trailguard | Normal | 90 | 15 | 4.5s | One heavy axe hit, existing shield gate |
 | Elven Mender | Special | 75 | 5 | 5s | Ready after 2 moves; fixed other ally below 75%, +20 after 2 future responses; interrupt/kill target; 2 recovery moves |
-| Orc Rootbinder | Special | 75 | 5 | 5.5s | Ready after 3 moves, one-response warning for up to 2 vines; owner cap 3, shared cap 6, repeat 4 moves |
-| Barkhide Warden | Miniboss | 150 | 15 | 4.5s | Two nonspreading roots, one warning move; 25% reduction once; solve/stagger preparation for 2 future moves of +25% weakness damage |
-| Briar Matriarch | Boss | 240 | 10 | 5s | Ready after 3 moves; fixed wounded ally or self, 2 response moves, +10 per surviving root; solve/stagger exposes for 2 moves |
+| Orc Rootbinder | Special | 75 | 5 | 5.5s | One 1-hit Root, four nonspreading vines; clear a side vine then hit through it |
+| Barkhide Warden | Miniboss | 150 | 15 | 4.5s | One 2-hit spreading Root; all allies take 25% less damage while it lives |
+| Briar Matriarch | Boss | 240 | 10 | 5s | Two 2-hit Heartroots; Renew (2 moves, 20 +20/root AoE heal), Surge (advance vines), Harvest (3 moves, 20 +5/vine damage, consumes vines) |
 
-Matriarch target loss fizzles without retargeting. Warden/Matriarch return to a
-3-move readiness requirement after their two-move recovery/exposure. All roots
-share the canonical six-restriction budget with other pins/freezes. They remain
-matchable and clear through normal board operations. No invulnerability gate,
-extra basic during a channel, same-tick catch-up, or animation-owned heal exists.
+Revised 2026-10-03: vines only obstruct visuals. Both Heartroots destroyed causes
+normal stagger. Exposure and its weakness bonus are removed. Invalid Mender
+targets fizzle without retargeting or stagger. Exact board/save/timing rules:
+[foundation contract](FOUNDATION_CONTRACT.md). Numerical bases remain test tuning.
 
 ## Animation delivery and source checks
 

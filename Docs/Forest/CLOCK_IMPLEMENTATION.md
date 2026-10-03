@@ -30,8 +30,8 @@ contract supplies exact expiry order.
 | Supplies | Two future moves per kind; accepted-use debit; no time recharge | UI feedback |
 | Other cards / affinity / energy | Existing event-driven limits, rewards, refund budgets and persistent modifiers | Choice/reward presentation |
 | Mender | Fixed persistent recipient, two future responses, exactly-once outcome, two future recovery actions | Authored start/hold/release; separate heal/cancel cue |
-| Warden / Matriarch | Nonspreading board anchors, cast sequence, fixed ritual target, future response/exposure/recovery deadlines | Authored motion follows state events; cannot grant effects |
-| Vines | Age and reservations in snapshot; warning on first response, at most one spread after second; independent environment owner | Dedicated vine, amber anchor and warning sprites |
+| Warden / Matriarch | Structural roots, durable cast sequence/cycle, two-move Renew and three-move Harvest; normal stagger; future recovery deadlines | Authored motion follows state events; cannot grant effects |
+| Vines | Cell overlays and saved two-move growth deadline; normal pulse before casts; forced surge keeps deadline; independent environment owner | Dedicated vine, amber anchor and warning sprites |
 | Continuation | Version 2 stores profile, zone, action and next actor identity; owners store timers and pending work; in-flight actions use existing replay journal | Frame deltas reproduce accepted presentation only |
 
 Readiness is calculated for all surviving actors before any actor grants a new
@@ -58,11 +58,8 @@ record seconds as the original timed continuation does; stable saves compact it.
 Unknown schema/profile/zone combinations are rejected while retaining the run.
 Version 1 explicitly means the legacy profile; it is never silently converted.
 
-ChronoShutter restores vine geometry with the board. Surviving nodes retain
-present age, reintroduced nodes get full future grace, dead owners are not
-resurrected, and environmental sources remain separate. Pending enemy warnings
-retain present deadlines and only surviving gem identities. The photograph
-does not restore channel targets, consumed procs or combat tick.
-Nonspreading anchor restoration additionally requires the current producer and
-creation move to match a living cast, preventing old photos from reviving solved
-anchors or donating them to a later ritual.
+ChronoShutter restores vine geometry while keeping the current growth deadline.
+It cannot restore destroyed roots, repair durability, close earned openings or
+revive a dead producer. Pending warnings retain deadlines and surviving gem IDs.
+Channels, effects and combat tick stay in the present. Legacy vine pins upgrade
+to overlays; retired milestone anchors fizzle safely without stagger.

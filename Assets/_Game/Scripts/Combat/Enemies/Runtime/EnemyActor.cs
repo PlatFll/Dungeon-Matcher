@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -49,7 +50,9 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     // Evaluated at impact, so conditional defence cannot lag behind board state.
     public Func<float> IncomingDamageMultiplier { private get; set; }
-    public Func<float> WeaknessDamageMultiplier { private get; set; }
+    private readonly Dictionary<object,Func<float>> sharedDamageReductions=new Dictionary<object,Func<float>>();
+    public void SetSharedDamageReduction(object source,Func<float> multiplier) { if(source!=null) sharedDamageReductions[source]=multiplier; }
+    public void RemoveSharedDamageReduction(object source) { if(source!=null) sharedDamageReductions.Remove(source); }
 
     public event Action<EnemyActor> Initialized;
     public event Action<EnemyActor, int> Healed;
@@ -280,7 +283,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         currentShield = 0;
         damageRedirectTarget = null;
         IncomingDamageMultiplier = null;
-        WeaknessDamageMultiplier = null;
+        sharedDamageReductions.Clear();
         specialTurnRequirementOverride = 0;
 
         currentSpecialTurnCount = 0;
@@ -413,13 +416,10 @@ public sealed partial class EnemyActor : MonoBehaviour
         damageRedirectTarget = null;
     }
 
-    public EnemyDamageResult ResolveWeaknessDamage(int amount) =>
-        ResolveDamageInternal(amount,true,true,true);
-
     private EnemyDamageResult ResolveDamageInternal(
         int amount,
         bool notifyDamageReceived,
-        bool allowDamageRedirect, bool weaknessDamage = false)
+        bool allowDamageRedirect)
     {
         if (!CanReceiveDamage ||
             amount <= 0)
@@ -442,7 +442,7 @@ public sealed partial class EnemyActor : MonoBehaviour
                     .ResolveDamageInternal(
                         amount,
                         notifyDamageReceived,
-                        allowDamageRedirect: false, weaknessDamage: weaknessDamage
+                        allowDamageRedirect: false
                     );
             }
 
@@ -451,9 +451,10 @@ public sealed partial class EnemyActor : MonoBehaviour
 
         float incomingMultiplier = IncomingDamageMultiplier != null
             ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
-        double resolvedDamage = amount * (double)incomingMultiplier;
-        if(weaknessDamage && WeaknessDamageMultiplier!=null)
-            resolvedDamage *= Math.Max(0,WeaknessDamageMultiplier());
+        float sharedReduction=1f;
+        foreach(var reduction in sharedDamageReductions.Values)
+            if(reduction!=null) sharedReduction=Mathf.Min(sharedReduction,Mathf.Clamp01(reduction()));
+        double resolvedDamage = amount * (double)incomingMultiplier * sharedReduction;
 
         bool shieldWasActive =
             currentShield > 0;

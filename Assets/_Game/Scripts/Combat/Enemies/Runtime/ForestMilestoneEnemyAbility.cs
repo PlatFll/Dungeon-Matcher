@@ -5,167 +5,200 @@ using UnityEngine;
 [Serializable]
 public sealed class ForestMilestoneSnapshot
 {
-    public int state, deadline, exposureStarted, sequence, resolvedSequence;
-    public long targetId;
+    public int version, state, deadline, sequence, resolvedSequence, nextAbility, activeAbility;
+    public bool heartrootsArmed;
     public string outcome;
 }
 
-/// <summary>Two reviewed kits sharing board-owned, nonspreading vine anchors.</summary>
+/// <summary>Forest milestone casts; board owns roots/vines and EnemyStagger owns all interruption.</summary>
 [DisallowMultipleComponent]
 public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime,
     IAcceptedMoveEnemyAbility, IEnemyContinuationOwner
 {
-    private EnemyActor actor, target;
+    private EnemyActor actor;
     private BoardController board;
     private IReadOnlyList<EnemyActor> roster;
     private EnemyAutoAttack attack;
     private EnemyStagger stagger;
     private BoardController.GemSetThreat warning;
-    private ForestMilestoneSnapshot value = new ForestMilestoneSnapshot();
-    private bool pending, removing;
-    private bool Ritual => actor.Definition.SpecialAbilityKind == EnemySpecialAbilityKind.GroveRenewal;
-    public bool IsPreparing => value.state == 1;
-    public bool IsProtected => !Ritual && value.state == 2 && board.OwnedVineCount(actor)>0;
-    public bool IsExposed => value.state == 3;
-    public bool BlocksBasic => value.state == 1 || value.state == 3 || value.state == 4;
-    public EnemyActor Target => target;
+    private ForestMilestoneSnapshot value=new ForestMilestoneSnapshot {version=2};
+    private readonly HashSet<EnemyActor> protectedActors=new HashSet<EnemyActor>();
+    private bool pending;
+    private WaveController waves;
+    private bool Ritual => actor.Definition.SpecialAbilityKind==EnemySpecialAbilityKind.GroveRenewal;
+    public bool IsPreparing => value.state==1;
+    public bool IsProtected => isActiveAndEnabled && actor!=null && !actor.IsDefeated && !Ritual && board!=null && board.OwnedRootCount(actor)>0;
+    public bool BlocksBasic => pending || value.state==1 || value.state==4;
     public string Outcome => value.outcome;
     public int ResponseMoves => Mathf.Max(0,value.deadline-(CombatMoveClock.Current?.Tick ?? 0));
-    public float WeaknessMultiplier => IsExposed &&
-        (CombatMoveClock.EffectAction>value.exposureStarted || !board.IsBusy) ? 1.25f : 1f;
+    public int ChannelMoves => !Ritual?1:value.activeAbility==2?actor.Definition.ForestHarvestChannelMoves:actor.Definition.ForestRenewalChannelMoves;
+    public string CastName => !Ritual?"ROOT":value.activeAbility==0?"RENEW":value.activeAbility==1?"SURGE":"HARVEST";
+    public int RootCount => board!=null?board.OwnedRootCount(actor):0;
     public event Action Changed;
 
-    public void InitializeSpecialAbility(EnemyActor owner, BoardController initializedBoard, IReadOnlyList<EnemyActor> enemies)
+    public void InitializeSpecialAbility(EnemyActor owner,BoardController initializedBoard,IReadOnlyList<EnemyActor> enemies)
     {
         actor=owner;board=initializedBoard;roster=enemies;
         attack=actor.GetComponent<EnemyAutoAttack>();stagger=actor.GetComponent<EnemyStagger>();
-        actor.Defeated+=Died;
+        actor.Defeated+=Died;board.RootsChanged+=RootsChanged;
         if(stagger!=null) stagger.StaggerApplied+=Interrupted;
-        actor.IncomingDamageMultiplier=ProtectionMultiplier;
-        actor.WeaknessDamageMultiplier=()=>WeaknessMultiplier;
+        waves=RunSession.Current?.Waves;
+        if(waves!=null) waves.EnemySpawned+=ProtectSpawned;
+        BindProtection();
     }
-    private float ProtectionMultiplier() => IsProtected?.75f:1f;
+    private void ProtectSpawned(EnemyActor member)
+    {
+        if(!Ritual && member!=null && protectedActors.Add(member))
+            member.SetSharedDamageReduction(this,()=>IsProtected?.75f:1f);
+    }
+    private void BindProtection()
+    {
+        if(Ritual) return;
+        ProtectSpawned(actor);
+        foreach(var member in roster) ProtectSpawned(member);
+    }
     private void LateUpdate()
     {
-        // Free skills may solve anchors without advancing the accepted clock.
-        // Observe their settled result before the next input or stable save.
-        if(actor==null || actor.IsDefeated || board.IsBusy || pending || removing) return;
-        CheckSolved();
+        if(actor==null || actor.IsDefeated) return;
+        BindProtection();
+        if(!board.IsBusy && !pending) CheckPreparation();
     }
-    private void CheckSolved()
+    private void RootsChanged()
     {
-        if((value.state==2 || (Ritual && value.state==1)) && board.OwnedVineCount(actor)==0)
-            Finish("Anchors cleared",true,false);
-        else if(Ritual && value.state==1 && !Living(target)) Finish("Target lost",false,false);
+        if(actor==null || actor.IsDefeated || pending) return;
+        if(Ritual && value.heartrootsArmed && RootCount==0)
+        {
+            value.heartrootsArmed=false;
+            if(IsPreparing) Finish("Interrupted",true);
+            else { value.outcome="Heartroots broken";stagger?.ApplyStagger(1,1);Publish(); }
+        }
+        if(!Ritual && value.state==2 && RootCount==0)
+        { value.state=0;actor.ResetSpecialCounter();Publish(); }
+    }
+    private void CheckPreparation()
+    {
+        RootsChanged();
+        if(!Ritual && IsPreparing && (warning==null || warning.Ended))
+            Finish(warning?.PlayerInterrupted==true?"Interrupted":"Target lost",warning?.PlayerInterrupted==true);
     }
     public void ResolveAcceptedMove()
     {
         if(actor==null || actor.IsDefeated || !CombatMoveClock.CanOffer(actor) || pending) return;
-        CheckSolved();
-        int tick=CombatMoveClock.Current.Tick;
-        if(value.state==3 || value.state==4) return;
-        if(value.state==2) return;
-        if(value.state==1)
+        CheckPreparation();
+        if(value.state==2 || value.state==4 || (stagger!=null && stagger.IsStaggered)) return;
+        if(IsPreparing)
         {
-            if(tick<value.deadline) return;
-            if(Ritual) { Finish("Renewed",false,true);return; }
-            if(warning==null || warning.Ended) { Finish("Anchors cleared",true,false);return; }
-            if(!actor.TryBeginSpecialAbilityAnimationAction()) return;
-            pending=true;
-            if(!board.TryQueueResolveVines(warning,success=>
+            if(CombatMoveClock.Current.Tick<value.deadline) return;
+            if(!Ritual)
             {
-                pending=false;warning=null;
-                actor.EndSpecialAbilityAnimationAction();
-                if(actor.IsDefeated) return;
-                if(success && board.OwnedVineCount(actor)>0) { value.state=2;value.outcome="Planted";Publish(); }
-                else Finish("Anchors cleared",true,false);
-            })) { pending=false;actor.EndSpecialAbilityAnimationAction();Finish("Anchors cleared",true,false); }
+                pending=true;Publish();
+                if(!board.TryQueueResolveVines(warning,ok=>
+                {
+                    pending=false;warning=null;
+                    if(actor==null || actor.IsDefeated) return;
+                    if(ok && RootCount>0) {value.state=2;value.outcome="Planted";value.resolvedSequence=value.sequence;Publish();}
+                    else Finish("Target lost",false);
+                })) {pending=false;Finish("Target lost",false);}
+            }
+            else if(value.activeAbility==0)
+            {
+                int amount=actor.Definition.ForestRenewalBaseHeal+actor.Definition.ForestHeartrootHealBonus*RootCount;
+                Finish("Renewed",false); // terminal identity before any heal callback
+                foreach(var member in new List<EnemyActor>(roster))
+                    if(member!=null && member.IsInitialized && !member.IsDefeated) member.RestoreHealth(amount);
+            }
+            else if(value.activeAbility==2)
+            {
+                pending=true;Publish();int sequence=value.sequence;
+                if(!board.QueueVineHarvest(actor,count=>
+                {
+                    if(actor==null || actor.IsDefeated || !IsPreparing || value.sequence!=sequence) return;
+                    Finish("Harvested",false);
+                    int damage=CombatAmounts.Round(actor.Definition.ForestHarvestBaseDamage*actor.RuntimeStats.DamageMultiplier)+
+                        actor.Definition.ForestHarvestDamagePerVine*count;
+                    attack?.PlayerTarget?.TryTakeDamage(damage,actor);
+                },ok=>{pending=false;if(!ok && IsPreparing) Finish("Fizzled",false);Publish();}))
+                {pending=false;Finish("Fizzled",false);}
+            }
             return;
         }
-        if(!actor.IsSpecialReady || (stagger!=null && stagger.IsStaggered)) return;
-        var selected=Ritual?SelectRecipient():null;
-        if(Ritual && !Living(selected)) return;
-        if(!actor.TryBeginSpecialAbilityAnimationAction()) return;
-        pending=true;value.sequence++;value.outcome=null;
-        if(Ritual)
+        if(!actor.IsSpecialReady || !actor.TryBeginSpecialAbilityAnimationAction()) return;
+        value.sequence++;value.outcome=null;value.activeAbility=Ritual?value.nextAbility:0;
+        pending=true;Publish();
+        if(!Ritual)
         {
-            target=selected;value.targetId=target.PersistentId;target.Defeated+=RecipientDied;
-            if(!board.TryQueueVineAnchors(actor,2,success=>Started(success,null))) Started(false,null);
+            if(!board.TryQueueRootWarning(actor,1,2,false,true,w=>Started(w!=null,w))) Started(false,null);
         }
-        else if(!board.TryQueueVineWarning(actor,2,2,result=>Started(result!=null,result),true)) Started(false,null);
+        else if(value.activeAbility==0 && RootCount==0)
+        {
+            if(!board.TryQueuePlantRoots(actor,2,2,true,true,ok=>Started(ok,null))) Started(false,null);
+        }
+        else Started(true,null);
     }
-    private void Started(bool success, BoardController.GemSetThreat result)
+    private void Started(bool success,BoardController.GemSetThreat result)
     {
         pending=false;actor.EndSpecialAbilityAnimationAction();
-        if(actor.IsDefeated) { board.RemoveVineSource(actor);return; }
-        if(!success || (stagger!=null && stagger.IsStaggered) || (Ritual && !Living(target)))
+        if(actor.IsDefeated) {board.RemoveVineSource(actor);return;}
+        if(!success || (stagger!=null && stagger.IsStaggered))
         {
-            Unlink();board.RemoveVineSource(actor);actor.ResetSpecialCounter();
-            value.state=4;value.deadline=CombatMoveClock.EffectAction+2;Publish();return;
+            value.state=1;Finish(stagger?.IsStaggered==true?"Interrupted":"Fizzled",false);return;
         }
         warning=result;value.state=1;
-        value.deadline=Ritual?CombatMoveClock.EffectAction+2:warning.DueMove;
+        if(Ritual && RootCount==2) value.heartrootsArmed=true;
+        value.deadline=!Ritual?warning.DueMove:CombatMoveClock.EffectAction+ChannelMoves;
         actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();Publish();
-    }
-    private EnemyActor SelectRecipient()
-    {
-        EnemyActor best=null;
-        foreach(var candidate in roster)
+        if(Ritual && value.activeAbility==1)
         {
-            if(!Living(candidate) || candidate==actor || candidate.CurrentHealth*4L>=candidate.MaxHealth*3L) continue;
-            if(best==null || candidate.CurrentHealth*(long)best.MaxHealth<best.CurrentHealth*(long)candidate.MaxHealth ||
-                (candidate.CurrentHealth*(long)best.MaxHealth==best.CurrentHealth*(long)candidate.MaxHealth && candidate.PersistentId<best.PersistentId)) best=candidate;
+            pending=true;
+            if(!board.QueueVineSurge(actor,ok=>{pending=false;Finish(ok?"Surged":"Fizzled",false);}))
+            {pending=false;Finish("Fizzled",false);}
         }
-        return best ?? actor;
     }
-    private static bool Living(EnemyActor enemy) => enemy!=null && enemy.IsInitialized && !enemy.IsDefeated;
-    private void Finish(string outcome,bool exposure,bool heal)
+    private void Finish(string outcome,bool applyStagger)
     {
-        if(value.state!=1 && value.state!=2) return;
-        if(value.resolvedSequence==value.sequence) return;
-        int amount=heal && Living(target)?Mathf.Min(2,board.OwnedVineCount(actor))*10:0;
+        if(!IsPreparing || value.resolvedSequence==value.sequence) return;
         value.resolvedSequence=value.sequence;value.outcome=outcome;
-        value.state=exposure?3:4;value.exposureStarted=CombatMoveClock.EffectAction;
-        value.deadline=value.exposureStarted+2;
-        // Consume before callbacks; neither the release clip nor reentrancy can heal twice.
-        if(amount>0 && !actor.IsDefeated) target.RestoreHealth(amount);
-        Unlink();removing=true;board.RemoveVineSource(actor);removing=false;warning=null;
+        value.state=4;value.deadline=CombatMoveClock.EffectAction+2;
+        if(Ritual) value.nextAbility=(value.activeAbility+1)%3;
+        if(warning!=null) board.CancelGemSetThreat(warning);warning=null;
+        actor.ResetSpecialCounter();
+        // Existing rank duration, immunity, meter and presentation remain authoritative.
+        if(applyStagger) stagger?.ApplyStagger(1,1);
         Publish();
     }
     public void ExpireAcceptedMove(int tick)
     {
         if(actor==null || actor.IsDefeated) return;
-        if((value.state==3 || value.state==4) && tick>=value.deadline)
-        {
-            value.state=0;actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);Publish();
-        }
+        if(value.state==4 && tick>=value.deadline)
+        {value.state=0;actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);Publish();}
     }
-    private void Publish() { attack?.SetActionPaused(this,BlocksBasic);Changed?.Invoke(); }
-    private void Unlink() { if(target!=null) target.Defeated-=RecipientDied;target=null; }
-    private void RecipientDied(EnemyActor owner) { if(!pending) Finish("Target lost",false,false); }
+    private void Publish() {attack?.SetActionPaused(this,BlocksBasic);Changed?.Invoke();}
     private void Interrupted(EnemyStagger source,float duration,float remaining)
-    { if(IsPreparing) Finish("Interrupted",true,false); }
-    private void Died(EnemyActor owner)
-    { Unlink();board.RemoveVineSource(actor);attack?.SetActionPaused(this,false); }
+    {if(IsPreparing) Finish("Interrupted",false);}
+    private void Died(EnemyActor owner) {board.RemoveVineSource(actor);attack?.SetActionPaused(this,false);}
     public void CaptureContinuation(EnemyCombatSnapshot saved,Func<EnemyActor,int> slotOf)
-    { saved.forestMilestone=JsonUtility.FromJson<ForestMilestoneSnapshot>(JsonUtility.ToJson(value)); }
+    {saved.forestMilestone=JsonUtility.FromJson<ForestMilestoneSnapshot>(JsonUtility.ToJson(value));}
     public void RestoreContinuation(EnemyCombatSnapshot saved,Func<int,EnemyActor> enemyAt)
     {
-        Unlink();value=saved.forestMilestone==null?new ForestMilestoneSnapshot():
+        value=saved.forestMilestone==null?new ForestMilestoneSnapshot {version=2}:
             JsonUtility.FromJson<ForestMilestoneSnapshot>(JsonUtility.ToJson(saved.forestMilestone));
-        warning=board.RestoredVineCast(actor);
-        if(Ritual && IsPreparing)
+        if(value.version<2)
         {
-            foreach(var enemy in roster) if(Living(enemy) && enemy.PersistentId==value.targetId) target=enemy;
-            if(target==null) throw new InvalidOperationException("Saved ritual target is missing.");
-            target.Defeated+=RecipientDied;
+            // Previous anchors/exposure are retired. Preserve the attempt, with
+            // an old pending milestone safely fizzled rather than applying it twice.
+            value.version=2;value.state=4;value.outcome="Rules updated";
+            value.resolvedSequence=value.sequence;value.deadline=CombatMoveClock.EffectAction+2;
+            value.nextAbility=0;value.heartrootsArmed=false;
         }
-        Publish();
+        warning=board.RestoredVineCast(actor);BindProtection();Publish();
     }
     private void OnDisable()
     {
-        if(actor!=null) { actor.Defeated-=Died;actor.IncomingDamageMultiplier=null;actor.WeaknessDamageMultiplier=null;board?.RemoveVineSource(actor); }
+        if(actor!=null) {actor.Defeated-=Died;board?.RemoveVineSource(actor);}
+        if(board!=null) board.RootsChanged-=RootsChanged;
         if(stagger!=null) stagger.StaggerApplied-=Interrupted;
-        Unlink();attack?.SetActionPaused(this,false);
+        if(waves!=null) waves.EnemySpawned-=ProtectSpawned;
+        foreach(var member in protectedActors) if(member!=null) member.RemoveSharedDamageReduction(this);
+        protectedActors.Clear();attack?.SetActionPaused(this,false);
     }
 }

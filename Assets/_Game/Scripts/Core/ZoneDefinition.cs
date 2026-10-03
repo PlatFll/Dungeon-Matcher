@@ -20,4 +20,7 @@ public sealed class ZoneDefinition : ScriptableObject
     public GameplayThemeDefinition theme;
     [Tooltip("Optional zone loop; temporary music remains labelled in its source manifest.")]
     public AudioClip music;
+    public bool growsVines;
+    [Min(1)] public int vineCadenceMoves = 2;
+    [Range(4,64)] public int maximumVineOverlays = 24;
 }

@@ -46,7 +46,7 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null) return false;
+        if(saved==null || saved.board?.forestRulesVersion>2) return false;
         // JsonUtility materializes null nested serializable classes on a
         // round trip. The schema, not the presence of a default object, owns
         // the profile. Version 1 always retains its original seconds rules.

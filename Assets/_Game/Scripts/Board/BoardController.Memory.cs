@@ -69,31 +69,29 @@ public partial class BoardController
     {
         if (!CanCaptureContinuation || ownerAtKey == null || !IsValidBoardMemory(memory)) return false;
         var saved = JsonUtility.FromJson<BoardCombatSnapshot>(JsonUtility.ToJson(memory));
-        // Restored vines are board objects, but their clocks stay in the present.
-        // A removed/recreated node receives full future grace; surviving nodes
-        // keep their current age. Dead producers cannot be resurrected by a photo.
-        var currentVines=CaptureVines(_=>-1);
-        // A photo can rearrange surviving ritual anchors, but cannot resurrect
-        // a solved/finished cast or transfer old anchors into a newer cast.
-        // The board compares its own producer and creation epoch, independent
-        // of the character kit that created the nonspreading roots.
-        if(saved.vines!=null)
+        // A photograph restores the layout, never root durability, solved roots,
+        // or the independent present-day zone growth deadline.
+        var currentRoots=new Dictionary<int,BarricadeCellState>();
+        foreach(var root in barricadeCells.Values) if(IsRoot(root)) currentRoots[root.RootId]=root;
+        var reopenedMines = new List<Vector2Int>();
+        foreach(var cell in saved.cells)
         {
-            var expired=saved.vines.FindAll(n=>n.nonSpreading &&
-                !currentVines.Exists(c=>c.nonSpreading && c.ownerId==n.ownerId && c.bornMove==n.bornMove));
-            foreach(var node in expired)
+            if(cell.barricadeStyle!=EnemyBarricadeStyle.Root && cell.barricadeStyle!=EnemyBarricadeStyle.Heartroot) continue;
+            if(!cell.barricade) continue;
+            if(!currentRoots.TryGetValue(cell.rootId,out var root) || !Living(ownerAtKey(cell.barricadeOwner)))
+            { cell.barricade=false;reopenedMines.Add(new Vector2Int(cell.x,cell.y)); }
+            else
             {
-                var cell=saved.cells.Find(c=>c.identity==node.gemId);
-                if(cell!=null) cell.pinned=cell.frozen=cell.movable=false;
-                saved.vines.Remove(node);
+                cell.durability=root.RemainingDurability;cell.openRootSides=root.OpenRootSides;
+                // Preserve earned openings as well as durability; a photograph
+                // cannot put its older vine back over an exposed root side.
+                foreach(var direction in BarricadeHitDirections)
+                    if((root.OpenRootSides&SideBit(direction))!=0 && !IsCellVined(cell.x+direction.x,cell.y+direction.y))
+                        saved.vines?.RemoveAll(n=>n.x==cell.x+direction.x && n.y==cell.y+direction.y);
             }
         }
-        if(saved.vines!=null) foreach(var node in saved.vines)
-        {
-            var current=currentVines.Find(n=>n.gemId==node.gemId);
-            node.bornMove=current!=null?current.bornMove:completedValidPlayerMoves;
-        }
-        var reopenedMines = new List<Vector2Int>();
+        if(saved.vines!=null) saved.vines.RemoveAll(n=>
+            (n.rootId>0 && !currentRoots.ContainsKey(n.rootId)) || (!n.environmental && !Living(VineOwner(n.ownerId))));
         foreach (var cell in saved.cells)
         {
             bool environmental=saved.vines!=null && saved.vines.Exists(n=>n.gemId==cell.identity && n.environmental);
@@ -165,6 +163,7 @@ public partial class BoardController
             else GemSetMarked?.Invoke(set.Key);
         }
         isBusy = false;
+        RootsChanged?.Invoke();
         BoardStateRestored?.Invoke();
         return true;
     }

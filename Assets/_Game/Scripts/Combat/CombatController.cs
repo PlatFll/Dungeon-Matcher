@@ -198,7 +198,7 @@ public sealed class CombatController : MonoBehaviour
             }
 
             EnemyDamageResult result =
-                enemy.ResolveWeaknessDamage(resolvedTargetDamage);
+                enemy.ResolveDirectDamage(resolvedTargetDamage);
 
             if (!result.Applied)
             {

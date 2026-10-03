@@ -98,12 +98,6 @@ public sealed class PinnedGemOverlayView :
 
     private void LateUpdate()
     {
-        var theme=GameplayThemeSkin.Current;
-        if(overlayRenderer!=null && boardController!=null && theme!=null && boardController.IsVineGem(gem,out bool anchor))
-        {
-            var sprite=anchor?theme.anchorOverlay:theme.vineOverlay;
-            if(sprite!=null) { overlayRenderer.sprite=sprite;overlayRenderer.enabled=true; }
-        }
         if (released ||
             gem == null ||
             trackedRenderers.Count == 0)

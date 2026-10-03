@@ -45,6 +45,7 @@ public sealed class RunCombatSnapshot
 {
     public int width, height, moves, nextBanner, nextGem;
     public uint refillRandom;
+    public int forestRulesVersion, nextRootId, nextVineGrowthMove;
     public List<BoardCellSnapshot> cells = new List<BoardCellSnapshot>();
     public List<BoardWarningSnapshot> warnings = new List<BoardWarningSnapshot>();
     public List<VineNodeSnapshot> vines = new List<VineNodeSnapshot>();
@@ -59,6 +60,9 @@ public sealed class RunCombatSnapshot
     public bool pinned, frozen, movable, mined, barricade, banner, reachedBottom;
     public int durability, maximumDurability, bannerId;
     public EnemyBarricadeStyle barricadeStyle;
+    public int rootId, openRootSides;
+    public long rootOwnerId;
+    public bool rootSpreading;
 }
 [Serializable] public sealed class BoardWarningSnapshot
 {
@@ -66,6 +70,9 @@ public sealed class RunCombatSnapshot
     public int kind, owner, dueMove, row, column;
     public bool restoration, vine, environmental, nonSpreading;
     public int vineLimit, parentGemId;
+    public int rootDurability;
+    public EnemyBarricadeStyle rootStyle;
+    public bool rootSpreading, playerInterrupted;
     public List<int> targets = new List<int>();
 }
 [Serializable] public sealed class EnemyCombatSnapshot
@@ -76,6 +83,7 @@ public sealed class RunCombatSnapshot
     public int poisonMoveTicks, poisonNextMove, rallyExpiryMove;
     public EnemyChannelSnapshot channel;
     public ForestMilestoneSnapshot forestMilestone;
+    public string rootbinderOutcome;
     public int slot, health, shield, specialTurns, specialRequirement;
     public GemType weakness;
     public float attackRemaining, attackSpeed;

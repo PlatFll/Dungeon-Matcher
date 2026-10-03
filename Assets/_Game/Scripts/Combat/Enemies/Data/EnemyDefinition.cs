@@ -294,6 +294,20 @@ public sealed class EnemyDefinition : ScriptableObject
     public EnemyDefinition[] RoyalReinforcements => royalReinforcements;
     public EnemyDefinition RequiredBossEscort => requiredBossEscort;
 
+    [Header("Forest ritual tuning")]
+    [SerializeField,Min(0)] private int forestRenewalBaseHeal=20;
+    [SerializeField,Min(0)] private int forestHeartrootHealBonus=20;
+    [SerializeField,Min(0)] private int forestHarvestBaseDamage=20;
+    [SerializeField,Min(0)] private int forestHarvestDamagePerVine=5;
+    [SerializeField,Min(1)] private int forestRenewalChannelMoves=2;
+    [SerializeField,Min(1)] private int forestHarvestChannelMoves=3;
+    public int ForestRenewalBaseHeal=>forestRenewalBaseHeal;
+    public int ForestHeartrootHealBonus=>forestHeartrootHealBonus;
+    public int ForestHarvestBaseDamage=>forestHarvestBaseDamage;
+    public int ForestHarvestDamagePerVine=>forestHarvestDamagePerVine;
+    public int ForestRenewalChannelMoves=>forestRenewalChannelMoves;
+    public int ForestHarvestChannelMoves=>forestHarvestChannelMoves;
+
     [Header("Spawn Rules")]
 
     [SerializeField, Min(1)]

@@ -1,0 +1,56 @@
+CURRENT REVIEW — 2026-10-03
+Six designs approved and locked without pixel edits: Elven Thornkeeper,
+Orc Berserker, Orc Bloomcaller, Snapvine, Orc Drummer and Briar Archer.
+APPROVED_DESIGNS.json records exact source hashes. No new animation or playable
+kit has been created for this roster. Original Ancient Treant is rejected.
+
+Replacement Treants in TreantVariants/: A Hollow Oak, B Weeping Willow,
+C Old Stump. All 96x96; opaque palettes 11 / 23 / 33; binary transparency.
+Original PNGs remain unchanged. Fine interior texture is visible, particularly
+on B/C; final palette/shading cleanup remains separate from identity approval.
+Native-comparison.png places them beside current Warden and Matriarch at 1x.
+Treant-options-3x.png uses exact nearest-neighbor enlargement for review.
+
+Actual still-batch usage: 50/60 generations (35 initial +15 alternatives).
+10 remain. Balance 1776 -> 1726. No purchases or active generation jobs.
+Gameplay work resumed separately under the user's latest explicit request.
+Stop for Treant selection; do not animate these newly approved designs.
+
+HISTORICAL INITIAL DELIVERY (superseded approval/pause status follows)
+-----------------------------------------------------------------
+Forest roster concept stills — 2026-10-03
+
+User paused all gameplay revisions. This delivery contains only seven new
+PixelLab concept candidates, their original transparent PNGs, measured file
+properties, and neutral-background comparisons. No production PNGs, Unity assets,
+gameplay, design rules or tests were changed. Nothing committed, merged or published.
+
+Actual PixelLab usage: 35 generations (7 jobs at 5 each).
+Opening balance 1776 remaining / 224 used; closing 1741 / 259.
+25 generations remain within the proposed 60 ceiling, reserved for user revisions.
+No credit purchases. No animation requests or jobs remain running.
+
+Candidate                Native canvas   Opaque colors
+Elven Thornkeeper        64 x 64         25
+Orc Berserker            64 x 64         42
+Orc Bloomcaller          64 x 64         63
+Snapvine                 64 x 64         30
+Orc Drummer              64 x 64         30
+Briar Archer             64 x 64         29
+Ancient Treant           96 x 96         25
+
+All seven have binary alpha (0 / 255). These are untouched generated candidates,
+not final guide-colored sprites. Their palettes contain more shades than the
+approved cast (13–17); Bloomcaller and Berserker particularly need material-based
+palette simplification if selected. No automatic quantization was applied.
+Treant has 12 pixels of transparent bottom padding; its placement is not locked.
+Snapvine deliberately has a smaller occupied silhouette on a 64-pixel canvas.
+
+Concepts-3x.png enlarges every source by exactly three with nearest sampling.
+Native-comparison.png presents actual PNGs beside the approved forest cast at 1x;
+canvas origins are aligned, without shifting drawings within their canvases.
+manifest.json independently records each PNG's dimensions, palette, alpha,
+occupied bounds and SHA-256. Neither comparison is a game spritesheet.
+
+Await the user's keep/regenerate selections. Do not resume gameplay revisions,
+animate or import these candidates without a new instruction.

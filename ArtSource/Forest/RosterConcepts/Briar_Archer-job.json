@@ -1,0 +1,28 @@
+{
+  "name": "Briar_Archer",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"db524197-efdb-4539-91d8-60e31e146f5a\",\n  \"image_id\": \"0745980f-209d-5d6d-9ba4-2fcc5717783e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"0745980f-209d-5d6d-9ba4-2fcc5717783e\",\n  \"job_id\": \"db524197-efdb-4539-91d8-60e31e146f5a\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/db524197-efdb-4539-91d8-60e31e146f5a/download\"\n}\nPoll get_image(job_id=\"db524197-efdb-4539-91d8-60e31e146f5a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "db524197-efdb-4539-91d8-60e31e146f5a",
+      "image_id": "0745980f-209d-5d6d-9ba4-2fcc5717783e",
+      "status": "processing",
+      "source_image_id": "0745980f-209d-5d6d-9ba4-2fcc5717783e",
+      "job_id": "db524197-efdb-4539-91d8-60e31e146f5a",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/db524197-efdb-4539-91d8-60e31e146f5a/download"
+    },
+    "isError": false
+  }
+}

@@ -18,7 +18,7 @@ public partial class BoardController
     public BoardCombatSnapshot CaptureContinuation(Func<int,int> ownerSlot)
     {
         if(!CanCaptureContinuation) throw new InvalidOperationException("Board is resolving an action.");
-        var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState };
+        var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState, forestRulesVersion=2,nextRootId=nextRootId,nextVineGrowthMove=nextVineGrowthMove };
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
@@ -38,6 +38,8 @@ public partial class BoardController
                 value.barricade=true; value.barricadeOwner=ownerSlot(barricade.OwnerInstanceId);
                 value.durability=barricade.RemainingDurability; value.maximumDurability=barricade.MaximumDurability;
                 value.barricadeStyle=barricade.Style;
+                value.rootId=barricade.RootId;value.rootOwnerId=barricade.RootOwnerId;
+                value.openRootSides=barricade.OpenRootSides;value.rootSpreading=barricade.RootSpreading;
             }
             if(royalBannerCells.TryGetValue(cell,out var banner))
             {
@@ -53,7 +55,8 @@ public partial class BoardController
         foreach(var set in gemSetThreats) if(!set.Ended && (set.Environmental || (set.Owner!=null && !set.Owner.IsDefeated)))
         {
             var warning=new BoardWarningSnapshot { kind=1,owner=set.Owner!=null?ownerSlot(set.Owner.GetInstanceID()):-1,dueMove=set.DueMove,restoration=set.RestorationPresentation,
-                vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId,nonSpreading=set.NonSpreading };
+                vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId,nonSpreading=set.NonSpreading,rootDurability=set.RootDurability,rootStyle=set.RootStyle,
+                rootSpreading=set.RootSpreading,playerInterrupted=set.PlayerInterrupted };
             foreach(var gem in set.Targets) if(gem!=null && GetGem(gem.Column,gem.Row)==gem) warning.targets.Add(CellIndex(gem));
             saved.warnings.Add(warning);
         }
@@ -70,10 +73,13 @@ public partial class BoardController
             throw new InvalidOperationException("Saved board does not match the scene layout.");
         gems=new Gem[width,height]; completedValidPlayerMoves=saved.moves; nextRoyalBannerId=saved.nextBanner;
         RestoreRefillRandom(saved.refillRandom);
+        nextRootId=saved.nextRootId;
+        nextVineGrowthMove=saved.forestRulesVersion>=2?saved.nextVineGrowthMove:saved.moves+2;
         RestoreSnapshotCells(saved, ownerAtSlot);
         nextGemIdentity=Mathf.Max(nextGemIdentity,saved.nextGem);
         foreach(var warning in saved.warnings)
         {
+            if(warning.vine && warning.rootDurability<=0) continue; // Retired pin/anchor warnings fizzle on upgrade.
             var owner=ownerAtSlot(warning.owner);
             if(owner==null && !warning.environmental) throw new InvalidOperationException("Saved warning has no living owner.");
             if(warning.kind==0)
@@ -84,7 +90,8 @@ public partial class BoardController
             else if(warning.kind==1)
             {
                 var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration,Vine=warning.vine,Environmental=warning.environmental,
-                    VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId,NonSpreading=warning.nonSpreading };
+                    VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId,NonSpreading=warning.nonSpreading,RootDurability=warning.rootDurability,RootStyle=warning.rootStyle,
+                    RootSpreading=warning.rootSpreading,PlayerInterrupted=warning.playerInterrupted };
                 foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
                 gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
             }
@@ -107,7 +114,7 @@ public partial class BoardController
                 var gem=CreateGem(value.x,value.y,value.type,GetLocalPosition(value.x,value.y));
                 if(value.identity>0) { gem.BoardIdentity=value.identity; nextGemIdentity=Mathf.Max(nextGemIdentity-1,value.identity); }
                 gem.SetSpecialType(value.special);
-                if(value.pinned)
+                if(value.pinned && !(saved.forestRulesVersion<2 && saved.vines!=null && saved.vines.Exists(n=>n.gemId==value.identity)))
                 {
                     bool environmental=saved.vines!=null && saved.vines.Exists(n=>n.gemId==value.identity && n.environmental);
                     int owner=environmental?EnvironmentalVineOwner:ownerAtSlot(value.pinOwner)?.GetInstanceID() ?? 0;
@@ -130,7 +137,9 @@ public partial class BoardController
             if(value.barricade)
             {
                 var barrier=new BarricadeCellState { OwnerInstanceId=ownerAtSlot(value.barricadeOwner)?.GetInstanceID() ?? 0,
-                    RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle };
+                    RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle,
+                    RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides };
+                nextRootId=Mathf.Max(nextRootId,value.rootId);
                 barricadeCells.Add(cell,barrier); CreateOrRefreshBarricadeView(cell,barrier);
             }
             if(value.banner)

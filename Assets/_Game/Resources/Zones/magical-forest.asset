@@ -29,7 +29,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
-  - label: Vine response
+  - label: Root response
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -77,3 +77,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
   theme: {fileID: 11400000, guid: bffdd5aff9a7fb24498037e82eef2a00, type: 2}
   music: {fileID: 8300000, guid: 2730da224bfb41d4fa8265e76aeaa352, type: 3}
+  growsVines: 1
+  vineCadenceMoves: 2
+  maximumVineOverlays: 24

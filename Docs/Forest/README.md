@@ -17,7 +17,8 @@ The **Fixtures** submenu starts any of the six enemies alone, Rootbinder with
 attackers, Warden with Scout/Trailguard, or Matriarch with attackers/Rootbinder.
 The default encounter demonstrates Trailguard + Mender + Scout. Thirteen small
 formations loop through the existing endless pipeline. Mender alone deliberately
-has no eligible heal recipient; damage Matriarch to demonstrate its self target.
+has no eligible heal recipient; damage Matriarch/allies to demonstrate her AoE Renew.
+The revised root/vine rules are in FOUNDATION_CONTRACT.md; exposure is retired.
 
 New tests use **seconds basics and move-based abilities**. Earlier move-profile
 saves keep their recorded rules. Buffs, stagger, poison and supply cooldowns retain
@@ -29,7 +30,8 @@ the basic countdown; a special hold resumes its stored seconds afterward.
 - [Production inventory and kit values](PRODUCTION_REVIEW.md)
 - [Timing and save contract](FOUNDATION_CONTRACT.md)
 - [Timer ownership/profile details](CLOCK_IMPLEMENTATION.md)
-- [Executed evidence](../Validation/FOREST_PRODUCTION_PHASE_05_06.md)
+- [Current root revision evidence](../Validation/FOREST_ROOT_REVISION.md)
+- [Earlier production evidence](../Validation/FOREST_PRODUCTION_PHASE_05_06.md)
 - `ArtSource/Forest/Production/Selected/Review.html`: true-timing animation player,
   native/2×/3× display, still frames, modular art, Unity captures and music.
 - `ArtSource/Forest/Production/Selected/animation-manifest.json`: every native

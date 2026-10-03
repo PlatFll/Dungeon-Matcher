@@ -1,0 +1,28 @@
+{
+  "name": "Snapvine",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"49c9f0b7-e249-441e-a2bb-dc34479841bd\",\n  \"image_id\": \"123387cf-7d10-5b4a-bf87-2f8443ff7d04\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"123387cf-7d10-5b4a-bf87-2f8443ff7d04\",\n  \"job_id\": \"49c9f0b7-e249-441e-a2bb-dc34479841bd\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/49c9f0b7-e249-441e-a2bb-dc34479841bd/download\"\n}\nPoll get_image(job_id=\"49c9f0b7-e249-441e-a2bb-dc34479841bd\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "49c9f0b7-e249-441e-a2bb-dc34479841bd",
+      "image_id": "123387cf-7d10-5b4a-bf87-2f8443ff7d04",
+      "status": "processing",
+      "source_image_id": "123387cf-7d10-5b4a-bf87-2f8443ff7d04",
+      "job_id": "49c9f0b7-e249-441e-a2bb-dc34479841bd",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/49c9f0b7-e249-441e-a2bb-dc34479841bd/download"
+    },
+    "isError": false
+  }
+}

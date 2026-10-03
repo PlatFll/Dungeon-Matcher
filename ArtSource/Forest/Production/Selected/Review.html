@@ -31,7 +31,7 @@ a{color:#ccdf9c}.banner{padding:14px;border-left:4px solid #bba06c;background:#2
 <p><a href="animation-manifest.json">Native dimensions, palettes, frame bounds, timings and pivots</a> · <a href="modular-manifest.json">Modular image checks</a></p>
 <script>
 const actors=[],scale=document.querySelector('#scale');
-const roles={Elven_Scout:'60 HP · 5 damage · 3 seconds · bow shot',Orc_Trailguard:'90 HP · 15 damage · 4.5 seconds · heavy axe strike',Elven_Mender:'75 HP · 5 damage · 5 seconds · fixed ally heal, two response moves',Orc_Rootbinder:'75 HP · 5 damage · 5.5 seconds · telegraphed spreading roots',Barkhide_Warden:'150 HP · 15 damage · 4.5 seconds · root protection and exposed counterplay',Briar_Matriarch:'240 HP · 10 damage · 5 seconds · two-anchor renewal ritual'};
+const roles={Elven_Scout:'60 HP · 5 damage · 3 seconds · bow shot',Orc_Trailguard:'90 HP · 15 damage · 4.5 seconds · heavy axe strike',Elven_Mender:'75 HP · 5 damage · 5 seconds · fixed ally heal, two response moves',Orc_Rootbinder:'75 HP · 5 damage · 5.5 seconds · one-hit Root with four nonspreading vines',Barkhide_Warden:'150 HP · 15 damage · 4.5 seconds · two-hit Root protects all allies; clear a side then strike',Briar_Matriarch:'240 HP · 10 damage · 5 seconds · two Heartroots; AoE Renew, Surge and vine-consuming Harvest'};
 fetch('animation-manifest.json').then(r=>r.json()).then(data=>{
  for(const name of Object.keys(roles)){
   const clips=data.clips.filter(c=>c.name===name),card=document.createElement('article');card.className='card';

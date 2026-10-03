@@ -6,160 +6,26 @@ using UnityEngine;
 [Serializable]
 public sealed class VineNodeSnapshot
 {
+    // Old gem identity fields remain only for migration of prototype saves.
     public int gemId, bornMove, ownerSlot = -1, limit = 3;
     public long ownerId;
     public bool environmental, nonSpreading;
+    public bool cellOverlay;
+    public int x, y, rootId;
 }
 
 public partial class BoardController
 {
     private const int EnvironmentalVineOwner = -2147483000;
     private readonly List<VineNodeSnapshot> vineNodes = new List<VineNodeSnapshot>();
+    private readonly Dictionary<Vector2Int, GameObject> vineViews = new Dictionary<Vector2Int, GameObject>();
+    private int nextVineGrowthMove = 2, nextRootId;
     public int VineCount { get { PruneVines(); return vineNodes.Count; } }
-    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count + ReservedVineCount;
-    private int ReservedVineCount
-    {
-        get
-        {
-            int count=0;
-            foreach(var threat in gemSetThreats)
-                if(threat.Vine && !threat.Ended && (threat.Environmental || (threat.Owner!=null && !threat.Owner.IsDefeated)))
-                    foreach(var gem in threat.Targets) if(IsEnvironmentalOrdinaryGem(gem) && !IsGemPinned(gem)) count++;
-            return count;
-        }
-    }
-    private bool IsReservedVine(Gem gem)
-    {
-        foreach(var threat in gemSetThreats) if(threat.Vine && !threat.Ended && threat.Targets.Contains(gem)) return true;
-        return false;
-    }
-    private Gem FindVineGem(int identity)
-    {
-        for(int y=0;y<height;y++) for(int x=0;x<width;x++)
-        { var gem=GetGem(x,y); if(gem!=null && gem.BoardIdentity==identity) return gem; }
-        return null;
-    }
-    private EnemyActor VineOwner(long id)
-    {
-        if(RunSession.Current?.Waves==null) return null;
-        foreach(var enemy in RunSession.Current.Waves.ActiveEnemies) if(enemy!=null && enemy.PersistentId==id && !enemy.IsDefeated) return enemy;
-        return null;
-    }
-    private void PruneVines()
-    {
-        vineNodes.RemoveAll(node => { var gem=FindVineGem(node.gemId); return gem==null || !IsGemPinned(gem) || !movablePinnedGems.Contains(gem); });
-    }
-    public bool TryQueueVineWarning(EnemyActor owner, int count, int ownerLimit, Action<GemSetThreat> completed, bool nonSpreading = false)
-    {
-        if(owner==null || owner.IsDefeated || RestrictionCount>=BalanceV1.Current.maximumGlobalChains) return false;
-        int available=Mathf.Min(count,ownerLimit-GetPinnedGemCountForOwner(owner.GetInstanceID()),BalanceV1.Current.maximumGlobalChains-RestrictionCount);
-        if(available<=0) return false;
-        var request=new BoardMutationRequest { Kind=BoardMutationKind.MarkGemSet,OwnerActor=owner,TargetCount=available,
-            WarningMoves=1,Vine=true,MaximumOwnedPins=ownerLimit,NonSpreadingVine=nonSpreading };
-        request.Completed=success=>completed?.Invoke(success?request.SetThreat:null);
-        EnqueueBoardMutation(request); TryStartBoardMutationProcessor(); return true;
-    }
-    // Ritual anchors use the same safe-cell selection, capacity, movable pins,
-    // cleanup and continuation as growing roots. Only their lifetime differs.
-    public bool TryQueueVineAnchors(EnemyActor owner, int count, Action<bool> completed)
-    {
-        return TryQueueVineWarning(owner,count,count,threat =>
-        {
-            if(threat==null) { completed?.Invoke(false);return; }
-            threat.DueMove=completedValidPlayerMoves;
-            if(!TryQueueResolveVines(threat,completed)) { CancelGemSetThreat(threat);completed?.Invoke(false); }
-        },true);
-    }
-    public int OwnedVineCount(EnemyActor owner)
-    {
-        PruneVines();
-        return owner==null?0:vineNodes.FindAll(n=>!n.environmental && n.ownerId==owner.PersistentId).Count;
-    }
-    public bool IsVineGem(Gem gem, out bool anchor)
-    {
-        var node=gem==null?null:vineNodes.Find(n=>n.gemId==gem.BoardIdentity);
-        anchor=node!=null && node.nonSpreading;
-        return node!=null && IsLiveVine(node.gemId);
-    }
-    public bool TryQueueResolveVines(GemSetThreat threat, Action<bool> completed)
-    {
-        if(threat==null || !threat.Vine || threat.Ended || threat.Queued || completedValidPlayerMoves<threat.DueMove ||
-            (!threat.Environmental && (threat.Owner==null || threat.Owner.IsDefeated))) return false;
-        threat.Queued=true;
-        EnqueueBoardMutation(new BoardMutationRequest { Kind=BoardMutationKind.ResolveVines,OwnerActor=threat.Owner,
-            OwnerInstanceId=threat.Environmental?EnvironmentalVineOwner:threat.Owner.GetInstanceID(),
-            SetThreat=threat,MaximumOwnedPins=threat.VineLimit,EnvironmentalPin=threat.Environmental,Completed=completed });
-        TryStartBoardMutationProcessor(); return true;
-    }
-    private IEnumerator ExecuteResolveVines(BoardMutationRequest request)
-    {
-        var threat=request.SetThreat;
-        if(threat==null || threat.Ended) yield break;
-        CancelGemSetThreat(threat);
-        if(!threat.Environmental && !TelegraphOwnerCanExecute(request.OwnerActor)) yield break;
-        if(threat.ParentGemId>0 && !IsLiveVine(threat.ParentGemId)) yield break;
-        foreach(var gem in threat.Targets)
-        {
-            if(!IsEnvironmentalOrdinaryGem(gem) || IsGemPinned(gem) || RestrictionCount>=BalanceV1.Current.maximumGlobalChains) continue;
-            var pin=new BoardMutationRequest { OwnerActor=request.OwnerActor,OwnerInstanceId=request.OwnerInstanceId,
-                MaximumOwnedPins=request.MaximumOwnedPins,TargetGem=gem,MovablePin=true,EnvironmentalPin=request.EnvironmentalPin };
-            yield return ExecutePinRequest(pin);
-            if(!pin.Succeeded) continue;
-            vineNodes.Add(new VineNodeSnapshot { gemId=gem.BoardIdentity,bornMove=completedValidPlayerMoves,
-                ownerId=request.OwnerActor!=null?request.OwnerActor.PersistentId:0,environmental=request.EnvironmentalPin,limit=request.MaximumOwnedPins,nonSpreading=threat.NonSpreading });
-            request.Succeeded=true;
-        }
-    }
-    private bool IsLiveVine(int gemId)
-    {
-        var gem=FindVineGem(gemId);
-        return gem!=null && IsGemPinned(gem) && movablePinnedGems.Contains(gem);
-    }
-    public IEnumerator AdvanceVineNetworks(int move)
-    {
-        PruneVines();
-        // At most one already-warned child grows globally in one accepted action.
-        bool growthUsed=false;
-        var growth=new List<GemSetThreat>(gemSetThreats);
-        growth.Sort((a,b)=>a.DueMove!=b.DueMove?a.DueMove.CompareTo(b.DueMove):a.ParentGemId.CompareTo(b.ParentGemId));
-        foreach(var threat in growth)
-        {
-            if(!threat.Vine || threat.ParentGemId<=0 || threat.Ended) continue;
-            if(!IsLiveVine(threat.ParentGemId) || (!threat.Environmental && (threat.Owner==null || threat.Owner.IsDefeated)))
-            { CancelGemSetThreat(threat); continue; }
-            if(move<threat.DueMove) continue;
-            if(growthUsed) { threat.DueMove=move+1; continue; }
-            if(TryQueueResolveVines(threat,success=>growthUsed=success))
-            {
-                while(IsBusy) yield return null;
-                var parentNode=vineNodes.Find(n=>n.gemId==threat.ParentGemId);
-                if(parentNode!=null) parentNode.bornMove=move;
-            }
-        }
-        // Snapshot excludes this action's newborns and never recursively spreads.
-        foreach(var node in new List<VineNodeSnapshot>(vineNodes))
-        {
-            if(node.nonSpreading) continue;
-            if(move<node.bornMove+1) continue;
-            if(RestrictionCount>=BalanceV1.Current.maximumGlobalChains) { node.bornMove=move;continue; }
-            bool pending=false;
-            foreach(var existing in gemSetThreats) if(existing.Vine && !existing.Ended && existing.ParentGemId==node.gemId) pending=true;
-            if(pending) continue;
-            var parent=FindVineGem(node.gemId); if(parent==null) continue;
-            var owner=node.environmental?null:VineOwner(node.ownerId);
-            if(!node.environmental && owner==null) continue;
-            int ownerKey=node.environmental?EnvironmentalVineOwner:owner.GetInstanceID();
-            if(GetPinnedGemCountForOwner(ownerKey)>=node.limit) { node.bornMove=move; continue; }
-            var candidates=BuildSafePinnableGemList();
-            candidates.RemoveAll(g=>!IsEnvironmentalOrdinaryGem(g) || IsReservedVine(g) ||
-                Math.Abs(g.Column-parent.Column)+Math.Abs(g.Row-parent.Row)!=1 || IsProtectedWarningTarget(g));
-            if(candidates.Count==0) { node.bornMove=move; continue; }
-            var warning=new GemSetThreat { Owner=owner,Vine=true,Environmental=node.environmental,VineLimit=node.limit,
-                ParentGemId=node.gemId,DueMove=ReserveWarningDeadline(1) };
-            warning.Targets.Add(candidates[GameplayRandom.Range(0,candidates.Count)]);
-            node.bornMove=move; gemSetThreats.Add(warning); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(warning);
-        }
-    }
+    public int NextVineGrowthMove => nextVineGrowthMove;
+    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count;
+    public event Action RootsChanged;
+
+    private bool IsReservedVine(Gem gem) => gemSetThreats.Exists(t => t.Vine && !t.Ended && t.Targets.Contains(gem));
     private bool IsProtectedWarningTarget(Gem gem)
     {
         foreach(var pair in gemPairThreats) if(!pair.Ended && (pair.First==gem || pair.Second==gem)) return true;
@@ -167,37 +33,255 @@ public partial class BoardController
         foreach(var lane in laneThreats) if(!lane.Ended && (lane.Row==gem.Row || lane.Column==gem.Column)) return true;
         return false;
     }
+    private Gem FindVineGem(int identity)
+    {
+        foreach(var gem in gems) if(gem!=null && gem.BoardIdentity==identity) return gem;
+        return null;
+    }
+    private EnemyActor VineOwner(long id)
+    {
+        if(RunSession.Current?.Waves==null) return null;
+        foreach(var actor in RunSession.Current.Waves.ActiveEnemies)
+            if(actor!=null && !actor.IsDefeated && actor.PersistentId==id) return actor;
+        return null;
+    }
+    private void PruneVines()
+    {
+        foreach(var node in new List<VineNodeSnapshot>(vineNodes))
+            if(!IsCellPlayable(node.x,node.y)) RemoveVine(node);
+    }
+    public bool IsVineGem(Gem gem, out bool anchor)
+    { anchor=false;return gem!=null && vineNodes.Exists(n=>n.x==gem.Column && n.y==gem.Row); }
+    public bool IsCellVined(int x,int y) => vineNodes.Exists(n=>n.x==x && n.y==y);
+    public int OwnedVineCount(EnemyActor owner) => owner==null?0:vineNodes.FindAll(n=>n.ownerId==owner.PersistentId).Count;
+    public int OwnedRootCount(EnemyActor owner) => owner==null?0:GetBarricadeCountForOwner(owner.GetInstanceID());
+    private static bool IsRoot(BarricadeCellState state) => state!=null &&
+        (state.Style==EnemyBarricadeStyle.Root || state.Style==EnemyBarricadeStyle.Heartroot);
+
+    // Roots reuse structural occupancy, useful-response checks, durability hits,
+    // refill and the existing board mutation queue. Vines never enter pin maps.
+    public bool TryQueueRootWarning(EnemyActor owner,int count,int durability,bool heart,bool spreading,Action<GemSetThreat> completed)
+    {
+        if(owner==null || owner.IsDefeated || OwnedRootCount(owner)>0) return false;
+        var request=new BoardMutationRequest { Kind=BoardMutationKind.MarkGemSet,OwnerActor=owner,
+            TargetCount=count,WarningMoves=1,Vine=true,RootDurability=durability,
+            BarricadeStyle=heart?EnemyBarricadeStyle.Heartroot:EnemyBarricadeStyle.Root,RootSpreading=spreading };
+        request.Completed=ok=>completed?.Invoke(ok?request.SetThreat:null);
+        EnqueueBoardMutation(request);TryStartBoardMutationProcessor();return true;
+    }
+    public bool TryQueuePlantRoots(EnemyActor owner,int count,int durability,bool heart,bool spreading,Action<bool> completed)
+    {
+        if(owner==null || owner.IsDefeated || OwnedRootCount(owner)>0) return false;
+        EnqueueBoardMutation(new BoardMutationRequest { Kind=BoardMutationKind.PlaceBarricades,OwnerActor=owner,
+            OwnerInstanceId=owner.GetInstanceID(),BarricadeCount=count,MaximumOwnedBarricades=count,
+            BarricadeDurability=durability,BarricadeStyle=heart?EnemyBarricadeStyle.Heartroot:EnemyBarricadeStyle.Root,
+            RootSpreading=spreading,ProtectSpecialGems=true,Completed=completed });
+        TryStartBoardMutationProcessor();return true;
+    }
+    private bool CanHostRoot(Gem gem)
+    {
+        if(!IsEnvironmentalOrdinaryGem(gem) || IsGemPinned(gem)) return false;
+        foreach(var d in BarricadeHitDirections)
+        {
+            int x=gem.Column+d.x,y=gem.Row+d.y;
+            if(!IsCellPlayable(x,y) || GetGem(x,y)==null) return false;
+        }
+        return true;
+    }
+    public bool TryQueueResolveVines(GemSetThreat threat,Action<bool> completed)
+    {
+        if(threat==null || !threat.Vine || threat.Ended || threat.Queued || completedValidPlayerMoves<threat.DueMove) return false;
+        threat.Queued=true;
+        EnqueueBoardMutation(new BoardMutationRequest { Kind=BoardMutationKind.ResolveVines,OwnerActor=threat.Owner,
+            SetThreat=threat,Completed=completed });TryStartBoardMutationProcessor();return true;
+    }
+    private IEnumerator ExecuteResolveVines(BoardMutationRequest request)
+    {
+        var threat=request.SetThreat;
+        if(threat==null || threat.Ended) yield break;
+        CancelGemSetThreat(threat);
+        if(!TelegraphOwnerCanExecute(threat.Owner) || threat.RootDurability<=0) yield break;
+        request.OwnerInstanceId=threat.Owner.GetInstanceID();
+        request.BarricadeCount=threat.Targets.Count;request.MaximumOwnedBarricades=threat.Targets.Count;
+        request.BarricadeDurability=threat.RootDurability;request.BarricadeStyle=threat.RootStyle;
+        request.RootSpreading=threat.RootSpreading;request.ProtectSpecialGems=true;
+        yield return ExecutePlaceBarricadesRequest(request);
+    }
+    private void SeedRoot(Vector2Int cell,BarricadeCellState state,EnemyActor owner)
+    {
+        foreach(var d in BarricadeHitDirections)
+            AddVine(cell+d,owner?.PersistentId ?? 0,state.RootId,!state.RootSpreading,false);
+    }
+    private void AddVine(Vector2Int cell,long ownerId,int rootId,bool nonSpreading,bool environmental)
+    {
+        if(!IsCellPlayable(cell.x,cell.y) || GetGem(cell.x,cell.y)==null || IsCellVined(cell.x,cell.y)) return;
+        var node=new VineNodeSnapshot {cellOverlay=true,x=cell.x,y=cell.y,rootId=rootId,ownerId=ownerId,
+            bornMove=completedValidPlayerMoves,nonSpreading=nonSpreading,environmental=environmental};
+        vineNodes.Add(node);CreateVineView(node);
+    }
+    private void CreateVineView(VineNodeSnapshot node)
+    {
+        var cell=new Vector2Int(node.x,node.y);
+        if(vineViews.ContainsKey(cell)) return;
+        var sprite=GameplayThemeSkin.Current?.vineOverlay;
+        if(sprite==null) sprite=Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme")?.vineOverlay;
+        if(sprite==null) return; // Optional art cannot affect legal play.
+        var view=new GameObject("VineOverlay_"+node.x+"_"+node.y);view.transform.SetParent(transform,false);
+        view.transform.localPosition=GetCellLocalPosition(node.x,node.y);
+        view.transform.localScale=Vector3.one*(cellSize/Mathf.Max(sprite.bounds.size.x,sprite.bounds.size.y));
+        var renderer=view.AddComponent<SpriteRenderer>();renderer.sprite=sprite;
+        renderer.sortingLayerName="Gems";renderer.sortingOrder=8;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;
+        vineViews[cell]=view;
+    }
+    private void RemoveVine(VineNodeSnapshot node)
+    {
+        vineNodes.Remove(node);var cell=new Vector2Int(node.x,node.y);
+        foreach(var d in BarricadeHitDirections)
+            if(barricadeCells.TryGetValue(cell+d,out var root) && IsRoot(root)) root.OpenRootSides |= SideBit(-d);
+        if(vineViews.TryGetValue(cell,out var view)) { if(view!=null) {view.SetActive(false);Destroy(view);} vineViews.Remove(cell); }
+    }
+    private void ClearVinesForDestruction(HashSet<Gem> cleared,HashSet<Gem> preserved)
+    {
+        if(cleared==null) return;
+        foreach(var gem in cleared)
+        {
+            if(gem==null || (preserved!=null && preserved.Contains(gem))) continue;
+            var node=vineNodes.Find(n=>n.x==gem.Column && n.y==gem.Row);
+            if(node==null) continue;
+            // Opening is recorded after this clear's root-hit check. This clear
+            // opens a side; a later distinct clear must actually strike it.
+            foreach(var d in BarricadeHitDirections)
+            {
+                var cell=new Vector2Int(node.x+d.x,node.y+d.y);
+                if(barricadeCells.TryGetValue(cell,out var state) && IsRoot(state))
+                    state.OpenRootSides |= SideBit(-d);
+            }
+            RemoveVine(node);
+        }
+    }
+    private static int SideBit(Vector2Int direction)
+    { for(int i=0;i<BarricadeHitDirections.Length;i++) if(BarricadeHitDirections[i]==direction) return 1<<i;return 0; }
+    private bool RootAcceptsHit(Vector2Int rootCell,BarricadeCellState state,Gem source)
+    { return !IsCellVined(source.Column,source.Row) && (state.OpenRootSides&SideBit(new Vector2Int(source.Column,source.Row)-rootCell))!=0; }
+    private void RootDestroyed(BarricadeCellState state)
+    {
+        if(!IsRoot(state)) return;
+        foreach(var node in new List<VineNodeSnapshot>(vineNodes)) if(node.rootId==state.RootId) RemoveVine(node);
+        RootsChanged?.Invoke();
+    }
+    public bool QueueVineSurge(EnemyActor owner,Action<bool> completed)
+    {
+        if(owner==null || owner.IsDefeated) return false;
+        EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.AdvanceVines,OwnerActor=owner,Completed=completed});
+        TryStartBoardMutationProcessor();return true;
+    }
+    public bool QueueVineHarvest(EnemyActor owner,Action<int> harvested,Action<bool> completed)
+    {
+        if(owner==null || owner.IsDefeated) return false;
+        EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.HarvestVines,OwnerActor=owner,VinesHarvested=harvested,Completed=completed});
+        TryStartBoardMutationProcessor();return true;
+    }
+    private void ExecuteVineHarvest(BoardMutationRequest request)
+    {
+        if(!TelegraphOwnerCanExecute(request.OwnerActor)) return;
+        int count=VineCount;
+        foreach(var node in new List<VineNodeSnapshot>(vineNodes)) RemoveVine(node);
+        // Consumption also opens root sides; their occupancy/durability remains.
+        foreach(var state in barricadeCells.Values) if(IsRoot(state)) state.OpenRootSides=15;
+        request.Succeeded=true;request.VinesHarvested?.Invoke(count);
+    }
+    public IEnumerator AdvanceVineNetworks(int move)
+    {
+        if(move<nextVineGrowthMove) yield break;
+        int interval=RunSession.Current?.Zone?.Definition?.vineCadenceMoves ?? 2;
+        // The normal deadline advances only here, never from a forced surge.
+        nextVineGrowthMove=move+Mathf.Max(1,interval);
+        EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.AdvanceVines,EnvironmentalPin=true});
+        TryStartBoardMutationProcessor();while(IsBusy) yield return null;
+    }
+    private void ExecuteVineGrowth(BoardMutationRequest request)
+    {
+        if(request.OwnerActor!=null && !TelegraphOwnerCanExecute(request.OwnerActor)) return;
+        PruneVines();var candidates=new List<VineNodeSnapshot>();
+        foreach(var node in new List<VineNodeSnapshot>(vineNodes))
+        {
+            if(node.nonSpreading || (!node.environmental && VineOwner(node.ownerId)==null)) continue;
+            foreach(var d in BarricadeHitDirections) candidates.Add(new VineNodeSnapshot {x=node.x+d.x,y=node.y+d.y,
+                ownerId=node.ownerId,rootId=node.rootId,environmental=node.environmental});
+        }
+        // Living spreading roots can regrow after a harvest; the weak root cannot.
+        foreach(var entry in barricadeCells) if(IsRoot(entry.Value) && entry.Value.RootSpreading)
+            foreach(var d in BarricadeHitDirections) candidates.Add(new VineNodeSnapshot {x=entry.Key.x+d.x,y=entry.Key.y+d.y,
+                ownerId=entry.Value.RootOwnerId,rootId=entry.Value.RootId});
+        int cap=RunSession.Current?.Zone?.Definition?.maximumVineOverlays ?? 24;
+        int added=0;
+        // Use only the initial frontier: no recursive growth in the same pulse.
+        while(candidates.Count>0 && vineNodes.Count<cap && added<4)
+        {
+            int index=GameplayRandom.Range(0,candidates.Count);var node=candidates[index];candidates.RemoveAt(index);
+            int before=vineNodes.Count;AddVine(new Vector2Int(node.x,node.y),node.ownerId,node.rootId,false,node.environmental);
+            if(vineNodes.Count>before) added++;
+        }
+        if(request.EnvironmentalPin && RunSession.Current?.Zone?.Definition?.growsVines==true && vineNodes.Count<cap)
+        {
+            var edges=new List<Vector2Int>();
+            for(int y=0;y<height;y++) for(int x=0;x<width;x++)
+                if((x==0||y==0||x==width-1||y==height-1) && IsCellPlayable(x,y) && GetGem(x,y)!=null && !IsCellVined(x,y)) edges.Add(new Vector2Int(x,y));
+            if(edges.Count>0) AddVine(edges[GameplayRandom.Range(0,edges.Count)],0,0,false,true);
+        }
+        request.Succeeded=true;
+    }
     public void QueueEnvironmentalVine(Gem target)
     {
-        if(!IsEnvironmentalOrdinaryGem(target) || IsGemPinned(target) || IsProtectedWarningTarget(target)) return;
-        var warning=new GemSetThreat { Vine=true,Environmental=true,VineLimit=3,DueMove=completedValidPlayerMoves };
-        warning.Targets.Add(target);gemSetThreats.Add(warning);TryQueueResolveVines(warning,null);
+        if(target==null || !IsCellPlayable(target.Column,target.Row)) return;
+        EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.AddVine,TargetGem=target});TryStartBoardMutationProcessor();
     }
     public void RemoveVineSource(EnemyActor owner)
     {
-        int key=owner!=null?owner.GetInstanceID():EnvironmentalVineOwner;
+        if(this==null || !isActiveAndEnabled || gems==null) return;
         foreach(var warning in new List<GemSetThreat>(gemSetThreats))
             if(warning.Vine && (owner!=null?warning.Owner==owner:warning.Environmental)) CancelGemSetThreat(warning);
-        QueueReleasePinnedGems(key);
+        EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.RemoveVines,OwnerInstanceId=owner!=null?owner.GetInstanceID():0,
+            VineOwnerId=owner!=null?owner.PersistentId:0});TryStartBoardMutationProcessor();
+    }
+    private IEnumerator ExecuteRemoveVineSource(BoardMutationRequest request)
+    {
+        foreach(var node in new List<VineNodeSnapshot>(vineNodes))
+            if(request.VineOwnerId==0?node.environmental:node.ownerId==request.VineOwnerId) RemoveVine(node);
+        bool removed=false;
+        foreach(var entry in new List<KeyValuePair<Vector2Int,BarricadeCellState>>(barricadeCells))
+            if(IsRoot(entry.Value) && entry.Value.RootOwnerId==request.VineOwnerId && request.VineOwnerId!=0)
+            { barricadeCells.Remove(entry.Key);QueueRoyalBannerGravityOpening(entry.Key.x,entry.Key.y);CancelBarricadeVisualRoutine(entry.Value);DestroyBarricadeView(entry.Value);removed=true; }
+        if(removed) { RootsChanged?.Invoke();yield return ResolveEnvironmentalBoardChange(); }
+        request.Succeeded=true;
     }
     public List<VineNodeSnapshot> CaptureVines(Func<int,int> ownerSlot)
     {
-        PruneVines();var saved=new List<VineNodeSnapshot>();
+        PruneVines();var result=new List<VineNodeSnapshot>();
         foreach(var node in vineNodes)
         {
-            var copy=JsonUtility.FromJson<VineNodeSnapshot>(JsonUtility.ToJson(node));
-            var actor=VineOwner(node.ownerId);copy.ownerSlot=actor==null?-1:ownerSlot(actor.GetInstanceID()); saved.Add(copy);
+            var saved=JsonUtility.FromJson<VineNodeSnapshot>(JsonUtility.ToJson(node));var actor=VineOwner(node.ownerId);
+            saved.ownerSlot=actor==null?-1:ownerSlot(actor.GetInstanceID());
+            saved.gemId=GetGem(node.x,node.y)?.BoardIdentity ?? 0;result.Add(saved);
         }
-        return saved;
+        return result;
     }
     public void RestoreVines(List<VineNodeSnapshot> saved)
     {
-        vineNodes.Clear();
-        if(saved!=null) foreach(var node in saved)
-            vineNodes.Add(JsonUtility.FromJson<VineNodeSnapshot>(JsonUtility.ToJson(node)));
-        foreach(var node in vineNodes) if(node.environmental)
-        { var gem=FindVineGem(node.gemId); if(gem!=null && IsGemPinned(gem)) pinnedGemOwners[gem]=EnvironmentalVineOwner; }
-        PruneVines();
+        foreach(var view in vineViews.Values) if(view!=null) {view.SetActive(false);Destroy(view);}
+        vineViews.Clear();vineNodes.Clear();
+        if(saved==null) return;
+        foreach(var original in saved)
+        {
+            var node=JsonUtility.FromJson<VineNodeSnapshot>(JsonUtility.ToJson(original));
+            if(!node.cellOverlay)
+            {
+                // Upgrade former gem-bound vine pins, leaving real chains intact.
+                var gem=FindVineGem(node.gemId);if(gem==null || node.nonSpreading) continue;
+                node.x=gem.Column;node.y=gem.Row;node.cellOverlay=true;
+            }
+            if(IsCellPlayable(node.x,node.y) && !IsCellVined(node.x,node.y)) {vineNodes.Add(node);CreateVineView(node);}
+        }
     }
-    public GemSetThreat RestoredVineCast(EnemyActor owner) => gemSetThreats.Find(t=>t.Owner==owner && t.Vine && t.ParentGemId==0 && !t.Ended);
+    public GemSetThreat RestoredVineCast(EnemyActor owner) => gemSetThreats.Find(t=>t.Owner==owner && t.Vine && !t.Ended);
 }

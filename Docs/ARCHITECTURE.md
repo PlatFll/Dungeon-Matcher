@@ -45,9 +45,12 @@ resolving accepted turn. See [the timer audit](Forest/CLOCK_IMPLEMENTATION.md).
 
 Mender channels own a fixed persistent recipient ID and an exactly-once terminal
 sequence. Rootbinder submits generic warnings/placements to the existing board
-queue. Vines share movable pin rules, reservation capacity and warning scheduling;
-their separate environment owner survives unrelated enemy cleanup. Board photos
-retain the present combat tick, warning deadlines and surviving vine ages.
+queue. Vines are cell-based presentation overlays in the board's saved state,
+separate from chain/pin maps. Roots reuse structural occupancy, durability,
+safe-placement/refill and the same mutation queue. The first vine clear records
+an opened side after this clear's root-hit check; a later clear can hit through it.
+The environment growth deadline advances independently of forced surges. Board
+photos preserve that deadline and solved/damaged root progress.
 
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
 `accepted-moves-v1` or new `seconds-basics-move-abilities-v1` profile,
@@ -64,13 +67,16 @@ work, draining a previously accepted attack before offering that work. It never
 subtracts move readiness from seconds. The replay journal records elapsed frames
 in this profile because idle wall time can now cause damage.
 
-`ForestMilestoneEnemyAbility` owns Warden protection and Matriarch renewal. Both
-submit generic nonspreading vine anchors to the same board queue/cap/save owner.
-Damage reduction and exposed weakness bonuses use `EnemyActor`'s central result
-path, including redirection, final rounding and shield gating. Cast sequence IDs
-are consumed before healing callbacks. Board photos cannot revive finished anchor
-casts. `ForestEnemyMotion` observes outcomes; its special clips contain no effect
-events. Authored basic impacts use the existing guarded attack event path.
+`ForestMilestoneEnemyAbility` owns Warden's shared protection and Matriarch's
+Renew/Surge/Harvest cycle. BoardController owns all root/vine state and mutation;
+normal forest growth resolves before casts. Shared damage-reduction providers
+are evaluated by EnemyActor at impact and do not stack with duplicate providers.
+Redirection, final five-step rounding and shield gating retain their owners.
+Cast sequences are consumed before healing/damage callbacks. Root pairs trigger
+existing EnemyStagger after both are destroyed. Exposure and its weakness bonus
+are removed. Legacy anchors retire on save upgrade; real pins are preserved.
+`ForestEnemyMotion` reuses approved clips and observes outcomes; special clips
+contain no gameplay effect events. Authored basics keep the guarded event path.
 
 `ForestProductionImporter` binds modular scenery, clips and gameplay-only theme
 sprites. The existing layout owner reserves enough battle height for 96px art;
