@@ -105,7 +105,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 if (Living(actor)) actor.GetComponent<EnemyPoisonStatus>()?.AdvanceAcceptedMove(Tick);
             // Normal forest growth precedes enemy casts. A harvest consumes the
             // full current frontier, and a new root never spreads on its birth action.
-            if (!run.Player.IsDefeated) yield return run.Board.AdvanceVineNetworks(Tick);
+            if (!run.Player.IsDefeated) yield return run.Board.AdvanceZoneEnvironment(Tick);
             // Snapshot this tick's readiness before an earlier actor can apply a
             // speed buff. Newly granted buffs first accelerate a future move.
             foreach (var actor in acceptedActors)

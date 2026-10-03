@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   enemyId: royal_arbalist
   displayName: Royal Arbalist
-  category: 0
-  description: A lightly built but fully armored Royal ranged soldier who fires two
-    rapid shots in one normal attack sequence.
+  category: 1
+  description: Royal Chain Shot binds two ordinary gems every 4 moves, up to 2 owned. Clear the chained gems or defeat the Arbalist. Basic attacks retain two rapid shots.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 8956400858156004385, guid: d27afc742f992c24ab446d2aa8013632, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: d449c7eb9a9f1b5409e13fff6de74a41, type: 2}
   visualSize: {x: 112, y: 112}
   timeAutoAttackFromAnimation: 1
   useAuthoredAutoAttackMotion: 1
-  timeSpecialAbilityFromAnimation: 0
+  timeSpecialAbilityFromAnimation: 1
+  useAuthoredSpecialAbilityMotion: 1
   baseMaxHealth: 115
   baseDamage: 4
   baseFollowUpDamage: 4
@@ -31,9 +31,11 @@ MonoBehaviour:
   baseAttackInterval: 10
   firstAttackMoves: 4
   attackMoves: 4
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
-  baseSpecialTurnRequirement: 5
+  hasSpecialAbility: 1
+  specialAbilityKind: 2
+  baseSpecialTurnRequirement: 4
+  chainCap: 2
+  chainsPerUse: 2
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
@@ -102,5 +104,5 @@ MonoBehaviour:
   staggerDurationMultiplier: 1
   royalAssaultParticipant: 1
   threatCost: 2.5
-  isBoardDisruptor: 0
+  isBoardDisruptor: 1
   isSupport: 0

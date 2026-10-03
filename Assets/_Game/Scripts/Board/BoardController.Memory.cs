@@ -99,11 +99,21 @@ public partial class BoardController
                 cell.pinned = cell.frozen = cell.movable = false;
             // Pins/mines expire with their owner; barricades and planted banners
             // persist as orphaned board objects under the existing enemy rules.
-            if (cell.mined && !Living(ownerAtKey(cell.mineOwner)))
+            if (cell.mined && (cell.crumbleRestoreMove>0 || !Living(ownerAtKey(cell.mineOwner))))
             {
                 cell.mined = false;
+                cell.crumbleRestoreMove = 0;
                 reopenedMines.Add(new Vector2Int(cell.x, cell.y));
             }
+        }
+        // Timed zone holes stay in the present timeline. Photos cannot shorten
+        // their two-move lifetime or resurrect an already returned tile.
+        foreach(var entry in crumbleRestoreMoves)
+        {
+            var cell=saved.cells.Find(c=>c.x==entry.Key.x && c.y==entry.Key.y);
+            cell.hasGem=cell.pinned=cell.frozen=cell.movable=cell.barricade=cell.banner=false;
+            cell.mined=true;cell.crumbleRestoreMove=entry.Value;
+            reopenedMines.RemoveAll(p=>p==entry.Key);
         }
         isBusy = true;
         NotifyBoardActivity();

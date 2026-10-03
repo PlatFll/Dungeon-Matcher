@@ -30,10 +30,12 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField] private bool isBoardDisruptor;
     [SerializeField] private bool isSupport;
     [SerializeField, Range(1, 3)] private int chainCap = 2;
+    [SerializeField, Range(1, 3)] private int chainsPerUse = 1;
     public float ThreatCost => Mathf.Max(0.1f, threatCost);
     public bool IsBoardDisruptor => isBoardDisruptor;
     public bool IsSupport => isSupport;
     public int ChainCap => chainCap;
+    public int ChainsPerUse => Mathf.Clamp(chainsPerUse, 1, ChainCap);
 
     [SerializeField]
     private string displayName = "Enemy";

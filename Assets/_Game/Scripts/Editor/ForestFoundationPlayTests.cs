@@ -20,6 +20,7 @@ public sealed partial class ForestFoundationPlayTests
     private RunSession Run=>RunSession.Current;
     [UnitySetUp] public IEnumerator SetUp()
     {
+        preserveCounterplayCrystal=false;
         typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
             .Invoke(null,new object[]{new Vector2Int(1080,1920)});
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);

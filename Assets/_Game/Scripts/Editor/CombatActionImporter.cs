@@ -39,6 +39,43 @@ public static class CombatActionImporter
         foreach (var entry in selected) Import(new[] { entry.name + "_AutoAttack" }, entry);
     }
 
+    [MenuItem("Dungeon Matcher/Art/Import Royal Arbalist Chain Shot")]
+    public static void ImportRoyalArbalistChainShot()
+    {
+        // Re-time approved native drawings into aim, two recoils, recovery.
+        // No raster assets or the existing basic attack are changed.
+        var frames = LoadFrames("RoyalArbalist_AutoAttack");
+        int[] poses = {0,1,2,3,4,5,2,3,4,5,6,7,8};
+        int[] durations = {120,80,100,80,80,80,80,80,80,80,80,100,120};
+        string path = AnimationRoot + "/RoyalArbalist_Ability.anim";
+        var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
+        if (clip == null) {clip = new AnimationClip(); AssetDatabase.CreateAsset(clip, path);}
+        clip.name = "RoyalArbalist_Ability"; clip.frameRate = 100; clip.ClearCurves();
+        var keys = new ObjectReferenceKeyframe[poses.Length+1]; int elapsed=0;
+        for(int i=0;i<poses.Length;i++)
+        {keys[i]=new ObjectReferenceKeyframe{time=elapsed/1000f,value=frames[poses[i]]};elapsed+=durations[i];}
+        keys[poses.Length]=new ObjectReferenceKeyframe{time=(elapsed-10)/1000f,value=frames[8]};
+        AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.PPtrCurve("",typeof(Image),"m_Sprite"),keys);
+        var settings=AnimationUtility.GetAnimationClipSettings(clip);
+        settings.loopTime=false;settings.startTime=0;settings.stopTime=elapsed/1000f;
+        AnimationUtility.SetAnimationClipSettings(clip,settings);
+        AnimationUtility.SetAnimationEvents(clip,new[]{
+            new AnimationEvent{time=durations.Take(4).Sum()/1000f,functionName="AbilityBeat",intParameter=1},
+            new AnimationEvent{time=durations.Take(8).Sum()/1000f,functionName="AbilityBeat",intParameter=2},
+            new AnimationEvent{time=(elapsed-10)/1000f,functionName="AbilityComplete"}});
+        var controller=AssetDatabase.LoadAssetAtPath<AnimatorController>(CombatIdleImporter.AnimationRoot+"/RoyalArbalist_Idle.controller");
+        var machine=controller.layers[0].stateMachine;
+        var idle=machine.states.Single(s=>s.state.name=="Idle").state;
+        var state=machine.states.Select(s=>s.state).FirstOrDefault(s=>s.name=="Ability")??machine.AddState("Ability");
+        state.motion=clip;state.speed=1;state.writeDefaultValues=true;
+        if(!controller.parameters.Any(p=>p.name=="Ability")) controller.AddParameter("Ability",AnimatorControllerParameterType.Trigger);
+        foreach(var transition in idle.transitions.Where(t=>t.destinationState==state).ToArray()) idle.RemoveTransition(transition);
+        foreach(var transition in state.transitions.ToArray()) state.RemoveTransition(transition);
+        var enter=idle.AddTransition(state);enter.hasExitTime=false;enter.duration=0;enter.AddCondition(AnimatorConditionMode.If,0,"Ability");
+        var exit=state.AddTransition(idle);exit.hasExitTime=true;exit.exitTime=1;exit.duration=0;
+        EditorUtility.SetDirty(clip);EditorUtility.SetDirty(controller);AssetDatabase.SaveAssets();
+    }
+
     [MenuItem("Dungeon Matcher/Art/Import Approved Enemy Abilities")]
     public static void ImportPixelLabAbilities()
     {

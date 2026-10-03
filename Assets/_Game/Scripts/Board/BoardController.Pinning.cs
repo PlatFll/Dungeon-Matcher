@@ -41,7 +41,8 @@ public partial class BoardController
         EnemyActor owner,
         int cap,
         System.Action<bool> completed,
-        System.Func<bool> cancelled)
+        System.Func<bool> cancelled,
+        bool separateMotionBeats = false)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -60,7 +61,8 @@ public partial class BoardController
                 MaximumOwnedPins = Mathf.Clamp(cap, 1, 3),
                 Completed = completed,
                 IsCancelled = cancelled,
-                MovablePin = true
+                MovablePin = true,
+                SeparatePinMotionBeats = separateMotionBeats
             }
         );
 
@@ -71,14 +73,22 @@ public partial class BoardController
     private IEnumerator ExecuteTopUpMovablePins(
         BoardMutationRequest request)
     {
+        int placement = 0;
         while (request.OwnerActor != null &&
                !request.OwnerActor.IsDefeated &&
+               !MotionCancelled(request) &&
                (request.IsCancelled == null ||
                 !request.IsCancelled()) &&
                GetPinnedGemCountForOwner(
                    request.OwnerInstanceId) <
                request.MaximumOwnedPins)
         {
+            placement++;
+            if (placement > 1 && request.SeparatePinMotionBeats && request.SpecialMotionId > 0)
+            {
+                yield return request.OwnerActor.WaitForSpecialMotionBeat(request.SpecialMotionId, placement);
+                if (MotionCancelled(request) || request.IsCancelled?.Invoke() == true) yield break;
+            }
             if (pinnedGemOwners.Count >= BalanceV1.Current.maximumGlobalChains) yield break;
             List<Gem> candidates = BuildSafePinnableGemList();
             candidates.RemoveAll(gem => !IsOrdinaryGemOnBoard(gem));

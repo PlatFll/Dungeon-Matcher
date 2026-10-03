@@ -284,7 +284,9 @@ public partial class BoardController
     {
         foreach(var view in vineViews.Values) if(view!=null) {view.SetActive(false);Destroy(view);}
         vineViews.Clear();vineNodes.Clear();
-        if(saved==null) return;
+        // Old committed travel snapshots could carry forest overlays into the
+        // dungeon. Retire them before the first destination frame is revealed.
+        if(saved==null || RunSession.Current?.Zone?.Definition?.growsVines==false) return;
         foreach(var original in saved)
         {
             var node=JsonUtility.FromJson<VineNodeSnapshot>(JsonUtility.ToJson(original));

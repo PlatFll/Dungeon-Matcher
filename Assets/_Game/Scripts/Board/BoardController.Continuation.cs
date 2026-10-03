@@ -19,6 +19,7 @@ public partial class BoardController
     {
         if(!CanCaptureContinuation) throw new InvalidOperationException("Board is resolving an action.");
         var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState, forestRulesVersion=2,nextRootId=nextRootId,nextVineGrowthMove=nextVineGrowthMove };
+        saved.dungeonRulesVersion=1;saved.nextCrumbleMove=nextCrumbleMove;
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
@@ -33,6 +34,7 @@ public partial class BoardController
                 }
             }
             if(minedCellOwners.TryGetValue(cell,out int mine)) { value.mined=true; value.mineOwner=ownerSlot(mine); }
+            if(crumbleRestoreMoves.TryGetValue(cell,out int restoreMove)) value.crumbleRestoreMove=restoreMove;
             if(barricadeCells.TryGetValue(cell,out var barricade))
             {
                 value.barricade=true; value.barricadeOwner=ownerSlot(barricade.OwnerInstanceId);
@@ -83,6 +85,7 @@ public partial class BoardController
         RestoreRefillRandom(saved.refillRandom);
         nextRootId=saved.nextRootId;
         nextVineGrowthMove=saved.forestRulesVersion>=2?saved.nextVineGrowthMove:saved.moves+2;
+        nextCrumbleMove=saved.dungeonRulesVersion>=1?saved.nextCrumbleMove:saved.moves+4;
         RestoreSnapshotCells(saved, ownerAtSlot);
         nextGemIdentity=Mathf.Max(nextGemIdentity,saved.nextGem);
         foreach(var warning in saved.warnings)
@@ -145,7 +148,9 @@ public partial class BoardController
             }
             if(value.mined)
             {
-                minedCellOwners.Add(cell,ownerAtSlot(value.mineOwner)?.GetInstanceID() ?? 0);
+                minedCellOwners.Add(cell,value.crumbleRestoreMove>0?CrumblingTileOwner:ownerAtSlot(value.mineOwner)?.GetInstanceID() ?? 0);
+                if(value.crumbleRestoreMove>0) crumbleRestoreMoves[cell]=value.crumbleRestoreMove;
+                EnsureMiningVFX();
                 CellMiningStarted?.Invoke(value.x,value.y,0);
             }
             if(value.barricade)
