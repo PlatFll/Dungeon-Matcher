@@ -26,7 +26,7 @@ public sealed class RoyalDecreeRuntime :
     public void RestoreMoveExpiry(int applied) { moveApplied = applied; }
     public void ExpireAcceptedMove(int move)
     {
-        if (!CombatMoveClock.Active || !IsActive || move <= moveApplied) return;
+        if (!CombatMoveClock.MoveEffects || !IsActive || move <= moveApplied) return;
         if (--moveRemaining <= 0) FinishAbility();
         else StateChanged?.Invoke();
     }
@@ -42,14 +42,14 @@ public sealed class RoyalDecreeRuntime :
         if(remaining<=0 || !(definition is RoyalDecreeAbilityDefinition royal)) return;
         activeDefinition=royal; IsActive=true; abilityEndTime=Time.time+remaining;
         SetTarget(target);
-        if (CombatMoveClock.Active) { moveRemaining=Mathf.CeilToInt(remaining); moveApplied=CombatMoveClock.EffectAction; }
+        if (CombatMoveClock.MoveEffects) { moveRemaining=Mathf.CeilToInt(remaining); moveApplied=CombatMoveClock.EffectAction; }
         else durationCoroutine=StartCoroutine(EndAfterDuration(remaining));
         StateChanged?.Invoke();
     }
     public EnemyActor CurrentTarget => currentTarget;
     public float RemainingDuration =>
         IsActive
-            ? (CombatMoveClock.Active ? moveRemaining : Mathf.Max(0f, abilityEndTime - Time.time))
+            ? (CombatMoveClock.MoveEffects ? moveRemaining : Mathf.Max(0f, abilityEndTime - Time.time))
             : 0f;
 
     private void OnEnable()
@@ -120,7 +120,7 @@ public sealed class RoyalDecreeRuntime :
             StopCoroutine(durationCoroutine);
         }
 
-        if (CombatMoveClock.Active)
+        if (CombatMoveClock.MoveEffects)
         {
             moveRemaining = 3 + Mathf.Min(1, RunUpgradeRuntime.Current?.GetStackCount("longer_reign") ?? 0);
             moveApplied = CombatMoveClock.EffectAction;
@@ -208,7 +208,7 @@ public sealed class RoyalDecreeRuntime :
         }
 
         int requestedDamagePerGem =
-            CombatMoveClock.Active ? 5 : activeDefinition.CalculateDamagePerGem(context);
+            CombatMoveClock.MoveEffects ? 5 : activeDefinition.CalculateDamagePerGem(context);
 
         requestedDamagePerGem =
             RunUpgradeResolver.ResolveRoyalDecreeDamage(

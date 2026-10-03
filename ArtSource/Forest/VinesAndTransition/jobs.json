@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Root_Level_1",
+    "request": {
+      "description": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. ONE-HIT weak ROOT: a small low mound of three thick interwoven exposed tree roots, broad warm brown bark with a fresh pale broken twig at the top and two small moss patches. Rounded triangular root mass about 46px wide and 37px high, centered. Clearly woody root obstacle, not a box, stump creature or vines frame. No face, no glow.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 2610031,
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "shading": true,
+        "detail": true
+      }
+    },
+    "result": {
+      "job_id": "8a53d7b3-1884-4bc4-a496-867c86bb65f3",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/8a53d7b3-1884-4bc4-a496-867c86bb65f3/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8a53d7b3-1884-4bc4-a496-867c86bb65f3/download"
+      ]
+    }
+  },
+  {
+    "name": "Root_Level_2",
+    "request": {
+      "description": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. TWO-HIT strong ROOT: a broad bulky tangled root crown, two thick arched woody limbs intertwined around a compact dark knot, sturdy pale bark ridges and small moss leaves at sides. About 56px wide and 48px high, centered. Visibly larger and thicker more fortified silhouette than a small three-root mound. No face, no UI frame, no glow.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 2610032,
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "shading": true,
+        "detail": true
+      }
+    },
+    "result": {
+      "job_id": "62122a66-c391-4ffd-b4c0-661fc21a8797",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/62122a66-c391-4ffd-b4c0-661fc21a8797/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/62122a66-c391-4ffd-b4c0-661fc21a8797/download"
+      ]
+    }
+  },
+  {
+    "name": "Vine_Weave",
+    "request": {
+      "description": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. A loose irregular web of THREE slender winding green bramble vines stretching from different edges across one square gem space, with a few small pointed leaves. Tendrils loop and cross diagonally THROUGH the middle, never form a rectangular border/frame. Many large fully TRANSPARENT holes between vines: at least 65 percent of canvas empty so an underlying colorful gem is visible through the weave. Thin 3px stems with tiny 2px thorns and 5px leaf clusters. Sparse open natural interlacing, not dense foliage, no background plate, no underlying gem drawn.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 2610033,
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "shading": true,
+        "detail": true
+      }
+    },
+    "result": {
+      "job_id": "1f8e013b-4560-4603-aff6-7da23d4f5437",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download"
+      ]
+    }
+  },
+  {
+    "name": "Vine_Spread",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download",
+      "action": "The thin bramble stems quickly withdraw in reverse growth, curling back toward the edges and shrinking away until the last frame is completely empty transparency. No new objects, no background, fixed camera. Large transparent gaps remain between stems. This clip will play BACKWARDS to show vines rapidly spreading inward and unfurling to the exact original vine weave.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 2610040
+    },
+    "result": {
+      "job_id": "96b8caf4-7b66-4756-8a26-8fc71febcc26",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=0",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=1",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=2",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=3",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=4",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=5",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=6",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=7",
+        "https://api.pixellab.ai/mcp/images/96b8caf4-7b66-4756-8a26-8fc71febcc26/download?index=8"
+      ],
+      "asset": {
+        "id": "60b115e6-c406-5cb3-b83f-1b5c31f37728",
+        "type": "image",
+        "status": "saved"
+      }
+    }
+  },
+  {
+    "name": "Vine_Hit",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download",
+      "action": "A sharp invisible strike snaps the thin bramble stems apart at the center; the cut vines recoil elastically outward, curled tips whip back toward all four edges, tiny leaf fragments flick away and vanish. Finish on empty transparency. Quick punchy impact then short settling recoil. No weapon, no gem, no solid green cloud, fixed camera. Keep large transparent gaps.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 2610041
+    },
+    "result": {
+      "job_id": "86dddaec-e259-4383-8210-30d37cc95639",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=0",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=1",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=2",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=3",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=4",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=5",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=6",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=7",
+        "https://api.pixellab.ai/mcp/images/86dddaec-e259-4383-8210-30d37cc95639/download?index=8"
+      ],
+      "asset": {
+        "id": "e2db0112-3ac8-5d78-9837-1370fd94de3c",
+        "type": "image",
+        "status": "saved"
+      }
+    }
+  },
+  {
+    "name": "Vine_Spread_v2",
+    "request": {
+      "first_frame_base64": "transparent 64x64 canvas",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download",
+      "action": "Green bramble vines visibly grow quickly inward from the four edges of the empty transparent square, stems curling and unfurling until they form the exact sparse vine weave shown in the final image. First frame empty, final frame all vines present. Fixed camera, keep transparent gaps, no background, no gem, no flash.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 2610060
+    },
+    "result": {
+      "job_id": "4317ef78-1ef8-4b3e-9958-73a469538a18",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=0",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=1",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=2",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=3",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=4",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=5",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=6",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=7",
+        "https://api.pixellab.ai/mcp/images/4317ef78-1ef8-4b3e-9958-73a469538a18/download?index=8"
+      ],
+      "asset": {
+        "id": "3d7250f0-70c6-5067-817e-1d6226404230",
+        "type": "image",
+        "status": "saved"
+      }
+    }
+  },
+  {
+    "name": "Vine_Hit_v2",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/1f8e013b-4560-4603-aff6-7da23d4f5437/download",
+      "last_frame_base64": "transparent 64x64 canvas",
+      "action": "Thin vines are cut by a sharp invisible strike: stems recoil apart, curl back to the edges and vanish off screen, leaving the final frame completely empty transparent. A few tiny leaves scatter. NO return to the starting pose. No weapon, no impact star, no gem, no background, fixed camera.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 2610061
+    },
+    "result": {
+      "job_id": "35c6781b-698b-4304-b065-f52c1651e901",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=0",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=1",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=2",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=3",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=4",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=5",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=6",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=7",
+        "https://api.pixellab.ai/mcp/images/35c6781b-698b-4304-b065-f52c1651e901/download?index=8"
+      ],
+      "asset": {
+        "id": "eeb4b915-6045-5a88-ad5e-9ec98a84c574",
+        "type": "image",
+        "status": "saved"
+      }
+    }
+  },
+  {
+    "name": "Transition_Smoke",
+    "request": {
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 2610050,
+      "description": "Native 64x64 pixel art VFX sprite: a broad opaque billowing puff of magical teleport smoke, rounded lobes with stepped pixel edges. Dark muted lavender-purple shadows, dusty mauve midtones, restrained pale rose lit upper-left rims. Big connected flat shading shapes and dark outline, 5 or 6 colors maximum. Isolated single irregular circular cloud filling most of canvas, transparent outside only; no transparent holes inside cloud. No sparks, no character, no gem, no letters, no gradient or blur. Dungeon Matcher crisp retro woodland/dungeon transition effect."
+    },
+    "result": {
+      "job_id": "f4fcb853-5cdb-496a-b72f-ea652542db29",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/f4fcb853-5cdb-496a-b72f-ea652542db29/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f4fcb853-5cdb-496a-b72f-ea652542db29/download"
+      ]
+    }
+  }
+]

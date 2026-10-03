@@ -14,6 +14,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
 {
     public static CombatMoveClock Current { get; private set; }
     public static bool Active => Current != null;
+    public static bool MoveEffects => Active && Current.state.profile != CombatClockSnapshot.LegacyEffectsProfile;
     public static bool MoveBasics => Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
     public static bool PausesTimedBasics => Active && !MoveBasics && Current.IsBlockingWaveProgression;
     public static int EffectAction => Current == null ? 0 : Math.Max(Current.state.actions.completed, Current.state.actions.pending);

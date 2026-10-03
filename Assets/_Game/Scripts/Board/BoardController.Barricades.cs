@@ -1158,7 +1158,11 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
-        if(IsRoot(state)) return GameplayThemeSkin.Current?.anchorOverlay ?? GetBarricadeFallbackSprite();
+        if(IsRoot(state))
+        {
+            var theme=GameplayThemeSkin.Current ?? Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
+            return (state.RemainingDurability>1 ? theme?.rootLevelTwo : theme?.rootLevelOne) ?? theme?.anchorOverlay ?? GetBarricadeFallbackSprite();
+        }
         bool isLevelTwoStone =
             state != null &&
             state.Style ==

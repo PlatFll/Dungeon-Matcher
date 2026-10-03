@@ -117,28 +117,39 @@ public partial class BoardController
         if(!IsCellPlayable(cell.x,cell.y) || GetGem(cell.x,cell.y)==null || IsCellVined(cell.x,cell.y)) return;
         var node=new VineNodeSnapshot {cellOverlay=true,x=cell.x,y=cell.y,rootId=rootId,ownerId=ownerId,
             bornMove=completedValidPlayerMoves,nonSpreading=nonSpreading,environmental=environmental};
-        vineNodes.Add(node);CreateVineView(node);
+        vineNodes.Add(node);CreateVineView(node,true);
     }
-    private void CreateVineView(VineNodeSnapshot node)
+    private GameplayThemeDefinition VineTheme => GameplayThemeSkin.Current ?? Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
+    private void CreateVineView(VineNodeSnapshot node,bool animate=false)
     {
         var cell=new Vector2Int(node.x,node.y);
         if(vineViews.ContainsKey(cell)) return;
-        var sprite=GameplayThemeSkin.Current?.vineOverlay;
-        if(sprite==null) sprite=Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme")?.vineOverlay;
+        var theme=VineTheme;
+        var sprite=theme?.vineOverlay;
         if(sprite==null) return; // Optional art cannot affect legal play.
         var view=new GameObject("VineOverlay_"+node.x+"_"+node.y);view.transform.SetParent(transform,false);
         view.transform.localPosition=GetCellLocalPosition(node.x,node.y);
         view.transform.localScale=Vector3.one*(cellSize/Mathf.Max(sprite.bounds.size.x,sprite.bounds.size.y));
         var renderer=view.AddComponent<SpriteRenderer>();renderer.sprite=sprite;
         renderer.sortingLayerName="Gems";renderer.sortingOrder=8;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;
+        view.AddComponent<VineOverlayMotion>().Initialize(renderer,sprite,theme.vineSpreadFrames,animate && RunSession.Current?.Continuation?.IsRestoring!=true);
         vineViews[cell]=view;
     }
-    private void RemoveVine(VineNodeSnapshot node)
+    private void RemoveVine(VineNodeSnapshot node,bool damaged=false)
     {
         vineNodes.Remove(node);var cell=new Vector2Int(node.x,node.y);
         foreach(var d in BarricadeHitDirections)
             if(barricadeCells.TryGetValue(cell+d,out var root) && IsRoot(root)) root.OpenRootSides |= SideBit(-d);
-        if(vineViews.TryGetValue(cell,out var view)) { if(view!=null) {view.SetActive(false);Destroy(view);} vineViews.Remove(cell); }
+        if(vineViews.TryGetValue(cell,out var view))
+        {
+            vineViews.Remove(cell);
+            if(view!=null)
+            {
+                if(damaged && RunSession.Current?.Continuation?.IsRestoring!=true && view.TryGetComponent<VineOverlayMotion>(out var motion))
+                    motion.Retire(VineTheme?.vineHitFrames);
+                else {view.SetActive(false);Destroy(view);}
+            }
+        }
     }
     private void ClearVinesForDestruction(HashSet<Gem> cleared,HashSet<Gem> preserved)
     {
@@ -156,7 +167,7 @@ public partial class BoardController
                 if(barricadeCells.TryGetValue(cell,out var state) && IsRoot(state))
                     state.OpenRootSides |= SideBit(-d);
             }
-            RemoveVine(node);
+            RemoveVine(node,true);
         }
     }
     private static int SideBit(Vector2Int direction)

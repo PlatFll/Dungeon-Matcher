@@ -142,7 +142,8 @@ public static class ForestProductionImporter
             new GameplayThemeDefinition.IconReplacement{source=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Game/Art/UI/Ability UI/Horrible_Harmony.png"),themed=Sprite("UI","AbilityHarmony")},
             new GameplayThemeDefinition.IconReplacement{source=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Game/Art/GideonGlass/Gideon_AbilityButton.png"),themed=Sprite("UI","AbilityCamera")}
         };
-        theme.vineOverlay=Sprite("Effects","Vine_Overlay");theme.anchorOverlay=Sprite("Effects","Vine_Anchor");
+        if(theme.vineSpreadFrames==null || theme.vineSpreadFrames.Length==0) theme.vineOverlay=Sprite("Effects","Vine_Overlay");
+        theme.anchorOverlay=Sprite("Effects","Vine_Anchor");
         theme.vineWarning=Sprite("Effects","Vine_Warning");theme.healEffect=Sprite("Effects","Leaf_Heal");
         theme.interruptEffect=Sprite("Effects","Interrupt");theme.resonanceIcon=Sprite("Effects","Resonance");
         theme.supplyNormal=Sprite("UI","SupplyNormal");theme.supplyHighlighted=Sprite("UI","SupplyHighlighted");

@@ -120,5 +120,9 @@ Reported/provisional per-job costs reconcile to that balance change. Initial
 allowance 90, total ceiling 120, 30 reserved after review. No credit purchases.
 `usage-reconciliation.json` records every job, including rejected/refined outputs.
 
-Next action is the user's art/motion/kit/full-screen/music review. No merge,
-aquatic work, finished roster, ten-minute pacing claim or later phase is included.
+Subsequent approval: Treant C is locked, root/vine art and motion are integrated,
+and the user authorized connected crystal travel and merging. The additional
+24 generations bring Phase 5–6 usage to **104/120**; see
+`ArtSource/Forest/VinesAndTransition/usage.json`. Aquatic, expanded roster kits,
+ten-minute pacing evidence and final music approval remain open. See
+[travel details](CRYSTAL_TRAVEL.md).

@@ -21,20 +21,37 @@ This document describes the current authoritative gameplay architecture and the 
 | Waves and scaling | `WaveController`, `WaveSpawnProfile`, `DifficultyProfile`, `EnemyRuntimeStats` |
 | Persistent account and transactions | `AccountProgression`, `AccountSave`, `AccountRunJournal`, `BalanceV1` |
 | Run journal, settlement and consumables | `RunSession`; board-owned `BoardController.Consumables` |
+| Zone selection and travel | `ZoneRuntimeContext`, `ZoneDefinition`, `ZoneTravelController`; atomic checkpoint through `RunContinuation` |
 | Typography, menus and audio | `UiTypography`, `GameUi`, `BalanceRuntimeBootstrap`, `RunControlsUI`, `AudioPreferences` |
 | Run upgrades | `RunUpgradeDefinition`, `RunUpgradeCatalog`, `RunUpgradeRuntime`, `RunUpgradeResolver`, `UpgradeDraftGenerator` |
 | Presentation | Board VFX controllers, enemy/player presenters, combat-text controllers, and UI components |
 
 ## Board and modular frame presentation
 
-### Isolated forest combat foundation
+### Forest combat and zone travel
 
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
-flag. `RunSession` installs `ZoneRuntimeContext` and `CombatMoveClock` before
-actors initialize. `ZoneDefinition` supplies the affiliated gem, test formations
-and theme; unfinished forest content has `eligibleForLiveTravel=false` and never
-enters the production encounter database. `GameplayThemeDefinition` supplies
+flag. `RunSession` installs `ZoneRuntimeContext` for every run, and
+`CombatMoveClock` for recorded profiles or the isolated test before actors
+initialize. `ZoneDefinition` supplies the affiliated gem, formations, apex and
+theme. Dungeon and forest are eligible for live travel; isolated fixtures retain
+their own loop. `GameplayThemeDefinition` supplies
 additive artwork to existing layout owners. No second UI geometry owner exists.
+
+`ZoneTravelController` holds the existing wave gate after an entire apex
+formation dies. A dedicated saved random stream selects the destination. Pending
+and committed stages are durable; `RunContinuation.TryCommitZoneTravel` atomically
+stores the destination checkpoint before reloading Game. `ZoneTransitionView` is
+a persistent presentation canvas and input/time hold; it never selects a region
+or edits the board. Settings and modal canvases render above it. Upgrade UI binds
+to the gameplay scene canvas, never this temporary curtain. Scene restoration
+rebinds themes, audio and gameplay owners beneath opaque smoke. See
+[travel and carryover details](Forest/CRYSTAL_TRAVEL.md).
+
+The `seconds-effects-move-abilities-v1` profile preserves a travelling dungeon
+run's seconds for buffs, stagger, poison and supplies. `MoveEffects` selects effect
+units independently of move-coordinated abilities and `MoveBasics`. Existing
+forest profiles retain their serialized semantics.
 
 `BoardController` remains the only acceptance, mutation and resolution authority.
 `CombatMoveClock` observes acceptance/completion, holds an external input token
@@ -53,7 +70,8 @@ The environment growth deadline advances independently of forced surges. Board
 photos preserve that deadline and solved/damaged root progress.
 
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
-`accepted-moves-v1` or new `seconds-basics-move-abilities-v1` profile,
+`accepted-moves-v1`, `seconds-basics-move-abilities-v1` or the travel
+`seconds-effects-move-abilities-v1` profile,
 zone, completed action, next actor ID and owner state. Only settled snapshots are
 committed; accepted work in flight uses the established replay journal. Unknown
 profiles and invalid actor identities preserve the durable run and block play.

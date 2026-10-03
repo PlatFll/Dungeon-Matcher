@@ -1,11 +1,17 @@
 # Forest starter production — Phases 5–6
 
-Branch: `codex/forest-enemy-production`, stacked on the unmerged Phase 4
-`codex/forest-gameplay-foundation`. Six starter kits and their battle animation
-sets, modular woodland, timber gameplay UI and a temporary original cue are ready
-for review. The user's original checkout and open foundation project are separate.
+Six starter kits, native animation sets, modular woodland, timber gameplay UI and
+a temporary original cue are integrated. Live dungeon ↔ forest crystal travel is
+now connected. The extra seven approved roster designs remain stills only.
 
 ## Play
+
+Normal Play starts in the dungeon and travels after the King formation to the
+forest, then returns after the Matriarch formation. Global depth, board, build and
+resources carry over. Settings remains usable over the smoke. See
+[the travel contract](CRYSTAL_TRAVEL.md).
+
+For direct development testing:
 
 Open this branch's project in **Unity 6000.3.19f1**. Choose **Dungeon Matcher →
 Forest → Play new isolated test**. It creates a separate save under
@@ -38,8 +44,9 @@ the basic countdown; a special hold resumes its stored seconds afterward.
   frame's dimensions, palette count, alpha, bounds, contact row, hash and timing.
 - `ArtSource/Forest/Production/Raw`: original service outputs; `Selected`: repaired
   exports. `Inputs/MenderPilot` preserves the already-approved pilot source.
-- `usage-reconciliation.json`: actual **80 / 90 initial / 120 total** generations.
-  Ten initial generations remain unused; the 30 correction reserve is untouched.
+- Original production `usage-reconciliation.json`: **80 generations**. Subsequent
+  root/vine/smoke work used 24, bringing Phase 5–6 to **104/120**, with 16 remaining.
+  See `ArtSource/Forest/VinesAndTransition/usage.json` and its native art checks.
 
 Serve the repository locally with Python's HTTP server to open the review page;
 its manifest loading needs HTTP. The current review server uses port 8881.
@@ -53,7 +60,8 @@ HUD readability, kit counterplay and the original temporary cue. Music is **not
 final**: human listening/mix approval remains open. Device performance and Android
 audio/touch behavior also remain unverified.
 
-This is a starter test roster, not the complete forest or proof of ten-minute
-visits. Full content, live random crystal travel, further progression and aquatic
-work remain later scope. No public mode selector, forced waits, HP padding or
-run cap was added. Stop for review; no merge or next phase is authorized.
+The six playable enemies remain a starter roster, not proof of a complete forest
+or ten-minute visits. Expanded content and aquatic work remain later scope. No
+public mode selector, forced waits, HP padding or run cap was added. The user
+authorized merging the current root/vine and crystal-travel work. The additional
+seven stills have no new animation or kit approval.

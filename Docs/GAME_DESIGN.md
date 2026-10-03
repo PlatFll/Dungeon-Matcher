@@ -6,23 +6,30 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Game identity and core loop
 
-### Internal forest prototype (Phases 5–6)
+### Forest combat and live crystal travel
 
 New forest tests use seconds for ordinary attacks and accepted manual moves for
 special abilities. Basic progress pauses during owned board resolution, stagger
 and specialist holds. Failed swaps, cascades and free skills/supplies contribute
 no extra move. The earlier move-based buffs, stagger, poison and supply cooldowns
 remain in this isolated test profile. Existing all-move forest saves retain their
-recorded profile; version-1 dungeon saves remain unchanged. This is an internal
-test, not a public mode or final balance decision. Exact expiry and compatibility
+recorded profile. Live dungeon runs retain seconds for effects, including after
+travel; first travel adds move-based forest ability coordination without changing
+effect units. Exact expiry and compatibility
 rules are in [the timing contract](Forest/FOUNDATION_CONTRACT.md).
 
 The launch plan is dungeon, magical forest and aquatic, developed one zone at a
-time. Future crystal travel chooses randomly; there is no player route selection.
+time. Crystal travel chooses randomly among eligible destinations other than the
+current zone; there is no player route selection. Dungeon and forest are connected
+after their entire apex formations die and any card reward is chosen. The split
+pink crystal shakes, smoke covers gameplay, and the destination is restored under
+cover. Settings remains usable. The run, board, resources and global depth carry
+over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
 Forest now has six starter kits, their battle animation sets, modular woodland,
 gameplay-only timber UI and an original temporary music cue for review.
-The full roster, travel, approximately ten-minute substantial visits and aquatic
-work remain later phases. This test adds no
+The full roster, approximately ten-minute substantial visits and aquatic
+work remain later phases. Current forest visits use eighteen local starter
+encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu
 and settings screens retain their existing presentation.
 

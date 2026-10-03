@@ -11,6 +11,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     public static RunSession Current { get; private set; }
     public CombatMoveClock MoveClock { get; private set; }
     public ZoneRuntimeContext Zone { get; private set; }
+    public ZoneTravelController Travel { get; private set; }
     public string RunId { get; private set; }
     public bool IsFinished { get; private set; }
     public bool IsVictory { get; private set; }
@@ -74,10 +75,14 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         RunLaunchOptions.ForestClockProfile=CombatClockSnapshot.HybridProfile;
         RunLaunchOptions.ForestPrototype=false;
         var clockSave=continued?.checkpoint?.version==2 ? continued.checkpoint.clock : null;
-        if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint) && Resources.Load<ZoneDefinition>("Zones/"+clockSave.zoneId)!=null) || (continued==null && forestRequested))
+        string initialZone=continued?.checkpoint?.travel?.version==1 ? continued.checkpoint.travel.zoneId : clockSave?.zoneId ?? (forestRequested?"magical-forest":"dungeon");
+        Zone=gameObject.AddComponent<ZoneRuntimeContext>();Zone.Initialize(this,Resources.Load<ZoneDefinition>("Zones/"+initialZone)!=null?initialZone:"dungeon");
+        Travel=gameObject.AddComponent<ZoneTravelController>();
+        // Forest saves predating travel were isolated fixtures. Keep that loop;
+        // an explicit newer travel snapshot always supplies its own enable flag.
+        Travel.Initialize(this,continued?.checkpoint?.travel,!forestRequested && clockSave?.zoneId!="magical-forest",initialZone);
+        if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint)) || (continued==null && forestRequested))
         {
-            Zone=gameObject.AddComponent<ZoneRuntimeContext>();
-            Zone.Initialize(this,clockSave?.zoneId ?? "magical-forest");
             MoveClock=gameObject.AddComponent<CombatMoveClock>();MoveClock.Initialize(this,clockSave,forestProfile);
         }
         Continuation=gameObject.AddComponent<RunContinuation>();
@@ -102,13 +107,13 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     }
     private void Update()
     {
-        if (CombatMoveClock.Active) return;
+        if (CombatMoveClock.MoveEffects) return;
         for (int i = 0; i < cooldowns.Length; i++) cooldowns[i] = Mathf.Max(0, cooldowns[i] - Time.deltaTime);
     }
 
     public void AdvanceSupplyCooldowns()
     {
-        if (!CombatMoveClock.Active) return;
+        if (!CombatMoveClock.MoveEffects) return;
         for (int i=0; i<cooldowns.Length; i++) cooldowns[i]=Mathf.Max(0,cooldowns[i]-1);
     }
     public int Charges(ConsumableKind kind) => IsFinished ? 0 : account.Charges(RunId, kind);
@@ -162,7 +167,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         bool committed=Continuation==null || Continuation.ExecutingReplayAction
             ? account.TrySpendCharge(RunId,kind) : Continuation.RecordAction(action);
         if(!committed) return false;
-        cooldowns[(int)kind] = CombatMoveClock.Active ? 2 : BalanceV1.Current.consumableCooldown;
+        cooldowns[(int)kind] = CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown;
         return true;
     }
     private void OnWaveStarted(int wave)
@@ -171,8 +176,8 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         foreach (var definition in Waves.OriginalEncounterDefinitions)
         {
             if (definition == null) continue;
-            hasMilestone |= definition.Category == EnemyCategory.Miniboss;
-            hasKing |= definition.Category == EnemyCategory.Boss;
+            hasMilestone |= definition.Category == EnemyCategory.Miniboss || definition.Category == EnemyCategory.Boss;
+            hasKing |= definition.EnemyId == "king";
         }
         waveStartedAt = Time.unscaledTime;
         movesAtStart = Board.CompletedValidPlayerMoves;

@@ -4,14 +4,19 @@ New isolated forest tests use `seconds-basics-move-abilities-v1`: ordinary attac
 count seconds; special abilities count accepted player moves. This follows the
 user's Phase 5–6 timing revision. Version-2 `accepted-moves-v1` saves keep their
 earlier all-move interpretation. Production dungeon runs and version-1 saves keep
-their existing profile. Forest is not eligible for live travel or release.
+their existing effect units. Dungeon and forest are now eligible for live travel
+after apex formations; isolated tests retain their own loop. The additive
+`seconds-effects-move-abilities-v1` travel profile keeps seconds effects and adds
+move-based forest ability coordination. See [crystal travel](CRYSTAL_TRAVEL.md).
 Six starter kits, battle motion, modular art and temporary audio are now included.
 
 ## Work sequence
 
 The Phase 4 foundation remains the action/save owner. Phase 5–6 adds the two
-milestone kits and native art through these owners, then stops for art, motion,
-kit and music review. No merge or next-phase authorization is implied.
+milestone kits and native art through these owners. The user subsequently approved
+Treant C, root/vine art and motion, connected travel and merging this work.
+The seven additional stills remain unanimated and without kits; final music,
+full roster and later-zone production still require their own review.
 
 ## Action resolution
 

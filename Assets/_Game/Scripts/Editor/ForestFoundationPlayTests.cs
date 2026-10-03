@@ -43,7 +43,7 @@ public sealed partial class ForestFoundationPlayTests
         RunLaunchOptions.ForestClockProfile=secondsBasics?CombatClockSnapshot.HybridProfile:CombatClockSnapshot.MoveProfile;
         RunLaunchOptions.ForestPrototype=true;RunLaunchOptions.ForestEncounterOffset=offset;
         SceneManager.LoadScene("Game");yield return Stable();
-        Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Zone.Definition.eligibleForLiveTravel,Is.False);
+        Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Travel.State.enabled,Is.False,"isolated fixtures stay separate from live travel");
         Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(Run.Zone.TestEncounter(1).members.Length));
     }
     private IEnumerator Stable()

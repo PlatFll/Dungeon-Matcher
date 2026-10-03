@@ -75,7 +75,7 @@ public sealed class RunUpgradeDefinition : ScriptableObject
 
     public string UpgradeId => upgradeId;
     public string DisplayTitle => displayTitle;
-    public string Description => !CombatMoveClock.Active ? description : upgradeId == "longer_reign" ? "Royal Decree lasts one extra accepted move (4 total)." : upgradeId == "slow_venom" ? "Poison lasts one extra accepted move (4 ticks total)." : description;
+    public string Description => !CombatMoveClock.MoveEffects ? description : upgradeId == "longer_reign" ? "Royal Decree lasts one extra accepted move (4 total)." : upgradeId == "slow_venom" ? "Poison lasts one extra accepted move (4 ticks total)." : description;
     public Sprite Artwork => artwork;
     public RunUpgradeRarity Rarity => rarity;
     public float Weight => weight;

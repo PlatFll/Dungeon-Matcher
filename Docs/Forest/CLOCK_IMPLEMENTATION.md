@@ -8,8 +8,12 @@ No move decrement or reset is applied to that stored seconds progress.
 Existing `accepted-moves-v1` saves retain the table below. The remaining forest
 buffs, stagger, poison and supply cooldowns also keep these move semantics in new
 hybrid tests; the user's change specifically restored ordinary attack timers.
-Production/version-1 saves retain their original rules. The implementation
-contract supplies exact expiry order.
+Production/version-1 saves retain their original effect units. First live travel
+adds `seconds-effects-move-abilities-v1`: seconds basics, buffs, stagger, poison,
+Marshal rally and supply cooldowns; accepted-move readiness and channels for
+forest abilities. `CombatMoveClock.MoveEffects` selects effect units separately
+from `Active` and `MoveBasics`. No saved seconds become move counts. The
+implementation contract supplies exact expiry order.
 
 | Owner | Move profile | Existing seconds retained for |
 |---|---|---|
