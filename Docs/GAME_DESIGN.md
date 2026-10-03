@@ -25,6 +25,11 @@ after their entire apex formations die and any card reward is chosen. The split
 pink crystal shakes, smoke covers gameplay, and the destination is restored under
 cover. Settings remains usable. The run, board, resources and global depth carry
 over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
+For the current testing build only, new runs may start in Dungeon or Magical
+Forest through a temporary menu picker. This changes the starting location;
+crystal destinations during the run still follow the existing random rule.
+Continue restores its saved location and Retry starts the current live zone.
+Remove this testing choice for the full game.
 Forest has six starter kits plus seven approved roster additions, modular woodland,
 gameplay-only timber UI and an original temporary music cue for review.
 The additions are Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar

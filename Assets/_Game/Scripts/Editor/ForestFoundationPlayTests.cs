@@ -36,6 +36,7 @@ public sealed partial class ForestFoundationPlayTests
         Time.timeScale=1;SceneManager.LoadScene("MainMenu");yield return null;
         profile?.Dispose();character?.Dispose();mastery?.Dispose();
         profile=character=mastery=null;RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.ForestEncounterOffset=0;
+        RunLaunchOptions.StartingZone=null;RunLaunchOptions.Practice=false;RunLaunchOptions.Challenge=RunChallenge.Standard;
         yield return new ExitPlayMode();
     }
     private IEnumerator Launch(int offset=0, bool secondsBasics=false)

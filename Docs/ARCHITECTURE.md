@@ -30,6 +30,15 @@ This document describes the current authoritative gameplay architecture and the 
 
 ### Forest combat and zone travel
 
+`MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
+fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
+validated by `RunSession`; an existing checkpoint always wins. A direct forest
+start installs `seconds-effects-move-abilities-v1` before actors initialize and
+enables the normal travel controller. It never uses the isolated fixture flag.
+`RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
+same-zone Retry behavior; disable it for release. No zone preference or new
+account/save schema is introduced.
+
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
 flag. `RunSession` installs `ZoneRuntimeContext` for every run, and
 `CombatMoveClock` for recorded profiles or the isolated test before actors

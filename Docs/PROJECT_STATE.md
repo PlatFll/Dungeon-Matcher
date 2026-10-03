@@ -21,11 +21,12 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-03
-- **Current milestone:** Expanded forest roster in [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176): the seven locked designs now have 39 motion clips and their approved kits, including Treant C (Old Stump). The user selected Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B; these replace the corresponding obstacle art with matching vine growth/recoil. See [the roster contract](Forest/EXPANDED_ROSTER.md). Dungeon ↔ forest travel, timed basics, move-based enemy readiness and existing live effect timing remain in place. The user approved merging this batch on 2026-10-03.
+- **Current milestone:** Temporary new-run zone picker, with implementation and merge authorized on 2026-10-03. Play, character-select Play, practice and challenges offer Dungeon or Magical Forest. Continue restores the saved zone directly; Retry restarts the current live zone. Forest starts use live encounters/travel with seconds basics/effects and move-based special abilities. Disable `RunLaunchOptions.TestingZonePickerEnabled` for the full release; this is an intentional testing override.
+- **Forest checkpoint:** [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176) is merged: seven locked designs have 39 motion clips and approved kits, including Treant C (Old Stump). Selected blockers are Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B. See [the roster contract](Forest/EXPANDED_ROSTER.md). Existing crystal travel and combat timing remain in place.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** The expanded roster and selected blockers have **75 unique passing checks**, including a final 37-case affected rerun, plus a successful final Unity validator. See [the roster validation record](Validation/FOREST_EXPANDED_ROSTER.md). The earlier travel/root/vine milestone has [its separate evidence](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
+- **Current verification:** The temporary zone picker has **17 passing checks**, actual portrait/menu input checks and a successful Unity validator; see [picker validation](Validation/TESTING_ZONE_PICKER.md). The preceding expanded roster has [75 unique passing checks](Validation/FOREST_EXPANDED_ROSTER.md), and the earlier travel milestone has [separate evidence](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -345,11 +346,19 @@ These are **not bugs** unless the user explicitly changes direction.
 
 ## Forest starter production test
 
+The temporary in-game starting-zone picker offers currently playable regions
+before creating a fresh run. Back cancels without creating a journal or spending
+supplies. Saved runs bypass it, and practice preserves any saved normal attempt.
+Retry starts a new attempt in the current live zone. The choice is consumed at
+scene handoff; ongoing zone and timing state use the existing checkpoint.
+The picker is deliberately enabled in the current build for testing and must be
+disabled with `RunLaunchOptions.TestingZonePickerEnabled` before full release.
+
 The Editor-only Forest menu starts or resumes a separate save under
 `.utmp/ForestPlaytest`. Twenty-two formations loop indefinitely using six starter
 kits and seven approved additions. New basics count seconds and abilities count moves; older forest saves keep
 their profile. Buffs, stagger, poison and supplies retain prototype move durations.
-It introduces no public mode selector. Modular art and native battle motion are
+This isolated fixture loop remains separate from the temporary menu picker. Modular art and native battle motion are
 implemented for review. The original forest cue is explicitly temporary and needs
 listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.

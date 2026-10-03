@@ -1,7 +1,10 @@
 # Crystal travel and vine presentation
 
 The user approved connecting dungeon and forest travel on 2026-10-03. New normal
-runs start in the dungeon. Isolated Editor forest fixtures retain their separate
+runs default to the dungeon. The temporary testing picker can instead start a
+fresh live run in the magical forest, with seconds effects and move-based
+abilities. Continue retains its saved zone; travel destinations remain random.
+Isolated Editor forest fixtures retain their separate
 save and loop; they do not opt into live travel automatically.
 Older forest checkpoints without travel metadata also retain that isolated loop;
 schema zero distinguishes Unity's default nested JSON object from a travel save.

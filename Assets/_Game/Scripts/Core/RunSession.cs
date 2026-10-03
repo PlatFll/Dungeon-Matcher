@@ -74,16 +74,25 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         string forestProfile=RunLaunchOptions.ForestClockProfile;
         RunLaunchOptions.ForestClockProfile=CombatClockSnapshot.HybridProfile;
         RunLaunchOptions.ForestPrototype=false;
+        string requestedZone=RunLaunchOptions.StartingZone;
+        RunLaunchOptions.StartingZone=null;
+        bool selectedStart=continued==null && !forestRequested && RunLaunchOptions.TestingZonePickerEnabled &&
+            !string.IsNullOrEmpty(requestedZone) &&
+            ZoneTravelController.DestinationReady(Resources.Load<ZoneDefinition>("Zones/"+requestedZone));
+        string newZone=forestRequested?"magical-forest":selectedStart?requestedZone:"dungeon";
         var clockSave=continued?.checkpoint?.version==2 ? continued.checkpoint.clock : null;
-        string initialZone=continued?.checkpoint?.travel?.version==1 ? continued.checkpoint.travel.zoneId : clockSave?.zoneId ?? (forestRequested?"magical-forest":"dungeon");
+        string initialZone=continued?.checkpoint?.travel?.version==1 ? continued.checkpoint.travel.zoneId : clockSave?.zoneId ?? newZone;
         Zone=gameObject.AddComponent<ZoneRuntimeContext>();Zone.Initialize(this,Resources.Load<ZoneDefinition>("Zones/"+initialZone)!=null?initialZone:"dungeon");
         Travel=gameObject.AddComponent<ZoneTravelController>();
         // Forest saves predating travel were isolated fixtures. Keep that loop;
         // an explicit newer travel snapshot always supplies its own enable flag.
         Travel.Initialize(this,continued?.checkpoint?.travel,!forestRequested && clockSave?.zoneId!="magical-forest",initialZone);
-        if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint)) || (continued==null && forestRequested))
+        bool liveForestStart=continued==null && !forestRequested && initialZone=="magical-forest";
+        if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint)) ||
+            (continued==null && forestRequested) || liveForestStart)
         {
-            MoveClock=gameObject.AddComponent<CombatMoveClock>();MoveClock.Initialize(this,clockSave,forestProfile);
+            MoveClock=gameObject.AddComponent<CombatMoveClock>();
+            MoveClock.Initialize(this,clockSave,liveForestStart?CombatClockSnapshot.LegacyEffectsProfile:forestProfile);
         }
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);
@@ -229,7 +238,12 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         var active = account.ActiveRun;
         if (active != null && active.id == RunId && !account.FinalizeRun(RunId, scene == "Game" ? "Retry" : "Quit to Menu")) return false;
         transitioning = true;
-        if (scene == "Game") { RunLaunchOptions.Practice = IsPractice; RunLaunchOptions.Challenge = Challenge; }
+        if (scene == "Game")
+        {
+            RunLaunchOptions.Practice = IsPractice; RunLaunchOptions.Challenge = Challenge;
+            if(RunLaunchOptions.TestingZonePickerEnabled && Travel?.State.enabled==true)
+                RunLaunchOptions.StartingZone=Zone.Definition.zoneId;
+        }
         CancelTargeting();
         // Scene unload disposes the existing actor/board/ability/attack owners.
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
