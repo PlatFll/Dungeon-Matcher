@@ -53,6 +53,8 @@ public sealed partial class WaveController
         var zoneEnemy = RunSession.Current?.Zone?.FindEnemy(id);
         if (zoneEnemy != null) return zoneEnemy;
         foreach(var data in enemyDatabase.Enemies) if(data!=null && data.name==id) return data;
+        foreach(var zone in Resources.LoadAll<ZoneDefinition>("Zones"))
+            foreach(var data in zone.enemies) if(data!=null && data.name==id) return data;
         throw new InvalidOperationException("Saved enemy definition is unavailable: "+id);
     }
     public void RestoreContinuationActors(RunCombatSnapshot saved)

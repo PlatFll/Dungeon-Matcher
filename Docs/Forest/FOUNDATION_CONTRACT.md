@@ -4,14 +4,19 @@ New isolated forest tests use `seconds-basics-move-abilities-v1`: ordinary attac
 count seconds; special abilities count accepted player moves. This follows the
 user's Phase 5–6 timing revision. Version-2 `accepted-moves-v1` saves keep their
 earlier all-move interpretation. Production dungeon runs and version-1 saves keep
-their existing profile. Forest is not eligible for live travel or release.
+their existing effect units. Dungeon and forest are now eligible for live travel
+after apex formations; isolated tests retain their own loop. The additive
+`seconds-effects-move-abilities-v1` travel profile keeps seconds effects and adds
+move-based forest ability coordination. See [crystal travel](CRYSTAL_TRAVEL.md).
 Six starter kits, battle motion, modular art and temporary audio are now included.
 
 ## Work sequence
 
 The Phase 4 foundation remains the action/save owner. Phase 5–6 adds the two
-milestone kits and native art through these owners, then stops for art, motion,
-kit and music review. No merge or next-phase authorization is implied.
+milestone kits and native art through these owners. The user subsequently approved
+Treant C, root/vine art and motion, connected travel and merging this work.
+The seven additional stills remain unanimated and without kits; final music,
+full roster and later-zone production still require their own review.
 
 ## Action resolution
 
@@ -23,7 +28,8 @@ all consequences settle; board mutation remains owned by BoardController.
 
 Complete player clears/resources/damage first. Apply deaths and real stagger
 interrupts as they occur. At settlement commit that action once; process existing
-poison, then surviving actors in persistent spawn-ID order. Each actor resolves
+poison, the due normal vine-growth pulse, then surviving actors in persistent
+spawn-ID order. Each actor resolves
 its channel or due special. Under the retained all-move profile, at most one
 ordinary action is also offered per actor per tick. In new hybrid tests, ordinary
 attacks count seconds between moves; board acceptance pauses new countdowns until
@@ -78,7 +84,8 @@ profiles/versions retain the durable original and report incompatibility.
 
 Channel targets use persistent actor IDs, never recycled slots. Captured board
 owners still use the established slot reconstruction within a single snapshot;
-vine records separately retain source, network identity, age and target gem ID.
+vine records retain source, root identity and cell coordinates. Root state and the
+normal growth deadline are saved by the board.
 Gideon's board photograph does not rewind combat clock or proc budgets.
 
 ## Forest mechanics
@@ -88,38 +95,55 @@ self-targeting: a fixed living ally below 75% receives +20 only after two future
 accepted actions. Stagger/kill cancels once, recipient death fizzles, and 2 future
 recovery moves follow every outcome. It cannot attack during channel/recovery.
 
-Vines share canonical movable pins: block swapping, fall with gems, remain
-matchable and are removed by clear/conversion. Enemy roots die with their owner;
-environment roots live until wave/zone cleanup. A network has a two-action growth
-age with a visible last-move warning, at most one new vine globally per action,
-no same-tick recursion, and shared six-restriction capacity including reservations.
-Only ordinary, safe orthogonal neighbors qualify. Player specials and reserved
-counterplay routes are protected. Clearing/conversion removes that node and its
-pending growth; new growth receives its own full grace.
+Vines are cell overlays. They obscure some of the gem without blocking swapping,
+gravity, matches, bombs or destruction. Clearing the covered gem removes its vine.
+Normal growth pulses every two accepted moves, before enemy casts: one edge seed
+and at most four frontier additions, with a 24-overlay growth cap. A pulse uses
+the original frontier, never recursive same-pulse spread. Root placement always
+seeds its four orthogonal neighbors, independent of that growth cap. These are
+prototype cadence/readability values, not finalized pacing. Real chains retain
+their existing six-restriction cap; vines consume none of it.
 
-Resonance multiplies only eligible damage attributed to the current zone gem by
-1.15, after generic gem modifiers and before target modifiers/final five-step
-rounding. Other colors in a mixed clear are unchanged. Weakness and player
-affinity remain independent. A generic current-gem event is a card hook only;
-full offer/proc integration remains Phase 7.
+Rootbinder warns one ordinary, reachable interior gem for a future response,
+then replaces it with a structural 1-hit Root. Four immediate vines never spread.
+First clear a vine beside the Root; a later clear through an unvined, opened side
+deals one durability hit. The opening clear cannot also damage that Root.
+Roots use the existing structural queue, useful-response checks, cap and refill.
 
-Warden: first readiness after 2 moves; warn two safe cells for one future response.
-Surviving anchors are nonspreading, share the six-restriction cap, and reduce all
-incoming damage by 25% once, regardless of anchor count. Clearing the last anchor
-or staggering the preparation grants 2 future moves of +25% weakness damage.
-The clearing packet itself does not get the new bonus. Recovery then resets the
-special to 3 moves. Basics pause during preparation/exposure/recovery.
+Warden first readies after two moves, warns one cell, then plants a 2-hit Root
+with four spreading vines. While it lives, every ally including Warden receives
+one 25% incoming-damage reduction through central damage resolution. Multiple
+Wardens do not multiply this shared reduction. Breaking the Root removes the aura.
+Clearing its warning or normal stagger interrupts preparation. Invalid targets
+fizzle without granting stagger. There is no exposure state or weakness bonus.
 
-Matriarch: first readiness after 3 moves; create up to two nonspreading anchors,
-choose the lowest-health-fraction other ally strictly below 75%, or self if none,
-and fix its persistent identity for 2 future response moves. At completion heal
-10 per surviving anchor, at most 20 and capped to missing HP. Clearing both or
-staggering cancels and exposes; losing the recipient fizzles without retargeting.
-Every outcome has 2 future exposure/recovery moves; recurrence then takes 3 moves.
-Consume the cast sequence before healing callbacks. Removing the owner/encounter
-removes its anchors. Photographs cannot resurrect a finished cast.
+Matriarch first readies after three moves. Renew plants two linked 2-hit Heartroots
+when none remain, then channels for two future moves. She heals herself and every
+living ally for base 20 plus 20 per Heartroot surviving at resolution. Her cycle
+then uses Verdant Surge (immediate existing-vine advance) and Thorn Harvest
+(three future moves; base 20 damage plus 5 per currently vine-covered gem).
+Harvest consumes all vines, leaving Heartroot occupancy and durability intact.
+Surge never resets or delays the normal growth deadline. Both Heartroots fully
+destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
+Surviving spreading roots can regrow vines on the next normal pulse.
 
-Eligibility is the attributed Match/Special/Ability damage packet through
+Successful casts and cancellations consume their sequence before effect callbacks.
+Milestone recovery takes two future moves, then three moves to readiness. Basics
+pause during preparation/channel/recovery. Scout and Trailguard retain their
+existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
+recipient invalidation never retargets or auto-staggers her. All true interruptions
+use EnemyStagger; no forest-specific stagger or vulnerability state exists.
+
+Root IDs, remaining durability, opened sides, owner, spread policy, overlays,
+normal growth deadline and milestone cycle/sequence are saved. Legacy vine pins
+migrate to overlays; old nonspreading anchor casts retire with a harmless fizzle.
+Real chains remain intact. Photographs keep the present growth deadline and root
+durability/open sides, cannot resurrect destroyed roots or dead producers, and
+do not rewind channels or consumed effects. Root networks leave with their owner;
+environmental vines leave at wave/zone cleanup. Optional art never owns effects.
+
+Forest resonance multiplies Emerald damage by 1.15 before target modifiers and
+final five-step rounding. Eligibility is the attributed Match/Special/Ability damage packet through
 CombatController. Separate Royal Decree proc hits, poison ticks and fixed enemy
 damage are excluded; they do not silently inherit the color of a mixed clear.
 Existing integer rounding in CombatController precedes actor-level rounding to

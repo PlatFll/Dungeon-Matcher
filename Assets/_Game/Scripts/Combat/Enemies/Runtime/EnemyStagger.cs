@@ -53,7 +53,7 @@ public sealed class EnemyStagger : MonoBehaviour
     private float activeStaggerDuration;
     public void ExpireAcceptedMove(int move)
     {
-        if (!CombatMoveClock.Active || enemyActor == null || enemyActor.IsDefeated) return;
+        if (!CombatMoveClock.MoveEffects || enemyActor == null || enemyActor.IsDefeated) return;
         if (IsStaggered)
         {
             if (move <= moveStaggerApplied) return;
@@ -155,7 +155,7 @@ public sealed class EnemyStagger : MonoBehaviour
             return;
         }
 
-        if (CombatMoveClock.Active) return;
+        if (CombatMoveClock.MoveEffects) return;
         float deltaTime = Mathf.Max(0f, Time.deltaTime);
 
         if (IsStaggered)
@@ -217,7 +217,7 @@ public sealed class EnemyStagger : MonoBehaviour
         }
 
         float before = staggerMeterNormalized;
-        remainingBuildupGraceTime = CombatMoveClock.Active ? 1 : Mathf.Max(0f, buildupDecayDelay);
+        remainingBuildupGraceTime = CombatMoveClock.MoveEffects ? 1 : Mathf.Max(0f, buildupDecayDelay);
         moveLastHit = CombatMoveClock.EffectAction;
         SetMeterNormalized(before + damageAmount / threshold);
 
@@ -336,7 +336,7 @@ public sealed class EnemyStagger : MonoBehaviour
             return;
         }
 
-        if (CombatMoveClock.Active) duration = 1;
+        if (CombatMoveClock.MoveEffects) duration = 1;
         moveStaggerApplied = CombatMoveClock.EffectAction;
         isStaggered = true;
         activeStaggerDuration = duration;
@@ -355,7 +355,7 @@ public sealed class EnemyStagger : MonoBehaviour
         activeStaggerDuration = 0f;
         isStaggered = false;
         remainingBuildupGraceTime = 0f;
-        remainingImmunityTime = CombatMoveClock.Active ? 2 : PostStaggerImmunitySeconds;
+        remainingImmunityTime = CombatMoveClock.MoveEffects ? 2 : PostStaggerImmunitySeconds;
         moveImmunityApplied = CombatMoveClock.EffectAction;
         SetMeterNormalized(0f);
 

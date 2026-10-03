@@ -46,7 +46,7 @@ public static class RunUpgradeBootstrap
             Object.FindFirstObjectByType<PlayerActor>();
         CombatController combat =
             Object.FindFirstObjectByType<CombatController>();
-        Canvas canvas = ResolveOverlayCanvas();
+        Canvas canvas = waves != null ? ResolveOverlayCanvas(waves.gameObject.scene) : null;
 
         if (waves == null ||
             board == null ||
@@ -114,7 +114,7 @@ public static class RunUpgradeBootstrap
         coordinator.Configure(runtime, waves, board, player, ui);
     }
 
-    private static Canvas ResolveOverlayCanvas()
+    private static Canvas ResolveOverlayCanvas(Scene gameplayScene)
     {
         Canvas[] canvases = Object.FindObjectsByType<Canvas>(
             FindObjectsInactive.Include,
@@ -125,13 +125,15 @@ public static class RunUpgradeBootstrap
         {
             Canvas canvas = canvases[index];
 
-            if (canvas != null && canvas.isRootCanvas &&
+            // A persistent travel curtain may coexist with this scene. Cards
+            // belong to the gameplay canvas, which survives the curtain.
+            if (canvas != null && canvas.gameObject.scene == gameplayScene && canvas.isRootCanvas &&
                 canvas.renderMode == RenderMode.ScreenSpaceOverlay)
             {
                 return canvas;
             }
         }
 
-        return canvases.Length > 0 ? canvases[0].rootCanvas : null;
+        return null;
     }
 }

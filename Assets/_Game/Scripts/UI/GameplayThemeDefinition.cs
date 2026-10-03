@@ -13,6 +13,8 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite buttonNormal, buttonHighlighted, buttonPressed, buttonDisabled;
     public Sprite settingsNormal, settingsHighlighted, settingsPressed, settingsDisabled;
     public Sprite panelShell, energyFrame, vineOverlay, anchorOverlay, vineWarning;
+    public Sprite rootLevelOne, rootLevelTwo;
+    public Sprite[] vineSpreadFrames, vineHitFrames;
     public Sprite healEffect, interruptEffect, resonanceIcon;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;
     [System.Serializable] public struct IconReplacement { public Sprite source, themed; }

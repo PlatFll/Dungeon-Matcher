@@ -56,19 +56,18 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         bool casting=channel!=null && channel.IsChanneling;
         var roots=GetComponent<RootbinderEnemyAbility>();
         var milestone=GetComponent<ForestMilestoneEnemyAbility>();
-        bool ritual=milestone!=null && milestone.IsPreparing && milestone.Target!=null;
-        var recipient=casting?channel.Target:ritual?milestone.Target:null;
+        bool ritual=milestone!=null && milestone.IsPreparing;
+        var recipient=casting?channel.Target:null;
         text.text=casting ? $"HEAL IN {channel.ResponseMoves}" : channel!=null && channel.BlocksBasic ? "RECOVER" :
-            milestone!=null && milestone.IsPreparing ? $"{(milestone.Target!=null?"RENEW":"ROOTS")} IN {milestone.ResponseMoves}" :
-            milestone!=null && milestone.IsExposed ? "EXPOSED +25%" :
+            milestone!=null && milestone.IsPreparing ? $"{milestone.CastName} IN {milestone.ResponseMoves}" :
             milestone!=null && milestone.IsProtected ? "ROOT GUARD" :
             milestone!=null && milestone.BlocksBasic ? "RECOVER" :
-            roots!=null && roots.IsWarning ? $"VINES IN {roots.ResponseMoves}" :
+            roots!=null && roots.IsWarning ? $"ROOT IN {roots.ResponseMoves}" :
             CombatMoveClock.MoveBasics ? $"HIT IN {Mathf.CeilToInt(attack?.RemainingAttackTime ?? 0)}" :
             $"HIT {attack?.RemainingAttackTime ?? 0:0.0}s";
         text.color=casting||ritual?new Color(.65f,1f,.45f):Color.white;
         bar.gameObject.SetActive(casting||ritual);
-        if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves:milestone.ResponseMoves)/2f),4);
+        if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves/2f:(float)milestone.ResponseMoves/milestone.ChannelMoves)),4);
         if(link!=null)
         {
             link.gameObject.SetActive(recipient!=null && recipient!=actor && !actor.IsDefeated);

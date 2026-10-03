@@ -1,0 +1,28 @@
+{
+  "name": "Elven_Thornkeeper",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8\",\n  \"image_id\": \"4bfe22ea-0b46-50b6-837f-7d50a6b7594a\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4bfe22ea-0b46-50b6-837f-7d50a6b7594a\",\n  \"job_id\": \"1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8/download\"\n}\nPoll get_image(job_id=\"1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8",
+      "image_id": "4bfe22ea-0b46-50b6-837f-7d50a6b7594a",
+      "status": "processing",
+      "source_image_id": "4bfe22ea-0b46-50b6-837f-7d50a6b7594a",
+      "job_id": "1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/1d6e09d3-5fd9-4b6c-8729-21e77bfbefb8/download"
+    },
+    "isError": false
+  }
+}

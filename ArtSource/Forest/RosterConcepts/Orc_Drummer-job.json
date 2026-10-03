@@ -1,0 +1,28 @@
+{
+  "name": "Orc_Drummer",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"d8531672-d4e7-4eb3-840c-a91fab56b417\",\n  \"image_id\": \"9c17131a-e96f-5869-9268-f275c741319f\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"9c17131a-e96f-5869-9268-f275c741319f\",\n  \"job_id\": \"d8531672-d4e7-4eb3-840c-a91fab56b417\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/d8531672-d4e7-4eb3-840c-a91fab56b417/download\"\n}\nPoll get_image(job_id=\"d8531672-d4e7-4eb3-840c-a91fab56b417\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "d8531672-d4e7-4eb3-840c-a91fab56b417",
+      "image_id": "9c17131a-e96f-5869-9268-f275c741319f",
+      "status": "processing",
+      "source_image_id": "9c17131a-e96f-5869-9268-f275c741319f",
+      "job_id": "d8531672-d4e7-4eb3-840c-a91fab56b417",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/d8531672-d4e7-4eb3-840c-a91fab56b417/download"
+    },
+    "isError": false
+  }
+}

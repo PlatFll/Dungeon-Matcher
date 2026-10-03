@@ -1,0 +1,28 @@
+{
+  "name": "Ancient_Treant",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"232f6c3e-c467-4ced-b120-b733fd50e10a\",\n  \"image_id\": \"0a9762b9-fd4f-521a-a939-6a09c6ecd7c8\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"0a9762b9-fd4f-521a-a939-6a09c6ecd7c8\",\n  \"job_id\": \"232f6c3e-c467-4ced-b120-b733fd50e10a\",\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/232f6c3e-c467-4ced-b120-b733fd50e10a/download\"\n}\nPoll get_image(job_id=\"232f6c3e-c467-4ced-b120-b733fd50e10a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "232f6c3e-c467-4ced-b120-b733fd50e10a",
+      "image_id": "0a9762b9-fd4f-521a-a939-6a09c6ecd7c8",
+      "status": "processing",
+      "source_image_id": "0a9762b9-fd4f-521a-a939-6a09c6ecd7c8",
+      "job_id": "232f6c3e-c467-4ced-b120-b733fd50e10a",
+      "image_size": {
+        "width": 96,
+        "height": 96
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/232f6c3e-c467-4ced-b120-b733fd50e10a/download"
+    },
+    "isError": false
+  }
+}

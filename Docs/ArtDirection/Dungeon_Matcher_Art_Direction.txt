@@ -768,3 +768,27 @@ APPROVED ENEMY ABILITY PRODUCTION — 2026-10-01
 User selected Royal Gold and accepted all other concepts with two revisions: King uses BOTH hands on the sword through lift, ground thrust, planted hold and extraction; Shield Knight raises his decorated shield before a blue glow grants shields.
 Sources: ArtSource/EnemyAttacks/abilities.json and ABILITY_SOURCES.md. Fourteen native controller states cover the ten remaining ability users, including King warning/raise/two-strike/command states and separate Archbishop green Restoration and gold Benediction. Preserve native character scale and fixed battle-floor anchor. Effects use restrained gold, cyan and green accents.
 King impacts clear column then row, with the board locked and unfilled until recovery finishes. The runtime board queue owns this timing. Optional animation/VFX is never the sole authority for completion. Initial one-handed King and front-bubble Shield Knight concepts are superseded.
+
+
+2026-10-03 — Additional forest design lock
+User explicitly approved Elven Thornkeeper, Orc Berserker, Orc Bloomcaller,
+Snapvine, Orc Drummer and Briar Archer. Exact stills/hashes are in
+ArtSource/Forest/RosterConcepts/APPROVED_DESIGNS.json. Preserve identity, equipment,
+silhouette and palette; do not animate them yet. Their raw measured palettes
+are 25/42/63/30/30/29 colors on 64x64 canvases. This locks designs, not a claim
+that all shading cleanup or runtime animation production is complete.
+Original Ancient Treant is rejected. Treant variant C (Old Stump) was approved
+on 2026-10-03; A and B remain unselected alternatives. Existing six starter production sprites and
+all approved animation art remain unchanged by this revision.
+
+2026-10-03 — Root/vine presentation and crystal travel
+Treant C is locked unchanged at 96x96, 33 opaque colors, binary alpha; SHA-256
+6c4cdfcdf4351ec47e9512dfd0445741aef8a4ad911ddcf58bf539f72d0831f3.
+Its still approval does not authorize character animations or a new playable kit.
+New 64x64 PixelLab roots use a small three-root mound for one remaining hit and
+a thick interwoven crown for two. Vines cross the gem with 81.64% empty alpha;
+nine growth frames and twelve impact/retraction frames remain optional visuals.
+The split pink story gem remains the exact approved UI/Finalized source. Native
+PixelLab smoke covers the gameplay screen below the existing settings UI.
+Sources, first attempts, corrections, measurements and costs are retained in
+ArtSource/Forest/VinesAndTransition. No approved character pixels were changed.

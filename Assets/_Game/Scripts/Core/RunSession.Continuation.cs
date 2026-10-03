@@ -10,13 +10,14 @@ public sealed partial class RunSession
         saved.draftWave=journal.draftWave; saved.draft=new System.Collections.Generic.List<string>(journal.draft);
         saved.refinementUsed=journal.refinementUsed;
         saved.potionCooldown=cooldowns[0]; saved.bombCooldown=cooldowns[1];
+        saved.travel=Travel?.Capture();
     }
     public void RestoreContinuation(RunCombatSnapshot saved)
     {
         cooldowns[0]=saved.potionCooldown; cooldowns[1]=saved.bombCooldown;
         hasMilestone=hasKing=false;
         foreach(var data in Waves.OriginalEncounterDefinitions)
-        { hasMilestone|=data.Category==EnemyCategory.Miniboss; hasKing|=data.Category==EnemyCategory.Boss; }
+        { hasMilestone|=data.Category==EnemyCategory.Miniboss || data.Category==EnemyCategory.Boss; hasKing|=data.EnemyId=="king"; }
         waveStartedAt=Time.unscaledTime; movesAtStart=Board.CompletedValidPlayerMoves;
     }
     public bool SuspendToMenu()

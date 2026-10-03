@@ -20,6 +20,8 @@ public sealed partial class ForestFoundationPlayTests
     private RunSession Run=>RunSession.Current;
     [UnitySetUp] public IEnumerator SetUp()
     {
+        typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
+            .Invoke(null,new object[]{new Vector2Int(1080,1920)});
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         yield return new EnterPlayMode();
         path=Path.GetFullPath(".utmp/ForestTestProfiles/"+Guid.NewGuid().ToString("N")+".json");
@@ -41,7 +43,7 @@ public sealed partial class ForestFoundationPlayTests
         RunLaunchOptions.ForestClockProfile=secondsBasics?CombatClockSnapshot.HybridProfile:CombatClockSnapshot.MoveProfile;
         RunLaunchOptions.ForestPrototype=true;RunLaunchOptions.ForestEncounterOffset=offset;
         SceneManager.LoadScene("Game");yield return Stable();
-        Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Zone.Definition.eligibleForLiveTravel,Is.False);
+        Assert.That(Run.MoveClock,Is.Not.Null);Assert.That(Run.Travel.State.enabled,Is.False,"isolated fixtures stay separate from live travel");
         Assert.That(Run.Waves.ActiveEnemies.Count,Is.EqualTo(Run.Zone.TestEncounter(1).members.Length));
     }
     private IEnumerator Stable()
@@ -61,7 +63,7 @@ public sealed partial class ForestFoundationPlayTests
         // A controlled no-special opening isolates timing from random damage.
         // Refill and all resolution still use the production deterministic path.
         for(int x=0;x<board.Width;x++)for(int y=0;y<board.Height;y++)
-        {var g=board.GetGem(x,y);if(!(preserveCounterplayCrystal && x==board.Width-1 && y==0)) g.SetSpecialType(GemSpecialType.None);g.SetType((GemType)((x+2*y)%6),sprites[(x+2*y)%6]);}
+        {var g=board.GetGem(x,y);if(g==null) continue;if(!(preserveCounterplayCrystal && x==board.Width-1 && y==0)) g.SetSpecialType(GemSpecialType.None);g.SetType((GemType)((x+2*y)%6),sprites[(x+2*y)%6]);}
         var color=(GemType)Enumerable.Range(0,6).First(n=>Run.Waves.ActiveEnemies.All(e=>(int)e.AssignedGemType!=n));
         int top=-1,left=0;
         // A ritual may pin the old fixed swap. Find an actual unrestrained
@@ -70,7 +72,7 @@ public sealed partial class ForestFoundationPlayTests
         {
             bool clear=true;
             for(int px=x;px<x+4;px++)for(int py=Mathf.Max(0,y-2);py<=Mathf.Min(board.Height-1,y+1);py++)
-                clear&=!board.IsGemPinned(board.GetGem(px,py));
+                clear&=board.GetGem(px,py)!=null && !board.IsGemPinned(board.GetGem(px,py));
             if(clear) {top=y;left=x;}
         }
         Assert.That(top,Is.GreaterThanOrEqualTo(1),"fixture has an unrestrained response");
@@ -192,67 +194,45 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(terminals,Is.EqualTo(1));
         Assert.That(target.CurrentHealth,Is.LessThanOrEqualTo(health),"the removed caster cannot heal later in that same action");
     }
-    [UnityTest] public IEnumerator VinesSharePinsCapsGraceAndEnvironmentalOwnership()
+    [UnityTest] public IEnumerator VinesAreOverlaysWithOrdinarySwapGravityClearAndSave()
     {
-        yield return Launch(1);var board=Run.Board;var root=Enemy("orc_rootbinder");
-        board.GetGem(0,0).SetSpecialType(GemSpecialType.ColorCrystal);
-        BoardController.GemSetThreat warning=null;
-        Assert.That(board.TryQueueVineWarning(root,2,3,w=>warning=w),Is.True);yield return Stable();
-        Assert.That(warning,Is.Not.Null);Assert.That(warning.Targets.Count,Is.InRange(1,2));
-        Assert.That(warning.DueMove,Is.GreaterThan(board.CompletedValidPlayerMoves));
-        // Preserve the target cells by placing the controlled move elsewhere.
-        typeof(BoardController.GemSetThreat).GetProperty("DueMove").SetValue(warning,board.CompletedValidPlayerMoves);
-        Assert.That(board.TryQueueResolveVines(warning,null),Is.True);yield return Stable();
-        Assert.That(board.VineCount,Is.GreaterThan(0));int seeds=board.VineCount;
-        var snapshot=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
-        foreach(var node in snapshot.vines)
-        {
-            var cell=snapshot.cells.First(c=>c.identity==node.gemId);var gem=board.GetGem(cell.x,cell.y);
-            Assert.That(board.IsGemPinned(gem),Is.True);Assert.That(board.IsGemFrozen(gem),Is.False);
-            Assert.That(board.IsHintMoveStillValid(gem,board.GetGem(Math.Max(0,cell.x-1),cell.y)),Is.False);
-        }
-        yield return board.AdvanceVineNetworks(0);Assert.That(board.VineCount,Is.EqualTo(seeds),"birth action cannot propagate");
-        board.GetGem(0,0).SetSpecialType(GemSpecialType.ColorCrystal);
-        var environmental=Enumerable.Range(0,board.Width).Select(x=>board.GetGem(x,0)).First(g=>g.SpecialType==GemSpecialType.None&&!board.IsGemPinned(g));
-        board.QueueEnvironmentalVine(environmental);yield return Stable();
-        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.environmental),Is.True);
-        var environmentalId=environmental.BoardIdentity;
-        root.ResolveDirectDamage(9999);yield return Stable();
-        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.All(n=>n.environmental),Is.True);
-        Assert.That(board.IsGemPinned(environmental),Is.True,"unrelated producer death cannot remove environment vines");
-        Assert.That(Run.Continuation.SaveNow(),Is.True);Assert.That(Run.SuspendToMenu(),Is.True);yield return null;
-        SceneManager.LoadScene("Game");yield return Until(()=>Run!=null && Run.Continuation!=null&&!Run.Continuation.IsRestoring,"vine resumes");
-        Run.GetComponent<RunControlsUI>().Close();yield return Stable();board=Run.Board;
-        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.gemId==environmentalId&&n.environmental),Is.True);
-        board.RemoveVineSource(null);yield return Stable();Assert.That(board.VineCount,Is.Zero);
-        Assert.That(board.TryGetRandomHintMove(out _,out _),Is.True);
-    }
-    [UnityTest] public IEnumerator ActualMovesGrowAtMostOneChildAfterFullGraceAndRespectSharedCapacity()
-    {
-        yield return Launch(1);var board=Run.Board;
-        preserveCounterplayCrystal=true;
-        // Keep a useful response and test environmental growth independently
-        // from the caster. Neither helper alters placement/clear algorithms.
+        yield return Launch(1,true);QuietKitFixture();
         Enemy("orc_rootbinder").SetSpecialTurnRequirement(100);
-        PrepareSafeMove();board.GetGem(board.Width-1,0).SetSpecialType(GemSpecialType.ColorCrystal);
-        board.QueueEnvironmentalVine(board.GetGem(0,1));yield return Stable();Assert.That(board.VineCount,Is.EqualTo(1));
-        yield return Move();Assert.That(board.VineCount,Is.EqualTo(1),"first future move only warns");
-        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).warnings.Any(w=>w.vine),Is.True);
-        yield return Move();Assert.That(board.VineCount,Is.EqualTo(2),"second response completes one child");
-        var saved=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
-        Assert.That(saved.vines.Count(n=>n.bornMove==Run.MoveClock.Tick),Is.GreaterThanOrEqualTo(1));
-        yield return Move();Assert.That(board.VineCount,Is.EqualTo(2),"newborn receives a full first response");
-        for(int x=1;x<board.Width-1;x++) board.QueueEnvironmentalVine(board.GetGem(x,0));
-        foreach(var owner in Run.Waves.ActiveEnemies) board.TryQueueTopUpMovablePins(owner,3,null,null);
-        yield return Stable();Assert.That(board.RestrictionCount,Is.LessThanOrEqualTo(6));
-        Assert.That(CounterplayGuard.HasUsefulResponse(board.GetImmediateResponses(),Run.Player,Run.Waves),Is.True);
-        // A bomb follows the normal clear/conversion release path and is free.
-        saved=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
-        var parent=saved.cells.First(c=>c.identity==saved.vines[0].gemId);
-        int tick=Run.MoveClock.Tick;int identity=parent.identity;
-        Assert.That(Run.TryUseBomb(board.GetGem(parent.x,parent.y)),Is.True);yield return Stable();
-        Assert.That(Run.MoveClock.Tick,Is.EqualTo(tick));
-        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Any(n=>n.gemId==identity),Is.False);
+        var board=Run.Board;PrepareSafeMove();
+        var gem=board.GetGem(safeMoveFrom.x,safeMoveFrom.y);
+        board.QueueEnvironmentalVine(gem);yield return Stable();
+        Assert.That(board.IsGemPinned(gem),Is.False);Assert.That(board.RestrictionCount,Is.Zero);
+        Assert.That(board.IsHintMoveStillValid(gem,board.GetGem(safeMoveTo.x,safeMoveTo.y)),Is.True);
+        yield return Move();Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
+        Assert.That(board.GetGem(safeMoveFrom.x,safeMoveFrom.y),Is.Not.Null,"normal gravity/refill reaches a vine cell");
+        board.QueueEnvironmentalVine(board.GetGem(0,0));yield return Stable();
+        int deadline=board.NextVineGrowthMove;
+        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;SceneManager.LoadScene("Game");
+        yield return Until(()=>Run?.Continuation!=null&&!Run.Continuation.IsRestoring,"overlay save resumes");
+        Run.GetComponent<RunControlsUI>().Close();yield return Stable();QuietKitFixture();board=Run.Board;
+        Assert.That(board.IsCellVined(0,0),Is.True);Assert.That(board.NextVineGrowthMove,Is.EqualTo(deadline));
+        int tick=Run.MoveClock.Tick;
+        Assert.That(Run.TryUseBomb(board.GetGem(0,0)),Is.True);yield return Stable();
+        Assert.That(board.IsCellVined(0,0),Is.False);Assert.That(Run.MoveClock.Tick,Is.EqualTo(tick));
+        Assert.That(board.RestrictionCount,Is.Zero);
+    }
+    [UnityTest] public IEnumerator ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers()
+    {
+        yield return Launch(1,true);QuietKitFixture();var board=Run.Board;
+        var owner=Enemy("orc_rootbinder");owner.SetSpecialTurnRequirement(100);
+        yield return board.AdvanceVineNetworks(1);Assert.That(board.VineCount,Is.Zero);
+        yield return board.AdvanceVineNetworks(2);yield return Stable();Assert.That(board.VineCount,Is.EqualTo(1));
+        var edge=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.Single();
+        Assert.That(edge.x==0||edge.y==0||edge.x==board.Width-1||edge.y==board.Height-1,Is.True);
+        int deadline=board.NextVineGrowthMove;
+        Assert.That(board.QueueVineSurge(owner,null),Is.True);yield return Stable();
+        Assert.That(board.VineCount,Is.InRange(2,5));Assert.That(board.NextVineGrowthMove,Is.EqualTo(deadline));
+        for(int i=0;i<12;i++) {board.QueueVineSurge(owner,null);yield return Stable();}
+        Assert.That(board.VineCount,Is.LessThanOrEqualTo(Run.Zone.Definition.maximumVineOverlays));
+        Assert.That(board.RestrictionCount,Is.Zero);Assert.That(board.TryGetRandomHintMove(out _,out _),Is.True);
+        owner.ResolveDirectDamage(9999);yield return Stable();
+        Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).vines.All(n=>n.environmental),Is.True);
+        board.RemoveVineSource(null);yield return Stable();Assert.That(board.VineCount,Is.Zero);
     }
     [UnityTest] public IEnumerator AcceptedSwapReplayProducesSameLogicalStateExactlyOnce()
     {
@@ -375,36 +355,24 @@ public sealed partial class ForestFoundationPlayTests
         yield return new WaitForSecondsRealtime(.4f);
         Assert.That(File.ReadAllText(path),Is.EqualTo(original),"unsupported save is retained byte-for-byte");
     }
-    [UnityTest] public IEnumerator PhotoKeepsPresentVineAgeAndWarningsWhileCasterRemovalCancelsHeal()
+    [UnityTest] public IEnumerator PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal()
     {
-        yield return Launch();var board=Run.Board;preserveCounterplayCrystal=true;PrepareSafeMove();
-        board.GetGem(board.Width-1,0).SetSpecialType(GemSpecialType.ColorCrystal);
+        yield return Launch();var board=Run.Board;PrepareSafeMove();
         board.QueueEnvironmentalVine(board.GetGem(0,1));yield return Stable();
         var photo=board.CaptureBoardMemory(Run.Waves.ContinuationOwnerSlot);
-        int identity=photo.vines.Single().gemId;
-        yield return Move();
-        var current=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
-        var warning=current.warnings.Single(w=>w.vine);int deadline=warning.dueMove;
+        yield return Move();yield return board.AdvanceVineNetworks(2);yield return Stable();
+        int deadline=board.NextVineGrowthMove;
         Assert.That(board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);yield return Stable();
-        var restored=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot);
-        Assert.That(restored.moves,Is.EqualTo(1));Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
-        Assert.That(restored.vines.Single(n=>n.gemId==identity).bornMove,Is.EqualTo(current.vines.Single().bornMove));
-        Assert.That(restored.warnings.Single(w=>w.vine).dueMove,Is.EqualTo(deadline));
-        // Independent casters share scheduling, retaining at least a future
-        // response and avoiding simultaneous restriction strikes.
-        BoardController.GemSetThreat one=null,two=null;
+        Assert.That(board.NextVineGrowthMove,Is.EqualTo(deadline));Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
         var mender=Enemy("elven_mender");var trail=Enemy("orc_trailguard");
-        Assert.That(board.TryQueueVineWarning(mender,1,3,w=>one=w),Is.True);yield return Stable();
-        Assert.That(board.TryQueueVineWarning(trail,1,3,w=>two=w),Is.True);yield return Stable();
-        Assert.That(one,Is.Not.Null);Assert.That(two,Is.Not.Null);
-        Assert.That(one.DueMove,Is.GreaterThan(deadline));Assert.That(two.DueMove,Is.GreaterThan(one.DueMove));
-        Assert.That(board.RestrictionCount,Is.LessThanOrEqualTo(6));
-        trail.ResolveDamageWithoutFeedback(30);
-        var channel=mender.GetComponent<EnemyChannelRuntime>();
+        BoardController.GemSetThreat one=null,two=null;
+        board.TryQueueRootWarning(mender,1,1,false,false,w=>one=w);yield return Stable();
+        board.TryQueueRootWarning(trail,1,1,false,false,w=>two=w);yield return Stable();
+        Assert.That(one,Is.Not.Null);Assert.That(two,Is.Not.Null);Assert.That(two.DueMove,Is.GreaterThan(one.DueMove));
+        trail.ResolveDamageWithoutFeedback(30);var channel=mender.GetComponent<EnemyChannelRuntime>();
         channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot{state=1,sequence=1,targetId=trail.PersistentId,deadlineMove=3}},_=>trail);
         int health=trail.CurrentHealth;string outcome=null;channel.Changed+=()=>outcome=channel.Outcome;
         mender.ResolveDamageWithoutFeedback(9999);yield return Stable();
         Assert.That(outcome,Is.EqualTo("Caster defeated"));Assert.That(trail.CurrentHealth,Is.EqualTo(health));
-        Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
     }
 }

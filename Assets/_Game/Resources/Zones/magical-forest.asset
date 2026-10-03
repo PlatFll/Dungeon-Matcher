@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
   zoneId: magical-forest
   displayName: Magical Forest
-  eligibleForLiveTravel: 0
+  eligibleForLiveTravel: 1
   affiliatedGem: 3
   enemies:
   - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
@@ -29,51 +29,168 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
-  - label: Vine response
+    firstLocalWave: 1
+    lastLocalWave: 999
+  - label: Root response
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Combined pressure
     members:
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Scout solo
     members:
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Trailguard solo
     members:
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Mender solo (no self heal)
     members:
     - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Rootbinder solo
     members:
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Warden solo
     members:
     - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Matriarch solo
     members:
     - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Warden and Scout
     members:
     - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Warden and Trailguard
     members:
     - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Matriarch first lesson
     members:
     - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
     - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
   - label: Matriarch with roots
     members:
     - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
     - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
     - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+  liveEncounters:
+  - label: Outer path patrol
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 4
+  - label: Mender escort
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 2
+    lastLocalWave: 6
+  - label: Thicket roots
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 7
+  - label: Roving woodland party
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 7
+  - label: Warden crossing
+    members:
+    - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 8
+  - label: Quiet trail
+    members:
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 10
+  - label: Deep grove sentries
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 11
+    lastLocalWave: 13
+  - label: Deep grove hunters
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 11
+    lastLocalWave: 13
+  - label: Warden ritual
+    members:
+    - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 14
+  - label: Grove relief
+    members:
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    firstLocalWave: 15
+    lastLocalWave: 15
+  - label: Heartgrove approach
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 17
+  - label: Matriarch's grove
+    members:
+    - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 18
+    lastLocalWave: 999
+  - label: Matriarch's renewal
+    members:
+    - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    firstLocalWave: 18
+    lastLocalWave: 999
+  apexEnemy: {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+  apexLocalWave: 18
+  affiliatedDamageMultiplier: 1.15
   theme: {fileID: 11400000, guid: bffdd5aff9a7fb24498037e82eef2a00, type: 2}
   music: {fileID: 8300000, guid: 2730da224bfb41d4fa8265e76aeaa352, type: 3}
+  growsVines: 1
+  vineCadenceMoves: 2
+  maximumVineOverlays: 24

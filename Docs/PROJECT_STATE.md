@@ -20,11 +20,12 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-10-02
-- **Current milestone:** Forest Phases 5–6 are on `codex/forest-enemy-production`, stacked on unmerged Phase 4 (#173). Six approved stills remain unchanged; six starter kits, 40 motion clips, modular woodland/ground, edge-to-edge rounded-square logs, gameplay timber UI and an original temporary cue await art/motion/kit/music review. New isolated tests use seconds basics and move-based abilities; older saves retain their recorded profiles. Warden/Matriarch use canonical nonspreading anchors and exactly-once cast outcomes. Actual PixelLab usage is 80 of 90 initial / 120 total generations, with the 30 correction reserve untouched. See [play instructions](Forest/README.md), [production review](Forest/PRODUCTION_REVIEW.md), [timing contract](Forest/FOUNDATION_CONTRACT.md) and [evidence](Validation/FOREST_PRODUCTION_PHASE_05_06.md). No merge or release is authorized.
+- **Date:** 2026-10-03
+- **Current milestone:** Dungeon ↔ forest travel with the approved split pink crystal and PixelLab smoke, preserving the run, board and resources. Settings stays usable. Treant C (Old Stump) is locked unchanged; all seven extra roster designs remain stills without new animations or kits. New distinct root tiers and transparent vine spread/recoil art are integrated. User authorized merging this work, including foundation #173 and production #174. See [travel contract](Forest/CRYSTAL_TRAVEL.md) and [validation](Validation/FOREST_CRYSTAL_TRAVEL.md).
+
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** Phase 5–6 evidence distinguishes passing forest behavior and rendered layout checks from broader-suite failures. The unchanged Phase 4 baseline reproduces 34 legacy lifecycle/audio failures; they remain unresolved and are not hidden or weakened. Current logs, baseline comparisons, final validator result and rendered evidence are in [production validation](Validation/FOREST_PRODUCTION_PHASE_05_06.md). Source checks cover all 304 selected frames and 40 imported sheets. Human motion/kit/music approval and physical-device behavior remain separate.
+- **Current verification:** The current travel/root/vine work has **113 unique passing checks** and a successful final Unity validator; see [the validation record](Validation/FOREST_CRYSTAL_TRAVEL.md). The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -353,7 +354,12 @@ implemented for review. The original forest cue is explicitly temporary and need
 listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.
 The launch plan is dungeon, magical forest and aquatic; crystal destinations
-will be random. Live travel and aquatic remain unimplemented.
+are random among eligible regions. Dungeon and forest now connect after entire apex
+formations; with two regions they alternate. Global depth continues. Live travel
+retains seconds effects from dungeon; isolated forest tests keep their saved
+profiles. Eighteen local starter encounters are temporary forest content anchors.
+Aquatic and expanded forest content remain unimplemented. See
+[crystal travel](Forest/CRYSTAL_TRAVEL.md).
 
 ## Bardley production balance (testing override retired)
 
@@ -863,11 +869,14 @@ The 80-energy production cost and 50% cast-refund ceiling are implemented. Furth
 
 # 25. Current next priorities
 
-The immediate gate is **art, motion, kit and full-screen/music review of Forest
-Phases 5–6**. Assess seconds basics, move-based counterplay, milestone anchors,
+The immediate priorities are **playtesting connected forest travel and reviewing
+the temporary music**. Assess seconds basics, move-based counterplay, structural roots and vine overlays,
 grounding, UI readability and the temporary cue. Address existing baseline test
 failures separately; validate Android touch/audio/performance before release.
-Do not infer permission to merge or proceed from this production allowance.
+The user explicitly authorized the current travel/art merge. New roster animation
+and later-zone production remain outside this approval. The Phase 5–6 PixelLab
+allowance has used **104/120 generations** (80 earlier +24 root/vine/smoke); 16
+remain. The separate extra-roster still allowance is **50/60**. No purchases.
 
 Broader production priorities after that review remain:
 

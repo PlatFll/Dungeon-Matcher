@@ -21,20 +21,37 @@ This document describes the current authoritative gameplay architecture and the 
 | Waves and scaling | `WaveController`, `WaveSpawnProfile`, `DifficultyProfile`, `EnemyRuntimeStats` |
 | Persistent account and transactions | `AccountProgression`, `AccountSave`, `AccountRunJournal`, `BalanceV1` |
 | Run journal, settlement and consumables | `RunSession`; board-owned `BoardController.Consumables` |
+| Zone selection and travel | `ZoneRuntimeContext`, `ZoneDefinition`, `ZoneTravelController`; atomic checkpoint through `RunContinuation` |
 | Typography, menus and audio | `UiTypography`, `GameUi`, `BalanceRuntimeBootstrap`, `RunControlsUI`, `AudioPreferences` |
 | Run upgrades | `RunUpgradeDefinition`, `RunUpgradeCatalog`, `RunUpgradeRuntime`, `RunUpgradeResolver`, `UpgradeDraftGenerator` |
 | Presentation | Board VFX controllers, enemy/player presenters, combat-text controllers, and UI components |
 
 ## Board and modular frame presentation
 
-### Isolated forest combat foundation
+### Forest combat and zone travel
 
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
-flag. `RunSession` installs `ZoneRuntimeContext` and `CombatMoveClock` before
-actors initialize. `ZoneDefinition` supplies the affiliated gem, test formations
-and theme; unfinished forest content has `eligibleForLiveTravel=false` and never
-enters the production encounter database. `GameplayThemeDefinition` supplies
+flag. `RunSession` installs `ZoneRuntimeContext` for every run, and
+`CombatMoveClock` for recorded profiles or the isolated test before actors
+initialize. `ZoneDefinition` supplies the affiliated gem, formations, apex and
+theme. Dungeon and forest are eligible for live travel; isolated fixtures retain
+their own loop. `GameplayThemeDefinition` supplies
 additive artwork to existing layout owners. No second UI geometry owner exists.
+
+`ZoneTravelController` holds the existing wave gate after an entire apex
+formation dies. A dedicated saved random stream selects the destination. Pending
+and committed stages are durable; `RunContinuation.TryCommitZoneTravel` atomically
+stores the destination checkpoint before reloading Game. `ZoneTransitionView` is
+a persistent presentation canvas and input/time hold; it never selects a region
+or edits the board. Settings and modal canvases render above it. Upgrade UI binds
+to the gameplay scene canvas, never this temporary curtain. Scene restoration
+rebinds themes, audio and gameplay owners beneath opaque smoke. See
+[travel and carryover details](Forest/CRYSTAL_TRAVEL.md).
+
+The `seconds-effects-move-abilities-v1` profile preserves a travelling dungeon
+run's seconds for buffs, stagger, poison and supplies. `MoveEffects` selects effect
+units independently of move-coordinated abilities and `MoveBasics`. Existing
+forest profiles retain their serialized semantics.
 
 `BoardController` remains the only acceptance, mutation and resolution authority.
 `CombatMoveClock` observes acceptance/completion, holds an external input token
@@ -45,12 +62,16 @@ resolving accepted turn. See [the timer audit](Forest/CLOCK_IMPLEMENTATION.md).
 
 Mender channels own a fixed persistent recipient ID and an exactly-once terminal
 sequence. Rootbinder submits generic warnings/placements to the existing board
-queue. Vines share movable pin rules, reservation capacity and warning scheduling;
-their separate environment owner survives unrelated enemy cleanup. Board photos
-retain the present combat tick, warning deadlines and surviving vine ages.
+queue. Vines are cell-based presentation overlays in the board's saved state,
+separate from chain/pin maps. Roots reuse structural occupancy, durability,
+safe-placement/refill and the same mutation queue. The first vine clear records
+an opened side after this clear's root-hit check; a later clear can hit through it.
+The environment growth deadline advances independently of forced surges. Board
+photos preserve that deadline and solved/damaged root progress.
 
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
-`accepted-moves-v1` or new `seconds-basics-move-abilities-v1` profile,
+`accepted-moves-v1`, `seconds-basics-move-abilities-v1` or the travel
+`seconds-effects-move-abilities-v1` profile,
 zone, completed action, next actor ID and owner state. Only settled snapshots are
 committed; accepted work in flight uses the established replay journal. Unknown
 profiles and invalid actor identities preserve the durable run and block play.
@@ -64,13 +85,16 @@ work, draining a previously accepted attack before offering that work. It never
 subtracts move readiness from seconds. The replay journal records elapsed frames
 in this profile because idle wall time can now cause damage.
 
-`ForestMilestoneEnemyAbility` owns Warden protection and Matriarch renewal. Both
-submit generic nonspreading vine anchors to the same board queue/cap/save owner.
-Damage reduction and exposed weakness bonuses use `EnemyActor`'s central result
-path, including redirection, final rounding and shield gating. Cast sequence IDs
-are consumed before healing callbacks. Board photos cannot revive finished anchor
-casts. `ForestEnemyMotion` observes outcomes; its special clips contain no effect
-events. Authored basic impacts use the existing guarded attack event path.
+`ForestMilestoneEnemyAbility` owns Warden's shared protection and Matriarch's
+Renew/Surge/Harvest cycle. BoardController owns all root/vine state and mutation;
+normal forest growth resolves before casts. Shared damage-reduction providers
+are evaluated by EnemyActor at impact and do not stack with duplicate providers.
+Redirection, final five-step rounding and shield gating retain their owners.
+Cast sequences are consumed before healing/damage callbacks. Root pairs trigger
+existing EnemyStagger after both are destroyed. Exposure and its weakness bonus
+are removed. Legacy anchors retire on save upgrade; real pins are preserved.
+`ForestEnemyMotion` reuses approved clips and observes outcomes; special clips
+contain no gameplay effect events. Authored basics keep the guarded event path.
 
 `ForestProductionImporter` binds modular scenery, clips and gameplay-only theme
 sprites. The existing layout owner reserves enough battle height for 96px art;

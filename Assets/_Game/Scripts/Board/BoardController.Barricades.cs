@@ -58,6 +58,9 @@ public partial class BoardController
         public int RemainingDurability;
         public int MaximumDurability;
         public EnemyBarricadeStyle Style;
+        public int RootId, OpenRootSides;
+        public long RootOwnerId;
+        public bool RootSpreading;
         public GameObject ViewObject;
         public SpriteRenderer Renderer;
         public MaterialPropertyBlock PropertyBlock;
@@ -397,8 +400,10 @@ public partial class BoardController
             yield break;
         }
 
-        List<Vector2Int> candidates =
-            BuildBarricadableCellList(request.ProtectSpecialGems);
+        bool roots=request.BarricadeStyle==EnemyBarricadeStyle.Root || request.BarricadeStyle==EnemyBarricadeStyle.Heartroot;
+        List<Vector2Int> candidates = BuildBarricadableCellList(request.ProtectSpecialGems);
+        if(roots) candidates.RemoveAll(c=>!CanHostRoot(GetGem(c.x,c.y)) ||
+            (request.SetThreat!=null && !request.SetThreat.Targets.Contains(GetGem(c.x,c.y))));
 
         int placementCount =
             Mathf.Min(
@@ -432,7 +437,7 @@ public partial class BoardController
             new HashSet<Gem>();
 
         for (int index = 0;
-             index < placementCount;
+             candidates.Count > 0 && (roots ? selectedCells.Count < placementCount : index < placementCount);
              index++)
         {
             int candidateIndex =
@@ -454,7 +459,7 @@ public partial class BoardController
                     selectedCell.y
                 );
 
-            if (coveredGem == null ||
+            if ((roots && !CanHostRoot(coveredGem)) || coveredGem == null ||
                 IsGemPinned(coveredGem) ||
                 !IsCellPlayable(
                     selectedCell.x,
@@ -475,8 +480,10 @@ public partial class BoardController
                     MaximumDurability =
                         request.BarricadeDurability,
 
-                    Style =
-                        request.BarricadeStyle
+                    Style = request.BarricadeStyle,
+                    RootId = roots ? ++nextRootId : 0,
+                    RootOwnerId = roots ? request.OwnerActor.PersistentId : 0,
+                    RootSpreading = roots && request.RootSpreading
                 };
 
             /*
@@ -493,9 +500,8 @@ public partial class BoardController
                 continue;
             }
 
-            selectedCells.Add(
-                selectedCell
-            );
+            selectedCells.Add(selectedCell);
+            if(roots) candidates.RemoveAll(c=>Mathf.Abs(c.x-selectedCell.x)+Mathf.Abs(c.y-selectedCell.y)==1);
 
             gemsToDestroy.Add(
                 coveredGem
@@ -507,6 +513,11 @@ public partial class BoardController
             yield break;
         }
 
+        if(roots && selectedCells.Count!=request.BarricadeCount)
+        {
+            foreach(var cell in selectedCells) barricadeCells.Remove(cell);
+            yield break; // A linked pair is all-or-nothing.
+        }
         /*
          * A barricade destroys the gem underneath as environmental board
          * manipulation. It deliberately bypasses combat/reward reporters, so
@@ -517,8 +528,12 @@ public partial class BoardController
         yield return ClearMatches(gemsToDestroy, null);
         if (!request.WaitForAnimationImpact) MaterializeBarricades(selectedCells);
 
-        yield return
-            ResolveEnvironmentalBoardChange();
+        yield return ResolveEnvironmentalBoardChange();
+        if(roots)
+        {
+            foreach(var cell in selectedCells) if(barricadeCells.TryGetValue(cell,out var state)) SeedRoot(cell,state,request.OwnerActor);
+            RootsChanged?.Invoke();
+        }
     }
 
     private void MaterializeBarricades(List<Vector2Int> cells)
@@ -541,6 +556,9 @@ public partial class BoardController
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems = null)
     {
+        if(clearedGems!=null) foreach(var threat in gemSetThreats)
+            if(threat.Vine && threat.Targets.Exists(g=>g!=null && clearedGems.Contains(g) && (ignoredGems==null || !ignoredGems.Contains(g))))
+                threat.PlayerInterrupted=true;
         if (clearedGems == null ||
             clearedGems.Count == 0 ||
             barricadeCells.Count == 0)
@@ -572,8 +590,8 @@ public partial class BoardController
                 Vector2Int adjacentCell =
                     gemCell + direction;
 
-                if (barricadeCells.ContainsKey(
-                        adjacentCell))
+                if (barricadeCells.TryGetValue(adjacentCell,out var adjacent) &&
+                    (!IsRoot(adjacent) || RootAcceptsHit(adjacentCell,adjacent,gem)))
                 {
                     cellsHit.Add(
                         adjacentCell
@@ -607,8 +625,7 @@ public partial class BoardController
                 continue;
             }
 
-            int durabilityDamage =
-                RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
+            int durabilityDamage = IsRoot(state) ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
 
             state.RemainingDurability -= durabilityDamage;
 
@@ -623,6 +640,7 @@ public partial class BoardController
                     cell
                 );
 
+                RootDestroyed(state);
                 // A broken obstacle opens a real gravity slot just like a
                 // destroyed gem. Queue it with this clear's other openings;
                 // do not move banners while clear targets are being reported.
@@ -771,6 +789,27 @@ public partial class BoardController
 
         state.ViewObject.transform.localScale =
             Vector3.one * scale;
+        if(IsRoot(state)) RefreshRootDurability(state,spriteExtent);
+    }
+
+    private void RefreshRootDurability(BarricadeCellState state,float extent)
+    {
+        for(int i=0;i<state.MaximumDurability;i++)
+        {
+            var marker=state.ViewObject.transform.Find("Durability_"+i);
+            if(marker==null)
+            {
+                marker=new GameObject("Durability_"+i).transform;
+                marker.SetParent(state.ViewObject.transform,false);
+                var renderer=marker.gameObject.AddComponent<SpriteRenderer>();
+                renderer.sprite=GetBarricadeFallbackSprite();renderer.sortingLayerName="Gems";renderer.sortingOrder=21;
+                renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;
+            }
+            marker.localPosition=new Vector3((i-(state.MaximumDurability-1)*.5f)*extent*.15f,-extent*.35f,0);
+            marker.localScale=Vector3.one*(extent*.09f/GetBarricadeFallbackSprite().bounds.size.x);
+            marker.GetComponent<SpriteRenderer>().color=i>=state.RemainingDurability?new Color(.16f,.12f,.09f):
+                state.Style==EnemyBarricadeStyle.Heartroot?new Color(1f,.48f,.36f):new Color(1f,.82f,.38f);
+        }
     }
 
     private void StartBarricadeMaterialization(
@@ -1119,6 +1158,11 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
+        if(IsRoot(state))
+        {
+            var theme=GameplayThemeSkin.Current ?? Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
+            return (state.RemainingDurability>1 ? theme?.rootLevelTwo : theme?.rootLevelOne) ?? theme?.anchorOverlay ?? GetBarricadeFallbackSprite();
+        }
         bool isLevelTwoStone =
             state != null &&
             state.Style ==

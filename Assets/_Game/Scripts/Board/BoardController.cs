@@ -970,6 +970,7 @@ public partial class BoardController : MonoBehaviour
             }
         }
 
+        ClearVinesForDestruction(matches,new HashSet<Gem>(specialGemsToCreate.Keys));
         TileBurstVFXContext[] tileBursts = activateSpecials
             ? BuildTileBurstContexts(matches, specialGemsToCreate, genericBurstTargets)
             : null;

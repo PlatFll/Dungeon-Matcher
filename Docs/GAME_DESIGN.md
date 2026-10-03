@@ -6,25 +6,89 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Game identity and core loop
 
-### Internal forest prototype (Phases 5–6)
+### Forest combat and live crystal travel
 
 New forest tests use seconds for ordinary attacks and accepted manual moves for
 special abilities. Basic progress pauses during owned board resolution, stagger
 and specialist holds. Failed swaps, cascades and free skills/supplies contribute
 no extra move. The earlier move-based buffs, stagger, poison and supply cooldowns
 remain in this isolated test profile. Existing all-move forest saves retain their
-recorded profile; version-1 dungeon saves remain unchanged. This is an internal
-test, not a public mode or final balance decision. Exact expiry and compatibility
+recorded profile. Live dungeon runs retain seconds for effects, including after
+travel; first travel adds move-based forest ability coordination without changing
+effect units. Exact expiry and compatibility
 rules are in [the timing contract](Forest/FOUNDATION_CONTRACT.md).
 
 The launch plan is dungeon, magical forest and aquatic, developed one zone at a
-time. Future crystal travel chooses randomly; there is no player route selection.
+time. Crystal travel chooses randomly among eligible destinations other than the
+current zone; there is no player route selection. Dungeon and forest are connected
+after their entire apex formations die and any card reward is chosen. The split
+pink crystal shakes, smoke covers gameplay, and the destination is restored under
+cover. Settings remains usable. The run, board, resources and global depth carry
+over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
 Forest now has six starter kits, their battle animation sets, modular woodland,
 gameplay-only timber UI and an original temporary music cue for review.
-The full roster, travel, approximately ten-minute substantial visits and aquatic
-work remain later phases. This test adds no
+The full roster, approximately ten-minute substantial visits and aquatic
+work remain later phases. Current forest visits use eighteen local starter
+encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu
 and settings screens retain their existing presentation.
+
+### Revised forest kits (2026-10-03)
+
+Vines are cell overlays. They obscure some of the gem without blocking swapping,
+gravity, matches, bombs or destruction. Clearing the covered gem removes its vine.
+Normal growth pulses every two accepted moves, before enemy casts: one edge seed
+and at most four frontier additions, with a 24-overlay growth cap. A pulse uses
+the original frontier, never recursive same-pulse spread. Root placement always
+seeds its four orthogonal neighbors, independent of that growth cap. These are
+prototype cadence/readability values, not finalized pacing. Real chains retain
+their existing six-restriction cap; vines consume none of it.
+
+Rootbinder warns one ordinary, reachable interior gem for a future response,
+then replaces it with a structural 1-hit Root. Four immediate vines never spread.
+First clear a vine beside the Root; a later clear through an unvined, opened side
+deals one durability hit. The opening clear cannot also damage that Root.
+Roots use the existing structural queue, useful-response checks, cap and refill.
+
+Warden first readies after two moves, warns one cell, then plants a 2-hit Root
+with four spreading vines. While it lives, every ally including Warden receives
+one 25% incoming-damage reduction through central damage resolution. Multiple
+Wardens do not multiply this shared reduction. Breaking the Root removes the aura.
+Clearing its warning or normal stagger interrupts preparation. Invalid targets
+fizzle without granting stagger. There is no exposure state or weakness bonus.
+
+Matriarch first readies after three moves. Renew plants two linked 2-hit Heartroots
+when none remain, then channels for two future moves. She heals herself and every
+living ally for base 20 plus 20 per Heartroot surviving at resolution. Her cycle
+then uses Verdant Surge (immediate existing-vine advance) and Thorn Harvest
+(three future moves; base 20 damage plus 5 per currently vine-covered gem).
+Harvest consumes all vines, leaving Heartroot occupancy and durability intact.
+Surge never resets or delays the normal growth deadline. Both Heartroots fully
+destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
+Surviving spreading roots can regrow vines on the next normal pulse.
+
+Successful casts and cancellations consume their sequence before effect callbacks.
+Milestone recovery takes two future moves, then three moves to readiness. Basics
+pause during preparation/channel/recovery. Scout and Trailguard retain their
+existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
+recipient invalidation never retargets or auto-staggers her. All true interruptions
+use EnemyStagger; no forest-specific stagger or vulnerability state exists.
+
+Root IDs, remaining durability, opened sides, owner, spread policy, overlays,
+normal growth deadline and milestone cycle/sequence are saved. Legacy vine pins
+migrate to overlays; old nonspreading anchor casts retire with a harmless fizzle.
+Real chains remain intact. Photographs keep the present growth deadline and root
+durability/open sides, cannot resurrect destroyed roots or dead producers, and
+do not rewind channels or consumed effects. Root networks leave with their owner;
+environmental vines leave at wave/zone cleanup. Optional art never owns effects.
+
+### Deferred dungeon and royal direction
+
+Purple Dungeon uses **crumbling/falling tiles** as its future zone effect. This
+revision records that decision only. Crossbow Guard remains the baseline Special
+with one chained gem per use; existing ownership caps remain separate. Royal
+Arbalist is planned as the stronger Special: retain double-shot attacks and add
+a two-gem chain ability. Its rank, data and runtime have not been changed here.
 
 The following battle loop describes the production legacy profile.
 

@@ -34,7 +34,7 @@ public sealed class ForestEnemyMotion : MonoBehaviour
         if(casting && !wasChanneling) PlayThen("ChannelStart","ChannelHold");
         else if(!casting && wasChanneling)
         {
-            bool released=Outcome=="Healed" || Outcome=="Renewed" || Outcome=="Planted";
+            bool released=Outcome=="Healed" || Outcome=="Renewed" || Outcome=="Planted" || Outcome=="Surged" || Outcome=="Harvested";
             PlayThen(released?"Release":"Interrupt","Idle");
             if(!released) Burst(GameplayThemeSkin.Current?.interruptEffect);
         }

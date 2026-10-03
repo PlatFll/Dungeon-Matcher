@@ -72,7 +72,13 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         Changed?.Invoke();
     }
 
-    private bool ValidTarget() => target!=null && !target.IsDefeated && target.PersistentId==value.targetId;
+    private bool ValidTarget()
+    {
+        if(target==null || !target.isActiveAndEnabled || !target.IsInitialized || target.IsDefeated || target.PersistentId!=value.targetId) return false;
+        foreach(var member in roster) if(member==target) return true;
+        return false;
+    }
+    private void LateUpdate() {if(IsChanneling && !ValidTarget()) Finish("Target lost",false);}
     private void Finish(string outcome, bool heal)
     {
         if(!IsChanneling || value.lastOutcomeSequence==value.sequence) return;
@@ -99,8 +105,8 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         if(IsChanneling)
         {
             foreach(var candidate in roster) if(candidate!=null && candidate.PersistentId==value.targetId && !candidate.IsDefeated) target=candidate;
-            if(target==null) throw new InvalidOperationException("Saved channel target identity is missing.");
-            target.Defeated+=RecipientDied;
+            if(!ValidTarget()) Finish("Target lost",false);
+            else target.Defeated+=RecipientDied;
         }
         attack?.SetActionPaused(this,BlocksBasic); Changed?.Invoke();
     }

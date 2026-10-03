@@ -27,7 +27,7 @@ public partial class BoardController
         ResolveGemSet,
         MarkLanes,
         ResolveLanes,
-        ResolveVines
+        ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines
     }
 
     private sealed class BoardMutationRequest
@@ -50,6 +50,10 @@ public partial class BoardController
         public bool Succeeded;
         public bool MovablePin;
         public bool EnvironmentalPin, Vine, NonSpreadingVine;
+        public int RootDurability;
+        public bool RootSpreading;
+        public long VineOwnerId;
+        public Action<int> VinesHarvested;
         public GemPairThreat PairThreat;
         public int WarningMoves;
         public int PlayerDamage;
@@ -362,6 +366,15 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.AdvanceVines:
+                        ExecuteVineGrowth(request); break;
+                    case BoardMutationKind.HarvestVines:
+                        ExecuteVineHarvest(request); break;
+                    case BoardMutationKind.AddVine:
+                        if(request.TargetGem!=null) AddVine(new Vector2Int(request.TargetGem.Column,request.TargetGem.Row),0,0,false,true);
+                        request.Succeeded=true; break;
+                    case BoardMutationKind.RemoveVines:
+                        yield return ExecuteRemoveVineSource(request); break;
                     case BoardMutationKind.ResolveVines:
                         yield return ExecuteResolveVines(request);
                         break;

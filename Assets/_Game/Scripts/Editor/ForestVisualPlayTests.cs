@@ -100,11 +100,11 @@ public sealed class ForestVisualPlayTests
             foreach(var enemy in run.Waves.ActiveEnemies) enemy.GetComponent<EnemyAutoAttack>().SetActionPaused(typeof(ForestVisualPlayTests),true);
             var target=run.Waves.ActiveEnemies.First(e=>e!=caster);
             target.ResolveDamageWithoutFeedback(25);
-            if(offset==9) run.Board.TryQueueVineWarning(caster,2,2,null,true);
-            else run.Board.TryQueueVineAnchors(caster,2,null);
+            if(offset==9) run.Board.TryQueueRootWarning(caster,1,2,false,true,null);
+            else run.Board.TryQueuePlantRoots(caster,2,2,true,true,null);
             yield return Until(()=>run.Continuation.CanCapture,"anchor art settles");
             caster.GetComponent<ForestMilestoneEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot{
-                forestMilestone=new ForestMilestoneSnapshot{state=1,sequence=1,deadline=offset==9?1:2,targetId=offset==9?0:target.PersistentId}},_=>target);
+                forestMilestone=new ForestMilestoneSnapshot{version=2,state=1,sequence=1,deadline=offset==9?1:2,heartrootsArmed=offset!=9}},_=>target);
             float began=Time.time;yield return Until(()=>Time.time>=began+1,"channel reaches hold pose");
             CheckLayout(output,file);yield return Capture(output,file);
             SceneManager.LoadScene("MainMenu");yield return null;

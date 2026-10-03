@@ -26,6 +26,10 @@ public sealed class RunControlsUI : MonoBehaviour
     private float priorTimeScale;
     private static Sprite cooldownSprite;
     private Image resonance;
+    public bool IsModalOpen => overlay!=null;
+    public Canvas GameplayCanvas => canvas;
+    public Button SettingsButton { get; private set; }
+    public void RestoreTimeAfterTransition(float scale) { if(paused) priorTimeScale=scale; }
 
     private void Start()
     {
@@ -81,6 +85,11 @@ public sealed class RunControlsUI : MonoBehaviour
         confirmBomb=GameUi.Button("ConfirmBomb",safeRoot,"Use Bomb",new Vector2(150,40),new Vector2(0,-100),()=>session.ConfirmBomb());
         gameObject.AddComponent<BombTargetPreview>();
         var settings=GameUi.Button("Settings",safeRoot,"",new Vector2(48,48),Vector2.zero,OpenSettings);
+        SettingsButton=settings;
+        // The existing settings control stays above transition smoke.
+        var settingsCanvas=settings.gameObject.AddComponent<Canvas>();
+        settingsCanvas.overrideSorting=true;settingsCanvas.sortingOrder=canvas.sortingOrder+210;
+        settings.gameObject.AddComponent<GraphicRaycaster>();
         FinalizedUiSkin.Button(settings, gear:true);
         GameplayThemeSkin.Button(settings,settings:true);
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
@@ -137,8 +146,8 @@ public sealed class RunControlsUI : MonoBehaviour
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
             slots[i].interactable=session.CanUse(kind)||(i==1&&session.Board.IsSelectingTarget);
             icons[i].color=count>0?Color.white:new Color(0.3f,0.3f,0.3f,0.6f);
-            cooldownFills[i].fillAmount=count==0?1:cooldown/(CombatMoveClock.Active ? 2 : BalanceV1.Current.consumableCooldown);
-            charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}{(CombatMoveClock.Active ? "m" : "s")}":count.ToString();
+            cooldownFills[i].fillAmount=count==0?1:cooldown/(CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown);
+            charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}{(CombatMoveClock.MoveEffects ? "m" : "s")}":count.ToString();
             Vector2 countSize=new Vector2(cooldown>0?60:22,16);
             charges[i].rectTransform.sizeDelta=countSize;
             ((RectTransform)charges[i].transform.parent).sizeDelta=countSize;
@@ -227,6 +236,9 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         overlay=GameUi.Rect("RunSettingsOverlay",canvas.transform,Vector2.zero,Vector2.zero);
         overlay.anchorMin=Vector2.zero;overlay.anchorMax=Vector2.one;overlay.offsetMin=overlay.offsetMax=Vector2.zero;
+        var modalCanvas=overlay.gameObject.AddComponent<Canvas>();
+        modalCanvas.overrideSorting=true;modalCanvas.sortingOrder=canvas.sortingOrder+220;
+        overlay.gameObject.AddComponent<GraphicRaycaster>();
         var dim=overlay.gameObject.AddComponent<Image>();dim.color=new Color(0,0,0,0.8f);
         panel=GameUi.Panel("Panel",overlay,new Vector2(380,420));
         GameUi.Label("Title",panel,title,new Vector2(340,54),new Vector2(0,163),28);

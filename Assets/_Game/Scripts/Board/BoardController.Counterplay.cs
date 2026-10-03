@@ -14,10 +14,12 @@ public partial class BoardController
         foreach(var barrier in barricadeCells.Values) if(barrier.OwnerInstanceId==id) barriers++;
         foreach(var banner in royalBannerCells.Values) if(banner.OwnerInstanceId==id) banners++;
         if(pins+mines+barriers+banners>0) text.AppendLine($"Owned restrictions: {pins} chains/ice, {mines} holes, {barriers} barricades, {banners} banners.");
+        int roots=OwnedRootCount(owner),vines=OwnedVineCount(owner);
+        if(roots+vines>0) text.AppendLine($"Roots: {roots}; vine overlays: {vines}. Vines allow normal gem movement and clears.");
         foreach(var pair in gemPairThreats) if(pair.Owner==owner && IsGemPairThreatValid(pair))
             text.AppendLine($"Hammer: clear either marked gem within {Mathf.Max(0,pair.DueMove-completedValidPlayerMoves)} moves.");
         foreach(var set in gemSetThreats) if(set.Owner==owner && !set.Ended)
-            text.AppendLine($"{(set.RestorationPresentation?"Restoration":"Judgment")}: {set.Targets.Count} marks remain, {Mathf.Max(0,set.DueMove-completedValidPlayerMoves)} moves left.");
+            text.AppendLine($"{(set.Vine?"Root":set.RestorationPresentation?"Restoration":"Judgment")}: {set.Targets.Count} marks remain, {Mathf.Max(0,set.DueMove-completedValidPlayerMoves)} moves left.");
         foreach(var lane in laneThreats) if(lane.Owner==owner && !lane.Ended)
             text.AppendLine($"Bombardment: row {lane.Row+1}, column {lane.Column+1}, {Mathf.Max(0,lane.DueMove-completedValidPlayerMoves)} moves left. Clearing the lane does not cancel it.");
         return text.ToString();

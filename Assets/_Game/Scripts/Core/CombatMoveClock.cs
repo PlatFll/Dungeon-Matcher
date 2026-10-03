@@ -14,6 +14,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
 {
     public static CombatMoveClock Current { get; private set; }
     public static bool Active => Current != null;
+    public static bool MoveEffects => Active && Current.state.profile != CombatClockSnapshot.LegacyEffectsProfile;
     public static bool MoveBasics => Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
     public static bool PausesTimedBasics => Active && !MoveBasics && Current.IsBlockingWaveProgression;
     public static int EffectAction => Current == null ? 0 : Math.Max(Current.state.actions.completed, Current.state.actions.pending);
@@ -102,6 +103,9 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             yield return WaitForActions();
             foreach (var actor in acceptedActors)
                 if (Living(actor)) actor.GetComponent<EnemyPoisonStatus>()?.AdvanceAcceptedMove(Tick);
+            // Normal forest growth precedes enemy casts. A harvest consumes the
+            // full current frontier, and a new root never spreads on its birth action.
+            if (!run.Player.IsDefeated) yield return run.Board.AdvanceVineNetworks(Tick);
             // Snapshot this tick's readiness before an earlier actor can apply a
             // speed buff. Newly granted buffs first accelerate a future move.
             foreach (var actor in acceptedActors)
@@ -140,7 +144,6 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 yield return WaitForActions();
                 ActingEnemy = null;
             }
-            if (!run.Player.IsDefeated) yield return run.Board.AdvanceVineNetworks(Tick);
             foreach (var actor in acceptedActors)
             {
                 if (!Living(actor)) continue;

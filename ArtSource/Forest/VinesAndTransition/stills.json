@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Root_Level_1",
+    "job": "8a53d7b3-1884-4bc4-a496-867c86bb65f3",
+    "prompt": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. ONE-HIT weak ROOT: a small low mound of three thick interwoven exposed tree roots, broad warm brown bark with a fresh pale broken twig at the top and two small moss patches. Rounded triangular root mass about 46px wide and 37px high, centered. Clearly woody root obstacle, not a box, stump creature or vines frame. No face, no glow.",
+    "width": 64,
+    "height": 64,
+    "sha256": "bdd9bfefadc3cc9e133436619efec12cc1338deae4afbb5ac5063bb39d896125",
+    "palette": 37,
+    "alpha": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.716552734375
+  },
+  {
+    "name": "Root_Level_2",
+    "job": "62122a66-c391-4ffd-b4c0-661fc21a8797",
+    "prompt": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. TWO-HIT strong ROOT: a broad bulky tangled root crown, two thick arched woody limbs intertwined around a compact dark knot, sturdy pale bark ridges and small moss leaves at sides. About 56px wide and 48px high, centered. Visibly larger and thicker more fortified silhouette than a small three-root mound. No face, no UI frame, no glow.",
+    "width": 64,
+    "height": 64,
+    "sha256": "766957f213fd8a16564a24a3af9a04673d3d336082d62eeca49a3e398b27aa37",
+    "palette": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.489990234375
+  },
+  {
+    "name": "Vine_Weave",
+    "job": "1f8e013b-4560-4603-aff6-7da23d4f5437",
+    "prompt": "Production native pixel-art board obstacle for Dungeon Matcher. 64x64 transparent PNG. Crisp single-pixel near-black outline, broad connected flat cel-shaded clusters, upper-left light, no blur, no text, no tile or background. Warm brown woody material, restrained moss olive and brighter green leaves. Match reference pixel scale and woodland materials. A loose irregular web of THREE slender winding green bramble vines stretching from different edges across one square gem space, with a few small pointed leaves. Tendrils loop and cross diagonally THROUGH the middle, never form a rectangular border/frame. Many large fully TRANSPARENT holes between vines: at least 65 percent of canvas empty so an underlying colorful gem is visible through the weave. Thin 3px stems with tiny 2px thorns and 5px leaf clusters. Sparse open natural interlacing, not dense foliage, no background plate, no underlying gem drawn.",
+    "width": 64,
+    "height": 64,
+    "sha256": "2d6c634f56e75fd9be9f829ae75f173aa57d1d2e2c04004d142ff5829539a9ee",
+    "palette": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.81640625
+  }
+]

@@ -142,7 +142,8 @@ public static class ForestProductionImporter
             new GameplayThemeDefinition.IconReplacement{source=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Game/Art/UI/Ability UI/Horrible_Harmony.png"),themed=Sprite("UI","AbilityHarmony")},
             new GameplayThemeDefinition.IconReplacement{source=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Game/Art/GideonGlass/Gideon_AbilityButton.png"),themed=Sprite("UI","AbilityCamera")}
         };
-        theme.vineOverlay=Sprite("Effects","Vine_Overlay");theme.anchorOverlay=Sprite("Effects","Vine_Anchor");
+        if(theme.vineSpreadFrames==null || theme.vineSpreadFrames.Length==0) theme.vineOverlay=Sprite("Effects","Vine_Overlay");
+        theme.anchorOverlay=Sprite("Effects","Vine_Anchor");
         theme.vineWarning=Sprite("Effects","Vine_Warning");theme.healEffect=Sprite("Effects","Leaf_Heal");
         theme.interruptEffect=Sprite("Effects","Interrupt");theme.resonanceIcon=Sprite("Effects","Resonance");
         theme.supplyNormal=Sprite("UI","SupplyNormal");theme.supplyHighlighted=Sprite("UI","SupplyHighlighted");
@@ -208,12 +209,19 @@ public static class ForestProductionImporter
                 so.FindProperty("lockSpecialTurnRequirement").boolValue=true;
                 so.FindProperty("isSupport").boolValue=i==5;so.FindProperty("isBoardDisruptor").boolValue=true;
             }
+            so.FindProperty("forestRenewalBaseHeal").intValue=20;
+            so.FindProperty("forestHeartrootHealBonus").intValue=20;
+            so.FindProperty("forestHarvestBaseDamage").intValue=20;
+            so.FindProperty("forestHarvestDamagePerVine").intValue=5;
+            so.FindProperty("forestRenewalChannelMoves").intValue=2;
+            so.FindProperty("forestHarvestChannelMoves").intValue=3;
             so.ApplyModifiedPropertiesWithoutUndo();EditorUtility.SetDirty(definitions[i]);
         }
         var zone=Resources.Load<ZoneDefinition>("Zones/magical-forest");
         zone.displayName="Magical Forest";
+        zone.growsVines=true;zone.vineCadenceMoves=2;zone.maximumVineOverlays=24;
         zone.developmentEncounters=new[]{
-            Encounter("Heal response",definitions,1,2,0),Encounter("Vine response",definitions,3,0,1),
+            Encounter("Heal response",definitions,1,2,0),Encounter("Root response",definitions,3,0,1),
             Encounter("Combined pressure",definitions,2,3,1),
             Encounter("Scout solo",definitions,0),Encounter("Trailguard solo",definitions,1),
             Encounter("Mender solo (no self heal)",definitions,2),Encounter("Rootbinder solo",definitions,3),

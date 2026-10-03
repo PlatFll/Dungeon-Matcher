@@ -28,13 +28,24 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
         if(fixtures==null || fixtures.Length==0) throw new InvalidOperationException("Development zone has no test encounters.");
         return fixtures[(Mathf.Max(1,wave)-1+Mathf.Max(0,run.MoveClock.TestEncounterOffset))%fixtures.Length];
     }
+    public ZoneTestEncounter Encounter(int wave,System.Random random)
+    {
+        if(run.Travel?.State.enabled!=true) return Definition.zoneId=="dungeon" ? null : TestEncounter(wave);
+        // Preserve the existing opening kingdom progression through its first King.
+        if(Definition.zoneId=="dungeon" && run.Travel.State.visit==0) return null;
+        int local=run.Travel.LocalWave;
+        var choices=new System.Collections.Generic.List<ZoneTestEncounter>();
+        foreach(var entry in Definition.liveEncounters)
+            if(local>=entry.firstLocalWave && local<=entry.lastLocalWave) choices.Add(entry);
+        return choices.Count==0 ? null : choices[random.Next(choices.Count)];
+    }
     public EnemyDefinition FindEnemy(string name)
     {
         foreach(var enemy in Definition.enemies) if(enemy!=null && enemy.name==name) return enemy;
         return null;
     }
     public float EligibleDamageMultiplier(BoardClearContext context) =>
-        context.GemCount>0 && context.GemType==CurrentGem && EligibleSource(context) ? 1.15f : 1f;
+        context.GemCount>0 && context.GemType==CurrentGem && EligibleSource(context) ? Definition.affiliatedDamageMultiplier : 1f;
     public static bool EligibleSource(BoardClearContext context) => context.IsMatchClear || context.IsSpecialClear || context.Source==BoardClearSource.Ability;
     private void ObserveClear(BoardClearContext context)
     {

@@ -27,7 +27,7 @@ public sealed class ForestFoundationTests
     [Test] public void ApprovedImportsKeepNativePixelsAndIndependentTaxonomy()
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/magical-forest");Assert.That(zone,Is.Not.Null);
-        Assert.That(zone.eligibleForLiveTravel,Is.False);Assert.That(zone.enemies.Length,Is.EqualTo(6));
+        Assert.That(zone.eligibleForLiveTravel,Is.True);Assert.That(zone.enemies.Length,Is.EqualTo(6));
         Assert.That(zone.developmentEncounters.SelectMany(e=>e.members).Distinct().Count(),Is.EqualTo(6));
         foreach(var enemy in zone.enemies)
         {
