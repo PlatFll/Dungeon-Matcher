@@ -71,6 +71,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
 
     private void TryConfigure()
     {
+        profile=RunSession.Current?.Zone?.Definition?.theme?.playerFrame ?? profile;
         if (topHud == null)
         {
             topHud =

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2acb84e0b743d6b69170112ba3e4ca, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: Assembly-CSharp::ModularHealthBarStyle
+  startPiece: {fileID: 21300000, guid: 7b3fa85200d3d7e40a83ac8b7f8dbad8, type: 3}
+  middlePiece: {fileID: 21300000, guid: 6cd45ee95ab29b7479a09c6d15f02efa, type: 3}
+  endPiece: {fileID: 21300000, guid: 90aed087db744a64bae4553a50a2da91, type: 3}
+  badge: {fileID: 21300000, guid: 4e0f0bf224912eb44bc6bccbd59ad5fc, type: 3}
+  emptyTrack: {fileID: 21300000, guid: bfd481b1e6882c1418291510d5d4a9d7, type: 3}
+  fillStrip: {fileID: 21300000, guid: 9b9c88667658ddf4db72bf19dfbf8caa, type: 3}
+  emptyFillColor: {r: 0.16470589, g: 0.078431375, b: 0.09803922, a: 1}
+  fillColor: {r: 0.8784314, g: 0.1764706, b: 0.1764706, a: 1}
+  fillInsetLeft: 6
+  fillInsetRight: 6
+  fillInsetVertical: 7
+  fillAnimationSpeed: 4

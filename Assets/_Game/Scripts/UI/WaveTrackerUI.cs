@@ -37,6 +37,12 @@ public sealed class WaveTrackerUI :
         RefreshFromController();
     }
 
+    private void Start()
+    {
+        var plaque=RunSession.Current?.Zone?.Definition?.theme?.wavePlaque;
+        if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image)) image.sprite=plaque;
+    }
+
     private void OnDisable()
     {
         UnsubscribeFromWaveController();

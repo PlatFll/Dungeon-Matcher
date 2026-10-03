@@ -50,6 +50,8 @@ public sealed partial class WaveController
     }
     private EnemyDefinition ContinuationDefinition(string id)
     {
+        var zoneEnemy = RunSession.Current?.Zone?.FindEnemy(id);
+        if (zoneEnemy != null) return zoneEnemy;
         foreach(var data in enemyDatabase.Enemies) if(data!=null && data.name==id) return data;
         throw new InvalidOperationException("Saved enemy definition is unavailable: "+id);
     }

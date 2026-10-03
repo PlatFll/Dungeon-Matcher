@@ -49,7 +49,24 @@ public sealed class EnemyStagger : MonoBehaviour
     [SerializeField]
     private bool isStaggered;
 
+    private int moveLastHit = -1, moveStaggerApplied = -1, moveImmunityApplied = -1;
     private float activeStaggerDuration;
+    public void ExpireAcceptedMove(int move)
+    {
+        if (!CombatMoveClock.Active || enemyActor == null || enemyActor.IsDefeated) return;
+        if (IsStaggered)
+        {
+            if (move <= moveStaggerApplied) return;
+            remainingStaggerTime = Mathf.Max(0, remainingStaggerTime - 1);
+            if (remainingStaggerTime == 0) FinishStagger();
+        }
+        else if (remainingImmunityTime > 0)
+        {
+            if (move > moveImmunityApplied) remainingImmunityTime = Mathf.Max(0, remainingImmunityTime - 1);
+        }
+        else if (move > moveLastHit + 1) SetMeterNormalized(staggerMeterNormalized - .25f);
+        remainingBuildupGraceTime = Mathf.Max(0, moveLastHit + 1 - move);
+    }
     private EnemyActor enemyActor;
     private bool hitFlashPresenterInstalled;
     private bool weaknessFillPresenterInstalled;
@@ -76,12 +93,14 @@ public sealed class EnemyStagger : MonoBehaviour
         saved.staggerMeter=staggerMeterNormalized; saved.staggerRemaining=remainingStaggerTime;
         saved.staggerDuration=activeStaggerDuration; saved.staggerImmunity=remainingImmunityTime;
         saved.staggerGrace=remainingBuildupGraceTime;
+        saved.staggerHitMove=moveLastHit; saved.staggerAppliedMove=moveStaggerApplied; saved.immunityAppliedMove=moveImmunityApplied;
     }
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
         remainingStaggerTime=saved.staggerRemaining; activeStaggerDuration=saved.staggerDuration;
         remainingImmunityTime=saved.staggerImmunity; remainingBuildupGraceTime=saved.staggerGrace;
         isStaggered=remainingStaggerTime>0; SetMeterNormalized(saved.staggerMeter);
+        moveLastHit=saved.staggerHitMove; moveStaggerApplied=saved.staggerAppliedMove; moveImmunityApplied=saved.immunityAppliedMove;
     }
 
     private void OnEnable()
@@ -136,6 +155,7 @@ public sealed class EnemyStagger : MonoBehaviour
             return;
         }
 
+        if (CombatMoveClock.Active) return;
         float deltaTime = Mathf.Max(0f, Time.deltaTime);
 
         if (IsStaggered)
@@ -197,7 +217,8 @@ public sealed class EnemyStagger : MonoBehaviour
         }
 
         float before = staggerMeterNormalized;
-        remainingBuildupGraceTime = Mathf.Max(0f, buildupDecayDelay);
+        remainingBuildupGraceTime = CombatMoveClock.Active ? 1 : Mathf.Max(0f, buildupDecayDelay);
+        moveLastHit = CombatMoveClock.EffectAction;
         SetMeterNormalized(before + damageAmount / threshold);
 
         float added = Mathf.Max(0f, staggerMeterNormalized - before);
@@ -315,6 +336,8 @@ public sealed class EnemyStagger : MonoBehaviour
             return;
         }
 
+        if (CombatMoveClock.Active) duration = 1;
+        moveStaggerApplied = CombatMoveClock.EffectAction;
         isStaggered = true;
         activeStaggerDuration = duration;
         remainingStaggerTime = duration;
@@ -332,7 +355,8 @@ public sealed class EnemyStagger : MonoBehaviour
         activeStaggerDuration = 0f;
         isStaggered = false;
         remainingBuildupGraceTime = 0f;
-        remainingImmunityTime = PostStaggerImmunitySeconds;
+        remainingImmunityTime = CombatMoveClock.Active ? 2 : PostStaggerImmunitySeconds;
+        moveImmunityApplied = CombatMoveClock.EffectAction;
         SetMeterNormalized(0f);
 
         if (wasStaggered)

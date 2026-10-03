@@ -19,7 +19,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
-        var tile = Load("DungeonBackdropTile");
+        var tile = RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
         if (tile == null || worldCamera == null) return;
         var go = new GameObject("DungeonSurroundingMasonry");
         backdrop = go.AddComponent<SpriteRenderer>();
@@ -52,13 +52,14 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private static void AddTiledPanel(Transform parent, string name, float inset, Color tint)
     {
         if (parent.Find(name) != null) return;
-        var tile = Load("DungeonBackdropTile");
+        var theme = RunSession.Current?.Zone?.Definition?.theme;
+        var tile = theme?.panelBackground ?? Load("DungeonBackdropTile");
         if (tile == null) return;
         var go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         var image = go.GetComponent<Image>();
         image.transform.SetParent(parent, false);
         image.transform.SetAsFirstSibling();
-        image.sprite = tile; image.type = Image.Type.Tiled; image.color = tint;
+        image.sprite = tile; image.type = Image.Type.Tiled; image.color = theme != null ? Color.white : tint;
         image.raycastTarget = false;
         var rect = image.rectTransform;
         rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;

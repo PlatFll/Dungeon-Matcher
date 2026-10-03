@@ -89,12 +89,12 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     private void ShowMarks(BoardController.GemSetThreat threat)
     {
         EnsureSprites();
-        Sprite sprite = threat.RestorationPresentation ? board.archbishopRestorationRuneOverlay : board.kingRoyalJudgmentExclamationOverlay;
+        Sprite sprite = threat.Vine ? rune : threat.RestorationPresentation ? board.archbishopRestorationRuneOverlay : board.kingRoyalJudgmentExclamationOverlay;
         if (sprite == null) sprite = threat.RestorationPresentation ? rune : warning;
         foreach (Gem gem in threat.Targets)
         {
             var icon = Make(threat.RestorationPresentation ? "Restoration Rune" : "Royal Judgment !",sprite,42);
-            icon.color = threat.RestorationPresentation ? new Color(1f,0.85f,0.28f) : Color.white;
+            icon.color = threat.Vine ? new Color(.65f,1f,.32f) : threat.RestorationPresentation ? new Color(1f,0.85f,0.28f) : Color.white;
             marks.Add(new MarkView { Threat=threat, Gem=gem, Icon=icon });
         }
     }
@@ -120,7 +120,7 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
         for (int i=marks.Count-1;i>=0;i--)
         {
             var view=marks[i];
-            if (view.Threat.Ended || view.Threat.Owner == null || view.Threat.Owner.IsDefeated || !board.IsEnvironmentalOrdinaryGem(view.Gem))
+            if (view.Threat.Ended || (!view.Threat.Environmental && (view.Threat.Owner == null || view.Threat.Owner.IsDefeated)) || !board.IsEnvironmentalOrdinaryGem(view.Gem))
             { if(view.Icon != null) Destroy(view.Icon.gameObject); marks.RemoveAt(i); continue; }
             view.Icon.transform.position=view.Gem.transform.position;
             float scale=board.CellSize*(0.8f+Mathf.Sin(Time.time*7f)*0.06f);

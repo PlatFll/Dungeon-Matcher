@@ -1,0 +1,192 @@
+FOREST STARTER KITS — PHASE 3 REVIEW SPECIFICATION
+2026-10-02 / prototype values; no runtime or serialized enemy data changed
+
+DECISION STATUS
+The four character designs and race silhouette differences are user-locked.
+The user requested material-guide recolors; exact mappings and protected masks
+are recorded in working-reference/v1/Character_Register.json.
+All numerical combat values below are test settings, not user-locked balance.
+The six enemies are a starter test roster, not the finished forest content.
+
+CURRENT IMPLEMENTATION USED FOR CALIBRATION
+- Player_Skeleton.asset: level-1 gem damage11, HP100. Bardley:10, HP80.
+  Gideon:10.5, HP90. Ordinary 3-gem weakness packets therefore resolve to
+  35 /30 /30 damage respectively after the current rounding sequence.
+- CombatController.CalculateGemClearDamage multiplies gem count by player
+  damage and the cascade multiplier, then rounds to integer before upgrades.
+  Game.unity has cascadeDamageBonusPerDepth0.2. EnemyActor applies final
+  CombatAmounts.Round: nearest5, positive minimum5, zero stays0.
+  Example Rattlebones3 at depth1:33*1.2=39.6 ->40 ->40 final.
+- Matching 3/4/5/L/T clears yield5/7/10/10/10 energy when they damage a matching
+  enemy; off-target1/3/5/5/5. Special clears give2 per matching-damage gem,
+  otherwise1. Ability clears need explicit entitlement; Bardley's cast refund
+  is capped. Energy is NOT rounded to5.
+- Ability costs: Royal Decree100, Cracked Gems80, ChronoShutter100. A plan
+  cannot assume the player always has an interrupting ability available.
+- Basics currently use real seconds. Specials use completed valid moves.
+  Mender channels and forest vines do not exist in EnemySpecialAbilityKind.
+  Merely filling an EnemyDefinition cannot implement them.
+- Existing stagger thresholds: Normal30%, Special45%, Miniboss65%, Boss90%
+  of maximum HP. Grace/drain/stagger/immunity currently use seconds. The old
+  StaggerCombatBridge is disabled. Preserve the active owner's damage inputs.
+- DifficultyProfile_Standard: HP/damage grow1% per global wave through100;
+  attack speed and special cadence curves stay flat, player-power correction
+  is disabled. Prototype examples below use factor1, level1, no cards or zone
+  resonance. At global wave31 factor1.30 applies before final5-point rounding.
+  Do not silently reset difficulty at a forest transition.
+- Existing limits:6 global chain/pin restrictions,10 structures,4 mined cells.
+  Forest vines/anchors must share restriction accounting, not add six on top.
+
+DEFINITION-LEVEL STARTING VALUES (FACTOR1 TEST FIXTURE)
+Name             Rank      HP   Basic   First due / repeat    Threat
+Elven Scout      Normal    60   5       2 / every2 moves      1.5
+Orc Trailguard   Normal    90   15      4 / every4 moves      2.0
+Elven Mender     Special   75   5       4 / every4 moves      2.5
+Orc Rootbinder   Special   75   5       5 / every5 moves      3.0
+Barkhide Warden  Miniboss 150   15      4 / every4 moves      5.0
+Briar Matriarch  Boss     240   10      4 / every4 moves      7.0
+
+Map HP/baseDamage/followUpDamage(0), category, threatCost, isSupport and
+isBoardDisruptor to existing EnemyDefinition fields. Basic move deadlines are
+PROPOSED explicit move-profile data, not values to write into baseAttackInterval.
+All authored basics use existing EnemyAutoAttack execution, reservations and
+damage paths after a future shared coordinator declares them due.
+Do not convert seconds by dividing by an assumed player speed.
+
+TAXONOMY (INDEPENDENT CONCEPTS)
+Scout: Elf / Path Wardens / ranged attacker / Normal / forest / ordinary.
+Trailguard: Orc / Woodland Clans / heavy attacker / Normal / forest / ordinary.
+Mender: Elf / Grove Wardens / ally healer / Special / forest / support.
+Rootbinder: Orc / Woodland Clans / disruptor / Special / forest / pressure.
+Warden: Orc / Grove Sentinels / protector / Miniboss / forest / local milestone.
+Matriarch: Elf / Deep-Grove Court / ritual leader / Boss / forest / apex candidate.
+The current definition has category, support/disruptor flags and ability kind;
+it does not already contain a complete race/faction/zone schema. These labels
+are proposed metadata for later encounter eligibility, not runtime name checks.
+Weakness is independent of race, clothing and Emerald zone resonance. Use the
+existing assignment flow; preview icon colors are illustrative, not locked.
+
+SCOUT — PRESSURE THROUGH FREQUENCY
+No special ability (None), no follow-up, no blocker. One5-damage arrow every
+two accepted moves. A matching level1 clear removes roughly half its HP.
+Response: use its displayed weakness, kill it before repeated shots, or accept
+small frequent hits while solving the more important support target.
+
+TRAILGUARD — PRESSURE THROUGH A BIGGER SINGLE HIT
+No special ability (None), no follow-up, no blocker. One15-damage maul hit
+every four moves. A full countdown gives room to plan a special or heal.
+Response: exploit its weakness or stagger before impact; a shield can gate the
+whole hit using existing rules. Do not split this into three hits to defeat
+shield gating. Three ordinary matching clears kill it at the fixture baseline.
+
+MENDER — STABLE, INTERRUPTIBLE ALLY HEAL
+Proposed kind ChannelHeal, implemented later as IEnemySpecialAbilityRuntime
+registered by the existing factory. isSupport=true, isBoardDisruptor=false.
+Never reuse RoyalArchbishop wholesale: its rune/triage/benediction kit differs.
+
+Initial eligibility: after two completed accepted moves since spawn. At each
+later safe boundary, if ready and not committed, select a living OTHER ally
+whose HP/maxHP is STRICTLY less than0.75. Self-targeting is disabled.
+Choose lowest HP fraction; ties use persistent encounter actor ID/spawn order.
+Record target ID plus spawn generation, never just slot. Keep that target.
+
+Begin after actionN settles. Show a visible link to the chosen ally, pale-green
+palm/staff cue and a channel bar labelled "HEAL · 2 MOVES". N does not count.
+After N+1 resolves show1; after N+2 resolves, process player damage, deaths,
+stagger and prior poison consequences first. Only a surviving uninterrupted
+caster heals that same living recipient by20HP, capped to missing health.
+Use EnemyActor.RestoreHealth and actual accepted amount for the green +number.
+Being hit alone is not an interrupt. An actual stagger event or caster death
+cancels once. Recipient death/slot replacement fizzles; never silently retarget.
+If another effect fills the target, completion may restore0; no fake +20 or
+new target. Leaving the encounter cancels all links and pending completions.
+
+No basics during channel, release presentation or recovery. Pause existing
+basic progress; do not reset it to full or allow a queued hit through the cast.
+After success, fizzle or interruption, enter two FUTURE accepted moves of
+recovery. Recovery expiry happens after that tick's action-selection phase;
+earliest new action is the following tick. A longer active stagger also gates
+readiness. No same-tick heal and basic attack; no catch-up burst afterward.
+
+Example: trigger afterN=3; response actions4 and5; success/cancel after5;
+recovery on6 and7; eligible again at8. A kill/stagger during action5 wins over
+the heal. A free skill may interrupt without itself advancing this countdown.
+
+Counterplay: match the Mender's shown weakness, use a ready special/skill,
+finish the recipient, or deliberately let a20 heal resolve while killing a
+larger threat. With75HP, Special stagger threshold is33.75: one35 packet can
+interrupt; two30 packets can interrupt if retained by the proposed move-based
+meter policy. This is an illustration, not a claim that seconds-based stagger
+has already been converted. Formation validation must find a useful response
+without requiring a charged skill or a particular gem color by assumption.
+
+ROOTBINDER — THE SHARED FOREST VINE
+Proposed VineCaster kind through the same runtime factory. BoardController
+owns placement, warnings, occupancy, gravity, clears and cleanup. No separate
+Rootbinder-only blocker grid, direct dictionary writes or independent resolver.
+Reuse movable-pin infrastructure with a Vine style/lifetime payload. Existing
+top-up helper clamps owner pins1..3 and only tops up; extend a generic queued
+placement request for exact warning targets/placement count in Phase4/5.
+
+First readiness after3 completed moves. Warn two distinct safe ordinary gems
+for one FUTURE accepted move; bind surviving eligible targets after that move.
+Up to2 placements per cast, owner cap3, shared restriction cap6 including vines,
+chains, freezes and protective anchor markers; pending reservations count.
+Recurrence4 future moves after a successful commit, not after a failed attempt.
+If fewer safe cells exist, place only the eligible subset. If none, retain
+readiness and retry at a later accepted boundary, not every Update frame.
+Warning clears, target replacement, caster kill/stagger or encounter exit
+cancel their specific pending placements. No surprise retarget at expiry.
+
+Vine: cannot be manually swapped, can fall with its gem, can participate in
+matches initiated around it; normal direct clears, special destruction and
+the existing conversion/replacement release path remove it. Adjacent clears
+do NOT automatically remove a movable chain/vine. Do not impose a new
+one-hit-per-move rule on clears, bombs or special chaining.
+
+An untouched seed placed after actionN gets two full future responses. At N+1
+reserve/show a safe orthogonally adjacent child target; at N+2 bind it only if
+parent/target/owner remain valid. Clearing parent or child target cancels this
+spread. The new child gets age0; no recursive spread in its birth action.
+Parent age resets after success/fizzle; cap/unsafe refusal also restarts the
+two-move warning window, preventing a surprise delayed avalanche.
+At most ONE successful spread across all forest vines per accepted action in
+the first test profile, selected by oldest seed then stable ID. This is a
+growth budget, not a cap on player damage/clears. All sources share the cap6.
+
+Rootbinder-owned seeds and descendants carry its persistent owner ID and are
+released on its death/encounter end through queued owner cleanup. Environment
+seeds use a separate visit owner and survive enemy death until their declared
+visit cleanup. Pending target reservations release on every cancellation.
+Initial test formations use Rootbinder OR environment seeding, then combine
+only after shared-budget and useful-response tests pass.
+
+Response: clear the warned gem, clear a bound gem via a match/special, interrupt
+the caster's warning, or kill the caster to remove its entire vine family.
+Keep gem faces visible; thorn-shaped hostile markers differ from frame leaves.
+
+SHARED ORDER AND SAVE REQUIREMENTS
+One accepted manual action ID; finish BoardController's player cascade and
+all attributed resource changes first. Then deaths/owner cleanup and actual
+interrupts; prior poison ticks; due channels/warnings; ready specials; basics.
+Stable persistent actor IDs resolve ties. A committed actor gets one action
+slot; summons/new casts/new vines never consume their birth action as response.
+Thinking, failed swaps, inspection, pause, free skills/supplies, every cascade
+step and enemy-generated cascades contribute zero extra ticks.
+Save ruleset/schema, action ID/phase, tick, actor+target IDs, channel state and
+due/recovery counters, paused basic progress, vine age/parent/owner/reservations,
+RNG and consumed consequence IDs. Restore without offline catch-up or retarget.
+Keep legacy seconds saves in a declared compatibility profile until a tested
+migration exists. ChronoShutter restores the board, not combat deadlines/procs.
+Full migration matrix remains Phase1/05_CLOCK_MIGRATION_CHECKLIST.md. This
+phase does not implement the move clock, stagger conversion or new abilities.
+
+VALIDATION FIXTURES REQUIRED AT IMPLEMENTATION
+No-input wall-time; invalid swap; accepted swap plus long cascade; free ability;
+Mender triggerN with exact N+2 deadline; lethal/stagger on deadline; dead/reused
+recipient slot; target healed to full; overlapping channels; paused/resumed
+channel; maximum restrictions; no useful response; child birth no recursion;
+parent removal before spread; owner death during queued mutation; enemy-cascade
+zero tick; two separately gated hits; repeated save/replay same outcomes.
+Run current dungeon regression suite and Tools/Validate-Unity.ps1 then human
+readability/pacing review when runtime implementation is separately authorized.

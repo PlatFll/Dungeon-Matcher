@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aac1eae8a627d42b5b41d508fea123, type: 3}
+  m_Name: magical-forest
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
+  zoneId: magical-forest
+  displayName: "Magical Forest \xB7 Development"
+  eligibleForLiveTravel: 0
+  affiliatedGem: 3
+  enemies:
+  - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+  - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+  - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+  - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+  - {fileID: 11400000, guid: 81497ef54b105da46833096cd595ca1c, type: 2}
+  - {fileID: 11400000, guid: 5b895d5d4461cbd468f6e26ad6d769e3, type: 2}
+  developmentEncounters:
+  - label: "Forest \xB7 Heal response"
+    members:
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+  - label: "Forest \xB7 Vine response"
+    members:
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 397742fb5f932d54daf4f79bb9899529, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+  - label: "Forest \xB7 Combined pressure"
+    members:
+    - {fileID: 11400000, guid: 9ee8c6f8b351dfd4d8da36a0df7de64e, type: 2}
+    - {fileID: 11400000, guid: ff471e943dad85049bab63740ac18167, type: 2}
+    - {fileID: 11400000, guid: 1be30e44fa1050b479d5670f9878f6ef, type: 2}
+  theme: {fileID: 11400000, guid: bffdd5aff9a7fb24498037e82eef2a00, type: 2}

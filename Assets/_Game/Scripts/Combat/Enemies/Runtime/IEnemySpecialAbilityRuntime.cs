@@ -36,6 +36,7 @@ internal sealed class EnemySpecialActionAvailability
         tryExecuteReadyAbility =
             initializedTryExecuteReadyAbility;
 
+        if (CombatMoveClock.Current != null) CombatMoveClock.Current.Opportunity += MoveOpportunity;
         enemyStagger =
             enemyActor != null
                 ? enemyActor.GetComponent<EnemyStagger>()
@@ -50,6 +51,7 @@ internal sealed class EnemySpecialActionAvailability
 
     public void RequestExecution()
     {
+        if (!CombatMoveClock.CanOffer(enemyActor)) return;
         if (!CanRetryReadyAbility())
         {
             wasDeferredByStagger = false;
@@ -102,8 +104,10 @@ internal sealed class EnemySpecialActionAvailability
         }
     }
 
+    private void MoveOpportunity(EnemyActor actor) { if (actor == enemyActor) RequestExecution(); }
     public void Dispose()
     {
+        if (CombatMoveClock.Current != null) CombatMoveClock.Current.Opportunity -= MoveOpportunity;
         if (isDisposed)
         {
             return;

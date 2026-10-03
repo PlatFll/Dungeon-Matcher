@@ -1,0 +1,852 @@
+{
+  "version": 1,
+  "guide_base": {
+    "version": "1.10",
+    "sha256": "d50543a6ca035a0f3a1f24632eb601d8e37993f1dc3581d8733f09f7290e8b56"
+  },
+  "remote_main_verified": "d334b5278748dcd303ac931eb71b0aa7328dd15b",
+  "accepted": [
+    {
+      "id": "Elven_Scout",
+      "status": "locked design with user-directed guide recolor",
+      "accepted_source_sha256": "abac389f6482c49ebc90281331228a722db9d89674732196f3223041fc6b4367",
+      "working_reference": "working-reference/v1/characters/Elven_Scout_Locked_v1.png",
+      "working_sha256": "9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6",
+      "protected_landmarks": [
+        "pointed ear and narrow face",
+        "russet hair",
+        "bow curvature/string and arrow",
+        "visible two-hand relationship",
+        "short blue-gray mantle",
+        "slender shoulders"
+      ]
+    },
+    {
+      "id": "Orc_Trailguard",
+      "status": "locked design with user-directed guide recolor",
+      "accepted_source_sha256": "32e087be4c77b8425a27e44b3a5fa828afc41a91a19d3339a3ff3f10524e5c4b",
+      "working_reference": "working-reference/v1/characters/Orc_Trailguard_Locked_v1.png",
+      "working_sha256": "45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09",
+      "protected_landmarks": [
+        "broad jaw/tusks",
+        "thick forearms",
+        "low center of gravity",
+        "two-handed timber maul",
+        "ochre coat",
+        "no shield or sword"
+      ]
+    },
+    {
+      "id": "Elven_Mender",
+      "status": "locked design with user-directed guide recolor",
+      "accepted_source_sha256": "527c5000f91ddf34e5097dea3e9b3e1f0212bab1d58499771bba0c10b7fea1d4",
+      "working_reference": "working-reference/v1/characters/Elven_Mender_Locked_v1.png",
+      "working_sha256": "4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d",
+      "protected_landmarks": [
+        "small original eyes/expression",
+        "pointed ear and exposed face",
+        "open pale shoulders",
+        "forked staff negative space",
+        "free open palm",
+        "visible boots"
+      ]
+    },
+    {
+      "id": "Orc_Rootbinder",
+      "status": "locked design with user-directed guide recolor",
+      "accepted_source_sha256": "ad8a7006938e4f840ab73bfb37650cf301347d13708e85ea949dbe98b9bc4ccb",
+      "working_reference": "working-reference/v1/characters/Orc_Rootbinder_Locked_v1.png",
+      "working_sha256": "62d37be53cb3945bdc147319904f52dbf2f6c4ccd68eefeea29a26fd3477cd1b",
+      "protected_landmarks": [
+        "broad jaw/tusk relationship",
+        "stooped shoulders",
+        "asymmetric bark wrap",
+        "open root-marked hand",
+        "knotted focus",
+        "indigo-gray cloth"
+      ]
+    }
+  ],
+  "accepted_UI": [
+    "Neutral_Health_Frame_Accepted.png",
+    "Neutral_Health_Shell_128x24_Accepted.png",
+    "Wood_Frame_Accepted.png",
+    "Woodland_Study_Accepted.png",
+    "General_Timber_v1.png"
+  ],
+  "corrections_for_review": [
+    "Log_Cell_01_v1.png",
+    "Log_Cell_02_v1.png",
+    "Log_Cell_03_v1.png",
+    "Panel_Timber_v1.png"
+  ],
+  "milestone_candidates": {
+    "Barkhide_Warden": {
+      "file": "candidates/Barkhide_Warden_v01.png",
+      "sha256": "cb5d2bf625bdb9ed411e92aeb26434d06231b201c7f3a26c81cfeb319bb7b699",
+      "approval": "pending"
+    },
+    "Briar_Matriarch": {
+      "file": "candidates/Briar_Matriarch_v01.png",
+      "sha256": "d884ba6a5848b7410e25b7f1cd3f274ed87aa709809218b61f44f9ff6eb06ddd",
+      "approval": "pending"
+    }
+  },
+  "motion": "One Mender pilot; selected clips are pending motion approval. First channel-start take rejected.",
+  "board_rule": "Approved_Design_Board.png uses actual accepted v02 source PNGs only. Guide-recolor comparison and milestone study are separate labeled review images.",
+  "runtime_changed": false,
+  "reference_files": {
+    "working-reference/v1/Approved_Design_Board.png": {
+      "sha256": "ea384812085cab2cf24e00037dd5467442da6233384b5974020dc81ec53643b8",
+      "dimensions": [
+        928,
+        440
+      ],
+      "IHDR": [
+        928,
+        440
+      ],
+      "bounds_inclusive": [
+        0,
+        0,
+        927,
+        439
+      ],
+      "alpha_values": [
+        255
+      ],
+      "opaque_colors": 258,
+      "palette": {
+        "#777777": 331910,
+        "#0A0D11": 19098,
+        "#E6B08A": 2520,
+        "#908E58": 2322,
+        "#929A69": 2259,
+        "#A76139": 2214,
+        "#4A2C1C": 2106,
+        "#EDE5D7": 2075,
+        "#7F5232": 1953,
+        "#5B603F": 1737,
+        "#3F4754": 1692,
+        "#3C2B22": 1593,
+        "#2F343D": 1476,
+        "#665F3D": 1305,
+        "#A56661": 1260,
+        "#7A4D2E": 1215,
+        "#73412A": 1215,
+        "#36372C": 1179,
+        "#874E2F": 1107,
+        "#393728": 1098,
+        "#5E3621": 1071,
+        "#DBC6A5": 1035,
+        "#839096": 954,
+        "#5D6874": 846,
+        "#A77035": 828,
+        "#55606E": 819,
+        "#B48C6A": 774,
+        "#363F48": 765,
+        "#56606F": 756,
+        "#CAC5BB": 750,
+        "#7E5131": 675,
+        "#BDA07F": 666,
+        "#D3A57C": 639,
+        "#39241A": 612,
+        "#43332A": 612,
+        "#E3C8A6": 612,
+        "#7B4B47": 603,
+        "#916D4F": 531,
+        "#E1D9CD": 504,
+        "#B07A43": 477,
+        "#41291B": 468,
+        "#333A42": 432,
+        "#AD8866": 396,
+        "#847665": 360,
+        "#E0D2B8": 342,
+        "#BBB7AF": 338,
+        "#8F7055": 333,
+        "#A2693B": 306,
+        "#B9825D": 243,
+        "#A39078": 234,
+        "#C1BCB3": 210,
+        "#C49B60": 189,
+        "#868583": 184,
+        "#93A1B0": 180,
+        "#828180": 179,
+        "#CEC8BE": 179,
+        "#7C5238": 171,
+        "#E7DFD2": 145,
+        "#EBE3D5": 135,
+        "#ECE4D6": 129,
+        "#E2DBCE": 121,
+        "#787878": 111,
+        "#E6DFD1": 109,
+        "#EAE2D4": 102,
+        "#DDD6CA": 99,
+        "#989692": 98,
+        "#C3BEB5": 86,
+        "#ABA7A1": 83,
+        "#8A8886": 80,
+        "#E8E0D3": 77,
+        "#797979": 76,
+        "#E3DCCF": 75,
+        "#E7E0D2": 75,
+        "#7B7A7A": 74,
+        "#A09D98": 74,
+        "#D8D1C6": 73,
+        "#DCD5C9": 73,
+        "#B7B3AB": 71,
+        "#A29F9A": 71,
+        "#D1CBC0": 69,
+        "#E9E2D4": 69,
+        "#E0D8CC": 68,
+        "#908E8B": 68,
+        "#878684": 67,
+        "#7C7C7B": 67,
+        "#E9E1D4": 67,
+        "#908F8C": 65,
+        "#918F8C": 65,
+        "#B8B4AC": 65,
+        "#7A7A7A": 64,
+        "#95938F": 64,
+        "#8F8D8B": 63,
+        "#D2CCC1": 62,
+        "#BFBAB1": 61,
+        "#EAE2D5": 60,
+        "#7A7A79": 60,
+        "#CDC7BD": 58,
+        "#858482": 58,
+        "#A3A09B": 58,
+        "#8D8B89": 58,
+        "#E6DED1": 57,
+        "#7B7B7A": 55,
+        "#888785": 55,
+        "#7D7D7C": 54,
+        "#A4A19C": 54,
+        "#9C9A95": 54,
+        "#A7A49E": 54,
+        "#D7D1C5": 53,
+        "#BBB6AE": 53,
+        "#92908D": 51,
+        "#E5DED1": 50,
+        "#DED7CB": 50,
+        "#D5CFC4": 50,
+        "#B4B0A9": 49,
+        "#8D8C89": 49,
+        "#CFC9BF": 46,
+        "#8A8986": 46,
+        "#CCC6BC": 46,
+        "#969491": 46,
+        "#CEC9BE": 45,
+        "#7E7E7D": 45,
+        "#BCB8AF": 45,
+        "#D67E14": 45,
+        "#8E8C89": 44,
+        "#7F7E7D": 44,
+        "#93918E": 43,
+        "#81807F": 43,
+        "#E5DDD0": 42,
+        "#D8D2C6": 42,
+        "#AFABA4": 40,
+        "#A8A49F": 40,
+        "#E4DDD0": 40,
+        "#848482": 40,
+        "#ADA9A3": 40,
+        "#B5B1AA": 40,
+        "#ACA9A2": 39,
+        "#A19E99": 39,
+        "#C7C2B8": 38,
+        "#BFBAB2": 38,
+        "#DBD5C9": 38,
+        "#A9A6A0": 37,
+        "#7E7D7D": 37,
+        "#979591": 37,
+        "#DAD3C8": 36,
+        "#F0A628": 36,
+        "#DC8E39": 36,
+        "#AEAAA4": 35,
+        "#E8E1D3": 34,
+        "#7F7F7E": 34,
+        "#D4CEC3": 34,
+        "#AEAAA3": 34,
+        "#B9B5AD": 33,
+        "#A7A39E": 32,
+        "#BCB7AF": 32,
+        "#BEB9B1": 32,
+        "#DFD8CB": 31,
+        "#9D9B96": 31,
+        "#D0CABF": 31,
+        "#9A9793": 31,
+        "#898886": 30,
+        "#C2BDB4": 30,
+        "#807F7E": 30,
+        "#B2AEA7": 29,
+        "#C7C1B8": 29,
+        "#A5A29D": 29,
+        "#B8B3AC": 28,
+        "#DBD4C8": 28,
+        "#8E8D8A": 28,
+        "#C9C4BA": 28,
+        "#8C8B88": 28,
+        "#A9A59F": 28,
+        "#E4DCCF": 27,
+        "#E1DACE": 27,
+        "#8B8A88": 27,
+        "#9E9C97": 27,
+        "#838280": 27,
+        "#C5BFB6": 27,
+        "#C6C0B7": 27,
+        "#DFD8CC": 26,
+        "#AAA7A1": 25,
+        "#ABA8A2": 25,
+        "#7D7C7C": 25,
+        "#8A8987": 24,
+        "#999692": 24,
+        "#C0BBB2": 23,
+        "#898785": 23,
+        "#C8C3B9": 23,
+        "#BDB8B0": 23,
+        "#91908C": 23,
+        "#ACA8A2": 22,
+        "#B3AFA8": 22,
+        "#DAD3C7": 22,
+        "#D4CDC2": 22,
+        "#848382": 21,
+        "#CEC8BD": 21,
+        "#E1DACD": 21,
+        "#8F8D8A": 21,
+        "#E0D9CC": 21,
+        "#C6C1B7": 21,
+        "#D3CDC2": 21,
+        "#B6B2AB": 21,
+        "#A09D99": 20,
+        "#D6D0C5": 20,
+        "#969490": 20,
+        "#A5A29C": 20,
+        "#D3CCC2": 19,
+        "#BAB6AE": 19,
+        "#B1ADA6": 19,
+        "#CAC4BA": 19,
+        "#AAA6A0": 19,
+        "#A2A09A": 18,
+        "#D9D2C6": 18,
+        "#8B8A87": 18,
+        "#C9C3BA": 18,
+        "#838381": 18,
+        "#B9B4AC": 17,
+        "#7C7B7B": 17,
+        "#BDB9B0": 17,
+        "#858483": 17,
+        "#B0ACA5": 17,
+        "#D0CAC0": 17,
+        "#AFABA5": 16,
+        "#D9D2C7": 16,
+        "#CBC5BB": 16,
+        "#80807F": 16,
+        "#C4BFB6": 16,
+        "#9F9D98": 15,
+        "#C8C2B9": 15,
+        "#94928F": 15,
+        "#94928E": 15,
+        "#9E9B97": 15,
+        "#CBC6BC": 14,
+        "#D6CFC4": 14,
+        "#8C8A88": 14,
+        "#C5C0B7": 14,
+        "#9D9A96": 14,
+        "#969390": 14,
+        "#B5B1A9": 13,
+        "#B4B0A8": 13,
+        "#A8A59F": 13,
+        "#9A9894": 13,
+        "#D5CFC3": 12,
+        "#BAB5AD": 11,
+        "#AFACA5": 11,
+        "#9B9994": 11,
+        "#9B9894": 10,
+        "#D7D0C5": 9,
+        "#A6A39D": 9,
+        "#C4BFB5": 9,
+        "#B0ACA6": 9,
+        "#9C9995": 9,
+        "#B6B2AA": 8,
+        "#9F9C97": 8,
+        "#DAD4C8": 7,
+        "#999793": 7,
+        "#C2BCB4": 6,
+        "#838281": 5,
+        "#B5B0A9": 2
+      }
+    },
+    "working-reference/v1/accepted-sources/Elven_Mender_v02.png": {
+      "sha256": "527c5000f91ddf34e5097dea3e9b3e1f0212bab1d58499771bba0c10b7fea1d4",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        4,
+        7,
+        54,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 14,
+      "palette": {
+        "#0A0D11": 480,
+        "#E6B08A": 155,
+        "#A56661": 140,
+        "#874E2F": 123,
+        "#5E3621": 119,
+        "#A76139": 116,
+        "#DBC6A5": 115,
+        "#B48C6A": 86,
+        "#D3A57C": 71,
+        "#39241A": 68,
+        "#7B4B47": 67,
+        "#916D4F": 59,
+        "#D67E14": 5,
+        "#F0A628": 4
+      }
+    },
+    "working-reference/v1/accepted-sources/Elven_Scout_v02.png": {
+      "sha256": "abac389f6482c49ebc90281331228a722db9d89674732196f3223041fc6b4367",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        2,
+        8,
+        51,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 15,
+      "palette": {
+        "#0A0D11": 521,
+        "#4A2C1C": 234,
+        "#7A4D2E": 135,
+        "#A76139": 130,
+        "#E6B08A": 125,
+        "#5D6874": 94,
+        "#363F48": 85,
+        "#43332A": 68,
+        "#B07A43": 53,
+        "#847665": 40,
+        "#839096": 30,
+        "#E0D2B8": 28,
+        "#B9825D": 27,
+        "#A39078": 26,
+        "#7C5238": 19
+      }
+    },
+    "working-reference/v1/accepted-sources/Orc_Rootbinder_v02.png": {
+      "sha256": "ad8a7006938e4f840ab73bfb37650cf301347d13708e85ea949dbe98b9bc4ccb",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        1,
+        5,
+        61,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 15,
+      "palette": {
+        "#0A0D11": 577,
+        "#929A69": 251,
+        "#5B603F": 193,
+        "#3F4754": 188,
+        "#2F343D": 164,
+        "#36372C": 131,
+        "#56606F": 84,
+        "#839096": 76,
+        "#7E5131": 75,
+        "#BDA07F": 74,
+        "#41291B": 52,
+        "#8F7055": 37,
+        "#A2693B": 34,
+        "#E0D2B8": 4,
+        "#DC8E39": 4
+      }
+    },
+    "working-reference/v1/accepted-sources/Orc_Trailguard_v02.png": {
+      "sha256": "32e087be4c77b8425a27e44b3a5fa828afc41a91a19d3339a3ff3f10524e5c4b",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        2,
+        7,
+        57,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 15,
+      "palette": {
+        "#0A0D11": 544,
+        "#908E58": 258,
+        "#7F5232": 217,
+        "#3C2B22": 177,
+        "#665F3D": 145,
+        "#73412A": 135,
+        "#393728": 122,
+        "#A77035": 92,
+        "#55606E": 91,
+        "#E3C8A6": 68,
+        "#333A42": 48,
+        "#AD8866": 44,
+        "#C49B60": 21,
+        "#93A1B0": 20,
+        "#E0D2B8": 6
+      }
+    },
+    "working-reference/v1/characters/Elven_Mender_Locked_v1.png": {
+      "sha256": "4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        4,
+        7,
+        54,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 13,
+      "palette": {
+        "#0A0D11": 480,
+        "#B07A43": 239,
+        "#E6B08A": 155,
+        "#A56661": 140,
+        "#7A4D2E": 119,
+        "#FDF5E5": 115,
+        "#B7A393": 86,
+        "#B9825D": 71,
+        "#4A2C1C": 68,
+        "#7B4B47": 67,
+        "#9F907A": 59,
+        "#C58826": 5,
+        "#FBEA90": 4
+      }
+    },
+    "working-reference/v1/characters/Elven_Scout_Locked_v1.png": {
+      "sha256": "9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        2,
+        8,
+        51,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 13,
+      "palette": {
+        "#0A0D11": 521,
+        "#4A2C1C": 302,
+        "#7A4D2E": 175,
+        "#A76139": 130,
+        "#E6B08A": 125,
+        "#5D6874": 94,
+        "#363F48": 85,
+        "#B07A43": 53,
+        "#839096": 30,
+        "#E0D2B8": 28,
+        "#B9825D": 27,
+        "#9F907A": 26,
+        "#7C5238": 19
+      }
+    },
+    "working-reference/v1/characters/Orc_Rootbinder_Locked_v1.png": {
+      "sha256": "62d37be53cb3945bdc147319904f52dbf2f6c4ccd68eefeea29a26fd3477cd1b",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        1,
+        5,
+        61,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 14,
+      "palette": {
+        "#0A0D11": 577,
+        "#929A69": 251,
+        "#5B603F": 193,
+        "#3F4754": 188,
+        "#2F343D": 164,
+        "#36372C": 131,
+        "#56606F": 84,
+        "#E0D2B8": 78,
+        "#839096": 76,
+        "#7A4D2E": 75,
+        "#4A2C1C": 52,
+        "#9F907A": 37,
+        "#B07A43": 34,
+        "#C58826": 4
+      }
+    },
+    "working-reference/v1/characters/Orc_Trailguard_Locked_v1.png": {
+      "sha256": "45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09",
+      "dimensions": [
+        64,
+        64
+      ],
+      "IHDR": [
+        64,
+        64
+      ],
+      "bounds_inclusive": [
+        2,
+        7,
+        57,
+        63
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 14,
+      "palette": {
+        "#0A0D11": 544,
+        "#908E58": 258,
+        "#7A4D2E": 217,
+        "#4A2C1C": 177,
+        "#665F3D": 145,
+        "#73412A": 135,
+        "#393728": 122,
+        "#A77035": 92,
+        "#55606E": 91,
+        "#E0D2B8": 74,
+        "#2B313A": 48,
+        "#B07A43": 44,
+        "#C49B60": 21,
+        "#93A1B0": 20
+      }
+    },
+    "working-reference/v1/ui/General_Timber_v1.png": {
+      "sha256": "92d2265208b3a631541f3ddd89cb60ce75b9d58ce10f3744d797524bd6cd2111",
+      "dimensions": [
+        128,
+        128
+      ],
+      "IHDR": [
+        128,
+        128
+      ],
+      "bounds_inclusive": [
+        0,
+        0,
+        127,
+        127
+      ],
+      "alpha_values": [
+        255
+      ],
+      "opaque_colors": 7,
+      "palette": {
+        "#303026": 13669,
+        "#141A18": 1000,
+        "#20251F": 927,
+        "#454030": 669,
+        "#927547": 53,
+        "#5D5139": 44,
+        "#354735": 22
+      }
+    },
+    "working-reference/v1/ui/Neutral_Health_Frame_Accepted.png": {
+      "sha256": "bfb674ec5805654820c335ab5e49e3e68d9285f33937a759e5b271c25785dd78",
+      "dimensions": [
+        128,
+        32
+      ],
+      "IHDR": [
+        128,
+        32
+      ],
+      "bounds_inclusive": [
+        4,
+        7,
+        123,
+        24
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 5,
+      "palette": {
+        "#141B1D": 1284,
+        "#202B2C": 431,
+        "#46504E": 384,
+        "#A4B2A4": 11,
+        "#76847C": 7
+      }
+    },
+    "working-reference/v1/ui/Neutral_Health_Shell_128x24_Accepted.png": {
+      "sha256": "b0c10b57ceaabdad0b5cc831a84ecbd116e2d4b974aa8ba2ccec9816e5194cf5",
+      "dimensions": [
+        128,
+        24
+      ],
+      "IHDR": [
+        128,
+        24
+      ],
+      "bounds_inclusive": [
+        4,
+        3,
+        123,
+        20
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 5,
+      "palette": {
+        "#141B1D": 1363,
+        "#46504E": 383,
+        "#202B2C": 359,
+        "#A4B2A4": 8,
+        "#76847C": 4
+      }
+    },
+    "working-reference/v1/ui/Woodland_Study_Accepted.png": {
+      "sha256": "e93897019991a02e05fd7219fac4acaf01f255a135cf41b6715119dd984ce6ed",
+      "dimensions": [
+        256,
+        128
+      ],
+      "IHDR": [
+        256,
+        128
+      ],
+      "bounds_inclusive": [
+        0,
+        0,
+        255,
+        127
+      ],
+      "alpha_values": [
+        255
+      ],
+      "opaque_colors": 21,
+      "palette": {
+        "#172F2A": 5037,
+        "#274649": 4834,
+        "#141D1F": 3632,
+        "#324E39": 3122,
+        "#36666C": 2522,
+        "#B17D41": 2269,
+        "#1D372C": 1857,
+        "#2F2921": 1667,
+        "#64462A": 1611,
+        "#895A2E": 1552,
+        "#41757C": 1164,
+        "#433222": 1018,
+        "#4F6237": 867,
+        "#728145": 541,
+        "#AAA08E": 259,
+        "#879650": 214,
+        "#998F67": 198,
+        "#54553F": 188,
+        "#7E7859": 158,
+        "#F0C882": 40,
+        "#DD9D49": 18
+      }
+    },
+    "working-reference/v1/ui/Wood_Frame_Accepted.png": {
+      "sha256": "a8487e67a24a2d2cc2583c04de7bf950ff3ae1b43571231c9dc386a4e7a874d8",
+      "dimensions": [
+        128,
+        128
+      ],
+      "IHDR": [
+        128,
+        128
+      ],
+      "bounds_inclusive": [
+        14,
+        12,
+        112,
+        113
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "opaque_colors": 10,
+      "palette": {
+        "#87613D": 1643,
+        "#111A1A": 629,
+        "#57402C": 365,
+        "#30251F": 205,
+        "#B88A56": 188,
+        "#415B38": 98,
+        "#243B2D": 78,
+        "#74864C": 61,
+        "#C19649": 8,
+        "#DDB36A": 6
+      }
+    }
+  }
+}

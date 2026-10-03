@@ -21,10 +21,10 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-02
-- **Current milestone:** Spear Guard, Spear Knight and Royal Lancer have two-handed thrusts with room for the full weapon. Shield Knight uses a shield bash and a moving shield raise with a blue pulse. The approved motions now retain correct equipment: Royal Lancer and Spear Knight have no back shields, Shield Knight has no sword, and Spear Knight keeps his original narrow helmet slit. King Bombardment pauses his attack countdown and defers his other actions through its warning, strikes and recovery, including save/resume. His preparation and final return to idle now have authored transition poses. Enemy shield tracks reserve space above weakness gems. See `Validation/ENEMY_MOTION_REFINEMENTS_2026_10_02.md` for validation and source provenance. Endless combat, whole-hit shield gating and combat amounts in steps of five remain the established rules.
+- **Current milestone:** Forest Phase 4 is an isolated accepted-move prototype on `codex/forest-gameplay-foundation`, awaiting technical/playable review. Six approved stills match the material guide and remain byte-identical; four starter enemies are playable. The development entry uses a separate account, move-based readiness, interruptible fixed-target Mender healing, shared-cap growing vines, Emerald resonance and versioned continuation. Warden/Matriarch kits, finished environment production, full animation and live travel remain later work. See [forest test instructions](Forest/README.md), [timing contract](Forest/FOUNDATION_CONTRACT.md) and [validation](Validation/FOREST_FOUNDATION_PHASE_04.md). The source is based on main at `d334b527`; no Phase 4 merge or release is authorized.
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** The October 2 motion revision passed 279 regression tests, four rendered checks covering all 16 auto-attacks and approved abilities at both portrait sizes, and `Tools/Validate-Unity.ps1` with Unity 6000.3.19f1. The equipment correction passed a fresh rendered check of all 16 attacks at both portrait sizes. See [motion verification](Validation/ENEMY_MOTION_REFINEMENTS_2026_10_02.md). Earlier integrated Gideon/menu evidence remains in [integration verification](Validation/PR_INTEGRATION_2026_10_01.md). Device and human pacing validation remain separate.
+- **Current verification:** Forest Phase 4 has passing results for 297 unique behavioral cases and one rendered scene check across the combined run and focused reruns, plus `Tools/Validate-Unity.ps1` with Unity 6000.3.19f1. Both 720×1280 and 1080×2400 layouts were checked, including intent/sprite separation and unchanged menu/settings skins. The original test-fixture failure and successful correction remain in [forest evidence](Validation/FOREST_FOUNDATION_PHASE_04.md). Previous main motion evidence covers all 16 auto-attacks and approved abilities; see [motion verification](Validation/ENEMY_MOTION_REFINEMENTS_2026_10_02.md) and [integration verification](Validation/PR_INTEGRATION_2026_10_01.md). Device and human pacing validation remain separate.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -341,6 +341,18 @@ Current exact tables and cost formula live in `Docs/BALANCE_V1.md`.
 # 8. Intentional temporary development overrides
 
 These are **not bugs** unless the user explicitly changes direction.
+
+## Forest accepted-move prototype
+
+The Editor-only Forest menu starts or resumes a separate save under
+`.utmp/ForestPlaytest`. The three formations loop indefinitely using four starter
+kits. The new profile is a tuning experiment: production dungeon and version-1
+saves keep real-time basics. It introduces no public mode selector. The scenery
+is a repeated native-size study and vines use chain overlays/green warnings;
+these placeholders are declared, not finished forest art. Full content must
+support substantial visits without forced waits, power scaling or HP padding.
+The launch plan is dungeon, magical forest and aquatic; crystal destinations
+will be random. Live travel and aquatic remain unimplemented.
 
 ## Bardley production balance (testing override retired)
 
@@ -850,7 +862,12 @@ The 80-energy production cost and 50% cast-refund ceiling are implemented. Furth
 
 # 25. Current next priorities
 
-Unless the user explicitly changes direction, the most sensible next work after Balance v1 is:
+The immediate gate is **technical/playable review of Forest Phase 4**. Assess
+move cadence, Mender interruption/recovery, vine counterplay, presentation and
+save/resume before full animation or later phases. Do not infer permission to
+merge or proceed from the approval of the six still designs.
+
+Broader production priorities after that review remain:
 
 1. **User play and iteration on the merged revised-design implementation.** PR #157 was merged before this work.
 2. **Human-feel balance passes**, especially Bardley vs RattleBones and early soft-wall pacing.

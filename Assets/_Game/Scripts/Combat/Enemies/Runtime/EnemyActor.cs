@@ -4,6 +4,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed partial class EnemyActor : MonoBehaviour
 {
+    public long PersistentId { get; internal set; }
     private const int EnemyMaximumShield = 30;
     private const float EnemyShieldDamageReduction = 0.25f;
 
@@ -701,6 +702,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             return false;
         }
 
+        if (!CombatMoveClock.ClaimSpecial(this)) return false;
         isSpecialAbilityAnimationActionActive = true;
         specialAbilityAnimationActionId = specialAbilityAnimationActionId == int.MaxValue
             ? 1 : specialAbilityAnimationActionId + 1;

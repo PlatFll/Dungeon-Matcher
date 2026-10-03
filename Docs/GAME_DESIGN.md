@@ -6,6 +6,25 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Game identity and core loop
 
+### Internal forest prototype (Phase 4)
+
+The approved development experiment uses one accepted manual action to advance
+all combat readiness and gameplay durations. Thinking, animation, failed swaps,
+cascades and free skills/supplies contribute no extra action. This profile is
+isolated from production dungeon runs and existing version-1 saves; it is not a
+public mode or a final balance decision. The complete proposed timing, expiry,
+channel, vine and resonance rules are in [the Phase 4 contract](Forest/FOUNDATION_CONTRACT.md).
+
+The launch plan is dungeon, magical forest and aquatic, developed one zone at a
+time. Future crystal travel chooses randomly; there is no player route selection.
+Forest currently has four playable test kits and six approved still designs.
+The Warden/Matriarch kits, finished content, travel, approximately ten-minute
+substantial visits and aquatic work remain later phases. This test adds no
+minimum fight time, player-power correction, HP padding or run cap. Opened menu
+and settings screens retain their existing presentation.
+
+The following battle loop describes the production legacy profile.
+
 Dungeon Matcher is a mobile pixel-art match-3 dungeon battler built in Unity.
 
 The established battle loop is:

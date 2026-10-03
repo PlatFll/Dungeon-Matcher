@@ -11,5 +11,7 @@ public enum EnemySpecialAbilityKind
     RoyalStandardBearer = 8,
     CourtMage = 9,
     RoyalArchbishop = 10,
-    King = 11
+    King = 11,
+    ChannelHeal = 12,
+    SpreadingVines = 13
 }

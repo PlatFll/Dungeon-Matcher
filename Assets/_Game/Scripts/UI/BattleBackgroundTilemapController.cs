@@ -33,6 +33,24 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     public BattleEnvironmentRoot ActiveEnvironment => activeEnvironment;
 
+    public void ApplyGameplayTheme(GameplayThemeDefinition theme)
+    {
+        if (theme == null || theme.battleEnvironment == null) return;
+        if (activeEnvironment != null)
+        {
+            var previous=activeEnvironment.gameObject;
+            previous.SetActive(false);
+            previous.transform.SetParent(null);
+            Destroy(previous);
+            activeEnvironment = null;
+        }
+        environmentPrefab = theme.battleEnvironment;
+        EnsureEnvironmentInstance();
+        CacheTilemapHierarchy();
+        MarkTileContentDirty();
+        Align();
+    }
+
     private void Awake()
     {
         EnsureEnvironmentInstance();

@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.10
+**Version:** 1.11
 **Compiled:** 2026-09-19
 **Updated for combat polish and enemy attack production:** 2026-10-01
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -11,6 +11,28 @@ This repository edition is the durable source of truth for the art direction est
 The PNG and ASE assets in the accompanying pack are byte-for-byte copies of supplied files. No character artwork was edited to create this documentation. Reference boards are labeled inspection layouts, not replacement sprite sheets. Versioning, status labels, and review templates are organizational conventions introduced by this guide.
 
 ## Current combat additions (2026-10-01)
+
+### Approved forest stills (2026-10-02)
+
+The user approved the Scout, Trailguard, Mender and Rootbinder identities and
+then the Barkhide Warden and Briar Matriarch milestone designs. Their exact
+guide-colored PNGs are preserved in `ArtSource/Forest/Approved/`, with hashes,
+material/source records and native-size measurements. See
+`Docs/Forest/ART_REVIEW.md` and `Forest_Approved_References.png`.
+
+Elves retain slimmer silhouettes and orcs broader builds. Shared outline,
+human skin, wood/leather, dull iron and linen use the established ramps;
+olive orc skin and distinct cloth colors remain intentional. Do not force
+all species into one anatomy or palette. Five stills are 64x64; the approved
+Matriarch is a declared 96x96 apex footprint at the same source pixel scale.
+All use binary alpha and bottom-center alignment. This guide review changes
+no approved drawing pixels. Motion approval is separate from still approval.
+
+Forest log cells cover the complete board pitch without showing the general
+backdrop. Player and bottom HUD use matching dark horizontal timber, distinct
+from the general vertical backing. Forest assets are additive zone sources;
+dungeon, main-menu and opened settings art remain preserved. Full forest
+environment/UI production remains a later phase.
 
 The user requested readable rank colors, compact shields and attacks for every enemy. Normal, Special and Miniboss badges now use lime, cyan and amber with their existing dark outlines and silhouettes. The Boss badge is retained. Shields occupy a separate six-pixel track below the HP frame; HP and rank remain visible.
 

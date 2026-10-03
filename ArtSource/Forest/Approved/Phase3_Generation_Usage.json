@@ -1,0 +1,69 @@
+{
+  "phase3_ceiling": 20,
+  "initial_planned_batch": 14,
+  "actual_used": 15,
+  "remaining": 5,
+  "initial_balance": 1871,
+  "final_balance": 1856,
+  "cycle_used_before": 129,
+  "cycle_used_after": 144,
+  "USD_credit_before": 0,
+  "USD_credit_after": 0,
+  "purchased_credits": false,
+  "correction_requests": 1,
+  "jobs": [
+    {
+      "name": "Barkhide_Warden",
+      "job_id": "68167724-8b4e-4502-8a56-bf53bd8e11cf",
+      "quoted_generations": 5,
+      "status": "completed",
+      "selected": true
+    },
+    {
+      "name": "Briar_Matriarch",
+      "job_id": "43f751a4-f4b8-4ca2-81ef-315844fc76c9",
+      "quoted_generations": 5,
+      "status": "completed",
+      "selected": true
+    },
+    {
+      "name": "Mender_Channel_Hold",
+      "job_id": "7dad507a-743a-42c7-8f78-a3c39ca3e8b1",
+      "quoted_generations": 1,
+      "status": "completed",
+      "selected": true
+    },
+    {
+      "name": "Mender_Channel_Release",
+      "job_id": "27a94579-5270-4dd1-96e6-612aafea6b28",
+      "quoted_generations": 1,
+      "status": "completed",
+      "selected": true
+    },
+    {
+      "name": "Mender_Channel_Start",
+      "job_id": "8a2d3a0c-f6c7-4272-8608-4899fa8419d4",
+      "quoted_generations": 1,
+      "status": "completed",
+      "selected": false
+    },
+    {
+      "name": "Mender_Idle",
+      "job_id": "b21cd8fc-d53b-452c-ae37-d3bf70a701d9",
+      "quoted_generations": 1,
+      "status": "completed",
+      "selected": true
+    },
+    {
+      "name": "Mender_Start_Corrected",
+      "job_id": "cdc4ad32-28bb-4eb4-9f35-5d83ef3fff4d",
+      "quoted_generations": 1,
+      "status": "completed",
+      "selected": true
+    }
+  ],
+  "phase2_used": 58,
+  "phase2_ceiling": 65,
+  "phase2_unused_transferred": 0,
+  "active_generation_jobs": 0
+}

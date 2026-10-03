@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
+public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner, IAcceptedMoveEnemyAbility
 {
     private EnemyActor actor;
     private BoardController board;
@@ -40,8 +40,10 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private bool CanAct() => Time.timeScale>0 && !released && !pending && actor != null && !actor.IsDefeated &&
         board != null && !board.IsBusy && !actor.HasAnimationActionInProgress &&
         (actor.GetComponent<EnemyStagger>() == null || !actor.GetComponent<EnemyStagger>().IsStaggered);
+    public void ResolveAcceptedMove() => Update();
     private void Update()
     {
+        if (!CombatMoveClock.CanOffer(actor)) return;
         if (!CanAct()) return;
         if (runes != null && !runes.Ended && board.CompletedValidPlayerMoves >= runes.DueMove)
         {

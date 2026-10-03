@@ -15,6 +15,16 @@ public sealed class EnemyDefinition : ScriptableObject
     )]
     private string enemyId = "enemy_id";
 
+    [Header("Content taxonomy (independent of weakness and rank)")]
+    [SerializeField] private string race;
+    [SerializeField] private string faction;
+    [SerializeField] private string combatRole;
+    [SerializeField] private string[] eligibleZones = new string[0];
+    public string Race => race;
+    public string Faction => faction;
+    public string CombatRole => combatRole;
+    public System.Collections.Generic.IReadOnlyList<string> EligibleZones => eligibleZones;
+
     [Header("Encounter Budget")]
     [SerializeField, Min(0.1f)] private float threatCost = 1f;
     [SerializeField] private bool isBoardDisruptor;
@@ -122,6 +132,12 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(0.1f)]
     [Tooltip("Seconds between automatic attacks.")]
     private float baseAttackInterval = 3f;
+
+    [Header("Accepted-move prototype")]
+    [SerializeField, Min(1)] private int firstAttackMoves = 3;
+    [SerializeField, Min(1)] private int attackMoves = 3;
+    public int FirstAttackMoves => Mathf.Max(1, firstAttackMoves);
+    public int AttackMoves => Mathf.Max(1, attackMoves);
 
     [Header("Special Ability")]
 

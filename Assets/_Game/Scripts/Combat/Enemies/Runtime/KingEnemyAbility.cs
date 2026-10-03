@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner
+public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime, IEnemyContinuationOwner, IAcceptedMoveEnemyAbility
 {
     private EnemyActor actor;
     private EnemyAutoAttack ownAttack;
@@ -70,8 +70,10 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private bool CanAct() => Time.timeScale>0 && !released && !pending && actor != null && !actor.IsDefeated &&
         board != null && !board.IsBusy && !actor.HasAnimationActionInProgress &&
         (actor.GetComponent<EnemyStagger>() == null || !actor.GetComponent<EnemyStagger>().IsStaggered);
+    public void ResolveAcceptedMove() => Update();
     private void Update()
     {
+        if (!CombatMoveClock.CanOffer(actor)) return;
         if (!CanAct()) return;
         // A raised sword commits this enemy to the lane attack. Thresholds and
         // other specials remain queued while the player completes the warning.
@@ -188,9 +190,19 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             // during that resolution. Never retain an unchecked actor across a yield.
             while (!released && attack != null && attack.EnemyActor != null &&
                    !attack.EnemyActor.IsDefeated &&
-                   (board.IsBusy || attack.IsPausedByStagger)) yield return null;
+                   (board.IsBusy || (!CombatMoveClock.Active && attack.IsPausedByStagger))) yield return null;
             if (released || actor == null || actor.IsDefeated) yield break;
             if (attack == null || attack.EnemyActor == null || attack.EnemyActor.IsDefeated) continue;
+            // Move-based stagger cannot expire while this sequence owns the
+            // turn. Skip the interrupted participant instead of waiting for a
+            // future player action that the command itself is blocking.
+            if (CombatMoveClock.Active && attack.IsPausedByStagger)
+            {
+                attack.EnemyActor.EndSpecialAbilityAnimationAction();
+                locks.Remove(attack.EnemyActor);
+                attack.ReleaseCommand(this);
+                continue;
+            }
             attack.EnemyActor.EndSpecialAbilityAnimationAction(); locks.Remove(attack.EnemyActor);
             if (attack.PerformCommandStrike(this, actor.Definition.AssaultDamageMultiplier))
             {

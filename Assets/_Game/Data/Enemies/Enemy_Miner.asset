@@ -28,6 +28,8 @@ MonoBehaviour:
   baseMaxHealth: 50
   baseDamage: 6
   baseAttackInterval: 11
+  firstAttackMoves: 4
+  attackMoves: 4
   hasSpecialAbility: 1
   specialAbilityKind: 1
   baseSpecialTurnRequirement: 5

@@ -81,7 +81,20 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private readonly Dictionary<object, float> speedModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> nextSequenceModifiers = new Dictionary<object, float>();
     private readonly HashSet<object> actionPauses = new HashSet<object>();
+    public bool HasCommandReservation => commandOwner != null;
     public bool IsPausedByAction => actionPauses.Count > 0;
+    public void AdvanceAcceptedMove()
+    {
+        if (!CombatMoveClock.Active || !isRunning || IsPausedByAction || IsPausedByStagger || commandOwner != null) return;
+        remainingAttackTime = Mathf.Max(0, remainingAttackTime - Mathf.Clamp(runtimeAttackSpeedMultiplier * Product(speedModifiers), .1f, 5f));
+    }
+    public bool TryPerformAcceptedMoveAttack()
+    {
+        if (!CombatMoveClock.Active || !isRunning || remainingAttackTime > 0 || !CanPerformAttack()) return false;
+        // Reset before callbacks, so a synchronous command cannot duplicate this readiness.
+        remainingAttackTime = enemyActor.Definition.AttackMoves;
+        return PerformAttackImmediately();
+    }
     public void SetActionPaused(object owner, bool paused)
     {
         if (owner == null) return;
@@ -174,7 +187,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (commandStrike)
         {
             CancelAttackSequence();
-            remainingAttackTime = enemyActor != null ? enemyActor.AttackInterval : 0f;
+            remainingAttackTime = enemyActor != null ? (CombatMoveClock.Active ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval) : 0f;
         }
         else if (commandMadeReady) remainingAttackTime = reservedAttackTime;
         commandMadeReady = false;
@@ -232,7 +245,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
             return Mathf.Clamp01(
                 remainingAttackTime /
-                enemyActor.AttackInterval
+                (CombatMoveClock.Active ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval)
             );
         }
     }
@@ -333,10 +346,14 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             return;
         }
 
-        attackCoroutine =
-            StartCoroutine(
-                AttackLoop()
-            );
+        if (CombatMoveClock.Active)
+        {
+            if (!isRunning && !resumeCooldown) remainingAttackTime = enemyActor.Definition.FirstAttackMoves;
+            isRunning = true;
+            resumeCooldown = false;
+            return;
+        }
+        attackCoroutine = StartCoroutine(AttackLoop());
     }
 
     public void StopAttacking()
@@ -1058,6 +1075,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         return
             Time.timeScale>0 &&
+            (!CombatMoveClock.Active || CombatMoveClock.Current.IsResolving) &&
             CanContinueAttackLoop() &&
             (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&

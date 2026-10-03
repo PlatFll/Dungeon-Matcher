@@ -126,8 +126,8 @@ public sealed class RunControlsUI : MonoBehaviour
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
             slots[i].interactable=session.CanUse(kind)||(i==1&&session.Board.IsSelectingTarget);
             icons[i].color=count>0?Color.white:new Color(0.3f,0.3f,0.3f,0.6f);
-            cooldownFills[i].fillAmount=count==0?1:cooldown/BalanceV1.Current.consumableCooldown;
-            charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}s":count.ToString();
+            cooldownFills[i].fillAmount=count==0?1:cooldown/(CombatMoveClock.Active ? 2 : BalanceV1.Current.consumableCooldown);
+            charges[i].text=cooldown>0?$"{count} | {Mathf.CeilToInt(cooldown)}{(CombatMoveClock.Active ? "m" : "s")}":count.ToString();
             Vector2 countSize=new Vector2(cooldown>0?60:22,16);
             charges[i].rectTransform.sizeDelta=countSize;
             ((RectTransform)charges[i].transform.parent).sizeDelta=countSize;
@@ -170,7 +170,7 @@ public sealed class RunControlsUI : MonoBehaviour
         lesson=null;
         var account=AccountProgression.Current;
         if(!account.HasSeenLesson("combat-clocks"))
-        { ShowLesson("combat-clocks","Attacks count seconds; specials count moves.\nTap Guide or an enemy to learn while paused."); return; }
+        { ShowLesson("combat-clocks",CombatMoveClock.Active ? "Forest test: attacks, channels and supplies count accepted moves. Think freely." : "Attacks count seconds; specials count moves.\nTap Guide or an enemy to learn while paused."); return; }
         foreach(var enemy in session.Waves.ActiveEnemies)
         {
             if(!enemy.HasSpecialAbility) continue;

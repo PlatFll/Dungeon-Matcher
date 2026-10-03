@@ -21,7 +21,7 @@ public sealed class RunContinuation : MonoBehaviour
     public string Error { get; private set; }
     public bool CanCapture => session!=null && session.InitialStateReady && !session.IsFinished && !IsRestoring &&
         session.Player!=null && session.Player.IsInitialized && !session.Player.IsDefeated &&
-        session.Board.CanCaptureContinuation && session.Waves.CanCaptureContinuation && RunUpgradeRuntime.Current!=null;
+        (CombatMoveClock.Current==null || !CombatMoveClock.Current.IsBlockingWaveProgression) && session.Board.CanCaptureContinuation && session.Waves.CanCaptureContinuation && RunUpgradeRuntime.Current!=null;
 
     public void Initialize(RunSession run, AccountProgression progression, RunCombatSnapshot saved,RunReplayTape savedTape)
     {
@@ -29,7 +29,7 @@ public sealed class RunContinuation : MonoBehaviour
         Random=new SavedRandom(UnityEngine.Random.Range(1,int.MaxValue));
         session.Board.BeforePlayerSwap=(a,b)=>RecordAction(new RunRecordedAction {kind=RunActionKind.Swap,x=a.Column,y=a.Row,targetX=b.Column,targetY=b.Row});
         bool hasBoard=saved?.board?.cells!=null && saved.board.cells.Count>0;
-        if((hasBoard && saved.version!=1) || (!hasBoard && (progression.ActiveRun?.completedWaves>0 || savedTape?.frames?.Count>0)))
+        if((hasBoard && (!SupportsSnapshot(saved) || (saved.version==2 && session.MoveClock==null))) || (!hasBoard && (progression.ActiveRun?.completedWaves>0 || savedTape?.frames?.Count>0)))
         {
             IsRestoring=true;Time.timeScale=0;session.Board.PrepareContinuation();session.Waves.PrepareContinuation();
             Error="The saved combat state is incomplete or from an unsupported version. Your run was preserved.";
@@ -43,6 +43,24 @@ public sealed class RunContinuation : MonoBehaviour
             restoreInput=session.Board.AcquireExternalInputBlock();
             StartCoroutine(Restore(saved));
         }
+    }
+    public static bool SupportsSnapshot(RunCombatSnapshot saved)
+    {
+        if(saved==null) return false;
+        // JsonUtility materializes null nested serializable classes on a
+        // round trip. The schema, not the presence of a default object, owns
+        // the profile. Version 1 always retains its original seconds rules.
+        if(saved.version==1) return true;
+        if(saved.version!=2 || saved.clock==null || saved.clock.profile!=CombatClockSnapshot.MoveProfile ||
+           saved.clock.zoneId!="magical-forest" || saved.clock.actions==null || saved.clock.actions.pending!=0 ||
+           saved.clock.actions.completed<0 || saved.clock.actions.nextActorId<=0) return false;
+        if(saved.board?.cells?.Count>0 && saved.board.moves!=saved.clock.actions.completed) return false;
+        if(saved.enemies==null) return false;
+        var identities=new System.Collections.Generic.HashSet<long>();
+        foreach(var enemy in saved.enemies)
+            if(enemy==null || enemy.persistentId<=0 || enemy.persistentId>=saved.clock.actions.nextActorId ||
+               !identities.Add(enemy.persistentId)) return false;
+        return true;
     }
     private void LateUpdate()
     {
@@ -61,6 +79,7 @@ public sealed class RunContinuation : MonoBehaviour
     {
         if(!CanCapture) throw new InvalidOperationException("Combat is not at a snapshot boundary.");
         var saved=new RunCombatSnapshot { sequence=(checkpoint?.sequence ?? 0)+1,player=session.Player.CaptureContinuation() };
+        if (CombatMoveClock.Current != null) { saved.version=2;saved.clock=CombatMoveClock.Current.Capture(); }
         saved.gameplayRandom=Random.State;
         session.Waves.CaptureContinuation(saved);
         saved.board=session.Board.CaptureContinuation(session.Waves.ContinuationOwnerSlot);
@@ -70,7 +89,7 @@ public sealed class RunContinuation : MonoBehaviour
         session.Waves.GetComponent<RunUpgradeCoordinator>()?.CaptureContinuation(saved);
         var decree=session.Player.GetComponent<RoyalDecreeRuntime>();
         saved.boardMemory=session.Player.GetComponent<ChronoShutterRuntime>()?.CaptureContinuation();
-        if(decree!=null) { saved.decreeRemaining=decree.RemainingDuration; saved.decreeTarget=session.Waves.ContinuationSlot(decree.CurrentTarget); }
+        if(decree!=null) { saved.decreeRemaining=decree.RemainingDuration; saved.decreeAppliedMove=decree.AppliedMove; saved.decreeTarget=session.Waves.ContinuationSlot(decree.CurrentTarget); }
         return saved;
     }
     public bool SaveNow()
@@ -101,6 +120,9 @@ public sealed class RunContinuation : MonoBehaviour
             return;
         }
         if(IsRestoring || session==null || session.IsFinished || checkpoint==null || Time.deltaTime<=0) return;
+        // Stable safe-thinking frames contain no gameplay, and recording them
+        // forever would grow a suspended run journal without bound.
+        if(CombatMoveClock.Active && CanCapture && tape.frames.Count==0) return;
         tape.frames.Add(new RunReplayFrame { delta=Time.deltaTime });
     }
     public bool RecordAction(RunRecordedAction action)
@@ -164,6 +186,7 @@ public sealed class RunContinuation : MonoBehaviour
             session.RestoreContinuation(saved);
             session.Player.GetComponent<RoyalDecreeRuntime>()?.RestoreContinuation(saved.decreeRemaining,
                 session.Waves.ContinuationEnemy(saved.decreeTarget),session.Player.ActiveAbility);
+            session.Player.GetComponent<RoyalDecreeRuntime>()?.RestoreMoveExpiry(saved.decreeAppliedMove);
             session.Player.GetComponent<ChronoShutterRuntime>()?.RestoreContinuation(saved.boardMemory);
             var coordinator=session.Waves.GetComponent<RunUpgradeCoordinator>();
             coordinator?.RestoreContinuation(saved);

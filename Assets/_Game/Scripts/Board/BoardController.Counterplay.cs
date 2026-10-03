@@ -114,7 +114,7 @@ public partial class BoardController
     {
         int due = completedValidPlayerMoves + Mathf.Max(1, requestedMoves);
         foreach (var threat in gemSetThreats)
-            if (!threat.Ended && threat.Owner != null && !threat.Owner.IsDefeated)
+            if (!threat.Ended && (threat.Environmental || (threat.Owner != null && !threat.Owner.IsDefeated)))
                 due = Mathf.Max(due, threat.DueMove + Mathf.Max(1, requestedMoves));
         foreach (var threat in gemPairThreats)
             if (IsGemPairThreatValid(threat)) due = Mathf.Max(due, threat.DueMove + Mathf.Max(1, requestedMoves));

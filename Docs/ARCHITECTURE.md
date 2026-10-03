@@ -27,6 +27,36 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Board and modular frame presentation
 
+### Isolated accepted-move foundation
+
+`ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
+flag. `RunSession` installs `ZoneRuntimeContext` and `CombatMoveClock` before
+actors initialize. `ZoneDefinition` supplies the affiliated gem, test formations
+and theme; unfinished forest content has `eligibleForLiveTravel=false` and never
+enters the production encounter database. `GameplayThemeDefinition` supplies
+additive artwork to existing layout owners. No second UI geometry owner exists.
+
+`BoardController` remains the only acceptance, mutation and resolution authority.
+`CombatMoveClock` observes acceptance/completion, holds an external input token
+and wave gate, snapshots living actors by persistent ID, and coordinates poison,
+per-actor due work and expiry. It never writes gem cells. Each owner retains its
+own timing state under the recorded profile. Free actions cannot interleave a
+resolving accepted turn. See [the timer audit](Forest/CLOCK_IMPLEMENTATION.md).
+
+Mender channels own a fixed persistent recipient ID and an exactly-once terminal
+sequence. Rootbinder submits generic warnings/placements to the existing board
+queue. Vines share movable pin rules, reservation capacity and warning scheduling;
+their separate environment owner survives unrelated enemy cleanup. Board photos
+retain the present combat tick, warning deadlines and surviving vine ages.
+
+Version 1 snapshots keep seconds behavior. Version 2 records `accepted-moves-v1`,
+zone, completed action, next actor ID and owner state. Only settled snapshots are
+committed; accepted work in flight uses the established replay journal. Unknown
+profiles and invalid actor identities preserve the durable run and block play.
+Spawn VFX cannot reset move readiness. Optional art never authorizes damage or
+channel completion. The prototype's full contract is in
+[Forest/FOUNDATION_CONTRACT.md](Forest/FOUNDATION_CONTRACT.md).
+
 - Modular board sprites use Full Rect import meshes. Tight corner triangulation can distort the one-pixel border under pixel snapping and make its join with a rectangular straight strip look stepped, despite matching sprite bounds and transforms.
 - `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.

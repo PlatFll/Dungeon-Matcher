@@ -22,6 +22,16 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
     private float expirationTime;
     private float nextTickTime;
     private float tickInterval = 1f;
+    private int remainingMoveTicks, nextMoveTick;
+    public void AdvanceAcceptedMove(int move)
+    {
+        if (!CombatMoveClock.Active || !IsPoisoned || move < nextMoveTick) return;
+        nextMoveTick = move + 1;
+        remainingMoveTicks--;
+        ApplyTick();
+        if (IsPoisoned && remainingMoveTicks <= 0) ClearPoison(true);
+        SyncDebugState();
+    }
 
     public event Action<EnemyPoisonStatus, bool> PoisonApplied;
     public event Action<EnemyPoisonStatus, int> TickDamageApplied;
@@ -35,7 +45,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         !enemyActor.IsDefeated;
     public float RemainingDuration =>
         IsPoisoned
-            ? Mathf.Max(0f, expirationTime - Time.time)
+            ? (CombatMoveClock.Active ? remainingMoveTicks : Mathf.Max(0f, expirationTime - Time.time))
             : 0f;
 
     private void Awake()
@@ -46,11 +56,13 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
     public void CaptureContinuation(EnemyCombatSnapshot saved)
     {
         saved.poisoned=IsPoisoned; saved.poisonRemaining=RemainingDuration;
-        saved.poisonNextTick=Mathf.Max(0,nextTickTime-Time.time);
+        saved.poisonNextTick=CombatMoveClock.Active ? Mathf.Max(0,nextMoveTick-CombatMoveClock.EffectAction) : Mathf.Max(0,nextTickTime-Time.time);
         saved.poisonInterval=tickInterval; saved.poisonDamage=tickDamage;
+        saved.poisonMoveTicks=remainingMoveTicks; saved.poisonNextMove=nextMoveTick;
     }
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
+        remainingMoveTicks=saved.poisonMoveTicks; nextMoveTick=saved.poisonNextMove;
         isPoisoned=saved.poisoned; tickInterval=Mathf.Max(.05f,saved.poisonInterval);
         tickDamage=saved.poisonDamage; expirationTime=Time.time+saved.poisonRemaining;
         nextTickTime=Time.time+saved.poisonNextTick; SyncDebugState();
@@ -65,7 +77,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
 
     private void Update()
     {
-        if(Time.timeScale<=0) return;
+        if(CombatMoveClock.Active || Time.timeScale<=0) return;
         if (!IsPoisoned)
         {
             SyncDebugState();
@@ -118,6 +130,11 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
             nextTickTime = Time.time + tickInterval;
         }
 
+        if (CombatMoveClock.Active)
+        {
+            remainingMoveTicks = 3 + Mathf.Min(1, RunUpgradeRuntime.Current?.GetStackCount("slow_venom") ?? 0);
+            if (!wasAlreadyPoisoned) nextMoveTick = CombatMoveClock.EffectAction + 1;
+        }
         isPoisoned = true;
         SyncDebugState();
         PoisonApplied?.Invoke(this, wasAlreadyPoisoned);
@@ -203,6 +220,7 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
         remainingDuration = 0f;
         remainingTimeUntilTick = 0f;
         tickDamage = 0;
+        remainingMoveTicks = nextMoveTick = 0;
 
         if (notify && wasPoisoned)
         {
@@ -219,8 +237,8 @@ public sealed class EnemyPoisonStatus : MonoBehaviour
             return;
         }
 
-        remainingDuration = Mathf.Max(0f, expirationTime - Time.time);
-        remainingTimeUntilTick = Mathf.Max(0f, nextTickTime - Time.time);
+        remainingDuration = RemainingDuration;
+        remainingTimeUntilTick = CombatMoveClock.Active ? Mathf.Max(0,nextMoveTick-CombatMoveClock.EffectAction) : Mathf.Max(0f, nextTickTime - Time.time);
     }
 
     private void OnDisable()

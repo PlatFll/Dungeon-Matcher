@@ -1,0 +1,112 @@
+MILESTONE AND MOTION REVIEW — PHASE 3
+These new stills, kits and motion samples are candidates, not user-locked assets.
+
+BARKHIDE WARDEN / LOCAL MINIBOSS
+Old orc sentinel, broad bark-armored shoulders, single tall bark shield, exposed
+face/tusks, practical ochre cloth. A protective role reads through the slab and
+stance; he carries no sword. 64x64 native canvas, bottom-center pivot, row63.
+Palette14 colors after material cleanup. Source geometry retained exactly.
+
+Prototype:150HP,15 basic damage every4 accepted moves, threat5.
+Guarding Roots uses two clearly linked root anchors, drawn as the SAME canonical
+vine marker with a small anchor knot. They are status-marked ordinary gems,
+not a new structural blocker class. Anchors do not spread; ordinary vines can.
+They count toward the same6-restriction budget and existing safe-cell checks.
+First warning after2 moves; one future move to clear either warned gem or
+stagger/kill the caster. Commit only surviving targets. One or both anchors
+provide a single25% damage reduction to the Warden, never stacking per anchor.
+Never grant invulnerability or secretly protect escorts. HP and shield remain
+separate; this is an owned damage modifier through the central damage flow.
+When the last anchor is cleared, remove protection and open a two-future-action
+exposure: +25% incoming weakness damage, final rounding once. Exposure begins
+after the clearing action finishes, so its two full damage windows are N+1/N+2.
+Free skills may benefit during the open window but do not advance its deadline.
+After exposure, wait three future moves before another one-move anchor warning.
+Stagger cancels preparation; on interruption enter the same exposure/recovery.
+Caster death removes all owned anchors/reservations and modifiers immediately
+through authoritative cleanup. No heal or second phase added.
+Counterplay: clear a linked anchor, interrupt preparation, use the exposed
+window, or use enough raw damage to kill through reduction. Strong builds may
+skip the mechanic; no minimum ritual count, phase gate or HP padding.
+Suggested first fixture: Warden + Scout. Later: Warden + Trailguard. Do not
+add Mender in the first lesson or overlap a second major warning deadline.
+
+BRIAR MATRIARCH / REGIONAL APEX CANDIDATE
+Elder elf with a narrow long silhouette, silver braid, three branch crown prongs,
+wine cloth, pale open sleeves and seed-cage staff. This extends the accepted elf
+language without copying a royal bishop. Declared96x96 native canvas, same
+source pixel density; measured occupied width53, height79. Tool drawing was
+translated down11 pixels, without scaling or lost pixels, to source row95.
+Use bottom-center pivot(0.5,0); the larger canvas adds vertical room. The native
+comparison and three-slot proof keep a common source-pixel scale and floor.
+This canvas is a proposed apex exception, not a new ordinary-character standard.
+
+Prototype:240HP,10 basic damage every4 moves, threat7, isSupport=true and
+isBoardDisruptor=true. Boss category alone must never cause teleport; the
+encounter's designated apex-completion flag owns that decision.
+Her ritual combines two taught ideas, not a menu of new phase rules:
+1) After three moves, begin a TWO-future-move Renew the Grove channel.
+2) Show two linked seed-anchor target gems plus one fixed wounded ally target.
+   Prefer another living ally below75%; self-target only if none qualifies.
+   This declared self fallback distinguishes the apex, not the starter Mender.
+3) Each uncleared rune at completion contributes10HP to that chosen target,
+   at most20 total. Clearing both cancels all healing. Kill/stagger also cancels.
+   Recipient death fizzles; no retarget. No autoattack during the ritual.
+4) Empty/cleared ritual anchors or stagger interrupt open the SAME +25%
+   two-future-action exposure as Warden; completed ritual has two moves of
+   ordinary recovery. Recurrence only after recovery then three future moves.
+Rune/anchor visuals, ownership, warning response and removal reuse the canonical
+vine payload, with nonspreading ritual lifetime. Do not create an apex-only
+obstacle engine or add a damage reflection mechanic. Persistent root protection
+is taught by Warden; Matriarch recombines its linked targets with Mender's channel.
+No invulnerability thresholds, forced reinforcement at fixed HP or mandatory
+minimum number of casts. The whole formation can be defeated at any time.
+First apex fixture: Matriarch + Scout + Trailguard, total threat10.5. Later test
+Rootbinder replacing ONE escort under the same shared pressure budget. Mender
+plus apex double-heal is excluded from the initial test matrix.
+Clearing the designated apex formation is the future reward/transition trigger;
+wait for all surviving escorts, not the boss's rank or death alone. Destination
+selection remains random among ready regions, not a player route choice.
+
+CONTENT / PACING GUARDRAILS
+Six starter enemies prove mechanics and art. The complete forest still needs
+substantial visits and more decision-distinct content in approved batches.
+Use the Phase1 capacity proposal of12-16 identities and20+ formation recipes
+for planning only. Aim around10 minutes through variety, teaching, remixes,
+milestones and relief; measure accepted actions and useful response choices.
+No forced waiting, animation padding, player-power scaling or oversized HP
+solely to reach a clock target. Strong builds may finish much sooner.
+
+MENDER PILOT CONTRACT
+Only the exact locked/recolored64x64 Mender input and one left-facing family.
+No other starter or milestone enemy is animated in Phase3.
+Requests:8 generated idle frames,8 start frames,4 hold frames,8 release frames.
+The endpoint returns the reference plus generated frames: inspect actual count,
+palette, dimensions, identity and duplicate endpoint holds instead of claiming
+we requested nine. Source frame0 is compared to the uploaded PNG; service-side
+palette changes must be reported and repaired from the actual input if found.
+
+Idle cadence starts from the guide's nine130ms exposures. Adjust selection only
+when genuine duplicate poses/seam holds justify it; disclose returned versus
+selected frames. The first channel-start result changed face/facing too much
+and is retained as rejected history. One correction uses an exact two-pixel
+raised-palm endpoint derived from the locked sprite, keeping all other regions.
+
+Presentation states: Idle -> ChannelStart -> ChannelHold(loop) -> Release -> Idle.
+An interrupt exits the hold into the same compact settle motion with the green
+link/light extinguished and an INTERRUPTED cue; it grants no heal. This reuse is
+a pilot proposal, not a claim that a second generated interrupt clip exists.
+For a caster's death, use future death presentation, never animate a successful
+release. Actual channel completion is declared by the combat coordinator.
+
+Hold loops until an explicit release/cancel signal, even if the player takes
+minutes to think. Playback clocks remain seconds; the labeled2/1 moves bar only
+changes on accepted gameplay actions. A review-page button simulates the signal;
+it is not a gameplay implementation or timing authority.
+
+REVIEW GATE
+Show both milestone PNGs at1x and integer enlargement, against the locked cast,
+and at unchanged pixel scale in the current three-slot mockup. Show native pilot
+playback plus frame stepping and declared durations. Ask for milestone-art and
+motion approval. Do not animate the roster, implement kits/move clock, import
+new Unity assets, or proceed to Phase4/5 before that review.
