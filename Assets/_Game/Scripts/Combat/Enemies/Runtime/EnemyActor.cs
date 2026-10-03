@@ -49,6 +49,7 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     // Evaluated at impact, so conditional defence cannot lag behind board state.
     public Func<float> IncomingDamageMultiplier { private get; set; }
+    public Func<float> WeaknessDamageMultiplier { private get; set; }
 
     public event Action<EnemyActor> Initialized;
     public event Action<EnemyActor, int> Healed;
@@ -279,6 +280,7 @@ public sealed partial class EnemyActor : MonoBehaviour
         currentShield = 0;
         damageRedirectTarget = null;
         IncomingDamageMultiplier = null;
+        WeaknessDamageMultiplier = null;
         specialTurnRequirementOverride = 0;
 
         currentSpecialTurnCount = 0;
@@ -411,10 +413,13 @@ public sealed partial class EnemyActor : MonoBehaviour
         damageRedirectTarget = null;
     }
 
+    public EnemyDamageResult ResolveWeaknessDamage(int amount) =>
+        ResolveDamageInternal(amount,true,true,true);
+
     private EnemyDamageResult ResolveDamageInternal(
         int amount,
         bool notifyDamageReceived,
-        bool allowDamageRedirect)
+        bool allowDamageRedirect, bool weaknessDamage = false)
     {
         if (!CanReceiveDamage ||
             amount <= 0)
@@ -437,7 +442,7 @@ public sealed partial class EnemyActor : MonoBehaviour
                     .ResolveDamageInternal(
                         amount,
                         notifyDamageReceived,
-                        allowDamageRedirect: false
+                        allowDamageRedirect: false, weaknessDamage: weaknessDamage
                     );
             }
 
@@ -447,6 +452,8 @@ public sealed partial class EnemyActor : MonoBehaviour
         float incomingMultiplier = IncomingDamageMultiplier != null
             ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
         double resolvedDamage = amount * (double)incomingMultiplier;
+        if(weaknessDamage && WeaknessDamageMultiplier!=null)
+            resolvedDamage *= Math.Max(0,WeaknessDamageMultiplier());
 
         bool shieldWasActive =
             currentShield > 0;

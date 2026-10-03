@@ -605,6 +605,7 @@ public sealed partial class WaveController :
 
         enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : 0;
         if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
+        if (RunSession.Current?.Zone!=null) enemyObject.AddComponent<ForestEnemyMotion>();
         bool successfullyBound =
             slot.BindEnemy(enemy);
 

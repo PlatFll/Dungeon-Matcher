@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Orc_Rootbinder",
+    "state": "Attack_v3",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Orc_Rootbinder.png",
+      "last_frame_url": "Inputs/Orc_Rootbinder.png",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "A SHORT BASIC STAFF STRIKE towards the LEFT. The orc keeps his exact LONG forked WOODEN staff in his left hand throughout. Pull the whole staff back slightly then push its unchanged forked tip diagonally left-down once. Right palm balances. Small knee dip and body weight shift. Then smooth return to EXACT input idle. The staff has a long shaft and a two-pronged branch fork; never shorten it into a knife, never straighten away the fork, never add weapons or shields. No painted motion trails or particles. Same facial features and clothes."
+    },
+    "result": "id: ddab6661-7d9f-4863-a32c-c6dccb2abbee\njob_id: ddab6661-7d9f-4863-a32c-c6dccb2abbee\naction: A SHORT BASIC STAFF STRIKE towards the LEFT. The orc keeps his exact LONG forked WOODEN staff in his left hand throughout. Pull the whole staff back slightly then push its unchanged forked tip diagonally left-down once. Right palm balances. Small knee dip and body weight shift. Then smooth return to EXACT input idle. The staff has a long shaft and a two-pronged branch fork; never shorten it into a knife, never straighten away the fork, never add weapons or shields. No painted motion trails or particles. Same facial features and clothes.\nframes: 8\nsize: 96x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 21c9ef91-0352-5875-b1ef-4c461d82b3bb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ddab6661-7d9f-4863-a32c-c6dccb2abbee\")"
+  },
+  {
+    "name": "Briar_Matriarch",
+    "state": "Attack_v3",
+    "endpoint": "animate_image",
+    "request": {
+      "first_frame_url": "Inputs/Briar_Matriarch.png",
+      "last_frame_url": "Inputs/Briar_Matriarch.png",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "A SHORT BASIC STAFF CAST towards the LEFT. The elf keeps the exact long seed-cage staff in her left hand: the head is a hollow golden wooden cage, never a ball, blade or flame. Tilt the whole staff very slightly left, sharply extend the left arm with a small forward body lean, pause at extension then recover naturally to the EXACT input pose. Right palm counterbalances. Keep unchanged silver braid, three-prong twig crown, gown, face and scale. No particles, flames, staff stretching, spinning, new props or rightward strike."
+    },
+    "result": "id: 7b9bed1b-30e8-4ccc-8267-de612038ff49\njob_id: 7b9bed1b-30e8-4ccc-8267-de612038ff49\naction: A SHORT BASIC STAFF CAST towards the LEFT. The elf keeps the exact long seed-cage staff in her left hand: the head is a hollow golden wooden cage, never a ball, blade or flame. Tilt the whole staff very slightly left, sharply extend the left arm with a small forward body lean, pause at extension then recover naturally to the EXACT input pose. Right palm counterbalances. Keep unchanged silver braid, three-prong twig crown, gown, face and scale. No particles, flames, staff stretching, spinning, new props or rightward strike.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3e41db7a-ea42-50f1-831a-d1c17e26884f\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7b9bed1b-30e8-4ccc-8267-de612038ff49\")"
+  }
+]

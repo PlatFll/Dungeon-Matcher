@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Distant_Woodland",
+    "state": "Art",
+    "endpoint": "create_image_pro_flash",
+    "request": {
+      "width": 256,
+      "height": 128,
+      "no_background": false,
+      "style_image": {
+        "usage_description": "Use this approved forest's muted teal woodland depth, olive foliage, broad pixel clusters, and antique fantasy mood. This output is ONLY the quiet far background layer.",
+        "source": "ArtSource/Forest/UI/Woodland_Study_Accepted.png"
+      },
+      "description": "A seamlessly horizontally repeating distant magical woodland background layer for a pixel art RPG battle. Full opaque 256x128 native pixel canvas. Dense but quiet layered slender trunks and broad softly lit teal forest depth, muted dark blue-green silhouettes, only a few tiny distant pale gold fireflies, subdued moss at the bottom. Trees continue naturally through top edge. No foreground tree, floor, ledge, rocks, objects, border, framing vignette, interface, text or characters. Low contrast broad clusters leave combat characters readable. Hard pixels with restrained 12-color woodland palette; no gradients or dithering."
+    },
+    "result": {
+      "background_job_id": "d154a74e-cb7d-4675-9f76-a226ac68ddac",
+      "image_id": "b8892e9b-58a2-51d3-b73a-22b975bdb5fb",
+      "status": "processing",
+      "source_image_id": "b8892e9b-58a2-51d3-b73a-22b975bdb5fb",
+      "job_id": "d154a74e-cb7d-4675-9f76-a226ac68ddac",
+      "image_size": {
+        "width": 256,
+        "height": 128
+      },
+      "output_count": 1,
+      "estimated_generations": 9,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/d154a74e-cb7d-4675-9f76-a226ac68ddac/download"
+    }
+  },
+  {
+    "name": "Square_Log_Cell",
+    "state": "Art",
+    "endpoint": "create_image_pro_flash",
+    "request": {
+      "width": 64,
+      "height": 64,
+      "no_background": false,
+      "style_image": {
+        "usage_description": "Match only this approved log's warm wood palette and crisp shading. Replace its circular medallion composition with a single full-bleed rounded SQUARE wooden log face.",
+        "source": "ArtSource/Forest/UI/Log_Cell_01_v1.png"
+      },
+      "description": "One full-canvas rounded SQUARE cross-cut wooden log tile for a match-3 board, exactly 64x64 pixels. The log itself fills the entire square, reaching every canvas edge with only tiny 2-pixel rounded corners in dark wood. Concentric irregular SQUARE tree growth rings with rounded corners follow the square outer shape all the way to the edges, like a squared-off tree trunk cross section. Quiet dark honey brown face, slightly lighter top-left edge and deep lower-right shade. No circle or oval, no circular disk inset, no frame, no border around a central object, no gap, no checkerboard, no grass, no decoration. Subtle broad 2-tone growth rings, clean readable center for a colorful gem."
+    },
+    "result": {
+      "background_job_id": "9a56f42b-62fc-46b6-a875-b25e476cb5cb",
+      "image_id": "e2bc6309-3d0c-5cfa-ac79-b0457437187f",
+      "status": "processing",
+      "source_image_id": "e2bc6309-3d0c-5cfa-ac79-b0457437187f",
+      "job_id": "9a56f42b-62fc-46b6-a875-b25e476cb5cb",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/9a56f42b-62fc-46b6-a875-b25e476cb5cb/download"
+    }
+  }
+]

@@ -89,12 +89,12 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     private void ShowMarks(BoardController.GemSetThreat threat)
     {
         EnsureSprites();
-        Sprite sprite = threat.Vine ? rune : threat.RestorationPresentation ? board.archbishopRestorationRuneOverlay : board.kingRoyalJudgmentExclamationOverlay;
+        Sprite sprite = threat.Vine ? GameplayThemeSkin.Current?.vineWarning ?? rune : threat.RestorationPresentation ? board.archbishopRestorationRuneOverlay : board.kingRoyalJudgmentExclamationOverlay;
         if (sprite == null) sprite = threat.RestorationPresentation ? rune : warning;
         foreach (Gem gem in threat.Targets)
         {
             var icon = Make(threat.RestorationPresentation ? "Restoration Rune" : "Royal Judgment !",sprite,42);
-            icon.color = threat.Vine ? new Color(.65f,1f,.32f) : threat.RestorationPresentation ? new Color(1f,0.85f,0.28f) : Color.white;
+            icon.color = threat.Vine ? Color.white : threat.RestorationPresentation ? new Color(1f,0.85f,0.28f) : Color.white;
             marks.Add(new MarkView { Threat=threat, Gem=gem, Icon=icon });
         }
     }
@@ -124,6 +124,11 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
             { if(view.Icon != null) Destroy(view.Icon.gameObject); marks.RemoveAt(i); continue; }
             view.Icon.transform.position=view.Gem.transform.position;
             float scale=board.CellSize*(0.8f+Mathf.Sin(Time.time*7f)*0.06f);
+            if(view.Threat.Vine)
+            {
+                scale=board.CellSize;
+                view.Icon.color=new Color(1,1,1,Mathf.Sin(Time.time*7f)>0?.95f:.5f);
+            }
             view.Icon.transform.localScale=new Vector3(scale/view.Icon.sprite.bounds.size.x,scale/view.Icon.sprite.bounds.size.y,1);
         }
         for (int i=lanes.Count-1;i>=0;i--)

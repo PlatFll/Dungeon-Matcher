@@ -27,7 +27,7 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Board and modular frame presentation
 
-### Isolated accepted-move foundation
+### Isolated forest combat foundation
 
 `ForestDevelopmentEntry` selects a disposable account and an Editor-only launch
 flag. `RunSession` installs `ZoneRuntimeContext` and `CombatMoveClock` before
@@ -49,13 +49,34 @@ queue. Vines share movable pin rules, reservation capacity and warning schedulin
 their separate environment owner survives unrelated enemy cleanup. Board photos
 retain the present combat tick, warning deadlines and surviving vine ages.
 
-Version 1 snapshots keep seconds behavior. Version 2 records `accepted-moves-v1`,
+Version 1 snapshots keep seconds behavior. Version 2 records either the existing
+`accepted-moves-v1` or new `seconds-basics-move-abilities-v1` profile,
 zone, completed action, next actor ID and owner state. Only settled snapshots are
 committed; accepted work in flight uses the established replay journal. Unknown
 profiles and invalid actor identities preserve the durable run and block play.
 Spawn VFX cannot reset move readiness. Optional art never authorizes damage or
 channel completion. The prototype's full contract is in
 [Forest/FOUNDATION_CONTRACT.md](Forest/FOUNDATION_CONTRACT.md).
+
+The hybrid profile uses the existing `EnemyAutoAttack` seconds coroutine. The
+coordinator pauses new basic countdowns from accepted swap until settled special
+work, draining a previously accepted attack before offering that work. It never
+subtracts move readiness from seconds. The replay journal records elapsed frames
+in this profile because idle wall time can now cause damage.
+
+`ForestMilestoneEnemyAbility` owns Warden protection and Matriarch renewal. Both
+submit generic nonspreading vine anchors to the same board queue/cap/save owner.
+Damage reduction and exposed weakness bonuses use `EnemyActor`'s central result
+path, including redirection, final rounding and shield gating. Cast sequence IDs
+are consumed before healing callbacks. Board photos cannot revive finished anchor
+casts. `ForestEnemyMotion` observes outcomes; its special clips contain no effect
+events. Authored basic impacts use the existing guarded attack event path.
+
+`ForestProductionImporter` binds modular scenery, clips and gameplay-only theme
+sprites. The existing layout owner reserves enough battle height for 96px art;
+actor transforms and PPU stay unchanged. `BackgroundMusicPlayer` owns one active
+zone source and at most one outgoing source during its 0.75-second crossfade.
+Opened settings and main menu keep their existing skins and menu music selection.
 
 - Modular board sprites use Full Rect import meshes. Tight corner triangulation can distort the one-pixel border under pixel snapping and make its join with a rectangular straight strip look stepped, despite matching sprite bounds and transforms.
 - `BoardVisuals` creates the board background, cell tiles, rectangular gem mask, and modular frame. It assigns frame sorting once: `Effects / 100`, above board content on `BoardBackground` and `Gems`, below `WorldUI` and screen-space overlay canvases. Frame sprites are unmasked. Board motion, obstacles, and VFX must stay below this border; neither animation nor gameplay code owns frame sorting.

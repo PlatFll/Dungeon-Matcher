@@ -1,0 +1,99 @@
+{
+  "name": "Orc_Rootbinder",
+  "state": "ChannelHold",
+  "width": 96,
+  "height": 64,
+  "frameCount": 4,
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180
+  ],
+  "totalMs": 720,
+  "loop": true,
+  "impactFrame": -1,
+  "source": "Raw/Orc_Rootbinder/ChannelHold",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 180,
+      "bounds": [
+        21,
+        2,
+        77,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "d8a9a9f3af89790ea4d996abbffb3c0b13c98d740da5e8e8a8336bb72792c5ef"
+    },
+    {
+      "index": 1,
+      "durationMs": 180,
+      "bounds": [
+        20,
+        2,
+        76,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "9ca9096ab3029ef17a43c48290eeaa3005e89f8438e508f76e714fbe28208763"
+    },
+    {
+      "index": 2,
+      "durationMs": 180,
+      "bounds": [
+        20,
+        2,
+        76,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "1d6a3a6783a6ad98bf431ea37ea178c81618177e4bae1120663efa16035d56c0"
+    },
+    {
+      "index": 3,
+      "durationMs": 180,
+      "bounds": [
+        20,
+        2,
+        76,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "7eed14b18df0cd45ed92990f171e32a82602c719edf0bf44ea343bd81575fb58"
+    }
+  ]
+}

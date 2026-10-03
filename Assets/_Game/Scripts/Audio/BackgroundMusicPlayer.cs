@@ -11,6 +11,9 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
 
     private AudioSource audioSource;
     private BackgroundMusicSettings settings;
+    private AudioSource fadingSource;
+    private float fadeProgress = 1f, desiredVolume = .65f;
+    private bool zoneMusic, manualPause, applicationPause, appliedPause;
 
     public static BackgroundMusicPlayer Instance =>
         instance;
@@ -28,7 +31,11 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
         SceneManager.sceneLoaded += HandleSceneLoaded;
     }
 
-    private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode) => Install();
+    private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Install();
+        if(instance!=null) instance.SetZoneMusic(RunSession.Current?.Zone?.Definition?.music);
+    }
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.AfterSceneLoad
@@ -81,6 +88,7 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
             >();
 
         ConfigureAudioSource();
+        desiredVolume=settings!=null?settings.Volume:.65f;
         AudioPreferences.Changed += RefreshMute;
         RefreshMute();
         TryStartMusic();
@@ -147,12 +155,14 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
             return;
         }
 
-        audioSource.volume =
-            Mathf.Clamp01(volume);
+        desiredVolume=Mathf.Clamp01(volume);
+        ApplyVolumes();
     }
 
     public void PauseMusic()
     {
+        manualPause=true;
+        RefreshPause();
         if (audioSource == null ||
             !audioSource.isPlaying)
         {
@@ -164,13 +174,15 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
 
     public void ResumeMusic()
     {
+        manualPause=false;
+        RefreshPause();
         if (audioSource == null ||
             audioSource.clip == null)
         {
             return;
         }
 
-        audioSource.UnPause();
+        if(!appliedPause) audioSource.UnPause();
     }
 
     private void OnDestroy()
@@ -182,5 +194,50 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
         }
     }
 
-    private void RefreshMute() { if (audioSource != null) audioSource.mute = AudioPreferences.MusicMuted; }
+    public void SetZoneMusic(AudioClip clip)
+    {
+        zoneMusic=clip!=null;
+        clip=clip!=null?clip:settings?.MusicClip;
+        if(audioSource==null || clip==null || audioSource.clip==clip) { RefreshPause();return; }
+        // One persistent player, at most one outgoing source during a fade.
+        if(fadingSource==null)
+        {
+            fadingSource=gameObject.AddComponent<AudioSource>();
+            fadingSource.playOnAwake=false;fadingSource.loop=true;fadingSource.spatialBlend=0;fadingSource.dopplerLevel=0;
+        }
+        fadingSource.Stop();fadingSource.clip=audioSource.clip;
+        if(fadingSource.clip!=null)
+        {
+            fadingSource.timeSamples=audioSource.timeSamples;fadingSource.volume=audioSource.volume;
+            fadingSource.Play();
+        }
+        audioSource.Stop();audioSource.clip=clip;fadeProgress=0;audioSource.volume=0;audioSource.Play();
+        RefreshMute();appliedPause=false;RefreshPause();
+    }
+    private void Update()
+    {
+        RefreshPause();
+        if(appliedPause || fadeProgress>=1) return;
+        fadeProgress=Mathf.Min(1,fadeProgress+Time.unscaledDeltaTime/.75f);ApplyVolumes();
+        if(fadeProgress>=1 && fadingSource!=null) { fadingSource.Stop();fadingSource.clip=null; }
+    }
+    private void ApplyVolumes()
+    {
+        if(audioSource!=null) audioSource.volume=desiredVolume*fadeProgress;
+        if(fadingSource!=null) fadingSource.volume=desiredVolume*(1-fadeProgress);
+    }
+    private void RefreshPause()
+    {
+        bool pause=manualPause || applicationPause || (zoneMusic && Time.timeScale<=0);
+        if(pause==appliedPause) return;
+        appliedPause=pause;
+        if(pause) { audioSource?.Pause();fadingSource?.Pause(); }
+        else { audioSource?.UnPause();fadingSource?.UnPause(); }
+    }
+    private void OnApplicationPause(bool paused) { applicationPause=paused;RefreshPause(); }
+    private void RefreshMute()
+    {
+        if(audioSource!=null) audioSource.mute=AudioPreferences.MusicMuted;
+        if(fadingSource!=null) fadingSource.mute=AudioPreferences.MusicMuted;
+    }
 }

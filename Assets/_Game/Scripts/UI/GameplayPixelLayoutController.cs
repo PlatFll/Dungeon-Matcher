@@ -63,7 +63,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 #endif
 
-    public static Geometry Calculate(int width, int height, Rect safe, Vector2 boardPixels)
+    public static Geometry Calculate(int width, int height, Rect safe, Vector2 boardPixels, int minimumBattleHeight = MinimumBattleHeight)
     {
         // Transient zero/invalid device reports must not produce negative sizes,
         // divide by zero, or overwrite the last usable scene geometry.
@@ -85,7 +85,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             // Even logical dimensions keep centered even-size art on the grid.
             float w = Mathf.Floor((safe.xMax - Inset * scale - x) / (2 * scale)) * 2;
             float h = Mathf.Floor((safe.yMax - Inset * scale - y) / (2 * scale)) * 2;
-            float available = h - BottomHeight - 2 * Gap - MinimumBattleHeight;
+            float available = h - BottomHeight - 2 * Gap - minimumBattleHeight;
             float fit = Mathf.Min(w * scale / boardPixels.x, available * scale / boardPixels.y);
             // Fill available space uniformly; whole texel steps made phone boards too small.
             float ratio = Mathf.Floor(fit * boardPixels.y / scale) * scale / boardPixels.y;
@@ -99,9 +99,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             // Grow the enclosures only when the preferred battle would leave
             // excessive blank gutters. Art stays native; frame edges tile.
             float desiredBattle = Mathf.Clamp(remainingHeight - 2 * PreferredGap,
-                PreferredBattleHeight, MaximumBattleHeight);
+                Mathf.Max(PreferredBattleHeight,minimumBattleHeight), Mathf.Max(MaximumBattleHeight,minimumBattleHeight));
             float battleHeight = Mathf.Min(desiredBattle, remainingHeight - 2 * Gap);
-            if (battleHeight < MinimumBattleHeight) continue;
+            if (battleHeight < minimumBattleHeight) continue;
             float bottomHeight = BottomHeight + Mathf.Clamp(
                 remainingHeight - battleHeight - 2 * PreferredGap, 0, MaximumBottomHeight - BottomHeight);
             // Pin both HUDs to safe edges and balance spare height around the square board.
@@ -138,6 +138,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         Refresh(true);
     }
 
+    private int lastMinimumBattleHeight;
     private void LateUpdate() { if (initialized) Refresh(false); }
 
     public void Refresh(bool force)
@@ -152,9 +153,11 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
 #endif
         // The simulator may publish Screen before resizing the actual Canvas.
         // Refit static art once that projection catches up on the next frame.
-        if (!force && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        int minimumBattleHeight=Mathf.Max(MinimumBattleHeight,GameplayThemeSkin.Current?.minimumBattleHeight??0);
+        if (!force && minimumBattleHeight==lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        lastMinimumBattleHeight=minimumBattleHeight;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;
-        Current = Calculate(Screen.width, Screen.height, safe, source);
+        Current = Calculate(Screen.width, Screen.height, safe, source,minimumBattleHeight);
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);

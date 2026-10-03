@@ -272,6 +272,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
             refineButtons.Add(GameUi.Button("Refine" + theme, overlayRect, "Refine " + theme,
                 new Vector2(170,38), new Vector2(((int)theme-1)*180,-240),
                 () => { if (refinement != null) refinement.TryRefine(selectedTheme); }));
+            GameplayThemeSkin.Button(refineButtons[refineButtons.Count-1]);
         }
         overlayRect.gameObject.SetActive(false);
     }
@@ -322,6 +323,7 @@ public sealed class UpgradeChoiceUI : MonoBehaviour
         if (FinalizedUiSkin.Load("PanelTall") != null)
         {
             FinalizedUiSkin.Panel(border, true);
+            GameplayThemeSkin.Panel(border);
             body.GetComponent<Image>().enabled = false;
             var cardColors = button.colors;
             cardColors.normalColor = Color.white;

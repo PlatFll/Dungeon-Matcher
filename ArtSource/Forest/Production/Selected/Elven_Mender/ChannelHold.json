@@ -1,0 +1,99 @@
+{
+  "name": "Elven_Mender",
+  "state": "ChannelHold",
+  "width": 96,
+  "height": 64,
+  "frameCount": 4,
+  "durationsMs": [
+    210,
+    170,
+    170,
+    170
+  ],
+  "totalMs": 720,
+  "loop": true,
+  "impactFrame": -1,
+  "source": "approved-phase-03-pilot/ChannelHold",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 210,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "60d75f43f13426ddeb085d50692c2ff56d68261dd3ff5ac9167093bd30a09251"
+    },
+    {
+      "index": 1,
+      "durationMs": 170,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "ee498fee836e09fdc6bdb93e0e259fdbe40b6985573df9847d28aca429515666"
+    },
+    {
+      "index": 2,
+      "durationMs": 170,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "69fdfedf5ddd8e25e588a1ae0301eef3085ac0eb3b2e5cd8ee8d6e73aac94d21"
+    },
+    {
+      "index": 3,
+      "durationMs": 170,
+      "bounds": [
+        20,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4ed9e523606442cca619958e5f93a7a8ef50066eb6420ccc3c7f207ae4c53b46"
+    }
+  ]
+}

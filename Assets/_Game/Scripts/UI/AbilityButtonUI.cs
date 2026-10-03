@@ -51,6 +51,19 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private float targetCharge;
     private float chargeVelocity;
     private bool hasInitializedCharge;
+    private GameplayThemeDefinition appliedTheme;
+    private void LateUpdate()
+    {
+        var theme=GameplayThemeSkin.Current;
+        if(theme==null || appliedTheme==theme) return;
+        appliedTheme=theme;
+        GameplayThemeSkin.Button(abilityButton);
+        // Awake builds the native fill before RunSession selects its zone.
+        // Replace only the shell after that selection; keep the charge/mask.
+        var frame=transform.Find(AbilityEnergyBarName+"/EnergyFrame")?.GetComponent<Image>();
+        if(frame!=null && theme.energyFrame!=null) frame.sprite=theme.energyFrame;
+        RefreshVisuals();
+    }
 
     private void Awake()
     {
@@ -218,7 +231,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
             ability.Icon != null)
         {
             abilityIcon.sprite =
-                ability.Icon;
+                GameplayThemeSkin.Current?.AbilityIcon(ability.Icon) ?? ability.Icon;
             GameplayPixelGrid.FitImage(abilityIcon, abilityIcon.rectTransform.rect.size);
         }
 
@@ -286,7 +299,7 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
     private void BuildFinalizedEnergyBar()
     {
-        var frame = FinalizedUiSkin.Load("EnergyFrame");
+        var frame = GameplayThemeSkin.Current?.energyFrame ?? FinalizedUiSkin.Load("EnergyFrame");
         var track = FinalizedUiSkin.Load("EnergyTrack");
         var fill = FinalizedUiSkin.Load("EnergyFill");
         if (frame == null || track == null || fill == null) return;

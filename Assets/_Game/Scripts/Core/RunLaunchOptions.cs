@@ -3,6 +3,8 @@ public static class RunLaunchOptions
 {
     // Consumed only by an explicit development launch. No public mode setting.
     public static bool ForestPrototype;
+    // Internal regression fixture override; never exposed in player settings.
+    public static string ForestClockProfile = CombatClockSnapshot.HybridProfile;
     public static int ForestEncounterOffset;
     public static bool Practice;
     public static RunChallenge Challenge;

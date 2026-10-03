@@ -12,16 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e5713295b824488ff6709a525d707, type: 3}
   m_Name: ForestTheme
   m_EditorClassIdentifier: Assembly-CSharp::GameplayThemeDefinition
+  minimumBattleHeight: 320
   generalBackground: {fileID: 21300000, guid: 25ee58f1bb5790743976b1da24e5ac67, type: 3}
   panelBackground: {fileID: 21300000, guid: f962d98d696cbcf478ea4bc77c53d448, type: 3}
   boardCells:
-  - {fileID: 21300000, guid: 6cde8360e2e954b41883e6cbab533f88, type: 3}
-  - {fileID: 21300000, guid: 80fca82b992039047adf6a446f10e980, type: 3}
-  - {fileID: 21300000, guid: 1f6b9897c78a51344b050d7d2789f82f, type: 3}
-  battleEnvironment: {fileID: 313150900070996151, guid: 3271fbf1c5ab70547ab5d55644ff276c, type: 3}
+  - {fileID: 21300000, guid: 5cc2ee51ff47ead4b8afeac8b5411da9, type: 3}
+  - {fileID: 21300000, guid: 94a26497a2574e648aee8bbe467bdc21, type: 3}
+  - {fileID: 21300000, guid: 2696a42c05b9a2a438c18a7e4421dab3, type: 3}
+  battleEnvironment: {fileID: 6988288064860248005, guid: 527380204a3ace248a6969b26aed3a70, type: 3}
   frameCorner: {fileID: 21300000, guid: 9bbd232333bca6243bf6208d028c77c5, type: 3}
   frameEdge: {fileID: 21300000, guid: b34f3bf134ba8d24194dc5ec0814ef66, type: 3}
   wavePlaque: {fileID: 21300000, guid: 8864211cabd98064887c2eda20af369f, type: 3}
+  buttonNormal: {fileID: 21300000, guid: e1884b423112df746ba992703c295933, type: 3}
+  buttonHighlighted: {fileID: 21300000, guid: 3596ff5cc6185f2428884c7a0daedc9d, type: 3}
+  buttonPressed: {fileID: 21300000, guid: fff53b1a84b30c840a821c82a4fb514d, type: 3}
+  buttonDisabled: {fileID: 21300000, guid: ad2092ac20600a942aadb55f4de2513f, type: 3}
+  settingsNormal: {fileID: 21300000, guid: 1fbda2386897d7348b9bc529e05354fd, type: 3}
+  settingsHighlighted: {fileID: 21300000, guid: e2dca8610c47ab94ca40192893b72701, type: 3}
+  settingsPressed: {fileID: 21300000, guid: edede0b908bbd7547bbb7f8b9d93a681, type: 3}
+  settingsDisabled: {fileID: 21300000, guid: 55050c9fa39225649a4472cc958f7e56, type: 3}
+  panelShell: {fileID: 21300000, guid: 7e91a15d766f26d40a5c76ad9e11896f, type: 3}
+  energyFrame: {fileID: 21300000, guid: 8c2e5e485282b244d8943ddd640c51c6, type: 3}
+  vineOverlay: {fileID: 21300000, guid: 7751276ffdb43284aa98e1a04f8f01ce, type: 3}
+  anchorOverlay: {fileID: 21300000, guid: 064c6c2c4463de141982a33f2c0818dd, type: 3}
+  vineWarning: {fileID: 21300000, guid: fc2b35d0676154c46b60e4cd2473380a, type: 3}
+  healEffect: {fileID: 21300000, guid: f04428c98636f5c4aab75d8b2a541b40, type: 3}
+  interruptEffect: {fileID: 21300000, guid: e4a56bb4e28f39f4d8967bf9dc2c35fa, type: 3}
+  resonanceIcon: {fileID: 21300000, guid: 13c5f2725756443419bf8d63fbd45da8, type: 3}
+  supplyNormal: {fileID: 21300000, guid: 9ab4ea167af0e2a428979df7ddde2f99, type: 3}
+  supplyHighlighted: {fileID: 21300000, guid: 3cbb3c64b7207af40b9a156e8fad5e23, type: 3}
+  supplyPressed: {fileID: 21300000, guid: 8dd2cf4db8ec089489a20679b26fc2b7, type: 3}
+  supplyDisabled: {fileID: 21300000, guid: 9ffa62be27854ac46a63c1686c033456, type: 3}
+  abilityIcons:
+  - source: {fileID: 21300000, guid: c021a495cd371e0499a421be52bc1369, type: 3}
+    themed: {fileID: 21300000, guid: d41dafca6551a2747bc3d8fa62506fb8, type: 3}
+  - source: {fileID: 21300000, guid: cf56b51998fdb6744bf5fd67c0623822, type: 3}
+    themed: {fileID: 21300000, guid: e6013fcf498253d4197b08794438bbe7, type: 3}
+  - source: {fileID: 21300000, guid: 149cda7507f823c4b85b54daa8e752f9, type: 3}
+    themed: {fileID: 21300000, guid: fee9899ffdb07074597069d35dcef9ba, type: 3}
   playerFrame: {fileID: 11400000, guid: 3d776781be6046b46aaae2ec76aa09a5, type: 2}
   healthStyles:
   - {fileID: 11400000, guid: 7ff301d656472e3468bf76fc82eba3cd, type: 2}

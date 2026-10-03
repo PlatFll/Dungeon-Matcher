@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Vine_Overlay",
+    "state": "Art",
+    "endpoint": "create_image_pixflux",
+    "request": {
+      "width": 64,
+      "height": 64,
+      "description": "A hostile vine restraint overlay for one match-3 gem, transparent native pixel art 64x64. Two wiry dark brown thorny vines wind diagonally around the outside of a square gem footprint, with a few sharp olive green leaves and pale lime thorn tips. Four corner tendrils, very OPEN transparent center: gem color must remain obvious. Flat side-on UI sprite. Crisp one-pixel dark outline, chunky restrained highlights. Not a wreath, circle, shield, icon inside a box or dense bush. No background, text or gem drawn."
+    },
+    "result": "id: 8865a356-e2e6-4af7-8b85-d7d4a97b1277\njob_id: 8865a356-e2e6-4af7-8b85-d7d4a97b1277\ndescription: A hostile vine restraint overlay for one match-3 gem, transparent native pixel art 64x64. Two wiry dark brown thorny vines wind diagonally around the outside of a square gem footprint, with a few sharp olive green leaves and pale lime thorn tips. Four corner tendrils, very OPEN transparent center: gem color must remain obvious. Flat side-on UI sprite. Crisp one-pixel dark outline, chunky restrained highlights. Not a wreath, circle, shield, icon inside a box or dense bush. No background, text or gem drawn.\nsize: 64x64px\ntransparent: True\nasset_id: 4c71ce37-c3a5-5838-939e-def16966c798\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8865a356-e2e6-4af7-8b85-d7d4a97b1277\")"
+  },
+  {
+    "name": "Vine_Anchor",
+    "state": "Art",
+    "endpoint": "create_image_pixflux",
+    "request": {
+      "width": 64,
+      "height": 64,
+      "description": "A nonspreading ROOT ANCHOR overlay for a match-3 gem, transparent native pixel art 64x64. Thin dark brown thorny vines wrap the four edges around a largely OPEN transparent square center. One distinct small warm ochre root KNOT at the lower-right identifies this anchor; a few olive-green leaves. Restrained crisp lime thorn tips. Dark pixel outlines, simple connected clusters. The gem underneath must stay clearly visible. No background, text, square frame, circular wreath, shield, gem or solid center."
+    },
+    "result": "id: 8ecb934a-0c3f-47ba-9c42-7f25be2e978c\njob_id: 8ecb934a-0c3f-47ba-9c42-7f25be2e978c\ndescription: A nonspreading ROOT ANCHOR overlay for a match-3 gem, transparent native pixel art 64x64. Thin dark brown thorny vines wrap the four edges around a largely OPEN transparent square center. One distinct small warm ochre root KNOT at the lower-right identifies this anchor; a few olive-green leaves. Restrained crisp lime thorn tips. Dark pixel outlines, simple connected clusters. The gem underneath must stay clearly visible. No background, text, square frame, circular wreath, shield, gem or solid center.\nsize: 64x64px\ntransparent: True\nasset_id: 8ae9b80b-60f3-57a5-a5f5-d5f6c7f468e1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8ecb934a-0c3f-47ba-9c42-7f25be2e978c\")"
+  },
+  {
+    "name": "Leaf_Heal",
+    "state": "Art",
+    "endpoint": "create_image_pixflux",
+    "request": {
+      "width": 32,
+      "height": 32,
+      "description": "One crisp restrained magical healing burst on transparent background, native 32x32 pixel art. Three small bright lime and emerald leaves spiralling upward around a tiny pale-green four-point glint. Sparse light mint pixels, dark-green shadow clusters, clean chunky shapes. Small airy effect, no circle, no bubble, no aura disk, no text, no character, no background. Clearly communicates beneficial green healing."
+    },
+    "result": "id: 7ee11441-5933-4da3-9963-b67ffb74799f\njob_id: 7ee11441-5933-4da3-9963-b67ffb74799f\ndescription: One crisp restrained magical healing burst on transparent background, native 32x32 pixel art. Three small bright lime and emerald leaves spiralling upward around a tiny pale-green four-point glint. Sparse light mint pixels, dark-green shadow clusters, clean chunky shapes. Small airy effect, no circle, no bubble, no aura disk, no text, no character, no background. Clearly communicates beneficial green healing.\nsize: 32x32px\ntransparent: True\nasset_id: e139e71f-27bf-5c5c-9b9e-081aff8218da\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7ee11441-5933-4da3-9963-b67ffb74799f\")"
+  }
+]

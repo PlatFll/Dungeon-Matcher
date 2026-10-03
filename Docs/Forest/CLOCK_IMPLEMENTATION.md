@@ -1,7 +1,15 @@
-# Accepted-move timer migration
+# Forest timer profiles
 
-Scope: internal `accepted-moves-v1`; production/version-1 saves retain the
-legacy seconds rules. The implementation contract supplies exact expiry order.
+New tests use `seconds-basics-move-abilities-v1`. `EnemyAutoAttack` and its HUD use
+seconds, with countdown paused during accepted board resolution, stagger and
+specialist holds. Attack impact/recovery still use the existing guarded sequence.
+No move decrement or reset is applied to that stored seconds progress.
+
+Existing `accepted-moves-v1` saves retain the table below. The remaining forest
+buffs, stagger, poison and supply cooldowns also keep these move semantics in new
+hybrid tests; the user's change specifically restored ordinary attack timers.
+Production/version-1 saves retain their original rules. The implementation
+contract supplies exact expiry order.
 
 | Owner | Move profile | Existing seconds retained for |
 |---|---|---|
@@ -21,8 +29,9 @@ legacy seconds rules. The implementation contract supplies exact expiry order.
 | Shields | Existing separate resource and whole-hit gate; no timer | Fill and floating numbers |
 | Supplies | Two future moves per kind; accepted-use debit; no time recharge | UI feedback |
 | Other cards / affinity / energy | Existing event-driven limits, rewards, refund budgets and persistent modifiers | Choice/reward presentation |
-| Mender | Fixed persistent recipient, two future responses, exactly-once outcome, two future recovery actions | Intent bar/link only; approved static art |
-| Vines | Age and reservations in snapshot; warning on first response, at most one spread after second; independent environment owner | Existing chain overlay; green warning placeholder |
+| Mender | Fixed persistent recipient, two future responses, exactly-once outcome, two future recovery actions | Authored start/hold/release; separate heal/cancel cue |
+| Warden / Matriarch | Nonspreading board anchors, cast sequence, fixed ritual target, future response/exposure/recovery deadlines | Authored motion follows state events; cannot grant effects |
+| Vines | Age and reservations in snapshot; warning on first response, at most one spread after second; independent environment owner | Dedicated vine, amber anchor and warning sprites |
 | Continuation | Version 2 stores profile, zone, action and next actor identity; owners store timers and pending work; in-flight actions use existing replay journal | Frame deltas reproduce accepted presentation only |
 
 Readiness is calculated for all surviving actors before any actor grants a new
@@ -44,7 +53,8 @@ King 4. Existing dungeon HP/damage and live encounter tables remain unchanged.
 
 The prototype captures only fully settled action boundaries. An accepted input
 in progress remains in the durable replay journal, preserving the original
-checkpoint and RNG. Idle thinking does not append unbounded empty frames.
+checkpoint and RNG. Only all-move idle thinking skips empty frames. Hybrid runs
+record seconds as the original timed continuation does; stable saves compact it.
 Unknown schema/profile/zone combinations are rejected while retaining the run.
 Version 1 explicitly means the legacy profile; it is never silently converted.
 
@@ -53,3 +63,6 @@ present age, reintroduced nodes get full future grace, dead owners are not
 resurrected, and environmental sources remain separate. Pending enemy warnings
 retain present deadlines and only surviving gem identities. The photograph
 does not restore channel targets, consumed procs or combat tick.
+Nonspreading anchor restoration additionally requires the current producer and
+creation move to match a living cast, preventing old photos from reviving solved
+anchors or donating them to a later ritual.

@@ -1,0 +1,175 @@
+{
+  "name": "Barkhide_Warden",
+  "state": "Death",
+  "width": 96,
+  "height": 64,
+  "frameCount": 8,
+  "durationsMs": [
+    65,
+    65,
+    65,
+    65,
+    65,
+    65,
+    65,
+    100
+  ],
+  "totalMs": 555,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Barkhide_Warden/Death",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        6,
+        79,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "4a6ad3f27ee623bcba609ad45bb4ed94796df15a3ff0f5431c5a194c7dc1f8ce"
+    },
+    {
+      "index": 1,
+      "durationMs": 65,
+      "bounds": [
+        17,
+        6,
+        76,
+        64
+      ],
+      "paletteCount": 13,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "02f4675d10befc2733187f37e0b58e55e5552966352d51e9f0b16407751f3cb6"
+    },
+    {
+      "index": 2,
+      "durationMs": 65,
+      "bounds": [
+        18,
+        6,
+        71,
+        64
+      ],
+      "paletteCount": 12,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "f47a3b5416056ceb160ef82d0c4bd590b595580a556782cc1004db5980215fc5"
+    },
+    {
+      "index": 3,
+      "durationMs": 65,
+      "bounds": [
+        18,
+        7,
+        71,
+        64
+      ],
+      "paletteCount": 12,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "b8b0c5733d7f2db52bea6963224e455072eb0a3411351026a19e05c3f2791d6f"
+    },
+    {
+      "index": 4,
+      "durationMs": 65,
+      "bounds": [
+        19,
+        8,
+        71,
+        64
+      ],
+      "paletteCount": 12,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "ccfbb5bfb58b014c5621229057106ad3fe0d331d221b0fc9b0c940f81b63203b"
+    },
+    {
+      "index": 5,
+      "durationMs": 65,
+      "bounds": [
+        19,
+        14,
+        73,
+        64
+      ],
+      "paletteCount": 12,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "baef2ad93ec516b4be7230dddaedb12c15a6d2f5b17d4a22476f979b95b6b587"
+    },
+    {
+      "index": 6,
+      "durationMs": 65,
+      "bounds": [
+        11,
+        32,
+        82,
+        64
+      ],
+      "paletteCount": 11,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "a7b67109297474c41b77728b58da9486797d6e4620bc1c8c9a38157c0ece434b"
+    },
+    {
+      "index": 7,
+      "durationMs": 100,
+      "bounds": [
+        9,
+        40,
+        87,
+        64
+      ],
+      "paletteCount": 12,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "44b70731166e793128a1babd45b98e1902bf711b61ae7136d4210166f0431280"
+    }
+  ]
+}

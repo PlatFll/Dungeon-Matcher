@@ -33,6 +33,8 @@ public sealed class AcceptedMoveState
 public sealed class CombatClockSnapshot
 {
     public const string MoveProfile = "accepted-moves-v1";
+    public const string HybridProfile = "seconds-basics-move-abilities-v1";
+    public static bool IsSupported(string value) => value == MoveProfile || value == HybridProfile;
     public string profile = MoveProfile;
     public string zoneId = "magical-forest";
     public int testEncounterOffset;

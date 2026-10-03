@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Matcher · Forest production review</title>
+<style>
+:root{font:16px system-ui;color:#ebe5d6;background:#17201d}body{max-width:1160px;margin:28px auto;padding:0 20px}
+h1{font-size:28px;margin-bottom:8px}p{line-height:1.5;color:#c8d1c8}button,select{font:inherit;background:#293d33;color:inherit;border:1px solid #7a8b72;border-radius:6px;padding:7px 10px;cursor:pointer}button.active{background:#8d6433}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px}.card{background:#26312b;border:1px solid #536052;border-radius:10px;padding:16px}.card h2{font-size:19px;margin:0 0 8px}.stage{height:305px;display:flex;align-items:flex-end;justify-content:center;background:#777;margin:14px 0;padding-bottom:8px}.stage canvas{image-rendering:pixelated;image-rendering:crisp-edges}
+.controls{display:flex;gap:6px;flex-wrap:wrap}.note{font:13px monospace;color:#d7d8c8;min-height:36px;margin:10px 0}.thumbs{display:flex;gap:14px;flex-wrap:wrap}.thumbs img{image-rendering:pixelated;background:#777;max-width:100%;object-fit:contain}.surface{margin-top:28px}.screens img{width:240px;height:auto}
+a{color:#ccdf9c}.banner{padding:14px;border-left:4px solid #bba06c;background:#253a30}audio{width:min(100%,620px)}
+</style>
+<h1>Magical Forest · Production review</h1>
+<p>Six starter enemies. Seconds for basic attacks; accepted player moves for abilities. Forest remains a development test zone. These assets and the temporary music are ready for your review, not a claim of launch completeness.</p>
+<p class="banner">80 subscription generations used / 90 initial ceiling / 120 total ceiling. The 30-generation correction reserve is untouched. No credit purchases.</p>
+<p>Preview scale <select id="scale"><option value="1">1× native pixels</option><option value="2">2× integer enlargement</option><option value="3" selected>3× integer enlargement</option></select> · The animation timer uses the exported per-frame durations. Each canvas keeps native pixels; enlargement uses nearest-neighbor sampling.</p>
+<div class="grid" id="cast"></div>
+<section class="surface"><h2>Woodland modules and board tiles</h2><div class="thumbs">
+<img src="Environment/Tall_Woodland.png" alt="Distant woodland 256 by 256"><img src="Environment/Ancient_Tree.png" alt="Ancient tree 128 by 128">
+<img src="Environment/Woodland_Ground.png" alt="Separate soil 128 by 64"><img src="Environment/Forest_Ruin.png" alt="Quiet ruin 64 by 64"><img src="Environment/Forest_Fern.png" alt="Foreground fern 64 by 32">
+<img src="UI/Log_Cell_01.png" alt="Full coverage rounded square log"><img src="UI/Log_Cell_02.png" alt="Log variant"><img src="UI/Log_Cell_03.png" alt="Log variant">
+</div><p>Soil occupies the actor contact plane. Distinct woodland and foliage layers sit behind it. Log corners remain backed by wood: no global background shows through the board.</p></section>
+<section class="surface"><h2>Gameplay UI and effects</h2><div class="thumbs">
+<img src="UI/PanelShell.png" alt="Joined timber panel"><img src="UI/ButtonNormal.png" alt="Timber button">
+<img src="UI/EnergyFrame.png" alt="Timber energy frame"><img src="UI/SettingsNormal.png" alt="In-run settings shell">
+<img src="Effects/Vine_Overlay.png" alt="Hostile growing vine"><img src="Effects/Vine_Anchor.png" alt="Nonspreading amber knot anchor">
+<img src="Effects/Leaf_Heal.png" alt="Healing leaves"><img src="Effects/Interrupt.png" alt="Interrupted leaf cue"></div>
+<p>Main menu and opened settings keep their existing presentation. Player and bottom HUD keep the separate dark horizontal timber material. Existing gem artwork, rank badges and neutral health shells remain.</p></section>
+<section class="surface"><h2>Forest Lanterns · temporary original cue</h2>
+<audio controls loop src="../../../../Assets/_Game/Audio/Music/Forest%20Lanterns%20-%20TEMP%20review.wav"></audio>
+<p>2:17 · 112 BPM · original local synthesis · plucked wood, reed melody, seed chimes and restrained percussion. This is a temporary review cue. Music controls and zone transitions use the existing music system.</p></section>
+<section class="surface"><h2>Actual Unity captures</h2><div class="thumbs screens" id="screens"></div><p>These are runtime captures, separate from the native sprite previews above.</p></section>
+<p><a href="animation-manifest.json">Native dimensions, palettes, frame bounds, timings and pivots</a> · <a href="modular-manifest.json">Modular image checks</a></p>
+<script>
+const actors=[],scale=document.querySelector('#scale');
+const roles={Elven_Scout:'60 HP · 5 damage · 3 seconds · bow shot',Orc_Trailguard:'90 HP · 15 damage · 4.5 seconds · heavy axe strike',Elven_Mender:'75 HP · 5 damage · 5 seconds · fixed ally heal, two response moves',Orc_Rootbinder:'75 HP · 5 damage · 5.5 seconds · telegraphed spreading roots',Barkhide_Warden:'150 HP · 15 damage · 4.5 seconds · root protection and exposed counterplay',Briar_Matriarch:'240 HP · 10 damage · 5 seconds · two-anchor renewal ritual'};
+fetch('animation-manifest.json').then(r=>r.json()).then(data=>{
+ for(const name of Object.keys(roles)){
+  const clips=data.clips.filter(c=>c.name===name),card=document.createElement('article');card.className='card';
+  card.innerHTML='<h2>'+name.replaceAll('_',' ')+'</h2><p>'+roles[name]+'</p><div class="stage"><canvas></canvas></div><div class="controls"></div><div class="note"></div><div class="transport"><button>Pause</button> <button>Step frame</button></div>';
+  document.querySelector('#cast').append(card);const canvas=card.querySelector('canvas'),ctx=canvas.getContext('2d');
+  const state={name,clips,card,canvas,ctx,index:0,elapsed:0,paused:false,current:null,images:{}};
+  const select=c=>{state.current=c;state.index=0;state.elapsed=0;state.paused=false;card.querySelector('.transport button').textContent='Pause';canvas.width=c.width;canvas.height=c.height;size(state);draw(state)};
+  for(const c of clips){const img=new Image();img.src=name+'/'+c.state+'.png';img.onload=()=>draw(state);state.images[c.state]=img;
+   const b=document.createElement('button');b.textContent=c.state;b.onclick=()=>select(c);card.querySelector('.controls').append(b);}
+  card.querySelector('.transport button').onclick=e=>{state.paused=!state.paused;e.target.textContent=state.paused?'Play':'Pause'};
+  card.querySelectorAll('.transport button')[1].onclick=()=>{state.paused=true;state.index=(state.index+1)%state.current.frameCount;state.elapsed=0;draw(state)};
+  state.select=select;actors.push(state);select(clips.find(c=>c.state==='Idle'));
+ }
+});
+function size(a){a.canvas.style.width=a.current.width*+scale.value+'px';a.canvas.style.height=a.current.height*+scale.value+'px'}
+scale.onchange=()=>actors.forEach(size);
+function draw(a){if(!a.current)return;const c=a.current,img=a.images[c.state];a.ctx.clearRect(0,0,c.width,c.height);a.ctx.imageSmoothingEnabled=false;if(img?.complete)a.ctx.drawImage(img,a.index*c.width,0,c.width,c.height,0,0,c.width,c.height);
+ a.card.querySelector('.note').textContent=c.state+' · '+(a.index+1)+'/'+c.frameCount+' · '+c.durationsMs[a.index]+' ms · '+c.width+'×'+c.height+' · '+c.totalMs+' ms total';
+ for(const b of a.card.querySelectorAll('.controls button'))b.classList.toggle('active',b.textContent===c.state);}
+let before=performance.now();function tick(now){const dt=Math.min(now-before,100);before=now;for(const a of actors){if(a.paused)continue;const c=a.current;a.elapsed+=dt;
+ while(a.elapsed>=c.durationsMs[a.index]){a.elapsed-=c.durationsMs[a.index];a.index++;
+ if(a.index>=c.frameCount){if(c.loop)a.index=0;else if(c.state==='Death'){a.index=c.frameCount-1;a.paused=true;break;}
+ else {a.select(a.clips.find(s=>s.state===(c.state==='ChannelStart'?'ChannelHold':'Idle')));break;}}
+ }draw(a);}requestAnimationFrame(tick)}requestAnimationFrame(tick);
+for(const file of ['01-forest-idle','02-channel-intent','04-forest-tall','06-forest-1080','07-forest-safearea','08-warden','09-matriarch','10-guide','11-upgrades','12-game-over','05-settings-preserved','03-menu-preserved']){
+ const img=new Image();img.src='Runtime/'+file+'.png';img.alt=file;img.onload=()=>document.querySelector('#screens').append(img);
+}
+</script></html>

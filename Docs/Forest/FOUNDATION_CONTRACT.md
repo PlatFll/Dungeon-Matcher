@@ -1,18 +1,17 @@
-# Phase 4 development contract
+# Forest development contract — Phases 5–6
 
-This is an internal accepted-move prototype. Production dungeon runs and version 1
-saves keep their real-time profile. Forest is not eligible for live travel.
-No public mode selector, full animation production or release is part of this phase.
+New isolated forest tests use `seconds-basics-move-abilities-v1`: ordinary attacks
+count seconds; special abilities count accepted player moves. This follows the
+user's Phase 5–6 timing revision. Version-2 `accepted-moves-v1` saves keep their
+earlier all-move interpretation. Production dungeon runs and version-1 saves keep
+their existing profile. Forest is not eligible for live travel or release.
+Six starter kits, battle motion, modular art and temporary audio are now included.
 
 ## Work sequence
 
-1. Preserve approved stills and verify material palettes/shading.
-2. Add and test the action identity, profile and save contract.
-3. Migrate each gameplay timer under the isolated profile, retaining legacy behavior.
-4. Add the zone context, attributed resonance, channels and canonical vines.
-5. Provide the direct development forest fixture and readable intent presentation.
-6. Run focused tests, dungeon regressions, Unity validation and rendered scene checks.
-7. Open a focused PR and stop for technical/playable review. No merge.
+The Phase 4 foundation remains the action/save owner. Phase 5–6 adds the two
+milestone kits and native art through these owners, then stops for art, motion,
+kit and music review. No merge or next-phase authorization is implied.
 
 ## Action resolution
 
@@ -25,8 +24,11 @@ all consequences settle; board mutation remains owned by BoardController.
 Complete player clears/resources/damage first. Apply deaths and real stagger
 interrupts as they occur. At settlement commit that action once; process existing
 poison, then surviving actors in persistent spawn-ID order. Each actor resolves
-its channel or due special before an ordinary basic. At most one ordinary action
-per actor per tick; a committed multi-hit or command sequence remains one action
+its channel or due special. Under the retained all-move profile, at most one
+ordinary action is also offered per actor per tick. In new hybrid tests, ordinary
+attacks count seconds between moves; board acceptance pauses new countdowns until
+settlement. Previously accepted attacks drain before move-owned special work.
+A committed multi-hit or command sequence remains one action
 with separately shield-gated hits. Wait for authoritative board mutations and
 accepted presentation sequences before advancing to the next actor. New actors
 receive no readiness on their spawning action. Dead actors/targets are rechecked.
@@ -37,7 +39,10 @@ damage, heal, interrupt or clear threats but cannot advance deadlines/recharge.
 
 ## Explicit initial timer settings (tunable)
 
-- Every definition has explicit first/basic move cadence; no seconds conversion.
+- New forest basic seconds: Scout 3, Trailguard 4.5, Mender 5, Rootbinder 5.5,
+  Warden 4.5, Matriarch 5. These are authored test intervals, not a conversion from
+  an assumed matching speed. Held progress resumes without resetting/catching up.
+- Retained all-move saves use the existing explicit first/repeat move fields.
 - Royal Decree: 3 full manual actions, +1 for Longer Reign (maximum 4). Base
   bonus 5 damage per eligible gem, no cascade multiplier in this prototype;
   existing damage cards still apply. Normal match energy remains suppressed
@@ -66,7 +71,9 @@ Version 1 keeps the legacy seconds interpretation. Version 2 declares profile,
 zone ID, completed action, next persistent actor ID, per-actor move state and
 owned pending work. Stable snapshots remain outside an action; interruption
 inside an action recovers through the existing accepted-input replay journal.
-The journal must not grow indefinitely while the player merely thinks. Unknown
+All-move thinking skips idle journal frames. Hybrid runs retain frame deltas
+because seconds attacks can occur while the player thinks. Stable checkpoints
+use the existing journal compaction. Unknown
 profiles/versions retain the durable original and report incompatibility.
 
 Channel targets use persistent actor IDs, never recycled slots. Captured board
@@ -95,6 +102,22 @@ Resonance multiplies only eligible damage attributed to the current zone gem by
 rounding. Other colors in a mixed clear are unchanged. Weakness and player
 affinity remain independent. A generic current-gem event is a card hook only;
 full offer/proc integration remains Phase 7.
+
+Warden: first readiness after 2 moves; warn two safe cells for one future response.
+Surviving anchors are nonspreading, share the six-restriction cap, and reduce all
+incoming damage by 25% once, regardless of anchor count. Clearing the last anchor
+or staggering the preparation grants 2 future moves of +25% weakness damage.
+The clearing packet itself does not get the new bonus. Recovery then resets the
+special to 3 moves. Basics pause during preparation/exposure/recovery.
+
+Matriarch: first readiness after 3 moves; create up to two nonspreading anchors,
+choose the lowest-health-fraction other ally strictly below 75%, or self if none,
+and fix its persistent identity for 2 future response moves. At completion heal
+10 per surviving anchor, at most 20 and capped to missing HP. Clearing both or
+staggering cancels and exposes; losing the recipient fizzles without retargeting.
+Every outcome has 2 future exposure/recovery moves; recurrence then takes 3 moves.
+Consume the cast sequence before healing callbacks. Removing the owner/encounter
+removes its anchors. Photographs cannot resurrect a finished cast.
 
 Eligibility is the attributed Match/Special/Ability damage packet through
 CombatController. Separate Royal Decree proc hits, poison ticks and fixed enemy

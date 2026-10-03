@@ -15,36 +15,36 @@ MonoBehaviour:
   enemyId: barkhide_warden
   race: Orc
   faction: Grove Sentinels
-  combatRole: Protector concept
+  combatRole: Root protector
   eligibleZones:
   - magical-forest
   threatCost: 5
-  isBoardDisruptor: 0
+  isBoardDisruptor: 1
   isSupport: 0
   chainCap: 2
   displayName: Barkhide Warden
   category: 2
-  description: Approved static art. Milestone kit remains a later phase; excluded
-    from this test roster.
+  description: Forest starter test kit. Seconds basics; accepted-move abilities.
+    See the combat guide for counterplay.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: f695d967399ecb74b8c137db9315a2e9, type: 3}
-  animationControllerOverride: {fileID: 0}
+  animationControllerOverride: {fileID: 9100000, guid: ee270fce2d98efe48bb6023fa0ad14f0, type: 2}
   visualSize: {x: 112, y: 112}
-  timeAutoAttackFromAnimation: 0
-  useAuthoredAutoAttackMotion: 0
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
   baseMaxHealth: 150
   baseDamage: 15
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 3
+  baseAttackInterval: 4.5
   firstAttackMoves: 4
   attackMoves: 4
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
-  baseSpecialTurnRequirement: 3
-  lockSpecialTurnRequirement: 0
+  hasSpecialAbility: 1
+  specialAbilityKind: 14
+  baseSpecialTurnRequirement: 2
+  lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
   barricadesPerUse: 2

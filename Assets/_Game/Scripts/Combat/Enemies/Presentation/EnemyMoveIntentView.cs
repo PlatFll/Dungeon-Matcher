@@ -55,23 +55,31 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         PositionIntent();
         bool casting=channel!=null && channel.IsChanneling;
         var roots=GetComponent<RootbinderEnemyAbility>();
+        var milestone=GetComponent<ForestMilestoneEnemyAbility>();
+        bool ritual=milestone!=null && milestone.IsPreparing && milestone.Target!=null;
+        var recipient=casting?channel.Target:ritual?milestone.Target:null;
         text.text=casting ? $"HEAL IN {channel.ResponseMoves}" : channel!=null && channel.BlocksBasic ? "RECOVER" :
+            milestone!=null && milestone.IsPreparing ? $"{(milestone.Target!=null?"RENEW":"ROOTS")} IN {milestone.ResponseMoves}" :
+            milestone!=null && milestone.IsExposed ? "EXPOSED +25%" :
+            milestone!=null && milestone.IsProtected ? "ROOT GUARD" :
+            milestone!=null && milestone.BlocksBasic ? "RECOVER" :
             roots!=null && roots.IsWarning ? $"VINES IN {roots.ResponseMoves}" :
-            $"HIT IN {Mathf.CeilToInt(attack?.RemainingAttackTime ?? 0)}";
-        text.color=casting?new Color(.65f,1f,.45f):Color.white;
-        bar.gameObject.SetActive(casting);
-        if(casting) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01(channel.ResponseMoves/2f),4);
+            CombatMoveClock.MoveBasics ? $"HIT IN {Mathf.CeilToInt(attack?.RemainingAttackTime ?? 0)}" :
+            $"HIT {attack?.RemainingAttackTime ?? 0:0.0}s";
+        text.color=casting||ritual?new Color(.65f,1f,.45f):Color.white;
+        bar.gameObject.SetActive(casting||ritual);
+        if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves:milestone.ResponseMoves)/2f),4);
         if(link!=null)
         {
-            link.gameObject.SetActive(casting && channel.Target!=null && !actor.IsDefeated);
+            link.gameObject.SetActive(recipient!=null && recipient!=actor && !actor.IsDefeated);
             if(link.gameObject.activeSelf)
             {
                 var parent=(RectTransform)link.parent;
-                var targetView=channel.Target.GetComponent<EnemyMoveIntentView>();
+                var targetView=recipient.GetComponent<EnemyMoveIntentView>();
                 targetView?.PositionIntent();
                 Vector2 from=parent.InverseTransformPoint(text.rectTransform.TransformPoint(new Vector3(0,-12,0)));
                 Vector2 to=parent.InverseTransformPoint(targetView!=null && targetView.text!=null
-                    ? targetView.text.rectTransform.TransformPoint(new Vector3(0,-12,0)) : channel.Target.transform.position);
+                    ? targetView.text.rectTransform.TransformPoint(new Vector3(0,-12,0)) : recipient.transform.position);
                 Vector2 delta=to-from;link.localPosition=new Vector3(from.x,from.y,0);link.sizeDelta=new Vector2(delta.magnitude,2);
                 link.localRotation=Quaternion.Euler(0,0,Mathf.Atan2(delta.y,delta.x)*Mathf.Rad2Deg);
             }

@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="75" result="Failed(Child)" total="75" passed="41" failed="34" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.278708">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="433" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.278708" total="75" passed="41" failed="34" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1534" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/.utmp/forest-regression-baseline/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="433" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.269228" total="75" passed="41" failed="34" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="22624" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1097" name="CombatAudioTests" fullname="CombatAudioTests" classname="CombatAudioTests" runstate="Runnable" testcasecount="9" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.063088" total="9" passed="6" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1098" name="AllProductionCuesHaveShortMonoAssetsAndPositiveMixValues" fullname="CombatAudioTests.AllProductionCuesHaveShortMonoAssetsAndPositiveMixValues" methodname="AllProductionCuesHaveShortMonoAssetsAndPositiveMixValues" classname="CombatAudioTests" runstate="Runnable" seed="1148114816" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.033343" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1100" name="CooldownCoalescesBurstWithoutAccumulatingDelayedPlayback" fullname="CombatAudioTests.CooldownCoalescesBurstWithoutAccumulatingDelayedPlayback" methodname="CooldownCoalescesBurstWithoutAccumulatingDelayedPlayback" classname="CombatAudioTests" runstate="Runnable" seed="607854103" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.000664" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1103" name="EnemyGainAndHealCuesExcludeNoOpsAndSnapshotRestore" fullname="CombatAudioTests.EnemyGainAndHealCuesExcludeNoOpsAndSnapshotRestore" methodname="EnemyGainAndHealCuesExcludeNoOpsAndSnapshotRestore" classname="CombatAudioTests" runstate="Runnable" seed="803362658" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.005540" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 12
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at CombatAudioTests.EnemyGainAndHealCuesExcludeNoOpsAndSnapshotRestore () [0x0006b] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\CombatAudioTests.cs:105
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1107" name="LethalPoisonStillProducesOneFinalTickCue" fullname="CombatAudioTests.LethalPoisonStillProducesOneFinalTickCue" methodname="LethalPoisonStillProducesOneFinalTickCue" classname="CombatAudioTests" runstate="Runnable" seed="762205427" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001698" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1102" name="PlayerShieldCueReportsEffectiveGrantOnlyAndRestoreStaysSilent" fullname="CombatAudioTests.PlayerShieldCueReportsEffectiveGrantOnlyAndRestoreStaysSilent" methodname="PlayerShieldCueReportsEffectiveGrantOnlyAndRestoreStaysSilent" classname="CombatAudioTests" runstate="Runnable" seed="1235770947" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.000992" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1106" name="PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit" fullname="CombatAudioTests.PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit" classname="CombatAudioTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003690" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1104" name="PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit(0,8)" fullname="CombatAudioTests.PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit(0,8)" methodname="PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit" classname="CombatAudioTests" runstate="Runnable" seed="17106701" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.000982" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 8
+  But was:  10
+]]></message>
+              <stack-trace><![CDATA[at CombatAudioTests.PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit (System.Int32 shield, System.Int32 total) [0x00092] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\CombatAudioTests.cs:123
+]]></stack-trace>
+            </failure>
+          </test-case>
+          <test-case id="1105" name="PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit(30,6)" fullname="CombatAudioTests.PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit(30,6)" methodname="PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit" classname="CombatAudioTests" runstate="Runnable" seed="2134960688" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.000354" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 6
+  But was:  5
+]]></message>
+              <stack-trace><![CDATA[at CombatAudioTests.PoisonHasOneSoundCueIncludingShieldAbsorptionWithoutNormalHit (System.Int32 shield, System.Int32 total) [0x00092] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\CombatAudioTests.cs:123
+]]></stack-trace>
+            </failure>
+          </test-case>
+        </test-suite>
+        <test-case id="1099" name="SixSimultaneousLoudVoicesRetainHeadroom" fullname="CombatAudioTests.SixSimultaneousLoudVoicesRetainHeadroom" methodname="SixSimultaneousLoudVoicesRetainHeadroom" classname="CombatAudioTests" runstate="Runnable" seed="1389425507" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001041" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1101" name="VibrationPreferenceDoesNotChangeIndependentMusicOrSfx" fullname="CombatAudioTests.VibrationPreferenceDoesNotChangeIndependentMusicOrSfx" methodname="VibrationPreferenceDoesNotChangeIndependentMusicOrSfx" classname="CombatAudioTests" runstate="Runnable" seed="851759395" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002677" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1360" name="PlayerAbilityLifecycleTests" fullname="PlayerAbilityLifecycleTests" classname="PlayerAbilityLifecycleTests" runstate="Runnable" testcasecount="15" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.044399" total="15" passed="11" failed="4" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1361" name="AcceptedCastSpendsOnceAndRejectsRepeatedAttempt" fullname="PlayerAbilityLifecycleTests.AcceptedCastSpendsOnceAndRejectsRepeatedAttempt" methodname="AcceptedCastSpendsOnceAndRejectsRepeatedAttempt" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1189244183" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.018415" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1368" name="DestroyedInterfaceRuntimeCannotRemainCastable" fullname="PlayerAbilityLifecycleTests.DestroyedInterfaceRuntimeCannotRemainCastable" methodname="DestroyedInterfaceRuntimeCannotRemainCastable" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="342517615" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002387" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1372" name="DisableCancelsOnceWithoutRefundingAcceptedCast" fullname="PlayerAbilityLifecycleTests.DisableCancelsOnceWithoutRefundingAcceptedCast" methodname="DisableCancelsOnceWithoutRefundingAcceptedCast" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1168503394" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001841" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at PlayerAbilityLifecycleTests.DisableCancelsOnceWithoutRefundingAcceptedCast () [0x0002d] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\PlayerAbilityLifecycleTests.cs:216
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1364" name="DisabledControllerRejectsWithoutSideEffects" fullname="PlayerAbilityLifecycleTests.DisabledControllerRejectsWithoutSideEffects" methodname="DisabledControllerRejectsWithoutSideEffects" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="785958206" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001245" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1366" name="DisabledRuntimeRejectsWithoutSideEffects" fullname="PlayerAbilityLifecycleTests.DisabledRuntimeRejectsWithoutSideEffects" methodname="DisabledRuntimeRejectsWithoutSideEffects" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1402252192" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001240" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1365" name="InactivePlayerRootRejectsWithoutSideEffects" fullname="PlayerAbilityLifecycleTests.InactivePlayerRootRejectsWithoutSideEffects" methodname="InactivePlayerRootRejectsWithoutSideEffects" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1234143424" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001401" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1362" name="InsufficientEnergyRejectsBeforeRuntimeAttempt" fullname="PlayerAbilityLifecycleTests.InsufficientEnergyRejectsBeforeRuntimeAttempt" methodname="InsufficientEnergyRejectsBeforeRuntimeAttempt" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="936406352" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001228" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1373" name="PlayerDefeatCancelsAndRejectsFurtherActivation" fullname="PlayerAbilityLifecycleTests.PlayerDefeatCancelsAndRejectsFurtherActivation" methodname="PlayerDefeatCancelsAndRejectsFurtherActivation" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="899592767" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001952" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 1
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at PlayerAbilityLifecycleTests.PlayerDefeatCancelsAndRejectsFurtherActivation () [0x0004b] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\PlayerAbilityLifecycleTests.cs:229
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1367" name="ReenabledRuntimeBecomesUsableWithoutReplacingIt" fullname="PlayerAbilityLifecycleTests.ReenabledRuntimeBecomesUsableWithoutReplacingIt" methodname="ReenabledRuntimeBecomesUsableWithoutReplacingIt" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="893087355" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001326" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1369" name="ReenablingControllerRestoresOneRuntimeSubscription" fullname="PlayerAbilityLifecycleTests.ReenablingControllerRestoresOneRuntimeSubscription" methodname="ReenablingControllerRestoresOneRuntimeSubscription" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="585360936" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001599" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1375" name="RefreshRebindsAfterRuntimeComponentReplacement" fullname="PlayerAbilityLifecycleTests.RefreshRebindsAfterRuntimeComponentReplacement" methodname="RefreshRebindsAfterRuntimeComponentReplacement" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1731259179" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001687" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1371" name="RefreshWhileDisabledDoesNotRestoreCallbacks" fullname="PlayerAbilityLifecycleTests.RefreshWhileDisabledDoesNotRestoreCallbacks" methodname="RefreshWhileDisabledDoesNotRestoreCallbacks" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="959247562" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001475" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 0
+  But was:  1
+]]></message>
+            <stack-trace><![CDATA[at PlayerAbilityLifecycleTests.RefreshWhileDisabledDoesNotRestoreCallbacks () [0x00048] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\PlayerAbilityLifecycleTests.cs:203
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1374" name="ReinitializationCancelsAndRetainsSameRuntimeNotifications" fullname="PlayerAbilityLifecycleTests.ReinitializationCancelsAndRetainsSameRuntimeNotifications" methodname="ReinitializationCancelsAndRetainsSameRuntimeNotifications" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="174944025" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002112" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 1
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at PlayerAbilityLifecycleTests.ReinitializationCancelsAndRetainsSameRuntimeNotifications () [0x00027] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\PlayerAbilityLifecycleTests.cs:242
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1370" name="RepeatedRefreshDoesNotDuplicateRuntimeSubscription" fullname="PlayerAbilityLifecycleTests.RepeatedRefreshDoesNotDuplicateRuntimeSubscription" methodname="RepeatedRefreshDoesNotDuplicateRuntimeSubscription" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1456501063" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001555" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+        <test-case id="1363" name="RuntimeRejectionDoesNotSpendEnergy" fullname="PlayerAbilityLifecycleTests.RuntimeRejectionDoesNotSpendEnergy" methodname="RuntimeRejectionDoesNotSpendEnergy" classname="PlayerAbilityLifecycleTests" runstate="Runnable" seed="1281521962" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001389" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 130/130.
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1410" name="RunUpgradeLifecycleTests" fullname="RunUpgradeLifecycleTests" classname="RunUpgradeLifecycleTests" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.057319" total="20" passed="8" failed="12" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1429" name="ChromaticConductorReceivesOneBoardOutcomeAfterRepeatedEnable" fullname="RunUpgradeLifecycleTests.ChromaticConductorReceivesOneBoardOutcomeAfterRepeatedEnable" methodname="ChromaticConductorReceivesOneBoardOutcomeAfterRepeatedEnable" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="1294832298" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.008910" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  only hook bonus exists in this fixture
+  Expected: 4
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ChromaticConductorReceivesOneBoardOutcomeAfterRepeatedEnable () [0x0006d] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:277
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1426" name="ConfigureWhileDisabledDoesNotInstallRewardCallbacks" fullname="RunUpgradeLifecycleTests.ConfigureWhileDisabledDoesNotInstallRewardCallbacks" methodname="ConfigureWhileDisabledDoesNotInstallRewardCallbacks" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="324365888" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002145" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 15
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ConfigureWhileDisabledDoesNotInstallRewardCallbacks () [0x00077] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:229
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1427" name="EmergencyPlatingCannotBeRearmedBySameWaveReenable" fullname="RunUpgradeLifecycleTests.EmergencyPlatingCannotBeRearmedBySameWaveReenable" methodname="EmergencyPlatingCannotBeRearmedBySameWaveReenable" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="517717384" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001654" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  first break procs plating
+  Expected: 10
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.EmergencyPlatingCannotBeRearmedBySameWaveReenable () [0x00035] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:240
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1421" name="ExplicitResetPublishesOnceAndReseedsOnlyTheDraftStream" fullname="RunUpgradeLifecycleTests.ExplicitResetPublishesOnceAndReseedsOnlyTheDraftStream" methodname="ExplicitResetPublishesOnceAndReseedsOnlyTheDraftStream" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="978059808" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003059" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1428" name="MissedClearFinishedCannotLeaveStaleChainContextAfterEnable" fullname="RunUpgradeLifecycleTests.MissedClearFinishedCannotLeaveStaleChainContextAfterEnable" methodname="MissedClearFinishedCannotLeaveStaleChainContextAfterEnable" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="652483480" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002374" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 4
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.MissedClearFinishedCannotLeaveStaleChainContextAfterEnable () [0x0000f] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:256
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1434" name="NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative" fullname="RunUpgradeLifecycleTests.NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative" classname="RunUpgradeLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.004270" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1432" name="NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative(1,198)" fullname="RunUpgradeLifecycleTests.NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative(1,198)" methodname="NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="893647925" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002035" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1433" name="NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative(2,378)" fullname="RunUpgradeLifecycleTests.NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative(2,378)" methodname="NumericStackingOrderRemainsFlatThenAdditiveThenMultiplicative" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="420731263" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001424" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1420" name="RebindingDifferentPlayerRestoresOldHpAndUsesNewBaseline" fullname="RunUpgradeLifecycleTests.RebindingDifferentPlayerRestoresOldHpAndUsesNewBaseline" methodname="RebindingDifferentPlayerRestoresOldHpAndUsesNewBaseline" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="1756022020" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.005204" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+Initialized player Player. HP: 200/200.
+Initialized player Player. HP: 300/300.
+]]></output>
+        </test-case>
+        <test-case id="1431" name="RebindingHooksUsesRuntimeBaselineNotAlreadyUpgradedHp" fullname="RunUpgradeLifecycleTests.RebindingHooksUsesRuntimeBaselineNotAlreadyUpgradedHp" methodname="RebindingHooksUsesRuntimeBaselineNotAlreadyUpgradedHp" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="1411832848" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002519" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 2
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.RebindingHooksUsesRuntimeBaselineNotAlreadyUpgradedHp () [0x000c2] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:312
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1425" name="ReenableRestoresExactlyOneWaveRewardSubscription" fullname="RunUpgradeLifecycleTests.ReenableRestoresExactlyOneWaveRewardSubscription" classname="RunUpgradeLifecycleTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.004369" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1423" name="ReenableRestoresExactlyOneWaveRewardSubscription(1)" fullname="RunUpgradeLifecycleTests.ReenableRestoresExactlyOneWaveRewardSubscription(1)" methodname="ReenableRestoresExactlyOneWaveRewardSubscription" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="383224699" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002114" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 15
+  But was:  0
+]]></message>
+              <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ReenableRestoresExactlyOneWaveRewardSubscription (System.Int32 cycles) [0x0007c] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:212
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1424" name="ReenableRestoresExactlyOneWaveRewardSubscription(5)" fullname="RunUpgradeLifecycleTests.ReenableRestoresExactlyOneWaveRewardSubscription(5)" methodname="ReenableRestoresExactlyOneWaveRewardSubscription" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="764435946" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001446" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 15
+  But was:  0
+]]></message>
+              <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ReenableRestoresExactlyOneWaveRewardSubscription (System.Int32 cycles) [0x0007c] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:212
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1418" name="ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder" fullname="RunUpgradeLifecycleTests.ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder" classname="RunUpgradeLifecycleTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.005925" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1416" name="ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder(80,False)" fullname="RunUpgradeLifecycleTests.ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder(80,False)" methodname="ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="334696737" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003022" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 2
+  But was:  1
+]]></message>
+              <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder (System.Int32 newMaximum, System.Boolean runtimeLast) [0x00058] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:101
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+Initialized player Player. HP: 80/80.
+]]></output>
+          </test-case>
+          <test-case id="1417" name="ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder(175,True)" fullname="RunUpgradeLifecycleTests.ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder(175,True)" methodname="ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="798116174" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002160" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: 2
+  But was:  1
+]]></message>
+              <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ReinitializationAdoptsNewBaselineRegardlessOfObserverOrder (System.Int32 newMaximum, System.Boolean runtimeLast) [0x00058] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:101
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+Initialized player Player. HP: 175/175.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1419" name="RepeatConfigurationPreservesCardsDraftStreamAndSameWaveTracking" fullname="RunUpgradeLifecycleTests.RepeatConfigurationPreservesCardsDraftStreamAndSameWaveTracking" methodname="RepeatConfigurationPreservesCardsDraftStreamAndSameWaveTracking" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="425227307" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002088" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 3
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.RepeatConfigurationPreservesCardsDraftStreamAndSameWaveTracking () [0x001a0] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:134
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1414" name="ResetClampsHpButDoesNotAlterShieldOrEnergy" fullname="RunUpgradeLifecycleTests.ResetClampsHpButDoesNotAlterShieldOrEnergy" methodname="ResetClampsHpButDoesNotAlterShieldOrEnergy" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="274691913" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001882" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1430" name="ResetClearsMechanicBookkeepingWithoutAnArtificialWaveStart" fullname="RunUpgradeLifecycleTests.ResetClearsMechanicBookkeepingWithoutAnArtificialWaveStart" methodname="ResetClearsMechanicBookkeepingWithoutAnArtificialWaveStart" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="278174287" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001713" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ResetClearsMechanicBookkeepingWithoutAnArtificialWaveStart () [0x00079] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:291
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1415" name="ResetDoesNotReviveDefeatedPlayer" fullname="RunUpgradeLifecycleTests.ResetDoesNotReviveDefeatedPlayer" methodname="ResetDoesNotReviveDefeatedPlayer" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="209607299" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001404" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1413" name="ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound" fullname="RunUpgradeLifecycleTests.ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound" classname="RunUpgradeLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.004137" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1411" name="ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound(False)" fullname="RunUpgradeLifecycleTests.ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound(False)" methodname="ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="12137617" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001801" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1412" name="ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound(True)" fullname="RunUpgradeLifecycleTests.ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound(True)" methodname="ResetRestoresUnmodifiedMaximumWithoutHealingAndReapplyDoesNotCompound" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="278418582" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001611" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1422" name="ResetWhileHooksDisabledIsReconciledWithoutReplayingRewards" fullname="RunUpgradeLifecycleTests.ResetWhileHooksDisabledIsReconciledWithoutReplayingRewards" methodname="ResetWhileHooksDisabledIsReconciledWithoutReplayingRewards" classname="RunUpgradeLifecycleTests" runstate="Runnable" seed="613174222" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001865" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at RunUpgradeLifecycleTests.ResetWhileHooksDisabledIsReconciledWithoutReplayingRewards () [0x00083] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\RunUpgradeLifecycleTests.cs:189
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player Player. HP: 100/100.
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1470" name="UpgradeIntermissionLifecycleTests" fullname="UpgradeIntermissionLifecycleTests" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="31" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.090534" total="31" passed="16" failed="15" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1476" name="ChangedBindingReleasesOldBoardAndRevokesOldCallback" fullname="UpgradeIntermissionLifecycleTests.ChangedBindingReleasesOldBoardAndRevokesOldCallback" methodname="ChangedBindingReleasesOldBoardAndRevokesOldCallback" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="841124812" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.016011" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1505" name="ChangedWaveOrActiveEncounterRejectsOldSelection" fullname="UpgradeIntermissionLifecycleTests.ChangedWaveOrActiveEncounterRejectsOldSelection" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.005214" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1503" name="ChangedWaveOrActiveEncounterRejectsOldSelection(False)" fullname="UpgradeIntermissionLifecycleTests.ChangedWaveOrActiveEncounterRejectsOldSelection(False)" methodname="ChangedWaveOrActiveEncounterRejectsOldSelection" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="252018793" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002571" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1504" name="ChangedWaveOrActiveEncounterRejectsOldSelection(True)" fullname="UpgradeIntermissionLifecycleTests.ChangedWaveOrActiveEncounterRejectsOldSelection(True)" methodname="ChangedWaveOrActiveEncounterRejectsOldSelection" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="633560365" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001767" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1479" name="DefeatClosesChoiceWithoutApplyingCard" fullname="UpgradeIntermissionLifecycleTests.DefeatClosesChoiceWithoutApplyingCard" methodname="DefeatClosesChoiceWithoutApplyingCard" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1026420139" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001999" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:468
+at UpgradeIntermissionLifecycleTests.DefeatClosesChoiceWithoutApplyingCard () [0x0003d] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:232
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1485" name="DestroyingViewReleasesCoordinator" fullname="UpgradeIntermissionLifecycleTests.DestroyingViewReleasesCoordinator" methodname="DestroyingViewReleasesCoordinator" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1292959805" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002152" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.DestroyingViewReleasesCoordinator () [0x00018] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:284
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1486" name="DisabledCoordinatorRejectsSelectionAndDoesNotResubscribeOnConfigure" fullname="UpgradeIntermissionLifecycleTests.DisabledCoordinatorRejectsSelectionAndDoesNotResubscribeOnConfigure" methodname="DisabledCoordinatorRejectsSelectionAndDoesNotResubscribeOnConfigure" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="2052782629" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002066" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:468
+at UpgradeIntermissionLifecycleTests.DisabledCoordinatorRejectsSelectionAndDoesNotResubscribeOnConfigure () [0x000b9] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:300
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1483" name="DisablingViewOrItsRootReleasesChoice" fullname="UpgradeIntermissionLifecycleTests.DisablingViewOrItsRootReleasesChoice" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.004490" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1481" name="DisablingViewOrItsRootReleasesChoice(False)" fullname="UpgradeIntermissionLifecycleTests.DisablingViewOrItsRootReleasesChoice(False)" methodname="DisablingViewOrItsRootReleasesChoice" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="2025795331" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001805" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.DisablingViewOrItsRootReleasesChoice (System.Boolean disableRoot) [0x0002f] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:262
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1482" name="DisablingViewOrItsRootReleasesChoice(True)" fullname="UpgradeIntermissionLifecycleTests.DisablingViewOrItsRootReleasesChoice(True)" methodname="DisablingViewOrItsRootReleasesChoice" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="19909888" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001854" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.DisablingViewOrItsRootReleasesChoice (System.Boolean disableRoot) [0x0002f] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:262
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1473" name="EligibleButUnofferedCardIsRejected" fullname="UpgradeIntermissionLifecycleTests.EligibleButUnofferedCardIsRejected" methodname="EligibleButUnofferedCardIsRejected" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1306587369" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002123" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1477" name="ExplicitRunResetRevokesCallbacksEvenAfterAnotherChoiceOpens" fullname="UpgradeIntermissionLifecycleTests.ExplicitRunResetRevokesCallbacksEvenAfterAnotherChoiceOpens" methodname="ExplicitRunResetRevokesCallbacksEvenAfterAnotherChoiceOpens" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1596714009" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001883" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:468
+at UpgradeIntermissionLifecycleTests.ExplicitRunResetRevokesCallbacksEvenAfterAnotherChoiceOpens () [0x00018] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:207
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1484" name="ExternalOverlayDeactivationIsObservedWithoutGrantingReward" fullname="UpgradeIntermissionLifecycleTests.ExternalOverlayDeactivationIsObservedWithoutGrantingReward" methodname="ExternalOverlayDeactivationIsObservedWithoutGrantingReward" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1448426445" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001814" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.ExternalOverlayDeactivationIsObservedWithoutGrantingReward () [0x0002e] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:274
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1487" name="FiveEnableCyclesKeepExactlyOneObserverAndGate" fullname="UpgradeIntermissionLifecycleTests.FiveEnableCyclesKeepExactlyOneObserverAndGate" methodname="FiveEnableCyclesKeepExactlyOneObserverAndGate" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1873187543" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003485" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1480" name="HideNotifiesOnceAndReleasesOnlyItsOwnInputToken" fullname="UpgradeIntermissionLifecycleTests.HideNotifiesOnceAndReleasesOnlyItsOwnInputToken" methodname="HideNotifiesOnceAndReleasesOnlyItsOwnInputToken" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="607674361" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002032" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.HideNotifiesOnceAndReleasesOnlyItsOwnInputToken () [0x0007f] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:249
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1498" name="InvalidShowNeverLeavesAnEmptyInputBlocker" fullname="UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.009695" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1494" name="InvalidShowNeverLeavesAnEmptyInputBlocker(0)" fullname="UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker(0)" methodname="InvalidShowNeverLeavesAnEmptyInputBlocker" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1692884461" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002458" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker (System.Int32 invalidKind) [0x00065] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:401
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1495" name="InvalidShowNeverLeavesAnEmptyInputBlocker(1)" fullname="UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker(1)" methodname="InvalidShowNeverLeavesAnEmptyInputBlocker" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="233326823" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001771" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker (System.Int32 invalidKind) [0x00065] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:401
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1496" name="InvalidShowNeverLeavesAnEmptyInputBlocker(2)" fullname="UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker(2)" methodname="InvalidShowNeverLeavesAnEmptyInputBlocker" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="657088833" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001689" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker (System.Int32 invalidKind) [0x00065] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:401
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1497" name="InvalidShowNeverLeavesAnEmptyInputBlocker(3)" fullname="UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker(3)" methodname="InvalidShowNeverLeavesAnEmptyInputBlocker" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1059959755" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002494" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <failure>
+              <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+              <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00015] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:469
+at UpgradeIntermissionLifecycleTests.InvalidShowNeverLeavesAnEmptyInputBlocker (System.Int32 invalidKind) [0x00065] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:401
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1474" name="NewlyIneligibleChoiceDoesNotConsumeSelection" fullname="UpgradeIntermissionLifecycleTests.NewlyIneligibleChoiceDoesNotConsumeSelection" methodname="NewlyIneligibleChoiceDoesNotConsumeSelection" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="126855200" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003582" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+Run upgrade 'audit_choice_0' was no longer legal when selected.
+]]></output>
+        </test-case>
+        <test-case id="1489" name="OldApplyReturningAfterResetCannotCloseNewIntermission" fullname="UpgradeIntermissionLifecycleTests.OldApplyReturningAfterResetCannotCloseNewIntermission" methodname="OldApplyReturningAfterResetCannotCloseNewIntermission" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="207469789" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002188" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  previous choice must finish first
+  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.OpenChoice (System.Int32 wave) [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:459
+at UpgradeIntermissionLifecycleTests+<>c__DisplayClass32_0.<OldApplyReturningAfterResetCannotCloseNewIntermission>b__0 (RunUpgradeDefinition _, System.Int32 __) [0x00020] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:346
+at RunUpgradeRuntime.TryApply (RunUpgradeDefinition definition, System.Int32 currentWave) [0x000a3] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\RunUpgrades\RunUpgradeRuntime.cs:316
+at RunUpgradeCoordinator.TrySelectUpgrade (RunUpgradeDefinition definition) [0x00095] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\RunUpgrades\RunUpgradeCoordinator.cs:289
+at RunUpgradeCoordinator+<>c__DisplayClass29_0.<OpenChoiceAfterBoardSettles>b__0 (RunUpgradeDefinition definition) [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\RunUpgrades\RunUpgradeCoordinator.cs:260
+at UpgradeChoiceUI.HandleCardSelected (RunUpgradeDefinition definition) [0x0003d] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\UI\RunUpgrades\UpgradeChoiceUI.cs:170
+at UpgradeChoiceUI+<>c__DisplayClass29_0.<Show>b__0 (RunUpgradeDefinition definition) [0x00013] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\UI\RunUpgrades\UpgradeChoiceUI.cs:113
+at UpgradeCardView.HandleClicked () [0x00029] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\UI\RunUpgrades\UpgradeCardView.cs:228
+at UnityEngine.Events.InvokableCall.Invoke () [0x00010] in <987aa4221989419a947e2c4ff5d6829c>:0
+at UnityEngine.Events.UnityEvent.Invoke () [0x00022] in <987aa4221989419a947e2c4ff5d6829c>:0
+at UpgradeIntermissionLifecycleTests.Click (System.Int32 index) [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:477
+at UpgradeIntermissionLifecycleTests.OldApplyReturningAfterResetCannotCloseNewIntermission () [0x00032] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:348
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1471" name="OneSelectionAppliesOneCardAndCloses" fullname="UpgradeIntermissionLifecycleTests.OneSelectionAppliesOneCardAndCloses" methodname="OneSelectionAppliesOneCardAndCloses" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1622600521" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002072" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1502" name="OneTwoOrThreeValidChoicesRemainSelectable" fullname="UpgradeIntermissionLifecycleTests.OneTwoOrThreeValidChoicesRemainSelectable" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.006153" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1499" name="OneTwoOrThreeValidChoicesRemainSelectable(1)" fullname="UpgradeIntermissionLifecycleTests.OneTwoOrThreeValidChoicesRemainSelectable(1)" methodname="OneTwoOrThreeValidChoicesRemainSelectable" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1236422801" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001851" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1500" name="OneTwoOrThreeValidChoicesRemainSelectable(2)" fullname="UpgradeIntermissionLifecycleTests.OneTwoOrThreeValidChoicesRemainSelectable(2)" methodname="OneTwoOrThreeValidChoicesRemainSelectable" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="799575774" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001528" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1501" name="OneTwoOrThreeValidChoicesRemainSelectable(3)" fullname="UpgradeIntermissionLifecycleTests.OneTwoOrThreeValidChoicesRemainSelectable(3)" methodname="OneTwoOrThreeValidChoicesRemainSelectable" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1416690879" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001759" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1478" name="PlayerReinitializationClosesOldChoice" fullname="UpgradeIntermissionLifecycleTests.PlayerReinitializationClosesOldChoice" methodname="PlayerReinitializationClosesOldChoice" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="712046971" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002562" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:468
+at UpgradeIntermissionLifecycleTests.PlayerReinitializationClosesOldChoice () [0x00023] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:220
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+Initialized player RattleBones. HP: 150/150.
+]]></output>
+        </test-case>
+        <test-case id="1506" name="RejectedUiHandlerCanBeRetried" fullname="UpgradeIntermissionLifecycleTests.RejectedUiHandlerCanBeRetried" methodname="RejectedUiHandlerCanBeRetried" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="54185127" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001662" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1475" name="RepeatConfigurationPreservesChoiceCardsAndDraftStream" fullname="UpgradeIntermissionLifecycleTests.RepeatConfigurationPreservesChoiceCardsAndDraftStream" methodname="RepeatConfigurationPreservesChoiceCardsAndDraftStream" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="889017087" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002099" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1492" name="ReplacementViewSurvivesOldHandlerReturning" fullname="UpgradeIntermissionLifecycleTests.ReplacementViewSurvivesOldHandlerReturning" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.003959" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1490" name="ReplacementViewSurvivesOldHandlerReturning(False)" fullname="UpgradeIntermissionLifecycleTests.ReplacementViewSurvivesOldHandlerReturning(False)" methodname="ReplacementViewSurvivesOldHandlerReturning" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1541269535" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001814" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+          <test-case id="1491" name="ReplacementViewSurvivesOldHandlerReturning(True)" fullname="UpgradeIntermissionLifecycleTests.ReplacementViewSurvivesOldHandlerReturning(True)" methodname="ReplacementViewSurvivesOldHandlerReturning" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1424430116" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001315" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+            <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-case id="1488" name="ResetWhileWaitingForBoardPreventsLateOverlayOpening" fullname="UpgradeIntermissionLifecycleTests.ResetWhileWaitingForBoardPreventsLateOverlayOpening" methodname="ResetWhileWaitingForBoardPreventsLateOverlayOpening" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="975126794" result="Failed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001938" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at UpgradeIntermissionLifecycleTests.AssertClosed () [0x00000] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:468
+at UpgradeIntermissionLifecycleTests.ResetWhileWaitingForBoardPreventsLateOverlayOpening () [0x00083] in C:\UnityProjects\Dungeon Matcher\.utmp\forest-regression-baseline\Assets\_Game\Scripts\Editor\UpgradeIntermissionLifecycleTests.cs:333
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1493" name="RetainedOldCardCallbackCannotSelectNewOffer" fullname="UpgradeIntermissionLifecycleTests.RetainedOldCardCallbackCannotSelectNewOffer" methodname="RetainedOldCardCallbackCannotSelectNewOffer" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1257301108" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.002102" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+]]></output>
+        </test-case>
+        <test-case id="1472" name="SynchronousUpgradeCallbackCannotSelectASecondCard" fullname="UpgradeIntermissionLifecycleTests.SynchronousUpgradeCallbackCannotSelectASecondCard" methodname="SynchronousUpgradeCallbackCannotSelectASecondCard" classname="UpgradeIntermissionLifecycleTests" runstate="Runnable" seed="1831855554" result="Passed" start-time="2026-10-02 04:44:29Z" end-time="2026-10-02 04:44:29Z" duration="0.001885" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Initialized player RattleBones. HP: 100/100.
+Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

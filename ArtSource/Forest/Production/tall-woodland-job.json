@@ -1,0 +1,13 @@
+{
+  "name": "Tall_Woodland",
+  "state": "Art",
+  "endpoint": "create_image_pixflux",
+  "request": {
+    "width": 256,
+    "height": 256,
+    "no_background": false,
+    "description": "Quiet tall magical woodland background module; continuous vertical teal trunks; canopy at top only, no horizontal bands. Forced accepted woodland palette.",
+    "color_image_url": "ArtSource/Forest/UI/Woodland_Study_Accepted.png"
+  },
+  "result": "job_id: 80ad6865-9992-45d1-8580-8c8b59c208a9\ncost: 1 generation"
+}

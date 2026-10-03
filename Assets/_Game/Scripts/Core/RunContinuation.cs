@@ -51,7 +51,7 @@ public sealed class RunContinuation : MonoBehaviour
         // round trip. The schema, not the presence of a default object, owns
         // the profile. Version 1 always retains its original seconds rules.
         if(saved.version==1) return true;
-        if(saved.version!=2 || saved.clock==null || saved.clock.profile!=CombatClockSnapshot.MoveProfile ||
+        if(saved.version!=2 || saved.clock==null || !CombatClockSnapshot.IsSupported(saved.clock.profile) ||
            saved.clock.zoneId!="magical-forest" || saved.clock.actions==null || saved.clock.actions.pending!=0 ||
            saved.clock.actions.completed<0 || saved.clock.actions.nextActorId<=0) return false;
         if(saved.board?.cells?.Count>0 && saved.board.moves!=saved.clock.actions.completed) return false;
@@ -122,7 +122,7 @@ public sealed class RunContinuation : MonoBehaviour
         if(IsRestoring || session==null || session.IsFinished || checkpoint==null || Time.deltaTime<=0) return;
         // Stable safe-thinking frames contain no gameplay, and recording them
         // forever would grow a suspended run journal without bound.
-        if(CombatMoveClock.Active && CanCapture && tape.frames.Count==0) return;
+        if(CombatMoveClock.MoveBasics && CanCapture && tape.frames.Count==0) return;
         tape.frames.Add(new RunReplayFrame { delta=Time.deltaTime });
     }
     public bool RecordAction(RunRecordedAction action)

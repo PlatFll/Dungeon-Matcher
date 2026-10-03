@@ -70,13 +70,15 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         if (Player != null) { Player.Defeated += OnDefeated; Player.DamageTaken += OnDamage; }
         runStartedAt = Time.unscaledTime;
         bool forestRequested=RunLaunchOptions.ForestPrototype && Debug.isDebugBuild;
+        string forestProfile=RunLaunchOptions.ForestClockProfile;
+        RunLaunchOptions.ForestClockProfile=CombatClockSnapshot.HybridProfile;
         RunLaunchOptions.ForestPrototype=false;
         var clockSave=continued?.checkpoint?.version==2 ? continued.checkpoint.clock : null;
         if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint) && Resources.Load<ZoneDefinition>("Zones/"+clockSave.zoneId)!=null) || (continued==null && forestRequested))
         {
             Zone=gameObject.AddComponent<ZoneRuntimeContext>();
             Zone.Initialize(this,clockSave?.zoneId ?? "magical-forest");
-            MoveClock=gameObject.AddComponent<CombatMoveClock>();MoveClock.Initialize(this,clockSave);
+            MoveClock=gameObject.AddComponent<CombatMoveClock>();MoveClock.Initialize(this,clockSave,forestProfile);
         }
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);

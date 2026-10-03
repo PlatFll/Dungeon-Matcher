@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: c95c7818d7ce80b4cb7c27101aefbf4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3506790725624299914
+    second: Elven_Scout_AutoAttack_0
+  - first:
+      213: -6477520120182092588
+    second: Elven_Scout_AutoAttack_1
+  - first:
+      213: -8540932185564439423
+    second: Elven_Scout_AutoAttack_2
+  - first:
+      213: -7561948887239430834
+    second: Elven_Scout_AutoAttack_3
+  - first:
+      213: 6266117368043198240
+    second: Elven_Scout_AutoAttack_4
+  - first:
+      213: 7901426115281520856
+    second: Elven_Scout_AutoAttack_5
+  - first:
+      213: 2484268748942731719
+    second: Elven_Scout_AutoAttack_6
+  - first:
+      213: -6496956593009694909
+    second: Elven_Scout_AutoAttack_7
+  - first:
+      213: 4631603934454654950
+    second: Elven_Scout_AutoAttack_8
+  - first:
+      213: -8494586162084004596
+    second: Elven_Scout_AutoAttack_9
+  - first:
+      213: -7839133452526187227
+    second: Elven_Scout_AutoAttack_00
+  - first:
+      213: -2122203013255941610
+    second: Elven_Scout_AutoAttack_01
+  - first:
+      213: -3852268104857450612
+    second: Elven_Scout_AutoAttack_02
+  - first:
+      213: 3415822082435516951
+    second: Elven_Scout_AutoAttack_03
+  - first:
+      213: -5560607332833844022
+    second: Elven_Scout_AutoAttack_04
+  - first:
+      213: -5823515322803018642
+    second: Elven_Scout_AutoAttack_05
+  - first:
+      213: -8450774613939037216
+    second: Elven_Scout_AutoAttack_06
+  - first:
+      213: 4665163122494758503
+    second: Elven_Scout_AutoAttack_07
+  - first:
+      213: -2092352737152544709
+    second: Elven_Scout_AutoAttack_08
+  - first:
+      213: 4713072794291566770
+    second: Elven_Scout_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d8b4f88adc53390800000000000000
+      internalID: -7839133452526187227
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612bd957a9b6c82e0800000000000000
+      internalID: -2122203013255941610
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87876e919ef98ac0800000000000000
+      internalID: -3852268104857450612
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a018f0610776f20800000000000000
+      internalID: 3415822082435516951
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4a1079711c4d2b0800000000000000
+      internalID: -5560607332833844022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6428401ba7be2fa0800000000000000
+      internalID: -5823515322803018642
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb56434341d8ba80800000000000000
+      internalID: -8450774613939037216
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e5d8f842dfdb040800000000000000
+      internalID: 4665163122494758503
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30d435754876f2e0800000000000000
+      internalID: -2092352737152544709
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Scout_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b87e484cb2386140800000000000000
+      internalID: 4713072794291566770
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Elven_Scout_AutoAttack_0: -3506790725624299914
+      Elven_Scout_AutoAttack_00: -7839133452526187227
+      Elven_Scout_AutoAttack_01: -2122203013255941610
+      Elven_Scout_AutoAttack_02: -3852268104857450612
+      Elven_Scout_AutoAttack_03: 3415822082435516951
+      Elven_Scout_AutoAttack_04: -5560607332833844022
+      Elven_Scout_AutoAttack_05: -5823515322803018642
+      Elven_Scout_AutoAttack_06: -8450774613939037216
+      Elven_Scout_AutoAttack_07: 4665163122494758503
+      Elven_Scout_AutoAttack_08: -2092352737152544709
+      Elven_Scout_AutoAttack_09: 4713072794291566770
+      Elven_Scout_AutoAttack_1: -6477520120182092588
+      Elven_Scout_AutoAttack_2: -8540932185564439423
+      Elven_Scout_AutoAttack_3: -7561948887239430834
+      Elven_Scout_AutoAttack_4: 6266117368043198240
+      Elven_Scout_AutoAttack_5: 7901426115281520856
+      Elven_Scout_AutoAttack_6: 2484268748942731719
+      Elven_Scout_AutoAttack_7: -6496956593009694909
+      Elven_Scout_AutoAttack_8: 4631603934454654950
+      Elven_Scout_AutoAttack_9: -8494586162084004596
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -25,6 +25,7 @@ public sealed class RunControlsUI : MonoBehaviour
     private float lessonUntil;
     private float priorTimeScale;
     private static Sprite cooldownSprite;
+    private Image resonance;
 
     private void Start()
     {
@@ -55,6 +56,7 @@ public sealed class RunControlsUI : MonoBehaviour
                     disabledSprite=Resources.Load<Sprite>("UI/Consumables/SlotDisabled") };
             }
             else { slots[i].transition=Selectable.Transition.ColorTint; slots[i].spriteState=default; }
+            GameplayThemeSkin.Supply(slots[i]);
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
             icons[i].sprite=Resources.Load<Sprite>(i==0?"UI/Consumables/Potion":"UI/Consumables/Bomb");
@@ -70,13 +72,21 @@ public sealed class RunControlsUI : MonoBehaviour
             charges[i]=GameUi.Label("Charges",countBacking,"",new Vector2(22,16),Vector2.zero,12);
         }
         hint=GameUi.Label("ConsumableHint",ability.transform.parent,"",new Vector2(400,28),Vector2.zero,16);
+        if(session.Zone?.Definition?.theme?.resonanceIcon!=null)
+        {
+            var badge=GameUi.Rect("ZoneResonance",ability.transform.parent,new Vector2(32,32),Vector2.zero);
+            resonance=badge.gameObject.AddComponent<Image>();resonance.sprite=session.Zone.Definition.theme.resonanceIcon;
+            resonance.raycastTarget=false;
+        }
         confirmBomb=GameUi.Button("ConfirmBomb",safeRoot,"Use Bomb",new Vector2(150,40),new Vector2(0,-100),()=>session.ConfirmBomb());
         gameObject.AddComponent<BombTargetPreview>();
         var settings=GameUi.Button("Settings",safeRoot,"",new Vector2(48,48),Vector2.zero,OpenSettings);
         FinalizedUiSkin.Button(settings, gear:true);
+        GameplayThemeSkin.Button(settings,settings:true);
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
         settingsRect.anchoredPosition=new Vector2(-20,-18);
         var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
+        GameplayThemeSkin.Button(guide);GameplayThemeSkin.Button(confirmBomb);
         var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);guideRect.anchoredPosition=new Vector2(-78,-22);
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))
         {
@@ -91,6 +101,7 @@ public sealed class RunControlsUI : MonoBehaviour
             enemyInspectButtons.Add(inspect,slot);
         }
         var saveRetry=GameUi.Button("RetrySave",safeRoot,"Retry save",new Vector2(180,40),new Vector2(0,280),()=>session.RetrySave());
+        GameplayThemeSkin.Button(saveRetry);
         saveError=saveRetry.GetComponentInChildren<TMP_Text>();
         saveRetry.gameObject.SetActive(false);
     }
@@ -138,6 +149,13 @@ public sealed class RunControlsUI : MonoBehaviour
         hint.rectTransform.sizeDelta=new Vector2(430,28);
         hint.fontSize=9;
         hint.text=session.Board.IsSelectingTarget?"Preview, then confirm. Tap Bomb to cancel.\nBarricades take 1 hit; specials can extend the blast.":lesson ?? (session.IsPractice?"Practice: no stock spent or progression earned.":"");
+        if(resonance!=null)
+        {
+            bool show=!session.Board.IsSelectingTarget && lesson==null;
+            resonance.gameObject.SetActive(show);
+            resonance.rectTransform.anchoredPosition=hint.rectTransform.anchoredPosition+new Vector2(-120,0);
+            if(show) hint.text=session.Zone.CurrentGem+" resonance: +15% gem damage";
+        }
         confirmBomb.gameObject.SetActive(session.HasBombPreview && session.Board.IsSelectingTarget);
         if (confirmBomb.gameObject.activeSelf)
         {
@@ -170,7 +188,7 @@ public sealed class RunControlsUI : MonoBehaviour
         lesson=null;
         var account=AccountProgression.Current;
         if(!account.HasSeenLesson("combat-clocks"))
-        { ShowLesson("combat-clocks",CombatMoveClock.Active ? "Forest test: attacks, channels and supplies count accepted moves. Think freely." : "Attacks count seconds; specials count moves.\nTap Guide or an enemy to learn while paused."); return; }
+        { ShowLesson("combat-clocks",CombatMoveClock.MoveBasics ? "Legacy forest test: attacks and abilities count moves." : "Attacks count seconds; abilities count moves.\nTap Guide or an enemy to inspect while paused."); return; }
         foreach(var enemy in session.Waves.ActiveEnemies)
         {
             if(!enemy.HasSpecialAbility) continue;
@@ -190,8 +208,9 @@ public sealed class RunControlsUI : MonoBehaviour
         panel.sizeDelta=new Vector2(500,660);
         panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,280);
         var viewport=GameUi.Rect("GuideViewport",panel,new Vector2(450,410),new Vector2(0,25));
-        viewport.gameObject.AddComponent<Image>().color=GameUi.Face;
-        viewport.gameObject.AddComponent<Mask>().showMaskGraphic=false;
+        // Text-only scrolling uses rect clipping, avoiding an unnecessary
+        // stencil-write material over the native pixel font.
+        viewport.gameObject.AddComponent<RectMask2D>();
         var content=GameUi.Label("GuideText",viewport,text,new Vector2(440,410),Vector2.zero,20);
         content.alignment=TextAlignmentOptions.TopLeft;
         content.rectTransform.anchorMin=content.rectTransform.anchorMax=content.rectTransform.pivot=new Vector2(.5f,1);
@@ -202,6 +221,7 @@ public sealed class RunControlsUI : MonoBehaviour
         GameUi.Button("BuildGuide",panel,"Build",new Vector2(135,40),new Vector2(0,-210),()=>{Close();OpenGuide(CombatGuide.Build(RunUpgradeRuntime.Current));});
         GameUi.Button("ResumeGuide",panel,"Resume",new Vector2(135,40),new Vector2(150,-210),Close);
         GameUi.Label("InspectionHint",panel,"Tap an enemy portrait to inspect its current state.",new Vector2(450,40),new Vector2(0,-270),17);
+        GameplayThemeSkin.Screen(panel.gameObject);
     }
     private void BuildOverlay(string title)
     {

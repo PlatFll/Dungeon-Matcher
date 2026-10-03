@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Forest_Fern",
+    "state": "Art",
+    "endpoint": "create_image_pixflux",
+    "request": {
+      "width": 64,
+      "height": 32,
+      "description": "Small low foreground cluster of three woodland ferns, moss and two dark rounded pebbles. Native pixel art, transparent background, side view, lying along the lower edge with open air above. Muted olive teal greens, dark warm gray stone, a little mossy gold. Broad calm clusters, very restrained contrast and detail. No tall plants, no flowers, no interface frame, no platform, no text. Woodland scenery, not a gameplay hazard.",
+      "no_background": true,
+      "view": "side",
+      "detail": "low detail",
+      "shading": "basic shading"
+    },
+    "result": "id: 897b8e05-26f4-44e8-8a74-4869bcef48fd\njob_id: 897b8e05-26f4-44e8-8a74-4869bcef48fd\ndescription: Small low foreground cluster of three woodland ferns, moss and two dark rounded pebbles. Native pixel art, transparent background, side view, lying along the lower edge with open air above. Muted olive teal greens, dark warm gray stone, a little mossy gold. Broad calm clusters, very restrained contrast and detail. No tall plants, no flowers, no interface frame, no platform, no text. Woodland scenery, not a gameplay hazard.\nsize: 64x32px\ntransparent: True\nasset_id: fd0e8218-e20f-5d94-9d24-db213e134a61\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"897b8e05-26f4-44e8-8a74-4869bcef48fd\")"
+  },
+  {
+    "name": "Forest_Ruin",
+    "state": "Art",
+    "endpoint": "create_image_pixflux",
+    "request": {
+      "width": 64,
+      "height": 64,
+      "description": "A small abandoned ancient elven standing stone, irregular weathered curved slab with one faint carved spiral, half covered in moss at its foot. Quiet muted slate teal gray stone and sparse olive leaves. Native pixel art, transparent background, side view. Broad chunky shaded planes, dark outline, top-left pale cool light, low contrast distant scenery. One ruined stone prop, not a pillar made of dungeon bricks, not a UI icon, no glow, no text.",
+      "no_background": true,
+      "view": "side",
+      "detail": "low detail",
+      "shading": "basic shading"
+    },
+    "result": "id: 4bcfcb6c-4316-497a-9147-f48d66bb111d\njob_id: 4bcfcb6c-4316-497a-9147-f48d66bb111d\ndescription: A small abandoned ancient elven standing stone, irregular weathered curved slab with one faint carved spiral, half covered in moss at its foot. Quiet muted slate teal gray stone and sparse olive leaves. Native pixel art, transparent background, side view. Broad chunky shaded planes, dark outline, top-left pale cool light, low contrast distant scenery. One ruined stone prop, not a pillar made of dungeon bricks, not a UI icon, no glow, no text.\nsize: 64x64px\ntransparent: True\nasset_id: d81e2f3b-120f-528b-9505-5c5792360098\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"4bcfcb6c-4316-497a-9147-f48d66bb111d\")"
+  }
+]

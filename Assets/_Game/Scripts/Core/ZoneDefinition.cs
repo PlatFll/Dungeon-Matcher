@@ -18,4 +18,6 @@ public sealed class ZoneDefinition : ScriptableObject
     public EnemyDefinition[] enemies;
     public ZoneTestEncounter[] developmentEncounters;
     public GameplayThemeDefinition theme;
+    [Tooltip("Optional zone loop; temporary music remains labelled in its source manifest.")]
+    public AudioClip music;
 }

@@ -194,7 +194,7 @@ public sealed class EnemyLifecycleVFX :
              */
             // The move profile begins from declared logical readiness. A
             // cosmetic spawn finishing later must not reset saved progress.
-            if (!CombatMoveClock.Active) enemyAutoAttack.StopAttacking();
+            if (!CombatMoveClock.MoveBasics) enemyAutoAttack.StopAttacking();
         }
 
         spawnCoroutine =
@@ -307,7 +307,7 @@ public sealed class EnemyLifecycleVFX :
         if (attackTimerRoot != null)
         {
             attackTimerRoot.gameObject.SetActive(
-                !CombatMoveClock.Active
+                !CombatMoveClock.MoveBasics
             );
         }
 
@@ -474,6 +474,13 @@ public sealed class EnemyLifecycleVFX :
         if (enemyImage != null) enemyImage.enabled = true;
 
         SetEnemyAlpha(1f);
+        var forestMotion=GetComponent<ForestEnemyMotion>();
+        float authoredDeath=forestMotion!=null?forestMotion.PlayDeath():0;
+        if(authoredDeath>0)
+        {
+            SetFlashAmount(0f);
+            yield return new WaitForSeconds(authoredDeath);
+        }
         SetFlashAmount(1f);
 
         if (deathWhiteHoldDuration > 0f)
@@ -491,7 +498,7 @@ public sealed class EnemyLifecycleVFX :
         float remainingDuration =
             Mathf.Max(
                 0f,
-                deathEffectDuration -
+                deathEffectDuration - authoredDeath -
                 deathWhiteHoldDuration
             );
 

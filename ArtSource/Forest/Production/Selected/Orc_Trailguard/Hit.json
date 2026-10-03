@@ -1,0 +1,118 @@
+{
+  "name": "Orc_Trailguard",
+  "state": "Hit",
+  "width": 96,
+  "height": 64,
+  "frameCount": 5,
+  "durationsMs": [
+    45,
+    55,
+    70,
+    65,
+    45
+  ],
+  "totalMs": 280,
+  "loop": false,
+  "impactFrame": -1,
+  "source": "Raw/Orc_Trailguard/Hit",
+  "selectedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pivot": [
+    0.5,
+    0
+  ],
+  "ppu": 64,
+  "resampled": false,
+  "frames": [
+    {
+      "index": 0,
+      "durationMs": 45,
+      "bounds": [
+        18,
+        7,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "c5253f5e62be53e3cc437683dff631b2f05653dd95dea2b5a6a3951f68b839c6"
+    },
+    {
+      "index": 1,
+      "durationMs": 55,
+      "bounds": [
+        19,
+        8,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "b48241281392cd4d31a31117b4a230ec46d5a7f4d16939aa1611ac361eef57fc"
+    },
+    {
+      "index": 2,
+      "durationMs": 70,
+      "bounds": [
+        20,
+        8,
+        75,
+        63
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 62,
+      "hash": "1770bef24e7d76846609bf931e646318167b432e340b362092bcab655a3068a6"
+    },
+    {
+      "index": 3,
+      "durationMs": 65,
+      "bounds": [
+        19,
+        8,
+        75,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "bfe058870a265051c7229409701b615765d885aa4f634372544ec7a2dcf0cbbd"
+    },
+    {
+      "index": 4,
+      "durationMs": 45,
+      "bounds": [
+        18,
+        7,
+        74,
+        64
+      ],
+      "paletteCount": 14,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "bottomOccupiedRow": 63,
+      "hash": "c5253f5e62be53e3cc437683dff631b2f05653dd95dea2b5a6a3951f68b839c6"
+    }
+  ]
+}

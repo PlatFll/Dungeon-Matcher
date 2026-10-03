@@ -28,7 +28,7 @@ public sealed class ForestFoundationTests
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/magical-forest");Assert.That(zone,Is.Not.Null);
         Assert.That(zone.eligibleForLiveTravel,Is.False);Assert.That(zone.enemies.Length,Is.EqualTo(6));
-        Assert.That(zone.developmentEncounters.SelectMany(e=>e.members).Distinct().Count(),Is.EqualTo(4));
+        Assert.That(zone.developmentEncounters.SelectMany(e=>e.members).Distinct().Count(),Is.EqualTo(6));
         foreach(var enemy in zone.enemies)
         {
             string path=AssetDatabase.GetAssetPath(enemy.FallbackVisualSprite);
@@ -37,7 +37,10 @@ public sealed class ForestFoundationTests
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(importer.mipmapEnabled,Is.False);
             Assert.That(importer.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
-            Assert.That(enemy.AnimationControllerOverride,Is.Null);Assert.That(enemy.Race,Is.Not.Empty);Assert.That(enemy.Faction,Is.Not.Empty);
+            Assert.That(enemy.AnimationControllerOverride,Is.Not.Null);
+            foreach(string state in new[]{"Idle","AutoAttack","Hit","Death"})
+                Assert.That(enemy.AnimationControllerOverride.animationClips.Any(c=>c.name.EndsWith("_"+state)),Is.True,enemy.name+" "+state);
+            Assert.That(enemy.Race,Is.Not.Empty);Assert.That(enemy.Faction,Is.Not.Empty);
             Assert.That(enemy.EligibleZones,Does.Contain("magical-forest"));Assert.That(enemy.FirstAttackMoves,Is.GreaterThan(0));
             Assert.That(enemy.FallbackVisualSprite.rect.width,Is.EqualTo(enemy.name=="Briar_Matriarch"?96:64));
         }

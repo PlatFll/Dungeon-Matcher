@@ -14,6 +14,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
 {
     public static CombatMoveClock Current { get; private set; }
     public static bool Active => Current != null;
+    public static bool MoveBasics => Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
+    public static bool PausesTimedBasics => Active && !MoveBasics && Current.IsBlockingWaveProgression;
     public static int EffectAction => Current == null ? 0 : Math.Max(Current.state.actions.completed, Current.state.actions.pending);
     public int Tick => state.actions.completed;
     public int TestEncounterOffset => state.testEncounterOffset;
@@ -28,15 +30,15 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     private readonly List<EnemyActor> acceptedActors = new List<EnemyActor>();
     private readonly HashSet<long> spentSpecial = new HashSet<long>();
 
-    public void Initialize(RunSession owner, CombatClockSnapshot saved = null)
+    public void Initialize(RunSession owner, CombatClockSnapshot saved = null, string newProfile = CombatClockSnapshot.MoveProfile)
     {
         if (Current != null && Current != this) throw new InvalidOperationException("Duplicate combat clock.");
         run = owner;
         state = saved == null
-            ? new CombatClockSnapshot { testEncounterOffset = RunLaunchOptions.ForestEncounterOffset }
+            ? new CombatClockSnapshot { profile = newProfile, testEncounterOffset = RunLaunchOptions.ForestEncounterOffset }
             : JsonUtility.FromJson<CombatClockSnapshot>(JsonUtility.ToJson(saved));
         RunLaunchOptions.ForestEncounterOffset = 0;
-        if (state.profile != CombatClockSnapshot.MoveProfile || state.actions == null || state.actions.IsPending)
+        if (!CombatClockSnapshot.IsSupported(state.profile) || state.actions == null || state.actions.IsPending)
             throw new InvalidOperationException("Unsupported or unstable combat clock snapshot.");
         Current = this;
         run.Board.ValidPlayerMoveAccepted += Accepted;
@@ -95,6 +97,9 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 yield return null;
             }
             spentSpecial.Clear();
+            // A timed basic accepted before the swap keeps its owned impact and
+            // recovery. Drain it before offering move-timed specialist work.
+            yield return WaitForActions();
             foreach (var actor in acceptedActors)
                 if (Living(actor)) actor.GetComponent<EnemyPoisonStatus>()?.AdvanceAcceptedMove(Tick);
             // Snapshot this tick's readiness before an earlier actor can apply a
@@ -123,7 +128,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                     actor.ResumeContinuationReadiness();
                 }
                 yield return WaitForActions();
-                if (Living(actor) && !run.Player.IsDefeated && !held &&
+                if (MoveBasics && Living(actor) && !run.Player.IsDefeated && !held &&
                     !spentSpecial.Contains(actor.PersistentId) && (channel == null || !channel.BlocksBasic))
                 {
                     // Reserve this ordinary opportunity before callbacks can
@@ -141,6 +146,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 if (!Living(actor)) continue;
                 actor.GetComponent<EnemyStagger>()?.ExpireAcceptedMove(Tick);
                 actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
+                actor.GetComponent<ForestMilestoneEnemyAbility>()?.ExpireAcceptedMove(Tick);
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             run.AdvanceSupplyCooldowns();

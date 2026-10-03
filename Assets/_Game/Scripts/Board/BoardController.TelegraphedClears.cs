@@ -14,6 +14,7 @@ public partial class BoardController
         internal bool Queued;
         public bool RestorationPresentation { get; internal set; }
         public bool Vine { get; internal set; }
+        public bool NonSpreading { get; internal set; }
         public bool Environmental { get; internal set; }
         internal int VineLimit = 3, ParentGemId;
     }
@@ -92,7 +93,7 @@ public partial class BoardController
         if (candidates.Count == 0) return;
         var threat = new GemSetThreat { Owner = request.OwnerActor,
             DueMove = ReserveWarningDeadline(request.WarningMoves),
-            RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins };
+            RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins,NonSpreading=request.NonSpreadingVine };
         int allowed=request.Vine ? Mathf.Min(request.TargetCount,BalanceV1.Current.maximumGlobalChains-RestrictionCount,
             request.MaximumOwnedPins-GetPinnedGemCountForOwner(request.OwnerActor.GetInstanceID())) : request.TargetCount;
         if(allowed<=0) return;

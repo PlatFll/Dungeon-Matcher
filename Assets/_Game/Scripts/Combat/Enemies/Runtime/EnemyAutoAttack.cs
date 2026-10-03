@@ -85,12 +85,12 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     public bool IsPausedByAction => actionPauses.Count > 0;
     public void AdvanceAcceptedMove()
     {
-        if (!CombatMoveClock.Active || !isRunning || IsPausedByAction || IsPausedByStagger || commandOwner != null) return;
+        if (!CombatMoveClock.MoveBasics || !isRunning || IsPausedByAction || IsPausedByStagger || commandOwner != null) return;
         remainingAttackTime = Mathf.Max(0, remainingAttackTime - Mathf.Clamp(runtimeAttackSpeedMultiplier * Product(speedModifiers), .1f, 5f));
     }
     public bool TryPerformAcceptedMoveAttack()
     {
-        if (!CombatMoveClock.Active || !isRunning || remainingAttackTime > 0 || !CanPerformAttack()) return false;
+        if (!CombatMoveClock.MoveBasics || !isRunning || remainingAttackTime > 0 || !CanPerformAttack()) return false;
         // Reset before callbacks, so a synchronous command cannot duplicate this readiness.
         remainingAttackTime = enemyActor.Definition.AttackMoves;
         return PerformAttackImmediately();
@@ -187,7 +187,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (commandStrike)
         {
             CancelAttackSequence();
-            remainingAttackTime = enemyActor != null ? (CombatMoveClock.Active ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval) : 0f;
+            remainingAttackTime = enemyActor != null ? (CombatMoveClock.MoveBasics ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval) : 0f;
         }
         else if (commandMadeReady) remainingAttackTime = reservedAttackTime;
         commandMadeReady = false;
@@ -245,7 +245,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
             return Mathf.Clamp01(
                 remainingAttackTime /
-                (CombatMoveClock.Active ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval)
+                (CombatMoveClock.MoveBasics ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval)
             );
         }
     }
@@ -346,7 +346,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             return;
         }
 
-        if (CombatMoveClock.Active)
+        if (CombatMoveClock.MoveBasics)
         {
             if (!isRunning && !resumeCooldown) remainingAttackTime = enemyActor.Definition.FirstAttackMoves;
             isRunning = true;
@@ -794,7 +794,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
                  * Stagger and owned ability holds pause the countdown without
                  * resetting or reducing the stored time.
                  */
-                if (IsPausedByStagger || IsPausedByAction)
+                if (IsPausedByStagger || IsPausedByAction || CombatMoveClock.PausesTimedBasics)
                 {
                     yield return null;
                     continue;
@@ -1075,7 +1075,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         return
             Time.timeScale>0 &&
-            (!CombatMoveClock.Active || CombatMoveClock.Current.IsResolving) &&
+            (!CombatMoveClock.MoveBasics || CombatMoveClock.Current.IsResolving) &&
+            (!CombatMoveClock.PausesTimedBasics || commandedAttackStarting) &&
             CanContinueAttackLoop() &&
             (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&

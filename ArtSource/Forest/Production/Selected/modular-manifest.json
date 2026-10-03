@@ -1,0 +1,422 @@
+[
+  {
+    "path": "UI/AbilityCamera.png",
+    "width": 176,
+    "height": 64,
+    "paletteCount": 7,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "a15b6059de28233c6c0ee3b2c4a7f1686ff611f4cf30cfa437f1345885e3ff39"
+  },
+  {
+    "path": "UI/AbilityHarmony.png",
+    "width": 176,
+    "height": 64,
+    "paletteCount": 35,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "34cae11a1f0f47bb13cd7d02dc06e0af5acc89cf8f14429c25ca42a84bce1311"
+  },
+  {
+    "path": "UI/AbilityRoyal.png",
+    "width": 176,
+    "height": 64,
+    "paletteCount": 563,
+    "alphaValues": [
+      0,
+      253,
+      254,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "ad76e559bf23abdeb3af0582a02d7c580d15dab447f8cefbe3acd19842f41ea4"
+  },
+  {
+    "path": "UI/ButtonDisabled.png",
+    "width": 96,
+    "height": 32,
+    "paletteCount": 15,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "8a3221d8a7c942b45c85f6fed5e47d91ba203f1f7fa5fa161b88fe7e180eb87f"
+  },
+  {
+    "path": "UI/ButtonHighlighted.png",
+    "width": 96,
+    "height": 32,
+    "paletteCount": 15,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "dd708117d5fd638423589446d2f88cbad931a44fcd779bd5c8dd810803258b68"
+  },
+  {
+    "path": "UI/ButtonNormal.png",
+    "width": 96,
+    "height": 32,
+    "paletteCount": 15,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "2d8fc64c7316b3b515f102ed8a249ab2be299e31244bb12f0e31e9edd470de67"
+  },
+  {
+    "path": "UI/ButtonPressed.png",
+    "width": 96,
+    "height": 32,
+    "paletteCount": 15,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "be0a33645a4686dc3ee83564a045ef7730956dd516f228dbe64e0c926af6a993"
+  },
+  {
+    "path": "UI/EnergyFrame.png",
+    "width": 144,
+    "height": 32,
+    "paletteCount": 13,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "f7fc390ac7256e0406273ae8848e457dbee316cc6ae9c235621fa1d5290e85db"
+  },
+  {
+    "path": "UI/Log_Cell_01.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "00f91c64e0d8f31b75f8bfca3c8cc3ac04edd5052cc7fddb57ad9f748e78ca0b"
+  },
+  {
+    "path": "UI/Log_Cell_02.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "24a76c6ae955f90827d5195a293f15c71e4c4bc08b23ea1176a19a493c0d6427"
+  },
+  {
+    "path": "UI/Log_Cell_03.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "66d4bd419f8ad65cfdc7179784845ddbb59860450dbee1979bbe0175992dc818"
+  },
+  {
+    "path": "UI/PanelShell.png",
+    "width": 128,
+    "height": 128,
+    "paletteCount": 17,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "22ed85c8d4e8247efa658bb74e2136c528dd7a647d93edcaebce9e95ec353c5a"
+  },
+  {
+    "path": "UI/SettingsDisabled.png",
+    "width": 48,
+    "height": 48,
+    "paletteCount": 3,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "6dddd3d1e7ca86fe45219474b841545ec569483b0080204879eb394cc1498fb9"
+  },
+  {
+    "path": "UI/SettingsHighlighted.png",
+    "width": 48,
+    "height": 48,
+    "paletteCount": 8,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "1faefb1d14d30c7eb0982fa760dd53620f51d2ef9ed4f55b4fe5bfc70f567232"
+  },
+  {
+    "path": "UI/SettingsNormal.png",
+    "width": 48,
+    "height": 48,
+    "paletteCount": 9,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "882da9d2bfa0190378175e7e1650db4783add215184dd72e0fd95050cd59a583"
+  },
+  {
+    "path": "UI/SettingsPressed.png",
+    "width": 48,
+    "height": 48,
+    "paletteCount": 4,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "23ca6f78d2e0ed52b9b19239c3c1046c232f7928405559077264306125b9068d"
+  },
+  {
+    "path": "UI/SupplyDisabled.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "0f9df7e735ce8a30691d0ab085f09b536693d5001e814c151225464c5733f85d"
+  },
+  {
+    "path": "UI/SupplyHighlighted.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "7a8867d455c37999cf58c91a7de2fc8a5381a450c7acb11377e969e7f7704aa7"
+  },
+  {
+    "path": "UI/SupplyNormal.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "ffefac2a7fff2b4955069992306bfd6cd83f691a53da0de574b7d744163c7618"
+  },
+  {
+    "path": "UI/SupplyPressed.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 29,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "00f91c64e0d8f31b75f8bfca3c8cc3ac04edd5052cc7fddb57ad9f748e78ca0b"
+  },
+  {
+    "path": "Environment/Ancient_Tree.png",
+    "width": 128,
+    "height": 128,
+    "paletteCount": 33,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "89a8d94a61070311bab6fbda7840d4a945a6ecc1c702f6877038c87c55bf4360"
+  },
+  {
+    "path": "Environment/Distant_Canopy.png",
+    "width": 256,
+    "height": 64,
+    "paletteCount": 55,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "6fff59c8814c33912e13b84d9cbcddf050d9d55da3ac75896e27550bf4d1a895"
+  },
+  {
+    "path": "Environment/Distant_Woodland.png",
+    "width": 256,
+    "height": 128,
+    "paletteCount": 56,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "c0ea70644d44eccf76b289c875730eda0f7b9aaecac934f7906aaa4f621f7c48"
+  },
+  {
+    "path": "Environment/Forest_Fern.png",
+    "width": 64,
+    "height": 32,
+    "paletteCount": 18,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "6087f51cc49880733ee5d90d4ad98cdf87de1cdb2f99ab3cd3e81411a1067e13"
+  },
+  {
+    "path": "Environment/Forest_Ruin.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 15,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "1de34c39f34c3c2fe08283022c3935b506b621987ea6186165e726dd64a1b58e"
+  },
+  {
+    "path": "Environment/Tall_Woodland.png",
+    "width": 256,
+    "height": 256,
+    "paletteCount": 15,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "70f54a8652044474ddbc6d725662312cb96c3535429b55546abf07906a4f897e"
+  },
+  {
+    "path": "Environment/Woodland_Ground.png",
+    "width": 128,
+    "height": 64,
+    "paletteCount": 40,
+    "alphaValues": [
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "7adbb0dfd105bed2d57d544ef83c9dc235e391839508d9aeac3e9825f8ca2ebf"
+  },
+  {
+    "path": "Effects/Interrupt.png",
+    "width": 32,
+    "height": 32,
+    "paletteCount": 1,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "c24d58de03f469655de2e6eda1ec37f7eb0ac4941ad14189a1f56080ebc23e2f"
+  },
+  {
+    "path": "Effects/Leaf_Heal.png",
+    "width": 32,
+    "height": 32,
+    "paletteCount": 6,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "a4b622741aa614ab6475eb8cbd1075461b1f18c7bc66e354f1583cc990340af6"
+  },
+  {
+    "path": "Effects/Resonance.png",
+    "width": 32,
+    "height": 32,
+    "paletteCount": 6,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "a4b622741aa614ab6475eb8cbd1075461b1f18c7bc66e354f1583cc990340af6"
+  },
+  {
+    "path": "Effects/Vine_Anchor.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 12,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "567c38f2b225e34cdc40a13ff13ff2aa0177bbd3b1a7099c89cd9cfda43892e5"
+  },
+  {
+    "path": "Effects/Vine_Overlay.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 19,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "3f03f591e2df08bded3863ed200ef6273795b30a5fa3d1ed3eb7a4870fa988e2"
+  },
+  {
+    "path": "Effects/Vine_Warning.png",
+    "width": 64,
+    "height": 64,
+    "paletteCount": 1,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "ppu": 64,
+    "resampled": false,
+    "hash": "7d2d1bf85a1dceba576119807fc4a186f10674550ba3a02ce28329781a05732d"
+  }
+]

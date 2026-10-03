@@ -49,7 +49,7 @@ public partial class BoardController
         public Func<bool> IsCancelled;
         public bool Succeeded;
         public bool MovablePin;
-        public bool EnvironmentalPin, Vine;
+        public bool EnvironmentalPin, Vine, NonSpreadingVine;
         public GemPairThreat PairThreat;
         public int WarningMoves;
         public int PlayerDamage;
