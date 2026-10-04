@@ -29,5 +29,6 @@ public sealed class ZoneDefinition : ScriptableObject
     public bool crumblesTiles;
     [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;
-    [Range(4,64)] public int maximumVineOverlays = 24;
+    [Range(1,4)] public int maximumVineSpreadPerPulse = 2;
+    [Range(4,64)] public int maximumVineOverlays = 12;
 }

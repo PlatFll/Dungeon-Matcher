@@ -98,7 +98,9 @@ recovery moves follow every outcome. It cannot attack during channel/recovery.
 Vines are cell overlays. They obscure some of the gem without blocking swapping,
 gravity, matches, bombs or destruction. Clearing the covered gem removes its vine.
 Normal growth pulses every two accepted moves, before enemy casts: one edge seed
-and at most four frontier additions, with a 24-overlay growth cap. A pulse uses
+and at most two frontier additions, with a 12-overlay growth cap (October 4
+temporary tuning). Surge shares the two-addition limit. Existing saved overlays
+remain until cleared; growth pauses while at or above the new cap. A pulse uses
 the original frontier, never recursive same-pulse spread. Root placement always
 seeds its four orthogonal neighbors, independent of that growth cap. These are
 prototype cadence/readability values, not finalized pacing. Real chains retain

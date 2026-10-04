@@ -20,13 +20,13 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-10-03
-- **Current milestone:** Zone-effect lifecycle fixes, dungeon crumbling tiles and Royal Arbalist's two-chain Special ability, with implementation and merge authorized on 2026-10-03. Environmental vines persist through waves and perk choices; travel cleans source-zone effects before reveal. Dungeon tiles pulse every four accepted moves and return after two further moves. The Arbalist retains double-shot basics and uses a dedicated two-contact chain animation. The cadence is initial tuning; see [the validation record](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md).
+- **Date:** 2026-10-04
+- **Current milestone:** Fix the King's zero-counter stall in seconds-based combat, retain command ownership through recovery, reduce forest vine pressure and enlarge enemy ability counters. Implementation and merge authorized on 2026-10-04. Command reservations can start during the move coordinator's pause of autonomous basics; action holds and stagger still block them. Vine frontier additions are halved to two and growth coverage to twelve, with root placement preserved. Ability counters have larger containers above attack timers, clear of the attack countdown. Automated Unity runs mute Editor audio without changing player audio preferences.
 - **Forest checkpoint:** [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176) is merged: seven locked designs have 39 motion clips and approved kits, including Treant C (Old Stump). Selected blockers are Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B. See [the roster contract](Forest/EXPANDED_ROSTER.md). Existing crystal travel and combat timing remain in place.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** Zone effects and Arbalist have **163 unique passing regression checks**, inspected portrait captures and a successful final Unity validator; see [the evidence and corrected test fixtures](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md). Earlier [picker](Validation/TESTING_ZONE_PICKER.md), [expanded-roster](Validation/FOREST_EXPANDED_ROSTER.md) and [travel](Validation/FOREST_CRYSTAL_TRAVEL.md) evidence remains available. The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
+- **Current verification:** King readiness, command recovery and vine tuning passed **111 unique regression checks**, plus a rerun of the expanded counter test on the final prefab at three portrait sizes. The mandatory Unity validator succeeded with 6000.3.19f1; see [evidence and captures](Validation/KING_READINESS_AND_VINE_TUNING.md). Earlier [zone effects and Arbalist](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md), [picker](Validation/TESTING_ZONE_PICKER.md), [expanded-roster](Validation/FOREST_EXPANDED_ROSTER.md) and [travel](Validation/FOREST_CRYSTAL_TRAVEL.md) evidence remains available. The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -361,6 +361,12 @@ waves, rewards and saves. Travel clears vines/roots and restores zone holes unde
 smoke; it never adds a free clear reward. Royal Arbalist is now a Special disruptor
 with two chains per four-move cast and a two-owned cap. Other basic damage and
 attack intervals retain their current values.
+
+Forest growth tuning now adds at most two frontier vines per pulse (previously
+four), plus its one edge seed, with a twelve-overlay growth cap (previously
+twenty-four). Cadence stays at two accepted moves; Surge shares the reduced
+frontier budget. Root placement retains all four adjacent vines. Existing saved
+overlays are preserved, and growth waits until coverage falls below the cap.
 
 The Editor-only Forest menu starts or resumes a separate save under
 `.utmp/ForestPlaytest`. Twenty-two formations loop indefinitely using six starter

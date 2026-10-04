@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-04 01:07:01Z" end-time="2026-10-04 01:07:03Z" duration="2.7300917">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="501" result="Passed" start-time="2026-10-04 01:07:01Z" end-time="2026-10-04 01:07:03Z" duration="2.730092" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1604" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/.utmp/forest-production/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="501" result="Passed" start-time="2026-10-04 01:07:01Z" end-time="2026-10-04 01:07:03Z" duration="2.701330" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="17972" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1304" name="ForestFoundationPlayTests" fullname="ForestFoundationPlayTests" classname="ForestFoundationPlayTests" runstate="Runnable" testcasecount="76" result="Passed" start-time="2026-10-04 01:07:01Z" end-time="2026-10-04 01:07:03Z" duration="2.695494" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1355" name="KingReadinessAbilityCountersFitAtPortraitSizes" fullname="ForestFoundationPlayTests.KingReadinessAbilityCountersFitAtPortraitSizes" methodname="KingReadinessAbilityCountersFitAtPortraitSizes" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1028410092" result="Passed" start-time="2026-10-04 01:06:57Z" end-time="2026-10-04 01:07:03Z" duration="6.190668" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

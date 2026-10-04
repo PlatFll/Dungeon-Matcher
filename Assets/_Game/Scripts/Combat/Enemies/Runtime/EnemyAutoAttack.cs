@@ -155,7 +155,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
     public bool TryReserveCommand(object owner, bool makeReady = false)
     {
-        if (owner == null || commandOwner != null || !CanPerformAttack() ||
+        if (owner == null || commandOwner != null || !CanPerformAttack(reservingCommand: true) ||
             enemyActor.HasAnimationActionInProgress) return false;
         commandOwner = owner;
         commandStrike = false;
@@ -1071,12 +1071,15 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             !playerTarget.IsDefeated;
     }
 
-    private bool CanPerformAttack()
+    private bool CanPerformAttack(bool reservingCommand = false)
     {
         return
             Time.timeScale>0 &&
             (!CombatMoveClock.MoveBasics || CombatMoveClock.Current.IsResolving) &&
-            (!CombatMoveClock.PausesTimedBasics || commandedAttackStarting) &&
+            // The move coordinator pauses autonomous timed basics while it
+            // offers specials. Reserving an explicit command must still work
+            // in that phase; all actor, stagger and action guards remain below.
+            (!CombatMoveClock.PausesTimedBasics || commandedAttackStarting || reservingCommand) &&
             CanContinueAttackLoop() &&
             (commandOwner == null || commandedAttackStarting) &&
             !IsPausedByStagger &&
