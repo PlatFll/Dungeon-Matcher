@@ -207,8 +207,10 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             if (attack.PerformCommandStrike(this, actor.Definition.AssaultDamageMultiplier))
             {
                 while (!released && attack != null && attack.IsAttackSequenceInProgress) yield return null;
-                if (attack != null) attack.ReleaseCommand(this);
                 yield return new WaitForSeconds(actor.Definition.RoyalCommandSpacing);
+                // Keep the sequence reserved through its final spacing so the
+                // move coordinator and saves cannot observe a half-finished cast.
+                if (attack != null) attack.ReleaseCommand(this);
             }
         }
         ReleaseParticipants(); FinishCast(true, false);

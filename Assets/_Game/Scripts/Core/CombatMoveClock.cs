@@ -175,7 +175,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             bool busy = run.Board.IsBusy || Time.timeScale <= 0;
             foreach (var actor in run.Waves.ActiveEnemies)
                 busy |= Living(actor) && (actor.HasAnimationActionInProgress ||
-                    actor.GetComponent<EnemyAutoAttack>()?.IsAttackSequenceInProgress == true);
+                    actor.GetComponent<EnemyAutoAttack>()?.IsAttackSequenceInProgress == true ||
+                    actor.GetComponent<EnemyAutoAttack>()?.HasCommandReservation == true);
             if (!busy) yield break;
             yield return null;
         }

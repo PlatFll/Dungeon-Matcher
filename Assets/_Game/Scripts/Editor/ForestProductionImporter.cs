@@ -238,7 +238,7 @@ public static class ForestProductionImporter
         }
         var zone=Resources.Load<ZoneDefinition>("Zones/magical-forest");
         zone.displayName="Magical Forest";
-        zone.growsVines=true;zone.vineCadenceMoves=2;zone.maximumVineOverlays=24;
+        zone.growsVines=true;zone.vineCadenceMoves=2;zone.maximumVineSpreadPerPulse=2;zone.maximumVineOverlays=12;
         zone.developmentEncounters=new[]{
             Encounter("Heal response",definitions,1,2,0),Encounter("Root response",definitions,3,0,1),
             Encounter("Combined pressure",definitions,2,3,1),

@@ -117,8 +117,8 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
             {
                 while (!released && attack != null && attack.IsAttackSequenceInProgress)
                     yield return null;
-                if (attack != null) attack.ReleaseCommand(this);
                 yield return new WaitForSeconds(strikeSpacing);
+                if (attack != null) attack.ReleaseCommand(this);
             }
         }
         ReleaseParticipants();

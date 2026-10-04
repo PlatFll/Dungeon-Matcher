@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="111" result="Passed" total="111" passed="111" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-04 01:03:33Z" end-time="2026-10-04 01:03:36Z" duration="2.2520675">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="501" result="Passed" start-time="2026-10-04 01:03:33Z" end-time="2026-10-04 01:03:36Z" duration="2.252068" total="111" passed="111" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1604" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/.utmp/forest-production/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="501" result="Passed" start-time="2026-10-04 01:03:33Z" end-time="2026-10-04 01:03:36Z" duration="2.202608" total="111" passed="111" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46584" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="AcceptedMoveStateTests" fullname="AcceptedMoveStateTests" classname="AcceptedMoveStateTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 00:51:53Z" end-time="2026-10-04 00:51:53Z" duration="0.021364" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="OnlyAcceptedSequentialActionCanCommitOnce" fullname="AcceptedMoveStateTests.OnlyAcceptedSequentialActionCanCommitOnce" methodname="OnlyAcceptedSequentialActionCanCommitOnce" classname="AcceptedMoveStateTests" runstate="Runnable" seed="869883888" result="Passed" start-time="2026-10-04 00:51:53Z" end-time="2026-10-04 00:51:53Z" duration="0.010593" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1003" name="SnapshotPreservesActionAndStableActorIdentity" fullname="AcceptedMoveStateTests.SnapshotPreservesActionAndStableActorIdentity" methodname="SnapshotPreservesActionAndStableActorIdentity" classname="AcceptedMoveStateTests" runstate="Runnable" seed="1046809953" result="Passed" start-time="2026-10-04 00:51:53Z" end-time="2026-10-04 00:51:53Z" duration="0.000804" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1247" name="EnemyAbilityPlayTests" fullname="EnemyAbilityPlayTests" classname="EnemyAbilityPlayTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-04 00:51:55Z" end-time="2026-10-04 00:52:32Z" duration="36.940924" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1248" name="ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes" fullname="EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes" methodname="ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes" classname="EnemyAbilityPlayTests" runstate="Runnable" seed="589370655" result="Passed" start-time="2026-10-04 00:51:53Z" end-time="2026-10-04 00:52:32Z" duration="39.322844" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1278" name="EnemySpecialExecutionGuardTests" fullname="EnemySpecialExecutionGuardTests" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.041356" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1294" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.006175" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1292" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)" methodname="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="177930588" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.004464" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1293" name="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)" fullname="EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)" methodname="ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1946285341" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000916" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1291" name="AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" fullname="EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" methodname="AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1166854186" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001527" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1303" name="AnotherActorsImpactDoesNotReleaseTheWaitingMine" fullname="EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine" methodname="AnotherActorsImpactDoesNotReleaseTheWaitingMine" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1534677982" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.003731" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1281" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.004458" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1279" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)" methodname="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1880042465" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001149" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1280" name="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)" fullname="EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)" methodname="DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="2083557202" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000837" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1290" name="ExistingUnavailableOwnerGuardsStillRejectExecution" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.006910" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1285" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;disposed&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;disposed&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="468499290" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001184" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1286" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;defeated&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;defeated&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1987483175" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000749" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1287" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;destroyedHost&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;destroyedHost&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="234328296" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000762" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1288" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;uninitialized&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;uninitialized&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1304030207" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000713" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1289" name="ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;notReady&quot;)" fullname="EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(&quot;notReady&quot;)" methodname="ExistingUnavailableOwnerGuardsStillRejectExecution" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1456399599" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000695" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1302" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.005058" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1300" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)" methodname="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="944399372" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001636" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1301" name="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)" fullname="EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)" methodname="LivingOwnerStillCommitsOneHoleAtTheExistingBoundary" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="429184019" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000828" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1299" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.006939" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1295" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="232469167" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001902" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1296" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1487076482" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000815" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1297" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1180792914" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000848" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1298" name="MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)" fullname="EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)" methodname="MineRechecksDeadOrDestroyedOwnerAfterImpactWait" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="753022380" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000791" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1284" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.004487" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1282" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)" methodname="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1381385459" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.001352" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1283" name="ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)" fullname="EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)" methodname="ReenableAllowsOneExecutionOnTheNextLegitimateRequest" classname="EnemySpecialExecutionGuardTests" runstate="Runnable" seed="1814737965" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:32Z" duration="0.000871" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1304" name="ForestFoundationPlayTests" fullname="ForestFoundationPlayTests" classname="ForestFoundationPlayTests" runstate="Runnable" testcasecount="76" result="Passed" start-time="2026-10-04 01:03:33Z" end-time="2026-10-04 01:03:35Z" duration="2.127940" total="76" passed="76" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1311" name="AcceptedSwapReplayProducesSameLogicalStateExactlyOnce" fullname="ForestFoundationPlayTests.AcceptedSwapReplayProducesSameLogicalStateExactlyOnce" methodname="AcceptedSwapReplayProducesSameLogicalStateExactlyOnce" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1496796828" result="Passed" start-time="2026-10-04 00:52:32Z" end-time="2026-10-04 00:52:39Z" duration="6.780319" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1306" name="ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume" fullname="ForestFoundationPlayTests.ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume" methodname="ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume" classname="ForestFoundationPlayTests" runstate="Runnable" seed="803442503" result="Passed" start-time="2026-10-04 00:52:39Z" end-time="2026-10-04 00:52:51Z" duration="11.784171" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1376" name="CommittedTravelSuspendResumesRevealWithoutRepeatingReward" fullname="ForestFoundationPlayTests.CommittedTravelSuspendResumesRevealWithoutRepeatingReward" methodname="CommittedTravelSuspendResumesRevealWithoutRepeatingReward" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1275562367" result="Passed" start-time="2026-10-04 00:52:51Z" end-time="2026-10-04 00:53:00Z" duration="8.720770" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1373" name="CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat" fullname="ForestFoundationPlayTests.CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat" methodname="CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat" classname="ForestFoundationPlayTests" runstate="Runnable" seed="13369352" result="Passed" start-time="2026-10-04 00:53:00Z" end-time="2026-10-04 00:53:07Z" duration="7.497836" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1307" name="DeadlineStaggerAndTargetDeathCancelExactlyOnce" fullname="ForestFoundationPlayTests.DeadlineStaggerAndTargetDeathCancelExactlyOnce" methodname="DeadlineStaggerAndTargetDeathCancelExactlyOnce" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1358654239" result="Passed" start-time="2026-10-04 00:53:07Z" end-time="2026-10-04 00:53:24Z" duration="16.825549" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1358" name="EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume" fullname="ForestFoundationPlayTests.EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume" methodname="EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume" classname="ForestFoundationPlayTests" runstate="Runnable" seed="951819740" result="Passed" start-time="2026-10-04 00:53:24Z" end-time="2026-10-04 00:53:34Z" duration="9.873113" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1359" name="EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves" fullname="ForestFoundationPlayTests.EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves" methodname="EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1551971672" result="Passed" start-time="2026-10-04 00:53:34Z" end-time="2026-10-04 00:53:40Z" duration="5.910974" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1365" name="EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells" fullname="ForestFoundationPlayTests.EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells" methodname="EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1556077283" result="Passed" start-time="2026-10-04 00:53:40Z" end-time="2026-10-04 00:53:53Z" duration="13.629451" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1360" name="EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles" fullname="ForestFoundationPlayTests.EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles" methodname="EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles" classname="ForestFoundationPlayTests" runstate="Runnable" seed="909321067" result="Passed" start-time="2026-10-04 00:53:53Z" end-time="2026-10-04 00:54:03Z" duration="9.093637" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1363" name="EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt" fullname="ForestFoundationPlayTests.EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt" methodname="EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt" classname="ForestFoundationPlayTests" runstate="Runnable" seed="452613648" result="Passed" start-time="2026-10-04 00:54:03Z" end-time="2026-10-04 00:54:10Z" duration="7.890887" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1364" name="EnvironmentRoyalChainShotDisableReleasesExistingChains" fullname="ForestFoundationPlayTests.EnvironmentRoyalChainShotDisableReleasesExistingChains" methodname="EnvironmentRoyalChainShotDisableReleasesExistingChains" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1266636429" result="Passed" start-time="2026-10-04 00:54:10Z" end-time="2026-10-04 00:54:19Z" duration="8.357048" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1362" name="EnvironmentRoyalChainShotHasTwoAuthoredContactsAndReleasesOnDeath" fullname="ForestFoundationPlayTests.EnvironmentRoyalChainShotHasTwoAuthoredContactsAndReleasesOnDeath" methodname="EnvironmentRoyalChainShotHasTwoAuthoredContactsAndReleasesOnDeath" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1404229612" result="Passed" start-time="2026-10-04 00:54:19Z" end-time="2026-10-04 00:54:27Z" duration="8.576470" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1357" name="EnvironmentTravelCleansVinesBeforeDestinationReveal" fullname="ForestFoundationPlayTests.EnvironmentTravelCleansVinesBeforeDestinationReveal" methodname="EnvironmentTravelCleansVinesBeforeDestinationReveal" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1791746293" result="Passed" start-time="2026-10-04 00:54:27Z" end-time="2026-10-04 00:54:36Z" duration="8.326567" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1361" name="EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure" fullname="ForestFoundationPlayTests.EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure" methodname="EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure" classname="ForestFoundationPlayTests" runstate="Runnable" seed="387292859" result="Passed" start-time="2026-10-04 00:54:36Z" end-time="2026-10-04 00:54:44Z" duration="8.425104" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1356" name="EnvironmentVinesSurviveWavesDraftPauseAndContinue" fullname="ForestFoundationPlayTests.EnvironmentVinesSurviveWavesDraftPauseAndContinue" methodname="EnvironmentVinesSurviveWavesDraftPauseAndContinue" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1899826265" result="Passed" start-time="2026-10-04 00:54:44Z" end-time="2026-10-04 00:54:53Z" duration="8.957634" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1377" name="FailedTravelCheckpointKeepsSourceAndRetriesSameDestination" fullname="ForestFoundationPlayTests.FailedTravelCheckpointKeepsSourceAndRetriesSameDestination" methodname="FailedTravelCheckpointKeepsSourceAndRetriesSameDestination" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1543841206" result="Passed" start-time="2026-10-04 00:54:53Z" end-time="2026-10-04 00:55:01Z" duration="8.343618" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1313" name="FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged" fullname="ForestFoundationPlayTests.FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged" methodname="FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged" classname="ForestFoundationPlayTests" runstate="Runnable" seed="232965658" result="Passed" start-time="2026-10-04 00:55:01Z" end-time="2026-10-04 00:55:14Z" duration="12.231882" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1308" name="FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" fullname="ForestFoundationPlayTests.FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" methodname="FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels" classname="ForestFoundationPlayTests" runstate="Runnable" seed="742646721" result="Passed" start-time="2026-10-04 00:55:14Z" end-time="2026-10-04 00:55:22Z" duration="8.067747" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1327" name="HybridAcceptedBoardActionPausesBasicCountdownWithoutConvertingIt" fullname="ForestFoundationPlayTests.HybridAcceptedBoardActionPausesBasicCountdownWithoutConvertingIt" methodname="HybridAcceptedBoardActionPausesBasicCountdownWithoutConvertingIt" classname="ForestFoundationPlayTests" runstate="Runnable" seed="328545575" result="Passed" start-time="2026-10-04 00:55:22Z" end-time="2026-10-04 00:55:29Z" duration="7.409971" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1326" name="HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves" fullname="ForestFoundationPlayTests.HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves" methodname="HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves" classname="ForestFoundationPlayTests" runstate="Runnable" seed="573453377" result="Passed" start-time="2026-10-04 00:55:29Z" end-time="2026-10-04 00:55:37Z" duration="7.654488" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1374" name="KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects" fullname="ForestFoundationPlayTests.KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects" methodname="KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects" classname="ForestFoundationPlayTests" runstate="Runnable" seed="2027814418" result="Passed" start-time="2026-10-04 00:55:37Z" end-time="2026-10-04 00:55:53Z" duration="15.855364" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1355" name="KingReadinessAbilityCountersFitAtPortraitSizes" fullname="ForestFoundationPlayTests.KingReadinessAbilityCountersFitAtPortraitSizes" methodname="KingReadinessAbilityCountersFitAtPortraitSizes" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1269255369" result="Passed" start-time="2026-10-04 00:55:53Z" end-time="2026-10-04 00:55:59Z" duration="6.252349" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1353" name="KingReadinessCaptainCommandWorksWithTimedBasics" fullname="ForestFoundationPlayTests.KingReadinessCaptainCommandWorksWithTimedBasics" methodname="KingReadinessCaptainCommandWorksWithTimedBasics" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1790946157" result="Passed" start-time="2026-10-04 00:55:59Z" end-time="2026-10-04 00:56:09Z" duration="9.570186" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1350" name="KingReadinessFullCycleUsesLiveSecondsProfile" fullname="ForestFoundationPlayTests.KingReadinessFullCycleUsesLiveSecondsProfile" methodname="KingReadinessFullCycleUsesLiveSecondsProfile" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1154074776" result="Passed" start-time="2026-10-04 00:56:09Z" end-time="2026-10-04 00:56:31Z" duration="22.661590" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1351" name="KingReadinessFullCycleUsesOriginalDungeonProfile" fullname="ForestFoundationPlayTests.KingReadinessFullCycleUsesOriginalDungeonProfile" methodname="KingReadinessFullCycleUsesOriginalDungeonProfile" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1508489396" result="Passed" start-time="2026-10-04 00:56:31Z" end-time="2026-10-04 00:56:58Z" duration="26.599970" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1349" name="KingReadinessHybridAssaultConsumesReadyCounter" fullname="ForestFoundationPlayTests.KingReadinessHybridAssaultConsumesReadyCounter" methodname="KingReadinessHybridAssaultConsumesReadyCounter" classname="ForestFoundationPlayTests" runstate="Runnable" seed="741087804" result="Passed" start-time="2026-10-04 00:56:58Z" end-time="2026-10-04 00:57:07Z" duration="9.041800" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1352" name="KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards" fullname="ForestFoundationPlayTests.KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards" methodname="KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards" classname="ForestFoundationPlayTests" runstate="Runnable" seed="260036870" result="Passed" start-time="2026-10-04 00:57:07Z" end-time="2026-10-04 00:57:15Z" duration="8.387552" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1354" name="KingReadinessVineGrowthUsesHalfSpreadAndCoverage" fullname="ForestFoundationPlayTests.KingReadinessVineGrowthUsesHalfSpreadAndCoverage" methodname="KingReadinessVineGrowthUsesHalfSpreadAndCoverage" classname="ForestFoundationPlayTests" runstate="Runnable" seed="217202926" result="Passed" start-time="2026-10-04 00:57:15Z" end-time="2026-10-04 00:57:21Z" duration="5.862866" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1314" name="LargeCascadeAndSpecialChainConsumeOneManualAction" fullname="ForestFoundationPlayTests.LargeCascadeAndSpecialChainConsumeOneManualAction" methodname="LargeCascadeAndSpecialChainConsumeOneManualAction" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1759648983" result="Passed" start-time="2026-10-04 00:57:21Z" end-time="2026-10-04 00:57:32Z" duration="10.620963" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1329" name="LegacyVinePinsUpgradeWithoutRemovingRealChains" fullname="ForestFoundationPlayTests.LegacyVinePinsUpgradeWithoutRemovingRealChains" methodname="LegacyVinePinsUpgradeWithoutRemovingRealChains" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1749289315" result="Passed" start-time="2026-10-04 00:57:32Z" end-time="2026-10-04 00:57:38Z" duration="5.950066" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1312" name="MixedColorDamageKeepsAttributionAndFinalFiveStepRounding" fullname="ForestFoundationPlayTests.MixedColorDamageKeepsAttributionAndFinalFiveStepRounding" methodname="MixedColorDamageKeepsAttributionAndFinalFiveStepRounding" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1430841580" result="Passed" start-time="2026-10-04 00:57:38Z" end-time="2026-10-04 00:57:43Z" duration="5.555783" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1379" name="OlderForestCheckpointKeepsItsIsolatedLoop" fullname="ForestFoundationPlayTests.OlderForestCheckpointKeepsItsIsolatedLoop" methodname="OlderForestCheckpointKeepsItsIsolatedLoop" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1802069235" result="Passed" start-time="2026-10-04 00:57:43Z" end-time="2026-10-04 00:57:49Z" duration="5.805957" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1375" name="PendingTravelSuspendRestoresChosenDestinationAndBoard" fullname="ForestFoundationPlayTests.PendingTravelSuspendRestoresChosenDestinationAndBoard" methodname="PendingTravelSuspendRestoresChosenDestinationAndBoard" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1395361251" result="Passed" start-time="2026-10-04 00:57:49Z" end-time="2026-10-04 00:57:59Z" duration="9.782460" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1317" name="PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal" fullname="ForestFoundationPlayTests.PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal" methodname="PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal" classname="ForestFoundationPlayTests" runstate="Runnable" seed="894334916" result="Passed" start-time="2026-10-04 00:57:59Z" end-time="2026-10-04 00:58:06Z" duration="7.362213" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1325" name="ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget" fullname="ForestFoundationPlayTests.ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget" methodname="ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget" classname="ForestFoundationPlayTests" runstate="Runnable" seed="156931224" result="Passed" start-time="2026-10-04 00:58:06Z" end-time="2026-10-04 00:58:12Z" duration="6.009759" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1322" name="ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce" fullname="ForestFoundationPlayTests.ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce" methodname="ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce" classname="ForestFoundationPlayTests" runstate="Runnable" seed="224426354" result="Passed" start-time="2026-10-04 00:58:12Z" end-time="2026-10-04 00:58:21Z" duration="9.001089" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1323" name="ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines" fullname="ForestFoundationPlayTests.ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines" methodname="ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines" classname="ForestFoundationPlayTests" runstate="Runnable" seed="479093271" result="Passed" start-time="2026-10-04 00:58:21Z" end-time="2026-10-04 00:58:29Z" duration="7.951766" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1318" name="ProductionMusicUsesOnePlayerCrossfadesPausesAndHonorsSettings" fullname="ForestFoundationPlayTests.ProductionMusicUsesOnePlayerCrossfadesPausesAndHonorsSettings" methodname="ProductionMusicUsesOnePlayerCrossfadesPausesAndHonorsSettings" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1913070314" result="Passed" start-time="2026-10-04 00:58:29Z" end-time="2026-10-04 00:58:37Z" duration="7.320158" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1319" name="ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread" fullname="ForestFoundationPlayTests.ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread" methodname="ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread" classname="ForestFoundationPlayTests" runstate="Runnable" seed="305990183" result="Passed" start-time="2026-10-04 00:58:37Z" end-time="2026-10-04 00:58:43Z" duration="6.206618" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1324" name="ProductionSoloMenderNeverHealsSelf" fullname="ForestFoundationPlayTests.ProductionSoloMenderNeverHealsSelf" methodname="ProductionSoloMenderNeverHealsSelf" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1273852124" result="Passed" start-time="2026-10-04 00:58:43Z" end-time="2026-10-04 00:58:50Z" duration="6.877056" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1321" name="ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt" fullname="ForestFoundationPlayTests.ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt" methodname="ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1786392506" result="Passed" start-time="2026-10-04 00:58:50Z" end-time="2026-10-04 00:58:56Z" duration="6.185686" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1320" name="ProductionWardenWarnsAndStaggerCancelsBeforePlanting" fullname="ForestFoundationPlayTests.ProductionWardenWarnsAndStaggerCancelsBeforePlanting" methodname="ProductionWardenWarnsAndStaggerCancelsBeforePlanting" classname="ForestFoundationPlayTests" runstate="Runnable" seed="265990661" result="Passed" start-time="2026-10-04 00:58:56Z" end-time="2026-10-04 00:59:04Z" duration="7.886925" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1378" name="ReducedMotionFailedPreparationReleasesInputAndCombatTime" fullname="ForestFoundationPlayTests.ReducedMotionFailedPreparationReleasesInputAndCombatTime" methodname="ReducedMotionFailedPreparationReleasesInputAndCombatTime" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1345577883" result="Passed" start-time="2026-10-04 00:59:04Z" end-time="2026-10-04 00:59:11Z" duration="7.579022" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1328" name="RootWarningPlayerClearStaggersButTargetFizzleDoesNot" fullname="ForestFoundationPlayTests.RootWarningPlayerClearStaggersButTargetFizzleDoesNot" methodname="RootWarningPlayerClearStaggersButTargetFizzleDoesNot" classname="ForestFoundationPlayTests" runstate="Runnable" seed="134800362" result="Passed" start-time="2026-10-04 00:59:11Z" end-time="2026-10-04 00:59:17Z" duration="5.451636" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1336" name="RosterAuthoredArcherBasic" fullname="ForestFoundationPlayTests.RosterAuthoredArcherBasic" methodname="RosterAuthoredArcherBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1746231496" result="Passed" start-time="2026-10-04 00:59:17Z" end-time="2026-10-04 00:59:24Z" duration="6.881866" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1332" name="RosterAuthoredBerserkerBasic" fullname="ForestFoundationPlayTests.RosterAuthoredBerserkerBasic" methodname="RosterAuthoredBerserkerBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="521320906" result="Passed" start-time="2026-10-04 00:59:24Z" end-time="2026-10-04 00:59:31Z" duration="6.772489" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1333" name="RosterAuthoredBloomcallerBasic" fullname="ForestFoundationPlayTests.RosterAuthoredBloomcallerBasic" methodname="RosterAuthoredBloomcallerBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="731071611" result="Passed" start-time="2026-10-04 00:59:31Z" end-time="2026-10-04 00:59:37Z" duration="6.685314" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1335" name="RosterAuthoredDrummerBasic" fullname="ForestFoundationPlayTests.RosterAuthoredDrummerBasic" methodname="RosterAuthoredDrummerBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1577583141" result="Passed" start-time="2026-10-04 00:59:37Z" end-time="2026-10-04 00:59:44Z" duration="6.769847" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1334" name="RosterAuthoredSnapvineBasic" fullname="ForestFoundationPlayTests.RosterAuthoredSnapvineBasic" methodname="RosterAuthoredSnapvineBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1377740799" result="Passed" start-time="2026-10-04 00:59:44Z" end-time="2026-10-04 00:59:51Z" duration="6.702473" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1331" name="RosterAuthoredThornkeeperBasic" fullname="ForestFoundationPlayTests.RosterAuthoredThornkeeperBasic" methodname="RosterAuthoredThornkeeperBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1474244633" result="Passed" start-time="2026-10-04 00:59:51Z" end-time="2026-10-04 00:59:58Z" duration="6.844120" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1337" name="RosterAuthoredTreantBasic" fullname="ForestFoundationPlayTests.RosterAuthoredTreantBasic" methodname="RosterAuthoredTreantBasic" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1382050220" result="Passed" start-time="2026-10-04 00:59:58Z" end-time="2026-10-04 01:00:05Z" duration="7.150514" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1348" name="RosterBoughAnswerWeakensHitAndNeverClearsBoard" fullname="ForestFoundationPlayTests.RosterBoughAnswerWeakensHitAndNeverClearsBoard" methodname="RosterBoughAnswerWeakensHitAndNeverClearsBoard" classname="ForestFoundationPlayTests" runstate="Runnable" seed="121205348" result="Passed" start-time="2026-10-04 01:00:05Z" end-time="2026-10-04 01:00:11Z" duration="6.064789" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1345" name="RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate" fullname="ForestFoundationPlayTests.RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate" methodname="RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1226103801" result="Passed" start-time="2026-10-04 01:00:11Z" end-time="2026-10-04 01:00:16Z" duration="5.532989" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1339" name="RosterRageTriggersStrictlyBelowHalfOnceAndResumes" fullname="ForestFoundationPlayTests.RosterRageTriggersStrictlyBelowHalfOnceAndResumes" methodname="RosterRageTriggersStrictlyBelowHalfOnceAndResumes" classname="ForestFoundationPlayTests" runstate="Runnable" seed="327637776" result="Passed" start-time="2026-10-04 01:00:16Z" end-time="2026-10-04 01:00:23Z" duration="6.253366" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1341" name="RosterRhythmBuffsOnlyAlliesRefreshesAndExpires" fullname="ForestFoundationPlayTests.RosterRhythmBuffsOnlyAlliesRefreshesAndExpires" methodname="RosterRhythmBuffsOnlyAlliesRefreshesAndExpires" classname="ForestFoundationPlayTests" runstate="Runnable" seed="2038211485" result="Passed" start-time="2026-10-04 01:00:23Z" end-time="2026-10-04 01:00:36Z" duration="13.614986" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1343" name="RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack" fullname="ForestFoundationPlayTests.RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack" methodname="RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1327598911" result="Passed" start-time="2026-10-04 01:00:36Z" end-time="2026-10-04 01:00:48Z" duration="11.735932" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1330" name="RosterSelectedBlockersBindExactChoicesAndThornArtFacesSafeSide" fullname="ForestFoundationPlayTests.RosterSelectedBlockersBindExactChoicesAndThornArtFacesSafeSide" methodname="RosterSelectedBlockersBindExactChoicesAndThornArtFacesSafeSide" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1669549056" result="Passed" start-time="2026-10-04 01:00:48Z" end-time="2026-10-04 01:00:55Z" duration="6.483716" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1340" name="RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller" fullname="ForestFoundationPlayTests.RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller" methodname="RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1480261907" result="Passed" start-time="2026-10-04 01:00:55Z" end-time="2026-10-04 01:01:15Z" duration="20.569275" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1344" name="RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap" fullname="ForestFoundationPlayTests.RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap" methodname="RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1406098296" result="Passed" start-time="2026-10-04 01:01:15Z" end-time="2026-10-04 01:01:21Z" duration="6.363267" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1342" name="RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate" fullname="ForestFoundationPlayTests.RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate" methodname="RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1892976894" result="Passed" start-time="2026-10-04 01:01:22Z" end-time="2026-10-04 01:01:29Z" duration="7.083412" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1338" name="RosterTreantChannelOwnsBasicTimerAndRecoversAfterRelease" fullname="ForestFoundationPlayTests.RosterTreantChannelOwnsBasicTimerAndRecoversAfterRelease" methodname="RosterTreantChannelOwnsBasicTimerAndRecoversAfterRelease" classname="ForestFoundationPlayTests" runstate="Runnable" seed="982155998" result="Passed" start-time="2026-10-04 01:01:29Z" end-time="2026-10-04 01:01:49Z" duration="19.908661" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1347" name="RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers" fullname="ForestFoundationPlayTests.RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers" methodname="RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers" classname="ForestFoundationPlayTests" runstate="Runnable" seed="2105413962" result="Passed" start-time="2026-10-04 01:01:49Z" end-time="2026-10-04 01:01:57Z" duration="8.229387" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1346" name="RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume" fullname="ForestFoundationPlayTests.RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume" methodname="RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume" classname="ForestFoundationPlayTests" runstate="Runnable" seed="2122363881" result="Passed" start-time="2026-10-04 01:01:57Z" end-time="2026-10-04 01:02:03Z" duration="6.006516" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1315" name="RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits" fullname="ForestFoundationPlayTests.RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits" methodname="RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1458308826" result="Passed" start-time="2026-10-04 01:02:03Z" end-time="2026-10-04 01:02:16Z" duration="13.335552" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1305" name="ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources" fullname="ForestFoundationPlayTests.ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources" methodname="ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1288889194" result="Passed" start-time="2026-10-04 01:02:16Z" end-time="2026-10-04 01:02:24Z" duration="7.611426" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1380" name="TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits" fullname="ForestFoundationPlayTests.TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits" methodname="TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits" classname="ForestFoundationPlayTests" runstate="Runnable" seed="985543878" result="Passed" start-time="2026-10-04 01:02:24Z" end-time="2026-10-04 01:02:30Z" duration="6.586923" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1316" name="UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat" fullname="ForestFoundationPlayTests.UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat" methodname="UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat" classname="ForestFoundationPlayTests" runstate="Runnable" seed="421249076" result="Passed" start-time="2026-10-04 01:02:30Z" end-time="2026-10-04 01:02:37Z" duration="7.056780" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1309" name="VinesAreOverlaysWithOrdinarySwapGravityClearAndSave" fullname="ForestFoundationPlayTests.VinesAreOverlaysWithOrdinarySwapGravityClearAndSave" methodname="VinesAreOverlaysWithOrdinarySwapGravityClearAndSave" classname="ForestFoundationPlayTests" runstate="Runnable" seed="2092009613" result="Passed" start-time="2026-10-04 01:02:37Z" end-time="2026-10-04 01:02:46Z" duration="8.344577" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1310" name="ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers" fullname="ForestFoundationPlayTests.ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers" methodname="ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1132589167" result="Passed" start-time="2026-10-04 01:02:46Z" end-time="2026-10-04 01:02:52Z" duration="6.647779" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1366" name="ZonePickerCancelCreatesNoRunAndFitsPortraitScreens" fullname="ForestFoundationPlayTests.ZonePickerCancelCreatesNoRunAndFitsPortraitScreens" methodname="ZonePickerCancelCreatesNoRunAndFitsPortraitScreens" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1031124517" result="Passed" start-time="2026-10-04 01:02:52Z" end-time="2026-10-04 01:02:57Z" duration="4.922126" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1369" name="ZonePickerDungeonKeepsOriginalOpening" fullname="ForestFoundationPlayTests.ZonePickerDungeonKeepsOriginalOpening" methodname="ZonePickerDungeonKeepsOriginalOpening" classname="ForestFoundationPlayTests" runstate="Runnable" seed="211100197" result="Passed" start-time="2026-10-04 01:02:57Z" end-time="2026-10-04 01:03:03Z" duration="6.066103" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1368" name="ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest" fullname="ForestFoundationPlayTests.ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest" methodname="ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1169424955" result="Passed" start-time="2026-10-04 01:03:03Z" end-time="2026-10-04 01:03:11Z" duration="7.729239" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1370" name="ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun" fullname="ForestFoundationPlayTests.ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun" methodname="ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun" classname="ForestFoundationPlayTests" runstate="Runnable" seed="1284297828" result="Passed" start-time="2026-10-04 01:03:11Z" end-time="2026-10-04 01:03:19Z" duration="7.675140" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1371" name="ZonePickerPreservesChallengeAndCancelsPendingMode" fullname="ForestFoundationPlayTests.ZonePickerPreservesChallengeAndCancelsPendingMode" methodname="ZonePickerPreservesChallengeAndCancelsPendingMode" classname="ForestFoundationPlayTests" runstate="Runnable" seed="796716475" result="Passed" start-time="2026-10-04 01:03:19Z" end-time="2026-10-04 01:03:25Z" duration="6.060428" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1367" name="ZonePickerReturnsToCharacterSelectionOnBack" fullname="ForestFoundationPlayTests.ZonePickerReturnsToCharacterSelectionOnBack" methodname="ZonePickerReturnsToCharacterSelectionOnBack" classname="ForestFoundationPlayTests" runstate="Runnable" seed="146924811" result="Passed" start-time="2026-10-04 01:03:25Z" end-time="2026-10-04 01:03:30Z" duration="4.755550" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1372" name="ZonePickerUnavailableRequestFallsBackAndIsConsumed" fullname="ForestFoundationPlayTests.ZonePickerUnavailableRequestFallsBackAndIsConsumed" methodname="ZonePickerUnavailableRequestFallsBackAndIsConsumed" classname="ForestFoundationPlayTests" runstate="Runnable" seed="73548043" result="Passed" start-time="2026-10-04 01:03:30Z" end-time="2026-10-04 01:03:35Z" duration="5.702347" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1460" name="RoyalAssaultParticipantLifetimeTests" fullname="RoyalAssaultParticipantLifetimeTests" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:36Z" duration="0.039731" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1475" name="AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" fullname="RoyalAssaultParticipantLifetimeTests.AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" methodname="AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1931596401" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.020787" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1476" name="AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" fullname="RoyalAssaultParticipantLifetimeTests.AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" methodname="AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="91272800" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.000735" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1466" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.004919" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1464" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)" methodname="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="593790647" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.002044" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1465" name="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)" fullname="RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)" methodname="DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1127922079" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.000569" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1468" name="DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" methodname="DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1214458675" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:35Z" duration="0.000643" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1463" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-04 01:03:35Z" end-time="2026-10-04 01:03:36Z" duration="0.003043" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1461" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)" methodname="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1380657938" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000699" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1462" name="DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)" fullname="RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)" methodname="DestroyedParticipantAfterEnteringBoardWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="498871674" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000427" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1473" name="LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" fullname="RoyalAssaultParticipantLifetimeTests.LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" methodname="LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1762692388" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.001875" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1472" name="LivingParticipantStillWaitsAndKeepsItsReservation" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.004040" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1469" name="LivingParticipantStillWaitsAndKeepsItsReservation(True,False)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,False)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="181385968" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000849" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1470" name="LivingParticipantStillWaitsAndKeepsItsReservation(False,True)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(False,True)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1115614296" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000406" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1471" name="LivingParticipantStillWaitsAndKeepsItsReservation(True,True)" fullname="RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,True)" methodname="LivingParticipantStillWaitsAndKeepsItsReservation" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="1085677352" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000510" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1467" name="MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" fullname="RoyalAssaultParticipantLifetimeTests.MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" methodname="MissingActorReferenceAfterEnteringStaggerWaitIsSkipped" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="682326463" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000534" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1474" name="OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" fullname="RoyalAssaultParticipantLifetimeTests.OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" methodname="OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand" classname="RoyalAssaultParticipantLifetimeTests" runstate="Runnable" seed="884281687" result="Passed" start-time="2026-10-04 01:03:36Z" end-time="2026-10-04 01:03:36Z" duration="0.000687" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -458,6 +458,17 @@ The script reads the exact editor version from `ProjectSettings/ProjectVersion.t
 
 ## Royal milestone integration
 
+Command reservation uses the existing `EnemyAutoAttack` eligibility checks, with
+one distinction: a move coordinator's pause of autonomous timed basics does not
+block reservation for an explicit special command. Pause, stagger, occupied
+actions, existing reservations, death and the King's Bombardment hold still
+reject it. This lets King Assault and Captain commands execute in live seconds
+profiles without granting extra autonomous attacks.
+Reservations remain held through the final inter-strike spacing, and the move
+coordinator waits for those reservations as well as animation actions. The
+completed move and continuation checkpoint therefore observe the reset special
+counter and advanced cycle together.
+
 - `RoyalArchbishopEnemyAbility` and `KingEnemyAbility` are installed through the existing factory. They own their shared cast cycles, warning handles, retries, cleanup and rank/roster decisions. `EnemySpecialActionAvailability` and explicit idle/action checks gate new casts; due effects use the same stagger/idle conditions without holding board ownership while waiting.
 - `EnemyActor.SurvivedHealthDamage` publishes before/after HP after a nonlethal centralized damage instance, including DoT. The King records crossing latches here, queues ordered threshold batches and applies Enrage; it never polls HP or mutates health. `SetSpecialTurnRequirement` changes the effective requirement without discarding accumulated valid moves. Restoration uses the existing `RestoreHealth` API.
 - `EnemyAutoAttack` owns source-keyed persistent normal-damage/speed modifiers and next-sequence damage modifiers. Accepted attacks capture one product for primary/follow-up damage and consume next-sequence modifiers once. Optional `PerformCommandStrike` scaling is scoped to that command; existing Captain calls retain 1x. Enrage multiplies the existing timer countdown independently of the legacy banner/rally speed channel. Removing one source cannot erase another source's modifier.

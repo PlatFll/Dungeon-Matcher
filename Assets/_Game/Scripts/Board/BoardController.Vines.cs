@@ -227,10 +227,11 @@ public partial class BoardController
         foreach(var entry in barricadeCells) if(IsRoot(entry.Value) && entry.Value.RootSpreading)
             foreach(var d in BarricadeHitDirections) candidates.Add(new VineNodeSnapshot {x=entry.Key.x+d.x,y=entry.Key.y+d.y,
                 ownerId=entry.Value.RootOwnerId,rootId=entry.Value.RootId});
-        int cap=RunSession.Current?.Zone?.Definition?.maximumVineOverlays ?? 24;
+        int cap=RunSession.Current?.Zone?.Definition?.maximumVineOverlays ?? 12;
+        int spreadLimit=RunSession.Current?.Zone?.Definition?.maximumVineSpreadPerPulse ?? 2;
         int added=0;
         // Use only the initial frontier: no recursive growth in the same pulse.
-        while(candidates.Count>0 && vineNodes.Count<cap && added<4)
+        while(candidates.Count>0 && vineNodes.Count<cap && added<spreadLimit)
         {
             int index=GameplayRandom.Range(0,candidates.Count);var node=candidates[index];candidates.RemoveAt(index);
             int before=vineNodes.Count;AddVine(new Vector2Int(node.x,node.y),node.ownerId,node.rootId,false,node.environmental);
