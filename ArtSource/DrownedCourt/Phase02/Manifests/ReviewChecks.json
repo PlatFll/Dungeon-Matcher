@@ -1,0 +1,67 @@
+{
+  "generation_requests": 7,
+  "quoted_units": 39,
+  "balance_before": 1581,
+  "balance_after": 1542,
+  "actual_batch_units": 39,
+  "initial_ceiling": 40,
+  "reserve_remaining": 20,
+  "total_unused": 21,
+  "credits_spent": 0,
+  "character_native_sizes": "4 x 64x64",
+  "character_alpha": "binary; original masks byte-identical",
+  "character_palette_counts": [
+    21,
+    15,
+    14,
+    13
+  ],
+  "environment_raw_size": [
+    256,
+    128
+  ],
+  "environment_proof_native_crop": [
+    9,
+    8,
+    247,
+    118
+  ],
+  "proof_kind": "NOT UNITY, local composition; no gameplay implementation",
+  "proof_screen_pixel_size": [
+    640,
+    1152
+  ],
+  "board_origin": [
+    64,
+    464
+  ],
+  "board_pitch": 64,
+  "board_size": [
+    512,
+    512
+  ],
+  "board_fixed_between_modes": true,
+  "board_cells_fully_opaque": true,
+  "gem_native_size": [
+    64,
+    64
+  ],
+  "gem_resampling": false,
+  "character_proof_scale": 2,
+  "cell_proof_scale": 2,
+  "environment_proof_scale": 2,
+  "player_source_native_crop": [
+    0,
+    0,
+    64,
+    64
+  ],
+  "font_rendering": "Thaleah, raster text only; font file excluded from delivery",
+  "ui_caveats": [
+    "AIR/TIDE placement is a layout proposal, not runtime validated.",
+    "Water wash and oxygen rings are local proof overlays, not production VFX.",
+    "Marine frame is one generated corner assembled by native crops/rotation/repetition.",
+    "General and inset backing patterns are local material-study placeholders, not a complete production asset kit.",
+    "Original environment has pale padding; proof removes only the outer padding by native crop."
+  ]
+}

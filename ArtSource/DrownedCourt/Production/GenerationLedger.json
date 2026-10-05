@@ -1,0 +1,426 @@
+{
+  "phase": "Drowned Court production (separate from Phase 2)",
+  "approved_total": 300,
+  "initial_limit": 220,
+  "reserved": 80,
+  "starting_remaining": 1542,
+  "measured_remaining": 1360,
+  "actual_used": 182,
+  "unused_initial": 38,
+  "reserve_used": 0,
+  "no_credit_purchases": true,
+  "quoted_job_cost_sum": 182,
+  "accounting_note": "Balance delta is authoritative actual usage. Per-job figures are provider quotes where completion metadata does not disclose a final debit.",
+  "jobs": [
+    {
+      "record": "air_bubble.json",
+      "job_id": "d3a76dd2-ba5c-431a-a157-93535e932728",
+      "quoted_cost": 1
+    },
+    {
+      "record": "air_coffer_retry.json",
+      "job_id": "3f9f78ba-a208-49e2-8cf0-919d4733c4ef",
+      "quoted_cost": 1
+    },
+    {
+      "record": "breakwater_captain_ability.json",
+      "job_id": "8e55b9ee-d509-4b44-bdc3-35bd59d5a5c0",
+      "quoted_cost": 2
+    },
+    {
+      "record": "breakwater_captain_attack.json",
+      "job_id": "17ffd473-3006-4c78-b886-bd86ede31843",
+      "quoted_cost": 2
+    },
+    {
+      "record": "breakwater_captain_attack_v2.json",
+      "job_id": "15134576-b9b8-4742-a7c8-33a3a7f26f0f",
+      "quoted_cost": 1
+    },
+    {
+      "record": "breakwater_captain_attack_v3.json",
+      "job_id": "4b9c0dc6-e8c6-45b1-bfa6-fd7271374f5d",
+      "quoted_cost": 2
+    },
+    {
+      "record": "breakwater_captain_death.json",
+      "job_id": "01fe9cff-6be5-4294-b294-aed6d633732d",
+      "quoted_cost": 1
+    },
+    {
+      "record": "breakwater_captain_idle.json",
+      "job_id": "ef8a72be-a30c-4735-b4e6-23b5f8d9a8ad",
+      "quoted_cost": 1
+    },
+    {
+      "record": "breakwater_captain_still.json",
+      "job_id": "7350030c-8df6-41cb-a7b9-9931b39fd7ab",
+      "quoted_cost": 5
+    },
+    {
+      "record": "conch_marshal_ability.json",
+      "job_id": "a60f42f9-eb1a-4cc8-93f3-0d7b9b58c0a0",
+      "quoted_cost": 2
+    },
+    {
+      "record": "conch_marshal_ability_v2.json",
+      "job_id": "0331e362-da00-4edc-afa7-2a78ce648243",
+      "quoted_cost": 1
+    },
+    {
+      "record": "conch_marshal_attack.json",
+      "job_id": "894f4b25-f93e-4671-b9ba-fc2f4e69b72b",
+      "quoted_cost": 1
+    },
+    {
+      "record": "conch_marshal_death.json",
+      "job_id": "2cda0a65-0207-42d1-96cb-374158217ba8",
+      "quoted_cost": 1
+    },
+    {
+      "record": "conch_marshal_idle.json",
+      "job_id": "4ccc753b-290e-4f6f-8e95-f9ab6e660c63",
+      "quoted_cost": 1
+    },
+    {
+      "record": "conch_marshal_still.json",
+      "job_id": "82a8c188-b37e-4613-b71b-83e42c2d819d",
+      "quoted_cost": 5
+    },
+    {
+      "record": "coral_column.json",
+      "job_id": "09d38fac-ed5b-40e0-84e8-8151943ec7d4",
+      "quoted_cost": 5
+    },
+    {
+      "record": "coral_foreground_retry.json",
+      "job_id": "c97f8fac-72f9-4937-8116-8c0e0dd48f7c",
+      "quoted_cost": 5
+    },
+    {
+      "record": "court_background.json",
+      "job_id": "3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf",
+      "quoted_cost": 9
+    },
+    {
+      "record": "court_floor.json",
+      "job_id": "fafa5c03-0c53-468e-973a-86f0939e3076",
+      "quoted_cost": 6
+    },
+    {
+      "record": "general_stone.json",
+      "job_id": "5a70d3be-509b-483f-8aba-3582c558a5ca",
+      "quoted_cost": 5
+    },
+    {
+      "record": "hammerhead_bruiser_attack.json",
+      "job_id": "5fc4151f-3e42-4523-aca7-f4dc15aa77c3",
+      "quoted_cost": 1
+    },
+    {
+      "record": "hammerhead_bruiser_death.json",
+      "job_id": "424ed66a-1949-4981-b3da-d25bec69c2e1",
+      "quoted_cost": 1
+    },
+    {
+      "record": "hammerhead_bruiser_idle.json",
+      "job_id": "c8c58fb2-4f08-4d0f-9d7a-d6e55d0d276b",
+      "quoted_cost": 1
+    },
+    {
+      "record": "inset_panel.json",
+      "job_id": "c2ceb10a-16dc-4176-bfba-1351618f5ec1",
+      "quoted_cost": 5
+    },
+    {
+      "record": "lantern_warden_ability.json",
+      "job_id": "22f7a535-cb84-434a-a581-84045dc19414",
+      "quoted_cost": 3
+    },
+    {
+      "record": "lantern_warden_attack.json",
+      "job_id": "351bf8f1-4dda-4e1a-a210-2659ffe24942",
+      "quoted_cost": 3
+    },
+    {
+      "record": "lantern_warden_attack_v2.json",
+      "job_id": "1fd408a1-95fb-4c70-9444-1f34f9d97d60",
+      "quoted_cost": 2
+    },
+    {
+      "record": "lantern_warden_death.json",
+      "job_id": "8762dd0b-278d-4473-abf0-433c3b1e1875",
+      "quoted_cost": 2
+    },
+    {
+      "record": "lantern_warden_idle.json",
+      "job_id": "8b67fd11-06b3-413e-b8a8-59fb5c4e8033",
+      "quoted_cost": 1
+    },
+    {
+      "record": "lantern_warden_still.json",
+      "job_id": "7f20a720-49ba-486f-b410-1a96a809be94",
+      "quoted_cost": 5
+    },
+    {
+      "record": "marine_button_retry.json",
+      "job_id": "4fc61356-926c-4202-986a-1141982b5ce6",
+      "quoted_cost": 5
+    },
+    {
+      "record": "moray_siphoner_ability.json",
+      "job_id": "66b472b6-44bc-4a4d-ab1c-21902d450fed",
+      "quoted_cost": 2
+    },
+    {
+      "record": "moray_siphoner_attack.json",
+      "job_id": "36aca88e-818d-4fd5-b075-ccd430e5fb81",
+      "quoted_cost": 2
+    },
+    {
+      "record": "moray_siphoner_death.json",
+      "job_id": "f93134fa-c4e7-4cf8-ae5f-9b188cf78184",
+      "quoted_cost": 1
+    },
+    {
+      "record": "moray_siphoner_idle.json",
+      "job_id": "b2ea3a17-cee1-45b3-b76f-ddac1866ca9f",
+      "quoted_cost": 1
+    },
+    {
+      "record": "moray_siphoner_still.json",
+      "job_id": "1f72aead-3cfc-4060-9e6d-2f0c4c4b7bb5",
+      "quoted_cost": 5
+    },
+    {
+      "record": "needlefin_skirmisher_attack.json",
+      "job_id": "74d4660f-aca3-4586-9a3c-7e1a0673a41d",
+      "quoted_cost": 1
+    },
+    {
+      "record": "needlefin_skirmisher_attack_v2.json",
+      "job_id": "18bbcf6b-f361-49de-a5ab-90717dbbe5d7",
+      "quoted_cost": 1
+    },
+    {
+      "record": "needlefin_skirmisher_death.json",
+      "job_id": "97f6c84c-7bcd-43c5-bacb-0ae79f923ac3",
+      "quoted_cost": 1
+    },
+    {
+      "record": "needlefin_skirmisher_idle.json",
+      "job_id": "bce8dc73-c0ca-4af8-8db0-f372168dae27",
+      "quoted_cost": 1
+    },
+    {
+      "record": "needlefin_skirmisher_still.json",
+      "job_id": "90991988-7f9e-4a94-b0bd-16d69e490a74",
+      "quoted_cost": 5
+    },
+    {
+      "record": "pearl_cantor_attack.json",
+      "job_id": "d7d8ca4f-7379-4175-bd75-493df4d6aa1a",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pearl_cantor_channel.json",
+      "job_id": "f0cecb05-499e-413a-948e-324764f61475",
+      "quoted_cost": 2
+    },
+    {
+      "record": "pearl_cantor_death.json",
+      "job_id": "004c0368-ecd6-4c92-814e-10b30b24b5ad",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pearl_cantor_idle.json",
+      "job_id": "84902951-1a57-43af-86f9-892c9a0ace9d",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pearl_thief_ability.json",
+      "job_id": "bee491fb-18bc-4376-ba82-0c35a1faed3b",
+      "quoted_cost": 2
+    },
+    {
+      "record": "pearl_thief_attack.json",
+      "job_id": "ef88169d-8e98-4f98-949a-9fc8ee604889",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pearl_thief_death.json",
+      "job_id": "7128f7c1-831f-4770-b50d-412e5aefb8c1",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pearl_thief_idle.json",
+      "job_id": "4d88a3e4-aea0-49b5-beb8-137939b43965",
+      "quoted_cost": 1
+    },
+    {
+      "record": "pressure_seal_retry.json",
+      "job_id": "ef3d86e3-4d9d-4e97-acd4-8a21290b36fa",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_ability.json",
+      "job_id": "3cf5597f-c900-4783-ac06-609b6e28fb22",
+      "quoted_cost": 2
+    },
+    {
+      "record": "puffer_sentinel_ability_v2.json",
+      "job_id": "c0a7c562-8ece-45d9-9d06-ef3367ba94cd",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_attack.json",
+      "job_id": "de41f349-9156-4e46-a44a-fd36e6096263",
+      "quoted_cost": 2
+    },
+    {
+      "record": "puffer_sentinel_attack_v2.json",
+      "job_id": "34a25cf0-3cba-4656-bd77-0d9d4c69ebcd",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_death.json",
+      "job_id": "b7e65638-469d-4dd6-8191-58340d77ebf9",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_idle.json",
+      "job_id": "e43c205d-4e87-4724-8540-24f82219144e",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_inflated_attack.json",
+      "job_id": "6cf4a89f-df3e-4ddd-a033-abb312ba1c21",
+      "quoted_cost": 1
+    },
+    {
+      "record": "puffer_sentinel_still.json",
+      "job_id": "360f7dff-4795-4e5d-840a-f55f77313709",
+      "quoted_cost": 5
+    },
+    {
+      "record": "queen_nacre_ability.json",
+      "job_id": "f7ecc1bc-327a-45e7-9bdf-417fc0a4aff2",
+      "quoted_cost": 3
+    },
+    {
+      "record": "queen_nacre_attack.json",
+      "job_id": "b3dcbc5e-363f-47fa-b648-f39533d7edcb",
+      "quoted_cost": 3
+    },
+    {
+      "record": "queen_nacre_death.json",
+      "job_id": "e360c82b-4b3b-4215-aa25-f22e971a6c33",
+      "quoted_cost": 2
+    },
+    {
+      "record": "queen_nacre_depths_release.json",
+      "job_id": "1571301e-a3cd-4d24-bbb6-45a44fb16beb",
+      "quoted_cost": 2
+    },
+    {
+      "record": "queen_nacre_idle.json",
+      "job_id": "81fd3809-7b94-4ff1-847d-b07b416d2e64",
+      "quoted_cost": 1
+    },
+    {
+      "record": "queen_nacre_still.json",
+      "job_id": "9dc8a93f-5948-4342-a9c5-a0d606a1dfaa",
+      "quoted_cost": 5
+    },
+    {
+      "record": "reef_netweaver_ability.json",
+      "job_id": "a874b239-845e-4129-b9e8-b74a49842424",
+      "quoted_cost": 2
+    },
+    {
+      "record": "reef_netweaver_attack.json",
+      "job_id": "e1092b74-4d82-418a-942b-aba80e3c9757",
+      "quoted_cost": 2
+    },
+    {
+      "record": "reef_netweaver_death.json",
+      "job_id": "125a0430-fc7f-44ff-be53-47ac53094ed3",
+      "quoted_cost": 1
+    },
+    {
+      "record": "reef_netweaver_idle.json",
+      "job_id": "129af2d2-9949-48b3-b074-206ddcd6b99f",
+      "quoted_cost": 1
+    },
+    {
+      "record": "reef_netweaver_still.json",
+      "job_id": "77bb58f2-7449-493f-9943-1f36b3a55957",
+      "quoted_cost": 5
+    },
+    {
+      "record": "reef_spearman_attack.json",
+      "job_id": "7d79a0e4-896c-4364-a6ce-2b8e2030a1fa",
+      "quoted_cost": 2
+    },
+    {
+      "record": "reef_spearman_attack_v2.json",
+      "job_id": "8585bd10-d40f-449d-8d6e-cfec1ef214d1",
+      "quoted_cost": 3
+    },
+    {
+      "record": "reef_spearman_death.json",
+      "job_id": "f6954fec-e90d-48cf-a885-309d67f0190b",
+      "quoted_cost": 1
+    },
+    {
+      "record": "reef_spearman_idle.json",
+      "job_id": "483b3b06-4bef-4de1-af82-a4c05b96a9bd",
+      "quoted_cost": 1
+    },
+    {
+      "record": "shellback_porter_attack.json",
+      "job_id": "39c7836d-bb95-4743-85ca-c3a5c5ea6783",
+      "quoted_cost": 1
+    },
+    {
+      "record": "shellback_porter_death.json",
+      "job_id": "87cb6a43-9025-457c-8129-ae29de00673b",
+      "quoted_cost": 1
+    },
+    {
+      "record": "shellback_porter_idle.json",
+      "job_id": "2ce2126e-88ca-411a-9cfa-c4b8b452b1aa",
+      "quoted_cost": 1
+    },
+    {
+      "record": "shellback_porter_still.json",
+      "job_id": "70c60cf5-91da-4953-ae51-f7393048cbac",
+      "quoted_cost": 5
+    },
+    {
+      "record": "skittercrab_attack.json",
+      "job_id": "e421e972-8a38-4d20-b211-2f7761713722",
+      "quoted_cost": 1
+    },
+    {
+      "record": "skittercrab_death.json",
+      "job_id": "b2bb51bb-77a1-4346-b386-0f9482526659",
+      "quoted_cost": 1
+    },
+    {
+      "record": "skittercrab_idle.json",
+      "job_id": "8a419628-a908-44cb-93ce-6227bdf74579",
+      "quoted_cost": 1
+    },
+    {
+      "record": "skittercrab_still.json",
+      "job_id": "cd2456a6-31ba-4467-a01b-288436186822",
+      "quoted_cost": 5
+    },
+    {
+      "record": "thorny_snare.json",
+      "job_id": "e985ca11-bc52-4306-968f-d56c0df91c32",
+      "quoted_cost": 1
+    }
+  ]
+}

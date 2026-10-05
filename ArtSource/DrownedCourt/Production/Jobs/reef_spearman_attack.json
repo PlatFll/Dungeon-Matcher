@@ -1,0 +1,26 @@
+{
+  "id": "reef_spearman_attack",
+  "quoted_units": 2,
+  "args": {
+    "description": "A planted two-handed trident thrust to the left. Pull both hands and spear slightly back, push the shaft forward firmly with both hands together, extend left without losing grip, then smoothly recover exactly to the starting stance. One contact. Feet remain on the baseline. No new equipment or particles.",
+    "first_frame_base64": "Approved/DC_A01_Reef_Spearman.png",
+    "last_frame_base64": "Approved/DC_A01_Reef_Spearman.png",
+    "frame_count": 16,
+    "direction": "west",
+    "view": "side",
+    "subject_description": "a sea-green humanoid reef spearman holding a trident with two hands",
+    "initial_pose": "standing grounded facing left holding the pictured equipment",
+    "no_background": true,
+    "enhance_prompt": false,
+    "seed": 10052050
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 7d79a0e4-896c-4364-a6ce-2b8e2030a1fa\njob_id: 7d79a0e4-896c-4364-a6ce-2b8e2030a1fa\ndescription: A planted two-handed trident thrust to the left. Pull both hands and spear slightly back, push the shaft forward firmly with both hands together, extend left without losing grip, then smoothly recover exactly to the starting stance. One contact. Feet remain on the baseline. No new equipment or particles.\nframes: 16\nsize: 64x64px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10052050\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7d79a0e4-896c-4364-a6ce-2b8e2030a1fa\")\nasset_id: 7f2caeb2-d78f-5556-baa6-a8236a24fb15\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

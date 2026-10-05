@@ -33,9 +33,13 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     public BattleEnvironmentRoot ActiveEnvironment => activeEnvironment;
 
-    public void ApplyGameplayTheme(GameplayThemeDefinition theme)
+    public void ApplyGameplayTheme(GameplayThemeDefinition theme, int variant = 0)
     {
         if (theme == null || theme.battleEnvironment == null) return;
+        var selected = theme.battleEnvironmentVariants != null && variant >= 0 &&
+            variant < theme.battleEnvironmentVariants.Length && theme.battleEnvironmentVariants[variant] != null
+            ? theme.battleEnvironmentVariants[variant] : theme.battleEnvironment;
+        if (activeEnvironment != null && environmentPrefab == selected) return;
         if (activeEnvironment != null)
         {
             var previous=activeEnvironment.gameObject;
@@ -44,7 +48,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
             Destroy(previous);
             activeEnvironment = null;
         }
-        environmentPrefab = theme.battleEnvironment;
+        environmentPrefab = selected;
         EnsureEnvironmentInstance();
         CacheTilemapHierarchy();
         MarkTileContentDirty();

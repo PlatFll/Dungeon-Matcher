@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 9b4dfcace091ddc4b9de480013e34093
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6502528008299131524
+    second: puffer_sentinel_AutoAttack_0
+  - first:
+      213: 4883163055749669196
+    second: puffer_sentinel_AutoAttack_1
+  - first:
+      213: 562388333544863675
+    second: puffer_sentinel_AutoAttack_2
+  - first:
+      213: -3623353715719375013
+    second: puffer_sentinel_AutoAttack_3
+  - first:
+      213: 7788359497173443075
+    second: puffer_sentinel_AutoAttack_4
+  - first:
+      213: 4845303046922301511
+    second: puffer_sentinel_AutoAttack_5
+  - first:
+      213: 455040043438679702
+    second: puffer_sentinel_AutoAttack_6
+  - first:
+      213: -2436069516933769435
+    second: puffer_sentinel_AutoAttack_7
+  - first:
+      213: -1813257511042652
+    second: puffer_sentinel_AutoAttack_8
+  - first:
+      213: 7118968045291408101
+    second: puffer_sentinel_AutoAttack_9
+  - first:
+      213: 3491401832562755890
+    second: puffer_sentinel_AutoAttack_10
+  - first:
+      213: 5678591983943903745
+    second: puffer_sentinel_AutoAttack_11
+  - first:
+      213: 2202815798123324841
+    second: puffer_sentinel_AutoAttack_12
+  - first:
+      213: 7467740641902692343
+    second: puffer_sentinel_AutoAttack_13
+  - first:
+      213: 2899878460542356835
+    second: puffer_sentinel_AutoAttack_00
+  - first:
+      213: -920568509165186072
+    second: puffer_sentinel_AutoAttack_01
+  - first:
+      213: 4503584803472070447
+    second: puffer_sentinel_AutoAttack_02
+  - first:
+      213: 4252535371576225403
+    second: puffer_sentinel_AutoAttack_03
+  - first:
+      213: -12551317719064538
+    second: puffer_sentinel_AutoAttack_04
+  - first:
+      213: 7892109019815413189
+    second: puffer_sentinel_AutoAttack_05
+  - first:
+      213: -5585402948039683922
+    second: puffer_sentinel_AutoAttack_06
+  - first:
+      213: 900206535649639095
+    second: puffer_sentinel_AutoAttack_07
+  - first:
+      213: -7743417318435375550
+    second: puffer_sentinel_AutoAttack_08
+  - first:
+      213: -4218390209674574066
+    second: puffer_sentinel_AutoAttack_09
+  - first:
+      213: 9173888004340776808
+    second: puffer_sentinel_AutoAttack_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d0f6c78107e3820800000000000000
+      internalID: 2899878460542356835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e35ccb71db7933f0800000000000000
+      internalID: -920568509165186072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27dcca8482ff7e30800000000000000
+      internalID: 4503584803472070447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ea599b36a040b30800000000000000
+      internalID: 4252535371576225403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62064ed94a863dff0800000000000000
+      internalID: -12551317719064538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c501ced657668d60800000000000000
+      internalID: 7892109019815413189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0dcaa8c99ac72b0800000000000000
+      internalID: -5585402948039683922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bab1ed131d2e7c00800000000000000
+      internalID: 900206535649639095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2463d0ba9fad98490800000000000000
+      internalID: -7743417318435375550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e078c5c44744575c0800000000000000
+      internalID: -4218390209674574066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2390d0ee773f37030800000000000000
+      internalID: 3491401832562755890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a6b5ba2596ece40800000000000000
+      internalID: 5678591983943903745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a562c02c49f19e10800000000000000
+      internalID: 2202815798123324841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f78b5b4c8eb2a760800000000000000
+      internalID: 7467740641902692343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_AutoAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ff2fbd882305f70800000000000000
+      internalID: 9173888004340776808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      puffer_sentinel_AutoAttack_0: -6502528008299131524
+      puffer_sentinel_AutoAttack_00: 2899878460542356835
+      puffer_sentinel_AutoAttack_01: -920568509165186072
+      puffer_sentinel_AutoAttack_02: 4503584803472070447
+      puffer_sentinel_AutoAttack_03: 4252535371576225403
+      puffer_sentinel_AutoAttack_04: -12551317719064538
+      puffer_sentinel_AutoAttack_05: 7892109019815413189
+      puffer_sentinel_AutoAttack_06: -5585402948039683922
+      puffer_sentinel_AutoAttack_07: 900206535649639095
+      puffer_sentinel_AutoAttack_08: -7743417318435375550
+      puffer_sentinel_AutoAttack_09: -4218390209674574066
+      puffer_sentinel_AutoAttack_1: 4883163055749669196
+      puffer_sentinel_AutoAttack_10: 3491401832562755890
+      puffer_sentinel_AutoAttack_11: 5678591983943903745
+      puffer_sentinel_AutoAttack_12: 2202815798123324841
+      puffer_sentinel_AutoAttack_13: 7467740641902692343
+      puffer_sentinel_AutoAttack_14: 9173888004340776808
+      puffer_sentinel_AutoAttack_2: 562388333544863675
+      puffer_sentinel_AutoAttack_3: -3623353715719375013
+      puffer_sentinel_AutoAttack_4: 7788359497173443075
+      puffer_sentinel_AutoAttack_5: 4845303046922301511
+      puffer_sentinel_AutoAttack_6: 455040043438679702
+      puffer_sentinel_AutoAttack_7: -2436069516933769435
+      puffer_sentinel_AutoAttack_8: -1813257511042652
+      puffer_sentinel_AutoAttack_9: 7118968045291408101
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

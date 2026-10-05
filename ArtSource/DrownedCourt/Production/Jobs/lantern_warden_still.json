@@ -1,0 +1,46 @@
+{
+  "id": "lantern_warden",
+  "quoted_units": 5,
+  "args": {
+    "description": "One native 96x96 full-body LEFT-facing pixel-art enemy for Dungeon Matcher, transparent background. Anglerfish-folk custodian, stocky grounded fins, heavy pale jaw and solid dark eyes under broad brow, curved forward lantern stalk with tiny warm pearl lamp. Barnacle mantle and large hinged shell reliquary at waist. Deep slate-violet skin and dull shell. Body about 66 pixels tall, extra room for lure. No glow halo. Consistent one-pixel #0A0D11 contour, crisp square pixels, broad connected shading clusters, top-left light, 2-3 shades per material, restrained interior detail. Eyes fully one dark color, no white sclera or highlights. Common source pixel scale, feet near canvas bottom. One character, one stance, no text, shadow disc, particles or scenery.",
+    "width": 96,
+    "height": 96,
+    "no_background": true,
+    "seed": 10052033,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Rendering, outline and shading discipline only. New species and palette as described. Same source pixel density."
+    },
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"7f20a720-49ba-486f-b410-1a96a809be94\",\n  \"image_id\": \"b652b982-18cd-560a-bc48-bb782d3142b2\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"b652b982-18cd-560a-bc48-bb782d3142b2\",\n  \"job_id\": \"7f20a720-49ba-486f-b410-1a96a809be94\",\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/7f20a720-49ba-486f-b410-1a96a809be94/download\"\n}\nPoll get_image(job_id=\"7f20a720-49ba-486f-b410-1a96a809be94\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "7f20a720-49ba-486f-b410-1a96a809be94",
+      "image_id": "b652b982-18cd-560a-bc48-bb782d3142b2",
+      "status": "processing",
+      "source_image_id": "b652b982-18cd-560a-bc48-bb782d3142b2",
+      "job_id": "7f20a720-49ba-486f-b410-1a96a809be94",
+      "image_size": {
+        "width": 96,
+        "height": 96
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/7f20a720-49ba-486f-b410-1a96a809be94/download"
+    },
+    "isError": false
+  }
+}

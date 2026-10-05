@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 0d29c5ba905e6254080c651faf0669b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2047686032124842445
+    second: moray_siphoner_Interrupt_0
+  - first:
+      213: 7038409149231956884
+    second: moray_siphoner_Interrupt_1
+  - first:
+      213: 2362036064780626504
+    second: moray_siphoner_Interrupt_2
+  - first:
+      213: 7680117007030248866
+    second: moray_siphoner_Interrupt_3
+  - first:
+      213: 4287344270300478029
+    second: moray_siphoner_Interrupt_4
+  - first:
+      213: 8290852052115983808
+    second: moray_siphoner_Interrupt_5
+  - first:
+      213: 8832207362091662232
+    second: moray_siphoner_Interrupt_6
+  - first:
+      213: -1369541191591851843
+    second: moray_siphoner_Interrupt_7
+  - first:
+      213: 2281030321542546164
+    second: moray_siphoner_Interrupt_8
+  - first:
+      213: -3252116190697135585
+    second: moray_siphoner_Interrupt_00
+  - first:
+      213: 8944268433962540349
+    second: moray_siphoner_Interrupt_01
+  - first:
+      213: 7433179503126488082
+    second: moray_siphoner_Interrupt_02
+  - first:
+      213: 4141139972301418842
+    second: moray_siphoner_Interrupt_03
+  - first:
+      213: 2855268820717808455
+    second: moray_siphoner_Interrupt_04
+  - first:
+      213: 9002764440409163568
+    second: moray_siphoner_Interrupt_05
+  - first:
+      213: -3187668197970485102
+    second: moray_siphoner_Interrupt_06
+  - first:
+      213: -701939570772347105
+    second: moray_siphoner_Interrupt_07
+  - first:
+      213: -5320895771197810942
+    second: moray_siphoner_Interrupt_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1263351e892ed2d0800000000000000
+      internalID: -3252116190697135585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d931e70cc602c70800000000000000
+      internalID: 8944268433962540349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214a19b1065f72760800000000000000
+      internalID: 7433179503126488082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5172363dd8487930800000000000000
+      internalID: 4141139972301418842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b22255dd3ff9720800000000000000
+      internalID: 2855268820717808455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0374b135f8e30fc70800000000000000
+      internalID: 9002764440409163568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290e826b9a023c3d0800000000000000
+      internalID: -3187668197970485102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17f25eeda53246f0800000000000000
+      internalID: -701939570772347105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Interrupt_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20750e6cc716826b0800000000000000
+      internalID: -5320895771197810942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      moray_siphoner_Interrupt_0: 2047686032124842445
+      moray_siphoner_Interrupt_00: -3252116190697135585
+      moray_siphoner_Interrupt_01: 8944268433962540349
+      moray_siphoner_Interrupt_02: 7433179503126488082
+      moray_siphoner_Interrupt_03: 4141139972301418842
+      moray_siphoner_Interrupt_04: 2855268820717808455
+      moray_siphoner_Interrupt_05: 9002764440409163568
+      moray_siphoner_Interrupt_06: -3187668197970485102
+      moray_siphoner_Interrupt_07: -701939570772347105
+      moray_siphoner_Interrupt_08: -5320895771197810942
+      moray_siphoner_Interrupt_1: 7038409149231956884
+      moray_siphoner_Interrupt_2: 2362036064780626504
+      moray_siphoner_Interrupt_3: 7680117007030248866
+      moray_siphoner_Interrupt_4: 4287344270300478029
+      moray_siphoner_Interrupt_5: 8290852052115983808
+      moray_siphoner_Interrupt_6: 8832207362091662232
+      moray_siphoner_Interrupt_7: -1369541191591851843
+      moray_siphoner_Interrupt_8: 2281030321542546164
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

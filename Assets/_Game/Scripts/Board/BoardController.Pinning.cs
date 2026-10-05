@@ -21,6 +21,7 @@ public partial class BoardController
 
     private bool IsGemFixedByPin(Gem gem) =>
         IsGemPinned(gem) &&
+        !IsAquaticSnared(gem) &&
         !movablePinnedGems.Contains(gem);
 
     public bool IsGemFrozen(Gem gem) =>
@@ -89,7 +90,7 @@ public partial class BoardController
                 yield return request.OwnerActor.WaitForSpecialMotionBeat(request.SpecialMotionId, placement);
                 if (MotionCancelled(request) || request.IsCancelled?.Invoke() == true) yield break;
             }
-            if (pinnedGemOwners.Count >= BalanceV1.Current.maximumGlobalChains) yield break;
+            if (RestrictionCount >= BalanceV1.Current.maximumGlobalChains) yield break;
             List<Gem> candidates = BuildSafePinnableGemList();
             candidates.RemoveAll(gem => !IsOrdinaryGemOnBoard(gem));
             if (candidates.Count == 0)
@@ -165,7 +166,7 @@ public partial class BoardController
     {
         return gem != null &&
                (pinnedGemOwners.ContainsKey(gem) ||
-                pendingPinTargetOwners.ContainsKey(gem));
+                pendingPinTargetOwners.ContainsKey(gem) || IsAquaticSnared(gem));
     }
 
     public void CancelPointerInteraction(Gem gem)

@@ -7,6 +7,15 @@ using UnityEngine.Serialization;
 )]
 public sealed class EnemyDefinition : ScriptableObject
 {
+    [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
+    public bool canFightFlooded;
+    public EnemyDefinition aquaticSummon;
+    [Min(0)] public int aquaticRecoveryMoves = 2;
+    [Min(1)] public int aquaticChannelMoves = 2;
+    [Min(0)] public int aquaticAbilityDamage = 20;
+    [Min(0)] public int aquaticShield = 25;
+    [Min(1)] public float aquaticRallyDamage = 1.3f;
+    [Min(0)] public float aquaticRallySeconds = 5f;
     [Header("Identity")]
 
     [SerializeField]

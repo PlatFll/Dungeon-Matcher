@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 7fac4ecb508807340a58a0e18ed06c0e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5816589105062132400
+    second: conch_marshal_Interrupt_0
+  - first:
+      213: 7204607920413505618
+    second: conch_marshal_Interrupt_1
+  - first:
+      213: -3870375950942462660
+    second: conch_marshal_Interrupt_2
+  - first:
+      213: -3309009134075806788
+    second: conch_marshal_Interrupt_3
+  - first:
+      213: 6377959735254020305
+    second: conch_marshal_Interrupt_4
+  - first:
+      213: 7837673184849873038
+    second: conch_marshal_Interrupt_5
+  - first:
+      213: 4907082227235355337
+    second: conch_marshal_Interrupt_6
+  - first:
+      213: 3836198086496433680
+    second: conch_marshal_Interrupt_7
+  - first:
+      213: -5171496194897955293
+    second: conch_marshal_Interrupt_8
+  - first:
+      213: 5079127206047343025
+    second: conch_marshal_Interrupt_00
+  - first:
+      213: -8549427606986379643
+    second: conch_marshal_Interrupt_01
+  - first:
+      213: 5731625085813021308
+    second: conch_marshal_Interrupt_02
+  - first:
+      213: -479398832578305939
+    second: conch_marshal_Interrupt_03
+  - first:
+      213: 2966183595657426429
+    second: conch_marshal_Interrupt_04
+  - first:
+      213: 8098071000696862456
+    second: conch_marshal_Interrupt_05
+  - first:
+      213: 581013096644760592
+    second: conch_marshal_Interrupt_06
+  - first:
+      213: -1613956998094027298
+    second: conch_marshal_Interrupt_07
+  - first:
+      213: 5219528189583773303
+    second: conch_marshal_Interrupt_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b16975984fac7640800000000000000
+      internalID: 5079127206047343025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ea8a463e45a5980800000000000000
+      internalID: -8549427606986379643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a5a99e5a2da8f40800000000000000
+      internalID: 5731625085813021308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60ee6e3d45d859f0800000000000000
+      internalID: -479398832578305939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df570c5c3400a2920800000000000000
+      internalID: 2966183595657426429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6bd627ba0226070800000000000000
+      internalID: 8098071000696862456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0145c53455c201800800000000000000
+      internalID: 581013096644760592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed589dd49a21a99e0800000000000000
+      internalID: -1613956998094027298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Interrupt_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e4743fb3d7f6840800000000000000
+      internalID: 5219528189583773303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      conch_marshal_Interrupt_0: -5816589105062132400
+      conch_marshal_Interrupt_00: 5079127206047343025
+      conch_marshal_Interrupt_01: -8549427606986379643
+      conch_marshal_Interrupt_02: 5731625085813021308
+      conch_marshal_Interrupt_03: -479398832578305939
+      conch_marshal_Interrupt_04: 2966183595657426429
+      conch_marshal_Interrupt_05: 8098071000696862456
+      conch_marshal_Interrupt_06: 581013096644760592
+      conch_marshal_Interrupt_07: -1613956998094027298
+      conch_marshal_Interrupt_08: 5219528189583773303
+      conch_marshal_Interrupt_1: 7204607920413505618
+      conch_marshal_Interrupt_2: -3870375950942462660
+      conch_marshal_Interrupt_3: -3309009134075806788
+      conch_marshal_Interrupt_4: 6377959735254020305
+      conch_marshal_Interrupt_5: 7837673184849873038
+      conch_marshal_Interrupt_6: 4907082227235355337
+      conch_marshal_Interrupt_7: 3836198086496433680
+      conch_marshal_Interrupt_8: -5171496194897955293
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -30,6 +30,8 @@ public partial class BoardController
 
     public IEnumerator AdvanceZoneEnvironment(int move)
     {
+        if (RunSession.Current?.Zone?.Definition?.periodicallyFloods == true)
+            yield return AdvanceAquaticEnvironment(move);
         if (RunSession.Current?.Zone?.Definition?.growsVines == true)
             yield return AdvanceVineNetworks(move);
         QueueZoneEnvironment(move);
@@ -97,6 +99,7 @@ public partial class BoardController
     {
         if (destination == null) throw new ArgumentNullException(nameof(destination));
         saved.vines.Clear();
+        saved.aquatic = destination.periodicallyFloods ? new AquaticEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.warnings.RemoveAll(w => w.environmental);
         saved.nextVineGrowthMove = saved.moves + Mathf.Max(1, destination.vineCadenceMoves);
         saved.dungeonRulesVersion = 1;
@@ -106,7 +109,7 @@ public partial class BoardController
         {
             bool root = cell.barricade && (cell.barricadeStyle == EnemyBarricadeStyle.Root ||
                 cell.barricadeStyle == EnemyBarricadeStyle.Heartroot);
-            if (cell.crumbleRestoreMove <= 0 && !root) continue;
+            if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer) continue;
             cell.mined = cell.barricade = false;
             cell.crumbleRestoreMove = 0;
             openings.Add(cell);

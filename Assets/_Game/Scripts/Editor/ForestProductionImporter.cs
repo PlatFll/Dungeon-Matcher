@@ -41,7 +41,7 @@ public static class ForestProductionImporter
     private static void ImportAnimations()
         => ImportMotionSet(Names,Source+"Selected/",Art,Animation);
 
-    public static void ImportMotionSet(string[] names,string source,string art,string animation)
+    public static void ImportMotionSet(string[] names,string source,string art,string animation,string dataRoot=Data)
     {
         Directory.CreateDirectory(art);Directory.CreateDirectory(animation);AssetDatabase.Refresh();
         var manifest=JsonUtility.FromJson<Manifest>(File.ReadAllText(source+"animation-manifest.json"));
@@ -76,7 +76,7 @@ public static class ForestProductionImporter
                 AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.PPtrCurve("",typeof(Image),"m_Sprite"),keys);
                 var settings=AnimationUtility.GetAnimationClipSettings(clip);settings.loopTime=spec.loop;settings.startTime=0;settings.stopTime=elapsed/1000f;
                 AnimationUtility.SetAnimationClipSettings(clip,settings);
-                AnimationUtility.SetAnimationEvents(clip,spec.state=="AutoAttack"?new[]{
+                AnimationUtility.SetAnimationEvents(clip,(spec.state=="AutoAttack" || spec.state=="InflatedAttack")?new[]{
                     new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AutoAttackImpact"},
                     new AnimationEvent{time=(elapsed-10)/1000f,functionName="AutoAttackComplete"}}:spec.special?new[]{
                     new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AbilityImpact"},
@@ -95,12 +95,12 @@ public static class ForestProductionImporter
             // retain ChannelStart's final pose until their owner selects ChannelHold.
             foreach(var completed in machine.states.Select(s=>s.state).Where(s=>
                 manifest.clips.Any(c=>c.name==name && c.state==s.name && c.special &&
-                    (c.state=="Ability" || c.state=="Release"))))
+                    (c.state=="Ability" || c.state.EndsWith("Release",StringComparison.Ordinal)))))
             {
                 var recovery=completed.AddTransition(idle);
                 recovery.hasExitTime=true;recovery.exitTime=1;recovery.duration=0;
             }
-            var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(Data+name+".asset");
+            var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(dataRoot+name+".asset");
             var so=new SerializedObject(definition);
             so.FindProperty("animationControllerOverride").objectReferenceValue=controller;
             so.FindProperty("timeAutoAttackFromAnimation").boolValue=true;

@@ -121,42 +121,12 @@ public partial class BoardController
     {
         try
         {
-            List<Vector3> targetPositions =
-                new List<Vector3>();
-
-            foreach (Gem target in targets)
-            {
-                if (target != null)
-                {
-                    targetPositions.Add(
-                        target.transform.position
-                    );
-                }
-            }
-
-            CrackedGemTargetsSelected?.Invoke(
-                targetPositions,
-                bubbleTravelDuration,
-                bubbleHoverDuration
-            );
-
-            float bubbleSequenceDuration =
-                bubbleTravelDuration +
-                bubbleHoverDuration;
-
-            if (bubbleSequenceDuration > 0f)
-            {
-                yield return new WaitForSeconds(
-                    bubbleSequenceDuration
-                );
-            }
-
             List<Gem> validTargets =
                 new List<Gem>();
 
             foreach (Gem target in targets)
             {
-                if (target == null ||
+                if (target == null || validTargets.Contains(target) ||
                     !IsGemStillOnBoard(target))
                 {
                     continue;
@@ -209,11 +179,12 @@ public partial class BoardController
                 fixedDamagePerCrackedGem
             );
 
-            yield return ClearMatchesWithBurstTargets(
+            yield return ClearMatchesWithOrderedBursts(
                 expandedClearSet,
                 null,
                 activateSpecials: true,
-                genericBurstTargets: expandedClearSet
+                genericBurstTargets: expandedClearSet,
+                primaryBurstOrder: validTargets
             );
 
             yield return
@@ -906,6 +877,7 @@ public partial class BoardController
         HashSet<Gem> crackedCenters,
         int fixedDamagePerCrackedGem)
     {
+        RegisterAquaticClear(expandedClearSet, false);
         ReportBombClearSetToVFX(
             expandedClearSet,
             BoardClearSource.Ability

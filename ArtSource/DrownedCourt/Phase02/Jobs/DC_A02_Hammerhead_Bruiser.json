@@ -1,0 +1,32 @@
+{
+  "id": "DC_A02_Hammerhead_Bruiser",
+  "requested_units": 5,
+  "reference": "ArtSource/Forest/Approved/Orc_Trailguard.png",
+  "seed": 26100502,
+  "prompt": "HAMMERHEAD BRUISER, broad shark humanoid with unmistakable wide horizontal hammerhead, small eyes at head ends and a pale sand muzzle/underside. Slate-blue skin, compact broad muscular legs, one small dorsal fin, patched ochre harness and dark shorts, simple dull iron wrist guard. TWO HANDS carry a heavy squat stone mooring club in low diagonal ready grip; club head pale weathered gray block with one simple rope wrap. The head is physically wider than ordinary cast; do not enlarge every pixel or make giant height. Calm tough expression, short solid stance, broad shaded planes. Dungeon Matcher game sprite. One full-body enemy still, three-quarter view facing LEFT, ready stance, transparent background, exact 64x64 native pixel art. Match the reference's chunky one-pixel exposed outline, economical broad connected color clusters and upper-left lighting, not its identity. Character outline #0A0D11. A small expressive readable face, compact body with planted ground contacts near the bottom, whole equipment inside canvas. Matte material ramps of 2-3 distinct tones; selective tiny highlights; no antialiasing, soft shading, gradients, dithering, scattered texture, drop shadow, text, ground disk or UI. One character only, no extra weapons, no shield. Native body pixel density comparable to the reference; preserve intentional species differences.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"1b791696-d51b-426d-8687-51b9f021c13d\",\n  \"image_id\": \"9b17406b-cae4-5ed0-930e-5dac262253c7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"9b17406b-cae4-5ed0-930e-5dac262253c7\",\n  \"job_id\": \"1b791696-d51b-426d-8687-51b9f021c13d\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/1b791696-d51b-426d-8687-51b9f021c13d/download\"\n}\nPoll get_image(job_id=\"1b791696-d51b-426d-8687-51b9f021c13d\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "1b791696-d51b-426d-8687-51b9f021c13d",
+      "image_id": "9b17406b-cae4-5ed0-930e-5dac262253c7",
+      "status": "processing",
+      "source_image_id": "9b17406b-cae4-5ed0-930e-5dac262253c7",
+      "job_id": "1b791696-d51b-426d-8687-51b9f021c13d",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/1b791696-d51b-426d-8687-51b9f021c13d/download"
+    },
+    "isError": false
+  }
+}

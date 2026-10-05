@@ -1,0 +1,419 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aac1eae8a627d42b5b41d508fea123, type: 3}
+  m_Name: drowned-court
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
+  zoneId: drowned-court
+  displayName: The Drowned Court
+  eligibleForLiveTravel: 1
+  affiliatedGem: 4
+  enemies:
+  - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+  - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+  - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+  - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+  - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
+  - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+  - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+  - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
+  - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
+  - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
+  - {fileID: 11400000, guid: 9c80a4f923c889948b046d1863cdc639, type: 2}
+  - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
+  - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+  - {fileID: 11400000, guid: e6a662255a0b852458925e8298e8bf4f, type: 2}
+  developmentEncounters:
+  - label: 'Court fixture: Reef Spearman'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Hammerhead Bruiser'
+    members:
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Needlefin Skirmisher'
+    members:
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Shellback Porter'
+    members:
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Pearl Thief'
+    members:
+    - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Pearl Cantor'
+    members:
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Conch Marshal'
+    members:
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Moray Siphoner'
+    members:
+    - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Reef Netweaver'
+    members:
+    - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Puffer Sentinel'
+    members:
+    - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Breakwater Captain'
+    members:
+    - {fileID: 11400000, guid: 9c80a4f923c889948b046d1863cdc639, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Lantern Warden'
+    members:
+    - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Queen Nacre'
+    members:
+    - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'Court fixture: Skittercrab'
+    members:
+    - {fileID: 11400000, guid: e6a662255a0b852458925e8298e8bf4f, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  liveEncounters:
+  - label: 'R01: Outer guard'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 2
+    weight: 1
+    requiredTide: 0
+  - label: 'R02: Mooring patrol'
+    members:
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 2
+    weight: 1
+    requiredTide: 0
+  - label: 'R03: Reef pair'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    firstLocalWave: 2
+    lastLocalWave: 3
+    weight: 1
+    requiredTide: 0
+  - label: 'R04: Fast fins'
+    members:
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 3
+    weight: 1
+    requiredTide: 0
+  - label: 'R05: Salvage party'
+    members:
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 5
+    weight: 1
+    requiredTide: 0
+  - label: 'R06: Pearl escort'
+    members:
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 4
+    lastLocalWave: 7
+    weight: 1
+    requiredTide: 0
+  - label: 'R07: First theft'
+    members:
+    - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 7
+    weight: 1
+    requiredTide: 2
+  - label: 'R08: Dry opportunist'
+    members:
+    - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 7
+    weight: 1
+    requiredTide: 1
+  - label: 'R09: Net lesson'
+    members:
+    - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 6
+    lastLocalWave: 7
+    weight: 1
+    requiredTide: 1
+  - label: 'R10: Spine lesson'
+    members:
+    - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R11: Captain gate'
+    members:
+    - {fileID: 11400000, guid: 9c80a4f923c889948b046d1863cdc639, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 8
+    weight: 1
+    requiredTide: 0
+  - label: 'R12: Captain return'
+    members:
+    - {fileID: 11400000, guid: 9c80a4f923c889948b046d1863cdc639, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 8
+    weight: 1
+    requiredTide: 0
+  - label: 'R13: Quiet reef'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 9
+    weight: 1
+    requiredTide: 0
+  - label: 'R14: Pearl procession'
+    members:
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R15: Conch lesson'
+    members:
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R16: Heavy rhythm'
+    members:
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R17: Siphon lesson'
+    members:
+    - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R18: Siphon hunters'
+    members:
+    - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R19: Net patrol'
+    members:
+    - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R20: Poised spines'
+    members:
+    - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 10
+    lastLocalWave: 13
+    weight: 1
+    requiredTide: 0
+  - label: 'R21: Lantern gate'
+    members:
+    - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 14
+    weight: 1
+    requiredTide: 0
+  - label: 'R22: Lantern in air'
+    members:
+    - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 14
+    weight: 1
+    requiredTide: 0
+  - label: 'R23: Ebb relief'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    firstLocalWave: 15
+    lastLocalWave: 15
+    weight: 1
+    requiredTide: 0
+  - label: 'R24: Court sentries'
+    members:
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R25: Netted chorus'
+    members:
+    - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R26: Thief escort'
+    members:
+    - {fileID: 11400000, guid: c22540a470bcf0245ae8f7bf1b29eb0c, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 2
+  - label: 'R27: Spine chorus'
+    members:
+    - {fileID: 11400000, guid: a44f2455cec6a354e81f96b6041f7ea7, type: 2}
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R28: Throne approach'
+    members:
+    - {fileID: 11400000, guid: d6932a1dbb5fd024caed6c9ca2e91e8c, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 18
+    weight: 1
+    requiredTide: 0
+  - label: 'R29: Final sentry'
+    members:
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 19
+    weight: 1
+    requiredTide: 0
+  - label: 'R30: Queen first lesson'
+    members:
+    - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    firstLocalWave: 20
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+  - label: 'R31: Queen command return'
+    members:
+    - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
+    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    firstLocalWave: 20
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: 'R32: Queen pearl return'
+    members:
+    - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    firstLocalWave: 20
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  apexEnemy: {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
+  apexLocalWave: 20
+  affiliatedDamageMultiplier: 1.15
+  theme: {fileID: 11400000, guid: a9c6e2208ca2b2a4fb4105465db0fcb2, type: 2}
+  music: {fileID: 8300000, guid: 1e221667c21077746ae6484f5906ae91, type: 3}
+  growsVines: 0
+  periodicallyFloods: 1
+  crumblesTiles: 0
+  crumbleCadenceMoves: 4
+  vineCadenceMoves: 2
+  maximumVineSpreadPerPulse: 2
+  maximumVineOverlays: 12

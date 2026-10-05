@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: e804a6da269943243bab5ad2614f7946
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4689263233250242739
+    second: pearl_cantor_Ability_0
+  - first:
+      213: 1301081795913835398
+    second: pearl_cantor_Ability_1
+  - first:
+      213: -2866876173681855718
+    second: pearl_cantor_Ability_2
+  - first:
+      213: -7379141094776218459
+    second: pearl_cantor_Ability_3
+  - first:
+      213: 7558174852342315878
+    second: pearl_cantor_Ability_4
+  - first:
+      213: 1257897008091406792
+    second: pearl_cantor_Ability_5
+  - first:
+      213: -8875235868855145890
+    second: pearl_cantor_Ability_6
+  - first:
+      213: -4432518761205283406
+    second: pearl_cantor_Ability_7
+  - first:
+      213: -8494994657411733408
+    second: pearl_cantor_Ability_8
+  - first:
+      213: -1653875694496527074
+    second: pearl_cantor_Ability_9
+  - first:
+      213: -6311317942363242693
+    second: pearl_cantor_Ability_10
+  - first:
+      213: 4761020809597675591
+    second: pearl_cantor_Ability_11
+  - first:
+      213: 88844699128411663
+    second: pearl_cantor_Ability_12
+  - first:
+      213: 7208626861347034449
+    second: pearl_cantor_Ability_13
+  - first:
+      213: -7353164219380083513
+    second: pearl_cantor_Ability_14
+  - first:
+      213: 976595421962776018
+    second: pearl_cantor_Ability_15
+  - first:
+      213: 5904184309091176704
+    second: pearl_cantor_Ability_16
+  - first:
+      213: -8837531813464589609
+    second: pearl_cantor_Ability_17
+  - first:
+      213: 6124476483990347080
+    second: pearl_cantor_Ability_00
+  - first:
+      213: 3086642484372647582
+    second: pearl_cantor_Ability_01
+  - first:
+      213: -5969025158618861098
+    second: pearl_cantor_Ability_02
+  - first:
+      213: 5092217302881879602
+    second: pearl_cantor_Ability_03
+  - first:
+      213: -4532602349873036581
+    second: pearl_cantor_Ability_04
+  - first:
+      213: -5321821836858441663
+    second: pearl_cantor_Ability_05
+  - first:
+      213: -6881213932211874163
+    second: pearl_cantor_Ability_06
+  - first:
+      213: -6587507698310992806
+    second: pearl_cantor_Ability_07
+  - first:
+      213: 1916232125193643351
+    second: pearl_cantor_Ability_08
+  - first:
+      213: 3373742527301705356
+    second: pearl_cantor_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d5a7fc9e28ef450800000000000000
+      internalID: 6124476483990347080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e29ad5cf4f5da20800000000000000
+      internalID: 3086642484372647582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d137255e33c92da0800000000000000
+      internalID: -5969025158618861098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2364f5148a03ba640800000000000000
+      internalID: 5092217302881879602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd287b37d26f811c0800000000000000
+      internalID: -4532602349873036581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140c2205c371526b0800000000000000
+      internalID: -5321821836858441663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86da0b03640180a0800000000000000
+      internalID: -6881213932211874163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ca50786a87494a0800000000000000
+      internalID: -6587507698310992806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755eb5917f2d79a10800000000000000
+      internalID: 1916232125193643351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e527724f0f1de20800000000000000
+      internalID: 3373742527301705356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fb3ec25c1b968a0800000000000000
+      internalID: -6311317942363242693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748ef4c833b821240800000000000000
+      internalID: 4761020809597675591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06b9bb78c3ab3100800000000000000
+      internalID: 88844699128411663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155ddecffef2a0460800000000000000
+      internalID: 7208626861347034449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_14
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4dcb8e91054f990800000000000000
+      internalID: -7353164219380083513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd2d5fac509d8d00800000000000000
+      internalID: 976595421962776018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00190dfe850efe150800000000000000
+      internalID: 5904184309091176704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_cantor_Ability_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7daba3f83a7ca5580800000000000000
+      internalID: -8837531813464589609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pearl_cantor_Ability_0: -4689263233250242739
+      pearl_cantor_Ability_00: 6124476483990347080
+      pearl_cantor_Ability_01: 3086642484372647582
+      pearl_cantor_Ability_02: -5969025158618861098
+      pearl_cantor_Ability_03: 5092217302881879602
+      pearl_cantor_Ability_04: -4532602349873036581
+      pearl_cantor_Ability_05: -5321821836858441663
+      pearl_cantor_Ability_06: -6881213932211874163
+      pearl_cantor_Ability_07: -6587507698310992806
+      pearl_cantor_Ability_08: 1916232125193643351
+      pearl_cantor_Ability_09: 3373742527301705356
+      pearl_cantor_Ability_1: 1301081795913835398
+      pearl_cantor_Ability_10: -6311317942363242693
+      pearl_cantor_Ability_11: 4761020809597675591
+      pearl_cantor_Ability_12: 88844699128411663
+      pearl_cantor_Ability_13: 7208626861347034449
+      pearl_cantor_Ability_14: -7353164219380083513
+      pearl_cantor_Ability_15: 976595421962776018
+      pearl_cantor_Ability_16: 5904184309091176704
+      pearl_cantor_Ability_17: -8837531813464589609
+      pearl_cantor_Ability_2: -2866876173681855718
+      pearl_cantor_Ability_3: -7379141094776218459
+      pearl_cantor_Ability_4: 7558174852342315878
+      pearl_cantor_Ability_5: 1257897008091406792
+      pearl_cantor_Ability_6: -8875235868855145890
+      pearl_cantor_Ability_7: -4432518761205283406
+      pearl_cantor_Ability_8: -8494994657411733408
+      pearl_cantor_Ability_9: -1653875694496527074
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

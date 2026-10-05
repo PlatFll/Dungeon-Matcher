@@ -20,13 +20,14 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Date:** 2026-10-04
-- **Current milestone:** Fix the King's zero-counter stall in seconds-based combat, retain command ownership through recovery, reduce forest vine pressure and enlarge enemy ability counters. Implementation and merge authorized on 2026-10-04. Command reservations can start during the move coordinator's pause of autonomous basics; action holds and stagger still block them. Vine frontier additions are halved to two and growth coverage to twelve, with root placement preserved. Ability counters have larger containers above attack timers, clear of the attack countdown. Automated Unity runs mute Editor audio without changing player audio preferences.
+- **Date:** 2026-10-05
+- **Drowned Court implementation in review:** Fourteen marine identities now have stills, native motion and data-selected kits; three coral-ruin compositions and marine gameplay UI are imported. Flood/AIR, temporary thorn snares, coffers, Queen rotation, three-zone travel and continuation are implemented. The temporary new-run picker includes Court. Bardley now uses three sequential cracked explosions without bubble delivery. See [the Court contract](DROWNED_COURT.md). Production consumed 182 of the separately approved 300 PixelLab generations (220 initial maximum, reserve untouched). Only the first four designs have explicit user visual approval; later art and original temporary music need review. Work is on `codex/drowned-court-implementation`, not merged. Final regression/device status is tracked in the Court validation record.
+- **Previous validated milestone:** Fix the King's zero-counter stall in seconds-based combat, retain command ownership through recovery, reduce forest vine pressure and enlarge enemy ability counters. Implementation and merge authorized on 2026-10-04. Command reservations can start during the move coordinator's pause of autonomous basics; action holds and stagger still block them. Vine frontier additions are halved to two and growth coverage to twelve, with root placement preserved. Ability counters have larger containers above attack timers, clear of the attack countdown. Automated Unity runs mute Editor audio without changing player audio preferences.
 - **Forest checkpoint:** [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176) is merged: seven locked designs have 39 motion clips and approved kits, including Treant C (Old Stump). Selected blockers are Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B. See [the roster contract](Forest/EXPANDED_ROSTER.md). Existing crystal travel and combat timing remain in place.
 
 - **Current integration:** The user authorized review and merge of all open PRs on 2026-10-01. The combined candidate includes Gideon / ChronoShutter (#169), finalized visuals and Thaleah (#170), and endless combat / enemy abilities (#171). Three older draft heads (#143, #146, #149) are already ancestors of main. Integration verification is recorded in `Validation/PR_INTEGRATION_2026_10_01.md`.
 - **Release scope:** [#169](https://github.com/PlatFll/Dungeon-Matcher/pull/169), [#170](https://github.com/PlatFll/Dungeon-Matcher/pull/170) and [#171](https://github.com/PlatFll/Dungeon-Matcher/pull/171) add Gideon, the finalized HUD/Thaleah, combat feedback, approved enemy actions and endless combat. Integration corrects legacy text references and Developing Fluid's displayed grant. Windows save replacement now tolerates brief file locks while preserving exactly-once settlement and failure atomicity.
-- **Current verification:** King readiness, command recovery and vine tuning passed **111 unique regression checks**, plus a rerun of the expanded counter test on the final prefab at three portrait sizes. The mandatory Unity validator succeeded with 6000.3.19f1; see [evidence and captures](Validation/KING_READINESS_AND_VINE_TUNING.md). Earlier [zone effects and Arbalist](Validation/ZONE_ENVIRONMENT_AND_ARBALIST.md), [picker](Validation/TESTING_ZONE_PICKER.md), [expanded-roster](Validation/FOREST_EXPANDED_ROSTER.md) and [travel](Validation/FOREST_CRYSTAL_TRAVEL.md) evidence remains available. The broad production baseline had 34 unrelated lifecycle/audio failures, which remain separately documented. Human balance/music approval and physical-device testing remain open.
+- **Current verification:** Drowned Court has **213 unique passing affected checks** after focused corrections, including 18 short control scenarios across three zones and players, an eighteen-handoff soak, continuation, Bardley, King and forest regressions. The mandatory Unity validator passed with 6000.3.19f1 and muted Editor audio. Native/GUID checks covered 300 exports; three portrait sizes and safe-area layouts were checked. See [Court evidence and limits](Validation/DROWNED_COURT.md). These are automated checks, not full-visit human pacing or physical Android evidence. The earlier [King readiness milestone](Validation/KING_READINESS_AND_VINE_TUNING.md) passed 111 unique checks; the historical broad production baseline's 34 lifecycle/audio failures remain separately documented. Human visual/music/pacing approval and physical-device testing remain open.
 - **Previous main baseline:** PRs #159–#168 were integrated on 2026-09-27, including level reset/shared mastery, backgrounds and the accepted grounded cast family. See [reset and mastery verification](Validation/CHARACTER_RESET_MASTERY_UNLOCKS.md) and [background evidence](Validation/DUNGEON_BACKGROUND_REFINEMENT.md). The stronger #164 motion remains rejected; #165/#166 corrections and subsequent approved action clips are authoritative.
 - **Art sources:** `ArtSource/` contains editable sources and production manifests; `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` remains the durable direction guide. The user's open Unity checkout and unrelated uncommitted work are preserved separately from the reviewed release.
 
@@ -377,20 +378,20 @@ implemented for review. The original forest cue is explicitly temporary and need
 listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.
 The launch plan is dungeon, magical forest and aquatic; crystal destinations
-are random among eligible regions. Dungeon and forest now connect after entire apex
-formations; with two regions they alternate. Global depth continues. Live travel
+are random among eligible regions. Dungeon, forest and Drowned Court connect after entire apex
+formations. Global depth continues. Live travel
 retains seconds effects from dungeon; isolated forest tests keep their saved
 profiles. Eighteen local starter encounters are temporary forest content anchors.
 Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar Archer and Ancient
 Treant C now have definition-selected kits and nine added test formations. Eight
 live formations extend the existing temporary bands. The seven selected blocker
-designs and dense-vine motion replace their earlier bindings. Aquatic and
-substantial-visit pacing remain unfinished. See [the roster contract](Forest/EXPANDED_ROSTER.md) and
+designs and dense-vine motion replace their earlier bindings. Aquatic implementation
+is in review; substantial-visit pacing still needs human evidence. See [the roster contract](Forest/EXPANDED_ROSTER.md) and
 [crystal travel](Forest/CRYSTAL_TRAVEL.md).
 
 ## Bardley production balance (testing override retired)
 
-The user explicitly retired the 1-energy testing override on 2026-09-15. The committed Cracked Gems cost is now **80**, with five 20-damage cracked centers and a **50% shared cast-refund ceiling**. At effective cost 64, the complete cast returns at most 32 energy. New runs start with 20% charge. These are production control values for human tuning, not a reason to force an early defeat.
+The user explicitly retired the 1-energy testing override on 2026-09-15. The committed Cracked Gems cost is **80**, with three sequential 20-damage cracked centers and a **50% shared cast-refund ceiling**. The 2026-10-04 revision removes bubble delivery and keeps the board held through all three beats before refill. At effective cost 64, the complete cast returns at most 32 energy. New runs start with 20% charge. These are production control values for human tuning, not a reason to force an early defeat.
 
 Energy cards are eligible at normal costs. Tests may use isolated low-cost fixtures but must not restore a testing override to the production asset.
 
@@ -400,7 +401,7 @@ Thaleah Fat is the approved global face (2026-09-29). The unmodified TTF and att
 
 ## Supported run endpoint
 
-The run continues after the **King formation**, using the existing weighted roster and difficulty scaling until the player dies or explicitly ends the attempt. The King clear is journaled once; rewards settle at the actual end of the run. Card opportunities continue at wave 32 and every four completed waves afterward. New zones, Guild enemies and later bosses remain future content.
+The run continues after the **King formation**, using connected dungeon, forest and Drowned Court visits until the player dies or explicitly ends the attempt. The King clear is journaled once; rewards settle at the actual end of the run. Card opportunities continue at wave 32 and every four completed waves afterward. Further zones, Guild enemies and later bosses remain future content.
 
 ---
 
@@ -898,10 +899,12 @@ The 80-energy production cost and 50% cast-refund ceiling are implemented. Furth
 
 # 25. Current next priorities
 
-The immediate priorities are **playtesting connected forest travel and reviewing
-the temporary music**. Assess seconds basics, move-based counterplay, structural roots and vine overlays,
-grounding, UI readability and the temporary cue. Address existing baseline test
-failures separately; validate Android touch/audio/performance before release.
+The immediate priorities are **reviewing Drowned Court and playtesting connected
+three-zone travel**. Assess seconds basics, move-based counterplay, flood/AIR
+readability, the fourteen Court kits and the original temporary music. The Court
+review package and executed evidence are linked in `Validation/DROWNED_COURT.md`.
+Human pacing, listening approval and Android touch/audio/performance remain open
+release gates. Forest roots/vines and dungeon crumbling remain regression targets.
 Travel/art was merged in #175. The roster animation/kit batch is delivered in
 PR #176 with explicit merge approval. This batch used **121/160 PixelLab
 generations**, including retries and three recorded accidental duplicate samples;

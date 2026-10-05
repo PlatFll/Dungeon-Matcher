@@ -1,0 +1,46 @@
+{
+  "id": "marine_button",
+  "args": {
+    "description": "Simple horizontal pixel-art UI button made of antique marine sea-green masonry and warm cream shell edging. Rounded stepped corners, broad quiet dark center suitable for readable runtime text, one tiny worn coral notch outside edge. No lettering, symbols or glow. Crisp one-pixel outline and 3-tone bevel. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 10052106,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"4fc61356-926c-4202-986a-1141982b5ce6\",\n  \"image_id\": \"1251a8d5-9292-5263-9576-c7d2aa8373b9\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"1251a8d5-9292-5263-9576-c7d2aa8373b9\",\n  \"job_id\": \"4fc61356-926c-4202-986a-1141982b5ce6\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/4fc61356-926c-4202-986a-1141982b5ce6/download\"\n}\nPoll get_image(job_id=\"4fc61356-926c-4202-986a-1141982b5ce6\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "4fc61356-926c-4202-986a-1141982b5ce6",
+      "image_id": "1251a8d5-9292-5263-9576-c7d2aa8373b9",
+      "status": "processing",
+      "source_image_id": "1251a8d5-9292-5263-9576-c7d2aa8373b9",
+      "job_id": "4fc61356-926c-4202-986a-1141982b5ce6",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/4fc61356-926c-4202-986a-1141982b5ce6/download"
+    },
+    "isError": false
+  },
+  "reason": "Original request rejected before generation: unsupported reference fit or full queue; corrected without duplicating a queued job."
+}

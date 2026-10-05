@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,68 @@ public partial class BoardController
 {
     public event Action<TileBurstVFXContext> TileBurstVFXRequested;
     public event Action<int> GemsLanded;
+    public event Action<int> PrimaryExplosionPresented;
+
+    // Split only presentation. The caller has already planned and reported one
+    // deduplicated clear; special effects retain their original sorted commit.
+    private IEnumerator PresentOrderedShatter(List<ClearVisual> visuals,
+        IReadOnlyList<Gem> primaryOrder, TileBurstVFXContext[] bursts)
+    {
+        var primary = new List<Gem>();
+        foreach (Gem gem in primaryOrder)
+            if (gem != null && !primary.Contains(gem)) primary.Add(gem);
+        if (primary.Count == 0)
+        {
+            foreach (ClearVisual visual in visuals) HideShatteredGem(visual.Gem);
+            ReportTileBursts(bursts);
+            yield break;
+        }
+        var groups = new List<List<Gem>>();
+        for (int i = 0; i < primary.Count; i++) groups.Add(new List<Gem>());
+        foreach (ClearVisual visual in visuals)
+        {
+            Gem gem = visual.Gem;
+            if (gem == null) continue;
+            int index = primary.IndexOf(gem);
+            if (index < 0)
+            {
+                index = primary.Count - 1;
+                for (int i = 0; i < primary.Count; i++)
+                    if (Mathf.Abs(gem.Column - primary[i].Column) <= 1 &&
+                        Mathf.Abs(gem.Row - primary[i].Row) <= 1)
+                    { index = i; break; }
+            }
+            // A later primary keeps its own beat even when footprints overlap.
+            groups[index].Add(gem);
+        }
+        for (int i = 0; i < groups.Count; i++)
+        {
+            var positions = new HashSet<Vector3>();
+            foreach (Gem gem in groups[i])
+            {
+                positions.Add(transform.TransformPoint(GetLocalPosition(gem.Column, gem.Row)));
+                HideShatteredGem(gem);
+            }
+            if (bursts != null)
+                foreach (TileBurstVFXContext burst in bursts)
+                {
+                    var selected = new List<Vector3>();
+                    foreach (Vector3 position in burst.WorldPositions)
+                        if (positions.Contains(position)) selected.Add(position);
+                    if (selected.Count > 0)
+                        ReportTileBursts(new[] { new TileBurstVFXContext(burst.Kind, selected.ToArray()) });
+                }
+            PrimaryExplosionPresented?.Invoke(i);
+            if (i + 1 < groups.Count) yield return new WaitForSeconds(0.17f);
+        }
+    }
+
+    private static void HideShatteredGem(Gem gem)
+    {
+        if (gem == null) return;
+        foreach (SpriteRenderer renderer in gem.GetComponentsInChildren<SpriteRenderer>())
+            renderer.enabled = false;
+    }
 
     // Build from the authoritative clear set before gems leave the grid. The
     // preserved reward cell is deliberately excluded, including a bomb whose

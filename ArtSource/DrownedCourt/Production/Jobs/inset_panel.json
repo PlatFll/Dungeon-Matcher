@@ -1,0 +1,45 @@
+{
+  "id": "inset_panel",
+  "args": {
+    "description": "Seamless dark marine stone inset panel texture, old smooth slate with faint horizontal shell-limestone veins, dark #14252B #24383D #3D5050. Quiet broad blocks, a clearly lighter material than near-black outer background. Fill edge to edge. No frame or text. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 64,
+    "height": 64,
+    "no_background": false,
+    "seed": 10052105,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"c2ceb10a-16dc-4176-bfba-1351618f5ec1\",\n  \"image_id\": \"84913a5d-bfe0-5471-b9fe-3a71b2d9d956\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"84913a5d-bfe0-5471-b9fe-3a71b2d9d956\",\n  \"job_id\": \"c2ceb10a-16dc-4176-bfba-1351618f5ec1\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/c2ceb10a-16dc-4176-bfba-1351618f5ec1/download\"\n}\nPoll get_image(job_id=\"c2ceb10a-16dc-4176-bfba-1351618f5ec1\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "c2ceb10a-16dc-4176-bfba-1351618f5ec1",
+      "image_id": "84913a5d-bfe0-5471-b9fe-3a71b2d9d956",
+      "status": "processing",
+      "source_image_id": "84913a5d-bfe0-5471-b9fe-3a71b2d9d956",
+      "job_id": "c2ceb10a-16dc-4176-bfba-1351618f5ec1",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/c2ceb10a-16dc-4176-bfba-1351618f5ec1/download"
+    },
+    "isError": false
+  }
+}

@@ -82,9 +82,7 @@ public sealed class CrackedGemsRuntime :
             return false;
         }
 
-        EnsurePresentation(
-            crackedDefinition.BubbleSprite
-        );
+        EnsurePresentation();
 
         HashSet<GemType> preferredGemTypes =
             BuildPreferredGemTypes();
@@ -102,8 +100,8 @@ public sealed class CrackedGemsRuntime :
                 preferredGemTypes,
                 targetGemCount,
                 crackedDefinition.CrackedGemDamage,
-                crackedDefinition.BubbleTravelDuration,
-                crackedDefinition.BubbleHoverDuration,
+                0f,
+                0f,
                 crackedDefinition.CrackedShakeDuration,
                 crackedDefinition.CrackedBurstScale,
                 crackedDefinition.CrackedWhiteHoldDuration,
@@ -240,19 +238,12 @@ public sealed class CrackedGemsRuntime :
         }
     }
 
-    private void EnsurePresentation(
-        Sprite bubbleSprite = null)
+    private void EnsurePresentation()
     {
         if (boardController == null)
         {
             return;
         }
-
-        CrackedGemBubbleVFX.EnsureInstalled(
-            boardController,
-            transform,
-            bubbleSprite
-        );
 
         CrackedGemOverlayPresenter.EnsureInstalled(
             boardController

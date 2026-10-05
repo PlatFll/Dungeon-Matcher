@@ -21,6 +21,7 @@ public partial class BoardController
 
     public event Action<BoardClearOutcome>
         BoardClearOutcomeResolved;
+    public bool ReportingManualClear { get; private set; }
 
     private void ReportMatchesToCombat(
         HashSet<Gem> matches,
@@ -34,6 +35,7 @@ public partial class BoardController
             return;
         }
 
+        RegisterAquaticClear(matches, deliberatePlayerClear);
         BreakPinsAdjacentToMatches(matches);
         DamageBarricadesForClear(matches, null, deliberatePlayerClear);
 
@@ -101,8 +103,9 @@ public partial class BoardController
 
             if (combatController != null)
             {
-                damagedMatchingEnemy =
-                    combatController.ResolveGemClear(clearContext);
+                ReportingManualClear = deliberatePlayerClear;
+                try { damagedMatchingEnemy = combatController.ResolveGemClear(clearContext); }
+                finally { ReportingManualClear = false; }
             }
 
             BoardClearOutcomeResolved?.Invoke(
@@ -125,6 +128,7 @@ public partial class BoardController
             return;
         }
 
+        RegisterAquaticClear(expandedClearSet, false);
         DamageBarricadesAdjacentToClears(
             expandedClearSet,
             originalMatches

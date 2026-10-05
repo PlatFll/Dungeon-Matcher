@@ -941,6 +941,17 @@ public partial class BoardController : MonoBehaviour
         bool activateSpecials,
         HashSet<Gem> genericBurstTargets)
     {
+        return ClearMatchesWithOrderedBursts(matches, specialGemCreationRequests,
+            activateSpecials, genericBurstTargets, null);
+    }
+
+    private IEnumerator ClearMatchesWithOrderedBursts(
+        HashSet<Gem> matches,
+        List<SpecialGemCreationRequest> specialGemCreationRequests,
+        bool activateSpecials,
+        HashSet<Gem> genericBurstTargets,
+        IReadOnlyList<Gem> primaryBurstOrder)
+    {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
 
@@ -972,6 +983,7 @@ public partial class BoardController : MonoBehaviour
         }
 
         ClearVinesForDestruction(matches,new HashSet<Gem>(specialGemsToCreate.Keys));
+        ResolveAquaticDestruction(matches, new HashSet<Gem>(specialGemsToCreate.Keys));
         TileBurstVFXContext[] tileBursts = activateSpecials
             ? BuildTileBurstContexts(matches, specialGemsToCreate, genericBurstTargets)
             : null;
@@ -1121,22 +1133,17 @@ public partial class BoardController : MonoBehaviour
          * silhouette disappears instantly, making the
          * particle burst read as a shattering impact.
          */
-        foreach (
-            ClearVisual visual
-            in visuals)
-        {
-            if (visual.SpriteRenderer != null)
-            {
-                foreach (SpriteRenderer renderer in visual.Gem.GetComponentsInChildren<SpriteRenderer>())
-                    renderer.enabled = false;
-            }
-        }
+        if (primaryBurstOrder != null && primaryBurstOrder.Count > 0)
+            yield return PresentOrderedShatter(visuals, primaryBurstOrder, tileBursts);
+        else
+            foreach (ClearVisual visual in visuals) HideShatteredGem(visual.Gem);
 
         // Commit only at the board-owned shatter moment, after the preparation
         // flash. Environmental removal and double-crystal sweeps do not activate.
         if (activateSpecials)
         {
-            ReportTileBursts(tileBursts);
+            if (primaryBurstOrder == null || primaryBurstOrder.Count == 0)
+                ReportTileBursts(tileBursts);
             // A bomb may occupy the cell preserved for a newly earned special.
             // Its footprint was already expanded, so consume its OLD effect
             // once as well. The replacement is assigned only after this loop;

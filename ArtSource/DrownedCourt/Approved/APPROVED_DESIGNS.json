@@ -1,0 +1,378 @@
+{
+  "user_direction": "Approve all Phase 2 designs; change eyes to fully one color; continue remaining implementation.",
+  "eye_color": "#0A0D11",
+  "art_generation_units": 0,
+  "assets": [
+    {
+      "id": "DC_A01_Reef_Spearman",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_A01_Reef_Spearman.png",
+      "source_sha256": "872f89073d7320871a41e9d76a0d4fb248053d9e55f9a0d9fac4bf1e1e3ad15a",
+      "file": "DC_A01_Reef_Spearman.png",
+      "sha256": "872f89073d7320871a41e9d76a0d4fb248053d9e55f9a0d9fac4bf1e1e3ad15a",
+      "size": [
+        64,
+        64
+      ],
+      "eye_edits": [],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_A02_Hammerhead_Bruiser",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_A02_Hammerhead_Bruiser.png",
+      "source_sha256": "ca39768c0c05e9511631c2d2422f9d200d4e492ccf132a4c6a6491bb1a74f927",
+      "file": "DC_A02_Hammerhead_Bruiser.png",
+      "sha256": "994cd23856d93bca9452058022944608962695ad5eed9113c2957e6dfb4b3dd3",
+      "size": [
+        64,
+        64
+      ],
+      "eye_edits": [
+        {
+          "x": 15,
+          "y": 14,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 16,
+          "y": 13,
+          "before": [
+            43,
+            57,
+            69,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 44,
+          "y": 13,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        }
+      ],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_A03_Pearl_Thief",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_A03_Pearl_Thief.png",
+      "source_sha256": "6301158a32b9806bb457c16b0a8998da0caad8e29c027640f852ac02b515104d",
+      "file": "DC_A03_Pearl_Thief.png",
+      "sha256": "ef2d82788b4963e1aa1e022bfb68a556940a23275ef5db34482182305b3e7425",
+      "size": [
+        64,
+        64
+      ],
+      "eye_edits": [
+        {
+          "x": 20,
+          "y": 33,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 20,
+          "y": 34,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 20,
+          "y": 35,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 30,
+          "y": 34,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 31,
+          "y": 34,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 30,
+          "y": 35,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 31,
+          "y": 35,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 30,
+          "y": 36,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        }
+      ],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_A04_Pearl_Cantor",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_A04_Pearl_Cantor.png",
+      "source_sha256": "229f780f36427e71d3d627189774fd0c4915f91d6e220df0d793e1813a13920e",
+      "file": "DC_A04_Pearl_Cantor.png",
+      "sha256": "ea2018b853c7437098a93a8cf7783a3b29143eb519e32503bdf34537bb5da2e6",
+      "size": [
+        64,
+        64
+      ],
+      "eye_edits": [
+        {
+          "x": 25,
+          "y": 15,
+          "before": [
+            20,
+            43,
+            53,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 26,
+          "y": 15,
+          "before": [
+            253,
+            245,
+            229,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 24,
+          "y": 16,
+          "before": [
+            20,
+            43,
+            53,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 25,
+          "y": 16,
+          "before": [
+            20,
+            43,
+            53,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        },
+        {
+          "x": 26,
+          "y": 16,
+          "before": [
+            224,
+            210,
+            184,
+            255
+          ],
+          "after": [
+            10,
+            13,
+            17,
+            255
+          ]
+        }
+      ],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_E01_Reefgate_Study",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_E01_Reefgate_Study.png",
+      "source_sha256": "8081011afe484fae52e92b4b197a18280b2d7eb39ab6d279f2217f14ddee0410",
+      "file": "DC_E01_Reefgate_Study.png",
+      "sha256": "8081011afe484fae52e92b4b197a18280b2d7eb39ab6d279f2217f14ddee0410",
+      "size": [
+        256,
+        128
+      ],
+      "eye_edits": [],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_M01_Marine_Frame",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_M01_Marine_Frame.png",
+      "source_sha256": "1c53fcb3e9bf21192b0fa7732b37ba701dd2aeb3e03fd7034a1ed782119041d6",
+      "file": "DC_M01_Marine_Frame.png",
+      "sha256": "1c53fcb3e9bf21192b0fa7732b37ba701dd2aeb3e03fd7034a1ed782119041d6",
+      "size": [
+        64,
+        64
+      ],
+      "eye_edits": [],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    },
+    {
+      "id": "DC_M02_Marine_Cell",
+      "approval": "APPROVED_WITH_USER_REQUESTED_SOLID_DARK_EYES",
+      "approved_on": "2026-10-05",
+      "source": "Phase02/Candidates/DC_M02_Marine_Cell.png",
+      "source_sha256": "755820c4f5a9aa9e81071e52581ffc7d8f24519439fcc961785e1f0ed634bdbd",
+      "file": "DC_M02_Marine_Cell.png",
+      "sha256": "755820c4f5a9aa9e81071e52581ffc7d8f24519439fcc961785e1f0ed634bdbd",
+      "size": [
+        32,
+        32
+      ],
+      "eye_edits": [],
+      "alpha_unchanged": true,
+      "pixels_outside_eye_edits_unchanged": true
+    }
+  ]
+}

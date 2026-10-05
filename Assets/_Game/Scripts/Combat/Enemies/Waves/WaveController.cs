@@ -7,7 +7,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed partial class WaveController :
     MonoBehaviour,
-    IEnemySummonService
+    IEnemyFixedSlotSummonService
 {
     [Header("Enemy Data")]
     [SerializeField]
@@ -606,7 +606,8 @@ public sealed partial class WaveController :
 
         enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : 0;
         if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
-        if (enemy.Definition.EligibleZones.Contains("magical-forest")) enemyObject.AddComponent<ForestEnemyMotion>();
+        if (enemy.Definition.EligibleZones.Contains("magical-forest") || enemy.Definition.EligibleZones.Contains("drowned-court"))
+            enemyObject.AddComponent<ForestEnemyMotion>();
         bool successfullyBound =
             slot.BindEnemy(enemy);
 

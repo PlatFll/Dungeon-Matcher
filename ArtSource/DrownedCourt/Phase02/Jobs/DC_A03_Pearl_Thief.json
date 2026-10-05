@@ -1,0 +1,32 @@
+{
+  "id": "DC_A03_Pearl_Thief",
+  "requested_units": 5,
+  "reference": "ArtSource/CombatIdles/References/Bardley_Palette_Reference_Placement_Pending.png",
+  "seed": 26100503,
+  "prompt": "PEARL THIEF, small compact octopus-folk opportunist, clearly octopus not human or slime. Rounded muted lilac mantle/head, narrow alert eyes and small short downturned mouth. Exactly TWO useful arms and TWO broad curled tentacle feet planted on ground; no forest of limbs. Dark ink cloth short vest/wrap. A bulging IVORY HINGED CLAMSHELL SATCHEL hangs at the near hip on a dark strap, a tiny warm brass hinge and latch. One raised forward hand holds a short pearl hook, other arm rests protectively on the shell satchel. Small nimble lower silhouette, broad head about one third body height. Distinguish pale satchel from lilac flesh, no bubbles, no wizard hat/cape/instrument. Reference is rendering discipline only, do not copy slime shape or costume. Dungeon Matcher game sprite. One full-body enemy still, three-quarter view facing LEFT, ready stance, transparent background, exact 64x64 native pixel art. Match the reference's chunky one-pixel exposed outline, economical broad connected color clusters and upper-left lighting, not its identity. Character outline #0A0D11. A small expressive readable face, compact body with planted ground contacts near the bottom, whole equipment inside canvas. Matte material ramps of 2-3 distinct tones; selective tiny highlights; no antialiasing, soft shading, gradients, dithering, scattered texture, drop shadow, text, ground disk or UI. One character only, no extra weapons, no shield. Native body pixel density comparable to the reference; preserve intentional species differences.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"edc4cec1-5ed2-4fd6-8297-26c8e7ea5958\",\n  \"image_id\": \"13e06849-bc8c-5291-8371-eed4bd484084\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"13e06849-bc8c-5291-8371-eed4bd484084\",\n  \"job_id\": \"edc4cec1-5ed2-4fd6-8297-26c8e7ea5958\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/edc4cec1-5ed2-4fd6-8297-26c8e7ea5958/download\"\n}\nPoll get_image(job_id=\"edc4cec1-5ed2-4fd6-8297-26c8e7ea5958\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "edc4cec1-5ed2-4fd6-8297-26c8e7ea5958",
+      "image_id": "13e06849-bc8c-5291-8371-eed4bd484084",
+      "status": "processing",
+      "source_image_id": "13e06849-bc8c-5291-8371-eed4bd484084",
+      "job_id": "edc4cec1-5ed2-4fd6-8297-26c8e7ea5958",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/edc4cec1-5ed2-4fd6-8297-26c8e7ea5958/download"
+    },
+    "isError": false
+  }
+}

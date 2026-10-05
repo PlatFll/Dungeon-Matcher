@@ -1,0 +1,1180 @@
+{
+  "base_main": "9f8b5f7dc78761906743eec551a38b25c89dcaea",
+  "branch": "codex/drowned-court-implementation",
+  "unity": "6000.3.19f1",
+  "final_unique_cases": 213,
+  "latest_passed": 213,
+  "latest_failed": 0,
+  "latest_skipped": 0,
+  "retired_case": {
+    "name": "ForestFoundationPlayTests.ThreeZonePlayerControlRunsRecordActualOutcomes",
+    "reason": "Same eighteen scenarios split into three zone cases under the unchanged 180-second per-case limit"
+  },
+  "runs": [
+    {
+      "file": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml",
+      "result": "Failed(Child)",
+      "total": "201",
+      "passed": "183",
+      "failed": "18",
+      "skipped": "0"
+    },
+    {
+      "file": "31a0065e-dbaf-4340-9dce-f25683fab621.xml",
+      "result": "Failed(Child)",
+      "total": "25",
+      "passed": "24",
+      "failed": "1",
+      "skipped": "0"
+    },
+    {
+      "file": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml",
+      "result": "Failed(Child)",
+      "total": "10",
+      "passed": "9",
+      "failed": "1",
+      "skipped": "0"
+    },
+    {
+      "file": "3ffe08d7-29cc-4281-8b6f-623de3a3048e.xml",
+      "result": "Failed(Child)",
+      "total": "3",
+      "passed": "1",
+      "failed": "2",
+      "skipped": "0"
+    },
+    {
+      "file": "12d0244d-6218-4997-93c3-912226e4ac38.xml",
+      "result": "Passed",
+      "total": "3",
+      "passed": "3",
+      "failed": "0",
+      "skipped": "0"
+    }
+  ],
+  "cases": {
+    "AquaticEnvironmentStateTests.DebitAndSnareClampBeforeCollectedAir": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.DryAcceptanceCannotChargeTheNewFlood": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.DuplicateSettlementAndAcceptanceCannotDoubleCharge": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.FinalWetMoveDrainsBeforeSuffocationAndProtectsNextEncounter": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.FreeCollectionDoesNotAdvanceTideOrSpendAir": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.FullDryFormationAndSixAcceptedMovesAreRequired": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "AquaticEnvironmentStateTests.ResumePreservesPendingReceiptsAndUnits": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.ActivePhotographAndInFlightFifthMoveSurviveRestart": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.PlayableDefinitionUsesApprovedFramesAndDedicatedHold": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ChronoShutterTests.RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(False,3,5)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(True,3,5)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(False,6,10)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(True,6,10)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.CappedRefundIsConsumedAndNotReplayedAfterEnergyIsSpent": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.ChromaticConductorRemainsSeparateFromCenterRefund": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.ClassificationAloneDoesNotGrantEnergyEntitlement": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.DamageDispatchAloneCannotAwardOrAdvanceDetonationRefund": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.DamageModifiersUseCenterIdentityNotCoincidentDamageAmounts": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.DefeatedPlayerDoesNotGainRefundOrAdvanceCounter": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.EncounterEndingBetweenCentersDoesNotLoseTheThirdCenter": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.MissingResonantCardGrantsNoBonus": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.ReenableRetainsTwoCentersWithoutDuplicateSubscriptionAndResetClearsThem": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.ReporterTagsOnlyFixedCentersAndExcludesCrystalHiddenColor": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,False,True,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,False,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,True,0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,True,2)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Match,True,True,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Bomb,True,True,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(ColorCrystal,True,True,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(DoubleColorCrystal,True,True,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "CrackedChainUpgradeScopeTests.AllSpecialFallbackWithoutCentersStillFinishesScope": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(RowBomb,125,1)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(ColumnBomb,125,1)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(PoisonBomb,100,0)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(HealingBomb,100,0)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(ShieldBomb,100,0)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.BothCardsRemainAdditiveWithoutModifyingFixedCenterDamage": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(1,100)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(2,110)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(4,130)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(5,130)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.CompletedScopeCannotBoostTheFollowingBombFreeBatch": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.CrystalHiddenColorAndCrackedCenterDoNotManufactureBombCounts": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.EmptyOrNullInputDoesNotPublishScopeOrRewards(False)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.EmptyOrNullInputDoesNotPublishScopeOrRewards(True)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.InactiveEncounterKeepsBoardOutcomesWithoutApplyingEnemyDamage": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.RealExpansionPreparesNoUpgradeScopeUntilItsResultIsReported": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ReportingObserverFailureStillReleasesModifierScope(True)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.ReportingObserverFailureStillReleasesModifierScope(False)": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "CrackedChainUpgradeScopeTests.WithoutCardsChainMetadataDoesNotChangeDamageOrActivateUtilities": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,5)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,0,10)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"disposed\")": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"defeated\")": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"destroyedHost\")": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"uninitialized\")": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"notReady\")": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.AcceptedSwapReplayProducesSameLogicalStateExactlyOnce": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.BardleyThreeBeatsKeepOneBoardHoldAndNoBubbleDelivery": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CommittedTravelSuspendResumesRevealWithoutRepeatingReward": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtAirSurvivesContinuationAndFinalDrainDoesNotSuffocate": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtBubbleReceiptsRespectPhysicalDestructionAndManualSnareSource": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtCaptainCommandsOneCompleteFixedAllySequence": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtCofferCaptureOwnerDeathAndDrainHaveSinglePayout": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtConchDamageLeaseDoesNotStackSpeedAndSurvivesOtherOwnerDeath": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtFirstEncounterStaysDryAndFloodUsesAcceptedMoves": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtMaterialAndRosterImportsAreNativeAndComplete": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtMorayRespectsShieldGateAndHealsOnlyHpLost": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtMotionControllersResolveEveryBasicWithOneOwnedSequence": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtPortraitMaterialsAndFloodPresentationCapture": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "ForestFoundationPlayTests.CourtWetResumePreservesAirAndChannelDeadline": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.DeadlineStaggerAndTargetDeathCancelExactlyOnce": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotDisableReleasesExistingChains": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotHasTwoAuthoredContactsAndReleasesOnDeath": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentTravelCleansVinesBeforeDestinationReveal": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.EnvironmentVinesSurviveWavesDraftPauseAndContinue": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.FailedTravelCheckpointKeepsSourceAndRetriesSameDestination": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.HybridAcceptedBoardActionPausesBasicCountdownWithoutConvertingIt": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessAbilityCountersFitAtPortraitSizes": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessCaptainCommandWorksWithTimedBasics": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessFullCycleUsesLiveSecondsProfile": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessFullCycleUsesOriginalDungeonProfile": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessHybridAssaultConsumesReadyCounter": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.KingReadinessVineGrowthUsesHalfSpreadAndCoverage": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.LargeCascadeAndSpecialChainConsumeOneManualAction": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.LegacyVinePinsUpgradeWithoutRemovingRealChains": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.MixedColorDamageKeepsAttributionAndFinalFiveStepRounding": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.OlderForestCheckpointKeepsItsIsolatedLoop": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.PendingTravelSuspendRestoresChosenDestinationAndBoard": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionMusicUsesOnePlayerCrossfadesPausesAndHonorsSettings": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionSoloMenderNeverHealsSelf": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ProductionWardenWarnsAndStaggerCancelsBeforePlanting": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ReducedMotionFailedPreparationReleasesInputAndCombatTime": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RootWarningPlayerClearStaggersButTargetFizzleDoesNot": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredArcherBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredBerserkerBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredBloomcallerBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredDrummerBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredSnapvineBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredThornkeeperBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredTreantBasic": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterBoughAnswerWeakensHitAndNeverClearsBoard": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterRageTriggersStrictlyBelowHalfOnceAndResumes": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterRhythmBuffsOnlyAlliesRefreshesAndExpires": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterSelectedBlockersBindExactChoicesAndThornArtFacesSafeSide": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterTreantChannelOwnsBasicTimerAndRecoversAfterRelease": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.VinesAreOverlaysWithOrdinarySwapGravityClearAndSave": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerCancelCreatesNoRunAndFitsPortraitScreens": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerDungeonKeepsOriginalOpening": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerPreservesChallengeAndCancelsPendingMode": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerReturnsToCharacterSelectionOnBack": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.ZonePickerUnavailableRequestFallsBackAndIsConsumed": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "RunUpgradeSystemTests.UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ZoneTravelTests.DestinationPolicyExcludesCurrentAndUnreadyAndKeepsDeterministicState": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ZoneTravelTests.RootAndVineBindingsAreDistinctNativeAndComplete": {
+      "result": "Passed",
+      "record": "be18b508-57a9-4d74-ad45-c7c6695d3e59.xml"
+    },
+    "ForestFoundationPlayTests.CourtQueenTelegraphAndRecoveryResumeWithoutNewTargets": {
+      "result": "Passed",
+      "record": "31a0065e-dbaf-4340-9dce-f25683fab621.xml"
+    },
+    "ForestFoundationPlayTests.CourtWaterPresentationHasBoundedObjectsAndMeasuredCost": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "ForestFoundationPlayTests.CourtLayoutMathAcrossSafeAreas": {
+      "result": "Passed",
+      "record": "6fd9c495-3189-43ca-b1ad-a61a343c219d.xml"
+    },
+    "ForestFoundationPlayTests.CourtPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "record": "12d0244d-6218-4997-93c3-912226e4ac38.xml"
+    },
+    "ForestFoundationPlayTests.DungeonPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "record": "12d0244d-6218-4997-93c3-912226e4ac38.xml"
+    },
+    "ForestFoundationPlayTests.ForestPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "record": "12d0244d-6218-4997-93c3-912226e4ac38.xml"
+    }
+  },
+  "records": [
+    ".utmp/ForestValidation/be18b508-57a9-4d74-ad45-c7c6695d3e59.xml",
+    ".utmp/ForestValidation/31a0065e-dbaf-4340-9dce-f25683fab621.xml",
+    ".utmp/ForestValidation/6fd9c495-3189-43ca-b1ad-a61a343c219d.xml",
+    ".utmp/ForestValidation/3ffe08d7-29cc-4281-8b6f-623de3a3048e.xml",
+    ".utmp/ForestValidation/12d0244d-6218-4997-93c3-912226e4ac38.xml",
+    ".utmp/DrownedCourtValidation/UnityValidation.log",
+    ".utmp/DrownedCourtValidation/TestedSourceHashes.json"
+  ],
+  "controls": [
+    {
+      "zone": "dungeon",
+      "player": "skeleton",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "8",
+      "moves": "24",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "dungeon",
+      "player": "skeleton",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "8",
+      "moves": "24",
+      "abilities": "1",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "dungeon",
+      "player": "bardley",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.10",
+      "waves": "6",
+      "moves": "26",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "dungeon",
+      "player": "bardley",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.00",
+      "waves": "4",
+      "moves": "27",
+      "abilities": "1",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "0"
+    },
+    {
+      "zone": "dungeon",
+      "player": "gideon_glass",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "6",
+      "moves": "27",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "dungeon",
+      "player": "gideon_glass",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "7",
+      "moves": "25",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "skeleton",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "4",
+      "moves": "29",
+      "abilities": "1",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "skeleton",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "4",
+      "moves": "29",
+      "abilities": "1",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "bardley",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "4",
+      "moves": "24",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "bardley",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.00",
+      "waves": "6",
+      "moves": "24",
+      "abilities": "3",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "gideon_glass",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "4",
+      "moves": "25",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "magical-forest",
+      "player": "gideon_glass",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "4",
+      "moves": "27",
+      "abilities": "2",
+      "floods": "0",
+      "low_air_observations": "0",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "skeleton",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "7",
+      "moves": "23",
+      "abilities": "2",
+      "floods": "1",
+      "low_air_observations": "4",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "skeleton",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "3",
+      "moves": "30",
+      "abilities": "1",
+      "floods": "2",
+      "low_air_observations": "7",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "bardley",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "4",
+      "moves": "25",
+      "abilities": "2",
+      "floods": "2",
+      "low_air_observations": "2",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "bardley",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "5",
+      "moves": "27",
+      "abilities": "2",
+      "floods": "2",
+      "low_air_observations": "2",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "gideon_glass",
+      "level": "1",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.01",
+      "waves": "4",
+      "moves": "29",
+      "abilities": "2",
+      "floods": "2",
+      "low_air_observations": "2",
+      "suspends": "1"
+    },
+    {
+      "zone": "drowned-court",
+      "player": "gideon_glass",
+      "level": "5",
+      "seed": "3101",
+      "outcome": "censored_60s",
+      "game_seconds": "60.02",
+      "waves": "6",
+      "moves": "26",
+      "abilities": "2",
+      "floods": "2",
+      "low_air_observations": "1",
+      "suspends": "1"
+    }
+  ],
+  "validator": {
+    "result": "passed",
+    "original_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-77222112-3e84-47d2-a072-f34c42146de3.log"
+  },
+  "limits": [
+    "18 controls are capped at 60 game seconds with a synthetic greedy policy and 6x time; not human pacing",
+    "Physical Android, GPU profiling, full-visit mixed-skill pacing and human music approval remain pending"
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "recipes": [
+    {
+      "id": "R01",
+      "name": "Outer guard",
+      "members": [
+        "reef_spearman"
+      ],
+      "first": 1,
+      "last": 2,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R02",
+      "name": "Mooring patrol",
+      "members": [
+        "hammerhead_bruiser"
+      ],
+      "first": 1,
+      "last": 2,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R03",
+      "name": "Reef pair",
+      "members": [
+        "reef_spearman",
+        "hammerhead_bruiser"
+      ],
+      "first": 2,
+      "last": 3,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R04",
+      "name": "Fast fins",
+      "members": [
+        "needlefin_skirmisher",
+        "reef_spearman"
+      ],
+      "first": 3,
+      "last": 3,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R05",
+      "name": "Salvage party",
+      "members": [
+        "shellback_porter",
+        "needlefin_skirmisher"
+      ],
+      "first": 3,
+      "last": 5,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R06",
+      "name": "Pearl escort",
+      "members": [
+        "pearl_cantor",
+        "reef_spearman"
+      ],
+      "first": 4,
+      "last": 7,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R07",
+      "name": "First theft",
+      "members": [
+        "pearl_thief",
+        "reef_spearman"
+      ],
+      "first": 5,
+      "last": 7,
+      "tide": 2,
+      "weight": 1
+    },
+    {
+      "id": "R08",
+      "name": "Dry opportunist",
+      "members": [
+        "pearl_thief",
+        "needlefin_skirmisher"
+      ],
+      "first": 5,
+      "last": 7,
+      "tide": 1,
+      "weight": 1
+    },
+    {
+      "id": "R09",
+      "name": "Net lesson",
+      "members": [
+        "reef_netweaver",
+        "reef_spearman"
+      ],
+      "first": 6,
+      "last": 7,
+      "tide": 1,
+      "weight": 1
+    },
+    {
+      "id": "R10",
+      "name": "Spine lesson",
+      "members": [
+        "puffer_sentinel",
+        "reef_spearman"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R11",
+      "name": "Captain gate",
+      "members": [
+        "breakwater_captain",
+        "reef_spearman"
+      ],
+      "first": 8,
+      "last": 8,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R12",
+      "name": "Captain return",
+      "members": [
+        "breakwater_captain",
+        "needlefin_skirmisher"
+      ],
+      "first": 8,
+      "last": 8,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R13",
+      "name": "Quiet reef",
+      "members": [
+        "reef_spearman",
+        "needlefin_skirmisher"
+      ],
+      "first": 9,
+      "last": 9,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R14",
+      "name": "Pearl procession",
+      "members": [
+        "pearl_cantor",
+        "shellback_porter",
+        "reef_spearman"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R15",
+      "name": "Conch lesson",
+      "members": [
+        "conch_marshal",
+        "reef_spearman"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R16",
+      "name": "Heavy rhythm",
+      "members": [
+        "conch_marshal",
+        "hammerhead_bruiser"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R17",
+      "name": "Siphon lesson",
+      "members": [
+        "moray_siphoner",
+        "reef_spearman"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R18",
+      "name": "Siphon hunters",
+      "members": [
+        "moray_siphoner",
+        "needlefin_skirmisher",
+        "reef_spearman"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R19",
+      "name": "Net patrol",
+      "members": [
+        "reef_netweaver",
+        "shellback_porter"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R20",
+      "name": "Poised spines",
+      "members": [
+        "puffer_sentinel",
+        "needlefin_skirmisher"
+      ],
+      "first": 10,
+      "last": 13,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R21",
+      "name": "Lantern gate",
+      "members": [
+        "lantern_warden",
+        "reef_spearman"
+      ],
+      "first": 14,
+      "last": 14,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R22",
+      "name": "Lantern in air",
+      "members": [
+        "lantern_warden",
+        "needlefin_skirmisher"
+      ],
+      "first": 14,
+      "last": 14,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R23",
+      "name": "Ebb relief",
+      "members": [
+        "reef_spearman",
+        "shellback_porter"
+      ],
+      "first": 15,
+      "last": 15,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R24",
+      "name": "Court sentries",
+      "members": [
+        "shellback_porter",
+        "hammerhead_bruiser",
+        "needlefin_skirmisher"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R25",
+      "name": "Netted chorus",
+      "members": [
+        "reef_netweaver",
+        "pearl_cantor",
+        "reef_spearman"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R26",
+      "name": "Thief escort",
+      "members": [
+        "pearl_thief",
+        "hammerhead_bruiser"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 2,
+      "weight": 1
+    },
+    {
+      "id": "R27",
+      "name": "Spine chorus",
+      "members": [
+        "puffer_sentinel",
+        "conch_marshal"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R28",
+      "name": "Throne approach",
+      "members": [
+        "moray_siphoner",
+        "shellback_porter"
+      ],
+      "first": 16,
+      "last": 18,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R29",
+      "name": "Final sentry",
+      "members": [
+        "reef_spearman",
+        "needlefin_skirmisher"
+      ],
+      "first": 19,
+      "last": 19,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R30",
+      "name": "Queen first lesson",
+      "members": [
+        "queen_nacre",
+        "reef_spearman",
+        "hammerhead_bruiser"
+      ],
+      "first": 20,
+      "last": 999,
+      "tide": 0,
+      "weight": 3
+    },
+    {
+      "id": "R31",
+      "name": "Queen command return",
+      "members": [
+        "queen_nacre",
+        "conch_marshal",
+        "reef_spearman"
+      ],
+      "first": 20,
+      "last": 999,
+      "tide": 0,
+      "weight": 1
+    },
+    {
+      "id": "R32",
+      "name": "Queen pearl return",
+      "members": [
+        "queen_nacre",
+        "pearl_cantor",
+        "needlefin_skirmisher"
+      ],
+      "first": 20,
+      "last": 999,
+      "tide": 0,
+      "weight": 1
+    }
+  ]
+}

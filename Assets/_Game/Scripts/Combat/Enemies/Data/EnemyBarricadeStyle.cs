@@ -4,5 +4,6 @@ public enum EnemyBarricadeStyle
     Stone = 1,
     Root = 2,
     Heartroot = 3,
-    Thorn = 4
+    Thorn = 4,
+    AirCoffer = 5
 }

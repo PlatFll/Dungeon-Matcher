@@ -668,6 +668,7 @@ public partial class BoardController
                 );
 
                 RootDestroyed(state);
+                AquaticCofferBroken(cell);
                 // One retaliation per broken barrier; a simultaneous clear from
                 // its safe side is a valid safe answer. Cascades/blasts never retaliate.
                 if(state.Style==EnemyBarricadeStyle.Thorn && thornHits.Contains(cell) && !safeHits.Contains(cell))
@@ -1190,6 +1191,8 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
+        if(state?.Style==EnemyBarricadeStyle.AirCoffer && GameplayThemeSkin.Current?.airCoffer!=null)
+            return GameplayThemeSkin.Current.airCoffer;
         if(state?.Style==EnemyBarricadeStyle.Thorn && thornBarricadeSprite!=null) return thornBarricadeSprite;
         if(IsRoot(state))
         {

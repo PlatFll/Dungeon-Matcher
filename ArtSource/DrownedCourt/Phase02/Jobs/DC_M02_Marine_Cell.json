@@ -1,0 +1,31 @@
+{
+  "id": "DC_M02_Marine_Cell",
+  "requested_units": 5,
+  "seed": 26100512,
+  "prompt": "One exact native 32x32 pixel-art match-3 board cell texture, top-down flat square tile covering the FULL canvas edge to edge. A quiet weathered marine stone paver for an ancient coral court. Slightly rounded shallow corners with darkest grout occupying corner pixels, broad uninterrupted center in desaturated medium green-gray limestone, 2-pixel bevel lit upper-left and dark lower-right. Just one short subtle carved tide curve in lower corner, not a decorative center symbol. The full 32x32 remains opaque so neighboring copies meet with no holes and no general backdrop visible. Designed behind a bright faceted gem, center must be plain and readable, contrast moderate. Practical chunky native pixel clusters with 5-7 tones, no dithering/AA/blur/smooth gradients or repetitive noise. NO wood, log, inset circular medallion, large shell, gem, object, text or purple. Deep grout #243739, shadows #465954, middle #61766D, light #88988A, restrained warm worn-edge #B3B5A0.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"e0f5f7e9-13f6-415c-900b-384897ba94d4\",\n  \"image_id\": \"e9bdb223-0ebf-5cc4-af13-5394352f89fa\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"e9bdb223-0ebf-5cc4-af13-5394352f89fa\",\n  \"job_id\": \"e0f5f7e9-13f6-415c-900b-384897ba94d4\",\n  \"image_size\": {\n    \"width\": 32,\n    \"height\": 32\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e0f5f7e9-13f6-415c-900b-384897ba94d4/download\"\n}\nPoll get_image(job_id=\"e0f5f7e9-13f6-415c-900b-384897ba94d4\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "e0f5f7e9-13f6-415c-900b-384897ba94d4",
+      "image_id": "e9bdb223-0ebf-5cc4-af13-5394352f89fa",
+      "status": "processing",
+      "source_image_id": "e9bdb223-0ebf-5cc4-af13-5394352f89fa",
+      "job_id": "e0f5f7e9-13f6-415c-900b-384897ba94d4",
+      "image_size": {
+        "width": 32,
+        "height": 32
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/e0f5f7e9-13f6-415c-900b-384897ba94d4/download"
+    },
+    "isError": false
+  }
+}

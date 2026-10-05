@@ -69,7 +69,7 @@ public static class GameplayPixelLayoutTests
             Check(g.Viewport.xMin >= safe.xMin + 4*g.Scale && g.Viewport.yMin >= safe.yMin + 4*g.Scale &&
                 g.Viewport.xMax <= safe.xMax - 4*g.Scale && g.Viewport.yMax <= safe.yMax - 4*g.Scale, "Safe insets");
             Check(g.Bottom.height >= 176 && g.Bottom.height <= 240, "Bounded bottom enclosure");
-            Check(g.Top.height >= 256 && g.Top.height <= 480, "Bounded battle");
+            Check(g.Top.height >= GameplayPixelLayoutController.MinimumBattleHeight && g.Top.height <= 480, "Bounded battle");
             float upperGap = g.Top.yMin - g.Board.yMax, lowerGap = g.Board.yMin - g.Bottom.yMax;
             Check(upperGap >= 6 && lowerGap >= 6 && Mathf.Abs(upperGap - lowerGap) <= 1, "Balanced minimum gaps");
             Check(Mathf.Max(upperGap, lowerGap) <= g.Board.width / 8,
@@ -80,7 +80,7 @@ public static class GameplayPixelLayoutTests
             Check(g.Board.width == g.Board.height && g.Board.width > 0, "Positive square board");
             Check(Mathf.Abs(g.Board.center.x - g.Viewport.width / g.Scale / 2) <= 0.5f,
                 "Board horizontally centered");
-            float maximum = Mathf.Min(g.Viewport.width, g.Viewport.height - (176 + 12 + 256)*g.Scale);
+            float maximum = Mathf.Min(g.Viewport.width, g.Viewport.height - (176 + 12 + GameplayPixelLayoutController.MinimumBattleHeight)*g.Scale);
             Check(Mathf.Abs(g.BoardTexelRatio * 544 - maximum) < g.Scale + 0.01f, "Board fills available space");
             Check(g.BoardTexelRatio * 544 <= g.Board.width*g.Scale + 0.01f, "Board fits assigned width");
             count++;

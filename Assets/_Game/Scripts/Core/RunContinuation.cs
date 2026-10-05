@@ -46,16 +46,17 @@ public sealed class RunContinuation : MonoBehaviour
     }
     public static bool SupportsSnapshot(RunCombatSnapshot saved)
     {
-        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>1) return false;
+        if(saved==null || saved.board?.forestRulesVersion>2 || saved.board?.dungeonRulesVersion>1 ||
+            saved.board?.aquatic?.version>AquaticEnvironmentState.CurrentVersion) return false;
         if(saved.travel?.version>0 && (saved.travel.version!=1 || saved.travel.stage<0 || saved.travel.stage>2 ||
-            (saved.travel.zoneId!="dungeon" && saved.travel.zoneId!="magical-forest") ||
-            (saved.travel.stage==1 && saved.travel.destination!="dungeon" && saved.travel.destination!="magical-forest"))) return false;
+            !SupportedZone(saved.travel.zoneId) ||
+            (saved.travel.stage==1 && !SupportedZone(saved.travel.destination)))) return false;
         // JsonUtility materializes null nested serializable classes on a
         // round trip. The schema, not the presence of a default object, owns
         // the profile. Version 1 always retains its original seconds rules.
         if(saved.version==1) return true;
         if(saved.version!=2 || saved.clock==null || !CombatClockSnapshot.IsSupported(saved.clock.profile) ||
-           (saved.clock.zoneId!="magical-forest" && saved.clock.zoneId!="dungeon") || saved.clock.actions==null || saved.clock.actions.pending!=0 ||
+           !SupportedZone(saved.clock.zoneId) || saved.clock.actions==null || saved.clock.actions.pending!=0 ||
            saved.clock.actions.completed<0 || saved.clock.actions.nextActorId<=0) return false;
         if(saved.board?.cells?.Count>0 && saved.board.moves!=saved.clock.actions.completed) return false;
         if(saved.enemies==null) return false;
@@ -65,6 +66,7 @@ public sealed class RunContinuation : MonoBehaviour
                !identities.Add(enemy.persistentId)) return false;
         return true;
     }
+    private static bool SupportedZone(string id) => id == "dungeon" || id == "magical-forest" || id == "drowned-court";
     private void LateUpdate()
     {
         if(IsReplaying)
@@ -115,6 +117,7 @@ public sealed class RunContinuation : MonoBehaviour
         var zone=Resources.Load<ZoneDefinition>("Zones/"+destination);
         if(!ZoneTravelController.DestinationReady(zone)) return false;
         var saved=Capture();
+        if (saved.travel.zoneId == "drowned-court") saved.travel.completedCourtVisits++;
         saved.travel.zoneId=destination;saved.travel.stage=2;saved.travel.visit++;
         saved.travel.visitStartWave=saved.wave+1;
         // Keep the run's established effect units. Legacy seconds never become moves.

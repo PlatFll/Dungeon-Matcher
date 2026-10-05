@@ -1,0 +1,23 @@
+{
+  "id": "pressure_seal",
+  "args": {
+    "description": "32x32 pixel-art warning ripple seal overlay, hollow squared ring of pale cyan and ivory interrupted wave segments, open transparent center, four strong corner pointers. No gem, text, particles, background or soft glow.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "outline": "single color black outline",
+    "detail": "low detail",
+    "view": "side",
+    "seed": 10052130
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: ef3d86e3-4d9d-4e97-acd4-8a21290b36fa\njob_id: ef3d86e3-4d9d-4e97-acd4-8a21290b36fa\nmodel: pixen\ndescription: 32x32 pixel-art warning ripple seal overlay, hollow squared ring of pale cyan and ivory interrupted wave segments, open transparent center, four strong corner pointers. No gem, text, particles, background or soft glow.\nsize: 32x32px\ntransparent: True\nasset_id: da964f6c-8079-56a1-a902-98a3cdcea7c7\nasset_status: pending (saved when generation completes)\nseed: 10052130\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"ef3d86e3-4d9d-4e97-acd4-8a21290b36fa\")"
+      }
+    ],
+    "isError": false
+  },
+  "reason": "Original request rejected before generation: unsupported reference fit or full queue; corrected without duplicating a queued job."
+}

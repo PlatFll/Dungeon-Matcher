@@ -1,0 +1,38 @@
+﻿DROWNED COURT — 2026-10-05
+Branch: codex/drowned-court-implementation
+Base main: 9f8b5f7dc78761906743eec551a38b25c89dcaea
+User authorized complete implementation, solid-color eyes, 300 new subscription
+generations (220 initial / 80 reserve), original temporary local music. No merge.
+
+Implemented: 14 stills/kits, 104 motion roles, 3 coral-ruin compositions, marine
+gameplay materials, flood/AIR, snares/coffers, 32 weighted recipes, three-zone
+travel/save, Bardley three sequential bursts. Only first four designs have
+explicit user visual approval. Later art is director-selected. Music is TEMP.
+Production: 182 generations, balance1542->1360, 82 accepted jobs, no jobs pending,
+no credit purchases. Phase2 was separate39. Reserve unused.
+
+Evidence: Docs/Validation/DROWNED_COURT.md; rules: Docs/DROWNED_COURT.md.
+Final reconciled result: 213 unique passed, zero remaining failed/skipped.
+Original failed runs and focused reruns are retained in ValidationEvidence.json.
+Final control XML: 12d0244d-6218-4997-93c3-912226e4ac38, 3/3 zone cases passed.
+All 18 scenarios reached the 60-game-second cap alive; 17 actual suspends.
+This uses 6x time and a synthetic greedy policy, not human pacing evidence.
+Eighteen handoffs passed; largest durable account 102934 bytes, final visit 18.
+Queen snapshots, six continuation tests and 112 layout combinations passed.
+Mandatory Tools/Validate-Unity.ps1 passed on final C# with muted Editor audio:
+%TEMP%/DungeonMatcher-UnityValidation-77222112-3e84-47d2-a072-f34c42146de3.log
+Native audit: 300 assets / 154 textures / 2653 GUID references; zero errors.
+Final evidence includes 642 tested source/export hashes and original XML/logs.
+No Unity processes or PixelLab jobs pending. No continued background work.
+
+Delivered review: Production/Review/Review.html and DrownedCourt_Production_Review.zip.
+Human visual approval of later art, music listening, full-visit pacing and
+physical Android testing remain open. No merge authorized.
+
+Handoff: review complete scoped diff, commit/push/open and attach PR.
+GitHub MCP available; gh absent. DO NOT MERGE.
+
+Preserve unrelated SlotDisabled/SlotHighlighted/SlotPressed PNG.meta edits.
+All shell commands rtk-prefixed; git/Unity launches escalated on this host.
+Python: C:/Users/USER/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe
+No subagents. Preserve the full validation record and original media provenance.

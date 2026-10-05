@@ -1,0 +1,534 @@
+fileFormatVersion: 2
+guid: 2df14bf023547ed49a90ac28fd368225
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2668164883063918259
+    second: reef_netweaver_AutoAttack_0
+  - first:
+      213: -1747723315974195008
+    second: reef_netweaver_AutoAttack_1
+  - first:
+      213: 1208018238170661893
+    second: reef_netweaver_AutoAttack_2
+  - first:
+      213: 6366706163152237296
+    second: reef_netweaver_AutoAttack_3
+  - first:
+      213: -4915185422513394100
+    second: reef_netweaver_AutoAttack_4
+  - first:
+      213: 1985063666179832613
+    second: reef_netweaver_AutoAttack_5
+  - first:
+      213: -80838794731242245
+    second: reef_netweaver_AutoAttack_6
+  - first:
+      213: 5241062446204541722
+    second: reef_netweaver_AutoAttack_7
+  - first:
+      213: -3497065143635234311
+    second: reef_netweaver_AutoAttack_8
+  - first:
+      213: -5161458014190287064
+    second: reef_netweaver_AutoAttack_9
+  - first:
+      213: 894031233495566849
+    second: reef_netweaver_AutoAttack_10
+  - first:
+      213: -7937198347436365462
+    second: reef_netweaver_AutoAttack_11
+  - first:
+      213: -9032715812742578219
+    second: reef_netweaver_AutoAttack_12
+  - first:
+      213: -7530205538765827949
+    second: reef_netweaver_AutoAttack_13
+  - first:
+      213: 9196582853861380620
+    second: reef_netweaver_AutoAttack_00
+  - first:
+      213: 6890455739799703455
+    second: reef_netweaver_AutoAttack_01
+  - first:
+      213: 7393031774025666619
+    second: reef_netweaver_AutoAttack_02
+  - first:
+      213: -8904343509693381380
+    second: reef_netweaver_AutoAttack_03
+  - first:
+      213: 7666029917627290778
+    second: reef_netweaver_AutoAttack_04
+  - first:
+      213: 460480188960161123
+    second: reef_netweaver_AutoAttack_05
+  - first:
+      213: 935831317833115019
+    second: reef_netweaver_AutoAttack_06
+  - first:
+      213: -4669035858723891027
+    second: reef_netweaver_AutoAttack_07
+  - first:
+      213: 2716349358280126907
+    second: reef_netweaver_AutoAttack_08
+  - first:
+      213: -2079050704891216086
+    second: reef_netweaver_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c021bd74163d0af70800000000000000
+      internalID: 9196582853861380620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f0057fcf0df9f50800000000000000
+      internalID: 6890455739799703455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30d9ff7a33599660800000000000000
+      internalID: 7393031774025666619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4cba251ca6d6480800000000000000
+      internalID: -8904343509693381380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9411bdf795336a60800000000000000
+      internalID: 7666029917627290778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d3319ca44f36600800000000000000
+      internalID: 460480188960161123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85e02510adbcfc00800000000000000
+      internalID: 935831317833115019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da89335cf90443fb0800000000000000
+      internalID: -4669035858723891027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1b52a795962b520800000000000000
+      internalID: 2716349358280126907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ffee0366ab523e0800000000000000
+      internalID: -2079050704891216086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a8b9a8bac386c00800000000000000
+      internalID: 894031233495566849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a69ec35f72869d190800000000000000
+      internalID: -7937198347436365462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfbc6063d855a280800000000000000
+      internalID: -9032715812742578219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reef_netweaver_AutoAttack_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3901f2095f55f7790800000000000000
+      internalID: -7530205538765827949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      reef_netweaver_AutoAttack_0: -2668164883063918259
+      reef_netweaver_AutoAttack_00: 9196582853861380620
+      reef_netweaver_AutoAttack_01: 6890455739799703455
+      reef_netweaver_AutoAttack_02: 7393031774025666619
+      reef_netweaver_AutoAttack_03: -8904343509693381380
+      reef_netweaver_AutoAttack_04: 7666029917627290778
+      reef_netweaver_AutoAttack_05: 460480188960161123
+      reef_netweaver_AutoAttack_06: 935831317833115019
+      reef_netweaver_AutoAttack_07: -4669035858723891027
+      reef_netweaver_AutoAttack_08: 2716349358280126907
+      reef_netweaver_AutoAttack_09: -2079050704891216086
+      reef_netweaver_AutoAttack_1: -1747723315974195008
+      reef_netweaver_AutoAttack_10: 894031233495566849
+      reef_netweaver_AutoAttack_11: -7937198347436365462
+      reef_netweaver_AutoAttack_12: -9032715812742578219
+      reef_netweaver_AutoAttack_13: -7530205538765827949
+      reef_netweaver_AutoAttack_2: 1208018238170661893
+      reef_netweaver_AutoAttack_3: 6366706163152237296
+      reef_netweaver_AutoAttack_4: -4915185422513394100
+      reef_netweaver_AutoAttack_5: 1985063666179832613
+      reef_netweaver_AutoAttack_6: -80838794731242245
+      reef_netweaver_AutoAttack_7: 5241062446204541722
+      reef_netweaver_AutoAttack_8: -3497065143635234311
+      reef_netweaver_AutoAttack_9: -5161458014190287064
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

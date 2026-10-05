@@ -1,0 +1,46 @@
+{
+  "id": "coral_foreground",
+  "args": {
+    "description": "Small sparse cluster of warm coral fans, one cream anemone and short teal seagrass, pixel art side-view environment prop for lower outer edge of a marine court. Asymmetric low silhouette, no background, shadow or glow. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 10052103,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"c97f8fac-72f9-4937-8116-8c0e0dd48f7c\",\n  \"image_id\": \"f4cff7fa-88b0-5892-b4e8-72bf623d0713\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"f4cff7fa-88b0-5892-b4e8-72bf623d0713\",\n  \"job_id\": \"c97f8fac-72f9-4937-8116-8c0e0dd48f7c\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/c97f8fac-72f9-4937-8116-8c0e0dd48f7c/download\"\n}\nPoll get_image(job_id=\"c97f8fac-72f9-4937-8116-8c0e0dd48f7c\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "c97f8fac-72f9-4937-8116-8c0e0dd48f7c",
+      "image_id": "f4cff7fa-88b0-5892-b4e8-72bf623d0713",
+      "status": "processing",
+      "source_image_id": "f4cff7fa-88b0-5892-b4e8-72bf623d0713",
+      "job_id": "c97f8fac-72f9-4937-8116-8c0e0dd48f7c",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/c97f8fac-72f9-4937-8116-8c0e0dd48f7c/download"
+    },
+    "isError": false
+  },
+  "reason": "Original request rejected before generation: unsupported reference fit or full queue; corrected without duplicating a queued job."
+}

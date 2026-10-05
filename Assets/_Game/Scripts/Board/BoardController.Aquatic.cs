@@ -1,0 +1,369 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public partial class BoardController
+{
+    private AquaticEnvironmentState aquatic;
+    private readonly Dictionary<int, bool> aquaticClearReceipts = new Dictionary<int, bool>();
+    private int suffocationMove = -1;
+    public AquaticEnvironmentState Aquatic => aquatic;
+    public bool IsFlooded => aquatic?.phase == TidePhase.Flooded;
+    public event Action AquaticChanged;
+    // Physical identity is shared by fixed-cell and bubble answers, so a single
+    // destroyed gem cannot answer a pressure channel twice.
+    public event Action<int, bool, bool> AquaticAnswer;
+    private bool AquaticZone => RunSession.Current?.Zone?.Definition?.periodicallyFloods == true;
+
+    public void AcceptAquaticMove(int move)
+    {
+        if (!AquaticZone) return;
+        aquatic ??= new AquaticEnvironmentState();
+        aquatic.Accept(move);
+    }
+
+    private void RegisterAquaticClear(IEnumerable<Gem> cleared, bool manual)
+    {
+        if (!AquaticZone || cleared == null) return;
+        foreach (var gem in cleared) if (gem != null)
+            aquaticClearReceipts[gem.BoardIdentity] = manual ||
+                (aquaticClearReceipts.TryGetValue(gem.BoardIdentity, out bool wasManual) && wasManual);
+    }
+
+    private void ResolveAquaticDestruction(IEnumerable<Gem> cleared, HashSet<Gem> preserved)
+    {
+        if (aquatic == null || cleared == null) return;
+        foreach (var gem in cleared)
+        {
+            if (gem == null) continue;
+            int id = gem.BoardIdentity;
+            bool player = aquaticClearReceipts.TryGetValue(id, out bool manual);
+            aquaticClearReceipts.Remove(id);
+            if (preserved.Contains(gem)) continue;
+            bool bubble = aquatic.bubbles.Remove(id);
+            bool snared = aquatic.snares.RemoveAll(s => s.gemId == id) > 0;
+            if (!player) continue; // Environmental removal never creates collection rewards.
+            if (bubble) aquatic.Collect(2);
+            if (snared && manual) aquatic.SnaredManualClear();
+            AquaticAnswer?.Invoke(id, bubble, false);
+        }
+        AquaticChanged?.Invoke();
+    }
+
+    public bool FormationCanFlood(IEnumerable<EnemyDefinition> definitions) =>
+        definitions != null && definitions.Any() && definitions.All(d => d != null && d.canFightFlooded);
+
+    public static bool FirstFloodLessonSafe(IEnumerable<EnemyDefinition> definitions) =>
+        definitions != null && definitions.All(d => d != null &&
+            d.SpecialAbilityKind != EnemySpecialAbilityKind.PearlTheft &&
+            d.SpecialAbilityKind != EnemySpecialAbilityKind.ThornySnare &&
+            d.SpecialAbilityKind != EnemySpecialAbilityKind.SpineGuard &&
+            d.SpecialAbilityKind != EnemySpecialAbilityKind.LanternPressure &&
+            d.SpecialAbilityKind != EnemySpecialAbilityKind.AbyssalRegent);
+
+    private bool IsAquaticWarningTarget(Gem gem)
+    {
+        if (!AquaticZone || gem == null) return false;
+        var cell = new Vector2Int(gem.Column, gem.Row);
+        foreach (var enemy in RunSession.Current.Waves.ActiveEnemies)
+        {
+            var ability = enemy != null && !enemy.IsDefeated ? enemy.GetComponent<AquaticEnemyAbility>() : null;
+            if (ability?.IsPreparing == true && (ability.ResponseCells.Contains(cell) ||
+                ability.MarkedBubbles.Contains(gem.BoardIdentity) || ability.CofferTarget == cell)) return true;
+        }
+        return false;
+    }
+
+    private IEnumerator AdvanceAquaticEnvironment(int move)
+    {
+        var run = RunSession.Current;
+        if (run == null || run.IsFinished || run.Player.IsDefeated) yield break;
+        aquatic ??= new AquaticEnvironmentState();
+        int encounter = run.Travel?.LocalWave ?? run.Waves.CurrentWave;
+        aquatic.EncounterStarted(encounter);
+        // Old checkpoints lacking this optional owner begin dry at their current action.
+        if (aquatic.acceptedMove != move) aquatic.Accept(move);
+        var coffer = aquatic.coffer;
+        bool drained = aquatic.Settle(move, encounter);
+        aquatic.snares.RemoveAll(s => s.expiresMove <= move || FindAquaticGem(s.gemId) == null || !AquaticOwnerLiving(s.ownerId));
+        if (drained)
+        {
+            if (coffer != null) { aquatic.coffer = coffer; yield return RemoveAirCoffer(false); }
+            AquaticChanged?.Invoke();
+            yield return AquaticTransition(false);
+            yield break;
+        }
+        var living = run.Waves.ActiveEnemies.Where(e => e != null && !e.IsDefeated).ToArray();
+        if (run.Waves.IsWaveActive && living.Length > 0 && aquatic.CanFlood(encounter,
+            FormationCanFlood(run.Waves.OriginalEncounterDefinitions) && living.All(e => e.Definition.canFightFlooded) &&
+            (aquatic.floodCount > 0 || FirstFloodLessonSafe(run.Waves.OriginalEncounterDefinitions))))
+        {
+            aquatic.StartFlood(GameplayRandom.Range(10, 13), move);
+            EnsureAquaticSupply(2);
+            AquaticChanged?.Invoke();
+            yield return AquaticTransition(true);
+        }
+        else if (IsFlooded)
+        {
+            aquatic.bubbles.RemoveAll(id => FindAquaticGem(id) == null);
+            if (move >= aquatic.nextSupplyMove)
+            {
+                EnsureAquaticSupply(2);
+                aquatic.nextSupplyMove = move + 2;
+            }
+            if (aquatic.air <= 2) EnsureReachableAir();
+        }
+        AquaticChanged?.Invoke();
+    }
+
+    private IEnumerator AquaticTransition(bool flooded)
+    {
+        // This runs inside the accepted-action hold. Timed basics and input are
+        // already paused by CombatMoveClock; presentation cannot own the state.
+        yield return new WaitForSeconds(.35f);
+    }
+
+    public void FinishAquaticMove(int move)
+    {
+        var run = RunSession.Current;
+        if (!AquaticZone || aquatic == null || suffocationMove == move || !aquatic.NeedsSuffocation(move) ||
+            run.IsFinished || run.Player.IsDefeated || !run.Waves.IsWaveActive ||
+            !run.Waves.ActiveEnemies.Any(e => e != null && !e.IsDefeated)) return;
+        suffocationMove = move;
+        var source = GetComponent<SuffocationDamageSource>() ?? gameObject.AddComponent<SuffocationDamageSource>();
+        run.Player.TryTakeDamage(5, source);
+        AquaticChanged?.Invoke();
+    }
+
+    public Gem FindAquaticGem(int identity)
+    {
+        if (gems != null) foreach (var gem in gems) if (gem != null && gem.BoardIdentity == identity) return gem;
+        return null;
+    }
+
+    private bool IsAquaticSnared(Gem gem) => gem != null && aquatic != null &&
+        aquatic.snares.Exists(s => s.gemId == gem.BoardIdentity);
+
+    private bool AquaticOwnerLiving(long id) => RunSession.Current?.Waves?.ActiveEnemies.Any(e =>
+        e != null && !e.IsDefeated && e.PersistentId == id) == true;
+
+    private List<Gem> AirCandidates() => ImmediatelyClearableOrdinaryGems()
+        .Where(g => !IsProtectedWarningTarget(g) && !aquatic.snares.Exists(s => s.gemId == g.BoardIdentity))
+        .OrderBy(g => g.Row).ThenBy(g => g.Column).ToList();
+
+    private void EnsureAquaticSupply(int target)
+    {
+        if (!IsFlooded) return;
+        var choices = AirCandidates();
+        choices.RemoveAll(g => aquatic.bubbles.Contains(g.BoardIdentity));
+        while (aquatic.bubbles.Count < Mathf.Min(3, target) && choices.Count > 0)
+        {
+            int index = BoardRandomRange(0, choices.Count);
+            aquatic.bubbles.Add(choices[index].BoardIdentity); choices.RemoveAt(index);
+        }
+    }
+
+    private void EnsureReachableAir()
+    {
+        if (!IsFlooded) return;
+        var available = AirCandidates();
+        if (available.Any(g => aquatic.bubbles.Contains(g.BoardIdentity))) return;
+        // A filled supply is relocated, never collected. The visual explicitly
+        // follows the new physical gem identity; no AIR or damage is awarded.
+        if (available.Count > 0)
+        {
+            if (aquatic.bubbles.Count >= 3) aquatic.bubbles.RemoveAt(aquatic.bubbles.Count - 1);
+            aquatic.bubbles.Add(available[0].BoardIdentity);
+        }
+    }
+
+    public bool TryApplyAquaticSnares(EnemyActor owner, int count = 2)
+    {
+        if (owner == null || owner.IsDefeated || !AquaticZone || IsBusy) return false;
+        aquatic ??= new AquaticEnvironmentState();
+        int capacity = Mathf.Min(count, 2 - aquatic.snares.Count(s => s.ownerId == owner.PersistentId),
+            BalanceV1.Current.maximumGlobalChains - RestrictionCount);
+        var reserved = new HashSet<int>(AirCandidates().Select(g => g.BoardIdentity));
+        var choices = new List<Gem>();
+        foreach (var g in gems) if (IsOrdinaryGemOnBoard(g) && !IsGemPinned(g) && !IsProtectedWarningTarget(g) &&
+            !aquatic.bubbles.Contains(g.BoardIdentity) && !reserved.Contains(g.BoardIdentity) &&
+            !aquatic.snares.Exists(s => s.gemId == g.BoardIdentity)) choices.Add(g);
+        int placed = 0;
+        while (placed < capacity && choices.Count > 0)
+        {
+            int index = BoardRandomRange(0, choices.Count); var gem = choices[index]; choices.RemoveAt(index);
+            var snare = new AquaticSnareState { gemId = gem.BoardIdentity,
+                ownerId = owner.PersistentId, expiresMove = completedValidPlayerMoves + 3 };
+            aquatic.snares.Add(snare);
+            bool safe = RetainsUsefulResponse() && (!IsFlooded || AirCandidates().Any(g =>
+                aquatic.bubbles.Contains(g.BoardIdentity)) || aquatic.bubbles.Count == 0);
+            if (!safe) { aquatic.snares.Remove(snare); continue; }
+            CancelPointerInteraction(gem); placed++;
+        }
+        if (placed > 0) AquaticChanged?.Invoke();
+        return placed > 0;
+    }
+
+    public List<Vector2Int> SelectAquaticResponseCells(int count)
+    {
+        aquatic ??= new AquaticEnvironmentState();
+        return AirCandidates().Take(count).Select(g => new Vector2Int(g.Column, g.Row)).ToList();
+    }
+
+    public bool TryPlanAirTheft(int maximum, bool royal, out List<int> targets, out Vector2Int site)
+    {
+        targets = new List<int>(); site = default;
+        if (!IsFlooded || aquatic.coffer != null || IsBusy) return false;
+        var answers = AirCandidates();
+        var bubbles = aquatic.bubbles.Where(id => FindAquaticGem(id) != null).ToList();
+        int limit = Mathf.Min(maximum, royal ? bubbles.Count : bubbles.Count - 1);
+        if (limit < 1 || answers.Count < 2) return false;
+        var rescue = answers.FirstOrDefault(g => !royal && bubbles.Contains(g.BoardIdentity)) ?? answers[0];
+        foreach (int id in bubbles) if (id != rescue.BoardIdentity || royal)
+        { if (targets.Count < limit) targets.Add(id); }
+        foreach (var gem in answers)
+        {
+            if (aquatic.bubbles.Contains(gem.BoardIdentity) || gem == rescue) continue;
+            var cell = new Vector2Int(gem.Column, gem.Row);
+            if (!answers.Any(g => g != gem && Mathf.Abs(g.Column-cell.x)+Mathf.Abs(g.Row-cell.y)==1)) continue;
+            // Probe the established useful-response rules before reserving a site.
+            barricadeCells[cell] = new BarricadeCellState { RemainingDurability = 1 };
+            var captured = new HashSet<int>(targets);
+            var remaining = AirCandidates().Where(g => g != gem && !captured.Contains(g.BoardIdentity)).ToList();
+            bool safe = RetainsUsefulResponse() && remaining.Count > 0 &&
+                (royal || remaining.Any(g => aquatic.bubbles.Contains(g.BoardIdentity)));
+            barricadeCells.Remove(cell);
+            if (!safe) continue;
+            site = cell; return targets.Count > 0;
+        }
+        targets.Clear(); return false;
+    }
+
+    public bool TryQueueAirTheft(EnemyActor owner, List<int> targets, Vector2Int site, int durability,
+        bool royal, Action<bool> completed)
+    {
+        if (owner == null || owner.IsDefeated || !IsFlooded || aquatic.coffer != null) return false;
+        var request = new BoardMutationRequest { Kind = BoardMutationKind.PlaceAirCoffer,
+            OwnerActor = owner, OwnerInstanceId = owner.GetInstanceID(), AquaticTargets = new List<int>(targets),
+            AquaticSite = site, BarricadeDurability = durability, AquaticRoyal = royal, Completed = completed };
+        EnqueueBoardMutation(request);
+        request.SpecialMotionId = 0; // Caller already owns and presented the release beat.
+        TryStartBoardMutationProcessor(); return true;
+    }
+
+    private IEnumerator ExecuteAirCoffer(BoardMutationRequest request)
+    {
+        if (!IsFlooded || aquatic.coffer != null || request.OwnerActor == null || request.OwnerActor.IsDefeated) yield break;
+        var site = request.AquaticSite; var covered = GetGem(site.x, site.y);
+        // The caller owns this coffer warning. Its own reservation must not
+        // reject the release; all structural and oxygen checks still run below.
+        if (!IsOrdinaryGemOnBoard(covered) || aquatic.bubbles.Contains(covered.BoardIdentity)) yield break;
+        var charges = request.AquaticTargets.Where(id => aquatic.bubbles.Contains(id) && FindAquaticGem(id) != null).Distinct().ToList();
+        if (charges.Count == 0) yield break;
+        var state = new BarricadeCellState { OwnerInstanceId = request.OwnerInstanceId,
+            RemainingDurability = request.BarricadeDurability, MaximumDurability = request.BarricadeDurability,
+            Style = EnemyBarricadeStyle.AirCoffer };
+        barricadeCells[site] = state;
+        // Validate the entire resulting board and a surviving ordinary rescue
+        // before changing any charge ownership.
+        var answers = AirCandidates().Where(g => g != covered && !charges.Contains(g.BoardIdentity)).ToList();
+        if (!RetainsUsefulResponse() || answers.Count == 0 || (!request.AquaticRoyal &&
+            !answers.Any(g => aquatic.bubbles.Contains(g.BoardIdentity))))
+        { barricadeCells.Remove(site); yield break; }
+        foreach (int id in charges) aquatic.bubbles.Remove(id);
+        if (!answers.Any(g => aquatic.bubbles.Contains(g.BoardIdentity))) aquatic.bubbles.Add(answers[0].BoardIdentity);
+        aquatic.coffer = new AquaticCofferState { id = aquatic.nextCofferId++, x = site.x, y = site.y,
+            ownerId = request.OwnerActor.PersistentId, charges = charges.Count };
+        request.Succeeded = true;
+        yield return ClearMatches(new HashSet<Gem> { covered }, null);
+        MaterializeBarricades(new List<Vector2Int> { site });
+        yield return ResolveEnvironmentalBoardChange();
+        AquaticChanged?.Invoke();
+    }
+
+    private void AquaticCofferBroken(Vector2Int cell)
+    {
+        if (aquatic?.coffer == null || aquatic.coffer.x != cell.x || aquatic.coffer.y != cell.y) return;
+        int charges = aquatic.coffer.charges; aquatic.coffer = null;
+        aquatic.Collect(2 * charges);
+        AquaticAnswer?.Invoke(0, false, true);
+        AquaticChanged?.Invoke();
+    }
+
+    public void ReleaseAquaticOwner(long owner)
+    {
+        if (aquatic == null) return;
+        aquatic.snares.RemoveAll(s => s.ownerId == owner);
+        if (aquatic.coffer?.ownerId == owner)
+        {
+            if (IsFlooded && aquatic.coffer.charges > 0) { aquatic.Collect(2 * aquatic.coffer.charges); AquaticAnswer?.Invoke(0, false, true); }
+            // Payout is committed once before the queued occupancy cleanup.
+            aquatic.coffer.charges = 0;
+            EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.RemoveAirCoffer });
+            TryStartBoardMutationProcessor();
+        }
+        AquaticChanged?.Invoke();
+    }
+
+    private IEnumerator RemoveAirCoffer(bool payout)
+    {
+        var coffer = aquatic?.coffer; if (coffer == null) yield break;
+        aquatic.coffer = null;
+        if (payout) aquatic.Collect(2 * coffer.charges);
+        var cell = new Vector2Int(coffer.x, coffer.y);
+        if (barricadeCells.TryGetValue(cell, out var barrier) && barrier.Style == EnemyBarricadeStyle.AirCoffer)
+        { barricadeCells.Remove(cell); CancelBarricadeVisualRoutine(barrier); DestroyBarricadeView(barrier); }
+        yield return ResolveEnvironmentalBoardChange();
+        AquaticChanged?.Invoke();
+    }
+
+    private static AquaticEnvironmentState CopyAquatic(AquaticEnvironmentState source)
+    {
+        if(source==null)return null;
+        var result=JsonUtility.FromJson<AquaticEnvironmentState>(JsonUtility.ToJson(source));
+        // Unity materializes absent nested classes as empty objects. Positive
+        // coffer identity is the persisted occupancy discriminator.
+        if(result.coffer?.id<=0)result.coffer=null;
+        return result;
+    }
+    private AquaticEnvironmentState CaptureAquatic() => CopyAquatic(aquatic);
+    private void RestoreAquatic(AquaticEnvironmentState saved)
+    {
+        if (saved != null && saved.version != AquaticEnvironmentState.CurrentVersion)
+            throw new InvalidOperationException("Unsupported aquatic rules.");
+        aquatic = CopyAquatic(saved);
+        aquaticClearReceipts.Clear(); AquaticChanged?.Invoke();
+    }
+
+    private void ReconcileAquaticMemory(BoardCombatSnapshot saved, List<Vector2Int> openings)
+    {
+        foreach (var cell in saved.cells)
+            if (cell.barricade && cell.barricadeStyle == EnemyBarricadeStyle.AirCoffer)
+            { cell.barricade = false; openings.Add(new Vector2Int(cell.x, cell.y)); }
+        var coffer = aquatic?.coffer;
+        if (coffer == null) return;
+        var pos = new Vector2Int(coffer.x, coffer.y);
+        if (!barricadeCells.TryGetValue(pos, out var current)) return;
+        var target = saved.cells.Find(c => c.x == pos.x && c.y == pos.y);
+        target.hasGem = target.mined = target.banner = target.pinned = target.frozen = target.movable = false;
+        target.barricade = true; target.barricadeStyle = EnemyBarricadeStyle.AirCoffer;
+        target.barricadeOwner = -1; target.durability = current.RemainingDurability;
+        target.maximumDurability = current.MaximumDurability;
+        openings.RemoveAll(p => p == pos);
+    }
+
+    private void PruneAquaticAfterMemory()
+    {
+        if (aquatic == null) return;
+        aquatic.bubbles.RemoveAll(id => FindAquaticGem(id) == null);
+        aquatic.snares.RemoveAll(s => FindAquaticGem(s.gemId) == null);
+        var coffer = aquatic.coffer;
+        if (coffer != null && barricadeCells.TryGetValue(new Vector2Int(coffer.x, coffer.y), out var barrier))
+            barrier.OwnerInstanceId = RunSession.Current?.Waves.ActiveEnemies.FirstOrDefault(e =>
+                e != null && e.PersistentId == coffer.ownerId)?.GetInstanceID() ?? 0;
+        aquaticClearReceipts.Clear();
+        AquaticChanged?.Invoke();
+    }
+}

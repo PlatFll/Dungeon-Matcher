@@ -1,0 +1,46 @@
+{
+  "id": "breakwater_captain",
+  "quoted_units": 5,
+  "args": {
+    "description": "One native 64x64 full-body LEFT-facing pixel-art enemy for Dungeon Matcher, transparent background. Veteran hammerhead commander, wide scarred brow, one notched fin, layered ivory shell pauldrons, short muted royal-red sash. Stout coral spear and rectangular shell buckler. Disciplined grounded stance, slate skin, old brass. Solid dark eyes. Consistent one-pixel #0A0D11 contour, crisp square pixels, broad connected shading clusters, top-left light, 2-3 shades per material, restrained interior detail. Eyes fully one dark color, no white sclera or highlights. Common source pixel scale, feet near canvas bottom. One character, one stance, no text, shadow disc, particles or scenery.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 10052032,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Rendering, outline and shading discipline only. New species and palette as described. Same source pixel density."
+    },
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"7350030c-8df6-41cb-a7b9-9931b39fd7ab\",\n  \"image_id\": \"fff91815-8698-54fb-9cfa-dd089a6bca56\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fff91815-8698-54fb-9cfa-dd089a6bca56\",\n  \"job_id\": \"7350030c-8df6-41cb-a7b9-9931b39fd7ab\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/7350030c-8df6-41cb-a7b9-9931b39fd7ab/download\"\n}\nPoll get_image(job_id=\"7350030c-8df6-41cb-a7b9-9931b39fd7ab\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "7350030c-8df6-41cb-a7b9-9931b39fd7ab",
+      "image_id": "fff91815-8698-54fb-9cfa-dd089a6bca56",
+      "status": "processing",
+      "source_image_id": "fff91815-8698-54fb-9cfa-dd089a6bca56",
+      "job_id": "7350030c-8df6-41cb-a7b9-9931b39fd7ab",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/7350030c-8df6-41cb-a7b9-9931b39fd7ab/download"
+    },
+    "isError": false
+  }
+}

@@ -9,6 +9,7 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite panelBackground;
     public Sprite[] boardCells;
     public GameObject battleEnvironment;
+    public GameObject[] battleEnvironmentVariants;
     public Sprite frameCorner, frameEdge, wavePlaque;
     public Sprite buttonNormal, buttonHighlighted, buttonPressed, buttonDisabled;
     public Sprite settingsNormal, settingsHighlighted, settingsPressed, settingsDisabled;
@@ -16,6 +17,7 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite rootLevelOne, rootLevelTwo;
     public Sprite[] vineSpreadFrames, vineHitFrames;
     public Sprite healEffect, interruptEffect, resonanceIcon;
+    public Sprite airBubble, thornySnare, airCoffer, pressureSeal;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;
     [System.Serializable] public struct IconReplacement { public Sprite source, themed; }
     public IconReplacement[] abilityIcons;

@@ -60,6 +60,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         var pressure=GetComponent<ForestPressureAbility>();
         bool warning=pressure!=null && pressure.IsPreparing;
         var recipient=casting?channel.Target:null;
+        var aquatic=GetComponent<AquaticEnemyAbility>();
         text.text=casting ? $"HEAL IN {channel.ResponseMoves}" : channel!=null && channel.BlocksBasic ? "RECOVER" :
             milestone!=null && milestone.IsPreparing ? $"{milestone.CastName} IN {milestone.ResponseMoves}" :
             milestone!=null && milestone.IsProtected ? "ROOT GUARD" :
@@ -69,6 +70,9 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
             CombatMoveClock.MoveBasics ? $"HIT IN {Mathf.CeilToInt(attack?.RemainingAttackTime ?? 0)}" :
             $"HIT {attack?.RemainingAttackTime ?? 0:0.0}s";
         text.color=casting||ritual||warning?new Color(.65f,1f,.45f):Color.white;
+        if(aquatic!=null && aquatic.IsPreparing)
+        { text.text=$"{aquatic.CastName} IN {aquatic.ResponseMoves}"; text.color=new Color(.6f,.92f,1f); recipient=aquatic.Target; }
+        else if(aquatic?.BlocksBasic==true) text.text="RECOVER";
         bar.gameObject.SetActive(casting||ritual);
         if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves/2f:(float)milestone.ResponseMoves/milestone.ChannelMoves)),4);
         if(link!=null)

@@ -1,0 +1,46 @@
+{
+  "id": "skittercrab",
+  "quoted_units": 5,
+  "args": {
+    "description": "One native 64x64 full-body LEFT-facing pixel-art enemy for Dungeon Matcher, transparent background. Tiny grounded reef crab, low sandy shell, two small solid dark eye stalks, blunt pincers, short fast feet, one coral-pink shell patch, pale underside. Intentional minion body only 26-30 pixels tall in the lower canvas. Not enlarged to humanoid size. Consistent one-pixel #0A0D11 contour, crisp square pixels, broad connected shading clusters, top-left light, 2-3 shades per material, restrained interior detail. Eyes fully one dark color, no white sclera or highlights. Common source pixel scale, feet near canvas bottom. One character, one stance, no text, shadow disc, particles or scenery.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 10052035,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Rendering, outline and shading discipline only. New species and palette as described. Same source pixel density."
+    },
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"cd2456a6-31ba-4467-a01b-288436186822\",\n  \"image_id\": \"16eb82ac-657a-5fb6-9b4c-7f4a03b5e7d1\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"16eb82ac-657a-5fb6-9b4c-7f4a03b5e7d1\",\n  \"job_id\": \"cd2456a6-31ba-4467-a01b-288436186822\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cd2456a6-31ba-4467-a01b-288436186822/download\"\n}\nPoll get_image(job_id=\"cd2456a6-31ba-4467-a01b-288436186822\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "cd2456a6-31ba-4467-a01b-288436186822",
+      "image_id": "16eb82ac-657a-5fb6-9b4c-7f4a03b5e7d1",
+      "status": "processing",
+      "source_image_id": "16eb82ac-657a-5fb6-9b4c-7f4a03b5e7d1",
+      "job_id": "cd2456a6-31ba-4467-a01b-288436186822",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/cd2456a6-31ba-4467-a01b-288436186822/download"
+    },
+    "isError": false
+  }
+}

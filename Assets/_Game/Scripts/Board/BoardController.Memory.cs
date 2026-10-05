@@ -115,6 +115,7 @@ public partial class BoardController
             cell.mined=true;cell.crumbleRestoreMove=entry.Value;
             reopenedMines.RemoveAll(p=>p==entry.Key);
         }
+        ReconcileAquaticMemory(saved, reopenedMines);
         isBusy = true;
         NotifyBoardActivity();
         pointerStartGem = null;
@@ -173,6 +174,7 @@ public partial class BoardController
             else GemSetMarked?.Invoke(set.Key);
         }
         isBusy = false;
+        PruneAquaticAfterMemory();
         RootsChanged?.Invoke();
         BoardStateRestored?.Invoke();
         return true;

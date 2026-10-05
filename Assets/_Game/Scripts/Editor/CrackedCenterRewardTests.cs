@@ -21,6 +21,8 @@ public sealed class CrackedCenterRewardTests
     private RunUpgradeGameplayHooks hooks;
     private Gem[,] grid;
     private UnityEngine.Random.State randomState;
+    private IDisposable account;
+    private string accountPath;
 
     [SetUp]
     public void SetUp()
@@ -28,6 +30,12 @@ public sealed class CrackedCenterRewardTests
         randomState = UnityEngine.Random.state;
         Assert.That(RunUpgradeRuntime.Current, Is.Null, "Use an isolated EditMode scene; do not delete live run state.");
         Assert.That(RunUpgradeGameplayHooks.Current, Is.Null);
+        // Permanent ability scaling is a separate concern. A real user's
+        // upgraded Bardley must not leak into these isolated reward fixtures.
+        accountPath=System.IO.Path.GetFullPath(".utmp/CrackedRewardProfiles/"+Guid.NewGuid().ToString("N")+".json");
+        System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(accountPath));
+        System.IO.File.WriteAllText(accountPath,JsonUtility.ToJson(new AccountSave()));
+        account=AccountProgression.UseDisposableProfile(accountPath);
         root = new GameObject("CrackedRewardFixture");
         player = Child("Player").AddComponent<PlayerActor>();
         PlayerDefinition definition = UnityEngine.Object.Instantiate(Resources.Load<PlayerDefinition>("Players/Player_Bardley"));
@@ -70,6 +78,7 @@ public sealed class CrackedCenterRewardTests
         for (int i = temporaryAssets.Count - 1; i >= 0; i--)
             if (temporaryAssets[i] != null) UnityEngine.Object.DestroyImmediate(temporaryAssets[i]);
         temporaryAssets.Clear();
+        account?.Dispose();account=null;
         UnityEngine.Random.state = randomState;
     }
 

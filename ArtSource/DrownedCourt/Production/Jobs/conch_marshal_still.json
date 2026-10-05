@@ -1,0 +1,46 @@
+{
+  "id": "conch_marshal",
+  "quoted_units": 5,
+  "args": {
+    "description": "One native 64x64 full-body LEFT-facing pixel-art enemy for Dungeon Matcher, transparent background. Lionfish-folk officer. Short fan of blunt crimson and cream fins around stern solid-dark-eyed face, bronze shoulder plate, dark wine sash, large conch horn at chest and short coral baton. Crownless compact stance. Consistent one-pixel #0A0D11 contour, crisp square pixels, broad connected shading clusters, top-left light, 2-3 shades per material, restrained interior detail. Eyes fully one dark color, no white sclera or highlights. Common source pixel scale, feet near canvas bottom. One character, one stance, no text, shadow disc, particles or scenery.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 10052030,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Rendering, outline and shading discipline only. New species and palette as described. Same source pixel density."
+    },
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"82a8c188-b37e-4613-b71b-83e42c2d819d\",\n  \"image_id\": \"9af7a59e-0fa9-5c30-8ac1-06dc2000cb33\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"9af7a59e-0fa9-5c30-8ac1-06dc2000cb33\",\n  \"job_id\": \"82a8c188-b37e-4613-b71b-83e42c2d819d\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/82a8c188-b37e-4613-b71b-83e42c2d819d/download\"\n}\nPoll get_image(job_id=\"82a8c188-b37e-4613-b71b-83e42c2d819d\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "82a8c188-b37e-4613-b71b-83e42c2d819d",
+      "image_id": "9af7a59e-0fa9-5c30-8ac1-06dc2000cb33",
+      "status": "processing",
+      "source_image_id": "9af7a59e-0fa9-5c30-8ac1-06dc2000cb33",
+      "job_id": "82a8c188-b37e-4613-b71b-83e42c2d819d",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/82a8c188-b37e-4613-b71b-83e42c2d819d/download"
+    },
+    "isError": false
+  }
+}

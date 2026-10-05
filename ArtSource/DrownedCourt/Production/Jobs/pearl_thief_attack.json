@@ -1,0 +1,19 @@
+{
+  "id": "pearl_thief_attack",
+  "args": {
+    "first_frame_base64": "Selected/pearl_thief.png",
+    "action": "One quick left-facing stab with the small existing knife, tentacles shift at the floor and recoil, then return to the original crouched stance. Keep bag and equipment unchanged. Preserve the native pixel size, face and fully solid dark eyes. No particles, light trails or glow; transparent background.",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 10052203
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: ef88169d-8e98-4f98-949a-9fc8ee604889\njob_id: ef88169d-8e98-4f98-949a-9fc8ee604889\naction: One quick left-facing stab with the small existing knife, tentacles shift at the floor and recoil, then return to the original crouched stance. Keep bag and equipment unchanged. Preserve the native pixel size, face and fully solid dark eyes. No particles, light trails or glow; transparent background.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 10052203\nasset_id: 6dac4674-2f39-5e8b-97f5-6c7dde67a871\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ef88169d-8e98-4f98-949a-9fc8ee604889\")"
+      }
+    ],
+    "isError": false
+  }
+}
