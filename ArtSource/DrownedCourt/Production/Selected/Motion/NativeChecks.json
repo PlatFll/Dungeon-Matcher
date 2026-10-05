@@ -1,0 +1,3700 @@
+{
+  "operations": "Native palette mapping to selected still, isolated generated spark removal, canvas padding and baseline translation. No resizing or interpolation. Exact input/ready frames return between actions.",
+  "checks": [
+    {
+      "name": "reef_spearman",
+      "state": "Idle",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 5,
+      "colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ce8410705615eb740cb1c2116ecbf6ebc33b08d4e28a158435c40e79e2c75ea7"
+    },
+    {
+      "name": "reef_spearman",
+      "state": "AutoAttack",
+      "size": [
+        1920,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 15,
+      "colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "436db6c003330352b51dfa2bc6766c1e966416547ec0b81aeb6be53035a7cd73"
+    },
+    {
+      "name": "reef_spearman",
+      "state": "Death",
+      "size": [
+        1664,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 13,
+      "colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d57ed67c1bc88e84e66a46dfc7237d0ba80153afc6b6466cbbaaa73336aca83b"
+    },
+    {
+      "name": "reef_spearman",
+      "state": "Hit",
+      "size": [
+        512,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 4,
+      "colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ac947dec29ed470a441cb68941c438fa307903a2c424356e084a268e6d978cf1"
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0faa03d23d91242ed59b525401a2c61ba3cdaac24eee7da105e77e2cc8295c7b"
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "01e36715a6c90aacd745969a2c8f3e5219dc63c5efec8c00fa37c0cb2350f534"
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "78007546888e3c92c2995db1fd541f3d8e250cd773a1ffb709dbfc0fcc1d426e"
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "faadf525b26d668753d1ce09c212cb1a64ebce63973d03bee7e65a708bba4b4c"
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "85d77f7a4cd77c5699bb62c7b61010c31cecc8cf6e1e846a900b2b522cd31e71"
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "AutoAttack",
+      "size": [
+        1280,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 16,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0834bb49ece7086d507d17d880f146e5308fd68b96daf756d86b18f86db36bca"
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "21a4a40d0c622cc63f12ec13a19e862af4255f31e751ce397804e2b7842ed020"
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "55ef1175183a8838356bc2eb43b9fd6880bf6813eea9910075cbbba899fefe76"
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "184976f141125a5fa69d7a9e600bd0338b71b7363ac3b8624efdc9d017bb1e69"
+    },
+    {
+      "name": "shellback_porter",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7cad3c71644a850a5bbeca18be54f6129dc02e291ec6d5cdae3ad9eed5b0a731"
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3a3f560abe53d4be1126d048ff9d147626730bc8f5710a47b1dd201f85eaaa6c"
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "707a4797b584d3c7e4886ba871e46d417d42ff9ad2eb8fbd56ec5f9bbbedc2f7"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "456c8f05dc6d2d8dfaad5abeb50a0ab41f133d5511bbddcadf84a18af9a9238c"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c7d67f01a558bc55b7eedca8fff97d85d497d32a8426bd6b157f85ee5e0bdf49"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ac728f5fde80d02eaeaa852838c383a05e0a836c7e0cc3b811921e1dcc87444c"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8c2a00f26b2327bdd411eb69e5035a3a527c7ca6d39ff70995afb6d49b551bbf"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Ability",
+      "size": [
+        1440,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 18,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9fdf32f5adaba5bbada1cfdba4224e33425cb3f396ba2ed73fb636110629ba68"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "ChannelStart",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 8,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c706dfdba3a90ad9b0a396154779dd42a92c7e562773726faa0e530b86205f24"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "01844acf7db199cd515cc93ca647e5bd213bf6f43c15a477336098572cb754a4"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Release",
+      "size": [
+        880,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 11,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9fc385b11a2292f889706b08a3e699eb0fe44428c9eca86cd8f76fe518813017"
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Interrupt",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9db32acf9903cfb5db084f90e56f0e930c873c5090b1c8216912058e3105ac59"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f74de56a12c144ee4a33ddfd36f8a2ebaddeca13f635b6c4e8a5627fbeeb5858"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d93c7d84c0c9be4a20939d5afc36d0abdd374ba7ba52212c841ef4a7b42972e7"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "b1883dbf02aa6e3a8c49643b101b2d9c358a4054656af812b27aa482be0591c4"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0a377e1cd9a3f0864114c92e59efac85945d6bd92a09864db88d1b95a2f1e919"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Ability",
+      "size": [
+        1440,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 18,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6e867af7d31f60ac6a067c786339de04d7c507220625e58bb467afbd9fdfdf0e"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "ChannelStart",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 8,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d35459465f08c7d72d749f5303dadf4d2e3ec2013402e4d283b7b88e25d6b5ca"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ecbf3607ff10af41f666cce98394308f6a0775cb1c5106fdfd51b83d62e5e6b2"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Release",
+      "size": [
+        880,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 11,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "02af6d8f163aaf5ebfc6735471b6524705dc5bae80a8dde917d5b9ccaef0a7e0"
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Interrupt",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e5e941bcb4618114ab17c3f125a7b240ddd2c975adbebd9fd6d97b12d1c3b6ea"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "4938ef3cd066f20d2bd78f6e937aa8ab5e3f51d811400e83afbbbc0e784b1979"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "41cbe565b909aff481ebd4fe4b1726f6ff4b4f6c165a3bb7c1f44712004f07b4"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6a7890207b9fcbd28c9767396738d4cf01f7327ec494576175634f9da91cd10b"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "175600370019d4b9a4b02262ff940d594663ba97aac4e7319396f114a94dd16a"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Ability",
+      "size": [
+        1440,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 18,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "fcf0a166b62d49380f77f465bcdd453d0691d8d6b9bc6974e96ad8e7cc2d32eb"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "ChannelStart",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 8,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3a824376104cea691e9f7bc4e6d205ecddf9490528e418536c11c17ffbf90c88"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "872bdcbd300008bee8ac045a593eb5bebe23a11c47751d63cf2cceeca46a6d7d"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Release",
+      "size": [
+        880,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 11,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ac76279860a0dd58a60e22b8270b44c04d2fbde6319507911c137ac5c5684df1"
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Interrupt",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f2b388e79f09ccb029068fd81152060b3374abedc984c5e8e04f3f5c383e68ad"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "db13f29c593df11e999834dcaab1fb8f4bc0d5f8e26ed85258382aacee55c655"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "AutoAttack",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bee58dfd2778e8508433effcac81b1917f2f2d6adbfe34c1010568b495321734"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0ea596ff847bf26151f193ccde814fc865230b2ae071f7fa666594705cc3054c"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "90e6c94599c52d556f88c27854d2cba3133e88e20389bd4e1d2ac0735125e3d6"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Ability",
+      "size": [
+        1440,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 18,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "74b4a54c50a9686b4590411eeca8a2edbecea59a2620260af5a88e96b9cc826a"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "ChannelStart",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 8,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "fc3ddbf94115e03434056beea3c8d18662ec0814edec752c9803bcd5d93010c6"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6fd8ddad30ea4ae6a0e8827d5e2870bc3dd999f06463038ddb66cf855e748235"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Release",
+      "size": [
+        880,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 11,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c54d1983114059e2cd9f75bbb807bcec65b4e1e152a9277bbe4a713e5aef4f85"
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Interrupt",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "019bfd38b4c8aecfb6f4331907ba40a57d750315c947d06bf8f6428c4e1dc540"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "138303cb769bc2443009bb19637b18e2c31398fefd77d1fc24943fc0d4938630"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "AutoAttack",
+      "size": [
+        1120,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 14,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7b2e5910549f91b6fdf89bd49e4bfcc7e0d2378f1c4515780dfa66fdb6614320"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ec037de70ecacf39161906ebeeb132b0c945f18b86b48fc88b74a2320d8dfdc6"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1879bf8c57d2e85358a925be59fad0f8f9b3a60b0bd3d58e229191488f50994a"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Ability",
+      "size": [
+        1440,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 18,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ee86c6a989f7c1c7a7191e56de4016524eead34a349cc2fd14b396f0d4dcc8ab"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "ChannelStart",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 8,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e4c070110ea5a035899b1a4692bde82b13a2a2e19a6a6d7ddc7c0b325fd343fc"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3ab647b19df0030cca838f3a04bcc712ceb07efbd2e68578f5113589b365bc0f"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Release",
+      "size": [
+        880,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 11,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "906c271c7469a503fefcf3d77ae8a153d01f71b28bd989f6ced689325a989e30"
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Interrupt",
+      "size": [
+        720,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 9,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bd077750ead333bef481781e457ca37d2270c739a218a8a49ab6c480be3e3a53"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bf94e3b326c6f856265792e4802d63f2920246ef946df18e6f18973c4784f1e0"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "AutoAttack",
+      "size": [
+        1200,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 15,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "dae6bf57f6b08a0a4a9542ae8c4c424369ef4de4c4554f12d5eb2077ce2e994f"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Death",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "049c30380b03b3e715ca37674fbb69448d1b23e822fcecdbd96b32275a4387f1"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "99defe8f8c6c1e1b3fae82bb28ad9f82f5415de758b1e115765312b875437085"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Ability",
+      "size": [
+        480,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 6,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d7820bbab4d1cef56daa32add033d2f6e204fd0833173ec0cd593c56bbed53d7"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "ChannelStart",
+      "size": [
+        480,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 6,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d7820bbab4d1cef56daa32add033d2f6e204fd0833173ec0cd593c56bbed53d7"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "ChannelHold",
+      "size": [
+        240,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 3,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "b1a28b37d97bb13aac9a2e8dace1f847410be30b0ef0f6f46fa974603e6ece9e"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Release",
+      "size": [
+        1040,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 13,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1175db167f0190fad756d4ed60e105fa020cc76ff7d5fa60193b0dea9d30c4a6"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Interrupt",
+      "size": [
+        560,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 7,
+      "colors": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f6f9c1b633795523b0f55d941d68c2f1bd9e48748c5645daf8426a7aeb95f91d"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "InflatedIdle",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "44df175b98f673afaf74a4341c2f6ed279ff9372f311751aea829fa19531ad2b"
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "InflatedAttack",
+      "size": [
+        1200,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 15,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8cb11b3c5e452b4cdaf1c58c20343c139007b3bd5e3cd4f7f325504f841b9b02"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Idle",
+      "size": [
+        640,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 5,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "deb1ebdf400a51ca908a41e3ea61c8174aeb5770c2549c55b68225b2740ad594"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "AutoAttack",
+      "size": [
+        1920,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 15,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "b68713e5c6ad0111f269cc82ad6afce249ca1244d0ca0939257783ba54ba3a18"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Death",
+      "size": [
+        1664,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 13,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "382a1da368b56432bddc70d73c545e01524b23e330eb5ac3d506519ffe55faae"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Hit",
+      "size": [
+        512,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 4,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e2f3b8e28b97307406a917be88d3846d26f44f87f84dbad798641604109465f8"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Ability",
+      "size": [
+        2304,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 18,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bd75d43a6a5d0200b8b7f66b84572a9de463caf1e84b28657605a32890afb7fd"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "ChannelStart",
+      "size": [
+        1024,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 8,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0d5b5b7ce81503ff367da0bdb5b7da9ffbc6a4105024e4bd8425ee66fbe59af5"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "ChannelHold",
+      "size": [
+        384,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 3,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "21cf179bc73ff5a40636a6abb260ca3d5f57f0aeb88c1a89a0cad0391bdd5eac"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Release",
+      "size": [
+        1408,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 11,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "5a0a5aa607d0d17fc06f9bcdd566f49b51aadd5f2522272a29b528e93815fdb6"
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Interrupt",
+      "size": [
+        1152,
+        80
+      ],
+      "frame_size": [
+        128,
+        80
+      ],
+      "frames": 9,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1d0a90f5f4853293ce2c29ccb36109588068db8eb996468c9438415ff161b5c7"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Idle",
+      "size": [
+        480,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 5,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "9fed31dac19e80a809b9884d3ce865d36a67af77f4657e8d6e419972f95593b3"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "AutoAttack",
+      "size": [
+        1248,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 13,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8d4e4973a883f08fdc5ca8e7cb15399f727e7424fbedff373205682b77165cc0"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Death",
+      "size": [
+        1248,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 13,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "aef5d6b651430dd28440b37459d720fb6724e71c322d3da1e4ac9d082b9aec4e"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Hit",
+      "size": [
+        384,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 4,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "018694fabcf281adc20f2637c81ab30e51910e468285f450c02b63eedaa62b3b"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Ability",
+      "size": [
+        1728,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 18,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "32356b7a75608732bb0703f0b3ba71c3bce895de153c315f3129c588a77a47ea"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "ChannelStart",
+      "size": [
+        768,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 8,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "794ab2a8714b0c816863aaa2d5ff5acbb2da7732f9cd2303fc6ca86a150a75fd"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "ChannelHold",
+      "size": [
+        288,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 3,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0f3f3e0af638fb9eba7bf1be846caa95aac415d7958cdbcdd5eaad93a380b40f"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Release",
+      "size": [
+        1056,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 11,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "405fd94f64f5abcc7fa664dcc04c78217d6a9bfd738ef17954b74d5dd7857c9f"
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Interrupt",
+      "size": [
+        864,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 9,
+      "colors": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "2eb0a61221d261ce9c00eba5cd34a4f0115966009bbe562639cd2ceda253fc47"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Idle",
+      "size": [
+        480,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 5,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7895ce1da863ac4cd55a63840f0253f0e36f925ad9a223d045f3ab9143b03d70"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "AutoAttack",
+      "size": [
+        1632,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 17,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d10c6ddd2ebd1a99794c9fcd9a3d195d51b12636b7b46e4f0a5d41a5bc9716c4"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Death",
+      "size": [
+        1248,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 13,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "68dd665831dfde827208095856d4175b0aedf4bef29ec1f2658bca9362b10da8"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Hit",
+      "size": [
+        480,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 5,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "dc45726e25b732d1054efafc0c94632bf8a369d2445ce7d1fa88185d118c72fc"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Ability",
+      "size": [
+        1728,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 18,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "dd12a0015340c8bafaaccc33a3ce140c9dbda391657768352b08c71900a4fe06"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "ChannelStart",
+      "size": [
+        768,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 8,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "09a31d49a101a8ab2b8b6a3994869fc204c3f49d8946e6256dc07c9f11d359f7"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "ChannelHold",
+      "size": [
+        288,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 3,
+      "colors": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8526c3cea28b21fdea0a851a95e77c0217d042fa6f27223650a0dbc06395da54"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Release",
+      "size": [
+        1056,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 11,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d375605d2663e8cd4fe5908d11b7a4d93aa1c1abaa6b782abce48cbe56e66bae"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Interrupt",
+      "size": [
+        864,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 9,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0e8fc455382c4af22430ee7440081885f3ea54afecc1aa3b246d78349fa3def3"
+    },
+    {
+      "name": "queen_nacre",
+      "state": "DepthsRelease",
+      "size": [
+        1344,
+        96
+      ],
+      "frame_size": [
+        96,
+        96
+      ],
+      "frames": 14,
+      "colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "be494284d1908542c5b4e390ae1d783ae1ce9aa9b81fe196067b2191d32e4be2"
+    },
+    {
+      "name": "skittercrab",
+      "state": "Idle",
+      "size": [
+        400,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 5,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c64bf12204d96af3f59045ae128c240e8234262db28472596980f47072807d27"
+    },
+    {
+      "name": "skittercrab",
+      "state": "AutoAttack",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "033916c50af06a481e1cc6553bc60a08c5ab4793bc0a381e2bdb4cf855c44237"
+    },
+    {
+      "name": "skittercrab",
+      "state": "Death",
+      "size": [
+        800,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 10,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f05ba53b618dcebfbd3b0c077628c5d488fdf96b27510db70ebbe04afe1d402a"
+    },
+    {
+      "name": "skittercrab",
+      "state": "Hit",
+      "size": [
+        320,
+        80
+      ],
+      "frame_size": [
+        80,
+        80
+      ],
+      "frames": 4,
+      "colors": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7e9c4184ffd98f6dd931fdf3c7a868259bc288b50be5dee2ef3213f7869d4826"
+    }
+  ],
+  "selections": [
+    {
+      "name": "reef_spearman",
+      "state": "Idle",
+      "job": "reef_spearman_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_spearman",
+      "state": "AutoAttack",
+      "job": "reef_spearman_attack_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        7,
+        5,
+        3,
+        2,
+        1
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_spearman",
+      "state": "Death",
+      "job": "reef_spearman_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_spearman",
+      "state": "Hit",
+      "job": "reef_spearman_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Idle",
+      "job": "hammerhead_bruiser_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "AutoAttack",
+      "job": "hammerhead_bruiser_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Death",
+      "job": "hammerhead_bruiser_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "hammerhead_bruiser",
+      "state": "Hit",
+      "job": "hammerhead_bruiser_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Idle",
+      "job": "needlefin_skirmisher_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "AutoAttack",
+      "job": "needlefin_skirmisher_attack_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Death",
+      "job": "needlefin_skirmisher_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "needlefin_skirmisher",
+      "state": "Hit",
+      "job": "needlefin_skirmisher_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Idle",
+      "job": "shellback_porter_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "shellback_porter",
+      "state": "AutoAttack",
+      "job": "shellback_porter_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Death",
+      "job": "shellback_porter_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "shellback_porter",
+      "state": "Hit",
+      "job": "shellback_porter_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Idle",
+      "job": "pearl_thief_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_thief",
+      "state": "AutoAttack",
+      "job": "pearl_thief_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Death",
+      "job": "pearl_thief_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Hit",
+      "job": "pearl_thief_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Ability",
+      "job": "pearl_thief_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_thief",
+      "state": "ChannelStart",
+      "job": "pearl_thief_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_thief",
+      "state": "ChannelHold",
+      "job": "pearl_thief_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Release",
+      "job": "pearl_thief_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_thief",
+      "state": "Interrupt",
+      "job": "pearl_thief_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Idle",
+      "job": "pearl_cantor_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "AutoAttack",
+      "job": "pearl_cantor_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Death",
+      "job": "pearl_cantor_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Hit",
+      "job": "pearl_cantor_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Ability",
+      "job": "pearl_cantor_channel",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "ChannelStart",
+      "job": "pearl_cantor_channel",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "ChannelHold",
+      "job": "pearl_cantor_channel",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Release",
+      "job": "pearl_cantor_channel",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "pearl_cantor",
+      "state": "Interrupt",
+      "job": "pearl_cantor_channel",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Idle",
+      "job": "conch_marshal_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "conch_marshal",
+      "state": "AutoAttack",
+      "job": "conch_marshal_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Death",
+      "job": "conch_marshal_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Hit",
+      "job": "conch_marshal_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Ability",
+      "job": "conch_marshal_ability_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "conch_marshal",
+      "state": "ChannelStart",
+      "job": "conch_marshal_ability_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "conch_marshal",
+      "state": "ChannelHold",
+      "job": "conch_marshal_ability_v2",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Release",
+      "job": "conch_marshal_ability_v2",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "conch_marshal",
+      "state": "Interrupt",
+      "job": "conch_marshal_ability_v2",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Idle",
+      "job": "moray_siphoner_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "AutoAttack",
+      "job": "moray_siphoner_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Death",
+      "job": "moray_siphoner_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Hit",
+      "job": "moray_siphoner_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Ability",
+      "job": "moray_siphoner_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "ChannelStart",
+      "job": "moray_siphoner_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "ChannelHold",
+      "job": "moray_siphoner_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Release",
+      "job": "moray_siphoner_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "moray_siphoner",
+      "state": "Interrupt",
+      "job": "moray_siphoner_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Idle",
+      "job": "reef_netweaver_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "AutoAttack",
+      "job": "reef_netweaver_attack",
+      "indices": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Death",
+      "job": "reef_netweaver_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Hit",
+      "job": "reef_netweaver_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Ability",
+      "job": "reef_netweaver_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "ChannelStart",
+      "job": "reef_netweaver_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "ChannelHold",
+      "job": "reef_netweaver_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Release",
+      "job": "reef_netweaver_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "reef_netweaver",
+      "state": "Interrupt",
+      "job": "reef_netweaver_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Idle",
+      "job": "puffer_sentinel_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "AutoAttack",
+      "job": "puffer_sentinel_attack_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Death",
+      "job": "puffer_sentinel_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Hit",
+      "job": "puffer_sentinel_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Ability",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "ChannelStart",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "ChannelHold",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        5,
+        6,
+        5
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Release",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "Interrupt",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "InflatedIdle",
+      "job": "puffer_sentinel_ability_v2",
+      "indices": [
+        4,
+        5,
+        6,
+        5
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "puffer_sentinel",
+      "state": "InflatedAttack",
+      "job": "puffer_sentinel_inflated_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Idle",
+      "job": "breakwater_captain_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "AutoAttack",
+      "job": "breakwater_captain_attack_v3",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Death",
+      "job": "breakwater_captain_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Hit",
+      "job": "breakwater_captain_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Ability",
+      "job": "breakwater_captain_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "ChannelStart",
+      "job": "breakwater_captain_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "ChannelHold",
+      "job": "breakwater_captain_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Release",
+      "job": "breakwater_captain_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "breakwater_captain",
+      "state": "Interrupt",
+      "job": "breakwater_captain_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Idle",
+      "job": "lantern_warden_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "lantern_warden",
+      "state": "AutoAttack",
+      "job": "lantern_warden_attack_v2",
+      "indices": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Death",
+      "job": "lantern_warden_death",
+      "indices": [
+        0,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Hit",
+      "job": "lantern_warden_death",
+      "indices": [
+        0,
+        5,
+        5
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Ability",
+      "job": "lantern_warden_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "lantern_warden",
+      "state": "ChannelStart",
+      "job": "lantern_warden_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "lantern_warden",
+      "state": "ChannelHold",
+      "job": "lantern_warden_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Release",
+      "job": "lantern_warden_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "lantern_warden",
+      "state": "Interrupt",
+      "job": "lantern_warden_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Idle",
+      "job": "queen_nacre_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "queen_nacre",
+      "state": "AutoAttack",
+      "job": "queen_nacre_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Death",
+      "job": "queen_nacre_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Hit",
+      "job": "queen_nacre_attack",
+      "indices": [
+        0,
+        2,
+        3,
+        2
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Ability",
+      "job": "queen_nacre_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "ChannelStart",
+      "job": "queen_nacre_ability",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "queen_nacre",
+      "state": "ChannelHold",
+      "job": "queen_nacre_ability",
+      "indices": [
+        7,
+        8,
+        7
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Release",
+      "job": "queen_nacre_ability",
+      "indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "Interrupt",
+      "job": "queen_nacre_ability",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "queen_nacre",
+      "state": "DepthsRelease",
+      "job": "queen_nacre_depths_release",
+      "indices": [
+        0,
+        1,
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "skittercrab",
+      "state": "Idle",
+      "job": "skittercrab_idle",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "skittercrab",
+      "state": "AutoAttack",
+      "job": "skittercrab_attack",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "end_ready": true
+    },
+    {
+      "name": "skittercrab",
+      "state": "Death",
+      "job": "skittercrab_death",
+      "indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        14,
+        15,
+        16
+      ],
+      "end_ready": false
+    },
+    {
+      "name": "skittercrab",
+      "state": "Hit",
+      "job": "skittercrab_death",
+      "indices": [
+        0,
+        4,
+        4
+      ],
+      "end_ready": true
+    }
+  ]
+}

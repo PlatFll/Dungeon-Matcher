@@ -62,7 +62,7 @@ public sealed partial class ForestFoundationPlayTests
         var menu=UnityEngine.Object.FindFirstObjectByType<MainMenuController>();menu.PlayGame();
         Assert.That(UnityEngine.Object.FindObjectsByType<RectTransform>(FindObjectsSortMode.None).Count(t=>t.name=="TestingZonePicker"),Is.EqualTo(1));
         var zoneButtons=GameObject.Find("TestingZonePicker").GetComponentsInChildren<Button>().Where(b=>b.name.StartsWith("StartZone_")).ToArray();
-        CollectionAssert.AreEquivalent(new[]{"StartZone_dungeon","StartZone_magical-forest"},zoneButtons.Select(b=>b.name));
+        CollectionAssert.AreEquivalent(new[]{"StartZone_dungeon","StartZone_magical-forest","StartZone_drowned-court"},zoneButtons.Select(b=>b.name));
         foreach(var size in new[]{new Vector2Int(720,1280),new Vector2Int(1080,2400)})
         {
             typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{size});

@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: 9f941869235eee04c93f6dbef19357f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4364157505521816221
+    second: conch_marshal_Ability_0
+  - first:
+      213: 398438904936624857
+    second: conch_marshal_Ability_1
+  - first:
+      213: 1661006376508397466
+    second: conch_marshal_Ability_2
+  - first:
+      213: 1792206030123301202
+    second: conch_marshal_Ability_3
+  - first:
+      213: 2369944871625717289
+    second: conch_marshal_Ability_4
+  - first:
+      213: 3690701763330052751
+    second: conch_marshal_Ability_5
+  - first:
+      213: -814161210573708698
+    second: conch_marshal_Ability_6
+  - first:
+      213: -822132151658942723
+    second: conch_marshal_Ability_7
+  - first:
+      213: -4755372003326265758
+    second: conch_marshal_Ability_8
+  - first:
+      213: -3727423483201148279
+    second: conch_marshal_Ability_9
+  - first:
+      213: -3692485606493482341
+    second: conch_marshal_Ability_10
+  - first:
+      213: -7710020398250478112
+    second: conch_marshal_Ability_11
+  - first:
+      213: 6591242630326856334
+    second: conch_marshal_Ability_12
+  - first:
+      213: 8136394804726728767
+    second: conch_marshal_Ability_13
+  - first:
+      213: 355915434028946686
+    second: conch_marshal_Ability_14
+  - first:
+      213: -4443231969663899241
+    second: conch_marshal_Ability_15
+  - first:
+      213: -3566582744576615673
+    second: conch_marshal_Ability_16
+  - first:
+      213: -6669355228460873575
+    second: conch_marshal_Ability_17
+  - first:
+      213: 1657305697190831699
+    second: conch_marshal_Ability_00
+  - first:
+      213: 8558228082196871510
+    second: conch_marshal_Ability_01
+  - first:
+      213: 6908216196807494125
+    second: conch_marshal_Ability_02
+  - first:
+      213: -1935085454692599070
+    second: conch_marshal_Ability_03
+  - first:
+      213: 2441177385516321241
+    second: conch_marshal_Ability_04
+  - first:
+      213: 1193113614830957036
+    second: conch_marshal_Ability_05
+  - first:
+      213: 6907559222581734905
+    second: conch_marshal_Ability_06
+  - first:
+      213: 2029290947378126133
+    second: conch_marshal_Ability_07
+  - first:
+      213: -2854791076302071130
+    second: conch_marshal_Ability_08
+  - first:
+      213: -2745579273460294462
+    second: conch_marshal_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: conch_marshal_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3566a4530ceeff610800000000000000
+      internalID: 1657305697190831699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659fd1ae81fe4c670800000000000000
+      internalID: 8558228082196871510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de98f4a970aeedf50800000000000000
+      internalID: 6908216196807494125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eab50f08023525e0800000000000000
+      internalID: -1935085454692599070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9ca61f5edc0e120800000000000000
+      internalID: 2441177385516321241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce17ea4e28ace8010800000000000000
+      internalID: 1193113614830957036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd25fed3849cdf50800000000000000
+      internalID: 6907559222581734905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d93607d5d792c10800000000000000
+      internalID: 2029290947378126133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa5f0534aeb168d0800000000000000
+      internalID: -2854791076302071130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc59be823eb5e9d0800000000000000
+      internalID: -2745579273460294462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9296be87e7a1ccc0800000000000000
+      internalID: -3692485606493482341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5b3471c41800590800000000000000
+      internalID: -7710020398250478112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a2b09104cc87b50800000000000000
+      internalID: 6591242630326856334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38021867f74ae070800000000000000
+      internalID: 8136394804726728767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_14
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4df57933770f400800000000000000
+      internalID: 355915434028946686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799268990187652c0800000000000000
+      internalID: -4443231969663899241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b197fe3e3f08ec0800000000000000
+      internalID: -3566582744576615673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_Ability_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99802b661c0b173a0800000000000000
+      internalID: -6669355228460873575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      conch_marshal_Ability_0: 4364157505521816221
+      conch_marshal_Ability_00: 1657305697190831699
+      conch_marshal_Ability_01: 8558228082196871510
+      conch_marshal_Ability_02: 6908216196807494125
+      conch_marshal_Ability_03: -1935085454692599070
+      conch_marshal_Ability_04: 2441177385516321241
+      conch_marshal_Ability_05: 1193113614830957036
+      conch_marshal_Ability_06: 6907559222581734905
+      conch_marshal_Ability_07: 2029290947378126133
+      conch_marshal_Ability_08: -2854791076302071130
+      conch_marshal_Ability_09: -2745579273460294462
+      conch_marshal_Ability_1: 398438904936624857
+      conch_marshal_Ability_10: -3692485606493482341
+      conch_marshal_Ability_11: -7710020398250478112
+      conch_marshal_Ability_12: 6591242630326856334
+      conch_marshal_Ability_13: 8136394804726728767
+      conch_marshal_Ability_14: 355915434028946686
+      conch_marshal_Ability_15: -4443231969663899241
+      conch_marshal_Ability_16: -3566582744576615673
+      conch_marshal_Ability_17: -6669355228460873575
+      conch_marshal_Ability_2: 1661006376508397466
+      conch_marshal_Ability_3: 1792206030123301202
+      conch_marshal_Ability_4: 2369944871625717289
+      conch_marshal_Ability_5: 3690701763330052751
+      conch_marshal_Ability_6: -814161210573708698
+      conch_marshal_Ability_7: -822132151658942723
+      conch_marshal_Ability_8: -4755372003326265758
+      conch_marshal_Ability_9: -3727423483201148279
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -212,6 +212,8 @@ public sealed class RunControlsUI : MonoBehaviour
     }
     public void OpenGuide(string text)
     {
+        if(text==CombatGuide.Basics && session?.Zone?.Definition?.periodicallyFloods==true)
+            text+="\n\nDROWNED COURT\nFlooding lasts 10-12 accepted moves. AIR starts at five; each move spends one. Pop a bubbled gem to restore two. At zero AIR take 5 damage after enemy actions, except the final move drains first. Break Air Coffers or defeat their owners to recover captured bubbles. Sapphire gem damage gains 15%.";
         if (session == null || session.IsFinished || overlay != null) return;
         session.CancelTargeting(); BuildOverlay("Combat guide · paused"); Pause();
         panel.sizeDelta=new Vector2(500,660);

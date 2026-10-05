@@ -162,6 +162,11 @@ public sealed class EnemyActionAnimationPresenter : MonoBehaviour
         // Restart the authored clip for this accepted hit. A cancelled prior
         // action must not donate its later impact event to a new sequence.
         int state = Animator.StringToHash("Base Layer.AutoAttack");
+        if (!string.IsNullOrEmpty(enemyActor?.SpecialAutoAttackState) && animator != null)
+        {
+            int alternate=Animator.StringToHash("Base Layer."+enemyActor.SpecialAutoAttackState);
+            if(animator.HasState(0,alternate))state=alternate;
+        }
         if (enemyActor != null && enemyActor.Definition != null &&
             enemyActor.Definition.UseAuthoredAutoAttackMotion && animator != null &&
             animator.isActiveAndEnabled && animator.runtimeAnimatorController != null &&

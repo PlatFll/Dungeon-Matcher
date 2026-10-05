@@ -1,0 +1,46 @@
+{
+  "id": "queen_nacre",
+  "quoted_units": 5,
+  "args": {
+    "description": "One native 96x96 full-body LEFT-facing pixel-art enemy for Dungeon Matcher, transparent background. Regal compact lionfish-folk sea monarch, broad ivory and crimson fin fan, three-pronged shell diadem, dark wine robes, gilded coral trident. Small solid dark eyes, pale face, one pearl chest seal. Body 65-72 pixels tall, native pixel density same as reference. Grounded stance, restrained gold. No excessive jewelry. Consistent one-pixel #0A0D11 contour, crisp square pixels, broad connected shading clusters, top-left light, 2-3 shades per material, restrained interior detail. Eyes fully one dark color, no white sclera or highlights. Common source pixel scale, feet near canvas bottom. One character, one stance, no text, shadow disc, particles or scenery.",
+    "width": 96,
+    "height": 96,
+    "no_background": true,
+    "seed": 10052034,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Rendering, outline and shading discipline only. New species and palette as described. Same source pixel density."
+    },
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"9dc8a93f-5948-4342-a9c5-a0d606a1dfaa\",\n  \"image_id\": \"006513cf-f266-55ee-b600-156117fe5cde\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"006513cf-f266-55ee-b600-156117fe5cde\",\n  \"job_id\": \"9dc8a93f-5948-4342-a9c5-a0d606a1dfaa\",\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/9dc8a93f-5948-4342-a9c5-a0d606a1dfaa/download\"\n}\nPoll get_image(job_id=\"9dc8a93f-5948-4342-a9c5-a0d606a1dfaa\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "9dc8a93f-5948-4342-a9c5-a0d606a1dfaa",
+      "image_id": "006513cf-f266-55ee-b600-156117fe5cde",
+      "status": "processing",
+      "source_image_id": "006513cf-f266-55ee-b600-156117fe5cde",
+      "job_id": "9dc8a93f-5948-4342-a9c5-a0d606a1dfaa",
+      "image_size": {
+        "width": 96,
+        "height": 96
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/9dc8a93f-5948-4342-a9c5-a0d606a1dfaa/download"
+    },
+    "isError": false
+  }
+}

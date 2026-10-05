@@ -24,6 +24,11 @@ public sealed partial class WaveController
     public bool TrySummonEnemy(
         EnemyDefinition definition,
         out EnemyActor summonedEnemy)
+        => TrySummonEnemyAt(definition, FirstFreeSummonSlot, out summonedEnemy);
+
+    public int FirstFreeSummonSlot => HasFreeEnemySlot ? System.Array.IndexOf(enemySlots, FindFreeEnemySlot()) : -1;
+
+    public bool TrySummonEnemyAt(EnemyDefinition definition, int slotIndex, out EnemyActor summonedEnemy)
     {
         summonedEnemy = null;
 
@@ -33,6 +38,7 @@ public sealed partial class WaveController
             !isActiveAndEnabled ||
             isSpawningWave ||
             !IsWaveActive ||
+            enemySlots == null ||
             definition == null ||
             difficultyProfile == null ||
             playerActor == null ||
@@ -43,10 +49,9 @@ public sealed partial class WaveController
             return false;
         }
 
-        EnemySlotUI freeSlot =
-            FindFreeEnemySlot();
+        EnemySlotUI freeSlot = slotIndex >= 0 && slotIndex < enemySlots.Length ? enemySlots[slotIndex] : null;
 
-        if (freeSlot == null)
+        if (!IsSlotReadyForSummon(freeSlot))
         {
             return false;
         }

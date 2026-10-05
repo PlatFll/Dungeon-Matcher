@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public partial class BoardController
@@ -8,6 +9,18 @@ public partial class BoardController
     {
         if(owner==null) return "";
         var text=new System.Text.StringBuilder();
+        var aquaticAbility=owner.GetComponent<AquaticEnemyAbility>();
+        if(aquaticAbility?.IsPreparing==true)
+            text.AppendLine($"{aquaticAbility.CastName}: {aquaticAbility.ResponseMoves} moves left; {aquaticAbility.Answers} pressure answers cleared.");
+        if(AquaticZone)
+        {
+            text.AppendLine(IsFlooded?$"AIR {aquatic.air}/5; tide drains in {aquatic.wetMoves} moves. One AIR per accepted move; bubbled gems restore two.":
+                "Dry chamber. Flooding waits for a compatible complete formation.");
+            if(IsFlooded && aquatic.air==0)text.AppendLine("SUFFOCATING: 5 damage per move after enemy actions. The final wet move drains first.");
+            int snares=aquatic?.snares.Count(s=>s.ownerId==owner.PersistentId)??0;
+            if(snares>0)text.AppendLine($"{snares} thorn snares: expire after three moves. Opening manual matches cost AIR while wet; other clears are safe.");
+            if(aquatic?.coffer?.ownerId==owner.PersistentId)text.AppendLine($"Air Coffer holds {aquatic.coffer.charges} bubbles. Break it or defeat its owner to recover them.");
+        }
         int id=owner.GetInstanceID(),pins=0,mines=0,barriers=0,banners=0;
         foreach(var pin in pinnedGemOwners) if(pin.Value==id) pins++;
         foreach(var mine in minedCellOwners) if(mine.Value==id) mines++;

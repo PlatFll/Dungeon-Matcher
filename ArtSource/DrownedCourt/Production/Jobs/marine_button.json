@@ -1,0 +1,29 @@
+{
+  "id": "marine_button",
+  "args": {
+    "description": "Simple horizontal pixel-art UI button made of antique marine sea-green masonry and warm cream shell edging. Rounded stepped corners, broad quiet dark center suitable for readable runtime text, one tiny worn coral notch outside edge. No lettering, symbols or glow. Crisp one-pixel outline and 3-tone bevel. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 64,
+    "height": 32,
+    "no_background": true,
+    "seed": 10052106,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "error: 1 validation error for RequestGenerateImageProFlash\n  Value error, Style image must fit the native canvas. Crop the reference or choose a larger supported canvas. [type=value_error, input_value={'version': 'v0.1.0+mcp',...True}, 'seed': 10052106}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+      }
+    ],
+    "isError": true
+  }
+}

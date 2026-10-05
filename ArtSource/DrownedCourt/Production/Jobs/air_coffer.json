@@ -1,0 +1,22 @@
+{
+  "id": "air_coffer",
+  "args": {
+    "description": "One square compact hinged shell Air Coffer obstacle, 32x32 pixel art. Closed ivory clam-shell chest in old blue-green bronze brackets, dark navy contour, pearl latch. Front slightly top view, broad shading shapes, no shadow, no text, no coins, no glow.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "outline": "single color black outline",
+    "detail": "low detail",
+    "view": "side",
+    "seed": 10052129
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+      }
+    ],
+    "isError": true
+  }
+}

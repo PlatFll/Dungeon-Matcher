@@ -1,0 +1,31 @@
+{
+  "id": "DC_M01_Marine_Frame",
+  "requested_units": 5,
+  "seed": 26100511,
+  "prompt": "One modular pixel-art GUI frame TOP-LEFT L-shaped corner for Dungeon Matcher aquatic zone THE DROWNED COURT. Exact native 64x64 canvas on genuine transparency. A substantial quiet carved marine stone corner with horizontal top rail and vertical left rail, each about 10 pixels thick, leaving interior and opposite sides transparent. Match practical chunky 1-pixel contours and broad 2-3 tone clusters of a mobile fantasy pixel game. Warm gray limestone/green-gray shadows, one modest cream scallop shell embedded exactly at the elbow, tiny restrained worn brass fastening, low-relief tide groove along straight bars. Upper-left illumination. Old marine architecture, not wood, purple dungeon, ornate gold filigree or glossy plastic. Rails run cleanly to top-right and bottom-left canvas edges for repeating assembly. No whole box, no central illustration, no text, no gems, no character, no glow, no antialiasing, no soft shading, no disconnected debris. Clear native pixels, useful simple graphic, exterior deep outline #0A0D11.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"12c32cef-3666-49aa-aaa3-d28283fd6ba5\",\n  \"image_id\": \"fde3c743-e811-5c83-9034-fc0ae31f0329\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fde3c743-e811-5c83-9034-fc0ae31f0329\",\n  \"job_id\": \"12c32cef-3666-49aa-aaa3-d28283fd6ba5\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/12c32cef-3666-49aa-aaa3-d28283fd6ba5/download\"\n}\nPoll get_image(job_id=\"12c32cef-3666-49aa-aaa3-d28283fd6ba5\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "12c32cef-3666-49aa-aaa3-d28283fd6ba5",
+      "image_id": "fde3c743-e811-5c83-9034-fc0ae31f0329",
+      "status": "processing",
+      "source_image_id": "fde3c743-e811-5c83-9034-fc0ae31f0329",
+      "job_id": "12c32cef-3666-49aa-aaa3-d28283fd6ba5",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/12c32cef-3666-49aa-aaa3-d28283fd6ba5/download"
+    },
+    "isError": false
+  }
+}

@@ -54,6 +54,7 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator EnvironmentTravelCleansVinesBeforeDestinationReveal()
     {
+        using var destinations=new TravelDestinationFixture("dungeon","magical-forest");
         yield return Launch(8,true);QuietKitFixture();Run.Travel.State.enabled=true;
         Run.Board.QueueEnvironmentalVine(Run.Board.GetGem(0,0));yield return Stable();
         var before=Run.Continuation.Capture().board;Assert.That(before.vines.Count,Is.EqualTo(1));

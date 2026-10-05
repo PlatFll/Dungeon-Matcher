@@ -22,6 +22,7 @@ public sealed class CombatAudioController : MonoBehaviour
     private readonly HashSet<int> shieldHitActors = new HashSet<int>();
     private bool focused = true;
     private bool appPaused;
+    private int airWarningMove = -1;
     public event Action<CombatSoundCue> CuePlayed;
 
     private struct Pending { public int Count, Cascade; public float Due; }
@@ -93,6 +94,7 @@ public sealed class CombatAudioController : MonoBehaviour
         player = FindFirstObjectByType<PlayerActor>();
         ability = player != null ? player.GetComponent<PlayerAbilityController>() : null;
         if (board != null) { board.TileBurstVFXRequested += OnBurst; board.GemsLanded += OnLanding; }
+        if(board!=null){board.AquaticAnswer+=OnAirReturn;board.AquaticChanged+=OnTideChanged;}
         if (waves != null)
         {
             waves.EnemySpawned += ObserveEnemy;
@@ -112,6 +114,7 @@ public sealed class CombatAudioController : MonoBehaviour
     private void OnDisable()
     {
         if (board != null) { board.TileBurstVFXRequested -= OnBurst; board.GemsLanded -= OnLanding; }
+        if(board!=null){board.AquaticAnswer-=OnAirReturn;board.AquaticChanged-=OnTideChanged;}
         if (waves != null) waves.EnemySpawned -= ObserveEnemy;
         if (player != null)
         {
@@ -127,6 +130,17 @@ public sealed class CombatAudioController : MonoBehaviour
         Silence();
     }
     private void OnDestroy() { if (instance == this) instance = null; }
+    private void OnAirReturn(int gemId,bool bubble,bool coffer)
+    {
+        if(coffer)Queue(CombatSoundCue.CofferBreak);
+        if(bubble || coffer)Queue(CombatSoundCue.AirPickup);
+    }
+    private void OnTideChanged()
+    {
+        var tide=board.Aquatic;
+        if(board.IsFlooded && tide.air<=1 && airWarningMove!=tide.lastSettledMove)
+        {airWarningMove=tide.lastSettledMove;Queue(CombatSoundCue.AirWarning);}
+    }
     private void ObserveEnemy(EnemyActor enemy)
     {
         if (enemy == null || !enemies.Add(enemy)) return;

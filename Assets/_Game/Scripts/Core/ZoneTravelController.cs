@@ -13,6 +13,8 @@ public sealed class ZoneTravelSnapshot
     public bool enabled;
     public string zoneId="dungeon",destination;
     public uint random;
+    public int completedCourtVisits;
+    public List<string> recentCourtRecipes = new List<string>();
 }
 
 /// <summary>Owns apex travel and its durable selection; never edits the gem grid.</summary>

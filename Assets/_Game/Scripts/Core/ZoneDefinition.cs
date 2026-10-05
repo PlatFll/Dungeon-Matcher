@@ -7,6 +7,9 @@ public sealed class ZoneTestEncounter
     public string label;
     public EnemyDefinition[] members;
     public int firstLocalWave=1,lastLocalWave=999;
+    [Min(1)] public int weight=1;
+    // 0 either, 1 dry only, 2 flooded only. Whole-cast eligibility still applies.
+    public int requiredTide;
 }
 
 [CreateAssetMenu(menuName="Dungeon Matcher/Zones/Zone")]
@@ -26,6 +29,7 @@ public sealed class ZoneDefinition : ScriptableObject
     [Tooltip("Optional zone loop; temporary music remains labelled in its source manifest.")]
     public AudioClip music;
     public bool growsVines;
+    public bool periodicallyFloods;
     public bool crumblesTiles;
     [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;

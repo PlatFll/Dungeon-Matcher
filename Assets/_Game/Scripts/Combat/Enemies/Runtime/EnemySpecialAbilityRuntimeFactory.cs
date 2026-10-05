@@ -35,6 +35,18 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.PearlTheft:
+            case EnemySpecialAbilityKind.RallyingConch:
+            case EnemySpecialAbilityKind.MoraySiphon:
+            case EnemySpecialAbilityKind.ThornySnare:
+            case EnemySpecialAbilityKind.SpineGuard:
+            case EnemySpecialAbilityKind.BreakwaterCommand:
+            case EnemySpecialAbilityKind.LanternPressure:
+            case EnemySpecialAbilityKind.AbyssalRegent:
+                var aquatic = enemyObject.GetComponent<AquaticEnemyAbility>() ?? enemyObject.AddComponent<AquaticEnemyAbility>();
+                aquatic.ConfigureSummonService(summonService);
+                runtime = aquatic;
+                break;
             case EnemySpecialAbilityKind.Bloodrage:
             case EnemySpecialAbilityKind.CallSnapvine:
             case EnemySpecialAbilityKind.WarRhythm:

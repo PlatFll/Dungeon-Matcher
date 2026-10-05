@@ -1,0 +1,78 @@
+DROWNED COURT — PHASE 02 VISUAL REVIEW
+2026-10-05
+Branch: codex/drowned-court-phase02-art-review
+Base / HEAD at batch start: 9f8b5f7dc78761906743eec551a38b25c89dcaea
+Unity workspace: C:/UnityProjects/Dungeon Matcher (Unity6000.3.19f1)
+Review output: ArtSource/DrownedCourt/Phase02
+Phase01 audit and proposed60 ceiling explicitly approved by user: "Yes approved, continue".
+
+DELIVERED
+Four single-facing native64x64 enemy PNG candidates:
+DC_A01_Reef_Spearman — 21 visible colors
+DC_A02_Hammerhead_Bruiser — 15 visible colors
+DC_A03_Pearl_Thief — 14 visible colors
+DC_A04_Pearl_Cantor — 13 visible colors
+All binary alpha; unchanged transparency masks and pixel positions from raw generation.
+Shared outline unified to #0A0D11 by exhaustive native color mappings.
+Raw images, prompts, seeds, job IDs, original completion metadata and exact palette mappings retained.
+Each candidate's approval status is PENDING. No filename confers approval.
+
+Three material candidates:
+DC_M01_Marine_Frame64x64
+DC_M02_Marine_Cell32x32 (pale padding replaced with opaque grout; native palette consolidated)
+DC_E01_Reefgate_Study256x128 (raw pale outer padding kept in source; proof uses native crop9,8,247,118)
+Review.html, native comparison PNGs at1x/3x, four-candidate sheet at4x, raw/cleaned comparison and material sheet.
+Dry/flooded NOT UNITY screen studies assembled locally with actual gem art and current HUD meanings.
+Board fixed at64,464 with512x512 area on a640x1152 screen study, same in both states.
+Five AIR blocks and TIDE counter use reserved space above board. Flooded example3 AIR /10 moves illustrates two spent moves from a12-move flood.
+Dark player/bottom inset material distinct from general backing.
+Thaleah rendered into PNGs; no font files included.
+Offline ZIP contains actual PNGs, local gallery, source/palette manifests and usage records.
+
+BUDGET
+7 paid PixelLab Pro Flash requests, all completed, none repeated or failed.
+Quoted: four stills20 + frame5 + cell5 + environment9 =39 subscription units.
+get_balance:1581 before ->1542 after; used419->458, credits remained$0.
+Actual whole-batch debit39 confirmed. get_image did not expose separate per-job actual charges; ledger labels per-job values as quotes.
+Initial ceiling40:39 spent,1 unused. Revision reserve20 wholly untouched. Total cap60:21 unused.
+No credit purchases. No old Forest allowance reused.
+
+QUALITY / LIMITS
+Read and inspected current guide, actual approval records and source PNGs.
+Checked native canvas, occupied bounds, palette values, binary alpha, shared character outline, raw/candidate masks and hashes from real bytes.
+Inspected raw and cleaned stills enlarged and beside actual approved humanoid/monster references at equal pixel scale.
+Visual assessment: equipment/hands and left-facing silhouettes readable; Thief intentionally shorter; no normalization to equal occupied height.
+Screen proof uses exact integer enlargements: actors2x, cell2x, environment2x; gem images remain native64.
+Rattlebones in proof is first64x64 frame of current production idle sheet, not the entire576x64 strip.
+Frame assembled by native crops/rotation/repetition. Water wash, ring markers and broad backing patterns are local material/layout placeholders, not finished production VFX/assets.
+Native environment crop and reference display scaling are explicit in manifests.
+Screens were reviewed as local composites; no Unity runtime/layout/device validation is claimed.
+
+PRESERVED / NOT IMPLEMENTED
+No C#, ScriptableObjects, scenes, prefabs, imports, existing art, gameplay, enemy kits, Bardley behavior, animations, music, menus or opened settings changed.
+Pre-existing metadata edits retained:
+Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta
+Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta
+Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta
+No merge or publication. No gameplay PR: this is a local art-review gate, not game integration.
+Unity validator/tests not run for this image-only candidate batch. Existing audit caveats and baseline failures remain.
+
+NEXT GATE
+Ask user keep/revise for each of four stills and the marine frame/cell/environment direction.
+Use reserved revisions only after this review, within remaining approved Phase02 cap.
+No remaining ten stills, animation, production environment, kit integration or Phase03 work without the next explicit gate.
+Exact later prompt after this phase is accepted:
+prompts/PHASE_03_BARDLEY_THREE_BEAT_CLEANUP.txt
+
+REVIEW ACCESS / FINAL CHECKS
+Offline delivery: Drowned_Court_Phase02_Review.zip; extract and open Review.html.
+Native comparison and dry/flooded PNGs also open directly without a browser.
+Tools/BuildPackage.py verifies every raw/candidate hash, size, alpha and exact palette;
+it checks reference copies against the current originals, local HTML links, ZIP integrity
+and actual PNG decoding. See Manifests/ValidationSummary.json for results.
+The local server returned HTTP 200 at http://127.0.0.1:8892/Review.html from the host.
+Server exec session86213 serves only this review directory; no generation jobs remain.
+In-app browser navigation timed out, then its data-URL error page blocked navigation.
+Gallery controls were not browser-verified. No successful browser screenshot is claimed.
+Static image composites were visually inspected directly. Offline package is the primary delivery.
+

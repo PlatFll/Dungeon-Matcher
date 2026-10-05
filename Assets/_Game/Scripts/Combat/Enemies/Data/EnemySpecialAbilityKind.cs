@@ -20,5 +20,8 @@ public enum EnemySpecialAbilityKind
     CallSnapvine = 17,
     WarRhythm = 18,
     ThornVolley = 19,
-    AncientBough = 20
+    AncientBough = 20,
+    PearlTheft = 21, RallyingConch = 22, MoraySiphon = 23,
+    ThornySnare = 24, SpineGuard = 25, BreakwaterCommand = 26,
+    LanternPressure = 27, AbyssalRegent = 28
 }

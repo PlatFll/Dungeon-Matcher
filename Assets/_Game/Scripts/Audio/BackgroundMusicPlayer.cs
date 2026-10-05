@@ -14,6 +14,9 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
     private AudioSource fadingSource;
     private float fadeProgress = 1f, desiredVolume = .65f;
     private bool zoneMusic, manualPause, applicationPause, appliedPause;
+    private bool underwaterMix;
+    public void SetUnderwaterMix(bool flooded)
+    {if(underwaterMix==flooded)return;underwaterMix=flooded;ApplyVolumes();}
 
     public static BackgroundMusicPlayer Instance =>
         instance;
@@ -223,8 +226,9 @@ public sealed class BackgroundMusicPlayer : MonoBehaviour
     }
     private void ApplyVolumes()
     {
-        if(audioSource!=null) audioSource.volume=desiredVolume*fadeProgress;
-        if(fadingSource!=null) fadingSource.volume=desiredVolume*(1-fadeProgress);
+        float mix=underwaterMix?.9f:1f;
+        if(audioSource!=null) audioSource.volume=desiredVolume*fadeProgress*mix;
+        if(fadingSource!=null) fadingSource.volume=desiredVolume*(1-fadeProgress)*mix;
     }
     private void RefreshPause()
     {

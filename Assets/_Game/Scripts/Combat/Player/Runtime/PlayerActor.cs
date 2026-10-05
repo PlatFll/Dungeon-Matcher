@@ -240,6 +240,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         EnemyActor attacker = source as EnemyActor;
         if (attacker == null && source is Component component) attacker = component.GetComponent<EnemyActor>();
         string cause = attacker != null && attacker.Definition != null ? attacker.Definition.DisplayName : "Damage";
+        if (source is SuffocationDamageSource) cause = "Suffocation";
         LastDamageSummary = $"Last hit: {cause}\n{Mathf.Min(currentHealth, healthDamage)} HP lost · {shieldDamage} shield absorbed";
 
         if (healthDamage > 0)

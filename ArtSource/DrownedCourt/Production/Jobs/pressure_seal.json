@@ -1,0 +1,22 @@
+{
+  "id": "pressure_seal",
+  "args": {
+    "description": "32x32 pixel-art warning ripple seal overlay, hollow squared ring of pale cyan and ivory interrupted wave segments, open transparent center, four strong corner pointers. No gem, text, particles, background or soft glow.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "outline": "single color black outline",
+    "detail": "low detail",
+    "view": "side",
+    "seed": 10052130
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+      }
+    ],
+    "isError": true
+  }
+}

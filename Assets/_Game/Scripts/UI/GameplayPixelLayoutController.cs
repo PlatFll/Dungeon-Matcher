@@ -13,9 +13,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     // has 40px clear space above/below it inside the 16px border.
     public const int BottomHeight = 176;
     public const int MaximumBottomHeight = BottomHeight + 64;
-    // Four native art cells keep the wave banner above the character band on
-    // short safe viewports without changing character texel scale or proportions.
-    public const int MinimumBattleHeight = 4 * AssetsPPU;
+    // Leave one extra frame-width above the character band for the 80px Miner
+    // action canvas on short viewports. Character texel scale stays unchanged.
+    public const int MinimumBattleHeight = 4 * AssetsPPU + 16;
     public const int PreferredBattleHeight = 320;
     public const int MaximumBattleHeight = PreferredBattleHeight + PreferredBattleHeight / 2;
     public const int AssetsPPU = 64;

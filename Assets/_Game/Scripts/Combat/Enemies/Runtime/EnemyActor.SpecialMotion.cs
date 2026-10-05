@@ -10,6 +10,7 @@ public partial class EnemyActor
     public int SpecialMotionId => specialMotionId;
     public string SpecialMotionState { get; private set; }
     public string SpecialIdleState { get; set; }
+    public string SpecialAutoAttackState { get; set; }
     public event Action<EnemyActor> SpecialMotionRequested;
 
     // The ability/board still owns the action. Animation only supplies contact

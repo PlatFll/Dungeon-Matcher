@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: db17ec20ccc2af94e8cbfe2a6bd687a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7468471664006659572
+    second: moray_siphoner_Release_0
+  - first:
+      213: -5740157392730722341
+    second: moray_siphoner_Release_1
+  - first:
+      213: -9181627716195577923
+    second: moray_siphoner_Release_2
+  - first:
+      213: 3165709894972354282
+    second: moray_siphoner_Release_3
+  - first:
+      213: -5898036275312844272
+    second: moray_siphoner_Release_4
+  - first:
+      213: 4988032100944134864
+    second: moray_siphoner_Release_5
+  - first:
+      213: 7926580343244799406
+    second: moray_siphoner_Release_6
+  - first:
+      213: 5394559624940720638
+    second: moray_siphoner_Release_7
+  - first:
+      213: -4777301986942541820
+    second: moray_siphoner_Release_8
+  - first:
+      213: -5459476544853993231
+    second: moray_siphoner_Release_9
+  - first:
+      213: -4379319555403760975
+    second: moray_siphoner_Release_10
+  - first:
+      213: -6378436441882570782
+    second: moray_siphoner_Release_00
+  - first:
+      213: 5108271975917741695
+    second: moray_siphoner_Release_01
+  - first:
+      213: -7077016894767712864
+    second: moray_siphoner_Release_02
+  - first:
+      213: -370083253342446766
+    second: moray_siphoner_Release_03
+  - first:
+      213: 4809388948829456710
+    second: moray_siphoner_Release_04
+  - first:
+      213: -8025407767830053225
+    second: moray_siphoner_Release_05
+  - first:
+      213: -8762041200001822429
+    second: moray_siphoner_Release_06
+  - first:
+      213: -6393943456830419203
+    second: moray_siphoner_Release_07
+  - first:
+      213: -5031138569696096695
+    second: moray_siphoner_Release_08
+  - first:
+      213: -3870372010797020758
+    second: moray_siphoner_Release_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: moray_siphoner_Release_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efce2bb9dd3b77a0800000000000000
+      internalID: -6378436441882570782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76e8ac1c4a34e640800000000000000
+      internalID: 5108271975917741695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5beed31a269cd90800000000000000
+      internalID: -7077016894767712864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bd33bed333ddaf0800000000000000
+      internalID: -370083253342446766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6494ba984c16eb240800000000000000
+      internalID: 4809388948829456710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e34d4d72600a090800000000000000
+      internalID: -8025407767830053225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321dd8ea3f9f66680800000000000000
+      internalID: -8762041200001822429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe80b57d462447a0800000000000000
+      internalID: -6393943456830419203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e4f71802ecd2ab0800000000000000
+      internalID: -5031138569696096695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa944db892da94ac0800000000000000
+      internalID: -3870372010797020758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moray_siphoner_Release_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1babc3621188933c0800000000000000
+      internalID: -4379319555403760975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      moray_siphoner_Release_0: 7468471664006659572
+      moray_siphoner_Release_00: -6378436441882570782
+      moray_siphoner_Release_01: 5108271975917741695
+      moray_siphoner_Release_02: -7077016894767712864
+      moray_siphoner_Release_03: -370083253342446766
+      moray_siphoner_Release_04: 4809388948829456710
+      moray_siphoner_Release_05: -8025407767830053225
+      moray_siphoner_Release_06: -8762041200001822429
+      moray_siphoner_Release_07: -6393943456830419203
+      moray_siphoner_Release_08: -5031138569696096695
+      moray_siphoner_Release_09: -3870372010797020758
+      moray_siphoner_Release_1: -5740157392730722341
+      moray_siphoner_Release_10: -4379319555403760975
+      moray_siphoner_Release_2: -9181627716195577923
+      moray_siphoner_Release_3: 3165709894972354282
+      moray_siphoner_Release_4: -5898036275312844272
+      moray_siphoner_Release_5: 4988032100944134864
+      moray_siphoner_Release_6: 7926580343244799406
+      moray_siphoner_Release_7: 5394559624940720638
+      moray_siphoner_Release_8: -4777301986942541820
+      moray_siphoner_Release_9: -5459476544853993231
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

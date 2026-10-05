@@ -1,0 +1,23 @@
+{
+  "id": "air_coffer",
+  "args": {
+    "description": "One square compact hinged shell Air Coffer obstacle, 32x32 pixel art. Closed ivory clam-shell chest in old blue-green bronze brackets, dark navy contour, pearl latch. Front slightly top view, broad shading shapes, no shadow, no text, no coins, no glow.",
+    "width": 32,
+    "height": 32,
+    "no_background": true,
+    "outline": "single color black outline",
+    "detail": "low detail",
+    "view": "side",
+    "seed": 10052129
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 3f9f78ba-a208-49e2-8cf0-919d4733c4ef\njob_id: 3f9f78ba-a208-49e2-8cf0-919d4733c4ef\nmodel: pixen\ndescription: One square compact hinged shell Air Coffer obstacle, 32x32 pixel art. Closed ivory clam-shell chest in old blue-green bronze brackets, dark navy contour, pearl latch. Front slightly top view, broad shading shapes, no shadow, no text, no coins, no glow.\nsize: 32x32px\ntransparent: True\nasset_id: b71355c2-3a5e-556c-a074-ae10c10d30b6\nasset_status: pending (saved when generation completes)\nseed: 10052129\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3f9f78ba-a208-49e2-8cf0-919d4733c4ef\")"
+      }
+    ],
+    "isError": false
+  },
+  "reason": "Original request rejected before generation: unsupported reference fit or full queue; corrected without duplicating a queued job."
+}

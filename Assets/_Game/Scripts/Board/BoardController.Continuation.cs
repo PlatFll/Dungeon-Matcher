@@ -20,6 +20,7 @@ public partial class BoardController
         if(!CanCaptureContinuation) throw new InvalidOperationException("Board is resolving an action.");
         var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState, forestRulesVersion=2,nextRootId=nextRootId,nextVineGrowthMove=nextVineGrowthMove };
         saved.dungeonRulesVersion=1;saved.nextCrumbleMove=nextCrumbleMove;
+        saved.aquatic=CaptureAquatic();
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
@@ -119,6 +120,7 @@ public partial class BoardController
             }
         }
         RestoreVines(saved.vines);
+        RestoreAquatic(saved.aquatic);
         isBusy=false;
     }
     private void RestoreSnapshotCells(BoardCombatSnapshot saved, Func<int,EnemyActor> ownerAtSlot)

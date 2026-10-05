@@ -44,6 +44,7 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class BoardCombatSnapshot
 {
+    public AquaticEnvironmentState aquatic;
     public int width, height, moves, nextBanner, nextGem;
     public uint refillRandom;
     public int forestRulesVersion, nextRootId, nextVineGrowthMove;
@@ -89,6 +90,7 @@ public sealed class RunCombatSnapshot
     public EnemyChannelSnapshot channel;
     public ForestMilestoneSnapshot forestMilestone;
     public ForestRosterSnapshot forestRoster;
+    public AquaticEnemySnapshot aquaticEnemy;
     public string rootbinderOutcome;
     public int slot, health, shield, specialTurns, specialRequirement;
     public GemType weakness;

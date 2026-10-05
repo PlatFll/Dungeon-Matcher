@@ -894,6 +894,7 @@ public partial class BoardController
                 crystalGem
             );
 
+            RegisterAquaticClear(crystalOnly, false);
             yield return ClearMatches(
                 crystalOnly,
                 null
@@ -1243,6 +1244,7 @@ public partial class BoardController
                 crystalGem
             );
 
+            RegisterAquaticClear(crystalOnly, false);
             yield return ClearMatches(
                 crystalOnly,
                 null
@@ -1570,6 +1572,7 @@ public partial class BoardController
                 crystalGem
             );
 
+            RegisterAquaticClear(crystalOnly, false);
             yield return ClearMatches(
                 crystalOnly,
                 null

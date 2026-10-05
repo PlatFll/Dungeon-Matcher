@@ -41,6 +41,17 @@ public sealed class ZoneTravelTests
 
 public sealed partial class ForestFoundationPlayTests
 {
+    private sealed class TravelDestinationFixture : IDisposable
+    {
+        private readonly ZoneDefinition[] zones=Resources.LoadAll<ZoneDefinition>("Zones");
+        private readonly bool[] original;
+        public TravelDestinationFixture(params string[] eligible)
+        {
+            original=zones.Select(z=>z.eligibleForLiveTravel).ToArray();
+            for(int i=0;i<zones.Length;i++)zones[i].eligibleForLiveTravel=eligible.Contains(zones[i].zoneId);
+        }
+        public void Dispose(){for(int i=0;i<zones.Length;i++)zones[i].eligibleForLiveTravel=original[i];}
+    }
     private static IEnumerator CaptureTravel(string name)
     {
         string dir=Path.GetFullPath(".utmp/ForestValidation/Travel");Directory.CreateDirectory(dir);
@@ -84,6 +95,7 @@ public sealed partial class ForestFoundationPlayTests
     }
     [UnityTest] public IEnumerator KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects()
     {
+        using var destinations=new TravelDestinationFixture("dungeon","magical-forest");
         RunLaunchOptions.ForestPrototype=false;SceneManager.LoadScene("Game");yield return Stable();
         Assert.That(Run.MoveClock,Is.Null);Assert.That(Run.Travel.State.enabled,Is.True);
         // Jump past already-completed introductory milestones in this fixture.
@@ -147,6 +159,7 @@ public sealed partial class ForestFoundationPlayTests
     }
     [UnityTest] public IEnumerator CommittedTravelSuspendResumesRevealWithoutRepeatingReward()
     {
+        using var destinations=new TravelDestinationFixture("dungeon","magical-forest");
         yield return Launch(8,true);QuietKitFixture();Run.Travel.State.enabled=true;
         var before=Run.Continuation.Capture().board;string id=Run.RunId;KillEncounter();
         yield return Until(()=>Run?.Zone?.Definition?.zoneId=="dungeon" && Run.Continuation.CanCapture &&

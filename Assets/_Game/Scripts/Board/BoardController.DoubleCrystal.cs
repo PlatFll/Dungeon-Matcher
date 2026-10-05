@@ -280,6 +280,7 @@ public partial class BoardController
          * A crystal's hidden original GemType must not
          * grant combat damage or energy.
          */
+        RegisterAquaticClear(crystalOnly, false);
         yield return ClearMatches(
             crystalOnly,
             null

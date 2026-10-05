@@ -28,12 +28,16 @@ public partial class BoardController
         MarkLanes,
         ResolveLanes,
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
-        MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles
+        MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
+        PlaceAirCoffer, RemoveAirCoffer
     }
 
     private sealed class BoardMutationRequest
     {
         public BoardMutationKind Kind;
+        public List<int> AquaticTargets;
+        public Vector2Int AquaticSite;
+        public bool AquaticRoyal;
         public EnemyActor OwnerActor;
         public int OwnerInstanceId;
         public int MaximumOwnedMines;
@@ -372,6 +376,10 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.PlaceAirCoffer:
+                        yield return ExecuteAirCoffer(request); break;
+                    case BoardMutationKind.RemoveAirCoffer:
+                        yield return RemoveAirCoffer(false); break;
                     case BoardMutationKind.AdvanceCrumblingTiles:
                         yield return ExecuteCrumblingTiles(request.EnvironmentMove); break;
                     case BoardMutationKind.MarkCellResponse:

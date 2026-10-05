@@ -1,0 +1,462 @@
+{
+  "operations": "Native crops, tile assembly and exact brightness variants. Air bubble center removed in native ellipse (7,7)-(24,24). No sprite resampling. Generated scene and props otherwise unchanged. UI remains subject to runtime visual QA.",
+  "assets": [
+    {
+      "file": "AbilityCamera.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 7,
+      "sha256": "a15b6059de28233c6c0ee3b2c4a7f1686ff611f4cf30cfa437f1345885e3ff39"
+    },
+    {
+      "file": "AbilityHarmony.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 35,
+      "sha256": "34cae11a1f0f47bb13cd7d02dc06e0af5acc89cf8f14429c25ca42a84bce1311"
+    },
+    {
+      "file": "AbilityRoyal.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        253,
+        254,
+        255
+      ],
+      "colors": 563,
+      "sha256": "ad76e559bf23abdeb3af0582a02d7c580d15dab447f8cefbe3acd19842f41ea4"
+    },
+    {
+      "file": "air_bubble.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 34,
+      "sha256": "432374e3d6fc96449f1a6c0df35c4bc8221ade65d48983eef6fc00b52ed8c8b0"
+    },
+    {
+      "file": "air_coffer.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 30,
+      "sha256": "68441ec8316ad33b949fe2248185c0ce1da300ac73e9e856779d769e6a012293"
+    },
+    {
+      "file": "ButtonDisabled.png",
+      "size": [
+        62,
+        29
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 32,
+      "sha256": "e0ad587c8fd58cf95e32f528f11f86b3aa1bf2538ab7d78e50e9c0bec4b683ff"
+    },
+    {
+      "file": "ButtonHighlighted.png",
+      "size": [
+        62,
+        29
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 32,
+      "sha256": "7336c829d8470e1c410ff2dc886d08f2c5ebf82d86d382003e3abd3423268f74"
+    },
+    {
+      "file": "ButtonNormal.png",
+      "size": [
+        62,
+        29
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 32,
+      "sha256": "27f47ec36faa79857547d964e3de6da1285ade980343a6ae705689a3c0579f98"
+    },
+    {
+      "file": "ButtonPressed.png",
+      "size": [
+        62,
+        29
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 32,
+      "sha256": "4be1afa50d9f457b5dcfd165a92367d628cf1e30c0f40df81b3a393aa4cbaf48"
+    },
+    {
+      "file": "cell_0.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 7,
+      "sha256": "755820c4f5a9aa9e81071e52581ffc7d8f24519439fcc961785e1f0ed634bdbd"
+    },
+    {
+      "file": "cell_1.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 7,
+      "sha256": "562fd45be05b713432a537576a02c2c6aac944446f3698e1921e260b225cdaa3"
+    },
+    {
+      "file": "cell_2.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 7,
+      "sha256": "cbf1619e14217c802b3a9a9cdddd14c6ef4facb542af1e644e7d7d079937ef6b"
+    },
+    {
+      "file": "coral_column.png",
+      "size": [
+        64,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 35,
+      "sha256": "6f48a420c7161bb31e01bc440d0ff247f1da8da7fdb9f58e1c4546cfe1e7b99b"
+    },
+    {
+      "file": "coral_foreground.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 64,
+      "sha256": "af41f7c15687bfdd71851d8b171c01aa2097571471c471bf9525fba6b7b196b8"
+    },
+    {
+      "file": "court_background.png",
+      "size": [
+        256,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 46,
+      "sha256": "eebf92c190a869a3158ef7f9d19c725edd8a1a41b151aef89b6f84d248cddad4"
+    },
+    {
+      "file": "court_floor.png",
+      "size": [
+        128,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 40,
+      "sha256": "b0f03913f7d3cb5b9b0418c1e977695cab43a5d35e7d72bd72d6cd38e2bb2c0f"
+    },
+    {
+      "file": "EnergyFrame.png",
+      "size": [
+        144,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 5,
+      "sha256": "23ca3874247c341075ec310d29111ae920a088658512f6f96fd4b09e295d63be"
+    },
+    {
+      "file": "FrameCorner.png",
+      "size": [
+        80,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "dc9a363cab5af3f214a1c93fb877c5831101bfa5c0a6d588b000b1cbb9c11c37"
+    },
+    {
+      "file": "FrameEdge.png",
+      "size": [
+        64,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 12,
+      "sha256": "723e33e381440c3b3a49a51b7032bc9efecbd804798019cdbb7c334819c50d3e"
+    },
+    {
+      "file": "general_stone.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 51,
+      "sha256": "026100c2a0ca73c7817d2e54b2c5bb89868c5a57e04eccbd222a7b1953c8f610"
+    },
+    {
+      "file": "inset_panel.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 37,
+      "sha256": "94335f426b82e291da0a8b4962d7b78070ffd35de0df78c2336a7e1983f1981f"
+    },
+    {
+      "file": "PanelShell.png",
+      "size": [
+        96,
+        64
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 65,
+      "sha256": "0ad758de2b5b65ac2f96deaa326475a8580a6e9859c1bc12e93afa56ecd7d152"
+    },
+    {
+      "file": "PlayerBottom.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 62,
+      "sha256": "760e32b9c536f05f5301720bbc33c3f0b4d3de04392fc36bd08188533a7723a2"
+    },
+    {
+      "file": "PlayerMiddle.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 46,
+      "sha256": "0076be62fb81b5fe56e51f6c26e81595dabdae3d9dd7a6d5649f28763a863c95"
+    },
+    {
+      "file": "PlayerTop.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 63,
+      "sha256": "037b406098b1d5b379c6324e5ccaac206dc886e40489c541499a9f2d55269537"
+    },
+    {
+      "file": "pressure_seal.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 46,
+      "sha256": "d8ac50214fa913967bc5795bed9a6f6f20ff309dfa82052f0e238a7d19e1e90f"
+    },
+    {
+      "file": "SettingsDisabled.png",
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 67,
+      "sha256": "70325bdbcfb88902489fec26ac6339414900f8d6e87ddd3406487ba7c26c7202"
+    },
+    {
+      "file": "SettingsHighlighted.png",
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 67,
+      "sha256": "1512781f9e7906a162f4156b84dad6653d29221abe4112868184dde3fabe6f1c"
+    },
+    {
+      "file": "SettingsNormal.png",
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 67,
+      "sha256": "0116020684a6ad31743688adeacb2c5f240c8be656a9af2c35062d1e64eece13"
+    },
+    {
+      "file": "SettingsPressed.png",
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 67,
+      "sha256": "0f372371781771a1c8f685995d69ed21828f3ca5703871c81e4b1a229f213b3b"
+    },
+    {
+      "file": "SupplyDisabled.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 37,
+      "sha256": "4909601acc2a93dfa014676cfad90143f0995c4a3a143b5f5a1b9d61ea627685"
+    },
+    {
+      "file": "SupplyHighlighted.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 37,
+      "sha256": "12f35e399c8ccb74b88cc2a9efd19636dd32d27a2ade5e0b689acec406c3f196"
+    },
+    {
+      "file": "SupplyNormal.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 37,
+      "sha256": "5c8852c4e48567bf6752ffc82cccd7e88d27a5ebf860678a19c477e608839f9f"
+    },
+    {
+      "file": "SupplyPressed.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 37,
+      "sha256": "94795df3be1ffac12aa9ce20bc1cf0a479bdd4721d80a56558d84a705a874ec8"
+    },
+    {
+      "file": "thorny_snare.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 72,
+      "sha256": "ac7570f123f662f0f24aff7138727f041a290f441f391ec73e867479b15842d0"
+    },
+    {
+      "file": "WavePlaque.png",
+      "size": [
+        128,
+        32
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 63,
+      "sha256": "47dfc123ab7305ce05497caf629cffdecba51a74c8c1c121aeac796d067ced6c"
+    }
+  ]
+}

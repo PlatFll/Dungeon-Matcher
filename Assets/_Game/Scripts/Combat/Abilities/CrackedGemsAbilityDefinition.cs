@@ -17,7 +17,7 @@ public sealed class CrackedGemsAbilityDefinition :
     private float maximumSelfRefundFraction = 0.5f;
 
     [SerializeField, Min(1)]
-    private int targetGemCount = 5;
+    private int targetGemCount = 3;
 
     [Header("Cracked Gem Damage")]
     [SerializeField, Min(1)]
@@ -29,19 +29,19 @@ public sealed class CrackedGemsAbilityDefinition :
     [Header("Presentation")]
     [SerializeField]
     [Tooltip(
-        "Optional sprite used for Bardley's travelling bubbles. Leave empty to use the generated fallback bubble."
+        "Retired serialization field. Cracked Gems uses sequential cracked-gem explosions."
     )]
     private Sprite bubbleSprite;
 
     [Header("Timing")]
     [SerializeField, Min(0f)]
-    private float bubbleTravelDuration = 0.35f;
+    private float bubbleTravelDuration;
 
     [SerializeField, Min(0f)]
-    private float bubbleHoverDuration = 0.20f;
+    private float bubbleHoverDuration;
 
     [SerializeField, Min(0f)]
-    private float crackedShakeDuration = 1f;
+    private float crackedShakeDuration = 0.35f;
 
     [SerializeField, Range(1f, 1.2f)]
     private float crackedBurstScale = 1.08f;

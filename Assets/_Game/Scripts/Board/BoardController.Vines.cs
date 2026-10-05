@@ -22,12 +22,14 @@ public partial class BoardController
     private int nextVineGrowthMove = 2, nextRootId;
     public int VineCount { get { PruneVines(); return vineNodes.Count; } }
     public int NextVineGrowthMove => nextVineGrowthMove;
-    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count;
+    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count + (aquatic?.snares.Count ?? 0);
     public event Action RootsChanged;
 
     private bool IsReservedVine(Gem gem) => gemSetThreats.Exists(t => t.Vine && !t.Ended && t.Targets.Contains(gem));
     private bool IsProtectedWarningTarget(Gem gem)
     {
+        if (gem == null) return false;
+        if (IsAquaticWarningTarget(gem)) return true;
         if(gem!=null && cellResponseThreats.Exists(t=>!t.Ended && t.Cells.Contains(new Vector2Int(gem.Column,gem.Row)))) return true;
         foreach(var pair in gemPairThreats) if(!pair.Ended && (pair.First==gem || pair.Second==gem)) return true;
         foreach(var set in gemSetThreats) if(!set.Ended && set.Targets.Contains(gem)) return true;

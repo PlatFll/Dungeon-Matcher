@@ -1,0 +1,45 @@
+{
+  "id": "court_background",
+  "args": {
+    "description": "Quiet distant ruined marine court, frontal side-view stage background. Tall layered broken sea-green arches, dark blue-green depth, recognizable closed tide gate centered, sparse ivory shell inlays, warm muted coral only at outer edges. No floor, no characters, no text. Low contrast broad pixel clusters. Seamless dark edges so extension is quiet. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 256,
+    "height": 128,
+    "no_background": false,
+    "seed": 10052100,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf\",\n  \"image_id\": \"7ecbeb7d-e93f-5d15-a04b-ddaee078f26e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"7ecbeb7d-e93f-5d15-a04b-ddaee078f26e\",\n  \"job_id\": \"3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf\",\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf/download\"\n}\nPoll get_image(job_id=\"3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf",
+      "image_id": "7ecbeb7d-e93f-5d15-a04b-ddaee078f26e",
+      "status": "processing",
+      "source_image_id": "7ecbeb7d-e93f-5d15-a04b-ddaee078f26e",
+      "job_id": "3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf",
+      "image_size": {
+        "width": 256,
+        "height": 128
+      },
+      "output_count": 1,
+      "estimated_generations": 9,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/3bbc5931-5e8a-411d-b5d0-eb774c9ccdaf/download"
+    },
+    "isError": false
+  }
+}

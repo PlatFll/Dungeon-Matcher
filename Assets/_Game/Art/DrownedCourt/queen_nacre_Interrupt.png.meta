@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 4d3fe8b3d8e1b1547bcd7a4c4bec400a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -660852124187409335
+    second: queen_nacre_Interrupt_0
+  - first:
+      213: 3340737414797090430
+    second: queen_nacre_Interrupt_1
+  - first:
+      213: 2898054420570147515
+    second: queen_nacre_Interrupt_2
+  - first:
+      213: -2826311629006981806
+    second: queen_nacre_Interrupt_3
+  - first:
+      213: 5826107368992148095
+    second: queen_nacre_Interrupt_4
+  - first:
+      213: -1026014096126417674
+    second: queen_nacre_Interrupt_5
+  - first:
+      213: -1092998037135987882
+    second: queen_nacre_Interrupt_6
+  - first:
+      213: 8478124064613327164
+    second: queen_nacre_Interrupt_7
+  - first:
+      213: -2131744382007145699
+    second: queen_nacre_Interrupt_8
+  - first:
+      213: 8644841830295111674
+    second: queen_nacre_Interrupt_00
+  - first:
+      213: 7699642817578023105
+    second: queen_nacre_Interrupt_01
+  - first:
+      213: -960209682196670003
+    second: queen_nacre_Interrupt_02
+  - first:
+      213: -6478865205027319420
+    second: queen_nacre_Interrupt_03
+  - first:
+      213: -4159840627492780429
+    second: queen_nacre_Interrupt_04
+  - first:
+      213: 7599164591507105388
+    second: queen_nacre_Interrupt_05
+  - first:
+      213: -9046694304239937187
+    second: queen_nacre_Interrupt_06
+  - first:
+      213: 6272384900235004208
+    second: queen_nacre_Interrupt_07
+  - first:
+      213: 1800934742267869337
+    second: queen_nacre_Interrupt_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af78d22a7d5a8f770800000000000000
+      internalID: 8644841830295111674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8302f1950aada60800000000000000
+      internalID: 7699642817578023105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9d6c6a166aca2f0800000000000000
+      internalID: -960209682196670003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48155ba2c627616a0800000000000000
+      internalID: -6478865205027319420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3760e043df64546c0800000000000000
+      internalID: -4159840627492780429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66e1821fe7a57960800000000000000
+      internalID: 7599164591507105388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d599a34367fa37280800000000000000
+      internalID: -9046694304239937187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039080195dcfb0750800000000000000
+      internalID: 6272384900235004208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Interrupt_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99839883b943ef810800000000000000
+      internalID: 1800934742267869337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      queen_nacre_Interrupt_0: -660852124187409335
+      queen_nacre_Interrupt_00: 8644841830295111674
+      queen_nacre_Interrupt_01: 7699642817578023105
+      queen_nacre_Interrupt_02: -960209682196670003
+      queen_nacre_Interrupt_03: -6478865205027319420
+      queen_nacre_Interrupt_04: -4159840627492780429
+      queen_nacre_Interrupt_05: 7599164591507105388
+      queen_nacre_Interrupt_06: -9046694304239937187
+      queen_nacre_Interrupt_07: 6272384900235004208
+      queen_nacre_Interrupt_08: 1800934742267869337
+      queen_nacre_Interrupt_1: 3340737414797090430
+      queen_nacre_Interrupt_2: 2898054420570147515
+      queen_nacre_Interrupt_3: -2826311629006981806
+      queen_nacre_Interrupt_4: 5826107368992148095
+      queen_nacre_Interrupt_5: -1026014096126417674
+      queen_nacre_Interrupt_6: -1092998037135987882
+      queen_nacre_Interrupt_7: 8478124064613327164
+      queen_nacre_Interrupt_8: -2131744382007145699
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

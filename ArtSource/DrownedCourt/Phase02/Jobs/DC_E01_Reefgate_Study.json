@@ -1,0 +1,31 @@
+{
+  "id": "DC_E01_Reefgate_Study",
+  "requested_units": 9,
+  "seed": 26100513,
+  "prompt": "A single 256x128 NATIVE PIXEL ART side-view battle scenery composition, REEFGATE VESTIBULE for Dungeon Matcher. Dry low-tide view of ancient marine court ruins, no characters and no HUD. Broad stone mosaic fighting floor occupies bottom 32 pixels, quiet clear horizontal standing plane for three small enemies, no foreground obstacle crossing their feet. Above: old warm-gray marine limestone arches and a tide-gate recess, curved shell relief around arch crown, broken column at far left, ochre reef rock on far right; distant deep desaturated teal reef visible through arches. Muted salmon and amber coral branches grow at outside edges, small cream shell debris and a few seagrass clumps outside the combat landing area. Ancient coral-ruin scenery, not blue dungeon bricks, not forest, not a castle corridor recolor. Distinct depth layers with dark distant background, medium stone structure, warm readable floor. Pixel art for 64px humanoid cast at consistent density; broad connected hard-edged material shading, restrained texture, top-left light; limited economical cohesive colors, opaque full canvas. No floating islands, water surface, bubbles, characters, throne, text, gradients, painterly marks, antialiasing, bloom or lens effects. Leave center quiet enough that faces and weapons remain readable. It will later receive a separate water presentation overlay.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"76b09d27-8444-4b1c-b8d4-3cf2321eb818\",\n  \"image_id\": \"30ec6e35-5491-51e5-b7ba-2dd2447812b4\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"30ec6e35-5491-51e5-b7ba-2dd2447812b4\",\n  \"job_id\": \"76b09d27-8444-4b1c-b8d4-3cf2321eb818\",\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/76b09d27-8444-4b1c-b8d4-3cf2321eb818/download\"\n}\nPoll get_image(job_id=\"76b09d27-8444-4b1c-b8d4-3cf2321eb818\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "76b09d27-8444-4b1c-b8d4-3cf2321eb818",
+      "image_id": "30ec6e35-5491-51e5-b7ba-2dd2447812b4",
+      "status": "processing",
+      "source_image_id": "30ec6e35-5491-51e5-b7ba-2dd2447812b4",
+      "job_id": "76b09d27-8444-4b1c-b8d4-3cf2321eb818",
+      "image_size": {
+        "width": 256,
+        "height": 128
+      },
+      "output_count": 1,
+      "estimated_generations": 9,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/76b09d27-8444-4b1c-b8d4-3cf2321eb818/download"
+    },
+    "isError": false
+  }
+}

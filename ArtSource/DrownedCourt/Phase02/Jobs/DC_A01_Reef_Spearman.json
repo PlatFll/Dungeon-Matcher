@@ -1,0 +1,32 @@
+{
+  "id": "DC_A01_Reef_Spearman",
+  "requested_units": 5,
+  "reference": "ArtSource/Forest/Approved/Elven_Scout.png",
+  "seed": 26100501,
+  "prompt": "REEF SPEARMAN, an ordinary fin-eared reef-fish humanoid. Sea-green face with short cream throat and small determined dark eye, broad amber fin crest swept backwards, compact fishlike head, short sturdy torso and two clearly webbed feet. Worn burgundy waist wrap, pale linen tie. Holds one long practical dark wooden trident with coral-colored three-pronged tip aimed up-left, BOTH HANDS separated along the rigid shaft in a resting guard grip. Body roughly comparable to slim Scout but visibly fish anatomy. Readable head/fin/weapon silhouette. Keep skin smooth, no scale-by-scale marks. Dungeon Matcher game sprite. One full-body enemy still, three-quarter view facing LEFT, ready stance, transparent background, exact 64x64 native pixel art. Match the reference's chunky one-pixel exposed outline, economical broad connected color clusters and upper-left lighting, not its identity. Character outline #0A0D11. A small expressive readable face, compact body with planted ground contacts near the bottom, whole equipment inside canvas. Matte material ramps of 2-3 distinct tones; selective tiny highlights; no antialiasing, soft shading, gradients, dithering, scattered texture, drop shadow, text, ground disk or UI. One character only, no extra weapons, no shield. Native body pixel density comparable to the reference; preserve intentional species differences.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"e9909b29-111b-432c-a1ac-18a80b529b6f\",\n  \"image_id\": \"29b39488-8438-5029-ae56-f811c69bb02e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"29b39488-8438-5029-ae56-f811c69bb02e\",\n  \"job_id\": \"e9909b29-111b-432c-a1ac-18a80b529b6f\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e9909b29-111b-432c-a1ac-18a80b529b6f/download\"\n}\nPoll get_image(job_id=\"e9909b29-111b-432c-a1ac-18a80b529b6f\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "e9909b29-111b-432c-a1ac-18a80b529b6f",
+      "image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "status": "processing",
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "job_id": "e9909b29-111b-432c-a1ac-18a80b529b6f",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/e9909b29-111b-432c-a1ac-18a80b529b6f/download"
+    },
+    "isError": false
+  }
+}

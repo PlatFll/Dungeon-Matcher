@@ -20,13 +20,13 @@ rules are in [the timing contract](Forest/FOUNDATION_CONTRACT.md).
 
 The launch plan is dungeon, magical forest and aquatic, developed one zone at a
 time. Crystal travel chooses randomly among eligible destinations other than the
-current zone; there is no player route selection. Dungeon and forest are connected
+current zone; there is no player route selection. Dungeon, forest and Drowned Court are connected
 after their entire apex formations die and any card reward is chosen. The split
 pink crystal shakes, smoke covers gameplay, and the destination is restored under
 cover. Settings remains usable. The run, board, resources and global depth carry
 over; travel does not heal or end a run. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
-For the current testing build only, new runs may start in Dungeon or Magical
-Forest through a temporary menu picker. This changes the starting location;
+For the current testing build only, new runs may start in Dungeon, Magical
+Forest or Drowned Court through a temporary menu picker. This changes the starting location;
 crystal destinations during the run still follow the existing random rule.
 Continue restores its saved location and Retry starts the current live zone.
 Remove this testing choice for the full game.
@@ -35,7 +35,9 @@ gameplay-only timber UI and an original temporary music cue for review.
 The additions are Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar
 Archer and Ancient Treant (Old Stump variant C). Their finalized behavior and
 provisional values are in [the expanded roster contract](Forest/EXPANDED_ROSTER.md).
-Approximately ten-minute substantial visits and aquatic work remain later phases.
+Approximately ten-minute substantial visits still require human pacing validation.
+The aquatic rules, fourteen identities, AIR economy and provisional control values
+are defined in [the Drowned Court contract](DROWNED_COURT.md).
 Current forest visits use eighteen local starter
 encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu
@@ -309,28 +311,29 @@ Two Gideon-only, one-stack Epic cards use the Ability theme:
 - Maximum HP: 80.
 - Affinity: Topaz.
 - Active ability: Cracked Gems.
-- Committed development energy cost: **1**, intentionally preserved for rapid testing. Intended normal-cost measurements use a disposable **80**-energy configuration. Changing the release cost requires deliberate cleanup; never compensate for the override by inflating enemy HP.
+- Production energy cost: **80**. The earlier one-energy testing override is retired.
 
 #### Cracked Gems targeting
 
-- Target up to 5 gems.
+- Target up to 3 gems.
 - First priority is ordinary non-special gems whose colors match the weaknesses of currently living enemies.
 - Second priority is other ordinary non-special gems.
 - Special gems may be targeted only when zero ordinary gems are available.
-- If at least one ordinary gem exists but fewer than 5 ordinary gems are available, use fewer than 5 targets. Do not fill the remaining slots with specials.
+- If at least one ordinary gem exists but fewer than 3 ordinary gems are available, use fewer than 3 targets. Do not fill the remaining slots with specials.
 
 #### Presentation
 
-- A bubble travels to each selected target from outside the sides of the board.
-- It briefly hovers and pops.
 - The selected gem becomes visibly Cracked.
-- Cracked gems shake for approximately 1 second, slightly enlarge/bulge, flash white, and then explode.
+- Cracked gems briefly shake, flash white and explode in three sequential beats.
+- Bardley uses no travelling or popping bubbles. Aquatic AIR bubbles are separate.
+- One board-owned resolution collects all effects once. The board remains locked
+  through all three beats and their chains, then refills once the sequence ends.
 - Presentation assets and procedural fallbacks must not alter gameplay results.
 
 #### Resolution
 
 - Each cracked center produces a 3x3 explosion.
-- Each cracked center deals 20 base matching-color damage to enemies whose weakness matches that cracked gem's color, scaled by permanent ability growth and current run modifiers. Five-target chaining remains. The user retired the testing override: Cracked Gems now costs 80 energy. One cast's complete explosions, chains and card effects share a refund ceiling of 50% of its effective accepted cost (40 at base cost, 32 at cost 64). Cost and ceiling are production starting values for further human tuning. Both characters start a new run at 20% ability charge; Continue never grants this again.
+- Each cracked center deals 20 base matching-color damage to enemies whose weakness matches that cracked gem's color, scaled by permanent ability growth and current run modifiers. The three selected centers retain established special chaining. Cracked Gems costs 80 energy. One cast's complete explosions, chains and card effects share a refund ceiling of 50% of its effective accepted cost (40 at base cost, 32 at cost 64). Cost and ceiling are production starting values for further human tuning. Both characters start a new run at 20% ability charge; Continue never grants this again.
 - Ordinary collateral destruction follows the established normal board/combat-clear behavior.
 - Existing specials caught in the explosion chain using their established behavior.
 - Obstacles use their established interaction semantics.

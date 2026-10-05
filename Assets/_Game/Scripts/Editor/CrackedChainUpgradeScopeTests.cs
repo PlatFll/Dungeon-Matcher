@@ -20,6 +20,8 @@ public sealed class CrackedChainUpgradeScopeTests
     private CombatController combat;
     private WaveController waves;
     private RunUpgradeRuntime runtime;
+    private RunUpgradeGameplayHooks hooks;
+    private IDisposable account;
     private EnemyActor collateralVictim, centerVictim;
     private Gem[,] grid;
     private readonly List<GemDamageContext> damage = new List<GemDamageContext>();
@@ -34,6 +36,10 @@ public sealed class CrackedChainUpgradeScopeTests
         randomState = UnityEngine.Random.state;
         Assert.That(RunUpgradeRuntime.Current, Is.Null, "Use an isolated EditMode scene; never delete a live run.");
         Assert.That(RunUpgradeGameplayHooks.Current, Is.Null);
+        string profilePath=System.IO.Path.GetFullPath(".utmp/CrackedChainProfiles/"+Guid.NewGuid().ToString("N")+".json");
+        System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(profilePath));
+        System.IO.File.WriteAllText(profilePath,JsonUtility.ToJson(new AccountSave()));
+        account=AccountProgression.UseDisposableProfile(profilePath);
         root = new GameObject("CrackedChainScopeFixture");
         player = Child("Player").AddComponent<PlayerActor>();
         var definition = playerDefinition = UnityEngine.Object.Instantiate(Resources.Load<PlayerDefinition>("Players/Player_Bardley"));
@@ -57,11 +63,17 @@ public sealed class CrackedChainUpgradeScopeTests
         Set(combat, "damagePerGem", 100);
         Set(board, "combatController", combat);
         runtime = waves.gameObject.AddComponent<RunUpgradeRuntime>();
+        // Synchronous EditMode fixtures do not run MonoBehaviour lifecycle.
+        // Install the same owners that real scene OnEnable callbacks install.
+        Call(runtime,"OnEnable");
         var catalog = Resources.Load<RunUpgradeCatalog>("RunUpgrades/PrototypeRunUpgradeCatalog");
         Assert.That(catalog, Is.Not.Null);
         runtime.Configure(catalog, player, waves);
-        var hooks = waves.gameObject.AddComponent<RunUpgradeGameplayHooks>();
+        hooks = waves.gameObject.AddComponent<RunUpgradeGameplayHooks>();
+        Call(hooks,"OnEnable");
         hooks.Configure(runtime, board, combat, player, waves);
+        Assert.That(RunUpgradeRuntime.Current,Is.SameAs(runtime));
+        Assert.That(RunUpgradeGameplayHooks.Current,Is.SameAs(hooks));
         enemyDefinition = ScriptableObject.CreateInstance<EnemyDefinition>();
         collateralVictim = Enemy("CollateralVictim", GemType.Emerald);
         centerVictim = Enemy("CenterVictim", GemType.Ruby);
@@ -79,12 +91,15 @@ public sealed class CrackedChainUpgradeScopeTests
     [TearDown]
     public void TearDown()
     {
+        if(hooks!=null)Call(hooks,"OnDisable");
+        if(runtime!=null)Call(runtime,"OnDisable");
         if (root != null) { root.SetActive(false); UnityEngine.Object.DestroyImmediate(root); }
         if (enemyDefinition != null) UnityEngine.Object.DestroyImmediate(enemyDefinition);
         if (playerDefinition != null) UnityEngine.Object.DestroyImmediate(playerDefinition);
         if (abilityDefinition != null) UnityEngine.Object.DestroyImmediate(abilityDefinition);
         damage.Clear(); outcomes.Clear();
         preparedCalls = finishedCalls = 0;
+        account?.Dispose();account=null;
         UnityEngine.Random.state = randomState;
     }
 

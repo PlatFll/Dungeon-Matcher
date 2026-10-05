@@ -28,11 +28,46 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Board and modular frame presentation
 
+### Drowned Court ownership
+
+`BoardController.Aquatic` owns `AquaticEnvironmentState`, the accepted-move AIR
+receipt, physical bubble identities, shrinking snare deadlines and the single
+hostile coffer. It uses the existing clear path, structural durability and mutation
+queue. Special conversion retains bubble identity; only actual player destruction
+awards AIR. Consumed crystals report destruction without inventing colored-gem
+rewards. `CombatMoveClock` advances the environment before enemy work and checks
+suffocation after it; presentation cannot advance either.
+
+`AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
+recovery stages, answer identities, rally leases and rotation state. Cantor reuses
+`EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.
+Queen uses `IEnemyFixedSlotSummonService` on `WaveController`, which validates the
+announced slot and never replaces an occupant. Central damage and shield gates
+retain their existing owners.
+
+Board/enemy continuation records include versioned aquatic state. Unity JSON copy
+normalizes a missing coffer to null; an empty object must not block future theft.
+Photographs preserve current AIR, consumed charges and deadlines. Source effects
+are cleaned on a detached snapshot before an atomic travel commit. The saved
+`completedCourtVisits` count enables return formations after a completed visit.
+
+`AquaticEnvironmentView` observes state for AIR, bubbles, snares, pressure marks
+and bounded water layers. Existing layout owners consume marine theme assets;
+the background owner selects one of three compositions without moving actors.
+`DrownedCourtImporter` imports reviewed sheets, guarded animation contacts and
+theme assets. Held Puffer basics use an optional `SpecialAutoAttackState`; a missing
+clip keeps the existing generic fallback.
+
+Bardley's three primary bursts share one `ClearMatchesWithOrderedBursts` plan.
+Presentation reveals groups sequentially while board ownership stays held; rewards
+and physical destruction resolve once before refill. The retired bubble event has
+no production invocation. See [the Court contract](DROWNED_COURT.md).
+
 ### Forest combat and zone travel
 
 `MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
 fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
-validated by `RunSession`; an existing checkpoint always wins. A direct forest
+validated by `RunSession`; an existing checkpoint always wins. A direct forest or Court
 start installs `seconds-effects-move-abilities-v1` before actors initialize and
 enables the normal travel controller. It never uses the isolated fixture flag.
 `RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
@@ -43,7 +78,7 @@ account/save schema is introduced.
 flag. `RunSession` installs `ZoneRuntimeContext` for every run, and
 `CombatMoveClock` for recorded profiles or the isolated test before actors
 initialize. `ZoneDefinition` supplies the affiliated gem, formations, apex and
-theme. Dungeon and forest are eligible for live travel; isolated fixtures retain
+theme. Dungeon, forest and Drowned Court are eligible for live travel; isolated fixtures retain
 their own loop. `GameplayThemeDefinition` supplies
 additive artwork to existing layout owners. No second UI geometry owner exists.
 

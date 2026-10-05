@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-05",
+  "candidate_and_raw_hash_dimension_alpha_palette_checks": "PASS: 7 pairs",
+  "character_transparency_masks": "PASS: all 4 byte-identical to raw",
+  "reference_original_and_copy_hashes": "PASS: 13",
+  "offline_html_local_links": "PASS",
+  "zip_integrity_and_actual_png_bytes": "PASS (verified after writing)",
+  "fonts_distributed": false,
+  "local_http_server": "HTTP 200 verified from host at 127.0.0.1:8892",
+  "browser_controls": "NOT VERIFIED: in-app browser timed out; subsequent navigation was blocked on its data-URL error page",
+  "unity_runtime_and_device_validation": "NOT RUN: image-only candidate review",
+  "gameplay_changes": false,
+  "zip_html_difference": "Self-download ZIP link replaced with offline-package label; all media remains local"
+}

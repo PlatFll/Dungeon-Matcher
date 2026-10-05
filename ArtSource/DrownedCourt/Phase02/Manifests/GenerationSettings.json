@@ -1,0 +1,19 @@
+{
+  "provider": "PixelLab Pro Flash",
+  "capability_revision": "pro-flash-presets-48-128-2026-09-29",
+  "characters": {
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "style_options": {
+      "color_palette": false,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    },
+    "style_usage": "Rendering discipline only; preserve new marine identities"
+  },
+  "materials": "No style image; explicit marine material briefs",
+  "request_prompts": "Jobs/*.json",
+  "cleanup": "Exact mappings in CleanupRecord.json; no generative corrections"
+}

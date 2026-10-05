@@ -1,0 +1,26 @@
+{
+  "id": "pearl_cantor_channel",
+  "quoted_units": 2,
+  "args": {
+    "description": "Lift the shell instrument gently with both hands to chest-height, lean forward and take a small breath, hold a singing pose with an open mouth, then lower the shell and recover smoothly to the starting grounded stance. Deliberate clear channel gesture. Preserve solid dark eyes and all clothing.",
+    "first_frame_base64": "Approved/DC_A04_Pearl_Cantor.png",
+    "last_frame_base64": "Approved/DC_A04_Pearl_Cantor.png",
+    "frame_count": 16,
+    "direction": "west",
+    "view": "side",
+    "subject_description": "a golden marine pearl cantor holding a shell",
+    "initial_pose": "standing grounded facing left holding the pictured equipment",
+    "no_background": true,
+    "enhance_prompt": false,
+    "seed": 10052051
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: f0cecb05-499e-413a-948e-324764f61475\njob_id: f0cecb05-499e-413a-948e-324764f61475\ndescription: Lift the shell instrument gently with both hands to chest-height, lean forward and take a small breath, hold a singing pose with an open mouth, then lower the shell and recover smoothly to the starting grounded stance. Deliberate clear channel gesture. Preserve solid dark eyes and all clothing.\nframes: 16\nsize: 64x64px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 10052051\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f0cecb05-499e-413a-948e-324764f61475\")\nasset_id: 4aead4ac-4a3d-5234-8ced-bb4f4c6c3576\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

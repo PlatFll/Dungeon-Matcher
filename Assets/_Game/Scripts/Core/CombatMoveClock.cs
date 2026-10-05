@@ -42,6 +42,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         if (!CombatClockSnapshot.IsSupported(state.profile) || state.actions == null || state.actions.IsPending)
             throw new InvalidOperationException("Unsupported or unstable combat clock snapshot.");
         Current = this;
+        state.zoneId = run.Zone.Definition.zoneId;
         run.Board.ValidPlayerMoveAccepted += Accepted;
         run.Board.ValidPlayerMoveCompleted += Completed;
         run.Waves.RegisterProgressionGate(this);
@@ -71,6 +72,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     private void Accepted(int action)
     {
         if (!state.actions.Accept(action)) return;
+        run.Board.AcceptAquaticMove(action);
         input = run.Board.AcquireExternalInputBlock();
         acceptedActors.Clear();
         foreach (var actor in run.Waves.ActiveEnemies)
@@ -122,7 +124,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 ActingEnemy = actor;
                 var stagger = actor.GetComponent<EnemyStagger>();
                 var channel = actor.GetComponent<EnemyChannelRuntime>();
-                bool held = channel != null && channel.BlocksBasic;
+                bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true;
                 var attack = actor.GetComponent<EnemyAutoAttack>();
                 if (stagger == null || !stagger.IsStaggered)
                 {
@@ -153,6 +155,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             run.AdvanceSupplyCooldowns();
+            run.Board.FinishAquaticMove(Tick);
             ActionSettled?.Invoke(Tick);
         }
         finally

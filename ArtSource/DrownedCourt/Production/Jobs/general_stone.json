@@ -1,0 +1,45 @@
+{
+  "id": "general_stone",
+  "args": {
+    "description": "Seamless near-black blue-green weathered ruined marine stone background tile. Sparse tide-mark seams and broad quiet slabs. Dark #0D1B23 #19303A #294750 palette, extremely restrained highlights. No frame, no central object, no decoration, no text. Match Dungeon Matcher crisp native pixel-art: no anti-aliasing, gradients, blur or noisy individual speckles. Top-left light.",
+    "width": 64,
+    "height": 64,
+    "no_background": false,
+    "seed": 10052104,
+    "style_image": {
+      "source_image_id": "29b39488-8438-5029-ae56-f811c69bb02e",
+      "usage_description": "Pixel density, clean outline and broad shading only; environmental/UI asset described, no character."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"5a70d3be-509b-483f-8aba-3582c558a5ca\",\n  \"image_id\": \"01102921-32cb-5c68-b704-57fd5285abb8\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"01102921-32cb-5c68-b704-57fd5285abb8\",\n  \"job_id\": \"5a70d3be-509b-483f-8aba-3582c558a5ca\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/5a70d3be-509b-483f-8aba-3582c558a5ca/download\"\n}\nPoll get_image(job_id=\"5a70d3be-509b-483f-8aba-3582c558a5ca\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "5a70d3be-509b-483f-8aba-3582c558a5ca",
+      "image_id": "01102921-32cb-5c68-b704-57fd5285abb8",
+      "status": "processing",
+      "source_image_id": "01102921-32cb-5c68-b704-57fd5285abb8",
+      "job_id": "5a70d3be-509b-483f-8aba-3582c558a5ca",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/5a70d3be-509b-483f-8aba-3582c558a5ca/download"
+    },
+    "isError": false
+  }
+}

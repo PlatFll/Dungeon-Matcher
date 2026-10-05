@@ -1,0 +1,32 @@
+{
+  "id": "DC_A04_Pearl_Cantor",
+  "requested_units": 5,
+  "reference": "ArtSource/Forest/Approved/Elven_Mender.png",
+  "seed": 26100504,
+  "prompt": "PEARL CANTOR, a slender seahorse-folk healer with gently curved elongated seahorse muzzle pointing left, small calm dark eye and swept crown-like dorsal ridge. Warm sand/cream face, small fin hands, long simple deep ink-teal robe with few broad folds, one pale shell shoulder piece, restrained old-gold fastener. Holds a SHORT upright wooden spiral-shell staff in front, clearly gripped hand; other small fin hand open. Compact curled tail plus planted feet/robe contact, standing on the same floor, not floating. Slender body distinct from chunky fish and shark, elegant readable head ridge without filigree. No human ears/hair, no pointed wizard hat, no bubbles. Dungeon Matcher game sprite. One full-body enemy still, three-quarter view facing LEFT, ready stance, transparent background, exact 64x64 native pixel art. Match the reference's chunky one-pixel exposed outline, economical broad connected color clusters and upper-left lighting, not its identity. Character outline #0A0D11. A small expressive readable face, compact body with planted ground contacts near the bottom, whole equipment inside canvas. Matte material ramps of 2-3 distinct tones; selective tiny highlights; no antialiasing, soft shading, gradients, dithering, scattered texture, drop shadow, text, ground disk or UI. One character only, no extra weapons, no shield. Native body pixel density comparable to the reference; preserve intentional species differences.",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"0cab3b89-280b-4e3c-8e2a-e8f709715d85\",\n  \"image_id\": \"c60a6b34-039f-53c5-878b-a02052c487ab\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"c60a6b34-039f-53c5-878b-a02052c487ab\",\n  \"job_id\": \"0cab3b89-280b-4e3c-8e2a-e8f709715d85\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/0cab3b89-280b-4e3c-8e2a-e8f709715d85/download\"\n}\nPoll get_image(job_id=\"0cab3b89-280b-4e3c-8e2a-e8f709715d85\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "0cab3b89-280b-4e3c-8e2a-e8f709715d85",
+      "image_id": "c60a6b34-039f-53c5-878b-a02052c487ab",
+      "status": "processing",
+      "source_image_id": "c60a6b34-039f-53c5-878b-a02052c487ab",
+      "job_id": "0cab3b89-280b-4e3c-8e2a-e8f709715d85",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/0cab3b89-280b-4e3c-8e2a-e8f709715d85/download"
+    },
+    "isError": false
+  }
+}

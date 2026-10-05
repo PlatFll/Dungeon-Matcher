@@ -15,7 +15,7 @@ public static class CombatGuide
             (CombatMoveClock.MoveBasics ? $"   Every {actor.Definition.AttackMoves} moves\n" : $"   Every {actor.AttackInterval:0.#} seconds\n") +
             (attack != null ? $"Next attack: {attack.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}\n" : "");
         if (actor.HasSpecialAbility) basic += $"Special: {Mathf.Max(0,actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount)} valid moves to ready\n";
-        return basic + "\n" + Counter(actor.Definition.SpecialAbilityKind) +
+        return basic + "\n" + (actor.Definition.canFightFlooded ? actor.Definition.Description : Counter(actor.Definition.SpecialAbilityKind)) +
             (RunSession.Current?.Board != null ? "\n\n"+RunSession.Current.Board.DescribeOwnedBoardThreats(actor) : "") +
             (CombatMoveClock.Active ? "\n\nOnly accepted manual actions advance special deadlines. Interrupt channels by staggering or defeating their caster. Free skills can solve threats without spending a move." : "\n\nSeconds run during combat. Only completed valid swaps/taps advance move counters; cascades and invalid swaps do not.");
     }
