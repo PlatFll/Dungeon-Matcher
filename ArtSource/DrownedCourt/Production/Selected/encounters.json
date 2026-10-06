@@ -156,10 +156,10 @@
     },
     {
       "id": "R14",
-      "name": "Pearl procession",
+      "name": "Reef salvage convoy",
       "members": [
-        "pearl_cantor",
         "shellback_porter",
+        "hammerhead_bruiser",
         "reef_spearman"
       ],
       "first": 10,
@@ -172,7 +172,7 @@
       "name": "Conch lesson",
       "members": [
         "conch_marshal",
-        "reef_spearman"
+        "pearl_cantor"
       ],
       "first": 10,
       "last": 13,
@@ -181,10 +181,10 @@
     },
     {
       "id": "R16",
-      "name": "Heavy rhythm",
+      "name": "Heavy salvage",
       "members": [
-        "conch_marshal",
-        "hammerhead_bruiser"
+        "hammerhead_bruiser",
+        "shellback_porter"
       ],
       "first": 16,
       "last": 18,
@@ -242,10 +242,10 @@
     },
     {
       "id": "R21",
-      "name": "Lantern gate",
+      "name": "Lantern procession",
       "members": [
         "lantern_warden",
-        "reef_spearman"
+        "pearl_cantor"
       ],
       "first": 14,
       "last": 14,
@@ -254,10 +254,10 @@
     },
     {
       "id": "R22",
-      "name": "Lantern in air",
+      "name": "Lantern command",
       "members": [
         "lantern_warden",
-        "needlefin_skirmisher"
+        "conch_marshal"
       ],
       "first": 14,
       "last": 14,
@@ -278,7 +278,7 @@
     },
     {
       "id": "R24",
-      "name": "Court sentries",
+      "name": "Reef sentries",
       "members": [
         "shellback_porter",
         "hammerhead_bruiser",
@@ -291,10 +291,10 @@
     },
     {
       "id": "R25",
-      "name": "Netted chorus",
+      "name": "Netted salvage",
       "members": [
         "reef_netweaver",
-        "pearl_cantor",
+        "shellback_porter",
         "reef_spearman"
       ],
       "first": 16,
@@ -355,8 +355,8 @@
       "name": "Queen first lesson",
       "members": [
         "queen_nacre",
-        "reef_spearman",
-        "hammerhead_bruiser"
+        "pearl_cantor",
+        "conch_marshal"
       ],
       "first": 20,
       "last": 999,
@@ -368,8 +368,7 @@
       "name": "Queen command return",
       "members": [
         "queen_nacre",
-        "conch_marshal",
-        "reef_spearman"
+        "conch_marshal"
       ],
       "first": 20,
       "last": 999,
@@ -381,8 +380,7 @@
       "name": "Queen pearl return",
       "members": [
         "queen_nacre",
-        "pearl_cantor",
-        "needlefin_skirmisher"
+        "pearl_cantor"
       ],
       "first": 20,
       "last": 999,

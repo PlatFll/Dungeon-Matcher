@@ -45,6 +45,13 @@ public partial class BoardController
         public Gem Source;
         public Gem Target;
         public readonly HashSet<Gem> Clears = new HashSet<Gem>();
+        public readonly Dictionary<Gem,Vector2Int> FinalCells = new Dictionary<Gem,Vector2Int>();
+        public Vector2Int FinalCell(Gem gem)
+        {
+            if(FinalCells.TryGetValue(gem,out var cell)) return cell;
+            var destination=gem==Source?Target:gem==Target?Source:gem;
+            return new Vector2Int(destination.Column,destination.Row);
+        }
         public bool UsesSpecial;
         public bool CreatesSpecial;
         public bool BreaksObstacle;
@@ -61,6 +68,7 @@ public partial class BoardController
 
     public List<ResponseOption> GetImmediateResponses()
     {
+        if (UsesExtraManualSwapStep && gems!=null) return ExtendedManualResponses();
         var result = new List<ResponseOption>();
         if (gems == null) return result;
         var types = BuildCurrentTypeGrid();

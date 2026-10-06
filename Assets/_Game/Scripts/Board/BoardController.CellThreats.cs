@@ -94,8 +94,7 @@ public partial class BoardController
                 if(!IsOrdinaryGemOnBoard(gem)) continue;
                 // ResponseOption keeps gem identity. Fixed overlays and thorn
                 // edges need the occupied cell AFTER the proposed swap.
-                var destination=gem==response.Source?response.Target:gem==response.Target?response.Source:gem;
-                cells.Add(new Vector2Int(destination.Column,destination.Row));
+                cells.Add(response.FinalCell(gem));
             }
         }
         return cells;

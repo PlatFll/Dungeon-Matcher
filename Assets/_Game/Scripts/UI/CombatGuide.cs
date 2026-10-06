@@ -14,7 +14,15 @@ public static class CombatGuide
             $"Weakness: {actor.AssignedGemType}\nNormal hit: {actor.Damage}" + (actor.FollowUpDamage > 0 ? $" + {actor.FollowUpDamage}" : "") +
             (CombatMoveClock.MoveBasics ? $"   Every {actor.Definition.AttackMoves} moves\n" : $"   Every {actor.AttackInterval:0.#} seconds\n") +
             (attack != null ? $"Next attack: {attack.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}\n" : "");
-        if (actor.HasSpecialAbility) basic += $"Special: {Mathf.Max(0,actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount)} valid moves to ready\n";
+        if (actor.HasSpecialAbility)
+        {
+            var names=EnemyAbilityNames.All(actor.Definition.SpecialAbilityKind);
+            if(!names.Contains("|")) names=EnemyAbilityNames.Primary(actor.Definition);
+            basic += names.Replace("|", " / ") + "\n";
+            basic += $"Special: {Mathf.Max(0,actor.SpecialTurnRequirement-actor.CurrentSpecialTurnCount)} valid moves to ready\n";
+        }
+        if (actor.Definition.SpecialAbilityKind == EnemySpecialAbilityKind.ApplyPlayerStatus && actor.Definition.appliedPlayerStatus != null)
+            basic += actor.Definition.appliedPlayerStatus.displayName + ": " + actor.Definition.appliedPlayerStatus.description + "\n";
         return basic + "\n" + (actor.Definition.canFightFlooded ? actor.Definition.Description : Counter(actor.Definition.SpecialAbilityKind)) +
             (RunSession.Current?.Board != null ? "\n\n"+RunSession.Current.Board.DescribeOwnedBoardThreats(actor) : "") +
             (CombatMoveClock.Active ? "\n\nOnly accepted manual actions advance special deadlines. Interrupt channels by staggering or defeating their caster. Free skills can solve threats without spending a move." : "\n\nSeconds run during combat. Only completed valid swaps/taps advance move counters; cascades and invalid swaps do not.");

@@ -604,7 +604,7 @@ public sealed partial class WaveController :
             assignedGemType
         );
 
-        enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : 0;
+        enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : nextLegacyEnemyId++;
         if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
         if (enemy.Definition.EligibleZones.Contains("magical-forest") || enemy.Definition.EligibleZones.Contains("drowned-court"))
             enemyObject.AddComponent<ForestEnemyMotion>();

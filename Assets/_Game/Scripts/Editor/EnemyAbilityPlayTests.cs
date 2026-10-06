@@ -50,6 +50,7 @@ public sealed class EnemyAbilityPlayTests
             foreach(string name in new[]{"CourtMage","CrossbowGuard","RoyalStandardBearer","ShieldKnight","TownMarshal","BarricadeGuard","SiegeSergeant","RoyalArchbishop","KnightCaptain"})
             {
                 yield return Spawn(name);
+                var castNames=new List<string>();owner.AbilityCastCommitted+=(a,n)=>castNames.Add(n);
                 if(name=="ShieldKnight")yield return ReviewShieldClearance();
                 int ownerId=owner.GetInstanceID();bool signal=false;Sprite contact=null;
                 var image=owner.transform.Find("VisualRoot").GetComponent<Image>();
@@ -62,6 +63,7 @@ public sealed class EnemyAbilityPlayTests
                     name=="ShieldKnight"||name=="RoyalArchbishop"?signal:
                     name=="TownMarshal"?run.Waves.ActiveEnemies.Count>2:board.GetBarricadeCountForOwner(ownerId)>0;
                 float started=Time.time;Prime(owner);Assert.That(effect(),Is.False,name+" must wind up before applying");
+                Assert.That(castNames,Is.Empty,name+" readiness and windup must remain silent");
                 if(name=="ShieldKnight")
                 {
                     yield return new WaitForSeconds(.1f);Time.timeScale=0;var frozen=image.sprite;
@@ -76,6 +78,8 @@ public sealed class EnemyAbilityPlayTests
                 }
                 if(name=="RoyalArchbishop")board.GemSetMarked-=Mark;
                 yield return Until(()=>!owner.HasAnimationActionInProgress&&!board.IsBusy,name+" recovery");
+                Assert.That(castNames.Count,Is.EqualTo(1),name+" announces a successful cast exactly once");
+                Assert.That(CombatGuide.Enemy(owner),Does.Contain(castNames[0]),name+" cast name is also in inspection");
                 Assert.That(owner.IsSpecialReady,Is.False,name+" cadence consumed once");
                 foreach(var enemy in run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().StopAttacking();
                 if(name=="KnightCaptain")
@@ -119,14 +123,19 @@ public sealed class EnemyAbilityPlayTests
             yield return Spawn("ShieldKnight");
             owner.transform.Find("VisualRoot").GetComponent<Animator>().runtimeAnimatorController=null;
             Prime(owner);yield return Until(()=>ally.HasShield&&!owner.HasAnimationActionInProgress,"missing-art fallback");
-            yield return Spawn("ShieldKnight");Prime(owner);yield return new WaitForSeconds(.1f);
+            int cancelledAnnouncements=0;
+            yield return Spawn("ShieldKnight");owner.AbilityCastCommitted+=(a,n)=>cancelledAnnouncements++;
+            Prime(owner);yield return new WaitForSeconds(.1f);
             owner.GetComponent<ShieldingAlliesEnemyAbility>().enabled=false;
             yield return new WaitForSeconds(1.2f);Assert.That(ally.HasShield,Is.False,"disabled cast cannot grant a late shield");
-            yield return Spawn("CourtMage");Prime(owner);yield return new WaitForSeconds(.1f);
+            Assert.That(cancelledAnnouncements,Is.Zero,"cancelled shield pre-cast stays silent");
+            yield return Spawn("CourtMage");owner.AbilityCastCommitted+=(a,n)=>cancelledAnnouncements++;
+            Prime(owner);yield return new WaitForSeconds(.1f);
             owner.GetComponent<CourtMageEnemyAbility>().enabled=false;
             yield return Until(()=>!board.IsBusy&&!board.HasPendingBoardMutation,"disabled freeze cleanup");
             Assert.That(board.GetFrozenGemCountForOwner(owner.GetInstanceID()),Is.Zero,"cancelled freeze releases target reservation");
             Assert.That(owner.HasAnimationActionInProgress,Is.False);
+            Assert.That(cancelledAnnouncements,Is.Zero,"cancelled freeze pre-cast stays silent");
 
             yield return Spawn("King");
             var king=owner.GetComponent<KingEnemyAbility>();Prime(owner);

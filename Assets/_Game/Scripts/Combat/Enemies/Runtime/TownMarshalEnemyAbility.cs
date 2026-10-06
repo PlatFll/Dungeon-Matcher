@@ -370,6 +370,7 @@ public sealed class TownMarshalEnemyAbility :
                 summonedEnemy
             );
 
+            enemyActor.AnnounceCommittedCast("Ring the Bell");
             preferredAbility =
                 PreferredAbility.CitizensSeizeHim;
 
@@ -436,6 +437,7 @@ public sealed class TownMarshalEnemyAbility :
             return false;
         }
 
+        enemyActor.AnnounceCommittedCast("Citizens, Seize Him!");
         isRallyActive = true;
         rallyCoroutine =
             StartCoroutine(

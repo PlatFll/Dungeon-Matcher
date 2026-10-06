@@ -308,6 +308,7 @@ public sealed partial class ForestFoundationPlayTests
             yield return Until(()=>Run.Travel.State.stage==0,"destination reveal finishes");
             Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(destination));
             Assert.That(Run.Board.IsFlooded,Is.False);Assert.That(Run.Board.VineCount,Is.Zero);
+            Assert.That(Run.Board.GetComponent<BoardCasterSigilView>().ActiveCount,Is.Zero,"travel leaves no source-zone caster marks");
             var after=Run.Continuation.Capture();AssertBoardCarryover(before.board,after.board);
             Assert.That(after.player.health,Is.EqualTo(before.player.health));
             Assert.That(after.player.energy,Is.EqualTo(expectedEnergy),"one new destination wave may grant Prepared Casting once");

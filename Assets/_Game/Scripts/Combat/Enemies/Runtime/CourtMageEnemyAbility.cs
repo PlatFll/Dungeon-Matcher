@@ -137,7 +137,8 @@ public sealed class CourtMageEnemyAbility :
         bool queued =
             boardController.TryQueueFreezeRandomGem(
                 enemyActor,
-                MaximumOwnedFrozenGems
+                MaximumOwnedFrozenGems,
+                succeeded => { if(succeeded && enemyActor!=null) enemyActor.AnnounceCommittedCast(); }
             );
 
         if (!queued)

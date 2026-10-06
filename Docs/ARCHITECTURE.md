@@ -1,5 +1,37 @@
 # Dungeon Matcher Architecture Reference
 
+## Shared mechanic variation
+
+Reuse existing resolution owners when varying a signature mechanic across zones.
+Different duration, expiry, costs, rewards or targets should change the decision
+without creating a competing board/damage pipeline. The durable soft rule and
+current overlap audit are in [ZONE_DESIGN_RULES.md](ZONE_DESIGN_RULES.md).
+The canonical status contract is [STATUS_EFFECTS.md](STATUS_EFFECTS.md); the current
+revision's actual implementation state is tracked in its handoff, not inferred
+from the specification alone.
+
+PlayerActor owns `PlayerStatusRuntime`. RunSession binds accepted-action expiry;
+damage, healing and new energy generation remain in their existing central paths.
+Status snapshots contain values and stable source IDs, and restore after enemies.
+`BoardController.ManualSlide` owns the generic extra-step plan and legality query.
+RunSession supplies its flooded-Court/Slippery predicate. The ordinary TrySwap and
+cascade pipeline commits the rotation; `ManualSwapPreviewView` only displays it.
+Movement-rule changes share the existing reshuffle path at a safe unlocked point.
+
+## Shared cast presentation
+
+`EnemyActor.AbilityCastCommitted` is a presentation event emitted by the existing
+ability owner after successful commitment. `EnemyAbilityNames` supplies names for
+both inspection and the transient `EnemyCastAnnouncement`. Readiness/animation
+events remain separate. Neither announcement nor sigil advances gameplay.
+
+`BoardController.CollectCasterTargets` projects existing board warnings/reservations;
+`BoardCasterSigilView` combines them with Court runtime targets. `WaveController`
+supplies actual slot identity (triangle/square/ring). The view groups coincident
+anchors and renders native glyphs above the board frame, below modals/travel.
+`EnemySlotSigilView` observes the same mapping beside combat UI. No duplicate
+warning/save lifecycle exists. See [CASTER_PRESENTATION.md](CASTER_PRESENTATION.md).
+
 ## Purpose
 
 This document describes the current authoritative gameplay architecture and the invariants that future work must preserve. It names the implementation that exists in the repository; it does not convert every serialized prototype value into a permanent design rule.

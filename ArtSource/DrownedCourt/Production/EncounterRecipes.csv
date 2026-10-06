@@ -1,0 +1,33 @@
+id,name,members,first,last,tide,weight
+R01,Outer guard,reef_spearman,1,2,0,1
+R02,Mooring patrol,hammerhead_bruiser,1,2,0,1
+R03,Reef pair,reef_spearman;hammerhead_bruiser,2,3,0,1
+R04,Fast fins,needlefin_skirmisher;reef_spearman,3,3,0,1
+R05,Salvage party,shellback_porter;needlefin_skirmisher,3,5,0,1
+R06,Pearl escort,pearl_cantor;reef_spearman,4,7,0,1
+R07,First theft,pearl_thief;reef_spearman,5,7,2,1
+R08,Dry opportunist,pearl_thief;needlefin_skirmisher,5,7,1,1
+R09,Net lesson,reef_netweaver;reef_spearman,6,7,1,1
+R10,Spine lesson,puffer_sentinel;reef_spearman,10,13,0,1
+R11,Captain gate,breakwater_captain;reef_spearman,8,8,0,1
+R12,Captain return,breakwater_captain;needlefin_skirmisher,8,8,0,1
+R13,Quiet reef,reef_spearman;needlefin_skirmisher,9,9,0,1
+R14,Reef salvage convoy,shellback_porter;hammerhead_bruiser;reef_spearman,10,13,0,1
+R15,Conch lesson,conch_marshal;pearl_cantor,10,13,0,1
+R16,Heavy salvage,hammerhead_bruiser;shellback_porter,16,18,0,1
+R17,Siphon lesson,moray_siphoner;reef_spearman,10,13,0,1
+R18,Siphon hunters,moray_siphoner;needlefin_skirmisher;reef_spearman,16,18,0,1
+R19,Net patrol,reef_netweaver;shellback_porter,10,13,0,1
+R20,Poised spines,puffer_sentinel;needlefin_skirmisher,10,13,0,1
+R21,Lantern procession,lantern_warden;pearl_cantor,14,14,0,1
+R22,Lantern command,lantern_warden;conch_marshal,14,14,0,1
+R23,Ebb relief,reef_spearman;shellback_porter,15,15,0,1
+R24,Reef sentries,shellback_porter;hammerhead_bruiser;needlefin_skirmisher,16,18,0,1
+R25,Netted salvage,reef_netweaver;shellback_porter;reef_spearman,16,18,0,1
+R26,Thief escort,pearl_thief;hammerhead_bruiser,16,18,2,1
+R27,Spine chorus,puffer_sentinel;conch_marshal,16,18,0,1
+R28,Throne approach,moray_siphoner;shellback_porter,16,18,0,1
+R29,Final sentry,reef_spearman;needlefin_skirmisher,19,19,0,1
+R30,Queen first lesson,queen_nacre;pearl_cantor;conch_marshal,20,999,0,3
+R31,Queen command return,queen_nacre;conch_marshal,20,999,0,1
+R32,Queen pearl return,queen_nacre;pearl_cantor,20,999,0,1

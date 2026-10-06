@@ -53,6 +53,7 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
             pending=false;warning=marked;
             if(marked!=null && !released)
             {
+                actor.AnnounceCommittedCast(IsTreant?"Falling Bough":"Thorn Volley");
                 actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();
                 actor.SpecialIdleState="ChannelHold";attack?.SetActionPaused(this,true);
             }
@@ -66,7 +67,7 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
         if(!released && !actor.IsDefeated && stagger?.IsStaggered!=true && (motion==0 || actor.IsSpecialMotionCurrent(motion)))
         {
             actor.GrantShield(actor.Definition.BarkArmorShield);state.shieldArmed=actor.CurrentShield>0;
-            state.cycle=1;actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();
+            state.cycle=1;actor.AnnounceCommittedCast("Bark Armor");actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();
         }
         if(motion>0) yield return actor.WaitForSpecialMotionComplete(motion);
         pending=false;actor.EndSpecialAbilityAnimationAction();

@@ -161,11 +161,16 @@ public sealed partial class ForestFoundationPlayTests
         }
         var kit=treant.GetComponent<ForestPressureAbility>();
         kit.RestoreContinuation(new EnemyCombatSnapshot{forestRoster=new ForestRosterSnapshot{cycle=1}},_=>null);
+        yield return null;
+        var sigils=board.GetComponent<BoardCasterSigilView>();
+        Assert.That(sigils.ActiveCount,Is.EqualTo(first.Cells.Count+second.Cells.Count));
         int hp=Run.Player.CurrentHealth;treant.GetComponent<EnemyStagger>().RestoreContinuation(new EnemyCombatSnapshot());
         treant.GetComponent<EnemyStagger>().ApplyStagger(2,2);
         Assert.That(kit.IsPreparing,Is.False);Assert.That(first.Ended,Is.True);
         Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
         Assert.That(treant.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.False);
+        yield return null;yield return null;
+        Assert.That(sigils.ActiveCount,Is.EqualTo(second.Cells.Count),"interrupted caster marks clear; other caster remains");
     }
 
     [UnityTest] public IEnumerator RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume()

@@ -160,6 +160,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         definition = playerDefinition;
+        Statuses.Clear();
         LastDamageSummary = "";
         PermanentLevel = AccountProgression.Current.Level(definition.PlayerId);
         var activeRun=AccountProgression.Current.ActiveRun;
@@ -220,9 +221,9 @@ public sealed partial class PlayerActor : MonoBehaviour
 
         if (shieldWasActive)
         {
-            finalDamage = CombatAmounts.Round(finalDamage * (1f - shieldDamageReduction));
+            finalDamage = CombatAmounts.Round(finalDamage * (double)Statuses.IncomingMultiplier * (1f - shieldDamageReduction));
         }
-        else finalDamage = CombatAmounts.Round(finalDamage);
+        else finalDamage = CombatAmounts.Round(finalDamage * (double)Statuses.IncomingMultiplier);
 
         int shieldDamage = Mathf.Min(currentShield, finalDamage);
 
@@ -241,6 +242,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         if (attacker == null && source is Component component) attacker = component.GetComponent<EnemyActor>();
         string cause = attacker != null && attacker.Definition != null ? attacker.Definition.DisplayName : "Damage";
         if (source is SuffocationDamageSource) cause = "Suffocation";
+        if (source is BurnDamageSource) cause = "Burn";
         LastDamageSummary = $"Last hit: {cause}\n{Mathf.Min(currentHealth, healthDamage)} HP lost · {shieldDamage} shield absorbed";
 
         if (healthDamage > 0)
@@ -301,7 +303,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         int previousHealth = currentHealth;
-        currentHealth = (int)Math.Min(maximumHealth, (long)currentHealth + CombatAmounts.Round(amount));
+        currentHealth = (int)Math.Min(maximumHealth, (long)currentHealth + CombatAmounts.Round(amount * (double)Statuses.HealingMultiplier));
         int actualHealing = currentHealth - previousHealth;
 
         if (actualHealing <= 0)
@@ -406,6 +408,7 @@ public sealed partial class PlayerActor : MonoBehaviour
         }
 
         isDefeated = true;
+        Statuses.Clear();
 
         if (currentShield > 0)
         {

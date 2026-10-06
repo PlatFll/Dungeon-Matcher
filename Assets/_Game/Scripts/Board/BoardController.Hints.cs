@@ -143,6 +143,16 @@ public partial class BoardController
         int secondRow,
         List<HintMoveCandidate> candidates)
     {
+        if (UsesExtraManualSwapStep)
+        {
+            var a=GetGem(firstColumn,firstRow);var b=GetGem(secondColumn,secondRow);
+            if(a==null || b==null) return;
+            if(ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(firstColumn,firstRow,secondColumn,secondRow)))
+                candidates.Add(new HintMoveCandidate(a,b));
+            if(ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(secondColumn,secondRow,firstColumn,firstRow)))
+                candidates.Add(new HintMoveCandidate(b,a));
+            return;
+        }
         if (!IsCellPlayable(
                 firstColumn,
                 firstRow) ||
@@ -474,6 +484,8 @@ public partial class BoardController
         Gem sourceGem,
         Gem targetGem)
     {
+        if (UsesExtraManualSwapStep)
+            return !IsBusy && !HasPendingBoardMutation && PreviewManualSwap(sourceGem,targetGem)?.IsLegal==true;
         if (isBusy ||
             HasPendingBoardMutation ||
             gems == null ||

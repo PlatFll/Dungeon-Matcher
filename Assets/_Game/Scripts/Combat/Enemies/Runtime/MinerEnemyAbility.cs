@@ -221,7 +221,8 @@ public sealed class MinerEnemyAbility :
                 boardController.TryQueueMineRandomCell(
                     enemyActor,
                     MaximumOwnedMines,
-                    timeFromAnimation
+                    timeFromAnimation,
+                    succeeded => { if(succeeded && enemyActor!=null) enemyActor.AnnounceCommittedCast(); }
                 );
 
             if (!queued)

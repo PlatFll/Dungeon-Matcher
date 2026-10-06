@@ -13,7 +13,7 @@ public partial class BoardController
         StartCoroutine(TrySwap(GetGem(x,y),GetGem(targetX,targetY)));
     }
     public void PrepareContinuation() { restoreInsteadOfGenerate=true; isBusy=true; }
-    public bool CanCaptureContinuation => gems!=null && !IsBusy && !HasPendingBoardMutation;
+    public bool CanCaptureContinuation => gems!=null && !IsBusy && !HasPendingBoardMutation && ManualSwapRulesSettled;
 
     public BoardCombatSnapshot CaptureContinuation(Func<int,int> ownerSlot)
     {

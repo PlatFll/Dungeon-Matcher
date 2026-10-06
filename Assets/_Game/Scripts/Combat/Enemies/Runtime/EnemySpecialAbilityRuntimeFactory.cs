@@ -35,6 +35,9 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.ApplyPlayerStatus:
+                runtime = enemyObject.GetComponent<ApplyPlayerStatusEnemyAbility>() ?? enemyObject.AddComponent<ApplyPlayerStatusEnemyAbility>();
+                break;
             case EnemySpecialAbilityKind.PearlTheft:
             case EnemySpecialAbilityKind.RallyingConch:
             case EnemySpecialAbilityKind.MoraySiphon:

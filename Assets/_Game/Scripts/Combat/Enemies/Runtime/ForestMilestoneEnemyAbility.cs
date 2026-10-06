@@ -146,11 +146,12 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         warning=result;value.state=1;
         if(Ritual && RootCount==2) value.heartrootsArmed=true;
         value.deadline=!Ritual?warning.DueMove:CombatMoveClock.EffectAction+ChannelMoves;
+        if(!Ritual || value.activeAbility!=1) actor.AnnounceCommittedCast(!Ritual?"Guarding Roots":value.activeAbility==0?"Renew the Grove":"Thorn Harvest");
         actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();Publish();
         if(Ritual && value.activeAbility==1)
         {
             pending=true;
-            if(!board.QueueVineSurge(actor,ok=>{pending=false;Finish(ok?"Surged":"Fizzled",false);}))
+            if(!board.QueueVineSurge(actor,ok=>{if(ok) actor.AnnounceCommittedCast("Verdant Surge");pending=false;Finish(ok?"Surged":"Fizzled",false);}))
             {pending=false;Finish("Fizzled",false);}
         }
     }

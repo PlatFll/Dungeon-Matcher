@@ -177,6 +177,8 @@ public sealed class ShieldingAlliesEnemyAbility :
                 definition.SelfShieldAmount
             );
 
+            enemyActor.AnnounceCommittedCast();
+
             /*
              * A cast is successful even when every target is already capped.
              * Reset based on the accepted action, not on the actual amount
@@ -202,6 +204,7 @@ public sealed class ShieldingAlliesEnemyAbility :
         yield return enemyActor.WaitForSpecialMotionBeat(motion);
         if (!enemyActor.IsSpecialMotionCurrent(motion)) yield break;
         GrantShieldToLivingEnemies(enemyActor.Definition.AllyShieldAmount, enemyActor.Definition.SelfShieldAmount);
+        enemyActor.AnnounceCommittedCast();
         enemyActor.NotifySpecialAbilityEffectApplied();
         enemyActor.ResetSpecialCounter();
         yield return enemyActor.WaitForSpecialMotionComplete(motion);

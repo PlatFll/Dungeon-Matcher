@@ -102,6 +102,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
 
     private IEnumerator Command()
     {
+        bool announced=false;
         if (actor.SpecialMotionId > 0) yield return actor.WaitForSpecialMotionComplete(actor.SpecialMotionId);
         else yield return new WaitForSeconds(commandWindup);
         if (released || actor == null || actor.IsDefeated) yield break;
@@ -115,6 +116,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
             commandLocks.Remove(attack.EnemyActor);
             if (attack.PerformCommandStrike(this))
             {
+                if(!announced) {actor.AnnounceCommittedCast("Royal Command");announced=true;}
                 while (!released && attack != null && attack.IsAttackSequenceInProgress)
                     yield return null;
                 yield return new WaitForSeconds(strikeSpacing);
@@ -131,7 +133,7 @@ public sealed class KnightCaptainEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         if (success)
         {
             // Command telegraphs at wind-up; chains announce after acceptance.
-            if (!nextPreferChains) actor.NotifySpecialAbilityUsed();
+            if (!nextPreferChains) {actor.AnnounceCommittedCast("Chain Volley");actor.NotifySpecialAbilityUsed();}
             actor.ResetSpecialCounter();
             preferChains = nextPreferChains;
         }

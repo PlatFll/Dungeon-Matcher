@@ -454,7 +454,8 @@ public sealed partial class EnemyActor : MonoBehaviour
         float sharedReduction=1f;
         foreach(var reduction in sharedDamageReductions.Values)
             if(reduction!=null) sharedReduction=Mathf.Min(sharedReduction,Mathf.Clamp01(reduction()));
-        double resolvedDamage = amount * (double)incomingMultiplier * sharedReduction;
+        double resolvedDamage = amount * (double)incomingMultiplier * sharedReduction *
+            (RunSession.Current?.Player?.Statuses.OutgoingMultiplier(this) ?? 1f);
 
         bool shieldWasActive =
             currentShield > 0;

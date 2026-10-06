@@ -144,6 +144,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     }
     private void Complete(bool nextRunes)
     {
+        actor.AnnounceCommittedCast(nextRunes?"Benediction":"Restoration");
         actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter(); preferRunes = nextRunes;
     }
     private void EndAction()

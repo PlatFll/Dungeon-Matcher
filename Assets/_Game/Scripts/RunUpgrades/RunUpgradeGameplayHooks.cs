@@ -293,7 +293,7 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
                 runtime
             ))
         {
-            energy.AddEnergy(PreparedCastingEnergy);
+            energy.AddEnergy(player != null ? player.Statuses.GeneratedEnergy(PreparedCastingEnergy) : PreparedCastingEnergy);
         }
     }
 
@@ -369,7 +369,7 @@ public sealed class RunUpgradeGameplayHooks : MonoBehaviour
     {
         var generation = player != null ? player.GetComponent<PlayerAbilityMatchEnergyGain>() : null;
         if (generation != null) generation.GrantGeneratedEnergy(amount);
-        else if (energy != null) energy.AddEnergy(amount);
+        else if (energy != null) energy.AddEnergy(player != null ? player.Statuses.GeneratedEnergy(amount) : amount);
     }
 
     private static bool IsFixedAbilityExplosionCenter(BoardClearContext clear)

@@ -3,7 +3,8 @@
 The user approved the first four designs, solid-color eyes, continued production,
 and a separate ceiling of 300 subscription generations (220 initially, 80 reserved).
 The remaining ten designs and motion are director-selected for review. This does
-not imply that the user has reviewed every later asset. No merge is authorized.
+not imply that the user has reviewed every later asset. This baseline was merged
+in PR #180. The 2026-10-06 revision is on a separate branch, with no merge authorized.
 
 ## Environment and timing
 
@@ -86,6 +87,12 @@ an actor or secretly retargets a lost slot. Killing the Queen leaves her crab al
 The entire apex formation must die before travel.
 
 ## Encounters, travel and continuation
+
+The approved two-culture revision uses existing faction data: ten Reef Clan
+identities and four Nacre Court identities. Production groups are predominantly
+coherent, with two deliberate mixed templates. Queen Nacre retains Court escorts.
+See [the encounter record](DROWNED_COURT_ENCOUNTERS.md) for source tables,
+teaching changes, lore and provisional balance limits.
 
 Thirty-two weighted recipes cover ordinary, specialist, mixed-pressure and return
 formations. Recent formations are discouraged. Local bands and the twenty-wave

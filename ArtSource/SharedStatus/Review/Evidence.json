@@ -1,0 +1,1524 @@
+{
+  "uniquePassingCases": 337,
+  "runs": [
+    {
+      "label": "Broad affected regression",
+      "xml": "Evidence/a47a252f-85c8-472b-a443-b3fbae0a372e.xml",
+      "passed": 335,
+      "sha256": "bec8847a25f83518f0217fb88a60710e731be108c60236001af3e4112bf1184b"
+    },
+    {
+      "label": "Forecast freshness and affected live cases",
+      "xml": "Evidence/d5528f07-eb52-487f-9b73-54ea13ce727d.xml",
+      "passed": 18,
+      "sha256": "d36c6b47b5fc640ab3cb0b43fb3251fe9237b773ea9f8c2209bbf54adeefa381"
+    },
+    {
+      "label": "Final target readability and lifecycle cases",
+      "xml": "Evidence/534ed03f-b278-481c-8277-ae7175e84631.xml",
+      "passed": 6,
+      "sha256": "7187ed1e838e7d10b866c931b9769ba9d0d31a8202e35a29da037f9cce901d55"
+    }
+  ],
+  "captures": [
+    {
+      "file": "sigils-720x1280.png",
+      "width": 720,
+      "height": 1280,
+      "sha256": "cdc40aa2d72143d68c56f7119db9193ab04980182fdf4e972c81301f07ac9d63"
+    },
+    {
+      "file": "sigils-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "58d7277ac7833cdcd5145fdd5cc198074b5730c32acbee1687f0521c2daa3cde"
+    },
+    {
+      "file": "sigils-1080x2400.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "572b11eeb6a89d60001ba4143d37870e7a36dfd224c736a8349525004469a2fc"
+    },
+    {
+      "file": "sigils-1080x1920-safe.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "467ba76b4427702f3d58ed44956229bed6fa467ba54a5e79d666b70bcc0f80e5"
+    },
+    {
+      "file": "slippery-preview.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "9d39e34c93b2259bc7ad17dd754e692e51fd4c794266aa524c3062dead8410cf"
+    },
+    {
+      "file": "cast-announcement.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "35ac9b229819611e189e0f7160b540f4d94dab9a166f0dca5c9d8e96d8b9c789"
+    }
+  ],
+  "nativeGlyphs": [
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Burn.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "cae0a42cc396e564b922c813861c8e4f3b7c616683f8d02bb15803713a8697c9"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Fear.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "22b7c272a9a5e8635c901c039fc300917bd870542bd567ca5ede7610b213df87"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Frostbite.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "57e3a6ed5c853508dfb14405015ea2326dbb6c3b4e973ac3767282780d1d0b7e"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Sapped.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "c9c085b2e6167a407974cbbfe98da2e87126f761ab5ca7d8caff6dbb0a08ff04"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Slippery.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "b1dbbdc89cae5e8e3b2b34ec3359beca174f8cc2bcbab2454fe3e53b702bac31"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Weakened.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 4,
+      "sha256": "3fbead454246295b3cbccc7c9be5959c02568c7c69f755dc03c07724a663f1f3"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/PlayerStatuses/Wounded.png",
+      "width": 16,
+      "height": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 3,
+      "sha256": "e1a059340cb099db7b9f42c8099cc9c60023b77e7de890a1f6f5e84526f266cb"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/CasterSigils/Ring.png",
+      "width": 12,
+      "height": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 2,
+      "sha256": "8c5ad7d5c0d397c67c6cd69aae8045398836028c2ba7b1de8968fb34cb499365"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/CasterSigils/Square.png",
+      "width": 12,
+      "height": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 2,
+      "sha256": "79ee9f03da521e4e653fde873253001273f40e7411f35b47f9fdc244a18f5605"
+    },
+    {
+      "file": "Assets/_Game/Resources/UI/CasterSigils/Triangle.png",
+      "width": 12,
+      "height": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "opaquePalette": 2,
+      "sha256": "bd8fc139a500e8790c7665cef3cf452df79a748cab641d7c17f63d011343717d"
+    }
+  ],
+  "latestResultByCase": {
+    "AcceptedMoveStateTests.OnlyAcceptedSequentialActionCanCommitOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AcceptedMoveStateTests.SnapshotPreservesActionAndStableActorIdentity": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.DebitAndSnareClampBeforeCollectedAir": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.DryAcceptanceCannotChargeTheNewFlood": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.DuplicateSettlementAndAcceptanceCannotDoubleCharge": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.FinalWetMoveDrainsBeforeSuffocationAndProtectsNextEncounter": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.FreeCollectionDoesNotAdvanceTideOrSpendAir": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.FullDryFormationAndSixAcceptedMovesAreRequired": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "AquaticEnvironmentStateTests.ResumePreservesPendingReceiptsAndUnits": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.BriefSaveReplacementLockStillSettlesRewardExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.CardTradeoffsStackCapsAndEligibilityRespectActualMechanics": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"bardley\",\"skeleton\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"skeleton\",\"bardley\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.FailedDiskWriteDoesNotSpendWalletOrInventory": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.FailedResetDoesNotPublishOrChangeDiskOrMemory": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.FreshProfileHasDirectionalBombsAndCrystalButMasteryBombsStayLocked": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.InterruptedRunSurvivesUntilExplicitSettlementAndKingFirstClearCannotRepeat": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.LegacySelectionsMigrateWithoutWritingOrSummingProgress": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",1,80,10.0f,40)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",20,230,22.35f,95)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",5,110,12.6f,50)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",1,100,11.0f,45)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",20,290,21.45f,100)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",5,140,13.2f,55)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PersistentSaveReplacementLockPreservesWalletAndJournal": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PreviouslyEarnedLowerThresholdUnlocksRemainOwnedOnLoad": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"bardley\",\"skeleton\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"skeleton\",\"bardley\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ResetRejectsInvalidCharactersLevelOneAndActiveRuns": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Defeat\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Quit to Menu\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Retry\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Victory\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BalanceV1Tests.ShieldGateAndAegisCapDeliverUsefulValueAndReset": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.ActivePhotographAndInFlightFifthMoveSurviveRestart": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.CharacterCardsExtendThePhotoAndGrantShieldExactlyOnceAcrossResume": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.EnemyWarningsKeepTheirPresentDeadlinesAndResolveOnlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.FiveRealMovesRestoreWithoutRewardsAndReplayTheSameRefills": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.PauseDeathAndEncounterCompletionCannotLeakOrReviveAPhotograph": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.PlayableDefinitionUsesApprovedFramesAndDedicatedHold": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.ReshufflesReplayAndInvalidMemoriesLeaveTheBoardUntouched": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ChronoShutterTests.RestorePreservesSpecialsAndObstaclesWithoutPhysicalClearSideEffects": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CourtCultureTests.EveryTeachingBandRetainsDryAndWetFormationCoverage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CourtCultureTests.SerializedCulturesAndRecipesMatchReviewedSource": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(False,3,5)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(False,6,10)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(True,3,5)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.BoardReportedCentersRefundEveryThirdRegardlessOfEncounterAvailability(True,6,10)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.CappedRefundIsConsumedAndNotReplayedAfterEnergyIsSpent": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.ChromaticConductorRemainsSeparateFromCenterRefund": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.ClassificationAloneDoesNotGrantEnergyEntitlement": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.DamageDispatchAloneCannotAwardOrAdvanceDetonationRefund": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.DamageModifiersUseCenterIdentityNotCoincidentDamageAmounts": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.DefeatedPlayerDoesNotGainRefundOrAdvanceCounter": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.EncounterEndingBetweenCentersDoesNotLoseTheThirdCenter": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.MissingResonantCardGrantsNoBonus": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.ReenableRetainsTwoCentersWithoutDuplicateSubscriptionAndResetClearsThem": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.ReporterTagsOnlyFixedCentersAndExcludesCrystalHiddenColor": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,False,True,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,False,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,True,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Ability,True,True,2)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Bomb,True,True,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(ColorCrystal,True,True,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(DoubleColorCrystal,True,True,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedCenterRewardTests.UnentitledOrNonCenterOutcomesDoNotAdvanceResonance(Match,True,True,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.AllSpecialFallbackWithoutCentersStillFinishesScope": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(ColumnBomb,125,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(HealingBomb,100,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(PoisonBomb,100,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(RowBomb,125,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BombsmithUsesParticipatingDirectionalBombs(ShieldBomb,100,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.BothCardsRemainAdditiveWithoutModifyingFixedCenterDamage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(1,100)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(2,110)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(4,130)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ChainReactionUsesExistingBombClassifierAndCap(5,130)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.CompletedScopeCannotBoostTheFollowingBombFreeBatch": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.CrystalHiddenColorAndCrackedCenterDoNotManufactureBombCounts": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.EmptyOrNullInputDoesNotPublishScopeOrRewards(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.EmptyOrNullInputDoesNotPublishScopeOrRewards(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.InactiveEncounterKeepsBoardOutcomesWithoutApplyingEnemyDamage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.RealExpansionPreparesNoUpgradeScopeUntilItsResultIsReported": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ReportingObserverFailureStillReleasesModifierScope(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.ReportingObserverFailureStillReleasesModifierScope(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrackedChainUpgradeScopeTests.WithoutCardsChainMetadataDoesNotChangeDamageOrActivateUtilities": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"barricadeCells\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"minedCellOwners\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"royalBannerCells\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyAbilityMotionTests.AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyAbilityMotionTests.CancelledActionCannotDonateBeatsToNextCastAndPauseRejectsCues": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,0,10)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,5)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"defeated\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"destroyedHost\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"disposed\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"notReady\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"uninitialized\")": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.AcceptedSwapReplayProducesSameLogicalStateExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.BardleyThreeBeatsKeepOneBoardHoldAndNoBubbleDelivery": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CommittedTravelSuspendResumesRevealWithoutRepeatingReward": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtAirSurvivesContinuationAndFinalDrainDoesNotSuffocate": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtBubbleReceiptsRespectPhysicalDestructionAndManualSnareSource": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtCaptainCommandsOneCompleteFixedAllySequence": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtCastAnnouncementsCommitOncePauseFadeAndDoNotReplayOnResume": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ForestFoundationPlayTests.CourtCofferCaptureOwnerDeathAndDrainHaveSinglePayout": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.CourtConchDamageLeaseDoesNotStackSpeedAndSurvivesOtherOwnerDeath": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtFirstEncounterStaysDryAndFloodUsesAcceptedMoves": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtLayoutMathAcrossSafeAreas": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtMaterialAndRosterImportsAreNativeAndComplete": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtMorayRespectsShieldGateAndHealsOnlyHpLost": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtMotionControllersResolveEveryBasicWithOneOwnedSequence": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtPortraitMaterialsAndFloodPresentationCapture": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtQueenTelegraphAndRecoveryResumeWithoutNewTargets": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtWaterPresentationHasBoundedObjectsAndMeasuredCost": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CourtWetResumePreservesAirAndChannelDeadline": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.DeadlineStaggerAndTargetDeathCancelExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.DungeonPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumblePausesAndReturnsAfterTwoMovesAcrossResume": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleRespectsSpecialsPinsStructuresAndUsefulMoves": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentCrumbleSharesMinerCapacityAndRestoresOnlyItsOwnCells": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentPhotoKeepsCurrentHoleDeadlinesAndCannotResurrectReturnedHoles": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotDeathBetweenContactsCancelsSecondBolt": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotDisableReleasesExistingChains": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentRoyalChainShotHasTwoAuthoredContactsAndReleasesOnDeath": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentTravelCleansVinesBeforeDestinationReveal": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentTravelSnapshotRestoresZoneHolesWithoutChangingSourceOnWriteFailure": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.EnvironmentVinesSurviveWavesDraftPauseAndContinue": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.FailedTravelCheckpointKeepsSourceAndRetriesSameDestination": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ForestPlayerControlRunsRecordActualOutcomes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.FreeBardleyCastsAndTheirChainsLeaveDeadlinesAndReadinessUnchanged": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.FullRecipientAndSmallHitsKeepFixedTargetButDeadlineLethalCancels": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.GenericStatusCasterAppliesAtAcceptedContactWithoutProductionAssignment": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.HybridAcceptedBoardActionPausesBasicCountdownWithoutConvertingIt": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessAbilityCountersFitAtPortraitSizes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessCaptainCommandWorksWithTimedBasics": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessFullCycleUsesLiveSecondsProfile": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessFullCycleUsesOriginalDungeonProfile": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessHybridAssaultConsumesReadyCounter": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.KingReadinessVineGrowthUsesHalfSpreadAndCoverage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.LargeCascadeAndSpecialChainConsumeOneManualAction": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.LegacyDungeonFearKeepsItsSourceThroughContinue": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.LegacyVinePinsUpgradeWithoutRemovingRealChains": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.MixedColorDamageKeepsAttributionAndFinalFiveStepRounding": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.OlderForestCheckpointKeepsItsIsolatedLoop": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.PendingTravelSuspendRestoresChosenDestinationAndBoard": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.PhotoKeepsPresentGrowthDeadlineAndWarningsWhileCasterRemovalCancelsHeal": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.PlayerStatusesUseCompleteActionsPauseAndResumeWithoutReplayingBurn": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionInvalidTargetFizzlesWithoutStaggerOrRetarget": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionMatriarchBothHeartrootsStaggerAndHarvestConsumesOnlyVines": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionMusicUsesOnePlayerCrossfadesPausesAndHonorsSettings": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionRootRequiresVineClearThenLaterHitAndWeakVinesNeverSpread": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionSoloMenderNeverHealsSelf": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ProductionWardenWarnsAndStaggerCancelsBeforePlanting": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ReducedMotionFailedPreparationReleasesInputAndCombatTime": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RootWarningPlayerClearStaggersButTargetFizzleDoesNot": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredArcherBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredBerserkerBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredBloomcallerBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredDrummerBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredSnapvineBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredThornkeeperBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterAuthoredTreantBasic": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterBoughAnswerWeakensHitAndNeverClearsBoard": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.RosterRageTriggersStrictlyBelowHalfOnceAndResumes": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterRhythmBuffsOnlyAlliesRefreshesAndExpires": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterSelectedBlockersBindExactChoicesAndThornArtFacesSafeSide": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterTreantChannelOwnsBasicTimerAndRecoversAfterRelease": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.RoyalCommandConsumesParticipantsOnceIncludingFollowUpHits": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.SigilsCancelOnDeathReplacementInheritsSlotAndResolutionFinishes": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.SigilsCourtChannelTargetsInterruptAndRestoreWithoutNewIdentity": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.SigilsStackFollowGemFallKeepCellsAndLanesAndResumeAcrossPortraits": {
+      "result": "Passed",
+      "run": "534ed03f-b278-481c-8277-ae7175e84631"
+    },
+    "ForestFoundationPlayTests.SlipperyInvalidFinalArrangementReversesWithoutTakingAMove": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ForestFoundationPlayTests.SlipperyPreviewRotationSpecialMovementAndSingleAcceptance": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ForestFoundationPlayTests.SlipperyRequiresFloodingAndContinuesWithoutSavingAPreview": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ForestFoundationPlayTests.SlipperyStaleForecastClearsBeforeInputCanConfirmChangedPieces": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ForestFoundationPlayTests.StatusPanelFitsPortraitsAndSafeAreaWithAllSevenEffects": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ThinkingInvalidSwapsAndFreeActionsDoNotAdvanceResources": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.UnsupportedProfilePreservesDurableRunAndDoesNotStartLegacyCombat": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.VinesAreOverlaysWithOrdinarySwapGravityClearAndSave": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZoneGrowthAndSurgeHaveIndependentCadenceAndBoundedFrontiers": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerCancelCreatesNoRunAndFitsPortraitScreens": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerDungeonKeepsOriginalOpening": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerPreservesChallengeAndCancelsPendingMode": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerReturnsToCharacterSelectionOnBack": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationPlayTests.ZonePickerUnavailableRequestFallsBackAndIsConsumed": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationTests.ApprovedImportsKeepNativePixelsAndIndependentTaxonomy": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationTests.ResonanceUsesOnlyCurrentGemAndEligiblePlayerSources": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ForestFoundationTests.SaveProfilesAreExplicitAndUnknownVersionsAreRejected": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ManualSlideTests.CrystalUsesFinalContactAndMiddleCrystalOnlyMoves": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.DeterministicDirectionAndBackwardDisplacement(-1,0)": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.DeterministicDirectionAndBackwardDisplacement(0,-1)": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.DeterministicDirectionAndBackwardDisplacement(0,1)": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.DeterministicDirectionAndBackwardDisplacement(1,0)": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.DragPreviewsWithoutCommittingAndCancellationClears": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.EdgesBlockedCellsPinnedAndMissingExtraPiecesFallBack": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.FixedCellCounterplayUsesFinalRotatedPositions": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.PreviewSnapshotsColorAndSpecialIdentityBeforeConfirmation": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "ManualSlideTests.SnapshotHintsAndCounterplayAgreeWithPhysicalFinalArrangement": {
+      "result": "Passed",
+      "run": "d5528f07-eb52-487f-9b73-54ea13ce727d"
+    },
+    "PlayerStatusAssetTests.NativeIconsAndDataRemainProvisionalAndUnassigned": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.ApplicationDuringAcceptedActionKeepsThreeFutureResponses": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.BurnTicksOncePerCompletedAcceptedMoveAndCanBeExtinguished": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.CentralEnemyDamageCombinesStatusesAfterRedirectExactlyOnce": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.FearClearsOnlyForItsDeadOrStaggeredSourceAndCannotBindAReplacement": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.HealingIncomingDamageAndShieldsKeepSeparateChannels": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.RefreshDoesNotStackAndDifferentDamageChannelsCompose": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.SappedReducesGenerationWithoutChangingStorage": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "PlayerStatusTests.SnapshotRoundTripKeepsRemainingMovesSourceAndTickDeduplication": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ZoneTravelTests.DestinationPolicyExcludesCurrentAndUnreadyAndKeepsDeterministicState": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    },
+    "ZoneTravelTests.RootAndVineBindingsAreDistinctNativeAndComplete": {
+      "result": "Passed",
+      "run": "a47a252f-85c8-472b-a443-b3fbae0a372e"
+    }
+  },
+  "limits": "Affected coverage only. Historical unrelated failures remain; no physical Android or human pacing claim."
+}

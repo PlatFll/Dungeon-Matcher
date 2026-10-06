@@ -13,6 +13,7 @@ public sealed class RunCombatSnapshot
     public int decreeAppliedMove;
     public long sequence;
     public int wave;
+    public long nextLegacyEnemyId = 1;
     public bool waveActive;
     public string plan;
     public int encounterSeed, cardSeed;
@@ -39,6 +40,7 @@ public sealed class RunCombatSnapshot
 [Serializable] public sealed class OwnedCardSnapshot { public string id; public int stacks; }
 [Serializable] public sealed class PlayerCombatSnapshot
 {
+    public PlayerStatusSnapshot statuses;
     public int health, maximumHealth, shield, maximumShield, revivalCount, energy;
     public string lastDamage;
 }

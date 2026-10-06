@@ -23,5 +23,6 @@ public enum EnemySpecialAbilityKind
     AncientBough = 20,
     PearlTheft = 21, RallyingConch = 22, MoraySiphon = 23,
     ThornySnare = 24, SpineGuard = 25, BreakwaterCommand = 26,
-    LanternPressure = 27, AbyssalRegent = 28
+    LanternPressure = 27, AbyssalRegent = 28,
+    ApplyPlayerStatus = 29
 }

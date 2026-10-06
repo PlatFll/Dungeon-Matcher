@@ -91,6 +91,7 @@ public sealed class BoardHammerThreatVFX : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             SpriteRenderer icon = MakeSprite("HammerWarning", transform, hammerSprite, 40);
+            icon.enabled=false; // WHO comes from the slot sigil; preserve the move pips below.
             view.Roots[i] = icon.transform;
             icon.transform.position = gems[i].transform.position;
             icon.transform.localScale = Vector3.one * board.CellSize * 0.55f;

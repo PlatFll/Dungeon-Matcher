@@ -162,7 +162,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         else if (instant) Target?.GrantShield(Queen ? 20 : actor.Definition.aquaticShield);
         if (used)
         {
-            actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
+            actor.AnnounceCommittedCast(EnemyAbilityNames.Aquatic(state.action));actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
             if (instant) { AdvanceRotation(); state.stage = RecoveryMoves > 0 ? 2 : 0; state.recoveryUntil = Move + RecoveryMoves; SetHeld(BlocksBasic); }
             else
             {

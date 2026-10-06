@@ -19,6 +19,7 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
     private RectTransform character;
     private RectTransform affinityGem;
     private RectTransform healthBar;
+    private RectTransform statuses;
     private readonly Vector3[] worldCorners = new Vector3[4];
 
     private void Awake()
@@ -48,6 +49,7 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
 
         // Fixed animation canvases include the full feet/base. Keep them above
         // the health bar before centering the stack; never fit individual poses.
+        if (IsVisible(statuses)) KeepAbove(healthBar, statuses, StackGap + ShieldBarUI.ReservedSpaceBelowHealthBar);
         KeepAbove(character, healthBar);
         KeepAbove(affinityGem, character);
 
@@ -72,16 +74,17 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
         Shift(character, worldShift);
         Shift(affinityGem, worldShift);
         Shift(healthBar, worldShift);
+        Shift(statuses, worldShift);
     }
 
-    private void KeepAbove(RectTransform upper, RectTransform lower)
+    private void KeepAbove(RectTransform upper, RectTransform lower, float gap = StackGap)
     {
         if (!IsVisible(upper) || !IsVisible(lower)) return;
         upper.GetWorldCorners(worldCorners);
         float upperBottom = panel.InverseTransformPoint(worldCorners[0]).y;
         lower.GetWorldCorners(worldCorners);
         float lowerTop = panel.InverseTransformPoint(worldCorners[1]).y;
-        float clearance = lowerTop + StackGap - upperBottom;
+        float clearance = lowerTop + gap - upperBottom;
         if (Mathf.Abs(clearance) > Epsilon)
             Shift(upper, panel.TransformVector(Vector3.up * Mathf.Ceil(clearance)));
     }
@@ -104,6 +107,7 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
         float xMax = 0f;
         float yMin = 0f;
         float yMax = 0f;
+        IncludeVisibleRect(statuses, ref hasBounds, ref xMin, ref xMax, ref yMin, ref yMax);
 
         IncludeVisibleRect(
             character,
@@ -153,6 +157,7 @@ public sealed class PlayerHudCenteringController : MonoBehaviour
         {
             return;
         }
+        if (statuses == null) statuses = FindDescendant(panel, "PlayerStatuses");
 
         if (character == null)
         {

@@ -28,6 +28,20 @@ authorize enlarging the body pixels.
 
 ## Review and budget
 
+The 2026-10-06 lore revision classifies the approved appearances without redesign:
+Reef Clans use scavenged physical gear; Nacre Court preserves ceremonial shell,
+pearl craft and magic. Exact membership is in `Docs/DROWNED_COURT_ENCOUNTERS.md`.
+Culture does not change species, rank, approved faces or equipment. Only Hammerhead
+and Captain are authorized for compact shark-tail edits in this revision.
+
+Those tail edits are now applied to the selected sources and existing Unity PNGs:
+three still canvases and all thirteen motion roles (118 frames). The original
+opaque pixels, palette, scale, floor and dimensions are unchanged. Native comparison,
+full motion sheets, hashes and connected-tail checks are in
+`ArtSource/DrownedCourt/TailRevision`. Revised tails await the user's review.
+Needlefin also lacks a clear tail silhouette; reported only and left unchanged.
+The older `Production/Review` remains the historical pre-tail package.
+
 `ArtSource/DrownedCourt/Production/Review/Review.html` works offline and embeds real
 PNG/GIF files. The neighboring ZIP contains the media and manifests. Runtime images
 are identified separately from native sheets. `Hashes.json` verifies package files.

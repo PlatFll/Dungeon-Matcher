@@ -4,6 +4,7 @@ public sealed partial class PlayerActor
 {
     public PlayerCombatSnapshot CaptureContinuation() => new PlayerCombatSnapshot
     {
+        statuses=Statuses.Capture(),
         health=currentHealth, maximumHealth=maximumHealth, shield=currentShield,
         maximumShield=maximumShield, revivalCount=revivalCount, lastDamage=LastDamageSummary,
         energy=GetComponent<PlayerAbilityEnergy>()?.CurrentEnergy ?? 0
