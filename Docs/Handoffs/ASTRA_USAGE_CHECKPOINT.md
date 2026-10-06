@@ -74,5 +74,11 @@ asset/flood/Queen continuation tests passed in
 `.utmp/ForestValidation/a3cd72f7-e4ef-4d73-b291-b425cf4689b2.xml`.
 Mandatory validator passed, log suffix `10a1bc75-cd4e-400a-a4eb-ae8376ebbbb6`.
 
-Next: direct shark-tail pixels, global announcements/sigils, final regression/docs/PR.
+Court culture tranche committed as `e9f0687`.
+Direct shark-tail edits now cover Hammerhead/Captain: 3 still canvases, 13 motion
+sheets, 118 frames. Exact old opaque pixels, palette, floor and canvas preserved;
+connected additions checked. All motion sheets and native cast comparison viewed.
+Evidence and offline review: `ArtSource/DrownedCourt/TailRevision`.
+
+Next: global announcements/sigils, final regression/docs/PR.
 No automatic background continuation is configured.

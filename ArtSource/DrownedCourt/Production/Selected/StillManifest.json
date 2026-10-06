@@ -59,7 +59,8 @@
       "#D8AD62": "#F0B294",
       "#937133": "#8A5622"
     },
-    "sha256": "0da4b878de21a15d54272dd85607035e8b694f003536a7dbc284477ea16f5134"
+    "sha256": "f579332d9112f42f6d745b57f42d3d4c9832342930680c470ca8e9712e12b2f1",
+    "revision": "Authorized direct tail addition; original body pixels and palette unchanged; revised PNG awaiting review"
   },
   {
     "id": "conch_marshal",
@@ -672,7 +673,14 @@
       8,
       15
     ],
-    "operation": "transparent canvas padding/translation only; native colors, face, proportions and equipment unchanged"
+    "operation": "transparent canvas padding/translation only; native colors, face, proportions and equipment unchanged",
+    "revision": "Authorized direct tail addition; original body pixels and palette unchanged; revised PNG awaiting review",
+    "sha256": "0ce329352dc1f426aca503b74d93a0b1a4dfcebabf1c837964e66b031b3ee04e",
+    "colors": 14,
+    "alpha": [
+      0,
+      255
+    ]
   },
   {
     "id": "pearl_thief",
