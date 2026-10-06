@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aff40d2e9ac4c77964725928895d727, type: 3}
+  m_Name: Fear
+  m_EditorClassIdentifier: 
+  kind: 4
+  displayName: Fear
+  description: Damage to the source reduced by 25 percent. Stagger or defeat it to clear.
+  durationMoves: 3
+  multiplier: 0.75
+  damagePerMove: 0
+  icon: {fileID: 0}

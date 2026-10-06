@@ -4,6 +4,18 @@ Approved specification: 2026-10-06. Implementation is tracked in
 [Handoffs/ASTRA_USAGE_CHECKPOINT.md](Handoffs/ASTRA_USAGE_CHECKPOINT.md).
 Values below are conservative, data-driven prototypes, not finalized balance.
 
+## Implementation checkpoint
+
+The backend is implemented by `PlayerStatusRuntime`, owned by `PlayerActor`, with
+seven definitions in `Resources/PlayerStatuses`. No production enemy applies
+these definitions yet. Status icons/UI, the generic casting adapter and Slippery's
+board movement are subsequent tranches; a Slippery duration alone does not move gems.
+The existing accepted-action coordinator expires statuses after the complete
+enemy/environment response. Legacy dungeon runs expire them at the completed
+manual board action. No independent timer or resolution coroutine was introduced.
+Fear uses persistent enemy identities in both clock modes, never reusable slots.
+
+
 | Status | Stable meaning | Initial tuning |
 | --- | --- | --- |
 | Weakened | Reduces outgoing player damage; excludes healing/shields | 0.75 multiplier, 3 accepted moves |

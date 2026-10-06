@@ -4,6 +4,7 @@ using UnityEngine;
 
 public sealed partial class WaveController
 {
+    private long nextLegacyEnemyId = 1;
     public void PrepareContinuation() { spawnWaveOnStart=false; }
     public bool CanCaptureContinuation
     {
@@ -32,6 +33,7 @@ public sealed partial class WaveController
     {
         if(!CanCaptureContinuation) throw new InvalidOperationException("Encounter has an action in flight.");
         saved.wave=currentWave; saved.waveActive=IsWaveActive; saved.plan=CurrentPlan?.SourceRuleName;
+        saved.nextLegacyEnemyId = nextLegacyEnemyId;
         saved.encounterRandom=((SavedRandom)EncounterRandom).State; saved.encounterSeed=encounterSeed;
         saved.previousRecipe=previousRecipeId;
         foreach(var data in seenMilestoneLeaders) saved.seenEnemies.Add(data.name);
@@ -77,10 +79,12 @@ public sealed partial class WaveController
     }
     public void RestoreContinuationState(RunCombatSnapshot saved)
     {
+        nextLegacyEnemyId = Math.Max(nextLegacyEnemyId, saved.nextLegacyEnemyId);
         foreach(var value in saved.enemies)
         {
             var enemy=ContinuationEnemy(value.slot);
             enemy.RestoreContinuation(value);
+            nextLegacyEnemyId = Math.Max(nextLegacyEnemyId, enemy.PersistentId + 1);
             enemy.GetComponent<EnemyAutoAttack>()?.RestoreContinuation(value);
             enemy.GetComponent<EnemyStagger>()?.RestoreContinuation(value);
             var poison=enemy.GetComponent<EnemyPoisonStatus>();

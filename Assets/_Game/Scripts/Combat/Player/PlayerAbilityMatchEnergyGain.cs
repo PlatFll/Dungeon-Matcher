@@ -105,7 +105,8 @@ public sealed class PlayerAbilityMatchEnergyGain :
 
     public void GrantGeneratedEnergy(int amount)
     {
-        if (playerAbilityEnergy != null) playerAbilityEnergy.AddEnergy(refundBudget.Take(amount));
+        if (playerAbilityEnergy != null) playerAbilityEnergy.AddEnergy(refundBudget.Take(
+            playerActor != null ? playerActor.Statuses.GeneratedEnergy(amount) : amount));
     }
 
     private void Awake()

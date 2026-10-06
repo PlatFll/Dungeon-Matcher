@@ -209,6 +209,12 @@ public sealed class RunContinuation : MonoBehaviour
             session.Waves.RestoreContinuationActors(saved);
             session.Board.RestoreContinuation(saved.board,session.Waves.ContinuationEnemy);
             session.Waves.RestoreContinuationState(saved);
+            session.Player.Statuses.Restore(saved.player.statuses, id =>
+            {
+                foreach (var enemy in session.Waves.ActiveEnemies)
+                    if (enemy != null && enemy.PersistentId == id) return enemy;
+                return null;
+            });
             RunUpgradeGameplayHooks.Current?.RestoreContinuation(saved);
             session.RestoreContinuation(saved);
             session.Player.GetComponent<RoyalDecreeRuntime>()?.RestoreContinuation(saved.decreeRemaining,

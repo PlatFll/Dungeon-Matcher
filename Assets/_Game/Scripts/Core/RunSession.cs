@@ -45,6 +45,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         Board = FindFirstObjectByType<BoardController>();
         Waves = FindFirstObjectByType<WaveController>();
         if (Board != null) Board.UsefulResponseValidator = options => CounterplayGuard.HasUsefulResponse(options, Player, Waves);
+        if (Board != null) { Board.ValidPlayerMoveAccepted += StatusMoveAccepted; Board.ValidPlayerMoveCompleted += StatusMoveCompleted; }
         if (RunLaunchOptions.Practice) practiceProfile = AccountProgression.UsePracticeProfile();
         RunLaunchOptions.Practice = false;
         account = AccountProgression.Current;
@@ -93,6 +94,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         {
             MoveClock=gameObject.AddComponent<CombatMoveClock>();
             MoveClock.Initialize(this,clockSave,liveForestStart?CombatClockSnapshot.LegacyEffectsProfile:forestProfile);
+            MoveClock.ActionSettled += StatusActionSettled;
         }
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);
@@ -270,6 +272,8 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
     }
     private void OnDestroy()
     {
+        if (MoveClock != null) MoveClock.ActionSettled -= StatusActionSettled;
+        if (Board != null) { Board.ValidPlayerMoveAccepted -= StatusMoveAccepted; Board.ValidPlayerMoveCompleted -= StatusMoveCompleted; }
         CancelTargeting();
         if (Waves != null) { Waves.WaveStarted -= OnWaveStarted; Waves.WaveCompleted -= OnWaveCompleted; Waves.UnregisterProgressionGate(this); }
         if (Player != null) { Player.Defeated -= OnDefeated; Player.DamageTaken -= OnDamage; }
@@ -278,4 +282,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         practiceProfile?.Dispose(); practiceProfile = null;
         resumedMastery?.Dispose(); resumedCharacter?.Dispose();
     }
+    private void StatusMoveAccepted(int move) => Player?.Statuses.BeginMove(move);
+    private void StatusMoveCompleted(int move) { if (MoveClock == null) StatusActionSettled(move); }
+    private void StatusActionSettled(int move) => Player?.Statuses.CompleteMove(move);
 }
