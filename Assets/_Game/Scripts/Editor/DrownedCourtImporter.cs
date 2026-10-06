@@ -15,6 +15,8 @@ public static class DrownedCourtImporter
     private const string Art = "Assets/_Game/Art/DrownedCourt/";
     private const string Data = "Assets/_Game/Data/Enemies/DrownedCourt/";
     private const string Animation = "Assets/_Game/Animations/DrownedCourt/";
+    public static string CultureFor(string id) => id == "pearl_cantor" || id == "conch_marshal" ||
+        id == "lantern_warden" || id == "queen_nacre" ? "Nacre Court" : "Reef Clans";
     [Serializable] private sealed class Recipes { public Recipe[] recipes; }
     [Serializable] private sealed class Recipe { public string id, name; public string[] members; public int first, last, tide, weight = 1; }
 
@@ -53,7 +55,7 @@ public static class DrownedCourtImporter
             so.FindProperty("displayName").stringValue = string.Join(" ", id.Split('_').Select(s => char.ToUpperInvariant(s[0]) + s.Substring(1)));
             so.FindProperty("description").stringValue = descriptions[i];
             so.FindProperty("race").stringValue = i == 13 ? "Reef crustacean" : "Marine folk";
-            so.FindProperty("faction").stringValue = "Drowned Court";
+            so.FindProperty("faction").stringValue = CultureFor(id);
             so.FindProperty("combatRole").stringValue = i == 13 ? "Summon" : kinds[i].ToString();
             var zones = so.FindProperty("eligibleZones"); zones.arraySize = 1; zones.GetArrayElementAtIndex(0).stringValue = "drowned-court";
             so.FindProperty("category").intValue = i == 12 ? 3 : i == 10 || i == 11 ? 2 : i >= 4 && i <= 9 ? 1 : 0;

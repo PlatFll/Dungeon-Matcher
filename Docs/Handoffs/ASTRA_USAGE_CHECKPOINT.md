@@ -68,6 +68,11 @@ The current Court docs incorrectly still describe #180 as unmerged; correct that
 without treating merge approval as approval of unseen art. Needlefin also lacks a
 clear shark-tail silhouette; report it only. Authorized edits are Hammerhead/Captain.
 
-Next: global announcements/sigils,
-Court cultures/recipes, direct shark-tail pixels, final regression/docs/PR.
+Slippery committed as `cd138e9`. Court cultures/recipes are complete: 24 Reef,
+6 Court, 2 deliberate mixed templates; Queen has Court escorts. Four focused
+asset/flood/Queen continuation tests passed in
+`.utmp/ForestValidation/a3cd72f7-e4ef-4d73-b291-b425cf4689b2.xml`.
+Mandatory validator passed, log suffix `10a1bc75-cd4e-400a-a4eb-ae8376ebbbb6`.
+
+Next: direct shark-tail pixels, global announcements/sigils, final regression/docs/PR.
 No automatic background continuation is configured.

@@ -246,10 +246,10 @@ MonoBehaviour:
     lastLocalWave: 9
     weight: 1
     requiredTide: 0
-  - label: 'R14: Pearl procession'
+  - label: 'R14: Reef salvage convoy'
     members:
-    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
     - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
+    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     firstLocalWave: 10
     lastLocalWave: 13
@@ -258,15 +258,15 @@ MonoBehaviour:
   - label: 'R15: Conch lesson'
     members:
     - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
-    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
     firstLocalWave: 10
     lastLocalWave: 13
     weight: 1
     requiredTide: 0
-  - label: 'R16: Heavy rhythm'
+  - label: 'R16: Heavy salvage'
     members:
-    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
     firstLocalWave: 16
     lastLocalWave: 18
     weight: 1
@@ -304,18 +304,18 @@ MonoBehaviour:
     lastLocalWave: 13
     weight: 1
     requiredTide: 0
-  - label: 'R21: Lantern gate'
+  - label: 'R21: Lantern procession'
     members:
     - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
-    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
     firstLocalWave: 14
     lastLocalWave: 14
     weight: 1
     requiredTide: 0
-  - label: 'R22: Lantern in air'
+  - label: 'R22: Lantern command'
     members:
     - {fileID: 11400000, guid: 2ade0c3f3af4f1d48a07f8dd07f0744c, type: 2}
-    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     firstLocalWave: 14
     lastLocalWave: 14
     weight: 1
@@ -328,7 +328,7 @@ MonoBehaviour:
     lastLocalWave: 15
     weight: 1
     requiredTide: 0
-  - label: 'R24: Court sentries'
+  - label: 'R24: Reef sentries'
     members:
     - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
     - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
@@ -337,10 +337,10 @@ MonoBehaviour:
     lastLocalWave: 18
     weight: 1
     requiredTide: 0
-  - label: 'R25: Netted chorus'
+  - label: 'R25: Netted salvage'
     members:
     - {fileID: 11400000, guid: 82091cda3a792ac42871f6a8d4a9fdf9, type: 2}
-    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 4f316f8d434114a4fac2cd9d56d49185, type: 2}
     - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     firstLocalWave: 16
     lastLocalWave: 18
@@ -381,8 +381,8 @@ MonoBehaviour:
   - label: 'R30: Queen first lesson'
     members:
     - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
-    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
-    - {fileID: 11400000, guid: 3543ecb33bba2a048a064a7eacc2f883, type: 2}
+    - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
+    - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
     firstLocalWave: 20
     lastLocalWave: 999
     weight: 3
@@ -391,7 +391,6 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
     - {fileID: 11400000, guid: 8fd1e21bd3af1ab46b5d28c8f105b8e2, type: 2}
-    - {fileID: 11400000, guid: 5c912c4409a23f8498d21871465be54b, type: 2}
     firstLocalWave: 20
     lastLocalWave: 999
     weight: 1
@@ -400,7 +399,6 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: 5c2b431ba48565b4fbef4543e60a4339, type: 2}
     - {fileID: 11400000, guid: ef9ab294b32d3ff4a9919c861c8e5ffc, type: 2}
-    - {fileID: 11400000, guid: c5bebdef7be09cb4a85e0ee30e606a0f, type: 2}
     firstLocalWave: 20
     lastLocalWave: 999
     weight: 1

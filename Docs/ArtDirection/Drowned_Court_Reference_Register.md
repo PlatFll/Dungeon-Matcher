@@ -28,6 +28,12 @@ authorize enlarging the body pixels.
 
 ## Review and budget
 
+The 2026-10-06 lore revision classifies the approved appearances without redesign:
+Reef Clans use scavenged physical gear; Nacre Court preserves ceremonial shell,
+pearl craft and magic. Exact membership is in `Docs/DROWNED_COURT_ENCOUNTERS.md`.
+Culture does not change species, rank, approved faces or equipment. Only Hammerhead
+and Captain are authorized for compact shark-tail edits in this revision.
+
 `ArtSource/DrownedCourt/Production/Review/Review.html` works offline and embeds real
 PNG/GIF files. The neighboring ZIP contains the media and manifests. Runtime images
 are identified separately from native sheets. `Hashes.json` verifies package files.
