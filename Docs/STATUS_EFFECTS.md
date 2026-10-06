@@ -8,8 +8,11 @@ Values below are conservative, data-driven prototypes, not finalized balance.
 
 The backend is implemented by `PlayerStatusRuntime`, owned by `PlayerActor`, with
 seven definitions in `Resources/PlayerStatuses`. No production enemy applies
-these definitions yet. Status icons/UI, the generic casting adapter and Slippery's
-board movement are subsequent tranches; a Slippery duration alone does not move gems.
+these definitions yet. Seven hand-authored 16px icons and remaining move counts
+occupy compact rows in the existing player combat panel. Tap a glyph for its meaning
+and individual Fear sources/durations. `ApplyPlayerStatus` is the optional enemy
+ability kind; `EnemyDefinition.appliedPlayerStatus` selects its data. Slippery's
+board movement is a subsequent tranche; a Slippery duration alone does not move gems.
 The existing accepted-action coordinator expires statuses after the complete
 enemy/environment response. Legacy dungeon runs expire them at the completed
 manual board action. No independent timer or resolution coroutine was introduced.

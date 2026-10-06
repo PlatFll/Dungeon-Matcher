@@ -65,6 +65,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
 
     private void Awake()
     {
+        if (!TryGetComponent<PlayerStatusPanel>(out _)) gameObject.AddComponent<PlayerStatusPanel>();
         gemIndicatorConfig =
             Resources.Load<EnemyWeaknessIndicatorConfig>(
                 GemIndicatorConfigPath

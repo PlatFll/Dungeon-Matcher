@@ -15,9 +15,10 @@ No merge authorized for this revision. Single writer; no paid generation needed.
 6. Broad affected regression, portraits, mandatory Unity validator and PR.
 
 Current state: tranche 1 committed as `7c972f1` (design contracts/future locks).
-Tranche 2 backend is implemented: seven data definitions, player-owned durations,
+Tranche 2 backend committed as `df8b06f`: seven data definitions, player-owned durations,
 central damage/healing/generation hooks, Fear source lifecycle, persistent dungeon
-enemy IDs and continuation. UI, generic casting and Slippery movement remain.
+enemy IDs and continuation. Status UI/icons and optional data-selected casting are
+implemented and validated. Slippery movement remains.
 Focused status/damage/continuation tests passed 38/38 in
 `.utmp/ForestValidation/d68008c9-6c36-4714-bf0b-ae8aaca5dd2e.xml`.
 An initial 4/7 run exposed isolated test-fixture initialization errors, now fixed.
@@ -27,6 +28,14 @@ The first headless live run failed because it could not create the required game
 viewport; the graphics-enabled rerun passed. The 8 isolated status tests also pass.
 Required validator passed with Unity 6000.3.19f1; log:
 `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-dfe34e86-d837-41c5-a986-660b9ff28064.log`.
+UI/casting asset and runtime tests passed 2/2 in
+`.utmp/ForestValidation/6df3a9ba-5f29-456e-b051-58f99eb9fb4d.xml`; its third test
+caught a 3px status-row overflow. Corrected spacing passed all four viewport
+variants in `.utmp/ForestValidation/9534cc12-9e10-4b33-84d6-07b97d4822c7.xml`.
+Actual captures: `.utmp/StatusRevision/Visual/statuses-*.png` (720x1280,
+1080x1920, 1080x2400, 1080x1920-safe). Native icon proof and checks:
+`ArtSource/SharedStatus/NativeIcons.png` and `NativeChecks.json`.
+Required validator passed again; log suffix `094aa894-b46d-4f92-a996-e1d2a0e0ec59`.
 Remaining account usage last checked: 25%; stop starting tranches at 5%, prioritize
 validation/handoff at 3%, no new work at 1%. Recheck at each tranche boundary.
 
@@ -50,5 +59,7 @@ The current Court docs incorrectly still describe #180 as unmerged; correct that
 without treating merge approval as approval of unseen art. Needlefin also lacks a
 clear shark-tail silhouette; report it only. Authorized edits are Hammerhead/Captain.
 
-Next: validate/review/commit the backend; add status icons and presentation in the
-player panel, then Slippery. No automatic background continuation is configured.
+Next: implement Slippery preview, board-owned rotation and final-arrangement
+legality/hints; no production assignment. Then global announcements/sigils,
+Court cultures/recipes, direct shark-tail pixels, final regression/docs/PR.
+No automatic background continuation is configured.
