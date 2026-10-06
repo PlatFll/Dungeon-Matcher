@@ -59,6 +59,7 @@ public sealed class EnemySlotUI : MonoBehaviour
 
     public EnemyActor CurrentEnemy { get; private set; }
     public bool IsShieldPresentationActive => isShieldPresentationActive;
+    public RectTransform CombatBarRect => enemyHealthBarRect;
 
     public RectTransform EnemySpawnAnchor =>
         enemySpawnAnchor;
@@ -88,6 +89,7 @@ public sealed class EnemySlotUI : MonoBehaviour
             "initial slot presentation",
             () =>
             {
+                if(GetComponent<EnemySlotSigilView>()==null) gameObject.AddComponent<EnemySlotSigilView>();
                 presentationProfile =
                     Resources.Load<TopBattlePresentationProfile>(
                         TopBattlePresentationProfilePath

@@ -97,12 +97,12 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     private void ShowMarks(BoardController.GemSetThreat threat)
     {
         EnsureSprites();
-        Sprite sprite = threat.Vine ? GameplayThemeSkin.Current?.vineWarning ?? rune : threat.RestorationPresentation ? board.archbishopRestorationRuneOverlay : board.kingRoyalJudgmentExclamationOverlay;
-        if (sprite == null) sprite = threat.RestorationPresentation ? rune : warning;
+        Sprite sprite = threat.Environmental ? GameplayThemeSkin.Current?.vineWarning ?? rune : CasterSigilArt.TargetOutline;
+        if(sprite==null)return;
         foreach (Gem gem in threat.Targets)
         {
-            var icon = Make(threat.RestorationPresentation ? "Restoration Rune" : "Royal Judgment !",sprite,42);
-            icon.color = threat.Vine ? Color.white : threat.RestorationPresentation ? new Color(1f,0.85f,0.28f) : Color.white;
+            var icon = Make(threat.Environmental ? "Vine growth warning" : "Cast target",sprite,42);
+            icon.color = Color.white;
             marks.Add(new MarkView { Threat=threat, Gem=gem, Icon=icon });
         }
     }
@@ -130,7 +130,7 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
             var view=cells[i];
             if(view.Threat.Ended || view.Threat.Owner==null || view.Threat.Owner.IsDefeated || !view.Threat.Cells.Contains(view.Cell))
             {if(view.Icon!=null) Destroy(view.Icon.gameObject);cells.RemoveAt(i);continue;}
-            var color=view.Threat.RequiresVine?new Color(1,.7f,.25f):new Color(1,.4f,.2f);
+            var color=Color.white;
             color.a=Mathf.Sin(Time.time*8)>0?1:.55f;view.Icon.color=color;
         }
         for (int i=marks.Count-1;i>=0;i--)
@@ -139,12 +139,8 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
             if (view.Threat.Ended || (!view.Threat.Environmental && (view.Threat.Owner == null || view.Threat.Owner.IsDefeated)) || !board.IsEnvironmentalOrdinaryGem(view.Gem))
             { if(view.Icon != null) Destroy(view.Icon.gameObject); marks.RemoveAt(i); continue; }
             view.Icon.transform.position=view.Gem.transform.position;
-            float scale=board.CellSize*(0.8f+Mathf.Sin(Time.time*7f)*0.06f);
-            if(view.Threat.Vine)
-            {
-                scale=board.CellSize;
-                view.Icon.color=new Color(1,1,1,Mathf.Sin(Time.time*7f)>0?.95f:.5f);
-            }
+            float scale=board.CellSize;
+            view.Icon.color=new Color(1,1,1,Mathf.Sin(Time.time*7f)>0?.95f:.5f);
             view.Icon.transform.localScale=new Vector3(scale/view.Icon.sprite.bounds.size.x,scale/view.Icon.sprite.bounds.size.y,1);
         }
         for (int i=lanes.Count-1;i>=0;i--)
@@ -162,11 +158,12 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     private void ShowCellResponse(BoardController.CellResponseThreat threat)
     {
         EnsureSprites();
+        var sprite=CasterSigilArt.TargetOutline;if(sprite==null)return;
         foreach(var cell in threat.Cells)
         {
-            var icon=Make(threat.RequiresVine?"Volley target":"Bough target",rune,43);
+            var icon=Make("Cast cell target",sprite,43);
             icon.transform.localPosition=board.GetCellLocalPosition(cell.x,cell.y);
-            icon.transform.localScale=Vector3.one*board.CellSize*.85f;
+            icon.transform.localScale=Vector3.one*board.CellSize/sprite.bounds.size.x;
             cells.Add(new CellView {Threat=threat,Cell=cell,Icon=icon});
         }
     }

@@ -94,6 +94,18 @@ public sealed class ManualSlideTests
         board.SelectGem(first);board.SelectGem(grid[1,0]);Assert.That(board.SwapPreview,Is.Not.Null);
         board.SelectGem(first);Assert.That(board.SwapPreview,Is.Null);
     }
+    [Test] public void FixedCellCounterplayUsesFinalRotatedPositions()
+    {
+        grid[0,0].SetType(GemType.Ruby,null);
+        grid[2,1].SetType(GemType.Ruby,null);grid[2,2].SetType(GemType.Ruby,null);
+        var option=board.GetImmediateResponses().Single(r=>r.Source==grid[0,0] && r.Target==grid[1,0]);
+        Assert.That(option.Clears,Does.Contain(grid[0,0]));
+        Assert.That(option.FinalCell(grid[0,0]),Is.EqualTo(new Vector2Int(2,0)));
+        Assert.That(option.FinalCell(grid[1,0]),Is.EqualTo(new Vector2Int(0,0)));
+        Assert.That(option.FinalCell(grid[2,0]),Is.EqualTo(new Vector2Int(1,0)));
+        var cells=(HashSet<Vector2Int>)Call("ImmediatelyClearableOrdinaryCells");
+        Assert.That(cells,Does.Contain(new Vector2Int(2,0)));
+    }
     private bool PhysicalLegality(Gem first,Gem second)
     {
         if(first==null || second==null || board.IsGemPinned(first) || board.IsGemPinned(second)) return false;

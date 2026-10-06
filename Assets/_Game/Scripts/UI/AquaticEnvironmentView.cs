@@ -109,16 +109,16 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             foreach(var cell in ability.ResponseCells)
             {
                 string key="mark"+enemy.PersistentId+"/"+cell;
-                Show(key,theme.pressureSeal,board.transform.TransformPoint(board.GetCellLocalPosition(cell.x,cell.y)),1,used,blink);
+                Show(key,CasterSigilArt.TargetOutline,board.transform.TransformPoint(board.GetCellLocalPosition(cell.x,cell.y)),1,used,blink);
             }
             foreach(int id in ability.MarkedBubbles)
             {
                 var gem=board.FindAquaticGem(id);if(gem==null || !board.IsFlooded || !state.bubbles.Contains(id))continue;
-                Show("theft"+id,theme.pressureSeal,gem.transform.position,1.08f,used,blink);
+                Show("theft"+id,CasterSigilArt.TargetOutline,gem.transform.position,1,used,blink);
             }
             if(ability.CofferTarget is Vector2Int site)
-                Show("cofferSite"+enemy.PersistentId,theme.airCoffer,
-                    board.transform.TransformPoint(board.GetCellLocalPosition(site.x,site.y)),.7f,used,blink);
+                Show("cofferSite"+enemy.PersistentId,CasterSigilArt.TargetOutline,
+                    board.transform.TransformPoint(board.GetCellLocalPosition(site.x,site.y)),1,used,blink);
         }
         foreach(var key in overlays.Keys.ToArray())if(!used.Contains(key)){Destroy(overlays[key].gameObject);overlays.Remove(key);}
         foreach(var key in captions.Keys.ToArray())if(!used.Contains(key)){Destroy(captions[key].gameObject);captions.Remove(key);}

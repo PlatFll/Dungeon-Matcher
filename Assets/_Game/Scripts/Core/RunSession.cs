@@ -50,6 +50,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         {
             Board.ExtraManualSwapStep = () => Zone?.Definition?.zoneId == "drowned-court" && Board.IsFlooded && Player?.Statuses.Has(PlayerStatusKind.Slippery) == true;
             if (!Board.TryGetComponent<ManualSwapPreviewView>(out _)) Board.gameObject.AddComponent<ManualSwapPreviewView>();
+            if (!Board.TryGetComponent<BoardCasterSigilView>(out _)) Board.gameObject.AddComponent<BoardCasterSigilView>();
         }
         if (RunLaunchOptions.Practice) practiceProfile = AccountProgression.UsePracticeProfile();
         RunLaunchOptions.Practice = false;

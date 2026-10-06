@@ -45,10 +45,18 @@ Latest focused and continuation regression: 58/58 in
 `.utmp/ForestValidation/606527d1-20c1-40dc-81ec-a854be2e10bc.xml`.
 Actual preview capture: `.utmp/StatusRevision/Visual/slippery-preview.png`.
 Required Slippery validator passed; log suffix `83c6683b-1d5c-4a3c-ad03-f0b3248c216a`.
-Remaining account usage last checked: 21%; stop starting tranches at 5%, prioritize
+Remaining account usage last checked: 17%; stop starting tranches at 5%, prioritize
 validation/handoff at 3%, no new work at 1%. Recheck at each tranche boundary.
 
 ## Preserve unrelated starting changes
+
+Slot sigils are implemented across board and Court warnings. Thirteen focused
+checks passed (`e258a170-bfcc-4d43-95d4-60bf48e08d20.xml`); visual review caught
+lane marks hidden by the UI frame. A UI overlay correction passed four live cases
+(`74589947-3719-4ebc-a72f-a12e43e4a6cc.xml`) and four viewport captures. Required
+validator passed: `9a7b694c-ae59-43a0-96d6-f519b436178d`. The screenshot fixture
+now reconstructs neutral telegraphs after forcing overlapping targets; broad
+regression will recapture it. Next: broad affected checks, final review/docs and PR.
 
 - `Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab`
 - `Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta`

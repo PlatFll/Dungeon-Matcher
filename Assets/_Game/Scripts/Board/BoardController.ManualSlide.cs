@@ -148,6 +148,7 @@ public partial class BoardController
             var first=pieces[0];var last=pieces[pieces.Length-1];
             var option=new ResponseOption{Source=first,Target=pieces[1],
                 UsesSpecial=first.SpecialType==GemSpecialType.ColorCrystal || last.SpecialType==GemSpecialType.ColorCrystal};
+            for(int i=0;i<pieces.Length;i++) option.FinalCells[pieces[i]]=cells[(i+pieces.Length-1)%pieces.Length];
             if(option.UsesSpecial) {option.Clears.Add(first);option.Clears.Add(last);result.Add(option);continue;}
             RotateSnapshot(types,cells); RotateSnapshot(crystals,cells);
             try
