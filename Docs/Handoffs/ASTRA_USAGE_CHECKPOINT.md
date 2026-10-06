@@ -1,106 +1,59 @@
 # Revision checkpoint — 2026-10-06
 
 Branch: `codex/status-sigils-court-revision`.
-Starting HEAD/main: `2783df8eb9107c182db5d9c768e2a36c799cfc35` (merged PR #180).
-Task source: `C:/Users/USER/.codex/attachments/2bbe0e9d-d8e9-4dd2-a040-80ab8e06593c/Pasted text.txt`.
-No merge authorized for this revision. Single writer; no paid generation needed.
+Validated implementation HEAD: `cac40685e71eff7d938477a138b3d3ef5b9394a9`.
+Base main: `2783df8eb9107c182db5d9c768e2a36c799cfc35` (PR #180).
+Following commits package documentation and evidence only; use `git rev-parse HEAD`
+for the current review head. **Do not merge without the user's review approval.**
+Task: `C:/Users/USER/.codex/attachments/2bbe0e9d-d8e9-4dd2-a040-80ab8e06593c/Pasted text.txt`.
 
-## Tranches
+## Complete
 
-1. Design rules, canonical status contract and future-only locks.
-2. Shared status runtime, centralized hooks, UI and persistence; focused tests.
-3. Slippery preview and board-owned final-arrangement swaps; focused tests.
-4. Cast announcements and slot sigils across existing warnings; focused tests.
-5. Court culture taxonomy/recipes, two shark-tail edits and native review.
-6. Broad affected regression, portraits, mandatory Unity validator and PR.
+Shared player statuses, native status UI, deterministic flooded Slippery with a
+fresh precommit forecast, successful cast announcements, actual-slot target sigils,
+Court cultures/encounters, and direct Hammerhead/Captain tails across all motion.
+Cross-zone rules and future cave/snow/Reef boss concepts are documented only.
+No implementation tranche remains partial. No paid generation or credit reset.
+No running Unity job or automatic background continuation.
 
-Current state: tranche 1 committed as `7c972f1` (design contracts/future locks).
-Tranche 2 backend committed as `df8b06f`: seven data definitions, player-owned durations,
-central damage/healing/generation hooks, Fear source lifecycle, persistent dungeon
-enemy IDs and continuation. Status UI/icons and optional data-selected casting are
-committed as `391bcf2`. Slippery movement/preview, shared legality/hints and
-save/resume are implemented and validated in the following Slippery tranche.
-Focused status/damage/continuation tests passed 38/38 in
-`.utmp/ForestValidation/d68008c9-6c36-4714-bf0b-ae8aaca5dd2e.xml`.
-An initial 4/7 run exposed isolated test-fixture initialization errors, now fixed.
-Complete-action expiration and legacy/forest save-resume passed 2/2 graphics-enabled
-live tests: `.utmp/ForestValidation/79c1bdb3-9dbe-446d-993f-36dd2df0fded.xml`.
-The first headless live run failed because it could not create the required game
-viewport; the graphics-enabled rerun passed. The 8 isolated status tests also pass.
-Required validator passed with Unity 6000.3.19f1; log:
-`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-dfe34e86-d837-41c5-a986-660b9ff28064.log`.
-UI/casting asset and runtime tests passed 2/2 in
-`.utmp/ForestValidation/6df3a9ba-5f29-456e-b051-58f99eb9fb4d.xml`; its third test
-caught a 3px status-row overflow. Corrected spacing passed all four viewport
-variants in `.utmp/ForestValidation/9534cc12-9e10-4b33-84d6-07b97d4822c7.xml`.
-Actual captures: `.utmp/StatusRevision/Visual/statuses-*.png` (720x1280,
-1080x1920, 1080x2400, 1080x1920-safe). Native icon proof and checks:
-`ArtSource/SharedStatus/NativeIcons.png` and `NativeChecks.json`.
-Required validator passed again; log suffix `094aa894-b46d-4f92-a996-e1d2a0e0ec59`.
-Slippery focused board tests: 50/50 in
-`.utmp/ForestValidation/a4be3e74-2bb7-4224-b4ee-cec424953467.xml`.
-Live rotation/rollback: 2/2 in `73522a5b-26c7-44a1-8eb4-b58afefd0e4d.xml`;
-its continuation test caught a paused availability-check deadlock, now fixed.
-Latest focused and continuation regression: 58/58 in
-`.utmp/ForestValidation/606527d1-20c1-40dc-81ec-a854be2e10bc.xml`.
-Actual preview capture: `.utmp/StatusRevision/Visual/slippery-preview.png`.
-Required Slippery validator passed; log suffix `83c6683b-1d5c-4a3c-ad03-f0b3248c216a`.
-Remaining account usage last checked: 17%; stop starting tranches at 5%, prioritize
-validation/handoff at 3%, no new work at 1%. Recheck at each tranche boundary.
+## Verification
+
+- Broad affected regression 335/335; affected reruns 18/18 and 6/6. Deduplicated:
+  **337 unique passing cases**. Four required portrait/safe-inset captures inspected.
+- `Tools/Validate-Unity.ps1` succeeded with Unity 6000.3.19f1 after final code changes.
+  Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-86545328-c3ff-4a7c-9735-a73631b43591.log`.
+- Direct-tail integrity checks passed for 16 source PNGs / 15 exports / 118 frames.
+- Editor audio muted. Historical unrelated failures remain documented; no physical
+  Android, human pacing or music approval claim.
+- Full report, tranche commits, docs, provisional tuning and limitations:
+  [STATUS_SIGILS_COURT_REVISION.md](../Validation/STATUS_SIGILS_COURT_REVISION.md).
+- Galleries: `ArtSource/SharedStatus/Review/Review.html` and
+  `ArtSource/DrownedCourt/TailRevision/Review/Review.html`.
 
 ## Preserve unrelated starting changes
 
-Slot sigils are implemented across board and Court warnings. Thirteen focused
-checks passed (`e258a170-bfcc-4d43-95d4-60bf48e08d20.xml`); visual review caught
-lane marks hidden by the UI frame. A UI overlay correction passed four live cases
-(`74589947-3719-4ebc-a72f-a12e43e4a6cc.xml`) and four viewport captures. Required
-validator passed: `9a7b694c-ae59-43a0-96d6-f519b436178d`. The screenshot fixture
-now reconstructs neutral telegraphs after forcing overlapping targets; broad
-regression will recapture it. Next: broad affected checks, final review/docs and PR.
+These four modified files are excluded from every task commit and retain their
+starting SHA-256 hashes. Backup/hash record: `.utmp/StatusRevision/UserChanges/manifest.json`.
 
-- `Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab`
-- `Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta`
-- `Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta`
-- `Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta`
+```text
+ M Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab
+ M Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta
+ M Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta
+ M Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta
+```
 
-These four files were modified on main before work began. Do not stage/reset them.
-Exact copies and SHA-256 hashes: `.utmp/StatusRevision/UserChanges/manifest.json`.
-Starting `git status`: main tracked origin/main; four modified paths above.
+Unity's unrelated generated TimeManager rewrite was restored. Never run the full
+Court/theme importer over the user's throne prefab. Do not stage/reset these files.
 
-## Audit findings and next action
+## Next action and decisions
 
-Existing EnemyDefinition has race/faction/role strings; reuse them. BoardController
-owns accepted swaps, with CombatMoveClock coordinating complete moves. PlayerActor
-owns damage/healing; generated energy is separate from PlayerAbilityEnergy storage.
-The current Court docs incorrectly still describe #180 as unmerged; correct that
-without treating merge approval as approval of unseen art. Needlefin also lacks a
-clear shark-tail silhouette; report it only. Authorized edits are Hammerhead/Captain.
+The validated branch is ready for the review PR attached to this task. The next
+work is only the user's review corrections or explicit merge authorization.
+No new status caster is assigned in production. Slippery could suit a future Reef
+boss, pending a kit decision. Status values and mixed-formation pressure are
+provisional; native tail additions need visual approval. Needlefin's silhouette
+was reported and intentionally left unchanged.
 
-Slippery committed as `cd138e9`. Court cultures/recipes are complete: 24 Reef,
-6 Court, 2 deliberate mixed templates; Queen has Court escorts. Four focused
-asset/flood/Queen continuation tests passed in
-`.utmp/ForestValidation/a3cd72f7-e4ef-4d73-b291-b425cf4689b2.xml`.
-Mandatory validator passed, log suffix `10a1bc75-cd4e-400a-a4eb-ae8376ebbbb6`.
-
-Court culture tranche committed as `e9f0687`.
-Direct shark-tail edits now cover Hammerhead/Captain: 3 still canvases, 13 motion
-sheets, 118 frames. Exact old opaque pixels, palette, floor and canvas preserved;
-connected additions checked. All motion sheets and native cast comparison viewed.
-Evidence and offline review: `ArtSource/DrownedCourt/TailRevision`.
-
-Tail tranche committed as `ed1ced5`.
-Cast announcements implemented on successful gameplay commits, using inspection
-names, off-white Thaleah, scaled rise/fade and no replay on continue. Existing
-dungeon all-abilities live test passed, including silent windup/cancelled casts:
-`.utmp/ForestValidation/cf064bf2-fc6f-41e9-a160-601df2d529a8.xml`.
-Court channel/pause/fade/resume test passed:
-`.utmp/ForestValidation/d8d11246-a5b0-4a85-afeb-46b9a2f14f1a.xml`.
-An invalid GUID initially prevented importing the new Court test; corrected and
-confirmed its execution. Remaining usage last checked: 18%.
-
-Announcement validator passed, log suffix `35949866-94b1-4233-9e89-73d1372a7293`.
-Next: slot sigils, final regression/docs/PR.
-During target audit, Slippery response-cell prediction was found to still map two
-positions in `ImmediatelyClearableOrdinaryCells`; use its three-gem final mapping
-before validating new warning placements. Actual manual resolution is correct.
-No automatic background continuation is configured.
+Last account usage check: **11% remaining**. User safety thresholds: at 5%, no new
+tranches; at 3%, validation/commits/handoff only; at 1%, stop all new work.
+Recheck current limits before any resumed implementation. No reset consumed.
