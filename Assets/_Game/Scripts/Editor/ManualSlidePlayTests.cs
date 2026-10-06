@@ -8,6 +8,19 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
+    [UnityTest] public IEnumerator SlipperyStaleForecastClearsBeforeInputCanConfirmChangedPieces()
+    {
+        yield return LaunchCourt("shellback_porter");yield return Move();SlideFixture();
+        var board=Run.Board;board.Aquatic.StartFlood(12,Run.MoveClock.Tick);
+        Run.Player.Statuses.Apply(Resources.Load<PlayerStatusDefinition>("PlayerStatuses/Slippery"));yield return Stable();
+        var a=board.GetGem(1,4);var b=board.GetGem(2,4);int tick=board.CompletedValidPlayerMoves;
+        board.ShowManualSwapPreview(a,b);Assert.That(board.SwapPreview,Is.Not.Null);
+        Color(a.Column,a.Row,(GemType)(((int)a.Type+1)%6));yield return null;yield return null;
+        Assert.That(board.SwapPreview,Is.Null,"changed color invalidates the displayed forecast");
+        board.ShowManualSwapPreview(a,b);a.SetSpecialType(GemSpecialType.RowBomb);yield return null;yield return null;
+        Assert.That(board.SwapPreview,Is.Null,"changed special invalidates the displayed forecast");
+        Assert.That(board.CompletedValidPlayerMoves,Is.EqualTo(tick));
+    }
     private void SlideFixture()
     {
         var board=Run.Board;var sprites=(Sprite[])Get(board,"gemSprites");

@@ -10,7 +10,6 @@ public static class CasterSigilArt
         if(sprites[slot]==null)sprites[slot]=Resources.Load<Sprite>("UI/CasterSigils/"+new[]{"Triangle","Square","Ring"}[slot]);
         return sprites[slot];
     }
-    public static Sprite TargetOutline=>Resources.Load<Sprite>("UI/CasterSigils/TargetOutline");
 }
 [DefaultExecutionOrder(11300)]
 public sealed class EnemySlotSigilView : MonoBehaviour

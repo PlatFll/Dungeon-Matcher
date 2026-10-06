@@ -38,8 +38,8 @@ The three 12×12 two-color glyphs are direct pixel assets with a dark one-pixel
 outline. Board images render above the board frame so outside lane marks stay
 visible; menus and travel smoke remain above them. Images do not intercept input.
 Actor badges sit beside the HP track, separate from weakness and shield indicators.
-Neutral blinking corners replace effect pictograms. Existing countdowns, lane
-flashes, impact art and actual bubble/snare/coffer objects retain their roles.
+Slot glyphs replace effect pictograms without covering the gem center. Existing
+countdowns, lane flashes, impact art and actual bubble/snare/coffer objects retain their roles.
 
 Views use live authoritative targets and the actual slot occupant. Death, resolved
 targets, cancelled warnings, interrupted channels and scene teardown remove marks.

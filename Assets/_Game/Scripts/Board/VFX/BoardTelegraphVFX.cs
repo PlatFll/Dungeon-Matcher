@@ -29,13 +29,6 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
         public BoardController.LaneThreat Threat;
         public SpriteRenderer Row, Column;
     }
-    private sealed class CellView
-    {
-        public BoardController.CellResponseThreat Threat;
-        public Vector2Int Cell;
-        public SpriteRenderer Icon;
-    }
-    private readonly List<CellView> cells=new List<CellView>();
     private BoardController board;
     private Sprite solid, rune, warning, rowCut, columnCut;
     private Texture2D runeTexture, warningTexture, rowCutTexture, columnCutTexture;
@@ -46,7 +39,6 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     {
         board = GetComponent<BoardController>();
         board.GemSetMarked += ShowMarks; board.LanesMarked += ShowLanes; board.LaneSlash += ShowSlash;
-        board.CellResponseMarked+=ShowCellResponse;
     }
     private Sprite CreateIcon(bool circle, out Texture2D texture)
     {
@@ -96,8 +88,11 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     }
     private void ShowMarks(BoardController.GemSetThreat threat)
     {
+        // Enemy target identity is the slot sigil. Do not put another graphic
+        // over its gem; the actor's existing move countdown supplies timing.
+        if(!threat.Environmental)return;
         EnsureSprites();
-        Sprite sprite = threat.Environmental ? GameplayThemeSkin.Current?.vineWarning ?? rune : CasterSigilArt.TargetOutline;
+        Sprite sprite = GameplayThemeSkin.Current?.vineWarning ?? rune;
         if(sprite==null)return;
         foreach (Gem gem in threat.Targets)
         {
@@ -125,14 +120,6 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     }
     private void LateUpdate()
     {
-        for(int i=cells.Count-1;i>=0;i--)
-        {
-            var view=cells[i];
-            if(view.Threat.Ended || view.Threat.Owner==null || view.Threat.Owner.IsDefeated || !view.Threat.Cells.Contains(view.Cell))
-            {if(view.Icon!=null) Destroy(view.Icon.gameObject);cells.RemoveAt(i);continue;}
-            var color=Color.white;
-            color.a=Mathf.Sin(Time.time*8)>0?1:.55f;view.Icon.color=color;
-        }
         for (int i=marks.Count-1;i>=0;i--)
         {
             var view=marks[i];
@@ -155,18 +142,6 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
         }
     }
     private void ShowSlash(bool row,int index,float duration) => StartCoroutine(Slash(row,index,Mathf.Max(0.1f,duration)));
-    private void ShowCellResponse(BoardController.CellResponseThreat threat)
-    {
-        EnsureSprites();
-        var sprite=CasterSigilArt.TargetOutline;if(sprite==null)return;
-        foreach(var cell in threat.Cells)
-        {
-            var icon=Make("Cast cell target",sprite,43);
-            icon.transform.localPosition=board.GetCellLocalPosition(cell.x,cell.y);
-            icon.transform.localScale=Vector3.one*board.CellSize/sprite.bounds.size.x;
-            cells.Add(new CellView {Threat=threat,Cell=cell,Icon=icon});
-        }
-    }
     private IEnumerator Slash(bool row,int index,float duration)
     {
         EnsureSprites();
@@ -190,9 +165,6 @@ public sealed class BoardTelegraphVFX : MonoBehaviour
     private void OnDisable()
     {
         if(board != null) { board.GemSetMarked-=ShowMarks; board.LanesMarked-=ShowLanes; board.LaneSlash-=ShowSlash; }
-        if(board!=null) board.CellResponseMarked-=ShowCellResponse;
-        foreach(var view in cells) if(view.Icon!=null) Destroy(view.Icon.gameObject);
-        cells.Clear();
         StopAllCoroutines();
         foreach(var view in marks) if(view.Icon!=null) Destroy(view.Icon.gameObject);
         foreach(var view in lanes) { if(view.Row!=null) Destroy(view.Row.gameObject); if(view.Column!=null) Destroy(view.Column.gameObject); }

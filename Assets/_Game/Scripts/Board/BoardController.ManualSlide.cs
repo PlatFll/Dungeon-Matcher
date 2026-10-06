@@ -37,6 +37,8 @@ public partial class BoardController
     {
         public Gem[] Gems { get; internal set; }
         public Vector2Int[] Cells { get; internal set; }
+        public GemType[] Types { get; internal set; }
+        public GemSpecialType[] Specials { get; internal set; }
         public bool IsLegal { get; internal set; }
         public bool IsExtended => Gems.Length == 3;
         public Vector2Int Destination(int index) => Cells[index == 0 ? Cells.Length - 1 : index - 1];
@@ -58,7 +60,7 @@ public partial class BoardController
         if (cells==null) return null;
         var pieces = cells.Select(c=>GetGem(c.x,c.y)).ToArray();
         if (pieces.Any(g=>g==null)) return null;
-        return new ManualSwapPlan { Cells=cells, Gems=pieces,
+        return new ManualSwapPlan { Cells=cells, Gems=pieces,Types=pieces.Select(g=>g.Type).ToArray(),Specials=pieces.Select(g=>g.SpecialType).ToArray(),
             IsLegal=ManualSwapCreatesMove(BuildCurrentTypeGrid(),BuildCurrentCrystalGrid(),cells) };
     }
     public bool ShowManualSwapPreview(Gem first, Gem second)
@@ -95,7 +97,8 @@ public partial class BoardController
         return true;
     }
     private static bool SameManualPlan(ManualSwapPlan a,ManualSwapPlan b) => a!=null && b!=null &&
-        a.Gems.SequenceEqual(b.Gems) && a.Cells.SequenceEqual(b.Cells) && a.IsLegal==b.IsLegal;
+        a.Gems.SequenceEqual(b.Gems) && a.Cells.SequenceEqual(b.Cells) && a.Types.SequenceEqual(b.Types) &&
+        a.Specials.SequenceEqual(b.Specials) && a.IsLegal==b.IsLegal;
     private Gem SwipeNeighbor(Gem first, Vector2 delta)
     {
         var direction = Mathf.Abs(delta.x)>Mathf.Abs(delta.y)

@@ -22,6 +22,8 @@ public sealed partial class ForestFoundationPlayTests
         var label=actor.GetComponentInParent<EnemySlotUI>().GetComponentsInChildren<TMP_Text>().Single(t=>t.name=="CastAnnouncement");
         Assert.That(label.font,Is.SameAs(GameUi.TmpFont));
         Assert.That(label.color.r,Is.GreaterThan(.85f));
+        string output=System.IO.Path.GetFullPath(".utmp/StatusRevision/Visual");System.IO.Directory.CreateDirectory(output);
+        ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(output,"cast-announcement.png"));yield return null;yield return null;
         var position=label.rectTransform.position;float alpha=label.color.a;
         yield return new WaitForSecondsRealtime(.15f);
         Assert.That(label.rectTransform.position,Is.EqualTo(position));Assert.That(label.color.a,Is.EqualTo(alpha));

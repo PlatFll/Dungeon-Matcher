@@ -106,6 +106,15 @@ public sealed class ManualSlideTests
         var cells=(HashSet<Vector2Int>)Call("ImmediatelyClearableOrdinaryCells");
         Assert.That(cells,Does.Contain(new Vector2Int(2,0)));
     }
+    [Test] public void PreviewSnapshotsColorAndSpecialIdentityBeforeConfirmation()
+    {
+        var first=grid[0,0];var second=grid[1,0];
+        board.ShowManualSwapPreview(first,second);var original=board.SwapPreview;var oldType=first.Type;
+        first.SetType((GemType)(((int)oldType+1)%6),null);board.ShowManualSwapPreview(first,second);
+        Assert.That(original.Types[0],Is.EqualTo(oldType));Assert.That(board.SwapPreview,Is.Not.SameAs(original));
+        var recolored=board.SwapPreview;first.SetSpecialType(GemSpecialType.RowBomb);board.ShowManualSwapPreview(first,second);
+        Assert.That(recolored.Specials[0],Is.EqualTo(GemSpecialType.None));Assert.That(board.SwapPreview,Is.Not.SameAs(recolored));
+    }
     private bool PhysicalLegality(Gem first,Gem second)
     {
         if(first==null || second==null || board.IsGemPinned(first) || board.IsGemPinned(second)) return false;

@@ -9,6 +9,13 @@ tuning. [Future zone locks](FUTURE_ZONE_LOCKS.md) record Dwarven Cave, Snowy Mou
 and the separate Reef Clan boss as documentation-only concepts. Their presence
 in these documents does not mean their zone gameplay has been implemented.
 
+[Caster presentation](CASTER_PRESENTATION.md) defines the shared targeting language:
+left triangle, middle square, right ring. Successful ability casts announce their
+inspection name; readiness and failed casts stay silent. Gem targets follow their
+gems, cell targets stay fixed, and row/column targets sit outside the corresponding
+board edge. Simultaneous sources remain visible in stable slot order until their
+warning or cast ends. Existing countdowns communicate timing.
+
 ## Purpose and status
 
 This document records durable, finalized design direction for Dungeon Matcher. It is not a balance sheet and does not make every currently serialized value a permanent rule. Current implementation details may be cited to define an established model, but unapproved details are marked **Needs finalized design input** rather than inferred.

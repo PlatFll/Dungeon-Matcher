@@ -72,7 +72,8 @@ public sealed class ManualSwapPreviewView : MonoBehaviour
     {
         var plan=board.SwapPreview;
         if(plan!=null && (!board.UsesExtraManualSwapStep || board.IsBusy || board.IsExternalInputBlocked || Time.timeScale<=0 ||
-            plan.Gems.Where((g,i)=>g==null || board.GetGem(plan.Cells[i].x,plan.Cells[i].y)!=g || board.IsGemPinned(g)).Any()))
+            plan.Gems.Where((g,i)=>g==null || board.GetGem(plan.Cells[i].x,plan.Cells[i].y)!=g || board.IsGemPinned(g) ||
+                g.Type!=plan.Types[i] || g.SpecialType!=plan.Specials[i]).Any()))
             board.ClearManualSwapPreview();
     }
     private void OnDestroy()

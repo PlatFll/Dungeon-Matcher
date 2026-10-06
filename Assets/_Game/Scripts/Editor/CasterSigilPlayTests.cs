@@ -82,7 +82,8 @@ public sealed partial class ForestFoundationPlayTests
         Object.Destroy(board.GetComponent<BoardTelegraphVFX>());yield return null;
         var telegraph=board.gameObject.AddComponent<BoardTelegraphVFX>();
         Call(telegraph,"ShowMarks",left);Call(telegraph,"ShowMarks",middle);
-        Call(telegraph,"ShowCellResponse",right);Call(telegraph,"ShowLanes",lanes);
+        Call(telegraph,"ShowLanes",lanes);
+        Color(gem.Column,gem.Row,GemType.Ruby);
         foreach(var data in Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses"))Run.Player.Statuses.Apply(data,SlotActor(0));
         Run.Player.GrantShield(30);
         float settled=Time.time+1.5f;yield return Until(()=>Time.time>=settled,"transient numbers finish");
@@ -112,6 +113,10 @@ public sealed partial class ForestFoundationPlayTests
                 string name="sigils-"+size.x+"x"+size.y+(inset?"-safe":"");
                 File.WriteAllText(Path.Combine(output,name+".txt"),report);
                 ScreenCapture.CaptureScreenshot(Path.Combine(output,name+".png"));yield return null;yield return null;
+                var screenshot=new Texture2D(2,2);screenshot.LoadImage(File.ReadAllBytes(Path.Combine(output,name+".png")));
+                var center=Camera.main.WorldToScreenPoint(gem.transform.position);
+                var pixel=screenshot.GetPixel(Mathf.RoundToInt(center.x),Mathf.RoundToInt(center.y));Object.Destroy(screenshot);
+                Assert.That(pixel.g,Is.LessThan(.8f),"marked Ruby gem remains visible rather than becoming a white overlay");
             }
         }
         finally {GameplayPixelLayoutController.ValidationSafeArea=null;Time.timeScale=1;}
