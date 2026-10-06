@@ -1,5 +1,14 @@
 # Dungeon Matcher Game Design Reference
 
+## Cross-zone design contract (2026-10-06)
+
+[Shared zone design rules](ZONE_DESIGN_RULES.md) define meaningful mechanic
+variation, predictable environmental interactions and the zone/lore checklist.
+[Canonical statuses](STATUS_EFFECTS.md) define stable meanings and provisional
+tuning. [Future zone locks](FUTURE_ZONE_LOCKS.md) record Dwarven Cave, Snowy Mountain
+and the separate Reef Clan boss as documentation-only concepts. Their presence
+in these documents does not mean their zone gameplay has been implemented.
+
 ## Purpose and status
 
 This document records durable, finalized design direction for Dungeon Matcher. It is not a balance sheet and does not make every currently serialized value a permanent rule. Current implementation details may be cited to define an established model, but unapproved details are marked **Needs finalized design input** rather than inferred.

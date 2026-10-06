@@ -1,5 +1,15 @@
 # Dungeon Matcher Architecture Reference
 
+## Shared mechanic variation
+
+Reuse existing resolution owners when varying a signature mechanic across zones.
+Different duration, expiry, costs, rewards or targets should change the decision
+without creating a competing board/damage pipeline. The durable soft rule and
+current overlap audit are in [ZONE_DESIGN_RULES.md](ZONE_DESIGN_RULES.md).
+The canonical status contract is [STATUS_EFFECTS.md](STATUS_EFFECTS.md); the current
+revision's actual implementation state is tracked in its handoff, not inferred
+from the specification alone.
+
 ## Purpose
 
 This document describes the current authoritative gameplay architecture and the invariants that future work must preserve. It names the implementation that exists in the repository; it does not convert every serialized prototype value into a permanent design rule.
