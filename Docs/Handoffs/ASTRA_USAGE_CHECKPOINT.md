@@ -18,7 +18,8 @@ Current state: tranche 1 committed as `7c972f1` (design contracts/future locks).
 Tranche 2 backend committed as `df8b06f`: seven data definitions, player-owned durations,
 central damage/healing/generation hooks, Fear source lifecycle, persistent dungeon
 enemy IDs and continuation. Status UI/icons and optional data-selected casting are
-implemented and validated. Slippery movement remains.
+committed as `391bcf2`. Slippery movement/preview, shared legality/hints and
+save/resume are implemented and validated in the following Slippery tranche.
 Focused status/damage/continuation tests passed 38/38 in
 `.utmp/ForestValidation/d68008c9-6c36-4714-bf0b-ae8aaca5dd2e.xml`.
 An initial 4/7 run exposed isolated test-fixture initialization errors, now fixed.
@@ -36,7 +37,15 @@ Actual captures: `.utmp/StatusRevision/Visual/statuses-*.png` (720x1280,
 1080x1920, 1080x2400, 1080x1920-safe). Native icon proof and checks:
 `ArtSource/SharedStatus/NativeIcons.png` and `NativeChecks.json`.
 Required validator passed again; log suffix `094aa894-b46d-4f92-a996-e1d2a0e0ec59`.
-Remaining account usage last checked: 25%; stop starting tranches at 5%, prioritize
+Slippery focused board tests: 50/50 in
+`.utmp/ForestValidation/a4be3e74-2bb7-4224-b4ee-cec424953467.xml`.
+Live rotation/rollback: 2/2 in `73522a5b-26c7-44a1-8eb4-b58afefd0e4d.xml`;
+its continuation test caught a paused availability-check deadlock, now fixed.
+Latest focused and continuation regression: 58/58 in
+`.utmp/ForestValidation/606527d1-20c1-40dc-81ec-a854be2e10bc.xml`.
+Actual preview capture: `.utmp/StatusRevision/Visual/slippery-preview.png`.
+Required Slippery validator passed; log suffix `83c6683b-1d5c-4a3c-ad03-f0b3248c216a`.
+Remaining account usage last checked: 21%; stop starting tranches at 5%, prioritize
 validation/handoff at 3%, no new work at 1%. Recheck at each tranche boundary.
 
 ## Preserve unrelated starting changes
@@ -59,7 +68,6 @@ The current Court docs incorrectly still describe #180 as unmerged; correct that
 without treating merge approval as approval of unseen art. Needlefin also lacks a
 clear shark-tail silhouette; report it only. Authorized edits are Hammerhead/Captain.
 
-Next: implement Slippery preview, board-owned rotation and final-arrangement
-legality/hints; no production assignment. Then global announcements/sigils,
+Next: global announcements/sigils,
 Court cultures/recipes, direct shark-tail pixels, final regression/docs/PR.
 No automatic background continuation is configured.

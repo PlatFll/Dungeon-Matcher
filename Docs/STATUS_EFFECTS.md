@@ -12,7 +12,7 @@ these definitions yet. Seven hand-authored 16px icons and remaining move counts
 occupy compact rows in the existing player combat panel. Tap a glyph for its meaning
 and individual Fear sources/durations. `ApplyPlayerStatus` is the optional enemy
 ability kind; `EnemyDefinition.appliedPlayerStatus` selects its data. Slippery's
-board movement is a subsequent tranche; a Slippery duration alone does not move gems.
+board movement is implemented, with no production caster assigned.
 The existing accepted-action coordinator expires statuses after the complete
 enemy/environment response. Legacy dungeon runs expire them at the completed
 manual board action. No independent timer or resolution coroutine was introduced.
@@ -51,6 +51,17 @@ An unavailable extra destination/path falls back to an ordinary adjacent swap.
 Cascades, gravity, refill, enemy mutation and abilities never slip. It has gameplay
 effect only in flooded Court. Do not assign it to an existing enemy without an
 explicitly approved source. A future Reef Clan boss is a possible source for review.
+
+Drag while holding to preview all final positions, then release to commit. With
+tap selection, the first destination tap previews and a second confirms. A swipe
+released without a preceding preview stages that preview for confirmation. An
+invalid final arrangement is marked with an X and reverses without consuming a
+move. Color-crystal interactions use the chosen gem and the piece at its final
+destination; a crystal displaced from the middle only moves. Bombs retain their
+identity and normal activation semantics. Hints, available-move and useful-response
+queries use the same final arrangement. When flood/status expiry changes the rule,
+the board rechecks availability and uses its existing reshuffle if necessary.
+Saving waits for that check; previews themselves are transient and are not saved.
 
 ## Future buff vocabulary (not implemented by this specification)
 

@@ -46,6 +46,11 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         Waves = FindFirstObjectByType<WaveController>();
         if (Board != null) Board.UsefulResponseValidator = options => CounterplayGuard.HasUsefulResponse(options, Player, Waves);
         if (Board != null) { Board.ValidPlayerMoveAccepted += StatusMoveAccepted; Board.ValidPlayerMoveCompleted += StatusMoveCompleted; }
+        if (Board != null)
+        {
+            Board.ExtraManualSwapStep = () => Zone?.Definition?.zoneId == "drowned-court" && Board.IsFlooded && Player?.Statuses.Has(PlayerStatusKind.Slippery) == true;
+            if (!Board.TryGetComponent<ManualSwapPreviewView>(out _)) Board.gameObject.AddComponent<ManualSwapPreviewView>();
+        }
         if (RunLaunchOptions.Practice) practiceProfile = AccountProgression.UsePracticeProfile();
         RunLaunchOptions.Practice = false;
         account = AccountProgression.Current;
@@ -278,7 +283,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         if (Waves != null) { Waves.WaveStarted -= OnWaveStarted; Waves.WaveCompleted -= OnWaveCompleted; Waves.UnregisterProgressionGate(this); }
         if (Player != null) { Player.Defeated -= OnDefeated; Player.DamageTaken -= OnDamage; }
         if (Current == this) Current = null;
-        if (Board != null) Board.UsefulResponseValidator = null;
+        if (Board != null) { Board.UsefulResponseValidator = null; Board.ExtraManualSwapStep = null; }
         practiceProfile?.Dispose(); practiceProfile = null;
         resumedMastery?.Dispose(); resumedCharacter?.Dispose();
     }

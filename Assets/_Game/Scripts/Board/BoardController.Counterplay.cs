@@ -61,6 +61,7 @@ public partial class BoardController
 
     public List<ResponseOption> GetImmediateResponses()
     {
+        if (UsesExtraManualSwapStep && gems!=null) return ExtendedManualResponses();
         var result = new List<ResponseOption>();
         if (gems == null) return result;
         var types = BuildCurrentTypeGrid();

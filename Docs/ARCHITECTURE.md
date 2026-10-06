@@ -10,6 +10,14 @@ The canonical status contract is [STATUS_EFFECTS.md](STATUS_EFFECTS.md); the cur
 revision's actual implementation state is tracked in its handoff, not inferred
 from the specification alone.
 
+PlayerActor owns `PlayerStatusRuntime`. RunSession binds accepted-action expiry;
+damage, healing and new energy generation remain in their existing central paths.
+Status snapshots contain values and stable source IDs, and restore after enemies.
+`BoardController.ManualSlide` owns the generic extra-step plan and legality query.
+RunSession supplies its flooded-Court/Slippery predicate. The ordinary TrySwap and
+cascade pipeline commits the rotation; `ManualSwapPreviewView` only displays it.
+Movement-rule changes share the existing reshuffle path at a safe unlocked point.
+
 ## Purpose
 
 This document describes the current authoritative gameplay architecture and the invariants that future work must preserve. It names the implementation that exists in the repository; it does not convert every serialized prototype value into a permanent design rule.

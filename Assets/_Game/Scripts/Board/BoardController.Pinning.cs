@@ -174,6 +174,7 @@ public partial class BoardController
         if (pointerStartGem == gem)
         {
             pointerStartGem = null;
+            ClearManualSwapPreview();
         }
 
         if (selectedGem == gem)

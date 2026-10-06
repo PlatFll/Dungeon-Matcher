@@ -508,6 +508,7 @@ public partial class BoardController : MonoBehaviour
         if (pointerDelta.magnitude >=
             swipeMinDistance)
         {
+            if (StageUnpreviewedSwipe(gem,pointerDelta)) return;
             TrySwapFromSwipe(
                 gem,
                 pointerDelta
@@ -547,6 +548,7 @@ public partial class BoardController : MonoBehaviour
             selectedGem,
             gem))
         {
+            if (PreviewSelectedSwap(selectedGem,gem)) return;
             Gem firstGem =
                 selectedGem;
 
@@ -565,6 +567,7 @@ public partial class BoardController : MonoBehaviour
         selectedGem.SetSelected(false);
 
         selectedGem = gem;
+        ClearManualSwapPreview();
         selectedGem.SetSelected(true);
     }
 
@@ -632,7 +635,7 @@ public partial class BoardController : MonoBehaviour
         Gem first,
         Gem second)
     {
-        if (IsBusy || IsExternalInputBlocked ||
+        if (IsBusy || IsExternalInputBlocked || Time.timeScale <= 0 ||
             first == null ||
             second == null ||
             GetGem(first.Column, first.Row) != first || GetGem(second.Column, second.Row) != second ||
@@ -641,18 +644,22 @@ public partial class BoardController : MonoBehaviour
             IsGemPinned(second))
         {
             pointerStartGem = null;
+            ClearManualSwapPreview();
             yield break;
         }
 
         if(BeforePlayerSwap!=null && !BeforePlayerSwap(first,second)) yield break;
 
+        var plan = PreviewManualSwap(first,second);
+        if(plan==null) yield break;
+        Gem third=plan.IsExtended?plan.Gems[2]:null;
+        Gem interactionSecond=third!=null?third:second;
+        ClearManualSwapPreview();
+
         isBusy = true;
         pointerStartGem = null;
 
-        yield return AnimateSwap(
-            first,
-            second
-        );
+        yield return AnimateManualSwap(first,second,third);
 
         /*
          * Existing crystal + crystal swaps still immediately
@@ -660,13 +667,13 @@ public partial class BoardController : MonoBehaviour
          */
         if (IsDoubleColorCrystalSwap(
                 first,
-                second))
+                interactionSecond))
         {
             NotifyValidPlayerMoveAccepted();
             yield return
                 ResolveDoubleColorCrystalActivation(
                     first,
-                    second
+                    interactionSecond
                 );
 
             isBusy = false;
@@ -682,7 +689,7 @@ public partial class BoardController : MonoBehaviour
         bool createdSpecial =
             TryCreateEarnedSpecialBeforeCrystalActivation(
                 first,
-                second,
+                interactionSecond,
                 out crystalGem,
                 out crystalTargetGem,
                 out createdSpecialType
@@ -743,7 +750,7 @@ public partial class BoardController : MonoBehaviour
         bool activatedColorCrystal =
             TryBuildColorCrystalClearSet(
                 first,
-                second,
+                interactionSecond,
                 out crystalClearSet,
                 out crystalTargetType,
                 out crystalTargetSpecialType
@@ -770,8 +777,9 @@ public partial class BoardController : MonoBehaviour
         HashSet<Gem> matches =
             FindMatchesFrom(
                 first,
-                second
+                interactionSecond
             );
+        if(third!=null) AddMatchesAt(second,matches);
 
         bool completedValidPlayerMove =
             false;
@@ -788,10 +796,7 @@ public partial class BoardController : MonoBehaviour
                 );
             }
 
-            yield return AnimateSwap(
-                first,
-                second
-            );
+            yield return AnimateManualSwap(first,second,third,true);
 
             Debug.Log(
                 "No match created. Swap reversed."
@@ -803,7 +808,7 @@ public partial class BoardController : MonoBehaviour
             yield return ResolveCascades(
                 matches,
                 first,
-                second
+                interactionSecond
             );
 
             completedValidPlayerMove = true;
@@ -2251,6 +2256,7 @@ public partial class BoardController : MonoBehaviour
         GemType[,] typeGrid,
         bool[,] crystalGrid)
     {
+        if (UsesExtraManualSwapStep) return HasExtendedManualMove(typeGrid,crystalGrid);
         for (int row = 0;
              row < height;
              row++)
@@ -2336,6 +2342,8 @@ public partial class BoardController : MonoBehaviour
         int secondColumn,
         int secondRow)
     {
+        if (UsesExtraManualSwapStep) return ManualSwapCreatesMove(typeGrid,crystalGrid,
+            ManualSwapCells(firstColumn,firstRow,secondColumn,secondRow));
         if (!IsCellPlayable(
                 firstColumn,
                 firstRow) ||
@@ -2768,6 +2776,7 @@ public partial class BoardController : MonoBehaviour
 
     private void ClearSelection()
     {
+        ClearManualSwapPreview();
         if (selectedGem == null)
         {
             return;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kind: 6
   displayName: Slippery
-  description: While flooded, deliberate swaps slide one extra cell when the path allows.
+  description: While flooded, deliberate swaps slide one extra cell when the path allows. Drag to preview and release to commit. With taps, tap the destination again to confirm.
   durationMoves: 3
   multiplier: 1
   damagePerMove: 0

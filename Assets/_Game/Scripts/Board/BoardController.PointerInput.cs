@@ -97,6 +97,15 @@ public partial class BoardController
             minimumDistance *
             minimumDistance)
         {
+            ClearManualSwapPreview();
+            return;
+        }
+
+        if (UsesExtraManualSwapStep)
+        {
+            // Slippery commits on release: the player can inspect/revise the
+            // exact final arrangement while still holding the gesture.
+            ShowManualSwapPreview(gem, SwipeNeighbor(gem,pointerDelta));
             return;
         }
 
