@@ -116,6 +116,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
         if (actor == null || released) return;
         if (success)
         {
+            actor.AnnounceCommittedCast(preferFortification?"Hammer Strike":"Fortification");
             actor.NotifySpecialAbilityUsed();
             actor.ResetSpecialCounter();
         }

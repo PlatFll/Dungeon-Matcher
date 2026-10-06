@@ -39,7 +39,7 @@ public sealed class RootbinderEnemyAbility : MonoBehaviour,IEnemySpecialAbilityR
         if(!board.TryQueueRootWarning(actor,1,1,false,false,result=>
         {
             warning=result;pending=false;Outcome=null;actor.EndSpecialAbilityAnimationAction();
-            if(result!=null) {actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();}
+            if(result!=null) {actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();}
             Publish();
         })) {pending=false;actor.EndSpecialAbilityAnimationAction();}
     }

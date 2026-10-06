@@ -298,7 +298,8 @@ public partial class BoardController
 
     public bool TryQueueFreezeRandomGem(
         EnemyActor owner,
-        int maximumOwnedFrozenGems)
+        int maximumOwnedFrozenGems,
+        System.Action<bool> completed = null)
     {
         if (!CanQueuePin(owner, maximumOwnedFrozenGems,
                 out int ownerInstanceId,
@@ -334,7 +335,7 @@ public partial class BoardController
             ownerInstanceId,
             safeMaximum,
             selectedGem,
-            frozen: true
+            frozen: true, completed: completed
         );
     }
 
@@ -367,7 +368,7 @@ public partial class BoardController
         int ownerInstanceId,
         int safeMaximum,
         Gem selectedGem,
-        bool frozen)
+        bool frozen, System.Action<bool> completed = null)
     {
         if (selectedGem == null ||
             IsGemPinned(selectedGem))
@@ -389,7 +390,8 @@ public partial class BoardController
                 OwnerActor = owner,
                 OwnerInstanceId = ownerInstanceId,
                 MaximumOwnedPins = safeMaximum,
-                TargetGem = selectedGem
+                TargetGem = selectedGem,
+                Completed = completed
             }
         );
 

@@ -168,7 +168,7 @@ public sealed class RoyalStandardBearerEnemyAbility :
             return;
         }
 
-        if (enemyActor != null) enemyActor.NotifySpecialAbilityEffectApplied();
+        if (enemyActor != null) { enemyActor.AnnounceCommittedCast(); enemyActor.NotifySpecialAbilityEffectApplied(); }
         RoyalBannerAuraRuntime.Install(
             boardController,
             activeEnemies,

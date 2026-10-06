@@ -118,7 +118,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private void Reinforce()
     {
         if (summons == null) return;
-        bool specialAdded = false;
+        bool specialAdded = false;bool summoned=false;
         var candidates = new List<EnemyDefinition>();
         foreach (var data in actor.Definition.RoyalReinforcements)
         {
@@ -135,8 +135,10 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             var data = candidates[index];
             if ((specialAdded && data.Category == EnemyCategory.Special) || !summons.TrySummonEnemy(data, out _))
             { candidates.RemoveAt(index); continue; }
+            summoned=true;
             if (data.Category == EnemyCategory.Special) specialAdded = true;
         }
+        if(summoned) actor.AnnounceCommittedCast("Reinforcements");
     }
     private bool TryCast()
     {
@@ -179,6 +181,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     }
     private IEnumerator Assault()
     {
+        bool announced=false;
         if (actor.SpecialMotionId > 0) yield return actor.WaitForSpecialMotionComplete(actor.SpecialMotionId);
         else yield return new WaitForSeconds(actor.Definition.RoyalCommandWindup);
         foreach (var attack in participants)
@@ -206,6 +209,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
             attack.EnemyActor.EndSpecialAbilityAnimationAction(); locks.Remove(attack.EnemyActor);
             if (attack.PerformCommandStrike(this, actor.Definition.AssaultDamageMultiplier))
             {
+                if(!announced) {actor.AnnounceCommittedCast("Royal Assault");announced=true;}
                 while (!released && attack != null && attack.IsAttackSequenceInProgress) yield return null;
                 yield return new WaitForSeconds(actor.Definition.RoyalCommandSpacing);
                 // Keep the sequence reserved through its final spacing so the
@@ -241,7 +245,7 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private void FinishCast(bool success, bool announce = true)
     {
         EndAction(); if (released) return;
-        if (success) { if (announce) actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter(); cycle = (cycle + 1) % 3; }
+        if (success) { if (announce) {actor.AnnounceCommittedCast(cycle==0?"Judgment":"Bombardment");actor.NotifySpecialAbilityUsed();} actor.ResetSpecialCounter(); cycle = (cycle + 1) % 3; }
         else retryAfterMove = board.CompletedValidPlayerMoves;
     }
     private void ReleaseParticipants()

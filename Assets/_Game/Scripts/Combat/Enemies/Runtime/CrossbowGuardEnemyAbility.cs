@@ -174,7 +174,7 @@ public sealed class CrossbowGuardEnemyAbility :
                 succeeded =>
                 {
                     if (succeeded && this != null && isActiveAndEnabled && enemyActor != null)
-                        enemyActor.NotifySpecialAbilityEffectApplied();
+                        { enemyActor.AnnounceCommittedCast(); enemyActor.NotifySpecialAbilityEffectApplied(); }
                 },
                 () => this == null || !isActiveAndEnabled || enemyActor == null || enemyActor.IsDefeated,
                 enemyActor.Definition.ChainsPerUse > 1

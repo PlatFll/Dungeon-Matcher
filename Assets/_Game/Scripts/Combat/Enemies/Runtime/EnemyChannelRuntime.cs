@@ -68,7 +68,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         value.state=1; value.sequence++; value.targetId=target.PersistentId;
         value.triggerMove=move; value.deadlineMove=move+2; value.outcome=null;
         attack?.SetActionPaused(this,true);
-        actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter(); actor.EndSpecialAbilityAnimationAction();
+        actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter(); actor.EndSpecialAbilityAnimationAction();
         Changed?.Invoke();
     }
 

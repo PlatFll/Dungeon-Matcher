@@ -74,7 +74,7 @@ public sealed class ForestCombatAbility : MonoBehaviour, IEnemySpecialAbilityRun
         if(Kind==EnemySpecialAbilityKind.Bloodrage)
         {
             if(state.enraged && !state.ragePresented && actor.TryBeginSpecialAbilityAnimationAction())
-            { state.ragePresented=true;pending=true;StartCoroutine(Cast("Ability",()=>{})); }
+            { state.ragePresented=true;pending=true;StartCoroutine(Cast("Ability",()=>actor.AnnounceCommittedCast())); }
             return;
         }
         if(!actor.IsSpecialReady) return;
@@ -92,7 +92,7 @@ public sealed class ForestCombatAbility : MonoBehaviour, IEnemySpecialAbilityRun
                 { state.summonId=summoned.PersistentId;used=true; }
             }
             else if(HasAllies()) { ApplyRhythm();used=true; }
-            if(used) { actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter(); }
+            if(used) { actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter(); }
         }));
     }
     private IEnumerator Cast(string clip,Action impact)

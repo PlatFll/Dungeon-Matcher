@@ -150,7 +150,8 @@ public partial class BoardController
     public bool TryQueueMineRandomCell(
         EnemyActor owner,
         int maximumOwnedMines,
-        bool waitForAnimationImpact = false)
+        bool waitForAnimationImpact = false,
+        Action<bool> completed = null)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -186,6 +187,7 @@ public partial class BoardController
                 OwnerActor = owner,
                 OwnerInstanceId = ownerInstanceId,
                 MaximumOwnedMines = safeMaximum,
+                Completed = completed,
                 WaitForAnimationImpact = waitForAnimationImpact,
                 AnimationActionId = owner.ActiveSpecialAbilityAnimationActionId
             }
@@ -558,6 +560,7 @@ public partial class BoardController
         }
 
         minedCellOwners[selectedCell] = request.OwnerInstanceId;
+        request.Succeeded = true;
         EnsureMiningVFX();
 
         CellMiningStarted?.Invoke(

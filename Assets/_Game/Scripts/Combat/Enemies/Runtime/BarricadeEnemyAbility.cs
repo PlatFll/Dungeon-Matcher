@@ -195,6 +195,7 @@ public sealed class BarricadeEnemyAbility :
                     definition.BarricadeDurability,
                     definition.BarricadeStyle,
                     protectSpecialGems: definition.BarricadeStyle == EnemyBarricadeStyle.Thorn,
+                    completed: succeeded => { if(succeeded && enemyActor!=null) enemyActor.AnnounceCommittedCast(); },
                     waitForAnimationImpact: timed
                 );
 

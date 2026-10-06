@@ -80,5 +80,19 @@ sheets, 118 frames. Exact old opaque pixels, palette, floor and canvas preserved
 connected additions checked. All motion sheets and native cast comparison viewed.
 Evidence and offline review: `ArtSource/DrownedCourt/TailRevision`.
 
-Next: global announcements/sigils, final regression/docs/PR.
+Tail tranche committed as `ed1ced5`.
+Cast announcements implemented on successful gameplay commits, using inspection
+names, off-white Thaleah, scaled rise/fade and no replay on continue. Existing
+dungeon all-abilities live test passed, including silent windup/cancelled casts:
+`.utmp/ForestValidation/cf064bf2-fc6f-41e9-a160-601df2d529a8.xml`.
+Court channel/pause/fade/resume test passed:
+`.utmp/ForestValidation/d8d11246-a5b0-4a85-afeb-46b9a2f14f1a.xml`.
+An invalid GUID initially prevented importing the new Court test; corrected and
+confirmed its execution. Remaining usage last checked: 18%.
+
+Announcement validator passed, log suffix `35949866-94b1-4233-9e89-73d1372a7293`.
+Next: slot sigils, final regression/docs/PR.
+During target audit, Slippery response-cell prediction was found to still map two
+positions in `ImmediatelyClearableOrdinaryCells`; use its three-gem final mapping
+before validating new warning placements. Actual manual resolution is correct.
 No automatic background continuation is configured.

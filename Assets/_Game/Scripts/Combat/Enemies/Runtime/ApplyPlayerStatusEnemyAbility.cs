@@ -38,7 +38,7 @@ public sealed class ApplyPlayerStatusEnemyAbility : MonoBehaviour, IEnemySpecial
             if (!actor.IsDefeated && actor.GetComponent<EnemyStagger>()?.IsStaggered != true &&
                 (motion == 0 || actor.IsSpecialMotionCurrent(motion)) && player.Statuses.Apply(actor.Definition.appliedPlayerStatus, actor))
             {
-                actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
+                actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
             }
             if (motion > 0) yield return actor.WaitForSpecialMotionComplete(motion);
         }
