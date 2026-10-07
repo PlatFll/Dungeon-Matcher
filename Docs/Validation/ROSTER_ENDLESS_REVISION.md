@@ -168,3 +168,16 @@ tranches and final combined regression remain open.
 - Required Unity validator passed, exit 0:
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-5cdfe417-8888-4cb4-9d28-d8e3a6b8f422.log`.
   Editor audio stayed muted. Original four user files match their starting hashes.
+
+## Court finite AIR reserve — tranche 6
+
+- All **14 focused checks passed** in
+  `.utmp/ForestValidation/f748729e-432d-4434-9f21-3b60ec7774b5.xml`: first dry
+  formation, actual 16–18-move flood and five starting bubbles, receipt arithmetic,
+  separate rendered −1/+2 beats, no supply while free/captured reserve exists,
+  three-move emergency timing, normal/critical caps, resource-preserving low-AIR
+  relocation, current/legacy continuation, duplicate accounting and final drain.
+- Mandatory Unity validator passed, exit 0:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c1ea84f5-8fdc-411c-b3aa-b55e41d25dc4.log`.
+- No paid generations or asset replacements. The new economy is provisional
+  zone data. Theft/coffer/Pressure/Tribute revisions remain subsequent work.

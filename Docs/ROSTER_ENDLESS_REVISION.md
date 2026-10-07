@@ -17,7 +17,7 @@ current runtime until their corresponding tranche replaces it.
 | 3 | Native King JudgmentStrike1/Strike2 and visibly unique empowered Finisher, contact-timed damage, approved identity retained | Implemented and checked at four portrait/safe-inset shapes; direct pixel edits, zero generations; new motion awaits visual review |
 | 4 | Rootbinder/Warden instant queued roots; Warded source buff, 25% nonstacking reduction including summons; Treant physical-gem Bough cancels wholly if any mark clears | Complete; 23 unique current affected checks and Unity validator passed |
 | 5 | Direct wooden shield-root and heart-root variants, both durability states, restrained pulse | Four native direct-edit candidates imported; four viewport captures checked; awaits user visual review |
-| 6 | Flood 16–18 moves; five initial bubbles; captured oxygen counts as reserve; emergency supply only after exhaustion; visible −1/+2 accounting | Pending |
+| 6 | Flood 16–18 moves; five initial bubbles; captured oxygen counts as reserve; emergency supply only after exhaustion; visible −1/+2 accounting | Complete; 14 focused checks and required Unity validator passed |
 | 7 | Thief instant exact-two capture in one-hit coffer; Warden exact-three/two-hit coffer; coffer survives owner death; Pressure Lance marks two bubbles, either answer cancels | Pending |
 | 8 | Queen captures all free bubbles; armored coffer's first hit exposes pearl and rotates a legal 2–3-cell cardinal path; preserve specials, no intermediate refill; second hit returns oxygen | Pending |
 | 9 | Replace Crushing Depths with three-move Nacre Tribute; up to three bubbles; Queen-first stable round-robin Fortified, cap two; one 50% direct-hit reduction per consumed stack; front/back pink orbit pearls | Pending |

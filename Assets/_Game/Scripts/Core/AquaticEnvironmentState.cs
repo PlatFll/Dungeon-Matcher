@@ -8,7 +8,7 @@ public enum TidePhase { Dry, Pending, Flooded }
 [Serializable]
 public sealed class AquaticEnvironmentState
 {
-    public const int CurrentVersion = 1;
+    public const int CurrentVersion = 2;
     public int version = CurrentVersion;
     public TidePhase phase;
     public int air, wetMoves, dryMoves, nextSupplyMove, lastSettledMove;
@@ -16,6 +16,8 @@ public sealed class AquaticEnvironmentState
     public int dryEncounter = -1, protectedThroughEncounter = 1;
     public int acceptedMove, acceptedAir, collectedAir, snareLoss;
     public bool acceptedWet;
+    public bool reserveExhausted;
+    public List<int> collectedAmounts = new List<int>();
     public List<int> bubbles = new List<int>();
     public List<AquaticSnareState> snares = new List<AquaticSnareState>();
     public AquaticCofferState coffer;
@@ -34,8 +36,9 @@ public sealed class AquaticEnvironmentState
         phase = TidePhase.Flooded;
         floodCount++;
         air = 5;
-        wetMoves = Math.Max(10, Math.Min(12, duration));
-        nextSupplyMove = move + 2;
+        wetMoves = Math.Max(1, duration);
+        reserveExhausted = false;
+        nextSupplyMove = 0;
         dryMoves = 0;
     }
 
@@ -46,12 +49,14 @@ public sealed class AquaticEnvironmentState
         acceptedWet = phase == TidePhase.Flooded;
         acceptedAir = air;
         collectedAir = snareLoss = 0;
+        collectedAmounts.Clear();
     }
 
     public void Collect(int blocks)
     {
         if (phase != TidePhase.Flooded || blocks <= 0) return;
-        if (acceptedWet && acceptedMove > lastSettledMove) collectedAir += blocks;
+        if (acceptedWet && acceptedMove > lastSettledMove)
+        { collectedAir += blocks; collectedAmounts.Add(blocks); }
         else air = ClampAir(air + blocks);
     }
 
@@ -82,6 +87,7 @@ public sealed class AquaticEnvironmentState
     {
         phase = TidePhase.Dry;
         air = wetMoves = dryMoves = 0;
+        reserveExhausted = false; nextSupplyMove = 0;
         bubbles.Clear();
         coffer = null;
         // The next complete encounter is dry; the current remainder does not count.

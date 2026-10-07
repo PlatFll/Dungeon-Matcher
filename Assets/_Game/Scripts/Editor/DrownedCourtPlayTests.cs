@@ -40,7 +40,7 @@ public sealed partial class ForestFoundationPlayTests
         yield return Move();
         var state=Run.Board.Aquatic;
         Assert.That(state.phase,Is.EqualTo(TidePhase.Flooded));Assert.That(state.air,Is.EqualTo(5));
-        Assert.That(state.wetMoves,Is.InRange(10,12));Assert.That(state.bubbles.Count,Is.EqualTo(2));
+        Assert.That(state.wetMoves,Is.InRange(16,18));Assert.That(state.bubbles.Count,Is.EqualTo(5));
         int remaining=state.wetMoves;
         float observeUntil=Time.time+.15f;yield return Until(()=>Time.time>=observeUntil,"thinking does not advance tide");
         Assert.That(state.wetMoves,Is.EqualTo(remaining));

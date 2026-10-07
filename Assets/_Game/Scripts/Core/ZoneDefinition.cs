@@ -30,6 +30,12 @@ public sealed class ZoneDefinition : ScriptableObject
     public AudioClip music;
     public bool growsVines;
     public bool periodicallyFloods;
+    [Header("Flood oxygen — provisional tuning")]
+    [Min(1)] public int floodMinimumMoves=16, floodMaximumMoves=18;
+    [Range(1,8)] public int initialAirBubbles=5;
+    [Min(1)] public int emergencyAirCadenceMoves=3;
+    [Range(1,2)] public int emergencyAirSupply=1,criticalAirSupply=2;
+    [Range(0,4)] public int criticalAirThreshold=1;
     public bool crumblesTiles;
     [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;

@@ -19,7 +19,9 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
     private Image waterImage;
     private Image sceneWaterImage;
     private TMP_Text airReturn;
-    private float returnUntil;
+    private readonly Queue<(int air,string label)> airSteps=new Queue<(int,string)>();
+    private float airStepUntil;
+    private int displayedAir=-1;
     private float waterAmount;
     private void Start()
     {
@@ -53,7 +55,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
         var line=waterline.gameObject.AddComponent<Image>();line.color=new Color(.65f,.91f,.85f,.5f);line.raycastTarget=false;
         airReturn=GameUi.Label("AirReturned",strip,"+2",new Vector2(40,20),new Vector2(-20,20),16);
         airReturn.color=new Color(.5f,1,.85f);airReturn.gameObject.SetActive(false);
-        board.AquaticAnswer+=ReturnedAir;
+        board.AirReceipt+=AnimateAirReceipt;
     }
     private void LateUpdate()
     {
@@ -68,7 +70,18 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             waterline.gameObject.SetActive(!PresentationPreferences.ReducedMotion && waterAmount>0 && waterAmount<1);
         }
         if(sceneWaterImage!=null)sceneWaterImage.color=new Color(.15f,.58f,.66f,.15f*waterAmount);
-        if(airReturn!=null)airReturn.gameObject.SetActive(wet && Time.time<returnUntil);
+        if(!wet) {airSteps.Clear();displayedAir=-1;airStepUntil=0;}
+        else if(Time.time>=airStepUntil)
+        {
+            if(airSteps.Count>0)
+            {
+                var step=airSteps.Dequeue();displayedAir=step.air;airReturn.text=step.label;
+                airReturn.color=step.label.StartsWith("-")?new Color(1,.8f,.6f):new Color(.5f,1,.85f);
+                airStepUntil=Time.time+.24f;
+            }
+            else displayedAir=state.air;
+        }
+        if(airReturn!=null)airReturn.gameObject.SetActive(wet && Time.time<airStepUntil);
         BackgroundMusicPlayer.Instance?.SetUnderwaterMix(wet);
         if(strip!=null)
         {
@@ -76,8 +89,9 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             if(wet)
             {
                 airLabel.color=state.air<=1?new Color(1,.6f,.35f):Color.white;
-                for(int i=0;i<5;i++) {blocks[i].color=i<state.air?new Color(.45f,.9f,1):new Color(.06f,.12f,.16f);
-                    blocks[i].rectTransform.sizeDelta=i<state.air?new Vector2(12,8):new Vector2(12,2);}
+                int shown=displayedAir<0?state.air:displayedAir;
+                for(int i=0;i<5;i++) {blocks[i].color=i<shown?new Color(.45f,.9f,1):new Color(.06f,.12f,.16f);
+                    blocks[i].rectTransform.sizeDelta=i<shown?new Vector2(12,8):new Vector2(12,2);}
                 tideLabel.text=state.air==0?"NO AIR! "+state.wetMoves:"TIDE "+state.wetMoves;
             }
         }
@@ -125,14 +139,14 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
          label=tmp;captions.Add(key,label);}
         label.text=value;label.transform.position=position+Vector3.down*board.CellSize*.23f;
     }
-    private void ReturnedAir(int gemId,bool bubble,bool coffer)
+    private void AnimateAirReceipt(int opening,int spent,int[] gains)
     {
-        if(!bubble && !coffer)return;
-        returnUntil=Time.time+.65f;
-        if(airReturn!=null)airReturn.text=coffer?"AIR +":"+2";
+        int current=Mathf.Clamp(opening-spent,0,5);
+        if(spent>0)airSteps.Enqueue((current,"-"+spent));
+        foreach(int gain in gains) {current=Mathf.Clamp(current+gain,0,5);airSteps.Enqueue((current,"+"+gain));}
     }
     private void OnDestroy()
-    {if(board!=null)board.AquaticAnswer-=ReturnedAir;
+    {if(board!=null)board.AirReceipt-=AnimateAirReceipt;
      if(strip!=null)Destroy(strip.gameObject);if(water!=null)Destroy(water.gameObject);if(sceneWater!=null)Destroy(sceneWater.gameObject);
      BackgroundMusicPlayer.Instance?.SetUnderwaterMix(false);}
 }

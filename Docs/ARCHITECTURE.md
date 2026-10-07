@@ -70,6 +70,15 @@ awards AIR. Consumed crystals report destruction without inventing colored-gem
 rewards. `CombatMoveClock` advances the environment before enemy work and checks
 suffocation after it; presentation cannot advance either.
 
+Aquatic state v2 records reserve exhaustion and the next emergency pulse. The
+zone definition owns 16–18 flood moves, five initial bubbles, the three-move
+emergency cadence, normal/critical supply caps and critical AIR threshold.
+Captured charges remain part of the reserve. Low-AIR relocation preserves the
+free-bubble count and never moves a marked response target. Version-1 saves keep
+their remaining tide/resources and adopt the finite-reserve rule without payout.
+`AirReceipt` projects the accepted debit and individual collections to the meter;
+its queued visual steps cannot change AIR or delay board ownership.
+
 `AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
 channel stages, answer identities, rally leases and rotation state. Cantor reuses
 `EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.

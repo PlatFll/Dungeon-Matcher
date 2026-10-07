@@ -23,10 +23,10 @@ The first complete formation is dry. Six accepted dry moves request flooding;
 the request waits until the entire current formation, including living summons,
 can fight underwater. Global enemies default to dry-only. The first flood also
 waits for a formation without an air thief, snare, inflation or pressure lesson.
-Each flood lasts a saved random 10–12 accepted moves. After draining, the next new
+Each flood lasts a saved random 16–18 accepted moves. After draining, the next new
 complete formation remains dry. Waves and perk screens never reset the tide.
 
-Flooding starts with five AIR blocks and two reachable bubbled gems. For an
+Flooding starts with five AIR blocks and up to five reachable bubbled gems. For an
 accepted wet move, AIR is computed once after player clears:
 
 `clamp(max(0, openingAIR - 1 - manualSnareClears) + 2*bubblesPopped + cofferAIR, 0, 5)`
@@ -34,8 +34,16 @@ accepted wet move, AIR is computed once after player clears:
 Free player actions may recover AIR without spending a move. Bubbles belong to
 physical gem identities: conversion into a special preserves the bubble; actual
 player destruction collects it once. Environmental capture and cleanup give no
-collection reward. Every two wet moves replenish toward two bubbles, never above
-three. Low AIR preserves an immediately usable ordinary rescue where possible.
+collection reward. These bubbles are the initial finite reserve: free bubbles plus
+captured coffer charges count, so theft cannot cause a replacement supply. After
+all reserve oxygen is resolved, a three-move emergency timer begins. Each pulse
+tops up to one bubble, or two at AIR ≤1, never more than two. All values are
+provisional fields on the zone definition. Low AIR may relocate an existing free
+unmarked bubble to an immediately usable ordinary gem, without adding oxygen.
+The AIR display presents the same receipt as accounting: debit first, then each
+actual +2 bubble or coffer payout. It never changes a bubble into +3.
+Legacy saves preserve remaining flood time and current resources; new reserve
+rules take over without resetting the flood or minting oxygen.
 After enemy actions, zero AIR causes one five-damage shield-gated suffocation hit.
 The last wet move drains before this check, so it does not suffocate.
 
