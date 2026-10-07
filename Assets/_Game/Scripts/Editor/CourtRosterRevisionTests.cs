@@ -8,6 +8,109 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
+    [UnityTest] public IEnumerator CourtRevisionThiefInstantExactTwoIndependentPayout()
+    {yield return CourtInstantTheft("pearl_thief",2,1);}
+    [UnityTest] public IEnumerator CourtRevisionWardenInstantThreeAndTwoDistinctHits()
+    {yield return CourtInstantTheft("lantern_warden",3,2);}
+    private IEnumerator CourtInstantTheft(string id,int charges,int durability)
+    {
+        yield return LaunchCourt(id,"shellback_porter");yield return Move();PrepareSafeMove();
+        var board=Run.Board;var owner=Enemy(id);var kit=owner.GetComponent<AquaticEnemyAbility>();
+        board.Aquatic.StartFlood(18,Run.MoveClock.Tick);
+        board.Aquatic.bubbles=Enumerable.Range(0,charges).Select(x=>board.GetGem(x,0).BoardIdentity).ToList();
+        var special=board.GetGem(5,0);special.SetSpecialType(GemSpecialType.ColumnBomb);
+        var oldSpecial=special.BoardIdentity;
+        float start=-1,contact=-1;bool everWarning=false;int announced=0;
+        owner.SpecialMotionRequested+=_=>start=Time.time;owner.AbilityCastCommitted+=(_,__)=>announced++;
+        board.AquaticChanged+=()=>{everWarning|=kit.IsPreparing;if(board.Aquatic.coffer!=null&&contact<0)contact=Time.time;};
+        ReadyForest(owner);yield return Move(()=>special.SetSpecialType(GemSpecialType.ColumnBomb));
+        Assert.That(board.Aquatic.coffer,Is.Not.Null);Assert.That(board.Aquatic.coffer.charges,Is.EqualTo(charges));
+        Assert.That(contact-start,Is.InRange(.2f,2f));Assert.That(everWarning,Is.False);Assert.That(kit.IsPreparing,Is.False);
+        Assert.That(owner.HasAnimationActionInProgress,Is.False);Assert.That(announced,Is.EqualTo(1));
+        Assert.That(board.FindAquaticGem(oldSpecial)?.SpecialType,Is.EqualTo(GemSpecialType.ColumnBomb));
+        Assert.That(board.Aquatic.bubbles,Is.Empty,"capture does not mint a replacement rescue");
+        var coffer=board.Aquatic.coffer;var cell=new Vector2Int(coffer.x,coffer.y);
+        Assert.That(board.GetGem(cell.x,cell.y),Is.Null);Assert.That(board.RemainingOxygenReserve,Is.EqualTo(charges));
+        owner.ResolveDirectDamage(99999);yield return Stable();
+        Assert.That(board.Aquatic.coffer,Is.Not.Null,"caster death preserves the board problem");
+        yield return ResumeRoster();board=Run.Board;coffer=board.Aquatic.coffer;
+        Assert.That(coffer.charges,Is.EqualTo(charges));board.Aquatic.air=0;
+        int fractures=0;board.CofferShellBroken+=_=>fractures++;
+        for(int hit=0;hit<durability;hit++)
+        {
+            var adjacent=new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down}
+                .Select(d=>board.GetGem(cell.x+d.x,cell.y+d.y)).First(g=>g!=null);
+            Call(board,"DamageBarricadesForClear",new HashSet<Gem>{adjacent},new HashSet<Gem>(),false);
+            if(hit+1<durability)
+            {
+                Assert.That(board.Aquatic.coffer,Is.Not.Null);Assert.That(board.Aquatic.air,Is.Zero);
+                var saved=board.CaptureContinuation(_=>-1).cells.Single(c=>c.x==cell.x&&c.y==cell.y);
+                Assert.That(saved.durability,Is.EqualTo(1));Assert.That(fractures,Is.EqualTo(1));
+            }
+        }
+        Assert.That(board.Aquatic.coffer,Is.Null);Assert.That(board.Aquatic.air,Is.EqualTo(durability==1?4:5));
+        Call(board,"AquaticCofferBroken",cell);Assert.That(board.Aquatic.air,Is.EqualTo(durability==1?4:5),"no duplicate payout");
+    }
+
+    [UnityTest] public IEnumerator CourtRevisionTheftAndPressureDeferWithoutEnoughBubbles()
+    {yield return CourtInsufficientBubbles();}
+    private IEnumerator CourtInsufficientBubbles()
+    {
+        yield return LaunchCourt("lantern_warden","shellback_porter");yield return Move();PrepareSafeMove();
+        var board=Run.Board;board.Aquatic.StartFlood(18,Run.MoveClock.Tick);
+        board.Aquatic.bubbles.Add(board.GetGem(0,0).BoardIdentity);
+        Assert.That(board.TryPlanAirTheft(2,false,out _,out _),Is.False);
+        Assert.That(board.TryPlanAirTheft(3,false,out _,out _),Is.False);
+        var actor=Enemy("lantern_warden");var kit=actor.GetComponent<AquaticEnemyAbility>();
+        kit.RestoreContinuation(new EnemyCombatSnapshot{aquaticEnemy=new AquaticEnemySnapshot{version=2,cycle=1}},_=>null);
+        ReadyForest(actor);yield return Move();
+        Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.ResponseCells,Is.Empty);
+        Assert.That(board.Aquatic.coffer,Is.Null);Assert.That(actor.IsSpecialReady,Is.True);
+    }
+
+    [UnityTest] public IEnumerator CourtRevisionPressureEitherBubbleCancelsAndContinueKeepsPhysicalTargets()
+    {yield return CourtPressure(true);}
+    [UnityTest] public IEnumerator CourtRevisionPressureUnansweredDealsFullConfiguredHit()
+    {yield return CourtPressure(false);}
+    private IEnumerator CourtPressure(bool answer)
+    {
+        yield return LaunchCourt("lantern_warden","shellback_porter");yield return Move();PrepareSafeMove();
+        var board=Run.Board;board.Aquatic.StartFlood(18,Run.MoveClock.Tick);
+        board.Aquatic.bubbles=Enumerable.Range(0,3).Select(x=>board.GetGem(x,0).BoardIdentity).ToList();
+        var actor=Enemy("lantern_warden");var kit=actor.GetComponent<AquaticEnemyAbility>();
+        kit.RestoreContinuation(new EnemyCombatSnapshot{aquaticEnemy=new AquaticEnemySnapshot{version=2,cycle=1}},_=>null);
+        ReadyForest(actor);yield return Move();
+        Assert.That(kit.CastName,Is.EqualTo("PRESSURE"));Assert.That(kit.MarkedBubbles.Count,Is.EqualTo(2));
+        Assert.That(kit.ResponseCells,Is.Empty);Assert.That(kit.CofferTarget,Is.Null);
+        int[] targets=kit.MarkedBubbles.ToArray();int due=board.CompletedValidPlayerMoves+kit.ResponseMoves;
+        yield return ResumeRoster();board=Run.Board;actor=Enemy("lantern_warden");kit=actor.GetComponent<AquaticEnemyAbility>();
+        Assert.That(kit.MarkedBubbles,Is.EqualTo(targets));
+        int damage=0;Run.Player.DamageTaken+=(_,amount)=>damage+=amount;
+        if(answer)
+        {
+            // Use the same physical destruction receipt as specials/abilities.
+            var gem=board.FindAquaticGem(targets[1]);var gems=new HashSet<Gem>{gem};
+            Call(board,"RegisterAquaticClear",gems,false);Call(board,"ResolveAquaticDestruction",gems,new HashSet<Gem>());
+            yield return Until(()=>!kit.IsPreparing,"one answer cancels every remaining mark");
+            Assert.That(board.Aquatic.bubbles.Contains(targets[0]),Is.True);Assert.That(kit.MarkedBubbles,Is.Empty);
+            Assert.That(actor.GetComponent<EnemyStagger>().IsStaggered,Is.False);
+            Assert.That(actor.CurrentSpecialTurnCount,Is.Zero);
+        }
+        else {while(board.CompletedValidPlayerMoves<due)yield return Move();}
+        Assert.That(damage,Is.EqualTo(answer?0:CombatAmounts.Round(actor.Definition.aquaticAbilityDamage*actor.RuntimeStats.DamageMultiplier)));
+        Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.BlocksBasic,Is.False);
+    }
+
+    [UnityTest] public IEnumerator CourtRevisionLegacyTheftWarningsRetireHarmlessly()
+    {yield return CourtLegacyTheft();}
+    private IEnumerator CourtLegacyTheft()
+    {
+        yield return LaunchCourt("pearl_thief","shellback_porter");yield return Move();
+        var actor=Enemy("pearl_thief");var kit=actor.GetComponent<AquaticEnemyAbility>();
+        kit.RestoreContinuation(new EnemyCombatSnapshot{aquaticEnemy=new AquaticEnemySnapshot{stage=1,action="THEFT",dueMove=99}},_=>null);
+        Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.MarkedBubbles,Is.Empty);Assert.That(actor.CurrentSpecialTurnCount,Is.Zero);
+        Assert.That(actor.GetComponent<EnemyStagger>().IsStaggered,Is.False);Assert.That(Run.Board.Aquatic.coffer,Is.Null);
+    }
     [UnityTest] public IEnumerator CourtRevisionFiniteReserveAndEmergencyCadence()
     {yield return FiniteCourtReserve();}
     private IEnumerator FiniteCourtReserve()

@@ -7,6 +7,7 @@ using UnityEngine;
 [Serializable]
 public sealed class AquaticEnemySnapshot
 {
+    public int version;
     public int stage, cycle, dueMove, answers, retaliatedMove = -1;
     public int recoveryUntil; // Legacy save field; retired post-cast delay.
     public int summonSlot = -1;
@@ -33,23 +34,26 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private IReadOnlyList<EnemyActor> roster;
     private IEnemySummonService summons;
     private CombatController combat;
-    private AquaticEnemySnapshot state = new AquaticEnemySnapshot();
+    private AquaticEnemySnapshot state = new AquaticEnemySnapshot{version=2};
     private bool pending, disposed;
     private readonly HashSet<EnemyAutoAttack> buffed = new HashSet<EnemyAutoAttack>();
     private static readonly HashSet<AquaticEnemyAbility> rallies = new HashSet<AquaticEnemyAbility>();
     private static readonly object RallyKey = new object();
     public bool IsPreparing => state.stage == 1;
-    public bool BlocksBasic => IsPreparing && Kind != EnemySpecialAbilityKind.SpineGuard;
+    public bool BlocksBasic => pending || (IsPreparing && Kind != EnemySpecialAbilityKind.SpineGuard);
     public int ResponseMoves => IsPreparing ? Mathf.Max(0, state.dueMove - board.CompletedValidPlayerMoves) : 0;
     public string CastName => state.action;
     public IReadOnlyList<Vector2Int> ResponseCells => state.marks;
     public IReadOnlyList<int> MarkedBubbles => state.bubbleTargets;
-    public Vector2Int? CofferTarget => IsPreparing && state.bubbleTargets.Count > 0 ? state.cofferSite : (Vector2Int?)null;
+    public Vector2Int? CofferTarget => IsPreparing && IsTheft ? state.cofferSite : (Vector2Int?)null;
     public int Answers => state.answers;
     public EnemyActor Target => Find(state.targetId);
     private EnemySpecialAbilityKind Kind => actor.Definition.SpecialAbilityKind;
     private int Move => board.CompletedValidPlayerMoves;
     private bool Queen => Kind == EnemySpecialAbilityKind.AbyssalRegent;
+    private bool IsTheft => state.action=="THEFT" || state.action=="AIR LEVY" || state.action=="SEIZURE";
+    private bool InvalidPressure => state.action=="PRESSURE" && (state.answers>0 || !board.IsFlooded ||
+        state.bubbleTargets.Count!=2 || state.bubbleTargets.Any(id=>!board.Aquatic.bubbles.Contains(id) || board.FindAquaticGem(id)==null));
     public void ConfigureSummonService(IEnemySummonService service) => summons = service;
 
     public void InitializeSpecialAbility(EnemyActor owner, BoardController initializedBoard, IReadOnlyList<EnemyActor> enemies)
@@ -77,7 +81,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
             Time.timeScale <= 0 || board.IsBusy || actor.HasAnimationActionInProgress || stagger?.IsStaggered == true) return;
         if (IsPreparing)
         {
-            if (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded) { FinishCast(); return; }
+            if (InvalidPressure) { FinishCast(); return; }
             if (state.targetId > 0 && Target == null) { FinishCast(); return; }
             if (Move < state.dueMove) return;
             if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
@@ -127,11 +131,12 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
                 else if (state.cycle == 1)
                 {
                     state.action = Queen ? "DEPTHS" : "PRESSURE";
-                    if (Queen || !board.IsFlooded)
+                    if (Queen)
                     {
-                        state.marks = board.SelectAquaticResponseCells(Queen ? 2 : 1);
-                        if (state.marks.Count < (Queen ? 2 : 1)) return false;
+                        state.marks = board.SelectAquaticResponseCells(2);
+                        if (state.marks.Count < 2) return false;
                     }
+                    else {state.bubbleTargets=board.AvailableAirTargets().Take(2).ToList();if(state.bubbleTargets.Count!=2)return false;}
                 }
                 else
                 {
@@ -148,18 +153,25 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private IEnumerator Begin()
     {
         bool instant = state.action == "RALLY" || state.action == "SNARE" || state.action == "SHELLGUARD" ||
-            state.action == "ROYAL WARD" || state.action == "DEEPGUARD";
+            state.action == "ROYAL WARD" || state.action == "DEEPGUARD" || IsTheft;
         int motion = actor.StartSpecialMotion(instant || state.action == "SPINES" ? "Ability" : "ChannelStart");
         if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
-        if (!ValidMotion(motion)) { pending = false; actor.EndSpecialAbilityAnimationAction(); yield break; }
+        if (!ValidMotion(motion)) { pending = false; actor.ResetSpecialCounter();actor.EndSpecialAbilityAnimationAction();ClearPlan();SetHeld(false);yield break; }
         bool used = true;
         if (state.action == "RALLY") ApplyRally();
         else if (state.action == "SNARE") used = board.TryApplyAquaticSnares(actor);
+        else if(IsTheft)
+        {
+            bool done=false;used=false;
+            if(board.TryQueueAirTheft(actor,state.bubbleTargets,state.cofferSite,
+                Kind==EnemySpecialAbilityKind.PearlTheft?1:2,Queen,ok=>{used=ok;done=true;}))
+                while(!done && !disposed)yield return null;
+        }
         else if (instant) Target?.GrantShield(Queen ? 20 : actor.Definition.aquaticShield);
         if (used)
         {
             actor.AnnounceCommittedCast(EnemyAbilityNames.Aquatic(state.action));actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
-            if (instant) { AdvanceRotation(); state.stage = 0; SetHeld(false); }
+            if (instant) { AdvanceRotation(); state.stage = 0; }
             else
             {
                 state.stage = 1; state.dueMove = Move + (state.action == "DEPTHS" ? 3 : actor.Definition.aquaticChannelMoves);
@@ -168,6 +180,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         }
         if (motion > 0) yield return actor.WaitForSpecialMotionComplete(motion);
         pending = false; actor.EndSpecialAbilityAnimationAction();
+        if(instant) {if(!used)actor.ResetSpecialCounter();ClearPlan();SetHeld(false);}
         actor.SpecialIdleState = IsPreparing ? (state.action == "SPINES" ? "InflatedIdle" : "ChannelHold") : null;
         actor.SpecialAutoAttackState = IsPreparing && state.action == "SPINES" ? "InflatedAttack" : null;
     }
@@ -182,21 +195,12 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         {
             switch (state.action)
             {
-                case "THEFT": case "AIR LEVY": case "SEIZURE":
-                    if (board.IsFlooded)
-                    {
-                        bool done = false;
-                        if (board.TryQueueAirTheft(actor, state.bubbleTargets, state.cofferSite,
-                            Kind == EnemySpecialAbilityKind.PearlTheft ? 1 : 2, Queen, _ => done = true))
-                            while (!done && !disposed) yield return null;
-                    }
-                    break;
                 case "SIPHON":
                     int before = attack.PlayerTarget.CurrentHealth;
                     Hit(actor.Definition.aquaticAbilityDamage);
                     if (!actor.IsDefeated) actor.RestoreHealth(Mathf.Max(0, before - attack.PlayerTarget.CurrentHealth));
                     break;
-                case "PRESSURE": if (!state.wetMode || board.IsFlooded) Hit(state.answers > 0 ? 10 : 25); break;
+                case "PRESSURE": if(!InvalidPressure) Hit(actor.Definition.aquaticAbilityDamage); break;
                 case "DEPTHS": Hit(40 - Mathf.Min(2, state.answers) * 15); break;
                 case "BOARDING":
                     var commanded = Target?.GetComponent<EnemyAutoAttack>();
@@ -236,7 +240,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if (state.stage == 0) return;
         AdvanceRotation(); state.stage = 0; state.recoveryUntil = 0; state.dueMove = 0;
-        actor.ResetSpecialCounter(); actor.SpecialIdleState = null; SetHeld(BlocksBasic);
+        actor.ResetSpecialCounter(); actor.SpecialIdleState = null; SetHeld(false);
         actor.SpecialAutoAttackState = null;
         state.marks.Clear(); state.bubbleTargets.Clear(); state.targetId = 0;
     }
@@ -249,6 +253,11 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private void Answer(int gemId, bool bubble, bool coffer)
     {
         if (!IsPreparing || (state.action != "PRESSURE" && state.action != "DEPTHS")) return;
+        if(state.action=="PRESSURE")
+        {
+            if(bubble && state.bubbleTargets.Contains(gemId)) {state.answers=1;state.bubbleTargets.Clear();}
+            return;
+        }
         if (coffer && state.wetMode) { state.answers = Queen ? 2 : 1; return; }
         if (gemId <= 0 || state.answeredIdentities.Contains(gemId)) return;
         var gem = board.FindAquaticGem(gemId);
@@ -266,6 +275,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     }
     private void Interrupted(EnemyStagger source, float duration, float remaining)
     {
+        if(pending)actor.EndSpecialAbilityAnimationAction();
         if (IsPreparing) FinishCast();
     }
 
@@ -292,8 +302,8 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private void Update()
     {
         if (disposed || Time.timeScale <= 0) return;
-        if (IsPreparing && !pending && ((state.targetId > 0 && Target == null) ||
-            (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded))) FinishCast();
+        if (IsPreparing && !pending && CombatMoveClock.Current?.IsBlockingWaveProgression!=true &&
+            ((state.targetId > 0 && Target == null) || InvalidPressure)) FinishCast();
         if (state.rallySeconds <= 0) return;
         state.rallySeconds = Mathf.Max(0, state.rallySeconds - Time.deltaTime);
         if (state.rallySeconds == 0) ClearRally();
@@ -305,7 +315,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     }
     public void RestoreContinuation(EnemyCombatSnapshot saved, Func<int, EnemyActor> enemyAt)
     {
-        ClearRally(); state = saved.aquaticEnemy == null ? new AquaticEnemySnapshot() :
+        ClearRally(); state = saved.aquaticEnemy == null ? new AquaticEnemySnapshot{version=2} :
             JsonUtility.FromJson<AquaticEnemySnapshot>(JsonUtility.ToJson(saved.aquaticEnemy));
         if(state.stage==2)
         {
@@ -313,6 +323,9 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
             state.stage=0;state.recoveryUntil=0;state.dueMove=0;
             ClearPlan();actor.ResetSpecialCounter();
         }
+        if(state.stage==1 && (IsTheft || (state.version<2 && state.action=="PRESSURE")))
+        {state.stage=0;state.dueMove=0;ClearPlan();actor.ResetSpecialCounter();}
+        state.version=2;
         if (state.rallySeconds > 0) foreach (long id in state.rallyTargets)
         {
             var target = Find(id)?.GetComponent<EnemyAutoAttack>();

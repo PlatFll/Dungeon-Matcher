@@ -125,7 +125,7 @@ public sealed partial class ForestFoundationPlayTests
         yield return null;
     }
 
-    [UnityTest] public IEnumerator CourtCofferCaptureOwnerDeathAndDrainHaveSinglePayout()
+    [UnityTest] public IEnumerator CourtCofferCaptureOwnerDeathDoesNotPayAndDrainDiscards()
     {
         yield return LaunchCourt("pearl_thief","shellback_porter");yield return Move();
         var board=Run.Board;PrepareSafeMove();board.Aquatic.StartFlood(12,Run.MoveClock.Tick);board.Aquatic.air=1;
@@ -142,9 +142,13 @@ public sealed partial class ForestFoundationPlayTests
         board.ReleaseAquaticOwner(owner.PersistentId);
         board.ReleaseAquaticOwner(owner.PersistentId);
         yield return Stable();
-        Assert.That(board.Aquatic.air,Is.EqualTo(3),"owner cleanup refunds once");
+        Assert.That(board.Aquatic.air,Is.EqualTo(1),"owner cleanup does not bypass the independent coffer");
+        Assert.That(board.Aquatic.coffer,Is.Not.Null);
+        Assert.That(board.GetGem(site.x,site.y),Is.Null);
+        board.StartCoroutine((IEnumerator)Call(board,"RemoveAirCoffer",false));yield return Stable();
+        Assert.That(board.Aquatic.air,Is.EqualTo(1),"drain cleanup gives no reward");
         Assert.That(board.Aquatic.coffer,Is.Null);
-        Assert.That(board.GetGem(site.x,site.y),Is.Not.Null,"coffer footprint refills");
+        Assert.That(board.GetGem(site.x,site.y),Is.Not.Null,"cleanup footprint refills");
     }
 
     [UnityTest] public IEnumerator CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes()

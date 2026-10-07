@@ -157,7 +157,7 @@ public partial class BoardController
             }
             if(value.barricade)
             {
-                var barrier=new BarricadeCellState { OwnerInstanceId=ownerAtSlot(value.barricadeOwner)?.GetInstanceID() ?? 0,
+                var barrier=new BarricadeCellState { OwnerInstanceId=value.barricadeStyle==EnemyBarricadeStyle.AirCoffer?0:ownerAtSlot(value.barricadeOwner)?.GetInstanceID() ?? 0,
                     RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle,
                     RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides,
                     ThornSafeSide=value.thornSafeSide,ThornDamage=value.thornDamage };

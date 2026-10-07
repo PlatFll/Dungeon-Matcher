@@ -47,11 +47,16 @@ rules take over without resetting the flood or minting oxygen.
 After enemy actions, zero AIR causes one five-damage shield-gated suffocation hit.
 The last wet move drains before this check, so it does not suffocate.
 
-Only one hostile Air Coffer may be active. A cast announces its fixed capture gems
-and footprint; placement is revalidated without removing the remaining AIR answer.
-Ordinary damage breaks its one/two durability. Break or owner death returns its
-stored charges once; drain and zone exit discard it without AIR or damage rewards.
-Board photographs preserve current AIR, consumed charges and deadlines.
+Only one hostile Pearl Coffer may be active. Theft occurs at the short ability
+animation's contact, without a response channel. The random ordinary footprint
+must preserve a useful response and an immediately reachable adjacent coffer hit;
+specials, pins, oxygen and protected targets cannot be replaced. No rescue bubble
+is minted. Each independent clear deals one durability hit, including with
+Siegecraft. The structure persists after its caster dies. Thief's one-hit coffer
+returns four AIR; Warden's two-hit coffer restores the five-block meter. Its first
+hit sheds shell plates and reveals the same pearl's one-hit state. Drain and zone
+exit discard the coffer without rewards. Photographs retain current resources and
+durability. Legacy warning casts retire harmlessly; restored coffers are independent.
 
 ## Roster and initial control values
 
@@ -63,14 +68,14 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Hammerhead Bruiser | 110 | 20 / 6 | Heavy club strike |
 | Needlefin Skirmisher | 50 | 5 + 5 / 4.2 | Two independently shield-gated darts |
 | Shellback Porter | 120 | 10 / 6.5 | Mallet; no hidden armor |
-| Pearl Thief | 65 | 5 / 6 | Ready in four moves; two-move theft warning, up to two bubbles, one-hit coffer; waits while dry |
+| Pearl Thief | 65 | 5 / 6 | Ready in four moves; instant exact-two theft, one-hit coffer, +4 AIR on break; waits while dry or fewer than two valid bubbles |
 | Pearl Cantor | 75 | 5 / 5.5 | Ready in two moves; two-move fixed-ally heal for 20, other ally below 75%; stagger interrupts |
 | Conch Marshal | 90 | 10 / 6 | Ready in four moves; other living allies gain 30% basic damage for five seconds; refreshes, strongest lease only, no speed buff |
 | Moray Siphoner | 80 | 5 / 6 | Ready in four moves; two-move 20-damage siphon; heals actual HP lost only |
 | Reef Netweaver | 85 | 5 / 6 | Ready in four moves; up to two thorny snares, shrink and expire after three future accepted moves |
 | Puffer Sentinel | 100 | 10 / 5.8 | Ready in four moves; inflated for two moves, keeps timed basics; opening manual-match damage retaliates for five once per action |
 | Breakwater Captain | 180 | 20 / 7 | Alternates 25-shield Shellguard and a two-move command for one fixed ally's complete basic sequence |
-| Lantern Warden | 210 | 15 / 6.5 | Alternates two-hit Air Levy (dry: 25 shield) and two-move Pressure Lance, 25 damage reduced to 10 by its answer |
+| Lantern Warden | 210 | 15 / 6.5 | Alternates instant exact-three Air Levy into a two-hit coffer (dry: 25 shield) and two-move Pressure Lance marking two bubbled physical gems; either answer cancels wholly; unanswered base 25 damage |
 | Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Crushing Depths, Court Muster; details below |
 | Skittercrab | 25 | 5 / 2.8 | Independent summon, no repeat farming reward |
 

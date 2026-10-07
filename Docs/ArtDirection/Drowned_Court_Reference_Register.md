@@ -54,3 +54,20 @@ and the entire reserve remain unused. No credit purchases occurred.
 Unselected attempts remain in `Production/MotionRaw` and job records for provenance.
 Only `Production/Selected` is an import source. Later art changes must retain this
 distinction and update hashes rather than relabeling an unseen revision approved.
+
+## Roster revision pearl candidates
+
+`ArtSource/DrownedCourt/RosterRevision` holds native direct-pixel candidates, not
+user-approved replacements. The 32×32 one-hit pearl and armored two-hit variant
+share an exact bright pink core and marine shell ramp. Exposed pearl is 32×32;
+orbit pearl/pop are 12×12, shell fragment 8×8 and microbubble 6×6. `pearls.json`
+records each PNG's actual dimensions, opaque palette count (2–9), binary alpha and
+SHA-256. `PearlReview.png` displays actual 1× and nearest-neighbor 3× comparisons.
+The pink magical ramp is recorded explicitly; shell colors come from the existing
+Court coffer. No character redesign or PixelLab generation was used.
+
+`Tools/author_court_pearls.py` preserves the editable construction. Run the scoped
+`CourtRevisionImporter.Run` after a historical Court rebuild; it sets FullRect,
+64 PPU, Point, uncompressed, unmipped sprite imports and only the pearl theme
+fields. It does not overwrite environment prefabs. Shell fracture is a short
+presentation-only burst using the same native shell fragment.

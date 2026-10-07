@@ -5,7 +5,25 @@ Branch `codex/roster-endless-revision`, based on merged main
 slices of [the approved worklist](../ROSTER_ENDLESS_REVISION.md), not the
 whole requested revision. No merge is authorized.
 
-## Channel lifecycle
+## Court coffer and Pressure slice
+
+Eleven focused Unity checks passed (`9ab7e42b-0dbf-4142-8185-b4a476e142fb.xml`
+under `.utmp/ForestValidation`), with no failures or skipped cases. They exercise
+the actual muted scene, accepted-action contact timing, exact two/three captures,
+no theft warning, special preservation, ordinary footprint removal, independent
+caster-death/Continue durability, +4/full AIR and duplicate payout prevention,
+shell-break events, insufficient-resource deferral, two physical Pressure targets,
+Continue, either-answer cancellation, full unanswered damage and legacy migration.
+Four AIR tests overlap tranche 6; do not add counts across slices blindly.
+
+`Tools/Validate-Unity.ps1` completed successfully on Unity 6000.3.19f1 (exit 0):
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c5ee3e53-b906-4d03-8656-5053960c0e90.log`.
+The native source comparison is `ArtSource/DrownedCourt/RosterRevision/PearlReview.png`.
+Seven candidates have binary alpha, 2–9 opaque colors, actual native dimensions
+6–32 pixels, 64 PPU, Point/uncompressed/unmipped FullRect imports. No paid jobs.
+Actual four-viewport pearl/Pressure presentation checks remain in the final pass.
+
+## Channel lifecycle evidence
 
 Unity 6000.3.19f1, actual Game scene, disposable account saves, Editor audio muted.
 

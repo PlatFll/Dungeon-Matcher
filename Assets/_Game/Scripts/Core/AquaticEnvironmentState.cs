@@ -112,4 +112,5 @@ public sealed class AquaticCofferState
 {
     public int id, x, y, charges;
     public long ownerId;
+    public bool refillAir, royal;
 }

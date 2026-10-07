@@ -56,6 +56,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
         airReturn=GameUi.Label("AirReturned",strip,"+2",new Vector2(40,20),new Vector2(-20,20),16);
         airReturn.color=new Color(.5f,1,.85f);airReturn.gameObject.SetActive(false);
         board.AirReceipt+=AnimateAirReceipt;
+        if(GetComponent<CourtBoardEffects>()==null)gameObject.AddComponent<CourtBoardEffects>();
     }
     private void LateUpdate()
     {

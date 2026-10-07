@@ -652,7 +652,8 @@ public partial class BoardController
                 continue;
             }
 
-            int durabilityDamage = IsRoot(state) ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
+            int durabilityDamage = IsRoot(state) || state.Style==EnemyBarricadeStyle.AirCoffer
+                ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
 
             state.RemainingDurability -= durabilityDamage;
 
@@ -685,6 +686,7 @@ public partial class BoardController
             }
             else
             {
+                if(state.Style==EnemyBarricadeStyle.AirCoffer) AquaticCofferDamaged(cell);
                 /*
                  * Keep the current stone sprite visible for the hit flash.
                  * The VFX coroutine swaps to level 1 only at peak white, then
@@ -1197,7 +1199,9 @@ public partial class BoardController
         BarricadeCellState state)
     {
         if(state?.Style==EnemyBarricadeStyle.AirCoffer && GameplayThemeSkin.Current?.airCoffer!=null)
-            return GameplayThemeSkin.Current.airCoffer;
+            return state.RemainingDurability>1
+                ? GameplayThemeSkin.Current.armoredAirCoffer ?? GameplayThemeSkin.Current.airCoffer
+                : GameplayThemeSkin.Current.airCoffer;
         if(state?.Style==EnemyBarricadeStyle.Thorn && thornBarricadeSprite!=null) return thornBarricadeSprite;
         if(IsRoot(state))
         {

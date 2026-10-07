@@ -19,6 +19,7 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite[] vineSpreadFrames, vineHitFrames;
     public Sprite healEffect, interruptEffect, resonanceIcon;
     public Sprite airBubble, thornySnare, airCoffer, pressureSeal;
+    public Sprite armoredAirCoffer, exposedPearl, tributePearl, shellFragment, pearlPop, waterMicroBubble;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;
     [System.Serializable] public struct IconReplacement { public Sprite source, themed; }
     public IconReplacement[] abilityIcons;
