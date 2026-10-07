@@ -2,7 +2,8 @@
 
 User authority: `C:/Users/USER/.codex/attachments/6ce2a904-6cc6-46a9-acda-b262f66dcd5a/Pasted text.txt`.
 Base main: `e572a88227d036af765e057831c46a2cc067630d` (merged PR #181).
-Branch: `codex/roster-endless-revision`. No merge authorized for this new pass.
+Branch: `codex/roster-endless-revision`. The user authorized merging the complete
+pass, including the pre-usage-stop slices, on 2026-10-08.
 
 ## Scope and implementation order
 
@@ -70,4 +71,4 @@ King motion, native comparisons, coffer motion and wave-150 captures. The scalin
 slice captures are explicitly labeled as preceding the final Forest/status layout
 refinement. New art needs user visual review; provisional pacing needs human
 playtesting. Automated Editor evidence does not establish physical-device or
-human animation-feel approval. Do not merge without explicit approval.
+human animation-feel approval. Explicit merge approval was received on 2026-10-08.

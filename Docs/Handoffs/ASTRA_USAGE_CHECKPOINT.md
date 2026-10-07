@@ -2,7 +2,8 @@
 
 ## Current task
 
-The approved enemy roster/endless revision is complete for review. **Do not merge.**
+The approved enemy roster/endless revision is complete. The user authorized merging
+all its slices on 2026-10-08, including work completed before the 5% usage stop.
 User brief: `C:/Users/USER/.codex/attachments/6ce2a904-6cc6-46a9-acda-b262f66dcd5a/Pasted text.txt`.
 Branch: `codex/roster-endless-revision`; base merged main `e572a88227d036af765e057831c46a2cc067630d`.
 Tranches 1–11 end at `9432bdcb61181cfada6d9d5f8a7c3f99bcc09122`.
@@ -49,7 +50,7 @@ The final validator passed. Main was fetched and still matches base.
 Next gate: user visual review of the new direct native art and gameplay tuning.
 No requested implementation remains. Provisional values are listed in the
 worklist; physical-device and human pacing/animation-feel checks remain open.
-No merge is authorized, and no reset credit or paid generation was used.
+Merge approval was received on 2026-10-08. No reset credit or paid generation was used.
 
 ## Preserve user work
 

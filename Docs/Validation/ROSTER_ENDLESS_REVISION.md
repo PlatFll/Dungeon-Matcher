@@ -3,8 +3,21 @@
 Branch `codex/roster-endless-revision`, based on merged main
 `e572a88227d036af765e057831c46a2cc067630d`. This report covers completed
 slices and final integration of [the approved worklist](../ROSTER_ENDLESS_REVISION.md).
-No merge is authorized. Earlier pending-review notes below describe their slice's
+Merge approval was received on 2026-10-08. Earlier pending-review notes below describe their slice's
 state at the time; the final review section records subsequent results.
+
+## Merge gate — 2026-10-08
+
+PR #182 was the only open PR. Its head `86c017ebbd1b69331dc280862b98da3f8d439715`
+contains both pre-usage-stop implementation commits (`eafd0f8`, `78c98cd`) and all
+subsequent slices. Main still matched the validated base; no code integration
+conflict or remote review/check failure was present. There were no remote CI runs.
+`Tools/Validate-Unity.ps1` passed again on Unity 6000.3.19f1, exit 0:
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-184d03bb-ae6b-4a0b-83ee-5900c25189c0.log`.
+Only merge-authorization/status documentation changes follow that validated head.
+The four original user modifications still match their starting hashes and are
+excluded from the PR. Prior regression evidence remains applicable; the broad
+suite was not repeated for unchanged gameplay.
 
 ## Combined regression
 
