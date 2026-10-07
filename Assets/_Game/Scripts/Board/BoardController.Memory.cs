@@ -76,7 +76,7 @@ public partial class BoardController
         var reopenedMines = new List<Vector2Int>();
         foreach(var cell in saved.cells)
         {
-            if(cell.barricadeStyle!=EnemyBarricadeStyle.Root && cell.barricadeStyle!=EnemyBarricadeStyle.Heartroot) continue;
+            if(!IsRootStyle(cell.barricadeStyle)) continue;
             if(!cell.barricade) continue;
             if(!currentRoots.TryGetValue(cell.rootId,out var root) || !Living(ownerAtKey(cell.barricadeOwner)))
             { cell.barricade=false;reopenedMines.Add(new Vector2Int(cell.x,cell.y)); }

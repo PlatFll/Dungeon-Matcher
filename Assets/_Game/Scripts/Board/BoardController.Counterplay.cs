@@ -32,7 +32,8 @@ public partial class BoardController
         foreach(var pair in gemPairThreats) if(pair.Owner==owner && IsGemPairThreatValid(pair))
             text.AppendLine($"Hammer: clear either marked gem within {Mathf.Max(0,pair.DueMove-completedValidPlayerMoves)} moves.");
         foreach(var set in gemSetThreats) if(set.Owner==owner && !set.Ended)
-            text.AppendLine($"{(set.Vine?"Root":set.RestorationPresentation?"Restoration":"Judgment")}: {set.Targets.Count} marks remain, {Mathf.Max(0,set.DueMove-completedValidPlayerMoves)} moves left.");
+            text.AppendLine($"{(set.Label ?? (set.Vine?"Root":set.RestorationPresentation?"Restoration":"Judgment"))}: {set.Targets.Count} marks remain, {Mathf.Max(0,set.DueMove-completedValidPlayerMoves)} moves left."+
+                (set.CancelOnAnyTargetLost?" Clear any marked gem to cancel the whole attack.":""));
         foreach(var lane in laneThreats) if(lane.Owner==owner && !lane.Ended)
             text.AppendLine($"Bombardment: row {lane.Row+1}, column {lane.Column+1}, {Mathf.Max(0,lane.DueMove-completedValidPlayerMoves)} moves left. Clearing the lane does not cancel it.");
         foreach(var threat in cellResponseThreats) if(threat.Owner==owner && !threat.Ended)

@@ -52,7 +52,12 @@ public sealed partial class ForestFoundationPlayTests
     private IEnumerator ClearRootSide(BoardCellSnapshot root)
     {
         PrepareSafeMove(); // Remove incidental matches/special chains from the single-hit fixture.
-        var board=Run.Board;var gem=board.GetGem(root.x-1,root.y);
+        var board=Run.Board;
+        var otherRoots=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).cells
+            .Where(c=>c.rootId>0 && c.rootId!=root.rootId).ToArray();
+        var direction=new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down}
+            .First(d=>!otherRoots.Any(c=>Mathf.Abs(c.x-root.x-d.x)+Mathf.Abs(c.y-root.y-d.y)<=1));
+        var gem=board.GetGem(root.x+direction.x,root.y+direction.y);
         Assert.That(gem,Is.Not.Null);
         var cleared=new System.Collections.Generic.HashSet<Gem>{gem};
         // Exercise the same hit-before-destruction ordering as rewardable clears.
@@ -72,15 +77,18 @@ public sealed partial class ForestFoundationPlayTests
         yield return ClearRootSide(root);Assert.That(Run.Board.OwnedRootCount(owner),Is.Zero);
         Assert.That(Run.Board.OwnedVineCount(owner),Is.Zero);Assert.That(Run.Board.GetGem(root.x,root.y),Is.Not.Null);
     }
-    [UnityTest] public IEnumerator ProductionWardenWarnsAndStaggerCancelsBeforePlanting()
+    [UnityTest] public IEnumerator ProductionWardenStaggerCancelsAuthoredPlacementBeforeContact()
     {
         yield return Launch(9,true);QuietKitFixture();var warden=Enemy("barkhide_warden");var kit=warden.GetComponent<ForestMilestoneEnemyAbility>();
         Set(warden,"currentHealth",9995); // This test isolates interruption from cascade lethals.
-        yield return Move();yield return Move();Assert.That(kit.IsPreparing,Is.True);Assert.That(kit.ResponseMoves,Is.EqualTo(1));
-        float basic=warden.GetComponent<EnemyAutoAttack>().RemainingAttackTime;
-        yield return new WaitForSeconds(.2f);Assert.That(warden.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic));
-        var stagger=warden.GetComponent<EnemyStagger>();stagger.RestoreContinuation(new EnemyCombatSnapshot());stagger.ApplyStagger(2,2);yield return Stable();
-        Assert.That(stagger.IsStaggered,Is.True);Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.Outcome,Is.EqualTo("Interrupted"));
+        var stagger=warden.GetComponent<EnemyStagger>();bool began=false;
+        warden.SpecialMotionRequested+=_=>
+        {
+            began=true;Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.BlocksBasic,Is.True);
+            stagger.RestoreContinuation(new EnemyCombatSnapshot());stagger.ApplyStagger(2,2);
+        };
+        ReadyForest(warden);yield return Move();Assert.That(began,Is.True);
+        Assert.That(stagger.IsStaggered,Is.True);Assert.That(kit.IsPreparing,Is.False);Assert.That(kit.Outcome,Is.EqualTo("Fizzled"));
         Assert.That(Run.Board.OwnedRootCount(warden),Is.Zero);
     }
     [UnityTest] public IEnumerator ProductionWardenRootProtectsEveryAllyAndPhotoCannotRepairOrResurrectIt()
@@ -105,6 +113,8 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Board.OwnedRootCount(warden),Is.Zero);Assert.That(Run.Board.GetGem(root.x,root.y),Is.Not.Null);
     }
     [UnityTest] public IEnumerator ProductionMatriarchAoEHealRootsAndDeadlineSurviveSaveExactlyOnce()
+    {yield return MatriarchAoEContinue();}
+    private IEnumerator MatriarchAoEContinue()
     {
         yield return Launch(11,true);QuietKitFixture();
         var boss=Enemy("briar_matriarch");boss.ResolveDamageWithoutFeedback(80);

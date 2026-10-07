@@ -317,7 +317,6 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(0)] private int barkArmorShield = 30;
     [SerializeField, Min(0)] private int thornVolleyDamage = 5;
     [SerializeField, Min(0)] private int fallingBoughDamage = 30;
-    [SerializeField, Min(0)] private int fallingBoughWeakenedDamage = 15;
     public EnemyDefinition ForestSummon => forestSummon;
     public int ThornRetaliationDamage => CombatAmounts.Round(thornRetaliationDamage);
     public float WarRhythmSpeed => Mathf.Max(1, warRhythmSpeed);
@@ -326,7 +325,6 @@ public sealed class EnemyDefinition : ScriptableObject
     public int BarkArmorShield => CombatAmounts.Round(barkArmorShield);
     public int ThornVolleyDamage => CombatAmounts.Round(thornVolleyDamage);
     public int FallingBoughDamage => CombatAmounts.Round(fallingBoughDamage);
-    public int FallingBoughWeakenedDamage => CombatAmounts.Round(fallingBoughWeakenedDamage);
 
     [Header("Forest ritual tuning")]
     [SerializeField,Min(0)] private int forestRenewalBaseHeal=20;

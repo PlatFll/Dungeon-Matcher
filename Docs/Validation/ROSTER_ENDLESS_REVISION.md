@@ -123,3 +123,48 @@ Normal base damage remains 12; empowered base 18 is provisional serialized data.
 New animation art remains a review candidate. This is muted Editor/runtime
 evidence, not physical-device or human-feel approval. Forest/Court revision
 tranches and final combined regression remain open.
+
+## Forest revision — validated implementation, art awaiting review
+
+- Initial `.utmp/ForestValidation/24087d55-a4b5-4517-b15b-2535d9415032.xml`:
+  8 passed / 9 failed. Fixtures attempted casts outside the accepted-move owner;
+  two new scene coroutines needed explicit wrappers. One paired-root fixture
+  struck both roots because the selected side bordered both; it now isolates the
+  intended target. A real placement gap allowed structures to bury physical marks;
+  the shared placement candidate check now protects both physical and cell marks.
+- Second `.utmp/ForestValidation/28b1146f-8378-41a9-8be1-3d6b9431e774.xml`:
+  17 passed / 2 failed. Root contact and pre-contact interruption exposed a missing
+  `timeSpecialAbilityFromAnimation` opt-in. The importer now sets both required
+  flags; explicit asset/event checks and four viewport captures were added.
+- Third `.utmp/ForestValidation/901dbc1c-7677-4205-be0e-af1af0aa9c20.xml`:
+  10 passed / 2 failed. Warden's instant pending action needed to release its
+  animation token on Stagger; its old handler covered only multi-move channels.
+  Warded's 14-unit label was too short for native Thaleah at the small viewport;
+  the final container is now 42×20 beside the weakness gem. Review also added a Bough guard so answering a
+  long warning cannot recast on that same accepted move when readiness is full.
+
+- `0818681c-24b2-4e05-a717-b5220a819555.xml`: 15/16 passed. The answered Bough
+  reset ran before move readiness advanced; it now finishes within the accepted
+  coordinator. `1eec1a72-9e23-4bbf-adae-3c702db98bca.xml`: all five reruns passed.
+- `6c482073-fd33-4d14-9bf8-16905dc9c0b7.xml`: 10/12 passed. Render review caught
+  Warded clipping below the battle mask, then extending outside the right slot.
+  Final labels use the weakness lane; text, culling, glyph count and position are
+  asserted. `40a09de2-adeb-487c-8b95-6c9734dbcbf2.xml`: both reruns passed.
+- `e7ff7a69-b318-4d1c-969c-e87d498a40ed.xml`: 7/9 passed. The screenshot fixture
+  froze a partial hit flash; it now waits for the actual renderer to reach zero.
+  Matriarch's scene coroutine needed the same explicit wrapper as other new cases.
+  `f65fb7e0-27f7-4eff-9193-cc9c10078a2b.xml`: both final reruns passed.
+  One intermediate run failed compilation on an unqualified test `Color` name;
+  it was corrected before these executed tests.
+- **23 unique current affected cases passed**, including the four separate
+  Rootbinder/Warden contact and legacy-warning cases that replace two earlier
+  combined failing fixtures. Counts above overlap. No current failed case remains.
+- All four actual viewport images are in `.utmp/RosterEndless/Forest/`.
+  Warded is visible, root hit flashes settle, and native root art is crisp.
+  The synthetic right-slot Matriarch still demonstrates the older tall-character
+  counter/settings crowding at short portrait; final combined UI review must fix it.
+- Four 64×64 root candidates preserve the approved palettes (17/26 opaque colors),
+  binary alpha and Point/uncompressed imports. Zero PixelLab generations.
+- Required Unity validator passed, exit 0:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-5cdfe417-8888-4cb4-9d28-d8e3a6b8f422.log`.
+  Editor audio stayed muted. Original four user files match their starting hashes.

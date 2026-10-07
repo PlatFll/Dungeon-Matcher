@@ -25,7 +25,7 @@ MonoBehaviour:
   displayName: Ancient Treant
   category: 2
   description: Bark Armor grants ordinary shield; breaking it staggers the Treant.
-    Answer a Falling Bough mark within two moves to weaken its heavy hit.
+    Clear either marked gem within two moves to cancel Falling Bough entirely.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 68387f00c3dec8241b94009b50361dd6, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 09b68149395cc3247865001759beb46d, type: 2}
@@ -87,7 +87,6 @@ MonoBehaviour:
   barkArmorShield: 30
   thornVolleyDamage: 5
   fallingBoughDamage: 30
-  fallingBoughWeakenedDamage: 15
   forestRenewalBaseHeal: 20
   forestHeartrootHealBonus: 20
   forestHarvestBaseDamage: 20

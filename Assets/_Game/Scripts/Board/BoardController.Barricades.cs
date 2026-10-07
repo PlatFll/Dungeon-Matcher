@@ -339,8 +339,8 @@ public partial class BoardController
                 if (protectSpecialGems &&
                     GetGem(column, row).SpecialType != GemSpecialType.None)
                     continue;
-                // A new structure cannot bury an active fixed-cell response.
-                if(cellResponseThreats.Exists(t=>!t.Ended && t.Cells.Contains(new Vector2Int(column,row))))
+                // Both physical-gem and fixed-cell responses remain answerable.
+                if(IsProtectedWarningTarget(GetGem(column,row)))
                     continue;
 
                 candidates.Add(
@@ -406,7 +406,7 @@ public partial class BoardController
             yield break;
         }
 
-        bool roots=request.BarricadeStyle==EnemyBarricadeStyle.Root || request.BarricadeStyle==EnemyBarricadeStyle.Heartroot;
+        bool roots=IsRootStyle(request.BarricadeStyle);
         List<Vector2Int> candidates = BuildBarricadableCellList(request.ProtectSpecialGems);
         if(roots) candidates.RemoveAll(c=>!CanHostRoot(GetGem(c.x,c.y)) ||
             (request.SetThreat!=null && !request.SetThreat.Targets.Contains(GetGem(c.x,c.y))));
@@ -822,6 +822,11 @@ public partial class BoardController
         state.ViewObject.transform.localScale =
             Vector3.one * scale;
         if(IsRoot(state)) RefreshRootDurability(state,spriteExtent);
+        if(state.Style==EnemyBarricadeStyle.ShieldRoot || state.Style==EnemyBarricadeStyle.Heartroot)
+        {
+            var pulse=state.ViewObject.GetComponent<RootLifePulse>() ?? state.ViewObject.AddComponent<RootLifePulse>();
+            pulse.Bind(state.Renderer,state.Style==EnemyBarricadeStyle.Heartroot);
+        }
         if(state.Style==EnemyBarricadeStyle.Thorn) RefreshThornSides(state,spriteExtent);
     }
 
@@ -1197,6 +1202,11 @@ public partial class BoardController
         if(IsRoot(state))
         {
             var theme=GameplayThemeSkin.Current ?? Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
+            Sprite variant=state.Style==EnemyBarricadeStyle.ShieldRoot
+                ? (state.RemainingDurability>1?theme?.shieldRootLevelTwo:theme?.shieldRootLevelOne)
+                : state.Style==EnemyBarricadeStyle.Heartroot
+                    ? (state.RemainingDurability>1?theme?.heartrootLevelTwo:theme?.heartrootLevelOne):null;
+            if(variant!=null) return variant;
             return (state.RemainingDurability>1 ? theme?.rootLevelTwo : theme?.rootLevelOne) ?? theme?.anchorOverlay ?? GetBarricadeFallbackSprite();
         }
         bool isLevelTwoStone =

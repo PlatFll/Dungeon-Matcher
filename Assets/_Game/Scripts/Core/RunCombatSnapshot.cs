@@ -80,6 +80,8 @@ public sealed class RunCombatSnapshot
     public int rootDurability;
     public bool requiresVine, answered;
     public EnemyBarricadeStyle rootStyle;
+    public bool cancelOnAnyTargetLost;
+    public string threatLabel;
     public bool rootSpreading, playerInterrupted;
     public List<int> targets = new List<int>();
 }

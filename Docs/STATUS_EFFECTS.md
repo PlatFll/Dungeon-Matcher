@@ -63,7 +63,17 @@ queries use the same final arrangement. When flood/status expiry changes the rul
 the board rechecks availability and uses its existing reshuffle if necessary.
 Saving waits for that check; previews themselves are transient and are not saved.
 
-## Future buff vocabulary (not implemented by this specification)
+## Enemy Warded (implemented by the roster revision)
+
+Warded reduces incoming damage by 25% through EnemyActor's central damage path.
+It is active while any living Warden has its structural Root. All living enemies,
+including new summons, inherit the effect. Multiple providers contribute one
+reduction; deleting one source cannot remove another. This is separate from
+ordinary shield HP. The board saves root ownership/durability; continuation
+rebuilds source predicates rather than restoring a stale independent duration.
+Combat labels and inspection display the named buff. No duration or extra HP bar.
+
+## Other future buff vocabulary (not implemented by this specification)
 
 - Regeneration: periodic healing through the ordinary HP path.
 - Fortified: temporary next-hit protection with a clear consumption condition.

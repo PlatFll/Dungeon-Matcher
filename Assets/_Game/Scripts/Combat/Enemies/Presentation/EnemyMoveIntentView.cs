@@ -11,10 +11,12 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     private EnemyAutoAttack attack;
     private EnemyChannelRuntime channel;
     private TMP_Text text;
+    private TMP_Text buffs;
     private RectTransform bar;
     private Image fill;
     private RectTransform link;
     private RectTransform visual;
+    private RectTransform weakness;
     public void Initialize(EnemyActor owner)
     {
         actor=owner;
@@ -31,6 +33,10 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         if(slot==null) return;
         text=GameUi.Label("MoveIntent",slot.transform,"",new Vector2(108,16),Vector2.zero,12);
         text.textWrappingMode=TextWrappingModes.NoWrap;
+        weakness=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true)?.transform as RectTransform;
+        buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(42,20),Vector2.zero,8);
+        buffs.textWrappingMode=TextWrappingModes.NoWrap;
+        buffs.color=new Color(.72f,.94f,.5f);buffs.raycastTarget=false;
         bar=GameUi.Rect("ChannelTrack",text.transform,new Vector2(64,4),new Vector2(0,-9));
         var track=bar.gameObject.AddComponent<Image>();track.color=new Color(.12f,.18f,.12f);track.raycastTarget=false;
         var f=GameUi.Rect("RemainingMoves",bar,new Vector2(64,4),Vector2.zero);fill=f.gameObject.AddComponent<Image>();fill.color=new Color(.6f,.9f,.4f);
@@ -49,6 +55,8 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         if(text==null || actor==null) return;
         bool visible=!actor.IsDefeated;
         text.gameObject.SetActive(visible);
+        buffs.gameObject.SetActive(visible && actor.IsWarded);
+        buffs.text=actor.IsWarded?"WARDED":"";
         if(!visible) { if(link!=null) link.gameObject.SetActive(false);return; }
         // Follow the actual rendered canvas after the pixel presenter resizes
         // it. A fixed slot-center offset crosses the face on taller screens.
@@ -63,7 +71,6 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         var aquatic=GetComponent<AquaticEnemyAbility>();
         text.text=casting ? $"HEAL IN {channel.ResponseMoves}" :
             milestone!=null && milestone.IsPreparing ? $"{milestone.CastName} IN {milestone.ResponseMoves}" :
-            milestone!=null && milestone.IsProtected ? "ROOT GUARD" :
             milestone!=null && milestone.BlocksBasic ? "CASTING" :
             roots!=null && roots.IsWarning ? $"ROOT IN {roots.ResponseMoves}" :
             warning ? $"{pressure.CastName} IN {pressure.ResponseMoves}" :
@@ -96,7 +103,14 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         text.rectTransform.position=visual.TransformPoint(new Vector3(visual.rect.center.x,visual.rect.yMax,0));
         text.rectTransform.anchoredPosition+=Vector2.up*16;
         GameplayPixelGrid.Snap(text.rectTransform);
+        if(buffs!=null && weakness!=null)
+        {
+            // Share the weakness lane. Below it is the battle frame's mask;
+            // above the sprite is already reserved for cast/attack counters.
+            buffs.rectTransform.position=weakness.TransformPoint(new Vector3(weakness.rect.xMax+24,weakness.rect.center.y,0));
+            GameplayPixelGrid.Snap(buffs.rectTransform);
+        }
     }
-    private void OnDisable() { if(text!=null) text.gameObject.SetActive(false);if(link!=null) link.gameObject.SetActive(false); }
-    private void OnDestroy() { if(text!=null) Destroy(text.gameObject);if(link!=null) Destroy(link.gameObject); }
+    private void OnDisable() { if(text!=null) text.gameObject.SetActive(false);if(buffs!=null) buffs.gameObject.SetActive(false);if(link!=null) link.gameObject.SetActive(false); }
+    private void OnDestroy() { if(text!=null) Destroy(text.gameObject);if(buffs!=null) Destroy(buffs.gameObject);if(link!=null) Destroy(link.gameObject); }
 }

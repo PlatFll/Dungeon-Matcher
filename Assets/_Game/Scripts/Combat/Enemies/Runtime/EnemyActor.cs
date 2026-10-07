@@ -451,7 +451,7 @@ public sealed partial class EnemyActor : MonoBehaviour
 
         float incomingMultiplier = IncomingDamageMultiplier != null
             ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
-        float sharedReduction=1f;
+        float sharedReduction=IsWarded?.75f:1f;
         foreach(var reduction in sharedDamageReductions.Values)
             if(reduction!=null) sharedReduction=Mathf.Min(sharedReduction,Mathf.Clamp01(reduction()));
         double resolvedDamage = amount * (double)incomingMultiplier * sharedReduction *

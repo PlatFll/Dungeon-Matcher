@@ -69,6 +69,8 @@ public partial class BoardController
         public int EnvironmentMove;
         public Action Pulse;
         public Func<int, int, IEnumerator> TargetSequence;
+        public bool CompactTargets,CancelOnAnyTargetLost,PulseBeforeClear;
+        public string ThreatLabel;
         public bool RestorationPresentation;
         public bool RequiresVine;
         public CellResponseThreat CellThreat;

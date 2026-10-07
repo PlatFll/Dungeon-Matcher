@@ -107,8 +107,7 @@ public partial class BoardController
         var openings = new List<BoardCellSnapshot>();
         foreach (var cell in saved.cells)
         {
-            bool root = cell.barricade && (cell.barricadeStyle == EnemyBarricadeStyle.Root ||
-                cell.barricadeStyle == EnemyBarricadeStyle.Heartroot);
+            bool root = cell.barricade && IsRootStyle(cell.barricadeStyle);
             if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer) continue;
             cell.mined = cell.barricade = false;
             cell.crumbleRestoreMove = 0;

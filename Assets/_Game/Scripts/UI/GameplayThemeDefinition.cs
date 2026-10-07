@@ -15,6 +15,7 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite settingsNormal, settingsHighlighted, settingsPressed, settingsDisabled;
     public Sprite panelShell, energyFrame, vineOverlay, anchorOverlay, vineWarning;
     public Sprite rootLevelOne, rootLevelTwo;
+    public Sprite shieldRootLevelOne,shieldRootLevelTwo,heartrootLevelOne,heartrootLevelTwo;
     public Sprite[] vineSpreadFrames, vineHitFrames;
     public Sprite healEffect, interruptEffect, resonanceIcon;
     public Sprite airBubble, thornySnare, airCoffer, pressureSeal;

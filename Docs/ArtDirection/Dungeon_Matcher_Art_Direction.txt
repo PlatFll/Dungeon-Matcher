@@ -81,6 +81,18 @@ Earlier world-direction notes describe modest, scrappy locals/novices and coordi
 
 ## 3. Rendering rules
 
+### Forest root variants — revision candidates, 2026-10-07
+
+`ArtSource/Forest/RosterRevision/` contains direct native edits of approved
+Root1_B / Root2_B. ShieldRoot adds a connected wooden shield growth; HeartRoot
+adds a heart-shaped wooden growth. Existing roots surround and cross the added
+forms. Both have damaged and full-durability drawings. Each remains 64×64,
+binary alpha, with only its source palette (17 / 26 opaque colors). PNG hashes and
+source paths are recorded in `root-variants.json`; `RootVariantReview.png` is a
+nearest-neighbor 4× comparison, not the native assets. A separate low-alpha glow
+child supplies the restrained pulse in Unity and becomes static under Reduced
+Motion. These are review candidates, not a new user approval. No PixelLab calls.
+
 ### Pixel scale and silhouettes
 
 Current character reference canvases are 64 × 64 pixels. Preserve the native size and occupied footprint of an existing target. A 64 × 64 image with the character shrunk inside it is not equivalent. Do not move the art to the bottom edge merely to match a comparison layout.

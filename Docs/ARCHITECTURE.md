@@ -158,7 +158,7 @@ leaves ordinary EnemyStagger as the only penalty. Legacy heal/Court state 2 and
 forest milestone state 4 migrate to idle without replaying effects or advancing
 an already-consumed rotation. Legacy recovery deadlines are read for compatibility
 only. Authored animation completion and real response windows remain intact.
-Rootbinder submits generic warnings/placements to the existing board
+Rootbinder submits instant generic placements to the existing board
 queue. Vines are cell-based presentation overlays in the board's saved state,
 separate from chain/pin maps. Roots reuse structural occupancy, durability,
 safe-placement/refill and the same mutation queue. The first vine clear records
@@ -167,10 +167,14 @@ The environment growth deadline advances independently of forced surges. Board
 photos preserve that deadline and solved/damaged root progress.
 
 The expanded roster uses definition-selected ForestCombatAbility (rage, independent
-summons, shared non-stacking rhythm) and ForestPressureAbility (fixed-cell warnings
-and ordinary Treant shield). BoardController.CellThreats owns response cells and
-exactly-once queued resolution. Removing a vine permanently answers its volley mark;
-clearing any Bough cell weakens that hit. Board snapshots use warning kind 3.
+summons, shared non-stacking rhythm) and ForestPressureAbility (fixed-cell Volley,
+physical Bough marks and ordinary Treant shield). BoardController.CellThreats owns
+Volley response cells (snapshot kind 3); removing a vine permanently answers its
+shot. Bough uses the existing GemSetThreat (kind 1), compact selection, saved target
+order and CancelOnAnyTargetLost. Any cleared/invalid target ends it without Stagger.
+At release contact an unanswered Bough applies one impact then consumes its marks
+under the same board hold before one environmental settlement. Legacy kind-3 Bough
+warnings fizzle on restore; they cannot reconstruct their original gem identities.
 Enemy continuation owners save persistent summon/buff targets, remaining effect
 units, rage and Treant cycle. Thorn barricades save one safe-side bit and reuse the
 structural pipeline; only opening manual clears carry the retaliation flag.
@@ -192,16 +196,19 @@ work, draining a previously accepted attack before offering that work. It never
 subtracts move readiness from seconds. The replay journal records elapsed frames
 in this profile because idle wall time can now cause damage.
 
-`ForestMilestoneEnemyAbility` owns Warden's shared protection and Matriarch's
+`ForestMilestoneEnemyAbility` owns Warden's named Warded sources and Matriarch's
 Renew/Surge/Harvest cycle. BoardController owns all root/vine state and mutation;
-normal forest growth resolves before casts. Shared damage-reduction providers
-are evaluated by EnemyActor at impact and do not stack with duplicate providers.
+normal forest growth resolves before casts. Warded source predicates are evaluated
+by EnemyActor at impact and do not stack with duplicate providers. Spawn events bind
+new allies immediately; restore rebuilds predicates against the restored roots.
 Redirection, final five-step rounding and shield gating retain their owners.
 Cast sequences are consumed before healing/damage callbacks. Root pairs trigger
 existing EnemyStagger after both are destroyed. Exposure and its weakness bonus
 are removed. Legacy anchors retire on save upgrade; real pins are preserved.
-`ForestEnemyMotion` reuses approved clips and observes outcomes; special clips
-contain no gameplay effect events. Authored basics keep the guarded event path.
+`ForestEnemyMotion` reuses approved clips and observes channel outcomes. The instant
+Rootbinder/Warden Release clips now opt into the existing authored motion owner;
+their contact cue gates a queued mutation, with the existing bounded missing-art
+fallback. RootLifePulse only draws a glow child; it cannot affect occupancy or hits.
 
 `ForestProductionImporter` binds modular scenery, clips and gameplay-only theme
 sprites. The existing layout owner reserves enough battle height for 96px art;

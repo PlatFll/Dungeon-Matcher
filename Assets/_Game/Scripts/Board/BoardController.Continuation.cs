@@ -60,7 +60,7 @@ public partial class BoardController
         {
             var warning=new BoardWarningSnapshot { kind=1,owner=set.Owner!=null?ownerSlot(set.Owner.GetInstanceID()):-1,dueMove=set.DueMove,restoration=set.RestorationPresentation,
                 vine=set.Vine,environmental=set.Environmental,vineLimit=set.VineLimit,parentGemId=set.ParentGemId,nonSpreading=set.NonSpreading,rootDurability=set.RootDurability,rootStyle=set.RootStyle,
-                rootSpreading=set.RootSpreading,playerInterrupted=set.PlayerInterrupted };
+                rootSpreading=set.RootSpreading,playerInterrupted=set.PlayerInterrupted,cancelOnAnyTargetLost=set.CancelOnAnyTargetLost,threatLabel=set.Label };
             foreach(var gem in set.Targets) if(gem!=null && GetGem(gem.Column,gem.Row)==gem) warning.targets.Add(CellIndex(gem));
             saved.warnings.Add(warning);
         }
@@ -103,7 +103,7 @@ public partial class BoardController
             {
                 var set=new GemSetThreat { Owner=owner,DueMove=warning.dueMove,RestorationPresentation=warning.restoration,Vine=warning.vine,Environmental=warning.environmental,
                     VineLimit=warning.vineLimit,ParentGemId=warning.parentGemId,NonSpreading=warning.nonSpreading,RootDurability=warning.rootDurability,RootStyle=warning.rootStyle,
-                    RootSpreading=warning.rootSpreading,PlayerInterrupted=warning.playerInterrupted };
+                    RootSpreading=warning.rootSpreading,PlayerInterrupted=warning.playerInterrupted,CancelOnAnyTargetLost=warning.cancelOnAnyTargetLost,Label=warning.threatLabel };
                 foreach(int index in warning.targets) { var gem=SavedGem(index); if(gem!=null) set.Targets.Add(gem); }
                 gemSetThreats.Add(set); EnsureTelegraphPresentation(); GemSetMarked?.Invoke(set);
             }

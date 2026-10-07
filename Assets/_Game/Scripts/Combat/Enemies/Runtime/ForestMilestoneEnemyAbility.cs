@@ -20,7 +20,6 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private IReadOnlyList<EnemyActor> roster;
     private EnemyAutoAttack attack;
     private EnemyStagger stagger;
-    private BoardController.GemSetThreat warning;
     private ForestMilestoneSnapshot value=new ForestMilestoneSnapshot {version=2};
     private readonly HashSet<EnemyActor> protectedActors=new HashSet<EnemyActor>();
     private bool pending;
@@ -49,7 +48,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private void ProtectSpawned(EnemyActor member)
     {
         if(!Ritual && member!=null && protectedActors.Add(member))
-            member.SetSharedDamageReduction(this,()=>IsProtected?.75f:1f);
+            member.SetWardedSource(this,()=>IsProtected);
     }
     private void BindProtection()
     {
@@ -78,8 +77,6 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private void CheckPreparation()
     {
         RootsChanged();
-        if(!Ritual && IsPreparing && (warning==null || warning.Ended))
-            Finish(warning?.PlayerInterrupted==true?"Interrupted":"Target lost",warning?.PlayerInterrupted==true);
     }
     public void ResolveAcceptedMove()
     {
@@ -89,18 +86,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         if(IsPreparing)
         {
             if(CombatMoveClock.Current.Tick<value.deadline) return;
-            if(!Ritual)
-            {
-                pending=true;Publish();
-                if(!board.TryQueueResolveVines(warning,ok=>
-                {
-                    pending=false;warning=null;
-                    if(actor==null || actor.IsDefeated) return;
-                    if(ok && RootCount>0) {value.state=2;value.outcome="Planted";value.resolvedSequence=value.sequence;Publish();}
-                    else Finish("Target lost",false);
-                })) {pending=false;Finish("Target lost",false);}
-            }
-            else if(value.activeAbility==0)
+            if(value.activeAbility==0)
             {
                 int amount=actor.Definition.ForestRenewalBaseHeal+actor.Definition.ForestHeartrootHealBonus*RootCount;
                 Finish("Renewed",false); // terminal identity before any heal callback
@@ -127,15 +113,29 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         pending=true;Publish();
         if(!Ritual)
         {
-            if(!board.TryQueueRootWarning(actor,1,2,false,true,w=>Started(w!=null,w))) Started(false,null);
+            actor.PrepareSpecialMotion("Release");
+            if(!board.TryQueuePlantRoots(actor,1,2,false,true,StartedWarden,true)) StartedWarden(false);
         }
         else if(value.activeAbility==0 && RootCount==0)
         {
-            if(!board.TryQueuePlantRoots(actor,2,2,true,true,ok=>Started(ok,null))) Started(false,null);
+            if(!board.TryQueuePlantRoots(actor,2,2,true,true,Started)) Started(false);
         }
-        else Started(true,null);
+        else Started(true);
     }
-    private void Started(bool success,BoardController.GemSetThreat result)
+    private void StartedWarden(bool success)
+    {
+        pending=false;actor.EndSpecialAbilityAnimationAction();
+        value.resolvedSequence=value.sequence;value.deadline=0;
+        value.state=success && IsProtected?2:0;
+        value.outcome=value.state==2?"Planted":"Fizzled";
+        if(actor!=null && !actor.IsDefeated)
+        {
+            if(value.state==2) {actor.AnnounceCommittedCast("Guarding Roots");actor.NotifySpecialAbilityUsed();}
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+        }
+        Publish();
+    }
+    private void Started(bool success)
     {
         pending=false;actor.EndSpecialAbilityAnimationAction();
         if(actor.IsDefeated) {board.RemoveVineSource(actor);return;}
@@ -143,10 +143,10 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         {
             value.state=1;Finish(stagger?.IsStaggered==true?"Interrupted":"Fizzled",false);return;
         }
-        warning=result;value.state=1;
+        value.state=1;
         if(Ritual && RootCount==2) value.heartrootsArmed=true;
-        value.deadline=!Ritual?warning.DueMove:CombatMoveClock.EffectAction+ChannelMoves;
-        if(!Ritual || value.activeAbility!=1) actor.AnnounceCommittedCast(!Ritual?"Guarding Roots":value.activeAbility==0?"Renew the Grove":"Thorn Harvest");
+        value.deadline=CombatMoveClock.EffectAction+ChannelMoves;
+        if(value.activeAbility!=1) actor.AnnounceCommittedCast(value.activeAbility==0?"Renew the Grove":"Thorn Harvest");
         actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();Publish();
         if(Ritual && value.activeAbility==1)
         {
@@ -161,7 +161,6 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         value.resolvedSequence=value.sequence;value.outcome=outcome;
         value.state=0;value.deadline=0;
         if(Ritual) value.nextAbility=(value.activeAbility+1)%3;
-        if(warning!=null) board.CancelGemSetThreat(warning);warning=null;
         actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
         // Existing rank duration, immunity, meter and presentation remain authoritative.
         if(applyStagger) stagger?.ApplyStagger(1,1);
@@ -169,7 +168,10 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     }
     private void Publish() {attack?.SetActionPaused(this,BlocksBasic);Changed?.Invoke();}
     private void Interrupted(EnemyStagger source,float duration,float remaining)
-    {if(IsPreparing) Finish("Interrupted",false);}
+    {
+        if(!Ritual && pending) actor.EndSpecialAbilityAnimationAction();
+        else if(IsPreparing) Finish("Interrupted",false);
+    }
     private void Died(EnemyActor owner) {board.RemoveVineSource(actor);attack?.SetActionPaused(this,false);}
     public void CaptureContinuation(EnemyCombatSnapshot saved,Func<EnemyActor,int> slotOf)
     {saved.forestMilestone=JsonUtility.FromJson<ForestMilestoneSnapshot>(JsonUtility.ToJson(value));}
@@ -191,7 +193,14 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
             value.state=0;value.deadline=0;value.resolvedSequence=value.sequence;
             actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
         }
-        warning=board.RestoredVineCast(actor);BindProtection();Publish();
+        var warning=board.RestoredVineCast(actor);
+        if(!Ritual && (value.state==1 || warning!=null))
+        {
+            board.CancelGemSetThreat(warning);warning=null;value.state=0;value.deadline=0;
+            value.resolvedSequence=value.sequence;value.outcome="Rules updated";
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+        }
+        BindProtection();Publish();
     }
     private void OnDisable()
     {
@@ -199,7 +208,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         if(board!=null) board.RootsChanged-=RootsChanged;
         if(stagger!=null) stagger.StaggerApplied-=Interrupted;
         if(waves!=null) waves.EnemySpawned-=ProtectSpawned;
-        foreach(var member in protectedActors) if(member!=null) member.RemoveSharedDamageReduction(this);
+        foreach(var member in protectedActors) if(member!=null) member.RemoveWardedSource(this);
         protectedActors.Clear();attack?.SetActionPaused(this,false);
     }
 }

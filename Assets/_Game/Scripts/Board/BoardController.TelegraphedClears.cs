@@ -18,6 +18,8 @@ public partial class BoardController
         public bool Environmental { get; internal set; }
         internal int VineLimit = 3, ParentGemId;
         public bool PlayerInterrupted { get; internal set; }
+        public bool CancelOnAnyTargetLost { get; internal set; }
+        public string Label { get; internal set; }
         public int RootDurability { get; internal set; }
         public bool RootSpreading { get; internal set; }
         public EnemyBarricadeStyle RootStyle { get; internal set; }
@@ -50,7 +52,8 @@ public partial class BoardController
     {
         foreach (var threat in new List<GemSetThreat>(gemSetThreats))
         {
-            threat.Targets.Remove(gem);
+            bool removed=threat.Targets.Remove(gem);
+            if(removed && threat.CancelOnAnyTargetLost) CancelGemSetThreat(threat);
             if(threat.Vine && (threat.ParentGemId==gem.BoardIdentity || threat.Targets.Count==0)) CancelGemSetThreat(threat);
         }
     }
@@ -68,12 +71,13 @@ public partial class BoardController
     public void CancelLaneThreat(LaneThreat threat) { if (threat != null) { threat.Ended = true; laneThreats.Remove(threat); } }
 
     public bool TryQueueMarkGemSet(EnemyActor owner, int count, int moves, bool restoration,
-        Action<GemSetThreat> completed, Func<bool> cancelled)
+        Action<GemSetThreat> completed, Func<bool> cancelled, bool compact=false, bool cancelOnAnyTargetLost=false,string label=null)
     {
         if (owner == null || owner.IsDefeated || gems == null) return false;
         var request = new BoardMutationRequest { Kind = BoardMutationKind.MarkGemSet,
             OwnerActor = owner, TargetCount = Mathf.Max(1, count), WarningMoves = Mathf.Max(1, moves),
-            RestorationPresentation = restoration, IsCancelled = cancelled };
+            RestorationPresentation = restoration, IsCancelled = cancelled,
+            CompactTargets=compact,CancelOnAnyTargetLost=cancelOnAnyTargetLost,ThreatLabel=label };
         request.Completed = success => completed?.Invoke(success ? request.SetThreat : null);
         EnqueueBoardMutation(request);
         TryStartBoardMutationProcessor();
@@ -88,21 +92,31 @@ public partial class BoardController
         for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
         {
             Gem gem = GetGem(x,y);
-            if (!IsOrdinaryGemOnBoard(gem) || !clearable.Contains(gem)) continue;
+            if (!IsOrdinaryGemOnBoard(gem) || (!request.CompactTargets && !clearable.Contains(gem))) continue;
             bool marked = false;
             foreach (var existing in gemSetThreats) if (existing.Targets.Contains(gem)) { marked = true; break; }
             if (request.Vine && (IsGemPinned(gem) || IsProtectedWarningTarget(gem))) marked=true;
             if(request.RootDurability>0 && !CanHostRoot(gem)) marked=true;
+            if(request.CompactTargets && IsProtectedWarningTarget(gem)) marked=true;
             if (!marked) candidates.Add(gem);
         }
         if (candidates.Count == 0) return;
         var threat = new GemSetThreat { Owner = request.OwnerActor,
             DueMove = ReserveWarningDeadline(request.WarningMoves),
             RestorationPresentation = request.RestorationPresentation, Vine=request.Vine,VineLimit=request.MaximumOwnedPins,NonSpreading=request.NonSpreadingVine,
-            RootDurability=request.RootDurability,RootStyle=request.BarricadeStyle,RootSpreading=request.RootSpreading };
+            RootDurability=request.RootDurability,RootStyle=request.BarricadeStyle,RootSpreading=request.RootSpreading,
+            CancelOnAnyTargetLost=request.CancelOnAnyTargetLost,Label=request.ThreatLabel };
         int allowed=request.TargetCount;
         if(request.RootDurability>0) allowed=Mathf.Min(allowed,BalanceV1.Current.maximumGlobalStructures-minedCellOwners.Count-barricadeCells.Count);
         if(allowed<=0) return;
+        if(request.CompactTargets)
+        {
+            var answers=candidates.FindAll(g=>clearable.Contains(g));
+            if(answers.Count==0) return;
+            var first=answers[GameplayRandom.Range(0,answers.Count)];
+            threat.Targets.Add(first);candidates.Remove(first);
+            candidates.RemoveAll(g=>Mathf.Abs(g.Column-first.Column)+Mathf.Abs(g.Row-first.Row)>1);
+        }
         while (threat.Targets.Count < allowed && candidates.Count > 0)
         {
             int index = GameplayRandom.Range(0, candidates.Count);
@@ -115,13 +129,14 @@ public partial class BoardController
         GemSetMarked?.Invoke(threat);
     }
     public bool TryQueueResolveGemSet(GemSetThreat threat, Action pulse,
-        Action<bool> completed, Func<bool> cancelled, Func<int, int, IEnumerator> targetSequence = null)
+        Action<bool> completed, Func<bool> cancelled, Func<int, int, IEnumerator> targetSequence = null,
+        bool pulseBeforeClear=false)
     {
         if (threat == null || threat.Ended || threat.Queued || completedValidPlayerMoves < threat.DueMove) return false;
         threat.Queued = true;
         EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.ResolveGemSet,
             OwnerActor = threat.Owner, SetThreat = threat, Pulse = pulse, TargetSequence = targetSequence,
-            Completed = completed, IsCancelled = cancelled });
+            Completed = completed, IsCancelled = cancelled,PulseBeforeClear=pulseBeforeClear });
         TryStartBoardMutationProcessor(); return true;
     }
     private IEnumerator ExecuteResolveGemSet(BoardMutationRequest request)
@@ -134,6 +149,11 @@ public partial class BoardController
         // Keep the persisted target order. Snapshot survivors before any removal
         // or callback so the sequence cannot acquire newly spawned gems.
         var survivors = threat.Targets.FindAll(IsEnvironmentalOrdinaryGem);
+        // An all-or-nothing threat fizzles when any target became invalid even
+        // without a clear callback (for example conversion into a special).
+        if(threat.CancelOnAnyTargetLost && survivors.Count!=threat.Targets.Count)
+        { request.Succeeded=true;yield break; }
+        if(request.PulseBeforeClear && survivors.Count>0) request.Pulse?.Invoke();
         bool cleared = false;
         deferRoyalBannerGravity = true;
         try
@@ -149,7 +169,7 @@ public partial class BoardController
                 if (request.OwnerActor == null || request.OwnerActor.IsDefeated ||
                     (request.IsCancelled != null && request.IsCancelled())) break;
                 if (request.TargetSequence != null) yield return request.TargetSequence(index, survivors.Count);
-                else request.Pulse?.Invoke();
+                else if(!request.PulseBeforeClear) request.Pulse?.Invoke();
             }
         }
         finally { deferRoyalBannerGravity = false; }
