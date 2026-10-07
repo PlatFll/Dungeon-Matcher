@@ -112,7 +112,7 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
             }
             if(state.coffer!=null)
             {
-                var c=state.coffer;var p=board.transform.TransformPoint(board.GetCellLocalPosition(c.x,c.y));
+                var c=state.coffer;var p=board.AirCofferVisualPosition ?? board.transform.TransformPoint(board.GetCellLocalPosition(c.x,c.y));
                 Caption("coffer",c.charges.ToString(),p,used);
             }
         }

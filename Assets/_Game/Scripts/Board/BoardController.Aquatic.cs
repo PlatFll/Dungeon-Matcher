@@ -9,6 +9,7 @@ public partial class BoardController
     private AquaticEnvironmentState aquatic;
     private readonly Dictionary<int, bool> aquaticClearReceipts = new Dictionary<int, bool>();
     private int suffocationMove = -1;
+    private int pendingRoyalCofferSlide;
     public AquaticEnvironmentState Aquatic => aquatic;
     public bool IsFlooded => aquatic?.phase == TidePhase.Flooded;
     public event Action AquaticChanged;
@@ -16,6 +17,16 @@ public partial class BoardController
     // each actual collection. It cannot alter the authoritative AIR value.
     public event Action<int,int,int[]> AirReceipt;
     public event Action<Vector3> CofferShellBroken;
+    public event Action<Vector3,Vector3,float> CofferMoving;
+    public Vector3? AirCofferVisualPosition
+    {
+        get
+        {
+            var c=aquatic?.coffer;
+            return c!=null && barricadeCells.TryGetValue(new Vector2Int(c.x,c.y),out var barrier) && barrier.ViewObject!=null
+                ? barrier.ViewObject.transform.position : (Vector3?)null;
+        }
+    }
     // Physical identity is shared by fixed-cell and bubble answers, so a single
     // destroyed gem cannot answer a pressure channel twice.
     public event Action<int, bool, bool> AquaticAnswer;
@@ -316,7 +327,7 @@ public partial class BoardController
     private void AquaticCofferBroken(Vector2Int cell)
     {
         if (aquatic?.coffer == null || aquatic.coffer.x != cell.x || aquatic.coffer.y != cell.y) return;
-        int restored = aquatic.coffer.refillAir?5:2*aquatic.coffer.charges; aquatic.coffer = null;
+        int restored = aquatic.coffer.refillAir?5:2*aquatic.coffer.charges; aquatic.coffer = null;pendingRoyalCofferSlide=0;
         CollectAir(restored);
         AquaticAnswer?.Invoke(0, false, true);
         AquaticChanged?.Invoke();
@@ -325,7 +336,64 @@ public partial class BoardController
     private void AquaticCofferDamaged(Vector2Int cell)
     {
         if(aquatic?.coffer==null || aquatic.coffer.x!=cell.x || aquatic.coffer.y!=cell.y)return;
+        if(aquatic.coffer.royal)pendingRoyalCofferSlide=aquatic.coffer.id;
         CofferShellBroken?.Invoke(transform.TransformPoint(GetCellLocalPosition(cell.x,cell.y)));
+    }
+
+    private List<List<Vector2Int>> CofferSlideRoutes(Vector2Int origin)
+    {
+        var routes=new List<List<Vector2Int>>();
+        foreach(var direction in new[]{Vector2Int.up,Vector2Int.down,Vector2Int.left,Vector2Int.right})
+        {
+            var route=new List<Vector2Int>{origin};
+            for(int distance=1;distance<=3;distance++)
+            {
+                var cell=origin+direction*distance;var gem=GetGem(cell.x,cell.y);
+                if(!IsCellPlayable(cell.x,cell.y) || gem==null || IsGemPinned(gem) || IsProtectedWarningTarget(gem))break;
+                route.Add(cell);
+                if(distance>=2)routes.Add(new List<Vector2Int>(route));
+            }
+        }
+        return routes;
+    }
+
+    private IEnumerator ResolvePendingCofferSlide()
+    {
+        int requested=pendingRoyalCofferSlide;pendingRoyalCofferSlide=0;
+        var c=aquatic?.coffer;
+        if(requested==0 || !IsFlooded || c==null || c.id!=requested || !c.royal)yield break;
+        var origin=new Vector2Int(c.x,c.y);
+        if(!barricadeCells.TryGetValue(origin,out var barrier) || barrier.RemainingDurability!=1)yield break;
+        var routes=CofferSlideRoutes(origin);
+        if(routes.Count==0)yield break;
+        var route=routes[BoardRandomRange(0,routes.Count)];var destination=route[route.Count-1];
+        var moves=new List<GemMove>();
+        const float duration=.24f;
+        // Commit one rotation, preserving every physical identity and special.
+        // This runs after clear destruction and before the caller's one settle.
+        barricadeCells.Remove(origin);barricadeCells[destination]=barrier;
+        for(int i=1;i<route.Count;i++)
+        {
+            var from=route[i];var to=route[i-1];var gem=gems[from.x,from.y];
+            gems[to.x,to.y]=gem;gem.SetGridPosition(to.x,to.y);
+            moves.Add(new GemMove{Gem=gem,StartPosition=gem.transform.localPosition,
+                TargetPosition=GetCellLocalPosition(to.x,to.y),Duration=duration});
+        }
+        gems[destination.x,destination.y]=null;c.x=destination.x;c.y=destination.y;
+        Vector3 start=GetCellLocalPosition(origin.x,origin.y),end=GetCellLocalPosition(c.x,c.y);
+        CancelBarricadeVisualRoutine(barrier);ApplyBarricadeLevelVisual(barrier);SetBarricadeFlashAmount(barrier,0);
+        CofferMoving?.Invoke(transform.TransformPoint(start),transform.TransformPoint(end),duration);
+        // Drive both visuals from the owned gem animation enumerator. No separate
+        // coroutine can release ownership, refill or mutate halfway through it.
+        float began=Time.time;var movement=AnimateGemMoves(moves);
+        while(movement.MoveNext())
+        {
+            if(barrier.ViewObject!=null)barrier.ViewObject.transform.localPosition=
+                Vector3.Lerp(start,end,SmoothStep(Mathf.Clamp01((Time.time-began)/duration)));
+            yield return movement.Current;
+        }
+        if(barrier.ViewObject!=null)barrier.ViewObject.transform.localPosition=end;
+        AquaticChanged?.Invoke();
     }
 
     public void ReleaseAquaticOwner(long owner)
@@ -340,7 +408,7 @@ public partial class BoardController
     private IEnumerator RemoveAirCoffer(bool payout)
     {
         var coffer = aquatic?.coffer; if (coffer == null) yield break;
-        aquatic.coffer = null;
+        aquatic.coffer = null;pendingRoyalCofferSlide=0;
         if (payout) CollectAir(2 * coffer.charges);
         var cell = new Vector2Int(coffer.x, coffer.y);
         if (barricadeCells.TryGetValue(cell, out var barrier) && barrier.Style == EnemyBarricadeStyle.AirCoffer)
@@ -361,6 +429,7 @@ public partial class BoardController
     private AquaticEnvironmentState CaptureAquatic() => CopyAquatic(aquatic);
     private void RestoreAquatic(AquaticEnvironmentState saved)
     {
+        pendingRoyalCofferSlide=0;
         if (saved != null && (saved.version<1 || saved.version>AquaticEnvironmentState.CurrentVersion))
             throw new InvalidOperationException("Unsupported aquatic rules.");
         aquatic = CopyAquatic(saved);
@@ -371,6 +440,8 @@ public partial class BoardController
             if(aquatic.version<2) {aquatic.reserveExhausted=false;aquatic.nextSupplyMove=0;}
             aquatic.version=AquaticEnvironmentState.CurrentVersion;
             aquatic.collectedAmounts??=new List<int>();
+            if(aquatic.coffer!=null && barricadeCells.TryGetValue(new Vector2Int(aquatic.coffer.x,aquatic.coffer.y),out var restored))
+                ApplyBarricadeLevelVisual(restored);
         }
         aquaticClearReceipts.Clear(); AquaticChanged?.Invoke();
     }

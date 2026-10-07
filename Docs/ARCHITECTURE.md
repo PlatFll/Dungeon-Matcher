@@ -90,6 +90,14 @@ Stagger or an effect replay. Pressure cancellation precedes readiness progressio
 authorize durability. `CourtRevisionImporter` updates native pearl exports and
 theme bindings only, preserving user-edited environments.
 
+A royal coffer's first hit records a transient pending slide. The existing
+`ClearMatches` owner resolves it after actual destruction/special conversion and
+before its caller refills. A legal route is selected with saved board RNG; one
+atomic rotation updates occupancy and every preserved gem identity. The normal
+gem-movement enumerator presents both the gems and coffer under that same hold.
+No route means no movement. Pending motion blocks checkpoint capture; completed
+coordinates and remaining durability use the existing board/aquatic snapshot.
+
 `AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
 channel stages, answer identities, rally leases and rotation state. Cantor reuses
 `EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.

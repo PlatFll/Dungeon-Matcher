@@ -8,6 +8,76 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
+    private IEnumerator RoyalCofferFixture()
+    {
+        yield return LaunchCourt("queen_nacre","shellback_porter");yield return Move();PrepareSafeMove();
+        var board=Run.Board;board.Aquatic.StartFlood(18,Run.MoveClock.Tick);
+        board.Aquatic.bubbles=Enumerable.Range(0,5).Select(x=>board.GetGem(x,0).BoardIdentity).ToList();
+        ReadyForest(Enemy("queen_nacre"));yield return Move();
+        Assert.That(board.Aquatic.bubbles,Is.Empty);Assert.That(board.Aquatic.coffer.charges,Is.EqualTo(5));
+        Assert.That(board.Aquatic.coffer.royal,Is.True);
+        Assert.That(Enemy("queen_nacre").GetComponent<AquaticEnemyAbility>().IsPreparing,Is.False);
+        PrepareSafeMove();
+    }
+    [UnityTest] public IEnumerator CourtRevisionRoyalSlideRotatesSpecialsBeforeOneSettleAndContinues()
+    {yield return CourtRoyalSlide();}
+    private IEnumerator CourtRoyalSlide()
+    {
+        yield return RoyalCofferFixture();var board=Run.Board;var coffer=board.Aquatic.coffer;
+        var origin=new Vector2Int(coffer.x,coffer.y);
+        var grid=(Gem[,])Get(board,"gems");
+        var before=grid.Cast<Gem>().Where(g=>g!=null).ToDictionary(g=>new Vector2Int(g.Column,g.Row));
+        var victim=new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down}
+            .Select(d=>board.GetGem(origin.x+d.x,origin.y+d.y)).First(g=>g!=null);
+        // Every surviving route contains actual specials; the slide may move them,
+        // but may not activate/delete them until its complete rotation settles.
+        foreach(var pair in before)if(pair.Value!=victim)pair.Value.SetSpecialType(GemSpecialType.ColorCrystal);
+        int slides=0;bool held=false;int countBefore=before.Count;
+        board.CofferMoving+=(start,end,duration)=>
+        {
+            slides++;held=board.IsBusy&&!Run.Continuation.CanCapture;
+            var target=new Vector2Int(board.Aquatic.coffer.x,board.Aquatic.coffer.y);var delta=target-origin;
+            Assert.That(delta.x==0||delta.y==0,Is.True);int length=Mathf.Abs(delta.x)+Mathf.Abs(delta.y);
+            Assert.That(length,Is.InRange(2,3));var direction=new Vector2Int(Math.Sign(delta.x),Math.Sign(delta.y));
+            for(int i=0;i<length;i++)
+            {
+                var from=origin+direction*(i+1);var to=origin+direction*i;
+                Assert.That(board.GetGem(to.x,to.y),Is.SameAs(before[from]));
+                Assert.That(board.GetGem(to.x,to.y).SpecialType,Is.EqualTo(GemSpecialType.ColorCrystal));
+            }
+            Assert.That(board.GetGem(target.x,target.y),Is.Null);
+            Assert.That(grid.Cast<Gem>().Count(g=>g!=null),Is.EqualTo(countBefore-1),"only the chosen hit gem cleared; no mid-slide refill");
+        };
+        Assert.That(board.TryClearPlayerArea(victim,0,()=>true),Is.True);
+        yield return Stable();Assert.That(slides,Is.EqualTo(1));Assert.That(held,Is.True);
+        Assert.That(board.Aquatic.coffer,Is.Not.Null);var destination=new Vector2Int(coffer.x,coffer.y);
+        var saved=board.CaptureContinuation(_=>-1).cells.Single(c=>c.x==destination.x&&c.y==destination.y);
+        Assert.That(saved.durability,Is.EqualTo(1));
+        yield return ResumeRoster();board=Run.Board;Assert.That(new Vector2Int(board.Aquatic.coffer.x,board.Aquatic.coffer.y),Is.EqualTo(destination));
+        var art=board.GetComponentsInChildren<SpriteRenderer>().Where(r=>r.sprite==Run.Zone.Definition.theme.exposedPearl).ToArray();
+        Assert.That(art,Is.Not.Empty,"Continue restores exposed royal art");
+        board.Aquatic.air=0;var hit=new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down}
+            .Select(d=>board.GetGem(destination.x+d.x,destination.y+d.y)).First(g=>g!=null);
+        Call(board,"DamageBarricadesForClear",new HashSet<Gem>{hit},new HashSet<Gem>(),false);
+        Assert.That(board.Aquatic.coffer,Is.Null);Assert.That(board.Aquatic.air,Is.EqualTo(5));
+    }
+    [UnityTest] public IEnumerator CourtRevisionRoyalSlideBlockedRoutesStayAndKeepEveryGem()
+    {yield return CourtRoyalBlocked();}
+    private IEnumerator CourtRoyalBlocked()
+    {
+        yield return RoyalCofferFixture();var board=Run.Board;var c=board.Aquatic.coffer;var origin=new Vector2Int(c.x,c.y);
+        var holes=(Dictionary<Vector2Int,int>)Get(board,"minedCellOwners");
+        var adjacent=new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down}
+            .Select(d=>board.GetGem(c.x+d.x,c.y+d.y)).First(g=>g!=null);
+        var ids=((Gem[,])Get(board,"gems")).Cast<Gem>().Where(g=>g!=null).Select(g=>g.BoardIdentity).OrderBy(n=>n).ToArray();
+        // Probe existing structural restrictions without creating another mover.
+        foreach(var d in new[]{Vector2Int.left,Vector2Int.right,Vector2Int.up,Vector2Int.down})holes[origin+d]=123;
+        Call(board,"DamageBarricadesForClear",new HashSet<Gem>{adjacent},new HashSet<Gem>(),false);
+        yield return (IEnumerator)Call(board,"ResolvePendingCofferSlide");holes.Clear();
+        Assert.That(new Vector2Int(c.x,c.y),Is.EqualTo(origin));
+        Assert.That(((Gem[,])Get(board,"gems")).Cast<Gem>().Where(g=>g!=null).Select(g=>g.BoardIdentity).OrderBy(n=>n),Is.EqualTo(ids));
+        Assert.That(board.CaptureContinuation(_=>-1).cells.Single(v=>v.x==c.x&&v.y==c.y).durability,Is.EqualTo(1));
+    }
     [UnityTest] public IEnumerator CourtRevisionThiefInstantExactTwoIndependentPayout()
     {yield return CourtInstantTheft("pearl_thief",2,1);}
     [UnityTest] public IEnumerator CourtRevisionWardenInstantThreeAndTwoDistinctHits()

@@ -1237,6 +1237,7 @@ public partial class BoardController : MonoBehaviour
             }
         }
 
+        yield return ResolvePendingCofferSlide();
         yield return null;
     }
 

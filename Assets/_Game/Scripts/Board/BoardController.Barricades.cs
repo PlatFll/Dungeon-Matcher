@@ -1201,7 +1201,8 @@ public partial class BoardController
         if(state?.Style==EnemyBarricadeStyle.AirCoffer && GameplayThemeSkin.Current?.airCoffer!=null)
             return state.RemainingDurability>1
                 ? GameplayThemeSkin.Current.armoredAirCoffer ?? GameplayThemeSkin.Current.airCoffer
-                : GameplayThemeSkin.Current.airCoffer;
+                : aquatic?.coffer?.royal==true && GameplayThemeSkin.Current.exposedPearl!=null
+                    ? GameplayThemeSkin.Current.exposedPearl : GameplayThemeSkin.Current.airCoffer;
         if(state?.Style==EnemyBarricadeStyle.Thorn && thornBarricadeSprite!=null) return thornBarricadeSprite;
         if(IsRoot(state))
         {

@@ -7,6 +7,22 @@ whole requested revision. No merge is authorized.
 
 ## Court coffer and Pressure slice
 
+## Royal moving pearl slice
+
+Four focused tests passed (`93a1efb0-07fa-4376-b2a0-e86ec5b8e527.xml`), including
+two theft/durability regressions. The Queen scenario captures all five resources,
+breaks armor through the real player-area-clear pipeline, checks each shifted
+physical special at the committed rotation, verifies no new gem/refill midway and
+held input, then Continue restores the exposed art/coordinate and the second hit
+pays once. A structural-obstruction fixture proves the no-route fallback preserves
+every gem. All playback is muted in the Editor. Native scene review remains in the
+final presentation pass; these automated checks do not establish animation feel.
+
+Mandatory validator passed (exit 0, Unity 6000.3.19f1):
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-07434cf1-592d-4528-b47a-ebe1f1360ba2.log`.
+
+## Court coffer and Pressure evidence
+
 Eleven focused Unity checks passed (`9ab7e42b-0dbf-4142-8185-b4a476e142fb.xml`
 under `.utmp/ForestValidation`), with no failures or skipped cases. They exercise
 the actual muted scene, accepted-action contact timing, exact two/three captures,
