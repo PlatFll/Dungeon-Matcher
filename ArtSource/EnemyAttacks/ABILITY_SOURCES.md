@@ -1,5 +1,18 @@
 # Approved enemy abilities
 
+## Judgment revision — review candidate, 2026-10-07
+
+`judgment.json` adds `JudgmentStrike1`, `JudgmentStrike2` and `JudgmentFinisher`.
+The first two deliberately re-time the approved native King sword poses. The
+finisher directly edits those pixels into a higher held windup, committed torso
+lean over planted boots, broader royal-gold cut and stepped recovery. It expands
+to 112×80 for lateral clearance, retaining source pixel scale and bottom-center alignment.
+The other two clips use 96×80. Faces, armor, crown and equipment are retained.
+`Tools/author_king_judgment.py` reproduces sheets, exact timing JSON, review GIFs
+and SHA-256 records. Import only these states with
+`CombatActionImporter.ImportKingJudgment`; existing Bombardment remains intact.
+No PixelLab calls or credits were used. These new motions await visual review.
+
 The user accepted Royal Gold and the other concepts, with two revisions: the King holds and thrusts the sword with both hands, and the Shield Knight raises his shield before it glows blue. These choices replace the initial one-handed King thrust and frontal shield bubble.
 
 `abilities.json` records every selected source frame, exposure, contact frame, controller state and accent palette. `FinishAbilities.js` and `Tools/Finish-EnemyAbilities.ps1` finish the PixelLab poses in LibreSprite. The `.aseprite` sources remain editable; matching PNG sheets, frame metadata and GIFs are exports. Import through `CombatActionImporter.ImportPixelLabAbilities` or `Tools/Review-EnemyAbilities.ps1`.

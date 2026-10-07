@@ -602,6 +602,8 @@ Snapshot versions/layouts and catalog references are validated during reconstruc
 
 ### Authored enemy ability contact and recovery (October 2026)
 
+Judgment uses the existing gem-set request's optional per-target coroutine. The board snapshots surviving identities in saved order, consumes each through `ClearMatches(..., null)`, awaits the ability-owned motion/damage callback, and defers banner gravity until the single final environmental settlement. The callback receives index and survivor count; BoardController selects no King state or damage value. The King owns the three named motions, finisher condition and death cancellation. The existing accepted action identity, board busy flag and continuation guard cover the entire sequence.
+
 `EnemyActor.SpecialMotion` extends the existing accepted special-action identity with a named animation state, numbered contact cues and completion. `EnemyActionAnimationPresenter` relays authored contacts after the current Image sprite is applied. Duplicate or stale action cues cannot release another cast. Ability runtimes still select effects and own cadence. Single-contact Miner/Barricade abilities retain their established event protocol.
 
 The existing board-mutation queue captures prepared special motions. It starts presentation only after acquiring the board, waits for the contact cue, performs the existing mutation and retains ownership through recovery. Missing animation events have scaled-time fallbacks; pause stops them. Royal Bombardment is one generic two-lane request: column, row, recovery, one environmental settlement. Death cancels later strikes and still settles prior holes. The board never selects character animation states, damage or balance rules.

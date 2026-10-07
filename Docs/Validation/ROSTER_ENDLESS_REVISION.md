@@ -77,3 +77,49 @@ attack speed and special cadence were not retuned. Player-power correction is of
 This verifies stats and continuation, not human time-to-kill or mobile-device
 performance. Full revised kits, animations and their eventual visual/regression
 gates remain pending.
+
+## Dungeon Minister and Judgment
+
+The Minister retains `royal_arcanist` and the original asset/GUID. Judgment now
+consumes surviving physical gems in saved order under one board transaction,
+with authored contacts for Strike1, Strike2 and the three-survivor-only finisher.
+Normal base damage remains 12; empowered base 18 is provisional serialized data.
+
+- Initial ten-case run: five passed and five failed due to fixture reflection
+  selecting an overloaded method and a UnityTest coroutine setup boundary.
+  `.utmp/ForestValidation/b0b84687-abd8-4f32-9068-23e3117d66f6.xml`.
+  Tests now use the public legal-response query and standard nested coroutine
+  wrapper. Gameplay assertions were retained.
+- All **13** focused and affected King checks passed in
+  `.utmp/ForestValidation/264de4b9-1f27-40f4-8519-498c440bd50c.xml`.
+  Cases cover 0/1/2/3 survivors, special conversion, no intermediate grid changes,
+  authored impact timing, duplicate prevention, pause, death cancellation,
+  continuation, missing-motion fallback, full King cycles in both clock profiles,
+  Restoration and existing Bombardment/Assault behavior.
+- Physical-gem movement, persisted survivor order, Minister inspection and stable
+  ID through Continue passed in
+  `.utmp/ForestValidation/fb45572c-6148-41a1-93f6-74b22331ba12.xml`.
+  Its portrait case found a real wave-plaque overlap with the first 112×96
+  finisher canvas. The final native canvas is **112×80**; lateral space preserves
+  pixel scale without raising the sprite rectangle into the plaque.
+- Final finisher contact, asset and portrait reruns: **4 passed** in
+  `.utmp/ForestValidation/4fa927cc-a22b-4e02-ad8a-eed385aa09ee.xml`.
+  Visual inspection caught that Editor resizing could replace a paused frame
+  with the ready sprite. The capture fixture now asserts the actual rendered
+  finisher contact, freezes it, and reapplies that sprite after each layout rebuild.
+  That final four-shape capture case passed in
+  `.utmp/ForestValidation/a1476992-c317-44b1-a0dd-041c0f900b3b.xml`.
+- **15 unique passing cases** in this Dungeon slice; counts overlap earlier
+  evidence. Actual 720×1280, 1080×1920, 1080×2400 and safe-inset renders are in
+  `.utmp/RosterEndless/Judgment/`. Finisher stays clear of the wave plaque and HP.
+- Three native motion sheets, JSON timings, GIF previews and reproducible direct
+  pixel authoring source are in `ArtSource/EnemyAttacks/`. All use 17 opaque colors,
+  binary alpha, Point filtering, uncompressed full rectangles and 64 PPU. Existing
+  Bombardment/idle files were preserved. **Zero PixelLab generations**.
+- All four original user-edited files still match their starting hashes.
+- Mandatory `Tools/Validate-Unity.ps1` passed, Unity 6000.3.19f1, exit 0:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-5c855417-2e1c-483a-9428-8f122364509a.log`.
+
+New animation art remains a review candidate. This is muted Editor/runtime
+evidence, not physical-device or human-feel approval. Forest/Court revision
+tranches and final combined regression remain open.

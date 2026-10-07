@@ -115,12 +115,12 @@ public partial class BoardController
         GemSetMarked?.Invoke(threat);
     }
     public bool TryQueueResolveGemSet(GemSetThreat threat, Action pulse,
-        Action<bool> completed, Func<bool> cancelled)
+        Action<bool> completed, Func<bool> cancelled, Func<int, int, IEnumerator> targetSequence = null)
     {
         if (threat == null || threat.Ended || threat.Queued || completedValidPlayerMoves < threat.DueMove) return false;
         threat.Queued = true;
         EnqueueBoardMutation(new BoardMutationRequest { Kind = BoardMutationKind.ResolveGemSet,
-            OwnerActor = threat.Owner, SetThreat = threat, Pulse = pulse,
+            OwnerActor = threat.Owner, SetThreat = threat, Pulse = pulse, TargetSequence = targetSequence,
             Completed = completed, IsCancelled = cancelled });
         TryStartBoardMutationProcessor(); return true;
     }
@@ -131,16 +131,29 @@ public partial class BoardController
         if (!TelegraphOwnerCanExecute(request.OwnerActor)) yield break;
         if (threat == null || threat.Ended || request.OwnerActor == null || request.OwnerActor.IsDefeated) yield break;
         CancelGemSetThreat(threat); // consume before any callbacks
+        // Keep the persisted target order. Snapshot survivors before any removal
+        // or callback so the sequence cannot acquire newly spawned gems.
+        var survivors = threat.Targets.FindAll(IsEnvironmentalOrdinaryGem);
         bool cleared = false;
-        foreach (Gem gem in threat.Targets)
+        deferRoyalBannerGravity = true;
+        try
         {
-            if (request.OwnerActor == null || request.OwnerActor.IsDefeated ||
-                (request.IsCancelled != null && request.IsCancelled())) break;
-            if (!IsEnvironmentalOrdinaryGem(gem)) continue;
-            yield return ClearMatches(new HashSet<Gem> { gem }, null);
-            cleared = true;
-            if (request.OwnerActor != null && !request.OwnerActor.IsDefeated) request.Pulse?.Invoke();
+            for (int index = 0; index < survivors.Count; index++)
+            {
+                if (request.OwnerActor == null || request.OwnerActor.IsDefeated ||
+                    (request.IsCancelled != null && request.IsCancelled())) break;
+                Gem gem = survivors[index];
+                if (!IsEnvironmentalOrdinaryGem(gem)) continue;
+                yield return ClearMatches(new HashSet<Gem> { gem }, null);
+                cleared = true;
+                if (request.OwnerActor == null || request.OwnerActor.IsDefeated ||
+                    (request.IsCancelled != null && request.IsCancelled())) break;
+                if (request.TargetSequence != null) yield return request.TargetSequence(index, survivors.Count);
+                else request.Pulse?.Invoke();
+            }
         }
+        finally { deferRoyalBannerGravity = false; }
+        ResolvePendingRoyalBannerGravity();
         if (cleared) yield return ResolveEnvironmentalBoardChange();
         request.Succeeded = true;
     }

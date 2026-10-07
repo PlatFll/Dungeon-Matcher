@@ -100,9 +100,8 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (judgment != null && !judgment.Ended && board.CompletedValidPlayerMoves >= judgment.DueMove)
         {
             if (!BeginAction()) return;
-            actor.PrepareSpecialMotion("RoyalCommand");
-            if (!board.TryQueueResolveGemSet(judgment, () => Strike(actor.Definition.JudgmentBaseDamage),
-                success => EndAction(), () => released)) EndAction();
+            if (!board.TryQueueResolveGemSet(judgment, null,
+                success => EndAction(), JudgmentCancelled, JudgmentStrike)) EndAction();
             return;
         }
         if (actor.IsSpecialReady && board.CompletedValidPlayerMoves > retryAfterMove) availability.RequestExecution();
@@ -224,6 +223,21 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (released || actor.IsDefeated || ownAttack == null || ownAttack.PlayerTarget == null || baseDamage <= 0) return;
         ownAttack.PlayerTarget.TryTakeDamage(Mathf.RoundToInt(baseDamage * actor.RuntimeStats.DamageMultiplier), actor);
         HeavyStrike?.Invoke(this);
+    }
+    private bool JudgmentCancelled() => released || actor == null || actor.IsDefeated ||
+        ownAttack == null || ownAttack.PlayerTarget == null || ownAttack.PlayerTarget.IsDefeated;
+
+    private IEnumerator JudgmentStrike(int index, int survivorCount)
+    {
+        if (JudgmentCancelled()) yield break;
+        bool finisher = survivorCount == 3 && index == 2;
+        int motion = actor.StartSpecialMotion(finisher ? "JudgmentFinisher" : index == 0 ? "JudgmentStrike1" : "JudgmentStrike2");
+        if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
+        else yield return new WaitForSeconds(finisher ? .5f : .32f);
+        if (JudgmentCancelled() || (motion > 0 && !actor.IsSpecialMotionCurrent(motion))) yield break;
+        Strike(finisher ? actor.Definition.JudgmentFinisherBaseDamage : actor.Definition.JudgmentBaseDamage);
+        if (motion > 0) yield return actor.WaitForSpecialMotionComplete(motion);
+        else yield return new WaitForSeconds(.3f);
     }
     private bool BeginAction()
     {

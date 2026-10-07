@@ -68,6 +68,7 @@ public partial class BoardController
         public int TargetCount;
         public int EnvironmentMove;
         public Action Pulse;
+        public Func<int, int, IEnumerator> TargetSequence;
         public bool RestorationPresentation;
         public bool RequiresVine;
         public CellResponseThreat CellThreat;

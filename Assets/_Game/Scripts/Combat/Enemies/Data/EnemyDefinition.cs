@@ -274,6 +274,7 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(1f)] private float benedictionDamageMultiplier = 1.4f;
     [SerializeField] private Sprite benedictionHaloSprite;
     [SerializeField, Min(0)] private int judgmentBaseDamage = 12;
+    [SerializeField, Min(0)] private int judgmentFinisherBaseDamage = 18;
     [SerializeField, Min(1)] private int bombardmentWarningMoves = 2;
     [SerializeField, Min(0)] private int bombardmentBaseDamage = 6;
     [SerializeField, Min(1f)] private float assaultDamageMultiplier = 1.1f;
@@ -295,6 +296,7 @@ public sealed class EnemyDefinition : ScriptableObject
     public float BenedictionDamageMultiplier => Mathf.Max(1f, benedictionDamageMultiplier);
     public Sprite BenedictionHaloSprite => benedictionHaloSprite;
     public int JudgmentBaseDamage => Mathf.Max(0, judgmentBaseDamage);
+    public int JudgmentFinisherBaseDamage => Mathf.Max(0, judgmentFinisherBaseDamage);
     public int BombardmentWarningMoves => Mathf.Max(1, bombardmentWarningMoves);
     public int BombardmentBaseDamage => Mathf.Max(0, bombardmentBaseDamage);
     public float AssaultDamageMultiplier => Mathf.Max(1f, assaultDamageMultiplier);

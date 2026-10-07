@@ -1,6 +1,6 @@
 # Royal Special Enemies
 
-This document records the Royal Special enemies and the Royal Archbishop / King milestone mechanics. The September 2026 Balance v1 values below replace the earlier prototype numbers. Full roster, formations and measured pacing are in [BALANCE_V1.md](BALANCE_V1.md); numerical tuning remains adjustable.
+This document records the Royal Special enemies and the Minister / King milestone mechanics. The September 2026 Balance v1 values below replace the earlier prototype numbers. Full roster, formations and measured pacing are in [BALANCE_V1.md](BALANCE_V1.md); numerical tuning remains adjustable.
 
 ## Royal Standard Bearer
 
@@ -61,9 +61,13 @@ Both mechanics preserve the existing ownership model:
 - `RoyalBannerAuraRuntime` is a board-level coordinator rather than one independent runtime per standard, so duplicate Standard Bearers cannot incorrectly clear each other's aura.
 - Both new enemy definitions are registered in `EnemyDatabase_Main` and use weighted eligibility rather than exact-wave scripted encounters.
 
-## Royal Archbishop — Mini-boss
+## The Minister — Mini-boss
 
-The Archbishop uses one normal attack and alternates Restoration then Benediction on one accepted-valid-completed-move cadence. Invalid swaps, cascades, refill and settling do not count. A failed cast holds readiness and retries after another valid move; Benediction is the fallback when runes cannot be placed. Specials and due warnings wait for board idle, stagger release and enemy action availability without claiming the board while waiting.
+Display name **The Minister** replaces Royal Arcanist. The stable save ID
+`royal_arcanist`, `Enemy_RoyalArchbishop` asset/GUID and runtime kind stay intact.
+Inspection, encounter labels and announcements obtain this name from the definition.
+
+The Minister uses one normal attack and alternates Restoration then Benediction on one accepted-valid-completed-move cadence. Invalid swaps, cascades, refill and settling do not count. A failed cast holds readiness and retries after another valid move; Benediction is the fallback when runes cannot be placed. Specials and due warnings wait for board idle, stagger release and enemy action availability without claiming the board while waiting.
 
 **Sacred Triage:** choose only living damaged enemies, including the caster. Score missing-HP fraction multiplied by rank importance. Ties retain authoritative roster order. When another ally is meaningfully wounded, reduce the caster's own score. A heavily injured Special can outrank a nearly full Boss. Recalculate independently before every heal; healing uses `EnemyActor.RestoreHealth` and never grants shield.
 
@@ -73,8 +77,8 @@ The Archbishop uses one normal attack and alternates Restoration then Benedictio
 
 Balance v1 tuning (serialized on `Enemy_RoyalArchbishop`):
 
-- Eligibility and the milestone opportunity window begin at 24; guarantee by 26 with one Royal escort. The later King's required Archbishop escort is the explicit exception to unique milestone non-repetition.
-- Base 210 HP and 5 damage per 12 seconds: approximately 260 HP and 5 damage at wave 24 through the gradual difficulty pipeline.
+- Eligibility and the milestone opportunity window begin at 24; guarantee by 26 with one Royal escort. The later King's required Minister escort is the explicit exception to unique milestone non-repetition.
+- Base 210 HP and 5 damage per 12 seconds: approximately 370 HP and 5 damage at wave 24 through the shared difficulty pipeline.
 - Shared special cadence: 4 valid completed moves. Three runes last 3 complete subsequent moves.
 - Each surviving rune restores 3.3% of the selected target's maximum HP, rounded to the nearest five HP (positive minimum 5). Three King-targeted pulses restore approximately 9.9% before missing-HP clamping.
 - Rank weights: Normal 1.00, Special 1.15, Mini-boss 1.35, Boss 1.60. An ally missing at least 10% HP makes self-priority use a 0.5 multiplier.
@@ -82,19 +86,19 @@ Balance v1 tuning (serialized on `Enemy_RoyalArchbishop`):
 
 ## The King — Boss
 
-The opening composition is exactly **King + Archbishop**. Both are always directly damageable; there is no immunity, damage interception or required target order. Both use their dedicated approved pixel-art characters and authored actions.
+The opening composition is exactly **King + Minister**. Both are always directly damageable; there is no immunity, damage interception or required target order. Both use their dedicated approved pixel-art characters and authored actions.
 
 **The Crown's Last Stand:** centralized surviving-health-damage notifications detect downward crossings strictly below 50% and 25%. Both trigger only once, including damage-over-time. Healing cannot rearm them. A surviving 60% → 20% hit queues 50% then 25%; a lethal crossing queues nothing. Pending batches are cancelled by death/disable and execute at safe action points.
 
-Each batch fills currently available slots through `IEnemySummonService`. Its explicit pool is Royal Swordsman, Royal Lancer, Royal Arbalist, Royal Standard Bearer and Court Mage. Never summon an Archbishop. At most one Special is added per batch, and a Special definition already alive is excluded. Normal duplicates are allowed. Slots still occupied by death presentation follow the existing summon service's availability rules. Reinforcements are independent wave members and survive the King's death.
+Each batch fills currently available slots through `IEnemySummonService`. Its explicit pool is Royal Swordsman, Royal Lancer, Royal Arbalist, Royal Standard Bearer and Court Mage. Never summon a Minister. At most one Special is added per batch, and a Special definition already alive is excluded. Normal duplicates are allowed. Slots still occupied by death presentation follow the existing summon service's availability rules. Reinforcements are independent wave members and survive the King's death.
 
 The first crossing also enters Enrage immediately: a persistent normal-damage multiplier and normal-timer speed multiplier compose with the banner aura and temporary blessings. The special cadence shortens without resetting accumulated moves. The quarter-health crossing adds no second permanent stat buff.
 
 One deterministic special cycle is **Royal Judgment → United Royal Assault → Royal Bombardment → repeat**. Successful casts advance the cycle and reset the shared counter; failed casts retain readiness. Due warnings resolve before new casts. Their lifetime is independent of the shared cast counter.
 
-**Royal Judgment:** independently mark three ordinary gems for three subsequent valid moves. White pulsing `!` warnings follow gem identities, avoid existing rune/mark targets, and break individually on destruction/special conversion. At expiry: destroy one surviving gem environmentally, apply one direct shield-aware King strike, then repeat. Zero/one/two/three survivors produce exactly zero/one/two/three separate damage instances. Settle the board once after the sequence.
+**Royal Judgment:** mark three ordinary physical gems for three subsequent valid moves. The King's established caster sigil follows each gem through movement; destruction or special conversion cancels that mark. The persisted target-list order controls resolution. At expiry the board holds all gravity, refill and banner falls. Consume one surviving gem, play `JudgmentStrike1`, then apply the first direct shield-aware hit at its authored contact. A second survivor repeats with `JudgmentStrike2`. Only all three survivors enable `JudgmentFinisher`: a longer high windup, committed royal-gold swing and separate empowered contact. Zero survivors produce no attack. Keep the board held through the last recovery, then settle once through the existing environmental pipeline. Death cancels future strikes and settles gaps already created; settings pauses motion and damage. Saves cannot capture a partial transaction.
 
-**United Royal Assault:** snapshot the King first, then eligible allies in authoritative roster order. The explicit `RoyalAssaultParticipant` flag is true for King, Royal Swordsman, Royal Lancer and Royal Arbalist. It is false for Standard Bearer, Court Mage, Archbishop and legacy Guards/Knights/Captain. Broad `CrownSoldier` membership alone is insufficient. Reserve each eligible available participant through `EnemyAutoAttack`, telegraph the command, then perform its existing full normal sequence. Busy/staggered participants cannot be reserved. A reserved participant newly staggered during windup waits before beginning; dead participants are skipped. Player board resolution finishes before the next commanded sequence starts. Commands consume the next normal attack and restart its normal cooldown after completion, with no immediately following stored ready attack. Owner death/disable cancels outstanding commands and stale impact callbacks. Unspent reservations retain their old cooldown.
+**United Royal Assault:** snapshot the King first, then eligible allies in authoritative roster order. The explicit `RoyalAssaultParticipant` flag is true for King, Royal Swordsman, Royal Lancer and Royal Arbalist. It is false for Standard Bearer, Court Mage, Minister and legacy Guards/Knights/Captain. Broad `CrownSoldier` membership alone is insufficient. Reserve each eligible available participant through `EnemyAutoAttack`, telegraph the command, then perform its existing full normal sequence. Busy/staggered participants cannot be reserved. A reserved participant newly staggered during windup waits before beginning; dead participants are skipped. Player board resolution finishes before the next commanded sequence starts. Commands consume the next normal attack and restart its normal cooldown after completion, with no immediately following stored ready attack. Owner death/disable cancels outstanding commands and stale impact callbacks. Unspent reservations retain their old cooldown.
 
 **Royal Bombardment:** warn one row and one column for two subsequent valid moves. Clearing gems cannot cancel the lanes. During the warning, the King holds a downward-pointing sword raised in both hands. On expiry he thrusts it into the ground with both hands: a quick full-column Royal Gold slash removes ordinary column gems together. The board stays locked and empty in that column while he lifts the sword and thrusts again; the second slash removes the targeted row together. He extracts the sword and returns to idle, then the board refills once. The intersection is processed once. Player-created specials, mined holes, barricades and the Royal Standard survive. Frozen ordinary gems can be removed and use the existing physical-destruction ownership cleanup. Apply one moderate direct hit after both lanes, then settle once. The remaining lane warnings blink gold; each disappears when that lane is struck. Animation contact cues use the accepted actor action identity. The board queue owns both strikes and recovery, with a scaled-time missing-art fallback; no VFX object owns countdown or grid mutation. Owner cancellation suppresses later strikes but still settles any holes already cleared.
 
@@ -105,10 +109,10 @@ Environmental removal itself reports no player clear rewards, combat damage, hea
 Balance v1 tuning (serialized on `Enemy_King`):
 
 - Variable milestone window 29–30, centered around the brief's approximate wave-30 anchor; no exact-wave King override.
-- Base 480 HP and 9 normal damage per 11 seconds: 960 HP and 10 damage at wave 30 under the provisional shared HP curve. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
+- Base 480 HP and 9 normal damage per 11 seconds: 960 HP and 10 damage at wave 30 under the provisional shared HP curve. The whole King + Minister formation is budgeted together. No player-level or build-based enemy scaling is enabled.
 - Special cadence 4 moves, shortened to 3 in Enrage.
 - Enrage: normal damage 1.20x, cooldown progress speed 1.25x. Banner speed remains a separate multiplier.
-- Judgment: 3 targets, 3-move countdown, base 12 damage per survivor scaled by the existing unrounded difficulty damage multiplier.
+- Judgment: 3 targets, 3-move countdown. Normal base damage remains 12; the empowered third contact uses a separate **provisional base 18**. Both use the existing unrounded difficulty damage multiplier and final five-point rounding.
 - Assault: 1.10x for the commanded normal sequence; authored Royal Command gesture (0.6-second fallback windup without authored motion) and 0.12-second inter-participant spacing.
 - Bombardment: 2-move warning, base 6 damage once after the lanes; set base damage to zero to disable that hit.
 
@@ -132,6 +136,6 @@ On `Enemy_RoyalArchbishop`, `benedictionHaloSprite` supplies the gold blessing i
 
 `RoyalMilestoneValidation.Run` (menu **Dungeon Matcher → Validation → Royal Milestones**) audits data links, eligibility, variable milestone windows across 100 seeds, triage, threshold ordering/rearm/lethal handling, modifier composition and gem identity/exclusions. Compile validation and this editor suite are distinct from Play Mode.
 
-**Dungeon Matcher → Validation → Royal Play Mode** runs `RoyalMilestonePlayValidation` against the loaded Game scene, then exits Play Mode. It uses real production swaps, board mutation coroutines, enemy runtimes and the shared summon service. Test fixtures temporarily boost HP, stop unrelated automatic attacks, prime special counters, and accelerate the isolated lane-footprint expiry; these are runtime-only arrangements, not serialized balance changes or a replacement gameplay pipeline. The suite exercises King + Archbishop + Bearer, simultaneous rune/Judgment warnings over three real completed moves, King + Archbishop + Mage, frozen-gem and Standard bombardment, both blessed Lancer hits in Assault, timer consumption, King-death command cancellation, and reinforcement batches with 0/1/2 free slots followed by a second refill. It does not measure encounter duration or replace final-art/mobile readability review.
+**Dungeon Matcher → Validation → Royal Play Mode** runs `RoyalMilestonePlayValidation` against the loaded Game scene, then exits Play Mode. It uses real production swaps, board mutation coroutines, enemy runtimes and the shared summon service. Test fixtures temporarily boost HP, stop unrelated automatic attacks, prime special counters, and accelerate the isolated lane-footprint expiry; these are runtime-only arrangements, not serialized balance changes or a replacement gameplay pipeline. The suite exercises King + Minister + Bearer, simultaneous rune/Judgment warnings over three real completed moves, King + Minister + Mage, frozen-gem and Standard bombardment, both blessed Lancer hits in Assault, timer consumption, King-death command cancellation, and reinforcement batches with 0/1/2 free slots followed by a second refill. It does not measure encounter duration or replace final-art/mobile readability review.
 
-Play Mode acceptance cases: King + Archbishop + Standard Bearer; King + Archbishop + Court Mage; blessed Lancer in Assault; simultaneous Judgment/Restoration; Bombardment across frozen gems and a Standard; 50% crossings with 0/1/2 free slots; 25% refill after earlier reinforcements die; owner death during warnings/command; both-hit blessing consumption and normal cooldown restart. Also inspect pulse/slash readability, player shield handling, stagger waiting and encounter duration on a mobile-sized view.
+Play Mode acceptance cases: King + Minister + Standard Bearer; King + Minister + Court Mage; blessed Lancer in Assault; simultaneous Judgment/Restoration; Bombardment across frozen gems and a Standard; 50% crossings with 0/1/2 free slots; 25% refill after earlier reinforcements die; owner death during warnings/command; both-hit blessing consumption and normal cooldown restart. Also inspect pulse/slash readability, player shield handling, stagger waiting and encounter duration on a mobile-sized view.

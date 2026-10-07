@@ -13,8 +13,8 @@ current runtime until their corresponding tranche replaces it.
 | Tranche | Approved change | State |
 | --- | --- | --- |
 | 1 | Remove extra channel recovery moves in Forest/Court; preserve response windows, normal cadence and ordinary Stagger; migrate old terminal saves without replay | Complete; 28 unique affected tests and Unity validator passed |
-| 2 | Rename Royal Arcanist display to The Minister with stable ID; Judgment resolves 0–3 surviving physical-gem marks sequentially under one board hold | Pending |
-| 3 | Native King JudgmentStrike1/Strike2 and visibly unique empowered Finisher, contact-timed damage, approved identity retained | Pending |
+| 2 | Rename Royal Arcanist display to The Minister with stable ID; Judgment resolves 0–3 surviving physical-gem marks sequentially under one board hold | Complete; 15 affected Dungeon checks and Unity validator passed; base-18 finisher provisional |
+| 3 | Native King JudgmentStrike1/Strike2 and visibly unique empowered Finisher, contact-timed damage, approved identity retained | Implemented and checked at four portrait/safe-inset shapes; direct pixel edits, zero generations; new motion awaits visual review |
 | 4 | Rootbinder/Warden instant queued roots; Warded source buff, 25% nonstacking reduction including summons; Treant physical-gem Bough cancels wholly if any mark clears | Pending |
 | 5 | Direct wooden shield-root and heart-root variants, both durability states, restrained pulse | Pending |
 | 6 | Flood 16–18 moves; five initial bubbles; captured oxygen counts as reserve; emergency supply only after exhaustion; visible −1/+2 accounting | Pending |

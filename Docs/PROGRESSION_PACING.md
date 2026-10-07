@@ -103,10 +103,10 @@ Balance v1 starts Locals at wave 1, Guards at 6, Knights at 11, and Royals at 19
 | Town Marshal | 7–8 | One local |
 | Siege Sergeant | 12–14 | One guard |
 | Knight Captain | 18–20 | Two knights |
-| Royal Archbishop | 24–26 | One royal |
-| King | 29–30 | Required Archbishop |
+| The Minister | 24–26 | One royal |
+| King | 29–30 | Required Minister |
 
-The King/Archbishop pairing deliberately permits an Archbishop who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation continues the same endless run. Current Normal/Special factions remain eligible in weighted formations, with the existing named-leader exclusion and threat constraints. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
+The King/Minister pairing deliberately permits a Minister who appeared earlier as a milestone. Other named leaders do not respawn. Guild-era content is a future expansion; defeating the King formation continues the same endless run. Current Normal/Special factions remain eligible in weighted formations, with the existing named-leader exclusion and threat constraints. These are adjustable opening-arc anchors, not deterministic surrounding-wave scripts.
 
 ## Milestone mini-bosses
 
@@ -118,7 +118,7 @@ The King is different because he is a major narrative Boss and progression gate.
 
 ## The King target
 
-Balance v1 targets a King encounter around **wave 30**, before the opening arc becomes overlong. An eligible run reaches him in the wave-29–30 opportunity with the required Archbishop escort. The complete formation fits its threat budget. Current measured timings and remaining tuning risks are in [BALANCE_V1.md](BALANCE_V1.md).
+Balance v1 targets a King encounter around **wave 30**, before the opening arc becomes overlong. An eligible run reaches him in the wave-29–30 opportunity with the required Minister escort. The complete formation fits its threat budget. Current measured timings and remaining tuning risks are in [BALANCE_V1.md](BALANCE_V1.md).
 
 ## Cards and run rhythm
 
@@ -188,7 +188,7 @@ Threat budgets complement the existing slot/category constraints and safe board-
 
 ## Replayability rules
 
-Named Mini-boss and Boss identities appear once per run as leaders. WaveController tracks successfully spawned leaders independently of wave number and applies exclusions to weighted selection and fallbacks. The King's required Archbishop escort is the explicit narrative exception; if that escort appeared in the immediately preceding encounter, the King pairing is deferred intact. Normal and Special enemies remain repeatable. Authored recipes avoid an immediate repeat, while the overlapping weighted pools provide variety between runs.
+Named Mini-boss and Boss identities appear once per run as leaders. WaveController tracks successfully spawned leaders independently of wave number and applies exclusions to weighted selection and fallbacks. The King's required Minister escort is the explicit narrative exception; if that escort appeared in the immediately preceding encounter, the King pairing is deferred intact. Normal and Special enemies remain repeatable. Authored recipes avoid an immediate repeat, while the overlapping weighted pools provide variety between runs.
 
 Replayability is a core pacing requirement, not a secondary bonus.
 

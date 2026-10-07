@@ -272,9 +272,16 @@ Balance v1 authorizes independent gold-purchased character levels (cap 20), shar
 
 ## Finalized mechanic specifications
 
-### Royal Archbishop and the King
+### The Minister and the King
 
-The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPECIALS.md): Archbishop's missing-health/rank-based Sacred Triage, individually breakable Restoration runes and one-normal-sequence Benediction; King's one-time surviving 50%/25% reinforcement crossings, Enrage and deterministic Judgment → United Royal Assault → Bombardment cycle. King + Archbishop is the opening Boss composition, with both targets always damageable. Three-move gem warnings follow identities; Bombardment's two-move row/column warning cannot be cancelled by clearing gems and preserves player specials and structural occupants. Every countdown uses accepted valid completed player moves. Numeric HP, damage, cadence, weights and milestone windows remain first-pass serialized tuning.
+The Minister retains the `royal_arcanist` save ID and Restoration/Benediction kit.
+Judgment consumes surviving physical-gem marks in saved order, with one authored
+strike per survivor and no intermediate gravity/refill. Only three survivors
+enable the unique empowered third swing. Normal damage remains base 12; the
+finisher's separate base 18 is provisional. After the final recovery the board
+settles once. Zero survivors cause no Judgment attack.
+
+The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPECIALS.md): Minister's missing-health/rank-based Sacred Triage, individually breakable Restoration runes and one-normal-sequence Benediction; King's one-time surviving 50%/25% reinforcement crossings, Enrage and deterministic Judgment → United Royal Assault → Bombardment cycle. King + Minister is the opening Boss composition, with both targets always damageable. Three-move gem warnings follow identities; Bombardment's two-move row/column warning cannot be cancelled by clearing gems and preserves player specials and structural occupants. Every countdown uses accepted valid completed player moves. Numeric HP, damage, cadence, weights and milestone windows remain first-pass serialized tuning.
 
 ### Spear Guard
 
@@ -444,7 +451,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
 
-Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Archbishop appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
+Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Minister appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
 
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 

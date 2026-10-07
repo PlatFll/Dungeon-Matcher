@@ -21,7 +21,7 @@ The newer rules in this status and the owning design/architecture documents supe
 ### Last updated
 
 - **Date:** 2026-10-07
-- **Active revision:** The enemy-roster/endless pass is on `codex/roster-endless-revision`, based on merged PR #181. Extra channel recovery is removed with legacy-save migration. The shared provisional HP curve reaches 6× at wave 100 and 9× at 150 while preserving damage/timing data and disabling player-power correction. Continue now refreshes the wave plaque from restored depth. The completed slices have 126 unique passing affected checks, twelve portrait/safe-inset captures and a passing Unity validator. Minister/Judgment, Forest root/Bough revisions, Court oxygen/coffer/Tribute revisions and underwater presentation remain pending. See [the worklist](ROSTER_ENDLESS_REVISION.md) and [validation](Validation/ROSTER_ENDLESS_REVISION.md). This new revision is not authorized for merge.
+- **Active revision:** The enemy-roster/endless pass is on `codex/roster-endless-revision`, based on merged PR #181. Extra channel recovery is removed with legacy-save migration. The shared provisional HP curve reaches 6× at wave 100 and 9× at 150 while preserving damage/timing data and disabling player-power correction. Continue now refreshes the wave plaque from restored depth. The completed slices have 126 unique passing affected checks, twelve portrait/safe-inset captures and a passing Unity validator. The Minister display rename and sequential Judgment now have 15 passing affected checks, a passing validator and four finisher viewport captures. The finisher uses provisional base 18; new native motion awaits visual review. Forest root/Bough, Court oxygen/coffer/Tribute and underwater presentation remain pending. See [the worklist](ROSTER_ENDLESS_REVISION.md) and [validation](Validation/ROSTER_ENDLESS_REVISION.md). This new revision is not authorized for merge.
 - **Drowned Court merged baseline:** [PR #180](https://github.com/PlatFll/Dungeon-Matcher/pull/180) merged on 2026-10-05. Fourteen marine identities have stills, native motion and data-selected kits; three coral-ruin compositions and marine gameplay UI are imported. Flood/AIR, temporary thorn snares, coffers, Queen rotation, three-zone travel and continuation are implemented. The testing picker includes Court; Bardley uses three sequential cracked explosions without bubble delivery. See [the Court contract](DROWNED_COURT.md). Production consumed 182/300 separately approved PixelLab generations, with the reserve untouched. Merge approval does not imply later art or temporary music has received visual/listening approval. Evidence and remaining device gates are in the Court validation record.
 - **Previous validated milestone:** Fix the King's zero-counter stall in seconds-based combat, retain command ownership through recovery, reduce forest vine pressure and enlarge enemy ability counters. Implementation and merge authorized on 2026-10-04. Command reservations can start during the move coordinator's pause of autonomous basics; action holds and stagger still block them. Vine frontier additions are halved to two and growth coverage to twelve, with root placement preserved. Ability counters have larger containers above attack timers, clear of the attack countdown. Automated Unity runs mute Editor audio without changing player audio preferences.
 - **Forest checkpoint:** [PR #176](https://github.com/PlatFll/Dungeon-Matcher/pull/176) is merged: seven locked designs have 39 motion clips and approved kits, including Treant C (Old Stump). Selected blockers are Wood A, Stone B, Chain A, Thorn A, Roots B/B and dense Vines B. See [the roster contract](Forest/EXPANDED_ROSTER.md). Existing crystal travel and combat timing remain in place.
@@ -654,12 +654,12 @@ Current milestone windows:
 | Town Marshal | 7–8 | one local escort |
 | Siege Sergeant | 12–14 | one guard escort |
 | Knight Captain | 18–20 | two knight escorts |
-| Royal Archbishop | 24–26 | one royal escort |
-| King | 29–30 | required Archbishop |
+| The Minister | 24–26 | one royal escort |
+| King | 29–30 | required Minister |
 
 Mini-bosses should not routinely be isolated just because they are milestone enemies. The **whole formation** must be budgeted.
 
-Old factions decline gradually rather than disappearing immediately. Named leaders generally do not respawn in the same run; the King’s required Archbishop pairing is the current explicit narrative exception.
+Old factions decline gradually rather than disappearing immediately. Named leaders generally do not respawn in the same run; the King’s required Minister pairing is the current explicit narrative exception.
 
 Full recipes, enemy base stats and threat values: `Docs/BALANCE_V1.md`.
 
@@ -688,7 +688,7 @@ Balance v1 currently tunes **21 implemented enemy definitions** through the King
 - Royal Arbalist
 - Royal Standard Bearer
 - Court Mage
-- Royal Archbishop
+- The Minister
 - King
 
 Endless waves reuse this roster after the King; the larger post-King roster and new factions remain future content.
