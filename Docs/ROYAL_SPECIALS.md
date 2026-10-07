@@ -22,8 +22,8 @@ This document records the Royal Special enemies and the Royal Archbishop / King 
 
 Balance v1 serialized tuning:
 - minimum eligible wave: 22;
-- base HP: 105, multiplied by `1 + 0.01 * (wave - 1)`;
-- single-hit base damage: 5, using the same gradual wave multiplier;
+- base HP: 105, using the shared global HP curve in `BALANCE_V1.md`;
+- single-hit base damage: 5, retaining the existing gradual damage multiplier;
 - base attack interval: 12 seconds;
 - special cadence: 5 valid completed player moves, locked against global special-turn reduction;
 - relative spawn weight: 0.8.
@@ -44,8 +44,8 @@ Balance v1 serialized tuning:
 
 Balance v1 serialized tuning:
 - minimum eligible wave: 23;
-- base HP: 95, multiplied by `1 + 0.01 * (wave - 1)`;
-- single-hit base damage: 5, using the same gradual wave multiplier;
+- base HP: 95, using the shared global HP curve in `BALANCE_V1.md`;
+- single-hit base damage: 5, retaining the existing gradual damage multiplier;
 - base attack interval: 12 seconds;
 - special cadence: 5 valid completed player moves, locked against global special-turn reduction;
 - relative spawn weight: 0.75.
@@ -105,7 +105,7 @@ Environmental removal itself reports no player clear rewards, combat damage, hea
 Balance v1 tuning (serialized on `Enemy_King`):
 
 - Variable milestone window 29–30, centered around the brief's approximate wave-30 anchor; no exact-wave King override.
-- Base 480 HP and 9 normal damage per 11 seconds: approximately 620 HP and 10 damage at wave 30. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
+- Base 480 HP and 9 normal damage per 11 seconds: 960 HP and 10 damage at wave 30 under the provisional shared HP curve. The whole King + Archbishop formation is budgeted together. No player-level or build-based enemy scaling is enabled.
 - Special cadence 4 moves, shortened to 3 in Enrage.
 - Enrage: normal damage 1.20x, cooldown progress speed 1.25x. Banner speed remains a separate multiplier.
 - Judgment: 3 targets, 3-move countdown, base 12 damage per survivor scaled by the existing unrounded difficulty damage multiplier.

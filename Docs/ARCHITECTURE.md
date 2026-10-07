@@ -374,6 +374,13 @@ Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains
 - `EnemyDefinition` is the per-enemy `ScriptableObject` for identity, prefab and presentation, base combat values, spawn eligibility/weight, category, special-ability kind and cadence, and ability-specific data currently represented there.
 - `EnemyDatabase` supplies eligible weighted definitions.
 - `WaveSpawnProfile` produces a category-based `WaveSpawnPlan`; `DifficultyProfile` converts a definition, wave, category modifiers, and player-power input into `EnemyRuntimeStats`.
+- Every zone and summoned actor reaches the same `WaveController.CreateEnemy`
+  path and serialized `DifficultyProfile_Standard`, using global `currentWave`.
+  Local zone visit position never resets stat scaling. The 2026-10-07 provisional
+  HP anchors and post-100 growth live in that profile; damage/speed/cadence fields
+  retain their previous settings, and player-power correction is off. Continue
+  restores the saved global wave before creation, then restores saved current HP
+  against the recalculated cap without granting health.
 - `WaveController` selects definitions, instantiates the configured prefab, initializes `EnemyActor`, assigns a gem weakness, initializes `EnemyAutoAttack`, and asks `EnemySpecialAbilityRuntimeFactory` to install the configured runtime.
 - `EnemyActor` owns runtime HP, shield, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
 - `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`. Definitions may optionally provide one follow-up auto-attack hit and a non-negative delay after the primary presentation's completed-return acknowledgement. The primary and follow-up are independently scaled and resolved as separate `PlayerActor.TryTakeDamage` calls inside the same attack cadence. For a follow-up sequence, `EnemyAutoAttack` retains action ownership while `EnemyCombatFeedback` acknowledges each generic lunge's impact and completed return using that hit's presentation ID. The next hit cannot begin before the required return acknowledgement and configured follow-up delay, and the cooldown cannot begin before the final return; one-shot guards and real-time fallbacks prevent duplicate damage or presentation-dependent stalls. Definitions with no follow-up retain the established single-hit path.

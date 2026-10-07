@@ -247,6 +247,10 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - Difficulty should deepen decision-making and pressure without sacrificing board readability or perceived fairness.
 - Escalation may combine stronger enemies, more demanding behavior, and greater board manipulation.
 - Wave composition and numerical scaling are data-driven so pacing and balance can change without rewriting shared gameplay logic.
+- The shared provisional endless HP anchors are global waves 1/15/30/50/70/100
+  at 1/1.4/2/3/4/6×, with moderate linear continuation to 9× at 150. Damage and
+  attack/special timing retain their existing tuning; player-power correction
+  stays off. See [BALANCE_V1.md](BALANCE_V1.md) for the serialized curve contract.
 - Increasing difficulty should not remove meaningful player choices or replace the match-3 game with a sequence of predetermined solutions.
 
 Run upgrades are temporary, stackable build choices owned only by the current
@@ -276,7 +280,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 
 - Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. Balance v1 eligibility starts at wave 6.
 - His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
-- Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP/damage scale by 1% per wave beyond the first; attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
+- Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP uses the shared global endless curve; damage retains its existing slower curve. Attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
 - His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a particular wave composition.
 - His definition now uses the restored Spear Guard idle and its matching ready-frame fallback. The shared single-lunge action presentation and gameplay timing are unchanged; the idle contains no combat events.
 - Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
@@ -293,7 +297,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 ### Shield Knight
 
 - Shield Knight is a Chapter 3 Special enemy eligible starting at wave 13.
-- Balance v1 base stats: 90 HP, one 4-damage hit every 11 seconds. Standard 1% wave scaling applies; it has no follow-up attack.
+- Balance v1 base stats: 90 HP, one 4-damage hit every 11 seconds. Shared global HP/damage scaling applies; it has no follow-up attack.
 - Shielding Allies casts after every 6 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
 - A cast grants +10 shield to every other living enemy and +12 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
@@ -378,7 +382,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 #### First-pass combat balance
 
-- Balance v1 base stats: 120 HP, 6 damage, 10-second normal attack interval and no follow-up hit. The standard 1% per-wave HP/damage scaling applies.
+- Balance v1 base stats: 120 HP, 6 damage, 10-second normal attack interval and no follow-up hit. Shared global HP/damage scaling applies.
 - The whole formation, including its local escort, fits the shared threat budget. Summons fill only the remaining three-slot capacity.
 
 #### Shared special cadence and ability selection
@@ -426,7 +430,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 ### Siege Sergeant
 
 - Chapter 2 Mini-boss with a Spear/Crossbow Guard escort, appearing once in a weighted wave-12–14 opportunity.
-- Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Standard 1% wave scaling applies.
+- Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Shared global HP/damage scaling applies.
 - One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the six-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
 - **Hold the Line:** place three one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose three distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at six blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
 - **Hammer Time:** mark two orthogonally adjacent ordinary unpinned gems after prior board mutations settle. Give two full valid moves after marking; invalid swaps and cascades do not advance the warning. Markers follow gem identities through movement, gravity and reshuffles, never replacement gems in the same cells. If either gem is removed, pinned or becomes special, cancel the entire strike. A moved pair may no longer be adjacent at impact; it still targets those same two gems and the sweep connects their current positions.

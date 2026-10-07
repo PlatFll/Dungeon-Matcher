@@ -53,7 +53,30 @@ The focused Unity suite passed 231 tests with no failures/skips, including a Pla
 
 ## Enemy data
 
-All category and individual stat multipliers are 1. HP and damage multiply by `1 + 0.01*(wave-1)` through wave 100, then use the existing endless curves; final stats round to nearest five, with a positive minimum of five; attack intervals and special cadence do not accelerate. Player-power correction is disabled. Enemy slots remain three.
+All category and individual stat multipliers are 1. The provisional 2026-10-07
+shared HP curve uses linear segments through the anchors below. After wave 100,
+HP uses `6 * (1 + 0.01 * (wave - 100))`: 9× at wave 150. This is tuning data,
+not an enforced fight duration. Base enemy HP is unchanged.
+
+| Global wave | HP multiplier | Damage multiplier |
+| ---: | ---: | ---: |
+| 1 | 1.0× | 1.00× |
+| 15 | 1.4× | 1.14× |
+| 30 | 2.0× | 1.29× |
+| 50 | 3.0× | 1.49× |
+| 70 | 4.0× | 1.69× |
+| 100 | 6.0× | 1.99× |
+| 150 | 9.0× | 3.4825× |
+
+Damage retains `1 + 0.01*(wave-1)` through wave 100, then
+`1.99 * (1 + 0.015*(wave-100))`. Attack intervals and special cadence do not
+accelerate. Final HP/damage round once to nearest five, positive minimum five.
+Player-power correction remains disabled. All three zones and summons share
+`DifficultyProfile_Standard` through WaveController's global depth; travel does
+not restart this curve. Continue retains saved current HP without healing.
+Enemy slots remain three. New evidence is recorded in
+[the roster/endless validation](Validation/ROSTER_ENDLESS_REVISION.md);
+historical Balance v1 pacing measurements used the earlier HP curve.
 
 | Enemy | Base HP | Hit(s) | Interval | Eligible from | Threat |
 | --- | ---: | --- | ---: | ---: | ---: |

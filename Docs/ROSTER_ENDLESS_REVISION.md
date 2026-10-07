@@ -22,7 +22,7 @@ current runtime until their corresponding tranche replaces it.
 | 8 | Queen captures all free bubbles; armored coffer's first hit exposes pearl and rotates a legal 2–3-cell cardinal path; preserve specials, no intermediate refill; second hit returns oxygen | Pending |
 | 9 | Replace Crushing Depths with three-move Nacre Tribute; up to three bubbles; Queen-first stable round-robin Fortified, cap two; one 50% direct-hit reduction per consumed stack; front/back pink orbit pearls | Pending |
 | 10 | Restrained flooded swap/fall bubbles and ripple; stronger coffer wake; reduced-motion support | Pending |
-| 11 | Shared HP curve 1/15/30/50/70/100 → 1/1.4/2/3/4/6; moderate post-100 growth; retain damage/speed identities and disable player-power correction | Pending |
+| 11 | Shared HP curve 1/15/30/50/70/100 → 1/1.4/2/3/4/6; moderate post-100 growth; retain damage/speed identities and disable player-power correction | Complete; 48 definitions, all requested depths in three live zones, Continue/travel and twelve layouts verified; affected regressions and validator passed. Provisional 9× HP at 150 |
 | 12 | Owner docs, focused then broad regression, actual portrait/safe-inset review, native art gallery and PR | Pending |
 
 ## Channel lifecycle change
