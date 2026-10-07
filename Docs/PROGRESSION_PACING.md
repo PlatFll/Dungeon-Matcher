@@ -213,15 +213,17 @@ The revised implementation retains weighted eras, eight card choices and the Kin
 
 A run may span multiple visits through Suspend/Continue. Free practice and non-expiring No Supplies / Board Only challenges support voluntary replay after the King; no new currency, attendance timer or paid refill is introduced. The King ends the opening narrative milestone; combat continues until death or explicit End Run. The current roster supplies later waves while new zones are developed. Encounter-duration bands are tuning prompts, never minimum fight lengths; there is no mandatory early-loss timer.
 
-### Initial connected forest visits (2026-10-03)
+### Connected zone visits
 
 The initial dungeon still uses the weighted-era opening above. After an entire
 apex formation dies and rewards finish, the crystal selects another eligible
-zone. Dungeon and forest currently alternate because they are the two available
-destinations; aquatic remains unavailable. Global wave depth continues.
+zone. Dungeon, magical forest and Drowned Court are available; the crystal
+randomly chooses an eligible destination other than the current zone. Global
+wave depth continues across every handoff.
 
-Forest's six-enemy starter roster uses eighteen local encounter positions with
-varied escorts and relief bands. Returns to the dungeon use its existing weighted
+Forest has six starter identities and seven approved additions, with eighteen
+local encounter anchors, varied escorts and relief bands. Court has fourteen
+identities and thirty-two weighted recipes. Returns to the dungeon use its existing weighted
 pool before a local-wave-18 King rematch. These are temporary content anchors,
 not a finalized deterministic script or evidence of ten-minute forest visits.
 Expanded behavior and encounter content must provide substantial visits without

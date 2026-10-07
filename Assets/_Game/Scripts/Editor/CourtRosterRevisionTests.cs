@@ -230,8 +230,8 @@ public sealed partial class ForestFoundationPlayTests
         yield return LaunchCourt("shellback_porter");yield return Move();PrepareSafeMove();
         var board=Run.Board;var state=board.Aquatic;state.StartFlood(18,Run.MoveClock.Tick);state.air=3;
         var collected=board.GetGem(safeMoveFrom.x,safeMoveFrom.y);state.bubbles.Add(collected.BoardIdentity);
-        int opening=-1,cost=0;int[] gains=null;
-        board.AirReceipt+=(before,spend,adds)=>{opening=before;cost=spend;gains=adds;};
+        int opening=-1,cost=0,receipts=0;int[] gains=null;
+        board.AirReceipt+=(before,spend,adds)=>{opening=before;cost=spend;gains=adds;receipts++;};
         var view=board.GetComponent<AquaticEnvironmentView>();var beats=new List<string>();
         int tick=board.CompletedValidPlayerMoves;
         board.StartCoroutine((IEnumerator)Call(board,"TrySwap",collected,board.GetGem(safeMoveTo.x,safeMoveTo.y)));
@@ -245,6 +245,9 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(state.air,Is.EqualTo(4),"bubble remains +2, move remains -1");
         Assert.That(beats.IndexOf("-1"),Is.GreaterThanOrEqualTo(0));
         Assert.That(beats.IndexOf("-1"),Is.LessThan(beats.IndexOf("+2")));
+        yield return (IEnumerator)Call(board,"AdvanceAquaticEnvironment",board.CompletedValidPlayerMoves);
+        Assert.That(receipts,Is.EqualTo(1),"settled accounting cannot replay its presentation");
+        Assert.That(state.air,Is.EqualTo(4));
     }
 
     [UnityTest] public IEnumerator CourtRevisionLegacyFloodPreservesRemainingTimeAndReserve()

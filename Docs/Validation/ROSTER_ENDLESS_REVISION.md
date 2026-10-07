@@ -2,8 +2,69 @@
 
 Branch `codex/roster-endless-revision`, based on merged main
 `e572a88227d036af765e057831c46a2cc067630d`. This report covers completed
-slices of [the approved worklist](../ROSTER_ENDLESS_REVISION.md), not the
-whole requested revision. No merge is authorized.
+slices and final integration of [the approved worklist](../ROSTER_ENDLESS_REVISION.md).
+No merge is authorized. Earlier pending-review notes below describe their slice's
+state at the time; the final review section records subsequent results.
+
+## Combined regression
+
+The combined muted graphics run selected 149 cases across channel lifecycle,
+Court/Forest/King mechanics, damage/statuses, Slippery, deterministic saves,
+travel and the production difficulty profile. It passed 146 with three failures,
+zero skipped: `.utmp/ForestValidation/8c0fd8e9-25ab-4a14-9f19-4cfe550f6083.xml`.
+
+- Puffer exposed a real retained pause lease: `BlocksBasic` was sampled while the
+  cast was pending and never refreshed when inflation finished. The ability now
+  releases that lease when the cast ends; other channels keep their normal hold.
+- Moray's old test expected the removed recovery hold. It now requires immediate
+  normal readiness, zero special counter, no HP loss through shield gating and
+  no siphon healing when HP damage is zero.
+- The flood test's random refill supplied four legal reachable ordinary gems. It
+  now asserts exactly the available count capped at the configured five, and
+  verifies every bubble is reachable. The separate controlled-board reserve test
+  still requires all five bubbles. Production placement was not loosened.
+
+All eight affected reruns passed, zero failed/skipped:
+`.utmp/ForestValidation/a0b7acae-0b83-474c-ba90-4f65dadfcb57.xml`.
+They cover the three corrections plus finite reserve, target-loss/Stagger,
+Tribute, Pressure and instant theft. All 149 unique cases from the combined run
+now pass on their latest relevant execution; this is not a claim that its first
+run passed without corrections. Separate final portrait/edge evidence is below.
+
+Final mandatory `Tools/Validate-Unity.ps1` completed successfully, exit 0, using
+Unity 6000.3.19f1 after the Puffer correction:
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-3b6cbe91-b676-4340-b34f-5a78a2281e71.log`.
+The four original user-edited files still match their recorded SHA-256 hashes.
+The unrequested Unity TimeManager serialization rewrite was restored to baseline.
+New art needs human review; no physical-device, music or human pacing approval is
+claimed. No known failing affected case remains. This is scoped regression
+evidence, not a rerun of every historical project test.
+
+## Final presentation and edge review
+
+- The initial final-layout run (`0e063e82-56d8-4ab2-94a1-de1afb6b046b.xml`)
+  passed Forest and King checks. Court's four portrait assertions passed, then
+  reloading a second fixture in the same test stalled at scene setup. The coffer
+  review now has its own standard scene fixture.
+- `40702729-c10a-4867-ac2e-76e845295980.xml`: all three final Forest/Court/coffer
+  review cases passed. Forest minimum battle height is 384 logical pixels to fit
+  the native Matriarch and counters below controls. Fortified/Warded labels now
+  reserve native glyph width and center with the weakness gem as one status lane.
+  Tests check actual glyph bounds, mask visibility and control/icon separation.
+- Actual coffer images exposed an old world-TMP sizing bug: its count covered the
+  pearl. It now fits a small integer pixel height below the pearl. Final coffer
+  capture and duplicate AIR-receipt test both passed in
+  `c09ed11a-d1c5-4070-b6b5-284b4b6047d0.xml`. Already-settled environmental calls
+  cannot replay resource feedback or emergency supply.
+- Gallery: `.utmp/RosterEndless/Review.html`, rebuilt by
+  `Tools/build_roster_review.py`. Court and Forest captures cover 720×1280,
+  1080×1920, 1080×2400 and simulated safe insets. Coffer stills and the sampled
+  live slide GIF are under `Court/`; source comparisons link to unchanged PNGs.
+- Three additional edge cases passed in `63272c9c-99d0-43bc-9dc1-07bb7311cb30.xml`:
+  royal rotation reproduces the same destination, physical gem grid and refill RNG
+  from a saved pre-hit boundary; all four cardinal directions support both legal
+  lengths and reject a blocked route; Queen death during Tribute preserves oxygen
+  and grants no Fortified stacks or lingering marks.
 
 ## Underwater movement presentation
 
@@ -44,7 +105,7 @@ Mandatory Unity validator passed, exit 0:
 No character art was regenerated. Tribute reuses the approved Queen release clip
 (its historical controller key remains `DepthsRelease`); the old damage ability
 is absent. Native orbit sprites were authored in tranche 7. Actual portrait
-captures and broader final integration remain outstanding.
+captures and broader final integration were deferred to the final review above.
 
 ## Royal moving pearl evidence
 
@@ -54,8 +115,8 @@ breaks armor through the real player-area-clear pipeline, checks each shifted
 physical special at the committed rotation, verifies no new gem/refill midway and
 held input, then Continue restores the exposed art/coordinate and the second hit
 pays once. A structural-obstruction fixture proves the no-route fallback preserves
-every gem. All playback is muted in the Editor. Native scene review remains in the
-final presentation pass; these automated checks do not establish animation feel.
+every gem. All playback is muted in the Editor. The final presentation pass above
+adds native scene review; automated checks do not establish human approval of animation feel.
 
 Mandatory validator passed (exit 0, Unity 6000.3.19f1):
 `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-07434cf1-592d-4528-b47a-ebe1f1360ba2.log`.
@@ -76,7 +137,7 @@ Four AIR tests overlap tranche 6; do not add counts across slices blindly.
 The native source comparison is `ArtSource/DrownedCourt/RosterRevision/PearlReview.png`.
 Seven candidates have binary alpha, 2–9 opaque colors, actual native dimensions
 6–32 pixels, 64 PPU, Point/uncompressed/unmipped FullRect imports. No paid jobs.
-Actual four-viewport pearl/Pressure presentation checks remain in the final pass.
+Actual four-viewport presentation checks are recorded in the final pass above.
 
 ## Channel lifecycle evidence
 
@@ -99,17 +160,17 @@ Unity 6000.3.19f1, actual Game scene, disposable account saves, Editor audio mut
   Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-a99b67aa-795c-425c-a8c9-f63a5f5204a4.log`.
 - The four original user modifications still match their starting SHA-256 hashes.
 
-No visual assets changed in this slice. Final four-viewport review and whole-revision
-regression remain pending. Earlier PR #181 evidence is a baseline, not a claim that
-this new revision has passed those same checks.
+No visual assets changed in this slice. Four-viewport review and whole-revision
+regression are recorded separately. Earlier PR #181 evidence is a baseline, not
+a claim that this new revision has passed those same checks.
 
 ## Audit discrepancy
 
 `PROGRESSION_PACING.md`'s historical “Initial connected forest visits (2026-10-03)”
-paragraph still describes two destinations and unavailable aquatic travel. Actual
-main has three eligible connected zones and the Court contract records that newer
-behavior. Do not revert implementation to that older paragraph; reconcile it when
-updating the final progression documentation.
+paragraph described two destinations and unavailable aquatic travel. Actual main
+has three eligible connected zones and the Court contract records that newer
+behavior. The final documentation pass reconciles that paragraph with the current
+implementation and roster counts; travel behavior was not reverted.
 
 ## Shared endless HP
 
@@ -194,8 +255,8 @@ Normal base damage remains 12; empowered base 18 is provisional serialized data.
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-5c855417-2e1c-483a-9428-8f122364509a.log`.
 
 New animation art remains a review candidate. This is muted Editor/runtime
-evidence, not physical-device or human-feel approval. Forest/Court revision
-tranches and final combined regression remain open.
+evidence, not physical-device or human-feel approval. Subsequent Forest/Court
+tranches and combined regression are recorded elsewhere in this report.
 
 ## Forest revision — validated implementation, art awaiting review
 
@@ -213,7 +274,8 @@ tranches and final combined regression remain open.
   10 passed / 2 failed. Warden's instant pending action needed to release its
   animation token on Stagger; its old handler covered only multi-move channels.
   Warded's 14-unit label was too short for native Thaleah at the small viewport;
-  the final container is now 42×20 beside the weakness gem. Review also added a Bough guard so answering a
+  that slice used a 42×20 container beside the weakness gem; final review below
+  expands it to the actual native glyph width. Review also added a Bough guard so answering a
   long warning cannot recast on that same accepted move when readiness is full.
 
 - `0818681c-24b2-4e05-a717-b5220a819555.xml`: 15/16 passed. The answered Bough
@@ -234,8 +296,8 @@ tranches and final combined regression remain open.
   combined failing fixtures. Counts above overlap. No current failed case remains.
 - All four actual viewport images are in `.utmp/RosterEndless/Forest/`.
   Warded is visible, root hit flashes settle, and native root art is crisp.
-  The synthetic right-slot Matriarch still demonstrates the older tall-character
-  counter/settings crowding at short portrait; final combined UI review must fix it.
+  The synthetic right-slot Matriarch exposed counter/settings crowding at short
+  portrait; the final combined UI review above fixes and verifies it.
 - Four 64×64 root candidates preserve the approved palettes (17/26 opaque colors),
   binary alpha and Point/uncompressed imports. Zero PixelLab generations.
 - Required Unity validator passed, exit 0:
@@ -253,4 +315,4 @@ tranches and final combined regression remain open.
 - Mandatory Unity validator passed, exit 0:
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c1ea84f5-8fdc-411c-b3aa-b55e41d25dc4.log`.
 - No paid generations or asset replacements. The new economy is provisional
-  zone data. Theft/coffer/Pressure/Tribute revisions remain subsequent work.
+  zone data. Subsequent theft/coffer/Pressure/Tribute revisions are recorded above.

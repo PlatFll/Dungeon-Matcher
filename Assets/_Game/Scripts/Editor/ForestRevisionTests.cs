@@ -230,6 +230,7 @@ public sealed partial class ForestFoundationPlayTests
                 }
                 ScreenCapture.CaptureScreenshot(Path.Combine(folder,"roots-warded-"+(inset?"safe-inset":size.x+"x"+size.y)+".png"));
                 yield return null;yield return null;
+                AssertRosterCountersClearControls();
             }
         }
         finally {GameplayPixelLayoutController.ValidationSafeArea=null;Time.timeScale=1;}

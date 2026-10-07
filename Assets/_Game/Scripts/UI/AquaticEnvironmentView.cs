@@ -138,7 +138,14 @@ public sealed class AquaticEnvironmentView : MonoBehaviour
          tmp.font=GameUi.TmpFont;tmp.fontSize=4;tmp.alignment=TextAlignmentOptions.Center;tmp.color=Color.white;
          tmp.GetComponent<MeshRenderer>().sortingLayerName="Gems";tmp.GetComponent<MeshRenderer>().sortingOrder=24;
          label=tmp;captions.Add(key,label);}
-        label.text=value;label.transform.position=position+Vector3.down*board.CellSize*.23f;
+        label.text=value;label.ForceMeshUpdate();
+        // A world TMP em is not a board pixel. Fit seven-pixel Thaleah capitals
+        // to a small integer screen scale, below the pearl rather than over it.
+        var camera=Camera.main;
+        float pixelsPerUnit=camera!=null?Mathf.Abs(camera.WorldToScreenPoint(position+Vector3.up).y-camera.WorldToScreenPoint(position).y):64;
+        float height=7*Mathf.Max(1,Mathf.Floor(board.CellSize*pixelsPerUnit*.2f/7))/Mathf.Max(1,pixelsPerUnit);
+        label.transform.localScale=Vector3.one*height/Mathf.Max(.001f,label.textBounds.size.y);
+        label.transform.position=position+Vector3.down*board.CellSize*.36f;
     }
     private void AnimateAirReceipt(int opening,int spent,int[] gains)
     {

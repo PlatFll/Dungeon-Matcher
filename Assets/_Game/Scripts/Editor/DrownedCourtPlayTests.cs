@@ -40,7 +40,13 @@ public sealed partial class ForestFoundationPlayTests
         yield return Move();
         var state=Run.Board.Aquatic;
         Assert.That(state.phase,Is.EqualTo(TidePhase.Flooded));Assert.That(state.air,Is.EqualTo(5));
-        Assert.That(state.wetMoves,Is.InRange(16,18));Assert.That(state.bubbles.Count,Is.EqualTo(5));
+        Assert.That(state.wetMoves,Is.InRange(16,18));
+        var reachable=(List<Gem>)Call(Run.Board,"AirCandidates");
+        // The real move's refill can leave fewer than five immediately legal
+        // candidates; fill every available reserve slot without inventing one.
+        Assert.That(state.bubbles.Count,Is.EqualTo(Mathf.Min(Run.Zone.Definition.initialAirBubbles,reachable.Count)));
+        Assert.That(state.bubbles,Is.Not.Empty);
+        Assert.That(state.bubbles.All(id=>reachable.Any(g=>g.BoardIdentity==id)),Is.True);
         int remaining=state.wetMoves;
         float observeUntil=Time.time+.15f;yield return Until(()=>Time.time>=observeUntil,"thinking does not advance tide");
         Assert.That(state.wetMoves,Is.EqualTo(remaining));
@@ -92,7 +98,8 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(ability.IsPreparing,Is.True);Assert.That(ability.ResponseMoves,Is.EqualTo(2));
         yield return Move();Assert.That(ability.ResponseMoves,Is.EqualTo(1));
         yield return Move();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
-        Assert.That(moray.CurrentHealth,Is.EqualTo(before));Assert.That(ability.BlocksBasic,Is.True);
+        Assert.That(moray.CurrentHealth,Is.EqualTo(before));Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(ability.IsPreparing,Is.False);Assert.That(moray.CurrentSpecialTurnCount,Is.Zero);
     }
 
     [UnityTest] public IEnumerator CourtMaterialAndRosterImportsAreNativeAndComplete()

@@ -17,6 +17,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     private RectTransform link;
     private RectTransform visual;
     private RectTransform weakness;
+    private EnemyWeaknessIndicatorUI weaknessView;
     public void Initialize(EnemyActor owner)
     {
         actor=owner;
@@ -33,8 +34,9 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         if(slot==null) return;
         text=GameUi.Label("MoveIntent",slot.transform,"",new Vector2(108,16),Vector2.zero,12);
         text.textWrappingMode=TextWrappingModes.NoWrap;
-        weakness=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true)?.transform as RectTransform;
-        buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(56,20),Vector2.zero,8);
+        weaknessView=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true);
+        weakness=weaknessView?.transform as RectTransform;
+        buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(80,20),Vector2.zero,8);
         buffs.textWrappingMode=TextWrappingModes.NoWrap;
         buffs.color=new Color(.72f,.94f,.5f);buffs.raycastTarget=false;
         bar=GameUi.Rect("ChannelTrack",text.transform,new Vector2(64,4),new Vector2(0,-9));
@@ -57,7 +59,8 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         text.gameObject.SetActive(visible);
         buffs.gameObject.SetActive(visible && (actor.IsWarded || actor.FortifiedStacks>0));
         buffs.text=actor.FortifiedStacks>0?$"{(actor.IsWarded?"WARD / FORT":"FORTIFIED")} {actor.FortifiedStacks}":actor.IsWarded?"WARDED":"";
-        buffs.rectTransform.sizeDelta=new Vector2(actor.FortifiedStacks>0?56:42,20);
+        buffs.rectTransform.sizeDelta=new Vector2(actor.FortifiedStacks>0?80:48,20);
+        weaknessView?.SetTrailingStatusWidth(buffs.gameObject.activeSelf?buffs.rectTransform.rect.width:0);
         buffs.color=actor.FortifiedStacks>0?new Color(1,.55f,.79f):new Color(.72f,.94f,.5f);
         if(!visible) { if(link!=null) link.gameObject.SetActive(false);return; }
         // Follow the actual rendered canvas after the pixel presenter resizes
@@ -113,6 +116,6 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
             GameplayPixelGrid.Snap(buffs.rectTransform);
         }
     }
-    private void OnDisable() { if(text!=null) text.gameObject.SetActive(false);if(buffs!=null) buffs.gameObject.SetActive(false);if(link!=null) link.gameObject.SetActive(false); }
-    private void OnDestroy() { if(text!=null) Destroy(text.gameObject);if(buffs!=null) Destroy(buffs.gameObject);if(link!=null) Destroy(link.gameObject); }
+    private void OnDisable() { weaknessView?.SetTrailingStatusWidth(0);if(text!=null) text.gameObject.SetActive(false);if(buffs!=null) buffs.gameObject.SetActive(false);if(link!=null) link.gameObject.SetActive(false); }
+    private void OnDestroy() { if(weaknessView!=null)weaknessView.SetTrailingStatusWidth(0);if(text!=null) Destroy(text.gameObject);if(buffs!=null) Destroy(buffs.gameObject);if(link!=null) Destroy(link.gameObject); }
 }

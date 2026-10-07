@@ -27,6 +27,14 @@ public sealed class EnemyWeaknessIndicatorUI :
 
     private bool isInitialized;
     private bool isDefeating;
+    private float trailingStatusWidth;
+
+    // Keep a visible status and the native gem centered together under the bar.
+    public void SetTrailingStatusWidth(float width)
+    {
+        trailingStatusWidth=Mathf.Max(0,width);
+        if(isInitialized)FollowHealthBar();
+    }
 
     public bool IsDefeating =>
         isDefeating;
@@ -279,7 +287,7 @@ public sealed class EnemyWeaknessIndicatorUI :
         GameplayPixelGrid.FitImage(indicatorImage, Vector2.one * config.IconSize);
         indicatorRect.localPosition =
             new Vector3(
-                slotLocalPosition.x,
+                slotLocalPosition.x - (trailingStatusWidth>0?(trailingStatusWidth+3)*.5f:0),
                 slotLocalPosition.y - centerDrop,
                 0f
             );

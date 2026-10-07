@@ -179,6 +179,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         if (motion > 0) yield return actor.WaitForSpecialMotionComplete(motion);
         pending = false; actor.EndSpecialAbilityAnimationAction();
         if(instant) {if(!used)actor.ResetSpecialCounter();ClearPlan();SetHeld(false);}
+        else SetHeld(BlocksBasic); // Inflation permits basics once its cast motion ends.
         actor.SpecialIdleState = IsPreparing ? (state.action == "SPINES" ? "InflatedIdle" : "ChannelHold") : null;
         actor.SpecialAutoAttackState = IsPreparing && state.action == "SPINES" ? "InflatedAttack" : null;
     }

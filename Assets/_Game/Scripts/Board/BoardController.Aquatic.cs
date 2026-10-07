@@ -96,6 +96,7 @@ public partial class BoardController
         var run = RunSession.Current;
         if (run == null || run.IsFinished || run.Player.IsDefeated) yield break;
         aquatic ??= new AquaticEnvironmentState();
+        if(move<=aquatic.lastSettledMove)yield break; // Do not replay presentation/supply on an already settled receipt.
         int encounter = run.Travel?.LocalWave ?? run.Waves.CurrentWave;
         aquatic.EncounterStarted(encounter);
         // Old checkpoints lacking this optional owner begin dry at their current action.

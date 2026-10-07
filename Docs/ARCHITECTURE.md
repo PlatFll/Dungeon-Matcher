@@ -77,7 +77,8 @@ Captured charges remain part of the reserve. Low-AIR relocation preserves the
 free-bubble count and never moves a marked response target. Version-1 saves keep
 their remaining tide/resources and adopt the finite-reserve rule without payout.
 `AirReceipt` projects the accepted debit and individual collections to the meter;
-its queued visual steps cannot change AIR or delay board ownership.
+its queued visual steps cannot change AIR or delay board ownership. Repeated
+settled-move calls return before replaying the receipt or emergency supply.
 
 Instant theft uses the existing guarded animation contact and mutation queue.
 Placement requires exact surviving charge identities and a reachable adjacent
@@ -125,11 +126,16 @@ are cleaned on a detached snapshot before an atomic travel commit. The saved
 `completedCourtVisits` count enables return formations after a completed visit.
 
 `AquaticEnvironmentView` observes state for AIR, bubbles, snares, pressure marks
-and bounded water layers. Existing layout owners consume marine theme assets;
+and bounded water layers. Coffer captions fit integer screen-pixel glyph heights
+below the pearl; world TMP em size must not be treated as a native pixel size.
+Existing layout owners consume marine theme assets;
 the background owner selects one of three compositions without moving actors.
 `DrownedCourtImporter` imports reviewed sheets, guarded animation contacts and
 theme assets. Held Puffer basics use an optional `SpecialAutoAttackState`; a missing
 clip keeps the existing generic fallback.
+After the inflation cast finishes, its temporary action-pause lease is refreshed
+from the remaining channel state. Inflation allows basics; ordinary channels
+retain their hold until their response resolves.
 
 Bardley's three primary bursts share one `ClearMatchesWithOrderedBursts` plan.
 Presentation reveals groups sequentially while board ownership stays held; rewards
@@ -137,6 +143,13 @@ and physical destruction resolve once before refill. The retired bubble event ha
 no production invocation. See [the Court contract](DROWNED_COURT.md).
 
 ### Forest combat and zone travel
+
+The Forest theme reserves 384 logical pixels for its battle panel so the approved
+96-pixel apex and readable counters clear the top controls at the supported
+portrait shapes. `EnemyMoveIntentView` reserves the actual Fortified/Warded label
+width through `EnemyWeaknessIndicatorUI`; the weakness gem and active status are
+centered together beneath HP. Disabling/removing the intent view releases that
+width. These layout rules do not resize character art or affect combat state.
 
 `MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
 fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and

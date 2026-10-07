@@ -149,7 +149,7 @@ public static class ForestProductionImporter
     {
         var theme=Resources.Load<GameplayThemeDefinition>("Zones/ForestTheme");
         // Reserve room for the approved 96px apex at the same texel scale.
-        theme.minimumBattleHeight=320;
+        theme.minimumBattleHeight=384; // Native 96px apex plus readable counters below top controls.
         theme.boardCells=Enumerable.Range(1,3).Select(i=>Sprite("UI","Log_Cell_0"+i)).ToArray();
         theme.buttonNormal=Sprite("UI","ButtonNormal",12);theme.buttonHighlighted=Sprite("UI","ButtonHighlighted",12);
         theme.buttonPressed=Sprite("UI","ButtonPressed",12);theme.buttonDisabled=Sprite("UI","ButtonDisabled",12);
