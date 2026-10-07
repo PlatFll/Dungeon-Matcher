@@ -143,6 +143,11 @@ tide, gem identities, counters, targets, rally leases and response deadlines.
 
 ## Art and evidence
 
+Flooded swaps emit small native bubbles and localized three-frame ripples. Falls
+sample sparse micro-bubbles; the royal pearl uses a stronger short wake. There is
+no gem-color distortion. Reduced Motion suppresses ripples and reduces particles.
+These effects are presentation only, pause with gameplay, and clear on drain/travel.
+
 `ArtSource/DrownedCourt/Approved` preserves the four corrected references and exact
 eye edits. `Production/Selected` contains the selected stills, native motion sheets,
 GIF previews and technical manifests. Raw inputs, generation job records and

@@ -5,6 +5,18 @@ Branch `codex/roster-endless-revision`, based on merged main
 slices of [the approved worklist](../ROSTER_ENDLESS_REVISION.md), not the
 whole requested revision. No merge is authorized.
 
+## Underwater movement presentation
+
+Four affected cases now pass: native import checks, real wet swap/fall events,
+pause/drain cleanup, and royal wake/reduced-motion/missing-art behavior. The first
+run (`960b6348-4d0b-4aad-a36a-682124e455f5.xml`) passed three of four; its final
+count included lingering settle particles. The fixture now waits for both trails
+and particles to finish before measuring the next reduced burst. The affected
+rerun passed (`675fe65b-e305-48df-9994-e3a8ae3ae75f.xml`). No gameplay assertion was
+removed. Native ripple source and matching imports are checked byte-for-byte.
+Mandatory validator passed (exit 0):
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c16af572-7e53-437a-b528-1200ac5d70e3.log`.
+
 ## Tribute and Fortified slice
 
 **39 unique affected cases pass on their latest run**, including central damage,

@@ -21,7 +21,7 @@ current runtime until their corresponding tranche replaces it.
 | 7 | Thief instant exact-two capture in one-hit coffer; Warden exact-three/two-hit coffer; coffer survives owner death; Pressure Lance marks two bubbles, either answer cancels | Complete; 11 focused checks and required Unity validator passed; native pearl/shell candidates |
 | 8 | Queen captures all free bubbles; armored coffer's first hit exposes pearl and rotates a legal 2–3-cell cardinal path; preserve specials, no intermediate refill; second hit returns oxygen | Complete; four focused checks and validator passed, including two tranche-7 regressions |
 | 9 | Replace Crushing Depths with three-move Nacre Tribute; up to three bubbles; Queen-first stable round-robin Fortified, cap two; one 50% direct-hit reduction per consumed stack; front/back pink orbit pearls | Complete; 39 unique current affected checks and required Unity validator passed; final portrait review remains |
-| 10 | Restrained flooded swap/fall bubbles and ripple; stronger coffer wake; reduced-motion support | Pending |
+| 10 | Restrained flooded swap/fall bubbles and ripple; stronger coffer wake; reduced-motion support | Complete; four affected checks and mandatory validator passed; native scene review follows |
 | 11 | Shared HP curve 1/15/30/50/70/100 → 1/1.4/2/3/4/6; moderate post-100 growth; retain damage/speed identities and disable player-power correction | Complete; 48 definitions, all requested depths in three live zones, Continue/travel and twelve layouts verified; affected regressions and validator passed. Provisional 9× HP at 150 |
 | 12 | Owner docs, focused then broad regression, actual portrait/safe-inset review, native art gallery and PR | Pending |
 

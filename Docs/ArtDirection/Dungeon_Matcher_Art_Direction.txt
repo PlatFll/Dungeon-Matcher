@@ -95,6 +95,17 @@ Motion. These are review candidates, not a new user approval. No PixelLab calls.
 
 ### Pixel scale and silhouettes
 
+The October 7 Court revision candidates are in `ArtSource/DrownedCourt/RosterRevision/`.
+The same bright pink pearl carries L1, armored L2 and exposed-royal states. Tiny
+12×12 orbit/pop sprites, 8×8 shell fragments, 6×6 micro-bubbles and three 32×16
+ripple frames share the marine shell ramp and a four-tone pink focal ramp.
+`pearls.json` records actual dimensions, palettes, alpha and hashes; `PearlReview.png`
+shows native and nearest-neighbor 3× comparisons. All ten PNGs have binary alpha
+and 2–9 opaque colors. Imports are Point, uncompressed, unmipped, FullRect and
+64 PPU. Ripples are discrete expanding arcs, not screen distortion. Direct native
+pixel authoring uses `Tools/author_court_pearls.py`; zero PixelLab jobs. User visual
+approval of these new candidates is still pending.
+
 Current character reference canvases are 64 × 64 pixels. Preserve the native size and occupied footprint of an existing target. A 64 × 64 image with the character shrunk inside it is not equivalent. Do not move the art to the bottom edge merely to match a comparison layout.
 
 Preserve the established chunky contour language. Existing outlines are generally one source pixel along exposed edges, with thicker contact or corner clusters where the drawing already uses them. Do not mechanically thicken everything or force every contour into identical thickness. The actual reference art governs.

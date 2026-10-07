@@ -12,6 +12,7 @@ public static class CourtRevisionImporter
         theme.exposedPearl=Import("ExposedPearl");theme.tributePearl=Import("TributePearl");
         theme.shellFragment=Import("ShellFragment");theme.pearlPop=Import("PearlPop");
         theme.waterMicroBubble=Import("WaterMicroBubble");
+        theme.waterRippleFrames=new[]{Import("WaterRipple_1"),Import("WaterRipple_2"),Import("WaterRipple_3")};
         EditorUtility.SetDirty(theme);AssetDatabase.SaveAssets();
         Debug.Log("Court native pearl family imported; existing scene/prefab art preserved.");
     }

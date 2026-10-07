@@ -86,8 +86,12 @@ actor ownership for occupancy, retaining the original persistent ID only as
 provenance. Caster death clears snares but cannot remove or pay a coffer. Versioned
 Court ability snapshots retire old theft and nonphysical Pressure warnings without
 Stagger or an effect replay. Pressure cancellation precedes readiness progression.
-`CourtBoardEffects` observes shell-break events; optional fragments never delay or
-authorize durability. `CourtRevisionImporter` updates native pearl exports and
+`CourtBoardEffects` observes shell-break, owned gem-motion and coffer-motion events.
+At most ten short trails and twenty-four native particles/ripples run locally;
+gravity samples every fourth moved gem (eighth under Reduced Motion). Reduced
+Motion suppresses ripples and lowers burst counts. Effects use no gameplay RNG,
+never delay resolution, pause with scaled time and clear on drain/disable.
+`CourtRevisionImporter` updates native pearl exports and
 theme bindings only, preserving user-edited environments.
 
 A royal coffer's first hit records a transient pending slide. The existing

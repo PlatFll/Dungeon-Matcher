@@ -50,13 +50,22 @@ micro=Image.new('RGBA',(6,6));d=ImageDraw.Draw(micro)
 d.line([(2,0),(4,0),(5,1),(5,3),(4,4),(2,4),(1,3),(1,1),(2,0)],fill=shell_mid,width=1)
 d.line([(2,1),(3,0),(4,0)],fill=white,width=1);assets['WaterMicroBubble']=micro
 
+# Three fixed-scale, sparse elliptical arcs. These are a passing disturbance,
+# visually distinct from an oxygen bubble enclosing a gem. No blurred resampling.
+for frame,inset in enumerate((9,5,1),1):
+    ripple=Image.new('RGBA',(32,16));d=ImageDraw.Draw(ripple)
+    box=(inset,3,31-inset,12)
+    d.arc(box,12,150,fill=shell_mid,width=1)
+    d.arc(box,195,320,fill=shell_light,width=1)
+    assets['WaterRipple_'+str(frame)]=ripple
+
 records=[]
 for name,im in assets.items():
     assert set(p[3] for p in im.getdata())<={0,255}
     path=OUT/(name+'.png');im.save(path)
     records.append(dict(name=name,native=list(im.size),colors=len({p for p in im.getdata() if p[3]}),
         alpha=[0,255],sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
-preview=Image.new('RGB',(896,260),'#242831');d=ImageDraw.Draw(preview)
+preview=Image.new('RGB',(128*len(assets),260),'#242831');d=ImageDraw.Draw(preview)
 for i,(name,im) in enumerate(assets.items()):
     x=i*128;d.text((x+4,10),name,fill='#fff1db')
     preview.paste(im,(x+48,48),im)
