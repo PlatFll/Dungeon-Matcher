@@ -44,7 +44,7 @@ public static class DrownedCourtImporter
             "Spine Guard: inflated for two moves. Opening manual-match damage retaliates once for five damage per move; cascades and specials are safe.",
             "Alternates Shellguard on one ally and a two-move Boarding Order for one fixed ally's normal attack sequence. Stagger interrupts the order.",
             "Air Levy instantly captures three bubbles in a two-hit armored Pearl Coffer; breaking it fills AIR. Pressure Lance marks two bubbles for two moves. Pop either marked bubble to cancel the full attack. Stagger also interrupts.",
-            "Royal Seizure, Crushing Depths and Court Muster. Answer two ripple marks or recover air to weaken Depths. Always damageable. Defeat the whole formation to travel.",
+            "Royal Seizure captures every free bubble in an armored moving Pearl Coffer. Nacre Tribute marks up to three bubbles for three moves: pop them for AIR or leave them to become Fortified pearls. Each pearl halves one direct hit. Court Muster summons an independent crab. Always damageable.",
             "Small independent summon with fast nips. Survives its summoner; grants no independent farming reward." };
         var defs = new EnemyDefinition[Ids.Length];
         for (int i = 0; i < Ids.Length; i++)
@@ -76,6 +76,7 @@ public static class DrownedCourtImporter
             so.ApplyModifiedPropertiesWithoutUndo();
             def.canFightFlooded = true; def.aquaticAbilityDamage = i==11?25:20;
             def.aquaticChannelMoves = 2;
+            def.tributeTargetCount=3;def.tributeChannelMoves=3;def.tributeStackCap=2;
             def.aquaticShield = i == 12 ? 20 : 25; def.aquaticRallyDamage = 1.3f; def.aquaticRallySeconds = 5;
             EditorUtility.SetDirty(def);
         }

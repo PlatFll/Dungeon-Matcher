@@ -54,6 +54,8 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private bool IsTheft => state.action=="THEFT" || state.action=="AIR LEVY" || state.action=="SEIZURE";
     private bool InvalidPressure => state.action=="PRESSURE" && (state.answers>0 || !board.IsFlooded ||
         state.bubbleTargets.Count!=2 || state.bubbleTargets.Any(id=>!board.Aquatic.bubbles.Contains(id) || board.FindAquaticGem(id)==null));
+    private bool InvalidTribute => state.action=="TRIBUTE" && (!board.IsFlooded ||
+        !state.bubbleTargets.Any(id=>board.Aquatic.bubbles.Contains(id) && board.FindAquaticGem(id)!=null));
     public void ConfigureSummonService(IEnemySummonService service) => summons = service;
 
     public void InitializeSpecialAbility(EnemyActor owner, BoardController initializedBoard, IReadOnlyList<EnemyActor> enemies)
@@ -81,7 +83,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
             Time.timeScale <= 0 || board.IsBusy || actor.HasAnimationActionInProgress || stagger?.IsStaggered == true) return;
         if (IsPreparing)
         {
-            if (InvalidPressure) { FinishCast(); return; }
+            if (InvalidPressure || InvalidTribute) { FinishCast(); return; }
             if (state.targetId > 0 && Target == null) { FinishCast(); return; }
             if (Move < state.dueMove) return;
             if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
@@ -130,13 +132,9 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
                 }
                 else if (state.cycle == 1)
                 {
-                    state.action = Queen ? "DEPTHS" : "PRESSURE";
-                    if (Queen)
-                    {
-                        state.marks = board.SelectAquaticResponseCells(2);
-                        if (state.marks.Count < 2) return false;
-                    }
-                    else {state.bubbleTargets=board.AvailableAirTargets().Take(2).ToList();if(state.bubbleTargets.Count!=2)return false;}
+                    state.action = Queen ? "TRIBUTE" : "PRESSURE";
+                    state.bubbleTargets=board.AvailableAirTargets().Take(Queen?Mathf.Clamp(actor.Definition.tributeTargetCount,1,3):2).ToList();
+                    if(state.bubbleTargets.Count<(Queen?1:2))return false;
                 }
                 else
                 {
@@ -174,7 +172,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
             if (instant) { AdvanceRotation(); state.stage = 0; }
             else
             {
-                state.stage = 1; state.dueMove = Move + (state.action == "DEPTHS" ? 3 : actor.Definition.aquaticChannelMoves);
+                state.stage = 1; state.dueMove = Move + (state.action == "TRIBUTE" ? Mathf.Max(1,actor.Definition.tributeChannelMoves) : actor.Definition.aquaticChannelMoves);
                 SetHeld(BlocksBasic);
             }
         }
@@ -189,7 +187,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         actor.SpecialIdleState = null;
         actor.SpecialAutoAttackState = null;
-        int motion = actor.StartSpecialMotion(state.action == "DEPTHS" ? "DepthsRelease" : "Release");
+        int motion = actor.StartSpecialMotion(state.action == "TRIBUTE" ? "DepthsRelease" : "Release"); // Reuse approved royal motion; no old damage behavior.
         if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
         if (ValidMotion(motion))
         {
@@ -201,7 +199,12 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
                     if (!actor.IsDefeated) actor.RestoreHealth(Mathf.Max(0, before - attack.PlayerTarget.CurrentHealth));
                     break;
                 case "PRESSURE": if(!InvalidPressure) Hit(actor.Definition.aquaticAbilityDamage); break;
-                case "DEPTHS": Hit(40 - Mathf.Min(2, state.answers) * 15); break;
+                case "TRIBUTE":
+                    bool tributeDone=false;int pearls=0;
+                    if(board.TryQueueConsumeAirBubbles(actor,state.bubbleTargets,n=>{pearls=n;tributeDone=true;}))
+                        while(!tributeDone&&!disposed)yield return null;
+                    if(!disposed && !actor.IsDefeated)DistributeTribute(pearls);
+                    break;
                 case "BOARDING":
                     var commanded = Target?.GetComponent<EnemyAutoAttack>();
                     if (commanded != null && commanded.TryReserveCommand(this))
@@ -250,21 +253,33 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         state.summonSlot = -1;
         state.marks.Clear(); state.bubbleTargets.Clear(); state.answeredIdentities.Clear();
     }
+    private void DistributeTribute(int pearls)
+    {
+        // Use actual slots: creation order can put a replacement left slot last.
+        var recipients=new List<EnemyActor>{actor};
+        recipients.AddRange(roster.Where(e=>e!=null&&e!=actor&&e.IsInitialized&&!e.IsDefeated)
+            .OrderBy(e=>combat?.WaveController?.ContinuationSlot(e)??0).ThenBy(e=>e.PersistentId));
+        int cap=Mathf.Clamp(actor.Definition.tributeStackCap,1,2);
+        while(pearls>0)
+        {
+            bool granted=false;
+            foreach(var recipient in recipients)
+            {
+                if(pearls==0)break;
+                if(recipient.GrantFortified(1,cap)>0){pearls--;granted=true;}
+            }
+            if(!granted)break;
+        }
+    }
     private void Answer(int gemId, bool bubble, bool coffer)
     {
-        if (!IsPreparing || (state.action != "PRESSURE" && state.action != "DEPTHS")) return;
+        if (!IsPreparing) return;
         if(state.action=="PRESSURE")
         {
             if(bubble && state.bubbleTargets.Contains(gemId)) {state.answers=1;state.bubbleTargets.Clear();}
             return;
         }
-        if (coffer && state.wetMode) { state.answers = Queen ? 2 : 1; return; }
-        if (gemId <= 0 || state.answeredIdentities.Contains(gemId)) return;
-        var gem = board.FindAquaticGem(gemId);
-        bool marked = gem != null && state.marks.Contains(new Vector2Int(gem.Column, gem.Row));
-        if (!marked && !(bubble && state.wetMode)) return;
-        state.answeredIdentities.Add(gemId); state.answers = Mathf.Min(Queen ? 2 : 1, state.answers + 1);
-        if (marked) state.marks.Remove(new Vector2Int(gem.Column, gem.Row));
+        if(state.action=="TRIBUTE" && bubble)state.bubbleTargets.Remove(gemId);
     }
     private void Damaged(EnemyActor target, GemDamageContext context, int hpLost)
     {
@@ -303,7 +318,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if (disposed || Time.timeScale <= 0) return;
         if (IsPreparing && !pending && CombatMoveClock.Current?.IsBlockingWaveProgression!=true &&
-            ((state.targetId > 0 && Target == null) || InvalidPressure)) FinishCast();
+            ((state.targetId > 0 && Target == null) || InvalidPressure || InvalidTribute)) FinishCast();
         if (state.rallySeconds <= 0) return;
         state.rallySeconds = Mathf.Max(0, state.rallySeconds - Time.deltaTime);
         if (state.rallySeconds == 0) ClearRally();
@@ -323,7 +338,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
             state.stage=0;state.recoveryUntil=0;state.dueMove=0;
             ClearPlan();actor.ResetSpecialCounter();
         }
-        if(state.stage==1 && (IsTheft || (state.version<2 && state.action=="PRESSURE")))
+        if(state.stage==1 && (IsTheft || state.action=="DEPTHS" || (state.version<2 && state.action=="PRESSURE")))
         {state.stage=0;state.dueMove=0;ClearPlan();actor.ResetSpecialCounter();}
         state.version=2;
         if (state.rallySeconds > 0) foreach (long id in state.rallyTargets)

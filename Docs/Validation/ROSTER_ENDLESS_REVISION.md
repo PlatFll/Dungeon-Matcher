@@ -5,9 +5,36 @@ Branch `codex/roster-endless-revision`, based on merged main
 slices of [the approved worklist](../ROSTER_ENDLESS_REVISION.md), not the
 whole requested revision. No merge is authorized.
 
-## Court coffer and Pressure slice
+## Tribute and Fortified slice
 
-## Royal moving pearl slice
+**39 unique affected cases pass on their latest run**, including central damage,
+shield/interception, all 0/1/2/3 Tribute survivors, actual bubble collection,
+ordinary Stagger, legacy warning migration, live/saved targeting and buff counts,
+Queen-first actual slot order (including a new left-slot replacement), cap two,
+Muster independence, sigils, front/back orbit, pause, reduced motion and death.
+
+Runs under `.utmp/ForestValidation`:
+- `4a360a3b-d81d-4d25-9084-918613d77079.xml`: 6/11 passed. This caught a real
+  sibling-index orbit bug (both pearls could move in front on later frames), plus
+  an isolated actor fixture invoking missing portrait setup and a distribution
+  fixture losing a bubble to an incidental cascade. Corrected ordering, used the
+  established isolated actor fixture, and protected intended survivors as specials.
+- `cf382258-5d0e-417c-8afe-d9bd5b3b4e60.xml`: all five affected reruns passed.
+- `9341a60b-4ba8-4103-9d41-a21a5773698c.xml`: 37/38 passed; a second survivor
+  fixture's incidental collection was exposed. Its intended target identities are
+  now preserved through actual special conversion during the test's manual moves.
+- `6e7567dd-bdc9-4ad3-a9e9-55fb97ddc4dc.xml`: all five survivor/slot-order checks
+  passed. Counts above deduplicate repeated cases; no failed result is hidden.
+
+Mandatory Unity validator passed, exit 0:
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-72854e61-2c8c-48ee-be94-41cf0abf11c7.log`.
+
+No character art was regenerated. Tribute reuses the approved Queen release clip
+(its historical controller key remains `DepthsRelease`); the old damage ability
+is absent. Native orbit sprites were authored in tranche 7. Actual portrait
+captures and broader final integration remain outstanding.
+
+## Royal moving pearl evidence
 
 Four focused tests passed (`93a1efb0-07fa-4376-b2a0-e86ec5b8e527.xml`), including
 two theft/durability regressions. The Queen scenario captures all five resources,

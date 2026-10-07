@@ -76,7 +76,7 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Puffer Sentinel | 100 | 10 / 5.8 | Ready in four moves; inflated for two moves, keeps timed basics; opening manual-match damage retaliates for five once per action |
 | Breakwater Captain | 180 | 20 / 7 | Alternates 25-shield Shellguard and a two-move command for one fixed ally's complete basic sequence |
 | Lantern Warden | 210 | 15 / 6.5 | Alternates instant exact-three Air Levy into a two-hit coffer (dry: 25 shield) and two-move Pressure Lance marking two bubbled physical gems; either answer cancels wholly; unanswered base 25 damage |
-| Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Crushing Depths, Court Muster; details below |
+| Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Nacre Tribute, Court Muster; details below |
 | Skittercrab | 25 | 5 / 2.8 | Independent summon, no repeat farming reward |
 
 Netweaver uses thorny snares, never ordinary chains. An opening manual match of a
@@ -92,11 +92,29 @@ penalty. Old recovery saves resume idle without replaying effects or rotation.
 Death/stagger cancels held actions;
 missing optional animation still resolves through the existing guarded fallback.
 
-Queen Nacre stays damageable throughout. Seizure warns for two moves, captures
-bubbles in a two-hit coffer, and preserves a reachable rescue; while dry it grants
-20 shield. Depths warns for three moves and deals 40/25/10 according to zero/one/two
-answers. Two fixed cell marks are shown; while wet, bubble recovery also answers,
-and a coffer answers both. One physical gem cannot count twice. Muster warns for
+Queen Nacre stays damageable throughout. Seizure instantly captures all free
+bubbles at animation contact into a two-hit armored coffer; while dry it grants
+20 shield. The first shell hit exposes a pearl and rotates one legal cardinal
+2–3-cell line. Intervening physical gems shift back one cell, preserving specials;
+structures, pins, empty cells and protected response targets block a route. With
+no legal route the pearl stays. There is no mid-slide refill or matching. The
+held clear pipeline settles after the complete rotation. The second hit returns
+two AIR per captured bubble, capped at five. Continue preserves the moved object.
+
+Nacre Tribute marks up to three bubbled physical gems with her caster sigil for
+three accepted moves. Popping one grants ordinary +2 AIR and removes that target
+without Stagger. True Stagger ends the whole channel, leaving all other bubbles.
+At contact, surviving overlays are consumed without AIR or gem destruction. Each
+becomes one Fortified stack: Queen first, then living allies by actual left-to-right
+slot, round-robin, capped at two per enemy. Target count, channel duration and cap
+are definition data. An empty/invalid cast fizzles and resets normal cadence. Old
+Depths warning saves retire harmlessly; the former fixed-cell/damage ability is
+removed. Fortified halves one direct hit per pearl before ordinary final rounding
+and shield gating. Periodic damage does not spend stacks. The status is separate
+from shield HP and survives Continue. Native pink pearls orbit behind/in front
+of the portrait, become still with reduced motion, and pop when consumed.
+
+Muster warns for
 two moves, names an empty slot and summons at most one owned living crab. A full
 formation announces a fixed ally's 20-shield Royal Guard instead. It never replaces
 an actor or secretly retargets a lost slot. Killing the Queen leaves her crab alive.

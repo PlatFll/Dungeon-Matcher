@@ -17,6 +17,9 @@ public sealed class EnemyDefinition : ScriptableObject
     [Min(0)] public int aquaticShield = 25;
     [Min(1)] public float aquaticRallyDamage = 1.3f;
     [Min(0)] public float aquaticRallySeconds = 5f;
+    [Range(1,3)] public int tributeTargetCount=3;
+    [Min(1)] public int tributeChannelMoves=3;
+    [Range(1,2)] public int tributeStackCap=2;
     [Header("Identity")]
 
     [SerializeField]

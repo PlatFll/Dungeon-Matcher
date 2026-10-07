@@ -54,6 +54,13 @@ provisional values are in [the expanded roster contract](Forest/EXPANDED_ROSTER.
 Approximately ten-minute substantial visits still require human pacing validation.
 The aquatic rules, fourteen identities, AIR economy and provisional control values
 are defined in [the Drowned Court contract](DROWNED_COURT.md).
+The roster revision makes oxygen a finite initial reserve, with emergency supply
+only after exhaustion. Thief/Warden coffers capture resources instantly and survive
+their caster. Queen's armored pearl moves through a legal short line rotation.
+Nacre Tribute converts uncollected physical bubbles into Fortified: one pink pearl
+halves one direct incoming hit, consumed once; periodic damage leaves it intact.
+All counterplay uses the established accepted moves, caster sigils, central damage
+and board-owned queue. These rules replace the retired Crushing Depths attack.
 Current forest visits use eighteen local starter
 encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu

@@ -296,6 +296,26 @@ public partial class BoardController
         TryStartBoardMutationProcessor(); return true;
     }
 
+    public bool TryQueueConsumeAirBubbles(EnemyActor owner,IEnumerable<int> identities,Action<int> completed)
+    {
+        if(owner==null || owner.IsDefeated || !IsFlooded)return false;
+        var request=new BoardMutationRequest{Kind=BoardMutationKind.ConsumeAirBubbles,
+            OwnerActor=owner,OwnerInstanceId=owner.GetInstanceID(),AquaticTargets=identities.Distinct().ToList(),
+            IsCancelled=()=>owner==null||owner.IsDefeated||owner.GetComponent<EnemyStagger>()?.IsStaggered==true};
+        request.Completed=_=>completed?.Invoke(request.ConsumedBubbles);
+        EnqueueBoardMutation(request);request.SpecialMotionId=0;TryStartBoardMutationProcessor();return true;
+    }
+    private void ExecuteConsumeAirBubbles(BoardMutationRequest request)
+    {
+        if(!IsFlooded)return;
+        foreach(int id in request.AquaticTargets)
+            if(FindAquaticGem(id)!=null && aquatic.bubbles.Remove(id))request.ConsumedBubbles++;
+        request.Succeeded=request.ConsumedBubbles>0;
+        // Strip only oxygen overlays. Neither gems, AIR receipts nor clear rewards
+        // are produced by converting reserve oxygen into an enemy buff.
+        AquaticChanged?.Invoke();
+    }
+
     private IEnumerator ExecuteAirCoffer(BoardMutationRequest request)
     {
         if (!IsFlooded || aquatic.coffer != null || request.OwnerActor == null || request.OwnerActor.IsDefeated) yield break;

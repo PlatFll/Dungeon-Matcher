@@ -45,7 +45,7 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.SpineGuard:return "Spine Guard";
             case EnemySpecialAbilityKind.BreakwaterCommand:return "Shellguard|Boarding Order";
             case EnemySpecialAbilityKind.LanternPressure:return "Air Levy|Deepguard|Pressure Lance";
-            case EnemySpecialAbilityKind.AbyssalRegent:return "Royal Seizure|Royal Ward|Crushing Depths|Court Muster|Royal Guard";
+            case EnemySpecialAbilityKind.AbyssalRegent:return "Royal Seizure|Royal Ward|Nacre Tribute|Court Muster|Royal Guard";
             case EnemySpecialAbilityKind.ApplyPlayerStatus:return "Status";
             default:return "";
         }
@@ -59,7 +59,7 @@ public static class EnemyAbilityNames
             case "SIPHON":return "Siphon";case "SHELLGUARD":return "Shellguard";
             case "BOARDING":return "Boarding Order";case "AIR LEVY":return "Air Levy";
             case "DEEPGUARD":return "Deepguard";case "PRESSURE":return "Pressure Lance";
-            case "SEIZURE":return "Royal Seizure";case "DEPTHS":return "Crushing Depths";
+            case "SEIZURE":return "Royal Seizure";case "TRIBUTE":return "Nacre Tribute";
             case "MUSTER":return "Court Muster";case "ROYAL WARD":return "Royal Ward";
             case "ROYAL GUARD":return "Royal Guard";default:return action;
         }

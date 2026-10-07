@@ -98,6 +98,15 @@ gem-movement enumerator presents both the gems and coffer under that same hold.
 No route means no movement. Pending motion blocks checkpoint capture; completed
 coordinates and remaining durability use the existing board/aquatic snapshot.
 
+Tribute uses the existing mutation queue to consume a fixed list of surviving
+oxygen overlays. It neither clears gems nor reports a player clear. The Court
+runtime distributes the resulting count by Queen-first actual slot order with
+definition-selected caps. `EnemyActor` owns saved Fortified stacks and consumes
+one on a positive eligible direct packet, after interception picks its final
+recipient. The periodic API explicitly excludes consumption. Reduction precedes
+the ordinary final rounding/shield gate. `EnemyFortifiedView` projects count to
+bounded native Image siblings behind/in front of VisualRoot; it cannot alter buffs.
+
 `AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
 channel stages, answer identities, rally leases and rotation state. Cantor reuses
 `EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.

@@ -18,21 +18,20 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator CourtQueenTelegraphAndNormalCadenceResumeWithoutNewTargets()
     {
-        yield return LaunchCourt("queen_nacre","shellback_porter");
-        for(int i=0;i<6;i++)yield return Move();
+        yield return TributeFixture("queen_nacre","shellback_porter");
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
-        Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));
-        var marks=ability.ResponseCells.ToArray();int tick=Run.MoveClock.Tick;
+        Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));
+        var marks=ability.MarkedBubbles.ToArray();int tick=Run.MoveClock.Tick;
         var identity=queen.PersistentId;var target=marks[0];
-        // Preserve an earned response and the remaining fixed target through a real scene reload.
-        var gem=Run.Board.GetGem(target.x,target.y);var clear=new HashSet<Gem>{gem};
+        // Preserve collected oxygen and remaining physical targets through a real scene reload.
+        var gem=Run.Board.FindAquaticGem(target);var clear=new HashSet<Gem>{gem};
         Call(Run.Board,"RegisterAquaticClear",clear,false);Call(Run.Board,"ResolveAquaticDestruction",clear,new HashSet<Gem>());
-        Assert.That(ability.Answers,Is.EqualTo(1));
+        Assert.That(ability.MarkedBubbles.Count,Is.EqualTo(2));
         yield return ResumeCourtCheckpoint();
         queen=Enemy("queen_nacre");ability=queen.GetComponent<AquaticEnemyAbility>();
         Assert.That(queen.PersistentId,Is.EqualTo(identity));Assert.That(Run.MoveClock.Tick,Is.EqualTo(tick));
-        Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
-        Assert.That(ability.Answers,Is.EqualTo(1));CollectionAssert.AreEqual(marks.Skip(1),ability.ResponseCells);
+        Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
+        CollectionAssert.AreEqual(marks.Skip(1),ability.MarkedBubbles);
         Assert.That(queen.SpecialIdleState,Is.EqualTo("ChannelHold"));Assert.That(ability.BlocksBasic,Is.True);
         for(int i=0;i<3;i++)yield return Move();
         Assert.That(((AquaticEnemySnapshot)Get(ability,"state")).stage,Is.Zero);

@@ -15,6 +15,7 @@ public static class CombatGuide
             (CombatMoveClock.MoveBasics ? $"   Every {actor.Definition.AttackMoves} moves\n" : $"   Every {actor.AttackInterval:0.#} seconds\n") +
             (attack != null ? $"Next attack: {attack.RemainingAttackTime:0.#} {(CombatMoveClock.MoveBasics ? "moves" : "seconds")}\n" : "");
         if(actor.IsWarded) basic+="WARDED: 25% reduced incoming damage while a Warden Root lives.\n";
+        if(actor.FortifiedStacks>0)basic+=$"FORTIFIED x{actor.FortifiedStacks}: each pearl halves one direct player hit, then breaks. Periodic damage does not spend pearls.\n";
         if (actor.HasSpecialAbility)
         {
             var names=EnemyAbilityNames.All(actor.Definition.SpecialAbilityKind);

@@ -237,22 +237,19 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot()
     {
-        yield return LaunchCourt("queen_nacre","shellback_porter");
+        yield return TributeFixture("queen_nacre","shellback_porter");
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
-        for(int i=0;i<3;i++)yield return Move();
-        Assert.That(queen.CurrentShield,Is.EqualTo(20));
-        for(int i=0;i<3;i++)yield return Move();
-        Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
-        Assert.That(ability.ResponseCells.Count,Is.EqualTo(2));
-        var cell=ability.ResponseCells[0];var gem=Run.Board.GetGem(cell.x,cell.y);
+        Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
+        Assert.That(ability.MarkedBubbles.Count,Is.EqualTo(3));
+        var gem=Run.Board.FindAquaticGem(ability.MarkedBubbles[0]);Run.Board.Aquatic.air=0;
         var targets=new HashSet<Gem>{gem};
         Call(Run.Board,"RegisterAquaticClear",targets,false);Call(Run.Board,"ResolveAquaticDestruction",targets,new HashSet<Gem>());
         Call(Run.Board,"RegisterAquaticClear",targets,false);Call(Run.Board,"ResolveAquaticDestruction",targets,new HashSet<Gem>());
-        Assert.That(ability.Answers,Is.EqualTo(1),"one physical identity cannot answer twice");
+        Assert.That(ability.MarkedBubbles.Count,Is.EqualTo(2));Assert.That(Run.Board.Aquatic.air,Is.EqualTo(2),"one bubble cannot pay twice");
         int hp=Run.Player.CurrentHealth;
-        for(int i=0;i<3;i++)yield return Move();
-        Assert.That(Run.Player.CurrentHealth,Is.InRange(hp-25,hp-10));
-        for(int i=0;i<3;i++)yield return Move();
+        for(int i=0;i<3;i++){Run.Board.Aquatic.air=5;yield return Move();}
+        Assert.That(Run.Player.CurrentHealth,Is.GreaterThanOrEqualTo(hp),"Tribute has no old direct damage");
+        for(int i=0;i<3;i++){Run.Board.Aquatic.air=5;yield return Move();}
         Assert.That(ability.CastName,Is.EqualTo("MUSTER"));
         int slot=((AquaticEnemySnapshot)Get(ability,"state")).summonSlot;Assert.That(slot,Is.GreaterThanOrEqualTo(0));
         yield return Move();yield return Move();

@@ -96,7 +96,7 @@ public sealed class RunCombatSnapshot
     public ForestRosterSnapshot forestRoster;
     public AquaticEnemySnapshot aquaticEnemy;
     public string rootbinderOutcome;
-    public int slot, health, shield, specialTurns, specialRequirement;
+    public int slot, health, shield, specialTurns, specialRequirement, fortifiedStacks;
     public GemType weakness;
     public float attackRemaining, attackSpeed;
     public bool attackRunning;

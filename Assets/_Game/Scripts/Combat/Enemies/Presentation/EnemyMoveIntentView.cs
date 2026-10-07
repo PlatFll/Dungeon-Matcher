@@ -34,7 +34,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         text=GameUi.Label("MoveIntent",slot.transform,"",new Vector2(108,16),Vector2.zero,12);
         text.textWrappingMode=TextWrappingModes.NoWrap;
         weakness=slot.GetComponentInChildren<EnemyWeaknessIndicatorUI>(true)?.transform as RectTransform;
-        buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(42,20),Vector2.zero,8);
+        buffs=GameUi.Label("EnemyBuffs",slot.transform,"",new Vector2(56,20),Vector2.zero,8);
         buffs.textWrappingMode=TextWrappingModes.NoWrap;
         buffs.color=new Color(.72f,.94f,.5f);buffs.raycastTarget=false;
         bar=GameUi.Rect("ChannelTrack",text.transform,new Vector2(64,4),new Vector2(0,-9));
@@ -55,8 +55,10 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         if(text==null || actor==null) return;
         bool visible=!actor.IsDefeated;
         text.gameObject.SetActive(visible);
-        buffs.gameObject.SetActive(visible && actor.IsWarded);
-        buffs.text=actor.IsWarded?"WARDED":"";
+        buffs.gameObject.SetActive(visible && (actor.IsWarded || actor.FortifiedStacks>0));
+        buffs.text=actor.FortifiedStacks>0?$"{(actor.IsWarded?"WARD / FORT":"FORTIFIED")} {actor.FortifiedStacks}":actor.IsWarded?"WARDED":"";
+        buffs.rectTransform.sizeDelta=new Vector2(actor.FortifiedStacks>0?56:42,20);
+        buffs.color=actor.FortifiedStacks>0?new Color(1,.55f,.79f):new Color(.72f,.94f,.5f);
         if(!visible) { if(link!=null) link.gameObject.SetActive(false);return; }
         // Follow the actual rendered canvas after the pixel presenter resizes
         // it. A fixed slot-center offset crosses the face on taller screens.
@@ -107,7 +109,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         {
             // Share the weakness lane. Below it is the battle frame's mask;
             // above the sprite is already reserved for cast/attack counters.
-            buffs.rectTransform.position=weakness.TransformPoint(new Vector3(weakness.rect.xMax+24,weakness.rect.center.y,0));
+            buffs.rectTransform.position=weakness.TransformPoint(new Vector3(weakness.rect.xMax+3+buffs.rectTransform.rect.width/2,weakness.rect.center.y,0));
             GameplayPixelGrid.Snap(buffs.rectTransform);
         }
     }
