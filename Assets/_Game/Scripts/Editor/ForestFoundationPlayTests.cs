@@ -117,7 +117,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Cooldown(ConsumableKind.HealthPotion),Is.EqualTo(1));Assert.That(decree.RemainingMoves,Is.EqualTo(2));
         Assert.That(poison.RemainingDuration,Is.EqualTo(2));
     }
-    [UnityTest] public IEnumerator ChannelGetsTwoFutureResponsesAndRecoveryAndStableResume()
+    [UnityTest] public IEnumerator ChannelGetsTwoFutureResponsesThenNormalCadenceAndStableResume()
     {
         yield return Launch();
         var mender=Enemy("elven_mender");var target=Enemy("orc_trailguard");
@@ -138,9 +138,11 @@ public sealed partial class ForestFoundationPlayTests
         int hp=target.CurrentHealth;yield return Move();
         Assert.That(channel.Outcome,Is.EqualTo("Healed"));Assert.That(target.CurrentHealth,Is.EqualTo(Math.Min(target.MaxHealth,hp+20)));
         Assert.That(mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic));
-        yield return Move();Assert.That(channel.BlocksBasic,Is.True);
+        Assert.That(channel.BlocksBasic,Is.False,"completed heal has no extra recovery penalty");
+        Assert.That(mender.CurrentSpecialTurnCount,Is.Zero);
         yield return Move();Assert.That(channel.BlocksBasic,Is.False);
-        Assert.That(mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(basic),"recovery expiry grants no same-action basic");
+        Assert.That(mender.CurrentSpecialTurnCount,Is.EqualTo(1),"normal cadence starts on the next accepted move");
+        Assert.That(mender.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.LessThan(basic));
     }
     [UnityTest] public IEnumerator DeadlineStaggerAndTargetDeathCancelExactlyOnce()
     {
@@ -151,6 +153,7 @@ public sealed partial class ForestFoundationPlayTests
         int hp=target.CurrentHealth;
         yield return Move(()=>mender.GetComponent<EnemyStagger>().ApplyStagger(2,2));
         Assert.That(channel.Outcome,Is.EqualTo("Interrupted"));Assert.That(target.CurrentHealth,Is.LessThanOrEqualTo(hp));
+        Assert.That(channel.BlocksBasic,Is.False,"ordinary Stagger is the only remaining interruption hold");
         var state=new EnemyCombatSnapshot();channel.CaptureContinuation(state,_=>0);Assert.That(state.channel.lastOutcomeSequence,Is.EqualTo(1));
         // A fresh channel fixture restores through its owner, then removes its
         // recipient and puts a different persistent actor in that same slot.
@@ -160,6 +163,7 @@ public sealed partial class ForestFoundationPlayTests
         target.ResolveDirectDamage(9999);yield return Stable();
         Assert.That(channel.Outcome,Is.EqualTo("Target lost"));
         Assert.That(channel.IsChanneling,Is.False);
+        Assert.That(channel.BlocksBasic,Is.False,"target loss grants neither recovery nor Stagger");
         Assert.That(Run.Waves.ContinuationEnemy(slot)==null || Run.Waves.ContinuationEnemy(slot).PersistentId!=targetId,Is.True);
         Assert.That(Run.Waves.TrySummonEnemy(Run.Zone.FindEnemy("Orc_Trailguard"),out var replacement),Is.True);
         Assert.That(Run.Waves.ContinuationSlot(replacement),Is.EqualTo(slot));Assert.That(replacement.PersistentId,Is.Not.EqualTo(targetId));
@@ -367,10 +371,15 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(board.TryRestoreBoardMemory(photo,Run.Waves.ContinuationEnemy),Is.True);yield return Stable();
         Assert.That(board.NextVineGrowthMove,Is.EqualTo(deadline));Assert.That(Run.MoveClock.Tick,Is.EqualTo(1));
         var mender=Enemy("elven_mender");var trail=Enemy("orc_trailguard");
+        // Root sites require four neighbors. The safe timing swap above is on
+        // the edge; provide an interior manual answer for both warning sites.
+        var sprites=(Sprite[])Get(board,"gemSprites");
+        board.GetGem(1,2).SetType((GemType)0,sprites[0]);board.GetGem(2,2).SetType((GemType)0,sprites[0]);
+        board.GetGem(3,2).SetType((GemType)1,sprites[1]);board.GetGem(3,1).SetType((GemType)0,sprites[0]);
         BoardController.GemSetThreat one=null,two=null;
         board.TryQueueRootWarning(mender,1,1,false,false,w=>one=w);yield return Stable();
         board.TryQueueRootWarning(trail,1,1,false,false,w=>two=w);yield return Stable();
-        Assert.That(one,Is.Not.Null);Assert.That(two,Is.Not.Null);Assert.That(two.DueMove,Is.GreaterThan(one.DueMove));
+        Assert.That(one,Is.Not.Null,"first interior root warning");Assert.That(two,Is.Not.Null,"second interior root warning");Assert.That(two.DueMove,Is.GreaterThan(one.DueMove));
         trail.ResolveDamageWithoutFeedback(30);var channel=mender.GetComponent<EnemyChannelRuntime>();
         channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot{state=1,sequence=1,targetId=trail.PersistentId,deadlineMove=3}},_=>trail);
         int health=trail.CurrentHealth;string outcome=null;channel.Changed+=()=>outcome=channel.Outcome;

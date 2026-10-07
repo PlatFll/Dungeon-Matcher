@@ -4,7 +4,8 @@ The user approved the first four designs, solid-color eyes, continued production
 and a separate ceiling of 300 subscription generations (220 initially, 80 reserved).
 The remaining ten designs and motion are director-selected for review. This does
 not imply that the user has reviewed every later asset. This baseline was merged
-in PR #180. The 2026-10-06 revision is on a separate branch, with no merge authorized.
+in PR #180. The 2026-10-06 status/sigil/culture revision was merged in PR #181.
+The separate roster/endless revision is in progress; see [its worklist](ROSTER_ENDLESS_REVISION.md).
 
 ## Environment and timing
 
@@ -71,9 +72,11 @@ safely. Snares prevent directly swapping the bound gem, follow it through gravit
 and use the existing shared six-restriction budget. Placement preserves available
 AIR routes. The owner may have at most two.
 
-Milestones first ready after three moves, recover for two moves, then require
-three fresh moves. Siphoner, thief and cantor also recover for two moves. Conch,
-snare and Puffer casts do not add that recovery. Death/stagger cancels held actions;
+Milestones first ready after three moves and require three fresh moves after a
+cast ends. All Court channels return directly to normal readiness on success or
+fizzle. Genuine interruption uses ordinary Stagger without an extra recovery
+penalty. Old recovery saves resume idle without replaying effects or rotation.
+Death/stagger cancels held actions;
 missing optional animation still resolves through the existing guarded fallback.
 
 Queen Nacre stays damageable throughout. Seizure warns for two moves, captures

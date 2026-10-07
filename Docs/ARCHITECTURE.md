@@ -71,7 +71,7 @@ rewards. `CombatMoveClock` advances the environment before enemy work and checks
 suffocation after it; presentation cannot advance either.
 
 `AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
-recovery stages, answer identities, rally leases and rotation state. Cantor reuses
+channel stages, answer identities, rally leases and rotation state. Cantor reuses
 `EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.
 Queen uses `IEnemyFixedSlotSummonService` on `WaveController`, which validates the
 announced slot and never replaces an occupant. Central damage and shield gates
@@ -153,7 +153,12 @@ own timing state under the recorded profile. Free actions cannot interleave a
 resolving accepted turn. See [the timer audit](Forest/CLOCK_IMPLEMENTATION.md).
 
 Mender channels own a fixed persistent recipient ID and an exactly-once terminal
-sequence. Rootbinder submits generic warnings/placements to the existing board
+sequence. Channel success/fizzle returns directly to normal readiness; interruption
+leaves ordinary EnemyStagger as the only penalty. Legacy heal/Court state 2 and
+forest milestone state 4 migrate to idle without replaying effects or advancing
+an already-consumed rotation. Legacy recovery deadlines are read for compatibility
+only. Authored animation completion and real response windows remain intact.
+Rootbinder submits generic warnings/placements to the existing board
 queue. Vines are cell-based presentation overlays in the board's saved state,
 separate from chain/pin maps. Roots reuse structural occupancy, durability,
 safe-placement/refill and the same mutation queue. The first vine clear records

@@ -7,7 +7,8 @@ using UnityEngine;
 [Serializable]
 public sealed class AquaticEnemySnapshot
 {
-    public int stage, cycle, dueMove, recoveryUntil, answers, retaliatedMove = -1;
+    public int stage, cycle, dueMove, answers, retaliatedMove = -1;
+    public int recoveryUntil; // Legacy save field; retired post-cast delay.
     public int summonSlot = -1;
     public long targetId, summonId;
     public string action;
@@ -38,7 +39,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private static readonly HashSet<AquaticEnemyAbility> rallies = new HashSet<AquaticEnemyAbility>();
     private static readonly object RallyKey = new object();
     public bool IsPreparing => state.stage == 1;
-    public bool BlocksBasic => state.stage != 0 && Kind != EnemySpecialAbilityKind.SpineGuard;
+    public bool BlocksBasic => IsPreparing && Kind != EnemySpecialAbilityKind.SpineGuard;
     public int ResponseMoves => IsPreparing ? Mathf.Max(0, state.dueMove - board.CompletedValidPlayerMoves) : 0;
     public string CastName => state.action;
     public IReadOnlyList<Vector2Int> ResponseCells => state.marks;
@@ -74,15 +75,10 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if (disposed || pending || actor.IsDefeated || !CombatMoveClock.CanOffer(actor) ||
             Time.timeScale <= 0 || board.IsBusy || actor.HasAnimationActionInProgress || stagger?.IsStaggered == true) return;
-        if (state.stage == 2)
-        {
-            if (Move >= state.recoveryUntil) { state.stage = 0; actor.ResetSpecialCounter(); SetHeld(false); }
-            return;
-        }
         if (IsPreparing)
         {
-            if (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded) { Recover(); return; }
-            if (state.targetId > 0 && Target == null) { Recover(); return; }
+            if (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded) { FinishCast(); return; }
+            if (state.targetId > 0 && Target == null) { FinishCast(); return; }
             if (Move < state.dueMove) return;
             if (!actor.TryBeginSpecialAbilityAnimationAction()) return;
             pending = true; StartCoroutine(Release()); return;
@@ -163,7 +159,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         if (used)
         {
             actor.AnnounceCommittedCast(EnemyAbilityNames.Aquatic(state.action));actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
-            if (instant) { AdvanceRotation(); state.stage = RecoveryMoves > 0 ? 2 : 0; state.recoveryUntil = Move + RecoveryMoves; SetHeld(BlocksBasic); }
+            if (instant) { AdvanceRotation(); state.stage = 0; SetHeld(false); }
             else
             {
                 state.stage = 1; state.dueMove = Move + (state.action == "DEPTHS" ? 3 : actor.Definition.aquaticChannelMoves);
@@ -175,9 +171,6 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         actor.SpecialIdleState = IsPreparing ? (state.action == "SPINES" ? "InflatedIdle" : "ChannelHold") : null;
         actor.SpecialAutoAttackState = IsPreparing && state.action == "SPINES" ? "InflatedAttack" : null;
     }
-
-    private int RecoveryMoves => Kind == EnemySpecialAbilityKind.RallyingConch ||
-        Kind == EnemySpecialAbilityKind.ThornySnare || Kind == EnemySpecialAbilityKind.SpineGuard ? 0 : actor.Definition.aquaticRecoveryMoves;
 
     private IEnumerator Release()
     {
@@ -227,7 +220,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         }
         if (motion > 0) yield return actor.WaitForSpecialMotionComplete(motion);
         pending = false; actor.EndSpecialAbilityAnimationAction();
-        if (!disposed) Recover();
+        if (!disposed) FinishCast();
     }
 
     private bool ValidMotion(int motion) => !disposed && !actor.IsDefeated && stagger?.IsStaggered != true &&
@@ -239,10 +232,10 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         if (Queen) state.cycle = (state.cycle + 1) % 3;
         else if (Kind == EnemySpecialAbilityKind.BreakwaterCommand || Kind == EnemySpecialAbilityKind.LanternPressure) state.cycle = (state.cycle + 1) % 2;
     }
-    private void Recover()
+    private void FinishCast()
     {
         if (state.stage == 0) return;
-        AdvanceRotation(); state.stage = RecoveryMoves > 0 ? 2 : 0; state.recoveryUntil = Move + RecoveryMoves;
+        AdvanceRotation(); state.stage = 0; state.recoveryUntil = 0; state.dueMove = 0;
         actor.ResetSpecialCounter(); actor.SpecialIdleState = null; SetHeld(BlocksBasic);
         actor.SpecialAutoAttackState = null;
         state.marks.Clear(); state.bubbleTargets.Clear(); state.targetId = 0;
@@ -273,7 +266,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     }
     private void Interrupted(EnemyStagger source, float duration, float remaining)
     {
-        if (IsPreparing) Recover();
+        if (IsPreparing) FinishCast();
     }
 
     private void ApplyRally()
@@ -300,7 +293,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if (disposed || Time.timeScale <= 0) return;
         if (IsPreparing && !pending && ((state.targetId > 0 && Target == null) ||
-            (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded))) Recover();
+            (state.action == "PRESSURE" && state.wetMode && !board.IsFlooded))) FinishCast();
         if (state.rallySeconds <= 0) return;
         state.rallySeconds = Mathf.Max(0, state.rallySeconds - Time.deltaTime);
         if (state.rallySeconds == 0) ClearRally();
@@ -314,6 +307,12 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     {
         ClearRally(); state = saved.aquaticEnemy == null ? new AquaticEnemySnapshot() :
             JsonUtility.FromJson<AquaticEnemySnapshot>(JsonUtility.ToJson(saved.aquaticEnemy));
+        if(state.stage==2)
+        {
+            // Rotation already advanced when the old cast ended. Never repeat it.
+            state.stage=0;state.recoveryUntil=0;state.dueMove=0;
+            ClearPlan();actor.ResetSpecialCounter();
+        }
         if (state.rallySeconds > 0) foreach (long id in state.rallyTargets)
         {
             var target = Find(id)?.GetComponent<EnemyAutoAttack>();

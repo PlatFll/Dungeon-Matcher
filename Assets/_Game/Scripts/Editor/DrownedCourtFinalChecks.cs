@@ -16,10 +16,10 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator CourtLayoutMathAcrossSafeAreas()
     {GameplayPixelLayoutTests.MathTests();yield return null;}
 
-    [UnityTest] public IEnumerator CourtQueenTelegraphAndRecoveryResumeWithoutNewTargets()
+    [UnityTest] public IEnumerator CourtQueenTelegraphAndNormalCadenceResumeWithoutNewTargets()
     {
         yield return LaunchCourt("queen_nacre","shellback_porter");
-        for(int i=0;i<8;i++)yield return Move();
+        for(int i=0;i<6;i++)yield return Move();
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
         Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));
         var marks=ability.ResponseCells.ToArray();int tick=Run.MoveClock.Tick;
@@ -35,14 +35,13 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(ability.Answers,Is.EqualTo(1));CollectionAssert.AreEqual(marks.Skip(1),ability.ResponseCells);
         Assert.That(queen.SpecialIdleState,Is.EqualTo("ChannelHold"));Assert.That(ability.BlocksBasic,Is.True);
         for(int i=0;i<3;i++)yield return Move();
-        var recovery=(AquaticEnemySnapshot)Get(ability,"state");int until=recovery.recoveryUntil;
-        Assert.That(recovery.stage,Is.EqualTo(2));
+        Assert.That(((AquaticEnemySnapshot)Get(ability,"state")).stage,Is.Zero);
+        Assert.That(ability.BlocksBasic,Is.False);Assert.That(queen.CurrentSpecialTurnCount,Is.Zero);
         yield return ResumeCourtCheckpoint();
         ability=Enemy("queen_nacre").GetComponent<AquaticEnemyAbility>();
-        Assert.That(((AquaticEnemySnapshot)Get(ability,"state")).recoveryUntil,Is.EqualTo(until));
-        Assert.That(ability.BlocksBasic,Is.True);
-        yield return Move();Assert.That(ability.BlocksBasic,Is.True);
-        yield return Move();Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(((AquaticEnemySnapshot)Get(ability,"state")).stage,Is.Zero);
+        Assert.That(ability.BlocksBasic,Is.False);
+        yield return Move();Assert.That(Enemy("queen_nacre").CurrentSpecialTurnCount,Is.EqualTo(1));
     }
 
     private IEnumerator ResumeCourtCheckpoint()

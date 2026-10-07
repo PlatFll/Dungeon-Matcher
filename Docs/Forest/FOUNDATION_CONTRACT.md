@@ -92,8 +92,10 @@ Gideon's board photograph does not rewind combat clock or proc budgets.
 
 The reviewed starter kit sheet supplies exact forest values. Mender has no
 self-targeting: a fixed living ally below 75% receives +20 only after two future
-accepted actions. Stagger/kill cancels once, recipient death fizzles, and 2 future
-recovery moves follow every outcome. It cannot attack during channel/recovery.
+accepted actions. Stagger/kill cancels once and recipient death fizzles. Each
+terminal outcome returns directly to normal readiness. It cannot attack during
+the channel; ordinary Stagger alone controls genuine interruption, without an
+additional recovery penalty. Old recovery saves migrate to idle without healing.
 
 Vines are cell overlays. They obscure some of the gem without blocking swapping,
 gravity, matches, bombs or destruction. Clearing the covered gem removes its vine.
@@ -130,8 +132,9 @@ destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
 Surviving spreading roots can regrow vines on the next normal pulse.
 
 Successful casts and cancellations consume their sequence before effect callbacks.
-Milestone recovery takes two future moves, then three moves to readiness. Basics
-pause during preparation/channel/recovery. Scout and Trailguard retain their
+After a milestone channel ends, normal three-move readiness begins immediately.
+Basics pause during preparation/channel and owned animation, with no additional
+post-channel recovery moves. Scout and Trailguard retain their
 existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
 recipient invalidation never retargets or auto-staggers her. All true interruptions
 use EnemyStagger; no forest-specific stagger or vulnerability state exists.

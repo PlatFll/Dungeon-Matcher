@@ -237,7 +237,7 @@ public sealed partial class ForestFoundationPlayTests
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
         for(int i=0;i<3;i++)yield return Move();
         Assert.That(queen.CurrentShield,Is.EqualTo(20));
-        for(int i=0;i<5;i++)yield return Move();
+        for(int i=0;i<3;i++)yield return Move();
         Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
         Assert.That(ability.ResponseCells.Count,Is.EqualTo(2));
         var cell=ability.ResponseCells[0];var gem=Run.Board.GetGem(cell.x,cell.y);
@@ -248,7 +248,7 @@ public sealed partial class ForestFoundationPlayTests
         int hp=Run.Player.CurrentHealth;
         for(int i=0;i<3;i++)yield return Move();
         Assert.That(Run.Player.CurrentHealth,Is.InRange(hp-25,hp-10));
-        for(int i=0;i<5;i++)yield return Move();
+        for(int i=0;i<3;i++)yield return Move();
         Assert.That(ability.CastName,Is.EqualTo("MUSTER"));
         int slot=((AquaticEnemySnapshot)Get(ability,"state")).summonSlot;Assert.That(slot,Is.GreaterThanOrEqualTo(0));
         yield return Move();yield return Move();
@@ -334,12 +334,13 @@ public sealed partial class ForestFoundationPlayTests
         int hits=0;attack.AttackResolved+=(_,__,___)=>hits++;
         for(int i=0;i<3;i++)yield return Move();
         Assert.That(ally.CurrentShield,Is.EqualTo(25));
-        for(int i=0;i<5;i++)yield return Move();
+        for(int i=0;i<3;i++)yield return Move();
         var ability=captain.GetComponent<AquaticEnemyAbility>();Assert.That(ability.CastName,Is.EqualTo("BOARDING"));
         Assert.That(ability.Target,Is.SameAs(ally));Assert.That(ability.ResponseMoves,Is.EqualTo(2));
         yield return Move();yield return Move();
         Assert.That(hits,Is.EqualTo(2),"the two-dart basic sequence is commanded exactly once");
-        Assert.That(attack.HasCommandReservation,Is.False);Assert.That(ability.BlocksBasic,Is.True);
+        Assert.That(attack.HasCommandReservation,Is.False);Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(captain.CurrentSpecialTurnCount,Is.Zero);
     }
 
     [UnityTest] public IEnumerator CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares()

@@ -75,7 +75,7 @@ public static class DrownedCourtImporter
             so.FindProperty("threatCost").floatValue = i == 13 ? 1 : i >= 10 ? 5 : i >= 4 ? 2.5f : 1.5f;
             so.ApplyModifiedPropertiesWithoutUndo();
             def.canFightFlooded = true; def.aquaticAbilityDamage = 20;
-            def.aquaticChannelMoves = 2; def.aquaticRecoveryMoves = 2;
+            def.aquaticChannelMoves = 2;
             def.aquaticShield = i == 12 ? 20 : 25; def.aquaticRallyDamage = 1.3f; def.aquaticRallySeconds = 5;
             EditorUtility.SetDirty(def);
         }

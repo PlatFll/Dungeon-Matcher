@@ -28,7 +28,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private bool Ritual => actor.Definition.SpecialAbilityKind==EnemySpecialAbilityKind.GroveRenewal;
     public bool IsPreparing => value.state==1;
     public bool IsProtected => isActiveAndEnabled && actor!=null && !actor.IsDefeated && !Ritual && board!=null && board.OwnedRootCount(actor)>0;
-    public bool BlocksBasic => pending || value.state==1 || value.state==4;
+    public bool BlocksBasic => pending || IsPreparing;
     public string Outcome => value.outcome;
     public int ResponseMoves => Mathf.Max(0,value.deadline-(CombatMoveClock.Current?.Tick ?? 0));
     public int ChannelMoves => !Ritual?1:value.activeAbility==2?actor.Definition.ForestHarvestChannelMoves:actor.Definition.ForestRenewalChannelMoves;
@@ -85,7 +85,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     {
         if(actor==null || actor.IsDefeated || !CombatMoveClock.CanOffer(actor) || pending) return;
         CheckPreparation();
-        if(value.state==2 || value.state==4 || (stagger!=null && stagger.IsStaggered)) return;
+        if(value.state==2 || (stagger!=null && stagger.IsStaggered)) return;
         if(IsPreparing)
         {
             if(CombatMoveClock.Current.Tick<value.deadline) return;
@@ -159,19 +159,13 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
     {
         if(!IsPreparing || value.resolvedSequence==value.sequence) return;
         value.resolvedSequence=value.sequence;value.outcome=outcome;
-        value.state=4;value.deadline=CombatMoveClock.EffectAction+2;
+        value.state=0;value.deadline=0;
         if(Ritual) value.nextAbility=(value.activeAbility+1)%3;
         if(warning!=null) board.CancelGemSetThreat(warning);warning=null;
-        actor.ResetSpecialCounter();
+        actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
         // Existing rank duration, immunity, meter and presentation remain authoritative.
         if(applyStagger) stagger?.ApplyStagger(1,1);
         Publish();
-    }
-    public void ExpireAcceptedMove(int tick)
-    {
-        if(actor==null || actor.IsDefeated) return;
-        if(value.state==4 && tick>=value.deadline)
-        {value.state=0;actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);Publish();}
     }
     private void Publish() {attack?.SetActionPaused(this,BlocksBasic);Changed?.Invoke();}
     private void Interrupted(EnemyStagger source,float duration,float remaining)
@@ -188,8 +182,14 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
             // Previous anchors/exposure are retired. Preserve the attempt, with
             // an old pending milestone safely fizzled rather than applying it twice.
             value.version=2;value.state=4;value.outcome="Rules updated";
-            value.resolvedSequence=value.sequence;value.deadline=CombatMoveClock.EffectAction+2;
+            value.resolvedSequence=value.sequence;
             value.nextAbility=0;value.heartrootsArmed=false;
+        }
+        if(value.state==4)
+        {
+            // A legacy terminal cast already consumed its effect and rotation.
+            value.state=0;value.deadline=0;value.resolvedSequence=value.sequence;
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
         }
         warning=board.RestoredVineCast(actor);BindProtection();Publish();
     }

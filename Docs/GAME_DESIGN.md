@@ -98,8 +98,9 @@ destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
 Surviving spreading roots can regrow vines on the next normal pulse.
 
 Successful casts and cancellations consume their sequence before effect callbacks.
-Milestone recovery takes two future moves, then three moves to readiness. Basics
-pause during preparation/channel/recovery. Scout and Trailguard retain their
+After a milestone channel ends, normal three-move readiness begins immediately.
+Basics pause during preparation/channel and owned animation, with no additional
+post-channel recovery moves. Scout and Trailguard retain their
 existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
 recipient invalidation never retargets or auto-staggers her. All true interruptions
 use EnemyStagger; no forest-specific stagger or vulnerability state exists.

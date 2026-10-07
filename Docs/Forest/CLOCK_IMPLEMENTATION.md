@@ -33,8 +33,8 @@ implementation contract supplies exact expiry order.
 | Shields | Existing separate resource and whole-hit gate; no timer | Fill and floating numbers |
 | Supplies | Two future moves per kind; accepted-use debit; no time recharge | UI feedback |
 | Other cards / affinity / energy | Existing event-driven limits, rewards, refund budgets and persistent modifiers | Choice/reward presentation |
-| Mender | Fixed persistent recipient, two future responses, exactly-once outcome, two future recovery actions | Authored start/hold/release; separate heal/cancel cue |
-| Warden / Matriarch | Structural roots, durable cast sequence/cycle, two-move Renew and three-move Harvest; normal stagger; future recovery deadlines | Authored motion follows state events; cannot grant effects |
+| Mender | Fixed persistent recipient, two future responses, exactly-once outcome; then normal readiness with no extra recovery moves | Authored start/hold/release; separate heal/cancel cue |
+| Warden / Matriarch | Structural roots, durable cast sequence/cycle, two-move Renew and three-move Harvest; ordinary Stagger only; then normal readiness | Authored motion follows state events; cannot grant effects |
 | Vines | Cell overlays and saved two-move growth deadline; normal pulse before casts; forced surge keeps deadline; independent environment owner | Dedicated vine, amber anchor and warning sprites |
 | Continuation | Version 2 stores profile, zone, action and next actor identity; owners store timers and pending work; in-flight actions use existing replay journal | Frame deltas reproduce accepted presentation only |
 

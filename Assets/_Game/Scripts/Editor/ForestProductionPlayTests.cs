@@ -120,6 +120,8 @@ public sealed partial class ForestFoundationPlayTests
         System.Action<int> due=_=>expected=Mathf.Min(boss.MaxHealth-boss.CurrentHealth,20+20*Run.Board.OwnedRootCount(boss));
         yield return Move();Run.Board.ValidPlayerMoveCompleted+=due;yield return Move();Run.Board.ValidPlayerMoveCompleted-=due;
         Assert.That(kit.Outcome,Is.EqualTo("Renewed"));Assert.That(heals,Is.EqualTo(expected));Assert.That(heals,Is.GreaterThan(0));
+        Assert.That(kit.BlocksBasic,Is.False);Assert.That(boss.CurrentSpecialTurnCount,Is.Zero);
+        Assert.That(boss.SpecialTurnRequirement,Is.EqualTo(3));
         Assert.That(Run.Board.OwnedRootCount(boss),Is.EqualTo(2));int resolved=heals;
         kit.ResolveAcceptedMove();yield return new WaitForSeconds(.8f);Assert.That(heals,Is.EqualTo(resolved));
     }
@@ -159,6 +161,7 @@ public sealed partial class ForestFoundationPlayTests
         channel.RestoreContinuation(new EnemyCombatSnapshot{channel=new EnemyChannelSnapshot{state=1,sequence=1,targetId=target.PersistentId,deadlineMove=2}},_=>target);
         target.ResolveDirectDamage(9999);yield return Stable();Assert.That(channel.Outcome,Is.EqualTo("Target lost"));
         Assert.That(mender.GetComponent<EnemyStagger>().IsStaggered,Is.False);Assert.That(channel.Target,Is.Null);
+        Assert.That(channel.BlocksBasic,Is.False);Assert.That(mender.CurrentSpecialTurnCount,Is.Zero);
     }
     [UnityTest] public IEnumerator HybridBasicsCountSecondsWhileAbilitiesAndDurationsWaitForMoves()
     {

@@ -151,7 +151,6 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 if (!Living(actor)) continue;
                 actor.GetComponent<EnemyStagger>()?.ExpireAcceptedMove(Tick);
                 actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
-                actor.GetComponent<ForestMilestoneEnemyAbility>()?.ExpireAcceptedMove(Tick);
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             run.AdvanceSupplyCooldowns();
