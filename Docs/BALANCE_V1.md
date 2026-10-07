@@ -53,7 +53,30 @@ The focused Unity suite passed 231 tests with no failures/skips, including a Pla
 
 ## Enemy data
 
-All category and individual stat multipliers are 1. HP and damage multiply by `1 + 0.01*(wave-1)` through wave 100, then use the existing endless curves; final stats round to nearest five, with a positive minimum of five; attack intervals and special cadence do not accelerate. Player-power correction is disabled. Enemy slots remain three.
+All category and individual stat multipliers are 1. The provisional 2026-10-07
+shared HP curve uses linear segments through the anchors below. After wave 100,
+HP uses `6 * (1 + 0.01 * (wave - 100))`: 9× at wave 150. This is tuning data,
+not an enforced fight duration. Base enemy HP is unchanged.
+
+| Global wave | HP multiplier | Damage multiplier |
+| ---: | ---: | ---: |
+| 1 | 1.0× | 1.00× |
+| 15 | 1.4× | 1.14× |
+| 30 | 2.0× | 1.29× |
+| 50 | 3.0× | 1.49× |
+| 70 | 4.0× | 1.69× |
+| 100 | 6.0× | 1.99× |
+| 150 | 9.0× | 3.4825× |
+
+Damage retains `1 + 0.01*(wave-1)` through wave 100, then
+`1.99 * (1 + 0.015*(wave-100))`. Attack intervals and special cadence do not
+accelerate. Final HP/damage round once to nearest five, positive minimum five.
+Player-power correction remains disabled. All three zones and summons share
+`DifficultyProfile_Standard` through WaveController's global depth; travel does
+not restart this curve. Continue retains saved current HP without healing.
+Enemy slots remain three. New evidence is recorded in
+[the roster/endless validation](Validation/ROSTER_ENDLESS_REVISION.md);
+historical Balance v1 pacing measurements used the earlier HP curve.
 
 | Enemy | Base HP | Hit(s) | Interval | Eligible from | Threat |
 | --- | ---: | --- | ---: | ---: | ---: |
@@ -79,7 +102,7 @@ All category and individual stat multipliers are 1. HP and damage multiply by `1
 | RoyalArchbishop | 210 | 5 | 12s | 24 | 4 |
 | King | 480 | 9 | 11s | 29 | 7 |
 
-Normal pools overlap; a declining weight tail retains older enemies. Milestone windows: Marshal 7–8 with one local escort; Sergeant 12–14 with one guard; Captain 18–20 with two knights; Archbishop 24–26 with one royal; King 29–30 with required Archbishop. King completion records its existing one-time run reward and continues into weighted Normal/Special formations. The attempt ends on death or explicit End Run; named leaders retain their existing once-per-run rule. The Archbishop escort is an explicit narrative exception to leader repeat exclusion.
+Normal pools overlap; a declining weight tail retains older enemies. Milestone windows: Marshal 7–8 with one local escort; Sergeant 12–14 with one guard; Captain 18–20 with two knights; Minister 24–26 with one royal; King 29–30 with required Minister. King completion records its existing one-time run reward and continues into weighted Normal/Special formations. The attempt ends on death or explicit End Run; named leaders retain their existing once-per-run rule. The Minister escort is an explicit narrative exception to leader repeat exclusion.
 
 ## Authored library
 
@@ -176,10 +199,10 @@ Cadences below count accepted completed matching moves, not invalid swaps, casca
 | Town Marshal | Alternates one summon and a rally opportunity every 4 moves | Farmer/Pan/Basket pool; only free slots within 3 total; roster-based local eligibility | Summon becomes protector for 2 moves; killing it ends interception and resets a held-ready special. Rally is +40% attack speed for 5 seconds, non-stacking. Summons survive Marshal death; no summon income. |
 | Royal Standard Bearer | One standard every 5 moves, at most one owned | Legal ordinary top-row cell; one non-gem occupant | Existing standard falls with actual gravity openings and leaves at the bottom. Clear below it to end its shared non-stacking +20% Crown attack-speed aura. It cannot be directly matched/bombed away; death orphans the standard rather than erasing it. |
 | Court Mage | One freeze every 5 moves; 3 per owner | Legal ordinary unpinned cell, preserving a move | Ice remains fixed under gravity and cannot be manually swapped. Matching/destroying that gem breaks the ice; adjacent clears do not. Owner death queues release and normal settlement. This is deliberately distinct from chains. |
-| Archbishop | Alternates Restoration and Benediction every 4 moves | Three distinct runes, 3-move warning; blessings on at most 2 other allies | Destroy/convert rune identities to cancel individual heals. Each survivor removes its gem environmentally and heals 3.3% of a newly chosen triage target's max HP. Need × rank weights select targets (1 / 1.15 / 1.35 / 1.6); meaningful wounded allies halve self-priority. Blessing multiplies the next accepted whole normal sequence by 1.4. Death cancels marks and unspent blessings. |
-| King | Judgment → Assault → Bombardment every 4 moves; 3 when enraged | Judgment: three distinct gems for 3 moves; Bombardment: one row plus one column for 2 moves; command snapshots explicitly eligible Royals | Judgment deals base 12 per surviving mark; remove individual identities to prevent hits. Bombardment lanes cannot be cancelled but preserve specials/structures and deal base 6 once. Commands use complete normal sequences at ×1.1 with 0.6s wind-up and 0.12s spacing. Surviving 50%/25% crossings each fill free slots once, never with an Archbishop; first crossing adds ×1.2 normal damage and ×1.25 attack speed. Death cancels outstanding actions; independent reinforcements remain. |
+| Minister | Alternates Restoration and Benediction every 4 moves | Three distinct runes, 3-move warning; blessings on at most 2 other allies | Destroy/convert rune identities to cancel individual heals. Each survivor removes its gem environmentally and heals 3.3% of a newly chosen triage target's max HP. Need × rank weights select targets (1 / 1.15 / 1.35 / 1.6); meaningful wounded allies halve self-priority. Blessing multiplies the next accepted whole normal sequence by 1.4. Death cancels marks and unspent blessings. |
+| King | Judgment → Assault → Bombardment every 4 moves; 3 when enraged | Judgment: three distinct gems for 3 moves; Bombardment: one row plus one column for 2 moves; command snapshots explicitly eligible Royals | Judgment deals base 12 on the first two contacts; only three survivors enable a provisional base-18 finisher. Consume physical marks in saved order, use authored impacts and settle once after the sequence. Bombardment lanes cannot be cancelled but preserve specials/structures and deal base 6 once. Commands use complete normal sequences at ×1.1 with 0.6s wind-up and 0.12s spacing. Surviving 50%/25% crossings each fill free slots once, never with a Minister; first crossing adds ×1.2 normal damage and ×1.25 attack speed. Death cancels outstanding actions; independent reinforcements remain. |
 
-Teaching order: Miner and local walls precede multiple-owner recipes; Crossbow chains precede Captain chains/commands; two-hit Knights precede Royal two-hit commands; separate banner and ice recipes precede the combined court. Sergeant teaches identity-following warnings before Archbishop/King marks. Older low-threat opponents remain possible breathing room through declining spawn weights. Pressure derives from role combinations, not player-level compensation.
+Teaching order: Miner and local walls precede multiple-owner recipes; Crossbow chains precede Captain chains/commands; two-hit Knights precede Royal two-hit commands; separate banner and ice recipes precede the combined court. Sergeant teaches identity-following warnings before Minister/King marks. Older low-threat opponents remain possible breathing room through declining spawn weights. Pressure derives from role combinations, not player-level compensation.
 
 ## Healing, ability and economy reasoning
 

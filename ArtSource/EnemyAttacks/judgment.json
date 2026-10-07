@@ -1,0 +1,74 @@
+[
+  {
+    "name": "King_JudgmentStrike1",
+    "character": "King",
+    "state": "JudgmentStrike1",
+    "durations": [
+      50,
+      60,
+      110,
+      40,
+      100,
+      70,
+      60,
+      60,
+      70
+    ],
+    "impactFrames": [
+      4
+    ],
+    "width": 96,
+    "height": 80,
+    "opaqueColors": 17,
+    "sha256": "51b581c6f9a0fa1af20063a257af0178e11f9e3505c8a37afba0b13cca901785",
+    "provenance": "Approved AutoAttack poses: deliberate first cut."
+  },
+  {
+    "name": "King_JudgmentStrike2",
+    "character": "King",
+    "state": "JudgmentStrike2",
+    "durations": [
+      40,
+      100,
+      60,
+      100,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrames": [
+      3
+    ],
+    "width": 96,
+    "height": 80,
+    "opaqueColors": 17,
+    "sha256": "b6f17dbe128e1568a5084dab33ff2db6334fa0a5785c53065bc4f072e012b11f",
+    "provenance": "Approved AutoAttack poses: faster second cut, distinct gathering cadence."
+  },
+  {
+    "name": "King_JudgmentFinisher",
+    "character": "King",
+    "state": "JudgmentFinisher",
+    "durations": [
+      70,
+      90,
+      110,
+      130,
+      60,
+      140,
+      80,
+      80,
+      80,
+      90
+    ],
+    "impactFrames": [
+      5
+    ],
+    "width": 112,
+    "height": 80,
+    "opaqueColors": 17,
+    "sha256": "d99d358f5bc9711f6dbb82e33a83940b790882d8a1de15d695496bc29059cab0",
+    "provenance": "Direct native edit of approved King: higher held windup, leftward committed torso, planted boots, expanded royal-gold cut and stepped recovery."
+  }
+]

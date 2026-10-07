@@ -92,8 +92,10 @@ Gideon's board photograph does not rewind combat clock or proc budgets.
 
 The reviewed starter kit sheet supplies exact forest values. Mender has no
 self-targeting: a fixed living ally below 75% receives +20 only after two future
-accepted actions. Stagger/kill cancels once, recipient death fizzles, and 2 future
-recovery moves follow every outcome. It cannot attack during channel/recovery.
+accepted actions. Stagger/kill cancels once and recipient death fizzles. Each
+terminal outcome returns directly to normal readiness. It cannot attack during
+the channel; ordinary Stagger alone controls genuine interruption, without an
+additional recovery penalty. Old recovery saves migrate to idle without healing.
 
 Vines are cell overlays. They obscure some of the gem without blocking swapping,
 gravity, matches, bombs or destruction. Clearing the covered gem removes its vine.
@@ -106,21 +108,27 @@ seeds its four orthogonal neighbors, independent of that growth cap. These are
 prototype cadence/readability values, not finalized pacing. Real chains retain
 their existing six-restriction cap; vines consume none of it.
 
-Rootbinder warns one ordinary, reachable interior gem for a future response,
-then replaces it with a structural 1-hit Root. Four immediate vines never spread.
+Rootbinder immediately replaces a safe ordinary interior gem with a structural
+1-hit Root at its authored release contact. Four immediate vines never spread.
 First clear a vine beside the Root; a later clear through an unvined, opened side
 deals one durability hit. The opening clear cannot also damage that Root.
 Roots use the existing structural queue, useful-response checks, cap and refill.
 
-Warden first readies after two moves, warns one cell, then plants a 2-hit Root
-with four spreading vines. While it lives, every ally including Warden receives
-one 25% incoming-damage reduction through central damage resolution. Multiple
-Wardens do not multiply this shared reduction. Breaking the Root removes the aura.
-Clearing its warning or normal stagger interrupts preparation. Invalid targets
-fizzle without granting stagger. There is no exposure state or weakness bonus.
+Warden first readies after two moves, then immediately plants a 2-hit wooden
+shield Root and four spreading vines. Every living enemy, including new summons,
+has Warded while a valid source remains: one 25% incoming-damage reduction.
+Duplicate sources never multiply it. It is a named status in combat/inspection,
+not shield HP. Rootbinder and Warden use their existing authored release clips
+with contact/completion events, the structural queue and its safety checks.
+Neither has a pre-placement warning. Legacy warnings retire harmlessly on Continue.
+
+`ForestRevisionImporter.Run` is the scoped rebuild step for these four root
+sprites, theme references and the two authored release contacts. Run it after
+the historical Forest production importer when rebuilding the asset family.
 
 Matriarch first readies after three moves. Renew plants two linked 2-hit Heartroots
-when none remain, then channels for two future moves. She heals herself and every
+when none remain, then channels for two future moves. Wooden heart growths identify
+both durability states; a restrained pulse is presentation only. She heals herself and every
 living ally for base 20 plus 20 per Heartroot surviving at resolution. Her cycle
 then uses Verdant Surge (immediate existing-vine advance) and Thorn Harvest
 (three future moves; base 20 damage plus 5 per currently vine-covered gem).
@@ -130,8 +138,9 @@ destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
 Surviving spreading roots can regrow vines on the next normal pulse.
 
 Successful casts and cancellations consume their sequence before effect callbacks.
-Milestone recovery takes two future moves, then three moves to readiness. Basics
-pause during preparation/channel/recovery. Scout and Trailguard retain their
+After a milestone channel ends, normal three-move readiness begins immediately.
+Basics pause during preparation/channel and owned animation, with no additional
+post-channel recovery moves. Scout and Trailguard retain their
 existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
 recipient invalidation never retargets or auto-staggers her. All true interruptions
 use EnemyStagger; no forest-specific stagger or vulnerability state exists.

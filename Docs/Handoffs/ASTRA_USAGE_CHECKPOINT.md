@@ -1,59 +1,74 @@
-# Revision checkpoint — 2026-10-06
+# Roster/endless revision checkpoint — 2026-10-07
 
-Branch: `codex/status-sigils-court-revision`.
-Validated implementation HEAD: `cac40685e71eff7d938477a138b3d3ef5b9394a9`.
-Base main: `2783df8eb9107c182db5d9c768e2a36c799cfc35` (PR #180).
-Following commits package documentation and evidence only; use `git rev-parse HEAD`
-for the current review head. **Do not merge without the user's review approval.**
-Task: `C:/Users/USER/.codex/attachments/2bbe0e9d-d8e9-4dd2-a040-80ab8e06593c/Pasted text.txt`.
+## Current task
 
-## Complete
+The approved enemy roster/endless revision is complete. The user authorized merging
+all its slices on 2026-10-08, including work completed before the 5% usage stop.
+User brief: `C:/Users/USER/.codex/attachments/6ce2a904-6cc6-46a9-acda-b262f66dcd5a/Pasted text.txt`.
+Branch: `codex/roster-endless-revision`; base merged main `e572a88227d036af765e057831c46a2cc067630d`.
+Tranches 1–11 end at `9432bdcb61181cfada6d9d5f8a7c3f99bcc09122`.
+Tranche 12 is the final integration commit containing this checkpoint.
+Review PR: https://github.com/PlatFll/Dungeon-Matcher/pull/182.
 
-Shared player statuses, native status UI, deterministic flooded Slippery with a
-fresh precommit forecast, successful cast announcements, actual-slot target sigils,
-Court cultures/encounters, and direct Hammerhead/Captain tails across all motion.
-Cross-zone rules and future cave/snow/Reef boss concepts are documented only.
-No implementation tranche remains partial. No paid generation or credit reset.
-No running Unity job or automatic background continuation.
+## Completed coherent commits
 
-## Verification
+| Commit | Tranche |
+| --- | --- |
+| eafd0f8 | 1: channel lifecycle and legacy migration |
+| 78c98cd | 11: shared HP curve and Continue plaque |
+| f92cfba | 2–3: Minister, sequential Judgment and native motions |
+| 2c2114d | 4–5: Forest roots, Warded, Bough and native variants |
+| b70f164 | 6: finite oxygen and distinct spend/gain presentation |
+| 165a4a0 | 7: instant independent coffers and physical Pressure counterplay |
+| e98d049 | 8: royal exposed pearl line rotation |
+| 9559ebf | 9: Nacre Tribute, saved Fortified and front/back orbit |
+| 9432bdc | 10: bounded underwater bubbles/ripples and reduced motion |
+| This final integration commit | 12: UI/edge corrections, Puffer pause fix, regression and owner docs |
 
-- Broad affected regression 335/335; affected reruns 18/18 and 6/6. Deduplicated:
-  **337 unique passing cases**. Four required portrait/safe-inset captures inspected.
-- `Tools/Validate-Unity.ps1` succeeded with Unity 6000.3.19f1 after final code changes.
-  Log: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-86545328-c3ff-4a7c-9735-a73631b43591.log`.
-- Direct-tail integrity checks passed for 16 source PNGs / 15 exports / 118 frames.
-- Editor audio muted. Historical unrelated failures remain documented; no physical
-  Android, human pacing or music approval claim.
-- Full report, tranche commits, docs, provisional tuning and limitations:
-  [STATUS_SIGILS_COURT_REVISION.md](../Validation/STATUS_SIGILS_COURT_REVISION.md).
-- Galleries: `ArtSource/SharedStatus/Review/Review.html` and
-  `ArtSource/DrownedCourt/TailRevision/Review/Review.html`.
+Each slice passed affected Unity checks and the mandatory validator. Detailed
+results, original failures and corrections are in [the evidence](../Validation/ROSTER_ENDLESS_REVISION.md).
+Final validator: `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-3b6cbe91-b676-4340-b34f-5a78a2281e71.log` (exit 0).
+Zero PixelLab requests/generations. New direct native artwork awaits user visual
+review. No physical-device, human pacing or music approval claim.
 
-## Preserve unrelated starting changes
+## Final integration and next gate
 
-These four modified files are excluded from every task commit and retain their
-starting SHA-256 hashes. Backup/hash record: `.utmp/StatusRevision/UserChanges/manifest.json`.
+All requested mechanic/art tranches are implemented. Final UI/edge checks pass:
+Forest panel height 384; wider centered Fortified/Warded status lane; coffer count
+below the pearl; no duplicate AIR feedback; saved royal route/refill determinism;
+four directions/two route lengths; Tribute caster death preserves remaining AIR.
+Gallery `.utmp/RosterEndless/Review.html` is built, images reviewed, links checked.
+The four original user-file hashes remain unchanged. Final diff review is done.
 
-```text
- M Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab
- M Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta
- M Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta
- M Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta
-```
+No Unity jobs remain. The combined run passed 146/149; all eight affected reruns
+passed after fixing Puffer's retained pause and correcting two old fixture
+expectations. All 149 cases pass on their latest execution. Raw combined results:
+`.utmp/ForestValidation/8c0fd8e9-25ab-4a14-9f19-4cfe550f6083.xml`;
+rerun `a0b7acae-0b83-474c-ba90-4f65dadfcb57.xml` in the same folder.
+The final validator passed. Main was fetched and still matches base.
 
-Unity's unrelated generated TimeManager rewrite was restored. Never run the full
-Court/theme importer over the user's throne prefab. Do not stage/reset these files.
+Next gate: user visual review of the new direct native art and gameplay tuning.
+No requested implementation remains. Provisional values are listed in the
+worklist; physical-device and human pacing/animation-feel checks remain open.
+Merge approval was received on 2026-10-08. No reset credit or paid generation was used.
 
-## Next action and decisions
+## Preserve user work
 
-The validated branch is ready for the review PR attached to this task. The next
-work is only the user's review corrections or explicit merge authorization.
-No new status caster is assigned in production. Slippery could suit a future Reef
-boss, pending a kit decision. Status values and mixed-formation pressure are
-provisional; native tail additions need visual approval. Needlefin's silhouette
-was reported and intentionally left unchanged.
+Never stage/reset these four starting modifications:
+- `Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab`
+- `Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta`
+- `Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta`
+- `Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta`
 
-Last account usage check: **11% remaining**. User safety thresholds: at 5%, no new
-tranches; at 3%, validation/commits/handoff only; at 1%, stop all new work.
-Recheck current limits before any resumed implementation. No reset consumed.
+Hashes: `.utmp/StatusRevision/UserChanges/manifest.json`. The scoped Court importer
+preserves them; never run the full Court/environment importer. Also preserve all
+other current task changes; inspect actual `git status` before staging.
+
+After committing the final integration, the worktree should contain only those
+four pre-existing user modifications. Do not stage them in this revision.
+
+## Usage
+
+Last reading: **74% remaining** in the shared weekly window. No reset credit used.
+User thresholds: 5% finish current small task/validate/commit/handoff; 3% only
+validation/docs/commits; 1% stop. Continue the task while allowance remains.

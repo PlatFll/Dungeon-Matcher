@@ -70,8 +70,50 @@ awards AIR. Consumed crystals report destruction without inventing colored-gem
 rewards. `CombatMoveClock` advances the environment before enemy work and checks
 suffocation after it; presentation cannot advance either.
 
+Aquatic state v2 records reserve exhaustion and the next emergency pulse. The
+zone definition owns 16–18 flood moves, five initial bubbles, the three-move
+emergency cadence, normal/critical supply caps and critical AIR threshold.
+Captured charges remain part of the reserve. Low-AIR relocation preserves the
+free-bubble count and never moves a marked response target. Version-1 saves keep
+their remaining tide/resources and adopt the finite-reserve rule without payout.
+`AirReceipt` projects the accepted debit and individual collections to the meter;
+its queued visual steps cannot change AIR or delay board ownership. Repeated
+settled-move calls return before replaying the receipt or emergency supply.
+
+Instant theft uses the existing guarded animation contact and mutation queue.
+Placement requires exact surviving charge identities and a reachable adjacent
+coffer response; no emergency oxygen is created by theft. Placed coffers use zero
+actor ownership for occupancy, retaining the original persistent ID only as
+provenance. Caster death clears snares but cannot remove or pay a coffer. Versioned
+Court ability snapshots retire old theft and nonphysical Pressure warnings without
+Stagger or an effect replay. Pressure cancellation precedes readiness progression.
+`CourtBoardEffects` observes shell-break, owned gem-motion and coffer-motion events.
+At most ten short trails and twenty-four native particles/ripples run locally;
+gravity samples every fourth moved gem (eighth under Reduced Motion). Reduced
+Motion suppresses ripples and lowers burst counts. Effects use no gameplay RNG,
+never delay resolution, pause with scaled time and clear on drain/disable.
+`CourtRevisionImporter` updates native pearl exports and
+theme bindings only, preserving user-edited environments.
+
+A royal coffer's first hit records a transient pending slide. The existing
+`ClearMatches` owner resolves it after actual destruction/special conversion and
+before its caller refills. A legal route is selected with saved board RNG; one
+atomic rotation updates occupancy and every preserved gem identity. The normal
+gem-movement enumerator presents both the gems and coffer under that same hold.
+No route means no movement. Pending motion blocks checkpoint capture; completed
+coordinates and remaining durability use the existing board/aquatic snapshot.
+
+Tribute uses the existing mutation queue to consume a fixed list of surviving
+oxygen overlays. It neither clears gems nor reports a player clear. The Court
+runtime distributes the resulting count by Queen-first actual slot order with
+definition-selected caps. `EnemyActor` owns saved Fortified stacks and consumes
+one on a positive eligible direct packet, after interception picks its final
+recipient. The periodic API explicitly excludes consumption. Reduction precedes
+the ordinary final rounding/shield gate. `EnemyFortifiedView` projects count to
+bounded native Image siblings behind/in front of VisualRoot; it cannot alter buffs.
+
 `AquaticEnemyAbility` is definition-selected and owns fixed targets, warning and
-recovery stages, answer identities, rally leases and rotation state. Cantor reuses
+channel stages, answer identities, rally leases and rotation state. Cantor reuses
 `EnemyChannelRuntime`. Captain commands reuse the existing guarded basic sequence.
 Queen uses `IEnemyFixedSlotSummonService` on `WaveController`, which validates the
 announced slot and never replaces an occupant. Central damage and shield gates
@@ -84,11 +126,16 @@ are cleaned on a detached snapshot before an atomic travel commit. The saved
 `completedCourtVisits` count enables return formations after a completed visit.
 
 `AquaticEnvironmentView` observes state for AIR, bubbles, snares, pressure marks
-and bounded water layers. Existing layout owners consume marine theme assets;
+and bounded water layers. Coffer captions fit integer screen-pixel glyph heights
+below the pearl; world TMP em size must not be treated as a native pixel size.
+Existing layout owners consume marine theme assets;
 the background owner selects one of three compositions without moving actors.
 `DrownedCourtImporter` imports reviewed sheets, guarded animation contacts and
 theme assets. Held Puffer basics use an optional `SpecialAutoAttackState`; a missing
 clip keeps the existing generic fallback.
+After the inflation cast finishes, its temporary action-pause lease is refreshed
+from the remaining channel state. Inflation allows basics; ordinary channels
+retain their hold until their response resolves.
 
 Bardley's three primary bursts share one `ClearMatchesWithOrderedBursts` plan.
 Presentation reveals groups sequentially while board ownership stays held; rewards
@@ -96,6 +143,13 @@ and physical destruction resolve once before refill. The retired bubble event ha
 no production invocation. See [the Court contract](DROWNED_COURT.md).
 
 ### Forest combat and zone travel
+
+The Forest theme reserves 384 logical pixels for its battle panel so the approved
+96-pixel apex and readable counters clear the top controls at the supported
+portrait shapes. `EnemyMoveIntentView` reserves the actual Fortified/Warded label
+width through `EnemyWeaknessIndicatorUI`; the weakness gem and active status are
+centered together beneath HP. Disabling/removing the intent view releases that
+width. These layout rules do not resize character art or affect combat state.
 
 `MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
 fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
@@ -153,7 +207,12 @@ own timing state under the recorded profile. Free actions cannot interleave a
 resolving accepted turn. See [the timer audit](Forest/CLOCK_IMPLEMENTATION.md).
 
 Mender channels own a fixed persistent recipient ID and an exactly-once terminal
-sequence. Rootbinder submits generic warnings/placements to the existing board
+sequence. Channel success/fizzle returns directly to normal readiness; interruption
+leaves ordinary EnemyStagger as the only penalty. Legacy heal/Court state 2 and
+forest milestone state 4 migrate to idle without replaying effects or advancing
+an already-consumed rotation. Legacy recovery deadlines are read for compatibility
+only. Authored animation completion and real response windows remain intact.
+Rootbinder submits instant generic placements to the existing board
 queue. Vines are cell-based presentation overlays in the board's saved state,
 separate from chain/pin maps. Roots reuse structural occupancy, durability,
 safe-placement/refill and the same mutation queue. The first vine clear records
@@ -162,10 +221,14 @@ The environment growth deadline advances independently of forced surges. Board
 photos preserve that deadline and solved/damaged root progress.
 
 The expanded roster uses definition-selected ForestCombatAbility (rage, independent
-summons, shared non-stacking rhythm) and ForestPressureAbility (fixed-cell warnings
-and ordinary Treant shield). BoardController.CellThreats owns response cells and
-exactly-once queued resolution. Removing a vine permanently answers its volley mark;
-clearing any Bough cell weakens that hit. Board snapshots use warning kind 3.
+summons, shared non-stacking rhythm) and ForestPressureAbility (fixed-cell Volley,
+physical Bough marks and ordinary Treant shield). BoardController.CellThreats owns
+Volley response cells (snapshot kind 3); removing a vine permanently answers its
+shot. Bough uses the existing GemSetThreat (kind 1), compact selection, saved target
+order and CancelOnAnyTargetLost. Any cleared/invalid target ends it without Stagger.
+At release contact an unanswered Bough applies one impact then consumes its marks
+under the same board hold before one environmental settlement. Legacy kind-3 Bough
+warnings fizzle on restore; they cannot reconstruct their original gem identities.
 Enemy continuation owners save persistent summon/buff targets, remaining effect
 units, rage and Treant cycle. Thorn barricades save one safe-side bit and reuse the
 structural pipeline; only opening manual clears carry the retaliation flag.
@@ -187,16 +250,19 @@ work, draining a previously accepted attack before offering that work. It never
 subtracts move readiness from seconds. The replay journal records elapsed frames
 in this profile because idle wall time can now cause damage.
 
-`ForestMilestoneEnemyAbility` owns Warden's shared protection and Matriarch's
+`ForestMilestoneEnemyAbility` owns Warden's named Warded sources and Matriarch's
 Renew/Surge/Harvest cycle. BoardController owns all root/vine state and mutation;
-normal forest growth resolves before casts. Shared damage-reduction providers
-are evaluated by EnemyActor at impact and do not stack with duplicate providers.
+normal forest growth resolves before casts. Warded source predicates are evaluated
+by EnemyActor at impact and do not stack with duplicate providers. Spawn events bind
+new allies immediately; restore rebuilds predicates against the restored roots.
 Redirection, final five-step rounding and shield gating retain their owners.
 Cast sequences are consumed before healing/damage callbacks. Root pairs trigger
 existing EnemyStagger after both are destroyed. Exposure and its weakness bonus
 are removed. Legacy anchors retire on save upgrade; real pins are preserved.
-`ForestEnemyMotion` reuses approved clips and observes outcomes; special clips
-contain no gameplay effect events. Authored basics keep the guarded event path.
+`ForestEnemyMotion` reuses approved clips and observes channel outcomes. The instant
+Rootbinder/Warden Release clips now opt into the existing authored motion owner;
+their contact cue gates a queued mutation, with the existing bounded missing-art
+fallback. RootLifePulse only draws a glow child; it cannot affect occupancy or hits.
 
 `ForestProductionImporter` binds modular scenery, clips and gameplay-only theme
 sprites. The existing layout owner reserves enough battle height for 96px art;
@@ -369,6 +435,13 @@ Player shield combat numbers consume `PlayerActor.ShieldDamaged`, which contains
 - `EnemyDefinition` is the per-enemy `ScriptableObject` for identity, prefab and presentation, base combat values, spawn eligibility/weight, category, special-ability kind and cadence, and ability-specific data currently represented there.
 - `EnemyDatabase` supplies eligible weighted definitions.
 - `WaveSpawnProfile` produces a category-based `WaveSpawnPlan`; `DifficultyProfile` converts a definition, wave, category modifiers, and player-power input into `EnemyRuntimeStats`.
+- Every zone and summoned actor reaches the same `WaveController.CreateEnemy`
+  path and serialized `DifficultyProfile_Standard`, using global `currentWave`.
+  Local zone visit position never resets stat scaling. The 2026-10-07 provisional
+  HP anchors and post-100 growth live in that profile; damage/speed/cadence fields
+  retain their previous settings, and player-power correction is off. Continue
+  restores the saved global wave before creation, then restores saved current HP
+  against the recalculated cap without granting health.
 - `WaveController` selects definitions, instantiates the configured prefab, initializes `EnemyActor`, assigns a gem weakness, initializes `EnemyAutoAttack`, and asks `EnemySpecialAbilityRuntimeFactory` to install the configured runtime.
 - `EnemyActor` owns runtime HP, shield, weakness, scaled stats, defeat, and the valid-player-turn counter that makes a special ready.
 - `EnemyAutoAttack` owns continuous attack cadence and sends player damage through `PlayerActor`. Definitions may optionally provide one follow-up auto-attack hit and a non-negative delay after the primary presentation's completed-return acknowledgement. The primary and follow-up are independently scaled and resolved as separate `PlayerActor.TryTakeDamage` calls inside the same attack cadence. For a follow-up sequence, `EnemyAutoAttack` retains action ownership while `EnemyCombatFeedback` acknowledges each generic lunge's impact and completed return using that hit's presentation ID. The next hit cannot begin before the required return acknowledgement and configured follow-up delay, and the cooldown cannot begin before the final return; one-shot guards and real-time fallbacks prevent duplicate damage or presentation-dependent stalls. Definitions with no follow-up retain the established single-hit path.
@@ -589,6 +662,8 @@ Snapshot versions/layouts and catalog references are validated during reconstruc
 
 
 ### Authored enemy ability contact and recovery (October 2026)
+
+Judgment uses the existing gem-set request's optional per-target coroutine. The board snapshots surviving identities in saved order, consumes each through `ClearMatches(..., null)`, awaits the ability-owned motion/damage callback, and defers banner gravity until the single final environmental settlement. The callback receives index and survivor count; BoardController selects no King state or damage value. The King owns the three named motions, finisher condition and death cancellation. The existing accepted action identity, board busy flag and continuation guard cover the entire sequence.
 
 `EnemyActor.SpecialMotion` extends the existing accepted special-action identity with a named animation state, numbered contact cues and completion. `EnemyActionAnimationPresenter` relays authored contacts after the current Image sprite is applied. Duplicate or stale action cues cannot release another cast. Ability runtimes still select effects and own cadence. Single-contact Miner/Barricade abilities retain their established event protocol.
 

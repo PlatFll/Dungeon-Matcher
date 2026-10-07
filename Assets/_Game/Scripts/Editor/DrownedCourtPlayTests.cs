@@ -40,7 +40,13 @@ public sealed partial class ForestFoundationPlayTests
         yield return Move();
         var state=Run.Board.Aquatic;
         Assert.That(state.phase,Is.EqualTo(TidePhase.Flooded));Assert.That(state.air,Is.EqualTo(5));
-        Assert.That(state.wetMoves,Is.InRange(10,12));Assert.That(state.bubbles.Count,Is.EqualTo(2));
+        Assert.That(state.wetMoves,Is.InRange(16,18));
+        var reachable=(List<Gem>)Call(Run.Board,"AirCandidates");
+        // The real move's refill can leave fewer than five immediately legal
+        // candidates; fill every available reserve slot without inventing one.
+        Assert.That(state.bubbles.Count,Is.EqualTo(Mathf.Min(Run.Zone.Definition.initialAirBubbles,reachable.Count)));
+        Assert.That(state.bubbles,Is.Not.Empty);
+        Assert.That(state.bubbles.All(id=>reachable.Any(g=>g.BoardIdentity==id)),Is.True);
         int remaining=state.wetMoves;
         float observeUntil=Time.time+.15f;yield return Until(()=>Time.time>=observeUntil,"thinking does not advance tide");
         Assert.That(state.wetMoves,Is.EqualTo(remaining));
@@ -92,7 +98,8 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(ability.IsPreparing,Is.True);Assert.That(ability.ResponseMoves,Is.EqualTo(2));
         yield return Move();Assert.That(ability.ResponseMoves,Is.EqualTo(1));
         yield return Move();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
-        Assert.That(moray.CurrentHealth,Is.EqualTo(before));Assert.That(ability.BlocksBasic,Is.True);
+        Assert.That(moray.CurrentHealth,Is.EqualTo(before));Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(ability.IsPreparing,Is.False);Assert.That(moray.CurrentSpecialTurnCount,Is.Zero);
     }
 
     [UnityTest] public IEnumerator CourtMaterialAndRosterImportsAreNativeAndComplete()
@@ -125,7 +132,7 @@ public sealed partial class ForestFoundationPlayTests
         yield return null;
     }
 
-    [UnityTest] public IEnumerator CourtCofferCaptureOwnerDeathAndDrainHaveSinglePayout()
+    [UnityTest] public IEnumerator CourtCofferCaptureOwnerDeathDoesNotPayAndDrainDiscards()
     {
         yield return LaunchCourt("pearl_thief","shellback_porter");yield return Move();
         var board=Run.Board;PrepareSafeMove();board.Aquatic.StartFlood(12,Run.MoveClock.Tick);board.Aquatic.air=1;
@@ -142,9 +149,13 @@ public sealed partial class ForestFoundationPlayTests
         board.ReleaseAquaticOwner(owner.PersistentId);
         board.ReleaseAquaticOwner(owner.PersistentId);
         yield return Stable();
-        Assert.That(board.Aquatic.air,Is.EqualTo(3),"owner cleanup refunds once");
+        Assert.That(board.Aquatic.air,Is.EqualTo(1),"owner cleanup does not bypass the independent coffer");
+        Assert.That(board.Aquatic.coffer,Is.Not.Null);
+        Assert.That(board.GetGem(site.x,site.y),Is.Null);
+        board.StartCoroutine((IEnumerator)Call(board,"RemoveAirCoffer",false));yield return Stable();
+        Assert.That(board.Aquatic.air,Is.EqualTo(1),"drain cleanup gives no reward");
         Assert.That(board.Aquatic.coffer,Is.Null);
-        Assert.That(board.GetGem(site.x,site.y),Is.Not.Null,"coffer footprint refills");
+        Assert.That(board.GetGem(site.x,site.y),Is.Not.Null,"cleanup footprint refills");
     }
 
     [UnityTest] public IEnumerator CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes()
@@ -233,22 +244,19 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot()
     {
-        yield return LaunchCourt("queen_nacre","shellback_porter");
+        yield return TributeFixture("queen_nacre","shellback_porter");
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
-        for(int i=0;i<3;i++)yield return Move();
-        Assert.That(queen.CurrentShield,Is.EqualTo(20));
-        for(int i=0;i<5;i++)yield return Move();
-        Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
-        Assert.That(ability.ResponseCells.Count,Is.EqualTo(2));
-        var cell=ability.ResponseCells[0];var gem=Run.Board.GetGem(cell.x,cell.y);
+        Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));Assert.That(ability.ResponseMoves,Is.EqualTo(3));
+        Assert.That(ability.MarkedBubbles.Count,Is.EqualTo(3));
+        var gem=Run.Board.FindAquaticGem(ability.MarkedBubbles[0]);Run.Board.Aquatic.air=0;
         var targets=new HashSet<Gem>{gem};
         Call(Run.Board,"RegisterAquaticClear",targets,false);Call(Run.Board,"ResolveAquaticDestruction",targets,new HashSet<Gem>());
         Call(Run.Board,"RegisterAquaticClear",targets,false);Call(Run.Board,"ResolveAquaticDestruction",targets,new HashSet<Gem>());
-        Assert.That(ability.Answers,Is.EqualTo(1),"one physical identity cannot answer twice");
+        Assert.That(ability.MarkedBubbles.Count,Is.EqualTo(2));Assert.That(Run.Board.Aquatic.air,Is.EqualTo(2),"one bubble cannot pay twice");
         int hp=Run.Player.CurrentHealth;
-        for(int i=0;i<3;i++)yield return Move();
-        Assert.That(Run.Player.CurrentHealth,Is.InRange(hp-25,hp-10));
-        for(int i=0;i<5;i++)yield return Move();
+        for(int i=0;i<3;i++){Run.Board.Aquatic.air=5;yield return Move();}
+        Assert.That(Run.Player.CurrentHealth,Is.GreaterThanOrEqualTo(hp),"Tribute has no old direct damage");
+        for(int i=0;i<3;i++){Run.Board.Aquatic.air=5;yield return Move();}
         Assert.That(ability.CastName,Is.EqualTo("MUSTER"));
         int slot=((AquaticEnemySnapshot)Get(ability,"state")).summonSlot;Assert.That(slot,Is.GreaterThanOrEqualTo(0));
         yield return Move();yield return Move();
@@ -334,12 +342,13 @@ public sealed partial class ForestFoundationPlayTests
         int hits=0;attack.AttackResolved+=(_,__,___)=>hits++;
         for(int i=0;i<3;i++)yield return Move();
         Assert.That(ally.CurrentShield,Is.EqualTo(25));
-        for(int i=0;i<5;i++)yield return Move();
+        for(int i=0;i<3;i++)yield return Move();
         var ability=captain.GetComponent<AquaticEnemyAbility>();Assert.That(ability.CastName,Is.EqualTo("BOARDING"));
         Assert.That(ability.Target,Is.SameAs(ally));Assert.That(ability.ResponseMoves,Is.EqualTo(2));
         yield return Move();yield return Move();
         Assert.That(hits,Is.EqualTo(2),"the two-dart basic sequence is commanded exactly once");
-        Assert.That(attack.HasCommandReservation,Is.False);Assert.That(ability.BlocksBasic,Is.True);
+        Assert.That(attack.HasCommandReservation,Is.False);Assert.That(ability.BlocksBasic,Is.False);
+        Assert.That(captain.CurrentSpecialTurnCount,Is.Zero);
     }
 
     [UnityTest] public IEnumerator CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares()

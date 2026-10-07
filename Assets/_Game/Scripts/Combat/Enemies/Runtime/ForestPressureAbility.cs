@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>Move-telegraphed forest attacks; board owns response cells, actors own damage/shield.</summary>
+/// <summary>Move-telegraphed forest attacks; board owns target identities, actors own damage/shield.</summary>
 [DisallowMultipleComponent]
 public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityRuntime,
     IAcceptedMoveEnemyAbility,IEnemyContinuationOwner
@@ -13,10 +13,11 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
     private EnemyStagger stagger;
     private BoardController board;
     private BoardController.CellResponseThreat warning;
+    private BoardController.GemSetThreat bough;
     private ForestRosterSnapshot state=new ForestRosterSnapshot();
     private bool pending,released;
-    public bool IsPreparing => warning!=null && !warning.Ended;
-    public int ResponseMoves => IsPreparing?Mathf.Max(0,warning.DueMove-board.CompletedValidPlayerMoves):0;
+    public bool IsPreparing => IsTreant?bough!=null && !bough.Ended:warning!=null && !warning.Ended;
+    public int ResponseMoves => IsPreparing?Mathf.Max(0,(IsTreant?bough.DueMove:warning.DueMove)-board.CompletedValidPlayerMoves):0;
     public string CastName => IsTreant?"BOUGH":"VOLLEY";
     private bool IsTreant => actor.Definition.SpecialAbilityKind==EnemySpecialAbilityKind.AncientBough;
     public void InitializeSpecialAbility(EnemyActor owner,BoardController initializedBoard,IReadOnlyList<EnemyActor> enemies)
@@ -30,15 +31,31 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
         if(IsTreant && state.shieldArmed && current==0 && !actor.IsDefeated)
         { state.shieldArmed=false;stagger?.ApplyStagger(1,1); }
     }
+    private void LateUpdate()
+    {
+        if(released || pending || board==null || board.IsBusy || bough==null ||
+            CombatMoveClock.Current?.IsBlockingWaveProgression==true) return;
+        if(bough.Ended || bough.Targets.Exists(g=>!board.IsEnvironmentalOrdinaryGem(g))) Finish();
+    }
     public void ResolveAcceptedMove()
     {
         if(released || pending || actor==null || actor.IsDefeated || !CombatMoveClock.CanOffer(actor) ||
             Time.timeScale<=0 || board.IsBusy || actor.HasAnimationActionInProgress || stagger?.IsStaggered==true) return;
+        // A player clear can end the board threat before this same accepted
+        // action offers the caster. Consume the fizzle before considering a
+        // fresh cast, even if readiness accumulated during an extended warning.
+        if(IsTreant && bough!=null && (bough.Ended || bough.Targets.Exists(g=>!board.IsEnvironmentalOrdinaryGem(g))))
+        {Finish();return;}
         if(IsPreparing)
         {
-            if(board.CompletedValidPlayerMoves<warning.DueMove || !actor.TryBeginSpecialAbilityAnimationAction()) return;
+            if(ResponseMoves>0 || !actor.TryBeginSpecialAbilityAnimationAction()) return;
             pending=true;actor.SpecialIdleState=null;actor.PrepareSpecialMotion("Release");
-            if(!board.TryQueueResolveCellResponse(warning,Impact,ok=>Finish())) Finish();
+            if(IsTreant)
+            {
+                if(!board.TryQueueResolveGemSet(bough,()=>Impact(1,false),ok=>Finish(),
+                    ()=>released || actor.IsDefeated,pulseBeforeClear:true)) Finish();
+            }
+            else if(!board.TryQueueResolveCellResponse(warning,Impact,ok=>Finish())) Finish();
             return;
         }
         if(!actor.IsSpecialReady) return;
@@ -48,17 +65,28 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
         if(IsTreant && state.cycle==0)
         { StartCoroutine(Armor());return; }
         actor.PrepareSpecialMotion("ChannelStart");
+        if(IsTreant)
+        {
+            if(!board.TryQueueMarkGemSet(actor,3,2,false,marked=>
+            { bough=marked;Started(marked!=null); },()=>released || actor.IsDefeated,compact:true,cancelOnAnyTargetLost:true,label:"Falling Bough"))
+                Started(false);
+            return;
+        }
         if(!board.TryQueueCellResponse(actor,3,2,!IsTreant,marked=>
         {
-            pending=false;warning=marked;
-            if(marked!=null && !released)
-            {
-                actor.AnnounceCommittedCast(IsTreant?"Falling Bough":"Thorn Volley");
-                actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();
-                actor.SpecialIdleState="ChannelHold";attack?.SetActionPaused(this,true);
-            }
-            actor.EndSpecialAbilityAnimationAction();
+            warning=marked;Started(marked!=null);
         })) {pending=false;actor.EndSpecialAbilityAnimationAction();}
+    }
+    private void Started(bool success)
+    {
+        pending=false;
+        if(success && !released)
+        {
+            actor.AnnounceCommittedCast(IsTreant?"Falling Bough":"Thorn Volley");
+            actor.NotifySpecialAbilityUsed();actor.ResetSpecialCounter();
+            actor.SpecialIdleState="ChannelHold";attack?.SetActionPaused(this,true);
+        }
+        actor.EndSpecialAbilityAnimationAction();
     }
     private IEnumerator Armor()
     {
@@ -78,7 +106,7 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
         var player=attack?.PlayerTarget;
         if(IsTreant)
         {
-            int damage=answered?actor.Definition.FallingBoughWeakenedDamage:actor.Definition.FallingBoughDamage;
+            int damage=actor.Definition.FallingBoughDamage;
             player?.TryTakeDamage(CombatAmounts.Round(damage*actor.RuntimeStats.DamageMultiplier),actor);
         }
         else for(int i=0;i<shots;i++)
@@ -89,7 +117,7 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
     }
     private void Finish()
     {
-        board.CancelCellResponse(warning);warning=null;pending=false;
+        board.CancelCellResponse(warning);warning=null;board.CancelGemSetThreat(bough);bough=null;pending=false;
         if(IsTreant) state.cycle=0;
         actor.SpecialIdleState=null;actor.ResetSpecialCounter();
         attack?.SetActionPaused(this,false);actor.EndSpecialAbilityAnimationAction();
@@ -104,11 +132,18 @@ public sealed class ForestPressureAbility : MonoBehaviour, IEnemySpecialAbilityR
         state=saved.forestRoster==null?new ForestRosterSnapshot():
             JsonUtility.FromJson<ForestRosterSnapshot>(JsonUtility.ToJson(saved.forestRoster));
         warning=board.RestoredCellResponse(actor);
+        if(IsTreant)
+        {
+            // Old fixed-cell Bough warnings cannot recover physical identities.
+            // Retire them without damage, consuming no gems and granting no Stagger.
+            if(warning!=null) {board.CancelCellResponse(warning);warning=null;state.cycle=0;actor.ResetSpecialCounter();}
+            bough=board.RestoredSet(actor);
+        }
         actor.SpecialIdleState=IsPreparing?"ChannelHold":null;attack?.SetActionPaused(this,IsPreparing);
     }
     private void Cleanup()
     {
-        if(released) return;released=true;StopAllCoroutines();board?.CancelCellResponse(warning);
+        if(released) return;released=true;StopAllCoroutines();board?.CancelCellResponse(warning);board?.CancelGemSetThreat(bough);
         attack?.SetActionPaused(this,false);
         if(actor!=null) {actor.Defeated-=Died;actor.ShieldChanged-=ShieldChanged;actor.SpecialIdleState=null;actor.EndSpecialAbilityAnimationAction();}
         if(stagger!=null) stagger.StaggerApplied-=Interrupted;

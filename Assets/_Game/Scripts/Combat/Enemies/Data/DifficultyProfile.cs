@@ -70,12 +70,12 @@ public sealed class DifficultyProfile : ScriptableObject
     [SerializeField]
     private AnimationCurve healthMultiplierByWave =
         new AnimationCurve(
-            new Keyframe(1f, 1f),
-            new Keyframe(5f, 1.25f),
-            new Keyframe(10f, 1.65f),
-            new Keyframe(20f, 2.6f),
-            new Keyframe(40f, 5f),
-            new Keyframe(100f, 12f)
+            new Keyframe(1f, 1f, .4f/14f, .4f/14f),
+            new Keyframe(15f, 1.4f, .4f/14f, .6f/15f),
+            new Keyframe(30f, 2f, .6f/15f, .05f),
+            new Keyframe(50f, 3f, .05f, .05f),
+            new Keyframe(70f, 4f, .05f, 2f/30f),
+            new Keyframe(100f, 6f, 2f/30f, 2f/30f)
         );
 
     [Tooltip(
@@ -131,7 +131,7 @@ public sealed class DifficultyProfile : ScriptableObject
         "Additional linear HP growth per wave after " +
         "the configured curve limit."
     )]
-    private float healthGrowthPerWaveAfterLimit = 0.03f;
+    private float healthGrowthPerWaveAfterLimit = 0.01f;
 
     [SerializeField, Min(0f)]
     private float damageGrowthPerWaveAfterLimit = 0.015f;

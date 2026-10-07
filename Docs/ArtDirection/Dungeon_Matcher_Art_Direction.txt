@@ -42,6 +42,12 @@ The user accepted the eleven special-ability studies, selected Royal Gold, and r
 
 ## 1. Start here in every new art task
 
+October 7 roster display revision: Royal Arcanist is now **The Minister**.
+The approved character pixels, internal `royal_arcanist` ID, `Enemy_RoyalArchbishop`
+asset and historical source aliases remain stable. Judgment's three new native
+King states are review candidates described in `ArtSource/EnemyAttacks/ABILITY_SOURCES.md`;
+they do not supersede the approved Bombardment or idle identity.
+
 1. Read this guide and inspect `Dungeon_Matcher_Art_References.png`; use individual PNGs for exact pixels.
 2. Identify the actual target file, character identity, task scope, and applicable reference status.
 3. Separate what is locked from what the user has authorized you to change.
@@ -75,7 +81,30 @@ Earlier world-direction notes describe modest, scrappy locals/novices and coordi
 
 ## 3. Rendering rules
 
+### Forest root variants — revision candidates, 2026-10-07
+
+`ArtSource/Forest/RosterRevision/` contains direct native edits of approved
+Root1_B / Root2_B. ShieldRoot adds a connected wooden shield growth; HeartRoot
+adds a heart-shaped wooden growth. Existing roots surround and cross the added
+forms. Both have damaged and full-durability drawings. Each remains 64×64,
+binary alpha, with only its source palette (17 / 26 opaque colors). PNG hashes and
+source paths are recorded in `root-variants.json`; `RootVariantReview.png` is a
+nearest-neighbor 4× comparison, not the native assets. A separate low-alpha glow
+child supplies the restrained pulse in Unity and becomes static under Reduced
+Motion. These are review candidates, not a new user approval. No PixelLab calls.
+
 ### Pixel scale and silhouettes
+
+The October 7 Court revision candidates are in `ArtSource/DrownedCourt/RosterRevision/`.
+The same bright pink pearl carries L1, armored L2 and exposed-royal states. Tiny
+12×12 orbit/pop sprites, 8×8 shell fragments, 6×6 micro-bubbles and three 32×16
+ripple frames share the marine shell ramp and a four-tone pink focal ramp.
+`pearls.json` records actual dimensions, palettes, alpha and hashes; `PearlReview.png`
+shows native and nearest-neighbor 3× comparisons. All ten PNGs have binary alpha
+and 2–9 opaque colors. Imports are Point, uncompressed, unmipped, FullRect and
+64 PPU. Ripples are discrete expanding arcs, not screen distortion. Direct native
+pixel authoring uses `Tools/author_court_pearls.py`; zero PixelLab jobs. User visual
+approval of these new candidates is still pending.
 
 Current character reference canvases are 64 × 64 pixels. Preserve the native size and occupied footprint of an existing target. A 64 × 64 image with the character shrunk inside it is not equivalent. Do not move the art to the bottom edge merely to match a comparison layout.
 

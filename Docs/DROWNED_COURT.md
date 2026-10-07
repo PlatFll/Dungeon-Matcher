@@ -4,7 +4,8 @@ The user approved the first four designs, solid-color eyes, continued production
 and a separate ceiling of 300 subscription generations (220 initially, 80 reserved).
 The remaining ten designs and motion are director-selected for review. This does
 not imply that the user has reviewed every later asset. This baseline was merged
-in PR #180. The 2026-10-06 revision is on a separate branch, with no merge authorized.
+in PR #180. The 2026-10-06 status/sigil/culture revision was merged in PR #181.
+The separate roster/endless revision is in progress; see [its worklist](ROSTER_ENDLESS_REVISION.md).
 
 ## Environment and timing
 
@@ -22,10 +23,10 @@ The first complete formation is dry. Six accepted dry moves request flooding;
 the request waits until the entire current formation, including living summons,
 can fight underwater. Global enemies default to dry-only. The first flood also
 waits for a formation without an air thief, snare, inflation or pressure lesson.
-Each flood lasts a saved random 10–12 accepted moves. After draining, the next new
+Each flood lasts a saved random 16–18 accepted moves. After draining, the next new
 complete formation remains dry. Waves and perk screens never reset the tide.
 
-Flooding starts with five AIR blocks and two reachable bubbled gems. For an
+Flooding starts with five AIR blocks and up to five reachable bubbled gems. For an
 accepted wet move, AIR is computed once after player clears:
 
 `clamp(max(0, openingAIR - 1 - manualSnareClears) + 2*bubblesPopped + cofferAIR, 0, 5)`
@@ -33,16 +34,29 @@ accepted wet move, AIR is computed once after player clears:
 Free player actions may recover AIR without spending a move. Bubbles belong to
 physical gem identities: conversion into a special preserves the bubble; actual
 player destruction collects it once. Environmental capture and cleanup give no
-collection reward. Every two wet moves replenish toward two bubbles, never above
-three. Low AIR preserves an immediately usable ordinary rescue where possible.
+collection reward. These bubbles are the initial finite reserve: free bubbles plus
+captured coffer charges count, so theft cannot cause a replacement supply. After
+all reserve oxygen is resolved, a three-move emergency timer begins. Each pulse
+tops up to one bubble, or two at AIR ≤1, never more than two. All values are
+provisional fields on the zone definition. Low AIR may relocate an existing free
+unmarked bubble to an immediately usable ordinary gem, without adding oxygen.
+The AIR display presents the same receipt as accounting: debit first, then each
+actual +2 bubble or coffer payout. It never changes a bubble into +3.
+Legacy saves preserve remaining flood time and current resources; new reserve
+rules take over without resetting the flood or minting oxygen.
 After enemy actions, zero AIR causes one five-damage shield-gated suffocation hit.
 The last wet move drains before this check, so it does not suffocate.
 
-Only one hostile Air Coffer may be active. A cast announces its fixed capture gems
-and footprint; placement is revalidated without removing the remaining AIR answer.
-Ordinary damage breaks its one/two durability. Break or owner death returns its
-stored charges once; drain and zone exit discard it without AIR or damage rewards.
-Board photographs preserve current AIR, consumed charges and deadlines.
+Only one hostile Pearl Coffer may be active. Theft occurs at the short ability
+animation's contact, without a response channel. The random ordinary footprint
+must preserve a useful response and an immediately reachable adjacent coffer hit;
+specials, pins, oxygen and protected targets cannot be replaced. No rescue bubble
+is minted. Each independent clear deals one durability hit, including with
+Siegecraft. The structure persists after its caster dies. Thief's one-hit coffer
+returns four AIR; Warden's two-hit coffer restores the five-block meter. Its first
+hit sheds shell plates and reveals the same pearl's one-hit state. Drain and zone
+exit discard the coffer without rewards. Photographs retain current resources and
+durability. Legacy warning casts retire harmlessly; restored coffers are independent.
 
 ## Roster and initial control values
 
@@ -54,15 +68,15 @@ These numbers are starting values for human tuning, not pacing guarantees.
 | Hammerhead Bruiser | 110 | 20 / 6 | Heavy club strike |
 | Needlefin Skirmisher | 50 | 5 + 5 / 4.2 | Two independently shield-gated darts |
 | Shellback Porter | 120 | 10 / 6.5 | Mallet; no hidden armor |
-| Pearl Thief | 65 | 5 / 6 | Ready in four moves; two-move theft warning, up to two bubbles, one-hit coffer; waits while dry |
+| Pearl Thief | 65 | 5 / 6 | Ready in four moves; instant exact-two theft, one-hit coffer, +4 AIR on break; waits while dry or fewer than two valid bubbles |
 | Pearl Cantor | 75 | 5 / 5.5 | Ready in two moves; two-move fixed-ally heal for 20, other ally below 75%; stagger interrupts |
 | Conch Marshal | 90 | 10 / 6 | Ready in four moves; other living allies gain 30% basic damage for five seconds; refreshes, strongest lease only, no speed buff |
 | Moray Siphoner | 80 | 5 / 6 | Ready in four moves; two-move 20-damage siphon; heals actual HP lost only |
 | Reef Netweaver | 85 | 5 / 6 | Ready in four moves; up to two thorny snares, shrink and expire after three future accepted moves |
 | Puffer Sentinel | 100 | 10 / 5.8 | Ready in four moves; inflated for two moves, keeps timed basics; opening manual-match damage retaliates for five once per action |
 | Breakwater Captain | 180 | 20 / 7 | Alternates 25-shield Shellguard and a two-move command for one fixed ally's complete basic sequence |
-| Lantern Warden | 210 | 15 / 6.5 | Alternates two-hit Air Levy (dry: 25 shield) and two-move Pressure Lance, 25 damage reduced to 10 by its answer |
-| Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Crushing Depths, Court Muster; details below |
+| Lantern Warden | 210 | 15 / 6.5 | Alternates instant exact-three Air Levy into a two-hit coffer (dry: 25 shield) and two-move Pressure Lance marking two bubbled physical gems; either answer cancels wholly; unanswered base 25 damage |
+| Queen Nacre | 320 | 15 / 6.5 | Royal Seizure, Nacre Tribute, Court Muster; details below |
 | Skittercrab | 25 | 5 / 2.8 | Independent summon, no repeat farming reward |
 
 Netweaver uses thorny snares, never ordinary chains. An opening manual match of a
@@ -71,16 +85,36 @@ safely. Snares prevent directly swapping the bound gem, follow it through gravit
 and use the existing shared six-restriction budget. Placement preserves available
 AIR routes. The owner may have at most two.
 
-Milestones first ready after three moves, recover for two moves, then require
-three fresh moves. Siphoner, thief and cantor also recover for two moves. Conch,
-snare and Puffer casts do not add that recovery. Death/stagger cancels held actions;
+Milestones first ready after three moves and require three fresh moves after a
+cast ends. All Court channels return directly to normal readiness on success or
+fizzle. Genuine interruption uses ordinary Stagger without an extra recovery
+penalty. Old recovery saves resume idle without replaying effects or rotation.
+Death/stagger cancels held actions;
 missing optional animation still resolves through the existing guarded fallback.
 
-Queen Nacre stays damageable throughout. Seizure warns for two moves, captures
-bubbles in a two-hit coffer, and preserves a reachable rescue; while dry it grants
-20 shield. Depths warns for three moves and deals 40/25/10 according to zero/one/two
-answers. Two fixed cell marks are shown; while wet, bubble recovery also answers,
-and a coffer answers both. One physical gem cannot count twice. Muster warns for
+Queen Nacre stays damageable throughout. Seizure instantly captures all free
+bubbles at animation contact into a two-hit armored coffer; while dry it grants
+20 shield. The first shell hit exposes a pearl and rotates one legal cardinal
+2–3-cell line. Intervening physical gems shift back one cell, preserving specials;
+structures, pins, empty cells and protected response targets block a route. With
+no legal route the pearl stays. There is no mid-slide refill or matching. The
+held clear pipeline settles after the complete rotation. The second hit returns
+two AIR per captured bubble, capped at five. Continue preserves the moved object.
+
+Nacre Tribute marks up to three bubbled physical gems with her caster sigil for
+three accepted moves. Popping one grants ordinary +2 AIR and removes that target
+without Stagger. True Stagger ends the whole channel, leaving all other bubbles.
+At contact, surviving overlays are consumed without AIR or gem destruction. Each
+becomes one Fortified stack: Queen first, then living allies by actual left-to-right
+slot, round-robin, capped at two per enemy. Target count, channel duration and cap
+are definition data. An empty/invalid cast fizzles and resets normal cadence. Old
+Depths warning saves retire harmlessly; the former fixed-cell/damage ability is
+removed. Fortified halves one direct hit per pearl before ordinary final rounding
+and shield gating. Periodic damage does not spend stacks. The status is separate
+from shield HP and survives Continue. Native pink pearls orbit behind/in front
+of the portrait, become still with reduced motion, and pop when consumed.
+
+Muster warns for
 two moves, names an empty slot and summons at most one owned living crab. A full
 formation announces a fixed ally's 20-shield Royal Guard instead. It never replaces
 an actor or secretly retargets a lost slot. Killing the Queen leaves her crab alive.
@@ -108,6 +142,11 @@ marks and water do not leak into another zone. Continue restores the recorded zo
 tide, gem identities, counters, targets, rally leases and response deadlines.
 
 ## Art and evidence
+
+Flooded swaps emit small native bubbles and localized three-frame ripples. Falls
+sample sparse micro-bubbles; the royal pearl uses a stronger short wake. There is
+no gem-color distortion. Reduced Motion suppresses ripples and reduces particles.
+These effects are presentation only, pause with gameplay, and clear on drain/travel.
 
 `ArtSource/DrownedCourt/Approved` preserves the four corrected references and exact
 eye edits. `Production/Selected` contains the selected stills, native motion sheets,

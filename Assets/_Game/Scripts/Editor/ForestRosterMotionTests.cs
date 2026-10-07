@@ -110,8 +110,10 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName("ChannelHold"),Is.True,"ordinary hits preserve held pose");
         Assert.That(basic.RemainingAttackTime,Is.EqualTo(remaining));
         yield return CaptureRoster("treant-channel");
-        yield return Move();Assert.That(kit.IsPreparing,Is.True);
-        yield return Move();Assert.That(kit.IsPreparing,Is.False);
+        var warning=Run.Board.RestoredSet(enemy);
+        KeepBoughAwayFromFixtureMove(warning);
+        typeof(BoardController.GemSetThreat).GetProperty("DueMove").SetValue(warning,Run.Board.CompletedValidPlayerMoves+1);
+        yield return MoveAvoidingBough(warning);Assert.That(kit.IsPreparing,Is.False);
         Assert.That(basic.IsPausedByAction,Is.False);
         began=Time.time;yield return Until(()=>Time.time>=began+.3f,"release settles");
         Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),Is.True);

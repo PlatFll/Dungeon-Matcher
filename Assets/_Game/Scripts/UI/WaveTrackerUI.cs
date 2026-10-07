@@ -19,6 +19,8 @@ public sealed class WaveTrackerUI :
     private string waveLabelFormat =
         "WAVE {0}";
 
+    private int displayedWave;
+
     private void Awake()
     {
         var plaque = FinalizedUiSkin.Load("WavePlaque");
@@ -46,6 +48,14 @@ public sealed class WaveTrackerUI :
     private void OnDisable()
     {
         UnsubscribeFromWaveController();
+    }
+
+    private void LateUpdate()
+    {
+        // Continue restores an existing encounter without firing WaveStarted.
+        // Read its depth for presentation without replaying gameplay events.
+        if (waveController != null && displayedWave != waveController.CurrentWave)
+            RefreshFromController();
     }
 
     private void SubscribeToWaveController()
@@ -115,5 +125,6 @@ public sealed class WaveTrackerUI :
                 waveLabelFormat,
                 safeWaveNumber
             );
+        displayedWave = safeWaveNumber;
     }
 }

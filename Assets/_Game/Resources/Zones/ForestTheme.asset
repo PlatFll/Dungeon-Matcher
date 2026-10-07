@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e5713295b824488ff6709a525d707, type: 3}
   m_Name: ForestTheme
   m_EditorClassIdentifier: Assembly-CSharp::GameplayThemeDefinition
-  minimumBattleHeight: 320
+  minimumBattleHeight: 384
   generalBackground: {fileID: 21300000, guid: 25ee58f1bb5790743976b1da24e5ac67, type: 3}
   panelBackground: {fileID: 21300000, guid: f962d98d696cbcf478ea4bc77c53d448, type: 3}
   boardCells:
@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 94a26497a2574e648aee8bbe467bdc21, type: 3}
   - {fileID: 21300000, guid: 2696a42c05b9a2a438c18a7e4421dab3, type: 3}
   battleEnvironment: {fileID: 6988288064860248005, guid: 527380204a3ace248a6969b26aed3a70, type: 3}
+  battleEnvironmentVariants: []
   frameCorner: {fileID: 21300000, guid: 9bbd232333bca6243bf6208d028c77c5, type: 3}
   frameEdge: {fileID: 21300000, guid: b34f3bf134ba8d24194dc5ec0814ef66, type: 3}
   wavePlaque: {fileID: 21300000, guid: 8864211cabd98064887c2eda20af369f, type: 3}
@@ -38,6 +39,10 @@ MonoBehaviour:
   vineWarning: {fileID: 21300000, guid: fc2b35d0676154c46b60e4cd2473380a, type: 3}
   rootLevelOne: {fileID: 21300000, guid: 267095fe53f70cc44b5eefea6263e8ec, type: 3}
   rootLevelTwo: {fileID: 21300000, guid: cdfc609bf5c8654469769845cf7ce8b5, type: 3}
+  shieldRootLevelOne: {fileID: 21300000, guid: cfb89f300e8a31f4da6c031b7c035f68, type: 3}
+  shieldRootLevelTwo: {fileID: 21300000, guid: 27a549860559656418cd8ff77dfe88fc, type: 3}
+  heartrootLevelOne: {fileID: 21300000, guid: 3c1eaf72d88fa45418582ff22fd7df24, type: 3}
+  heartrootLevelTwo: {fileID: 21300000, guid: 19071b77a661fef4ba4deaf51c4d8dca, type: 3}
   vineSpreadFrames:
   - {fileID: 21300000, guid: 196420c990b98a1498c7f4b5763dba96, type: 3}
   - {fileID: 21300000, guid: ad1635872172fce41b2e6ff50a8f490e, type: 3}
@@ -61,6 +66,10 @@ MonoBehaviour:
   healEffect: {fileID: 21300000, guid: f04428c98636f5c4aab75d8b2a541b40, type: 3}
   interruptEffect: {fileID: 21300000, guid: e4a56bb4e28f39f4d8967bf9dc2c35fa, type: 3}
   resonanceIcon: {fileID: 21300000, guid: 13c5f2725756443419bf8d63fbd45da8, type: 3}
+  airBubble: {fileID: 0}
+  thornySnare: {fileID: 0}
+  airCoffer: {fileID: 0}
+  pressureSeal: {fileID: 0}
   supplyNormal: {fileID: 21300000, guid: 9ab4ea167af0e2a428979df7ddde2f99, type: 3}
   supplyHighlighted: {fileID: 21300000, guid: 3cbb3c64b7207af40b9a156e8fad5e23, type: 3}
   supplyPressed: {fileID: 21300000, guid: 8dd2cf4db8ec089489a20679b26fc2b7, type: 3}

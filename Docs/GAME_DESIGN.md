@@ -54,6 +54,13 @@ provisional values are in [the expanded roster contract](Forest/EXPANDED_ROSTER.
 Approximately ten-minute substantial visits still require human pacing validation.
 The aquatic rules, fourteen identities, AIR economy and provisional control values
 are defined in [the Drowned Court contract](DROWNED_COURT.md).
+The roster revision makes oxygen a finite initial reserve, with emergency supply
+only after exhaustion. Thief/Warden coffers capture resources instantly and survive
+their caster. Queen's armored pearl moves through a legal short line rotation.
+Nacre Tribute converts uncollected physical bubbles into Fortified: one pink pearl
+halves one direct incoming hit, consumed once; periodic damage leaves it intact.
+All counterplay uses the established accepted moves, caster sigils, central damage
+and board-owned queue. These rules replace the retired Crushing Depths attack.
 Current forest visits use eighteen local starter
 encounters; these bands are temporary content anchors. This implementation adds no
 minimum fight time, player-power correction, HP padding or run cap. Opened menu
@@ -74,21 +81,26 @@ seeds its four orthogonal neighbors, independent of that growth cap. These are
 prototype cadence/readability values, not finalized pacing. Real chains retain
 their existing six-restriction cap; vines consume none of it.
 
-Rootbinder warns one ordinary, reachable interior gem for a future response,
-then replaces it with a structural 1-hit Root. Four immediate vines never spread.
+Rootbinder immediately replaces a safe ordinary interior gem with a structural
+1-hit Root at its authored release contact. Four immediate vines never spread.
 First clear a vine beside the Root; a later clear through an unvined, opened side
 deals one durability hit. The opening clear cannot also damage that Root.
 Roots use the existing structural queue, useful-response checks, cap and refill.
 
-Warden first readies after two moves, warns one cell, then plants a 2-hit Root
-with four spreading vines. While it lives, every ally including Warden receives
-one 25% incoming-damage reduction through central damage resolution. Multiple
-Wardens do not multiply this shared reduction. Breaking the Root removes the aura.
-Clearing its warning or normal stagger interrupts preparation. Invalid targets
-fizzle without granting stagger. There is no exposure state or weakness bonus.
+Warden first readies after two moves, then immediately plants a 2-hit wooden
+shield Root with four spreading vines at its authored release contact. While any
+living Warden Root remains, every living ally and summon has **Warded**: one 25%
+incoming-damage reduction through central damage resolution. Duplicate sources
+do not stack; losing one leaves the others active. The buff is shown beside each
+recipient's weakness gem and in inspection. This is not shield HP. Both instant placements use
+the structural queue, protected-target checks, cap and useful-response rules.
+Neither has a pre-placement warning. Legacy placement warnings fizzle on Continue
+without planting or granting Stagger.
 
 Matriarch first readies after three moves. Renew plants two linked 2-hit Heartroots
-when none remain, then channels for two future moves. She heals herself and every
+when none remain, then channels for two future moves. Wooden heart growths and
+subtle life pulses distinguish both durability states without adding HP layers.
+She heals herself and every
 living ally for base 20 plus 20 per Heartroot surviving at resolution. Her cycle
 then uses Verdant Surge (immediate existing-vine advance) and Thorn Harvest
 (three future moves; base 20 damage plus 5 per currently vine-covered gem).
@@ -98,8 +110,9 @@ destroyed causes ordinary EnemyStagger, respecting its existing immunity rules.
 Surviving spreading roots can regrow vines on the next normal pulse.
 
 Successful casts and cancellations consume their sequence before effect callbacks.
-Milestone recovery takes two future moves, then three moves to readiness. Basics
-pause during preparation/channel/recovery. Scout and Trailguard retain their
+After a milestone channel ends, normal three-move readiness begins immediately.
+Basics pause during preparation/channel and owned animation, with no additional
+post-channel recovery moves. Scout and Trailguard retain their
 existing normal attacks. Mender retains her fixed-recipient two-move +20 heal;
 recipient invalidation never retargets or auto-staggers her. All true interruptions
 use EnemyStagger; no forest-specific stagger or vulnerability state exists.
@@ -246,6 +259,10 @@ Detailed enemy kits and encounter compositions require explicit finalized specif
 - Difficulty should deepen decision-making and pressure without sacrificing board readability or perceived fairness.
 - Escalation may combine stronger enemies, more demanding behavior, and greater board manipulation.
 - Wave composition and numerical scaling are data-driven so pacing and balance can change without rewriting shared gameplay logic.
+- The shared provisional endless HP anchors are global waves 1/15/30/50/70/100
+  at 1/1.4/2/3/4/6×, with moderate linear continuation to 9× at 150. Damage and
+  attack/special timing retain their existing tuning; player-power correction
+  stays off. See [BALANCE_V1.md](BALANCE_V1.md) for the serialized curve contract.
 - Increasing difficulty should not remove meaningful player choices or replace the match-3 game with a sequence of predetermined solutions.
 
 Run upgrades are temporary, stackable build choices owned only by the current
@@ -267,15 +284,22 @@ Balance v1 authorizes independent gold-purchased character levels (cap 20), shar
 
 ## Finalized mechanic specifications
 
-### Royal Archbishop and the King
+### The Minister and the King
 
-The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPECIALS.md): Archbishop's missing-health/rank-based Sacred Triage, individually breakable Restoration runes and one-normal-sequence Benediction; King's one-time surviving 50%/25% reinforcement crossings, Enrage and deterministic Judgment → United Royal Assault → Bombardment cycle. King + Archbishop is the opening Boss composition, with both targets always damageable. Three-move gem warnings follow identities; Bombardment's two-move row/column warning cannot be cancelled by clearing gems and preserves player specials and structural occupants. Every countdown uses accepted valid completed player moves. Numeric HP, damage, cadence, weights and milestone windows remain first-pass serialized tuning.
+The Minister retains the `royal_arcanist` save ID and Restoration/Benediction kit.
+Judgment consumes surviving physical-gem marks in saved order, with one authored
+strike per survivor and no intermediate gravity/refill. Only three survivors
+enable the unique empowered third swing. Normal damage remains base 12; the
+finisher's separate base 18 is provisional. After the final recovery the board
+settles once. Zero survivors cause no Judgment attack.
+
+The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPECIALS.md): Minister's missing-health/rank-based Sacred Triage, individually breakable Restoration runes and one-normal-sequence Benediction; King's one-time surviving 50%/25% reinforcement crossings, Enrage and deterministic Judgment → United Royal Assault → Bombardment cycle. King + Minister is the opening Boss composition, with both targets always damageable. Three-move gem warnings follow identities; Bombardment's two-move row/column warning cannot be cancelled by clearing gems and preserves player specials and structural occupants. Every countdown uses accepted valid completed player moves. Numeric HP, damage, cadence, weights and milestone windows remain first-pass serialized tuning.
 
 ### Spear Guard
 
 - Spear Guard is a Normal enemy and the basic military frontline for Chapter 2, The Town Calls for Help. Balance v1 eligibility starts at wave 6.
 - His normal auto-attack is one spear thrust. He has no follow-up hit, signature ability, or board manipulation, and uses normal stagger rules.
-- Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP/damage scale by 1% per wave beyond the first; attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
+- Balance v1 base stats are 60 HP, 6 damage and a 9-second attack interval. HP uses the shared global endless curve; damage retains its existing slower curve. Attack and special cadence do not accelerate. Player-power correction and category multipliers are disabled.
 - His relative Normal-category spawn weight is 1.5. Registration in the enemy database makes him eligible; it does not guarantee a particular wave composition.
 - His definition now uses the restored Spear Guard idle and its matching ready-frame fallback. The shared single-lunge action presentation and gameplay timing are unchanged; the idle contains no combat events.
 - Chapter pools now use weighted progression eras; the former wave-8 Knight unlocks were legacy implementation order and are superseded by Chapter 3 eligibility.
@@ -292,7 +316,7 @@ The approved Royal milestone kits are specified in [ROYAL_SPECIALS.md](ROYAL_SPE
 ### Shield Knight
 
 - Shield Knight is a Chapter 3 Special enemy eligible starting at wave 13.
-- Balance v1 base stats: 90 HP, one 4-damage hit every 11 seconds. Standard 1% wave scaling applies; it has no follow-up attack.
+- Balance v1 base stats: 90 HP, one 4-damage hit every 11 seconds. Shared global HP/damage scaling applies; it has no follow-up attack.
 - Shielding Allies casts after every 6 valid completed player moves. Invalid swaps and cascades do not advance this counter, and difficulty scaling does not shorten the cadence.
 - A cast grants +10 shield to every other living enemy and +12 shield to the caster. Other Shield Knights are allies, but the caster never receives its own ally grant.
 - Enemy shield grants stack up to a maximum of 30 shield.
@@ -377,7 +401,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 #### First-pass combat balance
 
-- Balance v1 base stats: 120 HP, 6 damage, 10-second normal attack interval and no follow-up hit. The standard 1% per-wave HP/damage scaling applies.
+- Balance v1 base stats: 120 HP, 6 damage, 10-second normal attack interval and no follow-up hit. Shared global HP/damage scaling applies.
 - The whole formation, including its local escort, fits the shared threat budget. Summons fill only the remaining three-slot capacity.
 
 #### Shared special cadence and ability selection
@@ -425,7 +449,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 ### Siege Sergeant
 
 - Chapter 2 Mini-boss with a Spear/Crossbow Guard escort, appearing once in a weighted wave-12–14 opportunity.
-- Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Standard 1% wave scaling applies.
+- Balance v1 base stats: 240 HP, one 5-damage hit every 11 seconds, normal stagger, and 10 damage for a failed hammer warning. Shared global HP/damage scaling applies.
 - One special opportunity every 4 valid completed player moves, locked against difficulty shortening. Start with Hold the Line, then alternate successful fortification and hammer-warning casts. At the six-block cap, use the hammer instead of banking an instant replacement wall. With no legal targets, retry after another valid move rather than consume a no-op cast or loop every frame.
 - **Hold the Line:** place three one-hit wooden blockades as a contiguous horizontal or vertical run. Enumerate legal full runs and choose one randomly. If none fits, choose three distinct random legal cells; if capacity or available cells permit fewer, place only that many. Cap at six blocks owned by this Sergeant. Holes, existing blockades, pinned gems and special gems are excluded. Other barricade enemies retain their existing placement semantics.
 - **Hammer Time:** mark two orthogonally adjacent ordinary unpinned gems after prior board mutations settle. Give two full valid moves after marking; invalid swaps and cascades do not advance the warning. Markers follow gem identities through movement, gravity and reshuffles, never replacement gems in the same cells. If either gem is removed, pinned or becomes special, cancel the entire strike. A moved pair may no longer be adjacent at impact; it still targets those same two gems and the sweep connects their current positions.
@@ -439,7 +463,7 @@ These are finalized gameplay rules. Timing and presentation numeric values not l
 
 Chapters are weighted enemy spawn eras, not fixed wave-by-wave encounter scripts. Ordinary compositions vary across runs. Eligibility thresholds, declining older-enemy weights, rising Crown weights, category caps and two-to-three active slots govern selection. The same encounter seed and generation calls produce the same compositions. This does not promise replay determinism for the entire board or combat timeline.
 
-Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Archbishop appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
+Balance v1 uses overlapping pools: Locals from wave 1, Guards from 6, Knights from 11, Royals from 19, and King around 29–30. Older enemies retain a declining weight tail. Marshal, Sergeant, Captain and Minister appear once in escorted opportunity windows. Sixteen editable recipes alternate teaching, practice, combinations and breathing room with constrained random formations. Whole-formation threat and disruption/support limits apply. See [BALANCE_V1.md](BALANCE_V1.md) for the complete schedule.
 
 Sword Knight reuses `Enemy_Knight` and its stable ID. He is the Normal Crown melee baseline, with no signature ability. Spear Knight remains Normal with his existing two-hit normal attack. Shield Knight is Special. Knight Captain is a Mini-boss who owns professional formation coordination, distinct from Marshal summoning/interception and Sergeant fortification/siege pressure.
 

@@ -31,7 +31,9 @@ Simultaneous marks stack in triangle/square/ring order. No effect-type pictogram
 fixed-cell and lane threats, plus committed pin reservations. Sequential gem-set
 resolution keeps the source mark on surviving targets after consuming its warning.
 `BoardCasterSigilView` adds the Court runtime's current cells, bubbled gems and
-coffer-site targets. It never creates deadlines, selects targets, mutates the board
+coffer-site targets. Current theft is immediate and therefore creates no warning.
+Pressure Lance and Nacre Tribute use physical bubbled-gem identities and remove
+answered/consumed marks without recreating targets. The view never creates deadlines, selects targets, mutates the board
 or stores a second warning state. Environmental vine warnings have no caster.
 
 The three 12×12 two-color glyphs are direct pixel assets with a dark one-pixel

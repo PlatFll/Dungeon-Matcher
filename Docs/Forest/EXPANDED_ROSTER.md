@@ -15,7 +15,7 @@ and original pixel scale remain the identity references.
 | Snapvine | Normal / summon | Low HP and fast bite basics; no special. |
 | Orc Drummer | Special | War Rhythm buffs only other living enemies. Recasting refreshes duration. Multiple Drummers share the strongest rhythm modifier without multiplying it. Each living caster maintains a lease; removing one leaves other active leases intact. An alone Drummer waits. |
 | Briar Archer | Special | Marks up to three already-vined cells and gives two future accepted moves to respond. Each remaining vine contributes one small hit. Removing a marked vine permanently cancels its shot, including after regrowth or Continue. She creates no vines. |
-| Ancient Treant | Miniboss | Alternates ordinary Bark Armor and Falling Bough. Breaking its armed shield applies ordinary EnemyStagger. Bough warns a compact group of cells for two future moves; clearing any mark weakens the hit. Bough does not delete gems or create a new blocker. |
+| Ancient Treant | Miniboss | Alternates ordinary Bark Armor and Falling Bough. Breaking its armed shield applies ordinary EnemyStagger. Bough marks a compact group of physical gems for two future moves. Clearing any mark cancels the entire attack without consuming the others or granting Stagger. With no answer, its authored release hits once, consumes the marked gems, then settles the board normally. |
 
 Overlapping warnings use existing deadline spacing and may allow extra response
 moves. Volley and Bough pause their caster's basic countdown while the warning is
@@ -42,7 +42,7 @@ These values are tuning inputs, not finalized encounter pacing.
   isolated move-effect profiles. Settings pause freezes seconds.
 - Volley: base 5 per surviving shot. Separate hits respect ordinary shield gating.
 - Bark Armor: 30 ordinary shield, respecting existing capacity and the break gate.
-- Bough: base 30, reduced to 15 when answered.
+- Bough: base 30 when unanswered; zero and no remaining-gem consumption when answered.
 - Existing encounter damage scaling applies; no player-power scaling or forced wait.
 
 ## Ownership and continuation
@@ -51,17 +51,19 @@ EnemyDefinition selects ForestCombatAbility or ForestPressureAbility through the
 existing runtime factory. Thornkeeper reuses BarricadeEnemyAbility. Snapvine uses
 the ordinary enemy actor and basic attack runtime.
 
-BoardController owns thorn sides, placement, structural damage and generic fixed
-response-cell marks. The opening player clear passes its provenance into the
+BoardController owns thorn sides, placement, structural damage, fixed Volley
+response cells and physical Bough marks. Bough reuses saved gem-set targets with
+compact selection and whole-set cancellation on any target loss. The opening player clear passes its provenance into the
 existing barricade path. No secondary clear/reward pipeline exists. Response
 marks are consumed before impact callbacks and cannot resolve twice.
 Active fixed-cell warning targets are excluded from new structure placement and
 root warnings, so a later enemy cannot bury an advertised response cell.
 
 Continue saves rage, caller/summon identity, rhythm targets and remaining
-duration, Treant cycle/armed shield, warning deadlines and answered cells, and
+duration, Treant cycle/armed shield, warning deadlines, physical gem order and answered Volley cells, and
 thorn safe side/damage. Rebuilding UI never restarts these rules. Board photographs
-do not rewind enemy state or warning answers.
+do not rewind enemy state or warning answers. Old fixed-cell Bough warnings fizzle
+on load without damage, clearing gems or granting Stagger; new marks retain identity.
 
 The definitions join the existing zone roster. Nine development fixtures append
 to the prior thirteen. Eight live formations extend existing temporary bands

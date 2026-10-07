@@ -161,11 +161,10 @@ public sealed partial class ForestFoundationPlayTests
 
     [UnityTest] public IEnumerator SigilsCourtChannelTargetsInterruptAndRestoreWithoutNewIdentity()
     {
-        yield return LaunchCourt("queen_nacre","shellback_porter");
-        for(int i=0;i<8;i++)yield return Move();
+        yield return TributeFixture("queen_nacre","shellback_porter");
         var queen=Enemy("queen_nacre");var ability=queen.GetComponent<AquaticEnemyAbility>();
-        Assert.That(ability.CastName,Is.EqualTo("DEPTHS"));yield return null;
-        Assert.That(Sigils.ActiveCount,Is.EqualTo(2));
+        Assert.That(ability.CastName,Is.EqualTo("TRIBUTE"));yield return null;
+        Assert.That(Sigils.ActiveCount,Is.EqualTo(3));
         var positions=Sigils.Images.Where(r=>r.enabled).Select(r=>r.transform.localPosition).ToArray();
         yield return ResumeCourtCheckpoint();yield return null;
         queen=Enemy("queen_nacre");ability=queen.GetComponent<AquaticEnemyAbility>();

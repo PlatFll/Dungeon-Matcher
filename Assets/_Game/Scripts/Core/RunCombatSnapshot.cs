@@ -80,6 +80,8 @@ public sealed class RunCombatSnapshot
     public int rootDurability;
     public bool requiresVine, answered;
     public EnemyBarricadeStyle rootStyle;
+    public bool cancelOnAnyTargetLost;
+    public string threatLabel;
     public bool rootSpreading, playerInterrupted;
     public List<int> targets = new List<int>();
 }
@@ -94,7 +96,7 @@ public sealed class RunCombatSnapshot
     public ForestRosterSnapshot forestRoster;
     public AquaticEnemySnapshot aquaticEnemy;
     public string rootbinderOutcome;
-    public int slot, health, shield, specialTurns, specialRequirement;
+    public int slot, health, shield, specialTurns, specialRequirement, fortifiedStacks;
     public GemType weakness;
     public float attackRemaining, attackSpeed;
     public bool attackRunning;

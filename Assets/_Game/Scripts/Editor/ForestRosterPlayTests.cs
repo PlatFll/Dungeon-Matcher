@@ -148,14 +148,15 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return Launch(19,true);PreserveRoster();PrepareSafeMove();
         var board=Run.Board;var treant=Enemy("ancient_treant");var scout=Enemy("elven_scout");
-        BoardController.CellResponseThreat first=null,second=null;
-        board.TryQueueCellResponse(treant,3,2,false,t=>first=t);yield return Stable();
-        board.TryQueueCellResponse(scout,3,2,false,t=>second=t);yield return Stable();
+        BoardController.GemSetThreat first=null,second=null;
+        board.TryQueueMarkGemSet(treant,3,2,false,t=>first=t,null,true,true);yield return Stable();
+        board.TryQueueMarkGemSet(scout,3,2,false,t=>second=t,null,true,true);yield return Stable();
         Assert.That(first,Is.Not.Null);Assert.That(second,Is.Not.Null);
         Assert.That(second.DueMove,Is.GreaterThanOrEqualTo(first.DueMove+2));
         var available=(List<Vector2Int>)Call(board,"BuildBarricadableCellList",true);
-        foreach(var cell in first.Cells.Concat(second.Cells))
+        foreach(var gem in first.Targets.Concat(second.Targets))
         {
+            var cell=new Vector2Int(gem.Column,gem.Row);
             Assert.That(available,Has.No.Member(cell),"new structures cannot bury a response mark");
             Assert.That((bool)Call(board,"IsProtectedWarningTarget",board.GetGem(cell.x,cell.y)),Is.True);
         }
@@ -163,14 +164,14 @@ public sealed partial class ForestFoundationPlayTests
         kit.RestoreContinuation(new EnemyCombatSnapshot{forestRoster=new ForestRosterSnapshot{cycle=1}},_=>null);
         yield return null;
         var sigils=board.GetComponent<BoardCasterSigilView>();
-        Assert.That(sigils.ActiveCount,Is.EqualTo(first.Cells.Count+second.Cells.Count));
+        Assert.That(sigils.ActiveCount,Is.EqualTo(first.Targets.Count+second.Targets.Count));
         int hp=Run.Player.CurrentHealth;treant.GetComponent<EnemyStagger>().RestoreContinuation(new EnemyCombatSnapshot());
         treant.GetComponent<EnemyStagger>().ApplyStagger(2,2);
         Assert.That(kit.IsPreparing,Is.False);Assert.That(first.Ended,Is.True);
         Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
         Assert.That(treant.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.False);
         yield return null;yield return null;
-        Assert.That(sigils.ActiveCount,Is.EqualTo(second.Cells.Count),"interrupted caster marks clear; other caster remains");
+        Assert.That(sigils.ActiveCount,Is.EqualTo(second.Targets.Count),"interrupted caster marks clear; other caster remains");
     }
 
     [UnityTest] public IEnumerator RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume()
@@ -205,7 +206,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(treant.GetComponent<EnemyStagger>().IsStaggered,Is.True);
     }
 
-    [UnityTest] public IEnumerator RosterBoughAnswerWeakensHitAndNeverClearsBoard()
+    [UnityTest] public IEnumerator RosterLegacyCellBoughFizzesWithoutDamageOrClears()
     {
         yield return Launch(19,true);PreserveRoster();var board=Run.Board;var treant=Enemy("ancient_treant");PrepareSafeMove();
         BoardController.CellResponseThreat warning=null;
@@ -214,13 +215,13 @@ public sealed partial class ForestFoundationPlayTests
         Call(board,"ClearVinesForDestruction",new HashSet<Gem>{board.GetGem(a.x,a.y)},null);
         Assert.That(warning.Answered,Is.True);
         yield return ResumeRoster();board=Run.Board;treant=Enemy("ancient_treant");
-        var kit=treant.GetComponent<ForestPressureAbility>();Assert.That(kit.IsPreparing,Is.True);
-        Assert.That(treant.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.True);
-        warning=board.RestoredCellResponse(treant);Set(board,"completedValidPlayerMoves",warning.DueMove);
+        var kit=treant.GetComponent<ForestPressureAbility>();Assert.That(kit.IsPreparing,Is.False);
+        Assert.That(treant.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.False);
+        Assert.That(board.RestoredCellResponse(treant),Is.Null);
         var before=board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).cells.Select(c=>c.type).ToArray();
         int hp=Run.Player.CurrentHealth;
-        board.TryQueueResolveCellResponse(warning,(n,answered)=>Call(kit,"Impact",n,answered),_=>{});yield return Stable();
-        Assert.That(hp-Run.Player.CurrentHealth,Is.EqualTo(15));
+        kit.ResolveAcceptedMove();yield return Stable();
+        Assert.That(hp-Run.Player.CurrentHealth,Is.Zero);
         Assert.That(board.CaptureContinuation(Run.Waves.ContinuationOwnerSlot).cells.Select(c=>c.type).ToArray(),Is.EqualTo(before));
     }
 }

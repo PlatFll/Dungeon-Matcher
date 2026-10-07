@@ -410,6 +410,13 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 1e221667c21077746ae6484f5906ae91, type: 3}
   growsVines: 0
   periodicallyFloods: 1
+  floodMinimumMoves: 16
+  floodMaximumMoves: 18
+  initialAirBubbles: 5
+  emergencyAirCadenceMoves: 3
+  emergencyAirSupply: 1
+  criticalAirSupply: 2
+  criticalAirThreshold: 1
   crumblesTiles: 0
   crumbleCadenceMoves: 4
   vineCadenceMoves: 2

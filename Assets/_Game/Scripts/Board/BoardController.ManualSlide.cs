@@ -201,6 +201,7 @@ public partial class BoardController
             destination[i]=GetLocalPosition(cell.x,cell.y);
         }
         float duration=GetResponsiveSwapDuration();float elapsed=0;
+        foreach(var piece in pieces)GemMotionPresented?.Invoke(piece,duration,0,false);
         while(elapsed<duration)
         {
             for(int i=0;i<3;i++) pieces[i].transform.localPosition=Vector3.Lerp(start[i],destination[i],EaseOutCubic(Mathf.Clamp01(elapsed/duration)));

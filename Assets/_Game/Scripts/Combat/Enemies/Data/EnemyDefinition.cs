@@ -12,12 +12,14 @@ public sealed class EnemyDefinition : ScriptableObject
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
     public bool canFightFlooded;
     public EnemyDefinition aquaticSummon;
-    [Min(0)] public int aquaticRecoveryMoves = 2;
     [Min(1)] public int aquaticChannelMoves = 2;
     [Min(0)] public int aquaticAbilityDamage = 20;
     [Min(0)] public int aquaticShield = 25;
     [Min(1)] public float aquaticRallyDamage = 1.3f;
     [Min(0)] public float aquaticRallySeconds = 5f;
+    [Range(1,3)] public int tributeTargetCount=3;
+    [Min(1)] public int tributeChannelMoves=3;
+    [Range(1,2)] public int tributeStackCap=2;
     [Header("Identity")]
 
     [SerializeField]
@@ -275,6 +277,7 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(1f)] private float benedictionDamageMultiplier = 1.4f;
     [SerializeField] private Sprite benedictionHaloSprite;
     [SerializeField, Min(0)] private int judgmentBaseDamage = 12;
+    [SerializeField, Min(0)] private int judgmentFinisherBaseDamage = 18;
     [SerializeField, Min(1)] private int bombardmentWarningMoves = 2;
     [SerializeField, Min(0)] private int bombardmentBaseDamage = 6;
     [SerializeField, Min(1f)] private float assaultDamageMultiplier = 1.1f;
@@ -296,6 +299,7 @@ public sealed class EnemyDefinition : ScriptableObject
     public float BenedictionDamageMultiplier => Mathf.Max(1f, benedictionDamageMultiplier);
     public Sprite BenedictionHaloSprite => benedictionHaloSprite;
     public int JudgmentBaseDamage => Mathf.Max(0, judgmentBaseDamage);
+    public int JudgmentFinisherBaseDamage => Mathf.Max(0, judgmentFinisherBaseDamage);
     public int BombardmentWarningMoves => Mathf.Max(1, bombardmentWarningMoves);
     public int BombardmentBaseDamage => Mathf.Max(0, bombardmentBaseDamage);
     public float AssaultDamageMultiplier => Mathf.Max(1f, assaultDamageMultiplier);
@@ -316,7 +320,6 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(0)] private int barkArmorShield = 30;
     [SerializeField, Min(0)] private int thornVolleyDamage = 5;
     [SerializeField, Min(0)] private int fallingBoughDamage = 30;
-    [SerializeField, Min(0)] private int fallingBoughWeakenedDamage = 15;
     public EnemyDefinition ForestSummon => forestSummon;
     public int ThornRetaliationDamage => CombatAmounts.Round(thornRetaliationDamage);
     public float WarRhythmSpeed => Mathf.Max(1, warRhythmSpeed);
@@ -325,7 +328,6 @@ public sealed class EnemyDefinition : ScriptableObject
     public int BarkArmorShield => CombatAmounts.Round(barkArmorShield);
     public int ThornVolleyDamage => CombatAmounts.Round(thornVolleyDamage);
     public int FallingBoughDamage => CombatAmounts.Round(fallingBoughDamage);
-    public int FallingBoughWeakenedDamage => CombatAmounts.Round(fallingBoughWeakenedDamage);
 
     [Header("Forest ritual tuning")]
     [SerializeField,Min(0)] private int forestRenewalBaseHeal=20;

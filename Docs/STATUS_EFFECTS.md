@@ -1,4 +1,4 @@
-# Canonical player statuses
+# Canonical combat statuses
 
 Approved specification: 2026-10-06. Implementation is tracked in
 [Handoffs/ASTRA_USAGE_CHECKPOINT.md](Handoffs/ASTRA_USAGE_CHECKPOINT.md).
@@ -63,10 +63,35 @@ queries use the same final arrangement. When flood/status expiry changes the rul
 the board rechecks availability and uses its existing reshuffle if necessary.
 Saving waits for that check; previews themselves are transient and are not saved.
 
-## Future buff vocabulary (not implemented by this specification)
+## Enemy Warded (implemented by the roster revision)
+
+Warded reduces incoming damage by 25% through EnemyActor's central damage path.
+It is active while any living Warden has its structural Root. All living enemies,
+including new summons, inherit the effect. Multiple providers contribute one
+reduction; deleting one source cannot remove another. This is separate from
+ordinary shield HP. The board saves root ownership/durability; continuation
+rebuilds source predicates rather than restoring a stale independent duration.
+Combat labels and inspection display the named buff. No duration or extra HP bar.
+
+## Enemy Fortified (roster revision)
+
+Queen Nacre's Tribute grants up to two Fortified stacks per recipient. One eligible
+direct player damage packet consumes one stack and is reduced by 50%, composing
+with Warded and other existing modifiers before final five-point rounding. Shield
+gating remains unchanged. Intercepted damage consumes only the actual recipient's
+pearl. Periodic/status damage through the explicit non-direct actor path does not
+spend a pearl; neither does zero or fully mitigated damage. Multiple pearls never
+reduce the same packet repeatedly. The snapshot saves count, with missing legacy
+data meaning zero. New enemy initialization and death expose no stale stacks.
+
+Combat status/inspection text names Fortified. One native pink pearl per stack
+orbits the actor with quantized offsets and front/back sorting; a consumed pearl
+pops. Reduced motion uses static separated pearls. Presentation does not own the
+damage reduction, and missing art cannot prevent the buff from working.
+
+## Other future buff vocabulary (not implemented by this specification)
 
 - Regeneration: periodic healing through the ordinary HP path.
-- Fortified: temporary next-hit protection with a clear consumption condition.
 - Cleansing: explicit removal of eligible negative statuses.
 - Leeching/life-steal: healing from actual HP damage, not requested damage.
 - Damage-up and attack-speed-up: retain their existing distinct meanings and clocks.

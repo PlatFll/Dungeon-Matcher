@@ -5,7 +5,8 @@ using UnityEngine;
 [Serializable]
 public sealed class EnemyChannelSnapshot
 {
-    public int state, sequence, triggerMove, deadlineMove, recoveryUntil, lastOutcomeSequence;
+    public int state, sequence, triggerMove, deadlineMove, lastOutcomeSequence;
+    public int recoveryUntil; // Legacy save field; never schedules new recovery moves.
     public long targetId;
     public string outcome;
 }
@@ -23,7 +24,7 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     private EnemyChannelSnapshot value = new EnemyChannelSnapshot();
     public event Action Changed;
     public bool IsChanneling => value.state == 1;
-    public bool BlocksBasic => value.state != 0;
+    public bool BlocksBasic => IsChanneling;
     public int ResponseMoves => IsChanneling ? Mathf.Max(0,value.deadlineMove-(CombatMoveClock.Current?.Tick ?? 0)) : 0;
     public EnemyActor Target => target;
     public string Outcome => value.outcome;
@@ -42,11 +43,6 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if(!CombatMoveClock.Active || actor==null || actor.IsDefeated) return;
         int move=CombatMoveClock.Current.Tick;
-        if(value.state==2)
-        {
-            if(move>=value.recoveryUntil) { value.state=0; attack?.SetActionPaused(this,false); Changed?.Invoke(); }
-            return;
-        }
         if(IsChanneling)
         {
             if(!ValidTarget()) { Finish("Target lost",false); return; }
@@ -83,12 +79,14 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
     {
         if(!IsChanneling || value.lastOutcomeSequence==value.sequence) return;
         value.lastOutcomeSequence=value.sequence;
-        value.state=2; value.outcome=outcome;
-        value.recoveryUntil=CombatMoveClock.EffectAction+2;
+        bool canHeal=heal && actor!=null && !actor.IsDefeated && ValidTarget();
+        var recipient=target;
+        value.state=0; value.outcome=outcome; value.recoveryUntil=0; value.targetId=0;
         // Terminal state precedes actor events; reentrant removal cannot heal twice.
-        if(heal && actor!=null && !actor.IsDefeated && ValidTarget()) target.RestoreHealth(20);
         if(target!=null) target.Defeated-=RecipientDied;
         target=null;
+        actor?.ResetSpecialCounter();attack?.SetActionPaused(this,false);
+        if(canHeal) recipient.RestoreHealth(20);
         Changed?.Invoke();
     }
     private void Staggered(EnemyStagger source,float duration,float remaining) => Finish("Interrupted",false);
@@ -102,6 +100,11 @@ public sealed class EnemyChannelRuntime : MonoBehaviour, IEnemySpecialAbilityRun
         if(target!=null) target.Defeated-=RecipientDied;
         value=saved.channel==null ? new EnemyChannelSnapshot() :
             JsonUtility.FromJson<EnemyChannelSnapshot>(JsonUtility.ToJson(saved.channel)); target=null;
+        if(value.state==2)
+        {
+            value.state=0;value.recoveryUntil=0;value.targetId=0;
+            value.lastOutcomeSequence=value.sequence;actor.ResetSpecialCounter();
+        }
         if(IsChanneling)
         {
             foreach(var candidate in roster) if(candidate!=null && candidate.PersistentId==value.targetId && !candidate.IsDefeated) target=candidate;

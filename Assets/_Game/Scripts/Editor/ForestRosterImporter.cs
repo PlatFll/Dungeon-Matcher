@@ -37,7 +37,7 @@ public static class ForestRosterImporter
                 "Fragile summoned plant with fast bite attacks.",
                 "War Rhythm: temporarily speeds other living enemies' basic attacks. Refreshes without stacking.",
                 "Thorn Volley: up to three existing vines marked for two moves. Remove a marked vine to cancel its shot.",
-                "Bark Armor grants ordinary shield; breaking it staggers the Treant. Answer a Falling Bough mark within two moves to weaken its heavy hit."}[i];
+                "Bark Armor grants ordinary shield; breaking it staggers the Treant. Clear any physical Falling Bough mark within two moves to cancel its heavy hit and gem consumption."}[i];
             so.FindProperty("race").stringValue=i==0||i==5?"Elf":i==3||i==6?"Plant":"Orc";
             so.FindProperty("faction").stringValue=i==0||i==5?"Briar Wardens":"Woodland Clans";
             so.FindProperty("combatRole").stringValue=new[]{"Disruptor","Berserker","Summoner","Summon attacker","Support","Counterplay archer","Miniboss"}[i];

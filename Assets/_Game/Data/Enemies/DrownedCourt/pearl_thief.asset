@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   canFightFlooded: 1
   aquaticSummon: {fileID: 0}
-  aquaticRecoveryMoves: 2
   aquaticChannelMoves: 2
   aquaticAbilityDamage: 20
   aquaticShield: 25
@@ -33,8 +32,8 @@ MonoBehaviour:
   chainsPerUse: 1
   displayName: Pearl Thief
   category: 1
-  description: 'Pearl Theft: two moves to pop marked bubbles before a one-hit coffer
-    captures them. Break the coffer or defeat its owner to recover air.'
+  description: 'Pearl Theft instantly captures exactly two free bubbles in a one-hit
+    pink Pearl Coffer. Break it for +4 AIR. The coffer survives its owner.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: ee4e03895a7a87449b53ae7f3e4a0752, type: 3}
   animationControllerOverride: {fileID: 9100000, guid: 61683d52bcb97704da267e7c7ec04fcf, type: 2}

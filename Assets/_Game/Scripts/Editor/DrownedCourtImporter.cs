@@ -36,15 +36,15 @@ public static class DrownedCourtImporter
         string[] descriptions = {
             "One trident thrust. Can fight in dry or flooded chambers.", "One slow, heavy two-handed club strike.",
             "Two quick dart hits. Each hit resolves shields separately.", "Sturdy shell porter with a single mallet strike; no hidden armor.",
-            "Pearl Theft: two moves to pop marked bubbles before a one-hit coffer captures them. Break the coffer or defeat its owner to recover air.",
+            "Pearl Theft instantly captures exactly two free bubbles in a one-hit pink Pearl Coffer. Break it for +4 AIR. The coffer survives its owner.",
             "Pearl Hymn: two-move heal channel on one fixed other ally below 75% HP. Stagger or defeat the cantor to interrupt.",
             "Rallying Conch: other living allies gain 30% basic DAMAGE for five seconds. Refreshes; never stacks with another conch.",
             "Siphon: two-move channel for 20 damage. Heals only actual player HP lost; shields deny the heal.",
             "Thorny Snare: two gems marked for three moves. An opening manual match costs one AIR per snared gem while flooded; cascades, abilities and specials clear safely.",
             "Spine Guard: inflated for two moves. Opening manual-match damage retaliates once for five damage per move; cascades and specials are safe.",
             "Alternates Shellguard on one ally and a two-move Boarding Order for one fixed ally's normal attack sequence. Stagger interrupts the order.",
-            "Alternates Air Levy (dry: Deepguard) and Pressure Lance. Pop air or break a coffer to reduce a wet lance; dry lances mark a gem. Stagger cancels.",
-            "Royal Seizure, Crushing Depths and Court Muster. Answer two ripple marks or recover air to weaken Depths. Always damageable. Defeat the whole formation to travel.",
+            "Air Levy instantly captures three bubbles in a two-hit armored Pearl Coffer; breaking it fills AIR. Pressure Lance marks two bubbles for two moves. Pop either marked bubble to cancel the full attack. Stagger also interrupts.",
+            "Royal Seizure captures every free bubble in an armored moving Pearl Coffer. Nacre Tribute marks up to three bubbles for three moves: pop them for AIR or leave them to become Fortified pearls. Each pearl halves one direct hit. Court Muster summons an independent crab. Always damageable.",
             "Small independent summon with fast nips. Survives its summoner; grants no independent farming reward." };
         var defs = new EnemyDefinition[Ids.Length];
         for (int i = 0; i < Ids.Length; i++)
@@ -74,8 +74,9 @@ public static class DrownedCourtImporter
             so.FindProperty("isBoardDisruptor").boolValue = i == 4 || i == 8 || i == 11 || i == 12;
             so.FindProperty("threatCost").floatValue = i == 13 ? 1 : i >= 10 ? 5 : i >= 4 ? 2.5f : 1.5f;
             so.ApplyModifiedPropertiesWithoutUndo();
-            def.canFightFlooded = true; def.aquaticAbilityDamage = 20;
-            def.aquaticChannelMoves = 2; def.aquaticRecoveryMoves = 2;
+            def.canFightFlooded = true; def.aquaticAbilityDamage = i==11?25:20;
+            def.aquaticChannelMoves = 2;
+            def.tributeTargetCount=3;def.tributeChannelMoves=3;def.tributeStackCap=2;
             def.aquaticShield = i == 12 ? 20 : 25; def.aquaticRallyDamage = 1.3f; def.aquaticRallySeconds = 5;
             EditorUtility.SetDirty(def);
         }
@@ -83,6 +84,8 @@ public static class DrownedCourtImporter
         var zone = Load<ZoneDefinition>("Assets/_Game/Resources/Zones/drowned-court.asset");
         zone.zoneId = "drowned-court"; zone.displayName = "The Drowned Court"; zone.affiliatedGem = GemType.Sapphire;
         zone.affiliatedDamageMultiplier = 1.15f; zone.periodicallyFloods = true; zone.enemies = defs; zone.apexEnemy = defs[12]; zone.apexLocalWave = 20;
+        zone.floodMinimumMoves=16;zone.floodMaximumMoves=18;zone.initialAirBubbles=5;
+        zone.emergencyAirCadenceMoves=3;zone.emergencyAirSupply=1;zone.criticalAirSupply=2;zone.criticalAirThreshold=1;
         zone.developmentEncounters = defs.Select(d => new ZoneTestEncounter { label = "Court fixture: " + d.DisplayName,
             members = d == defs[0] ? new[] { d } : new[] { d, defs[0] } }).ToArray();
         var recipes = JsonUtility.FromJson<Recipes>(File.ReadAllText(Source + "encounters.json"));

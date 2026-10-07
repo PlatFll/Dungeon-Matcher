@@ -4,6 +4,9 @@ using UnityEngine;
 
 public partial class BoardController : MonoBehaviour
 {
+    // Optional observers follow the existing animation. Timing is seconds,
+    // including the per-gem delay; observers never own motion or resolution.
+    public event System.Action<Gem, float, float, bool> GemMotionPresented;
     [Header("Board Size")]
     [SerializeField, Min(1)]
     private int width = 7;
@@ -1237,6 +1240,7 @@ public partial class BoardController : MonoBehaviour
             }
         }
 
+        yield return ResolvePendingCofferSlide();
         yield return null;
     }
 
@@ -1503,6 +1507,7 @@ public partial class BoardController : MonoBehaviour
 
             move.Gem.transform.localPosition =
                 move.StartPosition;
+            GemMotionPresented?.Invoke(move.Gem, move.Duration, move.Delay, move.UseGravityMotion);
         }
 
         float elapsedTime = 0f;
@@ -1699,6 +1704,9 @@ public partial class BoardController : MonoBehaviour
 
         float effectiveSwapDuration =
             GetResponsiveSwapDuration();
+
+        GemMotionPresented?.Invoke(first, effectiveSwapDuration, 0, false);
+        GemMotionPresented?.Invoke(second, effectiveSwapDuration, 0, false);
 
         float elapsedTime = 0f;
 

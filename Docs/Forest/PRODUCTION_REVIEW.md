@@ -13,7 +13,7 @@ Weakness assignment remains independent of skin/clothing, race and zone gem.
 |---|---|---:|---:|---:|---|
 | Elven Scout | Normal | 60 | 5 | 3s | Bow pressure; focus weakness/stagger |
 | Orc Trailguard | Normal | 90 | 15 | 4.5s | One heavy axe hit, existing shield gate |
-| Elven Mender | Special | 75 | 5 | 5s | Ready after 2 moves; fixed other ally below 75%, +20 after 2 future responses; interrupt/kill target; 2 recovery moves |
+| Elven Mender | Special | 75 | 5 | 5s | Ready after 2 moves; fixed other ally below 75%, +20 after 2 future responses; interrupt/kill target; return directly to normal cadence |
 | Orc Rootbinder | Special | 75 | 5 | 5.5s | One 1-hit Root, four nonspreading vines; clear a side vine then hit through it |
 | Barkhide Warden | Miniboss | 150 | 15 | 4.5s | One 2-hit spreading Root; all allies take 25% less damage while it lives |
 | Briar Matriarch | Boss | 240 | 10 | 5s | Two 2-hit Heartroots; Renew (2 moves, 20 +20/root AoE heal), Surge (advance vines), Harvest (3 moves, 20 +5/vine damage, consumes vines) |

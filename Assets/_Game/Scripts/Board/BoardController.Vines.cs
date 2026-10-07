@@ -58,8 +58,9 @@ public partial class BoardController
     public bool IsCellVined(int x,int y) => vineNodes.Exists(n=>n.x==x && n.y==y);
     public int OwnedVineCount(EnemyActor owner) => owner==null?0:vineNodes.FindAll(n=>n.ownerId==owner.PersistentId).Count;
     public int OwnedRootCount(EnemyActor owner) => owner==null?0:GetBarricadeCountForOwner(owner.GetInstanceID());
-    private static bool IsRoot(BarricadeCellState state) => state!=null &&
-        (state.Style==EnemyBarricadeStyle.Root || state.Style==EnemyBarricadeStyle.Heartroot);
+    private static bool IsRoot(BarricadeCellState state) => state!=null && IsRootStyle(state.Style);
+    private static bool IsRootStyle(EnemyBarricadeStyle style) => style==EnemyBarricadeStyle.Root ||
+        style==EnemyBarricadeStyle.Heartroot || style==EnemyBarricadeStyle.ShieldRoot;
 
     // Roots reuse structural occupancy, useful-response checks, durability hits,
     // refill and the existing board mutation queue. Vines never enter pin maps.
@@ -72,12 +73,12 @@ public partial class BoardController
         request.Completed=ok=>completed?.Invoke(ok?request.SetThreat:null);
         EnqueueBoardMutation(request);TryStartBoardMutationProcessor();return true;
     }
-    public bool TryQueuePlantRoots(EnemyActor owner,int count,int durability,bool heart,bool spreading,Action<bool> completed)
+    public bool TryQueuePlantRoots(EnemyActor owner,int count,int durability,bool heart,bool spreading,Action<bool> completed,bool shield=false)
     {
         if(owner==null || owner.IsDefeated || OwnedRootCount(owner)>0) return false;
         EnqueueBoardMutation(new BoardMutationRequest { Kind=BoardMutationKind.PlaceBarricades,OwnerActor=owner,
             OwnerInstanceId=owner.GetInstanceID(),BarricadeCount=count,MaximumOwnedBarricades=count,
-            BarricadeDurability=durability,BarricadeStyle=heart?EnemyBarricadeStyle.Heartroot:EnemyBarricadeStyle.Root,
+            BarricadeDurability=durability,BarricadeStyle=heart?EnemyBarricadeStyle.Heartroot:shield?EnemyBarricadeStyle.ShieldRoot:EnemyBarricadeStyle.Root,
             RootSpreading=spreading,ProtectSpecialGems=true,Completed=completed });
         TryStartBoardMutationProcessor();return true;
     }

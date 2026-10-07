@@ -96,6 +96,14 @@ public static class CombatActionImporter
         AssetDatabase.SaveAssets();
     }
 
+    [MenuItem("Dungeon Matcher/Art/Import King Judgment")]
+    public static void ImportKingJudgment()
+    {
+        var selected = JsonUtility.FromJson<AttackSelections>("{\"entries\":" +
+            File.ReadAllText("ArtSource/EnemyAttacks/judgment.json") + "}").entries;
+        foreach (var entry in selected) Import(new[] { entry.name }, entry);
+    }
+
     [MenuItem("Dungeon Matcher/Art/Import Combat Actions")]
     public static void Run()
     {

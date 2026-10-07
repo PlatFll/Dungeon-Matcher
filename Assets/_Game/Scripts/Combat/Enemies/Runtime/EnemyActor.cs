@@ -281,6 +281,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             RuntimeStats.MaxHealth;
 
         currentShield = 0;
+        fortifiedStacks = 0;
         damageRedirectTarget = null;
         IncomingDamageMultiplier = null;
         sharedDamageReductions.Clear();
@@ -378,7 +379,8 @@ public sealed partial class EnemyActor : MonoBehaviour
         return ResolveDamageInternal(
             amount,
             true,
-            allowDamageRedirect: true
+            allowDamageRedirect: true,
+            fortifiedEligible: true
         );
     }
 
@@ -387,7 +389,8 @@ public sealed partial class EnemyActor : MonoBehaviour
         return ResolveDamageInternal(
             amount,
             false,
-            allowDamageRedirect: false
+            allowDamageRedirect: false,
+            fortifiedEligible: false
         );
     }
 
@@ -419,7 +422,8 @@ public sealed partial class EnemyActor : MonoBehaviour
     private EnemyDamageResult ResolveDamageInternal(
         int amount,
         bool notifyDamageReceived,
-        bool allowDamageRedirect)
+        bool allowDamageRedirect,
+        bool fortifiedEligible)
     {
         if (!CanReceiveDamage ||
             amount <= 0)
@@ -442,7 +446,8 @@ public sealed partial class EnemyActor : MonoBehaviour
                     .ResolveDamageInternal(
                         amount,
                         notifyDamageReceived,
-                        allowDamageRedirect: false
+                        allowDamageRedirect: false,
+                        fortifiedEligible: fortifiedEligible
                     );
             }
 
@@ -451,11 +456,13 @@ public sealed partial class EnemyActor : MonoBehaviour
 
         float incomingMultiplier = IncomingDamageMultiplier != null
             ? Mathf.Clamp01(IncomingDamageMultiplier()) : 1f;
-        float sharedReduction=1f;
+        float sharedReduction=IsWarded?.75f:1f;
         foreach(var reduction in sharedDamageReductions.Values)
             if(reduction!=null) sharedReduction=Mathf.Min(sharedReduction,Mathf.Clamp01(reduction()));
         double resolvedDamage = amount * (double)incomingMultiplier * sharedReduction *
             (RunSession.Current?.Player?.Statuses.OutgoingMultiplier(this) ?? 1f);
+        bool consumeFortified=fortifiedEligible && fortifiedStacks>0 && resolvedDamage>0;
+        if(consumeFortified)resolvedDamage*=.5;
 
         bool shieldWasActive =
             currentShield > 0;
@@ -465,6 +472,8 @@ public sealed partial class EnemyActor : MonoBehaviour
             resolvedDamage *= 1f - EnemyShieldDamageReduction;
         }
         int finalDamage = CombatAmounts.Round(resolvedDamage);
+        consumeFortified &= finalDamage>0;
+        if(consumeFortified)fortifiedStacks--;
 
         int shieldDamage =
             Mathf.Min(
@@ -518,6 +527,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             actualHealthDamage,
             shieldDamage
         );
+        if(consumeFortified)FortifiedConsumed?.Invoke(this);
 
         /*
          * Normal direct/clear damage uses DamageReceived to drive the
