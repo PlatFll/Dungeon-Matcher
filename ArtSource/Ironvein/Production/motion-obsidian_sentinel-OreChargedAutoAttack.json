@@ -1,0 +1,23 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "The golem's orange chest slot brightens and its left-facing fist piston telescopes outward. It leans into a single heavy LEFTWARD punch with a brief tiny orange spark at the knuckles. The piston retracts and the body settles into the original stance.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/obsidian_sentinel.png",
+    "last_frame_url": "Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 9104,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 17e28218-708c-429d-9373-93a9a3522fbe\njob_id: 17e28218-708c-429d-9373-93a9a3522fbe\ndescription: The golem's orange chest slot brightens and its left-facing fist piston telescopes outward. It leans into a single heavy LEFTWARD punch with a brief tiny orange spark at the knuckles. The piston retracts and the body settles into the original stance.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9104\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"17e28218-708c-429d-9373-93a9a3522fbe\")\nasset_id: bf3bf670-1700-551b-8188-b9ca5ecbf815\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

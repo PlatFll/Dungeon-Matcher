@@ -1,0 +1,37 @@
+{
+  "name": "stonewright",
+  "source_job": "92500e0f-6ebc-436b-be25-6f9566ef022d",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0D1117": "#0A0D11",
+        "#13171E": "#0A0D11",
+        "#3D3D40": "#323336",
+        "#555C63": "#4C4E53",
+        "#606970": "#6B747B",
+        "#614939": "#574132",
+        "#47362C": "#382D27",
+        "#673020": "#7A3823",
+        "#B97F48": "#9D683A"
+      },
+      "reason": "Measured redundant close colors fragmented broad material shading. Normalize near-black contour and consolidate close material ramp tones while preserving all geometry, face, equipment and alpha."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: c5928538-5314-40ab-b3b9-79a74b602bd6\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 957 px changed\nsheet rows: frames [1]\npalette (20): #0a0d11ff x390, #4c4e53ff x226, #574132ff x224, #323336ff x170, #382d27ff x170, #6b747bff x119, #9d683aff x96, #252426ff x86, #7a3823ff x83, #d79961ff x75, #848d91ff x66, #785234ff x61, #c89349ff x51, #4f271dff x51, #3b201bff x33, #c76210ff x4, … +4 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/c5928538-5314-40ab-b3b9-79a74b602bd6/: image.png, frames.png, animation.gif\nnext: edit c5928538-5314-40ab-b3b9-79a74b602bd6 --changes […]"
+    }
+  ]
+}

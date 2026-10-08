@@ -1,0 +1,23 @@
+{
+  "id": "rivet_gunner",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "His gun's orange crystal brightens and its steel barrel telescopes one segment longer. He braces with both hands, fires a single compact orange muzzle flash toward LEFT with sharp shoulder recoil, then the barrel folds back and he settles into the original stance.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/rivet_gunner.png",
+    "last_frame_url": "Inputs/rivet_gunner.png",
+    "no_background": true,
+    "seed": 9100,
+    "enhance_prompt": false,
+    "subject_description": "rivet gunner",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 126e2a8e-f6c6-41ef-894b-21214152f01d\njob_id: 126e2a8e-f6c6-41ef-894b-21214152f01d\ndescription: His gun's orange crystal brightens and its steel barrel telescopes one segment longer. He braces with both hands, fires a single compact orange muzzle flash toward LEFT with sharp shoulder recoil, then the barrel folds back and he settles into the original stance.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9100\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"126e2a8e-f6c6-41ef-894b-21214152f01d\")\nasset_id: 304f9b6b-91b0-5ad0-845d-758689e67ed0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

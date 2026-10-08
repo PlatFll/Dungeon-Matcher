@@ -1,0 +1,23 @@
+{
+  "id": "siege_machinist",
+  "state": "PrimeAbility",
+  "request": {
+    "description": "The dwarf raises his wrench horizontally and touches its orange core with his free glove. He extends the wrench toward LEFT, the embedded orange crystal pulses brightly once as he signals his machinery, then lowers it to his original ready stance.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/siege_machinist.png",
+    "last_frame_url": "Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 9205,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: a547104a-9be3-4f1e-940f-4467ec4bbd10\njob_id: a547104a-9be3-4f1e-940f-4467ec4bbd10\ndescription: The dwarf raises his wrench horizontally and touches its orange core with his free glove. He extends the wrench toward LEFT, the embedded orange crystal pulses brightly once as he signals his machinery, then lowers it to his original ready stance.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9205\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a547104a-9be3-4f1e-940f-4467ec4bbd10\")\nasset_id: 1d240be5-3d0f-5a1d-a48c-6efb79975322\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

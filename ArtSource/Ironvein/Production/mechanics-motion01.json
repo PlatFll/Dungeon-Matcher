@@ -1,0 +1,102 @@
+[
+  {
+    "name": "fixed_drill_spin",
+    "phase": 9,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/3c749e7b-c322-48a1-ab28-7d99f194aae9/download?index=0",
+      "action": "Loop the drilling bit spinning rapidly around its horizontal shaft. Drill body, housing, wheels, pipes and silhouette remain stationary. Orange socket pulses subtly, one tiny steam puff. No translation, no big sparks, no size change.",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 409500
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ff62ae7e-020a-42ad-9391-8cb4d2239680\njob_id: ff62ae7e-020a-42ad-9391-8cb4d2239680\naction: Loop the drilling bit spinning rapidly around its horizontal shaft. Drill body, housing, wheels, pipes and silhouette remain stationary. Orange socket pulses subtly, one tiny steam puff. No translation, no big sparks, no size change.\nframes: 4\nsize: 64x64px\ntransparent: True\nseed: 409500\nasset_id: 324ba585-6b2b-5130-9ea5-dc2514cf99dc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ff62ae7e-020a-42ad-9391-8cb4d2239680\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "small_drill_spin",
+    "phase": 9,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/59bdcdb2-919e-4018-aef5-9f86975d9c45/download?index=0",
+      "action": "Loop the small drill head spinning about its horizontal shaft in place, two tiny orange sparks at rear. Keep right-pointing tip, exact size and center fixed. No translation or expansion, no added housing.",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 409501
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e12ca1fc-b5e6-4863-93ee-6b1f989ee677\njob_id: e12ca1fc-b5e6-4863-93ee-6b1f989ee677\naction: Loop the small drill head spinning about its horizontal shaft in place, two tiny orange sparks at rear. Keep right-pointing tip, exact size and center fixed. No translation or expansion, no added housing.\nframes: 4\nsize: 32x32px\ntransparent: True\nseed: 409501\nasset_id: ec125c91-55b3-5661-81af-df83e7b431f6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e12ca1fc-b5e6-4863-93ee-6b1f989ee677\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "ore_burst",
+    "phase": 9,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/6a25373e-29e3-4163-a893-8e17e32d19a3/download?index=0",
+      "action": "Compact orange ore impact bursts once then dissipates completely. Quick expansion only a few pixels, sharp star fragments break apart and vanish by final frame. Keep effect inside canvas, transparent background, no circle or smoke cloud.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 409502
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: cd6a13d0-05b1-4c8b-956a-3d3037eb2cc6\njob_id: cd6a13d0-05b1-4c8b-956a-3d3037eb2cc6\naction: Compact orange ore impact bursts once then dissipates completely. Quick expansion only a few pixels, sharp star fragments break apart and vanish by final frame. Keep effect inside canvas, transparent background, no circle or smoke cloud.\nframes: 8\nsize: 32x32px\ntransparent: True\nseed: 409502\nasset_id: 9809acc6-2ee7-5b27-b40b-fd7a2ebe937f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"cd6a13d0-05b1-4c8b-956a-3d3037eb2cc6\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "charge_fuse",
+    "phase": 9,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/fe08dedb-e73e-46c1-9678-5b588611ad9c/download?index=0",
+      "action": "Loop a small bright amber spark moving at the end of the curved fuse, tiny smoke pixels rise and disappear. Copper bomb body is perfectly stationary, no explosion, no expansion.",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 409503
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 482b2067-9aef-4d37-a2b8-f1a4ecd83455\njob_id: 482b2067-9aef-4d37-a2b8-f1a4ecd83455\naction: Loop a small bright amber spark moving at the end of the curved fuse, tiny smoke pixels rise and disappear. Copper bomb body is perfectly stationary, no explosion, no expansion.\nframes: 4\nsize: 32x32px\ntransparent: True\nseed: 409503\nasset_id: 7775a231-05b0-5ec0-9fd5-6d47fb99f5ad\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"482b2067-9aef-4d37-a2b8-f1a4ecd83455\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "core_break",
+    "phase": 9,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/8d38bbca-e857-4eaf-a238-f1cf1241205d/download?index=0",
+      "action": "Obsidian core breaks apart in a quick compact impact. Shell and straps crack then collapse into small dark pieces, orange heart flashes briefly and disappears into tiny sparks, end almost empty. Keep within canvas. No full-screen flash, no lava or growing flame.",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 409504
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 907cc4ba-272d-4b33-a460-461a9e19a53a\njob_id: 907cc4ba-272d-4b33-a460-461a9e19a53a\naction: Obsidian core breaks apart in a quick compact impact. Shell and straps crack then collapse into small dark pieces, orange heart flashes briefly and disappears into tiny sparks, end almost empty. Keep within canvas. No full-screen flash, no lava or growing flame.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 409504\nasset_id: c50db5d6-31f7-5c52-87d0-51fc42e56f1f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"907cc4ba-272d-4b33-a460-461a9e19a53a\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

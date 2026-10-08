@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver",
+  "state": "Idle",
+  "request": {
+    "description": "The compact mining mech idles with a small hydraulic bob. Visible ginger dwarf pilot glances ahead; drill and claw stay rigid. Exhaust gives one small dark steam puff, never covers the face. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/grand_delver-tip-repaired.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/grand_delver-tip-repaired.png",
+    "no_background": true,
+    "seed": 7925,
+    "enhance_prompt": false,
+    "subject_description": "grand delver",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 37890272-5c1b-42f9-9a09-f27828a64e8d\njob_id: 37890272-5c1b-42f9-9a09-f27828a64e8d\ndescription: The compact mining mech idles with a small hydraulic bob. Visible ginger dwarf pilot glances ahead; drill and claw stay rigid. Exhaust gives one small dark steam puff, never covers the face. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7925\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"37890272-5c1b-42f9-9a09-f27828a64e8d\")\nasset_id: 6d669c6e-4afa-5ae5-b5f0-2b62e3555067\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

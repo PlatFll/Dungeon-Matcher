@@ -124,7 +124,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 ActingEnemy = actor;
                 var stagger = actor.GetComponent<EnemyStagger>();
                 var channel = actor.GetComponent<EnemyChannelRuntime>();
-                bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true;
+                bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
+                    actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true;
                 var attack = actor.GetComponent<EnemyAutoAttack>();
                 if (stagger == null || !stagger.IsStaggered)
                 {
@@ -153,6 +154,19 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
+            if (!run.Player.IsDefeated) yield return run.Board.DrainMineDrills();
+            // Drill-counterable warnings stay live through the final response
+            // move's actual environmental firing, then release under this hold.
+            foreach (var actor in acceptedActors)
+            {
+                if (!Living(actor) || run.Player.IsDefeated) continue;
+                var mineAbility = actor.GetComponent<MineEnemyAbility>();
+                if (mineAbility == null) continue;
+                ActingEnemy = actor;
+                mineAbility.ResolveAfterMineDrills();
+                yield return WaitForActions();
+                ActingEnemy = null;
+            }
             run.AdvanceSupplyCooldowns();
             run.Board.FinishAquaticMove(Tick);
             ActionSettled?.Invoke(Tick);
@@ -177,6 +191,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             bool busy = run.Board.IsBusy || Time.timeScale <= 0;
             foreach (var actor in run.Waves.ActiveEnemies)
                 busy |= Living(actor) && (actor.HasAnimationActionInProgress ||
+                    actor.GetComponent<MineEnemyAbility>()?.IsResolving == true ||
                     actor.GetComponent<EnemyAutoAttack>()?.IsAttackSequenceInProgress == true ||
                     actor.GetComponent<EnemyAutoAttack>()?.HasCommandReservation == true);
             if (!busy) yield break;

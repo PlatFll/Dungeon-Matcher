@@ -1,0 +1,23 @@
+{
+  "id": "pickaxe_delver",
+  "state": "OreChargedAutoAttack-v3",
+  "request": {
+    "description": "One complete TWO-HANDED pickaxe attack: lift high over shoulder, bend knees, strike sharply DOWN-LEFT with the pick head BELOW WAIST near the floor far left, arms follow through, then pull back to the exact starting ready stance. The orange crystal IN THE PICK flashes and TWO hinged teeth spread for the powered contact, then fold back. Helmet lamp stays small amber. Small spark only at contact, no huge fire. Clear distinct windup, low contact and full recovery. Keep both boots on the same bottom baseline and the entire tool within canvas.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/pickaxe_delver.png",
+    "last_frame_url": "same native input",
+    "frame_count": 12,
+    "no_background": true,
+    "seed": 7203,
+    "enhance_prompt": false,
+    "subject_description": "pickaxe delver dwarf with mechanical mining gear",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded combat-ready stance at bottom center, tool held in hands"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 14693fd7-d74a-4551-9ea1-0fc7e3265a40\njob_id: 14693fd7-d74a-4551-9ea1-0fc7e3265a40\ndescription: One complete TWO-HANDED pickaxe attack: lift high over shoulder, bend knees, strike sharply DOWN-LEFT with the pick head BELOW WAIST near the floor far left, arms follow through, then pull back to the exact starting ready stance. The orange crystal IN THE PICK flashes and TWO hinged teeth spread for the powered contact, then fold back. Helmet lamp stays small amber. Small spark only at contact, no huge fire. Clear distinct windup, low contact and full recovery. Keep both boots on the same bottom baseline and the entire tool within canvas.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7203\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"14693fd7-d74a-4551-9ea1-0fc7e3265a40\")\nasset_id: f83050f2-1db7-5daf-88bd-4ac96c877d92\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

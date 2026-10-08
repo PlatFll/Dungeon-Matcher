@@ -8,6 +8,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     public event Action<BoardClearContext> AffiliatedGemCleared;
     private RunSession run;
     private int environmentVariant = -1;
+    private ZoneTestEncounter pendingMineEncounter;
     public void Initialize(RunSession owner,string zoneId)
     {
         run=owner;
@@ -19,6 +20,9 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     private void Start()
     {
+        run.Board.InitializeMine();
+        if (Definition.maturesStone && run.Board.GetComponent<MineEnvironmentView>() == null)
+            run.Board.gameObject.AddComponent<MineEnvironmentView>();
         if(Definition.periodicallyFloods && run.Board.GetComponent<AquaticEnvironmentView>()==null)
             run.Board.gameObject.AddComponent<AquaticEnvironmentView>();
         BackgroundMusicPlayer.Instance?.SetZoneMusic(Definition?.music);
@@ -28,9 +32,16 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     private void EncounterScenery(int wave)
     {
+        if(Definition.maturesStone && run.Travel?.State.enabled==true && pendingMineEncounter!=null)
+        {
+            MineEncounterSelector.Record(run.Travel.State.mineEncounters ??= new MineEncounterProgress(),
+                pendingMineEncounter,run.Waves.OriginalEncounterDefinitions,run.Travel.LocalWave,wave);
+            pendingMineEncounter=null;
+        }
         if (Definition?.theme == null) return;
         int local = run.Travel?.LocalWave ?? wave;
-        int variant = Definition.periodicallyFloods ? (local >= 16 ? 2 : local >= 8 ? 1 : 0) : 0;
+        int variant = Definition.maturesStone ? (local >= 20 ? 2 : local >= 10 ? 1 : 0) :
+            Definition.periodicallyFloods ? (local >= 16 ? 2 : local >= 8 ? 1 : 0) : 0;
         if (environmentVariant == variant) return;
         environmentVariant = variant;
         FindFirstObjectByType<BattleBackgroundTilemapController>()?.ApplyGameplayTheme(Definition.theme, variant);
@@ -47,6 +58,9 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
         // Preserve the existing opening kingdom progression through its first King.
         if(Definition.zoneId=="dungeon" && run.Travel.State.visit==0) return null;
         int local=run.Travel.LocalWave;
+        if(Definition.maturesStone && Definition.encounterBudget!=null)
+            return pendingMineEncounter=MineEncounterSelector.Select(Definition,
+                run.Travel.State.mineEncounters ??= new MineEncounterProgress(),local,random);
         var choices=new System.Collections.Generic.List<ZoneTestEncounter>();
         foreach(var entry in Definition.liveEncounters)
             if(local>=entry.firstLocalWave && local<=entry.lastLocalWave) choices.Add(entry);

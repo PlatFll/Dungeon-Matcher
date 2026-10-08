@@ -1,0 +1,41 @@
+{
+  "name": "rail_switcher",
+  "source_job": "d1609e9d-850a-47cc-a277-c9e85ffec0fd",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0E1113": "#0A0D11",
+        "#121518": "#0A0D11",
+        "#171A1D": "#0A0D11",
+        "#292C2E": "#303439",
+        "#393A39": "#303439",
+        "#424954": "#3D424D",
+        "#483326": "#372C24",
+        "#674127": "#573A26",
+        "#8A5E34": "#7B4F2E",
+        "#A3713A": "#BB8B48",
+        "#897861": "#5A4A3D",
+        "#318845": "#2F7441",
+        "#D6D5D5": "#A5A7A8"
+      },
+      "reason": "Normalize measured contour deviations and merge redundant close shades within iron, cloth, leather, beard and brass ramps. Preserve all native positions, silhouette, face and equipment."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 21489be4-8fa5-42ed-8a38-4a8f808a75b3\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1090 px changed\nsheet rows: frames [1]\npalette (23): #0a0d11ff x504, #303439ff x339, #3d424dff x231, #7b4f2eff x160, #573a26ff x143, #372c24ff x128, #212324ff x109, #545858ff x52, #bb8b48ff x47, #6e7579ff x46, #d09e6aff x33, #5a4a3dff x21, #c73f1bff x12, #a5a7a8ff x9, #dd9231ff x8, #2f7441ff x7, … +7 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/21489be4-8fa5-42ed-8a38-4a8f808a75b3/: image.png, frames.png, animation.gif\nnext: edit 21489be4-8fa5-42ed-8a38-4a8f808a75b3 --changes […]"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "siege_machinist",
+  "state": "Hit-v2",
+  "request": {
+    "description": "The elderly dwarf briefly winces and leans backward, gripping his wrench tightly, then steadies himself back in the original stance.",
+    "frame_count": 4,
+    "first_frame_url": "Inputs/siege_machinist.png",
+    "last_frame_url": "Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 8062,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e91111d9-379d-46cc-a78a-db30a4adfe63\njob_id: e91111d9-379d-46cc-a78a-db30a4adfe63\ndescription: The elderly dwarf briefly winces and leans backward, gripping his wrench tightly, then steadies himself back in the original stance.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 8062\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e91111d9-379d-46cc-a78a-db30a4adfe63\")\nasset_id: 1f871eb5-ce1e-55df-b303-5f97ae7bde43\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

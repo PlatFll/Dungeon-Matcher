@@ -1,0 +1,23 @@
+{
+  "id": "rivet_gunner",
+  "state": "Idle",
+  "request": {
+    "description": "Subtle breathing idle. Torso rises and falls just one pixel, hands keep the rivet gun steady. Tiny goggle tilt. Feet planted at the same baseline. Orange battery remains visible and unchanging. Finish exactly in initial stance.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "no_background": true,
+    "seed": 7911,
+    "enhance_prompt": false,
+    "subject_description": "rivet gunner",
+    "initial_pose": "original grounded combat ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 11ecb1a7-0cdb-4190-8646-c8961a7d7b9b\njob_id: 11ecb1a7-0cdb-4190-8646-c8961a7d7b9b\ndescription: Subtle breathing idle. Torso rises and falls just one pixel, hands keep the rivet gun steady. Tiny goggle tilt. Feet planted at the same baseline. Orange battery remains visible and unchanging. Finish exactly in initial stance.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7911\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"11ecb1a7-0cdb-4190-8646-c8961a7d7b9b\")\nasset_id: 1c166848-6265-5fec-a84c-54fecf84855f\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "stonewright",
+  "state": "AutoAttack-v2",
+  "request": {
+    "description": "She lifts her mallet HIGH OVERHEAD with BOTH hands, bends knees, then SLAMS the mallet down to the floor on the LEFT. Full heavy hammer strike with body weight behind it. Finish crouched with hammer head on ground, do not return to idle. Keep her face and equipment; small grey dust at contact, no flames.",
+    "frame_count": 12,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "no_background": true,
+    "seed": 7800,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 282fff2d-959b-4eea-82ac-01a12cb36b46\njob_id: 282fff2d-959b-4eea-82ac-01a12cb36b46\ndescription: She lifts her mallet HIGH OVERHEAD with BOTH hands, bends knees, then SLAMS the mallet down to the floor on the LEFT. Full heavy hammer strike with body weight behind it. Finish crouched with hammer head on ground, do not return to idle. Keep her face and equipment; small grey dust at contact, no flames.\nframes: 12\nsize: 80x80px\ntransparent: True\nseed: 7800\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"282fff2d-959b-4eea-82ac-01a12cb36b46\")\nasset_id: 8022fee2-de01-5ad0-8c17-5bcd84db7f7b\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

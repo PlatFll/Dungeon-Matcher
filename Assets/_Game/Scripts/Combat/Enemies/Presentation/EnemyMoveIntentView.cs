@@ -62,6 +62,12 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         buffs.rectTransform.sizeDelta=new Vector2(actor.FortifiedStacks>0?80:48,20);
         weaknessView?.SetTrailingStatusWidth(buffs.gameObject.activeSelf?buffs.rectTransform.rect.width:0);
         buffs.color=actor.FortifiedStacks>0?new Color(1,.55f,.79f):new Color(.72f,.94f,.5f);
+        if (GetComponent<EnemyOrePower>()?.IsPowered == true)
+        {
+            buffs.gameObject.SetActive(visible); buffs.text = actor.FortifiedStacks > 0 ? $"ORE / FORT {actor.FortifiedStacks}" : "ORE READY";
+            buffs.rectTransform.sizeDelta = new Vector2(80,20); buffs.color = new Color(1,.64f,.2f);
+            weaknessView?.SetTrailingStatusWidth(visible ? 80 : 0);
+        }
         if(!visible) { if(link!=null) link.gameObject.SetActive(false);return; }
         // Follow the actual rendered canvas after the pixel presenter resizes
         // it. A fixed slot-center offset crosses the face on taller screens.
@@ -84,6 +90,11 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         text.color=casting||ritual||warning?new Color(.65f,1f,.45f):Color.white;
         if(aquatic!=null && aquatic.IsPreparing)
         { text.text=$"{aquatic.CastName} IN {aquatic.ResponseMoves}"; text.color=new Color(.6f,.92f,1f); recipient=aquatic.Target; }
+        var mine = GetComponent<MineEnemyAbility>();
+        if (mine?.IsPreparing == true)
+        { text.text = $"{mine.CastName} IN {mine.ResponseMoves}"; text.color = new Color(1,.68f,.25f); }
+        if (mine?.IsPilot == true)
+        { text.text = $"REMOUNT IN {mine.PilotMoves}"; text.color = new Color(1,.8f,.3f); }
         bar.gameObject.SetActive(casting||ritual);
         if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves/2f:(float)milestone.ResponseMoves/milestone.ChannelMoves)),4);
         if(link!=null)

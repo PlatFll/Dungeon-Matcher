@@ -1,0 +1,23 @@
+{
+  "id": "vein_surveyor",
+  "state": "Idle",
+  "request": {
+    "description": "Quiet breathing. He tilts the magnifying glass slightly while peering thoughtfully, tiny beard movement. Same cap and map, both feet planted. No new effects or new equipment. Seamless return to ready stance.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/vein_surveyor.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/vein_surveyor.png",
+    "no_background": true,
+    "seed": 7914,
+    "enhance_prompt": false,
+    "subject_description": "vein surveyor",
+    "initial_pose": "original grounded combat ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 1178906d-a646-453c-8e51-f0d7a6a38395\njob_id: 1178906d-a646-453c-8e51-f0d7a6a38395\ndescription: Quiet breathing. He tilts the magnifying glass slightly while peering thoughtfully, tiny beard movement. Same cap and map, both feet planted. No new effects or new equipment. Seamless return to ready stance.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7914\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1178906d-a646-453c-8e51-f0d7a6a38395\")\nasset_id: 5c034c15-db63-5fa1-a879-4838d7d19fe3\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "stonewright",
+  "state": "Hit",
+  "request": {
+    "description": "A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "no_background": true,
+    "seed": 7965,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "initial_pose": "original grounded combat stance",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: a5943ae1-eb34-4c1f-91bf-99a54ff53e8a\njob_id: a5943ae1-eb34-4c1f-91bf-99a54ff53e8a\ndescription: A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7965\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a5943ae1-eb34-4c1f-91bf-99a54ff53e8a\")\nasset_id: ef322b5a-3387-5597-81c8-58a863dd7e67\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "rail_switcher",
+  "state": "Idle",
+  "request": {
+    "description": "Subtle breathing and one small fingertip adjustment on the mechanical hand console. Its buttons, dial and lever stay intact. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rail_switcher.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/rail_switcher.png",
+    "no_background": true,
+    "seed": 7921,
+    "enhance_prompt": false,
+    "subject_description": "rail switcher",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: fe2d8c7f-2631-4d5a-84f0-fd7f79ca43e7\njob_id: fe2d8c7f-2631-4d5a-84f0-fd7f79ca43e7\ndescription: Subtle breathing and one small fingertip adjustment on the mechanical hand console. Its buttons, dial and lever stay intact. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7921\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fe2d8c7f-2631-4d5a-84f0-fd7f79ca43e7\")\nasset_id: c19de092-881c-5e0b-a3f3-b87ef2b91345\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

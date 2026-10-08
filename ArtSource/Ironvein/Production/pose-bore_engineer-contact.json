@@ -1,0 +1,15 @@
+{
+  "id": "bore_engineer-contact",
+  "request": {
+    "description": "Change only the POSE: dwarf lunges towards LEFT with knees bent and torso leaning left. Both gloved hands push the existing intact drill launcher far LEFT at waist level, showing physical contact at full reach. Keep original goggles, face, grey beard, orange battery and entire steel drill bit. Full sprite remains in canvas with empty margin at left. No flash, fire, projectile or effect.",
+    "image_url": "Inputs/bore_engineer.png",
+    "no_background": true,
+    "seed": 7941
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 8b76ece6-4fb6-4d44-821b-da9e5a60d8ce\njob_id: 8b76ece6-4fb6-4d44-821b-da9e5a60d8ce\nmodel: pixen\nedit: Change only the POSE: dwarf lunges towards LEFT with knees bent and torso leaning left. Both gloved hands push the existing intact drill launcher far LEFT at waist level, showing physical contact at full reach. Keep original goggles, face, grey beard, orange battery and entire steel drill bit. Full sprite remains in canvas with empty margin at left. No flash, fire, projectile or effect.\nsource: 80x80px\nsize: 80x80px\ntransparent: True\nseed: 7941\nasset_id: 20c5128b-b971-5a7a-8529-a5b7a5708612\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8b76ece6-4fb6-4d44-821b-da9e5a60d8ce\")"
+    }
+  ]
+}

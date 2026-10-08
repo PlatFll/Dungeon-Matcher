@@ -34,8 +34,8 @@ public sealed class BoardLayoutController : MonoBehaviour
         float pixelsPerUnit = Vector3.Distance(origin, worldCamera.WorldToScreenPoint(Vector3.right));
         if (pixelsPerUnit <= 0) return;
         float sourcePPU = worldCamera.TryGetComponent(out PixelPerfectCamera ppc) ? ppc.assetsPPU : 64;
-        float fit = Mathf.Min(area.width / (visuals.OuterLocalWidth * sourcePPU),
-            area.height / (visuals.OuterLocalHeight * sourcePPU));
+        float fit = Mathf.Min(area.width / (visuals.LayoutLocalWidth * sourcePPU),
+            area.height / (visuals.LayoutLocalHeight * sourcePPU));
         float ratio = Mathf.Min(layout.Current.BoardTexelRatio, fit);
         if (ratio <= 0) return;
         PhysicalTexelRatio = ratio;

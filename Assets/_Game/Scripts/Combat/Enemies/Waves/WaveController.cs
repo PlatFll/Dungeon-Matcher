@@ -606,7 +606,8 @@ public sealed partial class WaveController :
 
         enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : nextLegacyEnemyId++;
         if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
-        if (enemy.Definition.EligibleZones.Contains("magical-forest") || enemy.Definition.EligibleZones.Contains("drowned-court"))
+        if (enemy.Definition.EligibleZones.Contains("magical-forest") || enemy.Definition.EligibleZones.Contains("drowned-court") ||
+            enemy.Definition.EligibleZones.Contains("ironvein-excavation"))
             enemyObject.AddComponent<ForestEnemyMotion>();
         bool successfullyBound =
             slot.BindEnemy(enemy);
@@ -638,6 +639,9 @@ public sealed partial class WaveController :
             );
         }
 
+        if (definition.oreWeaponEligible || definition.releasesOreOnDefeat)
+            enemyObject.AddComponent<EnemyOrePower>().Initialize(enemy, boardController, activeEnemies);
+
         if (definition.HasSpecialAbility)
         {
             if (definition.SpecialAbilityKind ==
@@ -662,6 +666,11 @@ public sealed partial class WaveController :
                     );
             }
         }
+
+        if (definition.SpecialAbilityKind == EnemySpecialAbilityKind.GrandDelver)
+            enemyObject.AddComponent<MineBossPresentation>().Initialize(enemy, enemyObject.GetComponent<MineEnemyAbility>());
+        if(enemyObject.GetComponent<EnemyOrePower>()!=null || enemyObject.GetComponent<MineEnemyAbility>()!=null)
+            enemyObject.AddComponent<MineEnemyPresentation>().Initialize(enemy);
 
         EnemyLifecycleVFX lifecycleVFX =
             enemyObject.GetComponent<

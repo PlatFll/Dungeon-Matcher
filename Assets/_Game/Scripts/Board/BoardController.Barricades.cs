@@ -60,6 +60,7 @@ public partial class BoardController
         public int RemainingDurability;
         public int MaximumDurability;
         public EnemyBarricadeStyle Style;
+        public MineStoneState MineStone;
         public int RootId, OpenRootSides;
         public int ThornSafeSide, ThornDamage;
         public long RootOwnerId;
@@ -164,7 +165,8 @@ public partial class BoardController
         bool protectSpecialGems = false,
         System.Action<bool> completed = null,
         System.Func<bool> isCancelled = null,
-        bool waitForAnimationImpact = false)
+        bool waitForAnimationImpact = false,
+        bool mineCore = false, System.Action<long> mineStonePlaced = null)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -214,6 +216,11 @@ public partial class BoardController
 
         remainingCapacity = Mathf.Min(remainingCapacity,
             BalanceV1.Current.maximumGlobalStructures - minedCellOwners.Count - barricadeCells.Count);
+        if (style == EnemyBarricadeStyle.MineStone)
+        {
+            if (!UsesMine) return false;
+            remainingCapacity = Mathf.Min(remainingCapacity, RemainingMineCapacity);
+        }
         if (remainingCapacity <= 0) return false;
 
         int requestedCount =
@@ -244,6 +251,7 @@ public partial class BoardController
                     Mathf.Max(1, durability),
 
                 BarricadeStyle = style,
+                MineCore = mineCore, MineStonePlaced = mineStonePlaced,
                 PreferStraightLine = preferStraightLine && requestedCount == barricadesPerUse,
                 ProtectSpecialGems = protectSpecialGems,
                 Completed = completed,
@@ -379,17 +387,17 @@ public partial class BoardController
     private IEnumerator ExecutePlaceBarricadesRequest(
         BoardMutationRequest request)
     {
-        if (request == null ||
+        if (request == null || (!request.NaturalMineStone && (
             request.OwnerActor == null ||
             request.OwnerActor.IsDefeated ||
-            request.OwnerInstanceId == 0)
+            request.OwnerInstanceId == 0)))
         {
             yield break;
         }
 
         var impactWait = WaitForBoardMutationAnimationImpact(request);
         while (impactWait.MoveNext()) yield return impactWait.Current;
-        if (IsAnimationRequestCancelled(request)) yield break;
+        if (!request.NaturalMineStone && IsAnimationRequestCancelled(request)) yield break;
 
         int remainingCapacity =
             request.MaximumOwnedBarricades -
@@ -400,6 +408,11 @@ public partial class BoardController
         // when this mutation owns the settled board, before reserving cells.
         remainingCapacity = Mathf.Min(remainingCapacity,
             BalanceV1.Current.maximumGlobalStructures - minedCellOwners.Count - barricadeCells.Count);
+        if (request.BarricadeStyle == EnemyBarricadeStyle.MineStone)
+        {
+            if (!UsesMine) yield break;
+            remainingCapacity = Mathf.Min(remainingCapacity, RemainingMineCapacity);
+        }
 
         if (remainingCapacity <= 0)
         {
@@ -488,6 +501,8 @@ public partial class BoardController
                         request.BarricadeDurability,
 
                     Style = request.BarricadeStyle,
+                    MineStone = request.BarricadeStyle == EnemyBarricadeStyle.MineStone
+                        ? NewMineStone(request.OwnerActor, request.BarricadeDurability) : null,
                     RootId = roots ? ++nextRootId : 0,
                     RootOwnerId = roots ? request.OwnerActor.PersistentId : 0,
                     RootSpreading = roots && request.RootSpreading
@@ -515,6 +530,11 @@ public partial class BoardController
             }
 
             selectedCells.Add(selectedCell);
+            if (state.MineStone != null)
+            {
+                state.MineStone.isCore = request.MineCore;
+                request.MineStonePlaced?.Invoke(state.MineStone.id);
+            }
             if(roots) candidates.RemoveAll(c=>Mathf.Abs(c.x-selectedCell.x)+Mathf.Abs(c.y-selectedCell.y)==1);
 
             gemsToDestroy.Add(
@@ -543,6 +563,7 @@ public partial class BoardController
         if (!request.WaitForAnimationImpact) MaterializeBarricades(selectedCells);
 
         yield return ResolveEnvironmentalBoardChange();
+        if (request.BarricadeStyle == EnemyBarricadeStyle.MineStone) MineChanged?.Invoke();
         if(roots)
         {
             foreach(var cell in selectedCells) if(barricadeCells.TryGetValue(cell,out var state)) SeedRoot(cell,state,request.OwnerActor);
@@ -569,12 +590,16 @@ public partial class BoardController
     private void DamageBarricadesAdjacentToClears(
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems = null)
-        => DamageBarricadesForClear(clearedGems,ignoredGems,false);
+        => DamageBarricadesFromSource(clearedGems,ignoredGems,false,true);
 
     private void DamageBarricadesForClear(
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems,
         bool deliberatePlayerClear = false)
+        => DamageBarricadesFromSource(clearedGems, ignoredGems, deliberatePlayerClear, false);
+
+    private void DamageBarricadesFromSource(HashSet<Gem> clearedGems, HashSet<Gem> ignoredGems,
+        bool deliberatePlayerClear, bool specialClear)
     {
         if(clearedGems!=null) foreach(var threat in gemSetThreats)
             if(threat.Vine && threat.Targets.Exists(g=>g!=null && clearedGems.Contains(g) && (ignoredGems==null || !ignoredGems.Contains(g))))
@@ -652,10 +677,13 @@ public partial class BoardController
                 continue;
             }
 
+            // Answering a charge consumes this interaction, never also hits its host.
+            if ((deliberatePlayerClear || specialClear) && DefuseMineCharge(state)) continue;
             int durabilityDamage = IsRoot(state) || state.Style==EnemyBarricadeStyle.AirCoffer
                 ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
 
             state.RemainingDurability -= durabilityDamage;
+            if (IsMineStone(state)) state.MineStone?.RecordHit(MineMove);
 
             if (state.RemainingDurability <= 0)
             {
@@ -1198,6 +1226,7 @@ public partial class BoardController
     private Sprite GetBarricadeSprite(
         BarricadeCellState state)
     {
+        if (IsMineStone(state)) return MineStoneSprite(state);
         if(state?.Style==EnemyBarricadeStyle.AirCoffer && GameplayThemeSkin.Current?.airCoffer!=null)
             return state.RemainingDurability>1
                 ? GameplayThemeSkin.Current.armoredAirCoffer ?? GameplayThemeSkin.Current.airCoffer
@@ -1261,6 +1290,9 @@ public partial class BoardController
     private static Color GetBarricadeFallbackColor(
         BarricadeCellState state)
     {
+        if (IsMineStone(state)) return state.MineStone?.stage == MineStoneStage.Obsidian
+            ? new Color(.18f,.16f,.22f) : state.MineStone?.stage == MineStoneStage.Hardened
+                ? new Color(.36f,.40f,.44f) : new Color(.66f,.58f,.43f);
         bool isLevelTwoStone =
             state != null &&
             state.Style ==

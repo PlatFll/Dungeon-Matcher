@@ -1,0 +1,708 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aac1eae8a627d42b5b41d508fea123, type: 3}
+  m_Name: ironvein-excavation
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
+  zoneId: ironvein-excavation
+  displayName: Ironvein Excavation
+  eligibleForLiveTravel: 1
+  eligibleForTesting: 1
+  affiliatedGem: 1
+  enemies:
+  - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+  - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+  - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+  - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+  - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+  - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+  - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+  - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+  - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+  - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+  - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+  - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+  - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
+  - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+  developmentEncounters:
+  - label: Ore network fixture
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Ore Hauler fixture
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Stonewright fixture
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Bore Engineer fixture
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Vein Surveyor fixture
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Powder Sapper fixture
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rail Switcher fixture
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Seismic Smith fixture
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Siege Machinist fixture
+    members:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Obsidian Sentinel fixture
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rivet Turret fixture
+    members:
+    - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Grand Delver fixture
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  liveEncounters:
+  - label: Rail patrol
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rivet lookout
+    members:
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Entrance patrol
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Loaded cart
+    members:
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 2
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Ore escort
+    members:
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rivet convoy
+    members:
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Shift change
+    members:
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 6
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Stonewright alone
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Stonewright + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Stonewright + rivet_gunner
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Ore Hauler alone
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    oncePerVisit: 0
+  - label: Ore Hauler + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    oncePerVisit: 0
+  - label: Ore Hauler + packbeetle
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    oncePerVisit: 0
+  - label: Siege Machinist alone
+    members:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    introduceByLocalWave: 10
+    requiredSeen:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    oncePerVisit: 1
+  - label: Siege Machinist + rivet_gunner
+    members:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    introduceByLocalWave: 10
+    requiredSeen:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    oncePerVisit: 1
+  - label: Vein Surveyor alone
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    firstLocalWave: 11
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    introduceByLocalWave: 12
+    requiredSeen:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    oncePerVisit: 0
+  - label: Vein Surveyor + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 11
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    introduceByLocalWave: 12
+    requiredSeen:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    oncePerVisit: 0
+  - label: Powder Sapper alone
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    firstLocalWave: 13
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    introduceByLocalWave: 14
+    requiredSeen:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    oncePerVisit: 0
+  - label: Powder Sapper + rivet_gunner
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 13
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    introduceByLocalWave: 14
+    requiredSeen:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    oncePerVisit: 0
+  - label: Rail Switcher alone
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    firstLocalWave: 15
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    introduceByLocalWave: 16
+    requiredSeen:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    oncePerVisit: 0
+  - label: Rail Switcher + packbeetle
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 15
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    introduceByLocalWave: 16
+    requiredSeen:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    oncePerVisit: 0
+  - label: Bore Engineer alone
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    firstLocalWave: 17
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    introduceByLocalWave: 18
+    requiredSeen:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    oncePerVisit: 0
+  - label: Bore Engineer + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 17
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    introduceByLocalWave: 18
+    requiredSeen:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    oncePerVisit: 0
+  - label: Seismic Smith alone
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    introduceByLocalWave: 20
+    requiredSeen:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    oncePerVisit: 0
+  - label: Seismic Smith + rivet_gunner
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    introduceByLocalWave: 20
+    requiredSeen:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    oncePerVisit: 0
+  - label: Obsidian Sentinel alone
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    firstLocalWave: 22
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    introduceByLocalWave: 24
+    requiredSeen:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    oncePerVisit: 1
+  - label: Obsidian Sentinel + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 22
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    introduceByLocalWave: 24
+    requiredSeen:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    oncePerVisit: 1
+  - label: Obsidian Sentinel + packbeetle
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    firstLocalWave: 22
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    introduceByLocalWave: 24
+    requiredSeen:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    oncePerVisit: 1
+  - label: The Grand Delver alone
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    firstLocalWave: 28
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    introduceByLocalWave: 30
+    requiredSeen:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    oncePerVisit: 1
+  - label: The Grand Delver + pickaxe_delver
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 28
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    introduceByLocalWave: 30
+    requiredSeen:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    oncePerVisit: 1
+  - label: The Grand Delver + rivet_gunner
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 28
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+    introduceByLocalWave: 30
+    requiredSeen:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    oncePerVisit: 1
+  - label: Powered cutters
+    members:
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 7
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Mason convoy
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 7
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Assay crew
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    firstLocalWave: 13
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Powder convoy
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 15
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Track crew
+    members:
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    firstLocalWave: 17
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Bore convoy
+    members:
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Faultline crew
+    members:
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: 9ca017fd708b95c4d84ab90b64039c25, type: 2}
+    firstLocalWave: 21
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Deep survey
+    members:
+    - {fileID: 11400000, guid: 543e32007362cb04d97caff1a34bfffb, type: 2}
+    - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 21
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Powder and pistons
+    members:
+    - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
+    - {fileID: 11400000, guid: 34e0b83bcd48dc84dbf55c002d2b0dfd, type: 2}
+    firstLocalWave: 23
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Mason and hammer
+    members:
+    - {fileID: 11400000, guid: 2451913749aeb6d47ae58adc4d26c939, type: 2}
+    - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    firstLocalWave: 25
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  encounterBudget: {fileID: 11400000, guid: eaafd773d7c920d43944feaaadf5c305, type: 2}
+  apexEnemy: {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
+  apexLocalWave: 30
+  affiliatedDamageMultiplier: 1.15
+  theme: {fileID: 11400000, guid: b6ef0cb591427af47841d4cd67a9f272, type: 2}
+  music: {fileID: 8300000, guid: 152b33f709466f9409226a5c1c85646d, type: 3}
+  growsVines: 0
+  periodicallyFloods: 0
+  floodMinimumMoves: 16
+  floodMaximumMoves: 18
+  initialAirBubbles: 5
+  emergencyAirCadenceMoves: 3
+  emergencyAirSupply: 1
+  criticalAirSupply: 2
+  criticalAirThreshold: 1
+  crumblesTiles: 0
+  maturesStone: 1
+  mineMovesPerStage: 3
+  maximumMineStones: 6
+  mineDrillCapacity: 4
+  crumbleCadenceMoves: 4
+  vineCadenceMoves: 2
+  maximumVineSpreadPerPulse: 2
+  maximumVineOverlays: 12

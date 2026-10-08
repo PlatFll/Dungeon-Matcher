@@ -1,0 +1,83 @@
+{
+  "name": "siege_machinist",
+  "source_job": "62aebf13-2827-4695-81d1-62bc80c1f002",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#030609": "#0A0D11",
+        "#090C0D": "#0A0D11",
+        "#0C0F11": "#0A0D11",
+        "#0F1215": "#0A0D11",
+        "#111518": "#0A0D11",
+        "#15191C": "#0A0D11",
+        "#191714": "#191D21",
+        "#1E2225": "#191D21",
+        "#21262B": "#191D21",
+        "#262B30": "#191D21",
+        "#313943": "#2C323A",
+        "#363E48": "#2C323A",
+        "#3B4450": "#2C323A",
+        "#363839": "#5B6269",
+        "#444648": "#5B6269",
+        "#545758": "#5B6269",
+        "#666D72": "#5B6269",
+        "#75787A": "#5B6269",
+        "#83878A": "#A0A5A9",
+        "#8D9497": "#A0A5A9",
+        "#B1B5B5": "#A0A5A9",
+        "#142B3A": "#173C57",
+        "#1D4B6D": "#173C57",
+        "#27587A": "#346687",
+        "#4982A3": "#346687",
+        "#52748E": "#346687",
+        "#6E8696": "#7BA4B8",
+        "#A8C4D7": "#7BA4B8",
+        "#241E19": "#32251A",
+        "#3C291D": "#32251A",
+        "#452D1C": "#32251A",
+        "#4D321F": "#32251A",
+        "#563621": "#32251A",
+        "#613E24": "#6D472A",
+        "#7A4E2D": "#6D472A",
+        "#845733": "#6D472A",
+        "#8F5C32": "#6D472A",
+        "#A16A3A": "#6D472A",
+        "#BD8648": "#B27946",
+        "#CB9664": "#B27946",
+        "#302D2A": "#473E36",
+        "#4E3928": "#473E36",
+        "#564D45": "#473E36",
+        "#5C4330": "#473E36",
+        "#6D6358": "#7B7166",
+        "#6E533C": "#7B7166",
+        "#897F75": "#7B7166",
+        "#978E83": "#7B7166",
+        "#A39C93": "#7B7166",
+        "#B7996D": "#C7BB9D",
+        "#E3C89D": "#C7BB9D",
+        "#A47F56": "#D3AB79",
+        "#D39C4C": "#A57336",
+        "#BF6B16": "#DD7E20",
+        "#E8972B": "#DD7E20"
+      },
+      "reason": "Normalize measured contour deviations and merge redundant close shades within iron, cloth, leather, beard and brass ramps. Preserve all native positions, silhouette, face and equipment."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: f68f5b1f-72b8-4ccf-8cd6-3ddd21896587\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1760 px changed\nsheet rows: frames [1]\npalette (21): #0a0d11ff x448, #6d472aff x351, #32251aff x248, #5b6269ff x240, #191d21ff x183, #2c323aff x161, #7b7166ff x159, #473e36ff x91, #b27946ff x78, #a0a5a9ff x48, #346687ff x45, #173c57ff x28, #8d643eff x21, #c7bb9dff x12, #d3ab79ff x10, #a57336ff x10, … +5 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/f68f5b1f-72b8-4ccf-8cd6-3ddd21896587/: image.png, frames.png, animation.gif\nnext: edit f68f5b1f-72b8-4ccf-8cd6-3ddd21896587 --changes […]"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "stonewright",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "She grips the mallet with both hands. Its orange core brightens and the square iron head opens one segment wider. She winds the mallet just above her shoulder, then slams it down in front of her with bent knees and a tiny tan dust puff. She lifts it back; the head folds to normal.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/stonewright.png",
+    "last_frame_url": "Inputs/stonewright.png",
+    "no_background": true,
+    "seed": 9102,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 77edd153-ad9d-4e57-a9de-5664149cd76c\njob_id: 77edd153-ad9d-4e57-a9de-5664149cd76c\ndescription: She grips the mallet with both hands. Its orange core brightens and the square iron head opens one segment wider. She winds the mallet just above her shoulder, then slams it down in front of her with bent knees and a tiny tan dust puff. She lifts it back; the head folds to normal.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9102\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"77edd153-ad9d-4e57-a9de-5664149cd76c\")\nasset_id: de261d7d-4a66-5990-86ce-6062f29b1c84\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

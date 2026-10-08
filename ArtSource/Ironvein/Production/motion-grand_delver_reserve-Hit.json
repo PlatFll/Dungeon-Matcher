@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "Hit",
+  "request": {
+    "description": "The mech briefly recoils through the knees and shoulders; the pilot braces on both controls. The heavy suit rocks backward slightly then steadies in its original grounded ready pose.",
+    "frame_count": 4,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9406,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot in battered steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 2ee8685e-5087-485f-be9d-aebbf07a18fb\njob_id: 2ee8685e-5087-485f-be9d-aebbf07a18fb\ndescription: The mech briefly recoils through the knees and shoulders; the pilot braces on both controls. The heavy suit rocks backward slightly then steadies in its original grounded ready pose.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9406\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2ee8685e-5087-485f-be9d-aebbf07a18fb\")\nasset_id: 32e8fbf5-a37a-57c8-8cb4-97de549e88df\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

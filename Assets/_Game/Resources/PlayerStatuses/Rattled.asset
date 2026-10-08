@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aff40d2e9ac4c77964725928895d727, type: 3}
+  m_Name: Rattled
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatusDefinition
+  kind: 7
+  displayName: Rattled
+  description: New Stagger buildup is halved for two accepted moves. Existing Stagger,
+    damage and energy are unchanged. Stone hits and drills do not cleanse it.
+  durationMoves: 2
+  multiplier: 0.5
+  damagePerMove: 0
+  icon: {fileID: 21300000, guid: 6124262fee5d03641a1e714e7e5e3771, type: 3}

@@ -105,6 +105,8 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private Texture2D runtimeTexture;
     private Sprite runtimeSquareSprite;
+    public float LayoutLocalWidth => OuterLocalWidth + 2 * (GameplayThemeSkin.Current?.boardPerimeterPadding ?? 0);
+    public float LayoutLocalHeight => OuterLocalHeight + 2 * (GameplayThemeSkin.Current?.boardPerimeterPadding ?? 0);
 
     public float OuterLocalWidth
     {

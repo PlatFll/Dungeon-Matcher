@@ -1,0 +1,9 @@
+{
+  "request": "80x80 input, mask x0 y30 w12 h28; restore clipped hammer only",
+  "result": [
+    {
+      "type": "text",
+      "text": "{\n  \"background_job_id\": \"d8dd6246-10f8-47c5-be94-fc2271f4358a\",\n  \"image_id\": \"dde6d456-4b49-5130-bd99-902766f58995\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"dde6d456-4b49-5130-bd99-902766f58995\",\n  \"job_id\": \"d8dd6246-10f8-47c5-be94-fc2271f4358a\",\n  \"image_size\": {\n    \"width\": 80,\n    \"height\": 80\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/d8dd6246-10f8-47c5-be94-fc2271f4358a/download\"\n}\nPoll get_image(job_id=\"d8dd6246-10f8-47c5-be94-fc2271f4358a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: cb92a3003fb27964ea7c7a29d119658a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8365431103588770278
+    second: ore_hauler_Death_0
+  - first:
+      213: 179250980270558934
+    second: ore_hauler_Death_1
+  - first:
+      213: 7832740583557944108
+    second: ore_hauler_Death_2
+  - first:
+      213: 2745810663224094372
+    second: ore_hauler_Death_3
+  - first:
+      213: -1739972268281298567
+    second: ore_hauler_Death_4
+  - first:
+      213: 7267636982276347866
+    second: ore_hauler_Death_5
+  - first:
+      213: -2683555070786578048
+    second: ore_hauler_Death_6
+  - first:
+      213: 2616952837619178204
+    second: ore_hauler_Death_7
+  - first:
+      213: 562661240729760585
+    second: ore_hauler_Death_8
+  - first:
+      213: -7492303671058336194
+    second: ore_hauler_Death_9
+  - first:
+      213: -4138117048792166469
+    second: ore_hauler_Death_10
+  - first:
+      213: -6442972638320943901
+    second: ore_hauler_Death_11
+  - first:
+      213: -2395469447237317644
+    second: ore_hauler_Death_12
+  - first:
+      213: -2495218201918857783
+    second: ore_hauler_Death_13
+  - first:
+      213: 5063382844553125709
+    second: ore_hauler_Death_14
+  - first:
+      213: 2810561267662209203
+    second: ore_hauler_Death_00
+  - first:
+      213: -8312443312549042336
+    second: ore_hauler_Death_01
+  - first:
+      213: 7360868664746383386
+    second: ore_hauler_Death_02
+  - first:
+      213: 5885483907128015481
+    second: ore_hauler_Death_03
+  - first:
+      213: -5077020682805157466
+    second: ore_hauler_Death_04
+  - first:
+      213: -1280312775079315913
+    second: ore_hauler_Death_05
+  - first:
+      213: 1396836770922607004
+    second: ore_hauler_Death_06
+  - first:
+      213: -5170383703531224188
+    second: ore_hauler_Death_07
+  - first:
+      213: 6114444148670138086
+    second: ore_hauler_Death_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ore_hauler_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b04a7af49e110720800000000000000
+      internalID: 2810561267662209203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06761f339d444ac80800000000000000
+      internalID: -8312443312549042336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1813801d0f072660800000000000000
+      internalID: 7360868664746383386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ab4af4e607da150800000000000000
+      internalID: 5885483907128015481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a16614969cca89b0800000000000000
+      internalID: -5077020682805157466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736b000805a6b3ee0800000000000000
+      internalID: -1280312775079315913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91bb0474af826310800000000000000
+      internalID: 1396836770922607004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4838d8e5a6b1f38b0800000000000000
+      internalID: -5170383703531224188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_Death_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e60378be8edad450800000000000000
+      internalID: 6114444148670138086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ore_hauler_Death_0: -8365431103588770278
+      ore_hauler_Death_00: 2810561267662209203
+      ore_hauler_Death_01: -8312443312549042336
+      ore_hauler_Death_02: 7360868664746383386
+      ore_hauler_Death_03: 5885483907128015481
+      ore_hauler_Death_04: -5077020682805157466
+      ore_hauler_Death_05: -1280312775079315913
+      ore_hauler_Death_06: 1396836770922607004
+      ore_hauler_Death_07: -5170383703531224188
+      ore_hauler_Death_08: 6114444148670138086
+      ore_hauler_Death_1: 179250980270558934
+      ore_hauler_Death_10: -4138117048792166469
+      ore_hauler_Death_11: -6442972638320943901
+      ore_hauler_Death_12: -2395469447237317644
+      ore_hauler_Death_13: -2495218201918857783
+      ore_hauler_Death_14: 5063382844553125709
+      ore_hauler_Death_2: 7832740583557944108
+      ore_hauler_Death_3: 2745810663224094372
+      ore_hauler_Death_4: -1739972268281298567
+      ore_hauler_Death_5: 7267636982276347866
+      ore_hauler_Death_6: -2683555070786578048
+      ore_hauler_Death_7: 2616952837619178204
+      ore_hauler_Death_8: 562661240729760585
+      ore_hauler_Death_9: -7492303671058336194
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

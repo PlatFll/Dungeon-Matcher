@@ -40,7 +40,7 @@ public partial class BoardController
 
     public bool IsValidBoardMemory(BoardCombatSnapshot saved)
     {
-        if (saved == null || saved.width != width || saved.height != height ||
+        if (saved == null || !MineEnvironmentState.Supports(saved) || saved.width != width || saved.height != height ||
             saved.cells == null || saved.cells.Count != width * height || saved.refillRandom == 0)
             return false;
         var positions = new HashSet<int>();
@@ -116,6 +116,7 @@ public partial class BoardController
             reopenedMines.RemoveAll(p=>p==entry.Key);
         }
         ReconcileAquaticMemory(saved, reopenedMines);
+        ReconcileMineMemory(saved, reopenedMines);
         isBusy = true;
         NotifyBoardActivity();
         pointerStartGem = null;

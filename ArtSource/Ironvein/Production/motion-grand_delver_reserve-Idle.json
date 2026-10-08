@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "Idle",
+  "request": {
+    "description": "Restrained heavy breathing and piston settling. The dwarf moves the cockpit controls by one pixel while the suit's knees settle. A tiny gray exhaust puff rises. Return to the exact grounded original pose.",
+    "frame_count": 4,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9403,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot in battered steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: d38ae275-f9f8-45a2-97cc-c6a96e2362e3\njob_id: d38ae275-f9f8-45a2-97cc-c6a96e2362e3\ndescription: Restrained heavy breathing and piston settling. The dwarf moves the cockpit controls by one pixel while the suit's knees settle. A tiny gray exhaust puff rises. Return to the exact grounded original pose.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9403\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d38ae275-f9f8-45a2-97cc-c6a96e2362e3\")\nasset_id: 55abfc26-84e8-5e30-ad44-65b2a097cc66\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

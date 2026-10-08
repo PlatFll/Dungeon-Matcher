@@ -1,0 +1,45 @@
+{
+  "id": "vein_surveyor",
+  "request": {
+    "description": "Dungeon Matcher native pixel-art STILL, one full-body three-quarter combat-ready enemy facing viewer-left on transparency. Whimsical, compact expressive fantasy cast. Native 64x64, grounded boots at row 62, all equipment within 2-pixel side margins. Short dwarven legs and wide torso where a dwarf. ONE-pixel #0A0D11 contour; broad connected 2-3-tone material clusters, matte top-left light, no gradient, antialias, dithering, blur, shadow outside sprite, scenery or text. Dark slate/cool iron, restrained brass, localized orange ore; distinct cloth and skin. Match source pixel density and shading, NOT its face or equipment. Older analytical dwarf with WHITE POINTED BEARD, tall soft folded navy miner cap and deep teal/brown jacket. One hand holds a large round amber MAGNIFYING GLASS by its short handle, clearly a lens; other hand holds a ROLLED GEOLOGY MAP. Small brass compass and map pouch. Thoughtful squint, slightly stooped. NO weapon, wizard staff, telescope, magical orb or technology gun.",
+    "width": 64,
+    "height": 64,
+    "seed": 7307,
+    "no_background": true,
+    "style_image": {
+      "url": "https://api.pixellab.ai/mcp/pixel-tools/83b4ef3b-7673-41fd-bab0-43d35af8abb8/image.png",
+      "usage_description": "Native shading, contour, scale and material simplicity reference only. Make the described DIFFERENT identity, prop, face and headgear; beetle is a low animal, not a dwarf."
+    },
+    "style_options": {
+      "outline": true,
+      "shading": true,
+      "detail": true,
+      "color_palette": false
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"64218784-1615-46a2-9ed4-2730b26c92ec\",\n  \"image_id\": \"38536374-0311-5e05-a95a-83d2146c806d\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"38536374-0311-5e05-a95a-83d2146c806d\",\n  \"job_id\": \"64218784-1615-46a2-9ed4-2730b26c92ec\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/64218784-1615-46a2-9ed4-2730b26c92ec/download\"\n}\nPoll get_image(job_id=\"64218784-1615-46a2-9ed4-2730b26c92ec\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "64218784-1615-46a2-9ed4-2730b26c92ec",
+      "image_id": "38536374-0311-5e05-a95a-83d2146c806d",
+      "status": "processing",
+      "source_image_id": "38536374-0311-5e05-a95a-83d2146c806d",
+      "job_id": "64218784-1615-46a2-9ed4-2730b26c92ec",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/64218784-1615-46a2-9ed4-2730b26c92ec/download"
+    },
+    "isError": false
+  }
+}

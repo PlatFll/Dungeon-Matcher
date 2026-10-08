@@ -219,7 +219,8 @@ public sealed class EnemyStagger : MonoBehaviour
         float before = staggerMeterNormalized;
         remainingBuildupGraceTime = CombatMoveClock.MoveEffects ? 1 : Mathf.Max(0f, buildupDecayDelay);
         moveLastHit = CombatMoveClock.EffectAction;
-        SetMeterNormalized(before + damageAmount / threshold);
+        float buildup = RunSession.Current?.Player?.Statuses.StaggerBuildupMultiplier ?? 1f;
+        SetMeterNormalized(before + damageAmount / threshold * buildup);
 
         float added = Mathf.Max(0f, staggerMeterNormalized - before);
 

@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "Death",
+  "request": {
+    "description": "The battered mech staggers, its knees fold and it slumps onto the floor. Its head and arms droop with a few tiny gray metal fragments falling away. The same dwarf slumps in the cockpit. Remain collapsed, with the orange engine light darkening.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9604,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf visible in steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west",
+    "last_frame_url": null
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 14996450-3d59-45fa-b738-7a5c8f3374f4\njob_id: 14996450-3d59-45fa-b738-7a5c8f3374f4\ndescription: The battered mech staggers, its knees fold and it slumps onto the floor. Its head and arms droop with a few tiny gray metal fragments falling away. The same dwarf slumps in the cockpit. Remain collapsed, with the orange engine light darkening.\nframes: 8\nsize: 112x112px\ntransparent: True\nseed: 9604\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"14996450-3d59-45fa-b738-7a5c8f3374f4\")\nasset_id: 2de8ff9f-1d7d-53b4-b110-1d44eb2d4596\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

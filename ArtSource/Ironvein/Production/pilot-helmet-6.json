@@ -1,0 +1,30 @@
+{
+  "index": 6,
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        20,
+        13,
+        28,
+        21
+      ],
+      "colors": {
+        "#FFD902": "#EB8C13",
+        "#FFFFF6": "#F6C35C",
+        "#FFB41B": "#923E10"
+      },
+      "reason": "Helmet lamp was incorrectly bright yellow in the powered strike. Preserve lamp geometry while restoring its restrained original amber ramp; weapon flare outside this region remains."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 5cfe6bef-ffda-49aa-b1ba-2e107ccaea24\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 14 px changed\nsheet rows: frames [1]\npalette (27): #794e2cff x333, #0a0d11ff x331, #563622ff x220, #eb8c13ff x167, #535d68ff x162, #fefedcff x153, #353b41ff x107, #af7231ff x83, #1c2022ff x82, #d1a571ff x46, #aab0b4ff x42, #77818bff x31, #36281fff x29, #272b2fff x27, #c18e59ff x21, #5f4c3dff x14, … +11 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/5cfe6bef-ffda-49aa-b1ba-2e107ccaea24/: image.png, frames.png, animation.gif\nnext: edit 5cfe6bef-ffda-49aa-b1ba-2e107ccaea24 --changes […]"
+    }
+  ]
+}

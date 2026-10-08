@@ -1,0 +1,455 @@
+{
+  "source": ".utmp/ForestValidation/85c585b9-5c98-4592-9a2f-d50c54a19472.xml",
+  "sha256": "d143504f43b9003ed96a733891f8e1779179e831dcd7054ec8922ccc566c566a",
+  "summary": {
+    "result": "Failed(Child)",
+    "total": "55",
+    "passed": "54",
+    "failed": "1",
+    "skipped": "0",
+    "duration": "21.9117853"
+  },
+  "tests": [
+    {
+      "fullname": "CombatAudioTests.AllProductionCuesHaveShortMonoAssetsAndPositiveMixValues",
+      "result": "Passed",
+      "duration": "0.035612",
+      "start-time": "2026-10-08 06:37:03Z",
+      "end-time": "2026-10-08 06:37:03Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinAcceptedMovesResumeAndTravelCleanStoneState",
+      "result": "Passed",
+      "duration": "8.108557",
+      "start-time": "2026-10-08 06:37:03Z",
+      "end-time": "2026-10-08 06:37:11Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinAssayFizzlesIfAnotherSourceAlreadyAdvancedItsStone",
+      "result": "Passed",
+      "duration": "7.397462",
+      "start-time": "2026-10-08 06:37:11Z",
+      "end-time": "2026-10-08 06:37:18Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinBoreChoosesEmptyLaneResumesThenHitsOnceAndReleasesBasics",
+      "result": "Passed",
+      "duration": "9.833979",
+      "start-time": "2026-10-08 06:37:18Z",
+      "end-time": "2026-10-08 06:37:28Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinCaveScreenFitsFourPortraitsAndSafeInset",
+      "result": "Passed",
+      "duration": "7.028164",
+      "start-time": "2026-10-08 06:37:28Z",
+      "end-time": "2026-10-08 06:37:35Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinChannelStaggerAndDefeatCancelWithoutDamageOrStaleBoardWork",
+      "result": "Passed",
+      "duration": "10.380417",
+      "start-time": "2026-10-08 06:37:35Z",
+      "end-time": "2026-10-08 06:37:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverCoreTakesThreeOrdinaryHitsAndStaggersOnBreak",
+      "result": "Passed",
+      "duration": "9.889712",
+      "start-time": "2026-10-08 06:37:46Z",
+      "end-time": "2026-10-08 06:37:55Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverCycleCoreContinueAndSingleHeavyImpact",
+      "result": "Passed",
+      "duration": "13.554434",
+      "start-time": "2026-10-08 06:37:55Z",
+      "end-time": "2026-10-08 06:38:09Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverDefaultDefeatIsFinalWithoutExperimentalRemount",
+      "result": "Passed",
+      "duration": "5.784157",
+      "start-time": "2026-10-08 06:38:09Z",
+      "end-time": "2026-10-08 06:38:15Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverFinalResponseDrillBreaksCoreBeforeImpact",
+      "result": "Passed",
+      "duration": "12.239113",
+      "start-time": "2026-10-08 06:38:15Z",
+      "end-time": "2026-10-08 06:38:27Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverPilotCanDieEarlyWithoutRewardsOnSuitBreak",
+      "result": "Passed",
+      "duration": "7.735222",
+      "start-time": "2026-10-08 06:38:27Z",
+      "end-time": "2026-10-08 06:38:35Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverPilotContinueAndOneWeakerReserveSuit",
+      "result": "Passed",
+      "duration": "10.030479",
+      "start-time": "2026-10-08 06:38:35Z",
+      "end-time": "2026-10-08 06:38:45Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDelverSuitBreakCancelsPendingCoreAndDoesNotConsumeItsPower",
+      "result": "Passed",
+      "duration": "11.122919",
+      "start-time": "2026-10-08 06:38:45Z",
+      "end-time": "2026-10-08 06:38:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDrillChargeDeduplicatesManualMatchesAndSurvivesContinue",
+      "result": "Passed",
+      "duration": "7.803953",
+      "start-time": "2026-10-08 06:38:56Z",
+      "end-time": "2026-10-08 06:39:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDrillProofFitsEdgesAndLeavesSigilSidesClear",
+      "result": "Passed",
+      "duration": "5.871584",
+      "start-time": "2026-10-08 06:39:04Z",
+      "end-time": "2026-10-08 06:39:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinDrillsPenetrateObsidianAndCrossOnceWithoutRewards",
+      "result": "Passed",
+      "duration": "8.790273",
+      "start-time": "2026-10-08 06:39:10Z",
+      "end-time": "2026-10-08 06:39:18Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinExtractionReturnsEachActualTierWithoutPlayerRewards",
+      "result": "Passed",
+      "duration": "7.318610",
+      "start-time": "2026-10-08 06:39:18Z",
+      "end-time": "2026-10-08 06:39:26Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinFourZoneTravelCleansSourceAndPreservesResources",
+      "result": "Passed",
+      "duration": "23.584352",
+      "start-time": "2026-10-08 06:39:26Z",
+      "end-time": "2026-10-08 06:39:49Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinFullDrillNeverStopsAtTheFirstOfTwoObsidianStones",
+      "result": "Passed",
+      "duration": "6.558353",
+      "start-time": "2026-10-08 06:39:49Z",
+      "end-time": "2026-10-08 06:39:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinHaulerStonewrightAssayAndSwitchUseOwnedBoardQueue",
+      "result": "Passed",
+      "duration": "19.333349",
+      "start-time": "2026-10-08 06:39:56Z",
+      "end-time": "2026-10-08 06:40:15Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinMachinistCapsOwnedTurretsAndTheySurviveBuilderContinue",
+      "result": "Passed",
+      "duration": "14.991072",
+      "start-time": "2026-10-08 06:40:15Z",
+      "end-time": "2026-10-08 06:40:30Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinMachinistsNeverBorrowOwnershipOrReplaceOccupiedSlots",
+      "result": "Passed",
+      "duration": "9.363990",
+      "start-time": "2026-10-08 06:40:30Z",
+      "end-time": "2026-10-08 06:40:40Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinManualIntakeLaunchWaitsForActorWorkAndKeepsBoardOwned",
+      "result": "Passed",
+      "duration": "6.783724",
+      "start-time": "2026-10-08 06:40:40Z",
+      "end-time": "2026-10-08 06:40:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinMinibossProofShowsOwnedTurretsAndReadableOreStatus",
+      "result": "Passed",
+      "duration": "11.592042",
+      "start-time": "2026-10-08 06:40:46Z",
+      "end-time": "2026-10-08 06:40:58Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinNaturalLessonAndEncounterHistoryContinueOnce",
+      "result": "Passed",
+      "duration": "8.751462",
+      "start-time": "2026-10-08 06:40:58Z",
+      "end-time": "2026-10-08 06:41:07Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinOreBoostAppliesToBothHitsOfOneSequenceOnly",
+      "result": "Passed",
+      "duration": "7.262354",
+      "start-time": "2026-10-08 06:41:07Z",
+      "end-time": "2026-10-08 06:41:14Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinOreRefreshesWithoutStackingAndSurvivesContinue",
+      "result": "Passed",
+      "duration": "7.837468",
+      "start-time": "2026-10-08 06:41:14Z",
+      "end-time": "2026-10-08 06:41:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinPackbeetleDeathPowersEveryDrillAndLivingEligibleAllyOnce",
+      "result": "Passed",
+      "duration": "7.674567",
+      "start-time": "2026-10-08 06:41:22Z",
+      "end-time": "2026-10-08 06:41:30Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinPoweredSpriteContactHitsOnceThenReturnsToNormal",
+      "result": "Passed",
+      "duration": "7.595727",
+      "start-time": "2026-10-08 06:41:30Z",
+      "end-time": "2026-10-08 06:41:37Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinQueuedSmallDrillCancelsIfCasterStaggersBeforeExecution",
+      "result": "Passed",
+      "duration": "5.695909",
+      "start-time": "2026-10-08 06:41:37Z",
+      "end-time": "2026-10-08 06:41:43Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinRattledHalvesNewBuildupSurvivesDrillsAndExpiresAfterTwoMoves",
+      "result": "Passed",
+      "duration": "10.446527",
+      "start-time": "2026-10-08 06:41:43Z",
+      "end-time": "2026-10-08 06:41:53Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSapperDefusesWithoutHostDamageAndExplosionAlwaysHitsTwice",
+      "result": "Passed",
+      "duration": "13.464162",
+      "start-time": "2026-10-08 06:41:53Z",
+      "end-time": "2026-10-08 06:42:07Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSapperFuseSurvivesContinueAndDealsOnePlayerPacket",
+      "result": "Passed",
+      "duration": "10.729823",
+      "start-time": "2026-10-08 06:42:07Z",
+      "end-time": "2026-10-08 06:42:18Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSeed10101UsesProductionCombatAndRecordsPacing",
+      "result": "Passed",
+      "duration": "85.571993",
+      "start-time": "2026-10-08 06:42:18Z",
+      "end-time": "2026-10-08 06:43:43Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSeed9121UsesProductionCombatAndRecordsPacing",
+      "result": "Passed",
+      "duration": "112.356942",
+      "start-time": "2026-10-08 06:43:43Z",
+      "end-time": "2026-10-08 06:45:36Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSentinelExtractsCurrentMaterialAndKeepsPowerThroughContinue",
+      "result": "Passed",
+      "duration": "13.111849",
+      "start-time": "2026-10-08 06:45:36Z",
+      "end-time": "2026-10-08 06:45:49Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSentinelLostExtractionTargetFizzlesWithoutStaggerOrPower",
+      "result": "Passed",
+      "duration": "7.451124",
+      "start-time": "2026-10-08 06:45:49Z",
+      "end-time": "2026-10-08 06:45:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSentinelOnlyActualDrillFiringInterruptsEvenOnLastResponseMove",
+      "result": "Passed",
+      "duration": "8.862679",
+      "start-time": "2026-10-08 06:45:56Z",
+      "end-time": "2026-10-08 06:46:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSmallDrillBreaksFirstStoneButNeverTouchesSecond",
+      "result": "Passed",
+      "duration": "6.622044",
+      "start-time": "2026-10-08 06:46:05Z",
+      "end-time": "2026-10-08 06:46:12Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinSmallDrillPresentationUsesActualStopAndPauses",
+      "result": "Passed",
+      "duration": "7.089898",
+      "start-time": "2026-10-08 06:46:12Z",
+      "end-time": "2026-10-08 06:46:19Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinStoneHitIsDeduplicatedAndKeepsObsidianMaterial",
+      "result": "Passed",
+      "duration": "6.262494",
+      "start-time": "2026-10-08 06:46:19Z",
+      "end-time": "2026-10-08 06:46:25Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinStonesRespectCapsSpecialsAndMatureWithStableIdentity",
+      "result": "Passed",
+      "duration": "6.657546",
+      "start-time": "2026-10-08 06:46:25Z",
+      "end-time": "2026-10-08 06:46:32Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.IronveinWholeRosterContactsAndPauseUseTheirNativeFrames",
+      "result": "Passed",
+      "duration": "24.463282",
+      "start-time": "2026-10-08 06:46:32Z",
+      "end-time": "2026-10-08 06:46:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinArtTests.IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+      "result": "Passed",
+      "duration": "0.048308",
+      "start-time": "2026-10-08 06:46:56Z",
+      "end-time": "2026-10-08 06:46:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinArtTests.IronveinImportedAttackEventsUseTheReviewedContactFrames",
+      "result": "Passed",
+      "duration": "0.001778",
+      "start-time": "2026-10-08 06:46:56Z",
+      "end-time": "2026-10-08 06:46:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinArtTests.IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+      "result": "Passed",
+      "duration": "0.006793",
+      "start-time": "2026-10-08 06:46:56Z",
+      "end-time": "2026-10-08 06:46:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinEncounterTests.IronveinRecordsOnlySuccessfulSpawnsAndKeepsBoundedHistory",
+      "result": "Passed",
+      "duration": "0.101385",
+      "start-time": "2026-10-08 06:46:56Z",
+      "end-time": "2026-10-08 06:46:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinEncounterTests.IronveinSeededTeachingHasVariationReliefBudgetsAndNoSummonRecipes",
+      "result": "Passed",
+      "duration": "0.334351",
+      "start-time": "2026-10-08 06:46:56Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.BossSnapshotRejectsFutureAndImpossibleRemountButAcceptsPreviousMineSchema",
+      "result": "Passed",
+      "duration": "0.000484",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.MinePayloadRejectsFutureVersionWithoutRejectingOlderZones",
+      "result": "Passed",
+      "duration": "0.000963",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.MineStubIsTestingOnlyAndUsesProvisionalSerializedTuning",
+      "result": "Failed",
+      "duration": "0.002605",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0",
+      "failure": "  Expected: False\n  But was:  True\n"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneContinuationKeepsAgeAndHitWithoutReplayingAnAction",
+      "result": "Passed",
+      "duration": "0.000366",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneHitResetsAgeAndCannotHardenOnThatAction",
+      "result": "Passed",
+      "duration": "0.000141",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneMaturesOncePerAcceptedMoveAndStopsAtObsidian",
+      "result": "Passed",
+      "duration": "0.000488",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinThemeTests.IronveinThemeUsesOwnNativeMaterialsAndSettingsAwareAudio",
+      "result": "Passed",
+      "duration": "0.002922",
+      "start-time": "2026-10-08 06:46:57Z",
+      "end-time": "2026-10-08 06:46:57Z",
+      "asserts": "0"
+    }
+  ]
+}

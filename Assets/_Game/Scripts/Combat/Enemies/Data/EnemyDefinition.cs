@@ -7,6 +7,25 @@ using UnityEngine.Serialization;
 )]
 public sealed class EnemyDefinition : ScriptableObject
 {
+    [Header("Ironvein ore network")]
+    public bool oreWeaponEligible;
+    public bool releasesOreOnDefeat;
+    public CombatSoundCue mineBasicSound = CombatSoundCue.MineHammer;
+    [Min(1f)] public float oreAttackMultiplier = 1.3f;
+    [Min(1)] public int mineWarningMoves = 2;
+    [Min(0)] public int mineAbilityDamage = 20;
+    public EnemyDefinition mineTurret;
+    [Range(1,2)] public int maximumMineTurrets = 2;
+    public Vector3 mineExtractionMultipliers = new Vector3(1.3f,1.6f,2f);
+    [Min(1f)] public float mineObsidianSlamMultiplier = 1.5f;
+    [Header("Grand Delver experimental remount (pending design review)")]
+    public bool mineEnableRemount;
+    [Tooltip("Optional native phase art. Missing presentation never changes boss rules.")]
+    public RuntimeAnimatorController minePilotController, mineReserveController;
+    public Sprite minePilotSprite, mineReserveSprite;
+    [Min(1)] public int minePilotMoves = 3;
+    [Range(.05f,.5f)] public float minePilotHealthFraction = .2f;
+    [Range(.1f,.75f)] public float mineReserveHealthFraction = .5f;
     [Header("Optional shared player debuff (unassigned in the production roster)")]
     public PlayerStatusDefinition appliedPlayerStatus;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]

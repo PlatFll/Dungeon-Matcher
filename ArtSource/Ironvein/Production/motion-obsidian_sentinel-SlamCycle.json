@@ -1,0 +1,23 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "SlamCycle",
+  "request": {
+    "description": "The iron golem draws both massive fists upward beside its shoulders, bends its knees and pauses braced. It then drives both fists toward the ground in one heavy downward slam, with a compact tan dust puff under the fists. It lifts both arms and stands back into its original ready pose.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/obsidian_sentinel.png",
+    "last_frame_url": "Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 9207,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 27a9f978-4202-4a36-8df5-202111fa8d62\njob_id: 27a9f978-4202-4a36-8df5-202111fa8d62\ndescription: The iron golem draws both massive fists upward beside its shoulders, bends its knees and pauses braced. It then drives both fists toward the ground in one heavy downward slam, with a compact tan dust puff under the fists. It lifts both arms and stands back into its original ready pose.\nframes: 12\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9207\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"27a9f978-4202-4a36-8df5-202111fa8d62\")\nasset_id: 29051b68-ba9a-5313-99b7-80776d01ffed\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

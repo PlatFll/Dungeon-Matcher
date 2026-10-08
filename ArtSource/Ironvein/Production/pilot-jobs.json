@@ -1,0 +1,85 @@
+[
+  {
+    "id": "pickaxe_delver",
+    "status": "request_rejected_no_job",
+    "error": "error: 1 validation error for RequestGenerateImageProFlash\n  Value error, Style image must fit the native canvas. Crop the reference or choose a larger supported canvas. [type=value_error, input_value={'version': 'v0.1.0+mcp',...g': True}, 'seed': 7101}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  },
+  {
+    "id": "ore_hauler",
+    "status": "request_rejected_no_job",
+    "error": "error: 1 validation error for RequestGenerateImageProFlash\n  Value error, Style image must fit the native canvas. Crop the reference or choose a larger supported canvas. [type=value_error, input_value={'version': 'v0.1.0+mcp',...g': True}, 'seed': 7104}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  },
+  {
+    "id": "bore_engineer",
+    "status": "request_rejected_no_job",
+    "error": "error: 1 validation error for RequestGenerateImageProFlash\n  Value error, Style image must fit the native canvas. Crop the reference or choose a larger supported canvas. [type=value_error, input_value={'version': 'v0.1.0+mcp',...g': True}, 'seed': 7106}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  },
+  {
+    "id": "grand_delver",
+    "status": "processing",
+    "background_job_id": "85dcceb2-4fe0-4e94-952a-af2efb8ebade",
+    "image_id": "0fdd71cc-ecb1-5b62-8e41-2d7180393b4a",
+    "source_image_id": "0fdd71cc-ecb1-5b62-8e41-2d7180393b4a",
+    "job_id": "85dcceb2-4fe0-4e94-952a-af2efb8ebade",
+    "image_size": {
+      "width": 96,
+      "height": 96
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/85dcceb2-4fe0-4e94-952a-af2efb8ebade/download"
+  },
+  {
+    "id": "pickaxe_delver",
+    "status": "processing",
+    "background_job_id": "7d9c02f2-81a7-4bfb-9788-fe5600880585",
+    "image_id": "e4b5a837-ad69-53e8-8a29-ca7bac7727aa",
+    "source_image_id": "e4b5a837-ad69-53e8-8a29-ca7bac7727aa",
+    "job_id": "7d9c02f2-81a7-4bfb-9788-fe5600880585",
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/7d9c02f2-81a7-4bfb-9788-fe5600880585/download"
+  },
+  {
+    "id": "ore_hauler",
+    "status": "processing",
+    "background_job_id": "c16f52ce-bfd1-4739-94d4-b88b33c10700",
+    "image_id": "d584e6ec-dacc-5379-8981-dcd8b39f3bb5",
+    "source_image_id": "d584e6ec-dacc-5379-8981-dcd8b39f3bb5",
+    "job_id": "c16f52ce-bfd1-4739-94d4-b88b33c10700",
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/c16f52ce-bfd1-4739-94d4-b88b33c10700/download"
+  },
+  {
+    "id": "bore_engineer",
+    "status": "processing",
+    "background_job_id": "fcfe150c-7a39-49eb-82b6-0fa1ac2ebce7",
+    "image_id": "0623a416-943d-5d15-9b75-d655ce4b4c26",
+    "source_image_id": "0623a416-943d-5d15-9b75-d655ce4b4c26",
+    "job_id": "fcfe150c-7a39-49eb-82b6-0fa1ac2ebce7",
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/fcfe150c-7a39-49eb-82b6-0fa1ac2ebce7/download"
+  }
+]

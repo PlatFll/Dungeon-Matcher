@@ -1,0 +1,23 @@
+{
+  "id": "seismic_smith",
+  "state": "Hit-v2",
+  "request": {
+    "description": "His heavy torso recoils backward two pixels, knees flex and elbows tense around the same sledgehammer, then he regains his original stance.",
+    "frame_count": 4,
+    "first_frame_url": "Inputs/seismic_smith-repaired.png",
+    "last_frame_url": "Inputs/seismic_smith-repaired.png",
+    "no_background": true,
+    "seed": 8061,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: fd0e8e34-d7b2-412a-bc32-c9f79023273c\njob_id: fd0e8e34-d7b2-412a-bc32-c9f79023273c\ndescription: His heavy torso recoils backward two pixels, knees flex and elbows tense around the same sledgehammer, then he regains his original stance.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 8061\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fd0e8e34-d7b2-412a-bc32-c9f79023273c\")\nasset_id: 99cd8ecf-af9a-5bc3-af74-a83e2135a8ca\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

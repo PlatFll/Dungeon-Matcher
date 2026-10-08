@@ -67,6 +67,13 @@ public sealed class CombatAudioController : MonoBehaviour
         return true;
     }
 
+    // Mechanism presentation shares the existing voice budget, pause/restore
+    // suppression, cooldowns and independent SFX preference.
+    public static void PlayMechanism(CombatSoundCue cue)
+    {
+        if(instance!=null && instance.isActiveAndEnabled) instance.Queue(cue);
+    }
+
     private void Awake()
     {
         if (instance != null && instance != this) { enabled = false; return; }

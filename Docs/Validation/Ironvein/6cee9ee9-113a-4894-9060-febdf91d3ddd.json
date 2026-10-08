@@ -1,0 +1,78 @@
+{
+  "source": ".utmp/ForestValidation/6cee9ee9-113a-4894-9060-febdf91d3ddd.xml",
+  "sha256": "76de95813f5e04690797b1c921e9112a330108d099c047ced3756d6619683166",
+  "summary": {
+    "result": "Passed",
+    "total": "8",
+    "passed": "8",
+    "failed": "0",
+    "skipped": "0",
+    "duration": "0.565382"
+  },
+  "tests": [
+    {
+      "fullname": "IronveinEncounterTests.IronveinRecordsOnlySuccessfulSpawnsAndKeepsBoundedHistory",
+      "result": "Passed",
+      "duration": "0.167123",
+      "start-time": "2026-10-08 06:48:21Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinEncounterTests.IronveinSeededTeachingHasVariationReliefBudgetsAndNoSummonRecipes",
+      "result": "Passed",
+      "duration": "0.318869",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.BossSnapshotRejectsFutureAndImpossibleRemountButAcceptsPreviousMineSchema",
+      "result": "Passed",
+      "duration": "0.000335",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.IronveinLiveDestinationHasCompleteAssetsAndProvisionalSerializedTuning",
+      "result": "Passed",
+      "duration": "0.001378",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.MinePayloadRejectsFutureVersionWithoutRejectingOlderZones",
+      "result": "Passed",
+      "duration": "0.001216",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneContinuationKeepsAgeAndHitWithoutReplayingAnAction",
+      "result": "Passed",
+      "duration": "0.001070",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneHitResetsAgeAndCannotHardenOnThatAction",
+      "result": "Passed",
+      "duration": "0.000168",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "IronveinFoundationTests.StoneMaturesOncePerAcceptedMoveAndStopsAtObsidian",
+      "result": "Passed",
+      "duration": "0.000486",
+      "start-time": "2026-10-08 06:48:22Z",
+      "end-time": "2026-10-08 06:48:22Z",
+      "asserts": "0"
+    }
+  ]
+}

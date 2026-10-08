@@ -1,0 +1,23 @@
+{
+  "id": "packbeetle",
+  "state": "AutoAttack",
+  "request": {
+    "description": "A quick grounded beetle bite-and-ram. Six legs brace and body lowers, small mandibles open, front head thrusts sharply left one short beat then withdraws, legs recover to exact original stance. Ore cargo and leather harness stay attached and unchanged. No airborne hop, new legs, fire or death spill.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/packbeetle.png",
+    "last_frame_url": "same native input",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 7703,
+    "enhance_prompt": false,
+    "subject_description": "packbeetle",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded original ready stance at bottom-center"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 7cb96d2e-18c2-4823-9225-ce329e675b19\njob_id: 7cb96d2e-18c2-4823-9225-ce329e675b19\ndescription: A quick grounded beetle bite-and-ram. Six legs brace and body lowers, small mandibles open, front head thrusts sharply left one short beat then withdraws, legs recover to exact original stance. Ore cargo and leather harness stay attached and unchanged. No airborne hop, new legs, fire or death spill.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7703\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7cb96d2e-18c2-4823-9225-ce329e675b19\")\nasset_id: c35f3c98-333d-5bc7-a791-444222fc5dac\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

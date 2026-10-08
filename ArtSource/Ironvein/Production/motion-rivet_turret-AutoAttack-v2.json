@@ -1,0 +1,22 @@
+{
+  "id": "rivet_turret",
+  "state": "AutoAttack-v2",
+  "request": {
+    "description": "Turret braces on three feet, barrel recoils sharply backward while one tiny pale yellow muzzle flash fires LEFT, piston snaps back then settles to its starting position. Mechanical shot, same stubby barrel and orange battery, no added guns.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_turret.png",
+    "no_background": true,
+    "seed": 7910,
+    "enhance_prompt": false,
+    "subject_description": "rivet turret",
+    "initial_pose": "original grounded combat ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e4ecfa10-6a6c-4bc8-a5fa-1c9af0590cad\njob_id: e4ecfa10-6a6c-4bc8-a5fa-1c9af0590cad\ndescription: Turret braces on three feet, barrel recoils sharply backward while one tiny pale yellow muzzle flash fires LEFT, piston snaps back then settles to its starting position. Mechanical shot, same stubby barrel and orange battery, no added guns.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 7910\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e4ecfa10-6a6c-4bc8-a5fa-1c9af0590cad\")\nasset_id: fe595f02-27f5-527a-9abc-695ffe5903e0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

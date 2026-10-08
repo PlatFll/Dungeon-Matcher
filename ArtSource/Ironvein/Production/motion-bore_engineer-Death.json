@@ -1,0 +1,22 @@
+{
+  "id": "bore_engineer",
+  "state": "Death",
+  "request": {
+    "description": "The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/bore_engineer.png",
+    "no_background": true,
+    "seed": 8003,
+    "enhance_prompt": false,
+    "subject_description": "bore engineer",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: ed57bfb3-cb64-42b2-9825-8a9f9df16119\njob_id: ed57bfb3-cb64-42b2-9825-8a9f9df16119\ndescription: The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8003\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ed57bfb3-cb64-42b2-9825-8a9f9df16119\")\nasset_id: e34c962a-323c-5872-ab98-6e672ec874ec\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

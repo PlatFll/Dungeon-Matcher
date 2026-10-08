@@ -1,0 +1,23 @@
+{
+  "id": "powder_sapper",
+  "state": "Idle",
+  "request": {
+    "description": "Subtle breathing with a tiny elbow shift as he steadies the small copper detonator and square charge. Fuse remains unlit. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/powder_sapper.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/powder_sapper.png",
+    "no_background": true,
+    "seed": 7920,
+    "enhance_prompt": false,
+    "subject_description": "powder sapper",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b3d5a733-9983-49e5-9361-8b6feb9ba0c5\njob_id: b3d5a733-9983-49e5-9361-8b6feb9ba0c5\ndescription: Subtle breathing with a tiny elbow shift as he steadies the small copper detonator and square charge. Fuse remains unlit. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7920\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b3d5a733-9983-49e5-9361-8b6feb9ba0c5\")\nasset_id: 3e52864d-fc04-505b-9a3e-988f31532216\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

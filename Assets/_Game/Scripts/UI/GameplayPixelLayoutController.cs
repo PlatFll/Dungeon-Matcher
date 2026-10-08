@@ -145,7 +145,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     {
         if (board == null || TopHud == null || BoardArea == null || BottomHud == null) return;
         Vector2 screen = new Vector2(Screen.width, Screen.height);
-        Vector2 source = new Vector2(board.OuterLocalWidth, board.OuterLocalHeight) * AssetsPPU;
+        Vector2 source = new Vector2(board.LayoutLocalWidth, board.LayoutLocalHeight) * AssetsPPU;
         Rect safe = Screen.safeArea;
         Rect canvasRect = canvas.pixelRect;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD

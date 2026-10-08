@@ -1,0 +1,23 @@
+{
+  "id": "siege_machinist",
+  "state": "Idle",
+  "request": {
+    "description": "Slow breathing under heavy work clothes; grips the same large wrench steadily. Beard tips move by one pixel. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/siege_machinist.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 7922,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 44d4d6e6-622a-4af8-bf75-daac5de13c6a\njob_id: 44d4d6e6-622a-4af8-bf75-daac5de13c6a\ndescription: Slow breathing under heavy work clothes; grips the same large wrench steadily. Beard tips move by one pixel. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7922\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"44d4d6e6-622a-4af8-bf75-daac5de13c6a\")\nasset_id: dcd3804c-457e-507a-bb1a-2960df5e5212\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

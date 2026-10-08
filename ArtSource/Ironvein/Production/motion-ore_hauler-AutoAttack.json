@@ -1,0 +1,23 @@
+{
+  "id": "ore_hauler",
+  "state": "AutoAttack",
+  "request": {
+    "description": "One short heavy leftward punch with the front gloved hand while retaining the small crystal, shoulders twist into the punch, recoil then recover to the original ready stance. Other hand holds backpack strap; pack remains loaded and attached. Grounded boots, no throwing or new weapon, no fire.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/ore_hauler.png",
+    "last_frame_url": "same native input",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 7704,
+    "enhance_prompt": false,
+    "subject_description": "ore hauler",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded original ready stance at bottom-center"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: fb55c5a7-cd45-4822-8ebc-31d9fadcbbe4\njob_id: fb55c5a7-cd45-4822-8ebc-31d9fadcbbe4\ndescription: One short heavy leftward punch with the front gloved hand while retaining the small crystal, shoulders twist into the punch, recoil then recover to the original ready stance. Other hand holds backpack strap; pack remains loaded and attached. Grounded boots, no throwing or new weapon, no fire.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7704\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fb55c5a7-cd45-4822-8ebc-31d9fadcbbe4\")\nasset_id: a613000d-0e05-5cd4-ad65-365f670c6eb7\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

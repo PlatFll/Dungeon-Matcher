@@ -1,0 +1,22 @@
+{
+  "id": "seismic_smith",
+  "state": "AutoAttack",
+  "request": {
+    "description": "He raises the HUGE SLEDGEHAMMER above his head with BOTH hands then smashes it DOWN on the ground to the left, hips and knees drive the heavy impact. A short grey dust puff at contact, tool then recovers to ready position. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.",
+    "frame_count": 12,
+    "first_frame_url": "ArtSource/Ironvein/Corrections/smith-edge/00.png",
+    "no_background": true,
+    "seed": 7987,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "grounded original ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b252629e-f56e-4cb9-b9cb-622789f4d921\njob_id: b252629e-f56e-4cb9-b9cb-622789f4d921\ndescription: He raises the HUGE SLEDGEHAMMER above his head with BOTH hands then smashes it DOWN on the ground to the left, hips and knees drive the heavy impact. A short grey dust puff at contact, tool then recovers to ready position. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.\nframes: 12\nsize: 80x80px\ntransparent: True\nseed: 7987\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b252629e-f56e-4cb9-b9cb-622789f4d921\")\nasset_id: 3e2ff3bd-6819-5aa4-a619-c8fc235254f8\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

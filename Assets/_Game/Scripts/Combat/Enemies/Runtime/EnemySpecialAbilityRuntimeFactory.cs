@@ -35,6 +35,19 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.ShareOre:
+            case EnemySpecialAbilityKind.LayFoundation:
+            case EnemySpecialAbilityKind.BoreDrill:
+            case EnemySpecialAbilityKind.AssayVein:
+            case EnemySpecialAbilityKind.PowderCharge:
+            case EnemySpecialAbilityKind.SwitchTrack:
+            case EnemySpecialAbilityKind.Faultline:
+            case EnemySpecialAbilityKind.SiegeMachinist:
+            case EnemySpecialAbilityKind.ObsidianSentinel:
+            case EnemySpecialAbilityKind.GrandDelver:
+                var mine = enemyObject.GetComponent<MineEnemyAbility>() ?? enemyObject.AddComponent<MineEnemyAbility>();
+                mine.ConfigureSummonService(summonService); runtime = mine;
+                break;
             case EnemySpecialAbilityKind.ApplyPlayerStatus:
                 runtime = enemyObject.GetComponent<ApplyPlayerStatusEnemyAbility>() ?? enemyObject.AddComponent<ApplyPlayerStatusEnemyAbility>();
                 break;

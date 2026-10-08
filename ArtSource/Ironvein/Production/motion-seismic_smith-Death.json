@@ -1,0 +1,22 @@
+{
+  "id": "seismic_smith",
+  "state": "Death",
+  "request": {
+    "description": "The huge sledge drops heavily to the floor. The dwarf's knees buckle and he sinks into a crouch, then tips onto his side beside his hammer and lies still. Keep the entire body and equipment within the original canvas at the same native pixel scale.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/seismic_smith-repaired.png",
+    "no_background": true,
+    "seed": 8031,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: bd94b62e-1304-4b58-8826-37b7916543e0\njob_id: bd94b62e-1304-4b58-8826-37b7916543e0\ndescription: The huge sledge drops heavily to the floor. The dwarf's knees buckle and he sinks into a crouch, then tips onto his side beside his hammer and lies still. Keep the entire body and equipment within the original canvas at the same native pixel scale.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8031\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bd94b62e-1304-4b58-8826-37b7916543e0\")\nasset_id: 2a137bc2-c9c3-5154-97ef-66989b84b60c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "obsidian_sentinel",
+  "request": {
+    "description": "One native pixel art fantasy enemy STILL for Dungeon Matcher, full body three-quarter combat stance looking slightly viewer-left, transparent background. Crisp ONE-source-pixel #0A0D11 contours, NO antialias, gradient, dithering, grain, text, ground shadow or scenery. Broad connected 2-3-tone top-left shaded material shapes; compact whimsical expressive identity. Keep every extremity inside 2-pixel side margins. Matte charcoal/navy iron, muted leather, small brass, luminous orange ONLY in ore sockets. LARGE squat DARK STEEL MECHANICAL GOLEM, 75-80 native pixels tall, same native pixel density as reference. Wide angular shoulders, rounded blackened plate torso, huge hydraulic piston arms ending in blunt iron clamps, massive mechanical feet. Two tiny orange sensor eyes and one NARROW ORANGE FURNACE SLOT in chest, ore-powered seams restrained. Head small and recessed, NO dwarf pilot. Dark steel industrial sentinel, not a stone/crystal creature. No spikes, skull, organic muscles or giant glowing disk. Entire body inside canvas.",
+    "width": 96,
+    "height": 96,
+    "seed": 7312,
+    "no_background": true,
+    "style_image": {
+      "url": "https://api.pixellab.ai/mcp/pixel-tools/7a718a7b-f2b3-4af3-ba72-45a783cac4f2/image.png",
+      "usage_description": "Style and native scale only, shared crisp contour and broad material shading. Different identity, silhouette, headgear and equipment as described; do NOT copy pilot or pickaxe."
+    },
+    "style_options": {
+      "outline": true,
+      "shading": true,
+      "detail": true,
+      "color_palette": false
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f\",\n  \"image_id\": \"fd53aec2-2fb8-59ac-b90f-abdbed7c3c98\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fd53aec2-2fb8-59ac-b90f-abdbed7c3c98\",\n  \"job_id\": \"7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f\",\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f/download\"\n}\nPoll get_image(job_id=\"7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f",
+      "image_id": "fd53aec2-2fb8-59ac-b90f-abdbed7c3c98",
+      "status": "processing",
+      "source_image_id": "fd53aec2-2fb8-59ac-b90f-abdbed7c3c98",
+      "job_id": "7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f",
+      "image_size": {
+        "width": 96,
+        "height": 96
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f/download"
+    },
+    "isError": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "seismic_smith",
+  "state": "Idle",
+  "request": {
+    "description": "Quiet breathing, broad shoulders shift just one pixel, both hands keep huge sledge steady. Feet stay planted at same floor position. Return to starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Corrections/smith-edge/00.png",
+    "last_frame_url": "ArtSource/Ironvein/Corrections/smith-edge/00.png",
+    "no_background": true,
+    "seed": 7985,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "grounded original ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: eae3bf2b-46d7-4fa8-8d29-a2060b03d678\njob_id: eae3bf2b-46d7-4fa8-8d29-a2060b03d678\ndescription: Quiet breathing, broad shoulders shift just one pixel, both hands keep huge sledge steady. Feet stay planted at same floor position. Return to starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7985\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"eae3bf2b-46d7-4fa8-8d29-a2060b03d678\")\nasset_id: 12d16686-00ca-560b-92fc-e7b9c58e8a8c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "stonewright",
+  "state": "Recovery",
+  "request": {
+    "description": "She stands from her low crouch and smoothly lifts the mallet from the floor back to its ready position in both hands. Knees straighten, braids settle.",
+    "frame_count": 4,
+    "first_frame_url": "RawMotion/stonewright/AutoAttack-v2/12.png",
+    "last_frame_url": "Inputs/stonewright.png",
+    "no_background": true,
+    "seed": 8066,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "initial_pose": "crouching with mallet on floor",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: c429366a-7cd3-48f6-9471-4465b307c3c3\njob_id: c429366a-7cd3-48f6-9471-4465b307c3c3\ndescription: She stands from her low crouch and smoothly lifts the mallet from the floor back to its ready position in both hands. Knees straighten, braids settle.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 8066\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c429366a-7cd3-48f6-9471-4465b307c3c3\")\nasset_id: 99d12f79-076d-5187-8775-cffe97d99f0d\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

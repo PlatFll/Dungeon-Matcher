@@ -40,6 +40,25 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Authoritative system map
 
+Ironvein's additive foundation is described in
+[IronveinExcavation/IMPLEMENTATION.md](IronveinExcavation/IMPLEMENTATION.md).
+`BoardController.Ironvein` owns material history; existing barricades still own
+structural occupancy and durability. The mutation queue orders stone placement
+and aging. Versioned mine snapshots extend the established continuation and
+photo/travel flows. Testing eligibility does not imply live travel readiness.
+`EnemyOrePower` uses `EnemyAutoAttack`'s existing next-sequence modifier token.
+`MineEnemyAbility` owns definition-selected intent and saved deadlines; its board
+operations use the canonical mutation queue. The move coordinator also drains
+the kit's pending coroutine cleanup after the board completes its motion, so
+saved preparation/basic holds cannot leak through a transient stable checkpoint.
+Presentation never triggers damage.
+Rattled is a shared player status read by the central Stagger buildup calculation.
+`MineEncounterSelector` reads zone recipe metadata and a WaveSpawnProfile budget;
+WaveController retains spawning, global depth scaling and rewards. Successful
+WaveStarted events record per-visit history in the travel snapshot. Atomic travel
+resets that history only in the detached destination save. Natural stones reuse
+the board's structural placement routine within environmental advancement.
+
 | Area | Authority and principal files |
 | --- | --- |
 | Board state and resolution | `BoardController` partial class in `Assets/_Game/Scripts/Board/BoardController*.cs` |

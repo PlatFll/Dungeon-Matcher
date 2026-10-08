@@ -1,0 +1,1270 @@
+{
+  "source": ".utmp/ForestValidation/f7a700b6-bc91-419d-9f31-b58afa15ef50.xml",
+  "sha256": "608167a86bed140a94be0bdb29e5a0a36f67af06baedc8675da93c6eeae8b09d",
+  "summary": {
+    "result": "Passed",
+    "total": "157",
+    "passed": "157",
+    "failed": "0",
+    "skipped": "0",
+    "duration": "4.3023569"
+  },
+  "tests": [
+    {
+      "fullname": "AquaticEnvironmentStateTests.DebitAndSnareClampBeforeCollectedAir",
+      "result": "Passed",
+      "duration": "0.009544",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.DryAcceptanceCannotChargeTheNewFlood",
+      "result": "Passed",
+      "duration": "0.000165",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.DuplicateSettlementAndAcceptanceCannotDoubleCharge",
+      "result": "Passed",
+      "duration": "0.000434",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.FinalWetMoveDrainsBeforeSuffocationAndProtectsNextEncounter",
+      "result": "Passed",
+      "duration": "0.000867",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.FreeCollectionDoesNotAdvanceTideOrSpendAir",
+      "result": "Passed",
+      "duration": "0.000198",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.FullDryFormationAndSixAcceptedMovesAreRequired",
+      "result": "Passed",
+      "duration": "0.000134",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "AquaticEnvironmentStateTests.ResumePreservesPendingReceiptsAndUnits",
+      "result": "Passed",
+      "duration": "0.000204",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior",
+      "result": "Passed",
+      "duration": "0.012691",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves",
+      "result": "Passed",
+      "duration": "0.002040",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.OneOpeningIsCountedForEachStandardAboveIt",
+      "result": "Passed",
+      "duration": "0.000594",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)",
+      "result": "Passed",
+      "duration": "0.000693",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)",
+      "result": "Passed",
+      "duration": "0.000299",
+      "start-time": "2026-10-08 06:52:04Z",
+      "end-time": "2026-10-08 06:52:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(True,False)",
+      "result": "Passed",
+      "duration": "0.001118",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(False,True)",
+      "result": "Passed",
+      "duration": "0.000879",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.RemovedBarricadeCannotQueueItsOpeningAgain",
+      "result": "Passed",
+      "duration": "0.000549",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.SecondDistinctHitCreatesExactlyOneStoneOpening",
+      "result": "Passed",
+      "duration": "0.000460",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone",
+      "result": "Passed",
+      "duration": "0.001017",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash",
+      "result": "Passed",
+      "duration": "0.000934",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "BarricadeBannerGravityTests.SurvivingStoneBarricadeDoesNotCreateAnOpening",
+      "result": "Passed",
+      "duration": "0.000453",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "CourtMovementAssetTests.CourtRippleNativeFramesUseCrispImports",
+      "result": "Passed",
+      "duration": "0.048181",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:05Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce",
+      "result": "Passed",
+      "duration": "17.022587",
+      "start-time": "2026-10-08 06:52:05Z",
+      "end-time": "2026-10-08 06:52:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal",
+      "result": "Passed",
+      "duration": "0.028417",
+      "start-time": "2026-10-08 06:52:22Z",
+      "end-time": "2026-10-08 06:52:22Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill",
+      "result": "Passed",
+      "duration": "5.925850",
+      "start-time": "2026-10-08 06:52:22Z",
+      "end-time": "2026-10-08 06:52:28Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue",
+      "result": "Passed",
+      "duration": "9.296938",
+      "start-time": "2026-10-08 06:52:28Z",
+      "end-time": "2026-10-08 06:52:37Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners",
+      "result": "Passed",
+      "duration": "15.813576",
+      "start-time": "2026-10-08 06:52:37Z",
+      "end-time": "2026-10-08 06:52:53Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold",
+      "result": "Passed",
+      "duration": "6.518090",
+      "start-time": "2026-10-08 06:52:53Z",
+      "end-time": "2026-10-08 06:52:59Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EndlessDifficultyRevisionTests.ProductionHpIsMonotoneAndRemainsFiniteBeyondTheLastAnchor",
+      "result": "Passed",
+      "duration": "0.118762",
+      "start-time": "2026-10-08 06:52:59Z",
+      "end-time": "2026-10-08 06:52:59Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+      "result": "Passed",
+      "duration": "41.639878",
+      "start-time": "2026-10-08 06:52:59Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit",
+      "result": "Passed",
+      "duration": "0.003276",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks",
+      "result": "Passed",
+      "duration": "0.001347",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage",
+      "result": "Passed",
+      "duration": "0.000868",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce",
+      "result": "Passed",
+      "duration": "0.000395",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop",
+      "result": "Passed",
+      "duration": "0.000567",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass",
+      "result": "Passed",
+      "duration": "0.000436",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup",
+      "result": "Passed",
+      "duration": "0.000637",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass",
+      "result": "Passed",
+      "duration": "0.001518",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract",
+      "result": "Passed",
+      "duration": "0.000385",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit",
+      "result": "Passed",
+      "duration": "0.000453",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing",
+      "result": "Passed",
+      "duration": "0.000354",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs",
+      "result": "Passed",
+      "duration": "0.000594",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage",
+      "result": "Passed",
+      "duration": "0.000351",
+      "start-time": "2026-10-08 06:53:41Z",
+      "end-time": "2026-10-08 06:53:41Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.BardleyThreeBeatsKeepOneBoardHoldAndNoBubbleDelivery",
+      "result": "Passed",
+      "duration": "8.321296",
+      "start-time": "2026-10-08 06:53:42Z",
+      "end-time": "2026-10-08 06:53:50Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CommittedTravelSuspendResumesRevealWithoutRepeatingReward",
+      "result": "Passed",
+      "duration": "10.574967",
+      "start-time": "2026-10-08 06:53:50Z",
+      "end-time": "2026-10-08 06:54:01Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtAirSurvivesContinuationAndFinalDrainDoesNotSuffocate",
+      "result": "Passed",
+      "duration": "9.529522",
+      "start-time": "2026-10-08 06:54:01Z",
+      "end-time": "2026-10-08 06:54:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtBubbleReceiptsRespectPhysicalDestructionAndManualSnareSource",
+      "result": "Passed",
+      "duration": "7.099847",
+      "start-time": "2026-10-08 06:54:10Z",
+      "end-time": "2026-10-08 06:54:17Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtCaptainCommandsOneCompleteFixedAllySequence",
+      "result": "Passed",
+      "duration": "14.471249",
+      "start-time": "2026-10-08 06:54:17Z",
+      "end-time": "2026-10-08 06:54:32Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtConchDamageLeaseDoesNotStackSpeedAndSurvivesOtherOwnerDeath",
+      "result": "Passed",
+      "duration": "12.311498",
+      "start-time": "2026-10-08 06:54:32Z",
+      "end-time": "2026-10-08 06:54:44Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtFirstEncounterStaysDryAndFloodUsesAcceptedMoves",
+      "result": "Passed",
+      "duration": "17.429335",
+      "start-time": "2026-10-08 06:54:44Z",
+      "end-time": "2026-10-08 06:55:02Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtMaterialAndRosterImportsAreNativeAndComplete",
+      "result": "Passed",
+      "duration": "7.216004",
+      "start-time": "2026-10-08 06:55:02Z",
+      "end-time": "2026-10-08 06:55:09Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtMorayRespectsShieldGateAndHealsOnlyHpLost",
+      "result": "Passed",
+      "duration": "15.915975",
+      "start-time": "2026-10-08 06:55:09Z",
+      "end-time": "2026-10-08 06:55:25Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtMotionActualSwapFallsPauseAndDrain",
+      "result": "Passed",
+      "duration": "8.415107",
+      "start-time": "2026-10-08 06:55:25Z",
+      "end-time": "2026-10-08 06:55:33Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtMotionControllersResolveEveryBasicWithOneOwnedSequence",
+      "result": "Passed",
+      "duration": "36.261375",
+      "start-time": "2026-10-08 06:55:33Z",
+      "end-time": "2026-10-08 06:56:09Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtMotionRoyalWakeReducedMotionAndMissingArt",
+      "result": "Passed",
+      "duration": "9.910512",
+      "start-time": "2026-10-08 06:56:09Z",
+      "end-time": "2026-10-08 06:56:19Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares",
+      "result": "Passed",
+      "duration": "8.162860",
+      "start-time": "2026-10-08 06:56:19Z",
+      "end-time": "2026-10-08 06:56:27Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling",
+      "result": "Passed",
+      "duration": "11.659036",
+      "start-time": "2026-10-08 06:56:27Z",
+      "end-time": "2026-10-08 06:56:39Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot",
+      "result": "Passed",
+      "duration": "14.528259",
+      "start-time": "2026-10-08 06:56:39Z",
+      "end-time": "2026-10-08 06:56:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionAirReceiptShowsSpendThenActualTwoBlockGain",
+      "result": "Passed",
+      "duration": "7.961520",
+      "start-time": "2026-10-08 06:56:54Z",
+      "end-time": "2026-10-08 06:57:02Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionFiniteReserveAndEmergencyCadence",
+      "result": "Passed",
+      "duration": "8.056001",
+      "start-time": "2026-10-08 06:57:02Z",
+      "end-time": "2026-10-08 06:57:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionFortifiedOrbitFrontBackPauseAndDeathCleanup",
+      "result": "Passed",
+      "duration": "7.104274",
+      "start-time": "2026-10-08 06:57:10Z",
+      "end-time": "2026-10-08 06:57:17Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionLegacyDepthsWarningRetiresWithoutDamage",
+      "result": "Passed",
+      "duration": "6.925207",
+      "start-time": "2026-10-08 06:57:17Z",
+      "end-time": "2026-10-08 06:57:24Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionLegacyFloodPreservesRemainingTimeAndReserve",
+      "result": "Passed",
+      "duration": "7.258284",
+      "start-time": "2026-10-08 06:57:24Z",
+      "end-time": "2026-10-08 06:57:31Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionLegacyTheftWarningsRetireHarmlessly",
+      "result": "Passed",
+      "duration": "7.620918",
+      "start-time": "2026-10-08 06:57:31Z",
+      "end-time": "2026-10-08 06:57:39Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionLowAirRelocatesWithoutMintingResources",
+      "result": "Passed",
+      "duration": "7.331641",
+      "start-time": "2026-10-08 06:57:39Z",
+      "end-time": "2026-10-08 06:57:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionPressureEitherBubbleCancelsAndContinueKeepsPhysicalTargets",
+      "result": "Passed",
+      "duration": "10.513709",
+      "start-time": "2026-10-08 06:57:46Z",
+      "end-time": "2026-10-08 06:57:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionPressureUnansweredDealsFullConfiguredHit",
+      "result": "Passed",
+      "duration": "13.618468",
+      "start-time": "2026-10-08 06:57:57Z",
+      "end-time": "2026-10-08 06:58:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionRoyalSlideBlockedRoutesStayAndKeepEveryGem",
+      "result": "Passed",
+      "duration": "9.067180",
+      "start-time": "2026-10-08 06:58:10Z",
+      "end-time": "2026-10-08 06:58:19Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionRoyalSlideRotatesSpecialsBeforeOneSettleAndContinues",
+      "result": "Passed",
+      "duration": "10.118108",
+      "start-time": "2026-10-08 06:58:19Z",
+      "end-time": "2026-10-08 06:58:29Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTheftAndPressureDeferWithoutEnoughBubbles",
+      "result": "Passed",
+      "duration": "7.949637",
+      "start-time": "2026-10-08 06:58:29Z",
+      "end-time": "2026-10-08 06:58:37Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionThiefInstantExactTwoIndependentPayout",
+      "result": "Passed",
+      "duration": "10.422244",
+      "start-time": "2026-10-08 06:58:37Z",
+      "end-time": "2026-10-08 06:58:48Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeOneSurvivor",
+      "result": "Passed",
+      "duration": "14.381450",
+      "start-time": "2026-10-08 06:58:48Z",
+      "end-time": "2026-10-08 06:59:02Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeRealClearAndStaggerLeaveRemainingOxygen",
+      "result": "Passed",
+      "duration": "11.025354",
+      "start-time": "2026-10-08 06:59:02Z",
+      "end-time": "2026-10-08 06:59:13Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeRoundRobinCapsQueenAndPreservesMuster",
+      "result": "Passed",
+      "duration": "14.730925",
+      "start-time": "2026-10-08 06:59:13Z",
+      "end-time": "2026-10-08 06:59:28Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeThreeSurvivors",
+      "result": "Passed",
+      "duration": "14.174087",
+      "start-time": "2026-10-08 06:59:28Z",
+      "end-time": "2026-10-08 06:59:42Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeTwoSurvivors",
+      "result": "Passed",
+      "duration": "12.852593",
+      "start-time": "2026-10-08 06:59:42Z",
+      "end-time": "2026-10-08 06:59:55Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeUsesActualSlotsAfterLeftReplacement",
+      "result": "Passed",
+      "duration": "8.263905",
+      "start-time": "2026-10-08 06:59:55Z",
+      "end-time": "2026-10-08 07:00:03Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionTributeZeroSurvivors",
+      "result": "Passed",
+      "duration": "8.970750",
+      "start-time": "2026-10-08 07:00:03Z",
+      "end-time": "2026-10-08 07:00:12Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtRevisionWardenInstantThreeAndTwoDistinctHits",
+      "result": "Passed",
+      "duration": "10.396657",
+      "start-time": "2026-10-08 07:00:12Z",
+      "end-time": "2026-10-08 07:00:23Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes",
+      "result": "Passed",
+      "duration": "11.696755",
+      "start-time": "2026-10-08 07:00:23Z",
+      "end-time": "2026-10-08 07:00:34Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtTargetLossFizzlesAndStaggerEndsWithoutRecovery",
+      "result": "Passed",
+      "duration": "9.990485",
+      "start-time": "2026-10-08 07:00:34Z",
+      "end-time": "2026-10-08 07:00:44Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize",
+      "result": "Passed",
+      "duration": "61.267478",
+      "start-time": "2026-10-08 07:00:44Z",
+      "end-time": "2026-10-08 07:01:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CourtWetResumePreservesAirAndChannelDeadline",
+      "result": "Passed",
+      "duration": "10.859722",
+      "start-time": "2026-10-08 07:01:46Z",
+      "end-time": "2026-10-08 07:01:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat",
+      "result": "Passed",
+      "duration": "9.792900",
+      "start-time": "2026-10-08 07:01:56Z",
+      "end-time": "2026-10-08 07:02:06Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.FailedTravelCheckpointKeepsSourceAndRetriesSameDestination",
+      "result": "Passed",
+      "duration": "10.591152",
+      "start-time": "2026-10-08 07:02:06Z",
+      "end-time": "2026-10-08 07:02:17Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionAnsweredReadyBoughCannotRecastOnSameMove",
+      "result": "Passed",
+      "duration": "8.722732",
+      "start-time": "2026-10-08 07:02:17Z",
+      "end-time": "2026-10-08 07:02:26Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionBoughAnyRealClearCancelsWholeCastWithoutConsumingOthers",
+      "result": "Passed",
+      "duration": "9.032435",
+      "start-time": "2026-10-08 07:02:26Z",
+      "end-time": "2026-10-08 07:02:35Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionBoughKeepsMarksAcrossContinueThenHitsOnce",
+      "result": "Passed",
+      "duration": "11.119308",
+      "start-time": "2026-10-08 07:02:35Z",
+      "end-time": "2026-10-08 07:02:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionBoughMarkFollowsLegalSwapAndSavedIdentity",
+      "result": "Passed",
+      "duration": "9.367810",
+      "start-time": "2026-10-08 07:02:46Z",
+      "end-time": "2026-10-08 07:02:55Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionInstantRootbinder",
+      "result": "Passed",
+      "duration": "8.128659",
+      "start-time": "2026-10-08 07:02:55Z",
+      "end-time": "2026-10-08 07:03:03Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionInstantWarden",
+      "result": "Passed",
+      "duration": "8.120922",
+      "start-time": "2026-10-08 07:03:03Z",
+      "end-time": "2026-10-08 07:03:11Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionOldRootbinderWarning",
+      "result": "Passed",
+      "duration": "7.292326",
+      "start-time": "2026-10-08 07:03:11Z",
+      "end-time": "2026-10-08 07:03:19Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionOldWardenWarning",
+      "result": "Passed",
+      "duration": "7.199249",
+      "start-time": "2026-10-08 07:03:19Z",
+      "end-time": "2026-10-08 07:03:26Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ForestRevisionWardedMultipleSourcesSummonContinueAndDeath",
+      "result": "Passed",
+      "duration": "9.553116",
+      "start-time": "2026-10-08 07:03:26Z",
+      "end-time": "2026-10-08 07:03:35Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionKingDeathCancelsLaterStrikes",
+      "result": "Passed",
+      "duration": "8.700275",
+      "start-time": "2026-10-08 07:03:36Z",
+      "end-time": "2026-10-08 07:03:44Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionMissingMotionStillSettles",
+      "result": "Passed",
+      "duration": "12.977679",
+      "start-time": "2026-10-08 07:03:44Z",
+      "end-time": "2026-10-08 07:03:57Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionOneSurvivor",
+      "result": "Passed",
+      "duration": "9.230423",
+      "start-time": "2026-10-08 07:03:57Z",
+      "end-time": "2026-10-08 07:04:06Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionPhysicalSwapAndMinisterContinue",
+      "result": "Passed",
+      "duration": "10.272279",
+      "start-time": "2026-10-08 07:04:06Z",
+      "end-time": "2026-10-08 07:04:17Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionPlayerDeathStopsSequence",
+      "result": "Passed",
+      "duration": "9.164119",
+      "start-time": "2026-10-08 07:04:17Z",
+      "end-time": "2026-10-08 07:04:26Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionSavePreservesPhysicalOrderAndPause",
+      "result": "Passed",
+      "duration": "12.543260",
+      "start-time": "2026-10-08 07:04:26Z",
+      "end-time": "2026-10-08 07:04:38Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionThreeSurvivors",
+      "result": "Passed",
+      "duration": "10.950952",
+      "start-time": "2026-10-08 07:04:38Z",
+      "end-time": "2026-10-08 07:04:49Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionTwoSurvivors",
+      "result": "Passed",
+      "duration": "9.861411",
+      "start-time": "2026-10-08 07:04:49Z",
+      "end-time": "2026-10-08 07:04:59Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.JudgmentRevisionZeroSurvivors",
+      "result": "Passed",
+      "duration": "8.081765",
+      "start-time": "2026-10-08 07:04:59Z",
+      "end-time": "2026-10-08 07:05:07Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects",
+      "result": "Passed",
+      "duration": "17.439308",
+      "start-time": "2026-10-08 07:05:07Z",
+      "end-time": "2026-10-08 07:05:25Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessCaptainCommandWorksWithTimedBasics",
+      "result": "Passed",
+      "duration": "11.256158",
+      "start-time": "2026-10-08 07:05:25Z",
+      "end-time": "2026-10-08 07:05:36Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessFullCycleUsesLiveSecondsProfile",
+      "result": "Passed",
+      "duration": "25.087658",
+      "start-time": "2026-10-08 07:05:36Z",
+      "end-time": "2026-10-08 07:06:01Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessFullCycleUsesOriginalDungeonProfile",
+      "result": "Passed",
+      "duration": "28.939485",
+      "start-time": "2026-10-08 07:06:01Z",
+      "end-time": "2026-10-08 07:06:30Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessHybridAssaultConsumesReadyCounter",
+      "result": "Passed",
+      "duration": "11.472222",
+      "start-time": "2026-10-08 07:06:30Z",
+      "end-time": "2026-10-08 07:06:42Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards",
+      "result": "Passed",
+      "duration": "10.855126",
+      "start-time": "2026-10-08 07:06:42Z",
+      "end-time": "2026-10-08 07:06:53Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.KingReadinessVineGrowthUsesHalfSpreadAndCoverage",
+      "result": "Passed",
+      "duration": "8.246216",
+      "start-time": "2026-10-08 07:06:53Z",
+      "end-time": "2026-10-08 07:07:01Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.LegacyCourtRecoveryPreservesRotationAndDoesNotReplayCast",
+      "result": "Passed",
+      "duration": "9.474945",
+      "start-time": "2026-10-08 07:07:01Z",
+      "end-time": "2026-10-08 07:07:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.LegacyDungeonFearKeepsItsSourceThroughContinue",
+      "result": "Passed",
+      "duration": "7.915715",
+      "start-time": "2026-10-08 07:07:10Z",
+      "end-time": "2026-10-08 07:07:18Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.LegacyMenderRecoveryMigratesWithoutHealingOrHoldingBasics",
+      "result": "Passed",
+      "duration": "8.981249",
+      "start-time": "2026-10-08 07:07:18Z",
+      "end-time": "2026-10-08 07:07:27Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.LegacyMilestoneRecoveryPreservesCycleAndUsesNormalStaggerOnly",
+      "result": "Passed",
+      "duration": "8.611407",
+      "start-time": "2026-10-08 07:07:27Z",
+      "end-time": "2026-10-08 07:07:36Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.OlderForestCheckpointKeepsItsIsolatedLoop",
+      "result": "Passed",
+      "duration": "7.984814",
+      "start-time": "2026-10-08 07:07:36Z",
+      "end-time": "2026-10-08 07:07:44Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.PendingTravelSuspendRestoresChosenDestinationAndBoard",
+      "result": "Passed",
+      "duration": "12.343248",
+      "start-time": "2026-10-08 07:07:44Z",
+      "end-time": "2026-10-08 07:07:56Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.PlayerStatusesUseCompleteActionsPauseAndResumeWithoutReplayingBurn",
+      "result": "Passed",
+      "duration": "10.236637",
+      "start-time": "2026-10-08 07:07:56Z",
+      "end-time": "2026-10-08 07:08:06Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ReducedMotionFailedPreparationReleasesInputAndCombatTime",
+      "result": "Passed",
+      "duration": "9.862295",
+      "start-time": "2026-10-08 07:08:06Z",
+      "end-time": "2026-10-08 07:08:16Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterFinalRoyalRoutesCoverBothLengthsAndAllCardinals",
+      "result": "Passed",
+      "duration": "7.489620",
+      "start-time": "2026-10-08 07:08:16Z",
+      "end-time": "2026-10-08 07:08:24Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterFinalRoyalSlideReplayKeepsRouteAndRefill",
+      "result": "Passed",
+      "duration": "13.479161",
+      "start-time": "2026-10-08 07:08:24Z",
+      "end-time": "2026-10-08 07:08:37Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterFinalTributeCasterDeathDoesNotConsumeBubblesOrGrantBuffs",
+      "result": "Passed",
+      "duration": "12.179545",
+      "start-time": "2026-10-08 07:08:37Z",
+      "end-time": "2026-10-08 07:08:50Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterLegacyCellBoughFizzesWithoutDamageOrClears",
+      "result": "Passed",
+      "duration": "8.397508",
+      "start-time": "2026-10-08 07:08:50Z",
+      "end-time": "2026-10-08 07:08:58Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate",
+      "result": "Passed",
+      "duration": "7.729710",
+      "start-time": "2026-10-08 07:08:58Z",
+      "end-time": "2026-10-08 07:09:06Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterRageTriggersStrictlyBelowHalfOnceAndResumes",
+      "result": "Passed",
+      "duration": "8.788894",
+      "start-time": "2026-10-08 07:09:06Z",
+      "end-time": "2026-10-08 07:09:14Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterRhythmBuffsOnlyAlliesRefreshesAndExpires",
+      "result": "Passed",
+      "duration": "16.183479",
+      "start-time": "2026-10-08 07:09:15Z",
+      "end-time": "2026-10-08 07:09:31Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack",
+      "result": "Passed",
+      "duration": "14.280269",
+      "start-time": "2026-10-08 07:09:31Z",
+      "end-time": "2026-10-08 07:09:45Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller",
+      "result": "Passed",
+      "duration": "16.248300",
+      "start-time": "2026-10-08 07:09:45Z",
+      "end-time": "2026-10-08 07:10:01Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap",
+      "result": "Passed",
+      "duration": "9.122086",
+      "start-time": "2026-10-08 07:10:01Z",
+      "end-time": "2026-10-08 07:10:10Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate",
+      "result": "Passed",
+      "duration": "9.579544",
+      "start-time": "2026-10-08 07:10:10Z",
+      "end-time": "2026-10-08 07:10:20Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers",
+      "result": "Passed",
+      "duration": "12.938776",
+      "start-time": "2026-10-08 07:10:20Z",
+      "end-time": "2026-10-08 07:10:33Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume",
+      "result": "Passed",
+      "duration": "8.687691",
+      "start-time": "2026-10-08 07:10:33Z",
+      "end-time": "2026-10-08 07:10:42Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SigilsCancelOnDeathReplacementInheritsSlotAndResolutionFinishes",
+      "result": "Passed",
+      "duration": "10.584813",
+      "start-time": "2026-10-08 07:10:42Z",
+      "end-time": "2026-10-08 07:10:52Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SigilsCourtChannelTargetsInterruptAndRestoreWithoutNewIdentity",
+      "result": "Passed",
+      "duration": "12.150115",
+      "start-time": "2026-10-08 07:10:52Z",
+      "end-time": "2026-10-08 07:11:04Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SlipperyInvalidFinalArrangementReversesWithoutTakingAMove",
+      "result": "Passed",
+      "duration": "8.980146",
+      "start-time": "2026-10-08 07:11:04Z",
+      "end-time": "2026-10-08 07:11:13Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SlipperyPreviewRotationSpecialMovementAndSingleAcceptance",
+      "result": "Passed",
+      "duration": "9.441943",
+      "start-time": "2026-10-08 07:11:13Z",
+      "end-time": "2026-10-08 07:11:23Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SlipperyRequiresFloodingAndContinuesWithoutSavingAPreview",
+      "result": "Passed",
+      "duration": "9.231234",
+      "start-time": "2026-10-08 07:11:23Z",
+      "end-time": "2026-10-08 07:11:32Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.SlipperyStaleForecastClearsBeforeInputCanConfirmChangedPieces",
+      "result": "Passed",
+      "duration": "9.501284",
+      "start-time": "2026-10-08 07:11:32Z",
+      "end-time": "2026-10-08 07:11:42Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits",
+      "result": "Passed",
+      "duration": "9.214543",
+      "start-time": "2026-10-08 07:11:42Z",
+      "end-time": "2026-10-08 07:11:51Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerCancelCreatesNoRunAndFitsPortraitScreens",
+      "result": "Passed",
+      "duration": "7.539110",
+      "start-time": "2026-10-08 07:11:51Z",
+      "end-time": "2026-10-08 07:11:58Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerDungeonKeepsOriginalOpening",
+      "result": "Passed",
+      "duration": "8.960665",
+      "start-time": "2026-10-08 07:11:58Z",
+      "end-time": "2026-10-08 07:12:07Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest",
+      "result": "Passed",
+      "duration": "10.660076",
+      "start-time": "2026-10-08 07:12:07Z",
+      "end-time": "2026-10-08 07:12:18Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun",
+      "result": "Passed",
+      "duration": "10.567155",
+      "start-time": "2026-10-08 07:12:18Z",
+      "end-time": "2026-10-08 07:12:29Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerPreservesChallengeAndCancelsPendingMode",
+      "result": "Passed",
+      "duration": "8.891771",
+      "start-time": "2026-10-08 07:12:29Z",
+      "end-time": "2026-10-08 07:12:38Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerReturnsToCharacterSelectionOnBack",
+      "result": "Passed",
+      "duration": "7.856030",
+      "start-time": "2026-10-08 07:12:38Z",
+      "end-time": "2026-10-08 07:12:46Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestFoundationPlayTests.ZonePickerUnavailableRequestFallsBackAndIsConsumed",
+      "result": "Passed",
+      "duration": "8.525797",
+      "start-time": "2026-10-08 07:12:46Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ForestRevisionAssetTests.ForestRevisionNativeRootsAndPlacementContacts",
+      "result": "Passed",
+      "duration": "0.048717",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "FortifiedTests.CapSaveRestoreAndFullMitigationDoNotSpendExtraPearls",
+      "result": "Passed",
+      "duration": "0.003802",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "FortifiedTests.OneStackHalvesOneDirectPacketAndPeriodicDoesNotConsume",
+      "result": "Passed",
+      "duration": "0.000604",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "FortifiedTests.ShieldGateAndInterceptionConsumeOnlyTheActualRecipientsOnePearl",
+      "result": "Passed",
+      "duration": "0.000620",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.ApplicationDuringAcceptedActionKeepsThreeFutureResponses",
+      "result": "Passed",
+      "duration": "0.004489",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.BurnTicksOncePerCompletedAcceptedMoveAndCanBeExtinguished",
+      "result": "Passed",
+      "duration": "0.004266",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.CentralEnemyDamageCombinesStatusesAfterRedirectExactlyOnce",
+      "result": "Passed",
+      "duration": "0.003957",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.FearClearsOnlyForItsDeadOrStaggeredSourceAndCannotBindAReplacement",
+      "result": "Passed",
+      "duration": "0.003208",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.HealingIncomingDamageAndShieldsKeepSeparateChannels",
+      "result": "Passed",
+      "duration": "0.001399",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.RefreshDoesNotStackAndDifferentDamageChannelsCompose",
+      "result": "Passed",
+      "duration": "0.001822",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.SappedReducesGenerationWithoutChangingStorage",
+      "result": "Passed",
+      "duration": "0.001426",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "PlayerStatusTests.SnapshotRoundTripKeepsRemainingMovesSourceAndTickDeduplication",
+      "result": "Passed",
+      "duration": "0.002283",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ZoneTravelTests.DestinationPolicyExcludesCurrentAndUnreadyAndKeepsDeterministicState",
+      "result": "Passed",
+      "duration": "0.116806",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    },
+    {
+      "fullname": "ZoneTravelTests.RootAndVineBindingsAreDistinctNativeAndComplete",
+      "result": "Passed",
+      "duration": "0.002839",
+      "start-time": "2026-10-08 07:12:54Z",
+      "end-time": "2026-10-08 07:12:54Z",
+      "asserts": "0"
+    }
+  ]
+}

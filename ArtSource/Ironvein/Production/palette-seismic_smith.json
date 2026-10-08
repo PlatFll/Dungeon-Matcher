@@ -1,0 +1,33 @@
+{
+  "name": "seismic_smith",
+  "source_job": "3973af40-3a80-4f68-bb88-48731511706d",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#050608": "#0A0D11",
+        "#0A0D12": "#0A0D11",
+        "#2B2725": "#22201F",
+        "#36302B": "#402F24",
+        "#686D73": "#858687"
+      },
+      "reason": "Normalize measured contour deviations and merge redundant close shades within iron, cloth, leather, beard and brass ramps. Preserve all native positions, silhouette, face and equipment."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 2ec1b61e-934a-458c-a5d1-9e41eb03e313\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 835 px changed\nsheet rows: frames [1]\npalette (16): #22201fff x391, #402f24ff x355, #0a0d11ff x318, #6f4c31ff x263, #525960ff x200, #333437ff x178, #404246ff x158, #543c2bff x148, #171719ff x129, #858687ff x105, #dca273ff x78, #a77347ff x61, #e77217ff x15, #9d3b0cff x8, #bab7b3ff x3, #fdfdfdff x1\ndownload https://api.pixellab.ai/mcp/pixel-tools/2ec1b61e-934a-458c-a5d1-9e41eb03e313/: image.png, frames.png, animation.gif\nnext: edit 2ec1b61e-934a-458c-a5d1-9e41eb03e313 --changes […]"
+    }
+  ]
+}

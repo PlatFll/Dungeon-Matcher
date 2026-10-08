@@ -1,0 +1,23 @@
+{
+  "id": "stonewright",
+  "state": "AutoAttack",
+  "request": {
+    "description": "One two-handed masonry mallet swing leftward at waist height, elbows and shoulders wind up then snap forward to a distinct contact pose. Knees compress with weight; both feet planted. Pull mallet back and return to exact ready stance. Preserve braids, face, hardhat and orange tool socket. Ordinary strike, no fire or magic.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "last_frame_url": "same native input",
+    "frame_count": 12,
+    "no_background": true,
+    "seed": 7705,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded original ready stance at bottom-center"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 23b94e0c-37f1-4079-81a5-d79fcc6175e3\njob_id: 23b94e0c-37f1-4079-81a5-d79fcc6175e3\ndescription: One two-handed masonry mallet swing leftward at waist height, elbows and shoulders wind up then snap forward to a distinct contact pose. Knees compress with weight; both feet planted. Pull mallet back and return to exact ready stance. Preserve braids, face, hardhat and orange tool socket. Ordinary strike, no fire or magic.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7705\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"23b94e0c-37f1-4079-81a5-d79fcc6175e3\")\nasset_id: 526a03a0-a4dc-54cb-8347-4baab7b99366\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

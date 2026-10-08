@@ -21,6 +21,7 @@ public partial class BoardController
         var saved=new BoardCombatSnapshot { width=width,height=height,moves=completedValidPlayerMoves,nextBanner=nextRoyalBannerId, nextGem=nextGemIdentity, refillRandom=RefillRandomState, forestRulesVersion=2,nextRootId=nextRootId,nextVineGrowthMove=nextVineGrowthMove };
         saved.dungeonRulesVersion=1;saved.nextCrumbleMove=nextCrumbleMove;
         saved.aquatic=CaptureAquatic();
+        saved.mine=CaptureMine();
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
@@ -41,6 +42,7 @@ public partial class BoardController
                 value.barricade=true; value.barricadeOwner=ownerSlot(barricade.OwnerInstanceId);
                 value.durability=barricade.RemainingDurability; value.maximumDurability=barricade.MaximumDurability;
                 value.barricadeStyle=barricade.Style;
+                value.mineStone=barricade.MineStone?.Copy();
                 value.rootId=barricade.RootId;value.rootOwnerId=barricade.RootOwnerId;
                 value.openRootSides=barricade.OpenRootSides;value.rootSpreading=barricade.RootSpreading;
                 value.thornSafeSide=barricade.ThornSafeSide;value.thornDamage=barricade.ThornDamage;
@@ -121,6 +123,7 @@ public partial class BoardController
         }
         RestoreVines(saved.vines);
         RestoreAquatic(saved.aquatic);
+        RestoreMine(saved.mine);
         isBusy=false;
     }
     private void RestoreSnapshotCells(BoardCombatSnapshot saved, Func<int,EnemyActor> ownerAtSlot)
@@ -160,7 +163,14 @@ public partial class BoardController
                 var barrier=new BarricadeCellState { OwnerInstanceId=value.barricadeStyle==EnemyBarricadeStyle.AirCoffer?0:ownerAtSlot(value.barricadeOwner)?.GetInstanceID() ?? 0,
                     RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle,
                     RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides,
-                    ThornSafeSide=value.thornSafeSide,ThornDamage=value.thornDamage };
+                    ThornSafeSide=value.thornSafeSide,ThornDamage=value.thornDamage,MineStone=value.mineStone?.Copy() };
+                // Continue creates actors before restoring their persistent IDs. Keep the
+                // valid saved-slot binding until those IDs exist; photographs use them now.
+                if (IsMineStone(barrier))
+                {
+                    int liveOwner = MineOwnerInstance(barrier.MineStone);
+                    if (liveOwner != 0) barrier.OwnerInstanceId = liveOwner;
+                }
                 nextRootId=Mathf.Max(nextRootId,value.rootId);
                 barricadeCells.Add(cell,barrier); CreateOrRefreshBarricadeView(cell,barrier);
             }

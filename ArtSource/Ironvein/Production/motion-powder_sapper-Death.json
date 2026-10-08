@@ -1,0 +1,22 @@
+{
+  "id": "powder_sapper",
+  "state": "Death",
+  "request": {
+    "description": "The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/powder_sapper.png",
+    "no_background": true,
+    "seed": 8007,
+    "enhance_prompt": false,
+    "subject_description": "powder sapper",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 9e756cb0-ee34-46d9-a397-b845f73fb83a\njob_id: 9e756cb0-ee34-46d9-a397-b845f73fb83a\ndescription: The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8007\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"9e756cb0-ee34-46d9-a397-b845f73fb83a\")\nasset_id: 3f4fb9ee-7df4-5dcc-9b39-c44c9834c0f8\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

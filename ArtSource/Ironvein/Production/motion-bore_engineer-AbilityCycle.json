@@ -1,0 +1,23 @@
+{
+  "id": "bore_engineer",
+  "state": "AbilityCycle",
+  "request": {
+    "description": "He braces the drill launcher with both hands and aims it down toward the lower LEFT. He holds that aiming pose briefly, then launches the small steel drill tip once with shoulder recoil. The launcher recoils, its tip reloads, and he returns to his original grounded stance.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/bore_engineer.png",
+    "last_frame_url": "Inputs/bore_engineer.png",
+    "no_background": true,
+    "seed": 9200,
+    "enhance_prompt": false,
+    "subject_description": "bore engineer",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: c335b754-25d2-4982-a70a-7b5af63c1d24\njob_id: c335b754-25d2-4982-a70a-7b5af63c1d24\ndescription: He braces the drill launcher with both hands and aims it down toward the lower LEFT. He holds that aiming pose briefly, then launches the small steel drill tip once with shoulder recoil. The launcher recoils, its tip reloads, and he returns to his original grounded stance.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9200\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c335b754-25d2-4982-a70a-7b5af63c1d24\")\nasset_id: 4e279482-1ad3-562f-bb24-a4ec4be5c473\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+[
+  {
+    "name": "InsetSteel",
+    "recipe": {
+      "job": {
+        "canvas": [
+          64,
+          64
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false
+      },
+      "scene": {
+        "palette": {
+          "deep": "#11161C",
+          "base": "#202731",
+          "light": "#29333E",
+          "edge": "#394653",
+          "bolt": "#57616B"
+        },
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - inset steel"
+          }
+        ],
+        "views": {
+          "front": {
+            "nodes": {
+              "plate": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      0,
+                      63,
+                      63
+                    ],
+                    "color": "base"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      0,
+                      63,
+                      1
+                    ],
+                    "color": "edge"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      2,
+                      1,
+                      63
+                    ],
+                    "color": "light"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      62,
+                      63,
+                      63
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      62,
+                      2,
+                      63,
+                      61
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      4,
+                      6,
+                      6
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "pixels",
+                    "pixels": [
+                      [
+                        5,
+                        4,
+                        "bolt"
+                      ],
+                      [
+                        5,
+                        5,
+                        "edge"
+                      ]
+                    ]
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      57,
+                      4,
+                      59,
+                      6
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "pixels",
+                    "pixels": [
+                      [
+                        58,
+                        4,
+                        "bolt"
+                      ],
+                      [
+                        58,
+                        5,
+                        "edge"
+                      ]
+                    ]
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      57,
+                      6,
+                      59
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "pixels",
+                    "pixels": [
+                      [
+                        5,
+                        57,
+                        "bolt"
+                      ],
+                      [
+                        5,
+                        58,
+                        "edge"
+                      ]
+                    ]
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      57,
+                      57,
+                      59,
+                      59
+                    ],
+                    "color": "deep"
+                  },
+                  {
+                    "op": "pixels",
+                    "pixels": [
+                      [
+                        58,
+                        57,
+                        "bolt"
+                      ],
+                      [
+                        58,
+                        58,
+                        "edge"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 1087fc04-c060-4d3f-aaf0-5de2e5784c37\ncanvas 64x64, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - inset steel\nnodes (front): plate\nnote: view front: no tracks or poses — every frame is the rest pose\nnote: view front: no selections — the source is not cut into parts\nnote: view front: no source given — transparent canvas\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/1087fc04-c060-4d3f-aaf0-5de2e5784c37/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 1087fc04-c060-4d3f-aaf0-5de2e5784c37 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "PanelFilled",
+    "recipe": {
+      "job": {
+        "canvas": [
+          64,
+          64
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false
+      },
+      "scene": {
+        "palette": {
+          "base": "#202731"
+        },
+        "layers": [
+          {
+            "id": "base",
+            "name": "Body - panel fill"
+          },
+          {
+            "id": "rim",
+            "name": "Body - original rim"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "back": {
+                "layer": "base",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "rect",
+                    "box": [
+                      3,
+                      3,
+                      60,
+                      60
+                    ],
+                    "color": "base"
+                  }
+                ]
+              },
+              "rim": {
+                "layer": "rim",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 6bfff318-8f39-4fdf-b3a7-51ba97b70863\ncanvas 64x64, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - panel fill | Body - original rim\nnodes (front): back, rim\nnote: view front: no tracks or poses — every frame is the rest pose\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/6bfff318-8f39-4fdf-b3a7-51ba97b70863/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 6bfff318-8f39-4fdf-b3a7-51ba97b70863 --changes […]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "SteamAbility",
+  "request": {
+    "description": "The dwarf pulls both cockpit controls back. The suit crouches slightly and spreads its arms while one small pale gray puff exits the rear chimney. He releases the controls and the suit settles into its original ready stance.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9602,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf visible in steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b672602a-bd7b-4dce-818f-28ec71128e3d\njob_id: b672602a-bd7b-4dce-818f-28ec71128e3d\ndescription: The dwarf pulls both cockpit controls back. The suit crouches slightly and spreads its arms while one small pale gray puff exits the rear chimney. He releases the controls and the suit settles into its original ready stance.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9602\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b672602a-bd7b-4dce-818f-28ec71128e3d\")\nasset_id: cd1cf541-eb3d-5ffc-b3ea-ad60237e1e8e\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

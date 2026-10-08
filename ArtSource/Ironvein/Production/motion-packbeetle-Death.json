@@ -1,0 +1,22 @@
+{
+  "id": "packbeetle",
+  "state": "Death",
+  "request": {
+    "description": "The beetle's six legs buckle, its heavy shell slumps to the floor and the ore pack tips sideways, spilling two small orange stones. It settles completely still on its side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/packbeetle.png",
+    "no_background": true,
+    "seed": 8004,
+    "enhance_prompt": false,
+    "subject_description": "packbeetle",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e3f11a09-2d66-4ef1-a477-00b2d12823ec\njob_id: e3f11a09-2d66-4ef1-a477-00b2d12823ec\ndescription: The beetle's six legs buckle, its heavy shell slumps to the floor and the ore pack tips sideways, spilling two small orange stones. It settles completely still on its side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8004\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e3f11a09-2d66-4ef1-a477-00b2d12823ec\")\nasset_id: d9b1dfeb-85a0-573a-8362-7fb8f0abd42c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

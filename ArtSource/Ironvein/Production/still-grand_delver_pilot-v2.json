@@ -1,0 +1,25 @@
+{
+  "request": {
+    "description": "One full-body sprite of the DWARF PILOT OUTSIDE HIS MECH, on foot. Same ginger beard, moustache, stern friendly eyes and grey brimmed cap as visible in reference cockpit, matching face pixel scale. Short stout dwarf roughly 45-50 pixels tall, grounded at bottom-center of 112 canvas with transparent space above. Entirely ordinary small body: charcoal cloth work jacket, brown leather apron and belt, short legs in simple boots, gloved hand holding small iron wrench. No armour, shoulder plates, iron chest, robotic parts, drill arm or exhaust. Native crisp pixel art, broad 2-3-tone matte shading and #0A0D11 outline, restrained warm skin/brown hair/cool slate clothing, tiny brass buckle. Preserve recognisable pilot identity.",
+    "width": 112,
+    "height": 112,
+    "no_background": true,
+    "seed": 7902,
+    "style_image": {
+      "url": "ArtSource/Ironvein/Inputs/grand_delver-tip-repaired.png",
+      "usage_description": "Match the DWARF FACE inside cockpit, cap, beard and palette only. The new sprite is the small dwarf outside the machine; do not copy any machine parts."
+    },
+    "style_options": {
+      "color_palette": true,
+      "detail": true,
+      "outline": true,
+      "shading": true
+    }
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "{\n  \"background_job_id\": \"2d0b79d9-1253-4c15-b056-dfa714c49aed\",\n  \"image_id\": \"3ab93c4c-dc9c-53d8-8249-1a2696e1eeef\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"3ab93c4c-dc9c-53d8-8249-1a2696e1eeef\",\n  \"job_id\": \"2d0b79d9-1253-4c15-b056-dfa714c49aed\",\n  \"image_size\": {\n    \"width\": 112,\n    \"height\": 112\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/2d0b79d9-1253-4c15-b056-dfa714c49aed/download\"\n}\nPoll get_image(job_id=\"2d0b79d9-1253-4c15-b056-dfa714c49aed\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    }
+  ]
+}

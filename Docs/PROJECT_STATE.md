@@ -20,6 +20,35 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+- **Ironvein integration (2026-10-08):** The user authorized all eleven
+  Ironvein pack phases on `codex/ironvein-excavation` and explicitly approved
+  merging PR #183 on 2026-10-08.
+  The playable fourth zone has thirteen enemies plus an independent turret,
+  persistent 1/2/3-hit maturing stones, two charged full-lane drills, saved
+  one-sequence ore power, Rattled and the Grand Delver's breakable Core cycle.
+  The Bore Engineer's small drill stops at its first stone after exactly one
+  durability hit, even on break. The optional single-remount experiment is
+  implemented and tested but disabled in production data.
+  Fourteen native stills, 108 clips, three modular cave scenes, industrial HUD,
+  mechanism VFX and original temporary music/SFX are integrated for review.
+  Forty-one weighted formations teach new kits with normal escorts and provide
+  relief after milestones. Saved visit history, natural stone introduction and
+  four-zone random crystal travel preserve global endless difficulty and run
+  resources. Six actual handoffs verify source-zone cleanup and continuation.
+  The 56 current mine/affected checks pass on their latest executions; three
+  synthetic-input visits completed in 7.75–10.65 game minutes without stat
+  overrides. Helpful drill opportunities were uncommon under that input policy.
+  Four portrait/safe-inset captures and individual native measurements are in
+  [the review evidence](Validation/Ironvein/README.md). Visual, listening, human
+  pacing and physical-device review remain open. Final compatibility verification
+  passed 157 cases without failures/skips; the required Unity 6000.3.19f1 validator
+  passed after the mine Guide update. [PR #183](https://github.com/PlatFll/Dungeon-Matcher/pull/183)
+  contains this milestone. Merge approval does not establish human art,
+  listening, pacing or physical-device acceptance.
+  See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
+  [phase worklist](IronveinExcavation/WORKLIST.md) and
+  [executed validation](IronveinExcavation/VALIDATION.md).
+
 - **Date:** 2026-10-08
 - **Roster/endless milestone:** [PR #182](https://github.com/PlatFll/Dungeon-Matcher/pull/182) delivers the complete revision, including the channel-lifecycle and HP-scaling work completed before the usage stop. The user explicitly authorized its integration on 2026-10-08. It removes extra channel recovery, renames The Minister, restores sequential Judgment with native strikes/finisher, adds instant Forest roots and Warded, and makes Falling Bough fully cancel when any marked gem clears. Court now has finite oxygen reserves, instant independent coffers, royal pearl rotation, all-or-nothing Pressure Lance, Nacre Tribute/Fortified and restrained underwater motion effects. The provisional shared HP curve reaches 6× at wave 100 and 9× at 150; damage/timing data and disabled player-power correction remain. Final integration fixes Forest counter space, readable buff/weakness labels, coffer counts, duplicate AIR feedback and Puffer's retained inflation pause. All 149 combined regression cases pass on their latest affected execution; the Unity validator passed again before integration. Four portrait/safe-inset shapes have been captured and reviewed. No PixelLab generations were used. Merge approval does not establish physical-device, human pacing or visual approval of the new native art. See [the worklist](ROSTER_ENDLESS_REVISION.md), [validation](Validation/ROSTER_ENDLESS_REVISION.md) and the local `.utmp/RosterEndless/Review.html` gallery.
 - **Drowned Court merged baseline:** [PR #180](https://github.com/PlatFll/Dungeon-Matcher/pull/180) merged on 2026-10-05. Fourteen marine identities have stills, native motion and data-selected kits; three coral-ruin compositions and marine gameplay UI are imported. Flood/AIR, temporary thorn snares, coffers, Queen rotation, three-zone travel and continuation are implemented. The testing picker includes Court; Bardley uses three sequential cracked explosions without bubble delivery. See [the Court contract](DROWNED_COURT.md). Production consumed 182/300 separately approved PixelLab generations, with the reserve untouched. Merge approval does not imply later art or temporary music has received visual/listening approval. Evidence and remaining device gates are in the Court validation record.

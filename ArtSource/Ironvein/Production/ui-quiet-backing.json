@@ -1,0 +1,84 @@
+[
+  {
+    "name": "BackdropQuiet",
+    "source": "general_backing",
+    "job": "fac30a37-d957-42e9-aa9f-ecb5d2d05672",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          127,
+          127
+        ],
+        "colors": {
+          "#121211ff": "#0e1115ff",
+          "#2a2c28ff": "#101317ff",
+          "#878981ff": "#181b1fff",
+          "#191a18ff": "#0e1115ff",
+          "#4e5049ff": "#13161aff",
+          "#5c5e55ff": "#14171bff",
+          "#565950ff": "#14171bff",
+          "#2d2f2aff": "#101317ff",
+          "#272824ff": "#101317ff",
+          "#595b52ff": "#14171bff",
+          "#252622ff": "#0f1216ff",
+          "#474942ff": "#121519ff",
+          "#606159ff": "#15181cff",
+          "#814222ff": "#13161aff",
+          "#3a3d37ff": "#111418ff",
+          "#454640ff": "#121519ff",
+          "#000000ff": "#0c0f13ff",
+          "#75776dff": "#171a1eff",
+          "#373933ff": "#111418ff",
+          "#3d3e39ff": "#121519ff",
+          "#353631ff": "#111418ff",
+          "#6b6d63ff": "#16191dff",
+          "#232421ff": "#0f1216ff",
+          "#141514ff": "#0e1115ff",
+          "#21221eff": "#0f1216ff",
+          "#6d6e65ff": "#16191dff",
+          "#271008ff": "#0e1115ff",
+          "#7c7e75ff": "#171a1eff",
+          "#6b331dff": "#121519ff",
+          "#41423cff": "#121519ff",
+          "#0a0a09ff": "#0d1014ff",
+          "#42453eff": "#121519ff",
+          "#6f7167ff": "#16191dff",
+          "#1d1e1bff": "#0f1216ff",
+          "#91928bff": "#191c20ff",
+          "#32342fff": "#111418ff",
+          "#292a26ff": "#101317ff",
+          "#060504ff": "#0c0f13ff",
+          "#3f413bff": "#121519ff",
+          "#0e0e0eff": "#0d1014ff",
+          "#4b4d46ff": "#13161aff",
+          "#51524bff": "#13161aff",
+          "#552818ff": "#101317ff",
+          "#393b35ff": "#111418ff",
+          "#65675eff": "#15181cff",
+          "#717369ff": "#16191dff",
+          "#63655bff": "#15181cff",
+          "#696a61ff": "#15181cff",
+          "#3b1b10ff": "#0f1216ff",
+          "#55564eff": "#14171bff",
+          "#30322dff": "#101317ff",
+          "#53544dff": "#13161aff",
+          "#1f201dff": "#0f1216ff",
+          "#222321ff": "#0f1216ff"
+        }
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "error: Each edit needs an observed reason\n\nnothing was changed. hint: `inspect <id> --region x0,y0,x1,y1` shows exact colours; `describe edits` has every field."
+      }
+    ]
+  }
+]

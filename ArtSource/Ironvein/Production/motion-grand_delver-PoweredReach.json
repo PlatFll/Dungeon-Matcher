@@ -1,0 +1,21 @@
+{
+  "request": {
+    "description": "The mech bends its knees and drives its LEFT conical steel drill forward to the left, extending the forearm steel piston and rotating its sharp tip. Finish exactly in the supplied thrust contact pose. The RIGHT hand remains its original open gripping claw. Fixed planted feet, short decisive strike.",
+    "first_frame_url": "Inputs/grand_delver_wide.png",
+    "last_frame_url": "RawMotion/grand_delver/PoweredContact/00.png",
+    "frame_count": 4,
+    "no_background": true,
+    "seed": 410089,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot in a steel mining mech with LEFT drill and RIGHT claw",
+    "initial_pose": "standing ready with lowered left drill",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 5fa8aff4-9c30-49ff-a9fb-bd14b336b542\njob_id: 5fa8aff4-9c30-49ff-a9fb-bd14b336b542\ndescription: The mech bends its knees and drives its LEFT conical steel drill forward to the left, extending the forearm steel piston and rotating its sharp tip. Finish exactly in the supplied thrust contact pose. The RIGHT hand remains its original open gripping claw. Fixed planted feet, short decisive strike.\nframes: 4\nsize: 160x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 410089\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5fa8aff4-9c30-49ff-a9fb-bd14b336b542\")\nasset_id: f1c09188-dbdd-5013-8778-6369efc64a23\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

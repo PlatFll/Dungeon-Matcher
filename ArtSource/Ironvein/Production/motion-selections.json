@@ -1,0 +1,2697 @@
+[
+  {
+    "name": "pickaxe_delver",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/pickaxe_delver/Idle/00.png",
+      "RawMotion/pickaxe_delver/Idle/01.png",
+      "RawMotion/pickaxe_delver/Idle/02.png",
+      "RawMotion/pickaxe_delver/Idle/03.png",
+      "RawMotion/pickaxe_delver/Idle/04.png",
+      "RawMotion/pickaxe_delver/Idle/05.png",
+      "RawMotion/pickaxe_delver/Idle/06.png",
+      "RawMotion/pickaxe_delver/Idle/07.png",
+      "RawMotion/pickaxe_delver/Idle/00.png"
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/rivet_gunner/Idle/00.png",
+      "RawMotion/rivet_gunner/Idle/01.png",
+      "RawMotion/rivet_gunner/Idle/02.png",
+      "RawMotion/rivet_gunner/Idle/03.png",
+      "RawMotion/rivet_gunner/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/ore_hauler/Idle/00.png",
+      "RawMotion/ore_hauler/Idle/01.png",
+      "RawMotion/ore_hauler/Idle/02.png",
+      "RawMotion/ore_hauler/Idle/03.png",
+      "RawMotion/ore_hauler/Idle/04.png",
+      "RawMotion/ore_hauler/Idle/05.png",
+      "RawMotion/ore_hauler/Idle/06.png",
+      "RawMotion/ore_hauler/Idle/07.png",
+      "RawMotion/ore_hauler/Idle/00.png"
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "packbeetle",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/packbeetle/Idle/00.png",
+      "RawMotion/packbeetle/Idle/01.png",
+      "RawMotion/packbeetle/Idle/02.png",
+      "RawMotion/packbeetle/Idle/03.png",
+      "RawMotion/packbeetle/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/vein_surveyor/Idle/00.png",
+      "RawMotion/vein_surveyor/Idle/01.png",
+      "RawMotion/vein_surveyor/Idle/02.png",
+      "RawMotion/vein_surveyor/Idle/03.png",
+      "RawMotion/vein_surveyor/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/powder_sapper/Idle/00.png",
+      "RawMotion/powder_sapper/Idle/01.png",
+      "RawMotion/powder_sapper/Idle/02.png",
+      "RawMotion/powder_sapper/Idle/03.png",
+      "RawMotion/powder_sapper/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/rivet_turret/Idle/00.png",
+      "RawMotion/rivet_turret/Idle/01.png",
+      "RawMotion/rivet_turret/Idle/02.png",
+      "RawMotion/rivet_turret/Idle/03.png",
+      "RawMotion/rivet_turret/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "loop": true,
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/pickaxe_delver/AutoAttack/00.png",
+      "RawMotion/pickaxe_delver/AutoAttack/01.png",
+      "RawMotion/pickaxe_delver/AutoAttack/02.png",
+      "RawMotion/pickaxe_delver/AutoAttack/09.png",
+      "RawMotion/pickaxe_delver/AutoAttack/10.png",
+      "RawMotion/pickaxe_delver/AutoAttack/11.png",
+      "RawMotion/pickaxe_delver/AutoAttack/12.png",
+      "RawMotion/pickaxe_delver/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      90,
+      80,
+      100,
+      80,
+      80,
+      80,
+      80,
+      90
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Omit clipped high wind-up and over-bright arc; keep raised pick, clear low contact and authored recovery."
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/00.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/01.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/02.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/05.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/06.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/07.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/08.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/10.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/12.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/00.png"
+    ],
+    "durationsMs": [
+      90,
+      80,
+      80,
+      70,
+      50,
+      40,
+      50,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "review": "Expanded powered head, fast orange contact and mechanical retraction; original ready pose restores the normal weapon."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/rivet_gunner/AutoAttack/00.png",
+      "RawMotion/rivet_gunner/AutoAttack/01.png",
+      "RawMotion/rivet_gunner/AutoAttack/02.png",
+      "RawMotion/rivet_gunner/AutoAttack/03.png",
+      "RawMotion/rivet_gunner/AutoAttack/04.png",
+      "RawMotion/rivet_gunner/AutoAttack/05.png",
+      "RawMotion/rivet_gunner/AutoAttack/06.png",
+      "RawMotion/rivet_gunner/AutoAttack/07.png",
+      "RawMotion/rivet_gunner/AutoAttack/08.png",
+      "RawMotion/rivet_gunner/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      80,
+      100,
+      40,
+      30,
+      50,
+      60,
+      60,
+      70,
+      80,
+      70
+    ],
+    "impactFrame": 2,
+    "attack": true,
+    "review": "One short muzzle flash with body recoil and recovery; native battery and goggles preserved."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/ore_hauler/AutoAttack/00.png",
+      "RawMotion/ore_hauler/AutoAttack/01.png",
+      "RawMotion/ore_hauler/AutoAttack/02.png",
+      "RawMotion/ore_hauler/AutoAttack/03.png",
+      "RawMotion/ore_hauler/AutoAttack/04.png",
+      "RawMotion/ore_hauler/AutoAttack/05.png",
+      "RawMotion/ore_hauler/AutoAttack/06.png",
+      "RawMotion/ore_hauler/AutoAttack/07.png",
+      "RawMotion/ore_hauler/AutoAttack/08.png",
+      "RawMotion/ore_hauler/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      50,
+      60,
+      70,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Grounded shoulder bump under backpack weight; no invented weapon."
+  },
+  {
+    "name": "packbeetle",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/packbeetle/AutoAttack/00.png",
+      "RawMotion/packbeetle/AutoAttack/01.png",
+      "RawMotion/packbeetle/AutoAttack/02.png",
+      "RawMotion/packbeetle/AutoAttack/03.png",
+      "RawMotion/packbeetle/AutoAttack/04.png",
+      "RawMotion/packbeetle/AutoAttack/05.png",
+      "RawMotion/packbeetle/AutoAttack/06.png",
+      "RawMotion/packbeetle/AutoAttack/07.png",
+      "RawMotion/packbeetle/AutoAttack/08.png",
+      "RawMotion/packbeetle/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      60,
+      70,
+      70,
+      60,
+      40,
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Low body lunge and mandible contact, cargo secured; exact ready recovery."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/vein_surveyor/AutoAttack/00.png",
+      "RawMotion/vein_surveyor/AutoAttack/01.png",
+      "RawMotion/vein_surveyor/AutoAttack/02.png",
+      "RawMotion/vein_surveyor/AutoAttack/03.png",
+      "RawMotion/vein_surveyor/AutoAttack/04.png",
+      "RawMotion/vein_surveyor/AutoAttack/05.png",
+      "RawMotion/vein_surveyor/AutoAttack/06.png",
+      "RawMotion/vein_surveyor/AutoAttack/07.png",
+      "RawMotion/vein_surveyor/AutoAttack/08.png",
+      "RawMotion/vein_surveyor/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      60,
+      60,
+      70,
+      50,
+      60,
+      40,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "review": "Map jab has distinct extension; lens, map and cap stay coherent."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/powder_sapper/AutoAttack/00.png",
+      "RawMotion/powder_sapper/AutoAttack/01.png",
+      "RawMotion/powder_sapper/AutoAttack/02.png",
+      "RawMotion/powder_sapper/AutoAttack/03.png",
+      "RawMotion/powder_sapper/AutoAttack/04.png",
+      "RawMotion/powder_sapper/AutoAttack/05.png",
+      "RawMotion/powder_sapper/AutoAttack/06.png",
+      "RawMotion/powder_sapper/AutoAttack/07.png",
+      "RawMotion/powder_sapper/AutoAttack/08.png",
+      "RawMotion/powder_sapper/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      60,
+      60,
+      70,
+      50,
+      60,
+      40,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "review": "Short fist jab; no explosion or new weapon."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/rivet_turret/AutoAttack-v2/00.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/01.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/02.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/03.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/04.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/06.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/08.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/00.png"
+    ],
+    "durationsMs": [
+      100,
+      50,
+      40,
+      40,
+      60,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 1,
+    "attack": true,
+    "review": "Single recoil/shot, flashes held briefly; all three feet and barrel recovered."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/bore_engineer/Idle-repaired/00.png",
+      "RawMotion/bore_engineer/Idle-repaired/01.png",
+      "RawMotion/bore_engineer/Idle-repaired/02.png",
+      "RawMotion/bore_engineer/Idle-repaired/03.png",
+      "RawMotion/bore_engineer/Idle-repaired/04.png",
+      "RawMotion/bore_engineer/Idle-repaired/05.png",
+      "RawMotion/bore_engineer/Idle-repaired/06.png",
+      "RawMotion/bore_engineer/Idle-repaired/07.png",
+      "RawMotion/bore_engineer/Idle-repaired/00.png"
+    ],
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "stonewright",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/stonewright/Idle/00.png",
+      "RawMotion/stonewright/Idle/01.png",
+      "RawMotion/stonewright/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      350,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "rail_switcher",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/rail_switcher/Idle/00.png",
+      "RawMotion/rail_switcher/Idle/01.png",
+      "RawMotion/rail_switcher/Idle/02.png",
+      "RawMotion/rail_switcher/Idle/03.png",
+      "RawMotion/rail_switcher/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "seismic_smith",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/seismic_smith/Idle-v2/00.png",
+      "RawMotion/seismic_smith/Idle-v2/01.png",
+      "RawMotion/seismic_smith/Idle-v2/02.png",
+      "RawMotion/seismic_smith/Idle-v2/03.png",
+      "RawMotion/seismic_smith/Idle-v2/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "siege_machinist",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/siege_machinist/Idle/00.png",
+      "RawMotion/siege_machinist/Idle/01.png",
+      "RawMotion/siege_machinist/Idle/02.png",
+      "RawMotion/siege_machinist/Idle/03.png",
+      "RawMotion/siege_machinist/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/obsidian_sentinel/Idle/00.png",
+      "RawMotion/obsidian_sentinel/Idle/01.png",
+      "RawMotion/obsidian_sentinel/Idle/02.png",
+      "RawMotion/obsidian_sentinel/Idle/03.png",
+      "RawMotion/obsidian_sentinel/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "grand_delver",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/grand_delver/Idle/00.png",
+      "RawMotion/grand_delver/Idle/01.png",
+      "RawMotion/grand_delver/Idle/02.png",
+      "RawMotion/grand_delver/Idle/03.png",
+      "RawMotion/grand_delver/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "loop": true
+  },
+  {
+    "name": "bore_engineer",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/bore_engineer/AutoAttack-v3/00.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/02.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/05.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/06.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/08.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/06.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/05.png",
+      "RawMotion/bore_engineer/AutoAttack-v3/00.png"
+    ],
+    "durationsMs": [
+      80,
+      70,
+      70,
+      60,
+      60,
+      60,
+      70,
+      90
+    ],
+    "impactFrame": 4,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "rail_switcher",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/rail_switcher/AutoAttack-v2/00.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/02.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/03.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/04.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/05.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/06.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/08.png",
+      "RawMotion/rail_switcher/AutoAttack-v2/00.png"
+    ],
+    "durationsMs": [
+      80,
+      70,
+      100,
+      60,
+      50,
+      70,
+      80,
+      80
+    ],
+    "impactFrame": 3,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "seismic_smith",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/seismic_smith/AutoAttack/00.png",
+      "RawMotion/seismic_smith/AutoAttack/01.png",
+      "RawMotion/seismic_smith/AutoAttack/06.png",
+      "RawMotion/seismic_smith/AutoAttack/09.png",
+      "RawMotion/seismic_smith/AutoAttack/10.png",
+      "RawMotion/seismic_smith/AutoAttack/11.png",
+      "RawMotion/seismic_smith/AutoAttack/12.png",
+      "RawMotion/seismic_smith/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      90,
+      100,
+      130,
+      60,
+      60,
+      60,
+      70,
+      90
+    ],
+    "impactFrame": 3,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "siege_machinist",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/siege_machinist/AutoAttack/00.png",
+      "RawMotion/siege_machinist/AutoAttack/01.png",
+      "RawMotion/siege_machinist/AutoAttack/09.png",
+      "RawMotion/siege_machinist/AutoAttack/10.png",
+      "RawMotion/siege_machinist/AutoAttack/11.png",
+      "RawMotion/siege_machinist/AutoAttack/12.png",
+      "RawMotion/siege_machinist/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      90,
+      180,
+      60,
+      60,
+      70,
+      80,
+      90
+    ],
+    "impactFrame": 2,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/00.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/01.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/02.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/03.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/05.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/06.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/07.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/08.png",
+      "RawMotion/obsidian_sentinel/AutoAttack-v2/00.png"
+    ],
+    "durationsMs": [
+      90,
+      80,
+      80,
+      50,
+      50,
+      60,
+      80,
+      80,
+      90
+    ],
+    "impactFrame": 3,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "stonewright",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/stonewright/AutoAttack-v2/00.png",
+      "RawMotion/stonewright/AutoAttack-v2/01.png",
+      "RawMotion/stonewright/AutoAttack-v2/02.png",
+      "RawMotion/stonewright/AutoAttack-v2/06.png",
+      "RawMotion/stonewright/AutoAttack-v2/07.png",
+      "RawMotion/stonewright/AutoAttack-v2/08.png",
+      "RawMotion/stonewright/AutoAttack-v2/09.png",
+      "RawMotion/stonewright/AutoAttack-v2/12.png",
+      "RawMotion/stonewright/Recovery/01.png",
+      "RawMotion/stonewright/Recovery/02.png",
+      "RawMotion/stonewright/Recovery/03.png",
+      "RawMotion/stonewright/Recovery/04.png"
+    ],
+    "durationsMs": [
+      80,
+      70,
+      90,
+      90,
+      50,
+      50,
+      50,
+      60,
+      70,
+      70,
+      70,
+      90
+    ],
+    "impactFrame": 4,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses.",
+    "attack": true
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/pickaxe_delver/Hit/00.png",
+      "RawMotion/pickaxe_delver/Hit/01.png",
+      "RawMotion/pickaxe_delver/Hit/02.png",
+      "RawMotion/pickaxe_delver/Hit/03.png",
+      "RawMotion/pickaxe_delver/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/rivet_gunner/Hit/00.png",
+      "RawMotion/rivet_gunner/Hit/02.png",
+      "RawMotion/rivet_gunner/Hit/03.png",
+      "RawMotion/rivet_gunner/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/ore_hauler/Hit/00.png",
+      "RawMotion/ore_hauler/Hit/01.png",
+      "RawMotion/ore_hauler/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/bore_engineer/Hit/00.png",
+      "RawMotion/bore_engineer/Hit/03.png",
+      "RawMotion/bore_engineer/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "packbeetle",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/packbeetle/Hit/00.png",
+      "RawMotion/packbeetle/Hit/01.png",
+      "RawMotion/packbeetle/Hit/03.png",
+      "RawMotion/packbeetle/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "stonewright",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/stonewright/Hit/00.png",
+      "RawMotion/stonewright/Hit/01.png",
+      "RawMotion/stonewright/Hit/02.png",
+      "RawMotion/stonewright/Hit/03.png",
+      "RawMotion/stonewright/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/vein_surveyor/Hit/00.png",
+      "RawMotion/vein_surveyor/Hit/01.png",
+      "RawMotion/vein_surveyor/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/powder_sapper/Hit/00.png",
+      "RawMotion/powder_sapper/Hit/01.png",
+      "RawMotion/powder_sapper/Hit/02.png",
+      "RawMotion/powder_sapper/Hit/03.png",
+      "RawMotion/powder_sapper/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "rail_switcher",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/rail_switcher/Hit/00.png",
+      "RawMotion/rail_switcher/Hit/01.png",
+      "RawMotion/rail_switcher/Hit/02.png",
+      "RawMotion/rail_switcher/Hit/03.png",
+      "RawMotion/rail_switcher/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "seismic_smith",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/seismic_smith/Hit-v2/00.png",
+      "RawMotion/seismic_smith/Hit-v2/01.png",
+      "RawMotion/seismic_smith/Hit-v2/02.png",
+      "RawMotion/seismic_smith/Hit-v2/03.png",
+      "RawMotion/seismic_smith/Hit-v2/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "siege_machinist",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/siege_machinist/Hit-v2/00.png",
+      "RawMotion/siege_machinist/Hit-v2/01.png",
+      "RawMotion/siege_machinist/Hit-v2/02.png",
+      "RawMotion/siege_machinist/Hit-v2/03.png",
+      "RawMotion/siege_machinist/Hit-v2/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/obsidian_sentinel/Hit-v2/00.png",
+      "RawMotion/obsidian_sentinel/Hit-v2/01.png",
+      "RawMotion/obsidian_sentinel/Hit-v2/02.png",
+      "RawMotion/obsidian_sentinel/Hit-v2/03.png",
+      "RawMotion/obsidian_sentinel/Hit-v2/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "grand_delver",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/grand_delver/Hit/00.png",
+      "RawMotion/grand_delver/Hit/01.png",
+      "RawMotion/grand_delver/Hit/02.png",
+      "RawMotion/grand_delver/Hit/03.png",
+      "RawMotion/grand_delver/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/rivet_turret/Hit/00.png",
+      "RawMotion/rivet_turret/Hit/02.png",
+      "RawMotion/rivet_turret/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      50,
+      50
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed original native frames: stable equipment/materials, grounded motion; discarded clipped or intrusive generated poses."
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "Death",
+    "frames": [
+      "RawMotion/pickaxe_delver/Death/00.png",
+      "RawMotion/pickaxe_delver/Death/01.png",
+      "RawMotion/pickaxe_delver/Death/02.png",
+      "RawMotion/pickaxe_delver/Death/03.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "Death",
+    "frames": [
+      "RawMotion/rivet_gunner/Death/00.png",
+      "RawMotion/rivet_gunner/Death/01.png",
+      "RawMotion/rivet_gunner/Death/02.png",
+      "RawMotion/rivet_gunner/Death/03.png",
+      "RawMotion/rivet_gunner/Death/04.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "Death",
+    "frames": [
+      "RawMotion/ore_hauler/Death/00.png",
+      "RawMotion/ore_hauler/Death/01.png",
+      "RawMotion/ore_hauler/Death/02.png",
+      "RawMotion/ore_hauler/Death/03.png",
+      "RawMotion/ore_hauler/Death/04.png",
+      "RawMotion/ore_hauler/Death/05.png",
+      "RawMotion/ore_hauler/Death/06.png",
+      "RawMotion/ore_hauler/Death/07.png",
+      "RawMotion/ore_hauler/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "Death",
+    "frames": [
+      "RawMotion/bore_engineer/Death/00.png",
+      "RawMotion/bore_engineer/Death/02.png",
+      "RawMotion/bore_engineer/Death/03.png",
+      "RawMotion/bore_engineer/Death/04.png",
+      "RawMotion/bore_engineer/Death/05.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "packbeetle",
+    "state": "Death",
+    "frames": [
+      "RawMotion/packbeetle/Death/00.png",
+      "RawMotion/packbeetle/Death/01.png",
+      "RawMotion/packbeetle/Death/02.png",
+      "RawMotion/packbeetle/Death/03.png",
+      "RawMotion/packbeetle/Death/04.png",
+      "RawMotion/packbeetle/Death/05.png",
+      "RawMotion/packbeetle/Death/06.png",
+      "RawMotion/packbeetle/Death/07.png",
+      "RawMotion/packbeetle/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "stonewright",
+    "state": "Death",
+    "frames": [
+      "RawMotion/stonewright/Death/00.png",
+      "RawMotion/stonewright/Death/01.png",
+      "RawMotion/stonewright/Death/02.png",
+      "RawMotion/stonewright/Death/03.png",
+      "RawMotion/stonewright/Death/04.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "Death",
+    "frames": [
+      "RawMotion/vein_surveyor/Death/00.png",
+      "RawMotion/vein_surveyor/Death/02.png",
+      "RawMotion/vein_surveyor/Death/03.png",
+      "RawMotion/vein_surveyor/Death/04.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "Death",
+    "frames": [
+      "RawMotion/powder_sapper/Death/00.png",
+      "RawMotion/powder_sapper/Death/01.png",
+      "RawMotion/powder_sapper/Death/02.png",
+      "RawMotion/powder_sapper/Death/03.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "rail_switcher",
+    "state": "Death",
+    "frames": [
+      "RawMotion/rail_switcher/Death/00.png",
+      "RawMotion/rail_switcher/Death/01.png",
+      "RawMotion/rail_switcher/Death/02.png",
+      "RawMotion/rail_switcher/Death/03.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "seismic_smith",
+    "state": "Death",
+    "frames": [
+      "RawMotion/seismic_smith/Death/00.png",
+      "RawMotion/seismic_smith/Death/01.png",
+      "RawMotion/seismic_smith/Death/02.png",
+      "RawMotion/seismic_smith/Death/03.png",
+      "RawMotion/seismic_smith/Death/04.png",
+      "RawMotion/seismic_smith/Death/05.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "siege_machinist",
+    "state": "Death",
+    "frames": [
+      "RawMotion/siege_machinist/Death/00.png",
+      "RawMotion/siege_machinist/Death/01.png",
+      "RawMotion/siege_machinist/Death/02.png",
+      "RawMotion/siege_machinist/Death/03.png",
+      "RawMotion/siege_machinist/Death/04.png",
+      "RawMotion/siege_machinist/Death/05.png",
+      "RawMotion/siege_machinist/Death/06.png",
+      "RawMotion/siege_machinist/Death/07.png",
+      "RawMotion/siege_machinist/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "Death",
+    "frames": [
+      "RawMotion/obsidian_sentinel/Death/00.png",
+      "RawMotion/obsidian_sentinel/Death/01.png",
+      "RawMotion/obsidian_sentinel/Death/02.png",
+      "RawMotion/obsidian_sentinel/Death/03.png",
+      "RawMotion/obsidian_sentinel/Death/04.png",
+      "RawMotion/obsidian_sentinel/Death/05.png",
+      "RawMotion/obsidian_sentinel/Death/06.png",
+      "RawMotion/obsidian_sentinel/Death/07.png",
+      "RawMotion/obsidian_sentinel/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "grand_delver",
+    "state": "Death",
+    "frames": [
+      "RawMotion/grand_delver/Death/00.png",
+      "RawMotion/grand_delver/Death/01.png",
+      "RawMotion/grand_delver/Death/02.png",
+      "RawMotion/grand_delver/Death/03.png",
+      "RawMotion/grand_delver/Death/04.png",
+      "RawMotion/grand_delver/Death/05.png",
+      "RawMotion/grand_delver/Death/06.png",
+      "RawMotion/grand_delver/Death/07.png",
+      "RawMotion/grand_delver/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "Death",
+    "frames": [
+      "RawMotion/rivet_turret/Death/00.png",
+      "RawMotion/rivet_turret/Death/01.png",
+      "RawMotion/rivet_turret/Death/02.png",
+      "RawMotion/rivet_turret/Death/03.png",
+      "RawMotion/rivet_turret/Death/04.png",
+      "RawMotion/rivet_turret/Death/05.png",
+      "RawMotion/rivet_turret/Death/06.png",
+      "RawMotion/rivet_turret/Death/07.png",
+      "RawMotion/rivet_turret/Death/08.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      200
+    ],
+    "impactFrame": 0,
+    "review": "Reviewed collapse and settled final pose, then existing death fade. Clipped horizontal extremes omitted where needed. Packbeetle spills its cargo once; Grand Delver vents a brief native rear-engine burst."
+  },
+  {
+    "name": "stonewright",
+    "state": "Ability",
+    "frames": [
+      "RawMotion/stonewright/AutoAttack-v2/00.png",
+      "RawMotion/stonewright/AutoAttack-v2/01.png",
+      "RawMotion/stonewright/AutoAttack-v2/02.png",
+      "RawMotion/stonewright/AutoAttack-v2/06.png",
+      "RawMotion/stonewright/AutoAttack-v2/07.png",
+      "RawMotion/stonewright/AutoAttack-v2/08.png",
+      "RawMotion/stonewright/AutoAttack-v2/09.png",
+      "RawMotion/stonewright/AutoAttack-v2/12.png",
+      "RawMotion/stonewright/Recovery/01.png",
+      "RawMotion/stonewright/Recovery/02.png",
+      "RawMotion/stonewright/Recovery/03.png",
+      "RawMotion/stonewright/Recovery/04.png"
+    ],
+    "durationsMs": [
+      80,
+      150,
+      90,
+      90,
+      50,
+      50,
+      50,
+      60,
+      70,
+      70,
+      70,
+      90
+    ],
+    "impactFrame": 4,
+    "review": "Instant ground-strike kit: authored mallet/sledge contact, no invented multi-move warning. Shares physical strike drawing with the basic, with longer anticipation.",
+    "attack": false,
+    "special": true
+  },
+  {
+    "name": "seismic_smith",
+    "state": "Ability",
+    "frames": [
+      "RawMotion/seismic_smith/AutoAttack/00.png",
+      "RawMotion/seismic_smith/AutoAttack/01.png",
+      "RawMotion/seismic_smith/AutoAttack/06.png",
+      "RawMotion/seismic_smith/AutoAttack/09.png",
+      "RawMotion/seismic_smith/AutoAttack/10.png",
+      "RawMotion/seismic_smith/AutoAttack/11.png",
+      "RawMotion/seismic_smith/AutoAttack/12.png",
+      "RawMotion/seismic_smith/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      90,
+      180,
+      130,
+      60,
+      60,
+      60,
+      70,
+      90
+    ],
+    "impactFrame": 3,
+    "review": "Instant ground-strike kit: authored mallet/sledge contact, no invented multi-move warning. Shares physical strike drawing with the basic, with longer anticipation.",
+    "attack": false,
+    "special": true
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/00.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/01.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/02.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/03.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/04.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/05.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/06.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/07.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/08.png",
+      "RawMotion/rivet_gunner/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      70,
+      90,
+      90,
+      70,
+      40,
+      50,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/bore_engineer/OreChargedAutoAttack/00.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/01.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/03.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/05.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/06.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/08.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/09.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/10.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/11.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/12.png",
+      "RawMotion/bore_engineer/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      80,
+      70,
+      50,
+      60,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 5,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "stonewright",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/stonewright/OreChargedAutoAttack/00.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/01.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/05.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/07.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/08.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/09.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/10.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/11.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/12.png",
+      "RawMotion/stonewright/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      80,
+      90,
+      130,
+      60,
+      50,
+      50,
+      70,
+      70,
+      80,
+      80
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "seismic_smith",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/seismic_smith/OreChargedAutoAttack/00.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/01.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/02.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/03.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/05.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/09.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/10.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/11.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/12.png",
+      "RawMotion/seismic_smith/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      70,
+      60,
+      70,
+      70,
+      120,
+      60,
+      60,
+      70,
+      80,
+      90
+    ],
+    "impactFrame": 5,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/00.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/01.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/02.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/04.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/05.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/06.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/07.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/08.png",
+      "RawMotion/obsidian_sentinel/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      80,
+      90,
+      100,
+      60,
+      50,
+      60,
+      70,
+      80,
+      90
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/rivet_turret/OreChargedAutoAttack/00.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/01.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/02.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/04.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/05.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/06.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/07.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/08.png",
+      "RawMotion/rivet_turret/OreChargedAutoAttack/00.png"
+    ],
+    "durationsMs": [
+      80,
+      80,
+      90,
+      50,
+      60,
+      60,
+      80,
+      80,
+      80
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "review": "Orange socket activation and mechanical extension, one attack and retraction. Clipped tips/overhead extrema and oversized generated flares omitted; exact original ready frame closes the clip."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "Ability",
+    "frames": [
+      "RawMotion/ore_hauler/Ability/00.png",
+      "RawMotion/ore_hauler/Ability/01.png",
+      "RawMotion/ore_hauler/Ability/02.png",
+      "RawMotion/ore_hauler/Ability/03.png",
+      "RawMotion/ore_hauler/Ability/05.png",
+      "RawMotion/ore_hauler/Ability/07.png",
+      "RawMotion/ore_hauler/Ability/08.png",
+      "RawMotion/ore_hauler/Ability/09.png",
+      "RawMotion/ore_hauler/Ability/10.png",
+      "RawMotion/ore_hauler/Ability/11.png",
+      "RawMotion/ore_hauler/Ability/12.png",
+      "RawMotion/ore_hauler/Ability/00.png"
+    ],
+    "durationsMs": [
+      70,
+      60,
+      60,
+      60,
+      60,
+      70,
+      80,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 6,
+    "special": true,
+    "review": "Instant ore offer: hand lifts, reaches and releases at floating-crystal frame 8; the gameplay-owned transfer is the Phase 09 effect. No fake response window."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "ChannelStart",
+    "frames": [
+      "RawMotion/bore_engineer/AbilityCycle/00.png",
+      "RawMotion/bore_engineer/AbilityCycle/01.png",
+      "RawMotion/bore_engineer/AbilityCycle/02.png",
+      "RawMotion/bore_engineer/AbilityCycle/04.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "ChannelHold",
+    "frames": [
+      "RawMotion/bore_engineer/AbilityCycle/04.png",
+      "RawMotion/bore_engineer/AbilityCycle/05.png",
+      "RawMotion/bore_engineer/AbilityCycle/04.png"
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "bore_engineer",
+    "state": "Release",
+    "frames": [
+      "RawMotion/bore_engineer/AbilityCycle/04.png",
+      "RawMotion/bore_engineer/AbilityCycle/06.png",
+      "RawMotion/bore_engineer/AbilityCycle/08.png",
+      "RawMotion/bore_engineer/AbilityCycle/09.png",
+      "RawMotion/bore_engineer/AbilityCycle/10.png",
+      "RawMotion/bore_engineer/AbilityCycle/11.png",
+      "RawMotion/bore_engineer/AbilityCycle/12.png",
+      "RawMotion/bore_engineer/AbilityCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 2,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "ChannelStart",
+    "frames": [
+      "RawMotion/vein_surveyor/AbilityCycle-orange/00.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/01.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/02.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/03.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "ChannelHold",
+    "frames": [
+      "RawMotion/vein_surveyor/AbilityCycle-orange/03.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/04.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/03.png"
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "Release",
+    "frames": [
+      "RawMotion/vein_surveyor/AbilityCycle-orange/03.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/05.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/07.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/08.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/09.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/10.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/11.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/12.png",
+      "RawMotion/vein_surveyor/AbilityCycle-orange/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "ChannelStart",
+    "frames": [
+      "RawMotion/powder_sapper/AbilityCycle/00.png",
+      "RawMotion/powder_sapper/AbilityCycle/01.png",
+      "RawMotion/powder_sapper/AbilityCycle/02.png",
+      "RawMotion/powder_sapper/AbilityCycle/03.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "ChannelHold",
+    "frames": [
+      "RawMotion/powder_sapper/AbilityCycle/03.png",
+      "RawMotion/powder_sapper/AbilityCycle/04.png",
+      "RawMotion/powder_sapper/AbilityCycle/03.png"
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "Release",
+    "frames": [
+      "RawMotion/powder_sapper/AbilityCycle/03.png",
+      "RawMotion/powder_sapper/AbilityCycle/05.png",
+      "RawMotion/powder_sapper/AbilityCycle/06.png",
+      "RawMotion/powder_sapper/AbilityCycle/07.png",
+      "RawMotion/powder_sapper/AbilityCycle/08.png",
+      "RawMotion/powder_sapper/AbilityCycle/09.png",
+      "RawMotion/powder_sapper/AbilityCycle/10.png",
+      "RawMotion/powder_sapper/AbilityCycle/11.png",
+      "RawMotion/powder_sapper/AbilityCycle/12.png",
+      "RawMotion/powder_sapper/AbilityCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 4,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "rail_switcher",
+    "state": "ChannelStart",
+    "frames": [
+      "RawMotion/rail_switcher/AbilityCycle/00.png",
+      "RawMotion/rail_switcher/AbilityCycle/01.png",
+      "RawMotion/rail_switcher/AbilityCycle/02.png",
+      "RawMotion/rail_switcher/AbilityCycle/03.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "rail_switcher",
+    "state": "ChannelHold",
+    "frames": [
+      "RawMotion/rail_switcher/AbilityCycle/03.png",
+      "RawMotion/rail_switcher/AbilityCycle/04.png",
+      "RawMotion/rail_switcher/AbilityCycle/03.png"
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "rail_switcher",
+    "state": "Release",
+    "frames": [
+      "RawMotion/rail_switcher/AbilityCycle/03.png",
+      "RawMotion/rail_switcher/AbilityCycle/05.png",
+      "RawMotion/rail_switcher/AbilityCycle/06.png",
+      "RawMotion/rail_switcher/AbilityCycle/07.png",
+      "RawMotion/rail_switcher/AbilityCycle/08.png",
+      "RawMotion/rail_switcher/AbilityCycle/09.png",
+      "RawMotion/rail_switcher/AbilityCycle/10.png",
+      "RawMotion/rail_switcher/AbilityCycle/11.png",
+      "RawMotion/rail_switcher/AbilityCycle/12.png",
+      "RawMotion/rail_switcher/AbilityCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 4,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "DevourChannelStart",
+    "frames": [
+      "RawMotion/obsidian_sentinel/DevourCycle/00.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/01.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/02.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/03.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 3,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "DevourChannelHold",
+    "frames": [
+      "RawMotion/obsidian_sentinel/DevourCycle/03.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/04.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/03.png"
+    ],
+    "durationsMs": [
+      200,
+      200,
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "DevourRelease",
+    "frames": [
+      "RawMotion/obsidian_sentinel/DevourCycle/03.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/04.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/05.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/06.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/07.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/08.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/09.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/10.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/11.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/12.png",
+      "RawMotion/obsidian_sentinel/DevourCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 5,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "SlamChannelStart",
+    "frames": [
+      "RawMotion/obsidian_sentinel/SlamCycle/00.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/01.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/02.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 2,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "SlamChannelHold",
+    "frames": [
+      "RawMotion/obsidian_sentinel/SlamCycle/02.png"
+    ],
+    "durationsMs": [
+      200
+    ],
+    "impactFrame": 0,
+    "special": false,
+    "loop": true,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "obsidian_sentinel",
+    "state": "SlamRelease",
+    "frames": [
+      "RawMotion/obsidian_sentinel/SlamCycle/02.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/07.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/08.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/09.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/10.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/11.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/12.png",
+      "RawMotion/obsidian_sentinel/SlamCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      90
+    ],
+    "impactFrame": 1,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "siege_machinist",
+    "state": "AssembleAbility",
+    "frames": [
+      "RawMotion/siege_machinist/AssembleAbility/00.png",
+      "RawMotion/siege_machinist/AssembleAbility/01.png",
+      "RawMotion/siege_machinist/AssembleAbility/02.png",
+      "RawMotion/siege_machinist/AssembleAbility/03.png",
+      "RawMotion/siege_machinist/AssembleAbility/06.png",
+      "RawMotion/siege_machinist/AssembleAbility/07.png",
+      "RawMotion/siege_machinist/AssembleAbility/08.png",
+      "RawMotion/siege_machinist/AssembleAbility/09.png",
+      "RawMotion/siege_machinist/AssembleAbility/10.png",
+      "RawMotion/siege_machinist/AssembleAbility/11.png",
+      "RawMotion/siege_machinist/AssembleAbility/12.png",
+      "RawMotion/siege_machinist/AssembleAbility/00.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      100
+    ],
+    "impactFrame": 7,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "siege_machinist",
+    "state": "PrimeAbility",
+    "frames": [
+      "RawMotion/siege_machinist/PrimeAbility/00.png",
+      "RawMotion/siege_machinist/PrimeAbility/01.png",
+      "RawMotion/siege_machinist/PrimeAbility/02.png",
+      "RawMotion/siege_machinist/PrimeAbility/03.png",
+      "RawMotion/siege_machinist/PrimeAbility/05.png",
+      "RawMotion/siege_machinist/PrimeAbility/07.png",
+      "RawMotion/siege_machinist/PrimeAbility/08.png",
+      "RawMotion/siege_machinist/PrimeAbility/11.png",
+      "RawMotion/siege_machinist/PrimeAbility/12.png",
+      "RawMotion/siege_machinist/PrimeAbility/00.png"
+    ],
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      100
+    ],
+    "impactFrame": 6,
+    "special": true,
+    "loop": false,
+    "review": "Reviewed native gesture. Response pose holds only during the kit-owned accepted-move warning; release contact follows the saved action. Exact source ready pose closes recovery."
+  },
+  {
+    "name": "grand_delver",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/grand_delver/AutoAttack/00.png",
+      "RawMotion/grand_delver/AutoAttack/01.png",
+      "RawMotion/grand_delver/AutoAttack/04.png",
+      "RawMotion/grand_delver/AutoAttack/05.png",
+      "RawMotion/grand_delver/AutoAttack/06.png",
+      "RawMotion/grand_delver/AutoAttack/07.png",
+      "RawMotion/grand_delver/AutoAttack/08.png",
+      "RawMotion/grand_delver/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      100,
+      170,
+      70,
+      60,
+      70,
+      70,
+      70,
+      90
+    ],
+    "impactFrame": 2,
+    "attack": true,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "ClaimAbility",
+    "frames": [
+      "RawMotion/grand_delver/ClaimAbility/00.png",
+      "RawMotion/grand_delver/ClaimAbility/01.png",
+      "RawMotion/grand_delver/ClaimAbility/02.png",
+      "RawMotion/grand_delver/ClaimAbility/03.png",
+      "RawMotion/grand_delver/ClaimAbility/04.png",
+      "RawMotion/grand_delver/ClaimAbility/05.png",
+      "RawMotion/grand_delver/ClaimAbility/07.png",
+      "RawMotion/grand_delver/ClaimAbility/09.png",
+      "RawMotion/grand_delver/ClaimAbility/10.png",
+      "RawMotion/grand_delver/ClaimAbility/11.png",
+      "RawMotion/grand_delver/ClaimAbility/12.png",
+      "RawMotion/grand_delver/ClaimAbility/00.png"
+    ],
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 4,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "SteamAbility",
+    "frames": [
+      "RawMotion/grand_delver/SteamAbility/00.png",
+      "RawMotion/grand_delver/SteamAbility/01.png",
+      "RawMotion/grand_delver/SteamAbility/02.png",
+      "RawMotion/grand_delver/SteamAbility/06.png",
+      "RawMotion/grand_delver/SteamAbility/07.png",
+      "RawMotion/grand_delver/SteamAbility/08.png",
+      "RawMotion/grand_delver/SteamAbility/00.png"
+    ],
+    "durationsMs": [
+      80,
+      100,
+      100,
+      80,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 2,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "CoreChannelStart",
+    "frames": [
+      "RawMotion/grand_delver/CoreCycle-v2/00.png",
+      "RawMotion/grand_delver/CoreCycle-v2/01.png",
+      "RawMotion/grand_delver/CoreCycle-v2/02.png"
+    ],
+    "durationsMs": [
+      100,
+      100,
+      120
+    ],
+    "impactFrame": 2,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "CoreChannelHold",
+    "frames": [
+      "RawMotion/grand_delver/CoreCycle-v2/02.png"
+    ],
+    "durationsMs": [
+      250
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": true,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "CoreRelease",
+    "frames": [
+      "RawMotion/grand_delver/CoreCycle-v2/02.png",
+      "RawMotion/grand_delver/CoreCycle-v2/03.png",
+      "RawMotion/grand_delver/CoreCycle-v2/04.png",
+      "RawMotion/grand_delver/CoreCycle-v2/05.png",
+      "RawMotion/grand_delver/CoreCycle-v2/06.png",
+      "RawMotion/grand_delver/CoreCycle-v2/07.png",
+      "RawMotion/grand_delver/CoreCycle-v2/08.png",
+      "RawMotion/grand_delver/CoreCycle-v2/00.png"
+    ],
+    "durationsMs": [
+      80,
+      70,
+      70,
+      80,
+      80,
+      80,
+      90,
+      100
+    ],
+    "impactFrame": 1,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_pilot",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/grand_delver_pilot/Idle/00.png",
+      "RawMotion/grand_delver_pilot/Idle/01.png",
+      "RawMotion/grand_delver_pilot/Idle/02.png",
+      "RawMotion/grand_delver_pilot/Idle/03.png",
+      "RawMotion/grand_delver_pilot/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": true,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_pilot",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/grand_delver_pilot/AutoAttack/00.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/01.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/02.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/03.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/05.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/06.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/07.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/08.png",
+      "RawMotion/grand_delver_pilot/AutoAttack/00.png"
+    ],
+    "durationsMs": [
+      60,
+      60,
+      60,
+      60,
+      60,
+      70,
+      80,
+      90,
+      100
+    ],
+    "impactFrame": 5,
+    "attack": true,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_pilot",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/grand_delver_pilot/Hit/00.png",
+      "RawMotion/grand_delver_pilot/Hit/01.png",
+      "RawMotion/grand_delver_pilot/Hit/02.png",
+      "RawMotion/grand_delver_pilot/Hit/03.png",
+      "RawMotion/grand_delver_pilot/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      70,
+      70,
+      60,
+      80
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_pilot",
+    "state": "Death",
+    "frames": [
+      "RawMotion/grand_delver_pilot/Death/00.png",
+      "RawMotion/grand_delver_pilot/Death/01.png",
+      "RawMotion/grand_delver_pilot/Death/02.png",
+      "RawMotion/grand_delver_pilot/Death/03.png",
+      "RawMotion/grand_delver_pilot/Death/04.png",
+      "RawMotion/grand_delver_pilot/Death/05.png",
+      "RawMotion/grand_delver_pilot/Death/06.png",
+      "RawMotion/grand_delver_pilot/Death/07.png",
+      "RawMotion/grand_delver_pilot/Death/08.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_pilot",
+    "state": "Eject",
+    "frames": [
+      "RawMotion/grand_delver_pilot/Eject/00.png",
+      "RawMotion/grand_delver_pilot/Eject/01.png",
+      "RawMotion/grand_delver_pilot/Eject/02.png",
+      "RawMotion/grand_delver_pilot/Eject/03.png",
+      "RawMotion/grand_delver_pilot/Eject/04.png",
+      "RawMotion/grand_delver_pilot/Eject/05.png",
+      "RawMotion/grand_delver_pilot/Eject/06.png",
+      "RawMotion/grand_delver_pilot/Eject/07.png",
+      "RawMotion/grand_delver_pilot/Eject/08.png",
+      "RawMotion/grand_delver_pilot/Eject/09.png",
+      "RawMotion/grand_delver_pilot/Eject/10.png",
+      "RawMotion/grand_delver_pilot/Eject/11.png",
+      "RawMotion/grand_delver_pilot/Eject/12.png",
+      "Inputs/grand_delver_pilot.png"
+    ],
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "Idle",
+    "frames": [
+      "RawMotion/grand_delver_reserve/Idle/00.png",
+      "RawMotion/grand_delver_reserve/Idle/01.png",
+      "RawMotion/grand_delver_reserve/Idle/02.png",
+      "RawMotion/grand_delver_reserve/Idle/03.png",
+      "RawMotion/grand_delver_reserve/Idle/00.png"
+    ],
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": true,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "AutoAttack",
+    "frames": [
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/00.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/01.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/02.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/03.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/04.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/05.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/06.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/07.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/08.png",
+      "RawMotion/grand_delver_reserve/AutoAttack-wide/00.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      60,
+      60,
+      70,
+      70,
+      70,
+      80,
+      100
+    ],
+    "impactFrame": 3,
+    "attack": true,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/00.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/01.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/02.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/03.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/04.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/07.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/08.png",
+      "RawMotion/grand_delver_reserve/OreChargedAutoAttack-wide/00.png"
+    ],
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      90,
+      80,
+      80,
+      110
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "Hit",
+    "frames": [
+      "RawMotion/grand_delver_reserve/Hit/00.png",
+      "RawMotion/grand_delver_reserve/Hit/01.png",
+      "RawMotion/grand_delver_reserve/Hit/02.png",
+      "RawMotion/grand_delver_reserve/Hit/03.png",
+      "RawMotion/grand_delver_reserve/Hit/00.png"
+    ],
+    "durationsMs": [
+      50,
+      70,
+      70,
+      60,
+      80
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "Death",
+    "frames": [
+      "RawMotion/grand_delver_reserve/Death/00.png",
+      "RawMotion/grand_delver_reserve/Death/01.png",
+      "RawMotion/grand_delver_reserve/Death/04.png",
+      "RawMotion/grand_delver_reserve/Death/05.png",
+      "RawMotion/grand_delver_reserve/Death/06.png",
+      "RawMotion/grand_delver_reserve/Death/07.png",
+      "RawMotion/grand_delver_reserve/Death/08.png"
+    ],
+    "durationsMs": [
+      90,
+      100,
+      90,
+      90,
+      100,
+      100,
+      150
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "ClaimAbility",
+    "frames": [
+      "RawMotion/grand_delver_reserve/ClaimAbility/00.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/01.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/02.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/03.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/04.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/05.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/07.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/08.png",
+      "RawMotion/grand_delver_reserve/ClaimAbility/00.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      100
+    ],
+    "impactFrame": 4,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "SteamAbility",
+    "frames": [
+      "RawMotion/grand_delver_reserve/SteamAbility/00.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/01.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/02.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/03.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/04.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/05.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/06.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/07.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/08.png",
+      "RawMotion/grand_delver_reserve/SteamAbility/00.png"
+    ],
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 2,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "CoreChannelStart",
+    "frames": [
+      "RawMotion/grand_delver_reserve/CoreCycle/00.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/01.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/02.png"
+    ],
+    "durationsMs": [
+      100,
+      100,
+      120
+    ],
+    "impactFrame": 2,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "CoreChannelHold",
+    "frames": [
+      "RawMotion/grand_delver_reserve/CoreCycle/02.png"
+    ],
+    "durationsMs": [
+      250
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": true,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "CoreRelease",
+    "frames": [
+      "RawMotion/grand_delver_reserve/CoreCycle/02.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/03.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/04.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/05.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/06.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/07.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/08.png",
+      "RawMotion/grand_delver_reserve/CoreCycle/00.png"
+    ],
+    "durationsMs": [
+      80,
+      70,
+      70,
+      80,
+      80,
+      80,
+      90,
+      100
+    ],
+    "impactFrame": 1,
+    "attack": false,
+    "special": true,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver_reserve",
+    "state": "Remount",
+    "frames": [
+      "RawMotion/grand_delver_reserve/Remount/00.png",
+      "RawMotion/grand_delver_reserve/Remount/01.png",
+      "RawMotion/grand_delver_reserve/Remount/02.png",
+      "RawMotion/grand_delver_reserve/Remount/03.png",
+      "RawMotion/grand_delver_reserve/Remount/04.png",
+      "RawMotion/grand_delver_reserve/Remount/05.png",
+      "RawMotion/grand_delver_reserve/Remount/06.png",
+      "RawMotion/grand_delver_reserve/Remount/07.png",
+      "RawMotion/grand_delver_reserve/Remount/08.png",
+      "RawMotion/grand_delver_reserve/Remount/09.png",
+      "RawMotion/grand_delver_reserve/Remount/10.png",
+      "RawMotion/grand_delver_reserve/Remount/11.png",
+      "RawMotion/grand_delver_reserve/Remount/12.png",
+      "Variants/grand_delver_reserve/00.png"
+    ],
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      100
+    ],
+    "impactFrame": 0,
+    "attack": false,
+    "special": false,
+    "loop": false,
+    "review": "Native boss/pilot/reserve motion reviewed. Original left drill and right claw retained, fixed source scale and boot floor. Wider basic canvas supplies real weapon margin. Exact ready frame closes recovery; clipped/generated flare extremes omitted."
+  },
+  {
+    "name": "grand_delver",
+    "state": "OreChargedAutoAttack",
+    "frames": [
+      "Inputs/grand_delver_wide.png",
+      "Inputs/grand_delver_windup_wide.png",
+      "RawMotion/grand_delver/PoweredReach/01.png",
+      "RawMotion/grand_delver/PoweredReach/02.png",
+      "RawMotion/grand_delver/PoweredContact/00.png",
+      "RawMotion/grand_delver/PoweredRecover/01.png",
+      "RawMotion/grand_delver/PoweredRecover/02.png",
+      "RawMotion/grand_delver/PoweredRecover/03.png",
+      "RawMotion/grand_delver/PoweredRecover/04.png",
+      "Inputs/grand_delver_wide.png"
+    ],
+    "durationsMs": [
+      100,
+      130,
+      70,
+      70,
+      70,
+      70,
+      70,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 4,
+    "attack": true,
+    "review": "Reviewed left-arm piston extension and retraction on a genuine 160x112 native canvas; right claw preserved. Corrected contact is masked PixelLab inpaint with every outside-mask RGBA byte checked. Exact ready ends the action."
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "name": "rivet_turret",
+  "source_job": "a106a37d-5b13-422c-910e-fbdc61659d27",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0B0D11": "#0A0D11",
+        "#0E1116": "#0A0D11",
+        "#11151B": "#0A0D11",
+        "#171A1F": "#1E2124",
+        "#25292E": "#2D3339",
+        "#3F464D": "#424C55",
+        "#4B555E": "#545F69",
+        "#626C76": "#717C86",
+        "#91999F": "#A7ADB1",
+        "#8B8883": "#A7ADB1",
+        "#6A4A2F": "#5B4029",
+        "#966634": "#7E5834",
+        "#A27440": "#B68141",
+        "#CB9546": "#E2AD54",
+        "#DDB67A": "#FDD78B",
+        "#CE7930": "#B6652A",
+        "#FDA015": "#FA8004",
+        "#D84302": "#943812"
+      },
+      "reason": "Normalize measured contour deviations and merge redundant close shades within iron, cloth, leather, beard and brass ramps. Preserve all native positions, silhouette, face and equipment."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: c593c719-ee1d-4203-b1bd-1dc63daba3a7\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 693 px changed\nsheet rows: frames [1]\npalette (22): #0a0d11ff x314, #545f69ff x113, #2d3339ff x111, #7e5834ff x105, #1e2124ff x90, #424c55ff x78, #363d44ff x65, #5b4029ff x64, #b68141ff x44, #4a3626ff x43, #332a24ff x35, #717c86ff x33, #e2ad54ff x32, #fa8004ff x32, #a7adb1ff x24, #943812ff x10, … +6 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/c593c719-ee1d-4203-b1bd-1dc63daba3a7/: image.png, frames.png, animation.gif\nnext: edit c593c719-ee1d-4203-b1bd-1dc63daba3a7 --changes […]"
+    }
+  ]
+}

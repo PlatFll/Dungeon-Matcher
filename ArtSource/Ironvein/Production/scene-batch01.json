@@ -1,0 +1,186 @@
+[
+  {
+    "name": "cave_wall",
+    "phase": 9,
+    "request": {
+      "description": "Seamless repeating dark slate cave wall texture, large connected uneven charcoal and deep navy rock planes, broad quiet shadows, sparse cool gray lit ledges, huge simple clusters, fully opaque right to every edge. Empty natural cavern material, no objects, no floor, no UI. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 256,
+      "height": 128,
+      "no_background": false,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409000
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 903334dd-0620-43d6-80f9-b9adb7945eb9\njob_id: 903334dd-0620-43d6-80f9-b9adb7945eb9\nmodel: pixen\ndescription: Seamless repeating dark slate cave wall texture, large connected uneven charcoal and deep navy rock planes, broad quiet shadows, sparse cool gray lit ledges, huge simple clusters, fully opaque right to every edge. Empty natural cavern material, no objects, no floor, no UI. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 256x128px\ntransparent: False\nasset_id: 476b96c0-0ae0-5e1c-b786-b549b293cc99\nasset_status: pending (saved when generation completes)\nseed: 409000\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"903334dd-0620-43d6-80f9-b9adb7945eb9\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "tunnel",
+    "phase": 9,
+    "request": {
+      "description": "A deep central mineshaft entrance, tall dark receding tunnel arch with three layers of jagged slate rocks and distant wooden supports, narrow pair of rails leading toward a tiny dark vanishing point, very dark indigo interior, sparse tiny warm amber lamp far inside. Isolated scene module with transparent outside rock arch, foot-on frontal perspective. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 192,
+      "height": 160,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409001
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 3f9debe6-6326-447b-ad52-a04535808ce0\njob_id: 3f9debe6-6326-447b-ad52-a04535808ce0\nmodel: pixen\ndescription: A deep central mineshaft entrance, tall dark receding tunnel arch with three layers of jagged slate rocks and distant wooden supports, narrow pair of rails leading toward a tiny dark vanishing point, very dark indigo interior, sparse tiny warm amber lamp far inside. Isolated scene module with transparent outside rock arch, foot-on frontal perspective. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 192x160px\ntransparent: True\nasset_id: ee5be831-3773-53d1-beff-a5115eb87f33\nasset_status: pending (saved when generation completes)\nseed: 409001\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3f9debe6-6326-447b-ad52-a04535808ce0\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "cave_floor",
+    "phase": 9,
+    "request": {
+      "description": "Seamless repeating dusty brown-black stone mine floor tile, flat horizontal plane seen slightly from above, broad quiet connected planes, very subtle cool dark cracks, muted warm brown dust, low contrast empty surface across full rectangle, no objects or rails. Fully opaque edges. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 128,
+      "height": 64,
+      "no_background": false,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409002
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ddbd496f-2d33-4802-87ef-63dc2791fab9\njob_id: ddbd496f-2d33-4802-87ef-63dc2791fab9\nmodel: pixen\ndescription: Seamless repeating dusty brown-black stone mine floor tile, flat horizontal plane seen slightly from above, broad quiet connected planes, very subtle cool dark cracks, muted warm brown dust, low contrast empty surface across full rectangle, no objects or rails. Fully opaque edges. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 128x64px\ntransparent: False\nasset_id: 4d94c4da-073b-56e1-a107-14dd5f1d0b76\nasset_status: pending (saved when generation completes)\nseed: 409002\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"ddbd496f-2d33-4802-87ef-63dc2791fab9\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "timber_support",
+    "phase": 9,
+    "request": {
+      "description": "One tall sturdy vertical old brown timber mine support with short upper diagonal brace and top crossbar stub, two chunky dark iron collars and brass bolts. Broad 3-tone wood planes, limited clean grain, front three-quarter mine scene prop, transparent outside. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 64,
+      "height": 128,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409003
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: d8722221-ce48-43a6-90b3-8b0157fde334\njob_id: d8722221-ce48-43a6-90b3-8b0157fde334\nmodel: pixen\ndescription: One tall sturdy vertical old brown timber mine support with short upper diagonal brace and top crossbar stub, two chunky dark iron collars and brass bolts. Broad 3-tone wood planes, limited clean grain, front three-quarter mine scene prop, transparent outside. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 64x128px\ntransparent: True\nasset_id: e9d4c2df-bf7f-5257-b543-b0a29a5aa2e8\nasset_status: pending (saved when generation completes)\nseed: 409003\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d8722221-ce48-43a6-90b3-8b0157fde334\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "ore_cluster",
+    "phase": 9,
+    "request": {
+      "description": "One medium industrial orange ore seam embedded in low dark slate rock, cluster of angular raw irregular mineral spikes, orange core #D65312 #FF8724 with rare #FFD477 tip light, several broad planes, earthy rough formation distinct from polished match-3 gems, transparent background. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409004
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5311c41e-8f43-4076-96aa-1c2b2ba510b5\njob_id: 5311c41e-8f43-4076-96aa-1c2b2ba510b5\nmodel: pixen\ndescription: One medium industrial orange ore seam embedded in low dark slate rock, cluster of angular raw irregular mineral spikes, orange core #D65312 #FF8724 with rare #FFD477 tip light, several broad planes, earthy rough formation distinct from polished match-3 gems, transparent background. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 64x64px\ntransparent: True\nasset_id: 19651dd0-64e3-5362-9b6f-d5dd3ecde992\nasset_status: pending (saved when generation completes)\nseed: 409004\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5311c41e-8f43-4076-96aa-1c2b2ba510b5\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "minecart",
+    "phase": 9,
+    "request": {
+      "description": "Low sturdy minecart full of glowing orange ore, dark wood bucket with riveted iron bands, two clearly exposed iron flanged wheels on short twin steel rails and brown sleepers. Three-quarter side view facing right, broad connected shading, tiny bright tips amid dull rock. Transparent around separate cart prop. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 96,
+      "height": 64,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409005
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 3ad6de69-df2c-4c37-acb1-567643248d46\njob_id: 3ad6de69-df2c-4c37-acb1-567643248d46\nmodel: pixen\ndescription: Low sturdy minecart full of glowing orange ore, dark wood bucket with riveted iron bands, two clearly exposed iron flanged wheels on short twin steel rails and brown sleepers. Three-quarter side view facing right, broad connected shading, tiny bright tips amid dull rock. Transparent around separate cart prop. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 96x64px\ntransparent: True\nasset_id: c77b9808-723a-585d-ad5f-0f3043a47542\nasset_status: pending (saved when generation completes)\nseed: 409005\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3ad6de69-df2c-4c37-acb1-567643248d46\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "rail_junction",
+    "phase": 9,
+    "request": {
+      "description": "Mine railway junction track module on transparent background, two pairs of dark steel rails curving smoothly from lower left and lower right toward upper center into distance, regularly spaced thick brown wooden sleepers, short switching lever beside fork, shallow top-down perspective, sturdy connected rail geometry, empty rails without cart. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 160,
+      "height": 80,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409006
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 0edcc581-46a3-4384-9a38-bb3ae9d2882b\njob_id: 0edcc581-46a3-4384-9a38-bb3ae9d2882b\nmodel: pixen\ndescription: Mine railway junction track module on transparent background, two pairs of dark steel rails curving smoothly from lower left and lower right toward upper center into distance, regularly spaced thick brown wooden sleepers, short switching lever beside fork, shallow top-down perspective, sturdy connected rail geometry, empty rails without cart. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 160x80px\ntransparent: True\nasset_id: 902c8951-abb9-531d-ac23-cf8ca0176b19\nasset_status: pending (saved when generation completes)\nseed: 409006\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0edcc581-46a3-4384-9a38-bb3ae9d2882b\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "name": "mine_lantern",
+    "phase": 9,
+    "request": {
+      "description": "Small hanging antique iron mine lantern on long chain, chunky square cage, warm yellow-orange glass window, black cap and base, thin connected chain from top bracket, restrained 2-tone amber light inside glass only, transparent all around, frontal prop. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.",
+      "width": 32,
+      "height": 64,
+      "no_background": true,
+      "detail": "low detail",
+      "outline": "selective outline",
+      "view": "side",
+      "seed": 409007
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 8c8738e4-0361-4d33-9b2c-fc19d117f295\njob_id: 8c8738e4-0361-4d33-9b2c-fc19d117f295\nmodel: pixen\ndescription: Small hanging antique iron mine lantern on long chain, chunky square cage, warm yellow-orange glass window, black cap and base, thin connected chain from top bracket, restrained 2-tone amber light inside glass only, transparent all around, frontal prop. Crisp native pixel game art, outline #0A0D11, broad 2-3-tone material shading, top-left light, clean pixel clusters, no blur or anti-aliasing or dithering. Dark whimsical Dungeon Matcher cave style.\nsize: 32x64px\ntransparent: True\nasset_id: 7adc3369-2a9a-58a5-9dd4-68696e13253d\nasset_status: pending (saved when generation completes)\nseed: 409007\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8c8738e4-0361-4d33-9b2c-fc19d117f295\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

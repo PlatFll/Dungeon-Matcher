@@ -1,0 +1,44 @@
+{
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "region": [
+        0,
+        0,
+        79,
+        79
+      ],
+      "colors": {
+        "#3e8031": "#8c471e",
+        "#5ba233": "#d65312",
+        "#67b33a": "#ff8724",
+        "#68de25": "#ffc25a",
+        "#77fe2a": "#ffd477"
+      },
+      "reason": "The inspected assay clip has five bright green effect colors inconsistent with Ironvein's orange ore. Map only those exact colors to the approved ore ramp, preserving all alpha, equipment, face and poses."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 05db8a2a-27d9-44da-95db-b017f9767cd8\ncanvas: 80x80, 13 frame(s)\n1. map_colors: 140 px changed\nsheet rows: frames [10, 11, 12]\n4 frames changed, in 37,48,61,79; see every one: inspect 05db8a2a-27d9-44da-95db-b017f9767cd8 --frames 9,10,11,12 --region 37,48,61,79\npalette (39): #0a0d11ff x6409, #28474eff x2160, #4d3425ff x2030, #352820ff x1814, #6d452bff x1715, #2c3d59ff x1414, #d8d7d6ff x1167, #e2ac80ff x980, #1b2f33ff x866, #1f2c3eff x846, #17222aff x786, #7b5e43ff x781, #241f1dff x671, #767677ff x636, #e29031ff x577, #996e3bff x546, … +23 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/05db8a2a-27d9-44da-95db-b017f9767cd8/: frames.png, animation.gif\nnext: edit 05db8a2a-27d9-44da-95db-b017f9767cd8 --changes […]"
+    }
+  ],
+  "cost": 0
+}

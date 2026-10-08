@@ -1,0 +1,39 @@
+{
+  "name": "vein_surveyor",
+  "source_job": "64218784-1615-46a2-9ed4-2730b26c92ec",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0A0D10": "#0A0D11",
+        "#0D1216": "#0A0D11",
+        "#12161B": "#0A0D11",
+        "#233A3F": "#28474E",
+        "#422D21": "#352820",
+        "#5A3D28": "#4D3425",
+        "#975F3C": "#6D452B",
+        "#939191": "#767677",
+        "#AEAEAE": "#D8D7D6",
+        "#9D7F63": "#BF9C74",
+        "#81572B": "#996E3B"
+      },
+      "reason": "Measured redundant close colors fragmented broad material shading. Normalize near-black contour and consolidate close material ramp tones while preserving all geometry, face, equipment and alpha."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 56a29fff-189e-44bf-8784-60b1929f2328\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 865 px changed\nsheet rows: frames [1]\npalette (23): #0a0d11ff x523, #4d3425ff x172, #352820ff x165, #28474eff x149, #6d452bff x142, #2c3d59ff x110, #d8d7d6ff x94, #1b2f33ff x89, #e2ac80ff x69, #1f2c3eff x66, #17222aff x58, #767677ff x55, #241f1dff x54, #7b5e43ff x50, #996e3bff x46, #bc8152ff x44, … +7 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/56a29fff-189e-44bf-8784-60b1929f2328/: image.png, frames.png, animation.gif\nnext: edit 56a29fff-189e-44bf-8784-60b1929f2328 --changes […]"
+    }
+  ]
+}

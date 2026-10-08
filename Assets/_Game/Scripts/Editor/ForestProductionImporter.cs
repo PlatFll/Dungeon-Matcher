@@ -22,6 +22,7 @@ public static class ForestProductionImporter
         public int[] durationsMs;
         public bool loop;
         public bool special;
+        public bool attack;
     }
     [Serializable] private sealed class Manifest { public ClipSpec[] clips; }
     [MenuItem("Dungeon Matcher/Forest/Import production art and kits")]
@@ -76,7 +77,7 @@ public static class ForestProductionImporter
                 AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.PPtrCurve("",typeof(Image),"m_Sprite"),keys);
                 var settings=AnimationUtility.GetAnimationClipSettings(clip);settings.loopTime=spec.loop;settings.startTime=0;settings.stopTime=elapsed/1000f;
                 AnimationUtility.SetAnimationClipSettings(clip,settings);
-                AnimationUtility.SetAnimationEvents(clip,(spec.state=="AutoAttack" || spec.state=="InflatedAttack")?new[]{
+                AnimationUtility.SetAnimationEvents(clip,(spec.attack || spec.state=="AutoAttack" || spec.state=="InflatedAttack")?new[]{
                     new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AutoAttackImpact"},
                     new AnimationEvent{time=(elapsed-10)/1000f,functionName="AutoAttackComplete"}}:spec.special?new[]{
                     new AnimationEvent{time=spec.durationsMs.Take(spec.impactFrame).Sum()/1000f,functionName="AbilityImpact"},
@@ -94,12 +95,16 @@ public static class ForestProductionImporter
             // Full authored casts finish in the exact ready pose. Held warnings
             // retain ChannelStart's final pose until their owner selects ChannelHold.
             foreach(var completed in machine.states.Select(s=>s.state).Where(s=>
-                manifest.clips.Any(c=>c.name==name && c.state==s.name && c.special &&
-                    (c.state=="Ability" || c.state.EndsWith("Release",StringComparison.Ordinal)))))
+                    manifest.clips.Any(c=>c.name==name && c.state==s.name &&
+                        (c.state=="Eject" || c.state=="Remount" || c.attack && c.state!="AutoAttack" || c.special &&
+                         (c.state.EndsWith("Ability",StringComparison.Ordinal) || c.state.EndsWith("Release",StringComparison.Ordinal))))))
             {
                 var recovery=completed.AddTransition(idle);
                 recovery.hasExitTime=true;recovery.exitTime=1;recovery.duration=0;
             }
+            EditorUtility.SetDirty(controller);
+            // A null definition root explicitly imports a phase-only controller.
+            if(dataRoot==null) continue;
             var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(dataRoot+name+".asset");
             var so=new SerializedObject(definition);
             so.FindProperty("animationControllerOverride").objectReferenceValue=controller;

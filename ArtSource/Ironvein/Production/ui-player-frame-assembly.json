@@ -1,0 +1,409 @@
+[
+  {
+    "name": "PlayerTop",
+    "recipe": {
+      "job": {
+        "canvas": [
+          146,
+          16
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false,
+        "body_palette_exact": true
+      },
+      "scene": {
+        "palette": {},
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - native frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "left": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      0,
+                      15,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "right": {
+                "layer": "art",
+                "at": [
+                  82,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      48,
+                      0,
+                      63,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "center16": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      0,
+                      47,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "center48": {
+                "layer": "art",
+                "at": [
+                  32,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      0,
+                      47,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "center80": {
+                "layer": "art",
+                "at": [
+                  64,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      0,
+                      47,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "center112": {
+                "layer": "art",
+                "at": [
+                  96,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      0,
+                      33,
+                      15
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "error: this drawing was rejected: view front: its 64x64 source at offset [0, 0] covers [0, 0, 63, 63] ends at y=63 > 15: outside the 146x16 canvas (x 0-145, y 0-15)\n\nnothing was rendered. hint: `describe draw` has the exact fields; `describe animation` covers changes."
+      }
+    ]
+  },
+  {
+    "name": "PlayerMiddle",
+    "recipe": {
+      "job": {
+        "canvas": [
+          146,
+          16
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false,
+        "body_palette_exact": true
+      },
+      "scene": {
+        "palette": {},
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - native frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "left": {
+                "layer": "art",
+                "at": [
+                  0,
+                  -24
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      24,
+                      15,
+                      39
+                    ]
+                  }
+                ]
+              },
+              "right": {
+                "layer": "art",
+                "at": [
+                  82,
+                  -24
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      48,
+                      24,
+                      63,
+                      39
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "error: this drawing was rejected: view front: its 64x64 source at offset [0, 0] covers [0, 0, 63, 63] ends at y=63 > 15: outside the 146x16 canvas (x 0-145, y 0-15)\n\nnothing was rendered. hint: `describe draw` has the exact fields; `describe animation` covers changes."
+      }
+    ]
+  },
+  {
+    "name": "PlayerBottom",
+    "recipe": {
+      "job": {
+        "canvas": [
+          146,
+          16
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false,
+        "body_palette_exact": true
+      },
+      "scene": {
+        "palette": {},
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - native frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "left": {
+                "layer": "art",
+                "at": [
+                  0,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      48,
+                      15,
+                      63
+                    ]
+                  }
+                ]
+              },
+              "right": {
+                "layer": "art",
+                "at": [
+                  82,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      48,
+                      48,
+                      63,
+                      63
+                    ]
+                  }
+                ]
+              },
+              "center16": {
+                "layer": "art",
+                "at": [
+                  0,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      48,
+                      47,
+                      63
+                    ]
+                  }
+                ]
+              },
+              "center48": {
+                "layer": "art",
+                "at": [
+                  32,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      48,
+                      47,
+                      63
+                    ]
+                  }
+                ]
+              },
+              "center80": {
+                "layer": "art",
+                "at": [
+                  64,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      48,
+                      47,
+                      63
+                    ]
+                  }
+                ]
+              },
+              "center112": {
+                "layer": "art",
+                "at": [
+                  96,
+                  -48
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      16,
+                      48,
+                      33,
+                      63
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "error: this drawing was rejected: view front: its 64x64 source at offset [0, 0] covers [0, 0, 63, 63] ends at y=63 > 15: outside the 146x16 canvas (x 0-145, y 0-15)\n\nnothing was rendered. hint: `describe draw` has the exact fields; `describe animation` covers changes."
+      }
+    ]
+  }
+]

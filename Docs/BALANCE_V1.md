@@ -228,3 +228,14 @@ Only explicitly saved valid legacy mastery selections count as grandfathered unl
 - Card effects, rarity, weights, caps and eligibility: `Resources/RunUpgrades/*.asset`, with existing typed mechanic implementations in `RunUpgradeResolver`/`RunUpgradeGameplayHooks`.
 - Typography family: `Resources/UI/Typography.asset` (existing Liberation Sans TTF and TMP SDF references). Art: `ArtSource/Consumables/*.ase`, redraw scripts, source crop and `Tools/Build-ConsumableArt.ps1`; imported runtime sprites in `Resources/UI/Consumables`.
 - Repeatable checks: `Tools/Test-Balance.ps1`, `Tools/Validate-Unity.ps1`, and Unity's **Dungeon Matcher → Validation → Balance v1 Integration / Pacing** menu actions. The detailed final evidence is in [Validation/BALANCE_V1_VALIDATION.md](Validation/BALANCE_V1_VALIDATION.md).
+## Ironvein provisional local encounter budget (2026-10-08)
+
+The fourth zone retains the existing global HP/depth curve and clean combat
+rounding. Its separate `IronveinEncounterBudget` WaveSpawnProfile limits local
+composition threat: 3 at entrance, 4 at local 4, 5 at 6, 7 at 8–12, 8 at 20,
+10 at 28+. Authored formations have at most three actors, two board disruptors,
+one support and one leader. Named leaders appear once per connected zone visit;
+the turret only appears through Machinist. Teaching and relief rules are in
+[Ironvein implementation](IronveinExcavation/IMPLEMENTATION.md).
+All mine numbers and visit length remain provisional. Automated seed coverage
+is not evidence of human pacing; see the separate validation record.

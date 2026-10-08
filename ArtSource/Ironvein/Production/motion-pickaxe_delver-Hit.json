@@ -1,0 +1,23 @@
+{
+  "id": "pickaxe_delver",
+  "state": "Hit",
+  "request": {
+    "description": "A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/pickaxe_delver.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/pickaxe_delver.png",
+    "no_background": true,
+    "seed": 7960,
+    "enhance_prompt": false,
+    "subject_description": "pickaxe delver",
+    "initial_pose": "original grounded combat stance",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 12bb96d7-0f95-44df-b92a-9846af4892d0\njob_id: 12bb96d7-0f95-44df-b92a-9846af4892d0\ndescription: A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7960\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"12bb96d7-0f95-44df-b92a-9846af4892d0\")\nasset_id: 79b4f8da-2143-5557-9902-edb997f5b525\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}
