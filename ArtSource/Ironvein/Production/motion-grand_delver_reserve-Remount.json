@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "Remount",
+  "request": {
+    "description": "The small ginger dwarf turns and climbs into an empty battered iron mech arriving from the RIGHT on a short rail carriage. He settles into its cockpit, grips both controls, and the suit stands upright in the exact final reference pose. Keep the same cap, face and ginger beard throughout.",
+    "frame_count": 12,
+    "first_frame_url": "grand_delver_pilot",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9605,
+    "enhance_prompt": false,
+    "subject_description": "small ginger dwarf mechanic on foot",
+    "initial_pose": "small dwarf standing on the floor",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b85f0303-bef0-4b32-9df8-f2f2f285576b\njob_id: b85f0303-bef0-4b32-9df8-f2f2f285576b\ndescription: The small ginger dwarf turns and climbs into an empty battered iron mech arriving from the RIGHT on a short rail carriage. He settles into its cockpit, grips both controls, and the suit stands upright in the exact final reference pose. Keep the same cap, face and ginger beard throughout.\nframes: 12\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9605\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b85f0303-bef0-4b32-9df8-f2f2f285576b\")\nasset_id: b5575ea9-591d-5035-b9c8-aa809dc1bc7e\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

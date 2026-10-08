@@ -11,6 +11,8 @@ public static class IronveinArtImporter
         "stonewright","bore_engineer","vein_surveyor","powder_sapper","rail_switcher","seismic_smith",
         "siege_machinist","obsidian_sentinel","grand_delver","rivet_turret"};
     public const string Art="Assets/_Game/Art/Ironvein/";
+    private static readonly string[] PhaseIds={"grand_delver_pilot","grand_delver_reserve"};
+    private const string Animation="Assets/_Game/Animations/Ironvein/";
     private const string Source="ArtSource/Ironvein/";
     [Serializable] private sealed class Manifest { public Clip[] clips; }
     [Serializable] private sealed class Clip { public string name,state; }
@@ -43,11 +45,28 @@ public static class IronveinArtImporter
         var manifest=JsonUtility.FromJson<Manifest>(File.ReadAllText(Source+"Motion/animation-manifest.json"));
         string[] names=manifest.clips.Select(c=>c.name).Distinct().ToArray();
         foreach(string name in names)
-            if(!Ids.Contains(name) || !manifest.clips.Any(c=>c.name==name&&c.state=="Idle") ||
+            if(!Ids.Concat(PhaseIds).Contains(name) || !manifest.clips.Any(c=>c.name==name&&c.state=="Idle") ||
                 !manifest.clips.Any(c=>c.name==name&&c.state=="AutoAttack"))
                 throw new InvalidDataException("Motion import needs a known identity, Idle and AutoAttack: "+name);
-        ForestProductionImporter.ImportMotionSet(names,Source+"Motion/",Art,
-            "Assets/_Game/Animations/Ironvein/",IronveinImporter.EnemyPath);
+        ForestProductionImporter.ImportMotionSet(names.Where(Ids.Contains).ToArray(),Source+"Motion/",Art,
+            Animation,IronveinImporter.EnemyPath);
+        var phases=names.Where(PhaseIds.Contains).ToArray();
+        if(phases.Length>0)
+        {
+            ForestProductionImporter.ImportMotionSet(phases,Source+"Motion/",Art,Animation,null);
+            var boss=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(IronveinImporter.EnemyPath+"grand_delver.asset");
+            if(phases.Contains("grand_delver_pilot"))
+            {
+                boss.minePilotSprite=ImportSprite(Source+"Inputs/grand_delver_pilot.png","grand_delver_pilot",true);
+                boss.minePilotController=AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(Animation+"grand_delver_pilot.controller");
+            }
+            if(phases.Contains("grand_delver_reserve"))
+            {
+                boss.mineReserveSprite=ImportSprite(Source+"Variants/grand_delver_reserve/00.png","grand_delver_reserve",true);
+                boss.mineReserveController=AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(Animation+"grand_delver_reserve.controller");
+            }
+            EditorUtility.SetDirty(boss);
+        }
         AssetDatabase.SaveAssets();
         Debug.Log("Ironvein: imported reviewed native motion for "+names.Length+" identities.");
     }

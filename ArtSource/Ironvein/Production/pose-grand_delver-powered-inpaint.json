@@ -1,0 +1,19 @@
+{
+  "request": {
+    "image_url": "Inputs/grand_delver_contact_wide.png",
+    "mask_x": 4,
+    "mask_y": 58,
+    "mask_width": 58,
+    "mask_height": 24,
+    "no_background": true,
+    "output_method": "Modify current layer",
+    "seed": 9701,
+    "description": "Power up ONLY this existing left-facing conical steel drill arm. Preserve a SHARP LEFT tip and spiral cutting teeth, extend it 8 pixels farther left with two exposed dark-steel piston segments near its base. Add a restrained orange-gold glow inside the small ore collar at the base, not across the blade. Keep crisp broad steel shading and the existing dark outline; the connection meets the unchanged arm at the right edge. This is a mechanical drill, not a gun."
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "{\n  \"background_job_id\": \"0d14b341-2c03-4306-a1d3-ca32fee29a1f\",\n  \"image_id\": \"cd250d85-a4a7-5001-8cd3-4c4cf86a305d\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"cd250d85-a4a7-5001-8cd3-4c4cf86a305d\",\n  \"job_id\": \"0d14b341-2c03-4306-a1d3-ca32fee29a1f\",\n  \"image_size\": {\n    \"width\": 160,\n    \"height\": 112\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/0d14b341-2c03-4306-a1d3-ca32fee29a1f/download\"\n}\nPoll get_image(job_id=\"0d14b341-2c03-4306-a1d3-ca32fee29a1f\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    }
+  ]
+}

@@ -177,7 +177,7 @@ The generic actor exposes an optional pre-final-defeat phase hook and phase-stat
 application; mine-specific decisions remain in MineEnemyAbility. Missing motion
 cannot own phase state. Actual ejection/remount art is still Phase 08 work.
 
-## Phase 08 — native production in progress
+## Phase 08 — native roster motion
 
 Fourteen identities now have separate original stills and material-cleaned
 working selections under `ArtSource/Ironvein`. These are internal production
@@ -192,15 +192,22 @@ sequence, after consuming its saved token. Presentation can therefore select
 This bookkeeping neither adds nor repeats damage. The shared motion importer
 accepts an explicit attack flag for normal event timing on named alternate clips.
 
-Fourteen padded stills are now imported with Point filtering, full rectangles,
-bottom-center pivots and the same native texel scale. First motion import covers
-Pickaxe, Gunner, Hauler, Beetle, Surveyor, Sapper and Turret: fifteen clips including
-the powered Pickaxe. `Production/motion-selections.json` records the exact original
+Fourteen padded stills are imported with Point filtering, full rectangles,
+bottom-center pivots and the same native texel scale. All fourteen identities
+have Idle/basic/Hit/Death; separate kit gestures, held warnings and ore-powered
+attacks bring the set to 108 clips including the optional pilot/reserve forms.
+Grand Delver's wide attacks use 160×112 canvases with the same center/floor.
+`Production/motion-selections.json` records the exact original
 frame sequence/timing; the exporter verifies unchanged RGBA bytes per frame.
 The native gallery pairs 1x and 3x presentation and records dimensions, occupied
 bounds, alpha, palette counts and hashes independently from the preview.
 
 Multi-action kits select separate optional gesture state names. The same saved
-Grand Delver actor can select optional pilot/reserve controllers; Continue binds
-the saved form without replaying a phase transition. These phase assets remain
-unbound until their clips pass review. Missing presentation leaves gameplay intact.
+Grand Delver actor selects the imported pilot/reserve controllers; Continue binds
+the saved form without replaying ejection/remount. Terminal phase motions return
+to Idle. Missing presentation leaves gameplay intact.
+
+The move coordinator waits for a mine kit's pending coroutine as well as its
+actor/board action. The board can finish its animation before the kit resumes on
+the next frame to clear its saved warning and basic hold. Keeping this brief
+cleanup inside the accepted action prevents a false stable-save window.

@@ -57,12 +57,12 @@ MonoBehaviour:
     one lane. Charge remains. The marked destination cannot change during its warning.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: 649fecf8c6d8c1f43a595ee3e172dfc3, type: 3}
-  animationControllerOverride: {fileID: 0}
+  animationControllerOverride: {fileID: 9100000, guid: 88f469a6505a71d4296853230c994688, type: 2}
   visualSize: {x: 240, y: 240}
-  timeAutoAttackFromAnimation: 0
-  useAuthoredAutoAttackMotion: 0
-  timeSpecialAbilityFromAnimation: 0
-  useAuthoredSpecialAbilityMotion: 0
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
+  timeSpecialAbilityFromAnimation: 1
+  useAuthoredSpecialAbilityMotion: 1
   baseMaxHealth: 70
   baseDamage: 7
   baseFollowUpDamage: 0

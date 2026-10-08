@@ -13,8 +13,8 @@ reviewed commit. Final output is a PR; no merge without new approval.
 | 05 | Hauler, Stonewright, Bore, Surveyor, Sapper, Switcher, Smith/Rattled | Complete; 53 affected tests and validator evidence in VALIDATION |
 | 06 | Machinist, independent turret, Sentinel extraction/slam | Complete; focused/compatibility checks and validator pass |
 | 07 | Grand Delver cycle/Core; optional one-remount phase behind data flag | Complete; 74 affected tests and validator pass |
-| 08 | Four native art pilots, powered pilot, then 14 identities and motion | In progress; 14 stills and first 15 clips imported; 43 current Ironvein checks pass; remaining motion under production |
-| 09 | Modular cave compositions, industrial HUD, mechanics/VFX/audio | Pending 08; local layout work can precede art |
+| 08 | Four native art pilots, powered pilot, then 14 identities and motion | Complete for review; 14 stills/108 clips; 45 current Ironvein checks and mandatory validator pass |
+| 09 | Modular cave compositions, industrial HUD, mechanics/VFX/audio | Source art and original temporary cue prepared; Unity integration pending |
 | 10 | Weighted encounters, teaching/relief, four-zone travel and continuation | Pending mechanics; enable only ready destinations |
 | 11 | Regression, captures, native gallery, final docs and review PR | Pending all affected work |
 

@@ -20,7 +20,9 @@ def scan(node,path):
                 except (ValueError,TypeError): pass
             id=re.search(r'job_id[:=]\s*["\']?([0-9a-f-]{36})',t)
             cost=re.search(r'cost:\s*([\d.]+) generation',t)
-            if id and cost: jobs.setdefault(id[1],dict(tool='PixelLab motion',cost=float(cost[1]),source=path.name))
+            if id and cost:
+                tool='PixelLab Pixen' if 'model: pixen' in t else 'PixelLab motion'
+                jobs.setdefault(id[1],dict(tool=tool,cost=float(cost[1]),source=path.name))
         for value in node.values(): scan(value,path)
     elif isinstance(node,list):
         for value in node: scan(value,path)
@@ -44,7 +46,8 @@ with ledger.open('w',encoding='utf-8',newline='') as f:
         status='receipt recorded'
         if id=='fb5068e8-399f-4076-b1cb-233b07c09f5b': status='cancelled; refund unconfirmed; budget retained'
         if id in ['1db5331f-f3ce-4a2f-abfd-7c5534230cc2','ab6a5799-981b-403f-a6ef-a30a768411d2']: status='rejected palette noise'
-        writer.writerow(['2026-10-08','08',r['tool'],id,r['source'],status,r['cost'],'Quoted provider cost; includes cancelled request conservatively; exact edits free'])
+        phase='09' if r['source'].startswith(('scene-','ui-','mechanics-')) else '08'
+        writer.writerow(['2026-10-08',phase,r['tool'],id,r['source'],status,r['cost'],'Quoted provider cost; includes cancelled request conservatively; exact edits free'])
 summary=dict(ceiling=400,initial=300,reserve=100,committed_quoted=round(total,2),requests=len(jobs),
              note='Provider integer balance rounds fractional usage; no credit purchases. Reserve untouched.')
 (P/'budget-summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')

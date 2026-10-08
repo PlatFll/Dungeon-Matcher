@@ -58,12 +58,12 @@ MonoBehaviour:
     it.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 21300000, guid: d232dfd045f266645bd7e0d3a09737bc, type: 3}
-  animationControllerOverride: {fileID: 0}
+  animationControllerOverride: {fileID: 9100000, guid: 470a1412cc07c3446b5217d542654dc3, type: 2}
   visualSize: {x: 240, y: 240}
-  timeAutoAttackFromAnimation: 0
-  useAuthoredAutoAttackMotion: 0
-  timeSpecialAbilityFromAnimation: 0
-  useAuthoredSpecialAbilityMotion: 0
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
+  timeSpecialAbilityFromAnimation: 1
+  useAuthoredSpecialAbilityMotion: 1
   baseMaxHealth: 100
   baseDamage: 13
   baseFollowUpDamage: 0

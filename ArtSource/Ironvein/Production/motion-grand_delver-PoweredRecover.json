@@ -1,0 +1,21 @@
+{
+  "request": {
+    "description": "The LEFT extended drill smoothly retracts along its steel piston, rotates down into its original ready pose, the knees rise and shoulders settle. The RIGHT hand keeps its original gripping claw. Finish exactly in the supplied ready pose. Planted feet.",
+    "first_frame_url": "RawMotion/grand_delver/PoweredContact/00.png",
+    "last_frame_url": "Inputs/grand_delver_wide.png",
+    "frame_count": 4,
+    "no_background": true,
+    "seed": 410090,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot in a steel mining mech with LEFT drill and RIGHT claw",
+    "initial_pose": "left drill fully extended horizontally",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: a5225f09-5b8a-49b9-a6aa-7e23ca1886f8\njob_id: a5225f09-5b8a-49b9-a6aa-7e23ca1886f8\ndescription: The LEFT extended drill smoothly retracts along its steel piston, rotates down into its original ready pose, the knees rise and shoulders settle. The RIGHT hand keeps its original gripping claw. Finish exactly in the supplied ready pose. Planted feet.\nframes: 4\nsize: 160x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 410090\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a5225f09-5b8a-49b9-a6aa-7e23ca1886f8\")\nasset_id: b095f0a8-da8d-5cd7-80b1-0230d34d4bc4\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

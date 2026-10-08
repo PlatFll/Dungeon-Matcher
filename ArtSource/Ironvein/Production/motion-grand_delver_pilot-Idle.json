@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_pilot",
+  "state": "Idle",
+  "request": {
+    "description": "A subtle grounded breathing loop. His knees and shoulders settle by one pixel while his wrench stays firmly in his hand. Keep the small dwarf at this exact body size and boot baseline, then return to the original pose.",
+    "frame_count": 4,
+    "first_frame_url": "Inputs/grand_delver_pilot.png",
+    "last_frame_url": "Inputs/grand_delver_pilot.png",
+    "no_background": true,
+    "seed": 9304,
+    "enhance_prompt": false,
+    "subject_description": "small ginger bearded dwarf mechanic on foot with a wrench",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 368ce71d-64a0-4ffb-8fb6-f717accc3045\njob_id: 368ce71d-64a0-4ffb-8fb6-f717accc3045\ndescription: A subtle grounded breathing loop. His knees and shoulders settle by one pixel while his wrench stays firmly in his hand. Keep the small dwarf at this exact body size and boot baseline, then return to the original pose.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9304\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"368ce71d-64a0-4ffb-8fb6-f717accc3045\")\nasset_id: 0ab487bf-4c21-5c66-b5aa-0ce41c1f0e54\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

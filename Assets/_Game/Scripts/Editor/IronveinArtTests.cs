@@ -45,4 +45,32 @@ public sealed class IronveinArtTests
             Assert.That(events.Single(e=>e.functionName=="AutoAttackComplete").time,Is.GreaterThan(pair.Item2));
         }
     }
+
+    [Test] public void IronveinEveryIdentityHasNativeIdleAttackHitAndDeath()
+    {
+        foreach(string id in IronveinArtImporter.Ids)
+        {
+            var def=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(IronveinImporter.EnemyPath+id+".asset");
+            Assert.That(def.AnimationControllerOverride,Is.Not.Null,id);
+            foreach(string state in new[]{"Idle","AutoAttack","Hit","Death"})
+            {
+                var clip=def.AnimationControllerOverride.animationClips.Single(c=>c.name==id+"_"+state);
+                var keys=AnimationUtility.GetObjectReferenceCurve(clip,AnimationUtility.GetObjectReferenceCurveBindings(clip).Single());
+                Assert.That(keys.Length,Is.GreaterThan(2),id+" "+state);
+                foreach(var key in keys)
+                {
+                    var sprite=(Sprite)key.value;
+                    Assert.That(AssetDatabase.GetAssetPath(sprite).StartsWith(IronveinArtImporter.Art),Is.True);
+                    Assert.That(sprite.rect.height,Is.EqualTo(def.StaticVisualSprite.rect.height),id+" fixed floor/canvas height");
+                    Assert.That(sprite.rect.width,Is.GreaterThanOrEqualTo(def.StaticVisualSprite.rect.width),id+" wider action margins preserve native pixels");
+                    Assert.That(sprite.pivot.y,Is.Zero);
+                }
+                var events=AnimationUtility.GetAnimationEvents(clip);
+                Assert.That(events.Count(e=>e.functionName=="AutoAttackImpact"),Is.EqualTo(state=="AutoAttack"?1:0));
+                Assert.That(events.Count(e=>e.functionName=="AutoAttackComplete"),Is.EqualTo(state=="AutoAttack"?1:0));
+                if(state=="AutoAttack")
+                    Assert.That(events.Single(e=>e.functionName=="AutoAttackImpact").time,Is.InRange(.1f,.65f),id+" readable windup/contact");
+            }
+        }
+    }
 }

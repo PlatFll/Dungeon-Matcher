@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver",
+  "state": "OreChargedAutoAttack-v2",
+  "request": {
+    "description": "The mech's LEFT drill arm extends two steel piston segments. The pilot leans forward and the suit makes one hard LEFTWARD drill jab with bent knees. The orange ring at the drill's root turns bright gold only during the jab. The piston retracts and the suit returns to the original ready pose.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/grand_delver-tip-repaired.png",
+    "last_frame_url": "Inputs/grand_delver-tip-repaired.png",
+    "no_background": true,
+    "seed": 9300,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot visible inside steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 282b4e6a-9814-4b6b-b4a2-f0ecfa118fa1\njob_id: 282b4e6a-9814-4b6b-b4a2-f0ecfa118fa1\ndescription: The mech's LEFT drill arm extends two steel piston segments. The pilot leans forward and the suit makes one hard LEFTWARD drill jab with bent knees. The orange ring at the drill's root turns bright gold only during the jab. The piston retracts and the suit returns to the original ready pose.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9300\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"282b4e6a-9814-4b6b-b4a2-f0ecfa118fa1\")\nasset_id: bf6a6470-22d6-5c31-92a5-b33c25a4a29b\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -32,6 +32,9 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
     private MineEnemySnapshot state = new MineEnemySnapshot();
     private bool pending, disposed;
     public bool IsPreparing => state.stage == 1;
+    // The board may complete its owned motion before this coroutine commits
+    // the saved cycle/hold cleanup on the next frame. Keep the move gate held.
+    public bool IsResolving => pending;
     public bool BlocksBasic => pending || IsPreparing;
     public int ResponseMoves => IsPreparing ? Mathf.Max(0, state.dueMove - board.CompletedValidPlayerMoves) : 0;
     public string CastName => state.action;

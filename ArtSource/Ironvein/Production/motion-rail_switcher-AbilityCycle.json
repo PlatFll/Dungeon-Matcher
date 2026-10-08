@@ -1,0 +1,23 @@
+{
+  "id": "rail_switcher",
+  "state": "AbilityCycle",
+  "request": {
+    "description": "The dwarf grips his front console, reaches for its lever and pulls it back deliberately. He pauses holding the lever with bent knees, then shoves it fully forward once while his body shifts LEFT. He releases the lever and returns his hand to the console, settling into his ready stance.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/rail_switcher.png",
+    "last_frame_url": "Inputs/rail_switcher.png",
+    "no_background": true,
+    "seed": 9203,
+    "enhance_prompt": false,
+    "subject_description": "rail switcher",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 7dbb5222-d280-46df-a48e-a55c171a73f6\njob_id: 7dbb5222-d280-46df-a48e-a55c171a73f6\ndescription: The dwarf grips his front console, reaches for its lever and pulls it back deliberately. He pauses holding the lever with bent knees, then shoves it fully forward once while his body shifts LEFT. He releases the lever and returns his hand to the console, settling into his ready stance.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9203\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7dbb5222-d280-46df-a48e-a55c171a73f6\")\nasset_id: 3211c871-54e0-5299-8f74-ff3c3e212551\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "CoreCycle",
+  "request": {
+    "description": "Keep the drill on the VIEWER'S LEFT and the claw on the VIEWER'S RIGHT. The suit bends its knees, points the LEFT drill straight down beside its LEFT boot and holds this pose. It presses that drill into the floor once, pulls it free, then stands in its original ready stance.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9603,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf visible in steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 7f2c4fdb-6a72-465d-bbf6-3493912cc7b9\njob_id: 7f2c4fdb-6a72-465d-bbf6-3493912cc7b9\ndescription: Keep the drill on the VIEWER'S LEFT and the claw on the VIEWER'S RIGHT. The suit bends its knees, points the LEFT drill straight down beside its LEFT boot and holds this pose. It presses that drill into the floor once, pulls it free, then stands in its original ready stance.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9603\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7f2c4fdb-6a72-465d-bbf6-3493912cc7b9\")\nasset_id: dc4817b9-a8c4-5261-96cb-dfa31c01eaa0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

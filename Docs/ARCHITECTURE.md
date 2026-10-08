@@ -48,7 +48,10 @@ and aging. Versioned mine snapshots extend the established continuation and
 photo/travel flows. Testing eligibility does not imply live travel readiness.
 `EnemyOrePower` uses `EnemyAutoAttack`'s existing next-sequence modifier token.
 `MineEnemyAbility` owns definition-selected intent and saved deadlines; its board
-operations use the canonical mutation queue. Presentation never triggers damage.
+operations use the canonical mutation queue. The move coordinator also drains
+the kit's pending coroutine cleanup after the board completes its motion, so
+saved preparation/basic holds cannot leak through a transient stable checkpoint.
+Presentation never triggers damage.
 Rattled is a shared player status read by the central Stagger buildup calculation.
 
 | Area | Authority and principal files |

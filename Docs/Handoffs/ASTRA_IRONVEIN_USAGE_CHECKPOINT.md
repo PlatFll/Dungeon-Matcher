@@ -2,9 +2,9 @@
 
 2026-10-08. All eleven phases authorized; review PR, no merge.
 Branch codex/ironvein-excavation; phases 01–07 committed and validated.
-Phase 08 has fourteen native stills and fifteen clips imported for seven identities.
-43 current Ironvein tests and mandatory validator pass. See WORKLIST/VALIDATION.
-Remaining motion, cave/UI/audio and live weighted travel are still in progress.
+Phase 08 has fourteen native stills and 108 clips imported, including pilot/reserve.
+45 current Ironvein tests and the mandatory validator pass; see VALIDATION.
+Cave/UI/audio sources and live weighted travel are still in progress.
 No final user visual approval is claimed. Live crystal eligibility stays off.
 
 Read current instructions and Docs/IronveinExcavation/READINESS.md.
@@ -15,10 +15,13 @@ Source, native comparisons and provenance: ArtSource/Ironvein/Production;
 Use git log -1 for current commit.
 
 PixelLab materials authorized; 400 total / 300 initial / 100 reserve, no purchases.
-Tools/Record-IronveinProduction.py rebuilds receipts/ledger. Quoted usage 172.2,
-including one cancelled request conservatively. Eight powered/Hauler jobs are
-running remotely: IDs in Production/motion-*-OreChargedAutoAttack.json and
-motion-ore_hauler-Ability.json. No Unity/download process remains running.
-Check each once and act on results. Remaining raw basics/Hit/Death need selection.
-Last Codex usage: 48% used / 52% remaining; refresh at phase boundaries.
+Tools/Record-IronveinProduction.py rebuilds receipts/ledger. Quoted usage 286.2,
+including one cancelled request conservatively. All paid jobs have completed.
+Effect frames are downloaded; their receipt and download list
+are Production/mechanics-motion01.json and downloads-mechanics-motion01.json.
+Exact player-frame slices were assembled through free PixelLab draw tools;
+Production/ui-player-frame-assembly02.json has their IDs/recipes (download pending).
+Next: finish Phase 08 commit, then additive Phase 09 theme integration.
+No Unity or download process remains running.
+Last Codex usage: 55% used / 45% remaining; refresh at phase boundaries.
 5% no new phase; 3% validation/handoff; 1% stop. No automatic continuation.

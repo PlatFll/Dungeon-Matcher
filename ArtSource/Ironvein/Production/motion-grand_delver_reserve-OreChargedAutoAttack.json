@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "The LEFT drill arm extends two steel piston segments. The orange ring at the drill root brightens to gold. The suit makes one hard LEFTWARD drill jab, then folds the piston back and stands in its original ready pose. The pilot stays visible.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9405,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf pilot in battered steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: da930f48-a53c-49d8-9f5a-b19601f96003\njob_id: da930f48-a53c-49d8-9f5a-b19601f96003\ndescription: The LEFT drill arm extends two steel piston segments. The orange ring at the drill root brightens to gold. The suit makes one hard LEFTWARD drill jab, then folds the piston back and stands in its original ready pose. The pilot stays visible.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9405\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"da930f48-a53c-49d8-9f5a-b19601f96003\")\nasset_id: 072b60ee-3a39-5946-9ff4-1f914b90dbf5\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

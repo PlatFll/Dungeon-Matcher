@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_pilot",
+  "state": "AutoAttack",
+  "request": {
+    "description": "The small dwarf grips his wrench with both hands, pulls it back by his shoulder, makes one quick short LEFTWARD wrench strike, and recovers into his original grounded ready stance. Keep his exact small body size and cap and ginger beard.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/grand_delver_pilot.png",
+    "last_frame_url": "Inputs/grand_delver_pilot.png",
+    "no_background": true,
+    "seed": 9305,
+    "enhance_prompt": false,
+    "subject_description": "small ginger bearded dwarf mechanic on foot with a wrench",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: f3a7f142-438b-46ea-8c8c-cffd41c98f56\njob_id: f3a7f142-438b-46ea-8c8c-cffd41c98f56\ndescription: The small dwarf grips his wrench with both hands, pulls it back by his shoulder, makes one quick short LEFTWARD wrench strike, and recovers into his original grounded ready stance. Keep his exact small body size and cap and ginger beard.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9305\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f3a7f142-438b-46ea-8c8c-cffd41c98f56\")\nasset_id: 48c92c38-85e1-535a-8033-effa7138bd8d\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

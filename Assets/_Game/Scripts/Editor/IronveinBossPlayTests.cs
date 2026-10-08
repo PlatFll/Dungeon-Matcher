@@ -35,7 +35,8 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(kit.StoneId,Is.EqualTo(core));
         yield return EnvironmentMove();yield return EnvironmentMove();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp));
         yield return EnvironmentMove();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp-45));
-        Assert.That(Run.Board.FindMineStone(core),Is.Null);Assert.That(kit.IsPreparing,Is.False);
+        Assert.That(Run.Board.FindMineStone(core),Is.Null);Assert.That(kit.IsPreparing,Is.False,
+            "Core release settled: "+JsonUtility.ToJson(Get(kit,"state"))+" pending="+Get(kit,"pending")+" action="+actor.ActiveSpecialAbilityAnimationActionId+" motion="+actor.SpecialMotionId);
         Assert.That(actor.GetComponent<EnemyAutoAttack>().IsPausedByAction,Is.False);
         yield return EnvironmentMove();Assert.That(Run.Player.CurrentHealth,Is.EqualTo(hp-45));
     }
@@ -115,15 +116,27 @@ public sealed partial class ForestFoundationPlayTests
     {yield return MineBossRemount();}
     private IEnumerator MineBossRemount()
     {
-        yield return LaunchDelver(true);var actor=Enemy("grand_delver");long id=actor.PersistentId;actor.TryTakeDamage(20000);
-        yield return Stable();yield return null;actor.TryTakeDamage(5);
+        yield return LaunchDelver(true);QuietKitFixture();var actor=Enemy("grand_delver");long id=actor.PersistentId;actor.TryTakeDamage(20000);
+        yield return Stable();yield return null;
+        var animator=actor.transform.Find("VisualRoot").GetComponent<Animator>();
+        Assert.That(animator.runtimeAnimatorController,Is.SameAs(actor.Definition.minePilotController));
+        yield return Until(()=>animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),"ejection finishes in pilot idle");
+        actor.TryTakeDamage(5);
         Assert.That(actor.GetComponent<MineEnemyAbility>().PilotMoves,Is.EqualTo(3));
         yield return ResumeRoster();actor=Enemy("grand_delver");var kit=actor.GetComponent<MineEnemyAbility>();
         Assert.That(actor.PersistentId,Is.EqualTo(id));Assert.That(actor.CurrentHealth,Is.EqualTo(65));Assert.That(actor.MaxHealth,Is.EqualTo(70));
+        animator=actor.transform.Find("VisualRoot").GetComponent<Animator>();
+        Assert.That(animator.runtimeAnimatorController,Is.SameAs(actor.Definition.minePilotController));
+        Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),Is.True,"Continue does not replay ejection");
         yield return EnvironmentMove();yield return EnvironmentMove();Assert.That(kit.IsPilot,Is.True);Assert.That(kit.PilotMoves,Is.EqualTo(1));
         yield return EnvironmentMove();Assert.That(kit.BossPhase,Is.EqualTo(MineBossPhase.SecondMech));Assert.That(actor.MaxHealth,Is.EqualTo(175));
+        Assert.That(animator.runtimeAnimatorController,Is.SameAs(actor.Definition.mineReserveController));
+        yield return Until(()=>animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),"remount finishes in reserve idle");
         yield return ResumeRoster();actor=Enemy("grand_delver");kit=actor.GetComponent<MineEnemyAbility>();
         Assert.That(kit.BossPhase,Is.EqualTo(MineBossPhase.SecondMech));Assert.That(actor.MaxHealth,Is.EqualTo(175));
+        animator=actor.transform.Find("VisualRoot").GetComponent<Animator>();
+        Assert.That(animator.runtimeAnimatorController,Is.SameAs(actor.Definition.mineReserveController));
+        Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),Is.True,"Continue does not replay remount");
         int final=0;actor.Defeated+=_=>final++;actor.TryTakeDamage(20000);
         Assert.That(actor.IsDefeated,Is.True);Assert.That(final,Is.EqualTo(1));
     }

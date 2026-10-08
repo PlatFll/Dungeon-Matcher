@@ -1,0 +1,23 @@
+{
+  "id": "siege_machinist",
+  "state": "AssembleAbility",
+  "request": {
+    "description": "The dwarf kneels and works below his waist with the wrench held in both hands. He makes two short controlled turns of the wrench, then one firm downward tightening push. He nods at his finished work, rises, and returns to his original ready pose.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/siege_machinist.png",
+    "last_frame_url": "Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 9204,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 0d63b76c-3ecb-45e4-a075-f013a66f8c56\njob_id: 0d63b76c-3ecb-45e4-a075-f013a66f8c56\ndescription: The dwarf kneels and works below his waist with the wrench held in both hands. He makes two short controlled turns of the wrench, then one firm downward tightening push. He nods at his finished work, rises, and returns to his original ready pose.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9204\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0d63b76c-3ecb-45e4-a075-f013a66f8c56\")\nasset_id: 19ab411a-faf3-5ce3-a373-152fef7e4c9b\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

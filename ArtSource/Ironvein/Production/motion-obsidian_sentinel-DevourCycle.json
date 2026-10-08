@@ -1,0 +1,23 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "DevourCycle",
+  "request": {
+    "description": "The golem bends its knees and opens both iron palms in front of its orange chest slot. It waits with arms open, then pulls both palms inward as a few small orange ore specks flow into the chest. The slot brightens briefly; it straightens and lowers its fists back into its original stance.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/obsidian_sentinel.png",
+    "last_frame_url": "Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 9206,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 0c00f179-aa36-48b6-a311-b16dbcfb0d9d\njob_id: 0c00f179-aa36-48b6-a311-b16dbcfb0d9d\ndescription: The golem bends its knees and opens both iron palms in front of its orange chest slot. It waits with arms open, then pulls both palms inward as a few small orange ore specks flow into the chest. The slot brightens briefly; it straightens and lowers its fists back into its original stance.\nframes: 12\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9206\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0c00f179-aa36-48b6-a311-b16dbcfb0d9d\")\nasset_id: ab34e997-3ede-59c9-a26c-8042eebc1b50\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

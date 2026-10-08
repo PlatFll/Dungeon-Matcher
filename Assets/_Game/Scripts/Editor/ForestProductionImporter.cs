@@ -96,7 +96,7 @@ public static class ForestProductionImporter
             // retain ChannelStart's final pose until their owner selects ChannelHold.
             foreach(var completed in machine.states.Select(s=>s.state).Where(s=>
                     manifest.clips.Any(c=>c.name==name && c.state==s.name &&
-                        (c.attack && c.state!="AutoAttack" || c.special &&
+                        (c.state=="Eject" || c.state=="Remount" || c.attack && c.state!="AutoAttack" || c.special &&
                          (c.state.EndsWith("Ability",StringComparison.Ordinal) || c.state.EndsWith("Release",StringComparison.Ordinal))))))
             {
                 var recovery=completed.AddTransition(idle);

@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_pilot",
+  "state": "Hit",
+  "request": {
+    "description": "The small dwarf briefly recoils backward through his shoulders, bends his knees, grimaces and steadies himself, still holding his wrench. Return to the same ready stance and body size.",
+    "frame_count": 4,
+    "first_frame_url": "grand_delver_pilot",
+    "last_frame_url": "grand_delver_pilot",
+    "no_background": true,
+    "seed": 9400,
+    "enhance_prompt": false,
+    "subject_description": "small ginger dwarf mechanic on foot with wrench",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 5f8502c4-d981-45f8-94ea-3f65713e7752\njob_id: 5f8502c4-d981-45f8-94ea-3f65713e7752\ndescription: The small dwarf briefly recoils backward through his shoulders, bends his knees, grimaces and steadies himself, still holding his wrench. Return to the same ready stance and body size.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9400\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5f8502c4-d981-45f8-94ea-3f65713e7752\")\nasset_id: bcba362d-5da4-5eab-8fba-3406956072ed\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

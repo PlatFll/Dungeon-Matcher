@@ -1,0 +1,146 @@
+[
+  {
+    "name": "board_cell_v2",
+    "phase": 9,
+    "request": {
+      "description": "One completely flat dark square tile covering the full 64x64 image. This is the empty background behind a bright puzzle gem. Fill the center with plain solid #181d27 slate. A VERY NARROW 2 pixel rim at the OUTERMOST edges gives a restrained #292f3a top-left bevel and #0a0d11 bottom-right groove. Center 58x58 pixels is uninterrupted flat dark stone. No symbols, no facets, no X pattern, no pictorial object, no raised rocks, no center decoration. Crisp native pixel-art game tile.",
+      "width": 64,
+      "height": 64,
+      "no_background": false,
+      "seed": 409300
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"fc4ff387-0eec-491b-8e8d-015ee3e1a3ea\",\n  \"image_id\": \"e710dc85-5df1-5864-b32a-6a36f1e9a1f4\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"e710dc85-5df1-5864-b32a-6a36f1e9a1f4\",\n  \"job_id\": \"fc4ff387-0eec-491b-8e8d-015ee3e1a3ea\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/fc4ff387-0eec-491b-8e8d-015ee3e1a3ea/download\"\n}\nPoll get_image(job_id=\"fc4ff387-0eec-491b-8e8d-015ee3e1a3ea\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "fc4ff387-0eec-491b-8e8d-015ee3e1a3ea",
+        "image_id": "e710dc85-5df1-5864-b32a-6a36f1e9a1f4",
+        "status": "processing",
+        "source_image_id": "e710dc85-5df1-5864-b32a-6a36f1e9a1f4",
+        "job_id": "fc4ff387-0eec-491b-8e8d-015ee3e1a3ea",
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/fc4ff387-0eec-491b-8e8d-015ee3e1a3ea/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "supply_tile_v2",
+    "phase": 9,
+    "request": {
+      "description": "One empty flat warm gray brass-stone tile, rounded pixel square silhouette at x4 to60 y4 to60. It is a pedestal surface UNDER a separate game icon. Broad subtle #766657 top-left highlight #5c514a base and #39373a bottom shadow, 3 big connected planes only. Absolutely blank face, empty CENTER, no potion, no bomb, no object or symbol, no separate frame border. Native game pixel art transparent outside.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 409301
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"2c3ceff4-b8d9-4b11-98fa-6295954c4fc1\",\n  \"image_id\": \"90dc745b-da42-5000-8225-fb4cf0e33e92\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"90dc745b-da42-5000-8225-fb4cf0e33e92\",\n  \"job_id\": \"2c3ceff4-b8d9-4b11-98fa-6295954c4fc1\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/2c3ceff4-b8d9-4b11-98fa-6295954c4fc1/download\"\n}\nPoll get_image(job_id=\"2c3ceff4-b8d9-4b11-98fa-6295954c4fc1\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "2c3ceff4-b8d9-4b11-98fa-6295954c4fc1",
+        "image_id": "90dc745b-da42-5000-8225-fb4cf0e33e92",
+        "status": "processing",
+        "source_image_id": "90dc745b-da42-5000-8225-fb4cf0e33e92",
+        "job_id": "2c3ceff4-b8d9-4b11-98fa-6295954c4fc1",
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/2c3ceff4-b8d9-4b11-98fa-6295954c4fc1/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "panel_shell_v2",
+    "phase": 9,
+    "request": {
+      "description": "A square empty nine-slice frame for a game panel. Straight 6 pixel wide dark hewn slate border #3b414d, thin iron outline #0a0d11, four small dull brass bolts in the corners. The CENTER is a large uninterrupted flat near-black #14181f square with zero pattern or decorations, no grid or objects. Calm flat front-facing pixel art UI, transparent outside 2 pixel clipped corners.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 409302
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"3bf77938-1a98-4cab-8f18-2d822334feea\",\n  \"image_id\": \"03fa1e44-0bce-51bf-9eb4-180192de9e72\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"03fa1e44-0bce-51bf-9eb4-180192de9e72\",\n  \"job_id\": \"3bf77938-1a98-4cab-8f18-2d822334feea\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/3bf77938-1a98-4cab-8f18-2d822334feea/download\"\n}\nPoll get_image(job_id=\"3bf77938-1a98-4cab-8f18-2d822334feea\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "3bf77938-1a98-4cab-8f18-2d822334feea",
+        "image_id": "03fa1e44-0bce-51bf-9eb4-180192de9e72",
+        "status": "processing",
+        "source_image_id": "03fa1e44-0bce-51bf-9eb4-180192de9e72",
+        "job_id": "3bf77938-1a98-4cab-8f18-2d822334feea",
+        "image_size": {
+          "width": 64,
+          "height": 64
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/3bf77938-1a98-4cab-8f18-2d822334feea/download"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "button_v2",
+    "phase": 9,
+    "request": {
+      "description": "One blank wide rectangular game UI button. Simple dark gray beveled iron rim, four tiny dull brass bolts, huge flat empty charcoal center with no decorations. Broad 3 tone metal planes. Straight symmetrical front-facing frame fully inside image with 3px transparent margin. No loose wires or particles or icons or text. Crisp native pixel clusters; top-left lighting.",
+      "width": 96,
+      "height": 48,
+      "no_background": true,
+      "seed": 409303
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"df6d69ef-9d1f-4404-b3db-cc2a2443e493\",\n  \"image_id\": \"be365a7e-bf93-5065-a1b7-586b20c1ece9\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"be365a7e-bf93-5065-a1b7-586b20c1ece9\",\n  \"job_id\": \"df6d69ef-9d1f-4404-b3db-cc2a2443e493\",\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 48\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/df6d69ef-9d1f-4404-b3db-cc2a2443e493/download\"\n}\nPoll get_image(job_id=\"df6d69ef-9d1f-4404-b3db-cc2a2443e493\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "df6d69ef-9d1f-4404-b3db-cc2a2443e493",
+        "image_id": "be365a7e-bf93-5065-a1b7-586b20c1ece9",
+        "status": "processing",
+        "source_image_id": "be365a7e-bf93-5065-a1b7-586b20c1ece9",
+        "job_id": "df6d69ef-9d1f-4404-b3db-cc2a2443e493",
+        "image_size": {
+          "width": 96,
+          "height": 48
+        },
+        "output_count": 1,
+        "estimated_generations": 5,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/df6d69ef-9d1f-4404-b3db-cc2a2443e493/download"
+      },
+      "isError": false
+    }
+  }
+]

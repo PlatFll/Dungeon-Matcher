@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: ce554e8048ad36a4c9859a910d5d724c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4255733329253970510
+    second: rivet_turret_OreChargedAutoAttack_0
+  - first:
+      213: 6750444373464069942
+    second: rivet_turret_OreChargedAutoAttack_1
+  - first:
+      213: 5644763524542165197
+    second: rivet_turret_OreChargedAutoAttack_2
+  - first:
+      213: -5097670601979139800
+    second: rivet_turret_OreChargedAutoAttack_3
+  - first:
+      213: 4251776968547999173
+    second: rivet_turret_OreChargedAutoAttack_4
+  - first:
+      213: 6087369941905492391
+    second: rivet_turret_OreChargedAutoAttack_5
+  - first:
+      213: -8705048370784911154
+    second: rivet_turret_OreChargedAutoAttack_6
+  - first:
+      213: 2746035149161039122
+    second: rivet_turret_OreChargedAutoAttack_7
+  - first:
+      213: 8172994200567462989
+    second: rivet_turret_OreChargedAutoAttack_8
+  - first:
+      213: -3400274626122422763
+    second: rivet_turret_OreChargedAutoAttack_00
+  - first:
+      213: -6344124323690919097
+    second: rivet_turret_OreChargedAutoAttack_01
+  - first:
+      213: -7725797423754394141
+    second: rivet_turret_OreChargedAutoAttack_02
+  - first:
+      213: 1712715458397402698
+    second: rivet_turret_OreChargedAutoAttack_03
+  - first:
+      213: -6679514592066394200
+    second: rivet_turret_OreChargedAutoAttack_04
+  - first:
+      213: 6200464599880465245
+    second: rivet_turret_OreChargedAutoAttack_05
+  - first:
+      213: 6377538941543303607
+    second: rivet_turret_OreChargedAutoAttack_06
+  - first:
+      213: 9108793256429578698
+    second: rivet_turret_OreChargedAutoAttack_07
+  - first:
+      213: 6233181556947198855
+    second: rivet_turret_OreChargedAutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516e2333e3ccfc0d0800000000000000
+      internalID: -3400274626122422763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bcc7b4a8425f7a0800000000000000
+      internalID: -6344124323690919097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5cd761d2478c490800000000000000
+      internalID: -7725797423754394141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46f81392a9c4c710800000000000000
+      internalID: 1712715458397402698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a728db3ed89d43a0800000000000000
+      internalID: -6679514592066394200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b724eb3b97c0650800000000000000
+      internalID: 6200464599880465245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9c8efa0e1918850800000000000000
+      internalID: 6377538941543303607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac965fdc43fe86e70800000000000000
+      internalID: 9108793256429578698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_turret_OreChargedAutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783aa5ae995b08650800000000000000
+      internalID: 6233181556947198855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rivet_turret_OreChargedAutoAttack_0: -4255733329253970510
+      rivet_turret_OreChargedAutoAttack_00: -3400274626122422763
+      rivet_turret_OreChargedAutoAttack_01: -6344124323690919097
+      rivet_turret_OreChargedAutoAttack_02: -7725797423754394141
+      rivet_turret_OreChargedAutoAttack_03: 1712715458397402698
+      rivet_turret_OreChargedAutoAttack_04: -6679514592066394200
+      rivet_turret_OreChargedAutoAttack_05: 6200464599880465245
+      rivet_turret_OreChargedAutoAttack_06: 6377538941543303607
+      rivet_turret_OreChargedAutoAttack_07: 9108793256429578698
+      rivet_turret_OreChargedAutoAttack_08: 6233181556947198855
+      rivet_turret_OreChargedAutoAttack_1: 6750444373464069942
+      rivet_turret_OreChargedAutoAttack_2: 5644763524542165197
+      rivet_turret_OreChargedAutoAttack_3: -5097670601979139800
+      rivet_turret_OreChargedAutoAttack_4: 4251776968547999173
+      rivet_turret_OreChargedAutoAttack_5: 6087369941905492391
+      rivet_turret_OreChargedAutoAttack_6: -8705048370784911154
+      rivet_turret_OreChargedAutoAttack_7: 2746035149161039122
+      rivet_turret_OreChargedAutoAttack_8: 8172994200567462989
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

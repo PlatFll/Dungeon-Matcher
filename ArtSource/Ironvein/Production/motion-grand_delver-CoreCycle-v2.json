@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver",
+  "state": "CoreCycle-v2",
+  "request": {
+    "description": "Keep the drill attached on the VIEWER'S LEFT and the claw on the VIEWER'S RIGHT. The dwarf leans over his controls. The LEFT drill points straight down beside the LEFT boot; hold that braced pose. The LEFT drill thrusts into the floor once, then lifts and returns to the original ready pose.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver-tip-repaired",
+    "last_frame_url": "grand_delver",
+    "no_background": true,
+    "seed": 9600,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf visible in steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 8b91c80f-bde7-4d1e-aa14-569753549650\njob_id: 8b91c80f-bde7-4d1e-aa14-569753549650\ndescription: Keep the drill attached on the VIEWER'S LEFT and the claw on the VIEWER'S RIGHT. The dwarf leans over his controls. The LEFT drill points straight down beside the LEFT boot; hold that braced pose. The LEFT drill thrusts into the floor once, then lifts and returns to the original ready pose.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9600\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8b91c80f-bde7-4d1e-aa14-569753549650\")\nasset_id: 62f69136-d388-58a3-84a3-5fe0b55b1455\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

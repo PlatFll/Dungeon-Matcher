@@ -1,0 +1,23 @@
+{
+  "id": "vein_surveyor",
+  "state": "AbilityCycle",
+  "request": {
+    "description": "He bends toward his map, raises the magnifying lens to his eye and studies the lower LEFT. Hold the intent inspection pose briefly. Then he firmly points the lens downward to mark his finding and folds back to his original stance, still holding his map.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/vein_surveyor.png",
+    "last_frame_url": "Inputs/vein_surveyor.png",
+    "no_background": true,
+    "seed": 9201,
+    "enhance_prompt": false,
+    "subject_description": "vein surveyor",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: ddc08b58-23e6-4134-aa08-f4ea8168b55f\njob_id: ddc08b58-23e6-4134-aa08-f4ea8168b55f\ndescription: He bends toward his map, raises the magnifying lens to his eye and studies the lower LEFT. Hold the intent inspection pose briefly. Then he firmly points the lens downward to mark his finding and folds back to his original stance, still holding his map.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9201\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ddc08b58-23e6-4134-aa08-f4ea8168b55f\")\nasset_id: 7ca3fc0f-e46a-5fdf-9f1b-e27a88754165\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

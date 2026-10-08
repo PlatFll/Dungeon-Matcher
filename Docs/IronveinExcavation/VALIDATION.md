@@ -147,3 +147,22 @@ approval of the whole region. Art/music review and device testing remain pending
   and counter spacing pass the layout validator. Dungeon backdrop remains a
   temporary shell; this is not a completed cave composition or user approval.
 - All four unrelated starting user-file hashes remain unchanged.
+
+## Phase 08 — complete native motion integration
+
+- Fourteen identities plus optional pilot/reserve forms bind 108 native clips.
+  Exact source selections and contact times are in `motion-selections.json`;
+  exported frame RGBA equality, bounds, alpha and palette records are retained.
+- Whole-roster scene test checks every basic's actual impact sprite, one damage
+  event, frozen paused windup and Idle recovery. Phase tests verify ejection,
+  one remount and Continue without transition replay.
+- Initial complete regression found a genuine Core cleanup race: the board
+  released animation ownership one frame before the ability cleared saved intent.
+  The move gate now waits for pending kit cleanup. Fixed-delay test assumptions
+  were replaced with bounded actual-state waits; expected behavior is unchanged.
+- Final affected run: **45 passed / 0 failed / 0 skipped**, graphics enabled and
+  Editor audio muted. `.utmp/ForestValidation/0041fd67-d4d0-4f05-a059-31893540070d.xml/.log`.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, exit 0, Unity 6000.3.19f1.
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6659517b-4fc5-48f2-b5a9-46b0b9a00fc5.log`.
+- All four starting user-file SHA256 hashes still match. Native motion and scene
+  tests do not establish user visual approval, final cave composition or device QA.

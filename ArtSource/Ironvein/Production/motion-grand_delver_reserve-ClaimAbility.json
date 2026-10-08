@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "ClaimAbility",
+  "request": {
+    "description": "The dwarf pulls the controls. His mech raises the claw on the VIEWER'S RIGHT, then bends its knees and drives that claw into the floor once with a tiny tan dust puff. The drill remains on the VIEWER'S LEFT. The claw lifts and the mech returns to its original ready stance.",
+    "frame_count": 8,
+    "first_frame_url": "grand_delver_reserve",
+    "last_frame_url": "grand_delver_reserve",
+    "no_background": true,
+    "seed": 9601,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf visible in steel drill-arm mech",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e10c8ac2-5a88-424d-b7f7-6ec6611109a8\njob_id: e10c8ac2-5a88-424d-b7f7-6ec6611109a8\ndescription: The dwarf pulls the controls. His mech raises the claw on the VIEWER'S RIGHT, then bends its knees and drives that claw into the floor once with a tiny tan dust puff. The drill remains on the VIEWER'S LEFT. The claw lifts and the mech returns to its original ready stance.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9601\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e10c8ac2-5a88-424d-b7f7-6ec6611109a8\")\nasset_id: f5d6d110-03c2-5141-83c1-b2abd7fb2e1a\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

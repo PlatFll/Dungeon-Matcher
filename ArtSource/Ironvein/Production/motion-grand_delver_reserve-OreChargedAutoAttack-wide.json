@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver_reserve",
+  "state": "OreChargedAutoAttack-wide",
+  "request": {
+    "description": "The conical drill on the image LEFT lifts and extends two steel piston segments. Its orange collar turns bright gold. He drives that LEFT-side drill once toward LEFT, then retracts it. The hanging claw on the image RIGHT stays lowered through the entire movement. Preserve the exact body size within the wider margins.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/grand_delver_reserve_wide.png",
+    "last_frame_url": "Inputs/grand_delver_reserve_wide.png",
+    "no_background": true,
+    "seed": 9751,
+    "enhance_prompt": false,
+    "subject_description": "ginger dwarf in battered steel mech with a LEFT conical drill and a RIGHT hanging claw",
+    "initial_pose": "original grounded ready pose with drill angled down-left",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 1c781dd9-9085-4fa9-a208-bbef73e6e0df\njob_id: 1c781dd9-9085-4fa9-a208-bbef73e6e0df\ndescription: The conical drill on the image LEFT lifts and extends two steel piston segments. Its orange collar turns bright gold. He drives that LEFT-side drill once toward LEFT, then retracts it. The hanging claw on the image RIGHT stays lowered through the entire movement. Preserve the exact body size within the wider margins.\nframes: 8\nsize: 160x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9751\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1c781dd9-9085-4fa9-a208-bbef73e6e0df\")\nasset_id: d1352517-773a-5404-8771-9d56173497cb\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}
