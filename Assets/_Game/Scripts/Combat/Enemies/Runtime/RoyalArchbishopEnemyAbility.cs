@@ -10,6 +10,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private IReadOnlyList<EnemyActor> roster;
     private EnemySpecialActionAvailability availability;
     private BoardController.GemSetThreat runes;
+    public int WarningMovesRemaining => board != null && runes != null && !runes.Ended ? Mathf.Max(0,runes.DueMove-board.CompletedValidPlayerMoves) : -1;
     private readonly List<EnemyAutoAttack> blessed = new List<EnemyAutoAttack>();
     private bool released = true, pending, preferRunes = true;
     private int retryAfterMove = -1;

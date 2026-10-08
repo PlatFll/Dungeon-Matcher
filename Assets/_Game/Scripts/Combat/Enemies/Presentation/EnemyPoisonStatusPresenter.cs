@@ -88,6 +88,13 @@ public sealed class EnemyPoisonStatusPresenter : MonoBehaviour
         ResolveReferences();
     }
 
+    private void LateUpdate()
+    {
+        // The unified status strip owns the poison badge and its move counter.
+        // Preserve this presenter's hit flashes, particles and legacy icon.
+        if (CombatMoveClock.Unified && poisonIcon != null) poisonIcon.gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         ResolveReferences();

@@ -30,6 +30,11 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     {
         if(actor==null) Initialize(GetComponent<EnemyActor>());
         if(actor==null || !CombatMoveClock.Active) { enabled=false;return; }
+        if(CombatMoveClock.Unified)
+        {
+            if(GetComponent<EnemyUnifiedIntentView>()==null) gameObject.AddComponent<EnemyUnifiedIntentView>();
+            enabled=false; return;
+        }
         var slot=GetComponentInParent<EnemySlotUI>();
         if(slot==null) return;
         text=GameUi.Label("MoveIntent",slot.transform,"",new Vector2(108,16),Vector2.zero,12);

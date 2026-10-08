@@ -22,6 +22,7 @@ public sealed class EnemySlotSigilView : MonoBehaviour
     {
         var actor=slot.CurrentEnemy;
         SlotIndex=actor!=null && !actor.IsDefeated ? RunSession.Current?.Waves?.ContinuationSlot(actor)??-1 : -1;
+        if(CombatMoveClock.Unified) {if(image!=null)image.enabled=false;return;}
         if(SlotIndex<0 || SlotIndex>2 || slot.CombatBarRect==null) {if(image!=null)image.enabled=false;return;}
         if(image==null)
         {

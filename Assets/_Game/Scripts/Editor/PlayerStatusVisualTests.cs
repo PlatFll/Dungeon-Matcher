@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public sealed partial class ForestFoundationPlayTests
 {
-    [UnityTest] public IEnumerator StatusPanelFitsPortraitsAndSafeAreaWithAllSevenEffects()
+    [UnityTest] public IEnumerator StatusPanelFitsPortraitsAndSafeAreaWithAllEightEffects()
     {
         yield return Launch(0, true);
         foreach (var enemy in Run.Waves.ActiveEnemies) enemy.GetComponent<EnemyAutoAttack>().StopAttacking();
@@ -32,7 +32,7 @@ public sealed partial class ForestFoundationPlayTests
                 for (int frame=0; frame<8; frame++) yield return null;
                 ScreenCapture.CaptureScreenshot(Path.Combine(output,"debug-statuses-"+variant+".png")); yield return null; yield return null;
                 var view = Object.FindFirstObjectByType<PlayerStatusPanel>(); var root = view.StatusRoot;
-                Assert.That(root.childCount, Is.EqualTo(7));
+                Assert.That(root.childCount, Is.EqualTo(8));
                 var parent = (RectTransform)view.transform;
                 var corners = new Vector3[4]; root.GetWorldCorners(corners);
                 foreach (var corner in corners) Assert.That(parent.rect.Contains(parent.InverseTransformPoint(corner)), Is.True,
@@ -40,7 +40,7 @@ public sealed partial class ForestFoundationPlayTests
                 var bar = (RectTransform)parent.Find("PlayerHPBarBackground"); var hp = new Vector3[4]; bar.GetWorldCorners(hp);
                 Assert.That(corners[1].y, Is.LessThan(hp[0].y - ShieldBarUI.ReservedSpaceBelowHealthBar), "Shield track has reserved space");
                 foreach (var label in root.GetComponentsInChildren<TMP_Text>())
-                { Assert.That(label.font, Is.SameAs(GameUi.TmpFont)); Assert.That(label.text, Is.EqualTo("3")); }
+                { Assert.That(label.font, Is.SameAs(GameUi.TmpFont)); Assert.That(label.text, Is.EqualTo("2").Or.EqualTo("3")); }
                 foreach (var icon in root.GetComponentsInChildren<Image>()) Assert.That(icon.sprite, Is.Not.Null);
                 var errors = GameplayPixelLayoutValidator.Validate(Object.FindFirstObjectByType<GameplayPixelLayoutController>(), out string report);
                 string name = "statuses-" + size.x + "x" + size.y + (inset ? "-safe" : "");
@@ -78,15 +78,20 @@ public sealed class PlayerStatusAssetTests
 {
     [Test] public void NativeIconsAndDataRemainProvisionalAndUnassigned()
     {
-        var definitions=Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses"); Assert.That(definitions.Length,Is.EqualTo(7));
+        var definitions=Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses"); Assert.That(definitions.Length,Is.EqualTo(8));
         foreach(var data in definitions)
         {
-            Assert.That(data.icon.rect.size,Is.EqualTo(new Vector2(16,16))); Assert.That(data.durationMoves,Is.EqualTo(3));
+            int native=data.kind==PlayerStatusKind.Rattled?32:16;
+            Assert.That(data.icon.rect.size,Is.EqualTo(new Vector2(native,native))); Assert.That(data.durationMoves,Is.EqualTo(data.kind==PlayerStatusKind.Rattled?2:3));
             var importer=(TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(data.icon));
             Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point)); Assert.That(importer.mipmapEnabled,Is.False);
             Assert.That(importer.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
         }
         foreach(var guid in AssetDatabase.FindAssets("t:EnemyDefinition",new[]{"Assets/_Game"}))
-            Assert.That(AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(guid)).appliedPlayerStatus,Is.Null);
+        {
+            var data=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(guid));
+            if(data.EnemyId=="seismic_smith")Assert.That(data.appliedPlayerStatus.kind,Is.EqualTo(PlayerStatusKind.Rattled));
+            else Assert.That(data.appliedPlayerStatus,Is.Null,data.EnemyId);
+        }
     }
 }

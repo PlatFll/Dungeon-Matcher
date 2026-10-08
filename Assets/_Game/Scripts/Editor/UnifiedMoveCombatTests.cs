@@ -32,6 +32,13 @@ public sealed class UnifiedMoveCombatTests
         copy.enemies[0].unifiedAttackRemaining = -1;
         Assert.That(RunContinuation.SupportsSnapshot(copy), Is.True);
         Assert.That(copy.enemies[0].attackRemaining, Is.EqualTo(3.75f));
+        copy.clock.profile=CombatClockSnapshot.UnifiedProfile;copy.enemies[0].unifiedAttackRemaining=3;
+        foreach(float invalid in new[]{.5f,-1f,float.NaN,float.PositiveInfinity})
+        {
+            copy.decreeRemaining=invalid;Assert.That(RunContinuation.SupportsSnapshot(copy),Is.False);
+            copy.decreeRemaining=0;copy.enemies[0].staggerRemaining=invalid;Assert.That(RunContinuation.SupportsSnapshot(copy),Is.False);
+            copy.enemies[0].staggerRemaining=0;
+        }
     }
 }
 
@@ -39,10 +46,18 @@ public sealed partial class ForestFoundationPlayTests
 {
     private IEnumerator LaunchUnified(string zone = "dungeon")
     {
+        if (AccountProgression.Current.ActiveRun != null)
+        {
+            SceneManager.LoadScene("MainMenu"); yield return null;
+            profile.Dispose();
+            System.IO.File.WriteAllText(path,JsonUtility.ToJson(new AccountSave {potions=3,bombs=3,equipPotions=true,equipBombs=true}));
+            profile=AccountProgression.UseDisposableProfile(path);
+        }
         RunLaunchOptions.StartingZone = zone;
         SceneManager.LoadScene("Game");
         yield return Stable();
         Assert.That(CombatMoveClock.Unified, Is.True);
+        Assert.That(Run.Zone.Definition.zoneId, Is.EqualTo(zone));
         Assert.That(Run.Continuation.Capture().clock.profile, Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
     }
 
@@ -157,6 +172,38 @@ public sealed partial class ForestFoundationPlayTests
         decree = Run.Player.GetComponent<RoyalDecreeRuntime>();
         Assert.That(CombatMoveClock.Unified, Is.True); Assert.That(decree.RemainingMoves, Is.EqualTo(1));
         yield return Move(); Assert.That(decree.IsActive, Is.False);
+        var longer=Resources.Load<RunUpgradeDefinition>("RunUpgrades/RunUpgrade_LongerReign");
+        Assert.That(RunUpgradeRuntime.Current.TryApply(longer,Run.Waves.CurrentWave),Is.True);
+        Run.Player.GetComponent<PlayerAbilityEnergy>().AddEnergy(100);
+        Assert.That(Run.Player.GetComponent<PlayerAbilityController>().TryActivate(),Is.True);
+        Assert.That(decree.RemainingMoves,Is.EqualTo(6),"Longer Reign adds one move to the five-move base");
+    }
+
+    [UnityTest] public IEnumerator UnifiedHasteOwnersResumeAndExpireWithoutRemovingOtherSources()
+    {
+        yield return LaunchUnified();
+        var marshalData=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_TownMarshal.asset");
+        var drummerData=Resources.Load<ZoneDefinition>("Zones/magical-forest").enemies.First(d=>d.EnemyId=="orc_drummer");
+        Assert.That(Run.Waves.TrySummonEnemy(marshalData,out var marshal),Is.True);
+        Assert.That(Run.Waves.TrySummonEnemy(drummerData,out var drummer),Is.True);
+        yield return Stable();DurableUnifiedFixture();
+        var target=Run.Waves.ActiveEnemies[0];var attack=target.GetComponent<EnemyAutoAttack>();
+        Set(attack,"unifiedRemaining",4);
+        Call(drummer.GetComponent<ForestCombatAbility>(),"ApplyRhythm");
+        marshal.GetComponent<TownMarshalEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot
+        {rallyRemaining=3,rallyExpiryMove=3,rallyTargets=new List<int>{Run.Waves.ContinuationSlot(target)}},Run.Waves.ContinuationEnemy);
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3));Assert.That(attack.RemainingAttackTime,Is.EqualTo(3));
+        Assert.That(Run.SuspendToMenu(),Is.True);yield return null;SceneManager.LoadScene("Game");
+        yield return Until(()=>Run?.Continuation!=null && !Run.Continuation.IsRestoring,"haste Continue");
+        Run.GetComponent<RunControlsUI>().Close();yield return Stable();DurableUnifiedFixture();
+        target=Run.Waves.ContinuationEnemy(0);attack=target.GetComponent<EnemyAutoAttack>();
+        Assert.That(attack.RemainingAttackTime,Is.EqualTo(3),"restoring both sources never shortens twice");
+        drummer=Enemy("orc_drummer");drummer.ResolveDamageWithoutFeedback(999999);yield return Stable();
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3),"Marshal remains after Drummer death");
+        marshal=Enemy(marshalData.EnemyId);marshal.SetSpecialTurnRequirement(99);
+        yield return Move();yield return Move();yield return Move();
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(4));
+        Assert.That(marshal.GetComponent<TownMarshalEnemyAbility>().RallyRemaining,Is.Zero);
     }
 
     [UnityTest] public IEnumerator UnifiedAllSpecialsPrecedeBasicsByRankThenSlot()

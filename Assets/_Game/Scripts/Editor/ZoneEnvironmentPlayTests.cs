@@ -17,10 +17,12 @@ public sealed partial class ForestFoundationPlayTests
         board.StartCoroutine((IEnumerator)Call(board,"TrySwap",board.GetGem(safeMoveFrom.x,safeMoveFrom.y),board.GetGem(safeMoveTo.x,safeMoveTo.y)));
         yield return Until(()=>board.CompletedValidPlayerMoves==before+1 && Run.Continuation.CanCapture,"environment move settles");
     }
-    private IEnumerator LaunchDungeonHazards()
+    private IEnumerator LaunchDungeonHazards(bool legacy = false)
     {
         RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.StartingZone="dungeon";
-        SceneManager.LoadScene("Game");yield return Stable();PreserveRoster();
+        SceneManager.LoadScene("Game");yield return Stable();
+        if (legacy) yield return LegacyCombatTestProfile.Load();
+        PreserveRoster();
         // Keep a real useful response available after the fixture's controlled
         // non-damaging swaps; the production hazard must still pass its checks.
         preserveCounterplayCrystal=true;

@@ -35,6 +35,9 @@ public sealed partial class ForestFoundationPlayTests
     {
         using var destinations=new TravelDestinationFixture("dungeon","magical-forest","drowned-court","ironvein-excavation");
         yield return LaunchMine();string runId=Run.RunId;
+        Run.Player.GetComponent<PlayerAbilityEnergy>().AddEnergy(100);
+        Assert.That(Run.Player.GetComponent<PlayerAbilityController>().TryActivate(),Is.True);
+        Assert.That(Run.Player.GetComponent<RoyalDecreeRuntime>().RemainingMoves,Is.EqualTo(5));
         string[] route={"magical-forest","drowned-court","dungeon","ironvein-excavation","drowned-court","ironvein-excavation"};
         long largest=0;
         foreach(string destination in route)
@@ -66,6 +69,9 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(Run.Board.MineStoneCount,Is.Zero);Assert.That(Run.Board.VineCount,Is.Zero);Assert.That(Run.Board.IsFlooded,Is.False);
             Assert.That(Run.Board.GetComponent<BoardCasterSigilView>().ActiveCount,Is.Zero);
             var after=Run.Continuation.Capture();Assert.That(after.player.health,Is.EqualTo(before.player.health));
+            Assert.That(after.clock.profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
+            Assert.That(after.decreeRemaining,Is.EqualTo(before.decreeRemaining));
+            Assert.That(after.decreeRemaining,Is.EqualTo(5),"travel consumes no Decree moves");
             Assert.That(after.player.shield,Is.EqualTo(before.player.shield));
             foreach(var old in before.board.cells.Where(c=>c.hasGem))
             {

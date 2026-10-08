@@ -14,6 +14,8 @@ public sealed class PlayerStatusPanel : MonoBehaviour
     private RectTransform root;
     private readonly Dictionary<PlayerStatusKind, PlayerStatusDefinition> definitions = new Dictionary<PlayerStatusKind, PlayerStatusDefinition>();
     private readonly List<RectTransform> cells = new List<RectTransform>();
+    private CombatStatusStrip strip;
+    private readonly List<CombatStatusDisplay> displayed = new List<CombatStatusDisplay>();
     public RectTransform StatusRoot => root;
 
     private void Awake()
@@ -21,6 +23,7 @@ public sealed class PlayerStatusPanel : MonoBehaviour
         panel = GetComponent<PlayerPanelUI>();
         foreach (var data in Resources.LoadAll<PlayerStatusDefinition>("PlayerStatuses")) definitions[data.kind] = data;
         root = GameUi.Rect("PlayerStatuses", transform, Vector2.zero, Vector2.zero);
+        strip = root.gameObject.AddComponent<CombatStatusStrip>();
         root.gameObject.SetActive(false);
     }
     private void LateUpdate()
@@ -37,6 +40,7 @@ public sealed class PlayerStatusPanel : MonoBehaviour
     }
     private void Refresh()
     {
+        if (CombatMoveClock.Unified) { RefreshUnified(); return; }
         foreach (var cell in cells) Destroy(cell.gameObject);
         cells.Clear();
         if (player != null)
@@ -58,6 +62,7 @@ public sealed class PlayerStatusPanel : MonoBehaviour
     }
     private void Layout()
     {
+        if (CombatMoveClock.Unified) { RefreshUnified(); return; }
         if (root == null || cells.Count == 0) return;
         var rect = (RectTransform)transform;
         int columns = Mathf.Clamp(Mathf.FloorToInt((rect.rect.width - 8) / 22), 1, 7);
@@ -68,6 +73,12 @@ public sealed class PlayerStatusPanel : MonoBehaviour
             int row = i / columns, count = Mathf.Min(columns, cells.Count - row * columns);
             cells[i].anchoredPosition = new Vector2((i % columns - (count - 1) * .5f) * 22, ((rows - 1) * .5f - row) * 18);
         }
+    }
+    private void RefreshUnified()
+    {
+        CombatStatusDisplay.Player(player, displayed);
+        int columns = Mathf.Clamp(Mathf.FloorToInt((((RectTransform)transform).rect.width-8)/28),1,8);
+        strip.Show(displayed, columns, _ => RunSession.Current?.GetComponent<RunControlsUI>()?.OpenGuide(Describe()));
     }
     public string Describe()
     {
@@ -86,6 +97,8 @@ public sealed class PlayerStatusPanel : MonoBehaviour
             if (data != null) text.AppendLine(data.description);
             text.AppendLine();
         }
+        var decree=player.GetComponent<RoyalDecreeRuntime>();
+        if(decree?.IsActive==true)text.AppendLine("Royal Decree: "+CombatStatusDisplay.Duration(decree.RemainingDuration,CombatMoveClock.MoveEffects)+" remaining. Bonus damage includes all cascades.");
         return text.ToString();
     }
     private void OnDestroy() { if (player != null) player.Statuses.Changed -= Refresh; }

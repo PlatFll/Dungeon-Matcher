@@ -280,6 +280,17 @@ public sealed class RoyalDecreeMarkView :
             return;
         }
 
+        // Share the action display's overhead lane without obscuring either row.
+        var intent = CombatMoveClock.Unified ? target.GetComponent<EnemyUnifiedIntentView>() : null;
+        if (intent != null && intent.ActionRoot != null)
+        {
+            markRect.position = intent.ActionRoot.TransformPoint(new Vector3(
+                intent.ActionRoot.rect.xMin - markRect.rect.width * .5f - 4,
+                intent.ActionRoot.rect.center.y, 0));
+            GameplayPixelGrid.Snap(markRect);
+            return;
+        }
+
         Camera uiCamera = null;
 
         if (rootCanvas != null &&

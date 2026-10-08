@@ -129,7 +129,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 {
                     if (!Living(actor)) continue;
                     if (actor.GetComponent<EnemyAutoAttack>()?.RemainingAttackTime <= 0) dueBasics.Add(actor.PersistentId);
-                    if (actor.GetComponent<EnemyStagger>()?.IsStaggered != true && !BlocksBasic(actor))
+                    if (actor.GetComponent<EnemyStagger>()?.IsStaggered != true && !BlocksSpecialCountdown(actor))
                         actor.RegisterValidPlayerTurn();
                 }
                 acceptedActors.Sort(CompareSpecialPriority);
@@ -188,6 +188,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             if (!run.Player.IsDefeated) yield return run.Board.DrainMineDrills();
             // Drill-counterable warnings stay live through the final response
             // move's actual environmental firing, then release under this hold.
+            if (Unified) acceptedActors.Sort(CompareSpecialPriority);
             foreach (var actor in acceptedActors)
             {
                 if (!Living(actor)) continue;
@@ -236,7 +237,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         }
     }
 
-    private static bool Living(EnemyActor actor) => actor != null && actor.IsInitialized && !actor.IsDefeated;
+    private bool Living(EnemyActor actor) => actor != null && actor.IsInitialized && !actor.IsDefeated &&
+        (!Unified || run.Waves.ContinuationSlot(actor) >= 0);
     private void ExpireActorEffects()
     {
         foreach (var actor in acceptedActors)
@@ -252,6 +254,13 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
+    private static bool BlocksSpecialCountdown(EnemyActor actor) =>
+        actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
+        actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<ForestMilestoneEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<ForestPressureAbility>()?.IsPreparing == true ||
+        actor.GetComponent<KingEnemyAbility>()?.BlocksBasic == true;
     private int CompareSlot(EnemyActor a, EnemyActor b)
     {
         int slots = run.Waves.ContinuationSlot(a).CompareTo(run.Waves.ContinuationSlot(b));

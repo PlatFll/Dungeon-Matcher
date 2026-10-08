@@ -32,14 +32,17 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator KingReadinessFullCycleUsesLiveSecondsProfile() => RoyalCycle(true);
     [UnityTest] public IEnumerator KingReadinessFullCycleUsesOriginalDungeonProfile() => RoyalCycle(false);
 
-    private IEnumerator RoyalCycle(bool coordinated)
+    [UnityTest] public IEnumerator UnifiedKingReadinessFullCycle() => RoyalCycle(false, true);
+
+    private IEnumerator RoyalCycle(bool coordinated, bool unified = false)
     {
         if (coordinated)
         {
             yield return Launch(3, true);
             ((CombatClockSnapshot)Get(Run.MoveClock, "state")).profile = CombatClockSnapshot.LegacyEffectsProfile;
         }
-        else yield return LaunchDungeonHazards();
+        else if (unified) yield return LaunchUnified();
+        else yield return LaunchDungeonHazards(true);
         var data = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset");
         Assert.That(Run.Waves.TrySummonEnemy(data, out var king), Is.True);
         yield return Stable(); PreserveRoster();
@@ -75,7 +78,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(king.HasAnimationActionInProgress, Is.False);
         Assert.That((int)Get(ability, "cycle"), Is.Zero);
         sets = 0; Run.Board.GemSetMarked += t => { if (t.Owner == king) sets++; };
-        yield return EnvironmentMove(); yield return EnvironmentMove();
+        for (int i = 0; i < (unified ? king.SpecialTurnRequirement : 2); i++) yield return EnvironmentMove();
         yield return Until(() => sets == 1 && Run.Continuation.CanCapture, "next Judgment completes");
         Assert.That(sets, Is.EqualTo(1), "cycle repeats after Bombardment recovery");
     }

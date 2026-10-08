@@ -30,7 +30,7 @@ public sealed class ShopMenuController : MonoBehaviour
             buy[i] = GameUi.Button("Buy", panel, "", new Vector2(185,44), new Vector2(-104,y-62), () => { AccountProgression.Current.TryPurchase(kind); Refresh(); });
             equip[i] = GameUi.Button("Equip", panel, "", new Vector2(185,44), new Vector2(104,y-62), () => { var a=AccountProgression.Current; a.SetEquipped(kind,!a.Equipped(kind)); Refresh(); });
         }
-        GameUi.Label("Limits", panel, $"Each equipped item loads up to {BalanceV1.Current.maximumRunCharges} uses per run.\nUnused items stay owned. Independent {BalanceV1.Current.consumableCooldown:0.#}s cooldowns.", new Vector2(420,48),new Vector2(0,-240),16);
+        GameUi.Label("Limits", panel, $"Each equipped item loads up to {BalanceV1.Current.maximumRunCharges} uses per run.\nUnused items stay owned. New runs: independent 2-move cooldowns.", new Vector2(420,48),new Vector2(0,-240),16);
         GameUi.Button("Back",panel,"Back",new Vector2(160,42),new Vector2(0,-285),()=>back?.Invoke());
         Refresh();
     }

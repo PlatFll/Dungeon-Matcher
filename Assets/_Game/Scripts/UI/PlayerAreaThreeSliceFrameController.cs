@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
 {
+    public static float PreferredHeight => CombatMoveClock.Unified ? 354f : 290f;
     private const string ProfileResourcePath =
         "UI/PlayerAreaFrameProfile";
 
@@ -123,7 +124,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         RectTransform generatedLayout)
     {
         lastLayoutHeight = generatedLayout.rect.height;
-        float playerHeight = Mathf.Min(290f, lastLayoutHeight);
+        float playerHeight = Mathf.Min(PreferredHeight, lastLayoutHeight);
         float extraTopInset = Mathf.Floor((lastLayoutHeight - playerHeight) / 2f);
         float playerWidth =
             profile != null

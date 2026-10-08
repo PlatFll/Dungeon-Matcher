@@ -1,11 +1,13 @@
 using System;
 using System.Reflection;
+using System.Collections;
+using UnityEditor.SceneManagement;
+using UnityEngine.TestTools;
 using NUnit.Framework;
 using UnityEngine;
 
-// Isolated EditMode fixtures: no scene loading, board mutations, saved mastery
-// edits or writes to serialized character assets. Unity execution is deferred
-// to the combined gameplay-audit validation pass.
+// Isolated PlayMode fixtures exercise real OnEnable/OnDisable subscriptions.
+// Empty scenes and cloned definitions keep production saves and assets untouched.
 public sealed class PlayerAbilityLifecycleTests
 {
     private GameObject root;
@@ -16,11 +18,13 @@ public sealed class PlayerAbilityLifecycleTests
     private PlayerAbilityController controller;
     private PlayerAbilityLifecycleProbe runtime;
 
-    [SetUp]
-    public void SetUp()
+    [UnitySetUp]
+    public IEnumerator SetUp()
     {
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+        yield return new EnterPlayMode();
         Assert.That(RunUpgradeRuntime.Current, Is.Null,
-            "Run these isolated EditMode fixtures outside an active run.");
+            "Run these isolated fixtures outside an active run.");
         PlayerDefinition template = Resources.Load<PlayerDefinition>("Players/Player_Skeleton");
         Assert.That(template, Is.Not.Null);
         Assert.That(template.ActiveAbility, Is.InstanceOf<RoyalDecreeAbilityDefinition>());
@@ -50,8 +54,8 @@ public sealed class PlayerAbilityLifecycleTests
             $"selected={typeof(PlayerAbilityController).GetField("activeRuntime",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(controller)}, run={RunSession.Current}");
     }
 
-    [TearDown]
-    public void TearDown()
+    [UnityTearDown]
+    public IEnumerator TearDown()
     {
         if (root != null) UnityEngine.Object.DestroyImmediate(root);
         if (definition != null) UnityEngine.Object.DestroyImmediate(definition);
@@ -63,6 +67,7 @@ public sealed class PlayerAbilityLifecycleTests
         energy = null;
         controller = null;
         runtime = null;
+        yield return new ExitPlayMode();
     }
 
     [Test]

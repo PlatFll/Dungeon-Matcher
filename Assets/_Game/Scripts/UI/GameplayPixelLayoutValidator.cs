@@ -27,7 +27,7 @@ public static class GameplayPixelLayoutValidator
             $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
         var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
-        Require(player != null && Near(player.rect.height, Mathf.Min(290, g.Top.height) - 44),
+        Require(player != null && Near(player.rect.height, Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
             "Player frame changed with battle height", errors);
         if (player != null)
         {

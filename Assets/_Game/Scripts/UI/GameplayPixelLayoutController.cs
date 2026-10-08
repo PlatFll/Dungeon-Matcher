@@ -154,6 +154,9 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         // The simulator may publish Screen before resizing the actual Canvas.
         // Refit static art once that projection catches up on the next frame.
         int minimumBattleHeight=Mathf.Max(MinimumBattleHeight,GameplayThemeSkin.Current?.minimumBattleHeight??0);
+        // Native 24px status rows need vertical space alongside the unchanged
+        // player canvas, affinity and shield. The existing geometry owner reserves it.
+        if(CombatMoveClock.Unified) minimumBattleHeight=Mathf.Max(minimumBattleHeight,PreferredBattleHeight+56);
         if (!force && minimumBattleHeight==lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
         lastMinimumBattleHeight=minimumBattleHeight;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;

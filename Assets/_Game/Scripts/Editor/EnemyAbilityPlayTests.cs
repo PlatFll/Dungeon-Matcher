@@ -43,6 +43,7 @@ public sealed class EnemyAbilityPlayTests
         {
             Resize(1920);yield return new WaitForSecondsRealtime(.3f);SceneManager.LoadScene("Game");
             yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Continuation.CanCapture,"Game ready");
+            yield return LegacyCombatTestProfile.Load();
             run=RunSession.Current;board=Object.FindFirstObjectByType<BoardController>();
             Set(run.Waves,"advanceWavesAutomatically",false);Set(run.Player,"maximumHealth",100000);Set(run.Player,"currentHealth",100000);
             if(UnityEngine.EventSystems.EventSystem.current!=null)UnityEngine.EventSystems.EventSystem.current.enabled=false;

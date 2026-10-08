@@ -22,13 +22,15 @@ public sealed partial class ForestFoundationPlayTests
         int presentations=0;
         attack.AttackStarted += _ => { presentations++; Assert.That(token.IsCurrentSequencePowered,Is.EqualTo(presentations==1)); };
         int hp = Run.Player.CurrentHealth;
-        Assert.That(attack.PerformAttackImmediately(), Is.True);
+        Set(attack, "unifiedRemaining", 1);
+        yield return EnvironmentMove();
         yield return Until(() => !attack.IsAttackSequenceInProgress, "powered basic finishes");
         Assert.That(token.IsPowered, Is.False);
         Assert.That(token.IsCurrentSequencePowered, Is.False);
         Assert.That(hp - Run.Player.CurrentHealth, Is.EqualTo(CombatAmounts.Round(Mathf.RoundToInt(pick.Damage * 1.3f))));
         hp = Run.Player.CurrentHealth;
-        Assert.That(attack.PerformAttackImmediately(), Is.True);
+        Set(attack, "unifiedRemaining", 1);
+        yield return EnvironmentMove();
         yield return Until(() => !attack.IsAttackSequenceInProgress, "ordinary basic finishes");
         Assert.That(hp - Run.Player.CurrentHealth, Is.EqualTo(CombatAmounts.Round(pick.Damage)));
     }
@@ -71,7 +73,8 @@ public sealed partial class ForestFoundationPlayTests
         int presentations=0;
         attack.AttackStarted += _ => { presentations++; Assert.That(token.IsCurrentSequencePowered,Is.True); };
         attack.AttackResolved += (_, amount, __) => { hits++; Assert.That(CombatAmounts.Round(amount), Is.EqualTo(25)); };
-        Assert.That(attack.PerformAttackImmediately(), Is.True);
+        Set(attack, "unifiedRemaining", 1);
+        yield return EnvironmentMove();
         yield return Until(() => !attack.IsAttackSequenceInProgress, "both ore hits finish");
         Assert.That(hits, Is.EqualTo(2)); Assert.That(Run.Player.CurrentHealth, Is.EqualTo(950));
         Assert.That(presentations,Is.EqualTo(2)); Assert.That(token.IsCurrentSequencePowered,Is.False);

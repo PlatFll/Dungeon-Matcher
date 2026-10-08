@@ -21,6 +21,10 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     private bool bombardmentCommitted;
     private int cycle, retryAfterMove = -1;
     public bool IsEnraged => crossedHalf;
+    public bool BlocksBasic => bombardmentCommitted;
+    public int WarningMovesRemaining => board == null ? -1 : bombardment != null && !bombardment.Ended
+        ? Mathf.Max(0,bombardment.DueMove-board.CompletedValidPlayerMoves)
+        : judgment != null && !judgment.Ended ? Mathf.Max(0,judgment.DueMove-board.CompletedValidPlayerMoves) : -1;
     public void CaptureContinuation(EnemyCombatSnapshot saved, Func<EnemyActor,int> slotOf)
     {
         saved.crossedHalf=crossedHalf; saved.crossedQuarter=crossedQuarter; saved.cycle=cycle;

@@ -16,6 +16,9 @@ public sealed class BalanceDisruptionPlayTests
     private const BindingFlags Flags=BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic;
     private readonly List<EnemyActor> owners=new List<EnemyActor>();
     private BoardController board;
+    [SetUp] public void SetPortraitView() => typeof(GameplayPixelLayoutTests)
+        .GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
+        .Invoke(null,new object[]{new Vector2Int(1080,1920)});
     [UnityTest] public IEnumerator ConcurrentOwnersRespectCapsResponsesAndDeathCleanup()
     {
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
@@ -104,6 +107,8 @@ public sealed class BalanceDisruptionPlayTests
         using(GemMasterySettings.UseTemporaryLoadout(GemMasteryLoadout.Default))
         {
             SceneManager.LoadScene("Game");yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Waves.IsWaveActive,"royal scene ready");
+            yield return Until(()=>RunSession.Current.Continuation.CanCapture,"royal board ready");
+            yield return LegacyCombatTestProfile.Load();
             yield return (IEnumerator)typeof(RoyalMilestonePlayValidation).GetMethod("Scenarios",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,null);
             Assert.That(RunSession.Current.ExitTo("MainMenu"),Is.True);yield return null;
         }
