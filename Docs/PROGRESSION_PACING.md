@@ -217,7 +217,7 @@ A run may span multiple visits through Suspend/Continue. Free practice and non-e
 
 The initial dungeon still uses the weighted-era opening above. After an entire
 apex formation dies and rewards finish, the crystal selects another eligible
-zone. Dungeon, magical forest and Drowned Court are available; the crystal
+zone. Dungeon, magical forest, Drowned Court and Ironvein Excavation are available; the crystal
 randomly chooses an eligible destination other than the current zone. Global
 wave depth continues across every handoff.
 
@@ -229,6 +229,15 @@ not a finalized deterministic script or evidence of ten-minute forest visits.
 Expanded behavior and encounter content must provide substantial visits without
 minimum waiting time, player-power scaling or HP padding. Travel preserves the
 board and resources and does not heal. See [the travel contract](Forest/CRYSTAL_TRAVEL.md).
+
+Ironvein uses 41 weighted recipes, saved teaching history and once-per-visit
+Machinist (8–10), Sentinel (22–24) and Grand Delver (28–30) opportunities. New
+mechanics get a gentle first formation, minibosses get normal-only relief, and
+all formations respect the mine's WaveSpawnProfile threat curve and shared slot/
+role caps. These are provisional content windows, not fixed ordinary scripts.
+The roughly 7–10+ minute visit remains a human-playtest target; no minimum time,
+HP padding or player-power correction enforces it. See
+[the mine implementation and evidence](IronveinExcavation/IMPLEMENTATION.md).
 
 After the King loses, the game should deliberately become broader rather than simply introducing a stronger linear replacement faction.
 

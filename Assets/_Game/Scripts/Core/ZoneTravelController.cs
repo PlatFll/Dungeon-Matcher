@@ -15,6 +15,7 @@ public sealed class ZoneTravelSnapshot
     public uint random;
     public int completedCourtVisits;
     public List<string> recentCourtRecipes = new List<string>();
+    public MineEncounterProgress mineEncounters = new MineEncounterProgress();
 }
 
 /// <summary>Owns apex travel and its durable selection; never edits the gem grid.</summary>

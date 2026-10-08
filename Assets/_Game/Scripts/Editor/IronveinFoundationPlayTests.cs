@@ -8,10 +8,22 @@ using UnityEngine.TestTools;
 
 public sealed partial class ForestFoundationPlayTests
 {
-    private IEnumerator LaunchMine()
+    private IEnumerator LaunchMine(bool live=false)
     {
+        var zone=Resources.Load<ZoneDefinition>("Zones/ironvein-excavation");
+        var old=zone.liveEncounters;var budget=zone.encounterBudget;
+        // Foundation fixtures require all three Normals; live progression has
+        // separate tests and never inherits this explicit temporary formation.
+        if(!live && budget!=null)
+        {
+            zone.encounterBudget=null;
+            zone.liveEncounters=new[]{new ZoneTestEncounter{label="Mine foundation fixture",
+                members=zone.enemies.Where(e=>e.EnemyId=="pickaxe_delver" || e.EnemyId=="rivet_gunner" || e.EnemyId=="packbeetle").ToArray()}};
+        }
         RunLaunchOptions.ForestPrototype = false; RunLaunchOptions.StartingZone = "ironvein-excavation";
-        SceneManager.LoadScene("Game"); yield return Stable(); PreserveRoster();
+        try { SceneManager.LoadScene("Game"); yield return Stable(); }
+        finally {zone.liveEncounters=old;zone.encounterBudget=budget;}
+        PreserveRoster();
         Assert.That(Run.Zone.Definition.zoneId, Is.EqualTo("ironvein-excavation"));
         Assert.That(Run.MoveClock, Is.Not.Null);
         Assert.That(CombatMoveClock.MoveBasics, Is.False);

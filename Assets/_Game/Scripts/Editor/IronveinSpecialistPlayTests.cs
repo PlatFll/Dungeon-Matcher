@@ -10,9 +10,11 @@ public sealed partial class ForestFoundationPlayTests
     private IEnumerator LaunchMineKit(params string[] ids)
     {
         var zone=Resources.Load<ZoneDefinition>("Zones/ironvein-excavation");var old=zone.liveEncounters;
+        // Explicit kit fixture bypasses teaching/budget selection, not kit behavior.
+        var oldBudget=zone.encounterBudget;zone.encounterBudget=null;
         zone.liveEncounters=new[]{new ZoneTestEncounter{label="Specialist regression",members=ids.Select(id=>zone.enemies.Single(d=>d.EnemyId==id)).ToArray()}};
         try { yield return LaunchMine(); }
-        finally { zone.liveEncounters=old; }
+        finally { zone.liveEncounters=old;zone.encounterBudget=oldBudget; }
         Set(Run.Waves,"advanceWavesAutomatically",false);
         yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"mine spawn settles");
     }

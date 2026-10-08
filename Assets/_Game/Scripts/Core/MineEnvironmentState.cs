@@ -31,6 +31,7 @@ public sealed class MineEnvironmentState
     public const int CurrentVersion = 2;
     public int version = CurrentVersion, lastSettledMove;
     public long nextStoneId = 1;
+    public bool naturalStoneIntroduced;
     public List<MineDrillState> drills = new List<MineDrillState>();
 
     public static bool Supports(BoardCombatSnapshot board)

@@ -236,3 +236,37 @@ events. All sounds use the existing bounded six-voice mixer, pause/restore
 suppression and independent SFX setting. The original temporary 120-second cue
 uses the current zone music owner. Source score, signal checks and all PixelLab
 receipts are retained. Human art/listening approval remains pending.
+
+## Phase 10 — weighted visits and continuity
+
+`ZoneRuntimeContext` asks `MineEncounterSelector` for a legal authored formation.
+The existing WaveController still spawns actors, assigns weaknesses, scales from
+global depth and owns rewards. Forty-one recipes use the existing
+`WaveSpawnProfile.ThreatBudget` evaluator with a mine-local budget asset; maximum
+three slots, two disruptors, one support and one leader. Turret is summon-only.
+New kits receive solo or normal-escort lessons; mixed formations require their
+members to have appeared. Recent four labels reduce repetition. Actual spawned
+identities are recorded on WaveStarted, not merely when a candidate is picked.
+
+Provisional teaching windows: Stonewright 3–4, Hauler 5–6, Machinist 8–10,
+Surveyor 11–12, Sapper 13–14, Switcher 15–16, Bore 17–18, Smith 19–20,
+Sentinel 22–24, Grand Delver 28–30. Deadlines ensure an unseen mechanic appears;
+ordinary waves remain weighted and leaders appear once per visit. The next
+encounter after a miniboss is normal-only. This connected-visit rule follows the
+existing apex rematch model; it does not change the dungeon's opening leader rules.
+No elapsed-time gate, player-power correction or additional HP multiplier exists.
+
+The first accepted action from local encounter two can place one natural Brittle
+stone per visit. BoardController executes it inside its existing environmental
+mutation, using the same capacity, special protection and useful-response checks
+as enemy stones. It has stable board ownership zero and is never a hidden actor.
+Failed placement retries at a later safe point. The successful-introduction flag,
+recipe history and seen identities persist through Continue.
+
+Ironvein is a fourth live crystal destination. Selection remains random and
+excludes the source. The entire apex formation must die before rewards and travel.
+The detached destination checkpoint clears mine structures, charge and source
+warnings, resets the new visit history, and preserves run/player/card/gem state.
+Failed writes leave the source unchanged. Returning to the mine starts a fresh
+local teaching arc at the current global difficulty. Cave variants advance from
+railhead to pumpworks to deep shaft at local 10 and 20.

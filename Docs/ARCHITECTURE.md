@@ -53,6 +53,11 @@ the kit's pending coroutine cleanup after the board completes its motion, so
 saved preparation/basic holds cannot leak through a transient stable checkpoint.
 Presentation never triggers damage.
 Rattled is a shared player status read by the central Stagger buildup calculation.
+`MineEncounterSelector` reads zone recipe metadata and a WaveSpawnProfile budget;
+WaveController retains spawning, global depth scaling and rewards. Successful
+WaveStarted events record per-visit history in the travel snapshot. Atomic travel
+resets that history only in the detached destination save. Natural stones reuse
+the board's structural placement routine within environmental advancement.
 
 | Area | Authority and principal files |
 | --- | --- |

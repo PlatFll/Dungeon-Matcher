@@ -195,3 +195,64 @@ approval of the whole region. Art/music review and device testing remain pending
 - Quoted PixelLab usage: 295.2/300 initial, 185 requests; 100-generation reserve
   untouched. No pending generation jobs or purchases. All art remains candidate
   production for review; this record does not establish user approval.
+
+## Phase 10 — initial focused evidence
+
+- Deterministic data tests: **2 passed**, including 120 complete seeded visit
+  selections, all thirteen identities, leader uniqueness, gentle introductions,
+  budgets, relief, saved random-state equivalence and fourth-zone eligibility.
+  `.utmp/ForestValidation/96520383-6b46-4a09-aa64-1b549557c97d.xml/.log`.
+- Actual scene checks: **4 passed**, covering natural stone + encounter history
+  through Continue, six handoffs across all four zones, first-stone cancellation
+  and original stone safety. `.utmp/ForestValidation/8d7312c6-c365-45b2-b091-553f846758f7.xml/.log`.
+  Six-hop durable account maximum: **133,653 bytes**. Source stones/charge,
+  vines, flooding and caster marks clean up; unaffected gems/run/resources persist.
+- Initial pacing harness compiled after correcting its health-property name.
+  Its first multi-run execution had two counter assertions fail after successful
+  travel because it sampled the newly loaded destination. Source move counts
+  are now retained before handoff; final measured evidence follows separately.
+  The apparently passing zero-assertion seed 3101 case had no measurement file
+  and is not accepted as pacing evidence; it is rerun independently.
+
+## Phase 10 — measured visits and affected regression
+
+- Mandatory `Tools/Validate-Unity.ps1`: **PASS**, Unity 6000.3.19f1, exit 0:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-94108512-6aec-459e-abf7-460fbce2e05c.log`.
+  Editor testing remained muted. All four original user-file hashes still match.
+
+- Combined affected run: **54 passed / 1 failed**, no skips:
+  `.utmp/ForestValidation/85c585b9-5c98-4592-9a2f-d50c54a19472.xml/.log`.
+  The sole failure was the historical foundation assertion that the zone must
+  remain testing-only. Phase 10 intentionally enables completed live travel;
+  its replacement also requires all fourteen definitions, 41 recipes, the
+  budget asset, Grand Delver apex and three native environments.
+- Final readiness/teaching rerun: **8 passed / 0 failed / 0 skipped**:
+  `.utmp/ForestValidation/6cee9ee9-113a-4894-9060-febdf91d3ddd.xml/.log`.
+  All 55 combined cases pass on their latest affected execution; independently
+  measured seed 3101 adds one case. Earlier counts overlap and are not additive.
+- All mechanics, motion, four screen captures, actual six-hop travel, natural
+  introduction/history and both corrected level-five pacing runs passed.
+- The independent level-one run passed with its required measurement artifacts:
+  `.utmp/ForestValidation/8a997135-d849-454d-ab62-e4ab0e0523c0.xml/.log`.
+
+### Actual engine measurements
+
+Disposable Skeleton profiles; greedy existing match policy, ability when ready,
+potion below 45% HP, first offered card and 2.5 game-second think interval.
+Engine ran at 6× speed with audio muted. No enemy/player stat or attack cadence
+overrides. These are synthetic input observations, not manual play or guarantees.
+
+| Seed / level | Encounters | Visit game seconds | Accepted moves | Fight seconds min / median / max | Fight moves min / median / max |
+| --- | ---: | ---: | ---: | --- | --- |
+| 3101 / 1 | 29 | 638.667 | 225 | 4.300 / 18.887 / 63.460 | 1 / 6 / 23 |
+| 10101 / 5 | 29 | 465.129 | 157 | 2.136 / 11.044 / 63.477 | 0 / 3 / 22 |
+| 9121 / 5 | 29 | 632.188 | 226 | 1.605 / 16.398 / 69.825 | 0 / 5 / 23 |
+
+All three reached random travel, not a run ending. Ability/periodic kills can
+finish a fight with zero new accepted moves. Mean sampled structural occupancy
+was 0.7%, 0.6% and 1.0%; peak live stones 4, 3 and 6. Fixed drills fired 18, 16
+and 18 times; 0, 2 and 0 fired through a live stone. First observed Obsidian was
+at local wave 4, 28 and 26. Helpful-drill opportunities were uncommon with this
+policy; human targeting/readability review remains useful before numerical tuning.
+Raw per-wave CSV and summaries: `.utmp/Ironvein/Pacing/`. Different seeds and
+real-time attack scheduling are not paired character-power experiments.

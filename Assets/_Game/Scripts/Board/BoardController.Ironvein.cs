@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +63,21 @@ public partial class BoardController
         return new MineStoneState { id = mine.nextStoneId++, ownerId = owner?.PersistentId ?? 0,
             stage = (MineStoneStage)Mathf.Clamp(durability - 1, 0, 2), bornMove = MineMove,
             lastAdvanceMove = MineMove };
+    }
+
+    private IEnumerator ExecuteMineEnvironment(int move)
+    {
+        AdvanceMineStones(move);
+        var travel=RunSession.Current?.Travel;
+        if(!UsesMine || mine.naturalStoneIntroduced || travel?.State.enabled!=true || travel.LocalWave<2 ||
+            RunSession.Current.Player.IsDefeated)yield break;
+        // The one natural lesson uses the same structural mutation/counterplay
+        // checks as every placed stone, without inventing a hidden enemy owner.
+        var request=new BoardMutationRequest { Kind=BoardMutationKind.PlaceBarricades,
+            NaturalMineStone=true, BarricadeStyle=EnemyBarricadeStyle.MineStone,
+            BarricadeCount=1,MaximumOwnedBarricades=1,BarricadeDurability=1,ProtectSpecialGems=true };
+        yield return ExecutePlaceBarricadesRequest(request);
+        if(request.Succeeded){mine.naturalStoneIntroduced=true;MineChanged?.Invoke();}
     }
 
     private void AdvanceMineStones(int move)

@@ -387,17 +387,17 @@ public partial class BoardController
     private IEnumerator ExecutePlaceBarricadesRequest(
         BoardMutationRequest request)
     {
-        if (request == null ||
+        if (request == null || (!request.NaturalMineStone && (
             request.OwnerActor == null ||
             request.OwnerActor.IsDefeated ||
-            request.OwnerInstanceId == 0)
+            request.OwnerInstanceId == 0)))
         {
             yield break;
         }
 
         var impactWait = WaitForBoardMutationAnimationImpact(request);
         while (impactWait.MoveNext()) yield return impactWait.Current;
-        if (IsAnimationRequestCancelled(request)) yield break;
+        if (!request.NaturalMineStone && IsAnimationRequestCancelled(request)) yield break;
 
         int remainingCapacity =
             request.MaximumOwnedBarricades -

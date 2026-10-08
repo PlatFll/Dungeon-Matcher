@@ -124,6 +124,7 @@ public sealed class RunContinuation : MonoBehaviour
         if (saved.travel.zoneId == "drowned-court") saved.travel.completedCourtVisits++;
         saved.travel.zoneId=destination;saved.travel.stage=2;saved.travel.visit++;
         saved.travel.visitStartWave=saved.wave+1;
+        saved.travel.mineEncounters=new MineEncounterProgress();
         // Keep the run's established effect units. Legacy seconds never become moves.
         if(saved.clock==null)
             saved.clock=new CombatClockSnapshot{profile=CombatClockSnapshot.LegacyEffectsProfile,

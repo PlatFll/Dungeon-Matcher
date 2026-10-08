@@ -41,6 +41,7 @@ public partial class BoardController
         public MineStoneOperation MineOperation;
         public MineStoneStage MineExtractedStage;
         public bool MineCore;
+        public bool NaturalMineStone;
         public Action<long> MineStonePlaced;
         public int MineLane;
         public bool MineHorizontal, MineReachedEdge;
@@ -402,7 +403,7 @@ public partial class BoardController
                     case BoardMutationKind.FireMineDrills:
                         yield return ExecuteReadyMineDrills(); break;
                     case BoardMutationKind.AdvanceMineStones:
-                        AdvanceMineStones(request.EnvironmentMove); break;
+                        yield return ExecuteMineEnvironment(request.EnvironmentMove); break;
                     case BoardMutationKind.ConsumeAirBubbles:
                         ExecuteConsumeAirBubbles(request); break;
                     case BoardMutationKind.PlaceAirCoffer:

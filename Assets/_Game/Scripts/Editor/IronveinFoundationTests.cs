@@ -50,12 +50,17 @@ public sealed class IronveinFoundationTests
         Assert.That(RunContinuation.SupportsSnapshot(old), Is.False);
     }
 
-    [Test] public void MineStubIsTestingOnlyAndUsesProvisionalSerializedTuning()
+    [Test] public void IronveinLiveDestinationHasCompleteAssetsAndProvisionalSerializedTuning()
     {
         var zone = Resources.Load<ZoneDefinition>("Zones/ironvein-excavation");
         Assert.That(zone, Is.Not.Null); Assert.That(zone.maturesStone, Is.True);
         Assert.That(zone.mineMovesPerStage, Is.EqualTo(3)); Assert.That(zone.maximumMineStones, Is.EqualTo(6));
         Assert.That(ZoneTravelController.TestingReady(zone), Is.True);
-        Assert.That(ZoneTravelController.DestinationReady(zone), Is.False);
+        Assert.That(ZoneTravelController.DestinationReady(zone), Is.True);
+        Assert.That(zone.encounterBudget,Is.Not.Null);
+        Assert.That(zone.liveEncounters.Length,Is.EqualTo(41));
+        Assert.That(zone.enemies.Length,Is.EqualTo(14));
+        Assert.That(zone.apexEnemy.EnemyId,Is.EqualTo("grand_delver"));
+        Assert.That(zone.theme.battleEnvironmentVariants.Length,Is.EqualTo(3));
     }
 }

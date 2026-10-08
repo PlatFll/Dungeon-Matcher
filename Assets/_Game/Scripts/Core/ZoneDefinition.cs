@@ -10,6 +10,11 @@ public sealed class ZoneTestEncounter
     [Min(1)] public int weight=1;
     // 0 either, 1 dry only, 2 flooded only. Whole-cast eligibility still applies.
     public int requiredTide;
+    // Optional teaching metadata for a zone's weighted encounter library.
+    public EnemyDefinition introduction;
+    public int introduceByLocalWave;
+    public EnemyDefinition[] requiredSeen = Array.Empty<EnemyDefinition>();
+    public bool oncePerVisit;
 }
 
 [CreateAssetMenu(menuName="Dungeon Matcher/Zones/Zone")]
@@ -24,6 +29,7 @@ public sealed class ZoneDefinition : ScriptableObject
     public EnemyDefinition[] enemies;
     public ZoneTestEncounter[] developmentEncounters;
     public ZoneTestEncounter[] liveEncounters;
+    public WaveSpawnProfile encounterBudget;
     public EnemyDefinition apexEnemy;
     [Min(1)] public int apexLocalWave=18;
     [Min(1)] public float affiliatedDamageMultiplier=1.15f;

@@ -39,8 +39,12 @@ The newer rules in this status and the owning design/architecture documents supe
   temporary music/SFX are integrated for review. Four portrait/safe-inset
   layouts and native bindings pass the 49-check affected regression. Drill
   projectiles show their actual endpoints, damaged stones retain their material,
-  and fuses/imminent hardening are visible. Live crystal eligibility remains
-  off pending Phase 10 encounters. Visual, music and device approval remain open.
+  and fuses/imminent hardening are visible. Phase 10 adds 41 weighted formations,
+  saved teaching/relief history and a natural stone introduction. Ironvein is a
+  fourth random crystal destination, with source cleanup verified across six
+  handoffs. Three actual synthetic-input visits completed in 7.75–10.65 game
+  minutes without stat overrides; this is not human pacing approval. Visual,
+  music and device approval remain open; final compatibility review is Phase 11.
   See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).
