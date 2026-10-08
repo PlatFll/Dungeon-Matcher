@@ -30,7 +30,8 @@ their baseline hashes remain in `Docs/IronveinExcavation/READINESS.md`.
 - Channel owners already save target identities/deadlines, cancel through ordinary
   Stagger and have zero extra recovery. Mine final-response warnings must remain
   live through environmental drills before they release.
-- Current player status art is seven 16px icons; Rattled needs a dedicated glyph.
+- Existing player status art is seven 16px icons plus the 32px Rattled glyph.
+  The new presentation replaces these with a consistent native 24px family.
   Enemy status presentation is mostly text beside weakness gems. Existing action
   UI combines HIT IN text, a separate ability counter and slot sigil.
 
@@ -53,7 +54,25 @@ can shorten an in-progress countdown by the interval difference, leaving at leas
 one future move. Expiry never adds back consumed progress. Damage modifiers keep
 their existing ownership and composition.
 
-## Status/art manifest (audit, pending integration)
+## Status/art manifest
+
+| Timed owner | New-profile duration |
+|---|---|
+| Enemy basic | Individual first/repeat integers, 2–6 moves |
+| Enemy special | Existing definition readiness; response deadlines stay in moves |
+| Player Burn/Weakened/Sapped/Wounded/Fear/Frostbite/Slippery | 3 future moves; source/cleanse rules may end them earlier |
+| Player Rattled | 2 future moves |
+| Enemy poison | 3 future ticks, 4 with Slow Venom; one tick per accepted move |
+| Stagger / post-Stagger immunity | 2 / 2 full future moves |
+| War Rhythm / Marshal rally / Conch rally | 3 future moves |
+| Marshal retreat | 2 future moves, or protector loss |
+| Royal Decree | 5 future moves plus 1 per Longer Reign stack |
+| Potion and Bomb cooldowns | 2 moves; activation itself is free |
+
+Animation frames, contact/recovery presentation, VFX, music and UI fades still
+use seconds. They do not advance combat. Existing environmental counters retain
+their accepted-move rules, including flooding/AIR, snare shrink, vine/root growth,
+stone hardening, drill charge, shaky tiles and board warnings.
 
 | Family | Owner / actual lifetime | Planned glyph |
 |---|---|---|
@@ -97,8 +116,8 @@ duration. Actual native dimensions, alpha and palette counts require file checks
 Implementation is in progress. The first focused Unity run passed 11/11 tests
 with audio muted: integer countdown/reset, thinking time, haste/expiry and legacy
 save interpretation. Results: `.utmp/ForestValidation/99e921ed-3924-4c20-9550-afc228d3b186.xml`.
-Global priority and broader gameplay evidence are still pending. No pacing claim
-has been made. Existing HP/damage curves, encounter counts, shields and drill
+Global priority is covered by the focused evidence below; broader integration
+and pacing evidence are recorded separately. Existing HP/damage curves, encounter counts, shields and drill
 clear semantics are preserved until an explicit, evidenced balance decision.
 
 The next focused run passed 17/17 (`95bf901f-cc4f-4cd8-95be-bad7a16a9245.xml`):
@@ -109,6 +128,67 @@ proved higher-rank specials before all basics, same-actor special plus basic,
 no summon birth tick and the old forest timing fixture. The latest 3/3 run
 (`52c576fc-67e5-42a8-9a1f-4a9285a03c87.xml`) added Conch move expiry/save coverage.
 These are scoped automated checks, not final integration or human pacing evidence.
+
+### Rendered checks and audit corrections
+
+The final presentation suite passed 4/4 (`9e1225c8-ecab-4f32-b581-0f5aa28fe7e5`):
+all four zones at 720x1280, 1080x1920, 1080x2400 and inset safe area; a large
+Grand Delver formation at three sizes; two simultaneous Mender channels through
+Continue and independent interruption; and legacy icon/data compatibility.
+Actual PNGs show the player with all eight statuses plus Decree, enemy poison and
+Stagger, HP/shield/weakness, source sigils and native counters. White actor/weakness
+flashes are the retained Stagger feedback. The 99-move immunity in the leader and
+channel stress fixtures is a test survival guard, never production tuning.
+
+Visual review found and corrected the Decree target marker crossing the new rows,
+oversized animation canvases placing status/cast copy into the header, and the
+retired move view taking healer target links with it. The new view keeps links,
+positions the mark alongside the rows and reserves header clearance. A newer
+cast announcement replaces fading copy for that actor. Tests allow transparent
+animation headroom; actual rendered inspection checks face/weapon clearance.
+
+### Timing and compatibility detail
+
+Poison ticks and normal zone environment work precede action opportunities.
+Mine warnings countered by a final-response drill release after full-lane drill
+firing, under the same board hold, ordered by rank and slot. This preserves the
+existing explicit environment exception to ordinary special-before-basic order.
+Actual channel owners pause readiness. A hold that blocks only basics does not
+silently freeze the separate special countdown.
+
+Unified snapshots require the dedicated integer attack field and whole, finite,
+nonnegative move durations. Rejection leaves the stored record intact. Older
+seconds/hybrid/prototype profiles keep their original meanings. Restore rebuilds
+source-owned buffs without shortening a saved countdown again. The six-handoff
+travel check retains five Decree moves across all four zones without spending,
+adding or replaying a move, while source zone effects are cleaned.
+
+### Provisional balance and measurement limits
+
+The first pass changes individual attack intervals and Stagger rather than adding
+HP or blocker pressure. All 62 intervals and unchanged special readiness values
+are listed in `UNIFIED_MOVE_INTERVALS.md`. Bloodrage's serialized 999 is a passive
+sentinel, not a player-facing special countdown.
+
+Runtime-derived Stagger analysis covers 62 enemies at waves 30, 70, 100 and 150,
+at player levels 1 and 5 (496 rows). Typical three-gem damage was 35 and 40.
+An unanswered move removes 28.6/21.4/14.3/8.6% of the level-1 typical hit for
+Normal/Special/Miniboss/Boss. These are damage-equivalent amounts, not a fixed
+percentage of each enemy's meter. For example, a wave-30 King reaches Stagger
+in 15 alternating weakness/off-color moves at level 1; wave-100 Queen Nacre in
+29. This establishes mathematical reachability under the stated scenario, not
+the quality of late-wave human play or every possible build.
+
+Opening pacing samples use actual production stats, one fresh level-1 Skeleton
+per zone, greedy swaps, free skills, low-health potions, first offered cards and a
+2.5 simulated-second think interval. They are bounded at six completed encounters
+and accelerated 6x. Per-wave counters subscribe to acceptance, including the
+lethal final action; an ability-only finish can legitimately use zero new moves.
+Human elapsed time has **not** been measured. Automated game/wall seconds are
+reported separately and must not be presented as human timing. No wave counts,
+HP/damage, endless scaling, blocker caps or encounter weights are changed on this
+limited evidence. Physical-device reading and longer human runs remain the next
+balance review. Numerical values are experimental throughout.
 
 New-profile Stagger thresholds are Normal/Special/Miniboss/Boss = 30/35/30/25%
 of current maximum HP. An off-color move removes 10/7.5/5/3 damage-equivalent
@@ -132,5 +212,12 @@ Marshal/banner haste cannot erase another source when one expires.
 
 Approved: 60 subscription generations total, 30 initial and 30 corrections.
 No credit purchase. Opening balance: 1064 generations, $0 credit. PixelLab help
-confirmed native 24px Pixen output at one generation per image. The initial three
-requests are Weakened, Burn and Royal Decree; source jobs are recorded separately.
+confirmed native 24px Pixen output at one generation per image. Production used
+24 creations (23 families and one Weakened revision) plus 23 palette reductions
+at 0.1 each: **26.3 generation units**. The 30-unit initial cap and 60-unit total
+are respected; the reserve is untouched. Sword recoloring used free exact PixelLab
+operations. All sources, job IDs, prompts and corrections are in
+`ArtSource/UnifiedCombat/`. `FinalChecks.json` records actual native dimensions,
+alpha, palette counts and hashes; `NativeReview.png` shows 1×/4× comparisons.
+Finals use 2–12 opaque colors and binary alpha, Point import, no mipmaps/compression.
+The 24px files are copied unchanged into `Resources/UI/CombatStatuses`.

@@ -20,6 +20,45 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Unified move-combat experiment (2026-10-08)
+
+New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+action advances basics, specials and timed effects once after its full cascades.
+Thinking, invalid swaps, menus, free skills and presentation consume no moves.
+This is an approved experiment; numerical tuning remains provisional.
+
+Specials resolve Boss → Miniboss → Special → Normal, then left/middle/right.
+All ordinary due basics follow, allowing both actions when legal. Commands consume
+their participants' opportunity; channels and Stagger suppress it. Existing mine
+warnings that depend on the final response drill release after that drill under
+the same input hold, in rank/slot order. Birth-action summons receive no free tick.
+
+Haste uses the strongest source: `max(2, ceil(base interval / speed))`. A new buff
+leaves at least one response move; expiry never refunds progress. All 62 enemy
+definitions have explicit new-profile intervals, from 2 to 6, preserving each
+authored sequence. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
+
+Stagger lasts two full future moves, then two immunity moves. Partial meter stays
+still while thinking and decays once only on an action without a qualifying hit.
+Normal/Special/Miniboss/Boss HP thresholds are 30/35/30/25%; decay removes
+10/7.5/5/3 damage-equivalent buildup. Rattled halves new buildup. Poison periodic
+damage does not build it; existing feedback-producing ability damage still does.
+Royal Decree affects five full future moves; Longer Reign adds one per stack.
+
+New 24px PixelLab status icons use runtime outlined counters: moves, actual stacks,
+or a neutral condition mark. Enemy sword and slot-sigil rows replace the large
+attack text/radial/ability counter. Channel response moves use the same lower row,
+in amber with an underline. Legacy saved profiles retain their original timing.
+No old float attack timer is reinterpreted as an integer.
+
+See [implementation and evidence](UNIFIED_MOVE_COMBAT.md). Human pacing and
+physical-device acceptance remain separate from automated Unity evidence.
+The [validation record](Validation/UnifiedCombat/README.md) contains 479 unique
+passing automated cases, successful Unity 6000.3.19f1 validation, 20 actual UI
+captures, and four bounded opening pacing samples. No wave-count changes follow
+from those short samples.
+
+
 - **Ironvein integration (2026-10-08):** The user authorized all eleven
   Ironvein pack phases on `codex/ironvein-excavation` and explicitly approved
   merging PR #183 on 2026-10-08.
@@ -409,9 +448,8 @@ listening approval. Full content must
 support substantial visits without forced waits, power scaling or HP padding.
 The launch plan is dungeon, magical forest and aquatic; crystal destinations
 are random among eligible regions. Dungeon, forest and Drowned Court connect after entire apex
-formations. Global depth continues. Live travel
-retains seconds effects from dungeon; isolated forest tests keep their saved
-profiles. Eighteen local starter encounters are temporary forest content anchors.
+formations. Global depth continues. New live travel retains the unified move profile across all four zones; legacy
+saves and explicitly isolated forest tests keep their recorded profiles. Eighteen local starter encounters are temporary forest content anchors.
 Thornkeeper, Berserker, Bloomcaller, Snapvine, Drummer, Briar Archer and Ancient
 Treant C now have definition-selected kits and nine added test formations. Eight
 live formations extend the existing temporary bands. The seven selected blocker
@@ -1009,4 +1047,4 @@ Before answering a broad project question or implementing a feature:
 
 If only a very short refresher is needed:
 
-**Dungeon Matcher** = portrait mobile pixel-art match-3 dungeon battler where the player is the dungeon monster defending an artifact. Match gems → exploit enemy weaknesses → heal via affinity → charge character abilities → create/chains specials → survive real-time attacks and turn-counted board interference → choose temporary run cards → defeat increasingly serious invaders. Permanent per-character levels bought with shared Gold raise the starting floor; account-wide Gem Mastery unlocks and optional Potion/Bomb consumables support progression. Runs use weighted overlapping factions plus authored formations, with miniboss escorts and the King around wave 30. Cards are the primary run-to-run differentiator. Skill must let strong players exceed the expected progression curve; permanent power creates soft walls, never hard gates. Visual identity is crisp dark-purple dungeon pixel art with charming monster characters, jewel gems and warm torch accents. Runs continue past the King with the current roster until death or explicit End Run. Balance v1 exists but still needs human tuning, especially Bardley vs RattleBones.
+**Dungeon Matcher** = portrait mobile pixel-art match-3 dungeon battler where the player is the dungeon monster defending an artifact. Match gems → exploit enemy weaknesses → heal via affinity → charge character abilities → create/chains specials → survive attacks and board interference scheduled by accepted moves → choose temporary run cards → defeat increasingly serious invaders. Permanent per-character levels bought with shared Gold raise the starting floor; account-wide Gem Mastery unlocks and optional Potion/Bomb consumables support progression. Runs use weighted overlapping factions plus authored formations, with miniboss escorts and the King around wave 30. Cards are the primary run-to-run differentiator. Skill must let strong players exceed the expected progression curve; permanent power creates soft walls, never hard gates. Visual identity is crisp dark-purple dungeon pixel art with charming monster characters, jewel gems and warm torch accents. Runs continue past the King with the current roster until death or explicit End Run. Balance v1 exists but still needs human tuning, especially Bardley vs RattleBones.

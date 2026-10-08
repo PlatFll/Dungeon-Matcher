@@ -41,17 +41,45 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Game identity and core loop
 
+## Unified move-combat experiment (2026-10-08)
+
+New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+action advances basics, specials and timed effects once after its full cascades.
+Thinking, invalid swaps, menus, free skills and presentation consume no moves.
+This is an approved experiment; numerical tuning remains provisional.
+
+Specials resolve Boss → Miniboss → Special → Normal, then left/middle/right.
+All ordinary due basics follow, allowing both actions when legal. Commands consume
+their participants' opportunity; channels and Stagger suppress it. Existing mine
+warnings that depend on the final response drill release after that drill under
+the same input hold, in rank/slot order. Birth-action summons receive no free tick.
+
+Haste uses the strongest source: `max(2, ceil(base interval / speed))`. A new buff
+leaves at least one response move; expiry never refunds progress. All 62 enemy
+definitions have explicit new-profile intervals, from 2 to 6, preserving each
+authored sequence. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
+
+Stagger lasts two full future moves, then two immunity moves. Partial meter stays
+still while thinking and decays once only on an action without a qualifying hit.
+Normal/Special/Miniboss/Boss HP thresholds are 30/35/30/25%; decay removes
+10/7.5/5/3 damage-equivalent buildup. Rattled halves new buildup. Poison periodic
+damage does not build it; existing feedback-producing ability damage still does.
+Royal Decree affects five full future moves; Longer Reign adds one per stack.
+
+New 24px PixelLab status icons use runtime outlined counters: moves, actual stacks,
+or a neutral condition mark. Enemy sword and slot-sigil rows replace the large
+attack text/radial/ability counter. Channel response moves use the same lower row,
+in amber with an underline. Legacy saved profiles retain their original timing.
+No old float attack timer is reinterpreted as an integer.
+
+See [implementation and evidence](UNIFIED_MOVE_COMBAT.md). Human pacing and
+physical-device acceptance remain separate from automated Unity evidence.
+
 ### Forest combat and live crystal travel
 
-New forest tests use seconds for ordinary attacks and accepted manual moves for
-special abilities. Basic progress pauses during owned board resolution, stagger
-and specialist holds. Failed swaps, cascades and free skills/supplies contribute
-no extra move. The earlier move-based buffs, stagger, poison and supply cooldowns
-remain in this isolated test profile. Existing all-move forest saves retain their
-recorded profile. Live dungeon runs retain seconds for effects, including after
-travel; first travel adds move-based forest ability coordination without changing
-effect units. Exact expiry and compatibility
-rules are in [the timing contract](Forest/FOUNDATION_CONTRACT.md).
+New production runs use the unified experiment above. Explicit historical forest
+fixtures and existing saves retain their profile. The older compatibility rules
+are in [the legacy timing contract](Forest/FOUNDATION_CONTRACT.md).
 
 The launch plan is dungeon, magical forest and aquatic, developed one zone at a
 time. Crystal travel chooses randomly among eligible destinations other than the

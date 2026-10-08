@@ -150,7 +150,7 @@ All 27 earlier catalog entries are retained, with two Gideon entries added (29 t
 | Gem Grinder | +15% gem damage | 3 | Common | 1 | Any character |
 | Glass Cannon | +30% gem and ability damage. -15% maximum HP. | 1 | Rare | 1.5 | Any character |
 | Horrible Encore | +1 Cracked Gems target | 2 | Epic | 1 | bardley; cracked_gems |
-| Longer Reign | Royal Decree lasts +2 seconds. | 3 | Epic | 1 | skeleton; royal_decree |
+| Longer Reign | Unified runs: Royal Decree lasts +1 move per stack. Legacy saves: +2 seconds. | 3 | Epic | 1 | skeleton; royal_decree |
 | Mana Spark | +20% ability energy gained | 3 | Common | 1 | cost > 1 |
 | Opening Volley | Deal +25% damage to enemies above 80% HP. | 1 | Uncommon | 1 | Any character |
 | Prepared Casting | Begin each wave with +15 ability energy. | 1 | Uncommon | 1.5 | cost > 1 |
