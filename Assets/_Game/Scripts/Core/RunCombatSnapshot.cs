@@ -47,6 +47,7 @@ public sealed class RunCombatSnapshot
 [Serializable] public sealed class BoardCombatSnapshot
 {
     public AquaticEnvironmentState aquatic;
+    public MineEnvironmentState mine;
     public int width, height, moves, nextBanner, nextGem;
     public uint refillRandom;
     public int forestRulesVersion, nextRootId, nextVineGrowthMove;
@@ -70,6 +71,7 @@ public sealed class RunCombatSnapshot
     public long rootOwnerId;
     public bool rootSpreading;
     public int crumbleRestoreMove;
+    public MineStoneState mineStone;
 }
 [Serializable] public sealed class BoardWarningSnapshot
 {

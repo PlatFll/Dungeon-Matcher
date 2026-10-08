@@ -1,5 +1,17 @@
 # Dungeon Matcher Game Design Reference
 
+## Ironvein authorization (2026-10-08)
+
+The approved Ironvein pack expands the cave concept into a fourth region. Its
+implementation is staged on a review branch; current phase status is in
+[IronveinExcavation/WORKLIST.md](IronveinExcavation/WORKLIST.md). Brittle, Hardened
+and Obsidian are structural material stages, separate from remaining durability.
+Neglect matures them; damage delays maturity. The small Bore projectile stops
+after exactly one durability hit on the first stone, even if it breaks. Shared
+environmental drills penetrate and destroy every intended object in their lane.
+Neither changes existing zones' clear/shield rules. See
+[the implementation contract](IronveinExcavation/IMPLEMENTATION.md).
+
 ## Cross-zone design contract (2026-10-06)
 
 [Shared zone design rules](ZONE_DESIGN_RULES.md) define meaningful mechanic

@@ -191,7 +191,7 @@ public sealed class MainMenuController : MonoBehaviour
     private void ShowZonePicker()
     {
         var zones = Resources.LoadAll<ZoneDefinition>("Zones")
-            .Where(ZoneTravelController.DestinationReady)
+            .Where(ZoneTravelController.TestingReady)
             .OrderBy(zone => zone.zoneId == "dungeon" ? 0 : 1)
             .ThenBy(zone => zone.displayName).ToArray();
         if (zones.Length == 0) { LoadGame(); return; }
@@ -210,7 +210,7 @@ public sealed class MainMenuController : MonoBehaviour
             GameUi.Button("StartZone_" + zone.zoneId, zonePicker, zone.displayName,
                 new Vector2(360, 64), new Vector2(0, height / 2 - 168 - i * 80), () =>
                 {
-                    if (isLoadingGame || !ZoneTravelController.DestinationReady(zone)) return;
+                    if (isLoadingGame || !ZoneTravelController.TestingReady(zone)) return;
                     RunLaunchOptions.StartingZone = zone.zoneId;
                     LoadGame();
                 });

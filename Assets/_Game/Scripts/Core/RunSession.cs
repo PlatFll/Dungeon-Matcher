@@ -85,7 +85,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         RunLaunchOptions.StartingZone=null;
         bool selectedStart=continued==null && !forestRequested && RunLaunchOptions.TestingZonePickerEnabled &&
             !string.IsNullOrEmpty(requestedZone) &&
-            ZoneTravelController.DestinationReady(Resources.Load<ZoneDefinition>("Zones/"+requestedZone));
+            ZoneTravelController.TestingReady(Resources.Load<ZoneDefinition>("Zones/"+requestedZone));
         string newZone=forestRequested?"magical-forest":selectedStart?requestedZone:"dungeon";
         var clockSave=continued?.checkpoint?.version==2 ? continued.checkpoint.clock : null;
         string initialZone=continued?.checkpoint?.travel?.version==1 ? continued.checkpoint.travel.zoneId : clockSave?.zoneId ?? newZone;
@@ -94,7 +94,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         // Forest saves predating travel were isolated fixtures. Keep that loop;
         // an explicit newer travel snapshot always supplies its own enable flag.
         Travel.Initialize(this,continued?.checkpoint?.travel,!forestRequested && clockSave?.zoneId!="magical-forest",initialZone);
-        bool liveForestStart=continued==null && !forestRequested && (initialZone=="magical-forest" || initialZone=="drowned-court");
+        bool liveForestStart=continued==null && !forestRequested && (initialZone=="magical-forest" || initialZone=="drowned-court" || initialZone=="ironvein-excavation");
         if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint)) ||
             (continued==null && forestRequested) || liveForestStart)
         {

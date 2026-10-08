@@ -17,6 +17,12 @@ public partial class BoardController
     {
         var zone = RunSession.Current?.Zone?.Definition;
         if (zone == null || gems == null) return;
+        if (zone.maturesStone)
+        {
+            EnqueueBoardMutation(new BoardMutationRequest {
+                Kind = BoardMutationKind.AdvanceMineStones, EnvironmentMove = move });
+            TryStartBoardMutationProcessor();
+        }
         if (zone.crumblesTiles)
         {
             bool due = move >= nextCrumbleMove;
@@ -99,6 +105,7 @@ public partial class BoardController
     {
         if (destination == null) throw new ArgumentNullException(nameof(destination));
         saved.vines.Clear();
+        saved.mine = destination.maturesStone ? new MineEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.aquatic = destination.periodicallyFloods ? new AquaticEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.warnings.RemoveAll(w => w.environmental);
         saved.nextVineGrowthMove = saved.moves + Mathf.Max(1, destination.vineCadenceMoves);
@@ -108,8 +115,10 @@ public partial class BoardController
         foreach (var cell in saved.cells)
         {
             bool root = cell.barricade && IsRootStyle(cell.barricadeStyle);
-            if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer) continue;
+            if (cell.crumbleRestoreMove <= 0 && !root && cell.barricadeStyle != EnemyBarricadeStyle.AirCoffer &&
+                !(cell.barricade && cell.barricadeStyle == EnemyBarricadeStyle.MineStone)) continue;
             cell.mined = cell.barricade = false;
+            cell.mineStone = null;
             cell.crumbleRestoreMove = 0;
             openings.Add(cell);
         }

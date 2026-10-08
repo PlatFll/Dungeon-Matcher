@@ -7,7 +7,7 @@ reviewed commit. Final output is a PR; no merge without new approval.
 | Phase | Deliverable / dependency | State |
 | --- | --- | --- |
 | 01 | Current-source audit, branch, authority/tool/allowance record | Complete |
-| 02 | Additive zone/theme stub; saved 1/2/3-hit stones, safe caps, 3-move aging | Next |
+| 02 | Additive zone/theme stub; saved 1/2/3-hit stones, safe caps, 3-move aging | Complete; 37 affected tests and validator pass |
 | 03 | Two charged perimeter drills; full-lane clears, dedupe and one settlement | Pending 02 |
 | 04 | Ore-Powered sequence token; Pickaxe, Gunner, Packbeetle death network | Pending 03 |
 | 05 | Hauler, Stonewright, Bore, Surveyor, Sapper, Switcher, Smith/Rattled | Pending 04 |

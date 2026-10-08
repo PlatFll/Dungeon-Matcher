@@ -29,7 +29,7 @@ public partial class BoardController
         ResolveLanes,
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
         MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
-        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles
+        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones
     }
 
     private sealed class BoardMutationRequest
@@ -382,6 +382,8 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.AdvanceMineStones:
+                        AdvanceMineStones(request.EnvironmentMove); break;
                     case BoardMutationKind.ConsumeAirBubbles:
                         ExecuteConsumeAirBubbles(request); break;
                     case BoardMutationKind.PlaceAirCoffer:

@@ -18,6 +18,8 @@ public sealed class ZoneDefinition : ScriptableObject
     public string zoneId;
     public string displayName;
     public bool eligibleForLiveTravel;
+    [Tooltip("Temporary testing picker only; does not enable crystal travel into unfinished zones.")]
+    public bool eligibleForTesting;
     public GemType affiliatedGem;
     public EnemyDefinition[] enemies;
     public ZoneTestEncounter[] developmentEncounters;
@@ -37,6 +39,10 @@ public sealed class ZoneDefinition : ScriptableObject
     [Range(1,2)] public int emergencyAirSupply=1,criticalAirSupply=2;
     [Range(0,4)] public int criticalAirThreshold=1;
     public bool crumblesTiles;
+    [Header("Ironvein — provisional stone tuning")]
+    public bool maturesStone;
+    [Min(1)] public int mineMovesPerStage = 3;
+    [Range(1,6)] public int maximumMineStones = 6;
     [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;
     [Range(1,4)] public int maximumVineSpreadPerPulse = 2;

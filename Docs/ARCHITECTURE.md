@@ -40,6 +40,13 @@ This document describes the current authoritative gameplay architecture and the 
 
 ## Authoritative system map
 
+Ironvein's additive foundation is described in
+[IronveinExcavation/IMPLEMENTATION.md](IronveinExcavation/IMPLEMENTATION.md).
+`BoardController.Ironvein` owns material history; existing barricades still own
+structural occupancy and durability. The mutation queue orders stone placement
+and aging. Versioned mine snapshots extend the established continuation and
+photo/travel flows. Testing eligibility does not imply live travel readiness.
+
 | Area | Authority and principal files |
 | --- | --- |
 | Board state and resolution | `BoardController` partial class in `Assets/_Game/Scripts/Board/BoardController*.cs` |

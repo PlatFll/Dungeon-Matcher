@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aac1eae8a627d42b5b41d508fea123, type: 3}
+  m_Name: ironvein-excavation
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
+  zoneId: ironvein-excavation
+  displayName: Ironvein (prototype)
+  eligibleForLiveTravel: 0
+  eligibleForTesting: 1
+  affiliatedGem: 1
+  enemies:
+  - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+  developmentEncounters:
+  - label: "Foundation fixture \u2014 existing Farmer placeholder"
+    members:
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  liveEncounters:
+  - label: "Foundation fixture \u2014 existing Farmer placeholder"
+    members:
+    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  apexEnemy: {fileID: 0}
+  apexLocalWave: 18
+  affiliatedDamageMultiplier: 1.15
+  theme: {fileID: 11400000, guid: b6ef0cb591427af47841d4cd67a9f272, type: 2}
+  music: {fileID: 0}
+  growsVines: 0
+  periodicallyFloods: 0
+  floodMinimumMoves: 16
+  floodMaximumMoves: 18
+  initialAirBubbles: 5
+  emergencyAirCadenceMoves: 3
+  emergencyAirSupply: 1
+  criticalAirSupply: 2
+  criticalAirThreshold: 1
+  crumblesTiles: 0
+  maturesStone: 1
+  mineMovesPerStage: 3
+  maximumMineStones: 6
+  crumbleCadenceMoves: 4
+  vineCadenceMoves: 2
+  maximumVineSpreadPerPulse: 2
+  maximumVineOverlays: 12

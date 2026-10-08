@@ -16,6 +16,12 @@ Name, design, valid-victim taxonomy and complete kit remain unresolved.
 
 ## Dwarven Cave
 
+**Superseded scope, 2026-10-08:** the user has now authorized complete Ironvein
+implementation from the supplied pack. The concepts below remain historical
+direction; [Ironvein's worklist](IronveinExcavation/WORKLIST.md) distinguishes
+implemented phases from pending production. Other future-zone sections retain
+their documentation-only scope.
+
 Brittle Stone becomes Hardened Stone when neglected, then Obsidian after further
 neglect. Obsidian is provisionally around three hits. No timings are finalized.
 

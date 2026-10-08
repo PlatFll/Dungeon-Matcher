@@ -83,6 +83,9 @@ public sealed class ZoneTravelController : MonoBehaviour,IWaveProgressionGate
         }
         finally { if(this!=null) processing=false; }
     }
+    public static bool TestingReady(ZoneDefinition zone) => DestinationReady(zone) ||
+        (RunLaunchOptions.TestingZonePickerEnabled && zone != null && zone.eligibleForTesting &&
+         zone.developmentEncounters?.Length > 0 && zone.enemies?.Length > 0);
     public static bool DestinationReady(ZoneDefinition zone) => zone!=null && zone.eligibleForLiveTravel &&
         zone.apexEnemy!=null && zone.enemies!=null && zone.enemies.Length>0 &&
         (zone.zoneId=="dungeon" || (zone.theme?.battleEnvironment!=null && zone.liveEncounters?.Length>0));

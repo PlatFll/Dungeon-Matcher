@@ -20,6 +20,14 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+- **Ironvein in progress (2026-10-08):** The user authorized all eleven Ironvein
+  pack phases on `codex/ironvein-excavation`, with a review PR and no merge.
+  Phase 02 adds a testing-only zone stub and saved, maturing structural stones;
+  live crystal eligibility remains off. The placeholder Farmer/scenery are not
+  mine art. See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
+  [phase worklist](IronveinExcavation/WORKLIST.md) and
+  [executed validation](IronveinExcavation/VALIDATION.md).
+
 - **Date:** 2026-10-08
 - **Roster/endless milestone:** [PR #182](https://github.com/PlatFll/Dungeon-Matcher/pull/182) delivers the complete revision, including the channel-lifecycle and HP-scaling work completed before the usage stop. The user explicitly authorized its integration on 2026-10-08. It removes extra channel recovery, renames The Minister, restores sequential Judgment with native strikes/finisher, adds instant Forest roots and Warded, and makes Falling Bough fully cancel when any marked gem clears. Court now has finite oxygen reserves, instant independent coffers, royal pearl rotation, all-or-nothing Pressure Lance, Nacre Tribute/Fortified and restrained underwater motion effects. The provisional shared HP curve reaches 6× at wave 100 and 9× at 150; damage/timing data and disabled player-power correction remain. Final integration fixes Forest counter space, readable buff/weakness labels, coffer counts, duplicate AIR feedback and Puffer's retained inflation pause. All 149 combined regression cases pass on their latest affected execution; the Unity validator passed again before integration. Four portrait/safe-inset shapes have been captured and reviewed. No PixelLab generations were used. Merge approval does not establish physical-device, human pacing or visual approval of the new native art. See [the worklist](ROSTER_ENDLESS_REVISION.md), [validation](Validation/ROSTER_ENDLESS_REVISION.md) and the local `.utmp/RosterEndless/Review.html` gallery.
 - **Drowned Court merged baseline:** [PR #180](https://github.com/PlatFll/Dungeon-Matcher/pull/180) merged on 2026-10-05. Fourteen marine identities have stills, native motion and data-selected kits; three coral-ruin compositions and marine gameplay UI are imported. Flood/AIR, temporary thorn snares, coffers, Queen rotation, three-zone travel and continuation are implemented. The testing picker includes Court; Bardley uses three sequential cracked explosions without bubble delivery. See [the Court contract](DROWNED_COURT.md). Production consumed 182/300 separately approved PixelLab generations, with the reserve untouched. Merge approval does not imply later art or temporary music has received visual/listening approval. Evidence and remaining device gates are in the Court validation record.
