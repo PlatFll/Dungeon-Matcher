@@ -29,12 +29,13 @@ public partial class BoardController
         ResolveLanes,
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
         MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
-        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones
+        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones, ChargeMineDrills, FireMineDrills
     }
 
     private sealed class BoardMutationRequest
     {
         public BoardMutationKind Kind;
+        public int MineDrillId, MinePower;
         public List<int> AquaticTargets;
         public Vector2Int AquaticSite;
         public bool AquaticRoyal;
@@ -382,6 +383,10 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.ChargeMineDrills:
+                        ExecuteMineDrillPower(request); break;
+                    case BoardMutationKind.FireMineDrills:
+                        yield return ExecuteReadyMineDrills(); break;
                     case BoardMutationKind.AdvanceMineStones:
                         AdvanceMineStones(request.EnvironmentMove); break;
                     case BoardMutationKind.ConsumeAirBubbles:
@@ -470,6 +475,11 @@ public partial class BoardController
                     request.OwnerActor.EndSpecialAbilityAnimationAction();
                 activeBoardMutationKind = null;
                 activeBoardMutationRequest = null;
+                // Off-turn death/ability feeds still drain before the board/wave
+                // gate releases. Accepted moves defer to the actor coordinator.
+                if (pendingBoardMutations.Count == 0 &&
+                    CombatMoveClock.Current?.IsBlockingWaveProgression != true)
+                    yield return ExecuteReadyMineDrills();
             }
         }
         finally

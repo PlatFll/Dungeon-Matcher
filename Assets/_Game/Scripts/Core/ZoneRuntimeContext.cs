@@ -20,6 +20,8 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     private void Start()
     {
         run.Board.InitializeMine();
+        if (Definition.maturesStone && run.Board.GetComponent<MineEnvironmentView>() == null)
+            run.Board.gameObject.AddComponent<MineEnvironmentView>();
         if(Definition.periodicallyFloods && run.Board.GetComponent<AquaticEnvironmentView>()==null)
             run.Board.gameObject.AddComponent<AquaticEnvironmentView>();
         BackgroundMusicPlayer.Instance?.SetZoneMusic(Definition?.music);

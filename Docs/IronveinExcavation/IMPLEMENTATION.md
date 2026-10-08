@@ -34,3 +34,33 @@ instance keys and continuation slot keys.
 Current presentation is a labelled fallback: different solid stage colors, using
 the existing materialization/hit feedback. Native shapes, durability/aging display,
 drill hardware and full cave art remain pending production.
+
+## Phase 03 — fixed drills
+
+Two persistent board-owned drills have stable IDs: 1 enters a row from the left,
+2 enters a column from below. The initial lanes are the middle row and column.
+Each has four charge pips. A deliberate opening match involving either of the
+first two cells inside an intake contributes one charge, at most once per drill
+per accepted move. Cascades, specials, free abilities and machine clears do not
+feed this rule. Explicit enemy feeds can select one machine or all current
+machines. Charge saturates at one launch; excess does not create hidden shots.
+
+The move coordinator drains charged machines after actor opportunities. Off-turn
+feeds drain under the mutation queue before its ownership ends. Machines reserve
+charge before firing callbacks, launch in stable-ID order, and clear whole lanes.
+Intersecting cells clear once. There is no refill between passes; one canonical
+environmental settlement follows the batch. No actor damage is dealt by machines.
+
+This environmental source removes crossed special gems without activation.
+Its refill cascades use the same resolver with combat reporting, special creation
+and special activation suppressed for that transaction. No energy, HP damage,
+healing, shield grants or recursive drill fuel can come from the machine clear.
+Other environmental operations and all player clears retain their established
+semantics. The small Bore projectile is a separate later-phase operation.
+
+Mine snapshot v2 saves machine lanes, charges and the last contributing manual
+action. Foundation v1 saves initialize the two machines once. Photos keep the
+current network and cannot refund spent charge; zone travel drops the source
+network. The existing layout owners reserve optional perimeter space only for
+the mine theme. `MineEnvironmentView` observes state and shows fallback machine
+shapes, pips and brief sweeps; it owns no charge, targeting, timing or damage.

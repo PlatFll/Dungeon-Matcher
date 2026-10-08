@@ -22,7 +22,8 @@ The newer rules in this status and the owning design/architecture documents supe
 
 - **Ironvein in progress (2026-10-08):** The user authorized all eleven Ironvein
   pack phases on `codex/ironvein-excavation`, with a review PR and no merge.
-  Phase 02 adds a testing-only zone stub and saved, maturing structural stones;
+  Phases 02–03 add a testing-only zone stub, saved maturing structural stones and
+  two charged full-lane drills under the existing board resolver;
   live crystal eligibility remains off. The placeholder Farmer/scenery are not
   mine art. See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and

@@ -26,9 +26,10 @@ public sealed class MineStoneState
 [Serializable]
 public sealed class MineEnvironmentState
 {
-    public const int CurrentVersion = 1;
+    public const int CurrentVersion = 2;
     public int version = CurrentVersion, lastSettledMove;
     public long nextStoneId = 1;
+    public List<MineDrillState> drills = new List<MineDrillState>();
 
     public static bool Supports(BoardCombatSnapshot board)
     {
@@ -37,6 +38,11 @@ public sealed class MineEnvironmentState
         if (state != null && (state.version > CurrentVersion || state.version < 0 ||
             state.nextStoneId < 1 || state.lastSettledMove < 0)) return false;
         var ids = new HashSet<long>();
+        var machines = new HashSet<int>();
+        if (state?.drills != null) foreach (var drill in state.drills)
+            if (drill == null || drill.id < 1 || drill.id > 2 || !machines.Add(drill.id) ||
+                drill.lane < 0 || drill.lane >= (drill.horizontal ? board.height : board.width) ||
+                drill.charge < 0 || drill.lastPlayerAction < 0) return false;
         if (board.cells != null) foreach (var cell in board.cells)
         {
             if (cell == null || !cell.barricade || cell.barricadeStyle != EnemyBarricadeStyle.MineStone) continue;
@@ -48,4 +54,11 @@ public sealed class MineEnvironmentState
         }
         return true;
     }
+}
+
+[Serializable]
+public sealed class MineDrillState
+{
+    public int id, lane, charge, lastPlayerAction;
+    public bool horizontal;
 }

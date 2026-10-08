@@ -153,6 +153,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
+            if (!run.Player.IsDefeated) yield return run.Board.DrainMineDrills();
             run.AdvanceSupplyCooldowns();
             run.Board.FinishAquaticMove(Tick);
             ActionSettled?.Invoke(Tick);

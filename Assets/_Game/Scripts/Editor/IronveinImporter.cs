@@ -16,10 +16,12 @@ public static class IronveinImporter
         if (theme.battleEnvironment == null)
             theme.battleEnvironment = Resources.Load<GameObject>("BattleEnvironments/Dungeon_Finalized");
         theme.minimumBattleHeight = 384;
+        theme.boardPerimeterPadding = .55f;
         zone.zoneId = "ironvein-excavation"; zone.displayName = "Ironvein (prototype)";
         zone.eligibleForTesting = true; zone.eligibleForLiveTravel = false;
         zone.affiliatedGem = GemType.Amber; zone.affiliatedDamageMultiplier = 1.15f;
         zone.maturesStone = true; zone.mineMovesPerStage = 3; zone.maximumMineStones = 6;
+        zone.mineDrillCapacity = 4;
         zone.theme = theme;
         if (zone.enemies == null || zone.enemies.Length == 0)
         {

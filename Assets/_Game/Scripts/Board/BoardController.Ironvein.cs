@@ -18,8 +18,16 @@ public partial class BoardController
 
     public void InitializeMine()
     {
-        if (!UsesMine || mine != null) return;
-        mine = new MineEnvironmentState { lastSettledMove = completedValidPlayerMoves };
+        if (!UsesMine) return;
+        mine ??= new MineEnvironmentState { lastSettledMove = completedValidPlayerMoves };
+        mine.version = MineEnvironmentState.CurrentVersion;
+        // Foundation checkpoints predate machines; add the initial two only once.
+        if (mine.drills == null) mine.drills = new List<MineDrillState>();
+        if (mine.drills.Count == 0)
+        {
+            mine.drills.Add(new MineDrillState { id = 1, horizontal = true, lane = height / 2 });
+            mine.drills.Add(new MineDrillState { id = 2, horizontal = false, lane = width / 2 });
+        }
     }
 
     public bool TryQueuePlaceMineStones(EnemyActor owner, int count, int ownerCap,

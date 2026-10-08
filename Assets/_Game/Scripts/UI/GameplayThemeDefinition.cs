@@ -22,6 +22,8 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite armoredAirCoffer, exposedPearl, tributePearl, shellFragment, pearlPop, waterMicroBubble;
     public Sprite[] waterRippleFrames;
     public Sprite[] mineStoneStages;
+    [Min(0)] public float boardPerimeterPadding;
+    public Sprite horizontalMineDrill, verticalMineDrill;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;
     [System.Serializable] public struct IconReplacement { public Sprite source, themed; }
     public IconReplacement[] abilityIcons;

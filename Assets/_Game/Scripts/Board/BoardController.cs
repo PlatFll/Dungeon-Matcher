@@ -844,30 +844,30 @@ public partial class BoardController : MonoBehaviour
 
             List<SpecialGemCreationRequest>
                 specialGemCreationRequests =
-                    BuildSpecialGemCreationRequests(
+                    resolvingUnrewardedEnvironment ? null : BuildSpecialGemCreationRequests(
                         matches,
                         preferredGem,
                         fallbackGem
                     );
 
             List<BombTriggeredCrystalRequest>
-                triggeredCrystalRequests;
+                triggeredCrystalRequests = new List<BombTriggeredCrystalRequest>();
 
             HashSet<Gem> expandedClearSet =
-                BuildBombExpandedClearSet(
+                resolvingUnrewardedEnvironment ? new HashSet<Gem>(matches) : BuildBombExpandedClearSet(
                     matches,
                     true,
                     out triggeredCrystalRequests
                 );
 
-            ReportMatchesToCombat(
+            if (!resolvingUnrewardedEnvironment) ReportMatchesToCombat(
                 matches,
                 cascadeDepth,
                 specialGemCreationRequests,
                 cascadeNumber == 1 && preferredGem != null && fallbackGem != null
             );
 
-            ReportBombClearsToCombat(
+            if (!resolvingUnrewardedEnvironment) ReportBombClearsToCombat(
                 matches,
                 expandedClearSet,
                 cascadeDepth
@@ -881,7 +881,7 @@ public partial class BoardController : MonoBehaviour
             yield return ClearMatches(
                 expandedClearSet,
                 specialGemCreationRequests,
-                activateSpecials: true
+                activateSpecials: !resolvingUnrewardedEnvironment
             );
 
             /*

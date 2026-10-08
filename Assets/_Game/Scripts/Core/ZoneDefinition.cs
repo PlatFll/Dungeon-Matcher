@@ -43,6 +43,7 @@ public sealed class ZoneDefinition : ScriptableObject
     public bool maturesStone;
     [Min(1)] public int mineMovesPerStage = 3;
     [Range(1,6)] public int maximumMineStones = 6;
+    [Min(1)] public int mineDrillCapacity = 4;
     [Min(3)] public int crumbleCadenceMoves = 4;
     [Min(1)] public int vineCadenceMoves = 2;
     [Range(1,4)] public int maximumVineSpreadPerPulse = 2;

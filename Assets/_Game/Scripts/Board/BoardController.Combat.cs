@@ -36,6 +36,7 @@ public partial class BoardController
         }
 
         RegisterAquaticClear(matches, deliberatePlayerClear);
+        RegisterMinePlayerMatch(matches, deliberatePlayerClear);
         BreakPinsAdjacentToMatches(matches);
         DamageBarricadesForClear(matches, null, deliberatePlayerClear);
 
