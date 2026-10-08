@@ -1,0 +1,56 @@
+{
+  "source": "51a5bb43-8ddc-4022-8a30-2f134b202671",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        23,
+        23
+      ],
+      "colors": {
+        "#1e1c1eff": "#0a0d11ff",
+        "#1e1d1eff": "#0a0d11ff",
+        "#1f1d1eff": "#0a0d11ff",
+        "#1f1d1fff": "#0a0d11ff",
+        "#1f1e1fff": "#0a0d11ff",
+        "#201e1fff": "#0a0d11ff",
+        "#201e20ff": "#0a0d11ff",
+        "#201f20ff": "#0a0d11ff",
+        "#211f20ff": "#0a0d11ff",
+        "#211f21ff": "#0a0d11ff",
+        "#212021ff": "#0a0d11ff",
+        "#bdb398ff": "#fdf5e5ff",
+        "#bdb498ff": "#fdf5e5ff",
+        "#bdb598ff": "#fdf5e5ff",
+        "#beb599ff": "#fdf5e5ff",
+        "#bfb699ff": "#fdf5e5ff",
+        "#bfb79bff": "#fdf5e5ff",
+        "#c1b89eff": "#fdf5e5ff",
+        "#c1b99dff": "#fdf5e5ff",
+        "#cdc3abff": "#fdf5e5ff",
+        "#cfc5acff": "#fdf5e5ff",
+        "#e5dbcaff": "#fdf5e5ff",
+        "#e9ded0ff": "#fdf5e5ff",
+        "#eee3d6ff": "#fdf5e5ff",
+        "#f1e5d9ff": "#fdf5e5ff",
+        "#f1e5daff": "#fdf5e5ff",
+        "#f2e7dbff": "#fdf5e5ff",
+        "#f3e5dbff": "#fdf5e5ff",
+        "#f5ebe1ff": "#fdf5e5ff"
+      },
+      "reason": "Remove colored shading; retain the generated one-pixel outline and use solid ivory interior."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 31c06a24-8a6a-40d8-bd06-ed0b3cedb4c1  (edited from 51a5bb43-8ddc-4022-8a30-2f134b202671)\ncanvas: 24x24, 1 frame(s)\n1. map_colors: 143 px changed\nsheet rows: frames [1]\npalette (2): #fdf5e5ff x73, #0a0d11ff x70\ndownload https://api.pixellab.ai/mcp/pixel-tools/31c06a24-8a6a-40d8-bd06-ed0b3cedb4c1/: image.png, frames.png, animation.gif\nnext: edit 31c06a24-8a6a-40d8-bd06-ed0b3cedb4c1 --changes […]"
+    }
+  ]
+}
