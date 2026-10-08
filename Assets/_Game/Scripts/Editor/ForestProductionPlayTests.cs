@@ -10,11 +10,12 @@ public sealed partial class ForestFoundationPlayTests
 {
     private void QuietKitFixture()
     {
-        // Isolate move-owned kit outcomes from unrelated timed basic hits and
+        // Isolate move-owned kit outcomes from unrelated basic hits and
         // random cascade stagger. Explicit interruption tests remove immunity.
         foreach(var enemy in Run.Waves.ActiveEnemies)
         {
             Set(enemy.GetComponent<EnemyAutoAttack>(),"remainingAttackTime",999f);
+            if (CombatMoveClock.Unified) Set(enemy.GetComponent<EnemyAutoAttack>(),"unifiedRemaining",999);
             Set(enemy.GetComponent<EnemyStagger>(),"remainingImmunityTime",99f);
         }
     }

@@ -94,8 +94,8 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
         Assert.That(Run.Travel.State.enabled,Is.True);Assert.That(Run.Travel.LocalWave,Is.EqualTo(1));
         Assert.That(Run.Travel.State.visit,Is.Zero);Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
-        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.LegacyEffectsProfile));
-        Assert.That(CombatMoveClock.MoveBasics,Is.False);Assert.That(CombatMoveClock.MoveEffects,Is.False);
+        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
+        Assert.That(CombatMoveClock.MoveBasics,Is.True);Assert.That(CombatMoveClock.MoveEffects,Is.True);
         Assert.That(RunLaunchOptions.StartingZone,Is.Null);Assert.That(Run.IsPractice,Is.False);
         Assert.That(Run.Waves.ActiveEnemies.All(e=>Run.Zone.Definition.enemies.Contains(e.Definition)),Is.True);
         Assert.That(UnityEngine.Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment.EnvironmentId,Is.EqualTo("forest-woodland"));
@@ -113,7 +113,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.ExitTo("Game"),Is.True);yield return Stable();
         Assert.That(Run.RunId,Is.Not.EqualTo(id));Assert.That(Run.Waves.CurrentWave,Is.EqualTo(1));
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("magical-forest"));
-        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.LegacyEffectsProfile));
+        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
     }
 
     [UnityTest] public IEnumerator ZonePickerDungeonKeepsOriginalOpening()

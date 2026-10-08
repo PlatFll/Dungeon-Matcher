@@ -46,7 +46,7 @@ public sealed class DesignV2ContinuationTests
                 Assert.That(JsonUtility.ToJson(run.Board.CaptureContinuation(run.Waves.ContinuationOwnerSlot)),Is.EqualTo(board));
                 enemy=run.Waves.ActiveEnemies[0];
                 Assert.That(enemy.CurrentHealth,Is.EqualTo(saved.enemies[0].health));
-                Assert.That(enemy.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(saved.enemies[0].attackRemaining).Within(.04));
+                Assert.That(enemy.GetComponent<EnemyAutoAttack>().RemainingAttackTime,Is.EqualTo(saved.enemies[0].unifiedAttackRemaining));
                 Assert.That(enemy.GetComponent<EnemyPoisonStatus>().RemainingDuration,Is.EqualTo(saved.enemies[0].poisonRemaining).Within(.04));
                 Assert.That(enemy.GetComponent<EnemyStagger>().RemainingStaggerTime,Is.EqualTo(saved.enemies[0].staggerRemaining).Within(.04));
                 Assert.That(run.Charges(ConsumableKind.Bomb),Is.EqualTo(2));
@@ -208,7 +208,8 @@ public sealed class DesignV2ContinuationTests
             using(AccountProgression.UseDisposableProfile(path))
             using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
             {
-                SceneManager.LoadScene("Game");yield return Stable();var run=RunSession.Current;
+                SceneManager.LoadScene("Game");yield return Stable();
+                yield return LegacyCombatTestProfile.Load();var run=RunSession.Current;
                 Assert.That(run.Player.GetComponent<PlayerAbilityEnergy>().CurrentEnergy,Is.EqualTo(20));
                 foreach(string name in pair)
                 {
@@ -271,7 +272,8 @@ public sealed class DesignV2ContinuationTests
         using(AccountProgression.UseDisposableProfile(path))
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
         {
-            SceneManager.LoadScene("Game");yield return Stable();var run=RunSession.Current;
+            SceneManager.LoadScene("Game");yield return Stable();
+            yield return LegacyCombatTestProfile.Load();var run=RunSession.Current;
             foreach(var enemy in run.Waves.ActiveEnemies)enemy.GetComponent<EnemyAutoAttack>().StopAttacking();
             var data=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset");
             Assert.That(run.Waves.TrySummonEnemy(data,out var actor),Is.True);

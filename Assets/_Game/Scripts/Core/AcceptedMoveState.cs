@@ -32,10 +32,11 @@ public sealed class AcceptedMoveState
 [Serializable]
 public sealed class CombatClockSnapshot
 {
+    public const string UnifiedProfile = "unified-accepted-moves-v2";
     public const string MoveProfile = "accepted-moves-v1";
     public const string HybridProfile = "seconds-basics-move-abilities-v1";
     public const string LegacyEffectsProfile = "seconds-effects-move-abilities-v1";
-    public static bool IsSupported(string value) => value == MoveProfile || value == HybridProfile || value == LegacyEffectsProfile;
+    public static bool IsSupported(string value) => value == UnifiedProfile || value == MoveProfile || value == HybridProfile || value == LegacyEffectsProfile;
     public string profile = MoveProfile;
     public string zoneId = "magical-forest";
     public int testEncounterOffset;

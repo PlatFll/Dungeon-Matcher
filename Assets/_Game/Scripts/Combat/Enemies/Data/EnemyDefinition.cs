@@ -36,6 +36,7 @@ public sealed class EnemyDefinition : ScriptableObject
     [Min(0)] public int aquaticShield = 25;
     [Min(1)] public float aquaticRallyDamage = 1.3f;
     [Min(0)] public float aquaticRallySeconds = 5f;
+    [Min(1)] public int aquaticRallyMoves = 3;
     [Range(1,3)] public int tributeTargetCount=3;
     [Min(1)] public int tributeChannelMoves=3;
     [Range(1,2)] public int tributeStackCap=2;
@@ -172,6 +173,11 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(1)] private int attackMoves = 3;
     public int FirstAttackMoves => Mathf.Max(1, firstAttackMoves);
     public int AttackMoves => Mathf.Max(1, attackMoves);
+    [Header("Unified move combat (experimental)")]
+    [SerializeField, Min(2)] private int unifiedFirstAttackMoves = 4;
+    [SerializeField, Min(2)] private int unifiedAttackMoves = 4;
+    public int UnifiedFirstAttackMoves => Mathf.Max(2, unifiedFirstAttackMoves);
+    public int UnifiedAttackMoves => Mathf.Max(2, unifiedAttackMoves);
 
     [Header("Special Ability")]
 
@@ -269,6 +275,8 @@ public sealed class EnemyDefinition : ScriptableObject
         "Real-time duration in seconds of Citizens, Seize Him!"
     )]
     private float townMarshalRallyDuration = 5f;
+    [SerializeField, Min(1)] private int townMarshalRallyMoves = 3;
+    public int TownMarshalRallyMoves => Mathf.Max(1, townMarshalRallyMoves);
 
     [Header("Siege Sergeant Ability")]
     [SerializeField, Min(1)]

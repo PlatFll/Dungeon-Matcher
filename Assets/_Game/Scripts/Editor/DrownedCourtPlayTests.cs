@@ -22,7 +22,7 @@ public sealed partial class ForestFoundationPlayTests
         SceneManager.LoadScene("Game");yield return Stable();
         zone.eligibleForLiveTravel=eligible;zone.liveEncounters=recipes;
         Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo("drowned-court"));
-        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.LegacyEffectsProfile));
+        Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
         Assert.That(Run.MoveClock.Capture().zoneId,Is.EqualTo("drowned-court"));
         Assert.That(EditorUtility.audioMasterMute,Is.True);
         yield return Until(()=>Run.Waves.ActiveEnemies.All(e=>e.GetComponent<EnemyLifecycleVFX>()?.IsSpawning!=true),"all court portraits finish their spawn presentation");
@@ -204,6 +204,7 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator CourtConchDamageLeaseDoesNotStackSpeedAndSurvivesOtherOwnerDeath()
     {
         yield return LaunchCourt("conch_marshal","conch_marshal","shellback_porter");
+        ((CombatClockSnapshot)Get(Run.MoveClock,"state")).profile=CombatClockSnapshot.LegacyEffectsProfile;
         var marshals=Run.Waves.ActiveEnemies.Where(e=>e.Definition.EnemyId=="conch_marshal").ToArray();
         var ally=Enemy("shellback_porter").GetComponent<EnemyAutoAttack>();
         foreach(var marshal in marshals)Call(marshal.GetComponent<AquaticEnemyAbility>(),"ApplyRally");
@@ -311,7 +312,7 @@ public sealed partial class ForestFoundationPlayTests
             Run.Travel.State.stage=1;Run.Travel.State.destination=destination;
             Assert.That(Run.Continuation.TryCommitZoneTravel(destination),Is.True);
             SceneManager.LoadScene("Game");yield return null;yield return null;
-            yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring,"committed handoff restores");
+            yield return Until(()=>Run?.InitialStateReady==true && !Run.Continuation.IsRestoring && Run.GetComponent<RunControlsUI>()!=null,"committed handoff restores");
             Run.GetComponent<RunControlsUI>().Close();yield return Stable();
             yield return Until(()=>Run.Travel.State.stage==0,"destination reveal finishes");
             Assert.That(Run.RunId,Is.EqualTo(id));Assert.That(Run.Zone.Definition.zoneId,Is.EqualTo(destination));
@@ -322,7 +323,7 @@ public sealed partial class ForestFoundationPlayTests
             Assert.That(after.player.energy,Is.EqualTo(expectedEnergy),"one new destination wave may grant Prepared Casting once");
             if(destination=="drowned-court")
             {Assert.That(Run.Board.Aquatic.bubbles,Is.Empty);Assert.That(Run.Board.Aquatic.snares,Is.Empty);Assert.That(Run.Board.Aquatic.coffer,Is.Null);}
-            Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.LegacyEffectsProfile));
+            Assert.That(Run.MoveClock.Capture().profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
             largest=Math.Max(largest,new System.IO.FileInfo(path).Length);
             int count=UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None).Length;
             if(hop==5)initialObjects=count;

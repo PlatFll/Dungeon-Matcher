@@ -73,6 +73,24 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool commandStrike;
     private bool commandMadeReady;
     private float reservedAttackTime;
+    private int unifiedRemaining, reservedUnifiedRemaining;
+    public int EffectiveMoveInterval => MoveInterval(enemyActor?.Definition?.UnifiedAttackMoves ?? 4, EffectiveMoveSpeed);
+    public static int MoveInterval(int baseMoves, float speed) => Mathf.Max(2, Mathf.CeilToInt(baseMoves / Mathf.Clamp(speed, .1f, 5f)));
+    private float EffectiveMoveSpeed
+    {
+        get
+        {
+            float speed = runtimeAttackSpeedMultiplier;
+            foreach (float value in speedModifiers.Values) speed = Mathf.Max(speed, value);
+            return speed;
+        }
+    }
+    private void RefreshMoveSpeed(int previousInterval)
+    {
+        if (CombatMoveClock.Unified && RunSession.Current?.Continuation?.IsRestoring != true &&
+            isRunning && unifiedRemaining > 0 && EffectiveMoveInterval < previousInterval)
+            unifiedRemaining = Mathf.Max(1, unifiedRemaining - (previousInterval - EffectiveMoveInterval));
+    }
     private bool resumeCooldown;
     private bool commandedAttackStarting;
     private bool isStopping;
@@ -87,13 +105,15 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     public void AdvanceAcceptedMove()
     {
         if (!CombatMoveClock.MoveBasics || !isRunning || IsPausedByAction || IsPausedByStagger || commandOwner != null) return;
-        remainingAttackTime = Mathf.Max(0, remainingAttackTime - Mathf.Clamp(runtimeAttackSpeedMultiplier * Product(speedModifiers), .1f, 5f));
+        if (CombatMoveClock.Unified) unifiedRemaining = Mathf.Max(0, unifiedRemaining - 1);
+        else remainingAttackTime = Mathf.Max(0, remainingAttackTime - Mathf.Clamp(runtimeAttackSpeedMultiplier * Product(speedModifiers), .1f, 5f));
     }
     public bool TryPerformAcceptedMoveAttack()
     {
-        if (!CombatMoveClock.MoveBasics || !isRunning || remainingAttackTime > 0 || !CanPerformAttack()) return false;
+        if (!CombatMoveClock.MoveBasics || !isRunning || RemainingAttackTime > 0 || !CanPerformAttack()) return false;
         // Reset before callbacks, so a synchronous command cannot duplicate this readiness.
         remainingAttackTime = enemyActor.Definition.AttackMoves;
+        if (CombatMoveClock.Unified) unifiedRemaining = EffectiveMoveInterval;
         return PerformAttackImmediately();
     }
     public void SetActionPaused(object owner, bool paused)
@@ -109,6 +129,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         saved.attackRemaining=remainingAttackTime; saved.attackSpeed=runtimeAttackSpeedMultiplier;
         saved.attackRunning=isRunning;
+        saved.unifiedAttackRemaining=unifiedRemaining;
     }
     public void RestoreContinuation(EnemyCombatSnapshot saved)
     {
@@ -117,6 +138,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if(saved.attackRunning) TryStartAttacking();
         // StartCoroutine can consume the current frame's delta synchronously.
         remainingAttackTime=saved.attackRemaining;
+        if (CombatMoveClock.Unified) unifiedRemaining=saved.unifiedAttackRemaining;
     }
     public void SetNextSequenceModifier(object owner, float multiplier)
     {
@@ -131,8 +153,10 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     public void SetNormalAttackModifiers(object owner, float damage, float speed)
     {
         if (owner == null) return;
+        int previousInterval = EffectiveMoveInterval;
         damageModifiers[owner] = Mathf.Max(0f, damage);
         speedModifiers[owner] = Mathf.Max(0.1f, speed);
+        RefreshMoveSpeed(previousInterval);
     }
     public void RemoveNormalAttackModifiers(object owner)
     {
@@ -165,7 +189,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         commandStrike = false;
         commandMadeReady = makeReady;
         reservedAttackTime = remainingAttackTime;
+        reservedUnifiedRemaining = unifiedRemaining;
         if (makeReady) remainingAttackTime = 0f;
+        if (makeReady && CombatMoveClock.Unified) unifiedRemaining = 0;
         if (attackCoroutine != null) StopCoroutine(attackCoroutine);
         attackCoroutine = null;
         return true;
@@ -179,6 +205,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         commandedAttackStarting = true;
         commandDamageMultiplier = Mathf.Max(0f, damageMultiplier);
         bool accepted = PerformAttackImmediately();
+        if (accepted) CombatMoveClock.RecordCommandedBasic(enemyActor);
         commandDamageMultiplier = 1f;
         commandedAttackStarting = false;
         if (ReferenceEquals(commandOwner, owner)) commandStrike = accepted;
@@ -192,8 +219,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         {
             CancelAttackSequence();
             remainingAttackTime = enemyActor != null ? (CombatMoveClock.MoveBasics ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval) : 0f;
+            if (CombatMoveClock.Unified) unifiedRemaining = EffectiveMoveInterval;
         }
-        else if (commandMadeReady) remainingAttackTime = reservedAttackTime;
+        else if (commandMadeReady) { remainingAttackTime = reservedAttackTime; unifiedRemaining = reservedUnifiedRemaining; }
         commandMadeReady = false;
         commandOwner = null;
         resumeCooldown = true;
@@ -216,7 +244,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         playerTarget;
 
     public float RemainingAttackTime =>
-        remainingAttackTime;
+        CombatMoveClock.Unified ? unifiedRemaining : remainingAttackTime;
 
     public float RuntimeAttackSpeedMultiplier =>
         runtimeAttackSpeedMultiplier;
@@ -248,8 +276,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
             }
 
             return Mathf.Clamp01(
-                remainingAttackTime /
-                (CombatMoveClock.MoveBasics ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval)
+                RemainingAttackTime /
+                (CombatMoveClock.Unified ? EffectiveMoveInterval : CombatMoveClock.MoveBasics ? enemyActor.Definition.AttackMoves : enemyActor.AttackInterval)
             );
         }
     }
@@ -325,12 +353,14 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     public void SetRuntimeAttackSpeedMultiplier(
         float multiplier)
     {
+        int previousInterval = EffectiveMoveInterval;
         runtimeAttackSpeedMultiplier =
             Mathf.Clamp(
                 multiplier,
                 0.1f,
                 5f
             );
+        RefreshMoveSpeed(previousInterval);
     }
 
     public void ResetRuntimeAttackSpeedMultiplier()
@@ -354,6 +384,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         if (CombatMoveClock.MoveBasics)
         {
             if (!isRunning && !resumeCooldown) remainingAttackTime = enemyActor.Definition.FirstAttackMoves;
+            if (CombatMoveClock.Unified && !isRunning && !resumeCooldown)
+                unifiedRemaining = MoveInterval(enemyActor.Definition.UnifiedFirstAttackMoves, EffectiveMoveSpeed);
             isRunning = true;
             resumeCooldown = false;
             return;
@@ -389,6 +421,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
 
             isRunning = false;
             remainingAttackTime = 0f;
+            unifiedRemaining = 0;
             // Releasing the actor action invokes listeners synchronously.
             // Do not allow those callbacks to start/reserve another attack
             // while this stop operation is still clearing its ownership.

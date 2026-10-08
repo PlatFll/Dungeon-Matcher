@@ -31,6 +31,9 @@ public sealed class ForestCombatAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private static readonly object RhythmKey = new object();
     private static readonly HashSet<ForestCombatAbility> rhythms = new HashSet<ForestCombatAbility>();
     public bool IsEnraged => state.enraged;
+    public bool Rallies(EnemyActor target) => target != null && state.buffSeconds > 0 && buffed.Contains(target.GetComponent<EnemyAutoAttack>());
+    public int RhythmRemaining => state.buffSeconds <= 0 ? 0 : CombatMoveClock.MoveEffects
+        ? Mathf.Max(0, state.buffExpiresMove - CombatMoveClock.EffectAction) : Mathf.CeilToInt(state.buffSeconds);
     public bool HasLivingSummon => Find(state.summonId) != null;
     public void ConfigureSummonService(IEnemySummonService service) => summons = service;
     private EnemySpecialAbilityKind Kind => actor.Definition.SpecialAbilityKind;

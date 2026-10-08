@@ -26,7 +26,7 @@ public sealed partial class ForestFoundationPlayTests
         PreserveRoster();
         Assert.That(Run.Zone.Definition.zoneId, Is.EqualTo("ironvein-excavation"));
         Assert.That(Run.MoveClock, Is.Not.Null);
-        Assert.That(CombatMoveClock.MoveBasics, Is.False);
+        Assert.That(CombatMoveClock.Unified, Is.True);
         preserveCounterplayCrystal = true;
         Run.Board.GetGem(Run.Board.Width - 1, 0).SetSpecialType(GemSpecialType.ColorCrystal);
     }

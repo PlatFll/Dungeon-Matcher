@@ -262,6 +262,16 @@ public sealed class EnemyCombatFeedback :
 
     private void UpdateAttackTimer()
     {
+        if (CombatMoveClock.Unified)
+        {
+            if(attackTimerFill!=null)
+            {
+                attackTimerFill.enabled=false;
+                // The retired radial display includes a separate backdrop.
+                if(attackTimerFill.transform.parent.name=="AttackTimer") attackTimerFill.transform.parent.gameObject.SetActive(false);
+            }
+            return;
+        }
         if (attackTimerFill == null)
         {
             return;
@@ -342,6 +352,7 @@ public sealed class EnemyCombatFeedback :
         int currentTurnCount,
         int turnRequirement)
     {
+        if (CombatMoveClock.Unified) { HideSpecialAbilityCounter(); return; }
         bool hasDisplayableSpecial =
             enemyActor != null &&
             enemyActor.IsInitialized &&

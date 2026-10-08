@@ -16,6 +16,9 @@ public sealed class EnemyCastAnnouncement : MonoBehaviour
         actor=GetComponent<EnemyActor>();
         var slot=GetComponentInParent<EnemySlotUI>();
         if(slot==null || actor==null || actor.IsDefeated) return;
+        // One current cast per actor. A newer announcement replaces fading copy
+        // instead of stacking into the wave plaque on compact screens.
+        if (CombatMoveClock.Unified) Clear();
         visual=transform.Find("VisualRoot") as RectTransform;
         var label=GameUi.Label("CastAnnouncement",slot.transform,displayName,new Vector2(136,28),Vector2.zero,12);
         label.color=new Color32(235,234,221,255);label.raycastTarget=false;
@@ -39,7 +42,13 @@ public sealed class EnemyCastAnnouncement : MonoBehaviour
         for(int i=0;i<entries.Count;i++)
         {
             var e=entries[i];var anchor=visual!=null?visual.TransformPoint(new Vector3(visual.rect.center.x,visual.rect.yMax,0)):transform.position;
-            e.text.rectTransform.position=anchor;e.text.rectTransform.anchoredPosition+=Vector2.up*(36+10*Mathf.Clamp01(e.age/1.25f)+i*14);
+            var intent=CombatMoveClock.Unified?GetComponent<EnemyUnifiedIntentView>():null;
+            if(intent!=null && intent.ActionRoot!=null)
+            {
+                var top=intent.Statuses!=null && intent.Statuses.VisibleCount>0?intent.Statuses.Rect:intent.ActionRoot;
+                anchor=top.TransformPoint(new Vector3(top.rect.center.x,top.rect.yMax,0));
+            }
+            e.text.rectTransform.position=anchor;e.text.rectTransform.anchoredPosition+=Vector2.up*((intent!=null?18:36)+10*Mathf.Clamp01(e.age/1.25f)+i*14);
             GameplayPixelGrid.Snap(e.text.rectTransform);
         }
     }

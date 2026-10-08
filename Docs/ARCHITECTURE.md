@@ -1,5 +1,38 @@
 # Dungeon Matcher Architecture Reference
 
+## Unified move-combat authority (2026-10-08)
+
+New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+action advances basics, specials and timed effects once after its full cascades.
+Thinking, invalid swaps, menus, free skills and presentation consume no moves.
+This is an approved experiment; numerical tuning remains provisional.
+
+Specials resolve Boss → Miniboss → Special → Normal, then left/middle/right.
+All ordinary due basics follow, allowing both actions when legal. Commands consume
+their participants' opportunity; channels and Stagger suppress it. Existing mine
+warnings that depend on the final response drill release after that drill under
+the same input hold, in rank/slot order. Birth-action summons receive no free tick.
+
+`BoardController` retains sole acceptance and resolution ownership.
+`CombatMoveClock` snapshots the accepted roster and due actions, owns the input
+hold and effect-expiry boundary, and never creates a competing board resolver.
+`EnemyAutoAttack` owns integer scheduling and its existing complete weapon
+sequence. `EnemyStagger` owns damage eligibility, per-action pressure and expiry.
+Existing kit owners retain channel cancellation, command reservations and buffs.
+`RoyalDecreeRuntime` remains a generic player ability; Longer Reign uses its own
+typed move-duration modifier. Numerical rules live in `GAME_DESIGN.md` and
+`UNIFIED_MOVE_INTERVALS.md`.
+
+New 24px PixelLab status icons use runtime outlined counters: moves, actual stacks,
+or a neutral condition mark. Enemy sword and slot-sigil rows replace the large
+attack text/radial/ability counter. Channel response moves use the same lower row,
+in amber with an underline. Legacy saved profiles retain their original timing.
+No old float attack timer is reinterpreted as an integer.
+
+See [implementation and evidence](UNIFIED_MOVE_COMBAT.md). Human pacing and
+physical-device acceptance remain separate from automated Unity evidence.
+
+
 ## Shared mechanic variation
 
 Reuse existing resolution owners when varying a signature mechanic across zones.
@@ -172,8 +205,8 @@ width. These layout rules do not resize character art or affect combat state.
 
 `MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
 fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
-validated by `RunSession`; an existing checkpoint always wins. A direct forest or Court
-start installs `seconds-effects-move-abilities-v1` before actors initialize and
+validated by `RunSession`; an existing checkpoint always wins. A fresh start in any ready zone
+installs `unified-accepted-moves-v2` before actors initialize and
 enables the normal travel controller. It never uses the isolated fixture flag.
 `RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
 same-zone Retry behavior; disable it for release. No zone preference or new
@@ -254,8 +287,8 @@ structural pipeline; only opening manual clears carry the retaliation flag.
 See [expanded roster rules](Forest/EXPANDED_ROSTER.md).
 
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
-`accepted-moves-v1`, `seconds-basics-move-abilities-v1` or the travel
-`seconds-effects-move-abilities-v1` profile,
+`accepted-moves-v1`, `seconds-basics-move-abilities-v1`, the travel
+`seconds-effects-move-abilities-v1`, or `unified-accepted-moves-v2` profile,
 zone, completed action, next actor ID and owner state. Only settled snapshots are
 committed; accepted work in flight uses the established replay journal. Unknown
 profiles and invalid actor identities preserve the durable run and block play.

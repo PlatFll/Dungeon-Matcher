@@ -9,8 +9,10 @@ Values below are conservative, data-driven prototypes, not finalized balance.
 The backend is implemented by `PlayerStatusRuntime`, owned by `PlayerActor`, with
 eight definitions in `Resources/PlayerStatuses`. Ironvein's Seismic Smith applies
 Rattled; the original seven retain no production caster assignment.
-Seven hand-authored 16px icons and remaining move counts
-occupy compact rows in the existing player combat panel. Tap a glyph for its meaning
+New unified runs use dedicated 24px PixelLab icons with outlined runtime move
+counters in the existing player panel. The original seven 16px assets remain for
+legacy views. Enemy effects and Royal Decree share the new visual grammar; the
+complete owner/lifetime manifest is [here](UNIFIED_MOVE_COMBAT.md). Tap a glyph for its meaning
 and individual Fear sources/durations. `ApplyPlayerStatus` is the optional enemy
 ability kind; `EnemyDefinition.appliedPlayerStatus` selects its data. Slippery's
 board movement is implemented, with no production caster assigned.
@@ -48,9 +50,8 @@ Sapped modifies generation at the generation boundary; spending, save restoratio
 initial energy and stored amounts remain storage concerns.
 
 Rattled leaves existing Stagger meter/duration, forced Stagger, damage and energy
-unchanged. Hitting stones or firing drills does not cleanse it. Its icon currently
-reuses Weakened's glyph as an explicit Ironvein art placeholder; the dedicated
-icon is part of the mine presentation phase.
+unchanged. Hitting stones or firing drills does not cleanse it. The unified view uses its dedicated cracked-bell icon; the legacy definition
+retains the previous glyph for compatibility.
 
 Slippery previews a deterministic three-cell rotation before commitment:
 `[A][B][C] -> [B][C][A]` in the swipe direction. Legality uses the final arrangement.

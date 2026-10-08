@@ -95,6 +95,7 @@ public sealed class RunCombatSnapshot
     public string definition;
     public long persistentId;
     public int staggerHitMove, staggerAppliedMove, immunityAppliedMove;
+    public int staggerDecayMove = -1;
     public int poisonMoveTicks, poisonNextMove, rallyExpiryMove;
     public EnemyChannelSnapshot channel;
     public ForestMilestoneSnapshot forestMilestone;
@@ -104,6 +105,8 @@ public sealed class RunCombatSnapshot
     public int slot, health, shield, specialTurns, specialRequirement, fortifiedStacks;
     public GemType weakness;
     public float attackRemaining, attackSpeed;
+    // Only UnifiedProfile reads this integer. Older float timers retain their units.
+    public int unifiedAttackRemaining = -1;
     public bool attackRunning;
     public float staggerMeter, staggerRemaining, staggerDuration, staggerImmunity, staggerGrace;
     public float poisonRemaining, poisonNextTick, poisonInterval;
@@ -111,6 +114,7 @@ public sealed class RunCombatSnapshot
     public bool poisoned;
     public bool preferPrimary, crossedHalf, crossedQuarter;
     public int cycle, retryAfterMove = -1, protector = -1, retreatMoves;
+    public int retreatAppliedMove;
     public List<int> thresholds = new List<int>();
     public float rallyRemaining;
     public List<int> rallyTargets = new List<int>();

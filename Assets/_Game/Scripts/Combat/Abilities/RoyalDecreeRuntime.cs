@@ -122,7 +122,9 @@ public sealed class RoyalDecreeRuntime :
 
         if (CombatMoveClock.MoveEffects)
         {
-            moveRemaining = 3 + Mathf.Min(1, RunUpgradeRuntime.Current?.GetStackCount("longer_reign") ?? 0);
+            moveRemaining = CombatMoveClock.Unified
+                ? RunUpgradeResolver.ResolveRoyalDecreeMoves(activeDefinition.UnifiedDurationMoves)
+                : 3 + Mathf.Min(1, RunUpgradeRuntime.Current?.GetStackCount("longer_reign") ?? 0);
             moveApplied = CombatMoveClock.EffectAction;
         }
         else durationCoroutine = StartCoroutine(EndAfterDuration(resolvedDuration));
@@ -208,7 +210,7 @@ public sealed class RoyalDecreeRuntime :
         }
 
         int requestedDamagePerGem =
-            CombatMoveClock.MoveEffects ? 5 : activeDefinition.CalculateDamagePerGem(context);
+            CombatMoveClock.MoveEffects && !CombatMoveClock.Unified ? 5 : activeDefinition.CalculateDamagePerGem(context);
 
         requestedDamagePerGem =
             RunUpgradeResolver.ResolveRoyalDecreeDamage(

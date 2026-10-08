@@ -93,11 +93,11 @@ public sealed partial class ForestFoundationPlayTests
         var after=Run.Continuation.Capture();Assert.That(after.player.health,Is.EqualTo(before.player.health));
         Assert.That(after.enemies[0].attackRemaining,Is.EqualTo(before.enemies[0].attackRemaining).Within(.1));
     }
-    [UnityTest] public IEnumerator KingEscortThenForestApexTravelRoundTripPreservesRunAndSecondsEffects()
+    [UnityTest] public IEnumerator KingEscortThenForestApexTravelRoundTripPreservesRunAndUnifiedMoves()
     {
         using var destinations=new TravelDestinationFixture("dungeon","magical-forest");
-        RunLaunchOptions.ForestPrototype=false;SceneManager.LoadScene("Game");yield return Stable();
-        Assert.That(Run.MoveClock,Is.Null);Assert.That(Run.Travel.State.enabled,Is.True);
+        RunLaunchOptions.ForestPrototype=false;yield return LaunchUnified();
+        Assert.That(CombatMoveClock.Unified,Is.True);Assert.That(Run.Travel.State.enabled,Is.True);
         // Jump past already-completed introductory milestones in this fixture.
         var seen=(HashSet<EnemyDefinition>)Get(Run.Waves,"seenMilestoneLeaders");
         foreach(var enemy in Run.Zone.Definition.enemies) if(enemy.Category==EnemyCategory.Miniboss) seen.Add(enemy);
@@ -112,8 +112,8 @@ public sealed partial class ForestFoundationPlayTests
         KillEncounter();
         yield return Until(()=>RunSession.Current?.Zone?.Definition?.zoneId=="magical-forest" && Run.Travel.State.stage==0 && Run.Waves.IsWaveActive && Run.Continuation.CanCapture,"dungeon to forest");
         QuietKitFixture();var forest=Run.Continuation.Capture();
-        Assert.That(Run.RunId,Is.EqualTo(runId));Assert.That(forest.clock.profile,Is.EqualTo(CombatClockSnapshot.LegacyEffectsProfile));
-        Assert.That(CombatMoveClock.MoveEffects,Is.False);Assert.That(forest.wave,Is.EqualTo(31));Assert.That(Run.Travel.LocalWave,Is.EqualTo(1));
+        Assert.That(Run.RunId,Is.EqualTo(runId));Assert.That(forest.clock.profile,Is.EqualTo(CombatClockSnapshot.UnifiedProfile));
+        Assert.That(CombatMoveClock.MoveEffects,Is.True);Assert.That(forest.wave,Is.EqualTo(31));Assert.That(Run.Travel.LocalWave,Is.EqualTo(1));
         Assert.That(forest.player.health,Is.EqualTo(before.player.health));Assert.That(forest.player.shield,Is.EqualTo(before.player.shield));
         Assert.That(forest.player.energy,Is.EqualTo(before.player.energy));AssertBoardCarryover(before.board,forest.board);
         yield return CaptureTravel("02-dungeon-to-forest");

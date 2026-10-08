@@ -197,7 +197,7 @@ public sealed class RunControlsUI : MonoBehaviour
         lesson=null;
         var account=AccountProgression.Current;
         if(!account.HasSeenLesson("combat-clocks"))
-        { ShowLesson("combat-clocks",CombatMoveClock.MoveBasics ? "Legacy forest test: attacks and abilities count moves." : "Attacks count seconds; abilities count moves.\nTap Guide or an enemy to inspect while paused."); return; }
+        { ShowLesson("combat-clocks",CombatMoveClock.Unified ? "Attacks and abilities count moves. Thinking is safe.\nTap Guide or an enemy to inspect." : CombatMoveClock.MoveBasics ? "Legacy forest test: attacks and abilities count moves." : "Attacks count seconds; abilities count moves.\nTap Guide or an enemy to inspect while paused."); return; }
         foreach(var enemy in session.Waves.ActiveEnemies)
         {
             if(!enemy.HasSpecialAbility) continue;

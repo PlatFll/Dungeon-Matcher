@@ -20,6 +20,7 @@ public sealed class AquaticEnemySnapshot
     public List<int> answeredIdentities = new List<int>();
     public List<long> rallyTargets = new List<long>();
     public float rallySeconds;
+    public int rallyExpiresMove;
 }
 
 /// <summary>Data-selected court actions. Board placement and clear rewards remain board-owned.</summary>
@@ -47,6 +48,9 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     public IReadOnlyList<int> MarkedBubbles => state.bubbleTargets;
     public Vector2Int? CofferTarget => IsPreparing && IsTheft ? state.cofferSite : (Vector2Int?)null;
     public int Answers => state.answers;
+    public bool Rallies(EnemyActor target) => target != null && state.rallySeconds > 0 && buffed.Contains(target.GetComponent<EnemyAutoAttack>());
+    public int RallyRemaining => state.rallySeconds <= 0 ? 0 : CombatMoveClock.Unified
+        ? Mathf.Max(0, state.rallyExpiresMove - CombatMoveClock.EffectAction) : Mathf.CeilToInt(state.rallySeconds);
     public EnemyActor Target => Find(state.targetId);
     private EnemySpecialAbilityKind Kind => actor.Definition.SpecialAbilityKind;
     private int Move => board.CompletedValidPlayerMoves;
@@ -298,6 +302,7 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
     private void ApplyRally()
     {
         state.rallySeconds = actor.Definition.aquaticRallySeconds;
+        state.rallyExpiresMove = CombatMoveClock.EffectAction + Mathf.Max(1, actor.Definition.aquaticRallyMoves);
         foreach (var ally in Allies()) if (ally.TryGetComponent<EnemyAutoAttack>(out var target))
         { buffed.Add(target); RefreshRally(target); }
     }
@@ -320,9 +325,13 @@ public sealed class AquaticEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRun
         if (disposed || Time.timeScale <= 0) return;
         if (IsPreparing && !pending && CombatMoveClock.Current?.IsBlockingWaveProgression!=true &&
             ((state.targetId > 0 && Target == null) || InvalidPressure || InvalidTribute)) FinishCast();
-        if (state.rallySeconds <= 0) return;
+        if (state.rallySeconds <= 0 || CombatMoveClock.Unified) return;
         state.rallySeconds = Mathf.Max(0, state.rallySeconds - Time.deltaTime);
         if (state.rallySeconds == 0) ClearRally();
+    }
+    public void ExpireAcceptedMove(int move)
+    {
+        if (CombatMoveClock.Unified && state.rallySeconds > 0 && move >= state.rallyExpiresMove) ClearRally();
     }
     public void CaptureContinuation(EnemyCombatSnapshot saved, Func<EnemyActor, int> slotOf)
     {

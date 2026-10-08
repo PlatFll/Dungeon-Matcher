@@ -1,0 +1,10 @@
+{
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "unity_version": "6000.3.19f1",
+  "exit_code": 0,
+  "result": "Passed",
+  "implementation_commit": "86dd73e5cc66b461c542ce56e030cebb9ce98352",
+  "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-8091e075-1a50-4c9b-adb8-090813d0ad7b.log",
+  "log_sha256": "d891d04bb04899ee6f416bf3a3bb726ab783e62a149797d482a3555a98871516",
+  "muted": true
+}

@@ -304,6 +304,9 @@ public static class RunUpgradeResolver
         );
     }
 
+    public static int ResolveRoyalDecreeMoves(int baseValue, RunUpgradeRuntime runtime = null)
+        => ResolveInt(RunUpgradeStat.RoyalDecreeMoves, baseValue, 1, runtime);
+
     public static int ResolveRoyalDecreeDamage(
         int baseValue,
         RoyalDecreeAbilityDefinition ability,

@@ -10,9 +10,11 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private IReadOnlyList<EnemyActor> roster;
     private EnemySpecialActionAvailability availability;
     private BoardController.GemSetThreat runes;
+    public int WarningMovesRemaining => board != null && runes != null && !runes.Ended ? Mathf.Max(0,runes.DueMove-board.CompletedValidPlayerMoves) : -1;
     private readonly List<EnemyAutoAttack> blessed = new List<EnemyAutoAttack>();
     private bool released = true, pending, preferRunes = true;
     private int retryAfterMove = -1;
+    public bool Blesses(EnemyActor target) => target != null && target.GetComponent<EnemyAutoAttack>()?.HasNextSequenceModifier(this) == true;
     public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
     {
         saved.preferPrimary=preferRunes; saved.retryAfterMove=retryAfterMove;

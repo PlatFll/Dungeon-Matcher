@@ -31,7 +31,8 @@ public enum RunUpgradeStat
     RoyalDecreeDamage = 15,
     MaximumShield = 16,
     BoardMemoryMoves = 17,
-    BoardMemoryRewindShield = 18
+    BoardMemoryRewindShield = 18,
+    RoyalDecreeMoves = 19
 }
 
 public enum RunUpgradeModifierOperation

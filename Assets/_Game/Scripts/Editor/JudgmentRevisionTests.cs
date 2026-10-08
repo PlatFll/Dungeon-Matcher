@@ -17,9 +17,9 @@ public sealed partial class ForestFoundationPlayTests
 
     private IEnumerator PrepareJudgment()
     {
-        yield return LaunchDungeonHazards();
+        yield return LaunchDungeonHazards(true);
         Assert.That(EditorUtility.audioMasterMute, Is.True);
-        Assert.That(CombatMoveClock.Active, Is.False, "production dungeon seconds profile");
+        Assert.That(CombatMoveClock.Active, Is.False, "explicit legacy dungeon seconds profile");
         var data = AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_King.asset");
         Assert.That(Run.Waves.TrySummonEnemy(data, out judgmentKing), Is.True);
         yield return Stable(); PreserveRoster(); PrepareSafeMove();

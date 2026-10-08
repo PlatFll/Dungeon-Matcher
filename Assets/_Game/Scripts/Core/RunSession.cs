@@ -94,12 +94,11 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
         // Forest saves predating travel were isolated fixtures. Keep that loop;
         // an explicit newer travel snapshot always supplies its own enable flag.
         Travel.Initialize(this,continued?.checkpoint?.travel,!forestRequested && clockSave?.zoneId!="magical-forest",initialZone);
-        bool liveForestStart=continued==null && !forestRequested && (initialZone=="magical-forest" || initialZone=="drowned-court" || initialZone=="ironvein-excavation");
         if((clockSave!=null && RunContinuation.SupportsSnapshot(continued.checkpoint)) ||
-            (continued==null && forestRequested) || liveForestStart)
+            continued==null)
         {
             MoveClock=gameObject.AddComponent<CombatMoveClock>();
-            MoveClock.Initialize(this,clockSave,liveForestStart?CombatClockSnapshot.LegacyEffectsProfile:forestProfile);
+            MoveClock.Initialize(this,clockSave,forestRequested?forestProfile:CombatClockSnapshot.UnifiedProfile);
             MoveClock.ActionSettled += StatusActionSettled;
         }
         Continuation=gameObject.AddComponent<RunContinuation>();

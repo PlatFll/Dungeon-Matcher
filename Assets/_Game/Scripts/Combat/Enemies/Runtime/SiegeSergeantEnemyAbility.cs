@@ -9,6 +9,7 @@ public sealed class SiegeSergeantEnemyAbility : MonoBehaviour, IEnemySpecialAbil
     private BoardController board;
     private EnemyStagger stagger;
     private BoardController.GemPairThreat warning;
+    public int WarningMovesRemaining => board != null && warning != null ? Mathf.Max(0,warning.DueMove-board.CompletedValidPlayerMoves) : -1;
     private bool preferFortification = true;
     private bool actionPending;
     private bool released;

@@ -1,0 +1,2930 @@
+{
+  "runs": [
+    {
+      "result": "Failed(Child)",
+      "total": "29",
+      "passed": "27",
+      "failed": "2",
+      "skipped": "0",
+      "start-time": "2026-10-08 19:38:16Z",
+      "end-time": "2026-10-08 19:38:19Z",
+      "file": ".utmp\\ForestValidation\\fbb9d767-005b-4597-a7af-1d32814d841c.xml"
+    },
+    {
+      "result": "Passed",
+      "total": "4",
+      "passed": "4",
+      "failed": "0",
+      "skipped": "0",
+      "start-time": "2026-10-08 19:42:49Z",
+      "end-time": "2026-10-08 19:42:56Z",
+      "file": ".utmp\\ForestValidation\\9e1225c8-ecab-4f32-b581-0f5aa28fe7e5.xml"
+    },
+    {
+      "result": "Failed(Child)",
+      "total": "461",
+      "passed": "436",
+      "failed": "25",
+      "skipped": "0",
+      "start-time": "2026-10-08 20:15:25Z",
+      "end-time": "2026-10-08 20:15:31Z",
+      "file": ".utmp\\ForestValidation\\ae0ad0b5-979b-491a-a06b-b41c42f0638a.xml"
+    },
+    {
+      "result": "Failed(Child)",
+      "total": "44",
+      "passed": "43",
+      "failed": "1",
+      "skipped": "0",
+      "start-time": "2026-10-08 20:34:27Z",
+      "end-time": "2026-10-08 20:34:28Z",
+      "file": ".utmp\\ForestValidation\\33b60066-5065-4252-a0c7-9d5802a65246.xml"
+    },
+    {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0",
+      "skipped": "0",
+      "start-time": "2026-10-08 20:35:39Z",
+      "end-time": "2026-10-08 20:35:46Z",
+      "file": ".utmp\\ForestValidation\\cbcc931a-25cd-4e47-bbd1-023c9362faf8.xml"
+    }
+  ],
+  "latest_cases": [
+    {
+      "name": "ForestFoundationPlayTests.IronveinFourZoneTravelCleansSourceAndPreservesResources",
+      "result": "Passed",
+      "duration": "24.703060",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingEscortThenForestApexTravelRoundTripPreservesRunAndUnifiedMoves",
+      "result": "Passed",
+      "duration": "17.420901",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedAllSpecialsPrecedeBasicsByRankThenSlot",
+      "result": "Passed",
+      "duration": "10.216083",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedBasicsUseAcceptedMovesAndResumeExactIntegers",
+      "result": "Passed",
+      "duration": "8.016326",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedCascadeCountsOnceAndWeaknessDamagePreventsDecay",
+      "result": "Passed",
+      "duration": "9.967009",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedCommandConsumesWholeLancerSequenceOnceAndStaggerCancels",
+      "result": "Passed",
+      "duration": "13.450510",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedConchRallyUsesThreeFutureMovesAndPreservesContinue",
+      "result": "Passed",
+      "duration": "7.087357",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedDecreeAffectsFiveCompleteMovesAndSurvivesContinue",
+      "result": "Passed",
+      "duration": "11.997686",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedEveryRankPriorityAndDeathAreRechecked",
+      "result": "Passed",
+      "duration": "20.586194",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedHasteNeverGrantsImmediateOrFractionalBasic",
+      "result": "Passed",
+      "duration": "6.482006",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedLateWaveStaggerRemainsReachableWithInterleavedWeakness",
+      "result": "Passed",
+      "duration": "5.291255",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedLeaderHudAndAnnouncementStayInsidePortrait",
+      "result": "Passed",
+      "duration": "8.399306",
+      "run": "9e1225c8-ecab-4f32-b581-0f5aa28fe7e5"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedPacingCourt",
+      "result": "Passed",
+      "duration": "26.224624",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedPacingDungeon",
+      "result": "Passed",
+      "duration": "14.678918",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedPacingForest",
+      "result": "Passed",
+      "duration": "23.432539",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedPacingMine",
+      "result": "Passed",
+      "duration": "19.509048",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedPartialStaggerDecaysOnlyOnceAfterAnUnansweredMove",
+      "result": "Passed",
+      "duration": "8.147492",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedStaggerProtectsBirthAndTwoFullFutureMoves",
+      "result": "Passed",
+      "duration": "10.483305",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedStatusAndActionDisplayFitsFourZonesAndPortraits",
+      "result": "Passed",
+      "duration": "14.047374",
+      "run": "9e1225c8-ecab-4f32-b581-0f5aa28fe7e5"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedSummonDoesNotReceiveItsBirthActionTick",
+      "result": "Passed",
+      "duration": "6.634890",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedTwoChannelsResumeIndependentlyAndKeepTargetLinks",
+      "result": "Passed",
+      "duration": "10.317570",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerStatusAssetTests.NativeIconsAndDataRemainProvisionalAndUnassigned",
+      "result": "Passed",
+      "duration": "0.111875",
+      "run": "9e1225c8-ecab-4f32-b581-0f5aa28fe7e5"
+    },
+    {
+      "name": "UnifiedCombatAssetTests.AllStatusArtIsNativeAndUncompressed",
+      "result": "Passed",
+      "duration": "0.126668",
+      "run": "fbb9d767-005b-4597-a7af-1d32814d841c"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.0f,4)",
+      "result": "Passed",
+      "duration": "0.000403",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.4f,3)",
+      "result": "Passed",
+      "duration": "0.000080",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(5,1.25f,4)",
+      "result": "Passed",
+      "duration": "0.000050",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(2,5.0f,2)",
+      "result": "Passed",
+      "duration": "0.000178",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(6,1.2f,5)",
+      "result": "Passed",
+      "duration": "0.000129",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "UnifiedMoveCombatTests.UnifiedSavesNeverInterpretLegacyFloatCountdowns",
+      "result": "Passed",
+      "duration": "0.003023",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AcceptedMoveStateTests.OnlyAcceptedSequentialActionCanCommitOnce",
+      "result": "Passed",
+      "duration": "0.014527",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AcceptedMoveStateTests.SnapshotPreservesActionAndStableActorIdentity",
+      "result": "Passed",
+      "duration": "0.000811",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.DebitAndSnareClampBeforeCollectedAir",
+      "result": "Passed",
+      "duration": "0.001078",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.DryAcceptanceCannotChargeTheNewFlood",
+      "result": "Passed",
+      "duration": "0.000347",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.DuplicateSettlementAndAcceptanceCannotDoubleCharge",
+      "result": "Passed",
+      "duration": "0.000552",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.FinalWetMoveDrainsBeforeSuffocationAndProtectsNextEncounter",
+      "result": "Passed",
+      "duration": "0.003246",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.FreeCollectionDoesNotAdvanceTideOrSpendAir",
+      "result": "Passed",
+      "duration": "0.000393",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.FullDryFormationAndSixAcceptedMovesAreRequired",
+      "result": "Passed",
+      "duration": "0.000247",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "AquaticEnvironmentStateTests.ResumePreservesPendingReceiptsAndUnits",
+      "result": "Passed",
+      "duration": "0.000310",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceDisruptionPlayTests.ConcurrentOwnersRespectCapsResponsesAndDeathCleanup",
+      "result": "Passed",
+      "duration": "14.008188",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "BalanceDisruptionPlayTests.RoyalMechanicsResolveWithEscortsInActualPlayMode",
+      "result": "Passed",
+      "duration": "40.928302",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "BalanceFreshShapesPlayTests.CharacterResetAndSharedMasteryWorkThroughRealMenus",
+      "result": "Passed",
+      "duration": "7.731605",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceFreshShapesPlayTests.FreshRowColumnAndCrystalShapesResolveThroughRealSwaps",
+      "result": "Passed",
+      "duration": "13.664510",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceLifecyclePlayTests.ExistingLifecycleAssertionsWithActualUnityCallbacks",
+      "result": "Passed",
+      "duration": "5.842246",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.BackupRecoveryPreservesWholeTransactionsAndCorruptOriginals",
+      "result": "Passed",
+      "duration": "0.043836",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.BriefSaveReplacementLockStillSettlesRewardExactlyOnce",
+      "result": "Passed",
+      "duration": "0.085759",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.CardTradeoffsStackCapsAndEligibilityRespectActualMechanics",
+      "result": "Passed",
+      "duration": "0.017304",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.CharacterLevelsAreIndependentAndSharedUnlocksUseHighestLevel",
+      "result": "Passed",
+      "duration": "0.073824",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ConstrainedRandomFormationsAndUniqueEscortedMilestonesStayInBudget",
+      "result": "Passed",
+      "duration": "0.125251",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"bardley\",\"skeleton\")",
+      "result": "Passed",
+      "duration": "0.071177",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.EitherCharacterUnlocksMasteryForTheOtherAtThreeFiveAndSeven(\"skeleton\",\"bardley\")",
+      "result": "Passed",
+      "duration": "0.068092",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.EveryRecipeHasValidMembersAndFitsBudgetAndSlots",
+      "result": "Passed",
+      "duration": "0.002309",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ExistingRoyalDataAndMechanicAssertionsMatchBalanceV1",
+      "result": "Passed",
+      "duration": "0.028644",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.FailedDiskWriteDoesNotSpendWalletOrInventory",
+      "result": "Passed",
+      "duration": "0.039302",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.FailedPurchaseAndLevelUpLeaveWalletAndStatsUnchanged",
+      "result": "Passed",
+      "duration": "0.005647",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.FailedResetDoesNotPublishOrChangeDiskOrMemory",
+      "result": "Passed",
+      "duration": "0.021580",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.FreshProfileHasDirectionalBombsAndCrystalButMasteryBombsStayLocked",
+      "result": "Passed",
+      "duration": "0.001500",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.InterruptedRunSurvivesUntilExplicitSettlementAndKingFirstClearCannotRepeat",
+      "result": "Passed",
+      "duration": "0.600979",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.LegacySelectionsMigrateWithoutWritingOrSummingProgress",
+      "result": "Passed",
+      "duration": "0.008945",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",1,80,10.0f,40)",
+      "result": "Passed",
+      "duration": "0.005199",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",5,110,12.6f,50)",
+      "result": "Passed",
+      "duration": "0.010163",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"bardley\",20,230,22.35f,95)",
+      "result": "Passed",
+      "duration": "0.010229",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",1,100,11.0f,45)",
+      "result": "Passed",
+      "duration": "0.006005",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",5,140,13.2f,55)",
+      "result": "Passed",
+      "duration": "0.003863",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PermanentStatsRecalculateFromUnmodifiedAssets(\"skeleton\",20,290,21.45f,100)",
+      "result": "Passed",
+      "duration": "0.004342",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PersistentSaveReplacementLockPreservesWalletAndJournal",
+      "result": "Passed",
+      "duration": "0.142797",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PreviouslyEarnedLowerThresholdUnlocksRemainOwnedOnLoad",
+      "result": "Passed",
+      "duration": "0.013945",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.PurchasesEquipmentAndTenOwnedThreeUsesAreAtomicAndIndependent",
+      "result": "Passed",
+      "duration": "0.124214",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"bardley\",\"skeleton\")",
+      "result": "Passed",
+      "duration": "0.124362",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ResetPersistsOnlySelectedLevelAndKeepsEarnedUnlocksAndInventory(\"skeleton\",\"bardley\")",
+      "result": "Passed",
+      "duration": "0.085897",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ResetRejectsInvalidCharactersLevelOneAndActiveRuns",
+      "result": "Passed",
+      "duration": "0.013765",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Defeat\")",
+      "result": "Passed",
+      "duration": "0.113169",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Retry\")",
+      "result": "Passed",
+      "duration": "0.113151",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Quit to Menu\")",
+      "result": "Passed",
+      "duration": "0.113490",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.RewardsCreditExactlyOnceAndPartialWavesNeverCount(\"Victory\")",
+      "result": "Passed",
+      "duration": "0.109855",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BalanceV1Tests.ShieldGateAndAegisCapDeliverUsefulValueAndReset",
+      "result": "Passed",
+      "duration": "0.010284",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.BarricadeBreakWithoutStandardsKeepsOrdinaryRemovalBehavior",
+      "result": "Passed",
+      "duration": "0.005847",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.BarricadesAndDestroyedGemJoinSameBatchBeforeAnyBannerMoves",
+      "result": "Passed",
+      "duration": "0.003018",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.OneOpeningIsCountedForEachStandardAboveIt",
+      "result": "Passed",
+      "duration": "0.000652",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(2,6)",
+      "result": "Passed",
+      "duration": "0.000903",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.OpeningAboveBannerOrInAnotherColumnDoesNotMoveIt(4,3)",
+      "result": "Passed",
+      "duration": "0.000477",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(True,False)",
+      "result": "Passed",
+      "duration": "0.000994",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.OrphaningEitherObstaclePreservesGravityInteraction(False,True)",
+      "result": "Passed",
+      "duration": "0.000919",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.RemovedBarricadeCannotQueueItsOpeningAgain",
+      "result": "Passed",
+      "duration": "0.000851",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.SecondDistinctHitCreatesExactlyOneStoneOpening",
+      "result": "Passed",
+      "duration": "0.000718",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.SeveralAdjacentGemsCountOneOpeningAndIgnoredSeedsCountNone",
+      "result": "Passed",
+      "duration": "0.000842",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.SideClearBreakingBarricadeQueuesOpeningWithoutMovingDuringFlash",
+      "result": "Passed",
+      "duration": "0.001101",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BarricadeBannerGravityTests.SurvivingStoneBarricadeDoesNotCreateAnOpening",
+      "result": "Passed",
+      "duration": "0.000498",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity",
+      "result": "Passed",
+      "duration": "0.004050",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve",
+      "result": "Passed",
+      "duration": "0.001073",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures",
+      "result": "Passed",
+      "duration": "0.000765",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease",
+      "result": "Passed",
+      "duration": "0.000812",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection",
+      "result": "Passed",
+      "duration": "0.000603",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)",
+      "result": "Passed",
+      "duration": "0.001586",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)",
+      "result": "Passed",
+      "duration": "0.000552",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)",
+      "result": "Passed",
+      "duration": "0.001034",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)",
+      "result": "Passed",
+      "duration": "0.000465",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)",
+      "result": "Passed",
+      "duration": "0.000929",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)",
+      "result": "Passed",
+      "duration": "0.000423",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)",
+      "result": "Passed",
+      "duration": "0.001273",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)",
+      "result": "Passed",
+      "duration": "0.000858",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap",
+      "result": "Passed",
+      "duration": "0.000795",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner",
+      "result": "Passed",
+      "duration": "0.000595",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)",
+      "result": "Passed",
+      "duration": "0.001237",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)",
+      "result": "Passed",
+      "duration": "0.000416",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture",
+      "result": "Passed",
+      "duration": "0.000586",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CourtMovementAssetTests.CourtRippleNativeFramesUseCrispImports",
+      "result": "Passed",
+      "duration": "0.074014",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors",
+      "result": "Passed",
+      "duration": "0.004561",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)",
+      "result": "Passed",
+      "duration": "0.001317",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)",
+      "result": "Passed",
+      "duration": "0.000592",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch",
+      "result": "Passed",
+      "duration": "0.003098",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate",
+      "result": "Passed",
+      "duration": "0.001311",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"minedCellOwners\")",
+      "result": "Passed",
+      "duration": "0.002433",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"barricadeCells\")",
+      "result": "Passed",
+      "duration": "0.001001",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(\"royalBannerCells\")",
+      "result": "Passed",
+      "duration": "0.000864",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells",
+      "result": "Passed",
+      "duration": "0.001143",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)",
+      "result": "Passed",
+      "duration": "0.002110",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)",
+      "result": "Passed",
+      "duration": "0.000884",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)",
+      "result": "Passed",
+      "duration": "0.000740",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)",
+      "result": "Passed",
+      "duration": "0.001299",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)",
+      "result": "Passed",
+      "duration": "0.000666",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures",
+      "result": "Passed",
+      "duration": "0.031102",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove",
+      "result": "Passed",
+      "duration": "0.001287",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)",
+      "result": "Passed",
+      "duration": "0.001483",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)",
+      "result": "Passed",
+      "duration": "0.000877",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)",
+      "result": "Passed",
+      "duration": "0.000779",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch",
+      "result": "Passed",
+      "duration": "0.002392",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)",
+      "result": "Passed",
+      "duration": "0.001746",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)",
+      "result": "Passed",
+      "duration": "0.000881",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards",
+      "result": "Passed",
+      "duration": "0.002578",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove",
+      "result": "Passed",
+      "duration": "0.002304",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(RowBomb)",
+      "result": "Passed",
+      "duration": "0.007078",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ColumnBomb)",
+      "result": "Passed",
+      "duration": "0.002012",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(PoisonBomb)",
+      "result": "Passed",
+      "duration": "0.002160",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(HealingBomb)",
+      "result": "Passed",
+      "duration": "0.001867",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.ConvertedCollateralUsesTheBombThatActuallyHitsTheCrystal(ShieldBomb)",
+      "result": "Passed",
+      "duration": "0.001933",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(RowBomb)",
+      "result": "Passed",
+      "duration": "0.002714",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ColumnBomb)",
+      "result": "Passed",
+      "duration": "0.001747",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(PoisonBomb)",
+      "result": "Passed",
+      "duration": "0.001842",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(HealingBomb)",
+      "result": "Passed",
+      "duration": "0.001601",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.DirectConvertedBombStillUsesItsOwnColor(ShieldBomb)",
+      "result": "Passed",
+      "duration": "0.001665",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.NonPreservingExpansionAndNullSeedsRetainTheirExistingSemantics",
+      "result": "Passed",
+      "duration": "0.002735",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.OverlappingCollateralQueuesOneCrystalRequestAndPlanningChangesNoState",
+      "result": "Passed",
+      "duration": "0.003185",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.PendingConvertedBombRemainsProtectedUntilItsOwnTurn",
+      "result": "Passed",
+      "duration": "0.003188",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(False)",
+      "result": "Passed",
+      "duration": "0.002121",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "CrystalChainAttributionTests.SimultaneousSeedsChooseTheSameTriggerInGridOrder(True)",
+      "result": "Passed",
+      "duration": "0.001684",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce",
+      "result": "Passed",
+      "duration": "19.227335",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal",
+      "result": "Passed",
+      "duration": "0.049550",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill",
+      "result": "Passed",
+      "duration": "6.679686",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue",
+      "result": "Passed",
+      "duration": "11.992088",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners",
+      "result": "Passed",
+      "duration": "18.554360",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold",
+      "result": "Passed",
+      "duration": "7.510306",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "DesignV2Tests.AcceptedBardleyCastKeepsRefundCapAfterCancellationAndBombPreviewDoesNotSpend",
+      "result": "Passed",
+      "duration": "11.125459",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.ChainedClearsAndCardRefundsShareEffectiveCostBudget",
+      "result": "Passed",
+      "duration": "0.001858",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.ChallengesRequireKingAndTrackSeparateDurableRecords",
+      "result": "Passed",
+      "duration": "0.052227",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.InitialDraftDirectionsAndRefinementRemainEligibleAndDistinct",
+      "result": "Passed",
+      "duration": "0.015740",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.PracticeUsesOwnedProgressionButNeverWritesInventoryOrRewards",
+      "result": "Passed",
+      "duration": "0.015987",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.RefundNeverPaysMoreThanRoundedBudgetAndRejectedCastReleasesIt",
+      "result": "Passed",
+      "duration": "0.000311",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "DesignV2Tests.TeachingDeadlinesPrecedeTheirMilestoneExamsAcrossSeeds",
+      "result": "Passed",
+      "duration": "0.037399",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(1,1.0f)",
+      "result": "Passed",
+      "duration": "0.233033",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(15,1.4f)",
+      "result": "Passed",
+      "duration": "0.003538",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(30,2.0f)",
+      "result": "Passed",
+      "duration": "0.003289",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(50,3.0f)",
+      "result": "Passed",
+      "duration": "0.003408",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(70,4.0f)",
+      "result": "Passed",
+      "duration": "0.003551",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(100,6.0f)",
+      "result": "Passed",
+      "duration": "0.004550",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionAnchorsApplyToEveryEnemyWithoutIncreasingOtherPressure(150,9.0f)",
+      "result": "Passed",
+      "duration": "0.003575",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EndlessDifficultyRevisionTests.ProductionHpIsMonotoneAndRemainsFiniteBeyondTheLastAnchor",
+      "result": "Passed",
+      "duration": "0.008487",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+      "result": "Passed",
+      "duration": "43.645577",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "EnemyDamageResultTests.BreakingShieldDoesNotReduceTheFollowingHit",
+      "result": "Passed",
+      "duration": "0.009036",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(0,20)",
+      "result": "Passed",
+      "duration": "0.004127",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(10,0)",
+      "result": "Passed",
+      "duration": "0.001061",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.CombatReportsActualRecipientAndPreservesOriginalClearContext(30,0)",
+      "result": "Passed",
+      "duration": "0.000845",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.CombatReportsHitRatherThanNetHealthChangeAfterCallbacks",
+      "result": "Passed",
+      "duration": "0.001461",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.CombatStillRejectsUnmatchedAndInactiveWaveDamage",
+      "result": "Passed",
+      "duration": "0.001110",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.ConditionalDefencePrecedesShieldExactlyOnce",
+      "result": "Passed",
+      "duration": "0.000497",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(0,20,20,0)",
+      "result": "Passed",
+      "duration": "0.000956",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,8,0,5)",
+      "result": "Passed",
+      "duration": "0.000579",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(10,20,0,10)",
+      "result": "Passed",
+      "duration": "0.000403",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.DirectDamageKeepsShieldRoundingAndSeparateEvents(30,40,0,30)",
+      "result": "Passed",
+      "duration": "0.000347",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.InterceptionReportsProtectorAndStopsAfterOneHop",
+      "result": "Passed",
+      "duration": "0.000993",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.LegacyBoolWrappersApplyOneHitAndRetainDotBypass",
+      "result": "Passed",
+      "duration": "0.000613",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.LethalInterceptionRetainsRecipientAfterRetreatCleanup",
+      "result": "Passed",
+      "duration": "0.000868",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(0)",
+      "result": "Passed",
+      "duration": "0.000805",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.NonPositiveDamageReturnsEmptyResult(-1)",
+      "result": "Passed",
+      "duration": "0.000319",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.PoisonReportsItsOwnHpLossAndKeepsInterceptionBypass",
+      "result": "Passed",
+      "duration": "0.001623",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(0,20,1)",
+      "result": "Passed",
+      "duration": "0.002491",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.RoyalDecreeKeepsItsMarkButReportsInterceptedHpHits(30,0,0)",
+      "result": "Passed",
+      "duration": "0.000515",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.ShieldOnlyPoisonKeepsHpOnlyFeedbackContract",
+      "result": "Passed",
+      "duration": "0.000602",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.SnapshotDoesNotIncludeASeparateSynchronousHit",
+      "result": "Passed",
+      "duration": "0.000531",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.SnapshotDoesNotSubtractSynchronousHealing",
+      "result": "Passed",
+      "duration": "0.000425",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.SuppressedDamageBypassesProtectorAndDoesNotEmitStaggerInputs",
+      "result": "Passed",
+      "duration": "0.000622",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemyDamageResultTests.UninitializedAndDefeatedActorsRejectDamage",
+      "result": "Passed",
+      "duration": "0.000549",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(False)",
+      "result": "Passed",
+      "duration": "0.005750",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ActualShieldingRuntimeRejectsDisabledReadinessThenResumesOnActionRelease(True)",
+      "result": "Passed",
+      "duration": "0.001357",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.AlreadyCreatedDeferredPollDoesNotExecuteAfterHostDisable",
+      "result": "Passed",
+      "duration": "0.002431",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.AnotherActorsImpactDoesNotReleaseTheWaitingMine",
+      "result": "Passed",
+      "duration": "0.005699",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(False)",
+      "result": "Passed",
+      "duration": "0.001518",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.DisabledOrInactiveHostCannotExecuteOrConsumeReadyCharge(True)",
+      "result": "Passed",
+      "duration": "0.000993",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"disposed\")",
+      "result": "Passed",
+      "duration": "0.001767",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"defeated\")",
+      "result": "Passed",
+      "duration": "0.001049",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"destroyedHost\")",
+      "result": "Passed",
+      "duration": "0.000936",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"uninitialized\")",
+      "result": "Passed",
+      "duration": "0.000972",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ExistingUnavailableOwnerGuardsStillRejectExecution(\"notReady\")",
+      "result": "Passed",
+      "duration": "0.000899",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(False)",
+      "result": "Passed",
+      "duration": "0.002535",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.LivingOwnerStillCommitsOneHoleAtTheExistingBoundary(True)",
+      "result": "Passed",
+      "duration": "0.001113",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,False)",
+      "result": "Passed",
+      "duration": "0.003137",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(False,True)",
+      "result": "Passed",
+      "duration": "0.001152",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,False)",
+      "result": "Passed",
+      "duration": "0.000995",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.MineRechecksDeadOrDestroyedOwnerAfterImpactWait(True,True)",
+      "result": "Passed",
+      "duration": "0.000948",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(1)",
+      "result": "Passed",
+      "duration": "0.001555",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "EnemySpecialExecutionGuardTests.ReenableAllowsOneExecutionOnTheNextLegitimateRequest(5)",
+      "result": "Passed",
+      "duration": "0.001035",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.BardleyThreeBeatsKeepOneBoardHoldAndNoBubbleDelivery",
+      "result": "Passed",
+      "duration": "7.151700",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CommittedTravelSuspendResumesRevealWithoutRepeatingReward",
+      "result": "Passed",
+      "duration": "7.349315",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtAirSurvivesContinuationAndFinalDrainDoesNotSuffocate",
+      "result": "Passed",
+      "duration": "7.032602",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtBubbleReceiptsRespectPhysicalDestructionAndManualSnareSource",
+      "result": "Passed",
+      "duration": "6.952957",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtCaptainCommandsOneCompleteFixedAllySequence",
+      "result": "Passed",
+      "duration": "7.149131",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtConchDamageLeaseDoesNotStackSpeedAndSurvivesOtherOwnerDeath",
+      "result": "Passed",
+      "duration": "7.012324",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtFirstEncounterStaysDryAndFloodUsesAcceptedMoves",
+      "result": "Passed",
+      "duration": "7.069130",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtMaterialAndRosterImportsAreNativeAndComplete",
+      "result": "Passed",
+      "duration": "7.099972",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtMorayRespectsShieldGateAndHealsOnlyHpLost",
+      "result": "Passed",
+      "duration": "7.593772",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtMotionActualSwapFallsPauseAndDrain",
+      "result": "Passed",
+      "duration": "7.109851",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtMotionControllersResolveEveryBasicWithOneOwnedSequence",
+      "result": "Passed",
+      "duration": "7.118130",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtMotionRoyalWakeReducedMotionAndMissingArt",
+      "result": "Passed",
+      "duration": "7.313752",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtPhotographCannotRestoreSpentAirBubblesOrSolvedSnares",
+      "result": "Passed",
+      "duration": "7.086402",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtPufferHoldsInflationThroughBasicsThenDeflatesWithoutStalling",
+      "result": "Passed",
+      "duration": "7.107340",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtQueenAnswersDeduplicateAndRotationSummonsIntoAnnouncedSlot",
+      "result": "Passed",
+      "duration": "7.424680",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionAirReceiptShowsSpendThenActualTwoBlockGain",
+      "result": "Passed",
+      "duration": "7.072750",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionFiniteReserveAndEmergencyCadence",
+      "result": "Passed",
+      "duration": "7.222035",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionFortifiedOrbitFrontBackPauseAndDeathCleanup",
+      "result": "Passed",
+      "duration": "7.716612",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionLegacyDepthsWarningRetiresWithoutDamage",
+      "result": "Passed",
+      "duration": "7.639136",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionLegacyFloodPreservesRemainingTimeAndReserve",
+      "result": "Passed",
+      "duration": "7.529760",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionLegacyTheftWarningsRetireHarmlessly",
+      "result": "Passed",
+      "duration": "7.684749",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionLowAirRelocatesWithoutMintingResources",
+      "result": "Passed",
+      "duration": "7.977336",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionPressureEitherBubbleCancelsAndContinueKeepsPhysicalTargets",
+      "result": "Passed",
+      "duration": "7.706259",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionPressureUnansweredDealsFullConfiguredHit",
+      "result": "Passed",
+      "duration": "7.789373",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionRoyalSlideBlockedRoutesStayAndKeepEveryGem",
+      "result": "Passed",
+      "duration": "8.060539",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionRoyalSlideRotatesSpecialsBeforeOneSettleAndContinues",
+      "result": "Passed",
+      "duration": "7.585213",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTheftAndPressureDeferWithoutEnoughBubbles",
+      "result": "Passed",
+      "duration": "7.721312",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionThiefInstantExactTwoIndependentPayout",
+      "result": "Passed",
+      "duration": "7.627313",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeOneSurvivor",
+      "result": "Passed",
+      "duration": "7.951689",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeRealClearAndStaggerLeaveRemainingOxygen",
+      "result": "Passed",
+      "duration": "7.705173",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeRoundRobinCapsQueenAndPreservesMuster",
+      "result": "Passed",
+      "duration": "7.795632",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeThreeSurvivors",
+      "result": "Passed",
+      "duration": "7.986681",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeTwoSurvivors",
+      "result": "Passed",
+      "duration": "7.658730",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeUsesActualSlotsAfterLeftReplacement",
+      "result": "Passed",
+      "duration": "7.684580",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionTributeZeroSurvivors",
+      "result": "Passed",
+      "duration": "7.725891",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtRevisionWardenInstantThreeAndTwoDistinctHits",
+      "result": "Passed",
+      "duration": "7.578726",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtSnareExpiresAfterThreeFutureMovesAndSparesAirRoutes",
+      "result": "Passed",
+      "duration": "7.792398",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtTargetLossFizzlesAndStaggerEndsWithoutRecovery",
+      "result": "Passed",
+      "duration": "7.905356",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtThreeZoneSoakCleansEffectsPreservesRunAndBoundsSaveSize",
+      "result": "Passed",
+      "duration": "61.478460",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CourtWetResumePreservesAirAndChannelDeadline",
+      "result": "Passed",
+      "duration": "13.839833",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.CrystalSmokeKeepsSettingsInteractiveAndFreezesCombat",
+      "result": "Passed",
+      "duration": "12.071072",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.FailedTravelCheckpointKeepsSourceAndRetriesSameDestination",
+      "result": "Passed",
+      "duration": "13.228723",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionAnsweredReadyBoughCannotRecastOnSameMove",
+      "result": "Passed",
+      "duration": "12.555605",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionBoughAnyRealClearCancelsWholeCastWithoutConsumingOthers",
+      "result": "Passed",
+      "duration": "10.707150",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionBoughKeepsMarksAcrossContinueThenHitsOnce",
+      "result": "Passed",
+      "duration": "14.586765",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionBoughMarkFollowsLegalSwapAndSavedIdentity",
+      "result": "Passed",
+      "duration": "11.895833",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionInstantRootbinder",
+      "result": "Passed",
+      "duration": "10.359101",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionInstantWarden",
+      "result": "Passed",
+      "duration": "11.310672",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionOldRootbinderWarning",
+      "result": "Passed",
+      "duration": "9.627062",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionOldWardenWarning",
+      "result": "Passed",
+      "duration": "9.370373",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ForestRevisionWardedMultipleSourcesSummonContinueAndDeath",
+      "result": "Passed",
+      "duration": "12.119725",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinAcceptedMovesResumeAndTravelCleanStoneState",
+      "result": "Passed",
+      "duration": "11.666233",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinAssayFizzlesIfAnotherSourceAlreadyAdvancedItsStone",
+      "result": "Passed",
+      "duration": "11.661660",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinBoreChoosesEmptyLaneResumesThenHitsOnceAndReleasesBasics",
+      "result": "Passed",
+      "duration": "10.937519",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinChannelStaggerAndDefeatCancelWithoutDamageOrStaleBoardWork",
+      "result": "Passed",
+      "duration": "8.255191",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverCoreTakesThreeOrdinaryHitsAndStaggersOnBreak",
+      "result": "Passed",
+      "duration": "14.219555",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverCycleCoreContinueAndSingleHeavyImpact",
+      "result": "Passed",
+      "duration": "17.892516",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverDefaultDefeatIsFinalWithoutExperimentalRemount",
+      "result": "Passed",
+      "duration": "9.729477",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverFinalResponseDrillBreaksCoreBeforeImpact",
+      "result": "Passed",
+      "duration": "17.179543",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverPilotCanDieEarlyWithoutRewardsOnSuitBreak",
+      "result": "Passed",
+      "duration": "11.702008",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverPilotContinueAndOneWeakerReserveSuit",
+      "result": "Passed",
+      "duration": "14.778296",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDelverSuitBreakCancelsPendingCoreAndDoesNotConsumeItsPower",
+      "result": "Passed",
+      "duration": "15.833315",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDrillChargeDeduplicatesManualMatchesAndSurvivesContinue",
+      "result": "Passed",
+      "duration": "11.971164",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDrillProofFitsEdgesAndLeavesSigilSidesClear",
+      "result": "Passed",
+      "duration": "10.160312",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinDrillsPenetrateObsidianAndCrossOnceWithoutRewards",
+      "result": "Passed",
+      "duration": "11.865964",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinExtractionReturnsEachActualTierWithoutPlayerRewards",
+      "result": "Passed",
+      "duration": "11.611825",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinFullDrillNeverStopsAtTheFirstOfTwoObsidianStones",
+      "result": "Passed",
+      "duration": "10.871242",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinHaulerStonewrightAssayAndSwitchUseOwnedBoardQueue",
+      "result": "Passed",
+      "duration": "22.789896",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinMachinistCapsOwnedTurretsAndTheySurviveBuilderContinue",
+      "result": "Passed",
+      "duration": "16.945296",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinMachinistsNeverBorrowOwnershipOrReplaceOccupiedSlots",
+      "result": "Passed",
+      "duration": "8.420337",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinManualIntakeLaunchWaitsForActorWorkAndKeepsBoardOwned",
+      "result": "Passed",
+      "duration": "11.575603",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinMinibossProofShowsOwnedTurretsAndReadableOreStatus",
+      "result": "Passed",
+      "duration": "16.806079",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinOreBoostAppliesToBothHitsOfOneSequenceOnly",
+      "result": "Passed",
+      "duration": "9.303245",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinOreRefreshesWithoutStackingAndSurvivesContinue",
+      "result": "Passed",
+      "duration": "11.512930",
+      "run": "cbcc931a-25cd-4e47-bbd1-023c9362faf8"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinPackbeetleDeathPowersEveryDrillAndLivingEligibleAllyOnce",
+      "result": "Passed",
+      "duration": "5.376108",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinQueuedSmallDrillCancelsIfCasterStaggersBeforeExecution",
+      "result": "Passed",
+      "duration": "9.951449",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinRattledHalvesNewBuildupSurvivesDrillsAndExpiresAfterTwoMoves",
+      "result": "Passed",
+      "duration": "15.423085",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSapperDefusesWithoutHostDamageAndExplosionAlwaysHitsTwice",
+      "result": "Passed",
+      "duration": "20.014647",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSapperFuseSurvivesContinueAndDealsOnePlayerPacket",
+      "result": "Passed",
+      "duration": "11.990389",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSentinelExtractsCurrentMaterialAndKeepsPowerThroughContinue",
+      "result": "Passed",
+      "duration": "8.085548",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSentinelLostExtractionTargetFizzlesWithoutStaggerOrPower",
+      "result": "Passed",
+      "duration": "12.135365",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSentinelOnlyActualDrillFiringInterruptsEvenOnLastResponseMove",
+      "result": "Passed",
+      "duration": "10.652189",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinSmallDrillBreaksFirstStoneButNeverTouchesSecond",
+      "result": "Passed",
+      "duration": "8.286416",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinStoneHitIsDeduplicatedAndKeepsObsidianMaterial",
+      "result": "Passed",
+      "duration": "10.617010",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.IronveinStonesRespectCapsSpecialsAndMatureWithStableIdentity",
+      "result": "Passed",
+      "duration": "10.978481",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionKingDeathCancelsLaterStrikes",
+      "result": "Passed",
+      "duration": "9.081652",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionMissingMotionStillSettles",
+      "result": "Passed",
+      "duration": "12.781466",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionOneSurvivor",
+      "result": "Passed",
+      "duration": "9.483258",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionPhysicalSwapAndMinisterContinue",
+      "result": "Passed",
+      "duration": "8.684025",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionPlayerDeathStopsSequence",
+      "result": "Passed",
+      "duration": "9.291406",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionSavePreservesPhysicalOrderAndPause",
+      "result": "Passed",
+      "duration": "12.624386",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionThreeSurvivors",
+      "result": "Passed",
+      "duration": "11.159012",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionTwoSurvivors",
+      "result": "Passed",
+      "duration": "8.641132",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.JudgmentRevisionZeroSurvivors",
+      "result": "Passed",
+      "duration": "8.429773",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessCaptainCommandWorksWithTimedBasics",
+      "result": "Passed",
+      "duration": "14.569992",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessFullCycleUsesLiveSecondsProfile",
+      "result": "Passed",
+      "duration": "29.152399",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessFullCycleUsesOriginalDungeonProfile",
+      "result": "Passed",
+      "duration": "29.494312",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessHybridAssaultConsumesReadyCounter",
+      "result": "Passed",
+      "duration": "9.574580",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessReadySaveRecoversAndCommandKeepsSafetyGuards",
+      "result": "Passed",
+      "duration": "9.527771",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.KingReadinessVineGrowthUsesHalfSpreadAndCoverage",
+      "result": "Passed",
+      "duration": "9.777168",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.LegacyCourtRecoveryPreservesRotationAndDoesNotReplayCast",
+      "result": "Passed",
+      "duration": "9.803437",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.LegacyDungeonFearKeepsItsSourceThroughContinue",
+      "result": "Passed",
+      "duration": "9.963038",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.LegacyMenderRecoveryMigratesWithoutHealingOrHoldingBasics",
+      "result": "Passed",
+      "duration": "10.035427",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.LegacyMilestoneRecoveryPreservesCycleAndUsesNormalStaggerOnly",
+      "result": "Passed",
+      "duration": "10.219644",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.OlderForestCheckpointKeepsItsIsolatedLoop",
+      "result": "Passed",
+      "duration": "10.114216",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.PendingTravelSuspendRestoresChosenDestinationAndBoard",
+      "result": "Passed",
+      "duration": "10.191487",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.PlayerStatusesUseCompleteActionsPauseAndResumeWithoutReplayingBurn",
+      "result": "Passed",
+      "duration": "10.386402",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ReducedMotionFailedPreparationReleasesInputAndCombatTime",
+      "result": "Passed",
+      "duration": "10.169867",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterFinalRoyalRoutesCoverBothLengthsAndAllCardinals",
+      "result": "Passed",
+      "duration": "10.204496",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterFinalRoyalSlideReplayKeepsRouteAndRefill",
+      "result": "Passed",
+      "duration": "10.585456",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterFinalTributeCasterDeathDoesNotConsumeBubblesOrGrantBuffs",
+      "result": "Passed",
+      "duration": "10.352584",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterLegacyCellBoughFizzesWithoutDamageOrClears",
+      "result": "Passed",
+      "duration": "10.513917",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterPressureStaggerCancelsWithoutDamageAndWarningDeadlinesSeparate",
+      "result": "Passed",
+      "duration": "10.475558",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterRageTriggersStrictlyBelowHalfOnceAndResumes",
+      "result": "Passed",
+      "duration": "10.891267",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterRhythmBuffsOnlyAlliesRefreshesAndExpires",
+      "result": "Passed",
+      "duration": "10.738865",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterRhythmUsesSecondsInLiveProfileAndTwoDrummersNeverStack",
+      "result": "Passed",
+      "duration": "10.847332",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterSummonWaitsForRoomHasOneOwnerAndSurvivesCaller",
+      "result": "Passed",
+      "duration": "11.145354",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterThornSafeSideCanBeBrokenByItsAdvertisedRealSwap",
+      "result": "Passed",
+      "duration": "10.937018",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterThornsHaveOneSafeSideAndOnlyDeliberateOrdinaryClearsRetaliate",
+      "result": "Passed",
+      "duration": "11.146881",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterTreantOrdinaryShieldGatesDamageAndBreakStaggers",
+      "result": "Passed",
+      "duration": "11.346272",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.RosterVolleyKeepsCancelledShotsCancelledThroughRegrowthAndResume",
+      "result": "Passed",
+      "duration": "11.419184",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SigilsCancelOnDeathReplacementInheritsSlotAndResolutionFinishes",
+      "result": "Passed",
+      "duration": "11.254510",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SigilsCourtChannelTargetsInterruptAndRestoreWithoutNewIdentity",
+      "result": "Passed",
+      "duration": "11.302074",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SlipperyInvalidFinalArrangementReversesWithoutTakingAMove",
+      "result": "Passed",
+      "duration": "11.639677",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SlipperyPreviewRotationSpecialMovementAndSingleAcceptance",
+      "result": "Passed",
+      "duration": "11.560801",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SlipperyRequiresFloodingAndContinuesWithoutSavingAPreview",
+      "result": "Passed",
+      "duration": "11.774412",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.SlipperyStaleForecastClearsBeforeInputCanConfirmChangedPieces",
+      "result": "Passed",
+      "duration": "11.978083",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.TravelSecondsProfileKeepsBuffPoisonStaggerAndSupplyUnits",
+      "result": "Passed",
+      "duration": "12.037148",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedHasteOwnersResumeAndExpireWithoutRemovingOtherSources",
+      "result": "Passed",
+      "duration": "12.282561",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerCancelCreatesNoRunAndFitsPortraitScreens",
+      "result": "Passed",
+      "duration": "12.596376",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerDungeonKeepsOriginalOpening",
+      "result": "Passed",
+      "duration": "12.855502",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerForestStartsLiveContinuesExactlyAndRetriesForest",
+      "result": "Passed",
+      "duration": "12.971373",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerPracticeCanCancelOrStartWithoutReplacingSavedRun",
+      "result": "Passed",
+      "duration": "12.839549",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerPreservesChallengeAndCancelsPendingMode",
+      "result": "Passed",
+      "duration": "12.930406",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerReturnsToCharacterSelectionOnBack",
+      "result": "Passed",
+      "duration": "13.471061",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.ZonePickerUnavailableRequestFallsBackAndIsConsumed",
+      "result": "Passed",
+      "duration": "13.032783",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestRevisionAssetTests.ForestRevisionNativeRootsAndPlacementContacts",
+      "result": "Passed",
+      "duration": "0.147790",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "FortifiedTests.CapSaveRestoreAndFullMitigationDoNotSpendExtraPearls",
+      "result": "Passed",
+      "duration": "0.005496",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "FortifiedTests.OneStackHalvesOneDirectPacketAndPeriodicDoesNotConsume",
+      "result": "Passed",
+      "duration": "0.001259",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "FortifiedTests.ShieldGateAndInterceptionConsumeOnlyTheActualRecipientsOnePearl",
+      "result": "Passed",
+      "duration": "0.000907",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.AStaleDefeatNotificationCannotStartGameOverForALivingPlayer",
+      "result": "Passed",
+      "duration": "0.052019",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.CleanupDoesNotOverwriteANewerNonzeroTimeScale",
+      "result": "Passed",
+      "duration": "0.001910",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.CleanupDoesNotReleaseBoardOwnershipOrOtherInputTokens",
+      "result": "Passed",
+      "duration": "0.007287",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.0f)",
+      "result": "Passed",
+      "duration": "0.002598",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(0.5f)",
+      "result": "Passed",
+      "duration": "0.001460",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.CleanupRestoresExactlyTheCapturedTimeScale(1.0f)",
+      "result": "Passed",
+      "duration": "0.001373",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.DeathVisualExitDoesNotSnapBackToAnOldLayoutPosition",
+      "result": "Passed",
+      "duration": "0.002629",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.DestroyedVisualReferencesCannotStrandTheTimeFreeze",
+      "result": "Passed",
+      "duration": "0.002546",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.DestroyingTheComponentDoesNotOrphanItsCanvasOverlay",
+      "result": "Passed",
+      "duration": "12.093180",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.DisabledComponentCannotResubscribeThroughRefresh",
+      "result": "Passed",
+      "duration": "0.050426",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.0f,0.0f)",
+      "result": "Passed",
+      "duration": "0.002561",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(0.5f,1.087698f)",
+      "result": "Passed",
+      "duration": "0.001526",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.ExistingMenuEasingIsUnchanged(1.0f,1.0f)",
+      "result": "Passed",
+      "duration": "0.001371",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.FiveEnableDisableMessagesAndRepeatedSubscribeKeepOneHandler",
+      "result": "Passed",
+      "duration": "0.002630",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDisable\")",
+      "result": "Passed",
+      "duration": "0.002544",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.LifecycleCleanupReleasesOnlyItsPresentation(\"OnDestroy\")",
+      "result": "Passed",
+      "duration": "0.001741",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.PlayerReinitializationKeepsTheNewHealthOverride",
+      "result": "Passed",
+      "duration": "0.003035",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RealReviveEventClearsOverlayWithoutChangingRestoredHealth",
+      "result": "Passed",
+      "duration": "0.001803",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RecoveryOfAnotherPlayerDoesNotClearThisDeath",
+      "result": "Passed",
+      "duration": "0.003490",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(True)",
+      "result": "Passed",
+      "duration": "0.005695",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RecoveryRestoresAffinityVisibilityWithoutRecapturingHiddenState(False)",
+      "result": "Passed",
+      "duration": "0.002371",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(True)",
+      "result": "Passed",
+      "duration": "0.060254",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RecoveryRestoresTheImageEnabledStateItChanged(False)",
+      "result": "Passed",
+      "duration": "0.001854",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.ReenableReconciliationDoesNotReopenAMissedRevival",
+      "result": "Passed",
+      "duration": "0.001780",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RejectedReviveDoesNotRemoveGameOver",
+      "result": "Passed",
+      "duration": "0.001666",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RepeatedCleanupDoesNotOwnTheClockAgain",
+      "result": "Passed",
+      "duration": "0.001599",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.RetryGuardRequiresADeadReadyUncommittedSession",
+      "result": "Passed",
+      "duration": "0.001871",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "GameOverRecoveryTests.StaleRetryAfterRecoveryCannotRequestASceneLoad",
+      "result": "Passed",
+      "duration": "0.002061",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinArtTests.IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+      "result": "Passed",
+      "duration": "0.291689",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinArtTests.IronveinImportedAttackEventsUseTheReviewedContactFrames",
+      "result": "Passed",
+      "duration": "0.012557",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinArtTests.IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+      "result": "Passed",
+      "duration": "0.004831",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinEncounterTests.IronveinRecordsOnlySuccessfulSpawnsAndKeepsBoundedHistory",
+      "result": "Passed",
+      "duration": "0.159000",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinEncounterTests.IronveinSeededTeachingHasVariationReliefBudgetsAndNoSummonRecipes",
+      "result": "Passed",
+      "duration": "0.457382",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.BossSnapshotRejectsFutureAndImpossibleRemountButAcceptsPreviousMineSchema",
+      "result": "Passed",
+      "duration": "0.000420",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.IronveinLiveDestinationHasCompleteAssetsAndProvisionalSerializedTuning",
+      "result": "Passed",
+      "duration": "0.000531",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.MinePayloadRejectsFutureVersionWithoutRejectingOlderZones",
+      "result": "Passed",
+      "duration": "0.001159",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.StoneContinuationKeepsAgeAndHitWithoutReplayingAnAction",
+      "result": "Passed",
+      "duration": "0.000467",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.StoneHitResetsAgeAndCannotHardenOnThatAction",
+      "result": "Passed",
+      "duration": "0.000169",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "IronveinFoundationTests.StoneMaturesOncePerAcceptedMoveAndStopsAtObsidian",
+      "result": "Passed",
+      "duration": "0.000701",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.AcceptedCastSpendsOnceAndRejectsRepeatedAttempt",
+      "result": "Passed",
+      "duration": "5.095091",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.DestroyedInterfaceRuntimeCannotRemainCastable",
+      "result": "Passed",
+      "duration": "4.983494",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.DisableCancelsOnceWithoutRefundingAcceptedCast",
+      "result": "Passed",
+      "duration": "5.067111",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.DisabledControllerRejectsWithoutSideEffects",
+      "result": "Passed",
+      "duration": "5.250655",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.DisabledRuntimeRejectsWithoutSideEffects",
+      "result": "Passed",
+      "duration": "5.033666",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.InactivePlayerRootRejectsWithoutSideEffects",
+      "result": "Passed",
+      "duration": "5.064430",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.InsufficientEnergyRejectsBeforeRuntimeAttempt",
+      "result": "Passed",
+      "duration": "5.116301",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.PlayerDefeatCancelsAndRejectsFurtherActivation",
+      "result": "Passed",
+      "duration": "5.020667",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.ReenabledRuntimeBecomesUsableWithoutReplacingIt",
+      "result": "Passed",
+      "duration": "5.218453",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.ReenablingControllerRestoresOneRuntimeSubscription",
+      "result": "Passed",
+      "duration": "5.202267",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.RefreshRebindsAfterRuntimeComponentReplacement",
+      "result": "Passed",
+      "duration": "5.347129",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.RefreshWhileDisabledDoesNotRestoreCallbacks",
+      "result": "Passed",
+      "duration": "5.044482",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.ReinitializationCancelsAndRetainsSameRuntimeNotifications",
+      "result": "Passed",
+      "duration": "5.185789",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.RepeatedRefreshDoesNotDuplicateRuntimeSubscription",
+      "result": "Passed",
+      "duration": "5.191688",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerAbilityLifecycleTests.RuntimeRejectionDoesNotSpendEnergy",
+      "result": "Passed",
+      "duration": "5.158411",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    },
+    {
+      "name": "PlayerStatusTests.ApplicationDuringAcceptedActionKeepsThreeFutureResponses",
+      "result": "Passed",
+      "duration": "0.005565",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.BurnTicksOncePerCompletedAcceptedMoveAndCanBeExtinguished",
+      "result": "Passed",
+      "duration": "0.004431",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.CentralEnemyDamageCombinesStatusesAfterRedirectExactlyOnce",
+      "result": "Passed",
+      "duration": "0.006427",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.FearClearsOnlyForItsDeadOrStaggeredSourceAndCannotBindAReplacement",
+      "result": "Passed",
+      "duration": "0.007347",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.HealingIncomingDamageAndShieldsKeepSeparateChannels",
+      "result": "Passed",
+      "duration": "0.002093",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.RefreshDoesNotStackAndDifferentDamageChannelsCompose",
+      "result": "Passed",
+      "duration": "0.002239",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.SappedReducesGenerationWithoutChangingStorage",
+      "result": "Passed",
+      "duration": "0.001721",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "PlayerStatusTests.SnapshotRoundTripKeepsRemainingMovesSourceAndTickDeduplication",
+      "result": "Passed",
+      "duration": "0.002344",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(False)",
+      "result": "Passed",
+      "duration": "0.067492",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ActualReshuffleEntryCancelsBeforeItsFirstAnimationWait(True)",
+      "result": "Passed",
+      "duration": "0.004359",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.BothOwnersAreCancelledEvenWhenNoPinHasMaterializedYet",
+      "result": "Passed",
+      "duration": "0.007819",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ExecutionTimeTopUpAndOtherQueuedMutationsAreNotCancelled",
+      "result": "Passed",
+      "duration": "0.005638",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(0)",
+      "result": "Passed",
+      "duration": "0.005669",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(1)",
+      "result": "Passed",
+      "duration": "0.003761",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ExistingBoltChainAndFreezeReleaseRulesArePreserved(2)",
+      "result": "Passed",
+      "duration": "0.003482",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(False)",
+      "result": "Passed",
+      "duration": "0.004139",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.NewLegalReservationSurvivesExecutionOfAnOlderCancelledRequest(True)",
+      "result": "Passed",
+      "duration": "0.004076",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(False)",
+      "result": "Passed",
+      "duration": "0.004808",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.ReleasedReservationCannotExecuteOrChangeItsOldTarget(True)",
+      "result": "Passed",
+      "duration": "0.003883",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ReshufflePinReservationTests.RepeatedEmptyReleaseDoesNotMutateGemsOrGrantRewards",
+      "result": "Passed",
+      "duration": "0.003897",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.AlreadyDefeatedParticipantIsStillSkippedBeforeAnyWait",
+      "result": "Passed",
+      "duration": "0.054851",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.AlreadyDestroyedParticipantIsStillSkippedBeforeAnyWait",
+      "result": "Passed",
+      "duration": "0.001140",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(False)",
+      "result": "Passed",
+      "duration": "0.001874",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.DefeatedParticipantDoesNotWaitForOldBoardOrStaggerBlock(True)",
+      "result": "Passed",
+      "duration": "0.000752",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.DestroyedAttackComponentAfterEnteringStaggerWaitIsSkipped",
+      "result": "Passed",
+      "duration": "0.001012",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(False)",
+      "result": "Passed",
+      "duration": "0.001347",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.DestroyedParticipantAfterEnteringBoardWaitIsSkipped(True)",
+      "result": "Passed",
+      "duration": "0.000776",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.LaterLivingParticipantIsReachedButMustStillWaitAfterEarlierDeath",
+      "result": "Passed",
+      "duration": "0.002268",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,False)",
+      "result": "Passed",
+      "duration": "0.001394",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(False,True)",
+      "result": "Passed",
+      "duration": "0.000621",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.LivingParticipantStillWaitsAndKeepsItsReservation(True,True)",
+      "result": "Passed",
+      "duration": "0.000534",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.MissingActorReferenceAfterEnteringStaggerWaitIsSkipped",
+      "result": "Passed",
+      "duration": "0.000767",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RoyalAssaultParticipantLifetimeTests.OwnerCleanupDuringWaitDoesNotCompleteOrAdvanceOldCommand",
+      "result": "Passed",
+      "duration": "0.000965",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.AbilityEligibilityUsesStablePlayerAndAbilityIds",
+      "result": "Passed",
+      "duration": "0.013969",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.DraftProducesThreeUniqueLegalChoicesWithoutEncounterRng",
+      "result": "Passed",
+      "duration": "0.004095",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.ExternalInputBlockUsesDisposableTokens",
+      "result": "Passed",
+      "duration": "0.000811",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.MaxedUpgradeIsExcludedAndMissingRuntimePreservesBaseValues",
+      "result": "Passed",
+      "duration": "0.002394",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.StackCountModifiersAndMaximumHealthApplyAuthoritatively",
+      "result": "Passed",
+      "duration": "0.002608",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "RunUpgradeSystemTests.UpgradeCadenceGivesAnEarlyChoiceThenUninterruptedPlay",
+      "result": "Passed",
+      "duration": "0.000666",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.AutoAttackReleaseCannotBypassStagger",
+      "result": "Passed",
+      "duration": "0.004175",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(False)",
+      "result": "Passed",
+      "duration": "0.003912",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.BuildupOrPostStaggerImmunityDoesNotBlockSpecial(True)",
+      "result": "Passed",
+      "duration": "0.001086",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.MarshalDeathEndsDeferredPollAndRetreatWithoutRemovingLocal",
+      "result": "Passed",
+      "duration": "0.001628",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.ProtectorDeathStillClearsRetreatAndHeldChargeDuringStagger",
+      "result": "Passed",
+      "duration": "0.000924",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.RallyExpiryRemovesItsBuffButCannotStartAnotherCastDuringStagger",
+      "result": "Passed",
+      "duration": "0.002029",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.ReadinessReachedDuringStaggerDoesNotSummonOrConsumeCharge",
+      "result": "Passed",
+      "duration": "0.000723",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.ReadyPollWaitsForStaggerBoardAndActionThenSummonsOnce",
+      "result": "Passed",
+      "duration": "0.001479",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "TownMarshalStaggerTests.ReadyRallyCannotStartWhileStaggered",
+      "result": "Passed",
+      "duration": "0.000977",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.ClearingSameWaveNumberStillInvalidatesOldCompletion",
+      "result": "Passed",
+      "duration": "0.048322",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.CompletionListenerClearPreventsSchedulingOldAutomaticAdvance",
+      "result": "Passed",
+      "duration": "0.001535",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.DeathCompletionAcknowledgesExactlyOnce",
+      "result": "Passed",
+      "duration": "0.000490",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.DeathCoroutineToleratesVisualsRemovedAfterAcceptance",
+      "result": "Passed",
+      "duration": "0.001637",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.DisabledWaveControllerDoesNotAdvertiseSummonAvailability",
+      "result": "Passed",
+      "duration": "0.001018",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.DyingObjectUnderAnchorStillBlocksSummonSlotReuse",
+      "result": "Passed",
+      "duration": "0.000503",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.ForeignOrNullDefeatCannotAddDeathDebtOrCompleteWave",
+      "result": "Passed",
+      "duration": "0.000810",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(False)",
+      "result": "Passed",
+      "duration": "0.001121",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.InterruptedDeathAcknowledgesWithoutClaimingFinishedAnimation(True)",
+      "result": "Passed",
+      "duration": "0.000345",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.LastCurrentDeathCompletesWaveExactlyOnce",
+      "result": "Passed",
+      "duration": "0.001046",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.LivingRosterMemberPreventsDeathCompletionFromEndingWave",
+      "result": "Passed",
+      "duration": "0.001014",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,False)",
+      "result": "Passed",
+      "duration": "0.001966",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(True,False)",
+      "result": "Passed",
+      "duration": "0.000521",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.MissingDeathVisualsReturnFailureWithoutTakingCompletionOwnership(False,True)",
+      "result": "Passed",
+      "duration": "0.000373",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.NormalDeathFinishesPresentationAndAcknowledgesOnce",
+      "result": "Passed",
+      "duration": "0.000872",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.OldCompletionDoesNotConsumeNewEncounterDeath",
+      "result": "Passed",
+      "duration": "0.000333",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.OldTransitionCannotAdvanceReplacedEncounterWithSameWaveNumber",
+      "result": "Passed",
+      "duration": "0.001127",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.PlannedSpawnsPreventPrematureCompletion",
+      "result": "Passed",
+      "duration": "0.001172",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.PublicClearRevokesSpawnOwnershipAndPendingDeathState",
+      "result": "Passed",
+      "duration": "0.000659",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.ReentrantDisableDuringDeathFinishedCannotLoseCallback",
+      "result": "Passed",
+      "duration": "0.000606",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.SpawnGuardRejectsOldIdentityAndDifferentWaveNumber",
+      "result": "Passed",
+      "duration": "0.000428",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.SpawnRequestCannotDiscardAnAcceptedDeath",
+      "result": "Passed",
+      "duration": "0.000827",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.StagedSpawnDoesNotAdvertiseItsEmptySlotsAsFreeForSummons",
+      "result": "Passed",
+      "duration": "0.000403",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "WaveDeathLifecycleTests.ThrowingPresentationObserverStillAcknowledgesGameplay",
+      "result": "Passed",
+      "duration": "0.001111",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ZoneTravelTests.DestinationPolicyExcludesCurrentAndUnreadyAndKeepsDeterministicState",
+      "result": "Passed",
+      "duration": "0.002347",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ZoneTravelTests.RootAndVineBindingsAreDistinctNativeAndComplete",
+      "result": "Passed",
+      "duration": "0.003889",
+      "run": "ae0ad0b5-979b-491a-a06b-b41c42f0638a"
+    },
+    {
+      "name": "ForestFoundationPlayTests.UnifiedKingReadinessFullCycle",
+      "result": "Passed",
+      "duration": "32.489848",
+      "run": "33b60066-5065-4252-a0c7-9d5802a65246"
+    }
+  ]
+}
