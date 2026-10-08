@@ -256,3 +256,45 @@ at local wave 4, 28 and 26. Helpful-drill opportunities were uncommon with this
 policy; human targeting/readability review remains useful before numerical tuning.
 Raw per-wave CSV and summaries: `.utmp/Ironvein/Pacing/`. Different seeds and
 real-time attack scheduling are not paired character-power experiments.
+
+## Phase 11 — final review evidence
+
+- **PASS — mandatory final validator:**
+  `powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1` completed
+  with exit 0 using **Unity 6000.3.19f1**. Log:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-60755fbb-8d9f-488b-8ef4-bfaa4a695788.log`.
+  The four starting user files still match their exact hashes. Unity's unrelated
+  TimeManager format rewrite was reviewed and removed after Unity exited.
+- **PASS — previous-zone regression: 157 passed, 0 failed, 0 skipped.**
+  Exact prior milestone cases plus shared barricade gravity, continuation,
+  Bardley, zone picker and crystal/settings checks. Graphics-enabled Unity
+  6000.3.19f1, muted Editor audio. Full result/log:
+  `.utmp/ForestValidation/f7a700b6-bc91-419d-9f31-b58afa15ef50.xml/.log`.
+  Covers King/forest/Court kits, channel cancellation, status and counter
+  behavior, saves and prior travel. The compact per-case record is committed
+  under `Docs/Validation/Ironvein/`. This also compiles the mine Guide update.
+- **PASS — static native delivery:** fourteen stills and 108 motion sheets
+  match their recorded source hashes and individual size/alpha/palette records;
+  122 hashes checked, 2,404 Unity GUID references resolved, zero duplicate
+  Ironvein GUIDs. `Tools/Verify-IronveinDelivery.py` writes
+  `.utmp/Ironvein/native-delivery-check.json`; a durable copy is in
+  `Docs/Validation/Ironvein/`.
+- **PASS — review delivery:** the local gallery responds on
+  `http://127.0.0.1:8891/Review.html`. Its actual-time motion page was opened and
+  visually checked in the browser. It serves copied native sheets, real Unity
+  screen captures and temporary music without autoplay. Source scripts,
+  reference status and per-request generation receipts are retained.
+- **PASS — scoped diff checks:** C#, Python, PowerShell and Markdown/text changes
+  pass `git diff --check`. The unrestricted check reports Unity-generated
+  trailing spaces on empty serialized YAML fields; those serialized files
+  retain the editor's formatting. No unrelated user file was reformatted.
+- **VISUAL REVIEW PENDING:** all newly generated Ironvein art and motion, cave
+  composition and gameplay UI. The same-native-scale reference composite is a
+  visual aid; individual technical measurements remain separate.
+- **LISTENING REVIEW PENDING:** temporary original cue and effect mix. All Unity
+  batch tests use the existing `BatchValidationAudio` Editor mute.
+- **NOT EXECUTED:** manual human seeded sessions, human comprehension/pacing,
+  physical touch testing or Android profiler capture. Three actual automated
+  seeded sessions and automated previous-zone scenarios are recorded separately.
+- **DEVICE TEST PENDING:** Android performance, safe cutouts, touch and sound.
+  No result here establishes final balance or user approval to merge.

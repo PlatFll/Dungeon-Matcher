@@ -270,3 +270,17 @@ warnings, resets the new visit history, and preserves run/player/card/gem state.
 Failed writes leave the source unchanged. Returning to the mine starts a fresh
 local teaching arc at the current global difficulty. Cave variants advance from
 railhead to pumpworks to deep shaft at local 10 and 20.
+
+## Phase 11 — review delivery
+
+The Guide selects mine-specific rules from the active zone's existing
+`maturesStone` flag. It explains Amber, stone materials, the two intake cells,
+four-charge full-lane drills, the first-stone portable drill, Ore-Powered,
+Rattled and persistence. This is inspection copy; board and actor owners remain
+authoritative.
+
+The review register and durable evidence folder contain measured native source
+records, four real Unity captures, actual engine visit reports and compact
+executed-test records. The local gallery links stills, timed motion, scenery/UI
+and a temporary music player. New art and audio await user review. Human play,
+physical touch and Android performance have not been established by these tools.

@@ -1,32 +1,54 @@
-# Ironvein continuation checkpoint
+# Ironvein review checkpoint
 
-2026-10-08. All eleven phases authorized; review PR, no merge.
-Branch codex/ironvein-excavation; phases 01–10 implemented and validated.
-Phase 09 HEAD: 92f362ac. Fourteen stills, 108 clips, three cave scenes,
-gameplay UI, mechanism VFX and original temporary audio are imported.
-49 Phase 09 affected tests and the mandatory validator pass; see VALIDATION.
-Phase 10: 41 weighted recipes, saved visit history, one natural
-stone introduction and four-zone travel. Focused 2 + 4 tests pass. Actual seeded
-level-one play reached travel in 638.667 game seconds / 225 moves; its evidence
-is 8a997135-d849-454d-ab62-e4ab0e0523c0.xml in .utmp/ForestValidation.
-Final affected tests pass after updating the obsolete testing-only readiness
-assertion; mandatory validator 94108512-6aec-459e-abf7-460fbce2e05c passes.
-Next: Phase 11 previous-zone regression, mine Guide copy, evidence and review PR.
-No final user art/music approval or device QA is claimed. No merge authorized.
+2026-10-08. Branch `codex/ironvein-excavation`; all eleven implementation phases
+delivered for review. **No merge authorized.** Phase 10 anchor is `867ebeb6`;
+the final delivery commit follows it. Use `git log -1 --oneline` for exact HEAD.
 
-Read current instructions and Docs/IronveinExcavation/READINESS.md.
-Pack: .utmp/IronveinPack/Dungeon_Matcher_Ironvein_Excavation_Astra_Pack/
-Preserve the four starting user-file changes/hashes in READINESS.
-Source, native comparisons and provenance: ArtSource/Ironvein/Production;
-.utmp/Ironvein/ReviewDelivery/Review.html links stills, motion and screen proof.
-Use git log -1 for current commit.
+## Implemented
+
+Thirteen enemies plus turret, persistent evolving stones, small first-stone
+and fixed full-lane drills, ore power, specialist/miniboss/boss kits and saved
+optional remount (disabled). Fourteen native stills, 108 clips, three cave
+scenes, industrial HUD, mechanism VFX and original temporary audio. Forty-one
+weighted formations, saved teaching/relief, four-zone travel and mine Guide.
+
+## Validation
+
+56 current mine/affected cases pass on their latest executions. Final previous-
+zone regression: 157 passed, zero failures/skips; result/log
+`.utmp/ForestValidation/f7a700b6-bc91-419d-9f31-b58afa15ef50.xml/.log`.
+Mandatory `Tools/Validate-Unity.ps1` passed with muted Unity 6000.3.19f1; log
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-60755fbb-8d9f-488b-8ef4-bfaa4a695788.log`.
+Source/GUID checks and four portrait captures pass. Three synthetic-input visits
+reached travel in 465.129–638.667 game seconds without stat/cadence overrides.
+Full execution history and remaining limits: `Docs/IronveinExcavation/VALIDATION.md`.
+Native evidence and playtest entry: `Docs/Validation/Ironvein/README.md`.
+
+## Review gates / exact next action
+
+Open/review the PR for this branch. User visual, listening, human pacing and
+physical-device approval remain pending. Helpful drill opportunities were rare
+under the greedy automated policy. Do not tune HP to force a visit duration.
+Do not merge unless the user explicitly approves. No further generation needed
+before this review; any corrections must retain the existing allowance ledger.
+
+The local review is `http://127.0.0.1:8891/Review.html`, served by PID 32096;
+state/logs are `.utmp/Ironvein/review-server.json` and `review-server.*.log`.
+It actually runs independently of this turn. If closed, restart using
+`Tools/Serve-IronveinReview.ps1`. No Unity, generation or download jobs remain.
+No automatic implementation continuation is scheduled.
+
+## Preserved state and allowance
+
+Read current instructions and `Docs/IronveinExcavation/READINESS.md`.
+The four original user files listed there remain unchanged and outside commits.
+Pack: `.utmp/IronveinPack/Dungeon_Matcher_Ironvein_Excavation_Astra_Pack/`.
+Source provenance: `ArtSource/Ironvein/README.md` and `Production/`.
+Final source review excluded unrelated files; no existing approved art replaced.
 
 PixelLab materials authorized; 400 total / 300 initial / 100 reserve, no purchases.
-Tools/Record-IronveinProduction.py rebuilds receipts/ledger. Quoted usage 295.2,
-including one cancelled request conservatively. All paid jobs have completed.
-185 requests; reserve untouched. Latest provider balance: 935 used / 1064
-remaining, $0 credits. No remote jobs or downloads remain pending.
-No Unity job remains running at this checkpoint. A local-only review server runs
-as PID 32096 at http://127.0.0.1:8891/Review.html; state is .utmp/Ironvein/review-server.json.
-Last Codex usage: 69% used / 31% remaining; refresh at phase boundaries.
-5% no new phase; 3% validation/handoff; 1% stop. No automatic continuation.
+Quoted usage **295.2 across 185 requests**, including one cancelled request
+conservatively. Reserve untouched. Latest balance: 935 used / 1,064 remaining,
+$0 purchased credits. `Tools/Record-IronveinProduction.py` rebuilds the ledger.
+Last actual Codex quota: **72% used / 28% remaining**. Refresh on resuming.
+5%: no new phase; 3%: validation/handoff only; 1%: stop all new work.

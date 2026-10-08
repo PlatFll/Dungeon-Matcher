@@ -20,31 +20,28 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Ironvein in progress (2026-10-08):** The user authorized all eleven Ironvein
-  pack phases on `codex/ironvein-excavation`, with a review PR and no merge.
-  Phases 02–07 add a testing-only zone stub, saved maturing structural stones,
-  two charged full-lane drills, three Normals, seven Specialists and saved
-  one-sequence ore power under the existing board/combat owners. The small drill
-  stops after one hit on its first stone; Sapper/Assay/track intent and Rattled
-  survive Continue. Machinist-owned independent turrets and Sentinel extraction/
-  drill-countered Slam are implemented. Grand Delver has its three-part cycle,
-  breakable Core and saved single-remount experiment (disabled by default).
-  Phase 07 passed 74 affected checks and the mandatory Unity validator.
-  Phase 08 has imported fourteen native stills and 108 selected clips, including
-  the optional pilot/reserve forms. All fourteen basic contacts, pause/recovery,
-  powered timing and phase continuation have actual-scene tests; the current
-  Ironvein regression passes 45 checks. A Core cleanup race is fixed by keeping
-  the move gate held until the kit finishes its saved-state cleanup. Cave/UI
-  art, three modular cave compositions, industrial gameplay UI and original
-  temporary music/SFX are integrated for review. Four portrait/safe-inset
-  layouts and native bindings pass the 49-check affected regression. Drill
-  projectiles show their actual endpoints, damaged stones retain their material,
-  and fuses/imminent hardening are visible. Phase 10 adds 41 weighted formations,
-  saved teaching/relief history and a natural stone introduction. Ironvein is a
-  fourth random crystal destination, with source cleanup verified across six
-  handoffs. Three actual synthetic-input visits completed in 7.75–10.65 game
-  minutes without stat overrides; this is not human pacing approval. Visual,
-  music and device approval remain open; final compatibility review is Phase 11.
+- **Ironvein review candidate (2026-10-08):** The user authorized all eleven
+  Ironvein pack phases on `codex/ironvein-excavation`; merge remains unauthorized.
+  The playable fourth zone has thirteen enemies plus an independent turret,
+  persistent 1/2/3-hit maturing stones, two charged full-lane drills, saved
+  one-sequence ore power, Rattled and the Grand Delver's breakable Core cycle.
+  The Bore Engineer's small drill stops at its first stone after exactly one
+  durability hit, even on break. The optional single-remount experiment is
+  implemented and tested but disabled in production data.
+  Fourteen native stills, 108 clips, three modular cave scenes, industrial HUD,
+  mechanism VFX and original temporary music/SFX are integrated for review.
+  Forty-one weighted formations teach new kits with normal escorts and provide
+  relief after milestones. Saved visit history, natural stone introduction and
+  four-zone random crystal travel preserve global endless difficulty and run
+  resources. Six actual handoffs verify source-zone cleanup and continuation.
+  The 56 current mine/affected checks pass on their latest executions; three
+  synthetic-input visits completed in 7.75–10.65 game minutes without stat
+  overrides. Helpful drill opportunities were uncommon under that input policy.
+  Four portrait/safe-inset captures and individual native measurements are in
+  [the review evidence](Validation/Ironvein/README.md). Visual, listening, human
+  pacing and physical-device review remain open. Final compatibility verification
+  passed 157 cases without failures/skips; the required Unity 6000.3.19f1 validator
+  passed after the mine Guide update. The branch is ready for its review PR.
   See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).

@@ -16,7 +16,7 @@ reviewed commit. Final output is a PR; no merge without new approval.
 | 08 | Four native art pilots, powered pilot, then 14 identities and motion | Complete for review; 14 stills/108 clips; 45 current Ironvein checks and mandatory validator pass |
 | 09 | Modular cave compositions, industrial HUD, mechanics/VFX/audio | Integrated for review; 49 affected checks pass; four actual screen layouts captured |
 | 10 | Weighted encounters, teaching/relief, four-zone travel and continuation | Complete; 41 recipes, six actual handoffs, three measured visits, affected tests and mandatory validator pass |
-| 11 | Regression, captures, native gallery, final docs and review PR | Native gallery and static asset checks prepared; previous-zone regression, mine Guide copy and PR remain |
+| 11 | Regression, captures, native gallery, final docs and review PR | Implementation/evidence complete for review: 157 compatibility checks and final validator pass; native gallery, Guide and reference register delivered. Human visual/listening/pacing and device gates remain open; no merge. |
 
 ## Explicit decisions
 
