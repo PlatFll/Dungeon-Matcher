@@ -104,6 +104,8 @@ public sealed class RunCombatSnapshot
     public int slot, health, shield, specialTurns, specialRequirement, fortifiedStacks;
     public GemType weakness;
     public float attackRemaining, attackSpeed;
+    // Only UnifiedProfile reads this integer. Older float timers retain their units.
+    public int unifiedAttackRemaining = -1;
     public bool attackRunning;
     public float staggerMeter, staggerRemaining, staggerDuration, staggerImmunity, staggerGrace;
     public float poisonRemaining, poisonNextTick, poisonInterval;

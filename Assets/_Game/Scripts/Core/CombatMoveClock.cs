@@ -15,7 +15,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     public static CombatMoveClock Current { get; private set; }
     public static bool Active => Current != null;
     public static bool MoveEffects => Active && Current.state.profile != CombatClockSnapshot.LegacyEffectsProfile;
-    public static bool MoveBasics => Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
+    public static bool Unified => Active && Current.state.profile == CombatClockSnapshot.UnifiedProfile;
+    public static bool MoveBasics => Unified || Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
     public static bool PausesTimedBasics => Active && !MoveBasics && Current.IsBlockingWaveProgression;
     public static int EffectAction => Current == null ? 0 : Math.Max(Current.state.actions.completed, Current.state.actions.pending);
     public int Tick => state.actions.completed;
@@ -30,6 +31,12 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     private IDisposable input;
     private readonly List<EnemyActor> acceptedActors = new List<EnemyActor>();
     private readonly HashSet<long> spentSpecial = new HashSet<long>();
+    private readonly HashSet<long> dueBasics = new HashSet<long>();
+    private readonly HashSet<long> spentBasics = new HashSet<long>();
+    public static void RecordCommandedBasic(EnemyActor actor)
+    {
+        if (Unified && actor != null) Current.spentBasics.Add(actor.PersistentId);
+    }
 
     public void Initialize(RunSession owner, CombatClockSnapshot saved = null, string newProfile = CombatClockSnapshot.MoveProfile)
     {
@@ -100,6 +107,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 yield return null;
             }
             spentSpecial.Clear();
+            spentBasics.Clear();
+            dueBasics.Clear();
             // A timed basic accepted before the swap keeps its owned impact and
             // recovery. Drain it before offering move-timed specialist work.
             yield return WaitForActions();
@@ -112,6 +121,19 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             // speed buff. Newly granted buffs first accelerate a future move.
             foreach (var actor in acceptedActors)
                 if (Living(actor)) actor.GetComponent<EnemyAutoAttack>()?.AdvanceAcceptedMove();
+            if (Unified)
+            {
+                // Readiness events cannot cast while ActingEnemy is null. All
+                // countdowns advance before the first special changes the roster.
+                foreach (var actor in acceptedActors)
+                {
+                    if (!Living(actor)) continue;
+                    if (actor.GetComponent<EnemyAutoAttack>()?.RemainingAttackTime <= 0) dueBasics.Add(actor.PersistentId);
+                    if (actor.GetComponent<EnemyStagger>()?.IsStaggered != true && !BlocksBasic(actor))
+                        actor.RegisterValidPlayerTurn();
+                }
+                acceptedActors.Sort(CompareSpecialPriority);
+            }
             foreach (var actor in acceptedActors)
             {
                 if (!Living(actor) || run.Player.IsDefeated) continue;
@@ -129,13 +151,13 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 var attack = actor.GetComponent<EnemyAutoAttack>();
                 if (stagger == null || !stagger.IsStaggered)
                 {
-                    if (!held) actor.RegisterValidPlayerTurn();
+                    if (!Unified && !held) actor.RegisterValidPlayerTurn();
                     foreach (var ability in actor.GetComponents<IAcceptedMoveEnemyAbility>()) ability.ResolveAcceptedMove();
                     Opportunity?.Invoke(actor);
                     actor.ResumeContinuationReadiness();
                 }
                 yield return WaitForActions();
-                if (MoveBasics && Living(actor) && !run.Player.IsDefeated && !held &&
+                if (!Unified && MoveBasics && Living(actor) && !run.Player.IsDefeated && !held &&
                     !spentSpecial.Contains(actor.PersistentId) && (channel == null || !channel.BlocksBasic))
                 {
                     // Reserve this ordinary opportunity before callbacks can
@@ -146,6 +168,20 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 }
                 yield return WaitForActions();
                 ActingEnemy = null;
+            }
+            if (Unified)
+            {
+                acceptedActors.Sort(CompareSlot);
+                foreach (var actor in acceptedActors)
+                {
+                    if (!Living(actor) || run.Player.IsDefeated || !dueBasics.Contains(actor.PersistentId) ||
+                        spentBasics.Contains(actor.PersistentId) || BlocksBasic(actor)) continue;
+                    // Special offers stay closed during the basic phase. Commands
+                    // that already spent a participant's attack are never replayed.
+                    spentBasics.Add(actor.PersistentId);
+                    actor.GetComponent<EnemyAutoAttack>()?.TryPerformAcceptedMoveAttack();
+                    yield return WaitForActions();
+                }
             }
             foreach (var actor in acceptedActors)
             {
@@ -200,6 +236,21 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     }
 
     private static bool Living(EnemyActor actor) => actor != null && actor.IsInitialized && !actor.IsDefeated;
+    private static bool BlocksBasic(EnemyActor actor) =>
+        actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
+        actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
+    private int CompareSlot(EnemyActor a, EnemyActor b)
+    {
+        int slots = run.Waves.ContinuationSlot(a).CompareTo(run.Waves.ContinuationSlot(b));
+        return slots != 0 ? slots : a.PersistentId.CompareTo(b.PersistentId);
+    }
+    private int CompareSpecialPriority(EnemyActor a, EnemyActor b)
+    {
+        int rank = b.Definition.Category.CompareTo(a.Definition.Category);
+        return rank != 0 ? rank : CompareSlot(a, b);
+    }
     private void OnDestroy()
     {
         if (run != null && run.Board != null)

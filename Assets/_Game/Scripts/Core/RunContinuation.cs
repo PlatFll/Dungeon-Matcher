@@ -67,7 +67,8 @@ public sealed class RunContinuation : MonoBehaviour
         var identities=new System.Collections.Generic.HashSet<long>();
         foreach(var enemy in saved.enemies)
             if(enemy==null || enemy.persistentId<=0 || enemy.persistentId>=saved.clock.actions.nextActorId ||
-               !identities.Add(enemy.persistentId)) return false;
+               !identities.Add(enemy.persistentId) ||
+               (saved.clock.profile==CombatClockSnapshot.UnifiedProfile && enemy.unifiedAttackRemaining<0)) return false;
         return true;
     }
     private static bool SupportedZone(string id) => id == "dungeon" || id == "magical-forest" || id == "drowned-court" || id == "ironvein-excavation";

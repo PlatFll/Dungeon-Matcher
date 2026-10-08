@@ -172,6 +172,11 @@ public sealed class EnemyDefinition : ScriptableObject
     [SerializeField, Min(1)] private int attackMoves = 3;
     public int FirstAttackMoves => Mathf.Max(1, firstAttackMoves);
     public int AttackMoves => Mathf.Max(1, attackMoves);
+    [Header("Unified move combat (experimental)")]
+    [SerializeField, Min(2)] private int unifiedFirstAttackMoves = 4;
+    [SerializeField, Min(2)] private int unifiedAttackMoves = 4;
+    public int UnifiedFirstAttackMoves => Mathf.Max(2, unifiedFirstAttackMoves);
+    public int UnifiedAttackMoves => Mathf.Max(2, unifiedAttackMoves);
 
     [Header("Special Ability")]
 
