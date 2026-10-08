@@ -32,6 +32,7 @@ public sealed class EnemyOrePower : MonoBehaviour, IEnemyContinuationOwner
         attack.SetNextSequenceModifier(this, multiplier);
         return true;
     }
+    public void Discard() => attack?.RemoveNextSequenceModifier(this);
 
     private void OnModifiersChanged(EnemyAutoAttack source)
     {

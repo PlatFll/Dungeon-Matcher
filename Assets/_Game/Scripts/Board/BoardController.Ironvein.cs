@@ -42,6 +42,20 @@ public partial class BoardController
 
     private int RemainingMineCapacity => Math.Max(0, MineZone.maximumMineStones - MineStoneCount);
 
+    public bool TryQueueMineCore(EnemyActor owner, Action<long> placed, Action<bool> completed, Func<bool> cancelled)
+    {
+        if (!UsesMine) return false;
+        return TryQueuePlaceBarricades(owner, 1, 6, 3, EnemyBarricadeStyle.MineStone,
+            false, true, completed, cancelled, false, true, placed);
+    }
+    public void ReleaseMineCore(long id)
+    {
+        foreach (var pair in barricadeCells)
+            if (pair.Value.MineStone?.id == id)
+            { pair.Value.MineStone.isCore = false; CreateOrRefreshBarricadeView(pair.Key,pair.Value); }
+        MineChanged?.Invoke();
+    }
+
     private MineStoneState NewMineStone(EnemyActor owner, int durability)
     {
         InitializeMine();
@@ -117,6 +131,8 @@ public partial class BoardController
 
     private Sprite MineStoneSprite(BarricadeCellState state)
     {
+        if (state.MineStone?.isCore == true && GameplayThemeSkin.Current?.mineCore != null)
+            return GameplayThemeSkin.Current.mineCore;
         var art = GameplayThemeSkin.Current?.mineStoneStages;
         int stage = (int)(state.MineStone?.stage ?? MineStoneStage.Brittle);
         return art != null && stage < art.Length && art[stage] != null ? art[stage] : GetBarricadeFallbackSprite();

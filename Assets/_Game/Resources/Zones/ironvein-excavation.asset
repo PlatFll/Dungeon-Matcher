@@ -31,6 +31,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
   - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
   - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
+  - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
   developmentEncounters:
   - label: Ore network fixture
     members:
@@ -114,6 +115,13 @@ MonoBehaviour:
   - label: Rivet Turret fixture
     members:
     - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: Grand Delver fixture
+    members:
+    - {fileID: 11400000, guid: f4aa7301bdafa28439ffca8b8615a80a, type: 2}
     firstLocalWave: 1
     lastLocalWave: 999
     weight: 1

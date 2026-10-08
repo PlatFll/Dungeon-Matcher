@@ -8,6 +8,30 @@ public static class IronveinImporter
 {
     public const string ZonePath = "Assets/_Game/Resources/Zones/ironvein-excavation.asset";
     public const string EnemyPath = "Assets/_Game/Data/Enemies/Ironvein/";
+    [MenuItem("Dungeon Matcher/Ironvein/Import boss kit")]
+    public static void ImportBoss()
+    {
+        ImportMinibosses();
+        var def=Load<EnemyDefinition>(EnemyPath+"grand_delver.asset");var so=new SerializedObject(def);
+        var shell=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(EnemyPath+"pickaxe_delver.asset");
+        so.FindProperty("enemyId").stringValue="grand_delver";so.FindProperty("displayName").stringValue="The Grand Delver";
+        so.FindProperty("race").stringValue="Dwarf";so.FindProperty("faction").stringValue="Ironvein Expedition";
+        so.FindProperty("combatRole").stringValue="Boss";so.FindProperty("category").intValue=3;
+        var zones=so.FindProperty("eligibleZones");zones.arraySize=1;zones.GetArrayElementAtIndex(0).stringValue="ironvein-excavation";
+        so.FindProperty("description").stringValue="Dwarf pilot in an excavation mech. Claim the Vein places two Brittle stones. Full Steam! powers the next whole basic and adds one charge to each fixed drill. Heart of Obsidian plants a three-hit Core: break it within three moves, or fire a full drill through it, to cancel and Stagger. Otherwise it is consumed for a heavy hit. The experimental pilot/reserve-suit phase is disabled by default.";
+        so.FindProperty("enemyPrefab").objectReferenceValue=shell.EnemyPrefab;
+        if(def.StaticVisualSprite==null)so.FindProperty("fallbackVisualSprite").objectReferenceValue=shell.StaticVisualSprite;
+        so.FindProperty("baseMaxHealth").intValue=350;so.FindProperty("baseDamage").intValue=14;
+        so.FindProperty("baseAttackInterval").floatValue=6.9f;so.FindProperty("hasSpecialAbility").boolValue=true;
+        so.FindProperty("specialAbilityKind").intValue=(int)EnemySpecialAbilityKind.GrandDelver;
+        so.FindProperty("baseSpecialTurnRequirement").intValue=4;so.FindProperty("lockSpecialTurnRequirement").boolValue=true;
+        so.FindProperty("threatCost").floatValue=7;so.ApplyModifiedPropertiesWithoutUndo();
+        def.oreWeaponEligible=true;def.mineWarningMoves=3;def.mineAbilityDamage=45;
+        def.mineEnableRemount=false;def.minePilotMoves=3;def.minePilotHealthFraction=.2f;def.mineReserveHealthFraction=.5f;
+        var zone=Load<ZoneDefinition>(ZonePath);zone.enemies=zone.enemies.Concat(new[]{def}).ToArray();
+        zone.developmentEncounters=zone.developmentEncounters.Concat(new[]{new ZoneTestEncounter{label="Grand Delver fixture",members=new[]{def}}}).ToArray();
+        EditorUtility.SetDirty(def);EditorUtility.SetDirty(zone);AssetDatabase.SaveAssets();
+    }
     [MenuItem("Dungeon Matcher/Ironvein/Import miniboss kits")]
     public static void ImportMinibosses()
     {

@@ -3,6 +3,13 @@ using UnityEngine;
 
 public sealed class IronveinFoundationTests
 {
+    [Test] public void BossSnapshotRejectsFutureAndImpossibleRemountButAcceptsPreviousMineSchema()
+    {
+        Assert.That(MineEnemyAbility.Supports(new MineEnemySnapshot{version=1}),Is.True);
+        Assert.That(MineEnemyAbility.Supports(new MineEnemySnapshot{version=3}),Is.False);
+        Assert.That(MineEnemyAbility.Supports(new MineEnemySnapshot{bossPhase=MineBossPhase.SecondMech}),Is.False);
+        Assert.That(MineEnemyAbility.Supports(new MineEnemySnapshot{bossPhase=MineBossPhase.SecondMech,remountUsed=true}),Is.True);
+    }
     [Test] public void StoneMaturesOncePerAcceptedMoveAndStopsAtObsidian()
     {
         var stone = new MineStoneState { id = 4, ownerId = 8, bornMove = 10, lastAdvanceMove = 10 };

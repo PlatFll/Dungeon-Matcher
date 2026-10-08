@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: vein_surveyor
+  m_Name: grand_delver
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  oreWeaponEligible: 0
+  oreWeaponEligible: 1
   releasesOreOnDefeat: 0
   oreAttackMultiplier: 1.3
-  mineWarningMoves: 1
-  mineAbilityDamage: 20
+  mineWarningMoves: 3
+  mineAbilityDamage: 45
   mineTurret: {fileID: 0}
   maximumMineTurrets: 2
   mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
@@ -36,22 +36,24 @@ MonoBehaviour:
   tributeTargetCount: 3
   tributeChannelMoves: 3
   tributeStackCap: 2
-  enemyId: vein_surveyor
+  enemyId: grand_delver
   race: Dwarf
   faction: Ironvein Expedition
-  combatRole: Board disruptor
+  combatRole: Boss
   eligibleZones:
   - ironvein-excavation
-  threatCost: 2.5
-  isBoardDisruptor: 1
+  threatCost: 7
+  isBoardDisruptor: 0
   isSupport: 0
   chainCap: 2
   chainsPerUse: 1
-  displayName: Vein Surveyor
-  category: 1
-  description: 'Assay the Vein: marks one existing non-Obsidian stone for one move,
-    then advances its material one tier. Destroy that fixed stone to cancel. It never
-    creates or retargets a stone.'
+  displayName: The Grand Delver
+  category: 3
+  description: 'Dwarf pilot in an excavation mech. Claim the Vein places two Brittle
+    stones. Full Steam! powers the next whole basic and adds one charge to each fixed
+    drill. Heart of Obsidian plants a three-hit Core: break it within three moves,
+    or fire a full drill through it, to cancel and Stagger. Otherwise it is consumed
+    for a heavy hit. The experimental pilot/reserve-suit phase is disabled by default.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
   animationControllerOverride: {fileID: 0}
@@ -60,15 +62,15 @@ MonoBehaviour:
   useAuthoredAutoAttackMotion: 0
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
-  baseMaxHealth: 70
-  baseDamage: 5
+  baseMaxHealth: 350
+  baseDamage: 14
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 6.1
+  baseAttackInterval: 6.9
   firstAttackMoves: 3
   attackMoves: 3
   hasSpecialAbility: 1
-  specialAbilityKind: 33
+  specialAbilityKind: 39
   baseSpecialTurnRequirement: 4
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10

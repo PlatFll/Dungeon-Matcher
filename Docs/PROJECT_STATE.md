@@ -22,13 +22,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 - **Ironvein in progress (2026-10-08):** The user authorized all eleven Ironvein
   pack phases on `codex/ironvein-excavation`, with a review PR and no merge.
-  Phases 02–06 add a testing-only zone stub, saved maturing structural stones,
+  Phases 02–07 add a testing-only zone stub, saved maturing structural stones,
   two charged full-lane drills, three Normals, seven Specialists and saved
   one-sequence ore power under the existing board/combat owners. The small drill
   stops after one hit on its first stone; Sapper/Assay/track intent and Rattled
   survive Continue. Machinist-owned independent turrets and Sentinel extraction/
-  drill-countered Slam are implemented, with focused and compatibility tests;
-  live crystal eligibility remains off. The placeholder shell artwork/scenery are not
+  drill-countered Slam are implemented. Grand Delver has its three-part cycle,
+  breakable Core and saved single-remount experiment (disabled by default).
+  Phase 07 passed 74 affected checks and the mandatory Unity validator.
+  Live crystal eligibility remains off. The placeholder shell artwork/scenery are not
   mine art. See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).

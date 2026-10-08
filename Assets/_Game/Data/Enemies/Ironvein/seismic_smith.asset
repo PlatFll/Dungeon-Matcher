@@ -21,6 +21,10 @@ MonoBehaviour:
   maximumMineTurrets: 2
   mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
   mineObsidianSlamMultiplier: 1.5
+  mineEnableRemount: 0
+  minePilotMoves: 3
+  minePilotHealthFraction: 0.2
+  mineReserveHealthFraction: 0.5
   appliedPlayerStatus: {fileID: 11400000, guid: 81f70209b2e005046b0ea17569f3b41c, type: 2}
   canFightFlooded: 0
   aquaticSummon: {fileID: 0}

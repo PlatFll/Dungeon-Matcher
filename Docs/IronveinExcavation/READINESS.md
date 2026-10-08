@@ -84,7 +84,7 @@ Requested explicit authorization for prompts/specifications/native dimensions,
 mockup and selected approved references. Separately proposed an Ironvein ceiling
 of **400 subscription generations: 300 initial + 100 correction reserve**.
 The user approved the 400 ceiling / 300 initial batch on 2026-10-08. The separate
-payload/reference disclosure question remains pending. Old Forest/Court allowances
+payload/reference disclosure was explicitly authorized on 2026-10-08. Old Forest/Court allowances
 do not carry over; no credit purchases. Local engineering continues meanwhile.
 
 The last observed account window had 73% remaining. Check actual usage at phase

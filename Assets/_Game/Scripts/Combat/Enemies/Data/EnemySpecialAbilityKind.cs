@@ -26,5 +26,6 @@ public enum EnemySpecialAbilityKind
     LanternPressure = 27, AbyssalRegent = 28,
     ApplyPlayerStatus = 29,
     ShareOre = 30, LayFoundation = 31, BoreDrill = 32, AssayVein = 33,
-    PowderCharge = 34, SwitchTrack = 35, Faultline = 36, SiegeMachinist = 37, ObsidianSentinel = 38
+    PowderCharge = 34, SwitchTrack = 35, Faultline = 36, SiegeMachinist = 37, ObsidianSentinel = 38,
+    GrandDelver = 39
 }

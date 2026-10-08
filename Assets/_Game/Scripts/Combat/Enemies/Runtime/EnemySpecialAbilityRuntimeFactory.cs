@@ -44,6 +44,7 @@ public static class EnemySpecialAbilityRuntimeFactory
             case EnemySpecialAbilityKind.Faultline:
             case EnemySpecialAbilityKind.SiegeMachinist:
             case EnemySpecialAbilityKind.ObsidianSentinel:
+            case EnemySpecialAbilityKind.GrandDelver:
                 var mine = enemyObject.GetComponent<MineEnemyAbility>() ?? enemyObject.AddComponent<MineEnemyAbility>();
                 mine.ConfigureSummonService(summonService); runtime = mine;
                 break;

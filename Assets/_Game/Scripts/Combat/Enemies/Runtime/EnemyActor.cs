@@ -6,6 +6,16 @@ using UnityEngine;
 public sealed partial class EnemyActor : MonoBehaviour
 {
     public long PersistentId { get; internal set; }
+    // Optional phase owner acts before final defeat; never revives a defeated actor.
+    internal Func<bool> TryAdvanceLethalPhase { private get; set; }
+    internal Func<bool> PhaseAcceptsDamage { private get; set; }
+    internal void ApplyPhaseStats(EnemyRuntimeStats stats, int health)
+    {
+        if (!isInitialized || isDefeated) return;
+        RuntimeStats = stats;
+        currentHealth = Mathf.Clamp(CombatAmounts.Health(health), 1, stats.MaxHealth);
+        HealthChanged?.Invoke(this, currentHealth, MaxHealth);
+    }
     private const int EnemyMaximumShield = 30;
     private const float EnemyShieldDamageReduction = 0.25f;
 
@@ -193,7 +203,7 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     public bool CanReceiveDamage =>
         isInitialized &&
-        !isDefeated;
+        !isDefeated && (PhaseAcceptsDamage == null || PhaseAcceptsDamage());
 
     public EnemyActor DamageRedirectTarget =>
         IsValidDamageRedirectTarget(
@@ -801,6 +811,7 @@ public sealed partial class EnemyActor : MonoBehaviour
             return;
         }
 
+        if (TryAdvanceLethalPhase?.Invoke() == true && currentHealth > 0) return;
         isDefeated = true;
         isSpecialReady = false;
         damageRedirectTarget = null;

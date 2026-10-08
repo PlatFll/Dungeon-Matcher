@@ -8,9 +8,14 @@ Phase 04 committed `e724f84`: ore tokens, three normals, Packbeetle death networ
 and stone-owner restoration fix; six affected checks and validator pass.
 Phase 05 committed `10071d8`: seven specialists, small-drill exact stop,
 bomb/assay/switch/Rattled. 53 affected tests and mandatory validator pass.
-Phase 06 adds Machinist/turrets and Sentinel extraction/slam. Seven initial
+Phase 06 committed `cad1438`: Machinist/turrets and Sentinel extraction/slam. Seven initial
 focused tests, 33 final affected tests and the mandatory validator pass.
-No running jobs. Next: Phase 07 Grand Delver and optional single-remount lifecycle.
+Phase 07: Grand Delver/Core and optional single-remount lifecycle implemented;
+74 affected tests and mandatory validator pass. No running Unity jobs.
+Phase 08: four native candidates and one completed powered Pickaxe motion pilot.
+Job `7bd000de-f954-4789-bdba-2a87440a01af` returned 13 frames; fetch/review all.
+Two automatic still corrections were rejected for palette noise. Next: exact
+native palette cleanup, powered motion review, remaining roster and motion.
 Use `git log -1` for current commit.
 
 Read current instructions and [audit](../IronveinExcavation/READINESS.md), then
@@ -20,13 +25,16 @@ Follow each phase's detailed pack files before editing. Critical small-vs-big
 drill distinction is recorded in the audit.
 
 Four existing modified files and hashes are recorded in READINESS; never stage
-or reset them. No new art. Validation paths are in `Docs/IronveinExcavation/VALIDATION.md`.
-PixelLab connected, balance checked, zero production calls. Explicit payload
-authorization remains pending. The user approved the separate 400-generation
-ceiling (300 initial/100 reserve). Do not send the pending reference/help payload
-until authorized. Local engineering may continue.
+or reset them. Art sources are in `ArtSource/Ironvein`; candidate status, no final
+user visual approval. Validation paths are in `Docs/IronveinExcavation/VALIDATION.md`.
+PixelLab connected. Latest balance: 1337 remaining / 662 used / 2000 total.
+Four stills cost 20 quoted generations; two corrections .1 each, one cancelled
+pilot and one completed pilot quoted 1 each. Counters round fractional requests;
+the cancelled-job refund is not confirmed. The user explicitly
+authorized the Ironvein mockup/references/specifications/prompts for PixelLab on
+2026-10-08, and the 400-generation ceiling (300 initial/100 reserve). No purchases.
 
-Last observed account usage: 38% used / 62% remaining; obtain a fresh reading at
+Last observed account usage: 42% used / 58% remaining; obtain a fresh reading at
 phase boundaries. Thresholds: 5% no new phases; 3% validation/handoff only;
 1% no new work. No available verified background continuation mechanism is
 being used; no claim of unattended work.

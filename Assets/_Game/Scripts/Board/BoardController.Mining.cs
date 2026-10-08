@@ -40,6 +40,8 @@ public partial class BoardController
         public long MineStoneId;
         public MineStoneOperation MineOperation;
         public MineStoneStage MineExtractedStage;
+        public bool MineCore;
+        public Action<long> MineStonePlaced;
         public int MineLane;
         public bool MineHorizontal, MineReachedEdge;
         public List<int> AquaticTargets;

@@ -25,7 +25,7 @@ public sealed partial class MineEnemyAbility
             else return false;
             return true;
         }
-        var stones = board.MineStoneTargets().ToArray();
+        var stones = board.MineStoneTargets().Where(t=>!t.State.isCore).ToArray();
         if (state.cycle % 2 == 0 && stones.Length > 0)
         { state.action = "DEVOUR"; state.stoneId = stones[0].State.id; }
         else state.action = "SLAM";
@@ -59,7 +59,9 @@ public sealed partial class MineEnemyAbility
     }
     public void ResolveAfterMineDrills()
     {
-        if (disposed || pending || !IsPreparing || state.action != "SLAM" || Move < state.dueMove ||
+        if (IsPilot) { AdvancePilot(); return; }
+        if (!disposed && !pending && IsPreparing && TargetGone) { LostTarget(); return; }
+        if (disposed || pending || !IsPreparing || (state.action != "SLAM" && state.action != "CORE") || Move < state.dueMove ||
             actor.IsDefeated || stagger?.IsStaggered == true || board.IsBusy || Time.timeScale <= 0 ||
             !CombatMoveClock.CanOffer(actor) || !actor.TryBeginSpecialAbilityAnimationAction()) return;
         pending=true;StartCoroutine(Release());

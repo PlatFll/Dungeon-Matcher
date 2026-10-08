@@ -62,6 +62,9 @@ public partial class BoardController
         var target = FindMineStone(request.MineStoneId);
         if (target == null) yield break;
         var cell = target.Value.Cell; var barrier = barricadeCells[cell]; var stone = barrier.MineStone;
+        // Cores belong to their active ritual; other stone specialists do not steal it.
+        if (stone.isCore && (request.MineOperation != MineStoneOperation.Extract ||
+            request.OwnerActor.PersistentId != stone.ownerId)) yield break;
         switch (request.MineOperation)
         {
             case MineStoneOperation.Harden:

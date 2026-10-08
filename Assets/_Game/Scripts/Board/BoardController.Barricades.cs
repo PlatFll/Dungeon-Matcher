@@ -165,7 +165,8 @@ public partial class BoardController
         bool protectSpecialGems = false,
         System.Action<bool> completed = null,
         System.Func<bool> isCancelled = null,
-        bool waitForAnimationImpact = false)
+        bool waitForAnimationImpact = false,
+        bool mineCore = false, System.Action<long> mineStonePlaced = null)
     {
         if (owner == null ||
             owner.IsDefeated ||
@@ -250,6 +251,7 @@ public partial class BoardController
                     Mathf.Max(1, durability),
 
                 BarricadeStyle = style,
+                MineCore = mineCore, MineStonePlaced = mineStonePlaced,
                 PreferStraightLine = preferStraightLine && requestedCount == barricadesPerUse,
                 ProtectSpecialGems = protectSpecialGems,
                 Completed = completed,
@@ -528,6 +530,11 @@ public partial class BoardController
             }
 
             selectedCells.Add(selectedCell);
+            if (state.MineStone != null)
+            {
+                state.MineStone.isCore = request.MineCore;
+                request.MineStonePlaced?.Invoke(state.MineStone.id);
+            }
             if(roots) candidates.RemoveAll(c=>Mathf.Abs(c.x-selectedCell.x)+Mathf.Abs(c.y-selectedCell.y)==1);
 
             gemsToDestroy.Add(

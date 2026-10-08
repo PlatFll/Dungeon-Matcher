@@ -97,3 +97,18 @@ approval of the whole region. Art/music review and device testing remain pending
 - Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1:
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-97d9c7b9-8317-4536-b5df-f20ecf81c4e8.log`.
 - All four starting user-file hashes still match. No paid generation or merge.
+
+## Phase 07
+
+- Initial focused tests: **12 passed**, no failures/skips:
+  `.utmp/ForestValidation/cefaa272-c87e-4e3c-b4e3-12f9548af841.xml/.log`.
+- Final affected tests: **74 passed**, no failures/skips:
+  `.utmp/ForestValidation/35d2da62-0e49-4bb4-8fb6-ac163efa9d68.xml/.log`.
+  Covers the three-part boss cycle, Core hits/Continue/final-response drill,
+  default final death, optional ejection/cancelled Core/early pilot defeat,
+  saved pilot HP/deadline, one weaker reserve suit and whole-formation gating.
+  Includes Ironvein, damage, continuation and legacy channel recovery checks.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-7bbd8b44-f1af-451a-b98b-2db1e0461807.log`.
+- All four starting user-file hashes still match. Boss motion and native visual
+  proof remain Phase 08 work; no claim of visual or physical-device approval.

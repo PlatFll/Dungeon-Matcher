@@ -141,3 +141,38 @@ independent board resolver or post-channel recovery timer was added.
 
 The mechanics proof gallery is `.utmp/Ironvein/Review.html`. Its existing shell
 artwork and dungeon backgrounds are explicitly temporary, not approved mine art.
+
+## Phase 07 — Grand Delver mechanics
+
+The default suit cycles Claim the Vein (two Brittle stones), Full Steam (one
+next-basic ore token and one charge to each fixed drill) and Heart of Obsidian.
+Heart places a distinct tagged three-durability Core through normal safe
+placement. Its fixed cell and three-move deadline survive Continue. Ordinary
+structure hits or a full drill through the cell can break it; breaking cancels
+the attack and requests ordinary Stagger. The last response move's drills resolve
+first. A surviving Core is consumed without player rewards for one centrally
+rounded 45-base-damage packet. External interruption releases the ritual tag,
+leaving ordinary Obsidian; other stone specialists cannot steal an active Core.
+A full board makes the boss use Steam instead of stalling on placement.
+
+`mineEnableRemount` is **false by default**, as the pack calls this experimental.
+When enabled before spawn, the first lethal suit hit transitions the same actor
+to PilotFoot before its authentic Defeated event. No reward, slot release or wave
+advance occurs. Ejection absorbs remaining callbacks in that resolution; the
+pilot is targetable at the next settled input boundary. Poison, Stagger and other
+existing actor effects retain their own ownership. Any next lethal pilot hit is
+final. Surviving three future accepted moves creates one SecondMech, whose death
+is always final. The flag, phase, timer and remount guard are saved, independent
+of later changes to the development toggle.
+
+Provisional profiles at base depth: first suit 350 HP/15 rounded damage/6.9s;
+pilot 20% HP (70), half rounded basic damage (10), 0.7× interval (4.83s);
+reserve suit 50% HP (175), 0.8× basic damage (10), original interval. Both derive
+from the original globally scaled stats, without player-power correction.
+The pilot has ordinary basic pressure and a visible REMOUNT IN counter, no
+mechanized specials. Every phase uses one persistent ID. Whole-formation death,
+including surviving escorts/turrets, remains the existing wave/travel gate.
+
+The generic actor exposes an optional pre-final-defeat phase hook and phase-stat
+application; mine-specific decisions remain in MineEnemyAbility. Missing motion
+cannot own phase state. Actual ejection/remount art is still Phase 08 work.
