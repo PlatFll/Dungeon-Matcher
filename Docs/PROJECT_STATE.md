@@ -41,7 +41,8 @@ The newer rules in this status and the owning design/architecture documents supe
   [the review evidence](Validation/Ironvein/README.md). Visual, listening, human
   pacing and physical-device review remain open. Final compatibility verification
   passed 157 cases without failures/skips; the required Unity 6000.3.19f1 validator
-  passed after the mine Guide update. The branch is ready for its review PR.
+  passed after the mine Guide update. [PR #183](https://github.com/PlatFll/Dungeon-Matcher/pull/183)
+  is open for review and remains unmerged.
   See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).
