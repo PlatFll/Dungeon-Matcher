@@ -16,7 +16,8 @@ for job in jobs:
     output.mkdir(parents=True, exist_ok=True)
     frames, records = [], []
     for i, url in enumerate(job['urls']):
-        if not url.startswith('https://api.pixellab.ai/mcp/images/'):
+        if not url.startswith(('https://api.pixellab.ai/mcp/images/',
+                               'https://backblaze.pixellab.ai/file/pixellab-characters/objects/')):
             raise ValueError('Only recorded PixelLab image outputs are accepted')
         path = output / f'{i:02}.png'
         if not path.exists():

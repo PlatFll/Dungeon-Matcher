@@ -1,0 +1,655 @@
+[
+  {
+    "name": "ButtonHighlighted",
+    "source": "button_v2",
+    "job": "df6d69ef-9d1f-4404-b3db-cc2a2443e493",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          95,
+          47
+        ],
+        "colors": {
+          "#090909ff": "#0b0b0bff",
+          "#0d0d0eff": "#0f0f11ff",
+          "#0f0e11ff": "#121114ff",
+          "#111112ff": "#141415ff",
+          "#131215ff": "#161519ff",
+          "#161618ff": "#1a1a1cff",
+          "#1a191dff": "#1f1e22ff",
+          "#1e1d1fff": "#232225ff",
+          "#232327ff": "#29292eff",
+          "#2f3034ff": "#37393dff",
+          "#302f35ff": "#39373fff",
+          "#303036ff": "#393940ff",
+          "#35353eff": "#3f3f49ff",
+          "#3d3c46ff": "#484753ff",
+          "#41404aff": "#4d4c57ff",
+          "#433022ff": "#4f3928ff",
+          "#46464eff": "#53535cff",
+          "#4a4a51ff": "#575760ff",
+          "#523f2aff": "#614a32ff",
+          "#54545cff": "#63636dff",
+          "#5a5b60ff": "#6a6b71ff",
+          "#5d5d62ff": "#6e6e74ff",
+          "#5e5f65ff": "#6f7077ff",
+          "#604c37ff": "#715a41ff",
+          "#60626dff": "#717481ff",
+          "#616268ff": "#72747bff",
+          "#6a6c73ff": "#7d7f88ff",
+          "#735e48ff": "#886f55ff",
+          "#777980ff": "#8c8f97ff",
+          "#836a4fff": "#9b7d5dff",
+          "#83848bff": "#9b9ca4ff",
+          "#8a7159ff": "#a38569ff",
+          "#8a8b92ff": "#a3a4acff",
+          "#909298ff": "#aaacb3ff",
+          "#957c5dff": "#b0926eff",
+          "#9c9da3ff": "#b8b9c0ff",
+          "#a78c65ff": "#c5a577ff",
+          "#b39978ff": "#d3b58eff",
+          "#c7ac83ff": "#ebcb9bff",
+          "#cdbba8ff": "#f2ddc6ff",
+          "#dbc5a2ff": "#ffe8bfff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: df03246d-28dd-45b1-bc7a-da7b61a03fd3\ncanvas: 96x48, 1 frame(s)\n1. map_colors: 3216 px changed\nsheet rows: frames [1]\npalette (41): #393940ff x1205, #37393dff x340, #39373fff x326, #6a6b71ff x121, #6f7077ff x113, #8c8f97ff x95, #161519ff x94, #1a1a1cff x91, #575760ff x79, #141415ff x72, #6e6e74ff x63, #72747bff x61, #121114ff x61, #0f0f11ff x60, #484753ff x53, #a3a4acff x48, … +25 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/df03246d-28dd-45b1-bc7a-da7b61a03fd3/: image.png, frames.png, animation.gif\nnext: edit df03246d-28dd-45b1-bc7a-da7b61a03fd3 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "ButtonPressed",
+    "source": "button_v2",
+    "job": "df6d69ef-9d1f-4404-b3db-cc2a2443e493",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          95,
+          47
+        ],
+        "colors": {
+          "#090909ff": "#070707ff",
+          "#0d0d0eff": "#0a0a0bff",
+          "#0f0e11ff": "#0c0b0dff",
+          "#111112ff": "#0d0d0eff",
+          "#131215ff": "#0f0e10ff",
+          "#161618ff": "#111113ff",
+          "#1a191dff": "#141417ff",
+          "#1e1d1fff": "#171718ff",
+          "#232327ff": "#1b1b1eff",
+          "#2f3034ff": "#252529ff",
+          "#302f35ff": "#252529ff",
+          "#303036ff": "#25252aff",
+          "#35353eff": "#292930ff",
+          "#3d3c46ff": "#302f37ff",
+          "#41404aff": "#33323aff",
+          "#433022ff": "#34251bff",
+          "#46464eff": "#37373dff",
+          "#4a4a51ff": "#3a3a3fff",
+          "#523f2aff": "#403121ff",
+          "#54545cff": "#424248ff",
+          "#5a5b60ff": "#46474bff",
+          "#5d5d62ff": "#49494cff",
+          "#5e5f65ff": "#494a4fff",
+          "#604c37ff": "#4b3b2bff",
+          "#60626dff": "#4b4c55ff",
+          "#616268ff": "#4c4c51ff",
+          "#6a6c73ff": "#53545aff",
+          "#735e48ff": "#5a4938ff",
+          "#777980ff": "#5d5e64ff",
+          "#836a4fff": "#66533eff",
+          "#83848bff": "#66676cff",
+          "#8a7159ff": "#6c5845ff",
+          "#8a8b92ff": "#6c6c72ff",
+          "#909298ff": "#707277ff",
+          "#957c5dff": "#746149ff",
+          "#9c9da3ff": "#7a7a7fff",
+          "#a78c65ff": "#826d4fff",
+          "#b39978ff": "#8c775eff",
+          "#c7ac83ff": "#9b8666ff",
+          "#cdbba8ff": "#a09283ff",
+          "#dbc5a2ff": "#ab9a7eff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: 2ec0a196-e1a5-4044-8617-c2de43237e65\ncanvas: 96x48, 1 frame(s)\n1. map_colors: 3216 px changed\nsheet rows: frames [1]\npalette (40): #25252aff x1205, #252529ff x666, #46474bff x121, #494a4fff x113, #5d5e64ff x95, #0f0e10ff x94, #111113ff x91, #3a3a3fff x79, #0d0d0eff x72, #49494cff x63, #4c4c51ff x61, #0c0b0dff x61, #0a0a0bff x60, #302f37ff x53, #6c6c72ff x48, #33323aff x42, … +24 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/2ec0a196-e1a5-4044-8617-c2de43237e65/: image.png, frames.png, animation.gif\nnext: edit 2ec0a196-e1a5-4044-8617-c2de43237e65 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "ButtonDisabled",
+    "source": "button_v2",
+    "job": "df6d69ef-9d1f-4404-b3db-cc2a2443e493",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          95,
+          47
+        ],
+        "colors": {
+          "#090909ff": "#050505ff",
+          "#0d0d0eff": "#070707ff",
+          "#0f0e11ff": "#080709ff",
+          "#111112ff": "#090909ff",
+          "#131215ff": "#0a090bff",
+          "#161618ff": "#0b0b0cff",
+          "#1a191dff": "#0e0d0fff",
+          "#1e1d1fff": "#100f10ff",
+          "#232327ff": "#121214ff",
+          "#2f3034ff": "#18191bff",
+          "#302f35ff": "#19181cff",
+          "#303036ff": "#19191cff",
+          "#35353eff": "#1c1c20ff",
+          "#3d3c46ff": "#201f24ff",
+          "#41404aff": "#222126ff",
+          "#433022ff": "#231912ff",
+          "#46464eff": "#242429ff",
+          "#4a4a51ff": "#26262aff",
+          "#523f2aff": "#2b2116ff",
+          "#54545cff": "#2c2c30ff",
+          "#5a5b60ff": "#2f2f32ff",
+          "#5d5d62ff": "#303033ff",
+          "#5e5f65ff": "#313135ff",
+          "#604c37ff": "#32281dff",
+          "#60626dff": "#323339ff",
+          "#616268ff": "#323336ff",
+          "#6a6c73ff": "#37383cff",
+          "#735e48ff": "#3c3125ff",
+          "#777980ff": "#3e3f43ff",
+          "#836a4fff": "#443729ff",
+          "#83848bff": "#444548ff",
+          "#8a7159ff": "#483b2eff",
+          "#8a8b92ff": "#48484cff",
+          "#909298ff": "#4b4c4fff",
+          "#957c5dff": "#4d4030ff",
+          "#9c9da3ff": "#515255ff",
+          "#a78c65ff": "#574935ff",
+          "#b39978ff": "#5d503eff",
+          "#c7ac83ff": "#675944ff",
+          "#cdbba8ff": "#6b6157ff",
+          "#dbc5a2ff": "#726654ff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: a9692661-2db3-41f8-80ed-10385c3d9647\ncanvas: 96x48, 1 frame(s)\n1. map_colors: 3216 px changed\nsheet rows: frames [1]\npalette (41): #19191cff x1205, #18191bff x340, #19181cff x326, #2f2f32ff x121, #313135ff x113, #3e3f43ff x95, #0a090bff x94, #0b0b0cff x91, #26262aff x79, #090909ff x72, #303033ff x63, #323336ff x61, #080709ff x61, #070707ff x60, #201f24ff x53, #48484cff x48, … +25 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/a9692661-2db3-41f8-80ed-10385c3d9647/: image.png, frames.png, animation.gif\nnext: edit a9692661-2db3-41f8-80ed-10385c3d9647 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SupplyHighlighted",
+    "source": "supply_tile_v2",
+    "job": "2c3ceff4-b8d9-4b11-98fa-6295954c4fc1",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          63,
+          63
+        ],
+        "colors": {
+          "#000000ff": "#000000ff",
+          "#060606ff": "#070707ff",
+          "#080808ff": "#090909ff",
+          "#463b39ff": "#534643ff",
+          "#4a3e3cff": "#574947ff",
+          "#564a47ff": "#655754ff",
+          "#5d524aff": "#6e6157ff",
+          "#62574eff": "#74675cff",
+          "#695d52ff": "#7c6e61ff",
+          "#6e6156ff": "#827265ff",
+          "#756659ff": "#8a7869ff",
+          "#7c6c5eff": "#927f6fff",
+          "#867566ff": "#9e8a78ff",
+          "#887768ff": "#a08c7bff",
+          "#8a7869ff": "#a38e7cff",
+          "#94806fff": "#af9783ff",
+          "#9e8877ff": "#baa08cff",
+          "#ac9481ff": "#cbaf98ff",
+          "#b29885ff": "#d2b39dff",
+          "#b79e8bff": "#d8baa4ff",
+          "#c0a896ff": "#e3c6b1ff",
+          "#e8d5c7ff": "#fffbebff",
+          "#edded2ff": "#fffff8ff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: 46d7f220-ef76-496a-9136-2f0535853647\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1153 px changed, 1200 matched\nsheet rows: frames [1]\npalette (23): #a08c7bff x402, #a38e7cff x321, #74675cff x73, #9e8a78ff x61, #534643ff x57, #090909ff x50, #000000ff x47, #d2b39dff x24, #070707ff x23, #d8baa4ff x22, #6e6157ff x20, #cbaf98ff x20, #574947ff x17, #baa08cff x11, #7c6e61ff x11, #655754ff x8, … +7 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/46d7f220-ef76-496a-9136-2f0535853647/: image.png, frames.png, animation.gif\nnext: edit 46d7f220-ef76-496a-9136-2f0535853647 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SupplyPressed",
+    "source": "supply_tile_v2",
+    "job": "2c3ceff4-b8d9-4b11-98fa-6295954c4fc1",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          63,
+          63
+        ],
+        "colors": {
+          "#000000ff": "#000000ff",
+          "#060606ff": "#050505ff",
+          "#080808ff": "#060606ff",
+          "#463b39ff": "#372e2cff",
+          "#4a3e3cff": "#3a302fff",
+          "#564a47ff": "#433a37ff",
+          "#5d524aff": "#49403aff",
+          "#62574eff": "#4c443dff",
+          "#695d52ff": "#524940ff",
+          "#6e6156ff": "#564c43ff",
+          "#756659ff": "#5b5045ff",
+          "#7c6c5eff": "#615449ff",
+          "#867566ff": "#695b50ff",
+          "#887768ff": "#6a5d51ff",
+          "#8a7869ff": "#6c5e52ff",
+          "#94806fff": "#736457ff",
+          "#9e8877ff": "#7b6a5dff",
+          "#ac9481ff": "#867365ff",
+          "#b29885ff": "#8b7768ff",
+          "#b79e8bff": "#8f7b6cff",
+          "#c0a896ff": "#968375ff",
+          "#e8d5c7ff": "#b5a69bff",
+          "#edded2ff": "#b9ada4ff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: d709555c-3903-4f3b-bda5-a4223271a807\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1153 px changed, 1200 matched\nsheet rows: frames [1]\npalette (23): #6a5d51ff x402, #6c5e52ff x321, #4c443dff x73, #695b50ff x61, #372e2cff x57, #060606ff x50, #000000ff x47, #8b7768ff x24, #050505ff x23, #8f7b6cff x22, #49403aff x20, #867365ff x20, #3a302fff x17, #7b6a5dff x11, #524940ff x11, #433a37ff x8, … +7 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/d709555c-3903-4f3b-bda5-a4223271a807/: image.png, frames.png, animation.gif\nnext: edit d709555c-3903-4f3b-bda5-a4223271a807 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SupplyDisabled",
+    "source": "supply_tile_v2",
+    "job": "2c3ceff4-b8d9-4b11-98fa-6295954c4fc1",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          63,
+          63
+        ],
+        "colors": {
+          "#000000ff": "#000000ff",
+          "#060606ff": "#030303ff",
+          "#080808ff": "#040404ff",
+          "#463b39ff": "#241f1eff",
+          "#4a3e3cff": "#26201fff",
+          "#564a47ff": "#2d2625ff",
+          "#5d524aff": "#302b26ff",
+          "#62574eff": "#332d29ff",
+          "#695d52ff": "#37302bff",
+          "#6e6156ff": "#39322dff",
+          "#756659ff": "#3d352eff",
+          "#7c6c5eff": "#403831ff",
+          "#867566ff": "#463d35ff",
+          "#887768ff": "#473e36ff",
+          "#8a7869ff": "#483e37ff",
+          "#94806fff": "#4d433aff",
+          "#9e8877ff": "#52473eff",
+          "#ac9481ff": "#594d43ff",
+          "#b29885ff": "#5d4f45ff",
+          "#b79e8bff": "#5f5248ff",
+          "#c0a896ff": "#64574eff",
+          "#e8d5c7ff": "#796f67ff",
+          "#edded2ff": "#7b736dff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: da030035-7ddb-48ec-a291-601f64928802\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1153 px changed, 1200 matched\nsheet rows: frames [1]\npalette (23): #473e36ff x402, #483e37ff x321, #332d29ff x73, #463d35ff x61, #241f1eff x57, #040404ff x50, #000000ff x47, #5d4f45ff x24, #030303ff x23, #5f5248ff x22, #302b26ff x20, #594d43ff x20, #26201fff x17, #52473eff x11, #37302bff x11, #2d2625ff x8, … +7 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/da030035-7ddb-48ec-a291-601f64928802/: image.png, frames.png, animation.gif\nnext: edit da030035-7ddb-48ec-a291-601f64928802 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SettingsHighlighted",
+    "source": "settings",
+    "job": "71e1c7df-a2ae-4e3b-a89d-352f4c1d76d8",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          47,
+          47
+        ],
+        "colors": {
+          "#00000aff": "#00000cff",
+          "#00000eff": "#000011ff",
+          "#000010ff": "#000013ff",
+          "#242639ff": "#2a2d43ff",
+          "#242a39ff": "#2a3243ff",
+          "#282f3dff": "#2f3748ff",
+          "#29313fff": "#303a4aff",
+          "#2d3543ff": "#353f4fff",
+          "#353c4aff": "#3f4757ff",
+          "#3b434fff": "#464f5dff",
+          "#3d4450ff": "#48505eff",
+          "#3f3e55ff": "#4a4964ff",
+          "#4d4b65ff": "#5b5877ff",
+          "#4e5860ff": "#5c6871ff",
+          "#54526dff": "#636181ff",
+          "#565570ff": "#656484ff",
+          "#585671ff": "#686585ff",
+          "#5f5e78ff": "#706f8eff",
+          "#707187ff": "#84859fff",
+          "#752d1eff": "#8a3523ff",
+          "#7a7888ff": "#908ea0ff",
+          "#7e7d8cff": "#9594a5ff",
+          "#808299ff": "#9799b5ff",
+          "#898ca2ff": "#a2a5bfff",
+          "#9497a6ff": "#afb2c4ff",
+          "#96969cff": "#b1b1b8ff",
+          "#975517ff": "#b2641bff",
+          "#9fa3aeff": "#bcc0cdff",
+          "#aaafb6ff": "#c9ced7ff",
+          "#afb4baff": "#ced4dbff",
+          "#b0b7bdff": "#d0d8dfff",
+          "#bb7612ff": "#dd8b15ff",
+          "#bcc3c7ff": "#dee6ebff",
+          "#c4cacdff": "#e7eef2ff",
+          "#c7cdd0ff": "#ebf2f5ff",
+          "#cbd2d3ff": "#f0f8f9ff",
+          "#d0d7d7ff": "#f5fefeff",
+          "#d8e2e0ff": "#ffffffff",
+          "#e1a64cff": "#ffc45aff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: dd6f08f6-c01a-4d26-85cc-496301d60aeb\ncanvas: 48x48, 1 frame(s)\n1. map_colors: 1432 px changed\nsheet rows: frames [1]\npalette (39): #000013ff x266, #656484ff x105, #464f5dff x98, #5c6871ff x98, #000011ff x80, #686585ff x79, #2f3748ff x76, #48505eff x68, #ced4dbff x52, #303a4aff x49, #afb2c4ff x43, #ffffffff x42, #d0d8dfff x39, #908ea0ff x37, #8a3523ff x32, #ebf2f5ff x28, … +23 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/dd6f08f6-c01a-4d26-85cc-496301d60aeb/: image.png, frames.png, animation.gif\nnext: edit dd6f08f6-c01a-4d26-85cc-496301d60aeb --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SettingsPressed",
+    "source": "settings",
+    "job": "71e1c7df-a2ae-4e3b-a89d-352f4c1d76d8",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          47,
+          47
+        ],
+        "colors": {
+          "#00000aff": "#000008ff",
+          "#00000eff": "#00000bff",
+          "#000010ff": "#00000cff",
+          "#242639ff": "#1c1e2cff",
+          "#242a39ff": "#1c212cff",
+          "#282f3dff": "#1f2530ff",
+          "#29313fff": "#202631ff",
+          "#2d3543ff": "#232934ff",
+          "#353c4aff": "#292f3aff",
+          "#3b434fff": "#2e343eff",
+          "#3d4450ff": "#30353eff",
+          "#3f3e55ff": "#313042ff",
+          "#4d4b65ff": "#3c3a4fff",
+          "#4e5860ff": "#3d454bff",
+          "#54526dff": "#424055ff",
+          "#565570ff": "#434257ff",
+          "#585671ff": "#454358ff",
+          "#5f5e78ff": "#4a495eff",
+          "#707187ff": "#575869ff",
+          "#752d1eff": "#5b2317ff",
+          "#7a7888ff": "#5f5e6aff",
+          "#7e7d8cff": "#62626dff",
+          "#808299ff": "#646577ff",
+          "#898ca2ff": "#6b6d7eff",
+          "#9497a6ff": "#737681ff",
+          "#96969cff": "#75757aff",
+          "#975517ff": "#764212ff",
+          "#9fa3aeff": "#7c7f88ff",
+          "#aaafb6ff": "#85888eff",
+          "#afb4baff": "#888c91ff",
+          "#b0b7bdff": "#898f93ff",
+          "#bb7612ff": "#925c0eff",
+          "#bcc3c7ff": "#93989bff",
+          "#c4cacdff": "#999ea0ff",
+          "#c7cdd0ff": "#9ba0a2ff",
+          "#cbd2d3ff": "#9ea4a5ff",
+          "#d0d7d7ff": "#a2a8a8ff",
+          "#d8e2e0ff": "#a8b0afff",
+          "#e1a64cff": "#b0813bff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: 4c5e4837-1d2a-442a-990b-9c91d6e0f781\ncanvas: 48x48, 1 frame(s)\n1. map_colors: 1432 px changed\nsheet rows: frames [1]\npalette (39): #00000cff x266, #434257ff x105, #2e343eff x98, #3d454bff x98, #00000bff x80, #454358ff x79, #1f2530ff x76, #30353eff x68, #888c91ff x52, #202631ff x49, #737681ff x43, #a8b0afff x42, #898f93ff x39, #5f5e6aff x37, #5b2317ff x32, #9ba0a2ff x28, … +23 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/4c5e4837-1d2a-442a-990b-9c91d6e0f781/: image.png, frames.png, animation.gif\nnext: edit 4c5e4837-1d2a-442a-990b-9c91d6e0f781 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "SettingsDisabled",
+    "source": "settings",
+    "job": "71e1c7df-a2ae-4e3b-a89d-352f4c1d76d8",
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          47,
+          47
+        ],
+        "colors": {
+          "#00000aff": "#000005ff",
+          "#00000eff": "#000007ff",
+          "#000010ff": "#000008ff",
+          "#242639ff": "#13141eff",
+          "#242a39ff": "#13161eff",
+          "#282f3dff": "#151820ff",
+          "#29313fff": "#151921ff",
+          "#2d3543ff": "#171c23ff",
+          "#353c4aff": "#1c1f26ff",
+          "#3b434fff": "#1f2329ff",
+          "#3d4450ff": "#20232aff",
+          "#3f3e55ff": "#21202cff",
+          "#4d4b65ff": "#282735ff",
+          "#4e5860ff": "#292e32ff",
+          "#54526dff": "#2c2b39ff",
+          "#565570ff": "#2d2c3aff",
+          "#585671ff": "#2e2d3bff",
+          "#5f5e78ff": "#31313eff",
+          "#707187ff": "#3a3b46ff",
+          "#752d1eff": "#3d1710ff",
+          "#7a7888ff": "#3f3e47ff",
+          "#7e7d8cff": "#424149ff",
+          "#808299ff": "#434450ff",
+          "#898ca2ff": "#474954ff",
+          "#9497a6ff": "#4d4f56ff",
+          "#96969cff": "#4e4e51ff",
+          "#975517ff": "#4f2c0cff",
+          "#9fa3aeff": "#53555aff",
+          "#aaafb6ff": "#585b5fff",
+          "#afb4baff": "#5b5e61ff",
+          "#b0b7bdff": "#5c5f62ff",
+          "#bb7612ff": "#613d09ff",
+          "#bcc3c7ff": "#626567ff",
+          "#c4cacdff": "#66696bff",
+          "#c7cdd0ff": "#676b6cff",
+          "#cbd2d3ff": "#6a6d6eff",
+          "#d0d7d7ff": "#6c7070ff",
+          "#d8e2e0ff": "#707674ff",
+          "#e1a64cff": "#755628ff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: 429cb0ed-1418-4598-85a2-06a5f4c267e1\ncanvas: 48x48, 1 frame(s)\n1. map_colors: 1432 px changed\nsheet rows: frames [1]\npalette (39): #000008ff x266, #2d2c3aff x105, #1f2329ff x98, #292e32ff x98, #000007ff x80, #2e2d3bff x79, #151820ff x76, #20232aff x68, #5b5e61ff x52, #151921ff x49, #4d4f56ff x43, #707674ff x42, #5c5f62ff x39, #3f3e47ff x37, #3d1710ff x32, #676b6cff x28, … +23 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/429cb0ed-1418-4598-85a2-06a5f4c267e1/: image.png, frames.png, animation.gif\nnext: edit 429cb0ed-1418-4598-85a2-06a5f4c267e1 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "BackdropDim",
+    "source": "general_backing",
+    "job": null,
+    "changes": [
+      {
+        "operation": "map_colors",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "region": [
+          0,
+          0,
+          127,
+          127
+        ],
+        "colors": {
+          "#000000ff": "#000000ff",
+          "#060504ff": "#030202ff",
+          "#0a0a09ff": "#050504ff",
+          "#0e0e0eff": "#070707ff",
+          "#121211ff": "#090908ff",
+          "#141514ff": "#0a0a0aff",
+          "#191a18ff": "#0c0d0cff",
+          "#1d1e1bff": "#0e0f0eff",
+          "#1f201dff": "#10100eff",
+          "#21221eff": "#10110fff",
+          "#222321ff": "#111210ff",
+          "#232421ff": "#121210ff",
+          "#252622ff": "#121311ff",
+          "#271008ff": "#140804ff",
+          "#272824ff": "#141412ff",
+          "#292a26ff": "#141513ff",
+          "#2a2c28ff": "#151614ff",
+          "#2d2f2aff": "#161815ff",
+          "#30322dff": "#181916ff",
+          "#32342fff": "#191a18ff",
+          "#353631ff": "#1a1b18ff",
+          "#373933ff": "#1c1c1aff",
+          "#393b35ff": "#1c1e1aff",
+          "#3a3d37ff": "#1d1e1cff",
+          "#3b1b10ff": "#1e0e08ff",
+          "#3d3e39ff": "#1e1f1cff",
+          "#3f413bff": "#20201eff",
+          "#41423cff": "#20211eff",
+          "#42453eff": "#21221fff",
+          "#454640ff": "#222320ff",
+          "#474942ff": "#242421ff",
+          "#4b4d46ff": "#262623ff",
+          "#4e5049ff": "#272824ff",
+          "#51524bff": "#282926ff",
+          "#53544dff": "#2a2a26ff",
+          "#552818ff": "#2a140cff",
+          "#55564eff": "#2a2b27ff",
+          "#565950ff": "#2b2c28ff",
+          "#595b52ff": "#2c2e29ff",
+          "#5c5e55ff": "#2e2f2aff",
+          "#606159ff": "#30302cff",
+          "#63655bff": "#32322eff",
+          "#65675eff": "#32342fff",
+          "#696a61ff": "#343530ff",
+          "#6b331dff": "#361a0eff",
+          "#6b6d63ff": "#363632ff",
+          "#6d6e65ff": "#363732ff",
+          "#6f7167ff": "#383834ff",
+          "#717369ff": "#383a34ff",
+          "#75776dff": "#3a3c36ff",
+          "#7c7e75ff": "#3e3f3aff",
+          "#814222ff": "#402111ff",
+          "#878981ff": "#444440ff",
+          "#91928bff": "#484946ff"
+        },
+        "reason": "Readable gameplay UI state; exact geometry and alpha preserved"
+      }
+    ],
+    "result": [
+      {
+        "type": "text",
+        "text": "image_id: b221a86b-a423-49f8-a773-6ae49d23b440\ncanvas: 128x128, 1 frame(s)\n1. map_colors: 13521 px changed, 16384 matched\nsheet rows: frames [1]\npalette (54): #000000ff x2863, #090908ff x831, #10100eff x620, #121210ff x484, #343530ff x439, #21221fff x428, #111210ff x400, #1c1e1aff x397, #191a18ff x363, #20201eff x354, #20211eff x335, #161815ff x327, #383834ff x326, #10110fff x324, #181916ff x316, #2a2b27ff x313, … +38 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/b221a86b-a423-49f8-a773-6ae49d23b440/: image.png, frames.png, animation.gif\nnext: edit b221a86b-a423-49f8-a773-6ae49d23b440 --changes […]"
+      }
+    ]
+  }
+]

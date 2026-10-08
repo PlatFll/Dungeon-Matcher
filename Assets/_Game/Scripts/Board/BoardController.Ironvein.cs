@@ -131,9 +131,16 @@ public partial class BoardController
 
     private Sprite MineStoneSprite(BarricadeCellState state)
     {
-        if (state.MineStone?.isCore == true && GameplayThemeSkin.Current?.mineCore != null)
-            return GameplayThemeSkin.Current.mineCore;
-        var art = GameplayThemeSkin.Current?.mineStoneStages;
+        var theme = GameplayThemeSkin.Current;
+        int damage = Mathf.Max(0, state.MaximumDurability - state.RemainingDurability);
+        Sprite Damaged(Sprite[] frames) => frames != null && damage > 0 && damage <= frames.Length ? frames[damage-1] : null;
+        if (state.MineStone?.isCore == true && theme?.mineCore != null)
+            return Damaged(theme.mineCoreDamaged) ?? theme.mineCore;
+        if (state.MineStone?.stage == MineStoneStage.Hardened && damage > 0 && theme?.mineHardenedDamaged != null)
+            return theme.mineHardenedDamaged;
+        if (state.MineStone?.stage == MineStoneStage.Obsidian && Damaged(theme?.mineObsidianDamaged) is Sprite broken)
+            return broken;
+        var art = theme?.mineStoneStages;
         int stage = (int)(state.MineStone?.stage ?? MineStoneStage.Brittle);
         return art != null && stage < art.Length && art[stage] != null ? art[stage] : GetBarricadeFallbackSprite();
     }

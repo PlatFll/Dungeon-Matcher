@@ -35,8 +35,12 @@ The newer rules in this status and the owning design/architecture documents supe
   powered timing and phase continuation have actual-scene tests; the current
   Ironvein regression passes 45 checks. A Core cleanup race is fixed by keeping
   the move gate held until the kit finishes its saved-state cleanup. Cave/UI
-  sources and temporary audio are in production. Live crystal eligibility remains off and the
-  scenery is still the explicitly temporary dungeon shell.
+  art, three modular cave compositions, industrial gameplay UI and original
+  temporary music/SFX are integrated for review. Four portrait/safe-inset
+  layouts and native bindings pass the 49-check affected regression. Drill
+  projectiles show their actual endpoints, damaged stones retain their material,
+  and fuses/imminent hardening are visible. Live crystal eligibility remains
+  off pending Phase 10 encounters. Visual, music and device approval remain open.
   See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).

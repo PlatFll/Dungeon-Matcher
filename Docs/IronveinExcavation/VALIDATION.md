@@ -166,3 +166,32 @@ approval of the whole region. Art/music review and device testing remain pending
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6659517b-4fc5-48f2-b5a9-46b0b9a00fc5.log`.
 - All four starting user-file SHA256 hashes still match. Native motion and scene
   tests do not establish user visual approval, final cave composition or device QA.
+
+## Phase 09 — cave, gameplay UI, mechanisms and temporary audio
+
+- Required `Tools/Validate-Unity.ps1`: **PASS**, exit 0, Unity 6000.3.19f1:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-703ea8ca-c5a3-495a-89df-ebf7c37531a5.log`.
+  The first sandbox attempt could not connect to licensing and was stopped;
+  this successful run used the local licensing client. All user-file hashes match.
+
+- Final affected regression: **49 passed / 0 failed / 0 skipped**, graphics
+  enabled and Editor audio muted. Evidence:
+  `.utmp/ForestValidation/77602c94-cdc0-4333-bdfd-34e9df2ec316.xml/.log`.
+- Actual captures at 720×1280, 1080×1920, 1080×2400 and safe insets are in
+  `.utmp/Ironvein/Captures/phase09-*.png`; screen/material gallery is
+  `.utmp/Ironvein/ScreenReview/Review.html`. Reviewed grounded actors, full
+  drill housing bounds, native frame dimensions, stone damage and counter space.
+- Initial failures identified incorrect native border/plaque sizes and one
+  clipped housing at 720px. Corrected source slices and board padding. The
+  capture now waits for the actual reveal shader to settle before pausing.
+- Projectile tests verify first-stone stop, one durability damage, frozen
+  paused presentation, cleanup and correct gameplay with optional VFX disabled.
+- All production sound bindings and the 120-second temporary cue pass import
+  checks. Music has not received human listening approval; testing was muted.
+- Three unrelated pre-existing broad CombatAudio test failures reproduced:
+  EnemyGainAndHeal and the two Poison parameter cases; baseline evidence is
+  `Docs/Validation/ForestPhase5_6/baseline-lifecycle.xml`. The final affected
+  run includes the relevant production-cue validation, not these stale cases.
+- Quoted PixelLab usage: 295.2/300 initial, 185 requests; 100-generation reserve
+  untouched. No pending generation jobs or purchases. All art remains candidate
+  production for review; this record does not establish user approval.

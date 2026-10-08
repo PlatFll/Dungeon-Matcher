@@ -1,0 +1,86 @@
+[
+  {
+    "name": "WavePlaque",
+    "recipe": {
+      "job": {
+        "canvas": [
+          128,
+          48
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false,
+        "body_palette_exact": true
+      },
+      "scene": {
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - original native plaque pixels"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "top": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      0,
+                      127,
+                      15
+                    ]
+                  }
+                ]
+              },
+              "bottom": {
+                "layer": "art",
+                "at": [
+                  0,
+                  -16
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      32,
+                      127,
+                      47
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 2bf13cb6-79da-44bc-aaea-171e67e034a8\ncanvas 128x48, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - original native plaque pixels\nnodes (front): bottom, top\nnote: view front: no tracks or poses — every frame is the rest pose\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/2bf13cb6-79da-44bc-aaea-171e67e034a8/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 2bf13cb6-79da-44bc-aaea-171e67e034a8 --changes […]"
+      }
+    ]
+  }
+]

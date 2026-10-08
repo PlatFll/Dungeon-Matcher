@@ -1,0 +1,23 @@
+[
+  {
+    "name": "cave_depth",
+    "phase": 9,
+    "request": {
+      "name": "Ironvein receding mine tunnel",
+      "description": "A deep dark dwarven excavation tunnel environment BACKDROP, entirely fills a 256 by 256 native pixel canvas. Huge irregular natural charcoal and navy cavern arch, many receding dark rock arches into a tiny distant black passage. Thin railway tracks recede into depth toward the upper-middle vanishing point, warm amber ore seams and two SMALL oil lanterns at the margins only. Massive old dark timber support pillars on LEFT and RIGHT, crossbeam high above the opening. Broad quiet shapes, understated contrast, dark upper background. Lower quarter is quiet dusty dark floor where game characters will stand, no people. This is an atmospheric recessed mine with spatial depth, NOT repeating cobblestone or a front-facing masonry door. Crisp low resolution pixel art matching Dungeon Matcher's chunky fantasy sprites: connected pixel clusters, 3-tone surfaces, cool shadow shapes, no blur, no smooth gradients, no dithering, no text, no border, no UI, no characters, no gems. Full opaque environment artwork.",
+      "width": 256,
+      "height": 256,
+      "n_directions": 1,
+      "view": "side",
+      "seed": 410091
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"fd08ed14-ab37-4fb0-bbb4-584784e3d7dd\",\n  \"object_id\": \"07be6f27-bb54-4808-83d8-e4e0b45c224e\",\n  \"status\": \"processing\",\n  \"first_direction_generated\": true,\n  \"estimated_generations\": 9,\n  \"job_id\": \"fd08ed14-ab37-4fb0-bbb4-584784e3d7dd\",\n  \"n_directions\": 1,\n  \"poll_tool\": \"get_object\",\n  \"status_path\": \"/v2/background-jobs/fd08ed14-ab37-4fb0-bbb4-584784e3d7dd\",\n  \"download_path\": \"/mcp/objects/07be6f27-bb54-4808-83d8-e4e0b45c224e/download\"\n}\nid: 07be6f27-bb54-4808-83d8-e4e0b45c224e\nPoll get_object(object_id=\"07be6f27-bb54-4808-83d8-e4e0b45c224e\") or /v2/background-jobs/fd08ed14-ab37-4fb0-bbb4-584784e3d7dd; wait for the outer job to complete before downloading or animating. First-direction generation is included; actual image and rotation usage is reported in billing_stages."
+        }
+      ]
+    }
+  }
+]

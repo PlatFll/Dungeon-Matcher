@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e5713295b824488ff6709a525d707, type: 3}
   m_Name: IronveinTheme
   m_EditorClassIdentifier: Assembly-CSharp::GameplayThemeDefinition
-  minimumBattleHeight: 384
-  generalBackground: {fileID: 0}
-  panelBackground: {fileID: 0}
-  boardCells: []
-  battleEnvironment: {fileID: 1000, guid: 26486561e7ecce7428095e772a731084, type: 3}
-  battleEnvironmentVariants: []
-  frameCorner: {fileID: 0}
-  frameEdge: {fileID: 0}
-  wavePlaque: {fileID: 0}
-  buttonNormal: {fileID: 0}
-  buttonHighlighted: {fileID: 0}
-  buttonPressed: {fileID: 0}
-  buttonDisabled: {fileID: 0}
-  settingsNormal: {fileID: 0}
-  settingsHighlighted: {fileID: 0}
-  settingsPressed: {fileID: 0}
-  settingsDisabled: {fileID: 0}
-  panelShell: {fileID: 0}
-  energyFrame: {fileID: 0}
+  minimumBattleHeight: 352
+  generalBackground: {fileID: 21300000, guid: 3095824156b4cfb479b03cedf0909fc2, type: 3}
+  panelBackground: {fileID: 21300000, guid: 291b12f5b156042468708ee58d7c118e, type: 3}
+  boardCells:
+  - {fileID: 21300000, guid: 4255889226db4294a88febddba57ba8d, type: 3}
+  battleEnvironment: {fileID: 2679716336134957942, guid: 419ee591235d9204fbd5c8c895e77152, type: 3}
+  battleEnvironmentVariants:
+  - {fileID: 2679716336134957942, guid: 419ee591235d9204fbd5c8c895e77152, type: 3}
+  - {fileID: 2543197584445353388, guid: 0a2bd82fc9e239f46935faa5b4b46403, type: 3}
+  - {fileID: 6763839938766018637, guid: 9e68417cba4557842aedd923fc162020, type: 3}
+  frameCorner: {fileID: 21300000, guid: 9859da0854092db4b95fb5843b92e8e4, type: 3}
+  frameEdge: {fileID: 21300000, guid: 292568c839e2e664aba4eb7a7d96d373, type: 3}
+  wavePlaque: {fileID: 21300000, guid: b66f3f7054697f249b23e6c0a77dd901, type: 3}
+  buttonNormal: {fileID: 21300000, guid: 349b165e4b74a6f40867f2d21c257c1e, type: 3}
+  buttonHighlighted: {fileID: 21300000, guid: 930f578c6f323e14384a14000347a15c, type: 3}
+  buttonPressed: {fileID: 21300000, guid: e106311eb47955a4f8028604770a4b80, type: 3}
+  buttonDisabled: {fileID: 21300000, guid: 9f780de3a1baa334d81b1ff3e2c63f4f, type: 3}
+  settingsNormal: {fileID: 21300000, guid: 78581cb35d5f3794a9d6d7fa8c3e9a1a, type: 3}
+  settingsHighlighted: {fileID: 21300000, guid: 81482b5ef9ba52a40b4955cfcb08ccd3, type: 3}
+  settingsPressed: {fileID: 21300000, guid: 3dd0e1172f5e3ed488963361f56f026d, type: 3}
+  settingsDisabled: {fileID: 21300000, guid: 3650876d3890bb74bb677fd4b42e5257, type: 3}
+  panelShell: {fileID: 21300000, guid: 0e021c297eb80ac488d664e36741053c, type: 3}
+  energyFrame: {fileID: 21300000, guid: ef7cdf3189b9f144d9d85607a5551069, type: 3}
   vineOverlay: {fileID: 0}
   anchorOverlay: {fileID: 0}
   vineWarning: {fileID: 0}
@@ -56,15 +60,68 @@ MonoBehaviour:
   pearlPop: {fileID: 0}
   waterMicroBubble: {fileID: 0}
   waterRippleFrames: []
-  mineStoneStages: []
-  mineCore: {fileID: 0}
-  boardPerimeterPadding: 0.55
-  horizontalMineDrill: {fileID: 0}
-  verticalMineDrill: {fileID: 0}
-  supplyNormal: {fileID: 0}
-  supplyHighlighted: {fileID: 0}
-  supplyPressed: {fileID: 0}
-  supplyDisabled: {fileID: 0}
+  mineStoneStages:
+  - {fileID: 21300000, guid: 5f22673cf184f3441aed137b127b5a95, type: 3}
+  - {fileID: 21300000, guid: fe89636ac84737b4ca58a98183f162c9, type: 3}
+  - {fileID: 21300000, guid: 6fa9811de11786d46b159d56b6838182, type: 3}
+  mineCore: {fileID: 21300000, guid: 5d22a0f787358584fad519895e8f9713, type: 3}
+  mineHardenedDamaged: {fileID: 21300000, guid: 899b3b2196077a24eb186086ae4f1acd, type: 3}
+  mineObsidianDamaged:
+  - {fileID: 21300000, guid: 2044bc960d5ad3d49bfb7c7d31cb21dd, type: 3}
+  - {fileID: 21300000, guid: 0993b12eb331f6a4bb98ac03fe121944, type: 3}
+  mineCoreDamaged:
+  - {fileID: 21300000, guid: da0c6b994588c3944ae6d731545ae286, type: 3}
+  - {fileID: 21300000, guid: ba2efbebff96cb8459dcaf4ec6c3d9ec, type: 3}
+  mineCharge: {fileID: 21300000, guid: c7912ffdd4269cc48a38ca57915f4744, type: 3}
+  mineSpark: {fileID: 21300000, guid: 19016ba2fa6deb645a651cb2aa533660, type: 3}
+  mineDrillFrames:
+  - {fileID: 21300000, guid: 6fb9bc8fbfa864748a087a3a1f9988a8, type: 3}
+  - {fileID: 21300000, guid: 03e9ac9187c418c4486602e120dc99f8, type: 3}
+  - {fileID: 21300000, guid: 6c18205ef8e31eb4eb1281b06f0fb2ad, type: 3}
+  - {fileID: 21300000, guid: b8007f151d57e5c4fb3f0547ec5bc5c2, type: 3}
+  - {fileID: 21300000, guid: a14a7e4e9c89e8b469ff7abee30b6c78, type: 3}
+  mineSmallDrillFrames:
+  - {fileID: 21300000, guid: b8a73091ff7411e4db8dbc17b75648ee, type: 3}
+  - {fileID: 21300000, guid: 256534b65ed55a146a54eec513772588, type: 3}
+  - {fileID: 21300000, guid: 7fe865fa329772043baff85236c40500, type: 3}
+  - {fileID: 21300000, guid: c81327338845b8949849452cd017b927, type: 3}
+  - {fileID: 21300000, guid: 32b1faaabeb14ca43bda338ec4bfc640, type: 3}
+  mineOreFrames:
+  - {fileID: 21300000, guid: 98e87b71c2eef1845968b09034c796d3, type: 3}
+  - {fileID: 21300000, guid: 012393fcec39a8a41b60e58aa509fe22, type: 3}
+  - {fileID: 21300000, guid: 25d8a3b4265843849b71b39b3916315c, type: 3}
+  - {fileID: 21300000, guid: a3aa72821e6724847b93e8db68cb2cae, type: 3}
+  - {fileID: 21300000, guid: ee0e55745b2853f42b3db39bb4ea9352, type: 3}
+  - {fileID: 21300000, guid: d9af4a761dd70cb4882195211c5808fe, type: 3}
+  - {fileID: 21300000, guid: 664f322e8b445214d8128ba44819d1de, type: 3}
+  mineFuseFrames:
+  - {fileID: 21300000, guid: 0ea95ffda79213049978938d76a36e17, type: 3}
+  - {fileID: 21300000, guid: 77c5df5131d3e7c41bfc9597cfea2efe, type: 3}
+  - {fileID: 21300000, guid: dc561613febdcfe459e9fd5f1df78bc0, type: 3}
+  - {fileID: 21300000, guid: 71d98cecc547a6641bb4554702369097, type: 3}
+  - {fileID: 21300000, guid: 1b9873ea48f7fda4598383189c998faf, type: 3}
+  mineCoreBreakFrames:
+  - {fileID: 21300000, guid: f883b968ffed8204bbbc1ea8ca80492a, type: 3}
+  - {fileID: 21300000, guid: 76a3b6a26c773f642be05beca7e8f63a, type: 3}
+  - {fileID: 21300000, guid: ad1607108b8a7894dbf3b4f64a21b843, type: 3}
+  - {fileID: 21300000, guid: 0074ce26b6b38634aa5a70ecc02bc143, type: 3}
+  - {fileID: 21300000, guid: 4805347c537bb6f4e8e153cac5c3459c, type: 3}
+  - {fileID: 21300000, guid: 3b8d5f80d593ee14b8753106c24c0ed2, type: 3}
+  - {fileID: 21300000, guid: 05c6d769cb9a49c4498e998f1c978ddd, type: 3}
+  - {fileID: 21300000, guid: ef4f56dd840e5aa4fab7ee0bac475dbd, type: 3}
+  - {fileID: 21300000, guid: fdcac356f6664694fa2c82ee32c70069, type: 3}
+  boardPerimeterPadding: 0.8
+  horizontalMineDrill: {fileID: 21300000, guid: e901139639a9cd54d85fd4b6d06f7eca, type: 3}
+  verticalMineDrill: {fileID: 21300000, guid: e901139639a9cd54d85fd4b6d06f7eca, type: 3}
+  supplyNormal: {fileID: 21300000, guid: 3ef51c701bec4c946be4e4c29f8c6e99, type: 3}
+  supplyHighlighted: {fileID: 21300000, guid: 5b26e62f38855654aaec507d3d7f1207, type: 3}
+  supplyPressed: {fileID: 21300000, guid: f5fa92f40fbc2734b8ecef1a102dbd44, type: 3}
+  supplyDisabled: {fileID: 21300000, guid: 0ee65c6491de00c4e96f0e44c9ef087f, type: 3}
   abilityIcons: []
-  playerFrame: {fileID: 0}
-  healthStyles: []
+  playerFrame: {fileID: 11400000, guid: dd72722e15f63e24d986d8e6e8ef94fe, type: 2}
+  healthStyles:
+  - {fileID: 11400000, guid: 7ff301d656472e3468bf76fc82eba3cd, type: 2}
+  - {fileID: 11400000, guid: dbd2bdaf15aab294d8027871c5e57d59, type: 2}
+  - {fileID: 11400000, guid: 96c8028dd3145674f8c39d2a113164c3, type: 2}
+  - {fileID: 11400000, guid: 1358ace7e0eee5e469c25bae5eab3985, type: 2}
+  - {fileID: 11400000, guid: 4a4a35b5fcf36ab4bad3fe255026965a, type: 2}

@@ -23,6 +23,10 @@ public sealed class GameplayThemeDefinition : ScriptableObject
     public Sprite[] waterRippleFrames;
     public Sprite[] mineStoneStages;
     public Sprite mineCore;
+    public Sprite mineHardenedDamaged;
+    public Sprite[] mineObsidianDamaged, mineCoreDamaged;
+    public Sprite mineCharge, mineSpark;
+    public Sprite[] mineDrillFrames, mineSmallDrillFrames, mineOreFrames, mineFuseFrames, mineCoreBreakFrames;
     [Min(0)] public float boardPerimeterPadding;
     public Sprite horizontalMineDrill, verticalMineDrill;
     public Sprite supplyNormal,supplyHighlighted,supplyPressed,supplyDisabled;

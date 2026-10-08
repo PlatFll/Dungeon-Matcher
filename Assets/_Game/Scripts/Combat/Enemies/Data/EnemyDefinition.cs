@@ -10,6 +10,7 @@ public sealed class EnemyDefinition : ScriptableObject
     [Header("Ironvein ore network")]
     public bool oreWeaponEligible;
     public bool releasesOreOnDefeat;
+    public CombatSoundCue mineBasicSound = CombatSoundCue.MineHammer;
     [Min(1f)] public float oreAttackMultiplier = 1.3f;
     [Min(1)] public int mineWarningMoves = 2;
     [Min(0)] public int mineAbilityDamage = 20;

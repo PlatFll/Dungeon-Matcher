@@ -1,0 +1,574 @@
+[
+  {
+    "name": "FrameEdge",
+    "recipe": {
+      "job": {
+        "canvas": [
+          64,
+          16
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false
+      },
+      "scene": {
+        "palette": {
+          "ink": "#121316",
+          "shadow": "#23232b",
+          "steel": "#41424b",
+          "steelLight": "#636770",
+          "rim": "#8b6843",
+          "gold": "#c29858",
+          "bright": "#e4bf78"
+        },
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - iron railway frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "nodes": {
+              "frame": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      0,
+                      63,
+                      15
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      1,
+                      63,
+                      13
+                    ],
+                    "color": "shadow"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      2,
+                      63,
+                      3
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      4,
+                      63,
+                      11
+                    ],
+                    "color": "steel"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      4,
+                      63,
+                      5
+                    ],
+                    "color": "steelLight"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      0,
+                      12,
+                      63,
+                      12
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      6,
+                      6,
+                      10,
+                      10
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      6,
+                      9,
+                      8
+                    ],
+                    "color": "gold"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      6,
+                      8,
+                      6
+                    ],
+                    "color": "bright"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      53,
+                      6,
+                      57,
+                      10
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      54,
+                      6,
+                      56,
+                      8
+                    ],
+                    "color": "gold"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      54,
+                      6,
+                      55,
+                      6
+                    ],
+                    "color": "bright"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 6a0b03b8-d926-4ba0-b86e-b1eefaebd4a3\ncanvas 64x16, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - iron railway frame\nnodes (front): frame\nnote: view front: no tracks or poses — every frame is the rest pose\nnote: view front: no selections — the source is not cut into parts\nnote: view front: no source given — transparent canvas\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/6a0b03b8-d926-4ba0-b86e-b1eefaebd4a3/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 6a0b03b8-d926-4ba0-b86e-b1eefaebd4a3 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "FrameCorner",
+    "recipe": {
+      "job": {
+        "canvas": [
+          80,
+          80
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false
+      },
+      "scene": {
+        "palette": {
+          "ink": "#121316",
+          "shadow": "#23232b",
+          "steel": "#41424b",
+          "steelLight": "#636770",
+          "rim": "#8b6843",
+          "gold": "#c29858",
+          "bright": "#e4bf78"
+        },
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - iron railway frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "nodes": {
+              "frame": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "polygon",
+                    "points": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        79,
+                        0
+                      ],
+                      [
+                        79,
+                        15
+                      ],
+                      [
+                        15,
+                        15
+                      ],
+                      [
+                        15,
+                        79
+                      ],
+                      [
+                        0,
+                        79
+                      ]
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      1,
+                      1,
+                      79,
+                      13
+                    ],
+                    "color": "shadow"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      1,
+                      1,
+                      13,
+                      79
+                    ],
+                    "color": "shadow"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      2,
+                      2,
+                      79,
+                      3
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      2,
+                      2,
+                      3,
+                      79
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      4,
+                      79,
+                      11
+                    ],
+                    "color": "steel"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      4,
+                      11,
+                      79
+                    ],
+                    "color": "steel"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      4,
+                      79,
+                      5
+                    ],
+                    "color": "steelLight"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      4,
+                      4,
+                      5,
+                      79
+                    ],
+                    "color": "steelLight"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      12,
+                      12,
+                      79,
+                      12
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      12,
+                      12,
+                      12,
+                      79
+                    ],
+                    "color": "rim"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      6,
+                      6,
+                      10,
+                      10
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      6,
+                      9,
+                      8
+                    ],
+                    "color": "gold"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      6,
+                      8,
+                      6
+                    ],
+                    "color": "bright"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      69,
+                      6,
+                      73,
+                      10
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      70,
+                      6,
+                      72,
+                      8
+                    ],
+                    "color": "gold"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      70,
+                      6,
+                      71,
+                      6
+                    ],
+                    "color": "bright"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      6,
+                      69,
+                      10,
+                      73
+                    ],
+                    "color": "ink"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      69,
+                      9,
+                      71
+                    ],
+                    "color": "gold"
+                  },
+                  {
+                    "op": "rect",
+                    "box": [
+                      7,
+                      69,
+                      8,
+                      69
+                    ],
+                    "color": "bright"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 847922b5-f1f6-48fd-aa59-962fb59eca71\ncanvas 80x80, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - iron railway frame\nnodes (front): frame\nnote: view front: no tracks or poses — every frame is the rest pose\nnote: view front: no selections — the source is not cut into parts\nnote: view front: no source given — transparent canvas\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/847922b5-f1f6-48fd-aa59-962fb59eca71/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 847922b5-f1f6-48fd-aa59-962fb59eca71 --changes […]"
+      }
+    ]
+  },
+  {
+    "name": "EnergyFrame",
+    "recipe": {
+      "job": {
+        "canvas": [
+          144,
+          32
+        ],
+        "frame_count": 1,
+        "views": [
+          {
+            "id": "front",
+            "offset": [
+              0,
+              0
+            ]
+          }
+        ],
+        "source_bookends_exact": false,
+        "body_palette_exact": true
+      },
+      "scene": {
+        "palette": {
+          "ink": "#121316",
+          "shadow": "#23232b",
+          "steel": "#41424b",
+          "steelLight": "#636770",
+          "rim": "#8b6843",
+          "gold": "#c29858",
+          "bright": "#e4bf78"
+        },
+        "layers": [
+          {
+            "id": "art",
+            "name": "Body - iron railway frame"
+          }
+        ],
+        "views": {
+          "front": {
+            "selections": {
+              "all": {}
+            },
+            "nodes": {
+              "left": {
+                "layer": "art",
+                "at": [
+                  0,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      0,
+                      0,
+                      63,
+                      31
+                    ]
+                  }
+                ]
+              },
+              "center": {
+                "layer": "art",
+                "at": [
+                  16,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      48,
+                      0,
+                      63,
+                      31
+                    ]
+                  }
+                ]
+              },
+              "right": {
+                "layer": "art",
+                "at": [
+                  16,
+                  0
+                ],
+                "draw": [
+                  {
+                    "op": "copy",
+                    "part": "all",
+                    "region": [
+                      64,
+                      0,
+                      127,
+                      31
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "drawing_id: 84d6585f-54b1-445d-9d05-952378765e4e\ncanvas 144x32, 1 frames, 100 ms, views: front\nstate: needs_visual_review\nlayers (front): Body - iron railway frame\nnodes (front): center, left, right\nnote: view front: no tracks or poses — every frame is the rest pose\nimages: assets/front/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/84d6585f-54b1-445d-9d05-952378765e4e/: assets/front/animation.gif, assets/front/full.png, assets/front/layers.npz, recipe.json\nnext: draw --drawing 84d6585f-54b1-445d-9d05-952378765e4e --changes […]"
+      }
+    ]
+  }
+]

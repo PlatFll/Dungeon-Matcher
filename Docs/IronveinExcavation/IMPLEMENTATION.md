@@ -4,9 +4,9 @@
 
 The additive `ironvein-excavation` definition is available through the temporary
 testing picker. `eligibleForTesting` is separate from live crystal eligibility:
-the unfinished destination cannot be selected by a live crystal. Its current
-existing shell artwork and dungeon scenery are development placeholders;
-the native roster and cave are later phases, not approved mine art.
+the unfinished destination cannot be selected by a live crystal. The original
+foundation used labelled shell artwork. Phases 08–09 replace that shell with
+native roster and cave candidates for review; live encounter readiness is Phase 10.
 
 BoardController owns mine material history and uses the existing barricade
 dictionary for occupancy/durability. `MineStoneState` stores stable stone/source
@@ -31,9 +31,9 @@ gem restoration through the existing arrival path. The live source remains intac
 if the destination write fails. Actor source IDs are independent of photograph
 instance keys and continuation slot keys.
 
-Current presentation is a labelled fallback: different solid stage colors, using
-the existing materialization/hit feedback. Native shapes, durability/aging display,
-drill hardware and full cave art remain pending production.
+The initial presentation used labelled solid-color fallbacks. Phase 09 adds
+distinct native materials/damage art, imminent-hardening sparks, fuse overlays
+and drill hardware while retaining the existing materialization/hit feedback.
 
 ## Phase 03 — fixed drills
 
@@ -211,3 +211,28 @@ The move coordinator waits for a mine kit's pending coroutine as well as its
 actor/board action. The board can finish its animation before the kit resumes on
 the next frame to clear its saved warning and basic hold. Keeping this brief
 cleanup inside the accepted action prevents a false stable-save window.
+
+## Phase 09 — native cave and presentation
+
+Three additive battle compositions use a receding rail tunnel, separate timber,
+ore, rail/cart, lamps and machinery modules. The existing unit Grid, Tilemap
+roles, viewport mask and battle-floor anchor remain authoritative. A subdued
+charcoal surround and a separate steel inset theme the gameplay screen. Native
+80-pixel L corners, 64x16 edge strips, 128x32 plaque, 144x32 energy frame and
+146-pixel player slices match the existing layout. The original player, skills,
+gems, neutral HP family, ranks and opened settings/menu assets remain bound.
+The theme reserves .8 world units outside its frame for the two drill housings.
+
+Small drill presentation receives the board's actual stop cell; it cannot choose
+or change collision. Fixed drills show a full-lane travelling head/shaft and
+retraction, alongside their native spinning housing and four charge pips. Amber
+intake brackets identify their first charging cell. Damaged Hardened/Obsidian
+and Core art retains each material. Imminent maturation, fuse and Core break
+effects observe board state. Pausing freezes animation time, disabling the view
+cleans its transient objects, and missing art never blocks a board operation.
+
+Actor presentation observes ore grant, actual basic contact and boss phase
+events. All sounds use the existing bounded six-voice mixer, pause/restore
+suppression and independent SFX setting. The original temporary 120-second cue
+uses the current zone music owner. Source score, signal checks and all PixelLab
+receipts are retained. Human art/listening approval remains pending.

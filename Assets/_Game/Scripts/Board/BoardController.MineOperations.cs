@@ -16,6 +16,10 @@ public readonly struct MineStoneTarget
 
 public partial class BoardController
 {
+    // Presentation receipt: the actual first blocking cell, or the board edge.
+    // Listeners cannot change occupancy, damage, rewards or resolution timing.
+    public event Action<bool,int,int,bool> SmallMineDrillPresented;
+    public event Action<Vector2Int> MineChargeDetonated;
     public IEnumerable<MineStoneTarget> MineStoneTargets() => barricadeCells
         .Where(p => IsMineStone(p.Value) && p.Value.MineStone != null)
         .OrderBy(p => p.Value.MineStone.id)
@@ -77,6 +81,7 @@ public partial class BoardController
                 stone.bombOwnerId = request.OwnerActor.PersistentId; break;
             case MineStoneOperation.DetonateCharge:
                 if (stone.bombOwnerId != request.OwnerActor.PersistentId) yield break;
+                MineChargeDetonated?.Invoke(cell);
                 stone.bombOwnerId = 0; DamageMineStoneExact(cell, 2);
                 // The actor's one damage packet is emitted by the successful callback.
                 bool prior = resolvingUnrewardedEnvironment; resolvingUnrewardedEnvironment = true;
@@ -130,17 +135,19 @@ public partial class BoardController
         try
         {
             int length = request.MineHorizontal ? width : height;
+            int endpoint = length;
             for (int step = 0; step < length; step++)
             {
                 var cell = request.MineHorizontal ? new Vector2Int(step, request.MineLane) : new Vector2Int(request.MineLane, step);
                 if (barricadeCells.TryGetValue(cell, out var barrier))
                 {
                     if (IsMineStone(barrier)) DamageMineStoneExact(cell, 1);
-                    stopped = true; break; // Even a just-broken first stone ends the projectile.
+                    endpoint = step; stopped = true; break; // Even a just-broken first stone ends the projectile.
                 }
                 var gem = GetGem(cell.x, cell.y);
                 if (gem != null && gem.SpecialType == GemSpecialType.None) cleared.Add(gem);
             }
+            SmallMineDrillPresented?.Invoke(request.MineHorizontal,request.MineLane,endpoint,stopped);
             ExecuteMineDrillPower(new BoardMutationRequest { MineDrillId = request.MineHorizontal ? 1 : 2, MinePower = 1 });
             if (cleared.Count > 0) yield return ClearMatches(cleared, null);
             yield return ResolveEnvironmentalBoardChange();

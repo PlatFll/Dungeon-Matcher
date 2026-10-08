@@ -4,7 +4,9 @@ public enum CombatSoundCue
 {
     GemMatch, GemLand, Explosion, PoisonBurst, Healing, ShieldGain, ShieldHit,
     PlayerHit, EnemyHit, PoisonTick, BardleyAbility, RattlebonesAbility, EnemyAbility,
-    AirPickup, CofferBreak, AirWarning
+    AirPickup, CofferBreak, AirWarning,
+    MineRail, MineSmallDrill, MineLargeDrill, MineStoneHarden, MineStoneBreak,
+    MineFuse, MineBlast, MineOre, MineRivet, MineHammer, MinePiston, MineMechBreak
 }
 
 /// <summary>Small, fixed mix policy. All clips have the same authored peak ceiling.</summary>
