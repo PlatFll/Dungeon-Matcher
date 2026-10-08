@@ -183,25 +183,26 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                     yield return WaitForActions();
                 }
             }
-            foreach (var actor in acceptedActors)
-            {
-                if (!Living(actor)) continue;
-                actor.GetComponent<EnemyStagger>()?.ExpireAcceptedMove(Tick);
-                actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
-            }
-            run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
+            if (!Unified) ExpireActorEffects();
+            if (!Unified) run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             if (!run.Player.IsDefeated) yield return run.Board.DrainMineDrills();
             // Drill-counterable warnings stay live through the final response
             // move's actual environmental firing, then release under this hold.
             foreach (var actor in acceptedActors)
             {
-                if (!Living(actor) || run.Player.IsDefeated) continue;
+                if (!Living(actor)) continue;
+                if (run.Player.IsDefeated) continue;
                 var mineAbility = actor.GetComponent<MineEnemyAbility>();
                 if (mineAbility == null) continue;
                 ActingEnemy = actor;
                 mineAbility.ResolveAfterMineDrills();
                 yield return WaitForActions();
                 ActingEnemy = null;
+            }
+            if (Unified)
+            {
+                ExpireActorEffects();
+                run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             }
             run.AdvanceSupplyCooldowns();
             run.Board.FinishAquaticMove(Tick);
@@ -236,6 +237,16 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     }
 
     private static bool Living(EnemyActor actor) => actor != null && actor.IsInitialized && !actor.IsDefeated;
+    private void ExpireActorEffects()
+    {
+        foreach (var actor in acceptedActors)
+        {
+            if (!Living(actor)) continue;
+            actor.GetComponent<EnemyStagger>()?.ExpireAcceptedMove(Tick);
+            actor.GetComponent<TownMarshalEnemyAbility>()?.ExpireAcceptedMove(Tick);
+            if (Unified) actor.GetComponent<AquaticEnemyAbility>()?.ExpireAcceptedMove(Tick);
+        }
+    }
     private static bool BlocksBasic(EnemyActor actor) =>
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||

@@ -87,7 +87,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     }
     private void RefreshMoveSpeed(int previousInterval)
     {
-        if (CombatMoveClock.Unified && isRunning && unifiedRemaining > 0 && EffectiveMoveInterval < previousInterval)
+        if (CombatMoveClock.Unified && RunSession.Current?.Continuation?.IsRestoring != true &&
+            isRunning && unifiedRemaining > 0 && EffectiveMoveInterval < previousInterval)
             unifiedRemaining = Mathf.Max(1, unifiedRemaining - (previousInterval - EffectiveMoveInterval));
     }
     private bool resumeCooldown;

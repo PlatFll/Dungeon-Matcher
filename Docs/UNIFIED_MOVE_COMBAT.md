@@ -101,6 +101,33 @@ Global priority and broader gameplay evidence are still pending. No pacing claim
 has been made. Existing HP/damage curves, encounter counts, shields and drill
 clear semantics are preserved until an explicit, evidenced balance decision.
 
+The next focused run passed 17/17 (`95bf901f-cc4f-4cd8-95be-bad7a16a9245.xml`):
+natural/forced Stagger, birth protection, two future moves, immunity, no idle
+decay, per-action decay deduplication, Decree Continue and existing player-status
+unit coverage. A separate 3/3 run (`4e47c43d-0172-41df-8637-c9ddeb80fbdb.xml`)
+proved higher-rank specials before all basics, same-actor special plus basic,
+no summon birth tick and the old forest timing fixture. The latest 3/3 run
+(`52c576fc-67e5-42a8-9a1f-4a9285a03c87.xml`) added Conch move expiry/save coverage.
+These are scoped automated checks, not final integration or human pacing evidence.
+
+New-profile Stagger thresholds are Normal/Special/Miniboss/Boss = 30/35/30/25%
+of current maximum HP. An off-color move removes 10/7.5/5/3 damage-equivalent
+buildup, respectively. The shared enemy prefab serializes these provisional
+values, two full future Stagger moves and two post-expiry immunity moves. This
+reduces the old 90%-HP boss threshold without changing HP or damage. A qualifying
+hit anywhere in the complete action prevents that action's decay. Forced Stagger
+respects immunity and uses the same two-move duration. Existing feedback-producing
+damage eligibility (including Royal Decree) is retained; periodic poison does not
+build Stagger. Rattled affects new buildup only.
+
+Royal Decree is five future complete moves. Longer Reign adds one move per stack
+through the new typed `RoyalDecreeMoves` channel; its separate legacy seconds
+modifier remains for old saves. New-profile Decree retains production cascade
+damage scaling rather than inheriting the earlier forest prototype's flat 5 rule.
+Conch rally uses three future moves and remains a damage buff. Marshal retreat
+now expires on accepted moves even when the Marshal is staggered. Source-owned
+Marshal/banner haste cannot erase another source when one expires.
+
 ## Art allowance
 
 Approved: 60 subscription generations total, 30 initial and 30 corrections.

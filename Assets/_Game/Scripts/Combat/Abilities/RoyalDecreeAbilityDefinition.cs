@@ -14,6 +14,8 @@ public sealed class RoyalDecreeAbilityDefinition :
 
     [SerializeField, Min(0.1f)]
     private float duration = 7f;
+    [SerializeField, Min(1)] private int unifiedDurationMoves = 5;
+    public int UnifiedDurationMoves => Mathf.Max(1, unifiedDurationMoves);
 
     [Header("Per-Gem Damage")]
     [SerializeField, Min(0)]

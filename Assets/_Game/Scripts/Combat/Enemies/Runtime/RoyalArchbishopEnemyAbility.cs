@@ -13,6 +13,7 @@ public sealed class RoyalArchbishopEnemyAbility : MonoBehaviour, IEnemySpecialAb
     private readonly List<EnemyAutoAttack> blessed = new List<EnemyAutoAttack>();
     private bool released = true, pending, preferRunes = true;
     private int retryAfterMove = -1;
+    public bool Blesses(EnemyActor target) => target != null && target.GetComponent<EnemyAutoAttack>()?.HasNextSequenceModifier(this) == true;
     public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
     {
         saved.preferPrimary=preferRunes; saved.retryAfterMove=retryAfterMove;

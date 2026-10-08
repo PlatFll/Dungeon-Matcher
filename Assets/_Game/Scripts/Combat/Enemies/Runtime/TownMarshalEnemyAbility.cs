@@ -29,6 +29,7 @@ public sealed class TownMarshalEnemyAbility :
 
     private EnemyActor currentProtector;
     private int retreatMovesRemaining;
+    private int retreatAppliedMove;
 
     private Coroutine readyAbilityCoroutine;
     private Coroutine rallyCoroutine;
@@ -36,13 +37,23 @@ public sealed class TownMarshalEnemyAbility :
     private bool isRallyActive;
     private float rallyEndsAt;
     private int rallyMoveExpiresAt;
+    public int RetreatRemaining => currentProtector != null && !currentProtector.IsDefeated ? retreatMovesRemaining : 0;
+    public int RallyRemaining => !isRallyActive ? 0 : CombatMoveClock.MoveEffects
+        ? Mathf.Max(0, rallyMoveExpiresAt - CombatMoveClock.EffectAction) : Mathf.CeilToInt(rallyEndsAt - Time.time);
+    public bool Rallies(EnemyActor target) => target != null && isRallyActive && ralliedAutoAttacks.Contains(target.GetComponent<EnemyAutoAttack>());
     public void ExpireAcceptedMove(int move)
     {
         if (CombatMoveClock.MoveEffects && isRallyActive && move >= rallyMoveExpiresAt) StopRally();
+        if (CombatMoveClock.Unified && retreatMovesRemaining > 0 && move > retreatAppliedMove)
+        {
+            retreatMovesRemaining--;
+            if (retreatMovesRemaining == 0) EndRetreat();
+        }
     }
     public void CaptureContinuation(EnemyCombatSnapshot saved, System.Func<EnemyActor,int> slotOf)
     {
         saved.cycle=(int)preferredAbility; saved.protector=slotOf(currentProtector); saved.retreatMoves=retreatMovesRemaining;
+        saved.retreatAppliedMove=retreatAppliedMove;
         saved.rallyRemaining=isRallyActive ? (CombatMoveClock.MoveEffects ? Mathf.Max(0,rallyMoveExpiresAt-CombatMoveClock.EffectAction) : Mathf.Max(0,rallyEndsAt-Time.time)) : 0;
         saved.rallyExpiryMove=rallyMoveExpiresAt;
         foreach(var attack in ralliedAutoAttacks) if(attack!=null) saved.rallyTargets.Add(slotOf(attack.EnemyActor));
@@ -54,6 +65,7 @@ public sealed class TownMarshalEnemyAbility :
         if(protector!=null && saved.retreatMoves>0 && enemyActor.SetDamageRedirectTarget(protector))
         {
             currentProtector=protector; retreatMovesRemaining=saved.retreatMoves;
+            retreatAppliedMove=saved.retreatAppliedMove;
             protector.Defeated+=HandleProtectorDefeated; ApplyRetreatVisual(true);
         }
         if(saved.rallyRemaining>0)
@@ -62,7 +74,9 @@ public sealed class TownMarshalEnemyAbility :
             foreach(int slot in saved.rallyTargets)
             {
                 var attack=enemyAt(slot)?.GetComponent<EnemyAutoAttack>(); if(attack==null) continue;
-                attack.SetRuntimeAttackSpeedMultiplier(multiplier); ralliedAutoAttacks.Add(attack);
+                if (CombatMoveClock.Unified) attack.SetNormalAttackModifiers(this, 1, multiplier);
+                else attack.SetRuntimeAttackSpeedMultiplier(multiplier);
+                ralliedAutoAttacks.Add(attack);
             }
             isRallyActive=true;
             if (CombatMoveClock.MoveEffects) rallyMoveExpiresAt=saved.rallyExpiryMove;
@@ -198,7 +212,7 @@ public sealed class TownMarshalEnemyAbility :
         int currentCount,
         int requiredCount)
     {
-        if (changedEnemy != enemyActor ||
+        if (CombatMoveClock.Unified || changedEnemy != enemyActor ||
             currentProtector == null ||
             retreatMovesRemaining <= 0 ||
             currentCount <= 0)
@@ -423,9 +437,8 @@ public sealed class TownMarshalEnemyAbility :
                 continue;
             }
 
-            autoAttack.SetRuntimeAttackSpeedMultiplier(
-                speedMultiplier
-            );
+            if (CombatMoveClock.Unified) autoAttack.SetNormalAttackModifiers(this, 1, speedMultiplier);
+            else autoAttack.SetRuntimeAttackSpeedMultiplier(speedMultiplier);
 
             ralliedAutoAttacks.Add(
                 autoAttack
@@ -585,6 +598,7 @@ public sealed class TownMarshalEnemyAbility :
 
         currentProtector = protector;
         retreatMovesRemaining = retreatMoves;
+        retreatAppliedMove = CombatMoveClock.EffectAction;
 
         currentProtector.Defeated -=
             HandleProtectorDefeated;
@@ -648,7 +662,7 @@ public sealed class TownMarshalEnemyAbility :
         float duration,
         float appliedMultiplier)
     {
-        if (CombatMoveClock.MoveEffects) { rallyMoveExpiresAt=CombatMoveClock.EffectAction+3; yield break; }
+        if (CombatMoveClock.MoveEffects) { rallyMoveExpiresAt=CombatMoveClock.EffectAction+(CombatMoveClock.Unified?enemyActor.Definition.TownMarshalRallyMoves:3); yield break; }
         rallyEndsAt=Time.time+Mathf.Max(.1f,duration);
         yield return
             new WaitForSeconds(
@@ -713,7 +727,8 @@ public sealed class TownMarshalEnemyAbility :
                 continue;
             }
 
-            if (expectedMultiplier <= 0f ||
+            if (CombatMoveClock.Unified) autoAttack.RemoveNormalAttackModifiers(this);
+            else if (expectedMultiplier <= 0f ||
                 Mathf.Approximately(
                     autoAttack.RuntimeAttackSpeedMultiplier,
                     expectedMultiplier

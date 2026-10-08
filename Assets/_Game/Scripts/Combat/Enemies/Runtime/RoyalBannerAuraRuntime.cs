@@ -9,6 +9,8 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
     private float attackSpeedMultiplier = 1f;
     private bool isInitialized;
     private bool isCleanedUp;
+    public bool Affects(EnemyActor target) => !isCleanedUp && activeBannerIds.Count > 0 && target != null &&
+        affectedAutoAttacks.Contains(target.GetComponent<EnemyAutoAttack>());
 
     private readonly HashSet<int>
         activeBannerIds =
@@ -163,7 +165,8 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
                 affectedAutoAttacks.Add(autoAttack);
             }
 
-            if (!Mathf.Approximately(
+            if (CombatMoveClock.Unified) autoAttack.SetNormalAttackModifiers(this, 1, attackSpeedMultiplier);
+            else if (!Mathf.Approximately(
                     autoAttack.RuntimeAttackSpeedMultiplier,
                     attackSpeedMultiplier))
             {
@@ -210,7 +213,8 @@ public sealed class RoyalBannerAuraRuntime : MonoBehaviour
          * Never erase a later system's different runtime modifier. Only undo
          * the value that this aura is still visibly responsible for.
          */
-        if (Mathf.Approximately(
+        if (CombatMoveClock.Unified) autoAttack.RemoveNormalAttackModifiers(this);
+        else if (Mathf.Approximately(
                 autoAttack.RuntimeAttackSpeedMultiplier,
                 attackSpeedMultiplier))
         {

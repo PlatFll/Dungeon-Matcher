@@ -505,6 +505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2cf1a08828303d4ca3554ed6cf58089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStagger
+  unifiedHealthFractions: {x: 0.3, y: 0.35, z: 0.3, w: 0.25}
+  unifiedDecayDamage: {x: 10, y: 7.5, z: 5, w: 3}
+  unifiedStaggerMoves: 2
+  unifiedImmunityMoves: 2
   remainingStaggerTime: 0
   isStaggered: 0
 --- !u!114 &2090934418872691995
