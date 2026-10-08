@@ -4,9 +4,11 @@
 Branch `codex/ironvein-excavation`, base `a2bcf86e7d8d92707ac3fa857e72305c2f115824`.
 Phase 01 committed `072626e`; Phase 02 committed `ba45d8d` (37 passing checks).
 Phase 03 committed `26063bd`, with 37 affected tests and mandatory validator passing.
-Phase 04 adds ore tokens, three normals, Packbeetle death network and the
-stone-owner restoration fix. Six affected checks pass; validation record owns logs.
-Next: Phase 05 seven specialists, small-drill exact hit, bomb/assay/switch/Rattled.
+Phase 04 committed `e724f84`: ore tokens, three normals, Packbeetle death network
+and stone-owner restoration fix; six affected checks and validator pass.
+Phase 05: seven specialists, small-drill exact stop, bomb/assay/switch/Rattled.
+53 affected tests pass; validation record owns exact logs and validator evidence.
+Next: Phase 06 Machinist/turrets and Sentinel extraction/slam.
 Use `git log -1` for current commit.
 
 Read current instructions and [audit](../IronveinExcavation/READINESS.md), then
@@ -22,7 +24,7 @@ authorization remains pending. The user approved the separate 400-generation
 ceiling (300 initial/100 reserve). Do not send the pending reference/help payload
 until authorized. Local engineering may continue.
 
-Last observed account usage: 34% used / 66% remaining; obtain a fresh reading at
+Last observed account usage: 36% used / 64% remaining; obtain a fresh reading at
 phase boundaries. Thresholds: 5% no new phases; 3% validation/handoff only;
 1% no new work. No available verified background continuation mechanism is
 being used; no claim of unattended work.

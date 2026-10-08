@@ -29,13 +29,18 @@ public partial class BoardController
         ResolveLanes,
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
         MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
-        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones, ChargeMineDrills, FireMineDrills
+        PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones, ChargeMineDrills, FireMineDrills,
+        MineStoneOperation, SmallMineDrill, ShiftMineDrill
     }
 
     private sealed class BoardMutationRequest
     {
         public BoardMutationKind Kind;
         public int MineDrillId, MinePower;
+        public long MineStoneId;
+        public MineStoneOperation MineOperation;
+        public int MineLane;
+        public bool MineHorizontal, MineReachedEdge;
         public List<int> AquaticTargets;
         public Vector2Int AquaticSite;
         public bool AquaticRoyal;
@@ -383,6 +388,12 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.MineStoneOperation:
+                        yield return ExecuteMineStoneOperation(request); break;
+                    case BoardMutationKind.SmallMineDrill:
+                        yield return ExecuteSmallMineDrill(request); break;
+                    case BoardMutationKind.ShiftMineDrill:
+                        ExecuteMineDrillShift(request); break;
                     case BoardMutationKind.ChargeMineDrills:
                         ExecuteMineDrillPower(request); break;
                     case BoardMutationKind.FireMineDrills:

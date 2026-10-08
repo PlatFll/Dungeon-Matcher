@@ -62,3 +62,22 @@ approval of the whole region. Art/music review and device testing remain pending
 - Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1.
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-659a0f7a-ad57-43e3-8493-cc9206990e4a.log`.
 - PixelLab usage remains zero. Native enemy art and full region acceptance are pending.
+
+## Phase 05
+
+- Specialist import/compile: PASS. Initial focused run: **20 passed**, zero
+  failures/skips (`46ced193-43f4-4195-b46f-f8b6da2d34df.xml/.log`).
+- Final affected run after cancellation/Assay race fixes: **53 passed**, zero
+  failures/skips. Includes all Ironvein tests, player statuses, caster sigil
+  helpers, shared barricade gravity and combat continuation checks. Result:
+  `.utmp/ForestValidation/11664bf1-69a3-4082-af35-8cae1dbe787b.xml` and `.log`.
+  The file-name-only `CourtRosterRevision` filter did not select Court scene
+  methods; do not treat this run as the complete Court regression.
+- Proves first-stone stop even on break, protected crossed specials, exact bomb
+  durability on all three materials, safe defusing, saved fuse/one player packet,
+  saved Bore warning, support/placement/Assay/track effects, Rattled expiration
+  and persistence, actual Stagger/death cancellation and queued interruption.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1.
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-7a3f23ec-6c12-44be-95c1-5f3146c8f294.log`.
+- Four starting user files still match their SHA256 hashes. Unity's automatic
+  TimeManager rewrite was reviewed and removed. No paid generation or merge.

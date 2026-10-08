@@ -91,6 +91,7 @@ public sealed class RunCombatSnapshot
 {
     public float oreNextMultiplier;
     public bool oreBurstConsumed;
+    public MineEnemySnapshot mineEnemy;
     public string definition;
     public long persistentId;
     public int staggerHitMove, staggerAppliedMove, immunityAppliedMove;

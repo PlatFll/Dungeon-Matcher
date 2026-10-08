@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: pickaxe_delver
+  m_Name: powder_sapper
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  oreWeaponEligible: 1
+  oreWeaponEligible: 0
   releasesOreOnDefeat: 0
   oreAttackMultiplier: 1.3
   mineWarningMoves: 2
-  mineAbilityDamage: 20
+  mineAbilityDamage: 12
   appliedPlayerStatus: {fileID: 0}
   canFightFlooded: 0
   aquaticSummon: {fileID: 0}
@@ -28,21 +28,23 @@ MonoBehaviour:
   tributeTargetCount: 3
   tributeChannelMoves: 3
   tributeStackCap: 2
-  enemyId: pickaxe_delver
+  enemyId: powder_sapper
   race: Dwarf
   faction: Ironvein Expedition
-  combatRole: Attacker
+  combatRole: Board disruptor
   eligibleZones:
   - ironvein-excavation
-  threatCost: 1.5
-  isBoardDisruptor: 0
+  threatCost: 3
+  isBoardDisruptor: 1
   isSupport: 0
   chainCap: 2
   chainsPerUse: 1
-  displayName: Pickaxe Delver
-  category: 0
-  description: One mechanical pickaxe chop. Ore-Powered strengthens the next whole
-    basic attack once.
+  displayName: Powder Sapper
+  category: 1
+  description: 'Set Charge: one bomb on an existing stone, with two moves to respond.
+    A deliberate adjacent match or special defuses it without hitting the host. Destroying
+    the host also cancels it. Ignored charge hits the current stone for exactly two
+    durability and the player for 12 base damage.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
   animationControllerOverride: {fileID: 0}
@@ -51,17 +53,17 @@ MonoBehaviour:
   useAuthoredAutoAttackMotion: 0
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
-  baseMaxHealth: 65
-  baseDamage: 9
+  baseMaxHealth: 70
+  baseDamage: 6
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 4.7
+  baseAttackInterval: 5.8
   firstAttackMoves: 3
   attackMoves: 3
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
+  hasSpecialAbility: 1
+  specialAbilityKind: 34
   baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
+  lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
   barricadesPerUse: 2

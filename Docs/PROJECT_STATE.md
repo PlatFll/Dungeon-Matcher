@@ -22,9 +22,11 @@ The newer rules in this status and the owning design/architecture documents supe
 
 - **Ironvein in progress (2026-10-08):** The user authorized all eleven Ironvein
   pack phases on `codex/ironvein-excavation`, with a review PR and no merge.
-  Phases 02–04 add a testing-only zone stub, saved maturing structural stones,
-  two charged full-lane drills, three Normal definitions and saved one-sequence
-  ore power under the existing board/combat owners;
+  Phases 02–05 add a testing-only zone stub, saved maturing structural stones,
+  two charged full-lane drills, three Normals, seven Specialists and saved
+  one-sequence ore power under the existing board/combat owners. The small drill
+  stops after one hit on its first stone; Sapper/Assay/track intent and Rattled
+  survive Continue. The 53 selected Phase 05 regression checks pass;
   live crystal eligibility remains off. The placeholder shell artwork/scenery are not
   mine art. See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and

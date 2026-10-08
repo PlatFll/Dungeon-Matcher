@@ -583,12 +583,16 @@ public partial class BoardController
     private void DamageBarricadesAdjacentToClears(
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems = null)
-        => DamageBarricadesForClear(clearedGems,ignoredGems,false);
+        => DamageBarricadesFromSource(clearedGems,ignoredGems,false,true);
 
     private void DamageBarricadesForClear(
         HashSet<Gem> clearedGems,
         HashSet<Gem> ignoredGems,
         bool deliberatePlayerClear = false)
+        => DamageBarricadesFromSource(clearedGems, ignoredGems, deliberatePlayerClear, false);
+
+    private void DamageBarricadesFromSource(HashSet<Gem> clearedGems, HashSet<Gem> ignoredGems,
+        bool deliberatePlayerClear, bool specialClear)
     {
         if(clearedGems!=null) foreach(var threat in gemSetThreats)
             if(threat.Vine && threat.Targets.Exists(g=>g!=null && clearedGems.Contains(g) && (ignoredGems==null || !ignoredGems.Contains(g))))
@@ -666,6 +670,8 @@ public partial class BoardController
                 continue;
             }
 
+            // Answering a charge consumes this interaction, never also hits its host.
+            if ((deliberatePlayerClear || specialClear) && DefuseMineCharge(state)) continue;
             int durabilityDamage = IsRoot(state) || state.Style==EnemyBarricadeStyle.AirCoffer
                 ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
 

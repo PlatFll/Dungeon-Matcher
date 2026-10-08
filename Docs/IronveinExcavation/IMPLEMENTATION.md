@@ -81,3 +81,36 @@ to every existing fixed drill. No destroy/animation callback triggers gameplay.
 A fourth charge can fire the normal penetrating drill and clear player obstacles.
 Living-source stone limits also retain their saved slot binding while Continue
 restores actor persistent IDs, closing a source-cap bypass.
+
+## Phase 05 — seven specialists
+
+`MineEnemyAbility` selects behavior from definition data and retains immutable
+target identities, lanes and accepted-move deadlines. Basics pause during held
+warnings; death/Stagger cancels them without a separate recovery timer. Missing
+or changed Assay targets fizzle. Source sigils, actor countdowns and optional
+board highlights observe the saved intent. Native effects remain Phase 09 work.
+
+- Hauler powers existing eligible allies and alternates one drill feed.
+- Stonewright's floor contact queues two safe Brittle placements immediately.
+- Bore scans rows then columns in stable index order, preferring fewer stones.
+  Its two-move warned projectile skips specials and stops at its first stone,
+  dealing exactly one durability even when that destroys it. Only an unobstructed
+  shot reaches the player. Each launch gives the corresponding fixed drill one
+  charge. Enemy clears and refill cascades grant no player rewards.
+- Surveyor marks one non-Obsidian stone for one move. If another effect already
+  changed its stage, the cast fizzles; it does not advance a replacement target.
+- Sapper's one attached charge has a two-move deadline. Deliberate adjacent
+  matches and special clears defuse without a host hit. Cascade damage can still
+  hit the stone normally. Host destruction cancels the charge. Expiration deals
+  exactly two durability to the current material and one central player packet.
+  Structure-damage upgrades do not multiply either the small drill or explosion.
+- Switcher warns one adjacent lane, preserves charge and rechecks the one-step
+  move when its queued mutation executes. It cannot retarget a firing batch.
+- Smith applies shared Rattled: half new Stagger buildup for two accepted moves.
+  Existing meter/duration, forced Stagger, damage and energy are unaffected.
+  Neither a stone hit nor a drill shot cleanses it. Continue preserves it.
+
+Enemy and board snapshots retain charge source, fixed stone ID, planned stage,
+drill target and due move. Future enemy payload versions are rejected safely.
+The Rattled icon temporarily reuses Weakened's glyph pending dedicated mine art;
+its name, inspection description and remaining-move count identify the effect.

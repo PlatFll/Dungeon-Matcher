@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum PlayerStatusKind { Weakened, Burn, Sapped, Wounded, Fear, Frostbite, Slippery }
+public enum PlayerStatusKind { Weakened, Burn, Sapped, Wounded, Fear, Frostbite, Slippery, Rattled }
 
 [CreateAssetMenu(menuName = "Dungeon Matcher/Combat/Player Status")]
 public sealed class PlayerStatusDefinition : ScriptableObject

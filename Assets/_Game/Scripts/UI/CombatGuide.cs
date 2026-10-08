@@ -25,7 +25,9 @@ public static class CombatGuide
         }
         if (actor.Definition.SpecialAbilityKind == EnemySpecialAbilityKind.ApplyPlayerStatus && actor.Definition.appliedPlayerStatus != null)
             basic += actor.Definition.appliedPlayerStatus.displayName + ": " + actor.Definition.appliedPlayerStatus.description + "\n";
-        return basic + "\n" + (actor.Definition.canFightFlooded ? actor.Definition.Description : Counter(actor.Definition.SpecialAbilityKind)) +
+        if (actor.GetComponent<EnemyOrePower>()?.IsPowered == true) basic += "ORE-POWERED: next whole basic sequence is strengthened once. Repeated ore refreshes; it does not stack.\n";
+        return basic + "\n" + (actor.Definition.canFightFlooded || actor.GetComponent<MineEnemyAbility>() != null || actor.GetComponent<EnemyOrePower>() != null
+                ? actor.Definition.Description : Counter(actor.Definition.SpecialAbilityKind)) +
             (RunSession.Current?.Board != null ? "\n\n"+RunSession.Current.Board.DescribeOwnedBoardThreats(actor) : "") +
             (CombatMoveClock.Active ? "\n\nOnly accepted manual actions advance special deadlines. Interrupt channels by staggering or defeating their caster. Free skills can solve threats without spending a move." : "\n\nSeconds run during combat. Only completed valid swaps/taps advance move counters; cascades and invalid swaps do not.");
     }

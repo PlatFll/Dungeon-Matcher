@@ -11,6 +11,8 @@ public sealed class EnemyDefinition : ScriptableObject
     public bool oreWeaponEligible;
     public bool releasesOreOnDefeat;
     [Min(1f)] public float oreAttackMultiplier = 1.3f;
+    [Min(1)] public int mineWarningMoves = 2;
+    [Min(0)] public int mineAbilityDamage = 20;
     [Header("Optional shared player debuff (unassigned in the production roster)")]
     public PlayerStatusDefinition appliedPlayerStatus;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]

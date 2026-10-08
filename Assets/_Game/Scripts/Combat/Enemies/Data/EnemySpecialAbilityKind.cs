@@ -24,5 +24,7 @@ public enum EnemySpecialAbilityKind
     PearlTheft = 21, RallyingConch = 22, MoraySiphon = 23,
     ThornySnare = 24, SpineGuard = 25, BreakwaterCommand = 26,
     LanternPressure = 27, AbyssalRegent = 28,
-    ApplyPlayerStatus = 29
+    ApplyPlayerStatus = 29,
+    ShareOre = 30, LayFoundation = 31, BoreDrill = 32, AssayVein = 33,
+    PowderCharge = 34, SwitchTrack = 35, Faultline = 36
 }

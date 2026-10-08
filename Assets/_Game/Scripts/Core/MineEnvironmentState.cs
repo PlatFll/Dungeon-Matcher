@@ -8,6 +8,7 @@ public enum MineStoneStage { Brittle, Hardened, Obsidian }
 public sealed class MineStoneState
 {
     public long id, ownerId;
+    public long bombOwnerId;
     public MineStoneStage stage;
     public int ignoredMoves, lastHitMove = -1, lastAdvanceMove, bornMove;
 

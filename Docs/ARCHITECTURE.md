@@ -46,6 +46,10 @@ Ironvein's additive foundation is described in
 structural occupancy and durability. The mutation queue orders stone placement
 and aging. Versioned mine snapshots extend the established continuation and
 photo/travel flows. Testing eligibility does not imply live travel readiness.
+`EnemyOrePower` uses `EnemyAutoAttack`'s existing next-sequence modifier token.
+`MineEnemyAbility` owns definition-selected intent and saved deadlines; its board
+operations use the canonical mutation queue. Presentation never triggers damage.
+Rattled is a shared player status read by the central Stagger buildup calculation.
 
 | Area | Authority and principal files |
 | --- | --- |

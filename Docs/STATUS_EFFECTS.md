@@ -7,8 +7,9 @@ Values below are conservative, data-driven prototypes, not finalized balance.
 ## Implementation checkpoint
 
 The backend is implemented by `PlayerStatusRuntime`, owned by `PlayerActor`, with
-seven definitions in `Resources/PlayerStatuses`. No production enemy applies
-these definitions yet. Seven hand-authored 16px icons and remaining move counts
+eight definitions in `Resources/PlayerStatuses`. Ironvein's Seismic Smith applies
+Rattled; the original seven retain no production caster assignment.
+Seven hand-authored 16px icons and remaining move counts
 occupy compact rows in the existing player combat panel. Tap a glyph for its meaning
 and individual Fear sources/durations. `ApplyPlayerStatus` is the optional enemy
 ability kind; `EnemyDefinition.appliedPlayerStatus` selects its data. Slippery's
@@ -28,6 +29,7 @@ Fear uses persistent enemy identities in both clock modes, never reusable slots.
 | Fear | Reduces player damage specifically against its living source | 0.75 multiplier, 3 moves; source Stagger/death cleanses |
 | Frostbite | Increases all incoming player damage | 1.25 multiplier, 3 moves |
 | Slippery | Flooded Court manual swaps move the chosen gem one extra cell when possible | 3 moves; no production caster assigned |
+| Rattled | Reduces only newly earned enemy Stagger buildup | 0.5 multiplier, 2 accepted moves; Seismic Smith |
 
 Repeated applications refresh duration without repeatedly multiplying strength.
 Fear retains individual source identity; multiple sources do not multiply against
@@ -44,6 +46,11 @@ moves, has a short fixed lifetime, and exposes an explicit extinguish operation.
 Use the centralized player damage path so shields and Frostbite apply normally.
 Sapped modifies generation at the generation boundary; spending, save restoration,
 initial energy and stored amounts remain storage concerns.
+
+Rattled leaves existing Stagger meter/duration, forced Stagger, damage and energy
+unchanged. Hitting stones or firing drills does not cleanse it. Its icon currently
+reuses Weakened's glyph as an explicit Ironvein art placeholder; the dedicated
+icon is part of the mine presentation phase.
 
 Slippery previews a deterministic three-cell rotation before commitment:
 `[A][B][C] -> [B][C][A]` in the swipe direction. Legality uses the final arrangement.

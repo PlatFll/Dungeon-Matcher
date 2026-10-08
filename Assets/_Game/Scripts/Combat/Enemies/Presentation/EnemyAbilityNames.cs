@@ -47,6 +47,13 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.LanternPressure:return "Air Levy|Deepguard|Pressure Lance";
             case EnemySpecialAbilityKind.AbyssalRegent:return "Royal Seizure|Royal Ward|Nacre Tribute|Court Muster|Royal Guard";
             case EnemySpecialAbilityKind.ApplyPlayerStatus:return "Status";
+            case EnemySpecialAbilityKind.ShareOre:return "Share the Load";
+            case EnemySpecialAbilityKind.LayFoundation:return "Lay the Foundation";
+            case EnemySpecialAbilityKind.BoreDrill:return "Path of Least Resistance";
+            case EnemySpecialAbilityKind.AssayVein:return "Assay the Vein";
+            case EnemySpecialAbilityKind.PowderCharge:return "Set Charge";
+            case EnemySpecialAbilityKind.SwitchTrack:return "Switch Track";
+            case EnemySpecialAbilityKind.Faultline:return "Faultline Strike";
             default:return "";
         }
     }

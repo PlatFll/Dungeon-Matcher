@@ -12,6 +12,13 @@ environmental drills penetrate and destroy every intended object in their lane.
 Neither changes existing zones' clear/shield rules. See
 [the implementation contract](IronveinExcavation/IMPLEMENTATION.md).
 
+Ore-Powered strengthens one whole basic sequence without stacking. Packbeetle
+defeat grants it to eligible living allies and charges every fixed drill once.
+The seven specialist contracts are recorded in that same implementation document.
+Rattled halves new Stagger buildup for two accepted moves; stones/drills never
+cleanse it. Sapper defusing deals no host damage; expiration deals exactly two
+structural hits and one central player damage packet.
+
 ## Cross-zone design contract (2026-10-06)
 
 [Shared zone design rules](ZONE_DESIGN_RULES.md) define meaningful mechanic

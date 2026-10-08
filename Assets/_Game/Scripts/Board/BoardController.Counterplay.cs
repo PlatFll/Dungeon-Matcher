@@ -9,6 +9,10 @@ public partial class BoardController
     {
         if(owner==null) return "";
         var text=new System.Text.StringBuilder();
+        var mineAbility = owner.GetComponent<MineEnemyAbility>();
+        if (mineAbility?.IsPreparing == true)
+            text.AppendLine($"{mineAbility.CastName}: {mineAbility.ResponseMoves} moves left. Target is fixed; defeat or stagger this caster to interrupt.");
+        if (UsesMine) text.AppendLine("Stones harden after three ignored moves. Opening matches in the first two cells of an intake charge that drill. Full drills penetrate the whole lane; a portable small drill stops at its first stone.");
         var aquaticAbility=owner.GetComponent<AquaticEnemyAbility>();
         if(aquaticAbility?.IsPreparing==true)
             text.AppendLine($"{aquaticAbility.CastName}: {aquaticAbility.ResponseMoves} moves left; {aquaticAbility.Answers} pressure answers cleared.");

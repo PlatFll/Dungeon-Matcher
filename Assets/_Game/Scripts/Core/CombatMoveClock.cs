@@ -124,7 +124,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 ActingEnemy = actor;
                 var stagger = actor.GetComponent<EnemyStagger>();
                 var channel = actor.GetComponent<EnemyChannelRuntime>();
-                bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true;
+                bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
+                    actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true;
                 var attack = actor.GetComponent<EnemyAutoAttack>();
                 if (stagger == null || !stagger.IsStaggered)
                 {

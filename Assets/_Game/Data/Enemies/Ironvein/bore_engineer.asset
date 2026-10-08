@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: pickaxe_delver
+  m_Name: bore_engineer
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   oreWeaponEligible: 1
   releasesOreOnDefeat: 0
@@ -28,21 +28,23 @@ MonoBehaviour:
   tributeTargetCount: 3
   tributeChannelMoves: 3
   tributeStackCap: 2
-  enemyId: pickaxe_delver
+  enemyId: bore_engineer
   race: Dwarf
   faction: Ironvein Expedition
-  combatRole: Attacker
+  combatRole: Board disruptor
   eligibleZones:
   - ironvein-excavation
-  threatCost: 1.5
-  isBoardDisruptor: 0
+  threatCost: 3
+  isBoardDisruptor: 1
   isSupport: 0
   chainCap: 2
   chainsPerUse: 1
-  displayName: Pickaxe Delver
-  category: 0
-  description: One mechanical pickaxe chop. Ore-Powered strengthens the next whole
-    basic attack once.
+  displayName: Bore Engineer
+  category: 1
+  description: 'Path of Least Resistance: marks the lane with fewest stones for two
+    moves. A small drill clears ordinary gems, skips specials and stops at the FIRST
+    stone after exactly one hit, even if it breaks. If no stone stops it, take 20
+    base damage. Launch adds one charge to the corresponding big drill.'
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
   animationControllerOverride: {fileID: 0}
@@ -51,17 +53,17 @@ MonoBehaviour:
   useAuthoredAutoAttackMotion: 0
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
-  baseMaxHealth: 65
-  baseDamage: 9
+  baseMaxHealth: 75
+  baseDamage: 6
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 4.7
+  baseAttackInterval: 5.3
   firstAttackMoves: 3
   attackMoves: 3
-  hasSpecialAbility: 0
-  specialAbilityKind: 0
-  baseSpecialTurnRequirement: 5
-  lockSpecialTurnRequirement: 0
+  hasSpecialAbility: 1
+  specialAbilityKind: 32
+  baseSpecialTurnRequirement: 4
+  lockSpecialTurnRequirement: 1
   allyShieldAmount: 10
   selfShieldAmount: 15
   barricadesPerUse: 2

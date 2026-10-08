@@ -25,6 +25,12 @@ public sealed class BoardCasterSigilView : MonoBehaviour
         foreach(var actor in run.Waves.ActiveEnemies)
         {
             if(actor==null || actor.IsDefeated) continue;
+            var mine = actor.GetComponent<MineEnemyAbility>();
+            if (mine?.IsPreparing == true)
+            {
+                if (mine.TargetCell is Vector2Int cell) targets.Add(CasterBoardTarget.OnCell(actor,cell));
+                else targets.Add(new CasterBoardTarget { Owner=actor, Kind=mine.Horizontal?CasterTargetKind.Row:CasterTargetKind.Column, Lane=mine.Lane });
+            }
             var aquatic=actor.GetComponent<AquaticEnemyAbility>();
             if(aquatic?.IsPreparing!=true) continue;
             foreach(var cell in aquatic.ResponseCells) targets.Add(CasterBoardTarget.OnCell(actor,cell));

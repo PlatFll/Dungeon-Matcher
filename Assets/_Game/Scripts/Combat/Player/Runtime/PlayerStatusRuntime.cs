@@ -34,6 +34,7 @@ public sealed class PlayerStatusRuntime : IDisposable
     public bool Has(PlayerStatusKind kind) => effects.Any(e => e.kind == kind);
     public int Remaining(PlayerStatusKind kind) => effects.Where(e => e.kind == kind).Select(e => e.remainingMoves).DefaultIfEmpty(0).Max();
     public float HealingMultiplier => Minimum(PlayerStatusKind.Wounded);
+    public float StaggerBuildupMultiplier => Minimum(PlayerStatusKind.Rattled);
     public float IncomingMultiplier => effects.Where(e => e.kind == PlayerStatusKind.Frostbite).Select(e => e.multiplier).DefaultIfEmpty(1f).Max();
     public int GeneratedEnergy(int amount) => Mathf.FloorToInt(Mathf.Max(0, amount) * Minimum(PlayerStatusKind.Sapped));
     private float Minimum(PlayerStatusKind kind) => effects.Where(e => e.kind == kind).Select(e => e.multiplier).DefaultIfEmpty(1f).Min();

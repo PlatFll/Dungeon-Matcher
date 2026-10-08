@@ -10,6 +10,7 @@ public sealed class MineEnvironmentView : MonoBehaviour
     private readonly Dictionary<int, Transform> machines = new Dictionary<int, Transform>();
     private readonly Dictionary<int, SpriteRenderer[]> pips = new Dictionary<int, SpriteRenderer[]>();
     private readonly List<GameObject> sweeps = new List<GameObject>();
+    private readonly List<SpriteRenderer> warnings = new List<SpriteRenderer>();
     private void Awake()
     {
         board = GetComponent<BoardController>();
@@ -50,6 +51,27 @@ public sealed class MineEnvironmentView : MonoBehaviour
             for (int n = 0; n < pips[drill.id].Length; n++)
                 pips[drill.id][n].color = n < drill.charge ? new Color(1,.57f,.12f) : new Color(.28f,.27f,.26f);
         }
+        int used = 0;
+        var roster = RunSession.Current?.Waves?.ActiveEnemies;
+        if (roster != null) foreach (var actor in roster)
+        {
+            var ability = actor != null && !actor.IsDefeated ? actor.GetComponent<MineEnemyAbility>() : null;
+            if (ability?.IsPreparing != true) continue;
+            if (used == warnings.Count) warnings.Add(Piece(transform,"MineTarget",Vector2.zero,Vector2.one,Color.white,70));
+            var view = warnings[used++]; view.enabled = true;
+            if (ability.TargetCell is Vector2Int cell)
+            { view.transform.localPosition = board.GetCellLocalPosition(cell.x,cell.y); view.transform.localScale = Vector3.one * board.CellSize * .85f; }
+            else
+            {
+                bool row=ability.Horizontal; int lane=ability.Lane;
+                view.transform.localPosition = (board.GetCellLocalPosition(row?0:lane,row?lane:0) +
+                    board.GetCellLocalPosition(row?board.Width-1:lane,row?lane:board.Height-1)) * .5f;
+                view.transform.localScale = new Vector3(row?board.Width:1,row?1:board.Height,1) * board.CellSize;
+            }
+            float pulse = PresentationPreferences.ReducedMotion ? .13f : .13f+.045f*Mathf.Sin(Time.time*7);
+            view.color = new Color(1,.5f,.1f,pulse);
+        }
+        for (int i=used;i<warnings.Count;i++) warnings[i].enabled=false;
     }
     private void Fire(int id, bool horizontal, int lane) => StartCoroutine(Sweep(horizontal,lane));
     private IEnumerator Sweep(bool horizontal, int lane)
@@ -69,6 +91,7 @@ public sealed class MineEnvironmentView : MonoBehaviour
     {
         StopAllCoroutines(); foreach(var sweep in sweeps) if(sweep!=null) Destroy(sweep); sweeps.Clear();
         foreach(var machine in machines.Values) if(machine!=null) machine.gameObject.SetActive(false);
+        foreach(var warning in warnings) if(warning!=null) warning.enabled=false;
     }
     private void OnEnable() { foreach(var machine in machines.Values) if(machine!=null) machine.gameObject.SetActive(true); }
     private void OnDestroy()
