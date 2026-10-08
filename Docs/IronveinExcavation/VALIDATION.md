@@ -298,3 +298,19 @@ real-time attack scheduling are not paired character-power experiments.
   seeded sessions and automated previous-zone scenarios are recorded separately.
 - **DEVICE TEST PENDING:** Android performance, safe cutouts, touch and sound.
   No result here establishes final balance or user approval to merge.
+
+## User-authorized integration — 2026-10-08
+
+The user explicitly approved merging PR #183. Current main remains
+`a2bcf86e7d8d92707ac3fa857e72305c2f115824`; the reviewed PR has no conflicts.
+Only documentation changed after the validated implementation. The affected
+test evidence above remains applicable; no identical broad suite was repeated.
+
+Required pre-merge command
+`powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1`: **PASS**,
+exit 0, Unity **6000.3.19f1**, Editor audio muted. Log:
+`C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-68d2e751-6a57-4031-a2c2-5dbb4c05113f.log`.
+GitHub reports no commit statuses or PR-triggered workflow runs; this is local
+Unity validation, not a claim of hosted CI passing. The four original user
+changes remain outside the PR. Human visual/music/pacing and device checks
+remain open after integration.

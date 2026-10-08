@@ -20,8 +20,9 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-- **Ironvein review candidate (2026-10-08):** The user authorized all eleven
-  Ironvein pack phases on `codex/ironvein-excavation`; merge remains unauthorized.
+- **Ironvein integration (2026-10-08):** The user authorized all eleven
+  Ironvein pack phases on `codex/ironvein-excavation` and explicitly approved
+  merging PR #183 on 2026-10-08.
   The playable fourth zone has thirteen enemies plus an independent turret,
   persistent 1/2/3-hit maturing stones, two charged full-lane drills, saved
   one-sequence ore power, Rattled and the Grand Delver's breakable Core cycle.
@@ -42,7 +43,8 @@ The newer rules in this status and the owning design/architecture documents supe
   pacing and physical-device review remain open. Final compatibility verification
   passed 157 cases without failures/skips; the required Unity 6000.3.19f1 validator
   passed after the mine Guide update. [PR #183](https://github.com/PlatFll/Dungeon-Matcher/pull/183)
-  is open for review and remains unmerged.
+  contains this milestone. Merge approval does not establish human art,
+  listening, pacing or physical-device acceptance.
   See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).

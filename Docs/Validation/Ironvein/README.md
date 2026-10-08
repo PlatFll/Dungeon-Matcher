@@ -50,7 +50,8 @@ engagement evidence or a minimum visit duration.
 
 Historical failures and corrected reruns remain in the owning validation record.
 Passing affected checks is not a claim that every historical repository test is
-green. User approval to merge has not been given.
+green. The user explicitly approved merging PR #183 on 2026-10-08; this does not
+replace the remaining human review and device checks.
 
 ## Playtest entry and remaining review
 

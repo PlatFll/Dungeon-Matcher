@@ -2,8 +2,9 @@
 
 2026-10-08. Branch `codex/ironvein-excavation`; all eleven implementation phases
 delivered for review in [PR #183](https://github.com/PlatFll/Dungeon-Matcher/pull/183).
-**No merge authorized.** Validated implementation/evidence commit: `5b72270eca8e1b9f558cafd77afbc23cb302e6a7`.
-A documentation-only PR receipt follows it; use `git log -1 --oneline` for exact HEAD.
+**Merge explicitly authorized on 2026-10-08.** Validated implementation/evidence
+commit: `5b72270eca8e1b9f558cafd77afbc23cb302e6a7`. Documentation-only review and
+integration receipts follow it; use `git log -1 --oneline` for exact HEAD.
 
 ## Implemented
 
@@ -27,10 +28,11 @@ Native evidence and playtest entry: `Docs/Validation/Ironvein/README.md`.
 
 ## Review gates / exact next action
 
-Review PR #183. User visual, listening, human pacing and
+Integrate the validated PR #183 under the user's explicit merge authorization.
+After integration, continue user playtesting. User visual, listening, human pacing and
 physical-device approval remain pending. Helpful drill opportunities were rare
 under the greedy automated policy. Do not tune HP to force a visit duration.
-Do not merge unless the user explicitly approves. No further generation needed
+No further generation is needed
 before this review; any corrections must retain the existing allowance ledger.
 
 The local review is `http://127.0.0.1:8891/Review.html`, served by PID 32096;
