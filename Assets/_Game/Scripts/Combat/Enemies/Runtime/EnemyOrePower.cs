@@ -13,6 +13,7 @@ public sealed class EnemyOrePower : MonoBehaviour, IEnemyContinuationOwner
     private float multiplier;
     private bool burstConsumed;
     public bool IsPowered => attack != null && attack.HasNextSequenceModifier(this);
+    public bool IsCurrentSequencePowered => attack != null && attack.IsSequenceUsingModifier(this);
     public bool BurstConsumed => burstConsumed;
     public event Action Changed;
 

@@ -80,6 +80,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private readonly Dictionary<object, float> damageModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> speedModifiers = new Dictionary<object, float>();
     private readonly Dictionary<object, float> nextSequenceModifiers = new Dictionary<object, float>();
+    private readonly HashSet<object> activeSequenceModifierOwners = new HashSet<object>();
     private readonly HashSet<object> actionPauses = new HashSet<object>();
     public bool HasCommandReservation => commandOwner != null;
     public bool IsPausedByAction => actionPauses.Count > 0;
@@ -102,6 +103,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     }
     public event Action<EnemyAutoAttack> NextSequenceModifiersChanged;
     public bool HasNextSequenceModifier(object owner) => nextSequenceModifiers.ContainsKey(owner);
+    public bool IsSequenceUsingModifier(object owner) => owner != null && activeSequenceModifierOwners.Contains(owner);
     public bool CanCaptureContinuation => !isAttackSequenceInProgress && commandOwner==null;
     public void CaptureContinuation(EnemyCombatSnapshot saved)
     {
@@ -147,6 +149,8 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private float ConsumeSequenceDamageMultiplier()
     {
         float result = Product(damageModifiers) * Product(nextSequenceModifiers) * commandDamageMultiplier;
+        activeSequenceModifierOwners.Clear();
+        foreach (var entry in nextSequenceModifiers) activeSequenceModifierOwners.Add(entry.Key);
         nextSequenceModifiers.Clear();
         NextSequenceModifiersChanged?.Invoke(this);
         return result;
@@ -274,6 +278,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         damageModifiers.Clear();
         speedModifiers.Clear();
         nextSequenceModifiers.Clear();
+        activeSequenceModifierOwners.Clear();
         actionPauses.Clear();
 
         enemyStagger =
@@ -723,16 +728,12 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool PerformImmediateHit(
         int attackDamage)
     {
-        AttackStarted?.Invoke(this);
-
-        if (!CanContinueAttackLoop())
+        try
         {
-            return false;
+            AttackStarted?.Invoke(this);
+            return CanContinueAttackLoop() && ResolveAttackDamage(attackDamage);
         }
-
-        return ResolveAttackDamage(
-            attackDamage
-        );
+        finally { activeSequenceModifierOwners.Clear(); }
     }
 
     private bool ResolveAttackDamage(
@@ -1037,6 +1038,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         }
 
         isAttackSequenceInProgress = false;
+        activeSequenceModifierOwners.Clear();
         ResetPendingAttackPresentation();
         ReleaseAutoAttackAnimationAction();
     }
@@ -1045,6 +1047,7 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     {
         ResetPendingAttackPresentation();
         isAttackSequenceInProgress = false;
+        activeSequenceModifierOwners.Clear();
         attackSequenceCoroutine = null;
 
         ReleaseAutoAttackAnimationAction();

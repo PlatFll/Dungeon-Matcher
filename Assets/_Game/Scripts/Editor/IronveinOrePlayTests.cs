@@ -19,10 +19,13 @@ public sealed partial class ForestFoundationPlayTests
         var saved = Run.Continuation.Capture().enemies.Single(e => e.persistentId == pick.PersistentId);
         Assert.That(saved.oreNextMultiplier, Is.EqualTo(1.3f));
         var attack = pick.GetComponent<EnemyAutoAttack>();
+        int presentations=0;
+        attack.AttackStarted += _ => { presentations++; Assert.That(token.IsCurrentSequencePowered,Is.EqualTo(presentations==1)); };
         int hp = Run.Player.CurrentHealth;
         Assert.That(attack.PerformAttackImmediately(), Is.True);
         yield return Until(() => !attack.IsAttackSequenceInProgress, "powered basic finishes");
         Assert.That(token.IsPowered, Is.False);
+        Assert.That(token.IsCurrentSequencePowered, Is.False);
         Assert.That(hp - Run.Player.CurrentHealth, Is.EqualTo(CombatAmounts.Round(Mathf.RoundToInt(pick.Damage * 1.3f))));
         hp = Run.Player.CurrentHealth;
         Assert.That(attack.PerformAttackImmediately(), Is.True);
@@ -65,10 +68,13 @@ public sealed partial class ForestFoundationPlayTests
         Set(Run.Player, "maximumHealth", 1000); Set(Run.Player, "currentHealth", 1000);
         var token = actor.GetComponent<EnemyOrePower>(); var attack = actor.GetComponent<EnemyAutoAttack>();
         token.Grant(); token.Grant(); int hits = 0;
+        int presentations=0;
+        attack.AttackStarted += _ => { presentations++; Assert.That(token.IsCurrentSequencePowered,Is.True); };
         attack.AttackResolved += (_, amount, __) => { hits++; Assert.That(CombatAmounts.Round(amount), Is.EqualTo(25)); };
         Assert.That(attack.PerformAttackImmediately(), Is.True);
         yield return Until(() => !attack.IsAttackSequenceInProgress, "both ore hits finish");
         Assert.That(hits, Is.EqualTo(2)); Assert.That(Run.Player.CurrentHealth, Is.EqualTo(950));
+        Assert.That(presentations,Is.EqualTo(2)); Assert.That(token.IsCurrentSequencePowered,Is.False);
         Assert.That(token.IsPowered, Is.False);
     }
 }

@@ -112,3 +112,21 @@ approval of the whole region. Art/music review and device testing remain pending
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-7bbd8b44-f1af-451a-b98b-2db1e0461807.log`.
 - All four starting user-file hashes still match. Boss motion and native visual
   proof remain Phase 08 work; no claim of visual or physical-device approval.
+
+## Phase 08 — presentation support tranche
+
+- Added active-sequence modifier ownership for selecting the single powered
+  attack after its token is consumed, including multi-hit sequences. Existing
+  damage calculation is unchanged. The shared importer accepts explicit attack
+  clips, and Ironvein uses the existing optional hit/death presenter.
+- Initial headless run: 24 passed / 3 failed because Unity remained at 640×480
+  instead of the required portrait scene viewport; no test expectations were
+  weakened. `.utmp/ForestValidation/cbc0686e-808b-4034-aa84-c654b4d36735.xml/.log`.
+- Graphics-enabled affected run: **27 passed**, no failures/skips:
+  `.utmp/ForestValidation/cc267c4b-7a8d-48b0-ad67-92d8fd828228.xml/.log`.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-fc2c033c-2e67-44b4-bbf6-5d98335dccab.log`.
+- Native source/candidate work is outside Unity. Fourteen stills have measured
+  dimensions, palettes, hashes and binary alpha. Palette-only cleanup preserves
+  every source alpha mask. Action inputs add transparent margins by integer
+  translation, never resampling. Final clip imports and playback proof remain.
