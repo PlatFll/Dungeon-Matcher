@@ -6,9 +6,11 @@ Phase 01 committed `072626e`; Phase 02 committed `ba45d8d` (37 passing checks).
 Phase 03 committed `26063bd`, with 37 affected tests and mandatory validator passing.
 Phase 04 committed `e724f84`: ore tokens, three normals, Packbeetle death network
 and stone-owner restoration fix; six affected checks and validator pass.
-Phase 05: seven specialists, small-drill exact stop, bomb/assay/switch/Rattled.
-53 affected tests pass; validation record owns exact logs and validator evidence.
-Next: Phase 06 Machinist/turrets and Sentinel extraction/slam.
+Phase 05 committed `10071d8`: seven specialists, small-drill exact stop,
+bomb/assay/switch/Rattled. 53 affected tests and mandatory validator pass.
+Phase 06 adds Machinist/turrets and Sentinel extraction/slam. Seven initial
+focused tests, 33 final affected tests and the mandatory validator pass.
+No running jobs. Next: Phase 07 Grand Delver and optional single-remount lifecycle.
 Use `git log -1` for current commit.
 
 Read current instructions and [audit](../IronveinExcavation/READINESS.md), then
@@ -24,7 +26,7 @@ authorization remains pending. The user approved the separate 400-generation
 ceiling (300 initial/100 reserve). Do not send the pending reference/help payload
 until authorized. Local engineering may continue.
 
-Last observed account usage: 36% used / 64% remaining; obtain a fresh reading at
+Last observed account usage: 38% used / 62% remaining; obtain a fresh reading at
 phase boundaries. Thresholds: 5% no new phases; 3% validation/handoff only;
 1% no new work. No available verified background continuation mechanism is
 being used; no claim of unattended work.

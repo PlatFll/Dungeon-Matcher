@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: bore_engineer
+  m_Name: rivet_turret
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
   oreWeaponEligible: 1
   releasesOreOnDefeat: 0
   oreAttackMultiplier: 1.3
   mineWarningMoves: 2
-  mineAbilityDamage: 20
+  mineAbilityDamage: 30
   mineTurret: {fileID: 0}
   maximumMineTurrets: 2
   mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
@@ -32,23 +32,22 @@ MonoBehaviour:
   tributeTargetCount: 3
   tributeChannelMoves: 3
   tributeStackCap: 2
-  enemyId: bore_engineer
-  race: Dwarf
+  enemyId: rivet_turret
+  race: Machine
   faction: Ironvein Expedition
-  combatRole: Board disruptor
+  combatRole: Summon
   eligibleZones:
   - ironvein-excavation
-  threatCost: 3
-  isBoardDisruptor: 1
+  threatCost: 1
+  isBoardDisruptor: 0
   isSupport: 0
   chainCap: 2
   chainsPerUse: 1
-  displayName: Bore Engineer
-  category: 1
-  description: 'Path of Least Resistance: marks the lane with fewest stones for two
-    moves. A small drill clears ordinary gems, skips specials and stops at the FIRST
-    stone after exactly one hit, even if it breaks. If no stone stops it, take 20
-    base damage. Launch adds one charge to the corresponding big drill.'
+  displayName: Rivet Turret
+  category: 0
+  description: Independent summon with a periodic rivet shot. Ore-Powered strengthens
+    one complete shot, without stacking. Remains after its builder dies; no independent
+    farming rewards.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
   animationControllerOverride: {fileID: 0}
@@ -57,17 +56,17 @@ MonoBehaviour:
   useAuthoredAutoAttackMotion: 0
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
-  baseMaxHealth: 75
+  baseMaxHealth: 45
   baseDamage: 6
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
   baseAttackInterval: 5.3
   firstAttackMoves: 3
   attackMoves: 3
-  hasSpecialAbility: 1
-  specialAbilityKind: 32
+  hasSpecialAbility: 0
+  specialAbilityKind: 0
   baseSpecialTurnRequirement: 4
-  lockSpecialTurnRequirement: 1
+  lockSpecialTurnRequirement: 0
   allyShieldAmount: 10
   selfShieldAmount: 15
   barricadesPerUse: 2

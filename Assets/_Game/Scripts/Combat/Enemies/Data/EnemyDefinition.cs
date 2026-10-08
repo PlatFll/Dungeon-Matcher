@@ -13,6 +13,10 @@ public sealed class EnemyDefinition : ScriptableObject
     [Min(1f)] public float oreAttackMultiplier = 1.3f;
     [Min(1)] public int mineWarningMoves = 2;
     [Min(0)] public int mineAbilityDamage = 20;
+    public EnemyDefinition mineTurret;
+    [Range(1,2)] public int maximumMineTurrets = 2;
+    public Vector3 mineExtractionMultipliers = new Vector3(1.3f,1.6f,2f);
+    [Min(1f)] public float mineObsidianSlamMultiplier = 1.5f;
     [Header("Optional shared player debuff (unassigned in the production roster)")]
     public PlayerStatusDefinition appliedPlayerStatus;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]

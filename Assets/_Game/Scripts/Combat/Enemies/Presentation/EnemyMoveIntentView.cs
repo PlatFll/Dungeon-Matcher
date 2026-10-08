@@ -64,7 +64,7 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         buffs.color=actor.FortifiedStacks>0?new Color(1,.55f,.79f):new Color(.72f,.94f,.5f);
         if (GetComponent<EnemyOrePower>()?.IsPowered == true)
         {
-            buffs.gameObject.SetActive(visible); buffs.text = "ORE READY";
+            buffs.gameObject.SetActive(visible); buffs.text = actor.FortifiedStacks > 0 ? $"ORE / FORT {actor.FortifiedStacks}" : "ORE READY";
             buffs.rectTransform.sizeDelta = new Vector2(80,20); buffs.color = new Color(1,.64f,.2f);
             weaknessView?.SetTrailingStatusWidth(visible ? 80 : 0);
         }

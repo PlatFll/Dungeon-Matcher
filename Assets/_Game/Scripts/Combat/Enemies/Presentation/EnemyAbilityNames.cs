@@ -54,6 +54,8 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.PowderCharge:return "Set Charge";
             case EnemySpecialAbilityKind.SwitchTrack:return "Switch Track";
             case EnemySpecialAbilityKind.Faultline:return "Faultline Strike";
+            case EnemySpecialAbilityKind.SiegeMachinist:return "Assemble Turret|Prime the Turrets";
+            case EnemySpecialAbilityKind.ObsidianSentinel:return "Devour Ore|Hydraulic Slam";
             default:return "";
         }
     }

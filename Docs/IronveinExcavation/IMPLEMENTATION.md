@@ -114,3 +114,30 @@ Enemy and board snapshots retain charge source, fixed stone ID, planned stage,
 drill target and due move. Future enemy payload versions are rejected safely.
 The Rattled icon temporarily reuses Weakened's glyph pending dedicated mine art;
 its name, inspection description and remaining-move count identify the effect.
+
+## Phase 06 — machinery minibosses
+
+Siege Machinist alternates building and priming through the established summon
+service. Each builder records up to two living turret persistent IDs. A full
+formation with no owned turret defers without replacing anyone or spending its
+ready counter. Prime affects only that builder's current living turrets and
+feeds one fixed drill. Turrets retain their ordinary actor identity, HP, basic
+timer and ore token after builder death and Continue. They remain in the wave
+gate; the existing completed-wave economy grants no separate summon income.
+
+Obsidian Sentinel alternates fixed-stone extraction and Hydraulic Slam; with no
+stone, it can warn a Slam. Extraction consumes the target's **current** material
+through the board queue, with no clear rewards. Provisional next-basic strengths
+are 1.3/1.6/2× for Brittle/Hardened/Obsidian. Hardened/Obsidian also grant one
+Fortified (shared cap two); Obsidian arms one 1.5× Slam. All pending power saves.
+Losing the extraction target fizzles without awarding power or forced Stagger.
+
+Slam waits two accepted moves. An actual full drill firing while warned cancels
+it and requests ordinary two-move Stagger through EnemyStagger, respecting its
+immunity. Charge increases alone do not interrupt. The coordinator drains drills
+before committing a due Slam, so the final response move remains useful; the
+same accepted-action hold covers the surviving Slam's impact and recovery. No
+independent board resolver or post-channel recovery timer was added.
+
+The mechanics proof gallery is `.utmp/Ironvein/Review.html`. Its existing shell
+artwork and dungeon backgrounds are explicitly temporary, not approved mine art.

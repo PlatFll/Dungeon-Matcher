@@ -8,6 +8,44 @@ public static class IronveinImporter
 {
     public const string ZonePath = "Assets/_Game/Resources/Zones/ironvein-excavation.asset";
     public const string EnemyPath = "Assets/_Game/Data/Enemies/Ironvein/";
+    [MenuItem("Dungeon Matcher/Ironvein/Import miniboss kits")]
+    public static void ImportMinibosses()
+    {
+        ImportSpecialists();
+        string[] ids={"siege_machinist","obsidian_sentinel","rivet_turret"};
+        int[] hp={205,220,45}, damage={10,15,6};float[] seconds={6.8f,6.8f,5.3f};
+        var kinds=new[]{EnemySpecialAbilityKind.SiegeMachinist,EnemySpecialAbilityKind.ObsidianSentinel,EnemySpecialAbilityKind.None};
+        string[] descriptions={
+            "Assemble Turret builds one independent turret into a free enemy slot, up to two living owned turrets. Prime the Turrets empowers each owned turret's next complete shot and adds one fixed-drill charge. Turrets remain after their builder falls.",
+            "Devour Ore marks a fixed stone for two moves, then consumes its current material without player rewards. Brittle/Hardened/Obsidian grants 1.3/1.6/2 times the next basic sequence; the last two grant one Fortified. Obsidian also boosts the next Hydraulic Slam by 50%. Slam warns for two moves: an actual fixed-drill firing during that window cancels it and applies ordinary Stagger. Merely adding charge does not interrupt.",
+            "Independent summon with a periodic rivet shot. Ore-Powered strengthens one complete shot, without stacking. Remains after its builder dies; no independent farming rewards."};
+        var shell=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(EnemyPath+"pickaxe_delver.asset");
+        var defs=new EnemyDefinition[ids.Length];
+        for(int i=0;i<ids.Length;i++)
+        {
+            var def=Load<EnemyDefinition>(EnemyPath+ids[i]+".asset");defs[i]=def;var so=new SerializedObject(def);
+            so.FindProperty("enemyId").stringValue=ids[i];
+            so.FindProperty("displayName").stringValue=string.Join(" ",ids[i].Split('_').Select(s=>char.ToUpperInvariant(s[0])+s.Substring(1)));
+            so.FindProperty("description").stringValue=descriptions[i];so.FindProperty("race").stringValue=i==0?"Dwarf":"Machine";
+            so.FindProperty("faction").stringValue="Ironvein Expedition";so.FindProperty("combatRole").stringValue=i==0?"Summoner":i==1?"Defender":"Summon";
+            var zones=so.FindProperty("eligibleZones");zones.arraySize=1;zones.GetArrayElementAtIndex(0).stringValue="ironvein-excavation";
+            so.FindProperty("category").intValue=i==2?0:2;so.FindProperty("enemyPrefab").objectReferenceValue=shell.EnemyPrefab;
+            if(def.StaticVisualSprite==null)so.FindProperty("fallbackVisualSprite").objectReferenceValue=shell.StaticVisualSprite;
+            so.FindProperty("baseMaxHealth").intValue=hp[i];so.FindProperty("baseDamage").intValue=damage[i];
+            so.FindProperty("baseAttackInterval").floatValue=seconds[i];so.FindProperty("hasSpecialAbility").boolValue=i<2;
+            so.FindProperty("specialAbilityKind").intValue=(int)kinds[i];so.FindProperty("baseSpecialTurnRequirement").intValue=i==1?3:4;
+            so.FindProperty("lockSpecialTurnRequirement").boolValue=true;so.FindProperty("threatCost").floatValue=i==2?1:5;
+            so.FindProperty("isSupport").boolValue=i==0;so.ApplyModifiedPropertiesWithoutUndo();
+            def.oreWeaponEligible=i!=0;def.mineWarningMoves=2;def.mineAbilityDamage=30;
+            def.mineExtractionMultipliers=new Vector3(1.3f,1.6f,2f);def.mineObsidianSlamMultiplier=1.5f;
+            EditorUtility.SetDirty(def);
+        }
+        defs[0].mineTurret=defs[2];defs[0].maximumMineTurrets=2;EditorUtility.SetDirty(defs[0]);
+        var zone=Load<ZoneDefinition>(ZonePath);zone.enemies=zone.enemies.Concat(defs).ToArray();
+        zone.developmentEncounters=zone.developmentEncounters.Concat(defs.Select(d=>new ZoneTestEncounter{
+            label=d.DisplayName+" fixture",members=new[]{d}})).ToArray();
+        EditorUtility.SetDirty(zone);AssetDatabase.SaveAssets();
+    }
     [MenuItem("Dungeon Matcher/Ironvein/Import specialist kits")]
     public static void ImportSpecialists()
     {

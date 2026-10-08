@@ -29,7 +29,7 @@ public sealed class BoardCasterSigilView : MonoBehaviour
             if (mine?.IsPreparing == true)
             {
                 if (mine.TargetCell is Vector2Int cell) targets.Add(CasterBoardTarget.OnCell(actor,cell));
-                else targets.Add(new CasterBoardTarget { Owner=actor, Kind=mine.Horizontal?CasterTargetKind.Row:CasterTargetKind.Column, Lane=mine.Lane });
+                else if(mine.HasLaneTarget) targets.Add(new CasterBoardTarget { Owner=actor, Kind=mine.Horizontal?CasterTargetKind.Row:CasterTargetKind.Column, Lane=mine.Lane });
             }
             var aquatic=actor.GetComponent<AquaticEnemyAbility>();
             if(aquatic?.IsPreparing!=true) continue;

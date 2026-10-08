@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum MineStoneOperation { Harden, ArmCharge, DetonateCharge }
+public enum MineStoneOperation { Harden, ArmCharge, DetonateCharge, Extract }
 public readonly struct MineStoneTarget
 {
     public readonly Vector2Int Cell;
@@ -43,6 +43,15 @@ public partial class BoardController
             if (IsMineStone(value) && value.MineStone?.bombOwnerId == ownerId) value.MineStone.bombOwnerId = 0;
         MineChanged?.Invoke();
     }
+    public bool TryQueueExtractMineStone(EnemyActor owner, long id, Action<bool, MineStoneStage> completed)
+    {
+        if (!UsesMine || MineCasterCancelled(owner) || FindMineStone(id) == null) return false;
+        var request = new BoardMutationRequest { Kind = BoardMutationKind.MineStoneOperation,
+            OwnerActor = owner, MineStoneId = id, MineOperation = MineStoneOperation.Extract,
+            IsCancelled = () => MineCasterCancelled(owner) };
+        request.Completed = ok => completed?.Invoke(ok,request.MineExtractedStage);
+        EnqueueBoardMutation(request); TryStartBoardMutationProcessor(); return true;
+    }
     private bool DefuseMineCharge(BarricadeCellState stone)
     {
         if (!IsMineStone(stone) || stone.MineStone == null || stone.MineStone.bombOwnerId <= 0) return false;
@@ -70,6 +79,14 @@ public partial class BoardController
                 bool prior = resolvingUnrewardedEnvironment; resolvingUnrewardedEnvironment = true;
                 try { yield return ResolveEnvironmentalBoardChange(); }
                 finally { resolvingUnrewardedEnvironment = prior; }
+                break;
+            case MineStoneOperation.Extract:
+                request.MineExtractedStage = stone.stage;
+                barricadeCells.Remove(cell); QueueRoyalBannerGravityOpening(cell.x,cell.y);
+                StartBarricadeHitVFX(barrier,true);
+                bool previous = resolvingUnrewardedEnvironment; resolvingUnrewardedEnvironment = true;
+                try { yield return ResolveEnvironmentalBoardChange(); }
+                finally { resolvingUnrewardedEnvironment = previous; }
                 break;
         }
         request.Succeeded = true; MineChanged?.Invoke();

@@ -56,7 +56,7 @@ public sealed class MineEnvironmentView : MonoBehaviour
         if (roster != null) foreach (var actor in roster)
         {
             var ability = actor != null && !actor.IsDefeated ? actor.GetComponent<MineEnemyAbility>() : null;
-            if (ability?.IsPreparing != true) continue;
+            if (ability?.IsPreparing != true || (!ability.HasLaneTarget && !ability.TargetCell.HasValue)) continue;
             if (used == warnings.Count) warnings.Add(Piece(transform,"MineTarget",Vector2.zero,Vector2.one,Color.white,70));
             var view = warnings[used++]; view.enabled = true;
             if (ability.TargetCell is Vector2Int cell)

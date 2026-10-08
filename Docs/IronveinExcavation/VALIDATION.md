@@ -81,3 +81,19 @@ approval of the whole region. Art/music review and device testing remain pending
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-7a3f23ec-6c12-44be-95c1-5f3146c8f294.log`.
 - Four starting user files still match their SHA256 hashes. Unity's automatic
   TimeManager rewrite was reviewed and removed. No paid generation or merge.
+
+## Phase 06
+
+- Seven initial focused scene checks passed, no failures/skips:
+  `.utmp/ForestValidation/5cf1049e-bda6-40fb-a04e-4ef6ce6b1001.xml/.log`.
+- Final affected checks: **33 passed**, zero failures/skips:
+  `.utmp/ForestValidation/3f195399-e0ae-4030-90cf-32fff8b16585.xml/.log`.
+  Covers separate builder ownership/full slots, actual-tier extraction with zero
+  rewards, Sentinel current material/Continue/lost targets/final-move drill
+  interruption, CourtRevision and KingReadiness regressions. The filename-only
+  ChannelLifecycle filter did not select its unrelated method names.
+- Actual turret/ore-status proof captured and inspected at
+  `.utmp/Ironvein/Captures/phase06-turret-proof.png`; shell art is temporary.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-97d9c7b9-8317-4536-b5df-f20ecf81c4e8.log`.
+- All four starting user-file hashes still match. No paid generation or merge.

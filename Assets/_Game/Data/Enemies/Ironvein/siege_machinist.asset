@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e183439795c4fc345a38a3e031111fa7, type: 3}
-  m_Name: bore_engineer
+  m_Name: siege_machinist
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDefinition
-  oreWeaponEligible: 1
+  oreWeaponEligible: 0
   releasesOreOnDefeat: 0
   oreAttackMultiplier: 1.3
   mineWarningMoves: 2
-  mineAbilityDamage: 20
-  mineTurret: {fileID: 0}
+  mineAbilityDamage: 30
+  mineTurret: {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
   maximumMineTurrets: 2
   mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
   mineObsidianSlamMultiplier: 1.5
@@ -32,23 +32,23 @@ MonoBehaviour:
   tributeTargetCount: 3
   tributeChannelMoves: 3
   tributeStackCap: 2
-  enemyId: bore_engineer
+  enemyId: siege_machinist
   race: Dwarf
   faction: Ironvein Expedition
-  combatRole: Board disruptor
+  combatRole: Summoner
   eligibleZones:
   - ironvein-excavation
-  threatCost: 3
-  isBoardDisruptor: 1
-  isSupport: 0
+  threatCost: 5
+  isBoardDisruptor: 0
+  isSupport: 1
   chainCap: 2
   chainsPerUse: 1
-  displayName: Bore Engineer
-  category: 1
-  description: 'Path of Least Resistance: marks the lane with fewest stones for two
-    moves. A small drill clears ordinary gems, skips specials and stops at the FIRST
-    stone after exactly one hit, even if it breaks. If no stone stops it, take 20
-    base damage. Launch adds one charge to the corresponding big drill.'
+  displayName: Siege Machinist
+  category: 2
+  description: Assemble Turret builds one independent turret into a free enemy slot,
+    up to two living owned turrets. Prime the Turrets empowers each owned turret's
+    next complete shot and adds one fixed-drill charge. Turrets remain after their
+    builder falls.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
   fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
   animationControllerOverride: {fileID: 0}
@@ -57,15 +57,15 @@ MonoBehaviour:
   useAuthoredAutoAttackMotion: 0
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
-  baseMaxHealth: 75
-  baseDamage: 6
+  baseMaxHealth: 205
+  baseDamage: 10
   baseFollowUpDamage: 0
   followUpAttackDelay: 0
-  baseAttackInterval: 5.3
+  baseAttackInterval: 6.8
   firstAttackMoves: 3
   attackMoves: 3
   hasSpecialAbility: 1
-  specialAbilityKind: 32
+  specialAbilityKind: 37
   baseSpecialTurnRequirement: 4
   lockSpecialTurnRequirement: 1
   allyShieldAmount: 10

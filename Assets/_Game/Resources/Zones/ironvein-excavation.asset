@@ -28,6 +28,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7bc66dfc84ac9374aa017d016ab9c57b, type: 2}
   - {fileID: 11400000, guid: 708eee1ec48fd034aa70fb047f8879a8, type: 2}
   - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
+  - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+  - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+  - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
   developmentEncounters:
   - label: Ore network fixture
     members:
@@ -90,6 +93,27 @@ MonoBehaviour:
     members:
     - {fileID: 11400000, guid: f6cd9d6772391b343b84743d40a40d7d, type: 2}
     - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: Siege Machinist fixture
+    members:
+    - {fileID: 11400000, guid: e0ad085783f67b844a442f569d16494c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: Obsidian Sentinel fixture
+    members:
+    - {fileID: 11400000, guid: b77fa3147cfcc804b969aac69139bd05, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+  - label: Rivet Turret fixture
+    members:
+    - {fileID: 11400000, guid: 73f2aac8e2c553142a3869d151ebb53d, type: 2}
     firstLocalWave: 1
     lastLocalWave: 999
     weight: 1

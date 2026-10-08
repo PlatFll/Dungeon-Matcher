@@ -10,13 +10,15 @@ public sealed class MineEnemySnapshot
     public int version = 1, stage, dueMove, lane, drillId, cycle;
     public long stoneId;
     public MineStoneStage stoneStage;
+    public List<long> turrets = new List<long>();
+    public bool obsidianSlam;
     public bool horizontal;
     public string action;
 }
 
 /// <summary>Data-selected mine choreography; all structural changes stay in BoardController.</summary>
 [DisallowMultipleComponent]
-public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime,
+public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntime,
     IAcceptedMoveEnemyAbility, IEnemyContinuationOwner
 {
     private EnemyActor actor;
@@ -34,6 +36,7 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     public int Lane => state.lane;
     public long StoneId => state.stoneId;
     public int DrillId => state.drillId;
+    public bool HasLaneTarget => Kind == EnemySpecialAbilityKind.BoreDrill || Kind == EnemySpecialAbilityKind.SwitchTrack;
     public Vector2Int? TargetCell => board?.FindMineStone(state.stoneId)?.Cell;
     private EnemySpecialAbilityKind Kind => actor.Definition.SpecialAbilityKind;
     private int Move => board.CompletedValidPlayerMoves;
@@ -46,6 +49,7 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         actor = owner; board = targetBoard; roster = enemies;
         attack = actor.GetComponent<EnemyAutoAttack>(); stagger = actor.GetComponent<EnemyStagger>();
         actor.Defeated += Died;
+        board.MineDrillFired += DrillFired;
         if (stagger != null) stagger.StaggerApplied += Interrupted;
     }
     public void ResolveAcceptedMove()
@@ -55,6 +59,7 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         if (IsPreparing)
         {
             if (TargetGone) { Finish(); return; }
+            if (state.action == "SLAM") return; // Final response move's actual drill firing gets first refusal.
             if (Move < state.dueMove || !actor.TryBeginSpecialAbilityAnimationAction()) return;
             pending = true; StartCoroutine(Release()); return;
         }
@@ -67,6 +72,9 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         Clear();
         switch (Kind)
         {
+            case EnemySpecialAbilityKind.SiegeMachinist:
+            case EnemySpecialAbilityKind.ObsidianSentinel:
+                return PlanMilestone();
             case EnemySpecialAbilityKind.ShareOre:
                 if (!roster.Any(e => e != null && e != actor && !e.IsDefeated && e.Definition.oreWeaponEligible)) return false;
                 state.action = "SHARE ORE"; break;
@@ -95,13 +103,14 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     }
     private IEnumerator Begin()
     {
-        bool instant = Kind == EnemySpecialAbilityKind.ShareOre || Kind == EnemySpecialAbilityKind.LayFoundation || Kind == EnemySpecialAbilityKind.Faultline;
+        bool instant = Kind == EnemySpecialAbilityKind.ShareOre || Kind == EnemySpecialAbilityKind.LayFoundation || Kind == EnemySpecialAbilityKind.Faultline || Kind == EnemySpecialAbilityKind.SiegeMachinist;
         int motion = actor.StartSpecialMotion(instant ? "Ability" : "ChannelStart");
         if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
         if (!Valid(motion)) { Finish(); yield break; }
         bool used = true;
         switch (Kind)
         {
+            case EnemySpecialAbilityKind.SiegeMachinist: used = CommitMachinist(); break;
             case EnemySpecialAbilityKind.ShareOre:
                 foreach (var ally in roster)
                     if (ally != null && ally != actor && !ally.IsDefeated) ally.GetComponent<EnemyOrePower>()?.Grant();
@@ -122,7 +131,7 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         }
         if (used && !disposed && !actor.IsDefeated)
         {
-            actor.AnnounceCommittedCast(EnemyAbilityNames.Primary(actor.Definition));
+            actor.AnnounceCommittedCast(MilestoneName ?? EnemyAbilityNames.Primary(actor.Definition));
             actor.NotifySpecialAbilityUsed(); actor.ResetSpecialCounter();
             if (!instant) { state.stage = 1; state.dueMove = Move + Mathf.Max(1, actor.Definition.mineWarningMoves); }
         }
@@ -140,6 +149,16 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         bool done = false, queued = false;
         switch (Kind)
         {
+            case EnemySpecialAbilityKind.ObsidianSentinel:
+                if (state.action == "DEVOUR")
+                    queued = board.TryQueueExtractMineStone(actor,state.stoneId,(ok,stage) => { if(ok && Valid(0)) ApplyExtractedPower(stage); done=true; });
+                else
+                {
+                    float boost = state.obsidianSlam ? actor.Definition.mineObsidianSlamMultiplier : 1f;
+                    state.obsidianSlam = false;
+                    attack.PlayerTarget.TryTakeDamage(CombatAmounts.Round(actor.Definition.mineAbilityDamage * actor.RuntimeStats.DamageMultiplier * boost),actor);
+                }
+                break;
             case EnemySpecialAbilityKind.BoreDrill:
                 queued = board.TryQueueSmallMineDrill(actor, state.horizontal, state.lane,
                     edge => { if (edge && !disposed && !actor.IsDefeated) Hit(); done = true; }); break;
@@ -178,12 +197,14 @@ public sealed class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
     public void RestoreContinuation(EnemyCombatSnapshot saved, Func<int, EnemyActor> enemyAt)
     {
         state = saved.mineEnemy == null ? new MineEnemySnapshot() : JsonUtility.FromJson<MineEnemySnapshot>(JsonUtility.ToJson(saved.mineEnemy));
+        state.turrets ??= new List<long>();
         Hold();
     }
     private void Cleanup()
     {
         if (disposed) return; disposed = true; StopAllCoroutines();
         if (board != null && actor != null) board.ReleaseMineCharges(actor.PersistentId);
+        if (board != null) board.MineDrillFired -= DrillFired;
         if (attack != null) attack.SetActionPaused(this, false);
         if (actor != null) { actor.Defeated -= Died; actor.SpecialIdleState = null; actor.EndSpecialAbilityAnimationAction(); }
         if (stagger != null) stagger.StaggerApplied -= Interrupted;

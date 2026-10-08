@@ -17,6 +17,10 @@ MonoBehaviour:
   oreAttackMultiplier: 1.3
   mineWarningMoves: 1
   mineAbilityDamage: 20
+  mineTurret: {fileID: 0}
+  maximumMineTurrets: 2
+  mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
+  mineObsidianSlamMultiplier: 1.5
   appliedPlayerStatus: {fileID: 0}
   canFightFlooded: 0
   aquaticSummon: {fileID: 0}

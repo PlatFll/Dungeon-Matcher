@@ -155,6 +155,18 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
             }
             run.Player.GetComponent<RoyalDecreeRuntime>()?.ExpireAcceptedMove(Tick);
             if (!run.Player.IsDefeated) yield return run.Board.DrainMineDrills();
+            // Drill-counterable warnings stay live through the final response
+            // move's actual environmental firing, then release under this hold.
+            foreach (var actor in acceptedActors)
+            {
+                if (!Living(actor) || run.Player.IsDefeated) continue;
+                var mineAbility = actor.GetComponent<MineEnemyAbility>();
+                if (mineAbility == null) continue;
+                ActingEnemy = actor;
+                mineAbility.ResolveAfterMineDrills();
+                yield return WaitForActions();
+                ActingEnemy = null;
+            }
             run.AdvanceSupplyCooldowns();
             run.Board.FinishAquaticMove(Tick);
             ActionSettled?.Invoke(Tick);
