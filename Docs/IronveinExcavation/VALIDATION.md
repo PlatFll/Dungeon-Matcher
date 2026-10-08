@@ -50,3 +50,15 @@ approval of the whole region. Art/music review and device testing remain pending
 - Required `Tools/Validate-Unity.ps1`: **PASS**, Unity 6000.3.19f1.
   `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-c5d1e485-af2a-4dd5-925c-ef7ca1fbd6cf.log`.
 - Original four user-file hashes still match. No PixelLab generations used.
+
+## Phase 04
+
+- Additive normal-definition import/compile: PASS.
+- **Six focused scene tests passed**, zero failures/skips:
+  ore refresh/Continue/consumption, complete multi-hit sequence, Packbeetle death
+  network and saved non-replay, source-cap restoration, two-stone penetration and
+  actor-before-drill ordering. Results:
+  `.utmp/ForestValidation/6a3d0be7-5171-41c8-a585-90441d415fcb.xml` and `.log`.
+- Required `Tools/Validate-Unity.ps1`: **PASS**, muted Unity 6000.3.19f1.
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-659a0f7a-ad57-43e3-8493-cc9206990e4a.log`.
+- PixelLab usage remains zero. Native enemy art and full region acceptance are pending.

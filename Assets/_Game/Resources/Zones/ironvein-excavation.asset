@@ -18,19 +18,25 @@ MonoBehaviour:
   eligibleForTesting: 1
   affiliatedGem: 1
   enemies:
-  - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+  - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+  - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+  - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
   developmentEncounters:
-  - label: "Foundation fixture \u2014 existing Farmer placeholder"
+  - label: Ore network fixture
     members:
-    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
     firstLocalWave: 1
     lastLocalWave: 999
     weight: 1
     requiredTide: 0
   liveEncounters:
-  - label: "Foundation fixture \u2014 existing Farmer placeholder"
+  - label: Ore network fixture
     members:
-    - {fileID: 11400000, guid: a76417e22f884fad9fc5f40479f897e7, type: 2}
+    - {fileID: 11400000, guid: aebb283714049db4f8fbcf4c7d34f273, type: 2}
+    - {fileID: 11400000, guid: 3b88a1a681dda93478542ddb26faf2c8, type: 2}
+    - {fileID: 11400000, guid: 511dccc88691e2545bdbd797b89149d9, type: 2}
     firstLocalWave: 1
     lastLocalWave: 999
     weight: 1

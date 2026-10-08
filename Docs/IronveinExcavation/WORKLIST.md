@@ -9,11 +9,11 @@ reviewed commit. Final output is a PR; no merge without new approval.
 | 01 | Current-source audit, branch, authority/tool/allowance record | Complete |
 | 02 | Additive zone/theme stub; saved 1/2/3-hit stones, safe caps, 3-move aging | Complete; 37 affected tests and validator pass |
 | 03 | Two charged perimeter drills; full-lane clears, dedupe and one settlement | Complete; 37 affected tests and validator pass; proof captured |
-| 04 | Ore-Powered sequence token; Pickaxe, Gunner, Packbeetle death network | Pending 03 |
-| 05 | Hauler, Stonewright, Bore, Surveyor, Sapper, Switcher, Smith/Rattled | Pending 04 |
+| 04 | Ore-Powered sequence token; Pickaxe, Gunner, Packbeetle death network | Complete; six focused tests pass; validator recorded below |
+| 05 | Hauler, Stonewright, Bore, Surveyor, Sapper, Switcher, Smith/Rattled | Next |
 | 06 | Machinist, independent turret, Sentinel extraction/slam | Pending 05 |
 | 07 | Grand Delver cycle/Core; optional one-remount phase behind data flag | Pending 06 |
-| 08 | Four native art pilots, powered pilot, then 14 identities and motion | Pending external-service authorization/allowance |
+| 08 | Four native art pilots, powered pilot, then 14 identities and motion | 400/300 budget approved; payload authorization pending |
 | 09 | Modular cave compositions, industrial HUD, mechanics/VFX/audio | Pending 08; local layout work can precede art |
 | 10 | Weighted encounters, teaching/relief, four-zone travel and continuation | Pending mechanics; enable only ready destinations |
 | 11 | Regression, captures, native gallery, final docs and review PR | Pending all affected work |

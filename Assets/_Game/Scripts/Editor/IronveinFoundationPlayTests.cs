@@ -81,6 +81,8 @@ public sealed partial class ForestFoundationPlayTests
         yield return ResumeRoster(); board = Run.Board;
         Assert.That(board.Mine.lastSettledMove, Is.EqualTo(1)); Assert.That(board.Mine.nextStoneId, Is.EqualTo(nextId));
         Assert.That(MineCells().Select(c => c.mineStone.id), Is.EquivalentTo(before.Select(c => c.mineStone.id)));
+        Assert.That(board.TryQueuePlaceMineStones(Run.Waves.ActiveEnemies[0], 1, 1), Is.False,
+            "Continue must retain the living owner's stone cap");
         var saved = Run.Continuation.Capture().board;
         board.PrepareZoneArrival(saved, Resources.Load<ZoneDefinition>("Zones/dungeon"));
         Assert.That(saved.mine, Is.Null); Assert.That(saved.cells.Any(c => c.barricade && c.barricadeStyle == EnemyBarricadeStyle.MineStone), Is.False);

@@ -164,7 +164,13 @@ public partial class BoardController
                     RemainingDurability=value.durability,MaximumDurability=value.maximumDurability,Style=value.barricadeStyle,
                     RootId=value.rootId,RootOwnerId=value.rootOwnerId,RootSpreading=value.rootSpreading,OpenRootSides=value.openRootSides,
                     ThornSafeSide=value.thornSafeSide,ThornDamage=value.thornDamage,MineStone=value.mineStone?.Copy() };
-                if (IsMineStone(barrier)) barrier.OwnerInstanceId = MineOwnerInstance(barrier.MineStone);
+                // Continue creates actors before restoring their persistent IDs. Keep the
+                // valid saved-slot binding until those IDs exist; photographs use them now.
+                if (IsMineStone(barrier))
+                {
+                    int liveOwner = MineOwnerInstance(barrier.MineStone);
+                    if (liveOwner != 0) barrier.OwnerInstanceId = liveOwner;
+                }
                 nextRootId=Mathf.Max(nextRootId,value.rootId);
                 barricadeCells.Add(cell,barrier); CreateOrRefreshBarricadeView(cell,barrier);
             }

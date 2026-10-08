@@ -89,6 +89,8 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class EnemyCombatSnapshot
 {
+    public float oreNextMultiplier;
+    public bool oreBurstConsumed;
     public string definition;
     public long persistentId;
     public int staggerHitMove, staggerAppliedMove, immunityAppliedMove;

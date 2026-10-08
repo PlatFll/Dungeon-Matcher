@@ -638,6 +638,9 @@ public sealed partial class WaveController :
             );
         }
 
+        if (definition.oreWeaponEligible || definition.releasesOreOnDefeat)
+            enemyObject.AddComponent<EnemyOrePower>().Initialize(enemy, boardController, activeEnemies);
+
         if (definition.HasSpecialAbility)
         {
             if (definition.SpecialAbilityKind ==

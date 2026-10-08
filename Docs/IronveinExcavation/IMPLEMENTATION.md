@@ -5,7 +5,7 @@
 The additive `ironvein-excavation` definition is available through the temporary
 testing picker. `eligibleForTesting` is separate from live crystal eligibility:
 the unfinished destination cannot be selected by a live crystal. Its current
-Farmer and dungeon scenery are explicitly labelled development placeholders;
+existing shell artwork and dungeon scenery are development placeholders;
 the native roster and cave are later phases, not approved mine art.
 
 BoardController owns mine material history and uses the existing barricade
@@ -64,3 +64,20 @@ current network and cannot refund spent charge; zone travel drops the source
 network. The existing layout owners reserve optional perimeter space only for
 the mine theme. `MineEnvironmentView` observes state and shows fallback machine
 shapes, pips and brief sweeps; it owns no charge, targeting, timing or damage.
+
+## Phase 04 — ore network and normals
+
+Pickaxe Delver, Rivet Gunner and Packbeetle have separate data definitions and a
+three-actor testing fixture. Existing shell art remains temporary until Phase 08.
+Weapon eligibility is declared in EnemyDefinition; eligible weapons receive one
+non-stacking 1.3× next-basic token. Reapplying keeps the stronger pending value.
+EnemyAutoAttack consumes it once for the whole sequence, including follow-ups;
+the existing central damage and five-point rounding paths remain authoritative.
+Pending tokens survive Continue and are not refunded by board photographs.
+
+Packbeetle subscribes to authentic defeat, claims its once-only guard before
+callbacks, empowers all currently living eligible allies and queues one charge
+to every existing fixed drill. No destroy/animation callback triggers gameplay.
+A fourth charge can fire the normal penetrating drill and clear player obstacles.
+Living-source stone limits also retain their saved slot binding while Continue
+restores actor persistent IDs, closing a source-cap bypass.

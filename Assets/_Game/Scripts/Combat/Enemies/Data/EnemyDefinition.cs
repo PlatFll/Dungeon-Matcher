@@ -7,6 +7,10 @@ using UnityEngine.Serialization;
 )]
 public sealed class EnemyDefinition : ScriptableObject
 {
+    [Header("Ironvein ore network")]
+    public bool oreWeaponEligible;
+    public bool releasesOreOnDefeat;
+    [Min(1f)] public float oreAttackMultiplier = 1.3f;
     [Header("Optional shared player debuff (unassigned in the production roster)")]
     public PlayerStatusDefinition appliedPlayerStatus;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
