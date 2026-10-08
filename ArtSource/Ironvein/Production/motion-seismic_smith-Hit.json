@@ -1,0 +1,23 @@
+{
+  "id": "seismic_smith",
+  "state": "Hit",
+  "request": {
+    "description": "A small restrained backward recoil, heavy body flexes at knees or pistons, equipment stays attached; return to the exact starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Corrections/smith-edge/00.png",
+    "last_frame_url": "ArtSource/Ironvein/Corrections/smith-edge/00.png",
+    "no_background": true,
+    "seed": 7986,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "grounded original ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e7ebd5ba-d2c3-40ca-92c0-d3558b865904\njob_id: e7ebd5ba-d2c3-40ca-92c0-d3558b865904\ndescription: A small restrained backward recoil, heavy body flexes at knees or pistons, equipment stays attached; return to the exact starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7986\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e7ebd5ba-d2c3-40ca-92c0-d3558b865904\")\nasset_id: 53891443-e57b-522e-bd74-464816331a73\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

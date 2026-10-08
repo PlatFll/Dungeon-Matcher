@@ -1,0 +1,1642 @@
+[
+  {
+    "name": "pickaxe_delver",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 9,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/pickaxe_delver/Idle/00.png",
+      "RawMotion/pickaxe_delver/Idle/01.png",
+      "RawMotion/pickaxe_delver/Idle/02.png",
+      "RawMotion/pickaxe_delver/Idle/03.png",
+      "RawMotion/pickaxe_delver/Idle/04.png",
+      "RawMotion/pickaxe_delver/Idle/05.png",
+      "RawMotion/pickaxe_delver/Idle/06.png",
+      "RawMotion/pickaxe_delver/Idle/07.png",
+      "RawMotion/pickaxe_delver/Idle/00.png"
+    ],
+    "source_sha256": [
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e",
+      "97f5b2953042d53e2d5833469479b99a0895039d4e6c7ec2d045654dcc97364d",
+      "49808ffaa553297a08c0e507503ca57840f0a6bc183b91165b6e90ed6713fd30",
+      "3b8065b0da5c856f37f3f8c009bf4285d6a352d482998fe6fc309dcc00607cc4",
+      "9af05dc56833696048ee4359cf461594b1664b41ac9f705f8e795978115b2469",
+      "68c34be38036dc8c1af7c17003576de3f6426eee30b1014b981dbfe865cb91da",
+      "710359544368f970948beb2aae7f95ca3629364124e5e690e58c7fd8d03e6a29",
+      "b2500309c23991e71fcc6e83607e579223bfa78b33ff54f56299f7eb40173622",
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        12,
+        25,
+        65,
+        80
+      ],
+      [
+        13,
+        25,
+        65,
+        80
+      ],
+      [
+        14,
+        25,
+        66,
+        80
+      ],
+      [
+        13,
+        25,
+        65,
+        80
+      ],
+      [
+        12,
+        25,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        10,
+        25,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1170,
+    "scale": 1,
+    "sheet_sha256": "f6e334f8f2f026ddf043147ddf215d4de7a3bc7298241f35a06bde079edf3d2e",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 5,
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/rivet_gunner/Idle/00.png",
+      "RawMotion/rivet_gunner/Idle/01.png",
+      "RawMotion/rivet_gunner/Idle/02.png",
+      "RawMotion/rivet_gunner/Idle/03.png",
+      "RawMotion/rivet_gunner/Idle/00.png"
+    ],
+    "source_sha256": [
+      "a04fe695521efaf0947802eb695e7ab9f492eb8c6164a77132ebe7e39f64997c",
+      "602e38282b0db788b1fc4bb661c542fa43e1ff98660bb4331ca0b5f8a3dfb33a",
+      "d3d3846ca8ee14ce8c1a843e4b019113f70290ea2b0af8ae788a470f198dc353",
+      "daa2c78c6c74ed6c9c17b8bcec58102ab3aa7c48929aefa6b9fd67a5ac71aba4",
+      "a04fe695521efaf0947802eb695e7ab9f492eb8c6164a77132ebe7e39f64997c"
+    ],
+    "occupied_bounds": [
+      [
+        10,
+        24,
+        65,
+        80
+      ],
+      [
+        10,
+        23,
+        65,
+        80
+      ],
+      [
+        10,
+        22,
+        65,
+        80
+      ],
+      [
+        10,
+        23,
+        65,
+        80
+      ],
+      [
+        10,
+        24,
+        65,
+        80
+      ]
+    ],
+    "palette_counts": [
+      24,
+      24,
+      24,
+      24,
+      24
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1100,
+    "scale": 1,
+    "sheet_sha256": "8b83c0a5e7283edfb24d31147aa1c7b653744b666529e5881d1036a7d7d1a610",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 9,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/ore_hauler/Idle/00.png",
+      "RawMotion/ore_hauler/Idle/01.png",
+      "RawMotion/ore_hauler/Idle/02.png",
+      "RawMotion/ore_hauler/Idle/03.png",
+      "RawMotion/ore_hauler/Idle/04.png",
+      "RawMotion/ore_hauler/Idle/05.png",
+      "RawMotion/ore_hauler/Idle/06.png",
+      "RawMotion/ore_hauler/Idle/07.png",
+      "RawMotion/ore_hauler/Idle/00.png"
+    ],
+    "source_sha256": [
+      "aadf1e5f0356024d48a63c4f2281f9bf8af18af6e6e52e8300f64cecca2ad348",
+      "9377e45dfad20abd6ba9c6785bf7970c0a9353bb8cb24988be2733866e9e95a6",
+      "31e9e59a32a51d51e5d51b75e87b4626fb553e195fa3ef6f9300867f6143bde1",
+      "0da1b00ceccc0459890a4bc16ffec06acea8445b9ce7c7c0ba7fcecd52ca49f9",
+      "6c1f062d9e7d7fecd07ba6b052bed18771be306e7d0055a42d6aba59ada721d5",
+      "1e6a6a54f02193bcfe89e83d296fcd523aad712f591c8f755e90ac1af5c2e99f",
+      "be9772d008fdd99fea5ecadbd038d313993956edef52a17b859a6979f162c05d",
+      "43cadf506a25b1c3beec8ef9374abdcfd0c184c5d360e3a016095541a454d8ba",
+      "aadf1e5f0356024d48a63c4f2281f9bf8af18af6e6e52e8300f64cecca2ad348"
+    ],
+    "occupied_bounds": [
+      [
+        9,
+        19,
+        68,
+        80
+      ],
+      [
+        10,
+        19,
+        69,
+        80
+      ],
+      [
+        11,
+        19,
+        70,
+        80
+      ],
+      [
+        11,
+        18,
+        70,
+        80
+      ],
+      [
+        11,
+        18,
+        70,
+        80
+      ],
+      [
+        10,
+        18,
+        69,
+        80
+      ],
+      [
+        9,
+        18,
+        68,
+        80
+      ],
+      [
+        9,
+        19,
+        68,
+        80
+      ],
+      [
+        9,
+        19,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1170,
+    "scale": 1,
+    "sheet_sha256": "d7876452bcc4baf79afcdcfded729347ff04522377a04b63fb3edf3526046edd",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "packbeetle",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 5,
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/packbeetle/Idle/00.png",
+      "RawMotion/packbeetle/Idle/01.png",
+      "RawMotion/packbeetle/Idle/02.png",
+      "RawMotion/packbeetle/Idle/03.png",
+      "RawMotion/packbeetle/Idle/00.png"
+    ],
+    "source_sha256": [
+      "330c4ec67c9278a4681ad44e118cb4cfb79b54fecbae3aaf9d5f62fe1c2cb7c1",
+      "020e1bb35682794ccffcac5003434ae24ff726d531bf84057b825dda49d7c011",
+      "88447076e8dd68e885b6fe4bfa9357c302feba151f6a10f581649648bc363f77",
+      "fb882421503d3be0c8e8466b2da1f74ba7424a51777054dc53e24498ce940f8f",
+      "330c4ec67c9278a4681ad44e118cb4cfb79b54fecbae3aaf9d5f62fe1c2cb7c1"
+    ],
+    "occupied_bounds": [
+      [
+        13,
+        39,
+        68,
+        80
+      ],
+      [
+        15,
+        39,
+        68,
+        80
+      ],
+      [
+        16,
+        39,
+        68,
+        80
+      ],
+      [
+        15,
+        39,
+        68,
+        80
+      ],
+      [
+        13,
+        39,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1100,
+    "scale": 1,
+    "sheet_sha256": "d6733e5777e2ba2f6d2dc4b13f02185a965d2ed52468db6ad5cdc92752ffce93",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 5,
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/vein_surveyor/Idle/00.png",
+      "RawMotion/vein_surveyor/Idle/01.png",
+      "RawMotion/vein_surveyor/Idle/02.png",
+      "RawMotion/vein_surveyor/Idle/03.png",
+      "RawMotion/vein_surveyor/Idle/00.png"
+    ],
+    "source_sha256": [
+      "7b9fe7864d6bd94a5b0a8999e9e2628e408178ca06a7c9c2a753a7ace197c8b8",
+      "1caea4682626cd343fafaaf4fa48426ee4ad8af66b85e207f7d49ec9d39704bc",
+      "43d17b9e5a6d9e823d622cbcd841ede7b39b5c3df64a1c4de32681933e4f11be",
+      "c13112e3ccfe305a0720acb057ef489ff2303ade55e48b77e842e1d43585e534",
+      "7b9fe7864d6bd94a5b0a8999e9e2628e408178ca06a7c9c2a753a7ace197c8b8"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        21,
+        67,
+        80
+      ],
+      [
+        12,
+        21,
+        67,
+        80
+      ],
+      [
+        13,
+        20,
+        68,
+        80
+      ],
+      [
+        12,
+        20,
+        68,
+        80
+      ],
+      [
+        11,
+        21,
+        67,
+        80
+      ]
+    ],
+    "palette_counts": [
+      23,
+      23,
+      23,
+      23,
+      23
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1100,
+    "scale": 1,
+    "sheet_sha256": "996fdd34463e48ec6de0894f3e0ae456e882da862a8357820f75d35a367b5760",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 5,
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/powder_sapper/Idle/00.png",
+      "RawMotion/powder_sapper/Idle/01.png",
+      "RawMotion/powder_sapper/Idle/02.png",
+      "RawMotion/powder_sapper/Idle/03.png",
+      "RawMotion/powder_sapper/Idle/00.png"
+    ],
+    "source_sha256": [
+      "27973a3336c49ff273f1fb383422a045b5c48b114cacf4d1cb16a98f989f1c85",
+      "10a20e14a3520c0ccfea80e4c747e6ca7b5ac3e539fd4deb761f9711dbb35ee9",
+      "49e807ed035cf18c58e8fddde8349359fead6b7e605d65fa8e3d0e7dfaedab08",
+      "574d8ea895269c45c6ec1f6a4ae21d635eed81113f31f1f07beec939234a7969",
+      "27973a3336c49ff273f1fb383422a045b5c48b114cacf4d1cb16a98f989f1c85"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1100,
+    "scale": 1,
+    "sheet_sha256": "c0f83f67b48828b6b13edbdd93356158835958594a41cc94b0a3a6d85c30b93a",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "Idle",
+    "width": 80,
+    "height": 80,
+    "frameCount": 5,
+    "durationsMs": [
+      220,
+      220,
+      220,
+      220,
+      220
+    ],
+    "impactFrame": 0,
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "source_frames": [
+      "RawMotion/rivet_turret/Idle/00.png",
+      "RawMotion/rivet_turret/Idle/01.png",
+      "RawMotion/rivet_turret/Idle/02.png",
+      "RawMotion/rivet_turret/Idle/03.png",
+      "RawMotion/rivet_turret/Idle/00.png"
+    ],
+    "source_sha256": [
+      "f500cbba5bc9d0fea8c4832ce5cc6cd9746e98c4aad34d6421ba8db785222324",
+      "e3fa238965b37620200039b60ec7b158b01486014653a81189bf2b456f19340a",
+      "663b9aef2fbaa3adb506f165f99a04636b31430db711578006b43d1d70c7004b",
+      "bab04943627aa87fc35143804c1b17af64a2350a818aca53ab3982f0627e152f",
+      "f500cbba5bc9d0fea8c4832ce5cc6cd9746e98c4aad34d6421ba8db785222324"
+    ],
+    "occupied_bounds": [
+      [
+        12,
+        37,
+        59,
+        80
+      ],
+      [
+        12,
+        37,
+        59,
+        80
+      ],
+      [
+        12,
+        37,
+        59,
+        80
+      ],
+      [
+        12,
+        37,
+        59,
+        80
+      ],
+      [
+        12,
+        37,
+        59,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 0,
+    "total_ms": 1100,
+    "scale": 1,
+    "sheet_sha256": "f3c9ff38502c1e335b68a71f781545ddd5baae1bbc1a77ff355771a5465262f6",
+    "review": "Reviewed all native frames; restrained breathing/weight shift, intact equipment and stable planted floor. Last pose pinned to exact source."
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 8,
+    "durationsMs": [
+      90,
+      80,
+      100,
+      80,
+      80,
+      80,
+      80,
+      90
+    ],
+    "impactFrame": 3,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/pickaxe_delver/AutoAttack/00.png",
+      "RawMotion/pickaxe_delver/AutoAttack/01.png",
+      "RawMotion/pickaxe_delver/AutoAttack/02.png",
+      "RawMotion/pickaxe_delver/AutoAttack/09.png",
+      "RawMotion/pickaxe_delver/AutoAttack/10.png",
+      "RawMotion/pickaxe_delver/AutoAttack/11.png",
+      "RawMotion/pickaxe_delver/AutoAttack/12.png",
+      "RawMotion/pickaxe_delver/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e",
+      "9888df22a0bb7821dbf2b3915e90fc2ddbca6262e9a39ac79f1aabbc53af1517",
+      "b6ff8d323353c68435f585276a6bf79421c75b1ff8cd37d91847f4a619d7d468",
+      "93bbb8f25c0a904fac97c4299d9729af674aad06441a68af45f3fb7882bad05f",
+      "7e641c36bc66b36d5454e78368960b38d8596ef55fba370b486cbe92dd62b97e",
+      "358bb9e8044347d550f2b634404d04309bb9e8ed0bd4c402545424fa1914112d",
+      "aac3c4e060a1e739bfb03d992c949ceb0a9d292691b6c4adea95b5bc07bf7530",
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        8,
+        17,
+        65,
+        80
+      ],
+      [
+        15,
+        6,
+        65,
+        80
+      ],
+      [
+        3,
+        28,
+        65,
+        80
+      ],
+      [
+        6,
+        27,
+        65,
+        80
+      ],
+      [
+        9,
+        26,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      21,
+      21,
+      22,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 270,
+    "total_ms": 680,
+    "scale": 1,
+    "sheet_sha256": "70ae0fef6d9de11ebb079dc0c32da3fa9ff5a447fa38d2e0a267f909499a3d1e",
+    "review": "Omit clipped high wind-up and over-bright arc; keep raised pick, clear low contact and authored recovery."
+  },
+  {
+    "name": "pickaxe_delver",
+    "state": "OreChargedAutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      90,
+      80,
+      80,
+      70,
+      50,
+      40,
+      50,
+      80,
+      80,
+      100
+    ],
+    "impactFrame": 4,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/00.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/01.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/02.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/05.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/06.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/07.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/08.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/10.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/12.png",
+      "RawMotion/pickaxe_delver/OreChargedAutoAttack-v3/00.png"
+    ],
+    "source_sha256": [
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e",
+      "8346822de6cef7b2615792b6db8b91aacde60a61317d55a38503f58bf9e85902",
+      "e9e945860512d75462ce9aeeb20ac0b7728170eaab92f77e0acdd4d0104d647b",
+      "080080c37d672518056ff7cbb7854b254276efcad844bdfb5458cdfca2c76422",
+      "3b76debedf3478eec5fda71b5da54748a3cbac777b5ce303dc63a779fb5678e5",
+      "38f2a15484bc5c584b93c3e5dee296509143b6435aba9839778aa15fd8080237",
+      "0c525d3601b2f50e78c0f5b0f283d49a23a62f4d225fec5b6c574b5741b05684",
+      "d1d123979af77219fe8a1a49fa4954be14e088da9b75de2f27fdf1c5f5590741",
+      "ec5ab3a6bb960c966d8103e1934c6594b983d2d8553b14d890ace9b21bc56f0b",
+      "4cb4e934725eb6e7c6ee63fcab1df37d8f8803b03c817e4a7e19a444845c587e"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        12,
+        15,
+        65,
+        80
+      ],
+      [
+        21,
+        2,
+        66,
+        80
+      ],
+      [
+        21,
+        1,
+        66,
+        80
+      ],
+      [
+        3,
+        4,
+        65,
+        80
+      ],
+      [
+        3,
+        21,
+        66,
+        80
+      ],
+      [
+        0,
+        30,
+        66,
+        80
+      ],
+      [
+        9,
+        29,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      20,
+      20,
+      21,
+      33,
+      37,
+      32,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 320,
+    "total_ms": 720,
+    "scale": 1,
+    "sheet_sha256": "2210aa6211c76770ad124578cbb723d08d2cab8044432ce397509680828f2df0",
+    "review": "Expanded powered head, fast orange contact and mechanical retraction; original ready pose restores the normal weapon."
+  },
+  {
+    "name": "rivet_gunner",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      80,
+      100,
+      40,
+      30,
+      50,
+      60,
+      60,
+      70,
+      80,
+      70
+    ],
+    "impactFrame": 2,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/rivet_gunner/AutoAttack/00.png",
+      "RawMotion/rivet_gunner/AutoAttack/01.png",
+      "RawMotion/rivet_gunner/AutoAttack/02.png",
+      "RawMotion/rivet_gunner/AutoAttack/03.png",
+      "RawMotion/rivet_gunner/AutoAttack/04.png",
+      "RawMotion/rivet_gunner/AutoAttack/05.png",
+      "RawMotion/rivet_gunner/AutoAttack/06.png",
+      "RawMotion/rivet_gunner/AutoAttack/07.png",
+      "RawMotion/rivet_gunner/AutoAttack/08.png",
+      "RawMotion/rivet_gunner/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "a04fe695521efaf0947802eb695e7ab9f492eb8c6164a77132ebe7e39f64997c",
+      "12fdb89127f5a7fe58d9a7d4d6458c5729b750b7cb58d1853b9f9e314908db58",
+      "96d15879e7bd4cd1fae3302384150797b189982714782d9f5e3cd11dca669590",
+      "9b2dc59fb196a525e22e375bdacce81ccb0ebd8ee22d3e92ad894a5d1b319364",
+      "57586f2e819a6d23eb23cb1c39b408686d8efbb257ddc9202968f5cbeafb4271",
+      "2539fe7922d200b58110bdf3fb54c28a5cb00e4cd5c629c8a00673e2cd545bbd",
+      "4b3516091a8fba4af6b4431dc0011e08158df40da37c3d3a9bdf770bc39a559f",
+      "b561f776cb7ea730e7e87c0721cb65ba3e5bc023eb332502bace208d4e902ec3",
+      "736bc729042db9c26b24a1f7ad26c7d9ac3dd95ad209b5190048f69d97e47f54",
+      "a04fe695521efaf0947802eb695e7ab9f492eb8c6164a77132ebe7e39f64997c"
+    ],
+    "occupied_bounds": [
+      [
+        10,
+        24,
+        65,
+        80
+      ],
+      [
+        12,
+        22,
+        67,
+        80
+      ],
+      [
+        0,
+        21,
+        68,
+        80
+      ],
+      [
+        0,
+        21,
+        67,
+        80
+      ],
+      [
+        0,
+        21,
+        71,
+        80
+      ],
+      [
+        0,
+        22,
+        72,
+        80
+      ],
+      [
+        15,
+        22,
+        70,
+        80
+      ],
+      [
+        12,
+        22,
+        67,
+        80
+      ],
+      [
+        10,
+        24,
+        65,
+        80
+      ],
+      [
+        10,
+        24,
+        65,
+        80
+      ]
+    ],
+    "palette_counts": [
+      24,
+      25,
+      36,
+      34,
+      32,
+      31,
+      28,
+      24,
+      24,
+      24
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 180,
+    "total_ms": 640,
+    "scale": 1,
+    "sheet_sha256": "c286a1af9fec353cefccac129adeedf5b2de1e89102b2259f8e024e41b684600",
+    "review": "One short muzzle flash with body recoil and recovery; native battery and goggles preserved."
+  },
+  {
+    "name": "ore_hauler",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      70,
+      70,
+      70,
+      70,
+      50,
+      60,
+      70,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 3,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/ore_hauler/AutoAttack/00.png",
+      "RawMotion/ore_hauler/AutoAttack/01.png",
+      "RawMotion/ore_hauler/AutoAttack/02.png",
+      "RawMotion/ore_hauler/AutoAttack/03.png",
+      "RawMotion/ore_hauler/AutoAttack/04.png",
+      "RawMotion/ore_hauler/AutoAttack/05.png",
+      "RawMotion/ore_hauler/AutoAttack/06.png",
+      "RawMotion/ore_hauler/AutoAttack/07.png",
+      "RawMotion/ore_hauler/AutoAttack/08.png",
+      "RawMotion/ore_hauler/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "aadf1e5f0356024d48a63c4f2281f9bf8af18af6e6e52e8300f64cecca2ad348",
+      "6efb030f71020db0d28112be35264bb90a6b32a954e9cdaa79a3a562163115c0",
+      "b73f0c216376f2181b9957c501975a7d306dd7132c0bab64b0ee1b7a8701f0e0",
+      "faa14439745f3731e255a98443653fcb8f1e4f6a6f7a732fb7d31d1e6e9440e9",
+      "5c3a89a027e9e1bde52e1e025cb23d7b288d2621bf87a4b1746235f59a014a8a",
+      "07a05bed068a03d32d95dd11f2e9b4aecbb0424184c7e3226903721e6d1fe5b8",
+      "f79b17f04ff53bcc64114970c7dce3dae6e105b08e05b823f7388c092269e46d",
+      "91f0c95498e23614b03b54c022334ffea25fa0b219890cc65a6ac386c6d3f34f",
+      "e434d98e4be3abdb475c033c328b60f7384223597903b007dec5629652f54698",
+      "aadf1e5f0356024d48a63c4f2281f9bf8af18af6e6e52e8300f64cecca2ad348"
+    ],
+    "occupied_bounds": [
+      [
+        9,
+        19,
+        68,
+        80
+      ],
+      [
+        8,
+        18,
+        67,
+        80
+      ],
+      [
+        11,
+        17,
+        70,
+        80
+      ],
+      [
+        18,
+        18,
+        72,
+        80
+      ],
+      [
+        15,
+        17,
+        71,
+        80
+      ],
+      [
+        11,
+        17,
+        70,
+        80
+      ],
+      [
+        8,
+        16,
+        69,
+        80
+      ],
+      [
+        9,
+        18,
+        69,
+        80
+      ],
+      [
+        9,
+        19,
+        68,
+        80
+      ],
+      [
+        9,
+        19,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 210,
+    "total_ms": 680,
+    "scale": 1,
+    "sheet_sha256": "54fd39bb70660deee27424eace99879e16d186455f83a615b5761ddfdb40f27a",
+    "review": "Grounded shoulder bump under backpack weight; no invented weapon."
+  },
+  {
+    "name": "packbeetle",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      60,
+      70,
+      70,
+      60,
+      40,
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "impactFrame": 3,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/packbeetle/AutoAttack/00.png",
+      "RawMotion/packbeetle/AutoAttack/01.png",
+      "RawMotion/packbeetle/AutoAttack/02.png",
+      "RawMotion/packbeetle/AutoAttack/03.png",
+      "RawMotion/packbeetle/AutoAttack/04.png",
+      "RawMotion/packbeetle/AutoAttack/05.png",
+      "RawMotion/packbeetle/AutoAttack/06.png",
+      "RawMotion/packbeetle/AutoAttack/07.png",
+      "RawMotion/packbeetle/AutoAttack/08.png",
+      "RawMotion/packbeetle/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "330c4ec67c9278a4681ad44e118cb4cfb79b54fecbae3aaf9d5f62fe1c2cb7c1",
+      "b32d677386b8d891291446de12018f3a49feaeb131a7cf49556b9fb871911eb3",
+      "3a70918592ea440d20ce962ef2571fc0672b7d21a2310b0a52f3cbfd07536bd5",
+      "fd2092c371348563eb1e91fd8192a986d4293ec4325155bc3af062f8733c6fc2",
+      "4aa718704760ef8eac5f9b4af7dbbfd47f26277747bf1adfd1c574800ccec76c",
+      "bb77265742c588e1ab9cf2d1fddce891d0a332a04c2f06035fa7fb1eed7e90db",
+      "1671099cde59dd137248443913b6d9396b3213aa13b81ec22e2dc9781332cc62",
+      "3b8abfe09e3ac426cf9341a1a78304f74de8218b1680eb99a59d03f4578c5617",
+      "92378679b20d5a53d1d5ce96c7bdb9b3cba70ed55677699ac23b5d7d4ac90a70",
+      "330c4ec67c9278a4681ad44e118cb4cfb79b54fecbae3aaf9d5f62fe1c2cb7c1"
+    ],
+    "occupied_bounds": [
+      [
+        13,
+        39,
+        68,
+        80
+      ],
+      [
+        16,
+        41,
+        68,
+        80
+      ],
+      [
+        16,
+        42,
+        68,
+        80
+      ],
+      [
+        5,
+        41,
+        68,
+        80
+      ],
+      [
+        4,
+        41,
+        68,
+        80
+      ],
+      [
+        6,
+        41,
+        68,
+        80
+      ],
+      [
+        9,
+        40,
+        68,
+        80
+      ],
+      [
+        12,
+        39,
+        68,
+        80
+      ],
+      [
+        13,
+        39,
+        68,
+        80
+      ],
+      [
+        13,
+        39,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      20,
+      19,
+      19,
+      20,
+      20,
+      20,
+      19,
+      19,
+      19,
+      20
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 200,
+    "total_ms": 620,
+    "scale": 1,
+    "sheet_sha256": "400329bb5b7942a0f05530d19cef5cbb48b5c7b60b86018e442a48ad7ce4efb6",
+    "review": "Low body lunge and mandible contact, cargo secured; exact ready recovery."
+  },
+  {
+    "name": "vein_surveyor",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      60,
+      60,
+      70,
+      50,
+      60,
+      40,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 4,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/vein_surveyor/AutoAttack/00.png",
+      "RawMotion/vein_surveyor/AutoAttack/01.png",
+      "RawMotion/vein_surveyor/AutoAttack/02.png",
+      "RawMotion/vein_surveyor/AutoAttack/03.png",
+      "RawMotion/vein_surveyor/AutoAttack/04.png",
+      "RawMotion/vein_surveyor/AutoAttack/05.png",
+      "RawMotion/vein_surveyor/AutoAttack/06.png",
+      "RawMotion/vein_surveyor/AutoAttack/07.png",
+      "RawMotion/vein_surveyor/AutoAttack/08.png",
+      "RawMotion/vein_surveyor/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "7b9fe7864d6bd94a5b0a8999e9e2628e408178ca06a7c9c2a753a7ace197c8b8",
+      "ebc2c217a2f0f30c42220f6fd0be60f8832b1dacb8c6129111358589d9a17f36",
+      "91d5e77a34b2465263982f33ae9e93602c5101ab096f2c9accc61e0509fd1987",
+      "e8dfc3fb9c622726a84f3c2858037714d6abe1e4f09053a9bc766bb3accce9b7",
+      "bc8cd9d2fe37365ba3976ee38624d8ca0da4e3d42ce7c73f5ed5760c3bc1e18b",
+      "3887e7752e80c07209c2972730dcbb40221be29572ae79687c915a214a26fc44",
+      "97db434f605af45cffa72b69fc62f8ecd55361fbc0d1efe4299d2ff20d4d35aa",
+      "f53b3397c68dc1e98f67fbd8b8220e25c554f605be67e77054ca365060897c9a",
+      "392263e25e9d002c5264b389c851d2fa641bdc6f3d3fbc9ea58973ef72f78cfc",
+      "7b9fe7864d6bd94a5b0a8999e9e2628e408178ca06a7c9c2a753a7ace197c8b8"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        21,
+        67,
+        80
+      ],
+      [
+        12,
+        22,
+        69,
+        80
+      ],
+      [
+        12,
+        22,
+        71,
+        80
+      ],
+      [
+        9,
+        22,
+        65,
+        80
+      ],
+      [
+        0,
+        21,
+        65,
+        80
+      ],
+      [
+        0,
+        21,
+        65,
+        80
+      ],
+      [
+        9,
+        21,
+        65,
+        80
+      ],
+      [
+        11,
+        21,
+        67,
+        80
+      ],
+      [
+        11,
+        21,
+        67,
+        80
+      ],
+      [
+        11,
+        21,
+        67,
+        80
+      ]
+    ],
+    "palette_counts": [
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 240,
+    "total_ms": 620,
+    "scale": 1,
+    "sheet_sha256": "9c73c34d31edc39a637b79dc0e29cf8fd7705d8026f0af3fb925cb98489a4bc2",
+    "review": "Map jab has distinct extension; lens, map and cap stay coherent."
+  },
+  {
+    "name": "powder_sapper",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 10,
+    "durationsMs": [
+      60,
+      60,
+      70,
+      50,
+      60,
+      40,
+      60,
+      70,
+      70,
+      80
+    ],
+    "impactFrame": 4,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/powder_sapper/AutoAttack/00.png",
+      "RawMotion/powder_sapper/AutoAttack/01.png",
+      "RawMotion/powder_sapper/AutoAttack/02.png",
+      "RawMotion/powder_sapper/AutoAttack/03.png",
+      "RawMotion/powder_sapper/AutoAttack/04.png",
+      "RawMotion/powder_sapper/AutoAttack/05.png",
+      "RawMotion/powder_sapper/AutoAttack/06.png",
+      "RawMotion/powder_sapper/AutoAttack/07.png",
+      "RawMotion/powder_sapper/AutoAttack/08.png",
+      "RawMotion/powder_sapper/AutoAttack/00.png"
+    ],
+    "source_sha256": [
+      "27973a3336c49ff273f1fb383422a045b5c48b114cacf4d1cb16a98f989f1c85",
+      "e9453000900d97fc3b83abfe9ee086af7ea2871dc80e34b638a2c91fb3e14f4d",
+      "545f9e0f0d2220682b2c8eec2e4423a0716ae9ced9c1276a609c7fb49190fb7d",
+      "211c6c21d7bb4da1b4d8148bfb3e43b5a077774bdae7c4ad3a6f39390ca68a27",
+      "b19f6751a1da3c4dc53e5bf91fb270d98d1a0a62f75d3367bebf3dc92b7d4597",
+      "ce2143a1a8d7e2571928b30862388494c83e3680ce405a67eed4efd5da257ff1",
+      "e843d02d10fc0f6988070ef46ad1ee5d228043fa9726868a85c3ff2bb3c11fc2",
+      "38b6b4f68dc7a1013e58667bf878813124830b3e7f5b1651f792560513d28b04",
+      "f3cdfcafb7a9d133905db8ef74b8fbea55d86408cd7aa3e8f06b7292f61bcf52",
+      "27973a3336c49ff273f1fb383422a045b5c48b114cacf4d1cb16a98f989f1c85"
+    ],
+    "occupied_bounds": [
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        13,
+        26,
+        70,
+        80
+      ],
+      [
+        14,
+        26,
+        72,
+        80
+      ],
+      [
+        15,
+        27,
+        73,
+        80
+      ],
+      [
+        7,
+        26,
+        66,
+        80
+      ],
+      [
+        7,
+        26,
+        65,
+        80
+      ],
+      [
+        13,
+        26,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        65,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ],
+      [
+        11,
+        25,
+        68,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 240,
+    "total_ms": 620,
+    "scale": 1,
+    "sheet_sha256": "11d4c3258755d4f3182b70786a04392cd752ea6a55b89fff239c79b33739aafa",
+    "review": "Short fist jab; no explosion or new weapon."
+  },
+  {
+    "name": "rivet_turret",
+    "state": "AutoAttack",
+    "width": 80,
+    "height": 80,
+    "frameCount": 8,
+    "durationsMs": [
+      100,
+      50,
+      40,
+      40,
+      60,
+      90,
+      90,
+      90
+    ],
+    "impactFrame": 1,
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "source_frames": [
+      "RawMotion/rivet_turret/AutoAttack-v2/00.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/01.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/02.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/03.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/04.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/06.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/08.png",
+      "RawMotion/rivet_turret/AutoAttack-v2/00.png"
+    ],
+    "source_sha256": [
+      "f500cbba5bc9d0fea8c4832ce5cc6cd9746e98c4aad34d6421ba8db785222324",
+      "c72ec3f8e33e6b1d8f96c8da2f5f148a8d055e422634890d1ed41ae9c4f0763b",
+      "8a0cbec09cdfbf8364a7d05e0dc972cdcc52ad78241a6c76a4af04b219532d33",
+      "4b109539af4f0df7b687017fcac18d2b2cfc327e4dc4aefb45016c11d7bdd5d5",
+      "a0df5a9a2e27a6c629a981ec1998186ff8c6e845d0f680566f89a64f94673421",
+      "7df174d7038749b29de6009dac6a6c5dbfb991ed0df75399c192e9613290087a",
+      "fd57b0133da11c71c6b65cd46f89ea52e2fc3db109883354ad1ae60ede0ed19a",
+      "f500cbba5bc9d0fea8c4832ce5cc6cd9746e98c4aad34d6421ba8db785222324"
+    ],
+    "occupied_bounds": [
+      [
+        12,
+        37,
+        59,
+        80
+      ],
+      [
+        0,
+        37,
+        59,
+        80
+      ],
+      [
+        0,
+        37,
+        59,
+        80
+      ],
+      [
+        0,
+        35,
+        62,
+        80
+      ],
+      [
+        15,
+        37,
+        59,
+        80
+      ],
+      [
+        14,
+        37,
+        59,
+        80
+      ],
+      [
+        13,
+        37,
+        59,
+        80
+      ],
+      [
+        12,
+        37,
+        59,
+        80
+      ]
+    ],
+    "palette_counts": [
+      22,
+      27,
+      32,
+      20,
+      22,
+      22,
+      22,
+      22
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "impact_ms": 100,
+    "total_ms": 560,
+    "scale": 1,
+    "sheet_sha256": "6c173a1127ef71b43a01a9884e3e53a714f729467bcc7972c02e886348a42595",
+    "review": "Single recoil/shot, flashes held briefly; all three feet and barrel recovered."
+  }
+]

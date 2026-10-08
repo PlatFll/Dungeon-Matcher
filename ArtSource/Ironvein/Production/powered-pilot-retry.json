@@ -1,0 +1,24 @@
+{
+  "request": {
+    "description": "A powerful two-handed mining strike. He raises the pickaxe high behind his head, bends his knees, then swings it forcefully DOWN and FORWARD to his left, leaning his whole torso into the impact. At contact the pick head is LOW near the ground far left of his boots, arms extended down-left. The orange crystal IN THE PICK flares and its hinged metal teeth spread wider during the strike, then retract. He pulls the tool back and recovers to the original ready stance. One readable complete attack, anticipation then fast contact then recovery. Feet stay grounded. Helmet light stays unchanged. Preserve equipment, face and pixel clusters.",
+    "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/83b4ef3b-7673-41fd-bab0-43d35af8abb8/image.png",
+    "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/83b4ef3b-7673-41fd-bab0-43d35af8abb8/image.png",
+    "frame_count": 16,
+    "subject_description": "short brown-bearded dwarf miner holding a mechanical pickaxe with both hands",
+    "initial_pose": "grounded wide stance with pickaxe raised diagonally in front",
+    "direction": "south-west",
+    "view": "side",
+    "enhance_prompt": false,
+    "no_background": true,
+    "seed": 7202
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 1d9d56a7-8f31-4906-aa8e-4edfc2a7ecbd\njob_id: 1d9d56a7-8f31-4906-aa8e-4edfc2a7ecbd\ndescription: A powerful two-handed mining strike. He raises the pickaxe high behind his head, bends his knees, then swings it forcefully DOWN and FORWARD to his left, leaning his whole torso into the impact. At contact the pick head is LOW near the ground far left of his boots, arms extended down-left. The orange crystal IN THE PICK flares and its hinged metal teeth spread wider during the strike, then retract. He pulls the tool back and recovers to the original ready stance. One readable complete attack, anticipation then fast contact then recovery. Feet stay grounded. Helmet light stays unchanged. Preserve equipment, face and pixel clusters.\nframes: 16\nsize: 64x64px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7202\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1d9d56a7-8f31-4906-aa8e-4edfc2a7ecbd\")\nasset_id: fb210261-e2bc-5d4b-b42a-0b483975a30b\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

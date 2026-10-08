@@ -1,0 +1,45 @@
+{
+  "id": "rivet_turret",
+  "request": {
+    "description": "One native pixel art fantasy enemy STILL for Dungeon Matcher, full body three-quarter combat stance looking slightly viewer-left, transparent background. Crisp ONE-source-pixel #0A0D11 contours, NO antialias, gradient, dithering, grain, text, ground shadow or scenery. Broad connected 2-3-tone top-left shaded material shapes; compact whimsical expressive identity. Keep every extremity inside 2-pixel side margins. Matte charcoal/navy iron, muted leather, small brass, luminous orange ONLY in ore sockets. SMALL squat standalone INDUSTRIAL RIVET TURRET, about 35 native pixels tall near bottom of 64 canvas, 42 pixels wide. Three short braced iron tripod feet, one stubby cannon barrel points left, short reciprocating piston behind it, iron ammo feed, brass gearbox. Clearly visible ORANGE CRYSTAL battery on SIDE. Dark steel with broad shaded planes. NO face, pilot, humanoid, multiple barrels, military gatling gun, tall tower or laser.",
+    "width": 64,
+    "height": 64,
+    "seed": 7314,
+    "no_background": true,
+    "style_image": {
+      "url": "https://api.pixellab.ai/mcp/pixel-tools/83b4ef3b-7673-41fd-bab0-43d35af8abb8/image.png",
+      "usage_description": "Style and native scale only, shared crisp contour and broad material shading. Different identity, silhouette, headgear and equipment as described; do NOT copy pilot or pickaxe."
+    },
+    "style_options": {
+      "outline": true,
+      "shading": true,
+      "detail": true,
+      "color_palette": false
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"a106a37d-5b13-422c-910e-fbdc61659d27\",\n  \"image_id\": \"e9d92a7f-0319-5fc3-be26-a619f685d6bc\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"e9d92a7f-0319-5fc3-be26-a619f685d6bc\",\n  \"job_id\": \"a106a37d-5b13-422c-910e-fbdc61659d27\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/a106a37d-5b13-422c-910e-fbdc61659d27/download\"\n}\nPoll get_image(job_id=\"a106a37d-5b13-422c-910e-fbdc61659d27\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "a106a37d-5b13-422c-910e-fbdc61659d27",
+      "image_id": "e9d92a7f-0319-5fc3-be26-a619f685d6bc",
+      "status": "processing",
+      "source_image_id": "e9d92a7f-0319-5fc3-be26-a619f685d6bc",
+      "job_id": "a106a37d-5b13-422c-910e-fbdc61659d27",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/a106a37d-5b13-422c-910e-fbdc61659d27/download"
+    },
+    "isError": false
+  }
+}

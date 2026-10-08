@@ -1,0 +1,23 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "Hit-v2",
+  "request": {
+    "description": "The dark steel golem's torso tilts backward, shoulders compress on their pistons, then all plates settle into the original stance.",
+    "frame_count": 4,
+    "first_frame_url": "Inputs/obsidian_sentinel.png",
+    "last_frame_url": "Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 8063,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: ec59951c-560d-4291-9631-d27994603fd9\njob_id: ec59951c-560d-4291-9631-d27994603fd9\ndescription: The dark steel golem's torso tilts backward, shoulders compress on their pistons, then all plates settle into the original stance.\nframes: 4\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 8063\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ec59951c-560d-4291-9631-d27994603fd9\")\nasset_id: 3aa074d3-a52f-5156-864a-aeae8e4bc608\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

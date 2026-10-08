@@ -1,0 +1,22 @@
+{
+  "id": "pickaxe_delver",
+  "state": "Death",
+  "request": {
+    "description": "The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/pickaxe_delver.png",
+    "no_background": true,
+    "seed": 8000,
+    "enhance_prompt": false,
+    "subject_description": "pickaxe delver",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: a2d4aea9-bd21-480c-8549-96ebcddafb90\njob_id: a2d4aea9-bd21-480c-8549-96ebcddafb90\ndescription: The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8000\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a2d4aea9-bd21-480c-8549-96ebcddafb90\")\nasset_id: f89df960-f99e-521e-93ac-bc5637d3556e\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

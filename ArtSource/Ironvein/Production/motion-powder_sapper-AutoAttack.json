@@ -1,0 +1,22 @@
+{
+  "id": "powder_sapper",
+  "state": "AutoAttack",
+  "request": {
+    "description": "He cocks his gloved right fist then delivers a sharp short leftward PUNCH, leans torso into contact and retracts to ready stance. Copper detonator stays in other hand. Keep same beard and earmuffs. No explosion or new weapon.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/powder_sapper.png",
+    "no_background": true,
+    "seed": 7804,
+    "enhance_prompt": false,
+    "subject_description": "powder sapper",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: cbcb1ede-cd83-43bc-8931-a1c77a0b57c2\njob_id: cbcb1ede-cd83-43bc-8931-a1c77a0b57c2\ndescription: He cocks his gloved right fist then delivers a sharp short leftward PUNCH, leans torso into contact and retracts to ready stance. Copper detonator stays in other hand. Keep same beard and earmuffs. No explosion or new weapon.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 7804\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"cbcb1ede-cd83-43bc-8931-a1c77a0b57c2\")\nasset_id: 8e13ecd9-7ea9-50b2-90d1-ae533dc8366c\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

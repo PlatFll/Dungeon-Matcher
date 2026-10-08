@@ -1,0 +1,22 @@
+{
+  "id": "bore_engineer",
+  "state": "AutoAttack-v2",
+  "request": {
+    "description": "He pulls the drill launcher back into his chest, leans forward and STABS its steel point sharply LEFT using both hands. Drill and body visibly travel forward together, then pull back. Physical weapon thrust, no shot or flash. His goggles, grey beard and small orange battery stay intact.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/bore_engineer.png",
+    "no_background": true,
+    "seed": 7801,
+    "enhance_prompt": false,
+    "subject_description": "bore engineer",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 3a9cd00a-bbe1-494e-a225-fc657af98384\njob_id: 3a9cd00a-bbe1-494e-a225-fc657af98384\ndescription: He pulls the drill launcher back into his chest, leans forward and STABS its steel point sharply LEFT using both hands. Drill and body visibly travel forward together, then pull back. Physical weapon thrust, no shot or flash. His goggles, grey beard and small orange battery stay intact.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 7801\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3a9cd00a-bbe1-494e-a225-fc657af98384\")\nasset_id: ee4cc8a5-d5df-5e6b-8ba4-8ce0e8ef753f\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

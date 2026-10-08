@@ -1,0 +1,23 @@
+{
+  "id": "ore_hauler",
+  "state": "Ability",
+  "request": {
+    "description": "The dwarf bends his knees, raises the small orange ore crystal from his palm to chest height and extends that hand LEFT to offer it. The crystal shrinks away from his palm as he releases it. His full ore backpack stays attached; he lowers his hand and returns to his ready stance.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/ore_hauler.png",
+    "last_frame_url": "Inputs/ore_hauler.png",
+    "no_background": true,
+    "seed": 9107,
+    "enhance_prompt": false,
+    "subject_description": "ore hauler",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b19ae9d6-78e4-4dbc-9b74-d449192ddc32\njob_id: b19ae9d6-78e4-4dbc-9b74-d449192ddc32\ndescription: The dwarf bends his knees, raises the small orange ore crystal from his palm to chest height and extends that hand LEFT to offer it. The crystal shrinks away from his palm as he releases it. His full ore backpack stays attached; he lowers his hand and returns to his ready stance.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9107\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b19ae9d6-78e4-4dbc-9b74-d449192ddc32\")\nasset_id: d57f1e2f-b3c9-5499-ba06-74784b3ec2a8\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

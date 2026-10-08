@@ -19,6 +19,9 @@ public sealed class EnemyDefinition : ScriptableObject
     [Min(1f)] public float mineObsidianSlamMultiplier = 1.5f;
     [Header("Grand Delver experimental remount (pending design review)")]
     public bool mineEnableRemount;
+    [Tooltip("Optional native phase art. Missing presentation never changes boss rules.")]
+    public RuntimeAnimatorController minePilotController, mineReserveController;
+    public Sprite minePilotSprite, mineReserveSprite;
     [Min(1)] public int minePilotMoves = 3;
     [Range(.05f,.5f)] public float minePilotHealthFraction = .2f;
     [Range(.1f,.75f)] public float mineReserveHealthFraction = .5f;

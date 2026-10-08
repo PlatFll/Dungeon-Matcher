@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 1defed1969bcdd344b77a6e3b867ff60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3567185953722468151
+    second: vein_surveyor_AutoAttack_0
+  - first:
+      213: 3421047775181428482
+    second: vein_surveyor_AutoAttack_1
+  - first:
+      213: 8758143195971605439
+    second: vein_surveyor_AutoAttack_2
+  - first:
+      213: 5059503580308595700
+    second: vein_surveyor_AutoAttack_3
+  - first:
+      213: 7303519175292821978
+    second: vein_surveyor_AutoAttack_4
+  - first:
+      213: -674726074513591152
+    second: vein_surveyor_AutoAttack_5
+  - first:
+      213: -8889270094990189820
+    second: vein_surveyor_AutoAttack_6
+  - first:
+      213: 3898386962141237047
+    second: vein_surveyor_AutoAttack_7
+  - first:
+      213: 5650007375848885174
+    second: vein_surveyor_AutoAttack_8
+  - first:
+      213: 3749156195141219890
+    second: vein_surveyor_AutoAttack_9
+  - first:
+      213: 5055318139548728233
+    second: vein_surveyor_AutoAttack_00
+  - first:
+      213: 2665931954039662326
+    second: vein_surveyor_AutoAttack_01
+  - first:
+      213: 7152155379061558662
+    second: vein_surveyor_AutoAttack_02
+  - first:
+      213: -284807069854795599
+    second: vein_surveyor_AutoAttack_03
+  - first:
+      213: 8768918491093154577
+    second: vein_surveyor_AutoAttack_04
+  - first:
+      213: -3507340742089279838
+    second: vein_surveyor_AutoAttack_05
+  - first:
+      213: -7342370037804498435
+    second: vein_surveyor_AutoAttack_06
+  - first:
+      213: -6466830567164649729
+    second: vein_surveyor_AutoAttack_07
+  - first:
+      213: 358536090084775916
+    second: vein_surveyor_AutoAttack_08
+  - first:
+      213: 2463645514697531287
+    second: vein_surveyor_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abf36e4019182640800000000000000
+      internalID: 5055318139548728233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6a5ebccfa4ff420800000000000000
+      internalID: 2665931954039662326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d0d5b6c6f814360800000000000000
+      internalID: 7152155379061558662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8f8cb9a792c0cf0800000000000000
+      internalID: -284807069854795599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b36fd68e471b970800000000000000
+      internalID: 8768918491093154577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a673818d2c635fc0800000000000000
+      internalID: -3507340742089279838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df101372a59aa1a90800000000000000
+      internalID: -7342370037804498435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe5385acd33146a0800000000000000
+      internalID: -6466830567164649729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce719a0aca6c9f400800000000000000
+      internalID: 358536090084775916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vein_surveyor_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fd70cea80a03220800000000000000
+      internalID: 2463645514697531287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      vein_surveyor_AutoAttack_0: -3567185953722468151
+      vein_surveyor_AutoAttack_00: 5055318139548728233
+      vein_surveyor_AutoAttack_01: 2665931954039662326
+      vein_surveyor_AutoAttack_02: 7152155379061558662
+      vein_surveyor_AutoAttack_03: -284807069854795599
+      vein_surveyor_AutoAttack_04: 8768918491093154577
+      vein_surveyor_AutoAttack_05: -3507340742089279838
+      vein_surveyor_AutoAttack_06: -7342370037804498435
+      vein_surveyor_AutoAttack_07: -6466830567164649729
+      vein_surveyor_AutoAttack_08: 358536090084775916
+      vein_surveyor_AutoAttack_09: 2463645514697531287
+      vein_surveyor_AutoAttack_1: 3421047775181428482
+      vein_surveyor_AutoAttack_2: 8758143195971605439
+      vein_surveyor_AutoAttack_3: 5059503580308595700
+      vein_surveyor_AutoAttack_4: 7303519175292821978
+      vein_surveyor_AutoAttack_5: -674726074513591152
+      vein_surveyor_AutoAttack_6: -8889270094990189820
+      vein_surveyor_AutoAttack_7: 3898386962141237047
+      vein_surveyor_AutoAttack_8: 5650007375848885174
+      vein_surveyor_AutoAttack_9: 3749156195141219890
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

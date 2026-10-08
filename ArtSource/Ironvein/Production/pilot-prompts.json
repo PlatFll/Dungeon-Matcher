@@ -1,0 +1,32 @@
+{
+  "status": "review candidates; user has authorized production, not final visual approval",
+  "provider": "PixelLab",
+  "style_reference": "See pilot-results.json for the actual per-request reference: Orc Trailguard for the first three; Miner Reference for Grand Delver.",
+  "native_no_resampling": true,
+  "specs": [
+    {
+      "id": "pickaxe_delver",
+      "size": 64,
+      "seed": 7101,
+      "prompt": "Single native pixel-art enemy STILL for Dungeon Matcher. Three-quarter front combat pose facing slightly viewer-left, full body, transparent background, grounded boots. Match the reference's native pixel size, face readability, restrained interior detail and broad 2-3-tone top-left shading. One-source-pixel contour #0A0D11, no antialias, blur, gradient, dithering, stray speckles, ground shadow, text or scenery. Dark slate/cool iron, matte leather and localized warm orange ore; whimsical fantasy, not realistic. Each material uses few connected clusters. Dwarves have notably shorter legs and a broader torso than the human style reference. Compact sturdy dwarf miner, short square brown beard, friendly grumpy wide brow, iron-brim mining cap, slate tunic and ochre leather apron, broad gloves, square boots. Hold a SHORT MECHANIZED PICKAXE diagonally in BOTH hands: two segmented iron pick teeth attached to a gear pivot, small clearly visible ORANGE crystal embedded at that pivot. A hinged machine pick, not a plain wood pickaxe or hammer. Readable mining tool silhouette, equipment not armor. Character around 45-50 native pixels tall; full tool fits with transparent margin."
+    },
+    {
+      "id": "ore_hauler",
+      "size": 64,
+      "seed": 7104,
+      "prompt": "Single native pixel-art enemy STILL for Dungeon Matcher. Three-quarter front combat pose facing slightly viewer-left, full body, transparent background, grounded boots. Match the reference's native pixel size, face readability, restrained interior detail and broad 2-3-tone top-left shading. One-source-pixel contour #0A0D11, no antialias, blur, gradient, dithering, stray speckles, ground shadow, text or scenery. Dark slate/cool iron, matte leather and localized warm orange ore; whimsical fantasy, not realistic. Each material uses few connected clusters. Dwarves have notably shorter legs and a broader torso than the human style reference. Stocky stooped dwarf carrier, pale blond broad beard and low iron hard hat. Large OVERFLOWING strapped brown leather/iron backpack of angular BRIGHT ORANGE ore dominates upper-back silhouette. Short powerful legs, muted olive-slate shirt and brown boots. One separate orange crystal in the outstretched front gloved hand; other hand steadies strap. Pack weight believable, expressive weary face. NO weapon, gun or fire spell. Broad readable backpack mass, a few large ore chunks, not tiny sparkle noise. Character plus pack around 50 native pixels tall."
+    },
+    {
+      "id": "bore_engineer",
+      "size": 64,
+      "seed": 7106,
+      "prompt": "Single native pixel-art enemy STILL for Dungeon Matcher. Three-quarter front combat pose facing slightly viewer-left, full body, transparent background, grounded boots. Match the reference's native pixel size, face readability, restrained interior detail and broad 2-3-tone top-left shading. One-source-pixel contour #0A0D11, no antialias, blur, gradient, dithering, stray speckles, ground shadow, text or scenery. Dark slate/cool iron, matte leather and localized warm orange ore; whimsical fantasy, not realistic. Each material uses few connected clusters. Dwarves have notably shorter legs and a broader torso than the human style reference. Compact inventive dwarf engineer with goggles perched above a readable intent face, short pale grey moustache/beard, patched cool slate coat, soot scarf, brass belt buckle and brown boots. BOTH hands hold a portable short ROTARY DRILL LAUNCHER horizontally toward viewer-left: a thick corkscrew bit, compact brass motor/gear housing and ONE visible orange drive crystal in the side. Much smaller than fixed mining machinery. Barrel visibly a conical spiral drill, no rifle or crossbow. Keep boots apart in a sturdy ready stance, launcher clear of face, simple connected shading, full tool inside canvas."
+    },
+    {
+      "id": "grand_delver",
+      "size": 96,
+      "seed": 7113,
+      "prompt": "Single native pixel-art enemy STILL for Dungeon Matcher. Three-quarter front combat pose facing slightly viewer-left, full body, transparent background, grounded boots. Match the reference's native pixel size, face readability, restrained interior detail and broad 2-3-tone top-left shading. One-source-pixel contour #0A0D11, no antialias, blur, gradient, dithering, stray speckles, ground shadow, text or scenery. Dark slate/cool iron, matte leather and localized warm orange ore; whimsical fantasy, not realistic. Each material uses few connected clusters. Dwarves have notably shorter legs and a broader torso than the human style reference. LARGE compact excavation MECH, approximately 76-82 native pixels tall. Same native pixel density as smaller reference, NOT a resized human. A GREEDY DWARF PILOT with large readable ginger beard, iron cap and expressive face clearly visible from shoulders up in an OPEN cockpit at the top center; preserve him as the focal point. Broad dark steel chassis with a few brass rivets and braces, two stubby broad mechanical feet, hydraulic piston arms. One arm has a clearly spiralled digging drill aimed diagonally left, other is a square heavy mining hammer/claw. Small orange ore cells embedded in drill motor and rear boiler. Short exhaust pipe, purposeful simple machinery masses. A playful mining suit with identifiable pilot, not faceless robot, no giant glowing chest disk, no microdetail clutter. Full feet, cockpit and drill fit."
+    }
+  ]
+}

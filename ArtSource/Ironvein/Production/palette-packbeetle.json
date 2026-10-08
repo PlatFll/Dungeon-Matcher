@@ -1,0 +1,41 @@
+{
+  "name": "packbeetle",
+  "source_job": "7fe6e21a-72aa-4cfe-9fc9-329f219edb7f",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0A0A0B": "#0A0D11",
+        "#0C0E10": "#0A0D11",
+        "#111316": "#0A0D11",
+        "#24272E": "#2D323E",
+        "#383F4F": "#424C5E",
+        "#4A586E": "#53657E",
+        "#6F8199": "#869EB9",
+        "#5F524E": "#4A3020",
+        "#7D7376": "#744B2C",
+        "#603C23": "#4A3020",
+        "#8D5D37": "#A66F37",
+        "#E2710D": "#F39429",
+        "#F6D28F": "#F7B65D"
+      },
+      "reason": "Measured redundant close colors fragmented broad material shading. Normalize near-black contour and consolidate close material ramp tones while preserving all geometry, face, equipment and alpha."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: a6ebb8fc-5c53-4b15-bd2b-02281692717b\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 713 px changed\nsheet rows: frames [1]\npalette (20): #0a0d11ff x340, #4a3020ff x211, #424c5eff x171, #2d323eff x153, #744b2cff x80, #53657eff x74, #342117ff x60, #f39429ff x57, #181b1fff x52, #a66f37ff x48, #1e1612ff x40, #9e3e08ff x30, #6b2808ff x23, #c5580bff x20, #869eb9ff x18, #481907ff x16, … +4 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/a6ebb8fc-5c53-4b15-bd2b-02281692717b/: image.png, frames.png, animation.gif\nnext: edit a6ebb8fc-5c53-4b15-bd2b-02281692717b --changes […]"
+    }
+  ]
+}

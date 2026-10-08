@@ -1,0 +1,45 @@
+{
+  "id": "rivet_gunner",
+  "request": {
+    "description": "Dungeon Matcher native pixel-art STILL, one full-body three-quarter combat-ready enemy facing viewer-left on transparency. Whimsical, compact expressive fantasy cast. Native 64x64, grounded boots at row 62, all equipment within 2-pixel side margins. Short dwarven legs and wide torso where a dwarf. ONE-pixel #0A0D11 contour; broad connected 2-3-tone material clusters, matte top-left light, no gradient, antialias, dithering, blur, shadow outside sprite, scenery or text. Dark slate/cool iron, restrained brass, localized orange ore; distinct cloth and skin. Match source pixel density and shading, NOT its face or equipment. Slim compact alert dwarf with SHORT SANDY beard, brass goggles down, coal-blue tunic, leather shoulder strap. BOTH hands grip a stout PNEUMATIC RIVET GUN pointed left: short steel barrel, pressure cylinder, copper valve and visible ORANGE CRYSTAL side battery. Industrial fantasy riveter. NO crossbow, bow, arrows, scope, laser or modern firearm.",
+    "width": 64,
+    "height": 64,
+    "seed": 7302,
+    "no_background": true,
+    "style_image": {
+      "url": "https://api.pixellab.ai/mcp/pixel-tools/83b4ef3b-7673-41fd-bab0-43d35af8abb8/image.png",
+      "usage_description": "Native shading, contour, scale and material simplicity reference only. Make the described DIFFERENT identity, prop, face and headgear; beetle is a low animal, not a dwarf."
+    },
+    "style_options": {
+      "outline": true,
+      "shading": true,
+      "detail": true,
+      "color_palette": false
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"44d367c6-5fe4-4b69-9818-f96808d0db5e\",\n  \"image_id\": \"13fe462f-4279-5615-8eaf-6bf3a0a646c6\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"13fe462f-4279-5615-8eaf-6bf3a0a646c6\",\n  \"job_id\": \"44d367c6-5fe4-4b69-9818-f96808d0db5e\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/44d367c6-5fe4-4b69-9818-f96808d0db5e/download\"\n}\nPoll get_image(job_id=\"44d367c6-5fe4-4b69-9818-f96808d0db5e\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "44d367c6-5fe4-4b69-9818-f96808d0db5e",
+      "image_id": "13fe462f-4279-5615-8eaf-6bf3a0a646c6",
+      "status": "processing",
+      "source_image_id": "13fe462f-4279-5615-8eaf-6bf3a0a646c6",
+      "job_id": "44d367c6-5fe4-4b69-9818-f96808d0db5e",
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/44d367c6-5fe4-4b69-9818-f96808d0db5e/download"
+    },
+    "isError": false
+  }
+}

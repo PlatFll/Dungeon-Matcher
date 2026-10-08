@@ -1,0 +1,22 @@
+{
+  "id": "bore_engineer",
+  "state": "AutoAttack-v3",
+  "request": {
+    "description": "Both hands draw the drill launcher back, then push the intact steel drill bit forcefully toward LEFT. His body leans into the extended tool with bent knees. He retracts the same tool and returns to his original grounded stance.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/bore_engineer.png",
+    "no_background": true,
+    "seed": 8064,
+    "enhance_prompt": false,
+    "subject_description": "bore engineer",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b9831b73-126d-484f-afe5-a7d4d30756e3\njob_id: b9831b73-126d-484f-afe5-a7d4d30756e3\ndescription: Both hands draw the drill launcher back, then push the intact steel drill bit forcefully toward LEFT. His body leans into the extended tool with bent knees. He retracts the same tool and returns to his original grounded stance.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8064\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b9831b73-126d-484f-afe5-a7d4d30756e3\")\nasset_id: 05d3bd52-9beb-53a1-9405-85f54b3da7a0\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

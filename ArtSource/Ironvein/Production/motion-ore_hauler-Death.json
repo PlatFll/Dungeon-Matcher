@@ -1,0 +1,22 @@
+{
+  "id": "ore_hauler",
+  "state": "Death",
+  "request": {
+    "description": "His knees buckle under the huge pack. He drops to one knee then collapses sideways, backpack landing beside his shoulder. A few orange ore chips tumble out and settle. He stays down. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/ore_hauler.png",
+    "no_background": true,
+    "seed": 8002,
+    "enhance_prompt": false,
+    "subject_description": "ore hauler",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: f4ac4d43-eae9-48c0-92f1-62d524fd99fb\njob_id: f4ac4d43-eae9-48c0-92f1-62d524fd99fb\ndescription: His knees buckle under the huge pack. He drops to one knee then collapses sideways, backpack landing beside his shoulder. A few orange ore chips tumble out and settle. He stays down. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8002\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f4ac4d43-eae9-48c0-92f1-62d524fd99fb\")\nasset_id: 9daa635e-9fda-5a42-afdd-3750eb9fd11b\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

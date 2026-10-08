@@ -1,0 +1,39 @@
+{
+  "request": {
+    "image_url": "ArtSource/Ironvein/Inputs/grand_delver.png",
+    "mask_x": 0,
+    "mask_y": 72,
+    "mask_width": 20,
+    "mask_height": 28,
+    "description": "Complete ONLY the cut-off lower-left tip of this existing steel corkscrew drill. Continue its existing diagonal down-left taper into one clean pointed iron tip inside x2..19,y72..97. Dark #0A0D11 outline, broad cool gray steel spiral bands, same native pixel density and existing palette. Transparent outside the drill. Leave all unmasked mech, pilot, face, body, feet and equipment pixels EXACTLY unchanged. No new object, particles or background.",
+    "no_background": true,
+    "crop_to_mask": true,
+    "output_method": "Modify current layer",
+    "seed": 7513
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"92377805-4bbb-46dd-b48c-3f14de344245\",\n  \"image_id\": \"a48f61d7-0b29-5608-b95f-b5e9c8ee513a\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"a48f61d7-0b29-5608-b95f-b5e9c8ee513a\",\n  \"job_id\": \"92377805-4bbb-46dd-b48c-3f14de344245\",\n  \"image_size\": {\n    \"width\": 112,\n    \"height\": 112\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/92377805-4bbb-46dd-b48c-3f14de344245/download\"\n}\nPoll get_image(job_id=\"92377805-4bbb-46dd-b48c-3f14de344245\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "92377805-4bbb-46dd-b48c-3f14de344245",
+      "image_id": "a48f61d7-0b29-5608-b95f-b5e9c8ee513a",
+      "status": "processing",
+      "source_image_id": "a48f61d7-0b29-5608-b95f-b5e9c8ee513a",
+      "job_id": "92377805-4bbb-46dd-b48c-3f14de344245",
+      "image_size": {
+        "width": 112,
+        "height": 112
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/92377805-4bbb-46dd-b48c-3f14de344245/download"
+    },
+    "isError": false
+  }
+}

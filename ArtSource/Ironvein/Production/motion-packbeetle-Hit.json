@@ -1,0 +1,23 @@
+{
+  "id": "packbeetle",
+  "state": "Hit",
+  "request": {
+    "description": "The beetle's shell recoils backward a little, front legs brace and mandibles close; pack remains intact. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/packbeetle.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/packbeetle.png",
+    "no_background": true,
+    "seed": 7964,
+    "enhance_prompt": false,
+    "subject_description": "packbeetle",
+    "initial_pose": "original grounded combat stance",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: aa541ac6-1fe0-4820-92ac-a6bd581a2508\njob_id: aa541ac6-1fe0-4820-92ac-a6bd581a2508\ndescription: The beetle's shell recoils backward a little, front legs brace and mandibles close; pack remains intact. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7964\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"aa541ac6-1fe0-4820-92ac-a6bd581a2508\")\nasset_id: ed9bb838-4614-5147-b49c-fd4f2ccf9503\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

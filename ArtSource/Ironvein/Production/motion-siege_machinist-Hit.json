@@ -1,0 +1,23 @@
+{
+  "id": "siege_machinist",
+  "state": "Hit",
+  "request": {
+    "description": "A small restrained backward recoil, heavy body flexes at knees or pistons, equipment stays attached; return to the exact starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/siege_machinist.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 7981,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "grounded original ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 4d190a0a-d9cc-4692-97dc-f9b9b6ee84bc\njob_id: 4d190a0a-d9cc-4692-97dc-f9b9b6ee84bc\ndescription: A small restrained backward recoil, heavy body flexes at knees or pistons, equipment stays attached; return to the exact starting pose. Preserve original identity, colors, geometry, orange battery and equipment. No new weapons, flame or large flashes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7981\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"4d190a0a-d9cc-4692-97dc-f9b9b6ee84bc\")\nasset_id: f58a20b4-0950-57b5-a171-c7b2522e5a2f\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

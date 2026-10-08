@@ -1,0 +1,23 @@
+{
+  "id": "seismic_smith",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "Both hands pull the sledge across his shoulder; the embedded orange ore brightens and the head's side plates expand. He bends his knees and drives one heavy low hammer strike toward LEFT, then lifts the hammer back to his original ready pose as its plates close.",
+    "frame_count": 12,
+    "first_frame_url": "Inputs/seismic_smith-repaired.png",
+    "last_frame_url": "Inputs/seismic_smith-repaired.png",
+    "no_background": true,
+    "seed": 9103,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e463fa3d-daf8-4bb5-aa15-729918f78da4\njob_id: e463fa3d-daf8-4bb5-aa15-729918f78da4\ndescription: Both hands pull the sledge across his shoulder; the embedded orange ore brightens and the head's side plates expand. He bends his knees and drives one heavy low hammer strike toward LEFT, then lifts the hammer back to his original ready pose as its plates close.\nframes: 12\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9103\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e463fa3d-daf8-4bb5-aa15-729918f78da4\")\nasset_id: 95d6839d-a6f9-5bea-8460-2e055dec981d\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

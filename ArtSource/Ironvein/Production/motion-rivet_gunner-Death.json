@@ -1,0 +1,22 @@
+{
+  "id": "rivet_gunner",
+  "state": "Death",
+  "request": {
+    "description": "The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "no_background": true,
+    "seed": 8001,
+    "enhance_prompt": false,
+    "subject_description": "rivet gunner",
+    "initial_pose": "original standing combat pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 315f35cf-3a17-4a40-b8cf-308ac310886a\njob_id: 315f35cf-3a17-4a40-b8cf-308ac310886a\ndescription: The dwarf's knees buckle, shoulders sag and body drops to one knee, then slumps onto the floor. Original tool lands beside the gloved hand. He settles fully still on his side. Compact readable pixel poses, same identity, outfit and material palette throughout. Keep the entire body and equipment inside this canvas.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8001\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"315f35cf-3a17-4a40-b8cf-308ac310886a\")\nasset_id: 26f94c5f-5f27-5a16-b69b-aa8093215b02\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

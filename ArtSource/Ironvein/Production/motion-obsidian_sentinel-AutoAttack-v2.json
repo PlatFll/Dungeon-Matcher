@@ -1,0 +1,22 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "AutoAttack-v2",
+  "request": {
+    "description": "The golem rotates its shoulders, bends both knees and extends its closed LEFT steel fist forcefully forward at waist height. Elbow piston drives the full reach. Then the arm retracts and the trunk settles back into its original upright stance. Keep all dark steel plates and warm brass joints clearly visible. Keep the entire body and equipment within the original canvas at the same native pixel scale.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 8036,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 05cdf22a-f07f-4548-a866-0a977ec228e6\njob_id: 05cdf22a-f07f-4548-a866-0a977ec228e6\ndescription: The golem rotates its shoulders, bends both knees and extends its closed LEFT steel fist forcefully forward at waist height. Elbow piston drives the full reach. Then the arm retracts and the trunk settles back into its original upright stance. Keep all dark steel plates and warm brass joints clearly visible. Keep the entire body and equipment within the original canvas at the same native pixel scale.\nframes: 8\nsize: 112x112px\ntransparent: True\nseed: 8036\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"05cdf22a-f07f-4548-a866-0a977ec228e6\")\nasset_id: c4c53363-7293-56d1-b104-b2c6af19495d\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

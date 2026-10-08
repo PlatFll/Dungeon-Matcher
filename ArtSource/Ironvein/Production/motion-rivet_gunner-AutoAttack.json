@@ -1,0 +1,23 @@
+{
+  "id": "rivet_gunner",
+  "state": "AutoAttack",
+  "request": {
+    "description": "One clear PNEUMATIC RIVET shot. Raise existing short rivet gun slightly, brace BOTH hands, trigger once, barrel kicks backward and shoulders recoil, then lower back to exact ready stance. A tiny warm muzzle spark only at contact; do not draw a long projectile. Battery stays present. No extra weapon, bow, bolt string, laser, or giant smoke.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "last_frame_url": "same native input",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 7702,
+    "enhance_prompt": false,
+    "subject_description": "rivet gunner",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded original ready stance at bottom-center"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: d663b616-7bb7-4f89-af3c-0cbd28579ba8\njob_id: d663b616-7bb7-4f89-af3c-0cbd28579ba8\ndescription: One clear PNEUMATIC RIVET shot. Raise existing short rivet gun slightly, brace BOTH hands, trigger once, barrel kicks backward and shoulders recoil, then lower back to exact ready stance. A tiny warm muzzle spark only at contact; do not draw a long projectile. Battery stays present. No extra weapon, bow, bolt string, laser, or giant smoke.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7702\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d663b616-7bb7-4f89-af3c-0cbd28579ba8\")\nasset_id: d0a39cf6-a6ca-5b0e-a08e-83ca9b5b25c7\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

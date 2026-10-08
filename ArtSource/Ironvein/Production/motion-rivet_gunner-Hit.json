@@ -1,0 +1,23 @@
+{
+  "id": "rivet_gunner",
+  "state": "Hit",
+  "request": {
+    "description": "A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/rivet_gunner.png",
+    "no_background": true,
+    "seed": 7961,
+    "enhance_prompt": false,
+    "subject_description": "rivet gunner",
+    "initial_pose": "original grounded combat stance",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: a8cc98b1-eaad-4820-96a9-94fc99322ade\njob_id: a8cc98b1-eaad-4820-96a9-94fc99322ade\ndescription: A quick small backward recoil in torso and shoulders, knees flex while holding original equipment tightly; facial grimace then steady recovery. Return to exact original pose. Grounded feet, no movement across floor, no added effects, white flash, new objects or equipment changes.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7961\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a8cc98b1-eaad-4820-96a9-94fc99322ade\")\nasset_id: 583338d4-e86c-5e59-aa4d-684819ff7eeb\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "siege_machinist",
+  "state": "Death",
+  "request": {
+    "description": "The elder dwarf leans on his huge wrench as his knees fail, then slips onto the floor beside the tool. His goggles, forked beard and tools stay recognizable. He settles still. Keep the entire body and equipment within the original canvas at the same native pixel scale.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/siege_machinist.png",
+    "no_background": true,
+    "seed": 8032,
+    "enhance_prompt": false,
+    "subject_description": "siege machinist",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 63e7c8ed-3040-43f1-8e99-6858945a8222\njob_id: 63e7c8ed-3040-43f1-8e99-6858945a8222\ndescription: The elder dwarf leans on his huge wrench as his knees fail, then slips onto the floor beside the tool. His goggles, forked beard and tools stay recognizable. He settles still. Keep the entire body and equipment within the original canvas at the same native pixel scale.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 8032\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"63e7c8ed-3040-43f1-8e99-6858945a8222\")\nasset_id: 8d1c87d8-7fd9-50f9-9665-6cf7c0c4b340\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

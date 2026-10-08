@@ -1,0 +1,18 @@
+{
+  "id": "grand_delver_pilot",
+  "request": {
+    "image_url": "ArtSource/Ironvein/Inputs/grand_delver-tip-repaired.png",
+    "description": "Remove the excavation mech. Show only its SAME dwarf PILOT standing on foot: preserve the same ginger moustache/beard, iron cap and face identity at the same native pixel scale. Short stocky body in a soot-dark slate engineering jacket, leather belt, small wrench in gloved hand, sturdy boots. A vulnerable small pilot, about 45 pixels tall at bottom-center of the existing 112 canvas. Transparent empty space around him. Crisp original pixel palette, no machine, new headgear or flames.",
+    "no_background": true,
+    "seed": 7613
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 112e4788-e64b-4fa6-aad6-32ac35d10e6b\njob_id: 112e4788-e64b-4fa6-aad6-32ac35d10e6b\nmodel: pixen\nedit: Remove the excavation mech. Show only its SAME dwarf PILOT standing on foot: preserve the same ginger moustache/beard, iron cap and face identity at the same native pixel scale. Short stocky body in a soot-dark slate engineering jacket, leather belt, small wrench in gloved hand, sturdy boots. A vulnerable small pilot, about 45 pixels tall at bottom-center of the existing 112 canvas. Transparent empty space around him. Crisp original pixel palette, no machine, new headgear or flames.\nsource: 112x112px\nsize: 112x112px\ntransparent: True\nseed: 7613\nasset_id: ed284085-9b7b-5521-b9bb-adce80e09a9d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"112e4788-e64b-4fa6-aad6-32ac35d10e6b\")"
+      }
+    ],
+    "isError": false
+  }
+}

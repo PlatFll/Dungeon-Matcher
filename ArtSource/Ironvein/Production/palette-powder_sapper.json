@@ -1,0 +1,61 @@
+{
+  "name": "powder_sapper",
+  "source_job": "672498df-27e1-4e38-aac1-579162daca8a",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0D0E10": "#0A0D11",
+        "#101215": "#0A0D11",
+        "#121519": "#0A0D11",
+        "#151719": "#0A0D11",
+        "#171A1D": "#0A0D11",
+        "#2D241C": "#211E1D",
+        "#2E2B25": "#282B2E",
+        "#32373B": "#3B4145",
+        "#4A5055": "#5B646C",
+        "#6E7171": "#8A8D8F",
+        "#ABABAC": "#8A8D8F",
+        "#F6F6F6": "#FBFAFB",
+        "#3F291C": "#4E301E",
+        "#493C30": "#4E301E",
+        "#573621": "#4E301E",
+        "#633C22": "#714527",
+        "#7D4D2B": "#714527",
+        "#87512B": "#93592D",
+        "#A15B30": "#93592D",
+        "#373427": "#423D29",
+        "#4B4631": "#544D34",
+        "#635A3B": "#544D34",
+        "#6F6744": "#6D6A5C",
+        "#625845": "#6D6A5C",
+        "#817564": "#6D6A5C",
+        "#7D5F47": "#A2714A",
+        "#AD9077": "#DEA174",
+        "#C37848": "#B76A39",
+        "#D48F60": "#DEA174",
+        "#5D2D1B": "#6D321D",
+        "#7B3720": "#8D3E23",
+        "#A04726": "#B45129",
+        "#C15825": "#B45129"
+      },
+      "reason": "Measured redundant close colors fragmented broad material shading. Normalize near-black contour and consolidate close material ramp tones while preserving all geometry, face, equipment and alpha."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 875f5f57-c9ff-43ea-8367-f6bd2bea3dde\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1284 px changed\nsheet rows: frames [1]\npalette (22): #0a0d11ff x523, #4e301eff x184, #714527ff x168, #93592dff x149, #b45129ff x104, #5b646cff x95, #6d6a5cff x88, #544d34ff x88, #3b4145ff x71, #6d321dff x69, #8d3e23ff x63, #423d29ff x57, #211e1dff x49, #e2a980ff x46, #b76a39ff x44, #282b2eff x42, … +6 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/875f5f57-c9ff-43ea-8367-f6bd2bea3dde/: image.png, frames.png, animation.gif\nnext: edit 875f5f57-c9ff-43ea-8367-f6bd2bea3dde --changes […]"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ public sealed partial class MineEnemyAbility
     public MineBossPhase BossPhase => state.bossPhase;
     public bool IsPilot => Kind == EnemySpecialAbilityKind.GrandDelver && state.bossPhase == MineBossPhase.PilotFoot;
     public int PilotMoves => IsPilot ? Mathf.Max(0,state.pilotDueMove-Move) : 0;
-    public event Action<MineBossPhase> BossPhaseChanged;
+    public event Action<MineBossPhase,bool> BossPhaseChanged;
     private string BossCastName => Kind != EnemySpecialAbilityKind.GrandDelver ? null :
         state.action == "CLAIM" ? "Claim the Vein" : state.action == "STEAM" ? "Full Steam!" : "Heart of Obsidian";
 
@@ -87,7 +87,7 @@ public sealed partial class MineEnemyAbility
             actor.ResetSpecialCounter();
             if (wasRunning) attack?.TryStartAttacking();
         }
-        BossPhaseChanged?.Invoke(state.bossPhase);
+        BossPhaseChanged?.Invoke(state.bossPhase,restartAttack);
     }
     private void RestoreBoss(int health)
     {

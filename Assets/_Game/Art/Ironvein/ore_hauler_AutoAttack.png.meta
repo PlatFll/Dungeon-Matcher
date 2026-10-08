@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 33386dc15184ca54c906a513adabd853
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1585376450612357612
+    second: ore_hauler_AutoAttack_0
+  - first:
+      213: 2265775162974597992
+    second: ore_hauler_AutoAttack_1
+  - first:
+      213: -389679408223005301
+    second: ore_hauler_AutoAttack_2
+  - first:
+      213: 2173550628671386084
+    second: ore_hauler_AutoAttack_3
+  - first:
+      213: 1649646802031210161
+    second: ore_hauler_AutoAttack_4
+  - first:
+      213: -2008934662363917147
+    second: ore_hauler_AutoAttack_5
+  - first:
+      213: -7977557899469609827
+    second: ore_hauler_AutoAttack_6
+  - first:
+      213: -6587666914218415881
+    second: ore_hauler_AutoAttack_7
+  - first:
+      213: -1909482581797407285
+    second: ore_hauler_AutoAttack_8
+  - first:
+      213: 8544863046992004703
+    second: ore_hauler_AutoAttack_9
+  - first:
+      213: -8493596674430992006
+    second: ore_hauler_AutoAttack_00
+  - first:
+      213: 3611323702825815537
+    second: ore_hauler_AutoAttack_01
+  - first:
+      213: 1984716316552193674
+    second: ore_hauler_AutoAttack_02
+  - first:
+      213: -3040364853735688795
+    second: ore_hauler_AutoAttack_03
+  - first:
+      213: -444150725567811486
+    second: ore_hauler_AutoAttack_04
+  - first:
+      213: -484569867361892837
+    second: ore_hauler_AutoAttack_05
+  - first:
+      213: -2461728459383107406
+    second: ore_hauler_AutoAttack_06
+  - first:
+      213: 2539229027288213264
+    second: ore_hauler_AutoAttack_07
+  - first:
+      213: -6579022859649033180
+    second: ore_hauler_AutoAttack_08
+  - first:
+      213: -5340988601771242853
+    second: ore_hauler_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a710a1b53dea02a80800000000000000
+      internalID: -8493596674430992006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd81eb26cffd1230800000000000000
+      internalID: 3611323702825815537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86e30479f02b8b10800000000000000
+      internalID: 1984716316552193674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5708926447ec5d0800000000000000
+      internalID: -3040364853735688795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2607ccfa44f06d9f0800000000000000
+      internalID: -444150725567811486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b164903e5467649f0800000000000000
+      internalID: -484569867361892837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0100d420f26ddd0800000000000000
+      internalID: -2461728459383107406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017efdec8572d3320800000000000000
+      internalID: 2539229027288213264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42cd179f09d92b4a0800000000000000
+      internalID: -6579022859649033180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_hauler_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ac30a1a2ff0e5b0800000000000000
+      internalID: -5340988601771242853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ore_hauler_AutoAttack_0: 1585376450612357612
+      ore_hauler_AutoAttack_00: -8493596674430992006
+      ore_hauler_AutoAttack_01: 3611323702825815537
+      ore_hauler_AutoAttack_02: 1984716316552193674
+      ore_hauler_AutoAttack_03: -3040364853735688795
+      ore_hauler_AutoAttack_04: -444150725567811486
+      ore_hauler_AutoAttack_05: -484569867361892837
+      ore_hauler_AutoAttack_06: -2461728459383107406
+      ore_hauler_AutoAttack_07: 2539229027288213264
+      ore_hauler_AutoAttack_08: -6579022859649033180
+      ore_hauler_AutoAttack_09: -5340988601771242853
+      ore_hauler_AutoAttack_1: 2265775162974597992
+      ore_hauler_AutoAttack_2: -389679408223005301
+      ore_hauler_AutoAttack_3: 2173550628671386084
+      ore_hauler_AutoAttack_4: 1649646802031210161
+      ore_hauler_AutoAttack_5: -2008934662363917147
+      ore_hauler_AutoAttack_6: -7977557899469609827
+      ore_hauler_AutoAttack_7: -6587666914218415881
+      ore_hauler_AutoAttack_8: -1909482581797407285
+      ore_hauler_AutoAttack_9: 8544863046992004703
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

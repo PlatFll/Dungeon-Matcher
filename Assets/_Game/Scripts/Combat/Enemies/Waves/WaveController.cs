@@ -667,6 +667,9 @@ public sealed partial class WaveController :
             }
         }
 
+        if (definition.SpecialAbilityKind == EnemySpecialAbilityKind.GrandDelver)
+            enemyObject.AddComponent<MineBossPresentation>().Initialize(enemy, enemyObject.GetComponent<MineEnemyAbility>());
+
         EnemyLifecycleVFX lifecycleVFX =
             enemyObject.GetComponent<
                 EnemyLifecycleVFX

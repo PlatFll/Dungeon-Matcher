@@ -1,0 +1,22 @@
+{
+  "id": "vein_surveyor",
+  "state": "AutoAttack",
+  "request": {
+    "description": "He pulls his rolled map back then jabs it sharply LEFT with a short step and clear forward arm extension, then pulls it back into his ready stance. A quick blunt map poke. The other hand keeps the magnifying glass intact. Preserve cap and pointed white beard.",
+    "frame_count": 8,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/vein_surveyor.png",
+    "no_background": true,
+    "seed": 7803,
+    "enhance_prompt": false,
+    "subject_description": "vein surveyor",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 0c6e50e5-b514-46d1-acb8-0328c612eff3\njob_id: 0c6e50e5-b514-46d1-acb8-0328c612eff3\ndescription: He pulls his rolled map back then jabs it sharply LEFT with a short step and clear forward arm extension, then pulls it back into his ready stance. A quick blunt map poke. The other hand keeps the magnifying glass intact. Preserve cap and pointed white beard.\nframes: 8\nsize: 80x80px\ntransparent: True\nseed: 7803\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0c6e50e5-b514-46d1-acb8-0328c612eff3\")\nasset_id: 4dcf4b0f-64b0-5cec-ac68-fe30ce41aa96\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

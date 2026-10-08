@@ -1,0 +1,23 @@
+{
+  "id": "grand_delver",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "The dwarf leans forward in his mech cockpit. The orange engine crystal brightens and the drill arm telescopes longer. The suit makes one heavy LEFTWARD drill thrust with bent mechanical knees, then retracts its drill and settles back upright. His face remains visible.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/grand_delver-tip-repaired.png",
+    "last_frame_url": "Inputs/grand_delver-tip-repaired.png",
+    "no_background": true,
+    "seed": 9105,
+    "enhance_prompt": false,
+    "subject_description": "grand delver",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 34fc2272-5f26-432e-bcbe-4bdc5f2b4f5f\njob_id: 34fc2272-5f26-432e-bcbe-4bdc5f2b4f5f\ndescription: The dwarf leans forward in his mech cockpit. The orange engine crystal brightens and the drill arm telescopes longer. The suit makes one heavy LEFTWARD drill thrust with bent mechanical knees, then retracts its drill and settles back upright. His face remains visible.\nframes: 8\nsize: 112x112px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9105\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"34fc2272-5f26-432e-bcbe-4bdc5f2b4f5f\")\nasset_id: 80425c18-9129-5df2-8ce5-989ba14f4960\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

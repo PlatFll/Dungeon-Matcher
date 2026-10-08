@@ -1,0 +1,53 @@
+{
+  "name": "rivet_gunner",
+  "source_job": "44d367c6-5fe4-4b69-9818-f96808d0db5e",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "colors": {
+        "#0D0F11": "#0A0D11",
+        "#101215": "#0A0D11",
+        "#131519": "#0A0D11",
+        "#17191C": "#1E1F21",
+        "#23272C": "#1E1F21",
+        "#2B2F33": "#36393D",
+        "#404449": "#4C5054",
+        "#585E65": "#707479",
+        "#888C90": "#A9AAAB",
+        "#C3C4C6": "#A9AAAB",
+        "#F6F6F6": "#C3C4C6",
+        "#46576C": "#3F526C",
+        "#3D2C21": "#2F251E",
+        "#4C3220": "#583923",
+        "#603D23": "#583923",
+        "#6B4527": "#774C2B",
+        "#7F512D": "#774C2B",
+        "#87582F": "#774C2B",
+        "#986233": "#AB743A",
+        "#986D39": "#AB743A",
+        "#BC7F40": "#C58F4D",
+        "#D5A359": "#C58F4D",
+        "#968272": "#715C45",
+        "#AF8559": "#D6A574",
+        "#F2C487": "#F2D4B2"
+      },
+      "reason": "Measured redundant close colors fragmented broad material shading. Normalize near-black contour and consolidate close material ramp tones while preserving all geometry, face, equipment and alpha."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 835f7361-a528-4377-b8ff-b2fdd84882c1\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 1248 px changed\nsheet rows: frames [1]\npalette (24): #0a0d11ff x382, #774c2bff x344, #583923ff x225, #1e1f21ff x172, #3f526cff x102, #36393dff x92, #ab743aff x91, #707479ff x84, #2f251eff x77, #c58f4dff x64, #4c5054ff x54, #2a3340ff x44, #d6a574ff x33, #344254ff x29, #a9aaabff x26, #b44a10ff x18, … +8 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/835f7361-a528-4377-b8ff-b2fdd84882c1/: image.png, frames.png, animation.gif\nnext: edit 835f7361-a528-4377-b8ff-b2fdd84882c1 --changes […]"
+    }
+  ]
+}

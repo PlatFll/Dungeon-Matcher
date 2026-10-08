@@ -30,8 +30,12 @@ The newer rules in this status and the owning design/architecture documents supe
   drill-countered Slam are implemented. Grand Delver has its three-part cycle,
   breakable Core and saved single-remount experiment (disabled by default).
   Phase 07 passed 74 affected checks and the mandatory Unity validator.
-  Live crystal eligibility remains off. The placeholder shell artwork/scenery are not
-  mine art. See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
+  Phase 08 has imported fourteen native stills and fifteen reviewed clips for
+  seven identities. Normal/powered contact timing has actual-scene proof; the
+  current Ironvein regression passes 43 checks. Remaining motion and cave/UI
+  production are in progress. Live crystal eligibility remains off and the
+  scenery is still the explicitly temporary dungeon shell.
+  See [current implementation](IronveinExcavation/IMPLEMENTATION.md),
   [phase worklist](IronveinExcavation/WORKLIST.md) and
   [executed validation](IronveinExcavation/VALIDATION.md).
 

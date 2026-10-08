@@ -1,0 +1,22 @@
+{
+  "id": "grand_delver",
+  "state": "AutoAttack",
+  "request": {
+    "description": "The mech pivots its torso, braces its feet and jabs the rotary drill arm toward LEFT with a clear fully extended arm pose. It then draws the arm back and settles upright. The same ginger dwarf stays visible in the cockpit throughout.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/grand_delver-tip-repaired.png",
+    "no_background": true,
+    "seed": 8065,
+    "enhance_prompt": false,
+    "subject_description": "grand delver",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 273f9a98-bbdc-46d3-93b1-1b6ab4aaaafb\njob_id: 273f9a98-bbdc-46d3-93b1-1b6ab4aaaafb\ndescription: The mech pivots its torso, braces its feet and jabs the rotary drill arm toward LEFT with a clear fully extended arm pose. It then draws the arm back and settles upright. The same ginger dwarf stays visible in the cockpit throughout.\nframes: 8\nsize: 112x112px\ntransparent: True\nseed: 8065\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"273f9a98-bbdc-46d3-93b1-1b6ab4aaaafb\")\nasset_id: 162c95ee-a44f-55f5-81b7-61476ee5c6f8\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

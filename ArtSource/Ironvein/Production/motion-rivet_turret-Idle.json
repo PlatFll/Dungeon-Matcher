@@ -1,0 +1,23 @@
+{
+  "id": "rivet_turret",
+  "state": "Idle",
+  "request": {
+    "description": "Tiny barrel settling and one subtle piston movement. All three braced feet stay on the floor, same gun and battery shape. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/rivet_turret.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/rivet_turret.png",
+    "no_background": true,
+    "seed": 7924,
+    "enhance_prompt": false,
+    "subject_description": "rivet turret",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 86ac2ec9-6839-4dcf-94c8-6ef4336303ec\njob_id: 86ac2ec9-6839-4dcf-94c8-6ef4336303ec\ndescription: Tiny barrel settling and one subtle piston movement. All three braced feet stay on the floor, same gun and battery shape. Preserve all equipment, colors and proportions. Feet grounded at same position, no travel. Seamless return to input pose.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7924\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"86ac2ec9-6839-4dcf-94c8-6ef4336303ec\")\nasset_id: 32af2a8e-150b-5810-ae12-fd518a8de480\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

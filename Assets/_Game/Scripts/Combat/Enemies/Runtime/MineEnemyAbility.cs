@@ -111,7 +111,7 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
     {
         bool instant = Kind == EnemySpecialAbilityKind.ShareOre || Kind == EnemySpecialAbilityKind.LayFoundation || Kind == EnemySpecialAbilityKind.Faultline || Kind == EnemySpecialAbilityKind.SiegeMachinist ||
             (Kind == EnemySpecialAbilityKind.GrandDelver && state.action != "CORE");
-        int motion = actor.StartSpecialMotion(instant ? "Ability" : "ChannelStart");
+        int motion = actor.StartSpecialMotion(MotionState(instant ? "Ability" : "ChannelStart"));
         if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
         if (!Valid(motion)) { Finish(); yield break; }
         bool used = true;
@@ -164,7 +164,7 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
     private IEnumerator Release()
     {
         actor.SpecialIdleState = null;
-        int motion = actor.StartSpecialMotion("Release");
+        int motion = actor.StartSpecialMotion(MotionState("Release"));
         if (motion > 0) yield return actor.WaitForSpecialMotionBeat(motion);
         if (!Valid(motion)) { Finish(); yield break; }
         if (TargetGone) { LostTarget(); yield break; }
@@ -202,7 +202,17 @@ public sealed partial class MineEnemyAbility : MonoBehaviour, IEnemySpecialAbili
     private void Hit() => attack.PlayerTarget.TryTakeDamage(CombatAmounts.Round(actor.Definition.mineAbilityDamage * actor.RuntimeStats.DamageMultiplier), actor);
     private bool Valid(int motion) => !disposed && !actor.IsDefeated && !IsPilot && stagger?.IsStaggered != true &&
         (motion <= 0 || actor.IsSpecialMotionCurrent(motion));
-    private void Hold() { attack?.SetActionPaused(this, BlocksBasic); actor.SpecialIdleState = IsPreparing ? "ChannelHold" : null; }
+    private string MotionState(string phase)
+    {
+        // Each multi-kit machine has distinct gestures. This selects optional
+        // presentation only; the saved action remains the gameplay authority.
+        string prefix=Kind==EnemySpecialAbilityKind.GrandDelver ?
+            (state.action=="CLAIM"?"Claim":state.action=="STEAM"?"Steam":"Core") :
+            Kind==EnemySpecialAbilityKind.ObsidianSentinel ? (state.action=="DEVOUR"?"Devour":"Slam") :
+            Kind==EnemySpecialAbilityKind.SiegeMachinist ? (state.action=="ASSEMBLE"?"Assemble":"Prime") : "";
+        return prefix+phase;
+    }
+    private void Hold() { attack?.SetActionPaused(this, BlocksBasic); actor.SpecialIdleState = IsPreparing ? MotionState("ChannelHold") : null; }
     private void Clear() { state.stage = 0; state.stoneId = 0; state.drillId = 0; state.action = null; state.dueMove = 0; }
     private void Finish()
     {

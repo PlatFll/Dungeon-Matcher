@@ -1,0 +1,23 @@
+{
+  "id": "stonewright",
+  "state": "Idle",
+  "request": {
+    "description": "Quiet breathing with a subtle shoulder rise. Keep both hands on the mallet, braids move by one pixel, feet stay planted. Orange socket stays small and visible. No swinging or sparks. Return to original stance.",
+    "frame_count": 4,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "last_frame_url": "ArtSource/Ironvein/Inputs/stonewright.png",
+    "no_background": true,
+    "seed": 7913,
+    "enhance_prompt": false,
+    "subject_description": "stonewright",
+    "initial_pose": "original grounded combat ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: fb904229-65ad-434f-ba9f-b8355cfeacb7\njob_id: fb904229-65ad-434f-ba9f-b8355cfeacb7\ndescription: Quiet breathing with a subtle shoulder rise. Keep both hands on the mallet, braids move by one pixel, feet stay planted. Orange socket stays small and visible. No swinging or sparks. Return to original stance.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7913\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fb904229-65ad-434f-ba9f-b8355cfeacb7\")\nasset_id: 62b72bbc-3764-5c1c-b544-fa7932d9bd52\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

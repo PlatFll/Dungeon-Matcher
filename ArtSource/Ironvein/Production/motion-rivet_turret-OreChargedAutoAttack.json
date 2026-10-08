@@ -1,0 +1,23 @@
+{
+  "id": "rivet_turret",
+  "state": "OreChargedAutoAttack",
+  "request": {
+    "description": "The turret's orange rear crystal brightens. Its barrel extends one steel segment, braces its three feet and fires a single orange muzzle flash LEFT with sharp recoil. The barrel retracts and the crystal returns to its usual orange.",
+    "frame_count": 8,
+    "first_frame_url": "Inputs/rivet_turret.png",
+    "last_frame_url": "Inputs/rivet_turret.png",
+    "no_background": true,
+    "seed": 9106,
+    "enhance_prompt": false,
+    "subject_description": "rivet turret",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: c85390c7-8829-4403-bb55-36479f0892dd\njob_id: c85390c7-8829-4403-bb55-36479f0892dd\ndescription: The turret's orange rear crystal brightens. Its barrel extends one steel segment, braces its three feet and fires a single orange muzzle flash LEFT with sharp recoil. The barrel retracts and the crystal returns to its usual orange.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 9106\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c85390c7-8829-4403-bb55-36479f0892dd\")\nasset_id: 350687b1-455a-543e-aaac-fcf6301b57cf\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

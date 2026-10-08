@@ -97,11 +97,14 @@ public static class ForestProductionImporter
             foreach(var completed in machine.states.Select(s=>s.state).Where(s=>
                     manifest.clips.Any(c=>c.name==name && c.state==s.name &&
                         (c.attack && c.state!="AutoAttack" || c.special &&
-                         (c.state=="Ability" || c.state.EndsWith("Release",StringComparison.Ordinal))))))
+                         (c.state.EndsWith("Ability",StringComparison.Ordinal) || c.state.EndsWith("Release",StringComparison.Ordinal))))))
             {
                 var recovery=completed.AddTransition(idle);
                 recovery.hasExitTime=true;recovery.exitTime=1;recovery.duration=0;
             }
+            EditorUtility.SetDirty(controller);
+            // A null definition root explicitly imports a phase-only controller.
+            if(dataRoot==null) continue;
             var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>(dataRoot+name+".asset");
             var so=new SerializedObject(definition);
             so.FindProperty("animationControllerOverride").objectReferenceValue=controller;

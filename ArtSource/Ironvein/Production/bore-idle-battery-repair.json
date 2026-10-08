@@ -1,0 +1,37 @@
+{
+  "changes": [
+    {
+      "operation": "copy_region",
+      "layer": "image",
+      "frames": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_layer": "image",
+      "source_frame": 1,
+      "region": [
+        26,
+        45,
+        40,
+        60
+      ],
+      "at": [
+        26,
+        45
+      ],
+      "reason": "The inspected stationary drill battery flickers out in idle frames 3/4 and flashes in others. Keep the original embedded orange cell and housing stable during breathing; powered motion owns the flare."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: 8e91b710-0d34-4c0b-afd8-40dc0c728d5e\ncanvas: 80x80, 9 frame(s)\n1. copy_region: 1154 px changed, 1920 matched\nsheet rows: frames [2, 4, 8]\n8 frames changed, in 24,43,42,62; see every one: inspect 8e91b710-0d34-4c0b-afd8-40dc0c728d5e --frames 2,3,4,5,6,7,8,9 --region 24,43,42,62\npalette (20): #0a0d11ff x4681, #62402aff x1741, #56616dff x1689, #3d454dff x1157, #4c2f1fff x1100, #303840ff x868, #be8d4dff x866, #272b2dff x801, #855834ff x713, #76848fff x701, #c5c1b1ff x595, #a47540ff x530, #989588ff x375, #d8b07aff x340, #726c5fff x282, #36241aff x217, … +4 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/8e91b710-0d34-4c0b-afd8-40dc0c728d5e/: frames.png, animation.gif\nnext: edit 8e91b710-0d34-4c0b-afd8-40dc0c728d5e --changes […]"
+    }
+  ]
+}

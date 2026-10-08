@@ -1,0 +1,22 @@
+{
+  "id": "pickaxe_delver",
+  "state": "AutoAttack-v2",
+  "request": {
+    "description": "He lifts the pickaxe in both hands above his shoulder and chops it sharply DOWN onto the ground to his left. A physical mining pick strike with only tiny grey stone chips. No energy trails, fire or bright weapon flare. Finish with pick low after impact. Preserve face and mechanical pick shape.",
+    "frame_count": 12,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/pickaxe_delver.png",
+    "no_background": true,
+    "seed": 7802,
+    "enhance_prompt": false,
+    "subject_description": "pickaxe delver",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 751373f7-0d53-4f6d-becb-1cac9ce06964\njob_id: 751373f7-0d53-4f6d-becb-1cac9ce06964\ndescription: He lifts the pickaxe in both hands above his shoulder and chops it sharply DOWN onto the ground to his left. A physical mining pick strike with only tiny grey stone chips. No energy trails, fire or bright weapon flare. Finish with pick low after impact. Preserve face and mechanical pick shape.\nframes: 12\nsize: 80x80px\ntransparent: True\nseed: 7802\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"751373f7-0d53-4f6d-becb-1cac9ce06964\")\nasset_id: d1879dc5-adf5-539c-aac8-a84e8e6489d1\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

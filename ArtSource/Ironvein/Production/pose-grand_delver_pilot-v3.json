@@ -1,0 +1,17 @@
+{
+  "id": "grand_delver_pilot-v3",
+  "request": {
+    "description": "Redraw this SAME dwarf at NATIVE 64x64 sprite resolution. Keep ginger beard, cap, face, apron, tiny wrench, pose and clothing. Short stocky 48-52 pixel tall dwarf, grounded near bottom center, space around him. Broad 2-3 shades per material, clean dark one-pixel outline. No armor or mech. Crisp pixel clusters, no smoothing, tiny interior marks or extra detail.",
+    "image_url": "Variants/grand_delver_pilot-v2/00.png",
+    "no_background": true,
+    "seed": 7940,
+    "width": 64,
+    "height": 64
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: e7546bdb-362e-4ad5-bf67-86fae7a25f37\njob_id: e7546bdb-362e-4ad5-bf67-86fae7a25f37\nmodel: pixen\nedit: Redraw this SAME dwarf at NATIVE 64x64 sprite resolution. Keep ginger beard, cap, face, apron, tiny wrench, pose and clothing. Short stocky 48-52 pixel tall dwarf, grounded near bottom center, space around him. Broad 2-3 shades per material, clean dark one-pixel outline. No armor or mech. Crisp pixel clusters, no smoothing, tiny interior marks or extra detail.\nsource: 112x112px\nsize: 64x64px\ntransparent: True\nseed: 7940\nasset_id: bf2367f6-98ff-5be9-90f1-c463f33c0ea1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"e7546bdb-362e-4ad5-bf67-86fae7a25f37\")"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "seismic_smith",
+  "state": "Idle-v2",
+  "request": {
+    "description": "A quiet breathing loop: his broad chest rises a little and shoulders settle gently. He holds the sledgehammer steadily in both hands. Boots stay in the same position. End in the original pose.",
+    "frame_count": 4,
+    "first_frame_url": "Inputs/seismic_smith-repaired.png",
+    "last_frame_url": "Inputs/seismic_smith-repaired.png",
+    "no_background": true,
+    "seed": 8060,
+    "enhance_prompt": false,
+    "subject_description": "seismic smith",
+    "initial_pose": "original grounded ready pose",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 0bb23b78-3c17-45f1-96c4-d69fc7bcce72\njob_id: 0bb23b78-3c17-45f1-96c4-d69fc7bcce72\ndescription: A quiet breathing loop: his broad chest rises a little and shoulders settle gently. He holds the sledgehammer steadily in both hands. Boots stay in the same position. End in the original pose.\nframes: 4\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 8060\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0bb23b78-3c17-45f1-96c4-d69fc7bcce72\")\nasset_id: 9a857198-486e-5eca-b531-825cc0883276\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "obsidian_sentinel",
+  "state": "AutoAttack",
+  "request": {
+    "description": "The golem draws its LEFT piston fist backwards, knees compress, then shoots its heavy fist DOWN and LEFT into a crushing blow. Body rocks with the impact, then piston retracts and stance settles. Dark steel plates stay rigid, small orange core stays confined. No fire wave.",
+    "frame_count": 12,
+    "first_frame_url": "ArtSource/Ironvein/Inputs/obsidian_sentinel.png",
+    "no_background": true,
+    "seed": 7807,
+    "enhance_prompt": false,
+    "subject_description": "obsidian sentinel",
+    "initial_pose": "grounded three-quarter ready pose, weapon held as in supplied image",
+    "view": "side",
+    "direction": "south-west"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: b47f7a87-f8e4-403e-bd01-ae5966b2b69d\njob_id: b47f7a87-f8e4-403e-bd01-ae5966b2b69d\ndescription: The golem draws its LEFT piston fist backwards, knees compress, then shoots its heavy fist DOWN and LEFT into a crushing blow. Body rocks with the impact, then piston retracts and stance settles. Dark steel plates stay rigid, small orange core stays confined. No fire wave.\nframes: 12\nsize: 112x112px\ntransparent: True\nseed: 7807\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b47f7a87-f8e4-403e-bd01-ae5966b2b69d\")\nasset_id: 24ba9476-3fff-518f-bdc5-e8228d85d90b\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "obsidian_sentinel",
+  "source_job": "7a3e63b7-0299-4c32-b0f8-9b1744a2bc9f",
+  "changes": [
+    {
+      "operation": "map_colors",
+      "layer": "image",
+      "frames": [
+        1
+      ],
+      "region": [
+        0,
+        0,
+        95,
+        95
+      ],
+      "colors": {
+        "#010101": "#0A0D11",
+        "#030406": "#0A0D11",
+        "#050505": "#0A0D11",
+        "#090A0A": "#0A0D11",
+        "#0F0F0F": "#0A0D11",
+        "#28292A": "#2D2D2F",
+        "#353638": "#393A3D",
+        "#3D3E42": "#393A3D",
+        "#42444A": "#484D55",
+        "#5F6874": "#727A85",
+        "#483627": "#34271D",
+        "#6A5035": "#58432F",
+        "#926D42": "#A27B4A",
+        "#B68E57": "#D7AC6B"
+      },
+      "reason": "Normalize measured contour deviations and merge redundant close shades within iron, cloth, leather, beard and brass ramps. Preserve all native positions, silhouette, face and equipment."
+    }
+  ],
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: ce86a17d-86ad-438d-94ab-79e8d92e552c\ncanvas: 96x96, 1 frame(s)\n1. map_colors: 3068 px changed\nsheet rows: frames [1]\npalette (19): #0a0d11ff x1167, #393a3dff x906, #2d2d2fff x636, #484d55ff x551, #515964ff x373, #58432fff x342, #242323ff x308, #34271dff x248, #a27b4aff x194, #1c1b1aff x178, #727a85ff x140, #d7ac6bff x114, #7f603eff x108, #f59222ff x14, #d5500eff x13, #2d0e04ff x9, … +3 more\ndownload https://api.pixellab.ai/mcp/pixel-tools/ce86a17d-86ad-438d-94ab-79e8d92e552c/: image.png, frames.png, animation.gif\nnext: edit ce86a17d-86ad-438d-94ab-79e8d92e552c --changes […]"
+    }
+  ]
+}

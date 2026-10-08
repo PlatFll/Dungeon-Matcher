@@ -1,0 +1,23 @@
+{
+  "id": "bore_engineer",
+  "state": "Idle",
+  "request": {
+    "description": "Restrained grounded breathing idle, knees and elbows compress slightly and shoulders and head dip one native pixel together before returning. Both hands keep compact drill launcher steady. Goggles and beard stay same, boots planted. No firing, spinning flash, or hovering.",
+    "first_frame_url": "ArtSource/Ironvein/Inputs/bore_engineer.png",
+    "last_frame_url": "same native input",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 7406,
+    "enhance_prompt": false,
+    "subject_description": "bore engineer dwarf with mechanical mining gear",
+    "view": "side",
+    "direction": "south-west",
+    "initial_pose": "grounded combat-ready stance at bottom center, tool held in hands"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "id: 5fa2f476-2793-413f-94d9-c7cc1521042a\njob_id: 5fa2f476-2793-413f-94d9-c7cc1521042a\ndescription: Restrained grounded breathing idle, knees and elbows compress slightly and shoulders and head dip one native pixel together before returning. Both hands keep compact drill launcher steady. Goggles and beard stay same, boots planted. No firing, spinning flash, or hovering.\nframes: 8\nsize: 80x80px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7406\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5fa2f476-2793-413f-94d9-c7cc1521042a\")\nasset_id: 38b3f0dd-1f7b-5bd0-a4c5-fda456fce16f\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ]
+}

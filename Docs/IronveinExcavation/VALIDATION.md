@@ -130,3 +130,20 @@ approval of the whole region. Art/music review and device testing remain pending
   dimensions, palettes, hashes and binary alpha. Palette-only cleanup preserves
   every source alpha mask. Action inputs add transparent margins by integer
   translation, never resampling. Final clip imports and playback proof remain.
+
+## Phase 08 — first native import
+
+- Fourteen stills and fifteen clips imported with unchanged kit values.
+- Five focused checks passed (`117b7954-2c1a-4a5e-ab48-8931dc1e8056.xml` in
+  `.utmp/ForestValidation`), including actual sprite-at-contact assertions for
+  powered then ordinary Pickaxe attacks: one hit each, exact pose, Idle recovery.
+- Final current Ironvein run: **43 passed / 0 failed / 0 skipped**, graphics
+  enabled, Editor audio muted. Evidence:
+  `.utmp/ForestValidation/85c420a3-3cbf-41c2-bc41-839a9c43e8f5.xml/.log`.
+- Mandatory Unity validator **passed**, exit 0:
+  `C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-9990cc73-9944-4f73-976c-d751ce3bc215.log`.
+- Captures reviewed: `.utmp/Ironvein/Captures/phase08-AutoAttack-contact.png`
+  and `phase08-OreChargedAutoAttack-contact.png`. Actors grounded; native texels
+  and counter spacing pass the layout validator. Dungeon backdrop remains a
+  temporary shell; this is not a completed cave composition or user approval.
+- All four unrelated starting user-file hashes remain unchanged.

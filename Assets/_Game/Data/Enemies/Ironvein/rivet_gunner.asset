@@ -22,6 +22,10 @@ MonoBehaviour:
   mineExtractionMultipliers: {x: 1.3, y: 1.6, z: 2}
   mineObsidianSlamMultiplier: 1.5
   mineEnableRemount: 0
+  minePilotController: {fileID: 0}
+  mineReserveController: {fileID: 0}
+  minePilotSprite: {fileID: 0}
+  mineReserveSprite: {fileID: 0}
   minePilotMoves: 3
   minePilotHealthFraction: 0.2
   mineReserveHealthFraction: 0.5
@@ -52,11 +56,11 @@ MonoBehaviour:
   description: One pneumatic rivet shot. Ore-Powered strengthens the next whole basic
     attack once.
   enemyPrefab: {fileID: 4037879479080773031, guid: 88a55141912b8ea40a4e2d964db4696a, type: 3}
-  fallbackVisualSprite: {fileID: 99358554080292503, guid: f9bceeac2ee99d542bf3ca0aa1583b2f, type: 3}
-  animationControllerOverride: {fileID: 0}
-  visualSize: {x: 112, y: 112}
-  timeAutoAttackFromAnimation: 0
-  useAuthoredAutoAttackMotion: 0
+  fallbackVisualSprite: {fileID: 21300000, guid: 60e95abba89114d4c86a92aa75ce8b39, type: 3}
+  animationControllerOverride: {fileID: 9100000, guid: eef360af3c127184591ddcbf16a74350, type: 2}
+  visualSize: {x: 240, y: 240}
+  timeAutoAttackFromAnimation: 1
+  useAuthoredAutoAttackMotion: 1
   timeSpecialAbilityFromAnimation: 0
   useAuthoredSpecialAbilityMotion: 0
   baseMaxHealth: 55

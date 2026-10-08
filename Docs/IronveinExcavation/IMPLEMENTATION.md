@@ -176,3 +176,31 @@ including surviving escorts/turrets, remains the existing wave/travel gate.
 The generic actor exposes an optional pre-final-defeat phase hook and phase-stat
 application; mine-specific decisions remain in MineEnemyAbility. Missing motion
 cannot own phase state. Actual ejection/remount art is still Phase 08 work.
+
+## Phase 08 — native production in progress
+
+Fourteen identities now have separate original stills and material-cleaned
+working selections under `ArtSource/Ironvein`. These are internal production
+candidates, not user-approved replacements. The review/technical register and
+generation receipts retain originals, rejected corrections and exact maps.
+Small action inputs use 80×80; the two large machines use 112×112. Padding adds
+headroom without resampling or changing drawn pixel scale.
+
+The existing auto-attack owner retains modifier-source identity during one active
+sequence, after consuming its saved token. Presentation can therefore select
+`OreChargedAutoAttack` for both hits of that sequence, then return to normal.
+This bookkeeping neither adds nor repeats damage. The shared motion importer
+accepts an explicit attack flag for normal event timing on named alternate clips.
+
+Fourteen padded stills are now imported with Point filtering, full rectangles,
+bottom-center pivots and the same native texel scale. First motion import covers
+Pickaxe, Gunner, Hauler, Beetle, Surveyor, Sapper and Turret: fifteen clips including
+the powered Pickaxe. `Production/motion-selections.json` records the exact original
+frame sequence/timing; the exporter verifies unchanged RGBA bytes per frame.
+The native gallery pairs 1x and 3x presentation and records dimensions, occupied
+bounds, alpha, palette counts and hashes independently from the preview.
+
+Multi-action kits select separate optional gesture state names. The same saved
+Grand Delver actor can select optional pilot/reserve controllers; Continue binds
+the saved form without replaying a phase transition. These phase assets remain
+unbound until their clips pass review. Missing presentation leaves gameplay intact.
