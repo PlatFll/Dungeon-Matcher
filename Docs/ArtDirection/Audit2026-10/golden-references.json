@@ -1,0 +1,218 @@
+[
+  {
+    "id": "skeleton",
+    "status": "Primary golden standard — user instruction 2026-10-11",
+    "role": "Crisp contours, broad connected shading, clear focal face/prop and grounded compact motion.",
+    "do_not_copy": "Do not copy skeleton anatomy, cyan eyes, royal colors or exact stance to other species.",
+    "extracted_png": "Audit2026-10/media/skeleton-still.png",
+    "extracted_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "source": {
+      "path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "guid": "ea3e0e0bde8898948aad0f1b15065804",
+      "fileID": -873265099634963608,
+      "name": "Rattlebones_Idle_00",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": "{x: 0.5, y: 0}",
+      "sha256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    "controller": "Assets/_Game/Animations/CombatIdles/Rattlebones_Idle.controller"
+  },
+  {
+    "id": "farmer",
+    "status": "Existing supporting reference; retained",
+    "role": "Warm human skin, quiet workwear, straw and an identifying improvised tool.",
+    "do_not_copy": "Do not copy the same hat/face/pose to all locals or force all cloth brown.",
+    "extracted_png": "Audit2026-10/media/farmer-still.png",
+    "extracted_sha256": "d6dcb8df7120d844f5af19c38640b07effdd45960d8b3340e2dd88c1f2d6cdee",
+    "source": {
+      "path": "Assets/_Game/Art/CombatIdles/Farmer_Idle.png",
+      "guid": "f9bceeac2ee99d542bf3ca0aa1583b2f",
+      "fileID": 99358554080292503,
+      "name": "Farmer_Idle_00",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": "{x: 0.5, y: 0}",
+      "sha256": "33847998d2e3da4474da7987685a83ab2b3a24bf76029c274990c5cea30cd7df"
+    },
+    "controller": "Assets/_Game/Animations/CombatIdles/Farmer_Idle.controller"
+  },
+  {
+    "id": "pan_villager",
+    "status": "Existing supporting reference; retained",
+    "role": "Simple human expression, restrained cloth and dull iron with one large prop mass.",
+    "do_not_copy": "The pan remains cookware, not a heraldic shield; do not normalize her face/gender presentation.",
+    "extracted_png": "Audit2026-10/media/pan_villager-still.png",
+    "extracted_sha256": "057a22e58cdec69b10de50fe7255eb2ee8da9b12fd90851c6586e6c95efcadd1",
+    "source": {
+      "path": "Assets/_Game/Art/CombatIdles/PanVillager_Idle.png",
+      "guid": "3c27279675a73fa4483e90748a589ab2",
+      "fileID": 2638720417487856195,
+      "name": "PanVillager_Idle_00",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": "{x: 0.5, y: 0}",
+      "sha256": "dc7e7b3695a191864c538b2b88cedba2cac100d6cb38ec5e6b544b32f0906470"
+    },
+    "controller": "Assets/_Game/Animations/CombatIdles/PanVillager_Idle.controller"
+  },
+  {
+    "id": "royal_swordsman",
+    "status": "PROPOSED addition — membership pending user review",
+    "role": "Large clean armor planes, dark visor and disciplined red/gold accents.",
+    "do_not_copy": "Not universal white armor, closed faces, or a universal melee pose.",
+    "extracted_png": "Audit2026-10/media/royal_swordsman-still.png",
+    "extracted_sha256": "c0347b8b49073dab7d6913c4c035326dc1c142a3cd1065bb6c655fc99741bae2",
+    "source": {
+      "path": "Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png",
+      "guid": "515d6081feed5644fb014b27bfe1c414",
+      "fileID": -4154602047249404397,
+      "name": "RoyalSwordsman_Idle_00",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": "{x: 0.5, y: 0}",
+      "sha256": "a71d88dd5b8eb836d924b89862f8ce175b778d887cd8b212f700b7a4ec20ab91"
+    },
+    "controller": "Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.controller"
+  },
+  {
+    "id": "elven_mender",
+    "status": "PROPOSED addition — membership pending user review",
+    "role": "Quiet fabric, exposed readable face, simple support equipment and graceful open-hand posture.",
+    "do_not_copy": "Not mandatory elf anatomy, cream/rose costume or identical casting hands.",
+    "extracted_png": "Audit2026-10/media/elven_mender-still.png",
+    "extracted_sha256": "4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d",
+    "source": {
+      "path": "Assets/_Game/Art/Forest/Elven_Mender.png",
+      "guid": "1849556a95e20914ab7cf00cb59fab9f",
+      "fileID": 21300000,
+      "name": "Elven_Mender",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": null,
+      "sha256": "4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d"
+    },
+    "controller": "Assets/_Game/Animations/Forest/Elven_Mender.controller"
+  },
+  {
+    "id": "orc_trailguard",
+    "status": "PROPOSED addition — membership pending user review",
+    "role": "Broad nonhuman anatomy with clear skin/leather/iron separation and readable tool acting.",
+    "do_not_copy": "Not mandatory olive skin, muscular width or axe equipment.",
+    "extracted_png": "Audit2026-10/media/orc_trailguard-still.png",
+    "extracted_sha256": "45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09",
+    "source": {
+      "path": "Assets/_Game/Art/Forest/Orc_Trailguard.png",
+      "guid": "3f27ba57600c5ee449d4481892e799a0",
+      "fileID": 21300000,
+      "name": "Orc_Trailguard",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": null,
+      "sha256": "45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09"
+    },
+    "controller": "Assets/_Game/Animations/Forest/Orc_Trailguard.controller"
+  },
+  {
+    "id": "pearl_thief",
+    "status": "PROPOSED addition — membership pending user review; broader art approval remains separate",
+    "role": "Economical whimsical marine anatomy, large quiet head, tiny face and one bright treasure accent.",
+    "do_not_copy": "Not a purple palette, tentacles or a generic cute-face template for every creature.",
+    "extracted_png": "Audit2026-10/media/pearl_thief-still.png",
+    "extracted_sha256": "1f28bd39eb2fc5d721838752c312a83a46c42810e619107757180d1fea0aa656",
+    "source": {
+      "path": "Assets/_Game/Art/DrownedCourt/pearl_thief.png",
+      "guid": "ee4e03895a7a87449b53ae7f3e4a0752",
+      "fileID": 21300000,
+      "name": "pearl_thief",
+      "crop_top_left": [
+        0,
+        0,
+        80,
+        80
+      ],
+      "size": [
+        80,
+        80
+      ],
+      "pivot": null,
+      "sha256": "1f28bd39eb2fc5d721838752c312a83a46c42810e619107757180d1fea0aa656"
+    },
+    "controller": "Assets/_Game/Animations/DrownedCourt/pearl_thief.controller"
+  },
+  {
+    "id": "elven_scout",
+    "status": "Specialist reserve — not proposed for core membership",
+    "role": "Bowstring/hand relationship and readable lean archer silhouette.",
+    "do_not_copy": "Do not copy its wider idle movement to the whole cast; Mender already covers the core elf/cloth role.",
+    "extracted_png": "Audit2026-10/media/elven_scout-still.png",
+    "extracted_sha256": "9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6",
+    "source": {
+      "path": "Assets/_Game/Art/Forest/Elven_Scout.png",
+      "guid": "e51d5254d34cf2140a590edb8774a2ac",
+      "fileID": 21300000,
+      "name": "Elven_Scout",
+      "crop_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "pivot": null,
+      "sha256": "9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6"
+    },
+    "controller": "Assets/_Game/Animations/Forest/Elven_Scout.controller"
+  }
+]
