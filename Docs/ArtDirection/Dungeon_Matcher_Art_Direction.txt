@@ -1,8 +1,9 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.15
+**Version:** 1.16
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
+**Updated for global menu direction:** 2026-10-12
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -682,10 +683,29 @@ pixel density. Props support the actors and never compete with the face/tool rea
 Dark violet masonry fills surrounding gutters and the bottom HUD. The player
 frame uses a darker version so bone, slime and health information remain clear.
 
-The menu's dark recessed doorway leaves a quiet area for controls. Its brightest
-feature is the pink story gem between the two lines of the Dungeon Matcher logo.
-Use warm bone/gold lettering, a dark outline and violet depth. No dithered glitter,
-blur or painted gameplay labels. Keep important dressing inside tall-phone crops.
+The global menu direction now follows the user-supplied main-menu and settings
+mockups (2026-10-12): silver DUNGEON lettering with a skull-shaped O, gold MATCHER,
+purple jewel accents, a violet skull portal, paired skeleton statues and banners,
+warm flames, treasure and a central pedestal. The selected or saved approved
+character appears on the pedestal with its existing idle, at native pixel size.
+
+The shared non-zone menu family uses silver stone/metal rims, dark recessed
+panels, purple diamond corner jewels and live Thaleah labels. Main navigation
+uses pale faces with dark lettering; resume uses green, destructive exit red,
+and secondary actions muted gray. Settings use four icon rows and explicit
+ON/OFF labels as well as color. Maintain matching frame thickness and spacing.
+Large central action controls can reuse this rim/face/icon separation in a future
+battle UI pass; this amendment does not replace the existing ability HUD.
+
+Production sources and exact supplied reference hashes live in ArtSource/MenuUI.
+Its current 54 native assets are an implemented review candidate, not a new
+character golden-reference approval. The scene is 360x640; its 360x800 extension
+supports tall phones without rescaling the original hall. UI uses integer screen
+pixel scaling, Point filtering, uncompressed textures, no mipmaps, a tiled panel
+with protected 12px corners, and native LibreSprite source files. Text other than
+the separate brand wordmark remains live Thaleah. Do not bake a screenshot into
+an interactive screen. The old recessed-doorway menu/pink center-gem direction
+is superseded for these two screens only.
 Potion glass/liquid and the iron fantasy bomb must read at their native 24×24 size.
 
 ### Combat correction lesson

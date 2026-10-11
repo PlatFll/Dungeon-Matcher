@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "job_id": "c6796660-c5c8-4c53-aad8-21791d707083",
+  "cost": 25,
+  "balance_before": 26,
+  "args": {
+    "description": "Native pixel-art BACKGROUND ONLY for Dungeon Matcher main menu. Reconstruct the environment from the attached approved reference extremely closely at 360x640 native pixels. SAME front-on symmetric composition, dark purple stone dungeon hall, large central skull-faced archway with violet eyes and purple portal; paired tall hooded skeleton statues carrying vertical swords on side walls; plum banners with simple gold crowned skulls; warm orange torch sconces, treasure chest and scattered coins at left, barrel/crates/skulls right; raised round stone pedestal centered with top at y=300 (47% height); wide stairs descending toward viewer, purple gold-edged carpet down center. Near foreground: shadowed skulls and candles framing lower corners, drawn sharply at the SAME pixel density, no blur. The doorway and statues occupy upper half; bottom 43% is quieter stone steps/carpet behind future controls. Match the reference environment's composition, props, materials, dark indigo shadows, broad readable stone planes, purple architecture and small warm fire accents. CRITICAL EXCLUDE ALL USER INTERFACE: no title, no lettering, no gear, no frames or buttons, no small playable skeleton or any characters standing on pedestal, no labels or mock UI. Existing character, separate title art and modular buttons are layered later in Unity. Actual pixel drawing with hard single-pixel contour steps, restrained 32-48 color palette, connected shadow clusters, no antialiasing, no gradients, no noisy dithering. Do not redesign this into a different dungeon. This is original reconstructed native scenery, not a downsampled screenshot.",
+    "width": 360,
+    "height": 640,
+    "no_background": false,
+    "reference_images": [
+      {
+        "url": "upload:d9345feb-be41-4ced-9a40-4f17d6ad077e",
+        "usage": "Exact environment composition target. Recreate only scenery, remove ALL text/logo/UI and the small playable skeleton. Preserve placement, hall architecture, skull portal, statues, banners, pedestal and stairs."
+      }
+    ],
+    "seed": 12102026
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: c6796660-c5c8-4c53-aad8-21791d707083\njob_id: c6796660-c5c8-4c53-aad8-21791d707083\nmodel: pro\ndescription: Native pixel-art BACKGROUND ONLY for Dungeon Matcher main menu. Reconstruct the environment from the attached approved reference extremely closely at 360x640 native pixels. SAME front-on symmetric composition, dark purple stone dungeon hall, large central skull-faced archway with violet eyes and purple portal; paired tall hooded skeleton statues carrying vertical swords on side walls; plum banners with simple gold crowned skulls; warm orange torch sconces, treasure chest and scattered coins at left, barrel/crates/skulls right; raised round stone pedestal centered with top at y=300 (47% height); wide stairs descending toward viewer, purple gold-edged carpet down center. Near foreground: shadowed skulls and candles framing lower corners, drawn sharply at the SAME pixel density, no blur. The doorway and statues occupy upper half; bottom 43% is quieter stone steps/carpet behind future controls. Match the reference environment's composition, props, materials, dark indigo shadows, broad readable stone planes, purple architecture and small warm fire accents. CRITICAL EXCLUDE ALL USER INTERFACE: no title, no lettering, no gear, no frames or buttons, no small playable skeleton or any characters standing on pedestal, no labels or mock UI. Existing character, separate title art and modular buttons are layered later in Unity. Actual pixel drawing with hard single-pixel contour steps, restrained 32-48 color palette, connected shadow clusters, no antialiasing, no gradients, no noisy dithering. Do not redesign this into a different dungeon. This is original reconstructed native scenery, not a downsampled screenshot.\nsize: 360x640px\ntransparent: False\ncandidates: 1\nreferences: 1\nseed: 12102026\nasset_id: dbc8d69c-8ee9-5c4c-8b4b-0a0fc1994023\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"c6796660-c5c8-4c53-aad8-21791d707083\")"
+      }
+    ],
+    "isError": false
+  },
+  "balance_after": 1,
+  "charged": 25,
+  "asset_id": "dbc8d69c-8ee9-5c4c-8b4b-0a0fc1994023",
+  "download_sha256": "04953fb6c24639a68876a034b04f0622c8abc28540d7472d083d51f1a5f34a11"
+}

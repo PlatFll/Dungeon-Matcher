@@ -38,6 +38,7 @@ public sealed class MainMenuController : MonoBehaviour
     private Button endSavedRun;
     private RectTransform zonePicker;
     private GameObject zonePickerOrigin;
+    private MainMenuArtwork menuArtwork;
 
     private void Start()
     {
@@ -261,9 +262,17 @@ public sealed class MainMenuController : MonoBehaviour
         GameUi.Button("ChallengesButton",homeScreen.transform,"Challenges",new Vector2(145,48),new Vector2(78,-238),ShowChallenges);
         endSavedRun=GameUi.Button("EndSavedRun",homeScreen.transform,"End saved run",new Vector2(300,44),new Vector2(0,-302),ConfirmEndSavedRun);
         accountLabel=GameUi.Label("AccountSummary",homeScreen.transform,"",new Vector2(420,76),new Vector2(0,130),21);
-        DungeonPresentationArt.InstallMenu(homeScreen, title);
-        FinalizedUiSkin.Button(playButton);
-        FinalizedUiSkin.Button(gemMasteryButton);
+        if (GlobalMenuSkin.Load("Hall") != null)
+        {
+            menuArtwork=homeScreen.AddComponent<MainMenuArtwork>();
+            menuArtwork.Initialize(homeScreen,playButton,gemMasteryButton,accountLabel,endSavedRun);
+        }
+        else
+        {
+            DungeonPresentationArt.InstallMenu(homeScreen,title);
+            FinalizedUiSkin.Button(playButton);
+            FinalizedUiSkin.Button(gemMasteryButton);
+        }
         FinalizedUiSkin.Button(gemMasteryBackButton);
         AccountProgression.Current.Changed += RefreshAccount;
         CharacterSelectionSettings.Changed += RefreshAccount;
@@ -277,6 +286,15 @@ public sealed class MainMenuController : MonoBehaviour
         accountLabel.text=$"{(run!=null?"Saved: ":"")}{(definition != null ? definition.DisplayName : id)} - Level {run?.level ?? AccountProgression.Current.Level(id)}\nGold Coins: {AccountProgression.Current.Gold}";
         playButton.GetComponentInChildren<TMP_Text>().text=run==null?"Play":"Continue wave "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
         if(endSavedRun!=null) endSavedRun.gameObject.SetActive(run!=null);
+        if(menuArtwork!=null)
+        {
+            accountLabel.text=$"{(definition!=null?definition.DisplayName:id)}  ·  LV {run?.level??AccountProgression.Current.Level(id)}  ·  GOLD {AccountProgression.Current.Gold}";
+            if(run!=null)accountLabel.text += "  /  WAVE "+(run.checkpoint?.wave>0?run.checkpoint.wave:1);
+            var label=playButton.GetComponentInChildren<TMP_Text>();
+            label.text=run==null?"PLAY":"CONTINUE";
+            GlobalMenuSkin.StyleText(label,run==null?64:40,true);
+            menuArtwork.Refresh(definition,run!=null);
+        }
     }
     private void ConfirmEndSavedRun()
     {

@@ -1,0 +1,33 @@
+Read `Dungeon_Matcher_Art_Direction(2).txt` and inspect `Dungeon_Matcher_Art_References(2).png` first.
+
+Then implement the **Main Menu + Pause / Settings UI pass** using this pack as the contract and using these two images as the exact visual target:
+- Main menu reference: `/mnt/data/ghostwriter_images/generated/a_vertically_oriented_pixel_art_game_title_screen_5_batch_4.png`
+- Pause/settings reference: `/mnt/data/ghostwriter_images/generated/a_pixel_art_video_game_screenshot_dark_fantasy_du_6_batch_5.png`
+
+Goals:
+1. Recreate the main menu art and UI so it matches the main-menu mockup closely.
+2. Recreate the pause/settings menu art and UI so it matches the settings mockup closely.
+3. Use PixelLab and LibreSprite to build **native clean pixel assets**, not a stretched screenshot hack.
+4. Make the result crisp, clean, aligned, modular where practical, and production-ready.
+5. Establish the shared **global UI style** for non-zone-specific menus.
+
+Use the pack folder:
+`/mnt/data/Dungeon_Matcher_Menu_UI_Implementation_Pack`
+
+Required behavior:
+- audit first,
+- implement carefully,
+- validate in-engine,
+- stop and report clearly if anything blocks a clean result.
+
+Important:
+- Do not improvise a new style.
+- Do not make it loosely inspired.
+- Match the references closely.
+- Avoid blur, scaling bugs, seam bugs, or inconsistent pixel density.
+- Keep text readable and spacing clean.
+
+When done, provide:
+- before/after screenshots,
+- note of which reusable UI assets were created,
+- note of anything that still differs from the reference.

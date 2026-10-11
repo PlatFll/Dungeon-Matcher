@@ -1,5 +1,26 @@
 # Dungeon Matcher Architecture Reference
 
+## Global menu presentation (2026-10-12)
+
+- MainMenuController retains navigation, character/account refresh, saved-run
+  continuation and test-zone selection. MainMenuArtwork decorates those controls
+  and presents the existing approved character idle. Its new gear reads/writes
+  AudioPreferences and PresentationPreferences, the same owners as run settings.
+- GlobalMenuSkin owns the non-zone menu asset family. GlobalMenuPixelRoot gives
+  these screens one integer physical-pixel stage, independent of the battle
+  canvas density. Home aligns to the safe top on taller screens; settings remain
+  centered. This does not change the board or battle layout owner.
+- PixelTextFitter has an opt-in native-menu em mode that measures the label's
+  actual physical transform scale. Periodic typography refresh retains the
+  requested native size. Other labels preserve their existing fitting behavior.
+- RunControlsUI still owns modal input leases, pause/resume, confirmed exits and
+  saving. The new skin reuses those callbacks and the settings gear's existing
+  canvas sorting so it remains accessible during crystal travel. Missing new
+  artwork retains the earlier menu/settings presentation.
+- Sources: ArtSource/MenuUI/native (ASE + PNG). Import: GlobalMenuArtImporter;
+  explicit build/import commands: Tools/Build-MenuArt.ps1 and Import-MenuArt.ps1.
+  No zone, combat, economy, save schema or character-art changes belong here.
+
 ## Frostwake and sequential player impacts (2026-10-11)
 
 `BoardController.PlayerImpacts` holds the existing board lock from accepted
