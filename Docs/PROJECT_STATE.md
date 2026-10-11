@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.13. Rattlebones is the explicitly designated
+The canonical art guide is now v1.13.1. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.
@@ -38,8 +38,11 @@ repairs clipped props and effects, corrects west-facing motion and expands all
 enemy canvases without resampling. It covers 64 forms and 2,951 sprites, retaining
 all 353 clip files and sprite IDs. Rattlebones/player art and gameplay remain
 unchanged. PixelLab production consumed 815 generations; 223 remained afterward.
-Native exports and Unity asset checks pass; scene checks cover every drawing at
-1080×1920 and 1080×2400. See [current verification](Validation/ENEMY_ART_COHESION.md)
+The user rejected the resulting Puffer face edit; his original facial pixels are
+now restored in every affected state, retaining west-facing poses and canvas fixes.
+Native export checks pass after restoration. The initial pass's Unity asset and
+scene checks covered every drawing at 1080×1920 and 1080×2400; Unity was not rerun
+for the art-only face correction. See [current verification](Validation/ENEMY_ART_COHESION.md)
 for limits and the final regression record. Source review and automated checks
 do not establish human art approval or physical-device acceptance.
 Historical art checkpoint versions below describe earlier milestones; consult
