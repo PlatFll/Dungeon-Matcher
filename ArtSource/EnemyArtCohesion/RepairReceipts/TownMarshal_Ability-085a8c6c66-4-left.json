@@ -1,0 +1,45 @@
+{
+  "id": "TownMarshal_Ability-085a8c6c66-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/TownMarshal_Ability-085a8c6c66-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 21,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41739,
+    "description": "Tiny native pixel-art edge repair of the existing mace or small bell-ring arc, retaining its exact size and contour. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Ability."
+  },
+  "job": {
+    "background_job_id": "519ef721-9457-4773-bacf-44622b5e3cf6",
+    "image_id": "e5f70266-4b8f-5a88-8273-45f1f1cbf1df",
+    "status": "processing",
+    "source_image_id": "e5f70266-4b8f-5a88-8273-45f1f1cbf1df",
+    "job_id": "519ef721-9457-4773-bacf-44622b5e3cf6",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/519ef721-9457-4773-bacf-44622b5e3cf6/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/TownMarshal_Ability-085a8c6c66-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/TownMarshal_Ability-085a8c6c66-4-left-repair.png",
+  "completion": "status: completed\nid: 519ef721-9457-4773-bacf-44622b5e3cf6\njob_id: 519ef721-9457-4773-bacf-44622b5e3cf6\nframes: 1\ntransparent: yes\nasset_id: e5f70266-4b8f-5a88-8273-45f1f1cbf1df\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/519ef721-9457-4773-bacf-44622b5e3cf6/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/TownMarshal_Ability-085a8c6c66-4.png",
+  "input_sha256": "b0d3d5d687f676195f19465a390e371a0116d89dc63cff6e6786079e4f2eaa79",
+  "output_sha256": "de209c0d9928c3de30ced69a3ec1825dbb56392983c0431c301e747d0b02602b",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

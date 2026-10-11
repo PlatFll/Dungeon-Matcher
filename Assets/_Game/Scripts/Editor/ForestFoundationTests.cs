@@ -35,8 +35,7 @@ public sealed class ForestFoundationTests
         {
             string path=AssetDatabase.GetAssetPath(enemy.FallbackVisualSprite);
             bool expanded=ForestRosterImporter.Names.Contains(enemy.name);
-            string source=expanded?"ArtSource/Forest/RosterProduction/Selected/"+enemy.name+"/Ready.png":
-                "ArtSource/Forest/Approved/"+enemy.name+".png";
+            string source=Directory.GetFiles("ArtSource/EnemyArtCohesion/Sheets",Path.GetFileNameWithoutExtension(path)+"-*.png").Single();
             CollectionAssert.AreEqual(File.ReadAllBytes(source),File.ReadAllBytes(path),enemy.name);
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(importer.mipmapEnabled,Is.False);
@@ -48,7 +47,7 @@ public sealed class ForestFoundationTests
             Assert.That(enemy.EligibleZones,Does.Contain("magical-forest"));Assert.That(enemy.FirstAttackMoves,Is.GreaterThan(0));
             var native=expanded?(enemy.name=="Ancient_Treant"?new Vector2(128,112):new Vector2(96,80)):
                 (enemy.name=="Briar_Matriarch"?new Vector2(96,96):new Vector2(64,64));
-            Assert.That(enemy.FallbackVisualSprite.rect.size,Is.EqualTo(native),enemy.name);
+            Assert.That(enemy.FallbackVisualSprite.rect.size,Is.EqualTo(native+new Vector2(48,24)),enemy.name);
         }
         foreach(var cell in zone.theme.boardCells) Assert.That(cell.rect.size,Is.EqualTo(new Vector2(64,64)));
         Assert.That(zone.theme.panelBackground,Is.Not.EqualTo(zone.theme.generalBackground));

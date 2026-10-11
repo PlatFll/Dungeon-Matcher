@@ -246,7 +246,8 @@ public sealed class JudgmentRevisionAssetTests
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             Assert.That(importer.filterMode,Is.EqualTo(FilterMode.Point));Assert.That(importer.mipmapEnabled,Is.False);
             Assert.That(importer.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
-            Assert.That(File.ReadAllBytes(path),Is.EqualTo(File.ReadAllBytes("ArtSource/EnemyAttacks/King_"+name+".png")));
+            string source=Directory.GetFiles("ArtSource/EnemyArtCohesion/Sheets","King_"+name+"-*.png").Single();
+            Assert.That(File.ReadAllBytes(path),Is.EqualTo(File.ReadAllBytes(source)));
         }
     }
 }

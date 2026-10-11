@@ -1,0 +1,45 @@
+{
+  "id": "obsidian_sentinel_OreChargedAutoAttack-64243d6933-2",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/obsidian_sentinel_OreChargedAutoAttack-64243d6933-2.png",
+  "parameters": {
+    "mask_x": 133,
+    "mask_y": 82,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41857,
+    "description": "Tiny native pixel-art edge repair of the existing stone fist/forearm or compact slam dust at the cut boundary. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State OreChargedAutoAttack."
+  },
+  "job": {
+    "background_job_id": "54a8e75f-0d5a-4b50-a864-5e0a22ac33f4",
+    "image_id": "afa37f00-9ad0-5494-9f87-780e0a4a138a",
+    "status": "processing",
+    "source_image_id": "afa37f00-9ad0-5494-9f87-780e0a4a138a",
+    "job_id": "54a8e75f-0d5a-4b50-a864-5e0a22ac33f4",
+    "image_size": {
+      "width": 160,
+      "height": 136
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/54a8e75f-0d5a-4b50-a864-5e0a22ac33f4/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/obsidian_sentinel_OreChargedAutoAttack-64243d6933-2-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/obsidian_sentinel_OreChargedAutoAttack-64243d6933-2-right-repair.png",
+  "completion": "status: completed\nid: 54a8e75f-0d5a-4b50-a864-5e0a22ac33f4\njob_id: 54a8e75f-0d5a-4b50-a864-5e0a22ac33f4\nframes: 1\ntransparent: yes\nasset_id: afa37f00-9ad0-5494-9f87-780e0a4a138a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/54a8e75f-0d5a-4b50-a864-5e0a22ac33f4/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/obsidian_sentinel_OreChargedAutoAttack-64243d6933-2.png",
+  "input_sha256": "b0cec7e116c550bab69045996337a0546ba081f558ab80981e8cd1f5efd57307",
+  "output_sha256": "caab3f99f0912831aec75ada2405d1923817c72bd4fda88e4f242364945df93c",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

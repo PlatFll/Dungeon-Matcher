@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 14e0a2a191313e0409511baa79c16b3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 247061434330581289
+    second: obsidian_sentinel_AutoAttack_0
+  - first:
+      213: 4231522599737429530
+    second: obsidian_sentinel_AutoAttack_1
+  - first:
+      213: -1839904007031042390
+    second: obsidian_sentinel_AutoAttack_2
+  - first:
+      213: 6370832197981212860
+    second: obsidian_sentinel_AutoAttack_3
+  - first:
+      213: -5116814299542489309
+    second: obsidian_sentinel_AutoAttack_4
+  - first:
+      213: -6889510635875711686
+    second: obsidian_sentinel_AutoAttack_5
+  - first:
+      213: 6001650728939260570
+    second: obsidian_sentinel_AutoAttack_6
+  - first:
+      213: 2301220104842163374
+    second: obsidian_sentinel_AutoAttack_7
+  - first:
+      213: 4459794961024426340
+    second: obsidian_sentinel_AutoAttack_8
+  - first:
+      213: 7677034460869195309
+    second: obsidian_sentinel_AutoAttack_00
+  - first:
+      213: -2860362636998059162
+    second: obsidian_sentinel_AutoAttack_01
+  - first:
+      213: 5914350564528935124
+    second: obsidian_sentinel_AutoAttack_02
+  - first:
+      213: -442524370996412293
+    second: obsidian_sentinel_AutoAttack_03
+  - first:
+      213: 1506725443790699131
+    second: obsidian_sentinel_AutoAttack_04
+  - first:
+      213: -5672174866696730265
+    second: obsidian_sentinel_AutoAttack_05
+  - first:
+      213: 7459927875548637766
+    second: obsidian_sentinel_AutoAttack_06
+  - first:
+      213: -7899526466126300921
+    second: obsidian_sentinel_AutoAttack_07
+  - first:
+      213: -2641133049548282462
+    second: obsidian_sentinel_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d267a80ea2e4a8a60800000000000000
+      internalID: 7677034460869195309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b5ee42653fd48d0800000000000000
+      internalID: -2860362636998059162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0d0ebb08ef31250800000000000000
+      internalID: 5914350564528935124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b704e4edd66dbd9f0800000000000000
+      internalID: -442524370996412293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7aff23eec6f8e410800000000000000
+      internalID: 1506725443790699131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76984aed2036841b0800000000000000
+      internalID: -5672174866696730265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a6c10e0ecf68760800000000000000
+      internalID: 7459927875548637766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709beb4588e3f5290800000000000000
+      internalID: -7899526466126300921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a561291c7fc85bd0800000000000000
+      internalID: -2641133049548282462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      obsidian_sentinel_AutoAttack_0: 247061434330581289
+      obsidian_sentinel_AutoAttack_00: 7677034460869195309
+      obsidian_sentinel_AutoAttack_01: -2860362636998059162
+      obsidian_sentinel_AutoAttack_02: 5914350564528935124
+      obsidian_sentinel_AutoAttack_03: -442524370996412293
+      obsidian_sentinel_AutoAttack_04: 1506725443790699131
+      obsidian_sentinel_AutoAttack_05: -5672174866696730265
+      obsidian_sentinel_AutoAttack_06: 7459927875548637766
+      obsidian_sentinel_AutoAttack_07: -7899526466126300921
+      obsidian_sentinel_AutoAttack_08: -2641133049548282462
+      obsidian_sentinel_AutoAttack_1: 4231522599737429530
+      obsidian_sentinel_AutoAttack_2: -1839904007031042390
+      obsidian_sentinel_AutoAttack_3: 6370832197981212860
+      obsidian_sentinel_AutoAttack_4: -5116814299542489309
+      obsidian_sentinel_AutoAttack_5: -6889510635875711686
+      obsidian_sentinel_AutoAttack_6: 6001650728939260570
+      obsidian_sentinel_AutoAttack_7: 2301220104842163374
+      obsidian_sentinel_AutoAttack_8: 4459794961024426340
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,45 @@
+{
+  "id": "puffer_sentinel_AutoAttack-c42fc79193-8",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/puffer_sentinel_AutoAttack-c42fc79193-8.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 62,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41219,
+    "description": "Tiny native pixel-art edge repair of the existing wooden forked staff or orange puffer hand contour. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: AutoAttack. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "33dbc6c3-f464-4536-a075-44b03f9ca12a",
+    "image_id": "9ab02145-30c9-510c-811b-08fd8618415a",
+    "status": "processing",
+    "source_image_id": "9ab02145-30c9-510c-811b-08fd8618415a",
+    "job_id": "33dbc6c3-f464-4536-a075-44b03f9ca12a",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/33dbc6c3-f464-4536-a075-44b03f9ca12a/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/puffer_sentinel_AutoAttack-c42fc79193-8-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/puffer_sentinel_AutoAttack-c42fc79193-8-left-repair.png",
+  "completion": "status: completed\nid: 33dbc6c3-f464-4536-a075-44b03f9ca12a\njob_id: 33dbc6c3-f464-4536-a075-44b03f9ca12a\nframes: 1\ntransparent: yes\nasset_id: 9ab02145-30c9-510c-811b-08fd8618415a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/33dbc6c3-f464-4536-a075-44b03f9ca12a/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/puffer_sentinel_AutoAttack-c42fc79193-8.png",
+  "input_sha256": "c01523b7dcbbdb6907b8f03e0b1d39ed58eee2fb5638d82efebcd51a8e4c9bb2",
+  "output_sha256": "1f6f97acc41872810425dad32e2f64b0cad42465c3cccd354ff54a1928ded5b3",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

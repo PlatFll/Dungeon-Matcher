@@ -1,0 +1,45 @@
+{
+  "id": "puffer_sentinel_InflatedAttack-edfdf0effa-9",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/puffer_sentinel_InflatedAttack-edfdf0effa-9.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 45,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41216,
+    "description": "Tiny native pixel-art edge repair of the existing wooden forked staff or orange puffer hand contour. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: InflatedAttack. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "39fa4629-2380-4129-8b3d-aaae551b1524",
+    "image_id": "5c05e8d0-7746-5619-9ffc-453ff4451cc4",
+    "status": "processing",
+    "source_image_id": "5c05e8d0-7746-5619-9ffc-453ff4451cc4",
+    "job_id": "39fa4629-2380-4129-8b3d-aaae551b1524",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/39fa4629-2380-4129-8b3d-aaae551b1524/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/puffer_sentinel_InflatedAttack-edfdf0effa-9-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/puffer_sentinel_InflatedAttack-edfdf0effa-9-left-repair.png",
+  "completion": "status: completed\nid: 39fa4629-2380-4129-8b3d-aaae551b1524\njob_id: 39fa4629-2380-4129-8b3d-aaae551b1524\nframes: 1\ntransparent: yes\nasset_id: 5c05e8d0-7746-5619-9ffc-453ff4451cc4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/39fa4629-2380-4129-8b3d-aaae551b1524/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/puffer_sentinel_InflatedAttack-edfdf0effa-9.png",
+  "input_sha256": "841e6febb8ccce3f763c717018402832c2cecb31ef620a0586158a9ac7169937",
+  "output_sha256": "6640a0e223f7616e74c9bfb24c8bf70e8790eeed3a9ad590d1d57dc7da4b167e",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

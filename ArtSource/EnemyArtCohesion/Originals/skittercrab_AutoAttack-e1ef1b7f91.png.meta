@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 9252e554be13fc447a16a9dc235bed7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1515258215332968269
+    second: skittercrab_AutoAttack_0
+  - first:
+      213: -4817852716370464691
+    second: skittercrab_AutoAttack_1
+  - first:
+      213: -5178245634557554777
+    second: skittercrab_AutoAttack_2
+  - first:
+      213: -3612075050611920464
+    second: skittercrab_AutoAttack_3
+  - first:
+      213: -7713828925059556585
+    second: skittercrab_AutoAttack_4
+  - first:
+      213: 6013209715158670369
+    second: skittercrab_AutoAttack_5
+  - first:
+      213: 2939266825394066402
+    second: skittercrab_AutoAttack_6
+  - first:
+      213: -5167851826481907098
+    second: skittercrab_AutoAttack_7
+  - first:
+      213: 3126284501806066932
+    second: skittercrab_AutoAttack_8
+  - first:
+      213: 5174311254385853704
+    second: skittercrab_AutoAttack_9
+  - first:
+      213: -6944520044281990399
+    second: skittercrab_AutoAttack_00
+  - first:
+      213: 5719767697737384267
+    second: skittercrab_AutoAttack_01
+  - first:
+      213: -829032711454170173
+    second: skittercrab_AutoAttack_02
+  - first:
+      213: -517588203614540371
+    second: skittercrab_AutoAttack_03
+  - first:
+      213: 6840774642223029991
+    second: skittercrab_AutoAttack_04
+  - first:
+      213: -3683833656324648329
+    second: skittercrab_AutoAttack_05
+  - first:
+      213: -103035168249711024
+    second: skittercrab_AutoAttack_06
+  - first:
+      213: 5277231227299176127
+    second: skittercrab_AutoAttack_07
+  - first:
+      213: -1063153941501628666
+    second: skittercrab_AutoAttack_08
+  - first:
+      213: 1567498817417113320
+    second: skittercrab_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103fdf830db10af90800000000000000
+      internalID: -6944520044281990399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41046d9a62b06f40800000000000000
+      internalID: 5719767697737384267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3689e242fae74f0800000000000000
+      internalID: -829032711454170173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad6f97654821d8f0800000000000000
+      internalID: -517588203614540371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee143a0b405fee50800000000000000
+      internalID: 6840774642223029991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772142faec460ecc0800000000000000
+      internalID: -3683833656324648329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0567a157f02f19ef0800000000000000
+      internalID: -103035168249711024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe14cc57dd7c3940800000000000000
+      internalID: 5277231227299176127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f2d3f7f1bee31f0800000000000000
+      internalID: -1063153941501628666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skittercrab_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eeedf59edfd0c510800000000000000
+      internalID: 1567498817417113320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      skittercrab_AutoAttack_0: 1515258215332968269
+      skittercrab_AutoAttack_00: -6944520044281990399
+      skittercrab_AutoAttack_01: 5719767697737384267
+      skittercrab_AutoAttack_02: -829032711454170173
+      skittercrab_AutoAttack_03: -517588203614540371
+      skittercrab_AutoAttack_04: 6840774642223029991
+      skittercrab_AutoAttack_05: -3683833656324648329
+      skittercrab_AutoAttack_06: -103035168249711024
+      skittercrab_AutoAttack_07: 5277231227299176127
+      skittercrab_AutoAttack_08: -1063153941501628666
+      skittercrab_AutoAttack_09: 1567498817417113320
+      skittercrab_AutoAttack_1: -4817852716370464691
+      skittercrab_AutoAttack_2: -5178245634557554777
+      skittercrab_AutoAttack_3: -3612075050611920464
+      skittercrab_AutoAttack_4: -7713828925059556585
+      skittercrab_AutoAttack_5: 6013209715158670369
+      skittercrab_AutoAttack_6: 2939266825394066402
+      skittercrab_AutoAttack_7: -5167851826481907098
+      skittercrab_AutoAttack_8: 3126284501806066932
+      skittercrab_AutoAttack_9: 5174311254385853704
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

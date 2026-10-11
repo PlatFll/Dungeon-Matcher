@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: e787df31e9714e54fbbdf003a7b942cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5823099273417914094
+    second: Elven_Thornkeeper_Death_0
+  - first:
+      213: 5305044448276341121
+    second: Elven_Thornkeeper_Death_1
+  - first:
+      213: 4187430084500933020
+    second: Elven_Thornkeeper_Death_2
+  - first:
+      213: 8991910363728009419
+    second: Elven_Thornkeeper_Death_3
+  - first:
+      213: 4059439838487252901
+    second: Elven_Thornkeeper_Death_4
+  - first:
+      213: -1361551611023384154
+    second: Elven_Thornkeeper_Death_5
+  - first:
+      213: 6082873000627024915
+    second: Elven_Thornkeeper_Death_6
+  - first:
+      213: -301276602104924612
+    second: Elven_Thornkeeper_Death_7
+  - first:
+      213: -8369645623226454991
+    second: Elven_Thornkeeper_Death_8
+  - first:
+      213: -2198675272220387729
+    second: Elven_Thornkeeper_Death_00
+  - first:
+      213: -2864579705170383564
+    second: Elven_Thornkeeper_Death_01
+  - first:
+      213: 4510106030762444067
+    second: Elven_Thornkeeper_Death_02
+  - first:
+      213: 8082902699943027611
+    second: Elven_Thornkeeper_Death_03
+  - first:
+      213: 4952763705926699502
+    second: Elven_Thornkeeper_Death_04
+  - first:
+      213: 9125098659568624832
+    second: Elven_Thornkeeper_Death_05
+  - first:
+      213: -7435923134683268591
+    second: Elven_Thornkeeper_Death_06
+  - first:
+      213: 8146014887945192138
+    second: Elven_Thornkeeper_Death_07
+  - first:
+      213: -2965997640129480484
+    second: Elven_Thornkeeper_Death_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f665ede2d7cbc71e0800000000000000
+      internalID: -2198675272220387729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43da6827fe7fe38d0800000000000000
+      internalID: -2864579705170383564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32541f61a8d179e30800000000000000
+      internalID: 4510106030762444067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9366283e2d3c2070800000000000000
+      internalID: 8082902699943027611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee945348950cbb440800000000000000
+      internalID: 4952763705926699502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c42bff42ecd2ae70800000000000000
+      internalID: 9125098659568624832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a38146e4b4ec890800000000000000
+      internalID: -7435923134683268591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2440391657c0170800000000000000
+      internalID: 8146014887945192138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Thornkeeper_Death_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd87f6f5cd8a6d6d0800000000000000
+      internalID: -2965997640129480484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Elven_Thornkeeper_Death_0: 5823099273417914094
+      Elven_Thornkeeper_Death_00: -2198675272220387729
+      Elven_Thornkeeper_Death_01: -2864579705170383564
+      Elven_Thornkeeper_Death_02: 4510106030762444067
+      Elven_Thornkeeper_Death_03: 8082902699943027611
+      Elven_Thornkeeper_Death_04: 4952763705926699502
+      Elven_Thornkeeper_Death_05: 9125098659568624832
+      Elven_Thornkeeper_Death_06: -7435923134683268591
+      Elven_Thornkeeper_Death_07: 8146014887945192138
+      Elven_Thornkeeper_Death_08: -2965997640129480484
+      Elven_Thornkeeper_Death_1: 5305044448276341121
+      Elven_Thornkeeper_Death_2: 4187430084500933020
+      Elven_Thornkeeper_Death_3: 8991910363728009419
+      Elven_Thornkeeper_Death_4: 4059439838487252901
+      Elven_Thornkeeper_Death_5: -1361551611023384154
+      Elven_Thornkeeper_Death_6: 6082873000627024915
+      Elven_Thornkeeper_Death_7: -301276602104924612
+      Elven_Thornkeeper_Death_8: -8369645623226454991
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,7 +14,7 @@ public sealed class IronveinArtTests
             var sprite=def.StaticVisualSprite;
             Assert.That(sprite,Is.Not.Null,id);
             int native=id=="grand_delver"||id=="obsidian_sentinel"?112:80;
-            Assert.That(sprite.rect.size,Is.EqualTo(Vector2.one*native),id);
+            Assert.That(sprite.rect.size,Is.EqualTo(new Vector2(native+48,native+24)),id);
             string path=AssetDatabase.GetAssetPath(sprite);
             Assert.That(path.StartsWith(IronveinArtImporter.Art),Is.True,id+" must not show a placeholder from another zone");
             var import=(TextureImporter)AssetImporter.GetAtPath(path);
@@ -23,7 +23,7 @@ public sealed class IronveinArtTests
             Assert.That(import.textureCompression,Is.EqualTo(TextureImporterCompression.Uncompressed));
             Assert.That(import.npotScale,Is.EqualTo(TextureImporterNPOTScale.None));
             Assert.That(import.spritePixelsPerUnit,Is.EqualTo(64));
-            Assert.That(sprite.pivot,Is.EqualTo(new Vector2(native*.5f,0)));
+            Assert.That(sprite.pivot,Is.EqualTo(new Vector2((native+48)*.5f,4)));
         }
     }
 
@@ -63,7 +63,7 @@ public sealed class IronveinArtTests
                     Assert.That(AssetDatabase.GetAssetPath(sprite).StartsWith(IronveinArtImporter.Art),Is.True);
                     Assert.That(sprite.rect.height,Is.EqualTo(def.StaticVisualSprite.rect.height),id+" fixed floor/canvas height");
                     Assert.That(sprite.rect.width,Is.GreaterThanOrEqualTo(def.StaticVisualSprite.rect.width),id+" wider action margins preserve native pixels");
-                    Assert.That(sprite.pivot.y,Is.Zero);
+                    Assert.That(sprite.pivot.y,Is.EqualTo(4).Within(.0001f));
                 }
                 var events=AnimationUtility.GetAnimationEvents(clip);
                 Assert.That(events.Count(e=>e.functionName=="AutoAttackImpact"),Is.EqualTo(state=="AutoAttack"?1:0));

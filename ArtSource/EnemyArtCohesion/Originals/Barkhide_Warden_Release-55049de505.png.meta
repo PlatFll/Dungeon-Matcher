@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: ee792c0d73755a54480a9fb568e39416
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3469723600560330688
+    second: Barkhide_Warden_Release_0
+  - first:
+      213: 3249261583905994381
+    second: Barkhide_Warden_Release_1
+  - first:
+      213: 7654929569840605132
+    second: Barkhide_Warden_Release_2
+  - first:
+      213: -7248992956860731486
+    second: Barkhide_Warden_Release_3
+  - first:
+      213: -2467179068433139247
+    second: Barkhide_Warden_Release_4
+  - first:
+      213: 3733526834216880498
+    second: Barkhide_Warden_Release_5
+  - first:
+      213: -4660038193335105023
+    second: Barkhide_Warden_Release_6
+  - first:
+      213: -214562629802432780
+    second: Barkhide_Warden_Release_7
+  - first:
+      213: -1512432858996527092
+    second: Barkhide_Warden_Release_8
+  - first:
+      213: 819411145518092913
+    second: Barkhide_Warden_Release_00
+  - first:
+      213: -7875219119858806428
+    second: Barkhide_Warden_Release_01
+  - first:
+      213: -4820551706469957925
+    second: Barkhide_Warden_Release_02
+  - first:
+      213: -4889850070878343431
+    second: Barkhide_Warden_Release_03
+  - first:
+      213: 2551007911113387978
+    second: Barkhide_Warden_Release_04
+  - first:
+      213: -5096313124819650887
+    second: Barkhide_Warden_Release_05
+  - first:
+      213: 7468453121864080261
+    second: Barkhide_Warden_Release_06
+  - first:
+      213: 3844557037981396280
+    second: Barkhide_Warden_Release_07
+  - first:
+      213: 768638553521554313
+    second: Barkhide_Warden_Release_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1721a9d68122f5b00800000000000000
+      internalID: 819411145518092913
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46193786fe995b290800000000000000
+      internalID: -7875219119858806428
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde747a63c5f91db0800000000000000
+      internalID: -4820551706469957925
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fea060a443c32cb0800000000000000
+      internalID: -4889850070878343431
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfef19ed20076320800000000000000
+      internalID: 2551007911113387978
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6b6f2e6324649b0800000000000000
+      internalID: -5096313124819650887
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b9d567b8645a760800000000000000
+      internalID: 7468453121864080261
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83deb97b14c9a5530800000000000000
+      internalID: 3844557037981396280
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Release_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983825721b0caaa00800000000000000
+      internalID: 768638553521554313
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Barkhide_Warden_Release_0: -3469723600560330688
+      Barkhide_Warden_Release_00: 819411145518092913
+      Barkhide_Warden_Release_01: -7875219119858806428
+      Barkhide_Warden_Release_02: -4820551706469957925
+      Barkhide_Warden_Release_03: -4889850070878343431
+      Barkhide_Warden_Release_04: 2551007911113387978
+      Barkhide_Warden_Release_05: -5096313124819650887
+      Barkhide_Warden_Release_06: 7468453121864080261
+      Barkhide_Warden_Release_07: 3844557037981396280
+      Barkhide_Warden_Release_08: 768638553521554313
+      Barkhide_Warden_Release_1: 3249261583905994381
+      Barkhide_Warden_Release_2: 7654929569840605132
+      Barkhide_Warden_Release_3: -7248992956860731486
+      Barkhide_Warden_Release_4: -2467179068433139247
+      Barkhide_Warden_Release_5: 3733526834216880498
+      Barkhide_Warden_Release_6: -4660038193335105023
+      Barkhide_Warden_Release_7: -214562629802432780
+      Barkhide_Warden_Release_8: -1512432858996527092
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -327,6 +327,15 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Current enemy art sources (2026-10-11):** `ArtSource/EnemyArtCohesion/`
+  supersedes the older enemy source rectangles mentioned below. Native staging
+  preserves sprite GUID/fileIDs and clip bytes. Expanded canvases use a fixed
+  source floor four pixels above the bottom; `PixelPerfectBattleCharacterUI`
+  compensates that pivot after stable 64-pixel reference sizing. The development
+  layout validator measures opaque enemy bounds for containment, retaining full
+  rectangles for integer scale checks. No pose-dependent trimming, gameplay
+  timing change or new presentation owner is introduced. Player art is unchanged.
+
 - `BattleBackgroundTilemapController` owns world-background placement and clipping. Its generated rectangular SpriteMask follows the TopHUD interior inset by the native 16px frame and covers only the authored Default/-100 through -70 background orders. The board mask covers BoardBackground through WorldUI, excluding the background without changing board SpriteRenderer or UI sorting. Tilemaps retain authored unit scale, cell size and 64 PPU. The map origin is snapped to the 1/64 world grid after the Pixel Perfect Camera projection update, and the floor marker consumes that snapped baseline. The screen-space battle frame remains above the world background. Battle scenery uses only the Tilemap; the legacy section images, sprite floor settings, and fitted world sprite have been retired. `BattleBackgroundViewportValidation.Run` checks oversized-tile leakage, production board-mask isolation, scale and floor alignment at 1080x1920 and 1080x2400 in a graphics-enabled batch editor (omit `-quit`; the validation exits after its frame loop completes).
 
 - `GameplayPixelLayoutController`, installed on the gameplay safe root by `RuntimeScenePresentationBootstrap` for every scene load, is the only writer of that root, `TopHUD`, `GameArea`, and `BottomHUD`. `SafeAreaFitter` is disabled on that root; other scenes may continue using it. Device constraints come from `UnityEngine.Device.Screen.width`, `height`, and `safeArea`: Unity's simulator-aware API, identical to `Screen` in device builds. All constraints enter the geometry calculation together. There are no guessed mobile bezel sizes or gap-limited HUD movements after fitting.

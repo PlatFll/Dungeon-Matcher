@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 564941d837b128b4286be042c756d86d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -438275023971911372
+    second: RoyalStandardBearer_AutoAttack_0
+  - first:
+      213: -6566928527215174267
+    second: RoyalStandardBearer_AutoAttack_1
+  - first:
+      213: -573948952697465393
+    second: RoyalStandardBearer_AutoAttack_2
+  - first:
+      213: 5270505729055689318
+    second: RoyalStandardBearer_AutoAttack_3
+  - first:
+      213: 6417628619936576222
+    second: RoyalStandardBearer_AutoAttack_4
+  - first:
+      213: 873668063374444748
+    second: RoyalStandardBearer_AutoAttack_5
+  - first:
+      213: 7948712587198231586
+    second: RoyalStandardBearer_AutoAttack_6
+  - first:
+      213: 1101627290053538282
+    second: RoyalStandardBearer_AutoAttack_7
+  - first:
+      213: -1406103317156439623
+    second: RoyalStandardBearer_AutoAttack_8
+  - first:
+      213: 4126758967318912738
+    second: RoyalStandardBearer_AutoAttack_00
+  - first:
+      213: 118501734693459175
+    second: RoyalStandardBearer_AutoAttack_01
+  - first:
+      213: 4958208604792259415
+    second: RoyalStandardBearer_AutoAttack_02
+  - first:
+      213: 762676130816653092
+    second: RoyalStandardBearer_AutoAttack_03
+  - first:
+      213: 3012997621383243139
+    second: RoyalStandardBearer_AutoAttack_04
+  - first:
+      213: -1194653517660873256
+    second: RoyalStandardBearer_AutoAttack_05
+  - first:
+      213: -7520197304232146345
+    second: RoyalStandardBearer_AutoAttack_06
+  - first:
+      213: 832368901378606790
+    second: RoyalStandardBearer_AutoAttack_07
+  - first:
+      213: -3366515404477006088
+    second: RoyalStandardBearer_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee93b09a61354930800000000000000
+      internalID: 4126758967318912738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4dba923b005a100800000000000000
+      internalID: 118501734693459175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7538de2d4781fc440800000000000000
+      internalID: 4958208604792259415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427feff66e1959a00800000000000000
+      internalID: 762676130816653092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38525a38f5150d920800000000000000
+      internalID: 3012997621383243139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd172a84fcbb6fe0800000000000000
+      internalID: -1194653517660873256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a84604564e2a790800000000000000
+      internalID: -7520197304232146345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c601c01b1b2d8b00800000000000000
+      internalID: 832368901378606790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe7441831cb741d0800000000000000
+      internalID: -3366515404477006088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RoyalStandardBearer_AutoAttack_0: -438275023971911372
+      RoyalStandardBearer_AutoAttack_00: 4126758967318912738
+      RoyalStandardBearer_AutoAttack_01: 118501734693459175
+      RoyalStandardBearer_AutoAttack_02: 4958208604792259415
+      RoyalStandardBearer_AutoAttack_03: 762676130816653092
+      RoyalStandardBearer_AutoAttack_04: 3012997621383243139
+      RoyalStandardBearer_AutoAttack_05: -1194653517660873256
+      RoyalStandardBearer_AutoAttack_06: -7520197304232146345
+      RoyalStandardBearer_AutoAttack_07: 832368901378606790
+      RoyalStandardBearer_AutoAttack_08: -3366515404477006088
+      RoyalStandardBearer_AutoAttack_1: -6566928527215174267
+      RoyalStandardBearer_AutoAttack_2: -573948952697465393
+      RoyalStandardBearer_AutoAttack_3: 5270505729055689318
+      RoyalStandardBearer_AutoAttack_4: 6417628619936576222
+      RoyalStandardBearer_AutoAttack_5: 873668063374444748
+      RoyalStandardBearer_AutoAttack_6: 7948712587198231586
+      RoyalStandardBearer_AutoAttack_7: 1101627290053538282
+      RoyalStandardBearer_AutoAttack_8: -1406103317156439623
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

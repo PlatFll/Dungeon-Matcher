@@ -121,7 +121,7 @@ TextureImporter:
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
-  maxTextureSize: 2048
+  maxTextureSize: 4096
   textureSettings:
     serializedVersion: 2
     filterMode: 0
@@ -136,8 +136,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0454545455}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -172,7 +172,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -185,7 +185,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -205,10 +205,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_01
       rect:
         serializedVersion: 2
-        x: 64
+        x: 112
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_02
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_03
       rect:
         serializedVersion: 2
-        x: 192
+        x: 336
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_04
       rect:
         serializedVersion: 2
-        x: 256
+        x: 448
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,12 +313,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_05
       rect:
         serializedVersion: 2
-        x: 320
+        x: 560
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_06
       rect:
         serializedVersion: 2
-        x: 384
+        x: 672
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_07
       rect:
         serializedVersion: 2
-        x: 448
+        x: 784
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -379,12 +379,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_08
       rect:
         serializedVersion: 2
-        x: 512
+        x: 896
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -401,12 +401,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_09
       rect:
         serializedVersion: 2
-        x: 576
+        x: 1008
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -423,12 +423,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_10
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1120
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_11
       rect:
         serializedVersion: 2
-        x: 704
+        x: 1232
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -467,12 +467,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_12
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1344
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -489,12 +489,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_13
       rect:
         serializedVersion: 2
-        x: 832
+        x: 1456
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -511,12 +511,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_14
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1568
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -533,12 +533,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_15
       rect:
         serializedVersion: 2
-        x: 960
+        x: 1680
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -555,12 +555,12 @@ TextureImporter:
       name: RoyalArchbishop_Ability_16
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1792
         y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0454545455}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

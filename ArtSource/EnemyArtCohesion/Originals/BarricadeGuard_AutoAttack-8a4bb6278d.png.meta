@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: de55cba8ac375ff4eb8f4c09685a0b74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4993611946783184656
+    second: BarricadeGuard_AutoAttack_0
+  - first:
+      213: 4370305510167223769
+    second: BarricadeGuard_AutoAttack_1
+  - first:
+      213: 5624154506661886215
+    second: BarricadeGuard_AutoAttack_2
+  - first:
+      213: -1740168087424015058
+    second: BarricadeGuard_AutoAttack_3
+  - first:
+      213: -2766919853477666753
+    second: BarricadeGuard_AutoAttack_4
+  - first:
+      213: -2952523258814131558
+    second: BarricadeGuard_AutoAttack_5
+  - first:
+      213: 3951503022074395519
+    second: BarricadeGuard_AutoAttack_6
+  - first:
+      213: -2584996637584736610
+    second: BarricadeGuard_AutoAttack_7
+  - first:
+      213: 7401476668845110637
+    second: BarricadeGuard_AutoAttack_8
+  - first:
+      213: -2621658996995185607
+    second: BarricadeGuard_AutoAttack_9
+  - first:
+      213: 655378634359858841
+    second: BarricadeGuard_AutoAttack_00
+  - first:
+      213: -1025966752892390190
+    second: BarricadeGuard_AutoAttack_01
+  - first:
+      213: 2290952524964533716
+    second: BarricadeGuard_AutoAttack_02
+  - first:
+      213: -7183170491585666062
+    second: BarricadeGuard_AutoAttack_03
+  - first:
+      213: 8551206570307971823
+    second: BarricadeGuard_AutoAttack_04
+  - first:
+      213: 8677102228022787946
+    second: BarricadeGuard_AutoAttack_05
+  - first:
+      213: -5215495994102588190
+    second: BarricadeGuard_AutoAttack_06
+  - first:
+      213: 2388933722143143943
+    second: BarricadeGuard_AutoAttack_07
+  - first:
+      213: 4698410764285693740
+    second: BarricadeGuard_AutoAttack_08
+  - first:
+      213: -6820943101041643878
+    second: BarricadeGuard_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9966666456f581900800000000000000
+      internalID: 655378634359858841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4fc7e8ca803c1f0800000000000000
+      internalID: -1025966752892390190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d59bc7fe291bcf10800000000000000
+      internalID: 2290952524964533716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3e7f7fe70405c90800000000000000
+      internalID: -7183170491585666062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea6138c11dfba670800000000000000
+      internalID: 8551206570307971823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f7c0dc0824b6870800000000000000
+      internalID: 8677102228022787946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecda08b606de97b0800000000000000
+      internalID: -5215495994102588190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7083b4c2092372120800000000000000
+      internalID: 2388933722143143943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fce1662bb143140800000000000000
+      internalID: 4698410764285693740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ee24573642751a0800000000000000
+      internalID: -6820943101041643878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BarricadeGuard_AutoAttack_0: -4993611946783184656
+      BarricadeGuard_AutoAttack_00: 655378634359858841
+      BarricadeGuard_AutoAttack_01: -1025966752892390190
+      BarricadeGuard_AutoAttack_02: 2290952524964533716
+      BarricadeGuard_AutoAttack_03: -7183170491585666062
+      BarricadeGuard_AutoAttack_04: 8551206570307971823
+      BarricadeGuard_AutoAttack_05: 8677102228022787946
+      BarricadeGuard_AutoAttack_06: -5215495994102588190
+      BarricadeGuard_AutoAttack_07: 2388933722143143943
+      BarricadeGuard_AutoAttack_08: 4698410764285693740
+      BarricadeGuard_AutoAttack_09: -6820943101041643878
+      BarricadeGuard_AutoAttack_1: 4370305510167223769
+      BarricadeGuard_AutoAttack_2: 5624154506661886215
+      BarricadeGuard_AutoAttack_3: -1740168087424015058
+      BarricadeGuard_AutoAttack_4: -2766919853477666753
+      BarricadeGuard_AutoAttack_5: -2952523258814131558
+      BarricadeGuard_AutoAttack_6: 3951503022074395519
+      BarricadeGuard_AutoAttack_7: -2584996637584736610
+      BarricadeGuard_AutoAttack_8: 7401476668845110637
+      BarricadeGuard_AutoAttack_9: -2621658996995185607
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

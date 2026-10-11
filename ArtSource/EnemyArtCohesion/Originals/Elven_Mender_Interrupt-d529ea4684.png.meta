@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 1fc7bcd832464fc4aba54e39d578e307
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -598863599631235440
+    second: Elven_Mender_Interrupt_0
+  - first:
+      213: -6612835310906179964
+    second: Elven_Mender_Interrupt_1
+  - first:
+      213: 4410047134899322110
+    second: Elven_Mender_Interrupt_2
+  - first:
+      213: -4677122690854011281
+    second: Elven_Mender_Interrupt_3
+  - first:
+      213: 2417552924444009131
+    second: Elven_Mender_Interrupt_4
+  - first:
+      213: 7832309295430373454
+    second: Elven_Mender_Interrupt_5
+  - first:
+      213: -8614609117212591066
+    second: Elven_Mender_Interrupt_6
+  - first:
+      213: -2892413977347720625
+    second: Elven_Mender_Interrupt_7
+  - first:
+      213: -6309897455906260552
+    second: Elven_Mender_Interrupt_8
+  - first:
+      213: 7345805428199309927
+    second: Elven_Mender_Interrupt_00
+  - first:
+      213: 2804690566181590601
+    second: Elven_Mender_Interrupt_01
+  - first:
+      213: -9151134025942221081
+    second: Elven_Mender_Interrupt_02
+  - first:
+      213: -399769902929955512
+    second: Elven_Mender_Interrupt_03
+  - first:
+      213: -7960358058620958383
+    second: Elven_Mender_Interrupt_04
+  - first:
+      213: -8374279430121683468
+    second: Elven_Mender_Interrupt_05
+  - first:
+      213: -723615371596995491
+    second: Elven_Mender_Interrupt_06
+  - first:
+      213: 3462011274643966175
+    second: Elven_Mender_Interrupt_07
+  - first:
+      213: 7429855057158640314
+    second: Elven_Mender_Interrupt_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762c4f00e1b81f560800000000000000
+      internalID: 7345805428199309927
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9469426c5334ce620800000000000000
+      internalID: 2804690566181590601
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee39b39614a00180800000000000000
+      internalID: -9151134025942221081
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845b7ff246bb37af0800000000000000
+      internalID: -399769902929955512
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159cafe7580278190800000000000000
+      internalID: -7960358058620958383
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f58cb52a3598cb80800000000000000
+      internalID: -8374279430121683468
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54e2f547a335f5f0800000000000000
+      internalID: -723615371596995491
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd80d8969e88b0030800000000000000
+      internalID: 3462011274643966175
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elven_Mender_Interrupt_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab294963fc52c1760800000000000000
+      internalID: 7429855057158640314
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Elven_Mender_Interrupt_0: -598863599631235440
+      Elven_Mender_Interrupt_00: 7345805428199309927
+      Elven_Mender_Interrupt_01: 2804690566181590601
+      Elven_Mender_Interrupt_02: -9151134025942221081
+      Elven_Mender_Interrupt_03: -399769902929955512
+      Elven_Mender_Interrupt_04: -7960358058620958383
+      Elven_Mender_Interrupt_05: -8374279430121683468
+      Elven_Mender_Interrupt_06: -723615371596995491
+      Elven_Mender_Interrupt_07: 3462011274643966175
+      Elven_Mender_Interrupt_08: 7429855057158640314
+      Elven_Mender_Interrupt_1: -6612835310906179964
+      Elven_Mender_Interrupt_2: 4410047134899322110
+      Elven_Mender_Interrupt_3: -4677122690854011281
+      Elven_Mender_Interrupt_4: 2417552924444009131
+      Elven_Mender_Interrupt_5: 7832309295430373454
+      Elven_Mender_Interrupt_6: -8614609117212591066
+      Elven_Mender_Interrupt_7: -2892413977347720625
+      Elven_Mender_Interrupt_8: -6309897455906260552
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

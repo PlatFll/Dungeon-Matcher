@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.12
+**Version:** 1.13
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -41,6 +41,37 @@ Sixteen new PixelLab basic attacks extend the existing authored roster. Sources,
 The user accepted the eleven special-ability studies, selected Royal Gold, and requested a two-handed King thrust and raised blue Shield Knight shield. Production sources and fourteen controller states are recorded in `ArtSource/EnemyAttacks/abilities.json` and `ABILITY_SOURCES.md`. The original gallery remains review history.
 
 ## 1. Start here in every new art task
+
+### Enemy production cohesion — 2026-10-11
+
+The user authorized the cast audit's enemy cleanup, west-facing animation and
+clipped-edge repairs, expanded canvases, game integration and merge. Preserve
+the established three-quarter camera; faces and attacks point screen-left.
+ArtSource/EnemyArtCohesion/ now owns the editable native sources and exact Unity
+exports for 64 enemy forms, including the two still-disabled Delver alternates.
+The primary Rattlebones and all three player drawings remain unchanged. New
+golden memberships remain proposals; implementation is not membership approval.
+
+Broad connected material planes, clear faces and restrained effects replace
+selected noisy clusters without normalizing species or equipment. Puffer's
+inflated face, Snapvine's rooted wilt, Mage's visible face, King's narrow sword
+trails and repaired weapon/finial contours are localized production changes.
+Rejected generated reinterpretations and edge repairs remain in source history.
+
+Current enemy rectangles supersede the historical 64-pixel limits below. Most
+canvases add 24/20/24/4 pixels left/top/right/bottom; the disabled Delver remount
+uses 88/28/88/4. Native drawings are never scaled down. FullRect, 64 PPU, Point,
+uncompressed/unmipped import and fixed center/floor registration remain required.
+The floor is four pixels above the new bottom edge. PixelPerfectBattleCharacterUI
+subtracts the sprite-pivot floor offset when compensating taller UI Images.
+All 353 clip files retain their exact timing, keys, events and transitions.
+
+Use the current native sources, jobs and staging workflow in that directory.
+Historical Combat/Forest/Court/Ironvein importers reference earlier source
+rectangles and must not be used to overwrite these updated enemy assets.
+The golden register has refreshed exact production/extraction hashes; the
+original audit stays immutable as before-art evidence. See the production
+README and Docs/Validation/ENEMY_ART_COHESION.md for executed verification.
 
 ### Current global authority — 2026-10-11
 

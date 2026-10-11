@@ -1,0 +1,45 @@
+{
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/lantern_warden_AutoAttack-865990be0b-4-left.json",
+  "id": "lantern_warden_AutoAttack-865990be0b-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/lantern_warden_AutoAttack-865990be0b-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 60,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41207,
+    "description": "Tiny native pixel-art edge repair of the purple anglerfish lure, coffer or body contour; keep the little pale lure light attached. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: AutoAttack. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "11577f5d-2b2f-44c6-ad34-24cb1a23e1fb",
+    "image_id": "7f8aa498-de3a-54da-9ad8-60d956abea6e",
+    "status": "processing",
+    "source_image_id": "7f8aa498-de3a-54da-9ad8-60d956abea6e",
+    "job_id": "11577f5d-2b2f-44c6-ad34-24cb1a23e1fb",
+    "image_size": {
+      "width": 144,
+      "height": 120
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/11577f5d-2b2f-44c6-ad34-24cb1a23e1fb/download"
+  },
+  "status": "completed",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/lantern_warden_AutoAttack-865990be0b-4-left-repair.png",
+  "completion": "status: completed\nid: 11577f5d-2b2f-44c6-ad34-24cb1a23e1fb\njob_id: 11577f5d-2b2f-44c6-ad34-24cb1a23e1fb\nframes: 1\ntransparent: yes\nasset_id: 7f8aa498-de3a-54da-9ad8-60d956abea6e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/11577f5d-2b2f-44c6-ad34-24cb1a23e1fb/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/lantern_warden_AutoAttack-865990be0b-4.png",
+  "input_sha256": "ac46c4ac089ae37d7cf443dec29880ace077bf02695c8696d792d6bebb50946f",
+  "output_sha256": "a173e51f3ddb5c428b14011f99eb30216ec0529e6a336b8c25c6876e3ec7d978",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

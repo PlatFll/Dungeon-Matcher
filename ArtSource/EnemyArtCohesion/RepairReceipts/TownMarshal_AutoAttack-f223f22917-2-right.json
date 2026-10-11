@@ -1,0 +1,45 @@
+{
+  "id": "TownMarshal_AutoAttack-f223f22917-2",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/TownMarshal_AutoAttack-f223f22917-2.png",
+  "parameters": {
+    "mask_x": 85,
+    "mask_y": 41,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41689,
+    "description": "Tiny native pixel-art edge repair of the existing mace or small bell-ring arc, retaining its exact size and contour. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "03414c12-7195-48e3-9dae-17d6a8188253",
+    "image_id": "6f8439e8-98f9-52a9-b5b7-e347ca0aa8b5",
+    "status": "processing",
+    "source_image_id": "6f8439e8-98f9-52a9-b5b7-e347ca0aa8b5",
+    "job_id": "03414c12-7195-48e3-9dae-17d6a8188253",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/03414c12-7195-48e3-9dae-17d6a8188253/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/TownMarshal_AutoAttack-f223f22917-2-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/TownMarshal_AutoAttack-f223f22917-2-right-repair.png",
+  "completion": "status: completed\nid: 03414c12-7195-48e3-9dae-17d6a8188253\njob_id: 03414c12-7195-48e3-9dae-17d6a8188253\nframes: 1\ntransparent: yes\nasset_id: 6f8439e8-98f9-52a9-b5b7-e347ca0aa8b5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/03414c12-7195-48e3-9dae-17d6a8188253/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/TownMarshal_AutoAttack-f223f22917-2.png",
+  "input_sha256": "cf0089aa41b1e93746dc5c62080298f096f22511b5cb44fa048a70ec9e5dde70",
+  "output_sha256": "481c63c73152997d627e64c4e529086ee79f3c9e08031f49f0b78aa9ee3f5650",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

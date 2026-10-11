@@ -1,0 +1,45 @@
+{
+  "id": "queen_nacre_Death-c24d4f81ef-7",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/queen_nacre_Death-c24d4f81ef-7.png",
+  "parameters": {
+    "mask_x": 117,
+    "mask_y": 88,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41220,
+    "description": "Tiny native pixel-art edge repair of the trailing red/cream fin and gown on the fallen fish queen. This animation pose was cropped at its old right canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Death. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "7770e2cb-8fde-41a3-9b22-de695180f9ee",
+    "image_id": "08e81aea-2b38-5bb8-8939-fff00dfaef04",
+    "status": "processing",
+    "source_image_id": "08e81aea-2b38-5bb8-8939-fff00dfaef04",
+    "job_id": "7770e2cb-8fde-41a3-9b22-de695180f9ee",
+    "image_size": {
+      "width": 144,
+      "height": 120
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/7770e2cb-8fde-41a3-9b22-de695180f9ee/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/queen_nacre_Death-c24d4f81ef-7-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/queen_nacre_Death-c24d4f81ef-7-right-repair.png",
+  "completion": "status: completed\nid: 7770e2cb-8fde-41a3-9b22-de695180f9ee\njob_id: 7770e2cb-8fde-41a3-9b22-de695180f9ee\nframes: 1\ntransparent: yes\nasset_id: 08e81aea-2b38-5bb8-8939-fff00dfaef04\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/7770e2cb-8fde-41a3-9b22-de695180f9ee/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/queen_nacre_Death-c24d4f81ef-7.png",
+  "input_sha256": "12030150cae0feec358e962bbaea468ae0d6d0c5f649edbc44a059dfa5f89bb6",
+  "output_sha256": "4367098093d47db8c0a219a06b4db217a0f6bf13daf93a5fcbbd2175c35ea947",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

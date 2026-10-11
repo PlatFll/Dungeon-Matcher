@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: ead6151ea59597a4a818f7ca5fd8a5fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4495435913987539668
+    second: Orc_Berserker_AutoAttack_0
+  - first:
+      213: -6785316046964527000
+    second: Orc_Berserker_AutoAttack_1
+  - first:
+      213: 1473309570893294400
+    second: Orc_Berserker_AutoAttack_2
+  - first:
+      213: -4155410081644620221
+    second: Orc_Berserker_AutoAttack_3
+  - first:
+      213: -7331592709392383429
+    second: Orc_Berserker_AutoAttack_4
+  - first:
+      213: -5473991587899432215
+    second: Orc_Berserker_AutoAttack_5
+  - first:
+      213: 4908548612063192109
+    second: Orc_Berserker_AutoAttack_6
+  - first:
+      213: 6887934424584898226
+    second: Orc_Berserker_AutoAttack_7
+  - first:
+      213: -3540295589081752616
+    second: Orc_Berserker_AutoAttack_8
+  - first:
+      213: 2319609942932893226
+    second: Orc_Berserker_AutoAttack_00
+  - first:
+      213: -4991799271283826869
+    second: Orc_Berserker_AutoAttack_01
+  - first:
+      213: 6554572958677283949
+    second: Orc_Berserker_AutoAttack_02
+  - first:
+      213: 6069627541306602796
+    second: Orc_Berserker_AutoAttack_03
+  - first:
+      213: -5770185330705058715
+    second: Orc_Berserker_AutoAttack_04
+  - first:
+      213: -2774874712368442719
+    second: Orc_Berserker_AutoAttack_05
+  - first:
+      213: -2087573879478655777
+    second: Orc_Berserker_AutoAttack_06
+  - first:
+      213: -8051441662462946549
+    second: Orc_Berserker_AutoAttack_07
+  - first:
+      213: -5044342499987146150
+    second: Orc_Berserker_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2eaaf904f8e03020800000000000000
+      internalID: 2319609942932893226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fd21da20199bab0800000000000000
+      internalID: -4991799271283826869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d643758d06586fa50800000000000000
+      internalID: 6554572958677283949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25f18e2716ab3450800000000000000
+      internalID: 6069627541306602796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564b723730f2cefa0800000000000000
+      internalID: -5770185330705058715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a29019a62aad79d0800000000000000
+      internalID: -2774874712368442719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd46a47fd927703e0800000000000000
+      internalID: -2087573879478655777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b039d136778834090800000000000000
+      internalID: -8051441662462946549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Berserker_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a3cdae835eef9b0800000000000000
+      internalID: -5044342499987146150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc_Berserker_AutoAttack_0: 4495435913987539668
+      Orc_Berserker_AutoAttack_00: 2319609942932893226
+      Orc_Berserker_AutoAttack_01: -4991799271283826869
+      Orc_Berserker_AutoAttack_02: 6554572958677283949
+      Orc_Berserker_AutoAttack_03: 6069627541306602796
+      Orc_Berserker_AutoAttack_04: -5770185330705058715
+      Orc_Berserker_AutoAttack_05: -2774874712368442719
+      Orc_Berserker_AutoAttack_06: -2087573879478655777
+      Orc_Berserker_AutoAttack_07: -8051441662462946549
+      Orc_Berserker_AutoAttack_08: -5044342499987146150
+      Orc_Berserker_AutoAttack_1: -6785316046964527000
+      Orc_Berserker_AutoAttack_2: 1473309570893294400
+      Orc_Berserker_AutoAttack_3: -4155410081644620221
+      Orc_Berserker_AutoAttack_4: -7331592709392383429
+      Orc_Berserker_AutoAttack_5: -5473991587899432215
+      Orc_Berserker_AutoAttack_6: 4908548612063192109
+      Orc_Berserker_AutoAttack_7: 6887934424584898226
+      Orc_Berserker_AutoAttack_8: -3540295589081752616
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

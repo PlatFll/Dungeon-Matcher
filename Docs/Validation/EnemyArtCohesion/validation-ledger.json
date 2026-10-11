@@ -1,0 +1,287 @@
+{
+  "unity_version": "6000.3.19f1",
+  "mandatory_validator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "passed",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-58a3051c-40c0-4f7e-8d07-8552f31deb18.log",
+    "log_sha256": "9677fdc32b4ef78ea4d06b8c449e4b5cd25478c9e501fa1873e6a0f821d7990e"
+  },
+  "scene_validation": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File Tools/Test-EnemyArt.ps1",
+    "result": "passed",
+    "log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\EnemyArtCohesion\\Unity\\editor.log",
+    "pose_portrait_cases": 5902,
+    "asset_assertions": 17494
+  },
+  "nunit": [
+    [
+      "regression-initial",
+      "2c47da60-e9dd-483d-87d4-b55dd4fe1b9d"
+    ],
+    [
+      "regression-playmode",
+      "cd3f3bc9-5551-4064-9b64-0f72c25cdf88"
+    ],
+    [
+      "regression-king-assets",
+      "6a6968d1-aa21-4af7-9c6c-ec0004d19b3c"
+    ]
+  ],
+  "results": [
+    {
+      "evidence": "regression-initial.xml",
+      "original_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\ForestValidation\\2c47da60-e9dd-483d-87d4-b55dd4fe1b9d.log",
+      "result": {
+        "id": "2",
+        "testcasecount": "9",
+        "result": "Failed(Child)",
+        "total": "9",
+        "passed": "7",
+        "failed": "2",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-10-11 01:06:48Z",
+        "end-time": "2026-10-11 01:07:09Z",
+        "duration": "20.4354834"
+      },
+      "tests": [
+        {
+          "id": "1499",
+          "name": "AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues",
+          "fullname": "EnemyAbilityMotionTests.AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues",
+          "methodname": "AllApprovedStatesHaveNativeFramesAndExactlyTheAuthoredCues",
+          "classname": "EnemyAbilityMotionTests",
+          "runstate": "Runnable",
+          "seed": "1289570255",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:05:38Z",
+          "end-time": "2026-10-11 01:05:38Z",
+          "duration": "0.087826",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1500",
+          "name": "CancelledActionCannotDonateBeatsToNextCastAndPauseRejectsCues",
+          "fullname": "EnemyAbilityMotionTests.CancelledActionCannotDonateBeatsToNextCastAndPauseRejectsCues",
+          "methodname": "CancelledActionCannotDonateBeatsToNextCastAndPauseRejectsCues",
+          "classname": "EnemyAbilityMotionTests",
+          "runstate": "Runnable",
+          "seed": "664016404",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:05:38Z",
+          "end-time": "2026-10-11 01:05:38Z",
+          "duration": "0.002403",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1502",
+          "name": "ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "fullname": "EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "methodname": "ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "classname": "EnemyAbilityPlayTests",
+          "runstate": "Runnable",
+          "seed": "1753323546",
+          "result": "Failed",
+          "start-time": "2026-10-11 01:05:38Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "66.261583",
+          "asserts": "0",
+          "failure": "  deferred reinforcement gesture\n  Expected: less than 65.8507233f\n  But was:  65.850853f\n"
+        },
+        {
+          "id": "1560",
+          "name": "ApprovedImportsKeepNativePixelsAndIndependentTaxonomy",
+          "fullname": "ForestFoundationTests.ApprovedImportsKeepNativePixelsAndIndependentTaxonomy",
+          "methodname": "ApprovedImportsKeepNativePixelsAndIndependentTaxonomy",
+          "classname": "ForestFoundationTests",
+          "runstate": "Runnable",
+          "seed": "1834490329",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "0.072131",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1565",
+          "name": "EveryApprovedActorHasNativeMotionAndExactlyOneBasicContact",
+          "fullname": "ForestRosterMotionTests.EveryApprovedActorHasNativeMotionAndExactlyOneBasicContact",
+          "methodname": "EveryApprovedActorHasNativeMotionAndExactlyOneBasicContact",
+          "classname": "ForestRosterMotionTests",
+          "runstate": "Runnable",
+          "seed": "1878849851",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "0.049127",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1611",
+          "name": "IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+          "fullname": "IronveinArtTests.IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+          "methodname": "IronveinEveryIdentityHasNativeIdleAttackHitAndDeath",
+          "classname": "IronveinArtTests",
+          "runstate": "Runnable",
+          "seed": "1542152752",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "0.060172",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1610",
+          "name": "IronveinImportedAttackEventsUseTheReviewedContactFrames",
+          "fullname": "IronveinArtTests.IronveinImportedAttackEventsUseTheReviewedContactFrames",
+          "methodname": "IronveinImportedAttackEventsUseTheReviewedContactFrames",
+          "classname": "IronveinArtTests",
+          "runstate": "Runnable",
+          "seed": "1966839024",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "0.002229",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1609",
+          "name": "IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+          "fullname": "IronveinArtTests.IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+          "methodname": "IronveinStillsHaveNativeCanvasesAndDedicatedPointFilteredAssets",
+          "classname": "IronveinArtTests",
+          "runstate": "Runnable",
+          "seed": "1404419634",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:06:45Z",
+          "duration": "0.003269",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1640",
+          "name": "EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "fullname": "PixelLabAttackPlayTests.EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "methodname": "EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "classname": "PixelLabAttackPlayTests",
+          "runstate": "Runnable",
+          "seed": "979157934",
+          "result": "Failed",
+          "start-time": "2026-10-11 01:06:45Z",
+          "end-time": "2026-10-11 01:07:09Z",
+          "duration": "23.627425",
+          "asserts": "0",
+          "failure": "  TownMarshal strikes\n  Expected: 1\n  But was:  2\n"
+        }
+      ]
+    },
+    {
+      "evidence": "regression-playmode.xml",
+      "original_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\ForestValidation\\cd3f3bc9-5551-4064-9b64-0f72c25cdf88.log",
+      "result": {
+        "id": "2",
+        "testcasecount": "2",
+        "result": "Passed",
+        "total": "2",
+        "passed": "2",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-10-11 01:11:47Z",
+        "end-time": "2026-10-11 01:12:14Z",
+        "duration": "27.0251596"
+      },
+      "tests": [
+        {
+          "id": "1502",
+          "name": "ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "fullname": "EnemyAbilityPlayTests.ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "methodname": "ApprovedAbilitiesApplyAtContactAndBombardmentRefillsAfterBothStrikes",
+          "classname": "EnemyAbilityPlayTests",
+          "runstate": "Runnable",
+          "seed": "708664590",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:11:01Z",
+          "end-time": "2026-10-11 01:11:44Z",
+          "duration": "43.228527",
+          "asserts": "0",
+          "failure": null
+        },
+        {
+          "id": "1640",
+          "name": "EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "fullname": "PixelLabAttackPlayTests.EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "methodname": "EveryAuthoredAttackHitsOncePerStrikeAndReturnsToIdle",
+          "classname": "PixelLabAttackPlayTests",
+          "runstate": "Runnable",
+          "seed": "126952612",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:11:44Z",
+          "end-time": "2026-10-11 01:12:14Z",
+          "duration": "30.202497",
+          "asserts": "0",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "evidence": "regression-king-assets.xml",
+      "original_log": "C:\\UnityProjects\\Dungeon Matcher\\.utmp\\ForestValidation\\6a6968d1-aa21-4af7-9c6c-ec0004d19b3c.log",
+      "result": {
+        "id": "2",
+        "testcasecount": "1",
+        "result": "Passed",
+        "total": "1",
+        "passed": "1",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-10-11 01:14:08Z",
+        "end-time": "2026-10-11 01:14:08Z",
+        "duration": "0.0752879"
+      },
+      "tests": [
+        {
+          "id": "1626",
+          "name": "JudgmentMotionHasNativePixelsAndOneContactPerState",
+          "fullname": "JudgmentRevisionAssetTests.JudgmentMotionHasNativePixelsAndOneContactPerState",
+          "methodname": "JudgmentMotionHasNativePixelsAndOneContactPerState",
+          "classname": "JudgmentRevisionAssetTests",
+          "runstate": "Runnable",
+          "seed": "653064634",
+          "result": "Passed",
+          "start-time": "2026-10-11 01:14:08Z",
+          "end-time": "2026-10-11 01:14:08Z",
+          "duration": "0.040394",
+          "asserts": "0",
+          "failure": null
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "ArtSource/EnemyArtCohesion/unity-import-manifest.json": "65bb4f943a6b4c17129212db44859f3328615968e1bc2fe22664d9cea0eea1ad",
+    "ArtSource/EnemyArtCohesion/candidate-validation.json": "a686544cdb9516cb4de6c063eade0a917f716e1d6d21b62800e09b406454c32c",
+    "Assets/_Game/Scripts/UI/PixelPerfectBattleCharacterUI.cs": "1a4c7a4e91b6877afb246f6544f3f994dd723cbcd5f9bba885151a1c818dd888",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutValidator.cs": "b83b41fc364b179ed9a76d2c7cebb37a7cf3015cbc4976b047c1c5afab2aaccc",
+    "Assets/_Game/Scripts/Editor/EnemyArtCohesionValidation.cs": "6c2830c91ce738a990326f18937264e8533c76625ccb6f8bc36c1cedff7049a3",
+    "Assets/_Game/Scripts/Editor/PixelLabAttackPlayTests.cs": "f9a31cff7d7f8b3dc5add45374db731bf5d22a5f24b715b7a2390903e6b423e6",
+    "Assets/_Game/Scripts/Editor/EnemyAbilityPlayTests.cs": "4785377cb591eed22eacc992782f2498b76332d6554aa5d06bf98b8f4d1055e0"
+  }
+}

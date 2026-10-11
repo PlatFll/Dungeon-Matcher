@@ -233,6 +233,14 @@ public sealed class EnemyAbilityPlayTests
         {
             var attack=actor.GetComponent<EnemyAutoAttack>();Set(attack,"attackAutomatically",false);attack.StopAttacking();
             actor.SetSpecialTurnRequirement(10000);actor.ResetSpecialCounter();
+            if(name=="King")
+            {
+                // Lane refill can cascade into legitimate player damage. Keep
+                // both actors alive while testing the deferred threshold cue.
+                var stats=actor.RuntimeStats;
+                SetProperty(actor,"RuntimeStats",new EnemyRuntimeStats(stats.Wave,stats.Level,1000000,stats.Damage,stats.FollowUpDamage,stats.AttackInterval,stats.SpecialTurnRequirement,stats.DamageMultiplier));
+                Set(actor,"currentHealth",1000000);
+            }
         }
         // These cases measure animation contact, not random opening strength.
         // Keep a real useful response available so interference placement is

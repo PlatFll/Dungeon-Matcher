@@ -49,17 +49,24 @@ public sealed class PixelLabAttackPlayTests
             yield return new WaitForSecondsRealtime(.3f);
             SceneManager.LoadScene("Game");
             yield return Until(()=>RunSession.Current!=null&&RunSession.Current.Continuation.CanCapture);
+            yield return LegacyCombatTestProfile.Load();
             var run=RunSession.Current;
             if(UnityEngine.EventSystems.EventSystem.current!=null)UnityEngine.EventSystems.EventSystem.current.enabled=false;
             foreach(var controls in Object.FindObjectsByType<RunControlsUI>(FindObjectsSortMode.None)){controls.Close();controls.enabled=false;}
             foreach(var initial in run.Waves.ActiveEnemies)initial.GetComponent<EnemyAutoAttack>().StopAttacking();
+            typeof(WaveController).GetField("advanceWavesAutomatically",Flags).SetValue(run.Waves,false);
             foreach(var entry in entries)
             {
+                run.Waves.ClearCurrentWave();yield return null;
+                yield return Until(()=>!run.Board.IsBusy&&!run.Board.HasPendingBoardMutation);
+                typeof(WaveController).GetProperty("IsWaveActive").SetValue(run.Waves,true);
                 yield return Until(()=>run.Waves.HasFreeEnemySlot);
                 var definition=AssetDatabase.LoadAssetAtPath<EnemyDefinition>("Assets/_Game/Data/Enemies/Enemy_"+entry.name+".asset");
                 Assert.That(definition.TimeAutoAttackFromAnimation&&definition.UseAuthoredAutoAttackMotion,Is.True,entry.name);
                 Assert.That(run.Waves.TrySummonEnemy(definition,out EnemyActor enemy),Is.True,entry.name);
                 var attack=enemy.GetComponent<EnemyAutoAttack>();attack.StopAttacking();
+                typeof(EnemyAutoAttack).GetField("attackAutomatically",Flags).SetValue(attack,false);
+                enemy.SetSpecialTurnRequirement(10000);enemy.ResetSpecialCounter();
                 var image=enemy.transform.Find("VisualRoot").GetComponent<Image>();var animator=image.GetComponent<Animator>();
                 var frames=CombatActionImporter.LoadFrames(entry.name+"_AutoAttack");
                 var source=new Texture2D(2,2,TextureFormat.RGBA32,false);

@@ -1,0 +1,45 @@
+{
+  "id": "siege_machinist_AutoAttack-1ec136f4f4-3",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/siege_machinist_AutoAttack-1ec136f4f4-3.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 72,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41983,
+    "description": "Tiny native pixel-art edge repair of the existing iron wrench head, completing the open jaw and outer contour. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "cf146c7d-140e-46cd-afd3-3418ea6fdd1a",
+    "image_id": "e40c30c3-f57d-5f7b-a7a2-068199d011fb",
+    "status": "processing",
+    "source_image_id": "e40c30c3-f57d-5f7b-a7a2-068199d011fb",
+    "job_id": "cf146c7d-140e-46cd-afd3-3418ea6fdd1a",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/cf146c7d-140e-46cd-afd3-3418ea6fdd1a/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/siege_machinist_AutoAttack-1ec136f4f4-3-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/siege_machinist_AutoAttack-1ec136f4f4-3-left-repair.png",
+  "completion": "status: completed\nid: cf146c7d-140e-46cd-afd3-3418ea6fdd1a\njob_id: cf146c7d-140e-46cd-afd3-3418ea6fdd1a\nframes: 1\ntransparent: yes\nasset_id: e40c30c3-f57d-5f7b-a7a2-068199d011fb\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/cf146c7d-140e-46cd-afd3-3418ea6fdd1a/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/siege_machinist_AutoAttack-1ec136f4f4-3.png",
+  "input_sha256": "57ce50a1916b092aec7955b7f373523005dca505a170268a8ecf6da3b8d19aa8",
+  "output_sha256": "c161ab66de343aecdfc74f2ad18d107a6b89730cd46dffd0e74f61c0e052de93",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 0084e6babe6c4c94bad32c64dce54a85
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6860214241204470916
+    second: CrossbowGuard_AutoAttack_0
+  - first:
+      213: 4567609577343592659
+    second: CrossbowGuard_AutoAttack_1
+  - first:
+      213: 7602903816975368258
+    second: CrossbowGuard_AutoAttack_2
+  - first:
+      213: -7363755089392148275
+    second: CrossbowGuard_AutoAttack_3
+  - first:
+      213: 6775480202697463108
+    second: CrossbowGuard_AutoAttack_4
+  - first:
+      213: 4789847384939193443
+    second: CrossbowGuard_AutoAttack_5
+  - first:
+      213: 6346164015688812115
+    second: CrossbowGuard_AutoAttack_6
+  - first:
+      213: 7180573454817337371
+    second: CrossbowGuard_AutoAttack_7
+  - first:
+      213: -2521656537507033544
+    second: CrossbowGuard_AutoAttack_8
+  - first:
+      213: -7720982149849577291
+    second: CrossbowGuard_AutoAttack_00
+  - first:
+      213: 8288419933742347894
+    second: CrossbowGuard_AutoAttack_01
+  - first:
+      213: 252120791443619958
+    second: CrossbowGuard_AutoAttack_02
+  - first:
+      213: -5671682774833964249
+    second: CrossbowGuard_AutoAttack_03
+  - first:
+      213: 4415741829672787415
+    second: CrossbowGuard_AutoAttack_04
+  - first:
+      213: -9118408550841719158
+    second: CrossbowGuard_AutoAttack_05
+  - first:
+      213: 2182767026420431562
+    second: CrossbowGuard_AutoAttack_06
+  - first:
+      213: -3774995971589849315
+    second: CrossbowGuard_AutoAttack_07
+  - first:
+      213: 1197152889830427280
+    second: CrossbowGuard_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8851964af89d490800000000000000
+      internalID: -7720982149849577291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676bafb0402660370800000000000000
+      internalID: 8288419933742347894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670cc762686bf7300800000000000000
+      internalID: 252120791443619958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72bd15fe0922a41b0800000000000000
+      internalID: -5671682774833964249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddda796ccdd74d30800000000000000
+      internalID: 4415741829672787415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86e1320cb7e47180800000000000000
+      internalID: -9118408550841719158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acab935bb0fba4e10800000000000000
+      internalID: 2182767026420431562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f3bd42a258c9bc0800000000000000
+      internalID: -3774995971589849315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09acc24e5342d9010800000000000000
+      internalID: 1197152889830427280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CrossbowGuard_AutoAttack_0: 6860214241204470916
+      CrossbowGuard_AutoAttack_00: -7720982149849577291
+      CrossbowGuard_AutoAttack_01: 8288419933742347894
+      CrossbowGuard_AutoAttack_02: 252120791443619958
+      CrossbowGuard_AutoAttack_03: -5671682774833964249
+      CrossbowGuard_AutoAttack_04: 4415741829672787415
+      CrossbowGuard_AutoAttack_05: -9118408550841719158
+      CrossbowGuard_AutoAttack_06: 2182767026420431562
+      CrossbowGuard_AutoAttack_07: -3774995971589849315
+      CrossbowGuard_AutoAttack_08: 1197152889830427280
+      CrossbowGuard_AutoAttack_1: 4567609577343592659
+      CrossbowGuard_AutoAttack_2: 7602903816975368258
+      CrossbowGuard_AutoAttack_3: -7363755089392148275
+      CrossbowGuard_AutoAttack_4: 6775480202697463108
+      CrossbowGuard_AutoAttack_5: 4789847384939193443
+      CrossbowGuard_AutoAttack_6: 6346164015688812115
+      CrossbowGuard_AutoAttack_7: 7180573454817337371
+      CrossbowGuard_AutoAttack_8: -2521656537507033544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

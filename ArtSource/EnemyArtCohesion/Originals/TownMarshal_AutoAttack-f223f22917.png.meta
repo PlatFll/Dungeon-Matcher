@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 28ca297df58b1114daf5b85dc9dd4632
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1840521675190705890
+    second: TownMarshal_AutoAttack_0
+  - first:
+      213: 7042447216687049079
+    second: TownMarshal_AutoAttack_1
+  - first:
+      213: 5503910478712665165
+    second: TownMarshal_AutoAttack_2
+  - first:
+      213: 4967761211294046177
+    second: TownMarshal_AutoAttack_3
+  - first:
+      213: -3234504080091997618
+    second: TownMarshal_AutoAttack_4
+  - first:
+      213: -2253393692262216255
+    second: TownMarshal_AutoAttack_5
+  - first:
+      213: -8257183205126551783
+    second: TownMarshal_AutoAttack_6
+  - first:
+      213: 8460427074906336282
+    second: TownMarshal_AutoAttack_7
+  - first:
+      213: -4945575519747248214
+    second: TownMarshal_AutoAttack_8
+  - first:
+      213: -6148167755840334385
+    second: TownMarshal_AutoAttack_9
+  - first:
+      213: -3582280715331168387
+    second: TownMarshal_AutoAttack_00
+  - first:
+      213: 6742653845875447669
+    second: TownMarshal_AutoAttack_01
+  - first:
+      213: -4217711306186008281
+    second: TownMarshal_AutoAttack_02
+  - first:
+      213: 5723209624265519070
+    second: TownMarshal_AutoAttack_03
+  - first:
+      213: -7567622377881129045
+    second: TownMarshal_AutoAttack_04
+  - first:
+      213: 138596719843538182
+    second: TownMarshal_AutoAttack_05
+  - first:
+      213: -2312042029370232854
+    second: TownMarshal_AutoAttack_06
+  - first:
+      213: -6110971840145386052
+    second: TownMarshal_AutoAttack_07
+  - first:
+      213: 470902487718545910
+    second: TownMarshal_AutoAttack_08
+  - first:
+      213: 5963102357537266129
+    second: TownMarshal_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7714fc4bae294ec0800000000000000
+      internalID: -3582280715331168387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577d3ded2f7b29d50800000000000000
+      internalID: 6742653845875447669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72952a5d9eda775c0800000000000000
+      internalID: -4217711306186008281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf617594dcec6f40800000000000000
+      internalID: 5723209624265519070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf2914da876af690800000000000000
+      internalID: -7567622377881129045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605fe4d7bf46ce100800000000000000
+      internalID: 138596719843538182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef2d95260af9efd0800000000000000
+      internalID: -2312042029370232854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb518bb1d77713ba0800000000000000
+      internalID: -6110971840145386052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9cf40515bf88600800000000000000
+      internalID: 470902487718545910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TownMarshal_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d99d44100231c250800000000000000
+      internalID: 5963102357537266129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TownMarshal_AutoAttack_0: -1840521675190705890
+      TownMarshal_AutoAttack_00: -3582280715331168387
+      TownMarshal_AutoAttack_01: 6742653845875447669
+      TownMarshal_AutoAttack_02: -4217711306186008281
+      TownMarshal_AutoAttack_03: 5723209624265519070
+      TownMarshal_AutoAttack_04: -7567622377881129045
+      TownMarshal_AutoAttack_05: 138596719843538182
+      TownMarshal_AutoAttack_06: -2312042029370232854
+      TownMarshal_AutoAttack_07: -6110971840145386052
+      TownMarshal_AutoAttack_08: 470902487718545910
+      TownMarshal_AutoAttack_09: 5963102357537266129
+      TownMarshal_AutoAttack_1: 7042447216687049079
+      TownMarshal_AutoAttack_2: 5503910478712665165
+      TownMarshal_AutoAttack_3: 4967761211294046177
+      TownMarshal_AutoAttack_4: -3234504080091997618
+      TownMarshal_AutoAttack_5: -2253393692262216255
+      TownMarshal_AutoAttack_6: -8257183205126551783
+      TownMarshal_AutoAttack_7: 8460427074906336282
+      TownMarshal_AutoAttack_8: -4945575519747248214
+      TownMarshal_AutoAttack_9: -6148167755840334385
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

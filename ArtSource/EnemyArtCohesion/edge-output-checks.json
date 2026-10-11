@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "BarricadeGuard_Ability-4c8b987235-10",
+    "side": "left",
+    "changed": 160,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      29,
+      72,
+      84
+    ],
+    "input_sha256": "47fd0bc819be6a647f99c60a03d657f8af56312180cfa913eaf3b0d9dab82835",
+    "output_sha256": "646ab9ff9741c8fc282e5f52aa2dc75a0ef03b7aa51dec607989a3c6f8c1bc27"
+  },
+  {
+    "id": "BarricadeGuard_Ability-4c8b987235-11",
+    "side": "left",
+    "changed": 17,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      29,
+      72,
+      84
+    ],
+    "input_sha256": "17d848b447ababa3bfaa78dc02cc454d42361bea1296ed74291e0f325e38dbba",
+    "output_sha256": "3acba517522e5c0f8ec5bf9a3f7b84e41e2fcba1b464eb0460c1c9fb5376a9de"
+  },
+  {
+    "id": "BarricadeGuard_Ability-4c8b987235-12",
+    "side": "left",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      29,
+      72,
+      84
+    ],
+    "input_sha256": "274a14c9e6d8a05fbbe2e97dc8f97f9ee3e1e6743b5bbdc623dffe74a61e10be",
+    "output_sha256": "77ae49981bc6df205e44d34dd43749fc095c7ae0f46d942c918456bfb0fbe831"
+  },
+  {
+    "id": "BarricadeGuard_AutoAttack-8a4bb6278d-5",
+    "side": "left",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      32,
+      76,
+      84
+    ],
+    "input_sha256": "e3686f72b9514ff7f85b178509e1e4579f658e7f32669bf5302f4bb412154d4f",
+    "output_sha256": "2ffc34cebbb164c2afca6b395288cd7837f68c6528c0cb3271fdf878f216821c"
+  },
+  {
+    "id": "bore_engineer_AutoAttack-8a8cbb2df6-2",
+    "side": "left",
+    "changed": 84,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      14,
+      45,
+      90,
+      100
+    ],
+    "input_sha256": "c4c218af8309d7dd1a3ff448e45b1b85f97650d1b632a60f7ce35b2734b50a25",
+    "output_sha256": "79d0db811c1b169650aab67dddbdea46cce05c1969e21370d4b97687dfb92cf1"
+  },
+  {
+    "id": "bore_engineer_AutoAttack-8a8cbb2df6-3",
+    "side": "left",
+    "changed": 195,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      3,
+      45,
+      90,
+      100
+    ],
+    "input_sha256": "2792b16d6467e91ac06f76c93d7315ef714ba506e504de028efed202e7251edd",
+    "output_sha256": "db633302b3385fe65417dc9b414f55602bbc5ae50f0eb0e6747e81c62e918373"
+  },
+  {
+    "id": "bore_engineer_Death-c88c3727d4-4",
+    "side": "left",
+    "changed": 75,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      14,
+      56,
+      92,
+      100
+    ],
+    "input_sha256": "07b10cee22d2b5af250abce00a8c05d838c9ea4802950e4be5ffdb6d162dc334",
+    "output_sha256": "65ea45ace02a1d4aa62ed0ed863541b0867f89075a65174bee86c62c0e6802fd"
+  },
+  {
+    "id": "bore_engineer_OreChargedAutoAttack-fcd7f8dbb0-5",
+    "side": "left",
+    "changed": 37,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      45,
+      90,
+      100
+    ],
+    "input_sha256": "2ee38375e08acbaa912297a8efcb9b14818d374fae2a29e283c7608abdb94e0f",
+    "output_sha256": "d5009c63de5e6ce7ad99f9ed33a9d3e82554a7455475cce475d7be783f58d525"
+  },
+  {
+    "id": "conch_marshal_Death-e7b5c3974e-10",
+    "side": "right",
+    "changed": 39,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      39,
+      74,
+      105,
+      99
+    ],
+    "input_sha256": "c038fd3f68f4af176ef1ad6ca589e366ca9a58c59ed3e3e45b8ea1b521540201",
+    "output_sha256": "753f66a4929c1c5a9ead76147a2576f90159a3ae56d3c59d4aa0bb8452e205a4"
+  },
+  {
+    "id": "conch_marshal_Death-e7b5c3974e-12",
+    "side": "right",
+    "changed": 44,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      39,
+      74,
+      105,
+      99
+    ],
+    "input_sha256": "7480f9d7cb9e2c72cc8f52245c4d0bc03830bd8bc273eec53296c50f28b58d02",
+    "output_sha256": "b42874f82cf1e14c1da0523ec54cffaef37ad51f0fea62be2cb375fd6e30271d"
+  },
+  {
+    "id": "conch_marshal_Death-e7b5c3974e-8",
+    "side": "right",
+    "changed": 23,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      39,
+      74,
+      105,
+      99
+    ],
+    "input_sha256": "8016066ea9bd5d841b1b5683c7d4bbd1eb8a1b0c3f97547ecd9d001b98e3dfbd",
+    "output_sha256": "d338935fb55fee05543c15332102d9d60be74f23f599755db5beb4cb8f916169"
+  },
+  {
+    "id": "conch_marshal_Death-e7b5c3974e-9",
+    "side": "right",
+    "changed": 22,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      39,
+      74,
+      104,
+      99
+    ],
+    "input_sha256": "cc0e3797a26a470fd469c58a97f88e42625d33d1b4777da6e85ae245a3a117bc",
+    "output_sha256": "0a28b0760ae0e1df5dfb0d8f885b39e73cc1d11648d817be1bdadb23a970945d"
+  },
+  {
+    "id": "CourtMage_Ability-ccd68f17cc-10",
+    "side": "left",
+    "changed": 23,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      16,
+      29,
+      82,
+      84
+    ],
+    "input_sha256": "bdc01399bfc48b52acf349d86d186b3e7d6934a517bf35fceaa1fb3fc79e455b",
+    "output_sha256": "a226c0e5e7423dbd1b8f63312fce360c20efe1fe479f2b7347c879ab57be32a2"
+  },
+  {
+    "id": "CourtMage_Ability-ccd68f17cc-11",
+    "side": "left",
+    "changed": 26,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      13,
+      29,
+      81,
+      84
+    ],
+    "input_sha256": "91cb8ff51c07a05ce5af20d76ba7b81284019feedec950499984cfda3007b56c",
+    "output_sha256": "ebd5f85cb17f41aa7e366e3ba64de9fe7d2609858ed31dfb46ea59f792c0fd78"
+  },
+  {
+    "id": "CourtMage_Ability-ccd68f17cc-12",
+    "side": "left",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      29,
+      80,
+      84
+    ],
+    "input_sha256": "89dc5afddae48596fad4cc2f86ae4f64f0c18fb3f5bcde5701fd21c017592a54",
+    "output_sha256": "62b55abc9f547549bee9c7f81e6b458b43a05aeeccb2db330e4ece824436efcf"
+  },
+  {
+    "id": "CourtMage_Ability-ccd68f17cc-8",
+    "side": "right",
+    "changed": 24,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      37,
+      30,
+      97,
+      84
+    ],
+    "input_sha256": "4a3bf4e2a714c62571ba2eeeb1eccaabeb9fc9497dc5e1be07e772a92bb7e570",
+    "output_sha256": "0a23dbd4ecdefed1892b0b4a7421a6794d22c97a34050a7a8241a89da4e42aca"
+  },
+  {
+    "id": "CourtMage_Ability-ccd68f17cc-9",
+    "side": "right",
+    "changed": 131,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      35,
+      30,
+      106,
+      84
+    ],
+    "input_sha256": "776ddbb7bf6e9762d9df930cd3cbb1046b66acc0ac3cb8384dc92703c632392e",
+    "output_sha256": "fb46c0d8e469f27d6119f052b4a67122baf245041bce66ddf55dfd86cc71a819"
+  },
+  {
+    "id": "Elven_Scout_AutoAttack-5421fb4cad-4",
+    "side": "left",
+    "changed": 24,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      15,
+      29,
+      98,
+      84
+    ],
+    "input_sha256": "50e4f10c2426ebee856e32df277676b352bdd6e20fe01e193ee7067b17f361db",
+    "output_sha256": "e63923177360dea1904f16d54ea4e6f4fc60a51a2ac4e822ce52758ae66694f8"
+  },
+  {
+    "id": "grand_delver_AutoAttack-a3f23c53ce-4",
+    "side": "left",
+    "changed": 27,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      19,
+      55,
+      128,
+      132
+    ],
+    "input_sha256": "562f4c6a900f4cad4242d7aaee3de72700b982a471bb3c977b6ea670999845a0",
+    "output_sha256": "3ca42f10f6e12ec53817b9c0103f5f5037ecf657aebd918cb97c0331469527bf"
+  },
+  {
+    "id": "grand_delver_Death-3d5ba92519-6",
+    "side": "right",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      31,
+      47,
+      132,
+      131
+    ],
+    "input_sha256": "7843c0b27256ef9e5771021113086a5dec9e266d184ccfa69db8f6c8252578d8",
+    "output_sha256": "9deaa12d3ed2348067da7ab8eb073a562ed13e37606b240569d5bc7c48972481"
+  },
+  {
+    "id": "grand_delver_reserve_Death-378270723c-3",
+    "side": "right",
+    "changed": 25,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      29,
+      136,
+      132
+    ],
+    "input_sha256": "2247a0057ebe853de7cb03cf9d3e643694d668ec504342c185562462dff2f9e2",
+    "output_sha256": "1ed336811fddf57a9c4154cc63443243814420b953be19efd4e742f51d582a81"
+  },
+  {
+    "id": "hammerhead_bruiser_Hit-9b59614538-1",
+    "side": "right",
+    "changed": 2,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      28,
+      21,
+      102,
+      99
+    ],
+    "input_sha256": "8da0e1ff7bfa0a2713a56e0a18cb324f48cb9abf357c4a03bded135742aa92f3",
+    "output_sha256": "b6f9df7060d8587b5adca6d2974ae97f4e0503f4f5ee0c0c8d0e85b59705c9ca"
+  },
+  {
+    "id": "King_JudgmentStrike1-6dd06648c9-3",
+    "side": "top",
+    "changed": 31,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      35,
+      18,
+      99,
+      100
+    ],
+    "input_sha256": "cd6b1d41b0f0f551dea73f9b2499cc44c7cf7f2938bf4b22b33a7e66ba3686d5",
+    "output_sha256": "e5f44d3216700c70e7cbbadd7bfe02a93e89709a85db80fbf5046593d4006e83"
+  },
+  {
+    "id": "King_RoyalCommand-6178d93150-10",
+    "side": "left",
+    "changed": 47,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      42,
+      120,
+      100
+    ],
+    "input_sha256": "de79498034a3d818a2a0b656b529fd2cd31eadef12036f57b7fac372d3bd8ab3",
+    "output_sha256": "335d8cebffe63158191ed981ffa8e750d4292fe187dd650075be289fee877243"
+  },
+  {
+    "id": "King_RoyalCommand-6178d93150-11",
+    "side": "left",
+    "changed": 15,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      20,
+      42,
+      118,
+      100
+    ],
+    "input_sha256": "6ada636d1492be37b92c770fd114fe5a36ec6c3b8255f8e848e4682a5c4c0ad5",
+    "output_sha256": "c5fc4ae6720200b4305c40f632788fa227e0f41cd8c5656772d1bbac1ba8dc2a"
+  },
+  {
+    "id": "King_RoyalCommand-6178d93150-12",
+    "side": "left",
+    "changed": 86,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      14,
+      42,
+      113,
+      100
+    ],
+    "input_sha256": "9cc658f7ff51ea663f7dda222f027e193d055c2d4b85b8ff3848e61f78ba29e3",
+    "output_sha256": "83ef6c4d4126584847d0be79d2cba22153dde76ecbf8467e09f334968927b88c"
+  },
+  {
+    "id": "KnightCaptain_AutoAttack-21b83533e0-5",
+    "side": "left",
+    "changed": 62,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      13,
+      40,
+      103,
+      100
+    ],
+    "input_sha256": "819e697046e1c9b552cd6efc60e89442b18a508b7e1d0b97ffd7f107b64b4d63",
+    "output_sha256": "48eb49800ea006f770390cd530937dfae4305171dcfcfb8addb3b8994cfb476b"
+  },
+  {
+    "id": "lantern_warden_AutoAttack-865990be0b-4",
+    "side": "left",
+    "changed": 58,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      52,
+      92,
+      115
+    ],
+    "input_sha256": "ac46c4ac089ae37d7cf443dec29880ace077bf02695c8696d792d6bebb50946f",
+    "output_sha256": "a173e51f3ddb5c428b14011f99eb30216ec0529e6a336b8c25c6876e3ec7d978"
+  },
+  {
+    "id": "lantern_warden_Death-33305e388d-6",
+    "side": "left",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      85,
+      119,
+      115
+    ],
+    "input_sha256": "4f4284221e5c15507622b9381731aac7407cf6eb4b5f583f48e61dc68cf9e1f3",
+    "output_sha256": "884ea27ba295cc8dac9a19bcfc9c2e276c141e12caea650c97188b126317a987"
+  },
+  {
+    "id": "lantern_warden_Death-33305e388d-7",
+    "side": "left",
+    "changed": 18,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      85,
+      119,
+      115
+    ],
+    "input_sha256": "543d8c7a2ca2bf5e415cf3a10e33bb87eb82c65fc0cda741d98f92ace272f860",
+    "output_sha256": "5fe2fb2866beb3e72d2a7699c6f33758f98fff069ed68156428960c7395c5344"
+  },
+  {
+    "id": "needlefin_skirmisher_AutoAttack-1692ac85e2-8",
+    "side": "left",
+    "changed": 43,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      16,
+      43,
+      86,
+      99
+    ],
+    "input_sha256": "3223e854df109017f8f9d9e563355d7673a37ddafb4d959f547b2e37e0d65abd",
+    "output_sha256": "c09b900aa969fa863af8757f4318b5dfe7793dbcaa9465ba79f96b47b5ea92f6"
+  },
+  {
+    "id": "needlefin_skirmisher_AutoAttack-1692ac85e2-9",
+    "side": "left",
+    "changed": 9,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      44,
+      85,
+      99
+    ],
+    "input_sha256": "6db52128838c77b1767e7ff2f65f220340b559442386b56305b5e558883c4778",
+    "output_sha256": "a02dc8e81e7735c305276c21a621d18af7377caace3509da68a99ff2589b9bf1"
+  },
+  {
+    "id": "needlefin_skirmisher_Death-54d4f9090b-10",
+    "side": "right",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      43,
+      75,
+      104,
+      99
+    ],
+    "input_sha256": "06e7f1ab9fef8cba561d2d84356ca2e46b5d120d1a9c02ef8a3be7f245837ef7",
+    "output_sha256": "90c0b92c9e1b4bca58ff8ba6ceae3309fecf96a76f1c7412d7e775f5169c400c"
+  },
+  {
+    "id": "needlefin_skirmisher_Death-54d4f9090b-11",
+    "side": "right",
+    "changed": 19,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      43,
+      75,
+      104,
+      99
+    ],
+    "input_sha256": "d9fddafdc6574005b9ac9a015b5bc73be2db05cb7b0fbe2c7396b3c56d8edb48",
+    "output_sha256": "c2751daeff1f89037a6d2d24ac439babfa12828f0a907767dd727bac6b19dc69"
+  },
+  {
+    "id": "needlefin_skirmisher_Death-54d4f9090b-12",
+    "side": "right",
+    "changed": 17,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      43,
+      75,
+      105,
+      99
+    ],
+    "input_sha256": "bade928c35a7396cee76653146b7ddb8f9f75d42b351cfd6eb65d9f8c5b106a2",
+    "output_sha256": "05fe26da5870eebfa7c12a211281d4f89af4c55052ddaafdf60696f61e739f81"
+  },
+  {
+    "id": "needlefin_skirmisher_Death-54d4f9090b-7",
+    "side": "right",
+    "changed": 18,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      44,
+      77,
+      104,
+      99
+    ],
+    "input_sha256": "8af1808defda164a7b32968dcc46fce93733d841781fe9478d497f0c8cc16983",
+    "output_sha256": "17bf5c6eff34e0b9a0e1a5556ecfb47e1cdd82ccc498e512c9c43fb63a709d12"
+  },
+  {
+    "id": "needlefin_skirmisher_Death-54d4f9090b-9",
+    "side": "right",
+    "changed": 6,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      43,
+      75,
+      104,
+      99
+    ],
+    "input_sha256": "c83704753c293fe92a79d5cd156e0a78f94133c241b7cf2e37ffcd84ee4908dc",
+    "output_sha256": "5d4fce02e87dc9f80cae6b0cc8441e4c81805c753cb7f469bcfe4597c2fd8ee6"
+  },
+  {
+    "id": "obsidian_sentinel_OreChargedAutoAttack-64243d6933-2",
+    "side": "right",
+    "changed": 124,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      32,
+      46,
+      141,
+      132
+    ],
+    "input_sha256": "b0cec7e116c550bab69045996337a0546ba081f558ab80981e8cd1f5efd57307",
+    "output_sha256": "caab3f99f0912831aec75ada2405d1923817c72bd4fda88e4f242364945df93c"
+  },
+  {
+    "id": "obsidian_sentinel_SlamRelease-6c270a8c8b-3",
+    "side": "left",
+    "changed": 85,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      14,
+      57,
+      136,
+      132
+    ],
+    "input_sha256": "9eca7ef0c93b70b1429aa4e5fd5103f6d5dc8225a7cc4dd8b1b21b0273608b71",
+    "output_sha256": "768def89a21e0d7717c1e9d1c546a3b23d4b0b86f7953b16d9e7516bf0db6ddb"
+  },
+  {
+    "id": "obsidian_sentinel_SlamRelease-6c270a8c8b-4",
+    "side": "left",
+    "changed": 5,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      54,
+      136,
+      132
+    ],
+    "input_sha256": "fbb07f2595639f9dd28181c5cca33fd65c85053ae83046f53d6e3b6700e0f5ee",
+    "output_sha256": "333206661cc5a8694108478a5f1eb787cbe41a182d77db9250c243a35ae12c7f"
+  },
+  {
+    "id": "obsidian_sentinel_SlamRelease-6c270a8c8b-5",
+    "side": "left",
+    "changed": 2,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      51,
+      135,
+      132
+    ],
+    "input_sha256": "bf1a357ee9199cd78aefb96766a9da9df4f879e35da1be7b69a4fc2753ab86da",
+    "output_sha256": "4133b3f3ff855a9019a9d747a12c2c83a390f656ceb0a2c3bb2d9efae9c451b3"
+  },
+  {
+    "id": "Orc_Trailguard_AutoAttack-a128ca25c0-4",
+    "side": "left",
+    "changed": 148,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      17,
+      22,
+      97,
+      84
+    ],
+    "input_sha256": "c61d6764e6d239ef8cfb93f47304bc540120c19a82cec1501ac9bac87e7b1577",
+    "output_sha256": "30c375c8cd1af1f84467ef7ce18299f94f94740080c4bb80a462444531b28580"
+  },
+  {
+    "id": "Orc_Trailguard_AutoAttack-a128ca25c0-5",
+    "side": "left",
+    "changed": 212,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      13,
+      23,
+      97,
+      84
+    ],
+    "input_sha256": "c4eff7c75fcb19d594708cc37b97ae621f94eaf82ae28b4632a950f5070e4945",
+    "output_sha256": "1d644bdb7b049380d63847804e83e106fbdbdcfad81b3823c35253c9cd715094"
+  },
+  {
+    "id": "pickaxe_delver_OreChargedAutoAttack-f7eb92383e-6",
+    "side": "left",
+    "changed": 4,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      50,
+      90,
+      100
+    ],
+    "input_sha256": "03f46672e6a77321bc3a5dd32dcaa8b2b9433179684ca70749c68bd3fa9f6071",
+    "output_sha256": "78fa35e35d122d7ffcfdfc7fcfcb551668ca496c9571afbbc92caea0ba01d46b"
+  },
+  {
+    "id": "puffer_sentinel_AutoAttack-c42fc79193-6",
+    "side": "left",
+    "changed": 43,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      48,
+      102,
+      99
+    ],
+    "input_sha256": "921ff70a442da4c8cadafd8a247548e8117ceeb4e454ffdf6e7f9d3b53e77f93",
+    "output_sha256": "0e7d8b2d0aa1ef28dc72f35d4d579c13f1f10797f174d1afa9bd9c90688b0461"
+  },
+  {
+    "id": "puffer_sentinel_AutoAttack-c42fc79193-7",
+    "side": "left",
+    "changed": 20,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      47,
+      91,
+      99
+    ],
+    "input_sha256": "4d6f63d98f570e2030814ace65de70717c97e5a86e999ed01faa2713880fec66",
+    "output_sha256": "46a01b379ee960fce8da7e6df0435733d926f44da17ff1a822d86dc3af11901e"
+  },
+  {
+    "id": "puffer_sentinel_AutoAttack-c42fc79193-8",
+    "side": "left",
+    "changed": 35,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      21,
+      47,
+      91,
+      99
+    ],
+    "input_sha256": "c01523b7dcbbdb6907b8f03e0b1d39ed58eee2fb5638d82efebcd51a8e4c9bb2",
+    "output_sha256": "1f6f97acc41872810425dad32e2f64b0cad42465c3cccd354ff54a1928ded5b3"
+  },
+  {
+    "id": "puffer_sentinel_InflatedAttack-edfdf0effa-7",
+    "side": "right",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      28,
+      33,
+      104,
+      99
+    ],
+    "input_sha256": "8ec0af65e07d020b17fdaf1ce88ef3381df4667282c680e6b6099833bd3b4203",
+    "output_sha256": "498431e7018065eed4eb4d74ea82447aa481d87dae68cb530098d10ec35ca782"
+  },
+  {
+    "id": "puffer_sentinel_InflatedAttack-edfdf0effa-9",
+    "side": "left",
+    "changed": 31,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      31,
+      100,
+      99
+    ],
+    "input_sha256": "841e6febb8ccce3f763c717018402832c2cecb31ef620a0586158a9ac7169937",
+    "output_sha256": "6640a0e223f7616e74c9bfb24c8bf70e8790eeed3a9ad590d1d57dc7da4b167e"
+  },
+  {
+    "id": "queen_nacre_Death-c24d4f81ef-7",
+    "side": "right",
+    "changed": 186,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      87,
+      132,
+      115
+    ],
+    "input_sha256": "12030150cae0feec358e962bbaea468ae0d6d0c5f649edbc44a059dfa5f89bb6",
+    "output_sha256": "4367098093d47db8c0a219a06b4db217a0f6bf13daf93a5fcbbd2175c35ea947"
+  },
+  {
+    "id": "rivet_gunner_AutoAttack-55d99b3322-2",
+    "side": "left",
+    "changed": 47,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      7,
+      41,
+      92,
+      100
+    ],
+    "input_sha256": "dbcd8261eb4f1be449bc275cc3154e99bdc66aadd0f746cca6cb4f0576765a76",
+    "output_sha256": "ada9852d0ae52c4313a7f5ba09860163088952bdda25d3100d11518aec416edb"
+  },
+  {
+    "id": "rivet_gunner_AutoAttack-55d99b3322-3",
+    "side": "left",
+    "changed": 60,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      12,
+      41,
+      91,
+      100
+    ],
+    "input_sha256": "bfa7403be9f7979463ee21ce2c3607e751a6be29516a47732f4d2a0197308dd7",
+    "output_sha256": "e3760bcf4bab07af601eef105400509d2cf47f44cf29ff78266bb90b18415289"
+  },
+  {
+    "id": "rivet_gunner_AutoAttack-55d99b3322-4",
+    "side": "left",
+    "changed": 58,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      9,
+      41,
+      95,
+      100
+    ],
+    "input_sha256": "d75fb7788bd3a132b01f91690ef1710d20e453e91d17d162974bb6db43a3d475",
+    "output_sha256": "e846f42efb4a9a29d3c6d02bf73ff1f6390fb8c393babea401ffb45da193db56"
+  },
+  {
+    "id": "rivet_gunner_AutoAttack-55d99b3322-5",
+    "side": "left",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      42,
+      96,
+      100
+    ],
+    "input_sha256": "02ffbb31f0318efd91bf2d2599495f8897fb9e208aaca16a9d5be4d157caf874",
+    "output_sha256": "14914781d18ca0567d7e867ea1e1902412604c357bb30f818d4def8ad5ed951d"
+  },
+  {
+    "id": "rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4",
+    "side": "left",
+    "changed": 25,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      21,
+      46,
+      99,
+      100
+    ],
+    "input_sha256": "40ae11e49e9ebb4a9d25af57b3e6c421cc2eec7a2b0e5b596b34dbdbc86de01c",
+    "output_sha256": "7b00e060726813d8bb96925c4188aea196045d8cbe5cb993e36b3e932bbf818e"
+  },
+  {
+    "id": "rivet_gunner_OreChargedAutoAttack-5eb50f07c6-5",
+    "side": "left",
+    "changed": 30,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      14,
+      46,
+      104,
+      100
+    ],
+    "input_sha256": "dd014a39458c5452ac59f18b9bcfc8c88e80053e0d98b2b7aff3b9a2a702f222",
+    "output_sha256": "0ec066f546f1554a3ad2430d93e879010ee4833ea7052e5d42deee53bd4d0620"
+  },
+  {
+    "id": "rivet_turret_AutoAttack-26ac426c85-1",
+    "side": "left",
+    "changed": 43,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      17,
+      57,
+      83,
+      100
+    ],
+    "input_sha256": "36bc87dc1bca2c9c185788d533e30fd09bde9930f5c6543153559594abfbdacb",
+    "output_sha256": "f036a02f7f67b475ac92d7f29a3a23dd95ffdbfc1391281243eb9b491d7d070a"
+  },
+  {
+    "id": "rivet_turret_AutoAttack-26ac426c85-2",
+    "side": "left",
+    "changed": 120,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      8,
+      57,
+      83,
+      100
+    ],
+    "input_sha256": "2156e06ed821a11646bfadb3e2837e6622d69f43c805f2ec5a83f07422f9a9a3",
+    "output_sha256": "9c707df2dacd0cbddb4a9c701a1ddd6305c66afe94ea74e5ea17bc312e2611b2"
+  },
+  {
+    "id": "rivet_turret_AutoAttack-26ac426c85-3",
+    "side": "left",
+    "changed": 15,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      28,
+      55,
+      86,
+      100
+    ],
+    "input_sha256": "fc19de666f5941d054bdb25fab4129af6da4236620b82cf13f2b7482121dec21",
+    "output_sha256": "c56fda67eae62074282c9f498334674fc51dbe1e6b1c29c5ad8a0a1af8d912b8"
+  },
+  {
+    "id": "rivet_turret_OreChargedAutoAttack-95cf42b4b6-3",
+    "side": "left",
+    "changed": 72,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      3,
+      51,
+      86,
+      100
+    ],
+    "input_sha256": "dbd79627f73fe0f49f920c5ac4ff179386f34220b072cd236f42a05f465196bc",
+    "output_sha256": "b8135ff98e9d4ff61b9d26f46eea49e6fdc6c4084492baf16ce6a930475c32ea"
+  },
+  {
+    "id": "rivet_turret_OreChargedAutoAttack-95cf42b4b6-4",
+    "side": "left",
+    "changed": 114,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      10,
+      57,
+      83,
+      100
+    ],
+    "input_sha256": "aecf17e995edfc84ef5db98afecb1e566a5a394e9ed450fe2750593addcaa436",
+    "output_sha256": "7de352927870e9eb41c58b1c7ae408dbf4a3729ba6b0973a99ff060cbad93214"
+  },
+  {
+    "id": "RoyalArbalist_AutoAttack-53f6014cbf-3",
+    "side": "left",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      22,
+      78,
+      84
+    ],
+    "input_sha256": "41b703b29a6ba724badd6595d1dd8f1b6e60de116d43b942aa45c416a29741a4",
+    "output_sha256": "f63abf83b4f54999bd00c1f9d731e398d0c66e644fa43a46efd6c6504294fd0e"
+  },
+  {
+    "id": "RoyalArbalist_AutoAttack-53f6014cbf-4",
+    "side": "left",
+    "changed": 10,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      21,
+      23,
+      81,
+      84
+    ],
+    "input_sha256": "f4ac54815f7c3e18dcf716c4c9e23cf11bc91435ba9d79d56b0952c980e94d46",
+    "output_sha256": "ebd52dca6010dc48a9c3f33e6c056bdbfd8a0622f2df0cbbd54c86843e0c9708"
+  },
+  {
+    "id": "RoyalArbalist_AutoAttack-53f6014cbf-5",
+    "side": "left",
+    "changed": 26,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      22,
+      78,
+      84
+    ],
+    "input_sha256": "1c94f2340955872d2ac762ad315184e4e0790b591ebb084f620e8187b41645bd",
+    "output_sha256": "146df15ee16f9cac20318a11fa5d86ab5922b31a6e69bedc17ef26b34b8bf995"
+  },
+  {
+    "id": "RoyalArbalist_AutoAttack-53f6014cbf-6",
+    "side": "left",
+    "changed": 23,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      21,
+      23,
+      75,
+      84
+    ],
+    "input_sha256": "d64d9014826de6f0fe83ebdec4271fb6f921c2680825fd6e12dedddd59e663fd",
+    "output_sha256": "e7e698e8650d96d7b1a2252227df032c308df1c6d84a808c3c86ed3e4c86727f"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-10",
+    "side": "left",
+    "changed": 192,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      21,
+      21,
+      84,
+      84
+    ],
+    "input_sha256": "93c6e4dfaa027685823f1f8666de43b07622783ed667b0f213ab950cb0673760",
+    "output_sha256": "cc710cd0322d7e6b905a7a7f3bd2bc8c10010ac2a126f2d040bd09bf36e39eb4"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-11",
+    "side": "top",
+    "changed": 3,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      20,
+      84,
+      84
+    ],
+    "input_sha256": "be207747200f061e0b74d89e0d1811cff7032c94a7f102349a98a9b949cee855",
+    "output_sha256": "3ed69915f6a202d12039ed45cb545a0c0fd23358793080f217fcebdeed47d2c2"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-12",
+    "side": "left",
+    "changed": 8,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      21,
+      84,
+      84
+    ],
+    "input_sha256": "455a36058e1e344bf2d4b732c8694cc05728b8356de4c7b97cfa9359fdfb579e",
+    "output_sha256": "30da9dc11c4bceaf0c469a46bd922eea0df0caca54d6843762d2259676612748"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-14",
+    "side": "left",
+    "changed": 6,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      21,
+      80,
+      84
+    ],
+    "input_sha256": "4525611768d20e835db92f43b71596ed9d8c5cafe966dcc8e6420d1371554721",
+    "output_sha256": "b182ed74da81e05747b645f3b43c2cf53df64158d0652a87fe4234c36b61e071"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-4",
+    "side": "left",
+    "changed": 51,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      20,
+      84,
+      84
+    ],
+    "input_sha256": "e197ce76cad9c0520c4db648b084538ceb3b3abbda3aca9780dcfe8b795cae09",
+    "output_sha256": "b5406564c85cc6b207052ad2b04b9ccc4281a96efe55510947de92359de8c52d"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-5",
+    "side": "left",
+    "changed": 59,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      20,
+      85,
+      84
+    ],
+    "input_sha256": "c48b7934e297f962d119b5846ea1be90fb6fafac193732860a630a04ab921bb6",
+    "output_sha256": "f17ccb13d5dcbf8ee8d62ad79b83d73d264c5a8d012686861570b65c1f0bf362"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-6",
+    "side": "left",
+    "changed": 11,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      20,
+      87,
+      84
+    ],
+    "input_sha256": "8a0ce1e6897dc08b81c02299b9569ba763ecdc6b4532f60419068f065b8fb369",
+    "output_sha256": "779acd9c464e5a62f5dec3f22fb7480d7cc8c556a8700f583aa2795fc517f4cb"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-7",
+    "side": "right",
+    "changed": 22,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      88,
+      84
+    ],
+    "input_sha256": "2c3ed7a3424970982a1876516c0e856336c610c036782ca4fdc037146b8cee6b",
+    "output_sha256": "17891644ffb73f26886a0861a8c9e53aa984a022e4f3d379e08bced43ae2d7f9"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-8",
+    "side": "right",
+    "changed": 17,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      88,
+      84
+    ],
+    "input_sha256": "f08d75239de172d779b36aa96b0ad8523c51ad6ab849dc9b707853a8ac1570be",
+    "output_sha256": "5e6e878270c0acd16a20069e7ee2f9e28d1f3840da53c0eece34a89b8fa423ce"
+  },
+  {
+    "id": "RoyalArchbishop_Ability-a6c87da263-9",
+    "side": "right",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      87,
+      84
+    ],
+    "input_sha256": "bade5fcebffedd631920848bda5146ccad807e6ab392625283af4c37bbf99a8c",
+    "output_sha256": "c4b2797b0b3a86cec0809d987ed58c0d018b43424ba952afbbeb71414a9fa524"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-10",
+    "side": "left",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      21,
+      84,
+      84
+    ],
+    "input_sha256": "d40defef4d3e2edc34576d561acc3f691f68c313aa50f9b356d8ff972bb5344d",
+    "output_sha256": "cbd1d5e21abf74ecb8ef4b7d7e6a26684bb63d2c0ede5e3cbf68a1a18ad2737e"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-11",
+    "side": "top",
+    "changed": 11,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      20,
+      84,
+      84
+    ],
+    "input_sha256": "393f2402c80c55331d58bac8913c338f7f71af52531c580a61aaffff4e707c97",
+    "output_sha256": "d6212308440afc97bad9032c8b7d7a93f0f194cdb514c2ad691daa11050febcc"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-4",
+    "side": "left",
+    "changed": 61,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      20,
+      84,
+      84
+    ],
+    "input_sha256": "ec6ba7d35f90251bbb2e69272f9d8edd178ca9bff7c2167b88c585ccf1ddb08a",
+    "output_sha256": "b044f7f2b87be75fb7f7f0e5c2d2bf4f864f314cfec798b46751bce5b87714b7"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-5",
+    "side": "left",
+    "changed": 40,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      20,
+      85,
+      84
+    ],
+    "input_sha256": "e3a62dcd877faea3bb49fdb539f3c4fb722fabcda9783912313253e7f45db67f",
+    "output_sha256": "cb12dc0c7ee4d5774924a4aa2d5d2b7c073fd9755a3b109aa0d57a0f15cfbfc3"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-6",
+    "side": "left",
+    "changed": 52,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      19,
+      20,
+      87,
+      84
+    ],
+    "input_sha256": "fb42f346a779ebb7a9db8d38d6141fa233aea3f763f5274edaa5a20e79c32366",
+    "output_sha256": "78119f599f484cb5ac402318802ce9179c3c1e375272fef2bc33554a31e40df8"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-7",
+    "side": "right",
+    "changed": 44,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      89,
+      84
+    ],
+    "input_sha256": "f5ad375500bee6505a6321f11618b377b1000385cf3805b927f57feef00f210d",
+    "output_sha256": "eb12b69a01436c91364cc1ead70a438c495827966c5e27cc6623c608e5fc27fe"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-8",
+    "side": "right",
+    "changed": 31,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      89,
+      84
+    ],
+    "input_sha256": "8a3d5b685e7fded8c0812993976b1b1d564f5634f306cfef6efe0c0c6639a95d",
+    "output_sha256": "a72248a1fcf53201979e5f6182899a21ecbdb3a943d5c56294ad36488435dada"
+  },
+  {
+    "id": "RoyalArchbishop_Benediction-34274aa6a5-9",
+    "side": "right",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      21,
+      87,
+      84
+    ],
+    "input_sha256": "1a3369ca1e7f988f79d01aae2f4a1e88cce32d8f5bedc28468dcc6af08a9cd93",
+    "output_sha256": "11545b1d31756c56ce59daf963aab4d448a333b3c5e4b16e9834376cd5766615"
+  },
+  {
+    "id": "RoyalStandardBearer_Ability-a5068cfb53-1",
+    "side": "top",
+    "changed": 168,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      36,
+      7,
+      87,
+      84
+    ],
+    "input_sha256": "fe269e20d293ab6401e539039967b809bf0d671bec4df6a6032b8af8d12582f3",
+    "output_sha256": "007e04b8273d90458464a600359e135fcecb51490d357a90b88e448fc351ac6e"
+  },
+  {
+    "id": "RoyalStandardBearer_Ability-a5068cfb53-2",
+    "side": "top",
+    "changed": 122,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      41,
+      8,
+      83,
+      84
+    ],
+    "input_sha256": "6fa4797b7c03d3d6eb503ff683cf72b2740f6a9062eee3654db7da6017e51dab",
+    "output_sha256": "95fea8019c861a0b93e038ba6a7a157a755882589f84e3c7ad1cd8aee62946ef"
+  },
+  {
+    "id": "RoyalStandardBearer_Ability-a5068cfb53-3",
+    "side": "top",
+    "changed": 268,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      42,
+      1,
+      81,
+      84
+    ],
+    "input_sha256": "57a6b5ad8449ee5395fb0de017e509bb81f66d3db08d366a9bb24a4403761e14",
+    "output_sha256": "1c217caf79e02067d8d535c777b260f61ecfdac164f42b3d4acc5ee8dd970b55"
+  },
+  {
+    "id": "RoyalStandardBearer_Ability-a5068cfb53-4",
+    "side": "top",
+    "changed": 332,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      42,
+      4,
+      75,
+      84
+    ],
+    "input_sha256": "d41ae5555016a577024cca455db2c65b519c768828ad228bd904703e0064f2a8",
+    "output_sha256": "80d04279ad6b9736eaf89f8f6df2898cdb7ef8bcf70c1fea767251e03b805186"
+  },
+  {
+    "id": "RoyalSwordsman_AutoAttack-d46e01b0a3-2",
+    "side": "right",
+    "changed": 114,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      48,
+      45,
+      130,
+      100
+    ],
+    "input_sha256": "17df87a2aeab8f07c22222d66e729a1d2026fed3449f710a51b712ab466ebbc8",
+    "output_sha256": "82c5c62da7bf2a3c6e7eabb0d5ff183a7841158316e215d04769473a7f0b2c1d"
+  },
+  {
+    "id": "RoyalSwordsman_AutoAttack-d46e01b0a3-4",
+    "side": "left",
+    "changed": 103,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      10,
+      44,
+      113,
+      100
+    ],
+    "input_sha256": "c9bc88c858a1dc3e9cc2af8f5c71040fba26c4ff43035d680723290957284713",
+    "output_sha256": "b8ae53e5a6caa3bbe1418e760a98ce69ce3daebd25fb08afa0cee204b50797cb"
+  },
+  {
+    "id": "RoyalSwordsman_AutoAttack-d46e01b0a3-5",
+    "side": "left",
+    "changed": 46,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      18,
+      44,
+      95,
+      100
+    ],
+    "input_sha256": "d19aeec9027ffc319eaf67c803422503ced4738c111a69fec77950ae2f8fdefd",
+    "output_sha256": "7e739c3fe3fa6dd5ea955b44275ed0fff3a20885ce23dc49122ba55213bf21cc"
+  },
+  {
+    "id": "siege_machinist_AutoAttack-1ec136f4f4-2",
+    "side": "left",
+    "changed": 52,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      22,
+      52,
+      91,
+      100
+    ],
+    "input_sha256": "9f7400d58a8e9e27df04c33f94e4a6fd9f28629c98d6f05db51b4ea1451d6293",
+    "output_sha256": "5acab9d1a5329dbedc748b724161684979a6634c2210a52c731f32d35a88c82f"
+  },
+  {
+    "id": "siege_machinist_AutoAttack-1ec136f4f4-3",
+    "side": "left",
+    "changed": 19,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      51,
+      91,
+      100
+    ],
+    "input_sha256": "57ce50a1916b092aec7955b7f373523005dca505a170268a8ecf6da3b8d19aa8",
+    "output_sha256": "c161ab66de343aecdfc74f2ad18d107a6b89730cd46dffd0e74f61c0e052de93"
+  },
+  {
+    "id": "siege_machinist_PrimeAbility-52525b57eb-7",
+    "side": "left",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      20,
+      92,
+      100
+    ],
+    "input_sha256": "f52024fd5c12e6303d7fa6c945add6d0fadb9e46085bdc2b5bf8b4b7de902d64",
+    "output_sha256": "7fa5d9f07870605a0b91ab40be50f74ea19f88eb55997384453e06aa03298952"
+  },
+  {
+    "id": "SiegeSergeant_Ability-1bd3a79105-10",
+    "side": "left",
+    "changed": 27,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      20,
+      27,
+      88,
+      84
+    ],
+    "input_sha256": "bdc6ee246486fd24f64d61a41497197b1f7ef79a855c949e0213ec28d04dc582",
+    "output_sha256": "9137eae1c05e4d8c119619a4fc39cfa45f9fb999da5c3de6c65391a3696ce29d"
+  },
+  {
+    "id": "SiegeSergeant_Ability-1bd3a79105-11",
+    "side": "left",
+    "changed": 16,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      26,
+      88,
+      84
+    ],
+    "input_sha256": "933a5dc74e79c7bd6a2264b0e43277fcf6d10ca59fe8301f4fe5c4490ce55374",
+    "output_sha256": "c9ddcdfe36d24070bfa099ae4b772eb0002c3defadb9f40917de025e1b4b2afe"
+  },
+  {
+    "id": "SiegeSergeant_Ability-1bd3a79105-12",
+    "side": "left",
+    "changed": 5,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      23,
+      85,
+      84
+    ],
+    "input_sha256": "7b3f04f9d7a743a8b5faa7d616d4032dbce14125f5cce7cd67fa70e7991643e3",
+    "output_sha256": "4fed1c8fae12213b5db911f39f2537d0bf3b975d9fe4f55c11ba78ac43fc5dd1"
+  },
+  {
+    "id": "SiegeSergeant_Ability-1bd3a79105-5",
+    "side": "top",
+    "changed": 180,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      33,
+      11,
+      81,
+      84
+    ],
+    "input_sha256": "ea1e9c6f1277016a88fd631d1962ac74a68b75ed54200f736e70ec2adf13e4d9",
+    "output_sha256": "45058fa5232a9b15741cceca83ccf8047b24701a1b2c02fafd54c274ce6812b3"
+  },
+  {
+    "id": "SiegeSergeant_Ability-1bd3a79105-9",
+    "side": "left",
+    "changed": 55,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      17,
+      27,
+      88,
+      84
+    ],
+    "input_sha256": "ae1b04f17b6e4ae0d28e7214fa485f834ea10dd1e19fa9aa0316b71611b35baf",
+    "output_sha256": "174aa673aa39129413d6a39151409785c0df5ad54a7f55098f0dab8db421aeec"
+  },
+  {
+    "id": "stonewright_AutoAttack-a204d845ec-6",
+    "side": "left",
+    "changed": 11,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      31,
+      50,
+      94,
+      100
+    ],
+    "input_sha256": "31d296719e21b9a9609819a4d9095bdafa99c15b3bff6b11307ef6652b967775",
+    "output_sha256": "47599f70cca2e26889e33ee849f4954905f80355a11803e97cc0072f0c3463d6"
+  },
+  {
+    "id": "stonewright_OreChargedAutoAttack-ce29992bce-3",
+    "side": "left",
+    "changed": 49,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      20,
+      51,
+      94,
+      100
+    ],
+    "input_sha256": "0b28f2500b3e15edc03d55a0e23e59999aff2d4ad05ed881c0ebcf25582881ca",
+    "output_sha256": "779238aa2874bb04bf1dc10b5547e7562a8cbebb726f00d44c768d94117b547a"
+  },
+  {
+    "id": "stonewright_OreChargedAutoAttack-ce29992bce-4",
+    "side": "left",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      27,
+      51,
+      94,
+      100
+    ],
+    "input_sha256": "ffb2b3a74e03f9964521dce3e8e9f1839aed6ecd2e6f691662ecbdf920ebcd73",
+    "output_sha256": "d105c6902dd51f467ecd72f157c9b918d62aa9994e17e01cb0eea8fa9593758b"
+  },
+  {
+    "id": "stonewright_OreChargedAutoAttack-ce29992bce-5",
+    "side": "left",
+    "changed": 5,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      27,
+      51,
+      94,
+      100
+    ],
+    "input_sha256": "555166e0ede5c0789ab53534ac759e9f0d53eb8de5e00d80513bce0d3a6b32b3",
+    "output_sha256": "40d11626ebeccf5ccd3c4dc50e55cb7b729ebcaeb61356bb2ee7e8a285402be5"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-1",
+    "side": "right",
+    "changed": 14,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      30,
+      89,
+      84
+    ],
+    "input_sha256": "2f7ea391ae77a0c4bb1ed82f9c4df44a83f6c3cbdc7bafac996f99387659e12e",
+    "output_sha256": "ea6f1e95b0507f2d70df9010658f50133ab8096178b85f6250281c7c42d81e3f"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-10",
+    "side": "right",
+    "changed": 10,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      88,
+      84
+    ],
+    "input_sha256": "9276c1a9967d9b0833e914fc681a31f0441ff7114250da34d36b417341f96f68",
+    "output_sha256": "4a6d64df7dd550391f32555da1a15636c685ccb26feae4af06062fe9e6959b8f"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-11",
+    "side": "right",
+    "changed": 11,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      27,
+      31,
+      88,
+      84
+    ],
+    "input_sha256": "7405ce4c435f20458ddfe19514ca1a63a984b82511a9af3e3e7c45737c47d53a",
+    "output_sha256": "3177ab356264e29a391d41ed34bc8b6d79d63fcafcb4609ecd084589b8729bef"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-12",
+    "side": "right",
+    "changed": 33,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "ca0d6e4dcb10262cdfddaf3defc44f72863ae0b30defe2a513efe4b76861b709",
+    "output_sha256": "d5e034c560b3fd51e8923a3971013905f00b16dc80c91b2a2019b495d6d9ffc5"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-3",
+    "side": "left",
+    "changed": 1,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      23,
+      88,
+      84
+    ],
+    "input_sha256": "16b58d2eb797e2e1c031a5d69abc84061f9b6eb09bed0e99dd0ff6bf771fd4fe",
+    "output_sha256": "7c437f0346a2cd9ee13cbe3471807d7e583ea22293f01ade7d849c2eca9b38bd"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-4",
+    "side": "left",
+    "changed": 5,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      23,
+      88,
+      84
+    ],
+    "input_sha256": "b0d3d5d687f676195f19465a390e371a0116d89dc63cff6e6786079e4f2eaa79",
+    "output_sha256": "de209c0d9928c3de30ced69a3ec1825dbb56392983c0431c301e747d0b02602b"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-5",
+    "side": "right",
+    "changed": 23,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      28,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "1e7e8ff8c94e8ef28a1eaec2995491281f3742f47996bf8f68a060778cc900c8",
+    "output_sha256": "e861508a080b75e8e1d0388592065cecf0c075db474b662e56edda6649bb6eb0"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-6",
+    "side": "right",
+    "changed": 42,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      27,
+      30,
+      92,
+      84
+    ],
+    "input_sha256": "55915113dc151aa84911a5fd2240be304ea6e87b1aaca35581ec8663d3dd8c1c",
+    "output_sha256": "c3621b4296f42744b6238c77b15cff29d453168ee6aa92ba4cf13650fde25d5f"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-8",
+    "side": "left",
+    "changed": 53,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      20,
+      23,
+      88,
+      84
+    ],
+    "input_sha256": "7b4726ee2284169156079bc3beaabc4fa8d721a3f28cc29f4111d811f875218a",
+    "output_sha256": "a44e3a62aa643be804c17eadad1c201c8729e30e671c4d8a4d41f02670a6247d"
+  },
+  {
+    "id": "TownMarshal_Ability-085a8c6c66-9",
+    "side": "right",
+    "changed": 24,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      28,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "598caa24d2d3065b7b5f8d4dd64d38ba03b2024ebb1eaaf98981b33de7d069e8",
+    "output_sha256": "bb7d42eb5104abb785046fc7aa73db7cf86d70eabe327bc1c7389d34e902df81"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-1",
+    "side": "right",
+    "changed": 19,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "ba5937676de8a5b11df24484e85249582bae3ea391656400fbf56c8d8389bad2",
+    "output_sha256": "92e3956a4fb808298f7a3352d293aa774f21ef4f2c3a5dbc8dc797fa3757d7d7"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-2",
+    "side": "right",
+    "changed": 4,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "cf0089aa41b1e93746dc5c62080298f096f22511b5cb44fa048a70ec9e5dde70",
+    "output_sha256": "481c63c73152997d627e64c4e529086ee79f3c9e08031f49f0b78aa9ee3f5650"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-3",
+    "side": "right",
+    "changed": 18,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      25,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "68d21bcaccc86611324a2a96974c3ade1979c9a9725f8cf6a96e5eec37190550",
+    "output_sha256": "e5580fa2044712703d648ae0da314b531a3fc185b96546885d05ebe2af3ec5f8"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-5",
+    "side": "left",
+    "changed": 34,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      23,
+      31,
+      76,
+      84
+    ],
+    "input_sha256": "54785f4480cf31b45f2d4f8d2b5c1c4168740918e01e7eb5ed17b0698052d8de",
+    "output_sha256": "81b7bf6614eff0735fc4855ec6c441411f4bf2f72b1fa8da2e1f8daf1c006623"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-6",
+    "side": "left",
+    "changed": 13,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      31,
+      73,
+      84
+    ],
+    "input_sha256": "35a3f4d48f9589567f04b3641bbd01d8577c22ff64add4c69badfc003978f316",
+    "output_sha256": "398b4df221464679b022435c86be0a156574971625e9409385b57c1789dc597a"
+  },
+  {
+    "id": "TownMarshal_AutoAttack-f223f22917-9",
+    "side": "right",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "bf9c5f3cc4b0a54543b04713efb18acb7b4846994151cf098d51d51ff9b7f442",
+    "output_sha256": "52228f5640d01661331cda3302577b0ce6215573eef89c7cb1d428835a77f6db"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-0",
+    "side": "right",
+    "changed": 21,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "48837e17f248874b4e734a85e6bed9379a20be64da17e10f4ea824dd53e653ac",
+    "output_sha256": "756f2dcf53d7e63d4d8059fb00dbad38732c6d6c22a13fc73ec8e1689207dfba"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-1",
+    "side": "right",
+    "changed": 22,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      30,
+      89,
+      84
+    ],
+    "input_sha256": "e2b0713c7acbbeff290e802b1ceb385b0be24275f8b3c852dc65b2887a4900d0",
+    "output_sha256": "06e90662782b17a6c9c04daee3fc1f051bf7a8e7aca35ec68403c12193a55e6e"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-2",
+    "side": "right",
+    "changed": 22,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      31,
+      89,
+      84
+    ],
+    "input_sha256": "94c554120cfd99beb0d2b50149a5d69e3fa29dfabdf60e5de19ad37528793f29",
+    "output_sha256": "a7febcb8a8142d620fd5e6a13d42b6ec0044d2245edc6b028517f58a94b6aaea"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-3",
+    "side": "right",
+    "changed": 22,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      32,
+      89,
+      84
+    ],
+    "input_sha256": "6d89bfbb7572f08dd20c54e3ddacc56312a1a56807c6038c2bc3cf28fc32145f",
+    "output_sha256": "4f157040c13d3b7b4c4a45a6fff9e1a28838246d231a00d42c2eb733e6750ba3"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-6",
+    "side": "right",
+    "changed": 20,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      33,
+      89,
+      84
+    ],
+    "input_sha256": "e3595cee208ce94f05e8f245860259e6aed2c38ef155d393864ccf4bcd625010",
+    "output_sha256": "ee0e22c85634f3533aa76d84475c7c0222de63c9fc7dbd87726326806cfa9ab6"
+  },
+  {
+    "id": "TownMarshal_Idle-eba647d7ff-7",
+    "side": "right",
+    "changed": 11,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      26,
+      32,
+      88,
+      84
+    ],
+    "input_sha256": "576b837be4bf2907e153f5ad5c916bb090104a521fd644a15145133a8eb4addd",
+    "output_sha256": "adfbd1127463b05b81e34c178016a4ac6b1ef6b62eff389d9a23ebd930e06e09"
+  },
+  {
+    "id": "vein_surveyor_AutoAttack-f71d28f0da-4",
+    "side": "left",
+    "changed": 19,
+    "outside_mask": 0,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      24,
+      41,
+      89,
+      100
+    ],
+    "input_sha256": "b19c46c70307ffda4ddc3152a3bb9175380f8b1121720fa1385938df682fb85e",
+    "output_sha256": "3619ccede66781474a910a6b5e90bd3a87928f121c7edff792304dd268416756"
+  }
+]

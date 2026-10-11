@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 3f14520a1a404eb49a80c80e0118b2fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4363146186608377815
+    second: pearl_thief_AutoAttack_0
+  - first:
+      213: -4434683837175174466
+    second: pearl_thief_AutoAttack_1
+  - first:
+      213: 1374510501707287590
+    second: pearl_thief_AutoAttack_2
+  - first:
+      213: -7263997274244840145
+    second: pearl_thief_AutoAttack_3
+  - first:
+      213: -2485028198899019870
+    second: pearl_thief_AutoAttack_4
+  - first:
+      213: -475706508223493220
+    second: pearl_thief_AutoAttack_5
+  - first:
+      213: -8593152003443423465
+    second: pearl_thief_AutoAttack_6
+  - first:
+      213: 3519052662485685211
+    second: pearl_thief_AutoAttack_7
+  - first:
+      213: 8480977453829803678
+    second: pearl_thief_AutoAttack_8
+  - first:
+      213: -5249607590502969807
+    second: pearl_thief_AutoAttack_9
+  - first:
+      213: -6225660678417636772
+    second: pearl_thief_AutoAttack_00
+  - first:
+      213: 8503199724091990964
+    second: pearl_thief_AutoAttack_01
+  - first:
+      213: 3828751782681352099
+    second: pearl_thief_AutoAttack_02
+  - first:
+      213: 4017781759962991391
+    second: pearl_thief_AutoAttack_03
+  - first:
+      213: 1337817328543134478
+    second: pearl_thief_AutoAttack_04
+  - first:
+      213: 5291237852324618170
+    second: pearl_thief_AutoAttack_05
+  - first:
+      213: 6536425459366958574
+    second: pearl_thief_AutoAttack_06
+  - first:
+      213: 1754680477970284040
+    second: pearl_thief_AutoAttack_07
+  - first:
+      213: 9155884196342292489
+    second: pearl_thief_AutoAttack_08
+  - first:
+      213: -6225738861762037945
+    second: pearl_thief_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c52acc219920a99a0800000000000000
+      internalID: -6225660678417636772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3e3b0e81f610670800000000000000
+      internalID: 8503199724091990964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a79dd3f575722530800000000000000
+      internalID: 3828751782681352099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b43ab393702c730800000000000000
+      internalID: 4017781759962991391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03fc22b5c1e09210800000000000000
+      internalID: 1337817328543134478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abfd8e1eac04e6940800000000000000
+      internalID: 5291237852324618170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee51366e25c06ba50800000000000000
+      internalID: 6536425459366958574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e3bb71990e95810800000000000000
+      internalID: 1754680477970284040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9006897aa2c301f70800000000000000
+      internalID: 9155884196342292489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearl_thief_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74734589d7bb999a0800000000000000
+      internalID: -6225738861762037945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pearl_thief_AutoAttack_0: -4363146186608377815
+      pearl_thief_AutoAttack_00: -6225660678417636772
+      pearl_thief_AutoAttack_01: 8503199724091990964
+      pearl_thief_AutoAttack_02: 3828751782681352099
+      pearl_thief_AutoAttack_03: 4017781759962991391
+      pearl_thief_AutoAttack_04: 1337817328543134478
+      pearl_thief_AutoAttack_05: 5291237852324618170
+      pearl_thief_AutoAttack_06: 6536425459366958574
+      pearl_thief_AutoAttack_07: 1754680477970284040
+      pearl_thief_AutoAttack_08: 9155884196342292489
+      pearl_thief_AutoAttack_09: -6225738861762037945
+      pearl_thief_AutoAttack_1: -4434683837175174466
+      pearl_thief_AutoAttack_2: 1374510501707287590
+      pearl_thief_AutoAttack_3: -7263997274244840145
+      pearl_thief_AutoAttack_4: -2485028198899019870
+      pearl_thief_AutoAttack_5: -475706508223493220
+      pearl_thief_AutoAttack_6: -8593152003443423465
+      pearl_thief_AutoAttack_7: 3519052662485685211
+      pearl_thief_AutoAttack_8: 8480977453829803678
+      pearl_thief_AutoAttack_9: -5249607590502969807
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

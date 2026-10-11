@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 3ea25057e1ac4494fadc2501e592f29a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8387947832379210088
+    second: RoyalArchbishop_AutoAttack_0
+  - first:
+      213: 9036676242095099073
+    second: RoyalArchbishop_AutoAttack_1
+  - first:
+      213: -934016720848976634
+    second: RoyalArchbishop_AutoAttack_2
+  - first:
+      213: 4298318288632732817
+    second: RoyalArchbishop_AutoAttack_3
+  - first:
+      213: 372862295632047441
+    second: RoyalArchbishop_AutoAttack_4
+  - first:
+      213: -3936612716506788276
+    second: RoyalArchbishop_AutoAttack_5
+  - first:
+      213: 2670033626441677144
+    second: RoyalArchbishop_AutoAttack_6
+  - first:
+      213: 1331941689307309198
+    second: RoyalArchbishop_AutoAttack_7
+  - first:
+      213: 1729067776358271058
+    second: RoyalArchbishop_AutoAttack_8
+  - first:
+      213: -6985470940285862507
+    second: RoyalArchbishop_AutoAttack_00
+  - first:
+      213: -3199901156329111995
+    second: RoyalArchbishop_AutoAttack_01
+  - first:
+      213: -6432609667921376423
+    second: RoyalArchbishop_AutoAttack_02
+  - first:
+      213: 3961340549442479951
+    second: RoyalArchbishop_AutoAttack_03
+  - first:
+      213: -264829894304271200
+    second: RoyalArchbishop_AutoAttack_04
+  - first:
+      213: -7819526732686963063
+    second: RoyalArchbishop_AutoAttack_05
+  - first:
+      213: 1586167641654275435
+    second: RoyalArchbishop_AutoAttack_06
+  - first:
+      213: 6211006747112158948
+    second: RoyalArchbishop_AutoAttack_07
+  - first:
+      213: 1790561954076938178
+    second: RoyalArchbishop_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d727fb03f9e0f90800000000000000
+      internalID: -6985470940285862507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e34a42adaa793d0800000000000000
+      internalID: -3199901156329111995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b8dc4a697cab6a0800000000000000
+      internalID: -6432609667921376423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47aedbdd3289f630800000000000000
+      internalID: 3961340549442479951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4f6104d92235cf0800000000000000
+      internalID: -264829894304271200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ec582cdd57b7390800000000000000
+      internalID: -7819526732686963063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6da503f013330610800000000000000
+      internalID: 1586167641654275435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e6bc2baabde13650800000000000000
+      internalID: 6211006747112158948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalArchbishop_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cfc5154c9a59d810800000000000000
+      internalID: 1790561954076938178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RoyalArchbishop_AutoAttack_0: 8387947832379210088
+      RoyalArchbishop_AutoAttack_00: -6985470940285862507
+      RoyalArchbishop_AutoAttack_01: -3199901156329111995
+      RoyalArchbishop_AutoAttack_02: -6432609667921376423
+      RoyalArchbishop_AutoAttack_03: 3961340549442479951
+      RoyalArchbishop_AutoAttack_04: -264829894304271200
+      RoyalArchbishop_AutoAttack_05: -7819526732686963063
+      RoyalArchbishop_AutoAttack_06: 1586167641654275435
+      RoyalArchbishop_AutoAttack_07: 6211006747112158948
+      RoyalArchbishop_AutoAttack_08: 1790561954076938178
+      RoyalArchbishop_AutoAttack_1: 9036676242095099073
+      RoyalArchbishop_AutoAttack_2: -934016720848976634
+      RoyalArchbishop_AutoAttack_3: 4298318288632732817
+      RoyalArchbishop_AutoAttack_4: 372862295632047441
+      RoyalArchbishop_AutoAttack_5: -3936612716506788276
+      RoyalArchbishop_AutoAttack_6: 2670033626441677144
+      RoyalArchbishop_AutoAttack_7: 1331941689307309198
+      RoyalArchbishop_AutoAttack_8: 1729067776358271058
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

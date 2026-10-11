@@ -1,0 +1,45 @@
+{
+  "id": "siege_machinist_PrimeAbility-52525b57eb-7",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/siege_machinist_PrimeAbility-52525b57eb-7.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 70,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41968,
+    "description": "Tiny native pixel-art edge repair of the existing iron wrench head, completing the open jaw and outer contour. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State PrimeAbility."
+  },
+  "job": {
+    "background_job_id": "f9effa36-51fa-4bbe-baca-3ab1382c357c",
+    "image_id": "f408a38b-e3a9-55e9-b878-f94d9db36dc2",
+    "status": "processing",
+    "source_image_id": "f408a38b-e3a9-55e9-b878-f94d9db36dc2",
+    "job_id": "f9effa36-51fa-4bbe-baca-3ab1382c357c",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/f9effa36-51fa-4bbe-baca-3ab1382c357c/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/siege_machinist_PrimeAbility-52525b57eb-7-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/siege_machinist_PrimeAbility-52525b57eb-7-left-repair.png",
+  "completion": "status: completed\nid: f9effa36-51fa-4bbe-baca-3ab1382c357c\njob_id: f9effa36-51fa-4bbe-baca-3ab1382c357c\nframes: 1\ntransparent: yes\nasset_id: f408a38b-e3a9-55e9-b878-f94d9db36dc2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/f9effa36-51fa-4bbe-baca-3ab1382c357c/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/siege_machinist_PrimeAbility-52525b57eb-7.png",
+  "input_sha256": "f52024fd5c12e6303d7fa6c945add6d0fadb9e46085bdc2b5bf8b4b7de902d64",
+  "output_sha256": "7fa5d9f07870605a0b91ab40be50f74ea19f88eb55997384453e06aa03298952",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

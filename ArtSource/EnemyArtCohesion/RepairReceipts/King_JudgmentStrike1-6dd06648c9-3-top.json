@@ -1,0 +1,45 @@
+{
+  "id": "King_JudgmentStrike1-6dd06648c9-3",
+  "side": "top",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/King_JudgmentStrike1-6dd06648c9-3.png",
+  "parameters": {
+    "mask_x": 52,
+    "mask_y": 0,
+    "mask_width": 32,
+    "mask_height": 23,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41230,
+    "description": "Tiny native pixel-art edge repair of the existing sword tip or small gold command effect, completing only that cut contour. This animation pose was cropped at its old top canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: JudgmentStrike1. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "1f93e8c5-8937-4d45-a8af-8601c439401d",
+    "image_id": "4c927322-8ade-5914-9806-2c12209a7547",
+    "status": "processing",
+    "source_image_id": "4c927322-8ade-5914-9806-2c12209a7547",
+    "job_id": "1f93e8c5-8937-4d45-a8af-8601c439401d",
+    "image_size": {
+      "width": 144,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/1f93e8c5-8937-4d45-a8af-8601c439401d/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/King_JudgmentStrike1-6dd06648c9-3-top.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/King_JudgmentStrike1-6dd06648c9-3-top-repair.png",
+  "completion": "status: completed\nid: 1f93e8c5-8937-4d45-a8af-8601c439401d\njob_id: 1f93e8c5-8937-4d45-a8af-8601c439401d\nframes: 1\ntransparent: yes\nasset_id: 4c927322-8ade-5914-9806-2c12209a7547\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/1f93e8c5-8937-4d45-a8af-8601c439401d/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/King_JudgmentStrike1-6dd06648c9-3.png",
+  "input_sha256": "cd6b1d41b0f0f551dea73f9b2499cc44c7cf7f2938bf4b22b33a7e66ba3686d5",
+  "output_sha256": "e5f44d3216700c70e7cbbadd7bfe02a93e89709a85db80fbf5046593d4006e83",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

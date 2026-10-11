@@ -1,0 +1,45 @@
+{
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/conch_marshal_Death-e7b5c3974e-12-right.json",
+  "id": "conch_marshal_Death-e7b5c3974e-12",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/conch_marshal_Death-e7b5c3974e-12.png",
+  "parameters": {
+    "mask_x": 101,
+    "mask_y": 72,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41203,
+    "description": "Tiny native pixel-art edge repair of the red/cream fan fin or tail of the conch-playing fish. This animation pose was cropped at its old right canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Death. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "851be7cf-98ff-45fa-a4d5-b1144cf5e2a4",
+    "image_id": "74aece16-4ded-5e62-b2e3-27f1da0e77d2",
+    "status": "processing",
+    "source_image_id": "74aece16-4ded-5e62-b2e3-27f1da0e77d2",
+    "job_id": "851be7cf-98ff-45fa-a4d5-b1144cf5e2a4",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/851be7cf-98ff-45fa-a4d5-b1144cf5e2a4/download"
+  },
+  "status": "completed",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/conch_marshal_Death-e7b5c3974e-12-right-repair.png",
+  "completion": "status: completed\nid: 851be7cf-98ff-45fa-a4d5-b1144cf5e2a4\njob_id: 851be7cf-98ff-45fa-a4d5-b1144cf5e2a4\nframes: 1\ntransparent: yes\nasset_id: 74aece16-4ded-5e62-b2e3-27f1da0e77d2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/851be7cf-98ff-45fa-a4d5-b1144cf5e2a4/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/conch_marshal_Death-e7b5c3974e-12.png",
+  "input_sha256": "7480f9d7cb9e2c72cc8f52245c4d0bc03830bd8bc273eec53296c50f28b58d02",
+  "output_sha256": "b42874f82cf1e14c1da0523ec54cffaef37ad51f0fea62be2cb375fd6e30271d",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

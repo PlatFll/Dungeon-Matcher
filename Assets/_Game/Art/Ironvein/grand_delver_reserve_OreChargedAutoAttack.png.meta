@@ -82,7 +82,7 @@ TextureImporter:
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
-  maxTextureSize: 2048
+  maxTextureSize: 4096
   textureSettings:
     serializedVersion: 2
     filterMode: 0
@@ -97,8 +97,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0294117647}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -133,7 +133,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -146,7 +146,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -166,10 +166,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_01
       rect:
         serializedVersion: 2
-        x: 160
+        x: 208
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,12 +208,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_02
       rect:
         serializedVersion: 2
-        x: 320
+        x: 416
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_03
       rect:
         serializedVersion: 2
-        x: 480
+        x: 624
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_04
       rect:
         serializedVersion: 2
-        x: 640
+        x: 832
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_05
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1040
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_06
       rect:
         serializedVersion: 2
-        x: 960
+        x: 1248
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: grand_delver_reserve_OreChargedAutoAttack_07
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1456
         y: 0
-        width: 160
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 208
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

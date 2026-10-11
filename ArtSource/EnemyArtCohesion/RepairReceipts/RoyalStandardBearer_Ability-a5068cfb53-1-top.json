@@ -1,0 +1,45 @@
+{
+  "id": "RoyalStandardBearer_Ability-a5068cfb53-1",
+  "side": "top",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/RoyalStandardBearer_Ability-a5068cfb53-1.png",
+  "parameters": {
+    "mask_x": 34,
+    "mask_y": 0,
+    "mask_width": 32,
+    "mask_height": 23,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41559,
+    "description": "Tiny native pixel-art edge repair of the top of the existing banner/pole, retaining cloth shape and attached pole. This exact animation pose was cropped at its old top canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Ability."
+  },
+  "job": {
+    "background_job_id": "6949a4b4-b809-4266-b64c-c3d655072407",
+    "image_id": "509d62b5-34b1-5784-8d43-260299c93c08",
+    "status": "processing",
+    "source_image_id": "509d62b5-34b1-5784-8d43-260299c93c08",
+    "job_id": "6949a4b4-b809-4266-b64c-c3d655072407",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/6949a4b4-b809-4266-b64c-c3d655072407/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/RoyalStandardBearer_Ability-a5068cfb53-1-top.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/RoyalStandardBearer_Ability-a5068cfb53-1-top-repair.png",
+  "completion": "status: completed\nid: 6949a4b4-b809-4266-b64c-c3d655072407\njob_id: 6949a4b4-b809-4266-b64c-c3d655072407\nframes: 1\ntransparent: yes\nasset_id: 509d62b5-34b1-5784-8d43-260299c93c08\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/6949a4b4-b809-4266-b64c-c3d655072407/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/RoyalStandardBearer_Ability-a5068cfb53-1.png",
+  "input_sha256": "fe269e20d293ab6401e539039967b809bf0d671bec4df6a6032b8af8d12582f3",
+  "output_sha256": "007e04b8273d90458464a600359e135fcecb51490d357a90b88e448fc351ac6e",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Duplicates banner; restore only clipped steel finial natively."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

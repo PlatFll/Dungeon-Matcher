@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: dc5981476e24a0b45af95dba3743aeca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1910456532070366085
+    second: BarricadeGuard_Ability_0
+  - first:
+      213: -1037013495103819499
+    second: BarricadeGuard_Ability_1
+  - first:
+      213: -5417930194822373569
+    second: BarricadeGuard_Ability_2
+  - first:
+      213: -1608429274092304755
+    second: BarricadeGuard_Ability_3
+  - first:
+      213: -6161569121733519687
+    second: BarricadeGuard_Ability_4
+  - first:
+      213: -486698509163565356
+    second: BarricadeGuard_Ability_5
+  - first:
+      213: 1459084260672141248
+    second: BarricadeGuard_Ability_6
+  - first:
+      213: -6601221144390291619
+    second: BarricadeGuard_Ability_7
+  - first:
+      213: -8554883862420890504
+    second: BarricadeGuard_Ability_8
+  - first:
+      213: -9190294639099735023
+    second: BarricadeGuard_Ability_9
+  - first:
+      213: 1870218674322305289
+    second: BarricadeGuard_Ability_10
+  - first:
+      213: -7338648142555558697
+    second: BarricadeGuard_Ability_11
+  - first:
+      213: 794064305061455685
+    second: BarricadeGuard_Ability_12
+  - first:
+      213: -9017871032924035689
+    second: BarricadeGuard_Ability_00
+  - first:
+      213: 838372180954225588
+    second: BarricadeGuard_Ability_01
+  - first:
+      213: -6866827083296263624
+    second: BarricadeGuard_Ability_02
+  - first:
+      213: -1550383200985180243
+    second: BarricadeGuard_Ability_03
+  - first:
+      213: -1827168201233825265
+    second: BarricadeGuard_Ability_04
+  - first:
+      213: 3523170230173793072
+    second: BarricadeGuard_Ability_05
+  - first:
+      213: -4019684435750249829
+    second: BarricadeGuard_Ability_06
+  - first:
+      213: 5205507393091443284
+    second: BarricadeGuard_Ability_07
+  - first:
+      213: -8210192140364451152
+    second: BarricadeGuard_Ability_08
+  - first:
+      213: -3045767020120523030
+    second: BarricadeGuard_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795274403161ad280800000000000000
+      internalID: -9017871032924035689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb98538e0f72ab00800000000000000
+      internalID: 838372180954225588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8323816562124b0a0800000000000000
+      internalID: -6866827083296263624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da79b8761beeb7ae0800000000000000
+      internalID: -1550383200985180243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f028194a33894a6e0800000000000000
+      internalID: -1827168201233825265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b7db468a0d4e030800000000000000
+      internalID: 3523170230173793072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a90f98d463738c0800000000000000
+      internalID: -4019684435750249829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a92e0e46dad3840800000000000000
+      internalID: 5205507393091443284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b27fdf6fb98f0e80800000000000000
+      internalID: -8210192140364451152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeebd1948034bb5d0800000000000000
+      internalID: -3045767020120523030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9017847b9f954f910800000000000000
+      internalID: 1870218674322305289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc456b6562e72a90800000000000000
+      internalID: -7338648142555558697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarricadeGuard_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54761004745150b00800000000000000
+      internalID: 794064305061455685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BarricadeGuard_Ability_0: 1910456532070366085
+      BarricadeGuard_Ability_00: -9017871032924035689
+      BarricadeGuard_Ability_01: 838372180954225588
+      BarricadeGuard_Ability_02: -6866827083296263624
+      BarricadeGuard_Ability_03: -1550383200985180243
+      BarricadeGuard_Ability_04: -1827168201233825265
+      BarricadeGuard_Ability_05: 3523170230173793072
+      BarricadeGuard_Ability_06: -4019684435750249829
+      BarricadeGuard_Ability_07: 5205507393091443284
+      BarricadeGuard_Ability_08: -8210192140364451152
+      BarricadeGuard_Ability_09: -3045767020120523030
+      BarricadeGuard_Ability_1: -1037013495103819499
+      BarricadeGuard_Ability_10: 1870218674322305289
+      BarricadeGuard_Ability_11: -7338648142555558697
+      BarricadeGuard_Ability_12: 794064305061455685
+      BarricadeGuard_Ability_2: -5417930194822373569
+      BarricadeGuard_Ability_3: -1608429274092304755
+      BarricadeGuard_Ability_4: -6161569121733519687
+      BarricadeGuard_Ability_5: -486698509163565356
+      BarricadeGuard_Ability_6: 1459084260672141248
+      BarricadeGuard_Ability_7: -6601221144390291619
+      BarricadeGuard_Ability_8: -8554883862420890504
+      BarricadeGuard_Ability_9: -9190294639099735023
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

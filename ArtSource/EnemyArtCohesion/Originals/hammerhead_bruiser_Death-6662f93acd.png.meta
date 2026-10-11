@@ -1,0 +1,512 @@
+fileFormatVersion: 2
+guid: f322a27bcb4f3364fa55b3a454f5da60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5290632221467959875
+    second: hammerhead_bruiser_Death_0
+  - first:
+      213: 7017457054290718105
+    second: hammerhead_bruiser_Death_1
+  - first:
+      213: -2749551657340049004
+    second: hammerhead_bruiser_Death_2
+  - first:
+      213: 243428183736265901
+    second: hammerhead_bruiser_Death_3
+  - first:
+      213: -2206202210008663274
+    second: hammerhead_bruiser_Death_4
+  - first:
+      213: 1882400994277603791
+    second: hammerhead_bruiser_Death_5
+  - first:
+      213: 1114814510065471629
+    second: hammerhead_bruiser_Death_6
+  - first:
+      213: -873755179190560906
+    second: hammerhead_bruiser_Death_7
+  - first:
+      213: -6012537452871360262
+    second: hammerhead_bruiser_Death_8
+  - first:
+      213: -5109176508145166051
+    second: hammerhead_bruiser_Death_9
+  - first:
+      213: -8804634742487120469
+    second: hammerhead_bruiser_Death_10
+  - first:
+      213: -2958632810383103754
+    second: hammerhead_bruiser_Death_11
+  - first:
+      213: 5145144548902262327
+    second: hammerhead_bruiser_Death_12
+  - first:
+      213: -2298165714256263982
+    second: hammerhead_bruiser_Death_13
+  - first:
+      213: -1071359958864756272
+    second: hammerhead_bruiser_Death_00
+  - first:
+      213: 5185702615091498865
+    second: hammerhead_bruiser_Death_01
+  - first:
+      213: 178386539737325808
+    second: hammerhead_bruiser_Death_02
+  - first:
+      213: -3216732888324453913
+    second: hammerhead_bruiser_Death_03
+  - first:
+      213: 3706661165831447327
+    second: hammerhead_bruiser_Death_04
+  - first:
+      213: -210062189193845306
+    second: hammerhead_bruiser_Death_05
+  - first:
+      213: -1562804656414547188
+    second: hammerhead_bruiser_Death_06
+  - first:
+      213: 7048513838796744702
+    second: hammerhead_bruiser_Death_07
+  - first:
+      213: 8386854090666481271
+    second: hammerhead_bruiser_Death_08
+  - first:
+      213: 1705165974928284068
+    second: hammerhead_bruiser_Death_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d10a413bc3c121f0800000000000000
+      internalID: -1071359958864756272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fc75bad0157f740800000000000000
+      internalID: 5185702615091498865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f021cddc91c97200800000000000000
+      internalID: 178386539737325808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9ca162b7edb53d0800000000000000
+      internalID: -3216732888324453913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f136e1c01b4b07330800000000000000
+      internalID: 3706661165831447327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c52c584d85b51df0800000000000000
+      internalID: -210062189193845306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03a511f17dcf4ae0800000000000000
+      internalID: -1562804656414547188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7a7e3edf951d160800000000000000
+      internalID: 7048513838796744702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77615392c57146470800000000000000
+      internalID: 8386854090666481271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9deaa7b67f9a710800000000000000
+      internalID: 1705165974928284068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba50ef4c957afc580800000000000000
+      internalID: -8804634742487120469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8ac4c6223d0f6d0800000000000000
+      internalID: -2958632810383103754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_Death_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7365b5305b9376740800000000000000
+      internalID: 5145144548902262327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hammerhead_bruiser_Death_0: 5290632221467959875
+      hammerhead_bruiser_Death_00: -1071359958864756272
+      hammerhead_bruiser_Death_01: 5185702615091498865
+      hammerhead_bruiser_Death_02: 178386539737325808
+      hammerhead_bruiser_Death_03: -3216732888324453913
+      hammerhead_bruiser_Death_04: 3706661165831447327
+      hammerhead_bruiser_Death_05: -210062189193845306
+      hammerhead_bruiser_Death_06: -1562804656414547188
+      hammerhead_bruiser_Death_07: 7048513838796744702
+      hammerhead_bruiser_Death_08: 8386854090666481271
+      hammerhead_bruiser_Death_09: 1705165974928284068
+      hammerhead_bruiser_Death_1: 7017457054290718105
+      hammerhead_bruiser_Death_10: -8804634742487120469
+      hammerhead_bruiser_Death_11: -2958632810383103754
+      hammerhead_bruiser_Death_12: 5145144548902262327
+      hammerhead_bruiser_Death_13: -2298165714256263982
+      hammerhead_bruiser_Death_2: -2749551657340049004
+      hammerhead_bruiser_Death_3: 243428183736265901
+      hammerhead_bruiser_Death_4: -2206202210008663274
+      hammerhead_bruiser_Death_5: 1882400994277603791
+      hammerhead_bruiser_Death_6: 1114814510065471629
+      hammerhead_bruiser_Death_7: -873755179190560906
+      hammerhead_bruiser_Death_8: -6012537452871360262
+      hammerhead_bruiser_Death_9: -5109176508145166051
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,45 @@
+{
+  "id": "stonewright_OreChargedAutoAttack-ce29992bce-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/stonewright_OreChargedAutoAttack-ce29992bce-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 72,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 42007,
+    "description": "Tiny native pixel-art edge repair of the existing hammer head or small effect fragment. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State OreChargedAutoAttack."
+  },
+  "job": {
+    "background_job_id": "d8e0c503-144a-4afc-ace5-8bd9bc2f3a94",
+    "image_id": "1d2685fd-ed78-5cda-bd21-18427cad64ff",
+    "status": "processing",
+    "source_image_id": "1d2685fd-ed78-5cda-bd21-18427cad64ff",
+    "job_id": "d8e0c503-144a-4afc-ace5-8bd9bc2f3a94",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/d8e0c503-144a-4afc-ace5-8bd9bc2f3a94/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/stonewright_OreChargedAutoAttack-ce29992bce-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/stonewright_OreChargedAutoAttack-ce29992bce-4-left-repair.png",
+  "completion": "status: completed\nid: d8e0c503-144a-4afc-ace5-8bd9bc2f3a94\njob_id: d8e0c503-144a-4afc-ace5-8bd9bc2f3a94\nframes: 1\ntransparent: yes\nasset_id: 1d2685fd-ed78-5cda-bd21-18427cad64ff\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/d8e0c503-144a-4afc-ace5-8bd9bc2f3a94/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/stonewright_OreChargedAutoAttack-ce29992bce-4.png",
+  "input_sha256": "ffb2b3a74e03f9964521dce3e8e9f1839aed6ecd2e6f691662ecbdf920ebcd73",
+  "output_sha256": "d105c6902dd51f467ecd72f157c9b918d62aa9994e17e01cb0eea8fa9593758b",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

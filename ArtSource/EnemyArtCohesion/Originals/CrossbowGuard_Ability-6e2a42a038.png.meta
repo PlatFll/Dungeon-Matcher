@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: e4d13f2185bb1cd48a73ceb15031bcd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2458080618955281198
+    second: CrossbowGuard_Ability_0
+  - first:
+      213: -7924850369979920221
+    second: CrossbowGuard_Ability_1
+  - first:
+      213: 5820521349874683850
+    second: CrossbowGuard_Ability_2
+  - first:
+      213: -2582008418737680527
+    second: CrossbowGuard_Ability_3
+  - first:
+      213: 6053610887276339593
+    second: CrossbowGuard_Ability_4
+  - first:
+      213: -2681181405110651855
+    second: CrossbowGuard_Ability_5
+  - first:
+      213: 8042259118586910817
+    second: CrossbowGuard_Ability_6
+  - first:
+      213: -2623223156942778210
+    second: CrossbowGuard_Ability_7
+  - first:
+      213: 7742355331884563780
+    second: CrossbowGuard_Ability_8
+  - first:
+      213: -1072857149963648066
+    second: CrossbowGuard_Ability_9
+  - first:
+      213: -9071106143542255220
+    second: CrossbowGuard_Ability_10
+  - first:
+      213: -5178616077888098508
+    second: CrossbowGuard_Ability_11
+  - first:
+      213: -2176427483617353509
+    second: CrossbowGuard_Ability_12
+  - first:
+      213: -7374220955850958455
+    second: CrossbowGuard_Ability_13
+  - first:
+      213: 5753981407480949910
+    second: CrossbowGuard_Ability_14
+  - first:
+      213: 713098065318029006
+    second: CrossbowGuard_Ability_00
+  - first:
+      213: -5212755510200819342
+    second: CrossbowGuard_Ability_01
+  - first:
+      213: 9181253400601255810
+    second: CrossbowGuard_Ability_02
+  - first:
+      213: 3329120025835421793
+    second: CrossbowGuard_Ability_03
+  - first:
+      213: 296355700070272685
+    second: CrossbowGuard_Ability_04
+  - first:
+      213: 3703021640336524056
+    second: CrossbowGuard_Ability_05
+  - first:
+      213: 140332769278349305
+    second: CrossbowGuard_Ability_06
+  - first:
+      213: -5465673117992241638
+    second: CrossbowGuard_Ability_07
+  - first:
+      213: -7317163698109416339
+    second: CrossbowGuard_Ability_08
+  - first:
+      213: 6693437049132612096
+    second: CrossbowGuard_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6ac4989ee65e900800000000000000
+      internalID: 713098065318029006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27125895b7298a7b0800000000000000
+      internalID: -5212755510200819342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f5fafc25d5a6f70800000000000000
+      internalID: 9181253400601255810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1604f8a6609633e20800000000000000
+      internalID: 3329120025835421793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daec9d560fddc1400800000000000000
+      internalID: 296355700070272685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813c7dbff86c36330800000000000000
+      internalID: 3703021640336524056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffce2ff8ef82f100800000000000000
+      internalID: 140332769278349305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16bbafe1470624b0800000000000000
+      internalID: -5465673117992241638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cfdc27266347a90800000000000000
+      internalID: -7317163698109416339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00afcf7688dd3ec50800000000000000
+      internalID: 6693437049132612096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81ec42f505fc1280800000000000000
+      internalID: -9071106143542255220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f6a595d1cd128b0800000000000000
+      internalID: -5178616077888098508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0279f1cb6cbc1e0800000000000000
+      internalID: -2176427483617353509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98913476c1189a990800000000000000
+      internalID: -7374220955850958455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossbowGuard_Ability_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69caa1daa9f3adf40800000000000000
+      internalID: 5753981407480949910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CrossbowGuard_Ability_0: -2458080618955281198
+      CrossbowGuard_Ability_00: 713098065318029006
+      CrossbowGuard_Ability_01: -5212755510200819342
+      CrossbowGuard_Ability_02: 9181253400601255810
+      CrossbowGuard_Ability_03: 3329120025835421793
+      CrossbowGuard_Ability_04: 296355700070272685
+      CrossbowGuard_Ability_05: 3703021640336524056
+      CrossbowGuard_Ability_06: 140332769278349305
+      CrossbowGuard_Ability_07: -5465673117992241638
+      CrossbowGuard_Ability_08: -7317163698109416339
+      CrossbowGuard_Ability_09: 6693437049132612096
+      CrossbowGuard_Ability_1: -7924850369979920221
+      CrossbowGuard_Ability_10: -9071106143542255220
+      CrossbowGuard_Ability_11: -5178616077888098508
+      CrossbowGuard_Ability_12: -2176427483617353509
+      CrossbowGuard_Ability_13: -7374220955850958455
+      CrossbowGuard_Ability_14: 5753981407480949910
+      CrossbowGuard_Ability_2: 5820521349874683850
+      CrossbowGuard_Ability_3: -2582008418737680527
+      CrossbowGuard_Ability_4: 6053610887276339593
+      CrossbowGuard_Ability_5: -2681181405110651855
+      CrossbowGuard_Ability_6: 8042259118586910817
+      CrossbowGuard_Ability_7: -2623223156942778210
+      CrossbowGuard_Ability_8: 7742355331884563780
+      CrossbowGuard_Ability_9: -1072857149963648066
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

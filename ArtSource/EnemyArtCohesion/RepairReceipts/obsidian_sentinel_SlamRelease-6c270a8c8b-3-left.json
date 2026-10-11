@@ -1,0 +1,45 @@
+{
+  "id": "obsidian_sentinel_SlamRelease-6c270a8c8b-3",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/obsidian_sentinel_SlamRelease-6c270a8c8b-3.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 104,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41863,
+    "description": "Tiny native pixel-art edge repair of the existing stone fist/forearm or compact slam dust at the cut boundary. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State SlamRelease."
+  },
+  "job": {
+    "background_job_id": "2faf2629-85a2-44c4-8293-a3080032e19b",
+    "image_id": "2ecfa2ba-bb02-5c08-8cd4-af750f42298f",
+    "status": "processing",
+    "source_image_id": "2ecfa2ba-bb02-5c08-8cd4-af750f42298f",
+    "job_id": "2faf2629-85a2-44c4-8293-a3080032e19b",
+    "image_size": {
+      "width": 160,
+      "height": 136
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/2faf2629-85a2-44c4-8293-a3080032e19b/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/obsidian_sentinel_SlamRelease-6c270a8c8b-3-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/obsidian_sentinel_SlamRelease-6c270a8c8b-3-left-repair.png",
+  "completion": "status: completed\nid: 2faf2629-85a2-44c4-8293-a3080032e19b\njob_id: 2faf2629-85a2-44c4-8293-a3080032e19b\nframes: 1\ntransparent: yes\nasset_id: 2ecfa2ba-bb02-5c08-8cd4-af750f42298f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/2faf2629-85a2-44c4-8293-a3080032e19b/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/obsidian_sentinel_SlamRelease-6c270a8c8b-3.png",
+  "input_sha256": "9eca7ef0c93b70b1429aa4e5fd5103f6d5dc8225a7cc4dd8b1b21b0273608b71",
+  "output_sha256": "768def89a21e0d7717c1e9d1c546a3b23d4b0b86f7953b16d9e7516bf0db6ddb",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}
