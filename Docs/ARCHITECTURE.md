@@ -36,9 +36,23 @@ both. A photo keeps present-day ice on surviving identities; solved ice and
 response deadlines do not rewind. Zone arrival clears ice and emergency
 reshuffling releases it. Optional overlay art never owns ice state or timing.
 
+`FrostwakeEnemyAbility` owns only the new rime-placement and mountain-strike
+decisions. It submits to the same board encasement and `GemSetThreat` queue;
+clear/conversion interrupts all marks and central player damage resolves once.
+The Troll's alternating armor/strike state and armed shield-break response are
+saved separately from the board-owned warning identities. Shared ShieldingAllies,
+WarRhythm, ChannelHeal and player-status runtimes own the other mountain kits.
+Optional `ForestEnemyMotion` clips observe those owners; missing clips retain
+bounded completion and cannot leave Haldra's action lock held.
+
+Frostwake reuses `MineEncounterSelector` for weighted teaching windows, role
+caps, once-per-visit leaders and post-leader relief. Its historical
+`mineEncounters` save field is per-zone-visit state and resets on travel; it is
+not a second wave-spawning system. `WaveController` remains the spawn owner.
+
 ## Unified move-combat authority (2026-10-08)
 
-New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.

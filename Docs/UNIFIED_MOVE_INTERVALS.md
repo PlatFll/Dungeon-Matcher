@@ -66,3 +66,14 @@ New-profile first/repeat intervals are equal. Legacy serialized move/second valu
 | siege_machinist | 3 | 5 | 4 |
 | stonewright | 3 | 4 | 4 |
 | vein_surveyor | 3 | 5 | 4 |
+| iceborn_raider | 4 | 4 | — |
+| harpoon_hunter | 4 | 4 | 4 |
+| frostfang_wolf | 2 | 2 | — |
+| rimecarver | 5 | 5 | 5 |
+| shieldmaiden | 5 | 5 | 6 |
+| rime_skald | 5 | 5 | 5 |
+| hearthkeeper | 5 | 5 | 5 |
+| frostblade_reaver | 4 | 4 | 5 |
+| glacier_troll | 6 | 6 | 5 |
+| iceborn_champion | 5 | 5 | 5 |
+| jarl_haldra | 5 | 5 | 5 |

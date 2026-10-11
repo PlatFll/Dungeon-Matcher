@@ -9,6 +9,9 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     private RunSession run;
     private int environmentVariant = -1;
     private ZoneTestEncounter pendingMineEncounter;
+    // Both zones use the established data-authored teaching/relief selector and
+    // its existing per-visit save field; spawning remains in WaveController.
+    private bool UsesTeachingEncounters => Definition.maturesStone || Definition.frostwakeRules!=null;
     public void Initialize(RunSession owner,string zoneId)
     {
         run=owner;
@@ -32,7 +35,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
     }
     private void EncounterScenery(int wave)
     {
-        if(Definition.maturesStone && run.Travel?.State.enabled==true && pendingMineEncounter!=null)
+        if(UsesTeachingEncounters && run.Travel?.State.enabled==true && pendingMineEncounter!=null)
         {
             MineEncounterSelector.Record(run.Travel.State.mineEncounters ??= new MineEncounterProgress(),
                 pendingMineEncounter,run.Waves.OriginalEncounterDefinitions,run.Travel.LocalWave,wave);
@@ -40,7 +43,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
         }
         if (Definition?.theme == null) return;
         int local = run.Travel?.LocalWave ?? wave;
-        int variant = Definition.maturesStone ? (local >= 20 ? 2 : local >= 10 ? 1 : 0) :
+        int variant = UsesTeachingEncounters ? (local >= 20 ? 2 : local >= 10 ? 1 : 0) :
             Definition.periodicallyFloods ? (local >= 16 ? 2 : local >= 8 ? 1 : 0) : 0;
         if (environmentVariant == variant) return;
         environmentVariant = variant;
@@ -58,7 +61,7 @@ public sealed class ZoneRuntimeContext : MonoBehaviour
         // Preserve the existing opening kingdom progression through its first King.
         if(Definition.zoneId=="dungeon" && run.Travel.State.visit==0) return null;
         int local=run.Travel.LocalWave;
-        if(Definition.maturesStone && Definition.encounterBudget!=null)
+        if(UsesTeachingEncounters && Definition.encounterBudget!=null)
             return pendingMineEncounter=MineEncounterSelector.Select(Definition,
                 run.Travel.State.mineEncounters ??= new MineEncounterProgress(),local,random);
         var choices=new System.Collections.Generic.List<ZoneTestEncounter>();

@@ -1,0 +1,2474 @@
+[
+  {
+    "name": "frostblade_reaver",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostblade_reaver\\Idle\\palette\\00.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\01.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\02.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\03.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\04.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\03.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\02.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\01.png",
+      "motion\\frostblade_reaver\\Idle\\palette\\00.png"
+    ],
+    "sha256": "c63593547529712b8ccf50f58156bdf6a52228a5eb36ff5c90c2e0826d27d1cd",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostblade_reaver",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      120,
+      50,
+      50,
+      60,
+      80
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\00.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\01.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\02.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\03.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\04.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\05.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\06.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\07.png",
+      "motion\\frostblade_reaver\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "658b6001a41e339c689d1e1c7d1c88979b154e8d87c2b2f0fa4164966da782b1",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostblade_reaver",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostblade_reaver\\Hit\\palette\\00.png",
+      "motion\\frostblade_reaver\\Hit\\palette\\01.png",
+      "motion\\frostblade_reaver\\Hit\\palette\\02.png",
+      "motion\\frostblade_reaver\\Hit\\palette\\03.png",
+      "motion\\frostblade_reaver\\Hit\\palette\\04.png"
+    ],
+    "sha256": "e1988c5fb89dc1a7aa0c79124430ccd9e8999f6d11a5ffc042a507b99efeca86",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostblade_reaver",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostblade_reaver\\Death\\palette\\00.png",
+      "motion\\frostblade_reaver\\Death\\palette\\01.png",
+      "motion\\frostblade_reaver\\Death\\palette\\02.png",
+      "motion\\frostblade_reaver\\Death\\palette\\03.png",
+      "motion\\frostblade_reaver\\Death\\palette\\04.png",
+      "motion\\frostblade_reaver\\Death\\palette\\05.png",
+      "motion\\frostblade_reaver\\Death\\palette\\06.png",
+      "motion\\frostblade_reaver\\Death\\palette\\07.png",
+      "motion\\frostblade_reaver\\Death\\palette\\08.png"
+    ],
+    "sha256": "df3da7832ef2ced7660004143fdf526bb9c0c3a26e4ce5b4ada76009a6dc5014",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostblade_reaver",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostblade_reaver\\Ability\\palette\\00.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\01.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\02.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\03.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\04.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\05.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\06.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\07.png",
+      "motion\\frostblade_reaver\\Ability\\palette\\08.png"
+    ],
+    "sha256": "0c0c6fd0ae39fa628523a477a512277c31a564a78c2bcd24e4c5733c3350d2fa",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostfang_wolf",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostfang_wolf\\Idle\\palette\\00.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\01.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\02.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\03.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\04.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\03.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\02.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\01.png",
+      "motion\\frostfang_wolf\\Idle\\palette\\00.png"
+    ],
+    "sha256": "6a448035dee4ac6e32e33c90fd51dd34d621dd96694bfea5ba407e6ddf6737a8",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostfang_wolf",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\00.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\01.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\02.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\03.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\04.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\05.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\06.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\07.png",
+      "motion\\frostfang_wolf\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "53ebdd799bf79ad66bfcbe9b7034ae1ce58beaf98f20df06e07a6097da41c1dd",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostfang_wolf",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostfang_wolf\\Hit\\palette\\00.png",
+      "motion\\frostfang_wolf\\Hit\\palette\\01.png",
+      "motion\\frostfang_wolf\\Hit\\palette\\02.png",
+      "motion\\frostfang_wolf\\Hit\\palette\\03.png",
+      "motion\\frostfang_wolf\\Hit\\palette\\04.png"
+    ],
+    "sha256": "e5e1b21dd34e43b55b5cbf8a0d0856b17044be93bccbc14623e9e153c0a1e817",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "frostfang_wolf",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\frostfang_wolf\\Death\\palette\\00.png",
+      "motion\\frostfang_wolf\\Death\\palette\\01.png",
+      "motion\\frostfang_wolf\\Death\\palette\\02.png",
+      "motion\\frostfang_wolf\\Death\\palette\\03.png",
+      "motion\\frostfang_wolf\\Death\\palette\\04.png",
+      "motion\\frostfang_wolf\\Death\\palette\\05.png",
+      "motion\\frostfang_wolf\\Death\\palette\\06.png",
+      "motion\\frostfang_wolf\\Death\\palette\\07.png",
+      "motion\\frostfang_wolf\\Death\\palette\\08.png"
+    ],
+    "sha256": "dedf846606d650b9e097ee6e6ddb92baf69cfc9ed339d2a91b40131d7fdc8f3b",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\Idle\\palette\\00.png",
+      "motion\\glacier_troll\\Idle\\palette\\01.png",
+      "motion\\glacier_troll\\Idle\\palette\\02.png",
+      "motion\\glacier_troll\\Idle\\palette\\03.png",
+      "motion\\glacier_troll\\Idle\\palette\\04.png",
+      "motion\\glacier_troll\\Idle\\palette\\03.png",
+      "motion\\glacier_troll\\Idle\\palette\\02.png",
+      "motion\\glacier_troll\\Idle\\palette\\01.png",
+      "motion\\glacier_troll\\Idle\\palette\\00.png"
+    ],
+    "sha256": "2158cc8b93544cea8a06d2a34e3b81e52fb8fbf511c2a978885fcd8120436880",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      72,
+      72,
+      72,
+      72,
+      72
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\glacier_troll\\AutoAttack\\palette\\00.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\01.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\02.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\03.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\04.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\05.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\06.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\07.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "31f51b4c27d3db95f440b4acc0ff1065161c12342172c99fe2e43af6939842df",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\Hit\\palette\\00.png",
+      "motion\\glacier_troll\\Hit\\palette\\01.png",
+      "motion\\glacier_troll\\Hit\\palette\\02.png",
+      "motion\\glacier_troll\\Hit\\palette\\03.png",
+      "motion\\glacier_troll\\Hit\\palette\\04.png"
+    ],
+    "sha256": "c4fdce41d0da4092f8a100d035b109998a493fbdcd98f7cc7c78d8c61eb796ea",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\Death\\palette\\00.png",
+      "motion\\glacier_troll\\Death\\palette\\01.png",
+      "motion\\glacier_troll\\Death\\palette\\02.png",
+      "motion\\glacier_troll\\Death\\palette\\03.png",
+      "motion\\glacier_troll\\Death\\palette\\04.png",
+      "motion\\glacier_troll\\Death\\palette\\05.png",
+      "motion\\glacier_troll\\Death\\palette\\06.png",
+      "motion\\glacier_troll\\Death\\palette\\07.png",
+      "motion\\glacier_troll\\Death\\palette\\08.png"
+    ],
+    "sha256": "ab938d47d333fc067c462a465b69ab527b8d49b57ce9b581a4cf9e89a5abecc2",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\Ability\\palette\\00.png",
+      "motion\\glacier_troll\\Ability\\palette\\01.png",
+      "motion\\glacier_troll\\Ability\\palette\\02.png",
+      "motion\\glacier_troll\\Ability\\palette\\03.png",
+      "motion\\glacier_troll\\Ability\\palette\\04.png",
+      "motion\\glacier_troll\\Ability\\palette\\05.png",
+      "motion\\glacier_troll\\Ability\\palette\\06.png",
+      "motion\\glacier_troll\\Ability\\palette\\07.png",
+      "motion\\glacier_troll\\Ability\\palette\\08.png"
+    ],
+    "sha256": "fc26905becc58f17413e6e768129b62ab8d08a065e4cca17b07a845e3aa02d05",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "ChannelStart",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 3,
+    "durationsMs": [
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\AutoAttack\\palette\\00.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\01.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\02.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\03.png"
+    ],
+    "sha256": "3db1b2d501e44069a8548f6dbaaae9721a1fcd4a7bedb0b546605f305dde7c29",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "ChannelHold",
+    "width": 128,
+    "height": 104,
+    "frameCount": 1,
+    "impactFrame": 0,
+    "durationsMs": [
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\AutoAttack\\palette\\03.png"
+    ],
+    "sha256": "0d79ed8086392872bfc28ce7a24c9ecb7defbb0daa3d205700fe0eb5dc0d6e72",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Interrupt",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 0,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\AutoAttack\\palette\\03.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\02.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\01.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\00.png"
+    ],
+    "sha256": "2044dd66b9d7d3902e3199621573417dbf541decd5afa0213053ff7443e7f00a",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "glacier_troll",
+    "state": "Release",
+    "width": 128,
+    "height": 104,
+    "frameCount": 6,
+    "impactFrame": 1,
+    "durationsMs": [
+      220,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\glacier_troll\\AutoAttack\\palette\\03.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\04.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\05.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\06.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\07.png",
+      "motion\\glacier_troll\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "cf54fd39f580312f0af92c86854c211c2f82ebc46c85a7fba488654db2b74a64",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\Idle\\palette\\00.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\01.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\02.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\03.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\04.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\03.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\02.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\01.png",
+      "motion\\harpoon_hunter\\Idle\\palette\\00.png"
+    ],
+    "sha256": "351261526473b076b006173430d089215ad792245882f1cecb992b3137c7e6fc",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\00.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\01.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\02.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\03.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\04.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\05.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\06.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\07.png",
+      "motion\\harpoon_hunter\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "6f9697247f50a1e2392ac60b25388bec03ffeeb5a60c83fc7122aa5072abd20b",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\Hit\\palette\\00.png",
+      "motion\\harpoon_hunter\\Hit\\palette\\01.png",
+      "motion\\harpoon_hunter\\Hit\\palette\\02.png",
+      "motion\\harpoon_hunter\\Hit\\palette\\03.png",
+      "motion\\harpoon_hunter\\Hit\\palette\\04.png"
+    ],
+    "sha256": "201908640bb454a2565de52dedd26ed8732266a53f851497d450bfa8f7ac9e7c",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\Death\\palette\\00.png",
+      "motion\\harpoon_hunter\\Death\\palette\\01.png",
+      "motion\\harpoon_hunter\\Death\\palette\\02.png",
+      "motion\\harpoon_hunter\\Death\\palette\\03.png",
+      "motion\\harpoon_hunter\\Death\\palette\\04.png",
+      "motion\\harpoon_hunter\\Death\\palette\\05.png",
+      "motion\\harpoon_hunter\\Death\\palette\\06.png",
+      "motion\\harpoon_hunter\\Death\\palette\\07.png",
+      "motion\\harpoon_hunter\\Death\\palette\\08.png"
+    ],
+    "sha256": "f590ce7c8211348349aba8c486b26f03e2d602efc1caf638d0d918302b83cba2",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "ChannelStart",
+    "width": 128,
+    "height": 104,
+    "frameCount": 3,
+    "impactFrame": 2,
+    "durationsMs": [
+      80,
+      80,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\00.png",
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\01.png",
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\02.png"
+    ],
+    "sha256": "86fc5e95c3c1c25dab99e6f1b6ba273968441066d247868fd8f828e91534e5e5",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "ChannelHold",
+    "width": 128,
+    "height": 104,
+    "frameCount": 1,
+    "impactFrame": 0,
+    "durationsMs": [
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\02.png"
+    ],
+    "sha256": "ac892d954a9428b2c73918075e54a3f975b491f9eb41fa0d47be150f622dba72",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "Interrupt",
+    "width": 128,
+    "height": 104,
+    "frameCount": 3,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\02.png",
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\01.png",
+      "motion\\harpoon_hunter\\ChannelStart\\palette\\00.png"
+    ],
+    "sha256": "d338eac4da840bf40db8f479d87a12bcbfaac9111d69212bcb3568fdac3e4e84",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "harpoon_hunter",
+    "state": "Release",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 2,
+    "durationsMs": [
+      180,
+      180,
+      60,
+      60,
+      60,
+      60,
+      80,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\harpoon_hunter\\Release\\palette\\00.png",
+      "motion\\harpoon_hunter\\Release\\palette\\01.png",
+      "motion\\harpoon_hunter\\Release\\palette\\02.png",
+      "motion\\harpoon_hunter\\Release\\palette\\03.png",
+      "motion\\harpoon_hunter\\Release\\palette\\04.png",
+      "motion\\harpoon_hunter\\Release\\palette\\05.png",
+      "motion\\harpoon_hunter\\Release\\palette\\06.png",
+      "motion\\harpoon_hunter\\Release\\palette\\07.png",
+      "motion\\harpoon_hunter\\Release\\palette\\08.png"
+    ],
+    "sha256": "6e27fcd85fa9b54fe1bed1e0cac00a8e35d63843720feafd5f63e88722efd1d3",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Idle\\palette\\00.png",
+      "motion\\hearthkeeper\\Idle\\palette\\01.png",
+      "motion\\hearthkeeper\\Idle\\palette\\02.png",
+      "motion\\hearthkeeper\\Idle\\palette\\03.png",
+      "motion\\hearthkeeper\\Idle\\palette\\04.png",
+      "motion\\hearthkeeper\\Idle\\palette\\03.png",
+      "motion\\hearthkeeper\\Idle\\palette\\02.png",
+      "motion\\hearthkeeper\\Idle\\palette\\01.png",
+      "motion\\hearthkeeper\\Idle\\palette\\00.png"
+    ],
+    "sha256": "6de7ce2bcc8e04fd7040b09da3c597713eddd19dfd9a07d0d24caf62ba29165a",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\hearthkeeper\\AutoAttack\\palette\\00.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\01.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\02.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\03.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\04.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\05.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\06.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\07.png",
+      "motion\\hearthkeeper\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "2f8a4ddeb1b5823d8c29e47b9e8ff10e16b5771e3e444d0016d243a06aeb3628",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Hit\\palette\\00.png",
+      "motion\\hearthkeeper\\Hit\\palette\\01.png",
+      "motion\\hearthkeeper\\Hit\\palette\\02.png",
+      "motion\\hearthkeeper\\Hit\\palette\\03.png",
+      "motion\\hearthkeeper\\Hit\\palette\\04.png"
+    ],
+    "sha256": "91bead34a0c26ab673e3479cab129b25ce9a0a62c5a93cf5b31d11fb763c88a9",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Death\\palette\\00.png",
+      "motion\\hearthkeeper\\Death\\palette\\01.png",
+      "motion\\hearthkeeper\\Death\\palette\\02.png",
+      "motion\\hearthkeeper\\Death\\palette\\03.png",
+      "motion\\hearthkeeper\\Death\\palette\\04.png",
+      "motion\\hearthkeeper\\Death\\palette\\05.png",
+      "motion\\hearthkeeper\\Death\\palette\\06.png",
+      "motion\\hearthkeeper\\Death\\palette\\07.png",
+      "motion\\hearthkeeper\\Death\\palette\\08.png"
+    ],
+    "sha256": "8ce8576bbbc093193acf15e3bdd47106d9185b70badf1f1008e8856c9e701c98",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Ability\\palette\\00.png",
+      "motion\\hearthkeeper\\Ability\\palette\\01.png",
+      "motion\\hearthkeeper\\Ability\\palette\\02.png",
+      "motion\\hearthkeeper\\Ability\\palette\\03.png",
+      "motion\\hearthkeeper\\Ability\\palette\\04.png",
+      "motion\\hearthkeeper\\Ability\\palette\\05.png",
+      "motion\\hearthkeeper\\Ability\\palette\\06.png",
+      "motion\\hearthkeeper\\Ability\\palette\\07.png",
+      "motion\\hearthkeeper\\Ability\\palette\\08.png"
+    ],
+    "sha256": "4a1e1d62446e42d84088a33dfd6565b393b26e37944c0d62e7505141f70ceee3",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "ChannelStart",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 0,
+    "durationsMs": [
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Ability\\palette\\00.png",
+      "motion\\hearthkeeper\\Ability\\palette\\01.png",
+      "motion\\hearthkeeper\\Ability\\palette\\02.png",
+      "motion\\hearthkeeper\\Ability\\palette\\03.png"
+    ],
+    "sha256": "e1e6c3d32b5f8990c6b4c117e940567ceebe40d59e35f7d344e1da15494b0c55",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "ChannelHold",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 0,
+    "durationsMs": [
+      150,
+      150,
+      150,
+      150
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Ability\\palette\\03.png",
+      "motion\\hearthkeeper\\Ability\\palette\\04.png",
+      "motion\\hearthkeeper\\Ability\\palette\\05.png",
+      "motion\\hearthkeeper\\Ability\\palette\\04.png"
+    ],
+    "sha256": "0ea462753d567701a28f6c15db325e250bf2d595fc368fa325009f00353c4996",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Release",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 0,
+    "durationsMs": [
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Ability\\palette\\05.png",
+      "motion\\hearthkeeper\\Ability\\palette\\06.png",
+      "motion\\hearthkeeper\\Ability\\palette\\07.png",
+      "motion\\hearthkeeper\\Ability\\palette\\08.png"
+    ],
+    "sha256": "e533c639fd3827f83e659ffb95f3f45aace14ceb97a1cb52bffa1eaffe42e055",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "hearthkeeper",
+    "state": "Interrupt",
+    "width": 128,
+    "height": 104,
+    "frameCount": 4,
+    "impactFrame": 0,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\hearthkeeper\\Ability\\palette\\03.png",
+      "motion\\hearthkeeper\\Ability\\palette\\02.png",
+      "motion\\hearthkeeper\\Ability\\palette\\01.png",
+      "motion\\hearthkeeper\\Ability\\palette\\00.png"
+    ],
+    "sha256": "a91f23eacc9671b5cfaf143c0318fcce69c3b22f68202a550372d6fdd53ecee7",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\Idle\\palette\\00.png",
+      "motion\\iceborn_champion\\Idle\\palette\\01.png",
+      "motion\\iceborn_champion\\Idle\\palette\\02.png",
+      "motion\\iceborn_champion\\Idle\\palette\\03.png",
+      "motion\\iceborn_champion\\Idle\\palette\\04.png",
+      "motion\\iceborn_champion\\Idle\\palette\\03.png",
+      "motion\\iceborn_champion\\Idle\\palette\\02.png",
+      "motion\\iceborn_champion\\Idle\\palette\\01.png",
+      "motion\\iceborn_champion\\Idle\\palette\\00.png"
+    ],
+    "sha256": "73b9cdd75e51edbb06eb14505c56c8592f2f65aa4df11a4ec1545e0b7dbc0d3d",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\iceborn_champion\\AutoAttack\\palette\\00.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\01.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\02.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\03.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\04.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\05.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\06.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\07.png",
+      "motion\\iceborn_champion\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "08b2e8f4f93ba6a1dcdc96ae491384a56c7b3c6d53cf8a8857dca6ee6830e4b4",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\Hit\\palette\\00.png",
+      "motion\\iceborn_champion\\Hit\\palette\\01.png",
+      "motion\\iceborn_champion\\Hit\\palette\\02.png",
+      "motion\\iceborn_champion\\Hit\\palette\\03.png",
+      "motion\\iceborn_champion\\Hit\\palette\\04.png"
+    ],
+    "sha256": "204d411608af036f748fd3028cd7e0862f56fa1807c718b9d3f8c47e0f0f8731",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\Death\\palette\\00.png",
+      "motion\\iceborn_champion\\Death\\palette\\01.png",
+      "motion\\iceborn_champion\\Death\\palette\\02.png",
+      "motion\\iceborn_champion\\Death\\palette\\03.png",
+      "motion\\iceborn_champion\\Death\\palette\\04.png",
+      "motion\\iceborn_champion\\Death\\palette\\05.png",
+      "motion\\iceborn_champion\\Death\\palette\\06.png",
+      "motion\\iceborn_champion\\Death\\palette\\07.png",
+      "motion\\iceborn_champion\\Death\\palette\\08.png"
+    ],
+    "sha256": "5ef5d576a6bd70f32ffab2e648c0d90e6a79819199826d22e3f0e872a2830b65",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "ChannelStart",
+    "width": 128,
+    "height": 104,
+    "frameCount": 7,
+    "impactFrame": 6,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\ChannelStart\\palette\\00.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\01.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\02.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\03.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\04.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\06.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\08.png"
+    ],
+    "sha256": "56b6fb0af9e29be19c54121a8b60606fd35d33caec85f3ff2454c19e3a325d63",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "ChannelHold",
+    "width": 128,
+    "height": 104,
+    "frameCount": 1,
+    "impactFrame": 0,
+    "durationsMs": [
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\ChannelStart\\palette\\08.png"
+    ],
+    "sha256": "e9fb5414a536a8ca504ef059b106cfb2ac722b2d7389ea6d3ba07ba87945f684",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "Interrupt",
+    "width": 128,
+    "height": 104,
+    "frameCount": 7,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\ChannelStart\\palette\\08.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\06.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\04.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\03.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\02.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\01.png",
+      "motion\\iceborn_champion\\ChannelStart\\palette\\00.png"
+    ],
+    "sha256": "f0a9c98f4269e83c8f424b526eec705257e800afec182f8f5ffe5c888a18c872",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_champion",
+    "state": "Release",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 2,
+    "durationsMs": [
+      180,
+      180,
+      60,
+      60,
+      60,
+      60,
+      80,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_champion\\Release\\palette\\00.png",
+      "motion\\iceborn_champion\\Release\\palette\\01.png",
+      "motion\\iceborn_champion\\Release\\palette\\02.png",
+      "motion\\iceborn_champion\\Release\\palette\\03.png",
+      "motion\\iceborn_champion\\Release\\palette\\04.png",
+      "motion\\iceborn_champion\\Release\\palette\\05.png",
+      "motion\\iceborn_champion\\Release\\palette\\06.png",
+      "motion\\iceborn_champion\\Release\\palette\\07.png",
+      "motion\\iceborn_champion\\Release\\palette\\08.png"
+    ],
+    "sha256": "931806d5440df9c4aa254ddc553029a83f6ecf99f5167cfa3a687c3b6095c1c2",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_raider",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_raider\\Idle\\palette\\00.png",
+      "motion\\iceborn_raider\\Idle\\palette\\01.png",
+      "motion\\iceborn_raider\\Idle\\palette\\02.png",
+      "motion\\iceborn_raider\\Idle\\palette\\03.png",
+      "motion\\iceborn_raider\\Idle\\palette\\04.png",
+      "motion\\iceborn_raider\\Idle\\palette\\03.png",
+      "motion\\iceborn_raider\\Idle\\palette\\02.png",
+      "motion\\iceborn_raider\\Idle\\palette\\01.png",
+      "motion\\iceborn_raider\\Idle\\palette\\00.png"
+    ],
+    "sha256": "71977d583e8ba1014a873a96567aec17622ccf4aeb10603e841e96ef22d47d28",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_raider",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\iceborn_raider\\AutoAttack\\palette\\00.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\01.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\02.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\03.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\04.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\05.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\06.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\07.png",
+      "motion\\iceborn_raider\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "9f3fd8338de81b91185a6051b6dc7a26b72d8b8da191546f4e061ecfeb716465",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_raider",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_raider\\Hit\\palette\\00.png",
+      "motion\\iceborn_raider\\Hit\\palette\\01.png",
+      "motion\\iceborn_raider\\Hit\\palette\\02.png",
+      "motion\\iceborn_raider\\Hit\\palette\\03.png",
+      "motion\\iceborn_raider\\Hit\\palette\\04.png"
+    ],
+    "sha256": "fd280c815d9e47534f9e8ab0c0edfa6ee22817b363b8b3c20451eb8566a029a3",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "iceborn_raider",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\iceborn_raider\\Death\\palette\\00.png",
+      "motion\\iceborn_raider\\Death\\palette\\01.png",
+      "motion\\iceborn_raider\\Death\\palette\\02.png",
+      "motion\\iceborn_raider\\Death\\palette\\03.png",
+      "motion\\iceborn_raider\\Death\\palette\\04.png",
+      "motion\\iceborn_raider\\Death\\palette\\05.png",
+      "motion\\iceborn_raider\\Death\\palette\\06.png",
+      "motion\\iceborn_raider\\Death\\palette\\07.png",
+      "motion\\iceborn_raider\\Death\\palette\\08.png"
+    ],
+    "sha256": "49a919b2b07befd3f42e509713fd7ea38f88d769664f77c3e123352f630021a6",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\Idle\\palette\\00.png",
+      "motion\\jarl_haldra\\Idle\\palette\\01.png",
+      "motion\\jarl_haldra\\Idle\\palette\\02.png",
+      "motion\\jarl_haldra\\Idle\\palette\\03.png",
+      "motion\\jarl_haldra\\Idle\\palette\\04.png",
+      "motion\\jarl_haldra\\Idle\\palette\\03.png",
+      "motion\\jarl_haldra\\Idle\\palette\\02.png",
+      "motion\\jarl_haldra\\Idle\\palette\\01.png",
+      "motion\\jarl_haldra\\Idle\\palette\\00.png"
+    ],
+    "sha256": "0c521bdd8eb2acdcc6d3bb5b267bd4ada3ff5d771278ea904a4de2461856ab2e",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 5,
+    "durationsMs": [
+      64,
+      64,
+      64,
+      64,
+      64,
+      90,
+      90,
+      90,
+      90
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\jarl_haldra\\AutoAttack\\palette\\00.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\01.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\02.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\03.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\04.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\05.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\06.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\07.png",
+      "motion\\jarl_haldra\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "b74b2c4877549c40f60f31f60a8c9a15f09245ff49035ddfe1f6bd85283a4a65",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\Hit\\palette\\00.png",
+      "motion\\jarl_haldra\\Hit\\palette\\01.png",
+      "motion\\jarl_haldra\\Hit\\palette\\02.png",
+      "motion\\jarl_haldra\\Hit\\palette\\03.png",
+      "motion\\jarl_haldra\\Hit\\palette\\04.png"
+    ],
+    "sha256": "e96cea54a4b29607ec4d230a8016f11280554efddee3f89eb7592dd0b7b0202e",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\Death\\palette\\00.png",
+      "motion\\jarl_haldra\\Death\\palette\\01.png",
+      "motion\\jarl_haldra\\Death\\palette\\02.png",
+      "motion\\jarl_haldra\\Death\\palette\\03.png",
+      "motion\\jarl_haldra\\Death\\palette\\04.png",
+      "motion\\jarl_haldra\\Death\\palette\\05.png",
+      "motion\\jarl_haldra\\Death\\palette\\06.png",
+      "motion\\jarl_haldra\\Death\\palette\\07.png",
+      "motion\\jarl_haldra\\Death\\palette\\08.png"
+    ],
+    "sha256": "d7a1169e9fe1bdcbe8ea30515d754da8a1990164131247a89034cb683105acf9",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "ChannelStart",
+    "width": 128,
+    "height": 104,
+    "frameCount": 7,
+    "impactFrame": 6,
+    "durationsMs": [
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\ChannelStart\\palette\\00.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\01.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\02.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\03.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\04.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\06.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\08.png"
+    ],
+    "sha256": "673cb03cf74e35eb85868db9f3c60ba9f676db17781f3e84c1aba8b0f3fe1329",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "ChannelHold",
+    "width": 128,
+    "height": 104,
+    "frameCount": 1,
+    "impactFrame": 0,
+    "durationsMs": [
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\ChannelStart\\palette\\08.png"
+    ],
+    "sha256": "e25a709bd848e424e6fc1f1b0c926f8b2f78725a3e5fe71fafd9b1eeb398eff8",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "Interrupt",
+    "width": 128,
+    "height": 104,
+    "frameCount": 7,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\ChannelStart\\palette\\08.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\06.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\04.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\03.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\02.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\01.png",
+      "motion\\jarl_haldra\\ChannelStart\\palette\\00.png"
+    ],
+    "sha256": "c421f848f4e7093fe00f68185322af47c0af7da5537a480b22a9018cf83ea7b7",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "jarl_haldra",
+    "state": "Release",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 2,
+    "durationsMs": [
+      180,
+      180,
+      60,
+      60,
+      60,
+      60,
+      80,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\jarl_haldra\\Release\\palette\\00.png",
+      "motion\\jarl_haldra\\Release\\palette\\01.png",
+      "motion\\jarl_haldra\\Release\\palette\\02.png",
+      "motion\\jarl_haldra\\Release\\palette\\03.png",
+      "motion\\jarl_haldra\\Release\\palette\\04.png",
+      "motion\\jarl_haldra\\Release\\palette\\05.png",
+      "motion\\jarl_haldra\\Release\\palette\\06.png",
+      "motion\\jarl_haldra\\Release\\palette\\07.png",
+      "motion\\jarl_haldra\\Release\\palette\\08.png"
+    ],
+    "sha256": "64249f1b97abd9cfe6d1b6fad50d6357f3275ada02474d788fab8a786b09b03d",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rime_skald",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rime_skald\\Idle\\palette\\00.png",
+      "motion\\rime_skald\\Idle\\palette\\01.png",
+      "motion\\rime_skald\\Idle\\palette\\02.png",
+      "motion\\rime_skald\\Idle\\palette\\03.png",
+      "motion\\rime_skald\\Idle\\palette\\04.png",
+      "motion\\rime_skald\\Idle\\palette\\03.png",
+      "motion\\rime_skald\\Idle\\palette\\02.png",
+      "motion\\rime_skald\\Idle\\palette\\01.png",
+      "motion\\rime_skald\\Idle\\palette\\00.png"
+    ],
+    "sha256": "cf3cf033b230c1a1e76f711021ce6d1002f947e1081e571b5c4bffa0ac5e3efc",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rime_skald",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\rime_skald\\AutoAttack\\palette\\00.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\01.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\02.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\03.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\04.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\05.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\06.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\07.png",
+      "motion\\rime_skald\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "60968d984b5b8323f97a101f6596dfe35bb4b58445ca1c78e9c1839504e02dfa",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rime_skald",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rime_skald\\Hit\\palette\\00.png",
+      "motion\\rime_skald\\Hit\\palette\\01.png",
+      "motion\\rime_skald\\Hit\\palette\\02.png",
+      "motion\\rime_skald\\Hit\\palette\\03.png",
+      "motion\\rime_skald\\Hit\\palette\\04.png"
+    ],
+    "sha256": "b16acdf30d9f3ed79e039ddd27b5dbcbea8db9381ddce0134202a61b03dd74cd",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rime_skald",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rime_skald\\Death\\palette\\00.png",
+      "motion\\rime_skald\\Death\\palette\\01.png",
+      "motion\\rime_skald\\Death\\palette\\02.png",
+      "motion\\rime_skald\\Death\\palette\\03.png",
+      "motion\\rime_skald\\Death\\palette\\04.png",
+      "motion\\rime_skald\\Death\\palette\\05.png",
+      "motion\\rime_skald\\Death\\palette\\06.png",
+      "motion\\rime_skald\\Death\\palette\\07.png",
+      "motion\\rime_skald\\Death\\palette\\08.png"
+    ],
+    "sha256": "b1a5c530ef2608b51a5f880e29655d542b4f4dda324ad9addb860b5599242214",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rime_skald",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rime_skald\\Ability\\palette\\00.png",
+      "motion\\rime_skald\\Ability\\palette\\01.png",
+      "motion\\rime_skald\\Ability\\palette\\02.png",
+      "motion\\rime_skald\\Ability\\palette\\03.png",
+      "motion\\rime_skald\\Ability\\palette\\04.png",
+      "motion\\rime_skald\\Ability\\palette\\05.png",
+      "motion\\rime_skald\\Ability\\palette\\06.png",
+      "motion\\rime_skald\\Ability\\palette\\07.png",
+      "motion\\rime_skald\\Ability\\palette\\08.png"
+    ],
+    "sha256": "ebf9ef441653fec94029d60c8dc86b0ff41c9f827fdd7cc4aecc311d9203c692",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rimecarver",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rimecarver\\Idle\\palette\\00.png",
+      "motion\\rimecarver\\Idle\\palette\\01.png",
+      "motion\\rimecarver\\Idle\\palette\\02.png",
+      "motion\\rimecarver\\Idle\\palette\\03.png",
+      "motion\\rimecarver\\Idle\\palette\\04.png",
+      "motion\\rimecarver\\Idle\\palette\\03.png",
+      "motion\\rimecarver\\Idle\\palette\\02.png",
+      "motion\\rimecarver\\Idle\\palette\\01.png",
+      "motion\\rimecarver\\Idle\\palette\\00.png"
+    ],
+    "sha256": "88ea642f6fbb4d9c678e27150751052715f04392f329a4a7f720b7853d00fe54",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rimecarver",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 2,
+    "durationsMs": [
+      160,
+      160,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      54
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\rimecarver\\AutoAttack\\palette\\00.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\01.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\02.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\03.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\04.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\05.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\06.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\07.png",
+      "motion\\rimecarver\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "d551d7ca514cebbc3d175ec9913f0595119aa53f6389efd92225d192171f2965",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rimecarver",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rimecarver\\Hit\\palette\\00.png",
+      "motion\\rimecarver\\Hit\\palette\\01.png",
+      "motion\\rimecarver\\Hit\\palette\\02.png",
+      "motion\\rimecarver\\Hit\\palette\\03.png",
+      "motion\\rimecarver\\Hit\\palette\\04.png"
+    ],
+    "sha256": "d1ea9461629db998dc14fc09e5539908973a8db61053164b553ce47a1d816c63",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rimecarver",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rimecarver\\Death\\palette\\00.png",
+      "motion\\rimecarver\\Death\\palette\\01.png",
+      "motion\\rimecarver\\Death\\palette\\02.png",
+      "motion\\rimecarver\\Death\\palette\\03.png",
+      "motion\\rimecarver\\Death\\palette\\04.png",
+      "motion\\rimecarver\\Death\\palette\\05.png",
+      "motion\\rimecarver\\Death\\palette\\06.png",
+      "motion\\rimecarver\\Death\\palette\\07.png",
+      "motion\\rimecarver\\Death\\palette\\08.png"
+    ],
+    "sha256": "ef9e8b9aa0b3e908411e207d05af8a961253225db2aa3bf5b670cccbed7767df",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "rimecarver",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\rimecarver\\Ability\\palette\\00.png",
+      "motion\\rimecarver\\Ability\\palette\\01.png",
+      "motion\\rimecarver\\Ability\\palette\\02.png",
+      "motion\\rimecarver\\Ability\\palette\\03.png",
+      "motion\\rimecarver\\Ability\\palette\\04.png",
+      "motion\\rimecarver\\Ability\\palette\\05.png",
+      "motion\\rimecarver\\Ability\\palette\\06.png",
+      "motion\\rimecarver\\Ability\\palette\\07.png",
+      "motion\\rimecarver\\Ability\\palette\\08.png"
+    ],
+    "sha256": "8025879963b3db9867687459785f22ad45b3a0e9f4aad55a1f6266a128fa7736",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "shieldmaiden",
+    "state": "Idle",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130,
+      130
+    ],
+    "loop": true,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\shieldmaiden\\Idle\\palette\\00.png",
+      "motion\\shieldmaiden\\Idle\\palette\\01.png",
+      "motion\\shieldmaiden\\Idle\\palette\\02.png",
+      "motion\\shieldmaiden\\Idle\\palette\\03.png",
+      "motion\\shieldmaiden\\Idle\\palette\\04.png",
+      "motion\\shieldmaiden\\Idle\\palette\\03.png",
+      "motion\\shieldmaiden\\Idle\\palette\\02.png",
+      "motion\\shieldmaiden\\Idle\\palette\\01.png",
+      "motion\\shieldmaiden\\Idle\\palette\\00.png"
+    ],
+    "sha256": "cadac58587570eea5c11c7434db2b04f3e1a5a50947d8d7a54196874dc66ff2d",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "shieldmaiden",
+    "state": "AutoAttack",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 3,
+    "durationsMs": [
+      106,
+      106,
+      108,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "loop": false,
+    "special": false,
+    "attack": true,
+    "selectedSources": [
+      "motion\\shieldmaiden\\AutoAttack\\palette\\00.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\01.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\02.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\03.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\04.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\05.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\06.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\07.png",
+      "motion\\shieldmaiden\\AutoAttack\\palette\\08.png"
+    ],
+    "sha256": "7c381997d2cc446f28669ca4d6ed74d08ffb03db1dcfb261cab06d8629684709",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "shieldmaiden",
+    "state": "Hit",
+    "width": 128,
+    "height": 104,
+    "frameCount": 5,
+    "impactFrame": 0,
+    "durationsMs": [
+      40,
+      70,
+      70,
+      70,
+      70
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\shieldmaiden\\Hit\\palette\\00.png",
+      "motion\\shieldmaiden\\Hit\\palette\\01.png",
+      "motion\\shieldmaiden\\Hit\\palette\\02.png",
+      "motion\\shieldmaiden\\Hit\\palette\\03.png",
+      "motion\\shieldmaiden\\Hit\\palette\\04.png"
+    ],
+    "sha256": "12625a87de83342e518bd8192c54da3e48989c146db95d37d56a20700d447e9e",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "shieldmaiden",
+    "state": "Death",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 0,
+    "durationsMs": [
+      60,
+      70,
+      80,
+      90,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": false,
+    "special": false,
+    "attack": false,
+    "selectedSources": [
+      "motion\\shieldmaiden\\Death\\palette\\00.png",
+      "motion\\shieldmaiden\\Death\\palette\\01.png",
+      "motion\\shieldmaiden\\Death\\palette\\02.png",
+      "motion\\shieldmaiden\\Death\\palette\\03.png",
+      "motion\\shieldmaiden\\Death\\palette\\04.png",
+      "motion\\shieldmaiden\\Death\\palette\\05.png",
+      "motion\\shieldmaiden\\Death\\palette\\06.png",
+      "motion\\shieldmaiden\\Death\\palette\\07.png",
+      "motion\\shieldmaiden\\Death\\palette\\08.png"
+    ],
+    "sha256": "2aa42bdff72cbb998bea954f49b21315bf6b9932431ff65b8b888658dacb337a",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "name": "shieldmaiden",
+    "state": "Ability",
+    "width": 128,
+    "height": 104,
+    "frameCount": 9,
+    "impactFrame": 4,
+    "durationsMs": [
+      90,
+      90,
+      90,
+      90,
+      100,
+      100,
+      100,
+      100,
+      120
+    ],
+    "loop": false,
+    "special": true,
+    "attack": false,
+    "selectedSources": [
+      "motion\\shieldmaiden\\Ability\\palette\\00.png",
+      "motion\\shieldmaiden\\Ability\\palette\\01.png",
+      "motion\\shieldmaiden\\Ability\\palette\\02.png",
+      "motion\\shieldmaiden\\Ability\\palette\\03.png",
+      "motion\\shieldmaiden\\Ability\\palette\\04.png",
+      "motion\\shieldmaiden\\Ability\\palette\\05.png",
+      "motion\\shieldmaiden\\Ability\\palette\\06.png",
+      "motion\\shieldmaiden\\Ability\\palette\\07.png",
+      "motion\\shieldmaiden\\Ability\\palette\\08.png"
+    ],
+    "sha256": "e0538855b5d1b87d24530b723622fb6c8a19d53047580a9135ba4b5d4bb82679",
+    "colors": 15,
+    "alpha": [
+      0,
+      255
+    ]
+  }
+]

@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 31962f549f7d67f478174fd73be955f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8505642319951080228
+    second: harpoon_hunter_AutoAttack_0
+  - first:
+      213: -6456316561904340119
+    second: harpoon_hunter_AutoAttack_1
+  - first:
+      213: 7453513596664992707
+    second: harpoon_hunter_AutoAttack_2
+  - first:
+      213: -3514159268351619708
+    second: harpoon_hunter_AutoAttack_3
+  - first:
+      213: 2515947851280020519
+    second: harpoon_hunter_AutoAttack_4
+  - first:
+      213: 608871990611910405
+    second: harpoon_hunter_AutoAttack_5
+  - first:
+      213: 2152614698987207076
+    second: harpoon_hunter_AutoAttack_6
+  - first:
+      213: 2830151190226172338
+    second: harpoon_hunter_AutoAttack_7
+  - first:
+      213: -418131239696394455
+    second: harpoon_hunter_AutoAttack_8
+  - first:
+      213: -1809560292206276903
+    second: harpoon_hunter_AutoAttack_9
+  - first:
+      213: -6560335566382015087
+    second: harpoon_hunter_AutoAttack_10
+  - first:
+      213: -4763009704417350152
+    second: harpoon_hunter_AutoAttack_11
+  - first:
+      213: 8887301839910325902
+    second: harpoon_hunter_AutoAttack_12
+  - first:
+      213: -1891416456941833994
+    second: harpoon_hunter_AutoAttack_00
+  - first:
+      213: -5240644821342842375
+    second: harpoon_hunter_AutoAttack_01
+  - first:
+      213: -6266140870186447893
+    second: harpoon_hunter_AutoAttack_02
+  - first:
+      213: 665031355548977730
+    second: harpoon_hunter_AutoAttack_03
+  - first:
+      213: -8106335823317231626
+    second: harpoon_hunter_AutoAttack_04
+  - first:
+      213: 970931950929594878
+    second: harpoon_hunter_AutoAttack_05
+  - first:
+      213: 496377622301214541
+    second: harpoon_hunter_AutoAttack_06
+  - first:
+      213: -5976359157662335657
+    second: harpoon_hunter_AutoAttack_07
+  - first:
+      213: -3993512939463412676
+    second: harpoon_hunter_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f077a9e0c650c5e0800000000000000
+      internalID: -1891416456941833994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f19ed51d4d7547b0800000000000000
+      internalID: -5240644821342842375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bebcaf7f3123a09a0800000000000000
+      internalID: -6266140870186447893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a4eff8e7aaa3900800000000000000
+      internalID: 665031355548977730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f717259482808f80800000000000000
+      internalID: -8106335823317231626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef94c341771797d00800000000000000
+      internalID: 970931950929594878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4787bb41dc73e600800000000000000
+      internalID: 496377622301214541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d326d9205bf0da0800000000000000
+      internalID: -5976359157662335657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harpoon_hunter_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c347b5dd3213498c0800000000000000
+      internalID: -3993512939463412676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      harpoon_hunter_AutoAttack_0: -8505642319951080228
+      harpoon_hunter_AutoAttack_00: -1891416456941833994
+      harpoon_hunter_AutoAttack_01: -5240644821342842375
+      harpoon_hunter_AutoAttack_02: -6266140870186447893
+      harpoon_hunter_AutoAttack_03: 665031355548977730
+      harpoon_hunter_AutoAttack_04: -8106335823317231626
+      harpoon_hunter_AutoAttack_05: 970931950929594878
+      harpoon_hunter_AutoAttack_06: 496377622301214541
+      harpoon_hunter_AutoAttack_07: -5976359157662335657
+      harpoon_hunter_AutoAttack_08: -3993512939463412676
+      harpoon_hunter_AutoAttack_1: -6456316561904340119
+      harpoon_hunter_AutoAttack_10: -6560335566382015087
+      harpoon_hunter_AutoAttack_11: -4763009704417350152
+      harpoon_hunter_AutoAttack_12: 8887301839910325902
+      harpoon_hunter_AutoAttack_2: 7453513596664992707
+      harpoon_hunter_AutoAttack_3: -3514159268351619708
+      harpoon_hunter_AutoAttack_4: 2515947851280020519
+      harpoon_hunter_AutoAttack_5: 608871990611910405
+      harpoon_hunter_AutoAttack_6: 2152614698987207076
+      harpoon_hunter_AutoAttack_7: 2830151190226172338
+      harpoon_hunter_AutoAttack_8: -418131239696394455
+      harpoon_hunter_AutoAttack_9: -1809560292206276903
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

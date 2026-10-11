@@ -1,0 +1,646 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aac1eae8a627d42b5b41d508fea123, type: 3}
+  m_Name: frostwake-peaks
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneDefinition
+  zoneId: frostwake-peaks
+  displayName: Frostwake Peaks
+  eligibleForLiveTravel: 1
+  eligibleForTesting: 1
+  affiliatedGem: 4
+  enemies:
+  - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+  - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+  - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+  - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+  - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+  - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+  - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+  - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+  - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+  - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+  - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+  developmentEncounters:
+  - label: Iceborn Raider fixture
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Harpoon Hunter fixture
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Frostfang Wolf fixture
+    members:
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rimecarver fixture
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Shieldmaiden fixture
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rime Skald fixture
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Hearthkeeper fixture
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Frostblade Reaver fixture
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Glacier Troll fixture
+    members:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Iceborn Champion fixture
+    members:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Jarl Haldra, the Icebreaker fixture
+    members:
+    - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 1
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  liveEncounters:
+  - label: Raider lookout
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Snow paws
+    members:
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 1
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Pass patrol
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 2
+    lastLocalWave: 999
+    weight: 4
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Travelling hunters
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Wolf trail
+    members:
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Caravan outriders
+    members:
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rimecarver alone
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rimecarver + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Rimecarver + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 3
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    introduceByLocalWave: 4
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Harpoon Hunter alone
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    oncePerVisit: 0
+  - label: Harpoon Hunter + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    oncePerVisit: 0
+  - label: Harpoon Hunter + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 5
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    introduceByLocalWave: 6
+    requiredSeen:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    oncePerVisit: 0
+  - label: Shieldmaiden + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 7
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    introduceByLocalWave: 8
+    requiredSeen:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    oncePerVisit: 0
+  - label: Shieldmaiden + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 7
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    introduceByLocalWave: 8
+    requiredSeen:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    oncePerVisit: 0
+  - label: Glacier Troll alone
+    members:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    introduceByLocalWave: 11
+    requiredSeen:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    oncePerVisit: 1
+  - label: Glacier Troll + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    introduceByLocalWave: 11
+    requiredSeen:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    oncePerVisit: 1
+  - label: Glacier Troll + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    introduceByLocalWave: 11
+    requiredSeen:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    oncePerVisit: 1
+  - label: Rime Skald + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 12
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    introduceByLocalWave: 13
+    requiredSeen:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    oncePerVisit: 0
+  - label: Rime Skald + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 12
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    introduceByLocalWave: 13
+    requiredSeen:
+    - {fileID: 11400000, guid: 602f00605fd9e0c469866d5e8786b38c, type: 2}
+    oncePerVisit: 0
+  - label: Hearthkeeper + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    introduceByLocalWave: 15
+    requiredSeen:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    oncePerVisit: 0
+  - label: Hearthkeeper + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    introduceByLocalWave: 15
+    requiredSeen:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    oncePerVisit: 0
+  - label: Frostblade Reaver alone
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    introduceByLocalWave: 17
+    requiredSeen:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    oncePerVisit: 0
+  - label: Frostblade Reaver + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    introduceByLocalWave: 17
+    requiredSeen:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    oncePerVisit: 0
+  - label: Frostblade Reaver + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    introduceByLocalWave: 17
+    requiredSeen:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    oncePerVisit: 0
+  - label: Iceborn Champion alone
+    members:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    introduceByLocalWave: 21
+    requiredSeen:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    oncePerVisit: 1
+  - label: Iceborn Champion + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    introduceByLocalWave: 21
+    requiredSeen:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    oncePerVisit: 1
+  - label: Iceborn Champion + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 19
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    introduceByLocalWave: 21
+    requiredSeen:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    oncePerVisit: 1
+  - label: Jarl Haldra, the Icebreaker alone
+    members:
+    - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    firstLocalWave: 26
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    introduceByLocalWave: 28
+    requiredSeen:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    oncePerVisit: 1
+  - label: Jarl Haldra, the Icebreaker + iceborn_raider
+    members:
+    - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 26
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    introduceByLocalWave: 28
+    requiredSeen:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    oncePerVisit: 1
+  - label: Jarl Haldra, the Icebreaker + frostfang_wolf
+    members:
+    - {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 26
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+    introduceByLocalWave: 28
+    requiredSeen:
+    - {fileID: 11400000, guid: 8b0e146452fd36443ae1c1c537b24664, type: 2}
+    oncePerVisit: 1
+  - label: Frozen pursuit
+    members:
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    firstLocalWave: 8
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Shielded caravan
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 9
+    lastLocalWave: 999
+    weight: 3
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: March through snow
+    members:
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 14
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Warm sanctuary
+    members:
+    - {fileID: 11400000, guid: 7f496e0d37e9fc349969c5b6ffeca9ca, type: 2}
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 16
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Cold steel
+    members:
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: d1acf721d229e924b8e9012b607c52fc, type: 2}
+    firstLocalWave: 18
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Clan vanguard
+    members:
+    - {fileID: 11400000, guid: 7ded4d544609358448e8cd0f18022078, type: 2}
+    - {fileID: 11400000, guid: cdeced1c7dc34c44e8718e0275e0c0cb, type: 2}
+    - {fileID: 11400000, guid: f4638a9a4d1f5ea4ab79d9dde442cf4c, type: 2}
+    firstLocalWave: 22
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  - label: Glacier ritual
+    members:
+    - {fileID: 11400000, guid: 04ab5bfb7d49dfb4bb0bc40029157f89, type: 2}
+    - {fileID: 11400000, guid: 9735cf06f0fa66344b63e7acd9f43dcc, type: 2}
+    - {fileID: 11400000, guid: 0649b81e31d4b0047b17094c9a31b920, type: 2}
+    firstLocalWave: 23
+    lastLocalWave: 999
+    weight: 2
+    requiredTide: 0
+    introduction: {fileID: 0}
+    introduceByLocalWave: 0
+    requiredSeen: []
+    oncePerVisit: 0
+  encounterBudget: {fileID: 11400000, guid: 912faa8e3525d3e45ad34758a563bac3, type: 2}
+  apexEnemy: {fileID: 11400000, guid: ec4c8f273ddb25840a7bd050425a2318, type: 2}
+  apexLocalWave: 28
+  affiliatedDamageMultiplier: 1.15
+  theme: {fileID: 11400000, guid: 4564f65aa83b8484f9c329e064fe649f, type: 2}
+  music: {fileID: 8300000, guid: f098c130e3b55ad4290885c2371851b5, type: 3}
+  growsVines: 0
+  periodicallyFloods: 0
+  floodMinimumMoves: 16
+  floodMaximumMoves: 18
+  initialAirBubbles: 5
+  emergencyAirCadenceMoves: 3
+  emergencyAirSupply: 1
+  criticalAirSupply: 2
+  criticalAirThreshold: 1
+  crumblesTiles: 0
+  frostwakeRules: {fileID: 11400000, guid: dd1e0b55cec7eb74abe1321173ec9999, type: 2}
+  maturesStone: 0
+  mineMovesPerStage: 3
+  maximumMineStones: 6
+  mineDrillCapacity: 4
+  crumbleCadenceMoves: 4
+  vineCadenceMoves: 2
+  maximumVineSpreadPerPulse: 2
+  maximumVineOverlays: 12

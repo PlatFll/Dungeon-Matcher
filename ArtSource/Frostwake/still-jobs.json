@@ -1,0 +1,210 @@
+{
+  "guide": "v1.13.2",
+  "guide_sha256": "37836667470d70104a3132380053a766f8a6a218f88fa82ac01a7b142017a461",
+  "status": "Candidates pending user approval; no animation authorized by these results",
+  "starting_balance": 173,
+  "provisional_charge": 66,
+  "endpoint": "create_image_pro_flash",
+  "width": 112,
+  "height": 88,
+  "reference_lineage": "reference-lineage.json",
+  "jobs": [
+    {
+      "id": "iceborn_raider",
+      "name": "Iceborn Raider",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A compact stocky adult human northern caravan raider. Rust-orange wool tunic, slate-blue fur mantle, leather boots, small iron handaxe held lowered in front, other hand relaxed; bare readable face with short auburn beard. No shield. Human normal rank, 57 pixels tall.",
+      "result": {
+        "background_job_id": "5ed1f534-75c7-454a-bba0-7bf76581697a",
+        "image_id": "8d511130-a5c9-5cc4-9bce-d5d5d88d7f29",
+        "status": "processing",
+        "source_image_id": "8d511130-a5c9-5cc4-9bce-d5d5d88d7f29",
+        "job_id": "5ed1f534-75c7-454a-bba0-7bf76581697a",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/5ed1f534-75c7-454a-bba0-7bf76581697a/download"
+      }
+    },
+    {
+      "id": "harpoon_hunter",
+      "name": "Harpoon Hunter",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A lean adult human mountain harpoon hunter. Teal wool hood pulled back, ochre scarf, brown hides; long barbed iron harpoon held across waist in BOTH hands toward screen-left, bundled rope at belt. Clean exposed face with dark stubble. No shield or bow. Human special rank, 58 pixels tall.",
+      "result": {
+        "background_job_id": "eb672593-7d39-4fdb-97a9-d12ee5f34425",
+        "image_id": "259cf84c-a093-5634-a9c3-50b6e5e39131",
+        "status": "processing",
+        "source_image_id": "259cf84c-a093-5634-a9c3-50b6e5e39131",
+        "job_id": "eb672593-7d39-4fdb-97a9-d12ee5f34425",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/eb672593-7d39-4fdb-97a9-d12ee5f34425/download"
+      }
+    },
+    {
+      "id": "frostfang_wolf",
+      "name": "Frostfang Wolf",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A compact quadruped mountain wolf, broad ice-grey fur masses with indigo shadow, four planted paws, short swept tail, two small icy blue eyes and exposed fang. Alert alive animal, head screen-left. No armor, saddle, horns or giant ice crystals. Quiet large fur shapes, no hair strand noise. Width60 height38 native pixels.",
+      "result": {
+        "background_job_id": "d14304a4-32b0-4327-b04a-9ff0a05fb683",
+        "image_id": "470f053b-1188-53dc-8619-d62c86fdf4c1",
+        "status": "processing",
+        "source_image_id": "470f053b-1188-53dc-8619-d62c86fdf4c1",
+        "job_id": "d14304a4-32b0-4327-b04a-9ff0a05fb683",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/d14304a4-32b0-4327-b04a-9ff0a05fb683/download"
+      }
+    },
+    {
+      "id": "rimecarver",
+      "name": "Rimecarver",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An adult human Iceborn rune carver with elderly short grey beard, dull violet wool cowl, blue-grey sheepskin shoulder wrap. Large single ice-chisel staff with pale icy wedge held diagonally toward screen-left, plain iron belt buckle. Calm exposed face; simple tunic blocks. Human special rank, 58 pixels tall.",
+      "result": {
+        "background_job_id": "30cf375b-ee4a-4f50-afa1-7f6602b05ba5",
+        "image_id": "7bf8674e-d197-5586-86fa-30b27346b5c8",
+        "status": "processing",
+        "source_image_id": "7bf8674e-d197-5586-86fa-30b27346b5c8",
+        "job_id": "30cf375b-ee4a-4f50-afa1-7f6602b05ba5",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/30cf375b-ee4a-4f50-afa1-7f6602b05ba5/download"
+      }
+    },
+    {
+      "id": "shieldmaiden",
+      "name": "Shieldmaiden",
+      "ref": "female",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An adult sturdy human Iceborn shieldmaiden with exposed friendly-resolute face, single red braid, moss-teal wool and cream fur shoulder mantle. One broad round dark timber shield reinforced with a simple iron boss held forward screen-left, short lowered iron hatchet behind body. No crown or plate suit. Human special rank, 59 pixels tall.",
+      "result": {
+        "background_job_id": "c2e68ca2-931d-44e3-ae97-4f4d81599c9c",
+        "image_id": "88a20b70-8dc5-5c87-8247-ba6dca3e3d9b",
+        "status": "processing",
+        "source_image_id": "88a20b70-8dc5-5c87-8247-ba6dca3e3d9b",
+        "job_id": "c2e68ca2-931d-44e3-ae97-4f4d81599c9c",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/c2e68ca2-931d-44e3-ae97-4f4d81599c9c/download"
+      }
+    },
+    {
+      "id": "rime_skald",
+      "name": "Rime Skald",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An adult human travelling Iceborn skald with dark warm skin, short dark beard and cream knitted cap, muted wine red wool coat with tan fur collar. Carries a large simple curved ivory signal horn in both hands at chest, mouthpiece down, with one carved blue binding. No sword, shield or magic aura. Human support special rank, 57 pixels tall.",
+      "result": {
+        "background_job_id": "fa28c9c6-c1de-42dd-9585-ad33df6d02e2",
+        "image_id": "ec6a5425-3d76-55b4-b463-11bb186dd954",
+        "status": "processing",
+        "source_image_id": "ec6a5425-3d76-55b4-b463-11bb186dd954",
+        "job_id": "fa28c9c6-c1de-42dd-9585-ad33df6d02e2",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/fa28c9c6-c1de-42dd-9585-ad33df6d02e2/download"
+      }
+    },
+    {
+      "id": "hearthkeeper",
+      "name": "Hearthkeeper",
+      "ref": "female",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An older adult human woman northern Hearthkeeper with kind exposed warm face, silver braid, russet apron, charcoal navy wool skirt and cream shawl. Both hands carry one compact iron brazier bowl with a small warm orange flame, held safely away from face. Not a witch, no pointed hat. Human healer special rank, 57 pixels tall.",
+      "result": {
+        "background_job_id": "87164b4b-6350-4f32-9d33-be106bc16341",
+        "image_id": "0d09771c-64ac-50ed-a051-6dd985bdfa4e",
+        "status": "processing",
+        "source_image_id": "0d09771c-64ac-50ed-a051-6dd985bdfa4e",
+        "job_id": "87164b4b-6350-4f32-9d33-be106bc16341",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/87164b4b-6350-4f32-9d33-be106bc16341/download"
+      }
+    },
+    {
+      "id": "frostblade_reaver",
+      "name": "Frostblade Reaver",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A lean adult human veteran mountain reaver. Dull iron half helmet exposing stern human face, charcoal-blue coat with tawny fur shoulders, one broad single-edged pale-blue iron sword held low with both hands toward screen-left. One dark ochre sash; two boots visible. No shield and no dual wield. Human special rank, 60 pixels tall.",
+      "result": {
+        "background_job_id": "c1b9ee7c-6f65-41cc-b887-3f5dbfd60ab0",
+        "image_id": "49c02d24-fcf7-5721-a3b3-08438d92649b",
+        "status": "processing",
+        "source_image_id": "49c02d24-fcf7-5721-a3b3-08438d92649b",
+        "job_id": "c1b9ee7c-6f65-41cc-b887-3f5dbfd60ab0",
+        "image_size": {
+          "width": 112,
+          "height": 88
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/c1b9ee7c-6f65-41cc-b887-3f5dbfd60ab0/download"
+      }
+    },
+    {
+      "id": "glacier_troll",
+      "name": "Glacier Troll",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A large chunky upright glacier troll with blue-grey skin, wide rounded nose, two little ivory tusks, shaggy cream brow and shoulder fur, simple dark brown hide loincloth. Carries one huge dark stone club with a pale ice crust lowered forward screen-left. Thick short powerful legs and clear arms, exaggerated heavy silhouette, whimsical not grotesque. Mini-boss creature, 73 pixels tall and 66 pixels wide; bigger than the human reference, smaller than canvas.",
+      "result": "error: Maximum 8 concurrent background jobs allowed (Tier 1). You have 8 active jobs."
+    },
+    {
+      "id": "iceborn_champion",
+      "name": "Iceborn Champion",
+      "ref": "human",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An imposing adult human Iceborn champion with exposed square face and short white beard; open conical iron helm, broad cream fur cloak, desaturated iron breastplate, rust-red sash. Two-handed long iron warhammer with a single ice-blue wedge in the head, held down-forward screen-left. No shield. Distinct readable heavy front fighter, miniboss 65 native pixels tall.",
+      "result": "error: Maximum 8 concurrent background jobs allowed (Tier 1). You have 8 active jobs."
+    },
+    {
+      "id": "jarl_haldra",
+      "name": "Jarl Haldra, the Icebreaker",
+      "ref": "female",
+      "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A commanding adult human woman Iceborn clan leader. Clearly readable resolute face, pale silver hair in one thick braid, simple iron circlet with two small angular ice-blue points, rich dark teal wool cloak with pale bear-fur shoulders, ochre belt. Both hands grip one enormous broad iron cleaver sword with a pale icy cutting edge, point lowered screen-left. No shield. Broad grounded regal silhouette, warm human face amid cool materials, boss 67 native pixels tall.",
+      "result": "error: Maximum 8 concurrent background jobs allowed (Tier 1). You have 8 active jobs."
+    }
+  ]
+}

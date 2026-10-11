@@ -80,6 +80,10 @@ public sealed class AbilityButtonUI : MonoBehaviour
         }
 
         ApplyBottomHudLayout();
+        // Character icons can have larger native canvases. Refit on viewport
+        // changes as well as charge changes, preserving whole source texels.
+        if (abilityIcon != null && !abilityIcon.TryGetComponent<NativePixelUiSurface>(out _))
+            abilityIcon.gameObject.AddComponent<NativePixelUiSurface>();
         energyBarMaximumWidth = 64f;
         BuildFinalizedEnergyBar();
     }

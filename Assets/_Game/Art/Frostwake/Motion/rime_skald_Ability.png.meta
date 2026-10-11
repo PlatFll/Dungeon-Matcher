@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: 89e0af3ebf6e4684daae1b1b988470cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6577508035792676013
+    second: rime_skald_Ability_0
+  - first:
+      213: -106014030470961429
+    second: rime_skald_Ability_1
+  - first:
+      213: -8812428323074352600
+    second: rime_skald_Ability_2
+  - first:
+      213: 6296365488819382644
+    second: rime_skald_Ability_3
+  - first:
+      213: 87372835538688469
+    second: rime_skald_Ability_4
+  - first:
+      213: -215821432091232885
+    second: rime_skald_Ability_5
+  - first:
+      213: 930992495953354252
+    second: rime_skald_Ability_6
+  - first:
+      213: -7051168374954487173
+    second: rime_skald_Ability_7
+  - first:
+      213: 9082206881166083964
+    second: rime_skald_Ability_8
+  - first:
+      213: -2024689599503040035
+    second: rime_skald_Ability_9
+  - first:
+      213: -4804738557784754428
+    second: rime_skald_Ability_10
+  - first:
+      213: 7146935499602613430
+    second: rime_skald_Ability_11
+  - first:
+      213: -2836648128802241961
+    second: rime_skald_Ability_12
+  - first:
+      213: 2974445095989029868
+    second: rime_skald_Ability_13
+  - first:
+      213: 1014768591825437058
+    second: rime_skald_Ability_14
+  - first:
+      213: 1167593097093559463
+    second: rime_skald_Ability_00
+  - first:
+      213: -5778813833334294552
+    second: rime_skald_Ability_01
+  - first:
+      213: 73200769172648644
+    second: rime_skald_Ability_02
+  - first:
+      213: 6439589015086547599
+    second: rime_skald_Ability_03
+  - first:
+      213: 4576013662925739289
+    second: rime_skald_Ability_04
+  - first:
+      213: -2798165433233723369
+    second: rime_skald_Ability_05
+  - first:
+      213: -4351796594911073508
+    second: rime_skald_Ability_06
+  - first:
+      213: 2192419565968560643
+    second: rime_skald_Ability_07
+  - first:
+      213: 5031731169630649070
+    second: rime_skald_Ability_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rime_skald_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4b5725cbf143010800000000000000
+      internalID: 1167593097093559463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7fef0af678dcfa0800000000000000
+      internalID: -5778813833334294552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c232d336bf040100800000000000000
+      internalID: 73200769172648644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82cdbf37140e5950800000000000000
+      internalID: 6439589015086547599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915d5028e24418f30800000000000000
+      internalID: 4576013662925739289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710b3512d5bea29d0800000000000000
+      internalID: -2798165433233723369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b2291cd005b93c0800000000000000
+      internalID: -4351796594911073508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3021c24baf90d6e10800000000000000
+      internalID: 2192419565968560643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rime_skald_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea781be6dc44d540800000000000000
+      internalID: 5031731169630649070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rime_skald_Ability_0: 6577508035792676013
+      rime_skald_Ability_00: 1167593097093559463
+      rime_skald_Ability_01: -5778813833334294552
+      rime_skald_Ability_02: 73200769172648644
+      rime_skald_Ability_03: 6439589015086547599
+      rime_skald_Ability_04: 4576013662925739289
+      rime_skald_Ability_05: -2798165433233723369
+      rime_skald_Ability_06: -4351796594911073508
+      rime_skald_Ability_07: 2192419565968560643
+      rime_skald_Ability_08: 5031731169630649070
+      rime_skald_Ability_1: -106014030470961429
+      rime_skald_Ability_10: -4804738557784754428
+      rime_skald_Ability_11: 7146935499602613430
+      rime_skald_Ability_12: -2836648128802241961
+      rime_skald_Ability_13: 2974445095989029868
+      rime_skald_Ability_14: 1014768591825437058
+      rime_skald_Ability_2: -8812428323074352600
+      rime_skald_Ability_3: 6296365488819382644
+      rime_skald_Ability_4: 87372835538688469
+      rime_skald_Ability_5: -215821432091232885
+      rime_skald_Ability_6: 930992495953354252
+      rime_skald_Ability_7: -7051168374954487173
+      rime_skald_Ability_8: 9082206881166083964
+      rime_skald_Ability_9: -2024689599503040035
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

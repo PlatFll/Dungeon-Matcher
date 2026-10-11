@@ -5,7 +5,10 @@
 The approved pack updates [Frostwake's direction](FUTURE_ZONE_LOCKS.md) and adds
 the Dungeon Attender Minotaur and Kobold Gunner. Their current production status
 is tracked in [the implementation record](FrostwakePlayables/IMPLEMENTATION.md).
-This authorization does not make an unfinished fifth zone available for travel.
+The user's subsequent request expands this to the complete eleven-enemy zone;
+Frostwake is now implemented as a fifth testing and random-travel destination.
+Its [production record](Frostwake/WORKLIST.md) distinguishes validation status
+from first-pass tuning and human pacing feedback.
 
 Glacier Cleave fully encases one physical gem and marks it for three future
 accepted player moves. Full thaw/destruction cancels it through ordinary ability
@@ -34,6 +37,28 @@ the gem. Only deliberate direct Bifrost matching retaliates (10 damage plus
 Frostbite); cascades, specials and abilities are safe. Cleave bands are 20/35/50.
 These numbers and clearing details are provisional implementation choices for
 testing, not additional user-finalized balance locks.
+
+### Frostwake roster production (2026-10-11)
+
+Raider and Wolf supply simple axe/bite pressure. Harpoon Hunter marks one gem
+for two moves; clearing or converting it cancels the strike and Staggers him.
+Rimecarver adds one ordinary Frost encasement under shared restriction limits.
+Shieldmaiden grants ordinary party shields. Rime Skald rallies other allies'
+basic attack speed without repeated stacking. Hearthkeeper channels a heal on
+one wounded ally and can be interrupted. Reaver applies Frostbite and makes
+two distinct sword contacts, each respecting central shield gating.
+
+Glacier Troll alternates ordinary shield armor with a two-gem, two-move slam;
+shield break or clearing either mark Staggers it. Iceborn Champion uses the
+same readable two-gem counterplay for a heavier hammer blow. Haldra keeps the
+three-move ice-stage contract above. Warning actions pause their caster's basics.
+Numerical values are listed in `BALANCE_V1.md` as provisional tuning.
+
+Weighted encounters teach these identities across a substantial visit, vary
+escorts, cap disruptive/support/leader roles and provide a normal-enemy relief
+wave after each leader. Introduction windows are tuning anchors, not a global
+deterministic wave script. Haldra's defeat triggers random onward travel;
+the run remains endless until death. No player-power scaling or forced waiting.
 
 ## Ironvein authorization (2026-10-08)
 
@@ -78,7 +103,7 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Unified move-combat experiment (2026-10-08)
 
-New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.

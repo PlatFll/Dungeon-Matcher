@@ -1,0 +1,1766 @@
+[
+  {
+    "id": "iceborn_raider",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Raider approved still, same face, clothing and equipment",
+    "job_id": "d1d40571-b25a-498e-91ec-f7aa7be0c0a8",
+    "completed": {
+      "job_id": "d1d40571-b25a-498e-91ec-f7aa7be0c0a8",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=0",
+        "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=1",
+        "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=2",
+        "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=3",
+        "https://api.pixellab.ai/mcp/images/d1d40571-b25a-498e-91ec-f7aa7be0c0a8/download?index=4"
+      ],
+      "asset": {
+        "id": "762678e7-9868-588d-b706-320d34cd9e10",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_raider",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One axe chop: knees anticipate, axe lifts, diagonal chop toward LEFT at frame4, short contact, settle back. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Raider approved still, same face, clothing and equipment",
+    "job_id": "4db68c69-3fc1-4ba5-9cae-b2a044a2ec88",
+    "completed": {
+      "job_id": "4db68c69-3fc1-4ba5-9cae-b2a044a2ec88",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=0",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=1",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=2",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=3",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=4",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=5",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=6",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=7",
+        "https://api.pixellab.ai/mcp/images/4db68c69-3fc1-4ba5-9cae-b2a044a2ec88/download?index=8"
+      ],
+      "asset": {
+        "id": "383a4af2-bc47-53ae-8a46-db0eb72ba8f0",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_raider",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Raider approved still, same face, clothing and equipment",
+    "receipt": "id: b61825fd-d12b-417d-ac1e-c677e31a1865\njob_id: b61825fd-d12b-417d-ac1e-c677e31a1865\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b61825fd-d12b-417d-ac1e-c677e31a1865\")\nasset_id: ba1424a6-77d6-54e2-bc4c-234bc0d3b135\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "b61825fd-d12b-417d-ac1e-c677e31a1865",
+    "completed": {
+      "job_id": "b61825fd-d12b-417d-ac1e-c677e31a1865",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=0",
+        "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=1",
+        "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=2",
+        "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=3",
+        "https://api.pixellab.ai/mcp/images/b61825fd-d12b-417d-ac1e-c677e31a1865/download?index=4"
+      ],
+      "asset": {
+        "id": "ba1424a6-77d6-54e2-bc4c-234bc0d3b135",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_raider",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Raider approved still, same face, clothing and equipment",
+    "receipt": "id: accf8586-043e-40c5-a141-f92cfc7ff9fe\njob_id: accf8586-043e-40c5-a141-f92cfc7ff9fe\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"accf8586-043e-40c5-a141-f92cfc7ff9fe\")\nasset_id: b81defcc-b14f-561e-9bc6-30f3ee79f403\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "accf8586-043e-40c5-a141-f92cfc7ff9fe",
+    "completed": {
+      "job_id": "accf8586-043e-40c5-a141-f92cfc7ff9fe",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=0",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=1",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=2",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=3",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=4",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=5",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=6",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=7",
+        "https://api.pixellab.ai/mcp/images/accf8586-043e-40c5-a141-f92cfc7ff9fe/download?index=8"
+      ],
+      "asset": {
+        "id": "b81defcc-b14f-561e-9bc6-30f3ee79f403",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Harpoon Hunter approved still, same face, clothing and equipment",
+    "receipt": "id: c96593c2-8952-4f6a-886e-14ce1caaebd8\njob_id: c96593c2-8952-4f6a-886e-14ce1caaebd8\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c96593c2-8952-4f6a-886e-14ce1caaebd8\")\nasset_id: 007b4511-b60d-5159-ba87-c8b343a2835f\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "c96593c2-8952-4f6a-886e-14ce1caaebd8",
+    "completed": {
+      "job_id": "c96593c2-8952-4f6a-886e-14ce1caaebd8",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=0",
+        "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=1",
+        "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=2",
+        "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=3",
+        "https://api.pixellab.ai/mcp/images/c96593c2-8952-4f6a-886e-14ce1caaebd8/download?index=4"
+      ],
+      "asset": {
+        "id": "007b4511-b60d-5159-ba87-c8b343a2835f",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "TWO-HANDED harpoon THRUST toward LEFT: both hands grip shaft the whole time, rear hand pushes, front hand guides, torso and rear heel drive forward at frame4, then pull shaft back and settle. No throwing. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Harpoon Hunter approved still, same face, clothing and equipment",
+    "receipt": "id: 15b14eed-6f00-4b46-99ab-e19998fc747e\njob_id: 15b14eed-6f00-4b46-99ab-e19998fc747e\ndescription: TWO-HANDED harpoon THRUST toward LEFT: both hands grip shaft the whole time, rear hand pushes, front hand guides, torso and rear heel drive forward at frame4, then pull shaft back and settle. No throwing. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"15b14eed-6f00-4b46-99ab-e19998fc747e\")\nasset_id: ac7ce73f-e9e5-5f59-8591-eaedf794eff9\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "15b14eed-6f00-4b46-99ab-e19998fc747e",
+    "completed": {
+      "job_id": "15b14eed-6f00-4b46-99ab-e19998fc747e",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=0",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=1",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=2",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=3",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=4",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=5",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=6",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=7",
+        "https://api.pixellab.ai/mcp/images/15b14eed-6f00-4b46-99ab-e19998fc747e/download?index=8"
+      ],
+      "asset": {
+        "id": "ac7ce73f-e9e5-5f59-8591-eaedf794eff9",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Harpoon Hunter approved still, same face, clothing and equipment",
+    "receipt": "id: 261cc11d-52a3-46ef-ad25-7267d83aa957\njob_id: 261cc11d-52a3-46ef-ad25-7267d83aa957\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"261cc11d-52a3-46ef-ad25-7267d83aa957\")\nasset_id: ef79ff78-57c8-555b-a7d6-f48d0aebd141\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "261cc11d-52a3-46ef-ad25-7267d83aa957",
+    "completed": {
+      "job_id": "261cc11d-52a3-46ef-ad25-7267d83aa957",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=0",
+        "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=1",
+        "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=2",
+        "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=3",
+        "https://api.pixellab.ai/mcp/images/261cc11d-52a3-46ef-ad25-7267d83aa957/download?index=4"
+      ],
+      "asset": {
+        "id": "ef79ff78-57c8-555b-a7d6-f48d0aebd141",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Harpoon Hunter approved still, same face, clothing and equipment",
+    "receipt": "id: ebc0557b-3b65-486f-82f5-ad608c08b5d2\njob_id: ebc0557b-3b65-486f-82f5-ad608c08b5d2\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ebc0557b-3b65-486f-82f5-ad608c08b5d2\")\nasset_id: 17e11214-e918-5be1-ae91-084960f06ae6\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "ebc0557b-3b65-486f-82f5-ad608c08b5d2",
+    "completed": {
+      "job_id": "ebc0557b-3b65-486f-82f5-ad608c08b5d2",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=0",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=1",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=2",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=3",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=4",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=5",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=6",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=7",
+        "https://api.pixellab.ai/mcp/images/ebc0557b-3b65-486f-82f5-ad608c08b5d2/download?index=8"
+      ],
+      "asset": {
+        "id": "17e11214-e918-5be1-ae91-084960f06ae6",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "ChannelStart",
+    "frames": 8,
+    "end": false,
+    "prompt": "Aim the harpoon at a marked gem: both hands pull shaft slightly up to shoulder, coil torso and draw back ready to throw. End HOLDING this aim, no throw, no scene movement. Keep pointed weapon directed LEFT. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Harpoon Hunter approved still, same face, clothing and equipment",
+    "receipt": "id: e6ccd640-4438-4753-82a7-c8850dfb28ab\njob_id: e6ccd640-4438-4753-82a7-c8850dfb28ab\ndescription: Aim the harpoon at a marked gem: both hands pull shaft slightly up to shoulder, coil torso and draw back ready to throw. End HOLDING this aim, no throw, no scene movement. Keep pointed weapon directed LEFT. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e6ccd640-4438-4753-82a7-c8850dfb28ab\")\nasset_id: 6073b67f-0a32-591c-958f-ad59926b19a5\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "e6ccd640-4438-4753-82a7-c8850dfb28ab",
+    "completed": {
+      "job_id": "e6ccd640-4438-4753-82a7-c8850dfb28ab",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=0",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=1",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=2",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=3",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=4",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=5",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=6",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=7",
+        "https://api.pixellab.ai/mcp/images/e6ccd640-4438-4753-82a7-c8850dfb28ab/download?index=8"
+      ],
+      "asset": {
+        "id": "6073b67f-0a32-591c-958f-ad59926b19a5",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostfang_wolf",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Four paws planted, tiny ear and tail-tip movement, relaxed jaw. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostfang Wolf approved still, same face, clothing and equipment",
+    "receipt": "id: 8794b54d-8418-4910-b5d6-ade624160369\njob_id: 8794b54d-8418-4910-b5d6-ade624160369\ndescription: Four paws planted, tiny ear and tail-tip movement, relaxed jaw. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8794b54d-8418-4910-b5d6-ade624160369\")\nasset_id: 60e9fda5-57ff-59ca-9a93-ab06c5fe5be0\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "8794b54d-8418-4910-b5d6-ade624160369",
+    "completed": {
+      "job_id": "8794b54d-8418-4910-b5d6-ade624160369",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=0",
+        "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=1",
+        "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=2",
+        "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=3",
+        "https://api.pixellab.ai/mcp/images/8794b54d-8418-4910-b5d6-ade624160369/download?index=4"
+      ],
+      "asset": {
+        "id": "60e9fda5-57ff-59ca-9a93-ab06c5fe5be0",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostfang_wolf",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "Fast grounded bite toward LEFT: crouch, short forward head/shoulder snap with jaws opening then closing at frame4, paws remain near origin, pull back to four-paw ready stance. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostfang Wolf approved still, same face, clothing and equipment",
+    "receipt": "id: aa064f5a-da16-4073-94ed-31949490cc6d\njob_id: aa064f5a-da16-4073-94ed-31949490cc6d\ndescription: Fast grounded bite toward LEFT: crouch, short forward head/shoulder snap with jaws opening then closing at frame4, paws remain near origin, pull back to four-paw ready stance. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"aa064f5a-da16-4073-94ed-31949490cc6d\")\nasset_id: b019067b-74b3-5ffd-92b3-95a3fa059f03\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "aa064f5a-da16-4073-94ed-31949490cc6d",
+    "completed": {
+      "job_id": "aa064f5a-da16-4073-94ed-31949490cc6d",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=0",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=1",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=2",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=3",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=4",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=5",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=6",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=7",
+        "https://api.pixellab.ai/mcp/images/aa064f5a-da16-4073-94ed-31949490cc6d/download?index=8"
+      ],
+      "asset": {
+        "id": "b019067b-74b3-5ffd-92b3-95a3fa059f03",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostfang_wolf",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostfang Wolf approved still, same face, clothing and equipment",
+    "receipt": "id: b467ed00-b7d5-420e-aa05-55726726cbce\njob_id: b467ed00-b7d5-420e-aa05-55726726cbce\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b467ed00-b7d5-420e-aa05-55726726cbce\")\nasset_id: 5fbaf2a5-dcbf-56ac-9d3b-5683d4c0c67f\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "b467ed00-b7d5-420e-aa05-55726726cbce",
+    "completed": {
+      "job_id": "b467ed00-b7d5-420e-aa05-55726726cbce",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=0",
+        "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=1",
+        "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=2",
+        "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=3",
+        "https://api.pixellab.ai/mcp/images/b467ed00-b7d5-420e-aa05-55726726cbce/download?index=4"
+      ],
+      "asset": {
+        "id": "5fbaf2a5-dcbf-56ac-9d3b-5683d4c0c67f",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostfang_wolf",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeated wolf: knees buckle, lower chest and muzzle gently onto front paws, settle motionless on ground. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostfang Wolf approved still, same face, clothing and equipment",
+    "receipt": "id: afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a\njob_id: afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a\ndescription: Defeated wolf: knees buckle, lower chest and muzzle gently onto front paws, settle motionless on ground. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a\")\nasset_id: 26c1537e-7a9e-5d4c-b0d1-c1bc6d18b9cd\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a",
+    "completed": {
+      "job_id": "afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=4",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=5",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=6",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=7",
+        "https://api.pixellab.ai/mcp/images/afa068a8-c9b8-4c28-a60e-c6b3fbbe8f7a/download?index=8"
+      ],
+      "asset": {
+        "id": "26c1537e-7a9e-5d4c-b0d1-c1bc6d18b9cd",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rimecarver",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rimecarver approved still, same face, clothing and equipment",
+    "receipt": "id: 3cff344c-7e85-411c-959b-77431c9b6f75\njob_id: 3cff344c-7e85-411c-959b-77431c9b6f75\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3cff344c-7e85-411c-959b-77431c9b6f75\")\nasset_id: 475bbd3c-8428-57ac-81c7-1e13446c4d19\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "3cff344c-7e85-411c-959b-77431c9b6f75",
+    "completed": {
+      "job_id": "3cff344c-7e85-411c-959b-77431c9b6f75",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=0",
+        "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=1",
+        "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=2",
+        "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=3",
+        "https://api.pixellab.ai/mcp/images/3cff344c-7e85-411c-959b-77431c9b6f75/download?index=4"
+      ],
+      "asset": {
+        "id": "475bbd3c-8428-57ac-81c7-1e13446c4d19",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rimecarver",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "Short two-handed ice-chisel staff jab toward LEFT, clear anticipation, forward contact at frame4 and soft recovery. No projectile. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rimecarver approved still, same face, clothing and equipment",
+    "receipt": "id: 5235e1f5-e052-43c5-966b-fe24e08fa244\njob_id: 5235e1f5-e052-43c5-966b-fe24e08fa244\ndescription: Short two-handed ice-chisel staff jab toward LEFT, clear anticipation, forward contact at frame4 and soft recovery. No projectile. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5235e1f5-e052-43c5-966b-fe24e08fa244\")\nasset_id: 5e60301a-1094-5095-8431-f0bd95e1f0c5\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "5235e1f5-e052-43c5-966b-fe24e08fa244",
+    "completed": {
+      "job_id": "5235e1f5-e052-43c5-966b-fe24e08fa244",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=0",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=1",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=2",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=3",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=4",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=5",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=6",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=7",
+        "https://api.pixellab.ai/mcp/images/5235e1f5-e052-43c5-966b-fe24e08fa244/download?index=8"
+      ],
+      "asset": {
+        "id": "5e60301a-1094-5095-8431-f0bd95e1f0c5",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rimecarver",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rimecarver approved still, same face, clothing and equipment",
+    "receipt": "id: 2fcce344-3959-4e34-8933-a8177d9e1aa4\njob_id: 2fcce344-3959-4e34-8933-a8177d9e1aa4\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2fcce344-3959-4e34-8933-a8177d9e1aa4\")\nasset_id: c9200ed1-a1cb-5e84-97ce-a0f59a5cc1b8\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "2fcce344-3959-4e34-8933-a8177d9e1aa4",
+    "completed": {
+      "job_id": "2fcce344-3959-4e34-8933-a8177d9e1aa4",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=0",
+        "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=1",
+        "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=2",
+        "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=3",
+        "https://api.pixellab.ai/mcp/images/2fcce344-3959-4e34-8933-a8177d9e1aa4/download?index=4"
+      ],
+      "asset": {
+        "id": "c9200ed1-a1cb-5e84-97ce-a0f59a5cc1b8",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rimecarver",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rimecarver approved still, same face, clothing and equipment",
+    "receipt": "id: f62ed0d4-1fdc-4828-923b-7cd95c03d5a5\njob_id: f62ed0d4-1fdc-4828-923b-7cd95c03d5a5\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f62ed0d4-1fdc-4828-923b-7cd95c03d5a5\")\nasset_id: cb1482bc-6343-5b24-b485-ef4ce34fd90a\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "f62ed0d4-1fdc-4828-923b-7cd95c03d5a5",
+    "completed": {
+      "job_id": "f62ed0d4-1fdc-4828-923b-7cd95c03d5a5",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=0",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=1",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=2",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=3",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=4",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=5",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=6",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=7",
+        "https://api.pixellab.ai/mcp/images/f62ed0d4-1fdc-4828-923b-7cd95c03d5a5/download?index=8"
+      ],
+      "asset": {
+        "id": "cb1482bc-6343-5b24-b485-ef4ce34fd90a",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rimecarver",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Carve frost: raise ice-chisel staff with both hands, press its point firmly into the floor in front, pale icy glint at frame4, pull staff up and smoothly return to ready. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rimecarver approved still, same face, clothing and equipment",
+    "receipt": "id: ce2493ca-717b-4424-b0f9-2da6c09d5ceb\njob_id: ce2493ca-717b-4424-b0f9-2da6c09d5ceb\ndescription: Carve frost: raise ice-chisel staff with both hands, press its point firmly into the floor in front, pale icy glint at frame4, pull staff up and smoothly return to ready. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ce2493ca-717b-4424-b0f9-2da6c09d5ceb\")\nasset_id: 18de86e6-cb5b-5091-9072-6cc757356cd3\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "ce2493ca-717b-4424-b0f9-2da6c09d5ceb",
+    "completed": {
+      "job_id": "ce2493ca-717b-4424-b0f9-2da6c09d5ceb",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=0",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=1",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=2",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=3",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=4",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=5",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=6",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=7",
+        "https://api.pixellab.ai/mcp/images/ce2493ca-717b-4424-b0f9-2da6c09d5ceb/download?index=8"
+      ],
+      "asset": {
+        "id": "18de86e6-cb5b-5091-9072-6cc757356cd3",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "shieldmaiden",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Shieldmaiden approved still, same face, clothing and equipment",
+    "receipt": "id: 45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7\njob_id: 45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7\")\nasset_id: 7de13a80-8796-5ea5-84cf-09d9662c9452\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7",
+    "completed": {
+      "job_id": "45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=0",
+        "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=1",
+        "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=2",
+        "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=3",
+        "https://api.pixellab.ai/mcp/images/45790de5-a0b4-45e6-b6b4-85e9ffa5cbf7/download?index=4"
+      ],
+      "asset": {
+        "id": "7de13a80-8796-5ea5-84cf-09d9662c9452",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "shieldmaiden",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "Shield BASH toward LEFT: lower center of gravity, brace round shield with raised forearm, shoulder pushes shield forward at frame4, body follows, then retract into ready stance. Hatchet stays held quietly down; no sword. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Shieldmaiden approved still, same face, clothing and equipment",
+    "receipt": "id: f1a520d8-3afe-43ee-a3a1-c50ce49a61db\njob_id: f1a520d8-3afe-43ee-a3a1-c50ce49a61db\ndescription: Shield BASH toward LEFT: lower center of gravity, brace round shield with raised forearm, shoulder pushes shield forward at frame4, body follows, then retract into ready stance. Hatchet stays held quietly down; no sword. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f1a520d8-3afe-43ee-a3a1-c50ce49a61db\")\nasset_id: 09a37b50-e529-5b99-bc0d-eefd89ad102e\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "f1a520d8-3afe-43ee-a3a1-c50ce49a61db",
+    "completed": {
+      "job_id": "f1a520d8-3afe-43ee-a3a1-c50ce49a61db",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=0",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=1",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=2",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=3",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=4",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=5",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=6",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=7",
+        "https://api.pixellab.ai/mcp/images/f1a520d8-3afe-43ee-a3a1-c50ce49a61db/download?index=8"
+      ],
+      "asset": {
+        "id": "09a37b50-e529-5b99-bc0d-eefd89ad102e",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "shieldmaiden",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Shieldmaiden approved still, same face, clothing and equipment",
+    "receipt": "id: ae41f230-3ed5-4d7f-baff-fd7cab5cbffe\njob_id: ae41f230-3ed5-4d7f-baff-fd7cab5cbffe\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ae41f230-3ed5-4d7f-baff-fd7cab5cbffe\")\nasset_id: 6b464b2f-b4ab-5d00-aba8-613241f48628\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "ae41f230-3ed5-4d7f-baff-fd7cab5cbffe",
+    "completed": {
+      "job_id": "ae41f230-3ed5-4d7f-baff-fd7cab5cbffe",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=0",
+        "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=1",
+        "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=2",
+        "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=3",
+        "https://api.pixellab.ai/mcp/images/ae41f230-3ed5-4d7f-baff-fd7cab5cbffe/download?index=4"
+      ],
+      "asset": {
+        "id": "6b464b2f-b4ab-5d00-aba8-613241f48628",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "shieldmaiden",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Shieldmaiden approved still, same face, clothing and equipment",
+    "receipt": "id: fab83ec8-00a5-46c3-a726-ebd57576014c\njob_id: fab83ec8-00a5-46c3-a726-ebd57576014c\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fab83ec8-00a5-46c3-a726-ebd57576014c\")\nasset_id: c7c19aa9-6a4f-5bd7-8291-9852e051490e\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "fab83ec8-00a5-46c3-a726-ebd57576014c",
+    "completed": {
+      "job_id": "fab83ec8-00a5-46c3-a726-ebd57576014c",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=0",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=1",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=2",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=3",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=4",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=5",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=6",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=7",
+        "https://api.pixellab.ai/mcp/images/fab83ec8-00a5-46c3-a726-ebd57576014c/download?index=8"
+      ],
+      "asset": {
+        "id": "c7c19aa9-6a4f-5bd7-8291-9852e051490e",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "shieldmaiden",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Raise round wooden shield UP and FORWARD with a clear bend of knees and shoulder shift; shield catches a brief pale BLUE shine at frame4, lower shield and smoothly recover. Retain hatchet quietly at side. No sword. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Shieldmaiden approved still, same face, clothing and equipment",
+    "receipt": "id: 550c7cc2-878e-424c-aab8-7bbbbeccbd99\njob_id: 550c7cc2-878e-424c-aab8-7bbbbeccbd99\ndescription: Raise round wooden shield UP and FORWARD with a clear bend of knees and shoulder shift; shield catches a brief pale BLUE shine at frame4, lower shield and smoothly recover. Retain hatchet quietly at side. No sword. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"550c7cc2-878e-424c-aab8-7bbbbeccbd99\")\nasset_id: 7df4b6fa-d836-50f5-844e-e52a3eab674a\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "550c7cc2-878e-424c-aab8-7bbbbeccbd99",
+    "completed": {
+      "job_id": "550c7cc2-878e-424c-aab8-7bbbbeccbd99",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=0",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=1",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=2",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=3",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=4",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=5",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=6",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=7",
+        "https://api.pixellab.ai/mcp/images/550c7cc2-878e-424c-aab8-7bbbbeccbd99/download?index=8"
+      ],
+      "asset": {
+        "id": "7df4b6fa-d836-50f5-844e-e52a3eab674a",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rime_skald",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rime Skald approved still, same face, clothing and equipment",
+    "receipt": "id: 8d1ed255-7922-4198-a176-ef55644d42da\njob_id: 8d1ed255-7922-4198-a176-ef55644d42da\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8d1ed255-7922-4198-a176-ef55644d42da\")\nasset_id: 8d5981e1-e107-5444-8c20-ee3848a180e9\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "8d1ed255-7922-4198-a176-ef55644d42da",
+    "completed": {
+      "job_id": "8d1ed255-7922-4198-a176-ef55644d42da",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=0",
+        "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=1",
+        "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=2",
+        "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=3",
+        "https://api.pixellab.ai/mcp/images/8d1ed255-7922-4198-a176-ef55644d42da/download?index=4"
+      ],
+      "asset": {
+        "id": "8d5981e1-e107-5444-8c20-ee3848a180e9",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rime_skald",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One blunt horn-end shove toward LEFT: tuck arms, shoulder twist and push horn forward for contact at frame4, then pull back to chest. Keep horn intact. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rime Skald approved still, same face, clothing and equipment",
+    "receipt": "id: 92d7aada-8868-48be-ae1c-2130b659d740\njob_id: 92d7aada-8868-48be-ae1c-2130b659d740\ndescription: One blunt horn-end shove toward LEFT: tuck arms, shoulder twist and push horn forward for contact at frame4, then pull back to chest. Keep horn intact. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"92d7aada-8868-48be-ae1c-2130b659d740\")\nasset_id: 62e9721a-5682-5224-bca1-e302c8c94ee3\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "92d7aada-8868-48be-ae1c-2130b659d740",
+    "completed": {
+      "job_id": "92d7aada-8868-48be-ae1c-2130b659d740",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=0",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=1",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=2",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=3",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=4",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=5",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=6",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=7",
+        "https://api.pixellab.ai/mcp/images/92d7aada-8868-48be-ae1c-2130b659d740/download?index=8"
+      ],
+      "asset": {
+        "id": "62e9721a-5682-5224-bca1-e302c8c94ee3",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rime_skald",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rime Skald approved still, same face, clothing and equipment",
+    "receipt": "id: b870891e-fb3b-4727-8d11-a70a10337acb\njob_id: b870891e-fb3b-4727-8d11-a70a10337acb\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b870891e-fb3b-4727-8d11-a70a10337acb\")\nasset_id: a4cdb7e6-3ea2-50f5-a39b-e572f96c8ea4\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "b870891e-fb3b-4727-8d11-a70a10337acb",
+    "completed": {
+      "job_id": "b870891e-fb3b-4727-8d11-a70a10337acb",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=0",
+        "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=1",
+        "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=2",
+        "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=3",
+        "https://api.pixellab.ai/mcp/images/b870891e-fb3b-4727-8d11-a70a10337acb/download?index=4"
+      ],
+      "asset": {
+        "id": "a4cdb7e6-3ea2-50f5-a39b-e572f96c8ea4",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rime_skald",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rime Skald approved still, same face, clothing and equipment",
+    "receipt": "id: 86f5c8e6-ab1a-47db-aa60-7508516a2948\njob_id: 86f5c8e6-ab1a-47db-aa60-7508516a2948\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"86f5c8e6-ab1a-47db-aa60-7508516a2948\")\nasset_id: 9859ce0c-8d72-56d4-b657-1d5a2136f38e\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "86f5c8e6-ab1a-47db-aa60-7508516a2948",
+    "completed": {
+      "job_id": "86f5c8e6-ab1a-47db-aa60-7508516a2948",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=0",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=1",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=2",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=3",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=4",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=5",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=6",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=7",
+        "https://api.pixellab.ai/mcp/images/86f5c8e6-ab1a-47db-aa60-7508516a2948/download?index=8"
+      ],
+      "asset": {
+        "id": "9859ce0c-8d72-56d4-b657-1d5a2136f38e",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "rime_skald",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Raise the signal horn mouthpiece to lips with both hands, lean chest back slightly and blow the horn at frame4, small cheeks puff; lower the horn to ready. No music notes or new objects. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Rime Skald approved still, same face, clothing and equipment",
+    "receipt": "id: 0332a867-05d5-4bf8-80b1-11d98f3f13f9\njob_id: 0332a867-05d5-4bf8-80b1-11d98f3f13f9\ndescription: Raise the signal horn mouthpiece to lips with both hands, lean chest back slightly and blow the horn at frame4, small cheeks puff; lower the horn to ready. No music notes or new objects. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0332a867-05d5-4bf8-80b1-11d98f3f13f9\")\nasset_id: c67c9908-8cf6-5406-97f9-c4fc7024f938\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "0332a867-05d5-4bf8-80b1-11d98f3f13f9",
+    "completed": {
+      "job_id": "0332a867-05d5-4bf8-80b1-11d98f3f13f9",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=0",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=1",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=2",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=3",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=4",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=5",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=6",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=7",
+        "https://api.pixellab.ai/mcp/images/0332a867-05d5-4bf8-80b1-11d98f3f13f9/download?index=8"
+      ],
+      "asset": {
+        "id": "c67c9908-8cf6-5406-97f9-c4fc7024f938",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "hearthkeeper",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Hearthkeeper approved still, same face, clothing and equipment",
+    "receipt": "id: 6a9e4d76-cdbb-46ac-9974-34b6c22dd65d\njob_id: 6a9e4d76-cdbb-46ac-9974-34b6c22dd65d\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6a9e4d76-cdbb-46ac-9974-34b6c22dd65d\")\nasset_id: 280e1696-4a57-59c3-b089-f574749ed6aa\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "6a9e4d76-cdbb-46ac-9974-34b6c22dd65d",
+    "completed": {
+      "job_id": "6a9e4d76-cdbb-46ac-9974-34b6c22dd65d",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=0",
+        "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=1",
+        "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=2",
+        "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=3",
+        "https://api.pixellab.ai/mcp/images/6a9e4d76-cdbb-46ac-9974-34b6c22dd65d/download?index=4"
+      ],
+      "asset": {
+        "id": "280e1696-4a57-59c3-b089-f574749ed6aa",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "hearthkeeper",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One short controlled brass-brazier shove toward LEFT, both hands support bowl, knees flex, contact at frame4, return carefully to warm ready stance. Small contained flame stays in brazier, no spilled fire. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Hearthkeeper approved still, same face, clothing and equipment",
+    "receipt": "id: 7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981\njob_id: 7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981\ndescription: One short controlled brass-brazier shove toward LEFT, both hands support bowl, knees flex, contact at frame4, return carefully to warm ready stance. Small contained flame stays in brazier, no spilled fire. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981\")\nasset_id: 4d901f11-052b-5913-9399-a3f0565da7fe\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981",
+    "completed": {
+      "job_id": "7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=0",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=1",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=2",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=3",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=4",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=5",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=6",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=7",
+        "https://api.pixellab.ai/mcp/images/7c9b4bb9-2fdb-45e9-b7ec-ef21f3724981/download?index=8"
+      ],
+      "asset": {
+        "id": "4d901f11-052b-5913-9399-a3f0565da7fe",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "hearthkeeper",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Hearthkeeper approved still, same face, clothing and equipment",
+    "receipt": "id: a25e1858-6282-4618-9515-07c205e0e093\njob_id: a25e1858-6282-4618-9515-07c205e0e093\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a25e1858-6282-4618-9515-07c205e0e093\")\nasset_id: 3bc9a0d3-3642-5ef5-be03-609a3b2073fe\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "a25e1858-6282-4618-9515-07c205e0e093",
+    "completed": {
+      "job_id": "a25e1858-6282-4618-9515-07c205e0e093",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=0",
+        "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=1",
+        "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=2",
+        "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=3",
+        "https://api.pixellab.ai/mcp/images/a25e1858-6282-4618-9515-07c205e0e093/download?index=4"
+      ],
+      "asset": {
+        "id": "3bc9a0d3-3642-5ef5-be03-609a3b2073fe",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "hearthkeeper",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Hearthkeeper approved still, same face, clothing and equipment",
+    "receipt": "id: 6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f\njob_id: 6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f\")\nasset_id: 31bf60b1-9f35-5e1e-82f3-8db8d1459378\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f",
+    "completed": {
+      "job_id": "6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=0",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=1",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=2",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=3",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=4",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=5",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=6",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=7",
+        "https://api.pixellab.ai/mcp/images/6fed5d54-c4b8-4f58-9ee6-65d4b31cdd9f/download?index=8"
+      ],
+      "asset": {
+        "id": "31bf60b1-9f35-5e1e-82f3-8db8d1459378",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "hearthkeeper",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Lift the warm brazier bowl with both hands to chest height, soften face, warm small flame brightens at frame4, then lower it carefully and return to ready. No new props. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Hearthkeeper approved still, same face, clothing and equipment",
+    "receipt": "id: d165622b-e58c-4a12-8c90-c3308f2bd212\njob_id: d165622b-e58c-4a12-8c90-c3308f2bd212\ndescription: Lift the warm brazier bowl with both hands to chest height, soften face, warm small flame brightens at frame4, then lower it carefully and return to ready. No new props. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d165622b-e58c-4a12-8c90-c3308f2bd212\")\nasset_id: 0c2fab3c-5c2b-5116-9cc5-91064b54e31c\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "d165622b-e58c-4a12-8c90-c3308f2bd212",
+    "completed": {
+      "job_id": "d165622b-e58c-4a12-8c90-c3308f2bd212",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=0",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=1",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=2",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=3",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=4",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=5",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=6",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=7",
+        "https://api.pixellab.ai/mcp/images/d165622b-e58c-4a12-8c90-c3308f2bd212/download?index=8"
+      ],
+      "asset": {
+        "id": "0c2fab3c-5c2b-5116-9cc5-91064b54e31c",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostblade_reaver",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostblade Reaver approved still, same face, clothing and equipment",
+    "receipt": "id: f7f48343-7c1d-4634-85ea-02c4ff5f4eae\njob_id: f7f48343-7c1d-4634-85ea-02c4ff5f4eae\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f7f48343-7c1d-4634-85ea-02c4ff5f4eae\")\nasset_id: 037113c9-c9be-5acb-bdd1-619c9580b6c8\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "f7f48343-7c1d-4634-85ea-02c4ff5f4eae",
+    "completed": {
+      "job_id": "f7f48343-7c1d-4634-85ea-02c4ff5f4eae",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=0",
+        "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=1",
+        "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=2",
+        "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=3",
+        "https://api.pixellab.ai/mcp/images/f7f48343-7c1d-4634-85ea-02c4ff5f4eae/download?index=4"
+      ],
+      "asset": {
+        "id": "037113c9-c9be-5acb-bdd1-619c9580b6c8",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostblade_reaver",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One TWO-HANDED sword cut toward LEFT: draw blade back with both grips, clear diagonal slash at frame4, follow-through and smooth reset. This is a single clip repeated for two-hit basics; no extra weapons. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostblade Reaver approved still, same face, clothing and equipment",
+    "receipt": "id: 0cd6b4fc-882b-469e-b253-8211f8638a0e\njob_id: 0cd6b4fc-882b-469e-b253-8211f8638a0e\ndescription: One TWO-HANDED sword cut toward LEFT: draw blade back with both grips, clear diagonal slash at frame4, follow-through and smooth reset. This is a single clip repeated for two-hit basics; no extra weapons. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0cd6b4fc-882b-469e-b253-8211f8638a0e\")\nasset_id: 5d659cdf-74ec-5ef7-96ef-d1c161e5199f\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "0cd6b4fc-882b-469e-b253-8211f8638a0e",
+    "completed": {
+      "job_id": "0cd6b4fc-882b-469e-b253-8211f8638a0e",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=0",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=1",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=2",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=3",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=4",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=5",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=6",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=7",
+        "https://api.pixellab.ai/mcp/images/0cd6b4fc-882b-469e-b253-8211f8638a0e/download?index=8"
+      ],
+      "asset": {
+        "id": "5d659cdf-74ec-5ef7-96ef-d1c161e5199f",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostblade_reaver",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostblade Reaver approved still, same face, clothing and equipment",
+    "receipt": "id: ef98006a-681e-4a2d-85fc-90b7dc6444e2\njob_id: ef98006a-681e-4a2d-85fc-90b7dc6444e2\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ef98006a-681e-4a2d-85fc-90b7dc6444e2\")\nasset_id: ec330514-76f3-509b-8b07-fc16a884d0c7\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "ef98006a-681e-4a2d-85fc-90b7dc6444e2",
+    "completed": {
+      "job_id": "ef98006a-681e-4a2d-85fc-90b7dc6444e2",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=0",
+        "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=1",
+        "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=2",
+        "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=3",
+        "https://api.pixellab.ai/mcp/images/ef98006a-681e-4a2d-85fc-90b7dc6444e2/download?index=4"
+      ],
+      "asset": {
+        "id": "ec330514-76f3-509b-8b07-fc16a884d0c7",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostblade_reaver",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostblade Reaver approved still, same face, clothing and equipment",
+    "receipt": "id: 6304b3eb-3830-44e4-b426-f30ebe7e8f57\njob_id: 6304b3eb-3830-44e4-b426-f30ebe7e8f57\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6304b3eb-3830-44e4-b426-f30ebe7e8f57\")\nasset_id: c0808525-fdb3-52a3-b7f2-0ec6615dffb2\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "6304b3eb-3830-44e4-b426-f30ebe7e8f57",
+    "completed": {
+      "job_id": "6304b3eb-3830-44e4-b426-f30ebe7e8f57",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=0",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=1",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=2",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=3",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=4",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=5",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=6",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=7",
+        "https://api.pixellab.ai/mcp/images/6304b3eb-3830-44e4-b426-f30ebe7e8f57/download?index=8"
+      ],
+      "asset": {
+        "id": "c0808525-fdb3-52a3-b7f2-0ec6615dffb2",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "frostblade_reaver",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Grip sword with BOTH hands, draw its icy edge close to chest, angle it up as a cold blue sheen runs along blade at frame4, then lower to ready. Grounded torso acting, no sword throwing. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Frostblade Reaver approved still, same face, clothing and equipment",
+    "receipt": "id: f185492f-ad35-487e-90a6-1b5d6b9e4553\njob_id: f185492f-ad35-487e-90a6-1b5d6b9e4553\ndescription: Grip sword with BOTH hands, draw its icy edge close to chest, angle it up as a cold blue sheen runs along blade at frame4, then lower to ready. Grounded torso acting, no sword throwing. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f185492f-ad35-487e-90a6-1b5d6b9e4553\")\nasset_id: 99919cde-9a9a-50ae-a45d-216a6296dae8\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "f185492f-ad35-487e-90a6-1b5d6b9e4553",
+    "completed": {
+      "job_id": "f185492f-ad35-487e-90a6-1b5d6b9e4553",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=0",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=1",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=2",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=3",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=4",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=5",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=6",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=7",
+        "https://api.pixellab.ai/mcp/images/f185492f-ad35-487e-90a6-1b5d6b9e4553/download?index=8"
+      ],
+      "asset": {
+        "id": "99919cde-9a9a-50ae-a45d-216a6296dae8",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "glacier_troll",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Glacier Troll approved still, same face, clothing and equipment",
+    "receipt": "id: dbbefc1b-04d4-47f8-9ff6-4b44afb2238a\njob_id: dbbefc1b-04d4-47f8-9ff6-4b44afb2238a\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dbbefc1b-04d4-47f8-9ff6-4b44afb2238a\")\nasset_id: c0c7533b-56ed-53af-85d7-3e46c5170cdf\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "dbbefc1b-04d4-47f8-9ff6-4b44afb2238a",
+    "completed": {
+      "job_id": "dbbefc1b-04d4-47f8-9ff6-4b44afb2238a",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/dbbefc1b-04d4-47f8-9ff6-4b44afb2238a/download?index=4"
+      ],
+      "asset": {
+        "id": "c0c7533b-56ed-53af-85d7-3e46c5170cdf",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "glacier_troll",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One heavy club slam toward LEFT: squat, large shoulders lift stone club, down-forward impact at frame4, muscular recoil, retrieve club and smoothly return to ready pose. Preserve two tusks and blue skin. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Glacier Troll approved still, same face, clothing and equipment",
+    "receipt": "id: 3b67ae97-bc67-40ab-ad11-8836cd424bbe\njob_id: 3b67ae97-bc67-40ab-ad11-8836cd424bbe\ndescription: One heavy club slam toward LEFT: squat, large shoulders lift stone club, down-forward impact at frame4, muscular recoil, retrieve club and smoothly return to ready pose. Preserve two tusks and blue skin. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3b67ae97-bc67-40ab-ad11-8836cd424bbe\")\nasset_id: 01fedc87-118e-54fa-89d0-421230bdec17\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "3b67ae97-bc67-40ab-ad11-8836cd424bbe",
+    "completed": {
+      "job_id": "3b67ae97-bc67-40ab-ad11-8836cd424bbe",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=0",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=1",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=2",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=3",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=4",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=5",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=6",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=7",
+        "https://api.pixellab.ai/mcp/images/3b67ae97-bc67-40ab-ad11-8836cd424bbe/download?index=8"
+      ],
+      "asset": {
+        "id": "01fedc87-118e-54fa-89d0-421230bdec17",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "glacier_troll",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Glacier Troll approved still, same face, clothing and equipment",
+    "receipt": "id: 3f54cb76-9675-412c-b4bc-f0a316d8d37a\njob_id: 3f54cb76-9675-412c-b4bc-f0a316d8d37a\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3f54cb76-9675-412c-b4bc-f0a316d8d37a\")\nasset_id: d2c01477-1adb-58be-8c17-61d53fa7333e\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "3f54cb76-9675-412c-b4bc-f0a316d8d37a",
+    "completed": {
+      "job_id": "3f54cb76-9675-412c-b4bc-f0a316d8d37a",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/3f54cb76-9675-412c-b4bc-f0a316d8d37a/download?index=4"
+      ],
+      "asset": {
+        "id": "d2c01477-1adb-58be-8c17-61d53fa7333e",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "glacier_troll",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Glacier Troll approved still, same face, clothing and equipment",
+    "receipt": "id: e86b5296-2b40-4232-81fc-58a3b7e9016a\njob_id: e86b5296-2b40-4232-81fc-58a3b7e9016a\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e86b5296-2b40-4232-81fc-58a3b7e9016a\")\nasset_id: 0233378a-0ee2-504f-bc4d-1949ec7c3952\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "e86b5296-2b40-4232-81fc-58a3b7e9016a",
+    "completed": {
+      "job_id": "e86b5296-2b40-4232-81fc-58a3b7e9016a",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=4",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=5",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=6",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=7",
+        "https://api.pixellab.ai/mcp/images/e86b5296-2b40-4232-81fc-58a3b7e9016a/download?index=8"
+      ],
+      "asset": {
+        "id": "0233378a-0ee2-504f-bc4d-1949ec7c3952",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "glacier_troll",
+    "state": "Ability",
+    "frames": 8,
+    "end": true,
+    "prompt": "Pull stone club close, brace knees and hunch shoulders, pale ice crust briefly glints on shoulder fur and forearms at frame4 as protective armor is summoned; unfold into exact starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Glacier Troll approved still, same face, clothing and equipment",
+    "receipt": "id: c8c9abc4-6fec-4c44-bb65-7e80353165f4\njob_id: c8c9abc4-6fec-4c44-bb65-7e80353165f4\ndescription: Pull stone club close, brace knees and hunch shoulders, pale ice crust briefly glints on shoulder fur and forearms at frame4 as protective armor is summoned; unfold into exact starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c8c9abc4-6fec-4c44-bb65-7e80353165f4\")\nasset_id: fa3c9a37-1f64-5a97-819f-7b04683dca24\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "c8c9abc4-6fec-4c44-bb65-7e80353165f4",
+    "completed": {
+      "job_id": "c8c9abc4-6fec-4c44-bb65-7e80353165f4",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=0",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=1",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=2",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=3",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=4",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=5",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=6",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=7",
+        "https://api.pixellab.ai/mcp/images/c8c9abc4-6fec-4c44-bb65-7e80353165f4/download?index=8"
+      ],
+      "asset": {
+        "id": "fa3c9a37-1f64-5a97-819f-7b04683dca24",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Champion approved still, same face, clothing and equipment",
+    "receipt": "id: a0c033c0-24fe-40a6-8167-aea655caaa2a\njob_id: a0c033c0-24fe-40a6-8167-aea655caaa2a\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a0c033c0-24fe-40a6-8167-aea655caaa2a\")\nasset_id: 64335d55-1e54-5d55-a336-fcf131757d17\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "a0c033c0-24fe-40a6-8167-aea655caaa2a",
+    "completed": {
+      "job_id": "a0c033c0-24fe-40a6-8167-aea655caaa2a",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/a0c033c0-24fe-40a6-8167-aea655caaa2a/download?index=4"
+      ],
+      "asset": {
+        "id": "64335d55-1e54-5d55-a336-fcf131757d17",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One TWO-HANDED heavy warhammer swing toward LEFT: brace boots, wind torso, hands keep grip as hammer accelerates to contact at frame4, short recoil, both hands bring hammer back to rest. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Champion approved still, same face, clothing and equipment",
+    "receipt": "id: 8e41624a-856c-4e93-8225-2deaafc323ad\njob_id: 8e41624a-856c-4e93-8225-2deaafc323ad\ndescription: One TWO-HANDED heavy warhammer swing toward LEFT: brace boots, wind torso, hands keep grip as hammer accelerates to contact at frame4, short recoil, both hands bring hammer back to rest. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8e41624a-856c-4e93-8225-2deaafc323ad\")\nasset_id: ce056016-5801-53cb-bc3b-0e362254e9f0\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "8e41624a-856c-4e93-8225-2deaafc323ad",
+    "completed": {
+      "job_id": "8e41624a-856c-4e93-8225-2deaafc323ad",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=0",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=1",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=2",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=3",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=4",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=5",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=6",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=7",
+        "https://api.pixellab.ai/mcp/images/8e41624a-856c-4e93-8225-2deaafc323ad/download?index=8"
+      ],
+      "asset": {
+        "id": "ce056016-5801-53cb-bc3b-0e362254e9f0",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Champion approved still, same face, clothing and equipment",
+    "receipt": "id: c616f55b-91f6-4889-abaa-c032389fb50e\njob_id: c616f55b-91f6-4889-abaa-c032389fb50e\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c616f55b-91f6-4889-abaa-c032389fb50e\")\nasset_id: bbd87766-114d-5e5d-8904-1d14d70f727f\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "c616f55b-91f6-4889-abaa-c032389fb50e",
+    "completed": {
+      "job_id": "c616f55b-91f6-4889-abaa-c032389fb50e",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=0",
+        "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=1",
+        "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=2",
+        "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=3",
+        "https://api.pixellab.ai/mcp/images/c616f55b-91f6-4889-abaa-c032389fb50e/download?index=4"
+      ],
+      "asset": {
+        "id": "bbd87766-114d-5e5d-8904-1d14d70f727f",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Champion approved still, same face, clothing and equipment",
+    "receipt": "id: c6c91768-2d5c-4522-b3a7-7bf538fc375f\njob_id: c6c91768-2d5c-4522-b3a7-7bf538fc375f\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c6c91768-2d5c-4522-b3a7-7bf538fc375f\")\nasset_id: 21c1fab9-b84e-57aa-89fd-fbc18f6599cc\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "c6c91768-2d5c-4522-b3a7-7bf538fc375f",
+    "completed": {
+      "job_id": "c6c91768-2d5c-4522-b3a7-7bf538fc375f",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=0",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=1",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=2",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=3",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=4",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=5",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=6",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=7",
+        "https://api.pixellab.ai/mcp/images/c6c91768-2d5c-4522-b3a7-7bf538fc375f/download?index=8"
+      ],
+      "asset": {
+        "id": "21c1fab9-b84e-57aa-89fd-fbc18f6599cc",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "ChannelStart",
+    "frames": 8,
+    "end": false,
+    "prompt": "Wind-up for heavy hammer ability: BOTH HANDS raise hammer high above shoulder, bend knees and set feet, end HOLDING this heavy raised ready-to-slam pose. No strike yet. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Iceborn Champion approved still, same face, clothing and equipment",
+    "receipt": "id: d9b41891-cdc4-408d-b60e-d355cddb06a0\njob_id: d9b41891-cdc4-408d-b60e-d355cddb06a0\ndescription: Wind-up for heavy hammer ability: BOTH HANDS raise hammer high above shoulder, bend knees and set feet, end HOLDING this heavy raised ready-to-slam pose. No strike yet. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d9b41891-cdc4-408d-b60e-d355cddb06a0\")\nasset_id: dce4d51a-4d98-5fc6-b96a-3494fc6eeb9a\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "d9b41891-cdc4-408d-b60e-d355cddb06a0",
+    "completed": {
+      "job_id": "d9b41891-cdc4-408d-b60e-d355cddb06a0",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=0",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=1",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=2",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=3",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=4",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=5",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=6",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=7",
+        "https://api.pixellab.ai/mcp/images/d9b41891-cdc4-408d-b60e-d355cddb06a0/download?index=8"
+      ],
+      "asset": {
+        "id": "dce4d51a-4d98-5fc6-b96a-3494fc6eeb9a",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "Idle",
+    "frames": 4,
+    "end": true,
+    "prompt": "Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Jarl Haldra, the Icebreaker approved still, same face, clothing and equipment",
+    "receipt": "id: 13c2813b-37fa-4a3c-9fed-69639c06ef14\njob_id: 13c2813b-37fa-4a3c-9fed-69639c06ef14\ndescription: Both boots planted on their exact original floor pixels; only a one-pixel shoulder settle and slight forearm or cloth-tip motion. Subtle calm idle loop, no full-body breathing bob, no steps, jumping or turning; return to starting pose. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"13c2813b-37fa-4a3c-9fed-69639c06ef14\")\nasset_id: 7db04ef5-aeaf-5c7d-9842-2c2e0920cec7\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "13c2813b-37fa-4a3c-9fed-69639c06ef14",
+    "completed": {
+      "job_id": "13c2813b-37fa-4a3c-9fed-69639c06ef14",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=0",
+        "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=1",
+        "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=2",
+        "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=3",
+        "https://api.pixellab.ai/mcp/images/13c2813b-37fa-4a3c-9fed-69639c06ef14/download?index=4"
+      ],
+      "asset": {
+        "id": "7db04ef5-aeaf-5c7d-9842-2c2e0920cec7",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "AutoAttack",
+    "frames": 8,
+    "end": true,
+    "prompt": "One measured TWO-HANDED cleaver sword slash toward LEFT: shoulder wind-up, knees brace, broad diagonal cut at frame4, grounded smooth controlled recovery to ready. Keep woman face/circlet/braid unchanged. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Jarl Haldra, the Icebreaker approved still, same face, clothing and equipment",
+    "receipt": "id: 2a4f8321-ee89-4c9f-af19-be2611810aa9\njob_id: 2a4f8321-ee89-4c9f-af19-be2611810aa9\ndescription: One measured TWO-HANDED cleaver sword slash toward LEFT: shoulder wind-up, knees brace, broad diagonal cut at frame4, grounded smooth controlled recovery to ready. Keep woman face/circlet/braid unchanged. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2a4f8321-ee89-4c9f-af19-be2611810aa9\")\nasset_id: a5de53f1-8b25-548d-ab01-dc6e44d339c1\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "2a4f8321-ee89-4c9f-af19-be2611810aa9",
+    "completed": {
+      "job_id": "2a4f8321-ee89-4c9f-af19-be2611810aa9",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=0",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=1",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=2",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=3",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=4",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=5",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=6",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=7",
+        "https://api.pixellab.ai/mcp/images/2a4f8321-ee89-4c9f-af19-be2611810aa9/download?index=8"
+      ],
+      "asset": {
+        "id": "a5de53f1-8b25-548d-ab01-dc6e44d339c1",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "Hit",
+    "frames": 4,
+    "end": true,
+    "prompt": "One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Jarl Haldra, the Icebreaker approved still, same face, clothing and equipment",
+    "receipt": "id: 0b3f0c9c-7737-4324-9561-9520b4a5963a\njob_id: 0b3f0c9c-7737-4324-9561-9520b4a5963a\ndescription: One brief hit reaction: small shoulder/head recoil away from LEFT, knees absorb impact, preserve feet near starting floor then recover to exact ready stance. Eyes may blink briefly; no injury or blood. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 4\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0b3f0c9c-7737-4324-9561-9520b4a5963a\")\nasset_id: 877517de-65fc-5e24-9bfa-13a569e8f812\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "0b3f0c9c-7737-4324-9561-9520b4a5963a",
+    "completed": {
+      "job_id": "0b3f0c9c-7737-4324-9561-9520b4a5963a",
+      "status": "completed",
+      "frames": 5,
+      "download_url": "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=0",
+        "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=1",
+        "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=2",
+        "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=3",
+        "https://api.pixellab.ai/mcp/images/0b3f0c9c-7737-4324-9561-9520b4a5963a/download?index=4"
+      ],
+      "asset": {
+        "id": "877517de-65fc-5e24-9bfa-13a569e8f812",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "Death",
+    "frames": 8,
+    "end": false,
+    "prompt": "Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Jarl Haldra, the Icebreaker approved still, same face, clothing and equipment",
+    "receipt": "id: fd556d09-0740-45af-85f8-ca5ca36b9902\njob_id: fd556d09-0740-45af-85f8-ca5ca36b9902\ndescription: Defeat: knees buckle, body sags into a low kneeling slumped pose, head bows and eyes close. Weapon stays in hand or rests naturally beside the body. End still, do not stand up again. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fd556d09-0740-45af-85f8-ca5ca36b9902\")\nasset_id: 5329d2b9-59a1-55ef-8444-2e8d4f5dc46b\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "fd556d09-0740-45af-85f8-ca5ca36b9902",
+    "completed": {
+      "job_id": "fd556d09-0740-45af-85f8-ca5ca36b9902",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=0",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=1",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=2",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=3",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=4",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=5",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=6",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=7",
+        "https://api.pixellab.ai/mcp/images/fd556d09-0740-45af-85f8-ca5ca36b9902/download?index=8"
+      ],
+      "asset": {
+        "id": "5329d2b9-59a1-55ef-8444-2e8d4f5dc46b",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "ChannelStart",
+    "frames": 8,
+    "end": false,
+    "prompt": "Glacier Cleave WIND-UP: BOTH HANDS firmly grip the enormous cleaver sword and raise it above shoulder and head, blade tilted forward toward LEFT, knees brace, thick braid settles. End HOLDING the raised sword; do not strike. No levitation or new weapons. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.",
+    "subject": "Jarl Haldra, the Icebreaker approved still, same face, clothing and equipment",
+    "receipt": "id: d2fef3d3-8d31-42df-8f08-ed95d6dfd742\njob_id: d2fef3d3-8d31-42df-8f08-ed95d6dfd742\ndescription: Glacier Cleave WIND-UP: BOTH HANDS firmly grip the enormous cleaver sword and raise it above shoulder and head, blade tilted forward toward LEFT, knees brace, thick braid settles. End HOLDING the raised sword; do not strike. No levitation or new weapons. Fixed side-view camera, SCREEN-LEFT facing throughout. Preserve exact native pixel scale and body proportions, near-black contour and solid color palette. No turn toward viewer, whole-body scaling, new props, stray colors, smeared outlines, ground plane, added dust or magic unless requested. Single clear action.\nframes: 8\nsize: 128x104px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d2fef3d3-8d31-42df-8f08-ed95d6dfd742\")\nasset_id: 8892e343-9136-5681-8ea3-29275f7b1323\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "d2fef3d3-8d31-42df-8f08-ed95d6dfd742",
+    "completed": {
+      "job_id": "d2fef3d3-8d31-42df-8f08-ed95d6dfd742",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=0",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=1",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=2",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=3",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=4",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=5",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=6",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=7",
+        "https://api.pixellab.ai/mcp/images/d2fef3d3-8d31-42df-8f08-ed95d6dfd742/download?index=8"
+      ],
+      "asset": {
+        "id": "8892e343-9136-5681-8ea3-29275f7b1323",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "state": "Release",
+    "frames": 8,
+    "end": true,
+    "prompt": "From the held sword ABOVE her head, drive the great ice cleaver DOWN with both hands toward screen-left. One emphatic heavy glacier cleave at frame4, knees and shoulders follow through. A single restrained pale ice arc follows blade. Then lift blade smoothly from ground and recover to the exact last-frame ready stance. Preserve face, tiara, fur, coat, sword and native scale. No new props, no zoom, no camera rotation.",
+    "subject": "jarl_haldra approved same identity from held pose",
+    "parent_job": "d2fef3d3-8d31-42df-8f08-ed95d6dfd742",
+    "first_frame_index": 8,
+    "receipt": "id: 70828526-d624-44b0-9f6a-56c5ee08203d\njob_id: 70828526-d624-44b0-9f6a-56c5ee08203d\ndescription: From the held sword ABOVE her head, drive the great ice cleaver DOWN with both hands toward screen-left. One emphatic heavy glacier cleave at frame4, knees and shoulders follow through. A single restrained pale ice arc follows blade. Then lift blade smoothly from ground and recover to the exact last-frame ready stance. Preserve face, tiara, fur, coat, sword and native scale. No new props, no zoom, no camera rotation.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"70828526-d624-44b0-9f6a-56c5ee08203d\")\nasset_id: 02c95037-ad5e-5cc9-a424-a496cd11fb25\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "70828526-d624-44b0-9f6a-56c5ee08203d",
+    "completed": {
+      "job_id": "70828526-d624-44b0-9f6a-56c5ee08203d",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=0",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=1",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=2",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=3",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=4",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=5",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=6",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=7",
+        "https://api.pixellab.ai/mcp/images/70828526-d624-44b0-9f6a-56c5ee08203d/download?index=8"
+      ],
+      "asset": {
+        "id": "02c95037-ad5e-5cc9-a424-a496cd11fb25",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "state": "Release",
+    "frames": 8,
+    "end": true,
+    "prompt": "From the held hammer raised high, drive hammer DOWN with both hands, heavy grounded impact toward screen-left at frame4. Bend knees and torso into strike, then retrieve hammer smoothly and return to exact last-frame ready pose. Preserve horned helmet, face, fur, clothing and hammer. No new props, no camera motion, no blood, no large magic ring.",
+    "subject": "iceborn_champion approved same identity from held pose",
+    "parent_job": "d9b41891-cdc4-408d-b60e-d355cddb06a0",
+    "first_frame_index": 8,
+    "receipt": "id: dcf681e3-bd1b-4bea-8d33-b8171a6f4a46\njob_id: dcf681e3-bd1b-4bea-8d33-b8171a6f4a46\ndescription: From the held hammer raised high, drive hammer DOWN with both hands, heavy grounded impact toward screen-left at frame4. Bend knees and torso into strike, then retrieve hammer smoothly and return to exact last-frame ready pose. Preserve horned helmet, face, fur, clothing and hammer. No new props, no camera motion, no blood, no large magic ring.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dcf681e3-bd1b-4bea-8d33-b8171a6f4a46\")\nasset_id: 4f2ab223-f3ae-52ef-92f6-3c10d9767cde\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "dcf681e3-bd1b-4bea-8d33-b8171a6f4a46",
+    "completed": {
+      "job_id": "dcf681e3-bd1b-4bea-8d33-b8171a6f4a46",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=0",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=1",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=2",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=3",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=4",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=5",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=6",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=7",
+        "https://api.pixellab.ai/mcp/images/dcf681e3-bd1b-4bea-8d33-b8171a6f4a46/download?index=8"
+      ],
+      "asset": {
+        "id": "4f2ab223-f3ae-52ef-92f6-3c10d9767cde",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "harpoon_hunter",
+    "state": "Release",
+    "frames": 8,
+    "end": true,
+    "prompt": "From the pulled-back harpoon aiming pose, deliver one forceful two-handed harpoon THRUST horizontally toward screen-left at frame4, then withdraw and smoothly return to the exact last-frame ready stance. Keep the physical harpoon in both hands for the entire action. NO projectile, NO glowing gem, NO magic, NO impact particles, no camera movement. Preserve cap, rope coil, face and costume.",
+    "subject": "harpoon_hunter approved same identity from held pose",
+    "parent_job": "e6ccd640-4438-4753-82a7-c8850dfb28ab",
+    "first_frame_index": 2,
+    "receipt": "id: 3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0\njob_id: 3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0\ndescription: From the pulled-back harpoon aiming pose, deliver one forceful two-handed harpoon THRUST horizontally toward screen-left at frame4, then withdraw and smoothly return to the exact last-frame ready stance. Keep the physical harpoon in both hands for the entire action. NO projectile, NO glowing gem, NO magic, NO impact particles, no camera movement. Preserve cap, rope coil, face and costume.\nframes: 8\nsize: 128x104px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0\")\nasset_id: ace6da68-c502-57c0-8565-36ae1732d49a\nasset_status: pending (saved to your gallery when generation completes)",
+    "job_id": "3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0",
+    "completed": {
+      "job_id": "3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=0",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=1",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=2",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=3",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=4",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=5",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=6",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=7",
+        "https://api.pixellab.ai/mcp/images/3fb0e4c5-f69d-4ccf-8882-0ce5a70018f0/download?index=8"
+      ],
+      "asset": {
+        "id": "ace6da68-c502-57c0-8565-36ae1732d49a",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  }
+]

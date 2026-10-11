@@ -28,5 +28,7 @@ public enum EnemySpecialAbilityKind
     ShareOre = 30, LayFoundation = 31, BoreDrill = 32, AssayVein = 33,
     PowderCharge = 34, SwitchTrack = 35, Faultline = 36, SiegeMachinist = 37, ObsidianSentinel = 38,
     GrandDelver = 39,
-    GlacierCleave = 40
+    GlacierCleave = 40,
+    Rimecarving = 41,
+    MountainStrike = 42
 }

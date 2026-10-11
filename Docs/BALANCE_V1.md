@@ -27,6 +27,33 @@ Implement account persistence and independent character stats, shared mastery, c
 
 The approved September 14 brief supersedes older every-fifth-wave rewards, solo milestone defaults, wave-25 King tuning, and prototype enemy numbers. Weighted overlapping eras and all existing board/damage/lifecycle invariants remain authoritative. The separate pacing attachment referenced by the brief was unavailable; `PROGRESSION_PACING.md` supplies the durable philosophy.
 
+### Frostwake roster starting values (2026-10-11, provisional)
+
+These are level-one base values. Existing depth scaling and clean combat rounding
+remain authoritative; no new player-power scaling or HP padding is introduced.
+Special intervals count accepted moves and pause through committed warnings.
+
+| Enemy | HP | Basic damage | First/repeat moves | Special moves | Payload |
+|---|---:|---:|---:|---:|---|
+| Iceborn Raider | 55 | 10 | 4 | — | — |
+| Harpoon Hunter | 70 | 10 | 4 | 4 | 1 mark, 2 responses, 15 damage |
+| Frostfang Wolf | 40 | 5 | 2 | — | — |
+| Rimecarver | 75 | 5 | 5 | 5 | 1 Frost gem, shared restriction cap |
+| Shieldmaiden | 85 | 10 | 5 | 6 | 10 ally / 15 self shield |
+| Rime Skald | 70 | 5 | 5 | 5 | 1.35× other allies' basic speed, 3 moves |
+| Hearthkeeper | 70 | 5 | 5 | 5 | 20 HP heal, 2-move channel, ally below 75% |
+| Frostblade Reaver | 90 | 5 + 5 | 4 | 5 | Shared Frostbite status |
+| Glacier Troll | 205 | 15 | 6 | 5 | Alternate 30 shield / 2 marks, 2 responses, 25 damage |
+| Iceborn Champion | 220 | 15 | 5 | 5 | 2 marks, 2 responses, 30 damage |
+| Jarl Haldra | 340 | 15 | 5 | 5 | 3 responses, Frost/Heavy/Bifrost: 20/35/50 |
+
+Frostwake's composition budget is 3 at entry, 4 at local 4, 6.5 at local 8,
+8 at local 18 and 10 at local 26, with three slots, two disruptors, one support
+and one leader maximum. Introduction windows and once-per-visit leaders use the
+existing weighted selector; supports always have an escort and leader defeats
+are followed by normal-enemy relief. Automated seed coverage cannot establish
+human visit length or difficulty. See `Docs/Frostwake/WORKLIST.md` for evidence.
+
 ## Targets and economy
 
 | Target | Range |

@@ -3,6 +3,9 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
+# Reconstructible PixelLab payloads; native sources, decisions and receipts are tracked.
+ArtSource/Frostwake/palette-requests/
+ArtSource/Frostwake/theme/*-request.json
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/

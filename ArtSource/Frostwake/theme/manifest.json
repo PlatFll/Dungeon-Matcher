@@ -1,0 +1,240 @@
+[
+  {
+    "name": "PanelInset",
+    "source": "PanelTimber",
+    "rect": [
+      14,
+      12,
+      114,
+      116
+    ],
+    "size": [
+      100,
+      104
+    ],
+    "operation": "lossless crop"
+  },
+  {
+    "name": "Floor",
+    "source": "TallMountainPass",
+    "rect": [
+      160,
+      224,
+      224,
+      256
+    ],
+    "size": [
+      64,
+      32
+    ],
+    "operation": "lossless crop"
+  },
+  {
+    "name": "PlayerTop",
+    "source": "Button",
+    "operation": "native end caps and repeated center",
+    "size": [
+      146,
+      12
+    ]
+  },
+  {
+    "name": "PlayerBottom",
+    "source": "Button",
+    "operation": "native end caps and repeated center",
+    "size": [
+      146,
+      12
+    ]
+  },
+  {
+    "file": "EnergyFrame.png",
+    "size": [
+      144,
+      32
+    ],
+    "colors": 57,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "bb56dfa3d6daa5ab53ede6f00c8b1b704cd022fa3f760eb666595ed7542b9cc1"
+  },
+  {
+    "file": "Floor.png",
+    "size": [
+      64,
+      32
+    ],
+    "colors": 32,
+    "alpha": [
+      255
+    ],
+    "sha256": "8125e91ba1cb60e3a2e28bb7fe502767370486c7f654b60b55892b8c25c19917"
+  },
+  {
+    "file": "frame-repair-input.png",
+    "size": [
+      512,
+      128
+    ],
+    "colors": 59,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "5a63bba5356322a123877d3a6dd7dc3661cd28ffcb73498d9150e589d99b8416"
+  },
+  {
+    "file": "frame-repair-output.png",
+    "size": [
+      512,
+      128
+    ],
+    "colors": 59,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "b6b7179d30490f2456422eef3f8dfa5fcb481515d3aa186dbf19aea27e0cef4f"
+  },
+  {
+    "file": "FrameCorner.png",
+    "size": [
+      80,
+      80
+    ],
+    "colors": 57,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "d63d6a10d26b86a44e71002a57fc7202175a0f85ad4ac466789e21b859814cee"
+  },
+  {
+    "file": "FrameEdge.png",
+    "size": [
+      64,
+      16
+    ],
+    "colors": 53,
+    "alpha": [
+      255
+    ],
+    "sha256": "f6eccbbdf91bec1faee30b28ed6a1c8a7b0be8247d0d1493d04e48bb24976414"
+  },
+  {
+    "file": "material-repair-input.png",
+    "size": [
+      512,
+      128
+    ],
+    "colors": 140,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "ba2edc928ed87883cf25ef5c18ea5da0a2f3fa50920987f5c1af0a4cb3362ee4"
+  },
+  {
+    "file": "material-repair-output.png",
+    "size": [
+      512,
+      128
+    ],
+    "colors": 25,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "d49d9e825512b86a828b24cd7e7ef88b6b93802e2816478f7f8f8439d13fd892"
+  },
+  {
+    "file": "PanelInset.png",
+    "size": [
+      100,
+      104
+    ],
+    "colors": 40,
+    "alpha": [
+      255
+    ],
+    "sha256": "e2f28a27973fc00899f3c18e065e9b3437e3fb27535523df91d970b12a94ce74"
+  },
+  {
+    "file": "PlayerBottom.png",
+    "size": [
+      146,
+      12
+    ],
+    "colors": 47,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "c0520c0eae122acca9acdae5923ff7b996b6273ad09b162dd616921d44d8dbb4"
+  },
+  {
+    "file": "PlayerMiddle.png",
+    "size": [
+      146,
+      4
+    ],
+    "colors": 17,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "ab25121b04c28ec1f110e93327921ebf59c6d8daf4b3fbb28a60ce2f0d21aea2"
+  },
+  {
+    "file": "PlayerTop.png",
+    "size": [
+      146,
+      12
+    ],
+    "colors": 57,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "2332a54bd567c9c9cf48d0b297d73330aedbeb5a0b3c8247de776f854fa9af06"
+  },
+  {
+    "file": "QuietRock.png",
+    "size": [
+      128,
+      128
+    ],
+    "colors": 4,
+    "alpha": [
+      255
+    ],
+    "sha256": "ef3cace2f00de718f2f4b6c707f04c190d058a77c16200589f8cf66a1a4100fc"
+  },
+  {
+    "file": "QuietTimber.png",
+    "size": [
+      100,
+      104
+    ],
+    "colors": 4,
+    "alpha": [
+      255
+    ],
+    "sha256": "339d577fbebf99131c231ba1ab08b1ee887e5207b26caaf1b58bd6d99f54c5c6"
+  },
+  {
+    "file": "WavePlaque.png",
+    "size": [
+      128,
+      32
+    ],
+    "colors": 59,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "947aeda2d7bc82b406cfa61f666d56e72e80cbdc92a1752afc17de1ba4c48b61"
+  }
+]
