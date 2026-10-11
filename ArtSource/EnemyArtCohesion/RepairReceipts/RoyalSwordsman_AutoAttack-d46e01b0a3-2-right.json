@@ -1,0 +1,45 @@
+{
+  "id": "RoyalSwordsman_AutoAttack-d46e01b0a3-2",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/RoyalSwordsman_AutoAttack-d46e01b0a3-2.png",
+  "parameters": {
+    "mask_x": 117,
+    "mask_y": 59,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41583,
+    "description": "Tiny native pixel-art edge repair of the existing steel sword point or cut slash edge. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "b944ae11-aa5b-494e-9998-a71d7cd6012e",
+    "image_id": "9c57490b-7ac9-55ed-88da-dc473f87889f",
+    "status": "processing",
+    "source_image_id": "9c57490b-7ac9-55ed-88da-dc473f87889f",
+    "job_id": "b944ae11-aa5b-494e-9998-a71d7cd6012e",
+    "image_size": {
+      "width": 144,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/b944ae11-aa5b-494e-9998-a71d7cd6012e/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/RoyalSwordsman_AutoAttack-d46e01b0a3-2-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/RoyalSwordsman_AutoAttack-d46e01b0a3-2-right-repair.png",
+  "completion": "status: completed\nid: b944ae11-aa5b-494e-9998-a71d7cd6012e\njob_id: b944ae11-aa5b-494e-9998-a71d7cd6012e\nframes: 1\ntransparent: yes\nasset_id: 9c57490b-7ac9-55ed-88da-dc473f87889f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/b944ae11-aa5b-494e-9998-a71d7cd6012e/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/RoyalSwordsman_AutoAttack-d46e01b0a3-2.png",
+  "input_sha256": "17df87a2aeab8f07c22222d66e729a1d2026fed3449f710a51b712ab466ebbc8",
+  "output_sha256": "82c5c62da7bf2a3c6e7eabb0d5ff183a7841158316e215d04769473a7f0b2c1d",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

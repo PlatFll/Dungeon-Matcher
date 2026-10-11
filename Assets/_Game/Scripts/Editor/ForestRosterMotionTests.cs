@@ -28,7 +28,8 @@ public sealed class ForestRosterMotionTests
                 foreach(var key in curve)
                 {
                     var sprite=(Sprite)key.value;
-                    Assert.That(sprite.rect.size,Is.EqualTo(name=="Ancient_Treant"?new Vector2(128,112):new Vector2(96,80)));
+                    Assert.That(sprite.rect.size,Is.EqualTo(name=="Ancient_Treant"?new Vector2(176,136):new Vector2(144,104)));
+                    Assert.That(sprite.pivot.y,Is.EqualTo(4).Within(.0001f));
                     Assert.That(sprite.texture.filterMode,Is.EqualTo(FilterMode.Point));
                 }
             }

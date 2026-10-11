@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: 76d5ec148627a5d4c940364105a0ba8a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7694283074005284648
+    second: stonewright_Ability_0
+  - first:
+      213: -4267293809097078381
+    second: stonewright_Ability_1
+  - first:
+      213: -7368929836413234224
+    second: stonewright_Ability_2
+  - first:
+      213: -806665129627606527
+    second: stonewright_Ability_3
+  - first:
+      213: -6001485817602992679
+    second: stonewright_Ability_4
+  - first:
+      213: -7993696684133089528
+    second: stonewright_Ability_5
+  - first:
+      213: 9158933348539032711
+    second: stonewright_Ability_6
+  - first:
+      213: -8017065098739928254
+    second: stonewright_Ability_7
+  - first:
+      213: -7956643067715111221
+    second: stonewright_Ability_8
+  - first:
+      213: 2896863846584438687
+    second: stonewright_Ability_9
+  - first:
+      213: -7723658311694560767
+    second: stonewright_Ability_10
+  - first:
+      213: -5204775711640615069
+    second: stonewright_Ability_11
+  - first:
+      213: -3218873483927915420
+    second: stonewright_Ability_00
+  - first:
+      213: 4864096919734593874
+    second: stonewright_Ability_01
+  - first:
+      213: -5272764457917285411
+    second: stonewright_Ability_02
+  - first:
+      213: -6796622147989362139
+    second: stonewright_Ability_03
+  - first:
+      213: 8776923493631710222
+    second: stonewright_Ability_04
+  - first:
+      213: 626040759262130601
+    second: stonewright_Ability_05
+  - first:
+      213: -7903387061665730994
+    second: stonewright_Ability_06
+  - first:
+      213: 6596673517316725474
+    second: stonewright_Ability_07
+  - first:
+      213: -4251357464498677503
+    second: stonewright_Ability_08
+  - first:
+      213: -5890869924152041239
+    second: stonewright_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stonewright_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4647d85ee934453d0800000000000000
+      internalID: -3218873483927915420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2592add906eb08340800000000000000
+      internalID: 4864096919734593874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbf88d69a063d6b0800000000000000
+      internalID: -5272764457917285411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52aaa8c9a2c8da1a0800000000000000
+      internalID: -6796622147989362139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e04d2b25a65edc970800000000000000
+      internalID: 8776923493631710222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a13cbee0c420b800800000000000000
+      internalID: 626040759262130601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4eeef26757815290800000000000000
+      internalID: -7903387061665730994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ead3e20d971c8b50800000000000000
+      internalID: 6596673517316725474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109d95329e42005c0800000000000000
+      internalID: -4251357464498677503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0a2e0e30d6f3ea0800000000000000
+      internalID: -5890869924152041239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102d3fcefad00d490800000000000000
+      internalID: -7723658311694560767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367841cf01ce4c7b0800000000000000
+      internalID: -5204775711640615069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stonewright_Ability_0: 7694283074005284648
+      stonewright_Ability_00: -3218873483927915420
+      stonewright_Ability_01: 4864096919734593874
+      stonewright_Ability_02: -5272764457917285411
+      stonewright_Ability_03: -6796622147989362139
+      stonewright_Ability_04: 8776923493631710222
+      stonewright_Ability_05: 626040759262130601
+      stonewright_Ability_06: -7903387061665730994
+      stonewright_Ability_07: 6596673517316725474
+      stonewright_Ability_08: -4251357464498677503
+      stonewright_Ability_09: -5890869924152041239
+      stonewright_Ability_1: -4267293809097078381
+      stonewright_Ability_10: -7723658311694560767
+      stonewright_Ability_11: -5204775711640615069
+      stonewright_Ability_2: -7368929836413234224
+      stonewright_Ability_3: -806665129627606527
+      stonewright_Ability_4: -6001485817602992679
+      stonewright_Ability_5: -7993696684133089528
+      stonewright_Ability_6: 9158933348539032711
+      stonewright_Ability_7: -8017065098739928254
+      stonewright_Ability_8: -7956643067715111221
+      stonewright_Ability_9: 2896863846584438687
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,45 @@
+{
+  "id": "rivet_gunner_AutoAttack-55d99b3322-3",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/rivet_gunner_AutoAttack-55d99b3322-3.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 48,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41913,
+    "description": "Tiny native pixel-art edge repair of the existing orange muzzle flash, completing a small leftward tapered burst. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "25446e40-b284-43e2-8ee6-6d49e660b7ec",
+    "image_id": "a36d7f02-c55a-53dd-9a1b-2e62a715bbba",
+    "status": "processing",
+    "source_image_id": "a36d7f02-c55a-53dd-9a1b-2e62a715bbba",
+    "job_id": "25446e40-b284-43e2-8ee6-6d49e660b7ec",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/25446e40-b284-43e2-8ee6-6d49e660b7ec/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/rivet_gunner_AutoAttack-55d99b3322-3-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/rivet_gunner_AutoAttack-55d99b3322-3-left-repair.png",
+  "completion": "status: completed\nid: 25446e40-b284-43e2-8ee6-6d49e660b7ec\njob_id: 25446e40-b284-43e2-8ee6-6d49e660b7ec\nframes: 1\ntransparent: yes\nasset_id: a36d7f02-c55a-53dd-9a1b-2e62a715bbba\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/25446e40-b284-43e2-8ee6-6d49e660b7ec/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/rivet_gunner_AutoAttack-55d99b3322-3.png",
+  "input_sha256": "bfa7403be9f7979463ee21ce2c3607e751a6be29516a47732f4d2a0197308dd7",
+  "output_sha256": "e3760bcf4bab07af601eef105400509d2cf47f44cf29ff78266bb90b18415289",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

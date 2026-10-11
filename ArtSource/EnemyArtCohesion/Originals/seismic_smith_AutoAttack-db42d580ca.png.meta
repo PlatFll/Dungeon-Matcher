@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: fdb5f966286ae244286aa8f535e682ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4405657092241697916
+    second: seismic_smith_AutoAttack_0
+  - first:
+      213: -2957399773993813196
+    second: seismic_smith_AutoAttack_1
+  - first:
+      213: -1767903140223155701
+    second: seismic_smith_AutoAttack_2
+  - first:
+      213: 1609510863431215045
+    second: seismic_smith_AutoAttack_3
+  - first:
+      213: 6248582199236726011
+    second: seismic_smith_AutoAttack_4
+  - first:
+      213: -4292309431712332678
+    second: seismic_smith_AutoAttack_5
+  - first:
+      213: -3040945500094853542
+    second: seismic_smith_AutoAttack_6
+  - first:
+      213: 3264933608732655905
+    second: seismic_smith_AutoAttack_7
+  - first:
+      213: -6623703992343809885
+    second: seismic_smith_AutoAttack_00
+  - first:
+      213: -5057870406643250991
+    second: seismic_smith_AutoAttack_01
+  - first:
+      213: 6829107833698615210
+    second: seismic_smith_AutoAttack_02
+  - first:
+      213: -8426382045664665481
+    second: seismic_smith_AutoAttack_03
+  - first:
+      213: 731715058014371230
+    second: seismic_smith_AutoAttack_04
+  - first:
+      213: -2756509421617545088
+    second: seismic_smith_AutoAttack_05
+  - first:
+      213: 8008461158021436638
+    second: seismic_smith_AutoAttack_06
+  - first:
+      213: 8174243571046041783
+    second: seismic_smith_AutoAttack_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0b2071050e314a0800000000000000
+      internalID: -6623703992343809885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d88114b9a5dec9b0800000000000000
+      internalID: -5057870406643250991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf7170846dd5ce50800000000000000
+      internalID: 6829107833698615210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770ad62ac2a7f0b80800000000000000
+      internalID: -8426382045664665481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d30cde7f2972a00800000000000000
+      internalID: 731715058014371230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08008702949eeb9d0800000000000000
+      internalID: -2756509421617545088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed491691ef4c32f60800000000000000
+      internalID: 8008461158021436638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seismic_smith_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b848b7083fb07170800000000000000
+      internalID: 8174243571046041783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      seismic_smith_AutoAttack_0: -4405657092241697916
+      seismic_smith_AutoAttack_00: -6623703992343809885
+      seismic_smith_AutoAttack_01: -5057870406643250991
+      seismic_smith_AutoAttack_02: 6829107833698615210
+      seismic_smith_AutoAttack_03: -8426382045664665481
+      seismic_smith_AutoAttack_04: 731715058014371230
+      seismic_smith_AutoAttack_05: -2756509421617545088
+      seismic_smith_AutoAttack_06: 8008461158021436638
+      seismic_smith_AutoAttack_07: 8174243571046041783
+      seismic_smith_AutoAttack_1: -2957399773993813196
+      seismic_smith_AutoAttack_2: -1767903140223155701
+      seismic_smith_AutoAttack_3: 1609510863431215045
+      seismic_smith_AutoAttack_4: 6248582199236726011
+      seismic_smith_AutoAttack_5: -4292309431712332678
+      seismic_smith_AutoAttack_6: -3040945500094853542
+      seismic_smith_AutoAttack_7: 3264933608732655905
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

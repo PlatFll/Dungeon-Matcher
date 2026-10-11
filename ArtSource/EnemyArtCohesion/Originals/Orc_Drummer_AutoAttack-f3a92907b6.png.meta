@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9193f65d6c36eaa418f9150520524012
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5179744979670222687
+    second: Orc_Drummer_AutoAttack_0
+  - first:
+      213: 1595238925154665233
+    second: Orc_Drummer_AutoAttack_1
+  - first:
+      213: -2272788733668582797
+    second: Orc_Drummer_AutoAttack_2
+  - first:
+      213: 5526830168375151043
+    second: Orc_Drummer_AutoAttack_3
+  - first:
+      213: -1044718633419356441
+    second: Orc_Drummer_AutoAttack_4
+  - first:
+      213: 1092719039585747102
+    second: Orc_Drummer_AutoAttack_5
+  - first:
+      213: -9035405520897810082
+    second: Orc_Drummer_AutoAttack_6
+  - first:
+      213: -39591569689543809
+    second: Orc_Drummer_AutoAttack_7
+  - first:
+      213: -412543421371250290
+    second: Orc_Drummer_AutoAttack_8
+  - first:
+      213: 8631584925934744995
+    second: Orc_Drummer_AutoAttack_00
+  - first:
+      213: -2681075924050094077
+    second: Orc_Drummer_AutoAttack_01
+  - first:
+      213: 6147238620786156901
+    second: Orc_Drummer_AutoAttack_02
+  - first:
+      213: 4323108926913927384
+    second: Orc_Drummer_AutoAttack_03
+  - first:
+      213: -6115072896471876228
+    second: Orc_Drummer_AutoAttack_04
+  - first:
+      213: -514097102239101812
+    second: Orc_Drummer_AutoAttack_05
+  - first:
+      213: -2764638806237441388
+    second: Orc_Drummer_AutoAttack_06
+  - first:
+      213: 2979404384669627619
+    second: Orc_Drummer_AutoAttack_07
+  - first:
+      213: 8571166197081550421
+    second: Orc_Drummer_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5f4fe02cc89c770800000000000000
+      internalID: 8631584925934744995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308542be6a7eacad0800000000000000
+      internalID: -2681075924050094077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5656585c4f06f4550800000000000000
+      internalID: 6147238620786156901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8560a0aa4cefb30800000000000000
+      internalID: 4323108926913927384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7dbc268995e22ba0800000000000000
+      internalID: -6115072896471876228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c0bf8c86f8dd8f0800000000000000
+      internalID: -514097102239101812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49215f547a702a9d0800000000000000
+      internalID: -2764638806237441388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e479769088f85920800000000000000
+      internalID: 2979404384669627619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ea1e78e36e2f670800000000000000
+      internalID: 8571166197081550421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc_Drummer_AutoAttack_0: 5179744979670222687
+      Orc_Drummer_AutoAttack_00: 8631584925934744995
+      Orc_Drummer_AutoAttack_01: -2681075924050094077
+      Orc_Drummer_AutoAttack_02: 6147238620786156901
+      Orc_Drummer_AutoAttack_03: 4323108926913927384
+      Orc_Drummer_AutoAttack_04: -6115072896471876228
+      Orc_Drummer_AutoAttack_05: -514097102239101812
+      Orc_Drummer_AutoAttack_06: -2764638806237441388
+      Orc_Drummer_AutoAttack_07: 2979404384669627619
+      Orc_Drummer_AutoAttack_08: 8571166197081550421
+      Orc_Drummer_AutoAttack_1: 1595238925154665233
+      Orc_Drummer_AutoAttack_2: -2272788733668582797
+      Orc_Drummer_AutoAttack_3: 5526830168375151043
+      Orc_Drummer_AutoAttack_4: -1044718633419356441
+      Orc_Drummer_AutoAttack_5: 1092719039585747102
+      Orc_Drummer_AutoAttack_6: -9035405520897810082
+      Orc_Drummer_AutoAttack_7: -39591569689543809
+      Orc_Drummer_AutoAttack_8: -412543421371250290
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: a2345dda66bd1684683967fb9bf9aa39
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3849192135621168502
+    second: Orc_Drummer_Death_0
+  - first:
+      213: -4558622587220018105
+    second: Orc_Drummer_Death_1
+  - first:
+      213: 8927723678264534782
+    second: Orc_Drummer_Death_2
+  - first:
+      213: 1994303958342404262
+    second: Orc_Drummer_Death_3
+  - first:
+      213: 8409424760431884096
+    second: Orc_Drummer_Death_4
+  - first:
+      213: 688008234271530603
+    second: Orc_Drummer_Death_5
+  - first:
+      213: 8128208533451005901
+    second: Orc_Drummer_Death_6
+  - first:
+      213: 4770095222301056258
+    second: Orc_Drummer_Death_7
+  - first:
+      213: 2562600781676144638
+    second: Orc_Drummer_Death_8
+  - first:
+      213: -8156369886188005600
+    second: Orc_Drummer_Death_00
+  - first:
+      213: -8950119000116321691
+    second: Orc_Drummer_Death_01
+  - first:
+      213: 8537547583878295365
+    second: Orc_Drummer_Death_02
+  - first:
+      213: -3467970330129040186
+    second: Orc_Drummer_Death_03
+  - first:
+      213: 4279104402342227066
+    second: Orc_Drummer_Death_04
+  - first:
+      213: -326887844498020117
+    second: Orc_Drummer_Death_05
+  - first:
+      213: 649441802210605674
+    second: Orc_Drummer_Death_06
+  - first:
+      213: 8431953191079790811
+    second: Orc_Drummer_Death_07
+  - first:
+      213: 3499651465120419473
+    second: Orc_Drummer_Death_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02712158dc0cece80800000000000000
+      internalID: -8156369886188005600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562a79c603acac380800000000000000
+      internalID: -8950119000116321691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f6f0e2b467b7670800000000000000
+      internalID: 8537547583878295365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc701ddb5b4fdfc0800000000000000
+      internalID: -3467970330129040186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c2b6248ce626b30800000000000000
+      internalID: 4279104402342227066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be86d43cc39a67bf0800000000000000
+      internalID: -326887844498020117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a7d03d0e7430900800000000000000
+      internalID: 649441802210605674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8480db0c0540570800000000000000
+      internalID: 8431953191079790811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Drummer_Death_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e8d203772419030800000000000000
+      internalID: 3499651465120419473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc_Drummer_Death_0: -3849192135621168502
+      Orc_Drummer_Death_00: -8156369886188005600
+      Orc_Drummer_Death_01: -8950119000116321691
+      Orc_Drummer_Death_02: 8537547583878295365
+      Orc_Drummer_Death_03: -3467970330129040186
+      Orc_Drummer_Death_04: 4279104402342227066
+      Orc_Drummer_Death_05: -326887844498020117
+      Orc_Drummer_Death_06: 649441802210605674
+      Orc_Drummer_Death_07: 8431953191079790811
+      Orc_Drummer_Death_08: 3499651465120419473
+      Orc_Drummer_Death_1: -4558622587220018105
+      Orc_Drummer_Death_2: 8927723678264534782
+      Orc_Drummer_Death_3: 1994303958342404262
+      Orc_Drummer_Death_4: 8409424760431884096
+      Orc_Drummer_Death_5: 688008234271530603
+      Orc_Drummer_Death_6: 8128208533451005901
+      Orc_Drummer_Death_7: 4770095222301056258
+      Orc_Drummer_Death_8: 2562600781676144638
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 5e04b3fe9cf77624a9127b8cd21c5b2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7127076037082404052
+    second: KnightCaptain_Idle_0
+  - first:
+      213: 5357827792899470912
+    second: KnightCaptain_Idle_1
+  - first:
+      213: -3625125669074473147
+    second: KnightCaptain_Idle_2
+  - first:
+      213: 8402667026625896413
+    second: KnightCaptain_Idle_3
+  - first:
+      213: -3413545034320991445
+    second: KnightCaptain_Idle_4
+  - first:
+      213: -5134377590827613927
+    second: KnightCaptain_Idle_5
+  - first:
+      213: -3346248267409963519
+    second: KnightCaptain_Idle_6
+  - first:
+      213: 7191568841980468177
+    second: KnightCaptain_Idle_7
+  - first:
+      213: -7901348420584472473
+    second: KnightCaptain_Idle_8
+  - first:
+      213: 7904730791348178809
+    second: KnightCaptain_Idle_00
+  - first:
+      213: -7358359331717103441
+    second: KnightCaptain_Idle_01
+  - first:
+      213: -7788421546591729933
+    second: KnightCaptain_Idle_02
+  - first:
+      213: 7220028891310392752
+    second: KnightCaptain_Idle_03
+  - first:
+      213: -6896860663124172591
+    second: KnightCaptain_Idle_04
+  - first:
+      213: 4539051181674464121
+    second: KnightCaptain_Idle_05
+  - first:
+      213: 341143251255327732
+    second: KnightCaptain_Idle_06
+  - first:
+      213: 1084985942079308132
+    second: KnightCaptain_Idle_07
+  - first:
+      213: 3049084497713722162
+    second: KnightCaptain_Idle_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f866f06ce33bd60800000000000000
+      internalID: 7904730791348178809
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0425f8c2bd1e990800000000000000
+      internalID: -7358359331717103441
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6c6624ed7f9e390800000000000000
+      internalID: -7788421546591729933
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b50d96f502b23460800000000000000
+      internalID: 7220028891310392752
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d06e1d94cd6940a0800000000000000
+      internalID: -6896860663124172591
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97306053003fdfe30800000000000000
+      internalID: 4539051181674464121
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb7894cafbfbb400800000000000000
+      internalID: 341143251255327732
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4610eef37f4ae0f00800000000000000
+      internalID: 1084985942079308132
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightCaptain_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23370682236805a20800000000000000
+      internalID: 3049084497713722162
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KnightCaptain_Idle_0: 7127076037082404052
+      KnightCaptain_Idle_00: 7904730791348178809
+      KnightCaptain_Idle_01: -7358359331717103441
+      KnightCaptain_Idle_02: -7788421546591729933
+      KnightCaptain_Idle_03: 7220028891310392752
+      KnightCaptain_Idle_04: -6896860663124172591
+      KnightCaptain_Idle_05: 4539051181674464121
+      KnightCaptain_Idle_06: 341143251255327732
+      KnightCaptain_Idle_07: 1084985942079308132
+      KnightCaptain_Idle_08: 3049084497713722162
+      KnightCaptain_Idle_1: 5357827792899470912
+      KnightCaptain_Idle_2: -3625125669074473147
+      KnightCaptain_Idle_3: 8402667026625896413
+      KnightCaptain_Idle_4: -3413545034320991445
+      KnightCaptain_Idle_5: -5134377590827613927
+      KnightCaptain_Idle_6: -3346248267409963519
+      KnightCaptain_Idle_7: 7191568841980468177
+      KnightCaptain_Idle_8: -7901348420584472473
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

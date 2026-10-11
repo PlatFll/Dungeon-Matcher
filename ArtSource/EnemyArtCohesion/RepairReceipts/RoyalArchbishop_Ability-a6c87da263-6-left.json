@@ -1,0 +1,45 @@
+{
+  "id": "RoyalArchbishop_Ability-a6c87da263-6",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/RoyalArchbishop_Ability-a6c87da263-6.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 21,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41444,
+    "description": "Tiny native pixel-art edge repair of the existing green or gold spell ring, closing only the cropped arc at the original curvature. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Ability."
+  },
+  "job": {
+    "background_job_id": "06608689-02ef-489c-a54e-d7f737d38eec",
+    "image_id": "d5ab5f0a-e661-57d9-8109-3be39d00f619",
+    "status": "processing",
+    "source_image_id": "d5ab5f0a-e661-57d9-8109-3be39d00f619",
+    "job_id": "06608689-02ef-489c-a54e-d7f737d38eec",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/06608689-02ef-489c-a54e-d7f737d38eec/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/RoyalArchbishop_Ability-a6c87da263-6-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/RoyalArchbishop_Ability-a6c87da263-6-left-repair.png",
+  "completion": "status: completed\nid: 06608689-02ef-489c-a54e-d7f737d38eec\njob_id: 06608689-02ef-489c-a54e-d7f737d38eec\nframes: 1\ntransparent: yes\nasset_id: d5ab5f0a-e661-57d9-8109-3be39d00f619\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/06608689-02ef-489c-a54e-d7f737d38eec/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/RoyalArchbishop_Ability-a6c87da263-6.png",
+  "input_sha256": "8a0ce1e6897dc08b81c02299b9569ba763ecdc6b4532f60419068f065b8fb369",
+  "output_sha256": "779acd9c464e5a62f5dec3f22fb7480d7cc8c556a8700f583aa2795fc517f4cb",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Unnecessary fragmented effect expansion."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

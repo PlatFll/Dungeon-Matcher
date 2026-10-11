@@ -1,0 +1,45 @@
+{
+  "id": "needlefin_skirmisher_Death-54d4f9090b-9",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/needlefin_skirmisher_Death-54d4f9090b-9.png",
+  "parameters": {
+    "mask_x": 101,
+    "mask_y": 72,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41209,
+    "description": "Tiny native pixel-art edge repair of the narrow blue-gray fish fin/snout contour. This animation pose was cropped at its old right canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Death. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "8024442f-b8e8-451b-bb93-059439718fb1",
+    "image_id": "c294b868-dc9f-5607-8a76-4863a07cdef2",
+    "status": "processing",
+    "source_image_id": "c294b868-dc9f-5607-8a76-4863a07cdef2",
+    "job_id": "8024442f-b8e8-451b-bb93-059439718fb1",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/8024442f-b8e8-451b-bb93-059439718fb1/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/needlefin_skirmisher_Death-54d4f9090b-9-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/needlefin_skirmisher_Death-54d4f9090b-9-right-repair.png",
+  "completion": "status: completed\nid: 8024442f-b8e8-451b-bb93-059439718fb1\njob_id: 8024442f-b8e8-451b-bb93-059439718fb1\nframes: 1\ntransparent: yes\nasset_id: c294b868-dc9f-5607-8a76-4863a07cdef2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/8024442f-b8e8-451b-bb93-059439718fb1/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/needlefin_skirmisher_Death-54d4f9090b-9.png",
+  "input_sha256": "c83704753c293fe92a79d5cd156e0a78f94133c241b7cf2e37ffcd84ee4908dc",
+  "output_sha256": "5d4fce02e87dc9f80cae6b0cc8441e4c81805c753cb7f469bcfe4597c2fd8ee6",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

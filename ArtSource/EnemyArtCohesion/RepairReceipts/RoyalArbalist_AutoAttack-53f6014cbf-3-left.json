@@ -1,0 +1,45 @@
+{
+  "id": "RoyalArbalist_AutoAttack-53f6014cbf-3",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/RoyalArbalist_AutoAttack-53f6014cbf-3.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 53,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41408,
+    "description": "Tiny native pixel-art edge repair of the crossbow limb and string contour, retaining the exact curvature and wood/iron colors. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack/Ability/Ability."
+  },
+  "job": {
+    "background_job_id": "4abc2905-687a-4fb3-a09e-b6269583b010",
+    "image_id": "dde91e62-62b9-57df-8e9d-56e89dfb3823",
+    "status": "processing",
+    "source_image_id": "dde91e62-62b9-57df-8e9d-56e89dfb3823",
+    "job_id": "4abc2905-687a-4fb3-a09e-b6269583b010",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/4abc2905-687a-4fb3-a09e-b6269583b010/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/RoyalArbalist_AutoAttack-53f6014cbf-3-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/RoyalArbalist_AutoAttack-53f6014cbf-3-left-repair.png",
+  "completion": "status: completed\nid: 4abc2905-687a-4fb3-a09e-b6269583b010\njob_id: 4abc2905-687a-4fb3-a09e-b6269583b010\nframes: 1\ntransparent: yes\nasset_id: dde91e62-62b9-57df-8e9d-56e89dfb3823\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/4abc2905-687a-4fb3-a09e-b6269583b010/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/RoyalArbalist_AutoAttack-53f6014cbf-3.png",
+  "input_sha256": "41b703b29a6ba724badd6595d1dd8f1b6e60de116d43b942aa45c416a29741a4",
+  "output_sha256": "f63abf83b4f54999bd00c1f9d731e398d0c66e644fa43a46efd6c6504294fd0e",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

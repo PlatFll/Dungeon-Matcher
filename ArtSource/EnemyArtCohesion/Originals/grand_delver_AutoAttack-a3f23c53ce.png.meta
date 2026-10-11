@@ -1,0 +1,386 @@
+fileFormatVersion: 2
+guid: 55e4ac2248ba3324782a1693479b3d2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8623188620987738774
+    second: grand_delver_AutoAttack_0
+  - first:
+      213: 1276433255588391018
+    second: grand_delver_AutoAttack_1
+  - first:
+      213: -6732060760605306222
+    second: grand_delver_AutoAttack_2
+  - first:
+      213: 3933994377986470050
+    second: grand_delver_AutoAttack_3
+  - first:
+      213: -3622118098983072482
+    second: grand_delver_AutoAttack_4
+  - first:
+      213: -5100493825088301732
+    second: grand_delver_AutoAttack_5
+  - first:
+      213: 1399822180516250233
+    second: grand_delver_AutoAttack_6
+  - first:
+      213: 2081662878740403663
+    second: grand_delver_AutoAttack_7
+  - first:
+      213: -2516353048782430051
+    second: grand_delver_AutoAttack_8
+  - first:
+      213: 4313031154932944651
+    second: grand_delver_AutoAttack_9
+  - first:
+      213: -6075930099810505062
+    second: grand_delver_AutoAttack_00
+  - first:
+      213: -4577962937143399136
+    second: grand_delver_AutoAttack_01
+  - first:
+      213: 1361395108852401080
+    second: grand_delver_AutoAttack_02
+  - first:
+      213: 7688485192965359884
+    second: grand_delver_AutoAttack_03
+  - first:
+      213: -640297800705450850
+    second: grand_delver_AutoAttack_04
+  - first:
+      213: -2075939482377917032
+    second: grand_delver_AutoAttack_05
+  - first:
+      213: 6351704991264013755
+    second: grand_delver_AutoAttack_06
+  - first:
+      213: -339882075961567561
+    second: grand_delver_AutoAttack_07
+  - first:
+      213: 7731901838267084208
+    second: grand_delver_AutoAttack_08
+  - first:
+      213: -1018190301098311707
+    second: grand_delver_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ee0b014c5fdaba0800000000000000
+      internalID: -6075930099810505062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02de9a8b6fec770c0800000000000000
+      internalID: -4577962937143399136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b30a1673a5a4e210800000000000000
+      internalID: 1361395108852401080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c090d833c8cf2ba60800000000000000
+      internalID: 7688485192965359884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cdc7eea843d17f0800000000000000
+      internalID: -640297800705450850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89de7a12a08c033e0800000000000000
+      internalID: -2075939482377917032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdfd5a690ac52850800000000000000
+      internalID: 6351704991264013755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grand_delver_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6d9cc7d0f784bf0800000000000000
+      internalID: -339882075961567561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grand_delver_AutoAttack_0: 8623188620987738774
+      grand_delver_AutoAttack_00: -6075930099810505062
+      grand_delver_AutoAttack_01: -4577962937143399136
+      grand_delver_AutoAttack_02: 1361395108852401080
+      grand_delver_AutoAttack_03: 7688485192965359884
+      grand_delver_AutoAttack_04: -640297800705450850
+      grand_delver_AutoAttack_05: -2075939482377917032
+      grand_delver_AutoAttack_06: 6351704991264013755
+      grand_delver_AutoAttack_07: -339882075961567561
+      grand_delver_AutoAttack_08: 7731901838267084208
+      grand_delver_AutoAttack_09: -1018190301098311707
+      grand_delver_AutoAttack_1: 1276433255588391018
+      grand_delver_AutoAttack_2: -6732060760605306222
+      grand_delver_AutoAttack_3: 3933994377986470050
+      grand_delver_AutoAttack_4: -3622118098983072482
+      grand_delver_AutoAttack_5: -5100493825088301732
+      grand_delver_AutoAttack_6: 1399822180516250233
+      grand_delver_AutoAttack_7: 2081662878740403663
+      grand_delver_AutoAttack_8: -2516353048782430051
+      grand_delver_AutoAttack_9: 4313031154932944651
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

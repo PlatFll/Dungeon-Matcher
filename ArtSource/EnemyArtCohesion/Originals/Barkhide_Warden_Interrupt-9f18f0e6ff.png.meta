@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9a6a0478cfefb014c940c9b4416350c7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3700629124440684240
+    second: Barkhide_Warden_Interrupt_0
+  - first:
+      213: -570071589434312184
+    second: Barkhide_Warden_Interrupt_1
+  - first:
+      213: -1032012385289763419
+    second: Barkhide_Warden_Interrupt_2
+  - first:
+      213: -1615996168273894039
+    second: Barkhide_Warden_Interrupt_3
+  - first:
+      213: 6075203771928359134
+    second: Barkhide_Warden_Interrupt_4
+  - first:
+      213: 2280561354334831769
+    second: Barkhide_Warden_Interrupt_5
+  - first:
+      213: -1156766937670424442
+    second: Barkhide_Warden_Interrupt_6
+  - first:
+      213: -5072184681753126135
+    second: Barkhide_Warden_Interrupt_7
+  - first:
+      213: -7994354084852279027
+    second: Barkhide_Warden_Interrupt_8
+  - first:
+      213: -6592449126350183127
+    second: Barkhide_Warden_Interrupt_00
+  - first:
+      213: 790230441986372958
+    second: Barkhide_Warden_Interrupt_01
+  - first:
+      213: -8879014950582783384
+    second: Barkhide_Warden_Interrupt_02
+  - first:
+      213: -7294089483228630860
+    second: Barkhide_Warden_Interrupt_03
+  - first:
+      213: -3323498987354494722
+    second: Barkhide_Warden_Interrupt_04
+  - first:
+      213: 7225037460576809338
+    second: Barkhide_Warden_Interrupt_05
+  - first:
+      213: 643870564801827152
+    second: Barkhide_Warden_Interrupt_06
+  - first:
+      213: -953780598575412937
+    second: Barkhide_Warden_Interrupt_07
+  - first:
+      213: 8611361145254738913
+    second: Barkhide_Warden_Interrupt_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9252018a27ae284a0800000000000000
+      internalID: -6592449126350183127
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e553c41766677fa00800000000000000
+      internalID: 790230441986372958
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862712b02f667c480800000000000000
+      internalID: -8879014950582783384
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0be30c24036ca90800000000000000
+      internalID: -7294089483228630860
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef86d57974f80e1d0800000000000000
+      internalID: -3323498987354494722
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71329e5a4d744460800000000000000
+      internalID: 7225037460576809338
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051d7580edc7fe800800000000000000
+      internalID: 643870564801827152
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739c044599d73c2f0800000000000000
+      internalID: -953780598575412937
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barkhide_Warden_Interrupt_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eb728f2653b18770800000000000000
+      internalID: 8611361145254738913
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Barkhide_Warden_Interrupt_0: 3700629124440684240
+      Barkhide_Warden_Interrupt_00: -6592449126350183127
+      Barkhide_Warden_Interrupt_01: 790230441986372958
+      Barkhide_Warden_Interrupt_02: -8879014950582783384
+      Barkhide_Warden_Interrupt_03: -7294089483228630860
+      Barkhide_Warden_Interrupt_04: -3323498987354494722
+      Barkhide_Warden_Interrupt_05: 7225037460576809338
+      Barkhide_Warden_Interrupt_06: 643870564801827152
+      Barkhide_Warden_Interrupt_07: -953780598575412937
+      Barkhide_Warden_Interrupt_08: 8611361145254738913
+      Barkhide_Warden_Interrupt_1: -570071589434312184
+      Barkhide_Warden_Interrupt_2: -1032012385289763419
+      Barkhide_Warden_Interrupt_3: -1615996168273894039
+      Barkhide_Warden_Interrupt_4: 6075203771928359134
+      Barkhide_Warden_Interrupt_5: 2280561354334831769
+      Barkhide_Warden_Interrupt_6: -1156766937670424442
+      Barkhide_Warden_Interrupt_7: -5072184681753126135
+      Barkhide_Warden_Interrupt_8: -7994354084852279027
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

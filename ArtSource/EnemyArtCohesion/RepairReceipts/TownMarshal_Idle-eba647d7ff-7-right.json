@@ -1,0 +1,45 @@
+{
+  "id": "TownMarshal_Idle-eba647d7ff-7",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/TownMarshal_Idle-eba647d7ff-7.png",
+  "parameters": {
+    "mask_x": 85,
+    "mask_y": 46,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41677,
+    "description": "Tiny native pixel-art edge repair of the existing mace or small bell-ring arc, retaining its exact size and contour. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Idle."
+  },
+  "job": {
+    "background_job_id": "7a6e897d-541e-44d9-85d1-0b96c0d3e2e0",
+    "image_id": "65babb43-0ca5-59f0-a211-222396fe90db",
+    "status": "processing",
+    "source_image_id": "65babb43-0ca5-59f0-a211-222396fe90db",
+    "job_id": "7a6e897d-541e-44d9-85d1-0b96c0d3e2e0",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/7a6e897d-541e-44d9-85d1-0b96c0d3e2e0/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/TownMarshal_Idle-eba647d7ff-7-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/TownMarshal_Idle-eba647d7ff-7-right-repair.png",
+  "completion": "status: completed\nid: 7a6e897d-541e-44d9-85d1-0b96c0d3e2e0\njob_id: 7a6e897d-541e-44d9-85d1-0b96c0d3e2e0\nframes: 1\ntransparent: yes\nasset_id: 65babb43-0ca5-59f0-a211-222396fe90db\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/7a6e897d-541e-44d9-85d1-0b96c0d3e2e0/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/TownMarshal_Idle-eba647d7ff-7.png",
+  "input_sha256": "576b837be4bf2907e153f5ad5c916bb090104a521fd644a15145133a8eb4addd",
+  "output_sha256": "adfbd1127463b05b81e34c178016a4ac6b1ef6b62eff389d9a23ebd930e06e09",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

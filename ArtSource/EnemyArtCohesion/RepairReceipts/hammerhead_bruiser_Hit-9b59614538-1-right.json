@@ -1,0 +1,45 @@
+{
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/hammerhead_bruiser_Hit-9b59614538-1-right.json",
+  "id": "hammerhead_bruiser_Hit-9b59614538-1",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/hammerhead_bruiser_Hit-9b59614538-1.png",
+  "parameters": {
+    "mask_x": 101,
+    "mask_y": 36,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41204,
+    "description": "Tiny native pixel-art edge repair of the existing hammerhead shark limb/weapon contour. This animation pose was cropped at its old right canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Hit. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc",
+    "image_id": "f87a0b87-9088-5767-80e7-9870a705637b",
+    "status": "processing",
+    "source_image_id": "f87a0b87-9088-5767-80e7-9870a705637b",
+    "job_id": "f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc/download"
+  },
+  "status": "completed",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/hammerhead_bruiser_Hit-9b59614538-1-right-repair.png",
+  "completion": "status: completed\nid: f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc\njob_id: f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc\nframes: 1\ntransparent: yes\nasset_id: f87a0b87-9088-5767-80e7-9870a705637b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/f3cfdfe5-dcc4-4d03-871a-0458ef8cd8cc/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/hammerhead_bruiser_Hit-9b59614538-1.png",
+  "input_sha256": "8da0e1ff7bfa0a2713a56e0a18cb324f48cb9abf357c4a03bded135742aa92f3",
+  "output_sha256": "b6f9df7060d8587b5adca6d2974ae97f4e0503f4f5ee0c0c8d0e85b59705c9ca",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Edge contact is detached particles; native component cleanup."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

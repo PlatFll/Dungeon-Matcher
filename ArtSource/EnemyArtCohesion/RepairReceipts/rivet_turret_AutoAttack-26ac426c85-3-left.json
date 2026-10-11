@@ -1,0 +1,45 @@
+{
+  "id": "rivet_turret_AutoAttack-26ac426c85-3",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/rivet_turret_AutoAttack-26ac426c85-3.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 52,
+    "mask_width": 27,
+    "mask_height": 36,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41962,
+    "description": "Tiny native pixel-art edge repair of the existing orange muzzle flash, completing a small leftward tapered burst. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "cd52bb01-e274-41e0-acd0-941c9cd4e181",
+    "image_id": "8523306c-8fff-5070-aaf1-8798dd5260a6",
+    "status": "processing",
+    "source_image_id": "8523306c-8fff-5070-aaf1-8798dd5260a6",
+    "job_id": "cd52bb01-e274-41e0-acd0-941c9cd4e181",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/cd52bb01-e274-41e0-acd0-941c9cd4e181/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/rivet_turret_AutoAttack-26ac426c85-3-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/rivet_turret_AutoAttack-26ac426c85-3-left-repair.png",
+  "completion": "status: completed\nid: cd52bb01-e274-41e0-acd0-941c9cd4e181\njob_id: cd52bb01-e274-41e0-acd0-941c9cd4e181\nframes: 1\ntransparent: yes\nasset_id: 8523306c-8fff-5070-aaf1-8798dd5260a6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/cd52bb01-e274-41e0-acd0-941c9cd4e181/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/rivet_turret_AutoAttack-26ac426c85-3.png",
+  "input_sha256": "fc19de666f5941d054bdb25fab4129af6da4236620b82cf13f2b7482121dec21",
+  "output_sha256": "c56fda67eae62074282c9f498334674fc51dbe1e6b1c29c5ad8a0a1af8d912b8",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

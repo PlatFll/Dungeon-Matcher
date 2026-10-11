@@ -1,0 +1,45 @@
+{
+  "id": "RoyalArchbishop_Benediction-34274aa6a5-7",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/RoyalArchbishop_Benediction-34274aa6a5-7.png",
+  "parameters": {
+    "mask_x": 85,
+    "mask_y": 52,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41521,
+    "description": "Tiny native pixel-art edge repair of the existing green or gold spell ring, closing only the cropped arc at the original curvature. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Benediction."
+  },
+  "job": {
+    "background_job_id": "1832f732-f3ea-41c5-9029-e6ba0afa1488",
+    "image_id": "041e6a0c-325d-59aa-b3b9-b8a8e43e9d15",
+    "status": "processing",
+    "source_image_id": "041e6a0c-325d-59aa-b3b9-b8a8e43e9d15",
+    "job_id": "1832f732-f3ea-41c5-9029-e6ba0afa1488",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/1832f732-f3ea-41c5-9029-e6ba0afa1488/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/RoyalArchbishop_Benediction-34274aa6a5-7-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/RoyalArchbishop_Benediction-34274aa6a5-7-right-repair.png",
+  "completion": "status: completed\nid: 1832f732-f3ea-41c5-9029-e6ba0afa1488\njob_id: 1832f732-f3ea-41c5-9029-e6ba0afa1488\nframes: 1\ntransparent: yes\nasset_id: 041e6a0c-325d-59aa-b3b9-b8a8e43e9d15\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/1832f732-f3ea-41c5-9029-e6ba0afa1488/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/RoyalArchbishop_Benediction-34274aa6a5-7.png",
+  "input_sha256": "f5ad375500bee6505a6321f11618b377b1000385cf3805b927f57feef00f210d",
+  "output_sha256": "eb12b69a01436c91364cc1ead70a438c495827966c5e27cc6623c608e5fc27fe",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

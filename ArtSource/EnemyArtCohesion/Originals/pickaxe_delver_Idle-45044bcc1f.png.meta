@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9f006030b53b16447b6c96e9060d4fea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6105430882251831342
+    second: pickaxe_delver_Idle_0
+  - first:
+      213: 5463604237884813781
+    second: pickaxe_delver_Idle_1
+  - first:
+      213: -5964792028396675475
+    second: pickaxe_delver_Idle_2
+  - first:
+      213: -7797630536485894403
+    second: pickaxe_delver_Idle_3
+  - first:
+      213: -9149442882158521420
+    second: pickaxe_delver_Idle_4
+  - first:
+      213: 1719732494169331941
+    second: pickaxe_delver_Idle_5
+  - first:
+      213: -672475624263161015
+    second: pickaxe_delver_Idle_6
+  - first:
+      213: 1757291493648872439
+    second: pickaxe_delver_Idle_7
+  - first:
+      213: 8925433754052165531
+    second: pickaxe_delver_Idle_8
+  - first:
+      213: -3543852987550570672
+    second: pickaxe_delver_Idle_00
+  - first:
+      213: -4735635379398428959
+    second: pickaxe_delver_Idle_01
+  - first:
+      213: 6138195785003736669
+    second: pickaxe_delver_Idle_02
+  - first:
+      213: -2799615405818399574
+    second: pickaxe_delver_Idle_03
+  - first:
+      213: 1373941838457068500
+    second: pickaxe_delver_Idle_04
+  - first:
+      213: 3354011435472149888
+    second: pickaxe_delver_Idle_05
+  - first:
+      213: 1194207514064198941
+    second: pickaxe_delver_Idle_06
+  - first:
+      213: -8123224841227662631
+    second: pickaxe_delver_Idle_07
+  - first:
+      213: 442384392519029987
+    second: pickaxe_delver_Idle_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05767d4eb74b1dec0800000000000000
+      internalID: -3543852987550570672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e63f2186b4a74eb0800000000000000
+      internalID: -4735635379398428959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e92fe7b804f2550800000000000000
+      internalID: 6138195785003736669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4bb741f94c529d0800000000000000
+      internalID: -2799615405818399574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbd74792d8311310800000000000000
+      internalID: 1373941838457068500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d5ae751a7db8e20800000000000000
+      internalID: 3354011435472149888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d16e7286da29010800000000000000
+      internalID: 1194207514064198941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9da0ffbab02844f80800000000000000
+      internalID: -8123224841227662631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4164ad24aa32600800000000000000
+      internalID: 442384392519029987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pickaxe_delver_Idle_0: 6105430882251831342
+      pickaxe_delver_Idle_00: -3543852987550570672
+      pickaxe_delver_Idle_01: -4735635379398428959
+      pickaxe_delver_Idle_02: 6138195785003736669
+      pickaxe_delver_Idle_03: -2799615405818399574
+      pickaxe_delver_Idle_04: 1373941838457068500
+      pickaxe_delver_Idle_05: 3354011435472149888
+      pickaxe_delver_Idle_06: 1194207514064198941
+      pickaxe_delver_Idle_07: -8123224841227662631
+      pickaxe_delver_Idle_08: 442384392519029987
+      pickaxe_delver_Idle_1: 5463604237884813781
+      pickaxe_delver_Idle_2: -5964792028396675475
+      pickaxe_delver_Idle_3: -7797630536485894403
+      pickaxe_delver_Idle_4: -9149442882158521420
+      pickaxe_delver_Idle_5: 1719732494169331941
+      pickaxe_delver_Idle_6: -672475624263161015
+      pickaxe_delver_Idle_7: 1757291493648872439
+      pickaxe_delver_Idle_8: 8925433754052165531
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

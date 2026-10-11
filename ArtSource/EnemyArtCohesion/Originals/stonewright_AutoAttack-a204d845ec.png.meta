@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: a3dd0cd881161744eb95199213e9d28e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 776004414221171147
+    second: stonewright_AutoAttack_0
+  - first:
+      213: 8673865992594591957
+    second: stonewright_AutoAttack_1
+  - first:
+      213: 3972090146128245024
+    second: stonewright_AutoAttack_2
+  - first:
+      213: 3735396499224699731
+    second: stonewright_AutoAttack_3
+  - first:
+      213: -1641903600465330502
+    second: stonewright_AutoAttack_4
+  - first:
+      213: -6745490347187949552
+    second: stonewright_AutoAttack_5
+  - first:
+      213: 4340499301028813349
+    second: stonewright_AutoAttack_6
+  - first:
+      213: -3489394014604178905
+    second: stonewright_AutoAttack_7
+  - first:
+      213: 5531336386448485158
+    second: stonewright_AutoAttack_8
+  - first:
+      213: 2696694373502416830
+    second: stonewright_AutoAttack_9
+  - first:
+      213: 424913850951824820
+    second: stonewright_AutoAttack_10
+  - first:
+      213: 2433061844775328597
+    second: stonewright_AutoAttack_11
+  - first:
+      213: -6310878686335052621
+    second: stonewright_AutoAttack_00
+  - first:
+      213: -7038207647816577583
+    second: stonewright_AutoAttack_01
+  - first:
+      213: -2013083055000038700
+    second: stonewright_AutoAttack_02
+  - first:
+      213: 5015321748750629807
+    second: stonewright_AutoAttack_03
+  - first:
+      213: 6390387092473652535
+    second: stonewright_AutoAttack_04
+  - first:
+      213: 5841941978609835892
+    second: stonewright_AutoAttack_05
+  - first:
+      213: 7383324138486633315
+    second: stonewright_AutoAttack_06
+  - first:
+      213: 4771415593518202107
+    second: stonewright_AutoAttack_07
+  - first:
+      213: -2702081283952824617
+    second: stonewright_AutoAttack_08
+  - first:
+      213: 4647145147806034612
+    second: stonewright_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b45a6075414b68a0800000000000000
+      internalID: -6310878686335052621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd84703f63435e90800000000000000
+      internalID: -7038207647816577583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d25d5390a71014e0800000000000000
+      internalID: -2013083055000038700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab7294ee800a9540800000000000000
+      internalID: 5015321748750629807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7352220f3373fa850800000000000000
+      internalID: 6390387092473652535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f5b71174fb21150800000000000000
+      internalID: 5841941978609835892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36310187f26d67660800000000000000
+      internalID: 7383324138486633315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc7967c339773240800000000000000
+      internalID: 4771415593518202107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dea2c37367408ad0800000000000000
+      internalID: -2702081283952824617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4baa8aae3e9fd7040800000000000000
+      internalID: 4647145147806034612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5702a65e895e500800000000000000
+      internalID: 424913850951824820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonewright_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55bd36e5bd8f3c120800000000000000
+      internalID: 2433061844775328597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stonewright_AutoAttack_0: 776004414221171147
+      stonewright_AutoAttack_00: -6310878686335052621
+      stonewright_AutoAttack_01: -7038207647816577583
+      stonewright_AutoAttack_02: -2013083055000038700
+      stonewright_AutoAttack_03: 5015321748750629807
+      stonewright_AutoAttack_04: 6390387092473652535
+      stonewright_AutoAttack_05: 5841941978609835892
+      stonewright_AutoAttack_06: 7383324138486633315
+      stonewright_AutoAttack_07: 4771415593518202107
+      stonewright_AutoAttack_08: -2702081283952824617
+      stonewright_AutoAttack_09: 4647145147806034612
+      stonewright_AutoAttack_1: 8673865992594591957
+      stonewright_AutoAttack_10: 424913850951824820
+      stonewright_AutoAttack_11: 2433061844775328597
+      stonewright_AutoAttack_2: 3972090146128245024
+      stonewright_AutoAttack_3: 3735396499224699731
+      stonewright_AutoAttack_4: -1641903600465330502
+      stonewright_AutoAttack_5: -6745490347187949552
+      stonewright_AutoAttack_6: 4340499301028813349
+      stonewright_AutoAttack_7: -3489394014604178905
+      stonewright_AutoAttack_8: 5531336386448485158
+      stonewright_AutoAttack_9: 2696694373502416830
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,45 @@
+{
+  "id": "grand_delver_Death-3d5ba92519-6",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/grand_delver_Death-3d5ba92519-6.png",
+  "parameters": {
+    "mask_x": 133,
+    "mask_y": 58,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41851,
+    "description": "Tiny native pixel-art edge repair of the existing drill tip or machine contour. This exact animation pose was cropped at its old right canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Death."
+  },
+  "job": {
+    "background_job_id": "5aafe05b-0bdb-45b1-9451-120b89f9d3e7",
+    "image_id": "35078217-1286-50d9-b07f-0a83a7d18d2a",
+    "status": "processing",
+    "source_image_id": "35078217-1286-50d9-b07f-0a83a7d18d2a",
+    "job_id": "5aafe05b-0bdb-45b1-9451-120b89f9d3e7",
+    "image_size": {
+      "width": 160,
+      "height": 136
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/5aafe05b-0bdb-45b1-9451-120b89f9d3e7/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/grand_delver_Death-3d5ba92519-6-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/grand_delver_Death-3d5ba92519-6-right-repair.png",
+  "completion": "status: completed\nid: 5aafe05b-0bdb-45b1-9451-120b89f9d3e7\njob_id: 5aafe05b-0bdb-45b1-9451-120b89f9d3e7\nframes: 1\ntransparent: yes\nasset_id: 35078217-1286-50d9-b07f-0a83a7d18d2a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/5aafe05b-0bdb-45b1-9451-120b89f9d3e7/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/grand_delver_Death-3d5ba92519-6.png",
+  "input_sha256": "7843c0b27256ef9e5771021113086a5dec9e266d184ccfa69db8f6c8252578d8",
+  "output_sha256": "9deaa12d3ed2348067da7ab8eb073a562ed13e37606b240569d5bc7c48972481",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Edge contact is detached particles, not missing anatomy."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

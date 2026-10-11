@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: d0c2a0ba51d41114b808d7a24ddd12b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4745967627593541602
+    second: rail_switcher_Release_0
+  - first:
+      213: -4746835783283186405
+    second: rail_switcher_Release_1
+  - first:
+      213: -7138460879228761022
+    second: rail_switcher_Release_2
+  - first:
+      213: -2331981753926324163
+    second: rail_switcher_Release_3
+  - first:
+      213: -258469793967942142
+    second: rail_switcher_Release_4
+  - first:
+      213: -1982373055167732995
+    second: rail_switcher_Release_5
+  - first:
+      213: 695478646810625349
+    second: rail_switcher_Release_6
+  - first:
+      213: 4777157858302878666
+    second: rail_switcher_Release_7
+  - first:
+      213: 7944931463156853637
+    second: rail_switcher_Release_8
+  - first:
+      213: 7587018820802763439
+    second: rail_switcher_Release_9
+  - first:
+      213: 3531024732944423834
+    second: rail_switcher_Release_00
+  - first:
+      213: 8770315713183835657
+    second: rail_switcher_Release_01
+  - first:
+      213: 7774622880739535732
+    second: rail_switcher_Release_02
+  - first:
+      213: -2702033871526791623
+    second: rail_switcher_Release_03
+  - first:
+      213: -461520765977317528
+    second: rail_switcher_Release_04
+  - first:
+      213: 8426229300258152037
+    second: rail_switcher_Release_05
+  - first:
+      213: -4773279480806067229
+    second: rail_switcher_Release_06
+  - first:
+      213: 631612429133189057
+    second: rail_switcher_Release_07
+  - first:
+      213: -7157500044736453693
+    second: rail_switcher_Release_08
+  - first:
+      213: -2406009309906496166
+    second: rail_switcher_Release_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rail_switcher_Release_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b55445948b00130800000000000000
+      internalID: 3531024732944423834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906695c8cab66b970800000000000000
+      internalID: 8770315713183835657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47baa1d715205eb60800000000000000
+      internalID: 7774622880739535732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93672948282708ad0800000000000000
+      internalID: -2702033871526791623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86fa47ffe495899f0800000000000000
+      internalID: -461520765977317528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e10ed87eaffe470800000000000000
+      internalID: 8426229300258152037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3b4e42a97e1cdb0800000000000000
+      internalID: -4773279480806067229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf843a6820f3c800800000000000000
+      internalID: 631612429133189057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c324a1a1a37bac90800000000000000
+      internalID: -7157500044736453693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rail_switcher_Release_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a559dbcb7432c9ed0800000000000000
+      internalID: -2406009309906496166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rail_switcher_Release_0: 4745967627593541602
+      rail_switcher_Release_00: 3531024732944423834
+      rail_switcher_Release_01: 8770315713183835657
+      rail_switcher_Release_02: 7774622880739535732
+      rail_switcher_Release_03: -2702033871526791623
+      rail_switcher_Release_04: -461520765977317528
+      rail_switcher_Release_05: 8426229300258152037
+      rail_switcher_Release_06: -4773279480806067229
+      rail_switcher_Release_07: 631612429133189057
+      rail_switcher_Release_08: -7157500044736453693
+      rail_switcher_Release_09: -2406009309906496166
+      rail_switcher_Release_1: -4746835783283186405
+      rail_switcher_Release_2: -7138460879228761022
+      rail_switcher_Release_3: -2331981753926324163
+      rail_switcher_Release_4: -258469793967942142
+      rail_switcher_Release_5: -1982373055167732995
+      rail_switcher_Release_6: 695478646810625349
+      rail_switcher_Release_7: 4777157858302878666
+      rail_switcher_Release_8: 7944931463156853637
+      rail_switcher_Release_9: 7587018820802763439
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

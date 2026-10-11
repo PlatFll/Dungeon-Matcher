@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: 3eb4b5e534d9c3446b20dd91f1113359
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7648399305321251409
+    second: pickaxe_delver_AutoAttack_0
+  - first:
+      213: 8507563219020526185
+    second: pickaxe_delver_AutoAttack_1
+  - first:
+      213: 1142805950164023793
+    second: pickaxe_delver_AutoAttack_2
+  - first:
+      213: -5280567605712148161
+    second: pickaxe_delver_AutoAttack_3
+  - first:
+      213: -7414186505116331217
+    second: pickaxe_delver_AutoAttack_4
+  - first:
+      213: 8471525037980793952
+    second: pickaxe_delver_AutoAttack_5
+  - first:
+      213: -1820089172365059255
+    second: pickaxe_delver_AutoAttack_6
+  - first:
+      213: -3778904057813867256
+    second: pickaxe_delver_AutoAttack_7
+  - first:
+      213: -7252470722316118158
+    second: pickaxe_delver_AutoAttack_00
+  - first:
+      213: 522805493168504658
+    second: pickaxe_delver_AutoAttack_01
+  - first:
+      213: -1630569324984970639
+    second: pickaxe_delver_AutoAttack_02
+  - first:
+      213: -5235099395999348051
+    second: pickaxe_delver_AutoAttack_03
+  - first:
+      213: -1356707048022020773
+    second: pickaxe_delver_AutoAttack_04
+  - first:
+      213: -4815447059144597991
+    second: pickaxe_delver_AutoAttack_05
+  - first:
+      213: -8812285785206682072
+    second: pickaxe_delver_AutoAttack_06
+  - first:
+      213: 7570576988006626295
+    second: pickaxe_delver_AutoAttack_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2775d64ad4c0a5b90800000000000000
+      internalID: -7252470722316118158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f7eea73d0614700800000000000000
+      internalID: 522805493168504658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1725f9a86dd0f59e0800000000000000
+      internalID: -1630569324984970639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daac89906d03957b0800000000000000
+      internalID: -5235099395999348051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5de062c0220c2de0800000000000000
+      internalID: -1356707048022020773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e9cfcb9681c2db0800000000000000
+      internalID: -4815447059144597991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e088194c874b580800000000000000
+      internalID: -8812285785206682072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_delver_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3b1e2f8a7101960800000000000000
+      internalID: 7570576988006626295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pickaxe_delver_AutoAttack_0: -7648399305321251409
+      pickaxe_delver_AutoAttack_00: -7252470722316118158
+      pickaxe_delver_AutoAttack_01: 522805493168504658
+      pickaxe_delver_AutoAttack_02: -1630569324984970639
+      pickaxe_delver_AutoAttack_03: -5235099395999348051
+      pickaxe_delver_AutoAttack_04: -1356707048022020773
+      pickaxe_delver_AutoAttack_05: -4815447059144597991
+      pickaxe_delver_AutoAttack_06: -8812285785206682072
+      pickaxe_delver_AutoAttack_07: 7570576988006626295
+      pickaxe_delver_AutoAttack_1: 8507563219020526185
+      pickaxe_delver_AutoAttack_2: 1142805950164023793
+      pickaxe_delver_AutoAttack_3: -5280567605712148161
+      pickaxe_delver_AutoAttack_4: -7414186505116331217
+      pickaxe_delver_AutoAttack_5: 8471525037980793952
+      pickaxe_delver_AutoAttack_6: -1820089172365059255
+      pickaxe_delver_AutoAttack_7: -3778904057813867256
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

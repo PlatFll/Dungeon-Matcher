@@ -133,7 +133,7 @@ TextureImporter:
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
-  maxTextureSize: 2048
+  maxTextureSize: 4096
   textureSettings:
     serializedVersion: 2
     filterMode: 0
@@ -148,8 +148,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.0294117647}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -184,7 +184,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -197,7 +197,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -217,10 +217,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_01
       rect:
         serializedVersion: 2
-        x: 112
+        x: 160
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_02
       rect:
         serializedVersion: 2
-        x: 224
+        x: 320
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_03
       rect:
         serializedVersion: 2
-        x: 336
+        x: 480
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_04
       rect:
         serializedVersion: 2
-        x: 448
+        x: 640
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_05
       rect:
         serializedVersion: 2
-        x: 560
+        x: 800
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_06
       rect:
         serializedVersion: 2
-        x: 672
+        x: 960
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_07
       rect:
         serializedVersion: 2
-        x: 784
+        x: 1120
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_08
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1280
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_09
       rect:
         serializedVersion: 2
-        x: 1008
+        x: 1440
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -435,12 +435,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_10
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 1600
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_11
       rect:
         serializedVersion: 2
-        x: 1232
+        x: 1760
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_12
       rect:
         serializedVersion: 2
-        x: 1344
+        x: 1920
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: grand_delver_pilot_Eject_13
       rect:
         serializedVersion: 2
-        x: 1456
+        x: 2080
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0294117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

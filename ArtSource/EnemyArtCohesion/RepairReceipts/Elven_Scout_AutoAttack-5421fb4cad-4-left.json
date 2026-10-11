@@ -1,0 +1,45 @@
+{
+  "id": "Elven_Scout_AutoAttack-5421fb4cad-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/Elven_Scout_AutoAttack-5421fb4cad-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 44,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41798,
+    "description": "Tiny native pixel-art edge repair of the existing arrow point or bow tip. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "44169719-3d58-4dc7-a47f-491319531f0e",
+    "image_id": "f7488ca0-b0cc-5e12-ba99-f8ed7fcf9010",
+    "status": "processing",
+    "source_image_id": "f7488ca0-b0cc-5e12-ba99-f8ed7fcf9010",
+    "job_id": "44169719-3d58-4dc7-a47f-491319531f0e",
+    "image_size": {
+      "width": 144,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/44169719-3d58-4dc7-a47f-491319531f0e/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/Elven_Scout_AutoAttack-5421fb4cad-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/Elven_Scout_AutoAttack-5421fb4cad-4-left-repair.png",
+  "completion": "status: completed\nid: 44169719-3d58-4dc7-a47f-491319531f0e\njob_id: 44169719-3d58-4dc7-a47f-491319531f0e\nframes: 1\ntransparent: yes\nasset_id: f7488ca0-b0cc-5e12-ba99-f8ed7fcf9010\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/44169719-3d58-4dc7-a47f-491319531f0e/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/Elven_Scout_AutoAttack-5421fb4cad-4.png",
+  "input_sha256": "50e4f10c2426ebee856e32df277676b352bdd6e20fe01e193ee7067b17f361db",
+  "output_sha256": "e63923177360dea1904f16d54ea4e6f4fc60a51a2ac4e822ce52758ae66694f8",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

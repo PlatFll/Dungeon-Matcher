@@ -7,6 +7,7 @@ using Screen = UnityEngine.Device.Screen;
 public static class GameplayPixelLayoutValidator
 {
     private const float Epsilon = 0.02f;
+    private static readonly Dictionary<Sprite, Rect> EnemyInkBounds = new Dictionary<Sprite, Rect>();
     public static List<string> Validate(GameplayPixelLayoutController owner, out string report)
     {
         var errors = new List<string>();
@@ -151,7 +152,7 @@ public static class GameplayPixelLayoutValidator
                 // Unity's legacy vector-like UI primitives are not imported game art.
                 Require(IsBuiltinPrimitive(image.sprite) || image.sprite.texture.filterMode == FilterMode.Point,
                     "Non-Point sprite: " + Path(image.transform) + " (" + image.sprite.name + ")", errors);
-                Require(Contains(g.Safe, GameplayPixelLayoutController.ScreenRect(image.rectTransform)),
+                Require(Contains(g.Safe, VisibleArtworkBounds(image)),
                     "UI artwork leaves safe area: " + Path(image.transform), errors);
             }
             if (!image.enabled || image.sprite == null || image.type != Image.Type.Simple ||
@@ -159,7 +160,7 @@ public static class GameplayPixelLayoutValidator
                 IsBuiltinPrimitive(image.sprite)) continue;
             Rect bounds = GameplayPixelLayoutController.ScreenRect(image.rectTransform);
             if (image.name == "VisualRoot" && owner.TopHud.Find("WaveTracker") is RectTransform wave)
-                Require(!bounds.Overlaps(GameplayPixelLayoutController.ScreenRect(wave)),
+                Require(!VisibleArtworkBounds(image).Overlaps(GameplayPixelLayoutController.ScreenRect(wave)),
                     "Character overlaps wave badge: " + Path(image.transform), errors);
             Vector2 source = image.sprite.rect.size;
             float xRatio = bounds.width / source.x, yRatio = bounds.height / source.y;
@@ -176,6 +177,51 @@ public static class GameplayPixelLayoutValidator
         return errors;
     }
     public static bool Integral(float value) => Near(value, Mathf.Round(value));
+    // Expanded enemy canvases include deliberate transparent clearance. Validate
+    // the actual opaque drawing against the safe area, while retaining the full
+    // rectangle for integer-pixel/scale checks above. This is validation only.
+    private static Rect VisibleArtworkBounds(Image image)
+    {
+        Rect full = GameplayPixelLayoutController.ScreenRect(image.rectTransform);
+        if (image.type != Image.Type.Simple || image.name != "VisualRoot" ||
+            image.GetComponentInParent<EnemyActor>() == null) return full;
+        var sprite = image.sprite;
+        if (!EnemyInkBounds.TryGetValue(sprite, out Rect ink))
+        {
+            Texture2D pixels = null;
+            RenderTexture target = null, previous = RenderTexture.active;
+            try
+            {
+                pixels = new Texture2D(sprite.texture.width, sprite.texture.height, TextureFormat.RGBA32, false);
+#if UNITY_EDITOR
+                string path = UnityEditor.AssetDatabase.GetAssetPath(sprite.texture);
+                if (!string.IsNullOrEmpty(path) && System.IO.File.Exists(path))
+                    pixels.LoadImage(System.IO.File.ReadAllBytes(path));
+                else
+#endif
+                {
+                    target = RenderTexture.GetTemporary(sprite.texture.width, sprite.texture.height, 0, RenderTextureFormat.ARGB32);
+                    Graphics.Blit(sprite.texture, target); RenderTexture.active = target;
+                    pixels.ReadPixels(new Rect(0, 0, target.width, target.height), 0, 0); pixels.Apply();
+                }
+                var rgba = pixels.GetPixels32(); Rect source = sprite.rect;
+                int left = (int)source.width, bottom = (int)source.height, right = 0, top = 0;
+                for (int y = 0; y < (int)source.height; y++) for (int x = 0; x < (int)source.width; x++)
+                    if (rgba[((int)source.y + y) * pixels.width + (int)source.x + x].a > 0)
+                    { left = Mathf.Min(left, x); bottom = Mathf.Min(bottom, y); right = Mathf.Max(right, x + 1); top = Mathf.Max(top, y + 1); }
+                ink = right > left ? Rect.MinMaxRect(left, bottom, right, top) : Rect.zero;
+                EnemyInkBounds[sprite] = ink;
+            }
+            finally
+            {
+                RenderTexture.active = previous;
+                if (target != null) RenderTexture.ReleaseTemporary(target);
+                if (pixels != null) Object.DestroyImmediate(pixels);
+            }
+        }
+        Vector2 ratio = full.size / sprite.rect.size;
+        return new Rect(full.min + ink.min * ratio, ink.size * ratio);
+    }
     private static bool IsBuiltinPrimitive(Sprite sprite) =>
         sprite.name == "Knob" || sprite.name == "UISprite" || sprite.name == "Background";
     private static bool IsTransientPresentation(Transform target)

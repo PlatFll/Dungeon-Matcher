@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: aa035eb62d335a44e8b4616ee264a5ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8236622007736055140
+    second: SiegeSergeant_Ability_0
+  - first:
+      213: -3430497811544163618
+    second: SiegeSergeant_Ability_1
+  - first:
+      213: -7944717446316218064
+    second: SiegeSergeant_Ability_2
+  - first:
+      213: -5318462920429293947
+    second: SiegeSergeant_Ability_3
+  - first:
+      213: -2028036001600597893
+    second: SiegeSergeant_Ability_4
+  - first:
+      213: -2125070608705765378
+    second: SiegeSergeant_Ability_5
+  - first:
+      213: -4965033237984463271
+    second: SiegeSergeant_Ability_6
+  - first:
+      213: 7538015855512321019
+    second: SiegeSergeant_Ability_7
+  - first:
+      213: -5137376821635874442
+    second: SiegeSergeant_Ability_8
+  - first:
+      213: -7164894889915123055
+    second: SiegeSergeant_Ability_9
+  - first:
+      213: 3904947618844640726
+    second: SiegeSergeant_Ability_10
+  - first:
+      213: 876561479546752862
+    second: SiegeSergeant_Ability_11
+  - first:
+      213: -8035338045375709020
+    second: SiegeSergeant_Ability_12
+  - first:
+      213: 7780463109598153692
+    second: SiegeSergeant_Ability_13
+  - first:
+      213: -3512044495580580935
+    second: SiegeSergeant_Ability_14
+  - first:
+      213: -7134913897025973945
+    second: SiegeSergeant_Ability_15
+  - first:
+      213: -3347967257533155560
+    second: SiegeSergeant_Ability_00
+  - first:
+      213: 6330209502307884065
+    second: SiegeSergeant_Ability_01
+  - first:
+      213: 4787831759206149537
+    second: SiegeSergeant_Ability_02
+  - first:
+      213: 5705302402001598552
+    second: SiegeSergeant_Ability_03
+  - first:
+      213: -7897968385350409745
+    second: SiegeSergeant_Ability_04
+  - first:
+      213: 3143902980075614452
+    second: SiegeSergeant_Ability_05
+  - first:
+      213: 2357073708737567852
+    second: SiegeSergeant_Ability_06
+  - first:
+      213: -1710571382383805206
+    second: SiegeSergeant_Ability_07
+  - first:
+      213: -4843256367416388017
+    second: SiegeSergeant_Ability_08
+  - first:
+      213: 6705663075031725152
+    second: SiegeSergeant_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817f81f7481a981d0800000000000000
+      internalID: -3347967257533155560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c1dd2e00c69d750800000000000000
+      internalID: 6330209502307884065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ade0d33e9bc17240800000000000000
+      internalID: 4787831759206149537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858fc7f7e4e4d2f40800000000000000
+      internalID: 5705302402001598552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe16ce74997c46290800000000000000
+      internalID: -7897968385350409745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f0f2bf6a1361ab20800000000000000
+      internalID: 3143902980075614452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c17bebc0206b020800000000000000
+      internalID: 2357073708737567852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec70160464d248e0800000000000000
+      internalID: -1710571382383805206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f465ff79efb49ccb0800000000000000
+      internalID: -4843256367416388017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06438b2e90d4f0d50800000000000000
+      internalID: 6705663075031725152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d50eb78b29213630800000000000000
+      internalID: 3904947618844640726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fcc2c750c2a2c00800000000000000
+      internalID: 876561479546752862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0033bee9ebc7090800000000000000
+      internalID: -8035338045375709020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb01abb9f1c9fb60800000000000000
+      internalID: 7780463109598153692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3bd8d8326b24fc0800000000000000
+      internalID: -3512044495580580935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiegeSergeant_Ability_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741d4c0fc91bbfc90800000000000000
+      internalID: -7134913897025973945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SiegeSergeant_Ability_0: 8236622007736055140
+      SiegeSergeant_Ability_00: -3347967257533155560
+      SiegeSergeant_Ability_01: 6330209502307884065
+      SiegeSergeant_Ability_02: 4787831759206149537
+      SiegeSergeant_Ability_03: 5705302402001598552
+      SiegeSergeant_Ability_04: -7897968385350409745
+      SiegeSergeant_Ability_05: 3143902980075614452
+      SiegeSergeant_Ability_06: 2357073708737567852
+      SiegeSergeant_Ability_07: -1710571382383805206
+      SiegeSergeant_Ability_08: -4843256367416388017
+      SiegeSergeant_Ability_09: 6705663075031725152
+      SiegeSergeant_Ability_1: -3430497811544163618
+      SiegeSergeant_Ability_10: 3904947618844640726
+      SiegeSergeant_Ability_11: 876561479546752862
+      SiegeSergeant_Ability_12: -8035338045375709020
+      SiegeSergeant_Ability_13: 7780463109598153692
+      SiegeSergeant_Ability_14: -3512044495580580935
+      SiegeSergeant_Ability_15: -7134913897025973945
+      SiegeSergeant_Ability_2: -7944717446316218064
+      SiegeSergeant_Ability_3: -5318462920429293947
+      SiegeSergeant_Ability_4: -2028036001600597893
+      SiegeSergeant_Ability_5: -2125070608705765378
+      SiegeSergeant_Ability_6: -4965033237984463271
+      SiegeSergeant_Ability_7: 7538015855512321019
+      SiegeSergeant_Ability_8: -5137376821635874442
+      SiegeSergeant_Ability_9: -7164894889915123055
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

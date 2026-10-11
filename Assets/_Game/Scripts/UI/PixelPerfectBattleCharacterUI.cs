@@ -56,8 +56,12 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             // and the feedback-owned VisualRoot untouched, including resizes.
             if (enemyRoot != null)
             {
-                float canvasGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
-                    (visual.rect.height / image.sprite.rect.height) * visual.pivot.y;
+                // Sprite pivots encode the authored floor in source texels.
+                // A padded frame may have transparent rows below that floor;
+                // UI Image ignores the sprite pivot when drawing its rectangle.
+                float sourceGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
+                    visual.pivot.y - image.sprite.pivot.y;
+                float canvasGroundOffset = sourceGroundOffset * (visual.rect.height / image.sprite.rect.height);
                 enemyRoot.anchoredPosition = enemyRestPosition + Vector2.up * canvasGroundOffset;
                 GameplayPixelGrid.Snap(enemyRoot);
             }

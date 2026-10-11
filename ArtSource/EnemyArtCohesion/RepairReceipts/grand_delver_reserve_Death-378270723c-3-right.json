@@ -1,0 +1,45 @@
+{
+  "id": "grand_delver_reserve_Death-378270723c-3",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/grand_delver_reserve_Death-378270723c-3.png",
+  "parameters": {
+    "mask_x": 133,
+    "mask_y": 91,
+    "mask_width": 27,
+    "mask_height": 39,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 42001,
+    "description": "Complete only the last few clipped pixels of this EXISTING mechanical right hand at the old right edge. Extend the same dark steel glove knuckles and orange wrist seam 3-7 native pixels into the transparent margin to a closed round contour. Preserve the exact lowered hand angle, size, colors, and mechanical identity. Do not enlarge the hand or invent fingers or particles. The body, face, left drill and every unmasked pixel remain unchanged. Hard native pixels, binary transparency, no background. Leave at least 4 transparent columns on the new right edge."
+  },
+  "job": {
+    "background_job_id": "54bdfdfe-c374-452d-9aa4-83b5a8d09bdd",
+    "image_id": "601095f8-27cf-5da0-8044-c52045397610",
+    "status": "processing",
+    "source_image_id": "601095f8-27cf-5da0-8044-c52045397610",
+    "job_id": "54bdfdfe-c374-452d-9aa4-83b5a8d09bdd",
+    "image_size": {
+      "width": 160,
+      "height": 136
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/54bdfdfe-c374-452d-9aa4-83b5a8d09bdd/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/grand_delver_reserve_Death-378270723c-3-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/grand_delver_reserve_Death-378270723c-3-right-repair.png",
+  "completion": "status: completed\nid: 54bdfdfe-c374-452d-9aa4-83b5a8d09bdd\njob_id: 54bdfdfe-c374-452d-9aa4-83b5a8d09bdd\nframes: 1\ntransparent: yes\nasset_id: 601095f8-27cf-5da0-8044-c52045397610\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/54bdfdfe-c374-452d-9aa4-83b5a8d09bdd/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/grand_delver_reserve_Death-378270723c-3.png",
+  "input_sha256": "2247a0057ebe853de7cb03cf9d3e643694d668ec504342c185562462dff2f9e2",
+  "output_sha256": "1ed336811fddf57a9c4154cc63443243814420b953be19efd4e742f51d582a81",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed rounded glove completion; native finishing replaces the introduced white glint with existing dull steel."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

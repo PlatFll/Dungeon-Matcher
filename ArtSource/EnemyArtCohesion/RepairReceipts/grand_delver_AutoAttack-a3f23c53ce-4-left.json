@@ -1,0 +1,45 @@
+{
+  "id": "grand_delver_AutoAttack-a3f23c53ce-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/grand_delver_AutoAttack-a3f23c53ce-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 86,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41845,
+    "description": "Tiny native pixel-art edge repair of the existing drill tip or machine contour. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "4b6dae50-06b1-4860-99e4-343a55d127b7",
+    "image_id": "e6f03b19-f2ed-5940-925a-a2ecc22133a6",
+    "status": "processing",
+    "source_image_id": "e6f03b19-f2ed-5940-925a-a2ecc22133a6",
+    "job_id": "4b6dae50-06b1-4860-99e4-343a55d127b7",
+    "image_size": {
+      "width": 160,
+      "height": 136
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/4b6dae50-06b1-4860-99e4-343a55d127b7/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/grand_delver_AutoAttack-a3f23c53ce-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/grand_delver_AutoAttack-a3f23c53ce-4-left-repair.png",
+  "completion": "status: completed\nid: 4b6dae50-06b1-4860-99e4-343a55d127b7\njob_id: 4b6dae50-06b1-4860-99e4-343a55d127b7\nframes: 1\ntransparent: yes\nasset_id: e6f03b19-f2ed-5940-925a-a2ecc22133a6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/4b6dae50-06b1-4860-99e4-343a55d127b7/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/grand_delver_AutoAttack-a3f23c53ce-4.png",
+  "input_sha256": "562f4c6a900f4cad4242d7aaee3de72700b982a471bb3c977b6ea670999845a0",
+  "output_sha256": "3ca42f10f6e12ec53817b9c0103f5f5037ecf657aebd918cb97c0331469527bf",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

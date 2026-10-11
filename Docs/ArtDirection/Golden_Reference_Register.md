@@ -1,14 +1,14 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-11 · canonical guide v1.12. This register identifies images and roles; the canonical art guide owns direction. No production art was changed.
+2026-10-11 · canonical guide v1.13. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass. Rattlebones remains unchanged.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
 ## Exact current images
 
-Each convenience PNG is a lossless extraction of the currently bound fallback/ready sprite, using its Unity GUID/fileID and imported rectangle. It is not a regenerated interpretation or a new approved replacement. Current motion sources are the linked controller and its complete clip/frame ledger in `Audit2026-10/bindings.json`. Recheck hashes before a future art task; if production/reference authority changes, update this register rather than relying on a dated gallery.
+Each convenience PNG is a lossless extraction of the currently bound fallback/ready sprite, using its Unity GUID/fileID and imported rectangle. It is not a regenerated interpretation or a new approved replacement. Current motion sources are the linked controller and `ArtSource/EnemyArtCohesion/jobs.json` / `unity-import-manifest.json`. `Audit2026-10/bindings.json` remains the immutable pre-edit ledger, with old rectangles and hashes. Recheck hashes before a future art task; if production/reference authority changes, update this register rather than relying on a dated gallery.
 
-[Labeled comparison board](Audit2026-10/boards/golden-comparison.png) · [Offline gallery](Audit2026-10/Review.html)
+[Original audit comparison board](Audit2026-10/boards/golden-comparison.png) · [Current enemy before/after player](../../ArtSource/EnemyArtCohesion/Review.html)
 
 ### RattleBones
 
@@ -33,11 +33,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Do not copy the same hat/face/pose to all locals or force all cloth brown.
 
-- Current native image: [farmer-still.png](Audit2026-10/media/farmer-still.png) (64×64).
-- Extracted PNG SHA-256: `d6dcb8df7120d844f5af19c38640b07effdd45960d8b3340e2dd88c1f2d6cdee`.
-- Production source: `Assets/_Game/Art/CombatIdles/Farmer_Idle.png`; SHA-256 `33847998d2e3da4474da7987685a83ab2b3a24bf76029c274990c5cea30cd7df`.
+- Current native image: [farmer-still.png](EnemyCohesion2026-10/farmer-still.png) (112×88).
+- Extracted PNG SHA-256: `6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d`.
+- Production source: `Assets/_Game/Art/CombatIdles/Farmer_Idle.png`; SHA-256 `f1ee772c518c6106617dcf782de95c431e6d90dd6d079a6a5d1d097ce1f10164`.
 - Unity GUID `f9bceeac2ee99d542bf3ca0aa1583b2f`, fileID `99358554080292503`, sprite `Farmer_Idle_00`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/Farmer_Idle.controller`.
 
 ### Pan Villager
@@ -48,11 +48,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** The pan remains cookware, not a heraldic shield; do not normalize her face/gender presentation.
 
-- Current native image: [pan_villager-still.png](Audit2026-10/media/pan_villager-still.png) (64×64).
-- Extracted PNG SHA-256: `057a22e58cdec69b10de50fe7255eb2ee8da9b12fd90851c6586e6c95efcadd1`.
-- Production source: `Assets/_Game/Art/CombatIdles/PanVillager_Idle.png`; SHA-256 `dc7e7b3695a191864c538b2b88cedba2cac100d6cb38ec5e6b544b32f0906470`.
+- Current native image: [pan_villager-still.png](EnemyCohesion2026-10/pan_villager-still.png) (112×88).
+- Extracted PNG SHA-256: `e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca`.
+- Production source: `Assets/_Game/Art/CombatIdles/PanVillager_Idle.png`; SHA-256 `cf2f8bcb3d7066e5837e933e105ed9ff70cd50780bf48d26cb8df9185833e51d`.
 - Unity GUID `3c27279675a73fa4483e90748a589ab2`, fileID `2638720417487856195`, sprite `PanVillager_Idle_00`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/PanVillager_Idle.controller`.
 
 ### Royal Swordsman
@@ -63,11 +63,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Not universal white armor, closed faces, or a universal melee pose.
 
-- Current native image: [royal_swordsman-still.png](Audit2026-10/media/royal_swordsman-still.png) (64×64).
-- Extracted PNG SHA-256: `c0347b8b49073dab7d6913c4c035326dc1c142a3cd1065bb6c655fc99741bae2`.
-- Production source: `Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png`; SHA-256 `a71d88dd5b8eb836d924b89862f8ce175b778d887cd8b212f700b7a4ec20ab91`.
+- Current native image: [royal_swordsman-still.png](EnemyCohesion2026-10/royal_swordsman-still.png) (112×88).
+- Extracted PNG SHA-256: `f7d4896847862dd507afefcf3853854b5115d5578d4235012564cc0e05f46b77`.
+- Production source: `Assets/_Game/Art/CombatIdles/RoyalSwordsman_Idle.png`; SHA-256 `c9bfa06b8a06eb4bb1348e4b6d0bd8e47112db7c2abc29e170816f8838495ae9`.
 - Unity GUID `515d6081feed5644fb014b27bfe1c414`, fileID `-4154602047249404397`, sprite `RoyalSwordsman_Idle_00`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/CombatIdles/RoyalSwordsman_Idle.controller`.
 
 ### Elven Mender
@@ -78,11 +78,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Not mandatory elf anatomy, cream/rose costume or identical casting hands.
 
-- Current native image: [elven_mender-still.png](Audit2026-10/media/elven_mender-still.png) (64×64).
-- Extracted PNG SHA-256: `4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d`.
-- Production source: `Assets/_Game/Art/Forest/Elven_Mender.png`; SHA-256 `4a93e7c01e4320a588545da8b4c165f6d59919997d17d82db5535c410062437d`.
+- Current native image: [elven_mender-still.png](EnemyCohesion2026-10/elven_mender-still.png) (112×88).
+- Extracted PNG SHA-256: `f5b3d67796b1b65fdbf4d0d8043cfbeaa08371c2cd1b03fcf58f9b82d46348fa`.
+- Production source: `Assets/_Game/Art/Forest/Elven_Mender.png`; SHA-256 `80e0a4bba8993b617aff9d186eb1542565de5afbcb584d6112dad2329cdfaae2`.
 - Unity GUID `1849556a95e20914ab7cf00cb59fab9f`, fileID `21300000`, sprite `Elven_Mender`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/Forest/Elven_Mender.controller`.
 
 ### Orc Trailguard
@@ -93,11 +93,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Not mandatory olive skin, muscular width or axe equipment.
 
-- Current native image: [orc_trailguard-still.png](Audit2026-10/media/orc_trailguard-still.png) (64×64).
-- Extracted PNG SHA-256: `45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09`.
-- Production source: `Assets/_Game/Art/Forest/Orc_Trailguard.png`; SHA-256 `45cde46aa7b68b5e8ba59f926cf15034584b603e44a9b0e8c1a17927643e6f09`.
+- Current native image: [orc_trailguard-still.png](EnemyCohesion2026-10/orc_trailguard-still.png) (112×88).
+- Extracted PNG SHA-256: `e8621e70149e13c19c1db958c6a190fa40cf76b6b9e2f69ad4dcba56f02e295d`.
+- Production source: `Assets/_Game/Art/Forest/Orc_Trailguard.png`; SHA-256 `710a1316bc9c40506368a45aa7032a62535d0cb45482c597f99503fe290f7622`.
 - Unity GUID `3f27ba57600c5ee449d4481892e799a0`, fileID `21300000`, sprite `Orc_Trailguard`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/Forest/Orc_Trailguard.controller`.
 
 ### Pearl Thief
@@ -108,11 +108,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Not a purple palette, tentacles or a generic cute-face template for every creature.
 
-- Current native image: [pearl_thief-still.png](Audit2026-10/media/pearl_thief-still.png) (80×80).
-- Extracted PNG SHA-256: `1f28bd39eb2fc5d721838752c312a83a46c42810e619107757180d1fea0aa656`.
-- Production source: `Assets/_Game/Art/DrownedCourt/pearl_thief.png`; SHA-256 `1f28bd39eb2fc5d721838752c312a83a46c42810e619107757180d1fea0aa656`.
+- Current native image: [pearl_thief-still.png](EnemyCohesion2026-10/pearl_thief-still.png) (128×104).
+- Extracted PNG SHA-256: `0ef10c489e66d242d5d2e083bf1ae9adb1d84fd25f053e0cea79aef7e0701d5c`.
+- Production source: `Assets/_Game/Art/DrownedCourt/pearl_thief.png`; SHA-256 `c63c63ec82d9bdb2acb85280ad58237d6853065037a58a241ed6a9b3bc726229`.
 - Unity GUID `ee4e03895a7a87449b53ae7f3e4a0752`, fileID `21300000`, sprite `pearl_thief`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 80, 80]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 128, 104]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (64, 4).
 - Current controller: `Assets/_Game/Animations/DrownedCourt/pearl_thief.controller`.
 
 ### Elven Scout
@@ -123,11 +123,11 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 
 **Do not copy:** Do not copy its wider idle movement to the whole cast; Mender already covers the core elf/cloth role.
 
-- Current native image: [elven_scout-still.png](Audit2026-10/media/elven_scout-still.png) (64×64).
-- Extracted PNG SHA-256: `9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6`.
-- Production source: `Assets/_Game/Art/Forest/Elven_Scout.png`; SHA-256 `9251cca7bbb72b8f3c8011bb91c376a247f54cb555b63a9cd4263742d4d403f6`.
+- Current native image: [elven_scout-still.png](EnemyCohesion2026-10/elven_scout-still.png) (112×88).
+- Extracted PNG SHA-256: `0ef5ab68f5f455c6b4ccee46bda19cc7be5b35d84a389930f26ae5980b8098ac`.
+- Production source: `Assets/_Game/Art/Forest/Elven_Scout.png`; SHA-256 `937a7b3be1443365d2594e061ef374b0f283c6ef9430ccc9cdc5f9a470e0839e`.
 - Unity GUID `e51d5254d34cf2140a590edb8774a2ac`, fileID `21300000`, sprite `Elven_Scout`.
-- Extraction rectangle in PNG top-left coordinates: `[0, 0, 64, 64]` (right/bottom exclusive). No scaling, trimming or recentering.
+- Extraction rectangle in PNG top-left coordinates: `[0, 0, 112, 88]` (right/bottom exclusive). Full expanded canvas; no scaling/trimming. Unity source-floor pivot: (56, 4).
 - Current controller: `Assets/_Game/Animations/Forest/Elven_Scout.controller`.
 
 ## Approval provenance and historical references
@@ -142,3 +142,7 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 ## Future generation lineage
 
 Follow the canonical guide’s actual-image input requirements. Use the referenced PNG bytes in a supported style/reference field; paths or textual mentions alone are insufficient. Record guide version/hash, image hashes, input roles, target approval, endpoint/settings/job lineage and output hashes. The approved target remains identity authority during animation. Proposed memberships above must remain marked pending until the user decides.
+
+## 2026-10-11 production update
+
+The user authorized cleanup, west-facing animation repairs, canvas expansion and integration. Current extracted images above follow those bound exports; original references and approval history remain in the immutable audit. This implementation does not approve the four proposed golden memberships. All player art, including Rattlebones, is byte-identical.

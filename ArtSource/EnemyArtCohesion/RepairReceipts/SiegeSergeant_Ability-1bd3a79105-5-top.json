@@ -1,0 +1,45 @@
+{
+  "id": "SiegeSergeant_Ability-1bd3a79105-5",
+  "side": "top",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/SiegeSergeant_Ability-1bd3a79105-5.png",
+  "parameters": {
+    "mask_x": 32,
+    "mask_y": 0,
+    "mask_width": 32,
+    "mask_height": 23,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41604,
+    "description": "Tiny native pixel-art edge repair of the existing heavy hammer or compact ground-impact effect. This exact animation pose was cropped at its old top canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Ability."
+  },
+  "job": {
+    "background_job_id": "558d02de-6da3-404e-97ad-e693e8040606",
+    "image_id": "a76654cf-b57c-52bc-aacf-7045529d5ddc",
+    "status": "processing",
+    "source_image_id": "a76654cf-b57c-52bc-aacf-7045529d5ddc",
+    "job_id": "558d02de-6da3-404e-97ad-e693e8040606",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/558d02de-6da3-404e-97ad-e693e8040606/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/SiegeSergeant_Ability-1bd3a79105-5-top.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/SiegeSergeant_Ability-1bd3a79105-5-top-repair.png",
+  "completion": "status: completed\nid: 558d02de-6da3-404e-97ad-e693e8040606\njob_id: 558d02de-6da3-404e-97ad-e693e8040606\nframes: 1\ntransparent: yes\nasset_id: a76654cf-b57c-52bc-aacf-7045529d5ddc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/558d02de-6da3-404e-97ad-e693e8040606/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/SiegeSergeant_Ability-1bd3a79105-5.png",
+  "input_sha256": "ea1e9c6f1277016a88fd631d1962ac74a68b75ed54200f736e70ec2adf13e4d9",
+  "output_sha256": "45058fa5232a9b15741cceca83ccf8047b24701a1b2c02fafd54c274ce6812b3",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Duplicates hammer; restore only clipped top contour natively."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

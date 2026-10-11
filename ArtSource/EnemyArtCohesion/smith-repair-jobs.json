@@ -1,0 +1,370 @@
+[
+  {
+    "id": "seismic_smith_Ability-e56ae57395-3",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Ability-e56ae57395-3.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41102,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"4b5529b0-9d1d-4453-b0c8-9a99d6f0af02\",\n  \"image_id\": \"54b4c847-3c6f-53e8-97ea-6da560392c28\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"54b4c847-3c6f-53e8-97ea-6da560392c28\",\n  \"job_id\": \"4b5529b0-9d1d-4453-b0c8-9a99d6f0af02\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/4b5529b0-9d1d-4453-b0c8-9a99d6f0af02/download\"\n}\nPoll get_image(job_id=\"4b5529b0-9d1d-4453-b0c8-9a99d6f0af02\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "4b5529b0-9d1d-4453-b0c8-9a99d6f0af02",
+        "image_id": "54b4c847-3c6f-53e8-97ea-6da560392c28",
+        "status": "processing",
+        "source_image_id": "54b4c847-3c6f-53e8-97ea-6da560392c28",
+        "job_id": "4b5529b0-9d1d-4453-b0c8-9a99d6f0af02",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/4b5529b0-9d1d-4453-b0c8-9a99d6f0af02/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Ability-e56ae57395-3-repair.png",
+    "completion": "status: completed\nid: 4b5529b0-9d1d-4453-b0c8-9a99d6f0af02\njob_id: 4b5529b0-9d1d-4453-b0c8-9a99d6f0af02\nframes: 1\ntransparent: yes\nasset_id: 54b4c847-3c6f-53e8-97ea-6da560392c28\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/4b5529b0-9d1d-4453-b0c8-9a99d6f0af02/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Ability-e56ae57395-3.png",
+    "input_sha256": "9bc7eb23cc7549ccbb4a57b466edfada242e3e19131c4e24591323a9c7ae075e",
+    "output_sha256": "44849733fbc51267c9606e060354113a05bd87bdf1274632b075430beacb8ada",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_Ability-e56ae57395-4",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Ability-e56ae57395-4.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41103,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"61e20479-bd4a-41c9-a515-5c7cef707e12\",\n  \"image_id\": \"6e50e2ac-9b5e-5946-85c8-25a43fff3331\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"6e50e2ac-9b5e-5946-85c8-25a43fff3331\",\n  \"job_id\": \"61e20479-bd4a-41c9-a515-5c7cef707e12\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/61e20479-bd4a-41c9-a515-5c7cef707e12/download\"\n}\nPoll get_image(job_id=\"61e20479-bd4a-41c9-a515-5c7cef707e12\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "61e20479-bd4a-41c9-a515-5c7cef707e12",
+        "image_id": "6e50e2ac-9b5e-5946-85c8-25a43fff3331",
+        "status": "processing",
+        "source_image_id": "6e50e2ac-9b5e-5946-85c8-25a43fff3331",
+        "job_id": "61e20479-bd4a-41c9-a515-5c7cef707e12",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/61e20479-bd4a-41c9-a515-5c7cef707e12/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Ability-e56ae57395-4-repair.png",
+    "completion": "status: completed\nid: 61e20479-bd4a-41c9-a515-5c7cef707e12\njob_id: 61e20479-bd4a-41c9-a515-5c7cef707e12\nframes: 1\ntransparent: yes\nasset_id: 6e50e2ac-9b5e-5946-85c8-25a43fff3331\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/61e20479-bd4a-41c9-a515-5c7cef707e12/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Ability-e56ae57395-4.png",
+    "input_sha256": "311ad11d8f80e009914a2ccf12fc3ed21397bcd27370fcdbd67543ac44448001",
+    "output_sha256": "46e25bc7fdc82869ad5339c76303ca35a8718194006967a27a1e1540b668c4d4",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_Death-b1c12b8f69-1",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-1.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41104,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"bd4776b2-bab9-4177-854c-cf15f33f9497\",\n  \"image_id\": \"b0ca0918-f1e5-5e21-afdf-a27bf55aa4b6\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"b0ca0918-f1e5-5e21-afdf-a27bf55aa4b6\",\n  \"job_id\": \"bd4776b2-bab9-4177-854c-cf15f33f9497\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/bd4776b2-bab9-4177-854c-cf15f33f9497/download\"\n}\nPoll get_image(job_id=\"bd4776b2-bab9-4177-854c-cf15f33f9497\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "bd4776b2-bab9-4177-854c-cf15f33f9497",
+        "image_id": "b0ca0918-f1e5-5e21-afdf-a27bf55aa4b6",
+        "status": "processing",
+        "source_image_id": "b0ca0918-f1e5-5e21-afdf-a27bf55aa4b6",
+        "job_id": "bd4776b2-bab9-4177-854c-cf15f33f9497",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/bd4776b2-bab9-4177-854c-cf15f33f9497/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Death-b1c12b8f69-1-repair.png",
+    "completion": "status: completed\nid: bd4776b2-bab9-4177-854c-cf15f33f9497\njob_id: bd4776b2-bab9-4177-854c-cf15f33f9497\nframes: 1\ntransparent: yes\nasset_id: b0ca0918-f1e5-5e21-afdf-a27bf55aa4b6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/bd4776b2-bab9-4177-854c-cf15f33f9497/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-1.png",
+    "input_sha256": "77630f969a19a00e90c9363d061da6c059bf08875f01ade5f37c6c4220695403",
+    "output_sha256": "b4c3927591b0b95dca21da25d445103c9de11302eaf5f53d0f4d751ee3e1f4d3",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_Death-b1c12b8f69-2",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-2.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41105,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"acb5c15a-d3d5-43fb-af44-ef1877c16277\",\n  \"image_id\": \"ebd58226-9f8f-5516-970c-6765e2d8e493\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ebd58226-9f8f-5516-970c-6765e2d8e493\",\n  \"job_id\": \"acb5c15a-d3d5-43fb-af44-ef1877c16277\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/acb5c15a-d3d5-43fb-af44-ef1877c16277/download\"\n}\nPoll get_image(job_id=\"acb5c15a-d3d5-43fb-af44-ef1877c16277\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "acb5c15a-d3d5-43fb-af44-ef1877c16277",
+        "image_id": "ebd58226-9f8f-5516-970c-6765e2d8e493",
+        "status": "processing",
+        "source_image_id": "ebd58226-9f8f-5516-970c-6765e2d8e493",
+        "job_id": "acb5c15a-d3d5-43fb-af44-ef1877c16277",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/acb5c15a-d3d5-43fb-af44-ef1877c16277/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Death-b1c12b8f69-2-repair.png",
+    "completion": "status: completed\nid: acb5c15a-d3d5-43fb-af44-ef1877c16277\njob_id: acb5c15a-d3d5-43fb-af44-ef1877c16277\nframes: 1\ntransparent: yes\nasset_id: ebd58226-9f8f-5516-970c-6765e2d8e493\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/acb5c15a-d3d5-43fb-af44-ef1877c16277/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-2.png",
+    "input_sha256": "02eeb29ff03d20805e4a7d9589132ca1b3ff7b23e66ca78ba6d19e3d753b3ea4",
+    "output_sha256": "7d6c730d7543cd27d3e965a4916023c16652f9d783d542b6bb775ad96ff10bc5",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_Death-b1c12b8f69-3",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-3.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41106,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"a80da797-3893-488b-923a-1cb1b47aaee3\",\n  \"image_id\": \"60b42296-4541-54a9-8f46-c3e4aafc02ae\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"60b42296-4541-54a9-8f46-c3e4aafc02ae\",\n  \"job_id\": \"a80da797-3893-488b-923a-1cb1b47aaee3\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/a80da797-3893-488b-923a-1cb1b47aaee3/download\"\n}\nPoll get_image(job_id=\"a80da797-3893-488b-923a-1cb1b47aaee3\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "a80da797-3893-488b-923a-1cb1b47aaee3",
+        "image_id": "60b42296-4541-54a9-8f46-c3e4aafc02ae",
+        "status": "processing",
+        "source_image_id": "60b42296-4541-54a9-8f46-c3e4aafc02ae",
+        "job_id": "a80da797-3893-488b-923a-1cb1b47aaee3",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/a80da797-3893-488b-923a-1cb1b47aaee3/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Death-b1c12b8f69-3-repair.png",
+    "completion": "status: completed\nid: a80da797-3893-488b-923a-1cb1b47aaee3\njob_id: a80da797-3893-488b-923a-1cb1b47aaee3\nframes: 1\ntransparent: yes\nasset_id: 60b42296-4541-54a9-8f46-c3e4aafc02ae\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/a80da797-3893-488b-923a-1cb1b47aaee3/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-3.png",
+    "input_sha256": "b60f176a1bee498e7b04d8fc37ba90bd975b0c66696e5225f208cc2d1adee511",
+    "output_sha256": "a9d1f7716330f061fef5b67dfff49673d62eb8f43a35da4e0464535a19b9b212",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_Death-b1c12b8f69-4",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-4.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 68,
+      "mask_width": 27,
+      "mask_height": 36,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41107,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"6d628e44-fbad-4b4e-8746-5db8f55e5ae6\",\n  \"image_id\": \"ad7a65a1-5ed1-5d7c-b8a1-48a17b32c4b5\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ad7a65a1-5ed1-5d7c-b8a1-48a17b32c4b5\",\n  \"job_id\": \"6d628e44-fbad-4b4e-8746-5db8f55e5ae6\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/6d628e44-fbad-4b4e-8746-5db8f55e5ae6/download\"\n}\nPoll get_image(job_id=\"6d628e44-fbad-4b4e-8746-5db8f55e5ae6\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "6d628e44-fbad-4b4e-8746-5db8f55e5ae6",
+        "image_id": "ad7a65a1-5ed1-5d7c-b8a1-48a17b32c4b5",
+        "status": "processing",
+        "source_image_id": "ad7a65a1-5ed1-5d7c-b8a1-48a17b32c4b5",
+        "job_id": "6d628e44-fbad-4b4e-8746-5db8f55e5ae6",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/6d628e44-fbad-4b4e-8746-5db8f55e5ae6/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_Death-b1c12b8f69-4-repair.png",
+    "completion": "status: completed\nid: 6d628e44-fbad-4b4e-8746-5db8f55e5ae6\njob_id: 6d628e44-fbad-4b4e-8746-5db8f55e5ae6\nframes: 1\ntransparent: yes\nasset_id: ad7a65a1-5ed1-5d7c-b8a1-48a17b32c4b5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/6d628e44-fbad-4b4e-8746-5db8f55e5ae6/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_Death-b1c12b8f69-4.png",
+    "input_sha256": "fa8095bec19e514cff702ee094708949095338d739e2d3b15370c8bb1a1b51f9",
+    "output_sha256": "917c88580d02a39c72aa6869b44a71a3b3acc56027222bb322e802edd79b4765",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_OreChargedAutoAttack-0956c99a07-6",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_OreChargedAutoAttack-0956c99a07-6.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 65,
+      "mask_width": 27,
+      "mask_height": 39,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41108,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"eaa2625a-3136-448f-8a34-e43bc8cbc329\",\n  \"image_id\": \"b9478e06-dba2-5963-b31b-ea1d8924b49d\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"b9478e06-dba2-5963-b31b-ea1d8924b49d\",\n  \"job_id\": \"eaa2625a-3136-448f-8a34-e43bc8cbc329\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/eaa2625a-3136-448f-8a34-e43bc8cbc329/download\"\n}\nPoll get_image(job_id=\"eaa2625a-3136-448f-8a34-e43bc8cbc329\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "eaa2625a-3136-448f-8a34-e43bc8cbc329",
+        "image_id": "b9478e06-dba2-5963-b31b-ea1d8924b49d",
+        "status": "processing",
+        "source_image_id": "b9478e06-dba2-5963-b31b-ea1d8924b49d",
+        "job_id": "eaa2625a-3136-448f-8a34-e43bc8cbc329",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/eaa2625a-3136-448f-8a34-e43bc8cbc329/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_OreChargedAutoAttack-0956c99a07-6-repair.png",
+    "completion": "status: completed\nid: eaa2625a-3136-448f-8a34-e43bc8cbc329\njob_id: eaa2625a-3136-448f-8a34-e43bc8cbc329\nframes: 1\ntransparent: yes\nasset_id: b9478e06-dba2-5963-b31b-ea1d8924b49d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/eaa2625a-3136-448f-8a34-e43bc8cbc329/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_OreChargedAutoAttack-0956c99a07-6.png",
+    "input_sha256": "191c1a3a130c76866b78b514f13dc18b40a9c9e73ede6359c3b6845fe377f29e",
+    "output_sha256": "20365ec417b25e06d8ca71fcb73be3f5454d66ebed5baf308cd45485a2a97028",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  },
+  {
+    "id": "seismic_smith_OreChargedAutoAttack-0956c99a07-7",
+    "input": ".utmp/EnemyArtCohesion/RepairInputs/seismic_smith_OreChargedAutoAttack-0956c99a07-7.png",
+    "args": {
+      "mask_x": 0,
+      "mask_y": 58,
+      "mask_width": 27,
+      "mask_height": 46,
+      "output_method": "Modify current layer",
+      "no_background": true,
+      "seed": 41109,
+      "description": "Repair only the chopped left edge of the EXISTING gray rune hammer at the lower-left of this dwarf. The original 80px frame cut off the left few pixels of the hammer head. Reconstruct its missing rounded/angled metal head contour naturally into the new transparent left margin, matching the intact hammer on the right of the masked seam. Keep its orange inset, exact current orientation, size, floor contact and attached handle. Use the existing charcoal, slate and gray ramp and one-pixel dark outline with broad simple planes. This is a tiny edge completion, not a new object or enlarged hammer. No new sparks, no new body parts, no ground, no shadow, no letters. Leave at least 8 fully transparent columns at the canvas left and 4 transparent rows at the bottom. Crisp binary-alpha native pixels."
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"background_job_id\": \"dc95f205-1694-4741-86fc-b33361602440\",\n  \"image_id\": \"50133384-4012-5627-a1da-6a86d2ca8b05\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"50133384-4012-5627-a1da-6a86d2ca8b05\",\n  \"job_id\": \"dc95f205-1694-4741-86fc-b33361602440\",\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 104\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/dc95f205-1694-4741-86fc-b33361602440/download\"\n}\nPoll get_image(job_id=\"dc95f205-1694-4741-86fc-b33361602440\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+        }
+      ],
+      "structuredContent": {
+        "background_job_id": "dc95f205-1694-4741-86fc-b33361602440",
+        "image_id": "50133384-4012-5627-a1da-6a86d2ca8b05",
+        "status": "processing",
+        "source_image_id": "50133384-4012-5627-a1da-6a86d2ca8b05",
+        "job_id": "dc95f205-1694-4741-86fc-b33361602440",
+        "image_size": {
+          "width": 128,
+          "height": 104
+        },
+        "output_count": 1,
+        "estimated_generations": 6,
+        "pricing_provisional": true,
+        "poll_tool": "get_image",
+        "download_path": "/mcp/images/dc95f205-1694-4741-86fc-b33361602440/download"
+      },
+      "isError": false
+    },
+    "output": "ArtSource/EnemyArtCohesion/Candidates/seismic_smith_OreChargedAutoAttack-0956c99a07-7-repair.png",
+    "completion": "status: completed\nid: dc95f205-1694-4741-86fc-b33361602440\njob_id: dc95f205-1694-4741-86fc-b33361602440\nframes: 1\ntransparent: yes\nasset_id: 50133384-4012-5627-a1da-6a86d2ca8b05\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/dc95f205-1694-4741-86fc-b33361602440/download",
+    "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/seismic_smith_OreChargedAutoAttack-0956c99a07-7.png",
+    "input_sha256": "72f1687ecea15ddb5cb7b7968a24dbd9a721f64746bdd9f946d1df01bb5676e1",
+    "output_sha256": "93762ce1c4b84e3ec803d3407821f3df984dff3c0ab158548686f2b4debadbfe",
+    "charged_generations": 6,
+    "status": "completed; visually selected"
+  }
+]

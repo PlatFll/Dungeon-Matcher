@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: d4874c37ea7fe3e428732ef3b062ae64
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7822232738456116919
+    second: hammerhead_bruiser_AutoAttack_0
+  - first:
+      213: 3143712151480921436
+    second: hammerhead_bruiser_AutoAttack_1
+  - first:
+      213: 7498337247625420855
+    second: hammerhead_bruiser_AutoAttack_2
+  - first:
+      213: -5292074874488208993
+    second: hammerhead_bruiser_AutoAttack_3
+  - first:
+      213: -2979892148588448518
+    second: hammerhead_bruiser_AutoAttack_4
+  - first:
+      213: -3316019065209072489
+    second: hammerhead_bruiser_AutoAttack_5
+  - first:
+      213: 4856383570399324568
+    second: hammerhead_bruiser_AutoAttack_6
+  - first:
+      213: -459235462104267846
+    second: hammerhead_bruiser_AutoAttack_7
+  - first:
+      213: -5074515423407025532
+    second: hammerhead_bruiser_AutoAttack_8
+  - first:
+      213: -8426772225375739054
+    second: hammerhead_bruiser_AutoAttack_9
+  - first:
+      213: -447586042340102873
+    second: hammerhead_bruiser_AutoAttack_00
+  - first:
+      213: 265824479208496295
+    second: hammerhead_bruiser_AutoAttack_01
+  - first:
+      213: -4336378487192284820
+    second: hammerhead_bruiser_AutoAttack_02
+  - first:
+      213: 2721951797611279429
+    second: hammerhead_bruiser_AutoAttack_03
+  - first:
+      213: 7640035343948586519
+    second: hammerhead_bruiser_AutoAttack_04
+  - first:
+      213: 4632555275227976575
+    second: hammerhead_bruiser_AutoAttack_05
+  - first:
+      213: -4137848418804451628
+    second: hammerhead_bruiser_AutoAttack_06
+  - first:
+      213: -122455366097208790
+    second: hammerhead_bruiser_AutoAttack_07
+  - first:
+      213: -1274101585384910415
+    second: hammerhead_bruiser_AutoAttack_08
+  - first:
+      213: 4102994894699241829
+    second: hammerhead_bruiser_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d25ebaddad9c9f0800000000000000
+      internalID: -447586042340102873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac53d794f560b300800000000000000
+      internalID: 265824479208496295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c611243bdb612d3c0800000000000000
+      internalID: -4336378487192284820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5443b580db056c520800000000000000
+      internalID: 2721951797611279429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e1c7baaabd60a60800000000000000
+      internalID: 7640035343948586519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73535e7a742a4040800000000000000
+      internalID: 4632555275227976575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6bfbe49c86396c0800000000000000
+      internalID: -4137848418804451628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a7fea4e73fc4ef0800000000000000
+      internalID: -122455366097208790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1de5bcb5b715ee0800000000000000
+      internalID: -1274101585384910415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hammerhead_bruiser_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5612acd3e14c0f830800000000000000
+      internalID: 4102994894699241829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hammerhead_bruiser_AutoAttack_0: 7822232738456116919
+      hammerhead_bruiser_AutoAttack_00: -447586042340102873
+      hammerhead_bruiser_AutoAttack_01: 265824479208496295
+      hammerhead_bruiser_AutoAttack_02: -4336378487192284820
+      hammerhead_bruiser_AutoAttack_03: 2721951797611279429
+      hammerhead_bruiser_AutoAttack_04: 7640035343948586519
+      hammerhead_bruiser_AutoAttack_05: 4632555275227976575
+      hammerhead_bruiser_AutoAttack_06: -4137848418804451628
+      hammerhead_bruiser_AutoAttack_07: -122455366097208790
+      hammerhead_bruiser_AutoAttack_08: -1274101585384910415
+      hammerhead_bruiser_AutoAttack_09: 4102994894699241829
+      hammerhead_bruiser_AutoAttack_1: 3143712151480921436
+      hammerhead_bruiser_AutoAttack_2: 7498337247625420855
+      hammerhead_bruiser_AutoAttack_3: -5292074874488208993
+      hammerhead_bruiser_AutoAttack_4: -2979892148588448518
+      hammerhead_bruiser_AutoAttack_5: -3316019065209072489
+      hammerhead_bruiser_AutoAttack_6: 4856383570399324568
+      hammerhead_bruiser_AutoAttack_7: -459235462104267846
+      hammerhead_bruiser_AutoAttack_8: -5074515423407025532
+      hammerhead_bruiser_AutoAttack_9: -8426772225375739054
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

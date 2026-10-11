@@ -1,0 +1,45 @@
+{
+  "id": "bore_engineer_Death-c88c3727d4-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/bore_engineer_Death-c88c3727d4-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 65,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41822,
+    "description": "Tiny native pixel-art edge repair of the existing drill point and iron contour, preserving its spiral taper. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State Death."
+  },
+  "job": {
+    "background_job_id": "1f5d7c26-682d-4b77-bd30-c11a8f5f6e72",
+    "image_id": "fcc4e7ec-b6af-5b88-9e8b-056d625337de",
+    "status": "processing",
+    "source_image_id": "fcc4e7ec-b6af-5b88-9e8b-056d625337de",
+    "job_id": "1f5d7c26-682d-4b77-bd30-c11a8f5f6e72",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/1f5d7c26-682d-4b77-bd30-c11a8f5f6e72/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/bore_engineer_Death-c88c3727d4-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/bore_engineer_Death-c88c3727d4-4-left-repair.png",
+  "completion": "status: completed\nid: 1f5d7c26-682d-4b77-bd30-c11a8f5f6e72\njob_id: 1f5d7c26-682d-4b77-bd30-c11a8f5f6e72\nframes: 1\ntransparent: yes\nasset_id: fcc4e7ec-b6af-5b88-9e8b-056d625337de\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/1f5d7c26-682d-4b77-bd30-c11a8f5f6e72/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/bore_engineer_Death-c88c3727d4-4.png",
+  "input_sha256": "07b10cee22d2b5af250abce00a8c05d838c9ea4802950e4be5ffdb6d162dc334",
+  "output_sha256": "65ea45ace02a1d4aa62ed0ed863541b0867f89075a65174bee86c62c0e6802fd",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

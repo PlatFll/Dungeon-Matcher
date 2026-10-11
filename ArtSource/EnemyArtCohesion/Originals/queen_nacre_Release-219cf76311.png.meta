@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: 14ecfe2acb5a4914fbe3b7005466be9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5483925399352849907
+    second: queen_nacre_Release_0
+  - first:
+      213: -1630083557464381018
+    second: queen_nacre_Release_1
+  - first:
+      213: -7446032297378677592
+    second: queen_nacre_Release_2
+  - first:
+      213: 841328292034600216
+    second: queen_nacre_Release_3
+  - first:
+      213: 5993515464327373508
+    second: queen_nacre_Release_4
+  - first:
+      213: 3103814800972006772
+    second: queen_nacre_Release_5
+  - first:
+      213: -1643697162176695154
+    second: queen_nacre_Release_6
+  - first:
+      213: -8585588926276960490
+    second: queen_nacre_Release_7
+  - first:
+      213: 1570704329427288422
+    second: queen_nacre_Release_8
+  - first:
+      213: 3185324885453169572
+    second: queen_nacre_Release_9
+  - first:
+      213: -9207844577254208887
+    second: queen_nacre_Release_10
+  - first:
+      213: 6619975405222061434
+    second: queen_nacre_Release_00
+  - first:
+      213: -1714230271495077982
+    second: queen_nacre_Release_01
+  - first:
+      213: 8826210143329726617
+    second: queen_nacre_Release_02
+  - first:
+      213: -1502841274899969772
+    second: queen_nacre_Release_03
+  - first:
+      213: 2302320981614455436
+    second: queen_nacre_Release_04
+  - first:
+      213: -4337100092373528886
+    second: queen_nacre_Release_05
+  - first:
+      213: -5276227312054724931
+    second: queen_nacre_Release_06
+  - first:
+      213: -2190454683001814384
+    second: queen_nacre_Release_07
+  - first:
+      213: 4916252129898703916
+    second: queen_nacre_Release_08
+  - first:
+      213: 5814094532357410090
+    second: queen_nacre_Release_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: queen_nacre_Release_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7565129e80eedb50800000000000000
+      internalID: 6619975405222061434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af705486a4d538e0800000000000000
+      internalID: -1714230271495077982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9903e12bc5ffc7a70800000000000000
+      internalID: 8826210143329726617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419cac7a2d5d42be0800000000000000
+      internalID: -1502841274899969772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8aee0c0cbc73ff10800000000000000
+      internalID: 2302320981614455436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace03c6e1768fc3c0800000000000000
+      internalID: -4337100092373528886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db693ced63317c6b0800000000000000
+      internalID: -5276227312054724931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09206134211f991e0800000000000000
+      internalID: -2190454683001814384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2caed4c3490a3440800000000000000
+      internalID: 4916252129898703916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_09
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d44bb3c20dfa050800000000000000
+      internalID: 5814094532357410090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_Release_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a81c9642a273080800000000000000
+      internalID: -9207844577254208887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      queen_nacre_Release_0: -5483925399352849907
+      queen_nacre_Release_00: 6619975405222061434
+      queen_nacre_Release_01: -1714230271495077982
+      queen_nacre_Release_02: 8826210143329726617
+      queen_nacre_Release_03: -1502841274899969772
+      queen_nacre_Release_04: 2302320981614455436
+      queen_nacre_Release_05: -4337100092373528886
+      queen_nacre_Release_06: -5276227312054724931
+      queen_nacre_Release_07: -2190454683001814384
+      queen_nacre_Release_08: 4916252129898703916
+      queen_nacre_Release_09: 5814094532357410090
+      queen_nacre_Release_1: -1630083557464381018
+      queen_nacre_Release_10: -9207844577254208887
+      queen_nacre_Release_2: -7446032297378677592
+      queen_nacre_Release_3: 841328292034600216
+      queen_nacre_Release_4: 5993515464327373508
+      queen_nacre_Release_5: 3103814800972006772
+      queen_nacre_Release_6: -1643697162176695154
+      queen_nacre_Release_7: -8585588926276960490
+      queen_nacre_Release_8: 1570704329427288422
+      queen_nacre_Release_9: 3185324885453169572
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

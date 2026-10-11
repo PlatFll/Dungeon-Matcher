@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: bca8e84d29840e54b9ebd83997148e5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8814081998708847418
+    second: puffer_sentinel_Release_0
+  - first:
+      213: 1758010775456510399
+    second: puffer_sentinel_Release_1
+  - first:
+      213: -3419450985241028736
+    second: puffer_sentinel_Release_2
+  - first:
+      213: -3142194046543055718
+    second: puffer_sentinel_Release_3
+  - first:
+      213: -8725901899780932799
+    second: puffer_sentinel_Release_4
+  - first:
+      213: -6060961827813624103
+    second: puffer_sentinel_Release_5
+  - first:
+      213: 7356484530694760932
+    second: puffer_sentinel_Release_6
+  - first:
+      213: -2325181654248377747
+    second: puffer_sentinel_Release_7
+  - first:
+      213: -3057993334720461011
+    second: puffer_sentinel_Release_8
+  - first:
+      213: -2197232635414139676
+    second: puffer_sentinel_Release_9
+  - first:
+      213: 4176851354726827755
+    second: puffer_sentinel_Release_10
+  - first:
+      213: -688786093310099243
+    second: puffer_sentinel_Release_11
+  - first:
+      213: -3755170628560113110
+    second: puffer_sentinel_Release_12
+  - first:
+      213: -8478664830703560664
+    second: puffer_sentinel_Release_00
+  - first:
+      213: -1014064732893030512
+    second: puffer_sentinel_Release_01
+  - first:
+      213: 8455668624017326789
+    second: puffer_sentinel_Release_02
+  - first:
+      213: 3772435308915759870
+    second: puffer_sentinel_Release_03
+  - first:
+      213: 2211712241571171783
+    second: puffer_sentinel_Release_04
+  - first:
+      213: -8952809382278845382
+    second: puffer_sentinel_Release_05
+  - first:
+      213: 816187226788134662
+    second: puffer_sentinel_Release_06
+  - first:
+      213: 8197053646454463027
+    second: puffer_sentinel_Release_07
+  - first:
+      213: 3710152135810439620
+    second: puffer_sentinel_Release_08
+  - first:
+      213: -1477737732851622197
+    second: puffer_sentinel_Release_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8281154224bb55a80800000000000000
+      internalID: -8478664830703560664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 097d8a88f715de1f0800000000000000
+      internalID: -1014064732893030512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c208f040d1985570800000000000000
+      internalID: 8455668624017326789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa901e1de16a5430800000000000000
+      internalID: 3772435308915759870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd8b38c09491be10800000000000000
+      internalID: 2211712241571171783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c2c730d4b31c380800000000000000
+      internalID: -8952809382278845382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ffaea55fda35b00800000000000000
+      internalID: 816187226788134662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a1db19cd8c1c170800000000000000
+      internalID: 8197053646454463027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c953a5d5bb1d7330800000000000000
+      internalID: 3710152135810439620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce10328c550e7be0800000000000000
+      internalID: -1477737732851622197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be60a1e5d2827f930800000000000000
+      internalID: 4176851354726827755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0c50e82b0f076f0800000000000000
+      internalID: -688786093310099243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puffer_sentinel_Release_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22b1b58534f2ebc0800000000000000
+      internalID: -3755170628560113110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      puffer_sentinel_Release_0: 8814081998708847418
+      puffer_sentinel_Release_00: -8478664830703560664
+      puffer_sentinel_Release_01: -1014064732893030512
+      puffer_sentinel_Release_02: 8455668624017326789
+      puffer_sentinel_Release_03: 3772435308915759870
+      puffer_sentinel_Release_04: 2211712241571171783
+      puffer_sentinel_Release_05: -8952809382278845382
+      puffer_sentinel_Release_06: 816187226788134662
+      puffer_sentinel_Release_07: 8197053646454463027
+      puffer_sentinel_Release_08: 3710152135810439620
+      puffer_sentinel_Release_09: -1477737732851622197
+      puffer_sentinel_Release_1: 1758010775456510399
+      puffer_sentinel_Release_10: 4176851354726827755
+      puffer_sentinel_Release_11: -688786093310099243
+      puffer_sentinel_Release_12: -3755170628560113110
+      puffer_sentinel_Release_2: -3419450985241028736
+      puffer_sentinel_Release_3: -3142194046543055718
+      puffer_sentinel_Release_4: -8725901899780932799
+      puffer_sentinel_Release_5: -6060961827813624103
+      puffer_sentinel_Release_6: 7356484530694760932
+      puffer_sentinel_Release_7: -2325181654248377747
+      puffer_sentinel_Release_8: -3057993334720461011
+      puffer_sentinel_Release_9: -2197232635414139676
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

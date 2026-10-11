@@ -1,0 +1,45 @@
+{
+  "id": "Orc_Trailguard_AutoAttack-a128ca25c0-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/Orc_Trailguard_AutoAttack-a128ca25c0-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 42,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41804,
+    "description": "Tiny native pixel-art edge repair of the existing pale axe head and dark edge. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State AutoAttack."
+  },
+  "job": {
+    "background_job_id": "68656504-5470-4c39-a82e-85bf8c62a566",
+    "image_id": "8d18e178-f5df-54bd-a9fd-e59b394ef063",
+    "status": "processing",
+    "source_image_id": "8d18e178-f5df-54bd-a9fd-e59b394ef063",
+    "job_id": "68656504-5470-4c39-a82e-85bf8c62a566",
+    "image_size": {
+      "width": 144,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/68656504-5470-4c39-a82e-85bf8c62a566/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/Orc_Trailguard_AutoAttack-a128ca25c0-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/Orc_Trailguard_AutoAttack-a128ca25c0-4-left-repair.png",
+  "completion": "status: completed\nid: 68656504-5470-4c39-a82e-85bf8c62a566\njob_id: 68656504-5470-4c39-a82e-85bf8c62a566\nframes: 1\ntransparent: yes\nasset_id: 8d18e178-f5df-54bd-a9fd-e59b394ef063\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/68656504-5470-4c39-a82e-85bf8c62a566/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/Orc_Trailguard_AutoAttack-a128ca25c0-4.png",
+  "input_sha256": "c61d6764e6d239ef8cfb93f47304bc540120c19a82cec1501ac9bac87e7b1577",
+  "output_sha256": "30c375c8cd1af1f84467ef7ce18299f94f94740080c4bb80a462444531b28580",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

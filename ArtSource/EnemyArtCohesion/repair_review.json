@@ -1,0 +1,502 @@
+{
+  "BarricadeGuard_Ability-4c8b987235-10-left": {
+    "status": "rejected",
+    "reason": "Duplicates wooden shafts; native edge completion required."
+  },
+  "BarricadeGuard_Ability-4c8b987235-11-left": {
+    "status": "rejected",
+    "reason": "Unnecessary added flash particles; native contour cleanup."
+  },
+  "BarricadeGuard_Ability-4c8b987235-12-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "BarricadeGuard_AutoAttack-8a4bb6278d-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "bore_engineer_AutoAttack-8a8cbb2df6-2-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "bore_engineer_AutoAttack-8a8cbb2df6-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "bore_engineer_Death-c88c3727d4-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "bore_engineer_OreChargedAutoAttack-fcd7f8dbb0-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "conch_marshal_Death-e7b5c3974e-10-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "conch_marshal_Death-e7b5c3974e-12-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "conch_marshal_Death-e7b5c3974e-8-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "conch_marshal_Death-e7b5c3974e-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "CourtMage_Ability-ccd68f17cc-10-left": {
+    "status": "rejected",
+    "reason": "Adds detached streak; native tapered effect completion."
+  },
+  "CourtMage_Ability-ccd68f17cc-11-left": {
+    "status": "rejected",
+    "reason": "Adds noisy cyan fragments; native tapered effect completion."
+  },
+  "CourtMage_Ability-ccd68f17cc-12-left": {
+    "status": "rejected",
+    "reason": "Adds unrelated particles; native cleanup."
+  },
+  "CourtMage_Ability-ccd68f17cc-8-right": {
+    "status": "rejected",
+    "reason": "Extends an eastward effect; native west-facing correction."
+  },
+  "CourtMage_Ability-ccd68f17cc-9-right": {
+    "status": "rejected",
+    "reason": "Superseded by the adjacent westward release drawing."
+  },
+  "Elven_Scout_AutoAttack-5421fb4cad-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "grand_delver_AutoAttack-a3f23c53ce-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "grand_delver_Death-3d5ba92519-6-right": {
+    "status": "rejected",
+    "reason": "Edge contact is detached particles, not missing anatomy."
+  },
+  "hammerhead_bruiser_Hit-9b59614538-1-right": {
+    "status": "rejected",
+    "reason": "Edge contact is detached particles; native component cleanup."
+  },
+  "King_JudgmentStrike1-6dd06648c9-3-top": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "King_RoyalCommand-6178d93150-10-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "King_RoyalCommand-6178d93150-11-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "King_RoyalCommand-6178d93150-12-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "KnightCaptain_AutoAttack-21b83533e0-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "lantern_warden_AutoAttack-865990be0b-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "lantern_warden_Death-33305e388d-6-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "lantern_warden_Death-33305e388d-7-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_AutoAttack-1692ac85e2-8-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_AutoAttack-1692ac85e2-9-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_Death-54d4f9090b-10-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_Death-54d4f9090b-11-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_Death-54d4f9090b-12-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_Death-54d4f9090b-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "needlefin_skirmisher_Death-54d4f9090b-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "obsidian_sentinel_OreChargedAutoAttack-64243d6933-2-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "obsidian_sentinel_SlamRelease-6c270a8c8b-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "obsidian_sentinel_SlamRelease-6c270a8c8b-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "Orc_Trailguard_AutoAttack-a128ca25c0-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "Orc_Trailguard_AutoAttack-a128ca25c0-5-left": {
+    "status": "rejected",
+    "reason": "Duplicates forearm and cuff; native rounded cuff completion."
+  },
+  "puffer_sentinel_AutoAttack-c42fc79193-6-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "puffer_sentinel_AutoAttack-c42fc79193-7-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "puffer_sentinel_AutoAttack-c42fc79193-8-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "puffer_sentinel_InflatedAttack-edfdf0effa-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "puffer_sentinel_InflatedAttack-edfdf0effa-9-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "queen_nacre_Death-c24d4f81ef-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArbalist_AutoAttack-53f6014cbf-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArbalist_AutoAttack-53f6014cbf-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArbalist_AutoAttack-53f6014cbf-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArbalist_AutoAttack-53f6014cbf-6-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-10-left": {
+    "status": "rejected",
+    "reason": "Opaque white column artifact; reject."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-11-top": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-12-left": {
+    "status": "rejected",
+    "reason": "Unnecessary new particles."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-14-left": {
+    "status": "rejected",
+    "reason": "Unnecessary new particles."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-6-left": {
+    "status": "rejected",
+    "reason": "Unnecessary fragmented effect expansion."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-8-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Ability-a6c87da263-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-10-left": {
+    "status": "rejected",
+    "reason": "Unnecessary new particles."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-11-top": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-4-left": {
+    "status": "rejected",
+    "reason": "Adds internal ring hatching inconsistent with simple spell planes."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-6-left": {
+    "status": "rejected",
+    "reason": "Adds a grid of particles; reject."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-8-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalArchbishop_Benediction-34274aa6a5-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalStandardBearer_Ability-a5068cfb53-1-top": {
+    "status": "rejected",
+    "reason": "Duplicates banner; restore only clipped steel finial natively."
+  },
+  "RoyalStandardBearer_Ability-a5068cfb53-2-top": {
+    "status": "rejected",
+    "reason": "Duplicates banner; restore only clipped steel finial natively."
+  },
+  "RoyalStandardBearer_Ability-a5068cfb53-3-top": {
+    "status": "rejected",
+    "reason": "Duplicates banner; restore only clipped steel finial natively."
+  },
+  "RoyalStandardBearer_Ability-a5068cfb53-4-top": {
+    "status": "rejected",
+    "reason": "Duplicates banner; restore only clipped steel finial natively."
+  },
+  "RoyalSwordsman_AutoAttack-d46e01b0a3-2-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "RoyalSwordsman_AutoAttack-d46e01b0a3-4-left": {
+    "status": "rejected",
+    "reason": "Rectangular cream extension; native curved trail required."
+  },
+  "RoyalSwordsman_AutoAttack-d46e01b0a3-5-left": {
+    "status": "rejected",
+    "reason": "Unnecessary extra debris; native contour continuation."
+  },
+  "SiegeSergeant_Ability-1bd3a79105-10-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "SiegeSergeant_Ability-1bd3a79105-11-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "SiegeSergeant_Ability-1bd3a79105-12-left": {
+    "status": "rejected",
+    "reason": "Unnecessary extra fragment."
+  },
+  "SiegeSergeant_Ability-1bd3a79105-5-top": {
+    "status": "rejected",
+    "reason": "Duplicates hammer; restore only clipped top contour natively."
+  },
+  "SiegeSergeant_Ability-1bd3a79105-9-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-1-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-10-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-11-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-12-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-5-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-6-right": {
+    "status": "rejected",
+    "reason": "Enlarges mace head into diamond; use a restrained contour."
+  },
+  "TownMarshal_Ability-085a8c6c66-8-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Ability-085a8c6c66-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-1-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-2-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-3-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-6-left": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_AutoAttack-f223f22917-9-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-0-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-1-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-2-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-3-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-6-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "TownMarshal_Idle-eba647d7ff-7-right": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "obsidian_sentinel_SlamRelease-6c270a8c8b-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "pickaxe_delver_OreChargedAutoAttack-f7eb92383e-6-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_gunner_AutoAttack-55d99b3322-2-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "rivet_gunner_AutoAttack-55d99b3322-3-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "rivet_gunner_AutoAttack-55d99b3322-4-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "rivet_gunner_AutoAttack-55d99b3322-5-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_gunner_OreChargedAutoAttack-5eb50f07c6-5-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_turret_AutoAttack-26ac426c85-1-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_turret_AutoAttack-26ac426c85-2-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_turret_AutoAttack-26ac426c85-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "rivet_turret_OreChargedAutoAttack-95cf42b4b6-3-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "rivet_turret_OreChargedAutoAttack-95cf42b4b6-4-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "siege_machinist_AutoAttack-1ec136f4f4-2-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "siege_machinist_AutoAttack-1ec136f4f4-3-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "siege_machinist_PrimeAbility-52525b57eb-7-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "stonewright_AutoAttack-a204d845ec-6-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "stonewright_OreChargedAutoAttack-ce29992bce-3-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "stonewright_OreChargedAutoAttack-ce29992bce-4-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "stonewright_OreChargedAutoAttack-ce29992bce-5-left": {
+    "status": "rejected",
+    "reason": "Generated extra particles/flames or altered effect geometry; native contour completion instead."
+  },
+  "vein_surveyor_AutoAttack-f71d28f0da-4-left": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "grand_delver_reserve_Death-378270723c-3-right": {
+    "status": "accepted",
+    "reason": "Reviewed rounded glove completion; native finishing replaces the introduced white glint with existing dull steel."
+  }
+}

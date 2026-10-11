@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 87ea753cbe7f78444aeb49e7ce421aa0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5164450964356846383
+    second: SpearGuard_Idle_0
+  - first:
+      213: -7079867069038382547
+    second: SpearGuard_Idle_1
+  - first:
+      213: 4162866128510766107
+    second: SpearGuard_Idle_2
+  - first:
+      213: -8371448815612750265
+    second: SpearGuard_Idle_3
+  - first:
+      213: -2386441124692222743
+    second: SpearGuard_Idle_4
+  - first:
+      213: -1602509142343818321
+    second: SpearGuard_Idle_5
+  - first:
+      213: 20155654999777863
+    second: SpearGuard_Idle_6
+  - first:
+      213: 6385737164956669046
+    second: SpearGuard_Idle_7
+  - first:
+      213: -4240087638083873629
+    second: SpearGuard_Idle_8
+  - first:
+      213: 3145689042794373059
+    second: SpearGuard_Idle_00
+  - first:
+      213: 8668407466825462279
+    second: SpearGuard_Idle_01
+  - first:
+      213: 9061524408791822087
+    second: SpearGuard_Idle_02
+  - first:
+      213: 6158879906642244611
+    second: SpearGuard_Idle_03
+  - first:
+      213: -2861163881736556341
+    second: SpearGuard_Idle_04
+  - first:
+      213: -7473048767300914641
+    second: SpearGuard_Idle_05
+  - first:
+      213: 9144288229654953490
+    second: SpearGuard_Idle_06
+  - first:
+      213: -810040032110595858
+    second: SpearGuard_Idle_07
+  - first:
+      213: -1649397512444004581
+    second: SpearGuard_Idle_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpearGuard_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfd891948bb7ab20800000000000000
+      internalID: 3145689042794373059
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702b974f9ae5c4870800000000000000
+      internalID: 8668407466825462279
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f6195907001cd70800000000000000
+      internalID: 9061524408791822087
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304b3b9d4acb87550800000000000000
+      internalID: 6158879906642244611
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc03ae0db9a1b48d0800000000000000
+      internalID: -2861163881736556341
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22bbd37db56a4890800000000000000
+      internalID: -7473048767300914641
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e7e5442b907ee70800000000000000
+      internalID: 9144288229654953490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0b330f1e822c4f0800000000000000
+      internalID: -810040032110595858
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpearGuard_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b17bc5983b92c19e0800000000000000
+      internalID: -1649397512444004581
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpearGuard_Idle_0: 5164450964356846383
+      SpearGuard_Idle_00: 3145689042794373059
+      SpearGuard_Idle_01: 8668407466825462279
+      SpearGuard_Idle_02: 9061524408791822087
+      SpearGuard_Idle_03: 6158879906642244611
+      SpearGuard_Idle_04: -2861163881736556341
+      SpearGuard_Idle_05: -7473048767300914641
+      SpearGuard_Idle_06: 9144288229654953490
+      SpearGuard_Idle_07: -810040032110595858
+      SpearGuard_Idle_08: -1649397512444004581
+      SpearGuard_Idle_1: -7079867069038382547
+      SpearGuard_Idle_2: 4162866128510766107
+      SpearGuard_Idle_3: -8371448815612750265
+      SpearGuard_Idle_4: -2386441124692222743
+      SpearGuard_Idle_5: -1602509142343818321
+      SpearGuard_Idle_6: 20155654999777863
+      SpearGuard_Idle_7: 6385737164956669046
+      SpearGuard_Idle_8: -4240087638083873629
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

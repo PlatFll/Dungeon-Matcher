@@ -1,0 +1,45 @@
+{
+  "id": "rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 57,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41895,
+    "description": "Tiny native pixel-art edge repair of the existing orange muzzle flash, completing a small leftward tapered burst. This exact animation pose was cropped at its old left canvas boundary. Complete only the missing continuation into the transparent margin. Keep its current size, pose, angle, equipment, palette and lighting. No new or enlarged object. Existing source image remains the identity authority. Connected simple shading and one-pixel dark contour for solid objects; effects retain their existing color edge. Preserve all unmasked pixels. Leave four transparent pixels at the new canvas edge. No background, ground, shadow, text, extra particles or floating objects. State OreChargedAutoAttack."
+  },
+  "job": {
+    "background_job_id": "e9d4f44d-2ace-46c0-9adc-f6441035f7a6",
+    "image_id": "9ba55312-0fa3-5017-bf22-ed14de93c89b",
+    "status": "processing",
+    "source_image_id": "9ba55312-0fa3-5017-bf22-ed14de93c89b",
+    "job_id": "e9d4f44d-2ace-46c0-9adc-f6441035f7a6",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/e9d4f44d-2ace-46c0-9adc-f6441035f7a6/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4-left-repair.png",
+  "completion": "status: completed\nid: e9d4f44d-2ace-46c0-9adc-f6441035f7a6\njob_id: e9d4f44d-2ace-46c0-9adc-f6441035f7a6\nframes: 1\ntransparent: yes\nasset_id: 9ba55312-0fa3-5017-bf22-ed14de93c89b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/e9d4f44d-2ace-46c0-9adc-f6441035f7a6/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/rivet_gunner_OreChargedAutoAttack-5eb50f07c6-4.png",
+  "input_sha256": "40ae11e49e9ebb4a9d25af57b3e6c421cc2eec7a2b0e5b596b34dbdbc86de01c",
+  "output_sha256": "7b00e060726813d8bb96925c4188aea196045d8cbe5cb993e36b3e932bbf818e",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed localized native-scale edge continuation; prop/contour remains coherent."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

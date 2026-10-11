@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: ed260e61e2975754f8a8ee88f6862ceb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2419182705773433932
+    second: Briar_Matriarch_Idle_0
+  - first:
+      213: -8843521942217548544
+    second: Briar_Matriarch_Idle_1
+  - first:
+      213: 2128594202589101994
+    second: Briar_Matriarch_Idle_2
+  - first:
+      213: -4143666364051629851
+    second: Briar_Matriarch_Idle_3
+  - first:
+      213: 6929180596468651290
+    second: Briar_Matriarch_Idle_4
+  - first:
+      213: 522021166006620385
+    second: Briar_Matriarch_Idle_5
+  - first:
+      213: 4854513863335890194
+    second: Briar_Matriarch_Idle_6
+  - first:
+      213: 1693065630632277406
+    second: Briar_Matriarch_Idle_7
+  - first:
+      213: -915700531476750672
+    second: Briar_Matriarch_Idle_00
+  - first:
+      213: -765090320652742126
+    second: Briar_Matriarch_Idle_01
+  - first:
+      213: 7723679893958411016
+    second: Briar_Matriarch_Idle_02
+  - first:
+      213: -6121176044146126802
+    second: Briar_Matriarch_Idle_03
+  - first:
+      213: 314597916602010614
+    second: Briar_Matriarch_Idle_04
+  - first:
+      213: -4925265140325781833
+    second: Briar_Matriarch_Idle_05
+  - first:
+      213: -9162164628659593145
+    second: Briar_Matriarch_Idle_06
+  - first:
+      213: -7364872142909664637
+    second: Briar_Matriarch_Idle_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be11bcd737ca43f0800000000000000
+      internalID: -915700531476750672
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2125760386ad165f0800000000000000
+      internalID: -765090320652742126
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803c73611f5003b60800000000000000
+      internalID: 7723679893958411016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e201a09b1d63d0ba0800000000000000
+      internalID: -6121176044146126802
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb042a632dad5400800000000000000
+      internalID: 314597916602010614
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be64463371f5abb0800000000000000
+      internalID: -4925265140325781833
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740a81f30d379d080800000000000000
+      internalID: -9162164628659593145
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Briar_Matriarch_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38213b98ec7bac990800000000000000
+      internalID: -7364872142909664637
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Briar_Matriarch_Idle_0: 2419182705773433932
+      Briar_Matriarch_Idle_00: -915700531476750672
+      Briar_Matriarch_Idle_01: -765090320652742126
+      Briar_Matriarch_Idle_02: 7723679893958411016
+      Briar_Matriarch_Idle_03: -6121176044146126802
+      Briar_Matriarch_Idle_04: 314597916602010614
+      Briar_Matriarch_Idle_05: -4925265140325781833
+      Briar_Matriarch_Idle_06: -9162164628659593145
+      Briar_Matriarch_Idle_07: -7364872142909664637
+      Briar_Matriarch_Idle_1: -8843521942217548544
+      Briar_Matriarch_Idle_2: 2128594202589101994
+      Briar_Matriarch_Idle_3: -4143666364051629851
+      Briar_Matriarch_Idle_4: 6929180596468651290
+      Briar_Matriarch_Idle_5: 522021166006620385
+      Briar_Matriarch_Idle_6: 4854513863335890194
+      Briar_Matriarch_Idle_7: 1693065630632277406
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

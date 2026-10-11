@@ -1,0 +1,45 @@
+{
+  "id": "CourtMage_Ability-ccd68f17cc-9",
+  "side": "right",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/CourtMage_Ability-ccd68f17cc-9.png",
+  "parameters": {
+    "mask_x": 85,
+    "mask_y": 34,
+    "mask_width": 27,
+    "mask_height": 44,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41226,
+    "description": "Tiny native pixel-art edge repair of the existing cyan spell streak, completing its tapered end with a restrained connected pixel shape. This animation pose was cropped at its old right canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Ability. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "4da0a16b-b186-49e5-bacd-f2c87c31ced0",
+    "image_id": "fac0ba53-c044-5e00-bb73-f237ced98b33",
+    "status": "processing",
+    "source_image_id": "fac0ba53-c044-5e00-bb73-f237ced98b33",
+    "job_id": "4da0a16b-b186-49e5-bacd-f2c87c31ced0",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/4da0a16b-b186-49e5-bacd-f2c87c31ced0/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/CourtMage_Ability-ccd68f17cc-9-right.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/CourtMage_Ability-ccd68f17cc-9-right-repair.png",
+  "completion": "status: completed\nid: 4da0a16b-b186-49e5-bacd-f2c87c31ced0\njob_id: 4da0a16b-b186-49e5-bacd-f2c87c31ced0\nframes: 1\ntransparent: yes\nasset_id: fac0ba53-c044-5e00-bb73-f237ced98b33\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/4da0a16b-b186-49e5-bacd-f2c87c31ced0/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/CourtMage_Ability-ccd68f17cc-9.png",
+  "input_sha256": "776ddbb7bf6e9762d9df930cd3cbb1046b66acc0ac3cb8384dc92703c632392e",
+  "output_sha256": "fb46c0d8e469f27d6119f052b4a67122baf245041bce66ddf55dfd86cc71a819",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Superseded by the adjacent westward release drawing."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

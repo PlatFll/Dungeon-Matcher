@@ -1,0 +1,45 @@
+{
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/needlefin_skirmisher_AutoAttack-1692ac85e2-9-left.json",
+  "id": "needlefin_skirmisher_AutoAttack-1692ac85e2-9",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/needlefin_skirmisher_AutoAttack-1692ac85e2-9.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 59,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41214,
+    "description": "Tiny native pixel-art edge repair of the narrow blue-gray fish fin/snout contour. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: AutoAttack. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "42adb2c7-03f0-4ee2-ab39-b911701231c8",
+    "image_id": "a6e99ba0-fb90-5fc0-a231-a580f0247317",
+    "status": "processing",
+    "source_image_id": "a6e99ba0-fb90-5fc0-a231-a580f0247317",
+    "job_id": "42adb2c7-03f0-4ee2-ab39-b911701231c8",
+    "image_size": {
+      "width": 128,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/42adb2c7-03f0-4ee2-ab39-b911701231c8/download"
+  },
+  "status": "completed",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/needlefin_skirmisher_AutoAttack-1692ac85e2-9-left-repair.png",
+  "completion": "status: completed\nid: 42adb2c7-03f0-4ee2-ab39-b911701231c8\njob_id: 42adb2c7-03f0-4ee2-ab39-b911701231c8\nframes: 1\ntransparent: yes\nasset_id: a6e99ba0-fb90-5fc0-a231-a580f0247317\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/42adb2c7-03f0-4ee2-ab39-b911701231c8/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/needlefin_skirmisher_AutoAttack-1692ac85e2-9.png",
+  "input_sha256": "6db52128838c77b1767e7ff2f65f220340b559442386b56305b5e558883c4778",
+  "output_sha256": "a02dc8e81e7735c305276c21a621d18af7377caace3509da68a99ff2589b9bf1",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

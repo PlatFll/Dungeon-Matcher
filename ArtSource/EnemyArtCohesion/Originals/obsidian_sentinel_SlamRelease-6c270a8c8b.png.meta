@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: 4915ab5e27ccdae4c91ee4b21873e537
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4337340825828395085
+    second: obsidian_sentinel_SlamRelease_0
+  - first:
+      213: -1813299715131105987
+    second: obsidian_sentinel_SlamRelease_1
+  - first:
+      213: -2426133051678932012
+    second: obsidian_sentinel_SlamRelease_2
+  - first:
+      213: 1182891247505904372
+    second: obsidian_sentinel_SlamRelease_3
+  - first:
+      213: -607834411966270437
+    second: obsidian_sentinel_SlamRelease_4
+  - first:
+      213: 2038811706210747125
+    second: obsidian_sentinel_SlamRelease_5
+  - first:
+      213: -7381172677631291056
+    second: obsidian_sentinel_SlamRelease_6
+  - first:
+      213: -1583585924439442155
+    second: obsidian_sentinel_SlamRelease_7
+  - first:
+      213: 6890679824381688046
+    second: obsidian_sentinel_SlamRelease_8
+  - first:
+      213: 648550442701172897
+    second: obsidian_sentinel_SlamRelease_9
+  - first:
+      213: -3384716754415921640
+    second: obsidian_sentinel_SlamRelease_00
+  - first:
+      213: 5533956000412171590
+    second: obsidian_sentinel_SlamRelease_01
+  - first:
+      213: -7081899949976073597
+    second: obsidian_sentinel_SlamRelease_02
+  - first:
+      213: 9148249463260196025
+    second: obsidian_sentinel_SlamRelease_03
+  - first:
+      213: -332442813547038773
+    second: obsidian_sentinel_SlamRelease_04
+  - first:
+      213: 5315446287354216479
+    second: obsidian_sentinel_SlamRelease_05
+  - first:
+      213: -6638446727997380314
+    second: obsidian_sentinel_SlamRelease_06
+  - first:
+      213: -6917175564213407889
+    second: obsidian_sentinel_SlamRelease_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816d9bb7b021701d0800000000000000
+      internalID: -3384716754415921640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_01
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d753789af8ccc40800000000000000
+      internalID: 5533956000412171590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_02
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ac1da548908bd90800000000000000
+      internalID: -7081899949976073597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_03
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc2846da6c15fe70800000000000000
+      internalID: 9148249463260196025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_04
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7b56eb50de26bf0800000000000000
+      internalID: -332442813547038773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_05
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10ca646c3244c940800000000000000
+      internalID: 5315446287354216479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_06
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629ac557fdf7fd3a0800000000000000
+      internalID: -6638446727997380314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obsidian_sentinel_SlamRelease_07
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 112
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f2c0e19714100a0800000000000000
+      internalID: -6917175564213407889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      obsidian_sentinel_SlamRelease_0: -4337340825828395085
+      obsidian_sentinel_SlamRelease_00: -3384716754415921640
+      obsidian_sentinel_SlamRelease_01: 5533956000412171590
+      obsidian_sentinel_SlamRelease_02: -7081899949976073597
+      obsidian_sentinel_SlamRelease_03: 9148249463260196025
+      obsidian_sentinel_SlamRelease_04: -332442813547038773
+      obsidian_sentinel_SlamRelease_05: 5315446287354216479
+      obsidian_sentinel_SlamRelease_06: -6638446727997380314
+      obsidian_sentinel_SlamRelease_07: -6917175564213407889
+      obsidian_sentinel_SlamRelease_1: -1813299715131105987
+      obsidian_sentinel_SlamRelease_2: -2426133051678932012
+      obsidian_sentinel_SlamRelease_3: 1182891247505904372
+      obsidian_sentinel_SlamRelease_4: -607834411966270437
+      obsidian_sentinel_SlamRelease_5: 2038811706210747125
+      obsidian_sentinel_SlamRelease_6: -7381172677631291056
+      obsidian_sentinel_SlamRelease_7: -1583585924439442155
+      obsidian_sentinel_SlamRelease_8: 6890679824381688046
+      obsidian_sentinel_SlamRelease_9: 648550442701172897
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

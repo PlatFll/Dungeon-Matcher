@@ -1,0 +1,45 @@
+{
+  "id": "BarricadeGuard_Ability-4c8b987235-11",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/BarricadeGuard_Ability-4c8b987235-11.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 56,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41223,
+    "description": "Tiny native pixel-art edge repair of the existing cool iron hammer head and its dark outline. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Ability. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "e132e8aa-2b42-4de0-b106-dab5cbdf4888",
+    "image_id": "8693ab51-9ab5-52f4-aca8-2af7912da030",
+    "status": "processing",
+    "source_image_id": "8693ab51-9ab5-52f4-aca8-2af7912da030",
+    "job_id": "e132e8aa-2b42-4de0-b106-dab5cbdf4888",
+    "image_size": {
+      "width": 112,
+      "height": 88
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/e132e8aa-2b42-4de0-b106-dab5cbdf4888/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/BarricadeGuard_Ability-4c8b987235-11-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/BarricadeGuard_Ability-4c8b987235-11-left-repair.png",
+  "completion": "status: completed\nid: e132e8aa-2b42-4de0-b106-dab5cbdf4888\njob_id: e132e8aa-2b42-4de0-b106-dab5cbdf4888\nframes: 1\ntransparent: yes\nasset_id: 8693ab51-9ab5-52f4-aca8-2af7912da030\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/e132e8aa-2b42-4de0-b106-dab5cbdf4888/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/BarricadeGuard_Ability-4c8b987235-11.png",
+  "input_sha256": "17d848b447ababa3bfaa78dc02cc454d42361bea1296ed74291e0f325e38dbba",
+  "output_sha256": "3acba517522e5c0f8ec5bf9a3f7b84e41e2fcba1b464eb0460c1c9fb5376a9de",
+  "visual_decision": {
+    "status": "rejected",
+    "reason": "Unnecessary added flash particles; native contour cleanup."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

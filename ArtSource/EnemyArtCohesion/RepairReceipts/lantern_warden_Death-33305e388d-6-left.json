@@ -1,0 +1,45 @@
+{
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/lantern_warden_Death-33305e388d-6-left.json",
+  "id": "lantern_warden_Death-33305e388d-6",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/lantern_warden_Death-33305e388d-6.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 88,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41205,
+    "description": "Tiny native pixel-art edge repair of the purple anglerfish lure, coffer or body contour; keep the little pale lure light attached. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: Death. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "3aa85513-0159-4e5f-aba5-aabb35762d63",
+    "image_id": "c8a3299c-4ab3-5a6e-9ce8-49e94433cd4c",
+    "status": "processing",
+    "source_image_id": "c8a3299c-4ab3-5a6e-9ce8-49e94433cd4c",
+    "job_id": "3aa85513-0159-4e5f-aba5-aabb35762d63",
+    "image_size": {
+      "width": 144,
+      "height": 120
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/3aa85513-0159-4e5f-aba5-aabb35762d63/download"
+  },
+  "status": "completed",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/lantern_warden_Death-33305e388d-6-left-repair.png",
+  "completion": "status: completed\nid: 3aa85513-0159-4e5f-aba5-aabb35762d63\njob_id: 3aa85513-0159-4e5f-aba5-aabb35762d63\nframes: 1\ntransparent: yes\nasset_id: c8a3299c-4ab3-5a6e-9ce8-49e94433cd4c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/3aa85513-0159-4e5f-aba5-aabb35762d63/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/lantern_warden_Death-33305e388d-6.png",
+  "input_sha256": "4f4284221e5c15507622b9381731aac7407cf6eb4b5f583f48e61dc68cf9e1f3",
+  "output_sha256": "884ea27ba295cc8dac9a19bcfc9c2e276c141e12caea650c97188b126317a987",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

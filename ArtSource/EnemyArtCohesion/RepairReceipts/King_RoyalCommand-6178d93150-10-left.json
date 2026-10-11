@@ -1,0 +1,45 @@
+{
+  "id": "King_RoyalCommand-6178d93150-10",
+  "side": "left",
+  "input": ".utmp/EnemyArtCohesion/RepairInputs/King_RoyalCommand-6178d93150-10.png",
+  "parameters": {
+    "mask_x": 0,
+    "mask_y": 62,
+    "mask_width": 27,
+    "mask_height": 32,
+    "output_method": "Modify current layer",
+    "no_background": true,
+    "seed": 41231,
+    "description": "Tiny native pixel-art edge repair of the existing sword tip or small gold command effect, completing only that cut contour. This animation pose was cropped at its old left canvas boundary. Reconstruct only the few missing pixels and complete that existing shape naturally into the added transparent margin. Keep exact pose, scale, equipment, angle, lighting and existing palette. Do not add or enlarge any object. Crisp connected shading, native one-pixel dark contour on solid objects; luminous effects retain their existing colored edge. Preserve every unmasked pixel. Leave at least 4 transparent pixels at the new outer boundary. No background, ground, shadow, extra particles, lettering or floating objects. Current state: RoyalCommand. The source character's identity and materials are authoritative."
+  },
+  "job": {
+    "background_job_id": "90cc17fe-6711-49a1-92e1-5e14fe21a214",
+    "image_id": "cbb23bc3-699d-5586-85e1-150644dc0846",
+    "status": "processing",
+    "source_image_id": "cbb23bc3-699d-5586-85e1-150644dc0846",
+    "job_id": "90cc17fe-6711-49a1-92e1-5e14fe21a214",
+    "image_size": {
+      "width": 144,
+      "height": 104
+    },
+    "output_count": 1,
+    "estimated_generations": 6,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/90cc17fe-6711-49a1-92e1-5e14fe21a214/download"
+  },
+  "status": "completed",
+  "receipt_path": "ArtSource/EnemyArtCohesion/RepairReceipts/King_RoyalCommand-6178d93150-10-left.json",
+  "output": "ArtSource/EnemyArtCohesion/Candidates/King_RoyalCommand-6178d93150-10-left-repair.png",
+  "completion": "status: completed\nid: 90cc17fe-6711-49a1-92e1-5e14fe21a214\njob_id: 90cc17fe-6711-49a1-92e1-5e14fe21a214\nframes: 1\ntransparent: yes\nasset_id: cbb23bc3-699d-5586-85e1-150644dc0846\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 6 generations\ndownload: https://api.pixellab.ai/mcp/images/90cc17fe-6711-49a1-92e1-5e14fe21a214/download",
+  "saved_input": "ArtSource/EnemyArtCohesion/RepairInputs/King_RoyalCommand-6178d93150-10.png",
+  "input_sha256": "de79498034a3d818a2a0b656b529fd2cd31eadef12036f57b7fac372d3bd8ab3",
+  "output_sha256": "335d8cebffe63158191ed981ffa8e750d4292fe187dd650075be289fee877243",
+  "visual_decision": {
+    "status": "accepted",
+    "reason": "Reviewed before/after at native integer scale; localized contour continuation preserves identity."
+  },
+  "charged_generations": 6,
+  "endpoint": "inpaint_image_pro_flash",
+  "image_input_role": "image_base64: existing target cel, only the named edge mask is editable"
+}

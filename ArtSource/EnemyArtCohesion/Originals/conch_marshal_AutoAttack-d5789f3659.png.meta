@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: dd855f1cf0911c543a58451e5a94ca2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3246822710395137749
+    second: conch_marshal_AutoAttack_0
+  - first:
+      213: -1214830208389909126
+    second: conch_marshal_AutoAttack_1
+  - first:
+      213: -3046009444237010715
+    second: conch_marshal_AutoAttack_2
+  - first:
+      213: 5522568042442414277
+    second: conch_marshal_AutoAttack_3
+  - first:
+      213: -7583718184696046591
+    second: conch_marshal_AutoAttack_4
+  - first:
+      213: -6403259132083268299
+    second: conch_marshal_AutoAttack_5
+  - first:
+      213: -6200803075626495247
+    second: conch_marshal_AutoAttack_6
+  - first:
+      213: -6694197186766924641
+    second: conch_marshal_AutoAttack_7
+  - first:
+      213: -3766310841118610669
+    second: conch_marshal_AutoAttack_8
+  - first:
+      213: 4495636888718437278
+    second: conch_marshal_AutoAttack_9
+  - first:
+      213: -8717086948906876211
+    second: conch_marshal_AutoAttack_00
+  - first:
+      213: 4010910617790253056
+    second: conch_marshal_AutoAttack_01
+  - first:
+      213: 9172134858445163904
+    second: conch_marshal_AutoAttack_02
+  - first:
+      213: -324519162376366980
+    second: conch_marshal_AutoAttack_03
+  - first:
+      213: -2874052323136406282
+    second: conch_marshal_AutoAttack_04
+  - first:
+      213: -6825835195253539782
+    second: conch_marshal_AutoAttack_05
+  - first:
+      213: 6258087636725700088
+    second: conch_marshal_AutoAttack_06
+  - first:
+      213: -2039060622017594250
+    second: conch_marshal_AutoAttack_07
+  - first:
+      213: -4813306110278777531
+    second: conch_marshal_AutoAttack_08
+  - first:
+      213: -3743698682146412768
+    second: conch_marshal_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc24636ea9fa60780800000000000000
+      internalID: -8717086948906876211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0080b37c4fd99a730800000000000000
+      internalID: 4010910617790253056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d0a95ce08f94f70800000000000000
+      internalID: 9172134858445163904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74dfbb8a831f7bf0800000000000000
+      internalID: -324519162376366980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc7195b3a05d18d0800000000000000
+      internalID: -2874052323136406282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3cbd830e03c541a0800000000000000
+      internalID: -6825835195253539782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f59c408c8139d650800000000000000
+      internalID: 6258087636725700088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c772dea2dc3b3e0800000000000000
+      internalID: -2039060622017594250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545cd9d3893b33db0800000000000000
+      internalID: -4813306110278777531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conch_marshal_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027a09032e5bb0cc0800000000000000
+      internalID: -3743698682146412768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      conch_marshal_AutoAttack_0: 3246822710395137749
+      conch_marshal_AutoAttack_00: -8717086948906876211
+      conch_marshal_AutoAttack_01: 4010910617790253056
+      conch_marshal_AutoAttack_02: 9172134858445163904
+      conch_marshal_AutoAttack_03: -324519162376366980
+      conch_marshal_AutoAttack_04: -2874052323136406282
+      conch_marshal_AutoAttack_05: -6825835195253539782
+      conch_marshal_AutoAttack_06: 6258087636725700088
+      conch_marshal_AutoAttack_07: -2039060622017594250
+      conch_marshal_AutoAttack_08: -4813306110278777531
+      conch_marshal_AutoAttack_09: -3743698682146412768
+      conch_marshal_AutoAttack_1: -1214830208389909126
+      conch_marshal_AutoAttack_2: -3046009444237010715
+      conch_marshal_AutoAttack_3: 5522568042442414277
+      conch_marshal_AutoAttack_4: -7583718184696046591
+      conch_marshal_AutoAttack_5: -6403259132083268299
+      conch_marshal_AutoAttack_6: -6200803075626495247
+      conch_marshal_AutoAttack_7: -6694197186766924641
+      conch_marshal_AutoAttack_8: -3766310841118610669
+      conch_marshal_AutoAttack_9: 4495636888718437278
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: b3be235735fef7f40bce5b50b696269a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1362652849609864586
+    second: queen_nacre_AutoAttack_0
+  - first:
+      213: -4078766323365250584
+    second: queen_nacre_AutoAttack_1
+  - first:
+      213: -2611225811951459530
+    second: queen_nacre_AutoAttack_2
+  - first:
+      213: 3124841630786984827
+    second: queen_nacre_AutoAttack_3
+  - first:
+      213: 8339153023619070984
+    second: queen_nacre_AutoAttack_4
+  - first:
+      213: 2216641348985350696
+    second: queen_nacre_AutoAttack_5
+  - first:
+      213: -6835090045805855185
+    second: queen_nacre_AutoAttack_6
+  - first:
+      213: 6100556621560898355
+    second: queen_nacre_AutoAttack_7
+  - first:
+      213: 5346917063720379455
+    second: queen_nacre_AutoAttack_8
+  - first:
+      213: 1748374721314333650
+    second: queen_nacre_AutoAttack_9
+  - first:
+      213: 239748937186375788
+    second: queen_nacre_AutoAttack_10
+  - first:
+      213: 1526559739079188465
+    second: queen_nacre_AutoAttack_11
+  - first:
+      213: 5955023776205891934
+    second: queen_nacre_AutoAttack_12
+  - first:
+      213: -740326329958334149
+    second: queen_nacre_AutoAttack_13
+  - first:
+      213: 1388165544454532398
+    second: queen_nacre_AutoAttack_14
+  - first:
+      213: -5323449320253691205
+    second: queen_nacre_AutoAttack_15
+  - first:
+      213: -2586330178831013153
+    second: queen_nacre_AutoAttack_16
+  - first:
+      213: 9163487682770472769
+    second: queen_nacre_AutoAttack_00
+  - first:
+      213: -7856443273372736615
+    second: queen_nacre_AutoAttack_01
+  - first:
+      213: -1304266279399229748
+    second: queen_nacre_AutoAttack_02
+  - first:
+      213: -7126034682963647225
+    second: queen_nacre_AutoAttack_03
+  - first:
+      213: 5075882961332245970
+    second: queen_nacre_AutoAttack_04
+  - first:
+      213: 7451982152858203167
+    second: queen_nacre_AutoAttack_05
+  - first:
+      213: -6131535729172717955
+    second: queen_nacre_AutoAttack_06
+  - first:
+      213: 6151516709307105533
+    second: queen_nacre_AutoAttack_07
+  - first:
+      213: 3670637803045879162
+    second: queen_nacre_AutoAttack_08
+  - first:
+      213: -8995523935444364964
+    second: queen_nacre_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f833b4f7f3b2f70800000000000000
+      internalID: 9163487682770472769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9936c94d77e48f290800000000000000
+      internalID: -7856443273372736615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc673ebaab056ede0800000000000000
+      internalID: -1304266279399229748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705a6d0163d3b1d90800000000000000
+      internalID: -7126034682963647225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d59aaff8a8217640800000000000000
+      internalID: 5075882961332245970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14f9a52942ca6760800000000000000
+      internalID: 7451982152858203167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e5b079db868eaa0800000000000000
+      internalID: -6131535729172717955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df04120ead39e5550800000000000000
+      internalID: 6151516709307105533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d7bad42a9b0f230800000000000000
+      internalID: 3670637803045879162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51905b14aa792380800000000000000
+      internalID: -8995523935444364964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c68754c5362c35300800000000000000
+      internalID: 239748937186375788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff5a30aefd6f2510800000000000000
+      internalID: 1526559739079188465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59e1c9c29e74a250800000000000000
+      internalID: 5955023776205891934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3107f41025d9b5f0800000000000000
+      internalID: -740326329958334149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d26a63531c34310800000000000000
+      internalID: 1388165544454532398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbaeb7e4c0f4f16b0800000000000000
+      internalID: -5323449320253691205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen_nacre_AutoAttack_16
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdaa7e2c7628b1cd0800000000000000
+      internalID: -2586330178831013153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      queen_nacre_AutoAttack_0: -1362652849609864586
+      queen_nacre_AutoAttack_00: 9163487682770472769
+      queen_nacre_AutoAttack_01: -7856443273372736615
+      queen_nacre_AutoAttack_02: -1304266279399229748
+      queen_nacre_AutoAttack_03: -7126034682963647225
+      queen_nacre_AutoAttack_04: 5075882961332245970
+      queen_nacre_AutoAttack_05: 7451982152858203167
+      queen_nacre_AutoAttack_06: -6131535729172717955
+      queen_nacre_AutoAttack_07: 6151516709307105533
+      queen_nacre_AutoAttack_08: 3670637803045879162
+      queen_nacre_AutoAttack_09: -8995523935444364964
+      queen_nacre_AutoAttack_1: -4078766323365250584
+      queen_nacre_AutoAttack_10: 239748937186375788
+      queen_nacre_AutoAttack_11: 1526559739079188465
+      queen_nacre_AutoAttack_12: 5955023776205891934
+      queen_nacre_AutoAttack_13: -740326329958334149
+      queen_nacre_AutoAttack_14: 1388165544454532398
+      queen_nacre_AutoAttack_15: -5323449320253691205
+      queen_nacre_AutoAttack_16: -2586330178831013153
+      queen_nacre_AutoAttack_2: -2611225811951459530
+      queen_nacre_AutoAttack_3: 3124841630786984827
+      queen_nacre_AutoAttack_4: 8339153023619070984
+      queen_nacre_AutoAttack_5: 2216641348985350696
+      queen_nacre_AutoAttack_6: -6835090045805855185
+      queen_nacre_AutoAttack_7: 6100556621560898355
+      queen_nacre_AutoAttack_8: 5346917063720379455
+      queen_nacre_AutoAttack_9: 1748374721314333650
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

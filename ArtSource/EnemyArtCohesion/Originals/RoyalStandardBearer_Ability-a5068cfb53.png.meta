@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: 4081c5bdf8f656b4fb7356880254b608
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1889339667434917358
+    second: RoyalStandardBearer_Ability_0
+  - first:
+      213: -3738516225540167409
+    second: RoyalStandardBearer_Ability_1
+  - first:
+      213: 6848480274248964479
+    second: RoyalStandardBearer_Ability_2
+  - first:
+      213: 6658031175620574787
+    second: RoyalStandardBearer_Ability_3
+  - first:
+      213: 2401684622166633755
+    second: RoyalStandardBearer_Ability_4
+  - first:
+      213: -4268650478547218400
+    second: RoyalStandardBearer_Ability_5
+  - first:
+      213: -8944981468486799496
+    second: RoyalStandardBearer_Ability_6
+  - first:
+      213: 239773268198808604
+    second: RoyalStandardBearer_Ability_7
+  - first:
+      213: -3887049903614800889
+    second: RoyalStandardBearer_Ability_8
+  - first:
+      213: 3425437484599870870
+    second: RoyalStandardBearer_Ability_9
+  - first:
+      213: 5221016485528858627
+    second: RoyalStandardBearer_Ability_10
+  - first:
+      213: -6442735894127542410
+    second: RoyalStandardBearer_Ability_11
+  - first:
+      213: 4809289600150470005
+    second: RoyalStandardBearer_Ability_12
+  - first:
+      213: 4277115753172496622
+    second: RoyalStandardBearer_Ability_00
+  - first:
+      213: 3881073460747534670
+    second: RoyalStandardBearer_Ability_01
+  - first:
+      213: -1557710281485744851
+    second: RoyalStandardBearer_Ability_02
+  - first:
+      213: -3779050476456183928
+    second: RoyalStandardBearer_Ability_03
+  - first:
+      213: -4814141600850219146
+    second: RoyalStandardBearer_Ability_04
+  - first:
+      213: 7450279349382208013
+    second: RoyalStandardBearer_Ability_05
+  - first:
+      213: 8477014195633851221
+    second: RoyalStandardBearer_Ability_06
+  - first:
+      213: 3166351012270930436
+    second: RoyalStandardBearer_Ability_07
+  - first:
+      213: 3146797792159799072
+    second: RoyalStandardBearer_Ability_08
+  - first:
+      213: 4847974809122156393
+    second: RoyalStandardBearer_Ability_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0f21bcd1e5b5b30800000000000000
+      internalID: 4277115753172496622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e418d0fefb75cd530800000000000000
+      internalID: 3881073460747534670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25811980c6e16ae0800000000000000
+      internalID: -1557710281485744851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887fe8a2d9d1e8bc0800000000000000
+      internalID: -3779050476456183928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f64ee68bbb03db0800000000000000
+      internalID: -4814141600850219146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ada515895b46760800000000000000
+      internalID: 7450279349382208013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b03be6f7764a570800000000000000
+      internalID: 8477014195633851221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a7b98387321fb20800000000000000
+      internalID: 3166351012270930436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0271ba56bebabab20800000000000000
+      internalID: 3146797792159799072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_09
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fa4c93767774340800000000000000
+      internalID: 4847974809122156393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300f76ad4d6c47840800000000000000
+      internalID: 5221016485528858627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f7ed0e6ddc696a0800000000000000
+      internalID: -6442735894127542410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoyalStandardBearer_Ability_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57df2fe19670eb240800000000000000
+      internalID: 4809289600150470005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RoyalStandardBearer_Ability_0: 1889339667434917358
+      RoyalStandardBearer_Ability_00: 4277115753172496622
+      RoyalStandardBearer_Ability_01: 3881073460747534670
+      RoyalStandardBearer_Ability_02: -1557710281485744851
+      RoyalStandardBearer_Ability_03: -3779050476456183928
+      RoyalStandardBearer_Ability_04: -4814141600850219146
+      RoyalStandardBearer_Ability_05: 7450279349382208013
+      RoyalStandardBearer_Ability_06: 8477014195633851221
+      RoyalStandardBearer_Ability_07: 3166351012270930436
+      RoyalStandardBearer_Ability_08: 3146797792159799072
+      RoyalStandardBearer_Ability_09: 4847974809122156393
+      RoyalStandardBearer_Ability_1: -3738516225540167409
+      RoyalStandardBearer_Ability_10: 5221016485528858627
+      RoyalStandardBearer_Ability_11: -6442735894127542410
+      RoyalStandardBearer_Ability_12: 4809289600150470005
+      RoyalStandardBearer_Ability_2: 6848480274248964479
+      RoyalStandardBearer_Ability_3: 6658031175620574787
+      RoyalStandardBearer_Ability_4: 2401684622166633755
+      RoyalStandardBearer_Ability_5: -4268650478547218400
+      RoyalStandardBearer_Ability_6: -8944981468486799496
+      RoyalStandardBearer_Ability_7: 239773268198808604
+      RoyalStandardBearer_Ability_8: -3887049903614800889
+      RoyalStandardBearer_Ability_9: 3425437484599870870
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

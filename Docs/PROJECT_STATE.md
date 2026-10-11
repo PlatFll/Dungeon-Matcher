@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.12. Rattlebones is the explicitly designated
+The canonical art guide is now v1.13. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.
@@ -32,9 +32,16 @@ current sources/hashes separately from historical approval records.
 three players and two disabled Grand Delver alternates, with all bound sprite
 states, scores and an offline review gallery. Main proposals are selective
 detail simplification, Puffer inflated-face clarity and Snapvine death cleanup.
-No production pixels, gameplay, imports or animations were changed; no PixelLab
-generations were spent. Source-frame review and historical captures do not
-constitute fresh Unity playback, device testing or approval of proposed changes.
+The user subsequently authorized enemy implementation and merge. The production
+pass in `ArtSource/EnemyArtCohesion/` cleans up selected material clusters/faces,
+repairs clipped props and effects, corrects west-facing motion and expands all
+enemy canvases without resampling. It covers 64 forms and 2,951 sprites, retaining
+all 353 clip files and sprite IDs. Rattlebones/player art and gameplay remain
+unchanged. PixelLab production consumed 815 generations; 223 remained afterward.
+Native exports and Unity asset checks pass; scene checks cover every drawing at
+1080×1920 and 1080×2400. See [current verification](Validation/ENEMY_ART_COHESION.md)
+for limits and the final regression record. Source review and automated checks
+do not establish human art approval or physical-device acceptance.
 Historical art checkpoint versions below describe earlier milestones; consult
 the current guide/register before any new or resumed art work.
 

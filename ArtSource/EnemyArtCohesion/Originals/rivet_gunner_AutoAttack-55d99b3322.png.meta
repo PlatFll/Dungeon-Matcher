@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 6e7c932ab19317d4c840c717bae6fae9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7700052894069547940
+    second: rivet_gunner_AutoAttack_0
+  - first:
+      213: -8389279471897303747
+    second: rivet_gunner_AutoAttack_1
+  - first:
+      213: 4945132583213967030
+    second: rivet_gunner_AutoAttack_2
+  - first:
+      213: 7170689600676637598
+    second: rivet_gunner_AutoAttack_3
+  - first:
+      213: 7936454421808675755
+    second: rivet_gunner_AutoAttack_4
+  - first:
+      213: -3472188407217616240
+    second: rivet_gunner_AutoAttack_5
+  - first:
+      213: -4483144089765358879
+    second: rivet_gunner_AutoAttack_6
+  - first:
+      213: -6959748211434942921
+    second: rivet_gunner_AutoAttack_7
+  - first:
+      213: -8007867441464767916
+    second: rivet_gunner_AutoAttack_8
+  - first:
+      213: -3248627479545718913
+    second: rivet_gunner_AutoAttack_9
+  - first:
+      213: -8219814251836168668
+    second: rivet_gunner_AutoAttack_00
+  - first:
+      213: 5695336965631421295
+    second: rivet_gunner_AutoAttack_01
+  - first:
+      213: 1352624914215869976
+    second: rivet_gunner_AutoAttack_02
+  - first:
+      213: -4659902368154762323
+    second: rivet_gunner_AutoAttack_03
+  - first:
+      213: 8739517390996208017
+    second: rivet_gunner_AutoAttack_04
+  - first:
+      213: 1983454814456218370
+    second: rivet_gunner_AutoAttack_05
+  - first:
+      213: -408820291273976162
+    second: rivet_gunner_AutoAttack_06
+  - first:
+      213: 5676744970817778679
+    second: rivet_gunner_AutoAttack_07
+  - first:
+      213: 174831743803816290
+    second: rivet_gunner_AutoAttack_08
+  - first:
+      213: -8587283691401360246
+    second: rivet_gunner_AutoAttack_09
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426ac970d7a5ded80800000000000000
+      internalID: -8219814251836168668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bac988bc6e90f40800000000000000
+      internalID: 5695336965631421295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e1e26613d75c210800000000000000
+      internalID: 1352624914215869976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da342224c73b45fb0800000000000000
+      internalID: -4659902368154762323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1997dae53c0094970800000000000000
+      internalID: 8739517390996208017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20383bb15a5a68b10800000000000000
+      internalID: 1983454814456218370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9694a17c14935af0800000000000000
+      internalID: -408820291273976162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3341a6979d7ce40800000000000000
+      internalID: 5676744970817778679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26973e07b802d6200800000000000000
+      internalID: 174831743803816290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rivet_gunner_AutoAttack_09
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c4484eaf6d3d880800000000000000
+      internalID: -8587283691401360246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rivet_gunner_AutoAttack_0: 7700052894069547940
+      rivet_gunner_AutoAttack_00: -8219814251836168668
+      rivet_gunner_AutoAttack_01: 5695336965631421295
+      rivet_gunner_AutoAttack_02: 1352624914215869976
+      rivet_gunner_AutoAttack_03: -4659902368154762323
+      rivet_gunner_AutoAttack_04: 8739517390996208017
+      rivet_gunner_AutoAttack_05: 1983454814456218370
+      rivet_gunner_AutoAttack_06: -408820291273976162
+      rivet_gunner_AutoAttack_07: 5676744970817778679
+      rivet_gunner_AutoAttack_08: 174831743803816290
+      rivet_gunner_AutoAttack_09: -8587283691401360246
+      rivet_gunner_AutoAttack_1: -8389279471897303747
+      rivet_gunner_AutoAttack_2: 4945132583213967030
+      rivet_gunner_AutoAttack_3: 7170689600676637598
+      rivet_gunner_AutoAttack_4: 7936454421808675755
+      rivet_gunner_AutoAttack_5: -3472188407217616240
+      rivet_gunner_AutoAttack_6: -4483144089765358879
+      rivet_gunner_AutoAttack_7: -6959748211434942921
+      rivet_gunner_AutoAttack_8: -8007867441464767916
+      rivet_gunner_AutoAttack_9: -3248627479545718913
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
