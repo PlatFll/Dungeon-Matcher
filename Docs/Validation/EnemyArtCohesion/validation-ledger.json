@@ -283,5 +283,22 @@
     "Assets/_Game/Scripts/Editor/EnemyArtCohesionValidation.cs": "6c2830c91ce738a990326f18937264e8533c76625ccb6f8bc36c1cedff7049a3",
     "Assets/_Game/Scripts/Editor/PixelLabAttackPlayTests.cs": "f9a31cff7d7f8b3dc5add45374db731bf5d22a5f24b715b7a2390903e6b423e6",
     "Assets/_Game/Scripts/Editor/EnemyAbilityPlayTests.cs": "4785377cb591eed22eacc992782f2498b76332d6554aa5d06bf98b8f4d1055e0"
+  },
+  "source_hash_scope": "Raw local bytes when tested, before Git checkout and line-ending normalization.",
+  "tested_source_commit": "04f884f58577a914c5f2e740fc7da23e79d022b2",
+  "source_git_blob_ids": {
+    "ArtSource/EnemyArtCohesion/unity-import-manifest.json": "5c58e526bf57901ad56be1ce62a1cd90e6f683fa",
+    "ArtSource/EnemyArtCohesion/candidate-validation.json": "5d4dc23f61dec08d21d856ec4fcafb3c3a3c8784",
+    "Assets/_Game/Scripts/UI/PixelPerfectBattleCharacterUI.cs": "00986e64818f95dc4fd5e2a7242c8e04a2f63fd4",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutValidator.cs": "34f773c4bc2ebef684822e28fe4db831346b1835",
+    "Assets/_Game/Scripts/Editor/EnemyArtCohesionValidation.cs": "aa79b08cda49c0034fbac10878acc970eb6909b0",
+    "Assets/_Game/Scripts/Editor/PixelLabAttackPlayTests.cs": "7b99175aa608796f0b901c80bf4f4bd9301d7cce",
+    "Assets/_Game/Scripts/Editor/EnemyAbilityPlayTests.cs": "0768df278075f0fd83f014044bd0c58f44678fff"
+  },
+  "post_merge_validator": {
+    "result": "passed",
+    "unity_version": "6000.3.19f1",
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-1c1e60bd-7cd7-4700-85df-501f71e263ff.log"
   }
 }

@@ -53,6 +53,10 @@ passed in `regression-playmode.xml`; the separately named Judgment asset fixture
 passed in `regression-king-assets.xml`. There were no skipped tests in these runs.
 See [validation ledger](EnemyArtCohesion/validation-ledger.json) for source hashes,
 commands and original log paths. Full local logs remain at those locations.
+The ledger's raw source hashes describe the files when tested, before Git
+checkout. Git may normalize Windows line endings; portable Git blob IDs and
+the tested source-tree commit are also recorded for checkout-independent
+comparison. The merged tree is identical to that validated implementation.
 The whitespace check passes for authored changes. Immutable original Unity
 metadata retains its existing trailing spaces on empty serialized fields; those
 source bytes were preserved instead of reformatted to satisfy a text-only check.
