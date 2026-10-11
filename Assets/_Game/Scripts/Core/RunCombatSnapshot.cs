@@ -46,6 +46,8 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class BoardCombatSnapshot
 {
+    public List<FrostGemSnapshot> frost = new List<FrostGemSnapshot>();
+    public int nextFrostSeedMove;
     public AquaticEnvironmentState aquatic;
     public MineEnvironmentState mine;
     public int width, height, moves, nextBanner, nextGem;
@@ -89,6 +91,7 @@ public sealed class RunCombatSnapshot
 }
 [Serializable] public sealed class EnemyCombatSnapshot
 {
+    public GlacierCleaveSnapshot glacierCleave;
     public float oreNextMultiplier;
     public bool oreBurstConsumed;
     public MineEnemySnapshot mineEnemy;

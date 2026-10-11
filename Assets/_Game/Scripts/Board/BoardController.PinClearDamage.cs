@@ -27,6 +27,7 @@ public partial class BoardController
 
         int destroyedColumn =
             destroyedGem.Column;
+        RemoveFrost(destroyedGem);
 
         // The physical-clear boundary also ends a vine's pending child. Free
         // clears must not leave its reservation until the next manual move.

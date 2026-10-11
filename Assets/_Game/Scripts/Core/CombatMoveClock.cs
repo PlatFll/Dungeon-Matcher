@@ -147,7 +147,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
                 var stagger = actor.GetComponent<EnemyStagger>();
                 var channel = actor.GetComponent<EnemyChannelRuntime>();
                 bool held = (channel != null && channel.BlocksBasic) || actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
-                    actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true;
+                    actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true || actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true;
                 var attack = actor.GetComponent<EnemyAutoAttack>();
                 if (stagger == null || !stagger.IsStaggered)
                 {
@@ -253,11 +253,13 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
     private static bool BlocksSpecialCountdown(EnemyActor actor) =>
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||
+        actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<ForestMilestoneEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<ForestPressureAbility>()?.IsPreparing == true ||
         actor.GetComponent<KingEnemyAbility>()?.BlocksBasic == true;

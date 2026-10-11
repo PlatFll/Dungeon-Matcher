@@ -6,7 +6,8 @@ public enum CombatSoundCue
     PlayerHit, EnemyHit, PoisonTick, BardleyAbility, RattlebonesAbility, EnemyAbility,
     AirPickup, CofferBreak, AirWarning,
     MineRail, MineSmallDrill, MineLargeDrill, MineStoneHarden, MineStoneBreak,
-    MineFuse, MineBlast, MineOre, MineRivet, MineHammer, MinePiston, MineMechBreak
+    MineFuse, MineBlast, MineOre, MineRivet, MineHammer, MinePiston, MineMechBreak,
+    AttenderJump, AttenderStep, AttenderCrash, KoboldSpin, KoboldShot, KoboldRicochet
 }
 
 /// <summary>Small, fixed mix policy. All clips have the same authored peak ceiling.</summary>

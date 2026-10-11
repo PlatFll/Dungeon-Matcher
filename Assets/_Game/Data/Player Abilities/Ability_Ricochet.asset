@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2262423e453de7448a23098bfbcabe20, type: 3}
+  m_Name: Ability_Ricochet
+  m_EditorClassIdentifier: Assembly-CSharp::RicochetAbilityDefinition
+  abilityId: ricochet
+  displayName: Ricochet
+  description: Fire six ordered shots at board targets. Each shot can ricochet to
+    a living enemy. Repeated hits on the same enemy gain up to 15 extra damage this
+    cast.
+  icon: {fileID: -2116082989849011225, guid: 438268fe56b5bf248bc27aa04cf41b83, type: 3}
+  buttonLabel: RICOCHET
+  meterDisplay: 1
+  energyCost: 90
+  shots: 6
+  baseEnemyDamage: 5
+  spinSeconds: 0.54
+  shotSeconds: 0.12
+  recoverySeconds: 0.18
+  impactFrames:
+  - {fileID: -4467762693717555016, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
+  - {fileID: 4670862520143671222, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
+  - {fileID: 8781029533609606438, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
+  - {fileID: 1146765932455926177, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}
+  - {fileID: -544001982811231204, guid: f7f5655e14aab734ab7e02008374cf09, type: 3}

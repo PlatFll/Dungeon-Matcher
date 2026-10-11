@@ -1,5 +1,40 @@
 # Dungeon Matcher Game Design Reference
 
+## Frostwake and new playable contracts (2026-10-11)
+
+The approved pack updates [Frostwake's direction](FUTURE_ZONE_LOCKS.md) and adds
+the Dungeon Attender Minotaur and Kobold Gunner. Their current production status
+is tracked in [the implementation record](FrostwakePlayables/IMPLEMENTATION.md).
+This authorization does not make an unfinished fifth zone available for travel.
+
+Glacier Cleave fully encases one physical gem and marks it for three future
+accepted player moves. Full thaw/destruction cancels it through ordinary ability
+failure/Stagger handling; otherwise Haldra consumes the gem and hits the player.
+Partial thaw reduces damage. A Bifrost target causes the strongest hit and adds
+Frostbite. The identity, stage and deadline persist across Continue.
+
+Dungeon Attender jumps from the player frame, marks a meaningful legal target,
+lands and charges along orthogonal board segments. The provisional budget is
+seven collision/travel steps, including landing. Durable obstacles receive
+normal object damage with eligible card bonuses; surviving obstacles cost more
+steps and cause a visible stumble/retry. Protected unsupported objects remain
+ineligible. These free ability effects consume no accepted player moves.
+
+Kobold Gunner fires six sequential legal board impacts, each with at most one
+enemy ricochet. His passive tracks the actual enemy recipient within that cast;
+hits on other recipients do not erase its count. Provisional damage is 5 base
+plus 5 per prior hit to that recipient, capped at +15 before ordinary ability,
+enemy and status modifiers. A new cast resets the counts. Neither skill permits
+its own board clears to refund energy; activation spends energy only on acceptance.
+
+Prototype ice tuning is separate data: three ignored moves per stage, a new
+Frost seed every three moves up to four encased gems and the shared restriction
+cap. Adjacent clears thaw one stage; a direct clear removes the encasement with
+the gem. Only deliberate direct Bifrost matching retaliates (10 damage plus
+Frostbite); cascades, specials and abilities are safe. Cleave bands are 20/35/50.
+These numbers and clearing details are provisional implementation choices for
+testing, not additional user-finalized balance locks.
+
 ## Ironvein authorization (2026-10-08)
 
 The approved Ironvein pack expands the cave concept into a fourth region. Its

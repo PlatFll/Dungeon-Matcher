@@ -1,0 +1,58 @@
+[
+  {
+    "name": "RicochetImpact",
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/0f4b3e9a-1985-4c26-bc07-a6562b7fb653/download?index=0",
+        "https://api.pixellab.ai/mcp/images/0f4b3e9a-1985-4c26-bc07-a6562b7fb653/download?index=1",
+        "https://api.pixellab.ai/mcp/images/0f4b3e9a-1985-4c26-bc07-a6562b7fb653/download?index=2",
+        "https://api.pixellab.ai/mcp/images/0f4b3e9a-1985-4c26-bc07-a6562b7fb653/download?index=3",
+        "https://api.pixellab.ai/mcp/images/0f4b3e9a-1985-4c26-bc07-a6562b7fb653/download?index=4"
+      ],
+      "num_colors": 12,
+      "dithering": "none"
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "id: 78a006e3-b224-4efc-a072-1e98c1b02408\njob_id: 78a006e3-b224-4efc-a072-1e98c1b02408\nasset_id: e8bf0c20-6a2b-56c7-91ae-1b4005730154\nasset_status: pending (saved when generation completes)\nframes: 5\nsize: 32x32px (unchanged)\npalette: 12 colors\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"78a006e3-b224-4efc-a072-1e98c1b02408\")"
+      }
+    ]
+  },
+  {
+    "name": "AttenderImpact",
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c/download?index=0",
+        "https://api.pixellab.ai/mcp/images/1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c/download?index=1",
+        "https://api.pixellab.ai/mcp/images/1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c/download?index=2",
+        "https://api.pixellab.ai/mcp/images/1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c/download?index=3",
+        "https://api.pixellab.ai/mcp/images/1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c/download?index=4"
+      ],
+      "num_colors": 12,
+      "dithering": "none"
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "id: 67faf2cf-8a33-4891-8405-b48a964c7ba2\njob_id: 67faf2cf-8a33-4891-8405-b48a964c7ba2\nasset_id: 28e1137d-ac77-5e99-82a7-51dbc7603091\nasset_status: pending (saved when generation completes)\nframes: 5\nsize: 48x32px (unchanged)\npalette: 12 colors\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"67faf2cf-8a33-4891-8405-b48a964c7ba2\")"
+      }
+    ]
+  },
+  {
+    "name": "MinotaurMarker",
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/02082edc-4573-42ab-8168-28c4e03f7c11/download"
+      ],
+      "palette_image_base64": "iVBORw0KGgoAAAANSUhEUgAAAA0AAAABCAIAAACKS7NQAAAAMElEQVR4nGPk4hVU5mMSFhQW5PgrJsAhxMMswPpV29mf9fVeASkHDkU1eXkp1teTAHx7CAAsRKKnAAAAAElFTkSuQmCC",
+      "dithering": "none"
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "id: 7ed78552-d9ae-434d-a39b-ac71a0a32cb4\njob_id: 7ed78552-d9ae-434d-a39b-ac71a0a32cb4\nasset_id: 7bc5da51-6c30-5cfc-8b1b-b625012b9b83\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 32x32px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"7ed78552-d9ae-434d-a39b-ac71a0a32cb4\")"
+      }
+    ]
+  }
+]

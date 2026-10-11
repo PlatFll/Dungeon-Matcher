@@ -47,7 +47,11 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
         visual.localScale = Vector3.one;
         GameplayPixelGrid.Snap(root);
         if (isPlayer)
-            GameplayPixelGrid.FitImage(image, available);
+        {
+            var definition=RunSession.Current?.Player?.Definition;
+            Vector2 reference=definition!=null?definition.BattleReferenceCanvas:Vector2.zero;
+            GameplayPixelGrid.FitImage(image, available, reference);
+        }
         else
         {
             GameplayPixelGrid.FitImage(image, available, EnemyReferenceCanvasSize);

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc694b828c22224ca4b552b383f553b, type: 3}
+  m_Name: Player_DungeonAttender
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDefinition
+  playerId: dungeon_attender
+  displayName: Dungeon Attender
+  description: The labyrinth's kindhearted keeper. His keys open doors; his horns
+    clear everything else.
+  playerPrefab: {fileID: 0}
+  battleFrameSprite: {fileID: 0}
+  battleCharacterSprite: {fileID: 2406898456005397280, guid: 5c6502d4ee42ad8428522d54c329f083, type: 3}
+  battleAnimatorController: {fileID: 9100000, guid: 497f66d0838b8754ead26ae680f06c97, type: 2}
+  battleReferenceCanvas: {x: 64, y: 64}
+  menuPortrait: {fileID: 7253447099707703839, guid: 467ea2e8760e8c7429fdacec934a4f7f, type: 3}
+  baseMaxHealth: 120
+  healthPerLevel: 10
+  baseGemDamage: 10
+  gemDamagePerLevel: 0.55
+  abilityDamageGrowth: 0.06
+  baseShieldCap: 50
+  shieldCapPerLevel: 3
+  affinityGemType: 1
+  activeAbility: {fileID: 11400000, guid: 5ee528c3dc58bf04a8f218be33ace011, type: 2}
+  passiveAbility: {fileID: 0}

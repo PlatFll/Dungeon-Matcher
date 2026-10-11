@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd530fe0a40915444ad454f4e7a5234b, type: 3}
+  m_Name: Ability_DungeonAttender
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonAttenderAbilityDefinition
+  abilityId: dungeon_attender
+  displayName: Labyrinth Charge
+  description: Leap onto the board and charge through seven spaces. Prioritize obstructions;
+    stubborn barriers take another collision. Uses normal barrier damage and your
+    upgrades.
+  icon: {fileID: 7253447099707703839, guid: 467ea2e8760e8c7429fdacec934a4f7f, type: 3}
+  buttonLabel: CHARGE
+  meterDisplay: 1
+  energyCost: 90
+  movementBudget: 7
+  jumpSeconds: 0.4
+  stepSeconds: 0.18
+  boardMarker: {fileID: -3852455185050722880, guid: cb9aa8b57b78d124c809a897284e85db, type: 3}
+  landingSeconds: 0.3
+  recoverySeconds: 0.32
+  impactFrames:
+  - {fileID: -5767369612048242806, guid: 4bed51fae87e0434f883357bc773a77a, type: 3}
+  - {fileID: -3148186475179655148, guid: 4bed51fae87e0434f883357bc773a77a, type: 3}
+  - {fileID: 5703268164612114127, guid: 4bed51fae87e0434f883357bc773a77a, type: 3}
+  - {fileID: 2824797007804491415, guid: 4bed51fae87e0434f883357bc773a77a, type: 3}
+  - {fileID: 1684628998686286941, guid: 4bed51fae87e0434f883357bc773a77a, type: 3}

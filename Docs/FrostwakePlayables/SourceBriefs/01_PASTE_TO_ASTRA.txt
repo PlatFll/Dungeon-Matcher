@@ -1,0 +1,28 @@
+Implement the complete work described in the attached pack:
+`Dungeon_Matcher_Frostwake_And_New_Playables_Pack.zip`
+
+Also use the two attached concept images from chat:
+- Minotaur concept image
+- Existing kobold concept image
+
+Work from the actual latest merged `main`.
+Read `00_START_HERE.md` first, then follow `02_MASTER_CONTRACT.md` and all supporting briefs.
+
+High-level goals:
+1. Update Frostwake Peaks zone planning/implementation direction, including the revised Jarl Haldra boss behavior.
+2. Add the playable **Dungeon Attender Minotaur**.
+3. Redesign and add the playable **Kobold Gunner**.
+4. Use PixelLab whenever new or replacement character art is required.
+5. Make sure all newly generated or regenerated sprites match Dungeon Matcher’s actual art style using the current golden references, not text-only style guessing.
+
+Very important:
+- Read the current canonical art guide and golden-reference register before any art work.
+- Use actual reference-image inputs for PixelLab workflows whenever the chosen endpoint supports them.
+- Preserve native pixel discipline, dark outlines, readable faces/equipment, broad connected forms and restrained shading.
+- The Minotaur must feel **bigger and more imposing than the orcs**. We cannot have orcs visually reading larger than a minotaur.
+- The Kobold must be redesigned. He should use **one revolver**, should **not** read like a cowboy, and should have more Dungeon Matcher whimsy.
+
+You are authorized to regenerate or revise character sprites if needed to match the art style.
+The user explicitly allows broad PixelLab use for this task.
+
+Do not merge without approval.

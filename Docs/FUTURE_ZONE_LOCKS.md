@@ -39,6 +39,27 @@ change board arrangement. Detailed lore and implementations remain gaps.
 
 ## Snowy Mountain
 
+**Frostwake Peaks scope update, 2026-10-11:** the new Frostwake/playables pack
+authorizes the direction and a testable ice / Jarl Haldra mechanic foundation.
+The full zone remains unavailable for random travel until its roster, scenery,
+encounters and presentation are produced and validated. See
+[the current implementation record](FrostwakePlayables/IMPLEMENTATION.md).
+This section's earlier documentation-only scope is superseded for that foundation.
+
+The Iceborn clans live in moving mountain halls threatened by advancing glaciers.
+They seek the wandering crystal to move or save their people. Timber, rope,
+hide, fur and carved iron distinguish their identity from Crown soldiers.
+Use dark rock and deep cold blues with pale ice and sparse warm braziers;
+avoid a flat white scene or a recolored dungeon.
+
+Jarl Haldra's **Glacier Cleave** selects one physical gem, fully encases it in
+Bifrost and marks it for three future accepted player moves. Fully thawing or
+destroying that gem cancels the attack through normal failure handling.
+Otherwise she consumes that gem and strikes: partial thaw reduces the damage;
+Bifrost causes the strongest hit and Frostbite. Save/resume must preserve the
+gem identity, ice stage and response deadline. Replacement gems in the same cell
+must never inherit the mark.
+
 Frost progresses to Heavy Ice and then Bifrost when neglected. Clear manageable
 ice early or accept a more dangerous late state. The evolving ice is the pressure;
 do not add a separate temperature meter.
@@ -48,4 +69,5 @@ damage and applies Frostbite, temporarily increasing incoming damage. Cascades
 and appropriate specials should clear it safely or substantially more safely.
 Exact durability, progression cadence, retaliation values and special exceptions
 remain provisional. The player status is Frostbite, not Freeze: it does not imply
-loss of control. No Snowy Mountain runtime is part of this revision.
+loss of control. Full Frostwake zone production remains a separate unfinished
+milestone; the current mechanic foundation uses provisional tunable values.

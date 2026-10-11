@@ -17,6 +17,11 @@ public partial class BoardController
     {
         var zone = RunSession.Current?.Zone?.Definition;
         if (zone == null || gems == null) return;
+        if (zone.frostwakeRules != null)
+        {
+            EnqueueBoardMutation(new BoardMutationRequest {Kind=BoardMutationKind.AdvanceFrost,EnvironmentMove=move});
+            TryStartBoardMutationProcessor();
+        }
         if (zone.maturesStone)
         {
             EnqueueBoardMutation(new BoardMutationRequest {
@@ -105,6 +110,7 @@ public partial class BoardController
     {
         if (destination == null) throw new ArgumentNullException(nameof(destination));
         saved.vines.Clear();
+        saved.frost?.Clear();saved.nextFrostSeedMove=0;
         saved.mine = destination.maturesStone ? new MineEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.aquatic = destination.periodicallyFloods ? new AquaticEnvironmentState { lastSettledMove = saved.moves } : null;
         saved.warnings.RemoveAll(w => w.environmental);

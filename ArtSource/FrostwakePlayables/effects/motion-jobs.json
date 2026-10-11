@@ -1,0 +1,34 @@
+[
+  {
+    "name": "RicochetImpact",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/fa8f1806-5a0b-494c-94a8-6569428cec57/download",
+      "action": "A tiny sharp spark snaps outward, with a few bright flecks dispersing and disappearing. Burst once, no looping, transparent background, no new object. Crisp native pixel effect; keep the whole burst inside this canvas.",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 638
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "id: 0f4b3e9a-1985-4c26-bc07-a6562b7fb653\njob_id: 0f4b3e9a-1985-4c26-bc07-a6562b7fb653\naction: A tiny sharp spark snaps outward, with a few bright flecks dispersing and disappearing. Burst once, no looping, transparent background, no new object. Crisp native pixel effect; keep the whole burst inside this canvas.\nframes: 4\nsize: 32x32px\ntransparent: True\nseed: 638\nasset_id: f191adbc-0420-5ddf-860e-7ccd95d7e5af\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0f4b3e9a-1985-4c26-bc07-a6562b7fb653\")"
+      }
+    ]
+  },
+  {
+    "name": "AttenderImpact",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/9a75dd67-566d-46c0-b712-544f3f1b7111/download",
+      "action": "The heavy contact flash collapses into low stone dust, chips spread outward then settle and disappear. One quick ground impact, not fire. Crisp native pixel art, transparent background, restrained motion within the canvas.",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 639
+    },
+    "result": [
+      {
+        "type": "text",
+        "text": "id: 1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c\njob_id: 1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c\naction: The heavy contact flash collapses into low stone dust, chips spread outward then settle and disappear. One quick ground impact, not fire. Crisp native pixel art, transparent background, restrained motion within the canvas.\nframes: 4\nsize: 48x32px\ntransparent: True\nseed: 639\nasset_id: 368fffb9-3092-5bbd-b4dd-267a4e73cffe\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1f8d6dbf-09a3-4d6d-8a76-9efee0a4e22c\")"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "minotaur": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/9c813d3b-5221-46c3-ab01-c4e249069169/download"
+      ],
+      "palette_image_url": "https://api.pixellab.ai/mcp/pixel-tools/db481470-ce84-4f13-aece-aacd6f04fdd4/image.png",
+      "dithering": "none"
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: bf90a1ba-aec6-44aa-b11a-5a9e28db78d4\njob_id: bf90a1ba-aec6-44aa-b11a-5a9e28db78d4\nasset_id: 7e86eb6a-970f-5921-af86-39b45d48c116\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 80x80px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"bf90a1ba-aec6-44aa-b11a-5a9e28db78d4\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "kobold": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/1c014625-5a19-4c1d-be38-889665673c4d/download"
+      ],
+      "palette_image_url": "https://api.pixellab.ai/mcp/pixel-tools/af243e7f-1c93-454b-ba45-1426c9dfc50e/image.png",
+      "dithering": "none"
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: e3ce3bcf-c718-450f-b55f-b6d524a4bc92\njob_id: e3ce3bcf-c718-450f-b55f-b6d524a4bc92\nasset_id: caee308a-041a-564f-b255-a32146b2fd5d\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 64x64px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"e3ce3bcf-c718-450f-b55f-b6d524a4bc92\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

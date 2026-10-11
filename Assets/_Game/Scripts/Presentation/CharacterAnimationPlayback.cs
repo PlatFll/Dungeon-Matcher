@@ -13,6 +13,29 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
 
     private float speedBeforePause = 1f;
     private bool isPaused;
+    private AnimatorUpdateMode? priorUpdateMode;
+    public float AuthoredDeathSeconds {get;private set;}
+
+    public bool TryPlayState(string state,bool unscaled=false)
+    {
+        ResolveAnimator();
+        if(animator==null || animator.runtimeAnimatorController==null || !animator.isActiveAndEnabled ||
+            !animator.HasState(0,Animator.StringToHash("Base Layer."+state)))return false;
+        ResumeAtDefaultSpeed();
+        if(unscaled)
+        {
+            if(!priorUpdateMode.HasValue)priorUpdateMode=animator.updateMode;
+            animator.updateMode=AnimatorUpdateMode.UnscaledTime;
+        }
+        animator.Play("Base Layer."+state,0,0);animator.Update(0);
+        AuthoredDeathSeconds=state=="Death"?animator.GetCurrentAnimatorStateInfo(0).length:0;
+        return true;
+    }
+    public void RestoreAuthoredClock()
+    {
+        if(animator!=null && priorUpdateMode.HasValue)animator.updateMode=priorUpdateMode.Value;
+        priorUpdateMode=null;AuthoredDeathSeconds=0;
+    }
 
     public event Action AutoAttackImpactReached;
     public event Action AutoAttackCompleted;
@@ -109,6 +132,7 @@ public sealed class CharacterAnimationPlayback : MonoBehaviour
 
     private void OnDisable()
     {
+        RestoreAuthoredClock();
         if (animator != null && isPaused)
         {
             animator.speed = Mathf.Max(0.01f, speedBeforePause);

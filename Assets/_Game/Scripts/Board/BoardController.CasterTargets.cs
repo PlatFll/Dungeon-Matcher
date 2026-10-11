@@ -40,6 +40,14 @@ public partial class BoardController
         // A fixed pin reservation is already a selected target during its cast.
         AddPendingCasterTarget(activeBoardMutationRequest,result);
         foreach(var request in pendingBoardMutations) AddPendingCasterTarget(request,result);
+        var enemies = RunSession.Current?.Waves?.ActiveEnemies;
+        if (enemies != null) foreach (var enemy in enemies)
+        {
+            if (!LiveCaster(enemy)) continue;
+            var cleave = enemy.GetComponent<GlacierCleaveRuntime>();
+            if (cleave?.IsChanneling == true && cleave.Target != null)
+                result.Add(CasterBoardTarget.OnGem(enemy,cleave.Target));
+        }
     }
     private void AddPendingCasterTarget(BoardMutationRequest request,List<CasterBoardTarget> result)
     {

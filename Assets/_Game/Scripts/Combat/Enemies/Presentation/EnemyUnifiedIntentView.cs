@@ -100,6 +100,7 @@ public sealed class EnemyUnifiedIntentView : MonoBehaviour
     }
     private int ResponseMoves()
     {
+        var cleave=GetComponent<GlacierCleaveRuntime>(); if(cleave?.IsChanneling==true)return cleave.ResponseMoves;
         var heal=GetComponent<EnemyChannelRuntime>(); if(heal?.IsChanneling==true)return heal.ResponseMoves;
         var roots=GetComponent<RootbinderEnemyAbility>(); if(roots?.IsWarning==true)return roots.ResponseMoves;
         var forest=GetComponent<ForestMilestoneEnemyAbility>(); if(forest?.IsPreparing==true)return forest.ResponseMoves;

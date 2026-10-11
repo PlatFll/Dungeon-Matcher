@@ -100,6 +100,9 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
         { text.text = $"{mine.CastName} IN {mine.ResponseMoves}"; text.color = new Color(1,.68f,.25f); }
         if (mine?.IsPilot == true)
         { text.text = $"REMOUNT IN {mine.PilotMoves}"; text.color = new Color(1,.8f,.3f); }
+        var cleave = GetComponent<GlacierCleaveRuntime>();
+        if (cleave?.IsChanneling == true)
+        { text.text = $"CLEAVE IN {cleave.ResponseMoves}"; text.color = new Color(.6f,.92f,1f); }
         bar.gameObject.SetActive(casting||ritual);
         if(casting||ritual) fill.rectTransform.sizeDelta=new Vector2(64*Mathf.Clamp01((casting?channel.ResponseMoves/2f:(float)milestone.ResponseMoves/milestone.ChannelMoves)),4);
         if(link!=null)

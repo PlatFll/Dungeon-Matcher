@@ -1,0 +1,17 @@
+{
+  "args": {
+    "argv": [
+      "edit",
+      "cec8ba7a-b883-427b-9f94-b828a28cf532",
+      "--changes",
+      "[{\"operation\":\"map_colors\",\"layer\":\"image\",\"frames\":[1],\"region\":[0,0,63,63],\"colors\":{\"#040201\":\"#0A0D11\",\"#090202\":\"#0A0D11\",\"#050000\":\"#0A0D11\"},\"reason\":\"Merge three near-black outline shades into the canonical character outline without changing geometry.\"}]"
+    ],
+    "mode": "low"
+  },
+  "result": [
+    {
+      "type": "text",
+      "text": "image_id: af243e7f-1c93-454b-ba45-1426c9dfc50e  (edited from cec8ba7a-b883-427b-9f94-b828a28cf532)\ncanvas: 64x64, 1 frame(s)\n1. map_colors: 500 px changed\nsheet rows: frames [1]\npalette (15): #0a0d11ff x500, #b3442fff x346, #76282aff x185, #e6d9b4ff x112, #2d4646ff x99, #943d33ff x57, #dc9a65ff x56, #b5a280ff x53, #1d272eff x49, #502321ff x23, #9b614cff x22, #53372aff x21, #61615bff x18, #2d0f0bff x17, #774636ff x4\ndownload https://api.pixellab.ai/mcp/pixel-tools/af243e7f-1c93-454b-ba45-1426c9dfc50e/: image.png, frames.png, animation.gif\nnext: edit af243e7f-1c93-454b-ba45-1426c9dfc50e --changes […]"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "paletteRequest": {
+    "image_urls": [
+      "https://api.pixellab.ai/mcp/images/8cfdccf7-12fe-4b49-a926-495eda525ff2/download?index=1",
+      "https://api.pixellab.ai/mcp/images/8cfdccf7-12fe-4b49-a926-495eda525ff2/download?index=2"
+    ],
+    "num_colors": 18,
+    "dithering": "none"
+  },
+  "paletteResult": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: edda5302-be5a-472c-9ea4-de484b93e5d9\njob_id: edda5302-be5a-472c-9ea4-de484b93e5d9\nframes: 2\ntransparent: yes\nasset_id: 3301d1e3-eb68-5848-b82e-fa98b1b6d437\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 0.1 generations\ndownload: https://api.pixellab.ai/mcp/images/edda5302-be5a-472c-9ea4-de484b93e5d9/download?index=0 ... ?index=1"
+    }
+  ],
+  "outlineRequest": {
+    "argv": [
+      "edit",
+      "f9c2ef02-fbfc-42e7-a512-364b121176c9",
+      "--changes",
+      "[{\"operation\":\"map_colors\",\"layer\":\"image\",\"frames\":[1],\"region\":[0,0,79,79],\"colors\":{\"#06070f\":\"#0A0D11\",\"#0d090e\":\"#0A0D11\",\"#4a2c1c\":\"#513423\",\"#5a3925\":\"#513423\"},\"reason\":\"Use the canonical dark outline and consolidate similar interior brown shades without changing the drawing.\"}]"
+    ],
+    "mode": "low"
+  },
+  "outlineResult": [
+    {
+      "type": "text",
+      "text": "image_id: db481470-ce84-4f13-aece-aacd6f04fdd4  (edited from f9c2ef02-fbfc-42e7-a512-364b121176c9)\ncanvas: 80x80, 1 frame(s)\n1. map_colors: 903 px changed\nsheet rows: frames [1]\npalette (13): #0a0d11ff x627, #513423ff x433, #79502eff x393, #402c26ff x211, #b9832fff x164, #67442bff x125, #895523ff x82, #f0ddafff x75, #b49872ff x35, #c99d6fff x33, #2d1b13ff x28, #f5c841ff x21, #d1be95ff x3\ndownload https://api.pixellab.ai/mcp/pixel-tools/db481470-ce84-4f13-aece-aacd6f04fdd4/: image.png, frames.png, animation.gif\nnext: edit db481470-ce84-4f13-aece-aacd6f04fdd4 --changes […]"
+    }
+  ]
+}

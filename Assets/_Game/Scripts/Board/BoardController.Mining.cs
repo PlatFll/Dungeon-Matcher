@@ -30,12 +30,15 @@ public partial class BoardController
         ResolveVines, AdvanceVines, HarvestVines, AddVine, RemoveVines,
         MarkCellResponse, ResolveCellResponse, AdvanceCrumblingTiles,
         PlaceAirCoffer, RemoveAirCoffer, ConsumeAirBubbles, AdvanceMineStones, ChargeMineDrills, FireMineDrills,
-        MineStoneOperation, SmallMineDrill, ShiftMineDrill
+        MineStoneOperation, SmallMineDrill, ShiftMineDrill,
+        EncaseGem, ConsumeEncasedGem, AdvanceFrost
     }
 
     private sealed class BoardMutationRequest
     {
         public BoardMutationKind Kind;
+        public FrostStage IceStage;
+        public Action<FrostStage> IceImpact;
         public int MineDrillId, MinePower;
         public long MineStoneId;
         public MineStoneOperation MineOperation;
@@ -392,6 +395,12 @@ public partial class BoardController
 
                 switch (request.Kind)
                 {
+                    case BoardMutationKind.EncaseGem:
+                        ExecuteEncaseGem(request); break;
+                    case BoardMutationKind.ConsumeEncasedGem:
+                        yield return ExecuteConsumeEncasedGem(request); break;
+                    case BoardMutationKind.AdvanceFrost:
+                        ExecuteFrostEnvironment(request.EnvironmentMove); break;
                     case BoardMutationKind.MineStoneOperation:
                         yield return ExecuteMineStoneOperation(request); break;
                     case BoardMutationKind.SmallMineDrill:
