@@ -59,6 +59,14 @@ unified accepted-move combat is authoritative over stale timed-combat history.
 
 ## Checkpoint
 
+The roster production pass merged through PR #191. The later user-approved
+facial-color pass updates seven stills and 43 motion sheets: dark human eyes,
+solid blue Wolf iris, beige Skald skin and gray hair. Silver Haldra eyes and ivory
+Skald skin are superseded. Exact corrected palette sources, original snapshots
+and approval receipts live in `ArtSource/Frostwake/face-revision`. Existing
+controllers, events, timing and gameplay are unchanged. See
+[current validation](../Validation/FROSTWAKE_FACE_CORRECTIONS.md).
+
 All eleven stills are approved. Minotaur eye-only verification passes for 33
 source cels; the six existing motion sheets and portrait are updated. All 416
 generated motion cels were checked against each approved 15-color palette and

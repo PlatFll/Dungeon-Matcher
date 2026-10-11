@@ -1,0 +1,3810 @@
+[
+  {
+    "actor": "frostblade_reaver",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/frostblade_reaver.png",
+        "sha256": "55d07cc6338b18c3f8fcf83026af884374dea2d3d0ed9f9fffc1d2034adbc783",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/00.png",
+        "sha256": "f0ce506bbe400e1f13825d21ade0f0b86c9d50f7a4e4c532f664334bdb276c91",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/01.png",
+        "sha256": "d1f32bbc7ff9c3d18bd6d6b48fd075a746bec7ac4bc6693f3acec4378a2b5bf6",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/02.png",
+        "sha256": "24a26813621cdae1035e04a0fecd7311c39211632a70bcb65d825cfe649d6645",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/03.png",
+        "sha256": "9501202036a8196cc4743cc23d92c83f2ee0f35ccbcc7770d03338fbc767b04e",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/04.png",
+        "sha256": "af91d298d47aa88779132dbf741f65391fbdab4f59fe3b57d58be80f0644810e",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/05.png",
+        "sha256": "69dbef3c4b6958c026ea93a6023dc55526d99a749be47bdd45699e07e1d50666",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/06.png",
+        "sha256": "496b484cb9b17afc86c29c18b294973bcbeee2522f0b3f0344ca11d1b9c26716",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/07.png",
+        "sha256": "3d5d9d1b80dfbb04df48c96edac35f1a1f2d74eecf90a05ab9ae171e36f44100",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/08.png",
+        "sha256": "2ababe796bb1713794f9dcc708869b3c8edb760bfdba27d7ee588ee72a0afbfb",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/00.png",
+        "sha256": "f0ce506bbe400e1f13825d21ade0f0b86c9d50f7a4e4c532f664334bdb276c91",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/01.png",
+        "sha256": "6326671a749e9fb452a7e96e77a85a0e08a8d1d8fefa43f465d85f3cc1d5e415",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/02.png",
+        "sha256": "62a725cf5ff0da50a701905dc4479128ebcadd6286221cad3a6b48c98192722f",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/03.png",
+        "sha256": "6cf544dcede45d1018a8cdd2c43b29b5d69580679c41c3b8ec2005f0b684806b",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/04.png",
+        "sha256": "8b32184292f47661adf211ca375232b91a3b1156dadb928d47895817b0d042d9",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/05.png",
+        "sha256": "245da2b70ca5f64d09b24b9b5b27df523bd589daf3aeb60d45a9efb122959772",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/06.png",
+        "sha256": "88b5983dda60bf74c63788cfbba80de9fa82af85d7f5e4511e1828e1a2618fc6",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/07.png",
+        "sha256": "e3b11b9057b64101b9c52b02fde34acae314a8942d6343d10a8e34da9d2745e4",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/08.png",
+        "sha256": "f4e72d3f12d70046428e218c39448e3db144ba843dd6dd650122245ebb011e4e",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/00.png",
+        "sha256": "f0ce506bbe400e1f13825d21ade0f0b86c9d50f7a4e4c532f664334bdb276c91",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/01.png",
+        "sha256": "0844803f79bfa72e7611226b02f3338470b5f75cc2769ecb323352e14d46a8ff",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/02.png",
+        "sha256": "aaf0721c9e72581ad45a937fc5256a3c007812cf01968701362e715030bd078c",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/03.png",
+        "sha256": "910eb171144d723833fef09c8a68925714de4cc433e878f326b0c0bb226767fa",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/04.png",
+        "sha256": "9efea403bda066dee4ce70f3fc4e1a666b9e49c1853ebbf2c8bed67ba771436e",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/05.png",
+        "sha256": "901cc460f47df79b49c71f34cbaac3c668646619f30ee3c03ce8148f2680cf11",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/06.png",
+        "sha256": "9e934a7eabbf818e0ae60b2b1e8bfa56ef3f2ef77c6a5801841fef48aeb9e0cd",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/07.png",
+        "sha256": "8a84923fe0f2473efe73b427db09627e1e42ef2feab6b030414a6aafb9cd5b3c",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/08.png",
+        "sha256": "b4f8a9204527f63f2a12925c1c80c0e277e5c07eaca226099277526b10c4edce",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/00.png",
+        "sha256": "f0ce506bbe400e1f13825d21ade0f0b86c9d50f7a4e4c532f664334bdb276c91",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/01.png",
+        "sha256": "e037f11dfcda257608172fc3c7d5930b586f8f5d0290bc840c4f633780848e59",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/02.png",
+        "sha256": "4edc4fd4b2108c0fde95247d8f4e5c7c14e98e2638b36a34dabbe97edb951457",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/03.png",
+        "sha256": "9416b858bb264448026590bffee47c39ad48220a1d3934f4acc0c393c16011e6",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/04.png",
+        "sha256": "03ee4a3008c57e0dcda795f29f49d2414f6e0a06ff5073bac13e628a316c88cf",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/00.png",
+        "sha256": "f0ce506bbe400e1f13825d21ade0f0b86c9d50f7a4e4c532f664334bdb276c91",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/01.png",
+        "sha256": "ce06055ef6b6b4edeccf965ded6819a88fd21de46259709002fb743bd4b691ec",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/02.png",
+        "sha256": "67195088d9bfd06abba5000c64df37902c6e2665c786d348b3237c794463e0e9",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/03.png",
+        "sha256": "e00ab36faa5dc0b21056fb97aafbd8e92b330d657cd1dc8fbf3c4a1f7d78e369",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/04.png",
+        "sha256": "715355c1535a3598b10182bfc66334432091d517d22dc12999de92aaea626a91",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "frostfang_wolf",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/frostfang_wolf.png",
+        "sha256": "040b40494bcb22a2626f9a738464fa80c74df5f13574f33a5086c06a8ae95334",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/00.png",
+        "sha256": "e1ab9b3d7d788621cc6d2fe78dddc504aa1f60e538aaa354169080325d3bfde9",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/01.png",
+        "sha256": "3da19af6fb1f30a05d44288fe128c9f33256f219832c132c130109e524c5febe",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/02.png",
+        "sha256": "6f53b078e509b96d470c3e2172ff5649a889029cb8cfe94edb3ac4cc45aa6056",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/03.png",
+        "sha256": "7a934aea4e244f99df34d97483f79143a5ff6940f10a28e5f9ec0c877e79d154",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/04.png",
+        "sha256": "5867347ff6651c98619497cb5201d11d57aac6494e7c2e4adc78b09b40ee1f8a",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/05.png",
+        "sha256": "02c355c7753eea0f63cde5a329880ef8f647eeaf65ca2b20e36f31e65222172e",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/06.png",
+        "sha256": "3b8beb2c0ea70beae909799a61dfb975ab687cf80f496dd585c23c13a5dc62bd",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/07.png",
+        "sha256": "2d3338c4c04cf0126a28b4c31caa7bb81335bd726f1edf238ad3c76c4016d5e3",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/08.png",
+        "sha256": "553064d7cf78da5ff3e31466aaa5b2be2626df896af10e865c7774feabc96319",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/00.png",
+        "sha256": "e1ab9b3d7d788621cc6d2fe78dddc504aa1f60e538aaa354169080325d3bfde9",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/01.png",
+        "sha256": "3814fb765c7b22737fa51b60f1e3b742fd5cb10d98936bf6de26c433c1ae6c84",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/02.png",
+        "sha256": "04bd409cf54730e1ab27a5c26d14d99f7d285008f9790638f7f45bde808c9fce",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/03.png",
+        "sha256": "3f65c831c62638ed4bb3c87bbb2265dd9de1de806f5f772eb3782948cdf3426d",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/04.png",
+        "sha256": "7af8054bec6094159c1bb8fe5bb48fc7eaf7a709aafa363fa7e9595401f7c498",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/05.png",
+        "sha256": "ee080617a03de9998b018779640cc069f1244e9f83152459b3b343d980eb19c0",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/06.png",
+        "sha256": "4a5f9b6985396ff5bd455e3b8a8692fafdaa718984a7d1a09661cd67adeb04d3",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/07.png",
+        "sha256": "d14529702df414a316aa0c3553035d9c619b396cd5bb10b9bd0be94a83b572a6",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/08.png",
+        "sha256": "4414633ada258fff527fd81e4d5353f7e1cdfe5e87dd177a56b8d30b1c331736",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/00.png",
+        "sha256": "e1ab9b3d7d788621cc6d2fe78dddc504aa1f60e538aaa354169080325d3bfde9",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/01.png",
+        "sha256": "c9493ca291d5bac1620c3c3da5019b2af36006813c4aa41d508e27aee89715fc",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/02.png",
+        "sha256": "609693a436c338a8f503c0b14fcab3abf3e8a5966afb611d45fae83a36ed6808",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/03.png",
+        "sha256": "520b5cc0d02985e2721d57d97020759852fd2a16b3521260a08f9689b0906f09",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/04.png",
+        "sha256": "c4854c321aa829783d43240e7373ce8d9a91e984ba0c6b06b904df92b292253b",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/00.png",
+        "sha256": "e1ab9b3d7d788621cc6d2fe78dddc504aa1f60e538aaa354169080325d3bfde9",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/01.png",
+        "sha256": "d6311ade6a1c7623658765021722fe456fcd5c27a555500d5ba238cbbf5df797",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/02.png",
+        "sha256": "462b2536e4d82ae10d41b879ba1bee63346164d6a2a34a389660dfa216a61420",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/03.png",
+        "sha256": "98e1691e3705fe6e7f0dc84f2c6b81c5378ac0140ca183fff19e57a00b3a6d00",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/04.png",
+        "sha256": "ab708cae02590df9434b2ae352dd5b79af2dc14445e731ecabbf613b002a053e",
+        "offset": [
+          512,
+          312
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "glacier_troll",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/glacier_troll.png",
+        "sha256": "d7f205c44a97373e5addddbf055d6fe5e221f311087440dddebd4c05d8864d22",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/00.png",
+        "sha256": "9df4dc8fa4c8c3a9233ca7e7e1a0a47f9e638eadd7a8e165966ce94297269192",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/01.png",
+        "sha256": "d4f5b1a7c184a5e5ec8f30a97fd1a0beae0efc39d66855158a5b9bc0dc4c0df1",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/02.png",
+        "sha256": "17ba9d939170531d42cfdd391c4d97b128535e56260cd2160b2521d0bd22b5c3",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/03.png",
+        "sha256": "33433fb0e9eacf12a04128ddf004b9f59bb40ecaf5a245aa3649139dacd43e01",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/04.png",
+        "sha256": "cc74ac6a2fefad12807ecf445beac192aec680e7700e15dafa119037e5b7c67e",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/05.png",
+        "sha256": "1112a6f9bf63b1ff51db18eed1030e58cad22a637ea0ab8c0d893f78adddec7e",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/06.png",
+        "sha256": "127f6b0384ca069c03441a00d716bb29da90c05e18a9341b097c34d921b789e8",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/07.png",
+        "sha256": "d977c5ceb148b659eb7d9b3f9d8116e5b54abfa815c7f5ba95fced114ab0d271",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Ability/palette/08.png",
+        "sha256": "bcb01813feae8ab4bcc408399c0846c18522c7df98781770ae1ad5ccf606aa87",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/00.png",
+        "sha256": "9df4dc8fa4c8c3a9233ca7e7e1a0a47f9e638eadd7a8e165966ce94297269192",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/01.png",
+        "sha256": "57b1e0f3bec11353ee8d4e133e3699e8fa371d8620e913a96f7cd702773cbf8a",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/02.png",
+        "sha256": "2b1ded8030b5d4f4e5adc768f1b58d9d14941dda1d00833434d8928d439c69ad",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/03.png",
+        "sha256": "eafc3c838f7ffd6cbee4a20152e4a3daf7c02349ead3c8c3fb2c9bec773e51f9",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/04.png",
+        "sha256": "cb0f77b476a0f87a46f8e9309d3db7be35bd54abdb6781a3ace196cde5716b99",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/05.png",
+        "sha256": "c2f9034c25cc525f921d9a84c4d9a55130528e22340eab3a3c4f0dc3006662a8",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/06.png",
+        "sha256": "862fb2df65b564b48c8649478619a85763550da73665b5130ab39df2ab92dee0",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/07.png",
+        "sha256": "18f7d952ca63803f5864c35c3c5f520e7f82a9259821504b365c115f9e53481d",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/AutoAttack/palette/08.png",
+        "sha256": "c5304be455f0804960364f7fa6e91988e57921b41e5f23db6a59354b7869edb4",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/00.png",
+        "sha256": "9df4dc8fa4c8c3a9233ca7e7e1a0a47f9e638eadd7a8e165966ce94297269192",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/01.png",
+        "sha256": "73bb084f7790b49fdb0076046779c808d14a51f9838d55e88199629df9ed6a81",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/02.png",
+        "sha256": "f30e588a57a2acc4e740d539dcac18941e7840fc6c677cfb0abff260e398e352",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/03.png",
+        "sha256": "f16442d24b473eae3e91290bb81cc44940ecd5439cb7534a55728ccc24b517be",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/04.png",
+        "sha256": "a70df0af09342db9e41f9820e386945bf1dc4f377db6490765d706e67335bc71",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/05.png",
+        "sha256": "3ce2c1952ff88bf3b3fa35206e097ed60710e5acad1845f1d5ccac44d753fc7e",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/06.png",
+        "sha256": "316a60fa64dc3a1e8638e67922f42076ae611c0f1789238624bff3402f22e8f0",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/07.png",
+        "sha256": "7fc00173ef51dc0d5fcc985f2319a1a568593fdd907f8015390ea996f38374a9",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Death/palette/08.png",
+        "sha256": "191f9b0c6e5008c6fb425085af34b1252353399784a04ead6fb9846025bd66f9",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Hit/palette/00.png",
+        "sha256": "9df4dc8fa4c8c3a9233ca7e7e1a0a47f9e638eadd7a8e165966ce94297269192",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Hit/palette/01.png",
+        "sha256": "bfbc1205d47b3c74f0f7fe87741119c38f79b2906eb892a9bd14e7ae0c5ad945",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Hit/palette/02.png",
+        "sha256": "58065c9f4672b6898da1b345aff448de37f006c529fbed73baca3ee57b0a88b9",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Hit/palette/03.png",
+        "sha256": "aa8105043ba2fc77de5e9f313f67cd09d1de246f596b47393f97f5f1cd7dc7d2",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Hit/palette/04.png",
+        "sha256": "aa26070a674c3366adf43606695931f7f88286a60f511c05e56c90e8a74565ca",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Idle/palette/00.png",
+        "sha256": "9df4dc8fa4c8c3a9233ca7e7e1a0a47f9e638eadd7a8e165966ce94297269192",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Idle/palette/01.png",
+        "sha256": "03fdcc917ba36048486b2bbf9fb29cc925ad5c6607af09081f761824d28ac687",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Idle/palette/02.png",
+        "sha256": "3de03fd9fd2ec9f343df648166dd43c21886cc382867b88ec512c93d9fc47134",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Idle/palette/03.png",
+        "sha256": "50146a6bbbb271b805b5dfc8e78f4ebc13d666ac3847028d28a7a0b235d500d6",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/glacier_troll/Idle/palette/04.png",
+        "sha256": "bd729d690dac60ca90e92bccdf72f15dacfcaee39d8870ac072f39c167036579",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "harpoon_hunter",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/harpoon_hunter.png",
+        "sha256": "336c7adcd4e85dc0413c548cbf29766f64919165776ebc76625363d947293251",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/00.png",
+        "sha256": "bee8fa12ed471c10651184755418e76d4750488c3177f5a4333245fe6041d195",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/01.png",
+        "sha256": "9aa5ceba0e24774c711bbdd271ac6a5742a01a9229f9ed674e87beb375ec036b",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/02.png",
+        "sha256": "59fb815389c4fd04cb0ff86d97d026016dab850f0871ac34ea5b5aa3e5692097",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/03.png",
+        "sha256": "22e9da0ab90bcb788c8b88d277b5815d3213e5d74dc664dd90b3d714589e574a",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/04.png",
+        "sha256": "12aac45cd2068944c8142aaf0ac79974dfb1abd6a848e707b1123e54231e74a4",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/05.png",
+        "sha256": "d38a700e45c731cecb1a207bba8aa208ad81942a0de6da0635a790cc0ad4c346",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/06.png",
+        "sha256": "bd9e4b67681b5bf9a093c69053b37109613f1c6aa1b91ff09aed4d8b7fb6f352",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/07.png",
+        "sha256": "f0c1df5132568c77680cdcccabce68325868840ba0359da1a7dd586ea05dffc1",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/AutoAttack/palette/08.png",
+        "sha256": "a2faafc9db3c44dfdcb02f1f86db0d8f75dd87edb1c5242c95a32ce15f26e93b",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/ChannelStart/palette/00.png",
+        "sha256": "bee8fa12ed471c10651184755418e76d4750488c3177f5a4333245fe6041d195",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/ChannelStart/palette/01.png",
+        "sha256": "45d951e68f06ac020ea8d289389f4bf67d7098d137751a4dd0411352a9cbc2c8",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/ChannelStart/palette/02.png",
+        "sha256": "e93ef72ad4bd0e331647784379a7f1b7dec838b3fc9f5dddb422dec1c5f74e0d",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/00.png",
+        "sha256": "bee8fa12ed471c10651184755418e76d4750488c3177f5a4333245fe6041d195",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/01.png",
+        "sha256": "5147a6cdccfcef673331eba18e0f865e6ca8dd41ae094f5a47f3d8f7b9a186f1",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/02.png",
+        "sha256": "3c001f669e15bc70bc12a2761da94d3aa80f2adb4dd31312d960df87a4505114",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/03.png",
+        "sha256": "f88e429f840cf8d6d4fc9bd8060bcbae8d2f17e9e94538ed7d5d6b86b9b1534d",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/04.png",
+        "sha256": "8fd07ba045de59619beaee7777b4d9ef7703fc3cdd44fc55d3ebe89c62b3eb7c",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/05.png",
+        "sha256": "431ff161ea5bf0037bbb5f1447b1f334a0a083f2770df828b6cf51e7ae59d066",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/06.png",
+        "sha256": "ec01c61743bee6cbc931ab2efb963cf0dc9a70271ebf253f7813329b4e83c2f9",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/07.png",
+        "sha256": "598bbb17322d7606a9e95dcb1ee9a5373ba9f578cf1bccc4c0493836aa149a4f",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Death/palette/08.png",
+        "sha256": "091f23c56a4efca70767bf6edfb4c82858b43a1559724264d677534e24df32aa",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Hit/palette/00.png",
+        "sha256": "bee8fa12ed471c10651184755418e76d4750488c3177f5a4333245fe6041d195",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Hit/palette/01.png",
+        "sha256": "23ca93b19f86d481b6a108329de13c977cd9257051f1a57348c0c286dee0492a",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Hit/palette/02.png",
+        "sha256": "f1ac0afb9065688b20d0947b07cfd2d42a2684f8b9e65d23178b13708c403296",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Hit/palette/03.png",
+        "sha256": "6d764b158b44f9089afa4ffc7cbdd51fcfaca26a7e7f5e7125997dc5af51647d",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Hit/palette/04.png",
+        "sha256": "d3a8aef0b62df8486e36f3116e82031ff5363a14eb9ce49ecaa0601f2a869bd8",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Idle/palette/00.png",
+        "sha256": "bee8fa12ed471c10651184755418e76d4750488c3177f5a4333245fe6041d195",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Idle/palette/01.png",
+        "sha256": "19a3282f368834bca9dda4ecd59e26efa4012bede80df424b3d6fb526babb54c",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Idle/palette/02.png",
+        "sha256": "cec6f757a38f1c68877d64895912337f6f6f1170ca3cdd5838c106bb7c369b81",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Idle/palette/03.png",
+        "sha256": "a0a64425da7e884f4c5141d75b6024c48ba34fad06ffedf795aecd67cf5a8bf8",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Idle/palette/04.png",
+        "sha256": "2c08f6143cd0435a3cc29e280e916b6aba58f6af7922cb0918d9ff3378a79adf",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/00.png",
+        "sha256": "e93ef72ad4bd0e331647784379a7f1b7dec838b3fc9f5dddb422dec1c5f74e0d",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/01.png",
+        "sha256": "641fe5c2a6b0408c2f672e3c187c8e95b34f29b393a7688a21ce1127e29aadce",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/02.png",
+        "sha256": "e4fe5a5ef07ae1daccad62612d1facdcf1ed6c420175d54938267251e5d1664a",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/03.png",
+        "sha256": "9aba15bc5c97d0f041df4f7e9077709d545b9927c5985d366450d8c7f7c2399f",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/04.png",
+        "sha256": "76061846b386467836eb98f01b1e03e15f057c13241db08b357de6ff037834d5",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/05.png",
+        "sha256": "657b0c6ec6975ff33accff5651e2f7dcc41098db99fe06640c25255e9ae88f52",
+        "offset": [
+          640,
+          416
+        ]
+      },
+      {
+        "index": 38,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/06.png",
+        "sha256": "89eea1e76c90d76e606e04b5a40e91be336f27532bf49dc599a29b086eb074e7",
+        "offset": [
+          768,
+          416
+        ]
+      },
+      {
+        "index": 39,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/07.png",
+        "sha256": "54c46c751481e36e97aeadfb9bf4d5e349f03d71afce242819c20d780db3c716",
+        "offset": [
+          896,
+          416
+        ]
+      },
+      {
+        "index": 40,
+        "path": "ArtSource/Frostwake/motion/harpoon_hunter/Release/palette/08.png",
+        "sha256": "be59e2467ac9a42529a0396903df0fb9120a90dd290663e3e0dcd594ebaf790d",
+        "offset": [
+          0,
+          520
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "hearthkeeper",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/hearthkeeper.png",
+        "sha256": "32899c23f21ee461c73f2a48085d9b73dd8fd1a35870e7a25b9a31b5c11a1356",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/00.png",
+        "sha256": "10845e4423dfc4bbacc6ca0b1890cfacec516b1aeed04d6f6d27c3abbb9d6c8f",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/01.png",
+        "sha256": "13d5fc94a67980f10e1e7dd26276dbafa9d9a08dced7c090d98d4c0b169378b3",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/02.png",
+        "sha256": "1e9701e049f3fedf051ad2cbe032a163904897d9a7d7c04b004a95a71c39ca7d",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/03.png",
+        "sha256": "5fae893562afdcb4e385072bd95b01e6433a018b388284111086bdcfbadaf3ed",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/04.png",
+        "sha256": "958f46f871833ea8cd4908a455944d87f01ac41fb466393a3062fe132bc007c6",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/05.png",
+        "sha256": "316fe9cae2cbc8dc98c32b8fbeb516e06e5dc519837593b553e1af72dc0b1a59",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/06.png",
+        "sha256": "2f4409b60aae94ca6ed40c276abfc909e4dab83a8587c32429dd3c5f89004bca",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/07.png",
+        "sha256": "819247b79d3305d5fa4f3f09c0c09ad861a125da4ce1440addbdf041a650f1b5",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/08.png",
+        "sha256": "bcd4622b655e812ec2920f1dd6d54cbcab5499f5899b2add84c2c71a178a47fe",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/00.png",
+        "sha256": "10845e4423dfc4bbacc6ca0b1890cfacec516b1aeed04d6f6d27c3abbb9d6c8f",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/01.png",
+        "sha256": "0ccddb38aa0f8d1afbdead9e60ce8c649446a6f4b150c080f605c06e8fd93199",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/02.png",
+        "sha256": "2cb108e3322a482294977a0bb2cbcd9a678d040a4d965fe69ddc2751960329cb",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/03.png",
+        "sha256": "b20babd80565b58b5e0b08ca227b56113092248842f2aa3a2ef8f9dd3e02bcb7",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/04.png",
+        "sha256": "3e98f22cd0e42bb9ddb2a96f1920540a575f2eba226a24622f0c594d5241235b",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/05.png",
+        "sha256": "bf1c0e6a82e9db1b12b7ad8b57744fe8ba2219e26cfee73040b8cf66dd3c4f9b",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/06.png",
+        "sha256": "ae884b7b7caaa84c115b1585e88971e66c20356974915686ab934888a2a5ff39",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/07.png",
+        "sha256": "0feaeb58535706587232142d114fd8ee50d076b66fbc25446447cef431ae30a1",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/08.png",
+        "sha256": "54d2b7ebc31026d6399083b42c840005c212422979d0436802c28d2313809234",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/00.png",
+        "sha256": "10845e4423dfc4bbacc6ca0b1890cfacec516b1aeed04d6f6d27c3abbb9d6c8f",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/01.png",
+        "sha256": "02768ecd6470bb4059047a912be640e437b92da6072a4e42210c898a58c45ec3",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/02.png",
+        "sha256": "c04e5744ccbd34630deaa9bb769c318a54450beb3760bf4c0c73d3a0f938b38c",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/03.png",
+        "sha256": "dac2a84c0571106541480a318aa13054b4287718d79937834c09309067c56f83",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/04.png",
+        "sha256": "a3f4bfea5faa756db00382f995bbb49d880c4cbb69ba647b24a99e5fa40966bc",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/05.png",
+        "sha256": "b78ba9b672b1ecfa3a7fca35c5954db61eb9d89083ade6b36abcf0c93ea33741",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/06.png",
+        "sha256": "4d52526a63b736bad67fa4020b323aa068c7d3c2091066556f40ed8e1046fd67",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/07.png",
+        "sha256": "30b915f7542bb22ca1ed86c8943ea8ff1861f79fab5f46b40a55f319a27cacc0",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/08.png",
+        "sha256": "f99326618f76733c31cfb9e21fb001c02cd83149cf1be92c88c0e3dc0956fca2",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/00.png",
+        "sha256": "10845e4423dfc4bbacc6ca0b1890cfacec516b1aeed04d6f6d27c3abbb9d6c8f",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/01.png",
+        "sha256": "8ad44a3d3300a21971367812900cbe9241afbe569342f281e7ee0748cd27cce9",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/02.png",
+        "sha256": "592942854ac5b68dffeef4db5a3c696171488129b473376a416876dc96c1a261",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/03.png",
+        "sha256": "c709a54934e3f69b2f4e7006cd02a849a4e22e5f67819d465afeaf1f6330a2d7",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/04.png",
+        "sha256": "1395a1eb4fe036a84afac0dd5754a502bc774aeb2b3859688075d30978c5b7e8",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/00.png",
+        "sha256": "10845e4423dfc4bbacc6ca0b1890cfacec516b1aeed04d6f6d27c3abbb9d6c8f",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/01.png",
+        "sha256": "d4deaae8409ac8ee9be9f55030c3e65311b5f1fc9dffeeef1dd4a009c7fe6a66",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/02.png",
+        "sha256": "e4ab6e9f4149da8493596fcabc437941095dade36a6226a4dc96efe2d3619e60",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/03.png",
+        "sha256": "77b305658a73409b5b53898986201140afdceded58f06f4d80e0bc8c4d8ce492",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/04.png",
+        "sha256": "d2cf3631c6594516df024c7be29b941e5014407df6a1a2ae7706dd03b5515c72",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "iceborn_champion",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/iceborn_champion.png",
+        "sha256": "512e02fd6ec224ba77572198124413dbfabfb4f2477042380d10fc6791911cb0",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/00.png",
+        "sha256": "ebee17d94205967e8ddf810ea256927b9ae64e8e928e78d1c2ae12f541774e7e",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/01.png",
+        "sha256": "b72d02ac573ac092c7c22949141252ff3870b82712851e919e06c3a6a88ec11e",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/02.png",
+        "sha256": "560362d3d838e42c58c13996b261a66eea90b2e020e31a0e1fd0df51b2c6d18d",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/03.png",
+        "sha256": "a6067fc2b5c6cb567b4c986d3003751e2dbc81a20d771306a4b030c77f65014b",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/04.png",
+        "sha256": "77cb985f24dcfbeea73ac0114dd8c0680f4f87c66e03b0a0d21d4986498fb402",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/05.png",
+        "sha256": "fa970afa85949f0af14905d8ec51be1b1ab2c22cbba7c1ba1fa7fea657f37658",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/06.png",
+        "sha256": "9a41d7379d0f173bfeb1ce3aeeb7ee4e54c6a8910eda4d1eb485622c3fcb7aa4",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/07.png",
+        "sha256": "6298e3c030b42cd1b225e1281550c18cfe8cf49e007fb5b1aee693e2b40e2e98",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/08.png",
+        "sha256": "5608aafae0fef1ef598aa790752b099479ba3ade8fb7fd5aa56043a1f3c48756",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/00.png",
+        "sha256": "ebee17d94205967e8ddf810ea256927b9ae64e8e928e78d1c2ae12f541774e7e",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/01.png",
+        "sha256": "3cf7ce3893783f1e8783e6d9e770a4f485a4d7e7baed9e067e4350d34c54b9a6",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/02.png",
+        "sha256": "c27c2f874c6f5ff4d888d584c52936820858ad48bdb1e53f376a72447f88fb3f",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/03.png",
+        "sha256": "d7d5f5111ead4bbd91c193d94f5d4fd84c4ce659b6858ab74579d8a1083dd400",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/04.png",
+        "sha256": "9f348adbd63926f0e8f97a61015f286c3a45adb4ea21e714117585133c62064d",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/06.png",
+        "sha256": "cf3a228e5eeb5b0e06310eec1da3d00c864809543937db2e35f95a2359ece31e",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/08.png",
+        "sha256": "37d42c04c5d95749356d5de36f5d564b5e3f66a0321656098378f6a92db41c1d",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/00.png",
+        "sha256": "ebee17d94205967e8ddf810ea256927b9ae64e8e928e78d1c2ae12f541774e7e",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/01.png",
+        "sha256": "00f895e395d5e2adbeda1bb53d0c36880474839521a79fd81f5b6fe58f149240",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/02.png",
+        "sha256": "e42e8cba9b90743d2f49afb51a3524b0524f6070772cebc57265a8895662fab2",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/03.png",
+        "sha256": "0e849dae2e38d59c89472d4ed0d7356d63997b9fb6989cfa75b7801df39873ed",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/04.png",
+        "sha256": "fef44085362825b836384f5ba7bafdaed9aa5527b85722708f7d5f31affe96fa",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/05.png",
+        "sha256": "e4dc5f62cb8708ab57e56f709033511e11a811dca969c816c0b6697558d2c2fb",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/06.png",
+        "sha256": "10167f87e9a9a99d802eb330eb0239f9377c2e7ef30407da8658ff9eb89787ea",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/07.png",
+        "sha256": "c5a818f82ab461bc0e06b2319269f4d213365d07d73af9b915581ed880d164c8",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/08.png",
+        "sha256": "518a1c4241f075fdc6c3546ffd4377538f343463c453d0560764193d36ef4bd2",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/00.png",
+        "sha256": "ebee17d94205967e8ddf810ea256927b9ae64e8e928e78d1c2ae12f541774e7e",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/01.png",
+        "sha256": "56bf34c550cde4e9b7570e75a815073007961ff2657f80027098abe8e70116c2",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/02.png",
+        "sha256": "aeb40017313160bc051d6cf4ea09558903c42023efc12991fc5e3952a181ed67",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/03.png",
+        "sha256": "ee1c9ec7c9e57ded464d29e0b53dd1f8d15e8892a36db6e47ca1f8892eb09dfb",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/04.png",
+        "sha256": "58e330fbd10d8ecf16b3a638214e9164876160884f16be0d0caae7ff48177377",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/00.png",
+        "sha256": "ebee17d94205967e8ddf810ea256927b9ae64e8e928e78d1c2ae12f541774e7e",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/01.png",
+        "sha256": "9371707d6da49e1cb967ec355e963b1ef8ef6ab1c9e734b267f250301885e47d",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/02.png",
+        "sha256": "97c61fbbc746283334a254abff141ae6390ec99e8f0196c6e068b5a853ba3c91",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/03.png",
+        "sha256": "dccbb99f07350dd403051cc5658d3cc91c663f08ffae03c6207ad9405ee1c38a",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/04.png",
+        "sha256": "a71e75c4c34cb87b05be617f288c8fad1c53f119cf55f111f490edf43d57b8ab",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/00.png",
+        "sha256": "37d42c04c5d95749356d5de36f5d564b5e3f66a0321656098378f6a92db41c1d",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/01.png",
+        "sha256": "9333129ddd23706e4c310e090c38c469ff79c0bc7297b9d052ac2ce05f4bf0a6",
+        "offset": [
+          640,
+          416
+        ]
+      },
+      {
+        "index": 38,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/02.png",
+        "sha256": "e193a99e02f43ead040516c9622a5ebbbb698c5bf48124e0d8654c152937e236",
+        "offset": [
+          768,
+          416
+        ]
+      },
+      {
+        "index": 39,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/03.png",
+        "sha256": "41a331f9d6edcd5df48fe700cd2df6fd21a33fc88d0e0a976e9d0e9d4c3ca2cd",
+        "offset": [
+          896,
+          416
+        ]
+      },
+      {
+        "index": 40,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/04.png",
+        "sha256": "6916ce817be331cfee567749bfece3cf7f7a947d3f105150eac0cf263882f0c3",
+        "offset": [
+          0,
+          520
+        ]
+      },
+      {
+        "index": 41,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/05.png",
+        "sha256": "405305630ec51ae5483a826a0f29a82290ef7f8d6c490c679444b365ac8fca37",
+        "offset": [
+          128,
+          520
+        ]
+      },
+      {
+        "index": 42,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/06.png",
+        "sha256": "06ea70895d0a1eb972a92f0afe42cb2e46a2e4794b0d19a577cc5d6773227d5b",
+        "offset": [
+          256,
+          520
+        ]
+      },
+      {
+        "index": 43,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/07.png",
+        "sha256": "1a6a6f7f798340a659085480ef3dda784d7836f88238cdd978b5bf926ccf3971",
+        "offset": [
+          384,
+          520
+        ]
+      },
+      {
+        "index": 44,
+        "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/08.png",
+        "sha256": "e20bddd24b7c878d9e49a551303bcbad2dd7a2cd412a83299b8fe19d16cc0253",
+        "offset": [
+          512,
+          520
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "iceborn_raider",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/iceborn_raider.png",
+        "sha256": "c0f1e2c7094d4a759723550394e41c5598aa7e6daacc160cd7415f0bda17d0e2",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/00.png",
+        "sha256": "42d801388d94ce8e46e443c0bee33fb024abc375bd415f8f31ff7e4e796efd44",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/01.png",
+        "sha256": "b9de5bc2cc937403846fb3d02bab2e2149d0e3d8e2834c46046dad7bf794b616",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/02.png",
+        "sha256": "779f6034a53a0b63067fcf2e582f36981c568cc859d2c2218a374d94b8c2626e",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/03.png",
+        "sha256": "7034cd5969eae5469707a13ec89a418975b6923b469a5ca183cad36da40aa56f",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/04.png",
+        "sha256": "78c45523560d45ebe5d91f23cd413467770912c982ddb47b127c86c37e4819ed",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/05.png",
+        "sha256": "52d0e8862bcaf234672c45c81d66bb349624f6baf3ac105c32669eb5e0fe29d3",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/06.png",
+        "sha256": "8a057a733a28109861cd58a988fdecb8e9e5a9ab0b1a81e6de419807fb022f59",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/07.png",
+        "sha256": "0d9403473486edca2463433050c249fdc0658c609f9151a26dc35b803ed257f6",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/08.png",
+        "sha256": "14592693fc784824581b92e498a0bcf92cc7bf66397f47856dc1c02a755f4840",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/00.png",
+        "sha256": "42d801388d94ce8e46e443c0bee33fb024abc375bd415f8f31ff7e4e796efd44",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/01.png",
+        "sha256": "cc0bcc0eefec59c187ea3348aaac1147bedca53cb3512796cbedfcdd2c86c844",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/02.png",
+        "sha256": "992c6ac26636cad69a0dcd2f8cbc17c8b1ffb821daa5e6bc83d2c283f3001bc8",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/03.png",
+        "sha256": "f48103eee7dfdcb49497203a97ce1de9b154c4184da2c3f49df038693238750d",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/04.png",
+        "sha256": "aa2cee954c680cb83ca3206dd94891c77cd13facbf331cc3a830f26e339a51f3",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/05.png",
+        "sha256": "d55a280d904dc6c8e12eccd5567c30f3816d34f80b9d20a6944fb05fde18c1ce",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/06.png",
+        "sha256": "fee117a7c02d90922a0632235e97937e51a49861a91ee17f6827acee5786df20",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/07.png",
+        "sha256": "52d465d49a96db4465e4d2b6344e096702cc76e169b67b326de1a6e9be4b60e7",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/08.png",
+        "sha256": "edb81395aac9929845d9b13355344d3f7e2bf8eaded845dde2b8673d2543435b",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/00.png",
+        "sha256": "42d801388d94ce8e46e443c0bee33fb024abc375bd415f8f31ff7e4e796efd44",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/01.png",
+        "sha256": "c3e70c8188c587ebe32312fdd0a8afb8d93f0e5f5edb9b051ff3a03b72f382b6",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/02.png",
+        "sha256": "787467158452fbdd8f0a06ee81912a9efd7729c36ee12414d623dec30155426c",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/03.png",
+        "sha256": "6095f09046eeb8cd31121f0e7f7bbccf799e894c552a66ae7d3d88ea9e7978b8",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/04.png",
+        "sha256": "926ab9d4e087031e6b5e10c4c913198e20b291a2c690e757a7f4d6845dc95077",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/00.png",
+        "sha256": "42d801388d94ce8e46e443c0bee33fb024abc375bd415f8f31ff7e4e796efd44",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/01.png",
+        "sha256": "ec7f9b124bc3193a6c3394f3b7ec833ef9b40d8f39f0d577954b66d6b60831eb",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/02.png",
+        "sha256": "e4ce6a1c77de960d7f45b34eb50f7b37db72f42e85ff8d934300a70332ffc5d8",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/03.png",
+        "sha256": "b8e7f9703f32f0a6084c75ef280c95f2c72f4efb7781ba6ee71eee959d16fd16",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/04.png",
+        "sha256": "151dbe8002ef2bff4349b1de1e7b3908b67361a0e85e46ec60585b89f853b1e0",
+        "offset": [
+          512,
+          312
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "jarl_haldra",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/jarl_haldra.png",
+        "sha256": "7f350154032ba080f1b28917f89fbabd9715aa1426a1d81392b3a574befe4d3e",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/00.png",
+        "sha256": "8b6716c147a1c73b35e50ddc51e1f26b23e5eb447acfadf6d3a4977d5a8d01dc",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/01.png",
+        "sha256": "6be3578f3ad6496898764f5091ca0b147edf010745a372416b1d300c059be734",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/02.png",
+        "sha256": "ba547d7d848608b4883c778ea8b4e3952b24a4b15c6d4720d409f492b76404d1",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/03.png",
+        "sha256": "0926bd49ac31eb807df0b44ac51484c2a0e5fd5ee43a64eae9ae938d7996dad2",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/04.png",
+        "sha256": "c92716bb50f5e61324357d676bc1ff2be805eb8bbffb9c7eb2aa73e699f3cd86",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/05.png",
+        "sha256": "51b66696c5226510394d413309de195f1adb898ce5e6205c29fbbe97bfe6997b",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/06.png",
+        "sha256": "a5c381094ead023b10c5b436b6716def456d1f21ae83f97533c531367ec1eb2d",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/07.png",
+        "sha256": "9d5686957b867b155a63fe2d6cdee729245a6caed7bdac93870fbba85011ea87",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/08.png",
+        "sha256": "b43f57f2c4a24dd43faba969896e6999713ef1cdde90041d1279f30976b8b302",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/00.png",
+        "sha256": "8b6716c147a1c73b35e50ddc51e1f26b23e5eb447acfadf6d3a4977d5a8d01dc",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/01.png",
+        "sha256": "810b75be794ca4a2b6e4183f10478611ca3a2affa5f84d6d56cf1e3f0db083eb",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/02.png",
+        "sha256": "6c3681b98b55247e754d8ca679b8f5cfd2c07cefb2dee84a23c85ba1aaba2009",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/03.png",
+        "sha256": "d98e2a908b026a3ee678ad3fb2799d96502f63e847ec8c44b7e9668529c37ab7",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/04.png",
+        "sha256": "c68776261562826edef8bea4f6696c148241ceb4b2079d0f2f2556f4692598ee",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/06.png",
+        "sha256": "6f8ab9f033b63cafa9be6339a99338e861fdec7b73ee0760ad406982cfb08e7c",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/08.png",
+        "sha256": "116da7f996d3192d56b35cc1182eea4eae0f8377e623f7cddc5ed89d11e720fc",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/00.png",
+        "sha256": "8b6716c147a1c73b35e50ddc51e1f26b23e5eb447acfadf6d3a4977d5a8d01dc",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/01.png",
+        "sha256": "f5dc4879e35a71f9dcfcaaffe1ccbb8a5226f68ac6bb0d6c730e1196185f6465",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/02.png",
+        "sha256": "39923a30fa31c37cedad18b8ad03ab9f7f6219904ec5ec289eab2f9649fdf208",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/03.png",
+        "sha256": "dfcc40a432fca012d9cad3f2b45551eff7be9bf1130bc51f514e51e24b9bb0f2",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/04.png",
+        "sha256": "eb1a4935b43fab647fa24f0ca1f683b0247e8def4a1b97feabf9365a5bf0a82f",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/05.png",
+        "sha256": "f6f33950540ca788282b5c4e97d25531729f7f1649edd53ad030290585037d74",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/06.png",
+        "sha256": "d42ff551ad4ecf43b69c80b9b4d0299a01fc5e8fdcddc55ab2bf00e59dfb7582",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/07.png",
+        "sha256": "5e5154fef6e478ff6fb4352a871c7786a84acd8f69f628d583c15ff9787768b5",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/08.png",
+        "sha256": "5badcc7e40782fc3f68d1427a40b308239d84522961bd63453a734c45f8336a1",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/00.png",
+        "sha256": "8b6716c147a1c73b35e50ddc51e1f26b23e5eb447acfadf6d3a4977d5a8d01dc",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/01.png",
+        "sha256": "73e99fee515bb6f1fa391960a59029eb63157a9a02f80423eb5436bf0af414ea",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/02.png",
+        "sha256": "6433858805bc2022ef72b6cb4a06f3eec22053c57cfb94fe0175f4fab8055a82",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/03.png",
+        "sha256": "963833bcbbc4598b5bffe8c04313f48bbb63838e68e462ba84012488128c4a19",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/04.png",
+        "sha256": "68fae6a349e6d8a7023629dd348fd8ddf7b7c1681dcb8b726be69284d7c0475b",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/00.png",
+        "sha256": "8b6716c147a1c73b35e50ddc51e1f26b23e5eb447acfadf6d3a4977d5a8d01dc",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/01.png",
+        "sha256": "ba039a531ca2d4ef7764e891640f6a2d60b1054eec56b6d0c571f6963ae1c36d",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/02.png",
+        "sha256": "052eb28e827fa5a4d0f6e2af80d1240f3c8a4b6c1a151d3bfd1134ee29ebf06b",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/03.png",
+        "sha256": "cd8720cc0b4db3cd4d00f8089b1e46cd49129d49a3eaa89e55c92cec97d7a751",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/04.png",
+        "sha256": "c9cfabd024eb50ccfbc34a4d8b33565ba9eada9727ced197b2e4ceb9c52fd86a",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/00.png",
+        "sha256": "116da7f996d3192d56b35cc1182eea4eae0f8377e623f7cddc5ed89d11e720fc",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/01.png",
+        "sha256": "3accec8e5a6eaac02574f11fdbf5948c36be2971f8e22e291ccf4a3da5485519",
+        "offset": [
+          640,
+          416
+        ]
+      },
+      {
+        "index": 38,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/02.png",
+        "sha256": "ad3cdb54fb06b153ea865afdd7924620250245509cece0c486f6562d83100977",
+        "offset": [
+          768,
+          416
+        ]
+      },
+      {
+        "index": 39,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/03.png",
+        "sha256": "5dd3e6213d58248e566ac44fcc0c10ee32360e8483972dac9b8c73aad07a22e3",
+        "offset": [
+          896,
+          416
+        ]
+      },
+      {
+        "index": 40,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/04.png",
+        "sha256": "451b52f9e497e4b8b14ccdf9240cc00aecd0533db5e79a360e089cc221555942",
+        "offset": [
+          0,
+          520
+        ]
+      },
+      {
+        "index": 41,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/05.png",
+        "sha256": "df2adea5ed5f63a4b99323f31148a0af949f01e2e13877a8b10fc186e2fc980c",
+        "offset": [
+          128,
+          520
+        ]
+      },
+      {
+        "index": 42,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/06.png",
+        "sha256": "707868e5e8cee4144cf0bd60f745dbb3c772d83b92c0a7e1f87ad3e750af3731",
+        "offset": [
+          256,
+          520
+        ]
+      },
+      {
+        "index": 43,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/07.png",
+        "sha256": "3ae423355d213f33c6989ad6ab13f2fac6f250e3d554e56c204501ca15dcd2fc",
+        "offset": [
+          384,
+          520
+        ]
+      },
+      {
+        "index": 44,
+        "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/08.png",
+        "sha256": "a8377db9cd01e7e8d26839b2fca68643e294ead64eac6e7e115f7fcbb13aeaf3",
+        "offset": [
+          512,
+          520
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "rime_skald",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/rime_skald.png",
+        "sha256": "eba5cc80aea4c3f8ee1a0b391dafc3f536562e0b753174cfe3ef22d2ad884090",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/00.png",
+        "sha256": "f753b1d03e26531f98971112e449344cf926b8b5b009f839bda18142fe389bbd",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/01.png",
+        "sha256": "74c0c85d11b2f5bdac6a67a4d0e141533b3501a6ec03750161850e3d11b94a45",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/02.png",
+        "sha256": "a00525d24204d38e01dc544ccebeb7c14f7257be66e07b01bd53dc9912d90093",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/03.png",
+        "sha256": "830a0f6d979f2fb81cdc0a2f195a8fcec178ff5fe80fc3e0e58c4a75f355b1c0",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/04.png",
+        "sha256": "56fb6d5093a72534c06b25fbe38aa78e10b9cd252e05918f53a54308f4694ad5",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/05.png",
+        "sha256": "299276a22f619509b757d112ae5a768885b51720c45d44fb1ef5e68f1efd18c2",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/06.png",
+        "sha256": "8b7e1e8fdad23937a6d804947a27d7d5aabefed81f68f5b047839270a4f72c95",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/07.png",
+        "sha256": "3b767696b31977e46a64ca8a973a1d8517844d6d4eea4a1a1dabfe8e59419260",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/08.png",
+        "sha256": "bdac4d6759d65cfbde6716a8696ce689bc68d6da7c9d50433dd7a89a241f42bb",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/00.png",
+        "sha256": "f753b1d03e26531f98971112e449344cf926b8b5b009f839bda18142fe389bbd",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/01.png",
+        "sha256": "a16afa0df4579c962fef970eb637524818872d551c0ef9a505dbb265a0d88d01",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/02.png",
+        "sha256": "8bd5b7149a189aab7cb6dfd1db733ab1a88f77686a2369b58b306156d96c60aa",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/03.png",
+        "sha256": "26bd2292eb325c74124efdd8b27680948755373be8248f855292274c69212e2c",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/04.png",
+        "sha256": "f3eb3dfb8ad2ec4a494e0a14203476146f7bfb81902d5b19f47c37d19b31c278",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/05.png",
+        "sha256": "6a210b83dd827fae8912021a3ac07ac8ddf1dcbbf53bb44ef3e600dd88910c5f",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/06.png",
+        "sha256": "2fdca71f7738a37aedc5484d14d1d2e00a9c4643d3df489590cc64932cd0ca88",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/07.png",
+        "sha256": "8ab38801235c0d85d795341905174a4ea48ae40de4b9953c8b3ae498c07cdc54",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/08.png",
+        "sha256": "d8e4d0237444793c6dde110f2ac7880b8c89db3bc8de97eb72edd0271db4ce01",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/00.png",
+        "sha256": "f753b1d03e26531f98971112e449344cf926b8b5b009f839bda18142fe389bbd",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/01.png",
+        "sha256": "d9955636fd5b1b6884b21a7c6c8666badd3eff14a5c42000d4ae4a2f28afdc65",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/02.png",
+        "sha256": "e9f3d21c3970f7e6a82837bc6292e1fc893d671bcc4631581fa9c6563280386c",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/03.png",
+        "sha256": "d23fb9789d26f08b83a22f5f6154a4bfd0b48bd7603407e622cbe048947d74ed",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/04.png",
+        "sha256": "26398677cf1000b738c67e0d3478a97fa5fdf70e15c2a759138d61f663300bdc",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/05.png",
+        "sha256": "39451e9bf22318360a36914638cdc906777b2fddb5cf28c41e50e3c3d050256a",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/06.png",
+        "sha256": "2e62e0afb41409154d1555735fcc0658320658f6d18c3b839b00272dde43fdaf",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/07.png",
+        "sha256": "87b1217cbc3e62a18e645b89502e0c03f5bfd08ba46478a15853758fedad0c62",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/08.png",
+        "sha256": "314d14d5b811e00a0c01bad010bca615f1f4e0ce970647d8a2baa58916028734",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/00.png",
+        "sha256": "f753b1d03e26531f98971112e449344cf926b8b5b009f839bda18142fe389bbd",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/01.png",
+        "sha256": "3afa4338642eb3cf5197ba5d2ba23945d5851df69f37762e524a210acda5074c",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/02.png",
+        "sha256": "e246e3b82f0a365e4a76b0f2e5a4cac7167723f068294e1a554dcbec2c7dcac9",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/03.png",
+        "sha256": "5d0f154161ecf533916a259347551528561e91d0b3d5b2b38168eee8bce1c1d5",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/04.png",
+        "sha256": "7433ddf347bb5f6c84007b87be36b0e0a82f587bebf6e516ccb3830cca23687e",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/00.png",
+        "sha256": "f753b1d03e26531f98971112e449344cf926b8b5b009f839bda18142fe389bbd",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/01.png",
+        "sha256": "ce4b4994963585a55ae261f0133e949fe2081cf955a5246eb0fd78a8c94d9fb9",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/02.png",
+        "sha256": "d3e91ea4ce0d99729e43ff793974d8018208984f62f0180958d2395b38ce59e8",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/03.png",
+        "sha256": "afee8654ab8aaa559e0fb0d7edaae49815c3548fb78d37a09772cbc6e6f8ab32",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/04.png",
+        "sha256": "463f7f8a9c5374eab142565957a78a1371dc3df0330d7920354d0681ee67f1d1",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "rimecarver",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/rimecarver.png",
+        "sha256": "3be6afbf2fc12af5ff3b6e7b82e03d992972664bb89477eabe9f8827290b4f56",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/00.png",
+        "sha256": "1b112946a656bf24d0628e8f5a13d118f88a5e0dcea3843580f306dfafc8f272",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/01.png",
+        "sha256": "12c4f0c704e4f88fb2362eeab90c7459fc9b80d62301b7366c02d66e4ce9a29b",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/02.png",
+        "sha256": "502008124103da1057d2d984e753671f07f6f097a7b6b3004f8fc93f2f4e1337",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/03.png",
+        "sha256": "5170f737d3b27b28a8eb837c4a037f4aecd18e77d803db24fb4f451851e28845",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/04.png",
+        "sha256": "83cff79e97ec48006d3364010f1dae8f1ea4d1d6417053b79477aa7bde3ec31b",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/05.png",
+        "sha256": "d939632f96e50685e04f41a9e82731a5f075399e4bdbc47280639fab43ef66c0",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/06.png",
+        "sha256": "471504a5c6002a56bc40939331df2a834ef29e8fd6d1045c52bdac59b7b22cd2",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/07.png",
+        "sha256": "f7635c47ea36631da603d6b3f0336075fc152b319adc426f6bb922ecff141528",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Ability/palette/08.png",
+        "sha256": "ba48e099303a402ceb93d23579ae58545c23c6a1998c768c94722825a12bf62d",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/00.png",
+        "sha256": "1b112946a656bf24d0628e8f5a13d118f88a5e0dcea3843580f306dfafc8f272",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/01.png",
+        "sha256": "6d510dd7df5162e9b476592ff813a870b357b462eae07882841ad0167b52fbea",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/02.png",
+        "sha256": "48388bb02f107d82d5095be4ffbd63c7a7c619fdaf820833acac5988255d52fb",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/03.png",
+        "sha256": "b7ed191dc24ded352ae847d509a10519c9f8bbe2cd1f390f43663e6c532fd885",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/04.png",
+        "sha256": "03bc201850ec8b2825d9e40f20fd462a83d3ddccab310422f87331282b99a20c",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/05.png",
+        "sha256": "f652788f26da411ecf7e8e943c89fb9d416e6734d81b529abd52d6166479aafe",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/06.png",
+        "sha256": "e0393b0fa3bd7e34b3a45ad6ccb3a772d1e13a4c97ae3c2196ee5c51b857114e",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/07.png",
+        "sha256": "22c63969b3a3bae311458c40bf7161cb0ca1a012b6b2ef1710c348adb9584798",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/rimecarver/AutoAttack/palette/08.png",
+        "sha256": "f47da31e679415a54ef1aea4ec216925d68ec75654f63cdc106cd25aecd94abb",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/00.png",
+        "sha256": "1b112946a656bf24d0628e8f5a13d118f88a5e0dcea3843580f306dfafc8f272",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/01.png",
+        "sha256": "3b571fa31617aa334ebaa228d4742ad4565d98a0b029094b7ab947a94a36c1af",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/02.png",
+        "sha256": "7f66118118db238605b11794721cd75aa0a9ed6ee168bd959f73bfcf1ba2e29e",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/03.png",
+        "sha256": "9fd411939e3ab30c19bdcb17ad3a88f180d82a78223bc48e93c7a1e483eb2f6c",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/04.png",
+        "sha256": "9e569120100ef25cb0116a44bc96a0d6bbccdf2ca6a9dd8279b63c1d6fc1a9c3",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/05.png",
+        "sha256": "e77211ab4f66e3003329e03ced3c0d96bc8be99550c4a1cb4229ffdc4551d0ff",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/06.png",
+        "sha256": "ded73189b646996644af056336f19a564091607daac69be2cf5846af23e68510",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/07.png",
+        "sha256": "d7572eeb3e1d77969d387c6e42d057ded2e95ea22b3966a48005f3e04e0cc508",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Death/palette/08.png",
+        "sha256": "ff545cca4ad0df2cd2485f34b1292eb14636e954be4e94670dd675d4ed53be38",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Hit/palette/00.png",
+        "sha256": "1b112946a656bf24d0628e8f5a13d118f88a5e0dcea3843580f306dfafc8f272",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Hit/palette/01.png",
+        "sha256": "5daa2e6e6c5ba27f747321509ee0fcebbf73612e0fe88539680ff2a3385d79b0",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Hit/palette/02.png",
+        "sha256": "1d6a4d29bddebceb32d6e450cc4410fdecc7b332cd31b5243f845ac6fb4a95f9",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Hit/palette/03.png",
+        "sha256": "9d0b3cc7e9f4bcec5d230a3cd8db9fd95dbca899191f7039798426968e989ded",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Hit/palette/04.png",
+        "sha256": "4ead2fbe0fb612052d24b379920861c1de8dbcf14ae6e003882224d95055fe24",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Idle/palette/00.png",
+        "sha256": "1b112946a656bf24d0628e8f5a13d118f88a5e0dcea3843580f306dfafc8f272",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Idle/palette/01.png",
+        "sha256": "4d54b944b06f6d71f051983f1d48b1b912d326f74dc81aeb27c24e02398654f8",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Idle/palette/02.png",
+        "sha256": "c4bdaec0b7b64fdc35baae14dc954ef5abf9884978f135e1a692ff44813d9d2e",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Idle/palette/03.png",
+        "sha256": "669fd610571fa674f2a62f8472d00f0ba5569f9cbfdba949cd0127a7b5500db5",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/rimecarver/Idle/palette/04.png",
+        "sha256": "43ab43f75333d866c27f711a17edc034af9a2b318a042405631e19d2201914eb",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "actor": "shieldmaiden",
+    "items": [
+      {
+        "index": 0,
+        "path": "Assets/_Game/Art/Frostwake/shieldmaiden.png",
+        "sha256": "d50e4dfd54cac12950ae88535e88a3cc55b603bf3fd67719d8409e3a3bf1aef0",
+        "offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "index": 1,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/00.png",
+        "sha256": "bbbce568e58b75ef234c6fe87cd8c1c830f55f0064b865b2fcecf864069571fe",
+        "offset": [
+          128,
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/01.png",
+        "sha256": "5ec13499d7effe6c56041fe7d1af091a96c9a20be6606ef9eedd3108810f4c74",
+        "offset": [
+          256,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/02.png",
+        "sha256": "f5ef713f932fd8ab6341f9d6eb5769919b1bd0c3b8b8607ba41d5ee8437f4173",
+        "offset": [
+          384,
+          0
+        ]
+      },
+      {
+        "index": 4,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/03.png",
+        "sha256": "e62bf834e9fbcd74ce98a910dd9d0e43a3a86ed17110f94fb5390d3627abd17e",
+        "offset": [
+          512,
+          0
+        ]
+      },
+      {
+        "index": 5,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/04.png",
+        "sha256": "5780f9d1852b5f6318ad51f0c86a14d27a8b71785503b7b4ba1e2ca01eb38d8e",
+        "offset": [
+          640,
+          0
+        ]
+      },
+      {
+        "index": 6,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/05.png",
+        "sha256": "df726dbcaf3e3e693c0407b62beded6b7e023e8a0b0d53ea6220869c7a971e46",
+        "offset": [
+          768,
+          0
+        ]
+      },
+      {
+        "index": 7,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/06.png",
+        "sha256": "1956aceedc273578bd54de32b7680eb2d82f10a57795ac8b8d117a1cf7b7ee33",
+        "offset": [
+          896,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/07.png",
+        "sha256": "3596334a37ec8ee6ada8fbc20025049e5ed008215dc0faebac6e75dea0449b20",
+        "offset": [
+          0,
+          104
+        ]
+      },
+      {
+        "index": 9,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Ability/palette/08.png",
+        "sha256": "3789278a3e2055d8d4dc1490612972ab84be2c0ce0a25ba24f144f9bda688d6d",
+        "offset": [
+          128,
+          104
+        ]
+      },
+      {
+        "index": 10,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/00.png",
+        "sha256": "bbbce568e58b75ef234c6fe87cd8c1c830f55f0064b865b2fcecf864069571fe",
+        "offset": [
+          256,
+          104
+        ]
+      },
+      {
+        "index": 11,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/01.png",
+        "sha256": "9a72a93c5b5d97f0e30ba45e451c5010b2bd170e8889ba571fda5d1461b1f261",
+        "offset": [
+          384,
+          104
+        ]
+      },
+      {
+        "index": 12,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/02.png",
+        "sha256": "e1a0a7facbc6194d563419b7a3f7dd60860c95430049805db6ac386dac93db9a",
+        "offset": [
+          512,
+          104
+        ]
+      },
+      {
+        "index": 13,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/03.png",
+        "sha256": "db174f36e976fe1fee58847239418ebd55dc92a3942654baa8e7d40b94c1a92c",
+        "offset": [
+          640,
+          104
+        ]
+      },
+      {
+        "index": 14,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/04.png",
+        "sha256": "1337c6d8e62c14742aa254e3e352ee22dbefd719616cfeab0609d4c6d6a651af",
+        "offset": [
+          768,
+          104
+        ]
+      },
+      {
+        "index": 15,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/05.png",
+        "sha256": "3384dd0b2e51360b9e0f9ed3c133b0d80384a9b5a9624bc7f7083f6add0c68b7",
+        "offset": [
+          896,
+          104
+        ]
+      },
+      {
+        "index": 16,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/06.png",
+        "sha256": "e30e974b3bc3f84f8acb94d0fbe2efc654f43328403b8c19ec378a4e9f1e8c74",
+        "offset": [
+          0,
+          208
+        ]
+      },
+      {
+        "index": 17,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/07.png",
+        "sha256": "31d80fe5473de5eb01938ce2eb22b9b73a2f6dbde64fd215e1905e0b74ac0df5",
+        "offset": [
+          128,
+          208
+        ]
+      },
+      {
+        "index": 18,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/AutoAttack/palette/08.png",
+        "sha256": "6064e2be9da41f6dbb221c27c2effb9660e8ecba194b4b8baefbf808d55f2a5b",
+        "offset": [
+          256,
+          208
+        ]
+      },
+      {
+        "index": 19,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/00.png",
+        "sha256": "bbbce568e58b75ef234c6fe87cd8c1c830f55f0064b865b2fcecf864069571fe",
+        "offset": [
+          384,
+          208
+        ]
+      },
+      {
+        "index": 20,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/01.png",
+        "sha256": "0eea10341594b41cda3b2cab32840cc3151029bd2a83e5dec90e3f5123f4aba3",
+        "offset": [
+          512,
+          208
+        ]
+      },
+      {
+        "index": 21,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/02.png",
+        "sha256": "ec48b3f01583fdc9b9591245426dad1f76ba65d80c70ba51c2e7ed9a4ad07a68",
+        "offset": [
+          640,
+          208
+        ]
+      },
+      {
+        "index": 22,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/03.png",
+        "sha256": "38d348013c15da6228a5675434245a4dc85f8aabde408e9322b7e954bff61822",
+        "offset": [
+          768,
+          208
+        ]
+      },
+      {
+        "index": 23,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/04.png",
+        "sha256": "966011a5cc3981b1e5aaf6bd12fa8d9850ad06dd54d6c8292524da164b1d4822",
+        "offset": [
+          896,
+          208
+        ]
+      },
+      {
+        "index": 24,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/05.png",
+        "sha256": "b9ccd56d6a98f9a0f1051cfefb4b0b33bfda68a0920ef486c8127ef58070c7a7",
+        "offset": [
+          0,
+          312
+        ]
+      },
+      {
+        "index": 25,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/06.png",
+        "sha256": "54c756f5cb7a1bf8bc6b08a26c83f38d4eb7f0cfe602430fa655e546ff2eb2df",
+        "offset": [
+          128,
+          312
+        ]
+      },
+      {
+        "index": 26,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/07.png",
+        "sha256": "6c593d7f0d43e73a2dbccb6fa95ce6fd8c16c02ff35827a7dc014a145ced4452",
+        "offset": [
+          256,
+          312
+        ]
+      },
+      {
+        "index": 27,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Death/palette/08.png",
+        "sha256": "815f9f2fd3e673bdf0387ad3f5d7eadc2dbd493dfc13a1ee77e71a36caa2d08b",
+        "offset": [
+          384,
+          312
+        ]
+      },
+      {
+        "index": 28,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Hit/palette/00.png",
+        "sha256": "bbbce568e58b75ef234c6fe87cd8c1c830f55f0064b865b2fcecf864069571fe",
+        "offset": [
+          512,
+          312
+        ]
+      },
+      {
+        "index": 29,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Hit/palette/01.png",
+        "sha256": "e3efcbc397e30eb065982caaf053403d50aff10fda544da4f5907b63e1fe9890",
+        "offset": [
+          640,
+          312
+        ]
+      },
+      {
+        "index": 30,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Hit/palette/02.png",
+        "sha256": "1385903e3e03e09a6cb079c21e418195a4df9be84c2a6b8fc33d783142f46778",
+        "offset": [
+          768,
+          312
+        ]
+      },
+      {
+        "index": 31,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Hit/palette/03.png",
+        "sha256": "4f8412efaeb605ec83ebe2f8f2fe768ea7a57cdb7eb7f40d04c3eccdc749f530",
+        "offset": [
+          896,
+          312
+        ]
+      },
+      {
+        "index": 32,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Hit/palette/04.png",
+        "sha256": "599772ed894066c3e6719fd6d957cf8b398516db8cbb4e01ac54a787809707ed",
+        "offset": [
+          0,
+          416
+        ]
+      },
+      {
+        "index": 33,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Idle/palette/00.png",
+        "sha256": "bbbce568e58b75ef234c6fe87cd8c1c830f55f0064b865b2fcecf864069571fe",
+        "offset": [
+          128,
+          416
+        ]
+      },
+      {
+        "index": 34,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Idle/palette/01.png",
+        "sha256": "6f18dc41ef933e2315e64bcdc07fd5022ac68663b80634618d637b92bad6fa62",
+        "offset": [
+          256,
+          416
+        ]
+      },
+      {
+        "index": 35,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Idle/palette/02.png",
+        "sha256": "f2c439fe87f75a9dbee1ea667955b9b5f15cfcecbf8e27e4e32f1ec010bd3558",
+        "offset": [
+          384,
+          416
+        ]
+      },
+      {
+        "index": 36,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Idle/palette/03.png",
+        "sha256": "9b9fe3868b9e72239b342961154f00ba7be9ee5778a3ee7852aa652be0ea57f1",
+        "offset": [
+          512,
+          416
+        ]
+      },
+      {
+        "index": 37,
+        "path": "ArtSource/Frostwake/motion/shieldmaiden/Idle/palette/04.png",
+        "sha256": "2e1ef4388d11fe937e1789da629db51db5e3dabd37a7e41fa2e00e3f39e5d8ef",
+        "offset": [
+          640,
+          416
+        ]
+      }
+    ]
+  }
+]

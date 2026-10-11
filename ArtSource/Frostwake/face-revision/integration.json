@@ -1,0 +1,1492 @@
+{
+  "approval": "User: Much better, I approve all of them now. Add the corrected sprites and animations to the game, validate everything and merge to main.",
+  "baseCommit": "c2869ddc09f6b7a021b7dbd492ba683303a651b1",
+  "unityStills": 7,
+  "unitySheets": 43,
+  "sourceCopies": 314,
+  "preservedBindings": {
+    "Assets\\_Game\\Art\\Frostwake\\frostblade_reaver.png.meta": "7dd25f76247b5dd93981428c8a6efa09acbc668c18402a80ec5c9886fece0456",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostblade_reaver_Idle.png.meta": "faa4fad49635d197a88f2fe5db198154696ed37c234a636c2519d5df711f0cfd",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostblade_reaver_AutoAttack.png.meta": "d39e55fa59067f53f4fd7f10fb8aeddd62e79f0cb273b7da469aecfda71ae47f",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostblade_reaver_Hit.png.meta": "76cfd7cbdc78a67c0ea7112768bc832a100eb2a1cc1d2e5a61b742165d451f46",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostblade_reaver_Death.png.meta": "f62c87396f30e3b88076e16cae2a24941de2f2b7fafcb95f6c5e0be84e400e7d",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostblade_reaver_Ability.png.meta": "64155c836736ecb38b41854f60cb70c9578bfcde72df6f7e0e803741a9a3d424",
+    "Assets\\_Game\\Art\\Frostwake\\frostfang_wolf.png.meta": "d1caee423f7154be9e917dedd8c5d80e73af07a9de1523f774a3ed251a0486b9",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostfang_wolf_Idle.png.meta": "beb4872d851f487cdb0773978f7e82fa53825113509c8657ad8d25db0099e0b8",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostfang_wolf_AutoAttack.png.meta": "4d0c31ea2f50749676b06276505a6ed17a176eb384c9ab360bfd0e3a6a5dcec8",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostfang_wolf_Hit.png.meta": "d89fb67334f9dfd21a7a317eec3df3854ebaed5837fa57a3ea34fc13cbf4c79b",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\frostfang_wolf_Death.png.meta": "66a9d2a975e75180f351619b170764473bad7473e3807bf82a0de993ea93c7d8",
+    "Assets\\_Game\\Art\\Frostwake\\hearthkeeper.png.meta": "7dc4869f942e82ec5083bdbb2621a4dd9ccba0618bf49de9d82e69a45f2a5df7",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Idle.png.meta": "eab939b1c50be15aa51fff0a7eff7c9ada954d5680260397b99040becc1602fa",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_AutoAttack.png.meta": "8d8536c1c2d0be6239d57b19871b68183c6249c3091ec77ab7fcc505f283b29c",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Hit.png.meta": "c621b3c145956b8d15035c6cecad939f689b05dfcbe360cfef9a9e0b7b3bfb42",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Death.png.meta": "39cfe499889c5d89806e6eadbc510c5771465fe7cf07ff8ec57eb4bf136237c7",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Ability.png.meta": "2fb7dfd55badddee1db03fe8f975b839dc6b74c953ad2f17f22c48180dbc1981",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_ChannelStart.png.meta": "feea9dcdcf92487bc37a87f44b2e4daed0b631a4aa6592d8cf8bc1fce13995c4",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_ChannelHold.png.meta": "eefb8b34146d552a7e417afbc078d61af1d2b39ed103e5333daf954ba96d766a",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Release.png.meta": "64f9ef2c868c94b5d8d449e0fee03e3f138ef4126d01eb5415e56cdbfe4579d2",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\hearthkeeper_Interrupt.png.meta": "37af432ad719637ae494a592d67563325b4f6b41bd03f4a87e134dcf932b4954",
+    "Assets\\_Game\\Art\\Frostwake\\iceborn_champion.png.meta": "bc75d23b50ef555f2ac239e0791bae4a14bd1af8409fb72a86b36faa76336dcf",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_Idle.png.meta": "04d31023e4f1cceab856010da7dde1ca071d4c8be3a5405981b246da7e136a2c",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_AutoAttack.png.meta": "9a790892a8ce4ccf2f162e527bcd4b1dc9cf80b77a995ed9f31e336a528be827",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_Hit.png.meta": "f55cb5cf7c06437905ed1dd393a90284bc69d5cc61842c39e97580947d20c90a",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_Death.png.meta": "c267c6b6cfe1652a7df785d1ac4104fa0b95c551a95f675b86ce1de884ea025e",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_ChannelStart.png.meta": "21bb642a66ba304a495d08afcdc5d7cd9582e7dc773ad7b4dad650f94c4aa49f",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_ChannelHold.png.meta": "a372ac6fc13f2230a0051717e39b5987dddb3c5f89834b88f81fa5f47ff4a4a6",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_Interrupt.png.meta": "ef2996988b0e841dab5e37462a0fbf2cf3f52191c0dd52f0ffe3195f3ea8a188",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_champion_Release.png.meta": "2b438d974d0acc470b14800b86d51fbef6bc2df934e52de386f5fb583c27f107",
+    "Assets\\_Game\\Art\\Frostwake\\iceborn_raider.png.meta": "41227db76f5d8aa9bf25881e05c645dd1ff5ceada35cb689fce0f5b34687e577",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_raider_Idle.png.meta": "c2daac9d3b6eb8b020d1def76b17f9fec35699d8689d6a37e81c82747bac8c64",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_raider_AutoAttack.png.meta": "dc6ad572cce54a87c613a6f8850f2c66d4159c02729ae3057385ad851eaf127f",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_raider_Hit.png.meta": "3aadf4b1c67e32b99ce08e586c8fa7fadc1223040e162803169965df35902499",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\iceborn_raider_Death.png.meta": "cb07c6d0a580dd119a63ef20657be3651b6d0ac70f601ba9c38f561c1bc0514f",
+    "Assets\\_Game\\Art\\Frostwake\\jarl_haldra.png.meta": "c20b61d23c18c7014d7f671af85e5acb47f4156378f58514e12264ea4324b4f3",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_Idle.png.meta": "91a6b04a191c3fb16021955781a8f624d8ea178f61562e171497fef04a4e40d1",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_AutoAttack.png.meta": "cbee39440f0738fbcb976eea80fafd56b21dafc30d5baec16945d4c9cef0bfb1",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_Hit.png.meta": "02d20e524a66afaa8aa92a6416a5e6fab7c4f3aff817ec894d4b5b14631462e0",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_Death.png.meta": "69857644e058e718e00119445b1ec9d7b8c8dae7c5ddabb5c44f244c4c00bd7d",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_ChannelStart.png.meta": "07151f3d876feeb302e5796d6e3bad84ddd973aff2b7f1deaa8297b0b396367e",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_ChannelHold.png.meta": "e988ee13e6e23098c25f8496a1f8cf6ec0b66ca7370e68655b81e5a3e3fe9d84",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_Interrupt.png.meta": "822771cdbb7bb80751ea16867bb747f643121efc828ea45349c73d67eef21481",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\jarl_haldra_Release.png.meta": "2a68c85dba99cf010d885d4d4a08597727a272867b43da12903590664c982bc6",
+    "Assets\\_Game\\Art\\Frostwake\\rime_skald.png.meta": "b7499fac36d149d7a3c5afe44af72f26545fec3eb0871c1b0073cd21143868a3",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\rime_skald_Idle.png.meta": "8e2ce5d70656903c6602b58ec774c2e342288e612b9ffa73d23778c68325ff46",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\rime_skald_AutoAttack.png.meta": "d180041efdfe6c9fced2e82ac8d5c9bcac741b72aafee802c80db6b67f75edef",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\rime_skald_Hit.png.meta": "c6a367a63c0d6920bd7eda621ca9b6aa87bc40be08bbd8c3dd52a57a81f7a13c",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\rime_skald_Death.png.meta": "130198419bd0d01af698ca51db1566eb9a71c1911c8f609a7887ea6e15eabbb1",
+    "Assets\\_Game\\Art\\Frostwake\\Motion\\rime_skald_Ability.png.meta": "da22e76019c120f0dbbf51df96b6f954908c2d9e0d848ec9cbb9f25427a81625",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver.controller": "0942036f671b693ce040ba35378ba6b69151f2b54a0c700ea65482ae92f960bc",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver.controller.meta": "cf48671ca6d60e59e5635faf957916a19d6bf2cbfc3d499c469d8c006508d295",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Ability.anim": "1864fd6e7d807bdee5ac65430e7f4f5793fd9ee05504053380639a91bea73e10",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Ability.anim.meta": "35b4c553ef264ab32d2a540cee4004ee5835bca18ae9ebde9481281e529e9a2f",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_AutoAttack.anim": "2ea0e45bc6469f7851e56377136ab737d5824497af7595b9255f5750d079b30c",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_AutoAttack.anim.meta": "c8f6585e516890507cfb51fb073eb7a47cd7d75dcd705b6d173e674f2a5eb522",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Death.anim": "ff900f90e416438a25d107bb5741131fcc44695739feb87660cda6c62ef9f95d",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Death.anim.meta": "075c1d2380510858b27d1c4e0d3b69356be234dc77a7d33fbacfb2eea7141add",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Hit.anim": "c1ee306e76a4274e043eebe45e78095a9da2dd8df03111d351ebcf4553fb0a09",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Hit.anim.meta": "788965df8c48cdb716401f301d066e6df43283cbc9c23c571d11d17ba2a24dde",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Idle.anim": "3e58b7742ba7d7c1e6c492c958fee845aaa804a8bce498b7ea5446ed117fbc7b",
+    "Assets/_Game/Animations/Frostwake/frostblade_reaver_Idle.anim.meta": "bba24d6a86f355ba8dc4490d5bdac260b4528136d50c1c97595a427915d8bec9",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf.controller": "f438defc89032208460c6ab6bb88875066b6a1b0081426e0c43b48b24f696906",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf.controller.meta": "8c8b252d7907b1afeb90c5f3798c8b5953e87adb5e1b6f6fa8a98247ed6dd7b5",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_AutoAttack.anim": "cb9df3c6a8b0de88d69683b720b3690898a8ebd985dc77b76ee60b798de771ff",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_AutoAttack.anim.meta": "f587f58750bd08e35bf884a6b172521a02e1edc9a5e18be6807d585aeda09397",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Death.anim": "659750b5f344b94e21bbfe62605e4fead30d829c0012b229f0956156c5e79e1f",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Death.anim.meta": "a5f2cc714e724c2f12521518a0576db5cb9084b398d33f5ca161be8aab9dbe23",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Hit.anim": "d7076988f6b9e03f7f9aeded339e7336da439783a29880e5af21a10af8038f1c",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Hit.anim.meta": "db274f60537760951f914f62ce2c42d4f0d1ea3edd6e251ef7f94ca602195c8f",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Idle.anim": "31f04e6a049b2f7f3a205fa419fb5181994346776e9e7c7510d44f9efc80e378",
+    "Assets/_Game/Animations/Frostwake/frostfang_wolf_Idle.anim.meta": "a478da368b2be687126c1182f53c853c0660663a6c171b47d803b4a025379b3b",
+    "Assets/_Game/Animations/Frostwake/glacier_troll.controller": "3c6e6cdd003cdecdcea8789610c9bc2612e20ccf1082b42a5fdd6047afee5850",
+    "Assets/_Game/Animations/Frostwake/glacier_troll.controller.meta": "4eee458e8d4dd3d276db31a828e6720d8462fc25abb4d8eecbbe033c461b57a4",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Ability.anim": "8aa99e5d8fe1476039339e662076371eabcef8357ffd2a595d1a69aa491ae115",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Ability.anim.meta": "669b900c379dc00f057951d38a6d3951a52180d5200219da01a611c12dbabe20",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_AutoAttack.anim": "9c16594d89ccd2352a1107052355b8a9bee1841f5b43387f21f51645ef2fb0ae",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_AutoAttack.anim.meta": "59e657b53ec3ff012e906e9a18b911ff88d9b7711e26a6be1a076105150d8ca3",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_ChannelHold.anim": "43f24eca20771c03c4ef396b478dd4095f15f8bff7ec69cf324d6dae69cf538c",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_ChannelHold.anim.meta": "119099cf8b8a2e71b3dff7f4338c932a603df10ed089a61b3096bbe2ed56ed87",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_ChannelStart.anim": "fbe0deaccd359bdf9166dcc454e3431a5a17d5b2d89127816fff720949f49957",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_ChannelStart.anim.meta": "9023fab9497db1a90c0cb05aab463717b1301a07d7551f76bea45cb0fb9de025",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Death.anim": "ec5f5b80cb58bc54a9f2c57e2451e719beef610a81a45fa9d618938193ab827c",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Death.anim.meta": "bc3ed82c032b31ea4449ebf660dcd8e16d9a1a458a08c8d9e5376bab923730ae",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Hit.anim": "9393a295934483a1c7b32f16d09e097a3b60e86ff98fa73ac16c121da3223739",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Hit.anim.meta": "61a9c1bb2b6709a3d6f191518e4450f545c32955a7cdcf833897fad2e7526d06",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Idle.anim": "dab93643d0360d17616398ad18f6b52e8b7d6a7fc711d2ba4311d8dd44f5f331",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Idle.anim.meta": "a361bbf6ebda7e778c1eef6c6d7546a0bda2a22aac3be2b6715b75c250be0a98",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Interrupt.anim": "05d52982f035abc84d165ed4c421053c05ee63105d68d6f12bcc55c93576b499",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Interrupt.anim.meta": "cc76a9ad2ec1612f2f047262d6013ff907498209eb69e1f3ce03a5fc7bc1e389",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Release.anim": "5b0241ca5e83e0675e19470ff91d9124136c152db1c02832b24271ad3b3f92e0",
+    "Assets/_Game/Animations/Frostwake/glacier_troll_Release.anim.meta": "e06c247f5a79c2988cce0bb4d823c8350be241e787b3d03512c3b8a95e8de2b3",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter.controller": "d15a7a98cc22a5d3f830fbdd3cda9583baee69ecfc9d15c97273b835056c7d66",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter.controller.meta": "14ffe6f440ad985b001e8dec384385ce90f434a0b0e4b08f9e6e2d89f66871c9",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_AutoAttack.anim": "2084acbfb11034a293b53fc6fc58fd915f71533e7ded42026aea53a318b0c510",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_AutoAttack.anim.meta": "c453c46a284e8d3dd5afc8cd47aaae5a7b01b6a1a1f027f6215dfcd20a35a4e5",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_ChannelHold.anim": "6e84a766eac721406667469bc5bef8f49afbbc35170e8b0698dfc1349bbb0f1b",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_ChannelHold.anim.meta": "aba8e887b962d0c7919b07f4c82e9bb89e7237e5b81e2ab44d08412bc276bda1",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_ChannelStart.anim": "4a421aedd58a6f4e8cec25e8443b24ee9b5d4f3b6372e73b52d2f65f3ae1ab1e",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_ChannelStart.anim.meta": "b9f5ad965a5a5721a585c1e54abc8b1d81110007cdc0919a1f2a12c391c9dfad",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Death.anim": "0a81e90c1b64e27ed7fe236ccc40332c4663a8a364f8294badd77a1da3d1f191",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Death.anim.meta": "f5edfb22df8c5f3667aa283242c8b35c8d57981d55875581ad9b4b67355a90c8",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Hit.anim": "3270ac45767dbe84da911a07e6a8378991391bf389e293feeeec9b3b12ecafaf",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Hit.anim.meta": "9c3d1bfecc1fca239467ea47a5c4c13895ca3011ca422554fb35c2b0aee439fd",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Idle.anim": "f9070e6fde70802fbf709486c5726d97fb1a601122ccaf5136f552cce10e3752",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Idle.anim.meta": "7f706733da6f56b629ffab0b057311beb8d918253db76409d86903a37e49a6af",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Interrupt.anim": "fd97d25993447a42ae1bdcd82b7bb5e77aa3aea7ee9adec6546f1c86d9719e28",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Interrupt.anim.meta": "fe763bcc5435ef4d09fdf603055281a33552dfd66d8cbfd284693ea298cb778e",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Release.anim": "63722c627168f4ce37bd3510ed049e04d33a328ddc65f02c3337884e755b4bd8",
+    "Assets/_Game/Animations/Frostwake/harpoon_hunter_Release.anim.meta": "7ea96045b473f8c2f5aefaeaa5818e82444b24453c1e9c34d6c43dd8d14c7b69",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper.controller": "671d5e9a2c83d516860fb7a975923a9884b08a21d1d3abdca251f4bb0515aaef",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper.controller.meta": "e799e5b204e41328903f1df2be3795d7524300adb85e05abf76cb57211330f03",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Ability.anim": "43480cce6edf7b0da712ec3133220a063c0352e4ffce88727fbddab9200080b0",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Ability.anim.meta": "e81312c855a7ebad3708d99244416078686f1f602654e7dbc1c5d5c73686fe46",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_AutoAttack.anim": "1d2274be9f976df182316dfeef7a16d0854557952699f13a38bbb558ed55a0ff",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_AutoAttack.anim.meta": "d33cec5576368be2e1c2dfab261f6249fafc45bfda167679f237cc1cfa66e37b",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_ChannelHold.anim": "305d274c3598738a8c7a21c43442f4abdfff99233d25fc658d30e7938163377b",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_ChannelHold.anim.meta": "6d8ff4a07e15a609e7e7e0f80fb8261a3a82eb429ad4f82522e595002e84fa20",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_ChannelStart.anim": "55f501cb2aa6fe33e1f49811312022a1ae02f23aa1323ef6f6423dbaf4d3db4c",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_ChannelStart.anim.meta": "8008e5f362a38e33eb0cbd3a47e2aa5a1cc45c279daf0b3c5ddf9c0bed916017",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Death.anim": "962bc94d2f0a3106b620d9044a20a712834bd9318dd4bc7e2756a2d42daef039",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Death.anim.meta": "34f8e13f4ba40e2e6eefb61db0e1b5d08feb3c5343566dce9b433dc75af610da",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Hit.anim": "886ec22d74a0e3fa7af6f8c0dfb53a2b44f64e64a6bffb1eeda49d142ca21010",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Hit.anim.meta": "fd51a701d7cd6b463b3fa54b660bd5cea9a709ae8c91de81e637b5026264c88b",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Idle.anim": "fc3c0459e1f3ad0026f3747bf0681735267a8b0b55110f76446c8a5c244036e1",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Idle.anim.meta": "1972418e6842308f102b4de740805d58c540bb450f7bb9953977395a85e2eb05",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Interrupt.anim": "c8ee00c6994f863e417cdfa36a8bdf42dc1cbadcdce0a2f8120cc94c9e63df21",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Interrupt.anim.meta": "391a78d707eac0033fe2aa913608784d6a947b83068f7d4456b37f1bdf913049",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Release.anim": "bd81a500e67a1efe611eb2c8885e0328143aa3c51d1f8093b59f6461070125ef",
+    "Assets/_Game/Animations/Frostwake/hearthkeeper_Release.anim.meta": "be8b379ec34b9e56329aafc89e5857c0f55ee087c6ffa23ba9fe3f220c0856f8",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion.controller": "717b22efec3d8226e054ee19d1246cc5683d430b61f5aea53eeed843f0d15d61",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion.controller.meta": "15a5b2befc2d56cfa3b691f680b86d2d08caffccf6adeb677b183bfeabaa2171",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_AutoAttack.anim": "0830cdbd4d36753b3cd3509875da9b8bbb99dcbda5dc724c77ddf3f87f8b6204",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_AutoAttack.anim.meta": "4e7982e181554cf26d00f9ea6d23f7a9cf2e8850d26fcfc57f75eda4e9d6536a",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_ChannelHold.anim": "c6be8afdf666bdac0b5c7e4c2e55f70d4983ac829246d84c9988d4551b52417f",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_ChannelHold.anim.meta": "62c438985104177b145e93f947238e4d1d7293e4d8963427bb80afb4e0c2b471",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_ChannelStart.anim": "b265849510af127c3096b1688b7627c537913c2f88bd30eb8ca1ac52ef1adb4f",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_ChannelStart.anim.meta": "0580aedece7a55cfebcf8d057dde1423359fe9130c1eb6f465ac51b6e8d62f2c",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Death.anim": "3340a0a84399388a37face18bafc67e2cc2962f285768111714e8453d2fdf559",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Death.anim.meta": "1dfd88a88286e2f73dd09388605ac83e3e647bcc2677e31003ede8d676f9d655",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Hit.anim": "d98b275c822ce7c75ed5dd2bf408126fd680821b82114069eee960526333080a",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Hit.anim.meta": "3ed0b398d78ecad807afcf72f0fd31687484e962e0070fcdea5e7215f7d0e313",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Idle.anim": "4d2f2c38e9e8c59c942545da9766eb4f800994059b96dd4e9d25a61f7a110134",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Idle.anim.meta": "e5320c3ef2189aa449855d4e4693c6a5320f8cf885f416810ec63bf859b68e82",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Interrupt.anim": "322e64d428d826ae8ef1892efb449e8c3df987308c0b4195ff43b55a5b6baa4d",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Interrupt.anim.meta": "df91e316b45d8f37a75740677cf6adc4ab1a73501ad2cee94321f04fdfdbc4cb",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Release.anim": "355643dc622898fc0a48e78021ac36b87c3ede2956a7f721c599ab8fb8de935c",
+    "Assets/_Game/Animations/Frostwake/iceborn_champion_Release.anim.meta": "0ff6ec236f3f497f75271b4e916f5cbd62b5244e0e5f84c62da7268bd8e2fb3d",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider.controller": "340f2a1664f3a851c2b4bfc3b45df749b95c287faf6778ea1469bd98826f014e",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider.controller.meta": "9147b8113d73e808b370f9082d82c93fe17e10c42733b763fe4c047efe5a71eb",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_AutoAttack.anim": "e89982ea2fc0133ec27954b650820feaff32f67603bb2732d6c72e4621da3a90",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_AutoAttack.anim.meta": "821fa8fd4ec8133b2db97dcb0a4f91d71f3e2aa586078b3a96c7390d7463ceec",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Death.anim": "7fe32c3e15a3ebfb5bf8061f33e918d4453dbcb55431235999dedc56ae1d32e9",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Death.anim.meta": "0820f44ad4ae618f99853f840f32b1cb3d98baba2b60930d0f660e19cf51fb16",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Hit.anim": "1a1b6fb96dc9b12ee0562be81f31bc4c47bb644dda473ebccee78caaf0e6b877",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Hit.anim.meta": "03b8d685610172fdec73394bd6466bd2620ddb729e053c554567c19afabe70d2",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Idle.anim": "6f4bcce4c79a4cbf05b539d4a0e1fa5459c273910411f8f08776a74947ef7aee",
+    "Assets/_Game/Animations/Frostwake/iceborn_raider_Idle.anim.meta": "dd0486a750c8f8bab8ad17556c4387c1944bb8ee39cf8cf2439e1846501913ca",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra.controller": "1a42e9af39521268e594a4dedc3f3f9203631d37d938d464e5a3ee69af6160d4",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra.controller.meta": "a7eb9e9963b74d2641588b79d3a064d5167e04cc2b59d5dd0a3b227b6cffbbea",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_AutoAttack.anim": "1c57f7ccae0e9b1b8540dcf638607c78b0515cccc7cf438646cea80b51668b48",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_AutoAttack.anim.meta": "b0d8452c719b07fb41c904e72f4ca08a28c29e11eac337299d8c53311c68428e",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_ChannelHold.anim": "7498a532818d655c44c8b60970a26241ae9fc68034be51d20665316cbfe28530",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_ChannelHold.anim.meta": "75ce9a54cf652326144a6f1d51fc0656d062ff8c94ddbd413b7d4c510950f136",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_ChannelStart.anim": "2b8e749d0dd97a02931389dec6dcb0421005db4413c46b587d6a17204ab4a9ae",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_ChannelStart.anim.meta": "af80c1e2d9f830c6c7333b4221fd68964dda6b4bb9ffdec87dbbadea01f6826a",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Death.anim": "693f5c4397f3b3a0f00d3c9d61bd64dff64b529f49e0af062c7c172599fdcde2",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Death.anim.meta": "f14cd2aa4ae36f2d84f0d3f28597344fd9cdd6692cd871a02680ef73286403a1",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Hit.anim": "68280a22349d18775b418295325031c6b6f43065e46a58544f4e3c8663d26063",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Hit.anim.meta": "8c9ae5f76f9d18e58344f13b8dc609a1f1949ebd482e82e01eee835ebfdfc438",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Idle.anim": "496365788645bc7f7943e4a3d811fc07ea9e4f1933352de4e88ba39431edcc7b",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Idle.anim.meta": "c42e65f774b909a8ef8b25cb0c4ee95030aad23f69f7578c2becad320e965b9c",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Interrupt.anim": "db18dc17e12834d89ec5af7b3d1e8810e39c8280307936b84ec0b26e24664ffe",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Interrupt.anim.meta": "ac2dcd55766f67965aae7a9628fb12c2102c76afe345a8effc922e75bb53e3a8",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Release.anim": "b49090d45768513763ffb780c8d8c4a10c5f2f315dd0aa40763b727822f67053",
+    "Assets/_Game/Animations/Frostwake/jarl_haldra_Release.anim.meta": "6caa47465b318b3c21977b28a553888c166bdc1bf771b436b8b3796ba4ca47cf",
+    "Assets/_Game/Animations/Frostwake/rimecarver.controller": "e8f026649ba26b07c4ec0dffb33b7dab1ca4ccc7dbe2876a245d24aa7f7ca064",
+    "Assets/_Game/Animations/Frostwake/rimecarver.controller.meta": "c10f0a2a601eb1f8a98794597fe979e25fc5c627c84da79662ff53151c72496e",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Ability.anim": "9421461ec54744aa8ff2edd5fb25931d5536bca3b83e7cc272f5e344cb5182db",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Ability.anim.meta": "9027e57467e96ebf446294b548a449dc7dc49049e877cd0a15d47f8a4da7b685",
+    "Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim": "e1251b12f451958a07fd106f008f6adcdc0139bf389e0259b04abf50999e3d76",
+    "Assets/_Game/Animations/Frostwake/rimecarver_AutoAttack.anim.meta": "6fc087716e0a3417b2e00a3e97fdbf7fcce8b2412ba2dea207c38c28a7cbe195",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Death.anim": "4ea3d17af4a16d5829b70f35f08b3e1514f8766c454868ac737932352288484c",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Death.anim.meta": "eb587861b81e1ee6cd747ca75712beb1fa3bf5d36bbee278f118e512c2027c94",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Hit.anim": "1a9eefedb78e71593173b4e8f110a6ecc31cabdbee439f2853ee68e7fc98fde7",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Hit.anim.meta": "6fa901dcacf0add92fd0a3cad3735aff041213e0aa4d0d4ce61a1ef31fbe17fe",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Idle.anim": "a87ceaf1fed070d30fb7b279da4c82c8003921110edafe9517ab1a8ce1e1c91b",
+    "Assets/_Game/Animations/Frostwake/rimecarver_Idle.anim.meta": "f91b83a5a3a5f5bcc5efd9286012613e031f8eebd015ec2e44dff96eb42c1a55",
+    "Assets/_Game/Animations/Frostwake/rime_skald.controller": "574a5dae5a23f9707e5d99a10c7fe349f77041c4a3bd4e9991ea4f429acee9ef",
+    "Assets/_Game/Animations/Frostwake/rime_skald.controller.meta": "4a99ab52f963d6ba052a93ecf429fb7cc5bc16e84175442c932a52e1cb049a02",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Ability.anim": "b44aa6e357f678112ce68dbc0099d75390e2f6fa272ae0df746cb057fded29e9",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Ability.anim.meta": "63efe8413468ad76f7c411484a9bfc072e33a39912b4381a94eb3f14782ba2de",
+    "Assets/_Game/Animations/Frostwake/rime_skald_AutoAttack.anim": "336907f347b0ee4052f24e7196fa05b28e254f18dac52cd0c6be97264323ba1b",
+    "Assets/_Game/Animations/Frostwake/rime_skald_AutoAttack.anim.meta": "d54f29c724acd947ce030eaed64ab1438280ef69782b87720fb5310490ca1c3f",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Death.anim": "05bf7c1984f6ccafe62fffda59408e9dad38994b2696e3a8cc6098b09c337e4f",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Death.anim.meta": "238d8cd1bb05e3eea22f3df02986236e498d0bbbcff6438ccb3b34b25aefa895",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Hit.anim": "c21d954fd2cd0c4366ad7c8f89359b0251d4bb132adb8713ec34ab3885c948ea",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Hit.anim.meta": "0e9a8cfb8ce18e8365f4a2aae6e85228a2c3b835d44e92681bbe836b315ff0d0",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Idle.anim": "f792c8d1686d2bb8f6ac9f7f76bcaa6a725a657081f357fa7c51214e13aa3d7e",
+    "Assets/_Game/Animations/Frostwake/rime_skald_Idle.anim.meta": "e261af2b470c5449af0e34172d67b2e155454eb158486d1a7659929331f469aa",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden.controller": "a151ce2ade244b6bbe4f45d41e6854f8ff5fe456c207d71ecaffa615c78b513f",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden.controller.meta": "8722890d70791afc00a704f1f7198d4586236c8d80baf319f23afa60792c9e2e",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Ability.anim": "b6313d7bc06908b9294411780cb15f7cc1958353ce995500dbeaa8ee0cbf18fb",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Ability.anim.meta": "2e3e9b66f5b44fc5e4b21f5a5414344252f057121d88543d0d31537e4cf10bb8",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_AutoAttack.anim": "93d18960262068cf108c72865760523bbbd1d5a09237f3210e548c82b8032b08",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_AutoAttack.anim.meta": "7cf89a7ea9e2011acdddac2818eae9b8228d34456c994429762c03438449a694",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Death.anim": "eec19dbe053b735e179e80f7eaa25b7c2d25c4065cf0716afbf97207544b5bc0",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Death.anim.meta": "4153fd1d71ee215046876717fa00f73c35ec214590b69b395ba136af8547aa38",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Hit.anim": "81f606e68ce7dad3131926ae08fd394c65b6be5d9d8db0072abec5e7421e14d3",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Hit.anim.meta": "5743b219c9774c8bd0715c609885eda3e777cf61e755ab649551c9a06670036c",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Idle.anim": "824b2189a96aacbe24d4ee4c8e781615406b0359dbb99293e444642312d5dbe7",
+    "Assets/_Game/Animations/Frostwake/shieldmaiden_Idle.anim.meta": "0682e69842588ab058cd99892b0242d09c5c8e01078e82c1706e2b135b80e3ed"
+  },
+  "outputs": [
+    {
+      "path": "Assets/_Game/Art/Frostwake/frostblade_reaver.png",
+      "sha256": "35c4675a85ba10e12a44057a4a6e5ead9dae152fe856ddab779b60045c9c4e88"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/frostblade_reaver.png",
+      "sha256": "35c4675a85ba10e12a44057a4a6e5ead9dae152fe856ddab779b60045c9c4e88"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/00.png",
+      "sha256": "4a2246a540e7cc8a702df90f5b413d42e68c5ec10f88ff41f34c626ed4dbdd8a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/01.png",
+      "sha256": "c6ba931c5e909058d2d3e3993b1f37881ba6f002f8f496164375d5ca956d4582"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/02.png",
+      "sha256": "4165736120dfbb5b757a7de1d7ac7cb06a37597c7c2779f1f207ce0f04a2c98a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/03.png",
+      "sha256": "28669dafb8e7267a947a2d700f08ca332466ba6c9aad7bdafb7d16fe22c9f82e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/04.png",
+      "sha256": "9ac944986e9a2717da42e9377691f95b53d376a63044ad9486205c0be84f84ad"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/05.png",
+      "sha256": "02fcac3cf5d3d73c8183ee0c980707b3444dc0a25e9e9c1cccdf2fefe0bd032f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/06.png",
+      "sha256": "3d0013d81952f55fe4c9772099d7a69fa3fa6ebd6410006b6e5ba244e4fb51f3"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/07.png",
+      "sha256": "b9035f20ace852051f039088214017e66ff7beb0e6ad0bb8865c09b3c12ddbe5"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Ability/palette/08.png",
+      "sha256": "fe8484aa895e0f98db9c24d90d4ee63a0512608996389adcfff838888b6fb369"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/00.png",
+      "sha256": "4a2246a540e7cc8a702df90f5b413d42e68c5ec10f88ff41f34c626ed4dbdd8a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/01.png",
+      "sha256": "190bc18f5dd12437018e2b1984333a7b8d2cca83a11ce12e96b21724f35599a6"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/02.png",
+      "sha256": "96e6cd6bc085df66478cb2a6a43b20a468d1b931990c07da2daa5ade9e4f2b55"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/03.png",
+      "sha256": "0e76894af80916a33471c820bb797416c111fe1d01d8d3a45a270379373a2e2f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/04.png",
+      "sha256": "0a728e5caf8457896e8b07d8ae790c7cc2437d5a591f45111fd47449417f1512"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/05.png",
+      "sha256": "7001510e1ade5a295323d15648d3ebc2a6f7dda29dc9a81477a963d58eeb35e9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/06.png",
+      "sha256": "c32f1ce40a6c685c99a072445707f194d06ef052250d0478df2bcb3845a94256"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/07.png",
+      "sha256": "35527b3639d64dc3a06c1a05ff80f677bf64f82b025f2dbe350251a5d559d783"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/AutoAttack/palette/08.png",
+      "sha256": "c04988d5aeb49b7fa17e6950468748ccc131e2ae33a38b5bc262e8f5c858f2a2"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/00.png",
+      "sha256": "4a2246a540e7cc8a702df90f5b413d42e68c5ec10f88ff41f34c626ed4dbdd8a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Death/palette/01.png",
+      "sha256": "33cfe920db82f770df3f5a723bcef65e91d3d7220e77078ca2c89a4615917442"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/00.png",
+      "sha256": "4a2246a540e7cc8a702df90f5b413d42e68c5ec10f88ff41f34c626ed4dbdd8a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/03.png",
+      "sha256": "c210d85b0df0c4d37b4bc3bd60f920e77dd01bc3c38cadf8c4ac067d29bcb752"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Hit/palette/04.png",
+      "sha256": "1e54d7d96048f6170232f18ccf448f8aa399fb390c83ac472e41f252e6802570"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/00.png",
+      "sha256": "4a2246a540e7cc8a702df90f5b413d42e68c5ec10f88ff41f34c626ed4dbdd8a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/01.png",
+      "sha256": "3c4d8cbf87bb6133a9f9129bf1f32baf543888899f6f155d6a6f064b21277c3c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/02.png",
+      "sha256": "8396e56e0c317e069c29424a21f753a45cdddf3553a986765e3bc7ad1b6250c9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/03.png",
+      "sha256": "8970645770f888db8baad47398922df6e66d3aedc472663b8b52ac6ec55b921b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostblade_reaver/Idle/palette/04.png",
+      "sha256": "8f07ebb58b0f3cf3e4d26764527d2c4d0463d72bd4c794d602c6644490d43e51"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostblade_reaver/Idle.png",
+      "sha256": "33ce7f9ebcde53bc7dc5da3bf75e5ce26aaa839e325e76c3c305823191bd83c7"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Idle.png",
+      "sha256": "33ce7f9ebcde53bc7dc5da3bf75e5ce26aaa839e325e76c3c305823191bd83c7"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostblade_reaver/AutoAttack.png",
+      "sha256": "9e59dabffd937c049e0b082eca0638b1f431a7f63e28b5cb9dd20aff575b0b0f"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_AutoAttack.png",
+      "sha256": "9e59dabffd937c049e0b082eca0638b1f431a7f63e28b5cb9dd20aff575b0b0f"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostblade_reaver/Hit.png",
+      "sha256": "c2e9f05fb1104c1a5a6a06a082fc379ef45de819085d7e417b3353879f6fda45"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Hit.png",
+      "sha256": "c2e9f05fb1104c1a5a6a06a082fc379ef45de819085d7e417b3353879f6fda45"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostblade_reaver/Death.png",
+      "sha256": "0906022cb55f549a8a7d24c348a915f7170ed1f178e4cf19ce40e1fad8bd9f17"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Death.png",
+      "sha256": "0906022cb55f549a8a7d24c348a915f7170ed1f178e4cf19ce40e1fad8bd9f17"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostblade_reaver/Ability.png",
+      "sha256": "5a4f0c1c541fdc6e444c4c045edc2b1b76cca602ab7dab5671225df336a47636"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostblade_reaver_Ability.png",
+      "sha256": "5a4f0c1c541fdc6e444c4c045edc2b1b76cca602ab7dab5671225df336a47636"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/frostfang_wolf.png",
+      "sha256": "b83841764db088602612006e5d5e9448e105563ca9310d8a3dcd2eb380d092bd"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/frostfang_wolf.png",
+      "sha256": "b83841764db088602612006e5d5e9448e105563ca9310d8a3dcd2eb380d092bd"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/00.png",
+      "sha256": "e53f530e9fd69c1901fc58dff11eab2abb7848aa9e8b8b0a05743868c64e1107"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/01.png",
+      "sha256": "75c449859b7e5567c077f7319d163cfd52b984b624cbee07fc46800f165b6047"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/02.png",
+      "sha256": "9f5e57142885fad5ca51a957cc55e854ef48fdb852798b8c10b1fa09fa5975f9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/03.png",
+      "sha256": "15805c7fbf0dffa2057c2c46b3033b06d3a054d231b3323709cc70eece2e7b85"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/04.png",
+      "sha256": "e344ceefcaa15e26f5c95a212d9dc3e32e6fcab389b57a693bf4a11514a8ca0e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/05.png",
+      "sha256": "7c05f4a3e51b09a7674ca74ce145b6885b898b724ae76e85f61102fd0fffc0d8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/06.png",
+      "sha256": "6c948c30bf6471c09f8279d581a7265dd03a09c8d38d880daf0d2fe3987971ab"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/07.png",
+      "sha256": "60cbab2f99559c54942c2e389c1a12c60f2d48d0616da0e8ef8e2a601debeb9c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/AutoAttack/palette/08.png",
+      "sha256": "07c25a1206a86c46adcf5d12bf83ef7fc3f4d77a84c7da3db2e1261f39313cc7"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/00.png",
+      "sha256": "e53f530e9fd69c1901fc58dff11eab2abb7848aa9e8b8b0a05743868c64e1107"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/01.png",
+      "sha256": "e37024f74923fb97600e64bb3fe8a71ad7ff3ea4ab77cffbc895da9888c0c41a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/02.png",
+      "sha256": "ce43aca9c83721c4247d871338e75e3688bcf9eeaee42aedd6270481b36a46fa"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/03.png",
+      "sha256": "b91ea572444841cf41beaedab3806e6d8acfa810fcd1e6a265108802cd59b1b5"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/04.png",
+      "sha256": "f83585f0bffba2e9eee69bd475bf35609c280b93cc22a57c5606142cd21ddfd9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/05.png",
+      "sha256": "e1481db712e693194c45b4cd749e753faa0638be42862274f9ceaa0ec55df522"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/06.png",
+      "sha256": "67a0e0eef1095714e4562bbc561e66f67a86456ecf69dbf4fe4ff173f6aa4d8e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/07.png",
+      "sha256": "e2ea13b06a502817138919be7a30b6919910ca90cdde54833da047c5e35995b0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Death/palette/08.png",
+      "sha256": "cc515c13fefd09261e53e480fe7b75537be1e32ca112644aadbad15c62e39fa2"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/00.png",
+      "sha256": "e53f530e9fd69c1901fc58dff11eab2abb7848aa9e8b8b0a05743868c64e1107"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/01.png",
+      "sha256": "4b50a11b9d31da9efcb508f2ab15a54630a2f0b56a3e1ec2fbad5b239951f58d"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/02.png",
+      "sha256": "7e06609ff8bbf4741471c4e63f84bcacb65ddd4a4db11fa16583b631bcb2bc99"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Hit/palette/04.png",
+      "sha256": "fec341fc31050d4d8c7ce45b0c338a34f89c86184432fdd5e6ec2f8f240548f4"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/00.png",
+      "sha256": "e53f530e9fd69c1901fc58dff11eab2abb7848aa9e8b8b0a05743868c64e1107"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/01.png",
+      "sha256": "2b73b05dc7f06a5decdb2ea8034f5edb2cfab821dfb6d4d3d83098c81cbb5b15"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/02.png",
+      "sha256": "187bc83c4967e4ee60461994d05bff39bc0caf11fed3d230ce431027fe9ea79a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/03.png",
+      "sha256": "20eb1cb8078a54be2c59c4752db980f1d657422a36a5643f0ce4c627f77ede37"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/frostfang_wolf/Idle/palette/04.png",
+      "sha256": "1c1bf2bb601c65df8e3b11372ef8c6b8192be88a786dc949c0c9d020a7fabf74"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostfang_wolf/Idle.png",
+      "sha256": "8259085d5228987a00fec46cb1b18006e91c1e9761becbaa582dd58eb5f100b0"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostfang_wolf_Idle.png",
+      "sha256": "8259085d5228987a00fec46cb1b18006e91c1e9761becbaa582dd58eb5f100b0"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostfang_wolf/AutoAttack.png",
+      "sha256": "fdc2aabc6721ad03a77ac61a0c0ed09c10a126f00ce2bcb73ca5c9296b195c2a"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostfang_wolf_AutoAttack.png",
+      "sha256": "fdc2aabc6721ad03a77ac61a0c0ed09c10a126f00ce2bcb73ca5c9296b195c2a"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostfang_wolf/Hit.png",
+      "sha256": "26e1dd48f21b58a05ffabb3dbea1fdf4873de635e978fcb987d4d59d4db2e032"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostfang_wolf_Hit.png",
+      "sha256": "26e1dd48f21b58a05ffabb3dbea1fdf4873de635e978fcb987d4d59d4db2e032"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/frostfang_wolf/Death.png",
+      "sha256": "480477a2fca66b7907240a9c0f1b93e2de177fa41fc274a651cf3d89afe7234a"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/frostfang_wolf_Death.png",
+      "sha256": "480477a2fca66b7907240a9c0f1b93e2de177fa41fc274a651cf3d89afe7234a"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/hearthkeeper.png",
+      "sha256": "0f525e671711af1821a0a1a31abc68a0cb261a3e109f13b797dfc76cf5220fa0"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/hearthkeeper.png",
+      "sha256": "0f525e671711af1821a0a1a31abc68a0cb261a3e109f13b797dfc76cf5220fa0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/00.png",
+      "sha256": "fae9cc50ea02260f2ec438a3659327e38356dce5316e9e241745988a02bf56ee"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/01.png",
+      "sha256": "db4f735ed4210f45bc10a798cabd380f20507d3fa786338fa1ebd99d9c7a777a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/02.png",
+      "sha256": "8ba6f4c46b80e0bf0dff1a7bd0a7f071ff70845aaecaa4b8ad67287cd2301959"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/03.png",
+      "sha256": "411ddea2a820881bb8c289ef665a14fa841347d4c6667dc2cc4ae42e3a4a6093"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/04.png",
+      "sha256": "c2606f65896f44b462693bfd3276c0575c31c6f254a68cd02fbbe0468c8dd722"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/05.png",
+      "sha256": "290ccacdbb3f35ac522a9f8c2f548356c5af223f9522415f1a2312458501fa26"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/06.png",
+      "sha256": "9ab0ff484f3bd891d24e28dc16107e024dd4473f0e7319cf4ba86be9c5340270"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/07.png",
+      "sha256": "f9c0e957910a910b7d69a713027862d27ca712d5b9ff081d530549b00c2584b0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Ability/palette/08.png",
+      "sha256": "e41935422a1f0932052d8ba4f71d9be28f199382f4bba010ff1b6780429716de"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/00.png",
+      "sha256": "fae9cc50ea02260f2ec438a3659327e38356dce5316e9e241745988a02bf56ee"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/01.png",
+      "sha256": "2cd28ea0c932788b4a3cc5e277edd81a8a82da54e8b9a2ab978ce4e4dbf0bcb0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/02.png",
+      "sha256": "267b21152ed5d91d445be7caa24f8c0302f87812f71d61294a4bd847993bcd63"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/03.png",
+      "sha256": "2622399219e1beca6ccfb928efae2d27e411157c76904792b6c72f969cb75cf3"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/04.png",
+      "sha256": "2237de25bb2a529bd6db4add35b47675478a13e805eee42cec0e68dda149e69d"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/05.png",
+      "sha256": "b3bcd3f311ffbdae3ea0b52646fae67a6e25dab38b1df97dd5244191afb35c69"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/06.png",
+      "sha256": "918ed5bfa0cb8e4b722c66a1496cfc277bf8e35385e7522b1614a88b0eec5258"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/07.png",
+      "sha256": "8a868d1090ec8c1e839b655141e7806edc8a59aafb36c477717ea8d1ad7b872a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/AutoAttack/palette/08.png",
+      "sha256": "50ce798687756e4f43b94dd814f2830de499b8ee7ca82abff7f791ea3b8a2625"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/00.png",
+      "sha256": "fae9cc50ea02260f2ec438a3659327e38356dce5316e9e241745988a02bf56ee"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/01.png",
+      "sha256": "e21212a28bccfd2e118dbc8d01518c1ab259d8a9ba97868e280e102d4a2facd6"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Death/palette/02.png",
+      "sha256": "c1b26c725e5700e449284ed4795d6a5aa10e5512f800a68a6af689fb756e3630"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/00.png",
+      "sha256": "fae9cc50ea02260f2ec438a3659327e38356dce5316e9e241745988a02bf56ee"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/01.png",
+      "sha256": "40a33a89979a17f41776f5a863f64f7917db2a30e62f907b524e43f125d9da9f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Hit/palette/02.png",
+      "sha256": "5fd89b0680627a09d4deec4dfb7d6192fb69fbfbbf23629cc44182c3d89b30ba"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/00.png",
+      "sha256": "fae9cc50ea02260f2ec438a3659327e38356dce5316e9e241745988a02bf56ee"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/01.png",
+      "sha256": "4ea47c41d58b42aba1d25f602697170e819263a18f8495e4b6119ed945a92036"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/02.png",
+      "sha256": "44862cf25d8b1ca702c1aefd52dacd2b7ed8bfb4e4a3de0412c85a0612a3dc7b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/03.png",
+      "sha256": "fe0bd460c6fcdd12dab0989e1b29fba0ff9c539e6baf8bfb0bf33be7c4864ecb"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/hearthkeeper/Idle/palette/04.png",
+      "sha256": "e6fbafc05a62c6a9d1f3c592d87cf0e76f681b1299d187d3acddaa9902167efe"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Idle.png",
+      "sha256": "24671f96256bb0439c85fb44b1682d28a4217ea5c4bc33f82bf3ec6dead32789"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Idle.png",
+      "sha256": "24671f96256bb0439c85fb44b1682d28a4217ea5c4bc33f82bf3ec6dead32789"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/AutoAttack.png",
+      "sha256": "3cd4ebeb67b3c32780a9d1293ed352a5a7bdcf1af9382121cfec1245c886dc6d"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_AutoAttack.png",
+      "sha256": "3cd4ebeb67b3c32780a9d1293ed352a5a7bdcf1af9382121cfec1245c886dc6d"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Hit.png",
+      "sha256": "5de6b14894a6078f33758e40b1d79d3e268d7b5f80923fb8730d20576e9ea591"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Hit.png",
+      "sha256": "5de6b14894a6078f33758e40b1d79d3e268d7b5f80923fb8730d20576e9ea591"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Death.png",
+      "sha256": "68b2c0d1b10e182140821947db7ef2d37ac104bd2b68c88bca1c2842742b6411"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Death.png",
+      "sha256": "68b2c0d1b10e182140821947db7ef2d37ac104bd2b68c88bca1c2842742b6411"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Ability.png",
+      "sha256": "20082e766d1c26c9611891bb2bb9a32a0610957acc2e833d7d0a5582251798a2"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Ability.png",
+      "sha256": "20082e766d1c26c9611891bb2bb9a32a0610957acc2e833d7d0a5582251798a2"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/ChannelStart.png",
+      "sha256": "79284c76a61177d96dce1af5670890e91e42bdcfaf4c45dae9073784bbc3ec55"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_ChannelStart.png",
+      "sha256": "79284c76a61177d96dce1af5670890e91e42bdcfaf4c45dae9073784bbc3ec55"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/ChannelHold.png",
+      "sha256": "5a0466e8b2869417e3e36834234089750e46c84eb9c7b8990d85e74d6981762e"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_ChannelHold.png",
+      "sha256": "5a0466e8b2869417e3e36834234089750e46c84eb9c7b8990d85e74d6981762e"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Release.png",
+      "sha256": "901e5ebd99b7415ab0e9dba924c89678c9582b247d20817437b434d6e7e8599a"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Release.png",
+      "sha256": "901e5ebd99b7415ab0e9dba924c89678c9582b247d20817437b434d6e7e8599a"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/hearthkeeper/Interrupt.png",
+      "sha256": "4f72c6ede1bce6c0ee9b499b56f184d368b1da80487fc5517562a4868ade088b"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/hearthkeeper_Interrupt.png",
+      "sha256": "4f72c6ede1bce6c0ee9b499b56f184d368b1da80487fc5517562a4868ade088b"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/iceborn_champion.png",
+      "sha256": "63ab6bb7e1d67599227024c0d3313738eec65946dfbc39171fff4965bddb7213"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/iceborn_champion.png",
+      "sha256": "63ab6bb7e1d67599227024c0d3313738eec65946dfbc39171fff4965bddb7213"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/00.png",
+      "sha256": "c31ac90d89008bd70731e0cc36544ed103f990d35e0c81de65ae0d28956466c8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/01.png",
+      "sha256": "e72be8c32887bd57097dbef0178393be19025adbb2b58553a77e400c990fba82"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/02.png",
+      "sha256": "0e249cceae2928ce9a500046478dee4553f55a9ea80e11f403cf28b67f38f0e7"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/03.png",
+      "sha256": "4d5d0845a9c97c58f8c47965de02726a6c74fb961d70c914501707e41bbf729b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/04.png",
+      "sha256": "4e1131fa95281af94979f3dfdd4b4d318ec6b3e65e66fa663e5aa36666eb6478"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/05.png",
+      "sha256": "67ff3330cde97a5502b2721c96730aafa1cc9615008081d0968c2e1d980b3b19"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/06.png",
+      "sha256": "c97bb327d55c53f8e16f7b86dba35b224312be23f24fb41d9d2de2069d45065d"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/07.png",
+      "sha256": "011666f2a9c5d7443dc3b871afeb0949d04bb1f49b41d1e7ab6e610be6dee672"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/AutoAttack/palette/08.png",
+      "sha256": "465fd3bc1aef3183916dc101a1422ea089aced6da2dbcfd7b7cfda4395eefec9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/00.png",
+      "sha256": "c31ac90d89008bd70731e0cc36544ed103f990d35e0c81de65ae0d28956466c8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/01.png",
+      "sha256": "bd9738d1388b4d4060760b574fbff998539ddde8dcfd3d1843fc7f5fc891d942"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/02.png",
+      "sha256": "514382ee54932b86cb914626fe6146d9a4797850f0ed174ba4221237d716078c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/03.png",
+      "sha256": "fb99c33157c671326f6d32a081165028c91ca2ee13027f6397ff7984f86e0390"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/04.png",
+      "sha256": "314be8b0366b7d8bab343a0a891371f71d761d13e09f66015e77731ff3149c4f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/06.png",
+      "sha256": "1a34d508ef32ec7ef41a8c88a7b2f2246990c65377d2f41a2128be93d2874be3"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/ChannelStart/palette/08.png",
+      "sha256": "bfd1eb76a1980099e30b160db8e72fca1c540eef94cf96cf9fad70d592514013"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/00.png",
+      "sha256": "c31ac90d89008bd70731e0cc36544ed103f990d35e0c81de65ae0d28956466c8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Death/palette/01.png",
+      "sha256": "929403f044559c4ac7408c95fcdac032570506a2805cf53089d32b37f6326385"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/00.png",
+      "sha256": "c31ac90d89008bd70731e0cc36544ed103f990d35e0c81de65ae0d28956466c8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/01.png",
+      "sha256": "2d1a052e4fb74a028698735d708b0e1a6ca950a82765b6f09514cd766a1ef83e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/02.png",
+      "sha256": "00deb3a82f3bec9f9f40f237d01b50743e62c43154b12ff97396a4813df966c1"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/03.png",
+      "sha256": "0d007e4c1e18434a721eb324b235c17c8d18abe300b65d85e4144614b66ca5da"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Hit/palette/04.png",
+      "sha256": "8e4b78eb81fae23c7c9198706be7f8698dcbb48a04013af6e7d089fb39541665"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/00.png",
+      "sha256": "c31ac90d89008bd70731e0cc36544ed103f990d35e0c81de65ae0d28956466c8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/01.png",
+      "sha256": "021c2a221f93c580d99e35a249d9b8559d9790cc2858a808cb9db72bb7606497"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/02.png",
+      "sha256": "4bc27b7467644fd235a4dd8194c8a331c249de78b76454f80bd49e2d40b2b306"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/03.png",
+      "sha256": "853214e65de0902928f79f766436da2cf9c16d2267583c45a043f71fcbc3d78c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Idle/palette/04.png",
+      "sha256": "7639dddf4915c2b7b4914ddff9e24cb90c96048199f4e8c47db2d015ae3e3135"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/00.png",
+      "sha256": "bfd1eb76a1980099e30b160db8e72fca1c540eef94cf96cf9fad70d592514013"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/01.png",
+      "sha256": "2bfdb1155b4cc09fb8e6860fc604a3dd8907368ac578b40f4574f4b156ef31d2"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/02.png",
+      "sha256": "570bb97476729a17483ae11aef268b9344a8330dbe0bec1bb7d10493264bd340"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/03.png",
+      "sha256": "399d6c74fbd99fd2d6e9a21b33f165efbd71c52075a96f7f26a861bd0251cd1e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/04.png",
+      "sha256": "6edb6a2833f5fd18be54f232a98d44c17186e662de0187ee8924712023b25dd5"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/05.png",
+      "sha256": "0dfb8c380dc38ee1ed2bf983f4e9859ade24f370f24a5674cb1ef82284280e79"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/06.png",
+      "sha256": "46545eed9b8ab3f2b0496ad57d9395b66fd6a52ce0b139bdd4d0e47a71f5b09b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/07.png",
+      "sha256": "dc0aaaa44c4e74ccb28f9a6920b2dca718b24c31219c677b11f8a81db9e6a091"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_champion/Release/palette/08.png",
+      "sha256": "c6291da03331d571ce69c86d25c47a860223375c8497d190a3ee80b0964d5106"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/Idle.png",
+      "sha256": "187a933885c213971beb359895f44dd8431920a51e03ab9eb68943953a7978d8"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Idle.png",
+      "sha256": "187a933885c213971beb359895f44dd8431920a51e03ab9eb68943953a7978d8"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/AutoAttack.png",
+      "sha256": "b805294de14edc38447049a65ea7908bdaccbf1930e011d5198067c63e29e7a1"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_AutoAttack.png",
+      "sha256": "b805294de14edc38447049a65ea7908bdaccbf1930e011d5198067c63e29e7a1"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/Hit.png",
+      "sha256": "7ff105864c0ac3fdd01952f61cff9b7929dccf8b2e4c4789d6f76f9f829047aa"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Hit.png",
+      "sha256": "7ff105864c0ac3fdd01952f61cff9b7929dccf8b2e4c4789d6f76f9f829047aa"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/Death.png",
+      "sha256": "68ee20df2a1d222db3780b4651d8f994d32b55c8d0d24278cdad7736a7709b71"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Death.png",
+      "sha256": "68ee20df2a1d222db3780b4651d8f994d32b55c8d0d24278cdad7736a7709b71"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/ChannelStart.png",
+      "sha256": "b53bfa8e649013087a2a7b92fc6fb7c445eb8a250e7c43d9c1967db3ff9770f9"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_ChannelStart.png",
+      "sha256": "b53bfa8e649013087a2a7b92fc6fb7c445eb8a250e7c43d9c1967db3ff9770f9"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/ChannelHold.png",
+      "sha256": "bfd1eb76a1980099e30b160db8e72fca1c540eef94cf96cf9fad70d592514013"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_ChannelHold.png",
+      "sha256": "bfd1eb76a1980099e30b160db8e72fca1c540eef94cf96cf9fad70d592514013"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/Interrupt.png",
+      "sha256": "76c67a2b47ff66e422210d49f50868a98aadab3ab81f3ed613e2440db783f72b"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Interrupt.png",
+      "sha256": "76c67a2b47ff66e422210d49f50868a98aadab3ab81f3ed613e2440db783f72b"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_champion/Release.png",
+      "sha256": "de4c0f6e8f6a5412ec8e40f5e0a2b48248b5b3f650a0ea8b2374d7a429d9b9c8"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_champion_Release.png",
+      "sha256": "de4c0f6e8f6a5412ec8e40f5e0a2b48248b5b3f650a0ea8b2374d7a429d9b9c8"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/iceborn_raider.png",
+      "sha256": "bd35c36be0aea959616f792e43ac2de483808ad8bbf77e934874dd18a992cef3"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/iceborn_raider.png",
+      "sha256": "bd35c36be0aea959616f792e43ac2de483808ad8bbf77e934874dd18a992cef3"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/00.png",
+      "sha256": "3917f5e52507618a384d58523d505668b673ffd53267861ea266545fc2976f39"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/01.png",
+      "sha256": "4b1cce17c7583080178b052be5daf56f5c04b26c54ef718fde750268af87442c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/02.png",
+      "sha256": "d5021760f915133004a127213dc565d87409f50bca66532a14873ed553d7549f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/03.png",
+      "sha256": "bfb4f3a675dd182188a3576ab1f0fb984ec03ad862dcf4fd123485cdb38c2518"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/04.png",
+      "sha256": "f9602827c4185aeb570ce4eec7677bda3e9d800f5b15aac93d4be4b1b167d89c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/05.png",
+      "sha256": "816dee5f47d63f6bd74d81269374b59ec4fcadb54772505fa23563f28deb22be"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/06.png",
+      "sha256": "91e2af0118377f18b7bc7812e0a82197e606d3449198ae899e64576f88b67d41"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/07.png",
+      "sha256": "2cefa5907c199f45aaa62c1d3dfc3c83bc6178a3de28a0a962a1f0ff2f9db277"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/AutoAttack/palette/08.png",
+      "sha256": "3a49c39f760e48666c337fa0f651243b02fd2f9569cbe86f091404bebc031038"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/00.png",
+      "sha256": "3917f5e52507618a384d58523d505668b673ffd53267861ea266545fc2976f39"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/01.png",
+      "sha256": "1b1fdcfdf4d81e40d776e29dd37e1713fcaf54c297c02ad3fe58e18e46664d7a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Death/palette/02.png",
+      "sha256": "e0d3400f70bf6e89a9a3bc7b9323bd932c6af34da1932b8f35dc46023989d4d7"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/00.png",
+      "sha256": "3917f5e52507618a384d58523d505668b673ffd53267861ea266545fc2976f39"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/01.png",
+      "sha256": "32bd03c5a76ac0b783d45950ac5620e3951d8b554a4a5a5990c7e2154c490f9a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/02.png",
+      "sha256": "e933f8d020a51a47ce17ff426783c3feaff3d0f2032a870ff1b79ec7f2afcd2a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/03.png",
+      "sha256": "1d47ce7bb0de7e65281db06632b61aa3fa2e99858181e8e9e080b90bd4c636ca"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Hit/palette/04.png",
+      "sha256": "be97ba70cf0011de5ebb7dbb8a6ec742fe3ef2d81e9dae82ab9b42af4f9cbc6b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/00.png",
+      "sha256": "3917f5e52507618a384d58523d505668b673ffd53267861ea266545fc2976f39"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/01.png",
+      "sha256": "4aa2dcef92268e9384680537db5233aba26fe898d5fbceff831a99d2d06c9538"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/02.png",
+      "sha256": "e96f9c7701d2fcf8bed8051c073001e9bf56cb5726b0e68387c8f894b2fa0fff"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/03.png",
+      "sha256": "89046179eff0f89139aeb2a17084ef983d1d931dc99a1c43a523a1afe17cb1b2"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/iceborn_raider/Idle/palette/04.png",
+      "sha256": "b63b5d4e0718da1832984c19af4ea24cf0a7cf8e29ea527ea018678185aaf4f9"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_raider/Idle.png",
+      "sha256": "e312138327e28a182abda44d3a36f202aa6e7760f41f57f688b092e42bfd640d"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_raider_Idle.png",
+      "sha256": "e312138327e28a182abda44d3a36f202aa6e7760f41f57f688b092e42bfd640d"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_raider/AutoAttack.png",
+      "sha256": "7464cf743e755b22d16976ab5aad297d786c6c86b6944f0441253bb6db81d692"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_raider_AutoAttack.png",
+      "sha256": "7464cf743e755b22d16976ab5aad297d786c6c86b6944f0441253bb6db81d692"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_raider/Hit.png",
+      "sha256": "b6f70e1f3cda480bae146b00066c8f908779a3e13019bf7581c8c24ab3bc9bcf"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_raider_Hit.png",
+      "sha256": "b6f70e1f3cda480bae146b00066c8f908779a3e13019bf7581c8c24ab3bc9bcf"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/iceborn_raider/Death.png",
+      "sha256": "a16cf8029bc87564074156d86b4f483fb8a10b8cd916f95292263ca708b35757"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/iceborn_raider_Death.png",
+      "sha256": "a16cf8029bc87564074156d86b4f483fb8a10b8cd916f95292263ca708b35757"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/jarl_haldra.png",
+      "sha256": "5df3abc875acfd3e2ffd3ceb8568c4418721d659cc09e07ef48b93d513987596"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/jarl_haldra.png",
+      "sha256": "5df3abc875acfd3e2ffd3ceb8568c4418721d659cc09e07ef48b93d513987596"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/00.png",
+      "sha256": "b4a0d451e12a955944c098b7c00db61142297dfe2dbdd9cfa3bf31f10f31f655"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/01.png",
+      "sha256": "b5df0e41d6717b1edb97c1f26ebf12d65b79f4a322dc156ecf2effa99d68f77f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/02.png",
+      "sha256": "cf418d62ecad20b6e98c22842a5e3c5dfeccdd090555ce368beede63c0c1fca8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/03.png",
+      "sha256": "6d43fb15ee19698009ea669a1d946e263c11a14a67bef0e214d503ae93ac4688"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/04.png",
+      "sha256": "b60bf804b94cfaf7f454d4e6c33d6cb07c6aac8c32d48ddaee414c0484cd482f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/05.png",
+      "sha256": "5373da0b3747d9585f8db5b6ec1a2b807ff644665f7c09241d73c29c39c21f0f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/06.png",
+      "sha256": "7596613685c78d65483013ed6e99650faedd24ea7ec275358ca017abf8f4efe6"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/07.png",
+      "sha256": "091df1de0fcfde35fe483c78718d474b7404c8d36f804e819fccb2c23dfccfa9"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/AutoAttack/palette/08.png",
+      "sha256": "21022b05ba58e4e1e0c9dea69d766d6a90875aba489dc011a71bbd4a3fbcd922"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/00.png",
+      "sha256": "b4a0d451e12a955944c098b7c00db61142297dfe2dbdd9cfa3bf31f10f31f655"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/01.png",
+      "sha256": "612b5a53ac4fd81089e29fd83bb70f6b8293deec72a2d4ff82b92281607985fc"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/02.png",
+      "sha256": "caefe6cbbe40456d8dea0b26a9b58b6e6ac4e968f61a8640e95ceb52750095c0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/03.png",
+      "sha256": "dd22964c9d3a7197e241e2b3d7dad2b41366da02731f2118921ce3bf28188cce"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/04.png",
+      "sha256": "e085df8bb55b49abc8940b1de08b174b1a3342bcd78db68bcf83dcae105fa9df"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/06.png",
+      "sha256": "0f3fe8ef38b8ebe07abb5de9b5b84478c6e3626e54e570cae4f5d86d73790c2b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/ChannelStart/palette/08.png",
+      "sha256": "e2da0c8fb7dd9bc886aa0e6feb27c66e6f23a39cf5b8e057eb68ba88575188aa"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Death/palette/00.png",
+      "sha256": "b4a0d451e12a955944c098b7c00db61142297dfe2dbdd9cfa3bf31f10f31f655"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/00.png",
+      "sha256": "b4a0d451e12a955944c098b7c00db61142297dfe2dbdd9cfa3bf31f10f31f655"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/01.png",
+      "sha256": "d0e754d248409b09da41aa6cd7c61bb5e4f29f33dca3affe7aff41cee5dd8735"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Hit/palette/04.png",
+      "sha256": "04d12479b6b68ca8f708fc73e0f291e9f611fd001073fd7bf46b7e8e7e715ad1"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/00.png",
+      "sha256": "b4a0d451e12a955944c098b7c00db61142297dfe2dbdd9cfa3bf31f10f31f655"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/01.png",
+      "sha256": "eea85f1c6f4372e37cf809e62671f248c37268618c8cc745a0533acdf296e089"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/02.png",
+      "sha256": "dc9beb36593407fe01301576e854d3ee511b414a01117f159aea69faf6f9dd47"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/03.png",
+      "sha256": "a2d92098b2eec4b006a045973511f4d73abe9727764e057265be77492852162d"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Idle/palette/04.png",
+      "sha256": "a6411012e3750459b3bec84e405df7ab87399d3e1d8b41c0d2811e18a5e5d970"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/00.png",
+      "sha256": "e2da0c8fb7dd9bc886aa0e6feb27c66e6f23a39cf5b8e057eb68ba88575188aa"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/01.png",
+      "sha256": "88d084a7b676933f37e4d686ac63dd56bc2f5788168aee9d1d9f56e8e147e2b8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/02.png",
+      "sha256": "2b64f14524b6823e5f8c9b91bf6c833ab74627ea8c05702b3aa14e5bf236fe32"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/03.png",
+      "sha256": "f0809cfa7ef2d5f3cc39b7a04b0ae60419bfb5314349fbeb2635b6b2e0a089c7"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/04.png",
+      "sha256": "5794750f971e97b5ea124704dfab140d51e8b19379047b8da9cc0bce0ed3ccdb"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/05.png",
+      "sha256": "6dc5e7c97ccef93a3e8eaeec5e2c29d321825788e8d1cba46e1b55d5428f67c0"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/06.png",
+      "sha256": "44ec5f04d2f3e60b962fb8bc3b67f4131ea2b185a60b90b6379e1d4b9ef01cff"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/07.png",
+      "sha256": "faea0c149984141615e72dae4cafe894e1715571cc8ee931096a62b18a6101a4"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/jarl_haldra/Release/palette/08.png",
+      "sha256": "7638a466218e3ef8ec3c881c82b44403332a3c47a95d9c115dfeac500739aaa0"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/Idle.png",
+      "sha256": "f22c7b121d184aa48dc7429010a689f6f02177327cfd4ada6e94abc72732692d"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Idle.png",
+      "sha256": "f22c7b121d184aa48dc7429010a689f6f02177327cfd4ada6e94abc72732692d"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/AutoAttack.png",
+      "sha256": "d4ce2f84e41f7947957ace3ff570a4cf5d5884c6ba57adfe49ff0836c2aa8211"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_AutoAttack.png",
+      "sha256": "d4ce2f84e41f7947957ace3ff570a4cf5d5884c6ba57adfe49ff0836c2aa8211"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/Hit.png",
+      "sha256": "5bd11f3a8b87e16e850d9d6c21275e5b5204acbd37cfaf8cfa8c07bfc9dc114e"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Hit.png",
+      "sha256": "5bd11f3a8b87e16e850d9d6c21275e5b5204acbd37cfaf8cfa8c07bfc9dc114e"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/Death.png",
+      "sha256": "92055d0aa75faf06349cf982d707c02718012b9249571145181946b996660fbd"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Death.png",
+      "sha256": "92055d0aa75faf06349cf982d707c02718012b9249571145181946b996660fbd"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/ChannelStart.png",
+      "sha256": "af47a5c553eb6d7e9c60dd29b08da0678609db5d1352da55c550de8f69ed8e09"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_ChannelStart.png",
+      "sha256": "af47a5c553eb6d7e9c60dd29b08da0678609db5d1352da55c550de8f69ed8e09"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/ChannelHold.png",
+      "sha256": "e2da0c8fb7dd9bc886aa0e6feb27c66e6f23a39cf5b8e057eb68ba88575188aa"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_ChannelHold.png",
+      "sha256": "e2da0c8fb7dd9bc886aa0e6feb27c66e6f23a39cf5b8e057eb68ba88575188aa"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/Interrupt.png",
+      "sha256": "94f5b29bc0a038f4f8b6c00d1b8eb89c88388214073ee147f056fdc316a492bd"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Interrupt.png",
+      "sha256": "94f5b29bc0a038f4f8b6c00d1b8eb89c88388214073ee147f056fdc316a492bd"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/jarl_haldra/Release.png",
+      "sha256": "c013b14c0786fcbb2b93e979853d0cbdf6d67cac0407a8ed061c4e3c6b45d719"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/jarl_haldra_Release.png",
+      "sha256": "c013b14c0786fcbb2b93e979853d0cbdf6d67cac0407a8ed061c4e3c6b45d719"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/rime_skald.png",
+      "sha256": "941e1cbc290d8e24a3c3596b4cdd53d33734cb059fc90da5e249af234ae5de11"
+    },
+    {
+      "path": "ArtSource/Frostwake/approved/rime_skald.png",
+      "sha256": "941e1cbc290d8e24a3c3596b4cdd53d33734cb059fc90da5e249af234ae5de11"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/00.png",
+      "sha256": "ed41dec4695fd9ad732304cc07e4b26a4a975195f3203549d908dc87d8205dde"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/01.png",
+      "sha256": "fe2f6034d6eb962c3219a646a4ec0fdc0097e6295025a7b9f4aa03fa1ed59554"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/02.png",
+      "sha256": "9fe6669c3aa4729de1178c47c0bfe57d2bb12b004cd0a5ffc8d2018fadeb716e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/03.png",
+      "sha256": "255326f8f8b893a6fcef7268f36a25b842e9ab0fec8ac07f676e4b0775065993"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/04.png",
+      "sha256": "0edbbbf999b358a2ed6c332adb50419840abeedf833ee4f2d5309ef50b3f1d49"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/05.png",
+      "sha256": "66d21c90180308a9426a4f84ce62e740af7747ef551242c36dbbc45e127f3070"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/06.png",
+      "sha256": "7b8aad5a487b77286e35f824d96b30a784222a3d30b893eb9d574ae94d80401a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/07.png",
+      "sha256": "faf7aed3cd8aa53452337754515415afc9526859f90991c7272ccd7ad28ec1bb"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Ability/palette/08.png",
+      "sha256": "2aef064f2542cbae3a7d04c3130a6e3411a75abc580e11bde08439ab4d2e152f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/00.png",
+      "sha256": "ed41dec4695fd9ad732304cc07e4b26a4a975195f3203549d908dc87d8205dde"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/01.png",
+      "sha256": "90289dd3206ed28d1193addf9236aa5db93a9809490ef5ad66583f41a8ee3ca3"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/02.png",
+      "sha256": "1b23ef395721594722351f58a3aef468e81c1524dc8457e8fb9aff5e4f08b7cb"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/03.png",
+      "sha256": "f90996e976351f11a58614ebb19521c6a15559008c7d27563d6973520204091d"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/04.png",
+      "sha256": "c188c4ac5f376f01b42e6ad667269d0016a27b423a98279e9df36dd53123496e"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/05.png",
+      "sha256": "a0e18a21ce88f849c6901969fbcd09ec9a01eafa10d550e3369c02051bac8085"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/06.png",
+      "sha256": "ce55dcf7f74ab645c3c4f70daa210c96e205df65d97ad9e3bf6e59f8f00b01e7"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/07.png",
+      "sha256": "c884a33119e2a8e39b640c5f84fb50d7d5c318dc3fc75052f7aa2fc98920580b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/AutoAttack/palette/08.png",
+      "sha256": "b04b9b5e08eba182d7aa70bc789580a972c3ac877d6651ebe4cf8776c7368fe8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/00.png",
+      "sha256": "ed41dec4695fd9ad732304cc07e4b26a4a975195f3203549d908dc87d8205dde"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/01.png",
+      "sha256": "06df644b6e5270464d99a05af86ed937884f39a16f21e127066c8b14b253738a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/02.png",
+      "sha256": "cae6ba446d527267f03a354eba8218ac57e873998e8e33177e6a0de190abc381"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/03.png",
+      "sha256": "8df631fee21a8b1d898a728bbba8f028287ef8bb75e2e03f4452b7fe1db05e3b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/04.png",
+      "sha256": "5d51e60f0b085f13b6e0d4562d73793fa0c2944c8ec1362bb915c30ba83d2006"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/05.png",
+      "sha256": "b81adfa5465fdb179628c4cb000c50c5dbee1314a570c2e97e070fad93ccbe9c"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/06.png",
+      "sha256": "c4c413d8edee26bc1c8ae80ff491830c39af02a1532129b14128c0e05f01137b"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/07.png",
+      "sha256": "15eb36a5f6f7d29fb95a16762642a68bad7703ace43cd84216346c399fa4ab7f"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Death/palette/08.png",
+      "sha256": "95ac9fc8a6b91dd05eed93618a6f36cf0485cee1fc6c49e7d93b481d19fd6811"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/00.png",
+      "sha256": "ed41dec4695fd9ad732304cc07e4b26a4a975195f3203549d908dc87d8205dde"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/01.png",
+      "sha256": "7fa391ca4f8cb70025b9d2a6ea85b2a586c5a67e406d858b2d4d58ccade3010a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/02.png",
+      "sha256": "dc9038a903548551d8d42afdd7425295ac50c6b3c332843ecaf9102471088cfb"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/03.png",
+      "sha256": "dbc2f4bcc5af8673852bfb04238af21626bd6f75d5a9ff8876c8bb41892aab67"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Hit/palette/04.png",
+      "sha256": "b754267bd7ef05b78a45c89d611cfb6e9e38d50b5173509b695aa48590532fa8"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/00.png",
+      "sha256": "ed41dec4695fd9ad732304cc07e4b26a4a975195f3203549d908dc87d8205dde"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/01.png",
+      "sha256": "796158b9271b96e1eadfa46a40c15e6637f37ac3276e1b828d0ba04a9da86943"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/02.png",
+      "sha256": "e137e458d0dba7e25435d477ccf1ee955543cc13452552201da1567ce219c8e2"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/03.png",
+      "sha256": "ed5f361237fe912e70479d7b4c855f101055866bf7ad782ab48dfc2b73a7206a"
+    },
+    {
+      "path": "ArtSource/Frostwake/motion/rime_skald/Idle/palette/04.png",
+      "sha256": "2c475c6ca5636017c66e891f3bbaa56106ddf81b522fcd2173f68ae83bc79a4a"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/rime_skald/Idle.png",
+      "sha256": "207363d0032811be52fa7bf6c7bf647526381bc576a54cc2b07d433636733fdb"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/rime_skald_Idle.png",
+      "sha256": "207363d0032811be52fa7bf6c7bf647526381bc576a54cc2b07d433636733fdb"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/rime_skald/AutoAttack.png",
+      "sha256": "22ae7de3cdcdca5f21ab7e99b12fcdf3d1dcb95403202dba6094ff3dafbf7c2d"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/rime_skald_AutoAttack.png",
+      "sha256": "22ae7de3cdcdca5f21ab7e99b12fcdf3d1dcb95403202dba6094ff3dafbf7c2d"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/rime_skald/Hit.png",
+      "sha256": "1c9b69b472305c940c69b317a9e186c4ad2d2599211977545a59b6442183181b"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/rime_skald_Hit.png",
+      "sha256": "1c9b69b472305c940c69b317a9e186c4ad2d2599211977545a59b6442183181b"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/rime_skald/Death.png",
+      "sha256": "72d3067695e409176df0edde3e526581b319fb90f0a06301604ab57076fd73f4"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/rime_skald_Death.png",
+      "sha256": "72d3067695e409176df0edde3e526581b319fb90f0a06301604ab57076fd73f4"
+    },
+    {
+      "path": "ArtSource/Frostwake/production/rime_skald/Ability.png",
+      "sha256": "394a173631eae349e1126cde8569ab7c3981ec2d3ce25258989b984f5ea62d52"
+    },
+    {
+      "path": "Assets/_Game/Art/Frostwake/Motion/rime_skald_Ability.png",
+      "sha256": "394a173631eae349e1126cde8569ab7c3981ec2d3ce25258989b984f5ea62d52"
+    }
+  ],
+  "validation": {
+    "unityValidatorExit": 0,
+    "runtimeTests": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xml": ".utmp/ForestValidation/3ecda389-5e21-4aa6-9cb5-1d666b5a319d.xml"
+    },
+    "importedClips": 70,
+    "importedExposures": 501,
+    "audioMuted": true,
+    "canonicalGuide": "1.15"
+  }
+}

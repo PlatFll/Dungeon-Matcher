@@ -41,8 +41,7 @@ testing and listening review of the temporary cues remain unperformed.
 The user locked the friendly, fully yellow-eyed Minotaur with belt keys and
 Kobold B's outfit with both eyes covered and the free hand behind his back,
 and explicitly authorized animation and merging after validation.
-The subsequent explicit request authorizes full Frostwake production. On
-`codex/frostwake-zone-production`, all eleven user-approved enemy designs have
+The full Frostwake production pass merged through PR #191. All eleven user-approved enemy designs have
 70 selected native motion clips, data-driven kits, weighted teaching/relief
 encounters, three mountain scenery variants, stone/timber UI and a temporary
 original music cue. Frostwake is registered as the fifth testing/travel zone.
@@ -55,6 +54,12 @@ Integration validation and source review are complete: 24 unique affected
 checks pass on their latest executions, the required Unity validator passed,
 and all three portrait captures were inspected with Editor audio muted.
 See [production status](Frostwake/WORKLIST.md) and [executed evidence](Validation/FROSTWAKE_PRODUCTION.md).
+The user subsequently approved all facial-color revisions for integration and
+merge: solid dark human eyes (including Haldra and Champion), one blue wolf iris,
+and warm beige Skald skin with gray hair/beard. Seven stills and 43 motion sheets
+use those exact PixelLab corrections, with unchanged native scale, alpha, GUIDs,
+clips and gameplay. Guide v1.15 records the decision; silver Haldra eyes and ivory
+Skald skin remain rejected review history. See [face validation](Validation/FROSTWAKE_FACE_CORRECTIONS.md).
 Enemy numbers, visit pacing, new scene composition and temporary music still
 need human play/listening feedback. No device performance claim is made.
 See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
@@ -62,7 +67,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.14. Rattlebones is the explicitly designated
+The canonical art guide is now v1.15. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.

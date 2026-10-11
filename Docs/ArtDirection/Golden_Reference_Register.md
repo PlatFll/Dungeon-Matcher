@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-11 · canonical guide v1.14. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing correction; Mender's corrected death sheet is separate from her reference still.
+2026-10-11 · canonical guide v1.15. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing or Frostwake facial-color corrections; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
@@ -149,6 +149,12 @@ records the actual golden image inputs and guide v1.13.2 hashes used to generate
 them. `approved/manifest.json`, `production/animation-manifest.json` and
 `motion-palette-checks.json` preserve output identity and native export evidence.
 The later guide v1.14 records that approval without changing any golden image.
+Guide v1.15 records the user's final Frostwake facial-color approval: black human
+eyes, a solid blue wolf iris, and beige Skald skin with gray hair. Exact current
+stills and approval history are in the approved manifest; free PixelLab source
+edits and their immutable baseline are in `ArtSource/Frostwake/face-revision`.
+This replaces seven target stills and their selected motion colors without
+changing golden membership or any of the reference image hashes above.
 The authorized Minotaur eye amendment is recorded separately in
 `ArtSource/FrostwakePlayables/eye-revision`; it does not change Rattlebones.
 

@@ -1,0 +1,580 @@
+{
+  "status": "candidate - awaiting user visual approval",
+  "nativeCell": [
+    128,
+    104
+  ],
+  "paidGenerations": 0,
+  "actors": [
+    {
+      "actor": "frostblade_reaver",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "0a965212-1ecb-4333-9215-ef046ff61ada",
+      "changedPixels": 61,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "33ce7f9ebcde53bc7dc5da3bf75e5ce26aaa839e325e76c3c305823191bd83c7",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "9e59dabffd937c049e0b082eca0638b1f431a7f63e28b5cb9dd20aff575b0b0f",
+          "frameCount": 9,
+          "durationsMs": [
+            80,
+            80,
+            80,
+            80,
+            120,
+            50,
+            50,
+            60,
+            80
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "c2e9f05fb1104c1a5a6a06a082fc379ef45de819085d7e417b3353879f6fda45",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "0906022cb55f549a8a7d24c348a915f7170ed1f178e4cf19ce40e1fad8bd9f17",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "state": "Ability",
+          "sha256": "5a4f0c1c541fdc6e444c4c045edc2b1b76cca602ab7dab5671225df336a47636",
+          "frameCount": 9,
+          "durationsMs": [
+            90,
+            90,
+            90,
+            90,
+            100,
+            100,
+            100,
+            100,
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "frostfang_wolf",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "a36bc5c6-d3cc-4b0f-825d-2d17d5f1993a",
+      "changedPixels": 90,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "8259085d5228987a00fec46cb1b18006e91c1e9761becbaa582dd58eb5f100b0",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "fdc2aabc6721ad03a77ac61a0c0ed09c10a126f00ce2bcb73ca5c9296b195c2a",
+          "frameCount": 9,
+          "durationsMs": [
+            106,
+            106,
+            108,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "26e1dd48f21b58a05ffabb3dbea1fdf4873de635e978fcb987d4d59d4db2e032",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "480477a2fca66b7907240a9c0f1b93e2de177fa41fc274a651cf3d89afe7234a",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "hearthkeeper",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "cbd68425-d986-4ca3-bab7-2f7ef8549b7a",
+      "changedPixels": 97,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "24671f96256bb0439c85fb44b1682d28a4217ea5c4bc33f82bf3ec6dead32789",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "3cd4ebeb67b3c32780a9d1293ed352a5a7bdcf1af9382121cfec1245c886dc6d",
+          "frameCount": 9,
+          "durationsMs": [
+            106,
+            106,
+            108,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "5de6b14894a6078f33758e40b1d79d3e268d7b5f80923fb8730d20576e9ea591",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "68b2c0d1b10e182140821947db7ef2d37ac104bd2b68c88bca1c2842742b6411",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "state": "Ability",
+          "sha256": "20082e766d1c26c9611891bb2bb9a32a0610957acc2e833d7d0a5582251798a2",
+          "frameCount": 9,
+          "durationsMs": [
+            90,
+            90,
+            90,
+            90,
+            100,
+            100,
+            100,
+            100,
+            120
+          ]
+        },
+        {
+          "state": "ChannelStart",
+          "sha256": "79284c76a61177d96dce1af5670890e91e42bdcfaf4c45dae9073784bbc3ec55",
+          "frameCount": 4,
+          "durationsMs": [
+            100,
+            100,
+            100,
+            120
+          ]
+        },
+        {
+          "state": "ChannelHold",
+          "sha256": "5a0466e8b2869417e3e36834234089750e46c84eb9c7b8990d85e74d6981762e",
+          "frameCount": 4,
+          "durationsMs": [
+            150,
+            150,
+            150,
+            150
+          ]
+        },
+        {
+          "state": "Release",
+          "sha256": "901e5ebd99b7415ab0e9dba924c89678c9582b247d20817437b434d6e7e8599a",
+          "frameCount": 4,
+          "durationsMs": [
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "state": "Interrupt",
+          "sha256": "4f72c6ede1bce6c0ee9b499b56f184d368b1da80487fc5517562a4868ade088b",
+          "frameCount": 4,
+          "durationsMs": [
+            80,
+            80,
+            80,
+            80
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "iceborn_raider",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "a06e60a6-7873-4e41-a2ca-dc65d6b881de",
+      "changedPixels": 110,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "e312138327e28a182abda44d3a36f202aa6e7760f41f57f688b092e42bfd640d",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "7464cf743e755b22d16976ab5aad297d786c6c86b6944f0441253bb6db81d692",
+          "frameCount": 9,
+          "durationsMs": [
+            106,
+            106,
+            108,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "b6f70e1f3cda480bae146b00066c8f908779a3e13019bf7581c8c24ab3bc9bcf",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "a16cf8029bc87564074156d86b4f483fb8a10b8cd916f95292263ca708b35757",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "jarl_haldra",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "d416e7ad-1562-4e3f-9231-227d2d1045eb",
+      "changedPixels": 596,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "c7092d35d3c44c28a987f63f6310d9792ef80f0763f75acd37bb73c0ab9c7dda",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "7b59921527ef60566d4b2975626ed62d7928629d0ffb36288281886ad2974c7b",
+          "frameCount": 9,
+          "durationsMs": [
+            64,
+            64,
+            64,
+            64,
+            64,
+            90,
+            90,
+            90,
+            90
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "5878ffe56995b9f8e92481cffcbc6cf83f31a6f159cb1c317f5bf3edb24c6a3e",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "479f6828e5aa72e9ced9f23062cbca3ccfb90216d40c5cfeb3804bd87d9732f4",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "state": "ChannelStart",
+          "sha256": "f072fe408cfeca13c700c02c3e4824ef88e80a98c2c1256223612dce287c39ee",
+          "frameCount": 7,
+          "durationsMs": [
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            120
+          ]
+        },
+        {
+          "state": "ChannelHold",
+          "sha256": "3321c0ccac586bc2ba0ed77fd07816ccbfc9d57f109af7925d727df6f8e4228c",
+          "frameCount": 1,
+          "durationsMs": [
+            130
+          ]
+        },
+        {
+          "state": "Interrupt",
+          "sha256": "9cd009528870bbbbcf5f67f8ab45acaee44f36da785e4aeccc4dbe0a0031ae6d",
+          "frameCount": 7,
+          "durationsMs": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        },
+        {
+          "state": "Release",
+          "sha256": "e48165b5648e2cb2cbac6731df9ed02e3c400b02abaee2b7a103a49a287be222",
+          "frameCount": 9,
+          "durationsMs": [
+            180,
+            180,
+            60,
+            60,
+            60,
+            60,
+            80,
+            100,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rime_skald",
+      "provider": "PixelLab pixelart_workbench",
+      "jobId": "89e42d27-3930-4288-9982-2accffbbf840",
+      "changedPixels": 11091,
+      "alphaUnchanged": true,
+      "outsideSelectedRegionsUnchanged": true,
+      "sourcePreserved": true,
+      "clips": [
+        {
+          "state": "Idle",
+          "sha256": "e15f95a091c503ce97f6bad4525360550d21d92b8b7996257767cec07b85810a",
+          "frameCount": 9,
+          "durationsMs": [
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130,
+            130
+          ]
+        },
+        {
+          "state": "AutoAttack",
+          "sha256": "4761ed1312da7ff544b63f76564701efdea197e39db402cc78a44124935afa35",
+          "frameCount": 9,
+          "durationsMs": [
+            106,
+            106,
+            108,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        },
+        {
+          "state": "Hit",
+          "sha256": "290812399efc778128140a595e58f86bd92da917db2f9194eb8d5197a088a4e2",
+          "frameCount": 5,
+          "durationsMs": [
+            40,
+            70,
+            70,
+            70,
+            70
+          ]
+        },
+        {
+          "state": "Death",
+          "sha256": "f2d7999cfa1347bea924a0d96a4762b2086624abc590339bc9a36a50f11bf37c",
+          "frameCount": 9,
+          "durationsMs": [
+            60,
+            70,
+            80,
+            90,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "state": "Ability",
+          "sha256": "b1edcb50df4f095206633759a2b2a3376f1454c2873c5b34d6ad2b560ea98332",
+          "frameCount": 9,
+          "durationsMs": [
+            90,
+            90,
+            90,
+            90,
+            100,
+            100,
+            100,
+            100,
+            120
+          ]
+        }
+      ]
+    }
+  ]
+}
