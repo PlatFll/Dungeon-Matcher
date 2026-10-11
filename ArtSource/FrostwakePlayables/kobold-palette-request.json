@@ -1,0 +1,19 @@
+{
+  "args": {
+    "image_urls": [
+      "https://api.pixellab.ai/mcp/images/bf5a6735-0964-4dbd-8c39-c03e399397e2/download?index=0",
+      "https://api.pixellab.ai/mcp/images/bf5a6735-0964-4dbd-8c39-c03e399397e2/download?index=14"
+    ],
+    "num_colors": 18,
+    "dithering": "none"
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: fe3de90f-decb-48a4-bd6c-5e29ab6114f4\njob_id: fe3de90f-decb-48a4-bd6c-5e29ab6114f4\nasset_id: 6dcf174f-9b85-5670-9996-83d7697727f1\nasset_status: pending (saved when generation completes)\nframes: 2\nsize: 64x64px (unchanged)\npalette: 18 colors\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"fe3de90f-decb-48a4-bd6c-5e29ab6114f4\")"
+      }
+    ],
+    "isError": false
+  }
+}
