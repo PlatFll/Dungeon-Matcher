@@ -1,0 +1,82 @@
+[
+  {
+    "operation": "copy_region",
+    "layer": "image",
+    "frames": [
+      1
+    ],
+    "source_layer": "image",
+    "source_frame": 1,
+    "region": [
+      256,
+      0,
+      319,
+      31
+    ],
+    "at": [
+      256,
+      64
+    ],
+    "reason": "Preserve native end cap and left rail in 128x32 wave plaque."
+  },
+  {
+    "operation": "copy_region",
+    "layer": "image",
+    "frames": [
+      1
+    ],
+    "source_layer": "image",
+    "source_frame": 1,
+    "region": [
+      336,
+      0,
+      399,
+      31
+    ],
+    "at": [
+      320,
+      64
+    ],
+    "reason": "Preserve native right end cap without rescaling."
+  },
+  {
+    "operation": "copy_region",
+    "layer": "image",
+    "frames": [
+      1
+    ],
+    "source_layer": "image",
+    "source_frame": 1,
+    "region": [
+      16,
+      16,
+      79,
+      23
+    ],
+    "at": [
+      268,
+      76
+    ],
+    "reason": "Fill wave text backing with the source's quiet timber material."
+  },
+  {
+    "operation": "copy_region",
+    "layer": "image",
+    "frames": [
+      1
+    ],
+    "source_layer": "image",
+    "source_frame": 1,
+    "region": [
+      16,
+      16,
+      55,
+      23
+    ],
+    "at": [
+      332,
+      76
+    ],
+    "reason": "Complete quiet timber backing at native scale."
+  }
+]

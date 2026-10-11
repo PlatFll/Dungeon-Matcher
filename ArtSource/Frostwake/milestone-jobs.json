@@ -1,0 +1,68 @@
+[
+  {
+    "id": "glacier_troll",
+    "name": "Glacier Troll",
+    "ref": "human",
+    "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A large chunky upright glacier troll with blue-grey skin, wide rounded nose, two little ivory tusks, shaggy cream brow and shoulder fur, simple dark brown hide loincloth. Carries one huge dark stone club with a pale ice crust lowered forward screen-left. Thick short powerful legs and clear arms, exaggerated heavy silhouette, whimsical not grotesque. Mini-boss creature, 73 pixels tall and 66 pixels wide; bigger than the human reference, smaller than canvas.",
+    "result": {
+      "background_job_id": "1f34b28f-3350-4421-ae55-befc02d4b0df",
+      "image_id": "68fe88f7-1aeb-57e2-92e7-292a890cc773",
+      "status": "processing",
+      "source_image_id": "68fe88f7-1aeb-57e2-92e7-292a890cc773",
+      "job_id": "1f34b28f-3350-4421-ae55-befc02d4b0df",
+      "image_size": {
+        "width": 112,
+        "height": 88
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/1f34b28f-3350-4421-ae55-befc02d4b0df/download"
+    }
+  },
+  {
+    "id": "iceborn_champion",
+    "name": "Iceborn Champion",
+    "ref": "human",
+    "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. An imposing adult human Iceborn champion with exposed square face and short white beard; open conical iron helm, broad cream fur cloak, desaturated iron breastplate, rust-red sash. Two-handed long iron warhammer with a single ice-blue wedge in the head, held down-forward screen-left. No shield. Distinct readable heavy front fighter, miniboss 65 native pixels tall.",
+    "result": {
+      "background_job_id": "18fc2d06-81b2-42ca-84a0-0ad268bd65f4",
+      "image_id": "33f73883-3d97-577f-9791-c158d340d6df",
+      "status": "processing",
+      "source_image_id": "33f73883-3d97-577f-9791-c158d340d6df",
+      "job_id": "18fc2d06-81b2-42ca-84a0-0ad268bd65f4",
+      "image_size": {
+        "width": 112,
+        "height": 88
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/18fc2d06-81b2-42ca-84a0-0ad268bd65f4/download"
+    }
+  },
+  {
+    "id": "jarl_haldra",
+    "name": "Jarl Haldra, the Icebreaker",
+    "ref": "female",
+    "prompt": "Dungeon Matcher production candidate: exactly ONE full-body enemy combat idle still on TRANSPARENT background, in three-quarter SIDE VIEW FACING SCREEN-LEFT, head looks left. Read the supplied actual reference panel: LEFT skeleton is PRIMARY Rattlebones rendering authority; RIGHT human is supporting rendering and human anatomy reference. Copy pixel scale and economy of rendering, NOT their species, costume or palette. Hard native pixel clusters, near-black #0A0D11 one-pixel outline, broad connected flat material shapes, top-left light, two or three shades per material, about14-16 solid colors overall. Readable face and equipment at 1x. No anti-alias, gradients, soft brush, stray pixels, painted concept rendering, snow pedestal or ground shadow. Keep feet on baseline y83 with 4 empty rows below. Canvas112x88 includes transparent margins; subject dimensions below refer to occupied native pixels, not upscaled art. A commanding adult human woman Iceborn clan leader. Clearly readable resolute face, pale silver hair in one thick braid, simple iron circlet with two small angular ice-blue points, rich dark teal wool cloak with pale bear-fur shoulders, ochre belt. Both hands grip one enormous broad iron cleaver sword with a pale icy cutting edge, point lowered screen-left. No shield. Broad grounded regal silhouette, warm human face amid cool materials, boss 67 native pixels tall.",
+    "result": {
+      "background_job_id": "39e7b4ff-43f6-4ea7-9a2b-919f032d559a",
+      "image_id": "52893f4f-d357-56d6-95a0-a866d26c60e6",
+      "status": "processing",
+      "source_image_id": "52893f4f-d357-56d6-95a0-a866d26c60e6",
+      "job_id": "39e7b4ff-43f6-4ea7-9a2b-919f032d559a",
+      "image_size": {
+        "width": 112,
+        "height": 88
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/39e7b4ff-43f6-4ea7-9a2b-919f032d559a/download"
+    }
+  }
+]

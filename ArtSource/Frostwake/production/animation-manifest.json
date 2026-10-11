@@ -1,0 +1,1415 @@
+{
+  "clips": [
+    {
+      "name": "frostblade_reaver",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "frostblade_reaver",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        120,
+        50,
+        50,
+        60,
+        80
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "frostblade_reaver",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "frostblade_reaver",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "frostblade_reaver",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "frostfang_wolf",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "frostfang_wolf",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "frostfang_wolf",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "frostfang_wolf",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 3,
+      "durationsMs": [
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 104,
+      "frameCount": 1,
+      "impactFrame": 0,
+      "durationsMs": [
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Interrupt",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 0,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "glacier_troll",
+      "state": "Release",
+      "width": 128,
+      "height": 104,
+      "frameCount": 6,
+      "impactFrame": 1,
+      "durationsMs": [
+        220,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 104,
+      "frameCount": 3,
+      "impactFrame": 2,
+      "durationsMs": [
+        80,
+        80,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 104,
+      "frameCount": 1,
+      "impactFrame": 0,
+      "durationsMs": [
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "Interrupt",
+      "width": 128,
+      "height": 104,
+      "frameCount": 3,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "harpoon_hunter",
+      "state": "Release",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 2,
+      "durationsMs": [
+        180,
+        180,
+        60,
+        60,
+        60,
+        60,
+        80,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 0,
+      "durationsMs": [
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 0,
+      "durationsMs": [
+        150,
+        150,
+        150,
+        150
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Release",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 0,
+      "durationsMs": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "hearthkeeper",
+      "state": "Interrupt",
+      "width": 128,
+      "height": 104,
+      "frameCount": 4,
+      "impactFrame": 0,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 104,
+      "frameCount": 7,
+      "impactFrame": 6,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 104,
+      "frameCount": 1,
+      "impactFrame": 0,
+      "durationsMs": [
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "Interrupt",
+      "width": 128,
+      "height": 104,
+      "frameCount": 7,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_champion",
+      "state": "Release",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 2,
+      "durationsMs": [
+        180,
+        180,
+        60,
+        60,
+        60,
+        60,
+        80,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "iceborn_raider",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_raider",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "iceborn_raider",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "iceborn_raider",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 5,
+      "durationsMs": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        90,
+        90,
+        90,
+        90
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "ChannelStart",
+      "width": 128,
+      "height": 104,
+      "frameCount": 7,
+      "impactFrame": 6,
+      "durationsMs": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "ChannelHold",
+      "width": 128,
+      "height": 104,
+      "frameCount": 1,
+      "impactFrame": 0,
+      "durationsMs": [
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "Interrupt",
+      "width": 128,
+      "height": 104,
+      "frameCount": 7,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "jarl_haldra",
+      "state": "Release",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 2,
+      "durationsMs": [
+        180,
+        180,
+        60,
+        60,
+        60,
+        60,
+        80,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "rime_skald",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rime_skald",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "rime_skald",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rime_skald",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rime_skald",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "rimecarver",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rimecarver",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 2,
+      "durationsMs": [
+        160,
+        160,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        54
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "rimecarver",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rimecarver",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "rimecarver",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    },
+    {
+      "name": "shieldmaiden",
+      "state": "Idle",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "loop": true,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "shieldmaiden",
+      "state": "AutoAttack",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 3,
+      "durationsMs": [
+        106,
+        106,
+        108,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false,
+      "special": false,
+      "attack": true
+    },
+    {
+      "name": "shieldmaiden",
+      "state": "Hit",
+      "width": 128,
+      "height": 104,
+      "frameCount": 5,
+      "impactFrame": 0,
+      "durationsMs": [
+        40,
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "shieldmaiden",
+      "state": "Death",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 0,
+      "durationsMs": [
+        60,
+        70,
+        80,
+        90,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": false,
+      "special": false,
+      "attack": false
+    },
+    {
+      "name": "shieldmaiden",
+      "state": "Ability",
+      "width": 128,
+      "height": 104,
+      "frameCount": 9,
+      "impactFrame": 4,
+      "durationsMs": [
+        90,
+        90,
+        90,
+        90,
+        100,
+        100,
+        100,
+        100,
+        120
+      ],
+      "loop": false,
+      "special": true,
+      "attack": false
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+[
+  {
+    "id": "MountainPass",
+    "width": 384,
+    "height": 192,
+    "no_background": false,
+    "description": "A game battle backdrop, crisp native pixel art at 384 by 192 pixels. Frostwake Peaks, whimsical fantasy snowy mountain pass. SIDE VIEW with a horizontal ground horizon at y=140. Bottom 52 pixels uninterrupted dark blue-gray rocky walking ground with sparse snow ledges, no foreground props obstructing feet. Upper background layered jagged dark navy mountains, broad pale blue glacier faces, distant tiny timber wandering hall on huge runners at left, rope bridge and warm amber brazier at far right. Strong depth: distant low-contrast silhouettes, a few timber posts near extreme edges. Keep central 70 percent open behind combatants. Dark rock and midnight cold blues dominate, limited pale snow and small warm fire accents. Broad connected pixel shapes, 2-3 flat shades per material, dark outlines on timber only. No characters, no UI, no text, no gradients, no dithering, no noise, no realistic painting.",
+    "detail": "low detail",
+    "view": "side",
+    "outline": "selective outline",
+    "receipt": "id: 7b72d963-cb5a-498c-acab-4020b6ec1a2b\njob_id: 7b72d963-cb5a-498c-acab-4020b6ec1a2b\nmodel: pixen\ndescription: A game battle backdrop, crisp native pixel art at 384 by 192 pixels. Frostwake Peaks, whimsical fantasy snowy mountain pass. SIDE VIEW with a horizontal ground horizon at y=140. Bottom 52 pixels uninterrupted dark blue-gray rocky walking ground with sparse snow ledges, no foreground props obstructing feet. Upper background layered jagged dark navy mountains, broad pale blue glacier faces, distant tiny timber wandering hall on huge runners at left, rope bridge and warm amber brazier at far right. Strong depth: distant low-contrast silhouettes, a few timber posts near extreme edges. Keep central 70 percent open behind combatants. Dark rock and midnight cold blues dominate, limited pale snow and small warm fire accents. Broad connected pixel shapes, 2-3 flat shades per material, dark outlines on timber only. No characters, no UI, no text, no gradients, no dithering, no noise, no realistic painting.\nsize: 384x192px\ntransparent: False\nasset_id: a5e05db7-d36b-5cbe-9cc1-ac3b8ad0ad29\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7b72d963-cb5a-498c-acab-4020b6ec1a2b\")",
+    "job_id": "7b72d963-cb5a-498c-acab-4020b6ec1a2b",
+    "completed": {
+      "job_id": "7b72d963-cb5a-498c-acab-4020b6ec1a2b",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/7b72d963-cb5a-498c-acab-4020b6ec1a2b/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/7b72d963-cb5a-498c-acab-4020b6ec1a2b/download"
+      ],
+      "asset": {
+        "id": "a5e05db7-d36b-5cbe-9cc1-ac3b8ad0ad29",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "StoneTile",
+    "width": 64,
+    "height": 64,
+    "no_background": false,
+    "description": "Single seamless square dark slate stone tile for match-3 board background. Crisp native 64x64 pixel art. Tile fills canvas EDGE TO EDGE, flat front view. Slightly rounded square corners of 2 pixels only, dark navy seams at outermost 1-pixel edge, broad connected blue-gray slate faces, a sparse small frost facet at one corner. Deep muted blue gray base so bright jewel above remains readable. No bright outer border, no circular shapes, no symbols or gems, no center motif, no realistic texture, no noise, no dithering, no gradient. 7 carefully restrained slate colors. Mountain Nordic game UI material.",
+    "detail": "low detail",
+    "outline": "selective outline",
+    "receipt": "id: 41aba1e3-8dc6-4e7a-a048-202556737bcd\njob_id: 41aba1e3-8dc6-4e7a-a048-202556737bcd\nmodel: pixen\ndescription: Single seamless square dark slate stone tile for match-3 board background. Crisp native 64x64 pixel art. Tile fills canvas EDGE TO EDGE, flat front view. Slightly rounded square corners of 2 pixels only, dark navy seams at outermost 1-pixel edge, broad connected blue-gray slate faces, a sparse small frost facet at one corner. Deep muted blue gray base so bright jewel above remains readable. No bright outer border, no circular shapes, no symbols or gems, no center motif, no realistic texture, no noise, no dithering, no gradient. 7 carefully restrained slate colors. Mountain Nordic game UI material.\nsize: 64x64px\ntransparent: False\nasset_id: 3cdffe84-ea98-5aa2-9a0f-cf7944862771\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"41aba1e3-8dc6-4e7a-a048-202556737bcd\")",
+    "job_id": "41aba1e3-8dc6-4e7a-a048-202556737bcd",
+    "completed": {
+      "job_id": "41aba1e3-8dc6-4e7a-a048-202556737bcd",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/41aba1e3-8dc6-4e7a-a048-202556737bcd/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/41aba1e3-8dc6-4e7a-a048-202556737bcd/download"
+      ],
+      "asset": {
+        "id": "3cdffe84-ea98-5aa2-9a0f-cf7944862771",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "GeneralBackdrop",
+    "width": 128,
+    "height": 128,
+    "description": "Seamless repeating dark blue-black mountain rock texture for a fantasy mobile game's general UI background, native pixel art 128x128. Large connected low-contrast slate stone faces, sparse deep navy recess lines, two tiny pale ice streaks only, 6 muted colors with darkest near #101922. Quiet flat material, no frame, no objects, no text, no central vignette, no gradients, no noise, no dithering. Tile cleanly on all edges.",
+    "no_background": false,
+    "receipt": "id: 23b4f36d-c459-405b-864d-17632dd68771\njob_id: 23b4f36d-c459-405b-864d-17632dd68771\nmodel: pixen\ndescription: Seamless repeating dark blue-black mountain rock texture for a fantasy mobile game's general UI background, native pixel art 128x128. Large connected low-contrast slate stone faces, sparse deep navy recess lines, two tiny pale ice streaks only, 6 muted colors with darkest near #101922. Quiet flat material, no frame, no objects, no text, no central vignette, no gradients, no noise, no dithering. Tile cleanly on all edges.\nsize: 128x128px\ntransparent: False\nasset_id: 998ea58c-c44f-5373-8684-7bb0966d4b99\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"23b4f36d-c459-405b-864d-17632dd68771\")",
+    "job_id": "23b4f36d-c459-405b-864d-17632dd68771",
+    "completed": {
+      "job_id": "23b4f36d-c459-405b-864d-17632dd68771",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/23b4f36d-c459-405b-864d-17632dd68771/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/23b4f36d-c459-405b-864d-17632dd68771/download"
+      ],
+      "asset": {
+        "id": "998ea58c-c44f-5373-8684-7bb0966d4b99",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "PanelTimber",
+    "width": 128,
+    "height": 128,
+    "description": "Seamless repeating antique warm charcoal-brown timber planks texture for Nordic mountain game player panel and bottom HUD inset. Native pixel art 128x128. Wide horizontal wooden boards with sparse broad hand-hewn grain grooves, 6 low-contrast warm brown shades, two small dark iron rivets at edges. Clearly warmer than blue slate mountain backdrop but remains dark behind readable UI. Flat face, no frame, no white snow, no icons, no letters, no gradients, no noise, no dithering.",
+    "no_background": false,
+    "receipt": "id: 16e57b98-0ab9-405e-96d4-1c74a1f3d202\njob_id: 16e57b98-0ab9-405e-96d4-1c74a1f3d202\nmodel: pixen\ndescription: Seamless repeating antique warm charcoal-brown timber planks texture for Nordic mountain game player panel and bottom HUD inset. Native pixel art 128x128. Wide horizontal wooden boards with sparse broad hand-hewn grain grooves, 6 low-contrast warm brown shades, two small dark iron rivets at edges. Clearly warmer than blue slate mountain backdrop but remains dark behind readable UI. Flat face, no frame, no white snow, no icons, no letters, no gradients, no noise, no dithering.\nsize: 128x128px\ntransparent: False\nasset_id: 70499b4f-00fc-5d59-be9c-8738438f0b6f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"16e57b98-0ab9-405e-96d4-1c74a1f3d202\")",
+    "job_id": "16e57b98-0ab9-405e-96d4-1c74a1f3d202",
+    "completed": {
+      "job_id": "16e57b98-0ab9-405e-96d4-1c74a1f3d202",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/16e57b98-0ab9-405e-96d4-1c74a1f3d202/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/16e57b98-0ab9-405e-96d4-1c74a1f3d202/download"
+      ],
+      "asset": {
+        "id": "70499b4f-00fc-5d59-be9c-8738438f0b6f",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "EmptyMountainPass",
+    "width": 256,
+    "height": 128,
+    "no_background": false,
+    "description": "EMPTY uninhabited mountain landscape. NO PEOPLE OR CHARACTERS OR ANIMALS. Side-view snowy mountain pass at dusk. Dark navy jagged distant peaks, broad pale blue glacier, dark rock walking ledge extending horizontally along bottom 32 pixels. One abandoned timber sled hall on far left cliff and unlit rope posts far right. Empty central space. Crisp chunky pixel art, broad flat color clusters, 12 colors, no tiny texture, no gradients, no UI, no letters.",
+    "detail": "low detail",
+    "receipt": "id: e3d09982-e3fd-4a48-bae0-fa001874217c\njob_id: e3d09982-e3fd-4a48-bae0-fa001874217c\nmodel: pixen\ndescription: EMPTY uninhabited mountain landscape. NO PEOPLE OR CHARACTERS OR ANIMALS. Side-view snowy mountain pass at dusk. Dark navy jagged distant peaks, broad pale blue glacier, dark rock walking ledge extending horizontally along bottom 32 pixels. One abandoned timber sled hall on far left cliff and unlit rope posts far right. Empty central space. Crisp chunky pixel art, broad flat color clusters, 12 colors, no tiny texture, no gradients, no UI, no letters.\nsize: 256x128px\ntransparent: False\nasset_id: e479886b-be8d-56b3-bd0e-55a9449c7a8b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"e3d09982-e3fd-4a48-bae0-fa001874217c\")",
+    "job_id": "e3d09982-e3fd-4a48-bae0-fa001874217c",
+    "completed": {
+      "job_id": "e3d09982-e3fd-4a48-bae0-fa001874217c",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/e3d09982-e3fd-4a48-bae0-fa001874217c/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/e3d09982-e3fd-4a48-bae0-fa001874217c/download"
+      ],
+      "asset": {
+        "id": "e479886b-be8d-56b3-bd0e-55a9449c7a8b",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "Frost",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "description": "Thin angular frost frostwork shell overlay surrounding an EMPTY TRANSPARENT CENTER. Pixel art 64x64. Four small connected pale-blue ice clusters around a diamond shape, outer bounds x4 y4 x60 y60. Center 40x40 completely transparent, 1-pixel dark blue edge, broad flat icy blue shapes with two light shades. Designed to encase a match-3 jewel that will be visible underneath. No jewel, no floor, no snowflakes or small particles, no glow, no white opaque background.",
+    "detail": "low detail",
+    "outline": "single color outline",
+    "receipt": "id: dd27ccdd-5474-411b-991b-4bba194fe71f\njob_id: dd27ccdd-5474-411b-991b-4bba194fe71f\nmodel: pixen\ndescription: Thin angular frost frostwork shell overlay surrounding an EMPTY TRANSPARENT CENTER. Pixel art 64x64. Four small connected pale-blue ice clusters around a diamond shape, outer bounds x4 y4 x60 y60. Center 40x40 completely transparent, 1-pixel dark blue edge, broad flat icy blue shapes with two light shades. Designed to encase a match-3 jewel that will be visible underneath. No jewel, no floor, no snowflakes or small particles, no glow, no white opaque background.\nsize: 64x64px\ntransparent: True\nasset_id: dcd7ba14-d949-557a-b72d-d9c4d01a2639\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"dd27ccdd-5474-411b-991b-4bba194fe71f\")",
+    "job_id": "dd27ccdd-5474-411b-991b-4bba194fe71f",
+    "completed": {
+      "job_id": "dd27ccdd-5474-411b-991b-4bba194fe71f",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/dd27ccdd-5474-411b-991b-4bba194fe71f/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/dd27ccdd-5474-411b-991b-4bba194fe71f/download"
+      ],
+      "asset": {
+        "id": "dcd7ba14-d949-557a-b72d-d9c4d01a2639",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "Button",
+    "width": 96,
+    "height": 40,
+    "no_background": true,
+    "description": "Blank horizontal rounded rectangular game UI button. 96x40 native pixel art. Nordic mountain theme: simple aged dark gray-blue iron rim 3 pixels thick, flat warm dark timber inset, one iron rivet in each corner, subtle pale ice on upper-left corner only. Broad clean connected shapes, dark outline, three tones per material, large empty flat central space for legible text. Front view, no text, no symbol, no ornaments outside rectangle, no gradient or texture noise.",
+    "detail": "low detail",
+    "outline": "single color black outline",
+    "receipt": "id: f5f5f713-2c64-46e1-89a8-a8d741214033\njob_id: f5f5f713-2c64-46e1-89a8-a8d741214033\nmodel: pixen\ndescription: Blank horizontal rounded rectangular game UI button. 96x40 native pixel art. Nordic mountain theme: simple aged dark gray-blue iron rim 3 pixels thick, flat warm dark timber inset, one iron rivet in each corner, subtle pale ice on upper-left corner only. Broad clean connected shapes, dark outline, three tones per material, large empty flat central space for legible text. Front view, no text, no symbol, no ornaments outside rectangle, no gradient or texture noise.\nsize: 96x40px\ntransparent: True\nasset_id: 1fa2ccb2-c769-56c5-8d32-3beebb731f79\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"f5f5f713-2c64-46e1-89a8-a8d741214033\")",
+    "job_id": "f5f5f713-2c64-46e1-89a8-a8d741214033",
+    "completed": {
+      "job_id": "f5f5f713-2c64-46e1-89a8-a8d741214033",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/f5f5f713-2c64-46e1-89a8-a8d741214033/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/f5f5f713-2c64-46e1-89a8-a8d741214033/download"
+      ],
+      "asset": {
+        "id": "1fa2ccb2-c769-56c5-8d32-3beebb731f79",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "BackdropQuiet",
+    "parent": "GeneralBackdrop",
+    "description": "Make this a VERY DARK QUIET seamless rock texture. Remove all white snow and bright icy highlights. Use only six dark desaturated navy slate shades, low contrast broad flat faces, sparse cracks. No frame, no rivets, no UI, no fine stippling, no highlights. Keep the native 128x128 pixel grid and broad shapes.",
+    "receipt": "id: be8842d2-a7c6-4b54-a195-d4cfa381e10d\njob_id: be8842d2-a7c6-4b54-a195-d4cfa381e10d\nmodel: pixen\nedit: Make this a VERY DARK QUIET seamless rock texture. Remove all white snow and bright icy highlights. Use only six dark desaturated navy slate shades, low contrast broad flat faces, sparse cracks. No frame, no rivets, no UI, no fine stippling, no highlights. Keep the native 128x128 pixel grid and broad shapes.\nsource: 128x128px\nsize: 128x128px\ntransparent: False\nasset_id: 01c74302-c79f-5549-8266-090fa6d03aae\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"be8842d2-a7c6-4b54-a195-d4cfa381e10d\")",
+    "job_id": "be8842d2-a7c6-4b54-a195-d4cfa381e10d",
+    "completed": {
+      "job_id": "be8842d2-a7c6-4b54-a195-d4cfa381e10d",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/be8842d2-a7c6-4b54-a195-d4cfa381e10d/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/be8842d2-a7c6-4b54-a195-d4cfa381e10d/download"
+      ],
+      "asset": {
+        "id": "01c74302-c79f-5549-8266-090fa6d03aae",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "HeavyIce",
+    "parent": "Frost",
+    "description": "Replace with a square-rounded ice shell, NOT spiky star or snowflake. Large transparent opening in CENTER, 30x30 pixels completely empty so a jewel shows underneath. Thick connected pale blue ice around outer edges, angular broad facets in three shades, dark blue contour, no glow. 64x64 native pixel art, transparent background.",
+    "receipt": "id: 414306b7-8f5a-479d-af5d-8dfa6528ba10\njob_id: 414306b7-8f5a-479d-af5d-8dfa6528ba10\nmodel: pixen\nedit: Replace with a square-rounded ice shell, NOT spiky star or snowflake. Large transparent opening in CENTER, 30x30 pixels completely empty so a jewel shows underneath. Thick connected pale blue ice around outer edges, angular broad facets in three shades, dark blue contour, no glow. 64x64 native pixel art, transparent background.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: dff437dd-f49f-5f4a-a53c-6d630891ebfb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"414306b7-8f5a-479d-af5d-8dfa6528ba10\")",
+    "job_id": "414306b7-8f5a-479d-af5d-8dfa6528ba10",
+    "completed": {
+      "job_id": "414306b7-8f5a-479d-af5d-8dfa6528ba10",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/414306b7-8f5a-479d-af5d-8dfa6528ba10/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/414306b7-8f5a-479d-af5d-8dfa6528ba10/download"
+      ],
+      "asset": {
+        "id": "dff437dd-f49f-5f4a-a53c-6d630891ebfb",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "Bifrost",
+    "parent": "Frost",
+    "description": "Replace with a thick irregular diamond-shaped ice casing. Six broad icy cyan/lilac facets with a small 18x18 transparent window in center; jewel beneath partly visible. Strong darkest blue outline, only 5 flat colors, thicker and heavier than thin frost. No starburst points, no glow, no particle dots. 64x64 native pixel art, transparent background.",
+    "receipt": "id: 481a6a6a-fbc6-4dee-adc6-3028ff7abb06\njob_id: 481a6a6a-fbc6-4dee-adc6-3028ff7abb06\nmodel: pixen\nedit: Replace with a thick irregular diamond-shaped ice casing. Six broad icy cyan/lilac facets with a small 18x18 transparent window in center; jewel beneath partly visible. Strong darkest blue outline, only 5 flat colors, thicker and heavier than thin frost. No starburst points, no glow, no particle dots. 64x64 native pixel art, transparent background.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nasset_id: 47ee7e81-bbec-5dcc-86f3-7c8cbcea62fb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"481a6a6a-fbc6-4dee-adc6-3028ff7abb06\")",
+    "job_id": "481a6a6a-fbc6-4dee-adc6-3028ff7abb06",
+    "completed": {
+      "job_id": "481a6a6a-fbc6-4dee-adc6-3028ff7abb06",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/481a6a6a-fbc6-4dee-adc6-3028ff7abb06/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/481a6a6a-fbc6-4dee-adc6-3028ff7abb06/download"
+      ],
+      "asset": {
+        "id": "47ee7e81-bbec-5dcc-86f3-7c8cbcea62fb",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "WanderingHall",
+    "parent": "EmptyMountainPass",
+    "description": "Keep EMPTY scene and same dark mountain pixel rendering. Replace central glacier valley with a distant travelling timber hall on giant wooden sledge runners, banners and a warm orange brazier. Hall stays behind the open rocky walking ledge in bottom 32 pixels. No people or animals. Maintain dark blue rock and small pale ice masses, no added text or interface.",
+    "receipt": "id: 0c68a6f9-814b-4c88-b062-f10437c5e11e\njob_id: 0c68a6f9-814b-4c88-b062-f10437c5e11e\nmodel: pixen\nedit: Keep EMPTY scene and same dark mountain pixel rendering. Replace central glacier valley with a distant travelling timber hall on giant wooden sledge runners, banners and a warm orange brazier. Hall stays behind the open rocky walking ledge in bottom 32 pixels. No people or animals. Maintain dark blue rock and small pale ice masses, no added text or interface.\nsource: 256x128px\nsize: 256x128px\ntransparent: False\nasset_id: e4047246-c19c-5575-95a4-b5052db6ddd8\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0c68a6f9-814b-4c88-b062-f10437c5e11e\")",
+    "job_id": "0c68a6f9-814b-4c88-b062-f10437c5e11e",
+    "completed": {
+      "job_id": "0c68a6f9-814b-4c88-b062-f10437c5e11e",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/0c68a6f9-814b-4c88-b062-f10437c5e11e/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/0c68a6f9-814b-4c88-b062-f10437c5e11e/download"
+      ],
+      "asset": {
+        "id": "e4047246-c19c-5575-95a4-b5052db6ddd8",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "GlacierGate",
+    "parent": "EmptyMountainPass",
+    "description": "Keep EMPTY scene, fixed camera and same dark mountain pixel rendering. Replace distant valley with a monumental split glacier gate, dark rock carved clan pillars at far left/right, two small orange braziers. Huge pale blue ice arch high above center. Bottom 32 pixels remain dark uninterrupted rocky walking ground. No people or animals, no text, no interface.",
+    "receipt": "id: 10d4e0d3-e9b7-456b-a531-983d38c2835c\njob_id: 10d4e0d3-e9b7-456b-a531-983d38c2835c\nmodel: pixen\nedit: Keep EMPTY scene, fixed camera and same dark mountain pixel rendering. Replace distant valley with a monumental split glacier gate, dark rock carved clan pillars at far left/right, two small orange braziers. Huge pale blue ice arch high above center. Bottom 32 pixels remain dark uninterrupted rocky walking ground. No people or animals, no text, no interface.\nsource: 256x128px\nsize: 256x128px\ntransparent: False\nasset_id: 1705d425-5525-529c-83da-4fd58ba1b657\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"10d4e0d3-e9b7-456b-a531-983d38c2835c\")",
+    "job_id": "10d4e0d3-e9b7-456b-a531-983d38c2835c",
+    "completed": {
+      "job_id": "10d4e0d3-e9b7-456b-a531-983d38c2835c",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/10d4e0d3-e9b7-456b-a531-983d38c2835c/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/10d4e0d3-e9b7-456b-a531-983d38c2835c/download"
+      ],
+      "asset": {
+        "id": "1705d425-5525-529c-83da-4fd58ba1b657",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "SupplyTile",
+    "width": 64,
+    "height": 64,
+    "description": "Bright warm gray slate square tile with softly rounded corners, crisp native pixel art. Front view 64x64, large flat unobstructed center to hold a power-up icon. Broad connected warm gray stone face, 2 darker edge planes, one short pale frost corner at upper left. No border or frame around it, no symbol or text, no gem, no circular shape, no grain noise. Transparent outside four slightly rounded corners.",
+    "no_background": true,
+    "receipt": "id: 86289e8b-719f-4a25-af2a-4d7059f739bc\njob_id: 86289e8b-719f-4a25-af2a-4d7059f739bc\nmodel: pixen\ndescription: Bright warm gray slate square tile with softly rounded corners, crisp native pixel art. Front view 64x64, large flat unobstructed center to hold a power-up icon. Broad connected warm gray stone face, 2 darker edge planes, one short pale frost corner at upper left. No border or frame around it, no symbol or text, no gem, no circular shape, no grain noise. Transparent outside four slightly rounded corners.\nsize: 64x64px\ntransparent: True\nasset_id: 2f2da6d5-3d26-56c4-9b29-8c00baf8d730\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"86289e8b-719f-4a25-af2a-4d7059f739bc\")",
+    "job_id": "86289e8b-719f-4a25-af2a-4d7059f739bc",
+    "completed": {
+      "job_id": "86289e8b-719f-4a25-af2a-4d7059f739bc",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/86289e8b-719f-4a25-af2a-4d7059f739bc/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/86289e8b-719f-4a25-af2a-4d7059f739bc/download"
+      ],
+      "asset": {
+        "id": "2f2da6d5-3d26-56c4-9b29-8c00baf8d730",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  },
+  {
+    "id": "SettingsGear",
+    "width": 32,
+    "height": 32,
+    "description": "Simple thick iron cogwheel icon for a whimsical mountain game UI, native 32x32 pixel art, seven broad teeth, blue-gray aged iron with a dark central hole, one tiny warm bronze rivet. Near-black outline, three connected flat metal shades, no background, no snowflake, no letters, no gradient, no glossy glass.",
+    "no_background": true,
+    "receipt": "id: 8b845fff-6987-4058-b759-8411147c42ad\njob_id: 8b845fff-6987-4058-b759-8411147c42ad\nmodel: pixen\ndescription: Simple thick iron cogwheel icon for a whimsical mountain game UI, native 32x32 pixel art, seven broad teeth, blue-gray aged iron with a dark central hole, one tiny warm bronze rivet. Near-black outline, three connected flat metal shades, no background, no snowflake, no letters, no gradient, no glossy glass.\nsize: 32x32px\ntransparent: True\nasset_id: a15e1eab-467a-5c7a-904c-499f33d77e8a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8b845fff-6987-4058-b759-8411147c42ad\")",
+    "job_id": "8b845fff-6987-4058-b759-8411147c42ad",
+    "completed": {
+      "job_id": "8b845fff-6987-4058-b759-8411147c42ad",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/8b845fff-6987-4058-b759-8411147c42ad/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8b845fff-6987-4058-b759-8411147c42ad/download"
+      ],
+      "asset": {
+        "id": "a15e1eab-467a-5c7a-904c-499f33d77e8a",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    }
+  }
+]

@@ -6,13 +6,16 @@ root=Path(__file__).resolve().parents[1]/'ArtSource/FrostwakePlayables'
 out=root/'production';out.mkdir(exist_ok=True)
 clips=[];checks=[]
 def pack(name,source,indices,times,loop=False,pivot=0):
-    frames=[Image.open(root/'motion'/source/'palette-locked'/f'{i:02}.png').convert('RGBA') for i in indices]
+    revised=root/'eye-revision'/source
+    folder=revised if source.startswith('Minotaur_') and revised.exists() else root/'motion'/source/'palette-locked'
+    frames=[Image.open(folder/f'{i:02}.png').convert('RGBA') for i in indices]
     w,h=frames[0].size
     assert all(f.size==(w,h) for f in frames)
     sheet=Image.new('RGBA',(w*len(frames),h))
     for i,frame in enumerate(frames):sheet.paste(frame,(w*i,0))
     path=out/f'{name}.png';sheet.save(path)
-    char=name.split('_')[0];pal={p for p in Image.open(root/'locked'/f'{char}.png').convert('RGBA').get_flattened_data() if p[3]}
+    char=name.split('_')[0];still=root/'eye-revision'/'Minotaur.png' if char=='Minotaur' and revised.exists() else root/'locked'/f'{char}.png'
+    pal={p for p in Image.open(still).convert('RGBA').get_flattened_data() if p[3]}
     for i,f in enumerate(frames):
         assert set(f.getchannel('A').get_flattened_data())<={0,255}
         assert {p for p in f.get_flattened_data() if p[3]}<=pal
