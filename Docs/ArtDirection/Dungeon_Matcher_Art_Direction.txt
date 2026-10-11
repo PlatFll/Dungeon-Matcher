@@ -1,8 +1,8 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.11
+**Version:** 1.12
 **Compiled:** 2026-09-19
-**Updated for combat polish and enemy attack production:** 2026-10-01
+**Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -42,13 +42,106 @@ The user accepted the eleven special-ability studies, selected Royal Gold, and r
 
 ## 1. Start here in every new art task
 
+### Current global authority — 2026-10-11
+
+Rattlebones is the PRIMARY GOLDEN STANDARD for character rendering and the
+grounded motion family. The established human cast is the supporting family.
+This explicitly establishes reference authority; it does not authorize changing
+Rattlebones, or making other species share his anatomy, eyes, stance or palette.
+Inspect current individual pixels, not only the historical board. The current
+runtime source paths, extracted ready frames, hashes and status distinctions are
+in `Golden_Reference_Register.md`. Some individual files named in the historical
+v1.0 pack are absent from this checkout; their original records below remain
+provenance, not evidence those paths currently exist.
+
+The October audit recommends Royal Swordsman, Elven Mender, Orc Trailguard and
+Pearl Thief as complementary additions. These memberships are PROPOSED, not
+approved. Farmer and Pan Villager retain their established supporting roles.
+Elven Scout is a specialist reserve, not an automatic additional core reference.
+See `Audit2026-10/REPORT.md` for reasons, individual scores and proposed changes.
+The report is dated evidence under this guide, not a competing art-direction guide.
+
+The visual target is whimsical, nostalgic dungeon fantasy: crisp native pixels,
+dark contours, readable faces and equipment, large connected material planes,
+restrained shading and controlled detail. Favor face/identity prop first, body
+mass second, optional decoration last. Keep enough quiet surface for this
+hierarchy to survive mobile display. A dwarf's broad body, an eel's coil, a
+crab's low stance, a queen's tall silhouette and a machine's joints are valid
+differences. Their surface rendering must still be economical and readable.
+
+Treat camera, anatomy, pose and rendering as separate decisions. Shared soldiers'
+ready stances can communicate discipline. Change a pose only for a named role,
+personality or silhouette benefit; do not impose novelty on the whole cast.
+Simplify internal clusters before considering a new pose or full regeneration.
+Inspect the actual bound idle/action/hit/death/channel/powered states, including
+shared feedback when no bespoke clip exists. Extra transparent action padding
+is not evidence that the character's pixel scale changed.
+
+The 2026-10-11 audit inspected all 62 current enemy/summon definitions, three
+players and two disabled Grand Delver alternates: 361 controller states and
+2,983 consolidated sprite-key drawings. It is a source-frame visual audit with
+serialized timing and historical screen evidence, not fresh Unity or device
+playback certification. All proposed production edits require their own scoped
+implementation approval. No generation or production sprite edit occurred.
+
+### Actual image references in future PixelLab workflows
+
+Every NEW enemy-generation workflow must actually submit the primary golden
+image plus applicable supporting imagery through supported reference inputs.
+Text alone, a filename in a prompt, or a palette-only input does not satisfy
+this rule. Verify the provider's current schema before spending generations.
+Use references for outline, shading and detail discipline; preserve the target's
+own species, equipment, personality and appropriate material colors.
+
+Supported examples inspected in the available PixelLab tool schemas on
+2026-10-11 (no generation calls were made):
+- `create_image_pro` accepts `style_image_base64` / `style_image_url` and
+  `style_copy`. Supply the Rattlebones image as style with
+  `["outline", "detail", "shading"]`; do not copy its palette automatically.
+  Its `reference_images` accepts up to four labeled images. Supply the approved
+  target (if any) with usage "character identity, anatomy and equipment" and
+  relevant supporting image(s) with narrowly stated rendering roles.
+- `create_image_pro_flash` accepts an actual `style_image` and `style_options`.
+  This can convey the primary rendering image for a new still. Verify suitability
+  for the required identity/reference combination before choosing that endpoint.
+- `create_character` v3's `reference_image_*` rotates the supplied target into
+  directions; it is an IDENTITY input, not permission to replace the target
+  with Rattlebones. Pro's `style_character_id` requires a real compatible
+  registered character; a local PNG path cannot be substituted for that ID.
+- `animate_image` takes the approved target as `first_frame_*`, optionally the
+  same approved ready frame as `last_frame_*`. It has no independent style-image
+  field in the inspected schema. Do not invent one or pass Rattlebones as the
+  target's identity. The approved, reference-conditioned still carries the
+  rendering lineage; use golden images in visual review alongside that target.
+
+If the chosen new-enemy endpoint cannot accept the required actual reference
+imagery with correct roles, select a supported endpoint or resolve the capability
+gap before generation. Do not silently fall back to a text-only style request.
+Still approval is required before producing the full animation set. Existing
+approved targets remain identity authority; reference membership does not permit
+redesigning their faces, silhouettes or equipment during animation.
+
+Record for every future generation/edit: guide version and SHA-256; reference
+paths and SHA-256 hashes; source sprite GUID/fileID and extraction rectangle when
+applicable; target image/hash and approval source; endpoint/model and actual
+image-input fields/roles; prompt, settings, seed when supported; job ID, parent
+job/input lineage, returned files/hashes; selected/rejected status and cost.
+Verify payload references before dispatch and keep receipts. Stop at the approved
+spend/scope boundary; checkpoint jobs and decisions rather than polling without
+purpose. The current audit spent zero PixelLab generations.
+
+Scores requested for audits are explicitly subjective judgments out of ten,
+not measured similarity percentages or substitutes for visual approval. Give
+style, theme and animation separate scores with evidence and coverage limits.
+Never rank by color count, canvas size or species alone.
+
 October 7 roster display revision: Royal Arcanist is now **The Minister**.
 The approved character pixels, internal `royal_arcanist` ID, `Enemy_RoyalArchbishop`
 asset and historical source aliases remain stable. Judgment's three new native
 King states are review candidates described in `ArtSource/EnemyAttacks/ABILITY_SOURCES.md`;
 they do not supersede the approved Bombardment or idle identity.
 
-1. Read this guide and inspect `Dungeon_Matcher_Art_References.png`; use individual PNGs for exact pixels.
+1. Read this guide and `Golden_Reference_Register.md`, including on resumed work; inspect the actual current golden/supporting images and verify their versions. The historical `Dungeon_Matcher_Art_References.png` remains useful context, not a substitute for current individual PNGs.
 2. Identify the actual target file, character identity, task scope, and applicable reference status.
 3. Separate what is locked from what the user has authorized you to change.
 4. Choose material colors and shading based on the character's role, not a generic fantasy preset.

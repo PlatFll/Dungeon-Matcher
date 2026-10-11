@@ -20,6 +20,24 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Global art-direction audit (2026-10-11)
+
+The canonical art guide is now v1.12. Rattlebones is the explicitly designated
+primary rendering/motion standard; Farmer and Pan Villager remain supporting
+references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
+**proposed** complementary golden additions, awaiting user review.
+[The reference register](ArtDirection/Golden_Reference_Register.md) identifies
+current sources/hashes separately from historical approval records.
+[The cast audit](ArtDirection/Audit2026-10/REPORT.md) covers 62 enemies/summons,
+three players and two disabled Grand Delver alternates, with all bound sprite
+states, scores and an offline review gallery. Main proposals are selective
+detail simplification, Puffer inflated-face clarity and Snapvine death cleanup.
+No production pixels, gameplay, imports or animations were changed; no PixelLab
+generations were spent. Source-frame review and historical captures do not
+constitute fresh Unity playback, device testing or approval of proposed changes.
+Historical art checkpoint versions below describe earlier milestones; consult
+the current guide/register before any new or resumed art work.
+
 ## Unified move-combat experiment (2026-10-08)
 
 New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual

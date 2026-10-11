@@ -6,6 +6,25 @@ Dungeon Matcher is a mobile pixel-art match-3 dungeon battler built in Unity.
 
 Before making changes, inspect the relevant existing implementation and follow established architecture rather than creating parallel systems.
 
+## Art tasks: read current direction first
+
+Before every Dungeon Matcher art task, including an audit, generation, animation,
+import, correction, or work resumed from an older chat, read the current
+`Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt` and
+`Docs/ArtDirection/Golden_Reference_Register.md`. Inspect the actual current
+Rattlebones golden sprite and applicable supporting reference images identified
+there, checking their source paths/hashes against the current repository. An old
+chat, prompt saying "Rattlebones style", or gallery thumbnail is not a substitute.
+Rattlebones is the primary rendering authority; preserve species, target identity,
+equipment and personality. Proposed reference additions are not user approvals.
+Keep one canonical art guide and preserve approval/source history.
+
+New enemy generation must pass actual golden images through a supported image
+reference input, following the guide's reference-input and lineage requirements.
+For existing-character animation, the approved target still remains the identity
+authority. Obtain still approval before a full new animation set. Art audits do
+not authorize production sprite replacement or generation spending.
+
 ## Project documentation
 
 Before implementing gameplay features or changing gameplay behavior:
