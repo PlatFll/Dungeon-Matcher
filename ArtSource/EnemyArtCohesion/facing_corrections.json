@@ -1,0 +1,31 @@
+{
+  "baseline_commit": "0b03efbf870fefc392963bf3551b21b79b80685c",
+  "operation": "Reflect the complete RGBA cel horizontally about its existing canvas center; no repainting, resampling, recoloring or timing changes.",
+  "indexing": "Zero-based clip drawing indices; a shared imported cel is reflected once even if several states select it.",
+  "actors": {
+    "seismic_smith": {
+      "reason": "Right-facing ready, idle, hit, collapse and windup/recovery drawings. Preserve the existing left-facing strike drawings.",
+      "states": {"Ready": "all", "Idle": "all", "Hit": "all", "Death": "all", "Ability": [0, 1, 7], "AutoAttack": [0, 1, 7], "OreChargedAutoAttack": [0, 1, 2, 3, 4, 8, 9]}
+    },
+    "rail_switcher": {
+      "reason": "Right-facing head/body outside the leftward punch. Preserve AutoAttack drawings 3 through 6.",
+      "states": {"Ready": "all", "Idle": "all", "Hit": "all", "Death": "all", "ChannelStart": "all", "ChannelHold": "all", "Release": "all", "AutoAttack": [0, 1, 6, 7]}
+    },
+    "breakwater_captain": {
+      "reason": "The collapse turns the snout east from drawing 7 onward.",
+      "states": {"Death": [6, 7, 8, 9, 10, 11, 12]}
+    },
+    "briar_archer": {
+      "reason": "The final prone drawings turn the face east; retain the frontal transition.",
+      "states": {"Death": [6, 7, 8]}
+    },
+    "elven_mender": {
+      "reason": "The final collapse reverses the face and visible ear toward the right.",
+      "states": {"Death": [4, 5, 6, 7]}
+    },
+    "elven_thornkeeper": {
+      "reason": "The collapse turns the face and visible ear east from drawing 5 onward.",
+      "states": {"Death": [4, 5, 6, 7, 8]}
+    }
+  }
+}

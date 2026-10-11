@@ -1,0 +1,1755 @@
+{
+  "baseline_commit": "0b03efbf870fefc392963bf3551b21b79b80685c",
+  "forms_reviewed": 64,
+  "unique_cells_reviewed": 2951,
+  "changed_sheets": 19,
+  "changed_cells": 85,
+  "unchanged_cells": 2866,
+  "exact_horizontal_reflections": true,
+  "import_metadata_unchanged": true,
+  "unchanged_clips": 353,
+  "visual_review_method": "All unique source drawings inspected; selected east-facing cels reflected as complete poses. Frontal transitions and backward leans with a west-facing head are retained.",
+  "coverage": [
+    {
+      "actor": "breakwater_captain",
+      "states": [
+        "Interrupt",
+        "AutoAttack",
+        "Ability",
+        "Hit",
+        "Death",
+        "Release",
+        "Idle",
+        "ChannelStart",
+        "ChannelHold"
+      ],
+      "unique_cells": 87,
+      "corrected_cells": 7
+    },
+    {
+      "actor": "conch_marshal",
+      "states": [
+        "Interrupt",
+        "ChannelStart",
+        "Idle",
+        "Death",
+        "Release",
+        "AutoAttack",
+        "ChannelHold",
+        "Hit",
+        "Ability"
+      ],
+      "unique_cells": 82,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "hammerhead_bruiser",
+      "states": [
+        "Hit",
+        "Death",
+        "AutoAttack",
+        "Idle"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "lantern_warden",
+      "states": [
+        "Idle",
+        "Interrupt",
+        "ChannelHold",
+        "ChannelStart",
+        "Hit",
+        "Death",
+        "Release",
+        "AutoAttack",
+        "Ability"
+      ],
+      "unique_cells": 85,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "moray_siphoner",
+      "states": [
+        "Hit",
+        "ChannelHold",
+        "Death",
+        "AutoAttack",
+        "ChannelStart",
+        "Release",
+        "Ability",
+        "Idle",
+        "Interrupt"
+      ],
+      "unique_cells": 81,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "needlefin_skirmisher",
+      "states": [
+        "Hit",
+        "Death",
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 39,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "pearl_cantor",
+      "states": [
+        "Ability",
+        "ChannelStart",
+        "Death",
+        "Release",
+        "Interrupt",
+        "ChannelHold",
+        "Idle",
+        "AutoAttack",
+        "Hit"
+      ],
+      "unique_cells": 82,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "pearl_thief",
+      "states": [
+        "Death",
+        "Release",
+        "Hit",
+        "Ability",
+        "Idle",
+        "Interrupt",
+        "AutoAttack",
+        "ChannelStart",
+        "ChannelHold"
+      ],
+      "unique_cells": 82,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "puffer_sentinel",
+      "states": [
+        "Idle",
+        "Release",
+        "InflatedAttack",
+        "Death",
+        "Interrupt",
+        "Ability",
+        "InflatedIdle",
+        "AutoAttack",
+        "Hit",
+        "ChannelHold",
+        "ChannelStart"
+      ],
+      "unique_cells": 92,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "queen_nacre",
+      "states": [
+        "DepthsRelease",
+        "ChannelHold",
+        "Ability",
+        "Hit",
+        "Idle",
+        "Death",
+        "AutoAttack",
+        "ChannelStart",
+        "Interrupt",
+        "Release"
+      ],
+      "unique_cells": 104,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "reef_netweaver",
+      "states": [
+        "Death",
+        "Idle",
+        "Interrupt",
+        "Hit",
+        "ChannelStart",
+        "ChannelHold",
+        "Ability",
+        "AutoAttack",
+        "Release"
+      ],
+      "unique_cells": 86,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "reef_spearman",
+      "states": [
+        "Death",
+        "Hit",
+        "AutoAttack",
+        "Idle"
+      ],
+      "unique_cells": 38,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "shellback_porter",
+      "states": [
+        "AutoAttack",
+        "Hit",
+        "Idle",
+        "Death"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "skittercrab",
+      "states": [
+        "Death",
+        "AutoAttack",
+        "Hit",
+        "Idle"
+      ],
+      "unique_cells": 30,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "barricade_guard",
+      "states": [
+        "Idle",
+        "AutoAttack",
+        "Ability"
+      ],
+      "unique_cells": 32,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "barricade_villager",
+      "states": [
+        "Ability",
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 27,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "basket_villager",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 17,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "court_mage",
+      "states": [
+        "AutoAttack",
+        "Ability",
+        "Idle"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "crossbow_guard",
+      "states": [
+        "Idle",
+        "AutoAttack",
+        "Ability"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "farmer",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 17,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "king",
+      "states": [
+        "JudgmentStrike1",
+        "Bombardment",
+        "BombardmentRaise",
+        "AutoAttack",
+        "JudgmentStrike2",
+        "BombardmentReady",
+        "RoyalCommand",
+        "JudgmentFinisher",
+        "Idle"
+      ],
+      "unique_cells": 93,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "knight",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 18,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "knight_captain",
+      "states": [
+        "Idle",
+        "AutoAttack",
+        "Ability"
+      ],
+      "unique_cells": 34,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "miner",
+      "states": [
+        "Ability",
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 27,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "pan_villager",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 17,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "royal_arbalist",
+      "states": [
+        "AutoAttack",
+        "Idle",
+        "Ability"
+      ],
+      "unique_cells": 18,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "royal_arcanist",
+      "states": [
+        "AutoAttack",
+        "Ability",
+        "Idle",
+        "Benediction"
+      ],
+      "unique_cells": 52,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "royal_lancer",
+      "states": [
+        "AutoAttack",
+        "Idle"
+      ],
+      "unique_cells": 21,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "royal_standard_bearer",
+      "states": [
+        "AutoAttack",
+        "Idle",
+        "Ability"
+      ],
+      "unique_cells": 31,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "royal_swordsman",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 19,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "shield_knight",
+      "states": [
+        "Ability",
+        "AutoAttack",
+        "Idle"
+      ],
+      "unique_cells": 34,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "siege_sergeant",
+      "states": [
+        "Idle",
+        "Ability",
+        "AutoAttack"
+      ],
+      "unique_cells": 35,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "spear_guard",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 21,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "spear_knight",
+      "states": [
+        "Idle",
+        "AutoAttack"
+      ],
+      "unique_cells": 21,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "town_marshal",
+      "states": [
+        "AutoAttack",
+        "Ability",
+        "Idle"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "ancient_treant",
+      "states": [
+        "Death",
+        "ChannelHold",
+        "AutoAttack",
+        "Release",
+        "ChannelStart",
+        "Ability",
+        "Idle",
+        "Hit"
+      ],
+      "unique_cells": 53,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "barkhide_warden",
+      "states": [
+        "ChannelStart",
+        "Death",
+        "ChannelHold",
+        "Release",
+        "Idle",
+        "Hit",
+        "Interrupt",
+        "AutoAttack"
+      ],
+      "unique_cells": 63,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "briar_archer",
+      "states": [
+        "Release",
+        "Idle",
+        "AutoAttack",
+        "Hit",
+        "ChannelHold",
+        "ChannelStart",
+        "Death"
+      ],
+      "unique_cells": 48,
+      "corrected_cells": 3
+    },
+    {
+      "actor": "briar_matriarch",
+      "states": [
+        "Hit",
+        "Death",
+        "AutoAttack",
+        "Interrupt",
+        "ChannelHold",
+        "ChannelStart",
+        "Release",
+        "Idle"
+      ],
+      "unique_cells": 57,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "elven_mender",
+      "states": [
+        "Hit",
+        "Interrupt",
+        "ChannelHold",
+        "Idle",
+        "Death",
+        "AutoAttack",
+        "Release",
+        "ChannelStart"
+      ],
+      "unique_cells": 64,
+      "corrected_cells": 4
+    },
+    {
+      "actor": "elven_scout",
+      "states": [
+        "AutoAttack",
+        "Hit",
+        "Death",
+        "Idle"
+      ],
+      "unique_cells": 32,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "elven_thornkeeper",
+      "states": [
+        "AutoAttack",
+        "Hit",
+        "Death",
+        "Ability",
+        "Idle"
+      ],
+      "unique_cells": 42,
+      "corrected_cells": 5
+    },
+    {
+      "actor": "orc_berserker",
+      "states": [
+        "Hit",
+        "Idle",
+        "AutoAttack",
+        "Death",
+        "Ability"
+      ],
+      "unique_cells": 42,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "orc_bloomcaller",
+      "states": [
+        "Death",
+        "Hit",
+        "Ability",
+        "AutoAttack",
+        "Idle"
+      ],
+      "unique_cells": 40,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "orc_drummer",
+      "states": [
+        "Ability",
+        "AutoAttack",
+        "Idle",
+        "Hit",
+        "Death"
+      ],
+      "unique_cells": 42,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "orc_rootbinder",
+      "states": [
+        "Death",
+        "ChannelHold",
+        "Hit",
+        "ChannelStart",
+        "Interrupt",
+        "Idle",
+        "Release",
+        "AutoAttack"
+      ],
+      "unique_cells": 62,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "orc_trailguard",
+      "states": [
+        "Death",
+        "Idle",
+        "AutoAttack",
+        "Hit"
+      ],
+      "unique_cells": 32,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "snapvine",
+      "states": [
+        "AutoAttack",
+        "Hit",
+        "Death",
+        "Idle"
+      ],
+      "unique_cells": 33,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "bore_engineer",
+      "states": [
+        "OreChargedAutoAttack",
+        "ChannelStart",
+        "Hit",
+        "Idle",
+        "Death",
+        "Release",
+        "ChannelHold",
+        "AutoAttack"
+      ],
+      "unique_cells": 52,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "grand_delver",
+      "states": [
+        "Idle",
+        "CoreRelease",
+        "Hit",
+        "OreChargedAutoAttack",
+        "SteamAbility",
+        "CoreChannelHold",
+        "AutoAttack",
+        "Death",
+        "ClaimAbility",
+        "CoreChannelStart"
+      ],
+      "unique_cells": 69,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "obsidian_sentinel",
+      "states": [
+        "Death",
+        "AutoAttack",
+        "SlamChannelStart",
+        "Hit",
+        "Idle",
+        "OreChargedAutoAttack",
+        "DevourChannelStart",
+        "DevourRelease",
+        "DevourChannelHold",
+        "SlamRelease",
+        "SlamChannelHold"
+      ],
+      "unique_cells": 68,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "ore_hauler",
+      "states": [
+        "Death",
+        "Idle",
+        "Hit",
+        "AutoAttack",
+        "Ability"
+      ],
+      "unique_cells": 44,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "packbeetle",
+      "states": [
+        "Idle",
+        "Hit",
+        "AutoAttack",
+        "Death"
+      ],
+      "unique_cells": 29,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "pickaxe_delver",
+      "states": [
+        "AutoAttack",
+        "Death",
+        "OreChargedAutoAttack",
+        "Hit",
+        "Idle"
+      ],
+      "unique_cells": 37,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "powder_sapper",
+      "states": [
+        "Death",
+        "Hit",
+        "AutoAttack",
+        "ChannelStart",
+        "Release",
+        "ChannelHold",
+        "Idle"
+      ],
+      "unique_cells": 42,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "rail_switcher",
+      "states": [
+        "ChannelStart",
+        "Hit",
+        "Release",
+        "ChannelHold",
+        "Idle",
+        "AutoAttack",
+        "Death"
+      ],
+      "unique_cells": 40,
+      "corrected_cells": 36
+    },
+    {
+      "actor": "rivet_gunner",
+      "states": [
+        "Death",
+        "OreChargedAutoAttack",
+        "Idle",
+        "AutoAttack",
+        "Hit"
+      ],
+      "unique_cells": 35,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "rivet_turret",
+      "states": [
+        "OreChargedAutoAttack",
+        "Hit",
+        "Idle",
+        "Death",
+        "AutoAttack"
+      ],
+      "unique_cells": 35,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "seismic_smith",
+      "states": [
+        "Ability",
+        "Death",
+        "OreChargedAutoAttack",
+        "Idle",
+        "AutoAttack",
+        "Hit"
+      ],
+      "unique_cells": 43,
+      "corrected_cells": 30
+    },
+    {
+      "actor": "siege_machinist",
+      "states": [
+        "AssembleAbility",
+        "Idle",
+        "PrimeAbility",
+        "AutoAttack",
+        "Hit",
+        "Death"
+      ],
+      "unique_cells": 49,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "stonewright",
+      "states": [
+        "AutoAttack",
+        "Ability",
+        "Hit",
+        "OreChargedAutoAttack",
+        "Idle",
+        "Death"
+      ],
+      "unique_cells": 48,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "vein_surveyor",
+      "states": [
+        "ChannelHold",
+        "Idle",
+        "AutoAttack",
+        "Release",
+        "Hit",
+        "Death",
+        "ChannelStart"
+      ],
+      "unique_cells": 39,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "grand_delver_pilot",
+      "states": [
+        "Eject",
+        "AutoAttack",
+        "Death",
+        "Idle",
+        "Hit"
+      ],
+      "unique_cells": 43,
+      "corrected_cells": 0
+    },
+    {
+      "actor": "grand_delver_reserve",
+      "states": [
+        "OreChargedAutoAttack",
+        "Remount",
+        "Death",
+        "ClaimAbility",
+        "AutoAttack",
+        "Hit",
+        "CoreChannelStart",
+        "Idle",
+        "CoreRelease",
+        "SteamAbility",
+        "CoreChannelHold"
+      ],
+      "unique_cells": 81,
+      "corrected_cells": 0
+    }
+  ],
+  "changes": [
+    {
+      "actor": "breakwater_captain",
+      "stem": "breakwater_captain_Death-644dc22f89",
+      "path": "Assets/_Game/Art/DrownedCourt/breakwater_captain_Death.png",
+      "before_sha256": "28cc7774fc4cf40eedc9427747261343b2851a1f8b7ff8315c153c4f7125dd66",
+      "after_sha256": "83769f221462f966fe1b9ee26eba87918fbe8157bb0f6fabe3df06c282f5b8f9",
+      "frames": [
+        {
+          "cell": 6,
+          "states": [
+            [
+              "Death",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Death",
+              7
+            ]
+          ]
+        },
+        {
+          "cell": 8,
+          "states": [
+            [
+              "Death",
+              8
+            ]
+          ]
+        },
+        {
+          "cell": 9,
+          "states": [
+            [
+              "Death",
+              9
+            ]
+          ]
+        },
+        {
+          "cell": 10,
+          "states": [
+            [
+              "Death",
+              10
+            ]
+          ]
+        },
+        {
+          "cell": 11,
+          "states": [
+            [
+              "Death",
+              11
+            ]
+          ]
+        },
+        {
+          "cell": 12,
+          "states": [
+            [
+              "Death",
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "briar_archer",
+      "stem": "Briar_Archer_Death-93027a8be5",
+      "path": "Assets/_Game/Art/Forest/Roster/Briar_Archer_Death.png",
+      "before_sha256": "771a9035d83e0e4c47b6a82c72dab4c928a093a618dffb9b0348cce992cf46ed",
+      "after_sha256": "02546a50423cc962d5f9cf28593789e45393fb8739502901d2bc12b1154f60cf",
+      "frames": [
+        {
+          "cell": 6,
+          "states": [
+            [
+              "Death",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Death",
+              7
+            ]
+          ]
+        },
+        {
+          "cell": 8,
+          "states": [
+            [
+              "Death",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "elven_mender",
+      "stem": "Elven_Mender_Death-434b984ae8",
+      "path": "Assets/_Game/Art/Forest/Production/Elven_Mender_Death.png",
+      "before_sha256": "ab12574e83c3357f2e1f4f6e1e37b72f18d707cd13703e83a3a65ac487ec5589",
+      "after_sha256": "987a2b9df2da927c24b2a9fa0891eef8e03a25637e50ac1da1deca0e1c22f73a",
+      "frames": [
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Death",
+              4
+            ]
+          ]
+        },
+        {
+          "cell": 5,
+          "states": [
+            [
+              "Death",
+              5
+            ]
+          ]
+        },
+        {
+          "cell": 6,
+          "states": [
+            [
+              "Death",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Death",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "elven_thornkeeper",
+      "stem": "Elven_Thornkeeper_Death-360b85fe9e",
+      "path": "Assets/_Game/Art/Forest/Roster/Elven_Thornkeeper_Death.png",
+      "before_sha256": "e64767948931976ac5df8401a8e3ae95aacdd6c76e02b24e47c81f038f9ec88c",
+      "after_sha256": "5d08c18a83766164227afde1d77f309c2ea4eb7f83df9a5fcfa238bf294b4861",
+      "frames": [
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Death",
+              4
+            ]
+          ]
+        },
+        {
+          "cell": 5,
+          "states": [
+            [
+              "Death",
+              5
+            ]
+          ]
+        },
+        {
+          "cell": 6,
+          "states": [
+            [
+              "Death",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Death",
+              7
+            ]
+          ]
+        },
+        {
+          "cell": 8,
+          "states": [
+            [
+              "Death",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher-3903385f9b",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher.png",
+      "before_sha256": "9120d8a459e9b2ad94705bb65a11cb6a7485890863bebf1fb6cf5295bc223259",
+      "after_sha256": "9609a50090719be5872ba327dd96a71e893c0fa086bc8988cd78ae0e95ca6f86",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Ready",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_ChannelStart-01aad76648",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_ChannelStart.png",
+      "before_sha256": "7bf060f6c85f34287df71d445cfdd11835cadd1d751eeaed0d09fd615668ffdc",
+      "after_sha256": "ace609344c4924f3d61ab048f63465b3fbc7c8a374535002482adc8c5cf63ff6",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "ChannelStart",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "ChannelStart",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "ChannelStart",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "ChannelStart",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_Hit-ac28c022d9",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_Hit.png",
+      "before_sha256": "2069245aefa08bad4fb8fb71d23d6f4a64c0f624b66125d215019dacc2f8dafa",
+      "after_sha256": "f9377f2d83951cec01791247791b417585dc1525151ab72301d5446b400765fe",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Hit",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Hit",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Hit",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Hit",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Hit",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_Release-ded1bca69c",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_Release.png",
+      "before_sha256": "a6c6abbaf47e9e426f32501a1eab08ad7d22800598f36c13914119e594c79104",
+      "after_sha256": "650f1657c7f85bd136b4503bbb9301a23e967b9da6eee8379c791571bf4e4f61",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Release",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Release",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Release",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Release",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Release",
+              4
+            ]
+          ]
+        },
+        {
+          "cell": 5,
+          "states": [
+            [
+              "Release",
+              5
+            ]
+          ]
+        },
+        {
+          "cell": 6,
+          "states": [
+            [
+              "Release",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Release",
+              7
+            ]
+          ]
+        },
+        {
+          "cell": 8,
+          "states": [
+            [
+              "Release",
+              8
+            ]
+          ]
+        },
+        {
+          "cell": 9,
+          "states": [
+            [
+              "Release",
+              9
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_ChannelHold-a6907e3be7",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_ChannelHold.png",
+      "before_sha256": "1c15403d18bc316058085804e6cbf54958bce116c79b543b941a14333cdf2ef8",
+      "after_sha256": "fc82ad871e33d91244e96b49236399d0f0d275d7f003438814223fd0a8454083",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "ChannelHold",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "ChannelHold",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "ChannelHold",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_Idle-a0da1d3804",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_Idle.png",
+      "before_sha256": "031c7b50f862e95f44e4f71a9c42697bb80988a556fd8183c872c994404888cf",
+      "after_sha256": "978f80ef4a4f867cfb044af3a6a578cc622ffeb9f2e59dc8043f6c962b6221d9",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Idle",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Idle",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Idle",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Idle",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Idle",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_AutoAttack-51fcd9cb2b",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_AutoAttack.png",
+      "before_sha256": "eba82a13ce5d5d26cdaf1e3c454dc240d0671c2dee4d8c1aebd3f787da9a4d2f",
+      "after_sha256": "3c87527ffd8fb2a0719138245a4cd50168f9615ed635e9425d02cfd275920212",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "AutoAttack",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "AutoAttack",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 6,
+          "states": [
+            [
+              "AutoAttack",
+              6
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "AutoAttack",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "rail_switcher",
+      "stem": "rail_switcher_Death-bae72d56f8",
+      "path": "Assets/_Game/Art/Ironvein/rail_switcher_Death.png",
+      "before_sha256": "110859e4b5414e94f24c3b3198482f3ffb5499c6819c8a6fc22ac9df71b3629d",
+      "after_sha256": "6e604bc215070656e01c00ed41e4bd758f8bb0db79b2295401999bd8fb856d7c",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Death",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Death",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Death",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Death",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith-92fb612a72",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith.png",
+      "before_sha256": "53081abd0f63e74025d682bf045905967242f0eda51ff935ca2ff55c083965bb",
+      "after_sha256": "407655466d12a640406672c23a8d5bb59b047bc140931a090d3da269756d5534",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Ready",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_Ability-e56ae57395",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_Ability.png",
+      "before_sha256": "1fa333d9b5a6a87ce55a9877df1a7132a9aca44f051eb21fd802b43e17ea3dbb",
+      "after_sha256": "495943bf55f7fa075c411d4ead5ea50270c14c891eaa939fad3c9918871017ad",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Ability",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Ability",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "Ability",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_Death-b1c12b8f69",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_Death.png",
+      "before_sha256": "9531b77f0329f1a2f3e747be56a0b4cd7118278944dc21634518080333866e70",
+      "after_sha256": "9b74d5cba7edf00257c8286e9f7845dcea1f50c868b138f31a6795855a0315f5",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Death",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Death",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Death",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Death",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Death",
+              4
+            ]
+          ]
+        },
+        {
+          "cell": 5,
+          "states": [
+            [
+              "Death",
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_OreChargedAutoAttack-0956c99a07",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_OreChargedAutoAttack.png",
+      "before_sha256": "0232e1837350c4d46614bca40dc12e56ea6ddc9d16371e52a807272c723c7acf",
+      "after_sha256": "3564f1c6b9f58900f23ad9b6e63f1843a0e04b937c2e0f99ce4f41bd569a7b7e",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              4
+            ]
+          ]
+        },
+        {
+          "cell": 8,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              8
+            ]
+          ]
+        },
+        {
+          "cell": 9,
+          "states": [
+            [
+              "OreChargedAutoAttack",
+              9
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_Idle-7b690d84a4",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_Idle.png",
+      "before_sha256": "3beea284c60dce8b96adbcecc2f582bfb9daa8452638a73d05caae81c13e6759",
+      "after_sha256": "5fd9f9e65704334f6ae271c7f2f64624b49bd03e4e977f3351a48d0c826e4fa2",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Idle",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Idle",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Idle",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Idle",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Idle",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_AutoAttack-db42d580ca",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_AutoAttack.png",
+      "before_sha256": "1fa333d9b5a6a87ce55a9877df1a7132a9aca44f051eb21fd802b43e17ea3dbb",
+      "after_sha256": "495943bf55f7fa075c411d4ead5ea50270c14c891eaa939fad3c9918871017ad",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "AutoAttack",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "AutoAttack",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 7,
+          "states": [
+            [
+              "AutoAttack",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "seismic_smith",
+      "stem": "seismic_smith_Hit-8af3a5280d",
+      "path": "Assets/_Game/Art/Ironvein/seismic_smith_Hit.png",
+      "before_sha256": "771c538e1e4a9837568b467531e0f5ee76e5f73784da46f6f61da5e02522d317",
+      "after_sha256": "6985f7c8394e8e9ba5db9886f199ea3bb739b10b2aebae58e88e7cdaec117b09",
+      "frames": [
+        {
+          "cell": 0,
+          "states": [
+            [
+              "Hit",
+              0
+            ]
+          ]
+        },
+        {
+          "cell": 1,
+          "states": [
+            [
+              "Hit",
+              1
+            ]
+          ]
+        },
+        {
+          "cell": 2,
+          "states": [
+            [
+              "Hit",
+              2
+            ]
+          ]
+        },
+        {
+          "cell": 3,
+          "states": [
+            [
+              "Hit",
+              3
+            ]
+          ]
+        },
+        {
+          "cell": 4,
+          "states": [
+            [
+              "Hit",
+              4
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "production_pngs_match_exports": true,
+  "text_comparison": "Git-normalized LF; Windows checkout CRLF is ignored for unchanged metadata and clips."
+}

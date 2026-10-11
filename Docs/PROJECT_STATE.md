@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.13.1. Rattlebones is the explicitly designated
+The canonical art guide is now v1.13.2. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.
@@ -40,9 +40,16 @@ all 353 clip files and sprite IDs. Rattlebones/player art and gameplay remain
 unchanged. PixelLab production consumed 815 generations; 223 remained afterward.
 The user rejected the resulting Puffer face edit; his original facial pixels are
 now restored in every affected state, retaining west-facing poses and canvas fixes.
-Native export checks pass after restoration. The initial pass's Unity asset and
+The follow-up facing audit corrected 85 remaining east-facing drawings in Smith,
+Rail Switcher, Breakwater Captain, Briar Archer, Mender and Thornkeeper using
+lossless full-pose reflections only. All other 2,866 drawings, including Puffer,
+remain unchanged. This corrects the initial pass's incomplete all-west claim;
+no further faces were repainted. The focused source player is
+`ArtSource/EnemyArtCohesion/FacingReview.html`.
+Native/export and exact-reflection checks pass after the corrections. The initial pass's Unity asset and
 scene checks covered every drawing at 1080×1920 and 1080×2400; Unity was not rerun
-for the art-only face correction. See [current verification](Validation/ENEMY_ART_COHESION.md)
+for the art-only face or facing corrections, whose imports and clips are unchanged.
+See [current verification](Validation/ENEMY_ART_COHESION.md)
 for limits and the final regression record. Source review and automated checks
 do not establish human art approval or physical-device acceptance.
 Historical art checkpoint versions below describe earlier milestones; consult

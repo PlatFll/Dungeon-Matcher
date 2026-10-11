@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-11 · canonical guide v1.13.1. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass. Rattlebones remains unchanged. Puffer's original facial expression has been restored at the user's request; none of the reference images below changed.
+2026-10-11 · canonical guide v1.13.2. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing correction; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
