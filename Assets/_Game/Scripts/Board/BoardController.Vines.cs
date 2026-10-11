@@ -22,7 +22,7 @@ public partial class BoardController
     private int nextVineGrowthMove = 2, nextRootId;
     public int VineCount { get { PruneVines(); return vineNodes.Count; } }
     public int NextVineGrowthMove => nextVineGrowthMove;
-    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count + (aquatic?.snares.Count ?? 0);
+    public int RestrictionCount => pinnedGemOwners.Count + pendingPinTargetOwners.Count + (aquatic?.snares.Count ?? 0) + frostGems.Count;
     public event Action RootsChanged;
 
     private bool IsReservedVine(Gem gem) => gemSetThreats.Exists(t => t.Vine && !t.Ended && t.Targets.Contains(gem));

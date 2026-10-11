@@ -601,6 +601,7 @@ public partial class BoardController
     private void DamageBarricadesFromSource(HashSet<Gem> clearedGems, HashSet<Gem> ignoredGems,
         bool deliberatePlayerClear, bool specialClear)
     {
+        DamageFrostFromClears(clearedGems,ignoredGems,deliberatePlayerClear);
         if(clearedGems!=null) foreach(var threat in gemSetThreats)
             if(threat.Vine && threat.Targets.Exists(g=>g!=null && clearedGems.Contains(g) && (ignoredGems==null || !ignoredGems.Contains(g))))
                 threat.PlayerInterrupted=true;
@@ -677,54 +678,62 @@ public partial class BoardController
                 continue;
             }
 
-            // Answering a charge consumes this interaction, never also hits its host.
-            if ((deliberatePlayerClear || specialClear) && DefuseMineCharge(state)) continue;
-            int durabilityDamage = IsRoot(state) || state.Style==EnemyBarricadeStyle.AirCoffer
-                ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
+            DamageBarricadeCell(cell, state, deliberatePlayerClear || specialClear,
+                thornHits.Contains(cell) && !safeHits.Contains(cell));
+        }
+    }
 
-            state.RemainingDurability -= durabilityDamage;
-            if (IsMineStone(state)) state.MineStone?.RecordHit(MineMove);
+    // Shared normal-clear durability path, also used by direct player impacts.
+    private void DamageBarricadeCell(Vector2Int cell, BarricadeCellState state,
+        bool defuseCharge, bool retaliate)
+    {
+        // Answering a charge consumes this interaction, never also hits its host.
+        if (defuseCharge && DefuseMineCharge(state)) return;
+        int durabilityDamage = IsRoot(state) || state.Style==EnemyBarricadeStyle.AirCoffer
+            ? 1 : RunUpgradeResolver.ResolveBarricadeDurabilityDamage(1);
 
-            if (state.RemainingDurability <= 0)
-            {
-                /*
-                 * Gameplay removal is immediate. Presentation is allowed to
-                 * finish its short white hit flash independently, so VFX never
-                 * owns board occupancy or gravity timing.
-                 */
-                barricadeCells.Remove(
-                    cell
-                );
+        state.RemainingDurability -= durabilityDamage;
+        if (IsMineStone(state)) state.MineStone?.RecordHit(MineMove);
 
-                RootDestroyed(state);
-                AquaticCofferBroken(cell);
-                // One retaliation per broken barrier; a simultaneous clear from
-                // its safe side is a valid safe answer. Cascades/blasts never retaliate.
-                if(state.Style==EnemyBarricadeStyle.Thorn && thornHits.Contains(cell) && !safeHits.Contains(cell))
-                    (combatController?.PlayerActor ?? RunSession.Current?.Player)?.TryTakeDamage(state.ThornDamage);
-                // A broken obstacle opens a real gravity slot just like a
-                // destroyed gem. Queue it with this clear's other openings;
-                // do not move banners while clear targets are being reported.
-                QueueRoyalBannerGravityOpening(cell.x, cell.y);
+        if (state.RemainingDurability <= 0)
+        {
+            /*
+             * Gameplay removal is immediate. Presentation is allowed to
+             * finish its short white hit flash independently, so VFX never
+             * owns board occupancy or gravity timing.
+             */
+            barricadeCells.Remove(
+                cell
+            );
 
-                StartBarricadeHitVFX(
-                    state,
-                    true
-                );
-            }
-            else
-            {
-                if(state.Style==EnemyBarricadeStyle.AirCoffer) AquaticCofferDamaged(cell);
-                /*
-                 * Keep the current stone sprite visible for the hit flash.
-                 * The VFX coroutine swaps to level 1 only at peak white, then
-                 * reveals the wooden sprite from the white silhouette.
-                 */
-                StartBarricadeHitVFX(
-                    state,
-                    false
-                );
-            }
+            RootDestroyed(state);
+            AquaticCofferBroken(cell);
+            // One retaliation per broken barrier; a simultaneous clear from
+            // its safe side is a valid safe answer. Cascades/blasts never retaliate.
+            if(state.Style==EnemyBarricadeStyle.Thorn && retaliate)
+                (combatController?.PlayerActor ?? RunSession.Current?.Player)?.TryTakeDamage(state.ThornDamage);
+            // A broken obstacle opens a real gravity slot just like a
+            // destroyed gem. Queue it with this clear's other openings;
+            // do not move banners while clear targets are being reported.
+            QueueRoyalBannerGravityOpening(cell.x, cell.y);
+
+            StartBarricadeHitVFX(
+                state,
+                true
+            );
+        }
+        else
+        {
+            if(state.Style==EnemyBarricadeStyle.AirCoffer) AquaticCofferDamaged(cell);
+            /*
+             * Keep the current stone sprite visible for the hit flash.
+             * The VFX coroutine swaps to level 1 only at peak white, then
+             * reveals the wooden sprite from the white silhouette.
+             */
+            StartBarricadeHitVFX(
+                state,
+                false
+            );
         }
     }
 

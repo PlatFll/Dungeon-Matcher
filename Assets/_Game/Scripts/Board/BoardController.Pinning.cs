@@ -27,10 +27,11 @@ public partial class BoardController
     public bool IsGemFrozen(Gem gem) =>
         gem != null &&
         (frozenPinnedGems.Contains(gem) ||
-         pendingFrozenPinTargets.Contains(gem));
+         pendingFrozenPinTargets.Contains(gem) || IceStage(gem)!=FrostStage.None);
 
     public void ReleaseMovablePinOnReplacement(Gem gem)
     {
+        RemoveFrost(gem);
         if (movablePinnedGems.Contains(gem) ||
             frozenPinnedGems.Contains(gem))
         {
@@ -166,7 +167,7 @@ public partial class BoardController
     {
         return gem != null &&
                (pinnedGemOwners.ContainsKey(gem) ||
-                pendingPinTargetOwners.ContainsKey(gem) || IsAquaticSnared(gem));
+                pendingPinTargetOwners.ContainsKey(gem) || IsAquaticSnared(gem) || IceStage(gem)!=FrostStage.None);
     }
 
     public void CancelPointerInteraction(Gem gem)
@@ -792,6 +793,10 @@ public partial class BoardController
 
         pendingPinTargetOwners.Clear();
         pendingFrozenPinTargets.Clear();
+
+        // A forced reshuffle must also release environmental ice. Haldra's
+        // identity-bound warning observes the thaw through the normal event.
+        frostGems.Clear();PublishFrost();
 
         if (pinnedGemOwners.Count == 0)
         {

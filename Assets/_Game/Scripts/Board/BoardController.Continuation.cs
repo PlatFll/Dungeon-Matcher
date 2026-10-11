@@ -22,6 +22,7 @@ public partial class BoardController
         saved.dungeonRulesVersion=1;saved.nextCrumbleMove=nextCrumbleMove;
         saved.aquatic=CaptureAquatic();
         saved.mine=CaptureMine();
+        saved.frost=CaptureFrost();saved.nextFrostSeedMove=nextFrostSeedMove;
         for(int y=0;y<height;y++) for(int x=0;x<width;x++)
         {
             var cell=new Vector2Int(x,y); var gem=GetGem(x,y);
@@ -124,6 +125,7 @@ public partial class BoardController
         RestoreVines(saved.vines);
         RestoreAquatic(saved.aquatic);
         RestoreMine(saved.mine);
+        RestoreFrost(saved);
         isBusy=false;
     }
     private void RestoreSnapshotCells(BoardCombatSnapshot saved, Func<int,EnemyActor> ownerAtSlot)

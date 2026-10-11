@@ -40,7 +40,7 @@ public partial class BoardController
 
     public bool IsValidBoardMemory(BoardCombatSnapshot saved)
     {
-        if (saved == null || !MineEnvironmentState.Supports(saved) || saved.width != width || saved.height != height ||
+        if (saved == null || !MineEnvironmentState.Supports(saved) || !FrostGemSnapshot.Supports(saved) || saved.width != width || saved.height != height ||
             saved.cells == null || saved.cells.Count != width * height || saved.refillRandom == 0)
             return false;
         var positions = new HashSet<int>();
@@ -117,6 +117,7 @@ public partial class BoardController
         }
         ReconcileAquaticMemory(saved, reopenedMines);
         ReconcileMineMemory(saved, reopenedMines);
+        ReconcileFrostMemory(saved);
         isBusy = true;
         NotifyBoardActivity();
         pointerStartGem = null;
@@ -155,6 +156,7 @@ public partial class BoardController
         nextRoyalBannerId = Mathf.Max(nextRoyalBannerId, saved.nextBanner);
         RestoreSnapshotCells(saved, key => Living(ownerAtKey(key)) ? ownerAtKey(key) : null);
         RestoreVines(saved.vines);
+        RestoreFrost(saved);
         foreach (var cell in reopenedMines)
             CreateGem(cell.x, cell.y, ChooseRestoredOpeningType(cell.x, cell.y), GetLocalPosition(cell.x, cell.y));
         var restored = new Dictionary<int, Gem>();

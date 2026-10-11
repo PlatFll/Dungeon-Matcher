@@ -35,6 +35,9 @@ public static class EnemySpecialAbilityRuntimeFactory
 
         switch (abilityKind)
         {
+            case EnemySpecialAbilityKind.GlacierCleave:
+                runtime=enemyObject.GetComponent<GlacierCleaveRuntime>() ?? enemyObject.AddComponent<GlacierCleaveRuntime>();
+                break;
             case EnemySpecialAbilityKind.ShareOre:
             case EnemySpecialAbilityKind.LayFoundation:
             case EnemySpecialAbilityKind.BoreDrill:

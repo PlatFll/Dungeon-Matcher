@@ -45,6 +45,8 @@ public sealed class ZoneDefinition : ScriptableObject
     [Range(1,2)] public int emergencyAirSupply=1,criticalAirSupply=2;
     [Range(0,4)] public int criticalAirThreshold=1;
     public bool crumblesTiles;
+    [Header("Frostwake foundation (requires a separately ready zone)")]
+    public FrostwakeRules frostwakeRules;
     [Header("Ironvein — provisional stone tuning")]
     public bool maturesStone;
     [Min(1)] public int mineMovesPerStage = 3;

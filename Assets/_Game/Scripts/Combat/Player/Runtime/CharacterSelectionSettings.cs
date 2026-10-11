@@ -6,6 +6,8 @@ public static class CharacterSelectionSettings
     public const string RattlebonesPlayerId = "skeleton";
     public const string BardleyPlayerId = "bardley";
     public const string GideonPlayerId = "gideon_glass";
+    public const string MinotaurPlayerId = "dungeon_attender";
+    public const string KoboldPlayerId = "kobold_gunner";
 
     private const string SelectedPlayerKey =
         "DungeonMatcher.CharacterSelection.v1.SelectedPlayer";
@@ -94,6 +96,8 @@ public static class CharacterSelectionSettings
         string playerId)
     {
         if (string.Equals(playerId, GideonPlayerId, StringComparison.Ordinal)) return true;
+        if (string.Equals(playerId, MinotaurPlayerId, StringComparison.Ordinal) ||
+            string.Equals(playerId, KoboldPlayerId, StringComparison.Ordinal)) return true;
         return string.Equals(
                    playerId,
                    RattlebonesPlayerId,

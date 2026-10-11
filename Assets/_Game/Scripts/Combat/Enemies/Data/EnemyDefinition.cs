@@ -28,6 +28,8 @@ public sealed class EnemyDefinition : ScriptableObject
     [Range(.1f,.75f)] public float mineReserveHealthFraction = .5f;
     [Header("Optional shared player debuff (unassigned in the production roster)")]
     public PlayerStatusDefinition appliedPlayerStatus;
+    [Header("Frostwake prototype")]
+    public FrostwakeRules frostwakeRules;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
     public bool canFightFlooded;
     public EnemyDefinition aquaticSummon;

@@ -20,6 +20,25 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Frostwake and new playables checkpoint (2026-10-11)
+
+Work is in progress on `codex/frostwake-new-playables`, based on merged main
+`c8fec99`. The supplied pack authorizes the Frostwake direction, an ice/Haldra
+mechanic foundation, and two complete new player characters. Haldra's revised
+Glacier Cleave gives three accepted moves to thaw a marked physical gem;
+remaining ice controls damage and Bifrost adds Frostbite.
+
+The branch adds board-owned ice snapshots and sequential player impacts, plus
+Dungeon Attender and Ricochet ability runtimes. Focused checks cover board locks,
+durability/card damage, ability spending/pause, ricochet repeats, ice cleanup,
+Haldra damage bands/Frostbite and unified save/Continue. The mandatory Unity
+validator passes. This is an implementation checkpoint, not a completed release.
+PlayerDefinition/animation/presentation integration and final validation remain.
+Frostwake is not a travel destination; its complete roster and zone production
+remain unfinished. Both character stills await user approval before animation.
+See [scope, decisions and remaining work](FrostwakePlayables/IMPLEMENTATION.md)
+and [the native still review](../ArtSource/FrostwakePlayables/review/README.md).
+
 ## Global art-direction audit (2026-10-11)
 
 The canonical art guide is now v1.13.2. Rattlebones is the explicitly designated

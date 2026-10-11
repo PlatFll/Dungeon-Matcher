@@ -45,6 +45,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private Button levelUpButton;
     private Button resetLevelButton;
     private Button gideonButton;
+    private Button minotaurButton,koboldButton;
     private GameObject resetConfirmation;
     private TMP_Text resetConfirmationText;
     private string resetPlayerId;
@@ -188,6 +189,10 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     {
         SetButtonColor(gideonButton, CharacterSelectionSettings.GideonPlayerId,
             PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.GideonPlayerId));
+        SetButtonColor(minotaurButton,CharacterSelectionSettings.MinotaurPlayerId,
+            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.MinotaurPlayerId));
+        SetButtonColor(koboldButton,CharacterSelectionSettings.KoboldPlayerId,
+            PlayerDefinitionRegistry.IsAvailable(CharacterSelectionSettings.KoboldPlayerId));
         bool rattlebonesAvailable =
             PlayerDefinitionRegistry.IsAvailable(
                 CharacterSelectionSettings.RattlebonesPlayerId
@@ -234,7 +239,7 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         if (!selectedAvailable)
         {
             statusText.text =
-                "BARDLEY\nCHARACTER DATA COMING NEXT\nSTART LOCKED UNTIL BARDLEY IS BUILT";
+                "CHARACTER DATA UNAVAILABLE";
             return;
         }
 
@@ -252,7 +257,8 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
         int next=Mathf.Min(BalanceV1.Current.levelCap,level+1);
         int cost=BalanceV1.Current.UpgradeCost(level);
         int baseAbility=selectedDefinition.ActiveAbility is CrackedGemsAbilityDefinition cracks?cracks.CrackedGemDamage:
-            selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:0;
+            selectedDefinition.ActiveAbility is RoyalDecreeAbilityDefinition decree?decree.DamagePerGem:
+            selectedDefinition.ActiveAbility is RicochetAbilityDefinition ricochet?ricochet.BaseEnemyDamage:0;
         statusText.text=$"{GetMenuDisplayName(selectedPlayerId)} - Level {level}\n"+
             $"HP  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(level))}  >  {CombatAmounts.Health(selectedDefinition.HealthAtLevel(next))}\n"+
             $"3-gem hit  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(level)*3)}  >  {CombatAmounts.Round(selectedDefinition.GemDamageAtLevel(next)*3)}\n"+
@@ -297,16 +303,22 @@ public sealed class CharacterSelectMenuController : MonoBehaviour
     private void ConfigureProgression()
     {
         previewColor=characterPreview.color;
-        Place(rattlebonesButton.transform,new Vector2(-142,210),new Vector2(140,50));
-        Place(bardleyButton.transform,new Vector2(0,210),new Vector2(140,50));
+        Place(rattlebonesButton.transform,new Vector2(-142,220),new Vector2(140,46));
+        Place(bardleyButton.transform,new Vector2(0,220),new Vector2(140,46));
         rattlebonesButton.GetComponentInChildren<TMP_Text>().fontSize=16;
         bardleyButton.GetComponentInChildren<TMP_Text>().fontSize=16;
-        gideonButton=GameUi.Button("GideonButton",transform,"GIDEON",new Vector2(140,50),new Vector2(142,210),
+        gideonButton=GameUi.Button("GideonButton",transform,"GIDEON",new Vector2(140,46),new Vector2(142,220),
             ()=>SelectCharacter(CharacterSelectionSettings.GideonPlayerId));
         gideonButton.GetComponentInChildren<TMP_Text>().fontSize=16;
         gideonButton.GetComponentInChildren<TMP_Text>().fontStyle=rattlebonesButton.GetComponentInChildren<TMP_Text>().fontStyle;
-        Place(characterPreview.transform,new Vector2(0,117),new Vector2(112,112));characterPreview.preserveAspect=true;
-        Place(statusText.transform,new Vector2(0,-30),new Vector2(430,180));statusText.fontSize=21;statusText.font=GameUi.TmpFont;
+        minotaurButton=GameUi.Button("MinotaurButton",transform,"MINOTAUR",new Vector2(210,42),new Vector2(-107,170),
+            ()=>SelectCharacter(CharacterSelectionSettings.MinotaurPlayerId));
+        koboldButton=GameUi.Button("KoboldButton",transform,"KOBOLD",new Vector2(210,42),new Vector2(107,170),
+            ()=>SelectCharacter(CharacterSelectionSettings.KoboldPlayerId));
+        foreach(var button in new[]{minotaurButton,koboldButton})
+        {var label=button.GetComponentInChildren<TMP_Text>();label.fontSize=16;label.fontStyle=rattlebonesButton.GetComponentInChildren<TMP_Text>().fontStyle;}
+        Place(characterPreview.transform,new Vector2(0,87),new Vector2(112,112));characterPreview.preserveAspect=true;
+        Place(statusText.transform,new Vector2(0,-58),new Vector2(430,160));statusText.fontSize=20;statusText.font=GameUi.TmpFont;
         Place(startButton.transform,new Vector2(-110,-245),new Vector2(200,48));
         Place(backButton.transform,new Vector2(110,-245),new Vector2(200,48));
         levelUpButton=GameUi.Button("LevelUp",transform,"",new Vector2(240,48),new Vector2(-95,-150),LevelUp);

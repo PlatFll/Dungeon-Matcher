@@ -57,6 +57,7 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.SiegeMachinist:return "Assemble Turret|Prime the Turrets";
             case EnemySpecialAbilityKind.ObsidianSentinel:return "Devour Ore|Hydraulic Slam";
             case EnemySpecialAbilityKind.GrandDelver:return "Claim the Vein|Full Steam!|Heart of Obsidian";
+            case EnemySpecialAbilityKind.GlacierCleave:return "Glacier Cleave";
             default:return "";
         }
     }
