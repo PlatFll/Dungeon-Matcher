@@ -103,6 +103,7 @@ public sealed class ForestEnemyMotion : MonoBehaviour
         return .35f;
     }
     public float PlayDeath() { pendingState=null;return Play("Death")?Duration("Death"):0; }
+    public void PlayInterruptRecovery() { if(actor!=null && !actor.IsDefeated) PlayThen("Interrupt","Idle"); }
     private void OnDestroy()
     {
         if(actor!=null) { actor.DamageReceived-=Hit;actor.Healed-=Healed; }

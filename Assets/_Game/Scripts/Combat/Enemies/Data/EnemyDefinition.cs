@@ -30,6 +30,12 @@ public sealed class EnemyDefinition : ScriptableObject
     public PlayerStatusDefinition appliedPlayerStatus;
     [Header("Frostwake prototype")]
     public FrostwakeRules frostwakeRules;
+    [Tooltip("Optional authored display name for a reused kit; no gameplay dispatch by identity.")]
+    public string abilityDisplayName;
+    [Min(0)] public int mountainArmorShield;
+    [Range(1,3)] public int mountainMarkedGems=1;
+    [Min(1)] public int mountainResponseMoves=2;
+    [Min(0)] public int mountainStrikeDamage=15;
     [Tooltip("The complete formation must opt in before the court floods. Unknown/global enemies stay dry-only.")]
     public bool canFightFlooded;
     public EnemyDefinition aquaticSummon;

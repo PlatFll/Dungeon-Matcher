@@ -32,16 +32,16 @@ public sealed class GlacierCleaveRuntime : MonoBehaviour,IEnemySpecialAbilityRun
         if(state.channeling)
         {
             if(board.IceStage(Target)==FrostStage.None){Finish("Thawed",true);return;}
-            if(board.CompletedValidPlayerMoves<state.deadlineMove)return;
-            pending=true;Publish();
+            if(board.CompletedValidPlayerMoves<state.deadlineMove || !actor.TryBeginSpecialAbilityAnimationAction())return;
+            pending=true;actor.SpecialIdleState=null;actor.PrepareSpecialMotion("Release");Publish();
             if(!board.TryQueueConsumeEncasedGem(actor,state.targetIdentity,Impact,
-                ok=>{pending=false;if(!ok)Finish("Target lost",false);Publish();},Cancelled))
-            {pending=false;Finish("Target lost",false);}
+                ok=>{pending=false;actor.EndSpecialAbilityAnimationAction();if(!ok)Finish("Target lost",false);Publish();},Cancelled))
+            {pending=false;actor.EndSpecialAbilityAnimationAction();Finish("Target lost",false);}
             return;
         }
         if(!CombatMoveClock.CanOffer(actor) || !actor.IsSpecialReady || actor.Definition.frostwakeRules==null ||
             !actor.TryBeginSpecialAbilityAnimationAction())return;
-        pending=true;Publish();
+        pending=true;actor.PrepareSpecialMotion("ChannelStart");Publish();
         if(!board.TryQueueEncasedGem(actor,FrostStage.Bifrost,target=>
         {
             pending=false;
@@ -49,6 +49,7 @@ public sealed class GlacierCleaveRuntime : MonoBehaviour,IEnemySpecialAbilityRun
             {
                 state.channeling=true;state.targetIdentity=target.BoardIdentity;
                 state.deadlineMove=board.CompletedValidPlayerMoves+3;state.sequence++;state.outcome=null;
+                actor.SpecialIdleState="ChannelHold";
                 actor.AnnounceCommittedCast();actor.NotifySpecialAbilityUsed();
             }
             if(actor!=null){actor.ResetSpecialCounter();actor.EndSpecialAbilityAnimationAction();}
@@ -74,7 +75,8 @@ public sealed class GlacierCleaveRuntime : MonoBehaviour,IEnemySpecialAbilityRun
     {
         if(!state.channeling)return;
         state.channeling=false;state.targetIdentity=0;state.lastOutcomeSequence=state.sequence;state.outcome=outcome;
-        actor?.ResetSpecialCounter();Publish();
+        if(actor!=null){actor.SpecialIdleState=null;actor.ResetSpecialCounter();}Publish();
+        if(outcome!="Struck")actor?.GetComponent<ForestEnemyMotion>()?.PlayInterruptRecovery();
         if(countered && actor!=null && !actor.IsDefeated)stagger?.ApplyStagger(1,1);
     }
     private void Publish(){if(attack!=null)attack.SetActionPaused(this,BlocksBasic);Changed?.Invoke();}
@@ -88,6 +90,7 @@ public sealed class GlacierCleaveRuntime : MonoBehaviour,IEnemySpecialAbilityRun
             JsonUtility.FromJson<GlacierCleaveSnapshot>(JsonUtility.ToJson(saved.glacierCleave));
         // Restore does not pay damage or grant an interrupt reward.
         if(state.channeling && board.IceStage(Target)==FrostStage.None)Finish("Target lost",false);
+        if(actor!=null)actor.SpecialIdleState=state.channeling?"ChannelHold":null;
         Publish();
     }
     private void Cleanup()

@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.13.2
+**Version:** 1.14
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -11,6 +11,28 @@ This repository edition is the durable source of truth for the art direction est
 The PNG and ASE assets in the accompanying pack are byte-for-byte copies of supplied files. No character artwork was edited to create this documentation. Reference boards are labeled inspection layouts, not replacement sprite sheets. Versioning, status labels, and review templates are organizational conventions introduced by this guide.
 
 ## Current combat additions (2026-10-01)
+
+### Frostwake approved identities and Minotaur eye amendment — 2026-10-11
+
+The user explicitly approved all eleven Frostwake stills for animation. Their
+112x88 native PNGs, exact palettes, source hashes and approval lineage are in
+ArtSource/Frostwake/approved/manifest.json and technical-checks.json. Motion
+uses a fixed 128x104 canvas with a four-pixel floor margin, preserving the
+approved occupied native shapes. The 70 selected clips retain each character's
+15-color palette, with free PixelLab exact cleanup of unwanted red hit spikes.
+Rattlebones and the supporting Farmer/Pan images were actual style inputs to
+the new stills. This does not approve new golden-reference memberships.
+
+The Dungeon Attender's latest eye instruction supersedes the bright yellow:
+use darker amber #CDA12E with #0A0D11 contours, retaining the friendly expression,
+keys, equipment, proportions and all other motion pixels. The exact guarded
+PixelLab edit and before/after verification are in
+ArtSource/FrostwakePlayables/eye-revision/. Kobold art remains unchanged.
+
+Mountain scenery and stone/timber UI are implementation candidates, with muted
+blue rock, pale glacial forms and small warm hall/brazier accents. The three ice
+stages have true transparent windows. Runtime review and listening approval are
+separate from the eleven identity approvals; see Docs/Frostwake/WORKLIST.md.
 
 ### Approved forest stills (2026-10-02)
 

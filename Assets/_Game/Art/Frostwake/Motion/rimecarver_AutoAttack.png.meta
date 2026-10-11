@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: a6bb825468f7ef3499ffc862fd548490
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -817163645505170167
+    second: rimecarver_AutoAttack_0
+  - first:
+      213: -8104995140334749177
+    second: rimecarver_AutoAttack_1
+  - first:
+      213: 1272069643981738809
+    second: rimecarver_AutoAttack_2
+  - first:
+      213: 5444699902712666595
+    second: rimecarver_AutoAttack_3
+  - first:
+      213: -2660107680860029682
+    second: rimecarver_AutoAttack_4
+  - first:
+      213: 1177970718846268727
+    second: rimecarver_AutoAttack_5
+  - first:
+      213: 2134479147289946879
+    second: rimecarver_AutoAttack_6
+  - first:
+      213: 4987548241636587705
+    second: rimecarver_AutoAttack_7
+  - first:
+      213: -430524724690332371
+    second: rimecarver_AutoAttack_8
+  - first:
+      213: 4201045191705326501
+    second: rimecarver_AutoAttack_9
+  - first:
+      213: -5159747233335574996
+    second: rimecarver_AutoAttack_10
+  - first:
+      213: -6459187673033374577
+    second: rimecarver_AutoAttack_11
+  - first:
+      213: 998662324128080417
+    second: rimecarver_AutoAttack_12
+  - first:
+      213: -2701587996385317566
+    second: rimecarver_AutoAttack_13
+  - first:
+      213: -7239373498004227227
+    second: rimecarver_AutoAttack_14
+  - first:
+      213: -2892510826836902863
+    second: rimecarver_AutoAttack_00
+  - first:
+      213: -881491564276222054
+    second: rimecarver_AutoAttack_01
+  - first:
+      213: 1176580140465083475
+    second: rimecarver_AutoAttack_02
+  - first:
+      213: -5826685275333647084
+    second: rimecarver_AutoAttack_03
+  - first:
+      213: -6894953156174778558
+    second: rimecarver_AutoAttack_04
+  - first:
+      213: 2897896549578285285
+    second: rimecarver_AutoAttack_05
+  - first:
+      213: -6831096657532504051
+    second: rimecarver_AutoAttack_06
+  - first:
+      213: -6062737929208467619
+    second: rimecarver_AutoAttack_07
+  - first:
+      213: 8470081590224444585
+    second: rimecarver_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c3a696abcbbd7d0800000000000000
+      internalID: -2892510826836902863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97ffc6b71054c3f0800000000000000
+      internalID: -881491564276222054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354533a676d045010800000000000000
+      internalID: 1176580140465083475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4152db9fc94732fa0800000000000000
+      internalID: -5826685275333647084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f6e3fa2a43050a0800000000000000
+      internalID: -6894953156174778558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0a171ee85673820800000000000000
+      internalID: 2897896549578285285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08ba6d58c11331a0800000000000000
+      internalID: -6831096657532504051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5fed33a9f3dcdba0800000000000000
+      internalID: -6062737929208467619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rimecarver_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac57e37456cb8570800000000000000
+      internalID: 8470081590224444585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rimecarver_AutoAttack_0: -817163645505170167
+      rimecarver_AutoAttack_00: -2892510826836902863
+      rimecarver_AutoAttack_01: -881491564276222054
+      rimecarver_AutoAttack_02: 1176580140465083475
+      rimecarver_AutoAttack_03: -5826685275333647084
+      rimecarver_AutoAttack_04: -6894953156174778558
+      rimecarver_AutoAttack_05: 2897896549578285285
+      rimecarver_AutoAttack_06: -6831096657532504051
+      rimecarver_AutoAttack_07: -6062737929208467619
+      rimecarver_AutoAttack_08: 8470081590224444585
+      rimecarver_AutoAttack_1: -8104995140334749177
+      rimecarver_AutoAttack_10: -5159747233335574996
+      rimecarver_AutoAttack_11: -6459187673033374577
+      rimecarver_AutoAttack_12: 998662324128080417
+      rimecarver_AutoAttack_13: -2701587996385317566
+      rimecarver_AutoAttack_14: -7239373498004227227
+      rimecarver_AutoAttack_2: 1272069643981738809
+      rimecarver_AutoAttack_3: 5444699902712666595
+      rimecarver_AutoAttack_4: -2660107680860029682
+      rimecarver_AutoAttack_5: 1177970718846268727
+      rimecarver_AutoAttack_6: 2134479147289946879
+      rimecarver_AutoAttack_7: 4987548241636587705
+      rimecarver_AutoAttack_8: -430524724690332371
+      rimecarver_AutoAttack_9: 4201045191705326501
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

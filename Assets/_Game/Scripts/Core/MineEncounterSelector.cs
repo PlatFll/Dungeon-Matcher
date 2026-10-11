@@ -10,7 +10,7 @@ public sealed class MineEncounterProgress
     public int lastMilestoneLocalWave, lastRecordedGlobalWave;
 }
 
-/// <summary>Selects data-authored mine formations; spawning and global scaling stay in WaveController.</summary>
+/// <summary>Selects data-authored teaching formations; spawning and global scaling stay in WaveController.</summary>
 public static class MineEncounterSelector
 {
     public static bool FitsBudget(ZoneDefinition zone, ZoneTestEncounter entry, int localWave)
@@ -32,7 +32,7 @@ public static class MineEncounterSelector
             (e.requiredSeen==null || e.requiredSeen.All(Seen)) &&
             (!e.oncePerVisit || !e.members.Any(m=>Leader(m)&&Seen(m))) &&
             e.members.All(m=>m.Category==EnemyCategory.Normal || Seen(m) || m==e.introduction)).ToList();
-        if(choices.Count==0)throw new InvalidOperationException("Ironvein has no legal encounter for local wave "+local);
+        if(choices.Count==0)throw new InvalidOperationException(zone.zoneId+" has no legal encounter for local wave "+local);
 
         var lesson=choices.Where(e=>e.introduction!=null && !Seen(e.introduction) && e.introduceByLocalWave>0)
             .OrderBy(e=>e.introduceByLocalWave).FirstOrDefault();

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 337b0856d4ec1f84a97cf9e224438208
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7350357315859164452
+    second: frostblade_reaver_Ability_0
+  - first:
+      213: -1878345391176084946
+    second: frostblade_reaver_Ability_1
+  - first:
+      213: 4531735523181501437
+    second: frostblade_reaver_Ability_2
+  - first:
+      213: 2699426137185498683
+    second: frostblade_reaver_Ability_3
+  - first:
+      213: -5039162511739971522
+    second: frostblade_reaver_Ability_4
+  - first:
+      213: -6740378013662047165
+    second: frostblade_reaver_Ability_5
+  - first:
+      213: -5917352576596167593
+    second: frostblade_reaver_Ability_6
+  - first:
+      213: 1001229018469215349
+    second: frostblade_reaver_Ability_7
+  - first:
+      213: -1759749222476347799
+    second: frostblade_reaver_Ability_8
+  - first:
+      213: 1975227630421679351
+    second: frostblade_reaver_Ability_00
+  - first:
+      213: 3821906722150445891
+    second: frostblade_reaver_Ability_01
+  - first:
+      213: 4070707781322821673
+    second: frostblade_reaver_Ability_02
+  - first:
+      213: 7699880295953720005
+    second: frostblade_reaver_Ability_03
+  - first:
+      213: -320701020686242813
+    second: frostblade_reaver_Ability_04
+  - first:
+      213: -7096861784530173550
+    second: frostblade_reaver_Ability_05
+  - first:
+      213: -8684436266271423384
+    second: frostblade_reaver_Ability_06
+  - first:
+      213: -2684598020266706933
+    second: frostblade_reaver_Ability_07
+  - first:
+      213: -6597409363701365747
+    second: frostblade_reaver_Ability_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc12dd801b696b10800000000000000
+      internalID: 1975227630421679351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343747a1ae32a0530800000000000000
+      internalID: 3821906722150445891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9205a2ad82f0e7830800000000000000
+      internalID: 4070707781322821673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2e95d55587bda60800000000000000
+      internalID: 7699880295953720005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c24eeee14ac8bf0800000000000000
+      internalID: -320701020686242813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291c809cec1e28d90800000000000000
+      internalID: -7096861784530173550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8644f5a5a3faa7780800000000000000
+      internalID: -8684436266271423384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08394df2546ebad0800000000000000
+      internalID: -2684598020266706933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostblade_reaver_Ability_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d048eb6632b4174a0800000000000000
+      internalID: -6597409363701365747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      frostblade_reaver_Ability_0: 7350357315859164452
+      frostblade_reaver_Ability_00: 1975227630421679351
+      frostblade_reaver_Ability_01: 3821906722150445891
+      frostblade_reaver_Ability_02: 4070707781322821673
+      frostblade_reaver_Ability_03: 7699880295953720005
+      frostblade_reaver_Ability_04: -320701020686242813
+      frostblade_reaver_Ability_05: -7096861784530173550
+      frostblade_reaver_Ability_06: -8684436266271423384
+      frostblade_reaver_Ability_07: -2684598020266706933
+      frostblade_reaver_Ability_08: -6597409363701365747
+      frostblade_reaver_Ability_1: -1878345391176084946
+      frostblade_reaver_Ability_2: 4531735523181501437
+      frostblade_reaver_Ability_3: 2699426137185498683
+      frostblade_reaver_Ability_4: -5039162511739971522
+      frostblade_reaver_Ability_5: -6740378013662047165
+      frostblade_reaver_Ability_6: -5917352576596167593
+      frostblade_reaver_Ability_7: 1001229018469215349
+      frostblade_reaver_Ability_8: -1759749222476347799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

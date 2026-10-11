@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 88e614c07fe3fbe40b5cece90b691677
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4219959983464003012
+    second: frostfang_wolf_Death_0
+  - first:
+      213: 8251636916367610460
+    second: frostfang_wolf_Death_1
+  - first:
+      213: 2714245029803599377
+    second: frostfang_wolf_Death_2
+  - first:
+      213: -8615910125281704400
+    second: frostfang_wolf_Death_3
+  - first:
+      213: -9162816595973204847
+    second: frostfang_wolf_Death_4
+  - first:
+      213: -4078170163270903867
+    second: frostfang_wolf_Death_5
+  - first:
+      213: -1585816031106293009
+    second: frostfang_wolf_Death_6
+  - first:
+      213: 1894092606811952683
+    second: frostfang_wolf_Death_7
+  - first:
+      213: -2391234709808618464
+    second: frostfang_wolf_Death_8
+  - first:
+      213: -8414024563975359666
+    second: frostfang_wolf_Death_00
+  - first:
+      213: -1403415997220568702
+    second: frostfang_wolf_Death_01
+  - first:
+      213: -3889980892309393000
+    second: frostfang_wolf_Death_02
+  - first:
+      213: -4544359029999729235
+    second: frostfang_wolf_Death_03
+  - first:
+      213: 7294037816409756195
+    second: frostfang_wolf_Death_04
+  - first:
+      213: -6655580979825640809
+    second: frostfang_wolf_Death_05
+  - first:
+      213: -6106004764735859637
+    second: frostfang_wolf_Death_06
+  - first:
+      213: -8706991423087684312
+    second: frostfang_wolf_Death_07
+  - first:
+      213: -6089592976141858101
+    second: frostfang_wolf_Death_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4376dc0d316b3b80800000000000000
+      internalID: -8414024563975359666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281419d0690168ce0800000000000000
+      internalID: -1403415997220568702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89177da0df2040ac0800000000000000
+      internalID: -3889980892309393000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5070d0a813fe0c0800000000000000
+      internalID: -4544359029999729235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3229e51afb0a93560800000000000000
+      internalID: 7294037816409756195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a75a39c50a2a3a0800000000000000
+      internalID: -6655580979825640809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b449319740d134ba0800000000000000
+      internalID: -6106004764735859637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8255c7cae6d8a2780800000000000000
+      internalID: -8706991423087684312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frostfang_wolf_Death_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcac956c37b6d7ba0800000000000000
+      internalID: -6089592976141858101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      frostfang_wolf_Death_0: 4219959983464003012
+      frostfang_wolf_Death_00: -8414024563975359666
+      frostfang_wolf_Death_01: -1403415997220568702
+      frostfang_wolf_Death_02: -3889980892309393000
+      frostfang_wolf_Death_03: -4544359029999729235
+      frostfang_wolf_Death_04: 7294037816409756195
+      frostfang_wolf_Death_05: -6655580979825640809
+      frostfang_wolf_Death_06: -6106004764735859637
+      frostfang_wolf_Death_07: -8706991423087684312
+      frostfang_wolf_Death_08: -6089592976141858101
+      frostfang_wolf_Death_1: 8251636916367610460
+      frostfang_wolf_Death_2: 2714245029803599377
+      frostfang_wolf_Death_3: -8615910125281704400
+      frostfang_wolf_Death_4: -9162816595973204847
+      frostfang_wolf_Death_5: -4078170163270903867
+      frostfang_wolf_Death_6: -1585816031106293009
+      frostfang_wolf_Death_7: 1894092606811952683
+      frostfang_wolf_Death_8: -2391234709808618464
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

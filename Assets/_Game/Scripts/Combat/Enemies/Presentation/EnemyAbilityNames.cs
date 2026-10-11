@@ -4,6 +4,7 @@ public static class EnemyAbilityNames
     public static string Primary(EnemyDefinition definition)
     {
         if(definition==null) return "";
+        if(!string.IsNullOrWhiteSpace(definition.abilityDisplayName)) return definition.abilityDisplayName;
         if(definition.SpecialAbilityKind==EnemySpecialAbilityKind.ApplyPlayerStatus)
             return definition.appliedPlayerStatus?.displayName ?? "Status";
         if(definition.SpecialAbilityKind==EnemySpecialAbilityKind.Barricade)
@@ -58,6 +59,8 @@ public static class EnemyAbilityNames
             case EnemySpecialAbilityKind.ObsidianSentinel:return "Devour Ore|Hydraulic Slam";
             case EnemySpecialAbilityKind.GrandDelver:return "Claim the Vein|Full Steam!|Heart of Obsidian";
             case EnemySpecialAbilityKind.GlacierCleave:return "Glacier Cleave";
+            case EnemySpecialAbilityKind.Rimecarving:return "Carve Rime";
+            case EnemySpecialAbilityKind.MountainStrike:return "Mountain Strike";
             default:return "";
         }
     }

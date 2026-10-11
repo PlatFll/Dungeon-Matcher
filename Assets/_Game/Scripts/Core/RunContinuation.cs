@@ -77,7 +77,7 @@ public sealed class RunContinuation : MonoBehaviour
         return true;
     }
     private static bool WholeMoves(float value) => !float.IsNaN(value) && !float.IsInfinity(value) && value>=0 && value==Mathf.Floor(value);
-    private static bool SupportedZone(string id) => id == "dungeon" || id == "magical-forest" || id == "drowned-court" || id == "ironvein-excavation";
+    private static bool SupportedZone(string id) => id == "dungeon" || id == "magical-forest" || id == "drowned-court" || id == "ironvein-excavation" || id == "frostwake-peaks";
     private void LateUpdate()
     {
         if(IsReplaying)

@@ -92,6 +92,7 @@ public sealed class RunCombatSnapshot
 [Serializable] public sealed class EnemyCombatSnapshot
 {
     public GlacierCleaveSnapshot glacierCleave;
+    public FrostwakeEnemySnapshot frostwakeEnemy;
     public float oreNextMultiplier;
     public bool oreBurstConsumed;
     public MineEnemySnapshot mineEnemy;

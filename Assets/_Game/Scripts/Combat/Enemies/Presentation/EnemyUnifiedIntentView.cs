@@ -76,6 +76,13 @@ public sealed class EnemyUnifiedIntentView : MonoBehaviour
                     var position=root.localPosition;position.y=maximum;position.x+=40;root.localPosition=position;
                 }
             }
+            // The transparent headroom correction must not push the rightmost
+            // actor's counters outside its slot and behind the arena frame.
+            var slotRect=(RectTransform)root.parent;
+            var fitted=root.localPosition;
+            float halfWidth=root.rect.width*.5f;
+            fitted.x=Mathf.Clamp(fitted.x,slotRect.rect.xMin+halfWidth+3,slotRect.rect.xMax-halfWidth-3);
+            root.localPosition=fitted;
             statuses.Rect.position=root.TransformPoint(new Vector3(-12,root.rect.yMax+4+statuses.Rect.rect.height/2,0));
             GameplayPixelGrid.Snap(root); GameplayPixelGrid.Snap(statuses.Rect);
         }
@@ -101,6 +108,7 @@ public sealed class EnemyUnifiedIntentView : MonoBehaviour
     private int ResponseMoves()
     {
         var cleave=GetComponent<GlacierCleaveRuntime>(); if(cleave?.IsChanneling==true)return cleave.ResponseMoves;
+        var mountain=GetComponent<FrostwakeEnemyAbility>(); if(mountain?.IsPreparing==true)return mountain.ResponseMoves;
         var heal=GetComponent<EnemyChannelRuntime>(); if(heal?.IsChanneling==true)return heal.ResponseMoves;
         var roots=GetComponent<RootbinderEnemyAbility>(); if(roots?.IsWarning==true)return roots.ResponseMoves;
         var forest=GetComponent<ForestMilestoneEnemyAbility>(); if(forest?.IsPreparing==true)return forest.ResponseMoves;

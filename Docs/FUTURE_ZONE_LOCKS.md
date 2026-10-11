@@ -39,12 +39,11 @@ change board arrangement. Detailed lore and implementations remain gaps.
 
 ## Snowy Mountain
 
-**Frostwake Peaks scope update, 2026-10-11:** the new Frostwake/playables pack
-authorizes the direction and a testable ice / Jarl Haldra mechanic foundation.
-The full zone remains unavailable for random travel until its roster, scenery,
-encounters and presentation are produced and validated. See
-[the current implementation record](FrostwakePlayables/IMPLEMENTATION.md).
-This section's earlier documentation-only scope is superseded for that foundation.
+**Frostwake Peaks scope update, 2026-10-11:** the user expanded the pack's
+foundation scope to full zone production and approved all eleven stills for
+animation. The roster, kits, scenery, encounters and presentation are implemented;
+current validation is tracked in [the production record](Frostwake/WORKLIST.md).
+This supersedes the earlier documentation/foundation-only boundary.
 
 The Iceborn clans live in moving mountain halls threatened by advancing glaciers.
 They seek the wandering crystal to move or save their people. Timber, rope,
@@ -69,5 +68,5 @@ damage and applies Frostbite, temporarily increasing incoming damage. Cascades
 and appropriate specials should clear it safely or substantially more safely.
 Exact durability, progression cadence, retaliation values and special exceptions
 remain provisional. The player status is Frostbite, not Freeze: it does not imply
-loss of control. Full Frostwake zone production remains a separate unfinished
-milestone; the current mechanic foundation uses provisional tunable values.
+loss of control. The implemented zone uses provisional tunable values, with
+human pacing and listening review separate from automated verification.

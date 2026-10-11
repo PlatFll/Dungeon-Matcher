@@ -56,9 +56,9 @@ public sealed class IronveinEncounterTests
         Assert.That(progress.recent.Count,Is.EqualTo(4));
         Assert.That(ZoneTravelController.DestinationReady(Zone),Is.True);
         var zones=Resources.LoadAll<ZoneDefinition>("Zones").Where(ZoneTravelController.DestinationReady).ToArray();
-        Assert.That(zones.Length,Is.EqualTo(4));
+        Assert.That(zones.Length,Is.EqualTo(5));
         var picks=new HashSet<string>();var random=new SavedRandom(951);
         for(int i=0;i<100;i++)picks.Add(ZoneTravelController.ChooseDestination("dungeon",zones,random));
-        CollectionAssert.AreEquivalent(new[]{"magical-forest","drowned-court","ironvein-excavation"},picks);
+        CollectionAssert.AreEquivalent(new[]{"magical-forest","drowned-court","ironvein-excavation","frostwake-peaks"},picks);
     }
 }

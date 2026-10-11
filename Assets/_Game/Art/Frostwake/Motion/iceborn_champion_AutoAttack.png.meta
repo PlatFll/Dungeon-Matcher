@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: 11a6505b87c523e45ae8a294369b4da4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8390520491282932588
+    second: iceborn_champion_AutoAttack_0
+  - first:
+      213: 3076534900696886793
+    second: iceborn_champion_AutoAttack_1
+  - first:
+      213: 6508796842414833179
+    second: iceborn_champion_AutoAttack_2
+  - first:
+      213: 9141329063827926107
+    second: iceborn_champion_AutoAttack_3
+  - first:
+      213: 6939026990807166910
+    second: iceborn_champion_AutoAttack_4
+  - first:
+      213: 7616086448781879469
+    second: iceborn_champion_AutoAttack_5
+  - first:
+      213: -9019652342729948217
+    second: iceborn_champion_AutoAttack_6
+  - first:
+      213: 3958296614837317269
+    second: iceborn_champion_AutoAttack_7
+  - first:
+      213: -8334446217715417971
+    second: iceborn_champion_AutoAttack_8
+  - first:
+      213: 6881599331982552768
+    second: iceborn_champion_AutoAttack_9
+  - first:
+      213: -1639087377232933644
+    second: iceborn_champion_AutoAttack_10
+  - first:
+      213: 1669770771611110232
+    second: iceborn_champion_AutoAttack_11
+  - first:
+      213: -5180298735936791565
+    second: iceborn_champion_AutoAttack_12
+  - first:
+      213: 4345788742742288847
+    second: iceborn_champion_AutoAttack_13
+  - first:
+      213: -6535395612064175912
+    second: iceborn_champion_AutoAttack_14
+  - first:
+      213: -2133495710517198956
+    second: iceborn_champion_AutoAttack_00
+  - first:
+      213: -8311386246414203362
+    second: iceborn_champion_AutoAttack_01
+  - first:
+      213: 6434769036665897031
+    second: iceborn_champion_AutoAttack_02
+  - first:
+      213: 3963484717141754117
+    second: iceborn_champion_AutoAttack_03
+  - first:
+      213: -4143928440561158083
+    second: iceborn_champion_AutoAttack_04
+  - first:
+      213: 206198959132983404
+    second: iceborn_champion_AutoAttack_05
+  - first:
+      213: -1479755336005866045
+    second: iceborn_champion_AutoAttack_06
+  - first:
+      213: 4161039780538351032
+    second: iceborn_champion_AutoAttack_07
+  - first:
+      213: 7426200256202195026
+    second: iceborn_champion_AutoAttack_08
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f7dcc74fc4462e0800000000000000
+      internalID: -2133495710517198956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e160a679e3608ac80800000000000000
+      internalID: -8311386246414203362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74047229854ec4950800000000000000
+      internalID: 6434769036665897031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5018cedc950210730800000000000000
+      internalID: 3963484717141754117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_04
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38b6bde90fcd76c0800000000000000
+      internalID: -4143928440561158083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_05
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c604d206cd09cd200800000000000000
+      internalID: 206198959132983404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_06
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cda1eaac5ad67be0800000000000000
+      internalID: -1479755336005866045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_07
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bdf14f52abfeb930800000000000000
+      internalID: 4161039780538351032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iceborn_champion_AutoAttack_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250c8dd89c92f0760800000000000000
+      internalID: 7426200256202195026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      iceborn_champion_AutoAttack_0: -8390520491282932588
+      iceborn_champion_AutoAttack_00: -2133495710517198956
+      iceborn_champion_AutoAttack_01: -8311386246414203362
+      iceborn_champion_AutoAttack_02: 6434769036665897031
+      iceborn_champion_AutoAttack_03: 3963484717141754117
+      iceborn_champion_AutoAttack_04: -4143928440561158083
+      iceborn_champion_AutoAttack_05: 206198959132983404
+      iceborn_champion_AutoAttack_06: -1479755336005866045
+      iceborn_champion_AutoAttack_07: 4161039780538351032
+      iceborn_champion_AutoAttack_08: 7426200256202195026
+      iceborn_champion_AutoAttack_1: 3076534900696886793
+      iceborn_champion_AutoAttack_10: -1639087377232933644
+      iceborn_champion_AutoAttack_11: 1669770771611110232
+      iceborn_champion_AutoAttack_12: -5180298735936791565
+      iceborn_champion_AutoAttack_13: 4345788742742288847
+      iceborn_champion_AutoAttack_14: -6535395612064175912
+      iceborn_champion_AutoAttack_2: 6508796842414833179
+      iceborn_champion_AutoAttack_3: 9141329063827926107
+      iceborn_champion_AutoAttack_4: 6939026990807166910
+      iceborn_champion_AutoAttack_5: 7616086448781879469
+      iceborn_champion_AutoAttack_6: -9019652342729948217
+      iceborn_champion_AutoAttack_7: 3958296614837317269
+      iceborn_champion_AutoAttack_8: -8334446217715417971
+      iceborn_champion_AutoAttack_9: 6881599331982552768
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

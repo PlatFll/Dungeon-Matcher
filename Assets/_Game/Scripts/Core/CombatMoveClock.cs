@@ -256,6 +256,7 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
         actor.GetComponent<GlacierCleaveRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyAutoAttack>()?.IsPausedByAction == true;
     private static bool BlocksSpecialCountdown(EnemyActor actor) =>
+        actor.GetComponent<FrostwakeEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<EnemyChannelRuntime>()?.BlocksBasic == true ||
         actor.GetComponent<AquaticEnemyAbility>()?.BlocksBasic == true ||
         actor.GetComponent<MineEnemyAbility>()?.BlocksBasic == true ||

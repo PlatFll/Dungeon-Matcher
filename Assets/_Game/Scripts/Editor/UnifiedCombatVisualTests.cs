@@ -24,7 +24,7 @@ public sealed class UnifiedCombatAssetTests
         }
         var defs=AssetDatabase.FindAssets("t:EnemyDefinition",new[]{"Assets/_Game"})
             .Select(g=>AssetDatabase.LoadAssetAtPath<EnemyDefinition>(AssetDatabase.GUIDToAssetPath(g))).ToArray();
-        Assert.That(defs.Length,Is.EqualTo(62));
+        Assert.That(defs.Length,Is.EqualTo(73));
         Assert.That(defs.Select(d=>d.UnifiedAttackMoves).Distinct().Count(),Is.GreaterThanOrEqualTo(5));
         foreach(var def in defs) Assert.That(def.UnifiedAttackMoves,Is.InRange(2,6),def.name);
     }
@@ -72,6 +72,7 @@ public sealed partial class ForestFoundationPlayTests
     {
         yield return LaunchMineKit("grand_delver","bore_engineer","powder_sapper");DurableUnifiedFixture();
         var boss=Enemy("grand_delver");
+        yield return Until(()=>boss.GetComponent<EnemyUnifiedIntentView>()?.ActionRoot!=null,"leader intent initialized");
         var poison=boss.GetComponent<EnemyPoisonStatus>()??boss.gameObject.AddComponent<EnemyPoisonStatus>();poison.Apply(3,1,5);
         var announcement=boss.GetComponent<EnemyCastAnnouncement>()??boss.gameObject.AddComponent<EnemyCastAnnouncement>();
         foreach(var size in new[]{new Vector2Int(720,1280),new Vector2Int(1080,1920),new Vector2Int(1080,2400)})

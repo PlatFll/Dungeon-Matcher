@@ -22,8 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Frostwake and new playables checkpoint (2026-10-11)
 
-Implemented on `codex/frostwake-new-playables`, based on merged main
-`c8fec99`. The supplied pack authorizes the Frostwake direction, an ice/Haldra
+The playable/foundation pass merged through PR #190. The supplied pack established the Frostwake direction, an ice/Haldra
 mechanic foundation, and two complete new player characters. Haldra's revised
 Glacier Cleave gives three accepted moves to thaw a marked physical gem;
 remaining ice controls damage and Bifrost adds Frostbite.
@@ -42,14 +41,28 @@ testing and listening review of the temporary cues remain unperformed.
 The user locked the friendly, fully yellow-eyed Minotaur with belt keys and
 Kobold B's outfit with both eyes covered and the free hand behind his back,
 and explicitly authorized animation and merging after validation.
-Frostwake is not a travel destination; its complete roster and zone production
-remain future work under the pack's direction/foundation scope.
+The subsequent explicit request authorizes full Frostwake production. On
+`codex/frostwake-zone-production`, all eleven user-approved enemy designs have
+70 selected native motion clips, data-driven kits, weighted teaching/relief
+encounters, three mountain scenery variants, stone/timber UI and a temporary
+original music cue. Frostwake is registered as the fifth testing/travel zone.
+Haldra retains the locked three-move Glacier Cleave and pauses basic attacks
+through wind-up, held warning and release. Hunter, Champion and Troll use the
+existing marked-gem response system. Existing zones keep their own content.
+The Minotaur's eye-only correction uses darker amber with near-black contours;
+all other character pixels and the Kobold are preserved.
+Integration validation and source review are complete: 24 unique affected
+checks pass on their latest executions, the required Unity validator passed,
+and all three portrait captures were inspected with Editor audio muted.
+See [production status](Frostwake/WORKLIST.md) and [executed evidence](Validation/FROSTWAKE_PRODUCTION.md).
+Enemy numbers, visit pacing, new scene composition and temporary music still
+need human play/listening feedback. No device performance claim is made.
 See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
 and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_DESIGNS.json).
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.13.2. Rattlebones is the explicitly designated
+The canonical art guide is now v1.14. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.
@@ -84,7 +97,7 @@ the current guide/register before any new or resumed art work.
 
 ## Unified move-combat experiment (2026-10-08)
 
-New runs in all four zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.

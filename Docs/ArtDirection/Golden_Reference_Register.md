@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-11 · canonical guide v1.13.2. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing correction; Mender's corrected death sheet is separate from her reference still.
+2026-10-11 · canonical guide v1.14. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing correction; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
@@ -140,6 +140,17 @@ Each convenience PNG is a lossless extraction of the currently bound fallback/re
 - Bardley and Gideon keep their existing approved/working identity authority. They are not replaced by the enemy shortlist. Bardley historical static placement notes must not be applied blindly to the current grounded animation.
 
 ## Future generation lineage
+
+### Frostwake production lineage, 2026-10-11
+
+The eleven Frostwake designs are user-approved target identities for animation,
+not additions to this golden shortlist. `ArtSource/Frostwake/reference-lineage.json`
+records the actual golden image inputs and guide v1.13.2 hashes used to generate
+them. `approved/manifest.json`, `production/animation-manifest.json` and
+`motion-palette-checks.json` preserve output identity and native export evidence.
+The later guide v1.14 records that approval without changing any golden image.
+The authorized Minotaur eye amendment is recorded separately in
+`ArtSource/FrostwakePlayables/eye-revision`; it does not change Rattlebones.
 
 Follow the canonical guide’s actual-image input requirements. Use the referenced PNG bytes in a supported style/reference field; paths or textual mentions alone are insufficient. Record guide version/hash, image hashes, input roles, target approval, endpoint/settings/job lineage and output hashes. The approved target remains identity authority during animation. Proposed memberships above must remain marked pending until the user decides.
 

@@ -607,7 +607,7 @@ public sealed partial class WaveController :
         enemy.PersistentId = CombatMoveClock.Current != null ? CombatMoveClock.Current.AllocateActor() : nextLegacyEnemyId++;
         if (CombatMoveClock.Active) enemyObject.AddComponent<EnemyMoveIntentView>().Initialize(enemy);
         if (enemy.Definition.EligibleZones.Contains("magical-forest") || enemy.Definition.EligibleZones.Contains("drowned-court") ||
-            enemy.Definition.EligibleZones.Contains("ironvein-excavation"))
+            enemy.Definition.EligibleZones.Contains("ironvein-excavation") || enemy.Definition.EligibleZones.Contains("frostwake-peaks"))
             enemyObject.AddComponent<ForestEnemyMotion>();
         bool successfullyBound =
             slot.BindEnemy(enemy);

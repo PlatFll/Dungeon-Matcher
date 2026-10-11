@@ -42,7 +42,7 @@ public static class ForestProductionImporter
     private static void ImportAnimations()
         => ImportMotionSet(Names,Source+"Selected/",Art,Animation);
 
-    public static void ImportMotionSet(string[] names,string source,string art,string animation,string dataRoot=Data)
+    public static void ImportMotionSet(string[] names,string source,string art,string animation,string dataRoot=Data,int floorPixels=0)
     {
         Directory.CreateDirectory(art);Directory.CreateDirectory(animation);AssetDatabase.Refresh();
         var manifest=JsonUtility.FromJson<Manifest>(File.ReadAllText(source+"animation-manifest.json"));
@@ -65,7 +65,8 @@ public static class ForestProductionImporter
 #pragma warning disable CS0618
                 importer.spritesheet=Enumerable.Range(0,spec.frameCount).Select(i=>new SpriteMetaData{
                     name=key+"_"+i.ToString("00"),rect=new Rect(i*spec.width,0,spec.width,spec.height),
-                    alignment=(int)SpriteAlignment.BottomCenter,pivot=new Vector2(.5f,0)}).ToArray();
+                    alignment=(int)(floorPixels==0?SpriteAlignment.BottomCenter:SpriteAlignment.Custom),
+                    pivot=new Vector2(.5f,(float)floorPixels/spec.height)}).ToArray();
 #pragma warning restore CS0618
                 importer.SaveAndReimport();
                 var sprites=AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().OrderBy(s=>s.name).ToArray();
