@@ -25,6 +25,18 @@ retaining west-facing poses, canvas clearance and artifact cleanup. The gallery
 and Highlights show the restored version. Pixel/export checks were rerun; Unity
 was not rerun for this art-only correction with unchanged imports and clips.
 
+Facing follow-up: a complete source-frame audit found 85 remaining east-facing
+drawings in six forms: Seismic Smith (30), Rail Switcher (36), Breakwater Captain
+(7), Briar Archer (3), Elven Mender (4) and Elven Thornkeeper (5). These are now
+complete-cel horizontal reflections, authored in LibreSprite; no facial pixels
+were repainted. Already-westward attack drawings and frontal transitions remain
+unchanged. All 2,866 other cells, including restored Puffer, are unchanged.
+[FacingReview.html](FacingReview.html) compares the exact pre-correction sheets
+from commit `0b03efb` with the current exports, including every state of these six.
+The older Highlights and Unity screenshots document the earlier milestone.
+See `facing_corrections.json` and `facing-validation.json` for exact selection and
+proof. This supersedes the initial pass's incomplete all-west claim.
+
 Material assignments simplify selected cloth, armor, shell and beard clusters.
 Specific repairs replace Snapvine's detached-twig
 death with a rooted wilt, uncover Court Mage's face, reduce King's opaque swing
@@ -47,6 +59,8 @@ The 137 paid jobs consumed 815 generations (750 masked general, 54 Smith,
 - Originals/: immutable baseline PNGs and Unity metadata.
 - jobs.json: original GUID/fileID rectangles, native dimensions and registration.
 - material_rules.json, native_edit.js, frame_overrides.json: native edit recipe.
+- facing_corrections.json: reviewed direction-only full-pose reflections applied
+  last in the native recipe; facing-validation.json records exact scope.
 - repair_review.json, RepairReceipts/, generation-ledger.json: selection/lineage.
 - candidate-validation.json: measured native/export equality and per-frame bounds.
 - unity-import-manifest.json: production hashes, retained IDs and unchanged clips.
@@ -73,6 +87,13 @@ Use this pass's native sources and staging metadata for future enemy art edits.
 The edge-planning and receipt helpers retain the original production workflow;
 historical checkpoint flags are not instructions to spend more generations.
 RepairInputs contains the exact submitted images, independent of temporary files.
+
+For the facing follow-up, `verify_facing.py --production` compares all 2,951 cels
+against the recorded baseline commit, proves exact selected reflections and
+unchanged other cels, and verifies all production PNGs match the native exports.
+It also checks all import metadata and 353 clips against Git with LF/CRLF
+normalization. Run `build_facing_review.py` to regenerate its focused gallery.
+These checks prove scope and export integrity; gaze remains a visual assessment.
 
 Runtime/code edits require Tools/Validate-Unity.ps1 before PR/merge. The opt-in
 EnemyArtCohesionValidation.RunAssets checks imports and clip references;

@@ -270,6 +270,13 @@ function editFrame(a,job,row,index){
  if(job.actor==='shield_knight')quietShieldEmblem(a,job,row);
  if(job.actor==='king')a=kingArc(a,job,row,index);
  nativeEdgeDetails(a,job,row,index);
+ // Apply the reviewed facing correction last, to the complete final pose.
+ // Keep every existing facial pixel, prop and effect; shared cels flip once.
+ var facing=FACING[job.actor];
+ if(facing&&row.states.some(function(s){
+  var indices=facing.states[s[0]];
+  return indices==='all'||Array.isArray(indices)&&indices.indexOf(s[1])>=0;
+ }))a=mirror(a);
  return a;
 }
 try {

@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.13.1
+**Version:** 1.13.2
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -64,6 +64,18 @@ inflation, hold, attack, interrupt and release drawing. His original expression
 is the identity authority. Retain the west-facing attack corrections, expanded
 canvases and detached-artifact cleanup. This supersedes the inflated-face
 recommendation in the historical audit and the v1.13 implementation.
+
+Facing correction, v1.13.2: the user requested only remaining east-facing poses
+be corrected, including Seismic Smith, without any further face changes. A full
+64-form source-frame review selected 85 cels in Smith, Rail Switcher, Breakwater
+Captain, Briar Archer, Elven Mender and Elven Thornkeeper. Apply lossless full-pose
+horizontal reflections through LibreSprite, preserving the three-quarter view,
+all existing facial pixels, timing and canvas registration. Already-westward
+strike drawings and frontal transitions stay unchanged. The other 2,866 cels,
+including restored Puffer, are unchanged. The explicit selection and exact
+before/after verification live in ArtSource/EnemyArtCohesion/facing_corrections.json
+and facing-validation.json. No new face design or golden membership is approved.
+The initial pass's all-west claim was incomplete and is superseded by this audit.
 
 Current enemy rectangles supersede the historical 64-pixel limits below. Most
 canvases add 24/20/24/4 pixels left/top/right/bottom; the disabled Delver remount

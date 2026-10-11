@@ -48,6 +48,7 @@ body=(OUT/'native_edit.js').read_text(encoding='utf-8')
 rules=json.loads((OUT/'material_rules.json').read_text(encoding='utf-8'))
 overrides=json.loads((OUT/'frame_overrides.json').read_text(encoding='utf-8'))
 focal={str(r['states'][0][1]):r for r in json.loads((OUT/'focal-registration.json').read_text())}
+facing=json.loads((OUT/'facing_corrections.json').read_text(encoding='utf-8'))['actors']
 selected=jobs[:1]
 import sys
 if '--all' in sys.argv:selected=jobs
@@ -56,6 +57,7 @@ elif '--actors' in sys.argv:
 elif '--from-actor' in sys.argv:
     name=sys.argv[sys.argv.index('--from-actor')+1];start=next(i for i,j in enumerate(jobs) if j['actor']==name);selected=jobs[start:]
 script='var ROOT='+json.dumps(ROOT.as_posix()+'/')+';\nvar RULES='+json.dumps(rules,separators=(',',':'))+';\nvar OVERRIDES='+json.dumps(overrides,separators=(',',':'))+';\nvar FOCAL='+json.dumps(focal,separators=(',',':'))+';\nvar JOBS='+json.dumps(selected,separators=(',',':'))+';\n'+body
+script='var FACING='+json.dumps(facing,separators=(',',':'))+';\n'+script
 (TEMP/'RunNative.js').write_text(script,encoding='utf-8')
 (TEMP/'selected-jobs.json').write_text(json.dumps(selected),encoding='utf-8')
 print(json.dumps(dict(total_jobs=len(jobs),selected=len(selected),script=str(TEMP/'RunNative.js'))))

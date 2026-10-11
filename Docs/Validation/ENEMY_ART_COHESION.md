@@ -78,6 +78,47 @@ The whitespace check passes for authored changes. Immutable original Unity
 metadata retains its existing trailing spaces on empty serialized fields; those
 source bytes were preserved instead of reformatted to satisfy a text-only check.
 
+## Direction-only follow-up (2026-10-11)
+
+The previous all-west claim missed right-facing source drawings; Unity was not
+rotating them into place. The shared UI visual/root transforms and material
+sampling do not apply an enemy-specific reflection. This correction is baked
+into native LibreSprite cels and their production PNG exports.
+
+All 64 forms / 2,951 unique cells were inspected on labeled source contact sheets.
+Six forms required 85 whole-cel reflections in 19 sheets: Seismic Smith 30,
+Rail Switcher 36, Breakwater Captain 7, Briar Archer 3, Elven Mender 4 and Elven
+Thornkeeper 5. Existing west-facing attacks are retained, as are frontal
+transitions and backward leans with west-facing heads. There is no face repaint,
+palette adjustment, resampling, new drawing, PixelLab generation or timing edit.
+Puffer and the other 2,866 unselected cells remain unchanged.
+
+Executed verification:
+
+- `verify_facing.py --production`: all selected RGBA cels equal exact horizontal
+  reflections of commit `0b03efb`; all other cels and unselected PNG sheets match
+  that baseline. All 395 production PNGs match their current native exports.
+  All import metadata and 353 clips retain their Git content (LF/CRLF normalized).
+- `verify_candidates.py`: all 395 native files / 2,951 cels match exports, exact
+  exposures and canvas dimensions; binary alpha; no outer-edge contact; no atlas
+  exceeds the 4096 import limit. Reflection preserves the prior clear margins.
+- Corrected Smith attacks/death, Rail attack and all four other corrected death
+  sequences received frame inspection; source playback controls were sampled.
+- The eight current reference images and production-source hashes still match
+  the golden register. Rattlebones/player assets and restored Puffer are unchanged.
+
+[Focused before/after player](../../ArtSource/EnemyArtCohesion/FacingReview.html)
+embeds exact before sheets from Git and loads the current exports. It covers all
+48 ready/animation states of the six forms. `facing_corrections.json` records the
+zero-based selection; `facing-validation.json` records hashes and full coverage.
+Older Highlights and Unity screenshots below document the earlier milestone.
+
+Unity validation/runtime playback was not rerun for this art-only follow-up:
+no Unity metadata, clips, controllers or C# changed. Earlier runtime results do
+not establish runtime visual acceptance of the newly reflected poses. Full-pose
+reflection changes prop handedness in corrected drawings; existing exposures
+are retained, and no newly interpolated transition drawings are claimed.
+
 ## Visual evidence and limits
 
 [Before/after player](../../ArtSource/EnemyArtCohesion/Review.html) covers every
