@@ -1,7 +1,12 @@
 # Character still approval batch
 
-Status: **candidates awaiting the user's visual approval**, 2026-10-11.
+Status: **direction liked; revisions requested**, 2026-10-11.
 No animation has been commissioned from these candidates.
+
+The user requested a kind, less angry Minotaur face and keys on his belt,
+and a more distinctive Kobold design. Preserve this first batch as history;
+the follow-up candidates and exact edit requests live in `../revision-02/`.
+This feedback does not yet approve either still for animation.
 
 Open `NativeComparison.png`: all sprites share a common floor at native 1×
 and nearest-neighbour 3×. Transparent margins were cropped only for this review

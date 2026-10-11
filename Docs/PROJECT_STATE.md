@@ -35,9 +35,11 @@ Haldra damage bands/Frostbite and unified save/Continue. The mandatory Unity
 validator passes. This is an implementation checkpoint, not a completed release.
 PlayerDefinition/animation/presentation integration and final validation remain.
 Frostwake is not a travel destination; its complete roster and zone production
-remain unfinished. Both character stills await user approval before animation.
+remain unfinished. The user liked both character directions and requested a
+kinder Minotaur face with belt keys and a more distinctive Kobold. Revised
+stills (one Minotaur, two Kobold outfits) await approval before animation.
 See [scope, decisions and remaining work](FrostwakePlayables/IMPLEMENTATION.md)
-and [the native still review](../ArtSource/FrostwakePlayables/review/README.md).
+and [the revised native still review](../ArtSource/FrostwakePlayables/revision-02/README.md).
 
 ## Global art-direction audit (2026-10-11)
 

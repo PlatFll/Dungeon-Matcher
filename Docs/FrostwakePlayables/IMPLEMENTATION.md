@@ -109,12 +109,16 @@ no FrostwakeRules assigned, so this does not add ice to their gameplay or expose
 a fifth travel destination. The shared frozen-gem overlay is an explicit
 presentation fallback; it is not approved Frostwake production art.
 
-Both recommended stills are in `ArtSource/FrostwakePlayables/review/`. The
-Minotaur is 80×80 (62×65 occupied, 13 opaque colors); the Kobold is 64×64
-(50×59 occupied, 15 opaque colors). Alpha is binary. Actual golden images were
-provided to PixelLab. Their approval request is pending; no animation has been
-commissioned. PixelLab tool charges total 25.2 generations; the account reports
-198 remaining after starting at 223 (whole-number balance display).
+The user liked the initial designs but requested a kinder Minotaur with belt
+keys and a more distinctive Kobold. The revised stills and comparison boards
+are in `ArtSource/FrostwakePlayables/revision-02/`; the first batch is preserved
+in `review/`. Minotaur: 80×80, 62×65 occupied, 13 opaque colors. Kobold A/B:
+64×64, 49×59 / 51×59 occupied, 15 colors each. Alpha is binary. Actual golden
+images conditioned the original generation; revisions edited those exact PNGs
+and restored their palettes through PixelLab. B is recommended, not approved.
+Final still approval remains pending; no animation has been commissioned.
+This revision cost 4.3 generations, bringing reported charges to 29.5 total.
+The account reports 194 remaining, $0 credits (whole-number balance display).
 
 Executed validation so far, with batch Unity audio muted:
 

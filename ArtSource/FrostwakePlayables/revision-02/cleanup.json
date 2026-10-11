@@ -1,0 +1,55 @@
+{
+  "requests": {
+    "minotaur-palette": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/c1c12e6c-4897-4a4f-87e6-06f8e8c350bd/download"
+      ],
+      "palette_image_url": "https://api.pixellab.ai/mcp/pixel-tools/db481470-ce84-4f13-aece-aacd6f04fdd4/image.png",
+      "dithering": "none"
+    },
+    "kobold-b-palette": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/353cf797-90c7-43d4-8912-289472056a6b/download"
+      ],
+      "palette_image_url": "https://api.pixellab.ai/mcp/pixel-tools/af243e7f-1c93-454b-ba45-1426c9dfc50e/image.png",
+      "dithering": "none"
+    },
+    "kobold-a-gun": {
+      "image_url": "https://api.pixellab.ai/mcp/images/14bf9a4a-76fb-41b0-b496-71a40ed6c4a4/download",
+      "description": "Correct only the missing equipment: his lowered right hand must visibly hold ONE small iron fantasy revolver, short barrel pointing diagonally down toward image right, beside the coat hem. Keep the other hand cupped to his ear. Preserve all current teal coat, cream collar, leather satchel, belt, red head/tail, blindfold, pose, proportions and pixel style. No extra weapons, hat or cowboy features. Dark outline, limited flat palette, no texture, transparent.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 72134
+    }
+  },
+  "receipts": {
+    "minotaur-palette": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 5e85b595-3dab-4c0e-a95d-53b1e9bbc822\njob_id: 5e85b595-3dab-4c0e-a95d-53b1e9bbc822\nasset_id: c12a5042-3e81-558e-9b76-60836bb937bd\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 80x80px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"5e85b595-3dab-4c0e-a95d-53b1e9bbc822\")"
+        }
+      ],
+      "isError": false
+    },
+    "kobold-b-palette": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 23569269-cb92-4392-95d7-cd9b8cee959f\njob_id: 23569269-cb92-4392-95d7-cd9b8cee959f\nasset_id: ddd20ac6-10a2-5994-a42f-f830eb345fa1\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 64x64px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"23569269-cb92-4392-95d7-cd9b8cee959f\")"
+        }
+      ],
+      "isError": false
+    },
+    "kobold-a-gun": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: ca146b64-ad71-46e1-be59-62173b7237a2\njob_id: ca146b64-ad71-46e1-be59-62173b7237a2\nmodel: pixen\nedit: Correct only the missing equipment: his lowered right hand must visibly hold ONE small iron fantasy revolver, short barrel pointing diagonally down toward image right, beside the coat hem. Keep the other hand cupped to his ear. Preserve all current teal coat, cream collar, leather satchel, belt, red head/tail, blindfold, pose, proportions and pixel style. No extra weapons, hat or cowboy features. Dark outline, limited flat palette, no texture, transparent.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 72134\nasset_id: 9571851b-8c77-511d-85a9-4e2455b27a54\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"ca146b64-ad71-46e1-be59-62173b7237a2\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

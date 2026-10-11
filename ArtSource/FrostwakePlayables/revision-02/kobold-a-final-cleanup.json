@@ -1,0 +1,24 @@
+{
+  "request": {
+    "image_urls": [
+      "https://api.pixellab.ai/mcp/images/ca146b64-ad71-46e1-be59-62173b7237a2/download"
+    ],
+    "palette_image_url": "https://api.pixellab.ai/mcp/pixel-tools/af243e7f-1c93-454b-ba45-1426c9dfc50e/image.png",
+    "dithering": "none"
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 0d6d0611-651a-4a5e-a8f2-7a5724762fd0\njob_id: 0d6d0611-651a-4a5e-a8f2-7a5724762fd0\nasset_id: 1fe83d19-2295-5e40-882f-9ec0c715977d\nasset_status: pending (saved when generation completes)\nframes: 1\nsize: 64x64px (unchanged)\npalette: palette image\ndithering: none\ncost: 0.1 generations\nstatus: processing (~1s)\n\nhint: get_image(job_id=\"0d6d0611-651a-4a5e-a8f2-7a5724762fd0\")"
+      }
+    ],
+    "isError": false
+  },
+  "sourceResult": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: ca146b64-ad71-46e1-be59-62173b7237a2\njob_id: ca146b64-ad71-46e1-be59-62173b7237a2\nframes: 1\ntransparent: yes\nasset_id: 9571851b-8c77-511d-85a9-4e2455b27a54\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ca146b64-ad71-46e1-be59-62173b7237a2/download"
+    }
+  ]
+}
