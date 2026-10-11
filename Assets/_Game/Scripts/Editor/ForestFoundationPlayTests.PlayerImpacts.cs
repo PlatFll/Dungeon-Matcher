@@ -118,4 +118,52 @@ public sealed partial class ForestFoundationPlayTests
         yield return Stable();
         Assert.That(impacts,Is.EqualTo(1));Assert.That(completed,Is.EqualTo(1));Assert.That(board.IsBusy,Is.False);
     }
+
+    [UnityTest] public IEnumerator AttenderPrioritizesAndClearsVineWithoutAPlayerMove()
+    {
+        yield return Launch();QuietKitFixture();var board=Run.Board;
+        foreach(var enemy in Run.Waves.ActiveEnemies)Set(enemy,"currentHealth",10000);
+        var target=board.GetGem(3,3);int identity=target.BoardIdentity;
+        board.QueueEnvironmentalVine(target);yield return Stable();
+        Assert.That(board.IsCellVined(3,3),Is.True);
+        var ability=ScriptableObject.CreateInstance<DungeonAttenderAbilityDefinition>();Set(ability,"movementBudget",1);
+        var controller=InstallSequenceAbility(ability);Run.Player.GetComponent<PlayerAbilityEnergy>().AddEnergy(100);
+        Vector2Int? hit=null;Run.Player.GetComponent<DungeonAttenderRuntime>().Impacted+=(step,cell,survived)=>hit=cell;
+        Assert.That(controller.TryActivate(),Is.True);yield return Stable();
+        Assert.That(hit,Is.EqualTo(new Vector2Int(3,3)));Assert.That(board.FindGemIdentity(identity),Is.Null);
+        Assert.That(board.VineCount,Is.Zero);Assert.That(board.CompletedValidPlayerMoves,Is.Zero);
+        Object.Destroy(ability);
+    }
+
+    [UnityTest] public IEnumerator PlayerImpactClearsBifrostSafelyAndChainsSpecialsBeforeSettlement()
+    {
+        yield return Launch();QuietKitFixture();var board=Run.Board;
+        foreach(var enemy in Run.Waves.ActiveEnemies)Set(enemy,"currentHealth",10000);
+        var zone=Run.Zone.Definition;var previous=zone.frostwakeRules;
+        var rules=ScriptableObject.CreateInstance<FrostwakeRules>();zone.frostwakeRules=rules;
+        try
+        {
+            Gem frozen=null;
+            Assert.That(board.TryQueueEncasedGem(Run.Waves.ActiveEnemies[0],FrostStage.Bifrost,g=>frozen=g),Is.True);
+            yield return Stable();Assert.That(frozen,Is.Not.Null);
+            int identity=frozen.BoardIdentity,health=Run.Player.CurrentHealth;
+            var cell=new Vector2Int(frozen.Column,frozen.Row);
+            Assert.That(board.TryPlayerImpactSequence(new PlayerBoardImpactSequence {Count=1,Select=(step,targets)=>cell}),Is.True);
+            yield return Stable();Assert.That(board.FindGemIdentity(identity),Is.Null);
+            Assert.That(Run.Player.CurrentHealth,Is.EqualTo(health),"ability clears never retaliate from Bifrost");
+            Assert.That(Run.Player.Statuses.Has(PlayerStatusKind.Frostbite),Is.False);
+            var row=board.GetGem(0,0);row.SetSpecialType(GemSpecialType.RowBomb);
+            var column=board.GetGem(1,0);column.SetSpecialType(GemSpecialType.ColumnBomb);
+            var crystal=board.GetGem(2,0);crystal.SetSpecialType(GemSpecialType.ColorCrystal);
+            int[] consumed={row.BoardIdentity,column.BoardIdentity,crystal.BoardIdentity,board.GetGem(1,board.Height-1).BoardIdentity};
+            int completed=0;
+            Assert.That(board.TryPlayerImpactSequence(new PlayerBoardImpactSequence {Count=1,
+                Select=(step,targets)=>Vector2Int.zero,Completed=()=>completed++}),Is.True);
+            yield return Stable();
+            foreach(int id in consumed)Assert.That(board.FindGemIdentity(id),Is.Null,"special chain consumed identity "+id);
+            Assert.That(completed,Is.EqualTo(1));Assert.That(board.CompletedValidPlayerMoves,Is.Zero);
+            for(int y=0;y<board.Height;y++)for(int x=0;x<board.Width;x++)Assert.That(board.GetGem(x,y),Is.Not.Null);
+        }
+        finally {zone.frostwakeRules=previous;Object.Destroy(rules);}
+    }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc694b828c22224ca4b552b383f553b, type: 3}
+  m_Name: Player_KoboldGunner
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDefinition
+  playerId: kobold_gunner
+  displayName: Kobold Gunner
+  description: He listens for where a shot will end up. One old revolver, six unlikely
+    paths, and complete confidence.
+  playerPrefab: {fileID: 0}
+  battleFrameSprite: {fileID: 0}
+  battleCharacterSprite: {fileID: -3768652919394333260, guid: 26b8704c88846e1458aa7d2883b7c6a1, type: 3}
+  battleAnimatorController: {fileID: 9100000, guid: 043355700607d534dbb18ec199ccbbc8, type: 2}
+  battleReferenceCanvas: {x: 64, y: 64}
+  menuPortrait: {fileID: -2116082989849011225, guid: 438268fe56b5bf248bc27aa04cf41b83, type: 3}
+  baseMaxHealth: 85
+  healthPerLevel: 8
+  baseGemDamage: 10
+  gemDamagePerLevel: 0.6
+  abilityDamageGrowth: 0.06
+  baseShieldCap: 35
+  shieldCapPerLevel: 3
+  affinityGemType: 0
+  activeAbility: {fileID: 11400000, guid: 16eb1a6e6e441ac4eaa2c106d804a00f, type: 2}
+  passiveAbility: {fileID: 11400000, guid: 1895f06dcaec3d14aac77c380a625320, type: 2}

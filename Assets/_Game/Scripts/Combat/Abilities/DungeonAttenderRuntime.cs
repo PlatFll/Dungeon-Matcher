@@ -6,13 +6,15 @@ public sealed class DungeonAttenderRuntime : SequentialBoardAbilityRuntime
 {
     private Vector2Int? position, retry;
     private Vector2Int direction;
+    protected override string StepAnimation => "Travel";
+    public override bool HidePlayerCharacter => IsActive && (AnimationState=="Ability" || AnimationState=="Travel");
     public override bool Supports(CharacterAbilityDefinition definition) => definition is DungeonAttenderAbilityDefinition;
     protected override PlayerBoardImpactSequence CreateSequence(CharacterAbilityDefinition definition)
     {
         var ability=(DungeonAttenderAbilityDefinition)definition;
         position=null;retry=null;direction=Vector2Int.zero;
         return new PlayerBoardImpactSequence {Count=ability.MovementBudget,LeadSeconds=ability.JumpSeconds,
-            StepSeconds=ability.StepSeconds,Select=SelectStep,
+            StepSeconds=ability.StepSeconds,FirstStepSeconds=ability.LandingSeconds,RecoverySeconds=ability.RecoverySeconds,Select=SelectStep,
             Impacted=(step,cell,survived)=>{retry=survived?cell:(Vector2Int?)null;if(!survived)position=cell;}};
     }
     public static int Priority(PlayerBoardImpactTarget target, GemType affinity)

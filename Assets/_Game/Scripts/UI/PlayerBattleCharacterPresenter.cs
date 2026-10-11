@@ -21,6 +21,8 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
     private PlayerAbilityController subscribedAbility;
     private TMP_Text moveCounter;
     private string abilityAnimation;
+    private int animationRevision=-1;
+    private CanvasGroup abilityVisibility;
     private static readonly int AbilityTrigger = Animator.StringToHash("Ability");
 
     [RuntimeInitializeOnLoadMethod(
@@ -86,6 +88,7 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
 
     private void OnDisable()
     {
+        if(abilityVisibility!=null)abilityVisibility.alpha=1;
         UnsubscribeFromPlayer();
     }
 
@@ -221,12 +224,21 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
         characterAnimator.Rebind();
         characterAnimator.Update(0f);
         abilityAnimation = null;
+        animationRevision=-1;
         RefreshAbilityPresentation();
     }
 
     private void RefreshAbilityPresentation()
     {
         var presentation = subscribedAbility?.AbilityPresentation;
+        var visual=presentation as IPlayerAbilityVisualState;
+        bool hide=visual!=null && visual.HidePlayerCharacter && subscribedPlayer!=null && !subscribedPlayer.IsDefeated;
+        if(hide && abilityVisibility==null)
+        {
+            abilityVisibility=GetComponent<CanvasGroup>();
+            if(abilityVisibility==null)abilityVisibility=gameObject.AddComponent<CanvasGroup>();
+        }
+        if(abilityVisibility!=null)abilityVisibility.alpha=hide?0:1;
         bool show = presentation != null && presentation.ShowMoveCounter;
         if (show && moveCounter == null)
         {
@@ -239,12 +251,15 @@ public sealed class PlayerBattleCharacterPresenter : MonoBehaviour
             moveCounter.gameObject.SetActive(show);
             if (show) moveCounter.text = presentation.RemainingMoveCount.ToString();
         }
+        if (subscribedPlayer!=null && subscribedPlayer.IsDefeated) return;
         if (presentation == null || characterAnimator == null || !characterAnimator.isActiveAndEnabled ||
             characterAnimator.runtimeAnimatorController == null) return;
         string state = presentation.AnimationState;
         int hash = Animator.StringToHash("Base Layer." + state);
-        if (state == abilityAnimation || !characterAnimator.HasState(0, hash)) return;
+        int revision=visual?.AnimationRevision??0;
+        if ((state == abilityAnimation && revision==animationRevision) || !characterAnimator.HasState(0, hash)) return;
         abilityAnimation = state;
+        animationRevision=revision;
         characterAnimator.Play(hash, 0, Mathf.Clamp01(presentation.AnimationNormalizedTime));
         characterAnimator.Update(0);
     }

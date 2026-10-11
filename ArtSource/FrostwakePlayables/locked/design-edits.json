@@ -1,0 +1,40 @@
+{
+  "requests": {
+    "minotaur": {
+      "image_url": "https://api.pixellab.ai/mcp/images/5e85b595-3dab-4c0e-a95d-53b1e9bbc822/download",
+      "description": "Change only this minotaur's eyes to fully solid warm yellow, no black pupils and no white sclera. Preserve the friendly gentle smile and kind relaxed eyebrows; do not make him angry. Preserve his whole body, pose, large size, horns, apron, belt keys, palette and all equipment exactly. Crisp native pixel art, dark outlines, quiet broad shading. Transparent background.",
+      "width": 80,
+      "height": 80,
+      "no_background": true,
+      "seed": 73101
+    },
+    "kobold": {
+      "image_url": "https://api.pixellab.ai/mcp/images/23569269-cb92-4392-95d7-cd9b8cee959f/download",
+      "description": "Keep this exact kobold B body, teal capelet, clasp, clothes, red head, tail, proportions and ONE revolver. Extend the cream cloth blindfold so it securely covers BOTH eyes with no eye visible. Lower his raised empty arm, putting that free hand behind his back in a relaxed confident stance. Gun hand stays lowered holding the single revolver. Preserve right-facing pose, native pixel scale, palette, crisp dark outlines and broad shading. Transparent background.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 73102
+    }
+  },
+  "receipts": {
+    "minotaur": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 9c813d3b-5221-46c3-ab01-c4e249069169\njob_id: 9c813d3b-5221-46c3-ab01-c4e249069169\nmodel: pixen\nedit: Change only this minotaur's eyes to fully solid warm yellow, no black pupils and no white sclera. Preserve the friendly gentle smile and kind relaxed eyebrows; do not make him angry. Preserve his whole body, pose, large size, horns, apron, belt keys, palette and all equipment exactly. Crisp native pixel art, dark outlines, quiet broad shading. Transparent background.\nsource: 80x80px\nsize: 80x80px\ntransparent: True\nseed: 73101\nasset_id: 4c6dc282-4774-5703-87f2-4153e2059e4b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9c813d3b-5221-46c3-ab01-c4e249069169\")"
+        }
+      ],
+      "isError": false
+    },
+    "kobold": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 1c014625-5a19-4c1d-be38-889665673c4d\njob_id: 1c014625-5a19-4c1d-be38-889665673c4d\nmodel: pixen\nedit: Keep this exact kobold B body, teal capelet, clasp, clothes, red head, tail, proportions and ONE revolver. Extend the cream cloth blindfold so it securely covers BOTH eyes with no eye visible. Lower his raised empty arm, putting that free hand behind his back in a relaxed confident stance. Gun hand stays lowered holding the single revolver. Preserve right-facing pose, native pixel scale, palette, crisp dark outlines and broad shading. Transparent background.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 73102\nasset_id: cebb9f40-9219-5263-9ff1-5081dec930eb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"1c014625-5a19-4c1d-be38-889665673c4d\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

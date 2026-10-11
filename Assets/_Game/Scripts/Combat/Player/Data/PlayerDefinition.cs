@@ -48,6 +48,9 @@ public sealed class PlayerDefinition : ScriptableObject
     )]
     private RuntimeAnimatorController battleAnimatorController;
 
+    [SerializeField] private Vector2 battleReferenceCanvas;
+    public Vector2 BattleReferenceCanvas => battleReferenceCanvas;
+
     [SerializeField]
     [Tooltip(
         "Optional separate portrait for menus or future " +

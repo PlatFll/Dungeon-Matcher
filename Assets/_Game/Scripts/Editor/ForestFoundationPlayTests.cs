@@ -34,6 +34,7 @@ public sealed partial class ForestFoundationPlayTests
     }
     [UnityTearDown] public IEnumerator TearDown()
     {
+        GameplayPixelLayoutController.ValidationSafeArea=null;
         Time.timeScale=1;SceneManager.LoadScene("MainMenu");yield return null;
         profile?.Dispose();character?.Dispose();mastery?.Dispose();
         profile=character=mastery=null;RunLaunchOptions.ForestPrototype=false;RunLaunchOptions.ForestEncounterOffset=0;

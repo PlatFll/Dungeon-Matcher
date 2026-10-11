@@ -308,7 +308,7 @@ public sealed class GameOverPresentationController : MonoBehaviour
 
         yield return
             new WaitForSecondsRealtime(
-                WhiteSilhouetteHold
+                Mathf.Max(WhiteSilhouetteHold,combatFeedback!=null?combatFeedback.AuthoredDeathSeconds:0)
             );
 
         Rect playerBounds =

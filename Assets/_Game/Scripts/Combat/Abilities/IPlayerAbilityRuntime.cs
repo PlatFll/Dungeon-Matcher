@@ -29,3 +29,11 @@ public interface IPlayerAbilityPresentation
     bool ShowMoveCounter { get; }
     int RemainingMoveCount { get; }
 }
+
+// Optional repeated authored beats and off-frame travel. This is visual state,
+// never a second authority for completion or board mutation.
+public interface IPlayerAbilityVisualState
+{
+    int AnimationRevision { get; }
+    bool HidePlayerCharacter { get; }
+}

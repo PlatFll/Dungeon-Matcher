@@ -61,6 +61,7 @@ public sealed class PlayerCombatFeedback :
 
     public Image PlayerImage =>
         playerImage;
+    public float AuthoredDeathSeconds => characterAnimation!=null?characterAnimation.AuthoredDeathSeconds:0;
 
     private void Awake()
     {
@@ -193,7 +194,9 @@ public sealed class PlayerCombatFeedback :
 
     private IEnumerator DamageFeedbackRoutine()
     {
-        characterAnimation?.Pause();
+        bool authored=playerActor!=null && playerActor.GetComponent<PlayerAbilityController>()?.IsAbilityActive!=true &&
+            characterAnimation!=null && characterAnimation.TryPlayState("Hit");
+        if(!authored)characterAnimation?.Pause();
 
         float elapsedTime = 0f;
 
@@ -265,7 +268,7 @@ public sealed class PlayerCombatFeedback :
         RestoreVisualPosition();
         SetWhiteFlash(0f);
 
-        characterAnimation?.Resume();
+        if(!authored)characterAnimation?.Resume();
 
         damageFeedbackCoroutine = null;
     }
@@ -279,8 +282,13 @@ public sealed class PlayerCombatFeedback :
          */
         StopDamageFeedback();
 
-        characterAnimation?.Pause();
-        SetWhiteFlash(1f);
+        if(characterAnimation!=null && characterAnimation.TryPlayState("Death",true))
+        {
+            var visibility=playerImage!=null?playerImage.GetComponent<CanvasGroup>():null;
+            if(visibility!=null)visibility.alpha=1;
+            SetWhiteFlash(0f);
+        }
+        else {characterAnimation?.Pause();SetWhiteFlash(1f);}
     }
 
     public void ExitDefeatedVisualState()
@@ -289,6 +297,8 @@ public sealed class PlayerCombatFeedback :
         // entered. Reuse the existing flash/animation cleanup; do not restore
         // an old layout position unless a real hit shake was still running.
         StopDamageFeedback();
+        characterAnimation?.RestoreAuthoredClock();
+        characterAnimation?.TryPlayState("Idle");
     }
 
     private void CaptureCurrentRestingPosition()

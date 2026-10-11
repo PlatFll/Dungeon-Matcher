@@ -1,0 +1,59 @@
+{
+  "MinotaurMarker": {
+    "request": {
+      "image_url": "https://api.pixellab.ai/mcp/images/bf90a1ba-aec6-44aa-b11a-5a9e28db78d4/download",
+      "description": "Draw a NEW simplified 32x32 native pixel gameplay marker depicting this same kind brown minotaur running right. Full compact body, large cream horns, solid yellow eyes, ochre apron and belt keys. Broad connected shapes, very few interior marks, canonical dark outline. Simplify deliberately for the small size, do not blur or resample the original. Single character only, no tile, frame, text or background.",
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "seed": 73301
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 02082edc-4573-42ab-8168-28c4e03f7c11\njob_id: 02082edc-4573-42ab-8168-28c4e03f7c11\nmodel: pixen\nedit: Draw a NEW simplified 32x32 native pixel gameplay marker depicting this same kind brown minotaur running right. Full compact body, large cream horns, solid yellow eyes, ochre apron and belt keys. Broad connected shapes, very few interior marks, canonical dark outline. Simplify deliberately for the small size, do not blur or resample the original. Single character only, no tile, frame, text or background.\nsource: 80x80px\nsize: 32x32px\ntransparent: True\nseed: 73301\nasset_id: c681d0ae-e254-518b-876c-ea5e435a7f21\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"02082edc-4573-42ab-8168-28c4e03f7c11\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "RicochetImpact": {
+    "request": {
+      "description": "One crisp native pixel art fantasy ricochet impact burst: small pale cream center, four sharp uneven gold sparks and two cool iron flecks radiating outward. Airy transparent gaps, no glow blur, no circular border, no weapon, no text. Readable against jewel-colored gems. 5 flat colors, restrained tiny shape.",
+      "width": 32,
+      "height": 32,
+      "no_background": true,
+      "detail": "low detail",
+      "seed": 73302
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: fa8f1806-5a0b-494c-94a8-6569428cec57\njob_id: fa8f1806-5a0b-494c-94a8-6569428cec57\nmodel: pixen\ndescription: One crisp native pixel art fantasy ricochet impact burst: small pale cream center, four sharp uneven gold sparks and two cool iron flecks radiating outward. Airy transparent gaps, no glow blur, no circular border, no weapon, no text. Readable against jewel-colored gems. 5 flat colors, restrained tiny shape.\nsize: 32x32px\ntransparent: True\nasset_id: b4a3b84c-f3f8-58f5-810b-1a94cc284e63\nasset_status: pending (saved when generation completes)\nseed: 73302\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"fa8f1806-5a0b-494c-94a8-6569428cec57\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "AttenderImpact": {
+    "request": {
+      "description": "One crisp native pixel art heavy stomp impact: low wide burst of dusty warm ochre stone chips, pale cream contact flash and a few broad dark brown fragments, airy transparent gaps. Fantasy dungeon game effect over a jewel gem. No glow blur, no ground tile, no character, no text, no smoke wall, 6 flat colors.",
+      "width": 48,
+      "height": 32,
+      "no_background": true,
+      "detail": "low detail",
+      "seed": 73303
+    },
+    "receipt": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 9a75dd67-566d-46c0-b712-544f3f1b7111\njob_id: 9a75dd67-566d-46c0-b712-544f3f1b7111\nmodel: pixen\ndescription: One crisp native pixel art heavy stomp impact: low wide burst of dusty warm ochre stone chips, pale cream contact flash and a few broad dark brown fragments, airy transparent gaps. Fantasy dungeon game effect over a jewel gem. No glow blur, no ground tile, no character, no text, no smoke wall, 6 flat colors.\nsize: 48x32px\ntransparent: True\nasset_id: d6b72ff5-fc5e-571d-a6e7-6392ffaba218\nasset_status: pending (saved when generation completes)\nseed: 73303\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9a75dd67-566d-46c0-b712-544f3f1b7111\")"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

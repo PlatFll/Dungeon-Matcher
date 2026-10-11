@@ -17,11 +17,13 @@ public readonly struct PlayerBoardImpactTarget
 public sealed class PlayerBoardImpactSequence
 {
     public int Count;
-    public float LeadSeconds, StepSeconds;
+    public float LeadSeconds, StepSeconds, FirstStepSeconds, RecoverySeconds;
     public Func<int, IReadOnlyList<PlayerBoardImpactTarget>, Vector2Int?> Select;
     public Func<bool> Cancelled;
     public Action<int, Vector2Int> Approaching;
+    public Action<int, Vector2Int> Striking;
     public Action<int, Vector2Int, bool> Impacted;
+    public Action Recovering;
     public Action Completed;
 }
 
@@ -87,8 +89,10 @@ public partial class BoardController
                 var cell=selected.Value;
                 if (!candidates.Exists(t=>t.Cell==cell)) break;
                 request.Approaching?.Invoke(step,cell);
-                if (request.StepSeconds>0) yield return new WaitForSeconds(request.StepSeconds);
+                float travel=step==0 && request.FirstStepSeconds>0 ? request.FirstStepSeconds : request.StepSeconds;
+                if (travel>0) yield return new WaitForSeconds(travel);
                 if (request.Cancelled?.Invoke()==true || combatController.PlayerActor.IsDefeated) break;
+                request.Striking?.Invoke(step,cell);
                 if (barricadeCells.TryGetValue(cell,out var barrier))
                     DamageBarricadeCell(cell,barrier,true,false);
                 else
@@ -114,6 +118,9 @@ public partial class BoardController
                 }
                 request.Impacted?.Invoke(step,cell,barricadeCells.ContainsKey(cell));
             }
+            request.Recovering?.Invoke();
+            if (request.RecoverySeconds>0 && request.Cancelled?.Invoke()!=true)
+                yield return new WaitForSeconds(request.RecoverySeconds);
             yield return ResolveBombTriggeredCrystalRequests(deferredCrystals);
             yield return CollapseAndRefillBoard();
             var matches=FindAllMatches();

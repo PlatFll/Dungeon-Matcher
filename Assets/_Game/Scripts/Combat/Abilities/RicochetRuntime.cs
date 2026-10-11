@@ -6,13 +6,14 @@ using UnityEngine;
 public sealed class RicochetRuntime : SequentialBoardAbilityRuntime
 {
     private readonly Dictionary<long,int> hits=new Dictionary<long,int>();
+    protected override string StepAnimation => "Fire";
     public event Action<int,Vector2Int,EnemyActor,int> RicochetHit;
     public override bool Supports(CharacterAbilityDefinition definition) => definition is RicochetAbilityDefinition;
     protected override PlayerBoardImpactSequence CreateSequence(CharacterAbilityDefinition definition)
     {
         var ability=(RicochetAbilityDefinition)definition;hits.Clear();
         return new PlayerBoardImpactSequence {Count=ability.Shots,LeadSeconds=ability.SpinSeconds,
-            StepSeconds=ability.ShotSeconds,Select=SelectTarget,
+            StepSeconds=ability.ShotSeconds,RecoverySeconds=ability.RecoverySeconds,Select=SelectTarget,
             Impacted=(step,cell,survived)=>Ricochet(step,cell,ability)};
     }
     private Vector2Int? SelectTarget(int step,IReadOnlyList<PlayerBoardImpactTarget> candidates)
