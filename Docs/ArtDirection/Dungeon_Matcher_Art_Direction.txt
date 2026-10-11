@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.13
+**Version:** 1.13.1
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -53,10 +53,17 @@ The primary Rattlebones and all three player drawings remain unchanged. New
 golden memberships remain proposals; implementation is not membership approval.
 
 Broad connected material planes, clear faces and restrained effects replace
-selected noisy clusters without normalizing species or equipment. Puffer's
-inflated face, Snapvine's rooted wilt, Mage's visible face, King's narrow sword
+selected noisy clusters without normalizing species or equipment. Snapvine's
+rooted wilt, Mage's visible face, King's narrow sword
 trails and repaired weapon/finial contours are localized production changes.
 Rejected generated reinterpretations and edge repairs remain in source history.
+
+Puffer correction, v1.13.1: the user rejected the relocated eye and added mouth
+from the cohesion pass. Restore his original facial pixels through every affected
+inflation, hold, attack, interrupt and release drawing. His original expression
+is the identity authority. Retain the west-facing attack corrections, expanded
+canvases and detached-artifact cleanup. This supersedes the inflated-face
+recommendation in the historical audit and the v1.13 implementation.
 
 Current enemy rectangles supersede the historical 64-pixel limits below. Most
 canvases add 24/20/24/4 pixels left/top/right/bottom; the disabled Delver remount

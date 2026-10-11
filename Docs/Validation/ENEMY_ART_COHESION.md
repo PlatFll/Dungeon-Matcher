@@ -13,7 +13,7 @@ The disabled forms remain disabled. All 353 animation clip files are byte-identi
 keys, timing, impact/completion events and controller ownership are preserved.
 
 Selected material planes are quieter across the cast. Localized changes restore
-Puffer's inflated expression, Snapvine's rooted wilt, the Mage's face, King's
+Snapvine's rooted wilt, the Mage's face, King's
 readable sword/body under narrower trails, Shield Knight ornament and complete
 weapon/finial/effect edges. Reversed Puffer/Lantern attack poses, Scout/Moray death
 poses and Delver pilot/remount faces now face west. Backswings, recoil and falling
@@ -25,7 +25,23 @@ and identity landmarks remain authoritative. The golden register points to exact
 current extractions; proposed additional reference memberships remain proposals.
 There are no gameplay, balance, board, shield or combat-event changes.
 
-## Executed verification
+## Puffer face restoration — user correction, 2026-10-11
+
+The user rejected the cohesion pass's relocated eye and added mouth. The native
+recipe now preserves the original expression across every affected state:
+45 drawings in seven sheets, with 1,784 pixels restored exactly from the originals.
+West-facing corrections, expanded canvases and detached-artifact repairs remain.
+The live gallery and Highlights have been refreshed. Exact affected frames and
+pixel comparisons are recorded in
+[the restoration check](EnemyArtCohesion/puffer-face-restoration.json).
+
+Native/export checks were rerun for all 395 sheets: exact RGBA, original exposures,
+binary alpha and no outer-edge contacts. Every changed Puffer pixel equals its
+immutable original. Production copies match exports; import metadata and all 353
+clips are unchanged. No new generation spending. Unity was not rerun: this
+correction changes only art pixels, the native recipe and documentation.
+
+## Executed verification — initial cohesion pass, before face restoration
 
 | Check | Executed result |
 |---|---|
@@ -56,7 +72,8 @@ commands and original log paths. Full local logs remain at those locations.
 The ledger's raw source hashes describe the files when tested, before Git
 checkout. Git may normalize Windows line endings; portable Git blob IDs and
 the tested source-tree commit are also recorded for checkout-independent
-comparison. The merged tree is identical to that validated implementation.
+comparison. Those engine results describe the initial implementation before the
+art-only Puffer correction above; they are not new engine validation of its pixels.
 The whitespace check passes for authored changes. Immutable original Unity
 metadata retains its existing trailing spaces on empty serialized fields; those
 source bytes were preserved instead of reformatted to satisfy a text-only check.
@@ -100,7 +117,8 @@ identity replaced an approved character. The Snapvine wilt uses the existing
 approved target as identity input, with native removal of an unwanted twig.
 137 paid jobs consumed 815 PixelLab generations; final observed balance was 223.
 No purchase was made. The generation ledger preserves guide v1.12 at dispatch;
-the current guide/register are v1.13 after implementation.
+the guide/register became v1.13 after implementation and v1.13.1 after the
+user-directed Puffer face restoration.
 
 Historical roster importers reference old rectangles and must not overwrite
 these updated enemy assets. Use the current native/staging workflow. The user's

@@ -1,0 +1,784 @@
+{
+  "date": "2026-10-11",
+  "reason": "User rejected the relocated eye and added mouth. Original Puffer facial pixels restored.",
+  "changed_sheets": 7,
+  "changed_frames": 45,
+  "restored_pixels": 1784,
+  "every_changed_pixel_equals_original": true,
+  "all_395_production_sheets_equal_native_exports": true,
+  "all_395_unity_metadata_files_unchanged": true,
+  "all_353_clips_unchanged": true,
+  "unrelated_user_files_unchanged": true,
+  "unity_validation": "Not rerun: art-only pixels and native recipe; no serialization or runtime changes.",
+  "changes": [
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_Release.png",
+      "sha256": "9ffd954a3ba58cd0dbc0f004207077baf4ea094a5c6d967c027211e343fc921d",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_Release-d616baa002.aseprite",
+      "frames": [
+        {
+          "index": 0,
+          "states": [
+            [
+              "Release",
+              0
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        },
+        {
+          "index": 1,
+          "states": [
+            [
+              "Release",
+              1
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            38,
+            63,
+            54
+          ]
+        },
+        {
+          "index": 2,
+          "states": [
+            [
+              "Release",
+              2
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            38,
+            63,
+            54
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "Release",
+              3
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            37,
+            63,
+            53
+          ]
+        },
+        {
+          "index": 4,
+          "states": [
+            [
+              "Release",
+              4
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            36,
+            63,
+            52
+          ]
+        },
+        {
+          "index": 5,
+          "states": [
+            [
+              "Release",
+              5
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            37,
+            63,
+            53
+          ]
+        },
+        {
+          "index": 6,
+          "states": [
+            [
+              "Release",
+              6
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            38,
+            63,
+            54
+          ]
+        },
+        {
+          "index": 7,
+          "states": [
+            [
+              "Release",
+              7
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        },
+        {
+          "index": 8,
+          "states": [
+            [
+              "Release",
+              8
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 9,
+          "states": [
+            [
+              "Release",
+              9
+            ]
+          ],
+          "restored_pixels": 36,
+          "bounds": [
+            50,
+            44,
+            62,
+            60
+          ]
+        },
+        {
+          "index": 10,
+          "states": [
+            [
+              "Release",
+              10
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            50,
+            50,
+            62,
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_InflatedAttack.png",
+      "sha256": "65d17fc1f0380aa0a3be2c892ad8c2e87cfd109ead898ea4da40ab3dbdb565c2",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_InflatedAttack-edfdf0effa.aseprite",
+      "frames": [
+        {
+          "index": 0,
+          "states": [
+            [
+              "InflatedAttack",
+              0
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 1,
+          "states": [
+            [
+              "InflatedAttack",
+              1
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 2,
+          "states": [
+            [
+              "InflatedAttack",
+              2
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "InflatedAttack",
+              3
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 4,
+          "states": [
+            [
+              "InflatedAttack",
+              4
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 5,
+          "states": [
+            [
+              "InflatedAttack",
+              5
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 6,
+          "states": [
+            [
+              "InflatedAttack",
+              6
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            52,
+            42,
+            64,
+            58
+          ]
+        },
+        {
+          "index": 7,
+          "states": [
+            [
+              "InflatedAttack",
+              7
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            53,
+            43,
+            65,
+            59
+          ]
+        },
+        {
+          "index": 8,
+          "states": [
+            [
+              "InflatedAttack",
+              8
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            52,
+            42,
+            64,
+            58
+          ]
+        },
+        {
+          "index": 9,
+          "states": [
+            [
+              "InflatedAttack",
+              9
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            49,
+            41,
+            61,
+            57
+          ]
+        },
+        {
+          "index": 10,
+          "states": [
+            [
+              "InflatedAttack",
+              10
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            56,
+            41,
+            68,
+            57
+          ]
+        },
+        {
+          "index": 11,
+          "states": [
+            [
+              "InflatedAttack",
+              11
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            56,
+            41,
+            68,
+            57
+          ]
+        },
+        {
+          "index": 12,
+          "states": [
+            [
+              "InflatedAttack",
+              12
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            54,
+            41,
+            66,
+            57
+          ]
+        },
+        {
+          "index": 13,
+          "states": [
+            [
+              "InflatedAttack",
+              13
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            52,
+            41,
+            64,
+            57
+          ]
+        },
+        {
+          "index": 14,
+          "states": [
+            [
+              "InflatedAttack",
+              14
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_Interrupt.png",
+      "sha256": "53eec6904a060288300972a38e308b72774de8e395e5784086017a8a05cf062d",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_Interrupt-99c68c0858.aseprite",
+      "frames": [
+        {
+          "index": 0,
+          "states": [
+            [
+              "Interrupt",
+              0
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        },
+        {
+          "index": 1,
+          "states": [
+            [
+              "Interrupt",
+              1
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            40,
+            63,
+            56
+          ]
+        },
+        {
+          "index": 2,
+          "states": [
+            [
+              "Interrupt",
+              2
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "Interrupt",
+              3
+            ]
+          ],
+          "restored_pixels": 36,
+          "bounds": [
+            50,
+            47,
+            62,
+            63
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_Ability.png",
+      "sha256": "a9cc65cf373c102f4369f4183eb536943d37f17e2dde6c4c4dc462ae1a841913",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_Ability-797e393a01.aseprite",
+      "frames": [
+        {
+          "index": 2,
+          "states": [
+            [
+              "Ability",
+              2
+            ]
+          ],
+          "restored_pixels": 36,
+          "bounds": [
+            50,
+            47,
+            62,
+            63
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "Ability",
+              3
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 4,
+          "states": [
+            [
+              "Ability",
+              4
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            40,
+            63,
+            56
+          ]
+        },
+        {
+          "index": 5,
+          "states": [
+            [
+              "Ability",
+              5
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_InflatedIdle.png",
+      "sha256": "138fb0c996233ef72285fb2694967cea2485e72e061e841a935d035369323c23",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_InflatedIdle-19bf85dbb0.aseprite",
+      "frames": [
+        {
+          "index": 0,
+          "states": [
+            [
+              "InflatedIdle",
+              0
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            40,
+            63,
+            56
+          ]
+        },
+        {
+          "index": 1,
+          "states": [
+            [
+              "InflatedIdle",
+              1
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        },
+        {
+          "index": 2,
+          "states": [
+            [
+              "InflatedIdle",
+              2
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            38,
+            63,
+            54
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "InflatedIdle",
+              3
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_ChannelHold.png",
+      "sha256": "01562c2596b1081915d236a29aa1c8902977fe859fe1f0dc7e5783d35c44ea97",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_ChannelHold-840d1b091f.aseprite",
+      "frames": [
+        {
+          "index": 0,
+          "states": [
+            [
+              "ChannelHold",
+              0
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        },
+        {
+          "index": 1,
+          "states": [
+            [
+              "ChannelHold",
+              1
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            38,
+            63,
+            54
+          ]
+        },
+        {
+          "index": 2,
+          "states": [
+            [
+              "ChannelHold",
+              2
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Assets/_Game/Art/DrownedCourt/puffer_sentinel_ChannelStart.png",
+      "sha256": "a9cc65cf373c102f4369f4183eb536943d37f17e2dde6c4c4dc462ae1a841913",
+      "native": "ArtSource/EnemyArtCohesion/Native/puffer_sentinel_ChannelStart-8b8c0e7efa.aseprite",
+      "frames": [
+        {
+          "index": 2,
+          "states": [
+            [
+              "ChannelStart",
+              2
+            ]
+          ],
+          "restored_pixels": 36,
+          "bounds": [
+            50,
+            47,
+            62,
+            63
+          ]
+        },
+        {
+          "index": 3,
+          "states": [
+            [
+              "ChannelStart",
+              3
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            41,
+            63,
+            57
+          ]
+        },
+        {
+          "index": 4,
+          "states": [
+            [
+              "ChannelStart",
+              4
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            40,
+            63,
+            56
+          ]
+        },
+        {
+          "index": 5,
+          "states": [
+            [
+              "ChannelStart",
+              5
+            ]
+          ],
+          "restored_pixels": 40,
+          "bounds": [
+            51,
+            39,
+            63,
+            55
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,15 +11,22 @@ All 395 native sources and PNG sheets are complete and staged into Unity:
 64 enemy forms (62 current definitions plus two disabled Grand Delver alternates),
 2,951 imported sprites, 353 unchanged clips. Native cels match exported RGBA
 exactly; transparency is binary; every full canvas has clear outer margins.
-The mandatory Unity validator passed with Unity 6000.3.19f1. Asset checks pass
-17,494 assertions; scene checks pass all 5,902 drawing/portrait combinations.
+The initial cohesion pass's mandatory Unity validator passed with Unity 6000.3.19f1.
+Asset checks passed 17,494 assertions; scene checks passed all 5,902
+drawing/portrait combinations.
 Ten relevant NUnit tests passed across the recorded runs, including real attack
 and ability contact, pause, cancellation and return-to-idle checks. The exact
 coverage, corrected fixture failures and limitations are recorded in
 [the validation report](../../Docs/Validation/ENEMY_ART_COHESION.md).
 
+Puffer follow-up: the user rejected the moved eye and added mouth. His original
+facial pixels are restored across all affected states through the native recipe,
+retaining west-facing poses, canvas clearance and artifact cleanup. The gallery
+and Highlights show the restored version. Pixel/export checks were rerun; Unity
+was not rerun for this art-only correction with unchanged imports and clips.
+
 Material assignments simplify selected cloth, armor, shell and beard clusters.
-Specific repairs clarify Puffer's inflated face, replace Snapvine's detached-twig
+Specific repairs replace Snapvine's detached-twig
 death with a rooted wilt, uncover Court Mage's face, reduce King's opaque swing
 wedges, flatten Shield Knight engraving, and complete clipped props and effects.
 Puffer/Lantern attacks and Scout/Moray deaths receive complete-pose westward

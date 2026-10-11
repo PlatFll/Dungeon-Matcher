@@ -219,29 +219,6 @@ function kingArc(a,job,row,index){
  }
  return b;
 }
-function pufferFace(a,row){
- if(hasState(row,'Death')>=0||hasState(row,'AutoAttack')>=0||hasState(row,'Hit')>=0)return;
- var creams=components(a,'e0d2b8',[24,20,a.w-24,a.h-4]),belly=null;
- creams.forEach(function(c){if(!belly||c.length>belly.length)belly=c;});
- if(!belly||belly.length<750)return;
- var eyes=components(a,'0a0d11',[44,26,77,56]),eye=null;
- eyes.forEach(function(c){
-  var xs=c.map(function(p){return p[0];}),ys=c.map(function(p){return p[1];});
-  var w=Math.max.apply(null,xs)-Math.min.apply(null,xs)+1,h=Math.max.apply(null,ys)-Math.min.apply(null,ys)+1;
-  // The nearby nose/contour becomes a larger connected cluster on later
-  // frames. Select the compact eye by its shape, never by area alone.
-  if(c.length>=6&&c.length<=16&&w>=2&&w<=5&&h<=5&&c.length/(w*h)>.55&&(!eye||c.length>eye.length))eye=c;
- });
- if(!eye)return;
- var ex=Math.min.apply(null,eye.map(function(p){return p[0];})),ey=Math.min.apply(null,eye.map(function(p){return p[1];}));
- // Lower the same slanted eye onto the inflated cheek instead of leaving it
- // stranded at the top rim; a small left-facing mouth restores expression.
- eye.forEach(function(p){ink(a,p[0],p[1],'f0bc7c');});
- eye.forEach(function(p){ink(a,p[0]-1,p[1]+5,'0a0d11');});
- line(a,ex-7,ey+13,ex-5,ey+15,'7a4d2e');
- line(a,ex-5,ey+15,ex+1,ey+15,'7a4d2e');
- line(a,ex+1,ey+15,ex+4,ey+12,'7a4d2e');
-}
 function savePixels(a,path){
  app.open(ROOT+'Docs/ArtDirection/Audit2026-10/media/skeleton-still.png');var s=app.activeSprite;
  s.saveAs(ROOT+path.replace('.png','.aseprite'),false);
@@ -259,7 +236,6 @@ function editFrame(a,job,row,index){
  }
  if(job.actor==='seismic_smith')seismicCleanup(a,row);
  if(job.actor==='lantern_warden')lanternCleanup(a);
- if(job.actor==='puffer_sentinel')pufferFace(a,row);
  // These three source keys reverse the entire character toward the right.
  // Reflect the complete pose about its fixed center to restore the leftward
  // staff action; do not reverse the timing or mirror individual hands.
