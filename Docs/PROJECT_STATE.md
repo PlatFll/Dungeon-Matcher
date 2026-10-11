@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Frostwake and new playables checkpoint (2026-10-11)
 
-Work is in progress on `codex/frostwake-new-playables`, based on merged main
+Implemented on `codex/frostwake-new-playables`, based on merged main
 `c8fec99`. The supplied pack authorizes the Frostwake direction, an ice/Haldra
 mechanic foundation, and two complete new player characters. Haldra's revised
 Glacier Cleave gives three accepted moves to thaw a marked physical gem;
@@ -31,15 +31,21 @@ remaining ice controls damage and Bifrost adds Frostbite.
 The branch adds board-owned ice snapshots and sequential player impacts, plus
 Dungeon Attender and Ricochet ability runtimes. Focused checks cover board locks,
 durability/card damage, ability spending/pause, ricochet repeats, ice cleanup,
-Haldra damage bands/Frostbite and unified save/Continue. The mandatory Unity
-validator passes. This is an implementation checkpoint, not a completed release.
-PlayerDefinition/animation/presentation integration and final validation remain.
+Haldra damage bands/Frostbite and unified save/Continue. Final Unity validation
+passed with 6000.3.19f1. There are 49 distinct passing focused checks, including
+production casts in all four live zones, in-flight recovery for both new players,
+portrait layouts, pause/death cancellation and legacy game-over recovery.
+Both characters are selectable with production PlayerDefinitions, 12 motion
+clips, marker/impact art, separate progression and six original short sound cues.
+Native PNG/palette checks and runtime screenshots are recorded. Physical-device
+testing and listening review of the temporary cues remain unperformed.
+The user locked the friendly, fully yellow-eyed Minotaur with belt keys and
+Kobold B's outfit with both eyes covered and the free hand behind his back,
+and explicitly authorized animation and merging after validation.
 Frostwake is not a travel destination; its complete roster and zone production
-remain unfinished. The user liked both character directions and requested a
-kinder Minotaur face with belt keys and a more distinctive Kobold. Revised
-stills (one Minotaur, two Kobold outfits) await approval before animation.
-See [scope, decisions and remaining work](FrostwakePlayables/IMPLEMENTATION.md)
-and [the revised native still review](../ArtSource/FrostwakePlayables/revision-02/README.md).
+remain future work under the pack's direction/foundation scope.
+See [scope, decisions and validation](FrostwakePlayables/IMPLEMENTATION.md)
+and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_DESIGNS.json).
 
 ## Global art-direction audit (2026-10-11)
 
@@ -450,6 +456,20 @@ Detailed progression authority: `Docs/PROGRESSION_PACING.md`.
 - Enemy/combat time, damage, healing, shield, energy, rewards and deaths persist. Normal matching continues to charge energy. Encounter completion and death cancel the photograph; Continue preserves active phases and the remaining move count.
 - **Long Exposure** adds one move. **Developing Fluid** grants 10 shield once per successful rewind. Both are one-stack Epic character cards. Starting numbers need human balance feedback.
 - Detailed rules are in `GAME_DESIGN.md`; board ownership and save compatibility are in `ARCHITECTURE.md`.
+
+### Dungeon Attender Minotaur and Kobold Gunner
+
+- Dungeon Attender: kind yellow-eyed labyrinth guard, belt keys, Amber affinity;
+  level 1 HP 120, gem damage 10, shield cap 50. **Labyrinth Charge** costs 90:
+  leap, marked landing, then seven total orthogonal collision/travel steps.
+  Surviving barriers cause a visible rebound and retry, using ordinary damage.
+- Kobold Gunner: both eyes covered, teal capelet, one revolver, Ruby affinity;
+  level 1 HP 85, gem damage 10, shield cap 35. **Ricochet** costs 90 and makes six
+  ordered board impacts with one possible enemy follow-up each. **By Ear** adds
+  5 per prior hit on that enemy in the same cast, capped at +15 before modifiers.
+- Both have native idle, ability/recovery, hit and defeat animation, board VFX,
+  original temporary SFX and independent permanent progression. Numerical tuning
+  and listening feedback remain provisional; see the implementation record.
 
 ## Permanent levels
 

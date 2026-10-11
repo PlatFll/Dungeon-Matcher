@@ -4,6 +4,25 @@ Status: connected Balance v1 implemented. The 2026-10-01 clean-combat revision r
 
 ## Plan and authority
 
+### New playable starting values (2026-10-11, provisional)
+
+| Value | Dungeon Attender | Kobold Gunner |
+| --- | ---: | ---: |
+| Level 1 HP / growth | 120 / +10 | 85 / +8 |
+| Gem damage / growth | 10 / +0.55 | 10 / +0.6 |
+| Ability multiplier growth | +6% of base | +6% of base |
+| Shield cap / growth | 50 / +3 | 35 / +3 |
+| Affinity | Amber | Ruby |
+| Ability energy | 90 | 90 |
+| Ability budget | 7 collision/travel steps | 6 ordered shots |
+
+Both use existing final five-step rounding, independent permanent levels and
+shared upgrade prices. Ability-source clears do not refund energy. Minotaur
+collisions use normal barrier damage plus eligible cards. Kobold enemy hits use
+base 5 plus 5 per prior hit on that recipient during this cast, capped at +15,
+before existing player/run modifiers and shield gating. These are first-pass
+inputs, not human-validated pacing targets. Existing characters are unchanged.
+
 Implement account persistence and independent character stats, shared mastery, cards and shield balance, hybrid encounters and bounded interference, then consumables and the connected menu/HUD loop. Compile at each stage. Finish with disposable-save regression tests, real Play Mode checks, portrait screenshots, local pacing measurements and a reviewed PR.
 
 The approved September 14 brief supersedes older every-fifth-wave rewards, solo milestone defaults, wave-25 King tuning, and prototype enemy numbers. Weighted overlapping eras and all existing board/damage/lifecycle invariants remain authoritative. The separate pacing attachment referenced by the brief was unavailable; `PROGRESSION_PACING.md` supplies the durable philosophy.

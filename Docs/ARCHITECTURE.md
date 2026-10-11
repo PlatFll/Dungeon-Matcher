@@ -17,6 +17,18 @@ damage passes through upgrade resolution and the central `EnemyActor` receipt.
 In-flight skill recovery uses the existing accepted-action journal and stable
 snapshot replay; short-lived animation state is not a separate saved authority.
 
+`PlayerImpactPresentation` observes approaching/striking/recovery callbacks from
+that same resolver. It draws the Minotaur's departure, board avatar, collision
+rebound and contact effects, or the Kobold's ordered tracers. It neither selects
+targets nor changes damage. `IPlayerAbilityVisualState` allows repeated Fire
+states and hides the original Minotaur portrait during travel without disabling
+its Image or disturbing the layout. Cancellation destroys transient views.
+Optional Hit/Death controller states extend the existing feedback owner; death
+plays on unscaled time after combat freezes, and revival restores its clock.
+PlayerDefinition's optional reference canvas preserves the new characters'
+source-pixel scale while allowing transparent action padding. Zero keeps the
+original sizing path for existing players.
+
 `BoardController.Frost` owns gem-identity ice, queued encasement/consumption and
 move-owned worsening. `GlacierCleaveRuntime` owns Haldra's channel/deadline,
 ordinary attack pause and single consumed outcome. Generic snapshots preserve
