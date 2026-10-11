@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.14
+**Version:** 1.15
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
@@ -11,6 +11,27 @@ This repository edition is the durable source of truth for the art direction est
 The PNG and ASE assets in the accompanying pack are byte-for-byte copies of supplied files. No character artwork was edited to create this documentation. Reference boards are labeled inspection layouts, not replacement sprite sheets. Versioning, status labels, and review templates are organizational conventions introduced by this guide.
 
 ## Current combat additions (2026-10-01)
+
+### Approved Frostwake facial colors — 2026-10-11
+
+The user approved the final eye/skin/hair corrections and game integration.
+Human eye interiors are solid dark colors without white sclera or glints.
+Haldra uses her existing near-black #101517; her proposed silver eyes are
+superseded. Champion's white/gray eye pixels below his helmet are removed in
+all affected poses. Raider, Reaver and Hearthkeeper retain their approved dark
+eyes; Wolf retains one ice-blue iris color with its original socket contour.
+Skald uses warm light beige skin #DFA881, matching Haldra, with #B58A6E and
+#9E694F hand shadows; his hair/beard use gray #464C53/#737980/#969BA1. The ivory
+skin proposal is rejected. Closed-eye expressions, equipment, silhouettes and
+pose geometry remain unchanged. This is a scoped Frostwake correction, not
+permission to change the golden references or other approved characters.
+
+Seven stills and 43 sheets retain their 128x104 cells, binary alpha, fixed floor,
+GUIDs and original animation timing. Current approvals and palette PNGs are in
+ArtSource/Frostwake/approved; the prior approvals remain in manifest history.
+All PixelLab exact-edit receipts, immutable before-art, masks and native checks
+are in ArtSource/Frostwake/face-revision. These corrections cost zero generations.
+Rattlebones and all supporting golden-reference images remain byte-identical.
 
 ### Frostwake approved identities and Minotaur eye amendment — 2026-10-11
 

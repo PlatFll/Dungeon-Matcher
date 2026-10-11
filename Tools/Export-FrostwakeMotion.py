@@ -1,22 +1,29 @@
 """Lossless frame selection/packing. All drawings and palette edits originate in PixelLab."""
 from pathlib import Path
 from PIL import Image,ImageDraw
-import json,hashlib
+import json,hashlib,io
 root=Path(__file__).resolve().parents[1]/'ArtSource/Frostwake';out=root/'production';out.mkdir(exist_ok=True)
 manifest=[];checks=[]
 def frames(actor,state):return sorted((root/'motion'/actor/state/'palette').glob('*.png'))
+def save_image(image,path,**options):
+    # Encode before opening the destination. Preserve identical sheets and avoid
+    # truncating a preview while the local review server is reading it.
+    buffer=io.BytesIO();image.save(buffer,format=path.suffix[1:].upper(),**options)
+    data=buffer.getvalue()
+    if path.exists() and path.read_bytes()==data:return
+    temporary=path.with_suffix(path.suffix+'.tmp');temporary.write_bytes(data);temporary.replace(path)
 def write(actor,state,source,indices,durations,impact=0,special=False,loop=False):
     files=frames(actor,source);assert files,(actor,source)
     ims=[Image.open(files[i]).convert('RGBA') for i in indices];assert len(ims)==len(durations)
     dst=out/actor;dst.mkdir(exist_ok=True);sheet=Image.new('RGBA',(128*len(ims),104))
     for i,im in enumerate(ims):sheet.paste(im,(128*i,0))
-    path=dst/(state+'.png');sheet.save(path)
+    path=dst/(state+'.png');save_image(sheet,path)
     spec=dict(name=actor,state=state,width=128,height=104,frameCount=len(ims),impactFrame=impact,durationsMs=durations,loop=loop,special=special,attack=state=='AutoAttack')
     manifest.append(spec)
     previews=[]
     for im in ims:
         bg=Image.new('RGBA',im.size,'#303238');bg.alpha_composite(im);previews.append(bg.convert('RGB').resize((384,312),Image.Resampling.NEAREST))
-    previews[0].save(dst/(state+'.gif'),save_all=True,append_images=previews[1:],duration=durations,loop=0,disposal=2)
+    save_image(previews[0],dst/(state+'.gif'),save_all=True,append_images=previews[1:],duration=durations,loop=0,disposal=2)
     checks.append(dict(**spec,selectedSources=[str(files[i].relative_to(root)) for i in indices],sha256=hashlib.sha256(path.read_bytes()).hexdigest(),colors=len({p for p in sheet.get_flattened_data() if p[3]}),alpha=sorted(set(sheet.getchannel('A').get_flattened_data()))))
 actors=sorted(p.name for p in (root/'motion').iterdir())
 contacts={'iceborn_raider':3,'harpoon_hunter':3,'frostfang_wolf':3,'rimecarver':2,'shieldmaiden':3,'rime_skald':3,'hearthkeeper':3,'frostblade_reaver':4,'glacier_troll':4,'iceborn_champion':3,'jarl_haldra':5}

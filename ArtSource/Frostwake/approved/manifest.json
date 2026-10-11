@@ -1,25 +1,41 @@
 [
   {
     "id": "iceborn_raider",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\iceborn_raider.png",
-    "approved_sha256": "9d326fffb6bb2a1d161f8c3a76246ce4a7136893a9d303d077c206c2aa10078b",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/iceborn_raider/Still.png",
+    "approved_sha256": "bd35c36be0aea959616f792e43ac2de483808ad8bbf77e934874dd18a992cef3",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      15,
-      16,
-      71,
-      72
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      36,
-      44
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "c0f1e2c7094d4a759723550394e41c5598aa7e6daacc160cd7415f0bda17d0e2"
+    "sha256": "bd35c36be0aea959616f792e43ac2de483808ad8bbf77e934874dd18a992cef3",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\iceborn_raider.png",
+      "approved_sha256": "9d326fffb6bb2a1d161f8c3a76246ce4a7136893a9d303d077c206c2aa10078b",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "c0f1e2c7094d4a759723550394e41c5598aa7e6daacc160cd7415f0bda17d0e2",
+      "source_crop": [
+        15,
+        16,
+        71,
+        72
+      ],
+      "offset": [
+        36,
+        44
+      ]
+    }
   },
   {
     "id": "harpoon_hunter",
@@ -45,25 +61,41 @@
   },
   {
     "id": "frostfang_wolf",
-    "approved_source": "ArtSource\\Frostwake\\candidates\\frostfang_wolf.png",
-    "approved_sha256": "cb1abe48dd0fb00063f539a0286842ce9cc697d1cd752e6e709c71dacb034d4f",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/frostfang_wolf/Still.png",
+    "approved_sha256": "b83841764db088602612006e5d5e9448e105563ca9310d8a3dcd2eb380d092bd",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      6,
-      12,
-      108,
-      76
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      13,
-      36
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "040b40494bcb22a2626f9a738464fa80c74df5f13574f33a5086c06a8ae95334"
+    "sha256": "b83841764db088602612006e5d5e9448e105563ca9310d8a3dcd2eb380d092bd",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\candidates\\frostfang_wolf.png",
+      "approved_sha256": "cb1abe48dd0fb00063f539a0286842ce9cc697d1cd752e6e709c71dacb034d4f",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "040b40494bcb22a2626f9a738464fa80c74df5f13574f33a5086c06a8ae95334",
+      "source_crop": [
+        6,
+        12,
+        108,
+        76
+      ],
+      "offset": [
+        13,
+        36
+      ]
+    }
   },
   {
     "id": "rimecarver",
@@ -111,69 +143,117 @@
   },
   {
     "id": "rime_skald",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\rime_skald.png",
-    "approved_sha256": "70362a420d3afb1d971905b1b3f50adaaf55de1428ee63a0848c335508740814",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/rime_skald/Still.png",
+    "approved_sha256": "941e1cbc290d8e24a3c3596b4cdd53d33734cb059fc90da5e249af234ae5de11",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      28,
-      12,
-      71,
-      77
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      42,
-      35
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "eba5cc80aea4c3f8ee1a0b391dafc3f536562e0b753174cfe3ef22d2ad884090"
+    "sha256": "941e1cbc290d8e24a3c3596b4cdd53d33734cb059fc90da5e249af234ae5de11",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\rime_skald.png",
+      "approved_sha256": "70362a420d3afb1d971905b1b3f50adaaf55de1428ee63a0848c335508740814",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "eba5cc80aea4c3f8ee1a0b391dafc3f536562e0b753174cfe3ef22d2ad884090",
+      "source_crop": [
+        28,
+        12,
+        71,
+        77
+      ],
+      "offset": [
+        42,
+        35
+      ]
+    }
   },
   {
     "id": "hearthkeeper",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\hearthkeeper.png",
-    "approved_sha256": "c97200b8b83b13ee681c8207746c3af938cd7749a1ed63f7f36b06416c248cf8",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/hearthkeeper/Still.png",
+    "approved_sha256": "0f525e671711af1821a0a1a31abc68a0cb261a3e109f13b797dfc76cf5220fa0",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      26,
-      12,
-      69,
-      81
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      42,
-      31
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "32899c23f21ee461c73f2a48085d9b73dd8fd1a35870e7a25b9a31b5c11a1356"
+    "sha256": "0f525e671711af1821a0a1a31abc68a0cb261a3e109f13b797dfc76cf5220fa0",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\hearthkeeper.png",
+      "approved_sha256": "c97200b8b83b13ee681c8207746c3af938cd7749a1ed63f7f36b06416c248cf8",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "32899c23f21ee461c73f2a48085d9b73dd8fd1a35870e7a25b9a31b5c11a1356",
+      "source_crop": [
+        26,
+        12,
+        69,
+        81
+      ],
+      "offset": [
+        42,
+        31
+      ]
+    }
   },
   {
     "id": "frostblade_reaver",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\frostblade_reaver.png",
-    "approved_sha256": "bd3dd9798617253914da697ea2bdf999b088498da94846dc197916264cdd0e20",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/frostblade_reaver/Still.png",
+    "approved_sha256": "35c4675a85ba10e12a44057a4a6e5ead9dae152fe856ddab779b60045c9c4e88",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      6,
-      14,
-      86,
-      77
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      24,
-      37
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "55d07cc6338b18c3f8fcf83026af884374dea2d3d0ed9f9fffc1d2034adbc783"
+    "sha256": "35c4675a85ba10e12a44057a4a6e5ead9dae152fe856ddab779b60045c9c4e88",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\frostblade_reaver.png",
+      "approved_sha256": "bd3dd9798617253914da697ea2bdf999b088498da94846dc197916264cdd0e20",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "55d07cc6338b18c3f8fcf83026af884374dea2d3d0ed9f9fffc1d2034adbc783",
+      "source_crop": [
+        6,
+        14,
+        86,
+        77
+      ],
+      "offset": [
+        24,
+        37
+      ]
+    }
   },
   {
     "id": "glacier_troll",
@@ -199,46 +279,78 @@
   },
   {
     "id": "iceborn_champion",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\iceborn_champion.png",
-    "approved_sha256": "a5573fce1cfbf0a5b2f06bd2100304f46666a63b6aa93a45a0b39efb84e2897a",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/iceborn_champion/Still.png",
+    "approved_sha256": "63ab6bb7e1d67599227024c0d3313738eec65946dfbc39171fff4965bddb7213",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      3,
-      5,
-      93,
-      79
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      19,
-      26
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "512e02fd6ec224ba77572198124413dbfabfb4f2477042380d10fc6791911cb0"
+    "sha256": "63ab6bb7e1d67599227024c0d3313738eec65946dfbc39171fff4965bddb7213",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\iceborn_champion.png",
+      "approved_sha256": "a5573fce1cfbf0a5b2f06bd2100304f46666a63b6aa93a45a0b39efb84e2897a",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "512e02fd6ec224ba77572198124413dbfabfb4f2477042380d10fc6791911cb0",
+      "source_crop": [
+        3,
+        5,
+        93,
+        79
+      ],
+      "offset": [
+        19,
+        26
+      ]
+    }
   },
   {
     "id": "jarl_haldra",
-    "approved_source": "ArtSource\\Frostwake\\palette-clean\\jarl_haldra.png",
-    "approved_sha256": "7a30c82db8409dc658a637c0aa8b80d65995582370bcb725dcc4ac2afa79d16c",
-    "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+    "approved_source": "ArtSource/Frostwake/face-revision/candidates/jarl_haldra/Still.png",
+    "approved_sha256": "5df3abc875acfd3e2ffd3ceb8568c4418721d659cc09e07ef48b93d513987596",
+    "approval": "User explicitly approved all final eye/skin/hair corrections and game integration, 2026-10-11",
     "motion_canvas": [
       128,
       104
     ],
     "source_crop": [
-      5,
-      5,
-      99,
-      83
+      0,
+      0,
+      128,
+      104
     ],
     "offset": [
-      17,
-      22
+      0,
+      0
     ],
     "scaling": 1,
-    "sha256": "7f350154032ba080f1b28917f89fbabd9715aa1426a1d81392b3a574befe4d3e"
+    "sha256": "5df3abc875acfd3e2ffd3ceb8568c4418721d659cc09e07ef48b93d513987596",
+    "previous_approval": {
+      "approved_source": "ArtSource\\Frostwake\\palette-clean\\jarl_haldra.png",
+      "approved_sha256": "7a30c82db8409dc658a637c0aa8b80d65995582370bcb725dcc4ac2afa79d16c",
+      "approval": "User explicitly approved all eleven for animation, 2026-10-11",
+      "sha256": "7f350154032ba080f1b28917f89fbabd9715aa1426a1d81392b3a574befe4d3e",
+      "source_crop": [
+        5,
+        5,
+        99,
+        83
+      ],
+      "offset": [
+        17,
+        22
+      ]
+    }
   }
 ]
