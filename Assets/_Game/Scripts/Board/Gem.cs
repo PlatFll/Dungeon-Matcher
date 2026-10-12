@@ -67,6 +67,9 @@ public class Gem :
         materialPropertyBlock;
 
     private float normalScale;
+    private bool selected;
+    private bool pointerPressed;
+    private Coroutine creationFeedback;
 
     private readonly Color normalColor =
         Color.white;
@@ -177,6 +180,7 @@ public class Gem :
     public void SetSpecialType(
         GemSpecialType specialType)
     {
+        CancelCreationFeedback();
         if (board != null && specialType != SpecialType)
         {
             board.CancelTelegraphGem(this);
@@ -516,17 +520,30 @@ public class Gem :
     public void SetSelected(
         bool selected)
     {
+        this.selected = selected;
+        ApplySelectionAppearance();
+    }
+
+    public void SetPointerPressed(bool pressed)
+    {
+        pointerPressed = pressed;
+        ApplySelectionAppearance();
+    }
+
+    private void ApplySelectionAppearance()
+    {
+        if (spriteRenderer == null) return;
         transform.localScale =
             Vector3.one *
             normalScale *
             (
                 selected
                     ? 1.12f
-                    : 1f
+                    : pointerPressed && !PresentationPreferences.ReducedMotion ? 1.04f : 1f
             );
 
         spriteRenderer.color =
-            selected
+            selected || pointerPressed
                 ? selectedColor
                 : normalColor;
 
@@ -534,6 +551,34 @@ public class Gem :
             selected
                 ? 1
                 : 0;
+    }
+
+    // Only the material flashes: gravity remains the sole transform writer.
+    public void PlayCreationFeedback()
+    {
+        CancelCreationFeedback();
+        if (isActiveAndEnabled) creationFeedback = StartCoroutine(CreationFeedback());
+    }
+
+    public void CancelCreationFeedback()
+    {
+        if (creationFeedback == null) return;
+        StopCoroutine(creationFeedback);
+        creationFeedback = null;
+        SetFlashAmount(0f);
+    }
+
+    private IEnumerator CreationFeedback()
+    {
+        float elapsed = 0f;
+        while (elapsed < .12f)
+        {
+            SetFlashAmount((PresentationPreferences.ReducedMotion ? .25f : .55f) * (1f - elapsed / .12f));
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        SetFlashAmount(0f);
+        creationFeedback = null;
     }
 
     private void OnDestroy()
