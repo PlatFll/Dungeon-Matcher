@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-11 · canonical guide v1.15. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing or Frostwake facial-color corrections; Mender's corrected death sheet is separate from her reference still.
+2026-10-12 · canonical guide v1.16. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing or Frostwake facial-color corrections; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
@@ -163,3 +163,10 @@ Follow the canonical guide’s actual-image input requirements. Use the referenc
 ## 2026-10-11 production update
 
 The user authorized cleanup, west-facing animation repairs, canvas expansion and integration. Current extracted images above follow those bound exports; original references and approval history remain in the immutable audit. This implementation does not approve the four proposed golden memberships. All player art, including Rattlebones, is byte-identical.
+
+## Global menu direction, 2026-10-12
+
+Guide v1.16 records the supplied menu/settings mockups and native UI family.
+The user authorized the canonical references as the style authority for this
+pass. Sources and lineage: ArtSource/MenuUI/. These are menu review candidates;
+character golden membership, sprite hashes and existing approvals are unchanged.

@@ -20,6 +20,24 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Main menu and settings presentation (2026-10-12)
+
+The supplied main-menu/settings mockups now guide the shared non-zone UI family:
+native violet dungeon hall and skull portal, silver/gold wordmark, silver rims,
+purple gems, live selected character, and separate green/gray/red action faces.
+Main-menu settings now exposes the same persistent Music/SFX/Reduced Motion/
+Vibration preferences. Existing navigation, saved runs and exit confirmations
+remain owned by MainMenuController and RunControlsUI.
+
+Art guide v1.16 documents the direction; ArtSource/MenuUI contains the contract,
+reference lineage, 54 editable native assets, and validation/review evidence.
+The user approved the main-menu background and authorized merging PR #193 for
+testing on 2026-10-12. Further PixelLab button/frame refinement is queued until
+the generation balance is replenished. Integrate alongside the Board Feel 2
+changes from PR #194; preserve their timing, feedback and replay behavior.
+Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
+Physical-device touch and display checks remain user validation.
+
 ## Board and combat feel checkpoint (2026-10-12)
 
 The user authorized the Candy Crush research recommendations, regression testing
@@ -83,7 +101,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.15. Rattlebones is the explicitly designated
+The canonical art guide is now v1.16, including the global menu direction. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.
@@ -915,6 +933,7 @@ Current connected UI flow includes:
 - free Practice
 - post-King No Supplies / Board Only challenges
 - selected or saved character presentation
+- main-menu gear for Music, SFX, Reduced Motion and Vibration
 - shared Gold display where relevant
 
 ## Characters

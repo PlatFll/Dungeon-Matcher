@@ -1,0 +1,46 @@
+{
+  "base_main": "961469baef422c7f5428f7f1a62efc4d1c59b5bf",
+  "menu_source": "9fb7f95a90a4f8d463836e47b913aed3cb662f91",
+  "unique_cases": 33,
+  "all_passed": true,
+  "runs": [
+    {
+      "id": "90907520-7684-4ff7-9d88-8f6a29eff928",
+      "result": "Passed",
+      "total": "24",
+      "passed": "24",
+      "failed": "0",
+      "xml_sha256": "f4395026efb1bed88e80d4887fb00da5a103ce668349e3f14cacd2ef95acdd49"
+    },
+    {
+      "id": "b8066b8b-285e-49d1-a9fb-1b79172d6185",
+      "result": "Passed",
+      "total": "9",
+      "passed": "9",
+      "failed": "0",
+      "xml_sha256": "f8ca3e510bbb3e2f275adbd6ade0c5eb3bdca6b91901bc957da1645f814ef200"
+    },
+    {
+      "id": "7d7897f1-8801-4551-a81f-42582d07b734",
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0",
+      "xml_sha256": "575fa6fc68a0a026841705415f152bb62894abf9e5db812489631bbc6b6f785e"
+    }
+  ],
+  "unity_audio": "muted with BatchValidationAudio and fixture setup",
+  "runtime_changes_during_integration": false,
+  "native_asset_pairs_passed": 54,
+  "protected_local_files": 5,
+  "initial_sandbox_validator": "Licensing initialization failed; retried with normal local access",
+  "validator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "exit_code": 0,
+    "unity": "6000.3.19f1",
+    "log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-f0d1020a-3118-4fa2-8323-20105443499b.log",
+    "sha256": "c5cb64dcddea90fb0bde95b7f0245ccd2a0f917e97568695571e2e102b7b2b27"
+  },
+  "capture_test_sha256": "15738c66662f8f20fb7a5c1a06de611319ef7e9b35ff75a46580fe2fc19fa7a5",
+  "board_preservation_check": "git diff --quiet --cached origin/main over Board, Audio, Core, Game.unity, combat audio resources, BoardFeel2 tests and documentation: exit 0"
+}

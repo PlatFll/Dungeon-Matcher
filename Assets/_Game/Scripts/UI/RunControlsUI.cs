@@ -92,6 +92,7 @@ public sealed class RunControlsUI : MonoBehaviour
         settings.gameObject.AddComponent<GraphicRaycaster>();
         FinalizedUiSkin.Button(settings, gear:true);
         GameplayThemeSkin.Button(settings,settings:true);
+        GlobalMenuSkin.Gear(settings);
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
         settingsRect.anchoredPosition=new Vector2(-20,-18);
         var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
@@ -178,6 +179,20 @@ public sealed class RunControlsUI : MonoBehaviour
     {
         if(session==null||session.IsFinished||overlay!=null)return;
         session.CancelTargeting();BuildOverlay("Settings");Pause();
+        if(GlobalMenuSkin.Load("Panel")!=null)
+        {
+            overlay.GetComponent<Image>().color=new Color(0,0,0,.65f);
+            var stage=GlobalMenuSkin.Root(overlay,"NativeSettingsStage",new Vector2(360,640));
+            GlobalMenuSkin.Place(panel,stage,new Vector2(240,392),Vector2.zero);
+            GlobalMenuSkin.Panel(panel,new Vector2(240,392),"SETTINGS");
+            GlobalMenuSkin.SettingsRows(panel,125);
+            GlobalMenuSkin.Art("Divider",panel,"Divider",new Vector2(184,16),new Vector2(0,-9));
+            GlobalMenuSkin.Button("Resume",panel,"RESUME","Affirmative","Resume",new Vector2(0,-42),Close);
+            GlobalMenuSkin.Button("Suspend",panel,session.IsPractice?"LEAVE PRACTICE":"SUSPEND TO MENU","Neutral","Suspend",new Vector2(0,-85),Suspend);
+            GlobalMenuSkin.Button("Retry",panel,"END RUN AND RETRY","Neutral","Retry",new Vector2(0,-128),()=>ConfirmExit("Game"));
+            GlobalMenuSkin.Button("Quit",panel,"END RUN","Destructive","Skull",new Vector2(0,-171),()=>ConfirmExit("MainMenu"));
+            return;
+        }
         panel.sizeDelta=new Vector2(420,690);
         panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,292);
         GameUi.Button("Resume",panel,"Resume",new Vector2(320,44),new Vector2(0,195),Close);
@@ -286,7 +301,11 @@ public sealed class RunControlsUI : MonoBehaviour
         if(success) return;
         Pause();
         if(panel!=null && panel.Find("SaveFailed")==null)
-            GameUi.Label("SaveFailed",panel,"Could not save. Check storage and try again.",new Vector2(380,35),new Vector2(0,-290),16);
+        {
+            if(panel.GetComponentInParent<GlobalMenuPixelRoot>()!=null)
+                GlobalMenuSkin.Label("SaveFailed",panel,"COULD NOT SAVE. CHECK STORAGE AND TRY AGAIN.",new Vector2(280,32),new Vector2(0,-218),16);
+            else GameUi.Label("SaveFailed",panel,"Could not save. Check storage and try again.",new Vector2(380,35),new Vector2(0,-290),16);
+        }
     }
     public void Close(){if(overlay!=null)Destroy(overlay.gameObject);overlay=null;restoringOverlay=false;recoveryFailed=false;recovery=null;RestorePause();}
     private void OnDestroy(){Close();}
