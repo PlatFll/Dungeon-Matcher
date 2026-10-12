@@ -12,7 +12,9 @@ continuation, confirmation and pause behavior. Zone art, board rules, combat,
 economy, character production assets and save formats are unchanged.
 The four pre-existing local modifications remain outside this change.
 
-Status: implemented candidate for visual review; no merge authorized.
+Status: the user approved the background and authorized merging PR #193 for
+testing on 2026-10-12. The requested PixelLab button/frame refinement remains
+pending generation replenishment; the current native assets are retained.
 
 ## Visual evidence
 
@@ -78,6 +80,29 @@ source-layer normalization tool. These explicit commands do not run on startup.
 
 Tests use disposable profiles and mute Editor audio without muting player preferences.
 Screenshots use an isolated level-1 account so no personal save is changed.
+
+### Integration with Board Feel 2 (2026-10-12)
+
+Integrated main `961469baef422c7f5428f7f1a62efc4d1c59b5bf` (PR #194) into this
+branch. Only the two documentation headings conflicted; both sections survive.
+The board, combat/core, audio, game scene, Board Feel 2 tests and related evidence
+are unchanged from that main revision. The four pre-existing local edits and
+the uncommitted future PixelLab revision plan remain outside this PR.
+
+The combined menu/policy/travel run passed 24 cases and the nine board-feel
+gameplay cases passed separately: **33 unique passing cases**. Actual screenshot
+inspection then caught the tall capture showing the intentional Continue guide.
+The capture test now dismisses it and asserts that Settings is present. Its
+affected rerun passed; this repeats one of the 33 cases rather than adding a new
+case. The updated tall settings image shows the correct panel. Runtime menu
+and board code did not change during this integration.
+
+Final run IDs, results, source hashes and validator log are recorded in
+[the integration evidence](validation/merge-193/evidence.json). All 54 native
+asset checks passed again. These targeted results do not replace physical-device
+or subjective board-feel testing.
+
+### Original implementation checks
 
 - `MenuUiReviewTests` plus three existing travel checks: **6 passed, 0 failed**.
   [Result XML](validation/menu-and-travel.xml). Captures cover 1080×1920 and

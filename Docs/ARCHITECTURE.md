@@ -21,6 +21,27 @@
   explicit build/import commands: Tools/Build-MenuArt.ps1 and Import-MenuArt.ps1.
   No zone, combat, economy, save schema or character-art changes belong here.
 
+## Board and combat feedback (2026-10-12)
+
+BoardController emits monotonically identified presentation receipts at the
+existing swap, shatter, creation and blocker-contact boundaries. Ordinary match
+particles and the central sound/haptic request now share the shatter frame;
+clear/combat rewards keep their existing authoritative ordering. The legacy
+GemBreakAudioController delegates that receipt or uses its optional old clip.
+No observer authorizes targets, damage, refill or board release.
+
+CombatAudioController retains the six-voice budget and now selects bounded
+nonrepeating original variants through a private presentation RNG. Haptics have
+their own priority/budget policy, independent of audio availability and cooldown.
+BoardFeelMetrics is opt-in development instrumentation, not saved gameplay state.
+
+RunReplayTape records the presentation profile for accepted inputs. Missing/zero
+boardFeelVersion preserves the previous timing through interrupted recovery;
+one uses Board Feel 2. The board returns to the current profile only after a
+successful stable checkpoint. Seconds-based combat retains its old budget.
+Unknown tape versions reject recovery without consuming the saved run.
+See [the timing, feedback and capture contract](BOARD_FEEL_2.md).
+
 ## Frostwake and sequential player impacts (2026-10-11)
 
 `BoardController.PlayerImpacts` holds the existing board lock from accepted

@@ -3437,18 +3437,18 @@ MonoBehaviour:
   barricadeWhiteHoldDuration: 0.05
   barricadeMaterializeDuration: 0.14
   barricadeHitFlashDuration: 0.08
-  swapDurationMultiplier: 1
-  maximumInvalidSwapPause: 0.07
-  matchPostBurstDelayMultiplier: 2
-  fallDurationMultiplier: 1.1
+  swapDurationMultiplier: 0.9
+  maximumInvalidSwapPause: 0.03
+  matchPostBurstDelayMultiplier: 1
+  fallDurationMultiplier: 1
   fallDistanceExponent: 0.82
   gravityAccelerationExponent: 1.18
-  refillSpawnStagger: 0.035
+  refillSpawnStagger: 0.025
   landingOvershootInCells: 0.045
   landingSettleDuration: 0.06
   landingSquashX: 1.025
   landingSquashY: 0.97
-  postFallSettlePause: 0.06
+  postFallSettlePause: 0.03
   combatController: {fileID: 362587655}
   crackedGemSprites:
   - {fileID: 0}
@@ -3638,7 +3638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GemBreakAudioController
   boardController: {fileID: 1775734119}
   gemBreakClip: {fileID: 8300000, guid: 304b7c659a70d8647b5b51f56930ef3d, type: 3}
-  breakSoundDelay: 0.05
   baseVolume: 0.72
   extraGemVolumeBonus: 0.035
   maximumVolume: 0.95

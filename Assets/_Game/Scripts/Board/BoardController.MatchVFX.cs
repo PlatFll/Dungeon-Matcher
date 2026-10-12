@@ -40,14 +40,15 @@ public partial class BoardController
     private float
         poisonBombRefillHoldUntilTime;
 
-    private void ReportMatchesToVFX(
+    private GemMatchVFXContext[] BuildMatchVFXContexts(
         HashSet<Gem> matches,
-        int cascadeDepth)
+        int cascadeDepth,
+        List<SpecialGemCreationRequest> creations)
     {
         if (matches == null ||
             matches.Count == 0)
         {
-            return;
+            return System.Array.Empty<GemMatchVFXContext>();
         }
 
         /*
@@ -63,6 +64,11 @@ public partial class BoardController
                 matches
             );
 
+        var result = new List<GemMatchVFXContext>();
+        var preserved = new HashSet<Gem>();
+        if (creations != null)
+            foreach (var creation in creations)
+                if (creation.IsValid) preserved.Add(creation.GemToPreserve);
         foreach (
             List<Gem> group
             in matchGroups)
@@ -81,8 +87,7 @@ public partial class BoardController
                 continue;
             }
 
-            Vector3[] worldPositions =
-                new Vector3[group.Count];
+            var worldPositions = new List<Vector3>(group.Count);
 
             for (int index = 0;
                  index < group.Count;
@@ -91,22 +96,21 @@ public partial class BoardController
                 Gem gem =
                     group[index];
 
-                worldPositions[index] =
-                    gem != null
-                        ? gem.transform.position
-                        : Vector3.zero;
+                if (gem != null && !preserved.Contains(gem))
+                    worldPositions.Add(gem.transform.position);
             }
 
-            GemMatchVFXRequested?.Invoke(
+            result.Add(
                 new GemMatchVFXContext(
                     firstGem.Type,
                     group.Count,
                     cascadeDepth,
-                    worldPositions,
-                    matchFlashDuration
+                    worldPositions.ToArray(),
+                    0f
                 )
             );
         }
+        return result.ToArray();
     }
 
     private void ReportBombClearSetToVFX(

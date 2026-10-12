@@ -281,10 +281,9 @@ public partial class BoardController
          * grant combat damage or energy.
          */
         RegisterAquaticClear(crystalOnly, false);
-        yield return ClearMatches(
-            crystalOnly,
-            null
-        );
+        PresentFeedback(BoardFeedbackKind.CrystalAnticipation);
+        yield return ClearMatchesWithOrderedBursts(crystalOnly, null, false, null, null,
+            null, false, BoardFeedbackKind.CrystalImpact);
     }
 
     private IEnumerator ClearBoardColumnByColumn(

@@ -471,7 +471,7 @@ public partial class BoardController : MonoBehaviour
         Gem gem,
         Vector2 screenPosition)
     {
-        if (IsExternalInputBlocked ||
+        if (Time.timeScale <= 0 || IsExternalInputBlocked ||
             isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
@@ -482,7 +482,10 @@ public partial class BoardController : MonoBehaviour
 
         NotifyBoardActivity();
 
+        ClearPointerFeedback();
         pointerStartGem = gem;
+        gem.SetPointerPressed(true);
+        BoardFeelMetrics.Mark(this, BoardFeelPhase.PointerAcknowledged);
         pointerStartPosition =
             screenPosition;
     }
@@ -491,6 +494,7 @@ public partial class BoardController : MonoBehaviour
         Gem gem,
         Vector2 screenPosition)
     {
+        ClearPointerFeedback();
         if (IsExternalInputBlocked ||
             isBusy ||
             HasPendingBoardMutation ||
@@ -521,6 +525,11 @@ public partial class BoardController : MonoBehaviour
         {
             SelectGem(gem);
         }
+    }
+
+    private void ClearPointerFeedback()
+    {
+        if (pointerStartGem != null) pointerStartGem.SetPointerPressed(false);
     }
 
     public void SelectGem(Gem gem)
@@ -662,7 +671,10 @@ public partial class BoardController : MonoBehaviour
         isBusy = true;
         pointerStartGem = null;
 
+        PresentFeedback(BoardFeedbackKind.Swap);
+        BoardFeelMetrics.Mark(this, BoardFeelPhase.SwapStarted);
         yield return AnimateManualSwap(first,second,third);
+        BoardFeelMetrics.Mark(this, BoardFeelPhase.SwapArrived);
 
         /*
          * Existing crystal + crystal swaps still immediately
@@ -712,6 +724,7 @@ public partial class BoardController : MonoBehaviour
                 yield return
                     crystalTargetGem
                         .PlayColorCrystalMaterialization();
+                PresentFeedback(BoardFeedbackKind.SpecialCreated);
 
                 yield return
                     ResolveDoubleColorCrystalActivation(
@@ -736,6 +749,8 @@ public partial class BoardController : MonoBehaviour
                     crystalSwapSpecialRevealPause
                 );
             }
+            crystalTargetGem.PlayCreationFeedback();
+            PresentFeedback(BoardFeedbackKind.SpecialCreated);
 
             /*
              * The target gem is now marked as its earned row or
@@ -789,6 +804,7 @@ public partial class BoardController : MonoBehaviour
 
         if (matches.Count == 0)
         {
+            PresentFeedback(BoardFeedbackKind.InvalidSwap);
             float responsiveInvalidPause =
                 GetResponsiveInvalidSwapPause();
 
@@ -873,15 +889,17 @@ public partial class BoardController : MonoBehaviour
                 cascadeDepth
             );
 
-            ReportMatchesToVFX(
+            GemMatchVFXContext[] matchImpacts = BuildMatchVFXContexts(
                 matches,
-                cascadeDepth
+                cascadeDepth,
+                specialGemCreationRequests
             );
 
-            yield return ClearMatches(
+            yield return ClearMatchesWithOrderedBursts(
                 expandedClearSet,
                 specialGemCreationRequests,
-                activateSpecials: !resolvingUnrewardedEnvironment
+                !resolvingUnrewardedEnvironment, null, null,
+                matchImpacts, !resolvingUnrewardedEnvironment
             );
 
             /*
@@ -958,7 +976,10 @@ public partial class BoardController : MonoBehaviour
         List<SpecialGemCreationRequest> specialGemCreationRequests,
         bool activateSpecials,
         HashSet<Gem> genericBurstTargets,
-        IReadOnlyList<Gem> primaryBurstOrder)
+        IReadOnlyList<Gem> primaryBurstOrder,
+        GemMatchVFXContext[] matchImpacts = null,
+        bool rewardableMatch = false,
+        BoardFeedbackKind? impactKind = null)
     {
         List<ClearVisual> visuals =
             new List<ClearVisual>();
@@ -987,6 +1008,7 @@ public partial class BoardController : MonoBehaviour
                 specialGemsToCreate[
                     request.GemToPreserve
                 ] = request.SpecialType;
+                SpecialGemForming?.Invoke(request.GemToPreserve);
             }
         }
 
@@ -1038,6 +1060,7 @@ public partial class BoardController : MonoBehaviour
                     SpriteRenderer
                 >();
 
+            gem.CancelCreationFeedback();
             gem.SetFlashAmount(0f);
 
             if (spriteRenderer != null)
@@ -1146,6 +1169,21 @@ public partial class BoardController : MonoBehaviour
         else
             foreach (ClearVisual visual in visuals) HideShatteredGem(visual.Gem);
 
+        BoardFeelMetrics.Mark(this, BoardFeelPhase.ClearImpact);
+        if (impactKind.HasValue) PresentFeedback(impactKind.Value);
+        if (matchImpacts != null)
+        {
+            int count = 0, depth = 0;
+            foreach (var impact in matchImpacts)
+            {
+                GemMatchVFXRequested?.Invoke(impact);
+                count += impact.GemCount;
+                depth = Mathf.Max(depth, impact.CascadeDepth);
+            }
+            if (rewardableMatch && count > 0)
+                PresentFeedback(BoardFeedbackKind.MatchImpact, count, depth);
+        }
+
         // Commit only at the board-owned shatter moment, after the preparation
         // flash. Environmental removal and double-crystal sweeps do not activate.
         if (activateSpecials)
@@ -1226,6 +1264,8 @@ public partial class BoardController : MonoBehaviour
             gem.SetSpecialType(
                 specialGem.Value
             );
+            if (specialGem.Value != GemSpecialType.ColorCrystal)
+                gem.PlayCreationFeedback();
 
             if (specialGem.Value ==
                 GemSpecialType.ColorCrystal)
@@ -1238,6 +1278,7 @@ public partial class BoardController : MonoBehaviour
                 yield return
                     gem.PlayColorCrystalMaterialization();
             }
+            PresentFeedback(BoardFeedbackKind.SpecialCreated);
         }
 
         yield return ResolvePendingCofferSlide();
@@ -1246,6 +1287,7 @@ public partial class BoardController : MonoBehaviour
 
     private IEnumerator CollapseAndRefillBoard()
     {
+        BoardFeelMetrics.Mark(this, BoardFeelPhase.FallStarted);
         List<GemMove> fallingMoves =
             new List<GemMove>();
 

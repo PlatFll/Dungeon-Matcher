@@ -16,7 +16,9 @@ public sealed class CombatAudioController : MonoBehaviour
     private readonly HashSet<EnemyActor> enemies = new HashSet<EnemyActor>();
     private readonly Dictionary<CombatSoundCue, Pending> pending = new Dictionary<CombatSoundCue, Pending>();
     private readonly List<CombatSoundCue> ready = new List<CombatSoundCue>();
-    private readonly Dictionary<CombatSoundCue, AudioClip> clips = new Dictionary<CombatSoundCue, AudioClip>();
+    private readonly Dictionary<CombatSoundCue, AudioClip[]> variants = new Dictionary<CombatSoundCue, AudioClip[]>();
+    private readonly Dictionary<CombatSoundCue, SoundVariantSelector> selectors = new Dictionary<CombatSoundCue, SoundVariantSelector>();
+    private long lastBoardFeedback;
     private readonly Dictionary<CombatSoundCue, FeedbackCooldown> cooldowns = new Dictionary<CombatSoundCue, FeedbackCooldown>();
     private readonly Voice[] voices = new Voice[CombatSoundMix.VoiceCount];
     private readonly HashSet<int> shieldHitActors = new HashSet<int>();
@@ -59,10 +61,10 @@ public sealed class CombatAudioController : MonoBehaviour
             board.gameObject.AddComponent<CombatAudioController>();
     }
 
-    // Existing GemBreakAudioController retains match grouping/flash delay and delegates its playback.
+    // The legacy scene component delegates the board's committed shatter receipt.
     public static bool TryPlayMatch(int count, int cascade)
     {
-        if (instance == null || !instance.isActiveAndEnabled || !instance.clips.ContainsKey(CombatSoundCue.GemMatch)) return false;
+        if (instance == null || !instance.isActiveAndEnabled) return false;
         instance.Queue(CombatSoundCue.GemMatch, count, cascade);
         return true;
     }
@@ -82,7 +84,15 @@ public sealed class CombatAudioController : MonoBehaviour
         foreach (CombatSoundCue cue in Enum.GetValues(typeof(CombatSoundCue)))
         {
             var clip = Resources.Load<AudioClip>("Audio/Combat/" + cue);
-            if (clip != null) clips.Add(cue, clip);
+            var choices = new List<AudioClip>();
+            if (clip != null) choices.Add(clip);
+            for (int v = 1; v <= 3; v++)
+            {
+                var alternative = Resources.Load<AudioClip>("Audio/Combat/" + cue + "_" + v);
+                if (alternative != null) choices.Add(alternative);
+            }
+            if (choices.Count > 0)
+            { variants.Add(cue, choices.ToArray()); selectors.Add(cue, new SoundVariantSelector()); }
             cooldowns.Add(cue, new FeedbackCooldown());
         }
         for (int i = 0; i < voices.Length; i++)
@@ -100,7 +110,7 @@ public sealed class CombatAudioController : MonoBehaviour
         waves = FindFirstObjectByType<WaveController>();
         player = FindFirstObjectByType<PlayerActor>();
         ability = player != null ? player.GetComponent<PlayerAbilityController>() : null;
-        if (board != null) { board.TileBurstVFXRequested += OnBurst; board.GemsLanded += OnLanding; }
+        if (board != null) { board.TileBurstVFXRequested += OnBurst; board.GemsLanded += OnLanding; board.FeedbackPresented += OnBoardFeedback; }
         if(board!=null){board.AquaticAnswer+=OnAirReturn;board.AquaticChanged+=OnTideChanged;}
         if (waves != null)
         {
@@ -120,7 +130,7 @@ public sealed class CombatAudioController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (board != null) { board.TileBurstVFXRequested -= OnBurst; board.GemsLanded -= OnLanding; }
+        if (board != null) { board.TileBurstVFXRequested -= OnBurst; board.GemsLanded -= OnLanding; board.FeedbackPresented -= OnBoardFeedback; }
         if(board!=null){board.AquaticAnswer-=OnAirReturn;board.AquaticChanged-=OnTideChanged;}
         if (waves != null) waves.EnemySpawned -= ObserveEnemy;
         if (player != null)
@@ -190,8 +200,31 @@ public sealed class CombatAudioController : MonoBehaviour
             default: cue = CombatSoundCue.Explosion; break;
         }
         Queue(cue, context.TileCount);
+        if (context.Kind != TileBurstKind.Explosion)
+            MobileHaptics.Request(HapticStrength.Impact, 2);
     }
     private void OnLanding(int count) => Queue(CombatSoundCue.GemLand, count);
+    private void OnBoardFeedback(BoardFeedback feedback)
+    {
+        if (feedback.Id <= lastBoardFeedback) return;
+        lastBoardFeedback = feedback.Id;
+        switch (feedback.Kind)
+        {
+            // GemBreakAudioController observes this same receipt for its optional
+            // old-clip fallback. Only one of the two paths plays the match.
+            case BoardFeedbackKind.MatchImpact:
+                if (board.GetComponent<GemBreakAudioController>()?.isActiveAndEnabled != true)
+                    Queue(CombatSoundCue.GemMatch, feedback.Count, feedback.Cascade);
+                break;
+            case BoardFeedbackKind.Swap: Queue(CombatSoundCue.Swap); break;
+            case BoardFeedbackKind.InvalidSwap: Queue(CombatSoundCue.InvalidSwap); break;
+            case BoardFeedbackKind.SpecialCreated: Queue(CombatSoundCue.SpecialCreated); break;
+            case BoardFeedbackKind.BlockerHit: Queue(CombatSoundCue.BlockerHit); break;
+            case BoardFeedbackKind.BlockerBreak: Queue(CombatSoundCue.BlockerBreak); break;
+            case BoardFeedbackKind.CrystalAnticipation: Queue(CombatSoundCue.CrystalCharge); break;
+            case BoardFeedbackKind.CrystalImpact: Queue(CombatSoundCue.CrystalImpact); break;
+        }
+    }
     private void OnPlayerHit(PlayerActor actor, int amount)
     {
         if (!shieldHitActors.Contains(actor.GetInstanceID())) Queue(CombatSoundCue.PlayerHit);
@@ -199,7 +232,7 @@ public sealed class CombatAudioController : MonoBehaviour
     private void OnPlayerShieldHit(PlayerActor actor, int amount)
     {
         shieldHitActors.Add(actor.GetInstanceID()); Queue(CombatSoundCue.ShieldHit);
-        MobileHaptics.Request(HapticStrength.Impact);
+        MobileHaptics.Request(HapticStrength.Impact, 4);
     }
     private void OnEnemyHit(EnemyActor actor, int amount)
     {
@@ -215,6 +248,7 @@ public sealed class CombatAudioController : MonoBehaviour
     private void OnEnemyAbility(EnemyActor actor) => Queue(CombatSoundCue.EnemyAbility);
     private void OnPlayerAbility()
     {
+        MobileHaptics.Request(HapticStrength.Cast, 3);
         Queue(ability.ActiveAbility is CrackedGemsAbilityDefinition ? CombatSoundCue.BardleyAbility :
             ability.ActiveAbility is RoyalDecreeAbilityDefinition ? CombatSoundCue.RattlebonesAbility :
             CombatSoundCue.EnemyAbility);
@@ -230,8 +264,8 @@ public sealed class CombatAudioController : MonoBehaviour
         foreach (var cue in ready)
         {
             var value = pending[cue]; pending.Remove(cue);
-            if (!cooldowns[cue].TryConsume(Time.time, CombatSoundMix.MinimumInterval(cue))) continue;
             RequestHaptic(cue);
+            if (!cooldowns[cue].TryConsume(Time.time, CombatSoundMix.MinimumInterval(cue))) continue;
             if (!AudioPreferences.SfxMuted) Play(cue, value);
         }
         shieldHitActors.Clear();
@@ -240,7 +274,7 @@ public sealed class CombatAudioController : MonoBehaviour
     }
     private void Play(CombatSoundCue cue, Pending value)
     {
-        if (!clips.TryGetValue(cue, out var clip) || clip == null) return;
+        if (!variants.TryGetValue(cue, out var choices) || choices.Length == 0) return;
         Voice voice = null;
         int priority = CombatSoundMix.Priority(cue);
         foreach (var candidate in voices)
@@ -249,9 +283,10 @@ public sealed class CombatAudioController : MonoBehaviour
             if (candidate.Priority < priority && (voice == null || candidate.Priority < voice.Priority)) voice = candidate;
         }
         if (voice == null) return;
+        var clip = choices[selectors[cue].Next(choices.Length)];
         voice.Source.Stop();
         voice.Priority = priority;
-        voice.Gain = CombatSoundMix.Gain(cue);
+        voice.Gain = CombatSoundMix.Gain(cue) * CombatSoundMix.CountWeight(cue, value.Count);
         voice.Source.clip = clip;
         voice.Source.pitch = cue == CombatSoundCue.GemMatch
             ? Mathf.Pow(2f, Mathf.Min(4, value.Cascade) / 12f) : 1f;
@@ -272,11 +307,19 @@ public sealed class CombatAudioController : MonoBehaviour
     {
         switch (cue)
         {
-            case CombatSoundCue.GemLand: MobileHaptics.Request(HapticStrength.Tick); break;
-            case CombatSoundCue.PlayerHit:
-            case CombatSoundCue.Explosion: MobileHaptics.Request(HapticStrength.Impact); break;
+            case CombatSoundCue.InvalidSwap: MobileHaptics.Request(HapticStrength.Tick, 0); break;
+            case CombatSoundCue.GemMatch: MobileHaptics.Request(HapticStrength.Tick, 1); break;
+            case CombatSoundCue.SpecialCreated:
+            case CombatSoundCue.BlockerBreak:
+            case CombatSoundCue.CofferBreak:
+            case CombatSoundCue.MineStoneBreak:
+            case CombatSoundCue.Explosion:
+            case CombatSoundCue.AttenderCrash: MobileHaptics.Request(HapticStrength.Impact, 2); break;
+            case CombatSoundCue.CrystalCharge: MobileHaptics.Request(HapticStrength.Tick, 1); break;
+            case CombatSoundCue.CrystalImpact: MobileHaptics.Request(HapticStrength.Cast, 3); break;
+            case CombatSoundCue.PlayerHit: MobileHaptics.Request(HapticStrength.Impact, 4); break;
             case CombatSoundCue.BardleyAbility:
-            case CombatSoundCue.RattlebonesAbility: MobileHaptics.Request(HapticStrength.Cast); break;
+            case CombatSoundCue.RattlebonesAbility: MobileHaptics.Request(HapticStrength.Cast, 3); break;
         }
     }
     private void PreferencesChanged()

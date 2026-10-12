@@ -1,6 +1,6 @@
 # Combat sound source
 
-`generate_combat_sfx.py` synthesizes thirteen original short mono PCM sounds using
+`generate_combat_sfx.py` synthesizes 47 original short mono PCM clips using
 only Python's standard library. It does not use downloaded samples or a service.
 Run it from any directory to rebuild `Assets/_Game/Resources/Audio/Combat/*.wav` and
 the measured duration/peak/RMS/hash manifest alongside this file.
@@ -17,19 +17,34 @@ for the existing independent music loop. Gem landings and poison ticks stay
 quiet; player damage, explosions and player casts lead the mix. Same-frame tile
 bursts are grouped by family; tile count never multiplies the number of voices.
 
-The existing match-break controller owns match grouping/flash delay and delegates
-playback to the common mix; it retains its original clip as a missing-library
-fallback. Other sound cues consume committed actor/board events. All feedback is
+The board owns match grouping and emits one shatter receipt. The existing
+match-break component delegates playback to the common mix or retains its old
+clip when the central controller is absent. Other cues consume committed actor/board events. All feedback is
 suppressed during restore/replay, pause and focus loss. Audio never changes damage
 or board timing. Music, SFX and vibration preferences are independent.
 
 Android uses `View.performHapticFeedback` on the UI thread (system settings
 respected, no VIBRATE permission). iOS uses light/medium UIKit impact generators.
-No long `Handheld.Vibrate` fallback is used. Grouped landings are capped at one
-soft pulse per 200 ms; impacts/casts take priority in a frame. Pausing, muting or
+No long `Handheld.Vibrate` fallback is used. Ordinary matches receive light
+grouped feedback; landings remain audio-only. Impacts/casts take priority with
+bounded promotion and a six-dispatch window. Pausing, muting or
 backgrounding cancels pending native requests. Unsupported devices quietly omit
 haptics. Native hardware feel still requires physical-device verification.
 
 Platform references:
 - https://developer.android.com/develop/ui/views/haptics/haptic-feedback
 - https://developer.apple.com/documentation/uikit/uiimpactfeedbackgenerator
+
+# Board Feel 2 additions (2026-10-12)
+
+The existing standard-library synthesizer now adds seven original cue families
+(swap, invalid return, special creation, blocker hit/break and crystal
+anticipation/impact). Nine frequent families have three alternatives in addition
+to the original clip. The original thirteen base files remain byte-identical.
+The manifest records all 47 generated clips, lengths, RMS/peak and hashes.
+Other zone/playable cues retain their separate existing generators.
+
+Runtime selection uses private presentation randomness with no immediate repeat.
+Peak normalization remains -3.35 dBFS; the shared software mix budget still applies.
+No imported Candy Crush audio or external samples were used. Phone/headphone
+listening approval remains separate from waveform and Unity checks.

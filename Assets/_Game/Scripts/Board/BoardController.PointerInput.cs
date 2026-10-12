@@ -19,7 +19,7 @@ public partial class BoardController
         }
         // BeginPointer has no acceptance return value. Mirror its guards so a
         // rejected contact cannot steal the ID of an existing gesture.
-        if (IsExternalInputBlocked ||
+        if (Time.timeScale <= 0 || IsExternalInputBlocked ||
             isBusy ||
             HasPendingBoardMutation ||
             gem == null ||
@@ -113,6 +113,7 @@ public partial class BoardController
          * Consume the gesture before starting the swap. Pointer-up will then
          * harmlessly no-op instead of attempting a second swap or selection.
          */
+        ClearPointerFeedback();
         pointerStartGem = null;
 
         TrySwapFromSwipe(

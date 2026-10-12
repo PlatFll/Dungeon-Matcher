@@ -174,6 +174,7 @@ public partial class BoardController
     {
         if (pointerStartGem == gem)
         {
+            ClearPointerFeedback();
             pointerStartGem = null;
             ClearManualSwapPreview();
         }

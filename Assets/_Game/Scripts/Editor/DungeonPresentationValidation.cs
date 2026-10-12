@@ -318,24 +318,20 @@ public static class DungeonPresentationValidation
     {
         var matchAudio = board.GetComponent<GemBreakAudioController>();
         Check(matchAudio != null, "production match audio controller exists");
-        var delayField = typeof(GemBreakAudioController).GetField("breakSoundDelay", Flags);
-        var delayedPlay = typeof(GemBreakAudioController).GetMethod("PlayBreakSoundAfterDelay", Flags);
-        float originalDelay = (float)delayField.GetValue(matchAudio);
-        delayField.SetValue(matchAudio, .1f);
-        Report.AppendLine("AUDIO FIXTURE: invoking the real delayed match coroutine independently of board mutation to isolate its pause cancellation.");
+        var present = typeof(BoardController).GetMethod("PresentFeedback", Flags);
+        Report.AppendLine("AUDIO FIXTURE: dispatching a committed shatter receipt independently of mutation to isolate pending-cue pause cancellation.");
         int start = PlayedCues.Count(cue => cue == "GemMatch");
-        matchAudio.StartCoroutine((IEnumerator)delayedPlay.Invoke(matchAudio, new object[] { 3, 0 }));
+        present.Invoke(board, new object[] { BoardFeedbackKind.MatchImpact, 3, 0 });
         yield return Until(() => PlayedCues.Count(cue => cue == "GemMatch") > start, "delayed match positive playback control");
         Check(PlayedCues.Count(cue => cue == "GemMatch") == start + 1, "delayed match positive control emits one cue");
         int beforePause = PlayedCues.Count(cue => cue == "GemMatch");
-        matchAudio.StartCoroutine((IEnumerator)delayedPlay.Invoke(matchAudio, new object[] { 3, 0 }));
+        present.Invoke(board, new object[] { BoardFeedbackKind.MatchImpact, 3, 0 });
         Time.timeScale = 0;
         yield return Wait(.15f);
         Check(PlayedCues.Count(cue => cue == "GemMatch") == beforePause, "delayed match remains silent during pause");
         Time.timeScale = 1;
         float resumed = Time.time;
         yield return Until(() => Time.time - resumed > .25f, "delayed match cancellation observation window");
-        delayField.SetValue(matchAudio, originalDelay);
         Check(PlayedCues.Count(cue => cue == "GemMatch") == beforePause, "pause cancels delayed match; no stale cue after resume");
     }
 

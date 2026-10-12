@@ -147,8 +147,14 @@ public sealed class MenuUiReviewTests
             RunLaunchOptions.StartingZone="dungeon";
             SceneManager.LoadScene("Game");
             yield return Until(()=>RunSession.Current!=null && RunSession.Current.Continuation.CanCapture && RunSession.Current.Waves.IsWaveActive);
+            // The second viewport resumes the attempt suspended by the first.
+            // Dismiss its intentional recap before opening the settings modal.
+            if(GameObject.Find("ResumeGuide")!=null) {Click("ResumeGuide");yield return null;}
+            yield return new WaitForSecondsRealtime(.7f);
             var controls=Object.FindFirstObjectByType<RunControlsUI>();
             controls.OpenSettings(); yield return new WaitForSecondsRealtime(.3f);
+            if(Resources.Load<Sprite>("UI/GlobalMenu/Panel")!=null)
+                Assert.That(GameObject.Find("NativeSettingsStage"),Is.Not.Null,"capture the settings panel, not the continuation guide");
             Assert.That(Time.timeScale,Is.Zero); int tick=RunSession.Current.MoveClock.Tick;
             yield return Shot(height+"-settings");
             Assert.That(RunSession.Current.MoveClock.Tick,Is.EqualTo(tick));
