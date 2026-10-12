@@ -20,6 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Board and combat feel checkpoint (2026-10-12)
+
+The user authorized the Candy Crush research recommendations, regression testing
+and integration. Board Feel 2 shortens ordinary swap/refill pauses, aligns grouped
+match sound/vibration with shatter, adds original nonrepeating sound variants,
+protects important haptic impacts, and makes pointer-down, special creation and
+blocker breaks clearer through existing presentation owners. Move ownership,
+special gates, damage, energy and shield rules remain unchanged. Seconds-based
+combat and interrupted old replay tapes preserve their prior timing.
+
+[The implementation contract](BOARD_FEEL_2.md) records exact values and the opt-in
+phase/frame/allocation capture. [Validation](Validation/BOARD_FEEL_2.md) separates
+Unity evidence from physical-device vibration, listening and frame-pacing checks.
+Those device/human checks remain outstanding; synthetic timing is not proof of
+touch latency or preferred feel.
+
 ## Frostwake and new playables checkpoint (2026-10-11)
 
 The playable/foundation pass merged through PR #190. The supplied pack established the Frostwake direction, an ice/Haldra

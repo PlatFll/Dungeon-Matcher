@@ -45,15 +45,19 @@ DURATIONS = {
     "Healing": .43, "ShieldGain": .30, "ShieldHit": .155, "PlayerHit": .16,
     "EnemyHit": .12, "PoisonTick": .105, "BardleyAbility": .57,
     "RattlebonesAbility": .52, "EnemyAbility": .285,
+    "Swap": .065, "InvalidSwap": .105, "SpecialCreated": .21,
+    "BlockerHit": .10, "BlockerBreak": .16, "CrystalCharge": .20, "CrystalImpact": .32,
 }
+VARIANTS = {"GemMatch", "GemLand", "Explosion", "EnemyHit", "Swap", "InvalidSwap", "SpecialCreated", "BlockerHit", "BlockerBreak"}
+NEW_CUES = {"Swap", "InvalidSwap", "SpecialCreated", "BlockerHit", "BlockerBreak", "CrystalCharge", "CrystalImpact"}
 
 
-def make(name, duration):
-    rng = random.Random("Dungeon Matcher original SFX " + name)
+def make(name, duration, variant=0):
+    rng = random.Random("Dungeon Matcher original SFX " + name + (str(variant) if variant else ""))
     low = 0.0
     values = []
     for i in range(round(duration * RATE)):
-        t = i / RATE
+        t = i / RATE * (1 + variant * .012)
         noise = rng.uniform(-1, 1)
         low += .12 * (noise - low)
         high = noise - low
@@ -87,11 +91,33 @@ def make(name, duration):
             # Crown chime over a compact bone rattle; regal, lightly spooky, never shrill.
             value = sequence(t, [392, 523.25, 783.99, 1046.5], .065, .12)
             value += .26 * low * math.exp(-t/.07) * (.65 + .35 * math.cos(TAU * 42 * t))
+        elif name == "Swap":
+            value = sweep(t, 510, 790, .018) * math.exp(-t/.012) + .12 * high * math.exp(-t/.008)
+        elif name == "InvalidSwap":
+            value = sweep(t, 390, 210, .025) * math.exp(-t/.023) + .1 * low * math.exp(-t/.012)
+        elif name == "SpecialCreated":
+            value = sequence(t, [1046.5, 1318.5, 1568], .028, .045)
+        elif name == "BlockerHit":
+            value = tone(t, 270, .018) + .8 * low * math.exp(-t/.02)
+        elif name == "BlockerBreak":
+            value = sweep(t, 430, 125, .018) * math.exp(-t/.024) + 1.2 * low * math.exp(-t/.035)
+        elif name == "CrystalCharge":
+            value = sweep(t, 520, 1046.5, .06) * math.exp(-t/.055) + .2 * tone(t, 1568, .05)
+        elif name == "CrystalImpact":
+            value = tone(t, 523.25, .065) + .5 * tone(t, 1046.5, .07) + .3 * tone(t, 1568, .045) + .5 * low * math.exp(-t/.04)
         else:
             value = tone(t, 196, .05) + .38 * tone(t, 293.66, .07) + .18 * sweep(t, 630, 330, .03) * math.exp(-t/.045)
         # Quiet 1.5ms attack and 15ms fade prevent clicks at file boundaries.
-        fade = min(1, t / .0015, (duration - t) / .015)
+        age = i / RATE
+        fade = min(1, age / .0015, (duration - age) / .015)
         values.append(value * max(0, fade))
+    if variant or name in NEW_CUES:
+        # Remove residual DC through the same envelope, preserving quiet ends.
+        # Keep the thirteen previously shipped base clips byte-identical.
+        envelope = [max(0, min(1, i / RATE / .0015, (duration - i / RATE) / .015))
+                    for i in range(len(values))]
+        offset = sum(values) / sum(envelope)
+        values = [value - offset * fade for value, fade in zip(values, envelope)]
     scale = PEAK / max(abs(v) for v in values)
     pcm = array.array("h", (round(v * scale * 32767) for v in values))
     return pcm
@@ -101,19 +127,22 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     report = {"sample_rate": RATE, "channels": 1, "sample_bits": 16,
               "authorship": "Original local deterministic synthesis; no external samples.", "clips": {}}
-    for name, duration in DURATIONS.items():
-        pcm = make(name, duration)
-        path = OUT / (name + ".wav")
+    exports = [(name, duration, variant) for name, duration in DURATIONS.items()
+               for variant in range(4 if name in VARIANTS else 1)]
+    for name, duration, variant in exports:
+        pcm = make(name, duration, variant)
+        filename = name + ("_" + str(variant) if variant else "")
+        path = OUT / (filename + ".wav")
         with wave.open(str(path), "wb") as output:
             output.setparams((1, 2, RATE, len(pcm), "NONE", "not compressed"))
             output.writeframes(pcm.tobytes())
         peak = max(abs(v) for v in pcm) / 32768
         rms = math.sqrt(sum(v * v for v in pcm) / len(pcm)) / 32768
-        report["clips"][name] = {"seconds": len(pcm) / RATE, "peak_dbfs": round(20*math.log10(peak), 3),
+        report["clips"][filename] = {"seconds": len(pcm) / RATE, "peak_dbfs": round(20*math.log10(peak), 3),
                                  "rms_dbfs": round(20*math.log10(rms), 3),
                                  "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
     (Path(__file__).parent / "sfx_manifest.json").write_text(json.dumps(report, indent=2) + "\n")
-    print(f"Generated {len(DURATIONS)} original mono PCM cues; peak ceiling {20*math.log10(PEAK):.2f} dBFS.")
+    print(f"Generated {len(exports)} original mono PCM clips; peak ceiling {20*math.log10(PEAK):.2f} dBFS.")
 
 
 if __name__ == "__main__":

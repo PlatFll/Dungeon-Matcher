@@ -157,6 +157,7 @@ public partial class BoardController
          * in the background across one elapsed-time sweep, allowing the VFX
          * and gameplay clear loop to read as one continuous event.
          */
+        PresentFeedback(BoardFeedbackKind.CrystalAnticipation);
         yield return
             colorCrystalVFXController
                 .PlaySynchronizedActivation(
@@ -167,6 +168,7 @@ public partial class BoardController
                     0f,
                     targetSweepDuration
                 );
+        PresentFeedback(BoardFeedbackKind.CrystalImpact);
 
         if (SynchronizedCrystalTargetClearLeadIn >
             0f)

@@ -35,6 +35,7 @@ public partial class BoardController
             new ExternalInputBlockToken(this);
 
         externalInputBlocks.Add(token);
+        ClearPointerFeedback();
         pointerStartGem = null;
         ClearSelection();
 

@@ -2,6 +2,12 @@ using UnityEngine;
 
 public partial class BoardController
 {
+    // Old in-flight tapes retain their timing until the next stable checkpoint.
+    // Seconds-based combat retains its historical presentation budget.
+    internal bool ReplayLegacyBoardFeel { get; set; }
+    public bool UsesLegacyBoardFeel => ReplayLegacyBoardFeel ||
+        !CombatMoveClock.MoveBasics && (CombatMoveClock.Active || RunSession.Current != null);
+    public int BoardFeelVersion => UsesLegacyBoardFeel ? 0 : 1;
     /*
      * Central board-feel tuning.
      *
@@ -9,18 +15,18 @@ public partial class BoardController
      * tuning has one obvious rollback/debug location. None of these helpers
      * decide matches, targets, rewards, bomb chains, or cascade outcomes.
      *
-     * This profile sits between the earlier fast board and the later 1.5x
-     * slowdown. New refill gems also enter as a short stream instead of a
-     * rigid column, while gravity keeps a gentle sense of acceleration.
+     * Board Feel 2 shortens ordinary pauses without scaling special gates.
+     * Refill streams per column; the established acceleration and landing
+     * shape remain inside the distance-based motion budget.
      */
     [Header("Board Feel - Responsiveness")]
     [SerializeField, Range(0.5f, 1f)]
     [Tooltip(
         "Multiplier applied to the existing swap duration. " +
-        "One keeps the full serialized 0.15s swap timing."
+        "0.9 gives 135ms from the serialized 150ms base."
     )]
     private float swapDurationMultiplier =
-        1.00f;
+        0.90f;
 
     [SerializeField, Min(0f)]
     [Tooltip(
@@ -28,24 +34,24 @@ public partial class BoardController
         "This does not change the swap travel speed itself."
     )]
     private float maximumInvalidSwapPause =
-        0.07f;
+        0.03f;
 
     [SerializeField, Range(0.25f, 4f)]
     [Tooltip(
         "Controls the impact-to-gravity beat after cleared gems disappear. " +
-        "With the base 0.04s post-burst delay, 2.0 produces about 0.08s."
+        "One keeps the 40ms ordinary gate; special gates remain independent."
     )]
     private float matchPostBurstDelayMultiplier =
-        2.00f;
+        1.00f;
 
     [Header("Board Feel - Gravity")]
     [SerializeField, Range(0.5f, 2f)]
     [Tooltip(
         "Global multiplier applied after distance-based fall timing is " +
-        "calculated. 1.10 is the current middle-ground fall speed."
+        "calculated. One retains the authored distance budget."
     )]
     private float fallDurationMultiplier =
-        1.10f;
+        1.00f;
 
     [SerializeField, Range(0.35f, 1f)]
     [Tooltip(
@@ -72,7 +78,7 @@ public partial class BoardController
         "gems enter as a readable stream."
     )]
     private float refillSpawnStagger =
-        0.035f;
+        0.025f;
 
     [SerializeField, Range(0f, 0.12f)]
     [Tooltip(
@@ -104,7 +110,7 @@ public partial class BoardController
         "next cascade is scanned."
     )]
     private float postFallSettlePause =
-        0.06f;
+        0.03f;
 
     private float GetResponsiveSwapDuration()
     {
@@ -112,7 +118,7 @@ public partial class BoardController
             0.01f,
             swapDuration *
             Mathf.Clamp(
-                swapDurationMultiplier,
+                UsesLegacyBoardFeel ? 1f : swapDurationMultiplier,
                 0.5f,
                 1f
             )
@@ -123,7 +129,7 @@ public partial class BoardController
     {
         return Mathf.Min(
             Mathf.Max(0f, invalidSwapPause),
-            Mathf.Max(0f, maximumInvalidSwapPause)
+            Mathf.Max(0f, UsesLegacyBoardFeel ? .07f : maximumInvalidSwapPause)
         );
     }
 
@@ -134,7 +140,7 @@ public partial class BoardController
                 0f,
                 matchPostBurstDelay *
                 Mathf.Clamp(
-                    matchPostBurstDelayMultiplier,
+                    UsesLegacyBoardFeel ? 2f : matchPostBurstDelayMultiplier,
                     0.25f,
                     4f
                 )
@@ -195,7 +201,7 @@ public partial class BoardController
 
         float safeMultiplier =
             Mathf.Clamp(
-                fallDurationMultiplier,
+                UsesLegacyBoardFeel ? 1.1f : fallDurationMultiplier,
                 0.5f,
                 2f
             );
@@ -245,7 +251,7 @@ public partial class BoardController
         ) *
         Mathf.Max(
             0f,
-            refillSpawnStagger
+            UsesLegacyBoardFeel ? .035f : refillSpawnStagger
         );
     }
 
@@ -286,7 +292,7 @@ public partial class BoardController
     {
         return Mathf.Max(
             0f,
-            postFallSettlePause
+            UsesLegacyBoardFeel ? .06f : postFallSettlePause
         );
     }
 

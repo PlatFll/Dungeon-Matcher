@@ -187,6 +187,8 @@ public sealed class GemMatchVFXController :
 
         boardController.GemMatchVFXRequested +=
             HandleGemMatchVFXRequested;
+        boardController.SpecialGemForming += OnSpecialForming;
+        boardController.BlockerShattered += OnBlockerShattered;
     }
 
     private void Unsubscribe()
@@ -198,6 +200,40 @@ public sealed class GemMatchVFXController :
 
         boardController.GemMatchVFXRequested -=
             HandleGemMatchVFXRequested;
+        boardController.SpecialGemForming -= OnSpecialForming;
+        boardController.BlockerShattered -= OnBlockerShattered;
+    }
+
+    private void OnSpecialForming(Gem gem)
+    {
+        if (gem == null || PresentationPreferences.ReducedMotion || !ValidateReferences()) return;
+        Vector3 center = particleContainer.InverseTransformPoint(gem.transform.position);
+        float radius = boardController.CellSize * .28f;
+        // Four converging accents share the existing bounded particle pool.
+        for (int i = 0; i < 4; i++)
+        {
+            var particle = GetAvailableParticle();
+            if (particle == null) return;
+            var direction = new Vector2(i == 0 ? 1 : i == 2 ? -1 : 0, i == 1 ? 1 : i == 3 ? -1 : 0);
+            activeParticles.Add(particle);
+            particle.Play(center + (Vector3)(direction * radius), -direction * (radius / .08f),
+                .08f, .025f, 1f, 0, 0, 0, 0, new Color(.95f, .90f, .70f), ReleaseParticle);
+        }
+    }
+
+    private void OnBlockerShattered(Vector3 worldPosition)
+    {
+        if (PresentationPreferences.ReducedMotion || !ValidateReferences()) return;
+        Vector3 center = particleContainer.InverseTransformPoint(worldPosition);
+        for (int i = 0; i < 4; i++)
+        {
+            var particle = GetAvailableParticle();
+            if (particle == null) return;
+            activeParticles.Add(particle);
+            var direction = new Vector2(i % 2 == 0 ? -.8f : .8f, i < 2 ? .6f : 1.1f);
+            particle.Play(center, direction, .14f, .035f, 1.5f, i * 90f, 90f, 2f, .2f,
+                new Color(.58f, .54f, .50f), ReleaseParticle);
+        }
     }
 
     private void HandleGemMatchVFXRequested(

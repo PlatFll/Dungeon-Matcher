@@ -26,10 +26,12 @@ public sealed class RunContinuation : MonoBehaviour
     public void Initialize(RunSession run, AccountProgression progression, RunCombatSnapshot saved,RunReplayTape savedTape)
     {
         session=run; account=progression;
+        tape = NewTape();
         Random=new SavedRandom(UnityEngine.Random.Range(1,int.MaxValue));
         session.Board.BeforePlayerSwap=(a,b)=>RecordAction(new RunRecordedAction {kind=RunActionKind.Swap,x=a.Column,y=a.Row,targetX=b.Column,targetY=b.Row});
         bool hasBoard=saved?.board?.cells!=null && saved.board.cells.Count>0;
-        if((hasBoard && (!SupportsSnapshot(saved) || (saved.version==2 && session.MoveClock==null))) || (!hasBoard && (progression.ActiveRun?.completedWaves>0 || savedTape?.frames?.Count>0)))
+        if((savedTape != null && (savedTape.boardFeelVersion < 0 || savedTape.boardFeelVersion > 1)) ||
+           (hasBoard && (!SupportsSnapshot(saved) || (saved.version==2 && session.MoveClock==null))) || (!hasBoard && (progression.ActiveRun?.completedWaves>0 || savedTape?.frames?.Count>0)))
         {
             IsRestoring=true;Time.timeScale=0;session.Board.PrepareContinuation();session.Waves.PrepareContinuation();
             Error="The saved combat state is incomplete or from an unsupported version. Your run was preserved.";
@@ -39,6 +41,7 @@ public sealed class RunContinuation : MonoBehaviour
         {
             checkpoint=saved; IsRestoring=true; Time.timeScale=0;
             tape=savedTape ?? new RunReplayTape(); Random=new SavedRandom(saved.gameplayRandom);
+            session.Board.ReplayLegacyBoardFeel = tape.frames.Count > 0 && tape.boardFeelVersion == 0;
             session.Board.PrepareContinuation(); session.Waves.PrepareContinuation();
             restoreInput=session.Board.AcquireExternalInputBlock();
             StartCoroutine(Restore(saved));
@@ -119,7 +122,8 @@ public sealed class RunContinuation : MonoBehaviour
         }
         var saved=Capture();
         if(!account.StoreCheckpoint(session.RunId,saved)) { Error=account.LastError; return false; }
-        checkpoint=saved; tape=new RunReplayTape(); Error=null; return true;
+        session.Board.ReplayLegacyBoardFeel = false;
+        checkpoint=saved; tape=NewTape(); Error=null; return true;
     }
     public bool TryCommitZoneTravel(string destination)
     {
@@ -142,8 +146,10 @@ public sealed class RunContinuation : MonoBehaviour
         session.Board.PrepareZoneArrival(saved.board, zone);
         if(!SupportsSnapshot(saved)) return false;
         if(!account.StoreCheckpoint(session.RunId,saved)) {Error=account.LastError;return false;}
-        checkpoint=saved;tape=new RunReplayTape();Error=null;return true;
+        session.Board.ReplayLegacyBoardFeel = false;
+        checkpoint=saved;tape=NewTape();Error=null;return true;
     }
+    private RunReplayTape NewTape() => new RunReplayTape { boardFeelVersion = session.Board.BoardFeelVersion };
     public void BeginFrame()
     {
         if(IsReplaying)

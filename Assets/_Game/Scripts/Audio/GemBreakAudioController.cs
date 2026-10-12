@@ -1,381 +1,76 @@
-using System.Collections;
 using UnityEngine;
 
+/// <summary>Serialized legacy clip fallback. The board supplies actual shatter
+/// timing and grouping; no delayed sound survives pause or changes clear timing.</summary>
 [DisallowMultipleComponent]
-public sealed class GemBreakAudioController :
-    MonoBehaviour
+public sealed class GemBreakAudioController : MonoBehaviour
 {
-    [Header("Board")]
-    [SerializeField]
-    private BoardController boardController;
-
-    [Header("Sound")]
-    [SerializeField]
-    private AudioClip gemBreakClip;
-
-    [SerializeField, Min(0f)]
-    [Tooltip(
-        "Delay used to synchronize the sound with " +
-        "the gem's full-white flash peak."
-    )]
-    private float breakSoundDelay = 0.05f;
-
-    [Header("Volume")]
-    [SerializeField, Range(0f, 1f)]
-    private float baseVolume = 0.72f;
-
-    [SerializeField, Range(0f, 0.2f)]
-    private float extraGemVolumeBonus = 0.035f;
-
-    [SerializeField, Range(0f, 1f)]
-    private float maximumVolume = 0.95f;
-
-    [Header("Cascade Pitch")]
-    [SerializeField, Min(0f)]
-    private float semitonesPerCascade = 1f;
-
-    [SerializeField, Min(0)]
-    private int maximumCascadePitchSteps = 4;
-
-    [SerializeField, Range(0.5f, 2f)]
-    private float maximumPitch = 1.26f;
-
-    [SerializeField, Range(0f, 0.05f)]
-    private float randomPitchVariation = 0.01f;
-
-    [Header("Audio Source Pool")]
-    [SerializeField, Range(1, 8)]
-    private int audioSourceCount = 4;
-
-    private AudioSource[] audioSources;
-    private int nextAudioSourceIndex;
-
-    /*
-     * BoardClearResolved can be invoked multiple times in one frame
-     * when separate match groups clear simultaneously.
-     *
-     * These values combine them into one break sound.
-     */
-    private bool hasPendingBreak;
-    private int pendingGemCount;
-    private int pendingCascadeDepth;
-
-    private void Awake()
-    {
-        ResolveReferences();
-        CreateAudioSourcePool();
-    }
+    [SerializeField] private BoardController boardController;
+    [SerializeField] private AudioClip gemBreakClip;
+    [SerializeField, Range(0f, 1f)] private float baseVolume = .72f;
+    [SerializeField, Range(0f, .2f)] private float extraGemVolumeBonus = .035f;
+    [SerializeField, Range(0f, 1f)] private float maximumVolume = .95f;
+    [SerializeField, Min(0f)] private float semitonesPerCascade = 1f;
+    [SerializeField, Min(0)] private int maximumCascadePitchSteps = 4;
+    [SerializeField, Range(.5f, 2f)] private float maximumPitch = 1.26f;
+    [SerializeField, Range(0f, .05f)] private float randomPitchVariation = .01f;
+    [SerializeField, Range(1, 8)] private int audioSourceCount = 4;
+    private AudioSource[] sources;
+    private int nextSource;
+    private long lastReceipt;
+    private readonly System.Random random = new System.Random();
 
     private void OnEnable()
     {
-        ResolveReferences();
-        Subscribe();
+        if (boardController == null) boardController = GetComponent<BoardController>();
+        if (boardController != null) boardController.FeedbackPresented += OnFeedback;
+        AudioPreferences.Changed += ApplyPreferences;
     }
-
     private void OnDisable()
     {
-        Unsubscribe();
-        StopAllCoroutines();
-        if (audioSources != null)
-            foreach (var source in audioSources) if (source != null) source.Stop();
-
-        hasPendingBreak = false;
-        pendingGemCount = 0;
-        pendingCascadeDepth = 0;
+        if (boardController != null) boardController.FeedbackPresented -= OnFeedback;
+        AudioPreferences.Changed -= ApplyPreferences;
+        Silence();
     }
-
-    private void ResolveReferences()
+    private void OnFeedback(BoardFeedback feedback)
     {
-        if (boardController == null)
-        {
-            boardController =
-                GetComponent<BoardController>();
-        }
+        if (feedback.Kind != BoardFeedbackKind.MatchImpact || feedback.Id <= lastReceipt) return;
+        lastReceipt = feedback.Id;
+        PlayBreakSound(feedback.Count, feedback.Cascade);
     }
-
-    private void Subscribe()
-    {
-        if (boardController == null)
-        {
-            return;
-        }
-
-        boardController.BoardClearResolved -=
-            HandleClearResolved;
-
-        boardController.BoardClearResolved +=
-            HandleClearResolved;
-    }
-
-    private void Unsubscribe()
-    {
-        if (boardController == null)
-        {
-            return;
-        }
-
-        boardController.BoardClearResolved -=
-            HandleClearResolved;
-    }
-
-    private void HandleClearResolved(
-        BoardClearContext context)
+    private void PlayBreakSound(int count, int cascade)
     {
         if (!CombatAudioController.FeedbackAllowed) return;
-        /*
-         * This controller owns ordinary-match grouping and flash timing.
-         * CombatAudioController handles special/actor sounds and the shared mix.
-         */
-        if (context.Source !=
-            BoardClearSource.Match)
+        if (CombatAudioController.TryPlayMatch(count, cascade)) return;
+        MobileHaptics.Request(HapticStrength.Tick, 1);
+        MobileHaptics.Flush();
+        if (AudioPreferences.SfxMuted || gemBreakClip == null) return;
+        if (sources == null)
         {
-            return;
+            sources = new AudioSource[Mathf.Clamp(audioSourceCount, 1, 8)];
+            for (int i = 0; i < sources.Length; i++)
+            {
+                var child = new GameObject("Fallback gem sound");
+                child.transform.SetParent(transform, false);
+                var source = child.AddComponent<AudioSource>();
+                source.playOnAwake = false; source.loop = false;
+                source.spatialBlend = 0; source.dopplerLevel = 0;
+                sources[i] = source;
+            }
         }
-
-        hasPendingBreak = true;
-
-        /*
-         * Preserve the old audio behaviour: a straight four
-         * still sounds like a four-gem match even though one
-         * gem survives as the newly created bomb.
-         */
-        pendingGemCount +=
-            context.TriggerGemCount;
-
-        pendingCascadeDepth =
-            Mathf.Max(
-                pendingCascadeDepth,
-                context.CascadeDepth
-            );
+        var voice = sources[nextSource];
+        nextSource = (nextSource + 1) % sources.Length;
+        float pitch = Mathf.Pow(2f, Mathf.Clamp(cascade, 0, maximumCascadePitchSteps) * semitonesPerCascade / 12f);
+        pitch += ((float)random.NextDouble() * 2f - 1f) * randomPitchVariation;
+        voice.pitch = Mathf.Clamp(pitch, .5f, maximumPitch);
+        voice.PlayOneShot(gemBreakClip, Mathf.Clamp(baseVolume + Mathf.Max(0, count - 3) * extraGemVolumeBonus, 0, maximumVolume));
     }
-
-    private void LateUpdate()
+    private void Update() { if (!CombatAudioController.FeedbackAllowed) Silence(); }
+    private void ApplyPreferences() { if (AudioPreferences.SfxMuted) Silence(); }
+    private void OnApplicationFocus(bool focused) { if (!focused) Silence(); }
+    private void OnApplicationPause(bool paused) { if (paused) Silence(); }
+    private void Silence()
     {
-        if (!CombatAudioController.FeedbackAllowed)
-        {
-            StopAllCoroutines();
-            hasPendingBreak = false;
-            pendingGemCount = 0;
-            pendingCascadeDepth = 0;
-            if (audioSources != null)
-                foreach (var source in audioSources) if (source != null) source.Stop();
-            return;
-        }
-        if (audioSources != null)
-            foreach (var source in audioSources) if (source != null) source.mute = AudioPreferences.SfxMuted;
-        if (!hasPendingBreak)
-        {
-            return;
-        }
-
-        int gemCount =
-            pendingGemCount;
-
-        int cascadeDepth =
-            pendingCascadeDepth;
-
-        hasPendingBreak = false;
-        pendingGemCount = 0;
-        pendingCascadeDepth = 0;
-
-        StartCoroutine(
-            PlayBreakSoundAfterDelay(
-                gemCount,
-                cascadeDepth
-            )
-        );
-    }
-
-    private IEnumerator PlayBreakSoundAfterDelay(
-        int gemCount,
-        int cascadeDepth)
-    {
-        if (breakSoundDelay > 0f)
-        {
-            yield return new WaitForSeconds(
-                breakSoundDelay
-            );
-        }
-
-        PlayBreakSound(
-            gemCount,
-            cascadeDepth
-        );
-    }
-
-    private void PlayBreakSound(
-        int gemCount,
-        int cascadeDepth)
-    {
-        if (!CombatAudioController.FeedbackAllowed) return;
-        if (CombatAudioController.TryPlayMatch(gemCount, cascadeDepth)) return;
-        if (AudioPreferences.SfxMuted) return;
-        if (gemBreakClip == null ||
-            audioSources == null ||
-            audioSources.Length == 0)
-        {
-            return;
-        }
-
-        AudioSource source =
-            audioSources[
-                nextAudioSourceIndex
-            ];
-
-        nextAudioSourceIndex =
-            (
-                nextAudioSourceIndex + 1
-            ) %
-            audioSources.Length;
-
-        int pitchStep =
-            Mathf.Clamp(
-                cascadeDepth,
-                0,
-                maximumCascadePitchSteps
-            );
-
-        float semitoneOffset =
-            pitchStep *
-            semitonesPerCascade;
-
-        /*
-         * Converts musical semitones into Unity pitch.
-         */
-        float pitch =
-            Mathf.Pow(
-                2f,
-                semitoneOffset / 12f
-            );
-
-        pitch +=
-            Random.Range(
-                -randomPitchVariation,
-                randomPitchVariation
-            );
-
-        source.pitch =
-            Mathf.Clamp(
-                pitch,
-                0.5f,
-                maximumPitch
-            );
-
-        int extraGemCount =
-            Mathf.Max(
-                0,
-                gemCount - 3
-            );
-
-        float volume =
-            baseVolume +
-            extraGemCount *
-            extraGemVolumeBonus;
-
-        volume =
-            Mathf.Clamp(
-                volume,
-                0f,
-                maximumVolume
-            );
-
-        source.PlayOneShot(
-            gemBreakClip,
-            volume
-        );
-    }
-
-    private void CreateAudioSourcePool()
-    {
-        audioSourceCount =
-            Mathf.Clamp(
-                audioSourceCount,
-                1,
-                8
-            );
-
-        audioSources =
-            new AudioSource[
-                audioSourceCount
-            ];
-
-        for (int index = 0;
-             index < audioSourceCount;
-             index++)
-        {
-            GameObject sourceObject =
-                new GameObject(
-                    $"Gem Break Audio {index + 1}"
-                );
-
-            sourceObject.transform.SetParent(
-                transform,
-                false
-            );
-
-            AudioSource source =
-                sourceObject.AddComponent<
-                    AudioSource
-                >();
-
-            source.playOnAwake = false;
-            source.loop = false;
-            source.spatialBlend = 0f;
-            source.dopplerLevel = 0f;
-
-            audioSources[index] =
-                source;
-        }
-    }
-
-    private void OnValidate()
-    {
-        breakSoundDelay =
-            Mathf.Max(
-                0f,
-                breakSoundDelay
-            );
-
-        baseVolume =
-            Mathf.Clamp01(
-                baseVolume
-            );
-
-        maximumVolume =
-            Mathf.Clamp01(
-                maximumVolume
-            );
-
-        maximumVolume =
-            Mathf.Max(
-                baseVolume,
-                maximumVolume
-            );
-
-        semitonesPerCascade =
-            Mathf.Max(
-                0f,
-                semitonesPerCascade
-            );
-
-        maximumCascadePitchSteps =
-            Mathf.Max(
-                0,
-                maximumCascadePitchSteps
-            );
-
-        maximumPitch =
-            Mathf.Clamp(
-                maximumPitch,
-                0.5f,
-                2f
-            );
-
-        audioSourceCount =
-            Mathf.Clamp(
-                audioSourceCount,
-                1,
-                8
-            );
+        if (sources != null) foreach (var source in sources) if (source != null) source.Stop();
     }
 }

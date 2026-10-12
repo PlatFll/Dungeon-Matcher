@@ -16,5 +16,7 @@ public enum RunActionKind { Swap, Ability, Potion, Bomb, ChooseCard, RefineDraft
 }
 [Serializable] public sealed class RunReplayTape
 {
+    // Zero is the original timing, including old JSON with this field absent.
+    public int boardFeelVersion;
     public List<RunReplayFrame> frames = new List<RunReplayFrame>();
 }

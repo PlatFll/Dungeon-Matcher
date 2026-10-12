@@ -915,6 +915,7 @@ public partial class BoardController
     {
         if (!CanPlayBarricadeVFX(state))
         {
+            PresentFeedback(destroyAfterFlash ? BoardFeedbackKind.BlockerBreak : BoardFeedbackKind.BlockerHit);
             if (destroyAfterFlash)
             {
                 DestroyBarricadeView(
@@ -1034,6 +1035,8 @@ public partial class BoardController
         if (destroyAfterFlash)
         {
             state.VisualRoutine = null;
+            PresentFeedback(BoardFeedbackKind.BlockerBreak);
+            BlockerShattered?.Invoke(state.Renderer.transform.position);
 
             DestroyBarricadeView(
                 state
@@ -1047,6 +1050,7 @@ public partial class BoardController
          * the sprite is completely white, then materialize the new level-1
          * wooden barricade out of that silhouette.
          */
+        PresentFeedback(BoardFeedbackKind.BlockerHit);
         ApplyBarricadeLevelVisual(
             state
         );
