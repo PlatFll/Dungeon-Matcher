@@ -103,7 +103,7 @@ This document records durable, finalized design direction for Dungeon Matcher. I
 
 ## Unified move-combat experiment (2026-10-08)
 
-New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v3`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.
@@ -114,14 +114,15 @@ their participants' opportunity; channels and Stagger suppress it. Existing mine
 warnings that depend on the final response drill release after that drill under
 the same input hold, in rank/slot order. Birth-action summons receive no free tick.
 
-Haste uses the strongest source: `max(2, ceil(base interval / speed))`. A new buff
-leaves at least one response move; expiry never refunds progress. All 62 enemy
-definitions have explicit new-profile intervals, from 2 to 6, preserving each
-authored sequence. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
+Haste uses the strongest source: `max(2, round(base interval / speed))` in v3; v2 saves retain ceiling rounding. A new buff
+leaves at least one response move; expiry never refunds progress. All 73 enemy
+definitions have explicit new-profile first attacks at 2–3 moves and repeats
+at 2–4, preserving each authored sequence. Most specials charge in 2–4 moves;
+existing response windows remain intact. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
 
-Stagger lasts two full future moves, then two immunity moves. Partial meter stays
+Stagger lasts one full future move, then five immunity moves. Partial meter stays
 still while thinking and decays once only on an action without a qualifying hit.
-Normal/Special/Miniboss/Boss HP thresholds are 30/35/30/25%; decay removes
+Normal/Special/Miniboss/Boss HP thresholds are 60/70/80/90%; decay removes
 10/7.5/5/3 damage-equivalent buildup. Rattled halves new buildup. Poison periodic
 damage does not build it; existing feedback-producing ability damage still does.
 Royal Decree affects five full future moves; Longer Reign adds one per stack.
@@ -134,6 +135,16 @@ No old float attack timer is reinterpreted as an integer.
 
 See [implementation and evidence](UNIFIED_MOVE_COMBAT.md). Human pacing and
 physical-device acceptance remain separate from automated Unity evidence.
+
+### Special-pair activation (2026-10-13)
+
+In new runs, swapping any two playable specials is accepted without a color
+match. Non-crystal pairs activate both at their new swapped cells, preserving
+each bomb's own effect and deduplicating overlapping clears/rewards. Crystal
+combinations keep their established combined effects. Ordinary swaps and pins
+keep their existing rules. Slippery/underwater extended swaps use the selected
+gem and its final destination partner. Transient Bardley cracked markers are
+ability-owned and never become independent swappable power-ups.
 
 ### Forest combat and live crystal travel
 

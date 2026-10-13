@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -39,6 +40,38 @@ public sealed class CrystalBoardValidityTests
         Assert.That(ActualMove(2, 0, 2, 1), Is.False);
         Assert.That(LiveHasMove(), Is.False);
         Assert.That(board.TryGetRandomHintMove(out _, out _), Is.False);
+    }
+
+    [TestCase(false)]
+    [TestCase(true)]
+    public void EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(bool sameColor)
+    {
+        MakeBoard(sameColor ? "RR" : "RS");
+        foreach (GemSpecialType a in new[] { GemSpecialType.RowBomb, GemSpecialType.ColumnBomb, GemSpecialType.ColorCrystal,
+            GemSpecialType.PoisonBomb, GemSpecialType.HealingBomb, GemSpecialType.ShieldBomb })
+        foreach (GemSpecialType b in new[] { GemSpecialType.RowBomb, GemSpecialType.ColumnBomb, GemSpecialType.ColorCrystal,
+            GemSpecialType.PoisonBomb, GemSpecialType.HealingBomb, GemSpecialType.ShieldBomb })
+        {
+            grid[0,0].SetSpecialType(a); grid[1,0].SetSpecialType(b);
+            Assert.That(LiveHasMove(), Is.True, a + "/" + b);
+            Assert.That(board.PreviewManualSwap(grid[0,0],grid[1,0]).IsLegal, Is.True);
+            Assert.That(board.TryGetRandomHintMove(out _,out _), Is.True);
+            Assert.That(board.GetImmediateResponses().Any(r=>r.UsesSpecial), Is.True);
+            Pins[grid[0,0]] = 1;
+            Assert.That(LiveHasMove(), Is.False); Pins.Clear();
+        }
+    }
+
+    [Test]
+    public void SpecialPairOnlyReshufflePreservesBothIdentities()
+    {
+        MakeBoard("RS");
+        grid[0,0].SetSpecialType(GemSpecialType.RowBomb); grid[1,0].SetSpecialType(GemSpecialType.ShieldBomb);
+        object[] args = { null };
+        Assert.That((bool)Call("TryCreateShuffledLayout",args), Is.True);
+        CollectionAssert.AreEquivalent(new[] { grid[0,0],grid[1,0] }, (List<Gem>)args[0]);
+        board.SpecialPairSwapsEnabled = false;
+        Assert.That(LiveHasMove(), Is.False, "old saves retain their swap rules");
     }
 
     [TestCase(false)]

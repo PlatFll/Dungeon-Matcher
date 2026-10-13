@@ -20,6 +20,28 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Enemy pressure and special swaps (2026-10-13)
+
+Implementation: [PR #195](https://github.com/PlatFll/Dungeon-Matcher/pull/195),
+approved by the user for integration. Unity 6000.3.19f1 validation passed, with 120 distinct passing
+focused checks across the recorded runs (audio muted).
+New runs use `unified-accepted-moves-v3`. All 73 definitions now provide first
+basic attacks at 2–3 moves and repeats at 2–4; most ability charges are 2–4 moves.
+Warning/response windows, HP, hit damage and encounter composition remain the
+existing baseline. Stagger thresholds rise to 60/70/80/90% of max HP by rank;
+it disables one full future move and then grants five full immunity moves.
+Damage keeps its white flash and numbers without moving the enemy sprite.
+
+Swapping two specials is a valid action without a color match. Both bombs
+activate from their swapped cells through the existing deduplicated clear path;
+crystal combinations retain their established effects. Pins still block swaps.
+Existing saved profiles retain their previous cadence, stagger and swap rules.
+Start a new run to test the new balance. Research, rationale and validation:
+[enemy pressure pass](Validation/ENEMY_PRESSURE_AND_SPECIAL_SWAPS.md).
+
+These remain human-playtest tuning values; short automated samples cannot prove
+whole-run difficulty, progression balance or physical-device feel.
+
 ## Main menu and settings presentation (2026-10-12)
 
 The supplied main-menu/settings mockups now guide the shared non-zone UI family:
@@ -136,7 +158,7 @@ the current guide/register before any new or resumed art work.
 
 ## Unified move-combat experiment (2026-10-08)
 
-New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v3`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.
@@ -147,14 +169,15 @@ their participants' opportunity; channels and Stagger suppress it. Existing mine
 warnings that depend on the final response drill release after that drill under
 the same input hold, in rank/slot order. Birth-action summons receive no free tick.
 
-Haste uses the strongest source: `max(2, ceil(base interval / speed))`. A new buff
-leaves at least one response move; expiry never refunds progress. All 62 enemy
-definitions have explicit new-profile intervals, from 2 to 6, preserving each
-authored sequence. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
+Haste uses the strongest source: `max(2, round(base interval / speed))` in v3; v2 saves retain ceiling rounding. A new buff
+leaves at least one response move; expiry never refunds progress. All 73 enemy
+definitions have explicit new-profile first attacks at 2–3 moves and repeats
+at 2–4, preserving each authored sequence. Most specials charge in 2–4 moves;
+existing response windows remain intact. See [the interval table](UNIFIED_MOVE_INTERVALS.md).
 
-Stagger lasts two full future moves, then two immunity moves. Partial meter stays
+Stagger lasts one full future move, then five immunity moves. Partial meter stays
 still while thinking and decays once only on an action without a qualifying hit.
-Normal/Special/Miniboss/Boss HP thresholds are 30/35/30/25%; decay removes
+Normal/Special/Miniboss/Boss HP thresholds are 60/70/80/90%; decay removes
 10/7.5/5/3 damage-equivalent buildup. Rattled halves new buildup. Poison periodic
 damage does not build it; existing feedback-producing ability damage still does.
 Royal Decree affects five full future moves; Longer Reign adds one per stack.

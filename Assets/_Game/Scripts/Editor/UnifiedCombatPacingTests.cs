@@ -15,9 +15,32 @@ public sealed partial class ForestFoundationPlayTests
     [UnityTest] public IEnumerator UnifiedPacingForest() => UnifiedMeasuredPlay("magical-forest",7302);
     [UnityTest] public IEnumerator UnifiedPacingCourt() => UnifiedMeasuredPlay("drowned-court",7303);
     [UnityTest] public IEnumerator UnifiedPacingMine() => UnifiedMeasuredPlay("ironvein-excavation",7304);
-    private IEnumerator UnifiedMeasuredPlay(string zone,int seed)
+    [UnityTest] public IEnumerator UnifiedPacingMountain() => UnifiedMeasuredPlay("frostwake-peaks",7305);
+    [UnityTest] public IEnumerator PressureBaselineDungeon() => UnifiedMeasuredPlay("dungeon",7301,true);
+    [UnityTest] public IEnumerator PressureBaselineForest() => UnifiedMeasuredPlay("magical-forest",7302,true);
+    [UnityTest] public IEnumerator PressureBaselineCourt() => UnifiedMeasuredPlay("drowned-court",7303,true);
+    [UnityTest] public IEnumerator PressureBaselineMine() => UnifiedMeasuredPlay("ironvein-excavation",7304,true);
+    [UnityTest] public IEnumerator PressureBaselineMountain() => UnifiedMeasuredPlay("frostwake-peaks",7305,true);
+    private IEnumerator UnifiedMeasuredPlay(string zone,int seed,bool baseline=false)
     {
         UnityEngine.Random.InitState(seed);yield return LaunchUnified(zone);
+        if (baseline)
+        {
+            ((CombatClockSnapshot)Get(Run.MoveClock,"state")).profile = CombatClockSnapshot.LegacyUnifiedProfile;
+            Run.Board.SpecialPairSwapsEnabled = false;
+            foreach (var enemy in Run.Waves.ActiveEnemies)
+                Set(enemy.GetComponent<EnemyAutoAttack>(),"unifiedRemaining",enemy.Definition.UnifiedFirstAttackMoves);
+        }
+        int basics=0,specials=0,staggers=0,damage=0;
+        Action<EnemyActor> watch=enemy=>
+        {
+            enemy.GetComponent<EnemyAutoAttack>().AttackStarted+=_=>basics++;
+            enemy.SpecialAbilityUsed+=_=>specials++;
+            enemy.GetComponent<EnemyStagger>().StaggerApplied+=(_,__,___)=>staggers++;
+        };
+        foreach(var enemy in Run.Waves.ActiveEnemies) watch(enemy);
+        Run.Waves.EnemySpawned+=watch;
+        Run.Player.DamageTaken+=(_,amount)=>damage+=amount;
         Set(Run.Waves,"encounterRandom",new SavedRandom(seed));
         const BindingFlags binding=BindingFlags.Static|BindingFlags.NonPublic;
         var helper=typeof(BalancePacingValidation);var runField=helper.GetField("run",binding);object previous=runField.GetValue(null);
@@ -60,11 +83,11 @@ public sealed partial class ForestFoundationPlayTests
         finally
         {
             Time.timeScale=1;runField.SetValue(null,previous);Directory.CreateDirectory(".utmp/UnifiedCombat/Pacing");
-            File.WriteAllLines(".utmp/UnifiedCombat/Pacing/"+zone+".csv",rows);
-            File.WriteAllText(".utmp/UnifiedCombat/Pacing/"+zone+".txt",
+            File.WriteAllLines(".utmp/UnifiedCombat/Pacing/"+(baseline?"baseline-":"pressure-")+zone+".csv",rows);
+            File.WriteAllText(".utmp/UnifiedCombat/Pacing/"+(baseline?"baseline-":"pressure-")+zone+".txt",
                 "Actual Unity production combat, disposable level-1 Skeleton, seed="+seed+". No HP/damage/cadence overrides.\n"+
                 "Automated greedy swaps, free ability when ready, potion under 45%, first offered card, 2.5 game-second think interval, 6x simulation. This is NOT human pacing.\n"+
-                FormattableString.Invariant($"Outcome={(Run.IsFinished?"defeated":"observation limit")}; completed={completed}; moves={accepted}; completed_clock_moves={Run.MoveClock.Tick}; game_seconds={Time.time-started:0.###}; wall_seconds={Time.realtimeSinceStartup-wallStart:0.###}; hp={Run.Player.CurrentHealth}\n"));
+                FormattableString.Invariant($"Outcome={(Run.IsFinished?"defeated":"observation limit")}; completed={completed}; moves={accepted}; completed_clock_moves={Run.MoveClock.Tick}; basic_sequences={basics}; specials={specials}; staggers={staggers}; hp_damage={damage}; game_seconds={Time.time-started:0.###}; wall_seconds={Time.realtimeSinceStartup-wallStart:0.###}; hp={Run.Player.CurrentHealth}\n"));
         }
     }
 }

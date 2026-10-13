@@ -68,13 +68,13 @@ public sealed class RunContinuation : MonoBehaviour
            saved.clock.actions.completed<0 || saved.clock.actions.nextActorId<=0) return false;
         if(saved.board?.cells?.Count>0 && saved.board.moves!=saved.clock.actions.completed) return false;
         if(saved.enemies==null) return false;
-        if(saved.clock.profile==CombatClockSnapshot.UnifiedProfile &&
+        if(CombatClockSnapshot.IsUnified(saved.clock.profile) &&
             (!WholeMoves(saved.decreeRemaining) || !WholeMoves(saved.potionCooldown) || !WholeMoves(saved.bombCooldown))) return false;
         var identities=new System.Collections.Generic.HashSet<long>();
         foreach(var enemy in saved.enemies)
             if(enemy==null || enemy.persistentId<=0 || enemy.persistentId>=saved.clock.actions.nextActorId ||
                !identities.Add(enemy.persistentId) ||
-               (saved.clock.profile==CombatClockSnapshot.UnifiedProfile &&
+               (CombatClockSnapshot.IsUnified(saved.clock.profile) &&
                 (enemy.unifiedAttackRemaining<0 || !WholeMoves(enemy.staggerRemaining) ||
                  !WholeMoves(enemy.staggerImmunity) || !WholeMoves(enemy.rallyRemaining) || enemy.poisonMoveTicks<0))) return false;
         return true;

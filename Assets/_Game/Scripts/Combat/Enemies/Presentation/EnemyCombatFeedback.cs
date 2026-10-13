@@ -29,7 +29,7 @@ public sealed class EnemyCombatFeedback :
     [Header("Visual References")]
     [SerializeField]
     [Tooltip(
-        "Only this RectTransform moves during damage shake."
+        "Visual root for the optional basic-attack lunge."
     )]
     private RectTransform visualRoot;
 
@@ -81,20 +81,6 @@ public sealed class EnemyCombatFeedback :
     [SerializeField, Min(0.01f)]
     private float attackLungeReturnDuration = 0.08f;
 
-    [Header("Damage Shake")]
-    [SerializeField, Min(0f)]
-    private float shakeDuration = 0.5f;
-
-    [SerializeField]
-    [Tooltip(
-        "Shake distance in whole UI pixels."
-    )]
-    private Vector2 shakeStrength =
-        new Vector2(3f, 2f);
-
-    [SerializeField, Min(0.01f)]
-    private float shakeStepInterval = 0.04f;
-
     [Header("Stagger Flash")]
     [SerializeField, Min(0.02f)]
     private float blinkInterval = 0.14f;
@@ -110,11 +96,9 @@ public sealed class EnemyCombatFeedback :
     private Vector2 restingPosition;
 
     private Coroutine attackLungeCoroutine;
-    private Coroutine shakeCoroutine;
     private Coroutine blinkCoroutine;
 
     private int activeAttackLungePresentationId;
-    private bool damageShakePending;
 
     private readonly Queue<int>
         queuedAttackLungePresentationIds =
@@ -182,9 +166,6 @@ public sealed class EnemyCombatFeedback :
 
         if (enemyActor != null)
         {
-            enemyActor.DamageReceived +=
-                HandleDamageReceived;
-
             enemyActor.SpecialCounterChanged +=
                 HandleSpecialCounterChanged;
 
@@ -212,9 +193,6 @@ public sealed class EnemyCombatFeedback :
     {
         if (enemyActor != null)
         {
-            enemyActor.DamageReceived -=
-                HandleDamageReceived;
-
             enemyActor.SpecialCounterChanged -=
                 HandleSpecialCounterChanged;
 
@@ -460,8 +438,7 @@ public sealed class EnemyCombatFeedback :
                     .ActiveAttackPresentationId
                 : 0;
 
-        if (attackLungeCoroutine != null ||
-            shakeCoroutine != null)
+        if (attackLungeCoroutine != null)
         {
             /*
              * visualRoot has one movement owner. Preserve this request until
@@ -501,7 +478,6 @@ public sealed class EnemyCombatFeedback :
         int presentationId)
     {
         if (attackLungeCoroutine != null ||
-            shakeCoroutine != null ||
             !IsAttackPresentationCurrent(
                 presentationId
             ))
@@ -630,8 +606,7 @@ public sealed class EnemyCombatFeedback :
 
     private void TryStartDeferredFeedback()
     {
-        if (attackLungeCoroutine != null ||
-            shakeCoroutine != null)
+        if (attackLungeCoroutine != null)
         {
             return;
         }
@@ -641,7 +616,6 @@ public sealed class EnemyCombatFeedback :
             enemyActor.IsDefeated)
         {
             queuedAttackLungePresentationIds.Clear();
-            damageShakePending = false;
             return;
         }
 
@@ -659,20 +633,11 @@ public sealed class EnemyCombatFeedback :
 
             /*
              * A synchronized request may have timed out or been cancelled
-             * while it waited behind a shake. Its presentation ID no longer
+             * while it waited behind another lunge. Its presentation ID no longer
              * matches, so discarding it cannot affect gameplay.
              */
         }
 
-        if (!damageShakePending ||
-            (enemyAutoAttack != null &&
-             enemyAutoAttack
-                 .IsAttackSequenceInProgress))
-        {
-            return;
-        }
-
-        StartDamageShake();
     }
 
     private bool IsAttackPresentationCurrent(
@@ -734,134 +699,6 @@ public sealed class EnemyCombatFeedback :
         RestoreVisualPosition();
     }
 
-    private void HandleDamageReceived(
-        EnemyActor enemy,
-        int damageAmount)
-    {
-        if (damageAmount <= 0 ||
-            visualRoot == null)
-        {
-            return;
-        }
-
-        if (attackLungeCoroutine != null ||
-            queuedAttackLungePresentationIds.Count > 0 ||
-            (enemyAutoAttack != null &&
-             enemyAutoAttack
-                 .IsAttackSequenceInProgress))
-        {
-            /*
-             * Never interrupt a lunge or insert shake movement between hits
-             * of one accepted sequence. Coalesce normal damage feedback and
-             * play it after the sequence releases visual ownership.
-             */
-            damageShakePending = true;
-            return;
-        }
-
-        StartDamageShake();
-    }
-
-    private void StartDamageShake()
-    {
-        if (enemyActor == null ||
-            enemyActor.IsDefeated ||
-            visualRoot == null)
-        {
-            damageShakePending = false;
-            return;
-        }
-
-        if (attackLungeCoroutine != null)
-        {
-            damageShakePending = true;
-            return;
-        }
-
-        if (shakeCoroutine != null)
-        {
-            StopCoroutine(
-                shakeCoroutine
-            );
-        }
-
-        damageShakePending = false;
-        RestoreVisualPosition();
-        shakeCoroutine =
-            StartCoroutine(
-                ShakeRoutine()
-            );
-    }
-
-    private IEnumerator ShakeRoutine()
-    {
-        float elapsedTime = 0f;
-
-        SetWhiteFlash(0f);
-
-        while (elapsedTime <
-               shakeDuration)
-        {
-            if (enemyActor == null ||
-                enemyActor.IsDefeated ||
-                visualRoot == null)
-            {
-                break;
-            }
-
-            float horizontalOffset =
-                Mathf.Round(
-                    Random.Range(
-                        -Mathf.Abs(
-                            shakeStrength.x
-                        ),
-                        Mathf.Abs(
-                            shakeStrength.x
-                        )
-                    )
-                );
-
-            float verticalOffset =
-                Mathf.Round(
-                    Random.Range(
-                        -Mathf.Abs(
-                            shakeStrength.y
-                        ),
-                        Mathf.Abs(
-                            shakeStrength.y
-                        )
-                    )
-                );
-
-            visualRoot.anchoredPosition =
-                restingPosition +
-                new Vector2(
-                    horizontalOffset,
-                    verticalOffset
-                );
-
-            float stepDuration =
-                Mathf.Min(
-                    shakeStepInterval,
-                    shakeDuration -
-                    elapsedTime
-                );
-
-            elapsedTime +=
-                stepDuration;
-
-            yield return
-                new WaitForSeconds(
-                    stepDuration
-                );
-        }
-
-        RestoreVisualPosition();
-
-        shakeCoroutine = null;
-        TryStartDeferredFeedback();
-    }
-
     private void HandleStaggerApplied(
         EnemyStagger stagger,
         float addedDuration,
@@ -890,17 +727,6 @@ public sealed class EnemyCombatFeedback :
                enemyStagger != null &&
                enemyStagger.IsStaggered)
         {
-            /*
-             * The user should first see the shake.
-             * Blinking resumes once the sprite stands still.
-             */
-            if (shakeCoroutine != null)
-            {
-                SetWhiteFlash(0f);
-                yield return null;
-                continue;
-            }
-
             showWhite = !showWhite;
 
             SetWhiteFlash(
@@ -916,7 +742,6 @@ public sealed class EnemyCombatFeedback :
             {
                 if (enemyStagger == null ||
                     !enemyStagger.IsStaggered ||
-                    shakeCoroutine != null ||
                     enemyActor == null ||
                     enemyActor.IsDefeated)
                 {
@@ -972,17 +797,7 @@ public sealed class EnemyCombatFeedback :
     private void StopAllFeedback()
     {
         hitFlashUntil = 0f;
-        damageShakePending = false;
         StopAttackLunge();
-
-        if (shakeCoroutine != null)
-        {
-            StopCoroutine(
-                shakeCoroutine
-            );
-
-            shakeCoroutine = null;
-        }
 
         StopBlinking();
         RestoreVisualPosition();
@@ -1079,28 +894,6 @@ public sealed class EnemyCombatFeedback :
             Mathf.Max(
                 0.01f,
                 attackLungeReturnDuration
-            );
-
-        shakeDuration =
-            Mathf.Max(
-                0f,
-                shakeDuration
-            );
-
-        shakeStrength =
-            new Vector2(
-                Mathf.Abs(
-                    shakeStrength.x
-                ),
-                Mathf.Abs(
-                    shakeStrength.y
-                )
-            );
-
-        shakeStepInterval =
-            Mathf.Max(
-                0.01f,
-                shakeStepInterval
             );
 
         blinkInterval =

@@ -101,6 +101,7 @@ public sealed partial class RunSession : MonoBehaviour, IWaveProgressionGate
             MoveClock.Initialize(this,clockSave,forestRequested?forestProfile:CombatClockSnapshot.UnifiedProfile);
             MoveClock.ActionSettled += StatusActionSettled;
         }
+        Board.SpecialPairSwapsEnabled = CombatMoveClock.RevisedEnemyPressure;
         Continuation=gameObject.AddComponent<RunContinuation>();
         Continuation.Initialize(this,account,continued?.checkpoint,continued?.tape);
         gameObject.AddComponent<RunFrameRecorder>();

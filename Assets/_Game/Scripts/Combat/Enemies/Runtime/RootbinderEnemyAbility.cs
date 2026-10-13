@@ -35,7 +35,7 @@ public sealed class RootbinderEnemyAbility : MonoBehaviour,IEnemySpecialAbilityR
         pending=false;Outcome=success?"Planted":"Fizzled";
         if(actor!=null && !actor.IsDefeated)
         {
-            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(4);actor.EndSpecialAbilityAnimationAction();
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 4);actor.EndSpecialAbilityAnimationAction();
         }
         Publish();
     }
@@ -48,7 +48,7 @@ public sealed class RootbinderEnemyAbility : MonoBehaviour,IEnemySpecialAbilityR
     {
         var legacy=board.RestoredVineCast(actor);board.CancelGemSetThreat(legacy);
         Outcome=legacy!=null?"Rules updated":saved.rootbinderOutcome;
-        if(legacy!=null) {actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(4);}
+        if(legacy!=null) {actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 4);}
         Publish();
     }
     private void OnDisable()

@@ -131,7 +131,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         if(actor!=null && !actor.IsDefeated)
         {
             if(value.state==2) {actor.AnnounceCommittedCast("Guarding Roots");actor.NotifySpecialAbilityUsed();}
-            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 3);
         }
         Publish();
     }
@@ -161,7 +161,7 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         value.resolvedSequence=value.sequence;value.outcome=outcome;
         value.state=0;value.deadline=0;
         if(Ritual) value.nextAbility=(value.activeAbility+1)%3;
-        actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+        actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 3);
         // Existing rank duration, immunity, meter and presentation remain authoritative.
         if(applyStagger) stagger?.ApplyStagger(1,1);
         Publish();
@@ -191,14 +191,14 @@ public sealed class ForestMilestoneEnemyAbility : MonoBehaviour, IEnemySpecialAb
         {
             // A legacy terminal cast already consumed its effect and rotation.
             value.state=0;value.deadline=0;value.resolvedSequence=value.sequence;
-            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 3);
         }
         var warning=board.RestoredVineCast(actor);
         if(!Ritual && (value.state==1 || warning!=null))
         {
             board.CancelGemSetThreat(warning);warning=null;value.state=0;value.deadline=0;
             value.resolvedSequence=value.sequence;value.outcome="Rules updated";
-            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(3);
+            actor.ResetSpecialCounter();actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure ? actor.Definition.PressureSpecialTurns : 3);
         }
         BindProtection();Publish();
     }

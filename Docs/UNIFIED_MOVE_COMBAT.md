@@ -1,5 +1,11 @@
 # Unified accepted-move combat — experimental revision
 
+**Current tuning:** the 2026-10-13 v3 pressure pass supersedes the original v2
+values below for new runs. See [the pressure record](Validation/ENEMY_PRESSURE_AND_SPECIAL_SWAPS.md)
+and [current intervals](UNIFIED_MOVE_INTERVALS.md). Existing v2 saves retain
+the original rules and data documented here. Historical validation below
+was executed against v2 and is not evidence for v3.
+
 ## Authority and starting state
 
 User brief: `a6e1f030-90a1-4d95-b881-6b235484e23f/Pasted text.txt`.

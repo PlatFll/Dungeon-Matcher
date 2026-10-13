@@ -5,6 +5,62 @@ using UnityEngine;
 public partial class BoardController
 
 {
+    // Supplied by the run's saved rules. Standalone boards use current rules.
+    public bool SpecialPairSwapsEnabled { get; set; } = true;
+
+    private bool IsSpecialPairSwap(Gem first, Gem second) => SpecialPairSwapsEnabled &&
+        first != null && second != null && IsSwappableSpecial(first.SpecialType) && IsSwappableSpecial(second.SpecialType);
+
+    private static bool IsSwappableSpecial(GemSpecialType type) =>
+        type == GemSpecialType.ColorCrystal || IsChainReactiveBomb(type);
+
+    private bool[,] BuildSpecialSwapGrid(List<Gem> layout = null)
+    {
+        var result = new bool[width, height];
+        int index = 0;
+        for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
+        {
+            if (!IsCellPlayable(x, y)) continue;
+            var gem = layout == null ? GetGem(x, y) : index < layout.Count ? layout[index++] : null;
+            result[x, y] = gem != null && IsSwappableSpecial(gem.SpecialType);
+        }
+        return result;
+    }
+
+    private bool HasSpecialPairOnPath(bool[,] specials, Vector2Int[] cells)
+    {
+        if (!SpecialPairSwapsEnabled || specials == null || cells == null) return false;
+        var first = cells[0]; var last = cells[cells.Length - 1];
+        return specials[first.x, first.y] && specials[last.x, last.y];
+    }
+
+    private bool IsLiveSpecialPairOnPath(Vector2Int[] cells) => cells != null &&
+        IsSpecialPairSwap(GetGem(cells[0].x, cells[0].y),
+            GetGem(cells[cells.Length - 1].x, cells[cells.Length - 1].y));
+
+    private bool HasAvailableMoveWithSpecials(GemType[,] types, bool[,] crystals, bool[,] specials)
+    {
+        // Use candidate identities for reshuffles, never their old live positions.
+        if (SpecialPairSwapsEnabled)
+            foreach (var cells in DirectedManualPaths())
+                if (HasSpecialPairOnPath(specials, cells)) return true;
+        return HasAvailableMoveInSnapshot(types, crystals);
+    }
+
+    private IEnumerator ResolveSpecialPairActivation(Gem first, Gem second)
+    {
+        // The physical swap has already placed both seeds at their new origins.
+        // One expanded set deduplicates overlapping clears and chained specials.
+        var seeds = new HashSet<Gem> { first, second };
+        var expanded = BuildBombExpandedClearSet(seeds, true, out var crystals);
+        ReportBombClearsToCombat(null, expanded, 0);
+        yield return ClearMatchesWithBurstTargets(expanded, null, true, null);
+        yield return ResolveBombTriggeredCrystalRequests(crystals);
+        yield return CollapseAndRefillBoard();
+        var matches = FindAllMatches();
+        if (matches.Count > 0) yield return ResolveCascades(matches, null, null);
+        else if (!HasAvailableMove()) yield return ReshuffleBoard();
+    }
 
     [Header("Bomb-Triggered Crystal Charge")]
 

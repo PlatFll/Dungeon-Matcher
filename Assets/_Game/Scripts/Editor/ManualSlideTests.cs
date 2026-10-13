@@ -84,6 +84,21 @@ public sealed class ManualSlideTests
         }
         Assert.That(board.CompletedValidPlayerMoves,Is.Zero);Assert.That(board.IsBusy,Is.False);
     }
+    [Test] public void SpecialPairUsesFinalContactAndMiddleBombAloneDoesNotValidate()
+    {
+        var a = grid[0,0]; var middle = grid[1,0]; var last = grid[2,0];
+        a.SetSpecialType(GemSpecialType.RowBomb); middle.SetSpecialType(GemSpecialType.PoisonBomb);
+        Assert.That(board.PreviewManualSwap(a,middle).IsLegal, Is.False);
+        last.SetSpecialType(GemSpecialType.ShieldBomb);
+        Assert.That(board.PreviewManualSwap(a,middle).IsLegal, Is.True);
+        Assert.That(board.IsHintMoveStillValid(a,middle), Is.True);
+        var response = board.GetImmediateResponses().Single(r => r.Source == a && r.Target == middle);
+        Assert.That(response.UsesSpecial, Is.True);
+        Assert.That(response.FinalCell(a), Is.EqualTo(new Vector2Int(2,0)));
+        Assert.That(response.FinalCell(last), Is.EqualTo(new Vector2Int(1,0)));
+        board.SpecialPairSwapsEnabled = false;
+        Assert.That(board.PreviewManualSwap(a,middle).IsLegal, Is.False);
+    }
     [Test] public void DragPreviewsWithoutCommittingAndCancellationClears()
     {
         var first=grid[0,0];board.BeginPointerGesture(first,Vector2.zero,42);

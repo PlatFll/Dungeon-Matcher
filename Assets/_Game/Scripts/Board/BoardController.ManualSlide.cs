@@ -61,7 +61,7 @@ public partial class BoardController
         var pieces = cells.Select(c=>GetGem(c.x,c.y)).ToArray();
         if (pieces.Any(g=>g==null)) return null;
         return new ManualSwapPlan { Cells=cells, Gems=pieces,Types=pieces.Select(g=>g.Type).ToArray(),Specials=pieces.Select(g=>g.SpecialType).ToArray(),
-            IsLegal=ManualSwapCreatesMove(BuildCurrentTypeGrid(),BuildCurrentCrystalGrid(),cells) };
+            IsLegal=IsLiveSpecialPairOnPath(cells) || ManualSwapCreatesMove(BuildCurrentTypeGrid(),BuildCurrentCrystalGrid(),cells) };
     }
     public bool ShowManualSwapPreview(Gem first, Gem second)
     {
@@ -146,11 +146,11 @@ public partial class BoardController
         var result=new List<ResponseOption>(); var types=BuildCurrentTypeGrid(); var crystals=BuildCurrentCrystalGrid();
         foreach(var cells in DirectedManualPaths())
         {
-            if(!ManualSwapCreatesMove(types,crystals,cells)) continue;
+            if(!IsLiveSpecialPairOnPath(cells) && !ManualSwapCreatesMove(types,crystals,cells)) continue;
             var pieces=cells.Select(c=>GetGem(c.x,c.y)).ToArray();
             var first=pieces[0];var last=pieces[pieces.Length-1];
             var option=new ResponseOption{Source=first,Target=pieces[1],
-                UsesSpecial=first.SpecialType==GemSpecialType.ColorCrystal || last.SpecialType==GemSpecialType.ColorCrystal};
+                UsesSpecial=IsSpecialPairSwap(first,last) || first.SpecialType==GemSpecialType.ColorCrystal || last.SpecialType==GemSpecialType.ColorCrystal};
             for(int i=0;i<pieces.Length;i++) option.FinalCells[pieces[i]]=cells[(i+pieces.Length-1)%pieces.Length];
             if(option.UsesSpecial) {option.Clears.Add(first);option.Clears.Add(last);result.Add(option);continue;}
             RotateSnapshot(types,cells); RotateSnapshot(crystals,cells);

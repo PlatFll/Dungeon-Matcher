@@ -10,6 +10,14 @@ using UnityEngine.TestTools;
 
 public sealed class UnifiedMoveCombatTests
 {
+    [TestCase(3, 1f, 3)]
+    [TestCase(3, 1.4f, 2)]
+    [TestCase(3, 1.25f, 2)]
+    [TestCase(4, 1.25f, 3)]
+    [TestCase(2, 5f, 2)]
+    public void PressureHasteRemainsUsefulAtShortIntervals(int basis, float speed, int expected)
+        => Assert.That(EnemyAutoAttack.PressureMoveInterval(basis, speed), Is.EqualTo(expected));
+
     [TestCase(4, 1f, 4)]
     [TestCase(4, 1.4f, 3)]
     [TestCase(5, 1.25f, 4)]
@@ -95,14 +103,14 @@ public sealed partial class ForestFoundationPlayTests
         attack.SetNormalAttackModifiers(first, 1, 1.4f);
         Assert.That(attack.RemainingAttackTime, Is.EqualTo(1));
         attack.SetNormalAttackModifiers(second, 1, 1.25f);
-        Assert.That(attack.EffectiveMoveInterval, Is.EqualTo(3), "haste sources do not multiply");
+        Assert.That(attack.EffectiveMoveInterval, Is.EqualTo(2), "haste sources do not multiply");
         yield return new WaitForSeconds(.5f);
         Assert.That(attack.RemainingAttackTime, Is.EqualTo(1));
         attack.RemoveNormalAttackModifiers(first);
         attack.RemoveNormalAttackModifiers(second);
         Assert.That(attack.RemainingAttackTime, Is.EqualTo(1), "expiry does not refund progress");
         yield return Move();
-        Assert.That(attack.RemainingAttackTime, Is.EqualTo(4));
+        Assert.That(attack.RemainingAttackTime, Is.EqualTo(3));
     }
 
     private void DurableUnifiedFixture()
@@ -116,7 +124,7 @@ public sealed partial class ForestFoundationPlayTests
         }
     }
 
-    [UnityTest] public IEnumerator UnifiedStaggerProtectsBirthAndTwoFullFutureMoves()
+    [UnityTest] public IEnumerator UnifiedStaggerProtectsBirthThenOneFutureMoveAndFiveImmunityMoves()
     {
         yield return LaunchUnified(); DurableUnifiedFixture();
         var actor = Run.Waves.ActiveEnemies.First();
@@ -125,18 +133,21 @@ public sealed partial class ForestFoundationPlayTests
         Set(attack, "unifiedRemaining", 1);
         int hits = 0; attack.AttackStarted += _ => hits++;
         yield return Move(() => stagger.RegisterDamage(Mathf.CeilToInt(stagger.DamageThreshold)));
-        Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(2)); Assert.That(hits, Is.Zero);
+        Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(1)); Assert.That(hits, Is.Zero);
         yield return new WaitForSeconds(.3f);
-        Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(2));
-        yield return Move(); Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(1)); Assert.That(hits, Is.Zero);
+        Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(1));
         yield return Move(); Assert.That(stagger.IsStaggered, Is.False); Assert.That(hits, Is.Zero);
-        Assert.That(stagger.RemainingImmunityTime, Is.EqualTo(2));
-        yield return Move(); Assert.That(hits, Is.EqualTo(1)); Assert.That(stagger.RemainingImmunityTime, Is.EqualTo(1));
-        Assert.That(stagger.ApplyStagger(1, 1), Is.Zero, "forced Stagger respects immunity");
-        yield return Move(); Assert.That(stagger.RemainingImmunityTime, Is.Zero);
-        Assert.That(stagger.ApplyStagger(.5f, .5f), Is.EqualTo(2), "forced Stagger uses the same explicit future-move duration");
-        yield return Move(); Assert.That(stagger.RemainingStaggerTime, Is.EqualTo(1));
-        yield return Move(); Assert.That(stagger.IsStaggered, Is.False);
+        Assert.That(stagger.RemainingImmunityTime, Is.EqualTo(5));
+        for (int remaining = 4; remaining >= 0; remaining--)
+        {
+            Assert.That(stagger.ApplyStagger(1, 1), Is.Zero, "forced Stagger respects immunity");
+            stagger.RegisterDamage(99999);
+            Assert.That(stagger.StaggerMeterNormalized, Is.Zero);
+            yield return Move();
+            Assert.That(stagger.RemainingImmunityTime, Is.EqualTo(remaining));
+        }
+        Assert.That(hits, Is.GreaterThanOrEqualTo(2), "immunity provides actual attack opportunities");
+        Assert.That(stagger.ApplyStagger(.5f, .5f), Is.EqualTo(1));
     }
 
     [UnityTest] public IEnumerator UnifiedPartialStaggerDecaysOnlyOnceAfterAnUnansweredMove()
@@ -192,17 +203,17 @@ public sealed partial class ForestFoundationPlayTests
         Call(drummer.GetComponent<ForestCombatAbility>(),"ApplyRhythm");
         marshal.GetComponent<TownMarshalEnemyAbility>().RestoreContinuation(new EnemyCombatSnapshot
         {rallyRemaining=3,rallyExpiryMove=3,rallyTargets=new List<int>{Run.Waves.ContinuationSlot(target)}},Run.Waves.ContinuationEnemy);
-        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3));Assert.That(attack.RemainingAttackTime,Is.EqualTo(3));
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(2));Assert.That(attack.RemainingAttackTime,Is.EqualTo(3));
         Assert.That(Run.SuspendToMenu(),Is.True);yield return null;SceneManager.LoadScene("Game");
         yield return Until(()=>Run?.Continuation!=null && !Run.Continuation.IsRestoring,"haste Continue");
         Run.GetComponent<RunControlsUI>().Close();yield return Stable();DurableUnifiedFixture();
         target=Run.Waves.ContinuationEnemy(0);attack=target.GetComponent<EnemyAutoAttack>();
         Assert.That(attack.RemainingAttackTime,Is.EqualTo(3),"restoring both sources never shortens twice");
         drummer=Enemy("orc_drummer");drummer.ResolveDamageWithoutFeedback(999999);yield return Stable();
-        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3),"Marshal remains after Drummer death");
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(2),"Marshal remains after Drummer death");
         marshal=Enemy(marshalData.EnemyId);marshal.SetSpecialTurnRequirement(99);
         yield return Move();yield return Move();yield return Move();
-        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(4));
+        Assert.That(attack.EffectiveMoveInterval,Is.EqualTo(3));
         Assert.That(marshal.GetComponent<TownMarshalEnemyAbility>().RallyRemaining,Is.Zero);
     }
 
@@ -240,10 +251,10 @@ public sealed partial class ForestFoundationPlayTests
         yield return Move(() => Assert.That(Run.Waves.TrySummonEnemy(data, out summoned), Is.True));
         yield return Stable();
         Assert.That(summoned.CurrentSpecialTurnCount, Is.Zero);
-        Assert.That(summoned.GetComponent<EnemyAutoAttack>().RemainingAttackTime, Is.EqualTo(data.UnifiedFirstAttackMoves));
+        Assert.That(summoned.GetComponent<EnemyAutoAttack>().RemainingAttackTime, Is.EqualTo(data.PressureFirstAttackMoves));
         yield return Move();
         Assert.That(summoned.CurrentSpecialTurnCount, Is.EqualTo(1));
-        Assert.That(summoned.GetComponent<EnemyAutoAttack>().RemainingAttackTime, Is.EqualTo(data.UnifiedFirstAttackMoves - 1));
+        Assert.That(summoned.GetComponent<EnemyAutoAttack>().RemainingAttackTime, Is.EqualTo(data.PressureFirstAttackMoves - 1));
     }
 
     [UnityTest] public IEnumerator UnifiedConchRallyUsesThreeFutureMovesAndPreservesContinue()
@@ -254,6 +265,7 @@ public sealed partial class ForestFoundationPlayTests
         Assert.That(Run.Waves.TrySummonEnemy(data, out var conch), Is.True);
         yield return Stable(); DurableUnifiedFixture();
         var kit = conch.GetComponent<AquaticEnemyAbility>();
+        conch.SetSpecialTurnRequirement(99); // Isolate expiry from a legal three-move recast.
         Call(kit, "ApplyRally");
         Assert.That(kit.RallyRemaining, Is.EqualTo(3));
         yield return new WaitForSeconds(.4f); Assert.That(kit.RallyRemaining, Is.EqualTo(3));

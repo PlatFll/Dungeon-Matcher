@@ -125,7 +125,8 @@ public sealed class EnemyMoveIntentView : MonoBehaviour
     {
         if(text==null || visual==null) return;
         text.rectTransform.position=visual.TransformPoint(new Vector3(visual.rect.center.x,visual.rect.yMax,0));
-        text.rectTransform.anchoredPosition+=Vector2.up*16;
+        // Keep the legacy countdown below the separate, enlarged ability number.
+        // Its old offset let two-digit counters touch longer attack countdowns.
         GameplayPixelGrid.Snap(text.rectTransform);
         if(buffs!=null && weakness!=null)
         {

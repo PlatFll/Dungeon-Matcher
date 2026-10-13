@@ -74,8 +74,15 @@ public sealed class EnemyAutoAttack : MonoBehaviour
     private bool commandMadeReady;
     private float reservedAttackTime;
     private int unifiedRemaining, reservedUnifiedRemaining;
-    public int EffectiveMoveInterval => MoveInterval(enemyActor?.Definition?.UnifiedAttackMoves ?? 4, EffectiveMoveSpeed);
+    public int EffectiveMoveInterval => CurrentMoveInterval(CombatMoveClock.RevisedEnemyPressure
+        ? enemyActor?.Definition?.PressureAttackMoves ?? 3
+        : enemyActor?.Definition?.UnifiedAttackMoves ?? 4, EffectiveMoveSpeed);
     public static int MoveInterval(int baseMoves, float speed) => Mathf.Max(2, Mathf.CeilToInt(baseMoves / Mathf.Clamp(speed, .1f, 5f)));
+    // Nearest whole moves keeps ordinary 25–40% haste useful at a three-move
+    // baseline. Legacy v2 keeps ceiling rounding for exact saved-run replay.
+    public static int PressureMoveInterval(int baseMoves, float speed) => Mathf.Max(2, Mathf.RoundToInt(baseMoves / Mathf.Clamp(speed, .1f, 5f)));
+    private static int CurrentMoveInterval(int baseMoves, float speed) => CombatMoveClock.RevisedEnemyPressure
+        ? PressureMoveInterval(baseMoves, speed) : MoveInterval(baseMoves, speed);
     private float EffectiveMoveSpeed
     {
         get
@@ -385,7 +392,9 @@ public sealed class EnemyAutoAttack : MonoBehaviour
         {
             if (!isRunning && !resumeCooldown) remainingAttackTime = enemyActor.Definition.FirstAttackMoves;
             if (CombatMoveClock.Unified && !isRunning && !resumeCooldown)
-                unifiedRemaining = MoveInterval(enemyActor.Definition.UnifiedFirstAttackMoves, EffectiveMoveSpeed);
+                unifiedRemaining = CurrentMoveInterval(CombatMoveClock.RevisedEnemyPressure
+                    ? enemyActor.Definition.PressureFirstAttackMoves
+                    : enemyActor.Definition.UnifiedFirstAttackMoves, EffectiveMoveSpeed);
             isRunning = true;
             resumeCooldown = false;
             return;
