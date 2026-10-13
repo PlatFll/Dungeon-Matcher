@@ -1,0 +1,318 @@
+{
+  "authorization": "User requested LibreSprite extraction of all button icons and reference-like button-face texture; no paid generation.",
+  "references": {
+    "MainMenuTarget.png": "f6c657b84a42b3ffc69ebb5ecb2af94af95828b342051a8fbfeedced8bb09df4",
+    "SettingsTarget.png": "f98397bb6eeb26d6a603b182c14525ba54281a394537b32e0b559001ab2f634a"
+  },
+  "guide_sha256": "fb69649f4a03bf2450282e9ce47207f1ea9d7c6967d297047d0d4acdc3966974",
+  "register_sha256": "398a4067cfd85eb1ef2bcc3f291e58e0c9931eee5c7933bb4c907b4a6480b796",
+  "golden_sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+  "method": "LibreSprite JS/cel API, nearest native sampling, palette cleanup, binary contour masks, removal of tiny detached flecks. Background templates supply only fixed canvas dimensions; all RGBA pixels replaced.",
+  "icons": [
+    {
+      "name": "CrownedSkull",
+      "source": "main",
+      "crop": [
+        267,
+        981,
+        70,
+        84
+      ],
+      "canvas": [
+        28,
+        32
+      ],
+      "sampled_size": [
+        23,
+        28
+      ],
+      "mask_mode": "dark"
+    },
+    {
+      "name": "Characters",
+      "source": "main",
+      "crop": [
+        145,
+        1126,
+        72,
+        78
+      ],
+      "canvas": [
+        28,
+        32
+      ],
+      "sampled_size": [
+        25,
+        28
+      ],
+      "mask_mode": "pale"
+    },
+    {
+      "name": "Shop",
+      "source": "main",
+      "crop": [
+        522,
+        1125,
+        73,
+        79
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        20,
+        22
+      ],
+      "mask_mode": "pale"
+    },
+    {
+      "name": "Mastery",
+      "source": "main",
+      "crop": [
+        146,
+        1260,
+        76,
+        76
+      ],
+      "canvas": [
+        28,
+        28
+      ],
+      "sampled_size": [
+        26,
+        26
+      ],
+      "mask_mode": "pale"
+    },
+    {
+      "name": "Practice",
+      "source": "main",
+      "crop": [
+        531,
+        1266,
+        61,
+        62
+      ],
+      "canvas": [
+        28,
+        28
+      ],
+      "sampled_size": [
+        22,
+        23
+      ],
+      "mask_mode": "dark"
+    },
+    {
+      "name": "Challenges",
+      "source": "main",
+      "crop": [
+        315,
+        1397,
+        70,
+        64
+      ],
+      "canvas": [
+        28,
+        28
+      ],
+      "sampled_size": [
+        24,
+        22
+      ],
+      "mask_mode": "dark"
+    },
+    {
+      "name": "Music",
+      "source": "settings",
+      "crop": [
+        251,
+        475,
+        50,
+        53
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        18,
+        20
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Sfx",
+      "source": "settings",
+      "crop": [
+        252,
+        565,
+        55,
+        49
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        21,
+        19
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Motion",
+      "source": "settings",
+      "crop": [
+        250,
+        649,
+        57,
+        57
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        20,
+        20
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Vibration",
+      "source": "settings",
+      "crop": [
+        248,
+        739,
+        61,
+        55
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        21,
+        19
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Resume",
+      "source": "settings",
+      "crop": [
+        357,
+        903,
+        46,
+        53
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        17,
+        20
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Suspend",
+      "source": "settings",
+      "crop": [
+        300,
+        1011,
+        68,
+        64
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        22,
+        21
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Retry",
+      "source": "settings",
+      "crop": [
+        288,
+        1126,
+        57,
+        61
+      ],
+      "canvas": [
+        24,
+        24
+      ],
+      "sampled_size": [
+        20,
+        21
+      ],
+      "mask_mode": "white"
+    },
+    {
+      "name": "Skull",
+      "source": "settings",
+      "crop": [
+        344,
+        1238,
+        65,
+        67
+      ],
+      "canvas": [
+        28,
+        32
+      ],
+      "sampled_size": [
+        21,
+        22
+      ],
+      "mask_mode": "white"
+    }
+  ],
+  "gear": {
+    "crop": [
+      826,
+      26,
+      94,
+      87
+    ],
+    "canvas": [
+      32,
+      32
+    ]
+  },
+  "material_patches": {
+    "navigation": [
+      645,
+      991,
+      57,
+      74
+    ],
+    "affirmative": [
+      637,
+      906,
+      49,
+      51
+    ],
+    "neutral": [
+      663,
+      1020,
+      22,
+      56
+    ],
+    "destructive": [
+      596,
+      1249,
+      78,
+      49
+    ]
+  },
+  "generated_or_purchased": 0
+}

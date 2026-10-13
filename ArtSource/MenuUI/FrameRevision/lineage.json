@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-13",
+  "authorization": "Latest user request explicitly authorizes LibreSprite extraction and cleanup of menu buttons and pause/settings frames. This supersedes the earlier composition-only pixel-use assumption for these components; no character/background replacement or generation spending.",
+  "guideVersion": "1.16",
+  "inputs": [
+    {
+      "role": "canonical guide",
+      "path": "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt",
+      "sha256": "fb69649f4a03bf2450282e9ce47207f1ea9d7c6967d297047d0d4acdc3966974"
+    },
+    {
+      "role": "golden register",
+      "path": "Docs/ArtDirection/Golden_Reference_Register.md",
+      "sha256": "398a4067cfd85eb1ef2bcc3f291e58e0c9931eee5c7933bb4c907b4a6480b796"
+    },
+    {
+      "role": "Rattlebones extracted still",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    {
+      "role": "Rattlebones production idle",
+      "path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "sha256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306"
+    },
+    {
+      "role": "main menu target",
+      "path": "ArtSource/MenuUI/references/MainMenuTarget.png",
+      "sha256": "f6c657b84a42b3ffc69ebb5ecb2af94af95828b342051a8fbfeedced8bb09df4"
+    },
+    {
+      "role": "settings target",
+      "path": "ArtSource/MenuUI/references/SettingsTarget.png",
+      "sha256": "f98397bb6eeb26d6a603b182c14525ba54281a394537b32e0b559001ab2f634a"
+    }
+  ],
+  "editor": "LibreSprite development Windows x86_64; native cel API; PNG export through LibreSprite",
+  "newPaidGenerations": 0,
+  "newCreditsSpent": 0,
+  "coordinateConvention": "source x,y,width,height from top left; native output width,height",
+  "extractions": [
+    {
+      "asset": "Play",
+      "source": "MainMenuTarget.png",
+      "rect": [
+        181,
+        954,
+        582,
+        140
+      ],
+      "native": [
+        224,
+        52
+      ]
+    },
+    {
+      "asset": "Secondary",
+      "source": "MainMenuTarget.png",
+      "rect": [
+        107,
+        1110,
+        355,
+        114
+      ],
+      "native": [
+        136,
+        44
+      ]
+    },
+    {
+      "asset": "Challenge",
+      "source": "MainMenuTarget.png",
+      "rect": [
+        256,
+        1370,
+        425,
+        119
+      ],
+      "native": [
+        168,
+        44
+      ]
+    },
+    {
+      "asset": "Affirmative",
+      "source": "SettingsTarget.png",
+      "rect": [
+        224,
+        879,
+        494,
+        102
+      ],
+      "native": [
+        184,
+        38
+      ]
+    },
+    {
+      "asset": "Neutral",
+      "source": "SettingsTarget.png",
+      "rect": [
+        224,
+        993,
+        494,
+        102
+      ],
+      "native": [
+        184,
+        38
+      ]
+    },
+    {
+      "asset": "Destructive",
+      "source": "SettingsTarget.png",
+      "rect": [
+        224,
+        1223,
+        494,
+        102
+      ],
+      "native": [
+        184,
+        38
+      ]
+    }
+  ],
+  "componentExtractions": {
+    "SettingsRow": [
+      [
+        212,
+        461,
+        518,
+        84
+      ],
+      [
+        208,
+        32
+      ]
+    ],
+    "ToggleOn": [
+      [
+        555,
+        473,
+        147,
+        62
+      ],
+      [
+        52,
+        24
+      ]
+    ],
+    "ToggleOff": [
+      [
+        555,
+        646,
+        147,
+        62
+      ],
+      [
+        52,
+        24
+      ]
+    ],
+    "PanelTop": [
+      [
+        299,
+        327,
+        61,
+        24
+      ],
+      [
+        24,
+        10
+      ]
+    ],
+    "PanelBottom": [
+      [
+        299,
+        1346,
+        61,
+        24
+      ],
+      [
+        24,
+        10
+      ]
+    ],
+    "PanelLeft": [
+      [
+        176,
+        550,
+        26,
+        61
+      ],
+      [
+        10,
+        24
+      ]
+    ],
+    "PanelRight": [
+      [
+        737,
+        550,
+        27,
+        61
+      ],
+      [
+        10,
+        24
+      ]
+    ],
+    "HeaderRule": [
+      [
+        299,
+        426,
+        61,
+        24
+      ],
+      [
+        24,
+        8
+      ]
+    ],
+    "CornerJewel": [
+      [
+        168,
+        321,
+        64,
+        64
+      ],
+      [
+        22,
+        22
+      ]
+    ],
+    "SettingsCrest": [
+      [
+        390,
+        282,
+        164,
+        78
+      ],
+      [
+        64,
+        32
+      ]
+    ],
+    "Divider": [
+      [
+        228,
+        826,
+        485,
+        41
+      ],
+      [
+        184,
+        16
+      ]
+    ]
+  },
+  "cleanup": [
+    "Native-grid center sampling with no interpolated colors; nearest constrained palette (full ramp in BuildFrames.js).",
+    "Hand-authored binary masks remove external scenery.",
+    "Replace baked label/icon regions with new broad connected native faces.",
+    "Preserve whole side-jewel silhouettes; consolidate toggle highlights into explicit facets.",
+    "Compose panel bands into a native tiled 48x48 source with fixed 12px borders.",
+    "Author normal/hover/pressed/disabled state cels with identical alpha and dimensions.",
+    "Export editable ASE and PNG through LibreSprite. No full mockup enters runtime Resources."
+  ],
+  "sourceCode": "ArtSource/MenuUI/BuildFrames.js"
+}

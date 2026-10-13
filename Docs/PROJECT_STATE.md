@@ -42,7 +42,7 @@ Start a new run to test the new balance. Research, rationale and validation:
 These remain human-playtest tuning values; short automated samples cannot prove
 whole-run difficulty, progression balance or physical-device feel.
 
-## Main menu and settings presentation (2026-10-12)
+## Main menu and settings presentation (2026-10-13)
 
 The supplied main-menu/settings mockups now guide the shared non-zone UI family:
 native violet dungeon hall and skull portal, silver/gold wordmark, silver rims,
@@ -54,9 +54,20 @@ remain owned by MainMenuController and RunControlsUI.
 Art guide v1.16 documents the direction; ArtSource/MenuUI contains the contract,
 reference lineage, 54 editable native assets, and validation/review evidence.
 The user approved the main-menu background and authorized merging PR #193 for
-testing on 2026-10-12. Further PixelLab button/frame refinement is queued until
-the generation balance is replenished. Integrate alongside the Board Feel 2
-changes from PR #194; preserve their timing, feedback and replay behavior.
+testing on 2026-10-12. The latest request replaces the pending PixelLab frame pass
+with authorized extraction and cleanup in LibreSprite. Thirty-three native
+button/frame exports now use the reference's sculpted silver trim, purple jewels,
+skull crest, settings brackets and faceted toggles. Blank faces and alpha masks
+are rebuilt at runtime-native dimensions; labels remain live Thaleah. Short
+green/red actions use larger lettering. The background and wordmark are unchanged.
+This refinement is on a review branch pending approval, with evidence in
+ArtSource/MenuUI/FrameRevision/README.md. A follow-up extracts the fourteen button
+and settings icons plus the gear from the clean mockups, adds sampled stone/enamel
+face texture, and limits dark icon insets to the three controls that use them in
+the reference. Native canvas sizes and live label/hit-area layout are preserved.
+Current follow-up evidence is in ArtSource/MenuUI/IconRevision/README.md.
+No generation budget was used.
+Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
 Physical-device touch and display checks remain user validation.
 

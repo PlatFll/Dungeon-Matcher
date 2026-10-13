@@ -20,3 +20,5 @@ $menuScript+='app.command.Exit();'
 $menuJob=Start-Process -FilePath $menuLibre -ArgumentList @('--script',('"{0}"' -f $menuFile)) -WindowStyle Hidden -PassThru
 $menuJob.WaitForExit();$menuJob.Refresh();if($menuJob.ExitCode -ne 0){throw "LibreSprite export exit $($menuJob.ExitCode)"}
 Write-Output "LibreSprite authored and exported $($menuExports.Count) native assets."
+# The user-approved extraction workflow supersedes the original simple frames.
+& (Join-Path $PSScriptRoot 'Build-MenuFrames.ps1')
