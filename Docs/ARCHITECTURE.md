@@ -94,7 +94,7 @@ not a second wave-spawning system. `WaveController` remains the spawn owner.
 
 ## Unified move-combat authority (2026-10-08)
 
-New runs in all five zones use `unified-accepted-moves-v2`. One accepted manual
+New runs in all five zones use `unified-accepted-moves-v3`. One accepted manual
 action advances basics, specials and timed effects once after its full cascades.
 Thinking, invalid swaps, menus, free skills and presentation consume no moves.
 This is an approved experiment; numerical tuning remains provisional.
@@ -124,6 +124,16 @@ No old float attack timer is reinterpreted as an integer.
 See [implementation and evidence](UNIFIED_MOVE_COMBAT.md). Human pacing and
 physical-device acceptance remain separate from automated Unity evidence.
 
+
+`EnemyDefinition` keeps separate v3 pressure intervals so v2 replay uses its
+original data. `CombatClockSnapshot.IsUnified` recognizes both; only v3 selects
+the new stagger tuning. `RunSession` passes the saved special-pair rule to
+BoardController. Its swap, hint, useful-response and reshuffle checks recognize
+special pairs, while `ResolveSpecialPairActivation` reuses bomb expansion,
+central clear reporting, ordered shatter, queued crystals and normal refill.
+One accepted action still owns the board until all cascades settle.
+`EnemyHitFlashPresenter` retains damage flash; `EnemyCombatFeedback` no longer
+subscribes to damage for transform shake and keeps attack-lunge ownership.
 
 ## Shared mechanic variation
 
@@ -298,7 +308,7 @@ width. These layout rules do not resize character art or affect combat state.
 `MainMenuController` temporarily offers ready `ZoneDefinition` entries before a
 fresh launch. `RunLaunchOptions.StartingZone` is a one-use handoff, consumed and
 validated by `RunSession`; an existing checkpoint always wins. A fresh start in any ready zone
-installs `unified-accepted-moves-v2` before actors initialize and
+installs `unified-accepted-moves-v3` before actors initialize and
 enables the normal travel controller. It never uses the isolated fixture flag.
 `RunLaunchOptions.TestingZonePickerEnabled` controls this temporary menu and
 same-zone Retry behavior; disable it for release. No zone preference or new
@@ -380,7 +390,8 @@ See [expanded roster rules](Forest/EXPANDED_ROSTER.md).
 
 Version 1 snapshots keep seconds behavior. Version 2 records either the existing
 `accepted-moves-v1`, `seconds-basics-move-abilities-v1`, the travel
-`seconds-effects-move-abilities-v1`, or `unified-accepted-moves-v2` profile,
+`seconds-effects-move-abilities-v1`, `unified-accepted-moves-v2`, or the current
+`unified-accepted-moves-v3` profile,
 zone, completed action, next actor ID and owner state. Only settled snapshots are
 committed; accepted work in flight uses the established replay journal. Unknown
 profiles and invalid actor identities preserve the durable run and block play.

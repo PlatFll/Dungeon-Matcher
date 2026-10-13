@@ -54,6 +54,16 @@ existing weighted selector; supports always have an escort and leader defeats
 are followed by normal-enemy relief. Automated seed coverage cannot establish
 human visit length or difficulty. See `Docs/Frostwake/WORKLIST.md` for evidence.
 
+## Accepted-move pressure revision (2026-10-13)
+
+New runs use the separate v3 data in [UNIFIED_MOVE_INTERVALS.md](UNIFIED_MOVE_INTERVALS.md).
+Basic opening moves are 2–3, repeats 2–4; ability readiness is usually 2–4.
+Stagger threshold fractions by rank are 0.60/0.70/0.80/0.90, duration one full
+future move, immunity five. Off-color decay and Rattled remain unchanged.
+HP, hit damage, permanent progression, waves and economy are unchanged in this
+pass. Historical second-based tables below describe the legacy profile.
+See [rationale and evidence](Validation/ENEMY_PRESSURE_AND_SPECIAL_SWAPS.md).
+
 ## Targets and economy
 
 | Target | Range |

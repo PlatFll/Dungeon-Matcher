@@ -65,7 +65,8 @@ public sealed class KingEnemyAbility : MonoBehaviour, IEnemySpecialAbilityRuntim
         {
             crossedHalf = true; thresholds.Enqueue(50);
             ownAttack?.SetNormalAttackModifiers(this, actor.Definition.EnrageDamageMultiplier, actor.Definition.EnrageSpeedMultiplier);
-            actor.SetSpecialTurnRequirement(actor.Definition.EnragedSpecialMoves);
+            actor.SetSpecialTurnRequirement(CombatMoveClock.RevisedEnemyPressure
+                ? Mathf.Max(2, actor.Definition.PressureSpecialTurns - 1) : actor.Definition.EnragedSpecialMoves);
             Enraged?.Invoke(this);
         }
         if (!crossedQuarter && before * 4L >= enemy.MaxHealth && after * 4L < enemy.MaxHealth)

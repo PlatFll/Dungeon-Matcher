@@ -509,6 +509,9 @@ MonoBehaviour:
   unifiedDecayDamage: {x: 10, y: 7.5, z: 5, w: 3}
   unifiedStaggerMoves: 2
   unifiedImmunityMoves: 2
+  pressureHealthFractions: {x: 0.6, y: 0.7, z: 0.8, w: 0.9}
+  pressureStaggerMoves: 1
+  pressureImmunityMoves: 5
   remainingStaggerTime: 0
   isStaggered: 0
 --- !u!114 &2090934418872691995
@@ -538,9 +541,6 @@ MonoBehaviour:
   attackLungeOutDuration: 0.06
   attackLungeHoldDuration: 0.025
   attackLungeReturnDuration: 0.08
-  shakeDuration: 0.5
-  shakeStrength: {x: 3, y: 2}
-  shakeStepInterval: 0.04
   blinkInterval: 0.14
   whiteFlashAmount: 1
 --- !u!114 &8783168744018771146

@@ -15,7 +15,8 @@ public sealed class CombatMoveClock : MonoBehaviour, IWaveProgressionGate
     public static CombatMoveClock Current { get; private set; }
     public static bool Active => Current != null;
     public static bool MoveEffects => Active && Current.state.profile != CombatClockSnapshot.LegacyEffectsProfile;
-    public static bool Unified => Active && Current.state.profile == CombatClockSnapshot.UnifiedProfile;
+    public static bool Unified => Active && CombatClockSnapshot.IsUnified(Current.state.profile);
+    public static bool RevisedEnemyPressure => Active && Current.state.profile == CombatClockSnapshot.UnifiedProfile;
     public static bool MoveBasics => Unified || Active && Current.state.profile == CombatClockSnapshot.MoveProfile;
     public static bool PausesTimedBasics => Active && !MoveBasics && Current.IsBlockingWaveProgression;
     public static int EffectAction => Current == null ? 0 : Math.Max(Current.state.actions.completed, Current.state.actions.pending);

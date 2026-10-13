@@ -147,9 +147,9 @@ public partial class BoardController
         {
             var a=GetGem(firstColumn,firstRow);var b=GetGem(secondColumn,secondRow);
             if(a==null || b==null) return;
-            if(ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(firstColumn,firstRow,secondColumn,secondRow)))
+            if(IsLiveSpecialPairOnPath(ManualSwapCells(firstColumn,firstRow,secondColumn,secondRow)) || ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(firstColumn,firstRow,secondColumn,secondRow)))
                 candidates.Add(new HintMoveCandidate(a,b));
-            if(ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(secondColumn,secondRow,firstColumn,firstRow)))
+            if(IsLiveSpecialPairOnPath(ManualSwapCells(secondColumn,secondRow,firstColumn,firstRow)) || ManualSwapCreatesMove(typeGrid,crystalGrid,ManualSwapCells(secondColumn,secondRow,firstColumn,firstRow)))
                 candidates.Add(new HintMoveCandidate(b,a));
             return;
         }
@@ -198,7 +198,7 @@ public partial class BoardController
          * Shake the crystal toward its valid target rather than
          * pretending its hidden original color creates a match.
          */
-        if (firstIsCrystal ||
+        if (IsSpecialPairSwap(firstGem, secondGem) || firstIsCrystal ||
             secondIsCrystal)
         {
             Gem crystalSource =
@@ -544,7 +544,7 @@ public partial class BoardController
          * This includes crystal + ordinary gem, crystal + bomb,
          * and crystal + crystal.
          */
-        if (sourceGem.SpecialType ==
+        if (IsSpecialPairSwap(sourceGem, targetGem) || sourceGem.SpecialType ==
                 GemSpecialType.ColorCrystal ||
             targetGem.SpecialType ==
                 GemSpecialType.ColorCrystal)

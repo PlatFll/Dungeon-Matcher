@@ -182,7 +182,8 @@ public sealed partial class EnemyActor : MonoBehaviour
 
     public int SpecialTurnRequirement =>
         isInitialized
-            ? (specialTurnRequirementOverride > 0 ? specialTurnRequirementOverride : RuntimeStats.SpecialTurnRequirement)
+            ? (specialTurnRequirementOverride > 0 ? specialTurnRequirementOverride :
+                CombatMoveClock.RevisedEnemyPressure ? definition.PressureSpecialTurns : RuntimeStats.SpecialTurnRequirement)
             : 0;
 
     public int CurrentSpecialTurnCount =>
@@ -541,7 +542,7 @@ public sealed partial class EnemyActor : MonoBehaviour
 
         /*
          * Normal direct/clear damage uses DamageReceived to drive the
-         * existing hit shake. Damage-over-time sources can deliberately
+         * hit flash and stagger buildup. Damage-over-time sources can deliberately
          * suppress that presentation event while still sharing the same
          * authoritative health and defeat path.
          */

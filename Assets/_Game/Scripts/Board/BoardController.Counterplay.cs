@@ -90,7 +90,7 @@ public partial class BoardController
         {
             var a = candidate.SourceGem; var b = candidate.TargetGem;
             var option = new ResponseOption { Source = a, Target = b,
-                UsesSpecial = a.SpecialType == GemSpecialType.ColorCrystal || b.SpecialType == GemSpecialType.ColorCrystal };
+                UsesSpecial = IsSpecialPairSwap(a,b) || a.SpecialType == GemSpecialType.ColorCrystal || b.SpecialType == GemSpecialType.ColorCrystal };
             if (option.UsesSpecial) { option.Clears.Add(a); option.Clears.Add(b); result.Add(option); continue; }
             types[a.Column,a.Row] = b.Type; types[b.Column,b.Row] = a.Type;
             var atFirst=new HashSet<Gem>();var atSecond=new HashSet<Gem>();

@@ -788,8 +788,17 @@ public partial class BoardController : MonoBehaviour
             yield break;
         }
 
+        if (IsSpecialPairSwap(first, interactionSecond))
+        {
+            NotifyValidPlayerMoveAccepted();
+            yield return ResolveSpecialPairActivation(first, interactionSecond);
+            isBusy = false;
+            NotifyValidPlayerMoveCompleted();
+            yield break;
+        }
+
         /*
-         * No crystal interaction occurred. Resolve an ordinary
+         * No special interaction occurred. Resolve an ordinary
          * swap using the existing match and cascade logic.
          */
         HashSet<Gem> matches =
@@ -1994,9 +2003,10 @@ public partial class BoardController : MonoBehaviour
                 continue;
             }
 
-            if (!HasAvailableMoveInSnapshot(
+            if (!HasAvailableMoveWithSpecials(
                     candidateGrid,
-                    candidateCrystals))
+                    candidateCrystals,
+                    BuildSpecialSwapGrid(candidate)))
             {
                 continue;
             }
@@ -2279,9 +2289,10 @@ public partial class BoardController : MonoBehaviour
         // Reuse the crystal-aware matching predicate already used by hints.
         // A pinned/inaccessible crystal is not an ordinary gem of its hidden
         // color and must not manufacture a move for dead-board or pin safety.
-        return HasAvailableMoveInSnapshot(
+        return HasAvailableMoveWithSpecials(
             BuildCurrentTypeGrid(),
-            BuildCurrentCrystalGrid()
+            BuildCurrentCrystalGrid(),
+            BuildSpecialSwapGrid()
         );
     }
 

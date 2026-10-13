@@ -38,6 +38,9 @@ public sealed class EnemyStagger : MonoBehaviour
     [SerializeField] private Vector4 unifiedDecayDamage = new Vector4(10f, 7.5f, 5f, 3f);
     [SerializeField, Min(1)] private int unifiedStaggerMoves = 2;
     [SerializeField, Min(0)] private int unifiedImmunityMoves = 2;
+    [SerializeField] private Vector4 pressureHealthFractions = new Vector4(.60f, .70f, .80f, .90f);
+    [SerializeField, Min(1)] private int pressureStaggerMoves = 1;
+    [SerializeField, Min(0)] private int pressureImmunityMoves = 5;
     private int lastUnifiedExpiry = -1;
     public float OffColorDecayDamage => unifiedDecayDamage[(int)enemyActor.Definition.Category];
 
@@ -346,7 +349,8 @@ public sealed class EnemyStagger : MonoBehaviour
                 break;
         }
 
-        if (CombatMoveClock.Unified) healthFraction = unifiedHealthFractions[(int)enemyActor.Definition.Category];
+        if (CombatMoveClock.Unified) healthFraction = (CombatMoveClock.RevisedEnemyPressure
+            ? pressureHealthFractions : unifiedHealthFractions)[(int)enemyActor.Definition.Category];
         return Mathf.Max(1f, enemyActor.MaxHealth * Mathf.Max(0.01f, healthFraction));
     }
 
@@ -357,7 +361,8 @@ public sealed class EnemyStagger : MonoBehaviour
             return;
         }
 
-        if (CombatMoveClock.MoveEffects) duration = CombatMoveClock.Unified ? Mathf.Max(1, unifiedStaggerMoves) : 1;
+        if (CombatMoveClock.MoveEffects) duration = CombatMoveClock.Unified
+            ? Mathf.Max(1, CombatMoveClock.RevisedEnemyPressure ? pressureStaggerMoves : unifiedStaggerMoves) : 1;
         moveStaggerApplied = CombatMoveClock.EffectAction;
         isStaggered = true;
         activeStaggerDuration = duration;
@@ -376,7 +381,9 @@ public sealed class EnemyStagger : MonoBehaviour
         activeStaggerDuration = 0f;
         isStaggered = false;
         remainingBuildupGraceTime = 0f;
-        remainingImmunityTime = CombatMoveClock.Unified ? Mathf.Max(0, unifiedImmunityMoves) : CombatMoveClock.MoveEffects ? 2 : PostStaggerImmunitySeconds;
+        remainingImmunityTime = CombatMoveClock.Unified
+            ? Mathf.Max(0, CombatMoveClock.RevisedEnemyPressure ? pressureImmunityMoves : unifiedImmunityMoves)
+            : CombatMoveClock.MoveEffects ? 2 : PostStaggerImmunitySeconds;
         moveImmunityApplied = CombatMoveClock.EffectAction;
         SetMeterNormalized(0f);
 
