@@ -61,7 +61,12 @@ skull crest, settings brackets and faceted toggles. Blank faces and alpha masks
 are rebuilt at runtime-native dimensions; labels remain live Thaleah. Short
 green/red actions use larger lettering. The background and wordmark are unchanged.
 This refinement is on a review branch pending approval, with evidence in
-ArtSource/MenuUI/FrameRevision/README.md. No generation budget was used.
+ArtSource/MenuUI/FrameRevision/README.md. A follow-up extracts the fourteen button
+and settings icons plus the gear from the clean mockups, adds sampled stone/enamel
+face texture, and limits dark icon insets to the three controls that use them in
+the reference. Native canvas sizes and live label/hit-area layout are preserved.
+Current follow-up evidence is in ArtSource/MenuUI/IconRevision/README.md.
+No generation budget was used.
 Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
 Physical-device touch and display checks remain user validation.

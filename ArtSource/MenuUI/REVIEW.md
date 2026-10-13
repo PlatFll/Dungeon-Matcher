@@ -16,7 +16,9 @@ Status: the user approved the background and authorized merging PR #193 for
 testing on 2026-10-12. On 2026-10-13 the user requested LibreSprite extraction and
 cleanup for the button/frame refinement, replacing the queued PixelLab route.
 The [new frame review](FrameRevision/README.md) records the 33 revised exports,
-current comparisons, native checks and Unity evidence. No new generation was used.
+current comparisons, native checks and Unity evidence. The subsequent
+[icon and material review](IconRevision/README.md) covers the extracted button
+icons, gear and textured faces. No new generation was used.
 The original implementation evidence below is retained as history.
 
 ## Visual evidence
@@ -49,7 +51,7 @@ in `Assets/_Game/Resources/UI/GlobalMenu/`.
 | SettingsRow / Toggle | 208×32 / 52×24 | Settings rows and explicit on/off states |
 | IconPlate / CornerJewel | 32×32 / 22×22 | Reusable inset and purple trim |
 | SettingsCrest / Divider | 64×32 / 184×16 | Header and action separator |
-| Utility/action icons | 24px to 32px canvases | Separate icons; existing potion reused |
+| Utility/action icons | 24px to 32px canvases | Separate cleaned reference extracts; menu-only potion |
 
 Button families and gear include normal, highlighted, pressed and disabled
 exports. Labels are live Thaleah text. The large button construction is documented

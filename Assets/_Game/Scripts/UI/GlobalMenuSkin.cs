@@ -68,16 +68,20 @@ public static class GlobalMenuSkin
         var label=button.GetComponentInChildren<TMP_Text>();
         if(family=="Gear") {label.text="";Place(label.rectTransform,button.transform,size,Vector2.zero);return;}
         bool light=family=="Play"||family=="Secondary"||family=="Challenge";
-        float inset=family=="Play"?62:light?56:48;
-        Place(label.rectTransform,button.transform,new Vector2(size.x-inset,size.y-12),new Vector2(family=="Play"?19:light?14:16,0));
+        bool shortAction=family=="Affirmative"||family=="Destructive";
+        float inset=family=="Play"?62:light?56:shortAction?68:48;
+        Place(label.rectTransform,button.transform,new Vector2(size.x-inset,size.y-12),new Vector2(family=="Play"?19:light?14:shortAction?22:16,0));
         // Short primary pause actions have the stronger lettering of the
         // reference; longer neutral actions retain their verified native fit.
         int em=family=="Play"?64:family=="Affirmative"||family=="Destructive"?24:16;
         StyleText(label,em,light);
         if(icon!=null)
         {
-            float iconX=-size.x/2+(family=="Play"?32:26);
-            if(light)Art("IconPlate",button.transform,"IconPlate",new Vector2(32,32),new Vector2(iconX,0));
+            float iconX=-size.x/2+(family=="Play"?32:shortAction?52:26);
+            // Only these reference icons have a dark inset. The helmet, potion
+            // and purple gem sit directly on the pale stone face.
+            if(family=="Play"||family=="Challenge"||icon=="Practice")
+                Art("IconPlate",button.transform,"IconPlate",new Vector2(32,32),new Vector2(iconX,0));
             Art("ActionIcon",button.transform,icon,Load(icon).rect.size,new Vector2(iconX,0));
         }
     }
@@ -109,9 +113,9 @@ public static class GlobalMenuSkin
     {
         var button=GameUi.Button(name,parent,"",new Vector2(208,32),new Vector2(0,y),()=>{});Skin(button,"SettingsRow");
         var label=button.GetComponentInChildren<TMP_Text>();label.text=title;
-        Place(label.rectTransform,button.transform,new Vector2(116,24),new Vector2(-15,0));
+        Place(label.rectTransform,button.transform,new Vector2(104,24),new Vector2(-8,0));
         StyleText(label,16);label.alignment=TextAlignmentOptions.Left;
-        Art("SettingIcon",button.transform,icon,new Vector2(24,24),new Vector2(-87,0));
+        Art("SettingIcon",button.transform,icon,new Vector2(24,24),new Vector2(-78,0));
         var state=Art("Toggle",button.transform,value()?"ToggleOn":"ToggleOff",new Vector2(52,24),new Vector2(73,0));
         var stateLabel=Label("State",state.transform,value()?"ON":"OFF",new Vector2(28,20),new Vector2(-9,0),16);
         button.onClick.AddListener(()=>{toggle();state.sprite=Load(value()?"ToggleOn":"ToggleOff");stateLabel.text=value()?"ON":"OFF";});

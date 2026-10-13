@@ -20,16 +20,44 @@ function read(path){app.open(path);var s=app.activeSprite,c=s.layer(0).cel(0),a=
 function nearest(r,g,b,limit){var best=0,score=1e20;for(var n=0;n<(limit||rgb.length);n++){var c=rgb[n],v=(r-c[0])*(r-c[0])+1.2*(g-c[1])*(g-c[1])+(b-c[2])*(b-c[2]);if(v<score){score=v;best=n;}}return palette[best];}
 // Center-sample at the new native grid, no blur or interpolated edge pixels.
 function extract(src,x,y,w,h,W,H,limit){var a=canvas(W,H);for(var Y=0;Y<H;Y++)for(var X=0;X<W;X++){var i=(Math.floor(y+(Y+.5)*h/H)*src.w+Math.floor(x+(X+.5)*w/W))*4;dot(a,X,Y,nearest(src.p[i],src.p[i+1],src.p[i+2],limit));}return a;}
-function save(a,name){app.open(PROJECT+'Assets/_Game/Resources/UI/Consumables/Potion.png');var s=app.activeSprite;s.saveAs(ROOT+'native/'+name+'.aseprite',false);s.resize(a.w,a.h);s.commit();app.command.BackgroundFromLayer();s.commit();s.layer(0).cel(0).image.putImageData(a.p);s.layer(0).name=name;s.commit();s.save();app.activeDocument.close();}
+function save(a,name){
+ if(typeof ONLY!=='undefined'&&ONLY!==name)return;
+ var path=ROOT+'native/'+name+'.aseprite';
+ // All resource dimensions are deliberately unchanged. Open the existing PNG
+ // as a full-size cel template; replace every RGBA pixel, including transparency.
+ // This avoids LibreSprite's canvas-resize API leaving a smaller cel behind.
+ app.open(PROJECT+'Assets/_Game/Resources/UI/GlobalMenu/'+name+'.png');var s=app.activeSprite;s.saveAs(path,false);
+ var cel=s.layer(0).cel(0);if(cel.image.width!==a.w||cel.image.height!==a.h){app.activeDocument.close();throw new Error('Incorrect template dimensions: '+name);}
+ cel.image.putImageData(a.p);
+ // putImageData mutates pixels directly. An explicit layer transaction marks
+ // the document dirty even when its existing layer already has the final name.
+ s.layer(0).name='Editing '+name;s.commit();s.layer(0).name=name;s.commit();s.saveAs(path,true);app.activeDocument.close();
+ var check=read(path);if(check.w!==a.w||check.h!==a.h)throw new Error('Incorrect saved dimensions: '+name);
+ for(var i=0;i<a.p.length;i++)if(check.p[i]!==a.p[i])throw new Error('Incorrect saved pixel: '+name+' at '+i);
+}
 function states(a,name){save(a,name);for(var z=0;z<3;z++){var b=canvas(a.w,a.h);b.p.set(a.p);for(var i=0;i<b.p.length;i+=4){if(!b.p[i+3])continue;var gray=Math.round((a.p[i]*.25+a.p[i+1]*.5+a.p[i+2]*.25)*.65);for(var k=0;k<3;k++){var c=a.p[i+k];b.p[i+k]=z===0?Math.min(255,c+10):z===1?Math.round(c*.72):gray;}}save(b,name+['Hover','Pressed','Disabled'][z]);}}
 var main=read(ROOT+'references/MainMenuTarget.png'), settings=read(ROOT+'references/SettingsTarget.png');
-// Fine-grained texture is retained on the narrow extracted rims only. The new
-// label faces use broad connected shades with a few deliberate edge chips.
+// Empty material strips from the mockup (no letters/icons). Sample at the same
+// native density as the rims. Mirror alternating patches to avoid a visible seam.
+function material(a,src,box,bounds,tones){
+ var pw=Math.max(1,Math.round(box[2]/2.65)),ph=Math.max(1,Math.round(box[3]/2.65));
+ for(var y=bounds[1];y<bounds[3];y++)for(var x=bounds[0];x<bounds[2];x++){
+  var u=x-bounds[0],v=y-bounds[1],tile=Math.floor(u/pw);
+  var X=u%pw;if(tile%2)X=pw-1-X;
+  var Y=(v+tile*3)%(ph*2);if(Y>=ph)Y=ph*2-1-Y;
+  var i=(Math.floor(box[1]+(Y+.5)*box[3]/ph)*src.w+Math.floor(box[0]+(X+.5)*box[2]/pw))*4;
+  var best=0,score=1e20;
+  for(var n=0;n<tones.length;n++){var c=tones[n],e=0;for(var k=0;k<3;k++)e+=Math.pow(src.p[i+k]-parseInt(c.substr(k*2,2),16),2);if(e<score){score=e;best=n;}}
+  dot(a,x,y,tones[best]);
+ }
+}
+// Reference rims and cleaned blank faces remain separate from live labels/icons.
 function navigation(x,y,w,h,W,H,name){var a=extract(main,x,y,w,h,W,H,23),original=canvas(W,H);original.p.set(a.p);
  mask(a,[[9,0],[W-9,0],[W-6,5],[W-6,8],[W,13],[W,H-13],[W-6,H-8],[W-6,H-4],[W-10,H],[10,H],[6,H-4],[6,H-8],[0,H-13],[0,13],[6,8],[6,4]]);
  bevel(a,10,5,W-20,H-10,4,'9891a5');
  bevel(a,11,6,W-22,H-13,4,'bfbdcd');
  poly(a,[[15,7],[W-15,7],[W-12,10],[W-12,14],[W-18,14],[W-18,19],[W-20,19],[W-20,H-13],[W-25,H-13],[W-25,H-9],[15,H-9],[12,H-12],[12,10]],'d4d2df');
+ material(a,main,[645,991,57,74],[17,9,W-18,H-10],['aaa5b8','b7b5c6','c2c0cf','cdcad7','d4d2df','e1dee7']);
  // Connected chips around the perimeter keep the label field quiet.
  poly(a,[[14,12],[18,12],[18,16],[17,16],[17,20],[13,20],[13,17],[12,17],[12,14]],'bfbdcd');
  poly(a,[[W-23,7],[W-15,7],[W-12,10],[W-12,14],[W-16,14],[W-16,12],[W-20,12],[W-20,10],[W-23,10]],'e8e6ee');
@@ -52,6 +80,9 @@ function action(y,name,tones){var W=184,H=38,a=extract(settings,224,y,494,102,W,
  mask(a,[[7,0],[W-7,0],[W,7],[W,H-7],[W-7,H],[7,H],[0,H-7],[0,7]]);
  bevel(a,7,4,W-14,H-8,4,tones[0]);bevel(a,9,6,W-18,H-12,3,tones[1]);
  poly(a,[[13,7],[W-14,7],[W-10,11],[W-10,15],[W-35,15],[W-51,H-8],[13,H-8],[10,H-11],[10,10]],tones[2]);
+ var patches={Affirmative:[637,906,49,51],Neutral:[663,1020,22,56],Destructive:[596,1249,78,49]};
+ var ramps={Affirmative:['008733','00993b','00a641','00b147','0ac850'],Neutral:['535067','5c586f','676079'],Destructive:['a80b36','b5103d','c11140','cc1644','da224a']};
+ material(a,settings,patches[name],[15,9,W-15,H-9],ramps[name]);
  line(a,13,5,W-14,5,tones[3]);line(a,10,8,10,H-10,tones[2]);line(a,13,H-6,W-14,H-6,tones[0]);
  // Small corner glints resolve into solid native pixels.
  line(a,10,7,14,11,tones[3]);line(a,W-15,10,W-11,6,tones[3]);dot(a,12,7,'fbf7fa');
@@ -109,4 +140,4 @@ var divider=extract(settings,228,826,485,41,184,16,15);
 // Remove the scene behind the thin rule and its skull, preserving dark sockets.
 for(var y=0;y<16;y++)for(var x=0;x<184;x++){if(x<80||x>103){if(y<5||y>9)dot(divider,x,y,null);}else if(!inside(x,y,[[89,0],[96,0],[100,4],[100,10],[97,14],[88,14],[85,10],[85,4]]))dot(divider,x,y,null);}
 save(divider,'Divider');
-app.command.Exit();
+// Build-MenuFrames appends IconDetails.js and closes LibreSprite after both passes.

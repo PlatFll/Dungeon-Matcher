@@ -1,0 +1,952 @@
+[
+  {
+    "asset": "Affirmative",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 23,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "9d2a60150dd724a8e99ba9768f650e7c6152fd8f1e6b504c40447ca1a43e0d89",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "AffirmativeDisabled",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 23,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "d8aa471a34fe92d43c0b6a4628c78b9c6f756d220d0aa4f1bea3bd7029ee7bd1",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "AffirmativeHover",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 23,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "a4075cf31e186da933d35e7100c7750afa8b6d8cf184718724fc60dda210dc88",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "AffirmativePressed",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 23,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "991be17567d186f218cbd88a5cec3cd8c17356e454951c9131785df0358f11d1",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "Challenge",
+    "width": 168,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "be3fc05c63448a55e3aec5da25656ad708104feca603f25f546173bc8e06b09c",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      168,
+      44
+    ]
+  },
+  {
+    "asset": "ChallengeDisabled",
+    "width": 168,
+    "height": 44,
+    "visible_colors": 25,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "067068dbaebb81fe2038df362e59d838a73f1d85e4d59f03188d82867c852d1e",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      168,
+      44
+    ]
+  },
+  {
+    "asset": "ChallengeHover",
+    "width": 168,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "31a6bfbc869b801225c9439c325c1d60cf1fbea018096b7727fbc22c0b32cbe6",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      168,
+      44
+    ]
+  },
+  {
+    "asset": "ChallengePressed",
+    "width": 168,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "6f84180dcb10981d1488a0e6bff40744b11eb47083b172a05098915fa2b4ea0c",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      168,
+      44
+    ]
+  },
+  {
+    "asset": "Challenges",
+    "width": 28,
+    "height": 28,
+    "visible_colors": 9,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "20ea6e51e0396a46dbbd4e16265266f49ff3475c1e92b8b1ea9c384ffe12b4a9",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      4,
+      4,
+      25,
+      24
+    ]
+  },
+  {
+    "asset": "Characters",
+    "width": 28,
+    "height": 32,
+    "visible_colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "287c930b0e5c64b158b7026424b9c978d3ad3dd8a5402bc47a62d330b2a6dd42",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      2,
+      3,
+      25,
+      29
+    ]
+  },
+  {
+    "asset": "CornerJewel",
+    "width": 22,
+    "height": 22,
+    "visible_colors": 23,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "707fb3980ddcec75a624e9948c7c9c597e88abd9f82a95954080cfb9eeac6414",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "CrownedSkull",
+    "width": 28,
+    "height": 32,
+    "visible_colors": 18,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "66b0bac618b7377dee291c6461c7c68569bd60cf2a70ea28647e5023de7e1255",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      1,
+      2,
+      26,
+      30
+    ]
+  },
+  {
+    "asset": "Destructive",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 21,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "ad099f82b7776fdedde6719f4aa5f985a0f43af4e63a63795cfeb820f8f07fb6",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "DestructiveDisabled",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 20,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "d9a633438b794e6fd478e4ded37d0d6954ca826582bcd83e71f720ef133b275e",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "DestructiveHover",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 21,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "05355662671db1167fc48bb3ae146cc6d492ed47badfe81c6bbfe44240fac9fa",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "DestructivePressed",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 21,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "2198eb57b23668dc56989eb598e779df68f2c1db26e5324c9d587858a5816c93",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "Divider",
+    "width": 184,
+    "height": 16,
+    "visible_colors": 14,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "117a3c5375f6bd7967e035e3687f8ae3a56ea83ade28d5c56e3c2279dcf9a1d4",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Gear",
+    "width": 32,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "369fc829e881c48dcaccdb71bea9615878d59eccc040102b6ba0a2c5aeb3ad05",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "asset": "GearDisabled",
+    "width": 32,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "00a6c34d94128fadc8ab281ed214bef8dac395b48f9696fd1b32d2d78b274e23",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "asset": "GearHover",
+    "width": 32,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "cbdd27d262a7c8b38d4b8bc4695e71a33989ff2de8f2f8f00fba602a748b07a9",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "asset": "GearPressed",
+    "width": 32,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "848a970d0b170011fd95df1f99ff1904f5701de3c3dd18773a275ffcae8c2d40",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "asset": "Hall",
+    "width": 360,
+    "height": 640,
+    "visible_colors": 37,
+    "alpha": [
+      255
+    ],
+    "sha256": "7494231368885cd58bb0449bb2ee83f18de9121fc201831e42a4d9324c31ccc6",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "HallTall",
+    "width": 360,
+    "height": 800,
+    "visible_colors": 38,
+    "alpha": [
+      255
+    ],
+    "sha256": "0ae5a5adb969d104f54ec21bbb1dfbacabc98a019bd3f55a18820e8be2201633",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "HeaderRule",
+    "width": 24,
+    "height": 8,
+    "visible_colors": 13,
+    "alpha": [
+      255
+    ],
+    "sha256": "93b7b950b2dedc9bea28fda11e3efed0a7e67a3c5aa6779bf59c7ce012c3e2b9",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "IconPlate",
+    "width": 32,
+    "height": 32,
+    "visible_colors": 5,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "c1d0011fa1f0445c3aef2487844924b0610283c1bd29b5e3b562c0186100da06",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Logo",
+    "width": 280,
+    "height": 124,
+    "visible_colors": 20,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "5cf25894affd8dd57d84c5d6fe1bfaf72450e7e8dc98981885d12b59b51ebaed",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Mastery",
+    "width": 28,
+    "height": 28,
+    "visible_colors": 12,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "52b7d68d960dc8f7d8df48012366b99ac163e9e74e365a84d58fa18076d474c5",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      2,
+      2,
+      26,
+      25
+    ]
+  },
+  {
+    "asset": "Motion",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "bab20d2e2487e44aff64daaa6ed519a3e2fc9421223b80fdde6145bc8838c1d1",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      2,
+      2,
+      22,
+      22
+    ]
+  },
+  {
+    "asset": "Music",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "62e29ebc94727c807259485e83db255fb55a87dc2a0863bf44480ab4a88c04f9",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      5,
+      3,
+      21,
+      22
+    ]
+  },
+  {
+    "asset": "Neutral",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 16,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "b2734b399ad819ea5824d1430c5b7d08c7c1ca5d1af8812d6607b44b16d5524d",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "NeutralDisabled",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 16,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "cb6fde947cfc64eb045c5ceb3719966bffa0090b0cda9156e76dab7926f06b96",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "NeutralHover",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 16,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "34945eede9c18e925fb78ef8bb4480118d5fbe5d6c4aac9613ef0d7194e577af",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "NeutralPressed",
+    "width": 184,
+    "height": 38,
+    "visible_colors": 16,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "372cdc85c984920c61bc7eee07b088585cffe963cb8ab22d096214f7afa26aa6",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      184,
+      38
+    ]
+  },
+  {
+    "asset": "Panel",
+    "width": 48,
+    "height": 48,
+    "visible_colors": 14,
+    "alpha": [
+      255
+    ],
+    "sha256": "31cd9d672e16043d1356eee56c207c4672d6c5b5151e1ab4322498f28766380a",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Play",
+    "width": 224,
+    "height": 52,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "79cf87e413e8bc4f88c73f2c104d25a35a271d53a868ade9dee5b21235ff9781",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      224,
+      52
+    ]
+  },
+  {
+    "asset": "PlayDisabled",
+    "width": 224,
+    "height": 52,
+    "visible_colors": 25,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "5bddde338e3d34db760fc240ac8fc8dafdfb5b0b06f77a6e596722278cf91ef8",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      224,
+      52
+    ]
+  },
+  {
+    "asset": "PlayHover",
+    "width": 224,
+    "height": 52,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "15f3e0f45adebb2003f697969d3b9174a612b361f108f0693c6ab8c8a7580c91",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      224,
+      52
+    ]
+  },
+  {
+    "asset": "PlayPressed",
+    "width": 224,
+    "height": 52,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "f6e67c903cb665843b25dcf0d8168090c4b3b673f11d105323c3c197e4bd00ed",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      224,
+      52
+    ]
+  },
+  {
+    "asset": "Practice",
+    "width": 28,
+    "height": 28,
+    "visible_colors": 10,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "65df2ce70065c13fbf189352cb3939c8ef54ed2992f2e608965b93e07e389c55",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      3,
+      2,
+      24,
+      25
+    ]
+  },
+  {
+    "asset": "Resume",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "ff077758bcc2a2655584ea7b2746a0fa59cc547d96094ed5acbe25f3fb031daf",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      5,
+      3,
+      19,
+      21
+    ]
+  },
+  {
+    "asset": "Retry",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "9232516c2dd0861044ff94ce7a806522a897c1099abe577e025dd47c7945fc15",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      3,
+      2,
+      21,
+      21
+    ]
+  },
+  {
+    "asset": "Secondary",
+    "width": 136,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "1891ea1de6fb66cfaa45f1e14aa1a79b39dc229918f791e6471b48e08b81c348",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      136,
+      44
+    ]
+  },
+  {
+    "asset": "SecondaryDisabled",
+    "width": 136,
+    "height": 44,
+    "visible_colors": 25,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "b6d288dca2f738e2d5f7f6fd79d93b2c3da48cbcfbb8a005bfafface9f8fe120",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      136,
+      44
+    ]
+  },
+  {
+    "asset": "SecondaryHover",
+    "width": 136,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "024643924e4d2a67656ab522b09a8e364b55a3be4fe4eb27bacd9e30294c1669",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      136,
+      44
+    ]
+  },
+  {
+    "asset": "SecondaryPressed",
+    "width": 136,
+    "height": 44,
+    "visible_colors": 26,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "02eaaf9d8e920cbd2dd1b403a658cf9d828b0de565162d1511340b653b8d0bd6",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      0,
+      136,
+      44
+    ]
+  },
+  {
+    "asset": "SettingsCrest",
+    "width": 64,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "8fe46bd4caaff7155dba2a6324f6eda3250048539f11b3c7bf274f7a744a1652",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "SettingsRow",
+    "width": 208,
+    "height": 32,
+    "visible_colors": 15,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "fa403d7b1a0921e6b74e0f61c5185faf12581c7ac18f15d12c6ae6a264497598",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Sfx",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "be373b14ebef0444efd4a6a37bd8c7a8cbc05969c8436f939b9e7673bd3597ce",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      2,
+      2,
+      21,
+      21
+    ]
+  },
+  {
+    "asset": "Shop",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 25,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "e19abd5d12ffa2fa5e3ee202ab25bce96be5b65f91add640b6ef2b908324c86f",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      3,
+      2,
+      20,
+      22
+    ]
+  },
+  {
+    "asset": "Skull",
+    "width": 28,
+    "height": 32,
+    "visible_colors": 7,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "7f844e5499499e40cc962797c3a19c038e6fdd68834378b34004b3179a6c4c8a",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      4,
+      7,
+      22,
+      26
+    ]
+  },
+  {
+    "asset": "Suspend",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "c43c01e3d25b82f5d9b79d41fba111498b0c270d2a88d8f39f97846dba272166",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      1,
+      0,
+      22,
+      21
+    ]
+  },
+  {
+    "asset": "ToggleOff",
+    "width": 52,
+    "height": 24,
+    "visible_colors": 13,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "818f0daada08cb53161b82ca1ccecad8b22b0f2c8ec27f55433c81ead8ba9275",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "ToggleOn",
+    "width": 52,
+    "height": 24,
+    "visible_colors": 11,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "4fd84107b7fc605a7a5b61289fbf78bf5c4a40197c8681634c8b68cdeb25a2a3",
+    "ase_pixels_match": true,
+    "production_bytes_match": true
+  },
+  {
+    "asset": "Vibration",
+    "width": 24,
+    "height": 24,
+    "visible_colors": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "dd97238b3b792fc9b5608cacc5c6126d2079335bb3a1cf67af10462544e4ebd2",
+    "ase_pixels_match": true,
+    "production_bytes_match": true,
+    "occupied_bounds": [
+      0,
+      2,
+      23,
+      21
+    ]
+  }
+]

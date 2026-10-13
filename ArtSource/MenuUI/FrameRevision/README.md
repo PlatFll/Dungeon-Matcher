@@ -1,5 +1,8 @@
 # LibreSprite menu frame revision
 
+This records the first frame pass. The later [icon and material pass](../IconRevision/README.md)
+supersedes its utility icons and flat faces; the evidence below remains historical.
+
 ## Scope and source authority
 
 The user approved the hall and requested closer button/frame matching through
