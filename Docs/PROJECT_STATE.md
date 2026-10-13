@@ -22,8 +22,8 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Enemy pressure and special swaps (2026-10-13)
 
-Current branch: `codex/enemy-pressure-special-swaps`; validated for PR review,
-not merged. Unity 6000.3.19f1 validation passed, with 120 distinct passing
+Implementation: [PR #195](https://github.com/PlatFll/Dungeon-Matcher/pull/195),
+approved by the user for integration. Unity 6000.3.19f1 validation passed, with 120 distinct passing
 focused checks across the recorded runs (audio muted).
 New runs use `unified-accepted-moves-v3`. All 73 definitions now provide first
 basic attacks at 2–3 moves and repeats at 2–4; most ability charges are 2–4 moves.
