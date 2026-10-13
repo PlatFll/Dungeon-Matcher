@@ -13,8 +13,11 @@ economy, character production assets and save formats are unchanged.
 The four pre-existing local modifications remain outside this change.
 
 Status: the user approved the background and authorized merging PR #193 for
-testing on 2026-10-12. The requested PixelLab button/frame refinement remains
-pending generation replenishment; the current native assets are retained.
+testing on 2026-10-12. On 2026-10-13 the user requested LibreSprite extraction and
+cleanup for the button/frame refinement, replacing the queued PixelLab route.
+The [new frame review](FrameRevision/README.md) records the 33 revised exports,
+current comparisons, native checks and Unity evidence. No new generation was used.
+The original implementation evidence below is retained as history.
 
 ## Visual evidence
 
@@ -72,7 +75,8 @@ pixels, binary/opaque alpha, byte-identical runtime exports, Point filtering,
 no mipmaps, no compression, no platform overrides, and unchanged starting user
 files. Per-asset native sizes, color counts and hashes: `validation/native-checks.json`.
 
-Rebuild with `Tools/Build-MenuArt.ps1`; import with `Tools/Import-MenuArt.ps1`.
+Rebuild frames only with `Tools/Build-MenuFrames.ps1`; rebuild all menu art with
+`Tools/Build-MenuArt.ps1`; import with `Tools/Import-MenuArt.ps1`.
 The build uses the established local LibreSprite installation and the existing
 source-layer normalization tool. These explicit commands do not run on startup.
 
@@ -135,8 +139,9 @@ need to wait a frame for re-enabled UI raycasters; the final tests exercise both
   skew, frame ornament and skull shape are simpler than the reference.
 - Hall props follow the composition, but individual masonry, flames, treasure
   and statues differ. Flames/portal are static; the selected character animates.
-- Frame wear, utility icons and toggle facets are simplified for one native grid.
-  Thaleah letter shapes and fit differ from the baked lettering in the mockup.
+- Frames and toggle facets now use the cleaned reference-derived revision. Native
+  face shading is quieter than the mockups; utility icons and Thaleah letter shapes
+  still differ from the baked icons/lettering in the mockup.
 - Home retains functional account/level/gold and saved-wave information, Continue,
   and End Saved Run. These additions are absent from the reference screenshot.
 - Settings overlays the actual current battlefield. The reference's older battle

@@ -70,7 +70,10 @@ public static class GlobalMenuSkin
         bool light=family=="Play"||family=="Secondary"||family=="Challenge";
         float inset=family=="Play"?62:light?56:48;
         Place(label.rectTransform,button.transform,new Vector2(size.x-inset,size.y-12),new Vector2(family=="Play"?19:light?14:16,0));
-        StyleText(label,family=="Play"?64:16,light);
+        // Short primary pause actions have the stronger lettering of the
+        // reference; longer neutral actions retain their verified native fit.
+        int em=family=="Play"?64:family=="Affirmative"||family=="Destructive"?24:16;
+        StyleText(label,em,light);
         if(icon!=null)
         {
             float iconX=-size.x/2+(family=="Play"?32:26);

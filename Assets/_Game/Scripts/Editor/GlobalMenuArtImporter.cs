@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,7 +12,12 @@ public static class GlobalMenuArtImporter
         Directory.CreateDirectory(target);
         foreach(string file in Directory.GetFiles(source,"*.png"))
         {
-            string path=target+"/"+Path.GetFileName(file);File.Copy(file,path,true);
+            string path=target+"/"+Path.GetFileName(file);
+            // Unity can retain a mapped view of a texture already imported in
+            // this session. Do not rewrite identical exports; still verify
+            // their import settings below so this command also repairs them.
+            if(!File.Exists(path) || !File.ReadAllBytes(file).SequenceEqual(File.ReadAllBytes(path)))
+                File.Copy(file,path,true);
             AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
