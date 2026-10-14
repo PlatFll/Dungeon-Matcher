@@ -174,10 +174,18 @@ public sealed class BoardVisuals : MonoBehaviour
         cellTileColor = Color.white;
         if(theme.frameCorner!=null && theme.frameEdge!=null)
         {
-            cornerPiece=theme.frameCorner;normalPiece=theme.frameEdge;
+            cornerPiece=BattlePresentationSkin.ZoneSprite("Corner") ?? theme.frameCorner;
+            normalPiece=BattlePresentationSkin.ZoneSprite("Edge") ?? theme.frameEdge;
             RemoveExistingBoardFrame();CreateModularBoardFrame();
         }
         CreateCellTiles();
+    }
+
+    public void RefreshPresentationFrame()
+    {
+        var corner=BattlePresentationSkin.ZoneSprite("Corner");var edge=BattlePresentationSkin.ZoneSprite("Edge");
+        if(corner==null||edge==null)return;
+        cornerPiece=corner;normalPiece=edge;RemoveExistingBoardFrame();CreateModularBoardFrame();
     }
 
     private void EnsureBoardReference()

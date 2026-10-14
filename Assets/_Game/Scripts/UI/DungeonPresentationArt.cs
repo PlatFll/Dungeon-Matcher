@@ -19,7 +19,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
-        var tile = RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
+        var tile = BattlePresentationSkin.ZoneSprite("General") ?? RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
         if (tile == null || worldCamera == null) return;
         var go = new GameObject("DungeonSurroundingMasonry");
         backdrop = go.AddComponent<SpriteRenderer>();
@@ -46,6 +46,8 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         if (player == null || bottom == null) return;
         AddTiledPanel(player.transform, "PlayerDungeonBackdrop", 8, new Color(.55f,.55f,.65f,1));
         AddTiledPanel(bottom.transform, "BottomDungeonBackdrop", 16, new Color(.55f,.55f,.65f,1));
+        if(BattlePresentationSkin.Folder!=null && !TryGetComponent<BattleAmbientPresentation>(out _))
+            gameObject.AddComponent<BattleAmbientPresentation>();
         panelsReady = true;
     }
 
@@ -53,13 +55,13 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     {
         if (parent.Find(name) != null) return;
         var theme = RunSession.Current?.Zone?.Definition?.theme;
-        var tile = theme?.panelBackground ?? Load("DungeonBackdropTile");
+        var tile = BattlePresentationSkin.ZoneSprite("Panel") ?? theme?.panelBackground ?? Load("DungeonBackdropTile");
         if (tile == null) return;
         var go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         var image = go.GetComponent<Image>();
         image.transform.SetParent(parent, false);
         image.transform.SetAsFirstSibling();
-        image.sprite = tile; image.type = Image.Type.Tiled; image.color = theme != null ? Color.white : tint;
+        image.sprite = tile; image.type = Image.Type.Tiled; image.color = theme != null || BattlePresentationSkin.Folder!=null ? Color.white : tint;
         image.raycastTarget = false;
         var rect = image.rectTransform;
         rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;

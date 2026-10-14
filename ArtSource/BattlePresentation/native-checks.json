@@ -1,0 +1,849 @@
+{
+  "assets": [
+    {
+      "asset": "Court/Banner.png",
+      "size": [
+        44,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "b1a950dd0dccefa3c4ebbc9fc625daa2ffd9fd3267c91561357abd89c1816c8a",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Corner.png",
+      "size": [
+        80,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "9d317ea090c78219dcfddfe6f89abd81683f0e1b4aa538904a2c830425c760a2",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Edge.png",
+      "size": [
+        64,
+        16
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 25,
+      "sha256": "5b5139a0583a59ca6e2e1405eb1348ffe5a3c1c685077e949ff3dd99e648fa09",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/General.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 6,
+      "sha256": "ea631e9deaf72c98a6db0c0695393e38822fecc653f631e19933b1ec85532f96",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Kelp.png",
+      "size": [
+        48,
+        88
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 4,
+      "sha256": "c4b7048c518266112fb779de06fe186f3d777fabf8a9228d8f39acc85fed0753",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Panel.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 4,
+      "sha256": "771a1d27e56e6e98343ec45bef147d9a88adf56687afe9f78332d16120b3bf50",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Plaque.png",
+      "size": [
+        128,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "sha256": "ffcfa4596f4ef6e394e14312de448e68ceced3b487638ab408a3ec2e9ca1c423",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/PlayerBottom.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "9e1ff1319026f94db08b473e993b34787dfc96562b29cc0322333527cce2aad9",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/PlayerMiddle.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 23,
+      "sha256": "1548343a7e7d3485d28d541e329492879550b70bd7fda0059048664be2bc5317",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/PlayerTop.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "d5f3ba0254bc7b583b1c0f30150665c4f838369937a853f0783e552f859344db",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/SideDressing.png",
+      "size": [
+        36,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 66,
+      "sha256": "09d2e5df45b95e3a6b0fa4cfc84b69117c407de0326a6ad35a098662c761c75d",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Court/Statue.png",
+      "size": [
+        128,
+        160
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 16,
+      "sha256": "16a2dee0097b80672c3438b9542717ebd06897683a56fe12e77511c7ea166ba9",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/Banner.png",
+      "size": [
+        44,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 19,
+      "sha256": "4632d8be38ac0c3339a351823b52ee012859bec87dbbe39cad99e012a30d20a0",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/Corner.png",
+      "size": [
+        80,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 20,
+      "sha256": "84e25ba223eadcb42acc3514ee2f9627c51937782543f67fd65ba18008b823e4",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/Edge.png",
+      "size": [
+        64,
+        16
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 10,
+      "sha256": "4999dc5dccaf385c74ec666e8720d449459a980e19b56c82e7d6378f5030f061",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/General.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 4,
+      "sha256": "3881f5b519b2f14189c69cad2b021a7311548f38d0b5f8ee4d053e973e670929",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/Panel.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 4,
+      "sha256": "3881f5b519b2f14189c69cad2b021a7311548f38d0b5f8ee4d053e973e670929",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/Plaque.png",
+      "size": [
+        128,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "sha256": "94b8498614796fdd1b0ff3d546a2766088e7bb77627822cbaa9b01b327dd2be1",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/PlayerBottom.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 20,
+      "sha256": "a215cbcfcaf88670c322448dd660a806c8199df5d9f5731e214f4d1fd4a8321a",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/PlayerMiddle.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "sha256": "8d035924afe34b229552d3e8d4fdc79b2f02c5274cd6d4d21e9dbd65ec95d8bb",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/PlayerTop.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 20,
+      "sha256": "d06c00978158b9aff0d32eb2421b2220f672fbcaa5243cd92c873df39663a8f6",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Dungeon/SideDressing.png",
+      "size": [
+        36,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 39,
+      "sha256": "fa64d525781ab1ca10d2a85f96cd1a7fda5b1700baab6e65a0779f836d4e2e4a",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Banner.png",
+      "size": [
+        44,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "a52a2eafd76be16351c8cddca861e98038fb3fd041bc8e7d4d64a3b40d92d9dc",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Corner.png",
+      "size": [
+        80,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 34,
+      "sha256": "7aeba92e50270ac3cf0c2e334eab9d635bbda266fa1bcda62823b1eeaca96730",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Edge.png",
+      "size": [
+        64,
+        16
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 16,
+      "sha256": "b0aa323527d5a38ef68757124eeeb717bf30ac4b1162b69dd2fb579d8675b9a0",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Foliage.png",
+      "size": [
+        56,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 5,
+      "sha256": "0fe5de25fddc68b995241be51609348aeafe1ecd7a4dd4e8c648ea03073054ad",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/General.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 8,
+      "sha256": "6d99fe224756825b7a1d655baa5b5bead1a6cfb380f8f804141762bebb4d4342",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Panel.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 4,
+      "sha256": "bccb58ebc04417b448c71fe70d9ca1c111f7bd3feb4a9d86bdae6812dd2bb4d6",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/Plaque.png",
+      "size": [
+        128,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 13,
+      "sha256": "319ee803085b61b9386d5156fe1827f4f3d4f2cbf1281fa149c75d980c9500e2",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/PlayerBottom.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "c1e7c33a1b72b261abbcb57a298a16b55eb8e88615030e804caeb5a026cbe05a",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/PlayerMiddle.png",
+      "size": [
+        146,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "sha256": "f1cc4673e5d820ef346979a59c9b55c275cf5752353bd15fd2ec3d550ae73f2c",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/PlayerTop.png",
+      "size": [
+        146,
+        25
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "3064bd5682cdbdad6d77b68069c19f54a288261a2f939faf59e712247070fd47",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Forest/SideDressing.png",
+      "size": [
+        36,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 47,
+      "sha256": "43f7b592668c54d96e338f308e5a544171c4d382976cbea11b36eefc04795f83",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Motion/Bubble.png",
+      "size": [
+        72,
+        12
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 4,
+      "sha256": "226d66fcd1254bf32ff0f21fe7f62ba0f7d99c42821f84ae6bcd77effb073aeb",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Motion/Lantern.png",
+      "size": [
+        30,
+        46
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 26,
+      "sha256": "671e78bbb56719e799646a90a414f416f7c88d75550b15da52dba85d20bd8fc9",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Motion/Rune.png",
+      "size": [
+        32,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 2,
+      "sha256": "24c1148cb7d1b25e1d601a89b4ac7d709de40906c60f2714cbe93da63833dfa1",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Motion/Torch.png",
+      "size": [
+        144,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 5,
+      "sha256": "adb18da85994759c13cbf813f7fc484f04a4d14233be6dfb0aeca6553520b0f3",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Motion/Waterfall.png",
+      "size": [
+        384,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 3,
+      "sha256": "85007aa52a92ea6073fcf399b842ccc21b14b3ea1f6e0bb3a490f8d14bae0d01",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Scene/Court.png",
+      "size": [
+        512,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 132,
+      "sha256": "973161fcc80dcd0004a3853028b548dd4d74472db2dc0b61c88be43189745a7e",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Scene/Dungeon.png",
+      "size": [
+        512,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 35,
+      "sha256": "6ffb9b18292621c60bce0f6db049850ee577127ef6fc2a862f45d1d47da4efef",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Scene/Forest.png",
+      "size": [
+        512,
+        384
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 171,
+      "sha256": "4cc64524c8da588c629afdf3f63a12c9e539379eb40c8600183aa78deaf61ab9",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Ability.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 44,
+      "sha256": "94a2203cec3779aee9e014c7d29025cf474b3f2f8b4e09c2fbcf3059264bc2b7",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/AbilityDisabled.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 37,
+      "sha256": "5b6a2f1d32fd66bba05781415fc5fccf173dd2e81536bd598b29acb62c8474f7",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/AbilityHover.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 44,
+      "sha256": "657f8d7e4b0b0a4c960551bff2727f953d1c59e4a4f403bb1814bd9ac70636ff",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/AbilityPressed.png",
+      "size": [
+        176,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 44,
+      "sha256": "a75479dd550ce266c0c5466128ab42885ac19dd9845f8ac485d8296d3e99e0c7",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Corner.png",
+      "size": [
+        80,
+        80
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 8,
+      "sha256": "861cc47528b8c8055fbef07adc79e22dd5ac36289d0f4ffdde3b75f42272ebb6",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Edge.png",
+      "size": [
+        64,
+        16
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 7,
+      "sha256": "30883d999c76cdcc0a0c2b9bce915acbbaed652670ea99de83d1158b2d9181d1",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Energy.png",
+      "size": [
+        144,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "sha256": "af478320733fdc0cdc30e106deab4d97eaae275cf2ccb60215188130cff3aa9f",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/EnergyFill.png",
+      "size": [
+        8,
+        8
+      ],
+      "alpha": [
+        255
+      ],
+      "colors": 3,
+      "sha256": "d06cf5d88da22ddbf5e57b3ed315445de20aeac3989048555883122c893ab64a",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Guide.png",
+      "size": [
+        88,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "a1e31a407edba0902f5f3588c6577d356317ceb6c634cadab478e261b0f05fb6",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/GuideDisabled.png",
+      "size": [
+        88,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "0cd0c7c2178b5f5d45c3d902fc83aa91fc7688bc9da8c285a8f17e5fc10ff4e8",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/GuideHover.png",
+      "size": [
+        88,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "836649b01f9bfca840040faed01f2992312c2dffc4c75d59064fae94dfaaab6f",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/GuidePressed.png",
+      "size": [
+        88,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 24,
+      "sha256": "fe071f5575ad561c51763aee6b4c1024c4e75609688c033bead382e38e214782",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/Supply.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "8f06897bafc6ef43e3b631c0724bbd70c5375169febbfb79151017231983e0bd",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/SupplyDisabled.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 25,
+      "sha256": "5d34879b2bf57a33b10c31c49ff14e071080bb263192c7bb9fe8281a64a8614e",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/SupplyHover.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "65e682eaabe6d4ec0c77de3f3f500a41eedf0a336e7c9e4b0e71c0b32a5297a4",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    },
+    {
+      "asset": "Shared/SupplyPressed.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 28,
+      "sha256": "a0cdc89183121c6cae3c5756d4ba8d4096ee6cc7cfb257bcfa753a8965f49c43",
+      "asePixelsMatch": true,
+      "unityBytesMatch": true
+    }
+  ],
+  "preservedLocalSha256": {
+    "Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab": "f2a3e6059c4df8ebce3279e7ac29ca5acd9a52e529425abe70c51ecab097bd10",
+    "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta": "0f7e12e81377e9d521a4d132a17a3b3bfcf575daac8434f77bf20849575f5518",
+    "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta": "3a32303ab05166168f39ca8f6f06367234df30cb46393acb6fa5fde7331762f7",
+    "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta": "0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f",
+    "ArtSource/MenuUI/button-frame-revision.json": "f692fed6c1de726d13874d339c5203709b8bcfadb0a9b7cef98f563a46eb5b58"
+  }
+}

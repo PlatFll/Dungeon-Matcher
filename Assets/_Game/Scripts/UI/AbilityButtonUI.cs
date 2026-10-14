@@ -52,8 +52,24 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private float chargeVelocity;
     private bool hasInitializedCharge;
     private GameplayThemeDefinition appliedTheme;
+    private bool sharedSkinApplied;
+    private Sprite croppedSource, croppedIcon;
     private void LateUpdate()
     {
+        if(sharedSkinApplied || BattlePresentationSkin.Shared("Ability")!=null)
+        {
+            if(!sharedSkinApplied)
+            {
+                sharedSkinApplied=true;
+                GameplayThemeSkin.Button(abilityButton);
+                var sharedFrame=transform.Find(AbilityEnergyBarName+"/EnergyFrame")?.GetComponent<Image>();
+                if(sharedFrame!=null)sharedFrame.sprite=BattlePresentationSkin.Shared("Energy");
+                if(energyFill!=null)energyFill.sprite=BattlePresentationSkin.Shared("EnergyFill");
+                RefreshVisuals();
+            }
+            if(abilityIcon!=null)GameplayPixelGrid.FitImage(abilityIcon,new Vector2(148,44));
+            return;
+        }
         var theme=GameplayThemeSkin.Current;
         if(theme==null || appliedTheme==theme) return;
         appliedTheme=theme;
@@ -234,8 +250,9 @@ public sealed class AbilityButtonUI : MonoBehaviour
             ability != null &&
             ability.Icon != null)
         {
-            abilityIcon.sprite =
+            abilityIcon.sprite = BattlePresentationSkin.Shared("Ability")!=null ? SharedIcon(ability.Icon) :
                 GameplayThemeSkin.Current?.AbilityIcon(ability.Icon) ?? ability.Icon;
+            if(sharedSkinApplied && abilityIcon.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
             GameplayPixelGrid.FitImage(abilityIcon, abilityIcon.rectTransform.rect.size);
         }
 
@@ -303,9 +320,9 @@ public sealed class AbilityButtonUI : MonoBehaviour
 
     private void BuildFinalizedEnergyBar()
     {
-        var frame = GameplayThemeSkin.Current?.energyFrame ?? FinalizedUiSkin.Load("EnergyFrame");
+        var frame = BattlePresentationSkin.Shared("Energy") ?? GameplayThemeSkin.Current?.energyFrame ?? FinalizedUiSkin.Load("EnergyFrame");
         var track = FinalizedUiSkin.Load("EnergyTrack");
-        var fill = FinalizedUiSkin.Load("EnergyFill");
+        var fill = BattlePresentationSkin.Shared("EnergyFill") ?? FinalizedUiSkin.Load("EnergyFill");
         if (frame == null || track == null || fill == null) return;
         if (transform.Find(AbilityEnergyBarName) is not RectTransform root) return;
         foreach (Transform child in root) child.gameObject.SetActive(false);
@@ -325,6 +342,21 @@ public sealed class AbilityButtonUI : MonoBehaviour
         energyFill.rectTransform.pivot = new Vector2(0,.5f);
         EnergyImage("EnergyFrame", root, frame, new Vector2(144,32), Vector2.zero).type = Image.Type.Simple;
     }
+
+    // Existing wide ability images include their old button border. Keep their
+    // interior pixels and character symbol, with the shared shell behind them.
+    private Sprite SharedIcon(Sprite source)
+    {
+        if(source.rect.width!=176 || source.rect.height!=64)return source;
+        if(croppedSource==source && croppedIcon!=null)return croppedIcon;
+        if(croppedIcon!=null)Destroy(croppedIcon);
+        croppedSource=source;
+        var rect=source.rect;rect.x+=14;rect.y+=10;rect.width-=28;rect.height-=20;
+        croppedIcon=Sprite.Create(source.texture,rect,Vector2.one*.5f,source.pixelsPerUnit,0,SpriteMeshType.FullRect);
+        croppedIcon.name=source.name+"_Interior";
+        return croppedIcon;
+    }
+    private void OnDestroy(){if(croppedIcon!=null)Destroy(croppedIcon);}
 
     private static Image EnergyImage(string name, Transform parent, Sprite sprite, Vector2 size, Vector2 position)
     {

@@ -36,9 +36,14 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     public void ApplyGameplayTheme(GameplayThemeDefinition theme, int variant = 0)
     {
         if (theme == null || theme.battleEnvironment == null) return;
-        var selected = theme.battleEnvironmentVariants != null && variant >= 0 &&
+        var selected = BattlePresentationSkin.Environment ?? (theme.battleEnvironmentVariants != null && variant >= 0 &&
             variant < theme.battleEnvironmentVariants.Length && theme.battleEnvironmentVariants[variant] != null
-            ? theme.battleEnvironmentVariants[variant] : theme.battleEnvironment;
+            ? theme.battleEnvironmentVariants[variant] : theme.battleEnvironment);
+        SelectEnvironment(selected);
+    }
+
+    private void SelectEnvironment(GameObject selected)
+    {
         if (activeEnvironment != null && environmentPrefab == selected) return;
         if (activeEnvironment != null)
         {
@@ -63,6 +68,8 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void Start()
     {
+        var presentation=BattlePresentationSkin.Environment;
+        if(Application.isPlaying && presentation!=null) SelectEnvironment(presentation);
         // Register after PPC's OnEnable so its final projection is authoritative.
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;

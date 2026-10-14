@@ -419,6 +419,10 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     private void ResolveFrameSprites()
     {
         var theme = RunSession.Current?.Zone?.Definition?.theme;
+        if(BattlePresentationSkin.ZoneSprite("Corner")!=null && BattlePresentationSkin.ZoneSprite("Edge")!=null)
+        {
+            cornerPiece=BattlePresentationSkin.ZoneSprite("Corner");normalPiece=BattlePresentationSkin.ZoneSprite("Edge");return;
+        }
         if (theme?.frameCorner != null && theme.frameEdge != null)
         {
             cornerPiece = theme.frameCorner;

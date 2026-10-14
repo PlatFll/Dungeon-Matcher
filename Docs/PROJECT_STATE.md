@@ -20,6 +20,22 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Three-zone battle presentation candidate (2026-10-14)
+
+The dedicated `codex/three-zone-battle-presentation` branch implements the user's
+Dungeon/Forest/Drowned Court battle targets. Native modular zone frames, player
+slices, plaques, backgrounds and ornaments accompany a shared silver/purple
+Guide, supply and ability family. Scenery uses the existing tilemap presentation
+owner. Cosmetic flames, runes, lanterns, leaves, waterfall strokes, bubbles and
+kelp obey pause and Reduced Motion without consuming gameplay RNG.
+
+This pass keeps character/gem/cell art, HP bars, combat, board feel, menus and the
+other zones intact. It does not alter progression or balance. Review artifacts,
+executed validation and remaining visual differences are recorded in
+[the presentation source notes](../ArtSource/BattlePresentation/README.md).
+The pack requires a PR and visual review before merge; these assets are review
+candidates, not a new approved golden reference.
+
 ## Enemy pressure and special swaps (2026-10-13)
 
 Implementation: [PR #195](https://github.com/PlatFll/Dungeon-Matcher/pull/195),
@@ -134,7 +150,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.16, including the global menu direction. Rattlebones is the explicitly designated
+The canonical art guide is now v1.17, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.

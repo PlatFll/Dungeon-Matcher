@@ -1,0 +1,26 @@
+{
+  "unityVersion": "6000.3.19f1",
+  "audioMuted": true,
+  "nativeAssets": { "result": "Passed", "count": 57, "report": "native-checks.json" },
+  "focusedSuite": {
+    "result": "Passed", "total": 30, "failed": 0, "skipped": 0,
+    "filter": "ThreeZonePresentationTests;BoardFeel2Tests;ForestFoundationPlayTests.BoardFeel2",
+    "xml": ".utmp/ForestValidation/4b911bae-a47a-4247-a1c8-b86aa318fba8.xml",
+    "log": ".utmp/ForestValidation/4b911bae-a47a-4247-a1c8-b86aa318fba8.log"
+  },
+  "finalIdleRecapture": {
+    "result": "Passed", "total": 1, "failed": 0, "skipped": 0,
+    "filter": "ThreeZonePresentationTests.CaptureThreeZones",
+    "reason": "Capture all viewport comparisons before exercising a move, avoiding transient damage flashes in the review images. Runtime and assertion coverage unchanged.",
+    "xml": ".utmp/ForestValidation/5681053c-047f-473b-8995-8b0f8ba981dd.xml"
+  },
+  "mandatoryValidator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "Succeeded", "exitCode": 0,
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-ee86836e-e3ff-43d9-a992-5b0561331609.log"
+  },
+  "visualEvidence": "Review.html",
+  "coverage": ["3 zones", "1080x1920", "720x1280", "1080x2400 with safe-area inset", "pause", "reduced motion", "idle board and refill RNG unchanged", "accepted player move resolves", "scene unload cleanup", "five playable ability symbols fit", "existing board feel regression tests"],
+  "limitations": ["No physical-device performance test", "Visual approval remains with the user", "Background composition differences listed in README.md"],
+  "mergeStatus": "Unmerged; user approval required"
+}

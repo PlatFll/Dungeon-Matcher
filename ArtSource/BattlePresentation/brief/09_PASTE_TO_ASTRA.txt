@@ -1,0 +1,33 @@
+I've attached `Dungeon_Matcher_Three_Zones_Battle_UI_Pack.zip`.
+
+Read `00_START_HERE.md`, then follow `01_MASTER_CONTRACT.md` and the numbered briefs.
+
+Use the 3 included reference images as the exact visual targets:
+- `references/DUNGEON_ZONE_TARGET.png`
+- `references/FOREST_ZONE_TARGET.png`
+- `references/DROWNED_COURT_TARGET.png`
+
+Objective:
+Implement the battle presentation for Dungeon, Forest, and Drowned Court so they match the targets closely.
+
+Important:
+- Keep the shared bottom HUD and shared general UI consistent across all 3 zones.
+- Keep the guide button, settings button, potion holder, bomb holder, and center action/ability panel as the same visual family in all 3.
+- Change the zone-specific frames, backgrounds, plaques, environment dressing, and ambient motion to match each target.
+- Do NOT change characters, enemies, gems, gem colors, or gameplay pieces.
+
+Use PixelLab to help reconstruct clean reference-grounded modules where useful, then clean/finalize all production assets in LibreSprite.
+Do not paste whole screenshots into the game. Rebuild native pixel assets cleanly.
+
+Ambient motion requirements:
+- Dungeon: torches flicker/sparkle, but reduce excessive top-HUD torches.
+- Forest: blue engravings glow a bit, lantern sways in wind occasionally, leaves move subtly, waterfall visibly moves.
+- Drowned Court: bubbles rise/pop/reappear, underwater vegetation sways.
+
+Work on a dedicated branch. Preserve unrelated changes. Do not merge without approval.
+
+When done, provide:
+- actual Unity screenshots beside each reference
+- short notes on which assets were created/changed
+- note any remaining mismatches
+- any short preview captures if available for ambient motion
