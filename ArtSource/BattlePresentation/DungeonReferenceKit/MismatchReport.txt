@@ -1,0 +1,15 @@
+DUNGEON REFERENCE KIT — REVIEW CANDIDATE
+
+Composition: door, banners, torches, board beams and lower foreground stay at their sampled source coordinates. No enlarged arena or extra floor rows.
+
+Concealed surfaces: the source does not contain the wall/floor pixels behind actors, text or controls. Those local patches are authored repairs and need visual approval; the orange difference map exposes them. Repaired stone faces are cleaner and less irregular than the visible reference floor; the player-panel repairs also use quieter shading.
+
+Grid: the supplied mockup is 941×1672. The kit uses one 470×836 grid with point sampling; the far-right source column is omitted. This is a production choice, not a measurement of the mockup’s native art resolution.
+
+Board fit: the reference well is 364×369 on this grid. The study preserves that geometry. A later integration must fit the existing square gameplay grid without changing its dimensions; this small aspect difference is still unresolved.
+
+Runtime: this is an art-only assembly. Actor/HP/gem/text/icon placement, portrait resizing, UI hitboxes and animation are not validated here. No game assets have been replaced.
+
+Layering: assets are registered for this fixed composition. Back-wall and side-prop modules preserve their original backings; the kit does not promise unrestricted parallax behind every extracted ornament.
+
+Global UI: Guide, settings, supply and ability rims remain the same silver family. The bottom HUD has no additional enclosing frame.

@@ -1,0 +1,38 @@
+name,x,y,width,height,role,group,composite
+FarWall,0,0,470,180,"Original back-wall plane, lighting and chains",background,True
+ArchDoor,180,58,115,122,Registered mid-layer arched door,background,True
+BattleFloor,137,177,333,121,Shallow perspective floor; no extra rows,background,True
+PlayerFootMasonry,0,280,137,18,Original masonry below left panel,background,True
+PlayerSurround,0,28,140,252,Left outer masonry and under-frame backing,background,True
+PlayerMasonry,22,42,105,224,Reference masonry with local repairs behind live content,panel,True
+PlayerFrame,11,28,129,252,Complete faithful thin player frame; transparent center,frame,True
+PlayerBanner,51,42,49,65,Original hanging skull banner,prop,True
+WaveHeader,169,21,135,47,Purple plaque and skull; no baked wave text,frame,True
+SharedGuide,330,30,79,39,Shared silver Guide plate; no label,shared,True
+SharedSettings,414,30,45,40,Existing reference silver gear control,shared,True
+BoardFrame,37,295,400,406,Reference frame at exact source proportions,frame,True
+EmptyCell0,53,313,46,46,Empty stone cell sample; source rim retained,cell,False
+EmptyCell1,99,313,45,46,Empty stone cell sample; source rim retained,cell,False
+EmptyCell2,144,313,46,46,Empty stone cell sample; source rim retained,cell,False
+BoardWell,53,313,364,369,Empty eight-by-eight well; no gem pixels,board,True
+BoardTL,37,295,24,24,Source-registered frame module,frame-module,False
+BoardTR,413,295,24,24,Source-registered frame module,frame-module,False
+BoardBL,37,677,24,24,Source-registered frame module,frame-module,False
+BoardBR,413,677,24,24,Source-registered frame module,frame-module,False
+BoardTop,61,295,352,18,Source-registered frame module,frame-module,False
+BoardBottom,61,682,352,19,Source-registered frame module,frame-module,False
+BoardLeft,37,319,16,358,Source-registered frame module,frame-module,False
+BoardRight,417,319,20,358,Source-registered frame module,frame-module,False
+LeftBorderDressing,0,298,37,403,"Left chains, torch, banner and skull masonry",prop,True
+RightBorderDressing,437,298,33,403,"Distinct right chains, torch, banner and skull masonry",prop,True
+LeftTorch,0,397,36,72,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+RightTorch,440,396,30,72,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+LeftSkullBanner,0,477,28,91,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+RightSkullBanner,442,477,28,91,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+LeftBones,138,196,34,33,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+RightBarrel,399,196,36,57,Optional isolated ornament at source location; master uses registered backing,prop-module,False
+BottomMasonry,0,701,470,135,Original lower wall and distinct foreground corners,background,True
+SharedEnergy,163,707,147,24,Empty shared energy frame,shared,True
+SharedAbility,149,729,176,66,Shared silver/purple frame; character icon removed,shared,True
+SharedPotionHolder,69,733,70,63,Shared reference holder; live item and quantity excluded,shared,True
+SharedBombHolder,333,733,70,63,Shared reference holder; live item and quantity excluded,shared,True

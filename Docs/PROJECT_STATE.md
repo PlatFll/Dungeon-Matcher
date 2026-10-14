@@ -22,6 +22,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Three-zone battle presentation candidate (2026-10-14)
 
+**Current gate:** the user rejected the implemented candidates' composition
+fidelity and requested a Dungeon-only reference rebuild before any further
+integration. `ArtSource/BattlePresentation/DungeonReferenceKit/` contains the
+isolated LibreSprite kit, native placement manifest, breakdown, comparison,
+pixel-difference overlay and mismatch report. These source assets are not
+imported into Unity. Dungeon visual approval is required before integration or
+continuing to Forest/Court. The earlier runtime candidate below remains review
+history, not an approved replacement. No generation was used for this rebuild.
+
 The dedicated `codex/three-zone-battle-presentation` branch implements the user's
 Dungeon/Forest/Drowned Court battle targets. Native modular zone frames, player
 slices, plaques, backgrounds and ornaments accompany a shared silver/purple

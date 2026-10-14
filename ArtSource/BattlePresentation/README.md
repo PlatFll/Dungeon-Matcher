@@ -1,5 +1,14 @@
 # Three-zone battle presentation
 
+**Current review gate:** the user rejected the runtime candidates' composition
+and requested a Dungeon-only rebuild from the locked reference. See the
+[Dungeon reference-kit review](DungeonReferenceKit/Review.html),
+[asset inventory](DungeonReferenceKit/AssetInventory.csv), and
+[remaining differences](DungeonReferenceKit/MismatchReport.txt). These additive
+LibreSprite sources are outside Unity's Assets folder. No further integration,
+other-zone work or merge is authorized before Dungeon visual approval. The
+runtime comparisons below remain historical evidence for the prior candidate.
+
 Implemented review candidate, 14 October 2026. The pack requires a PR and user
 review before merge. [Actual Unity comparisons and ambient previews](Review.html).
 

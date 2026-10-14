@@ -1,0 +1,905 @@
+{
+  "status": "Candidate; awaiting Dungeon visual approval; no integration",
+  "assets": [
+    {
+      "name": "ArchDoor",
+      "size": [
+        115,
+        122
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        114,
+        122
+      ],
+      "colors": 5102,
+      "sha256": "99c8f2dc1d573ca7d0f62e84f252a28a3d8d8ca3ea91d514dbf1a543b0599efb",
+      "aseSha256": "34e3e7a9ad15fe9b4e943663123a09183ff8fa63db03e5b7d08d3384bf9db6f7",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BattleFloor",
+      "size": [
+        333,
+        121
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        333,
+        121
+      ],
+      "colors": 16433,
+      "sha256": "27cffcc6f4b8f64feeba7616d1f8532c72f2817bc379ccfaf6794641d468f1d8",
+      "aseSha256": "3a558b6dd5d118d157cedded80a98a134546817f2baa7e6e68367f671b7bbf69",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardBL",
+      "size": [
+        24,
+        24
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "colors": 476,
+      "sha256": "2c763bd95d6f55bf5fbe75136a2c5ee7f8663cbdc2de49bc901fe9c15f4e0a5f",
+      "aseSha256": "34e20871132c0db0d14bd4b53f7a8e2bf53eec7c0ef3c2aa77f75ab219375d54",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardBottom",
+      "size": [
+        352,
+        19
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        352,
+        19
+      ],
+      "colors": 3522,
+      "sha256": "de2df79f1664fb1aa6fc149dd9e0d383c909fc8d06381a6b213e54ce58037d5a",
+      "aseSha256": "3a2b6d2d23dde458795b3ba6bfdc8319130b921aa00ff47e40bd2c1a5e2a92c2",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardBR",
+      "size": [
+        24,
+        24
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "colors": 483,
+      "sha256": "65ad895e57477b7394d4ce753a4f3e05acd8b93a2ab0d3cd09048170d2801abb",
+      "aseSha256": "aec58fb49b4befe895fdc57ae07e77fec83aa43185914a7ccbc01c986da42d5a",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardFrame",
+      "size": [
+        400,
+        406
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        400,
+        406
+      ],
+      "colors": 13617,
+      "sha256": "59cf24f9aa29a22b5cf96d37981269d19d631c8984334cd5c2123d48ad5e2d55",
+      "aseSha256": "7578cc14e155016373c4d4200c0421ae0b25f742cdc39c580ec0c83bc6f64fd5",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardLeft",
+      "size": [
+        16,
+        358
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        358
+      ],
+      "colors": 3357,
+      "sha256": "69a5a16a6c83d33a44647a133b3f9c9a6931e3f5edba330ee904a6d94718cfba",
+      "aseSha256": "b8314b4c67ef9407af038d06782d4cc983c57b785e8ac13d089b7b3e7298edf1",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardRight",
+      "size": [
+        20,
+        358
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        358
+      ],
+      "colors": 4095,
+      "sha256": "3ff001be70d9d1ce5a7d02cfe4d402dcf99977d257afa5153571537231efd5ab",
+      "aseSha256": "3380a9008531529c378a9176420e7c5c63e6f2169a1ec2ffb8900db07adc0216",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardTL",
+      "size": [
+        24,
+        24
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "colors": 479,
+      "sha256": "ed65927e68a7a89de34d9a88fb67626670f5748a1554c4524b6a2cec27a02b05",
+      "aseSha256": "2310b698f2327c669b777b2f20ba1151348b1417bd67034aef43ec8f84e24800",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardTop",
+      "size": [
+        352,
+        18
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        352,
+        18
+      ],
+      "colors": 3793,
+      "sha256": "006425177d396261482a1b8d44146d21a9a17e065e31bb8131003d55e199670c",
+      "aseSha256": "5db5f630221954c056ce6f28f2487b010d8ef86def88b859e3d95160c65cf0d7",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardTR",
+      "size": [
+        24,
+        24
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "colors": 459,
+      "sha256": "8c32f1fdf6c77c969d866877b43ccdeeef8bdeb409022f2c8fbc4ef3e9dcbff8",
+      "aseSha256": "d8b3fbab888e8a726d147bac64306d4b0dda6de1a8d308b9c843a42588b42a44",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BoardWell",
+      "size": [
+        364,
+        369
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        364,
+        369
+      ],
+      "colors": 6646,
+      "sha256": "6a92dacf577b3bcf2e4447beaf3abe7b28f946c802877150589b64a3a94ad95e",
+      "aseSha256": "ca5677016780a18efe39110276fc768e3c8ed2ece10c3f2923e3eaab1a575c18",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "BottomMasonry",
+      "size": [
+        470,
+        135
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        135
+      ],
+      "colors": 9103,
+      "sha256": "a362f5394609a9d634302c0fb20a18f55d07524ca490a34dc10c60775897d25b",
+      "aseSha256": "fbb7235fb3128a30928fd67c1a4d942faba936084dfdcac9a6b53d1f154f4992",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "DungeonArtOnly",
+      "size": [
+        470,
+        836
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        836
+      ],
+      "colors": 83113,
+      "sha256": "71feab38683aab7758cd422df2072aa6657de866f2d5eda37cf7a9a654a141ae",
+      "aseSha256": "708f5eda02992d9ce686a1efd414cc9d00df776419e7249edfb525b4572c8218",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "EmptyCell0",
+      "size": [
+        46,
+        46
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        46,
+        46
+      ],
+      "colors": 550,
+      "sha256": "cfcf4f90909ee41e8d81bb2e51134cd7c01b39624ec0a19e37fc69c6fe396c76",
+      "aseSha256": "24c8ee3facb8d3f9d9e7422fe396d9e574c1c1a38ea9ada13e12be1de9ac764f",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "EmptyCell1",
+      "size": [
+        45,
+        46
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        45,
+        46
+      ],
+      "colors": 566,
+      "sha256": "18401bbdb9c3bd268d39ed5c521af8b4d65c6f3fcf03d9121fc017a4f336fbaa",
+      "aseSha256": "1c2730c0e82f5dba43469bb5ccd48db98e7cd69ebaac312686f607afa8739fb7",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "EmptyCell2",
+      "size": [
+        46,
+        46
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        46,
+        46
+      ],
+      "colors": 556,
+      "sha256": "22ed1ebef79cd394630be221de42ae866b5f2236ecc2a3b14a0c241eb5ff2ac0",
+      "aseSha256": "832572a3d6b1081c214f55e40018f26a37d33b5afd88d4eb30cd2a216a9ca170",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "FarWall",
+      "size": [
+        470,
+        180
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        180
+      ],
+      "colors": 22336,
+      "sha256": "1ecf7be5cdb9e80259adc64f544ff2384212acad6281a55e31acb2dc76faf4c6",
+      "aseSha256": "b01b454ba499e7646984465ba0495dfc32ce32e14eee98487a576172d46105cf",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "LeftBones",
+      "size": [
+        34,
+        33
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        34,
+        33
+      ],
+      "colors": 705,
+      "sha256": "d632784f24b9b8182a9e94d733401364634e7cf967562e5aae149ddca5aa20c2",
+      "aseSha256": "67dcea994dd18adebac3c202ea8d81e67e7d431da2dde539fcc559883a1ccee1",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "LeftBorderDressing",
+      "size": [
+        37,
+        403
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        37,
+        403
+      ],
+      "colors": 9858,
+      "sha256": "ffaaad7048e5067488e6cac1eb4302e154c96ee82711c07081fe80e2a3753e68",
+      "aseSha256": "a645b136baf9e10e01e332ee1b6bea30fbef979de900d909bca8d25d5f2a845f",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "LeftSkullBanner",
+      "size": [
+        28,
+        91
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        28,
+        91
+      ],
+      "colors": 1728,
+      "sha256": "96806522faca815ce248b221b327f930dcda69878ac07e159309517c1df72f39",
+      "aseSha256": "9bbb1dd81053f74b78da64984b0c25b6a112570a20522ca7bffa61d62303824d",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "LeftTorch",
+      "size": [
+        36,
+        72
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        35,
+        72
+      ],
+      "colors": 1649,
+      "sha256": "f3fe814361876b3d7bb61466dba46849b744d2b59b87681f9feff3deb6f38aef",
+      "aseSha256": "0080d4932341561a16b6ee9f4b29b154799fa1d014acd829236275fcacf625a6",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "PlayerBanner",
+      "size": [
+        49,
+        65
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        49,
+        65
+      ],
+      "colors": 1833,
+      "sha256": "98ac1014c522c0b71482f744a1ec8ec7c7e7927f9255d8c94742a42e1eefefe6",
+      "aseSha256": "d12e093770e7ddc8b16c4b0693f39e415f505c61398d6dbd317b231011ef2cf6",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "PlayerFootMasonry",
+      "size": [
+        137,
+        18
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        137,
+        18
+      ],
+      "colors": 1450,
+      "sha256": "8143b9a6bbca5564829ada3a828a26ca34a8a453422d530edaa4b0d84d805b17",
+      "aseSha256": "0de2c3e6046ec701b271dbfdc431d558fd84a1d293bcc072f82cbc889b8fb6c5",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "PlayerFrame",
+      "size": [
+        129,
+        252
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        129,
+        252
+      ],
+      "colors": 4821,
+      "sha256": "2733fe4ee6d13e331897d2b7296ff0690058ffe5efaa1695b8c6120758a1be71",
+      "aseSha256": "7ffcf2141ad625ff74e0c50a503a1074ccf92b9937fa4f9f0ef79fbb6eb40265",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "PlayerMasonry",
+      "size": [
+        105,
+        224
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        105,
+        224
+      ],
+      "colors": 1957,
+      "sha256": "bad0787e21c03044b29915a476e9f20232e3bc5ebe27dd5de72e22bde6197d56",
+      "aseSha256": "6ebb3f34f2fcd87b02e5b3407e6a593e41003d0653d6c90fa88b5049a82582f9",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "PlayerSurround",
+      "size": [
+        140,
+        252
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        140,
+        252
+      ],
+      "colors": 2276,
+      "sha256": "0891273a225a55adc47ef302581d8a1ee08a31623adfb220f1a401ca060945ce",
+      "aseSha256": "341e593eaf232a419345543044f2da3f55b17a112d6ffbd8bc9bd3789fd7b32e",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "RightBarrel",
+      "size": [
+        36,
+        57
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        34,
+        51
+      ],
+      "colors": 1533,
+      "sha256": "e3f9f5f504b9b54c32485cb7a9c1a4fc4f5219b1a0936866810947b8c1f67eb9",
+      "aseSha256": "faee3eb41117714601b7c99429208092495130cd1b9c88f48d0e17002924cfa8",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "RightBorderDressing",
+      "size": [
+        33,
+        403
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        33,
+        403
+      ],
+      "colors": 9156,
+      "sha256": "b1cac2c5cda62dee57e7464519d369de19779a08375d98391e2ab9ac58ab885d",
+      "aseSha256": "10287b4e81d1fea8546bb428dc48d94c2f0faf8769c43ec9272394a59a7318c6",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "RightSkullBanner",
+      "size": [
+        28,
+        91
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        28,
+        91
+      ],
+      "colors": 1707,
+      "sha256": "9a99641719623b820a1d1d7aaa35682a9b02a5d6837b65dff5c7babc7fc56805",
+      "aseSha256": "f1752a863590eb5a736dbb33b8f2e882b870bc307a248b5f406aad1e0a2760df",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "RightTorch",
+      "size": [
+        30,
+        72
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        72
+      ],
+      "colors": 1411,
+      "sha256": "9f3b03f6d8f9fac2a1467b10946f6f9107b0429a39f65407a681271f033c4a1f",
+      "aseSha256": "fa7577946bfbd08bca2de8196f25f3d178c494b81ac5c2880f9e3423db7cfca8",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedAbility",
+      "size": [
+        176,
+        66
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        176,
+        66
+      ],
+      "colors": 5502,
+      "sha256": "ee089ea3cc579e215cf7974e2f89b97adfcd197be159fbee06eb7fd6db72404b",
+      "aseSha256": "967cfc4762f5d06b036873f3cf011bc25988a1a5e85e1ce934312c876b908f04",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedBombHolder",
+      "size": [
+        70,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        70,
+        63
+      ],
+      "colors": 1475,
+      "sha256": "0afa65d6034998882fc330a56bb8f82cc754c9589bd737639697f08fe8677706",
+      "aseSha256": "aa4c16a65de699b44a74e6ac4fbd2d944674e3d0922cba725f52eb3d1e9617b7",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedEnergy",
+      "size": [
+        147,
+        24
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        147,
+        24
+      ],
+      "colors": 1946,
+      "sha256": "d7edff843808f96e9364717d531493ae312e16e0e667afea0e3e30106999d908",
+      "aseSha256": "6aa2b848efdbe945cdbf1ef868f4611229334dbee52e6fcb2e913ce38dbc2189",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedGuide",
+      "size": [
+        79,
+        39
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        79,
+        39
+      ],
+      "colors": 1732,
+      "sha256": "248d4c17ae1fbc44b168e612a8cd3d7fab0b6bbef78d52cab729ae019037df88",
+      "aseSha256": "2ed29fe609d2b3b1a9e8cdce0d9ba679b014cacc87fef0e42cfb164c29824e2e",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedPotionHolder",
+      "size": [
+        70,
+        63
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        70,
+        63
+      ],
+      "colors": 1447,
+      "sha256": "873f7a06e13aeb45c5fb85de9b24457887fadbf82d27cdc92192f70d03c1f653",
+      "aseSha256": "4bd7d3fea84918afd93fce1144e2a005da1afc28cc1dc444ecc91042509be37a",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "SharedSettings",
+      "size": [
+        45,
+        40
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        45,
+        40
+      ],
+      "colors": 1577,
+      "sha256": "c59febbb1104c4c3da3a45804598a5b865a59abf7fed6b40fced4de3af167da0",
+      "aseSha256": "b1fc511c1a379fe54d38571255e90df4fa27272b3e1fe5391af433fe3b49888b",
+      "asePixelsMatch": true
+    },
+    {
+      "name": "WaveHeader",
+      "size": [
+        135,
+        47
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        134,
+        45
+      ],
+      "colors": 2522,
+      "sha256": "2fc743c5ddb6e6ac9558a0cfcc7fe3578eb9350a5760b3d05b981289b3f4067d",
+      "aseSha256": "a16ccacdc782c57f2c858e7bb57da769486ba14a86539132c3a06069519474da",
+      "asePixelsMatch": true
+    }
+  ],
+  "exactModuleComposition": true,
+  "landmarks": [
+    {
+      "name": "Door bars",
+      "box": [
+        211,
+        99,
+        243,
+        115
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Left arch stones",
+      "box": [
+        193,
+        78,
+        201,
+        97
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Left banner emblem",
+      "box": [
+        160,
+        78,
+        177,
+        108
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Right banner emblem",
+      "box": [
+        296,
+        78,
+        311,
+        107
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Warm right torch",
+      "box": [
+        348,
+        86,
+        376,
+        145
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Near floor joints",
+      "box": [
+        176,
+        276,
+        333,
+        287
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Board top beam",
+      "box": [
+        100,
+        297,
+        395,
+        309
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Board bottom beam",
+      "box": [
+        100,
+        684,
+        395,
+        697
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Left foreground pillar",
+      "box": [
+        0,
+        747,
+        67,
+        836
+      ],
+      "exactPixelsPreserved": true
+    },
+    {
+      "name": "Right foreground pillar",
+      "box": [
+        409,
+        748,
+        470,
+        836
+      ],
+      "exactPixelsPreserved": true
+    }
+  ],
+  "binaryAlpha": true,
+  "providerCalls": 0,
+  "buildSourceMatchesReceipt": true,
+  "protectedFilesVerified": [
+    "Assets/_Game/Resources/BattleEnvironments/DrownedCourt_Throne.prefab",
+    "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta",
+    "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta",
+    "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta",
+    "ArtSource/MenuUI/button-frame-revision.json"
+  ],
+  "unityValidation": "Not run: source-only assets outside Assets; no runtime/serialization changes",
+  "sourceGrid": "470x836; original 941x1672 sampled at (2x+1,2y+1); no claim of original native dimensions",
+  "changedPixelMap": "review/ChangedPixels.png",
+  "exclusions": "Live characters, gems, counters, labels, HP bars and item/ability icons are deliberately absent from production art."
+}
