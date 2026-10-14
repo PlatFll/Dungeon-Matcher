@@ -610,6 +610,17 @@ public sealed class BoardVisuals : MonoBehaviour
         bool flipX,
         bool flipY)
     {
+        var referencePiece = BattlePresentationSkin.FramePiece(objectName);
+        if (referencePiece != null)
+        {
+            sprite = referencePiece;
+            rotationDegrees = 0;
+            flipX = flipY = false;
+            // Preserve the outer border while allowing the reference's center
+            // ornaments to extend inward beyond the sixteen-pixel beam.
+            if (objectName.StartsWith("TopEdge_")) localPosition.y -= 8f / 64f * uniformScale;
+            if (objectName.StartsWith("BottomEdge_")) localPosition.y += 8f / 64f * uniformScale;
+        }
         GameObject pieceObject =
             new GameObject(objectName);
 

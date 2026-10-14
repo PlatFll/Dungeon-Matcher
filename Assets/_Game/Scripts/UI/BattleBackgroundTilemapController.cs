@@ -414,11 +414,19 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
         EnsureMask();
         Rect interior = battleArea.rect;
-        float inset = GameplayPixelLayoutController.NativeFrameThickness;
+        float inset = activeEnvironment != null && activeEnvironment.EnvironmentId.StartsWith("presentation-")
+            ? 0 : GameplayPixelLayoutController.NativeFrameThickness;
         interior.min += Vector2.one * inset;
         interior.max -= Vector2.one * inset;
         Vector3 min = Project(interior.min, uiCamera, mapPlane);
         Vector3 max = Project(interior.max, uiCamera, mapPlane);
+        if (activeEnvironment != null && activeEnvironment.EnvironmentId.StartsWith("presentation-"))
+        {
+            // Pin the composed vista to the visible top instead of exposing
+            // repeated roof rows when battle-height reservations change.
+            float shift = Mathf.Round((max.y - transform.position.y - 272f / ppu) * ppu) / ppu;
+            activeEnvironment.transform.localPosition = new Vector3(0, shift, 0);
+        }
         viewportMask.transform.position = (min + max) * 0.5f;
         viewportMask.transform.localScale = new Vector3(
             Mathf.Max(0, max.x - min.x), Mathf.Max(0, max.y - min.y), 1);

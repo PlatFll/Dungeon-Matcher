@@ -9,17 +9,19 @@ New-Item -ItemType Directory -Force -Path $bpTemp | Out-Null
 $bpNames=@()
 foreach($family in @('Guide','Supply','Ability')) {foreach($state in @('','Hover','Pressed','Disabled')){$bpNames+="Shared/$family$state"}}
 $bpNames+=@('Shared/Energy','Shared/EnergyFill','Shared/Corner','Shared/Edge','Court/Statue')
-foreach($zone in @('Dungeon','Forest','Court')){foreach($part in @('Edge','Corner','Plaque','Panel','General','BottomPanel','CellA','CellB','CellC','PlayerTop','PlayerMiddle','PlayerBottom','Banner','SideDressing')){$bpNames+="$zone/$part"};$bpNames+="Scene/$zone"}
+foreach($zone in @('Dungeon','Forest','Court')){foreach($part in @('Edge','Corner','FrameAtlas','Plaque','Panel','General','BottomPanel','BottomLeft','BottomRight','CellA','CellB','CellC','PlayerTop','PlayerMiddle','PlayerBottom','Banner','SideDressing','SideRight')){$bpNames+="$zone/$part"};$bpNames+="Scene/$zone"}
 $bpNames+=@('Forest/Foliage','Court/Kelp','Motion/Torch','Motion/Lantern','Motion/Rune','Motion/Bubble','Motion/Waterfall')
 if($Only){$bpNames=$Only}
 $bpScript=Get-Content -LiteralPath (Join-Path $bpRoot 'Build.js') -Raw
-$bpRevision=$bpScript.Substring(0,$bpScript.IndexOf('var d=read'))+(Get-Content -LiteralPath (Join-Path $bpRoot 'ReferenceRevision.js') -Raw)
+$bpRevisionSource=Get-Content -LiteralPath (Join-Path $bpRoot 'ReferenceRevision.js') -Raw
+$bpDispatch=$bpRevisionSource.LastIndexOf("if(ONLY.indexOf('Motion/')")
+$bpRevision=$bpScript.Substring(0,$bpScript.IndexOf('var d=read'))+$bpRevisionSource.Substring(0,$bpDispatch)+(Get-Content -LiteralPath (Join-Path $bpRoot 'CompositionRevision.js') -Raw)+$bpRevisionSource.Substring($bpDispatch)
 foreach($name in $bpNames){
  $native=Join-Path $bpRoot "native/$name.aseprite"
  New-Item -ItemType Directory -Force -Path (Split-Path $native) | Out-Null
  $tag=$name.Replace('/','-');$log=Join-Path $bpTemp "$tag.log"
  if(-not $ExportOnly){
-  $selectedScript=if($name -match '^(Scene/|Motion/(?:Rune|Torch|Waterfall)$|(?:Dungeon|Forest|Court)/(?:Edge|Corner|Plaque|Panel|General|BottomPanel|Cell[A-C]|PlayerTop|PlayerMiddle|PlayerBottom|Banner|SideDressing)$)'){$bpRevision}else{$bpScript}
+  $selectedScript=if($name -match '^(Scene/|Motion/(?:Rune|Torch|Waterfall)$|(?:Dungeon|Forest|Court)/(?:Edge|Corner|FrameAtlas|Plaque|Panel|General|BottomPanel|BottomLeft|BottomRight|Cell[A-C]|PlayerTop|PlayerMiddle|PlayerBottom|Banner|SideDressing|SideRight)$)'){$bpRevision}else{$bpScript}
   $script=("try {`n"+$selectedScript+"`n} catch(e) { console.log('BATTLE_ASSET_FAILED '+e); } app.command.Exit();").Replace('__ROOT__',$bpRoot.Replace('\','/')+'/').Replace('__PROJECT__',$bpProject.Replace('\','/')+'/').Replace('__ONLY__',$name)
   $scriptFile=Join-Path $bpTemp "$tag.js";[IO.File]::WriteAllText($scriptFile,$script)
   $job=Start-Process -FilePath $bpLibre -ArgumentList @('--script',('"{0}"' -f $scriptFile)) -WindowStyle Hidden -PassThru -RedirectStandardOutput $log -RedirectStandardError (Join-Path $bpTemp "$tag-errors.log")

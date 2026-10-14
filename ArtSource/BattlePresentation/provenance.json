@@ -1,8 +1,8 @@
 {
   "status": "implemented review candidate; unmerged; no new golden memberships",
   "baseCommit": "a0aafe53e22f2efe7cbf0319b9ce4a0de1e8fe3b",
-  "nativeAssets": 69,
-  "revision": "reference extraction and cleanup",
+  "nativeAssets": 81,
+  "revision": "composition correction; bottom enclosure removed",
   "references": [
     {
       "path": "ArtSource/BattlePresentation/brief/references/DROWNED_COURT_TARGET.png",
@@ -18,11 +18,11 @@
     },
     {
       "path": "Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt",
-      "sha256": "7abc97fd26209cdefa095bc1e7ebb223972b23f46986c04280fbddb60485b8d7"
+      "sha256": "466b52e3721fa230ee8046ad73cacdc7f5dd6d64ba355a6fd3bbad93c043a5d5"
     },
     {
       "path": "Docs/ArtDirection/Golden_Reference_Register.md",
-      "sha256": "9a2e1ec2b1d02b4092fde69379cf722c3c82ccc5b95c6df2d3ae121ab90bd83e"
+      "sha256": "ae8d73bc1fb20cd7a5da39b3a18102a9730e0c70702fc36571734c1063759008"
     },
     {
       "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
@@ -86,20 +86,20 @@
     "remainingDailyBonus": 4,
     "receipt": "generation/statue-job.json"
   },
-  "method": "LibreSprite source-color extraction, traced actor/UI removal masks, reconstructed occluded scenery, separate frame modules and native stone cell backgrounds. Shared controls retained. No full mockup runtime screen.",
+  "method": "LibreSprite source-color extraction, traced actor/UI removal masks, reconstructed occluded scenery, continuous 28-piece frame atlases, native stone cell backgrounds and separately anchored foreground. Shared controls retained. No full mockup runtime screen. Zero generation calls in this revision.",
   "nativeFinalization": "Tools/Build-BattlePresentation.ps1; exact reopened cel comparison; layer flag normalization; LibreSprite PNG export",
   "captures": [
     {
       "path": "review/after/drowned-court.png",
-      "sha256": "2b8b5b4a356360728e2cd9f2386dff6aa9f81e8d5ed276f95e5fbe56df19d026"
+      "sha256": "95e24cd0c6f138cdff8483a11a413585561aa28892323ec71a99d37fa3d9e453"
     },
     {
       "path": "review/after/dungeon.png",
-      "sha256": "43b536e53f783a826de0779f366249d004125d76ff82d9931182b334f8b5e3fd"
+      "sha256": "8647643d88553d0ed5e24c4c57fc2702cfb25250db33819b88b9c89f114cb36f"
     },
     {
       "path": "review/after/magical-forest.png",
-      "sha256": "ec843eaaf22a7ae6865e5acece983e8c56abe9a8e5f1909a841ec2532d9ce20e"
+      "sha256": "c89359df0df56fdc2fd49e70420d78987eb99a232be85ffff062bb7956fa1f2f"
     },
     {
       "path": "review/before/drowned-court.png",
@@ -115,311 +115,311 @@
     },
     {
       "path": "review/characters/bardley.png",
-      "sha256": "346af9051663c4f98b7e076a2a050b4164770fd21264b1425410ab2365ee750b"
+      "sha256": "67137ab4d982672e206d119dad9a53f294fcf802c1f3fe62f7c7466ac885dfb7"
     },
     {
       "path": "review/characters/dungeon_attender.png",
-      "sha256": "230b30b7bc0a91d91f0ca038cceb9ebd405569d6f10a71cc4a101fe7f197f031"
+      "sha256": "e53f2df8f0787982daa876e8b44b39482bdd0336cd8c23e21ed5891fa3312a3f"
     },
     {
       "path": "review/characters/gideon_glass.png",
-      "sha256": "7d226853486c84be038c8d81b157148f2a13732b6d11b7f57d34b86a55149241"
+      "sha256": "4063c0cec1990a37e100c9c6fbfa074329bf2ba06e46e396b72c79208eafb978"
     },
     {
       "path": "review/characters/kobold_gunner.png",
-      "sha256": "5fac36f52886f5fec0af2f90eac4d519352901ee093e54dbbbfa16edf9a70b5a"
+      "sha256": "7c1fc5f6b949d94308d25ef533693d131ab0cfd80b5f741030c3cfd17f3d4050"
     },
     {
       "path": "review/characters/skeleton.png",
-      "sha256": "29f1b3d789c4ac184a9ecbf09967f3a7f51ad469d495f5c65a631b4d97dd1d81"
+      "sha256": "c287e903ad7646c7a8eff92df86c93020f22fe46e8cabb71d5ccab70e31c6ce0"
     },
     {
       "path": "review/motion/drowned-court/00.png",
-      "sha256": "c737948e10ea5cd32fc1fdd523c7d2a993d36b38b6a0b808d1227e5429e40acf"
+      "sha256": "781208b1ae52e06fdd19865f8aac4cb9bd073e98cd3c6b34b7b5680566eacd91"
     },
     {
       "path": "review/motion/drowned-court/01.png",
-      "sha256": "e9f31a75e710391f9963ceac10b79f1693f1b242db779c1a533ea8e8f814c2c9"
+      "sha256": "720305e6833d513325e572b926a4e7ff3506e7ea16f26b57757ae734ef20e321"
     },
     {
       "path": "review/motion/drowned-court/02.png",
-      "sha256": "37ee464af95f52c0e976dc04403d97630b03bba9050861df64ef918ce1bc9726"
+      "sha256": "d2b4fb72795f94f136295b865382cf1c9019d36d2132c71c12f2d8247fa8a4c5"
     },
     {
       "path": "review/motion/drowned-court/03.png",
-      "sha256": "5b434dfc0bec5e17e49ddf8cc77bebef83f2b5d56489e57a6b9e00996d9fb62f"
+      "sha256": "ed293bc5c8222c91a5926ece400dd02af08e0f54756636956112b4ad6a30cf30"
     },
     {
       "path": "review/motion/drowned-court/04.png",
-      "sha256": "7b694f75ff5a51dd12be94229d7401f8bd3548f690ebaaeb3adf2a223e346e8b"
+      "sha256": "562848c471e8c93b90ec81221d244611a3e241f107cf9ce90e2832533e479061"
     },
     {
       "path": "review/motion/drowned-court/05.png",
-      "sha256": "66029e6a5b8ebf2c3c8249c4bcc926f42644051f5a1937a342836732c8ecd801"
+      "sha256": "466b1a821a15b7ee2dbd3bf076e95743abe8ee24bae0809012467d09c57f9c8a"
     },
     {
       "path": "review/motion/drowned-court/06.png",
-      "sha256": "0ab8bbf310a6a24b729dc47dba3e5555b33a60bec2a1ecd2a21052f8cda93e8c"
+      "sha256": "189a460fcf3aa69fbab304dd5b0fb071898ef4086f672db00808670d1593333b"
     },
     {
       "path": "review/motion/drowned-court/07.png",
-      "sha256": "0b052e044c78890e16861ab584af9a1eb6bb8f5bbb5bf9ffe8b2a123a8bbea7d"
+      "sha256": "a3d4c6a0128f9daf59f8bfefa549499a0dc6c98a6697b804e075f92add106b22"
     },
     {
       "path": "review/motion/drowned-court/08.png",
-      "sha256": "3c2d970d4c15dd88c2d6cfbe87d18acbe17240f87efec9f1b7eac29a9aac23dd"
+      "sha256": "f58fc42e36f9812d88a81ad4842d3a9e9cf2ede2e0004079ab61116da93bc235"
     },
     {
       "path": "review/motion/drowned-court/09.png",
-      "sha256": "c1e9e8f17403c00583c5687d836b413e6edb77337897f2922a16e08338ceafbf"
+      "sha256": "b0c0e25dd64abe3a927e1c11d0babe037b8f394f6c1a8f0086dcc9b26dfb0303"
     },
     {
       "path": "review/motion/drowned-court/10.png",
-      "sha256": "245e4eb36977da5582c411fe593bc400c5b58f3710a6e5469ad70606fa8773c6"
+      "sha256": "5243eca7e4f41e4a59a3d14223808d2d10b28789fefe9429ab845ce208223039"
     },
     {
       "path": "review/motion/drowned-court/11.png",
-      "sha256": "463564b6f9e8c56b8a196b963998dba4e59602045c7e4c77457944adb38405c8"
+      "sha256": "b491a126aa985f7f471a2c41c5d00226ee6396d41e9d28e9b5dc4614a95a5b63"
     },
     {
       "path": "review/motion/drowned-court/12.png",
-      "sha256": "f08177a27360b37b86b3b4a7716546b62bd83973cc81a62c1a3ff7be8fecf21e"
+      "sha256": "0890faf2297dde10f76a477768012f8568608d0d44a147d71be464180e40ac24"
     },
     {
       "path": "review/motion/drowned-court/13.png",
-      "sha256": "add1d4687f40435820d54485eacfa8bf1aad8295a8ab6ae1b7af92ff93000c10"
+      "sha256": "8d55311e07c72b6e621fb3c48b6bf3fad34351fe4eab5740d170ab49aef17cea"
     },
     {
       "path": "review/motion/drowned-court/14.png",
-      "sha256": "25438400d72ab74a2c34a4ec31ff7cf900a3d1968d42f3ae5fad56309de6b828"
+      "sha256": "cbd1702c682f71136f8f87c29301fc0ae8cb4f1665155dea71e284591622d870"
     },
     {
       "path": "review/motion/drowned-court/15.png",
-      "sha256": "c3ab66631ff45f126991cdf0fb06e0a93a1414c19f5263b1fd835b559c2c6106"
+      "sha256": "7f17ac5e1cc84d2ed57df54e47de88a7f578a15aa39a0c646bcce1681c82acd8"
     },
     {
       "path": "review/motion/drowned-court/16.png",
-      "sha256": "0fd8848b316f7a8c8cc5495311de7ff8fb2e2f98a508df04ed2604d2a163cae0"
+      "sha256": "cd815f7748ec9105838be9bac2d48da94d75138ab18e58c320bf45564f39a1ac"
     },
     {
       "path": "review/motion/drowned-court/17.png",
-      "sha256": "54ceffa00d5a4d29338d0192849f1bd42db868d2f628b9d5fbf1b70b3cc34b6d"
+      "sha256": "c7207860a70e24065c076ccbb0de1f7244f9680b67bf46c8d9f68a7d3fce531b"
     },
     {
       "path": "review/motion/drowned-court/18.png",
-      "sha256": "f9443db4027cf9e6bbefda17164599c33fa13ff79ed34c3e1d7202c7cdf4e0c1"
+      "sha256": "b5c28c070e9551393baf1ddd1e9b54b5e92873cda6b7ce84475297e3e1ed3793"
     },
     {
       "path": "review/motion/drowned-court/19.png",
-      "sha256": "ea8b127dafe9a97543fcd57cffa50c4a9f5c4623cb452dd379245dabf13d867c"
+      "sha256": "bc6bfa18f608129dfe6814ad3742abfeb82b901b84f27ed80ff70113b5751e9c"
     },
     {
       "path": "review/motion/drowned-court/20.png",
-      "sha256": "9e85fe97695f79ced0e830319eab4376c0d0cc002df5ec5687ad62089907b0dd"
+      "sha256": "bf227ef27341bc7b6a4c7e8a71e5ae9de09366ff810ed574ee39d4ef8eb912ff"
     },
     {
       "path": "review/motion/drowned-court/21.png",
-      "sha256": "3f981d4d1adfdc14cc9aa7cbb1f90a7b7969829f2aac9397a63919c992e6cc81"
+      "sha256": "34d4b613776441cf347bfb2160cacd0fe9cf64073318a24e1d3f7005db679c5c"
     },
     {
       "path": "review/motion/drowned-court/22.png",
-      "sha256": "b731d0fe55ddfe2a2f09e8dcaf2c23773185a95b6c3b2a2609ec1d731a066950"
+      "sha256": "c2f28df5fb535437ed2dab28cb5570061393aa3132c17138faf556551247558e"
     },
     {
       "path": "review/motion/drowned-court/23.png",
-      "sha256": "27bc430b3e6fd848611fa96b321048d59f2547b60c143add514e5a1fb4e5ecc3"
+      "sha256": "28d8fd02f26c2659859793d19d7b572491817f2897f421423701e6a41416120b"
     },
     {
       "path": "review/motion/dungeon/00.png",
-      "sha256": "8822ef577bcc49a4769038599351e991bdee667f94c0dadc399a448f1467ac0e"
+      "sha256": "9a7264ff07bff93e698bad79100f86fa3326e47cc0a1b11f83ce0b22afae9a9a"
     },
     {
       "path": "review/motion/dungeon/01.png",
-      "sha256": "2f8066e69c639b226409b7e54e16fa69a46ab73c7d95f201b47084f6953bd77f"
+      "sha256": "639d964df3cb4b30a60bec1902ae97f2aa4f292270443b95884eb32544b57429"
     },
     {
       "path": "review/motion/dungeon/02.png",
-      "sha256": "96e489231cae6ba8fbb0de4723458529c044e949974c480d504006418e893388"
+      "sha256": "5b874afedf9b0c676859a95113d12bb38bc51c72791b1d56bb41d7f49f88fc89"
     },
     {
       "path": "review/motion/dungeon/03.png",
-      "sha256": "e47517d3f467eaa507c4ace70a146fe5c9e1db2ce50d95f042b339c2ae76ad2c"
+      "sha256": "6f56ca484d68157e57fa8ad7389be92d54f66da55c3d6d8f5fc7e0ec5fc8376f"
     },
     {
       "path": "review/motion/dungeon/04.png",
-      "sha256": "0e82f92a12c454b237534c6c6ce2ce6d22b8bcd8820677e59d4cf6bc5fc1b80c"
+      "sha256": "5d3c4df6b66fb92d473285c5122db3762952701622a5f50b575c3eb41674f351"
     },
     {
       "path": "review/motion/dungeon/05.png",
-      "sha256": "54d4fead0c3fd21e8a00368838b36d6ed16da347a2a0e52350d35ce9eb9ed09b"
+      "sha256": "26153dc7b6d1b29b189d165fc6a70eb979817c219bf3462b0fda76cb57401586"
     },
     {
       "path": "review/motion/dungeon/06.png",
-      "sha256": "d36b0cd90513c7594f27bc6004d8f1560d603a5e635c41fd614404229be3fe61"
+      "sha256": "bf71c1f3d36bf2bd77c51f870590fe40b2f939be213221d95e84bc44d31ab055"
     },
     {
       "path": "review/motion/dungeon/07.png",
-      "sha256": "f7b97dceb3aa065a76a79d027ad9fbe7fd30d39d6be1943db799a04c7be8d680"
+      "sha256": "4f4639d6e352cdb8cec5768e801552af43f2a45520597b0415c3eb8bf48e4c13"
     },
     {
       "path": "review/motion/dungeon/08.png",
-      "sha256": "df7237669c049e1ff4fe6036284ff921fc6cfedc52002b1d16987de41dca70c8"
+      "sha256": "f496a9e6ded99faac3c642595d5e9336699449ee6867fa1f986d484ea08c3dbd"
     },
     {
       "path": "review/motion/dungeon/09.png",
-      "sha256": "1952c6ecac3df387f537ad5b51a450ff344e57a355886e1d9e644491e34d7e9f"
+      "sha256": "02906f03842b86c7a562c443304a3abaf6ab083961abb590e49a244291c69847"
     },
     {
       "path": "review/motion/dungeon/10.png",
-      "sha256": "45034f2525322f62269dfd4ea87f2d9f7eb447f18452cfb10b03f04ea4e3b8d1"
+      "sha256": "a9f7faefbfac454f60b25117e2d9c82d51831eaccca054e0a273087963195c1b"
     },
     {
       "path": "review/motion/dungeon/11.png",
-      "sha256": "2aa8eb88d9e00984136960f49fd102eaf518d976b3c98f51d71c3a852d4841a1"
+      "sha256": "be7ce11868cb0eeec67e78d13bbfe20b324b499b6e07e866c21f5de6837f93ac"
     },
     {
       "path": "review/motion/dungeon/12.png",
-      "sha256": "0904ce222b5d73cc3611afb5bb3c4d92adbb8a2649c42c74c1cddb293fb6f16d"
+      "sha256": "548e4b76c124f0b94e5615d559b409eb171ecaae6139dc1908ab6a345faebae8"
     },
     {
       "path": "review/motion/dungeon/13.png",
-      "sha256": "294dfee12efb04826e47f5a2b492d2a81d2622ead6eed690401ab45d5ccecaae"
+      "sha256": "860116d9e81bd9fdf6cd5701c42557c5b58cee8831797b0d1c1b5056f32e9f29"
     },
     {
       "path": "review/motion/dungeon/14.png",
-      "sha256": "74a9f7070acae3e9511d6dade133209bbcdc90d88ba783f96ce469f8fa26c914"
+      "sha256": "9f1e3a93763b4feba908fa608c8fb867613dc87fa218cdb12911846d4638044c"
     },
     {
       "path": "review/motion/dungeon/15.png",
-      "sha256": "ffbe55c528055eba9b59a57e7e6a82a81a43023f9ba92497f02fd5ae42cff816"
+      "sha256": "d54b444691750d522b34abdd999ab502b9fc658d23555ed03b994d5519b1dfd8"
     },
     {
       "path": "review/motion/dungeon/16.png",
-      "sha256": "7bda47dbc735530da2ce03be5427a2efb3078e300d6ba77e94fb6f55886eec07"
+      "sha256": "3ad1f8432a08e065b4d28515411c1853775a9080ca8f99462e2fc30268ac1b60"
     },
     {
       "path": "review/motion/dungeon/17.png",
-      "sha256": "66aa809837c856b44c5b37a3a3115475fcea7e18d47d2257493fca50649da79b"
+      "sha256": "2f01a315f998712988baed7bd70c71e5a9f623a97613e89b7804da60d4bcd716"
     },
     {
       "path": "review/motion/dungeon/18.png",
-      "sha256": "1a222ca2ad1358f5a4c8270b3b8028602f56dc64a5cc71788b070a66f01eceec"
+      "sha256": "80f2500ac43b3aa8972d7a34baadcda1b2fa408b845832a7a498b579c338b193"
     },
     {
       "path": "review/motion/dungeon/19.png",
-      "sha256": "85f13614159645e9ee98fcf6a9d2a65849747f2e6a52528fac527d6f2f6fe190"
+      "sha256": "8371123e8f460776928d760bc979c2e99b9666c797207824da66926fb5fbff70"
     },
     {
       "path": "review/motion/dungeon/20.png",
-      "sha256": "2e3656a5b834291e5b52b391829717b8fb39a8b8dad65721a069b7babb53f4d9"
+      "sha256": "393468b49353cb448bee26b5f8ca431797a69fb531da00df61ce5e17d54bf730"
     },
     {
       "path": "review/motion/dungeon/21.png",
-      "sha256": "6bed60339773811fc0c4e038fd4f667625d1f4d554174121997ce3ac4f3fcd84"
+      "sha256": "6e9e848add18a9b2506a1a5dcf113388b5d832e41d134898bd97372c8a5aef44"
     },
     {
       "path": "review/motion/dungeon/22.png",
-      "sha256": "0c7d219eef9a4c826829dd1aa3088ce698215623f6f42136857c8ee327ad22f2"
+      "sha256": "f04824453c6afd12dbf3ec42bc7ec2469f580e1ed129757873c73cc33b9ebeb4"
     },
     {
       "path": "review/motion/dungeon/23.png",
-      "sha256": "f64f586eb062b20f2baf99b4012580a28831815709f029cefe1cc6140de2da3c"
+      "sha256": "f8a0821b9eda5ed9dbc95c9841a5d87d56bc90ad31a62898ca1dcf2aa827cc45"
     },
     {
       "path": "review/motion/magical-forest/00.png",
-      "sha256": "187d9a39e962f1952b174d621691bd7bd28a14f6710ac1389b4958a625379b59"
+      "sha256": "26774274e4d34aae97fd2087a0a60d1412840dfc3ba26395cf9239bc87807fda"
     },
     {
       "path": "review/motion/magical-forest/01.png",
-      "sha256": "f9e35c57e56dada2ef1c4cf616992b749ad4eccb3e8d2a4a77cb14e133a6361c"
+      "sha256": "cef6954d9a18552cd0501ac47dce2763311721c047e1b56b34e204d080c4dce1"
     },
     {
       "path": "review/motion/magical-forest/02.png",
-      "sha256": "7f9608b8a0fc5bfbc60a316242f4ace2091c987e03ba942b8b538296c1e92da7"
+      "sha256": "e0b863bf89e045f2ddefd2bb575b754b6d60ca399d3eb67465645c7c90ac684e"
     },
     {
       "path": "review/motion/magical-forest/03.png",
-      "sha256": "9bba7d6a5d668a2962a9b822f8bdba8707a161cb7405f2bdb264d37b5615f2f8"
+      "sha256": "b91ec947f8eb54d902eb967e2a7c71309c52c98a0545da94dc17a0313867a556"
     },
     {
       "path": "review/motion/magical-forest/04.png",
-      "sha256": "5439607fddecdefe33e4f668325a810e53365ad3a01b453fc936b81ca5910f23"
+      "sha256": "56d64ea03c4f2964e9d91eee08c3d2c0ad211efca924eaae96e858ea12a26e45"
     },
     {
       "path": "review/motion/magical-forest/05.png",
-      "sha256": "1272da384979210f6b98cde55bcc17f8e60783cbcb09ddb2af9ffa8f95698cce"
+      "sha256": "3a483a300da5bedaea2df7904b72dedeae576ded491b37e715afa5decb23cd34"
     },
     {
       "path": "review/motion/magical-forest/06.png",
-      "sha256": "c5bc350a35170c0160152c3db53219ac1b6160cc1b91f3838830f50abd00616a"
+      "sha256": "faf81d9bd9ceed7cdbe6f25c3ca50e1074aa9ed31a6689b586a11993e0a58fda"
     },
     {
       "path": "review/motion/magical-forest/07.png",
-      "sha256": "23558ef6fe60b63fe7fe5cd2b7bb657325e297cbf06cbc05df26da2be05368af"
+      "sha256": "24b17177bc50bdaecc732985ca83aa23fbebeb49f99b37b0fd716ee0932c2c22"
     },
     {
       "path": "review/motion/magical-forest/08.png",
-      "sha256": "c3a4cd5986e3f0196e8abab9299ec23c911b4499f389e47696bf3b47315664c4"
+      "sha256": "3be90f2082b10efc95a2b1cf13ca1a2c0f794dce03b3c95f7cf619ca1ab8b5c2"
     },
     {
       "path": "review/motion/magical-forest/09.png",
-      "sha256": "1c977df45380d2c052835873ceaa4403ce5075d8bf264fff348011ca34372ed4"
+      "sha256": "0078f39835abbf978ae3cd3b914a0f053931dc6b649452b548b8e7846ed10a84"
     },
     {
       "path": "review/motion/magical-forest/10.png",
-      "sha256": "959111aaf4ae8d5b561ce0c87ec9ad1f416f440b9378b0878dfe742ecf01d90a"
+      "sha256": "cbd7e1e9f2dc6b038ffe5a45b18aaab8cb14f8da6b07999f4a66b48cc07c1300"
     },
     {
       "path": "review/motion/magical-forest/11.png",
-      "sha256": "0eeb4e1e1513effa42aa9c0c1c52a35a3d10a33fdbbf9b311e78d32c7e723f6c"
+      "sha256": "de0d3f25d42278394183854f197acc9112d321468512d9a4cf49f32bf9244c62"
     },
     {
       "path": "review/motion/magical-forest/12.png",
-      "sha256": "b069477622893c0d158ab205d20649fc8069ae79b71058c0b2d820925282aade"
+      "sha256": "90359f7a265f3a5e27ec76274c465780eac40e318fa92cc3cb0ba0c817fbd3e6"
     },
     {
       "path": "review/motion/magical-forest/13.png",
-      "sha256": "0800082289f2a816e224224607ad521eb545e5fc53be029b850af195d3807ebc"
+      "sha256": "3deca3889dccd64f87c40b18533616a0c3e8899d523d5e26f56fab0513e44ae6"
     },
     {
       "path": "review/motion/magical-forest/14.png",
-      "sha256": "825b9b0737729121882fec8a5f6a90ae1e08854226294d190fa3d15169357941"
+      "sha256": "2390332eccbf94aee5aeeb0e362391b041e894eecdbc09b698d2ea37bd954ee5"
     },
     {
       "path": "review/motion/magical-forest/15.png",
-      "sha256": "9383413419da2b376f3e0aefb3a18e2047c2f4a3fd4ab77630790970477677ad"
+      "sha256": "6a6200dd09fd6e3391770588ee8e5a4a3dd29e2dd163b9c9fad052e10d0dcc15"
     },
     {
       "path": "review/motion/magical-forest/16.png",
-      "sha256": "734c2f2c4024afe496a87e3fe8c8859afecee4ae1be67b7d4df681267856494e"
+      "sha256": "3a72deb7b0acde61d6938eb8a487ab8fc3a0658928ada10be9223ea65b13b962"
     },
     {
       "path": "review/motion/magical-forest/17.png",
-      "sha256": "2115d989598db06d2b73a2e2eb3aadbd9b1718abf557c77fe86264a748381628"
+      "sha256": "72f3e6d702ec38b5071d549cc9227aabb885f23ba7ff4c579070c410b2d62a19"
     },
     {
       "path": "review/motion/magical-forest/18.png",
-      "sha256": "1564fa15695c9ff8eca113133eebc49a4b38fa391d257ddfe0efd245879d0204"
+      "sha256": "6374a55329ae267227cc60fe4225855bd95a32ebc2796317db827ac97b0d8dc9"
     },
     {
       "path": "review/motion/magical-forest/19.png",
-      "sha256": "981e4505d351f9dd05b5e2c4679ad707a72140610dbae5757693bfc27fb94f16"
+      "sha256": "72ffefbf8e68cd74b5a107dc415c58324f28bb51f0ca82c904216d1784df4dfd"
     },
     {
       "path": "review/motion/magical-forest/20.png",
-      "sha256": "47cf81bc459a9c9d46d447709597c051bc6af23cee82476c2610e4d676445e39"
+      "sha256": "6fa42c264bebd71893a51a67931f617df2c77391bfa95b57a4171775b94963e1"
     },
     {
       "path": "review/motion/magical-forest/21.png",
-      "sha256": "a02de65b6f5dfacc2f99605e24691406b9516bf6fb0cf1c0d045bc556fe06a94"
+      "sha256": "696bfc0b241b80d1efb302e19fd99442f3d0939af44d6d26b3942f816851e047"
     },
     {
       "path": "review/motion/magical-forest/22.png",
-      "sha256": "672c746b56bc4181142e8c74c130c4fe65a4cc6cb8f3a30e7e804eb3bc9ac5b1"
+      "sha256": "4ccf68cfba13ea1faa44f8b1278219ea7151d99be5259d6d2f8915b323805d35"
     },
     {
       "path": "review/motion/magical-forest/23.png",
-      "sha256": "2867b78528e8632979254a3c027262f77d87cb7b4afc7f0bd43d2bc28641ab14"
+      "sha256": "3b3e67999dd414f126d14040bbe773e3356d9d6abff21afaa0bdf9dad226a02a"
     },
     {
       "path": "review/revision-01/drowned-court.png",
@@ -434,28 +434,40 @@
       "sha256": "09336bdf2a0ec8fcc0a6d2553112345ee07e9f916820d29acb99abbaebd9ad16"
     },
     {
+      "path": "review/revision-02/drowned-court.png",
+      "sha256": "2b8b5b4a356360728e2cd9f2386dff6aa9f81e8d5ed276f95e5fbe56df19d026"
+    },
+    {
+      "path": "review/revision-02/dungeon.png",
+      "sha256": "43b536e53f783a826de0779f366249d004125d76ff82d9931182b334f8b5e3fd"
+    },
+    {
+      "path": "review/revision-02/magical-forest.png",
+      "sha256": "ec843eaaf22a7ae6865e5acece983e8c56abe9a8e5f1909a841ec2532d9ce20e"
+    },
+    {
       "path": "review/sizes/drowned-court-1080x2400.png",
-      "sha256": "6a8142a0eca65616b1a4157d14a727d6a73821373e734a44798b5e025bae2c8c"
+      "sha256": "015e0f38fd2996415d68edb60ef18cd4f30036c34745b94c820825eef95d179f"
     },
     {
       "path": "review/sizes/drowned-court-720x1280.png",
-      "sha256": "625fed7831911174db1aeca97f313a7cf847b8bddcf4a21c5c031f6aaf971adb"
+      "sha256": "4c82e235b667689add695eb583ad4288b95bb8020065c256182e2d4798dcd764"
     },
     {
       "path": "review/sizes/dungeon-1080x2400.png",
-      "sha256": "8756238b21aa791a8d9971573ab2113bec9731188a20ecd27d8a9ba783ca4193"
+      "sha256": "75f790efcfb49eb3daccc4a77a1b59bf83ffc1b5fae6656e61faceae937c50df"
     },
     {
       "path": "review/sizes/dungeon-720x1280.png",
-      "sha256": "ae7ab1ec0e54fe41018e6bc9a4f36183c5f3dd937ce1aa3946543f8afabfb06a"
+      "sha256": "a9fe3266ca134c50615499215cf1f2f2c420862bf5ebcf483e6751e53bfc1077"
     },
     {
       "path": "review/sizes/magical-forest-1080x2400.png",
-      "sha256": "407ae5f532ca92c63c3f8d333ce249d5104740e39f5523173dfb16be35fe8ccd"
+      "sha256": "f18099e230ee223ec338fb46f2407ee4a44f2c72a477946b2e05affb6d9c3798"
     },
     {
       "path": "review/sizes/magical-forest-720x1280.png",
-      "sha256": "6b1b7d931530417e21306cc01041de595f645b77faa0f5253d2a54ba60289c67"
+      "sha256": "612bb7fa9117b177c82ed0fa82ab9f1501b7aec5ef3de08c2cf41e67f16d5790"
     }
   ]
 }

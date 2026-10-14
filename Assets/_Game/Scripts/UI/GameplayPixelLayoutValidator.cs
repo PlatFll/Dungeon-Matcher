@@ -64,7 +64,7 @@ public static class GameplayPixelLayoutValidator
         Require(Near(board.width, board.height), "Board is not square", errors);
         Require(g.Top.height >= GameplayPixelLayoutController.MinimumBattleHeight &&
             g.Top.height <= GameplayPixelLayoutController.MaximumBattleHeight, "Battle height outside bounds", errors);
-        Require(g.Bottom.height >= GameplayPixelLayoutController.BottomHeight &&
+        Require(g.Bottom.height >= (BattlePresentationSkin.Folder != null ? GameplayPixelLayoutController.ReferenceBottomHeight : GameplayPixelLayoutController.BottomHeight) &&
             g.Bottom.height <= GameplayPixelLayoutController.MaximumBottomHeight, "Bottom height outside bounds", errors);
         Require(Contains(g.Viewport, top) && Contains(g.Viewport, board), "Top/board leaves gameplay viewport", errors);
         Require(!top.Overlaps(board) && !board.Overlaps(bottom) && !top.Overlaps(bottom), "Sections overlap", errors);
@@ -101,7 +101,7 @@ public static class GameplayPixelLayoutValidator
                 Vector3 hi = Camera.main.WorldToScreenPoint(piece.bounds.max);
                 Vector2 pixels = new Vector2(Mathf.Abs(hi.x - lo.x), Mathf.Abs(hi.y - lo.y));
                 Vector2 source = piece.sprite.rect.size;
-                if (piece.name.StartsWith("LeftEdge") || piece.name.StartsWith("RightEdge")) source = new Vector2(source.y, source.x);
+                if (Mathf.Abs(piece.transform.localEulerAngles.z % 180) > 1) source = new Vector2(source.y, source.x);
                 report += $"World frame {piece.name}: min={lo}, max={hi}, source={source}, ratios={pixels / source}\n";
                 Require(Near(pixels.x / source.x, worldBoard.PhysicalTexelRatio) && Near(pixels.y / source.y, worldBoard.PhysicalTexelRatio),
                     "World frame texel mismatch: " + piece.name, errors);
@@ -143,7 +143,8 @@ public static class GameplayPixelLayoutValidator
                 Require(corner || Near(image.pixelsPerUnitMultiplier, 1), $"Fractional tile density {Path(piece)}", errors);
             }
         }
-        Require(owner.BottomHud.Find("GeneratedBottomHudFrame") != null, "Missing generated bottom frame", errors);
+        Require((owner.BottomHud.Find("GeneratedBottomHudFrame") == null) == (BattlePresentationSkin.Folder != null),
+            "Bottom HUD enclosure does not match the active presentation", errors);
         var arenaFrame = owner.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame");
         // The three reference vistas intentionally have an open arena edge.
         // Enforce that composition while retaining the enclosure in other zones.

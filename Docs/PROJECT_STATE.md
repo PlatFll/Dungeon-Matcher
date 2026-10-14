@@ -32,8 +32,13 @@ kelp obey pause and Reduced Motion without consuming gameplay RNG.
 The user's reference-fidelity revision replaces the simplified scenery, frame
 materials and board cell backgrounds with LibreSprite extraction/cleanup of the
 supplied targets. Thin player frames are separate from board beams; the top
-arena's extra enclosure is removed. Nine dark stone cell variants replace the
-candidate's previous cell art. Shared buttons remain as in the first candidate.
+arena's extra enclosure is removed. The follow-up also removes the bottom HUD
+enclosure, expands the board toward the reference proportions, and replaces
+clamped scenery rows with one continuous native vista. Distinct left/right
+foreground pieces stay at their screen edges; each board uses a continuous
+frame atlas with unique corners and center ornaments. Nine dark stone cell
+variants replace the candidate's previous cell art. Shared buttons remain one
+global silver/purple family across all three zones.
 
 This pass keeps character/gem art, HP bars, combat, board feel, menus and the
 other zones intact. It does not alter progression or balance. Review artifacts,
@@ -156,7 +161,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.17.1, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
+The canonical art guide is now v1.17.2, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.

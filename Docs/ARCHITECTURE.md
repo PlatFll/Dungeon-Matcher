@@ -430,6 +430,17 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Three-zone reference presentation (2026-10-14):** the existing geometry owner
+  selects a 156px minimum bottom area, six-pixel preferred gaps and an 85% maximum
+  board-width fit for Dungeon/Forest/Court. Their unified-combat top minimum is
+  320px; other themes keep their existing reservations. Bottom heights round to
+  even logical pixels so centered controls cannot land on half pixels. These
+  three zones omit the extra top/bottom enclosures. The background owner pins
+  their finite 768x512 vista to the top of its open mask; all 96 native tiles
+  appear once. `BoardVisuals` consumes 28 unique atlas slices, including inward
+  ornament space, at the board's existing uniform scale. No board rules or
+  resolution timings are changed by this presentation geometry.
+
 - **Current enemy art sources (2026-10-11):** `ArtSource/EnemyArtCohesion/`
   supersedes the older enemy source rectangles mentioned below. Native staging
   preserves sprite GUID/fileIDs and clip bytes. Expanded canvases use a fixed

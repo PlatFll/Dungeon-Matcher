@@ -31,6 +31,23 @@ public static class BattlePresentationImporter
             var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);
             settings.spriteMeshType = SpriteMeshType.FullRect; importer.SetTextureSettings(settings);
             importer.spriteImportMode = SpriteImportMode.Single;
+            if (relative.EndsWith("/FrameAtlas.png"))
+            {
+                importer.spriteImportMode = SpriteImportMode.Multiple;
+                var pieces = new System.Collections.Generic.List<SpriteMetaData>();
+                void Piece(string name, int x, int y, int w, int h) => pieces.Add(new SpriteMetaData
+                    { name=name, rect=new Rect(x,544-y-h,w,h), alignment=9, pivot=Vector2.one*.5f });
+                Piece("TopLeftCorner",0,0,80,80); Piece("TopRightCorner",464,0,80,80);
+                Piece("BottomLeftCorner",0,464,80,80); Piece("BottomRightCorner",464,464,80,80);
+                for (int i=1;i<7;i++)
+                {
+                    Piece("TopEdge_"+i,16+i*64,0,64,32); Piece("BottomEdge_"+i,16+i*64,512,64,32);
+                    Piece("LeftEdge_"+i,0,464-i*64,16,64); Piece("RightEdge_"+i,528,464-i*64,16,64);
+                }
+#pragma warning disable 618
+                importer.spritesheet=pieces.ToArray();
+#pragma warning restore 618
+            }
             Vector2Int cell = relative.StartsWith("Scene/") ? new Vector2Int(64,64) : relative switch
             {
                 "Motion/Torch.png" => new Vector2Int(24,40), "Motion/Bubble.png" => new Vector2Int(12,12),
@@ -77,8 +94,8 @@ public static class BattlePresentationImporter
     {
         string folder=Target+"/Scene/"+zone+"Tiles";Directory.CreateDirectory(folder);
         var sprites=AssetDatabase.LoadAllAssetsAtPath(Target+"/Scene/"+zone+".png").OfType<Sprite>().OrderBy(s=>s.name).ToArray();
-        if(sprites.Length!=48) throw new System.InvalidOperationException("Expected 8 x 6 scenery tiles: "+zone);
-        var tiles=new Tile[48];
+        if(sprites.Length!=96) throw new System.InvalidOperationException("Expected 12 x 8 scenery tiles: "+zone);
+        var tiles=new Tile[96];
         for(int i=0;i<tiles.Length;i++)
         {
             string path=folder+"/"+sprites[i].name+".asset";
@@ -92,14 +109,15 @@ public static class BattlePresentationImporter
             var marker=new SerializedObject(root.GetComponent<BattleEnvironmentRoot>());
             marker.FindProperty("environmentId").stringValue="presentation-"+zone.ToLowerInvariant();marker.ApplyModifiedPropertiesWithoutUndo();
             var layer=new GameObject("NativeScenery",typeof(Tilemap),typeof(TilemapRenderer));layer.transform.SetParent(root.transform,false);
-            layer.transform.localPosition=new Vector3(0,.75f,0);
+            layer.transform.localPosition=new Vector3(0,.25f,0);
             var map=layer.GetComponent<Tilemap>(); var renderer=layer.GetComponent<TilemapRenderer>();
             renderer.sortingOrder=-100;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;
-            // 256px of architecture above a floor whose rear edge is 48px above the actor baseline.
-            for(int y=-6;y<12;y++)for(int x=-12;x<12;x++)
+            // One composed vista. Clamping source coordinates into a larger map
+            // repeated the last floor/roof courses visibly on tall viewports.
+            for(int y=-4;y<4;y++)for(int x=-6;x<6;x++)
             {
-                int sourceY=Mathf.Clamp(3-y,0,5),sourceX=Mathf.Clamp(x+4,0,7);
-                map.SetTile(new Vector3Int(x,y,0),tiles[sourceY*8+sourceX]);
+                int sourceY=3-y,sourceX=x+6;
+                map.SetTile(new Vector3Int(x,y,0),tiles[sourceY*12+sourceX]);
             }
             PrefabUtility.SaveAsPrefabAsset(root,"Assets/_Game/Resources/BattleEnvironments/Presentation_"+zone+".prefab");
         }

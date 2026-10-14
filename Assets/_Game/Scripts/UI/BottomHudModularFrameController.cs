@@ -49,6 +49,13 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             return;
         }
 
+        if (BattlePresentationSkin.Folder != null)
+        {
+            RemoveExistingFrame();
+            frameBuilt = true;
+            return;
+        }
+
         ResolveFrameSprites();
 
         if (cornerPiece == null ||

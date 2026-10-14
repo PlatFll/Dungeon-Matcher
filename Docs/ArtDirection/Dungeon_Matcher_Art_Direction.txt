@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.17.1
+**Version:** 1.17.2
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Updated for global menu direction:** 2026-10-12
@@ -718,6 +718,14 @@ these candidates. Character, gem, HP and blocker drawings remain unchanged.
 Scenery repairs remove mockup actors and counters, reconstructing hidden areas
 from source material before export as native tilemap art. Complete mockups are
 never runtime screens. The extra enclosing top-HUD frame is absent in the targets.
+
+The subsequent composition correction removes the bottom HUD's outer enclosure
+as requested, while keeping the silver Guide/settings/supply/ability family
+shared. Backgrounds must not repeat their last floor row to fill a viewport.
+The candidate now uses one extended native vista, independently anchored left
+and right foreground details, and continuous board-frame extracts with distinct
+corners and center ornaments. Areas hidden by the reference's actors still need
+authored repairs; technical checks do not establish an exact visual match.
 
 Ambient flames, foliage, lanterns, runes, waterfall strokes and bubbles are
 presentation only. They obey pause and Reduced Motion, use no gameplay RNG and

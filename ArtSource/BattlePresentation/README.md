@@ -19,11 +19,27 @@ unchanged. Main menu, opened settings, Frostwake and Ironvein retain their art.
 The existing shared gear icon is reused. Five pre-existing local modifications
 are excluded from this PR and checked against their starting hashes.
 
+## Comparison findings addressed in this revision
+
+- The old environment importer filled a larger tilemap by clamping source
+  coordinates. That duplicated entire floor/roof rows. The new 96-tile vista
+  uses each source tile once, with authored space for taller screens.
+- One repeated beam and mirrored corners lost the references' individual edge
+  wear and central ornaments. Continuous atlases now preserve all four sides.
+- A full-width bottom panorama repeated its foreground pillars when tiled.
+  Those pillars now have independent left/right anchors.
+- The bottom enclosure added a heavy silver rectangle absent from the targets.
+  It is removed in all three reference zones; button rims remain shared.
+- Rectangular scenery repairs and oversized texture sampling produced visible
+  bands and stretched marks. Repairs now follow the HUD silhouettes and use
+  smaller reference material samples. Reconstructed areas remain reviewable.
+
 ## Assets and native workflow
 
-There are **69 native PNGs**, each with a matching editable `.aseprite`. The
-reference-fidelity revision adds nine stone cells and three bottom panoramas.
-The first candidate's screenshots remain in `review/revision-01/`.
+There are **81 native PNGs**, each with a matching editable `.aseprite`.
+The composition revision adds three continuous frame atlases and separate
+left/right scenery. Earlier captures remain in `review/revision-01/` and
+`review/revision-02/`.
 
 | Family | Native dimensions | Purpose |
 |---|---|---|
@@ -31,14 +47,15 @@ The first candidate's screenshots remain in `review/revision-01/`.
 | Shared supply | 64×64, four states | Existing potion/bomb art remains a separate icon |
 | Shared ability | 176×64, four states | Silver/purple shell around existing player symbol |
 | Energy | 144×32 frame, 8×8 fill | Transparent track window, existing live charge |
-| Shared / zone beams | 64×16 edges, 80×80 corners | Repeated native edges with protected corners |
+| Board frame atlas | 544×544 per zone | 28 unique slices; 80px corners, 32px ornament clearance |
+| Shared / fallback zone beams | 64×16 edges, 80×80 corners | Retained fallback modules |
 | Zone player frame | 146×25 top/bottom, 146×32 middle | Current three-slice layout profile |
 | Zone plaque / banner | 144×50 (Court 168×50) / 44×64 | Live wave text and separate emblem |
-| Zone panel / general material | 128×128 | Tiled backgrounds |
+| Zone panel / general material | 128×256 / 256×256 | Native masonry with connected wear |
 | Zone board cells | 64×64, three variants per zone | Reconstructed dark stone, all target gems removed |
-| Bottom scenery | 512×152 per zone | Separate backdrop behind shared live controls |
-| Side dressing | 36×384 per zone | Reference-derived border architecture and growth |
-| Zone scenery | 512×384 each | Reconstructed architecture sliced into 48 tiles |
+| Bottom scenery | 256×256 + two 76×152 sides per zone | Material field and separately anchored foreground |
+| Side dressing | Two 40×432 pieces per zone | Independent reference-derived left/right architecture |
+| Zone scenery | 768×512 each | One vista sliced into 96 distinct tiles, each used once |
 | Foliage / kelp / statue | 56×80 / 48×88 / 128×160 | Retained earlier studies; inactive in revised scenery |
 | Ambient sheets | Torch: 6×24×40; bubble: 6×12×12; flow: 6×64×96 | Discrete native frames |
 | Lantern / rune | 30×46 / 32×58 | Restrained opacity pulse |
@@ -54,6 +71,14 @@ equipment and counter masks identify occluded regions that need reconstruction.
 No complete target image is imported as a runtime screen. Sampled high-resolution
 reference fragments are rebuilt at declared native canvas sizes; they are not
 claims that the supplied mockups themselves have those native dimensions.
+
+`CompositionRevision.js` corrects repeated floor courses, stretched repair
+textures, mirrored side art and duplicated border modules. It retains visible
+reference landmarks, reconstructs occluded actor areas, and extends the scene
+for the supported viewport range. The outer bottom HUD frame is removed;
+individual button rims remain shared. Foreground pillars attach to their own
+edges instead of repeating inside a panorama. The existing layout owner gives
+the board more of the screen and keeps centered controls on whole pixels.
 
 LibreSprite sources are reopened and compared byte-for-byte before export.
 `Normalize-FinalizedSourceLayers.ps1` clears erroneous background-layer flags
@@ -107,7 +132,7 @@ was made. The revision uses the actual reference statue and spends no generation
 
 ## Executed validation
 
-- Exact ASE/PNG/Unity comparison is recorded for all 69 assets, including required
+- Exact ASE/PNG/Unity comparison is recorded for all 81 assets, including required
   cutout alpha and import settings. `native-checks.json` records dimensions,
   occupied colors, PNG hashes and the five preserved local-file hashes.
 - Final Unity test / validator evidence is recorded in `validation.json`.
@@ -123,20 +148,22 @@ was made. The revision uses the actual reference statue and spends no generation
 
 ## Remaining differences from the targets
 
-The current eight-by-eight board, battle proportions, HP bars, counters,
+The current eight-by-eight board, HP bars, counters,
 Thaleah labels and combat hint are retained. Court displays its real wave
 counter. The target's character and gem drawings remain outside this scope.
 
 The backgrounds concealed by the mockup's actors and labels cannot be extracted:
-those areas use cloned source material and reconstructed architecture. Extended
-floors repeat more than the targets because the current battle area is taller.
+those areas use cloned source material and reconstructed architecture. The
+forest's clearing and the stone floor repairs differ in their surface detail.
+Extra scenery on tall/wide screens is authored extension, not recovered pixels.
 The source's visible landmarks and material colors are retained. This is not a
 pixel-identical recreation of the complete mockup or its unseen background.
 The three new environments each use one composed vista, so older Court scenery
 variants are preserved as files but not selected by this presentation override.
 
-The shared bottom outer HUD beam remains as in the previous candidate. Existing
-button availability dimming remains functional. Exact composition changes are
+The shared bottom outer HUD beam is removed. Existing button availability
+dimming remains functional. Exact composition changes are
 shown openly in the comparison page; numerical validation does not certify an
 exact visual match. The responsive board retains its existing Point-filtered
-fractional fit at some resolutions; this pass does not alter board-feel sizing.
+fractional fit at some resolutions. This pass adjusts section proportions while
+preserving board-feel motion, input and resolution timing.

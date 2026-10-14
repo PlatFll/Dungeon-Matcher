@@ -45,7 +45,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         var bottom = GameObject.Find("BottomHUD");
         if (player == null || bottom == null) return;
         AddTiledPanel(player.transform, "PlayerDungeonBackdrop", 8, new Color(.55f,.55f,.65f,1));
-        AddTiledPanel(bottom.transform, "BottomDungeonBackdrop", 16, new Color(.55f,.55f,.65f,1));
+        AddTiledPanel(bottom.transform, "BottomDungeonBackdrop", BattlePresentationSkin.Folder != null ? 0 : 16, new Color(.55f,.55f,.65f,1));
         if(BattlePresentationSkin.Folder!=null && !TryGetComponent<BattleAmbientPresentation>(out _))
             gameObject.AddComponent<BattleAmbientPresentation>();
         panelsReady = true;
@@ -69,6 +69,23 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
         rect.offsetMin = Vector2.one * inset; rect.offsetMax = Vector2.one * -inset;
         if (BattlePresentationSkin.Folder != null) go.AddComponent<NativePixelUiSurface>();
+        if (panorama)
+        {
+            // Keep the foreground at the two physical edges. A full panorama
+            // tiled here repeated its columns on wider viewports.
+            foreach (bool right in new[] { false, true })
+            {
+                var sprite = BattlePresentationSkin.ZoneSprite(right ? "BottomRight" : "BottomLeft");
+                if (sprite == null) continue;
+                var prop = new GameObject(right ? "BottomRightScenery" : "BottomLeftScenery", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+                prop.transform.SetParent(go.transform, false);
+                var art = prop.GetComponent<Image>(); art.sprite = sprite; art.raycastTarget = false;
+                var bounds = art.rectTransform;
+                bounds.anchorMin = bounds.anchorMax = bounds.pivot = new Vector2(right ? 1 : 0, 0);
+                bounds.sizeDelta = sprite.rect.size;
+                prop.AddComponent<NativePixelUiSurface>();
+            }
+        }
     }
 
     public static void InstallMenu(GameObject home, RectTransform title)

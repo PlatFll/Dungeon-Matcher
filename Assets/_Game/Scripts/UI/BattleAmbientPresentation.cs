@@ -47,9 +47,8 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
             sideArt=new RectTransform[2];sideLeaves=new RectTransform[2];
             for(int i=0;i<2;i++)
             {
-                sideArt[i]=UiDetail("ZoneSideDressing"+i,side,new Vector2(36,384));
-                // The extracted border already contains its complete foliage.
-                if(i==1)sideArt[i].localScale=new Vector3(-1,1,1);
+                var ornament=i==1 ? BattlePresentationSkin.ZoneSprite("SideRight") ?? side : side;
+                sideArt[i]=UiDetail("ZoneSideDressing"+i,ornament,ornament.rect.size);
             }
         }
     }
@@ -84,9 +83,9 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
             for(int i=0;i<2;i++)
             {
                 float gutter=i==0?board.xMin-viewport.xMin:viewport.xMax-board.xMax;
-                bool fits=gutter>=40*g.Scale;
+                bool fits=gutter>=sideArt[i].rect.width*g.Scale;
                 sideArt[i].gameObject.SetActive(fits);
-                float x=i==0?board.xMin-20*g.Scale:board.xMax+20*g.Scale;
+                float x=i==0?board.xMin-sideArt[i].rect.width*.5f*g.Scale:board.xMax+sideArt[i].rect.width*.5f*g.Scale;
                 sideArt[i].position=new Vector3(Mathf.Round(x),Mathf.Round(board.center.y),0);
                 if(sideLeaves[i]!=null)
                 {
@@ -151,7 +150,7 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
         renderer.sortingOrder=-72;renderer.maskInteraction=SpriteMaskInteraction.VisibleInsideMask;
         // UI ornaments share their original pixels in scenery without fractional texel scaling.
         child.transform.localScale=Vector3.one*(frames[0].pixelsPerUnit/64f);
-        var origin=new Vector3((x-256)/64f,(304-y)/64f,0);
+        var origin=new Vector3((x-256)/64f,(272-y)/64f,0);
         child.transform.localPosition=origin;
         details.Add(new Detail{renderer=renderer,frames=frames,origin=origin,kind=kind,phase=phase});
     }

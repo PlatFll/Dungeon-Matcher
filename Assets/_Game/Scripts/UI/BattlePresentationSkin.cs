@@ -4,6 +4,17 @@ using UnityEngine.UI;
 /// <summary>Optional battle artwork. Existing layout, input and combat owners remain authoritative.</summary>
 public static class BattlePresentationSkin
 {
+    private static readonly System.Collections.Generic.Dictionary<string, Sprite[]> frameAtlases = new();
+    public static Sprite FramePiece(string name)
+    {
+        if (Folder == null) return null;
+        if (!frameAtlases.TryGetValue(Folder, out var pieces))
+        {
+            pieces=Resources.LoadAll<Sprite>("UI/BattlePresentation/"+Folder+"/FrameAtlas");
+            frameAtlases[Folder]=pieces;
+        }
+        return System.Array.Find(pieces,p=>p.name==name);
+    }
     public static string Folder => RunSession.Current?.Zone?.Definition?.zoneId switch
     {
         "dungeon" => "Dungeon", "magical-forest" => "Forest", "drowned-court" => "Court", _ => null

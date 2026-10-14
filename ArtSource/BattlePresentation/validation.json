@@ -1,32 +1,87 @@
 {
   "unityVersion": "6000.3.19f1",
   "audioMuted": true,
-  "revision": "Reference extraction and cleanup",
-  "nativeAssets": { "result": "Passed", "count": 69, "report": "native-checks.json" },
-  "focusedSuite": {
-    "result": "Passed", "total": 30, "failed": 0, "skipped": 0,
-    "filter": "ThreeZonePresentationTests;BoardFeel2Tests;ForestFoundationPlayTests.BoardFeel2",
-    "xml": ".utmp/ForestValidation/b8c19f27-c054-4c8d-8705-d118da18736e.xml",
-    "log": ".utmp/ForestValidation/b8c19f27-c054-4c8d-8705-d118da18736e.log"
+  "revision": "Composition correction; no bottom enclosure; unique scenery tiles",
+  "nativeAssets": {
+    "result": "Passed",
+    "count": 81,
+    "report": "native-checks.json"
   },
-  "finalIdleRecapture": {
-    "result": "Passed", "total": 1, "failed": 0, "skipped": 0,
-    "filter": "ThreeZonePresentationTests.CaptureThreeZones",
-    "reason": "Recapture after the final Court-only water repair. Runtime code and other exports match the passing 30-test run.",
-    "xml": ".utmp/ForestValidation/12d1b84b-e8dd-4cf9-85e1-ffccf87d994f.xml"
+  "presentationSuite": {
+    "result": "Passed",
+    "total": 4,
+    "failed": 0,
+    "skipped": 0,
+    "xml": ".utmp/ForestValidation/3a6c7b7a-e002-4ea2-896d-0dc2c6b2224e.xml",
+    "log": ".utmp/ForestValidation/3a6c7b7a-e002-4ea2-896d-0dc2c6b2224e.log",
+    "reason": "All final runtime code, shared-control alignment and all five players. Court-only floor source corrected afterward."
+  },
+  "boardFeelSuite": {
+    "result": "Passed",
+    "total": 27,
+    "failed": 0,
+    "skipped": 0,
+    "xml": ".utmp/ForestValidation/81edd828-e3b3-466f-babb-00b232b60d0a.xml",
+    "log": ".utmp/ForestValidation/81edd828-e3b3-466f-babb-00b232b60d0a.log",
+    "reason": "Existing board-feel tests; subsequent changes affect only scenery exports and Guide/settings position."
+  },
+  "finalCapture": {
+    "result": "Passed",
+    "total": 1,
+    "failed": 0,
+    "skipped": 0,
+    "xml": ".utmp/ForestValidation/bf4c6297-59ca-46f8-9064-416c7253518c.xml",
+    "log": ".utmp/ForestValidation/bf4c6297-59ca-46f8-9064-416c7253518c.log",
+    "reason": "Final Court floor and counter-pixel corrections; all three zones, viewport variants, pause, Reduced Motion and accepted moves."
+  },
+  "portraitMath": {
+    "result": "Passed",
+    "cases": 112,
+    "log": ".utmp/ThreeZonePresentation/layout-math.log"
   },
   "mandatoryValidator": {
     "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
-    "result": "Succeeded", "exitCode": 0,
-    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6873476b-5d0e-423e-8999-52c87740dd7c.log"
+    "result": "Succeeded",
+    "exitCode": 0,
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-72812b14-84f8-4e63-91a4-1e2aa85a0919.log"
   },
-  "correctedFailure": {
-    "xml": ".utmp/ForestValidation/78fce1e6-858e-4a88-92e0-5bdfc9d877e1.xml",
-    "cause": "The old layout validator required an enclosing top frame, conflicting with the reference composition. Subsequent tests inherited the interrupted scene state.",
-    "fix": "Validate the frame's absence in the three reference zones and its presence elsewhere; add runtime assertions for the open edge and all 64 new cell sprites. Full suite rerun passed."
-  },
+  "correctedFailures": [
+    {
+      "xml": ".utmp/ForestValidation/99c9c701-6c00-4ff1-bd36-9bb15a0f2c36.xml",
+      "cause": "Odd bottom height put centered ability/energy art on half pixels at 720p.",
+      "fix": "Round bottom height down to an even logical pixel count; later three-size captures passed."
+    }
+  ],
+  "coverage": [
+    "Three zones at 1080x1920, 720x1280 and 1080x2400 with safe inset",
+    "Each scene uses its 96 native tiles exactly once",
+    "Each board binds 28 distinct frame slices",
+    "No bottom or top arena enclosure in reference zones",
+    "All five playable ability symbols",
+    "Pause and Reduced Motion",
+    "Idle board and refill RNG unchanged",
+    "Accepted move resolution",
+    "Scene cleanup",
+    "Existing board feel regression suite"
+  ],
   "visualEvidence": "Review.html",
-  "coverage": ["3 zones", "1080x1920", "720x1280", "1080x2400 with safe-area inset", "pause", "reduced motion", "idle board and refill RNG unchanged", "accepted player move resolves", "scene unload cleanup", "five playable ability symbols fit", "existing board feel regression tests", "open top arena", "64 reference-derived cell sprites per board"],
-  "limitations": ["No physical-device performance test", "Visual approval remains with the user", "Background composition differences listed in README.md"],
-  "mergeStatus": "Unmerged; user approval required"
+  "limitations": [
+    "Visual approval remains with the user",
+    "Occluded scenery and viewport extensions are reconstructed, not pixel-identical to the target",
+    "No physical-device performance test"
+  ],
+  "mergeStatus": "Unmerged; user approval required",
+  "validatedSourceSha256": {
+    "Assets/_Game/Scripts/Board/BoardVisuals.cs": "0f6475184ccacba86f411749a0b55ea58f194e6086dc1adca9d9365bcdf7e3c8",
+    "Assets/_Game/Scripts/Editor/BattlePresentationImporter.cs": "66efadc4d54890ee735d4d3745839ba130e9a1ed9638a6a5083c0f6f71c97d44",
+    "Assets/_Game/Scripts/Editor/ThreeZonePresentationTests.cs": "319d018bf07980435e5929bbf6168ec0c194dee701fc0e85cceed608c820a385",
+    "Assets/_Game/Scripts/UI/BattleAmbientPresentation.cs": "2f9b8cc4f28ca875c94238b852a5bd788fa30d8c564179b726712b502a24b1d2",
+    "Assets/_Game/Scripts/UI/BattleBackgroundTilemapController.cs": "f3e66951d8909e02e30b925d20fa033bea181824cbe95169a3770a1d40ebb8b8",
+    "Assets/_Game/Scripts/UI/BattlePresentationSkin.cs": "b611a137773bc61c50325099cd749104aac6551a0ba8039cfa7f9af0e11ff4d3",
+    "Assets/_Game/Scripts/UI/BottomHudModularFrameController.cs": "220ca39785d5f170a1b9066297cafe37c054b5acf1be7a233a7df9836d0fa899",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.cs": "26fc2b370b1a5902fe35f3afe85390b77f447e37362b6c40c8cd64c12578089b",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutController.cs": "5764d222fd30fbd51f65f76226a18379efa18cc0276b0c27898d361324161672",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutValidator.cs": "b8e413ab02faeb07c0857ee5c9bb65ba32f5e1ab39d1bcd57a6236027eb2f26e",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs": "4c5d2e541bda83c68f0f4faeb5266ff2f20854f6e80147514338851b1c0e3907"
+  }
 }

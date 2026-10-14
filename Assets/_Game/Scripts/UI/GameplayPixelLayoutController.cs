@@ -12,6 +12,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     // Two native 80px corners plus a 16px straight segment. The 64px button
     // has 40px clear space above/below it inside the 16px border.
     public const int BottomHeight = 176;
+    public const int ReferenceBottomHeight = 156;
     public const int MaximumBottomHeight = BottomHeight + 64;
     // Leave one extra frame-width above the character band for the 80px Miner
     // action canvas on short viewports. Character texel scale stays unchanged.
@@ -63,7 +64,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 #endif
 
-    public static Geometry Calculate(int width, int height, Rect safe, Vector2 boardPixels, int minimumBattleHeight = MinimumBattleHeight)
+    public static Geometry Calculate(int width, int height, Rect safe, Vector2 boardPixels, int minimumBattleHeight = MinimumBattleHeight, bool referenceComposition = false)
     {
         // Transient zero/invalid device reports must not produce negative sizes,
         // divide by zero, or overwrite the last usable scene geometry.
@@ -85,8 +86,10 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             // Even logical dimensions keep centered even-size art on the grid.
             float w = Mathf.Floor((safe.xMax - Inset * scale - x) / (2 * scale)) * 2;
             float h = Mathf.Floor((safe.yMax - Inset * scale - y) / (2 * scale)) * 2;
-            float available = h - BottomHeight - 2 * Gap - minimumBattleHeight;
-            float fit = Mathf.Min(w * scale / boardPixels.x, available * scale / boardPixels.y);
+            int minimumBottom = referenceComposition ? ReferenceBottomHeight : BottomHeight;
+            int preferredGap = referenceComposition ? Gap : PreferredGap;
+            float available = h - minimumBottom - 2 * Gap - minimumBattleHeight;
+            float fit = Mathf.Min(w * (referenceComposition ? .85f : 1f) * scale / boardPixels.x, available * scale / boardPixels.y);
             // Fill available space uniformly; whole texel steps made phone boards too small.
             float ratio = Mathf.Floor(fit * boardPixels.y / scale) * scale / boardPixels.y;
             if (w < MinimumViewportWidth || h <= 0 || ratio <= 0) continue;
@@ -95,15 +98,17 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
                 BoardTexelRatio = ratio, FractionalBoardScale = Mathf.Abs(ratio - Mathf.Round(ratio)) > 0.00001f };
             float boardWidth = Mathf.Ceil(boardPixels.x * ratio / scale - 0.0001f);
             float boardHeight = Mathf.Ceil(boardPixels.y * ratio / scale - 0.0001f);
-            float remainingHeight = h - BottomHeight - boardHeight;
+            float remainingHeight = h - minimumBottom - boardHeight;
             // Grow the enclosures only when the preferred battle would leave
             // excessive blank gutters. Art stays native; frame edges tile.
-            float desiredBattle = Mathf.Clamp(remainingHeight - 2 * PreferredGap,
+            float desiredBattle = Mathf.Clamp(remainingHeight - 2 * preferredGap,
                 Mathf.Max(PreferredBattleHeight,minimumBattleHeight), Mathf.Max(MaximumBattleHeight,minimumBattleHeight));
             float battleHeight = Mathf.Min(desiredBattle, remainingHeight - 2 * Gap);
             if (battleHeight < minimumBattleHeight) continue;
-            float bottomHeight = BottomHeight + Mathf.Clamp(
-                remainingHeight - battleHeight - 2 * PreferredGap, 0, MaximumBottomHeight - BottomHeight);
+            float bottomHeight = minimumBottom + Mathf.Clamp(
+                remainingHeight - battleHeight - 2 * preferredGap, 0, MaximumBottomHeight - minimumBottom);
+            // Centered even-size controls need an even logical enclosure too.
+            bottomHeight = Mathf.Floor(bottomHeight / 2) * 2;
             // Pin both HUDs to safe edges and balance spare height around the square board.
             float bottom = 0;
             result.Bottom = new Rect(0, bottom, w, bottomHeight);
@@ -139,6 +144,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
     }
 
     private int lastMinimumBattleHeight;
+    private bool lastReferenceComposition;
     private void LateUpdate() { if (initialized) Refresh(false); }
 
     public void Refresh(bool force)
@@ -156,11 +162,13 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         int minimumBattleHeight=Mathf.Max(MinimumBattleHeight,GameplayThemeSkin.Current?.minimumBattleHeight??0);
         // Native 24px status rows need vertical space alongside the unchanged
         // player canvas, affinity and shield. The existing geometry owner reserves it.
-        if(CombatMoveClock.Unified) minimumBattleHeight=Mathf.Max(minimumBattleHeight,PreferredBattleHeight+56);
-        if (!force && minimumBattleHeight==lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        bool referenceComposition = BattlePresentationSkin.Folder != null;
+        if(CombatMoveClock.Unified) minimumBattleHeight=Mathf.Max(minimumBattleHeight,PreferredBattleHeight+(referenceComposition ? 0 : 56));
+        if (!force && referenceComposition==lastReferenceComposition && minimumBattleHeight==lastMinimumBattleHeight && screen == lastScreen && safe == lastSafe && source == lastBoard && canvasRect == lastCanvasRect) return;
+        lastReferenceComposition=referenceComposition;
         lastMinimumBattleHeight=minimumBattleHeight;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;
-        Current = Calculate(Screen.width, Screen.height, safe, source,minimumBattleHeight);
+        Current = Calculate(Screen.width, Screen.height, safe, source,minimumBattleHeight,referenceComposition);
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);
@@ -192,7 +200,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         if (wave != null)
         {
             wave.anchorMin = wave.anchorMax = wave.pivot = new Vector2(0.5f, 1);
-            wave.anchoredPosition = new Vector2(0f, -NativeFrameThickness);
+            wave.anchoredPosition = new Vector2(0f, BattlePresentationSkin.Folder != null ? -21 : -NativeFrameThickness);
             wave.localScale = Vector3.one;
             if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage,
                 BattlePresentationSkin.Folder != null ? new Vector2(264, 54) : WaveTrackerLogicalSize);

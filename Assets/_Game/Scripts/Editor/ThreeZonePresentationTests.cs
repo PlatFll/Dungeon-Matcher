@@ -59,6 +59,17 @@ public sealed class ThreeZonePresentationTests
                 {
                     var nativeLayout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
                     Assert.That(nativeLayout.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame"),Is.Null);
+                    Assert.That(nativeLayout.BottomHud.Find("GeneratedBottomHudFrame"),Is.Null);
+                    var vista=Object.FindFirstObjectByType<BattleBackgroundTilemapController>().ActiveEnvironment;
+                    var map=vista.GetComponentInChildren<UnityEngine.Tilemaps.Tilemap>();
+                    var used=new System.Collections.Generic.List<Sprite>();
+                    foreach(var cell in map.cellBounds.allPositionsWithin)if(map.GetSprite(cell)!=null)used.Add(map.GetSprite(cell));
+                    Assert.That(used.Count,Is.EqualTo(96));
+                    Assert.That(used.Distinct().Count(),Is.EqualTo(96),"Scenery tiles must appear once; never clamp/repeat the last floor row.");
+                    var framePieces=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
+                        .Where(s=>s.sprite!=null && AssetDatabase.GetAssetPath(s.sprite).EndsWith("/FrameAtlas.png")).ToArray();
+                    Assert.That(framePieces.Length,Is.EqualTo(28));
+                    Assert.That(framePieces.Select(s=>s.sprite.name).Distinct().Count(),Is.EqualTo(28));
                     var cells=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
                         .Where(s=>s.name.StartsWith("CellTile_",StringComparison.Ordinal)).ToArray();
                     Assert.That(cells.Length,Is.EqualTo(64));
@@ -150,6 +161,19 @@ public sealed class ThreeZonePresentationTests
         foreach(string family in new[]{"Guide","Supply","Ability"})
         foreach(string state in new[]{"","Hover","Pressed","Disabled"})
             Assert.That(Resources.Load<Sprite>("UI/BattlePresentation/Shared/"+family+state),Is.Not.Null,family+state);
+    }
+    [Test] public void ReferenceCompositionKeepsNativeControlsAligned()
+    {
+        foreach(var size in new[]{new Vector2Int(720,1280),new Vector2Int(1080,1920),new Vector2Int(1080,2400)})
+        {
+            var g=GameplayPixelLayoutController.Calculate(size.x,size.y,new Rect(0,0,size.x,size.y),new Vector2(544,544),320,true);
+            Assert.That(g.Fits,Is.True);
+            Assert.That(g.Bottom.height%2,Is.Zero,"Even native controls need an integer-pixel center.");
+            Assert.That(g.Top.height,Is.InRange(320,480));
+            Assert.That(g.Board.width,Is.EqualTo(g.Board.height));
+            Assert.That(g.Top.yMin-g.Board.yMax,Is.GreaterThanOrEqualTo(6));
+            Assert.That(g.Board.yMin-g.Bottom.yMax,Is.GreaterThanOrEqualTo(6));
+        }
     }
     private static IEnumerator Until(Func<bool> ready)
     {float deadline=Time.realtimeSinceStartup+40;while(!ready()){Assert.That(Time.realtimeSinceStartup,Is.LessThan(deadline));yield return null;}}

@@ -94,10 +94,11 @@ public sealed class RunControlsUI : MonoBehaviour
         GameplayThemeSkin.Button(settings,settings:true);
         GlobalMenuSkin.Gear(settings);
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
-        settingsRect.anchoredPosition=new Vector2(-20,-18);
+        settingsRect.anchoredPosition=new Vector2(-20,BattlePresentationSkin.Folder!=null?-24:-18);
         var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
         GameplayThemeSkin.Button(guide);GameplayThemeSkin.Button(confirmBomb);
-        var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);guideRect.anchoredPosition=new Vector2(-78,-22);
+        var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);
+        guideRect.anchoredPosition=BattlePresentationSkin.Folder!=null?new Vector2(-72,-32):new Vector2(-78,-22);
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))
         {
             if (slot.EnemySpawnAnchor == null) continue;
