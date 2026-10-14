@@ -55,7 +55,9 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     {
         if (parent.Find(name) != null) return;
         var theme = RunSession.Current?.Zone?.Definition?.theme;
-        var tile = BattlePresentationSkin.ZoneSprite("Panel") ?? theme?.panelBackground ?? Load("DungeonBackdropTile");
+        bool panorama = name == "BottomDungeonBackdrop" && BattlePresentationSkin.ZoneSprite("BottomPanel") != null;
+        var tile = (panorama ? BattlePresentationSkin.ZoneSprite("BottomPanel") : BattlePresentationSkin.ZoneSprite("Panel"))
+            ?? theme?.panelBackground ?? Load("DungeonBackdropTile");
         if (tile == null) return;
         var go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         var image = go.GetComponent<Image>();
@@ -66,6 +68,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         var rect = image.rectTransform;
         rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
         rect.offsetMin = Vector2.one * inset; rect.offsetMax = Vector2.one * -inset;
+        if (BattlePresentationSkin.Folder != null) go.AddComponent<NativePixelUiSurface>();
     }
 
     public static void InstallMenu(GameObject home, RectTransform title)

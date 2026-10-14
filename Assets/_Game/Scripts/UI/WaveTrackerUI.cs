@@ -42,7 +42,19 @@ public sealed class WaveTrackerUI :
     private void Start()
     {
         var plaque=BattlePresentationSkin.ZoneSprite("Plaque") ?? RunSession.Current?.Zone?.Definition?.theme?.wavePlaque;
-        if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image)) image.sprite=plaque;
+        if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image))
+        {
+            image.sprite=plaque;
+            if (BattlePresentationSkin.Folder != null)
+            {
+                GameplayPixelGrid.FitImage(image, new Vector2(264,54));
+                if (waveText != null)
+                {
+                    waveText.rectTransform.offsetMin = new Vector2(12,11);
+                    waveText.rectTransform.offsetMax = new Vector2(-12,0);
+                }
+            }
+        }
     }
 
     private void OnDisable()

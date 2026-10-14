@@ -194,7 +194,8 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             wave.anchorMin = wave.anchorMax = wave.pivot = new Vector2(0.5f, 1);
             wave.anchoredPosition = new Vector2(0f, -NativeFrameThickness);
             wave.localScale = Vector3.one;
-            if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage, WaveTrackerLogicalSize);
+            if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage,
+                BattlePresentationSkin.Folder != null ? new Vector2(264, 54) : WaveTrackerLogicalSize);
         }
         if (TopHud.TryGetComponent(out TopBattlePresentationController presentation)) presentation.RefreshPresentation();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD

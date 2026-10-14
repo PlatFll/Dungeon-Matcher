@@ -144,7 +144,11 @@ public static class GameplayPixelLayoutValidator
             }
         }
         Require(owner.BottomHud.Find("GeneratedBottomHudFrame") != null, "Missing generated bottom frame", errors);
-        Require(owner.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame") != null, "Missing generated battle frame", errors);
+        var arenaFrame = owner.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame");
+        // The three reference vistas intentionally have an open arena edge.
+        // Enforce that composition while retaining the enclosure in other zones.
+        Require(BattlePresentationSkin.Folder != null ? arenaFrame == null : arenaFrame != null,
+            BattlePresentationSkin.Folder != null ? "Unexpected enclosing frame over reference vista" : "Missing generated battle frame", errors);
         foreach (Image image in owner.GetComponentsInChildren<Image>(false))
         {
             if (image.enabled && image.color.a > 0 && image.sprite != null && !IsTransientPresentation(image.transform))

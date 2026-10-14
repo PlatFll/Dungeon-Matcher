@@ -29,7 +29,13 @@ Guide, supply and ability family. Scenery uses the existing tilemap presentation
 owner. Cosmetic flames, runes, lanterns, leaves, waterfall strokes, bubbles and
 kelp obey pause and Reduced Motion without consuming gameplay RNG.
 
-This pass keeps character/gem/cell art, HP bars, combat, board feel, menus and the
+The user's reference-fidelity revision replaces the simplified scenery, frame
+materials and board cell backgrounds with LibreSprite extraction/cleanup of the
+supplied targets. Thin player frames are separate from board beams; the top
+arena's extra enclosure is removed. Nine dark stone cell variants replace the
+candidate's previous cell art. Shared buttons remain as in the first candidate.
+
+This pass keeps character/gem art, HP bars, combat, board feel, menus and the
 other zones intact. It does not alter progression or balance. Review artifacts,
 executed validation and remaining visual differences are recorded in
 [the presentation source notes](../ArtSource/BattlePresentation/README.md).
@@ -150,7 +156,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.17, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
+The canonical art guide is now v1.17.1, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.

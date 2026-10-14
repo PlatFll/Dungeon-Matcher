@@ -48,9 +48,7 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
             for(int i=0;i<2;i++)
             {
                 sideArt[i]=UiDetail("ZoneSideDressing"+i,side,new Vector2(36,384));
-                var foliage=BattlePresentationSkin.ZoneSprite(BattlePresentationSkin.Folder=="Forest"?"Foliage":"Kelp");
-                if(BattlePresentationSkin.Folder!="Dungeon" && foliage!=null)
-                    sideLeaves[i]=UiDetail("BorderFoliage"+i,foliage,foliage.rect.size);
+                // The extracted border already contains its complete foliage.
                 if(i==1)sideArt[i].localScale=new Vector3(-1,1,1);
             }
         }
@@ -65,14 +63,13 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
             switch(BattlePresentationSkin.Folder)
             {
                 case "Dungeon":
-                    Add("Torch",217,185,"flame",0);Add("Torch",453,174,"flame",.4f);break;
+                    Add("Torch",157,124,"glow",0);Add("Torch",397,125,"glow",.4f);break;
                 case "Forest":
-                    Add("Lantern",222,107,"sway",0);Add("Lantern",477,106,"sway",2);
-                    Add("Rune",207,183,"glow",0);Add("Waterfall",365,196,"flow",0);
-                    AddZone("Foliage",186,255,"leaves",0);AddZone("Foliage",487,244,"leaves",2);break;
+                    Add("Lantern",178,104,"glow",0);Add("Lantern",466,117,"glow",2);
+                    Add("Rune",255,107,"glow",0);Add("Waterfall",408,177,"flow",0);break;
                 case "Court":
                     for(int i=0;i<6;i++)Add("Bubble",183+i*54,264,"bubble",i*1.63f);
-                    AddZone("Kelp",184,257,"leaves",0);AddZone("Kelp",478,253,"leaves",1.8f);break;
+                    break;
             }
             ready=true;
         }

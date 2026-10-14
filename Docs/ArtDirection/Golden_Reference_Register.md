@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-14 · canonical guide v1.17. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing, Frostwake facial-color or battle-presentation passes; Mender's corrected death sheet is separate from her reference still.
+2026-10-14 · canonical guide v1.17.1. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing, Frostwake facial-color or battle-presentation passes; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
@@ -173,7 +173,7 @@ character golden membership, sprite hashes and existing approvals are unchanged.
 
 ## Three-zone battle presentation, 2026-10-14
 
-Guide v1.17 adds the user's three battle mockups as presentation targets. Their
+Guide v1.17.1 records the user's three battle mockups as presentation targets. Their
 exact files, hashes and reconstructed native assets live in
 ArtSource/BattlePresentation/. The implemented UI/environment candidates require
 visual review; this does not promote any character into the golden register or

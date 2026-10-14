@@ -23,7 +23,7 @@ for key,label,target in zones:
     for path in (evidence/'after'/f'{key}-motion').glob('*.png'):
         keep(path,review/'motion'/key/path.name)
     figures=''.join(f'<figure><figcaption>{title}</figcaption><a href="{url}"><img src="{url}" alt="{label} {title}"></a></figure>' for title,url in [
-        ('Before · Unity',f'review/before/{key}.png'),('After · Unity',f'review/after/{key}.png'),('User target',f'brief/references/{target}.png')])
+        ('Previous candidate · Unity',f'review/revision-01/{key}.png'),('Revised · Unity',f'review/after/{key}.png'),('User target',f'brief/references/{target}.png')])
     sections.append(f'<section><h2>{label}</h2><div class="compare">{figures}</div><p>Additional Unity views: <a href="review/sizes/{key}-720x1280.png">720 × 1280</a> · <a href="review/sizes/{key}-1080x2400.png">1080 × 2400 with safe-area inset</a></p><details><summary>Ambient preview · actual Unity capture sequence</summary><p>24 screenshots, sampled every 150 ms. Other actor idle animation is also present.</p><button data-zone="{key}">Play / pause</button><br><img class="motion" data-zone="{key}" src="review/motion/{key}/00.png" alt="{label} ambient capture"></details></section>')
 
 characters=[]
@@ -37,16 +37,16 @@ for asset in checks['assets']:
     assets.append(f'<figure><figcaption>{name} · {w} × {h}</figcaption><a href="native/{name}"><img src="native/{name}" width="{w}" height="{h}" alt="{name}"></a></figure>')
 page='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Three-zone battle presentation review</title><style>
 body{margin:0 auto;max-width:1400px;padding:24px;background:#121621;color:#ecedf4;font:16px/1.55 system-ui}a{color:#ace2ff}h1,h2{line-height:1.2}section{margin:36px 0;border-top:1px solid #46536b;padding-top:20px}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}figure{margin:0}figcaption{font-weight:600;margin-bottom:8px}.compare img{width:100%;height:auto;image-rendering:pixelated}.motion{width:360px;max-width:100%;image-rendering:pixelated}.native{display:flex;gap:20px;flex-wrap:wrap}.native figure{max-width:100%;overflow:auto;background:#333844;padding:8px}.native img{image-rendering:pixelated;max-width:none}button{padding:10px 20px;background:#38465d;color:white;border:1px solid #8995ab;cursor:pointer}summary{cursor:pointer}li{margin:6px 0}.notice{background:#273247;padding:15px 20px;border-left:4px solid #70bdd6}@media(max-width:700px){body{padding:12px}.compare{gap:5px}figcaption{font-size:12px}}
-</style><h1>Three-zone battle presentation</h1><p>Implemented review candidate · 14 October 2026 · Unity 6000.3.19f1 · audio muted during validation.</p><div class="notice">The comparisons show actual Unity captures. Characters, gems, cell art and gameplay are preserved. The mockups are visual targets, not runtime screenshots or proof of exact native asset size.</div>
+</style><h1>Three-zone battle presentation — reference extraction revision</h1><p>Implemented review candidate · 14 October 2026 · Unity 6000.3.19f1 · audio muted during validation.</p><div class="notice">Actual Unity captures compare the previous candidate, this LibreSprite revision and the supplied target. Frame materials, scenery and dark stone cell backgrounds are revised. Existing characters, gems, controls and gameplay remain live. The mockups do not establish individual assets' native dimensions.</div>
 '''+''.join(sections)+'''
 <section><h2>Remaining visual differences</h2><ul>
 <li>The live game keeps its existing eight-by-eight board, battle-area proportions, health bars, counters, combat hints and Thaleah labels. Court retains the functional wave counter.</li>
-<li>Dungeon masonry and floor repeat more visibly than the target. The Forest uses the approved woodland/tree modules and a narrower, simpler waterfall. Court uses a reconstructed statue and reused court masonry; its water depth, large ruins and stone palette are simpler than the target.</li>
-<li>All scenes are assembled native scenery, rather than exact replicas of every background object. Target costumes, characters and gems were deliberately not copied.</li>
-<li>The shared bottom HUD retains the existing layout and accessibility feedback. Its outer silver beam is simpler than the target’s ornamental construction. Side dressing hides when a viewport has insufficient board gutter.</li>
+<li>The visible reference landmarks and material colors are extracted directly. Areas hidden behind the mockup’s actors, equipment and counters are reconstructed; they cannot be recovered from the flattened PNG. Extended floor areas repeat more than the target.</li>
+<li>The top HUD has an open arena edge and separate thin player frame. Dark stone board cells replace the previous logs/gray cells; character and gem art remain unchanged.</li>
+<li>The shared bottom HUD retains its existing layout, outer silver enclosure and accessibility feedback. Side dressing hides when a viewport has insufficient board gutter. The existing responsive board uses Point filtering with fractional fitting at some resolutions.</li>
 <li>Automated checks and desktop Unity captures do not establish physical-device performance or user art approval.</li>
 </ul><h2>Playable ability symbols</h2><p>All five existing symbols were checked inside the shared frame: '''+' · '.join(characters)+'''</p>
-<h2>Native asset exports</h2><p>57 editable LibreSprite sources. These views use the files' real native dimensions; click to inspect the original PNG. <a href="native-checks.json">Exact measurements and import checks</a> · <a href="README.md">Implementation / validation notes</a>.</p><div class="native">'''+''.join(assets)+'''</div></section>
+<h2>Native asset exports</h2><p>69 editable LibreSprite sources. These views use the files' real native dimensions; click to inspect the original PNG. <a href="native-checks.json">Exact measurements and import checks</a> · <a href="README.md">Implementation / validation notes</a>.</p><div class="native">'''+''.join(assets)+'''</div></section>
 <script>const playing={};document.querySelectorAll('button[data-zone]').forEach(b=>b.onclick=()=>{const z=b.dataset.zone;if(playing[z]){clearInterval(playing[z]);delete playing[z];return;}let n=0;const img=document.querySelector('img.motion[data-zone="'+z+'"]');playing[z]=setInterval(()=>{n=(n+1)%24;img.src='review/motion/'+z+'/'+String(n).padStart(2,'0')+'.png'},150)});</script></html>'''
 (art/'Review.html').write_text(page,encoding='utf-8')
 
@@ -62,10 +62,10 @@ goldens={'skeleton-still.png':'705c4c8379d56a262e287d256664db8d180a79917f4a84289
 for p in paths:
     if p.name in goldens: assert sha(p)==goldens[p.name],p
 manifest=dict(status='implemented review candidate; unmerged; no new golden memberships',
-    baseCommit='a0aafe53e22f2efe7cbf0319b9ce4a0de1e8fe3b',nativeAssets=57,
+    baseCommit='a0aafe53e22f2efe7cbf0319b9ce4a0de1e8fe3b',nativeAssets=69,revision='reference extraction and cleanup',
     references=references,pixelLab=dict(generations=1,selectedOutputs=0,rejectedOutputs=1,creditsPurchased=0,remainingSubscription=0,remainingDailyBonus=4,receipt='generation/statue-job.json'),
-    method='Native LibreSprite reconstruction, extracted material/ornament studies, hand-authored ambient frames, recomposed existing environment modules. No full mockup runtime texture.',
+    method='LibreSprite source-color extraction, traced actor/UI removal masks, reconstructed occluded scenery, separate frame modules and native stone cell backgrounds. Shared controls retained. No full mockup runtime screen.',
     nativeFinalization='Tools/Build-BattlePresentation.ps1; exact reopened cel comparison; layer flag normalization; LibreSprite PNG export',
     captures=[dict(path=p.relative_to(art).as_posix(),sha256=sha(p)) for p in sorted(review.rglob('*.png'))])
 (art/'provenance.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print(f'Packaged {len(manifest["captures"])} original screenshots and 57 native asset links. Golden image hashes verified.')
+print(f'Packaged {len(manifest["captures"])} original screenshots and 69 native asset links. Golden image hashes verified.')

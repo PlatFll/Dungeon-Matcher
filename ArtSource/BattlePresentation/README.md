@@ -13,7 +13,7 @@ previously authorized the canonical equivalents. Exact hashes and source roles
 are recorded in `provenance.json`. New art remains a candidate for visual review.
 
 This pass changes presentation for Dungeon, Magical Forest and Drowned Court.
-Characters, enemies, gems, board cell art, HP bars, blockers, damage, ability
+Characters, enemies, gems, HP bars, blockers, damage, ability
 timers, stagger, special combinations, board feel and run progression are
 unchanged. Main menu, opened settings, Frostwake and Ironvein retain their art.
 The existing shared gear icon is reused. Five pre-existing local modifications
@@ -21,7 +21,9 @@ are excluded from this PR and checked against their starting hashes.
 
 ## Assets and native workflow
 
-There are **57 production PNGs**, each with a matching editable `.aseprite`:
+There are **69 native PNGs**, each with a matching editable `.aseprite`. The
+reference-fidelity revision adds nine stone cells and three bottom panoramas.
+The first candidate's screenshots remain in `review/revision-01/`.
 
 | Family | Native dimensions | Purpose |
 |---|---|---|
@@ -31,17 +33,24 @@ There are **57 production PNGs**, each with a matching editable `.aseprite`:
 | Energy | 144×32 frame, 8×8 fill | Transparent track window, existing live charge |
 | Shared / zone beams | 64×16 edges, 80×80 corners | Repeated native edges with protected corners |
 | Zone player frame | 146×25 top/bottom, 146×32 middle | Current three-slice layout profile |
-| Zone plaque / banner | 128×32 / 44×64 | Live wave text and separate emblem |
+| Zone plaque / banner | 144×50 (Court 168×50) / 44×64 | Live wave text and separate emblem |
 | Zone panel / general material | 128×128 | Tiled backgrounds |
+| Zone board cells | 64×64, three variants per zone | Reconstructed dark stone, all target gems removed |
+| Bottom scenery | 512×152 per zone | Separate backdrop behind shared live controls |
 | Side dressing | 36×384 per zone | Reference-derived border architecture and growth |
 | Zone scenery | 512×384 each | Reconstructed architecture sliced into 48 tiles |
-| Foliage / kelp / statue | 56×80 / 48×88 / 128×160 | Native environment modules |
+| Foliage / kelp / statue | 56×80 / 48×88 / 128×160 | Retained earlier studies; inactive in revised scenery |
 | Ambient sheets | Torch: 6×24×40; bubble: 6×12×12; flow: 6×64×96 | Discrete native frames |
-| Lantern / rune | 30×46 / 32×40 | Restrained movement / opacity pulse |
+| Lantern / rune | 30×46 / 32×58 | Restrained opacity pulse |
 
-`Build.js` reconstructs the assets in LibreSprite from selected material patches,
-traced cutout silhouettes and direct pixel drawing. It recomposes compatible
-existing woodland and court environment modules without rescaling those assets.
+`Build.js` retains the shared controls. `ReferenceRevision.js` rebuilds the
+requested frames and scenery in LibreSprite, retaining the supplied source
+colors rather than mapping every material to one palette. Player frames use
+their own thin silver/wood construction. Board frames retain the target's
+violet stone, carved wood and marine stone. The extra outer top frame is removed.
+The dungeon door and torches, forest rune tree/deer/cascade/sign, and Court
+trident statue/columns/coral come from the actual targets. Explicit character,
+equipment and counter masks identify occluded regions that need reconstruction.
 No complete target image is imported as a runtime screen. Sampled high-resolution
 reference fragments are rebuilt at declared native canvas sizes; they are not
 claims that the supplied mockups themselves have those native dimensions.
@@ -73,8 +82,8 @@ and falls back to the existing theme for all other zones. Existing BoardVisuals,
 top/bottom frame controllers, player frame and background owners apply the art.
 The board's cells and resolution rules remain with their existing owners.
 
-`BattleAmbientPresentation` adds two top-area dungeon flames; forest lanterns,
-rune glow, leaves and waterfall strokes; Court bubble/pop loops and kelp sway.
+`BattleAmbientPresentation` adds restrained torch/lantern/rune glow and waterfall
+highlights aligned with the extracted scenery; Court retains bubble/pop loops.
 Native source-pixel movement is rounded, small and independent of gameplay.
 Pause stops its clock, Reduced Motion uses a stable pose, and scene unload
 destroys its objects/materials. Cosmetic code consumes no Unity random values.
@@ -94,11 +103,11 @@ Pixflux Court statue study was rejected for retained UI marks and poor form.
 Its exact prompt, input, job, receipt and rejected image are in `generation/`.
 The higher-quality Pro Flash endpoint quoted five or six generations, exceeding
 the four daily generations left. No credit purchase or provider substitution
-was made. The selected statue was reconstructed directly in LibreSprite.
+was made. The revision uses the actual reference statue and spends no generations.
 
 ## Executed validation
 
-- Exact ASE/PNG/Unity comparison passed for all 57 assets, including required
+- Exact ASE/PNG/Unity comparison is recorded for all 69 assets, including required
   cutout alpha and import settings. `native-checks.json` records dimensions,
   occupied colors, PNG hashes and the five preserved local-file hashes.
 - Final Unity test / validator evidence is recorded in `validation.json`.
@@ -116,16 +125,18 @@ was made. The selected statue was reconstructed directly in LibreSprite.
 
 The current eight-by-eight board, battle proportions, HP bars, counters,
 Thaleah labels and combat hint are retained. Court displays its real wave
-counter. The target's character, gem and cell drawings were outside this scope.
+counter. The target's character and gem drawings remain outside this scope.
 
-Dungeon floor/stone repeats are more visible than in the mockup. Forest keeps
-the existing approved woodland forms and has a narrower, simpler waterfall.
-Court includes the reconstructed king statue and reused recessed court masonry;
-its lighting, stone palette and distant architecture are simpler than the target.
+The backgrounds concealed by the mockup's actors and labels cannot be extracted:
+those areas use cloned source material and reconstructed architecture. Extended
+floors repeat more than the targets because the current battle area is taller.
+The source's visible landmarks and material colors are retained. This is not a
+pixel-identical recreation of the complete mockup or its unseen background.
 The three new environments each use one composed vista, so older Court scenery
 variants are preserved as files but not selected by this presentation override.
 
-The shared outer HUD beam is simpler than the mockup's ornaments. Existing
+The shared bottom outer HUD beam remains as in the previous candidate. Existing
 button availability dimming remains functional. Exact composition changes are
 shown openly in the comparison page; numerical validation does not certify an
-exact visual match.
+exact visual match. The responsive board retains its existing Point-filtered
+fractional fit at some resolutions; this pass does not alter board-feel sizing.

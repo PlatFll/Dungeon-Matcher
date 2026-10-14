@@ -170,6 +170,7 @@ public sealed class BoardVisuals : MonoBehaviour
     {
         if (theme == null || theme.boardCells == null || theme.boardCells.Length == 0) return;
         cellTileSprites = theme.boardCells;
+        ApplyPresentationCells();
         cellTileScale = 1f;
         cellTileColor = Color.white;
         if(theme.frameCorner!=null && theme.frameEdge!=null)
@@ -186,6 +187,18 @@ public sealed class BoardVisuals : MonoBehaviour
         var corner=BattlePresentationSkin.ZoneSprite("Corner");var edge=BattlePresentationSkin.ZoneSprite("Edge");
         if(corner==null||edge==null)return;
         cornerPiece=corner;normalPiece=edge;RemoveExistingBoardFrame();CreateModularBoardFrame();
+        if (ApplyPresentationCells()) CreateCellTiles();
+    }
+
+    private bool ApplyPresentationCells()
+    {
+        var first = BattlePresentationSkin.ZoneSprite("CellA");
+        if (first == null) return false;
+        cellTileSprites = new[] { first, BattlePresentationSkin.ZoneSprite("CellB") ?? first,
+            BattlePresentationSkin.ZoneSprite("CellC") ?? first };
+        cellTileColor = Color.white;
+        cellTileScale = 1f;
+        return true;
     }
 
     private void EnsureBoardReference()

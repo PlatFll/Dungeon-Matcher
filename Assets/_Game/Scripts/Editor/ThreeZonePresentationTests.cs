@@ -57,6 +57,12 @@ public sealed class ThreeZonePresentationTests
                 yield return new WaitForSecondsRealtime(.4f);
                 if(stage=="after")
                 {
+                    var nativeLayout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
+                    Assert.That(nativeLayout.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame"),Is.Null);
+                    var cells=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
+                        .Where(s=>s.name.StartsWith("CellTile_",StringComparison.Ordinal)).ToArray();
+                    Assert.That(cells.Length,Is.EqualTo(64));
+                    Assert.That(cells.All(s=>s.sprite!=null && s.sprite.name.StartsWith("Cell",StringComparison.Ordinal)),Is.True);
                     var ambient=Object.FindFirstObjectByType<BattleAmbientPresentation>();
                     Assert.That(ambient,Is.Not.Null);Assert.That(ambient.DetailCount,Is.GreaterThanOrEqualTo(2));
                     var before=JsonUtility.ToJson(RunSession.Current.Board.CaptureContinuation(id=>id));

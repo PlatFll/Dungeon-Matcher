@@ -45,6 +45,6 @@ expected={
 'Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta':'0443273d14468ccb1584abcf6ab204674debcae15cda563f6aba543e6dc7e88f',
 'ArtSource/MenuUI/button-frame-revision.json':'f692fed6c1de726d13874d339c5203709b8bcfadb0a9b7cef98f563a46eb5b58'}
 for path,value in expected.items():assert sha(root/path)==value,path
-assert len(report)==57,len(report)
+assert len(report)==69,len(report)
 (source/'native-checks.json').write_text(json.dumps({'assets':report,'preservedLocalSha256':expected},indent=2)+'\n')
 print(f'PASS: {len(report)} exact native ASE/PNG/Unity exports; binary/cutout alpha; Point/64PPU/uncompressed imports; five local files unchanged.')

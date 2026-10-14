@@ -1,6 +1,6 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.17
+**Version:** 1.17.1
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Updated for global menu direction:** 2026-10-12
@@ -709,10 +709,15 @@ settings, supply and ability controls retain the silver/purple menu family.
 
 Production sources are finalized and exported through LibreSprite. Reusable
 corners, beams, player slices, plaques, materials and ornament silhouettes remain
-separate assets. Scenery is assembled from native architectural components and
-compatible existing environment modules, then sliced into 64px tilemap tiles.
-Complete mockups are never runtime textures. Characters, gems, cell tiles, HP
-bars and other gameplay pieces retain their approved source pixels.
+separate assets. The user's follow-up rejects the first pass's scenery/frame
+fidelity and explicitly requests extraction and cleanup in LibreSprite. Preserve
+source material colors, separate the thin player frame from the board beam, and
+use the targets' dark stone cell backgrounds in all three zones. This scoped
+board-background revision supersedes the earlier Forest log-cell direction for
+these candidates. Character, gem, HP and blocker drawings remain unchanged.
+Scenery repairs remove mockup actors and counters, reconstructing hidden areas
+from source material before export as native tilemap art. Complete mockups are
+never runtime screens. The extra enclosing top-HUD frame is absent in the targets.
 
 Ambient flames, foliage, lanterns, runes, waterfall strokes and bubbles are
 presentation only. They obey pause and Reduced Motion, use no gameplay RNG and

@@ -27,14 +27,6 @@ World frame LeftEdge_5: min=(10.00, 618.35, 9.90), max=(30.59, 700.71, 10.10), s
 World frame RightEdge_5: min=(689.41, 618.35, 9.90), max=(710.00, 700.71, 10.10), source=(16.00, 64.00), ratios=(1.29, 1.29)
 World frame LeftEdge_6: min=(10.00, 700.71, 9.90), max=(30.59, 783.06, 10.10), source=(16.00, 64.00), ratios=(1.29, 1.29)
 World frame RightEdge_6: min=(689.41, 700.71, 9.90), max=(710.00, 783.06, 10.10), source=(16.00, 64.00), ratios=(1.29, 1.29)
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner physical=(x:4.00, y:1196.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner physical=(x:636.00, y:1196.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner physical=(x:4.00, y:892.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner physical=(x:636.00, y:892.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopEdge physical=(x:84.00, y:1260.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomEdge physical=(x:84.00, y:892.00, width:552.00, height:16.00); source=(64.00, 16.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/LeftEdge physical=(x:4.00, y:972.00, width:16.00, height:224.00); source=(64.00, 16.00); tilePPU=1
-Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/RightEdge physical=(x:700.00, y:972.00, width:16.00, height:224.00); source=(64.00, 16.00); tilePPU=1
 Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner physical=(x:4.00, y:100.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
 Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner physical=(x:636.00, y:100.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
 Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner physical=(x:4.00, y:4.00, width:80.00, height:80.00); source=(80.00, 80.00); tilePPU=1
@@ -65,11 +57,7 @@ UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/En
 UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyWeaknessIndicator bounds=(x:423.00, y:911.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
 UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Sword bounds=(x:431.00, y:1105.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
 UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Slot bounds=(x:437.00, y:1089.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
-UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopLeftCorner bounds=(x:4.00, y:1196.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
-UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/TopRightCorner bounds=(x:636.00, y:1196.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
-UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomLeftCorner bounds=(x:4.00, y:892.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
-UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/BattleArenaFrame/BottomRightCorner bounds=(x:636.00, y:892.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
-UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:296.00, y:1228.00, width:128.00, height:32.00), source=(128.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:288.00, y:1210.00, width:144.00, height:50.00), source=(144.00, 50.00), ratios=(1,1)
 UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopLeftCorner bounds=(x:4.00, y:100.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
 UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/TopRightCorner bounds=(x:636.00, y:100.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
 UI art Canvas/SafeArea/BottomHUD/GeneratedBottomHudFrame/BottomLeftCorner bounds=(x:4.00, y:4.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
