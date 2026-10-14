@@ -68,6 +68,20 @@ public sealed class AbilityButtonUI : MonoBehaviour
                 RefreshVisuals();
             }
             if(abilityIcon!=null)GameplayPixelGrid.FitImage(abilityIcon,new Vector2(148,44));
+            if(BattlePresentationSkin.Reference("SharedAbility")!=null)
+            {
+                var r=(RectTransform)transform;r.sizeDelta=new Vector2(176,66);
+                r.anchoredPosition=new Vector2(0,BattlePresentationSkin.UsesReferenceKit?0:-17);
+                var energy=transform.Find(AbilityEnergyBarName) as RectTransform;
+                if(energy!=null)
+                {
+                    energy.sizeDelta=new Vector2(147,24);energy.anchoredPosition=new Vector2(0,44);
+                    var shell=energy.Find("EnergyFrame") as RectTransform;
+                    if(shell!=null)shell.sizeDelta=new Vector2(147,24);
+                    GameplayPixelGrid.Snap(energy);
+                }
+                GameplayPixelGrid.Snap(r);
+            }
             return;
         }
         var theme=GameplayThemeSkin.Current;

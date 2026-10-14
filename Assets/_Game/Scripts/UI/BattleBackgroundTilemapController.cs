@@ -214,7 +214,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     // normal LateUpdate availability check never walks every painted cell.
     public bool TryUseBackground(RectTransform arena)
     {
-        bool available = isActiveAndEnabled && battleArea != null && battleArea == arena &&
+        bool available = !BattlePresentationSkin.UsesReferenceKit && isActiveAndEnabled && battleArea != null && battleArea == arena &&
             battleFloorAnchor != null && worldCamera != null &&
             worldCamera.isActiveAndEnabled &&
             battleArea.GetComponentInParent<Canvas>() != null &&

@@ -28,12 +28,17 @@ public static class GameplayPixelLayoutValidator
             $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
         var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
-        Require(player != null && Near(player.rect.height, Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
+        Require(player != null && Near(player.rect.height, BattlePresentationSkin.UsesReferenceKit ? Mathf.Round(g.Top.height*252/298) : Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
             "Player frame changed with battle height", errors);
         if (player != null)
         {
             Rect playerBounds = GameplayPixelLayoutController.ScreenRect(player);
-            Require(Mathf.Abs(playerBounds.center.y - top.center.y) <= g.Scale / 2f + Epsilon,
+            if(BattlePresentationSkin.UsesReferenceKit)
+            {
+                float expectedY=top.yMin+(Mathf.Round(g.Top.height*18/298)+Mathf.Round(g.Top.height*252/298)*.5f)*g.Scale;
+                Require(Near(playerBounds.center.y,expectedY),"Player panel differs from registered reference position",errors);
+            }
+            else Require(Mathf.Abs(playerBounds.center.y - top.center.y) <= g.Scale / 2f + Epsilon,
                 "Player frame is not vertically centered in battle area", errors);
             var playerContent = player.Find("PlayerPanel") as RectTransform;
             Require(playerContent != null, "Missing player content container", errors);
@@ -103,7 +108,10 @@ public static class GameplayPixelLayoutValidator
                 Vector2 source = piece.sprite.rect.size;
                 if (Mathf.Abs(piece.transform.localEulerAngles.z % 180) > 1) source = new Vector2(source.y, source.x);
                 report += $"World frame {piece.name}: min={lo}, max={hi}, source={source}, ratios={pixels / source}\n";
-                Require(Near(pixels.x / source.x, worldBoard.PhysicalTexelRatio) && Near(pixels.y / source.y, worldBoard.PhysicalTexelRatio),
+                Vector2 expected=Vector2.one*worldBoard.PhysicalTexelRatio;
+                if(BattlePresentationSkin.UsesReferenceKit && piece.name=="ReferenceKitBoardFrame")
+                    expected*=new Vector2(512f/364f,512f/369f);
+                Require(Near(pixels.x / source.x, expected.x) && Near(pixels.y / source.y, expected.y),
                     "World frame texel mismatch: " + piece.name, errors);
                 Require(g.FractionalBoardScale || (Integral(lo.x) && Integral(lo.y) && Integral(hi.x) && Integral(hi.y)),
                     "Fractional world frame vertices: " + piece.name, errors);
@@ -172,8 +180,29 @@ public static class GameplayPixelLayoutValidator
             report += $"UI art {Path(image.transform)} bounds={bounds}, source={source}, ratios=({xRatio},{yRatio})\n";
             Require(Integral(bounds.xMin) && Integral(bounds.yMin) && Integral(bounds.xMax) && Integral(bounds.yMax),
                 $"Fractional UI art vertices {Path(image.transform)}: {bounds}", errors);
-            Require(Near(xRatio, yRatio) && Integral(xRatio) && xRatio >= 1,
-                $"Fractional UI source texels {Path(image.transform)}: ({xRatio},{yRatio})", errors);
+            if(image.TryGetComponent<ReferenceKitSurface>(out var registered))
+            {
+                // Finite scenery is registered to the responsive section. It
+                // follows the same Point-filtered fractional fit policy as the
+                // board; live controls/actors still require integer texels.
+                bool referenceControl=image.TryGetComponent<Button>(out _) && (image.name=="Settings"||image.name=="CombatGuide");
+                Require(BattlePresentationSkin.UsesReferenceKit && (!image.raycastTarget||referenceControl) && registered.Extent.x>0 && registered.Extent.y>0,
+                    "Invalid registered scenery surface: "+Path(image.transform),errors);
+                Rect expected=registered.ExpectedScreenRect;
+                Require(Near(bounds.xMin,expected.xMin)&&Near(bounds.yMin,expected.yMin)&&Near(bounds.xMax,expected.xMax)&&Near(bounds.yMax,expected.yMax),
+                    "Reference module left its registered rectangle: "+Path(image.transform),errors);
+            }
+            else if(image.name=="ReferenceKitLeftBorderDressing"||image.name=="ReferenceKitRightBorderDressing")
+            {
+                bool left=image.name=="ReferenceKitLeftBorderDressing";
+                Require(BattlePresentationSkin.UsesReferenceKit&&!image.raycastTarget&&Near(bounds.yMin,board.yMin)&&Near(bounds.yMax,board.yMax)&&
+                    Near(left?bounds.xMax:bounds.xMin,left?board.xMin:board.xMax)&&
+                    Near(left?bounds.xMin:bounds.xMax,left?g.Viewport.xMin:g.Viewport.xMax),
+                    "Reference side decoration left its board gutter",errors);
+            }
+            else
+                Require(Near(xRatio, yRatio) && Integral(xRatio) && xRatio >= 1,
+                    $"Fractional UI source texels {Path(image.transform)}: ({xRatio},{yRatio})", errors);
         }
         foreach (TMPro.TMP_Text text in owner.GetComponentsInChildren<TMPro.TMP_Text>(false))
             if (text.enabled && !IsTransientPresentation(text.transform))

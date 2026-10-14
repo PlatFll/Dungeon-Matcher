@@ -61,10 +61,16 @@ public sealed class RunControlsUI : MonoBehaviour
             }
             else { slots[i].transition=Selectable.Transition.ColorTint; slots[i].spriteState=default; }
             GameplayThemeSkin.Supply(slots[i]);
+            if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedPotionHolder")!=null)
+            {
+                ((RectTransform)slots[i].transform).sizeDelta=new Vector2(70,63);
+                slots[i].GetComponent<NativePixelUiSurface>()?.SetRequestedSize(new Vector2(70,63));
+            }
             var rect=GameUi.Rect("Icon",slots[i].transform,new Vector2(48,48),Vector2.zero);
             icons[i]=rect.gameObject.AddComponent<Image>();
             icons[i].sprite=Resources.Load<Sprite>(i==0?"UI/Consumables/Potion":"UI/Consumables/Bomb");
             icons[i].preserveAspect=true;icons[i].raycastTarget=false;
+            if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedPotionHolder")!=null)rect.gameObject.AddComponent<NativePixelUiSurface>();
             var shade=GameUi.Rect("Cooldown",slots[i].transform,new Vector2(52,52),Vector2.zero);
             cooldownFills[i]=shade.gameObject.AddComponent<Image>();
             cooldownFills[i].sprite=TextureSprite();cooldownFills[i].type=Image.Type.Filled;
@@ -92,13 +98,32 @@ public sealed class RunControlsUI : MonoBehaviour
         settings.gameObject.AddComponent<GraphicRaycaster>();
         FinalizedUiSkin.Button(settings, gear:true);
         GameplayThemeSkin.Button(settings,settings:true);
-        GlobalMenuSkin.Gear(settings);
+        if(!BattlePresentationSkin.UsesReferenceKit)GlobalMenuSkin.Gear(settings);
+        if(BattlePresentationSkin.Folder!=null && BattlePresentationSkin.Reference("SharedSettings") is Sprite referenceGear)
+        {
+            settings.image.sprite=referenceGear;settings.transition=Selectable.Transition.ColorTint;settings.spriteState=default;
+        }
         var settingsRect=(RectTransform)settings.transform;settingsRect.anchorMin=settingsRect.anchorMax=settingsRect.pivot=new Vector2(1,1);
         settingsRect.anchoredPosition=new Vector2(-20,BattlePresentationSkin.Folder!=null?-24:-18);
         var guide=GameUi.Button("CombatGuide",safeRoot,"Guide",new Vector2(88,40),Vector2.zero,()=>OpenGuide(CombatGuide.Basics));
         GameplayThemeSkin.Button(guide);GameplayThemeSkin.Button(confirmBomb);
         var guideRect=(RectTransform)guide.transform;guideRect.anchorMin=guideRect.anchorMax=guideRect.pivot=new Vector2(1,1);
         guideRect.anchoredPosition=BattlePresentationSkin.Folder!=null?new Vector2(-72,-32):new Vector2(-78,-22);
+        if(BattlePresentationSkin.Reference("SharedGuide")!=null && BattlePresentationSkin.Folder!=null)
+        {
+            GameplayPixelGrid.FitImage(settings.image,new Vector2(45,40));
+            GameplayPixelGrid.FitImage(guide.image,new Vector2(79,39));
+        }
+        if(BattlePresentationSkin.UsesReferenceKit)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            settingsRect.SetParent(top,false);guideRect.SetParent(top,false);
+            foreach(var control in new[]{settings,guide})
+                if(control.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
+            settings.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(414,30,45,40),new Vector2(470,298));
+            guide.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(330,30,79,39),new Vector2(470,298));
+            var label=guide.GetComponentInChildren<TMP_Text>();label.fontSize=20;label.enableAutoSizing=true;label.fontSizeMax=20;label.fontSizeMin=12;
+        }
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))
         {
             if (slot.EnemySpawnAnchor == null) continue;
@@ -146,6 +171,12 @@ public sealed class RunControlsUI : MonoBehaviour
         for(int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
+            if(BattlePresentationSkin.UsesReferenceKit)
+            {
+                var slotRect=(RectTransform)slots[i].transform;
+                slotRect.anchoredPosition=new Vector2(i==0?-132:132,0);
+                GameplayPixelGrid.Snap(slotRect);
+            }
             slots[i].interactable=session.CanUse(kind)||(i==1&&session.Board.IsSelectingTarget);
             icons[i].color=count>0?Color.white:new Color(0.3f,0.3f,0.3f,0.6f);
             cooldownFills[i].fillAmount=count==0?1:cooldown/(CombatMoveClock.MoveEffects ? 2 : BalanceV1.Current.consumableCooldown);

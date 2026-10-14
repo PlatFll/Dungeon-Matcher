@@ -20,22 +20,29 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Three-zone battle presentation candidate (2026-10-14)
+## Three-zone battle presentation (2026-10-15)
 
-**Current gate:** the user rejected the implemented candidates' composition
-fidelity and requested a Dungeon-only reference rebuild before any further
-integration. `ArtSource/BattlePresentation/DungeonReferenceKit/` contains the
-isolated LibreSprite kit, native placement manifest, breakdown, comparison,
-pixel-difference overlay and mismatch report. These source assets are not
-imported into Unity. Dungeon visual approval is required before integration or
-continuing to Forest/Court. The earlier runtime candidate below remains review
-history, not an approved replacement. No generation was used for this rebuild.
+**Current gate:** the user approved the Dungeon art-only reconstruction and
+authorized its game integration plus equivalent Forest/Court source kits.
+The approved individual Dungeon modules are now imported; the whole-screen
+review assembly is excluded. Existing layout/presentation owners place its
+wall, door, shallow floor, thin player frame, board rim and side/bottom masonry.
+The previous Dungeon tilemap vista and misplaced ambient overlays are suppressed.
+One shared silver/purple control family is used across the three zones.
+
+`ForestReferenceKit/` and `CourtReferenceKit/` under
+`ArtSource/BattlePresentation/` contain editable LibreSprite modules, native PNGs,
+registration, reference comparisons and overlays for visual review. Their new
+scenery/frames remain outside Assets pending approval. Hidden actor/label regions
+are reconstructed; the comparison does not claim to recover unseen original art.
+Zero generations were used in this continuation. See
+[the integration/review record](../ArtSource/BattlePresentation/ReferenceIntegration/README.md).
 
 The dedicated `codex/three-zone-battle-presentation` branch implements the user's
 Dungeon/Forest/Drowned Court battle targets. Native modular zone frames, player
 slices, plaques, backgrounds and ornaments accompany a shared silver/purple
-Guide, supply and ability family. Scenery uses the existing tilemap presentation
-owner. Cosmetic flames, runes, lanterns, leaves, waterfall strokes, bubbles and
+Guide, supply and ability family. Earlier Forest/Court scenery uses the tilemap
+presentation owner. Cosmetic flames, runes, lanterns, leaves, waterfall strokes, bubbles and
 kelp obey pause and Reduced Motion without consuming gameplay RNG.
 
 The user's reference-fidelity revision replaces the simplified scenery, frame

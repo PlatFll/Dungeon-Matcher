@@ -54,6 +54,18 @@ public sealed class WaveTrackerUI :
                     waveText.rectTransform.offsetMax = new Vector2(-12,0);
                 }
             }
+            if(BattlePresentationSkin.UsesReferenceKit)
+            {
+                if(TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
+                image.raycastTarget=false;
+                gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(169,21,135,47),new Vector2(470,298));
+                if(waveText!=null)
+                {
+                    waveText.rectTransform.offsetMin=new Vector2(18,18);
+                    waveText.rectTransform.offsetMax=new Vector2(-13,-9);
+                    waveText.enableAutoSizing=true;waveText.fontSizeMin=16;waveText.fontSizeMax=28;
+                }
+            }
         }
     }
 

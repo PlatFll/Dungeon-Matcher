@@ -1,0 +1,626 @@
+{
+  "status": "Source checks passed; visual approval pending",
+  "generationCalls": 0,
+  "assets": [
+    {
+      "name": "BattleFloor",
+      "size": [
+        470,
+        87
+      ],
+      "colors": 18236,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        87
+      ],
+      "sha256": "539ddc146f46df4c37fec0daef0c66fba413aa91fd6b4af5218b932dc48463bf",
+      "aseSha256": "6a088723fce31cd828a9aa0a1283e44b78feffeecad720ca100a38ddbbaa9a13",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardBL",
+      "size": [
+        30,
+        30
+      ],
+      "colors": 726,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "sha256": "a239dd587fcb37f83ad6d26a21b1f1f9c97c8ec06b2d9eec12ed0a52478cd296",
+      "aseSha256": "5c3a9aae173ae5297d8b31d6b8f80865ef137c5a95a040990b97e9e1ed40f1f6",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardBottom",
+      "size": [
+        350,
+        21
+      ],
+      "colors": 5336,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        350,
+        21
+      ],
+      "sha256": "f921326adac395f2d8e9d77d69093e32922d0a791441f953b8c15c94b2bdd290",
+      "aseSha256": "855ace81d9c3df180b68b2114582623aff69c8ea493457af63e9ef675209b305",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardBR",
+      "size": [
+        30,
+        30
+      ],
+      "colors": 710,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "sha256": "2f517abd0a27299636af510b6a4a589e4c1524e948746b888b4efb951d6585e0",
+      "aseSha256": "2a6fb8814f134192c4baf339534d5fc22c5759c5e300c5507c34cdfcb214486f",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardFrame",
+      "size": [
+        410,
+        414
+      ],
+      "colors": 23166,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        410,
+        414
+      ],
+      "sha256": "19d3206be52baaa1ccf6f8a706864e42aa40a51926c340f8244c5ae9a18295b0",
+      "aseSha256": "1f56bc13d5d07e1e1b07a02c3abcde5d9e43b920c1e8774c6c20289f180198fd",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardLeft",
+      "size": [
+        23,
+        354
+      ],
+      "colors": 6366,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        23,
+        354
+      ],
+      "sha256": "84804bc879c61fb8a016353b46574e47f6f24a016455dcf091bb047e64a313d6",
+      "aseSha256": "a11dfcd056789c701fe094a4d1af5ea4732afa287f0a0cffa262299db17116c9",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardRight",
+      "size": [
+        22,
+        354
+      ],
+      "colors": 6526,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        354
+      ],
+      "sha256": "8403154b3f2ef0f101dd0e104d7e19eceba19467c5cf7deba0500f0fd9fa7851",
+      "aseSha256": "e8b4c9a54e8e4d9b333f3d1d8c901f44d4606539fcef2fb138e4168078e165bc",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardTL",
+      "size": [
+        30,
+        30
+      ],
+      "colors": 740,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "sha256": "032387dc209cd6386823c7d42f4567b319ac1427d5aea053dc5fa804a198bf94",
+      "aseSha256": "afe49b1af78898199dfad1cb07f5c60737fe93b35c1f8138602a5fa42b0e77fc",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardTop",
+      "size": [
+        350,
+        24
+      ],
+      "colors": 6790,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        350,
+        24
+      ],
+      "sha256": "2680e8dbb4ac1b2c0e83acf13fe50b008f4076b064b43dd2df1f8f86853a9b6b",
+      "aseSha256": "012571d407417c56c09f6f3057adae29f009a617be12735c119552902fc0758e",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardTR",
+      "size": [
+        30,
+        30
+      ],
+      "colors": 701,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "sha256": "a23c6a2d671aaa13bf7ebfb3664c2979226601c7a45f0400c56c1bd4c67b22df",
+      "aseSha256": "6a449bd0ca5859325a86a4e248e29368fac7fda771db5495d3892bfd1d094452",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BoardWell",
+      "size": [
+        364,
+        369
+      ],
+      "colors": 6646,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        364,
+        369
+      ],
+      "sha256": "6a92dacf577b3bcf2e4447beaf3abe7b28f946c802877150589b64a3a94ad95e",
+      "aseSha256": "ca5677016780a18efe39110276fc768e3c8ed2ece10c3f2923e3eaab1a575c18",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "BottomMasonry",
+      "size": [
+        470,
+        135
+      ],
+      "colors": 19852,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        135
+      ],
+      "sha256": "17b775daf02916a3a13e8f02b1feff314d00a6d37dcb3af88f8fdc9efd5fa5d7",
+      "aseSha256": "073849eb0cb510cb000d871f78d8d6f3e699b16bd3cc6950e88986895cd3e6b2",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "FarScenery",
+      "size": [
+        470,
+        160
+      ],
+      "colors": 35688,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        160
+      ],
+      "sha256": "10c1650bd2d70be538536bc802270186c5bf0f3abc2b46a5cf0bba0468b842aa",
+      "aseSha256": "c9692215b272bffd4aa5d67d11842261ea7f8adfb079c410f96997fbdd182cd9",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "ForestArtOnly",
+      "size": [
+        470,
+        836
+      ],
+      "colors": 132115,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        836
+      ],
+      "sha256": "86297cf741370fc99e24dd07cab9c1ab7a37a2a747f56fe15523ead51b37bf23",
+      "aseSha256": "a18d8ce57a269c0cfcc19cee2bd0af6c6c7d51da9dacf73f7ab8a146121bc62c",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "LeftBorderDressing",
+      "size": [
+        30,
+        403
+      ],
+      "colors": 10879,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        403
+      ],
+      "sha256": "0deab85e9b74ca7d8538b7c47755a30359d38562f471942438fa5a9501b4ab64",
+      "aseSha256": "631bf7390b7b237fd54bc4ac07699f18d1348ee1f9cd41a4ba274f27a6663c64",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "MidScenery",
+      "size": [
+        470,
+        51
+      ],
+      "colors": 10694,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        470,
+        51
+      ],
+      "sha256": "ea32e29581d83c16d7640244fdc96d5af3b85dccd482603d2a9a5897292e0e8f",
+      "aseSha256": "47dcf783497ce06fdf8d8c2ac7f1e539a9196d41bb16324b415a255ec556217b",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "PlayerBanner",
+      "size": [
+        49,
+        66
+      ],
+      "colors": 2461,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        49,
+        66
+      ],
+      "sha256": "e38acc82aa82d7c4447472e74bb7d01475a2661d04ddefbcc1d6ffd4adaf125e",
+      "aseSha256": "261154122b7c63c267d596b994f44699d0b6347eb20ec8013e906fda9aa0609b",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "PlayerFrame",
+      "size": [
+        135,
+        258
+      ],
+      "colors": 9707,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        135,
+        258
+      ],
+      "sha256": "96d1d40d626c19ffdbe56be0e808181006b165976dafc371ba32941c00f6d68c",
+      "aseSha256": "124212aaf510a74acf2143650257d3ba1f4194d7ad0598460af104c8294dc3d0",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "PlayerMasonry",
+      "size": [
+        105,
+        224
+      ],
+      "colors": 3167,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        105,
+        224
+      ],
+      "sha256": "7e8e57286b4e2805b72d38b65922c1e09d72688567d259df7f4d937d987f9526",
+      "aseSha256": "7cc381dc01f85500bd3cd924427fdcc771b8f0ad98f7d1ee83836fedea8edcd9",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "RightBorderDressing",
+      "size": [
+        30,
+        403
+      ],
+      "colors": 10689,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        403
+      ],
+      "sha256": "8f0d60264726aae294586e826477075def6558359e1d54d27232fe717c0c3a06",
+      "aseSha256": "f61690b675ab13a7eb1c6e4c6a47898cc731b1b6e040479a7ef68ee9ed722dfa",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedAbility",
+      "size": [
+        176,
+        66
+      ],
+      "colors": 5502,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        176,
+        66
+      ],
+      "sha256": "ee089ea3cc579e215cf7974e2f89b97adfcd197be159fbee06eb7fd6db72404b",
+      "aseSha256": "967cfc4762f5d06b036873f3cf011bc25988a1a5e85e1ce934312c876b908f04",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedBombHolder",
+      "size": [
+        70,
+        63
+      ],
+      "colors": 1475,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        70,
+        63
+      ],
+      "sha256": "0afa65d6034998882fc330a56bb8f82cc754c9589bd737639697f08fe8677706",
+      "aseSha256": "aa4c16a65de699b44a74e6ac4fbd2d944674e3d0922cba725f52eb3d1e9617b7",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedEnergy",
+      "size": [
+        147,
+        24
+      ],
+      "colors": 1946,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        147,
+        24
+      ],
+      "sha256": "d7edff843808f96e9364717d531493ae312e16e0e667afea0e3e30106999d908",
+      "aseSha256": "6aa2b848efdbe945cdbf1ef868f4611229334dbee52e6fcb2e913ce38dbc2189",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedGuide",
+      "size": [
+        79,
+        39
+      ],
+      "colors": 1732,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        79,
+        39
+      ],
+      "sha256": "248d4c17ae1fbc44b168e612a8cd3d7fab0b6bbef78d52cab729ae019037df88",
+      "aseSha256": "2ed29fe609d2b3b1a9e8cdce0d9ba679b014cacc87fef0e42cfb164c29824e2e",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedPotionHolder",
+      "size": [
+        70,
+        63
+      ],
+      "colors": 1447,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        70,
+        63
+      ],
+      "sha256": "873f7a06e13aeb45c5fb85de9b24457887fadbf82d27cdc92192f70d03c1f653",
+      "aseSha256": "4bd7d3fea84918afd93fce1144e2a005da1afc28cc1dc444ecc91042509be37a",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "SharedSettings",
+      "size": [
+        45,
+        40
+      ],
+      "colors": 1577,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        45,
+        40
+      ],
+      "sha256": "c59febbb1104c4c3da3a45804598a5b865a59abf7fed6b40fced4de3af167da0",
+      "aseSha256": "b1fc511c1a379fe54d38571255e90df4fa27272b3e1fe5391af433fe3b49888b",
+      "reopenedPixelsMatch": true
+    },
+    {
+      "name": "WaveHeader",
+      "size": [
+        157,
+        48
+      ],
+      "colors": 4531,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        157,
+        48
+      ],
+      "sha256": "1fdff64b91afe1f944237b63593f8373a6ee55a77c84d8a36b4a83be9286aa10",
+      "aseSha256": "9105db548124b451c432668ebfe7844cbf1b24952965720fb01b1dff8365dc7a",
+      "reopenedPixelsMatch": true
+    }
+  ],
+  "landmarks": [
+    {
+      "name": "Rune",
+      "rect": [
+        220,
+        75,
+        248,
+        119
+      ],
+      "exactPixels": true
+    },
+    {
+      "name": "Deer",
+      "rect": [
+        374,
+        113,
+        408,
+        156
+      ],
+      "exactPixels": true
+    },
+    {
+      "name": "Signpost",
+      "rect": [
+        410,
+        125,
+        466,
+        200
+      ],
+      "exactPixels": true
+    },
+    {
+      "name": "Left lantern",
+      "rect": [
+        147,
+        77,
+        176,
+        110
+      ],
+      "exactPixels": true
+    },
+    {
+      "name": "Canopy",
+      "rect": [
+        140,
+        0,
+        325,
+        20
+      ],
+      "exactPixels": true
+    },
+    {
+      "name": "Right mushrooms",
+      "rect": [
+        440,
+        580,
+        470,
+        700
+      ],
+      "exactPixels": true
+    }
+  ],
+  "sharedControlsPixelIdentical": true,
+  "assemblyMatchesModules": true
+}

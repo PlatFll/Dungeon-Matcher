@@ -8,6 +8,28 @@ using UnityEngine.Tilemaps;
 public static class BattlePresentationImporter
 {
     private const string Target = "Assets/_Game/Resources/UI/BattlePresentation";
+    public static void ImportApprovedDungeon()
+    {
+        EditorUtility.audioMasterMute=true;
+        string destination=Target+"/ReferenceDungeon";
+        Directory.CreateDirectory(destination);
+        foreach(string file in Directory.GetFiles("ArtSource/BattlePresentation/DungeonReferenceKit/native","*.png"))
+        {
+            string name=Path.GetFileName(file);
+            // The assembly and eight-cell study are review-only, never gameplay textures.
+            if(name=="DungeonArtOnly.png" || name=="BoardWell.png")continue;
+            string path=destination+"/"+name;
+            File.Copy(file,path,true);AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+            var importer=(TextureImporter)AssetImporter.GetAtPath(path);
+            importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
+            importer.spritePixelsPerUnit=64;importer.filterMode=FilterMode.Point;importer.mipmapEnabled=false;
+            importer.textureCompression=TextureImporterCompression.Uncompressed;importer.maxTextureSize=2048;
+            importer.npotScale=TextureImporterNPOTScale.None;importer.alphaIsTransparency=true;importer.wrapMode=TextureWrapMode.Clamp;
+            var settings=new TextureImporterSettings();importer.ReadTextureSettings(settings);
+            settings.spriteMeshType=SpriteMeshType.FullRect;importer.SetTextureSettings(settings);importer.SaveAndReimport();
+        }
+        AssetDatabase.SaveAssets();Debug.Log("APPROVED DUNGEON KIT imported; Forest/Court candidates remain outside Assets.");
+    }
     public static void Run()
     {
         EditorUtility.audioMasterMute = true;

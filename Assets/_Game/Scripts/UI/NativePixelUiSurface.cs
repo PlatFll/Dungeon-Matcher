@@ -7,6 +7,7 @@ public sealed class NativePixelUiSurface : MonoBehaviour
 {
     private Image image;
     private Vector2 requestedSize;
+    public void SetRequestedSize(Vector2 size) => requestedSize=size;
     private void Awake()
     {
         image = GetComponent<Image>();

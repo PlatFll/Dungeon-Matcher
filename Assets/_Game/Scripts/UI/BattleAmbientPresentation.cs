@@ -30,6 +30,7 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
     {
         layout=FindFirstObjectByType<GameplayPixelLayoutController>();
         FindFirstObjectByType<BoardVisuals>()?.RefreshPresentationFrame();
+        if(BattlePresentationSkin.UsesReferenceKit)return;
         var player=GameObject.Find("PlayerSection");var banner=BattlePresentationSkin.ZoneSprite("Banner");
         if(player!=null && banner!=null)
         {
@@ -54,6 +55,11 @@ public sealed class BattleAmbientPresentation : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if(BattlePresentationSkin.UsesReferenceKit)
+        {
+            if(!PresentationPreferences.ReducedMotion)clock+=Time.deltaTime;
+            return;
+        }
         if(!ready)
         {
             var environment=FindFirstObjectByType<BattleBackgroundTilemapController>()?.ActiveEnvironment;

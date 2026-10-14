@@ -68,14 +68,30 @@ public sealed class ThreeZonePresentationTests
                     Assert.That(used.Distinct().Count(),Is.EqualTo(96),"Scenery tiles must appear once; never clamp/repeat the last floor row.");
                     var framePieces=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
                         .Where(s=>s.sprite!=null && AssetDatabase.GetAssetPath(s.sprite).EndsWith("/FrameAtlas.png")).ToArray();
-                    Assert.That(framePieces.Length,Is.EqualTo(28));
-                    Assert.That(framePieces.Select(s=>s.sprite.name).Distinct().Count(),Is.EqualTo(28));
+                    if(BattlePresentationSkin.UsesReferenceKit)
+                    {
+                        Assert.That(framePieces,Is.Empty,"The previous frame must not render behind the approved kit.");
+                        var approvedFrame=RunSession.Current.Board.transform.Find("BoardFrame/ReferenceKitBoardFrame");
+                        Assert.That(approvedFrame,Is.Not.Null);
+                        Assert.That(approvedFrame.GetComponent<SpriteRenderer>().sprite,Is.SameAs(BattlePresentationSkin.Reference("BoardFrame")));
+                        Assert.That(vista.GetComponentsInChildren<UnityEngine.Tilemaps.TilemapRenderer>().All(r=>r.forceRenderingOff),Is.True);
+                        Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(12));
+                        foreach(var surface in Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None))
+                            Assert.That(surface.GetComponent<Image>().raycastTarget,Is.EqualTo(surface.TryGetComponent<Button>(out _)));
+                    }
+                    else
+                    {
+                        Assert.That(framePieces.Length,Is.EqualTo(28));
+                        Assert.That(framePieces.Select(s=>s.sprite.name).Distinct().Count(),Is.EqualTo(28));
+                    }
                     var cells=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
                         .Where(s=>s.name.StartsWith("CellTile_",StringComparison.Ordinal)).ToArray();
                     Assert.That(cells.Length,Is.EqualTo(64));
-                    Assert.That(cells.All(s=>s.sprite!=null && s.sprite.name.StartsWith("Cell",StringComparison.Ordinal)),Is.True);
+                    Assert.That(cells.All(s=>s.sprite!=null && s.sprite.name.StartsWith(BattlePresentationSkin.UsesReferenceKit?"EmptyCell":"Cell",StringComparison.Ordinal)),Is.True);
                     var ambient=Object.FindFirstObjectByType<BattleAmbientPresentation>();
-                    Assert.That(ambient,Is.Not.Null);Assert.That(ambient.DetailCount,Is.GreaterThanOrEqualTo(2));
+                    Assert.That(ambient,Is.Not.Null);
+                    if(BattlePresentationSkin.UsesReferenceKit)Assert.That(ambient.DetailCount,Is.Zero,"Old positioned ambient art must not overlap reference landmarks.");
+                    else Assert.That(ambient.DetailCount,Is.GreaterThanOrEqualTo(2));
                     var before=JsonUtility.ToJson(RunSession.Current.Board.CaptureContinuation(id=>id));
                     float clock=ambient.AnimationTime;
                     for(int frame=0;frame<24;frame++)
@@ -138,7 +154,7 @@ public sealed class ThreeZonePresentationTests
             var bounds=GameplayPixelLayoutController.ScreenRect(icon.rectTransform);
             var button=GameplayPixelLayoutController.ScreenRect((RectTransform)ability.transform);
             Assert.That(button.Contains(bounds.min) && button.Contains(bounds.max),Is.True,id);
-            Assert.That(ability.GetComponent<Button>().image.sprite.name,Is.EqualTo("Ability"));
+            Assert.That(ability.GetComponent<Button>().image.sprite,Is.SameAs(BattlePresentationSkin.Shared("Ability")));
             var errors=GameplayPixelLayoutValidator.Validate(Object.FindFirstObjectByType<GameplayPixelLayoutController>(),out _);
             Assert.That(errors,Is.Empty,id);
             ScreenCapture.CaptureScreenshot(Path.Combine(output,id+".png"));yield return new WaitForSecondsRealtime(.2f);
@@ -161,6 +177,13 @@ public sealed class ThreeZonePresentationTests
         foreach(string family in new[]{"Guide","Supply","Ability"})
         foreach(string state in new[]{"","Hover","Pressed","Disabled"})
             Assert.That(Resources.Load<Sprite>("UI/BattlePresentation/Shared/"+family+state),Is.Not.Null,family+state);
+        foreach(string path in Directory.GetFiles(root+"/ReferenceDungeon","*.png"))
+        {
+            string name=Path.GetFileName(path);
+            Assert.That(name,Is.Not.EqualTo("DungeonArtOnly.png"));
+            Assert.That(name,Is.Not.EqualTo("BoardWell.png"));
+            CollectionAssert.AreEqual(File.ReadAllBytes("ArtSource/BattlePresentation/DungeonReferenceKit/native/"+name),File.ReadAllBytes(path));
+        }
     }
     [Test] public void ReferenceCompositionKeepsNativeControlsAligned()
     {
