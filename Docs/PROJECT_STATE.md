@@ -66,6 +66,13 @@ and settings icons plus the gear from the clean mockups, adds sampled stone/enam
 face texture, and limits dark icon insets to the three controls that use them in
 the reference. Native canvas sizes and live label/hit-area layout are preserved.
 Current follow-up evidence is in ArtSource/MenuUI/IconRevision/README.md.
+The 2026-10-16 background cleanup keeps the implemented composition and existing
+38-color palette. LibreSprite merges 693 small interior texture pixels into
+adjacent stone/carpet shading; focal props, portal, statues, banners, flames,
+pedestal, logo and controls retain their existing pixels and placement.
+Native sources, exact preservation checks and before/after Unity captures are in
+ArtSource/MenuUI/RenderingCleanup/README.md. This is an authorized cleanup on a
+review branch; it does not replace the approved target or add a new art direction.
 No generation budget was used.
 Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.

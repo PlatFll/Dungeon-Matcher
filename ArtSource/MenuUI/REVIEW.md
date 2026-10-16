@@ -21,6 +21,10 @@ current comparisons, native checks and Unity evidence. The subsequent
 icons, gear and textured faces. No new generation was used.
 The original implementation evidence below is retained as history.
 
+The later [controlled background cleanup](RenderingCleanup/README.md) records
+the 2026-10-16 interior shading edits to the current hall. Its before/after
+captures supersede the older hall screenshots for that limited change.
+
 ## Visual evidence
 
 - [Main menu: before / Unity after / target](review/main-menu-comparison.png)
