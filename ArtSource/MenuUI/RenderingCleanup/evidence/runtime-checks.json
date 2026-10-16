@@ -1,0 +1,62 @@
+{
+  "before": {
+    "result": "Passed",
+    "total": 1,
+    "start_utc": "2026-10-15 23:56:22Z",
+    "tests": [
+      {
+        "fullname": "MenuUiReviewTests.CaptureMenusAndPreservePause",
+        "result": "Passed",
+        "duration": "21.184117"
+      }
+    ],
+    "captures": {
+      "1920-main-menu.png": "3cc5fd736c15c59a81a1935b1aa1ee8ebe132631c72c37f8861bd15acfcec7d1",
+      "1920-settings.png": "8509bf92c9eb0f7c8caf52f0166c0d3d3ea2f774a41eb0814d45c71da450a091",
+      "2400-main-menu.png": "36b962e448ef8ff367b495c0bfea369d51c23d8adcbbf0f566619d4d4f1e57bb",
+      "2400-settings.png": "41d7b9131b6f10423e44ad5bf2ef3fce477c2db8016409a3bb4dd9c87978f218"
+    }
+  },
+  "after": {
+    "result": "Passed",
+    "total": 3,
+    "start_utc": "2026-10-16 00:03:00Z",
+    "tests": [
+      {
+        "fullname": "MenuUiReviewTests.CaptureMenusAndPreservePause",
+        "result": "Passed",
+        "duration": "14.660330"
+      },
+      {
+        "fullname": "MenuUiReviewTests.HomeNavigationPreferencesAndSavedRunContinue",
+        "result": "Passed",
+        "duration": "16.439749"
+      },
+      {
+        "fullname": "MenuUiReviewTests.NativeMenuLayoutsFitSafeAreasAndEveryPlayable",
+        "result": "Passed",
+        "duration": "13.289685"
+      }
+    ],
+    "captures": {
+      "1280-safe-area.png": "727f0ec10f995be8051b0d86c588e02d996e15b3a68ceac32250b6f31f2727c7",
+      "1920-main-menu.png": "e591ad258ec8aaabfa99ef6196c3349152fb8e20b423e9760f9e3cd1ea64f020",
+      "1920-safe-area.png": "d0a58a9eff96a5a41b96605699fcb58632ece2bb4526c18940bfe38cb0fa2cb7",
+      "1920-settings.png": "9bc530754fc4e10aa39feab122eda6bdc44b25c125eebb16dbaab76f34993753",
+      "2400-main-menu.png": "069a843e7d651bfa59bbcc2fcc8a5211c7f1e3cc6e6c2367f001fb3c2e72d781",
+      "2400-safe-area.png": "c83ab1241e664f324bd044512a6d883140193dca68c9c8a6863d99c269ca203b",
+      "2400-settings.png": "30643633259ff4e2f6e940c4caeddf434f3f0df382869073e3a7f8a3d721b384",
+      "hero-bardley.png": "d55181a76e2bdb2a60f584289820b454fb7cb87b9cb8b6ae8ddd9a79c59d7855",
+      "hero-dungeon_attender.png": "3c76b83168783b09d78413e8a3356fb507d48c15eb31bec9f850bba1ffb15005",
+      "hero-gideon_glass.png": "89042056802d9cd5487177157ddb45b31c496d68ac45bf29db7a5a25e3ad16ab",
+      "hero-kobold_gunner.png": "fd54eae9386ce12aa8c5c4a99de17cf9f9e27ba3c6fcf0dd74bf91c40053c8c2",
+      "hero-skeleton.png": "c7b0c356b5a54eba6da8f56fe706e72d5bfbda41ea68af417231811eeff09221",
+      "menu-settings.png": "ded53172ac1a607832bebd3c29b4a694c6a24322f1eab140fcb1dace75bac6e6",
+      "saved-run.png": "6e506d5c48071ac247ccd6361a007f4e30ce18d7b8be0d7ab469bef24f4cdf91"
+    }
+  },
+  "native_menu_pairs": 54,
+  "unity_version": "6000.3.19f1",
+  "audio": "EditorUtility.audioMasterMute = true in existing MenuUiReviewTests setup",
+  "note": "Three distinct existing menu tests passed after cleanup. Before capture repeats one test; not counted as an additional distinct test."
+}

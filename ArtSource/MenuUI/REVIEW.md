@@ -21,6 +21,10 @@ current comparisons, native checks and Unity evidence. The subsequent
 icons, gear and textured faces. No new generation was used.
 The original implementation evidence below is retained as history.
 
+The [V2 controlled background cleanup](RenderingCleanupV2/README.md) records
+the current interior shading edits and matched Unity comparisons. It follows
+the [first cleanup](RenderingCleanup/README.md), which the user judged too subtle.
+
 ## Visual evidence
 
 - [Main menu: before / Unity after / target](review/main-menu-comparison.png)

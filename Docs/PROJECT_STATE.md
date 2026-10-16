@@ -66,6 +66,14 @@ and settings icons plus the gear from the clean mockups, adds sampled stone/enam
 face texture, and limits dark icon insets to the three controls that use them in
 the reference. Native canvas sizes and live label/hit-area layout are preserved.
 Current follow-up evidence is in ArtSource/MenuUI/IconRevision/README.md.
+The 2026-10-16 V2 background cleanup consolidates selected interior stone
+highlights and mottling while preserving the original large shadow shapes,
+38-color palette, scene geometry, focal artwork and UI. The first 693-pixel
+microchip pass was judged too subtle; V2 and its source audit are in
+ArtSource/MenuUI/RenderingCleanupV2/README.md. An editor-only capture check uses
+the same character frame and records both unobscured environment and complete
+menu views. Native art, protected-edge checks and Unity evidence remain on the
+review branch pending user approval. Global art rules are unchanged.
 No generation budget was used.
 Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
