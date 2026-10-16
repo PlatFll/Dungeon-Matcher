@@ -27,6 +27,6 @@ Write-Output "LibreSprite authored and exported $($menuExports.Count) native ass
 # alongside these finalized sources; never regenerate the approved composition.
 foreach($menuHall in @('Hall','HallTall')){
     foreach($menuExtension in @('.aseprite','.png')){
-        Copy-Item -LiteralPath (Join-Path $menuRoot ('RenderingCleanup/native/'+$menuHall+$menuExtension)) -Destination (Join-Path $menuRoot ('native/'+$menuHall+$menuExtension)) -Force
+        Copy-Item -LiteralPath (Join-Path $menuRoot ('RenderingCleanupV2/native/'+$menuHall+$menuExtension)) -Destination (Join-Path $menuRoot ('native/'+$menuHall+$menuExtension)) -Force
     }
 }

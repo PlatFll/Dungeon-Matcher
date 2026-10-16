@@ -1,0 +1,29 @@
+{
+  "unity_version": "6000.3.19f1",
+  "repository_validator": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "passed",
+    "exit_code": 0,
+    "log": "unity-validation.log"
+  },
+  "native_asset_validation": {
+    "command": "python Tools/Validate-MenuArt.py",
+    "result": "passed",
+    "native_ase_png_runtime_pairs": 54,
+    "evidence": "native-import-checks.json"
+  },
+  "menu_suite": {
+    "result": "passed",
+    "distinct_tests": 4,
+    "audio_muted": true,
+    "evidence": "unity-menu-tests.xml"
+  },
+  "rendered_pixel_validation": {
+    "result": "passed",
+    "environment_matches_native_exactly": true,
+    "differences_outside_edited_background_pixels": 0,
+    "evidence": "unity-pixel-checks.json"
+  },
+  "scope": "Current V1 menu to V2 shading cleanup; no gameplay or player art changes; no merge.",
+  "limitations": "Visual quality awaits user approval. Full menu improvement remains modest because UI obscures 486 of the 835 changed native cells. No physical-device review."
+}

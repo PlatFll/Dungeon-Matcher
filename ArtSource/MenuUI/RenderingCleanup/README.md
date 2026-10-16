@@ -1,5 +1,9 @@
 # Controlled main-menu background cleanup
 
+Historical V1 evidence. The user judged this pass too subtle; the current
+[V2 follow-up](../RenderingCleanupV2/README.md) preserves it as the baseline.
+Use V2's native sources and install recipe for the current review candidate.
+
 ## Scope and result
 
 The user requested a selective rendering cleanup of the **current implemented

@@ -1,0 +1,87 @@
+{
+  "tests": [
+    {
+      "fullname": "MenuUiReviewTests.CaptureControlledBackgroundCleanupComparison",
+      "result": "Passed",
+      "start-time": "2026-10-16 02:28:21Z",
+      "end-time": "2026-10-16 02:28:31Z"
+    },
+    {
+      "fullname": "MenuUiReviewTests.CaptureMenusAndPreservePause",
+      "result": "Passed",
+      "start-time": "2026-10-16 02:28:31Z",
+      "end-time": "2026-10-16 02:28:43Z"
+    },
+    {
+      "fullname": "MenuUiReviewTests.HomeNavigationPreferencesAndSavedRunContinue",
+      "result": "Passed",
+      "start-time": "2026-10-16 02:28:43Z",
+      "end-time": "2026-10-16 02:28:52Z"
+    },
+    {
+      "fullname": "MenuUiReviewTests.NativeMenuLayoutsFitSafeAreasAndEveryPlayable",
+      "result": "Passed",
+      "start-time": "2026-10-16 02:28:52Z",
+      "end-time": "2026-10-16 02:29:04Z"
+    }
+  ],
+  "unity_version": "6000.3.19f1",
+  "native_source_hashes": {
+    "before": "c79eff46c69146ea93bb8dd28b216c00009d0ca134a2f40829415b0ff7b2f93b",
+    "native": "b0cc4c29bd4600508e17e313cf6652c36bf86f5458c390038626a3d3c0183c96"
+  },
+  "viewports": [
+    {
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "full",
+      "visible_changed_native_cells": 349,
+      "differences_outside_edited_background_pixels": 0,
+      "capture_sha256": [
+        "2ebe8f37445171a9320a7f1195bd203bd68403f20418401eca859b09fb1b4810",
+        "94d66efd1ef0ecdb906a5f931b5251bf96db7f4fa6d8d236b4c6964de0ba06e8"
+      ]
+    },
+    {
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "environment",
+      "visible_changed_native_cells": 835,
+      "differences_outside_edited_background_pixels": 0,
+      "capture_sha256": [
+        "0b8319cea5d9a7cdd47df8018b046ce50a46e7d8efc8e75534370c8b60d0623f",
+        "e2e281400aa98870724866f218cf6e62b36ffe32bbc13c168a5c44d5e402740a"
+      ]
+    },
+    {
+      "size": [
+        1080,
+        2400
+      ],
+      "mode": "full",
+      "visible_changed_native_cells": 349,
+      "differences_outside_edited_background_pixels": 0,
+      "capture_sha256": [
+        "c840f8e327ef25cb0222c50bb7e5b1191d358b5645a3312c6682bc3a158a877e",
+        "0627becc829eca9fde80c732c4d298d5625946e89119fdc2c38f390cfd6c6962"
+      ]
+    },
+    {
+      "size": [
+        1080,
+        2400
+      ],
+      "mode": "environment",
+      "visible_changed_native_cells": 835,
+      "differences_outside_edited_background_pixels": 0,
+      "capture_sha256": [
+        "c14fd0c2d8e1c77dd5a722e1f98c87e13bd0030786f77b06a4b3bafa8b8e2b18",
+        "690b3752fec57ccc43534fcdef6fe2da75199eacf80b8ca75e7c79dc7e5af00e"
+      ]
+    }
+  ]
+}

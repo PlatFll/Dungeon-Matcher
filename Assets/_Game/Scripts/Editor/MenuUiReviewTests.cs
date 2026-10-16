@@ -171,6 +171,62 @@ public sealed class MenuUiReviewTests
         ScreenCapture.CaptureScreenshot(Path.Combine(output,name+".png"));
         yield return new WaitForSecondsRealtime(.3f);
     }
+    [UnityTest] public IEnumerator CaptureControlledBackgroundCleanupComparison()
+    {
+        string root=Path.GetFullPath("ArtSource/MenuUI/RenderingCleanupV2");
+        string destination=Path.Combine(root,"captures");Directory.CreateDirectory(destination);
+        var baselineTexture=new Texture2D(2,2,TextureFormat.RGBA32,false);
+        Assert.That(baselineTexture.LoadImage(File.ReadAllBytes(Path.Combine(root,"before/HallTall.png"))),Is.True);
+        baselineTexture.filterMode=FilterMode.Point;
+        var baseline=Sprite.Create(baselineTexture,new Rect(0,0,360,800),Vector2.one*.5f,100,0,SpriteMeshType.FullRect);
+        try
+        {
+            foreach(int height in new[]{1920,2400})
+            {
+                typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",BindingFlags.Static|BindingFlags.NonPublic)
+                    .Invoke(null,new object[]{new Vector2Int(1080,height)});
+                yield return Until(()=>Screen.width==1080&&Screen.height==height);
+                SceneManager.LoadScene("MainMenu");yield return new WaitForSecondsRealtime(.7f);
+                var stage=GameObject.Find("NativeMenuStage").transform;
+                var hall=stage.Find("MenuDungeonArtwork").GetComponent<Image>();
+                var production=hall.sprite;
+                Assert.That(AssetDatabase.GetAssetPath(production),Is.EqualTo("Assets/_Game/Resources/UI/GlobalMenu/HallTall.png"));
+                var actor=stage.Find("MenuCharacter").GetComponent<Image>();
+                actor.GetComponent<Animator>().enabled=false;
+                actor.sprite=AssetDatabase.LoadAllAssetsAtPath("Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png")
+                    .OfType<Sprite>().Single(s=>s.name=="Rattlebones_Idle_00");
+                yield return null;
+                // Its LateUpdate re-enables the tagline; freeze presentation
+                // only in this disposable capture so environment shots stay clear.
+                Object.FindFirstObjectByType<MainMenuArtwork>().enabled=false;
+                var originalStates=stage.Cast<Transform>().ToDictionary(t=>t,t=>t.gameObject.activeSelf);
+                string layout=BackgroundLayoutRecord(stage);
+                foreach(bool cleaned in new[]{false,true})
+                {
+                    hall.sprite=cleaned?production:baseline;
+                    foreach(var entry in originalStates)entry.Key.gameObject.SetActive(entry.Value);
+                    yield return ControlledShot(Path.Combine(destination,height+(cleaned?"-after-full.png":"-before-full.png")));
+                    Assert.That(BackgroundLayoutRecord(stage),Is.EqualTo(layout),"Only the hall texture may change");
+                    foreach(var entry in originalStates)if(entry.Key!=hall.transform)entry.Key.gameObject.SetActive(false);
+                    yield return ControlledShot(Path.Combine(destination,height+(cleaned?"-after-environment.png":"-before-environment.png")));
+                }
+                foreach(var entry in originalStates)entry.Key.gameObject.SetActive(entry.Value);
+                hall.sprite=production;
+                File.WriteAllText(Path.Combine(destination,height+"-layout.txt"),layout);
+            }
+        }
+        finally{Object.Destroy(baseline);Object.Destroy(baselineTexture);}
+    }
+    private static string BackgroundLayoutRecord(Transform stage)
+    {
+        return string.Join("\n",stage.GetComponentsInChildren<RectTransform>(true).Select(t=>
+            t.name+"|"+t.anchoredPosition+"|"+t.sizeDelta+"|"+t.localScale+"|"+t.pivot));
+    }
+    private static IEnumerator ControlledShot(string path)
+    {
+        Canvas.ForceUpdateCanvases();yield return new WaitForSecondsRealtime(.15f);
+        ScreenCapture.CaptureScreenshot(path);yield return new WaitForSecondsRealtime(.3f);
+    }
     private static IEnumerator Until(Func<bool> ready)
     { float end=Time.realtimeSinceStartup+40; while(!ready()) {Assert.That(Time.realtimeSinceStartup,Is.LessThan(end));yield return null;} }
 }
