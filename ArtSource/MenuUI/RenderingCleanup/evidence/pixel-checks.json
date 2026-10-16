@@ -1,0 +1,130 @@
+{
+  "checks": "passed",
+  "dimensions": {
+    "Hall": [
+      360,
+      640
+    ],
+    "HallTall": [
+      360,
+      800
+    ]
+  },
+  "changed_pixels": 693,
+  "changed_percent": 0.2406,
+  "palette_before": 38,
+  "palette_after": 38,
+  "alpha": [
+    255
+  ],
+  "locked_regions_unchanged": {
+    "skull and portal": [
+      128,
+      135,
+      233,
+      295
+    ],
+    "left statue": [
+      0,
+      141,
+      42,
+      296
+    ],
+    "right statue": [
+      316,
+      140,
+      360,
+      296
+    ],
+    "left banner": [
+      43,
+      104,
+      98,
+      214
+    ],
+    "right banner": [
+      260,
+      104,
+      315,
+      211
+    ],
+    "left upper flame": [
+      26,
+      40,
+      61,
+      109
+    ],
+    "right upper flame": [
+      295,
+      40,
+      331,
+      109
+    ],
+    "left middle torch": [
+      84,
+      211,
+      110,
+      274
+    ],
+    "right middle torch": [
+      251,
+      211,
+      279,
+      274
+    ],
+    "pedestal and carpet emblem": [
+      88,
+      294,
+      266,
+      331
+    ],
+    "left foreground flame": [
+      0,
+      257,
+      29,
+      332
+    ],
+    "right foreground flame": [
+      333,
+      257,
+      360,
+      332
+    ],
+    "left treasure": [
+      29,
+      253,
+      92,
+      317
+    ],
+    "right props": [
+      265,
+      250,
+      333,
+      317
+    ],
+    "tall continuation": [
+      0,
+      640,
+      360,
+      800
+    ]
+  },
+  "other_protected_files_unchanged": 263,
+  "artwork": {
+    "native\\Hall.aseprite": "d427909b1d2cab7744e3711b3f91ec1a068e2a376f15128be030fb1387dc82d3",
+    "native\\Hall.png": "598c8f6fa79bd3ad67b845c446586e9765ebaef0d72e64ac22ed515e28c870a7",
+    "native\\HallTall.aseprite": "3051908d2bc7071017f47c5527c8931757b265996b8dcd19955c78780af416e4",
+    "native\\HallTall.png": "c79eff46c69146ea93bb8dd28b216c00009d0ca134a2f40829415b0ff7b2f93b"
+  },
+  "changes_by_region": {
+    "upper stone left": 6,
+    "left arch masonry": 11,
+    "right arch masonry": 11,
+    "wall below right banner": 4,
+    "left stair planes": 84,
+    "right stair planes": 72,
+    "carpet interior": 149,
+    "right paving": 151,
+    "left paving": 205
+  }
+}

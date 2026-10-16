@@ -22,3 +22,11 @@ $menuJob.WaitForExit();$menuJob.Refresh();if($menuJob.ExitCode -ne 0){throw "Lib
 Write-Output "LibreSprite authored and exported $($menuExports.Count) native assets."
 # The user-approved extraction workflow supersedes the original simple frames.
 & (Join-Path $PSScriptRoot 'Build-MenuFrames.ps1')
+# Preserve the later, authorized local rendering cleanup after the original
+# hall constructor. Its before sources and exact LibreSprite edit recipe live
+# alongside these finalized sources; never regenerate the approved composition.
+foreach($menuHall in @('Hall','HallTall')){
+    foreach($menuExtension in @('.aseprite','.png')){
+        Copy-Item -LiteralPath (Join-Path $menuRoot ('RenderingCleanupV2/native/'+$menuHall+$menuExtension)) -Destination (Join-Path $menuRoot ('native/'+$menuHall+$menuExtension)) -Force
+    }
+}
