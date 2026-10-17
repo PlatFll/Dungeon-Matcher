@@ -3,7 +3,8 @@
 The user supplied a new three-enemy Dungeon composition and requested direct
 LibreSprite dissection, cleanup and game integration. Sprite Fusion was cancelled;
 no generation service or image credit was used for this artwork. This is
-an integrated review candidate, not a newly approved global reference.
+the Dungeon revision approved for merging on 2026-10-18 (PR #199), not a newly
+approved global reference.
 
 `reference/RequestedDungeon.png` is the immutable supplied mockup. Native work
 uses one 470×836 grid sampled at source `(2*x+1, 2*y+1)` from the 941×1672 image.
@@ -69,6 +70,7 @@ native import bytes. `Review.py` packages only screenshots newer than this
 revision's native build. Full logs stay under `logs/` or `.utmp/`.
 
 Executed validation is recorded in `checks.json` and `evidence/validation.json`.
-Physical-device appearance and final artistic acceptance remain user review.
+The user approved this Dungeon look for merging on 2026-10-18. Physical-device
+appearance remains untested; packaged validation preserves the original review-stage evidence.
 Responsive Point-filtered fitting can still produce uneven physical pixel
 widths; this revision does not change the established layout scaling policy.

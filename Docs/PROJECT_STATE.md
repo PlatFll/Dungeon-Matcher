@@ -20,15 +20,15 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Three-zone battle presentation (2026-10-17)
+## Three-zone battle presentation (2026-10-18)
 
 Current Dungeon follow-up: the user requested direct LibreSprite dissection and
 integration of a new three-enemy mockup. `ArtSource/BattlePresentation/DungeonMockupRevision/`
 contains the 21-layer master, native modules, 84-color material cleanup and
 review evidence. Dungeon uses its revised centered arch, continuous repaired
 floor and a separate foreground-prop layer (37 production modules total).
-This is a review candidate on the revision branch; the earlier approved source
-kits remain preserved. Shared controls/cells, other zones, characters and gems
+The user approved merging this Dungeon revision to main on 2026-10-18 (PR #199).
+Earlier approved source kits remain preserved. Shared controls/cells, other zones, characters and gems
 are unchanged. See that directory's README for source and validation boundaries.
 
 The user approved integrating and merging the preceding Dungeon, Forest and Drowned
