@@ -310,7 +310,12 @@ public sealed class BoardVisuals : MonoBehaviour
     private float GetFrameThickness()
     {
         if(BattlePresentationSkin.UsesReferenceKit && board!=null)
-            return Mathf.Max(board.LocalBoardWidth*20f/364f,board.LocalBoardHeight*19f/369f);
+        {
+            Rect opening=BattlePresentationSkin.ReferenceBoardOpening;
+            Vector2 size=BattlePresentationSkin.ReferenceBoardSize;
+            return Mathf.Max(board.LocalBoardWidth*Mathf.Max(opening.x,size.x-opening.xMax)/opening.width,
+                board.LocalBoardHeight*Mathf.Max(opening.y,size.y-opening.yMax)/opening.height);
+        }
         if (board == null ||
             normalPiece == null)
         {
@@ -346,11 +351,13 @@ public sealed class BoardVisuals : MonoBehaviour
             var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);
             var art=new GameObject("ReferenceKitBoardFrame");art.transform.SetParent(root.transform,false);
             var sprite=BattlePresentationSkin.Reference("BoardFrame");
-            float x=board.LocalBoardWidth/(364f/64),y=board.LocalBoardHeight/(369f/64);
+            Rect opening=BattlePresentationSkin.ReferenceBoardOpening;
+            Vector2 size=BattlePresentationSkin.ReferenceBoardSize;
+            float x=board.LocalBoardWidth/(opening.width/64),y=board.LocalBoardHeight/(opening.height/64);
             art.transform.localScale=new Vector3(x,y,1);
-            // The source well is asymmetrically inset, 16/20 horizontally and
-            // 18/19 vertically. Align the opening, not the image's center.
-            art.transform.localPosition=new Vector3(2*x/64,-.5f*y/64,0);
+            // Align each kit's well, including asymmetric source insets.
+            Vector2 offset=size*.5f-opening.center;
+            art.transform.localPosition=new Vector3(offset.x*x/64,-offset.y*y/64,0);
             ConfigureFrameRenderer(art.AddComponent<SpriteRenderer>(),sprite);return;
         }
         if (board.Width < 2 ||

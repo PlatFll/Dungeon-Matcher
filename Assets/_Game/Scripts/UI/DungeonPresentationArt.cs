@@ -7,6 +7,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private SpriteRenderer backdrop;
     private Camera worldCamera;
     private bool panelsReady;
+    private Sprite croppedReferenceFloor;
 
     public static Sprite Load(string name) => Resources.Load<Sprite>("UI/DungeonPresentation/" + name);
 
@@ -67,14 +68,31 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         var layers=GameUi.Rect("ReferenceKitScenery",top,Vector2.zero,Vector2.zero);
         layers.anchorMin=Vector2.zero;layers.anchorMax=Vector2.one;layers.offsetMin=layers.offsetMax=Vector2.zero;
         layers.SetAsFirstSibling();
-        ReferenceLayer(layers,"FarWall",new Rect(0,0,470,180),new Vector2(470,298));
-        ReferenceLayer(layers,"ArchDoor",new Rect(180,58,115,122),new Vector2(470,298));
-        ReferenceLayer(layers,"BattleFloor",new Rect(137,177,333,121),new Vector2(470,298));
-        ReferenceLayer(layers,"PlayerFootMasonry",new Rect(0,280,137,18),new Vector2(470,298));
-        ReferenceLayer(layers,"PlayerSurround",new Rect(0,28,140,252),new Vector2(470,298));
-        var backing=ReferenceLayer((RectTransform)player,"PlayerMasonry",new Rect(11,14,105,224),new Vector2(129,252));
+        bool dungeon=BattlePresentationSkin.Folder=="Dungeon";
+        if(dungeon)
+        {
+            ReferenceLayer(layers,"FarWall",new Rect(0,0,470,180),new Vector2(470,298));
+            ReferenceLayer(layers,"ArchDoor",new Rect(180,58,115,122),new Vector2(470,298));
+            ReferenceLayer(layers,"BattleFloor",new Rect(137,177,333,121),new Vector2(470,298));
+            ReferenceLayer(layers,"PlayerFootMasonry",new Rect(0,280,137,18),new Vector2(470,298));
+            ReferenceLayer(layers,"PlayerSurround",new Rect(0,28,140,252),new Vector2(470,298));
+        }
+        else
+        {
+            var extent=new Vector2(470,BattlePresentationSkin.ReferenceTopHeight);
+            ReferenceLayer(layers,"FarScenery",new Rect(0,0,470,160),extent);
+            ReferenceLayer(layers,"MidScenery",new Rect(0,160,470,51),extent);
+            var floor=ReferenceLayer(layers,"BattleFloor",new Rect(0,211,470,77),extent).GetComponent<Image>();
+            // The source's last ten rows belong behind the board rim in the
+            // assembled mockup. Exclude that overlap from the separate arena.
+            var original=floor.sprite;var area=original.rect;area.y+=10;area.height-=10;
+            croppedReferenceFloor=Sprite.Create(original.texture,area,Vector2.one*.5f,original.pixelsPerUnit,0,SpriteMeshType.FullRect);
+            croppedReferenceFloor.name="BattleFloor_Arena";floor.sprite=croppedReferenceFloor;
+        }
+        var panelSize=BattlePresentationSkin.ReferencePlayerRect.size;
+        var backing=ReferenceLayer((RectTransform)player,"PlayerMasonry",dungeon?new Rect(11,14,105,224):new Rect(14,18,105,224),panelSize);
         backing.SetAsFirstSibling();
-        var banner=ReferenceLayer((RectTransform)player,"PlayerBanner",new Rect(40,14,49,65),new Vector2(129,252));
+        var banner=ReferenceLayer((RectTransform)player,"PlayerBanner",dungeon?new Rect(40,14,49,65):new Rect(43,18,49,66),panelSize);
         banner.SetSiblingIndex(1);
         ReferenceLayer(bottom,"BottomMasonry",new Rect(0,0,470,135),new Vector2(470,135)).SetAsFirstSibling();
         // Side strips bind to the existing GameArea, never repeat vertically.
@@ -170,5 +188,9 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         emblem.AddComponent<NativePixelArtwork>().Initialize(logo, false, 270);
     }
 
-    private void OnDestroy() { if (backdrop != null) Destroy(backdrop.gameObject); }
+    private void OnDestroy()
+    {
+        if (backdrop != null) Destroy(backdrop.gameObject);
+        if (croppedReferenceFloor != null) Destroy(croppedReferenceFloor);
+    }
 }

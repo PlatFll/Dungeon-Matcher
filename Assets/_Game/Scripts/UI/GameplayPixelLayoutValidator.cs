@@ -28,14 +28,16 @@ public static class GameplayPixelLayoutValidator
             $"fractional board scale={g.FractionalBoardScale}\n";
         Require(g.Fits, "No feasible layout", errors);
         var player = owner.TopHud.Find("GeneratedTopBattleLayout/PlayerSection") as RectTransform;
-        Require(player != null && Near(player.rect.height, BattlePresentationSkin.UsesReferenceKit ? Mathf.Round(g.Top.height*252/298) : Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
+        Rect playerRegistration=BattlePresentationSkin.ReferencePlayerRect;
+        float referenceHeight=BattlePresentationSkin.ReferenceTopHeight;
+        Require(player != null && Near(player.rect.height, BattlePresentationSkin.UsesReferenceKit ? Mathf.Round(g.Top.height*playerRegistration.height/referenceHeight) : Mathf.Min(PlayerAreaThreeSliceFrameController.PreferredHeight, g.Top.height) - 44),
             "Player frame changed with battle height", errors);
         if (player != null)
         {
             Rect playerBounds = GameplayPixelLayoutController.ScreenRect(player);
             if(BattlePresentationSkin.UsesReferenceKit)
             {
-                float expectedY=top.yMin+(Mathf.Round(g.Top.height*18/298)+Mathf.Round(g.Top.height*252/298)*.5f)*g.Scale;
+                float expectedY=top.yMin+(Mathf.Round(g.Top.height*(referenceHeight-playerRegistration.yMax)/referenceHeight)+Mathf.Round(g.Top.height*playerRegistration.height/referenceHeight)*.5f)*g.Scale;
                 Require(Near(playerBounds.center.y,expectedY),"Player panel differs from registered reference position",errors);
             }
             else Require(Mathf.Abs(playerBounds.center.y - top.center.y) <= g.Scale / 2f + Epsilon,

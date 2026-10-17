@@ -58,7 +58,7 @@ public sealed class WaveTrackerUI :
             {
                 if(TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
                 image.raycastTarget=false;
-                gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(169,21,135,47),new Vector2(470,298));
+                gameObject.AddComponent<ReferenceKitSurface>().Initialize(BattlePresentationSkin.ReferenceWaveRect,new Vector2(470,BattlePresentationSkin.ReferenceTopHeight));
                 if(waveText!=null)
                 {
                     waveText.rectTransform.offsetMin=new Vector2(18,18);

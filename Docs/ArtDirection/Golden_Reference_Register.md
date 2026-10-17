@@ -178,3 +178,9 @@ exact files, hashes and reconstructed native assets live in
 ArtSource/BattlePresentation/. The implemented UI/environment candidates require
 visual review; this does not promote any character into the golden register or
 change the individual image hashes above.
+
+2026-10-17 approval update: the user approved integrating and merging the latest
+Dungeon/Forest/Court reference kits and the main-menu shading V2. Current
+integration evidence is in ArtSource/BattlePresentation/ReferenceIntegration/.
+This supersedes those presentation review gates only; character reference
+membership and every golden sprite hash remain unchanged.

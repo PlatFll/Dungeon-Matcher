@@ -4,10 +4,21 @@ using UnityEngine.UI;
 /// <summary>Optional battle artwork. Existing layout, input and combat owners remain authoritative.</summary>
 public static class BattlePresentationSkin
 {
-    // Only the explicitly approved Dungeon kit is live. Forest/Court rebuilds
-    // remain source-review candidates until the user approves them.
-    public static bool UsesReferenceKit => Folder == "Dungeon" && Reference("FarWall") != null;
-    public static Sprite Reference(string name) => Resources.Load<Sprite>("UI/BattlePresentation/ReferenceDungeon/"+name);
+    public static bool UsesReferenceKit => Folder != null && Reference(Folder == "Dungeon" ? "FarWall" : "FarScenery") != null;
+    public static Sprite Reference(string name)
+    {
+        // Controls and quiet board cells deliberately use one global family.
+        string folder = name.StartsWith("Shared", System.StringComparison.Ordinal) || name.StartsWith("EmptyCell", System.StringComparison.Ordinal)
+            ? "Dungeon" : Folder;
+        return folder == null ? null : Resources.Load<Sprite>("UI/BattlePresentation/Reference"+folder+"/"+name);
+    }
+    // Native registrations from the approved kits' layout.json, in top-left coordinates.
+    // Forest/Court's board rim begins at y=288; its overlap is excluded from the arena.
+    public static float ReferenceTopHeight => Folder == "Dungeon" ? 298 : 288;
+    public static Rect ReferencePlayerRect => Folder == "Dungeon" ? new Rect(11,28,129,252) : new Rect(8,24,135,258);
+    public static Rect ReferenceWaveRect => Folder == "Dungeon" ? new Rect(169,21,135,47) : new Rect(157,20,157,48);
+    public static Rect ReferenceBoardOpening => Folder == "Dungeon" ? new Rect(16,18,364,369) : new Rect(23,25,364,369);
+    public static Vector2 ReferenceBoardSize => Folder == "Dungeon" ? new Vector2(400,406) : new Vector2(410,414);
     private static readonly System.Collections.Generic.Dictionary<string, Sprite[]> frameAtlases = new();
     public static Sprite FramePiece(string name)
     {

@@ -10,16 +10,29 @@ public static class BattlePresentationImporter
     private const string Target = "Assets/_Game/Resources/UI/BattlePresentation";
     public static void ImportApprovedDungeon()
     {
+        ImportReferenceKit("Dungeon");
+        AssetDatabase.SaveAssets();
+    }
+    public static void ImportApprovedReferenceKits()
+    {
+        foreach(string zone in new[]{"Dungeon","Forest","Court"})ImportReferenceKit(zone);
+        AssetDatabase.SaveAssets();Debug.Log("APPROVED REFERENCE KITS imported: Dungeon, Forest and Court.");
+    }
+    private static void ImportReferenceKit(string zone)
+    {
         EditorUtility.audioMasterMute=true;
-        string destination=Target+"/ReferenceDungeon";
+        string destination=Target+"/Reference"+zone;
         Directory.CreateDirectory(destination);
-        foreach(string file in Directory.GetFiles("ArtSource/BattlePresentation/DungeonReferenceKit/native","*.png"))
+        foreach(string file in Directory.GetFiles("ArtSource/BattlePresentation/"+zone+"ReferenceKit/native","*.png"))
         {
             string name=Path.GetFileName(file);
             // The assembly and eight-cell study are review-only, never gameplay textures.
-            if(name=="DungeonArtOnly.png" || name=="BoardWell.png")continue;
+            if(name.EndsWith("ArtOnly.png") || name=="BoardWell.png")continue;
+            // All zones bind the same Dungeon control exports; avoid duplicate assets.
+            if(zone!="Dungeon" && name.StartsWith("Shared"))continue;
             string path=destination+"/"+name;
-            File.Copy(file,path,true);AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+            string correction="ArtSource/BattlePresentation/ReferenceIntegration/native/"+zone+"/"+name;
+            File.Copy(File.Exists(correction)?correction:file,path,true);AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
             importer.spritePixelsPerUnit=64;importer.filterMode=FilterMode.Point;importer.mipmapEnabled=false;
@@ -28,7 +41,6 @@ public static class BattlePresentationImporter
             var settings=new TextureImporterSettings();importer.ReadTextureSettings(settings);
             settings.spriteMeshType=SpriteMeshType.FullRect;importer.SetTextureSettings(settings);importer.SaveAndReimport();
         }
-        AssetDatabase.SaveAssets();Debug.Log("APPROVED DUNGEON KIT imported; Forest/Court candidates remain outside Assets.");
     }
     public static void Run()
     {

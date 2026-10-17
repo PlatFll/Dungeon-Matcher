@@ -120,8 +120,9 @@ public sealed class RunControlsUI : MonoBehaviour
             settingsRect.SetParent(top,false);guideRect.SetParent(top,false);
             foreach(var control in new[]{settings,guide})
                 if(control.TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
-            settings.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(414,30,45,40),new Vector2(470,298));
-            guide.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(330,30,79,39),new Vector2(470,298));
+            var extent=new Vector2(470,BattlePresentationSkin.ReferenceTopHeight);
+            settings.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(414,30,45,40),extent);
+            guide.gameObject.AddComponent<ReferenceKitSurface>().Initialize(new Rect(330,30,79,39),extent);
             var label=guide.GetComponentInChildren<TMP_Text>();label.fontSize=20;label.enableAutoSizing=true;label.fontSizeMax=20;label.fontSizeMin=12;
         }
         foreach (var slot in FindObjectsByType<EnemySlotUI>(FindObjectsSortMode.None))

@@ -126,8 +126,10 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         lastLayoutHeight = generatedLayout.rect.height;
         if(BattlePresentationSkin.UsesReferenceKit)
         {
-            float x=generatedLayout.rect.width/470f,y=lastLayoutHeight/298f;
-            GameplayPixelLayoutController.SetRect(playerSection,new Rect(Mathf.Round(11*x),Mathf.Round(18*y),Mathf.Round(129*x),Mathf.Round(252*y)));
+            float height=BattlePresentationSkin.ReferenceTopHeight;
+            float x=generatedLayout.rect.width/470f,y=lastLayoutHeight/height;
+            Rect source=BattlePresentationSkin.ReferencePlayerRect;
+            GameplayPixelLayoutController.SetRect(playerSection,new Rect(Mathf.Round(source.x*x),Mathf.Round((height-source.yMax)*y),Mathf.Round(source.width*x),Mathf.Round(source.height*y)));
             GameplayPixelLayoutController.SetRect(enemySection,new Rect(Mathf.Round(140*x),6,Mathf.Round(330*x)-6,lastLayoutHeight-12));
             return;
         }
@@ -230,7 +232,8 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         RemoveGeneratedFrame();
         if(BattlePresentationSkin.UsesReferenceKit)
         {
-            DungeonPresentationArt.ReferenceLayer(playerSection,"PlayerFrame",new Rect(0,0,129,252),new Vector2(129,252)).SetAsLastSibling();
+            Vector2 size=BattlePresentationSkin.ReferencePlayerRect.size;
+            DungeonPresentationArt.ReferenceLayer(playerSection,"PlayerFrame",new Rect(Vector2.zero,size),size).SetAsLastSibling();
             return;
         }
 

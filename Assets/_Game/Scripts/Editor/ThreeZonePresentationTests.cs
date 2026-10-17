@@ -57,6 +57,16 @@ public sealed class ThreeZonePresentationTests
                 yield return new WaitForSecondsRealtime(.4f);
                 if(stage=="after")
                 {
+                    Assert.That(BattlePresentationSkin.UsesReferenceKit,Is.True,zone+" must use its approved kit");
+                    string referenceRoot="Assets/_Game/Resources/UI/BattlePresentation/Reference"+BattlePresentationSkin.Folder+"/";
+                    Assert.That(AssetDatabase.GetAssetPath(BattlePresentationSkin.Reference("BattleFloor")),Is.EqualTo(referenceRoot+"BattleFloor.png"));
+                    Assert.That(AssetDatabase.GetAssetPath(BattlePresentationSkin.Shared("Ability")),Is.EqualTo("Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/SharedAbility.png"));
+                    if(zone!="dungeon")
+                    {
+                        var floor=GameObject.Find("ReferenceKitBattleFloor").GetComponent<Image>();
+                        Assert.That(floor.sprite.rect,Is.EqualTo(new Rect(0,10,470,77)),"Arena must exclude the ten source rows hidden by the board rim.");
+                        Assert.That(floor.GetComponent<ReferenceKitSurface>().Extent.y,Is.EqualTo(288));
+                    }
                     var nativeLayout=Object.FindFirstObjectByType<GameplayPixelLayoutController>();
                     Assert.That(nativeLayout.TopHud.Find("GeneratedTopBattleLayout/BattleArenaFrame"),Is.Null);
                     Assert.That(nativeLayout.BottomHud.Find("GeneratedBottomHudFrame"),Is.Null);
@@ -75,7 +85,7 @@ public sealed class ThreeZonePresentationTests
                         Assert.That(approvedFrame,Is.Not.Null);
                         Assert.That(approvedFrame.GetComponent<SpriteRenderer>().sprite,Is.SameAs(BattlePresentationSkin.Reference("BoardFrame")));
                         Assert.That(vista.GetComponentsInChildren<UnityEngine.Tilemaps.TilemapRenderer>().All(r=>r.forceRenderingOff),Is.True);
-                        Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(12));
+                        Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(zone=="dungeon"?12:10));
                         foreach(var surface in Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None))
                             Assert.That(surface.GetComponent<Image>().raycastTarget,Is.EqualTo(surface.TryGetComponent<Button>(out _)));
                     }
@@ -177,12 +187,15 @@ public sealed class ThreeZonePresentationTests
         foreach(string family in new[]{"Guide","Supply","Ability"})
         foreach(string state in new[]{"","Hover","Pressed","Disabled"})
             Assert.That(Resources.Load<Sprite>("UI/BattlePresentation/Shared/"+family+state),Is.Not.Null,family+state);
-        foreach(string path in Directory.GetFiles(root+"/ReferenceDungeon","*.png"))
+        foreach(string zone in new[]{"Dungeon","Forest","Court"})
+        foreach(string path in Directory.GetFiles(root+"/Reference"+zone,"*.png"))
         {
             string name=Path.GetFileName(path);
-            Assert.That(name,Is.Not.EqualTo("DungeonArtOnly.png"));
+            Assert.That(name.EndsWith("ArtOnly.png"),Is.False);
             Assert.That(name,Is.Not.EqualTo("BoardWell.png"));
-            CollectionAssert.AreEqual(File.ReadAllBytes("ArtSource/BattlePresentation/DungeonReferenceKit/native/"+name),File.ReadAllBytes(path));
+            string correction="ArtSource/BattlePresentation/ReferenceIntegration/native/"+zone+"/"+name;
+            string source=File.Exists(correction)?correction:"ArtSource/BattlePresentation/"+zone+"ReferenceKit/native/"+name;
+            CollectionAssert.AreEqual(File.ReadAllBytes(source),File.ReadAllBytes(path));
         }
     }
     [Test] public void ReferenceCompositionKeepsNativeControlsAligned()

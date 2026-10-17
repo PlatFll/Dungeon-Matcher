@@ -1,0 +1,72 @@
+{
+  "status": "Passed",
+  "userApprovalDate": "2026-10-17",
+  "generationCalls": 0,
+  "unityVersion": "6000.3.19f1",
+  "audioMuted": true,
+  "tests": {
+    "id": "2",
+    "testcasecount": "44",
+    "result": "Passed",
+    "total": "44",
+    "passed": "44",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-16 23:54:48Z",
+    "end-time": "2026-10-16 23:55:01Z",
+    "duration": "13.3685748"
+  },
+  "finalArtRetest": {
+    "id": "2",
+    "testcasecount": "4",
+    "result": "Passed",
+    "total": "4",
+    "passed": "4",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-16 23:58:13Z",
+    "end-time": "2026-10-16 23:58:27Z",
+    "duration": "13.3065101"
+  },
+  "validator": {
+    "exitCode": 0,
+    "originalLog": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-5cdb8386-925b-446c-a8de-17f11062dc53.log",
+    "sha256": "1b32a1ebb909a1dd143b94f943b71543bd196096edfe3ccf0696b668d9baca42"
+  },
+  "sources": {
+    "Assets/_Game/Scripts/UI/BattlePresentationSkin.cs": "588d0c1563da3d261b5182fc652a48e060f70bb59b0327f80a933c31e0f90c80",
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.cs": "72b3f3029a7e00465e14cb714fecf589becacad3413011cc6990c8301622ee28",
+    "Assets/_Game/Scripts/UI/ReferenceKitSurface.cs": "0423c1887f5d746aeb4fec00d37fab3d4c8bb0118d6f1a3d3bc8be5b6afda5dd",
+    "Assets/_Game/Scripts/UI/PlayerAreaThreeSliceFrameController.cs": "95073f6c8097f4577ffcc963e85048c64b97c6f5b2c01c6aae23e23ce988e1a0",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutValidator.cs": "b30c2036a9e3c46d8967afb64e8d53082d38450ad20ff0b0468452aa3c0eed01",
+    "Assets/_Game/Scripts/UI/WaveTrackerUI.cs": "7ee01c82e4543756ae15ce0c231eae6f156cc24dc83090a3ddb632ae4dff27bf",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs": "ec545a69ee8b9f99297bbd0d6bed367dc3839ff52924218a54e0b7201b97f7a1",
+    "Assets/_Game/Scripts/Board/BoardVisuals.cs": "eed81d1ebf636db52716f4ea1c3303b11265204ccde75adcac1f895aa7b8f85f",
+    "Assets/_Game/Scripts/Editor/ThreeZonePresentationTests.cs": "f2ec376a54e3576eefd952a824a5ccdecd5efc6f9f69b93664205c218ad3ce5d",
+    "Assets/_Game/Scripts/Editor/BattlePresentationImporter.cs": "66e57b0b8dd0ecc1355068801afb984365071dadaccdbf31881f366957b8f38c"
+  },
+  "captures": {
+    "DungeonApprovedUnity1080.png": "c36dbe601bccb41cf67e3f11a351b4dbacf8b8f7ca3d7a2de768507f26d49ca3",
+    "DungeonApprovedUnity720.png": "5ced908f9f52a36f52152450ca1268994fc47c11610f692a39d0ad5942e63639",
+    "DungeonApprovedUnityTall.png": "f4150fa59cbff7bb92478fba9a2bb87cf5b424be947c0f428b77186d69ecd63c",
+    "ForestApprovedUnity1080.png": "deb1db9db48dd0ad7da46c2fffb7ad77c899f1adfc59f57aafb21f0bb0427aef",
+    "ForestApprovedUnity720.png": "ef3a3bd04205985dd96f8faa0e2ccd5c1cb181f79e7641f7c309590b5605392d",
+    "ForestApprovedUnityTall.png": "13a63b31186517145d7db04b2dbfced4f5915d04d0435ee2372ee2c577a76445",
+    "CourtApprovedUnity1080.png": "8592b2a63f8d3dad7526734c01f9464a77668feb0d443af9a63206956f7bdeba",
+    "CourtApprovedUnity720.png": "646c54b13c9bb0b6ff9e1ed9811613695da379d96808a24f7fcd165907ff6059",
+    "CourtApprovedUnityTall.png": "9428bae2a856ceef07dda1f42cb7682f84098edcf81461e9fe9276c9019aed0b"
+  },
+  "limits": [
+    "No physical-device validation",
+    "Hidden source surfaces reconstructed",
+    "Point-filtered responsive fitting can produce uneven physical pixel widths"
+  ]
+}

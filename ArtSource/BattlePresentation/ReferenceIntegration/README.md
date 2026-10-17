@@ -1,5 +1,38 @@
 # Reference reconstruction — 2026-10-15
 
+## Approved integration — 2026-10-17
+
+The user approved the latest cleaner menu and the zone background changes for
+game integration and merging. Dungeon, Forest and Drowned Court now bind the
+approved reference kits in Unity. Forest/Court add 19 individual native modules
+each, using their own player, plaque and board-frame registrations. All three
+reuse the identical silver/purple controls and quiet individual board cells.
+The old vistas and ambient overlays are suppressed to avoid doubled scenery.
+The whole-screen assemblies and complete board-well studies remain review-only.
+
+`ValidateApprovedKits.py` verifies all 74 production PNGs against their sources,
+the 54 unchanged Forest/Court ASE/PNG records, and the approved V2 menu and
+Rattlebones hashes. Current combined Unity evidence is in `evidence/approved-merge.json`.
+Unity validation passed. The combined run passed all 44 presentation, menu,
+board-feel and pointer checks; the four affected art checks passed again after
+the final corner repair. All runs were muted. [ApprovedReview.html](ApprovedReview.html)
+shows nine actual Unity captures across 1080x1920, 720x1280 and 1080x2400.
+The dated source-only gate below describes the earlier review stage, superseded
+by this approval. Hidden-surface reconstruction and responsive pixel-width
+limitations still apply. No new generation was used.
+
+Runtime review caught two integration artifacts. The Forest/Court floor sources
+include ten lower rows intended to sit behind the board rim; the arena now uses
+the source rectangle above that overlap, avoiding a second strip of frame above
+the live board. The native source pixels remain unchanged. LibreSprite also
+restored exact reference pixels behind the transparent corners of the
+wave/Guide/settings plates and outside the player-frame contour. Per zone,
+1,058 far-scenery pixels and 125 floor pixels remove exposed flat rectangular
+backing patches. The four editable corrections are under
+`native/`; `RepairControlBackings.ps1` reproduces them. All original approved
+kit sources remain intact. The byte checker verifies the repair mask, reference
+pixel equality, alpha preservation and reopened ASE equality independently.
+
 The user approved the right-hand Dungeon art-only assembly and requested its
 integration, followed by Forest and Drowned Court kits built the same way.
 

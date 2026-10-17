@@ -20,48 +20,29 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Three-zone battle presentation (2026-10-15)
+## Three-zone battle presentation (2026-10-17)
 
-**Current gate:** the user approved the Dungeon art-only reconstruction and
-authorized its game integration plus equivalent Forest/Court source kits.
-The approved individual Dungeon modules are now imported; the whole-screen
-review assembly is excluded. Existing layout/presentation owners place its
-wall, door, shallow floor, thin player frame, board rim and side/bottom masonry.
-The previous Dungeon tilemap vista and misplaced ambient overlays are suppressed.
-One shared silver/purple control family is used across the three zones.
+The user approved integrating and merging the latest Dungeon, Forest and Drowned
+Court reference-kit backgrounds. All three now use individual native modules in
+Unity: 36 Dungeon and 19 each for Forest/Court. The review assemblies and complete
+board-well images are excluded. Existing presentation owners place each kit's
+registered scenery, player panel, plaque, board rim and distinct side/bottom art.
+One shared silver/purple control family and individual quiet stone cells serve
+all three zones. Extra top/bottom enclosures and obsolete vista/ambient overlays
+are suppressed, preventing duplicate floors, props and effects.
 
-`ForestReferenceKit/` and `CourtReferenceKit/` under
-`ArtSource/BattlePresentation/` contain editable LibreSprite modules, native PNGs,
-registration, reference comparisons and overlays for visual review. Their new
-scenery/frames remain outside Assets pending approval. Hidden actor/label regions
-are reconstructed; the comparison does not claim to recover unseen original art.
-Zero generations were used in this continuation. See
-[the integration/review record](../ArtSource/BattlePresentation/ReferenceIntegration/README.md).
+Editable LibreSprite sources, native dimensions and prior approval comparisons
+remain under `ArtSource/BattlePresentation/`. The Forest/Court kits retain their
+own panel and frame coordinates. The 364x369 rim opening fits the existing square
+board; responsive Point-filtered scenery can have uneven physical pixel widths.
+Hidden actor/label regions are reconstructed, not recovered original art. No new
+generation was used. Current integration and validation evidence is in
+[the integration record](../ArtSource/BattlePresentation/ReferenceIntegration/README.md).
 
-The dedicated `codex/three-zone-battle-presentation` branch implements the user's
-Dungeon/Forest/Drowned Court battle targets. Native modular zone frames, player
-slices, plaques, backgrounds and ornaments accompany a shared silver/purple
-Guide, supply and ability family. Earlier Forest/Court scenery uses the tilemap
-presentation owner. Cosmetic flames, runes, lanterns, leaves, waterfall strokes, bubbles and
-kelp obey pause and Reduced Motion without consuming gameplay RNG.
-
-The user's reference-fidelity revision replaces the simplified scenery, frame
-materials and board cell backgrounds with LibreSprite extraction/cleanup of the
-supplied targets. Thin player frames are separate from board beams; the top
-arena's extra enclosure is removed. The follow-up also removes the bottom HUD
-enclosure, expands the board toward the reference proportions, and replaces
-clamped scenery rows with one continuous native vista. Distinct left/right
-foreground pieces stay at their screen edges; each board uses a continuous
-frame atlas with unique corners and center ornaments. Nine dark stone cell
-variants replace the candidate's previous cell art. Shared buttons remain one
-global silver/purple family across all three zones.
-
-This pass keeps character/gem art, HP bars, combat, board feel, menus and the
-other zones intact. It does not alter progression or balance. Review artifacts,
-executed validation and remaining visual differences are recorded in
-[the presentation source notes](../ArtSource/BattlePresentation/README.md).
-The pack requires a PR and visual review before merge; these assets are review
-candidates, not a new approved golden reference.
+Character/gem art, HP bars, combat, board feel, progression and balance retain
+their current behavior. Ironvein and Frostwake keep their prior presentation.
+Menu cleanup is the separately approved PR #198 below. Physical-device display
+and touch checks remain user validation; no new golden-reference membership is implied.
 
 ## Enemy pressure and special swaps (2026-10-13)
 
@@ -103,7 +84,7 @@ button/frame exports now use the reference's sculpted silver trim, purple jewels
 skull crest, settings brackets and faceted toggles. Blank faces and alpha masks
 are rebuilt at runtime-native dimensions; labels remain live Thaleah. Short
 green/red actions use larger lettering. The background and wordmark are unchanged.
-This refinement is on a review branch pending approval, with evidence in
+This refinement merged through PR #196, with evidence in
 ArtSource/MenuUI/FrameRevision/README.md. A follow-up extracts the fourteen button
 and settings icons plus the gear from the clean mockups, adds sampled stone/enamel
 face texture, and limits dark icon insets to the three controls that use them in
@@ -115,8 +96,9 @@ highlights and mottling while preserving the original large shadow shapes,
 microchip pass was judged too subtle; V2 and its source audit are in
 ArtSource/MenuUI/RenderingCleanupV2/README.md. An editor-only capture check uses
 the same character frame and records both unobscured environment and complete
-menu views. Native art, protected-edge checks and Unity evidence remain on the
-review branch pending user approval. Global art rules are unchanged.
+menu views. The user approved integration and merging on 2026-10-17; PR #198 is
+merged with native art, protected-edge checks and Unity evidence preserved.
+Global art rules are unchanged.
 No generation budget was used.
 Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
