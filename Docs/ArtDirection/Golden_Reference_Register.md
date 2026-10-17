@@ -1,6 +1,6 @@
 # Dungeon Matcher — current golden-reference register
 
-2026-10-12 · canonical guide v1.16. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing or Frostwake facial-color corrections; Mender's corrected death sheet is separate from her reference still.
+2026-10-14 · canonical guide v1.17.2. This register identifies current images and roles; the canonical art guide owns direction. Enemy images now reflect the user-authorized cohesion/canvas pass, Puffer face restoration and direction-only follow-up. Rattlebones remains unchanged. None of the reference images or production-source hashes below changed during the facing, Frostwake facial-color or battle-presentation passes; Mender's corrected death sheet is separate from her reference still.
 
 Rattlebones is explicitly primary by the current user instruction. Farmer and Pan Villager retain their existing supporting status. Four additional memberships below are proposals for review. Approval of an existing artwork, implementation or merge is not approval of new golden-reference membership.
 
@@ -170,3 +170,17 @@ Guide v1.16 records the supplied menu/settings mockups and native UI family.
 The user authorized the canonical references as the style authority for this
 pass. Sources and lineage: ArtSource/MenuUI/. These are menu review candidates;
 character golden membership, sprite hashes and existing approvals are unchanged.
+
+## Three-zone battle presentation, 2026-10-14
+
+Guide v1.17.2 records the user's three battle mockups as presentation targets. Their
+exact files, hashes and reconstructed native assets live in
+ArtSource/BattlePresentation/. The implemented UI/environment candidates require
+visual review; this does not promote any character into the golden register or
+change the individual image hashes above.
+
+2026-10-17 approval update: the user approved integrating and merging the latest
+Dungeon/Forest/Court reference kits and the main-menu shading V2. Current
+integration evidence is in ArtSource/BattlePresentation/ReferenceIntegration/.
+This supersedes those presentation review gates only; character reference
+membership and every golden sprite hash remain unchanged.

@@ -49,6 +49,13 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
             return;
         }
 
+        if (BattlePresentationSkin.Folder != null)
+        {
+            RemoveExistingFrame();
+            frameBuilt = true;
+            return;
+        }
+
         ResolveFrameSprites();
 
         if (cornerPiece == null ||
@@ -66,6 +73,8 @@ public sealed class BottomHudModularFrameController : MonoBehaviour
 
     private void ResolveFrameSprites()
     {
+        var sharedCorner=BattlePresentationSkin.Shared("Corner");var sharedEdge=BattlePresentationSkin.Shared("Edge");
+        if(sharedCorner!=null && sharedEdge!=null){cornerPiece=sharedCorner;normalPiece=sharedEdge;return;}
         var theme = RunSession.Current?.Zone?.Definition?.theme;
         if (theme?.frameCorner != null && theme.frameEdge != null)
         {

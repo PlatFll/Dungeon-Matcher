@@ -170,14 +170,35 @@ public sealed class BoardVisuals : MonoBehaviour
     {
         if (theme == null || theme.boardCells == null || theme.boardCells.Length == 0) return;
         cellTileSprites = theme.boardCells;
+        ApplyPresentationCells();
         cellTileScale = 1f;
         cellTileColor = Color.white;
         if(theme.frameCorner!=null && theme.frameEdge!=null)
         {
-            cornerPiece=theme.frameCorner;normalPiece=theme.frameEdge;
+            cornerPiece=BattlePresentationSkin.ZoneSprite("Corner") ?? theme.frameCorner;
+            normalPiece=BattlePresentationSkin.ZoneSprite("Edge") ?? theme.frameEdge;
             RemoveExistingBoardFrame();CreateModularBoardFrame();
         }
         CreateCellTiles();
+    }
+
+    public void RefreshPresentationFrame()
+    {
+        var corner=BattlePresentationSkin.ZoneSprite("Corner");var edge=BattlePresentationSkin.ZoneSprite("Edge");
+        if(corner==null||edge==null)return;
+        cornerPiece=corner;normalPiece=edge;RemoveExistingBoardFrame();CreateModularBoardFrame();
+        if (ApplyPresentationCells()) CreateCellTiles();
+    }
+
+    private bool ApplyPresentationCells()
+    {
+        var first = BattlePresentationSkin.ZoneSprite("CellA");
+        if (first == null) return false;
+        cellTileSprites = new[] { first, BattlePresentationSkin.ZoneSprite("CellB") ?? first,
+            BattlePresentationSkin.ZoneSprite("CellC") ?? first };
+        cellTileColor = Color.white;
+        cellTileScale = 1f;
+        return true;
     }
 
     private void EnsureBoardReference()
@@ -288,6 +309,13 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private float GetFrameThickness()
     {
+        if(BattlePresentationSkin.UsesReferenceKit && board!=null)
+        {
+            Rect opening=BattlePresentationSkin.ReferenceBoardOpening;
+            Vector2 size=BattlePresentationSkin.ReferenceBoardSize;
+            return Mathf.Max(board.LocalBoardWidth*Mathf.Max(opening.x,size.x-opening.xMax)/opening.width,
+                board.LocalBoardHeight*Mathf.Max(opening.y,size.y-opening.yMax)/opening.height);
+        }
         if (board == null ||
             normalPiece == null)
         {
@@ -318,6 +346,20 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private void CreateModularBoardFrame()
     {
+        if(BattlePresentationSkin.UsesReferenceKit)
+        {
+            var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);
+            var art=new GameObject("ReferenceKitBoardFrame");art.transform.SetParent(root.transform,false);
+            var sprite=BattlePresentationSkin.Reference("BoardFrame");
+            Rect opening=BattlePresentationSkin.ReferenceBoardOpening;
+            Vector2 size=BattlePresentationSkin.ReferenceBoardSize;
+            float x=board.LocalBoardWidth/(opening.width/64),y=board.LocalBoardHeight/(opening.height/64);
+            art.transform.localScale=new Vector3(x,y,1);
+            // Align each kit's well, including asymmetric source insets.
+            Vector2 offset=size*.5f-opening.center;
+            art.transform.localPosition=new Vector3(offset.x*x/64,-offset.y*y/64,0);
+            ConfigureFrameRenderer(art.AddComponent<SpriteRenderer>(),sprite);return;
+        }
         if (board.Width < 2 ||
             board.Height < 2)
         {
@@ -589,6 +631,17 @@ public sealed class BoardVisuals : MonoBehaviour
         bool flipX,
         bool flipY)
     {
+        var referencePiece = BattlePresentationSkin.FramePiece(objectName);
+        if (referencePiece != null)
+        {
+            sprite = referencePiece;
+            rotationDegrees = 0;
+            flipX = flipY = false;
+            // Preserve the outer border while allowing the reference's center
+            // ornaments to extend inward beyond the sixteen-pixel beam.
+            if (objectName.StartsWith("TopEdge_")) localPosition.y -= 8f / 64f * uniformScale;
+            if (objectName.StartsWith("BottomEdge_")) localPosition.y += 8f / 64f * uniformScale;
+        }
         GameObject pieceObject =
             new GameObject(objectName);
 

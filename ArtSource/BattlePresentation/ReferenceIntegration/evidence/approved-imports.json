@@ -1,0 +1,549 @@
+{
+  "status": "Passed",
+  "productionModules": 74,
+  "forestCourtSourcePairs": 54,
+  "menuV2Preserved": true,
+  "rattlebonesPreserved": true,
+  "assets": {
+    "Dungeon/ArchDoor.png": {
+      "sha256": "99c8f2dc1d573ca7d0f62e84f252a28a3d8d8ca3ea91d514dbf1a543b0599efb",
+      "size": [
+        115,
+        122
+      ]
+    },
+    "Dungeon/BattleFloor.png": {
+      "sha256": "27cffcc6f4b8f64feeba7616d1f8532c72f2817bc379ccfaf6794641d468f1d8",
+      "size": [
+        333,
+        121
+      ]
+    },
+    "Dungeon/BoardBL.png": {
+      "sha256": "2c763bd95d6f55bf5fbe75136a2c5ee7f8663cbdc2de49bc901fe9c15f4e0a5f",
+      "size": [
+        24,
+        24
+      ]
+    },
+    "Dungeon/BoardBR.png": {
+      "sha256": "65ad895e57477b7394d4ce753a4f3e05acd8b93a2ab0d3cd09048170d2801abb",
+      "size": [
+        24,
+        24
+      ]
+    },
+    "Dungeon/BoardBottom.png": {
+      "sha256": "de2df79f1664fb1aa6fc149dd9e0d383c909fc8d06381a6b213e54ce58037d5a",
+      "size": [
+        352,
+        19
+      ]
+    },
+    "Dungeon/BoardFrame.png": {
+      "sha256": "59cf24f9aa29a22b5cf96d37981269d19d631c8984334cd5c2123d48ad5e2d55",
+      "size": [
+        400,
+        406
+      ]
+    },
+    "Dungeon/BoardLeft.png": {
+      "sha256": "69a5a16a6c83d33a44647a133b3f9c9a6931e3f5edba330ee904a6d94718cfba",
+      "size": [
+        16,
+        358
+      ]
+    },
+    "Dungeon/BoardRight.png": {
+      "sha256": "3ff001be70d9d1ce5a7d02cfe4d402dcf99977d257afa5153571537231efd5ab",
+      "size": [
+        20,
+        358
+      ]
+    },
+    "Dungeon/BoardTL.png": {
+      "sha256": "ed65927e68a7a89de34d9a88fb67626670f5748a1554c4524b6a2cec27a02b05",
+      "size": [
+        24,
+        24
+      ]
+    },
+    "Dungeon/BoardTR.png": {
+      "sha256": "8c32f1fdf6c77c969d866877b43ccdeeef8bdeb409022f2c8fbc4ef3e9dcbff8",
+      "size": [
+        24,
+        24
+      ]
+    },
+    "Dungeon/BoardTop.png": {
+      "sha256": "006425177d396261482a1b8d44146d21a9a17e065e31bb8131003d55e199670c",
+      "size": [
+        352,
+        18
+      ]
+    },
+    "Dungeon/BottomMasonry.png": {
+      "sha256": "a362f5394609a9d634302c0fb20a18f55d07524ca490a34dc10c60775897d25b",
+      "size": [
+        470,
+        135
+      ]
+    },
+    "Dungeon/EmptyCell0.png": {
+      "sha256": "cfcf4f90909ee41e8d81bb2e51134cd7c01b39624ec0a19e37fc69c6fe396c76",
+      "size": [
+        46,
+        46
+      ]
+    },
+    "Dungeon/EmptyCell1.png": {
+      "sha256": "18401bbdb9c3bd268d39ed5c521af8b4d65c6f3fcf03d9121fc017a4f336fbaa",
+      "size": [
+        45,
+        46
+      ]
+    },
+    "Dungeon/EmptyCell2.png": {
+      "sha256": "22ed1ebef79cd394630be221de42ae866b5f2236ecc2a3b14a0c241eb5ff2ac0",
+      "size": [
+        46,
+        46
+      ]
+    },
+    "Dungeon/FarWall.png": {
+      "sha256": "1ecf7be5cdb9e80259adc64f544ff2384212acad6281a55e31acb2dc76faf4c6",
+      "size": [
+        470,
+        180
+      ]
+    },
+    "Dungeon/LeftBones.png": {
+      "sha256": "d632784f24b9b8182a9e94d733401364634e7cf967562e5aae149ddca5aa20c2",
+      "size": [
+        34,
+        33
+      ]
+    },
+    "Dungeon/LeftBorderDressing.png": {
+      "sha256": "ffaaad7048e5067488e6cac1eb4302e154c96ee82711c07081fe80e2a3753e68",
+      "size": [
+        37,
+        403
+      ]
+    },
+    "Dungeon/LeftSkullBanner.png": {
+      "sha256": "96806522faca815ce248b221b327f930dcda69878ac07e159309517c1df72f39",
+      "size": [
+        28,
+        91
+      ]
+    },
+    "Dungeon/LeftTorch.png": {
+      "sha256": "f3fe814361876b3d7bb61466dba46849b744d2b59b87681f9feff3deb6f38aef",
+      "size": [
+        36,
+        72
+      ]
+    },
+    "Dungeon/PlayerBanner.png": {
+      "sha256": "98ac1014c522c0b71482f744a1ec8ec7c7e7927f9255d8c94742a42e1eefefe6",
+      "size": [
+        49,
+        65
+      ]
+    },
+    "Dungeon/PlayerFootMasonry.png": {
+      "sha256": "8143b9a6bbca5564829ada3a828a26ca34a8a453422d530edaa4b0d84d805b17",
+      "size": [
+        137,
+        18
+      ]
+    },
+    "Dungeon/PlayerFrame.png": {
+      "sha256": "2733fe4ee6d13e331897d2b7296ff0690058ffe5efaa1695b8c6120758a1be71",
+      "size": [
+        129,
+        252
+      ]
+    },
+    "Dungeon/PlayerMasonry.png": {
+      "sha256": "bad0787e21c03044b29915a476e9f20232e3bc5ebe27dd5de72e22bde6197d56",
+      "size": [
+        105,
+        224
+      ]
+    },
+    "Dungeon/PlayerSurround.png": {
+      "sha256": "0891273a225a55adc47ef302581d8a1ee08a31623adfb220f1a401ca060945ce",
+      "size": [
+        140,
+        252
+      ]
+    },
+    "Dungeon/RightBarrel.png": {
+      "sha256": "e3f9f5f504b9b54c32485cb7a9c1a4fc4f5219b1a0936866810947b8c1f67eb9",
+      "size": [
+        36,
+        57
+      ]
+    },
+    "Dungeon/RightBorderDressing.png": {
+      "sha256": "b1cac2c5cda62dee57e7464519d369de19779a08375d98391e2ab9ac58ab885d",
+      "size": [
+        33,
+        403
+      ]
+    },
+    "Dungeon/RightSkullBanner.png": {
+      "sha256": "9a99641719623b820a1d1d7aaa35682a9b02a5d6837b65dff5c7babc7fc56805",
+      "size": [
+        28,
+        91
+      ]
+    },
+    "Dungeon/RightTorch.png": {
+      "sha256": "9f3b03f6d8f9fac2a1467b10946f6f9107b0429a39f65407a681271f033c4a1f",
+      "size": [
+        30,
+        72
+      ]
+    },
+    "Dungeon/SharedAbility.png": {
+      "sha256": "ee089ea3cc579e215cf7974e2f89b97adfcd197be159fbee06eb7fd6db72404b",
+      "size": [
+        176,
+        66
+      ]
+    },
+    "Dungeon/SharedBombHolder.png": {
+      "sha256": "0afa65d6034998882fc330a56bb8f82cc754c9589bd737639697f08fe8677706",
+      "size": [
+        70,
+        63
+      ]
+    },
+    "Dungeon/SharedEnergy.png": {
+      "sha256": "d7edff843808f96e9364717d531493ae312e16e0e667afea0e3e30106999d908",
+      "size": [
+        147,
+        24
+      ]
+    },
+    "Dungeon/SharedGuide.png": {
+      "sha256": "248d4c17ae1fbc44b168e612a8cd3d7fab0b6bbef78d52cab729ae019037df88",
+      "size": [
+        79,
+        39
+      ]
+    },
+    "Dungeon/SharedPotionHolder.png": {
+      "sha256": "873f7a06e13aeb45c5fb85de9b24457887fadbf82d27cdc92192f70d03c1f653",
+      "size": [
+        70,
+        63
+      ]
+    },
+    "Dungeon/SharedSettings.png": {
+      "sha256": "c59febbb1104c4c3da3a45804598a5b865a59abf7fed6b40fced4de3af167da0",
+      "size": [
+        45,
+        40
+      ]
+    },
+    "Dungeon/WaveHeader.png": {
+      "sha256": "2fc743c5ddb6e6ac9558a0cfcc7fe3578eb9350a5760b3d05b981289b3f4067d",
+      "size": [
+        135,
+        47
+      ]
+    },
+    "Forest/BattleFloor.png": {
+      "sha256": "95c3081ebe811456f7df46c093e34b33c73befa06be8f74fa119dda02ad6a347",
+      "size": [
+        470,
+        87
+      ]
+    },
+    "Forest/BoardBL.png": {
+      "sha256": "a239dd587fcb37f83ad6d26a21b1f1f9c97c8ec06b2d9eec12ed0a52478cd296",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Forest/BoardBR.png": {
+      "sha256": "2f517abd0a27299636af510b6a4a589e4c1524e948746b888b4efb951d6585e0",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Forest/BoardBottom.png": {
+      "sha256": "f921326adac395f2d8e9d77d69093e32922d0a791441f953b8c15c94b2bdd290",
+      "size": [
+        350,
+        21
+      ]
+    },
+    "Forest/BoardFrame.png": {
+      "sha256": "19d3206be52baaa1ccf6f8a706864e42aa40a51926c340f8244c5ae9a18295b0",
+      "size": [
+        410,
+        414
+      ]
+    },
+    "Forest/BoardLeft.png": {
+      "sha256": "84804bc879c61fb8a016353b46574e47f6f24a016455dcf091bb047e64a313d6",
+      "size": [
+        23,
+        354
+      ]
+    },
+    "Forest/BoardRight.png": {
+      "sha256": "8403154b3f2ef0f101dd0e104d7e19eceba19467c5cf7deba0500f0fd9fa7851",
+      "size": [
+        22,
+        354
+      ]
+    },
+    "Forest/BoardTL.png": {
+      "sha256": "032387dc209cd6386823c7d42f4567b319ac1427d5aea053dc5fa804a198bf94",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Forest/BoardTR.png": {
+      "sha256": "a23c6a2d671aaa13bf7ebfb3664c2979226601c7a45f0400c56c1bd4c67b22df",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Forest/BoardTop.png": {
+      "sha256": "2680e8dbb4ac1b2c0e83acf13fe50b008f4076b064b43dd2df1f8f86853a9b6b",
+      "size": [
+        350,
+        24
+      ]
+    },
+    "Forest/BottomMasonry.png": {
+      "sha256": "17b775daf02916a3a13e8f02b1feff314d00a6d37dcb3af88f8fdc9efd5fa5d7",
+      "size": [
+        470,
+        135
+      ]
+    },
+    "Forest/FarScenery.png": {
+      "sha256": "a92097e2f1aa6857853e4e39b9d1da82b0f483e0a6e5c608efd0dccf91eadb1c",
+      "size": [
+        470,
+        160
+      ]
+    },
+    "Forest/LeftBorderDressing.png": {
+      "sha256": "0deab85e9b74ca7d8538b7c47755a30359d38562f471942438fa5a9501b4ab64",
+      "size": [
+        30,
+        403
+      ]
+    },
+    "Forest/MidScenery.png": {
+      "sha256": "ea32e29581d83c16d7640244fdc96d5af3b85dccd482603d2a9a5897292e0e8f",
+      "size": [
+        470,
+        51
+      ]
+    },
+    "Forest/PlayerBanner.png": {
+      "sha256": "e38acc82aa82d7c4447472e74bb7d01475a2661d04ddefbcc1d6ffd4adaf125e",
+      "size": [
+        49,
+        66
+      ]
+    },
+    "Forest/PlayerFrame.png": {
+      "sha256": "96d1d40d626c19ffdbe56be0e808181006b165976dafc371ba32941c00f6d68c",
+      "size": [
+        135,
+        258
+      ]
+    },
+    "Forest/PlayerMasonry.png": {
+      "sha256": "7e8e57286b4e2805b72d38b65922c1e09d72688567d259df7f4d937d987f9526",
+      "size": [
+        105,
+        224
+      ]
+    },
+    "Forest/RightBorderDressing.png": {
+      "sha256": "8f0d60264726aae294586e826477075def6558359e1d54d27232fe717c0c3a06",
+      "size": [
+        30,
+        403
+      ]
+    },
+    "Forest/WaveHeader.png": {
+      "sha256": "1fdff64b91afe1f944237b63593f8373a6ee55a77c84d8a36b4a83be9286aa10",
+      "size": [
+        157,
+        48
+      ]
+    },
+    "Court/BattleFloor.png": {
+      "sha256": "1f5b77f27e930f48236884e1cc546f77d935306282cfb043cd869cc3001374cc",
+      "size": [
+        470,
+        87
+      ]
+    },
+    "Court/BoardBL.png": {
+      "sha256": "df88e9cd0417879208d68ae7af9c554b8973d016f03b2ab183a13bfc4c8eca21",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Court/BoardBR.png": {
+      "sha256": "cf86e8abd5af71fe203226ecce151c554b049f5d288ff27a2f0f717de35084fc",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Court/BoardBottom.png": {
+      "sha256": "dbeefd6adc36071873f0e524961e67f3d5fed8bf627fb7ab7f1fc770f8ba4757",
+      "size": [
+        350,
+        21
+      ]
+    },
+    "Court/BoardFrame.png": {
+      "sha256": "d1d0ccab459c50ce93360e9435493800421dc3bcb787d6303c2c3f6be4a97c40",
+      "size": [
+        410,
+        414
+      ]
+    },
+    "Court/BoardLeft.png": {
+      "sha256": "829197ebbdfdcff098e2c7401c69a656e432fed61e11cd96792ee7a87321001d",
+      "size": [
+        23,
+        354
+      ]
+    },
+    "Court/BoardRight.png": {
+      "sha256": "b9d84fd473dabb0b362ed5424872b978677f3ed814c2c7cf9708f0b35b8428b9",
+      "size": [
+        22,
+        354
+      ]
+    },
+    "Court/BoardTL.png": {
+      "sha256": "1560b526909a6623dc49b7137f074ce0d5c27e0dd002bdaa5a3f45fee56c4a8f",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Court/BoardTR.png": {
+      "sha256": "25539f3e2793d5f8e325422826acbdc5053ff32d2414cc7291e72af3d26fb75b",
+      "size": [
+        30,
+        30
+      ]
+    },
+    "Court/BoardTop.png": {
+      "sha256": "a37edb24d692102bb4cac1284a00236e60f13177280ccf993335c462ff2c119c",
+      "size": [
+        350,
+        24
+      ]
+    },
+    "Court/BottomMasonry.png": {
+      "sha256": "cd5c2e6d051655dedb3811e6a169a5e78c7fb09db7b613e3fc2af9892274dce1",
+      "size": [
+        470,
+        135
+      ]
+    },
+    "Court/FarScenery.png": {
+      "sha256": "28b7ef2e9d1e89c18f42d0bfb6b7eaf7f3d97e631f8ed262e0e0d48cbffac845",
+      "size": [
+        470,
+        160
+      ]
+    },
+    "Court/LeftBorderDressing.png": {
+      "sha256": "ef567299619f251a4ef9a2125b1d24167723357acab9a61fc6ccaabcd30deb22",
+      "size": [
+        30,
+        403
+      ]
+    },
+    "Court/MidScenery.png": {
+      "sha256": "d928351ec7ca292ed337baa2a55763d6a4af99b91c4bf33981a447feddce3f41",
+      "size": [
+        470,
+        51
+      ]
+    },
+    "Court/PlayerBanner.png": {
+      "sha256": "34f0f83b70d6807b74a9a67ae36800269d70f5a0246718cf7359b6232dbc7ce7",
+      "size": [
+        49,
+        66
+      ]
+    },
+    "Court/PlayerFrame.png": {
+      "sha256": "bda8b5e9602eb9906cb4dfd9c8c2e1088c73ad1d70fcf460c8d982b6d46417d2",
+      "size": [
+        135,
+        258
+      ]
+    },
+    "Court/PlayerMasonry.png": {
+      "sha256": "769e24cc7d4c2397c3268fa19d3a4f6548b2fdf581bf1307d6c97b6242db61d8",
+      "size": [
+        105,
+        224
+      ]
+    },
+    "Court/RightBorderDressing.png": {
+      "sha256": "684247a2627c7b49c420092de5cb69aadd8886bc54316698cdfe911ba4da77b0",
+      "size": [
+        30,
+        403
+      ]
+    },
+    "Court/WaveHeader.png": {
+      "sha256": "57583e96c97d4612b2f09ffcbd37e1ba3a23c0915ad3795893be5823b8a237c2",
+      "size": [
+        157,
+        48
+      ]
+    }
+  },
+  "backingRepairs": {
+    "Forest/FarScenery": {
+      "changedPixels": 1058,
+      "onlyExposedFrameBackings": true,
+      "exactReferencePixels": true
+    },
+    "Forest/BattleFloor": {
+      "changedPixels": 125,
+      "onlyExposedFrameBackings": true,
+      "exactReferencePixels": true
+    },
+    "Court/FarScenery": {
+      "changedPixels": 1058,
+      "onlyExposedFrameBackings": true,
+      "exactReferencePixels": true
+    },
+    "Court/BattleFloor": {
+      "changedPixels": 125,
+      "onlyExposedFrameBackings": true,
+      "exactReferencePixels": true
+    }
+  }
+}

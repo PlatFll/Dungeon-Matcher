@@ -1,0 +1,32 @@
+{
+  "unityVersion": "6000.3.19f1",
+  "audioMuted": true,
+  "revision": "Reference extraction and cleanup",
+  "nativeAssets": { "result": "Passed", "count": 69, "report": "native-checks.json" },
+  "focusedSuite": {
+    "result": "Passed", "total": 30, "failed": 0, "skipped": 0,
+    "filter": "ThreeZonePresentationTests;BoardFeel2Tests;ForestFoundationPlayTests.BoardFeel2",
+    "xml": ".utmp/ForestValidation/b8c19f27-c054-4c8d-8705-d118da18736e.xml",
+    "log": ".utmp/ForestValidation/b8c19f27-c054-4c8d-8705-d118da18736e.log"
+  },
+  "finalIdleRecapture": {
+    "result": "Passed", "total": 1, "failed": 0, "skipped": 0,
+    "filter": "ThreeZonePresentationTests.CaptureThreeZones",
+    "reason": "Recapture after the final Court-only water repair. Runtime code and other exports match the passing 30-test run.",
+    "xml": ".utmp/ForestValidation/12d1b84b-e8dd-4cf9-85e1-ffccf87d994f.xml"
+  },
+  "mandatoryValidator": {
+    "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+    "result": "Succeeded", "exitCode": 0,
+    "log": "C:/Users/USER/AppData/Local/Temp/DungeonMatcher-UnityValidation-6873476b-5d0e-423e-8999-52c87740dd7c.log"
+  },
+  "correctedFailure": {
+    "xml": ".utmp/ForestValidation/78fce1e6-858e-4a88-92e0-5bdfc9d877e1.xml",
+    "cause": "The old layout validator required an enclosing top frame, conflicting with the reference composition. Subsequent tests inherited the interrupted scene state.",
+    "fix": "Validate the frame's absence in the three reference zones and its presence elsewhere; add runtime assertions for the open edge and all 64 new cell sprites. Full suite rerun passed."
+  },
+  "visualEvidence": "Review.html",
+  "coverage": ["3 zones", "1080x1920", "720x1280", "1080x2400 with safe-area inset", "pause", "reduced motion", "idle board and refill RNG unchanged", "accepted player move resolves", "scene unload cleanup", "five playable ability symbols fit", "existing board feel regression tests", "open top arena", "64 reference-derived cell sprites per board"],
+  "limitations": ["No physical-device performance test", "Visual approval remains with the user", "Background composition differences listed in README.md"],
+  "mergeStatus": "Unmerged; user approval required"
+}

@@ -1,9 +1,10 @@
 # Dungeon Matcher — Art Direction & Sprite Production Guide
 
-**Version:** 1.16
+**Version:** 1.17.2
 **Compiled:** 2026-09-19
 **Updated for project-wide reference authority and cast audit:** 2026-10-11
 **Updated for global menu direction:** 2026-10-12
+**Updated for three-zone battle presentation:** 2026-10-14
 **Scope:** visual identity, palettes, native sprite editing, combat animation, dungeon presentation, tile VFX, sound and haptic feedback.
 **Owner:** the user; new design approvals remain the user's decision.
 
@@ -694,8 +695,54 @@ panels, purple diamond corner jewels and live Thaleah labels. Main navigation
 uses pale faces with dark lettering; resume uses green, destructive exit red,
 and secondary actions muted gray. Settings use four icon rows and explicit
 ON/OFF labels as well as color. Maintain matching frame thickness and spacing.
-Large central action controls can reuse this rim/face/icon separation in a future
-battle UI pass; this amendment does not replace the existing ability HUD.
+The separately authorized three-zone battle pass below extends the shared
+rim/face/icon separation to the battle controls. Menu assets stay unchanged.
+
+### Three-zone battle targets — 2026-10-14
+
+Approval update, 2026-10-17: the user approved integrating and merging the latest
+Dungeon, Forest and Drowned Court reference-kit backgrounds, together with the
+separate main-menu shading V2. All three kits now use their approved native
+modules in Unity; source-only gate notes below are historical. Shared controls
+remain identical. This approval changes no golden-reference membership or
+general rendering rule. Integration evidence: ArtSource/BattlePresentation/ReferenceIntegration/.
+
+The user's Three Zones Battle UI pack authorizes native reconstruction of its
+Dungeon, Forest and Drowned Court mockups. Sources and exact hashes are retained
+in ArtSource/BattlePresentation/brief and provenance.json. Dungeon uses violet
+masonry; Forest uses carved timber, greenery and blue rune accents; Court uses
+submerged blue stone, marine growth and ruined architecture. Shared Guide,
+settings, supply and ability controls retain the silver/purple menu family.
+
+Production sources are finalized and exported through LibreSprite. Reusable
+corners, beams, player slices, plaques, materials and ornament silhouettes remain
+separate assets. The user's follow-up rejects the first pass's scenery/frame
+fidelity and explicitly requests extraction and cleanup in LibreSprite. Preserve
+source material colors, separate the thin player frame from the board beam, and
+use the targets' dark stone cell backgrounds in all three zones. This scoped
+board-background revision supersedes the earlier Forest log-cell direction for
+these candidates. Character, gem, HP and blocker drawings remain unchanged.
+Scenery repairs remove mockup actors and counters, reconstructing hidden areas
+from source material before export as native tilemap art. Complete mockups are
+never runtime screens. The extra enclosing top-HUD frame is absent in the targets.
+
+The subsequent composition correction removes the bottom HUD's outer enclosure
+as requested, while keeping the silver Guide/settings/supply/ability family
+shared. Backgrounds must not repeat their last floor row to fill a viewport.
+The candidate now uses one extended native vista, independently anchored left
+and right foreground details, and continuous board-frame extracts with distinct
+corners and center ornaments. Areas hidden by the reference's actors still need
+authored repairs; technical checks do not establish an exact visual match.
+
+Ambient flames, foliage, lanterns, runes, waterfall strokes and bubbles are
+presentation only. They obey pause and Reduced Motion, use no gameplay RNG and
+must not affect input, damage, board ownership or resolution timing. The current
+native UI layout remains authoritative across aspect ratios and safe areas.
+
+These are implemented review candidates, not new user approvals. Actual Unity
+comparisons, source checks and remaining composition differences are recorded in
+ArtSource/BattlePresentation/Review.html and README.md. No character golden
+reference, identity approval or native sprite size changes in this pass.
 
 Production sources and exact supplied reference hashes live in ArtSource/MenuUI.
 Its current 54 native assets are an implemented review candidate, not a new

@@ -430,6 +430,40 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Approved three-zone reference kits (2026-10-17):** the user approved the native
+  reconstruction. `DungeonPresentationArt` consumes separate registered PNGs
+  for wall, arch, floor, player backing and side/bottom dressing. It does not
+  import the assembled review screen. The existing tilemap owner suppresses the
+  previous vista and old ambient overlays while a reference kit is selected.
+  Forest/Court use separate far, middle and floor modules. Ironvein/Frostwake
+  retain their current environment. `ReferenceKitSurface` fits a module within its existing
+  owner's rectangle and rounds physical edges. Scenery and the wave/Guide/gear
+  plates use Point-filtered responsive fitting; characters, item/ability icons
+  and other controls keep their integer texel policy. The validator checks the
+  registered rectangles explicitly, as well as safe bounds and Point filtering.
+  `PlayerAreaThreeSliceFrameController` maps the approved player panel rectangle.
+  `BoardVisuals` fits the 400x406 Dungeon or 410x414 Forest/Court rim around the unchanged square board using
+  its 364x369 source opening; its 1.37% source-opening aspect correction affects
+  only the rim. Individual cell tiles still belong to crumbling/board visuals.
+  No resolution, input, RNG, hit, gem, enemy or move-clock behavior changes.
+  The six shared control modules and quiet cell tiles are reused across
+  Dungeon/Forest/Court. Native panel, plaque and well coordinates come from the
+  approved source registrations; the runtime never loads the review assemblies.
+  Forest/Court's arena ends at reference y=288, where the board rim starts. Its
+  floor sprite excludes the ten source rows behind that rim; the owned slice is
+  released with the presentation component.
+
+- **Three-zone reference presentation (2026-10-14):** the existing geometry owner
+  selects a 156px minimum bottom area, six-pixel preferred gaps and an 85% maximum
+  board-width fit for Dungeon/Forest/Court. Their unified-combat top minimum is
+  320px; other themes keep their existing reservations. Bottom heights round to
+  even logical pixels so centered controls cannot land on half pixels. These
+  three zones omit the extra top/bottom enclosures. The background owner pins
+  their finite 768x512 vista to the top of its open mask; all 96 native tiles
+  appear once. `BoardVisuals` consumes 28 unique atlas slices, including inward
+  ornament space, at the board's existing uniform scale. No board rules or
+  resolution timings are changed by this presentation geometry.
+
 - **Current enemy art sources (2026-10-11):** `ArtSource/EnemyArtCohesion/`
   supersedes the older enemy source rectangles mentioned below. Native staging
   preserves sprite GUID/fileIDs and clip bytes. Expanded canvases use a fixed

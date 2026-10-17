@@ -1,0 +1,51 @@
+{
+  "args": {
+    "description": "A single complete monumental ancient sea king statue as ruined underwater scenery, on a broad two-step pedestal. Follow the supplied teal stone crowned king and upright trident, broad draped shoulder mantle and long robe. Reconstruct the lower body naturally down to the pedestal. Entire statue from trident tip to base fits canvas. The king is carved from cool muted blue-green stone with weathered broad connected planes, quiet dark cracks, readable silhouette, crisp native pixel art, restrained 3-tone shading. Remove the source's sword icon, shield icon, all numbers, all UI and background: statue and pedestal only, transparent background. No living creature, no skin colors, no glow, no white UI marks.",
+    "width": 128,
+    "height": 160,
+    "init_image_base64": "generation/native/CourtStatueInput.png",
+    "init_image_strength": 180,
+    "no_background": true,
+    "outline": "selective outline",
+    "shading": "basic shading",
+    "detail": "medium detail",
+    "view": "side",
+    "seed": 31474
+  },
+  "job": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 706d89b0-ab81-40b7-8295-78b13b348d3c\njob_id: 706d89b0-ab81-40b7-8295-78b13b348d3c\ndescription: A single complete monumental ancient sea king statue as ruined underwater scenery, on a broad two-step pedestal. Follow the supplied teal stone crowned king and upright trident, broad draped shoulder mantle and long robe. Reconstruct the lower body naturally down to the pedestal. Entire statue from trident tip to base fits canvas. The king is carved from cool muted blue-green stone with weathered broad connected planes, quiet dark cracks, readable silhouette, crisp native pixel art, restrained 3-tone shading. Remove the source's sword icon, shield icon, all numbers, all UI and background: statue and pedestal only, transparent background. No living creature, no skin colors, no glow, no white UI marks.\nsize: 128x160px\ntransparent: True\nasset_id: 6e3f0240-cbf6-5f94-b2cc-efd5159dc594\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 180)\nseed: 31474\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"706d89b0-ab81-40b7-8295-78b13b348d3c\")"
+      }
+    ],
+    "isError": false
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 706d89b0-ab81-40b7-8295-78b13b348d3c\njob_id: 706d89b0-ab81-40b7-8295-78b13b348d3c\nframes: 1\ntransparent: yes\nasset_id: 6e3f0240-cbf6-5f94-b2cc-efd5159dc594\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/706d89b0-ab81-40b7-8295-78b13b348d3c/download"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "706d89b0-ab81-40b7-8295-78b13b348d3c",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/706d89b0-ab81-40b7-8295-78b13b348d3c/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/706d89b0-ab81-40b7-8295-78b13b348d3c/download"
+      ],
+      "asset": {
+        "id": "6e3f0240-cbf6-5f94-b2cc-efd5159dc594",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    },
+    "isError": false
+  },
+  "selection": "rejected",
+  "reason": "Retained sword and counter artifacts; broad statue forms did not resolve.",
+  "generationsCharged": 1
+}

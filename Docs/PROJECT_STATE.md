@@ -20,6 +20,30 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Three-zone battle presentation (2026-10-17)
+
+The user approved integrating and merging the latest Dungeon, Forest and Drowned
+Court reference-kit backgrounds. All three now use individual native modules in
+Unity: 36 Dungeon and 19 each for Forest/Court. The review assemblies and complete
+board-well images are excluded. Existing presentation owners place each kit's
+registered scenery, player panel, plaque, board rim and distinct side/bottom art.
+One shared silver/purple control family and individual quiet stone cells serve
+all three zones. Extra top/bottom enclosures and obsolete vista/ambient overlays
+are suppressed, preventing duplicate floors, props and effects.
+
+Editable LibreSprite sources, native dimensions and prior approval comparisons
+remain under `ArtSource/BattlePresentation/`. The Forest/Court kits retain their
+own panel and frame coordinates. The 364x369 rim opening fits the existing square
+board; responsive Point-filtered scenery can have uneven physical pixel widths.
+Hidden actor/label regions are reconstructed, not recovered original art. No new
+generation was used. Current integration and validation evidence is in
+[the integration record](../ArtSource/BattlePresentation/ReferenceIntegration/README.md).
+
+Character/gem art, HP bars, combat, board feel, progression and balance retain
+their current behavior. Ironvein and Frostwake keep their prior presentation.
+Menu cleanup is the separately approved PR #198 below. Physical-device display
+and touch checks remain user validation; no new golden-reference membership is implied.
+
 ## Enemy pressure and special swaps (2026-10-13)
 
 Implementation: [PR #195](https://github.com/PlatFll/Dungeon-Matcher/pull/195),
@@ -60,7 +84,7 @@ button/frame exports now use the reference's sculpted silver trim, purple jewels
 skull crest, settings brackets and faceted toggles. Blank faces and alpha masks
 are rebuilt at runtime-native dimensions; labels remain live Thaleah. Short
 green/red actions use larger lettering. The background and wordmark are unchanged.
-This refinement is on a review branch pending approval, with evidence in
+This refinement merged through PR #196, with evidence in
 ArtSource/MenuUI/FrameRevision/README.md. A follow-up extracts the fourteen button
 and settings icons plus the gear from the clean mockups, adds sampled stone/enamel
 face texture, and limits dark icon insets to the three controls that use them in
@@ -72,8 +96,9 @@ highlights and mottling while preserving the original large shadow shapes,
 microchip pass was judged too subtle; V2 and its source audit are in
 ArtSource/MenuUI/RenderingCleanupV2/README.md. An editor-only capture check uses
 the same character frame and records both unobscured environment and complete
-menu views. Native art, protected-edge checks and Unity evidence remain on the
-review branch pending user approval. Global art rules are unchanged.
+menu views. The user approved integration and merging on 2026-10-17; PR #198 is
+merged with native art, protected-edge checks and Unity evidence preserved.
+Global art rules are unchanged.
 No generation budget was used.
 Board Feel 2 and enemy-pressure v3 retain their timing, feedback and replay behavior.
 Known visual differences and measured validation are in ArtSource/MenuUI/REVIEW.md.
@@ -142,7 +167,7 @@ and [the locked native stills](../ArtSource/FrostwakePlayables/locked/APPROVED_D
 
 ## Global art-direction audit (2026-10-11)
 
-The canonical art guide is now v1.16, including the global menu direction. Rattlebones is the explicitly designated
+The canonical art guide is now v1.17.2, including the global menu and three-zone battle direction. Rattlebones is the explicitly designated
 primary rendering/motion standard; Farmer and Pan Villager remain supporting
 references. Royal Swordsman, Elven Mender, Orc Trailguard and Pearl Thief are
 **proposed** complementary golden additions, awaiting user review.

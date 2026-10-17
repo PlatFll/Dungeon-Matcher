@@ -41,8 +41,32 @@ public sealed class WaveTrackerUI :
 
     private void Start()
     {
-        var plaque=RunSession.Current?.Zone?.Definition?.theme?.wavePlaque;
-        if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image)) image.sprite=plaque;
+        var plaque=BattlePresentationSkin.ZoneSprite("Plaque") ?? RunSession.Current?.Zone?.Definition?.theme?.wavePlaque;
+        if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image))
+        {
+            image.sprite=plaque;
+            if (BattlePresentationSkin.Folder != null)
+            {
+                GameplayPixelGrid.FitImage(image, new Vector2(264,54));
+                if (waveText != null)
+                {
+                    waveText.rectTransform.offsetMin = new Vector2(12,11);
+                    waveText.rectTransform.offsetMax = new Vector2(-12,0);
+                }
+            }
+            if(BattlePresentationSkin.UsesReferenceKit)
+            {
+                if(TryGetComponent<NativePixelUiSurface>(out var native))native.enabled=false;
+                image.raycastTarget=false;
+                gameObject.AddComponent<ReferenceKitSurface>().Initialize(BattlePresentationSkin.ReferenceWaveRect,new Vector2(470,BattlePresentationSkin.ReferenceTopHeight));
+                if(waveText!=null)
+                {
+                    waveText.rectTransform.offsetMin=new Vector2(18,18);
+                    waveText.rectTransform.offsetMax=new Vector2(-13,-9);
+                    waveText.enableAutoSizing=true;waveText.fontSizeMin=16;waveText.fontSizeMax=28;
+                }
+            }
+        }
     }
 
     private void OnDisable()

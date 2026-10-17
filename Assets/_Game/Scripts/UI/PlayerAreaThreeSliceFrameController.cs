@@ -72,7 +72,7 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
 
     private void TryConfigure()
     {
-        profile=RunSession.Current?.Zone?.Definition?.theme?.playerFrame ?? profile;
+        profile=BattlePresentationSkin.PlayerFrame ?? RunSession.Current?.Zone?.Definition?.theme?.playerFrame ?? profile;
         if (topHud == null)
         {
             topHud =
@@ -124,6 +124,15 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
         RectTransform generatedLayout)
     {
         lastLayoutHeight = generatedLayout.rect.height;
+        if(BattlePresentationSkin.UsesReferenceKit)
+        {
+            float height=BattlePresentationSkin.ReferenceTopHeight;
+            float x=generatedLayout.rect.width/470f,y=lastLayoutHeight/height;
+            Rect source=BattlePresentationSkin.ReferencePlayerRect;
+            GameplayPixelLayoutController.SetRect(playerSection,new Rect(Mathf.Round(source.x*x),Mathf.Round((height-source.yMax)*y),Mathf.Round(source.width*x),Mathf.Round(source.height*y)));
+            GameplayPixelLayoutController.SetRect(enemySection,new Rect(Mathf.Round(140*x),6,Mathf.Round(330*x)-6,lastLayoutHeight-12));
+            return;
+        }
         float playerHeight = Mathf.Min(PreferredHeight, lastLayoutHeight);
         float extraTopInset = Mathf.Floor((lastLayoutHeight - playerHeight) / 2f);
         float playerWidth =
@@ -221,6 +230,12 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private void BuildThreeSliceFrame()
     {
         RemoveGeneratedFrame();
+        if(BattlePresentationSkin.UsesReferenceKit)
+        {
+            Vector2 size=BattlePresentationSkin.ReferencePlayerRect.size;
+            DungeonPresentationArt.ReferenceLayer(playerSection,"PlayerFrame",new Rect(Vector2.zero,size),size).SetAsLastSibling();
+            return;
+        }
 
         if (profile == null ||
             profile.TopPiece == null ||

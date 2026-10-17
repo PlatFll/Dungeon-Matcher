@@ -36,9 +36,14 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     public void ApplyGameplayTheme(GameplayThemeDefinition theme, int variant = 0)
     {
         if (theme == null || theme.battleEnvironment == null) return;
-        var selected = theme.battleEnvironmentVariants != null && variant >= 0 &&
+        var selected = BattlePresentationSkin.Environment ?? (theme.battleEnvironmentVariants != null && variant >= 0 &&
             variant < theme.battleEnvironmentVariants.Length && theme.battleEnvironmentVariants[variant] != null
-            ? theme.battleEnvironmentVariants[variant] : theme.battleEnvironment;
+            ? theme.battleEnvironmentVariants[variant] : theme.battleEnvironment);
+        SelectEnvironment(selected);
+    }
+
+    private void SelectEnvironment(GameObject selected)
+    {
         if (activeEnvironment != null && environmentPrefab == selected) return;
         if (activeEnvironment != null)
         {
@@ -63,6 +68,8 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
     private void Start()
     {
+        var presentation=BattlePresentationSkin.Environment;
+        if(Application.isPlaying && presentation!=null) SelectEnvironment(presentation);
         // Register after PPC's OnEnable so its final projection is authoritative.
         RenderPipelineManager.beginCameraRendering -= OnBeginCameraRendering;
         RenderPipelineManager.beginCameraRendering += OnBeginCameraRendering;
@@ -207,7 +214,7 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
     // normal LateUpdate availability check never walks every painted cell.
     public bool TryUseBackground(RectTransform arena)
     {
-        bool available = isActiveAndEnabled && battleArea != null && battleArea == arena &&
+        bool available = !BattlePresentationSkin.UsesReferenceKit && isActiveAndEnabled && battleArea != null && battleArea == arena &&
             battleFloorAnchor != null && worldCamera != null &&
             worldCamera.isActiveAndEnabled &&
             battleArea.GetComponentInParent<Canvas>() != null &&
@@ -407,11 +414,19 @@ public sealed class BattleBackgroundTilemapController : MonoBehaviour
 
         EnsureMask();
         Rect interior = battleArea.rect;
-        float inset = GameplayPixelLayoutController.NativeFrameThickness;
+        float inset = activeEnvironment != null && activeEnvironment.EnvironmentId.StartsWith("presentation-")
+            ? 0 : GameplayPixelLayoutController.NativeFrameThickness;
         interior.min += Vector2.one * inset;
         interior.max -= Vector2.one * inset;
         Vector3 min = Project(interior.min, uiCamera, mapPlane);
         Vector3 max = Project(interior.max, uiCamera, mapPlane);
+        if (activeEnvironment != null && activeEnvironment.EnvironmentId.StartsWith("presentation-"))
+        {
+            // Pin the composed vista to the visible top instead of exposing
+            // repeated roof rows when battle-height reservations change.
+            float shift = Mathf.Round((max.y - transform.position.y - 272f / ppu) * ppu) / ppu;
+            activeEnvironment.transform.localPosition = new Vector3(0, shift, 0);
+        }
         viewportMask.transform.position = (min + max) * 0.5f;
         viewportMask.transform.localScale = new Vector3(
             Mathf.Max(0, max.x - min.x), Mathf.Max(0, max.y - min.y), 1);

@@ -1,0 +1,185 @@
+We need to fix the zone background workflow.
+
+Problem:
+The latest implemented screens drift away from the approved mockups. The backgrounds are being reinterpreted instead of matched. This is not a request for “inspired by” art. This is a request to faithfully rebuild the approved mockup backgrounds and frame kits for production use.
+
+The first three images are the current incorrect in-game implementations.
+The next three images are the approved visual targets.
+Treat the approved target mockups as LOCKED visual authority.
+
+Core correction:
+Do NOT regenerate full game screens loosely.
+Do NOT redesign the composition.
+Do NOT “improve” or simplify the scene in a different direction.
+Do NOT treat the mockups as moodboards.
+
+Instead, rebuild each zone screen by extracting and recreating the actual art kit from the approved target.
+
+==================================================
+WHAT WENT WRONG
+==================================================
+
+The current versions fail because they drift in:
+- background composition
+- landmark placement
+- perspective
+- depth layering
+- frame chunkiness
+- lighting mood
+- detail distribution
+- overall visual hierarchy
+
+We need a faithful rebuild, not a reinterpretation.
+
+==================================================
+NEW WORKFLOW
+==================================================
+
+Work one zone at a time.
+
+For each zone, use this workflow:
+
+PHASE 1 — EXTRACTION / BREAKDOWN
+Create a breakdown sheet identifying the approved screen’s major parts:
+1. top wave header frame
+2. guide button
+3. settings button
+4. left player panel frame
+5. battle background far layer
+6. battle background mid layer
+7. battle floor / foreground layer
+8. board frame
+9. bottom HUD frame
+10. side props / chains / banners / torches / lanterns / coral / mushrooms / vines etc
+
+Do not generate new layouts.
+Use the approved target composition.
+
+PHASE 2 — BACKGROUND + FRAME REBUILD ONLY
+Rebuild only the zone art kit needed to match the approved target:
+- background layers
+- zone frame kit
+- board frame kit
+- bottom HUD framing
+- decorative side props
+
+Do NOT change:
+- gameplay logic
+- board dimensions
+- character gameplay systems
+- enemy kits
+- main menu
+- pause menu
+- ability behavior
+
+PHASE 3 — SIDE-BY-SIDE REVIEW
+Show:
+- approved target
+- rebuilt result
+- overlay / comparison notes
+- list of remaining mismatches if any
+
+Do not proceed to integration until the rebuilt version visually matches closely.
+
+==================================================
+STYLE RULES
+==================================================
+
+Read the global Dungeon Matcher art direction first.
+
+Preserve:
+- chunky native pixel art
+- crisp outlines
+- readable materials
+- clean cluster shading
+- strong depth separation
+- faithful color mood
+- the approved mockup’s exact scene identity
+
+No anti-aliased softness.
+No painterly reinterpretation.
+No generic regenerated environments.
+
+==================================================
+CRITICAL RULE: MOCKUP MATCHING
+==================================================
+
+The approved mockups are NOT just inspiration.
+They are the target.
+
+You are not allowed to substantially change:
+- camera framing
+- layout
+- major landmark placement
+- size relationship between background elements
+- frame proportions
+- decorative prop distribution
+- board placement relative to the battle scene
+- bottom HUD placement
+
+Small production adjustments are allowed only if required by integration, but the visual result must still look like the approved mockup.
+
+==================================================
+ZONE-SPECIFIC NOTES
+==================================================
+
+DUNGEON ZONE
+Match the approved dungeon target:
+- central arched door composition
+- torch-lit purple dungeon mood
+- depth in the back wall and stone floor
+- hanging chains and skull banners
+- chunky purple stone frame kit
+- strong warm torch contrast against cool purple masonry
+The current wrong version feels flatter and less faithful. Fix that.
+
+FOREST ZONE
+Match the approved forest target:
+- living woodland frame kit
+- antique wood structure with greenery
+- clear background depth
+- magical forest atmosphere
+- readable signposts / lanterns / foliage accents
+- chunky carved wood framing
+The current wrong version drifts in scene structure and background composition.
+
+UNDERWATER ZONE
+Match the approved underwater target:
+- underwater ruins identity
+- strong vertical ruin columns
+- majestic sunken-court composition
+- decorative coral and sea flora framing
+- clear layered depth with ruins/statues/background
+- blue aquatic stone frame kit
+The current wrong version simplifies and loses the approved grandeur and layout.
+
+==================================================
+PIXELLAB USAGE RULE
+==================================================
+
+Do NOT use PixelLab to reimagine the entire screen.
+Use PixelLab only when helpful for generating or refining specific sub-assets or motifs, then clean them manually and integrate them faithfully.
+
+Primary production workflow should be:
+1. reference breakdown
+2. asset recreation
+3. LibreSprite cleanup / correction
+4. integration
+5. side-by-side comparison
+
+==================================================
+DELIVERABLES
+==================================================
+
+Start with DUNGEON only.
+
+Deliver:
+1. a dungeon zone art breakdown sheet
+2. extracted / rebuilt asset kit list
+3. rebuilt dungeon background + frame kit
+4. side-by-side comparison against the approved dungeon mockup
+5. short mismatch report
+
+Do not move to forest or underwater until dungeon is approved.
+
+If any result drifts away from the approved mockup, stop and correct it instead of continuing.
