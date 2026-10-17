@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-17 19:33:22Z" end-time="2026-10-17 19:33:35Z" duration="12.9906507">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="801" result="Passed" start-time="2026-10-17 19:33:22Z" end-time="2026-10-17 19:33:35Z" duration="12.990651" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1933" name="Assembly-CSharp-Editor.dll" fullname="C:/UnityProjects/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="801" result="Passed" start-time="2026-10-17 19:33:22Z" end-time="2026-10-17 19:33:35Z" duration="12.952505" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="8960" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+      <test-suite type="TestFixture" id="1817" name="ThreeZonePresentationTests" fullname="ThreeZonePresentationTests" classname="ThreeZonePresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-17 19:33:22Z" end-time="2026-10-17 19:33:35Z" duration="12.943217" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        <test-case id="1818" name="CaptureThreeZones" fullname="ThreeZonePresentationTests.CaptureThreeZones" methodname="CaptureThreeZones" classname="ThreeZonePresentationTests" runstate="Runnable" seed="1936393744" result="Passed" start-time="2026-10-17 19:32:40Z" end-time="2026-10-17 19:33:19Z" duration="38.173567" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Farmer in EnemySlot1. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 30, Damage 5, Follow-up Damage 0, Attack Interval 10.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:82.00, y:1460.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1408.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1660.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:305.00, y:1413.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Pixel layout validated: Screen 720x1280; safe=(x:0.00, y:0.00, width:720.00, height:1280.00); constraints=(x:0.00, y:0.00, width:720.00, height:1280.00); logical viewport=(712.00, 1272.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1272.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:796.00, width:712.00, height:480.00); BoardArea=(x:57.00, y:184.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:174.00); gaps=7,6; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.064646; origin=(360.00, 486.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(63.49, 185.38, 9.90), max=(662.50, 785.14, 10.10), source=(400.00, 406.00), ratios=(1.50, 1.48)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:662.00, y:184.00, width:54.00, height:605.00), source=(33.00, 403.00), ratios=(1.636364,1.501241)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:4.00, y:184.00, width:53.00, height:605.00), source=(37.00, 403.00), ratios=(1.432432,1.501241)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:4.00, y:986.00, width:712.00, height:290.00), source=(470.00, 180.00), ratios=(1.514894,1.611111)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:296.00, y:986.00, width:175.00, height:195.00), source=(115.00, 121.00), ratios=(1.521739,1.61157)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:212.00, y:796.00, width:504.00, height:195.00), source=(333.00, 121.00), ratios=(1.513514,1.61157)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:4.00, y:796.00, width:712.00, height:480.00), source=(470.00, 298.00), ratios=(1.514894,1.610738)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:4.00, y:796.00, width:208.00, height:29.00), source=(137.00, 18.00), ratios=(1.518248,1.611111)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:4.00, y:825.00, width:212.00, height:406.00), source=(140.00, 252.00), ratios=(1.514286,1.611111)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:38.00, y:848.00, width:158.00, height:360.00), source=(105.00, 224.00), ratios=(1.504762,1.607143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:81.00, y:1104.00, width:75.00, height:104.00), source=(49.00, 65.00), ratios=(1.530612,1.6)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:86.00, y:990.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:64.00, y:964.00, width:16.00, height:24.00), source=(16.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:171.00, y:964.00, width:16.00, height:24.00), source=(16.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:50.00, y:964.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1058.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:21.00, y:825.00, width:195.00, height:406.00), source=(129.00, 252.00), ratios=(1.511628,1.611111)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:234.00, y:896.00, width:112.00, height:88.00), source=(112.00, 88.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:252.00, y:857.00, width:16.00, height:24.00), source=(16.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:326.00, y:857.00, width:16.00, height:24.00), source=(16.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:238.00, y:857.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:274.00, y:815.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:281.00, y:1009.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:287.00, y:993.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:260.00, y:1166.00, width:205.00, height:76.00), source=(135.00, 47.00), ratios=(1.518519,1.617021)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:631.00, y:1163.00, width:68.00, height:65.00), source=(45.00, 40.00), ratios=(1.511111,1.625)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:504.00, y:1165.00, width:120.00, height:63.00), source=(79.00, 39.00), ratios=(1.518987,1.615385)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:4.00, y:4.00, width:712.00, height:174.00), source=(470.00, 135.00), ratios=(1.514894,1.288889)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:272.00, y:58.00, width:176.00, height:66.00), source=(176.00, 66.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:286.00, y:69.00, width:148.00, height:44.00), source=(148.00, 44.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:286.00, y:123.00, width:147.00, height:24.00), source=(147.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:193.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:204.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:457.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:468.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+
+Pixel layout validated: Screen 1080x2400; safe=(x:0.00, y:0.00, width:1080.00, height:2400.00); constraints=(x:0.00, y:80.00, width:1080.00, height:2200.00); logical viewport=(532.00, 1092.00); physical viewport=(x:8.00, y:88.00, width:1064.00, height:2184.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1328.00, width:1064.00, height:944.00); BoardArea=(x:88.00, y:412.00, width:904.00, height:904.00); Bottom=(x:8.00, y:88.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=88; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 864.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 414.81, 9.90), max=(992.00, 1310.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:412.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:412.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1702.00, width:1064.00, height:570.00), source=(470.00, 180.00), ratios=(2.26383,3.166667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1702.00, width:260.00, height:383.00), source=(115.00, 121.00), ratios=(2.26087,3.165289)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1328.00, width:754.00, height:383.00), source=(333.00, 121.00), ratios=(2.264264,3.165289)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1328.00, width:1064.00, height:944.00), source=(470.00, 298.00), ratios=(2.26383,3.167785)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1328.00, width:310.00, height:57.00), source=(137.00, 18.00), ratios=(2.262774,3.166667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1385.00, width:317.00, height:798.00), source=(140.00, 252.00), ratios=(2.264286,3.166667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1430.00, width:238.00, height:710.00), source=(105.00, 224.00), ratios=(2.266667,3.169643)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1934.00, width:110.00, height:206.00), source=(49.00, 65.00), ratios=(2.244898,3.169231)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:82.00, y:1676.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1624.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1624.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1624.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1876.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1386.00, width:292.00, height:798.00), source=(129.00, 252.00), ratios=(2.263566,3.166667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:346.00, y:1490.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:410.00, y:1450.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:614.00, y:1450.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:382.00, y:1450.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:482.00, y:1366.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:496.00, y:1804.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:508.00, y:1772.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:2057.00, width:305.00, height:148.00), source=(135.00, 47.00), ratios=(2.259259,3.148936)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:2050.00, width:102.00, height:127.00), source=(45.00, 40.00), ratios=(2.266667,3.175)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:2053.00, width:179.00, height:124.00), source=(79.00, 39.00), ratios=(2.265823,3.179487)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:88.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:178.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:200.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:308.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Cascade 1: clearing 6 gems.
+3 Topaz gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Sapphire gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 2: clearing 6 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 3: clearing 3 gems.
+3 Amethyst gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 4: clearing 3 gems.
+Enemy defeated in EnemySlot1. 0 enemies remain.
+3 Emerald gem(s) from Match dealt 30 damage to Farmer.
+Cascade 5: clearing 4 gems.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Wave 1 completed.
+Board settled.
+Spawned Elven Scout in EnemySlot1. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 60, Damage 5, Follow-up Damage 0, Attack Interval 3.00s, Special Turns 3
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1144.00, width:1064.00, height:768.00); BoardArea=(x:140.00, y:332.00, width:800.00, height:800.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.376044; origin=(540.00, 732.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(143.22, 341.55, 9.90), max=(936.78, 1132.00, 10.10), source=(410.00, 414.00), ratios=(1.94, 1.91)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:940.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:132.00, height:800.00), source=(30.00, 403.00), ratios=(4.4,1.985112)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1485.00, width:1064.00, height:427.00), source=(470.00, 160.00), ratios=(2.26383,2.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1349.00, width:1064.00, height:136.00), source=(470.00, 51.00), ratios=(2.26383,2.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1144.00, width:1064.00, height:205.00), source=(470.00, 77.00), ratios=(2.26383,2.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1203.00, width:238.00, height:597.00), source=(105.00, 224.00), ratios=(2.266667,2.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1624.00, width:112.00, height:176.00), source=(49.00, 66.00), ratios=(2.285714,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1396.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:103.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:259.00, y:1344.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:75.00, y:1344.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1596.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1160.00, width:306.00, height:688.00), source=(135.00, 258.00), ratios=(2.266667,2.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Elven Scout_Level_1/VisualRoot bounds=(x:257.00, y:1289.00, width:432.00, height:264.00), source=(144.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:552.00, y:1266.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1266.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1182.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1577.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1545.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:1731.00, width:356.00, height:128.00), source=(157.00, 48.00), ratios=(2.267516,2.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1725.00, width:102.00, height:107.00), source=(45.00, 40.00), ratios=(2.266667,2.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1728.00, width:179.00, height:104.00), source=(79.00, 39.00), ratios=(2.265823,2.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Spawned Orc Trailguard in EnemySlot2. Category: Normal. Gem type: Topaz. Wave 1, Level 1, HP 90, Damage 15, Follow-up Damage 0, Attack Interval 4.50s, Special Turns 3
+Wave 1 started using rule 'Outer path patrol'. Planned: 2. Spawned: 2.
+Board entrance complete.
+Pixel layout validated: Screen 720x1280; safe=(x:0.00, y:0.00, width:720.00, height:1280.00); constraints=(x:0.00, y:0.00, width:720.00, height:1280.00); logical viewport=(712.00, 1272.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1272.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:796.00, width:712.00, height:480.00); BoardArea=(x:57.00, y:184.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:174.00); gaps=7,6; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.040633; origin=(360.00, 486.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(59.93, 190.72, 9.90), max=(660.07, 788.50, 10.10), source=(410.00, 414.00), ratios=(1.46, 1.44)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:662.00, y:184.00, width:54.00, height:605.00), source=(30.00, 403.00), ratios=(1.8,1.501241)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:4.00, y:184.00, width:53.00, height:605.00), source=(30.00, 403.00), ratios=(1.766667,1.501241)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:4.00, y:1009.00, width:712.00, height:267.00), source=(470.00, 160.00), ratios=(1.514894,1.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:4.00, y:924.00, width:712.00, height:85.00), source=(470.00, 51.00), ratios=(1.514894,1.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:4.00, y:796.00, width:712.00, height:128.00), source=(470.00, 77.00), ratios=(1.514894,1.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:37.00, y:833.00, width:160.00, height:373.00), source=(105.00, 224.00), ratios=(1.52381,1.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:81.00, y:1096.00, width:75.00, height:110.00), source=(49.00, 66.00), ratios=(1.530612,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:86.00, y:983.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:60.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:181.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:46.00, y:957.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1051.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:16.00, y:806.00, width:205.00, height:430.00), source=(135.00, 258.00), ratios=(1.518519,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Elven Scout_Level_1/VisualRoot bounds=(x:218.00, y:896.00, width:144.00, height:88.00), source=(144.00, 88.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:252.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:330.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:238.00, y:857.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:274.00, y:815.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:281.00, y:1009.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:287.00, y:993.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemySpawnAnchor/Orc Trailguard_Level_1/VisualRoot bounds=(x:328.00, y:896.00, width:144.00, height:88.00), source=(144.00, 88.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:362.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:440.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:348.00, y:857.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyWeaknessIndicator bounds=(x:384.00, y:815.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Sword bounds=(x:391.00, y:1009.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Slot bounds=(x:397.00, y:993.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:242.00, y:1163.00, width:238.00, height:80.00), source=(157.00, 48.00), ratios=(1.515924,1.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:631.00, y:1159.00, width:68.00, height:67.00), source=(45.00, 40.00), ratios=(1.511111,1.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:504.00, y:1161.00, width:120.00, height:65.00), source=(79.00, 39.00), ratios=(1.518987,1.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:4.00, y:4.00, width:712.00, height:174.00), source=(470.00, 135.00), ratios=(1.514894,1.288889)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:272.00, y:58.00, width:176.00, height:66.00), source=(176.00, 66.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:286.00, y:69.00, width:148.00, height:44.00), source=(148.00, 44.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:286.00, y:123.00, width:147.00, height:24.00), source=(147.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:193.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:204.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:457.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:468.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+
+Pixel layout validated: Screen 1080x2400; safe=(x:0.00, y:0.00, width:1080.00, height:2400.00); constraints=(x:0.00, y:80.00, width:1080.00, height:2200.00); logical viewport=(532.00, 1092.00); physical viewport=(x:8.00, y:88.00, width:1064.00, height:2184.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1328.00, width:1064.00, height:944.00); BoardArea=(x:88.00, y:412.00, width:904.00, height:904.00); Bottom=(x:8.00, y:88.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=88; safe clearance=8; board texel ratio=1.55493; origin=(540.00, 864.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(91.63, 422.79, 9.90), max=(988.37, 1316.00, 10.10), source=(410.00, 414.00), ratios=(2.19, 2.16)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:412.00, width:80.00, height:904.00), source=(30.00, 403.00), ratios=(2.666667,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:412.00, width:80.00, height:904.00), source=(30.00, 403.00), ratios=(2.666667,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1748.00, width:1064.00, height:524.00), source=(470.00, 160.00), ratios=(2.26383,3.275)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1580.00, width:1064.00, height:168.00), source=(470.00, 51.00), ratios=(2.26383,3.294118)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1328.00, width:1064.00, height:252.00), source=(470.00, 77.00), ratios=(2.26383,3.272727)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1400.00, width:238.00, height:735.00), source=(105.00, 224.00), ratios=(2.266667,3.28125)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1919.00, width:112.00, height:216.00), source=(49.00, 66.00), ratios=(2.285714,3.272727)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1662.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:105.00, y:1610.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:261.00, y:1610.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:77.00, y:1610.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1862.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1348.00, width:306.00, height:846.00), source=(135.00, 258.00), ratios=(2.266667,3.27907)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Elven Scout_Level_1/VisualRoot bounds=(x:298.00, y:1490.00, width:432.00, height:264.00), source=(144.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:410.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:622.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:382.00, y:1450.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:482.00, y:1366.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:496.00, y:1804.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:508.00, y:1772.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemySpawnAnchor/Orc Trailguard_Level_1/VisualRoot bounds=(x:602.00, y:1490.00, width:432.00, height:264.00), source=(144.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:714.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:926.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:686.00, y:1450.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/EnemyWeaknessIndicator bounds=(x:786.00, y:1366.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Sword bounds=(x:800.00, y:1804.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot2/ActionIntent/Slot bounds=(x:812.00, y:1772.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:2049.00, width:356.00, height:157.00), source=(157.00, 48.00), ratios=(2.267516,3.270833)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:2043.00, width:102.00, height:131.00), source=(45.00, 40.00), ratios=(2.266667,3.275)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:2046.00, width:179.00, height:128.00), source=(79.00, 39.00), ratios=(2.265823,3.282051)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:88.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:178.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:200.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:308.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Cascade 1: clearing 6 gems.
+3 Topaz gem(s) from Match dealt 35 damage to Orc Trailguard.
+3 Sapphire gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 2: clearing 6 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 3: clearing 3 gems.
+3 Amethyst gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 4: clearing 3 gems.
+Enemy defeated in EnemySlot1. 1 enemies remain.
+3 Emerald gem(s) from Match dealt 60 damage to Elven Scout.
+Cascade 5: clearing 4 gems.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+Spawned Reef Spearman in EnemySlot1. Category: Normal. Gem type: Amethyst. Wave 1, Level 1, HP 60, Damage 10, Follow-up Damage 0, Attack Interval 4.80s, Special Turns 4
+Wave 1 started using rule 'R01: Outer guard'. Planned: 1. Spawned: 1.
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1208.00, width:1064.00, height:704.00); BoardArea=(x:108.00, y:332.00, width:864.00, height:864.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.486128; origin=(540.00, 764.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(111.47, 342.31, 9.90), max=(968.53, 1196.00, 10.10), source=(410.00, 414.00), ratios=(2.09, 2.06)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:972.00, y:332.00, width:100.00, height:864.00), source=(30.00, 403.00), ratios=(3.333333,2.143921)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:100.00, height:864.00), source=(30.00, 403.00), ratios=(3.333333,2.143921)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1521.00, width:1064.00, height:391.00), source=(470.00, 160.00), ratios=(2.26383,2.44375)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1396.00, width:1064.00, height:125.00), source=(470.00, 51.00), ratios=(2.26383,2.45098)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1208.00, width:1064.00, height:188.00), source=(470.00, 77.00), ratios=(2.26383,2.441558)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1261.00, width:238.00, height:547.00), source=(105.00, 224.00), ratios=(2.266667,2.441964)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1647.00, width:112.00, height:161.00), source=(49.00, 66.00), ratios=(2.285714,2.439394)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1428.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:103.00, y:1376.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:259.00, y:1376.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:75.00, y:1376.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1628.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1222.00, width:306.00, height:630.00), source=(135.00, 258.00), ratios=(2.266667,2.44186)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Reef Spearman_Level_1/VisualRoot bounds=(x:209.00, y:1353.00, width:528.00, height:312.00), source=(176.00, 104.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1330.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:552.00, y:1330.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1330.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1246.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1592.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1560.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:1746.00, width:356.00, height:117.00), source=(157.00, 48.00), ratios=(2.267516,2.4375)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1741.00, width:102.00, height:98.00), source=(45.00, 40.00), ratios=(2.266667,2.45)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1743.00, width:179.00, height:96.00), source=(79.00, 39.00), ratios=(2.265823,2.461539)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Pixel layout validated: Screen 720x1280; safe=(x:0.00, y:0.00, width:720.00, height:1280.00); constraints=(x:0.00, y:0.00, width:720.00, height:1280.00); logical viewport=(712.00, 1272.00); physical viewport=(x:4.00, y:4.00, width:712.00, height:1272.00); canvas scale=1; logical/physical=1; Top=(x:4.00, y:796.00, width:712.00, height:480.00); BoardArea=(x:57.00, y:184.00, width:605.00, height:605.00); Bottom=(x:4.00, y:4.00, width:712.00, height:174.00); gaps=7,6; cutouts=0; bottom display clearance=4; safe clearance=4; board texel ratio=1.040633; origin=(360.00, 486.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(59.93, 190.72, 9.90), max=(660.07, 788.50, 10.10), source=(410.00, 414.00), ratios=(1.46, 1.44)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:662.00, y:184.00, width:54.00, height:605.00), source=(30.00, 403.00), ratios=(1.8,1.501241)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:4.00, y:184.00, width:53.00, height:605.00), source=(30.00, 403.00), ratios=(1.766667,1.501241)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:4.00, y:1009.00, width:712.00, height:267.00), source=(470.00, 160.00), ratios=(1.514894,1.66875)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:4.00, y:924.00, width:712.00, height:85.00), source=(470.00, 51.00), ratios=(1.514894,1.666667)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:4.00, y:796.00, width:712.00, height:128.00), source=(470.00, 77.00), ratios=(1.514894,1.662338)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:37.00, y:833.00, width:160.00, height:373.00), source=(105.00, 224.00), ratios=(1.52381,1.665179)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:81.00, y:1096.00, width:75.00, height:110.00), source=(49.00, 66.00), ratios=(1.530612,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:86.00, y:983.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:60.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:181.00, y:957.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:46.00, y:957.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:102.00, y:1051.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:16.00, y:806.00, width:205.00, height:430.00), source=(135.00, 258.00), ratios=(1.518519,1.666667)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Reef Spearman_Level_1/VisualRoot bounds=(x:202.00, y:896.00, width:176.00, height:104.00), source=(176.00, 104.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:252.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:330.00, y:857.00, width:12.00, height:24.00), source=(12.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:238.00, y:857.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:274.00, y:815.00, width:32.00, height:32.00), source=(32.00, 32.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:281.00, y:1025.00, width:24.00, height:24.00), source=(24.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:287.00, y:1009.00, width:12.00, height:12.00), source=(12.00, 12.00), ratios=(1,1)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:242.00, y:1163.00, width:238.00, height:80.00), source=(157.00, 48.00), ratios=(1.515924,1.666667)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:631.00, y:1159.00, width:68.00, height:67.00), source=(45.00, 40.00), ratios=(1.511111,1.675)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:504.00, y:1161.00, width:120.00, height:65.00), source=(79.00, 39.00), ratios=(1.518987,1.666667)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:4.00, y:4.00, width:712.00, height:174.00), source=(470.00, 135.00), ratios=(1.514894,1.288889)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:272.00, y:58.00, width:176.00, height:66.00), source=(176.00, 66.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:286.00, y:69.00, width:148.00, height:44.00), source=(148.00, 44.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:286.00, y:123.00, width:147.00, height:24.00), source=(147.00, 24.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:193.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:204.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:457.00, y:60.00, width:70.00, height:63.00), source=(70.00, 63.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:468.00, y:67.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+
+Pixel layout validated: Screen 1080x2400; safe=(x:0.00, y:0.00, width:1080.00, height:2400.00); constraints=(x:0.00, y:80.00, width:1080.00, height:2200.00); logical viewport=(532.00, 1092.00); physical viewport=(x:8.00, y:88.00, width:1064.00, height:2184.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1328.00, width:1064.00, height:944.00); BoardArea=(x:88.00, y:412.00, width:904.00, height:904.00); Bottom=(x:8.00, y:88.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=88; safe clearance=8; board texel ratio=1.55493; origin=(540.00, 864.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(91.63, 422.79, 9.90), max=(988.37, 1316.00, 10.10), source=(410.00, 414.00), ratios=(2.19, 2.16)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:412.00, width:80.00, height:904.00), source=(30.00, 403.00), ratios=(2.666667,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:412.00, width:80.00, height:904.00), source=(30.00, 403.00), ratios=(2.666667,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarScenery bounds=(x:8.00, y:1748.00, width:1064.00, height:524.00), source=(470.00, 160.00), ratios=(2.26383,3.275)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitMidScenery bounds=(x:8.00, y:1580.00, width:1064.00, height:168.00), source=(470.00, 51.00), ratios=(2.26383,3.294118)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:8.00, y:1328.00, width:1064.00, height:252.00), source=(470.00, 77.00), ratios=(2.26383,3.272727)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:58.00, y:1400.00, width:238.00, height:735.00), source=(105.00, 224.00), ratios=(2.266667,3.28125)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1919.00, width:112.00, height:216.00), source=(49.00, 66.00), ratios=(2.285714,3.272727)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:83.00, y:1662.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:105.00, y:1610.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:261.00, y:1610.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:77.00, y:1610.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:147.00, y:1862.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:26.00, y:1348.00, width:306.00, height:846.00), source=(135.00, 258.00), ratios=(2.266667,3.27907)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Reef Spearman_Level_1/VisualRoot bounds=(x:162.00, y:1454.00, width:704.00, height:416.00), source=(176.00, 104.00), ratios=(4,4)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:410.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:622.00, y:1450.00, width:24.00, height:48.00), source=(12.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:382.00, y:1450.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:482.00, y:1366.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:568.00, y:1895.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:580.00, y:1863.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:363.00, y:2049.00, width:356.00, height:157.00), source=(157.00, 48.00), ratios=(2.267516,3.270833)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:2043.00, width:102.00, height:131.00), source=(45.00, 40.00), ratios=(2.266667,3.275)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:2046.00, width:179.00, height:128.00), source=(79.00, 39.00), ratios=(2.265823,3.282051)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:88.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:178.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:200.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:308.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:181.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:195.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Cascade 1: clearing 6 gems.
+3 Topaz gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Sapphire gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 2: clearing 6 gems.
+3 Ruby gem(s) were cleared through Match, but no active enemy had that weakness.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 3: clearing 3 gems.
+3 Amethyst gem(s) from Match dealt 45 damage to Reef Spearman.
+Cascade 4: clearing 3 gems.
+3 Emerald gem(s) were cleared through Match, but no active enemy had that weakness.
+Cascade 5: clearing 4 gems.
+3 Amber gem(s) were cleared through Match, but no active enemy had that weakness.
+Board settled.
+]]></output>
+        </test-case>
+        <test-case id="1819" name="EveryPlayableKeepsItsAbilitySymbol" fullname="ThreeZonePresentationTests.EveryPlayableKeepsItsAbilitySymbol" methodname="EveryPlayableKeepsItsAbilitySymbol" classname="ThreeZonePresentationTests" runstate="Runnable" seed="599156926" result="Passed" start-time="2026-10-17 19:33:19Z" end-time="2026-10-17 19:33:34Z" duration="15.704973" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Spawned Farmer in EnemySlot1. Category: Normal. Gem type: Emerald. Wave 1, Level 1, HP 30, Damage 5, Follow-up Damage 0, Attack Interval 10.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player RattleBones. HP: 100/100.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:82.00, y:1460.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1408.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1660.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:305.00, y:1413.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Spawned Farmer in EnemySlot1. Category: Normal. Gem type: Topaz. Wave 1, Level 1, HP 30, Damage 5, Follow-up Damage 0, Attack Interval 10.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player Bardley. HP: 80/80.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:82.00, y:1460.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1408.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1660.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:305.00, y:1393.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Spawned Basket Villager in EnemySlot1. Category: Normal. Gem type: Sapphire. Wave 1, Level 1, HP 35, Damage 5, Follow-up Damage 0, Attack Interval 9.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player Gideon Glass. HP: 90/90.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:82.00, y:1460.00, width:192.00, height:192.00), source=(64.00, 64.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1408.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1408.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1660.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Basket Villager_Level_1/VisualRoot bounds=(x:305.00, y:1393.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:392.00, y:120.00, width:296.00, height:88.00), source=(148.00, 44.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Spawned Farmer in EnemySlot1. Category: Normal. Gem type: Amber. Wave 1, Level 1, HP 30, Damage 5, Follow-up Damage 0, Attack Interval 10.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player Dungeon Attender. HP: 120/120.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:34.00, y:1412.00, width:288.00, height:288.00), source=(96.00, 96.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1360.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1360.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1360.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1708.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:305.00, y:1393.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:500.00, y:124.00, width:80.00, height:80.00), source=(80.00, 80.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+Spawned Farmer in EnemySlot1. Category: Normal. Gem type: Amethyst. Wave 1, Level 1, HP 30, Damage 5, Follow-up Damage 0, Attack Interval 10.00s, Special Turns 5
+Wave 1 started using rule 'Locals - Learning'. Planned: 1. Spawned: 1.
+Initialized player Kobold Gunner. HP: 85/85.
+Pixel layout validated: Screen 1080x1920; safe=(x:0.00, y:0.00, width:1080.00, height:1920.00); constraints=(x:0.00, y:0.00, width:1080.00, height:1920.00); logical viewport=(532.00, 952.00); physical viewport=(x:8.00, y:8.00, width:1064.00, height:1904.00); canvas scale=2; logical/physical=2; Top=(x:8.00, y:1248.00, width:1064.00, height:664.00); BoardArea=(x:88.00, y:332.00, width:904.00, height:904.00); Bottom=(x:8.00, y:8.00, width:1064.00, height:312.00); gaps=12,12; cutouts=0; bottom display clearance=8; safe clearance=8; board texel ratio=1.590811; origin=(540.00, 784.00); fractional board scale=True
+World frame ReferenceKitBoardFrame: min=(96.95, 334.81, 9.90), max=(992.00, 1230.98, 10.10), source=(400.00, 406.00), ratios=(2.24, 2.21)
+UI art Canvas/SafeArea/ReferenceKitRightBorderDressing bounds=(x:992.00, y:332.00, width:80.00, height:904.00), source=(33.00, 403.00), ratios=(2.424242,2.243176)
+UI art Canvas/SafeArea/ReferenceKitLeftBorderDressing bounds=(x:8.00, y:332.00, width:80.00, height:904.00), source=(37.00, 403.00), ratios=(2.162162,2.243176)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitFarWall bounds=(x:8.00, y:1511.00, width:1064.00, height:401.00), source=(470.00, 180.00), ratios=(2.26383,2.227778)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitArchDoor bounds=(x:445.00, y:1511.00, width:260.00, height:270.00), source=(115.00, 121.00), ratios=(2.26087,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitBattleFloor bounds=(x:318.00, y:1248.00, width:754.00, height:270.00), source=(333.00, 121.00), ratios=(2.264264,2.231405)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitForegroundProps bounds=(x:8.00, y:1248.00, width:1064.00, height:664.00), source=(470.00, 298.00), ratios=(2.26383,2.228188)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerFootMasonry bounds=(x:8.00, y:1248.00, width:310.00, height:40.00), source=(137.00, 18.00), ratios=(2.262774,2.222222)
+UI art Canvas/SafeArea/TopHUD/ReferenceKitScenery/ReferenceKitPlayerSurround bounds=(x:8.00, y:1288.00, width:317.00, height:562.00), source=(140.00, 252.00), ratios=(2.264286,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerMasonry bounds=(x:57.00, y:1319.00, width:238.00, height:500.00), source=(105.00, 224.00), ratios=(2.266667,2.232143)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerBanner bounds=(x:123.00, y:1674.00, width:110.00, height:145.00), source=(49.00, 65.00), ratios=(2.244898,2.230769)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerCharacter bounds=(x:34.00, y:1436.00, width:288.00, height:240.00), source=(96.00, 80.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:102.00, y:1384.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:250.00, y:1384.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:74.00, y:1384.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/PlayerPanel/PlayerAffinityGem bounds=(x:146.00, y:1684.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/PlayerSection/ReferenceKitPlayerFrame bounds=(x:32.00, y:1288.00, width:292.00, height:562.00), source=(129.00, 252.00), ratios=(2.263566,2.230159)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemySpawnAnchor/Farmer_Level_1/VisualRoot bounds=(x:305.00, y:1393.00, width:336.00, height:264.00), source=(112.00, 88.00), ratios=(3,3)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/StartPiece bounds=(x:396.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/EndPiece bounds=(x:544.00, y:1370.00, width:32.00, height:48.00), source=(16.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyHPBarBackground/GeneratedModularHealthBar/RankBadge bounds=(x:368.00, y:1370.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/EnemyWeaknessIndicator bounds=(x:440.00, y:1286.00, width:64.00, height:64.00), source=(32.00, 32.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Sword bounds=(x:484.00, y:1606.00, width:48.00, height:48.00), source=(24.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/GeneratedTopBattleLayout/EnemySection/EnemyArea/EnemySlot1/ActionIntent/Slot bounds=(x:496.00, y:1574.00, width:24.00, height:24.00), source=(12.00, 12.00), ratios=(2,2)
+UI art Canvas/SafeArea/TopHUD/WaveTracker bounds=(x:391.00, y:1760.00, width:305.00, height:105.00), source=(135.00, 47.00), ratios=(2.259259,2.234043)
+UI art Canvas/SafeArea/TopHUD/Settings bounds=(x:945.00, y:1756.00, width:102.00, height:89.00), source=(45.00, 40.00), ratios=(2.266667,2.225)
+UI art Canvas/SafeArea/TopHUD/CombatGuide bounds=(x:755.00, y:1758.00, width:179.00, height:87.00), source=(79.00, 39.00), ratios=(2.265823,2.230769)
+UI art Canvas/SafeArea/BottomHUD/ReferenceKitBottomMasonry bounds=(x:8.00, y:8.00, width:1064.00, height:312.00), source=(470.00, 135.00), ratios=(2.26383,2.311111)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton bounds=(x:364.00, y:98.00, width:352.00, height:132.00), source=(176.00, 66.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityIcon bounds=(x:508.00, y:132.00, width:64.00, height:64.00), source=(64.00, 64.00), ratios=(1,1)
+UI art Canvas/SafeArea/BottomHUD/AbilityButton/AbilityEnergyBar/EnergyFrame bounds=(x:393.00, y:228.00, width:294.00, height:48.00), source=(147.00, 24.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion bounds=(x:206.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/HealthPotion/Icon bounds=(x:228.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+UI art Canvas/SafeArea/BottomHUD/Bomb bounds=(x:734.00, y:101.00, width:140.00, height:126.00), source=(70.00, 63.00), ratios=(2,2)
+UI art Canvas/SafeArea/BottomHUD/Bomb/Icon bounds=(x:756.00, y:116.00, width:96.00, height:96.00), source=(24.00, 24.00), ratios=(4,4)
+
+Board entrance complete.
+]]></output>
+        </test-case>
+        <test-case id="1820" name="NativeExportsAndSharedSkins" fullname="ThreeZonePresentationTests.NativeExportsAndSharedSkins" methodname="NativeExportsAndSharedSkins" classname="ThreeZonePresentationTests" runstate="Runnable" seed="336330651" result="Passed" start-time="2026-10-17 19:33:34Z" end-time="2026-10-17 19:33:35Z" duration="0.539057" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1821" name="ReferenceCompositionKeepsNativeControlsAligned" fullname="ThreeZonePresentationTests.ReferenceCompositionKeepsNativeControlsAligned" methodname="ReferenceCompositionKeepsNativeControlsAligned" classname="ThreeZonePresentationTests" runstate="Runnable" seed="1695597232" result="Passed" start-time="2026-10-17 19:33:35Z" end-time="2026-10-17 19:33:35Z" duration="0.001735" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/USER/AppData/LocalLow/Blank/Dungeon Matcher\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

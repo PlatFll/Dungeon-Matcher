@@ -72,8 +72,9 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         if(dungeon)
         {
             ReferenceLayer(layers,"FarWall",new Rect(0,0,470,180),new Vector2(470,298));
-            ReferenceLayer(layers,"ArchDoor",new Rect(180,58,115,122),new Vector2(470,298));
+            ReferenceLayer(layers,"ArchDoor",new Rect(193,59,115,121),new Vector2(470,298));
             ReferenceLayer(layers,"BattleFloor",new Rect(137,177,333,121),new Vector2(470,298));
+            ReferenceLayer(layers,"ForegroundProps",new Rect(0,0,470,298),new Vector2(470,298));
             ReferenceLayer(layers,"PlayerFootMasonry",new Rect(0,280,137,18),new Vector2(470,298));
             ReferenceLayer(layers,"PlayerSurround",new Rect(0,28,140,252),new Vector2(470,298));
         }
