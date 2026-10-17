@@ -1,0 +1,62 @@
+{
+  "status": "Passed; user artistic review pending",
+  "tests": {
+    "id": "2",
+    "testcasecount": "4",
+    "result": "Passed",
+    "total": "4",
+    "passed": "4",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-17 19:33:22Z",
+    "end-time": "2026-10-17 19:33:35Z",
+    "duration": "12.9906507"
+  },
+  "unity_version": "6000.3.19f1",
+  "validator": {
+    "exit_code": 0,
+    "sha256": "0967ae6669785ef1855beb8da70b7a37a31bdae4dc58fe36f8644f4c14e02068",
+    "original_log": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-4f9c4a83-5b7f-4289-a4fb-5246abebf0f3.log"
+  },
+  "source_hashes": {
+    "Assets/_Game/Scripts/UI/DungeonPresentationArt.cs": "3eedb7aee96498cd62260951c4df3e2af00997fdf25abe8e6be1e0a953f67bf1",
+    "Assets/_Game/Scripts/Editor/BattlePresentationImporter.cs": "6ca1b45bff900cdb7ef6bc38bca7446474d9fb97cde75cd183382893f62ba2ae",
+    "Assets/_Game/Scripts/Editor/ThreeZonePresentationTests.cs": "b6cc40c8b0444d65f267888778eec1cc7aa586ea8874cd9487c71772e973a1dc"
+  },
+  "revised_runtime_exports": {
+    "ArchDoor.png": "e7f2c7e8facc255ea6505bc17c54a24f8c402561992a9d22d1c6b1925a5c8ad6",
+    "BattleFloor.png": "bd0294eae3e15a415ef3756d2bc5771a69df8ffe487a58f0a000643534316589",
+    "BoardBL.png": "1b52ce3eab831438ac043982e19773d467d8057db4e0ff2c4af18ccbc0da1272",
+    "BoardBottom.png": "31e79a29e546a9505c60b3bafc14c81b0dd718906fb2bbb16620a2df5e550a8b",
+    "BoardBR.png": "d5081b396ac3e91faa7cc4e106b09aebc5f04ff284a7b3d060ea0ff8d5eb6d73",
+    "BoardFrame.png": "02616167b40fb660550bfc733f40c1e0ed5bedb98e16eb3d2d9bf782eead5772",
+    "BoardLeft.png": "118801d54bc1ffbf195c40fa432e7da6e009a8649ba0d65c0a67e72bcae7731c",
+    "BoardRight.png": "8492b91b4d62ad3786299f8bf61f93ba14fba2ada50750c43f8e36f66515e2db",
+    "BoardTL.png": "078591dcf65c0ce6641ff906c8bdd490abccccdc26235b2c59a7e1507f12939f",
+    "BoardTop.png": "1bfbeb5cc2b3c5e9a64edcf020459ebd17e769b71ad5fa8239d0ffbc18a5e314",
+    "BoardTR.png": "023670726f41cb713e9c892f717302d368aaae9817a98e810345b2fcecdd2fd5",
+    "BottomMasonry.png": "2b17f77e580042473359ae1edf9782f45c31330bcc1ff42fa4ae40092eb0e051",
+    "FarWall.png": "39b6779f167678c0cd6e8094dcb81b58ed7149b09d43c9f60fa93966bbf0d8ca",
+    "ForegroundProps.png": "d0cc12ea47f3dd7994990d18e83c13617d075e9b3078b403d37dd2e5239919c2",
+    "LeftBorderDressing.png": "b9e5f2abb197a32b70c8e0aaa74673aee7499ffc4171069d857106f3aef365f3",
+    "PlayerBanner.png": "c2c8d9b4cf8250b81c908c0676cde37f9b69f48d3422fac212de335b8a068d2d",
+    "PlayerFootMasonry.png": "8c9789a0809339372e58a01e6fc7470631efdd7e0c324892fdc2b64268b3855c",
+    "PlayerFrame.png": "bd1820ae6070a9408e3f7433f7d6e316322a10625c25ef0d25891aa64690bd5e",
+    "PlayerMasonry.png": "2d0974d5228bef6b0952eb304528cfe10694e77c65a45f840293e91ed5bded9e",
+    "PlayerSurround.png": "025168aed85fff3b3a314976a4ceb97c0a419711d83083844d7b596079d8ea53",
+    "RightBorderDressing.png": "bb575798d303bf73162aba206bda394afb9804e518088a749b53e216bacf6626",
+    "WaveHeader.png": "5a9c653e1b18c7311b25e09ba631f27d520ac6645a215150255588646fe26e09"
+  },
+  "generation_calls": 0,
+  "audio_muted": true,
+  "physical_device_tested": false,
+  "captures": {
+    "Unity-1080.png": "c989af56147d27b06756fe5496cb407cc66931ee70b70a8d7c62d24cfa0fb5d1",
+    "Unity-1080x2400.png": "89abfc1de5cd1443808f05b86ddcb54bca602ed017688aec9cc4e1592ae73b0b",
+    "Unity-720x1280.png": "32f4aa3fe7a413237c6e7cc7580f94546a205799f5b33f34e3af3edbbd3e3b9f"
+  }
+}

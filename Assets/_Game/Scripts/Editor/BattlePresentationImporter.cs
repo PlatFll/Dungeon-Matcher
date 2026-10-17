@@ -23,7 +23,9 @@ public static class BattlePresentationImporter
         EditorUtility.audioMasterMute=true;
         string destination=Target+"/Reference"+zone;
         Directory.CreateDirectory(destination);
-        foreach(string file in Directory.GetFiles("ArtSource/BattlePresentation/"+zone+"ReferenceKit/native","*.png"))
+        var files=Directory.GetFiles("ArtSource/BattlePresentation/"+zone+"ReferenceKit/native","*.png").ToList();
+        if(zone=="Dungeon")files.Add("ArtSource/BattlePresentation/DungeonMockupRevision/native/ForegroundProps.png");
+        foreach(string file in files)
         {
             string name=Path.GetFileName(file);
             // The assembly and eight-cell study are review-only, never gameplay textures.
@@ -32,7 +34,12 @@ public static class BattlePresentationImporter
             if(zone!="Dungeon" && name.StartsWith("Shared"))continue;
             string path=destination+"/"+name;
             string correction="ArtSource/BattlePresentation/ReferenceIntegration/native/"+zone+"/"+name;
-            File.Copy(File.Exists(correction)?correction:file,path,true);AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+            string revision="ArtSource/BattlePresentation/DungeonMockupRevision/native/"+name;
+            // The new Dungeon-only dissection keeps the global control/cell
+            // family intact in Forest and Court. Original kits remain history.
+            string source=zone=="Dungeon" && !name.StartsWith("Shared") && !name.StartsWith("EmptyCell") && File.Exists(revision)
+                ? revision : File.Exists(correction)?correction:file;
+            File.Copy(source,path,true);AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
             var importer=(TextureImporter)AssetImporter.GetAtPath(path);
             importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
             importer.spritePixelsPerUnit=64;importer.filterMode=FilterMode.Point;importer.mipmapEnabled=false;

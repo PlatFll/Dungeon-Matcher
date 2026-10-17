@@ -1,0 +1,737 @@
+{
+  "status": "Passed native checks; visual review separate",
+  "native_size": [
+    470,
+    836
+  ],
+  "palette_budget": 84,
+  "generation_calls": 0,
+  "assets": [
+    {
+      "name": "ArchDoor",
+      "size": [
+        115,
+        121
+      ],
+      "opaque_colors": 51,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e7f2c7e8facc255ea6505bc17c54a24f8c402561992a9d22d1c6b1925a5c8ad6",
+      "ase_sha256": "10461f6451da278e96c9330726d82e401d60677abb7a07b3a632a41116c6a77c",
+      "layers": [
+        "ArchDoor"
+      ]
+    },
+    {
+      "name": "BattleFloor",
+      "size": [
+        333,
+        121
+      ],
+      "opaque_colors": 43,
+      "alpha": [
+        255
+      ],
+      "sha256": "bd0294eae3e15a415ef3756d2bc5771a69df8ffe487a58f0a000643534316589",
+      "ase_sha256": "cfc1e7cdf84226df74ebec0c3468e54beca97d21869776220ee9556cf953d04a",
+      "layers": [
+        "BattleFloor"
+      ]
+    },
+    {
+      "name": "BoardBL",
+      "size": [
+        24,
+        24
+      ],
+      "opaque_colors": 41,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1b52ce3eab831438ac043982e19773d467d8057db4e0ff2c4af18ccbc0da1272",
+      "ase_sha256": "bea8931851a1ec4b91aa746ac0afa747c62a596e40573fd7d69fae64ff6c168e",
+      "layers": [
+        "BoardBL"
+      ]
+    },
+    {
+      "name": "BoardBottom",
+      "size": [
+        352,
+        19
+      ],
+      "opaque_colors": 44,
+      "alpha": [
+        255
+      ],
+      "sha256": "31e79a29e546a9505c60b3bafc14c81b0dd718906fb2bbb16620a2df5e550a8b",
+      "ase_sha256": "8e58d2f48b9970f08aee7eaf1eca15dfc5b3ba7ef2f30154e2f925d12659ec08",
+      "layers": [
+        "BoardBottom"
+      ]
+    },
+    {
+      "name": "BoardBR",
+      "size": [
+        24,
+        24
+      ],
+      "opaque_colors": 44,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d5081b396ac3e91faa7cc4e106b09aebc5f04ff284a7b3d060ea0ff8d5eb6d73",
+      "ase_sha256": "fc25343e00ab234b4768154610e274bf7d6a8a7d4c1e6457b74734f20663d017",
+      "layers": [
+        "BoardBR"
+      ]
+    },
+    {
+      "name": "BoardFrame",
+      "size": [
+        400,
+        406
+      ],
+      "opaque_colors": 66,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "02616167b40fb660550bfc733f40c1e0ed5bedb98e16eb3d2d9bf782eead5772",
+      "ase_sha256": "6d8dfd2ca08d5dc86cffc9a25bcc400abe18082fbfefc8fa8edb27b81f4db0e8",
+      "layers": [
+        "BoardFrame"
+      ]
+    },
+    {
+      "name": "BoardLeft",
+      "size": [
+        16,
+        358
+      ],
+      "opaque_colors": 49,
+      "alpha": [
+        255
+      ],
+      "sha256": "118801d54bc1ffbf195c40fa432e7da6e009a8649ba0d65c0a67e72bcae7731c",
+      "ase_sha256": "20289fc0deddf5708c0e690a9bf7c1f5a6a3f8fb4c65fd5bef58b9cbd70089e2",
+      "layers": [
+        "BoardLeft"
+      ]
+    },
+    {
+      "name": "BoardRight",
+      "size": [
+        20,
+        358
+      ],
+      "opaque_colors": 52,
+      "alpha": [
+        255
+      ],
+      "sha256": "8492b91b4d62ad3786299f8bf61f93ba14fba2ada50750c43f8e36f66515e2db",
+      "ase_sha256": "260d2f2f9167b959a1a6d1054ad695a62967ddd3985e51842bcf85e03db5a21b",
+      "layers": [
+        "BoardRight"
+      ]
+    },
+    {
+      "name": "BoardTL",
+      "size": [
+        24,
+        24
+      ],
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "078591dcf65c0ce6641ff906c8bdd490abccccdc26235b2c59a7e1507f12939f",
+      "ase_sha256": "bc3b333a1f3ea8e86bd844190b79143ecc7cd86248e663a3f3c4420276fc8db5",
+      "layers": [
+        "BoardTL"
+      ]
+    },
+    {
+      "name": "BoardTop",
+      "size": [
+        352,
+        18
+      ],
+      "opaque_colors": 44,
+      "alpha": [
+        255
+      ],
+      "sha256": "1bfbeb5cc2b3c5e9a64edcf020459ebd17e769b71ad5fa8239d0ffbc18a5e314",
+      "ase_sha256": "e51d65405b2e9d2ab76be2a61dbf218e699d4776f02a5fbd7e774123f749096c",
+      "layers": [
+        "BoardTop"
+      ]
+    },
+    {
+      "name": "BoardTR",
+      "size": [
+        24,
+        24
+      ],
+      "opaque_colors": 46,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "023670726f41cb713e9c892f717302d368aaae9817a98e810345b2fcecdd2fd5",
+      "ase_sha256": "3d8fd4ffe60ed3c289b4df0869c7537d67eb53038b0536ad07e3379e285d852e",
+      "layers": [
+        "BoardTR"
+      ]
+    },
+    {
+      "name": "BoardWell",
+      "size": [
+        364,
+        369
+      ],
+      "opaque_colors": 38,
+      "alpha": [
+        255
+      ],
+      "sha256": "b982a6df15904ba29268147812d0bbfe18ac3500d1402055beb3acaa8634724d",
+      "ase_sha256": "3c9722acbf02273e7e4502c9b4724b54a1a7bf49cfc1c216631489cfe4b70dd0",
+      "layers": [
+        "BoardWell"
+      ]
+    },
+    {
+      "name": "BottomMasonry",
+      "size": [
+        470,
+        135
+      ],
+      "opaque_colors": 46,
+      "alpha": [
+        255
+      ],
+      "sha256": "2b17f77e580042473359ae1edf9782f45c31330bcc1ff42fa4ae40092eb0e051",
+      "ase_sha256": "c89c449984998d9e877db6b1eb223dc48a3343e166d7498f3bc20749f7218e35",
+      "layers": [
+        "BottomMasonry"
+      ]
+    },
+    {
+      "name": "DungeonArtOnly",
+      "size": [
+        470,
+        836
+      ],
+      "opaque_colors": 84,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1073619960bd05dc5cb0ff3ed8470d9691512753f1bf2c8a3e648b931fbb1702",
+      "ase_sha256": "852ce6bd76c1c7481f35da624396a27c78934dac49ae239cee9cc85626a9c276",
+      "layers": [
+        "DungeonArtOnly"
+      ]
+    },
+    {
+      "name": "DungeonLayered",
+      "size": [
+        470,
+        836
+      ],
+      "opaque_colors": 84,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1073619960bd05dc5cb0ff3ed8470d9691512753f1bf2c8a3e648b931fbb1702",
+      "ase_sha256": "ba568242232f621312b5911faaab8713c7777ceede2064057efde560efc320ed",
+      "layers": [
+        "FarWall",
+        "ArchDoor",
+        "BattleFloor",
+        "ForegroundProps",
+        "PlayerFootMasonry",
+        "PlayerSurround",
+        "PlayerMasonry",
+        "PlayerFrame",
+        "PlayerBanner",
+        "WaveHeader",
+        "SharedGuide",
+        "SharedSettings",
+        "BoardFrame",
+        "BoardWell",
+        "LeftBorderDressing",
+        "RightBorderDressing",
+        "BottomMasonry",
+        "SharedEnergy",
+        "SharedAbility",
+        "SharedPotionHolder",
+        "SharedBombHolder"
+      ]
+    },
+    {
+      "name": "EmptyCell0",
+      "size": [
+        46,
+        46
+      ],
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "sha256": "eff81887c202ccbddeb79f7137f52e7ab58d9a4c2df3f9aa661a19347133672a",
+      "ase_sha256": "dac5f2bad1262057c059d5fd4385740508d9a6b69ce24d407c070b79630f6ce8",
+      "layers": [
+        "EmptyCell0"
+      ]
+    },
+    {
+      "name": "EmptyCell1",
+      "size": [
+        45,
+        46
+      ],
+      "opaque_colors": 9,
+      "alpha": [
+        255
+      ],
+      "sha256": "c5b73071362e72c8679c7782a5c0e67c65b3a134d3cf159813a107fcd7018219",
+      "ase_sha256": "e690a19f49ec2cc26caea901ee63a0e1b651a14432b959f862ba6189247e6d33",
+      "layers": [
+        "EmptyCell1"
+      ]
+    },
+    {
+      "name": "EmptyCell2",
+      "size": [
+        46,
+        46
+      ],
+      "opaque_colors": 9,
+      "alpha": [
+        255
+      ],
+      "sha256": "452a4603e6b53ca913824a2b4d84290fb42215a5693062e88f973ffbd9256dd6",
+      "ase_sha256": "768ca133e52b5ba7d16b413c29d17378e3ad429a57a66c9f998fb6270dcec10c",
+      "layers": [
+        "EmptyCell2"
+      ]
+    },
+    {
+      "name": "FarWall",
+      "size": [
+        470,
+        180
+      ],
+      "opaque_colors": 68,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "39b6779f167678c0cd6e8094dcb81b58ed7149b09d43c9f60fa93966bbf0d8ca",
+      "ase_sha256": "20915c5eccea5fe9f9098271c6442490bdaaa6b9cfcff48dabdb5a6a62091d26",
+      "layers": [
+        "FarWall"
+      ]
+    },
+    {
+      "name": "ForegroundProps",
+      "size": [
+        470,
+        298
+      ],
+      "opaque_colors": 72,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d0cc12ea47f3dd7994990d18e83c13617d075e9b3078b403d37dd2e5239919c2",
+      "ase_sha256": "4cddd0796aa552a8d44abf690690be9fb341123f05141c53809f5b8810652e48",
+      "layers": [
+        "ForegroundProps"
+      ]
+    },
+    {
+      "name": "LeftBorderDressing",
+      "size": [
+        37,
+        403
+      ],
+      "opaque_colors": 67,
+      "alpha": [
+        255
+      ],
+      "sha256": "b9e5f2abb197a32b70c8e0aaa74673aee7499ffc4171069d857106f3aef365f3",
+      "ase_sha256": "24e6b101eea97ed100567326188542f415adc32be3df1e1875cd6eb692dc28d7",
+      "layers": [
+        "LeftBorderDressing"
+      ]
+    },
+    {
+      "name": "NearLeftBones",
+      "size": [
+        24,
+        40
+      ],
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "cc46d029197df47946ae5fd3896fce9cccaada6e6b089cf401ca8aef2ec34d25",
+      "ase_sha256": "9300dbaff0aec3bf28f404af15f45736e9c9fab8b719bb901e133875462587e9",
+      "layers": [
+        "NearLeftBones"
+      ]
+    },
+    {
+      "name": "NearRightBarrel",
+      "size": [
+        38,
+        46
+      ],
+      "opaque_colors": 53,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bf571eb6bf81fbf644dba846613f0f14395be91de6a140d3b8840b2d75a9f9a6",
+      "ase_sha256": "f8f71c2746574fe53cb6f6845c7681beed8010004e4ee07df37a00ca2a954a26",
+      "layers": [
+        "NearRightBarrel"
+      ]
+    },
+    {
+      "name": "NearRightBones",
+      "size": [
+        34,
+        38
+      ],
+      "opaque_colors": 51,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8680b2dc3252fe943ec0439598c9606eb5e29801602c3a1b3987b247153353ef",
+      "ase_sha256": "0ee2986a1358b8c8577a7d9bfffeea7e28a31dc8fb172414b224abb157528a56",
+      "layers": [
+        "NearRightBones"
+      ]
+    },
+    {
+      "name": "PlayerBanner",
+      "size": [
+        49,
+        65
+      ],
+      "opaque_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c2c8d9b4cf8250b81c908c0676cde37f9b69f48d3422fac212de335b8a068d2d",
+      "ase_sha256": "ef9cfcd8fce37abc8749e6bb35fb41b93cf478e30eb04c61155be0355debd976",
+      "layers": [
+        "PlayerBanner"
+      ]
+    },
+    {
+      "name": "PlayerFootMasonry",
+      "size": [
+        137,
+        18
+      ],
+      "opaque_colors": 33,
+      "alpha": [
+        255
+      ],
+      "sha256": "8c9789a0809339372e58a01e6fc7470631efdd7e0c324892fdc2b64268b3855c",
+      "ase_sha256": "5b996502577cd6472727bc044ece9cb43803a8c769882f8580acb6d984bd6906",
+      "layers": [
+        "PlayerFootMasonry"
+      ]
+    },
+    {
+      "name": "PlayerFrame",
+      "size": [
+        129,
+        252
+      ],
+      "opaque_colors": 74,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bd1820ae6070a9408e3f7433f7d6e316322a10625c25ef0d25891aa64690bd5e",
+      "ase_sha256": "f4a5fd16bc674fc1d6a66cc2cee28ccc9474e6e88f6d5b5a39710436d03ef80a",
+      "layers": [
+        "PlayerFrame"
+      ]
+    },
+    {
+      "name": "PlayerMasonry",
+      "size": [
+        105,
+        224
+      ],
+      "opaque_colors": 31,
+      "alpha": [
+        255
+      ],
+      "sha256": "2d0974d5228bef6b0952eb304528cfe10694e77c65a45f840293e91ed5bded9e",
+      "ase_sha256": "95fc238f5ac8b3e4778cb5e84698834e7a7a690aaf864a2c4dffd998741b0f78",
+      "layers": [
+        "PlayerMasonry"
+      ]
+    },
+    {
+      "name": "PlayerSurround",
+      "size": [
+        140,
+        252
+      ],
+      "opaque_colors": 40,
+      "alpha": [
+        255
+      ],
+      "sha256": "025168aed85fff3b3a314976a4ceb97c0a419711d83083844d7b596079d8ea53",
+      "ase_sha256": "a30512d4e0799c49d0ff41b7ba9e8aa3db202aba2a075378bd988c36f4aa8eb4",
+      "layers": [
+        "PlayerSurround"
+      ]
+    },
+    {
+      "name": "RearBarrels",
+      "size": [
+        35,
+        46
+      ],
+      "opaque_colors": 47,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "391367728b2acc3e7a71881caf687ab01ef149c3800b2319be2671401684b2cd",
+      "ase_sha256": "679dd28e97cee8bdce8d1ba4afe428e7da7f4141c71de5312a1fcff185fafa52",
+      "layers": [
+        "RearBarrels"
+      ]
+    },
+    {
+      "name": "RearBones",
+      "size": [
+        28,
+        34
+      ],
+      "opaque_colors": 39,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3304721dce424dc55cfdf183acbf11a01d1f279baf011447b999d4df0dc1c770",
+      "ase_sha256": "79b3d64479bcfff48486610a58697a7f5b168348a406a0ce821d164da72d87af",
+      "layers": [
+        "RearBones"
+      ]
+    },
+    {
+      "name": "RightBorderDressing",
+      "size": [
+        33,
+        403
+      ],
+      "opaque_colors": 68,
+      "alpha": [
+        255
+      ],
+      "sha256": "bb575798d303bf73162aba206bda394afb9804e518088a749b53e216bacf6626",
+      "ase_sha256": "cc9ea852c27ca6687a3700b9a7ff51437715910ce1704373faa928fff5df3ecd",
+      "layers": [
+        "RightBorderDressing"
+      ]
+    },
+    {
+      "name": "SharedAbility",
+      "size": [
+        176,
+        66
+      ],
+      "opaque_colors": 79,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "4d4ad982f56849c9db763ae0b7d80dae76124b8517cedc71901274435491fd72",
+      "ase_sha256": "e23613e78935d61a0915ef3aad871e61c5ad458177a9f5154aad6aaf94542b1c",
+      "layers": [
+        "SharedAbility"
+      ]
+    },
+    {
+      "name": "SharedBombHolder",
+      "size": [
+        70,
+        63
+      ],
+      "opaque_colors": 38,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0baf3bcf9b215a987520a2b5943819e3d339d31e1eff23c7d8cea79c0c2cff6f",
+      "ase_sha256": "5c65ad3c7352ef6a374db4b9b504dcd782d17caf46b4fd7dea68a2d53889064b",
+      "layers": [
+        "SharedBombHolder"
+      ]
+    },
+    {
+      "name": "SharedEnergy",
+      "size": [
+        147,
+        24
+      ],
+      "opaque_colors": 44,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d671c1e28075297c9d7dc9bfb75c88500880ac00eca09145c7d98be4dc6913d2",
+      "ase_sha256": "c62e5f62a0644e24b4277aef4e2e2ad11b702ebfe72df7a211691cdfd7d4586b",
+      "layers": [
+        "SharedEnergy"
+      ]
+    },
+    {
+      "name": "SharedGuide",
+      "size": [
+        79,
+        39
+      ],
+      "opaque_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f50f74aa10e19eaeba2c2406ccf3cd7c850568e26adb7076c569c6aae849c435",
+      "ase_sha256": "077e8371dceb2d0d35f2ed665d959824da6005ac2c8fde21c6230b7337aace07",
+      "layers": [
+        "SharedGuide"
+      ]
+    },
+    {
+      "name": "SharedPotionHolder",
+      "size": [
+        70,
+        63
+      ],
+      "opaque_colors": 40,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "953b33077b50ae750e0d8ac08af4897d9412ad74dfd18251df4c04af95f98074",
+      "ase_sha256": "347bdca17b61765f6de3d3d8805818ca9cdfc7d06a8476ab3dabad4d37c0b477",
+      "layers": [
+        "SharedPotionHolder"
+      ]
+    },
+    {
+      "name": "SharedSettings",
+      "size": [
+        45,
+        40
+      ],
+      "opaque_colors": 46,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "eb56746c3e44aee0a4d8ef0f4c48d5bceb38806a9b7a6c525b57d7edca8585f0",
+      "ase_sha256": "2d50289af16dbbf81d95c976150266de12ad1c6f8b93dc6063d8fc62482f15d9",
+      "layers": [
+        "SharedSettings"
+      ]
+    },
+    {
+      "name": "TopHudBackground",
+      "size": [
+        470,
+        298
+      ],
+      "opaque_colors": 75,
+      "alpha": [
+        255
+      ],
+      "sha256": "d338cd3abd331d9a0914cf5bdc6d449ff3fcd8882b46f38732b4c80073cedbd4",
+      "ase_sha256": "8f19704f377aa251970738766522bf5ecfd2665dceb4346fd0cf0a8b50df079e",
+      "layers": [
+        "TopHudBackground"
+      ]
+    },
+    {
+      "name": "TopLeftTorch",
+      "size": [
+        25,
+        65
+      ],
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "253fc8a80d4ad826723e9b52b43663b8378dae3da72d24d94424cfae4027666b",
+      "ase_sha256": "b68ab12415091af52d54e0a7f46709fa5cb084ea48500a956ef36d394b04d1b4",
+      "layers": [
+        "TopLeftTorch"
+      ]
+    },
+    {
+      "name": "TopRightTorch",
+      "size": [
+        26,
+        67
+      ],
+      "opaque_colors": 42,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "63b3db56347aae3a072dca9ef53970b9b02c76aecb04c2208db91d6e66bc0c73",
+      "ase_sha256": "0fcbf468575165a352bace7c8b1f8fcf5bdf8eefd648318718ba6807009f9c97",
+      "layers": [
+        "TopRightTorch"
+      ]
+    },
+    {
+      "name": "WaveHeader",
+      "size": [
+        135,
+        47
+      ],
+      "opaque_colors": 61,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "5a9c653e1b18c7311b25e09ba631f27d520ac6645a215150255588646fe26e09",
+      "ase_sha256": "b1067e6e9c4519c779d7363d0c9631ab484a5d8bee899955d2251fff1bb90486",
+      "layers": [
+        "WaveHeader"
+      ]
+    }
+  ],
+  "build_sources": {
+    "Build.js": "5c687cf4a0848d2ef802b7e99c7b21e665b1edb93300317857c641726b7777f6",
+    "TopReconstruction.js": "77bfa793f3a7242b07f9543b14a4d2a8c1cc9371330263c22028b14bb1efd2d8",
+    "Palette.js": "6141bffdda389ed858082311bd37d1eae6dcfe8efd941f3a4a46de2d2bcf3ced",
+    "LayeredMaster.js": "3ce989c47912249b3737fbe88bee0f7435ed98e43e27b21c94c0d9eef9377382"
+  },
+  "layered_master_layers": 21,
+  "protected_files_unchanged": 2683
+}

@@ -85,7 +85,14 @@ public sealed class ThreeZonePresentationTests
                         Assert.That(approvedFrame,Is.Not.Null);
                         Assert.That(approvedFrame.GetComponent<SpriteRenderer>().sprite,Is.SameAs(BattlePresentationSkin.Reference("BoardFrame")));
                         Assert.That(vista.GetComponentsInChildren<UnityEngine.Tilemaps.TilemapRenderer>().All(r=>r.forceRenderingOff),Is.True);
-                        Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(zone=="dungeon"?12:10));
+                        Assert.That(Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None).Length,Is.EqualTo(zone=="dungeon"?13:10));
+                        if(zone=="dungeon")
+                        {
+                            var props=GameObject.Find("ReferenceKitForegroundProps").GetComponent<Image>();
+                            Assert.That(props.sprite,Is.SameAs(BattlePresentationSkin.Reference("ForegroundProps")));
+                            Assert.That(props.GetComponent<ReferenceKitSurface>().Source,Is.EqualTo(new Rect(0,0,470,298)));
+                            Assert.That(props.transform.parent,Is.EqualTo(nativeLayout.TopHud.Find("ReferenceKitScenery")),"Props remain scenery behind live actors.");
+                        }
                         foreach(var surface in Object.FindObjectsByType<ReferenceKitSurface>(FindObjectsSortMode.None))
                             Assert.That(surface.GetComponent<Image>().raycastTarget,Is.EqualTo(surface.TryGetComponent<Button>(out _)));
                     }
@@ -195,6 +202,8 @@ public sealed class ThreeZonePresentationTests
             Assert.That(name,Is.Not.EqualTo("BoardWell.png"));
             string correction="ArtSource/BattlePresentation/ReferenceIntegration/native/"+zone+"/"+name;
             string source=File.Exists(correction)?correction:"ArtSource/BattlePresentation/"+zone+"ReferenceKit/native/"+name;
+            string revision="ArtSource/BattlePresentation/DungeonMockupRevision/native/"+name;
+            if(zone=="Dungeon" && !name.StartsWith("Shared") && !name.StartsWith("EmptyCell") && File.Exists(revision))source=revision;
             CollectionAssert.AreEqual(File.ReadAllBytes(source),File.ReadAllBytes(path));
         }
     }
