@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "compiler_validation": "Tools/Validate-Unity.ps1 completed successfully with Unity 6000.3.19f1; full local log Evidence/UnityCompiler.log",
+  "unity_tests": [
+    {
+      "name": "DungeonSideViewPreviewTests.NativeImportsMatchLibreSpriteExports",
+      "result": "Passed"
+    },
+    {
+      "name": "DungeonSideViewPreviewTests.ReferenceCompositionAndIntegerPixelCaptures",
+      "result": "Passed"
+    }
+  ],
+  "native_source_export_exact": 127,
+  "unity_import_bytes_exact": 127,
+  "binary_alpha": true,
+  "native_canvas": [
+    360,
+    640
+  ],
+  "placements": 497,
+  "empty_board_cells": 64,
+  "shallow_standing_strip_height": 12,
+  "front_ledge_height": 19,
+  "unclipped_standalone_placements": true,
+  "capture_checks": [
+    {
+      "file": "360x640.png",
+      "dimensions": [
+        360,
+        640
+      ],
+      "native_scale": 1,
+      "content_box": [
+        0,
+        0,
+        360,
+        640
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "720x1280.png",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "native_scale": 2,
+      "content_box": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x1920.png",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "native_scale": 3,
+      "content_box": [
+        0,
+        0,
+        1080,
+        1920
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x2400.png",
+      "dimensions": [
+        1080,
+        2400
+      ],
+      "native_scale": 3,
+      "content_box": [
+        0,
+        240,
+        1080,
+        2160
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x2400-safe-area.png",
+      "dimensions": [
+        1080,
+        2400
+      ],
+      "native_scale": 2,
+      "content_box": [
+        180,
+        580,
+        900,
+        1860
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    }
+  ],
+  "artistic_review": "Side-by-side reference reviewed at native and nearest 2x. Layout and anchors preserved; quiet repeated brick/cell surfaces and tiny lettering deliberately reconstructed. Visual judgement, not a measured fidelity score. User approval remains pending.",
+  "production_scene_changed": false,
+  "merged": false
+}
