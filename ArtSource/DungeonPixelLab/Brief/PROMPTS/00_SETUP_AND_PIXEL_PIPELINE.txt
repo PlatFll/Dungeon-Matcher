@@ -1,0 +1,13 @@
+STAGE 00 — SETUP, REFERENCE AUTHORITY, TECHNICAL PIXEL-SCALE DIAGNOSIS
+==================================================================
+Read START_HERE.txt and 00_GLOBAL_RULES.txt from the attached ZIP, then act ONLY on this stage. Do not generate scene art yet.
+
+1. Inspect repo AGENTS.md, latest main state, canonical art guide and register. Open actual current Rattlebones golden still at source resolution, plus current supporting Farmer/Pan and approved UI frame examples. Record source hashes/status, material ramps, native source pixel pitch.
+2. Create/verify safe dedicated branch `feature/dungeon-zone-pixellab-asset-library` and isolated worktree. Preserve all unrelated user changes. Do not merge. Decide where candidate raw images, native LibreSprite cels, PNGs, previews, progress state live.
+3. Check actual PixelLab MCP connectivity, balance, Tier 2 capability, exposed generation tools and supported style-reference paths. Read https://api.pixellab.ai/mcp/docs (and API v2 llms.txt if useful) and identify actual wall, sidescroller tileset, object, and UI image tool signatures and their credit cost. Do not invent tool names. NO PAID CALLS IN STAGE 00.
+4. Audit CURRENT blurry build chain by comparing one actual PNG source pixel region with imported Sprite settings and real 1x Game View pixels. Distinguish source AA/microshading from UI/camera noninteger scaling, render texture up/downscale, compression, sprite PPU inconsistency, screenshot/JPEG resampling. Diagnose, don't assert a cause without evidence. Inspect 360x640 logical target and representative 1080x1920 or current aspect. Preserve game layout behavior.
+5. Set up tiny empty isolated Unity art preview/scaffold (or safely reuse only PR #200's PREVIEW infrastructure, never the earlier art as accepted). Verify Point, FullRect, no compression/mipmap and exact scale where applicable; no characters/enemies/gems.
+6. Write candidate material swatches / art brief, NOT new global approved palette standards: dark indigo-violet mortar/wall, subdued brighter stone lip, silver UI material, purple gems, warm torches, dark portrait recess. Preserve established current production ramps where relevant. Define asset native size relationships without forcing all assets 64x64.
+7. Create Progress/State.json, Progress/PixelLab_Ledger.csv, Progress/Asset_Manifest.json; write `Stage_00.md` documenting cause(s) of blurriness: verified / ruled out / unknown. Capture baseline and a pixel-scale test if possible.
+
+GATE: actual golden PNG inspected; PixelLab tools and cost determined; new safe branch and preview scaffold established; blur diagnostic written. If PixelLab not connected, BLOCK and tell user exact connection issue, do not fake progress. STOP. Next is 01.

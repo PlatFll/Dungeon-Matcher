@@ -1,0 +1,12 @@
+STAGE 11 — GEM BOARD FRAME AND EMPTY CELLS
+=======================================
+Read shared rules and source identity of current LOCKED board/gems. ONLY new frame candidates and empty board cells, not any new gems or matches.
+
+Visual: Large dark 8×8 board in violet-chunky dungeon stone rails, corner luminous purple diamond fittings, subdued silver/stone upper bevel and deep insets. Board has slightly recessed dark blue/navy 8×8 cell surfaces with tidy simple bevels; quiet so actual colorful locked gems will remain visually dominant. No cobblestones or cracking within each cell.
+
+1. Through PixelLab, make a focused native corner or rail-family seed and optionally ONE clean empty cell tile; supported style refs: existing current UI frame/gem art + Rattlebones rendering discipline, without recoloring gems.
+2. Create modular top/bottom/left/right rails, corners, connector accents; build 8x8 cell field using established board pitch/dimensions after inspection, not guessed layouts. Do not stretch corners; avoid duplicate jewels on every repeat.
+3. Clip cells to the exact board interior and align at source scale. Validate pixel seams, 64 visible cell count, matching spacing, render all 4 borders.
+4. Inspect Unity at 360x640 logical and 1080x1920 screen, with empty board first; optional external QA overlay using current gem assets to confirm relative emphasis, not changing them.
+
+ACCEPT: precise dark board hierarchy, cell clarity, safe layout, compatible art and mechanical pitch; no overlap with top platform. STOP. NEXT: 12.

@@ -1,0 +1,6 @@
+We are RESETTING the dungeon visual asset-production METHOD, not resetting the game.
+Extract the attached Dungeon_Matcher_PixelLab_Staged_Asset_Production_Pack.zip. Read START_HERE.txt and 00_GLOBAL_RULES.txt. Do NOT execute all prompts at once. I will give you one numbered phase at a time.
+
+Use PixelLab as the original image-generation source for our new dungeon environment and UI art, using the latest verified Rattlebones golden PNG plus relevant supporting sprites as actual style-reference images when the chosen PixelLab tool supports image references. Generate by TEXT SPECIFICATION and ASSET FAMILY, not by attempting to reconstruct and slice the full mockup.
+
+Start only when I send 00_SETUP_AND_PIXEL_PIPELINE.txt. Always stop after finishing the current numbered stage with assets, real previews, credit accounting and a checkpoint. Never skip to the next phase, never merge, never replace production sprites/scenes until I approve final integration. Treat previous PR #200 as optional preview infrastructure, NOT art acceptance.

@@ -1,0 +1,13 @@
+STAGE 01 — PIXELLAB WALL MASONRY FAMILY (NOT PORTRAIT INSET)
+===========================================================
+Read 00_GLOBAL_RULES.txt, Stage_00 checkpoint and current guide. Perform ONLY this family. The goal is a complete NEW native PixelLab-origin WALL MATERIAL, not reusing the old 129 tiles.
+
+Art specification: Dark indigo/deep-violet dungeon castle brick wall, *front elevation*, tidy medium-large rectangular blocks with staggered horizontal mortar joints. Three dimensionality levels: deepest recessed mortar, quiet large base plane, selective slim top/left lit bevel. A few subdued individual purple accent bricks, NO busy chipped cobblestone, no large repeated banded shadows, no torch glows baked in. Big but not comically huge bricks at actual game display size. This must sit behind the arena and behind the top HUD without competing with sprites and legibility.
+
+1. Form a very specific PixelLab prompt for ONE flat repeatable wall material at native scale, and use actual golden images as supported style input. Choose genuine image/tiles generation tool and affordable size (e.g., 32/64px source) based on verified capabilities; this is NOT a sidescroller *floor* and NOT isometric.
+2. Run first PixelLab generation and inspect actual native pixels immediately. If needed perform up to one iterative guided refinement; don't keep generating blind alternatives.
+3. Author at least 3 meaningfully different subtle variants from the accepted PixelLab seed (not just cyclic shifts), plus matching edge/corner transition segments as required. If PixelLab offered a true connectable set, retain its intent but repair any seams in LibreSprite. These must be visually quiet variants, not randomly different architecture.
+4. Preserve raw PixelLab outputs and create new editable LibreSprite cels, export native PNG, assemble a 5x4 or larger alternating test field. Verify exact left/right/top/bottom joins; inspect at 1x and 4x.
+5. Render as wall in the isolated Unity preview at realistic visible area (no other new families). Verify actual scale and quiet value.
+
+ACCEPT: brick flow looks like one coherent side-view stone wall with no repeated obvious artificial seams, cracks, or blur; dark enough behind HUD. Log cost/provenance, include before-PixelLab vs after-LibreSprite pixel comparison and stage report. STOP. NEXT: 02.

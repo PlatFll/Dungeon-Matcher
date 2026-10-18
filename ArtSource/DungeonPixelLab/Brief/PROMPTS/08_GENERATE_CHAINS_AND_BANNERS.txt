@@ -1,0 +1,13 @@
+STAGE 08 — HANGING CHAINS + DUNGEON SKULL BANNERS
+================================================
+Read shared rules and latest accepted materials. ONLY these two related hanging prop types. Don't regenerate the gate/torch.
+
+Design A: dark forged iron chain links, warm small corrosion/rust accents, clear 1-pixel-outline joints at native scale, short hanging chain segment, top ceiling anchor and bottom termination. Nonintersecting links that repeat in a vertical strip without a lurch.
+Design B: quiet dark-plum vertical pennant with a simplified crowned skull crest in desaturated warm gold/rose, flat cloth folds with sparse lit plane, split/v-point bottom, tiny rod + clips. Large enough to read behind an enemy but never as bright as gems.
+
+1. PixelLab generate one transparent chain-segment object and one transparent banner object using supported refs where available. If generating both requires more than default budget, report costs and prioritize banner then chain; chain repetition could be native cleanup from PixelLab chain seed.
+2. In LibreSprite extract chain loop segment, anchor, hanging termination; author a banner at two sizes ONLY if needed by game actual render. No new avatar or image logo, keep emblem separated if helpful.
+3. Unity visual-test chain from top of screen and banners around gate + one within player portrait where appropriate. Position and overlap are separate from tile texture.
+4. Verify repeating links align, banner crests center, poles connect, underhang doesn't poke into Wave/Guide controls.
+
+ACCEPT: crisp iconography, discrete reusable assets, no torn motifs. STOP. NEXT: 09.

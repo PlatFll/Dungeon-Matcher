@@ -1,0 +1,13 @@
+STAGE 07 — TORCH PROP AND CONTROLLED TORCHLIGHT
+==============================================
+Read shared rules and accepted world materials. ONLY torch props and their light treatment; no barrels/chains/banner production in this stage.
+
+Design: one wall-mounted black cool iron brazier/torch, bright yellow-orange flame with restrained orange edge and few ember pixels, chunky silhouette and restrained 2-3 shade iron. 2D front/side side-scroller view. Torch must be on wall separate from floor. Flame should be a local focal accent, not a giant hazy gradient.
+
+1. Generate NEW native torch illustration in PixelLab, isolated transparent background with actual native style reference if supported. Do not generate torch plus full castle wall.
+2. In LibreSprite create torch mounting/fixture + optional flame layer separate; two mirrored placements may share source where correct. Avoid inaccurate mirrored highlights by touching up, not spending needless generations.
+3. Create compact pixel-cluster warm bounce-light overlay or local palette variants for bricks immediately next to torches; do NOT bake light all over the base wall tile, and do not use continuous blurred radial gradients.
+4. Preview both torches on Stage 01 wall framing Stage 05 gate; confirm amber light direction and actor contrast. Check all alpha values and no halos.
+5. Optional flame loop only if very low scope (e.g., 3-4 tiny frames); prioritize static still if quality/budget would suffer. User has not requested full VFX animation for this task.
+
+ACCEPT: clean flame silhouettes, visibly warm and localized walls, no blur. STOP. NEXT: 08.

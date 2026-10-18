@@ -1,0 +1,5 @@
+OPTIONAL STAGE 16 — RUN ONLY AFTER USER EXPLICITLY APPROVES THE FINAL ART
+========================================================================
+This stage must NOT run based on an internal 90% score, passing pixel QA, completion of stage 15, an open PR or a generated candidate. Wait for explicit user approval and identification of which assets/layout to accept.
+
+Then: inspect latest main/branch state and game architecture, write a small integration plan, preserve GUIDs/locked assets and actual live binding semantics. Replace ONLY approved Dungeon visuals through the existing presentation/zone layering code and appropriate data/serialized Unity references. Keep runtime board, damage, abilities, gems, characters, save/resume, menus and other zones unchanged. Test actual gameplay and multiple devices, display scale, collisions and safe areas, then present draft PR and wait for merge approval. Update art direction, reference status records and changelog ONLY as authorized by user's acceptance; no silent global new rule.

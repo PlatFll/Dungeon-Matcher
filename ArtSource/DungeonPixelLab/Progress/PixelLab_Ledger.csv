@@ -1,0 +1,5 @@
+stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,reference_image_paths,billed_generation_equivalents,outcome,raw_source_path,cleaned_path,notes
+00,2026-10-19,get_balance,,setup,Authenticated balance and tier lookup,,,0,SUCCESS,,,No generation request
+00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 create provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
+00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 one-direction object provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
+00,2026-10-19,get_balance,,setup,Ending balance verification,,,0,SUCCESS,,,1054.20 unchanged

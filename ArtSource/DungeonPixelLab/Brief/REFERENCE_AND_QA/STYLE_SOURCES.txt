@@ -1,0 +1,15 @@
+Do not use the historical board as PixelLab input. Inspect actual repo files, current guide and register.
+
+Current relative paths per October 14 golden register (verify at task runtime):
+- Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt — latest canonical rules
+- Docs/ArtDirection/Golden_Reference_Register.md — authoritative statuses
+- Docs/ArtDirection/Audit2026-10/media/skeleton-still.png — Rattlebones PRIMARY rendering discipline, 64x64
+- Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png — supporting warm human/tool examples
+- Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png — supporting practical cloth/cool iron
+- Current locked dungeon/UI frame assets and gem art from actual repo, not reconstructed from enlarged reference sheet
+
+Non-authoritative image files in this pack:
+- Dungeon_Composition_Mood_Only.png — prior conceptual layout/theme only. DO NOT slice it or send as full-scene conditioning.
+- Blurry_Failed_Build_Reference_ONLY.jpg — a screenshot of the earlier unsatisfactory game build; DO NOT use as source/style input or as pixel-quality ground truth (JPEG/resizing may itself introduce artifacts). Use it to understand the problem you're solving.
+
+Latest visual intent: new original PixelLab-authored material and ornament families, built into coherent 2D side-view stage, not exact copying of scene mockup.

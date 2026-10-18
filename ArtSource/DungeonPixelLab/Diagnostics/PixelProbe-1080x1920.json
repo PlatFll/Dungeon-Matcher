@@ -1,0 +1,103 @@
+{
+    "label": "PixelProbe-1080x1920",
+    "unityVersion": "6000.3.19f1",
+    "activeBuildTarget": "StandaloneWindows64",
+    "colorSpace": "Linear",
+    "width": 1080,
+    "height": 1920,
+    "qualityAntiAliasing": 0,
+    "canvasScale": 0.0,
+    "sprites": [
+        {
+            "name": "Stage00ExistingWallDIAGNOSTIC_ONLY",
+            "path": "Assets/_Game/Art/DungeonEnvironment/SideViewRebuild/Tiles_Wall/BackWallReference.png",
+            "rendering": "Simple",
+            "filter": "Point",
+            "format": "RGB24",
+            "mesh": "FullRect",
+            "screen": {
+                "serializedVersion": "2",
+                "x": 287.9999694824219,
+                "y": 95.99996948242188,
+                "width": 192.00003051757813,
+                "height": 95.99996948242188
+            },
+            "source": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 64.0,
+                "height": 32.0
+            },
+            "pixelsPerSourcePixel": {
+                "x": 3.000000476837158,
+                "y": 2.9999990463256838
+            },
+            "tint": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "ppu": 64.0,
+            "mipmaps": false,
+            "compressed": false,
+            "androidOverride": false
+        },
+        {
+            "name": "Stage00PixelScaleProbe",
+            "path": "Assets/_Game/Art/DungeonPixelLab/Diagnostics/PixelScaleProbe.png",
+            "rendering": "Simple",
+            "filter": "Point",
+            "format": "RGBA32",
+            "mesh": "FullRect",
+            "screen": {
+                "serializedVersion": "2",
+                "x": 95.99999237060547,
+                "y": 95.99996948242188,
+                "width": 96.0000228881836,
+                "height": 95.99996948242188
+            },
+            "source": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 32.0,
+                "height": 32.0
+            },
+            "pixelsPerSourcePixel": {
+                "x": 3.0000007152557375,
+                "y": 2.9999990463256838
+            },
+            "tint": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "ppu": 64.0,
+            "mipmaps": false,
+            "compressed": false,
+            "androidOverride": false
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Preview Camera",
+            "target": "screen",
+            "pipeline": "UniversalRP",
+            "orthographicSize": 15.0,
+            "renderScale": 1.0,
+            "hdr": false,
+            "msaa": false,
+            "dynamicResolution": false,
+            "pixels": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 1080.0,
+                "height": 1920.0
+            }
+        }
+    ]
+}

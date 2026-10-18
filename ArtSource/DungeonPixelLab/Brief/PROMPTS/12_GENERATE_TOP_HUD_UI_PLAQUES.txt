@@ -1,0 +1,12 @@
+STAGE 12 — WAVE SIGN, GUIDE BUTTON, SETTINGS GEAR FRAME
+=====================================================
+Read shared rules/previous checkpoints. ONLY the top fixed UI family, not the wall or portrait. Keep active UI behavior and labels dynamic.
+
+Design: Game's silver-purple chunky riveted plaques, dark insets, small violet sockets/gems, top-left metallic highlights. One large 'Wave' plaque, one smaller Guide rectangular button shell, one square Settings button shell with a readable gear icon. Hanging support chain/attachments may reuse Stage 08 chain art, but plaque corners should not impersonate character borders. Text stays actual existing Unity/Thaleah font, NOT baked from PixelLab.
+
+1. Generate in PixelLab a dedicated UI metal plaque/frame seed with corner and repeat texture as individual asset, no text, no full scene. If available, use appropriate PixelLab UI generating feature with real style references and true native source pixels.
+2. In LibreSprite build reusable corners/sides/joins and optional tiny skull/gear icon; native dimensions chosen from existing live HUD rectangles. Avoid overpacked sparkles, inconsistent purple framing or unreadable small bolts.
+3. Assemble in the isolated art-only Unity preview with live `WAVE 1` sample text, `GUIDE`, and gear symbol. Preserve runtime layout/safe-area behavior and hit-region structures by using separate visuals.
+4. Inspect at smallest supported screen sizes; avoid blur and ambiguous decorative density. UI must not blend into the wall.
+
+ACCEPT: visible readable live plaques with fitting metal/jewel language, precision source pixels. STOP. NEXT: 13.

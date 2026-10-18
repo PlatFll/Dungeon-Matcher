@@ -1,0 +1,12 @@
+STAGE 13 — BOTTOM HUD FRAME, ABILITY PANEL, POTION AND BOMB SHELLS
+===============================================================
+Read shared rules and accepted upper/board families. ONLY bottom UI art.
+
+Text design: dark recessed purple resonance/ability central panel with cool silver chunky metal trim, tiny orange rivets and purple magical motif, an elegant crowned skull identity centerpiece consistent with existing Rattlebones symbolic identity (NOT generated character portrait). Compact progress rail above. Matching pale silver supply/item button frames on either side holding separate approved potion/bomb concepts. Consistent with existing live game HUD geometry and control semantics. Continue the dungeon wall and buttresses visibly around and beneath buttons; do not create disconnected boulders/black corner wedges.
+
+1. Generate one PixelLab-centered ornamental silver-purple resonance-panel-frame seed and optional small supply-button shell seed, NOT the whole bottom UI screenshot. Verify actual current UI art locked status; new art is a candidate until approved.
+2. LibreSprite modularize repeat rails, four corners, dark inset, small jewel/bolt ornaments, progress bar frame and scalable button shells. Use existing potion/bomb icons if already approved; otherwise generate new only if user has authorized replacement (default don't replace icons).
+3. Assemble bottom HUD in Unity art preview; use live text and bars, no baked percentage/labels/count. Ensure lower gutter stone/corner masonry is connected to Stage 06 structure.
+4. Validate native readable material, no layout collision, masks and integer scale, black corner gaps absent.
+
+ACCEPT: polished coherent bottom interface matching upper/board style, no fake gameplay values. STOP. NEXT: 14.

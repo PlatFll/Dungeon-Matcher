@@ -1,0 +1,13 @@
+STAGE 10 — PLAYER PORTRAIT FRAME AND INNER COMPOSITION
+====================================================
+Read shared rules, especially 'existing locked frame authority', plus accepted new Stage 02 recess. ONLY the frame construction. Do not generate a full portrait with Rattlebones painted inside.
+
+Visual design: Dungeon Matcher's chunky silver/cool-stone purple-border portrait frame with jewel accents on corners, 1-pixel source outlines, restrained bright metal bevels, dark separate inset backdrop, small top crowned-skull pennant, HP shell and red heart. New PixelLab-native frame art can update decoration but may NOT replace official character or locked gem sprites.
+
+1. Use PixelLab to generate a single focused FRAME CORNER/RAIL ORNAMENT DESIGN as isolated art and optionally a small silver clamp/connector style. Use actual UI frame samples and native golden character style references if tool supports them; do not prompt 'complete character portrait HUD 512px'.
+2. In LibreSprite extract/adapt modular top/bottom/side repeat rails, correct jewel corners, metal joints, accents; use nine-slice equivalent. Rails must tile unscaled with no stretched corner pixels.
+3. Insert Stage 02 dark portrait recess as a clipped/tiled interior behind the frame. Keep background inside frame boundaries ALWAYS; render oversized probe.
+4. HP bar/heart remain live and dynamic UI; if new artwork is needed author frame shell/icon only; no baked 100/100 text or fixed values.
+5. Inspect the real Unity portrait area at 1x and against present Rattlebones SOURCE sprite on an isolated QA sheet (no gameplay scene integration now). Ensure character readability and no frame crowding.
+
+ACCEPT: separate cozy character chamber, modular crisp frame pieces, no leakage or overstretched rails. STOP. NEXT: 11.
