@@ -1,7 +1,7 @@
 # Approved dungeon art in the live battle
 
 The approved side-view kit from PR #201 now decorates the production `Game` scene
-on `codex/dungeon-approved-battle-integration`. **Unmerged, awaiting user review.**
+on `codex/dungeon-approved-battle-integration`. **User approved PR #202 for merge on 2026-10-19.**
 Open [Review.html](Review.html) for real before/after Game View captures.
 
 ## What changed

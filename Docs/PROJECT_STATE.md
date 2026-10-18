@@ -35,7 +35,7 @@ retain their prior owners and positions. Shared controls/cells, character/gem ar
 Forest/Court and other zones remain unchanged. Current production-scene captures,
 baseline geometry comparisons and executed checks are in
 [the battle integration record](../ArtSource/DungeonEnvironment/BattleIntegration/README.md).
-This integration remains unmerged pending the user's review. The approved native
+The user approved merging this integration in PR #202 on 2026-10-19. The approved native
 source library is `ArtSource/DungeonEnvironment/SideViewRebuild/`; PR #199's prior
 37-module perspective revision and earlier source kits remain preserved.
 
