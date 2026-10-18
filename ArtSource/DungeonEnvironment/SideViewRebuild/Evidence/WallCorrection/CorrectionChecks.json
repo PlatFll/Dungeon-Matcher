@@ -1,0 +1,483 @@
+{
+  "status": "passed",
+  "base_commit": "1937af806742967b7323301c559d71dc74f6e8fe",
+  "retired_modules": [
+    "LeftSideMasonry",
+    "LowerWall",
+    "PlatformSupportA",
+    "PlatformSupportB",
+    "PlatformSupportC",
+    "PlatformSupportD",
+    "PlatformSupportE",
+    "RightSideMasonry"
+  ],
+  "unchanged_core_pixels": 112,
+  "retained_ui_anchors": true,
+  "banner_crest_unchanged": true,
+  "banner_point_complete": true,
+  "complete_padded_assets": [
+    {
+      "name": "LowerLeftConnector",
+      "canvas": [
+        68,
+        164
+      ],
+      "occupied": [
+        3,
+        8,
+        63,
+        161
+      ],
+      "clearance": [
+        3,
+        8,
+        5,
+        3
+      ]
+    },
+    {
+      "name": "LowerRightConnector",
+      "canvas": [
+        68,
+        164
+      ],
+      "occupied": [
+        5,
+        8,
+        66,
+        161
+      ],
+      "clearance": [
+        5,
+        8,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "BarredDoor",
+      "canvas": [
+        61,
+        87
+      ],
+      "occupied": [
+        2,
+        2,
+        59,
+        85
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "TorchLeft",
+      "canvas": [
+        23,
+        56
+      ],
+      "occupied": [
+        2,
+        3,
+        20,
+        54
+      ],
+      "clearance": [
+        2,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "name": "TorchMiddle",
+      "canvas": [
+        21,
+        49
+      ],
+      "occupied": [
+        2,
+        3,
+        19,
+        47
+      ],
+      "clearance": [
+        2,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "TorchRight",
+      "canvas": [
+        23,
+        62
+      ],
+      "occupied": [
+        2,
+        3,
+        21,
+        60
+      ],
+      "clearance": [
+        2,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "BannerPlayer",
+      "canvas": [
+        35,
+        47
+      ],
+      "occupied": [
+        2,
+        2,
+        33,
+        44
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "BannerLeft",
+      "canvas": [
+        33,
+        64
+      ],
+      "occupied": [
+        2,
+        2,
+        31,
+        61
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "BannerRight",
+      "canvas": [
+        33,
+        64
+      ],
+      "occupied": [
+        2,
+        2,
+        31,
+        61
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "BarrelLarge",
+      "canvas": [
+        31,
+        42
+      ],
+      "occupied": [
+        2,
+        2,
+        29,
+        40
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "BarrelSmall",
+      "canvas": [
+        18,
+        25
+      ],
+      "occupied": [
+        2,
+        2,
+        16,
+        23
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "ChainWaveLeft",
+      "canvas": [
+        24,
+        82
+      ],
+      "occupied": [
+        2,
+        3,
+        22,
+        73
+      ],
+      "clearance": [
+        2,
+        3,
+        2,
+        9
+      ]
+    },
+    {
+      "name": "ChainWaveRight",
+      "canvas": [
+        30,
+        82
+      ],
+      "occupied": [
+        2,
+        2,
+        28,
+        71
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        11
+      ]
+    },
+    {
+      "name": "ChainDoor",
+      "canvas": [
+        14,
+        100
+      ],
+      "occupied": [
+        2,
+        2,
+        12,
+        96
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "ChainGuide",
+      "canvas": [
+        15,
+        92
+      ],
+      "occupied": [
+        2,
+        24,
+        13,
+        87
+      ],
+      "clearance": [
+        2,
+        24,
+        2,
+        5
+      ]
+    },
+    {
+      "name": "ChainGear",
+      "canvas": [
+        14,
+        28
+      ],
+      "occupied": [
+        2,
+        2,
+        12,
+        26
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "ChainSideLeft",
+      "canvas": [
+        16,
+        80
+      ],
+      "occupied": [
+        2,
+        6,
+        12,
+        78
+      ],
+      "clearance": [
+        2,
+        6,
+        4,
+        2
+      ]
+    },
+    {
+      "name": "ChainSideRight",
+      "canvas": [
+        18,
+        80
+      ],
+      "occupied": [
+        6,
+        8,
+        15,
+        78
+      ],
+      "clearance": [
+        6,
+        8,
+        3,
+        2
+      ]
+    },
+    {
+      "name": "BrazierLeft",
+      "canvas": [
+        29,
+        70
+      ],
+      "occupied": [
+        2,
+        3,
+        27,
+        68
+      ],
+      "clearance": [
+        2,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "BrazierRight",
+      "canvas": [
+        29,
+        70
+      ],
+      "occupied": [
+        2,
+        3,
+        27,
+        68
+      ],
+      "clearance": [
+        2,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "SideBannerLeft",
+      "canvas": [
+        28,
+        60
+      ],
+      "occupied": [
+        2,
+        2,
+        26,
+        57
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "SideBannerRight",
+      "canvas": [
+        27,
+        60
+      ],
+      "occupied": [
+        2,
+        2,
+        25,
+        57
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "SkullLeft",
+      "canvas": [
+        28,
+        40
+      ],
+      "occupied": [
+        2,
+        2,
+        26,
+        38
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "SkullRight",
+      "canvas": [
+        29,
+        40
+      ],
+      "occupied": [
+        2,
+        2,
+        27,
+        38
+      ],
+      "clearance": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "new_asset_count": 119,
+  "additional_generation_cost": 0,
+  "golden_production_hashes": {
+    "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306",
+    "Assets/_Game/Art/CombatIdles/Farmer_Idle.png": "f1ee772c518c6106617dcf782de95c431e6d90dd6d079a6a5d1d097ce1f10164",
+    "Assets/_Game/Art/CombatIdles/PanVillager_Idle.png": "cf2f8bcb3d7066e5837e933e105ed9ff70cd50780bf48d26cb8df9185833e51d"
+  }
+}

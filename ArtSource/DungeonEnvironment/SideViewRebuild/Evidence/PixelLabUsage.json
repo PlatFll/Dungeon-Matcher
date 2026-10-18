@@ -1,0 +1,23 @@
+{
+  "service": "PixelLab",
+  "job": "59bc82c9-7774-4084-b362-2a407edbc3c5",
+  "completed_jobs": 1,
+  "balance_before": 1064.2,
+  "balance_after": 1054.2,
+  "subscription_generations_spent": 10,
+  "cash_credits_spent": 0,
+  "requested_categories": 4,
+  "actual_returned_images": 16,
+  "actual_image_dimensions": [
+    64,
+    32
+  ],
+  "accepted_baseline": "TileA staggered wall courses; rebuilt natively to narrow gutters and match reference values",
+  "other_candidates": "Not integrated: extra cracks, oversimplified ledges, or wrong course heights. Exact reference ledge shapes retained.",
+  "references": [
+    "References/WallTile.png",
+    "References/PlatformTile.png"
+  ],
+  "production_replacements": false,
+  "wall_correction_additional_generations": 0
+}

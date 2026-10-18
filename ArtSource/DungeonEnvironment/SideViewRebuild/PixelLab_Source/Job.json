@@ -1,0 +1,62 @@
+{
+  "job_id": "59bc82c9-7774-4084-b362-2a407edbc3c5",
+  "endpoint": "create_tiles_pro",
+  "request": {
+    "description": "Create exactly 4 native 64x32 production tile variants for Dungeon Matcher. Faithfully match the two supplied reference crops. 1). BACK WALL, like first crop: dark plum-purple masonry, TWO horizontal staggered brick courses per 32px tile, broad rectangular bricks about 25-38px long, 1px near-black mortar, quiet soft matte face rendered as crisp connected pixel clusters, tiny restrained top-left rim. 2). BACK WALL alternative matching the first tile with compatible horizontal course height and seams, minor different brick joints. 3). SIDE-SCROLLER PLATFORM like second crop: a very narrow 5px horizontal top standing strip at the top, over a front vertical purple stone ledge face about 20px tall; flat frontal 2D sidescroller, no receding perspective floor, no isometric. Wide 32px stones with small bevels and calm faces, 1px dark mortar, bottom shadow. No floating prop. 4). SIDE-SCROLLER PLATFORM variant with same profile and seam heights as third. Canvas completely filled with the material texture, no outside white borders, no UI, no torches or chain or characters. Faithful muted purple hue/value groups from actual supplied crops. All native pixels, no anti-aliasing, no soft gradient, no random speckles, no large cracks, no noise or mushy painted shading. Preserve simple readable shapes; no redesign.",
+    "style_images": [
+      {
+        "width": 64,
+        "height": 32,
+        "file": "WallTile.png",
+        "crop": [
+          184,
+          48,
+          248,
+          80
+        ],
+        "sha256": "fe847aa980cc33717a5f8b7c49a68ba16c2fd5e095d1cd8694dc4fcda712489a"
+      },
+      {
+        "width": 64,
+        "height": 32,
+        "file": "PlatformTile.png",
+        "crop": [
+          114,
+          179,
+          178,
+          211
+        ],
+        "sha256": "b769d15cd3af3be043829c5a4305498f3a96f755af8fab88850915a6add1cf62"
+      }
+    ],
+    "style_options": "{\"color_palette\":false,\"outline\":true,\"detail\":true,\"shading\":true}",
+    "max_colors": 14,
+    "palette": [
+      "#10101a",
+      "#171522",
+      "#211c30",
+      "#292139",
+      "#322740",
+      "#3e2e50",
+      "#4e3b62",
+      "#5b4670",
+      "#6a527e",
+      "#7a608b",
+      "#8b719a",
+      "#9c84a8",
+      "#392941",
+      "#65506a"
+    ],
+    "palette_name": "Muted reference dungeon purple stone",
+    "seed": 181027
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 59bc82c9-7774-4084-b362-2a407edbc3c5\ndescription: Create exactly 4 native 64x32 production tile variants for Dungeon Matcher. Faithfully match the two supplied reference crops. 1). BACK WALL, like first crop: dark plum-purple masonry, TWO horizontal staggered brick courses per 32px tile, broad rectangular bricks about 25-38px long, 1px near-black mortar, quiet soft matte face rendered as crisp connected pixel clusters, tiny restrained top-left rim. 2). BACK WALL alternative matching the first tile with compatible horizontal course height and seams, minor different brick joints. 3). SIDE-SCROLLER PLATFORM like second crop: a very narrow 5px horizontal top standing strip at the top, over a front vertical purple stone ledge face about 20px tall; flat frontal 2D sidescroller, no receding perspective floor, no isometric. Wide 32px stones with small bevels and calm faces, 1px dark mortar, bottom shadow. No floating prop. 4). SIDE-SCROLLER PLATFORM variant with same profile and seam heights as third. Canvas completely filled with the material texture, no outside white borders, no UI, no torches or chain or characters. Faithful muted purple hue/value groups from actual supplied crops. All native pixels, no anti-aliasing, no soft gradient, no random speckles, no large cracks, no noise or mushy painted shading. Preserve simple readable shapes; no redesign.\nsize: 64×32px (from style tiles)\nshape: copied from style reference (tile_type/tile_view ignored)\nstyle_tiles: 2 reference(s)\nseed: 181027\ncost: 10-25 generations by canvas size (1K 10, 2K 15, 4K 25); the canvas is picked from tile size and count\nstatus: processing (~15-30s)\n\nhint: get_tiles_pro(tile_id=\"59bc82c9-7774-4084-b362-2a407edbc3c5\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "compiler_validation": "Tools/Validate-Unity.ps1 completed successfully with Unity 6000.3.19f1; full local log Evidence/UnityCompiler.log",
+  "unity_tests": [
+    {
+      "name": "DungeonSideViewPreviewTests.ContinuousWallAndCompletePropsRenderBehindUi",
+      "result": "Passed"
+    },
+    {
+      "name": "DungeonSideViewPreviewTests.NativeImportsMatchLibreSpriteExports",
+      "result": "Passed"
+    },
+    {
+      "name": "DungeonSideViewPreviewTests.ReferenceCompositionAndIntegerPixelCaptures",
+      "result": "Passed"
+    }
+  ],
+  "native_source_export_exact": 119,
+  "unity_import_bytes_exact": 119,
+  "binary_alpha": true,
+  "native_canvas": [
+    360,
+    640
+  ],
+  "placements": 406,
+  "empty_board_cells": 64,
+  "shallow_standing_strip_height": 12,
+  "front_ledge_height": 19,
+  "unclipped_standalone_placements": true,
+  "single_continuous_wall_field": true,
+  "ui_interiors_above_environment": true,
+  "padded_complete_props": 24,
+  "capture_checks": [
+    {
+      "file": "360x640.png",
+      "dimensions": [
+        360,
+        640
+      ],
+      "native_scale": 1,
+      "content_box": [
+        0,
+        0,
+        360,
+        640
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "720x1280.png",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "native_scale": 2,
+      "content_box": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x1920.png",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "native_scale": 3,
+      "content_box": [
+        0,
+        0,
+        1080,
+        1920
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x2400.png",
+      "dimensions": [
+        1080,
+        2400
+      ],
+      "native_scale": 3,
+      "content_box": [
+        0,
+        240,
+        1080,
+        2160
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    },
+    {
+      "file": "1080x2400-safe-area.png",
+      "dimensions": [
+        1080,
+        2400
+      ],
+      "native_scale": 2,
+      "content_box": [
+        180,
+        580,
+        900,
+        1860
+      ],
+      "fraction_exact": 1.0,
+      "fraction_within_two_levels": 1.0
+    }
+  ],
+  "artistic_review": "Corrected the user-marked clipped banner tails, eight patch/support modules and narrow corner crops. Full lower stone contours and prop clearance inspected at native and 2x. UI geometry is preserved and now covers extended background modules. Visual judgement; user approval remains pending.",
+  "production_scene_changed": false,
+  "merged": false
+}

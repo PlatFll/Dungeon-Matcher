@@ -1,0 +1,268 @@
+You are working on Dungeon Matcher.
+
+Goal:
+Use the attached reference image as the exact visual target and rebuild it into a production-ready modular asset library, then assemble it inside our Unity project as a working art scene. This is NOT a loose inspiration task. Copy the reference faithfully, preserve the composition and shapes, and turn it into clean reusable assets.
+
+Primary reference:
+- The attached image is the source of truth for layout, style, composition, and proportions.
+- Rebuild THIS exact scene in our game:
+  - top HUD background
+  - player frame
+  - top signs/buttons
+  - dungeon background
+  - side decorations
+  - board frame
+  - lower HUD area
+  - bottom buttons/panels
+- Do not redesign the scene.
+- Do not “improve” the composition.
+- Do not change the shapes of the environment pieces unless required to make them modular.
+- Preserve the 2D side-scroller feeling of the top HUD background.
+
+Branch + safety rules:
+- Create and work on a NEW branch:
+  feature/dungeon-top-hud-pixellab-rebuild
+- Do not merge anything.
+- Do not overwrite existing production assets unless you first preserve them and clearly stage replacements.
+- Keep all work reviewable and reversible.
+- Keep a clean asset folder structure.
+- Commit in small reviewable steps.
+
+Core production rules:
+1. The reference image must be treated as the exact target.
+2. Use PixelLab only as much as needed to convert the reference into production assets.
+3. Use the best tool for each job:
+   - PixelLab: generating missing modular pieces or rebuilding pieces that must match the reference
+   - LibreSprite: cleanup, palette control, seam cleanup, pixel correction, alignment, tile cleanup, slicing prep
+   - Unity: scene assembly, import settings, sorting, pixel-perfect validation
+4. All final assets must look native to the game, crisp, clean, and intentional.
+5. No blurry scaling.
+6. No anti-aliasing.
+7. No painterly detail.
+8. No big muddy shading clusters.
+9. No broken seams.
+10. No distorted proportions.
+11. Keep everything in our pixel-art style and make it feel coherent with Rattlebones and our UI direction.
+
+Important style guidance:
+- Match the style of the reference exactly.
+- Keep chunky readable pixel forms.
+- Keep shading simple and controlled.
+- Use our established purple dungeon palette direction.
+- Do NOT make the dungeon floor overly cracky, noisy, or overly detailed.
+- Keep the top HUD background clearly 2D sidescroller in feel.
+- Make the player frame background feel distinct from the main background.
+- Make all frame interiors feel intentional and separated from surrounding environment.
+- Preserve the clean, readable, production-ready game UI look.
+
+What I need you to build:
+A. Modular asset library
+Turn the scene into reusable assets/tiles, not one flat image.
+
+Create clean production assets for:
+
+1) Top HUD dungeon background
+- back wall brick tiles
+- pillar / column variants
+- upper platform / ledge tiles
+- top floor / standing platform tiles
+- doorway arch pieces
+- barred door sprite / pieces
+- torch sprites
+- chains
+- banners
+- barrel prop
+- skull / bone props
+- wall shadow overlays if needed
+- lighting overlays only if they are truly useful and controlled
+
+2) Left player frame area
+- outer frame corners
+- outer frame edge pieces
+- inner background fill tiles
+- health bar pieces
+- small banner inside frame
+- any small decorative hardware/gem corners
+
+3) Top signs / controls
+- WAVE sign split into modular pieces if useful
+- GUIDE button
+- gear button
+- chain attachments / hanging support pieces
+- skull ornament under wave sign if needed as separate asset
+
+4) Board frame area
+- board outer frame corners
+- board outer frame edge pieces
+- board interior tile / cell background
+- any side chain decorations
+- side torch props
+- side banner props
+- skull wall ornament pieces
+
+5) Bottom HUD
+- resonance center panel frame
+- potion button frame
+- bomb button frame
+- bottom progress bar
+- text support area if needed
+- lower brick wall / side connectors
+- any small gem or skull decorative accents
+
+6) Structural connectors
+- brick / stone connectors that visually tie the lower sides together
+- make sure the lower side walls connect cleanly to the bottom HUD
+- make sure the scene feels like one coherent built environment
+
+B. Scene rebuild in Unity
+Build an art-only test scene using the new modular assets.
+This scene should include:
+- top HUD background
+- player frame
+- top signs/buttons
+- board frame and empty board area
+- bottom HUD
+- side walls / torches / banners / chains / props
+- NO characters
+- NO gems
+- NO gameplay logic required beyond what’s needed to preview the scene
+- This is an art validation scene
+
+Required layout behavior:
+- Recreate the scene composition to match the reference as closely as possible.
+- Everything should line up cleanly.
+- The scene should read as a finished in-game battle layout without units or gems.
+- Build the environment in layers:
+  1. base wall / background
+  2. floor / platform tiles
+  3. structural frame elements
+  4. props and decorations
+  5. top signs / UI shells
+  6. bottom HUD shells
+
+Required workflow:
+Step 1 — Inspect reference
+- Study the reference image carefully.
+- Identify what can be tiled, what must be standalone, and what must be rebuilt as modular frame pieces.
+- Write a short plan before changing files.
+
+Step 2 — Asset inventory
+- Produce an asset inventory grouped by:
+  - tiles
+  - frame parts
+  - props
+  - signs/buttons
+  - HUD pieces
+- Decide which pieces should be generated in PixelLab and which should be cleaned/extracted in LibreSprite.
+
+Step 3 — Build assets
+- Use PixelLab to generate or reconstruct the needed modular pieces from the reference.
+- Use the reference image directly as the visual guide.
+- Use as few PixelLab generations as necessary, but do use them where they materially improve fidelity.
+- Then clean every accepted asset in LibreSprite.
+
+Step 4 — Cleanup in LibreSprite
+For every asset:
+- fix jagged inconsistencies
+- clean broken pixels
+- unify shading
+- simplify overly noisy clusters
+- fix tile edges
+- ensure tile seams align
+- ensure palette consistency
+- ensure crisp 1x readability
+- keep shapes faithful to the reference
+
+Step 5 — Unity import + assembly
+- Import all assets with proper pixel settings.
+- Assemble the art-only dungeon battle scene.
+- Match the reference composition precisely.
+- Keep layout modular and reusable.
+
+Step 6 — Validation
+After each asset or tile family is created, validate it before marking it ready:
+- style match
+- palette match
+- seam integrity
+- readability
+- pixel cleanliness
+- scale consistency
+- alignment with neighboring pieces
+- faithfulness to the reference
+
+Validation threshold:
+- If an asset is below 90% match to target style/fidelity, revise it.
+- Keep iterating until it passes.
+- Do not accept ugly, noisy, torn, misaligned, or off-style assets.
+
+Things to check and fix automatically:
+- broken pixels
+- torn-looking tile seams
+- misaligned bricks
+- odd banding
+- noisy crack patterns
+- over-detailed shading clusters
+- props that float awkwardly
+- frame parts that do not join cleanly
+- board frame corners that don’t align
+- tiles that repeat badly
+- inconsistent palette ramps
+- pieces that feel too soft or too detailed compared to the rest
+
+Technical requirements:
+- Keep native pixel workflow
+- Use nearest-neighbor only
+- Keep pivots/origins sensible
+- Name assets clearly
+- Organize folders cleanly
+- Preserve transparent backgrounds where needed
+- Do not flatten the whole scene into one image for production use
+
+Suggested folder structure:
+Assets/Art/Zones/Dungeon_Rebuild/
+  References/
+  PixelLab_Source/
+  Tiles/
+    Wall/
+    Floor/
+    Platform/
+  Frames/
+    PlayerFrame/
+    BoardFrame/
+    TopHUD/
+    BottomHUD/
+  Props/
+    Torches/
+    Chains/
+    Banners/
+    Barrels/
+    Bones/
+    Door/
+  Scene/
+    Prefabs/
+    TestScene/
+
+Deliverables I want:
+1. A clean modular asset library
+2. A Unity art-only test scene assembled from those assets
+3. A short review page or summary showing:
+   - source reference
+   - asset breakdown
+   - assembled scene preview
+   - any areas that needed PixelLab generation
+   - which assets were tiled vs standalone
+4. A usage note telling me how many PixelLab generations were spent
+5. Nothing merged
+
+Absolutely do NOT do these:
+- do not reinterpret the scene
+- do not replace the look with a different dungeon style
+- do not make it isometric
+- do not make the floor overly busy
+- do not change the layout dramatically
+- do not give me a single flat mockup instead of modular assets
+- do not stop at just slicing existing art if the result does not truly match the reference
+- do not mark it done if it still looks noticeably worse than the reference
+
+Success condition:
+The final result should feel like the attached reference has been faithfully converted into a clean, modular, production-ready asset set and assembled in Unity as a crisp, authentic Dungeon Matcher dungeon battle scene.
