@@ -1,6 +1,8 @@
 # Dungeon side-view modular reference scene
 
-Review candidate on `feature/dungeon-top-hud-pixellab-rebuild`. No production assets are replaced and nothing is merged.
+Approved native library, merged in PR #201. The isolated preview below remains
+available. The subsequent production battle integration is documented separately
+in [BattleIntegration](../BattleIntegration/README.md); its review is still pending.
 
 The supplied reference is the composition authority. The screenshot mat is excluded using source rectangle `[178,18,938,1370]`. The 760×1352 artwork is sampled with nearest-neighbor into a **360×640 native coordinate grid**. Final artwork is authored in LibreSprite on that grid; review enlargements use integer nearest-neighbor scaling.
 

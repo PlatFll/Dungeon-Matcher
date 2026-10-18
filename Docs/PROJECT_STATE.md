@@ -22,19 +22,28 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Three-zone battle presentation (2026-10-18)
 
-Current Dungeon follow-up: the user requested direct LibreSprite dissection and
-integration of a new three-enemy mockup. `ArtSource/BattlePresentation/DungeonMockupRevision/`
-contains the 21-layer master, native modules, 84-color material cleanup and
-review evidence. Dungeon uses its revised centered arch, continuous repaired
-floor and a separate foreground-prop layer (37 production modules total).
-The user approved merging this Dungeon revision to main on 2026-10-18 (PR #199).
-Earlier approved source kits remain preserved. Shared controls/cells, other zones, characters and gems
-are unchanged. See that directory's README for source and validation boundaries.
+Current Dungeon follow-up: PR #201's side-view modular reconstruction was approved
+and merged. The user then authorized applying it to the production `Game` scene,
+with an in-game review before any further merge. The integration branch now binds
+the 119 original modules through `ApprovedDungeonBattleArt`; existing presentation
+owners place the barred doorway, shallow platform, separate torches/banners/chains,
+player/wave/board frames and expanded lower masonry. One continuous wall fills the
+gutters and lower HUD; padded surrounding props draw behind the board and overlay UI.
+
+The board, TopHUD/BottomHUD, actors, health bars, controls and touch-target geometry
+retain their prior owners and positions. Shared controls/cells, character/gem art,
+Forest/Court and other zones remain unchanged. Current production-scene captures,
+baseline geometry comparisons and executed checks are in
+[the battle integration record](../ArtSource/DungeonEnvironment/BattleIntegration/README.md).
+This integration remains unmerged pending the user's review. The approved native
+source library is `ArtSource/DungeonEnvironment/SideViewRebuild/`; PR #199's prior
+37-module perspective revision and earlier source kits remain preserved.
 
 The user approved integrating and merging the preceding Dungeon, Forest and Drowned
 Court reference-kit backgrounds. That integration established individual native
 modules in Unity: 36 Dungeon and 19 each for Forest/Court; the revision above adds
-one Dungeon foreground layer. The review assemblies and complete
+one Dungeon foreground layer; the current modular follow-up supersedes that
+Dungeon scenery and its frame bindings. The review assemblies and complete
 board-well images are excluded. Existing presentation owners place each kit's
 registered scenery, player panel, plaque, board rim and distinct side/bottom art.
 One shared silver/purple control family and individual quiet stone cells serve

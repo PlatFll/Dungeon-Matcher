@@ -430,6 +430,23 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Dungeon approved modular integration (2026-10-18):** `ApprovedDungeonBattleArt`
+  binds the original 119 SideViewRebuild sprites and placement manifest by GUID.
+  `DungeonPresentationArt` selects it only for Dungeon. The shallow stage consumes
+  the existing combat-floor anchor; `ReferenceKitSurface` fits full native pieces
+  inside decorative children without writing gameplay section rectangles. One
+  tiled world wall covers the camera. Full padded side props and lower corners use
+  Default-layer renderers below the board, with no SpriteMask trimming; overlay
+  controls remain above them. `PlayerAreaThreeSliceFrameController`, `WaveTrackerUI`
+  and `BoardVisuals` consume their original layout extents and replace only art.
+  Eight board-rim pieces map the new opening into the existing reserved border,
+  preserving board size, center and cell ratio. Shared controls/cells and other
+  zone paths remain unchanged. Production-scene baseline comparisons, layering,
+  Point-filtering, real-swap, pause and safe-area evidence live in
+  `ArtSource/DungeonEnvironment/BattleIntegration/`. Complete review images and
+  preview-only labels are never drawn as live UI. This supersedes only the
+  Dungeon scenery/frame bindings in the earlier reference-kit entry below.
+
 - **Approved three-zone reference kits (2026-10-17):** the user approved the native
   reconstruction. `DungeonPresentationArt` consumes separate registered PNGs
   for wall, arch, floor, player backing and side/bottom dressing. It does not

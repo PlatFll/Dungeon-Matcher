@@ -349,6 +349,10 @@ public sealed class BoardVisuals : MonoBehaviour
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);
+            if(ApprovedDungeonBattleArt.Current is ApprovedDungeonBattleArt approved)
+            {
+                approved.BoardFrame(root.transform,board.LocalBoardWidth,board.LocalBoardHeight,ConfigureFrameRenderer);return;
+            }
             var art=new GameObject("ReferenceKitBoardFrame");art.transform.SetParent(root.transform,false);
             var sprite=BattlePresentationSkin.Reference("BoardFrame");
             Rect opening=BattlePresentationSkin.ReferenceBoardOpening;

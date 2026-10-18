@@ -113,6 +113,12 @@ public static class GameplayPixelLayoutValidator
                 Vector2 expected=Vector2.one*worldBoard.PhysicalTexelRatio;
                 if(BattlePresentationSkin.UsesReferenceKit && piece.name=="ReferenceKitBoardFrame")
                     expected*=new Vector2(512f/364f,512f/369f);
+                if(piece.name.StartsWith("ApprovedDungeon") && ApprovedDungeonBattleArt.Current is ApprovedDungeonBattleArt approved)
+                {
+                    var liveBoard=worldBoard.GetComponent<BoardController>();
+                    Rect registered=approved.BoardRect(piece.sprite.name,liveBoard.LocalBoardWidth,liveBoard.LocalBoardHeight);
+                    expected=Vector2.one*worldBoard.PhysicalTexelRatio*new Vector2(registered.width*64/source.x,registered.height*64/source.y);
+                }
                 Require(Near(pixels.x / source.x, expected.x) && Near(pixels.y / source.y, expected.y),
                     "World frame texel mismatch: " + piece.name, errors);
                 Require(g.FractionalBoardScale || (Integral(lo.x) && Integral(lo.y) && Integral(hi.x) && Integral(hi.y)),

@@ -65,6 +65,7 @@ public sealed class WaveTrackerUI :
                     waveText.rectTransform.offsetMax=new Vector2(-13,-9);
                     waveText.enableAutoSizing=true;waveText.fontSizeMin=16;waveText.fontSizeMax=28;
                 }
+                ApprovedDungeonBattleArt.Current?.WaveFrame(image);
             }
         }
     }
