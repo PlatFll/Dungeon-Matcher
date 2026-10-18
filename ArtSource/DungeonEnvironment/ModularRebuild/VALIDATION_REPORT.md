@@ -71,6 +71,36 @@ The user must review the actual gallery/scene before any production integration
 or merge. Production controls retain their existing behavior; preview plaques
 and empty HUD structures are art-only. No physical-device test is claimed.
 
+## PixelLab-enabled follow-up — 2026-10-18
+
+The new brief permits conservative PixelLab assistance when necessary; it
+supersedes the earlier spending prohibition without requiring a minimum spend.
+The pre-generation plan estimated **0 calls**, and the completed ledger records
+**0 spent, 0 accepted, 0 discarded, no pending jobs and no reference uploads**.
+`ToolPlan.json` gives the decision for every requested category. The gateway,
+ornaments and props already have clean native sources; no generation would
+improve fidelity while preserving their approved shapes.
+
+The requested library and zone assembly were already present on this branch.
+This follow-up retains those assets and adds the complete `LibraryManifest.json`
+(including the four floors), the tool/usage report and a fresh verification
+receipt. It does not falsely describe existing artwork as newly generated.
+
+Fresh checks confirm all eight canonical/reference hashes in both main and the
+branch, all 129 native cel/export/import matches, source hashes, palette counts,
+binary alpha and all 128 floor/wall edge pairings. Existing scene/code/capture
+hashes still match `Evidence/ReviewProvenance.json`; the prior compiler receipt
+and two passing Unity tests therefore remain applicable. **Unity was not rerun**
+for this documentation/catalog-only follow-up. The earlier native/source/zoomed
+comparisons and four Unity views remain available; the contact sheets, floor
+repeat and 1080×1920 assembly were visually revisited against the supplied
+mockup and current golden images. Existing 9/10 assessments apply to unchanged
+artwork and remain subjective, awaiting user review.
+
+See `Review/Usage.html`, `PixelLabUsage.json` and
+`Evidence/FollowupVerification.json`. No new account capability/balance check,
+new runtime/device test, production scene replacement or merge is claimed.
+
 ## Per-asset index
 
 The complete source/crop/change and reasoning records are in

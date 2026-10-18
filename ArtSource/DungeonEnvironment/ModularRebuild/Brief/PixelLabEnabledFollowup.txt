@@ -1,0 +1,291 @@
+Use the current Dungeon Matcher dungeon-scene extraction pack and the approved dungeon reference to build a modular dungeon-zone asset library, then rebuild the zone from that library.
+
+IMPORTANT:
+We now have PixelLab generations available again and Tier 2 access, including larger generation sizes (use up to 512x512 where actually beneficial). Use PixelLab intelligently and sparingly. Do NOT waste generations on things that are better rebuilt directly in LibreSprite from the reference.
+
+CORE GOAL
+Turn the approved dungeon reference into a production-ready modular asset pack, then use that pack to rebuild the zone in Unity.
+
+FINAL OUTPUTS
+1. A modular dungeon-zone asset library
+2. A rebuilt dungeon zone assembled from that asset pack
+3. A Unity art-preview/test scene with no characters or gems
+4. Validation screenshots and a usage report
+
+==================================================
+GENERAL TOOL POLICY
+==================================================
+
+Use the right tool for the right asset.
+
+Use PixelLab ONLY where it gives a real advantage:
+- unique props
+- ornamental frame pieces
+- gateway / arch components
+- decorative stone frame motifs
+- visually complex but reusable pieces
+- tileset ideation when direct cleanup from the reference is not enough
+
+Use LibreSprite / direct pixel editing for:
+- cleanup
+- modularization
+- tiling fixes
+- palette cleanup
+- seam cleanup
+- frame alignment
+- clipping / mask correctness
+- color correction
+- shading correction
+- reconstruction of simple repeatable tiles
+- final asset polishing
+
+Do NOT use PixelLab as a lazy full-scene replacement.
+Do NOT generate whole finished screens and cut them apart afterward unless explicitly justified.
+Do NOT regenerate assets that already exist cleanly in the current game unless a rebuild is necessary for modularity or style cleanup.
+
+==================================================
+PIXELLAB BUDGET / SPENDING RULES
+==================================================
+
+Be conservative.
+
+Use the minimum number of generations needed.
+Start with a bounded plan before generating anything.
+
+Hard rule:
+- First propose the intended PixelLab usage categories and estimated count.
+- Then execute.
+- Track every generation spent.
+
+Target budget:
+- Preferred working budget: 10–25 generations total
+- Soft ceiling: 35 generations
+- Only exceed 35 if there is a clearly justified reason and the results materially improve the asset library
+
+Do NOT burn generations on:
+- assets that can be cropped and cleaned directly
+- trivial floor tiles
+- trivial wall tiles
+- repeated frame segments
+- obvious seam fixes
+- small recolor-only adjustments
+
+Use 512x512 thoughtfully:
+- for large composition references
+- for extracting more complex decorative asset ideas
+- for gateway / unique architectural elements
+- for richer prop reference generation
+Not for every asset by default.
+
+==================================================
+ASSET STRATEGY
+==================================================
+
+Build the asset pack in this order:
+
+PHASE 1 — ANALYZE THE REFERENCE
+Read:
+- current Dungeon Matcher art direction
+- golden reference register
+- the dungeon extraction pack
+- current production dungeon assets
+- current menu / zone visual rules if relevant
+
+Identify the dungeon environment into modular categories:
+A. floor tiles
+B. wall tiles / masonry tiles
+C. board frame modular pieces
+D. player portrait frame modular pieces
+E. top HUD frame pieces
+F. bottom HUD frame pieces
+G. gateway / door / arch pieces
+H. props:
+   - torches
+   - chains
+   - barrels
+   - skull piles
+   - banners
+   - bones
+   - side masonry details
+
+==================================================
+PHASE 2 — DECIDE WHICH TOOL TO USE FOR EACH ASSET TYPE
+==================================================
+
+For each category, choose:
+- Direct extraction + cleanup
+- Rebuild in LibreSprite
+- PixelLab-assisted generation + cleanup
+- Existing asset reuse + cleanup
+
+Preferred guidance:
+- Floor tiles: rebuild in LibreSprite from the reference / current scene, not PixelLab-first
+- Wall tiles: same
+- Board frame repeatable strips/corners: mostly LibreSprite cleanup + modularization
+- Character frame repeatable strips/corners: mostly LibreSprite cleanup + modularization
+- Top HUD: may use PixelLab as reference-generation help, then reconstruct cleanly
+- Gateway / unique arch / ornate props: strong candidates for PixelLab-assisted generation
+- Torches / chains / barrels / banners / skull props: use whichever is fastest and cleanest, but final polish must happen in LibreSprite
+
+==================================================
+PHASE 3 — BUILD THE MODULAR ASSET LIBRARY
+==================================================
+
+A. FLOOR
+- Create 64x64 native floor tiles
+- several variations
+- seamless repetition
+- keep the perspective and shape language of the approved mockup
+- no torn pixels
+- no visible tile seams
+
+B. WALLS
+- Create 64x64 or other sensible native modular wall tiles where needed
+- side wall bricks
+- portrait panel inner wall background
+- battle backdrop wall fields
+- lower supporting wall / trim materials
+
+C. FRAMES
+Rebuild modular frame kits:
+- board frame:
+  - corners
+  - top
+  - bottom
+  - left
+  - right
+  - repeatable inserts if needed
+- player portrait frame:
+  - corners
+  - sides
+  - top/bottom
+  - inner background tile fill
+  - ensure background fill stays INSIDE frame only
+- top HUD:
+  - use the NEW approved target from the reference
+- bottom HUD:
+  - modularize and clean
+- preserve frame thickness and silhouette
+
+D. UNIQUE PROPS
+Create separate assets for:
+- torch
+- chain strand / chain anchor
+- barrel cluster(s)
+- skull pile(s)
+- hanging banner(s)
+- gateway / central arch / doorway
+- side stone ornaments
+
+For larger ornate elements, PixelLab may be used as a source-generation helper, but the final production asset must be cleaned and normalized in LibreSprite.
+
+==================================================
+PHASE 4 — UNITY TEST SCENE
+==================================================
+
+Create or update an art-only dungeon preview scene that contains:
+- tiled background
+- floor
+- walls
+- board frame
+- player portrait frame
+- top HUD
+- bottom HUD
+- props
+
+Do NOT include:
+- characters
+- enemies
+- gems
+- combat logic not needed for the preview
+
+This scene is for visual QA only.
+
+==================================================
+VALIDATION LOOP (MANDATORY)
+==================================================
+
+After each asset or tile is made:
+1. Check native size readability
+2. Check enlarged nearest-neighbor preview
+3. Check color conformity to the art guide
+4. Check shading conformity to the art guide
+5. Check silhouette preservation
+6. Check seam quality / tiling
+7. Check outline integrity
+8. Check for:
+   - broken pixels
+   - torn pixels
+   - missing pieces
+   - misalignment
+   - frame clipping issues
+   - overly detailed shading
+   - muddy shading
+   - color drift
+9. Compare against Rattlebones / approved style language
+10. Give it a style-match score
+
+APPROVAL THRESHOLD:
+- At least 90% style compatibility before marking ready
+- If under 90%, revise and re-check
+- Continue until it passes
+
+IMPORTANT:
+The 90% number is an art-direction judgment, not a fake mathematical certainty.
+Still perform objective technical checks fully.
+
+==================================================
+SPECIFIC STYLE RULES
+==================================================
+
+The shading of all tiles, frames, props, and backgrounds must match our established shading language:
+- crisp native pixel art
+- controlled top-left lighting
+- simple connected shading
+- not too detailed
+- not noisy
+- not muddy
+- no huge ugly shading blobs
+- no over-rendered texture noise
+
+The coloring of every tile / asset / board frame / player frame must match the project’s color guide.
+
+Do not change shapes.
+Only clean:
+- shading
+- coloring
+- pixel integrity
+- modular construction
+- tiling correctness
+- frame assembly correctness
+
+==================================================
+DELIVERABLES
+==================================================
+
+Provide:
+1. modular dungeon asset library
+2. rebuilt zone using the asset library
+3. Unity art-only test scene
+4. side-by-side comparisons
+5. asset manifest
+6. validation report
+7. PixelLab usage report including:
+   - each generation used
+   - why it was used
+   - which asset it supported
+   - whether it was accepted or discarded
+   - total generations spent
+
+==================================================
+STOP / SAFETY RULES
+==================================================
+
+- Work on the designated scene-rebuild branch only
+- Do not merge to main
+- Do not alter unrelated assets
+- Do not waste PixelLab generations on broad experiments
+- If an asset can be solved cleanly without PixelLab, do that
+- If a blocker appears, stop and report it clearly
+
+Proceed automatically through the full workflow unless a real blocker requires my input.

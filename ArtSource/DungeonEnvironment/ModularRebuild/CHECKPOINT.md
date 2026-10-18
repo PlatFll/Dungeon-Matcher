@@ -18,3 +18,10 @@ final compiler receipt for verification details and the honest review boundary.
 Next action: user visual review in Review/Review.html or the dedicated Unity
 scene. Do not integrate or merge without new explicit approval. No background
 authoring or Unity validation work remains after the final handoff.
+
+PixelLab-enabled follow-up (2026-10-18): completed on the same branch. Existing
+129-module artwork and Unity assembly retained; added full library catalog,
+category tool decisions, explicit zero-generation ledger and fresh byte/seam
+verification. Earlier Unity evidence is reused only after matching exact hashes;
+no Unity rerun or new art generation. PR #200 remains the review destination.
+Next action remains user visual review; do not merge.

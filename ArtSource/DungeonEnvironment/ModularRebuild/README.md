@@ -26,6 +26,11 @@ production UI. Lower HUD recesses are empty structural frames.
 - `Editable/<group>/`: independent native LibreSprite documents.
 - `Exports/<group>/`: PNG exports from LibreSprite's native batch exporter.
 - `AssetManifest.json`: source crop, scope of changes, and reference placement.
+- `LibraryManifest.json`: complete 129-asset catalog including floors, material palettes,
+  editable/export/Unity paths, source hashes and existing visual review decisions.
+- `ToolPlan.json` and `PixelLabUsage.json`: category methods and the zero-generation ledger.
+  The PixelLab-enabled follow-up permits bounded use; no asset needed generation.
+- `Review/Usage.html`: readable method/usage report and fresh verification links.
 - `Review/Assets.html`: source/native comparisons and integer enlargements.
 - `Review/Unity/`: actual Unity camera captures, not external scene composites.
 - `Evidence/`: exact pixel checks and Unity test results.
