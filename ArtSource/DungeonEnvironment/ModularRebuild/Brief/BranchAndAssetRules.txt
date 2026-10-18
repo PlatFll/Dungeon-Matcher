@@ -1,0 +1,194 @@
+## Branch and Asset Rules — Dungeon Modular Scene Rebuild
+
+Execute the complete dungeon environment reconstruction brief under the following rules.
+
+### 1. Branch rules
+
+**Branch name:** `codex/dungeon-modular-scene-rebuild`
+
+- Create this branch from the latest verified `main`.
+- Prefer an isolated Git worktree.
+- Check for existing uncommitted changes before starting. Never discard, overwrite, reset or stash unrelated work without approval.
+- If the proposed branch already exists, inspect it before deciding whether to resume or create a uniquely named branch.
+- All implementation work, art assets, preview scenes and validation reports belong on this branch.
+- Commit completed work in logical, recoverable stages.
+- Do not modify `main` or merge without my explicit approval.
+- Do not modify unrelated character, combat, menu, or zone implementations.
+
+### 2. Asset source rules
+
+Use this priority order:
+
+1. **Existing approved production assets** from the current Dungeon Matcher repository.
+2. **Original editable LibreSprite sources**, where available.
+3. **The supplied reference mockup and extraction ZIP** to reconstruct missing pieces.
+4. New assets drawn directly in LibreSprite only when necessary to faithfully reconstruct the reference.
+
+The ZIP contains reference crops, not automatically production-ready sprites. Some crops contain characters, gems, text or overlapping scenery. Do not import those contaminated crops directly.
+
+Use the approved mockup as the visual composition target. Use the current canonical art-direction guide for native rendering, shading and palette rules.
+
+Do not regenerate or reinterpret the entire scene.
+
+Do not use PixelLab generations for this task.
+
+### 3. Asset organization
+
+Follow the existing repository's art-source, production-asset, Unity metadata and naming conventions.
+
+Suggested structure, unless the current architecture provides a better established location:
+
+**Editable source artwork:**
+`ArtSource/DungeonEnvironment/ModularRebuild/`
+
+**Imported Unity artwork:**
+`Assets/_Game/Art/DungeonEnvironment/ModularRebuild/`
+
+Separate assets into:
+
+- `FloorTiles/`
+- `WallTiles/`
+- `BoardFrames/`
+- `CharacterFrames/`
+- `HudFrames/`
+- `Props/`
+- `BackgroundLayers/`
+
+Keep editable source files separate from exported production PNGs.
+
+Preserve existing source artwork and Unity GUIDs. Never destructively overwrite approved assets. New assets must have stable filenames and correct `.meta` files.
+
+### 4. Floor and wall tile rules
+
+Start with the battlefield floor.
+
+- Reconstruct reusable **64×64 native floor tiles**.
+- Use several variations to avoid obvious repetition.
+- All corresponding tile boundaries must connect seamlessly.
+- Preserve the approved floor's perspective, stone shapes, color identity and shading style.
+- Do not create unnecessarily noisy textures or oversized flat shading patches.
+- Test floor tiles in repeated grids, including adjacent and alternating arrangements.
+
+Only after the floor passes validation, rebuild the walls using the same approach.
+
+The screenshot's displayed pixels are not automatically native source pixels. Derive the native grid from the existing Unity art pipeline; do not downscale screenshot crops and assume they are clean native tiles.
+
+### 5. Frame construction rules
+
+Rebuild the board, character and HUD frames using reusable native components.
+
+- Corners must be separate from repeatable straight sections.
+- Never stretch decorative corners or ornaments.
+- Repeated sections must align without gaps, overlaps or visible seams.
+- Keep the original frame thickness relationships, colors and silhouettes.
+- Frame interiors must be filled with their own tiled background materials.
+
+**Especially important:** Character-panel background tiles must appear strictly INSIDE the character frame. Use correct bounds, masking and clipping. No wall tiles may extend outside or cover the frame borders.
+
+The board frame must use the same modular construction principle.
+
+For the TOP HUD, follow the supplied newer reference rather than retaining outdated top-HUD artwork.
+
+### 6. Unique prop rules
+
+Keep torches, chains, barrels, skull piles, banners, the central gateway and distinctive masonry ornaments as separately editable assets.
+
+- Preserve their shapes, scale and recognizable identities.
+- Clean only their internal colors, outlines and shading where necessary.
+- Do not change their silhouette to simplify production.
+- Preserve their placement relative to the approved mockup.
+- Keep decorative props on appropriate foreground/midground layers.
+
+Do not convert the whole gateway or an intricate barrel assembly into repetitive 64×64 tiles if a separate sprite is more appropriate.
+
+### 7. Art-style rules
+
+Read the latest:
+
+- `Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt`
+- `Docs/ArtDirection/Golden_Reference_Register.md`
+
+Use Rattlebones as the primary reference for pixel cleanliness and shading discipline, **not as a required environment palette or canvas size**.
+
+Preserve the approved dungeon's muted purple stone, cool shadow planes, dark contours and warm torchlight.
+
+- Crisp native pixels.
+- Controlled top-left material lighting.
+- Readable material separation.
+- Simple, connected shading regions.
+- No unnecessary micro-texture or excessive color variation.
+- No blurred edges, anti-aliasing artifacts, stray pixels or broken outlines.
+- No massive flat-color regions that destroy the original material depth.
+
+Do not flatten the scene or make it look cheaper. The objective is cleaner shading, not less attractive artwork.
+
+### 8. Unity preview scene
+
+Create:
+
+`Assets/_Game/Scenes/ArtPreview_DungeonModular.unity`
+
+Use a different path only if that conflicts with an existing repository convention.
+
+This must be an independent, art-only preview scene containing:
+
+- Tiled dungeon walls.
+- Tiled battlefield floor.
+- Gateway and environmental props.
+- Board frame with its inner tiled background.
+- Character panel frame with its clipped inner tiled background.
+- Top HUD and bottom HUD visual structures.
+- Existing decorative lighting where appropriate.
+
+**No characters, enemies or gems.**
+
+No combat progression, damage resolution, rewards or generated encounters.
+
+Do not replace the production gameplay scene or add this preview to the release build configuration.
+
+The test scene should support quick asset swaps, repeatable screenshots and inspection at actual gameplay scale.
+
+### 9. Mandatory per-asset quality gates
+
+For every finished asset or tile:
+
+1. Compare it with its actual source/reference.
+2. Inspect it at native 1×.
+3. Inspect an integer-scaled nearest-neighbor preview.
+4. Verify dimensions, palette and alpha.
+5. Verify original shape/silhouette preservation.
+6. Inspect the shading and material separation.
+7. Test tile seams and frame joins where applicable.
+8. Inspect the result inside the Unity preview scene.
+
+**Quality target: at least 9/10 (90%) visual style compatibility.**
+
+This is an art-director assessment, not a mathematically provable similarity percentage. Do not fabricate numerical verification or claim that automated linting alone establishes an art-style match.
+
+Objective requirements—broken seams, invalid dimensions, stray alpha, missing tiles, incorrect clipping or damaged outlines—must pass completely.
+
+If an asset fails, correct it and validate again. Use bounded, purposeful revisions; if repeated attempts cannot meet the quality target, report the specific unresolved problem instead of silently approving it or endlessly generating alternatives.
+
+### 10. Final acceptance
+
+After assembling the scene, capture actual Unity screenshots and compare them with the approved reference.
+
+Check the entire scene for:
+
+- Missing or misaligned tiles.
+- Visible repeated-tile seams.
+- Broken pixel edges.
+- Incorrect frame corners.
+- Props floating or overlapping incorrectly.
+- Incorrect layering.
+- Character-panel background escaping its frame.
+- Color or shading inconsistencies.
+- Background gaps.
+- Changes to protected shapes.
+- Loss of the original dungeon atmosphere.
+
+Fix any confirmed defects and rerun the relevant checks.
+
+Deliver the complete modular asset kit, the working Unity preview scene, before/after comparisons and an asset validation report.
+
+**Do not merge. Stop when the complete preview is ready for my visual approval.**

@@ -1,0 +1,65 @@
+DUNGEON SCENE EXTRACTION PACK
+
+All coordinates are from the provided screenshot at displayed scale.
+These are extraction references for Astra, not guaranteed production-ready final assets.
+Recommended workflow: use these crops to rebuild clean native assets in LibreSprite / PixelLab, preserving shapes but simplifying noisy shading where needed.
+
+INDEX
+01. portrait_panel_full  bbox=(20, 101, 281, 521)  size=(261, 420)
+    Unique frame for player portrait area. Rebuild as modular frame + banner + affinity holder + HP bar.
+02. wave_plaque  bbox=(312, 14, 632, 102)  size=(320, 88)
+    Top center wave plaque. Unique UI header.
+03. guide_button  bbox=(654, 28, 833, 108)  size=(179, 80)
+    Guide button. Shared metal UI style.
+04. settings_button  bbox=(835, 28, 924, 108)  size=(89, 80)
+    Settings button. Shared metal UI style.
+05. center_door_arch  bbox=(372, 7, 609, 294)  size=(237, 287)
+    Central stone arch + door backdrop reference.
+06. upper_left_torch_sconce  bbox=(274, 129, 347, 298)  size=(73, 169)
+    Upper battle torch/sconce prop.
+07. upper_right_torch_sconce  bbox=(714, 126, 796, 297)  size=(82, 171)
+    Upper battle torch/sconce prop.
+08. center_hanging_banner  bbox=(425, 150, 492, 274)  size=(67, 124)
+    Small hanging skull banner in battle backdrop.
+09. right_barrel_cluster  bbox=(734, 202, 845, 341)  size=(111, 139)
+    Background prop cluster: barrels and skulls.
+10. left_bones_cluster  bbox=(274, 247, 374, 383)  size=(100, 136)
+    Background prop cluster: bones/skulls near left enemy lane.
+11. board_top_border  bbox=(53, 526, 890, 606)  size=(837, 80)
+    Top border of the gem board frame. Use to rebuild board frame.
+12. board_left_border  bbox=(13, 560, 68, 1334)  size=(55, 774)
+    Left side border of the gem board frame including chain side motif. Slice into repeatable subparts.
+13. board_right_border  bbox=(873, 560, 928, 1334)  size=(55, 774)
+    Right side border of the gem board frame including chain side motif. Slice into repeatable subparts.
+14. board_bottom_border  bbox=(53, 1260, 890, 1338)  size=(837, 78)
+    Bottom border of the gem board frame.
+15. board_corner_top_left  bbox=(43, 531, 96, 587)  size=(53, 56)
+    Top-left board frame corner.
+16. board_corner_top_right  bbox=(847, 531, 900, 587)  size=(53, 56)
+    Top-right board frame corner.
+17. board_corner_bottom_left  bbox=(42, 1287, 97, 1340)  size=(55, 53)
+    Bottom-left board frame corner.
+18. board_corner_bottom_right  bbox=(846, 1287, 901, 1340)  size=(55, 53)
+    Bottom-right board frame corner.
+19. side_banner_left_lower  bbox=(0, 815, 67, 1122)  size=(67, 307)
+    Large lower-left hanging side banner / torch region. Decorative side scene element.
+20. side_banner_right_lower  bbox=(876, 815, 941, 1122)  size=(65, 307)
+    Large lower-right hanging side banner / torch region. Decorative side scene element.
+21. energy_bar  bbox=(361, 1330, 579, 1403)  size=(218, 73)
+    Purple progress / energy bar above bottom HUD panel.
+22. bottom_hud_center_panel  bbox=(375, 1390, 637, 1543)  size=(262, 153)
+    Center bottom action/ability panel.
+23. bottom_left_item_button  bbox=(31, 1397, 146, 1559)  size=(115, 162)
+    Bottom-left item button frame.
+24. bottom_right_item_button  bbox=(795, 1397, 911, 1559)  size=(116, 162)
+    Bottom-right item button frame.
+25. phase_resonance_strip  bbox=(219, 1551, 856, 1644)  size=(637, 93)
+    Bottom text strip / resonance callout area.
+26. wall_tile_sample_left  bbox=(14, 113, 74, 204)  size=(60, 91)
+    Stone wall sample for left portrait backdrop. Rebuild as repeatable wall tile.
+27. wall_tile_sample_right  bbox=(850, 113, 926, 210)  size=(76, 97)
+    Stone wall sample for right upper wall. Rebuild as repeatable wall tile.
+28. floor_tile_sample_upper  bbox=(516, 410, 635, 490)  size=(119, 80)
+    Upper battle floor tile sample. Rebuild cleaner in production; source includes perspective cues.
+29. lower_wall_tile_sample  bbox=(407, 1616, 524, 1671)  size=(117, 55)
+    Lower wall / trim sample under HUD area.

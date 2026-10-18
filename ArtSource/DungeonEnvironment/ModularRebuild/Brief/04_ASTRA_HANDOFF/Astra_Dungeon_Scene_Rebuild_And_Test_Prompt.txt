@@ -1,0 +1,100 @@
+DUNGEON MATCHER — MODULAR DUNGEON REBUILD AND UNITY ART-ONLY TEST SCENE
+
+Use the included extraction pack, the approved full-scene reference, current repository assets and the latest Dungeon Matcher art-direction / golden-reference / coloring and shading guides. This prompt extends the earlier extraction handoff.
+
+PRIMARY GOAL
+Rebuild the dungeon zone background, layout, frames and environmental props as separately editable native pixel assets. Preserve the approved shapes and composition. Only clean up shading, colors, tiling and alignment. Do not redesign the scene, change gameplay or replace the characters/gems.
+
+Read applicable AGENTS.md instructions and the current canonical art guide before working. Inspect the actual current Rattlebones reference for rendering discipline, not as a mandatory background palette or 64x64 background size. Use a dedicated branch, preserve unrelated changes and do not merge without explicit approval.
+
+PHASE 1 — UNITY ART-ONLY TEST SCENE
+Create a dedicated scene or equivalent preview harness that loads only:
+- Zone background and battle backdrop.
+- Battle floor and wall fields.
+- Board frame and empty board-cell/backplate treatment.
+- Character/portrait frame and its tiled interior background.
+- Top HUD and bottom HUD structural elements.
+- Environmental props and decorative overlays.
+
+Do not spawn characters, enemies or gem sprites. Do not start a live run, spend resources, mutate player saves or advance combat. Keep runtime data owners separate from the preview. Make the preview easy to open and use the same relevant rendering/layout components as the real game so it is an honest integration test, not merely a composited screenshot.
+
+PHASE 2 — EXTRACT AND BUILD THE FLOOR FIRST
+Use LibreSprite to extract multiple 64x64 floor samples from suitable source artwork and turn them into clean modular tiles. Use current native game sources when available, with the full mockup as composition authority. The included screenshot crops are reference samples, not guaranteed clean native production tiles: inspect for character/gem contamination and verify source scale before adopting a crop.
+
+Build the floor as a tiled surface first. Preserve recognizable stone shapes, perspective and floor boundaries. Clean only interior shading and color use. Test tiles repeated together, including different variants next to one another, so seams, mortar lines and light direction connect correctly. Do not simply stretch a screenshot across the arena.
+
+PHASE 3 — BUILD WALLS AND INTERIOR FILLS
+Repeat the extraction/cleanup process for:
+- Battle backdrop wall material.
+- Side masonry around the board.
+- Character/portrait panel inner wall material.
+- Lower wall and HUD backdrop where applicable.
+
+Build these base surfaces from repeatable tiles before placing unique objects on top. The character-frame background must stay INSIDE its inner frame boundary. Use the proper clipped/masked interior container; do not let the tiled fill cover the border, overflow onto the battle scene or leave gaps after resizing. Apply the same containment checks to board and other framed fills.
+
+PHASE 4 — MODULAR FRAME KIT
+Extract usable frame portions and clean them in LibreSprite into repeatable building blocks:
+- Board corners, horizontal rails and vertical rails.
+- Character-panel corners, verticals and horizontals.
+- Top HUD plaque/button construction.
+- Bottom HUD frame components.
+
+Preserve the reference contours, proportions, ornament shapes and color identity. Do not stretch corners, produce discontinuous joins or introduce mismatched edge thickness. Keep repeating surfaces behind the frame, not on top of its ornaments.
+
+TOP HUD EXCEPTION
+Use the NEW top HUD shown in the supplied reference, not the old top HUD artwork. Reconstruct it as proper components rather than a flattened screenshot. Keep live labels and existing functions. Do not copy mockup enemy identities, health values, gem patterns or incidental placeholder text as new gameplay rules.
+
+PHASE 5 — SEPARATE PROPS
+Extract or reuse appropriate native sources for individual objects:
+- Barrels.
+- Gateway, door and arch.
+- Chains.
+- Torches and sconces.
+- Skull/bone piles.
+- Hanging banners.
+- Large side masonry/decorative structures.
+
+Clean each separately against the shading/coloring guides. Preserve its silhouette, size and defining structure. Place it on top of the completed tiled floor/wall scene at its approved mockup position. Keep original sources and edited exports separate. Do not use a contaminated crop containing a character or gem as a finished prop.
+
+ASSEMBLY ORDER
+1. Tiled floor.
+2. Tiled wall/background surfaces.
+3. Frame structures and clipped interior fills.
+4. Gateway and other unique architectural pieces.
+5. Barrels, chains, torches, skulls, banners and decorative props.
+6. Reference-based top HUD and remaining structural UI.
+7. Whole-scene alignment and seam checks.
+
+SHADING AND COLOR RULES
+Match the current project guide and material-specific ramps. Keep crisp native pixels, readable planes and restrained detail. Avoid muddy oversized shading patches, excessive micro-texture, blurry gradients, torn-looking pixels and arbitrary global palette reductions. Preserve atmosphere and volume rather than flattening every object. Do not force all assets into Rattlebones's exact palette or color count.
+
+Do not change object shapes as part of shading cleanup. Preserve native dimensions, alpha silhouettes, placement and protected contours. Necessary tile-boundary reconstruction must be explicitly identified; it is not permission to redesign props or change scene geometry.
+
+PER-ASSET VALIDATION — BEFORE SCENE INCLUSION
+For EVERY rebuilt tile, prop or frame component:
+- Inspect actual output at native size and integer nearest-neighbor enlargement.
+- Compare coloring and shading against the applicable approved references.
+- Check exact canvas dimensions, palette, alpha, occupied bounds and protected silhouette.
+- Look for broken/stray pixels, torn-looking edges, missing pieces and distorted shapes.
+- Check repeat joins, neighboring tile combinations, frame corners and grid alignment.
+- Produce before/after and relevant difference evidence.
+- Record a style-match judgment and concrete reasons.
+
+The user requests at least 90% style match before marking an asset ready. Treat this as a documented ART-DIRECTION REVIEW threshold, not an automatically measurable proof. Do not invent an objective similarity percentage or raise a score to hide defects. Technical checks and visual judgment are separate. Mark passing work ready for user review, not user-approved.
+
+If a candidate fails, revise it and rerun checks. Keep working through genuine defects rather than stopping at the first generated/exported result. If repeated attempts cannot resolve a problem within the allowed scope or remaining resources, keep it explicitly failed/pending with evidence and a resumable next step. Never claim perfection or approval to conceal a blocker.
+
+WHOLE-SCENE VALIDATION
+Open the art-only Unity scene using the assembled assets. Check native/actual display scale, repeated floor/wall joins, frame alignment, portrait-fill containment, board-frame repetition, prop overlaps, color cohesion, shading/detail consistency and missing pieces. Fix problems and rerun the affected tests.
+
+Capture the same scene at several supported portrait aspect ratios and safe areas. Provide actual Unity captures and full-reference comparisons. Verify that no environment fill leaks outside a frame and that the preview itself does not affect live saves or combat. Run relevant repository validation for any runtime/editor code changed.
+
+DELIVERABLES
+1. Modular cleaned tiles and individual assets with editable LibreSprite sources and exported PNGs.
+2. An easy-to-open Unity environment-only test scene and instructions to launch it.
+3. The dungeon environment assembled from those parts.
+4. Per-asset validation report: source, reuse/rebuild status, measurements, visual judgment, remaining issues and readiness.
+5. Whole-scene native previews, actual Unity screenshots and comparison evidence.
+6. A checkpoint listing branch/HEAD, completed/pending assets, tests and exact next step when interrupted.
+
+No unrelated changes, character/gem generation, mass regeneration or automatic merge. Keep the scene recognizable. The task is faithful modular rebuilding, shading/color cleanup and verification.
