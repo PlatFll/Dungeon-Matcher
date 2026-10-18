@@ -1,0 +1,4190 @@
+{
+  "assets": [
+    {
+      "group": "WallTiles",
+      "name": "PortraitWallA",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "5911bd28279a3a3428179fa51e1c3b3f2a0cf2d2717a39b7035e5f9a4051fd39",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "PortraitWallB",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "1ec88f545294c80c6692961380d9fc931d286e0d47ac1bc33f1259fad74a0fc6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "PortraitWallC",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "5949513d87e1d591bba88e97f9608e9b539641ea63f27fdb39f07c4cd37962f4",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "PortraitWallD",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "a268a44a6f31110dbcbe55bb5a2884fa24e50a79f5aa5cf542c186530edcf21e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "BattleWallA",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "a4d57811ea908451877f90fd2de7294e6abad77c2fa802e04f2c78c8ed6baf11",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "BattleWallB",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "09aff0a389928f4ad005cf471b55ac04514ec9d16cd30f9fbdcc69393d12c299",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "BattleWallC",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "8fed3d7f2a2064ac992b8a413db81f0fafaf1cada390d02d5ab2e3d931e2cd50",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "BattleWallD",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "30a57a3f32608ae69efa81340c1313b18e29f7ad5e41908be1c659ba84f2e347",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "OuterWallA",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "b3f9bf80640aae37cefe3309a65309d700b1a98f2671520dffbe036a48253d4c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "OuterWallB",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "ceb8c50fa68de48f840dac89b50f932c20cc3749f46fdd44ebf5983b2e828ad4",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "OuterWallC",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "bb8a1355e188c5095b11742f6e4d6d820ce7ec095c955980f32e066bc49470ff",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "WallTiles",
+      "name": "OuterWallD",
+      "width": 64,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerMasonry.png",
+      "crop": [
+        25,
+        64,
+        64,
+        64
+      ],
+      "changes": "Native cyclic crop, 4px horizontal/2px vertical seam reconstruction; scoped blue-to-violet material map for battle/outer walls.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "60b0b29de741b049380e8d46e117b4d6b48fa97ffbc81f0bf70b03d83e4d3b85",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardTL",
+      "width": 24,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardTL.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "078591dcf65c0ce6641ff906c8bdd490abccccdc26235b2c59a7e1507f12939f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardTR",
+      "width": 24,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardTR.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 46,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "023670726f41cb713e9c892f717302d368aaae9817a98e810345b2fcecdd2fd5",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardBL",
+      "width": 24,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardBL.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 41,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "1b52ce3eab831438ac043982e19773d467d8057db4e0ff2c4af18ccbc0da1272",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardBR",
+      "width": 24,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardBR.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 44,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "d5081b396ac3e91faa7cc4e106b09aebc5f04ff284a7b3d060ea0ff8d5eb6d73",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardTopRail",
+      "width": 64,
+      "height": 18,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardTop.png",
+      "crop": [
+        44,
+        0,
+        64,
+        18
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 31,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        18
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "d57f9e024d80b0d47ad0f6f95ff4950c1c51015ea4ed1ba0d2e14f7a503cb8d2",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardBottomRail",
+      "width": 64,
+      "height": 19,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardBottom.png",
+      "crop": [
+        46,
+        0,
+        64,
+        19
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 27,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        19
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "fbac121509773441d77ac08acd2c88f2c29b8cdaac85e909fb7919a70ca51652",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardLeftRail",
+      "width": 16,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardLeft.png",
+      "crop": [
+        0,
+        72,
+        16,
+        64
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 33,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "68a644f62834d811742b48fd709b243a5bdc5b295ffa5cc0cf73cdbdeda8b8fd",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardRightRail",
+      "width": 20,
+      "height": 64,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardRight.png",
+      "crop": [
+        0,
+        72,
+        20,
+        64
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 42,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        64
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "5592a4951e5f3f2836f387cfa05fa4af96791cc2bccfe055b808c86b51a7474e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BoardFrames",
+      "name": "BoardCenterFinial",
+      "width": 20,
+      "height": 14,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BoardTop.png",
+      "crop": [
+        167,
+        4,
+        20,
+        14
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 22,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        14
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "e68b4aec83186db7e5f1cfaa996c5a565cc58aa5c1bda8e12356bd9d4b308a7e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "EmptyCell0",
+      "width": 46,
+      "height": 46,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/EmptyCell0.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        46,
+        46
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "eff81887c202ccbddeb79f7137f52e7ab58d9a4c2df3f9aa661a19347133672a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "EmptyCell1",
+      "width": 45,
+      "height": 46,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/EmptyCell1.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 9,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        45,
+        46
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "c5b73071362e72c8679c7782a5c0e67c65b3a134d3cf159813a107fcd7018219",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "EmptyCell2",
+      "width": 46,
+      "height": 46,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/EmptyCell2.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 9,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        46,
+        46
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "452a4603e6b53ca913824a2b4d84290fb42215a5693062e88f973ffbd9256dd6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitTL",
+      "width": 18,
+      "height": 18,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 43,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "cfde430f2c24434a1306eb2750b97eb9fed6f952a76531817fa56463b4c4641a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitTR",
+      "width": 18,
+      "height": 18,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        111,
+        0,
+        18,
+        18
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 47,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "9c3187293950ba3c21d236186f9dd3423c08871115b816c03f0e2bef7954d4a0",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitBL",
+      "width": 18,
+      "height": 18,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        0,
+        234,
+        18,
+        18
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "37e5b806d3dc8417958b8d3c56a00dc24e1f97b43f0c775e34dbef546836258f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitBR",
+      "width": 18,
+      "height": 18,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        111,
+        234,
+        18,
+        18
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 50,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        18,
+        18
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "2af9f9c5d86d3d2b7e75a8b4e1c64e975b5e01821ff1af73ff304eeccc5f91ff",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitTop",
+      "width": 16,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        18,
+        0,
+        16,
+        13
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 23,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        4,
+        16,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": false,
+      "sha256": "113401fe60159df13e3761d5bffb09c96e2004b4dd92b11a80b3ed20ea8edad8",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitBottom",
+      "width": 16,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        18,
+        239,
+        16,
+        13
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        9
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": false,
+      "sha256": "46bfc9da0b615d57e5777b5a3d5dc2e516af0d796721f2599e16637c3a316da8",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitLeft",
+      "width": 11,
+      "height": 32,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        0,
+        60,
+        11,
+        32
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        0,
+        11,
+        32
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "e73b702b36d5521017791f4c75194cf18f311991da4011c969b30b4786e1f961",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitRight",
+      "width": 13,
+      "height": 32,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        116,
+        60,
+        13,
+        32
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 27,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "00fa92139f4e0ea84c8aad542903bffb4348922d4e23480f6d3d36b5dff721d9",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarTopA",
+      "width": 12,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        35,
+        0,
+        12,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 28,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        5,
+        12,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "16d4f7a178694b0ccdd343fbfb9e5d2f65f6740168752256b35fed7fa222084a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarTopB",
+      "width": 12,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        84,
+        0,
+        12,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 26,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        5,
+        12,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "409d6fc29f60068370a3e1cc9ec1de172ff0a07467ea052780e119f3739330d3",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarBottomA",
+      "width": 14,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        38,
+        239,
+        14,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "618a8c2f12b89c015e2789705a4eda3858a2e0bec907bf997824e9e6756aa01f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarBottomB",
+      "width": 14,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        84,
+        239,
+        14,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "12bca34fdfa00b58758361cec848ae216d143122989d3c8c22d7e28db2ac713d",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarLeftA",
+      "width": 11,
+      "height": 14,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        0,
+        42,
+        11,
+        14
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 22,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        0,
+        11,
+        14
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "9bcb547c2ffdb980326858a83d65f5e99cb9e31f09cd7c27f313d4abb42cb3af",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarLeftB",
+      "width": 11,
+      "height": 14,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        0,
+        116,
+        11,
+        14
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        0,
+        11,
+        14
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "99200378115558806548261e37a4d64767e160d1580b40c42b1cae36887bd30c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarRightA",
+      "width": 13,
+      "height": 14,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        116,
+        42,
+        13,
+        14
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        14
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "f48531c57e901d74c5237613713bcbeda7393219d85ec4c1daf869ab0a3b1035",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PortraitCollarRightB",
+      "width": 13,
+      "height": 14,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerFrame.png",
+      "crop": [
+        116,
+        116,
+        13,
+        14
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        14
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "dff0bdcba7b67b1b98d4b61544ab31c7bcfdc960faf8e24524e35f3bda10105d",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveTL",
+      "width": 20,
+      "height": 17,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        0,
+        0,
+        20,
+        17
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        20,
+        17
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "b89bd05c916e5045a077022ee285a6664aca59d1b8c5111536265fe93a550a7b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveTR",
+      "width": 20,
+      "height": 17,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        115,
+        0,
+        20,
+        17
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        19,
+        17
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "7a63fc7c1d660bb9675f1fe393a7feb689f6e75e6c5dd400f0d39ff825f62689",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveBL",
+      "width": 20,
+      "height": 17,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        0,
+        21,
+        20,
+        17
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 41,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        17
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "b1342b264233aa7a9171503e8b64bcbaeb4b511b3178cb6d9c98bff9f0e2c4e5",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveBR",
+      "width": 20,
+      "height": 17,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        115,
+        21,
+        20,
+        17
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        19,
+        17
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "2da38707aa9fe06fd1d52d375b6eef5d934ef0b81be9347b5b596a86dc65c10a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveTop",
+      "width": 32,
+      "height": 9,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        20,
+        0,
+        32,
+        9
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 38,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        32,
+        9
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "d41367b57f33e6b864c20ada4f821c185515970f9db49f6c82e86bf49b01dd85",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveBottom",
+      "width": 32,
+      "height": 9,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        20,
+        29,
+        32,
+        9
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 34,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "a0f1ac69c2fea47f2a0d23a9ba81fb553508ec191a4c3e9836e106483779ddac",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveLeft",
+      "width": 10,
+      "height": 4,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        0,
+        17,
+        10,
+        4
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 7,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        4
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "5f555c91823c591c30c74b6938d1188778e3194c6e55aef7e7cd3b4902facefe",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveRight",
+      "width": 10,
+      "height": 4,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        125,
+        17,
+        10,
+        4
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        4
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "181b60bb742a8057e9ac4b6fd8c5d2bd4496973b87a5dd0f23975686727e8a26",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "WaveSkull",
+      "width": 27,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/WaveHeader.png",
+      "crop": [
+        57,
+        35,
+        27,
+        12
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 27,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        27,
+        10
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "3012cedb0dd831bab162e18533d6b26ea4256e6b6f3774b6d6909ae45f83fcdd",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideTL",
+      "width": 13,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 29,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "3ec7dd85241fb904dce52e3ebc893747bd2bcf0ce40c17b133d7fa2ea7ecedd9",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideTR",
+      "width": 13,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        66,
+        0,
+        13,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 22,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "85df6ff446633f21cd1230a21cc3f11e5725bbc55cebb5c90fb5e1b1b565284b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideBL",
+      "width": 13,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        0,
+        26,
+        13,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 24,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "be71003fcc2c61a0f3fd37e6028ea361d1ad0cf433c8c7f797b91ba10fb3482b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideBR",
+      "width": 13,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        66,
+        26,
+        13,
+        13
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 25,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "70a777b8aa31a5e2b2201e0b74727f6a70be02a688bce04ed191727648dba09e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideTop",
+      "width": 32,
+      "height": 8,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        13,
+        0,
+        32,
+        8
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 28,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "82fc2a9af4e27e24e1d702b004d2d45966708f024e106ca043a9dc560fdb6ffb",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideBottom",
+      "width": 32,
+      "height": 8,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        13,
+        31,
+        32,
+        8
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 28,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "df677e88dc38b8063328171e16ad26f3fa19675cb8cd7f50a3f2e965e0bbd680",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideLeft",
+      "width": 9,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        0,
+        13,
+        9,
+        13
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 12,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "530555ce1d16ed7d754f05b66a213e9ae5a5f33da2810c1f61aa67979ae41e4a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "GuideRight",
+      "width": 9,
+      "height": 13,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedGuide.png",
+      "crop": [
+        70,
+        13,
+        9,
+        13
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        13
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "29cc47fc5857451422cf75eb0f81f4bc01fea1f18cf0f9a98a22e6c7af01814b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsTL",
+      "width": 12,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 24,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "0c2c7841fbc8065ba678d2a85a0fd259eaf169611fd4016f8e69165c8f5ee5c4",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsTR",
+      "width": 12,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        33,
+        0,
+        12,
+        12
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 24,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "dd75c2b537095701292794c127b1d42927d94c1a6a57bb6faf1149349a416921",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsBL",
+      "width": 12,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        0,
+        28,
+        12,
+        12
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 34,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "5683840920389be63c800c928cfa0e9b5921a5bffad53668c8592721d0c52d91",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsBR",
+      "width": 12,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        33,
+        28,
+        12,
+        12
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 27,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        12
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "779ecc8db9d1b6d3281278295582704e5f5f774592f2d0996857fcdeb6c4d44e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsTop",
+      "width": 21,
+      "height": 7,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        12,
+        0,
+        21,
+        7
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 17,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        21,
+        7
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "5ec771a3887beafbb74023b761fb28b77e66784ea9d1e330ccb8eb174cecb4f2",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsBottom",
+      "width": 21,
+      "height": 7,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        12,
+        33,
+        21,
+        7
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 16,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        21,
+        7
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "07e211c964ddb562dc717d3c48719bbab84514e0a59d57b326f81569ab6c82cc",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsLeft",
+      "width": 7,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        0,
+        12,
+        7,
+        16
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 12,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "267ab6317488f5c9eb6b313de34b131a99f71afe4ac5aec9ecc79362a1b902c0",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsRight",
+      "width": 7,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        38,
+        12,
+        7,
+        16
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 15,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "3677a704dffe53fe1879a1a8a184db82a8d8d542fce11b0b3673fa74359a626a",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SettingsGear",
+      "width": 22,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedSettings.png",
+      "crop": [
+        12,
+        8,
+        22,
+        24
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 32,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        22,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "09a973b8bed5f40a595d5d083ae7059d72cfc8b1a7b6ef0755342d6a281aa894",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityTL",
+      "width": 16,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "f7e089ca10431142b93842e6068764d41dbeb9f4c4fdfb533a9336f5b9ec2ea4",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityTR",
+      "width": 16,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        160,
+        0,
+        16,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 27,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "eeb8147bba5702f6f112b631556a2a24a5f3380357d587f0d73e41411fb07d26",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityBL",
+      "width": 16,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        0,
+        50,
+        16,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 31,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "55ac734111d90f5f4cb7f4748174dd75056e41fb59ed97d25356c2764422fb0f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityBR",
+      "width": 16,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        160,
+        50,
+        16,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 27,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "b5b3b245f6f59adb448337f946d78c38ad93b02b33ddbdb96c1b73d258051c97",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityTop",
+      "width": 32,
+      "height": 10,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        16,
+        0,
+        32,
+        10
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 28,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        10
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "71dcb90014e92d7d84999593d95f77dcd64c46ef88a51d45d265cce360d614e0",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityBottom",
+      "width": 32,
+      "height": 12,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        16,
+        54,
+        32,
+        12
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 17,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "9339961a5b02c9239388d755962f286ce35c3d12d6bc5e48588a6c207b2d6048",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityLeft",
+      "width": 14,
+      "height": 8,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        0,
+        16,
+        14,
+        8
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 10,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "c70dd0fed84ebb771da1723d73410bf324cb4d5bb9c8d2668c652c3897384d6c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityRight",
+      "width": 14,
+      "height": 8,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        162,
+        16,
+        14,
+        8
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 12,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "a7c93a195af047809df5d4f76bfdbc0beff273987e22e565f62d353f0d00874b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityLeftJewel",
+      "width": 14,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        0,
+        25,
+        14,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 33,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "9c989de525852b20589086186692c485d5b797ee23dd6f8f9127003dcdd65a0c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "AbilityRightJewel",
+      "width": 14,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedAbility.png",
+      "crop": [
+        162,
+        25,
+        14,
+        16
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 31,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        14,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "4625045f59e2da38a98c33ab2e7c903cf5d36db8ae3afe0b0ecbce1b87043819",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyTL",
+      "width": 20,
+      "height": 20,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 28,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "f0371028183c1f428f490e2fc4d8875caaef32e1a7e5f404e5866aed15cf3c95",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyTR",
+      "width": 20,
+      "height": 20,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        50,
+        0,
+        20,
+        20
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 28,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "90227140f9826050eda33bbc993fa263656c8dd31bdbecf6bb2142f3cc9566f2",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyBL",
+      "width": 20,
+      "height": 20,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        0,
+        43,
+        20,
+        20
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "0f75f583eec51a055a93f282f905b39c5087356d2904c473b313cbc604381c82",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyBR",
+      "width": 20,
+      "height": 20,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        50,
+        43,
+        20,
+        20
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "33de25e24742f7480aac9fb6a23e166a3f7c9a61ae4bcd45db2d77e0c3994e19",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyTop",
+      "width": 30,
+      "height": 9,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        20,
+        0,
+        30,
+        9
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 14,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        9
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "55b872f3a329783fa4410434496eefa27290a489958a365abb40cc284ec4e0c6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyBottom",
+      "width": 30,
+      "height": 16,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        20,
+        47,
+        30,
+        16
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 6,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        16
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "544161c29d7b561730ca5d16879673217d9524f6a93ee9685cf9d95460fa5c2c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyLeft",
+      "width": 10,
+      "height": 23,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        0,
+        20,
+        10,
+        23
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 14,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "c0714677f11ea0020b87c8f65813fd6547d02aa53d9b82079412f0c7c46ac629",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "SupplyRight",
+      "width": 10,
+      "height": 23,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedPotionHolder.png",
+      "crop": [
+        60,
+        20,
+        10,
+        23
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 22,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "08d07038e1325fa6a0fea80fc1784a2d5d5b2570f88220829276a97242918e7b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "EnergyStart",
+      "width": 13,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedEnergy.png",
+      "crop": [
+        0,
+        0,
+        13,
+        24
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 21,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "ed755247a13c47167248ef4eb3ef9d259ba5058cb4dc946e4c5514a9b4a90f0f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "EnergyEnd",
+      "width": 15,
+      "height": 24,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedEnergy.png",
+      "crop": [
+        132,
+        0,
+        15,
+        24
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 26,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        15,
+        24
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "f47c171f5cab71532aaec0312bed1055d86fd9651047af56be458b2fcf0e0b40",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "EnergyTopRail",
+      "width": 64,
+      "height": 6,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedEnergy.png",
+      "crop": [
+        13,
+        0,
+        64,
+        6
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 14,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        6
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "3278ba68112ade664363b0ea3be0a444ddfb648606d0b87e8fc3205c39e4b54f",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "HudFrames",
+      "name": "EnergyBottomRail",
+      "width": 64,
+      "height": 6,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/SharedEnergy.png",
+      "crop": [
+        13,
+        18,
+        64,
+        6
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 7,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        6
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "79c888b73d435446680ad22a6956783df4b932ce0acef321b008fb0c4dc43713",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PlayerHealthStart",
+      "width": 16,
+      "height": 24,
+      "source": "Assets/_Game/Resources/UI/Finalized/PlayerHealthStart.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 9,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        6,
+        1,
+        16,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "b4b677ab4ab1262dd98e764526de6dd6bf70cc56a5162e4a28e1d726f855f903",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PlayerHealthMiddle",
+      "width": 1,
+      "height": 24,
+      "source": "Assets/_Game/Resources/UI/Finalized/PlayerHealthMiddle.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        5,
+        1,
+        20
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "abdeec2e7a5ea95bf61ee314857a781b639d61d5041e9ebceb24241464c86a0e",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "CharacterFrames",
+      "name": "PlayerHealthEnd",
+      "width": 16,
+      "height": 24,
+      "source": "Assets/_Game/Resources/UI/Finalized/PlayerHealthEnd.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 9,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        10,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "5951de2022b6db26bb9b3b4c5a8b000f8a3c5644287615f663261e59082403ce",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "HudDark",
+      "width": 8,
+      "height": 8,
+      "source": "Approved native HUD material colors",
+      "crop": null,
+      "changes": "Dedicated repeatable recess fill; no pictorial source resampling.",
+      "opaque_colors": 1,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        8,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "b7e5a380e9d5ae8dbd907954bd0f61eb08ecf82316d81b6144a82061d47e7e59",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "AbilityDark",
+      "width": 8,
+      "height": 8,
+      "source": "Approved native HUD material colors",
+      "crop": null,
+      "changes": "Dedicated repeatable recess fill; no pictorial source resampling.",
+      "opaque_colors": 1,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        8,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "11864c8ffcb62a9c4b006f7e8841b56123f99f85da73c9f5000ae991ff7ad531",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "BackgroundLayers",
+      "name": "SilverInset",
+      "width": 8,
+      "height": 8,
+      "source": "Approved native HUD material colors",
+      "crop": null,
+      "changes": "Dedicated repeatable recess fill; no pictorial source resampling.",
+      "opaque_colors": 1,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        8,
+        8
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "18b153e0280ee2e35b3d954da0a19abd0d5d929c78135ac13c4dcf12d6dc9240",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "Gateway",
+      "width": 115,
+      "height": 121,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/ArchDoor.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 51,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        115,
+        121
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "e7f2c7e8facc255ea6505bc17c54a24f8c402561992a9d22d1c6b1925a5c8ad6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftTorch",
+      "width": 25,
+      "height": 65,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/TopLeftTorch.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        24,
+        65
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "253fc8a80d4ad826723e9b52b43663b8378dae3da72d24d94424cfae4027666b",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightTorch",
+      "width": 26,
+      "height": 67,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/TopRightTorch.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 42,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        1,
+        25,
+        66
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "63b3db56347aae3a072dca9ef53970b9b02c76aecb04c2208db91d6e66bc0c73",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RearBarrels",
+      "width": 35,
+      "height": 46,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RearBarrels.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 47,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        35,
+        46
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "391367728b2acc3e7a71881caf687ab01ef149c3800b2319be2671401684b2cd",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FrontBarrel",
+      "width": 38,
+      "height": 46,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/NearRightBarrel.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 53,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        36,
+        46
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "bf571eb6bf81fbf644dba846613f0f14395be91de6a140d3b8840b2d75a9f9a6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftBones",
+      "width": 24,
+      "height": 40,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/NearLeftBones.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        40
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "cc46d029197df47946ae5fd3896fce9cccaada6e6b089cf401ca8aef2ec34d25",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightBones",
+      "width": 34,
+      "height": 38,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/NearRightBones.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 51,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        34,
+        38
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "8680b2dc3252fe943ec0439598c9606eb5e29801602c3a1b3987b247153353ef",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RearBones",
+      "width": 28,
+      "height": 34,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RearBones.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 39,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        28,
+        31
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "3304721dce424dc55cfdf183acbf11a01d1f279baf011447b999d4df0dc1c770",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "PortraitBanner",
+      "width": 49,
+      "height": 65,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/PlayerBanner.png",
+      "crop": null,
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        49,
+        65
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "c2c8d9b4cf8250b81c908c0676cde37f9b69f48d3422fac212de335b8a068d2d",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftHangingBanner",
+      "width": 25,
+      "height": 63,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        169,
+        63,
+        25,
+        63
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          1,
+          0
+        ],
+        [
+          25,
+          0
+        ],
+        [
+          24,
+          62
+        ],
+        [
+          13,
+          54
+        ],
+        [
+          1,
+          63
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 44,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        25,
+        63
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "309342f1c6a33fb566993679316746bd4ec24b12287665d5bcd808044c7eeb34",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightHangingBanner",
+      "width": 26,
+      "height": 61,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        307,
+        65,
+        26,
+        61
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          1,
+          0
+        ],
+        [
+          26,
+          0
+        ],
+        [
+          25,
+          61
+        ],
+        [
+          13,
+          53
+        ],
+        [
+          1,
+          61
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 43,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        26,
+        61
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "d0f8a39858d791d1f4ca19dc769c1f15ca25c6007a45c4e6f6e105cd2e43f7d8",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftHighChain",
+      "width": 34,
+      "height": 103,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        148,
+        0,
+        34,
+        103
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          23,
+          0
+        ],
+        [
+          34,
+          0
+        ],
+        [
+          28,
+          22
+        ],
+        [
+          23,
+          34
+        ],
+        [
+          19,
+          51
+        ],
+        [
+          18,
+          68
+        ],
+        [
+          10,
+          88
+        ],
+        [
+          10,
+          100
+        ],
+        [
+          2,
+          103
+        ],
+        [
+          0,
+          93
+        ],
+        [
+          4,
+          76
+        ],
+        [
+          4,
+          60
+        ],
+        [
+          10,
+          39
+        ],
+        [
+          13,
+          18
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 54,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        34,
+        103
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "c2d27ecbcedd25286c8e66bfb859ac8a1c6ba1ab6c92bbcb865bbab7c1e5515d",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightHighChain",
+      "width": 28,
+      "height": 83,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        294,
+        0,
+        28,
+        83
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          13,
+          22
+        ],
+        [
+          17,
+          34
+        ],
+        [
+          18,
+          48
+        ],
+        [
+          25,
+          65
+        ],
+        [
+          28,
+          81
+        ],
+        [
+          18,
+          83
+        ],
+        [
+          15,
+          67
+        ],
+        [
+          10,
+          54
+        ],
+        [
+          7,
+          35
+        ],
+        [
+          3,
+          20
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 45,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        28,
+        83
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "c2526d3e9bfc13ffbf8cb059dde56e2007249fcba2157c76d7aaf4234d697718",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FarRightChain",
+      "width": 21,
+      "height": 180,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        414,
+        0,
+        21,
+        180
+      ],
+      "changes": "Native chain isolation; missing Settings-occluded middle links reconstructed from the approved side-chain strip. Existing visible links outside the repair rectangle unchanged.",
+      "selection": [
+        [
+          5,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          15,
+          85
+        ],
+        [
+          20,
+          110
+        ],
+        [
+          16,
+          140
+        ],
+        [
+          15,
+          180
+        ],
+        [
+          4,
+          180
+        ],
+        [
+          5,
+          143
+        ],
+        [
+          7,
+          115
+        ],
+        [
+          3,
+          89
+        ]
+      ],
+      "repairRects": [
+        [
+          0,
+          25,
+          21,
+          52
+        ]
+      ],
+      "opaque_colors": 55,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        20,
+        180
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": false,
+      "sha256": "b5ffd8811a8a01e38d579e4e535a96f8745f5d4c463f39f3a5ead2548c4ca3d6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftSideChain",
+      "width": 16,
+      "height": 111,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/LeftBorderDressing.png",
+      "crop": [
+        0,
+        0,
+        16,
+        111
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 60,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        111
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "c98a275a78e137bdac77ad605a3dcadd85f471e754b6638a5e76e6359caa50b6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightSideChain",
+      "width": 12,
+      "height": 111,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RightBorderDressing.png",
+      "crop": [
+        21,
+        0,
+        12,
+        111
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 60,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        111
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "a26dc47f92811491dbe7f328814ed862acb4f00efb444bd6a30d35e506bd29bd",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftSideTorch",
+      "width": 37,
+      "height": 83,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/LeftBorderDressing.png",
+      "crop": [
+        0,
+        109,
+        37,
+        83
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          15,
+          0
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          32,
+          29
+        ],
+        [
+          37,
+          46
+        ],
+        [
+          36,
+          63
+        ],
+        [
+          29,
+          67
+        ],
+        [
+          29,
+          83
+        ],
+        [
+          11,
+          83
+        ],
+        [
+          10,
+          69
+        ],
+        [
+          1,
+          62
+        ],
+        [
+          0,
+          43
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          9,
+          15
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 58,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        37,
+        83
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "4e789ff740fa235e49f67a0b646fdb1b43282c4f3e28a14579363c1ba3ed46e6",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightSideTorch",
+      "width": 33,
+      "height": 83,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RightBorderDressing.png",
+      "crop": [
+        0,
+        109,
+        33,
+        83
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          18,
+          0
+        ],
+        [
+          25,
+          15
+        ],
+        [
+          26,
+          30
+        ],
+        [
+          33,
+          42
+        ],
+        [
+          32,
+          63
+        ],
+        [
+          24,
+          69
+        ],
+        [
+          23,
+          83
+        ],
+        [
+          7,
+          83
+        ],
+        [
+          6,
+          67
+        ],
+        [
+          0,
+          61
+        ],
+        [
+          0,
+          43
+        ],
+        [
+          8,
+          29
+        ],
+        [
+          10,
+          16
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 59,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        1,
+        33,
+        83
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "d9b142db084a0c386924e4313697b35d4f69fb99ac97be308f44f5f1e1412951",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftSideBanner",
+      "width": 30,
+      "height": 96,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/LeftBorderDressing.png",
+      "crop": [
+        0,
+        194,
+        30,
+        96
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          88
+        ],
+        [
+          15,
+          96
+        ],
+        [
+          0,
+          88
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 48,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        96
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "1862e53ecd11af28fe5258a2e989347bf905963c6e14ed0adbd57de36c40c360",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightSideBanner",
+      "width": 29,
+      "height": 96,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RightBorderDressing.png",
+      "crop": [
+        4,
+        194,
+        29,
+        96
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          0,
+          0
+        ],
+        [
+          29,
+          0
+        ],
+        [
+          29,
+          88
+        ],
+        [
+          14,
+          96
+        ],
+        [
+          0,
+          88
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 50,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        29,
+        96
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "d0669e7a4b88c36aba06ec5a51552efc95b18ee8abd239b079da14aefc1dfd89",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftSkullPillar",
+      "width": 37,
+      "height": 114,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/LeftBorderDressing.png",
+      "crop": [
+        0,
+        289,
+        37,
+        114
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 42,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        37,
+        114
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "73081ca70797dbc88a46c9ca00a5107ab85b6b68f7ad76a8b2f380e64f57910c",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightSkullPillar",
+      "width": 33,
+      "height": 114,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/RightBorderDressing.png",
+      "crop": [
+        0,
+        289,
+        33,
+        114
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 40,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        33,
+        114
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "f61a86aa543c320700f0ab9a9af6442ecbd47e3a58f8edad4bb924ba0acce555",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftBottomButtress",
+      "width": 67,
+      "height": 135,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BottomMasonry.png",
+      "crop": [
+        0,
+        0,
+        67,
+        135
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          0,
+          0
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          51,
+          26
+        ],
+        [
+          46,
+          42
+        ],
+        [
+          53,
+          62
+        ],
+        [
+          46,
+          82
+        ],
+        [
+          52,
+          102
+        ],
+        [
+          67,
+          118
+        ],
+        [
+          67,
+          135
+        ],
+        [
+          0,
+          135
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 36,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        67,
+        135
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "f8fb47b1bf0cf2388175cfbb01b460c1aa8979c2e1826ec29289e50c48964c54",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightBottomButtress",
+      "width": 63,
+      "height": 135,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BottomMasonry.png",
+      "crop": [
+        407,
+        0,
+        63,
+        135
+      ],
+      "changes": "Native isolation with an explicit silhouette selection; retained pixels unchanged.",
+      "selection": [
+        [
+          14,
+          0
+        ],
+        [
+          63,
+          0
+        ],
+        [
+          63,
+          135
+        ],
+        [
+          0,
+          135
+        ],
+        [
+          1,
+          117
+        ],
+        [
+          17,
+          101
+        ],
+        [
+          11,
+          83
+        ],
+        [
+          18,
+          62
+        ],
+        [
+          12,
+          42
+        ],
+        [
+          12,
+          24
+        ]
+      ],
+      "repairRects": [],
+      "opaque_colors": 35,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        63,
+        135
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": false,
+      "retained_pixels_exact": true,
+      "sha256": "5ac30c850dfcd3794192bbb23a9a9c27b9d0623bdd87ab5d5c47870ddd323243",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "LeftTopPillar",
+      "width": 10,
+      "height": 180,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        0,
+        0,
+        10,
+        180
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 32,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        10,
+        180
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "2bff2f3e897f36fe9d0ebbe9bd0760a9eddaa5da870b3f7a0ea6004512e221b5",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "CenterTopPillar",
+      "width": 38,
+      "height": 28,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        108,
+        0,
+        38,
+        28
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 30,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        38,
+        28
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "63da7002919adae57bf9b81173041cd5fed46ba5666a7254186e698361190545",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "RightTopPillar",
+      "width": 23,
+      "height": 180,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        354,
+        0,
+        23,
+        180
+      ],
+      "changes": "Native pillar with only the Guide-occluded flat patch reconstructed from its intact stone band; original rectangular silhouette and visible pixels elsewhere unchanged.",
+      "selection": null,
+      "repairRects": [
+        [
+          0,
+          28,
+          23,
+          43
+        ]
+      ],
+      "opaque_colors": 57,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        23,
+        180
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "0ae96a436eac3fadab2e8d3ec4899cdfc4f2df429d33e526d6d80449f4e3e9df",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FarRightPillar",
+      "width": 12,
+      "height": 180,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/FarWall.png",
+      "crop": [
+        458,
+        0,
+        12,
+        180
+      ],
+      "changes": "Lossless native extraction.",
+      "selection": null,
+      "repairRects": [],
+      "opaque_colors": 28,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        12,
+        180
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "8311a1da46dc76e53c68a9d0cf6f7c27b2f5c75a76719a3b4300a0f14609c3d7",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FoundationStart",
+      "width": 24,
+      "height": 23,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BattleFloor.png",
+      "crop": [
+        0,
+        98,
+        24,
+        23
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 30,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "3f463a108f0e6f919c8dd912c7a4cf57970ac674ee78be7e5c1b80b45ac4bd03",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FoundationTopRail",
+      "width": 64,
+      "height": 23,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BattleFloor.png",
+      "crop": [
+        20,
+        98,
+        64,
+        23
+      ],
+      "changes": "Lossless native extraction plus 2px repeat-end repair; all remaining contour and ornament pixels protected.",
+      "opaque_colors": 35,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": false,
+      "source_mask_exact": true,
+      "retained_pixels_exact": false,
+      "sha256": "79922a18830d690e7abc13f3948b9061ca7d1cad1b6b99df00a2094dac945e36",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    },
+    {
+      "group": "Props",
+      "name": "FoundationEnd",
+      "width": 30,
+      "height": 23,
+      "source": "ArtSource/BattlePresentation/DungeonMockupRevision/native/BattleFloor.png",
+      "crop": [
+        303,
+        98,
+        30,
+        23
+      ],
+      "changes": "Lossless native reuse; no pixel or silhouette change.",
+      "opaque_colors": 30,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        23
+      ],
+      "ase_png_exact": true,
+      "source_pixels_exact": true,
+      "source_mask_exact": true,
+      "retained_pixels_exact": true,
+      "sha256": "e35282192175f7607d784272444745b42349799c374c0f35dd8e971cdd5376bf",
+      "visual_status": "Pending contact-sheet and Unity inspection"
+    }
+  ],
+  "wall_seams": {
+    "PortraitWall": "16 horizontal + 16 vertical edge pairings pass",
+    "BattleWall": "16 horizontal + 16 vertical edge pairings pass",
+    "OuterWall": "16 horizontal + 16 vertical edge pairings pass"
+  },
+  "rail_repeat_edges": "pass",
+  "artistic_approval": "Pending visual review; technical checks do not establish style approval"
+}

@@ -1,0 +1,55 @@
+{
+  "job_id": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+  "endpoint": "create_tiles_pro",
+  "request": {
+    "description": "Create a matching set of FLOOR SURFACE TEXTURE tiles for Dungeon Matcher using the supplied actual floor reference crops. Match the broad blue-violet rectangular flagstones, staggered horizontal rows, quiet matte slab faces, subtle top-left bevel highlights and dark narrow mortar. Crisp NATIVE pixel art, connected flat shade clusters, restrained wear only at a few corners, at most one short crack on a slab. Tile canvas is completely filled with continuous flooring; stone slabs run off all four canvas edges. NOT floating isolated blocks, NO tile border, NO extrusion, NO walls, NO props, NO characters, NO grass. Frontal RPG battle-floor projection, horizontal courses; each individual paver is much wider than tall. 1). NEAR floor, large quiet slabs, about 40-60px wide, 20px tall, 3 courses. 2). NEAR same structure different stagger. 3). NEAR same structure alternate slab lengths. 4). NEAR same structure alternate restrained corner chips. 5). MIDDLE floor, broad slabs 35-50px wide and 12px tall, five courses. 6). MIDDLE alternate stagger. 7). MIDDLE alternate slab lengths. 8). MIDDLE quiet alternate. 9). REAR floor, compressed horizontal slabs 30-45px wide and 8px tall, eight courses. 10). REAR alternate stagger. 11). REAR alternate slab lengths. 12). REAR quiet alternate. 13). NEAR with a very subtle muted warm-orange reflection on one stone edge, rest cool blue-violet. 14). MIDDLE with subtle muted warm reflection on one stone edge. 15). REAR with subtle muted warm reflection. 16). NEAR additional cool variation. Keep rendering consistent with the supplied crops but replace painted softness with crisp native pixel clusters. Avoid noisy texture, tiny cobbles, all-over cracks, checkerboard patterns, gradients, dithering and anti-aliasing. Floor surfaces should be spacious enough for small character silhouettes.",
+    "style_images": [
+      {
+        "file": "ReferenceNear.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "file": "ReferenceMiddle.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "file": "ReferenceRear.png",
+        "width": 64,
+        "height": 64
+      }
+    ],
+    "style_options": "{\"color_palette\":false,\"outline\":true,\"detail\":true,\"shading\":true}",
+    "palette": [
+      "#12182d",
+      "#1c2340",
+      "#282d50",
+      "#33385d",
+      "#3d426b",
+      "#494e7c",
+      "#575c8c",
+      "#686d9e",
+      "#7c7da5",
+      "#4b3040",
+      "#653d46",
+      "#814e4c",
+      "#9b6253",
+      "#b87c5c"
+    ],
+    "palette_name": "Dungeon Matcher cool slate-violet flagstones with restrained torch reflection",
+    "max_colors": 14,
+    "seed": 181026
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: dfc8b65c-28be-4db0-a59e-cf35ed299d4a\ndescription: Create a matching set of FLOOR SURFACE TEXTURE tiles for Dungeon Matcher using the supplied actual floor reference crops. Match the broad blue-violet rectangular flagstones, staggered horizontal rows, quiet matte slab faces, subtle top-left bevel highlights and dark narrow mortar. Crisp NATIVE pixel art, connected flat shade clusters, restrained wear only at a few corners, at most one short crack on a slab. Tile canvas is completely filled with continuous flooring; stone slabs run off all four canvas edges. NOT floating isolated blocks, NO tile border, NO extrusion, NO walls, NO props, NO characters, NO grass. Frontal RPG battle-floor projection, horizontal courses; each individual paver is much wider than tall. 1). NEAR floor, large quiet slabs, about 40-60px wide, 20px tall, 3 courses. 2). NEAR same structure different stagger. 3). NEAR same structure alternate slab lengths. 4). NEAR same structure alternate restrained corner chips. 5). MIDDLE floor, broad slabs 35-50px wide and 12px tall, five courses. 6). MIDDLE alternate stagger. 7). MIDDLE alternate slab lengths. 8). MIDDLE quiet alternate. 9). REAR floor, compressed horizontal slabs 30-45px wide and 8px tall, eight courses. 10). REAR alternate stagger. 11). REAR alternate slab lengths. 12). REAR quiet alternate. 13). NEAR with a very subtle muted warm-orange reflection on one stone edge, rest cool blue-violet. 14). MIDDLE with subtle muted warm reflection on one stone edge. 15). REAR with subtle muted warm reflection. 16). NEAR additional cool variation. Keep rendering consistent with the supplied crops but replace painted softness with crisp native pixel clusters. Avoid noisy texture, tiny cobbles, all-over cracks, checkerboard patterns, gradients, dithering and anti-aliasing. Floor surfaces should be spacious enough for small character silhouettes.\nsize: 64×64px (from style tiles)\nshape: copied from style reference (tile_type/tile_view ignored)\nstyle_tiles: 3 reference(s)\nseed: 181026\ncost: 10-25 generations by canvas size (1K 10, 2K 15, 4K 25); the canvas is picked from tile size and count\nstatus: processing (~15-30s)\n\nhint: get_tiles_pro(tile_id=\"dfc8b65c-28be-4db0-a59e-cf35ed299d4a\")"
+      }
+    ],
+    "isError": false
+  },
+  "status": "processing",
+  "balance_before": 1079.2
+}

@@ -1,0 +1,30 @@
+Use the attached Dungeon Matcher dungeon-scene extraction pack to rebuild the current dungeon battle scene as modular assets.
+
+Read first:
+- 00_README.txt
+- 03_LAYOUT_AND_MANIFEST/asset_index_and_notes.txt
+- 03_LAYOUT_AND_MANIFEST/scene_manifest.json
+- 03_LAYOUT_AND_MANIFEST/annotated_scene_map.png
+- 01_REFERENCE/full_scene_reference.png
+
+Goal
+- Rebuild the scene from separate assets and tiles, not as one flat merged image.
+- Preserve the approved shapes, composition, and overall look of the current scene.
+- Do not include the characters or the gem sprites in the background asset rebuild.
+
+Requirements
+- Treat the screenshot as a displayed-scale reference, not as final native production art.
+- Rebuild clean native assets in LibreSprite.
+- Preserve the overall design language exactly: chunky purple dungeon masonry, chains, torches, skull banners, stone-and-metal UI frame language, and the current layout.
+- Keep the scene recognizable. Do not redesign shapes.
+- Simplify only where needed for cleaner native pixel handling.
+
+Deliverables
+- Modular asset folder for the dungeon scene
+- Rebuilt scene assembled from those parts
+- Short validation note listing each asset created and any places where the screenshot crop had to be interpreted manually
+
+Important
+- Use the extracted crops as references and slicing guides.
+- If a crop is not clean enough to use directly, rebuild it faithfully from the reference.
+- Keep everything crisp and grid-aligned.

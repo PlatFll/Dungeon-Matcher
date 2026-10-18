@@ -1,0 +1,17 @@
+# Dungeon modular environment — corrected review kit
+
+The supplied full mockup is the visual target. The canonical guide governs native rendering. This is an additive, unmerged art-only scene; it does not replace the live Dungeon environment.
+
+Open `Review/Review.html`, or the Unity scene `Assets/_Game/Scenes/ArtPreview_DungeonModular.unity`. The Unity menu is **Dungeon Matcher → Art Preview → Open Dungeon Modular Scene**. The component exposes viewport/safe area and editable sample labels.
+
+150 separate editable LibreSprite modules are under `Editable/`; native exports are under `Exports/`. `AssetManifest.json` records sources/changes; `LibraryManifest.json` records current measurements. `Correction/Before/` preserves the rejected artwork and captures, and `Correction/BeforeReports/` preserves superseded assessments.
+
+The preview has no characters, enemies, board gems or gameplay owners. Static UI includes the source heart track, crowned-skull ability emblem, lightning, energy fill, potion, bomb and resonance jewel. Corners and props remain native-sized; straight rails/materials tile; portrait and board interiors are strictly masked.
+
+`Build.ps1 -Phase All` runs the historical base extraction and then the current `Correction/RunNative.ps1` recipes in LibreSprite. It uses archived generation results and never spends credits. The correction scripts are `FloorPolishCorrection.js`, `WallCorrection.js`, `DecorationCorrection.js`, `HealthCorrection.js`, `LightingCorrection.js`, then `FlagstoneCorrection.js` last. `Correction/UpdateManifest.py` refreshes source records. After importing/rebuilding through the Unity editor tool, run `Correction/ValidateCorrection.py` for current native/copy/seam checks. Earlier `ValidateFloor.py`/`ValidateKit.py` and their reports describe the superseded pass, not acceptance of these corrections.
+
+See `VALIDATION_REPORT.md` for actual verification and limits, and `PixelLabUsage.json` for the 26-generation cumulative ledger (15 for the latest floor request). User visual approval remains pending; do not merge without it.
+
+## Current reference-floor replacement
+
+The latest supplied image now governs the floor: twelve broad, quiet blue-violet PixelLab flagstones, finished in LibreSprite, replace the earlier cracked paving. See [floor comparison](Review/Floor.html) and [floor report](Correction/FlagstoneRebuild/REPORT.md). All 138 non-floor exports and every rendered pixel outside the floor remain unchanged across four fresh Unity layouts. The earlier [lighting report](Correction/Lighting/REPORT.md) remains evidence of the preceding wall/torch pass; its floor-topology locks were superseded by this explicit replacement request.

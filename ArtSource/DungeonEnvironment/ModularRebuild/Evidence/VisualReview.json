@@ -1,0 +1,48 @@
+{
+  "status": "supersedes rejected blanket 9/10 assessments",
+  "categories": [
+    {
+      "category": "Floor",
+      "corrections": "Replaced the four large slabs with 12 distinct 64\u00d764 modules across rear, middle and near-depth families. PixelLab A/B beat the direct floor trial; all selected stones were palette-mapped, border-repaired and finalized in LibreSprite. Fixed Unity top-edge alignment before starting the walls.",
+      "remaining_difference": "Reconstructed stone topology, not a pixel-for-pixel copy of every crack; tall viewports expose more of the native tiled floor.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    },
+    {
+      "category": "Walls",
+      "corrections": "Replaced cyclic portrait-wall crops with separate battle, outer, portrait and lower-HUD families. Smaller 16px battle courses, 21/22px portrait/HUD courses, independent joints, chipped corners and connected top-left bevels. Added discrete warm masonry behind the two braziers.",
+      "remaining_difference": "The generated source has irregular per-stone shading; these clean modular courses remain more regular, particularly in large empty wall areas.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    },
+    {
+      "category": "PlayerFrame",
+      "corrections": "Retained the source diamond corners, thin metal rails, collar hardware and banner. Replaced the mismatched ornate health frame with the source heart and straight magenta track. Portrait masonry is clipped behind the frame.",
+      "remaining_difference": "HP digits and character/affinity content are deliberately absent from this art-only preview.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    },
+    {
+      "category": "BoardFrame",
+      "corrections": "Retained faithful source jewel corners, purple stone rails and center connector. Kept 64 separate empty cells and tested oversized interior fills against the actual rendered border.",
+      "remaining_difference": "The empty board exposes quiet cell interiors that are largely covered by gems in the reference. Frame rails tile as the viewport changes.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    },
+    {
+      "category": "Props",
+      "corrections": "Reviewed every gateway, banner, chain, torch, barrel, bone and architectural module against the source. Reconstructed the gateway\u2019s six flat lower-pier patches, removed attached skull contamination from the barrel, and retained matching source silhouettes. Added separate torch-lit stone planes.",
+      "remaining_difference": "Architecture remains native-sized while layout adapts; tall aspect ratios have more open wall space around the original props.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    },
+    {
+      "category": "UI",
+      "corrections": "Restored separate crowned-skull emblem, left/right lightning, purple energy fill, potion, bomb and resonance jewel. Removed source-panel residue above the crown. Wave/Guide remain live text; all decorations are native editable sprites.",
+      "remaining_difference": "Item counts and combat values are omitted. Static sample labels do not execute gameplay.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
+    }
+  ],
+  "numerical_similarity_claim": null
+}

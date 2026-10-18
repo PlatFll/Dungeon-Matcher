@@ -1,0 +1,15 @@
+{
+  "endpoint": "create_image_pixflux",
+  "job_id": "490becbd-129a-4c27-b759-5bde57e83da3",
+  "asset_id": "2d3ba76a-4dc9-56b8-8b10-70c34514b5e4",
+  "width": 64,
+  "height": 64,
+  "init_image": "WallFluxInput.png",
+  "init_image_sha256": "cbb6f77d8214ed005f62a506fff6d604a90a3529640b15ad1113f8026f0cf197",
+  "init_image_strength": 220,
+  "seed": 8642,
+  "cost_generations": 1,
+  "status": "rejected",
+  "reason": "Retains nearly identical blocks while adding extra near-shades; direct LibreSprite reconstruction has clearer connected planes and controlled material ramp.",
+  "output_sha256": "3000df233d0c13c7a5fb28274354c0450025c035323b73939f7606316df4d46d"
+}

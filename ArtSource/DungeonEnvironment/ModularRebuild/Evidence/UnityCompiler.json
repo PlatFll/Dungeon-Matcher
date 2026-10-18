@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "command": "powershell -ExecutionPolicy Bypass -File Tools/Validate-Unity.ps1",
+  "exit_code": 0,
+  "log": "Correction/logs/MandatoryUnityValidator.log",
+  "log_sha256": "6fb78c4a0e9f95c8329c6270fdb9160b77d83dec57814f7ee1592f760a9cbee7",
+  "preview_source_sha256": "fe1716e8a45632235dc5e93216282b0f63b51c66f5a3d488ebde29c9da321886",
+  "captured_after_final_asset_change": true
+}

@@ -1,0 +1,64 @@
+{
+  "tests": {
+    "id": "2",
+    "testcasecount": "2",
+    "result": "Passed",
+    "total": "2",
+    "passed": "2",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-18 04:04:52Z",
+    "end-time": "2026-10-18 04:04:56Z",
+    "duration": "3.9848033"
+  },
+  "layouts": {
+    "1080x1920": {
+      "change_bounds": [
+        8,
+        8,
+        1072,
+        672
+      ],
+      "upper_scene_bottom": 672,
+      "lower_scene_byte_pixels_unchanged": true,
+      "capture_sha256": "32763e31679b09b8c21b9d52b3ff3d46c019184ec31fefadb025863c981427b9"
+    },
+    "1080x2400-safe-area": {
+      "change_bounds": [
+        32,
+        128,
+        1048,
+        1088
+      ],
+      "upper_scene_bottom": 1088,
+      "lower_scene_byte_pixels_unchanged": true,
+      "capture_sha256": "cf2867df741a1cfdd85a9fa88be0d003e48117aea80b5d279789f81acfbda584"
+    },
+    "1080x2400": {
+      "change_bounds": [
+        8,
+        8,
+        1072,
+        968
+      ],
+      "upper_scene_bottom": 968,
+      "lower_scene_byte_pixels_unchanged": true,
+      "capture_sha256": "abdd74495918e4ab9ff1c89558e7d2e7b460a87cf4f3209cd1365e33e6e29960"
+    },
+    "720x1280": {
+      "change_bounds": [
+        4,
+        4,
+        716,
+        484
+      ],
+      "upper_scene_bottom": 484,
+      "lower_scene_byte_pixels_unchanged": true,
+      "capture_sha256": "d7bf137d95da0a26874ebeae3a526d7a4805773d3bc0efb80cab6d448730f816"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "tests": {
+    "id": "2",
+    "testcasecount": "2",
+    "result": "Passed",
+    "total": "2",
+    "passed": "2",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-18 04:37:16Z",
+    "end-time": "2026-10-18 04:37:19Z",
+    "duration": "3.7290913"
+  },
+  "layouts": {
+    "1080x1920": {
+      "changed_bounds": [
+        318,
+        402,
+        1072,
+        626
+      ],
+      "authorized_floor_bounds": [
+        318,
+        402,
+        1072,
+        626
+      ],
+      "non_floor_render_pixels_identical": true,
+      "sha256": "15f93e02968814d5a6a769b1aec74a0412e50f595a4b6f48c821466e1f1d5848"
+    },
+    "1080x2400-safe-area": {
+      "changed_bounds": [
+        328,
+        698,
+        1048,
+        1042
+      ],
+      "authorized_floor_bounds": [
+        328,
+        698,
+        1048,
+        1042
+      ],
+      "non_floor_render_pixels_identical": true,
+      "sha256": "b241e9c72863bd378c4389be92da8be82608eba0fb146a1a09ed721d6ec3388f"
+    },
+    "1080x2400": {
+      "changed_bounds": [
+        318,
+        578,
+        1072,
+        922
+      ],
+      "authorized_floor_bounds": [
+        318,
+        578,
+        1072,
+        922
+      ],
+      "non_floor_render_pixels_identical": true,
+      "sha256": "7056f6058c3010159f23df5e040889f9abb454fdcc576b6ed838fce492f0909e"
+    },
+    "720x1280": {
+      "changed_bounds": [
+        212,
+        289,
+        716,
+        461
+      ],
+      "authorized_floor_bounds": [
+        212,
+        289,
+        716,
+        461
+      ],
+      "non_floor_render_pixels_identical": true,
+      "sha256": "e588bb3b4c4470e47d575f36b05c0a2862ab3493bec7078de7f7d01142f942f4"
+    }
+  }
+}

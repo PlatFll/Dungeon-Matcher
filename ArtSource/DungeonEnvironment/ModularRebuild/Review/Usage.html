@@ -1,0 +1,80 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:24px;background:#161720;color:#eee;font:16px system-ui}a{color:#cbb6ff}p{max-width:1200px;line-height:1.5}header{position:sticky;top:0;background:#161720ef;padding:12px;z-index:5}button,select{padding:10px;background:#30283e;color:white;border:1px solid #77618d}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.compare figure{margin:0;overflow:auto;background:#242331}.compare img{width:100%;image-rendering:pixelated}figcaption{padding:10px}.exact{display:block}.exact img{width:auto;max-width:none}img{image-rendering:pixelated;max-width:100%}details{margin:22px 0}article{margin:30px 0;padding:18px;background:#242331}.muted{color:#bcb3cc}@media(max-width:800px){.compare{grid-template-columns:1fr}}</style><h1>Actual tool use — 26 generations cumulative</h1><p>Latest floor request: 15 generations for sixteen reference-conditioned 64×64 tiles. Native LibreSprite cleanup selected twelve outputs. <a href="Floor.html">Current floor and reference</a>.</p><img src="../Correction/FlagstoneRebuild/RawContact.png"><h2>Earlier reconstruction — 11 generations</h2><p>Pro floor: four 128×128 candidates for 10 generations. A/B selected over direct native trials; C/D rejected. PixFlux wall: one 64×64 experiment for one generation, rejected in favor of direct LibreSprite. All final edits and exports were performed in LibreSprite.</p><img src="../Correction/Review/FloorCandidates.png"><h2>Wall experiment</h2><p>Native input and generated alternative at native size.</p><img src="../Correction/PixelLab/WallFluxInput.png"> <img src="../Correction/PixelLab/WallFlux.png"><pre>{
+  &quot;actual_generations&quot;: 26,
+  &quot;remaining_before&quot;: 1090.2,
+  &quot;remaining_after&quot;: 1064.2,
+  &quot;subscription&quot;: &quot;Tier 2 Pixel Artisan&quot;,
+  &quot;cash_credits&quot;: 0,
+  &quot;preferred_budget&quot;: [
+    10,
+    25
+  ],
+  &quot;soft_ceiling&quot;: 35,
+  &quot;calls&quot;: [
+    {
+      &quot;job&quot;: &quot;931e17bf-23c3-491d-91a7-9805fb37f093&quot;,
+      &quot;endpoint&quot;: &quot;create_image_pro&quot;,
+      &quot;size&quot;: [
+        128,
+        128
+      ],
+      &quot;cost&quot;: 10,
+      &quot;outputs&quot;: 4,
+      &quot;selected&quot;: [
+        &quot;A&quot;,
+        &quot;B&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;C&quot;,
+        &quot;D&quot;
+      ],
+      &quot;receipt&quot;: &quot;Correction/PixelLab/FloorProReceipt.json&quot;
+    },
+    {
+      &quot;job&quot;: &quot;490becbd-129a-4c27-b759-5bde57e83da3&quot;,
+      &quot;endpoint&quot;: &quot;create_image_pixflux&quot;,
+      &quot;size&quot;: [
+        64,
+        64
+      ],
+      &quot;cost&quot;: 1,
+      &quot;outputs&quot;: 1,
+      &quot;selected&quot;: [],
+      &quot;decision&quot;: &quot;Direct LibreSprite wall preferred; generated variant adds little and introduces extra shades.&quot;,
+      &quot;receipt&quot;: &quot;Correction/PixelLab/WallFluxReceipt.json&quot;
+    },
+    {
+      &quot;job&quot;: &quot;dfc8b65c-28be-4db0-a59e-cf35ed299d4a&quot;,
+      &quot;endpoint&quot;: &quot;create_tiles_pro&quot;,
+      &quot;size&quot;: [
+        64,
+        64
+      ],
+      &quot;cost&quot;: 15,
+      &quot;outputs&quot;: 16,
+      &quot;selected&quot;: [
+        &quot;A&quot;,
+        &quot;B&quot;,
+        &quot;D&quot;,
+        &quot;E&quot;,
+        &quot;F&quot;,
+        &quot;G&quot;,
+        &quot;H&quot;,
+        &quot;I&quot;,
+        &quot;J&quot;,
+        &quot;K&quot;,
+        &quot;L&quot;,
+        &quot;M&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;C&quot;,
+        &quot;N&quot;,
+        &quot;O&quot;,
+        &quot;P&quot;
+      ],
+      &quot;decision&quot;: &quot;Broad generated courses retained, palette and course seams finalized in LibreSprite. New floor-only request authorized separately from the earlier reconstruction budget.&quot;,
+      &quot;receipt&quot;: &quot;Correction/FlagstoneRebuild/PixelLabResult.json&quot;
+    }
+  ],
+  &quot;no_whole_scene_generation&quot;: true,
+  &quot;budget_scope&quot;: &quot;preferred_budget and soft_ceiling describe the earlier 11-generation reconstruction; the later reference-floor request separately authorized its 15-generation tileset.&quot;
+}</pre>

@@ -1,0 +1,158 @@
+## CORRECTION REQUIRED — PR #200 DID NOT COMPLETE THE ART REMAKE
+
+I reviewed your result. You built a modular asset system and Unity preview successfully, but **you did not accomplish my main visual objective**.
+
+I did not ask you simply to modularize the artwork already in the game. I asked you to **recreate the supplied reference mockup as an authentic, polished, native pixel-art asset library**, using PixelLab where useful and LibreSprite to clean and finalize the actual sprites.
+
+Your result is visually different from the mockup. The battlefield floor, wall masonry, decorative density, lighting and portions of the UI are particularly different.
+
+### 1. Correct the source priorities
+
+For this task, the priority is:
+
+1. The supplied full dungeon mockup — **PRIMARY VISUAL TARGET**.
+2. The canonical Dungeon Matcher art-direction and shading/color rules — **RENDERING AUTHORITY**.
+3. Existing game assets — reusable ONLY when they genuinely match the mockup.
+4. PixelLab — generate or improve missing/visually inadequate asset designs.
+5. LibreSprite — native-pixel cleanup, palette correction, modularization, exact reconstruction and final polish.
+
+Do not treat an existing sprite as automatically acceptable because it is technically valid or already in production.
+
+**Preserve the shapes, positions and artistic identity shown in the mockup, not the shortcomings of the current game artwork.**
+
+### 2. Continue PR #200 — do not start over
+
+Stay on `codex/dungeon-modular-scene-rebuild`.
+
+Keep the reusable Unity scene construction, masking system, asset organization and tests.
+
+Your next job is to improve/replace the actual visual assets within that modular architecture.
+
+Do not spend the next iteration writing more manifests, reports or validations while leaving the artwork unchanged.
+
+### 3. Rebuild the battlefield floor FIRST
+
+Compare your current Unity screenshot directly with the supplied mockup.
+
+Your floor currently consists of relatively large, uniform-looking slabs. The mockup has smaller, richer dungeon stonework, stronger spatial depth and more purposeful shading.
+
+Recreate the reference floor material.
+
+- Use 64×64 native tile modules, with variations and appropriate edge/transition pieces.
+- Retain the perspective and stone construction seen in the reference.
+- Avoid giant flat color blocks, unnecessary noise and exaggerated lighting.
+- Ensure all tiles repeat seamlessly without obvious duplication.
+- Do not manufacture variation by merely shifting the same texture four times.
+- Use LibreSprite first; use a limited PixelLab reference-guided generation if the existing source is insufficient to reproduce the visual target.
+
+Assemble the finished floor in Unity and capture an actual screenshot BEFORE moving on.
+
+### 4. Recreate the walls and backgrounds
+
+The walls must match the mockup's layered purple dungeon masonry, not merely be seamless repeating textures.
+
+Reconstruct the wall materials using:
+
+- 64×64 base masonry tiles.
+- Multiple genuinely distinct stone variations.
+- Proper edge and corner transitions.
+- Larger architectural accents where required.
+- Separate wall materials for the battle backdrop, outer side walls and character portrait interior.
+- Appropriate warm lighting near torches and cooler shadows elsewhere.
+
+Keep the actual reference brick shapes and color relationships wherever possible.
+
+Do not flatten the original visual depth into broad, uniform surfaces.
+
+### 5. Recreate the board and player frames
+
+Compare the frame construction visually against the mockup at actual gameplay scale.
+
+Use modular corners, repeatable rails, connectors and distinct ornamental pieces.
+
+Preserve the reference's purple gemstone corners, metallic accents, stone construction, silhouette, thickness and shading.
+
+Rebuild individual parts where existing parts differ significantly.
+
+The player portrait interior should contain the proper tiled dungeon-wall material, clipped STRICTLY inside the frame. No texture may extend outside the frame or overlap its border.
+
+The board's empty cells and its surrounding frame should closely resemble the reference, even with all gem sprites hidden.
+
+### 6. Recreate the environment props
+
+Individually review the gateway, chains, torches, barrels, bones, skulls, banners, pillars, buttresses and supporting architecture.
+
+For each prop, compare its shape, proportions, colors, silhouette and shading to the actual mockup.
+
+- If the existing asset matches, reuse and polish it.
+- If it differs, recreate or improve it.
+- If reconstruction is impractical, use PixelLab with the original mockup or a carefully prepared reference crop as guidance.
+- Clean generated outputs in LibreSprite before importing them.
+
+Keep these as separately editable sprites. Do not flatten them into the background.
+
+### 7. Restore the complete visual UI
+
+The Unity art-only preview should not be a collection of empty gray rectangles.
+
+The mockup includes visually important decorative UI assets that do not depend on combat state.
+
+Recreate the wave plaque, Guide button, Settings button, bottom ability frame, purple energy bar, supply/item frames and decorative symbols.
+
+Keep the preview free of actual characters, enemies and board gems, but render appropriate static UI decorations such as the crowned-skull ability emblem, potion icon and bomb icon.
+
+These icons should be separate assets, not a flattened UI screenshot.
+
+### 8. Actually evaluate PixelLab
+
+You have Tier 2 PixelLab access. Check the available tools, supported output sizes and remaining credits.
+
+I do NOT want unnecessary generations.
+
+However, your previous decision to use zero generations was based on assuming the existing artwork was already sufficiently close. The Unity comparison does not support that assumption.
+
+Identify the assets with the biggest visual gaps and use PixelLab for targeted reference-guided generation where it would realistically produce a better result.
+
+Start with a small number of focused experiments and compare them with direct LibreSprite reconstruction. Choose the better result per asset.
+
+Stay within the previously agreed conservative generation budget. Log the actual calls and outcomes.
+
+Do not generate a whole replacement screenshot. Generate individual source assets, architectural components, or cohesive tilesets as appropriate.
+
+### 9. Visual validation must control acceptance
+
+You previously marked every asset 9/10 compatible. That is not convincing when the assembled scene still differs visibly from the target.
+
+For each major asset category, show:
+
+- The corresponding region from the supplied reference.
+- The new native assets and their assembled result.
+- An actual Unity screenshot at the matching aspect ratio.
+- Specific differences found and corrected.
+- Objective checks for palette, dimensions, alpha, broken pixels and tile seams.
+
+Evaluate visual fidelity and technical quality separately.
+
+Do not give everything the same arbitrary score. If an asset is not visually close enough to the reference, revise it.
+
+Aim for at least 9/10 subjective style compatibility, but never claim numerical proof of similarity from technical checks.
+
+### 10. Final requirement
+
+The objective is NOT "129 technically valid assets."
+
+The objective is:
+
+**When I open the art-only Unity preview, it should look like my supplied reference mockup with the characters and board gems removed.**
+
+The reference's atmosphere, lighting, stonework, visual density, frame ornamentation, prop designs and overall composition must remain recognizable.
+
+Preserve the modular implementation, but improve the art until the actual rendered scene convincingly matches the reference.
+
+Run Unity again after the artwork changes. Old Unity evidence is not sufficient for newly modified sprites.
+
+Update draft PR #200 with the finished asset changes, new Unity screenshots and clear before/after comparisons.
+
+Do not merge without my explicit approval.
+
+Proceed with the actual art reconstruction now. Do not stop after another audit, report or planning pass.

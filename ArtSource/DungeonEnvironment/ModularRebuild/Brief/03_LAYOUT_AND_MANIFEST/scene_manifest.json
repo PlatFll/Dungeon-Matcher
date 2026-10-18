@@ -1,0 +1,440 @@
+{
+  "source_image": "01_REFERENCE/full_scene_reference.png",
+  "assets": [
+    {
+      "name": "portrait_panel_full",
+      "bbox_xyxy": [
+        20,
+        101,
+        281,
+        521
+      ],
+      "size_wh": [
+        261,
+        420
+      ],
+      "role": "Unique frame for player portrait area. Rebuild as modular frame + banner + affinity holder + HP bar.",
+      "file": "02_EXTRACTED_ASSETS/portrait_panel_full.png"
+    },
+    {
+      "name": "wave_plaque",
+      "bbox_xyxy": [
+        312,
+        14,
+        632,
+        102
+      ],
+      "size_wh": [
+        320,
+        88
+      ],
+      "role": "Top center wave plaque. Unique UI header.",
+      "file": "02_EXTRACTED_ASSETS/wave_plaque.png"
+    },
+    {
+      "name": "guide_button",
+      "bbox_xyxy": [
+        654,
+        28,
+        833,
+        108
+      ],
+      "size_wh": [
+        179,
+        80
+      ],
+      "role": "Guide button. Shared metal UI style.",
+      "file": "02_EXTRACTED_ASSETS/guide_button.png"
+    },
+    {
+      "name": "settings_button",
+      "bbox_xyxy": [
+        835,
+        28,
+        924,
+        108
+      ],
+      "size_wh": [
+        89,
+        80
+      ],
+      "role": "Settings button. Shared metal UI style.",
+      "file": "02_EXTRACTED_ASSETS/settings_button.png"
+    },
+    {
+      "name": "center_door_arch",
+      "bbox_xyxy": [
+        372,
+        7,
+        609,
+        294
+      ],
+      "size_wh": [
+        237,
+        287
+      ],
+      "role": "Central stone arch + door backdrop reference.",
+      "file": "02_EXTRACTED_ASSETS/center_door_arch.png"
+    },
+    {
+      "name": "upper_left_torch_sconce",
+      "bbox_xyxy": [
+        274,
+        129,
+        347,
+        298
+      ],
+      "size_wh": [
+        73,
+        169
+      ],
+      "role": "Upper battle torch/sconce prop.",
+      "file": "02_EXTRACTED_ASSETS/upper_left_torch_sconce.png"
+    },
+    {
+      "name": "upper_right_torch_sconce",
+      "bbox_xyxy": [
+        714,
+        126,
+        796,
+        297
+      ],
+      "size_wh": [
+        82,
+        171
+      ],
+      "role": "Upper battle torch/sconce prop.",
+      "file": "02_EXTRACTED_ASSETS/upper_right_torch_sconce.png"
+    },
+    {
+      "name": "center_hanging_banner",
+      "bbox_xyxy": [
+        425,
+        150,
+        492,
+        274
+      ],
+      "size_wh": [
+        67,
+        124
+      ],
+      "role": "Small hanging skull banner in battle backdrop.",
+      "file": "02_EXTRACTED_ASSETS/center_hanging_banner.png"
+    },
+    {
+      "name": "right_barrel_cluster",
+      "bbox_xyxy": [
+        734,
+        202,
+        845,
+        341
+      ],
+      "size_wh": [
+        111,
+        139
+      ],
+      "role": "Background prop cluster: barrels and skulls.",
+      "file": "02_EXTRACTED_ASSETS/right_barrel_cluster.png"
+    },
+    {
+      "name": "left_bones_cluster",
+      "bbox_xyxy": [
+        274,
+        247,
+        374,
+        383
+      ],
+      "size_wh": [
+        100,
+        136
+      ],
+      "role": "Background prop cluster: bones/skulls near left enemy lane.",
+      "file": "02_EXTRACTED_ASSETS/left_bones_cluster.png"
+    },
+    {
+      "name": "board_top_border",
+      "bbox_xyxy": [
+        53,
+        526,
+        890,
+        606
+      ],
+      "size_wh": [
+        837,
+        80
+      ],
+      "role": "Top border of the gem board frame. Use to rebuild board frame.",
+      "file": "02_EXTRACTED_ASSETS/board_top_border.png"
+    },
+    {
+      "name": "board_left_border",
+      "bbox_xyxy": [
+        13,
+        560,
+        68,
+        1334
+      ],
+      "size_wh": [
+        55,
+        774
+      ],
+      "role": "Left side border of the gem board frame including chain side motif. Slice into repeatable subparts.",
+      "file": "02_EXTRACTED_ASSETS/board_left_border.png"
+    },
+    {
+      "name": "board_right_border",
+      "bbox_xyxy": [
+        873,
+        560,
+        928,
+        1334
+      ],
+      "size_wh": [
+        55,
+        774
+      ],
+      "role": "Right side border of the gem board frame including chain side motif. Slice into repeatable subparts.",
+      "file": "02_EXTRACTED_ASSETS/board_right_border.png"
+    },
+    {
+      "name": "board_bottom_border",
+      "bbox_xyxy": [
+        53,
+        1260,
+        890,
+        1338
+      ],
+      "size_wh": [
+        837,
+        78
+      ],
+      "role": "Bottom border of the gem board frame.",
+      "file": "02_EXTRACTED_ASSETS/board_bottom_border.png"
+    },
+    {
+      "name": "board_corner_top_left",
+      "bbox_xyxy": [
+        43,
+        531,
+        96,
+        587
+      ],
+      "size_wh": [
+        53,
+        56
+      ],
+      "role": "Top-left board frame corner.",
+      "file": "02_EXTRACTED_ASSETS/board_corner_top_left.png"
+    },
+    {
+      "name": "board_corner_top_right",
+      "bbox_xyxy": [
+        847,
+        531,
+        900,
+        587
+      ],
+      "size_wh": [
+        53,
+        56
+      ],
+      "role": "Top-right board frame corner.",
+      "file": "02_EXTRACTED_ASSETS/board_corner_top_right.png"
+    },
+    {
+      "name": "board_corner_bottom_left",
+      "bbox_xyxy": [
+        42,
+        1287,
+        97,
+        1340
+      ],
+      "size_wh": [
+        55,
+        53
+      ],
+      "role": "Bottom-left board frame corner.",
+      "file": "02_EXTRACTED_ASSETS/board_corner_bottom_left.png"
+    },
+    {
+      "name": "board_corner_bottom_right",
+      "bbox_xyxy": [
+        846,
+        1287,
+        901,
+        1340
+      ],
+      "size_wh": [
+        55,
+        53
+      ],
+      "role": "Bottom-right board frame corner.",
+      "file": "02_EXTRACTED_ASSETS/board_corner_bottom_right.png"
+    },
+    {
+      "name": "side_banner_left_lower",
+      "bbox_xyxy": [
+        0,
+        815,
+        67,
+        1122
+      ],
+      "size_wh": [
+        67,
+        307
+      ],
+      "role": "Large lower-left hanging side banner / torch region. Decorative side scene element.",
+      "file": "02_EXTRACTED_ASSETS/side_banner_left_lower.png"
+    },
+    {
+      "name": "side_banner_right_lower",
+      "bbox_xyxy": [
+        876,
+        815,
+        941,
+        1122
+      ],
+      "size_wh": [
+        65,
+        307
+      ],
+      "role": "Large lower-right hanging side banner / torch region. Decorative side scene element.",
+      "file": "02_EXTRACTED_ASSETS/side_banner_right_lower.png"
+    },
+    {
+      "name": "energy_bar",
+      "bbox_xyxy": [
+        361,
+        1330,
+        579,
+        1403
+      ],
+      "size_wh": [
+        218,
+        73
+      ],
+      "role": "Purple progress / energy bar above bottom HUD panel.",
+      "file": "02_EXTRACTED_ASSETS/energy_bar.png"
+    },
+    {
+      "name": "bottom_hud_center_panel",
+      "bbox_xyxy": [
+        375,
+        1390,
+        637,
+        1543
+      ],
+      "size_wh": [
+        262,
+        153
+      ],
+      "role": "Center bottom action/ability panel.",
+      "file": "02_EXTRACTED_ASSETS/bottom_hud_center_panel.png"
+    },
+    {
+      "name": "bottom_left_item_button",
+      "bbox_xyxy": [
+        31,
+        1397,
+        146,
+        1559
+      ],
+      "size_wh": [
+        115,
+        162
+      ],
+      "role": "Bottom-left item button frame.",
+      "file": "02_EXTRACTED_ASSETS/bottom_left_item_button.png"
+    },
+    {
+      "name": "bottom_right_item_button",
+      "bbox_xyxy": [
+        795,
+        1397,
+        911,
+        1559
+      ],
+      "size_wh": [
+        116,
+        162
+      ],
+      "role": "Bottom-right item button frame.",
+      "file": "02_EXTRACTED_ASSETS/bottom_right_item_button.png"
+    },
+    {
+      "name": "phase_resonance_strip",
+      "bbox_xyxy": [
+        219,
+        1551,
+        856,
+        1644
+      ],
+      "size_wh": [
+        637,
+        93
+      ],
+      "role": "Bottom text strip / resonance callout area.",
+      "file": "02_EXTRACTED_ASSETS/phase_resonance_strip.png"
+    },
+    {
+      "name": "wall_tile_sample_left",
+      "bbox_xyxy": [
+        14,
+        113,
+        74,
+        204
+      ],
+      "size_wh": [
+        60,
+        91
+      ],
+      "role": "Stone wall sample for left portrait backdrop. Rebuild as repeatable wall tile.",
+      "file": "02_EXTRACTED_ASSETS/wall_tile_sample_left.png"
+    },
+    {
+      "name": "wall_tile_sample_right",
+      "bbox_xyxy": [
+        850,
+        113,
+        926,
+        210
+      ],
+      "size_wh": [
+        76,
+        97
+      ],
+      "role": "Stone wall sample for right upper wall. Rebuild as repeatable wall tile.",
+      "file": "02_EXTRACTED_ASSETS/wall_tile_sample_right.png"
+    },
+    {
+      "name": "floor_tile_sample_upper",
+      "bbox_xyxy": [
+        516,
+        410,
+        635,
+        490
+      ],
+      "size_wh": [
+        119,
+        80
+      ],
+      "role": "Upper battle floor tile sample. Rebuild cleaner in production; source includes perspective cues.",
+      "file": "02_EXTRACTED_ASSETS/floor_tile_sample_upper.png"
+    },
+    {
+      "name": "lower_wall_tile_sample",
+      "bbox_xyxy": [
+        407,
+        1616,
+        524,
+        1671
+      ],
+      "size_wh": [
+        117,
+        55
+      ],
+      "role": "Lower wall / trim sample under HUD area.",
+      "file": "02_EXTRACTED_ASSETS/lower_wall_tile_sample.png"
+    }
+  ]
+}
