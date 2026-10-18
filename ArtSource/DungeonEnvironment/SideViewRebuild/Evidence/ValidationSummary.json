@@ -3,6 +3,10 @@
   "compiler_validation": "Tools/Validate-Unity.ps1 completed successfully with Unity 6000.3.19f1; full local log Evidence/UnityCompiler.log",
   "unity_tests": [
     {
+      "name": "DungeonSideViewPreviewTests.ContinuousWallAndCompletePropsRenderBehindUi",
+      "result": "Passed"
+    },
+    {
       "name": "DungeonSideViewPreviewTests.NativeImportsMatchLibreSpriteExports",
       "result": "Passed"
     },
@@ -11,18 +15,21 @@
       "result": "Passed"
     }
   ],
-  "native_source_export_exact": 127,
-  "unity_import_bytes_exact": 127,
+  "native_source_export_exact": 119,
+  "unity_import_bytes_exact": 119,
   "binary_alpha": true,
   "native_canvas": [
     360,
     640
   ],
-  "placements": 497,
+  "placements": 406,
   "empty_board_cells": 64,
   "shallow_standing_strip_height": 12,
   "front_ledge_height": 19,
   "unclipped_standalone_placements": true,
+  "single_continuous_wall_field": true,
+  "ui_interiors_above_environment": true,
+  "padded_complete_props": 24,
   "capture_checks": [
     {
       "file": "360x640.png",
@@ -105,7 +112,7 @@
       "fraction_within_two_levels": 1.0
     }
   ],
-  "artistic_review": "Side-by-side reference reviewed at native and nearest 2x. Layout and anchors preserved; quiet repeated brick/cell surfaces and tiny lettering deliberately reconstructed. Visual judgement, not a measured fidelity score. User approval remains pending.",
+  "artistic_review": "Corrected the user-marked clipped banner tails, eight patch/support modules and narrow corner crops. Full lower stone contours and prop clearance inspected at native and 2x. UI geometry is preserved and now covers extended background modules. Visual judgement; user approval remains pending.",
   "production_scene_changed": false,
   "merged": false
 }

@@ -1,27 +1,34 @@
 {
-  "native_cel_png_exact": 127,
+  "native_cel_png_exact": 119,
   "binary_alpha": true,
   "canvas": [
     360,
     640
   ],
-  "placements": 497,
+  "placements": 406,
   "assets": [
     {
       "name": "BackWallReference",
       "group": "Tiles_Wall",
       "width": 64,
       "height": 32,
+      "canvasPadding": 0,
       "source": {
         "pixellab_job": "59bc82c9-7774-4084-b362-2a407edbc3c5",
         "file": "PixelLab_Source/TileA.png",
         "changes": "Native reconstruction of generated staggered courses: narrowed gutters, reference-scale bricks, controlled bevel clusters and seamless periodic edges."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "fd0b1734296a098fb83d17d57cb1b013cfdf336440df48d12891abdcea400e43",
       "colors": 4,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        32
       ]
     },
     {
@@ -29,6 +36,7 @@
       "group": "Tiles_Wall",
       "width": 64,
       "height": 56,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -39,28 +47,17 @@
         ],
         "changes": "Native reconstruction of the reference blue brick field; four continuous courses without sampling residue."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "44a79c4943bebf3c16bdb07ceeb228557c39ee78fa9a69f36aacef544508ade3",
       "colors": 4,
       "alpha": [
         255
-      ]
-    },
-    {
-      "name": "LowerWall",
-      "group": "Tiles_Wall",
-      "width": 64,
-      "height": 32,
-      "source": {
-        "pixellab_job": "59bc82c9-7774-4084-b362-2a407edbc3c5",
-        "file": "PixelLab_Source/TileA.png",
-        "changes": "Clean structural background below the board, free of progress-bar fragments."
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "fd0b1734296a098fb83d17d57cb1b013cfdf336440df48d12891abdcea400e43",
-      "colors": 4,
-      "alpha": [
-        255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        56
       ]
     },
     {
@@ -68,6 +65,7 @@
       "group": "Tiles_Floor",
       "width": 64,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -78,11 +76,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "16c53114f47748045d8726972e8dbb5b14fb93f98a8f648a7f5e88cdecde8a12",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        12
       ]
     },
     {
@@ -90,6 +94,7 @@
       "group": "Tiles_Platform",
       "width": 64,
       "height": 19,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -100,11 +105,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e338df639eb49243c97201f7571e4cb124eca131e82d744fa67f54ecfa5d8357",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        19
       ]
     },
     {
@@ -112,6 +123,7 @@
       "group": "Tiles_Floor",
       "width": 64,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -122,11 +134,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e74ba1fcbcae56520873e0f06282d3087b947f3891610a37fe0b1176428cf8cd",
       "colors": 13,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        12
       ]
     },
     {
@@ -134,6 +152,7 @@
       "group": "Tiles_Platform",
       "width": 64,
       "height": 19,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -144,11 +163,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "a8fd70bf4582d443673523dce854de9ae0191c1e9225be66afc85a4c07d70cb0",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        19
       ]
     },
     {
@@ -156,6 +181,7 @@
       "group": "Tiles_Floor",
       "width": 64,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -166,11 +192,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e012d828327822be1d724fb6d0e4c355afeb8a34550ced7222c942c4cbf61af6",
       "colors": 12,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        12
       ]
     },
     {
@@ -178,6 +210,7 @@
       "group": "Tiles_Platform",
       "width": 64,
       "height": 19,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -188,11 +221,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "8093ccd02d9815712c8ee20f61a46bdc462d542f47612f3c100ed958c6a1dc3f",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        64,
+        19
       ]
     },
     {
@@ -200,6 +239,7 @@
       "group": "Tiles_Floor",
       "width": 62,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -210,11 +250,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6fe56ecb910972c1af9f2ab45e2440fc5dd195e4abb1ad486af994f759a34e90",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        62,
+        12
       ]
     },
     {
@@ -222,6 +268,7 @@
       "group": "Tiles_Platform",
       "width": 62,
       "height": 19,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -232,11 +279,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "089e75e712bf7f03d246d25338a736a512ab74b3091111ec8aaf9882591c73d5",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        62,
+        19
       ]
     },
     {
@@ -244,6 +297,7 @@
       "group": "Structure",
       "width": 17,
       "height": 179,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -254,11 +308,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "f45f226820d73df8f85815e256861616c39184d992a9e0c64fa08b81dfb14711",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        17,
+        179
       ]
     },
     {
@@ -266,6 +326,7 @@
       "group": "Structure",
       "width": 21,
       "height": 180,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -276,11 +337,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "d5755aab4fb1950a8aeef2d79590a9b248923959c008236740d55fd19213f2ce",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        21,
+        180
       ]
     },
     {
@@ -288,6 +355,7 @@
       "group": "Structure",
       "width": 32,
       "height": 85,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -298,11 +366,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "d748bde230980055048888be51bdf04aac8ed58800fe1670cbaa5111eec60de8",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        32,
+        85
       ]
     },
     {
@@ -310,6 +384,7 @@
       "group": "Structure",
       "width": 31,
       "height": 31,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -320,11 +395,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "59a548d2036bf09d181ede30744223264a23bad50608e7d106800472ba8adcc3",
       "colors": 15,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        31,
+        31
       ]
     },
     {
@@ -332,6 +413,7 @@
       "group": "Structure",
       "width": 14,
       "height": 16,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -342,265 +424,77 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e3a5f665d4b2778bb02ece7ac67826d6bb9fc83dae638afe7c3d785fc3af7e03",
       "colors": 10,
       "alpha": [
         255
-      ]
-    },
-    {
-      "name": "PlatformSupportA",
-      "group": "Structure",
-      "width": 18,
-      "height": 17,
-      "source": {
-        "reference": "References/NativeReference.png",
-        "crop": [
-          111,
-          209,
-          18,
-          17
-        ],
-        "mask": null
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "984ad582e60926d9a1b61ed6a9d4500e87b0d3f2997459d2b26213dfb6f67a13",
-      "colors": 10,
-      "alpha": [
-        255
-      ]
-    },
-    {
-      "name": "PlatformSupportB",
-      "group": "Structure",
-      "width": 18,
-      "height": 17,
-      "source": {
-        "reference": "References/NativeReference.png",
-        "crop": [
-          156,
-          209,
-          18,
-          17
-        ],
-        "mask": null
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "60bdbccada8227b911c239f8d138204d8316652582778872a0fa0036f2f2c703",
-      "colors": 5,
-      "alpha": [
-        255
-      ]
-    },
-    {
-      "name": "PlatformSupportC",
-      "group": "Structure",
-      "width": 18,
-      "height": 17,
-      "source": {
-        "reference": "References/NativeReference.png",
-        "crop": [
-          201,
-          209,
-          18,
-          17
-        ],
-        "mask": null
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "703553c4de8e27c22e509bcc000cb9897ec57778649ffd4e944383592433152b",
-      "colors": 9,
-      "alpha": [
-        255
-      ]
-    },
-    {
-      "name": "PlatformSupportD",
-      "group": "Structure",
-      "width": 18,
-      "height": 17,
-      "source": {
-        "reference": "References/NativeReference.png",
-        "crop": [
-          246,
-          209,
-          18,
-          17
-        ],
-        "mask": null
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "075c5d209f966b0549a99f49284f405c65507c6b3edad9e52fb81c0c06b2d69a",
-      "colors": 4,
-      "alpha": [
-        255
-      ]
-    },
-    {
-      "name": "PlatformSupportE",
-      "group": "Structure",
-      "width": 18,
-      "height": 17,
-      "source": {
-        "reference": "References/NativeReference.png",
-        "crop": [
-          291,
-          209,
-          18,
-          17
-        ],
-        "mask": null
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "e2471c9bb2f662916a52913c0966dc133819a4a0ddaac627b3e1fccf29025407",
-      "colors": 8,
-      "alpha": [
-        255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        16
       ]
     },
     {
       "name": "LowerLeftConnector",
       "group": "Structure",
-      "width": 31,
-      "height": 105,
+      "width": 68,
+      "height": 164,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
           0,
-          535,
-          31,
-          105
+          480,
+          64,
+          160
         ],
-        "mask": null
+        "changes": "Full 64px-wide natural stone envelope, source UI excluded, completed bottom contours, transparent two-pixel canvas clearance."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "ac631794848d65d2a56bec87b531840258756d739b0e99518446e52639727f15",
-      "colors": 14,
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "97dd18d8d6cccab4d6ca651b3018e3ab5a7e008943e8550071ec6aa0672a719a",
+      "colors": 15,
       "alpha": [
+        0,
         255
+      ],
+      "occupied_bounds": [
+        3,
+        8,
+        63,
+        161
       ]
     },
     {
       "name": "LowerRightConnector",
       "group": "Structure",
-      "width": 32,
-      "height": 105,
+      "width": 68,
+      "height": 164,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
-          328,
-          535,
-          32,
-          105
+          296,
+          480,
+          64,
+          160
         ],
-        "mask": null
+        "changes": "Full 64px-wide natural stone envelope, source UI excluded, completed bottom contours, transparent two-pixel canvas clearance."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "d1ac6930a1a6f368340cc75a2551b5020f8cfbfc417c2c183ea59acc36fee463",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "3fa7c4edd8ae6005bd1edda23b7954abb8e1a869ea766447c26bd2ab0a466cd2",
       "colors": 15,
       "alpha": [
+        0,
         255
-      ]
-    },
-    {
-      "name": "LeftSideMasonry",
-      "group": "Structure",
-      "width": 27,
-      "height": 325,
-      "source": {
-        "reference": {
-          "reference": "References/NativeReference.png",
-          "crop": [
-            0,
-            210,
-            27,
-            325
-          ],
-          "mask": null
-        },
-        "repair_boxes": [
-          [
-            0,
-            12,
-            20,
-            77
-          ],
-          [
-            0,
-            87,
-            27,
-            69
-          ],
-          [
-            0,
-            154,
-            24,
-            52
-          ],
-          [
-            0,
-            229,
-            23,
-            38
-          ]
-        ]
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "2ee84d442503f1dfa8de927810b9362581bab6efdce1b022bd3e00dc4b88527b",
-      "colors": 15,
-      "alpha": [
-        255
-      ]
-    },
-    {
-      "name": "RightSideMasonry",
-      "group": "Structure",
-      "width": 29,
-      "height": 325,
-      "source": {
-        "reference": {
-          "reference": "References/NativeReference.png",
-          "crop": [
-            331,
-            210,
-            29,
-            325
-          ],
-          "mask": null
-        },
-        "repair_boxes": [
-          [
-            7,
-            14,
-            22,
-            76
-          ],
-          [
-            0,
-            87,
-            29,
-            69
-          ],
-          [
-            5,
-            155,
-            24,
-            51
-          ],
-          [
-            0,
-            229,
-            25,
-            38
-          ]
-        ]
-      },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "f3d7bace42381edf6c46ecb43b66b0e8ae03557c07426c8e4296febd6fc730bd",
-      "colors": 14,
-      "alpha": [
-        255
+      ],
+      "occupied_bounds": [
+        5,
+        8,
+        66,
+        161
       ]
     },
     {
@@ -608,6 +502,7 @@
       "group": "Lighting",
       "width": 36,
       "height": 67,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -618,11 +513,17 @@
         ],
         "changes": "Discrete warm brick clusters on the same wall grid; no torch, banner or chain pixels baked in."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "33a9c82188164bf5e9a95bc66c207edee4827795e04fd99fc6ebad4f2d565713",
       "colors": 11,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        36,
+        67
       ]
     },
     {
@@ -630,6 +531,7 @@
       "group": "Lighting",
       "width": 36,
       "height": 48,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -640,11 +542,17 @@
         ],
         "changes": "Discrete warm brick clusters on the same wall grid; no torch, banner or chain pixels baked in."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "b07eae09705b2e9f4cb3938f2d3053baa608457bea5eb44d2d9bcb16226ec84b",
       "colors": 13,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        36,
+        48
       ]
     },
     {
@@ -652,14 +560,21 @@
       "group": "Lighting",
       "width": 14,
       "height": 64,
+      "canvasPadding": 0,
       "source": {
         "method": "Native warm column planes, torch separated"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "33fe1f3de32ef59368cc88b787711ff06056100aebf129e1a9b3908143bb6191",
       "colors": 13,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        64
       ]
     },
     {
@@ -667,6 +582,7 @@
       "group": "Props_Door",
       "width": 83,
       "height": 45,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -742,12 +658,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "045207c27e6673de6d13d65f581216c85dc43f34081ce6e84afdfd005b5a0592",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        83,
+        45
       ]
     },
     {
@@ -755,6 +677,7 @@
       "group": "Props_Door",
       "width": 13,
       "height": 54,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -765,11 +688,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "5ad10cc45186cf3ea38445c83c7286520516b77895b5ff55138329f5d0c8b10b",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        54
       ]
     },
     {
@@ -777,6 +706,7 @@
       "group": "Props_Door",
       "width": 13,
       "height": 54,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -787,18 +717,25 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6f5e90c971635d81b6c1f6125ede6a51d40147011fc6c0670750c534562a57df",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        54
       ]
     },
     {
       "name": "BarredDoor",
       "group": "Props_Door",
-      "width": 57,
-      "height": 83,
+      "width": 61,
+      "height": 87,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -846,19 +783,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "4abee9305e8a1456a2bf135d0ee82c69fb0d6c10f8b16a995d5d4650c2f6ad5f",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "7b4d1100cbc431604981a7ab52124e966169a708878264d01584d0353324c1e8",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        59,
+        85
       ]
     },
     {
       "name": "TorchLeft",
       "group": "Props_Torches",
-      "width": 19,
-      "height": 52,
+      "width": 23,
+      "height": 56,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -918,19 +862,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "8f5f6fdfedf5de74991e08f3c62ebefbec936a2d0fc8b3f52e8bf1eb688f49eb",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "779dbb46dcb22ff31fc09ff42e1d2d1f0b9ee2775175e7ff84923142986a858e",
       "colors": 20,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        20,
+        54
       ]
     },
     {
       "name": "TorchMiddle",
       "group": "Props_Torches",
-      "width": 17,
-      "height": 45,
+      "width": 21,
+      "height": 49,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -986,19 +937,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "63c5e275eb7604e66718bfef7daae89bae5443cd4f0a8805a4ffa373f4cd1cf6",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "7f2c68dfe83ac06f89284ba712cce977e9e52a0225e2093e376243b3d1c68940",
       "colors": 21,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        19,
+        47
       ]
     },
     {
       "name": "TorchRight",
       "group": "Props_Torches",
-      "width": 19,
-      "height": 58,
+      "width": 23,
+      "height": 62,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1054,19 +1012,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "0cb397241c40773c9bc0420e3c4333162588fe8017a7d2468764b9c0484d5960",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "d8769192e1581df424719df413edad5fc41e0a72bb6ab8765a67bb765ed626d7",
       "colors": 21,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        21,
+        60
       ]
     },
     {
       "name": "BannerPlayer",
       "group": "Props_Banners",
-      "width": 31,
-      "height": 43,
+      "width": 35,
+      "height": 47,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1085,32 +1050,47 @@
             0
           ],
           [
-            29,
-            43
+            30,
+            39
+          ],
+          [
+            24,
+            34
           ],
           [
             16,
+            43
+          ],
+          [
+            8,
             34
           ],
           [
             2,
-            43
+            39
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "4571c10eade3f8da9c88deb5522d115045a3b9f5540150aac8ee3a327f5b6516",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "7cac406958b213abf50e1fe66fc266c676f0bd1d8488f44df1a96ac826ac1e82",
       "colors": 16,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        33,
+        44
       ]
     },
     {
       "name": "BannerLeft",
       "group": "Props_Banners",
-      "width": 29,
-      "height": 60,
+      "width": 33,
+      "height": 64,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1129,32 +1109,47 @@
             0
           ],
           [
-            27,
-            59
+            28,
+            58
+          ],
+          [
+            22,
+            51
           ],
           [
             15,
-            49
+            60
           ],
           [
-            3,
-            60
+            8,
+            51
+          ],
+          [
+            2,
+            58
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "8698d2835a04e0fe2faa2a98c1878a0a80b08a9da3be93b828ac7a939b0619ce",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "0a40eeef4330d4c57c8e429d26e48fb793127788cd2b58a3e846ac8f968d2deb",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        31,
+        61
       ]
     },
     {
       "name": "BannerRight",
       "group": "Props_Banners",
-      "width": 29,
-      "height": 60,
+      "width": 33,
+      "height": 64,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1173,32 +1168,47 @@
             0
           ],
           [
-            27,
-            60
+            28,
+            58
+          ],
+          [
+            22,
+            51
           ],
           [
             15,
-            49
+            60
+          ],
+          [
+            8,
+            51
           ],
           [
             2,
-            59
+            58
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "a5a2c5d212c3374c7d45789c29b7ba3d608cf6c7c3ce028abf4f04c9c848bda4",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "87b2cdbec0081c1c67bc604fe6cb1d49690dcaa4ffdde3a911656dd11f4f0623",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        31,
+        61
       ]
     },
     {
       "name": "BarrelLarge",
       "group": "Props_Barrels",
-      "width": 27,
-      "height": 38,
+      "width": 31,
+      "height": 42,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1242,19 +1252,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "c0b05dc74403caf669e8844a9e4e694b23ecf7500ee6178730109081e7c551cf",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "8bcb1fb145134f275bee2f5ce358121e26bb3e6adaeba23348bdf2c06d1b35c9",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        29,
+        40
       ]
     },
     {
       "name": "BarrelSmall",
       "group": "Props_Barrels",
-      "width": 14,
-      "height": 21,
+      "width": 18,
+      "height": 25,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1294,19 +1311,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "69584de42d63524252f9fe1cb742c3ed257f9079d38e072291b4880475630151",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "e1e5053d3738adc83828033fe41502a24ef6da666971d01115039cb635a0f21e",
       "colors": 7,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        16,
+        23
       ]
     },
     {
       "name": "ChainWaveLeft",
       "group": "Props_Chains",
-      "width": 20,
-      "height": 78,
+      "width": 24,
+      "height": 82,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1317,19 +1341,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "bf51f448b4ed8cddd7b4122c20d5948502e744cf7f45191ff31467384e91d5c6",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "d0f25df1588152ae5de4dc59810a97bf3e62b855f408e097128b905c88529226",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        22,
+        73
       ]
     },
     {
       "name": "ChainWaveRight",
       "group": "Props_Chains",
-      "width": 26,
-      "height": 78,
+      "width": 30,
+      "height": 82,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1340,19 +1371,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "c8d84bea0955c70cbe04944eb9226c35eb0721e098ef6b3fb8995c408a0d13ab",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "7df10d416e3100d60144801df1888381102bf1b0783034b64a8aabc0aff7f219",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        28,
+        71
       ]
     },
     {
       "name": "ChainDoor",
       "group": "Props_Chains",
-      "width": 10,
-      "height": 96,
+      "width": 14,
+      "height": 100,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1363,19 +1401,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "5a27cdf9089120ad66648c4f4baae97023e564424053197794337740014b901e",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "8f1e28162c1d0d8f3e11d4dfac5df3b344946ddc5276fe0103c4c96b304efa21",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        12,
+        96
       ]
     },
     {
       "name": "ChainGuide",
       "group": "Props_Chains",
-      "width": 11,
-      "height": 88,
+      "width": 15,
+      "height": 92,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1386,19 +1431,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "0f2572bf7194a2073b6ca77c1a4d6b7cab0749619a1c3b20e0892fc66fc55b9e",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "4b95fb4dec280cb8580487582d0e689a319b3a029dc2203921e2b74c99f1a838",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        24,
+        13,
+        87
       ]
     },
     {
       "name": "ChainGear",
       "group": "Props_Chains",
-      "width": 10,
-      "height": 24,
+      "width": 14,
+      "height": 28,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1409,19 +1461,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "63a753ce1a1819edcdd3a818004be8556cc3bc8e9a8bcc81ddb59e87fd9f66db",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "17eba9a37dcf65e9e714a3d95e22bb0547054993f1bfd8521d96ac403e70c9a9",
       "colors": 9,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        12,
+        26
       ]
     },
     {
       "name": "ChainSideLeft",
       "group": "Props_Chains",
-      "width": 12,
-      "height": 76,
+      "width": 16,
+      "height": 80,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1432,19 +1491,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "23598b54f881adfc6ee191b235bda01d35e2803c451ee8beab90e41112a5e3f9",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "4734329f7601581bd218b13efd1694d38fca5f6aa7067c47a74fcfd949eb3a11",
       "colors": 11,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        6,
+        12,
+        78
       ]
     },
     {
       "name": "ChainSideRight",
       "group": "Props_Chains",
-      "width": 14,
-      "height": 76,
+      "width": 18,
+      "height": 80,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1455,19 +1521,26 @@
         ],
         "mask": "Warm chain metal, with pixel-native silhouette cleanup"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "64b31632c0d20e7b7fa5f610d1c1bdac9261b7dab8b39583b40898e26011c392",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "efe8a1ce0084ff83e66dd4459b9edec5996e77e5c0016409a0fe52e6dbfcb6d1",
       "colors": 9,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        6,
+        8,
+        15,
+        78
       ]
     },
     {
       "name": "BrazierLeft",
       "group": "Props_Torches",
-      "width": 25,
-      "height": 66,
+      "width": 29,
+      "height": 70,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1523,19 +1596,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "9182b3c6b1c5d528efd79de90381a7417e644cc1961cf114c67bc5c10c5e28b3",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "1168d476b5415eaaee95cf75659a671a40d9d5d7988e3fd075a20bc1d254ae8d",
       "colors": 25,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        27,
+        68
       ]
     },
     {
       "name": "BrazierRight",
       "group": "Props_Torches",
-      "width": 25,
-      "height": 66,
+      "width": 29,
+      "height": 70,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1591,19 +1671,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "45fd86ee4676f573e7d1e8697ba0f56574a5d88eeba0f26d94df2d776227383b",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "f3801be14b59deef7fba9a6517834b23ca9f58d92ddbd6ade76a5c10dbc8914d",
       "colors": 27,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        3,
+        27,
+        68
       ]
     },
     {
       "name": "SideBannerLeft",
       "group": "Props_Banners",
-      "width": 24,
-      "height": 56,
+      "width": 28,
+      "height": 60,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1622,32 +1709,47 @@
             0
           ],
           [
-            22,
-            55
+            23,
+            51
+          ],
+          [
+            18,
+            46
           ],
           [
             12,
+            56
+          ],
+          [
+            6,
             46
           ],
           [
             1,
-            56
+            51
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "61ccf769c089eb96761e29729d042237f211f856f10bbabb5485e024b96a47ab",
-      "colors": 14,
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "0a296ee231aa7d98ba7e017159cdf5fbd73ae1e575053e430f4bccaaa3a0c8d0",
+      "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        26,
+        57
       ]
     },
     {
       "name": "SideBannerRight",
       "group": "Props_Banners",
-      "width": 23,
-      "height": 56,
+      "width": 27,
+      "height": 60,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1666,32 +1768,47 @@
             0
           ],
           [
-            23,
-            56
+            22,
+            51
+          ],
+          [
+            18,
+            46
           ],
           [
             12,
-            47
+            56
+          ],
+          [
+            6,
+            46
           ],
           [
             1,
-            55
+            51
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "45936887a97f022ab7c3b96970684a768f5315d99e3147b3549edec3495d3db9",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "2d7a4906f5da2942eaea79a19a29464a62cb14b939d85eba1b0997f5ecff0097",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        25,
+        57
       ]
     },
     {
       "name": "SkullLeft",
       "group": "Props_Bones",
-      "width": 24,
-      "height": 36,
+      "width": 28,
+      "height": 40,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1743,19 +1860,26 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "4847c74d702bd2134fddce3262be013fa557d9dc4406fbd7f75263a3e710a31a",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "ad7fbcd4798731c35fc49eb939fc261c53257b3a1001a32e4ef7b5353d335f16",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        26,
+        38
       ]
     },
     {
       "name": "SkullRight",
       "group": "Props_Bones",
-      "width": 25,
-      "height": 36,
+      "width": 29,
+      "height": 40,
+      "canvasPadding": 2,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1807,12 +1931,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
-      "sha256": "f7b1dea12a69fc53b5b4993694b9ca92c8075ef9a3fc0857184cdf5491671ecf",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
+      "sha256": "385ad8d5019e93c8ea616819acf8ea1af5a72feefcf8661d436c8fae8e8c5aac",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        27,
+        38
       ]
     },
     {
@@ -1820,6 +1950,7 @@
       "group": "Frames_Player",
       "width": 14,
       "height": 14,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1830,12 +1961,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "4413f7658a6ff4057fefe2831a594781e35054f6b9894147431bd4080f3003b4",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        0,
+        14,
+        14
       ]
     },
     {
@@ -1843,6 +1980,7 @@
       "group": "Frames_Player",
       "width": 72,
       "height": 8,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1853,12 +1991,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "9c733dce9e0f07d5fa55d2b209ea4cc21b61e1373122d9250339eee7f601f9d4",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        72,
+        7
       ]
     },
     {
@@ -1866,6 +2010,7 @@
       "group": "Frames_Player",
       "width": 13,
       "height": 14,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1876,12 +2021,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "d79c7d5afdd8cc36577415bc19f50fa68412e994efd7fb82ef9e1246eb0af50e",
       "colors": 17,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        14
       ]
     },
     {
@@ -1889,6 +2040,7 @@
       "group": "Frames_Player",
       "width": 9,
       "height": 160,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1899,12 +2051,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "f9455c8cf4bee99f7471379d8f5220d0ef0139ccdb6b5229560188762c764b31",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        9,
+        160
       ]
     },
     {
@@ -1912,6 +2070,7 @@
       "group": "Frames_Player",
       "width": 10,
       "height": 160,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1922,12 +2081,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "2492a834c5a7b03b486bce18a617a63444a36592a8377056989889c3f4e4214d",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        1,
+        0,
+        10,
+        160
       ]
     },
     {
@@ -1935,6 +2100,7 @@
       "group": "Frames_Player",
       "width": 14,
       "height": 16,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1945,12 +2111,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c238d076d49bb74aaaa6044ac418ee99f2929a0f165b6e4d545e76ce24543923",
       "colors": 20,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        16
       ]
     },
     {
@@ -1958,6 +2130,7 @@
       "group": "Frames_Player",
       "width": 72,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1968,12 +2141,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "1e547bff00e2e209dcef9a6eb70a0acbc6b742b69a0b2296b2f6a2a53aa6e702",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        2,
+        72,
+        10
       ]
     },
     {
@@ -1981,6 +2160,7 @@
       "group": "Frames_Player",
       "width": 13,
       "height": 16,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -1991,12 +2171,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "ed16a626787d42389edc83cb11705db4275932f035b1c04bae6ad499b7985c61",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        16
       ]
     },
     {
@@ -2004,6 +2190,7 @@
       "group": "Frames_Board",
       "width": 20,
       "height": 20,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2014,12 +2201,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6893418fdd3fb06f519cb71680ad71dff1537563021edce6ea8770722d60f3ae",
       "colors": 23,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        3,
+        3,
+        20,
+        20
       ]
     },
     {
@@ -2027,6 +2220,7 @@
       "group": "Frames_Board",
       "width": 267,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2037,12 +2231,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "9af88bc70d61e2f1ec0a052669f1973bf2f1471c823dd23dc0318742f1dd8dbd",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        267,
+        12
       ]
     },
     {
@@ -2050,6 +2250,7 @@
       "group": "Frames_Board",
       "width": 22,
       "height": 20,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2060,12 +2261,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c0a94edf499c94fee24ac11eb1f0d726a37c075ef836c4f4ca93c4d43c110af5",
       "colors": 22,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        4,
+        19,
+        20
       ]
     },
     {
@@ -2073,6 +2280,7 @@
       "group": "Frames_Board",
       "width": 13,
       "height": 263,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2083,12 +2291,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "09e90af5266a0c637a32c0094f7933001b1a2f980acb8526746f55e279dc9be6",
       "colors": 18,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        263
       ]
     },
     {
@@ -2096,6 +2310,7 @@
       "group": "Frames_Board",
       "width": 14,
       "height": 263,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2106,12 +2321,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "f876e5f862a36a9b3ae094bff2c0fad62dfce66bc65575ea95cbf5937badd03a",
       "colors": 20,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        263
       ]
     },
     {
@@ -2119,6 +2340,7 @@
       "group": "Frames_Board",
       "width": 20,
       "height": 22,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2129,12 +2351,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "50ac8c00cb17857c893b4afb1d0fdfa0c952d0da7796a60538e850443bb2e460",
       "colors": 24,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        20,
+        21
       ]
     },
     {
@@ -2142,6 +2370,7 @@
       "group": "Frames_Board",
       "width": 267,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2152,12 +2381,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "65fab41f5a128c910e6075ebdb029a11f40f701ed0479439a12f0778ff6e9769",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        267,
+        11
       ]
     },
     {
@@ -2165,6 +2400,7 @@
       "group": "Frames_Board",
       "width": 22,
       "height": 22,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2175,12 +2411,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "80192c7b5c32ff5fbea995175f61b96967bde39bfa2d017beda2d11e48246d06",
       "colors": 23,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        21,
+        21
       ]
     },
     {
@@ -2188,6 +2430,7 @@
       "group": "Tiles_Cell",
       "width": 35,
       "height": 35,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2198,11 +2441,17 @@
         ],
         "changes": "Hand-cleaned simple cell rim and quiet face; native color clusters, no resampling."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "df5fcccc4d11a354d60fb54aa59717846d946d0e7ff178789720e61ad58157da",
       "colors": 6,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        35,
+        35
       ]
     },
     {
@@ -2210,6 +2459,7 @@
       "group": "Tiles_Cell",
       "width": 35,
       "height": 35,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2220,11 +2470,17 @@
         ],
         "changes": "Hand-cleaned simple cell rim and quiet face; native color clusters, no resampling."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "d9e8c18d02bb7c0cb05b9f7db3e40164b0feec8c1718468695174c26438d19b9",
       "colors": 6,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        35,
+        35
       ]
     },
     {
@@ -2232,6 +2488,7 @@
       "group": "Tiles_Cell",
       "width": 35,
       "height": 35,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2242,11 +2499,17 @@
         ],
         "changes": "Hand-cleaned simple cell rim and quiet face; native color clusters, no resampling."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "cb9d18f72ee0d4b7650851aa0ae1b22b535bc1f42268026a046c6d8bab2f6168",
       "colors": 6,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        35,
+        35
       ]
     },
     {
@@ -2254,6 +2517,7 @@
       "group": "Hud",
       "width": 13,
       "height": 15,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2297,12 +2561,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "81444a0f8d2b2b9d5bbf0f2cef674863830e46325a9a146585e783d2859f8bd4",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        14
       ]
     },
     {
@@ -2310,6 +2580,7 @@
       "group": "Hud",
       "width": 65,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2320,11 +2591,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c6de6cab1fcb8600b8d4c105e4b9baa65997d4a914db99ebfa46353d92df98db",
       "colors": 14,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        65,
+        11
       ]
     },
     {
@@ -2332,6 +2609,7 @@
       "group": "Frames_Top",
       "width": 12,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2342,12 +2620,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "4e7ea2fade2b23d8f74b9e10f7a2f7957ae71ab294d6acbcae4254cbe0247859",
       "colors": 20,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        12,
+        12
       ]
     },
     {
@@ -2355,6 +2639,7 @@
       "group": "Frames_Top",
       "width": 83,
       "height": 6,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2365,12 +2650,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "12250d6c0aab5f343970dcc5214b29e9658dedacaa82ce432fc8bc16b647f285",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        1,
+        83,
+        6
       ]
     },
     {
@@ -2378,6 +2669,7 @@
       "group": "Frames_Top",
       "width": 14,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2388,12 +2680,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "002cfb414ae7a12764a0ca825eed95e5a8ae369137ac21dfafd316353dbd732a",
       "colors": 20,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        12
       ]
     },
     {
@@ -2401,6 +2699,7 @@
       "group": "Frames_Top",
       "width": 6,
       "height": 8,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2411,12 +2710,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "920fa78bab3bb9a4948334d7b7c50c81d2d9f344ef6a0d5e23391ce0fc2d1c41",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        5,
+        8
       ]
     },
     {
@@ -2424,6 +2729,7 @@
       "group": "Frames_Top",
       "width": 6,
       "height": 8,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2434,12 +2740,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "75b0d2dadedf1fd869049ed05f6fe5882ca6d90e0a6562dc5c4f7340813d5c55",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        6,
+        8
       ]
     },
     {
@@ -2447,6 +2759,7 @@
       "group": "Frames_Top",
       "width": 12,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2457,12 +2770,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "74382525106103ebde4ad4ac6f4c325ea7830ba35a3767f2bfb45da8e44b4c18",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        12,
+        11
       ]
     },
     {
@@ -2470,6 +2789,7 @@
       "group": "Frames_Top",
       "width": 83,
       "height": 8,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2480,12 +2800,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "da6af87ea3e3364e5b083cbbb9d2f5249204b7cc5b441ec5b5d1eceb406c1895",
       "colors": 22,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        83,
+        8
       ]
     },
     {
@@ -2493,6 +2819,7 @@
       "group": "Frames_Top",
       "width": 14,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2503,12 +2830,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "120044a29990c43ac590fc6e615d46d41a7d2f577646e660dbb0511cca4465af",
       "colors": 21,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        11
       ]
     },
     {
@@ -2516,14 +2849,21 @@
       "group": "Tiles_Wall",
       "width": 16,
       "height": 3,
+      "canvasPadding": 0,
       "source": {
         "method": "Native dark plaque interior matching reference"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "67b3a2befc7b90159771176607b9685d784153b793a00afa6d07854ed0fb796d",
       "colors": 1,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        16,
+        3
       ]
     },
     {
@@ -2531,6 +2871,7 @@
       "group": "Labels",
       "width": 68,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2541,12 +2882,18 @@
         ],
         "changes": "Crisp isolated lettering; no plaque background residue."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "0bd172fd09ca5e7d205f739bb289f97cbe7b22dd5950300dc5c9cc72b7144860",
       "colors": 1,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        1,
+        1,
+        56,
+        11
       ]
     },
     {
@@ -2554,6 +2901,7 @@
       "group": "Hud",
       "width": 14,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2597,12 +2945,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6a9b3e932729a582c907be606c02440d166452e6ca88bb30d983ce9ac01e4a4e",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        14,
+        12
       ]
     },
     {
@@ -2610,6 +2964,7 @@
       "group": "Frames_Top",
       "width": 58,
       "height": 28,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2620,11 +2975,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "fb863d3c8c5ac03d3cc17851a07f5ce6f661b07b032bcd359c86503ced6f3b71",
       "colors": 16,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        58,
+        28
       ]
     },
     {
@@ -2632,6 +2993,7 @@
       "group": "Frames_Top",
       "width": 36,
       "height": 30,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2642,11 +3004,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "3baed8ec7499a21866c98a26c4bcb9486e5433ab5662fe72c54cb180defc20d0",
       "colors": 15,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        36,
+        30
       ]
     },
     {
@@ -2654,6 +3022,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 15,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2664,12 +3033,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "7152b125a47d64f980b903cf396331cf21b0a26226b3792c8dd5a2577f735d9a",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        2,
+        2,
+        10,
+        15
       ]
     },
     {
@@ -2677,6 +3052,7 @@
       "group": "Frames_Bottom",
       "width": 94,
       "height": 4,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2687,12 +3063,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "eeaf9a6614667abd356d5373fac2988b60174eed8b2e053617f0efbe763ca178",
       "colors": 8,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        1,
+        94,
+        4
       ]
     },
     {
@@ -2700,6 +3082,7 @@
       "group": "Frames_Bottom",
       "width": 11,
       "height": 15,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2710,12 +3093,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "eba4c361d420cbde24c8a40800f05419c1effee3121ad3c942d2f206e7794a7a",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        2,
+        8,
+        15
       ]
     },
     {
@@ -2723,6 +3112,7 @@
       "group": "Frames_Bottom",
       "width": 94,
       "height": 5,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2733,12 +3123,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "4188bd8139599f740fa16de55811c0d04b87a64d42cdea0ce32e7825e857c5c3",
       "colors": 9,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        50,
+        5
       ]
     },
     {
@@ -2746,6 +3142,7 @@
       "group": "Hud",
       "width": 94,
       "height": 5,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2756,11 +3153,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "410b8bed109ba770a5d276de009f8ff7ca6741c7981a5d6b9185871dbc67be54",
       "colors": 6,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        94,
+        5
       ]
     },
     {
@@ -2768,6 +3171,7 @@
       "group": "Hud",
       "width": 47,
       "height": 5,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2778,11 +3182,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "743936f3251c1adae24408af855a7c27157042f790c53f11b4a10e2a4156e914",
       "colors": 5,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        47,
+        5
       ]
     },
     {
@@ -2790,6 +3200,7 @@
       "group": "Frames_Bottom",
       "width": 12,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2800,12 +3211,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "be9ace0c50cb8ec42ae6ecc24a360214946e6e838b608d6d8e23b8379e7a2e73",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        3,
+        0,
+        12,
+        12
       ]
     },
     {
@@ -2813,6 +3230,7 @@
       "group": "Frames_Bottom",
       "width": 111,
       "height": 7,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2823,12 +3241,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "278160dedb9331cfd6e264e6d7cb7b0b18458495b8095fbec7d9683125164013",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        111,
+        7
       ]
     },
     {
@@ -2836,6 +3260,7 @@
       "group": "Frames_Bottom",
       "width": 13,
       "height": 12,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2846,12 +3271,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c90ff0acb8fa52c59af5c998f08b4a94d3e40f267d3a5c319e217d866e1560fb",
       "colors": 15,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        13,
+        12
       ]
     },
     {
@@ -2859,6 +3290,7 @@
       "group": "Frames_Bottom",
       "width": 8,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2869,12 +3301,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "1656a0aee22b1ec51ff85c5fa4a81736475a3c85fca10533213bc1c3a840eefc",
       "colors": 14,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        8,
+        26
       ]
     },
     {
@@ -2882,6 +3320,7 @@
       "group": "Frames_Bottom",
       "width": 8,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2892,12 +3331,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "b08e3935c6b11b4f62f29ba6ea2ed4e31caf1aa683c5cfb96b5092d1b1f6f7e7",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        7,
+        26
       ]
     },
     {
@@ -2905,6 +3350,7 @@
       "group": "Frames_Bottom",
       "width": 12,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2915,12 +3361,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "a34ce74988d1e88dccd8a339bd64a00a52ed68f09c938a6e07535a79884def55",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        3,
+        0,
+        12,
+        11
       ]
     },
     {
@@ -2928,6 +3380,7 @@
       "group": "Frames_Bottom",
       "width": 111,
       "height": 7,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2938,12 +3391,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "3bc4ccd22927367e66e553bf58592bafb7d4d62ff0eb965f5e23523596ddf47d",
       "colors": 16,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        111,
+        7
       ]
     },
     {
@@ -2951,6 +3410,7 @@
       "group": "Frames_Bottom",
       "width": 13,
       "height": 11,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -2961,12 +3421,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "261d5076b570d6ea90521487b272a793f85ae6e7effae13e2a1560faef562335",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        11,
+        11
       ]
     },
     {
@@ -2974,14 +3440,21 @@
       "group": "Tiles_Wall",
       "width": 15,
       "height": 15,
+      "canvasPadding": 0,
       "source": {
         "method": "Clean native dark-violet ability-panel interior"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "97bfba9ec83a82596cef7d140504904005b263e8b259356bc43cae71b8e82ea6",
       "colors": 1,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        15,
+        15
       ]
     },
     {
@@ -2989,6 +3462,7 @@
       "group": "Hud",
       "width": 31,
       "height": 35,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3060,12 +3534,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "60d070ed31989a6b060179b9fe21a7d9f19515d7121250f41c545c8f7c810ab4",
       "colors": 17,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        1,
+        31,
+        35
       ]
     },
     {
@@ -3073,6 +3553,7 @@
       "group": "Hud",
       "width": 37,
       "height": 27,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3083,12 +3564,18 @@
         ],
         "changes": "Separate energy clusters; dark panel pixels removed."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "9ef8bbc968856a18b94f2058a04e11a4fbcb3167689aa053a0d3a6fd05449d14",
       "colors": 4,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        37,
+        27
       ]
     },
     {
@@ -3096,6 +3583,7 @@
       "group": "Hud",
       "width": 35,
       "height": 27,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3106,12 +3594,18 @@
         ],
         "changes": "Separate energy clusters; dark panel pixels removed."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c5fc2070d8d32b2f75bc6262d97260ab508b198b31ee155700211a97a9adb776",
       "colors": 4,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        35,
+        27
       ]
     },
     {
@@ -3119,6 +3613,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3129,11 +3624,17 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e29db427eb88a1e2f222ad0d2536a32b01923051d87ad73095f5a706823f35ed",
       "colors": 11,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        10
       ]
     },
     {
@@ -3141,6 +3642,7 @@
       "group": "Frames_Bottom",
       "width": 33,
       "height": 6,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3151,11 +3653,17 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "4023ff0dc592b8c68e329c5d544c4a33258fa81753582fb9a8b4024e1af89325",
       "colors": 9,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        33,
+        6
       ]
     },
     {
@@ -3163,6 +3671,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3173,12 +3682,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6b19be1e8532e36684063e20d93d1338e4f4ef288504e4f7d0cb9e2a23da829f",
       "colors": 9,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        9,
+        10
       ]
     },
     {
@@ -3186,6 +3701,7 @@
       "group": "Frames_Bottom",
       "width": 6,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3196,11 +3712,17 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "cea54d308e725532fce07f377649c1395d56aaa56e86d7472fcdd0553cb3d83f",
       "colors": 11,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        6,
+        26
       ]
     },
     {
@@ -3208,6 +3730,7 @@
       "group": "Frames_Bottom",
       "width": 6,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3218,12 +3741,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "7111de8f0e1ddf7baa4bf72d9d716676c16a66cf1eafadafeb8f0d8f90fa6a21",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        5,
+        5,
+        26
       ]
     },
     {
@@ -3231,6 +3760,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3241,12 +3771,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "f38ca493c04cb8e4e04c640476435b4991a4dec6b2f64be30c6141079a1d69f1",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        8
       ]
     },
     {
@@ -3254,6 +3790,7 @@
       "group": "Frames_Bottom",
       "width": 33,
       "height": 6,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3264,12 +3801,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "54c7417c633687d0a3dffadf91de1143afcc23c2eff38049888954185ded43ed",
       "colors": 6,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        33,
+        4
       ]
     },
     {
@@ -3277,6 +3820,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3287,12 +3831,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "7a3d328dfd9c21622b83f231c276ef8d7714d1578cd5f1d9c233e1cae0aa5bdd",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        9,
+        8
       ]
     },
     {
@@ -3300,6 +3850,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3310,12 +3861,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e3fd094a59024475e673103a3e893fafe0556e3d5e647229801182ceb5ec95cc",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        10
       ]
     },
     {
@@ -3323,6 +3880,7 @@
       "group": "Frames_Bottom",
       "width": 31,
       "height": 6,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3333,11 +3891,17 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "9056d9a7348adb80a1b61337c39f19aa11c4079834a007a0daa25b1eec29ef83",
       "colors": 7,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        31,
+        6
       ]
     },
     {
@@ -3345,6 +3909,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3355,12 +3920,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "b65e9e6cb656137f4b3ff18662aadb782db35e2af08467ac707dfdc057535b05",
       "colors": 12,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        10
       ]
     },
     {
@@ -3368,6 +3939,7 @@
       "group": "Frames_Bottom",
       "width": 6,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3378,12 +3950,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "451abb587e9dac32fabcbb8734c4d05c8f16f4cf32302372fab1f2ba870d5199",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        6,
+        26
       ]
     },
     {
@@ -3391,6 +3969,7 @@
       "group": "Frames_Bottom",
       "width": 6,
       "height": 26,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3401,12 +3980,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "9a049f25500c76d9a2f2c21b20db8f459e1d2f7d28eec860e596a2ef1551e986",
       "colors": 13,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        6,
+        26
       ]
     },
     {
@@ -3414,6 +3999,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3424,12 +4010,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e71d301ce0d85ec15fd70fb0b8ddecdbd00033222f3f5df19c225ce842fb3c27",
       "colors": 10,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        8
       ]
     },
     {
@@ -3437,6 +4029,7 @@
       "group": "Frames_Bottom",
       "width": 31,
       "height": 6,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3447,12 +4040,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e3fca5f3af4ba41e91db9745a67a7972df29083592212d1e503d4e973a5581f3",
       "colors": 4,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        31,
+        4
       ]
     },
     {
@@ -3460,6 +4059,7 @@
       "group": "Frames_Bottom",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3470,12 +4070,18 @@
         ],
         "changes": "Material cleanup; remove surrounding wall/cell pixels while retaining a one-pixel dark contour around frame metal or stone."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "c77609b0e21a36f7d2aa7839058a53d133b03b8797f271a86d2b15e809162050",
       "colors": 11,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        8
       ]
     },
     {
@@ -3483,6 +4089,7 @@
       "group": "Hud",
       "width": 10,
       "height": 10,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3493,11 +4100,17 @@
         ],
         "mask": null
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "5a5cccb06a3964ec758d491cf414da2da83c922d7b0b976e741ae69c7f4d7c94",
       "colors": 3,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        10,
+        10
       ]
     },
     {
@@ -3505,6 +4118,7 @@
       "group": "Hud",
       "width": 23,
       "height": 29,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3556,12 +4170,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "303c3b8425a5e67f7c41de09f2256514d19a624d83b8006844b89e93d0f97391",
       "colors": 19,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        23,
+        29
       ]
     },
     {
@@ -3569,6 +4189,7 @@
       "group": "Hud",
       "width": 29,
       "height": 31,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3644,12 +4265,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "e0778c4a563e198b45b2ac3b1225fdd2dd79cc18983d33c3f54248b6f5624c04",
       "colors": 32,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        28,
+        31
       ]
     },
     {
@@ -3657,6 +4284,7 @@
       "group": "Hud",
       "width": 15,
       "height": 15,
+      "canvasPadding": 0,
       "source": {
         "reference": "References/NativeReference.png",
         "crop": [
@@ -3696,12 +4324,18 @@
           ]
         ]
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "1985bbf6b25501440eb27ec0becbefda3a9f07124cd3c8431b89b503fc05e291",
       "colors": 7,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        15,
+        15
       ]
     },
     {
@@ -3709,14 +4343,21 @@
       "group": "Hud",
       "width": 214,
       "height": 16,
+      "canvasPadding": 0,
       "source": {
         "method": "Native quiet text-support panel; blurred source lettering removed."
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "6102952e7c49b679fa791c336003a4eaeeb0d902fd9ac8bc05a6175271dfdb51",
       "colors": 2,
       "alpha": [
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        214,
+        16
       ]
     },
     {
@@ -3724,16 +4365,23 @@
       "group": "Labels",
       "width": 127,
       "height": 5,
+      "canvasPadding": 0,
       "source": {
         "method": "Native 3x5 hand-authored glyphs",
         "text": "PHASE RESONANCE: +15% GEM DAMAGE"
       },
-      "changes": "Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.",
+      "changes": "Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.",
       "sha256": "83652e5fb3ff6812e7dcd7d4620977f8e0bb416a04e47d31d17c3883bd7b5c53",
       "colors": 1,
       "alpha": [
         0,
         255
+      ],
+      "occupied_bounds": [
+        0,
+        0,
+        127,
+        5
       ]
     }
   ]

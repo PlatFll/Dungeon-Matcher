@@ -18,7 +18,9 @@ for a in m['assets']:
  f=K/'Exports'/a['group']/(a['name']+'.png');im=Image.open(f).convert('RGBA');native=decode(K/'Editable'/a['group']/(a['name']+'.aseprite'))
  assert im.size==(a['width'],a['height']) and im.tobytes()==native.tobytes(),a['name']
  alpha=set(im.getchannel('A').get_flattened_data());assert alpha<={0,255},a['name']
- images[a['name']]=im;records.append(dict(a,sha256=hashlib.sha256(f.read_bytes()).hexdigest(),colors=len({p[:3] for p in im.get_flattened_data() if p[3]}),alpha=sorted(alpha)))
+ bounds=im.getbbox();pad=a.get('canvasPadding',0)
+ if pad:assert bounds[0]>=pad and bounds[1]>=pad and bounds[2]<=im.width-pad and bounds[3]<=im.height-pad,a['name']
+ images[a['name']]=im;records.append(dict(a,sha256=hashlib.sha256(f.read_bytes()).hexdigest(),colors=len({p[:3] for p in im.get_flattened_data() if p[3]}),alpha=sorted(alpha),occupied_bounds=bounds))
 out=Image.new('RGBA',(360,640),'#101019')
 for p in sorted(m['placements'],key=lambda x:x['layer']):
  im=images[p['name']];x,y=p['x'],p['y']
@@ -31,6 +33,11 @@ out.save(K/'Review/NativeAssembly.png');out.resize((720,1280),Image.Resampling.N
 board=Image.new('RGB',(752,690),'#151522');d=ImageDraw.Draw(board)
 for x,n,im in [(8,'Reference (native sampling)',Image.open(K/'References/NativeReference.png')),(384,'Current modular assembly',out)]:d.text((x,8),n,fill='white');board.paste(im,(x,30))
 board.save(K/'Review/ReferenceComparison.png')
+before=K/'Evidence/WallCorrection/Before.png'
+if before.exists():
+ b=Image.new('RGB',(752,690),'#151522');d=ImageDraw.Draw(b)
+ for x,n,im in [(8,'Before: clipped flags and patched wall',Image.open(before)),(384,'Corrected: complete contours and continuous wall',out)]:d.text((x,8),n,fill='white');b.paste(im,(x,30))
+ b.save(K/'Review/CorrectionComparison.png')
 groups={}
 for a in records:groups.setdefault(a['group'],[]).append(a)
 for group,items in groups.items():

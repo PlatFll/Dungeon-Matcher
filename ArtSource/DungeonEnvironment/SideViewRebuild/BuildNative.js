@@ -27,12 +27,15 @@ function inside(x,y,pts){var yes=false;for(var i=0,j=pts.length-1;i<pts.length;j
 function mask(a,pts){for(var y=0;y<a.h;y++)for(var x=0;x<a.w;x++)if(!inside(x+.5,y+.5,pts))px(a,x,y,null);return a;}
 var ref=read(K+'References/NativeReference.png'),assets=[],placements=[],images={};
 function save(a,group,name,source){
+ var padding=group.indexOf('Props_')===0&&name.indexOf('Arch')!==0?2:0;
+ if(name==='LowerLeftConnector'||name==='LowerRightConnector')padding=2;
+ if(padding){var padded=blank(a.w+padding*2,a.h+padding*2);for(var py=0;py<a.h;py++)for(var pxx=0;pxx<a.w;pxx++)for(var pc=0;pc<4;pc++)padded.p[((py+padding)*padded.w+pxx+padding)*4+pc]=a.p[(py*a.w+pxx)*4+pc];a=padded;}
  var path=K+'Editable/'+group+'/'+name+'.aseprite';app.open(P+'Assets/_Game/Resources/UI/Consumables/Potion.png');var s=app.activeSprite;s.saveAs(path,false);s.resize(a.w,a.h);s.commit();app.command.BackgroundFromLayer();s.commit();s.layer(0).cel(0).image.putImageData(a.p);s.layer(0).name=name;s.commit();s.saveAs(path,true);app.activeDocument.close();
- images[name]=a;assets.push({name:name,group:group,width:a.w,height:a.h,source:source,changes:'Native LibreSprite material palette, exact contour masking and local pixel correction; no blur or interpolation.'});console.log('ASSET_OK '+name);return name;
+ images[name]=a;assets.push({name:name,group:group,width:a.w,height:a.h,canvasPadding:padding,source:source,changes:'Native LibreSprite material palette and local pixel correction; complete prop contours with transparent clearance; no blur or interpolation.'});console.log('ASSET_OK '+name);return name;
 }
 function clean(a){for(var pass=0;pass<2;pass++){var b=crop(a,0,0,a.w,a.h);for(var y=1;y<a.h-1;y++)for(var x=1;x<a.w-1;x++){var counts={},solid=true;for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){if(!dx&&!dy)continue;if(!b.p[((y+dy)*a.w+x+dx)*4+3])solid=false;var c=color(b,x+dx,y+dy);counts[c]=(counts[c]||0)+1;}if(solid)for(var c in counts)if(counts[c]>=4)px(a,x,y,c);}}return a;}
 function part(name,group,box,mats,poly){var a=crop(ref,box[0],box[1],box[2],box[3]);if(poly)mask(a,poly);quant(a,mats);if(group.indexOf('Tiles')===0||group.indexOf('Frames')===0||group==='Structure'||group==='Lighting')clean(a);if(name==='GuideShell'||name==='GearShell'){var orig=crop(ref,box[0],box[1],box[2],box[3]);for(var Y=7;Y<a.h-6;Y++)for(var X=7;X<a.w-6;X++){var z=(Y*a.w+X)*4;if(orig.p[z]+orig.p[z+1]+orig.p[z+2]>465)px(a,X,Y,'e3d8e7');}}save(a,group,name,{reference:'References/NativeReference.png',crop:box,mask:poly||null});return a;}
-function at(name,x,y,layer){placements.push({name:name,x:x,y:y,layer:layer});}
+function at(name,x,y,layer){var rec=assets.filter(function(r){return r.name===name;})[0],pad=rec.canvasPadding||0;if(pad){x=Math.max(0,Math.min(360-rec.width,x-pad));y=Math.max(0,Math.min(640-rec.height,y-pad));}placements.push({name:name,x:x,y:y,layer:layer});}
 function extract(name,group,box,mats,layer,poly){part(name,group,box,mats,poly);at(name,box[0],box[1],layer);}
 function field(name,box,layer){var a=images[name];for(var y=0;y<box[3];y+=a.h)for(var x=0;x<box[2];x+=a.w)placements.push({name:name,x:box[0]+x,y:box[1]+y,layer:layer,clip:[box[0],box[1],box[2],box[3]]});}
 // Background families are independent reusable surfaces. Their hidden areas can be
@@ -44,10 +47,10 @@ function brickSurface(a,pitchH,colors){for(var y=0;y<a.h;y++)for(var x=0;x<a.w;x
 brickSurface(back,16,['171522','292139','322740','211c30']);
 save(back,'Tiles_Wall','BackWallReference',{pixellab_job:'59bc82c9-7774-4084-b362-2a407edbc3c5',file:'PixelLab_Source/TileA.png',changes:'Native reconstruction of generated staggered courses: narrowed gutters, reference-scale bricks, controlled bevel clusters and seamless periodic edges.'});
 var portrait=brickSurface(blank(64,56),14,['0e1421','182032','202a3d','111725']);save(portrait,'Tiles_Wall','PortraitWall',{reference:'References/NativeReference.png',crop:[20,90,64,56],changes:'Native reconstruction of the reference blue brick field; four continuous courses without sampling residue.'});
-var lower=crop(back,0,0,64,32);save(lower,'Tiles_Wall','LowerWall',{pixellab_job:'59bc82c9-7774-4084-b362-2a407edbc3c5',file:'PixelLab_Source/TileA.png',changes:'Clean structural background below the board, free of progress-bar fragments.'});
 field('BackWallReference',[0,0,360,640],0);
-field('PortraitWall',[18,30,80,167],1);
-field('LowerWall',[0,210,360,430],0);
+// One continuous wall course phase across the board surround, edges and HUD.
+// UI interiors belong above the environment, including enlarged masonry.
+field('PortraitWall',[18,30,80,167],31);
 // Standing plane stays a 12px strip, never a large receding floor.
 for(var n=0;n<4;n++){
  var x=106+n*64,w=Math.min(64,360-x);extract('StandingStrip'+String.fromCharCode(65+n),'Tiles_Floor',[x,178,w,12],['stone','wall'],10);
@@ -59,16 +62,18 @@ extract('PortraitBackPier','Structure',[99,0,21,180],['stone','wall'],12);
 extract('RightPierTop','Structure',[325,0,32,85],['stone','wall'],12);
 extract('RightPierBase','Structure',[323,148,31,31],['stone','wall'],12);
 part('RightPierShaft','Structure',[329,69,14,16],['stone','wall']);field('RightPierShaft',[329,85,14,64],12);
-for(var j=0;j<5;j++){var sx=[111,156,201,246,291][j];extract('PlatformSupport'+String.fromCharCode(65+j),'Structure',[sx,209,18,17],['stone','wall'],12);}
-extract('LeftSideMasonry','Structure',[0,210,27,325],['stone','wall'],12);
-extract('RightSideMasonry','Structure',[331,210,29,325],['stone','wall'],12);
-extract('LowerLeftConnector','Structure',[0,535,31,105],['stone','wall'],12);
-extract('LowerRightConnector','Structure',[328,535,32,105],['stone','wall'],12);
-// Remove decorative content from side masonry underlays using clean wall surfaces.
-// Masks are repaired before exporting; the independent decorative sprites below own it.
-function repair(name,boxes){var a=images[name],tile=images.BackWallReference;for(var i=0;i<boxes.length;i++){var b=boxes[i];for(var y=b[1];y<b[1]+b[3];y++)for(var x=b[0];x<b[0]+b[2];x++)px(a,x,y,color(tile,(x+7)%tile.w,(y+11)%tile.h));}var rec=assets.filter(function(r){return r.name===name;})[0];assets=assets.filter(function(r){return r.name!==name;});save(a,rec.group,name,{reference:rec.source,repair_boxes:boxes});}
-repair('LeftSideMasonry',[[0,12,20,77],[0,87,27,69],[0,154,24,52],[0,229,23,38]]);
-repair('RightSideMasonry',[[7,14,22,76],[0,87,29,69],[5,155,24,51],[0,229,25,38]]);
+// The rejected narrow wall strips/support crops are deliberately absent.
+// Full lower corner masonry is extracted on a generous canvas. The envelope
+// excludes the source UI, while a material mask follows actual stone contours.
+function corner(name,right){var bx=right?296:0,raw=crop(ref,bx,480,64,160),a=crop(raw,0,0,64,160),seed=[];
+ for(var y=0;y<160;y++)for(var x=0;x<64;x++){var edge=right?63-x:x,max=y<48?24:y<65?28:y<95?39:y<121?42:60;var i=(y*64+x)*4,R=raw.p[i],G=raw.p[i+1],B=raw.p[i+2],gx=bx+x,gy=480+y;var ui=(gy<=530&&gx>=24&&gx<=335)||(gy>=559&&gy<=609&&(right?gx<=310:gx>=53));seed[y*64+x]=!ui&&y>=7&&edge<max&&B>50&&B>R*1.08&&R>G*1.1;}
+ quant(a,['stone','wall']);clean(a);
+ for(var y=0;y<160;y++)for(var x=0;x<64;x++){var keep=false;for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){var X=x+dx,Y=y+dy;if(X>=0&&Y>=0&&X<64&&Y<158&&seed[Y*64+X])keep=true;}if(!keep)px(a,x,y,null);}
+ // Close the lowest stone silhouettes rather than leaving a hard cropped base.
+ for(var x=0;x<64;x++){if(a.p[(156*64+x)*4+3]){px(a,x,157,'32243f');px(a,x,158,'21182e');}px(a,x,159,null);}
+ save(a,'Structure',name,{reference:'References/NativeReference.png',crop:[bx,480,64,160],changes:'Full 64px-wide natural stone envelope, source UI excluded, completed bottom contours, transparent two-pixel canvas clearance.'});at(name,bx,480,12);
+}
+corner('LowerLeftConnector',false);corner('LowerRightConnector',true);
 // Local warmed masonry is a discrete material patch, kept behind every torch.
 function warmWall(name,box,cx,cy){var a=blank(box[2],box[3]);for(var y=0;y<a.h;y++)for(var x=0;x<a.w;x++){var gx=x+box[0],gy=y+box[1],dx=Math.abs(gx-cx),dy=Math.abs(gy-cy),d=Math.floor(dx/10)+Math.floor(dy/18);if(d>3)continue;var base=color(back,gx%64,gy%32),c;if(base==='171522')c=d<2?'39232a':'211925';else if(base==='322740')c=['b77745','8d5138','59383a','3d2934'][d];else if(base==='211c30')c=['754132','553032','38232d','29202e'][d];else c=['9d593b','754335','553338','322432'][d];px(a,x,y,c);}save(a,'Lighting',name,{reference:'References/NativeReference.png',crop:box,changes:'Discrete warm brick clusters on the same wall grid; no torch, banner or chain pixels baked in.'});at(name,box[0],box[1],14);}
 warmWall('WarmWallLeft',[113,88,36,67],130,119);
@@ -85,9 +90,9 @@ extract('BarredDoor','Props_Door',[195,96,57,83],['wall','stone','metal'],18,[[0
 extract('TorchLeft','Props_Torches',[120,100,19,52],['fire','metal','wood'],30,[[7,0],[11,6],[13,14],[17,22],[18,34],[14,41],[13,51],[7,52],[6,42],[1,35],[0,25],[4,15]]);
 extract('TorchMiddle','Props_Torches',[269,111,17,45],['fire','metal','wood'],30,[[8,0],[11,9],[15,14],[17,24],[14,31],[12,44],[7,45],[5,32],[1,25],[0,17],[4,10]]);
 extract('TorchRight','Props_Torches',[331,92,19,58],['fire','metal','wood'],30,[[8,0],[12,11],[16,20],[19,32],[15,42],[13,57],[7,58],[6,43],[1,34],[0,25],[4,15]]);
-extract('BannerPlayer','Props_Banners',[38,32,31,43],['cloth','gold','metal'],35,[[0,0],[31,0],[29,43],[16,34],[2,43]]);
-extract('BannerLeft','Props_Banners',[140,53,29,60],['cloth','gold','metal'],25,[[0,0],[29,0],[27,59],[15,49],[3,60]]);
-extract('BannerRight','Props_Banners',[274,54,29,60],['cloth','gold','metal'],25,[[0,0],[29,0],[27,60],[15,49],[2,59]]);
+extract('BannerPlayer','Props_Banners',[38,32,31,43],['cloth','gold','metal'],35,[[0,0],[31,0],[30,39],[24,34],[16,43],[8,34],[2,39]]);
+extract('BannerLeft','Props_Banners',[140,53,29,60],['cloth','gold','metal'],25,[[0,0],[29,0],[28,58],[22,51],[15,60],[8,51],[2,58]]);
+extract('BannerRight','Props_Banners',[274,54,29,60],['cloth','gold','metal'],25,[[0,0],[29,0],[28,58],[22,51],[15,60],[8,51],[2,58]]);
 extract('BarrelLarge','Props_Barrels',[299,141,27,38],['wood','metal'],27,[[5,0],[23,0],[26,8],[27,27],[23,37],[5,38],[1,32],[0,12]]);
 extract('BarrelSmall','Props_Barrels',[289,158,14,21],['wood','metal'],28,[[3,0],[12,0],[14,8],[13,19],[3,21],[0,15],[1,4]]);
 // Native chain sprites have real alpha. Retain their bends instead of straightening.
@@ -97,8 +102,8 @@ chain('ChainSideLeft',[3,226,12,76]);chain('ChainSideRight',[346,225,14,76]);
 // Side ornaments are separate reusable sprites, not baked into the wall panels.
 extract('BrazierLeft','Props_Torches',[0,299,25,66],['fire','metal','stone'],30,[[11,0],[15,11],[21,24],[25,41],[22,51],[18,61],[12,66],[5,61],[2,50],[0,36],[5,22]]);
 extract('BrazierRight','Props_Torches',[335,299,25,66],['fire','metal','stone'],30,[[12,0],[17,13],[22,24],[25,40],[23,51],[18,62],[12,66],[5,61],[2,50],[0,37],[5,23]]);
-extract('SideBannerLeft','Props_Banners',[0,369,24,56],['cloth','gold','metal'],25,[[0,0],[24,0],[22,55],[12,46],[1,56]]);
-extract('SideBannerRight','Props_Banners',[337,369,23,56],['cloth','gold','metal'],25,[[0,0],[23,0],[23,56],[12,47],[1,55]]);
+extract('SideBannerLeft','Props_Banners',[0,369,24,56],['cloth','gold','metal'],25,[[0,0],[24,0],[23,51],[18,46],[12,56],[6,46],[1,51]]);
+extract('SideBannerRight','Props_Banners',[337,369,23,56],['cloth','gold','metal'],25,[[0,0],[23,0],[22,51],[18,46],[12,56],[6,46],[1,51]]);
 extract('SkullLeft','Props_Bones',[0,449,24,36],['stone','wall'],25,[[2,0],[20,0],[24,8],[21,21],[17,24],[17,33],[7,36],[6,25],[2,23],[0,10]]);
 extract('SkullRight','Props_Bones',[335,449,25,36],['stone','wall'],25,[[4,0],[21,0],[25,8],[23,21],[18,25],[18,34],[8,36],[6,25],[1,22],[0,10]]);
 // Exact frame silhouettes: independent corners and edge spans, no large frame image.
@@ -108,7 +113,7 @@ frame('Player','Frames_Player', [['TL',9,20,14,14],['Top',23,23,72,8],['TR',95,2
 frame('Board','Frames_Board', [['TL',25,224,20,20],['Top',45,226,267,12],['TR',312,224,22,20],['Left',26,244,13,263],['Right',320,244,14,263],['BL',25,507,20,22],['Bottom',45,517,267,12],['BR',312,507,22,22]]);
 // 8x8 empty board, no gem sprites. Cells contain no surrounding frame pixels.
 for(var i=0;i<3;i++){var cell=blank(35,35);rect(cell,0,0,35,35,'0a0e19');rect(cell,1,1,33,33,'182032');rect(cell,2,2,31,30,'1b2233');rect(cell,2,2,2,28,'202a3d');line(cell,3,1,31,1,'293348');line(cell,1,3,1,31,'293348');line(cell,33,2,33,32,'111725');line(cell,2,33,32,33,'111725');if(i===1)line(cell,3,2,12,2,'202a3d');if(i===2)line(cell,3,30,12,30,'182032');save(cell,'Tiles_Cell','Cell'+String.fromCharCode(65+i),{reference:'References/NativeReference.png',crop:[40+i*35,239,35,35],changes:'Hand-cleaned simple cell rim and quiet face; native color clusters, no resampling.'});}
-for(var y=0;y<8;y++)for(var x=0;x<8;x++)at('Cell'+String.fromCharCode(65+(x+y)%3),40+x*35,238+y*35,2);
+for(var y=0;y<8;y++)for(var x=0;x<8;x++)at('Cell'+String.fromCharCode(65+(x+y)%3),40+x*35,238+y*35,32);
 extract('PlayerHeart','Hud',[19,181,13,15],['pink','metal'],42,[[4,0],[7,2],[11,0],[13,4],[12,8],[6,15],[1,8],[0,4]]);
 extract('PlayerHealthFrame','Hud',[31,183,65,11],['metal','pink','wall'],41);
 // Top signs preserve exact shapes and native labels. Label artwork remains separate.

@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:14Z" duration="1.049724">
-  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:14Z" duration="1.049724" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:03Z" duration="1.4034033">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="804" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:03Z" duration="1.403403" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1936" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-top-hud-pixellab/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:14Z" duration="1.040746" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1937" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-top-hud-pixellab/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="804" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:03Z" duration="1.392331" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="28528" />
+        <property name="_PID" value="16560" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestFixture" id="1556" name="DungeonSideViewPreviewTests" fullname="DungeonSideViewPreviewTests" classname="DungeonSideViewPreviewTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:14Z" duration="1.034661" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1556" name="DungeonSideViewPreviewTests" fullname="DungeonSideViewPreviewTests" classname="DungeonSideViewPreviewTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:03Z" duration="1.384665" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1557" name="NativeImportsMatchLibreSpriteExports" fullname="DungeonSideViewPreviewTests.NativeImportsMatchLibreSpriteExports" methodname="NativeImportsMatchLibreSpriteExports" classname="DungeonSideViewPreviewTests" runstate="Runnable" seed="789210216" result="Passed" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:13Z" duration="0.106034" asserts="0">
+        <test-case id="1557" name="ContinuousWallAndCompletePropsRenderBehindUi" fullname="DungeonSideViewPreviewTests.ContinuousWallAndCompletePropsRenderBehindUi" methodname="ContinuousWallAndCompletePropsRenderBehindUi" classname="DungeonSideViewPreviewTests" runstate="Runnable" seed="189212602" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:02Z" duration="0.361099" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1558" name="ReferenceCompositionAndIntegerPixelCaptures" fullname="DungeonSideViewPreviewTests.ReferenceCompositionAndIntegerPixelCaptures" methodname="ReferenceCompositionAndIntegerPixelCaptures" classname="DungeonSideViewPreviewTests" runstate="Runnable" seed="1781180818" result="Passed" start-time="2026-10-18 16:08:13Z" end-time="2026-10-18 16:08:14Z" duration="0.918616" asserts="0">
+        <test-case id="1558" name="NativeImportsMatchLibreSpriteExports" fullname="DungeonSideViewPreviewTests.NativeImportsMatchLibreSpriteExports" methodname="NativeImportsMatchLibreSpriteExports" classname="DungeonSideViewPreviewTests" runstate="Runnable" seed="1705411313" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:02Z" duration="0.088474" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1559" name="ReferenceCompositionAndIntegerPixelCaptures" fullname="DungeonSideViewPreviewTests.ReferenceCompositionAndIntegerPixelCaptures" methodname="ReferenceCompositionAndIntegerPixelCaptures" classname="DungeonSideViewPreviewTests" runstate="Runnable" seed="1241782488" result="Passed" start-time="2026-10-18 16:55:02Z" end-time="2026-10-18 16:55:03Z" duration="0.922625" asserts="0">
           <properties>
             <property name="_JOINTYPE" value="UnityCombinatorial" />
             <property name="retryIteration" value="0" />

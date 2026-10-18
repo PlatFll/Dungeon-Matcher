@@ -4,9 +4,21 @@ Review candidate on `feature/dungeon-top-hud-pixellab-rebuild`. No production as
 
 The supplied reference is the composition authority. The screenshot mat is excluded using source rectangle `[178,18,938,1370]`. The 760×1352 artwork is sampled with nearest-neighbor into a **360×640 native coordinate grid**. Final artwork is authored in LibreSprite on that grid; review enlargements use integer nearest-neighbor scaling.
 
+## User-requested clipping and wall correction
+
+The first version's banner mask inverted the pointed tails, and narrow wall/stone crops retained broken prop fragments or cut across natural stone edges. These defects are corrected in the current version:
+
+- Complete pointed tails on all five banners; separately editable decorations remain above the wall.
+- One global-phase wall field behind the board, side gutters and lower HUD. Removed the five sampled support fragments, two patched side strips and redundant offset lower-wall field.
+- Both lower corner sprites expand from narrow 31/32×105 crops to **68×164** canvases. Natural stone contours replace rectangular slabs, source UI fragments are excluded, and the bottom silhouettes are completed.
+- Standalone props and corners have **two transparent pixels of clearance**. Border props move inward by the minimum needed to keep the entire padded sprite in view; native pixels are never scaled.
+- UI interiors/cells sit above scenery, and frames/labels retain their existing higher order. Background pieces may extend under those UI surfaces.
+
+No PixelLab generations were spent on this correction. Total generation usage remains 10. Rejected patches are removed from the active library; their sources and the marked feedback remain in `Evidence/WallCorrection/` for review history.
+
 ## Contents
 
-- `Editable/`: 127 individual LibreSprite documents, organized by material/role.
+- `Editable/`: 119 individual LibreSprite documents, organized by material/role.
 - `Exports/`: matching native PNGs with binary alpha.
 - `AssetManifest.json`: dimensions, per-module lineage, and every placement/clip rectangle.
 - `INVENTORY.md`: complete dimensions, palette counts and repeat/join/standalone classification.
@@ -17,7 +29,7 @@ The supplied reference is the composition authority. The screenshot mat is exclu
 
 ## Artistic decisions
 
-The arch, barred door, banners, torches, barrels, chain bends, frames and their anchors follow the supplied image. The upper floor remains a **12px shallow standing strip** over a **19px frontal ledge**. It has not been converted into a receding perspective floor. The player background keeps a cooler blue material, distinct from the plum dungeon wall. Warm light is represented by discrete brick clusters behind separate torch sprites.
+The arch, barred door, banners, torches, barrels, chain bends, frames and their anchors follow the supplied image. The upper floor remains a **12px shallow standing strip** over a **19px frontal ledge**. It has not been converted into a receding perspective floor. The board cells and portrait interior render above all environment layers, so extended stone pieces cannot cover them. The player background keeps a cooler blue material, distinct from the plum dungeon wall. Warm light is represented by discrete brick clusters behind separate torch sprites.
 
 The original screenshot contains soft shading and sampling residue. Native cleanup uses material-specific color ramps and connected pixel clusters. Quiet wall fills and board cells were reconstructed; incidental cracks, speckles, duplicated prop fragments and blurred tiny text were removed. The small resonance label is a native 3×5 glyph reconstruction. Wave lettering is a separate PNG; Guide lettering and the gear remain part of their button shells. These are art preview labels, not localized or gameplay-controlled UI text.
 
@@ -27,7 +39,7 @@ This is a visual interpretation on a fixed native grid, **not a pixel-identical 
 
 Wall, portrait and cell fills repeat. Frame corners and their matching edge spans, platform course A–D pieces, and arch sections are independent native assets. Those reference-specific spans are **matching join pieces**, not arbitrary interchangeable terrain tiles. Standalone props and icons have transparent silhouettes. Local lighting is a separate replaceable layer. Moving props exposes a complete background rather than duplicated prop fragments.
 
-The Unity hierarchy has six ordered groups: base walls/cells, shallow platform, structural masonry/light, props, top UI shells, bottom HUD shells. Integer scale and centered letterboxing preserve reference proportions at taller phone sizes and within safe areas. The test scene has no units, board gems, input/event system, combat, wave or run owners. Decorative frame gems and HUD icons are retained from the reference.
+The Unity hierarchy has six ordered groups: continuous base wall, shallow platform, structural masonry/light, props, top UI shells, bottom HUD shells. Integer scale and centered letterboxing preserve reference proportions at taller phone sizes and within safe areas. The test scene has no units, board gems, input/event system, combat, wave or run owners. Decorative frame gems and HUD icons are retained from the reference.
 
 ## Unity preview
 

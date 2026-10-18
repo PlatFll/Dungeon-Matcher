@@ -11,6 +11,55 @@ using Object = UnityEngine.Object;
 
 public sealed class DungeonSideViewPreviewTests
 {
+    [System.Serializable] sealed class NativeAsset
+    {
+        public string name, group;
+        public int width, height, canvasPadding;
+    }
+    [System.Serializable] sealed class NativeManifest
+    {
+        public NativeAsset[] assets;
+        public DungeonSideViewArtPreview.Placement[] placements;
+    }
+
+    [Test] public void ContinuousWallAndCompletePropsRenderBehindUi()
+    {
+        var manifest = JsonUtility.FromJson<NativeManifest>(File.ReadAllText(DungeonSideViewPreviewTools.Kit + "/AssetManifest.json"));
+        string[] retired = {"LowerWall", "LeftSideMasonry", "RightSideMasonry", "PlatformSupportA", "PlatformSupportB", "PlatformSupportC", "PlatformSupportD", "PlatformSupportE"};
+        Assert.That(manifest.assets.Any(a => retired.Contains(a.name)), Is.False);
+        Assert.That(manifest.placements.Where(p => p.layer == 0).All(p => p.name == "BackWallReference"), Is.True);
+        Assert.That(manifest.placements.Where(p => p.name.StartsWith("Cell") || p.name == "PortraitWall").All(p => p.layer > 30), Is.True);
+        foreach (var name in new[] {"LowerLeftConnector", "LowerRightConnector"})
+        {
+            var asset = manifest.assets.Single(a => a.name == name);
+            Assert.That(asset.width, Is.GreaterThanOrEqualTo(68));
+            Assert.That(asset.height, Is.GreaterThanOrEqualTo(164));
+        }
+        foreach (var asset in manifest.assets.Where(a => a.canvasPadding > 0))
+        {
+            var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            try
+            {
+                Assert.That(texture.LoadImage(File.ReadAllBytes(DungeonSideViewPreviewTools.Kit + "/Exports/" + asset.group + "/" + asset.name + ".png")), Is.True);
+                var pixels = texture.GetPixels32();
+                for (int y = 0; y < texture.height; y++)
+                    for (int x = 0; x < texture.width; x++)
+                        if (x < asset.canvasPadding || y < asset.canvasPadding || x >= texture.width - asset.canvasPadding || y >= texture.height - asset.canvasPadding)
+                            Assert.That(pixels[y * texture.width + x].a, Is.Zero, asset.name + " must keep transparent contour clearance.");
+            }
+            finally { Object.DestroyImmediate(texture); }
+        }
+        EditorSceneManager.OpenScene(DungeonSideViewPreviewTools.ScenePath);
+        var preview = Object.FindFirstObjectByType<DungeonSideViewArtPreview>();
+        preview.Rebuild();
+        foreach (var piece in preview.Pieces.Where(p => p.name.StartsWith("Cell") || p.name == "PortraitWall"))
+        {
+            var layer = piece.transform;
+            while (layer.parent != preview.Content) layer = layer.parent;
+            Assert.That(layer.GetSiblingIndex(), Is.GreaterThan(3), piece.name + " must cover expanded scenery.");
+        }
+    }
+
     [Test] public void NativeImportsMatchLibreSpriteExports()
     {
         var files=Directory.GetFiles(DungeonSideViewPreviewTools.AssetsRoot,"*.png",SearchOption.AllDirectories);

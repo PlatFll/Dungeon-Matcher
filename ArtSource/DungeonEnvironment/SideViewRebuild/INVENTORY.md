@@ -6,7 +6,6 @@ All dimensions are native pixels. Each PNG has a matching editable LibreSprite s
 |---|---|---|---|---|
 | BackWallReference | Tiles_Wall | 64×32 | Repeating fill | 4 |
 | PortraitWall | Tiles_Wall | 64×56 | Repeating fill | 4 |
-| LowerWall | Tiles_Wall | 64×32 | Repeating fill | 4 |
 | StandingStripA | Tiles_Floor | 64×12 | Matching frame/course part | 14 |
 | LedgeFaceA | Tiles_Platform | 64×19 | Matching frame/course part | 14 |
 | StandingStripB | Tiles_Floor | 64×12 | Matching frame/course part | 13 |
@@ -20,43 +19,36 @@ All dimensions are native pixels. Each PNG has a matching editable LibreSprite s
 | RightPierTop | Structure | 32×85 | Standalone prop/panel | 16 |
 | RightPierBase | Structure | 31×31 | Standalone prop/panel | 15 |
 | RightPierShaft | Structure | 14×16 | Repeating fill | 10 |
-| PlatformSupportA | Structure | 18×17 | Standalone prop/panel | 10 |
-| PlatformSupportB | Structure | 18×17 | Standalone prop/panel | 5 |
-| PlatformSupportC | Structure | 18×17 | Standalone prop/panel | 9 |
-| PlatformSupportD | Structure | 18×17 | Standalone prop/panel | 4 |
-| PlatformSupportE | Structure | 18×17 | Standalone prop/panel | 8 |
-| LowerLeftConnector | Structure | 31×105 | Standalone prop/panel | 14 |
-| LowerRightConnector | Structure | 32×105 | Standalone prop/panel | 15 |
-| LeftSideMasonry | Structure | 27×325 | Standalone prop/panel | 15 |
-| RightSideMasonry | Structure | 29×325 | Standalone prop/panel | 14 |
+| LowerLeftConnector | Structure | 68×164 | Standalone prop/panel | 15 |
+| LowerRightConnector | Structure | 68×164 | Standalone prop/panel | 15 |
 | WarmWallLeft | Lighting | 36×67 | Standalone prop/panel | 11 |
 | WarmWallMiddle | Lighting | 36×48 | Standalone prop/panel | 13 |
 | WarmPierRight | Lighting | 14×64 | Standalone prop/panel | 13 |
 | ArchCrown | Props_Door | 83×45 | Standalone prop/panel | 14 |
 | ArchPierLeft | Props_Door | 13×54 | Standalone prop/panel | 14 |
 | ArchPierRight | Props_Door | 13×54 | Standalone prop/panel | 14 |
-| BarredDoor | Props_Door | 57×83 | Standalone prop/panel | 14 |
-| TorchLeft | Props_Torches | 19×52 | Standalone prop/panel | 20 |
-| TorchMiddle | Props_Torches | 17×45 | Standalone prop/panel | 21 |
-| TorchRight | Props_Torches | 19×58 | Standalone prop/panel | 21 |
-| BannerPlayer | Props_Banners | 31×43 | Standalone prop/panel | 16 |
-| BannerLeft | Props_Banners | 29×60 | Standalone prop/panel | 13 |
-| BannerRight | Props_Banners | 29×60 | Standalone prop/panel | 14 |
-| BarrelLarge | Props_Barrels | 27×38 | Standalone prop/panel | 10 |
-| BarrelSmall | Props_Barrels | 14×21 | Standalone prop/panel | 7 |
-| ChainWaveLeft | Props_Chains | 20×78 | Standalone prop/panel | 10 |
-| ChainWaveRight | Props_Chains | 26×78 | Standalone prop/panel | 12 |
-| ChainDoor | Props_Chains | 10×96 | Standalone prop/panel | 10 |
-| ChainGuide | Props_Chains | 11×88 | Standalone prop/panel | 10 |
-| ChainGear | Props_Chains | 10×24 | Standalone prop/panel | 9 |
-| ChainSideLeft | Props_Chains | 12×76 | Standalone prop/panel | 11 |
-| ChainSideRight | Props_Chains | 14×76 | Standalone prop/panel | 9 |
-| BrazierLeft | Props_Torches | 25×66 | Standalone prop/panel | 25 |
-| BrazierRight | Props_Torches | 25×66 | Standalone prop/panel | 27 |
-| SideBannerLeft | Props_Banners | 24×56 | Standalone prop/panel | 14 |
-| SideBannerRight | Props_Banners | 23×56 | Standalone prop/panel | 12 |
-| SkullLeft | Props_Bones | 24×36 | Standalone prop/panel | 14 |
-| SkullRight | Props_Bones | 25×36 | Standalone prop/panel | 15 |
+| BarredDoor | Props_Door | 61×87 | Standalone prop/panel | 14 |
+| TorchLeft | Props_Torches | 23×56 | Standalone prop/panel | 20 |
+| TorchMiddle | Props_Torches | 21×49 | Standalone prop/panel | 21 |
+| TorchRight | Props_Torches | 23×62 | Standalone prop/panel | 21 |
+| BannerPlayer | Props_Banners | 35×47 | Standalone prop/panel | 16 |
+| BannerLeft | Props_Banners | 33×64 | Standalone prop/panel | 13 |
+| BannerRight | Props_Banners | 33×64 | Standalone prop/panel | 14 |
+| BarrelLarge | Props_Barrels | 31×42 | Standalone prop/panel | 10 |
+| BarrelSmall | Props_Barrels | 18×25 | Standalone prop/panel | 7 |
+| ChainWaveLeft | Props_Chains | 24×82 | Standalone prop/panel | 10 |
+| ChainWaveRight | Props_Chains | 30×82 | Standalone prop/panel | 12 |
+| ChainDoor | Props_Chains | 14×100 | Standalone prop/panel | 10 |
+| ChainGuide | Props_Chains | 15×92 | Standalone prop/panel | 10 |
+| ChainGear | Props_Chains | 14×28 | Standalone prop/panel | 9 |
+| ChainSideLeft | Props_Chains | 16×80 | Standalone prop/panel | 11 |
+| ChainSideRight | Props_Chains | 18×80 | Standalone prop/panel | 9 |
+| BrazierLeft | Props_Torches | 29×70 | Standalone prop/panel | 25 |
+| BrazierRight | Props_Torches | 29×70 | Standalone prop/panel | 27 |
+| SideBannerLeft | Props_Banners | 28×60 | Standalone prop/panel | 13 |
+| SideBannerRight | Props_Banners | 27×60 | Standalone prop/panel | 12 |
+| SkullLeft | Props_Bones | 28×40 | Standalone prop/panel | 14 |
+| SkullRight | Props_Bones | 29×40 | Standalone prop/panel | 15 |
 | PlayerTL | Frames_Player | 14×14 | Matching frame/course part | 19 |
 | PlayerTop | Frames_Player | 72×8 | Matching frame/course part | 14 |
 | PlayerTR | Frames_Player | 13×14 | Matching frame/course part | 17 |
