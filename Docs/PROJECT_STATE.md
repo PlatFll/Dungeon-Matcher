@@ -22,6 +22,16 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Three-zone battle presentation (2026-10-18)
 
+Unmerged art review: `ArtSource/DungeonEnvironment/ModularRebuild/` contains a
+129-module native LibreSprite kit and per-asset/source validation. The additive
+`Assets/_Game/Scenes/ArtPreview_DungeonModular.unity` scene uses the shared layout
+calculator with tiled materials, fixed native corners/ornaments, and clipped
+portrait/board interiors. Four actual Unity portrait/safe-area captures and
+rendered containment checks are provided. It has no characters, gems or gameplay
+owners and is excluded from release builds. This is a user-review candidate;
+production Dungeon assets and the approved revision below remain unchanged.
+See the kit's `VALIDATION_REPORT.md`; do not integrate or merge without approval.
+
 Current Dungeon follow-up: the user requested direct LibreSprite dissection and
 integration of a new three-enemy mockup. `ArtSource/BattlePresentation/DungeonMockupRevision/`
 contains the 21-layer master, native modules, 84-color material cleanup and

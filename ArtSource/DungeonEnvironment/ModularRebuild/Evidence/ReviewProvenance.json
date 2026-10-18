@@ -1,0 +1,553 @@
+{
+  "branch": "codex/dungeon-modular-scene-rebuild",
+  "base": "b82bf80a60dafc5a9bbe2470de492fa21db27697",
+  "art_stage": "a44619e",
+  "code_and_scene": {
+    "Assets/_Game/Scripts/ArtPreview/DungeonModularArtPreview.cs": "65b732384972c2329bb0b78c276a518d8c0c9c141ad04d3ee9275ca9d07458f1",
+    "Assets/_Game/Scripts/Editor/DungeonModularPreviewTools.cs": "ea5df3dd9d5f24234f608e4a0a75bc6147c4c48aca20410e5706915fc9cec80c",
+    "Assets/_Game/Scripts/Editor/DungeonModularPreviewTests.cs": "a3deb96bd041bcf57e1a795197951f9dd18d87f120a5ee5e8fd2d5e1fb8577de",
+    "Assets/_Game/Scenes/ArtPreview_DungeonModular.unity": "29e67627ec8cff5550f297cd8ee9422b4f7ae1f7ef4ba5e710f2d36d07e339ab"
+  },
+  "assets": {
+    "PortraitWallA": {
+      "png": "5911bd28279a3a3428179fa51e1c3b3f2a0cf2d2717a39b7035e5f9a4051fd39",
+      "editable": "ed8bf8d8e08927ac574eae30dd0febbfa93b1f2d92abba4460841ef72d7e4a88"
+    },
+    "PortraitWallB": {
+      "png": "1ec88f545294c80c6692961380d9fc931d286e0d47ac1bc33f1259fad74a0fc6",
+      "editable": "12b9a3d014067a00642436a39431474892f81428b1a0e4d791ed6b9f21e6f34e"
+    },
+    "PortraitWallC": {
+      "png": "5949513d87e1d591bba88e97f9608e9b539641ea63f27fdb39f07c4cd37962f4",
+      "editable": "38def597ac4513b23d25a3bd4e74e7d38b5eb4bf77caf006738612c14f7fd88c"
+    },
+    "PortraitWallD": {
+      "png": "a268a44a6f31110dbcbe55bb5a2884fa24e50a79f5aa5cf542c186530edcf21e",
+      "editable": "499c296c63995e5c4889c13eb3d45d12da9fc2cbf34debb26a4db8e3e106d80e"
+    },
+    "BattleWallA": {
+      "png": "a4d57811ea908451877f90fd2de7294e6abad77c2fa802e04f2c78c8ed6baf11",
+      "editable": "8d600f4d4c8e5262c3ca418138b4e2f67d2cda2b84f317e3828c24a25ee9e747"
+    },
+    "BattleWallB": {
+      "png": "09aff0a389928f4ad005cf471b55ac04514ec9d16cd30f9fbdcc69393d12c299",
+      "editable": "700099d25cb2abca99a34c4fa582e037eb63412f17b8dda7ac802315dc4d162f"
+    },
+    "BattleWallC": {
+      "png": "8fed3d7f2a2064ac992b8a413db81f0fafaf1cada390d02d5ab2e3d931e2cd50",
+      "editable": "eb8426e12ca4e5ff95a312b4104506324fa94ea477cfeba2a1daa5a22d976605"
+    },
+    "BattleWallD": {
+      "png": "30a57a3f32608ae69efa81340c1313b18e29f7ad5e41908be1c659ba84f2e347",
+      "editable": "dc7b14ae0407a1d45481b9529d111fd2e710144734d57262fff7def450288e69"
+    },
+    "OuterWallA": {
+      "png": "b3f9bf80640aae37cefe3309a65309d700b1a98f2671520dffbe036a48253d4c",
+      "editable": "dd220dd6d09d03d40db3480a834c9d22ab2c922aad6caa5b6722a62c46d969ff"
+    },
+    "OuterWallB": {
+      "png": "ceb8c50fa68de48f840dac89b50f932c20cc3749f46fdd44ebf5983b2e828ad4",
+      "editable": "e1288a49e3dc1a47506ce9e23bdb3fe3856f2fd2f4cc0959e785f2c30fe1be17"
+    },
+    "OuterWallC": {
+      "png": "bb8a1355e188c5095b11742f6e4d6d820ce7ec095c955980f32e066bc49470ff",
+      "editable": "aacd1a486df40604ae79f88b5d95d01509cff76638c04dc809ee32c8c25fd70a"
+    },
+    "OuterWallD": {
+      "png": "60b0b29de741b049380e8d46e117b4d6b48fa97ffbc81f0bf70b03d83e4d3b85",
+      "editable": "3124309da94c6920cab729347dd64a7e328a393bc641e5d6006db34e83930722"
+    },
+    "BoardTL": {
+      "png": "078591dcf65c0ce6641ff906c8bdd490abccccdc26235b2c59a7e1507f12939f",
+      "editable": "bc3b333a1f3ea8e86bd844190b79143ecc7cd86248e663a3f3c4420276fc8db5"
+    },
+    "BoardTR": {
+      "png": "023670726f41cb713e9c892f717302d368aaae9817a98e810345b2fcecdd2fd5",
+      "editable": "3d8fd4ffe60ed3c289b4df0869c7537d67eb53038b0536ad07e3379e285d852e"
+    },
+    "BoardBL": {
+      "png": "1b52ce3eab831438ac043982e19773d467d8057db4e0ff2c4af18ccbc0da1272",
+      "editable": "bea8931851a1ec4b91aa746ac0afa747c62a596e40573fd7d69fae64ff6c168e"
+    },
+    "BoardBR": {
+      "png": "d5081b396ac3e91faa7cc4e106b09aebc5f04ff284a7b3d060ea0ff8d5eb6d73",
+      "editable": "fc25343e00ab234b4768154610e274bf7d6a8a7d4c1e6457b74734f20663d017"
+    },
+    "BoardTopRail": {
+      "png": "d57f9e024d80b0d47ad0f6f95ff4950c1c51015ea4ed1ba0d2e14f7a503cb8d2",
+      "editable": "dffe85807b39f6231c0f5669e6fc87087a3214f5f8ccd12fb67d0e2da4920aec"
+    },
+    "BoardBottomRail": {
+      "png": "fbac121509773441d77ac08acd2c88f2c29b8cdaac85e909fb7919a70ca51652",
+      "editable": "ad0a8e5e5bd64701683a1f87d6024626a3e304c17c9b366ef907d951ca44d6e2"
+    },
+    "BoardLeftRail": {
+      "png": "68a644f62834d811742b48fd709b243a5bdc5b295ffa5cc0cf73cdbdeda8b8fd",
+      "editable": "deaf42ca64c420f389dd15eda10c771a9d4bd2732604464d862b6911ec403f55"
+    },
+    "BoardRightRail": {
+      "png": "5592a4951e5f3f2836f387cfa05fa4af96791cc2bccfe055b808c86b51a7474e",
+      "editable": "36b84f1d731612edff4def0a9ba27f335f151d6bb2ebd0b02f5492a4ebfdb1ee"
+    },
+    "BoardCenterFinial": {
+      "png": "e68b4aec83186db7e5f1cfaa996c5a565cc58aa5c1bda8e12356bd9d4b308a7e",
+      "editable": "bfcd33e48ed6eb3161c1b35b88a8c750b45d871033ddc9e19d08ac16b0687c55"
+    },
+    "EmptyCell0": {
+      "png": "eff81887c202ccbddeb79f7137f52e7ab58d9a4c2df3f9aa661a19347133672a",
+      "editable": "dac5f2bad1262057c059d5fd4385740508d9a6b69ce24d407c070b79630f6ce8"
+    },
+    "EmptyCell1": {
+      "png": "c5b73071362e72c8679c7782a5c0e67c65b3a134d3cf159813a107fcd7018219",
+      "editable": "e690a19f49ec2cc26caea901ee63a0e1b651a14432b959f862ba6189247e6d33"
+    },
+    "EmptyCell2": {
+      "png": "452a4603e6b53ca913824a2b4d84290fb42215a5693062e88f973ffbd9256dd6",
+      "editable": "768ca133e52b5ba7d16b413c29d17378e3ad429a57a66c9f998fb6270dcec10c"
+    },
+    "PortraitTL": {
+      "png": "cfde430f2c24434a1306eb2750b97eb9fed6f952a76531817fa56463b4c4641a",
+      "editable": "9ea063cc82e42986d8e6051b2f6b4f8242c9fdc905533d0de2e7d1a15533d30d"
+    },
+    "PortraitTR": {
+      "png": "9c3187293950ba3c21d236186f9dd3423c08871115b816c03f0e2bef7954d4a0",
+      "editable": "a643623d4b724a40ff54d1f6013ad9fe08a75af3c526848ed734e1640f660452"
+    },
+    "PortraitBL": {
+      "png": "37e5b806d3dc8417958b8d3c56a00dc24e1f97b43f0c775e34dbef546836258f",
+      "editable": "0296631826963f7cd2b50a67b36566fd814f6af11cdb7e3f21512f912ed6d72c"
+    },
+    "PortraitBR": {
+      "png": "2af9f9c5d86d3d2b7e75a8b4e1c64e975b5e01821ff1af73ff304eeccc5f91ff",
+      "editable": "346a8f81a0c04fcd6dbfe3b850c4dbd1d0081219502e10cecbf3ffb4863b8812"
+    },
+    "PortraitTop": {
+      "png": "113401fe60159df13e3761d5bffb09c96e2004b4dd92b11a80b3ed20ea8edad8",
+      "editable": "1bbb843a56bc292c654675f2a42f7b2354d3b46793ae109e895d3af6ec350894"
+    },
+    "PortraitBottom": {
+      "png": "46bfc9da0b615d57e5777b5a3d5dc2e516af0d796721f2599e16637c3a316da8",
+      "editable": "09c380bbb3eacf4b6463f9a88a1c0f86b74c3b5bf35c7db422ba0cc59929efc7"
+    },
+    "PortraitLeft": {
+      "png": "e73b702b36d5521017791f4c75194cf18f311991da4011c969b30b4786e1f961",
+      "editable": "3d8b11621c40c48f7375dadc45d5e2a18f7b4ef505104d2e3a7289a7f5fb1029"
+    },
+    "PortraitRight": {
+      "png": "00fa92139f4e0ea84c8aad542903bffb4348922d4e23480f6d3d36b5dff721d9",
+      "editable": "0d72fb30f29a7072f17e841bf7556daffb8816220ce201b0cd0adf0e6b4ba73c"
+    },
+    "PortraitCollarTopA": {
+      "png": "16d4f7a178694b0ccdd343fbfb9e5d2f65f6740168752256b35fed7fa222084a",
+      "editable": "852f3d098126f92285254cfcfc0f7f7735253a593ac7953e6b440028383f91b7"
+    },
+    "PortraitCollarTopB": {
+      "png": "409d6fc29f60068370a3e1cc9ec1de172ff0a07467ea052780e119f3739330d3",
+      "editable": "9456dffc45b15275cc708d306d43e53273592041144f32ae97db9572a32b3714"
+    },
+    "PortraitCollarBottomA": {
+      "png": "618a8c2f12b89c015e2789705a4eda3858a2e0bec907bf997824e9e6756aa01f",
+      "editable": "cfc6cfebf05c9a4aa04847cca97d8422aa05aac4c9e84a8ae2ab0f8d7478a241"
+    },
+    "PortraitCollarBottomB": {
+      "png": "12bca34fdfa00b58758361cec848ae216d143122989d3c8c22d7e28db2ac713d",
+      "editable": "48f5f73ae80126a666b67f47d79a4d88c2f91c34b1d106c4b71ee8cedc45aa9f"
+    },
+    "PortraitCollarLeftA": {
+      "png": "9bcb547c2ffdb980326858a83d65f5e99cb9e31f09cd7c27f313d4abb42cb3af",
+      "editable": "ef9ffd3fc472ed5619586503156731f1d7086e7be71c519cf508ef18a500257c"
+    },
+    "PortraitCollarLeftB": {
+      "png": "99200378115558806548261e37a4d64767e160d1580b40c42b1cae36887bd30c",
+      "editable": "357bd492b1147e2d89ff32bbb103272abd3e38bb1ceb56f3d19786588f5e6c47"
+    },
+    "PortraitCollarRightA": {
+      "png": "f48531c57e901d74c5237613713bcbeda7393219d85ec4c1daf869ab0a3b1035",
+      "editable": "af5e63f9516f28fa59c50cbf6a8b66212f5a9d40537dab228c66442a368c7dbc"
+    },
+    "PortraitCollarRightB": {
+      "png": "dff0bdcba7b67b1b98d4b61544ab31c7bcfdc960faf8e24524e35f3bda10105d",
+      "editable": "c0105c83d0df78ffda4c73d614db7818ad23527f75344aac495d67fd1808ca38"
+    },
+    "WaveTL": {
+      "png": "b89bd05c916e5045a077022ee285a6664aca59d1b8c5111536265fe93a550a7b",
+      "editable": "334732284837399e1c3991b9905baf4af3c02b28ed0b562f361e3df5b15a9df1"
+    },
+    "WaveTR": {
+      "png": "7a63fc7c1d660bb9675f1fe393a7feb689f6e75e6c5dd400f0d39ff825f62689",
+      "editable": "62d7943e8d69d8985fe264efcb660f90472d38cae58046084d96401bd0fc89c6"
+    },
+    "WaveBL": {
+      "png": "b1342b264233aa7a9171503e8b64bcbaeb4b511b3178cb6d9c98bff9f0e2c4e5",
+      "editable": "224163b87839df1b26702fabedbb43838d1b6fa3584c24f4ea29f15186ebe0ae"
+    },
+    "WaveBR": {
+      "png": "2da38707aa9fe06fd1d52d375b6eef5d934ef0b81be9347b5b596a86dc65c10a",
+      "editable": "9471797174be4d557d7e0a69b34068ab6aa62769442199d12aaad7a22a390ebf"
+    },
+    "WaveTop": {
+      "png": "d41367b57f33e6b864c20ada4f821c185515970f9db49f6c82e86bf49b01dd85",
+      "editable": "87a8d466be71c2ca94b96a82f29b69b0f6b17971d75d31f6d7780029a3cc4dce"
+    },
+    "WaveBottom": {
+      "png": "a0f1ac69c2fea47f2a0d23a9ba81fb553508ec191a4c3e9836e106483779ddac",
+      "editable": "42759c40a62cfb3136cb72729ed66fd7627ebcec996fb758287c0f45c1189fc6"
+    },
+    "WaveLeft": {
+      "png": "5f555c91823c591c30c74b6938d1188778e3194c6e55aef7e7cd3b4902facefe",
+      "editable": "93ef0b5f72fff62641e6cc07ce993909360883e65e970473102ab70c6c0ae6a8"
+    },
+    "WaveRight": {
+      "png": "181b60bb742a8057e9ac4b6fd8c5d2bd4496973b87a5dd0f23975686727e8a26",
+      "editable": "a1ba27200c85011318b6e1e8a1e20cfd81a3b18847b8515b3f35c1bdc5b94f35"
+    },
+    "WaveSkull": {
+      "png": "3012cedb0dd831bab162e18533d6b26ea4256e6b6f3774b6d6909ae45f83fcdd",
+      "editable": "fb03231dec7d9a27b07546b1f4127e996bfa06b4b1e9ce778f7e47530a183032"
+    },
+    "GuideTL": {
+      "png": "3ec7dd85241fb904dce52e3ebc893747bd2bcf0ce40c17b133d7fa2ea7ecedd9",
+      "editable": "29c9a9bf69d828f41d4c38c01b2b54c0c149d45514cbb5629c89ad8c5a059fba"
+    },
+    "GuideTR": {
+      "png": "85df6ff446633f21cd1230a21cc3f11e5725bbc55cebb5c90fb5e1b1b565284b",
+      "editable": "bd009d1131e36ea1284ba1985fd53543b15e3135c5bc1e832a647b7b002a9236"
+    },
+    "GuideBL": {
+      "png": "be71003fcc2c61a0f3fd37e6028ea361d1ad0cf433c8c7f797b91ba10fb3482b",
+      "editable": "966f8a316a84732b0e77dd76de838aa6c54d68a2da6cc06d1592a30b68f4ed29"
+    },
+    "GuideBR": {
+      "png": "70a777b8aa31a5e2b2201e0b74727f6a70be02a688bce04ed191727648dba09e",
+      "editable": "b63f1ce4311acd3cd65e55bd60282aafab56d1fb6c99706ebbc3f5b704a30618"
+    },
+    "GuideTop": {
+      "png": "82fc2a9af4e27e24e1d702b004d2d45966708f024e106ca043a9dc560fdb6ffb",
+      "editable": "8dcbe5dbf2fbb26c57e6bc35a670ba62d1b6bcaaf367fd783791e2707a97fd5a"
+    },
+    "GuideBottom": {
+      "png": "df677e88dc38b8063328171e16ad26f3fa19675cb8cd7f50a3f2e965e0bbd680",
+      "editable": "01a914f78de0af25414236d6060e40c5e14ead9b3794f82295eab7b1bb3601ed"
+    },
+    "GuideLeft": {
+      "png": "530555ce1d16ed7d754f05b66a213e9ae5a5f33da2810c1f61aa67979ae41e4a",
+      "editable": "597e3bc3368c2a2c6918b7c6dc87d86526e7c480faed79bbe8a557ee082102e3"
+    },
+    "GuideRight": {
+      "png": "29cc47fc5857451422cf75eb0f81f4bc01fea1f18cf0f9a98a22e6c7af01814b",
+      "editable": "07597bb2efafa6fb982ad20dd4d0465ff374d3777f47140e548d5f0bfe9c18a0"
+    },
+    "SettingsTL": {
+      "png": "0c2c7841fbc8065ba678d2a85a0fd259eaf169611fd4016f8e69165c8f5ee5c4",
+      "editable": "e495be5cff2f3dd2e3fffd4e4be2fc442f516489e06bd0d77d38e9bcf9ed5c8b"
+    },
+    "SettingsTR": {
+      "png": "dd75c2b537095701292794c127b1d42927d94c1a6a57bb6faf1149349a416921",
+      "editable": "7d8f2b12a9cb7aab3e5fba5c88787898d31e5a94c9a3fe2f013ffd275c2ee28d"
+    },
+    "SettingsBL": {
+      "png": "5683840920389be63c800c928cfa0e9b5921a5bffad53668c8592721d0c52d91",
+      "editable": "8c7b32a9645a2a3e82cbf6a9c6bd789f4cc29bb62b75be3a1108abbbe93137e6"
+    },
+    "SettingsBR": {
+      "png": "779ecc8db9d1b6d3281278295582704e5f5f774592f2d0996857fcdeb6c4d44e",
+      "editable": "a490501bb95c2226517947758d0eb7930ba8c93388f148d4454e4eb559fbf203"
+    },
+    "SettingsTop": {
+      "png": "5ec771a3887beafbb74023b761fb28b77e66784ea9d1e330ccb8eb174cecb4f2",
+      "editable": "afab4c931272e5f8e927029586dcd53af6888b15e7176561a2cbefe66010e6e5"
+    },
+    "SettingsBottom": {
+      "png": "07e211c964ddb562dc717d3c48719bbab84514e0a59d57b326f81569ab6c82cc",
+      "editable": "0d00272ede6539b588e09eecf0803fc29adb2559bd0704772d4bddf83a0f8094"
+    },
+    "SettingsLeft": {
+      "png": "267ab6317488f5c9eb6b313de34b131a99f71afe4ac5aec9ecc79362a1b902c0",
+      "editable": "a469689f740d482409ca653ac1992f21788992bf8b45870d08d0fc0e1cff7de0"
+    },
+    "SettingsRight": {
+      "png": "3677a704dffe53fe1879a1a8a184db82a8d8d542fce11b0b3673fa74359a626a",
+      "editable": "f0d31a1996f62a034578d7ca17f00a800d221b60f49da6e3c784fde0d52d6675"
+    },
+    "SettingsGear": {
+      "png": "09a973b8bed5f40a595d5d083ae7059d72cfc8b1a7b6ef0755342d6a281aa894",
+      "editable": "38cb15295f3d4ed3579ffc8dda2160da1d13028735b28c85f95f9228cd8d7482"
+    },
+    "AbilityTL": {
+      "png": "f7e089ca10431142b93842e6068764d41dbeb9f4c4fdfb533a9336f5b9ec2ea4",
+      "editable": "2b52ac45d5fa1274272796e63f54aff337d33dacdeaec0652e5cdabfeb8b9303"
+    },
+    "AbilityTR": {
+      "png": "eeb8147bba5702f6f112b631556a2a24a5f3380357d587f0d73e41411fb07d26",
+      "editable": "3dd67e56bdae2e5b5e09221466e4089ef98da29cf9e54da3e5476a1746e18ea8"
+    },
+    "AbilityBL": {
+      "png": "55ac734111d90f5f4cb7f4748174dd75056e41fb59ed97d25356c2764422fb0f",
+      "editable": "97bb40be07d89adb2cf08d1bd68a474e0a9e7f78ac0d119ae10be91598fd5579"
+    },
+    "AbilityBR": {
+      "png": "b5b3b245f6f59adb448337f946d78c38ad93b02b33ddbdb96c1b73d258051c97",
+      "editable": "7321dfe98338270c6dff855ff4772aa32575905bce2a5af465d2e6759e745917"
+    },
+    "AbilityTop": {
+      "png": "71dcb90014e92d7d84999593d95f77dcd64c46ef88a51d45d265cce360d614e0",
+      "editable": "c50a92b4b56ab1711894b50056bcad811bf8370b0ccb148558f9c7e7b5f90f86"
+    },
+    "AbilityBottom": {
+      "png": "9339961a5b02c9239388d755962f286ce35c3d12d6bc5e48588a6c207b2d6048",
+      "editable": "c354f3d274c7504afe996dcaa5ea1d50fb5d11e6677e37193af3e3e04e3fc7c1"
+    },
+    "AbilityLeft": {
+      "png": "c70dd0fed84ebb771da1723d73410bf324cb4d5bb9c8d2668c652c3897384d6c",
+      "editable": "76a1744e8903a55a93b099ca84e2196c68b327fe4f1959ed5e335df8fa29d052"
+    },
+    "AbilityRight": {
+      "png": "a7c93a195af047809df5d4f76bfdbc0beff273987e22e565f62d353f0d00874b",
+      "editable": "c3aa04ba08426940e6780127f4e9feedbb150c936e9189411a7e47dd08f158ed"
+    },
+    "AbilityLeftJewel": {
+      "png": "9c989de525852b20589086186692c485d5b797ee23dd6f8f9127003dcdd65a0c",
+      "editable": "d5a57f9787690879f9abe22bb2e6cc5a56d8680fa5424ee1a61359849b036a41"
+    },
+    "AbilityRightJewel": {
+      "png": "4625045f59e2da38a98c33ab2e7c903cf5d36db8ae3afe0b0ecbce1b87043819",
+      "editable": "065e675214237c713441f52205eeecb967dc53a9eb53a678fd76f2ea1b301ddf"
+    },
+    "SupplyTL": {
+      "png": "f0371028183c1f428f490e2fc4d8875caaef32e1a7e5f404e5866aed15cf3c95",
+      "editable": "1fa3aceb66a8ff24f8b10edd3e67febd5617381f3f2b02378132aa389edd219e"
+    },
+    "SupplyTR": {
+      "png": "90227140f9826050eda33bbc993fa263656c8dd31bdbecf6bb2142f3cc9566f2",
+      "editable": "e11bb3d2db59db1f7239086bcdd2cefadf604bbfad0a821d848becd1c21f1735"
+    },
+    "SupplyBL": {
+      "png": "0f75f583eec51a055a93f282f905b39c5087356d2904c473b313cbc604381c82",
+      "editable": "4991ff10487bf1a9055e9674f4301b73a19373ebbf810215132d952872abea65"
+    },
+    "SupplyBR": {
+      "png": "33de25e24742f7480aac9fb6a23e166a3f7c9a61ae4bcd45db2d77e0c3994e19",
+      "editable": "8c3939dada9950d01abf215697bb588007944ad08d280982b31f0dbcec72ead7"
+    },
+    "SupplyTop": {
+      "png": "55b872f3a329783fa4410434496eefa27290a489958a365abb40cc284ec4e0c6",
+      "editable": "9099d8ec2745e10b48d48d367d39710a41f20976e91065aa461cb78197ae3111"
+    },
+    "SupplyBottom": {
+      "png": "544161c29d7b561730ca5d16879673217d9524f6a93ee9685cf9d95460fa5c2c",
+      "editable": "33b66d2f68e22d5adfe6d84577dcef22718375cb4c2767a52890baace4760d5f"
+    },
+    "SupplyLeft": {
+      "png": "c0714677f11ea0020b87c8f65813fd6547d02aa53d9b82079412f0c7c46ac629",
+      "editable": "dd2e0c715e3880faa58ddab273bfeb65733e16b040f1244657a846b1693e86d5"
+    },
+    "SupplyRight": {
+      "png": "08d07038e1325fa6a0fea80fc1784a2d5d5b2570f88220829276a97242918e7b",
+      "editable": "92060916bbb8ba9aef158214100e021004fe2dbeb2b714c1b27335df5258bb84"
+    },
+    "EnergyStart": {
+      "png": "ed755247a13c47167248ef4eb3ef9d259ba5058cb4dc946e4c5514a9b4a90f0f",
+      "editable": "0396f35b668b82faa8d222c6816a1d9f62b45f8c134b8203670a46c9acd5e930"
+    },
+    "EnergyEnd": {
+      "png": "f47c171f5cab71532aaec0312bed1055d86fd9651047af56be458b2fcf0e0b40",
+      "editable": "fd4edbdf50ab390610376306a22c03a90d175a81a2f6e1089b1b4ed201ddd27b"
+    },
+    "EnergyTopRail": {
+      "png": "3278ba68112ade664363b0ea3be0a444ddfb648606d0b87e8fc3205c39e4b54f",
+      "editable": "d681c1ab2e5097a87ca4a4836e97e076c81aa604e81f6a23564a4de855deb8a8"
+    },
+    "EnergyBottomRail": {
+      "png": "79c888b73d435446680ad22a6956783df4b932ce0acef321b008fb0c4dc43713",
+      "editable": "0aca8210827636040aff41bb479b5237b22c40e9429c33d85cb70a9f033fecb5"
+    },
+    "PlayerHealthStart": {
+      "png": "b4b677ab4ab1262dd98e764526de6dd6bf70cc56a5162e4a28e1d726f855f903",
+      "editable": "4e18dda3843645cda551872f33d7969225ae23aac8c15952cf8107f0336001c1"
+    },
+    "PlayerHealthMiddle": {
+      "png": "abdeec2e7a5ea95bf61ee314857a781b639d61d5041e9ebceb24241464c86a0e",
+      "editable": "664f9ce9c25047b744a06903fbaa318e6f6bb604f1532be1d7d9672d834179e8"
+    },
+    "PlayerHealthEnd": {
+      "png": "5951de2022b6db26bb9b3b4c5a8b000f8a3c5644287615f663261e59082403ce",
+      "editable": "213fa2a898b37230d106d7d40548e508f2cf414d955444983d181ee5e9a4f51a"
+    },
+    "HudDark": {
+      "png": "b7e5a380e9d5ae8dbd907954bd0f61eb08ecf82316d81b6144a82061d47e7e59",
+      "editable": "81f8309d243832e9b44524d7bf43f1ef6f092b9cd790bbc8cf67c96b25ad57ee"
+    },
+    "AbilityDark": {
+      "png": "11864c8ffcb62a9c4b006f7e8841b56123f99f85da73c9f5000ae991ff7ad531",
+      "editable": "384bb8b25fbda497c6492fe74b7ccca55694b3c853b6e8f954a716891e1e0b5e"
+    },
+    "SilverInset": {
+      "png": "18b153e0280ee2e35b3d954da0a19abd0d5d929c78135ac13c4dcf12d6dc9240",
+      "editable": "fa8f02c56d7bf5d55ee49b2f19074f58a2795d37e7daac5e9f3dc330f589c60e"
+    },
+    "Gateway": {
+      "png": "e7f2c7e8facc255ea6505bc17c54a24f8c402561992a9d22d1c6b1925a5c8ad6",
+      "editable": "82a32e78be846cc500a943d4725eeff01d738a3793332e29eba42173c909ad69"
+    },
+    "LeftTorch": {
+      "png": "253fc8a80d4ad826723e9b52b43663b8378dae3da72d24d94424cfae4027666b",
+      "editable": "eb68f289b341f393f4ef1ac48ac91c5b6b56a04d8c1115e39b576d434be8b22c"
+    },
+    "RightTorch": {
+      "png": "63b3db56347aae3a072dca9ef53970b9b02c76aecb04c2208db91d6e66bc0c73",
+      "editable": "5d5ed075185c71162cb1d9bc4a06c02272699dfb61ccf092c7e6ff67b1bb701d"
+    },
+    "RearBarrels": {
+      "png": "391367728b2acc3e7a71881caf687ab01ef149c3800b2319be2671401684b2cd",
+      "editable": "679dd28e97cee8bdce8d1ba4afe428e7da7f4141c71de5312a1fcff185fafa52"
+    },
+    "FrontBarrel": {
+      "png": "bf571eb6bf81fbf644dba846613f0f14395be91de6a140d3b8840b2d75a9f9a6",
+      "editable": "fa95efebee3347b91dcda7e9418882db9884473f9044ef61bb504ebf9deb8650"
+    },
+    "LeftBones": {
+      "png": "cc46d029197df47946ae5fd3896fce9cccaada6e6b089cf401ca8aef2ec34d25",
+      "editable": "b1e6adbc82357104b9d465e10f350fec91cd81b64ada6324eff90e7c0987700b"
+    },
+    "RightBones": {
+      "png": "8680b2dc3252fe943ec0439598c9606eb5e29801602c3a1b3987b247153353ef",
+      "editable": "971707a3989f25f482776c41d4178a4e48e6e2053cf6b6ab5c4295759a67af39"
+    },
+    "RearBones": {
+      "png": "3304721dce424dc55cfdf183acbf11a01d1f279baf011447b999d4df0dc1c770",
+      "editable": "79b3d64479bcfff48486610a58697a7f5b168348a406a0ce821d164da72d87af"
+    },
+    "PortraitBanner": {
+      "png": "c2c8d9b4cf8250b81c908c0676cde37f9b69f48d3422fac212de335b8a068d2d",
+      "editable": "3d108a8993b0fc945c6d41bb6e327efce1b9c6b7d66317ab0c5fafd9562ef84b"
+    },
+    "LeftHangingBanner": {
+      "png": "309342f1c6a33fb566993679316746bd4ec24b12287665d5bcd808044c7eeb34",
+      "editable": "ecca008acd143921f907258ff8edeb671fd0a310a2c67f4a75127823f04f4de9"
+    },
+    "RightHangingBanner": {
+      "png": "d0f8a39858d791d1f4ca19dc769c1f15ca25c6007a45c4e6f6e105cd2e43f7d8",
+      "editable": "fe133d30ed398df5aafd18d9ac1ac4920e306364b9f1012f18a55351a85bc300"
+    },
+    "LeftHighChain": {
+      "png": "c2d27ecbcedd25286c8e66bfb859ac8a1c6ba1ab6c92bbcb865bbab7c1e5515d",
+      "editable": "74b251ec65598c7bd7315aa1be5b61068078e95897cb06f74bd9748f740f0e4e"
+    },
+    "RightHighChain": {
+      "png": "c2526d3e9bfc13ffbf8cb059dde56e2007249fcba2157c76d7aaf4234d697718",
+      "editable": "09ec83f110f7516b2a27bce96fbd6d66d168e4c4755d04bd5629af459e14341f"
+    },
+    "FarRightChain": {
+      "png": "b5ffd8811a8a01e38d579e4e535a96f8745f5d4c463f39f3a5ead2548c4ca3d6",
+      "editable": "2c71f00f8ced9615d140b6ea8cbdb5ac7595e7f35637f9e5295d914708d36ff1"
+    },
+    "LeftSideChain": {
+      "png": "c98a275a78e137bdac77ad605a3dcadd85f471e754b6638a5e76e6359caa50b6",
+      "editable": "67030a7b2b491b7a5d7c4c6e00cb55b278c1587dcb1b5644fada3f105467b064"
+    },
+    "RightSideChain": {
+      "png": "a26dc47f92811491dbe7f328814ed862acb4f00efb444bd6a30d35e506bd29bd",
+      "editable": "d0f958be09f42c2e7c8397094f83128cc9c3f6c13d33ffd0694646d7f0908e0f"
+    },
+    "LeftSideTorch": {
+      "png": "4e789ff740fa235e49f67a0b646fdb1b43282c4f3e28a14579363c1ba3ed46e6",
+      "editable": "85bb3e4177e593cad83a38b9e55995b210bb714a38a4ce679743a940d96f6565"
+    },
+    "RightSideTorch": {
+      "png": "d9b142db084a0c386924e4313697b35d4f69fb99ac97be308f44f5f1e1412951",
+      "editable": "11ffefc90605b53552bbf918d259e378a500fb609576befa406acd394597e4cb"
+    },
+    "LeftSideBanner": {
+      "png": "1862e53ecd11af28fe5258a2e989347bf905963c6e14ed0adbd57de36c40c360",
+      "editable": "2a1f5d183340ad7ab78b1cad78dc986f6925c129113ffeecb449d4838169bb69"
+    },
+    "RightSideBanner": {
+      "png": "d0669e7a4b88c36aba06ec5a51552efc95b18ee8abd239b079da14aefc1dfd89",
+      "editable": "97cd55343977aa450f0c7058f37aaa5d7ecdfd55641cf9b08df2cd8d30a4fe1f"
+    },
+    "LeftSkullPillar": {
+      "png": "73081ca70797dbc88a46c9ca00a5107ab85b6b68f7ad76a8b2f380e64f57910c",
+      "editable": "739c2c3b85da1827d5557f404bb2a3f427563c10fdd696f0657a3c7ae02934f3"
+    },
+    "RightSkullPillar": {
+      "png": "f61a86aa543c320700f0ab9a9af6442ecbd47e3a58f8edad4bb924ba0acce555",
+      "editable": "ec96cac0e67163ed96c2a760e15124ee9fab22b87f5097e284f09ecb9a47bbbb"
+    },
+    "LeftBottomButtress": {
+      "png": "f8fb47b1bf0cf2388175cfbb01b460c1aa8979c2e1826ec29289e50c48964c54",
+      "editable": "d7947d5cf3ec9c202888732a68aacbd0c5db4a815dbbdf0d708bab90de650552"
+    },
+    "RightBottomButtress": {
+      "png": "5ac30c850dfcd3794192bbb23a9a9c27b9d0623bdd87ab5d5c47870ddd323243",
+      "editable": "fbcd03a80cb5d0d19f372ca4ad852b15a88ad68e7753b9619309270eccf5833a"
+    },
+    "LeftTopPillar": {
+      "png": "2bff2f3e897f36fe9d0ebbe9bd0760a9eddaa5da870b3f7a0ea6004512e221b5",
+      "editable": "ef0a144cc0f7a8bf31e7175df0ba135ea678f97f2c66cf47ddff07d3b7f1be53"
+    },
+    "CenterTopPillar": {
+      "png": "63da7002919adae57bf9b81173041cd5fed46ba5666a7254186e698361190545",
+      "editable": "41d898ae883688561b022ad2905ae966c346536149e9eae47c6699bf6114b875"
+    },
+    "RightTopPillar": {
+      "png": "0ae96a436eac3fadab2e8d3ec4899cdfc4f2df429d33e526d6d80449f4e3e9df",
+      "editable": "787fe7ad454567f65f5b0407718dd171c2c120a2a3f99716ef28a93e10aae050"
+    },
+    "FarRightPillar": {
+      "png": "8311a1da46dc76e53c68a9d0cf6f7c27b2f5c75a76719a3b4300a0f14609c3d7",
+      "editable": "87b4fa1a5e0bb9df6cbac8becff1ba0ad87a4e6a07817eb30bb27146027749f0"
+    },
+    "FoundationStart": {
+      "png": "3f463a108f0e6f919c8dd912c7a4cf57970ac674ee78be7e5c1b80b45ac4bd03",
+      "editable": "2b27e48f07da9ae99384d8d2384298882098b94692d5aa61b96e5238aea9d23a"
+    },
+    "FoundationTopRail": {
+      "png": "79922a18830d690e7abc13f3948b9061ca7d1cad1b6b99df00a2094dac945e36",
+      "editable": "d5b4f1a6eda811f4549fa4775e18edc79072a7a084cb801a335ee5f3b3c96c73"
+    },
+    "FoundationEnd": {
+      "png": "e35282192175f7607d784272444745b42349799c374c0f35dd8e971cdd5376bf",
+      "editable": "9b4b486f529896a4b0b584df0a601a0fd13bbb874a9c435775b36e1676a1e627"
+    },
+    "FloorA": {
+      "png": "373aa5a21c2ee7557daab8f31ecef454b6e52c07d1dddb7f47471a3c07b7b6a0",
+      "editable": "658ba737f25ab374f66260bea8a336d148dd0e7266a0d641103e38e6609bc20e"
+    },
+    "FloorB": {
+      "png": "be8dda068d620860653b9b05416066462072860033ebb5a325555d0fa45f16ef",
+      "editable": "0fabe70190bdac588a5431e468512d1fc7fef053ff46e3af7396df552139c576"
+    },
+    "FloorC": {
+      "png": "5611c77825389ecc9b1e81043894a75f0ef64d45d087994b51e8d28952ac4e9a",
+      "editable": "f40c12fe1fb4aa8161fda713a83c3601031cb850b515ce6e74c2df0f9e132854"
+    },
+    "FloorD": {
+      "png": "a50360a2bb365378fe05a24eac2ec414b414d7055426aa4f2d0cb6173c9b2640",
+      "editable": "ed7152ab5a243a459b03b1265294daef6fd1c0a323714ea3193090cd3af08637"
+    }
+  },
+  "unity_test_result": {
+    "id": "2",
+    "testcasecount": "2",
+    "result": "Passed",
+    "total": "2",
+    "passed": "2",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-18 01:33:59Z",
+    "end-time": "2026-10-18 01:34:03Z",
+    "duration": "4.1365419"
+  },
+  "captures": {
+    "1080x1920.png": "688ce61df9a2c01fd56b2d8121c418d5f82a2f68ce02050455749b8c01725fd2",
+    "1080x2400-safe-area.png": "3404059aa630acbd52431a2b48f1ff488be43b72b72d181f64430ffb3f85796d",
+    "1080x2400.png": "68be36efd9c6cb5af15e5357953f1c3f08c5baae9b2ff3b771103f321180060b",
+    "720x1280.png": "d0dbaad73ecb84cb6d8600a4383ed3660b506bd665a94107ce9bc3d480e24ade"
+  },
+  "test_xml_sha256": "27b131f400f8b24660fbbada99fbe31c78e28c3a7c1ae3ab7b408997aa5b8cb3",
+  "generation_calls": 0
+}
