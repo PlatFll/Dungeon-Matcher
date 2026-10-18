@@ -912,16 +912,34 @@
       "name": "FloorA",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        0,
-        64,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileA.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 0,
+          "destination_height": 21,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 21,
+          "destination_height": 21,
+          "integer_x_offset": 28
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 42,
+          "destination_height": 22,
+          "integer_x_offset": 12
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Larger near-ground courses.",
-      "sha256": "a025c0d4727934e06970763ef3e4605856bd3c513dcc65449c6bc44badac2680",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "630fb02ffcae2986f3ef9b1ebda5e836b6204fce5b44ecdd7fe52556fbe1dcae",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -940,16 +958,34 @@
       "name": "FloorB",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        64,
-        64,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileB.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 40,
+          "source_height": 20,
+          "destination_y": 0,
+          "destination_height": 21,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 20,
+          "destination_y": 21,
+          "destination_height": 21,
+          "integer_x_offset": 28
+        },
+        {
+          "source_y": 40,
+          "source_height": 20,
+          "destination_y": 42,
+          "destination_height": 22,
+          "integer_x_offset": 12
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Larger near-ground courses.",
-      "sha256": "ad41d25071b5b04b1d2c9e210d60f9baa922dbac007ae8a5de41a18acb52da8d",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "fb97fce62927c65e96aca638f61ea3b28aa8dcc4c9f43961fe02040dfd68c6f3",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -968,16 +1004,69 @@
       "name": "FloorBackA",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        0,
-        0,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileI.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 7,
+          "destination_y": 0,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 7,
+          "source_height": 8,
+          "destination_y": 8,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 15,
+          "source_height": 8,
+          "destination_y": 16,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 23,
+          "source_height": 9,
+          "destination_y": 24,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 32,
+          "source_height": 8,
+          "destination_y": 32,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 9,
+          "destination_y": 40,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 49,
+          "source_height": 8,
+          "destination_y": 48,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 57,
+          "source_height": 7,
+          "destination_y": 56,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Compressed distant courses.",
-      "sha256": "697579372a5ce41b4dcd66ef1c46f1dbd9fdf6dfe594f4dba7e736166520740a",
-      "opaque_colors": 15,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "e18101fcf1b6a1ea769111c943cc7e156a98e48b9263bbbed7afc8f0ce80eb01",
+      "opaque_colors": 7,
       "alpha": [
         255
       ],
@@ -996,16 +1085,69 @@
       "name": "FloorBackB",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        64,
-        0,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileJ.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 7,
+          "destination_y": 0,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 7,
+          "source_height": 8,
+          "destination_y": 8,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 15,
+          "source_height": 8,
+          "destination_y": 16,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 23,
+          "source_height": 9,
+          "destination_y": 24,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 32,
+          "source_height": 8,
+          "destination_y": 32,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 9,
+          "destination_y": 40,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 49,
+          "source_height": 9,
+          "destination_y": 48,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 58,
+          "source_height": 6,
+          "destination_y": 56,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Compressed distant courses.",
-      "sha256": "e06ebfecd9dd172242ce685c395b6eefba670a47d257c629185cbd8c1159d478",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "2a155d34be20702aacc80676eaf72bbe759a828bc28e930d2bebf401270305a3",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1024,16 +1166,69 @@
       "name": "FloorBackC",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        0,
-        0,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileK.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 6,
+          "destination_y": 0,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 6,
+          "source_height": 8,
+          "destination_y": 8,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 14,
+          "source_height": 8,
+          "destination_y": 16,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 22,
+          "source_height": 9,
+          "destination_y": 24,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 31,
+          "source_height": 9,
+          "destination_y": 32,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 9,
+          "destination_y": 40,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 49,
+          "source_height": 8,
+          "destination_y": 48,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 57,
+          "source_height": 7,
+          "destination_y": 56,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Compressed distant courses.",
-      "sha256": "c56a6f6b9f513ab33528e5d746c0d722e143a9987d0bfddbeac7407c571e6ff8",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "0d5f411771e4516d3854a6fcf7cb47e12bce570e27fe4dc2b2c9b2a19dfe875b",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1052,16 +1247,69 @@
       "name": "FloorBackD",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        64,
-        0,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileL.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 6,
+          "destination_y": 0,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 6,
+          "source_height": 8,
+          "destination_y": 8,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 14,
+          "source_height": 9,
+          "destination_y": 16,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 23,
+          "source_height": 8,
+          "destination_y": 24,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 31,
+          "source_height": 9,
+          "destination_y": 32,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 9,
+          "destination_y": 40,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 49,
+          "source_height": 8,
+          "destination_y": 48,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 57,
+          "source_height": 7,
+          "destination_y": 56,
+          "destination_height": 8,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Compressed distant courses.",
-      "sha256": "375ef294770b30657a755a34b5fb80eb99b9b0333558973c6a47b45d4a9dafdc",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "122f469f9685f7fe20652600fd94d3d10455d1c916267234800be91229dc494c",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1080,16 +1328,34 @@
       "name": "FloorC",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        0,
-        64,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileD.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 0,
+          "destination_height": 21,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 21,
+          "destination_height": 21,
+          "integer_x_offset": 28
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 42,
+          "destination_height": 22,
+          "integer_x_offset": 12
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Larger near-ground courses.",
-      "sha256": "947ec9c4ba5225f431fd7ab8b314946a9aa221e85ab99425a20be07f665b741f",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "9f9187514c9701181b71ad7d7e7060b665563fded57b594a5c54f02de8aae57b",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1108,16 +1374,34 @@
       "name": "FloorD",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        64,
-        64,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileM.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 0,
+          "destination_height": 21,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 21,
+          "destination_height": 21,
+          "integer_x_offset": 28
+        },
+        {
+          "source_y": 20,
+          "source_height": 20,
+          "destination_y": 42,
+          "destination_height": 22,
+          "integer_x_offset": 12
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Larger near-ground courses.",
-      "sha256": "ee2bf7dbe63b1d39cd2a8b6eafa33e76dd150c786c323b559c2b6d2ad12e03cb",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "c937844af3ec729239015e08b23f41944e5df1095701367609162c462439bf63",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1136,16 +1420,48 @@
       "name": "FloorMiddleA",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        0,
-        32,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileE.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 13,
+          "destination_y": 0,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 13,
+          "source_height": 13,
+          "destination_y": 13,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 26,
+          "source_height": 14,
+          "destination_y": 26,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 13,
+          "destination_y": 39,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 53,
+          "source_height": 11,
+          "destination_y": 52,
+          "destination_height": 12,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Intermediate-depth courses. Native top-aligned clipping in the assembly.",
-      "sha256": "377df0e8c48d61f52be0be0537f170f10a3d5205cf77d87c9694720971782141",
-      "opaque_colors": 18,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "ae0d3c3028463de96f2149149998bc4434257c139dc9ef84dad93506534bc04a",
+      "opaque_colors": 7,
       "alpha": [
         255
       ],
@@ -1164,16 +1480,48 @@
       "name": "FloorMiddleB",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProA.png",
-      "crop": [
-        64,
-        32,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileF.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 13,
+          "destination_y": 0,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 13,
+          "source_height": 12,
+          "destination_y": 13,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 25,
+          "source_height": 13,
+          "destination_y": 26,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 38,
+          "source_height": 15,
+          "destination_y": 39,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 53,
+          "source_height": 11,
+          "destination_y": 52,
+          "destination_height": 12,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Intermediate-depth courses. Native top-aligned clipping in the assembly.",
-      "sha256": "1489ba9eae5ed99972f28806523a1903f208748e054d97b4b9660a790dd564ae",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "e004ff1d06dce73d57604e99d2afa426da3e4cf235ba7fbe8e2d334c607a3e08",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1192,16 +1540,48 @@
       "name": "FloorMiddleC",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        0,
-        32,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileG.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 13,
+          "destination_y": 0,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 13,
+          "source_height": 12,
+          "destination_y": 13,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 25,
+          "source_height": 13,
+          "destination_y": 26,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 38,
+          "source_height": 15,
+          "destination_y": 39,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 53,
+          "source_height": 11,
+          "destination_y": 52,
+          "destination_height": 12,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Intermediate-depth courses. Native top-aligned clipping in the assembly.",
-      "sha256": "35d4ee9a37cdcc8966be896a0539a3095cd01aa5feb385ed3ee4b4a445483d70",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "6c6b1d93cae4709b6e9c6a5fcc1b5e0287f8156bc923b145e00f41b479dbb187",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -1220,16 +1600,48 @@
       "name": "FloorMiddleD",
       "width": 64,
       "height": 64,
-      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/PixelLab/FloorProB.png",
-      "crop": [
-        64,
-        32,
-        64,
-        64
+      "source": "ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/Raw/TileH.png",
+      "source_job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "courses": [
+        {
+          "source_y": 0,
+          "source_height": 13,
+          "destination_y": 0,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 13,
+          "source_height": 13,
+          "destination_y": 13,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 26,
+          "source_height": 14,
+          "destination_y": 26,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 40,
+          "source_height": 13,
+          "destination_y": 39,
+          "destination_height": 13,
+          "integer_x_offset": 0
+        },
+        {
+          "source_y": 53,
+          "source_height": 11,
+          "destination_y": 52,
+          "destination_height": 12,
+          "integer_x_offset": 0
+        }
       ],
-      "changes": "Reference-guided PixelLab floor, finalized in LibreSprite: 11-color material map, removal of generated white border and isolated highlight flecks, 2px horizontal stitch bands and 1px course-edge seams. Intermediate-depth courses. Native top-aligned clipping in the assembly.",
-      "sha256": "f2b0cf0dc86262bef5d6e8e9f2c9679452071b2988b466023344b081ec65b2da",
-      "opaque_colors": 11,
+      "changes": "Reference-conditioned PixelLab broad flagstone courses. LibreSprite native integer course assembly, quiet surface clusters, cool slate depth palette, narrow bevels, common course seams; tiny warm torch reflection on rear/middle A. No interpolation or changes outside the floor.",
+      "sha256": "c2835ab3e9f33702bab21aa6021e7f8ce36d258f9c643b49bd3bb0f4574ac4d0",
+      "opaque_colors": 5,
       "alpha": [
         255
       ],
@@ -4470,6 +4882,6 @@
     "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca"
   },
   "dimensions_alpha_native_source_export_unity_copy": "pass",
-  "generation_cost": 11,
+  "generation_cost": 26,
   "artistic_approval": "Technical checks do not establish visual approval. See category comparisons and current Unity captures."
 }

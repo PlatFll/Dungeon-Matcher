@@ -22,22 +22,21 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Three-zone battle presentation (2026-10-18)
 
-Unmerged art review: the user rejected PR #200's first visual pass. The corrected
-`ArtSource/DungeonEnvironment/ModularRebuild/` kit now has 150 native LibreSprite
-modules (22 revised, 21 new, 107 retained), a reconstructed perspective floor,
-separate wall families, local torch-lit masonry and restored decorative UI.
-The supplied mockup is the visual target; the previous blanket scores are
-superseded. The additive art-only scene retains its shared layout and strict
-portrait/board masks. Fresh four-layout Unity captures, native checks and the
-mandatory Unity validator pass. PixelLab experiments cost 11 generations; all
-final art is cleaned/exported in LibreSprite. Production assets and gameplay
-remain unchanged. See the kit's `VALIDATION_REPORT.md` and comparison gallery;
-user visual approval and any integration/merge remain pending.
-The subsequent upper-scene lighting correction changes 19 existing modules in
-LibreSprite: cooler far wall, localized warm torch stone and separated floor
-values. All masks, cluster boundaries, scene/layout files and 131 other exports
-are unchanged. Fresh four-layout Unity rendering tests pass; see
-`ArtSource/DungeonEnvironment/ModularRebuild/Correction/Lighting/REPORT.md`.
+Unmerged art review: the corrected PR #200 kit has 150 native LibreSprite modules
+(22 revised, 21 new, 107 retained relative to its rejected first pass), an additive
+art-only Unity scene, shared layout and strict portrait/board masks. The latest
+user-supplied floor reference now drives twelve broad blue-violet PixelLab
+flagstone tiles in rear/middle/near depth families, finalized in LibreSprite.
+All 138 other exports, scene/layout code and object placements are unchanged by
+this floor replacement. The preceding cooler wall and local warm torch lighting
+are retained. Fresh two-test/four-layout Unity renders and native asset/seam
+checks pass, including exact render equality outside the floor. The earlier
+compiler-validator result applies to unchanged C#; it was not rerun for art only.
+This floor request cost 15 PixelLab generations (26 cumulative for the review
+kit). See `ArtSource/DungeonEnvironment/ModularRebuild/Correction/FlagstoneRebuild/REPORT.md`
+and `Review/Floor.html`. Earlier lighting-only evidence remains dated history.
+Production environments/gameplay remain unchanged; user visual approval and
+any production integration/merge remain pending.
 
 Current Dungeon follow-up: the user requested direct LibreSprite dissection and
 integration of a new three-enemy mockup. `ArtSource/BattlePresentation/DungeonMockupRevision/`

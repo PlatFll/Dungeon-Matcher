@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 K=Path(__file__).resolve().parents[1]
 path=K/'AssetManifest.json';manifest=json.loads(path.read_text());records={a['name']:a for a in manifest['modules']}
-for stage,prefix in [('FloorPolish','FLOOR_RECORDS'),('Wall','WALL_RECORDS'),('Decoration','DECORATION_RECORDS'),('Health','HEALTH_RECORDS')]:
+for stage,prefix in [('FloorPolish','FLOOR_RECORDS'),('Wall','WALL_RECORDS'),('Decoration','DECORATION_RECORDS'),('Health','HEALTH_RECORDS'),('Flagstone','FLOOR_RECORDS')]:
  log=K/f'Correction/logs/{stage}.log'
  if not log.exists():continue # A scoped rebuild retains already-registered other families.
  for line in log.read_text().splitlines():

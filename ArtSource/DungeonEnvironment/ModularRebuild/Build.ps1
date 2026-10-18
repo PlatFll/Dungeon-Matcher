@@ -42,5 +42,6 @@ foreach($stage in $corrections){
  & (Join-Path $kit 'Correction/RunNative.ps1') -Stage $stage -Groups $correctionGroups -Only $Only
 }
 & (Join-Path $kit 'Correction/RunNative.ps1') -Stage Lighting -Groups 'WallTiles,FloorTiles,Props' -Only 'BattleWall,Floor,TorchLitMasonry,RightTopPillar'
+& (Join-Path $kit 'Correction/RunNative.ps1') -Stage Flagstone -Groups 'FloorTiles' -Only 'Floor'
 & 'C:/Users/USER/DungeonMatcherSpriteFoundry/venvs/art/Scripts/python.exe' (Join-Path $kit 'Correction/UpdateManifest.py')
 if($LASTEXITCODE -ne 0){throw 'Correction manifest update failed.'}

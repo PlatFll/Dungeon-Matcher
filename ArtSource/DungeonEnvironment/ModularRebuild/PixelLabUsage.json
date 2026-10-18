@@ -1,7 +1,7 @@
 {
-  "actual_generations": 11,
+  "actual_generations": 26,
   "remaining_before": 1090.2,
-  "remaining_after": 1079.2,
+  "remaining_after": 1064.2,
   "subscription": "Tier 2 Pixel Artisan",
   "cash_credits": 0,
   "preferred_budget": [
@@ -41,7 +41,40 @@
       "selected": [],
       "decision": "Direct LibreSprite wall preferred; generated variant adds little and introduces extra shades.",
       "receipt": "Correction/PixelLab/WallFluxReceipt.json"
+    },
+    {
+      "job": "dfc8b65c-28be-4db0-a59e-cf35ed299d4a",
+      "endpoint": "create_tiles_pro",
+      "size": [
+        64,
+        64
+      ],
+      "cost": 15,
+      "outputs": 16,
+      "selected": [
+        "A",
+        "B",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M"
+      ],
+      "rejected": [
+        "C",
+        "N",
+        "O",
+        "P"
+      ],
+      "decision": "Broad generated courses retained, palette and course seams finalized in LibreSprite. New floor-only request authorized separately from the earlier reconstruction budget.",
+      "receipt": "Correction/FlagstoneRebuild/PixelLabResult.json"
     }
   ],
-  "no_whole_scene_generation": true
+  "no_whole_scene_generation": true,
+  "budget_scope": "preferred_budget and soft_ceiling describe the earlier 11-generation reconstruction; the later reference-floor request separately authorized its 15-generation tileset."
 }
