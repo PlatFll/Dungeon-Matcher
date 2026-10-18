@@ -3,3 +3,8 @@ stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,refere
 00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 create provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
 00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 one-direction object provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
 00,2026-10-19,get_balance,,setup,Ending balance verification,,,0,SUCCESS,,,1054.20 unchanged
+01,2026-10-18T23:46:22.970835+00:00,get_balance,,wall masonry,Starting balance,,,0,SUCCESS,,,1054.20 remaining; Tier2
+01,2026-10-18T23:46:22.970835+00:00,get_pro_flash_capabilities,,wall masonry,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; free lookup
+01,2026-10-18T23:46:22.970835+00:00,create_image_pro_flash,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Front-elevation quiet staggered wall,64x64 source;48x48 native repeats,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage01/Wall_Raw_PixelLab.png,Exports/Stage01/,Actual PNG bytes via style_image; outline/detail/shading true; color_palette false; no retry
+01,2026-10-18T23:46:22.970835+00:00,get_image,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Completed source receipt and native inspection,,,0,SUCCESS,,,Confirmed charge5; raw saved unchanged
+01,2026-10-18T23:46:22.970835+00:00,get_balance,,wall masonry,Ending balance,,,0,SUCCESS,,,1049.20 remaining; delta5; pack5/35

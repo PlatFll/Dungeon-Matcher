@@ -1,20 +1,28 @@
 # Dungeon PixelLab staged asset library
 
-Stage 00 only. New original environment art starts only after the next explicit prompt. No earlier dungeon module is accepted as new art by this reset.
+Stages 00 and 01 complete. **Stopped before Stage 02; artwork awaits user review.**
+Draft PR: https://github.com/PlatFll/Dungeon-Matcher/pull/203. No merge or production integration.
 
-- `Brief/`: immutable extracted user pack, including later prompts that have NOT been executed.
-- `Sources/`: future unchanged PixelLab responses/images (empty in Stage 00).
-- `Native/`: editable LibreSprite cels. Stage 00 contains only a diagnostic probe.
-- `Exports/`: native PNG exports. No environment source has been generated yet.
-- `Previews/Stage00/`: references at 1x/nearest-neighbor 4x, real Unity baseline and empty-scaffold/test captures.
-- `Diagnostics/`: source/import/screen measurements; Unity evidence. Historical production assets appear ONLY as diagnostics.
-- `Progress/`: status, asset manifest, zero-spend ledger, service evidence and numbered handoff.
-- `Scripts/`: repeatable local QA; no generation endpoint is called by any script here.
+- `Brief/`: immutable user pack; only prompts 00/01 executed.
+- `Sources/Stage01/`: unchanged 64x64 PixelLab wall source.
+- `Native/Stage01/`: fourteen editable LibreSprite documents.
+- `Exports/Stage01/`: four native 48x48 variants and ten exact edge/corner closures.
+- `Previews/Stage01/`: native/4x comparison, 6x4 repeat field and real Unity captures.
+- `Progress/`: numbered reports, current state, provenance, asset manifest and actual spending.
+- `Diagnostics/Stage01/`: exact PNG/cel/seam/render checks and Unity test/validator receipts.
+- `Scripts/`: reproducible native LibreSprite build and independent QA; no generation calls.
 
-Isolated Unity preview: `Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity`. It reuses only the existing `DungeonSideViewArtPreview` camera/canvas/layer infrastructure with an EMPTY module list and EMPTY placement list. It is not in build settings. The diagnostic probe and old wall sample are injected at test runtime and are NOT saved into the scene. No actors, gems or gameplay owners exist in this scaffold.
+Open `Review.html` for Stage 01; `Review_Stage00.html` retains setup diagnostics.
+Run `Scripts/BuildWallStage01.ps1` using the installed LibreSprite for native art authoring/export.
+Run Foundry Python with `Scripts/verify_stage01.py` for independent native/screen checks.
+The explicit Unity test `DungeonPixelPipelineStage01Tests.Stage01WallNativePreview` imports
+only this wall family and rebuilds `Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity`.
+Do not rerun an earlier stage's scene builder after later assembly without checking its scope.
 
-Production candidate namespace: `Assets/_Game/Art/DungeonPixelLab/`. Point, FullRect, 64 PPU, no mipmaps, no compression, no NPOT resizing. A larger canvas adds native pixels/clearance; it never justifies changing source pixel pitch.
+The isolated scene is wall-only, outside build settings, with no gameplay owners, actors or gems.
+Candidate textures use Point, FullRect, 64 PPU, no compression/mipmaps/NPOT resizing.
+Production Dungeon art, layout, prefabs and gameplay remain unchanged.
+Stage 00's noninteger production-art scaling finding remains unresolved for later integration.
 
-Branch: `feature/dungeon-zone-pixellab-asset-library`, based on main `1ee1fdb02e409c9d6b17785d84a76d36bab6342c`. The previously attached, clean Unity worktree was reused to preserve its library/cache. The main checkout and its eight local changes are separate and preserved.
-
-Review `Progress/Stage_00.md`, then wait for `PROMPTS/01_GENERATE_DUNGEON_WALL_TILES.txt`. No merge or integration is authorized by this checkpoint.
+Confirmed cumulative PixelLab charge: 5/35 equivalents; balance 1049.20. No retry.
+Next prompt: `PROMPTS/02_GENERATE_SEPARATE_PORTRAIT_RECESS.txt`. Wait for the user.
