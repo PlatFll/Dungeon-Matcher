@@ -43,32 +43,67 @@ extracted('BoardFrames','BoardCenterFinial','BoardTop',[167,4,20,14]);
 // Individual empty cell assets are already approved production art. They remain
 // distinct from the frame and are never replaced by a flattened board picture.
 for(var v=0;v<3;v++){
- var path=P+'Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/EmptyCell'+v+'.png';
- emit('BackgroundLayers','EmptyCell'+v,read(path),'Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/EmptyCell'+v+'.png');
+ // Numbered PNG names trigger LibreSprite's interactive sequence-import prompt.
+ // Open the existing editable cel to preserve pixels without that modal.
+ var path=K+'Sources/EmptyCell'+String.fromCharCode(65+v)+'.aseprite';
+ emit('BackgroundLayers','EmptyCell'+v,read(path),'ArtSource/BattlePresentation/DungeonMockupRevision/native/EmptyCell'+v+'.png');
 }
-function frame(group,name,src,corner,top,bottom,left,right){
- var a=read(native+src+'.png'),w=a.w,h=a.h;
- var boxes=[[0,0,corner,corner],[w-corner,0,corner,corner],[0,h-corner,corner,corner],[w-corner,h-corner,corner,corner]];
+function frame(group,name,src,corner,top,bottom,left,right,bodyHeight){
+ var a=read(native+src+'.png'),w=a.w,h=bodyHeight||a.h;
+ var cornerWidth=name==='Wave'?20:corner;
+ var boxes=[[0,0,cornerWidth,corner],[w-cornerWidth,0,cornerWidth,corner],[0,h-corner,cornerWidth,corner],[w-cornerWidth,h-corner,cornerWidth,corner]];
  for(var i=0;i<4;i++)extracted(group,name+['TL','TR','BL','BR'][i],src,boxes[i]);
- rail(group,name+'Top',src,[corner,0,Math.min(32,w-2*corner),top],true);
- rail(group,name+'Bottom',src,[corner,h-bottom,Math.min(32,w-2*corner),bottom],true);
- rail(group,name+'Left',src,[0,corner,left,Math.min(32,h-2*corner)],false);
- rail(group,name+'Right',src,[w-right,corner,right,Math.min(32,h-2*corner)],false);
+ var horizontalLength=name==='Portrait'?16:Math.min(32,w-2*cornerWidth);
+ var verticalY=name==='Portrait'?60:corner,verticalLength=name==='Ability'?8:Math.min(32,h-2*corner);
+ rail(group,name+'Top',src,[cornerWidth,0,horizontalLength,top],true);
+ rail(group,name+'Bottom',src,[cornerWidth,h-bottom,horizontalLength,bottom],true);
+ rail(group,name+'Left',src,[0,verticalY,left,verticalLength],false);
+ rail(group,name+'Right',src,[w-right,verticalY,right,verticalLength],false);
 }
-frame('CharacterFrames','Portrait','PlayerFrame',18,10,13,11,13);
-frame('HudFrames','Wave','WaveHeader',13,9,10,10,10);
+frame('CharacterFrames','Portrait','PlayerFrame',18,13,13,11,13);
+var collars=[['TopA',35,0,12,13],['TopB',84,0,12,13],['BottomA',38,239,14,13],['BottomB',84,239,14,13],['LeftA',0,42,11,14],['LeftB',0,116,11,14],['RightA',116,42,13,14],['RightB',116,116,13,14]];
+for(var i=0;i<collars.length;i++){var c=collars[i];extracted('CharacterFrames','PortraitCollar'+c[0],'PlayerFrame',c.slice(1));}
+frame('HudFrames','Wave','WaveHeader',17,9,9,10,10,38);
 extracted('HudFrames','WaveSkull','WaveHeader',[57,35,27,12]);
-frame('HudFrames','Guide','SharedGuide',10,8,8,9,9);
-frame('HudFrames','Settings','SharedSettings',9,7,7,7,7);
+frame('HudFrames','Guide','SharedGuide',13,8,8,9,9);
+frame('HudFrames','Settings','SharedSettings',12,7,7,7,7);
 extracted('HudFrames','SettingsGear','SharedSettings',[12,8,22,24]);
-frame('HudFrames','Ability','SharedAbility',13,10,12,14,14);
-frame('HudFrames','Supply','SharedPotionHolder',12,9,10,10,10);
-frame('HudFrames','Energy','SharedEnergy',9,6,6,9,9);
+frame('HudFrames','Ability','SharedAbility',16,10,12,14,14);
+extracted('HudFrames','AbilityLeftJewel','SharedAbility',[0,25,14,16]);
+extracted('HudFrames','AbilityRightJewel','SharedAbility',[162,25,14,16]);
+frame('HudFrames','Supply','SharedPotionHolder',20,9,16,10,10);
+extracted('HudFrames','EnergyStart','SharedEnergy',[0,0,13,24]);
+extracted('HudFrames','EnergyEnd','SharedEnergy',[132,0,15,24]);
+rail('HudFrames','EnergyTopRail','SharedEnergy',[13,0,64,6],true);
+rail('HudFrames','EnergyBottomRail','SharedEnergy',[13,18,64,6],true);
+for(var i=0;i<3;i++){var n='PlayerHealth'+['Start','Middle','End'][i],src='Assets/_Game/Resources/UI/Finalized/'+n+'.png';emit('CharacterFrames',n,read(P+src),src);}
 var fills=[['HudDark','171421'],['AbilityDark','210f31'],['SilverInset','7a7287']];
 for(var i=0;i<fills.length;i++){var a=blank(8,8);rect(a,0,0,8,8,fills[i][1]);emit('BackgroundLayers',fills[i][0],a,'Approved native HUD material colors',null,'Dedicated repeatable recess fill; no pictorial source resampling.');}
 var props=[['Gateway','ArchDoor',193,59],['LeftTorch','TopLeftTorch',135,95],['RightTorch','TopRightTorch',359,93],['RearBarrels','RearBarrels',319,146],['FrontBarrel','NearRightBarrel',421,189],['LeftBones','NearLeftBones',137,199],['RightBones','NearRightBones',436,210],['RearBones','RearBones',341,183],['PortraitBanner','PlayerBanner',51,42]];
 for(var i=0;i<props.length;i++){var q=props[i],a=read(native+q[1]+'.png');emit('Props',q[0],a,'ArtSource/BattlePresentation/DungeonMockupRevision/native/'+q[1]+'.png');place(q[0],'Props',q[2],q[3],a.w,a.h);}
-function prop(name,src,r,shape,x,y){var a=crop(read(native+src+'.png'),r[0],r[1],r[2],r[3]);if(shape)cut(a,shape);emit('Props',name,a,'ArtSource/BattlePresentation/DungeonMockupRevision/native/'+src+'.png',r,shape?'Native isolation with an explicit silhouette selection; retained pixels unchanged.':'Lossless native extraction.');place(name,'Props',x,y,a.w,a.h);}
+function prop(name,src,r,shape,x,y){
+ var a=crop(read(native+src+'.png'),r[0],r[1],r[2],r[3]);if(shape)cut(a,shape);
+ var change=shape?'Native isolation with an explicit silhouette selection; retained pixels unchanged.':'Lossless native extraction.',repairs=[];
+ if(name==='RightTopPillar'){
+  // The approved scene source has a flat occlusion patch behind the Guide HUD.
+  // Reconstruct only that missing interior from the same pillar's intact stones.
+  var patch=crop(a,0,72,23,24);
+  for(var Y=28;Y<71;Y++)for(var X=0;X<23;X++)if(color(a,X,Y)==='171421')px(a,X,Y,color(patch,X,(Y-28)%24));
+  change='Native pillar with only the Guide-occluded flat patch reconstructed from its intact stone band; original rectangular silhouette and visible pixels elsewhere unchanged.';repairs=[[0,28,23,43]];
+ }
+ if(name==='FarRightChain'){
+  // The old flattened source omitted links hidden behind Settings. Complete
+  // those links from the approved side-chain rhythm; no existing links moved.
+  var link=crop(read(native+'LeftBorderDressing.png'),0,26,16,24);
+  for(var Y=25;Y<77;Y++)for(var X=0;X<21;X++){
+   if(X<3||X>=19)px(a,X,Y,null);else px(a,X,Y,color(link,X-3,(Y-25)%24));
+  }
+  change='Native chain isolation; missing Settings-occluded middle links reconstructed from the approved side-chain strip. Existing visible links outside the repair rectangle unchanged.';repairs=[[0,25,21,52]];
+ }
+ emit('Props',name,a,'ArtSource/BattlePresentation/DungeonMockupRevision/native/'+src+'.png',r,change);
+ modules[modules.length-1].selection=shape;modules[modules.length-1].repairRects=repairs;
+ place(name,'Props',x,y,a.w,a.h);
+}
 prop('LeftHangingBanner','FarWall',[169,63,25,63],[[1,0],[25,0],[24,62],[13,54],[1,63]],169,63);
 prop('RightHangingBanner','FarWall',[307,65,26,61],[[1,0],[26,0],[25,61],[13,53],[1,61]],307,65);
 prop('LeftHighChain','FarWall',[148,0,34,103],[[23,0],[34,0],[28,22],[23,34],[19,51],[18,68],[10,88],[10,100],[2,103],[0,93],[4,76],[4,60],[10,39],[13,18]],148,0);
@@ -88,7 +123,8 @@ prop('LeftTopPillar','FarWall',[0,0,10,180],null,0,0);
 prop('CenterTopPillar','FarWall',[108,0,38,28],null,108,0);
 prop('RightTopPillar','FarWall',[354,0,23,180],null,354,0);
 prop('FarRightPillar','FarWall',[458,0,12,180],null,458,0);
-var floorFront=crop(read(native+'BattleFloor.png'),0,98,333,23);
-emit('Props','BattleFoundation',floorFront,'ArtSource/BattlePresentation/DungeonMockupRevision/native/BattleFloor.png',[0,98,333,23]);place('BattleFoundation','Props',137,275,333,23);
+extracted('Props','FoundationStart','BattleFloor',[0,98,24,23]);
+rail('Props','FoundationTopRail','BattleFloor',[20,98,64,23],true);
+extracted('Props','FoundationEnd','BattleFloor',[303,98,30,23]);
 console.log('KIT_MANIFEST '+JSON.stringify({modules:modules,placements:placements,sourceExtent:[470,836],sourceScale:'Approved native sources; no screenshot downscaling',zipCoordinateIssue:'ZIP crops use inconsistent bounding boxes; current registered native sources and pixel-identical full reference govern placement.'}));
 console.log('KIT_COMPLETE');
