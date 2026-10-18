@@ -24,7 +24,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 Unmerged art review: the user rejected PR #200's first visual pass. The corrected
 `ArtSource/DungeonEnvironment/ModularRebuild/` kit now has 150 native LibreSprite
-modules (21 revised, 21 new, 108 retained), a reconstructed perspective floor,
+modules (22 revised, 21 new, 107 retained), a reconstructed perspective floor,
 separate wall families, local torch-lit masonry and restored decorative UI.
 The supplied mockup is the visual target; the previous blanket scores are
 superseded. The additive art-only scene retains its shared layout and strict
@@ -33,6 +33,11 @@ mandatory Unity validator pass. PixelLab experiments cost 11 generations; all
 final art is cleaned/exported in LibreSprite. Production assets and gameplay
 remain unchanged. See the kit's `VALIDATION_REPORT.md` and comparison gallery;
 user visual approval and any integration/merge remain pending.
+The subsequent upper-scene lighting correction changes 19 existing modules in
+LibreSprite: cooler far wall, localized warm torch stone and separated floor
+values. All masks, cluster boundaries, scene/layout files and 131 other exports
+are unchanged. Fresh four-layout Unity rendering tests pass; see
+`ArtSource/DungeonEnvironment/ModularRebuild/Correction/Lighting/REPORT.md`.
 
 Current Dungeon follow-up: the user requested direct LibreSprite dissection and
 integration of a new three-enemy mockup. `ArtSource/BattlePresentation/DungeonMockupRevision/`

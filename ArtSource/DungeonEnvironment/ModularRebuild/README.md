@@ -11,3 +11,7 @@ The preview has no characters, enemies, board gems or gameplay owners. Static UI
 `Build.ps1 -Phase All` runs the historical base extraction and then the current `Correction/RunNative.ps1` recipes in LibreSprite. It uses archived generation results and never spends credits. The correction scripts are `FloorPolishCorrection.js`, `WallCorrection.js`, `DecorationCorrection.js`, and `HealthCorrection.js`. `Correction/UpdateManifest.py` refreshes source records. After importing/rebuilding through the Unity editor tool, run `Correction/ValidateCorrection.py` for current native/copy/seam checks. Earlier `ValidateFloor.py`/`ValidateKit.py` and their reports describe the superseded pass, not acceptance of these corrections.
 
 See `VALIDATION_REPORT.md` for actual verification and limits, and `PixelLabUsage.json` for the 11-generation ledger. User visual approval remains pending; do not merge without it.
+
+## Current lighting-only follow-up
+
+The latest 19-module lighting pass preserves the existing composition and every sprite silhouette. See [lighting comparison](Review/Lighting.html) and [scoped report](Correction/Lighting/REPORT.md) for the immediate before/after, exact preservation checks and fresh Unity renders. No additional generation spending.

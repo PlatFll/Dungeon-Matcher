@@ -13,9 +13,9 @@ if(-not $owned.WaitForExit(240000)){$owned.Kill();throw 'Owned native author exc
 $owned.WaitForExit();$owned.Refresh()
 if($owned.ExitCode -ne 0 -or -not (Select-String -LiteralPath $log -Pattern '^CORRECTION_COMPLETE' -Quiet)){throw "Native $Stage failed: $log"}
 foreach($g in $Groups.Split(',')){
- & (Join-Path $project 'Tools/Normalize-FinalizedSourceLayers.ps1') -SourceRoot (Join-Path $kit "Editable/$g")
  foreach($file in Get-ChildItem -LiteralPath (Join-Path $kit "Editable/$g") -Filter '*.aseprite'){
   if($Only -and -not (@($Only.Split(',')|Where-Object {$file.BaseName.StartsWith($_)}).Count)){continue}
+  & (Join-Path $project 'Tools/Normalize-FinalizedSourceLayers.ps1') -SourceRoot $file.FullName
   $out=Join-Path $kit ("Exports/$g/"+$file.BaseName+'.png')
   $exp=Start-Process -FilePath $libre -ArgumentList @('--batch',('"{0}"' -f $file.FullName),'--save-as',('"{0}"' -f $out)) -WindowStyle Hidden -PassThru -Wait -RedirectStandardOutput (Join-Path $kit 'Correction/logs/export.log') -RedirectStandardError (Join-Path $kit 'Correction/logs/export-errors.log')
   if($exp.ExitCode -ne 0){throw "Export failed: $out"}

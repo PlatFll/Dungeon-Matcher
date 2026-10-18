@@ -1,9 +1,7 @@
-# Current checkpoint — PR 200 visual correction
+# Current checkpoint - PR 200 lighting correction
 
-Objective: supplied mockup reconstructed as native modular artwork; first pass was visually rejected. Continue `codex/dungeon-modular-scene-rebuild`; no merge authorized.
+The upper dungeon lighting-only follow-up is complete on `codex/dungeon-modular-scene-rebuild`. Native LibreSprite edits: 19 existing modules, 131 exports unchanged. Cooler/darker back wall, localized warm stone around torches and clearer floor-depth values. Scene, code, placement manifest, alpha masks and original color-cluster boundaries are unchanged. Zero additional generations.
 
-Actual revised assets are complete: 21 changed, 21 new, 108 retained. New perspective floor, separate wall families/local warm stone, restored static UI, health frame and localized prop repairs. Editable sources/exports and current Unity copies agree. PixelLab actual cost: 11 generations. Floor-first capture is preserved under Correction/FloorStage.
+Two visual passes; final native/export/copy, 224 seam pairings and two Unity tests across four layouts passed. Current evidence: `Correction/Lighting/Validation.json`, `UnityRenderChecks.json`, `REPORT.md`, `Review/Lighting.html` and `Evidence/UnityTests.xml`.
 
-Final native QA, four-layout Unity rendering/clipping tests, and Tools/Validate-Unity.ps1 passed. Current evidence is Correction/TechnicalChecks.json, Evidence/UnityTests.xml, Evidence/UnityCompiler.json and Review/Unity. Historical blanket ratings are superseded under Correction/BeforeReports.
-
-Review at Review/Review.html. User visual approval remains pending. No production scene, character, gameplay or main-branch changes. Next step is user review; do not merge without explicit approval.
+User visual review is next. No merge authorized and no production integration performed. Preserve the four pre-existing incidental native/editor metadata changes outside this work.

@@ -6,7 +6,7 @@ Source authority: supplied full mockup first; canonical Dungeon Matcher guide fo
 
 ## Artwork delivered
 
-- 150 modules: 21 changed, 21 new, 108 retained. Every module has an editable LibreSprite source and exact PNG/Unity copy.
+- 150 modules: 22 changed, 21 new, 107 retained. Every module has an editable LibreSprite source and exact PNG/Unity copy.
 - 12 floor tiles in three depth families; floor-first actual Unity capture retained before wall work.
 - 16 wall tiles across battle, outer, portrait and lower-HUD materials; two separate local torch-lit masonry sprites.
 - Restored crowned skull, purple lightning/energy, potion, bomb, resonance jewel and reference heart/health track.
@@ -31,3 +31,7 @@ These are actual EditMode camera renders and automated checks, not mobile-device
 Open `Review/Review.html` for reference / rejected before / corrected Unity comparisons, six category closeups, native module boards and the floor-first capture. `Review/Assets.html` shows each asset at native size and 3×. `Correction/TechnicalChecks.json` contains current measured results.
 
 All changes remain on `codex/dungeon-modular-scene-rebuild`, draft PR #200. Production scene/characters/gameplay are unchanged. Do not merge or integrate without the user's approval.
+
+## Current lighting-only follow-up
+
+The latest 19-module lighting pass preserves the existing composition and every sprite silhouette. See [lighting comparison](Review/Lighting.html) and [scoped report](Correction/Lighting/REPORT.md) for the immediate before/after, exact preservation checks and fresh Unity renders. No additional generation spending.

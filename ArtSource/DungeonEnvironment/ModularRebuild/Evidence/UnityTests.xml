@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:41Z" duration="3.7893093">
-  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:41Z" duration="3.789309" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 04:04:52Z" end-time="2026-10-18 04:04:56Z" duration="3.9848033">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 04:04:52Z" end-time="2026-10-18 04:04:56Z" duration="3.984803" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1936" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-modular-scene-rebuild/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:41Z" duration="3.778623" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1936" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-modular-scene-rebuild/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="803" result="Passed" start-time="2026-10-18 04:04:52Z" end-time="2026-10-18 04:04:56Z" duration="3.973729" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="42500" />
+        <property name="_PID" value="46744" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestFixture" id="1556" name="DungeonModularPreviewTests" fullname="DungeonModularPreviewTests" classname="DungeonModularPreviewTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:41Z" duration="3.771893" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1556" name="DungeonModularPreviewTests" fullname="DungeonModularPreviewTests" classname="DungeonModularPreviewTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 04:04:52Z" end-time="2026-10-18 04:04:56Z" duration="3.966306" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1557" name="NativeImportSettingsAndSourceBytesArePreserved" fullname="DungeonModularPreviewTests.NativeImportSettingsAndSourceBytesArePreserved" methodname="NativeImportSettingsAndSourceBytesArePreserved" classname="DungeonModularPreviewTests" runstate="Runnable" seed="971251494" result="Passed" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:37Z" duration="0.165331" asserts="0">
+        <test-case id="1557" name="NativeImportSettingsAndSourceBytesArePreserved" fullname="DungeonModularPreviewTests.NativeImportSettingsAndSourceBytesArePreserved" methodname="NativeImportSettingsAndSourceBytesArePreserved" classname="DungeonModularPreviewTests" runstate="Runnable" seed="423774467" result="Passed" start-time="2026-10-18 04:04:52Z" end-time="2026-10-18 04:04:53Z" duration="0.170365" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1558" name="PortraitCapturesAndActualFrameClipping" fullname="DungeonModularPreviewTests.PortraitCapturesAndActualFrameClipping" methodname="PortraitCapturesAndActualFrameClipping" classname="DungeonModularPreviewTests" runstate="Runnable" seed="467977883" result="Passed" start-time="2026-10-18 03:34:37Z" end-time="2026-10-18 03:34:41Z" duration="3.595996" asserts="0">
+        <test-case id="1558" name="PortraitCapturesAndActualFrameClipping" fullname="DungeonModularPreviewTests.PortraitCapturesAndActualFrameClipping" methodname="PortraitCapturesAndActualFrameClipping" classname="DungeonModularPreviewTests" runstate="Runnable" seed="1153197572" result="Passed" start-time="2026-10-18 04:04:53Z" end-time="2026-10-18 04:04:56Z" duration="3.783667" asserts="0">
           <properties>
             <property name="_JOINTYPE" value="UnityCombinatorial" />
             <property name="retryIteration" value="0" />
