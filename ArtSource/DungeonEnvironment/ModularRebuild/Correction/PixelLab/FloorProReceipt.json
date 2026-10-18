@@ -1,0 +1,35 @@
+{
+  "job_id": "931e17bf-23c3-491d-91a7-9805fb37f093",
+  "endpoint": "create_image_pro",
+  "parameters": {
+    "description": "Dungeon Matcher environment material study: ONLY a continuous purple dungeon cobblestone FLOOR surface, no characters, props, text, frame, wall or doorway. Closely match the supplied narrow floor reference strip: small irregular beveled violet stones, thin near-black recessed mortar, staggered foreshortened courses, cool purple plane shadows and restrained warmer lilac upper-left rims. A battle arena floor seen at a low downward angle, NOT a straight-on brick wall, not square paving slabs. Smaller compressed stones in the upper rows and subtly deeper stones toward the lower rows. Rich convincing depth through 2-3 connected tones per stone, clean hard pixel clusters, restrained wear, no grain/dither/gradient or huge uniform flat blocks. Extend the reference material naturally across the full canvas. The skeleton style input is ONLY pixel contour and shading economy; never depict a skull or copy the skeleton palette. This is an individual floor material source for a modular asset library, not a full scene.",
+    "width": 128,
+    "height": 128,
+    "no_background": false,
+    "max_colors": 20,
+    "style_image_base64": "<skeleton-still.png; actual bytes sent>",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "source": "Correction/Inputs/FloorCleanStrip.png",
+        "usage": "PRIMARY visual target: actual unobstructed floor material from approved mockup; match small stone scale, foreshortening, bevels, violet colors and recessed joints"
+      }
+    ],
+    "seed": 18473
+  },
+  "charged_generations": 10,
+  "model": "pro",
+  "candidate_count": 4,
+  "selection": {
+    "A": "Selected material source; close foreshortened course rhythm",
+    "B": "Selected secondary source with distinct stone/chip topology",
+    "C": "Rejected: too overhead and square-paving-like",
+    "D": "Rejected: elongated blocks too close to original large-slab problem"
+  },
+  "native_cleanup": "FloorPolishCorrection.js; final palette 11 colors, white frame removed, seams and isolated flecks cleaned in LibreSprite.",
+  "pre_dispatch_error": "First call was rejected by schema validation for documented outline_style keyword; no job was created. Removed the unsupported keyword and submitted once."
+}

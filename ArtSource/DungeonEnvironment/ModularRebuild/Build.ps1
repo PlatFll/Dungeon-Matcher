@@ -33,3 +33,13 @@ foreach($g in $groups){
  }
 }
 Write-Output "LibreSprite $Phase authoring and native exports complete."
+
+# Current visual correction is applied last, using archived source candidates.
+# This never starts a generation request or spends credits.
+$corrections=if($Phase -eq 'Floor'){@('FloorPolish')}elseif($Phase -eq 'Kit'){@('Wall','Decoration','Health')}else{@('FloorPolish','Wall','Decoration','Health')}
+foreach($stage in $corrections){
+ $correctionGroups=if($stage -eq 'FloorPolish'){'FloorTiles'}elseif($stage -eq 'Wall'){'WallTiles,Props'}elseif($stage -eq 'Health'){'CharacterFrames'}else{'HudFrames,Props'}
+ & (Join-Path $kit 'Correction/RunNative.ps1') -Stage $stage -Groups $correctionGroups -Only $Only
+}
+& 'C:/Users/USER/DungeonMatcherSpriteFoundry/venvs/art/Scripts/python.exe' (Join-Path $kit 'Correction/UpdateManifest.py')
+if($LASTEXITCODE -ne 0){throw 'Correction manifest update failed.'}

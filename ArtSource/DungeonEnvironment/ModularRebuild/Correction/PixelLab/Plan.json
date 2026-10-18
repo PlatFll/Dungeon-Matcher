@@ -1,0 +1,31 @@
+{
+  "initial_budget": 12,
+  "soft_ceiling": 35,
+  "calls": [
+    {
+      "asset": "Floor material",
+      "tool": "create_image_pro",
+      "size": [
+        128,
+        128
+      ],
+      "expected_charge": 10
+    },
+    {
+      "asset": "Wall material experiment if useful",
+      "tool": "create_image_pixflux",
+      "expected_charge": 1
+    },
+    {
+      "asset": "Architectural or decorative repair if useful",
+      "tool": "create_image_pixflux",
+      "expected_charge": 1
+    }
+  ],
+  "starting_balance": {
+    "subscription": "Tier 2 Pixel Artisan",
+    "generations_remaining": 1090.2,
+    "credits_usd": 0
+  },
+  "selection": "Compare actual results against direct LibreSprite reconstruction and mockup; no automatic acceptance."
+}

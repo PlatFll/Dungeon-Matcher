@@ -1,0 +1,74 @@
+{
+  "result": "Passed",
+  "checked_source_commit": "f2386c38d20dd6809a8b4a2620bd9ee89a5cae70",
+  "canonical_files_checked_in_main_and_branch": 8,
+  "assets_checked": 129,
+  "groups": {
+    "WallTiles": 12,
+    "BoardFrames": 9,
+    "BackgroundLayers": 6,
+    "CharacterFrames": 19,
+    "HudFrames": 48,
+    "Props": 31,
+    "FloorTiles": 4
+  },
+  "native_cel_exports_exact": true,
+  "imported_pngs_exact": true,
+  "source_and_export_hashes_match_previous_visual_review": true,
+  "binary_alpha": true,
+  "native_palette_counts_verified": true,
+  "edge_pairings": {
+    "Floor": {
+      "horizontal": 16,
+      "vertical": 16,
+      "result": "Passed"
+    },
+    "PortraitWall": {
+      "horizontal": 16,
+      "vertical": 16,
+      "result": "Passed"
+    },
+    "BattleWall": {
+      "horizontal": 16,
+      "vertical": 16,
+      "result": "Passed"
+    },
+    "OuterWall": {
+      "horizontal": 16,
+      "vertical": 16,
+      "result": "Passed"
+    }
+  },
+  "previous_unity_evidence": {
+    "reused": true,
+    "rerun": false,
+    "reason": "No Unity code, scene, import settings or artwork changed in this follow-up.",
+    "tests": {
+      "id": "2",
+      "testcasecount": "2",
+      "result": "Passed",
+      "total": "2",
+      "passed": "2",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-10-18 01:33:59Z",
+      "end-time": "2026-10-18 01:34:03Z",
+      "duration": "4.1365419"
+    },
+    "compiler_result": "Passed",
+    "captures": {
+      "1080x1920.png": "688ce61df9a2c01fd56b2d8121c418d5f82a2f68ce02050455749b8c01725fd2",
+      "1080x2400-safe-area.png": "3404059aa630acbd52431a2b48f1ff488be43b72b72d181f64430ffb3f85796d",
+      "1080x2400.png": "68be36efd9c6cb5af15e5357953f1c3f08c5baae9b2ff3b771103f321180060b",
+      "720x1280.png": "d0dbaad73ecb84cb6d8600a4383ed3660b506bd665a94107ce9bc3d480e24ade"
+    }
+  },
+  "limits": "Unity receipts apply to the unchanged candidate; no new runtime/device or gameplay test. Technical checks do not establish visual approval.",
+  "files": {
+    "LibraryManifest.json": "a89f0c6d349e643721abdae577917ca841e1d3563b460517b77834318c23724c"
+  }
+}

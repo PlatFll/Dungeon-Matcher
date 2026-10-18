@@ -61,6 +61,13 @@ public sealed class DungeonModularArtPreview : MonoBehaviour
             for (int x = 0; x < Mathf.CeilToInt(bounds.width / 64); x++)
                 Native(prefix + (char)('A' + (x + y * 3) % 4), clip, x * 64, y * 64);
     }
+    void FloorTilesFromTop(Transform parent, Rect bounds, string prefix)
+    {
+        var clip=Mask(prefix+"Field",parent,bounds);
+        for(int y=0;y<Mathf.CeilToInt(bounds.height/64);y++)
+            for(int x=0;x<Mathf.CeilToInt(bounds.width/64);x++)
+                Native(prefix+(char)('A'+(x+y*3)%4),clip,x*64,bounds.height-(y+1)*64);
+    }
     // Separate fixed corners; only straight sections tile. Different thicknesses
     // on each side are retained rather than forcing a square nine-slice border.
     RectTransform Frame(string name, Transform parent, Rect bounds, int corner,
@@ -126,9 +133,23 @@ public sealed class DungeonModularArtPreview : MonoBehaviour
         var top = RectNode("PreviewBattle",root,Geometry.Top);
         Tiles(top,new Rect(Vector2.zero,Geometry.Top.size),"BattleWall");
         var floor = SourceRect(Geometry.Top,137,177,333,121);
-        Tiles(top,floor,"Floor");
+
+        // The mockup's floor recedes into compressed stone courses. Separate
+        // native tile families carry that depth without scaling any texture.
+        float surfaceHeight=Mathf.Max(1,floor.height-23);
+        float rearHeight=Mathf.Round(surfaceHeight*.25f),nearHeight=Mathf.Round(surfaceHeight*.5f);
+        float middleHeight=surfaceHeight-rearHeight-nearHeight;
+        FloorTilesFromTop(top,new Rect(floor.x,floor.y+23,floor.width,nearHeight),"Floor");
+        FloorTilesFromTop(top,new Rect(floor.x,floor.y+23+nearHeight,floor.width,middleHeight),"FloorMiddle");
+        FloorTilesFromTop(top,new Rect(floor.x,floor.y+23+nearHeight+middleHeight,floor.width,rearHeight),"FloorBack");
         var bottom = RectNode("PreviewLower",root,Geometry.Bottom);
-        Tiles(bottom,new Rect(Vector2.zero,Geometry.Bottom.size),"PortraitWall");
+        Tiles(bottom,new Rect(Vector2.zero,Geometry.Bottom.size),"HudWall");
+
+        // Static warm masonry remains behind the independently editable torches.
+        var leftLight=SourceRect(Geometry.Top,135,95,25,65);
+        Native("TorchLitMasonryLeft",top,leftLight.center.x-32,leftLight.y+8);
+        var rightPillar=SourceRect(Geometry.Top,354,0,23,180);
+        Native("TorchLitMasonryRight",top,rightPillar.center.x-25,rightPillar.y+28);
 
         // Foreground architectural pieces are separate native-sized sprites.
         var manifest = JsonUtility.FromJson<Manifest>(placementManifest.text);
@@ -168,10 +189,10 @@ public sealed class DungeonModularArtPreview : MonoBehaviour
         var banner = Get("PortraitBanner");
         Native("PortraitBanner",PortraitInterior,(PortraitInterior.sizeDelta.x-banner.rect.width)/2,PortraitInterior.sizeDelta.y-banner.rect.height-3);
         PortraitCollars((RectTransform)PortraitInterior.parent);
-        var health=RectNode("PreviewEmptyHealthFrame",PortraitInterior,new Rect(4,7,PortraitInterior.sizeDelta.x-8,24));
-        ImageNode("HudDark",health,new Rect(0,0,health.sizeDelta.x,24),true);
+        var health=RectNode("PreviewEmptyHealthFrame",PortraitInterior,new Rect(4,7,PortraitInterior.sizeDelta.x-8,20));
+        ImageNode("HudDark",health,new Rect(0,0,health.sizeDelta.x,20),true);
         var hs=Get("PlayerHealthStart");var he=Get("PlayerHealthEnd");
-        ImageNode("PlayerHealthMiddle",health,new Rect(hs.rect.width,0,health.sizeDelta.x-hs.rect.width-he.rect.width,24),true);
+        ImageNode("PlayerHealthMiddle",health,new Rect(hs.rect.width,0,health.sizeDelta.x-hs.rect.width-he.rect.width,20),true);
         Native("PlayerHealthStart",health,0,0);Native("PlayerHealthEnd",health,health.sizeDelta.x-he.rect.width,0);
 
         BoardInterior = Frame("Board",root,Geometry.Board,24,16,20,18,19,"HudDark",true);
@@ -197,13 +218,23 @@ public sealed class DungeonModularArtPreview : MonoBehaviour
         ImageNode("HudDark",energy,new Rect(13,6,energyBounds.width-28,12),true);
         ImageNode("EnergyTopRail",energy,new Rect(13,18,energyBounds.width-28,6),true);
         ImageNode("EnergyBottomRail",energy,new Rect(13,0,energyBounds.width-28,6),true);
+        ImageNode("EnergyPurpleFill",energy,new Rect(13,8,Mathf.Floor((energyBounds.width-28)*.52f),8),true);
         Native("EnergyStart",energy,0,0);Native("EnergyEnd",energy,energyBounds.width-15,0);
         var ability=Frame("Ability",bottom,SourceRect(Geometry.Bottom,148,30,176,66,135),16,14,14,10,12,"AbilityDark");
         var abilityFrame=(RectTransform)ability.parent;
         Native("AbilityLeftJewel",abilityFrame,0,(abilityFrame.sizeDelta.y-16)/2);
         Native("AbilityRightJewel",abilityFrame,abilityFrame.sizeDelta.x-14,(abilityFrame.sizeDelta.y-16)/2);
-        Frame("Supply",bottom,SourceRect(Geometry.Bottom,67,32,70,63,135),20,10,10,9,16,"SilverInset");
-        Frame("Supply",bottom,SourceRect(Geometry.Bottom,333,32,70,63,135),20,10,10,9,16,"SilverInset");
+        Native("AbilityLightningLeft",ability,0,(ability.sizeDelta.y-44)/2);
+        Native("AbilityLightningRight",ability,ability.sizeDelta.x-44,(ability.sizeDelta.y-44)/2);
+        Native("AbilityEmblem",ability,(ability.sizeDelta.x-44)/2,(ability.sizeDelta.y-48)/2);
+        var potion=Frame("Supply",bottom,SourceRect(Geometry.Bottom,67,32,70,63,135),20,10,10,9,16,"SilverInset");
+        Native("PotionIcon",potion,(potion.sizeDelta.x-33)/2,(potion.sizeDelta.y-39)/2);
+        var bomb=Frame("Supply",bottom,SourceRect(Geometry.Bottom,333,32,70,63,135),20,10,10,9,16,"SilverInset");
+        Native("BombIcon",bomb,(bomb.sizeDelta.x-39)/2,(bomb.sizeDelta.y-43)/2);
+        var resonance=SourceRect(Geometry.Bottom,121,95,295,22,135);
+        Native("ResonanceDiamond",bottom,resonance.x,resonance.y);
+        var caption=RectNode("ResonanceCaption",bottom,new Rect(resonance.x+25,resonance.y,resonance.width-25,22));
+        Label("PHASE RESONANCE: +15% GEM DAMAGE",caption,12);
         Canvas.ForceUpdateCanvases();
     }
     static int PropDepth(string name)

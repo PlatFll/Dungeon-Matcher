@@ -1,31 +1,5 @@
 {
-  "phase": "Floor",
-  "dimensions": [
-    64,
-    64
-  ],
-  "variants": 4,
-  "binary_alpha": true,
-  "ase_png_exact": true,
-  "all_neighbor_edge_pairs": "16 horizontal and 16 vertical passed",
-  "colors": [
-    11,
-    11,
-    11,
-    11
-  ],
-  "shape_changes": "Only crop boundary repair bands (4px left/right; 3px top; 1px bottom). Interior wear stays within source material planes.",
-  "visual_status": "Source-close native floor candidate passed internal 1x/3x and mixed-repeat review; in-scene check pending",
-  "source_rect": [
-    64,
-    34,
-    64,
-    64
-  ],
-  "cyclic_offsets_x": [
-    0,
-    16,
-    32,
-    48
-  ]
+  "status": "superseded by current correction evidence",
+  "current": "../Correction/TechnicalChecks.json",
+  "historical": "../Correction/BeforeReports/Evidence/FloorChecks.json"
 }

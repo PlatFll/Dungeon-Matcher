@@ -1,93 +1,55 @@
 {
-  "schema_version": 1,
-  "branch": "codex/dungeon-modular-scene-rebuild",
-  "brief": "Brief/PixelLabEnabledFollowup.txt",
-  "brief_sha256": "3ae452aa4bc5fd08b08cf1b8180f9c130e488a713a17cc147961e3a138752c73",
-  "budget": {
-    "initial_estimate": 0,
-    "final_spent": 0,
-    "preferred_range": [
-      10,
-      25
-    ],
-    "soft_ceiling": 35,
-    "interpretation": "The preferred range is not a minimum spend. Existing clean assets must not be regenerated."
-  },
-  "pre_generation_announcement": "0 generations initially; use existing native sources, and identify a specific unresolved benefit before any paid generation.",
-  "categories": [
+  "status": "executed correction",
+  "priority": [
+    "supplied mockup",
+    "canonical rendering guide",
+    "matching existing assets",
+    "targeted PixelLab experiments",
+    "native LibreSprite finalization"
+  ],
+  "methods": [
     {
-      "category": "A",
-      "name": "Floor tiles",
-      "asset_count": 4,
-      "method": "LibreSprite reconstruction from existing native source",
-      "reason": "Four 64x64 variants; cyclic source offsets and explicit seam bands. Direct editing preserves the approved perspective slabs; generation adds no benefit.",
-      "estimated_generations": 0
+      "category": "Floor",
+      "corrections": "Replaced the four large slabs with 12 distinct 64\u00d764 modules across rear, middle and near-depth families. PixelLab A/B beat the direct floor trial; all selected stones were palette-mapped, border-repaired and finalized in LibreSprite. Fixed Unity top-edge alignment before starting the walls.",
+      "remaining_difference": "Reconstructed stone topology, not a pixel-for-pixel copy of every crack; tall viewports expose more of the native tiled floor.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     },
     {
-      "category": "B",
-      "name": "Wall / masonry tiles",
-      "asset_count": 12,
-      "method": "LibreSprite reconstruction and scoped material correction",
-      "reason": "Portrait, battle and outer wall families, four 64x64 variants each. Matching edge bands and restrained existing stone ramps are deterministic editing tasks.",
-      "estimated_generations": 0
+      "category": "Walls",
+      "corrections": "Replaced cyclic portrait-wall crops with separate battle, outer, portrait and lower-HUD families. Smaller 16px battle courses, 21/22px portrait/HUD courses, independent joints, chipped corners and connected top-left bevels. Added discrete warm masonry behind the two braziers.",
+      "remaining_difference": "The generated source has irregular per-stone shading; these clean modular courses remain more regular, particularly in large empty wall areas.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     },
     {
-      "category": "C",
-      "name": "Board frame",
-      "asset_count": 9,
-      "method": "Existing native reuse plus LibreSprite modularization",
-      "reason": "Four corners, four repeat rails and separate center finial. Native ornaments are already clean; retain their shapes and repair only repeat boundaries.",
-      "estimated_generations": 0
+      "category": "PlayerFrame",
+      "corrections": "Retained the source diamond corners, thin metal rails, collar hardware and banner. Replaced the mismatched ornate health frame with the source heart and straight magenta track. Portrait masonry is clipped behind the frame.",
+      "remaining_difference": "HP digits and character/affinity content are deliberately absent from this art-only preview.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     },
     {
-      "category": "D",
-      "name": "Portrait / empty health frames",
-      "asset_count": 19,
-      "method": "Existing native reuse plus LibreSprite modularization",
-      "reason": "Corners, rails, eight separate collars and three empty health-frame pieces. Portrait background belongs inside a clipped interior, not in frame pixels.",
-      "estimated_generations": 0
+      "category": "BoardFrame",
+      "corrections": "Retained faithful source jewel corners, purple stone rails and center connector. Kept 64 separate empty cells and tested oversized interior fills against the actual rendered border.",
+      "remaining_difference": "The empty board exposes quiet cell interiors that are largely covered by gems in the reference. Frame rails tile as the viewport changes.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     },
     {
-      "category": "E",
-      "name": "Top HUD",
-      "asset_count": 26,
-      "method": "Existing native reuse plus LibreSprite extraction",
-      "reason": "Wave, Guide and Settings use the newer approved mockup family. Keep live labels and a separate gear/skull; generated ornaments would unnecessarily reinterpret locked shapes.",
-      "estimated_generations": 0
+      "category": "Props",
+      "corrections": "Reviewed every gateway, banner, chain, torch, barrel, bone and architectural module against the source. Reconstructed the gateway\u2019s six flat lower-pier patches, removed attached skull contamination from the barrel, and retained matching source silhouettes. Added separate torch-lit stone planes.",
+      "remaining_difference": "Architecture remains native-sized while layout adapts; tall aspect ratios have more open wall space around the original props.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     },
     {
-      "category": "F",
-      "name": "Bottom HUD",
-      "asset_count": 22,
-      "method": "Existing native reuse plus LibreSprite modularization",
-      "reason": "Ability, supply and energy components; jewels/endcaps remain separate from repeating rails. Recess fills are counted under background materials.",
-      "estimated_generations": 0
-    },
-    {
-      "category": "G",
-      "name": "Gateway / door / arch",
-      "asset_count": 1,
-      "method": "Lossless existing native reuse and LibreSprite export",
-      "reason": "The complete 115x121 gateway is already a clean separate sprite. Keep the distinctive arch/door as one reusable object, as the branch brief requests; do not tile or regenerate it.",
-      "estimated_generations": 0
-    },
-    {
-      "category": "H",
-      "name": "Props / distinctive masonry",
-      "asset_count": 30,
-      "method": "Existing reuse, LibreSprite isolation and bounded repair",
-      "reason": "Torches, chains, barrels, skull/bone groups, banners, pillars, buttresses and foundation pieces. Two documented occlusions need only local source-based repairs, not new designs.",
-      "estimated_generations": 0
-    },
-    {
-      "category": "Materials",
-      "name": "Cells and recess fills",
-      "asset_count": 6,
-      "method": "Existing native reuse and direct LibreSprite fill authoring",
-      "reason": "Three empty cell surfaces plus three small flat recess materials. UI/background palettes remain material-specific; character color-count rules do not apply.",
-      "estimated_generations": 0
+      "category": "UI",
+      "corrections": "Restored separate crowned-skull emblem, left/right lightning, purple energy fill, potion, bomb and resonance jewel. Removed source-panel residue above the crown. Wave/Guide remain live text; all decorations are native editable sprites.",
+      "remaining_difference": "Item counts and combat values are omitted. Static sample labels do not execute gameplay.",
+      "verdict": "Improved reconstruction candidate; user visual review pending",
+      "technical_checks": "See Correction/TechnicalChecks.json; not an artistic similarity score"
     }
   ],
-  "authorization": "The new brief permits bounded PixelLab use and supersedes the old brief prohibition. No call was needed; Tier 2 capabilities were not queried or tested.",
-  "result": "Retain the existing 129 native modules and assembled art-only Unity scene. No art, scene or runtime changes required by this follow-up."
+  "usage": "PixelLabUsage.json"
 }

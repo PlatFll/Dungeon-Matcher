@@ -1,10 +1,47 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Dungeon rebuild tool decisions and usage</title>
-<style>body{background:#171821;color:#eee;font:16px system-ui;margin:30px;line-height:1.5}main{max-width:1200px;margin:auto}a{color:#c1b7ff}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;padding:12px;border:1px solid #51485c}th{background:#30283c}.count{font-size:28px}code{overflow-wrap:anywhere}</style><main>
-<h1>Dungeon rebuild: tool decisions and usage</h1><p><a href="Review.html">Back to scene comparisons</a> · <a href="Assets.html">Native asset comparisons</a></p>
-<p class="count">129 native modules · 0 PixelLab generations</p>
-<p>The PixelLab-enabled brief permits generation when it has a clear benefit. It does not require spending a minimum budget. The existing approved native sources and completed LibreSprite reconstruction already cover every category, including the 115×121 gateway. No reference uploads or paid generation requests were made.</p>
-<table><thead><tr><th>Category</th><th>Asset family</th><th>Count</th><th>Selected method</th><th>Reason</th></tr></thead><tbody><tr><td>A</td><td>Floor tiles</td><td>4</td><td>LibreSprite reconstruction from existing native source</td><td>Four 64x64 variants; cyclic source offsets and explicit seam bands. Direct editing preserves the approved perspective slabs; generation adds no benefit.</td></tr><tr><td>B</td><td>Wall / masonry tiles</td><td>12</td><td>LibreSprite reconstruction and scoped material correction</td><td>Portrait, battle and outer wall families, four 64x64 variants each. Matching edge bands and restrained existing stone ramps are deterministic editing tasks.</td></tr><tr><td>C</td><td>Board frame</td><td>9</td><td>Existing native reuse plus LibreSprite modularization</td><td>Four corners, four repeat rails and separate center finial. Native ornaments are already clean; retain their shapes and repair only repeat boundaries.</td></tr><tr><td>D</td><td>Portrait / empty health frames</td><td>19</td><td>Existing native reuse plus LibreSprite modularization</td><td>Corners, rails, eight separate collars and three empty health-frame pieces. Portrait background belongs inside a clipped interior, not in frame pixels.</td></tr><tr><td>E</td><td>Top HUD</td><td>26</td><td>Existing native reuse plus LibreSprite extraction</td><td>Wave, Guide and Settings use the newer approved mockup family. Keep live labels and a separate gear/skull; generated ornaments would unnecessarily reinterpret locked shapes.</td></tr><tr><td>F</td><td>Bottom HUD</td><td>22</td><td>Existing native reuse plus LibreSprite modularization</td><td>Ability, supply and energy components; jewels/endcaps remain separate from repeating rails. Recess fills are counted under background materials.</td></tr><tr><td>G</td><td>Gateway / door / arch</td><td>1</td><td>Lossless existing native reuse and LibreSprite export</td><td>The complete 115x121 gateway is already a clean separate sprite. Keep the distinctive arch/door as one reusable object, as the branch brief requests; do not tile or regenerate it.</td></tr><tr><td>H</td><td>Props / distinctive masonry</td><td>30</td><td>Existing reuse, LibreSprite isolation and bounded repair</td><td>Torches, chains, barrels, skull/bone groups, banners, pillars, buttresses and foundation pieces. Two documented occlusions need only local source-based repairs, not new designs.</td></tr><tr><td>Materials</td><td>Cells and recess fills</td><td>6</td><td>Existing native reuse and direct LibreSprite fill authoring</td><td>Three empty cell surfaces plus three small flat recess materials. UI/background palettes remain material-specific; character color-count rules do not apply.</td></tr></tbody></table>
-<h2>Verification</h2><p>Fresh checks: all 129 native cels match exports and Unity PNGs, with binary alpha, unchanged source hashes and palette counts. All 128 floor/wall edge pairings pass. Four actual Unity capture files and the previous two passing EditMode tests remain linked to the exact unchanged code, scene and assets. Unity was not rerun for this documentation/catalog follow-up.</p>
-<p>The existing internal 9/10 art-direction assessment is retained for unchanged artwork. It is a subjective readiness judgment, not measured similarity or user approval. The source/native comparisons and Unity captures remain the review evidence.</p>
-<h2>Reports</h2><p><a href="../LibraryManifest.json">Complete 129-asset manifest</a> · <a href="../ToolPlan.json">Category tool plan</a> · <a href="../PixelLabUsage.json">Generation ledger</a> · <a href="../Evidence/FollowupVerification.json">Fresh verification receipt</a> · <a href="../VALIDATION_REPORT.md">Full validation report</a></p>
-<p>The rebuilt zone is assembled in <code>Assets/_Game/Scenes/ArtPreview_DungeonModular.unity</code>, without characters, gems or combat. Production scenes and the release build list remain preserved. Nothing merged; awaiting visual review.</p></main></html>
+<!doctype html><meta charset="utf-8"><style>body{margin:24px;background:#161720;color:#eee;font:16px system-ui}a{color:#cbb6ff}p{max-width:1200px;line-height:1.5}header{position:sticky;top:0;background:#161720ef;padding:12px;z-index:5}button,select{padding:10px;background:#30283e;color:white;border:1px solid #77618d}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.compare figure{margin:0;overflow:auto;background:#242331}.compare img{width:100%;image-rendering:pixelated}figcaption{padding:10px}.exact{display:block}.exact img{width:auto;max-width:none}img{image-rendering:pixelated;max-width:100%}details{margin:22px 0}article{margin:30px 0;padding:18px;background:#242331}.muted{color:#bcb3cc}@media(max-width:800px){.compare{grid-template-columns:1fr}}</style><h1>Actual tool use — 11 generations</h1><p>Pro floor: four 128×128 candidates for 10 generations. A/B selected over direct native trials; C/D rejected. PixFlux wall: one 64×64 experiment for one generation, rejected in favor of direct LibreSprite. All final edits and exports were performed in LibreSprite.</p><img src="../Correction/Review/FloorCandidates.png"><h2>Wall experiment</h2><p>Native input and generated alternative at native size.</p><img src="../Correction/PixelLab/WallFluxInput.png"> <img src="../Correction/PixelLab/WallFlux.png"><pre>{
+  &quot;actual_generations&quot;: 11,
+  &quot;remaining_before&quot;: 1090.2,
+  &quot;remaining_after&quot;: 1079.2,
+  &quot;subscription&quot;: &quot;Tier 2 Pixel Artisan&quot;,
+  &quot;cash_credits&quot;: 0,
+  &quot;preferred_budget&quot;: [
+    10,
+    25
+  ],
+  &quot;soft_ceiling&quot;: 35,
+  &quot;calls&quot;: [
+    {
+      &quot;job&quot;: &quot;931e17bf-23c3-491d-91a7-9805fb37f093&quot;,
+      &quot;endpoint&quot;: &quot;create_image_pro&quot;,
+      &quot;size&quot;: [
+        128,
+        128
+      ],
+      &quot;cost&quot;: 10,
+      &quot;outputs&quot;: 4,
+      &quot;selected&quot;: [
+        &quot;A&quot;,
+        &quot;B&quot;
+      ],
+      &quot;rejected&quot;: [
+        &quot;C&quot;,
+        &quot;D&quot;
+      ],
+      &quot;receipt&quot;: &quot;Correction/PixelLab/FloorProReceipt.json&quot;
+    },
+    {
+      &quot;job&quot;: &quot;490becbd-129a-4c27-b759-5bde57e83da3&quot;,
+      &quot;endpoint&quot;: &quot;create_image_pixflux&quot;,
+      &quot;size&quot;: [
+        64,
+        64
+      ],
+      &quot;cost&quot;: 1,
+      &quot;outputs&quot;: 1,
+      &quot;selected&quot;: [],
+      &quot;decision&quot;: &quot;Direct LibreSprite wall preferred; generated variant adds little and introduces extra shades.&quot;,
+      &quot;receipt&quot;: &quot;Correction/PixelLab/WallFluxReceipt.json&quot;
+    }
+  ],
+  &quot;no_whole_scene_generation&quot;: true
+}</pre>
