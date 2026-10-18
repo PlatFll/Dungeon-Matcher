@@ -230,6 +230,10 @@ public sealed class PlayerAreaThreeSliceFrameController : MonoBehaviour
     private void BuildThreeSliceFrame()
     {
         RemoveGeneratedFrame();
+        if(ApprovedDungeonBattleArt.Current is ApprovedDungeonBattleArt approved)
+        {
+            approved.PlayerFrame(playerSection);return;
+        }
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             Vector2 size=BattlePresentationSkin.ReferencePlayerRect.size;

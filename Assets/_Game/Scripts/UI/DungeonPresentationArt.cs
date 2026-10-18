@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>Decorates existing layout owners; never moves their content or owns gameplay.</summary>
-public sealed class DungeonPresentationArt : MonoBehaviour
+public sealed partial class DungeonPresentationArt : MonoBehaviour
 {
     private SpriteRenderer backdrop;
     private Camera worldCamera;
@@ -20,7 +20,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
-        var tile = BattlePresentationSkin.ZoneSprite("General") ?? RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
+        var tile = ApprovedDungeonBattleArt.Current?.Sprite("BackWallReference") ?? BattlePresentationSkin.ZoneSprite("General") ?? RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
         if (tile == null || worldCamera == null) return;
         var go = new GameObject("DungeonSurroundingMasonry");
         backdrop = go.AddComponent<SpriteRenderer>();
@@ -33,7 +33,8 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private void LateUpdate()
     {
         UpdateReferenceSides();
-        if (backdrop != null && worldCamera != null && worldCamera.orthographic)
+        if (approved != null) UpdateApprovedDungeon();
+        if (approved == null && backdrop != null && worldCamera != null && worldCamera.orthographic)
         {
             float height = worldCamera.orthographicSize * 2f;
             var position = worldCamera.transform.position;
@@ -46,6 +47,10 @@ public sealed class DungeonPresentationArt : MonoBehaviour
         var player = GameObject.Find("PlayerSection");
         var bottom = GameObject.Find("BottomHUD");
         if (player == null || bottom == null) return;
+        if(ApprovedDungeonBattleArt.Current != null)
+        {
+            BuildApprovedDungeon(player.transform);return;
+        }
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             BuildReferenceKit(player.transform,(RectTransform)bottom.transform);
@@ -192,6 +197,7 @@ public sealed class DungeonPresentationArt : MonoBehaviour
     private void OnDestroy()
     {
         if (backdrop != null) Destroy(backdrop.gameObject);
+        if (approvedWorld != null) Destroy(approvedWorld);
         if (croppedReferenceFloor != null) Destroy(croppedReferenceFloor);
     }
 }
