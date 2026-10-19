@@ -1,0 +1,358 @@
+{
+  "result": "PASS",
+  "protected_art_files": 456,
+  "unchanged_current_native_exports": 82,
+  "generation_requests": 0,
+  "tests": {
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0"
+  },
+  "exact_native_2x_3x": true,
+  "exact_tall_3x": true,
+  "odd_safe_area_content_exact": true,
+  "standard_changed_pixels": 267,
+  "standard_changed_bounds": [
+    326,
+    212,
+    349,
+    230
+  ],
+  "change_reason": "Only the user-highlighted right corbel instance is removed; source sprite and every other instance remain unchanged.",
+  "native_source_comparisons": [
+    {
+      "name": "Clutter_Skull",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Skull.png",
+      "scene_rect": [
+        110,
+        160,
+        24,
+        22
+      ],
+      "opaque_pixels": 304,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Clutter_Bones",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Bones.png",
+      "scene_rect": [
+        275,
+        170,
+        26,
+        12
+      ],
+      "opaque_pixels": 119,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Clutter_Barrel",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Barrel.png",
+      "scene_rect": [
+        322,
+        140,
+        36,
+        42
+      ],
+      "opaque_pixels": 1093,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Torch_Flame",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch/Torch_Flame.png",
+      "scene_rect": [
+        112,
+        86,
+        32,
+        56
+      ],
+      "opaque_pixels": 209,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Hanging_Banner",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging/Hanging_Banner.png",
+      "scene_rect": [
+        140,
+        58,
+        36,
+        64
+      ],
+      "opaque_pixels": 1336,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Board_Cell",
+      "path": "Assets/_Game/Art/DungeonPixelLab/BoardFrame/Board_Cell.png",
+      "scene_rect": [
+        40,
+        238,
+        35,
+        35
+      ],
+      "opaque_pixels": 1225,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Portrait_Corner_TL",
+      "path": "Assets/_Game/Art/DungeonPixelLab/PortraitFrame/Portrait_Corner_TL.png",
+      "scene_rect": [
+        9,
+        20,
+        13,
+        13
+      ],
+      "opaque_pixels": 85,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Plaque_Gear",
+      "path": "Assets/_Game/Art/DungeonPixelLab/TopPlaques/Plaque_Gear.png",
+      "scene_rect": [
+        327,
+        31,
+        15,
+        15
+      ],
+      "opaque_pixels": 128,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Resonance_Corner_TL",
+      "path": "Assets/_Game/Art/DungeonPixelLab/BottomHud/Resonance_Corner_TL.png",
+      "scene_rect": [
+        121,
+        563,
+        9,
+        9
+      ],
+      "opaque_pixels": 77,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Fascia_Mid_A",
+      "path": "Assets/_Game/Art/DungeonPixelLab/Fascia/Fascia_Mid_A.png",
+      "scene_rect": [
+        234,
+        190,
+        64,
+        24
+      ],
+      "opaque_pixels": 1408,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Potion",
+      "path": "Assets/_Game/Resources/UI/Consumables/Potion.png",
+      "scene_rect": [
+        80,
+        573,
+        24,
+        24
+      ],
+      "opaque_pixels": 232,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "Bomb",
+      "path": "Assets/_Game/Resources/UI/Consumables/Bomb.png",
+      "scene_rect": [
+        256,
+        573,
+        24,
+        24
+      ],
+      "opaque_pixels": 269,
+      "all_opaque_pixels_exact": true
+    },
+    {
+      "name": "CrownedSkull",
+      "path": "Assets/_Game/Resources/UI/GlobalMenu/CrownedSkull.png",
+      "scene_rect": [
+        166,
+        569,
+        28,
+        32
+      ],
+      "opaque_pixels": 461,
+      "all_opaque_pixels_exact": true
+    }
+  ],
+  "ui_translation_checks": [
+    {
+      "family": "BoardFrame",
+      "visible_source_pixels": 88932,
+      "offset": 80,
+      "exact": true
+    },
+    {
+      "family": "BottomHud",
+      "visible_source_pixels": 9438,
+      "offset": 160,
+      "exact": true
+    }
+  ],
+  "captures": [
+    {
+      "name": "Assembly-360x640",
+      "width": 360,
+      "height": 640,
+      "scale": 1,
+      "logicalHeight": 640,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 640.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 640.0
+      },
+      "images": 382,
+      "uniqueSources": 94
+    },
+    {
+      "name": "Assembly-720x1280",
+      "width": 720,
+      "height": 1280,
+      "scale": 2,
+      "logicalHeight": 640,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 720.0,
+        "height": 1280.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 720.0,
+        "height": 1280.0
+      },
+      "images": 382,
+      "uniqueSources": 94
+    },
+    {
+      "name": "Assembly-1080x1920",
+      "width": 1080,
+      "height": 1920,
+      "scale": 3,
+      "logicalHeight": 640,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1080.0,
+        "height": 1920.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1080.0,
+        "height": 1920.0
+      },
+      "images": 382,
+      "uniqueSources": 94
+    },
+    {
+      "name": "Assembly-360x800",
+      "width": 360,
+      "height": 800,
+      "scale": 1,
+      "logicalHeight": 800,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 800.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 800.0
+      },
+      "images": 418,
+      "uniqueSources": 92
+    },
+    {
+      "name": "Assembly-1080x2400",
+      "width": 1080,
+      "height": 2400,
+      "scale": 3,
+      "logicalHeight": 800,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1080.0,
+        "height": 2400.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1080.0,
+        "height": 2400.0
+      },
+      "images": 418,
+      "uniqueSources": 92
+    },
+    {
+      "name": "SafeArea-1080x2400",
+      "width": 1080,
+      "height": 2400,
+      "scale": 3,
+      "logicalHeight": 740,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 90.0,
+        "width": 1080.0,
+        "height": 2220.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 90.0,
+        "width": 1080.0,
+        "height": 2220.0
+      },
+      "images": 406,
+      "uniqueSources": 92
+    },
+    {
+      "name": "SafeArea-1084x2404",
+      "width": 1084,
+      "height": 2404,
+      "scale": 3,
+      "logicalHeight": 740,
+      "safeArea": {
+        "serializedVersion": "2",
+        "x": 2.0,
+        "y": 91.0,
+        "width": 1081.0,
+        "height": 2221.0
+      },
+      "content": {
+        "serializedVersion": "2",
+        "x": 2.0,
+        "y": 91.0,
+        "width": 1080.0,
+        "height": 2220.0
+      },
+      "images": 406,
+      "uniqueSources": 92
+    }
+  ]
+}

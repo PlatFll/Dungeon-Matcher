@@ -1,0 +1,21 @@
+{
+  "changed_objects": [
+    {
+      "id": "471527337",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -66,5 +66,4 @@\n\n   - {fileID: 1074599359}\n   - {fileID: 1184724738}\n-  - {fileID: 1339627759}\n   - {fileID: 1552526286}\n   - {fileID: 359824529}"
+    },
+    {
+      "id": "1605925103",
+      "object": "114:Dungeon PixelLab preview root script:bbae5d355e3f25e4dae82c401fa94e9a",
+      "diff": "--- \n\n+++ \n\n@@ -9,5 +9,5 @@\n\n   m_EditorHideFlags: 0\n   m_Script: {fileID: 11500000, guid: bbae5d355e3f25e4dae82c401fa94e9a, type: 3}\n-  m_Name:\n+  m_Name: \n   m_EditorClassIdentifier: Assembly-CSharp::DungeonSideViewArtPreview\n   previewCamera: {fileID: 1069134792}\n@@ -119,5 +119,5 @@\n\n   - {fileID: 21300000, guid: 41f4de5c7e6be754da3f406d812e6893, type: 3}\n   - {fileID: 21300000, guid: 730aa2e9fcb38414495070b36a61dca9, type: 3}\n-  placementManifest: {fileID: 4900000, guid: b17d9fb687d246ce997cbd92be3e383b, type: 3}\n+  placementManifest: {fileID: 4900000, guid: b2e2819eb7a1b5149b946e4b09ecc30b, type: 3}\n   width: 360\n   height: 640"
+    }
+  ],
+  "added_objects": 0,
+  "removed_objects": [
+    "1:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}/Support_Corbel @{x: 324, y: -210}",
+    "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}/Support_Corbel @{x: 324, y: -210}",
+    "114:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}/Support_Corbel @{x: 324, y: -210} script:fe87c0e1cc204ed48ad3b37840f39efc",
+    "222:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}/Support_Corbel @{x: 324, y: -210}"
+  ]
+}
