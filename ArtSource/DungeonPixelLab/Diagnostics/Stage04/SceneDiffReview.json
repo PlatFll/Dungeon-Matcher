@@ -1,0 +1,40 @@
+{
+  "scene": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+  "added_objects": [
+    "114:Fascia_Anchor @{x: 170, y: -190}",
+    "114:Fascia_Left @{x: 0, y: -190}",
+    "114:Fascia_Mid_A @{x: 234, y: -190}",
+    "114:Fascia_Mid_A @{x: 42, y: -190}",
+    "114:Fascia_Mid_B @{x: 106, y: -190}",
+    "114:Fascia_Right @{x: 298, y: -190}",
+    "1:Fascia_Anchor @{x: 170, y: -190}",
+    "1:Fascia_Left @{x: 0, y: -190}",
+    "1:Fascia_Mid_A @{x: 234, y: -190}",
+    "1:Fascia_Mid_A @{x: 42, y: -190}",
+    "1:Fascia_Mid_B @{x: 106, y: -190}",
+    "1:Fascia_Right @{x: 298, y: -190}",
+    "222:Fascia_Anchor @{x: 170, y: -190}",
+    "222:Fascia_Left @{x: 0, y: -190}",
+    "222:Fascia_Mid_A @{x: 234, y: -190}",
+    "222:Fascia_Mid_A @{x: 42, y: -190}",
+    "222:Fascia_Mid_B @{x: 106, y: -190}",
+    "222:Fascia_Right @{x: 298, y: -190}",
+    "224:Fascia_Anchor @{x: 170, y: -190}",
+    "224:Fascia_Left @{x: 0, y: -190}",
+    "224:Fascia_Mid_A @{x: 234, y: -190}",
+    "224:Fascia_Mid_A @{x: 42, y: -190}",
+    "224:Fascia_Mid_B @{x: 106, y: -190}",
+    "224:Fascia_Right @{x: 298, y: -190}"
+  ],
+  "removed_objects": [],
+  "changed_existing_objects": [
+    {
+      "object": "114:Dungeon PixelLab preview root",
+      "diff": "--- \n\n+++ \n\n@@ -34,4 +34,9 @@\n\n   - {fileID: 21300000, guid: 8c52d68d154c0a949b66d7ce8e29999b, type: 3}\n   - {fileID: 21300000, guid: 9841fdb1e8820274b8ce49305f8b2b36, type: 3}\n+  - {fileID: 21300000, guid: ff093507c03f6f64592f3aec9f10be26, type: 3}\n+  - {fileID: 21300000, guid: 4c147a9f8e13ab242bcd6f2ac478578f, type: 3}\n+  - {fileID: 21300000, guid: 1a3361b500580ba4c8b3e47ef122e8cd, type: 3}\n+  - {fileID: 21300000, guid: 34383e47424582c4398e74abecc1aa83, type: 3}\n+  - {fileID: 21300000, guid: a2ead3d87c276534697a3d0ce6ed7640, type: 3}\n   - {fileID: 21300000, guid: 80c74a257b2073746a1e871f91b1921d, type: 3}\n   - {fileID: 21300000, guid: e26fcf2198c7f6d45ade1a671226450f, type: 3}\n@@ -42,5 +47,5 @@\n\n   - {fileID: 21300000, guid: c65883cf13aea424e9089b3b1e27211f, type: 3}\n   - {fileID: 21300000, guid: 905c02710ecd7dc46a004ee6a6d6be5a, type: 3}\n-  placementManifest: {fileID: 4900000, guid: 118ad58c16033ff44bdbe3d13286bd38, type: 3}\n+  placementManifest: {fileID: 4900000, guid: 4d3e91e4de63ce54585d4c46628ffd0f, type: 3}\n   width: 360\n   height: 640"
+    },
+    {
+      "object": "224:02 Standing platform @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -18,4 +18,10 @@\n\n   - {fileID: 224:Floor_Mid_A @{x: 298, y: -178}}\n   - {fileID: 224:Floor_Right @{x: 330, y: -178}}\n+  - {fileID: 224:Fascia_Left @{x: 0, y: -190}}\n+  - {fileID: 224:Fascia_Mid_A @{x: 42, y: -190}}\n+  - {fileID: 224:Fascia_Mid_B @{x: 106, y: -190}}\n+  - {fileID: 224:Fascia_Anchor @{x: 170, y: -190}}\n+  - {fileID: 224:Fascia_Mid_A @{x: 234, y: -190}}\n+  - {fileID: 224:Fascia_Right @{x: 298, y: -190}}\n   m_Father: {fileID: 224:ReferenceContent @{x: 0, y: 0}}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}"
+    }
+  ]
+}
