@@ -1,0 +1,122 @@
+{
+  "source_raw_dimensions": [
+    64,
+    64
+  ],
+  "source_raw_sha256": "a086a98f02e9cad14bf2d272866e6694df9a4196a3a0aeb9ef8720da793cb273",
+  "source_raw_opaque_colors": 4,
+  "assets": [
+    {
+      "name": "Recess_Center",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage02/Recess_Center.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage02/Recess_Center.aseprite",
+      "dimensions": [
+        56,
+        26
+      ],
+      "palette": [
+        "#0A0D11",
+        "#10131F",
+        "#181C2D",
+        "#1D2032",
+        "#22263A"
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        56,
+        26
+      ],
+      "sha256": "a8ddd831b0e5094f8ed33602949f67b70efe401673ad2e739b052df3bfde796b",
+      "ase_sha256": "833ae6dc2b7dce55edf2afdd4342ae7f7030dbe4da3ce43ade849520ce12e4d8",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Recess_Inset",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage02/Recess_Inset.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage02/Recess_Inset.aseprite",
+      "dimensions": [
+        80,
+        167
+      ],
+      "palette": [
+        "#0A0D11",
+        "#10131F",
+        "#181C2D",
+        "#1D2032",
+        "#22263A"
+      ],
+      "opaque_colors": 5,
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        80,
+        167
+      ],
+      "sha256": "69ee2709d8fc8394134d68c7e3223d016ad5d7c39e4177914c7800411519a6b9",
+      "ase_sha256": "fc7a69322bf550ba56d238d6a553b41fe09a53aad50bf9604515edfc0bd65cc7",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "protected_hash_counts": {
+    "ProtectedWallHashes.json": 57,
+    "ProtectedFrameHashes.json": 16
+  },
+  "reference_hashes_unchanged": true,
+  "mask_native_rect": [
+    18,
+    30,
+    80,
+    167
+  ],
+  "preview_only": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "exact_render_differences": 0,
+      "restored_differences": 0,
+      "masked_probe_outside_changed_pixels": 0,
+      "masked_probe_inside_changed_pixels": 13182,
+      "unmasked_control_outside_changed_pixels": 15564
+    },
+    {
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "exact_render_differences": 0,
+      "restored_differences": 0,
+      "masked_probe_outside_changed_pixels": 0,
+      "masked_probe_inside_changed_pixels": 118638,
+      "unmasked_control_outside_changed_pixels": 140076
+    }
+  ],
+  "value_grouping": {
+    "recess_mean_luma": 27.314795879120876,
+    "wall_mean_luma": 37.43943194444444,
+    "recess_adjacent_value_change": 2.1449453003533567,
+    "wall_adjacent_value_change": 3.4564219858156027,
+    "metric": "Rec709 weights on encoded RGB; diagnostic value/readability proxy, not an art score"
+  },
+  "native_resampling": "none",
+  "production_game_scene_and_build_settings": "unchanged; asserted in Unity test"
+}

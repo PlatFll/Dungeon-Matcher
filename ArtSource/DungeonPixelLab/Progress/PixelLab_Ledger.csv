@@ -8,3 +8,8 @@ stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,refere
 01,2026-10-18T23:46:22.970835+00:00,create_image_pro_flash,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Front-elevation quiet staggered wall,64x64 source;48x48 native repeats,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage01/Wall_Raw_PixelLab.png,Exports/Stage01/,Actual PNG bytes via style_image; outline/detail/shading true; color_palette false; no retry
 01,2026-10-18T23:46:22.970835+00:00,get_image,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Completed source receipt and native inspection,,,0,SUCCESS,,,Confirmed charge5; raw saved unchanged
 01,2026-10-18T23:46:22.970835+00:00,get_balance,,wall masonry,Ending balance,,,0,SUCCESS,,,1049.20 remaining; delta5; pack5/35
+02,2026-10-19T00:13:31.315252+00:00,get_balance,,portrait recess,Starting balance,,,0,SUCCESS,,,1049.20 remaining; Tier2
+02,2026-10-19T00:13:31.315252+00:00,get_pro_flash_capabilities,,portrait recess,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; free lookup
+02,2026-10-19T00:13:31.315252+00:00,create_image_pro_flash,3b3f7253-bca9-4463-8f33-3576ee32077a,portrait recess,Separate dark blue-charcoal inset material,64x64 source;56x26 repeat;80x167 inset,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage02/Recess_Raw_PixelLab.png,Exports/Stage02/,Actual native PNG bytes style input; outline/detail/shading; no palette copying; no retry
+02,2026-10-19T00:13:31.315252+00:00,get_image,3b3f7253-bca9-4463-8f33-3576ee32077a,portrait recess,Completed source receipt,,,0,SUCCESS,,,Charge5 confirmed; raw unchanged
+02,2026-10-19T00:13:31.315252+00:00,get_balance,,portrait recess,Ending balance,,,0,SUCCESS,,,1044.20 remaining; delta5; pack10/35

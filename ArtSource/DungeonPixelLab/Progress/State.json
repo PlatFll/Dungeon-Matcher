@@ -2,11 +2,11 @@
   "project": "Dungeon Matcher",
   "workflow": "PixelLab-first staged dungeon zone",
   "branch": "feature/dungeon-zone-pixellab-asset-library",
-  "current_stage": "01",
+  "current_stage": "02",
   "stages": {
     "00": "DONE",
     "01": "DONE",
-    "02": "NOT_STARTED",
+    "02": "DONE",
     "03": "NOT_STARTED",
     "04": "NOT_STARTED",
     "05": "NOT_STARTED",
@@ -22,16 +22,17 @@
     "15": "NOT_STARTED",
     "16": "NOT_STARTED"
   },
-  "approval": "STAGE_01_CANDIDATE_PENDING_USER",
-  "cumulative_billable_generations": 5,
+  "approval": "STAGE_01_APPROVED; STAGE_02_PENDING_USER_REVIEW",
+  "cumulative_billable_generations": 10,
   "soft_budget_generation_equivalents": 35,
   "PixelLab_status": "CONNECTED_TIER_2",
   "golden_reference_sha": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
-  "notes": "Stage01 wall family complete and isolated Unity preview verified. Four native variants plus ten exact closure pieces. Production integration/scaling unchanged. Stop before Stage02.",
+  "notes": "Stage02 complete and verified. Stage01 user approval retained. No Stage03, production integration or merge authorized.",
   "base_commit": "1ee1fdb02e409c9d6b17785d84a76d36bab6342c",
   "stopped": true,
-  "next_prompt": "PROMPTS/02_GENERATE_SEPARATE_PORTRAIT_RECESS.txt",
-  "generations_remaining_start": 1054.2,
-  "generations_remaining_end": 1049.2,
-  "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203"
+  "next_prompt": "PROMPTS/03_GENERATE_FLAT_SIDESCROLLER_FLOOR.txt",
+  "generations_remaining_start": 1049.2,
+  "generations_remaining_end": 1044.2,
+  "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203",
+  "stage01_user_approval": "2026-10-19: Looks good, go ahead with stage 2."
 }
