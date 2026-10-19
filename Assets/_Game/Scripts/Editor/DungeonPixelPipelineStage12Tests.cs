@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
+using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -79,7 +80,8 @@ public sealed class DungeonPixelPipelineStage12Tests
             Assert.That(fill.offsetMin.x, Is.LessThan(0)); Assert.That(fill.offsetMin.y, Is.LessThan(0));
             Assert.That(fill.offsetMax.x, Is.GreaterThan(0)); Assert.That(fill.offsetMax.y, Is.GreaterThan(0));
             Assert.That(mask.GetComponent<RectMask2D>(), Is.Not.Null);
-            Assert.That(mask.rect.size, Is.EqualTo(new Vector2(w - 18, h - 18)));
+            float inset = panel.name == "Portrait panel" ? 9 : 7;
+            Assert.That(mask.rect.size, Is.EqualTo(new Vector2(w - 2 * inset, h - 2 * inset)));
         }
     }
     static IEnumerator CoverageProbe(DungeonSideViewArtPreview p, RectTransform panel, string name)
@@ -162,4 +164,101 @@ public sealed class DungeonPixelPipelineStage12Tests
         }
         Object.DestroyImmediate(green); Object.DestroyImmediate(clamp);
     }
+
+    static void PreparePlaques()
+    {
+        AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+        foreach (string file in Directory.GetFiles(Art + "/TopPlaques", "*.png"))
+        {
+            var importer = (TextureImporter)AssetImporter.GetAtPath(file.Replace('\\', '/'));
+            importer.textureType = TextureImporterType.Sprite; importer.spriteImportMode = SpriteImportMode.Single;
+            importer.spritePixelsPerUnit = 64; importer.filterMode = FilterMode.Point; importer.mipmapEnabled = false;
+            importer.textureCompression = TextureImporterCompression.Uncompressed; importer.npotScale = TextureImporterNPOTScale.None;
+            importer.wrapMode = TextureWrapMode.Clamp; importer.alphaIsTransparency = false; importer.ClearPlatformTextureSettings("Android");
+            var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);
+            settings.spriteMeshType = SpriteMeshType.FullRect; settings.spriteExtrude = 0;
+            importer.SetTextureSettings(settings); importer.SaveAndReimport();
+        }
+        var scene = EditorSceneManager.OpenScene(Scene, OpenSceneMode.Single);
+        var p = Object.FindFirstObjectByType<DungeonSideViewArtPreview>();
+        p.name = "Dungeon PixelLab Stage 12 plaques candidate";
+        string[] families = { "Wall", "PortraitRecess", "FloorTop", "Fascia", "Gate", "Support", "Torch", "Hanging", "Clutter", "PortraitFrame", "BoardFrame", "TopPlaques" };
+        p.modules = families.SelectMany(d => Directory.GetFiles(Art + "/" + d, "*.png")).Select(a => AssetDatabase.LoadAssetAtPath<Sprite>(a.Replace('\\', '/'))).ToArray();
+        p.placementManifest = AssetDatabase.LoadAssetAtPath<TextAsset>(Art + "/Stage12PlaquesPlacement.json");
+        p.width = 360; p.height = 640; p.safeArea = new Rect(0, 0, 360, 640); p.Rebuild();
+        EditorSceneManager.SaveScene(scene); AssetDatabase.SaveAssets();
+        Assert.That(EditorBuildSettings.scenes.Any(a => a.path == Scene), Is.False);
+    }
+    static void CheckPlaque(RectTransform panel, string labelText, int scale)
+    {
+        ValidateFrame(panel);
+        foreach (var image in panel.GetComponentsInChildren<Image>())
+        {
+            Assert.That(image.raycastTarget, Is.False);
+            Assert.That(image.sprite.texture.filterMode, Is.EqualTo(FilterMode.Point));
+            Assert.That(image.sprite.pixelsPerUnit, Is.EqualTo(64));
+        }
+        var label = panel.GetComponentInChildren<TMP_Text>();
+        if (labelText != null)
+        {
+            Assert.That(label, Is.Not.Null); Assert.That(label.text, Is.EqualTo(labelText));
+            Assert.That(label.font, Is.SameAs(GameUi.TmpFont)); Assert.That(label.raycastTarget, Is.False);
+            label.ForceMeshUpdate(); Assert.That(label.isTextTruncated, Is.False);
+            Assert.That(label.textInfo.characterCount, Is.EqualTo(labelText.Length));
+            // Every visible glyph stays within the dark inset, independently of em-box padding.
+            var bounds = GameplayPixelLayoutController.ScreenRect(panel); bounds.xMin += 7 * scale; bounds.xMax -= 7 * scale; bounds.yMin += 7 * scale; bounds.yMax -= 7 * scale;
+            foreach (var character in label.textInfo.characterInfo.Take(label.textInfo.characterCount).Where(c => c.isVisible))
+            foreach (var vertex in new[] { character.bottomLeft, character.topRight })
+            {
+                var point = RectTransformUtility.WorldToScreenPoint(label.canvas.worldCamera, label.transform.TransformPoint(vertex));
+                Assert.That(point.x, Is.InRange(bounds.xMin - .01f, bounds.xMax + .01f));
+                Assert.That(point.y, Is.InRange(bounds.yMin - .01f, bounds.yMax + .01f));
+            }
+        }
+        else
+        {
+            Assert.That(label, Is.Null);
+            var icon = panel.Find("NativeIcon").GetComponent<Image>();
+            Assert.That(icon.rectTransform.rect.size, Is.EqualTo(new Vector2(15, 15)));
+            Assert.That(icon.rectTransform.anchoredPosition, Is.EqualTo(new Vector2(8, -8)));
+        }
+    }
+    [UnityTest, Explicit("Stage12 native plaque frames, actual shared live typography and preservation checks.")]
+    public IEnumerator PlaquesPreview()
+    {
+        File.WriteAllText(Root + "/Diagnostics/Stage12/GameScene.sha256", Hash("Assets/_Game/Scenes/Game.unity"));
+        File.WriteAllText(Root + "/Diagnostics/Stage12/BuildSettings.sha256", Hash("ProjectSettings/EditorBuildSettings.asset"));
+        PreparePlaques(); SetSize(360, 640); yield return new EnterPlayMode();
+        foreach (var screen in new[] { new Vector2Int(360, 640), new Vector2Int(720, 1280), new Vector2Int(1080, 1920), new Vector2Int(1080, 2400) })
+        {
+            SetSize(screen.x, screen.y); yield return new WaitForSecondsRealtime(.4f);
+            var p = Object.FindFirstObjectByType<DungeonSideViewArtPreview>(); p.width = Screen.width; p.height = Screen.height;
+            p.safeArea = screen.y == 2400 ? new Rect(0, 90, 1080, 2220) : new Rect(0, 0, p.width, p.height); p.Rebuild(); yield return null; yield return null;
+            ValidateFrame(Portrait(p));
+            var layer = p.Content.Find("05 Top UI shells");
+            CheckPlaque((RectTransform)layer.Find("Wave panel"), "WAVE 1", p.PixelScale);
+            CheckPlaque((RectTransform)layer.Find("Guide panel"), "GUIDE", p.PixelScale);
+            CheckPlaque((RectTransform)layer.Find("Settings panel"), null, p.PixelScale);
+            Assert.That(p.Content.GetComponentsInChildren<TMP_Text>().Length, Is.EqualTo(2));
+            Assert.That(p.Content.GetComponentsInChildren<Button>().Length, Is.EqualTo(0));
+            string[] forbidden = { "BoardController", "EnemyActor", "PlayerActor", "RunSession", "EventSystem", "WaveTrackerUI", "RunControlsUI" };
+            Assert.That(Object.FindObjectsByType<Component>(FindObjectsInactive.Include, FindObjectsSortMode.None).Any(c => c && forbidden.Contains(c.GetType().Name)), Is.False);
+            yield return Capture("Stage12", "Plaques-" + screen.x + "x" + screen.y);
+            if (screen.x == 360)
+            {
+                var wave = layer.Find("Wave panel").GetComponentInChildren<TMP_Text>(); wave.text = "WAVE 999";
+                yield return null; yield return null; CheckPlaque((RectTransform)layer.Find("Wave panel"), "WAVE 999", 1);
+                yield return Capture("Stage12", "LiveLabel-999-1x"); wave.text = "WAVE 1"; yield return null;
+                var guide = (RectTransform)layer.Find("Guide panel"); var before = GameplayPixelLayoutController.ScreenRect(guide);
+                guide.Find("ModularFrame").gameObject.SetActive(false); yield return null;
+                Assert.That(GameplayPixelLayoutController.ScreenRect(guide), Is.EqualTo(before));
+                Assert.That(guide.GetComponentInChildren<TMP_Text>().text, Is.EqualTo("GUIDE"));
+                guide.Find("ModularFrame").gameObject.SetActive(true);
+            }
+        }
+        yield return new ExitPlayMode();
+        Assert.That(Hash("Assets/_Game/Scenes/Game.unity"), Is.EqualTo(File.ReadAllText(Root + "/Diagnostics/Stage12/GameScene.sha256")));
+        Assert.That(Hash("ProjectSettings/EditorBuildSettings.asset"), Is.EqualTo(File.ReadAllText(Root + "/Diagnostics/Stage12/BuildSettings.sha256")));
+    }
+
 }

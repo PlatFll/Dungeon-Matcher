@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>Isolated reference-layout art preview. It never creates gameplay or input owners.</summary>
 public sealed class DungeonSideViewArtPreview : MonoBehaviour
@@ -22,8 +23,8 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
 
     [Serializable] public class NativePanel
     {
-        public string name, prefix, backing;
-        public int x, y, width, height, inset, connectorPitch, cells;
+        public string name, prefix, backing, label, icon;
+        public int x, y, width, height, inset, connectorPitch, cells, labelFontSize;
     }
 
     // The panel owns only preview construction; the shared fitter owns frame internals.
@@ -66,6 +67,25 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
             image.raycastTarget = false;
         }
         frame.gameObject.AddComponent<ResponsiveModularFrameFitter>().ConfigureNativePieces(sprites[p.prefix + "_Clamp"], p.connectorPitch);
+        if (!string.IsNullOrEmpty(p.label))
+        {
+            // Existing shared bitmap typography. Labels are live and independent
+            // of the replaceable visual frame; this preview adds no input owner.
+            var label = GameUi.Label("LiveLabel", root, p.label,
+                new Vector2(p.width - 2 * p.inset, p.height), Vector2.zero, p.labelFontSize);
+            label.alignment = TextAlignmentOptions.CenterGeoAligned;
+            label.textWrappingMode = TextWrappingModes.NoWrap;
+            label.overflowMode = TextOverflowModes.Truncate;
+            PixelTextFitter.ApplyNativeMenu(label, p.labelFontSize);
+            label.gameObject.AddComponent<DungeonPreviewPixelText>().Initialize(Content);
+        }
+        if (!string.IsNullOrEmpty(p.icon))
+        {
+            var icon = sprites[p.icon];
+            var r = TopRect("NativeIcon", root, Mathf.Floor((p.width - icon.rect.width) / 2),
+                Mathf.Floor((p.height - icon.rect.height) / 2), icon.rect.width, icon.rect.height);
+            var image = r.gameObject.AddComponent<Image>(); image.sprite = icon; image.raycastTarget = false;
+        }
     }
 
     static RectTransform TopRect(string name, Transform parent, float x, float y, float w, float h)

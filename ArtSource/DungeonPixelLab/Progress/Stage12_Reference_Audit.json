@@ -274,5 +274,23 @@
     }
   ],
   "stage": "12",
-  "task": "Portrait pipe symmetry correction and top HUD plaques"
+  "task": "Top HUD plaques; completed portrait correction retained unchanged",
+  "actual_image_input": {
+    "field": "style_image.base64",
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "roles": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "palette_copy": false
+  },
+  "supporting_input_limitation": "Flash accepts one native style image for create. Farmer, Pan and current UI references were inspected locally; larger references were not scaled or claimed as transmitted.",
+  "endpoint": "create_image_pro_flash",
+  "provider_docs": [
+    "https://api.pixellab.ai/mcp/docs",
+    "https://api.pixellab.ai/v2/llms.txt"
+  ],
+  "job_id": "7e594107-a72b-453d-9834-0a48b2dd0e2c"
 }

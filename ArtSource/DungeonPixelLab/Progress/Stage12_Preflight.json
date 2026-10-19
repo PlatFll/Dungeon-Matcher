@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_NOT_GENERATED",
+  "status": "COMPLETED",
   "runtime_reference_extent": [
     470,
     298
@@ -77,11 +77,32 @@
     640
   ],
   "design": "Separate cool metal corners/rails, dark fill, small violet fasteners. Distinct from portrait jewels. Live GameUi.TmpFont WAVE 1 and GUIDE labels; separate gear sprite. No baked text or gameplay changes.",
-  "next": "Confirm generation-budget extension, generate one 64x64 dedicated PixelLab plaque source, finish native pieces in LibreSprite, derive integer native bounds from runtime rectangles, test actual text/hit-owner preservation and minimum size.",
+  "next": "Review Stage12 candidate; Stage13 not started.",
   "typography": {
     "asset": "Assets/_Game/Resources/UI/Typography.asset",
     "regular_font_guid": "89d631dec23c343469d9893b4162db9f",
     "tmp_font_guid": "08961eb2bc4abd845a298637c007e39b",
     "font": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset"
-  }
+  },
+  "delivered_native_visual_bounds": {
+    "Wave": [
+      130,
+      16,
+      103,
+      36
+    ],
+    "Guide": [
+      253,
+      23,
+      60,
+      30
+    ],
+    "Settings": [
+      319,
+      23,
+      31,
+      31
+    ]
+  },
+  "settings_visual_note": "31x31 square visual centered inside the native-equivalent 35x31 existing Settings region. Production hit owner and runtime reference rectangle were not edited."
 }

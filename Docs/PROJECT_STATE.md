@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Staged PixelLab dungeon library (2026-10-19, draft PR #203)
 
-The separate asset-production branch has 68 native candidates through Stage11. The portrait's visible pipe profile has now been corrected on all four edges to match the user-marked green reference; the unchanged square connector projects equally around it. Its overfilled mask extends one pixel farther to keep the backing flush. Native/3× Unity captures and resize tests verify this correction while preserving the approved surrounding art. See [current portrait correction and evidence](../ArtSource/DungeonPixelLab/Progress/Portrait_Pipe_Correction.md). Stage12 is requested and its layout/reference preflight is complete, but the separate five-generation budget extension is awaiting a reply. No Stage12 source generation, production integration or merge has occurred.
+The isolated asset-production branch is complete through Stage12 and stopped for review with 79 native candidates. Stage12 adds modular cool-metal Wave/Guide/Settings plaques, a separate gear and live shared Thaleah labels; the corrected portrait, board and earlier environment remain unchanged. Actual Unity captures pass exact 1×/2×/3× and tall-safe-area comparisons, including a live WAVE 999 fitting check. See [Stage12 and verification](../ArtSource/DungeonPixelLab/Progress/Stage_12.md). The user-approved Stage12 extension spent exactly five generations; cumulative spend is 60. No production bindings/gameplay changed. Stage13, production integration and merge have not begun.
 
 ## Three-zone battle presentation (2026-10-18)
 
