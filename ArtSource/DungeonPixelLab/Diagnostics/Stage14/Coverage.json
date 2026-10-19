@@ -1,0 +1,92 @@
+{
+  "native_library": 102,
+  "all_exact_exports": true,
+  "visible_library_sources": 91,
+  "reused_existing_ui_symbols": [
+    "Assets/_Game/Resources/UI/Consumables/Bomb.png",
+    "Assets/_Game/Resources/UI/Consumables/Potion.png",
+    "Assets/_Game/Resources/UI/GlobalMenu/CrownedSkull.png"
+  ],
+  "families": {
+    "BoardFrame": {
+      "library": 10,
+      "visible_at_640": 10,
+      "unused_at_640": []
+    },
+    "BottomHud": {
+      "library": 23,
+      "visible_at_640": 20,
+      "unused_at_640": [
+        "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Clamp.png",
+        "Assets/_Game/Art/DungeonPixelLab/BottomHud/Progress_Fill.png",
+        "Assets/_Game/Art/DungeonPixelLab/BottomHud/Resonance_Clamp.png"
+      ]
+    },
+    "Clutter": {
+      "library": 3,
+      "visible_at_640": 3,
+      "unused_at_640": []
+    },
+    "Fascia": {
+      "library": 5,
+      "visible_at_640": 5,
+      "unused_at_640": []
+    },
+    "FloorTop": {
+      "library": 5,
+      "visible_at_640": 5,
+      "unused_at_640": []
+    },
+    "Gate": {
+      "library": 3,
+      "visible_at_640": 3,
+      "unused_at_640": []
+    },
+    "Hanging": {
+      "library": 4,
+      "visible_at_640": 4,
+      "unused_at_640": []
+    },
+    "PortraitFrame": {
+      "library": 11,
+      "visible_at_640": 11,
+      "unused_at_640": []
+    },
+    "PortraitRecess": {
+      "library": 2,
+      "visible_at_640": 1,
+      "unused_at_640": [
+        "Assets/_Game/Art/DungeonPixelLab/PortraitRecess/Recess_Inset.png"
+      ]
+    },
+    "Support": {
+      "library": 7,
+      "visible_at_640": 7,
+      "unused_at_640": []
+    },
+    "TopPlaques": {
+      "library": 11,
+      "visible_at_640": 11,
+      "unused_at_640": []
+    },
+    "Torch": {
+      "library": 4,
+      "visible_at_640": 4,
+      "unused_at_640": []
+    },
+    "Wall": {
+      "library": 14,
+      "visible_at_640": 7,
+      "unused_at_640": [
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_BL.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_BR.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_TL.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Corner_TR.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Bottom.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Right.png",
+        "Assets/_Game/Art/DungeonPixelLab/Wall/Wall_Edge_Top.png"
+      ]
+    }
+  },
+  "unused_note": "Edge/recess alternates, dormant full-meter fill and optional connectors remain in the approved library. Active scene contains every requested family."
+}

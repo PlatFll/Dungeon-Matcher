@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "main_user_files_preserved": 8,
+  "production_files": {
+    "Assets/_Game/Scenes/Game.unity": "92abbde55ac78bbbb0201b813fcd5fe01b06ee8e90c02ca243588c12b3d9e458",
+    "ProjectSettings/EditorBuildSettings.asset": "87316657a7142d23ea0d8666520259a3cd93d31d2ce955f2a0c69d2df0b3bbf6",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs": "ec545a69ee8b9f99297bbd0d6bed367dc3839ff52924218a54e0b7201b97f7a1",
+    "Assets/_Game/Scripts/UI/WaveTrackerUI.cs": "f1ffc19cc98c2f803fd8d8a53085e493309c65acae835cd58d6d983ec313304e",
+    "Assets/_Game/Scripts/UI/PixelTextFitter.cs": "48e02b1e392f8d93736b7c7f45363b406c2a183cfdeb37ac02a73847044d6fc0",
+    "Assets/_Game/Scripts/UI/ResponsiveModularFrameFitter.cs": "23954c9e4505eda2184d37e6a90f3879642cabc3ebb2d8851b8530845db4e46e",
+    "Assets/_Game/Scripts/UI/GameplayPixelLayoutController.cs": "5764d222fd30fbd51f65f76226a18379efa18cc0276b0c27898d361324161672"
+  },
+  "protected_art_files": 456,
+  "whitespace_only_metadata_restored": [
+    "Assets/_Game/Resources/UI/Consumables/SlotDisabled.png.meta",
+    "Assets/_Game/Resources/UI/Consumables/SlotHighlighted.png.meta",
+    "Assets/_Game/Resources/UI/Consumables/SlotPressed.png.meta"
+  ],
+  "token_identical_trailing_whitespace_normalized": [
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage14Tests.cs.meta"
+  ],
+  "changed_files": [
+    "ArtSource/DungeonPixelLab/Progress/Asset_Manifest.json",
+    "ArtSource/DungeonPixelLab/Progress/PixelLab_Ledger.csv",
+    "ArtSource/DungeonPixelLab/Progress/State.json",
+    "ArtSource/DungeonPixelLab/Review.html",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+    "Assets/_Game/Scripts/ArtPreview/DungeonSideViewArtPreview.cs",
+    "Docs/PROJECT_STATE.md",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/ApprovedArtHashes.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/AssemblyEvidence.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/BuildSettings.sha256",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/Coverage.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/GameScene.sha256",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/PixelValidation.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/SceneDiffReview.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/SceneIdentityPreservation.json",
+    "ArtSource/DungeonPixelLab/Diagnostics/Stage14/UnityTests.xml",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Assembly-1080x1920.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Assembly-1080x2400.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Assembly-360x640.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Assembly-360x800.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Assembly-720x1280.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Lower-masonry-3x.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/SafeArea-1080x2400.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/SafeArea-1084x2404.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/SafeArea-native-content.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Source-vs-Unity.png",
+    "ArtSource/DungeonPixelLab/Previews/Stage14/Top-3x.png",
+    "ArtSource/DungeonPixelLab/Progress/Stage14_Reference_Audit.json",
+    "ArtSource/DungeonPixelLab/Progress/Stage_14.md",
+    "ArtSource/DungeonPixelLab/Review_Stage13.html",
+    "ArtSource/DungeonPixelLab/Scripts/check_stage14_ui.py",
+    "ArtSource/DungeonPixelLab/Scripts/verify_stage14.py",
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage14Tests.cs",
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage14Tests.cs.meta"
+  ],
+  "base_commit": "fb63961f5facbbbd1b2e1cd853fff6a509b61a2a",
+  "unity_tests": {
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0"
+  }
+}

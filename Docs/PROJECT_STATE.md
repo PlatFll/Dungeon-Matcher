@@ -22,7 +22,7 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ## Staged PixelLab dungeon library (2026-10-19, draft PR #203)
 
-The isolated asset-production branch is complete through Stage13 and stopped for review with 102 native candidates. The approved Stage12 plaques and all earlier artwork remain unchanged. Stage13 adds modular bottom HUD frames, pale supply shells, purple resonance ornament, live bitmap label and integer-clipped progress rail, using unchanged existing potion/bomb/crowned-skull icons. Actual Unity captures pass exact 1×/2×/3× and tall-safe-area comparisons, with resize and meter-state checks. See [Stage13 and verification](../ArtSource/DungeonPixelLab/Progress/Stage_13.md). The user-approved extension spent exactly five generations; cumulative spend is 65. Production gameplay/bindings, Stage14 and merge remain untouched.
+The isolated asset-production branch is complete through Stage14 and stopped for review. All 102 approved native candidates and 456 protected art files remain unchanged. The art-only scene now assembles all families with corrected far-gate/pillar/floor layering and a native 360×800 extension: top/bottom stay on safe-area edges and the board centers between them. Seven actual Unity configurations, exact 1×/2×/3× pixels, source-to-camera crops and safe-area checks pass; the Unity validator passed. See [Stage14 assembly and verification](../ArtSource/DungeonPixelLab/Progress/Stage_14.md). No new generation spending; cumulative spend remains 65. Production integration, phone validation, Stage15 and merge remain untouched. The Stage00 production-layout mapping caveat is still open.
 
 ## Three-zone battle presentation (2026-10-18)
 

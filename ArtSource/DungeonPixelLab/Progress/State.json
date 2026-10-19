@@ -2,7 +2,7 @@
   "project": "Dungeon Matcher",
   "workflow": "PixelLab-first staged dungeon zone",
   "branch": "feature/dungeon-zone-pixellab-asset-library",
-  "current_stage": "13",
+  "current_stage": "14",
   "stages": {
     "00": "DONE",
     "01": "DONE",
@@ -18,19 +18,19 @@
     "11": "DONE",
     "12": "DONE",
     "13": "DONE",
-    "14": "NOT_STARTED",
+    "14": "DONE",
     "15": "NOT_STARTED",
     "16": "NOT_STARTED"
   },
-  "approval": "STAGE13_CANDIDATE_PENDING_USER_REVIEW; STAGE12_AND_PRIOR_ART_PRESERVED",
+  "approval": "STAGE14_ASSEMBLY_PENDING_USER_REVIEW; STAGE13_AND_PRIOR_ART_USER_APPROVED",
   "cumulative_billable_generations": 65,
   "soft_budget_generation_equivalents": 65,
   "PixelLab_status": "CONNECTED_TIER_2",
   "golden_reference_sha": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
-  "notes": "Stage13 completed: 23 native bottom HUD parts, unchanged symbols and live label/meter in isolated preview. Four render sizes pass; all 361 prior art files and pixels outside new bottom HUD are unchanged. No Stage14, production integration or merge.",
+  "notes": "Stage14 assembled and verified the art-only scene at seven standard/tall/safe-area configurations. All 456 protected art files unchanged; no paid calls. Stage15, production integration and merge not started.",
   "base_commit": "1ee1fdb02e409c9d6b17785d84a76d36bab6342c",
   "stopped": true,
-  "next_prompt": "PROMPTS/14_ASSEMBLE_ART_ONLY_UNITY_SCENE.txt",
+  "next_prompt": "PROMPTS/15_FINAL_PIXEL_QA_AND_HANDOFF.txt",
   "generations_remaining_start": 994.2,
   "generations_remaining_end": 989.2,
   "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203",
@@ -85,5 +85,6 @@
     "quoted_and_allocated_generations": 5,
     "actual_generations": 5,
     "prior_cumulative_budget": 60
-  }
+  },
+  "stage13_user_approval": "Looks good, go ahead with stage 14\u2014assemble the art-only Unity scene. Keep all approved art unchanged, stop when that stage is complete, and show me the preview."
 }

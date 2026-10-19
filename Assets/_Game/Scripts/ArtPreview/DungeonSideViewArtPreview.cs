@@ -14,6 +14,8 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     public TextAsset placementManifest;
     public int width = 1080, height = 1920;
     public Rect safeArea = new Rect(0, 0, 1080, 1920);
+    public bool fitScreenInPlayMode = true;
+    public int LogicalHeight { get; private set; }
     public int PixelScale { get; private set; }
     public Rect ContentPixels { get; private set; }
     public RectTransform Content { get; private set; }
@@ -30,9 +32,9 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     [Serializable] public class NativeLabel { public string name, text; public int x, y, width, height, fontSize, layer; }
 
     // The panel owns only preview construction; the shared fitter owns frame internals.
-    void BuildPanel(NativePanel p, Transform parent, Dictionary<string, Sprite> sprites)
+    void BuildPanel(NativePanel p, Transform parent, Dictionary<string, Sprite> sprites, int offsetY)
     {
-        var root = TopRect(p.name + " panel", parent, p.x, p.y, p.width, p.height);
+        var root = TopRect(p.name + " panel", parent, p.x, p.y + offsetY, p.width, p.height);
         var mask = TopRect("InteriorMask", root, 0, 0, 0, 0);
         mask.anchorMin = Vector2.zero; mask.anchorMax = Vector2.one;
         mask.offsetMin = new Vector2(p.inset, p.inset); mask.offsetMax = -mask.offsetMin;
@@ -105,6 +107,45 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         return r;
     }
 
+    // Preview-only adapter: top and bottom stay on safe-area edges, with the
+    // unchanged board centered between them, as in the live layout owner.
+    // The production layout's larger minimum width is intentionally untouched.
+    void LateUpdate()
+    {
+        if (!fitScreenInPlayMode || !Application.isPlaying) return;
+        if (Content && width == Screen.width && height == Screen.height && safeArea == Screen.safeArea) return;
+        width = Screen.width; height = Screen.height; safeArea = Screen.safeArea;
+        Rebuild();
+    }
+
+    IEnumerable<Placement> ExtendedPlacements(Manifest manifest, Dictionary<string, Sprite> sprites, int extra)
+    {
+        foreach (var source in manifest.placements)
+        {
+            // The old 16px terminal row is replaced by complete repeat tiles.
+            if (extra > 0 && source.layer == 1 && source.y == 624) continue;
+            var p = new Placement { name = source.name, x = source.x, y = source.y,
+                layer = source.layer, clip = source.clip };
+            if (p.name == "Support_Edge_Foot" || p.y >= 530 && p.layer > 30) p.y += extra;
+            yield return p;
+        }
+        if (extra == 0) yield break;
+        for (int y = 624; y < LogicalHeight; y += 48)
+        {
+            int row = ((y / 48) % 13) * 48;
+            foreach (var source in manifest.placements.Where(p => p.layer == 1 && p.y == row))
+                yield return new Placement { name = source.name, x = source.x, y = y, layer = 1 };
+        }
+        foreach (var name in new[] { "Support_Corner_Left", "Support_Corner_Right" })
+        {
+            var source = manifest.placements.First(p => p.name == name);
+            int tileHeight = (int)sprites[name].rect.height;
+            for (int y = 632; y < LogicalHeight - 8; y += tileHeight)
+                yield return new Placement { name = name, x = source.x, y = y, layer = 12,
+                    clip = new[] { source.x, 632, (int)sprites[name].rect.width, extra } };
+        }
+    }
+
     [ContextMenu("Rebuild reference art preview")]
     public void Rebuild()
     {
@@ -116,8 +157,10 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         var lookup = modules.ToDictionary(s => s.name, s => s);
         PixelScale = Mathf.FloorToInt(Mathf.Min(safeArea.width / 360f, safeArea.height / 640f));
         if (PixelScale < 1) throw new InvalidOperationException("Preview safe area must fit the 360x640 native reference.");
+        LogicalHeight = Mathf.Clamp(Mathf.FloorToInt(safeArea.height / PixelScale), 640, 800);
+        int extra = LogicalHeight - 640;
         ContentPixels = new Rect(Mathf.Floor(safeArea.x + (safeArea.width - 360 * PixelScale) / 2),
-            Mathf.Floor(safeArea.y + (safeArea.height - 640 * PixelScale) / 2), 360 * PixelScale, 640 * PixelScale);
+            Mathf.Floor(safeArea.y + (safeArea.height - LogicalHeight * PixelScale) / 2), 360 * PixelScale, LogicalHeight * PixelScale);
         var old = previewCanvas.transform.Find("ReferenceContent");
         if (old) { old.gameObject.SetActive(false); if (Application.isPlaying) Destroy(old.gameObject); else DestroyImmediate(old.gameObject); }
         Pieces.Clear();
@@ -132,14 +175,18 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         canvas.position = new Vector3(-width / 128f, -height / 128f, 0); canvas.localScale = Vector3.one / 64;
         Content = new GameObject("ReferenceContent", typeof(RectTransform), typeof(RectMask2D)).GetComponent<RectTransform>();
         Content.SetParent(canvas, false); Content.anchorMin = Content.anchorMax = Content.pivot = Vector2.zero;
-        Content.anchoredPosition = ContentPixels.position; Content.sizeDelta = new Vector2(360, 640);
+        Content.anchoredPosition = ContentPixels.position; Content.sizeDelta = new Vector2(360, LogicalHeight);
         Content.localScale = Vector3.one * PixelScale;
         string[] names = {"01 Base walls", "02 Standing platform", "03 Structural masonry", "04 Props", "05 Top UI shells", "06 Bottom HUD shells"};
-        var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, 640)).ToArray();
-        if (manifest.panels != null) foreach (var panel in manifest.panels) BuildPanel(panel, layers[panel.layer == 5 ? 5 : 4], lookup);
+        var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, LogicalHeight)).ToArray();
+        // Keep serialized layer identities, but render far structures before the ledge.
+        layers[2].SetSiblingIndex(1);
+        if (manifest.panels != null) foreach (var panel in manifest.panels)
+            BuildPanel(panel, layers[panel.layer == 5 ? 5 : 4], lookup,
+                panel.layer == 5 ? extra : panel.name == "Board" ? extra / 2 : 0);
         if (manifest.labels != null) foreach (var item in manifest.labels)
         {
-            var r = TopRect(item.name, layers[item.layer], item.x, item.y, item.width, item.height);
+            var r = TopRect(item.name, layers[item.layer], item.x, item.y + (item.layer == 5 ? extra : 0), item.width, item.height);
             var label = GameUi.Label("LiveLabel", r, item.text, r.sizeDelta, Vector2.zero, item.fontSize);
             label.alignment = TextAlignmentOptions.CenterGeoAligned;
             label.textWrappingMode = TextWrappingModes.NoWrap; label.overflowMode = TextOverflowModes.Truncate;
@@ -147,10 +194,10 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
             label.gameObject.AddComponent<DungeonPreviewPixelText>().Initialize(Content);
         }
         var clips = new Dictionary<string, RectTransform>();
-        foreach (var p in manifest.placements.OrderBy(p => p.layer))
+        foreach (var p in ExtendedPlacements(manifest, lookup, extra).OrderBy(p => p.layer))
         {
             if (!lookup.TryGetValue(p.name, out var sprite)) throw new InvalidOperationException("Missing native asset " + p.name);
-            int group = p.layer <= 2 ? 0 : p.layer <= 11 ? 1 : p.layer <= 14 ? 2 : p.layer <= 30 ? 3 : p.y < 530 ? 4 : 5;
+            int group = p.layer <= 2 ? 0 : p.layer <= 11 ? 1 : p.layer <= 14 || p.name.StartsWith("Gate_", StringComparison.Ordinal) ? 2 : p.layer <= 30 ? 3 : p.y < 530 ? 4 : 5;
             Transform parent = layers[group]; int x = p.x, y = p.y;
             if (p.clip != null && p.clip.Length == 4)
             {
