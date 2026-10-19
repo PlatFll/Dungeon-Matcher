@@ -50,3 +50,8 @@ stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,refere
 09,2026-10-19T02:03:18.182364+00:00,create_object_pro_flash,b170d4ee-f71b-4657-bc35-06a0eb50f4b5,barrels/skulls/bones,bones source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage09/Bones_Raw_PixelLab.png,Exports/Stage09/,Actual golden PNG; one direction; LibreSprite native cleanup
 09,2026-10-19T02:03:18.182364+00:00,get_object,b170d4ee-f71b-4657-bc35-06a0eb50f4b5,barrels/skulls/bones,Completed object source,,,0,SUCCESS,,,Object e13208f9-f411-4101-a823-c814d7ae2cbb
 09,2026-10-19T02:03:18.182364+00:00,get_balance,,barrels/skulls/bones,Balance after bones,,,0,SUCCESS,,,1009.20; delta5; Stage09 total10; cumulative45
+10,2026-10-19T02:27:14.841093+00:00,get_balance,,portrait frame,Starting live balance,,,0,SUCCESS,,,1009.20; user authorized 5 extra generations for Stage10
+10,2026-10-19T02:27:14.841093+00:00,get_pro_flash_capabilities,,portrait frame,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; lookup free
+10,2026-10-19T02:27:14.841093+00:00,create_image_pro_flash,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Isolated corner and rails,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage10/Frame_Raw_PixelLab.png,Exports/Stage10/,Actual Rattlebones reference; native LibreSprite adaptation
+10,2026-10-19T02:27:14.841093+00:00,get_image,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Completed source,,,0,SUCCESS,,,Completion explicitly charged5
+10,2026-10-19T02:27:14.841093+00:00,get_balance,,portrait frame,Balance after source,,,0,SUCCESS,,,1004.20; delta5; cumulative50

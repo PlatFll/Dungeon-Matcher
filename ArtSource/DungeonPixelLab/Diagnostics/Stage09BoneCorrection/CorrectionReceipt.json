@@ -1,0 +1,23 @@
+{
+  "request": "Restore the fuller raw bones; clean only coloring.",
+  "mask": "Exact raw loose-bone alpha from source rectangle [30,38,55,50], translated by [1,0] into 26x12.",
+  "native_canvas": [
+    26,
+    12
+  ],
+  "opaque_colors": 3,
+  "no_resampling": true,
+  "no_generation": true,
+  "barrel_skull_and_sources_unchanged": true,
+  "placement_unchanged": [
+    275,
+    170
+  ],
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "all_eight_captures_exact": true,
+  "export_sha256": "d126635b79178050a1fe3ce5e0657e61c0fddebe12d197e589a925b8f8c5ba10"
+}

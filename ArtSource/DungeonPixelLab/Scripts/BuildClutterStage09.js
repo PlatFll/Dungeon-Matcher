@@ -36,11 +36,6 @@ for(var y=38;y<50;y++)for(var x=30;x<55;x++)if(bones.p[(y*64+x)*4+3]){
  if(c!=="0a0d11")c=y<=44?"ccc3b2":y<=46?"a39796":"766879";
  pixel(loose,x-29,y-38,c);
 }
-// The raw fragment silhouettes read like feet at scene size. Repair those small
-// components into narrow shafts with clear knuckled ends on the same native grid.
-loose=blank(26,12);
-function fragment(x,y,rows){var colors={O:"0a0d11",b:"ccc3b2",s:"a39796"};for(var j=0;j<rows.length;j++)for(var i=0;i<rows[j].length;i++){var c=rows[j].charAt(i);if(c!==".")pixel(loose,x+i,y+j,colors[c]);}}
-fragment(2,4,["OO......OO","ObO....ObO","ObbOOOObbO",".ObbbbbssO","ObbOOOObbO","OO......OO"]);
-fragment(13,4,[".OO......OO","ObbO....ObO","ObbbOOOOssO",".ObbbbbbssO","..OOO.OObbO","........OO."]);
+// User correction: keep the fuller raw silhouette exactly; color cleanup only.
 save(skull,"Clutter_Skull");save(loose,"Clutter_Bones");
-console.log("STAGE09_COMPLETE 3 native prop modules; barrel/skull silhouettes preserved, bone fragments clarified");
+console.log("STAGE09_COMPLETE 3 native prop modules; barrel/skull silhouettes preserved, raw bone silhouettes restored");

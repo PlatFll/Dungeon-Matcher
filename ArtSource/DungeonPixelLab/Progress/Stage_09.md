@@ -1,3 +1,11 @@
+# Stage 09 correction — fuller raw bones restored
+
+2026-10-19 user correction supersedes the narrow bone-fragment redraw described in the original report below. The loose bones now retain the exact raw PixelLab alpha silhouette, cleaned to three intentional opaque colors through LibreSprite. The 26×12 canvas, placement (275,170), binary transparency and floor contact y180 remain unchanged. Barrel, skull, source art and all earlier approved art are byte-identical.
+
+Re-run Stage09 Unity test: **1 passed, 0 failed**. All eight updated captures match native composition exactly; the source-mask equality check passes. No generation/spending for this correction. Rejected thin artwork remains in Diagnostics/Stage09BoneCorrection/. The prior validator receipt describes the original Stage09 run; current Stage10 validation also covers this updated source state.
+
+---
+
 # Stage 09 — DONE; stopped for user review
 
 2026-10-19. Barrels, skull and loose bones only, following the user's Stage 08 approval and explicit authorization to increase the PixelLab budget for this stage. No Stage 10, production integration or merge.

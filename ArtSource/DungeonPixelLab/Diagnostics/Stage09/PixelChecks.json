@@ -84,13 +84,13 @@
         255
       ],
       "bounds": [
+        3,
         2,
-        4,
         24,
         10
       ],
-      "sha256": "ef72c881ca4666360c5d83d75ebbfcd1de3bb1f7da2c63ee67d402daf7cd0f7b",
-      "ase_sha256": "6ab9f1d6cf5f86b6745b1810e059d1470e28b4099e5dbd22e2afe31d85c0bb16",
+      "sha256": "d126635b79178050a1fe3ce5e0657e61c0fddebe12d197e589a925b8f8c5ba10",
+      "ase_sha256": "79f7a738a13743c59f290ac1d81b9dc2972907b58bf1822639534fe435abcdec",
       "native_cel_equals_png": true,
       "status": "CANDIDATE_PENDING_USER"
     }
@@ -114,7 +114,7 @@
   "raw_bones_sha256": "17b75a09c4349b221d0b0314d74f32243bb73439d70b27e9817c1ecab1e10631",
   "barrel_skull_silhouettes_preserved": true,
   "barrel_wood_pixels_unchanged": true,
-  "bone_fragments": "Two raw fragments clarified into knuckled ends and narrow shafts in LibreSprite; their contour was edited at native pitch.",
+  "bone_fragments": "Exact fuller raw silhouettes restored at native pitch; only coloring cleaned, alpha mask identical.",
   "connected_components": {
     "Clutter_Barrel": [
       1093
@@ -123,8 +123,8 @@
       304
     ],
     "Clutter_Bones": [
-      42,
-      43
+      57,
+      62
     ]
   },
   "contact": [
@@ -151,8 +151,8 @@
     {
       "name": "Clutter_Bones",
       "world_occupied_bounds": [
-        277,
-        174,
+        278,
+        172,
         299,
         180
       ],

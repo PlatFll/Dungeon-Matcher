@@ -2,7 +2,7 @@
   "project": "Dungeon Matcher",
   "workflow": "PixelLab-first staged dungeon zone",
   "branch": "feature/dungeon-zone-pixellab-asset-library",
-  "current_stage": "09",
+  "current_stage": "10",
   "stages": {
     "00": "DONE",
     "01": "DONE",
@@ -14,7 +14,7 @@
     "07": "DONE",
     "08": "DONE",
     "09": "DONE",
-    "10": "NOT_STARTED",
+    "10": "DONE",
     "11": "NOT_STARTED",
     "12": "NOT_STARTED",
     "13": "NOT_STARTED",
@@ -22,17 +22,17 @@
     "15": "NOT_STARTED",
     "16": "NOT_STARTED"
   },
-  "approval": "STAGES_01_02_03_04_05_06_07_08_APPROVED; STAGE_09_PENDING_USER_REVIEW",
-  "cumulative_billable_generations": 45,
-  "soft_budget_generation_equivalents": 45,
+  "approval": "STAGES_01_TO_08_APPROVED; STAGE09_RAW_BONES_CORRECTION_REQUESTED_AND_DONE; STAGE10_PENDING_USER_REVIEW",
+  "cumulative_billable_generations": 50,
+  "soft_budget_generation_equivalents": 50,
   "PixelLab_status": "CONNECTED_TIER_2",
   "golden_reference_sha": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
-  "notes": "Stage09 environmental props complete and verified. User authorized budget extension for Stage09; planned and spent 10. No Stage10, production integration or merge.",
+  "notes": "Fuller raw bone silhouettes restored with color-only cleanup. Stage10 native portrait frame complete; no Stage11, production integration or merge.",
   "base_commit": "1ee1fdb02e409c9d6b17785d84a76d36bab6342c",
   "stopped": true,
-  "next_prompt": "PROMPTS/10_GENERATE_PLAYER_FRAME_KIT.txt",
-  "generations_remaining_start": 1019.2,
-  "generations_remaining_end": 1009.2,
+  "next_prompt": "PROMPTS/11_GENERATE_BOARD_FRAME_AND_CELLS.txt",
+  "generations_remaining_start": 1009.2,
+  "generations_remaining_end": 1004.2,
   "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203",
   "stage01_user_approval": "2026-10-19: Looks good, go ahead with stage 2.",
   "stage02_user_approval": "2026-10-19: Looks good, go ahead with stage 3.",
@@ -49,5 +49,14 @@
     "actual_generations": 10,
     "prior_cumulative_budget": 35,
     "authorization": "Looks good, go ahead with stage 9\u2014the barrels, skulls, and bones. I approve increasing the PixelLab budget for this stage. Use PixelLab and LibreSprite, keep approved art unchanged, then stop and show me the preview."
+  },
+  "stage09_user_feedback": "i LIKE THE FAT SHAPE OF THE RAW BONES MORE SO REVERT THEM TO THAT BUT CLEAN UP THEIR COLORING AND THEN START with the next stage",
+  "stage10_budget_extension": {
+    "user_authorized": true,
+    "scope": "Stage10 only",
+    "authorization": "Approve 5 generations for Stage 10",
+    "quoted_and_allocated_generations": 5,
+    "actual_generations": 5,
+    "prior_cumulative_budget": 45
   }
 }
