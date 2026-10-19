@@ -19,13 +19,15 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     public RectTransform Content { get; private set; }
     public readonly List<RectTransform> Pieces = new List<RectTransform>();
     [Serializable] public class Placement { public string name; public int x, y, layer; public int[] clip; }
-    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; public NativePanel[] panels; }
+    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; public NativePanel[] panels; public NativeLabel[] labels; }
 
     [Serializable] public class NativePanel
     {
-        public string name, prefix, backing, label, icon;
-        public int x, y, width, height, inset, connectorPitch, cells, labelFontSize;
+        public string name, prefix, backing, label, icon, fill;
+        public int x, y, width, height, inset, connectorPitch, cells, labelFontSize, layer;
     }
+
+    [Serializable] public class NativeLabel { public string name, text; public int x, y, width, height, fontSize, layer; }
 
     // The panel owns only preview construction; the shared fitter owns frame internals.
     void BuildPanel(NativePanel p, Transform parent, Dictionary<string, Sprite> sprites)
@@ -43,6 +45,12 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
             fill.offsetMin = -backing.rect.size; fill.offsetMax = backing.rect.size;
             var image = fill.gameObject.AddComponent<Image>(); image.sprite = backing;
             image.type = Image.Type.Tiled; image.raycastTarget = false; image.pixelsPerUnitMultiplier = 1;
+        }
+        if (!string.IsNullOrEmpty(p.fill))
+        {
+            // Art-only meter; integer clipping is independent of gameplay energy.
+            var meter = root.gameObject.AddComponent<DungeonPreviewNativeMeter>();
+            meter.Initialize(sprites[p.fill], p.inset);
         }
         if (p.cells > 0)
         {
@@ -85,6 +93,7 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
             var r = TopRect("NativeIcon", root, Mathf.Floor((p.width - icon.rect.width) / 2),
                 Mathf.Floor((p.height - icon.rect.height) / 2), icon.rect.width, icon.rect.height);
             var image = r.gameObject.AddComponent<Image>(); image.sprite = icon; image.raycastTarget = false;
+            if (p.layer == 5) r.gameObject.AddComponent<DungeonPreviewNativeIcon>().Initialize(root);
         }
     }
 
@@ -127,7 +136,16 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         Content.localScale = Vector3.one * PixelScale;
         string[] names = {"01 Base walls", "02 Standing platform", "03 Structural masonry", "04 Props", "05 Top UI shells", "06 Bottom HUD shells"};
         var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, 640)).ToArray();
-        if (manifest.panels != null) foreach (var panel in manifest.panels) BuildPanel(panel, layers[4], lookup);
+        if (manifest.panels != null) foreach (var panel in manifest.panels) BuildPanel(panel, layers[panel.layer == 5 ? 5 : 4], lookup);
+        if (manifest.labels != null) foreach (var item in manifest.labels)
+        {
+            var r = TopRect(item.name, layers[item.layer], item.x, item.y, item.width, item.height);
+            var label = GameUi.Label("LiveLabel", r, item.text, r.sizeDelta, Vector2.zero, item.fontSize);
+            label.alignment = TextAlignmentOptions.CenterGeoAligned;
+            label.textWrappingMode = TextWrappingModes.NoWrap; label.overflowMode = TextOverflowModes.Truncate;
+            PixelTextFitter.ApplyNativeMenu(label, item.fontSize);
+            label.gameObject.AddComponent<DungeonPreviewPixelText>().Initialize(Content);
+        }
         var clips = new Dictionary<string, RectTransform>();
         foreach (var p in manifest.placements.OrderBy(p => p.layer))
         {
