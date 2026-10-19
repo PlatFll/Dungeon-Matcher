@@ -1,0 +1,59 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-2f790c8d-2d38-4144-bda9-c879b53dc1ee.log",
+  "log_sha256": "a9edf3935a153fe58c6f12f6c3974b21a812a9cd62ba38dcf6772134a991db14",
+  "test_xml_sha256": "8a2264131b93ce3aae3a14c3d22a144e26a1e35b56cd01519e0b145ef6787214",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage05Tests.cs": "9354f098aac76e91d80d20d7a20eb6d6b154836b7366037d551c6bdd568acfa2",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "5673b907a143cc7cc4402b8db7295ef5d2a12161515292e78f5cc67ffbdf2a18",
+    "Assets/_Game/Art/DungeonPixelLab/Stage05GatePlacement.json": "fbca6225eba9493addf61411fead5c61964cfeb9abec900f7ab3ce6a641ef2a3"
+  },
+  "main_user_files_preserved": 8,
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Gate/Gate_Arch.png.meta",
+      "before_sha256": "35db2a18146faf70d43931f6eb40c60c2c24f0512c069b8261bb3903765533c7",
+      "after_sha256": "dac813a489862cce8ce293ccff2c4dd5267455f153a51440b6980af8aea6e275",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Gate/Gate_Hardware.png.meta",
+      "before_sha256": "8a64746e682a39968b72b3cbfbaf9cede831cecfb9d4aa7fe4b921a696825fd5",
+      "after_sha256": "1557c013c7dd38e3b1f860d73a2e61d9dd250622c96127551f42c77c5ed44725",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Gate/Gate_Leaf.png.meta",
+      "before_sha256": "6f7c103e4471baca1592682797a9d6133bccf2f314b3c79b51d36d212d458fd2",
+      "after_sha256": "f0cdf73eaa097818fad39a2b7d158bba0f6cd85691820f04abbd5a576bf55e59",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Gate.meta",
+      "before_sha256": "f8d5142d453b7864300baa5767b2879098b0cdace03aa5d9ce7a19d512fa9bae",
+      "after_sha256": "9f1e6dd2c2e88f2ba2a7ae056316ddfbea9adfb450997a887bf20cd7e15b9068",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage05GatePlacement.json.meta",
+      "before_sha256": "8848769de2b6112485b1bbe294e6825803736bfc00b8ed5647fb4245f9b2a963",
+      "after_sha256": "44fad5adb303d81d4ff8092ef767a4a279f5b5ac60b0e1dd9c2fd85cfd7e38fe",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage05Tests.cs.meta",
+      "before_sha256": "9002dcbdfa064128c19353559574a01fef1838da677a0bb991ee00d855ed309f",
+      "after_sha256": "62e16f2dd164fd35e8d82a1a70cc3533f9a038bfa3578c93dc6d163b445eeddb",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "5673b907a143cc7cc4402b8db7295ef5d2a12161515292e78f5cc67ffbdf2a18",
+      "after_sha256": "e6fa5312f55fed06615998e52e80884cea16b05f00d9803f1f4b9e251c078ae3",
+      "trailing_whitespace_only": true
+    }
+  ]
+}
