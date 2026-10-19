@@ -1,0 +1,299 @@
+{
+  "assets": [
+    {
+      "name": "Torch_Fixture",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage07/Torch_Fixture.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage07/Torch_Fixture.aseprite",
+      "dimensions": [
+        32,
+        56
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#BC5426",
+        "#E97E27",
+        "#F6B739",
+        "#FFF09A"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        6,
+        26,
+        26,
+        51
+      ],
+      "sha256": "eb223284edc2aa6cc3cd0d4ba56e303a38151c68b5763c7d5e6765f2aaff1bfc",
+      "ase_sha256": "defa078b8607ae25f695feee5bbff7ebb422c91e5ac4ee4571061f3a7098a7c5",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Torch_Flame",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage07/Torch_Flame.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage07/Torch_Flame.aseprite",
+      "dimensions": [
+        32,
+        56
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#BC5426",
+        "#E97E27",
+        "#F6B739",
+        "#FFF09A"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        7,
+        4,
+        25,
+        26
+      ],
+      "sha256": "7eb6dbe1b7fb9d2c516252b44945fe4f03c568e77c95a0eb1740da8e1cee3d71",
+      "ase_sha256": "ab23fd9ba8dd0ad1d6fc5135a5fbb6a3a08e8d9707c436b5fb44730e71222596",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Torch_Light_Left",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage07/Torch_Light_Left.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage07/Torch_Light_Left.aseprite",
+      "dimensions": [
+        64,
+        72
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#36303F",
+        "#483441",
+        "#4E3B49",
+        "#60434D",
+        "#65403E",
+        "#7A555B",
+        "#89523F",
+        "#92543B",
+        "#A36A4A",
+        "#B77543"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        8,
+        8,
+        57,
+        63
+      ],
+      "sha256": "dd4d319b87480fd0458096e3db485fa26b9ae9c1cca3459a0bf44782e936b6d8",
+      "ase_sha256": "a9de2ea37e2e5f8be8eb63070c645e8f044c21e4a941412635f4453d4f2876b7",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Torch_Light_Right",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage07/Torch_Light_Right.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage07/Torch_Light_Right.aseprite",
+      "dimensions": [
+        56,
+        72
+      ],
+      "opaque_colors": 13,
+      "palette": [
+        "#36303F",
+        "#483441",
+        "#4E3B49",
+        "#60434D",
+        "#65403E",
+        "#744332",
+        "#7A555B",
+        "#89523F",
+        "#92543B",
+        "#A36A4A",
+        "#A9633E",
+        "#B77543",
+        "#C9864C"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        8,
+        8,
+        54,
+        64
+      ],
+      "sha256": "59bc11d4910c61025318ec0ee9293be2dd003fbd06f7276fb16a57b96dac11d1",
+      "ase_sha256": "c28074ba89727ad7583cb7bb78527717ed30c141af6709f34ba8014123ed699c",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "combined_palette_count": 20,
+  "combined_palette": [
+    "#0A0D11",
+    "#20202C",
+    "#36303F",
+    "#3D3B50",
+    "#483441",
+    "#4E3B49",
+    "#60434D",
+    "#65403E",
+    "#744332",
+    "#7A555B",
+    "#89523F",
+    "#92543B",
+    "#A36A4A",
+    "#A9633E",
+    "#B77543",
+    "#BC5426",
+    "#C9864C",
+    "#E97E27",
+    "#F6B739",
+    "#FFF09A"
+  ],
+  "raw_source_sha256": "d1babe168ac0c29d4744df627488b582704540743457065cd4504d48f003b2f5",
+  "torch_assembly_dimensions": [
+    32,
+    56
+  ],
+  "torch_occupied_bounds": [
+    6,
+    4,
+    26,
+    51
+  ],
+  "torch_count": 2,
+  "placed_modules": 6,
+  "light_overlays": [
+    {
+      "name": "Torch_Light_Left",
+      "opaque_pixels": 1428,
+      "world_bounds": [
+        104,
+        76,
+        153,
+        131
+      ],
+      "mortar_preserved": true
+    },
+    {
+      "name": "Torch_Light_Right",
+      "opaque_pixels": 1419,
+      "world_bounds": [
+        312,
+        76,
+        358,
+        132
+      ],
+      "mortar_preserved": true
+    }
+  ],
+  "fixture_silhouette_preserved": true,
+  "iron_body_opaque_colors": 3,
+  "flame_opaque_colors": 4,
+  "flame_peak_luma": 236.98,
+  "light_peak_luma": 144.06,
+  "central_combat_area_unchanged": [
+    176,
+    0,
+    284,
+    640
+  ],
+  "floor_and_lower_area_unchanged_from_y": 142,
+  "clipped_sprite_bounds": 0,
+  "protected_art_hashes": 168,
+  "prior_placements_preserved": 194,
+  "reference_hashes_unchanged": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    }
+  ],
+  "native_resampling": "none",
+  "production_scene_and_build_settings": "unchanged; asserted in Unity test"
+}

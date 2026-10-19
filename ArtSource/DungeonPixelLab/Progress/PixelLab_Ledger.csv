@@ -29,3 +29,8 @@ stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,refere
 06,2026-10-19T01:18:40.357229+00:00,create_image_pro_flash,92555034-f78c-4284-8577-3c2b62b63b35,pillars/support stone,"Native violet stone pilaster, stepped cap and foot",64x96,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage06/Pillar_Raw_PixelLab.png,Exports/Stage06/,Actual style PNG; no retry; native LibreSprite module authoring
 06,2026-10-19T01:18:40.357229+00:00,get_image,92555034-f78c-4284-8577-3c2b62b63b35,pillars/support stone,Completed source and receipt,,,0,SUCCESS,,,Charge5 confirmed
 06,2026-10-19T01:18:40.357229+00:00,get_balance,,pillars/support stone,Ending live balance,,,0,SUCCESS,,,1030.20 remaining; delta5; cumulative24/35
+07,2026-10-19T01:32:33.835314+00:00,get_balance,,torches/local light,Starting live balance,,,0,SUCCESS,,,1030.20 remaining; Tier2
+07,2026-10-19T01:32:33.835314+00:00,get_pro_flash_capabilities,,torches/local light,64x64 create quote,64x64,,0,SUCCESS,,,5 provisional; lookup free
+07,2026-10-19T01:32:33.835314+00:00,create_image_pro_flash,69948254-6267-434c-b80a-f1bf562bdb73,torches/local light,Small cool iron wall brazier with amber flame,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage07/Torch_Raw_PixelLab.png,Exports/Stage07/,Actual style PNG; no retry; native LibreSprite cleanup and local opaque light overlays
+07,2026-10-19T01:32:33.835314+00:00,get_image,69948254-6267-434c-b80a-f1bf562bdb73,torches/local light,Completed source and receipt,,,0,SUCCESS,,,Charge5 confirmed
+07,2026-10-19T01:32:33.835314+00:00,get_balance,,torches/local light,Ending live balance,,,0,SUCCESS,,,1025.20 remaining; delta5; cumulative29/35
