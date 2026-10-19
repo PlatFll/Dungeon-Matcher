@@ -1,7 +1,7 @@
 {
-  "stage": "05",
+  "stage": "06",
   "status": "DONE_PENDING_USER_ART_REVIEW",
-  "production_candidate_count": 29,
+  "production_candidate_count": 36,
   "paid_jobs": [
     {
       "stage": "01",
@@ -47,6 +47,18 @@
       "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP",
       "style_input": "Actual native Rattlebones PNG via style_image.base64; outline/detail/shading true; color_palette false",
       "request": "ArtSource/DungeonPixelLab/Progress/Stage05_PixelLab_Request.json"
+    },
+    {
+      "stage": "06",
+      "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+      "image_id": "f0fc35e1-f6b0-5ab2-9899-cebd7b0210d8",
+      "endpoint": "create_image_pro_flash",
+      "billed_generation_equivalents": 5,
+      "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+      "raw_source_sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+      "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP",
+      "style_input": "Actual native Rattlebones PNG via style_image.base64; outline/detail/shading true; color_palette false",
+      "request_and_receipts": "ArtSource/DungeonPixelLab/Progress/Stage06_PixelLab_Receipt.json"
     }
   ],
   "artifacts": [
@@ -1015,6 +1027,192 @@
       "sha256": "49c26246b8cabae56bf9bf881bc01f1316e15ebfc071b072c454b56843724017",
       "status": "DIAGNOSTIC_OR_REVIEW",
       "pixel_lab_lineage": "07e64fd5-124c-40ff-9587-e56e14c67cf0"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage06/Pillar_Raw_PixelLab.png",
+      "sha256": "901a711c6f84cbd4f15584edcb8de16dfe3ecdf54cdc71c6d497720ac9529678",
+      "status": "IMMUTABLE_PIXEL_LAB_SOURCE",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Capital.aseprite",
+      "sha256": "12c4dd1456f196ba7d8c1083da91025b3a6659266571dcb3da21426c4e05328a",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corbel.aseprite",
+      "sha256": "dab6f348061d5a11c97afe82c74391f6485a8614b94b9c77325c027b0655539a",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Core.aseprite",
+      "sha256": "309fb52106eb007937da5c500d273651d638e817b8824f9cc573b6f4a88c5b4a",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Left.aseprite",
+      "sha256": "0572bf43c78551c4243bcdde9bca65b78c96d34bbfc4a010bb656a568e904637",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Right.aseprite",
+      "sha256": "7ccc8b871a23907948566bf47bb6c944e1b158ffcaf0998b502b276e3babe130",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Edge_Foot.aseprite",
+      "sha256": "bced63c81827712fb038677267e5ff54396b0697ce22cf8ea52c14b40a1cf732",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Foot.aseprite",
+      "sha256": "7cd17795b95caa1b07654f5f332572de530001266c82b5ddef18fb1812d8fe45",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Capital.png",
+      "sha256": "2b77bb2181742ccd2316c8566d0e72b616e108dbe1cbe48321e3105566948e43",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corbel.png",
+      "sha256": "e51f3e3cd09ed3a744c34601fbb5e01968a2522770a23d165f3f0e6871c9a889",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Core.png",
+      "sha256": "e88e6e8f8a0b35d7dec0a443bac6281ce463dd50603491e2bd688256f8867f1d",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corner_Left.png",
+      "sha256": "a074a421a930967d7390ac14bedc830a3253a6a98862c8b0ba44d53777035eb4",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corner_Right.png",
+      "sha256": "495ea8a4972fe1963663c5632aeab55b93233446431fd803b4de94bf8446162a",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Edge_Foot.png",
+      "sha256": "67717fef8fd34b81f5977b8c598e8d908ca84cec878cd9863b3aaa82e9d48a29",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Foot.png",
+      "sha256": "e3a79a3544937bf8ee5605549a82719d3f24a90fec99ed47cdbde000f9e91bc5",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Before_After_1x.png",
+      "sha256": "66441dd1d5aaec6ecf53a8f424245449edc14828ca54c4391f9a5e9289431a89",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Contact_1x.png",
+      "sha256": "786986814ab73e7717f681a1ac05e8b7f855de41bb982e96fef0a30b77e3f6ae",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Contact_2x.png",
+      "sha256": "11f62526b4c0d22c2359e16d70d8832a44afc87ff1eb575bb81562af0ef7040c",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Pillar_Assembly_1x.png",
+      "sha256": "6a2954ebc7d7d5e4ab45e211c6d4d1c6d7a60b011e0623c6630f1a988bc295bb",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Pillar_Assembly_4x.png",
+      "sha256": "1ac048858360acd4be2ec1ba60bb845b9ad44d428cc6f59720ca2a2c230d8e80",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Unity_Top_Contact_1x.png",
+      "sha256": "07607eb40d618c39ba08dc0d6a2b1228745ff52f919c82c38b353b3957d77a76",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Unity_Top_Contact_3x.png",
+      "sha256": "643f0837e9467199b0f0c52cc75cfc336070f57b64bc7be690bbf0603c377f5a",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Unity_Top_Normal_1x.png",
+      "sha256": "9c519ca9232b2b87271ef786beffe0294520e448631efbbf2ff5a425c242faf5",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Unity_Top_Normal_3x.png",
+      "sha256": "336b647035f84f3025d791980ee5b80c5972f3bad0907c36a7d4567a5dbf1e78",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Contact-1x.png",
+      "sha256": "2c91eaeffa8f29a895b0d1bd54fd377fde0947e9f0dc37e9233bec70f82bf1be",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Contact-3x.png",
+      "sha256": "ea24ea59f9f5b3fbe0c1d0f25eaaacbca2cb3b6ceb67697d0ed03b6e85328f3b",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Normal-1x.png",
+      "sha256": "bf1117688ff2956623e7f2dafb24368c98480607b2fd4c828be670c77f080b72",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Normal-3x.png",
+      "sha256": "ceaecfa3063e71f46dc47ec4411479b9ff34103b9efc129ef421cbd978ac0f33",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Restored-1x.png",
+      "sha256": "bf1117688ff2956623e7f2dafb24368c98480607b2fd4c828be670c77f080b72",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/UnitySupport-Restored-3x.png",
+      "sha256": "ceaecfa3063e71f46dc47ec4411479b9ff34103b9efc129ef421cbd978ac0f33",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage06/Before_Top_1x.png",
+      "sha256": "71153d3905bfcd40c56685603e70f167b212b91b51d7f1465950afbd6fa9a8c7",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "92555034-f78c-4284-8577-3c2b62b63b35"
     }
   ],
   "stage01_assets": [
@@ -1868,7 +2066,7 @@
       "sha256": "2e265faaf4275ff248bfc96988aad544c0b8154a8dad1d3e259967f8cf3a51d9",
       "ase_sha256": "fbff5cffeb8035aa50f1fd4f88c52abac1b6fb8ce33ae6bff015e9a21db1968f",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Gate_Hardware",
@@ -1897,7 +2095,7 @@
       "sha256": "ac0d642817e4cd7d06eb5ddd616acc7bdf014f5a41ee5338da377e3569b1e9e1",
       "ase_sha256": "059fec55a1b4cb23ab8aa65d2f6dd040dc5ba5e4466e392eb69e9934c283b0a4",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Gate_Leaf",
@@ -1928,9 +2126,225 @@
       "sha256": "f28725aa1eaab1e8840f59f68f48d88f84ab51edaab4452251da03db861b7c96",
       "ase_sha256": "5c928af74cfeb98f64cd81b929a3a9c886f39d28ad0c77f46b5c11fcf4bade24",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     }
   ],
   "stage05_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage05/PixelChecks.json",
-  "stage05_status": "CANDIDATE_PENDING_USER"
+  "stage05_status": "USER_APPROVED_2026-10-19",
+  "stage06_assets": [
+    {
+      "name": "Support_Capital",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Capital.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Capital.aseprite",
+      "dimensions": [
+        28,
+        16
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#151423",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        25,
+        16
+      ],
+      "sha256": "2b77bb2181742ccd2316c8566d0e72b616e108dbe1cbe48321e3105566948e43",
+      "ase_sha256": "12c4dd1456f196ba7d8c1083da91025b3a6659266571dcb3da21426c4e05328a",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Core",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Core.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Core.aseprite",
+      "dimensions": [
+        28,
+        28
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#151423",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        0,
+        21,
+        28
+      ],
+      "sha256": "e88e6e8f8a0b35d7dec0a443bac6281ce463dd50603491e2bd688256f8867f1d",
+      "ase_sha256": "309fb52106eb007937da5c500d273651d638e817b8824f9cc573b6f4a88c5b4a",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Foot",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Foot.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Foot.aseprite",
+      "dimensions": [
+        28,
+        24
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#151423",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        26,
+        24
+      ],
+      "sha256": "e3a79a3544937bf8ee5605549a82719d3f24a90fec99ed47cdbde000f9e91bc5",
+      "ase_sha256": "7cd17795b95caa1b07654f5f332572de530001266c82b5ddef18fb1812d8fe45",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Corbel",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corbel.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corbel.aseprite",
+      "dimensions": [
+        28,
+        20
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#151423",
+        "#241F3A",
+        "#302940",
+        "#382D55",
+        "#4E3D6C"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        0,
+        25,
+        20
+      ],
+      "sha256": "e51f3e3cd09ed3a744c34601fbb5e01968a2522770a23d165f3f0e6871c9a889",
+      "ase_sha256": "dab6f348061d5a11c97afe82c74391f6485a8614b94b9c77325c027b0655539a",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Corner_Left",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corner_Left.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Left.aseprite",
+      "dimensions": [
+        28,
+        28
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#151423",
+        "#241F3A",
+        "#302940",
+        "#382D55",
+        "#4E3D6C"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        27,
+        28
+      ],
+      "sha256": "a074a421a930967d7390ac14bedc830a3253a6a98862c8b0ba44d53777035eb4",
+      "ase_sha256": "0572bf43c78551c4243bcdde9bca65b78c96d34bbfc4a010bb656a568e904637",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Corner_Right",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Corner_Right.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Corner_Right.aseprite",
+      "dimensions": [
+        28,
+        28
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#151423",
+        "#241F3A",
+        "#302940",
+        "#382D55",
+        "#4E3D6C"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        0,
+        28,
+        28
+      ],
+      "sha256": "495ea8a4972fe1963663c5632aeab55b93233446431fd803b4de94bf8446162a",
+      "ase_sha256": "7ccc8b871a23907948566bf47bb6c944e1b158ffcaf0998b502b276e3babe130",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Support_Edge_Foot",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage06/Support_Edge_Foot.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage06/Support_Edge_Foot.aseprite",
+      "dimensions": [
+        28,
+        8
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#151423",
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        28,
+        8
+      ],
+      "sha256": "67717fef8fd34b81f5977b8c598e8d908ca84cec878cd9863b3aaa82e9d48a29",
+      "ase_sha256": "bced63c81827712fb038677267e5ff54396b0697ce22cf8ea52c14b40a1cf732",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "stage06_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage06/PixelChecks.json",
+  "stage06_status": "CANDIDATE_PENDING_USER"
 }
