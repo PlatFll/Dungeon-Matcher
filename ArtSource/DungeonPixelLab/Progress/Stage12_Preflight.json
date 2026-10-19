@@ -1,0 +1,87 @@
+{
+  "status": "PREPARED_NOT_GENERATED",
+  "runtime_reference_extent": [
+    470,
+    298
+  ],
+  "runtime_rectangles": {
+    "WaveTracker": [
+      169,
+      21,
+      135,
+      47
+    ],
+    "CombatGuide": [
+      330,
+      30,
+      79,
+      39
+    ],
+    "Settings": [
+      414,
+      30,
+      45,
+      40
+    ]
+  },
+  "recorded_production_capture": [
+    {
+      "name": "Canvas/SafeArea/TopHUD",
+      "bounds": {
+        "serializedVersion": "2",
+        "x": 8.0,
+        "y": 1248.0,
+        "width": 1064.0,
+        "height": 664.0
+      }
+    },
+    {
+      "name": "Canvas/SafeArea/TopHUD/CombatGuide",
+      "bounds": {
+        "serializedVersion": "2",
+        "x": 755.0,
+        "y": 1758.0,
+        "width": 179.0,
+        "height": 87.0
+      }
+    },
+    {
+      "name": "Canvas/SafeArea/TopHUD/Settings",
+      "bounds": {
+        "serializedVersion": "2",
+        "x": 945.0,
+        "y": 1756.0,
+        "width": 102.0,
+        "height": 89.0
+      }
+    },
+    {
+      "name": "Canvas/SafeArea/TopHUD/WaveTracker",
+      "bounds": {
+        "serializedVersion": "2",
+        "x": 391.0,
+        "y": 1760.0,
+        "width": 305.0,
+        "height": 105.0
+      }
+    }
+  ],
+  "sources": [
+    "Assets/_Game/Scripts/UI/BattlePresentationSkin.cs",
+    "Assets/_Game/Scripts/UI/RunControlsUI.cs",
+    "Assets/_Game/Scripts/UI/WaveTrackerUI.cs",
+    "ArtSource/DungeonEnvironment/BattleIntegration/After/dungeon-1080x1920-layout.json"
+  ],
+  "planned_native_preview_extent": [
+    360,
+    640
+  ],
+  "design": "Separate cool metal corners/rails, dark fill, small violet fasteners. Distinct from portrait jewels. Live GameUi.TmpFont WAVE 1 and GUIDE labels; separate gear sprite. No baked text or gameplay changes.",
+  "next": "Confirm generation-budget extension, generate one 64x64 dedicated PixelLab plaque source, finish native pieces in LibreSprite, derive integer native bounds from runtime rectangles, test actual text/hit-owner preservation and minimum size.",
+  "typography": {
+    "asset": "Assets/_Game/Resources/UI/Typography.asset",
+    "regular_font_guid": "89d631dec23c343469d9893b4162db9f",
+    "tmp_font_guid": "08961eb2bc4abd845a298637c007e39b",
+    "font": "Assets/_Game/Fonts/Thaleah/Thaleah Bitmap.asset"
+  }
+}

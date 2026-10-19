@@ -1,0 +1,7 @@
+{
+  "reason": "Preserve existing Unity object IDs and avoid rebuilding thousands of unrelated serialized IDs. Only the portrait mask position and size change.",
+  "tested_scene_sha256": "890f86af7cfdcef9417828a75322384c49ed0d0ba8f24107022fcfde2ef39f79",
+  "delivered_scene_sha256": "6549b05b2a84ca17a2cc9d53b236e9f11a92df00d6a05130895fdac9dd788e88",
+  "rect_transform_id": "741946174",
+  "semantic_review": "Scripts/review_portrait_pipes_scene.py verifies only the same mask transform differs from the baseline."
+}

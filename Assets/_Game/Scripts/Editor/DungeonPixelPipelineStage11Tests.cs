@@ -91,7 +91,7 @@ public sealed class DungeonPixelPipelineStage11Tests
             Assert.That(fill.offsetMin.x, Is.LessThan(0)); Assert.That(fill.offsetMin.y, Is.LessThan(0));
             Assert.That(fill.offsetMax.x, Is.GreaterThan(0)); Assert.That(fill.offsetMax.y, Is.GreaterThan(0));
             Assert.That(mask.GetComponent<RectMask2D>(), Is.Not.Null);
-            Assert.That(mask.rect.size, Is.EqualTo(new Vector2(w - 20, h - 20)));
+            Assert.That(mask.rect.size, Is.EqualTo(new Vector2(w - 18, h - 18)));
         }
     }
     static IEnumerator CoverageProbe(DungeonSideViewArtPreview p, RectTransform panel, string name)
@@ -101,9 +101,11 @@ public sealed class DungeonPixelPipelineStage11Tests
         var disabled = p.Content.Cast<Transform>().Where(t => t.name != "05 Top UI shells").Concat(panel.parent.Cast<Transform>().Where(t => t != panel)).ToArray();
         foreach (var t in disabled) t.gameObject.SetActive(false);
         var fill = panel.Find("InteriorMask/OverfilledBacking").GetComponent<Image>();
+        // The backing deliberately extends beneath opaque corner diamonds.
+        var frame = panel.Find("ModularFrame"); frame.gameObject.SetActive(false);
         Sprite original = fill.sprite; fill.sprite = null; fill.type = Image.Type.Simple; fill.color = Color.cyan;
-        yield return Capture("Stage10Correction", name);
-        var texture = new Texture2D(2, 2); texture.LoadImage(File.ReadAllBytes(Root + "/Previews/Stage10Correction/" + name + ".png"));
+        yield return Capture("PortraitPipeCorrection", name);
+        var texture = new Texture2D(2, 2); texture.LoadImage(File.ReadAllBytes(Root + "/Previews/PortraitPipeCorrection/" + name + ".png"));
         var bounds = GameplayPixelLayoutController.ScreenRect((RectTransform)panel.Find("InteriorMask"));
         int cyan = 0;
         var pixels = texture.GetPixels32();
@@ -115,6 +117,7 @@ public sealed class DungeonPixelPipelineStage11Tests
         }
         Assert.That(cyan, Is.EqualTo(Mathf.RoundToInt(bounds.width * bounds.height)));
         Object.Destroy(texture); fill.sprite = original; fill.type = Image.Type.Tiled; fill.color = Color.white;
+        frame.gameObject.SetActive(true);
         foreach (var t in disabled) t.gameObject.SetActive(true);
     }
     static IEnumerator CharacterPreview(DungeonSideViewArtPreview p, string folder, string name)
@@ -136,7 +139,7 @@ public sealed class DungeonPixelPipelineStage11Tests
             SetSize(360 * scale, 640 * scale); yield return new WaitForSecondsRealtime(.4f);
             var p = Object.FindFirstObjectByType<DungeonSideViewArtPreview>(); p.width = Screen.width; p.height = Screen.height; p.safeArea = new Rect(0, 0, p.width, p.height); p.Rebuild(); yield return null;
             var panel = Portrait(p); ValidateFrame(panel);
-            yield return CharacterPreview(p, "Stage10Correction", "Portrait-" + scale + "x");
+            yield return CharacterPreview(p, "PortraitPipeCorrection", "Portrait-" + scale + "x");
             foreach (var size in new[] { new Vector2(99, 190), new Vector2(100, 191), new Vector2(119, 231), new Vector2(60, 90) })
             {
                 panel.sizeDelta = size; yield return null; yield return null; Canvas.ForceUpdateCanvases(); ValidateFrame(panel);
@@ -146,7 +149,7 @@ public sealed class DungeonPixelPipelineStage11Tests
             Assert.That(panel.Find("ModularFrame").GetComponentsInChildren<Image>().All(i => !i.enabled), Is.True);
             panel.sizeDelta = new Vector2(99, 190); yield return null; yield return null; ValidateFrame(panel);
             Assert.That(panel.Find("ModularFrame").GetComponentsInChildren<Image>().All(i => i.enabled), Is.True);
-            yield return Capture("Stage10Correction", "Restored-" + scale + "x");
+            yield return Capture("PortraitPipeCorrection", "Restored-" + scale + "x");
         }
         yield return new ExitPlayMode();
     }

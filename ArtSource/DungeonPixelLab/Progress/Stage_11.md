@@ -1,4 +1,6 @@
-# Stage 11 — DONE; stopped for user review
+# Stage 11 — board complete; portrait verdict superseded
+
+The subsequent user review rejected the visible rail centering. See [the corrected pipe pixels and current validation](Portrait_Pipe_Correction.md). Details below preserve the historical Stage11 implementation and evidence.
 
 2026-10-19. Corrected Stage10 portrait construction, then built Stage11 board frame and empty cells. Draft PR #203; no production integration, Stage12 or merge.
 

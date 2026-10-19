@@ -1,0 +1,1 @@
+The first coverage probe included opaque corner diamonds within the deliberately overfilled mask. It failed at the bottom-left corner. The corrected probe hides decorative occluders to measure mask coverage; normal captures and geometry assertions still check the complete frame. No art or mask was changed to suppress the failure.
