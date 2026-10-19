@@ -1,0 +1,71 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-329a633e-b7b1-43a9-97b8-9492cabaf1c4.log",
+  "log_sha256": "e1675e5d4698b49ef14f777ce5132cb9861c70d8ed89e50ca0a56130990d5cf8",
+  "test_xml_sha256": "30cbe7456d247ae0c5947223e99d3f63115d0e3fa29dff1e77f49721d5cb459a",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage03Tests.cs": "11c9310d7271f345e7fb413b3190a35bc5ef53c1c3a8903fd7cce0377228b628",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "9ac5f39ffe9ad6ce38f4ef68f459ec8fe80dced70218c1740a58f9d0765e2b78",
+    "Assets/_Game/Art/DungeonPixelLab/Stage03FloorPlacement.json": "b60f6b4faab9e843124a29246a812ee6126fee34d170974590af0b090114896c"
+  },
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "9ac5f39ffe9ad6ce38f4ef68f459ec8fe80dced70218c1740a58f9d0765e2b78",
+      "after_sha256": "9d75f85ede22e006034f890d7166a3e3aaa521966d5ca54cb4afcc6c957eb428",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop.meta",
+      "before_sha256": "718dab79fc1a5881042ce78476e2774025a9674e088a36ed6f4b88928e6b7ecd",
+      "after_sha256": "304ff1d646b273fa2e9f984a253ac7037272534bcaabed4f3baa11340a7565a9",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage03FloorPlacement.json.meta",
+      "before_sha256": "e8c246c724756af16949c3017c5a7c6c58d1a3eb5819cc2f4a9a2ce32e4870e8",
+      "after_sha256": "fd16a70d25d861665781248d30e7d549e23b7e1e089887c9a1a50697c7afc8e1",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage03Tests.cs.meta",
+      "before_sha256": "450dd468cc3fcd7072759d950b1d6e859562743643ee94375edc02b28425fee0",
+      "after_sha256": "100ea283e5553428131666e0d9b22512264dfbb6d3a8ca81a77ad8d84abbab4e",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Left.png.meta",
+      "before_sha256": "cc9027055ffb043f144420db55b658e1e105d4ae9c9dd9b363ad36a850c5364a",
+      "after_sha256": "0b55cd409d12970db2f6f549f3867a4dccbcf9d2eaee67ac6a5353626698b5cd",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_A.png.meta",
+      "before_sha256": "5c889dffb75232949eb7100dcc5b36253801d1ac72f25fb75a5d78c48a8d5726",
+      "after_sha256": "4c5528954ba368aac8328c87b4cbdb29526e8019758c4729284f06e812b3d238",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_B.png.meta",
+      "before_sha256": "38ac898c650ecd51e381e7d0a2519ea65c5a24dccbfb071e6577da3e664d939b",
+      "after_sha256": "8edc63a633c60d963df79e392d6862b7513b0e31f4c052363db6814cdd0a6a7d",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Mid_C.png.meta",
+      "before_sha256": "7b392ac06c7654b7275330f13a5726ed485cd043dd95fb758ea881976365be52",
+      "after_sha256": "22bf06494809201088f9042319dd5dea303c6c630ff0f74d306ecc64020d6215",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/FloorTop/Floor_Right.png.meta",
+      "before_sha256": "632fe7a3931d8577bd75976cd438e4df18680b177eef231db50ce03e74147489",
+      "after_sha256": "1da5ce372b865198c9e8df5926879854bc550f8300f9c6dfe1eb8c92e419c93d",
+      "trailing_whitespace_only": true
+    }
+  ],
+  "note": "Only serializer trailing whitespace removed after validation; C# and all native pixels unchanged."
+}

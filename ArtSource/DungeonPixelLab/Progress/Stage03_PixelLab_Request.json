@@ -1,0 +1,44 @@
+{
+  "stage": "03",
+  "request": {
+    "lower_description": "Dungeon Matcher violet-gray dressed stone, a traditional side-view 2D platformer ledge made of LARGE intact rectangular slabs. Quiet broad matte planes, dark indigo joints, muted purple gray base, subtle lavender top-left light. Horizontal straight stone courses, sparse one-pixel chips only. Very low noise. No rounded cobblestones, no rubble, no dirt, no grass, no ornament, no cracks running through every slab. Side elevation, never isometric or a receding room floor.",
+    "transition_description": "A very shallow flat horizontal walking surface on top of the stone ledge, one single row of wide rectangular violet-gray capstones. Thin restrained lit upper bevel, quiet broad top plane, dark narrow back seam. Constant level contact edge, no bumps or slopes. Only 1 or 2 clean lighting planes, no gritty texture.",
+    "transition_size": 0.25,
+    "tile_size": {
+      "width": 32,
+      "height": 32
+    },
+    "outline": "selective outline",
+    "shading": "basic shading",
+    "detail": "low detail",
+    "seed": 310301
+  },
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: fd7b1bf8-270d-447c-a135-177884748b06\nterrain: Sidescroller: Dungeon Matcher violet-gray dressed stone, a traditional side-view 2D platformer ledge made of LARGE intact rectangular slabs. Quiet broad matte planes, dark indigo joints, muted purple gray base, subtle lavender top-left light. Horizontal straight stone courses, sparse one-pixel chips only. Very low noise. No rounded cobblestones, no rubble, no dirt, no grass, no ornament, no cracks running through every slab. Side elevation, never isometric or a receding room floor. with A very shallow flat horizontal walking surface on top of the stone ledge, one single row of wide rectangular violet-gray capstones. Thin restrained lit upper bevel, quiet broad top plane, dark narrow back seam. Constant level contact edge, no bumps or slopes. Only 1 or 2 clean lighting planes, no gritty texture.\ntype: sidescroller (side-view, transparent bg, no slopes)\nstatus: processing (~100s)\nbase_tile_id: 74904d1b-9197-4c89-afd7-c88fd563734b\n\nhint: get_sidescroller_tileset(\"fd7b1bf8-270d-447c-a135-177884748b06\")"
+      }
+    ],
+    "isError": false
+  },
+  "balance_before": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1044.20\ngenerations_used: 2055.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "cost_quote": {
+    "source": "Live create_sidescroller_tileset tool and official MCP docs",
+    "range": [
+      2,
+      3
+    ],
+    "budget_before": 10,
+    "budget_limit": 35
+  },
+  "reference_input_limit": "Specialized sidescroller endpoint has no image-style field. Current verified goldens and Stage01 wall used for local review; no unsupported image input invented."
+}

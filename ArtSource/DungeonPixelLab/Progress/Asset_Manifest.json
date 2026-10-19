@@ -1,7 +1,7 @@
 {
-  "stage": "02",
+  "stage": "03",
   "status": "DONE_PENDING_USER_ART_REVIEW",
-  "production_candidate_count": 16,
+  "production_candidate_count": 21,
   "paid_jobs": [
     {
       "stage": "01",
@@ -22,6 +22,19 @@
       "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage02/Recess_Raw_PixelLab.png",
       "raw_source_sha256": "a086a98f02e9cad14bf2d272866e6694df9a4196a3a0aeb9ef8720da793cb273",
       "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
+    },
+    {
+      "stage": "03",
+      "tileset_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+      "base_tile_id": "74904d1b-9197-4c89-afd7-c88fd563734b",
+      "endpoint": "create_sidescroller_tileset",
+      "billed_generation_equivalents": 3,
+      "cost_evidence": "Account balance delta 1044.20 to 1041.20",
+      "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage03/Floor_Raw_PixelLab.png",
+      "raw_source_sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+      "raw_metadata_sha256": "c7bdeb1f37325dc3aa63cf6bcf57c7e7a4a58d12cd88bca883461a92fb66a1b7",
+      "status": "CAPSTONE_CLUSTER_SELECTED_FOR_NATIVE_CLEANUP",
+      "style_input": "Endpoint has no image reference input; goldens and approved wall used in local review"
     }
   ],
   "artifacts": [
@@ -1139,7 +1152,7 @@
       "sha256": "a8ddd831b0e5094f8ed33602949f67b70efe401673ad2e739b052df3bfde796b",
       "ase_sha256": "833ae6dc2b7dce55edf2afdd4342ae7f7030dbe4da3ce43ade849520ce12e4d8",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Recess_Inset",
@@ -1169,8 +1182,164 @@
       "sha256": "69ee2709d8fc8394134d68c7e3223d016ad5d7c39e4177914c7800411519a6b9",
       "ase_sha256": "fc7a69322bf550ba56d238d6a553b41fe09a53aad50bf9604515edfc0bd65cc7",
       "native_cel_equals_png": true,
+      "status": "USER_APPROVED_2026-10-19"
+    }
+  ],
+  "stage02_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage02/PixelChecks.json",
+  "stage02_status": "USER_APPROVED_2026-10-19",
+  "stage03_assets": [
+    {
+      "name": "Floor_Left",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Left.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Left.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "706a072b387ecedfd6e4b2b6d0e36d31db4eb9898c95aa00b961059d25fab48d",
+      "ase_sha256": "14105b42f6f3e8fabec2de29024e398e4f093fc5d932fd4d6bc1525bed601800",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_A",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_A.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_A.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "bcc3920b48b50fc838d5fcaf512d659577bf81dd46868bf1b94bcbf945f77380",
+      "ase_sha256": "9157874a08774f40f8aa88a02f7408119762015bb12ee79f68fea04f0ca8350b",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_B",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_B.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_B.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "3def697617f0b214301f30fa806129b6b152a37b87aec839be037ef210ef9c84",
+      "ase_sha256": "9c4de1cd5c9b9ec4a5d367af5065d88d87a2f8222b81451d6a65a2d48531f709",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_C",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_C.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_C.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "33c04a1cf00d0d77ddbe5e781bbdec4cc2afebcfb39f333ec8c15c145ffd2300",
+      "ase_sha256": "6a8349cc7091cfb82ceb0ebeef44e6ee9b937ac31d5412d9b4bd5b17f6b1d1e2",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Right",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Right.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Right.aseprite",
+      "dimensions": [
+        30,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        12
+      ],
+      "sha256": "a12a69b05c799cc4f466d59ec8e8271f62c260aa11ecb3a7351651c6dce7534f",
+      "ase_sha256": "00ac0e24797183c3f149a10d5435ded82c13f3f9b619c530d1173b23ffa76247",
+      "native_cel_equals_png": true,
       "status": "CANDIDATE_PENDING_USER"
     }
   ],
-  "stage02_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage02/PixelChecks.json"
+  "stage03_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage03/PixelChecks.json"
 }

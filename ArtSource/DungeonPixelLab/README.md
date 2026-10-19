@@ -1,31 +1,32 @@
 # Dungeon PixelLab staged asset library
 
-Stages 00–02 complete. Stage 01 is user-approved. **Stopped before Stage 03; Stage 02 awaits user review.**
+Stages 00–03 complete. Stages 01/02 are user-approved. **Stopped before Stage 04; Stage 03 awaits review.**
 Draft PR: https://github.com/PlatFll/Dungeon-Matcher/pull/203. No merge or production integration.
 
-`Review.html` shows the separate portrait recess, actual Unity captures and clipping controls.
-`Review_Stage01.html` and `Review_Stage00.html` preserve previous stage reviews.
+`Review.html` shows the floor-top family, actual Unity contact-marker proof and native source comparison.
+`Review_Stage02.html`, `Review_Stage01.html` and `Review_Stage00.html` preserve earlier galleries.
 
-- `Sources/Stage01/` and `Sources/Stage02/`: immutable new PixelLab source images.
-- `Native/` and `Exports/`: 14 wall documents/PNGs and two recess documents/PNGs.
-- `Previews/`: native and enlarged inspection sheets; real Unity screenshots.
-- `Progress/`: reports, state, provenance, manifest and measured spending.
-- `Diagnostics/`: native pixel, clipping and render checks; Unity test/validator receipts.
-- `Scripts/`: reproducible native LibreSprite builds and independent QA; no generation calls.
+- `Sources/`: immutable PixelLab wall, recess and sidescroller outputs with provenance.
+- `Native/` and `Exports/`: 14 wall pieces, 2 recess pieces and 5 floor-top pieces.
+- `Previews/`: native/enlarged inspection sheets and real Unity screenshots.
+- `Progress/`: stage reports, state, manifest, actual tool receipts and spending ledger.
+- `Diagnostics/`: native cels, seams, masks and render checks; Unity test/validator receipts.
+- `Scripts/`: LibreSprite native authoring/export and independent QA; no generation calls.
 
-The isolated `ArtPreview_DungeonPixelLab` scene now combines the approved wall with the separate
-masked recess and unchanged existing portrait rails as reference placeholders. No actors,
-gems, input or gameplay owners; the scene remains outside build settings.
-Rattlebones appears only on external inspection sheets, unchanged and unimported.
+The isolated `ArtPreview_DungeonPixelLab` scene contains the approved wall/recess, unchanged
+reference portrait rails, and one shallow 254×12 floor-top strip. No front fascia yet.
+It remains outside build settings with no actors, gems, input or gameplay owners.
+Temporary floor-contact markers are removed after runtime capture and never saved.
 
-Run `Scripts/BuildRecessStage02.ps1` for native LibreSprite authoring/export.
-Run Foundry Python with `Scripts/verify_stage02.py` after the explicit Unity test
-`DungeonPixelPipelineStage02Tests.Stage02RecessMaskPreview` for independent QA.
-Do not rerun earlier stage scene builders after later assembly without checking their scope.
+Reproduce Stage 03 native sources with `Scripts/BuildFloorStage03.ps1`, using the installed
+LibreSprite. Its existing project layer-metadata helper preserves transparent corner pixels.
+The explicit Unity test `DungeonPixelPipelineStage03Tests.Stage03FloorNativePreview`
+rebuilds only the isolated art scene. Then use Foundry Python to run `Scripts/verify_stage03.py`
+and `Scripts/build_stage03_review.py`. Do not run earlier stage scene builders over later assembly.
 
 Point, FullRect, 64 PPU, no compression/mipmaps/NPOT resizing. Production Dungeon art,
-layout, prefabs and gameplay remain unchanged. Stage 00's production-art scaling finding
-remains a later integration concern; this isolated scene is tested at native 1× and 3×.
+UI layout, gameplay and the user's main checkout remain unchanged. Stage 00's production
+scaling finding remains a later integration concern; isolated art is verified at 1× and 3×.
 
-Confirmed cumulative PixelLab charge: **10/35 equivalents**; account balance **1044.20**.
-Next: `PROMPTS/03_GENERATE_FLAT_SIDESCROLLER_FLOOR.txt`. Wait for the user.
+Confirmed cumulative PixelLab charge: **13/35 equivalents**; account remaining **1041.20**.
+Next: `PROMPTS/04_GENERATE_FRONT_PLATFORM_FASCIA.txt`. Wait for user authorization.
