@@ -1,0 +1,271 @@
+{
+  "assets": [
+    {
+      "name": "Hanging_Banner",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Banner.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Banner.aseprite",
+      "dimensions": [
+        36,
+        64
+      ],
+      "opaque_colors": 9,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#241F3A",
+        "#3B2445",
+        "#3D3B50",
+        "#553151",
+        "#6B4039",
+        "#9D7766",
+        "#BE9A79"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        4,
+        34,
+        63
+      ],
+      "sha256": "570c52335af8e1565f72ddc88dc4ac53bdf7a502bb5bff8b03f65ce0b6f58b52",
+      "ase_sha256": "d272df9567355a3f9aae236c4fce64499f19475f78fb821c6b06f7f0ba818c47",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_Anchor",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Anchor.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Anchor.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        10,
+        12
+      ],
+      "sha256": "708ee9049d75a8094b12bef196c9f83a1f6e6b0f46fbb36b2ceca50fe351c129",
+      "ase_sha256": "1625b670a1bd532cb061763b9319117777815aefd65d65ccbcaf65cca57db22d",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_Repeat",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Repeat.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Repeat.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        9,
+        12
+      ],
+      "sha256": "f2a968b4460a34b09a570db8f84195fba8ef386cc9112f517432dd1ffb0c4fd9",
+      "ase_sha256": "0bf9f2d5f8727fbcbdfee55d0bc933c44d93ae9f088ab21062eda10bc77135ab",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_End",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_End.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_End.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        9,
+        8
+      ],
+      "sha256": "57a4abf1d7df13585016234f3a166bac19e378354ac8984f5c38c6e8a2db36d6",
+      "ase_sha256": "4d092c3f0cb5415d8c9cf602ed7b1954d114ebc3f66cb590d2625df771084ed5",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "combined_palette_count": 9,
+  "combined_palette": [
+    "#0A0D11",
+    "#20202C",
+    "#241F3A",
+    "#3B2445",
+    "#3D3B50",
+    "#553151",
+    "#6B4039",
+    "#9D7766",
+    "#BE9A79"
+  ],
+  "raw_source_sha256": "99e521047e21b95fcdbdcb2725c56c710049ef002ddf79d7ca90445e8d800a19",
+  "raw_chain_sha256": "cfab87bbe525900e7b26c92c6b3d4aae3770507baa2db6e206a6a6a5f4919bd0",
+  "banner_silhouette_and_crest_preserved": true,
+  "crest_center_x": 17.0,
+  "banner_count": 3,
+  "chain_count": 2,
+  "chain_repeat_pitch": 12,
+  "chain_seams_equal": true,
+  "chain_single_connected_component": true,
+  "chain_assembly_bounds": [
+    2,
+    2,
+    10,
+    68
+  ],
+  "chain_raw_limitation": "PixFlux source is a clipped two-pixel strand; face-on holes, anchor and termination substantially reconstructed in LibreSprite.",
+  "style_reference_limitation": "PixFlux has no style-reference input; actual golden images inspected for comparison. Banner Pro Flash received actual native Rattlebones.",
+  "future_ui_reserved_rects": [
+    [
+      130,
+      15,
+      239,
+      46
+    ],
+    [
+      175,
+      44,
+      187,
+      56
+    ],
+    [
+      254,
+      23,
+      312,
+      51
+    ],
+    [
+      314,
+      22,
+      350,
+      52
+    ]
+  ],
+  "future_ui_overlap_pixels": 0,
+  "placed_modules": 15,
+  "clipped_sprite_bounds": 0,
+  "protected_art_hashes": 185,
+  "prior_placements_preserved": 200,
+  "reference_hashes_unchanged": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    }
+  ],
+  "native_resampling": "none",
+  "production_scene_and_build_settings": "unchanged; asserted in Unity test"
+}

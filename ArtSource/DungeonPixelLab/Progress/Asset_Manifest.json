@@ -1,7 +1,7 @@
 {
-  "stage": "07",
+  "stage": "08",
   "status": "DONE_PENDING_USER_ART_REVIEW",
-  "production_candidate_count": 40,
+  "production_candidate_count": 44,
   "paid_jobs": [
     {
       "stage": "01",
@@ -71,6 +71,32 @@
       "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP",
       "style_input": "Actual native Rattlebones PNG via style_image.base64; outline/detail/shading true; color_palette false",
       "request_and_receipts": "ArtSource/DungeonPixelLab/Progress/Stage07_PixelLab_Receipt.json"
+    },
+    {
+      "stage": "08",
+      "job_id": "3527e875-8178-47c1-9b1c-0e949298e4c9",
+      "image_id": "922d0747-3446-5dca-b057-829706dc3aef",
+      "endpoint": "create_image_pro_flash",
+      "billed_generation_equivalents": 5,
+      "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage08/Hanging_Raw_PixelLab.png",
+      "raw_source_sha256": "99e521047e21b95fcdbdcb2725c56c710049ef002ddf79d7ca90445e8d800a19",
+      "status": "BANNER_SELECTED_CHAIN_OMITTED",
+      "style_input": "Actual native Rattlebones PNG; outline/detail/shading true, color_palette false",
+      "limitation": "Requested both props, returned only banner; banner selected.",
+      "request_and_receipts": "ArtSource/DungeonPixelLab/Progress/Stage08_PixelLab_Receipt.json"
+    },
+    {
+      "stage": "08",
+      "job_id": "c8a67f85-e4ad-4437-8f5e-1a6a48230204",
+      "image_id": "5e2551df-3288-58cc-b322-39e1cc70eac8",
+      "endpoint": "create_image_pixflux",
+      "billed_generation_equivalents": 1,
+      "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage08/Chain_Raw_PixelLab.png",
+      "raw_source_sha256": "cfab87bbe525900e7b26c92c6b3d4aae3770507baa2db6e206a6a6a5f4919bd0",
+      "status": "SOURCE_REQUIRED_MAJOR_NATIVE_REPAIR",
+      "style_input": "No style-reference input offered. Actual golden images compared locally.",
+      "limitation": "Raw source only a two-pixel clipped strand; open links, anchor and termination substantially reconstructed in LibreSprite.",
+      "request_and_receipts": "ArtSource/DungeonPixelLab/Progress/Stage08_PixelLab_Receipt.json"
     }
   ],
   "artifacts": [
@@ -1399,6 +1425,252 @@
       "sha256": "82c4a92e73cb19922e494356d7b5adf41dd2a79a1d5f8b856f5220c181d62e18",
       "status": "DIAGNOSTIC_OR_REVIEW",
       "pixel_lab_lineage": "69948254-6267-434c-b80a-f1bf562bdb73"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage08/Chain_PixelLab_Request.json",
+      "sha256": "9d928cedbb688556df610c5a20c5c29d443e275719cf7b77b0386c9e18e902ec",
+      "status": "IMMUTABLE_PIXEL_LAB_SOURCE",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage08/Chain_Raw_PixelLab.png",
+      "sha256": "cfab87bbe525900e7b26c92c6b3d4aae3770507baa2db6e206a6a6a5f4919bd0",
+      "status": "IMMUTABLE_PIXEL_LAB_SOURCE",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage08/Hanging_Raw_PixelLab.png",
+      "sha256": "99e521047e21b95fcdbdcb2725c56c710049ef002ddf79d7ca90445e8d800a19",
+      "status": "IMMUTABLE_PIXEL_LAB_SOURCE",
+      "pixel_lab_lineage": "3527e875-8178-47c1-9b1c-0e949298e4c9"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage08/PixelLab_Request.json",
+      "sha256": "fb134816c1eadc8db32dac8a7da3e8c52000ec2edd8d1d9b5835e33907e3e880",
+      "status": "IMMUTABLE_PIXEL_LAB_SOURCE",
+      "pixel_lab_lineage": "3527e875-8178-47c1-9b1c-0e949298e4c9"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Banner.aseprite",
+      "sha256": "d272df9567355a3f9aae236c4fce64499f19475f78fb821c6b06f7f0ba818c47",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "3527e875-8178-47c1-9b1c-0e949298e4c9"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Anchor.aseprite",
+      "sha256": "1625b670a1bd532cb061763b9319117777815aefd65d65ccbcaf65cca57db22d",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_End.aseprite",
+      "sha256": "4d092c3f0cb5415d8c9cf602ed7b1954d114ebc3f66cb590d2625df771084ed5",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Repeat.aseprite",
+      "sha256": "0bf9f2d5f8727fbcbdfee55d0bc933c44d93ae9f088ab21062eda10bc77135ab",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Banner.png",
+      "sha256": "570c52335af8e1565f72ddc88dc4ac53bdf7a502bb5bff8b03f65ce0b6f58b52",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "3527e875-8178-47c1-9b1c-0e949298e4c9"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Anchor.png",
+      "sha256": "708ee9049d75a8094b12bef196c9f83a1f6e6b0f46fbb36b2ceca50fe351c129",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_End.png",
+      "sha256": "57a4abf1d7df13585016234f3a166bac19e378354ac8984f5c38c6e8a2db36d6",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Repeat.png",
+      "sha256": "f2a968b4460a34b09a570db8f84195fba8ef386cc9112f517432dd1ffb0c4fd9",
+      "status": "CANDIDATE_PENDING_USER",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Before_Top_1x.png",
+      "sha256": "3b88539b9c30095d32deaad55a20e099746f8fa0f01488ae5ee52a8bceeeb586",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Chain_Assembly_1x.png",
+      "sha256": "d7a1ec8d2cb2f0926a7d89f340d6c0aa37519172302ce628f59393083a0e7c85",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Chain_Assembly_4x.png",
+      "sha256": "00bc92112fd951bea8f2e13d1f9427064abc05577c717c2f287d40440e1f59eb",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Comparison_1x.png",
+      "sha256": "06e1263e13c395d6a257fc1f8c4c0be7e4709775959db7456dddd2b0bebd50d7",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Contact_1x.png",
+      "sha256": "deb62aca130b0943a2165869138d027c89090a5993bb0f8ea6950dbd78373ed3",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Contact_2x.png",
+      "sha256": "696f491b049e5bcbc7741556e8eaabd5cdac10044194a76029675465b3f937f5",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Contact_1x.png",
+      "sha256": "838159f98109241a3f59d9d816b58b1a8a9f1230042588daade45d32ae542d8f",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Contact_3x.png",
+      "sha256": "8060275a0391a5fdb1555ccc52a93e4232278d130a04b48f0beca9f4f84bb903",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Normal_1x.png",
+      "sha256": "d9883e88e90300bb57d9936c5136d39ac1395aa75b8f6d6a9a9ba7886fb4679c",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Normal_3x.png",
+      "sha256": "83e11e4f0a080a7ce7d8f8850053f5501e9163189c69da33dd047d3f0547ac15",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Unlit_1x.png",
+      "sha256": "7a551b2921d2c6489e312d56e29dd0e38c051f0c8861838734ec555903bde2c9",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/Unity_Top_Unlit_3x.png",
+      "sha256": "9e37d2cd710c0e3ca1313f46e4292423330c9461b884e0956bedfa0beb114759",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Contact-1x.png",
+      "sha256": "b500ac286e8350c31f9e5a8eb73b07f5d3ba5fd336c0539dd2dacb1e4240b3ca",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Contact-3x.png",
+      "sha256": "52c269c8ea47943fca84ecdb846a28a4b3b20d3ad35ae947c86fe57acf425a72",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Normal-1x.png",
+      "sha256": "77a7d153c72613bbaaa088324b5bc68982395a60a205c0847b5c9bc8dd2df4e8",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Normal-3x.png",
+      "sha256": "7b46bac0b150e7e706ab88da491bfcbd8447865c5e6330b2148f88e7afbd2b40",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Restored-1x.png",
+      "sha256": "77a7d153c72613bbaaa088324b5bc68982395a60a205c0847b5c9bc8dd2df4e8",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Restored-3x.png",
+      "sha256": "7b46bac0b150e7e706ab88da491bfcbd8447865c5e6330b2148f88e7afbd2b40",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Unlit-1x.png",
+      "sha256": "78690f7fe80a32ea80e3c25f5f032068377cf44bf560575d5abab1fd78139602",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage08/UnityHanging-Unlit-3x.png",
+      "sha256": "6bd4c6dea55d1dddefb81f123c0f8fcdac10c340f08dce8316062983dc6d2899",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": [
+        "3527e875-8178-47c1-9b1c-0e949298e4c9",
+        "c8a67f85-e4ad-4437-8f5e-1a6a48230204"
+      ]
     }
   ],
   "stage01_assets": [
@@ -2565,7 +2837,7 @@
       "sha256": "eb223284edc2aa6cc3cd0d4ba56e303a38151c68b5763c7d5e6765f2aaff1bfc",
       "ase_sha256": "defa078b8607ae25f695feee5bbff7ebb422c91e5ac4ee4571061f3a7098a7c5",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Torch_Flame",
@@ -2595,7 +2867,7 @@
       "sha256": "7eb6dbe1b7fb9d2c516252b44945fe4f03c568e77c95a0eb1740da8e1cee3d71",
       "ase_sha256": "ab23fd9ba8dd0ad1d6fc5135a5fbb6a3a08e8d9707c436b5fb44730e71222596",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Torch_Light_Left",
@@ -2631,7 +2903,7 @@
       "sha256": "dd4d319b87480fd0458096e3db485fa26b9ae9c1cca3459a0bf44782e936b6d8",
       "ase_sha256": "a9de2ea37e2e5f8be8eb63070c645e8f044c21e4a941412635f4453d4f2876b7",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     },
     {
       "name": "Torch_Light_Right",
@@ -2670,9 +2942,138 @@
       "sha256": "59bc11d4910c61025318ec0ee9293be2dd003fbd06f7276fb16a57b96dac11d1",
       "ase_sha256": "c28074ba89727ad7583cb7bb78527717ed30c141af6709f34ba8014123ed699c",
       "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER"
+      "status": "USER_APPROVED_2026-10-19"
     }
   ],
   "stage07_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage07/PixelChecks.json",
-  "stage07_status": "CANDIDATE_PENDING_USER"
+  "stage07_status": "USER_APPROVED_2026-10-19",
+  "stage08_assets": [
+    {
+      "name": "Hanging_Banner",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Banner.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Banner.aseprite",
+      "dimensions": [
+        36,
+        64
+      ],
+      "opaque_colors": 9,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#241F3A",
+        "#3B2445",
+        "#3D3B50",
+        "#553151",
+        "#6B4039",
+        "#9D7766",
+        "#BE9A79"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        1,
+        4,
+        34,
+        63
+      ],
+      "sha256": "570c52335af8e1565f72ddc88dc4ac53bdf7a502bb5bff8b03f65ce0b6f58b52",
+      "ase_sha256": "d272df9567355a3f9aae236c4fce64499f19475f78fb821c6b06f7f0ba818c47",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_Anchor",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Anchor.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Anchor.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        10,
+        12
+      ],
+      "sha256": "708ee9049d75a8094b12bef196c9f83a1f6e6b0f46fbb36b2ceca50fe351c129",
+      "ase_sha256": "1625b670a1bd532cb061763b9319117777815aefd65d65ccbcaf65cca57db22d",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_Repeat",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_Repeat.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_Repeat.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        9,
+        12
+      ],
+      "sha256": "f2a968b4460a34b09a570db8f84195fba8ef386cc9112f517432dd1ffb0c4fd9",
+      "ase_sha256": "0bf9f2d5f8727fbcbdfee55d0bc933c44d93ae9f088ab21062eda10bc77135ab",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Hanging_Chain_End",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage08/Hanging_Chain_End.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage08/Hanging_Chain_End.aseprite",
+      "dimensions": [
+        12,
+        12
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#3D3B50",
+        "#6B4039"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        0,
+        9,
+        8
+      ],
+      "sha256": "57a4abf1d7df13585016234f3a166bac19e378354ac8984f5c38c6e8a2db36d6",
+      "ase_sha256": "4d092c3f0cb5415d8c9cf602ed7b1954d114ebc3f66cb590d2625df771084ed5",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "stage08_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage08/PixelChecks.json",
+  "stage08_status": "CANDIDATE_PENDING_USER"
 }

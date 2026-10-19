@@ -1,0 +1,65 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-4a3792e4-f5bc-4298-8a2b-bda675926237.log",
+  "log_sha256": "526809fe84c5fafc13a29df71d3733cc35c0c87f63b3929cc6cf97cc2f74b1cb",
+  "test_xml_sha256": "5083888c013783e9ad9f2dd1f1239f4dbc4a3d7e83ec45aa17fc9a0c5014b36b",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage08Tests.cs": "0695c6db4b732c082de5abd1fa670150f3aa7f02b545db21bf26d01b05aea026",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "4b6c937c7c64301571444897631577c61ccfb504c740af218adf480fb2f13a5b",
+    "Assets/_Game/Art/DungeonPixelLab/Stage08HangingPlacement.json": "8b1ed8ea5681301b47d891577a82aa663dc1e0015884a614ddff2870ad3b8d7b"
+  },
+  "main_user_files_preserved": 8,
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging/Hanging_Banner.png.meta",
+      "before_sha256": "5f9be9386b947a26f142fa54142b45674abc41dc1752e972d2d9440e78f320db",
+      "after_sha256": "98991f729258cf87ebfaf0e3d7840044ac53129ed772f869148fd1b096a9a77d",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging/Hanging_Chain_Anchor.png.meta",
+      "before_sha256": "1f94396c14e92bf91709bc3b4ecade24ff95b043f57c73b01810d3d51e5e1683",
+      "after_sha256": "b6dddfa2b49270f8003b41c8b4568376be582d645d98a93274a12b90578872a9",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging/Hanging_Chain_End.png.meta",
+      "before_sha256": "eea112799970d87d8c19507eb7ddadfb3c52dd2b0647b2806244b941e7826e39",
+      "after_sha256": "a65e8d88482e53bc5d3f9bfc1455f66093e391cd0ef29dc459b692a415c67a86",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging/Hanging_Chain_Repeat.png.meta",
+      "before_sha256": "30b85a0f40e1f5f16522c79ffbdfc1251d22787fe7fe0a24eb4b11dbe0c456f2",
+      "after_sha256": "32b5feac7de2e04a3ff213030e7187e547523db974f9787fc10ce5f602a92149",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Hanging.meta",
+      "before_sha256": "d91c6f6049dd3e3479bb3f69be84725a0f5d3ea084febcc51fe8a4c4be179fb8",
+      "after_sha256": "cecd2d0c83038fe2b3509e65eee511a0ab7c0dddbbecf53c75979af09593b59c",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage08HangingPlacement.json.meta",
+      "before_sha256": "4ae91f19ecb9cb78990045b1fa22cf75bf0eb464c2f5fa3b112cf192cf6b3386",
+      "after_sha256": "b1ada516022c1bc04a9ef501b2ec36628ea10d7a5a37f4b1a0b3997274b3da62",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage08Tests.cs.meta",
+      "before_sha256": "918eb9ab5dfc35c3b80970ccb997f8624fd6d54bfcedbec29f5bbb4446790e3a",
+      "after_sha256": "187301e28eb1197ebe6b1c619317415800b1481cebf1fb3c9cb41ae159d2f31c",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "4b6c937c7c64301571444897631577c61ccfb504c740af218adf480fb2f13a5b",
+      "after_sha256": "aaf5db15c5dda77adfef2375a68a09f769b54290d7d646ea7dc0769c6676ef03",
+      "trailing_whitespace_only": true
+    }
+  ]
+}
