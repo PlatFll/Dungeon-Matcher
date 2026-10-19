@@ -18,7 +18,55 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     public RectTransform Content { get; private set; }
     public readonly List<RectTransform> Pieces = new List<RectTransform>();
     [Serializable] public class Placement { public string name; public int x, y, layer; public int[] clip; }
-    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; }
+    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; public NativePanel[] panels; }
+
+    [Serializable] public class NativePanel
+    {
+        public string name, prefix, backing;
+        public int x, y, width, height, inset, connectorPitch, cells;
+    }
+
+    // The panel owns only preview construction; the shared fitter owns frame internals.
+    void BuildPanel(NativePanel p, Transform parent, Dictionary<string, Sprite> sprites)
+    {
+        var root = TopRect(p.name + " panel", parent, p.x, p.y, p.width, p.height);
+        var mask = TopRect("InteriorMask", root, 0, 0, 0, 0);
+        mask.anchorMin = Vector2.zero; mask.anchorMax = Vector2.one;
+        mask.offsetMin = new Vector2(p.inset, p.inset); mask.offsetMax = -mask.offsetMin;
+        mask.gameObject.AddComponent<RectMask2D>();
+        if (!string.IsNullOrEmpty(p.backing))
+        {
+            var backing = sprites[p.backing];
+            var fill = TopRect("OverfilledBacking", mask, 0, 0, 0, 0);
+            fill.anchorMin = Vector2.zero; fill.anchorMax = Vector2.one;
+            fill.offsetMin = -backing.rect.size; fill.offsetMax = backing.rect.size;
+            var image = fill.gameObject.AddComponent<Image>(); image.sprite = backing;
+            image.type = Image.Type.Tiled; image.raycastTarget = false; image.pixelsPerUnitMultiplier = 1;
+        }
+        if (p.cells > 0)
+        {
+            var tile = sprites[p.prefix + "_Cell"];
+            if (p.width - p.inset * 2 != tile.rect.width * p.cells ||
+                p.height - p.inset * 2 != tile.rect.height * p.cells)
+                throw new InvalidOperationException("Board pitch must exactly fill the native interior.");
+            for (int y = 0; y < p.cells; y++) for (int x = 0; x < p.cells; x++)
+            {
+                var cell = TopRect("Cell_" + x + "_" + y, mask, x * tile.rect.width, y * tile.rect.height, tile.rect.width, tile.rect.height);
+                var image = cell.gameObject.AddComponent<Image>(); image.sprite = tile; image.raycastTarget = false;
+            }
+        }
+        var frame = TopRect("ModularFrame", root, 0, 0, 0, 0);
+        frame.anchorMin = Vector2.zero; frame.anchorMax = Vector2.one; frame.offsetMin = frame.offsetMax = Vector2.zero;
+        string[] children = { "TopLeftCorner", "TopRightCorner", "BottomLeftCorner", "BottomRightCorner", "TopEdge", "BottomEdge", "LeftEdge", "RightEdge" };
+        string[] suffixes = { "Corner_TL", "Corner_TR", "Corner_BL", "Corner_BR", "Rail_Top", "Rail_Bottom", "Rail_Left", "Rail_Right" };
+        for (int n = 0; n < children.Length; n++)
+        {
+            var r = TopRect(children[n], frame, 0, 0, 0, 0);
+            var image = r.gameObject.AddComponent<Image>(); image.sprite = sprites[p.prefix + "_" + suffixes[n]];
+            image.raycastTarget = false;
+        }
+        frame.gameObject.AddComponent<ResponsiveModularFrameFitter>().ConfigureNativePieces(sprites[p.prefix + "_Clamp"], p.connectorPitch);
+    }
 
     static RectTransform TopRect(string name, Transform parent, float x, float y, float w, float h)
     {
@@ -59,6 +107,7 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         Content.localScale = Vector3.one * PixelScale;
         string[] names = {"01 Base walls", "02 Standing platform", "03 Structural masonry", "04 Props", "05 Top UI shells", "06 Bottom HUD shells"};
         var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, 640)).ToArray();
+        if (manifest.panels != null) foreach (var panel in manifest.panels) BuildPanel(panel, layers[4], lookup);
         var clips = new Dictionary<string, RectTransform>();
         foreach (var p in manifest.placements.OrderBy(p => p.layer))
         {

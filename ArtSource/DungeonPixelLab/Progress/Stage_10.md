@@ -1,3 +1,5 @@
+> Superseded portrait geometry: the user identified off-center clamps and uncovered backing. The fixed-coordinate assertions below missed those defects. See [the correction and Stage11 record](Stage_11.md) and `Diagnostics/Stage10Correction/`. Original evidence remains historical; `Scripts/verify_stage11.py` is the current art QA entry point.
+
 # Stage 10 — DONE; stopped for review
 
 2026-10-19. Player portrait frame kit only, plus the explicitly requested Stage09 raw-bones correction. Draft PR #203; no merge or production gameplay integration. Stage11 has not started.

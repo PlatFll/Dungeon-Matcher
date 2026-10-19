@@ -1,7 +1,7 @@
 {
-  "stage": "10",
+  "stage": "11",
   "status": "DONE_PENDING_USER_ART_REVIEW",
-  "production_candidate_count": 58,
+  "production_candidate_count": 68,
   "paid_jobs": [
     {
       "stage": "01",
@@ -133,6 +133,16 @@
       "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP",
       "style_input": "Actual Rattlebones PNG; outline/detail/shading true, color palette false. UI references inspected locally; Flash supports one style image.",
       "request_and_receipts": "ArtSource/DungeonPixelLab/Progress/Stage10_PixelLab_Receipt.json"
+    },
+    {
+      "stage": "11",
+      "job_id": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "image_id": "21520419-f0ac-50bb-9d96-c817132fe295",
+      "endpoint": "create_image_pro_flash",
+      "billed_generation_equivalents": 5,
+      "raw_source": "ArtSource/DungeonPixelLab/Sources/Stage11/Board_Raw_PixelLab.png",
+      "raw_source_sha256": "f7d7dd734ea2bed29cfdec1c029e13c9dec08c7cade37505fc5ff429bdedc0b1",
+      "status": "SOURCE_SELECTED_FOR_NATIVE_CLEANUP"
     }
   ],
   "artifacts": [
@@ -1958,36 +1968,36 @@
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Clamp.aseprite",
-      "sha256": "916a3064b7f567bbe6b68beba2a6b7d7c17c8e7028ab6a7b036041fc7d51b6cb",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "0a977de255e9cacac453530fcc809986aceab8641fa367ef86b693ccef41b5eb",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_BL.aseprite",
-      "sha256": "f73f5588d319017ac7253d672045073d19727c511a034adccd41d8dbb88d8401",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "ab63ff606b2299abfbdad9fdaeff01e0cf657a1d574ae3d8da461d6a75e55954",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_BR.aseprite",
-      "sha256": "6520e418bde1f4aacbf348cfbc2cec9806f4bcbb2a7e77495eabdd5479a55eb0",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "75b128ac04ec17711a35248f58142b83cbf1ba43c47bd56f51e37bdbaad8e7fc",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_TL.aseprite",
-      "sha256": "b7bece5ef482c5f31ef5f2166e46708aefce1fb7e7b14d6e3fa6ae96319430a1",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "f5189bcec087b49c6d29fa450a208a1da2fb4d0c1cc8092ae7ca6415a89aafcd",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_TR.aseprite",
-      "sha256": "f9cdef2d3a10893118c60328915ae39f379d47d3d8374baba156cf940e02d4cd",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "385589fcf637be05c57512d2bbabfe564b235b23257834bd336e1203f5a98e2d",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
@@ -2007,64 +2017,64 @@
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Bottom.aseprite",
-      "sha256": "62ac649d4db7f632f0284117a5f089553363d3592d2ea6523ef23b1020907ea6",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "b63f21db30a24541a505044dffba4b99a63cd36f5aca8ee6cc77ccf7672c7073",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Left.aseprite",
-      "sha256": "20e96c4fd35089ca27c0b69be5d6100cdd4c4f02d1bff8b5d86d6fe37ec789f7",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "4cfadcc395106a1a8593bb355130081d6a93361d3398f76b3eb28136bcff1209",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Right.aseprite",
-      "sha256": "739d46d406d438b4d010b37b994c38b617fceaead98c923fae594d63a9973f80",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "8c0a4a2c7db70a30ad03806ca9c4b31334fc90e6c26949dc3d3c63c1207520ad",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Top.aseprite",
-      "sha256": "6a0178b482cb5cdeeb29f9185795f1c7b6f8f7abbfb9d3c0354a5840ca364258",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "7ea0c52dbf6f89a504af07ae85a43b9f1aa50870038f6eec0f7b1bb7f9403634",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Clamp.png",
-      "sha256": "a2c0edc1b9839f99de057c2145b76b6029baf50a44c9bac08b5b934e364cbc9c",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "84a6b34a44bc31fdfd8ec40e1e65644fa2b698f42a486958ded6684a447f750a",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_BL.png",
-      "sha256": "444076958ad5df4483fc2a115449a638fe9db354ff1623b0dbc5e53934305460",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_BR.png",
-      "sha256": "4c1f7b179dbd720879ea24e33be20f66361fa91ec493883a0425f7a2d16b31e9",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_TL.png",
-      "sha256": "d4f5acef2c63c70211b3f6b890eada41ccda1062c0d7d691c3a7796a03f36686",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_TR.png",
-      "sha256": "058b4a6aee6d33e8a1ae0a1c36575253bb9335e15bc873b24f05949bae64f3d1",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
@@ -2084,29 +2094,29 @@
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Bottom.png",
-      "sha256": "18cf7c8dca99c447adee7e9dca8bd50059e064f2151e68dedc5ff6485c987a1c",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Left.png",
-      "sha256": "d5a01b96e290f7c1862611bb00c8e6ad2b819d5fa22d32b11c6bfe7916b24d2d",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Right.png",
-      "sha256": "315727a7128711ee8ac357477f7b1f521af8d45bbf365973f9f41a98e9c54126",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
     {
       "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Top.png",
-      "sha256": "d2aa9ac31b44c3c2beeccf0d3faed025bf71b7020efba8d61d7995668d1bca18",
-      "status": "CANDIDATE_PENDING_USER",
+      "sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "status": "CORRECTED_PENDING_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
     },
@@ -2309,6 +2319,307 @@
     {
       "path": "ArtSource/DungeonPixelLab/Previews/Stage10/UnityPortrait-UnmaskedControl-3x.png",
       "sha256": "437e430d9033b1feaa664ed4c9ce1c39489f1938969d1e033673f7d59c6cae83",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Sources/Stage11/Board_Raw_PixelLab.png",
+      "sha256": "f7d7dd734ea2bed29cfdec1c029e13c9dec08c7cade37505fc5ff429bdedc0b1",
+      "status": "RAW_SOURCE",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Cell.aseprite",
+      "sha256": "96caff9354b1bca7030690ebf2f3fb3488315bbe57e8885abb48af9065245be3",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Clamp.aseprite",
+      "sha256": "e959e51a9882f0896ff227f5b2ae8583c3fe0d7014dfb97a00a22886a37d53d5",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Corner_BL.aseprite",
+      "sha256": "0b778d74f3ae99fdaefc5d06a9b76d153281463551fbc3d536265a9b2bb0010b",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Corner_BR.aseprite",
+      "sha256": "ee53b80b44ed73dc75eecd64914cb6704ff3f6d818f2c75dc5ceadf540e0fd39",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Corner_TL.aseprite",
+      "sha256": "6c273f574d9b510fa4fc9d2f759996060adc4bb1d6850dff8ee3dd2aaf922af3",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Corner_TR.aseprite",
+      "sha256": "5576dd592d82f09571833c62349f3fcc8a5c4e1ed59cc7314746621df0b91d20",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Rail_Bottom.aseprite",
+      "sha256": "30e4f0129dab9839d49f7187b807a506d6e47cde3e9abdbd525f9898a6986bdf",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Rail_Left.aseprite",
+      "sha256": "361be042d96ce515c815443df5e2b8629e5147287807da82d35f4344c0a2d1df",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Rail_Right.aseprite",
+      "sha256": "22ef2f96b392366857397a37f37d0e9b1a9242125310c1183175d8e025d73a4d",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage11/Board_Rail_Top.aseprite",
+      "sha256": "d3ea139688ae1146fa6cfb057850b1180bee257a5919e82b063caa64afee26da",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Cell.png",
+      "sha256": "2d030753d38b8eb50471dc143582237625a3bc8ecfe4a35189c160be07b5eaf5",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Clamp.png",
+      "sha256": "f8f53505ea93febbe29a04cb1814c3172e0526a00ec3d4bab5d1a8cdbe7d9a24",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Corner_BL.png",
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Corner_BR.png",
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Corner_TL.png",
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Corner_TR.png",
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Rail_Bottom.png",
+      "sha256": "bedb8a4efd156ac5ebe2dc8411c4d954487e01a087c2789de5cc71972eecbd0b",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Rail_Left.png",
+      "sha256": "6d8e4beeac556dedc9554fb0657e3ad6babb417263ffedb5ff4288d5698257c9",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Rail_Right.png",
+      "sha256": "6d8e4beeac556dedc9554fb0657e3ad6babb417263ffedb5ff4288d5698257c9",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage11/Board_Rail_Top.png",
+      "sha256": "bedb8a4efd156ac5ebe2dc8411c4d954487e01a087c2789de5cc71972eecbd0b",
+      "status": "CANDIDATE_PENDING_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/Contact-1x.png",
+      "sha256": "49f24a057f8ffca26da96e3e5f24b1e6bb3e7553d563f66fff36f3e4d2716c13",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/Contact-2x.png",
+      "sha256": "48a5ca1211f23c9f7f2b642145e1ac5b97dd88c5d768728770fbe56cd8045837",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/EmptyBoard-1080x1920.png",
+      "sha256": "2de41fbb0d5c933cb0f7a7c3cd4533d46a300118430cc17c821d42a87a798156",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/EmptyBoard-1080x2400.png",
+      "sha256": "07c4e89d15f949a3b8e8bc4e53a1dacf42d8863d711e45ed3faa34418a171b4d",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/EmptyBoard-360x640.png",
+      "sha256": "256849465bbc2ae4b9acd0d8f3634c1f485c43fb3f4f61f8b1b1473fd1041823",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/PortraitComparison-1x.png",
+      "sha256": "b4d34129e42bbdd275ca613197f37c13e3dfaef30ecf34f9166944fe62595bec",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/PortraitComparison-2x.png",
+      "sha256": "6f1d1909dd1a4507c6f6cdeb7c63d31b74b15bdd031d270a2d51014b24a1f831",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/Readability-1080x1920.png",
+      "sha256": "7da2624bf0849959ce652c347f8042d6e33987b64f6583ad5b94e1ae5259907e",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/Readability-1080x2400.png",
+      "sha256": "91bb50bb75b6315e470cd5ca500312e8a8c1376e5ac84b73def8acc732ca4738",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage11/Readability-360x640.png",
+      "sha256": "50163bbade0a931f2e33666853e17db87cdc7a787cd1fd5217cd116aac73ce91",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-100x191-1x.png",
+      "sha256": "63ba873cb071c0daa534a468736275cb369e35a68fb0bb02a7678a35847e3b69",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-100x191-3x.png",
+      "sha256": "168d430dfedbef4a3ee052e6d4f359e8bba91b4b6387f5eddd0d2ebd411e5be3",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-119x231-1x.png",
+      "sha256": "803731fb39fdc89b101d39006686083d32bb6a8eee297fa10d3eeb0259fd80c2",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-119x231-3x.png",
+      "sha256": "6e5c91ad960b481ea264fa9dcbdc34c07db358a9eaf716bae87117b9f7360c16",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-60x90-1x.png",
+      "sha256": "eeca92f125ab489793e30000105b9371f47e6df91225eb03872e9558c88b87e1",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-60x90-3x.png",
+      "sha256": "05c5128be5ff5b11db5fbca97aa1568924f27d0b50500c8fa6cbe834f542bd74",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-99x190-1x.png",
+      "sha256": "741c40483c2105c62cdad60de8da50b84663b41cb1e377c4e90a29cd5fe91c94",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Coverage-99x190-3x.png",
+      "sha256": "e2b0c1a20ab7f8c6c4cf35df0404e9fff14f9732d0c7210e3685236900d7f2df",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Portrait-1x.png",
+      "sha256": "fbb65ad57f2e85a7b9e117dc2238d9e89dee41335267da5fbef3579801852f2a",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Portrait-3x.png",
+      "sha256": "43286f9727d8fbbf90723404bfb782c806aaf0bf11fe4b935433fc205ad822c2",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Restored-1x.png",
+      "sha256": "3575ab046578e680feb8713350a3a63ea0bceffbdfc67dd2bf2a227b4074dec5",
+      "status": "DIAGNOSTIC_OR_REVIEW",
+      "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "existing_source": null
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Previews/Stage10Correction/Restored-3x.png",
+      "sha256": "9793e1d25dfd52bb3723a4eaa4dbd6b7722dccd469eaec052f4735c7d9110d9f",
       "status": "DIAGNOSTIC_OR_REVIEW",
       "pixel_lab_lineage": "a6b83eab-9a47-4738-855f-f70fe1167083",
       "existing_source": null
@@ -3817,265 +4128,11 @@
   "stage09_status": "BARREL_SKULL_ACCEPTED; RAW_BONES_RESTORED_COLOR_ONLY_CORRECTION",
   "stage10_assets": [
     {
-      "name": "Portrait_Rail_Top",
-      "dimensions": [
-        24,
-        8
-      ],
-      "bounds": [
-        0,
-        0,
-        24,
-        7
-      ],
-      "opaque_colors": 5,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#615B6B",
-        "#958BA1",
-        "#CCC3D5"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "d2aa9ac31b44c3c2beeccf0d3faed025bf71b7020efba8d61d7995668d1bca18",
-      "ase_sha256": "6a0178b482cb5cdeeb29f9185795f1c7b6f8f7abbfb9d3c0354a5840ca364258",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Rail_Bottom",
-      "dimensions": [
-        24,
-        11
-      ],
-      "bounds": [
-        0,
-        0,
-        24,
-        8
-      ],
-      "opaque_colors": 6,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#4E3D6C",
-        "#615B6B",
-        "#958BA1",
-        "#CCC3D5"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "18cf7c8dca99c447adee7e9dca8bd50059e064f2151e68dedc5ff6485c987a1c",
-      "ase_sha256": "62ac649d4db7f632f0284117a5f089553363d3592d2ea6523ef23b1020907ea6",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Rail_Left",
-      "dimensions": [
-        9,
-        20
-      ],
-      "bounds": [
-        0,
-        0,
-        8,
-        20
-      ],
-      "opaque_colors": 5,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#615B6B",
-        "#958BA1",
-        "#CCC3D5"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "d5a01b96e290f7c1862611bb00c8e6ad2b819d5fa22d32b11c6bfe7916b24d2d",
-      "ase_sha256": "20e96c4fd35089ca27c0b69be5d6100cdd4c4f02d1bff8b5d86d6fe37ec789f7",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Rail_Right",
-      "dimensions": [
-        10,
-        20
-      ],
-      "bounds": [
-        0,
-        0,
-        8,
-        20
-      ],
-      "opaque_colors": 5,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#615B6B",
-        "#958BA1",
-        "#CCC3D5"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "315727a7128711ee8ac357477f7b1f521af8d45bbf365973f9f41a98e9c54126",
-      "ase_sha256": "739d46d406d438b4d010b37b994c38b617fceaead98c923fae594d63a9973f80",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Corner_TL",
-      "dimensions": [
-        14,
-        14
-      ],
-      "bounds": [
-        1,
-        1,
-        14,
-        14
-      ],
-      "opaque_colors": 10,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#615B6B",
-        "#68108E",
-        "#846A95",
-        "#958BA1",
-        "#AB2AD3",
-        "#CCC3D5",
-        "#F183FB",
-        "#FCD4FF"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "d4f5acef2c63c70211b3f6b890eada41ccda1062c0d7d691c3a7796a03f36686",
-      "ase_sha256": "b7bece5ef482c5f31ef5f2166e46708aefce1fb7e7b14d6e3fa6ae96319430a1",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Corner_TR",
-      "dimensions": [
-        13,
-        14
-      ],
-      "bounds": [
-        0,
-        1,
-        13,
-        14
-      ],
-      "opaque_colors": 10,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#615B6B",
-        "#68108E",
-        "#846A95",
-        "#958BA1",
-        "#AB2AD3",
-        "#CCC3D5",
-        "#F183FB",
-        "#FCD4FF"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "058b4a6aee6d33e8a1ae0a1c36575253bb9335e15bc873b24f05949bae64f3d1",
-      "ase_sha256": "f9cdef2d3a10893118c60328915ae39f379d47d3d8374baba156cf940e02d4cd",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Corner_BL",
-      "dimensions": [
-        14,
-        16
-      ],
-      "bounds": [
-        1,
-        0,
-        14,
-        14
-      ],
-      "opaque_colors": 11,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#4E3D6C",
-        "#615B6B",
-        "#68108E",
-        "#846A95",
-        "#958BA1",
-        "#AB2AD3",
-        "#CCC3D5",
-        "#F183FB",
-        "#FCD4FF"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "444076958ad5df4483fc2a115449a638fe9db354ff1623b0dbc5e53934305460",
-      "ase_sha256": "f73f5588d319017ac7253d672045073d19727c511a034adccd41d8dbb88d8401",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
-      "name": "Portrait_Corner_BR",
-      "dimensions": [
-        13,
-        16
-      ],
-      "bounds": [
-        0,
-        0,
-        13,
-        14
-      ],
-      "opaque_colors": 11,
-      "palette": [
-        "#0A0D11",
-        "#241F3A",
-        "#4E3D6C",
-        "#615B6B",
-        "#68108E",
-        "#846A95",
-        "#958BA1",
-        "#AB2AD3",
-        "#CCC3D5",
-        "#F183FB",
-        "#FCD4FF"
-      ],
-      "alpha": [
-        0,
-        255
-      ],
-      "sha256": "4c1f7b179dbd720879ea24e33be20f66361fa91ec493883a0425f7a2d16b31e9",
-      "ase_sha256": "6520e418bde1f4aacbf348cfbc2cec9806f4bcbb2a7e77495eabdd5479a55eb0",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
-    },
-    {
+      "stage": "10",
       "name": "Portrait_Clamp",
       "dimensions": [
-        8,
-        8
+        7,
+        7
       ],
       "bounds": [
         0,
@@ -4093,45 +4150,152 @@
         "#CCC3D5",
         "#E2DCEA"
       ],
-      "alpha": [
+      "alpha_values": [
         0,
         255
       ],
-      "sha256": "a2c0edc1b9839f99de057c2145b76b6029baf50a44c9bac08b5b934e364cbc9c",
-      "ase_sha256": "916a3064b7f567bbe6b68beba2a6b7d7c17c8e7028ab6a7b036041fc7d51b6cb",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
+      "sha256": "84a6b34a44bc31fdfd8ec40e1e65644fa2b698f42a486958ded6684a447f750a",
+      "ase_sha256": "0a977de255e9cacac453530fcc809986aceab8641fa367ef86b693ccef41b5eb",
+      "native_equals_png": true
     },
     {
-      "name": "Portrait_HP_Shell",
+      "stage": "10",
+      "name": "Portrait_Corner_BL",
       "dimensions": [
-        64,
-        10
+        13,
+        13
       ],
       "bounds": [
         0,
-        1,
-        64,
-        9
+        0,
+        13,
+        13
       ],
-      "opaque_colors": 5,
+      "opaque_colors": 10,
       "palette": [
         "#0A0D11",
-        "#151423",
-        "#4E3D6C",
+        "#241F3A",
         "#615B6B",
-        "#846A95"
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
       ],
-      "alpha": [
+      "alpha_values": [
         0,
         255
       ],
-      "sha256": "0d0e5454db93e901da2382978788c012d5d43d3c257acef7053e936e33c20882",
-      "ase_sha256": "8757f459a94aeb7b15c4489ba64d75c19876336437f2a44004c6a39f9f21774c",
-      "native_cel_equals_png": true,
-      "status": "CANDIDATE_PENDING_USER_REVIEW"
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "ase_sha256": "ab63ff606b2299abfbdad9fdaeff01e0cf657a1d574ae3d8da461d6a75e55954",
+      "native_equals_png": true
     },
     {
+      "stage": "10",
+      "name": "Portrait_Corner_BR",
+      "dimensions": [
+        13,
+        13
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "ase_sha256": "75b128ac04ec17711a35248f58142b83cbf1ba43c47bd56f51e37bdbaad8e7fc",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Corner_TL",
+      "dimensions": [
+        13,
+        13
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "ase_sha256": "f5189bcec087b49c6d29fa450a208a1da2fb4d0c1cc8092ae7ca6415a89aafcd",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Corner_TR",
+      "dimensions": [
+        13,
+        13
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        13
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "ase_sha256": "385589fcf637be05c57512d2bbabfe564b235b23257834bd336e1203f5a98e2d",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
       "name": "Portrait_Heart_Existing",
       "dimensions": [
         13,
@@ -4156,18 +4320,158 @@
         "#ED5A89",
         "#FF9FB6"
       ],
-      "alpha": [
+      "alpha_values": [
         0,
         255
       ],
       "sha256": "81444a0f8d2b2b9d5bbf0f2cef674863830e46325a9a146585e783d2859f8bd4",
       "ase_sha256": "41e51fc43fddcdc13765bd9f3cca8fae1c9858cfecc81a08f937de0e73228a19",
-      "native_cel_equals_png": true,
-      "status": "EXISTING_ICON_UNCHANGED"
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_HP_Shell",
+      "dimensions": [
+        64,
+        10
+      ],
+      "bounds": [
+        0,
+        1,
+        64,
+        9
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#151423",
+        "#4E3D6C",
+        "#615B6B",
+        "#846A95"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "0d0e5454db93e901da2382978788c012d5d43d3c257acef7053e936e33c20882",
+      "ase_sha256": "8757f459a94aeb7b15c4489ba64d75c19876336437f2a44004c6a39f9f21774c",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Rail_Bottom",
+      "dimensions": [
+        24,
+        7
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        7
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "ase_sha256": "b63f21db30a24541a505044dffba4b99a63cd36f5aca8ee6cc77ccf7672c7073",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Rail_Left",
+      "dimensions": [
+        7,
+        20
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        20
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "ase_sha256": "4cfadcc395106a1a8593bb355130081d6a93361d3398f76b3eb28136bcff1209",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Rail_Right",
+      "dimensions": [
+        7,
+        20
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        20
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "ase_sha256": "8c0a4a2c7db70a30ad03806ca9c4b31334fc90e6c26949dc3d3c63c1207520ad",
+      "native_equals_png": true
+    },
+    {
+      "stage": "10",
+      "name": "Portrait_Rail_Top",
+      "dimensions": [
+        24,
+        7
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        7
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "ase_sha256": "7ea0c52dbf6f89a504af07ae85a43b9f1aa50870038f6eec0f7b1bb7f9403634",
+      "native_equals_png": true
     }
   ],
-  "stage10_status": "CANDIDATE_PENDING_USER_REVIEW",
-  "stage10_validation": "ArtSource/DungeonPixelLab/Diagnostics/Stage10/PixelChecks.json",
+  "stage10_status": "CORRECTED_PENDING_USER_REVIEW",
+  "stage10_validation": "Diagnostics/Stage10Correction/UnityTests.xml; Diagnostics/Stage11/NativeChecks.json",
   "artifact_revision_history": [
     {
       "path": "ArtSource/DungeonPixelLab/Native/Stage09/Clutter_Bones.aseprite",
@@ -4301,6 +4605,445 @@
       "replacement_sha256": "e29bc0904701405579f904de5da6b90341dafcc19a44cc6b9b6a905cd2a6b0d9",
       "reason": "User requested raw fat bones restored; color-only correction and refreshed review evidence.",
       "previous_commit": "8b7b2b47"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Clamp.aseprite",
+      "superseded_sha256": "916a3064b7f567bbe6b68beba2a6b7d7c17c8e7028ab6a7b036041fc7d51b6cb",
+      "replacement_sha256": "0a977de255e9cacac453530fcc809986aceab8641fa367ef86b693ccef41b5eb",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_BL.aseprite",
+      "superseded_sha256": "f73f5588d319017ac7253d672045073d19727c511a034adccd41d8dbb88d8401",
+      "replacement_sha256": "ab63ff606b2299abfbdad9fdaeff01e0cf657a1d574ae3d8da461d6a75e55954",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_BR.aseprite",
+      "superseded_sha256": "6520e418bde1f4aacbf348cfbc2cec9806f4bcbb2a7e77495eabdd5479a55eb0",
+      "replacement_sha256": "75b128ac04ec17711a35248f58142b83cbf1ba43c47bd56f51e37bdbaad8e7fc",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_TL.aseprite",
+      "superseded_sha256": "b7bece5ef482c5f31ef5f2166e46708aefce1fb7e7b14d6e3fa6ae96319430a1",
+      "replacement_sha256": "f5189bcec087b49c6d29fa450a208a1da2fb4d0c1cc8092ae7ca6415a89aafcd",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Corner_TR.aseprite",
+      "superseded_sha256": "f9cdef2d3a10893118c60328915ae39f379d47d3d8374baba156cf940e02d4cd",
+      "replacement_sha256": "385589fcf637be05c57512d2bbabfe564b235b23257834bd336e1203f5a98e2d",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Bottom.aseprite",
+      "superseded_sha256": "62ac649d4db7f632f0284117a5f089553363d3592d2ea6523ef23b1020907ea6",
+      "replacement_sha256": "b63f21db30a24541a505044dffba4b99a63cd36f5aca8ee6cc77ccf7672c7073",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Left.aseprite",
+      "superseded_sha256": "20e96c4fd35089ca27c0b69be5d6100cdd4c4f02d1bff8b5d86d6fe37ec789f7",
+      "replacement_sha256": "4cfadcc395106a1a8593bb355130081d6a93361d3398f76b3eb28136bcff1209",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Right.aseprite",
+      "superseded_sha256": "739d46d406d438b4d010b37b994c38b617fceaead98c923fae594d63a9973f80",
+      "replacement_sha256": "8c0a4a2c7db70a30ad03806ca9c4b31334fc90e6c26949dc3d3c63c1207520ad",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Native/Stage10/Portrait_Rail_Top.aseprite",
+      "superseded_sha256": "6a0178b482cb5cdeeb29f9185795f1c7b6f8f7abbfb9d3c0354a5840ca364258",
+      "replacement_sha256": "7ea0c52dbf6f89a504af07ae85a43b9f1aa50870038f6eec0f7b1bb7f9403634",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Clamp.png",
+      "superseded_sha256": "a2c0edc1b9839f99de057c2145b76b6029baf50a44c9bac08b5b934e364cbc9c",
+      "replacement_sha256": "84a6b34a44bc31fdfd8ec40e1e65644fa2b698f42a486958ded6684a447f750a",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_BL.png",
+      "superseded_sha256": "444076958ad5df4483fc2a115449a638fe9db354ff1623b0dbc5e53934305460",
+      "replacement_sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_BR.png",
+      "superseded_sha256": "4c1f7b179dbd720879ea24e33be20f66361fa91ec493883a0425f7a2d16b31e9",
+      "replacement_sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_TL.png",
+      "superseded_sha256": "d4f5acef2c63c70211b3f6b890eada41ccda1062c0d7d691c3a7796a03f36686",
+      "replacement_sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Corner_TR.png",
+      "superseded_sha256": "058b4a6aee6d33e8a1ae0a1c36575253bb9335e15bc873b24f05949bae64f3d1",
+      "replacement_sha256": "1cb0f4a3645493270cd93afb5509581a878ddb0103a053d2ceebd89038276c70",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Bottom.png",
+      "superseded_sha256": "18cf7c8dca99c447adee7e9dca8bd50059e064f2151e68dedc5ff6485c987a1c",
+      "replacement_sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Left.png",
+      "superseded_sha256": "d5a01b96e290f7c1862611bb00c8e6ad2b819d5fa22d32b11c6bfe7916b24d2d",
+      "replacement_sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Right.png",
+      "superseded_sha256": "315727a7128711ee8ac357477f7b1f521af8d45bbf365973f9f41a98e9c54126",
+      "replacement_sha256": "c315fcaa686a048835c2013f376389e4b7d33275a780691fa70c3dcf3c10e33e",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
+    },
+    {
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage10/Portrait_Rail_Top.png",
+      "superseded_sha256": "d2aa9ac31b44c3c2beeccf0d3faed025bf71b7020efba8d61d7995668d1bca18",
+      "replacement_sha256": "ce26f87633b7bb0eb8b2e2536e377d85ff5898e13c682aee9b0290ec79c89a7c",
+      "reason": "User-requested native symmetry correction; before-art retained in Diagnostics/Stage10Correction.",
+      "previous_commit": "aff7f3a"
     }
-  ]
+  ],
+  "stage11_assets": [
+    {
+      "stage": "11",
+      "name": "Board_Cell",
+      "dimensions": [
+        35,
+        35
+      ],
+      "bounds": [
+        0,
+        0,
+        35,
+        35
+      ],
+      "opaque_colors": 6,
+      "palette": [
+        "#0A0D11",
+        "#111525",
+        "#192033",
+        "#1C2438",
+        "#253149",
+        "#344057"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "2d030753d38b8eb50471dc143582237625a3bc8ecfe4a35189c160be07b5eaf5",
+      "ase_sha256": "96caff9354b1bca7030690ebf2f3fb3488315bbe57e8885abb48af9065245be3",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Clamp",
+      "dimensions": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#382D55",
+        "#4E3D6C",
+        "#846A95",
+        "#ABA0B8"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "f8f53505ea93febbe29a04cb1814c3172e0526a00ec3d4bab5d1a8cdbe7d9a24",
+      "ase_sha256": "e959e51a9882f0896ff227f5b2ae8583c3fe0d7014dfb97a00a22886a37d53d5",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Corner_BL",
+      "dimensions": [
+        17,
+        17
+      ],
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#382D55",
+        "#421A5A",
+        "#4E3D6C",
+        "#68168A",
+        "#846A95",
+        "#ABA0B8",
+        "#C22BEA",
+        "#DDD5E3",
+        "#F078FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "ase_sha256": "0b778d74f3ae99fdaefc5d06a9b76d153281463551fbc3d536265a9b2bb0010b",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Corner_BR",
+      "dimensions": [
+        17,
+        17
+      ],
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#382D55",
+        "#421A5A",
+        "#4E3D6C",
+        "#68168A",
+        "#846A95",
+        "#ABA0B8",
+        "#C22BEA",
+        "#DDD5E3",
+        "#F078FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "ase_sha256": "ee53b80b44ed73dc75eecd64914cb6704ff3f6d818f2c75dc5ceadf540e0fd39",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Corner_TL",
+      "dimensions": [
+        17,
+        17
+      ],
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#382D55",
+        "#421A5A",
+        "#4E3D6C",
+        "#68168A",
+        "#846A95",
+        "#ABA0B8",
+        "#C22BEA",
+        "#DDD5E3",
+        "#F078FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "ase_sha256": "6c273f574d9b510fa4fc9d2f759996060adc4bb1d6850dff8ee3dd2aaf922af3",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Corner_TR",
+      "dimensions": [
+        17,
+        17
+      ],
+      "bounds": [
+        0,
+        0,
+        17,
+        17
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#382D55",
+        "#421A5A",
+        "#4E3D6C",
+        "#68168A",
+        "#846A95",
+        "#ABA0B8",
+        "#C22BEA",
+        "#DDD5E3",
+        "#F078FF"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7bd114cefc6c8cce144e654027e1293fefa4d8ff06d618eb332671c386ae8c59",
+      "ase_sha256": "5576dd592d82f09571833c62349f3fcc8a5c4e1ed59cc7314746621df0b91d20",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Rail_Bottom",
+      "dimensions": [
+        32,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#382D55",
+        "#68517F",
+        "#846A95",
+        "#ABA0B8"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "bedb8a4efd156ac5ebe2dc8411c4d954487e01a087c2789de5cc71972eecbd0b",
+      "ase_sha256": "30e4f0129dab9839d49f7187b807a506d6e47cde3e9abdbd525f9898a6986bdf",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Rail_Left",
+      "dimensions": [
+        9,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#382D55",
+        "#68517F",
+        "#846A95",
+        "#ABA0B8"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "6d8e4beeac556dedc9554fb0657e3ad6babb417263ffedb5ff4288d5698257c9",
+      "ase_sha256": "361be042d96ce515c815443df5e2b8629e5147287807da82d35f4344c0a2d1df",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Rail_Right",
+      "dimensions": [
+        9,
+        32
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        32
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#382D55",
+        "#68517F",
+        "#846A95",
+        "#ABA0B8"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "6d8e4beeac556dedc9554fb0657e3ad6babb417263ffedb5ff4288d5698257c9",
+      "ase_sha256": "22ef2f96b392366857397a37f37d0e9b1a9242125310c1183175d8e025d73a4d",
+      "native_equals_png": true
+    },
+    {
+      "stage": "11",
+      "name": "Board_Rail_Top",
+      "dimensions": [
+        32,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        9
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#382D55",
+        "#68517F",
+        "#846A95",
+        "#ABA0B8"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "bedb8a4efd156ac5ebe2dc8411c4d954487e01a087c2789de5cc71972eecbd0b",
+      "ase_sha256": "d3ea139688ae1146fa6cfb057850b1180bee257a5919e82b063caa64afee26da",
+      "native_equals_png": true
+    }
+  ],
+  "stage11_status": "CANDIDATE_PENDING_USER_REVIEW",
+  "stage11_validation": "Diagnostics/Stage11/NativeChecks.json"
 }

@@ -22,3 +22,7 @@ Native size relationships to validate per family (not final designs):
 | UI |8–16px corners,16/32px rail repeats; control-native footprints | Assemble rails/9-slices without stretching corners; dynamic text remains live. |
 
 The empty scaffold reserves360x640 logical pixels. Diagnostic1x and3x have exact pixel pitch. Future pieces must use integer coordinates and integer magnification. Test the actual production path separately because its existing flexible geometry may stretch native artwork. Stage00 diagnoses that path; it does not change layout or production rendering code.
+
+## Frame and backing edge cases — required following Stage10 correction
+
+Use matching visible centerlines, not differently padded canvas origins, for paired rails and connectors. Derive all piece placements from the frame bounds, keep corners at native size and tile rails. Include a centered connector where the span permits it. Recess materials must overfill behind a mask anchored to the frame interior, including the bottom strip behind HP. Validate coverage as well as leakage, odd/even dimensions, small and large supported bounds, integer magnifications, safe-area offsets, recovery from transient undersize, and foreground UI ordering. Check actual rendered pixels. User authorization permits scoped code/mask fixes; do not accept a flawed construction merely because source imports pass.

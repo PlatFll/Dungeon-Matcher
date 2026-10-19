@@ -20,6 +20,10 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
+## Staged PixelLab dungeon library (2026-10-19, draft PR #203)
+
+The separate asset-production branch is complete through Stage11 and stopped for review. Its 68 native candidates include the corrected modular portrait and an empty 8×8 board with the established 35px pitch. The portrait now uses symmetric native pieces and a tiled backing overfilled behind an anchored interior mask. The shared frame fitter's new mode is opt-in; production bindings and gameplay layout are unchanged. Actual Unity captures cover native/3× rendering, odd-sized portrait bounds and tall safe areas. See [Stage11 and validation evidence](../ArtSource/DungeonPixelLab/Progress/Stage_11.md). Stage12, production integration and merge remain unapproved.
+
 ## Three-zone battle presentation (2026-10-18)
 
 Current Dungeon follow-up: PR #201's side-view modular reconstruction was approved

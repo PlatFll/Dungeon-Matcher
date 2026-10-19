@@ -55,3 +55,8 @@ stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,refere
 10,2026-10-19T02:27:14.841093+00:00,create_image_pro_flash,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Isolated corner and rails,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage10/Frame_Raw_PixelLab.png,Exports/Stage10/,Actual Rattlebones reference; native LibreSprite adaptation
 10,2026-10-19T02:27:14.841093+00:00,get_image,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Completed source,,,0,SUCCESS,,,Completion explicitly charged5
 10,2026-10-19T02:27:14.841093+00:00,get_balance,,portrait frame,Balance after source,,,0,SUCCESS,,,1004.20; delta5; cumulative50
+11,2026-10-19T03:26:59.789346+00:00,get_balance,,board frame and cells,Starting live balance,,,0,SUCCESS,,,1004.20; explicit Stage11 approval for 5
+11,2026-10-19T03:26:59.789346+00:00,get_pro_flash_capabilities,,board frame and cells,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; lookup free
+11,2026-10-19T03:26:59.789346+00:00,create_image_pro_flash,bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7,board frame and cells,Native corner and stone rail source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage11/Board_Raw_PixelLab.png,Exports/Stage11/,Actual Rattlebones style input; native LibreSprite cleanup
+11,2026-10-19T03:26:59.789346+00:00,get_image,bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7,board frame and cells,Completed source,,,0,SUCCESS,,,Completion explicitly charged 5
+11,2026-10-19T03:26:59.789346+00:00,get_balance,,board frame and cells,Balance after source,,,0,SUCCESS,,,999.20; delta 5; cumulative 55
