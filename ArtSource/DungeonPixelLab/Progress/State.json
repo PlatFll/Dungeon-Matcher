@@ -2,7 +2,7 @@
   "project": "Dungeon Matcher",
   "workflow": "PixelLab-first staged dungeon zone",
   "branch": "feature/dungeon-zone-pixellab-asset-library",
-  "current_stage": "08",
+  "current_stage": "09",
   "stages": {
     "00": "DONE",
     "01": "DONE",
@@ -13,7 +13,7 @@
     "06": "DONE",
     "07": "DONE",
     "08": "DONE",
-    "09": "NOT_STARTED",
+    "09": "DONE",
     "10": "NOT_STARTED",
     "11": "NOT_STARTED",
     "12": "NOT_STARTED",
@@ -22,17 +22,17 @@
     "15": "NOT_STARTED",
     "16": "NOT_STARTED"
   },
-  "approval": "STAGES_01_02_03_04_05_06_07_APPROVED; STAGE_08_PENDING_USER_REVIEW",
-  "cumulative_billable_generations": 35,
-  "soft_budget_generation_equivalents": 35,
+  "approval": "STAGES_01_02_03_04_05_06_07_08_APPROVED; STAGE_09_PENDING_USER_REVIEW",
+  "cumulative_billable_generations": 45,
+  "soft_budget_generation_equivalents": 45,
   "PixelLab_status": "CONNECTED_TIER_2",
   "golden_reference_sha": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
-  "notes": "Stage08 chains and banners complete and verified. No Stage09, production integration or merge. Cumulative budget reached: approval required before more paid generation.",
+  "notes": "Stage09 environmental props complete and verified. User authorized budget extension for Stage09; planned and spent 10. No Stage10, production integration or merge.",
   "base_commit": "1ee1fdb02e409c9d6b17785d84a76d36bab6342c",
   "stopped": true,
-  "next_prompt": "PROMPTS/09_GENERATE_BARRELS_SKULLS_BONES.txt",
-  "generations_remaining_start": 1025.2,
-  "generations_remaining_end": 1019.2,
+  "next_prompt": "PROMPTS/10_GENERATE_PLAYER_FRAME_KIT.txt",
+  "generations_remaining_start": 1019.2,
+  "generations_remaining_end": 1009.2,
   "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203",
   "stage01_user_approval": "2026-10-19: Looks good, go ahead with stage 2.",
   "stage02_user_approval": "2026-10-19: Looks good, go ahead with stage 3.",
@@ -40,5 +40,14 @@
   "stage04_user_approval": "2026-10-19: Looks good, go ahead with stage 5\u2014the gate, arch, and door.",
   "stage05_user_approval": "2026-10-19: Looks good, go ahead with stage 6\u2014the pillars and support stone.",
   "stage06_user_approval": "2026-10-19: Looks good, go ahead with stage 7.",
-  "stage07_user_approval": "2026-10-19: Looks good, go ahead with stage 8\u2014the chains and banners. Use PixelLab and LibreSprite, keep the approved art unchanged, stop when that stage is complete, and show me the preview."
+  "stage07_user_approval": "2026-10-19: Looks good, go ahead with stage 8\u2014the chains and banners. Use PixelLab and LibreSprite, keep the approved art unchanged, stop when that stage is complete, and show me the preview.",
+  "stage08_user_approval": "2026-10-19: Looks good, go ahead with stage 9\u2014the barrels, skulls, and bones. I approve increasing the PixelLab budget for this stage. Use PixelLab and LibreSprite, keep approved art unchanged, then stop and show me the preview.",
+  "stage09_budget_extension": {
+    "user_authorized": true,
+    "scope": "Stage09 only",
+    "quoted_and_allocated_generations": 10,
+    "actual_generations": 10,
+    "prior_cumulative_budget": 35,
+    "authorization": "Looks good, go ahead with stage 9\u2014the barrels, skulls, and bones. I approve increasing the PixelLab budget for this stage. Use PixelLab and LibreSprite, keep approved art unchanged, then stop and show me the preview."
+  }
 }

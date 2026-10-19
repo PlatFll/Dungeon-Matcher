@@ -1,0 +1,55 @@
+{
+  "stage": "09",
+  "authorization": "Looks good, go ahead with stage 9\u2014the barrels, skulls, and bones. I approve increasing the PixelLab budget for this stage. Use PixelLab and LibreSprite, keep approved art unchanged, then stop and show me the preview.",
+  "budget_extension_scope": "Stage09 only",
+  "planned_additional_generations": 10,
+  "actual_additional_generations": 10,
+  "cumulative_before": 35,
+  "cumulative_after": 45,
+  "balance_start": 1019.2,
+  "balance_after_barrel": 1014.2,
+  "balance_end": 1009.2,
+  "endpoint": "create_object_pro_flash",
+  "n_directions": 1,
+  "quote_per_object": 5,
+  "style_input": "Actual native Rattlebones PNG via style_image.base64; outline/detail/shading true; color_palette false",
+  "guide_audit": "Stage09_Reference_Audit.json",
+  "barrel": {
+    "job_id": "fb8fa0b1-967e-4d0e-aae8-0e40e3b891c6",
+    "object_id": "e8fc15d3-f3d7-4a82-88d8-c02824ea73bb",
+    "seed": 910901,
+    "size": [
+      64,
+      64
+    ],
+    "billed_generations": 5,
+    "billing_evidence": "Authenticated get_balance delta 1019.20 -> 1014.20; get_object completed. Itemized outer-job billing is not exposed by get_object.",
+    "completion": [
+      "status: completed\nid: e8fc15d3-f3d7-4a82-88d8-c02824ea73bb\nname: Dungeon Matcher Stage09 compact wooden barrel\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: side\ngroup: 14523701-aa7a-4e70-95b7-1cd75168c1e3\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/6581479a-74c5-44d8-ad16-58726de3c30c/e8fc15d3-f3d7-4a82-88d8-c02824ea73bb/rotations/unknown.png\n\nanimations: none\n\ndownload: https://api.pixellab.ai/mcp/objects/e8fc15d3-f3d7-4a82-88d8-c02824ea73bb/download\nspritesheet: https://api.pixellab.ai/mcp/objects/e8fc15d3-f3d7-4a82-88d8-c02824ea73bb/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"e8fc15d3-f3d7-4a82-88d8-c02824ea73bb\", ...) | create_object_state(object_id=\"e8fc15d3-f3d7-4a82-88d8-c02824ea73bb\", ...) | delete_object(object_id=\"e8fc15d3-f3d7-4a82-88d8-c02824ea73bb\")\nhint: animate_object(object_id=\"e8fc15d3-f3d7-4a82-88d8-c02824ea73bb\", animation_description=\"...\")"
+    ],
+    "raw_sha256": "9e45a4e3e9c1e849e1ad1cce0b660a5a13cdab959bfe121a5953b81961cb628a"
+  },
+  "bones": {
+    "job_id": "b170d4ee-f71b-4657-bc35-06a0eb50f4b5",
+    "object_id": "e13208f9-f411-4101-a823-c814d7ae2cbb",
+    "seed": 910902,
+    "size": [
+      64,
+      64
+    ],
+    "billed_generations": 5,
+    "billing_evidence": "Authenticated get_balance delta 1014.20 -> 1009.20; get_object completed.",
+    "completion": [
+      "status: completed\nid: e13208f9-f411-4101-a823-c814d7ae2cbb\nname: Dungeon Matcher Stage09 skull and loose bones ground clutter\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: side\ngroup: 9a1c706e-eb29-44e9-9575-8527fd9e122d\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/6581479a-74c5-44d8-ad16-58726de3c30c/e13208f9-f411-4101-a823-c814d7ae2cbb/rotations/unknown.png\n\nanimations: none\n\ndownload: https://api.pixellab.ai/mcp/objects/e13208f9-f411-4101-a823-c814d7ae2cbb/download\nspritesheet: https://api.pixellab.ai/mcp/objects/e13208f9-f411-4101-a823-c814d7ae2cbb/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"e13208f9-f411-4101-a823-c814d7ae2cbb\", ...) | create_object_state(object_id=\"e13208f9-f411-4101-a823-c814d7ae2cbb\", ...) | delete_object(object_id=\"e13208f9-f411-4101-a823-c814d7ae2cbb\")\nhint: animate_object(object_id=\"e13208f9-f411-4101-a823-c814d7ae2cbb\", animation_description=\"...\")"
+    ],
+    "raw_sha256": "17b75a09c4349b221d0b0314d74f32243bb73439d70b27e9817c1ecab1e10631"
+  },
+  "balance_receipts": {
+    "after_barrel": [
+      "credits: $0.00\ngenerations_remaining: 1014.20\ngenerations_used: 2085.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use \u00e2\u20ac\u201d prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls \u00e2\u20ac\u201d most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+    ],
+    "end": [
+      "credits: $0.00\ngenerations_remaining: 1009.20\ngenerations_used: 2090.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use \u00e2\u20ac\u201d prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls \u00e2\u20ac\u201d most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+    ]
+  }
+}

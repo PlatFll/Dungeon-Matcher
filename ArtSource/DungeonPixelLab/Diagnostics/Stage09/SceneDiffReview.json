@@ -1,0 +1,28 @@
+{
+  "scene": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+  "added_objects": [
+    "114:Clutter_Barrel @{x: 322, y: -140}",
+    "114:Clutter_Bones @{x: 275, y: -170}",
+    "114:Clutter_Skull @{x: 110, y: -160}",
+    "1:Clutter_Barrel @{x: 322, y: -140}",
+    "1:Clutter_Bones @{x: 275, y: -170}",
+    "1:Clutter_Skull @{x: 110, y: -160}",
+    "222:Clutter_Barrel @{x: 322, y: -140}",
+    "222:Clutter_Bones @{x: 275, y: -170}",
+    "222:Clutter_Skull @{x: 110, y: -160}",
+    "224:Clutter_Barrel @{x: 322, y: -140}",
+    "224:Clutter_Bones @{x: 275, y: -170}",
+    "224:Clutter_Skull @{x: 110, y: -160}"
+  ],
+  "removed_objects": [],
+  "changed_existing_objects": [
+    {
+      "object": "114:Dungeon PixelLab preview root",
+      "diff": "--- \n\n+++ \n\n@@ -57,4 +57,7 @@\n\n   - {fileID: 21300000, guid: ff191017040f53a4b9c061aa103b16d6, type: 3}\n   - {fileID: 21300000, guid: 1ff7aa2226df01842a68048c560ee48b, type: 3}\n+  - {fileID: 21300000, guid: 4b3414bf1970e674e912db1a2d06db57, type: 3}\n+  - {fileID: 21300000, guid: 250fbafdf5154254183ab3a2971c8b75, type: 3}\n+  - {fileID: 21300000, guid: 7a9d656f12a18a246bde32fbec690871, type: 3}\n   - {fileID: 21300000, guid: 80c74a257b2073746a1e871f91b1921d, type: 3}\n   - {fileID: 21300000, guid: e26fcf2198c7f6d45ade1a671226450f, type: 3}\n@@ -65,5 +68,5 @@\n\n   - {fileID: 21300000, guid: c65883cf13aea424e9089b3b1e27211f, type: 3}\n   - {fileID: 21300000, guid: 905c02710ecd7dc46a004ee6a6d6be5a, type: 3}\n-  placementManifest: {fileID: 4900000, guid: 06fe720957a7c39429af2b008ad90fa9, type: 3}\n+  placementManifest: {fileID: 4900000, guid: 7429f59b020ad844ab28e03b550fe75f, type: 3}\n   width: 360\n   height: 640"
+    },
+    {
+      "object": "224:04 Props @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -27,4 +27,7 @@\n\n   - {fileID: 224:Hanging_Banner @{x: 140, y: -58}}\n   - {fileID: 224:Hanging_Banner @{x: 282, y: -58}}\n+  - {fileID: 224:Clutter_Barrel @{x: 322, y: -140}}\n+  - {fileID: 224:Clutter_Skull @{x: 110, y: -160}}\n+  - {fileID: 224:Clutter_Bones @{x: 275, y: -170}}\n   - {fileID: 224:Torch_Fixture @{x: 112, y: -86}}\n   - {fileID: 224:Torch_Flame @{x: 112, y: -86}}"
+    }
+  ]
+}

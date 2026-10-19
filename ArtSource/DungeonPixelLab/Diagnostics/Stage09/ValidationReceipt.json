@@ -1,0 +1,59 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-4c4c03b9-436d-4d90-9460-07f833b54be5.log",
+  "log_sha256": "26dc37b74028eb17886acbfa1ea7fd4ce2699bb5df41c06f51c9d393c1bfb335",
+  "test_xml_sha256": "7942acef6100544e0fa4b18ae707a7e1bb63d0dc05c98a1e9898bf02f1571e13",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage09Tests.cs": "7f420f050515100acda12310b59c5f859e45e539698d3bb65a17fd13c4304e13",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "d1534343e3b9f98ce4c34318b79b18b361b59dbf4088dc3299ce3b855b6209a8",
+    "Assets/_Game/Art/DungeonPixelLab/Stage09ClutterPlacement.json": "1290aa5df8da386754884a65b8c65ebfa599b2f74e77cc6f28b3c81056aef9b1"
+  },
+  "main_user_files_preserved": 8,
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Barrel.png.meta",
+      "before_sha256": "1f2cb60b0b143e71d9e889936bc71177d2a7cd6d7e377e24c6abedbce45de223",
+      "after_sha256": "38903e8687434bc9d1db13e185c7bb06e55cae7ab58d5b2886c7ebf8cc9d2301",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Bones.png.meta",
+      "before_sha256": "ad0cff3a8cba891fea5bfad0892b24e2b0adb12362ffb427aa1e0bae89c002d6",
+      "after_sha256": "8a1fc63816ed53daa1b7e1fc23199090ddd0c92bf3ca2d8753335b94d61108ac",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter/Clutter_Skull.png.meta",
+      "before_sha256": "d990d765d78dfeb452dcd0e34d772b253df3089f033a761d2df337f702b3b3b1",
+      "after_sha256": "5a15ca34d4ccb2208545f36f2412abf24ac77fcce216e5b1466ab1e406b44285",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Clutter.meta",
+      "before_sha256": "dd5697ad151fd4e35ffd24fb7ec292eaaf4446f576ed0f5471441dfcf6b531df",
+      "after_sha256": "0813170f535711372648ce4e5949a51733f50448504626b0542f7d14ae4c96df",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage09ClutterPlacement.json.meta",
+      "before_sha256": "853ac62385b8bb9973fc9a1bcf5fd48524850aca2916a8b287e3220e2eee7f3a",
+      "after_sha256": "8bf05f8bff68f54d3104d579d3ee9475d8049cb7ea72b2132e7439412ed5c906",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage09Tests.cs.meta",
+      "before_sha256": "1821bd7f3d4167c5f0d6b0fe18949788a6ab7123aa69d5d790105eeccac441a2",
+      "after_sha256": "cee357e811a2e5af1e0e91d0697b6b48cd9d4100e5686d969fb4293760c3f14f",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "d1534343e3b9f98ce4c34318b79b18b361b59dbf4088dc3299ce3b855b6209a8",
+      "after_sha256": "5683f4799251d9bb2fc9b39e3b685bd797facb5235a5cb2af3ad042af2202a56",
+      "trailing_whitespace_only": true
+    }
+  ]
+}
