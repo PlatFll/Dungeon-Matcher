@@ -430,7 +430,7 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
-- **Dungeon PixelLab Stage16 (2026-10-20, draft PR #203):** `DungeonPixelLabBattleArt`
+- **Dungeon PixelLab Stage16 (2026-10-20, merged PR #203):** `DungeonPixelLabBattleArt`
   binds the 102 approved modules plus an additive 64px cell through Resources.
   The existing `DungeonPresentationArt` owns a non-interactive world-space canvas
   below the board, using whole physical source pixels and repeated masonry/floor
@@ -444,9 +444,12 @@ Opened settings and main menu keep their existing skins and menu music selection
   choice; integer native environment pixels do not imply integer board scaling on
   narrow physical screens. Character floor registration follows the live HP row,
   preserving animation pivots; resize changes refresh existing enemy-slot layout.
+  `EnemyFloorInset` lowers the Dungeon HP row and grounded enemies by six native
+  pixels into the floor strip. Scenery compensates for that inset so its rear
+  edge, gate, props and platform remain in the approved positions.
   Existing ability, consumable, settings, Guide and save/combat owners stay in place.
-  Forest/Court and other-zone paths retain the previous implementation. This branch
-  supersedes the Dungeon binding below, pending the user's gameplay visual approval.
+  Forest/Court and other-zone paths retain the previous implementation. The user
+  approved the gameplay visuals; merged PR #203 supersedes the Dungeon binding below.
   Evidence: `ArtSource/DungeonPixelLab/Progress/Stage_16.md`.
 
 
