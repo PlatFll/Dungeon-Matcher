@@ -1,7 +1,7 @@
 # Stage 15 — final pixel QA and handoff
 
-Status: **technical QA passed; pending USER ART APPROVAL of the final assembly**.
-Stage 15 is complete and stopped. Stage 16 has not started. Draft PR #203 remains unmerged.
+Status: **Stage15 approved by the user for Stage16 integration testing on 2026-10-20**.
+This document preserves the Stage15 art-only evidence. See [the Stage16 report](Progress/Stage_16.md) and [actual gameplay gallery](Stage16Review.html) for the current integration review. Draft PR #203 remains unmerged.
 
 ## Requested correction
 Removed only the extra right Support_Corbel instance at native (324,210). Its source sprite and the other two supports remain intact. The before/after Unity captures differ by 267 pixels, all within that instance's footprint. The newly exposed wall is continuous. No approved artwork was recolored, reshaped, regenerated or resampled.
@@ -29,7 +29,7 @@ The final removal improves the right board corner's visual continuity. No new vi
 ## Scope and remaining blockers
 This is an **art-only Unity preview**, not the production Dungeon battle or a phone build. Game.unity, build settings, existing runtime/gameplay owners, menus, other zones, characters and gems were not changed by Stage15. The scene contains no RunSession, BoardController, actors, interactive buttons or event system; no gameplay/save behavior was exercised. Existing dirty files in the user's main checkout are preserved.
 
-Production layout mapping remains a separate integration task: the Stage00 minimum-width/fractional-layout caveat must be resolved and verified against the actual gameplay UI and target phones before claiming a production-ready integration. Stage16 requires user approval and separate execution. No merge is authorized here.
+At the Stage15 handoff, production layout mapping remained a separate integration task: the Stage00 minimum-width/fractional-layout caveat must be resolved and verified against the actual gameplay UI and target phones before claiming a production-ready integration. That approval was subsequently given; Stage16 evidence is linked above. No merge is authorized here.
 
 ## Handoff
 - [Review gallery](Review.html): actual final Unity PNGs, tall/safe-area views, before/after removal, historical rejected-build comparison, native contacts, raw-versus-clean pairs and golden references.
@@ -40,4 +40,4 @@ Production layout mapping remains a separate integration task: the Stage00 minim
 
 To inspect: open Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity in the isolated branch. It is intentionally excluded from release Build Settings. For verification, the explicit DungeonPixelPipelineStage15Tests.AssemblyPreview test recreates captures; then run Scripts/verify_stage15.py using the Foundry Python environment and Tools/Validate-Unity.ps1. Test rebuilding changes transient scene IDs; preserve serialized identities before committing a rebuilt preview.
 
-**Please review the final assembled zone. Work stops here pending that review.**
+**Stage15 review was accepted for integration testing. Stage16 gameplay visual approval remains pending.**

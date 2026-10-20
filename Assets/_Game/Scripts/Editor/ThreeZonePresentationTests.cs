@@ -105,7 +105,7 @@ public sealed class ThreeZonePresentationTests
                     var cells=RunSession.Current.Board.GetComponentsInChildren<SpriteRenderer>()
                         .Where(s=>s.name.StartsWith("CellTile_",StringComparison.Ordinal)).ToArray();
                     Assert.That(cells.Length,Is.EqualTo(64));
-                    Assert.That(cells.All(s=>s.sprite!=null && s.sprite.name.StartsWith(BattlePresentationSkin.UsesReferenceKit?"EmptyCell":"Cell",StringComparison.Ordinal)),Is.True);
+                    Assert.That(cells.All(s=>s.sprite!=null && s.sprite.name.StartsWith(DungeonPixelLabBattleArt.Current?"Board_Cell64":BattlePresentationSkin.UsesReferenceKit?"EmptyCell":"Cell",StringComparison.Ordinal)),Is.True);
                     var ambient=Object.FindFirstObjectByType<BattleAmbientPresentation>();
                     Assert.That(ambient,Is.Not.Null);
                     if(BattlePresentationSkin.UsesReferenceKit)Assert.That(ambient.DetailCount,Is.Zero,"Old positioned ambient art must not overlap reference landmarks.");
@@ -172,7 +172,8 @@ public sealed class ThreeZonePresentationTests
             var bounds=GameplayPixelLayoutController.ScreenRect(icon.rectTransform);
             var button=GameplayPixelLayoutController.ScreenRect((RectTransform)ability.transform);
             Assert.That(button.Contains(bounds.min) && button.Contains(bounds.max),Is.True,id);
-            Assert.That(ability.GetComponent<Button>().image.sprite,Is.SameAs(BattlePresentationSkin.Shared("Ability")));
+            if(DungeonPixelLabBattleArt.Current)Assert.That(ability.transform.Find("PixelLabResonanceFrame"),Is.Not.Null);
+            else Assert.That(ability.GetComponent<Button>().image.sprite,Is.SameAs(BattlePresentationSkin.Shared("Ability")));
             var errors=GameplayPixelLayoutValidator.Validate(Object.FindFirstObjectByType<GameplayPixelLayoutController>(),out _);
             Assert.That(errors,Is.Empty,id);
             ScreenCapture.CaptureScreenshot(Path.Combine(output,id+".png"));yield return new WaitForSecondsRealtime(.2f);

@@ -443,6 +443,7 @@ public sealed class PlayerPanelUI : MonoBehaviour
         }
 
         playerHealthText.enableAutoSizing = true;
+        if(DungeonPixelLabBattleArt.Current) playerHealthText.textWrappingMode = TextWrappingModes.NoWrap;
         playerHealthText.fontSize = HealthTextMaximumFontSize;
         playerHealthText.fontSizeMin = HealthTextMinimumFontSize;
         playerHealthText.fontSizeMax = HealthTextMaximumFontSize;

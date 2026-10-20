@@ -344,14 +344,28 @@ public sealed class ModularHealthBarUI : MonoBehaviour
         if (style.Badge != null)
         {
             // Preserve source pixels. The surrounding slot continues to own placement.
-            rootWidth = Mathf.Max(rootWidth, 104);
+            // Native caps and badge retain their pixels. Only the repeatable
+            // center span contracts on the compact Dungeon viewport.
+            bool compact=DungeonPixelLabBattleArt.Current && UnityEngine.Device.Screen.width<448;
+            rootWidth = Mathf.Max(rootWidth, compact ? (enemySlot ? 60 : 80) : 104);
+
             generatedRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rootWidth);
             rootHeight = style.StartPiece.rect.height * Mathf.Max(1, Mathf.FloorToInt(rootHeight / style.StartPiece.rect.height));
             generatedRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rootHeight);
             badgeWidth = Mathf.Round(rootHeight * style.Badge.rect.width / style.Badge.rect.height);
             ConfigureCap(badgeRect, true, badgeWidth, rootHeight);
             var label = rootRect.GetComponentInChildren<TMPro.TMP_Text>();
-            if (label != null) label.rectTransform.anchoredPosition = new Vector2(7, label.rectTransform.anchoredPosition.y);
+            if (label != null)
+            {
+                label.rectTransform.anchoredPosition = new Vector2(7, label.rectTransform.anchoredPosition.y);
+                if(DungeonPixelLabBattleArt.Current)
+                {
+                    label.textWrappingMode=TMPro.TextWrappingModes.NoWrap;
+                    if(compact)label.text=label.text.Replace(" ","");
+                    label.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,rootWidth-(compact?18:28));
+                    PixelTextFitter.ApplyNativeMenu(label,16);
+                }
+            }
         }
 
         float startWidth =

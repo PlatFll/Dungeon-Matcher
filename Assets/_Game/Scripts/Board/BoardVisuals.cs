@@ -192,6 +192,8 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private bool ApplyPresentationCells()
     {
+        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+        { cellTileSprites = new[] { nativeArt.boardCell64 }; cellTileScale = 1; cellTileColor = Color.white; return true; }
         var first = BattlePresentationSkin.ZoneSprite("CellA");
         if (first == null) return false;
         cellTileSprites = new[] { first, BattlePresentationSkin.ZoneSprite("CellB") ?? first,
@@ -346,6 +348,8 @@ public sealed class BoardVisuals : MonoBehaviour
 
     private void CreateModularBoardFrame()
     {
+        // The live board keeps its existing fit; the native modular rim is drawn by its presentation owner.
+        if (DungeonPixelLabBattleArt.Current) { var r = new GameObject(BoardFrameContainerName); r.transform.SetParent(transform,false); return; }
         if(BattlePresentationSkin.UsesReferenceKit)
         {
             var root=new GameObject(BoardFrameContainerName);root.transform.SetParent(transform,false);

@@ -12,6 +12,8 @@ public static class GameplayPixelLayoutValidator
     {
         var errors = new List<string>();
         var g = owner.Current;
+        bool pixelLab = DungeonPixelLabBattleArt.Current != null;
+        bool compact = pixelLab && g.Bottom.height == 80;
         Rect top = GameplayPixelLayoutController.ScreenRect(owner.TopHud);
         Rect board = GameplayPixelLayoutController.ScreenRect(owner.BoardArea);
         Rect bottom = GameplayPixelLayoutController.ScreenRect(owner.BottomHud);
@@ -69,9 +71,9 @@ public static class GameplayPixelLayoutValidator
         Require(g.Safe.yMax - top.yMax >= GameplayPixelLayoutController.Inset * g.Scale - Epsilon,
             "Top enters additional safe inset", errors);
         Require(Near(board.width, board.height), "Board is not square", errors);
-        Require(g.Top.height >= GameplayPixelLayoutController.MinimumBattleHeight &&
+        Require(g.Top.height >= (compact ? 224 : GameplayPixelLayoutController.MinimumBattleHeight) &&
             g.Top.height <= GameplayPixelLayoutController.MaximumBattleHeight, "Battle height outside bounds", errors);
-        Require(g.Bottom.height >= (BattlePresentationSkin.Folder != null ? GameplayPixelLayoutController.ReferenceBottomHeight : GameplayPixelLayoutController.BottomHeight) &&
+        Require(g.Bottom.height >= (compact ? 80 : BattlePresentationSkin.Folder != null ? GameplayPixelLayoutController.ReferenceBottomHeight : GameplayPixelLayoutController.BottomHeight) &&
             g.Bottom.height <= GameplayPixelLayoutController.MaximumBottomHeight, "Bottom height outside bounds", errors);
         Require(Contains(g.Viewport, top) && Contains(g.Viewport, board), "Top/board leaves gameplay viewport", errors);
         Require(!top.Overlaps(board) && !board.Overlaps(bottom) && !top.Overlaps(bottom), "Sections overlap", errors);
@@ -142,6 +144,16 @@ public static class GameplayPixelLayoutValidator
         }
         foreach (ResponsiveModularFrameFitter frame in owner.GetComponentsInChildren<ResponsiveModularFrameFitter>(false))
         {
+            if (pixelLab && frame.name.StartsWith("PixelLab"))
+            {
+                foreach(var im in frame.GetComponentsInChildren<Image>())
+                {
+                    var bounds=GameplayPixelLayoutController.ScreenRect(im.rectTransform);
+                    Require(Integral(bounds.xMin)&&Integral(bounds.yMin)&&Integral(bounds.xMax)&&Integral(bounds.yMax),"Off-grid native frame: "+Path(im.transform),errors);
+                    if(im.type==Image.Type.Simple) Require(Near(bounds.width/im.sprite.rect.width,DungeonPixelLabBattleArt.PhysicalPixelScale)&&Near(bounds.height/im.sprite.rect.height,DungeonPixelLabBattleArt.PhysicalPixelScale),"Native frame pixels distorted: "+Path(im.transform),errors);
+                }
+                continue;
+            }
             string[] names = { "TopLeftCorner", "TopRightCorner", "BottomLeftCorner", "BottomRightCorner", "TopEdge", "BottomEdge", "LeftEdge", "RightEdge" };
             foreach (string name in names)
             {
@@ -225,6 +237,12 @@ public static class GameplayPixelLayoutValidator
     private static Rect VisibleArtworkBounds(Image image)
     {
         Rect full = GameplayPixelLayoutController.ScreenRect(image.rectTransform);
+        foreach(var mask in image.GetComponentsInParent<RectMask2D>())
+        {
+            if(!mask.isActiveAndEnabled)continue;
+            var clip=GameplayPixelLayoutController.ScreenRect((RectTransform)mask.transform);
+            full=Rect.MinMaxRect(Mathf.Max(full.xMin,clip.xMin),Mathf.Max(full.yMin,clip.yMin),Mathf.Min(full.xMax,clip.xMax),Mathf.Min(full.yMax,clip.yMax));
+        }
         if (image.type != Image.Type.Simple || image.name != "VisualRoot" ||
             image.GetComponentInParent<EnemyActor>() == null) return full;
         var sprite = image.sprite;

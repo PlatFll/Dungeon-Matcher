@@ -54,8 +54,10 @@ public sealed class AbilityButtonUI : MonoBehaviour
     private GameplayThemeDefinition appliedTheme;
     private bool sharedSkinApplied;
     private Sprite croppedSource, croppedIcon;
+    private bool pixelLabSkin;
     private void LateUpdate()
     {
+        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt) { ApplyPixelLabSkin(nativeArt); return; }
         if(sharedSkinApplied || BattlePresentationSkin.Shared("Ability")!=null)
         {
             if(!sharedSkinApplied)
@@ -93,6 +95,36 @@ public sealed class AbilityButtonUI : MonoBehaviour
         var frame=transform.Find(AbilityEnergyBarName+"/EnergyFrame")?.GetComponent<Image>();
         if(frame!=null && theme.energyFrame!=null) frame.sprite=theme.energyFrame;
         RefreshVisuals();
+    }
+
+    private void ApplyPixelLabSkin(DungeonPixelLabBattleArt art)
+    {
+        var r=(RectTransform)transform; float u=DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>());
+        r.anchorMin=r.anchorMax=r.pivot=new Vector2(.5f,.5f);r.sizeDelta=new Vector2(118,44)*u;r.anchoredPosition=Vector2.zero;
+        if(!pixelLabSkin)
+        {
+            pixelLabSkin=true;sharedSkinApplied=true;
+            abilityButton.image.sprite=null;abilityButton.image.color=Color.clear;
+            art.Panel(r,"Resonance","Resonance_Inset",7,10000);
+            var energy=transform.Find(AbilityEnergyBarName) as RectTransform;
+            foreach(Transform child in energy)child.gameObject.SetActive(false);
+            art.Panel(energy,"Progress","Progress_Inset",4,10000);
+            energyBarFillMask=DungeonPixelLabBattleArt.Rect("PixelLabEnergyMask",energy,4*u,4*u,90*u,6*u);
+            energyBarFillMask.gameObject.AddComponent<RectMask2D>();
+            energyFill=art.Image("Progress_Fill",energyBarFillMask,0,0,u);energyFill.type=UnityEngine.UI.Image.Type.Tiled;energyFill.pixelsPerUnitMultiplier=1/u;
+            energyFill.rectTransform.sizeDelta=new Vector2(90,6)*u;
+            RefreshVisuals();
+        }
+        art.Panel(r,"Resonance","Resonance_Inset",7,10000);
+        var bar=(RectTransform)transform.Find(AbilityEnergyBarName);bar.sizeDelta=new Vector2(98,14)*u;bar.anchoredPosition=new Vector2(0,33)*u;
+        art.Panel(bar,"Progress","Progress_Inset",4,10000);
+        energyBarMaximumWidth=90*u;
+        energyBarFillMask.anchoredPosition=new Vector2(4,-4)*u;
+        energyBarFillMask.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,6*u);
+        energyFill.pixelsPerUnitMultiplier=1/u;energyFill.rectTransform.sizeDelta=new Vector2(90,6)*u;
+        ApplyEnergyVisual(displayedCharge);
+        if(abilityIcon) GameplayPixelGrid.FitImage(abilityIcon,new Vector2(104,30)*u);
+        GameplayPixelGrid.Snap(r);GameplayPixelGrid.Snap(bar);
     }
 
     private void Awake()

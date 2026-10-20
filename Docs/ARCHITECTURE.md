@@ -430,6 +430,26 @@ Opened settings and main menu keep their existing skins and menu music selection
 - There is no `BoardFrameSortingGuard` or additional `BoardFrame` sorting layer. An unavailable sorting-layer name can resolve to `Default` in an editor that has not reloaded project settings; a per-frame override must not replace valid initialized sorting.
 ### Gameplay pixel layout ownership
 
+- **Dungeon PixelLab Stage16 (2026-10-20, draft PR #203):** `DungeonPixelLabBattleArt`
+  binds the 102 approved modules plus an additive 64px cell through Resources.
+  The existing `DungeonPresentationArt` owns a non-interactive world-space canvas
+  below the board, using whole physical source pixels and repeated masonry/floor
+  pieces. `ResponsiveModularFrameFitter` assembles native corners, rails and clamps;
+  existing portrait, wave and control owners consume those pieces. The portrait
+  backing overfills a RectMask2D interior. The art-only preview is never instantiated.
+  The 64px gems and board's previous uniform responsive fit remain authoritative;
+  its native rim is placed around the live board rather than rescaling gem art.
+  `GameplayPixelLayoutController` uses a Dungeon-only 360px fallback if the normal
+  layout cannot fit. It retains uniform fractional board scaling by explicit user
+  choice; integer native environment pixels do not imply integer board scaling on
+  narrow physical screens. Character floor registration follows the live HP row,
+  preserving animation pivots; resize changes refresh existing enemy-slot layout.
+  Existing ability, consumable, settings, Guide and save/combat owners stay in place.
+  Forest/Court and other-zone paths retain the previous implementation. This branch
+  supersedes the Dungeon binding below, pending the user's gameplay visual approval.
+  Evidence: `ArtSource/DungeonPixelLab/Progress/Stage_16.md`.
+
+
 - **Dungeon approved modular integration (2026-10-18):** `ApprovedDungeonBattleArt`
   binds the original 119 SideViewRebuild sprites and placement manifest by GUID.
   `DungeonPresentationArt` selects it only for Dungeon. The shallow stage consumes

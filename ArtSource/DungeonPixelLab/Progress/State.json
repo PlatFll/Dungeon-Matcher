@@ -2,7 +2,7 @@
   "project": "Dungeon Matcher",
   "workflow": "PixelLab-first staged dungeon zone",
   "branch": "feature/dungeon-zone-pixellab-asset-library",
-  "current_stage": "15",
+  "current_stage": "16",
   "stages": {
     "00": "DONE",
     "01": "DONE",
@@ -20,17 +20,17 @@
     "13": "DONE",
     "14": "DONE",
     "15": "DONE",
-    "16": "NOT_STARTED"
+    "16": "DONE_AWAITING_GAMEPLAY_VISUAL_APPROVAL"
   },
-  "approval": "TECHNICAL_QA_PASS; FINAL_USER_ART_APPROVAL_PENDING",
+  "approval": "STAGE15_USER_APPROVED_FOR_INTEGRATION; GAMEPLAY_VISUAL_APPROVAL_PENDING",
   "cumulative_billable_generations": 65,
   "soft_budget_generation_equivalents": 65,
   "PixelLab_status": "CONNECTED_TIER_2",
   "golden_reference_sha": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
-  "notes": "Stage15 complete: requested right corbel instance removed; all 102 native artworks and 456 protected files unchanged. Seven fresh Unity captures, 102 fresh LibreSprite roundtrips and final QA passed. Stopped for final user review; Stage16, production integration, phone validation and merge not performed.",
+  "notes": "Stage16 integrated into live Game presentation. Approved 102 assets preserved; user-requested 64px tile added in LibreSprite. Board retains existing responsive fit; native environment/frame scaling and compact Dungeon layout corrected. 71 final tests and Unity compilation passed. Android IL2CPP debug APK build passed with zero errors and seven warnings; no merge or physical-device testing.",
   "base_commit": "1ee1fdb02e409c9d6b17785d84a76d36bab6342c",
   "stopped": true,
-  "next_prompt": "PROMPTS/16_OPTIONAL_AFTER_USER_APPROVAL_INTEGRATE.txt",
+  "next_prompt": "Wait for final gameplay visual approval; do not merge.",
   "generations_remaining_start": 994.2,
   "generations_remaining_end": 989.2,
   "pull_request": "https://github.com/PlatFll/Dungeon-Matcher/pull/203",
@@ -87,5 +87,15 @@
     "prior_cumulative_budget": 60
   },
   "stage13_user_approval": "Looks good, go ahead with stage 14\u2014assemble the art-only Unity scene. Keep all approved art unchanged, stop when that stage is complete, and show me the preview.",
-  "stage14_user_approval": "Looks good, go ahead with stage 15\u2014the final pixel QA and handoff. Keep the approved art unchanged, stop when that stage is complete, and show me the final preview. Also remove the highlighted pillar it looks random."
+  "stage14_user_approval": "Looks good, go ahead with stage 15\u2014the final pixel QA and handoff. Keep the approved art unchanged, stop when that stage is complete, and show me the final preview. Also remove the highlighted pillar it looks random.",
+  "stage15_user_approval": "2026-10-20: User explicitly approved all 102 assets and assembled Stage15 design for Stage16 integration testing only.",
+  "stage16_board_direction": "Keep original 64x64 gems; make cells64x64 in LibreSprite; retain previous board screen fit with dynamically assembled frame.",
+  "stage16_verification": {
+    "unityTestsPassed": 71,
+    "unityTestsFailed": 0,
+    "unityCompiler": "passed",
+    "androidIL2CPP": "passed",
+    "physicalDeviceTested": false,
+    "merged": false
+  }
 }

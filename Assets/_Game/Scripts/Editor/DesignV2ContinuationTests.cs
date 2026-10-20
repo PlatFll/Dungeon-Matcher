@@ -11,6 +11,12 @@ using UnityEngine.TestTools;
 
 public sealed class DesignV2ContinuationTests
 {
+    [SetUp] public void UsePortraitGameView()
+    {
+        typeof(GameplayPixelLayoutTests).GetMethod("SetGameViewSize",System.Reflection.BindingFlags.Static|System.Reflection.BindingFlags.NonPublic)
+            .Invoke(null,new object[]{new Vector2Int(1080,1920)});
+    }
+
     [UnityTest] public IEnumerator ContinuePreservesCombatAndDoesNotPayOrRefill()
     {
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);

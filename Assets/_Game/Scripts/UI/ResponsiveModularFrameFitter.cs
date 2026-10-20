@@ -7,12 +7,15 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
     // Opt-in for independently authored, upright native pieces. Existing production
     // callers retain their original rotated-edge layout unless explicitly configured.
     [SerializeField] private bool nativePieceLayout;
+    private bool dungeonPhysicalPixels;
+    private float lastPhysicalUnit;
     [SerializeField] private Sprite nativeConnector;
     [SerializeField] private float connectorPitch = 40;
 
-    public void ConfigureNativePieces(Sprite connector, float pitch)
+    public void ConfigureNativePieces(Sprite connector, float pitch, float physicalUnit = 0)
     {
         nativePieceLayout = true;
+        dungeonPhysicalPixels = physicalUnit > 0;
         nativeConnector = connector;
         connectorPitch = Mathf.Max(1, pitch);
         RefreshFrame();
@@ -20,7 +23,8 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
 
     private void RefreshNativePieces()
     {
-        float unit = GetReferencePixelsPerSpritePixel(topLeftCorner.GetComponent<Image>().sprite);
+        float unit = dungeonPhysicalPixels ? DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>()) : GetReferencePixelsPerSpritePixel(topLeftCorner.GetComponent<Image>().sprite);
+        lastPhysicalUnit=unit;
         float w = Mathf.Round(framedTarget.rect.width / unit), h = Mathf.Round(framedTarget.rect.height / unit);
         float c = topLeftCorner.GetComponent<Image>().sprite.rect.width;
         float t = topEdge.GetComponent<Image>().sprite.rect.height;
@@ -41,7 +45,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
         foreach (var edge in new[] { topEdge, bottomEdge, leftEdge, rightEdge })
         {
             var image = edge.GetComponent<Image>();
-            image.type = Image.Type.Tiled; image.pixelsPerUnitMultiplier = 1;
+            image.type = Image.Type.Tiled; image.pixelsPerUnitMultiplier = 1 / unit;
             edge.SetAsFirstSibling();
         }
         var connectors = frameRoot.Find("NativeConnectors") as RectTransform;
@@ -143,7 +147,7 @@ public sealed class ResponsiveModularFrameFitter : MonoBehaviour
             return;
         }
 
-        if (!Approximately(
+        if ((dungeonPhysicalPixels && !Mathf.Approximately(lastPhysicalUnit,DungeonPixelLabBattleArt.Unit(GetComponentInParent<Canvas>()))) || !Approximately(
                 framedTarget.rect.size,
                 lastTargetSize
             ))

@@ -88,7 +88,7 @@ public sealed class DungeonPixelPipelineStage15Tests
     }
     static void VerifyImports()
     {
-        var files=Directory.GetFiles("Assets/_Game/Art/DungeonPixelLab","*.png",SearchOption.AllDirectories).Where(f=>!f.Replace('\\','/').Contains("/Diagnostics/")).ToArray();
+        var files=Directory.GetFiles("Assets/_Game/Art/DungeonPixelLab","*.png",SearchOption.AllDirectories).Where(f=>!f.Replace('\\','/').Contains("/Diagnostics/") && !f.Replace('\\','/').Contains("/Stage16/")).ToArray();
         Assert.That(files.Length,Is.EqualTo(102));
         foreach(var file in files)
         {

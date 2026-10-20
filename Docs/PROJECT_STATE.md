@@ -20,9 +20,11 @@ The newer rules in this status and the owning design/architecture documents supe
 
 ### Last updated
 
-## Staged PixelLab dungeon library (2026-10-19, draft PR #203)
+## Staged PixelLab dungeon integration (2026-10-20, draft PR #203)
 
-The isolated asset-production branch is complete through Stage15 and stopped for final user review. All 102 approved native candidates and 456 protected art files remain unchanged. Final QA removed only the user-highlighted right support instance; the art-only scene retains its native standard/tall/safe-area layout. Seven actual Unity configurations, 102 fresh LibreSprite exports, tile/frame joins, mask overflow and exact pixel checks pass; the Unity validator passed. See [Stage15 final review and handoff](../ArtSource/DungeonPixelLab/FINAL_REVIEW.md). Stage15 spent zero generations; the pack total remains 65 across 14 paid source requests. Stage16, production integration, phone validation and merge have not been performed. The Stage00 production-layout mapping caveat remains open.
+The user approved the final Stage15 library/design for Stage16 integration testing. The dedicated branch now binds all 102 approved native modules into the playable Dungeon through existing presentation owners; all 456 protected art/source files remain unchanged. A user-requested additional 64×64 cell variant was authored in LibreSprite to retain the original 64×64 gems. Dynamic native frame pieces surround the existing responsive board footprint. Integer-scaled scenery and a compact Dungeon fallback address Stage00's environment distortion and 360×640 failure. The board deliberately retains its existing uniform fractional fit where native 512px width cannot fit; the user explicitly chose this policy.
+
+Actual Game captures include Rattlebones, three live enemies, gems, HP/intent views and functioning HUD at 720×1280, 1080×1920, 1080×2400, an inset safe area and 360×640. The final 71-test integration/regression run and repository Unity compiler validation passed. The Android IL2CPP debug build also passed (zero errors, seven warnings); exact evidence is in [Stage16's report](../ArtSource/DungeonPixelLab/Progress/Stage_16.md); physical-device testing has not been performed. Other zones and gameplay owners remain intact. Pack spending remains 65 generation-equivalents; Stage16 spent zero. Draft PR #203 is **not merged** and awaits final gameplay visual approval. [Actual gameplay gallery](../ArtSource/DungeonPixelLab/Stage16Review.html), [approved art-only handoff](../ArtSource/DungeonPixelLab/FINAL_REVIEW.md).
 
 ## Three-zone battle presentation (2026-10-18)
 
