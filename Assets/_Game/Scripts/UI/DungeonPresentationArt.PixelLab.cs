@@ -25,8 +25,9 @@ public sealed partial class DungeonPresentationArt
         if(!pixelLabCellsReady) { FindFirstObjectByType<BoardVisuals>().RefreshPresentationFrame(); pixelLabCellsReady=true; }
         int scale = DungeonPixelLabBattleArt.PhysicalPixelScale;
         var viewport = layout.Current.Viewport;
-        // Character owner grounds its stable reference floor immediately above the live HP bars.
-        float floorScreen = GameplayPixelLayoutController.ScreenRect(actor.CombatBarRect).yMax + 2 * scale;
+        // HP and feet move into the floor strip; retain the scenery's original rear edge.
+        float floorScreen = GameplayPixelLayoutController.ScreenRect(actor.CombatBarRect).yMax +
+            (2 + DungeonPixelLabBattleArt.EnemyFloorInset) * scale;
         int width = Mathf.CeilToInt(viewport.width / scale), height = Mathf.CeilToInt(viewport.height / scale);
         int floor = Mathf.RoundToInt((viewport.yMax - floorScreen) / scale);
         string key = viewport + ":" + width + ":" + height + ":" + floor + ":" + scale;

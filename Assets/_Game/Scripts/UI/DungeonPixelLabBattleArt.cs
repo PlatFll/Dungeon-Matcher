@@ -10,6 +10,8 @@ public sealed class DungeonPixelLabBattleArt : ScriptableObject
     public Sprite[] modules;
     public TextAsset placementManifest;
     public Sprite boardCell64;
+    // Stand halfway across the 12-texel floor strip, keeping HP below the feet.
+    public const int EnemyFloorInset = 6;
     Dictionary<string, Sprite> lookup;
     public static DungeonPixelLabBattleArt Current => BattlePresentationSkin.Folder == "Dungeon"
         ? Resources.Load<DungeonPixelLabBattleArt>("UI/BattlePresentation/DungeonPixelLab") : null;
