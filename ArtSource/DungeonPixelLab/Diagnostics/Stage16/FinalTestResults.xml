@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='utf-8'?>
+<test-run id="2" testcasecount="71" result="Passed" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-20 00:24:29Z" end-time="2026-10-20 00:24:42Z" duration="12.746666">
+  <test-suite type="TestSuite" id="1000" name="Dungeon Matcher" fullname="Dungeon Matcher" runstate="Runnable" testcasecount="826" result="Passed" start-time="2026-10-20 00:24:29Z" end-time="2026-10-20 00:24:42Z" duration="12.746666" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1977" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/USER/.codex/worktrees/dungeon-top-hud-pixellab/Dungeon Matcher/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="826" result="Passed" start-time="2026-10-20 00:24:29Z" end-time="2026-10-20 00:24:42Z" duration="12.712609" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="8684" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="AcceptedMoveStateTests" fullname="AcceptedMoveStateTests" classname="AcceptedMoveStateTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.025181" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="OnlyAcceptedSequentialActionCanCommitOnce" fullname="AcceptedMoveStateTests.OnlyAcceptedSequentialActionCanCommitOnce" methodname="OnlyAcceptedSequentialActionCanCommitOnce" classname="AcceptedMoveStateTests" runstate="Runnable" seed="1868548213" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.013463" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1003" name="SnapshotPreservesActionAndStableActorIdentity" fullname="AcceptedMoveStateTests.SnapshotPreservesActionAndStableActorIdentity" methodname="SnapshotPreservesActionAndStableActorIdentity" classname="AcceptedMoveStateTests" runstate="Runnable" seed="1329064650" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000863" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1367" name="BoardPointerIdentityTests" fullname="BoardPointerIdentityTests" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.040865" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1379" name="BusyRejectedDownDoesNotStealExistingPointerIdentity" fullname="BoardPointerIdentityTests.BusyRejectedDownDoesNotStealExistingPointerIdentity" methodname="BusyRejectedDownDoesNotStealExistingPointerIdentity" classname="BoardPointerIdentityTests" runstate="Runnable" seed="549235700" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.012970" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1388" name="DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" fullname="BoardPointerIdentityTests.DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" methodname="DragAndUpWithoutAnAcceptedDownCannotSelectOrResolve" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1575036747" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000960" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1390" name="ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" fullname="BoardPointerIdentityTests.ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" methodname="ExistingDirectInputHelpersRemainAvailableForSinglePointerFixtures" classname="BoardPointerIdentityTests" runstate="Runnable" seed="504129409" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001204" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1381" name="ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" fullname="BoardPointerIdentityTests.ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" methodname="ExternalBlockInvalidatesGestureWithoutReplayingItAfterRelease" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1947140664" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001178" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1389" name="FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" fullname="BoardPointerIdentityTests.FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" methodname="FiveReplacementsDoNotLetOldUpsChangeTheCurrentSelection" classname="BoardPointerIdentityTests" runstate="Runnable" seed="132741359" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002300" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1376" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.004629" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1374" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(False)" methodname="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="772906316" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002460" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1375" name="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)" fullname="BoardPointerIdentityTests.LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin(True)" methodname="LatestAcceptedDownRetainsExistingTakeoverAndOwnTapOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="936298448" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000620" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1373" name="OlderDragCannotUseLatestContactsOrigin" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002252" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1371" name="OlderDragCannotUseLatestContactsOrigin(False)" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(False)" methodname="OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="221085595" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000868" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1372" name="OlderDragCannotUseLatestContactsOrigin(True)" fullname="BoardPointerIdentityTests.OlderDragCannotUseLatestContactsOrigin(True)" methodname="OlderDragCannotUseLatestContactsOrigin" classname="BoardPointerIdentityTests" runstate="Runnable" seed="2046529268" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000435" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1370" name="OlderReleaseCannotCancelLatestContact" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001847" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1368" name="OlderReleaseCannotCancelLatestContact(False)" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(False)" methodname="OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1223640050" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000672" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1369" name="OlderReleaseCannotCancelLatestContact(True)" fullname="BoardPointerIdentityTests.OlderReleaseCannotCancelLatestContact(True)" methodname="OlderReleaseCannotCancelLatestContact" classname="BoardPointerIdentityTests" runstate="Runnable" seed="2059840677" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000387" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1384" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.003076" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1382" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(False)" methodname="OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1661060350" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000790" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1383" name="OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)" fullname="BoardPointerIdentityTests.OwnerCancellationOrPinInvalidatesItsRemainingEvents(True)" methodname="OwnerCancellationOrPinInvalidatesItsRemainingEvents" classname="BoardPointerIdentityTests" runstate="Runnable" seed="629638612" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001254" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1377" name="OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" fullname="BoardPointerIdentityTests.OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" methodname="OwningOutwardDragConsumesOnceAndUpDoesNotBecomeATap" classname="BoardPointerIdentityTests" runstate="Runnable" seed="316733421" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001311" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1380" name="PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" fullname="BoardPointerIdentityTests.PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" methodname="PinnedRejectedDownDoesNotReplaceAnotherGemsOwner" classname="BoardPointerIdentityTests" runstate="Runnable" seed="870100038" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000989" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1387" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002170" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1385" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(-1)" methodname="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1755268414" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000802" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1386" name="PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)" fullname="BoardPointerIdentityTests.PointerIdentityDoesNotAssumePositiveTouchIdsOnly(31)" methodname="PointerIdentityDoesNotAssumePositiveTouchIdsOnly" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1345228367" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000403" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1378" name="SubthresholdOwningDragRetainsTheGesture" fullname="BoardPointerIdentityTests.SubthresholdOwningDragRetainsTheGesture" methodname="SubthresholdOwningDragRetainsTheGesture" classname="BoardPointerIdentityTests" runstate="Runnable" seed="1121020469" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000557" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1487" name="CrystalBoardValidityTests" fullname="CrystalBoardValidityTests" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="27" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.131467" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1515" name="ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" fullname="CrystalBoardValidityTests.ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" methodname="ACrystalOnlyReshuffleMoveKeepsExistingIdentitiesAndColors" classname="CrystalBoardValidityTests" runstate="Runnable" seed="205998401" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.007948" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1506" name="ACrystalSwapCannotMoveEitherPinnedEndpoint" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.004456" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1504" name="ACrystalSwapCannotMoveEitherPinnedEndpoint(False)" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(False)" methodname="ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1406861578" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002257" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1505" name="ACrystalSwapCannotMoveEitherPinnedEndpoint(True)" fullname="CrystalBoardValidityTests.ACrystalSwapCannotMoveEitherPinnedEndpoint(True)" methodname="ACrystalSwapCannotMoveEitherPinnedEndpoint" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1223680454" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000701" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1513" name="AHiddenCrystalTripleIsNotAnExistingMatch" fullname="CrystalBoardValidityTests.AHiddenCrystalTripleIsNotAnExistingMatch" methodname="AHiddenCrystalTripleIsNotAnExistingMatch" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1205630978" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002280" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1514" name="ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" fullname="CrystalBoardValidityTests.ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" methodname="ARealOrdinaryTripleStillRejectsTheReshuffleCandidate" classname="CrystalBoardValidityTests" runstate="Runnable" seed="439763335" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000875" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1510" name="BlockedCellsAreNotCrystalSwapPartners" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.006585" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1507" name="BlockedCellsAreNotCrystalSwapPartners(&quot;minedCellOwners&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;minedCellOwners&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="128484987" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002557" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1508" name="BlockedCellsAreNotCrystalSwapPartners(&quot;barricadeCells&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;barricadeCells&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2072988707" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001375" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1509" name="BlockedCellsAreNotCrystalSwapPartners(&quot;royalBannerCells&quot;)" fullname="CrystalBoardValidityTests.BlockedCellsAreNotCrystalSwapPartners(&quot;royalBannerCells&quot;)" methodname="BlockedCellsAreNotCrystalSwapPartners" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1680362071" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001273" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1512" name="CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" fullname="CrystalBoardValidityTests.CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" methodname="CandidateCrystalMaskUsesDestinationPositionsAndSkipsBlockedCells" classname="CrystalBoardValidityTests" runstate="Runnable" seed="189236253" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001197" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1503" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.005583" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1500" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(None)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2028279281" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001885" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1501" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(RowBomb)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="693917232" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000771" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1502" name="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)" fullname="CrystalBoardValidityTests.CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual(ColorCrystal)" methodname="CrystalSwapIsLegalEvenWhenHiddenColorsAreEqual" classname="CrystalBoardValidityTests" runstate="Runnable" seed="817088724" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000739" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1491" name="EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt" fullname="CrystalBoardValidityTests.EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.025049" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1489" name="EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(False)" fullname="CrystalBoardValidityTests.EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(False)" methodname="EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt" classname="CrystalBoardValidityTests" runstate="Runnable" seed="707199264" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.016408" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1490" name="EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(True)" fullname="CrystalBoardValidityTests.EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt(True)" methodname="EverySpecialPairIsLegalWithoutMatchingColorsAndPinsStillBlockIt" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1243339776" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.007397" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1495" name="InaccessibleCrystalDoesNotUseItsHiddenColor" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.003901" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1493" name="InaccessibleCrystalDoesNotUseItsHiddenColor(False)" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(False)" methodname="InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" seed="631290179" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001328" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1494" name="InaccessibleCrystalDoesNotUseItsHiddenColor(True)" fullname="CrystalBoardValidityTests.InaccessibleCrystalDoesNotUseItsHiddenColor(True)" methodname="InaccessibleCrystalDoesNotUseItsHiddenColor" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1762020557" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001225" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1520" name="LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" fullname="CrystalBoardValidityTests.LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" methodname="LiveMoveQueryAgreesWithActualCollectionAndHintsAcrossSeededFixtures" classname="CrystalBoardValidityTests" runstate="Runnable" seed="576401939" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.032641" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1488" name="PinnedCrystalDoesNotManufactureAnOrdinaryMove" fullname="CrystalBoardValidityTests.PinnedCrystalDoesNotManufactureAnOrdinaryMove" methodname="PinnedCrystalDoesNotManufactureAnOrdinaryMove" classname="CrystalBoardValidityTests" runstate="Runnable" seed="271472970" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002021" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1499" name="PinnedOrdinaryColorsStillParticipateInMatches" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.004427" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1496" name="PinnedOrdinaryColorsStillParticipateInMatches(0)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(0)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="319003498" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001524" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1497" name="PinnedOrdinaryColorsStillParticipateInMatches(1)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(1)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="311029265" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000734" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1498" name="PinnedOrdinaryColorsStillParticipateInMatches(2)" fullname="CrystalBoardValidityTests.PinnedOrdinaryColorsStillParticipateInMatches(2)" methodname="PinnedOrdinaryColorsStillParticipateInMatches" classname="CrystalBoardValidityTests" runstate="Runnable" seed="364034880" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000665" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1511" name="PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" fullname="CrystalBoardValidityTests.PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" methodname="PinSafetyCannotSealTheLastCrystalExitUsingAPhantomMatch" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1580842638" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.017832" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1519" name="ProspectiveSwapRestoresTheTypeSnapshot" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.003772" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1517" name="ProspectiveSwapRestoresTheTypeSnapshot(False)" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(False)" methodname="ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" seed="474200893" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001733" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1518" name="ProspectiveSwapRestoresTheTypeSnapshot(True)" fullname="CrystalBoardValidityTests.ProspectiveSwapRestoresTheTypeSnapshot(True)" methodname="ProspectiveSwapRestoresTheTypeSnapshot" classname="CrystalBoardValidityTests" runstate="Runnable" seed="2111935987" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.000950" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1521" name="ReadOnlyInspectionDoesNotEmitClearRewards" fullname="CrystalBoardValidityTests.ReadOnlyInspectionDoesNotEmitClearRewards" methodname="ReadOnlyInspectionDoesNotEmitClearRewards" classname="CrystalBoardValidityTests" runstate="Runnable" seed="729946615" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002681" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1516" name="RecolorFallbackCanValidateACrystalOnlyMove" fullname="CrystalBoardValidityTests.RecolorFallbackCanValidateACrystalOnlyMove" methodname="RecolorFallbackCanValidateACrystalOnlyMove" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1738083378" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.002626" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1492" name="SpecialPairOnlyReshufflePreservesBothIdentities" fullname="CrystalBoardValidityTests.SpecialPairOnlyReshufflePreservesBothIdentities" methodname="SpecialPairOnlyReshufflePreservesBothIdentities" classname="CrystalBoardValidityTests" runstate="Runnable" seed="1882191946" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:05Z" duration="0.001597" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1541" name="DesignV2ContinuationTests" fullname="DesignV2ContinuationTests" classname="DesignV2ContinuationTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-20 00:23:02Z" end-time="2026-10-20 00:23:06Z" duration="4.098201" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1543" name="AcceptedBombAndBardleyCastSurviveRestartExactlyOnce" fullname="DesignV2ContinuationTests.AcceptedBombAndBardleyCastSurviveRestartExactlyOnce" methodname="AcceptedBombAndBardleyCastSurviveRestartExactlyOnce" classname="DesignV2ContinuationTests" runstate="Runnable" seed="1344135949" result="Passed" start-time="2026-10-20 00:22:05Z" end-time="2026-10-20 00:22:22Z" duration="17.649744" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1545" name="AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal" fullname="DesignV2ContinuationTests.AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal" methodname="AcceptedItemJournalIsAtomicAndFailedRecoveryPreservesTheOriginal" classname="DesignV2ContinuationTests" runstate="Runnable" seed="1860138440" result="Passed" start-time="2026-10-20 00:22:22Z" end-time="2026-10-20 00:22:23Z" duration="0.056547" asserts="0">
+          <properties />
+          </test-case>
+        <test-case id="1542" name="ContinuePreservesCombatAndDoesNotPayOrRefill" fullname="DesignV2ContinuationTests.ContinuePreservesCombatAndDoesNotPayOrRefill" methodname="ContinuePreservesCombatAndDoesNotPayOrRefill" classname="DesignV2ContinuationTests" runstate="Runnable" seed="1809792724" result="Passed" start-time="2026-10-20 00:22:23Z" end-time="2026-10-20 00:22:29Z" duration="6.919821" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1544" name="DraftRefinementAndSelectedBuildSurviveRepeatedContinue" fullname="DesignV2ContinuationTests.DraftRefinementAndSelectedBuildSurviveRepeatedContinue" methodname="DraftRefinementAndSelectedBuildSurviveRepeatedContinue" classname="DesignV2ContinuationTests" runstate="Runnable" seed="213540436" result="Passed" start-time="2026-10-20 00:22:29Z" end-time="2026-10-20 00:22:40Z" duration="10.200281" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1546" name="OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners" fullname="DesignV2ContinuationTests.OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners" methodname="OwnedObstaclesWarningsAndDecreeRestoreThroughTheirRealOwners" classname="DesignV2ContinuationTests" runstate="Runnable" seed="1090649777" result="Passed" start-time="2026-10-20 00:22:40Z" end-time="2026-10-20 00:22:58Z" duration="18.381707" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1547" name="RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold" fullname="DesignV2ContinuationTests.RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold" methodname="RaisedKingSwordRestoresItsAttackPauseAndDisableReleasesOnlyItsOwnHold" classname="DesignV2ContinuationTests" runstate="Runnable" seed="1718672860" result="Passed" start-time="2026-10-20 00:22:58Z" end-time="2026-10-20 00:23:06Z" duration="7.794915" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1556" name="DungeonApprovedBattleTests" fullname="DungeonApprovedBattleTests" classname="DungeonApprovedBattleTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-20 00:23:10Z" end-time="2026-10-20 00:23:31Z" duration="20.932487" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1558" name="ApprovedArtKeepsLiveBattleLayoutAndInput" fullname="DungeonApprovedBattleTests.ApprovedArtKeepsLiveBattleLayoutAndInput" methodname="ApprovedArtKeepsLiveBattleLayoutAndInput" classname="DungeonApprovedBattleTests" runstate="Runnable" seed="779916514" result="Passed" start-time="2026-10-20 00:23:06Z" end-time="2026-10-20 00:23:31Z" duration="24.658728" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1559" name="BindingReusesEveryApprovedNativeModule" fullname="DungeonApprovedBattleTests.BindingReusesEveryApprovedNativeModule" methodname="BindingReusesEveryApprovedNativeModule" classname="DungeonApprovedBattleTests" runstate="Runnable" seed="1449588078" result="Passed" start-time="2026-10-20 00:23:31Z" end-time="2026-10-20 00:23:31Z" duration="0.028545" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1594" name="DungeonPixelPipelineStage16Tests" fullname="DungeonPixelPipelineStage16Tests" classname="DungeonPixelPipelineStage16Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-20 00:23:34Z" end-time="2026-10-20 00:23:48Z" duration="13.859750" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1595" name="DungeonCombatAndPhoneScreens" fullname="DungeonPixelPipelineStage16Tests.DungeonCombatAndPhoneScreens" methodname="DungeonCombatAndPhoneScreens" classname="DungeonPixelPipelineStage16Tests" runstate="Explicit" seed="1726614251" result="Passed" start-time="2026-10-20 00:23:31Z" end-time="2026-10-20 00:23:48Z" duration="17.345941" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="_SKIPREASON" value="Stage16 actual Game-scene capture and integration checks." />
+          </properties>
+          </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1861" name="ThreeZonePresentationTests" fullname="ThreeZonePresentationTests" classname="ThreeZonePresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-20 00:24:29Z" end-time="2026-10-20 00:24:42Z" duration="12.622412" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1862" name="CaptureThreeZones" fullname="ThreeZonePresentationTests.CaptureThreeZones" methodname="CaptureThreeZones" classname="ThreeZonePresentationTests" runstate="Runnable" seed="1011273438" result="Passed" start-time="2026-10-20 00:23:48Z" end-time="2026-10-20 00:24:26Z" duration="37.792589" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          </test-case>
+        <test-case id="1863" name="EveryPlayableKeepsItsAbilitySymbol" fullname="ThreeZonePresentationTests.EveryPlayableKeepsItsAbilitySymbol" methodname="EveryPlayableKeepsItsAbilitySymbol" classname="ThreeZonePresentationTests" runstate="Runnable" seed="329048323" result="Passed" start-time="2026-10-20 00:24:26Z" end-time="2026-10-20 00:24:41Z" duration="15.355973" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+        <test-case id="1864" name="NativeExportsAndSharedSkins" fullname="ThreeZonePresentationTests.NativeExportsAndSharedSkins" methodname="NativeExportsAndSharedSkins" classname="ThreeZonePresentationTests" runstate="Runnable" seed="234244690" result="Passed" start-time="2026-10-20 00:24:41Z" end-time="2026-10-20 00:24:42Z" duration="0.587172" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1865" name="ReferenceCompositionKeepsNativeControlsAligned" fullname="ThreeZonePresentationTests.ReferenceCompositionKeepsNativeControlsAligned" methodname="ReferenceCompositionKeepsNativeControlsAligned" classname="ThreeZonePresentationTests" runstate="Runnable" seed="981109932" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.001382" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1896" name="UnifiedMoveCombatTests" fullname="UnifiedMoveCombatTests" classname="UnifiedMoveCombatTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.011292" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1908" name="HasteUsesWholeIntervalsWithTwoMoveFloor" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.002400" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1903" name="HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.0f,4)" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.0f,4)" methodname="HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1564192434" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000635" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1904" name="HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.4f,3)" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(4,1.4f,3)" methodname="HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1515854312" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000103" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1905" name="HasteUsesWholeIntervalsWithTwoMoveFloor(5,1.25f,4)" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(5,1.25f,4)" methodname="HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="2109733901" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000028" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1906" name="HasteUsesWholeIntervalsWithTwoMoveFloor(2,5.0f,2)" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(2,5.0f,2)" methodname="HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1191243023" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000029" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1907" name="HasteUsesWholeIntervalsWithTwoMoveFloor(6,1.2f,5)" fullname="UnifiedMoveCombatTests.HasteUsesWholeIntervalsWithTwoMoveFloor(6,1.2f,5)" methodname="HasteUsesWholeIntervalsWithTwoMoveFloor" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1869836831" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000026" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1902" name="PressureHasteRemainsUsefulAtShortIntervals" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.001879" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1897" name="PressureHasteRemainsUsefulAtShortIntervals(3,1.0f,3)" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.0f,3)" methodname="PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="557267985" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000155" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1898" name="PressureHasteRemainsUsefulAtShortIntervals(3,1.4f,2)" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.4f,2)" methodname="PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1390987498" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000051" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1899" name="PressureHasteRemainsUsefulAtShortIntervals(3,1.25f,2)" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(3,1.25f,2)" methodname="PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="955020564" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000040" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1900" name="PressureHasteRemainsUsefulAtShortIntervals(4,1.25f,3)" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(4,1.25f,3)" methodname="PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1748248256" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000026" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1901" name="PressureHasteRemainsUsefulAtShortIntervals(2,5.0f,2)" fullname="UnifiedMoveCombatTests.PressureHasteRemainsUsefulAtShortIntervals(2,5.0f,2)" methodname="PressureHasteRemainsUsefulAtShortIntervals" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1659533965" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.000024" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1909" name="UnifiedSavesNeverInterpretLegacyFloatCountdowns" fullname="UnifiedMoveCombatTests.UnifiedSavesNeverInterpretLegacyFloatCountdowns" methodname="UnifiedSavesNeverInterpretLegacyFloatCountdowns" classname="UnifiedMoveCombatTests" runstate="Runnable" seed="1842874284" result="Passed" start-time="2026-10-20 00:24:42Z" end-time="2026-10-20 00:24:42Z" duration="0.002799" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

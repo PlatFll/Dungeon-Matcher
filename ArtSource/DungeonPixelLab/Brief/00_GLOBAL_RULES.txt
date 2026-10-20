@@ -1,0 +1,47 @@
+DUNGEON MATCHER — RULES SHARED BY EVERY NUMBERED ASTRA STAGE
+============================================================
+Read these on every task continuation, including resumed Astra sessions.
+
+AUTHORITY & REFERENCE INPUTS
+- Repository AGENTS.md; Docs/ArtDirection/Dungeon_Matcher_Art_Direction.txt; Docs/ArtDirection/Golden_Reference_Register.md are CURRENT canonical sources. Do not substitute this pack's historical reference board or generic visual memories.
+- Inspect the ACTUAL current Rattlebones gold-standard native PNG (`Docs/ArtDirection/Audit2026-10/media/skeleton-still.png` per register, verify path and hash), plus current Farmer/Pan supporting PNGs and applicable approved UI/gem frame assets.
+- Rattlebones governs rendering discipline: crisp source pixels, clear forms, broad connected material planes, restrained lighting. Do NOT copy his colors, anatomy, or 15-color budget onto wall/metal/environment materials. Only the game's own locked frame/gem ramps are authoritative for those materials.
+- Supply actual eligible native PNG(s) as PixelLab image style references via supported input parameters if offered. If the chosen endpoint cannot accept references, use the real PNGs for comparison and perform controlled palette/cluster cleanup; disclose lack of reference input rather than pretending it was provided. Avoid feeding enlarged comparison sheets as raw style images; inspect PixelLab's documented unzoom procedure if a reference is upscaled.
+- Treat previous mockups as general DESIGN INTENT (theme/layout/mood) only, NOT images to slice, copy pixel-for-pixel, or send as full-screen generation prompts. This is a deliberately new asset-first pipeline.
+
+VISUAL TARGET
+- Whimsical nostalgic fantasy dungeon; compact, readable, crisp, dark contours.
+- Flat FRONT/SIDE-ON 2D sidescroller dungeon battle stage, NO isometric room or wide receding perspective floor.
+- Quiet dark blue-violet masonry, readable larger rectangular brick forms, subtle top-left shaded planes; brighter purple lip/stone UI frames, cool iron/silver and tiny jewel details; localized warm torch light.
+- SINGLE predominantly horizontal standing platform for enemy feet, with distinct narrow top surface and deeper vertical front fascia/support bricks. Larger intact slabs, sparse chips. NO cobblestone/craquelure/small-rock noise, no floors that look like a road receding to a horizon.
+- The PLAYER PORTRAIT BACKING must be a separate darker recessed panel/material from wall behind it, clipped inside its frame. Board cell interiors similarly masked/contained.
+- Continue the same outer wall material around the board and lower HUD. Lower-left/right side brickwork must connect coherently with bottom section, no floating isolated masonry chunks.
+- Keep characters/enemies/gems OUT of art-only preview, but retain existing approved identity/position/bounds for later production integration.
+
+PIXELLAB TOOL POLICY
+- Generate NEW asset-family source art from description, one family per stage; this time the new art must originate in PixelLab, not just recycled from existing game's art. PixelLab assets require native cleanup in LibreSprite before being accepted.
+- Use tools according to documented purpose, not name guesswork. Check https://api.pixellab.ai/mcp/docs and https://api.pixellab.ai/v2/llms.txt against actually available tools at runtime. For a connectable SIDE-VIEW platform prefer the sidescroller tileset tool (official API `create-tileset-sidescroller` if exposed). DO NOT use a top-down Wang tileset or isometric tile generator for the battle standing platform.
+- A 16/32-pixel native PixelLab tileset is acceptable: assemble it as modular chunks/prefabs, including 64x64 composite modules if helpful. Do not blindly upscale to 64 or assume '512x512 generation' means 512 native usable source-pixel tile resolution. Choose actual asset dimension for on-screen scale and renderer constraints.
+- Per stage: plan generation calls and inspect their real credit/generation-equivalent cost. Default at most TWO new PixelLab jobs with ONE targeted retry; an expensive Pro tileset must be quoted/cost-checked before launch. Stay within cumulative 35 generation-equivalents SOFT budget; exceed it ONLY with user approval. Count actual billed generations, not only tool-call count. Do not invent balances/costs. Check actual credits before call.
+- DO NOT use image_gen, Sprite Fusion, screenshot slicing, or large full-scene PixelLab generations as an unapproved substitute for PixelLab-native individual assets. Do not silently default to 0 calls based on old assets; if PixelLab is unavailable, report blocker instead of delivering a reuse-only kit.
+- One candidate at a time or a cohesive native tileset batch. Prefer iterative edit/refinement using PixelLab's appropriate tools rather than regenerating entirely when near goal.
+
+LIBRESPRITE PRODUCTION POLICY
+- Exact native pixel editing in LibreSprite (direct native pixel/cel scripting permitted), not LibreSprite GUI automation as a dependency. Preserve raw PixelLab output unchanged in Sources/; work on editable .ase/.aseprite and export PNG independently. If LibreSprite cannot author a supported source file, report the limitation and use the established project fallback, but do not mislabel provenance.
+- No blur, smoothing, anti-aliasing, transparent edge halos, arbitrary resampling, fake tiny dithering, near-duplicate shade noise, torn pixels, or exaggerated thick outlines. Use connected sensible shadow/highlight shapes; quiet large planes are good, giant undifferentiated shadow blobs without form are not.
+- Use deliberate material ramps; don't force global 15- or 16-color character budgets on backgrounds, props, or UI. Use consistent materials across families: same violet masonry stone, same cool silver hardware, same warm torch components. Distinct colors for material changes are valid.
+- Do not force every component into 64x64. Tiles may be 16x16/32x32/64x64; frames require correct corners/rails and native footprint; props and gates can be bigger when visually appropriate. Record actual native pixel dimensions.
+
+UNITY / DATA SAFETY
+- Dedicated branch: `feature/dungeon-zone-pixellab-asset-library` (if branch exists, inspect and resume safely or propose unique non-conflicting suffix; don't overwrite another session's branch).
+- New branch from latest clean `main`, unless repo state requires safer approved worktree strategy. Preserve uncommitted user changes. Work in isolated worktree if useful. PR #200 can be CONSULTED; reuse only narrowly scoped art-preview scaffolding if safe, not its 129 artworks as approved results.
+- Follow actual existing layout, asset importer and scene architecture. Verify, don't assume: usual UI pixel import Point, FullRect, no mipmaps/compression, 64 PPU; verify the corresponding runtime paths and the source pixel pitch. Preserve Unity GUID/meta linkages and existing production assets.
+- Work in a new additive art source namespace such as `ArtSource/DungeonPixelLab/` and production candidate namespace such as `Assets/_Game/Art/DungeonPixelLab/`, adjusted to repo convention. Track raw/candidate/approved *statuses*; 'internally passes checks' does NOT mean user-approved.
+- No existing characters, gems, production scenes, gameplay systems, run saves, shared menus, non-dungeon zones, or balance changes. No merges without approval.
+
+PER-STAGE OUTPUT AND STOP RULE
+- Do ONLY the scope of the current numbered prompt. Check the latest user approval/checkpoint first. Don't execute any later stage or change another family.
+- After the current family, show source PixelLab candidate vs cleaned native vs native-scale Unity proof (where relevant). Include a contact sheet at 1x and integer enlarged; include a native GIF only if appropriate. If a true Unity preview cannot be rendered, say that and do not claim success.
+- Objective checks: PNG source dimensions, exact opaque palette and count, alpha range, occupied bounds, sprite pixels versus exported pixels, seam matching where necessary, integer alignment. A seam/lint pass is not an art-approval score.
+- Visual QA separately: matching Rattlebones's economical cluster/outline discipline while honoring environment materials, compatible size/pixel density, smooth material transitions, right exposure/value hierarchy, in-game readability. A '90% match' is subjective; do not stamp everything 9/10. Name unresolved visual defects honestly.
+- Maintain `Progress/State.json`, `Progress/PixelLab_Ledger.csv`, `Progress/Asset_Manifest.json` and a numbered stage report in branch; logical commits. Report status DONE/NEEDS_REVISION/BLOCKED with outputs and next stage filename; STOP and WAIT.

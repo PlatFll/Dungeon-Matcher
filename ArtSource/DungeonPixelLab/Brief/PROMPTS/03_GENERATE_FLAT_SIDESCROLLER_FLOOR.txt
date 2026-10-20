@@ -1,0 +1,13 @@
+STAGE 03 — PIXELLAB SIDE-VIEW ENEMY-STANDING FLOOR TOP
+====================================================
+Read rules/checkpoint. ONLY the top surface of the enemy standing stage, no vertical front fascia yet. This is the most critical reversal of past failure: absolutely NO isometric or perspective/cobblestone ground.
+
+Art brief: Side-view pixel dungeon where enemies stand on ONE HORIZONTAL PLATFORM. The top is a shallow strip of large intact rectangular violet-gray stone slabs with clean grout, 1–2 purposeful lit planes and a shadowed back seam, a few TINY chips only. A clear consistent ground-contact height; no dozens of stones receding away from camera. Roughly the look of a traditional side-scroller platformer floor rather than a bird's-eye room.
+
+1. Inspect the actual PixelLab **sidescroller tileset** tool/capability and price. Prefer it if the tool can produce this side-view ledge; use native 16/32 tiles and compose later if necessary. NEVER use top-down Wang tileset/isometric generator to make the top platform. Pro/external larger tileset cost must be checked against remaining budget first.
+2. Generate a small focus sample using current native style refs if tool supports them. If the specialized tileset cannot receive style images, use textual palette/material descriptions and check output visually against the real golden sprites and accepted wall.
+3. From the new PixelLab output, create a usable clean left/middle/right and 2-3 surface variants in LibreSprite. Seam check all legal neighbor combinations; avoid repeating a deep crack at every join.
+4. Assemble a one-row 2D platform preview against Stage 01 wall. Do not fill the full arena with many rows of tiles; keep visual staging as a SIDE-ON horizon.
+5. Use a temporary visible floor-contact marker to test where enemies will stand; no actual character logic.
+
+ACCEPT: horizontal, clearly side-on, low-noise, larger whole slabs, fully seamless, actual Unity pixel-scale crisp. Show the test scene and native tiles, report jobs/credits and STOP. NEXT: 04.

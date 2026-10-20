@@ -1,0 +1,12 @@
+STAGE 05 — CENTRAL DUNGEON GATE + ARCH KIT
+========================================
+Read shared rules and accepted wall/ledge checkpoints. ONLY make the central door structure in new PixelLab-original art; don't add torches/props or change level spacing.
+
+TEXT design: compact chunky castle wall ARCH with stone voussoirs and slightly emphasized top keystone, dark barred/wooden dungeon gate seated inside. Orthographic front-facing, no receding tunnel perspective. Purple stone matches Stage 01, vertical indigo iron bars, a restrained horizontal brace and two tiny warm bronze hinge/ring accents. Broad readable forms, no decorative filigree/micro-damage.
+
+1. Through actual PixelLab tools, generate door/arch or a pair of separated objects at sensible native sizes; prefer two targeted calls over one huge full-room image. Feed actual native style PNG(s) as supported and describe shared ramp.
+2. Preserve the strongest candidate(s) as raw sources. In LibreSprite separate into arch/ring cap/columns/gate/door hardware where it truly helps scene layering, without fracturing ornate forms into impossible tiny tile pieces.
+3. Match the predetermined actor stage height, keep door base firmly on platform. Make sure arch doesn't stretch when placed; use separate left/right/repeat block components only when appropriate.
+4. In art-only preview, check how gate reads with no actors and with three small temporary actor-sized footprint markers. No fake characters or new opponent designs.
+
+ACCEPT: clean iconic central gate, suitable size behind units, matching masonry and side-view perspective. Compare with stage wall. STOP. NEXT: 06.

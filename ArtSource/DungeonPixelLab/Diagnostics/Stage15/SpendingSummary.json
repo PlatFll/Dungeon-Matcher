@@ -1,0 +1,82 @@
+{
+  "stage15_generation_calls": 0,
+  "stage15_billed_equivalents": 0,
+  "total_paid_calls": 14,
+  "total_billed_equivalents": 65,
+  "balance": 989.2,
+  "balance_checked_utc_date": "2026-10-19",
+  "source_dispositions": [
+    {
+      "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+      "outcome": "SUCCESS",
+      "notes": "Actual PNG bytes via style_image; outline/detail/shading true; color_palette false; no retry"
+    },
+    {
+      "job_id": "3b3f7253-bca9-4463-8f33-3576ee32077a",
+      "outcome": "SUCCESS",
+      "notes": "Actual native PNG bytes style input; outline/detail/shading; no palette copying; no retry"
+    },
+    {
+      "job_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+      "outcome": "SUCCESS",
+      "notes": "Live quoted range2-3; measured balance delta3; no retry"
+    },
+    {
+      "job_id": "07e64fd5-124c-40ff-9587-e56e14c67cf0",
+      "outcome": "SUCCESS",
+      "notes": "Actual image bytes via style_image; no generation retry; native material cleanup and straight-section extension"
+    },
+    {
+      "job_id": "92555034-f78c-4284-8577-3c2b62b63b35",
+      "outcome": "SUCCESS",
+      "notes": "Actual style PNG; no retry; native LibreSprite module authoring"
+    },
+    {
+      "job_id": "69948254-6267-434c-b80a-f1bf562bdb73",
+      "outcome": "SUCCESS",
+      "notes": "Actual style PNG; no retry; native LibreSprite cleanup and local opaque light overlays"
+    },
+    {
+      "job_id": "3527e875-8178-47c1-9b1c-0e949298e4c9",
+      "outcome": "PARTIAL_SOURCE_SELECTED",
+      "notes": "Actual style PNG; banner kept and recolored in LibreSprite"
+    },
+    {
+      "job_id": "c8a67f85-e4ad-4437-8f5e-1a6a48230204",
+      "outcome": "SOURCE_REQUIRED_MAJOR_NATIVE_REPAIR",
+      "notes": "Two-pixel strand repaired into open links, mount and complete end in LibreSprite"
+    },
+    {
+      "job_id": "fb8fa0b1-967e-4d0e-aae8-0e40e3b891c6",
+      "outcome": "SUCCESS",
+      "notes": "Actual golden PNG; one direction; LibreSprite native cleanup"
+    },
+    {
+      "job_id": "b170d4ee-f71b-4657-bc35-06a0eb50f4b5",
+      "outcome": "SUCCESS",
+      "notes": "Actual golden PNG; one direction; LibreSprite native cleanup"
+    },
+    {
+      "job_id": "a6b83eab-9a47-4738-855f-f70fe1167083",
+      "outcome": "SUCCESS",
+      "notes": "Actual Rattlebones reference; native LibreSprite adaptation"
+    },
+    {
+      "job_id": "bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7",
+      "outcome": "SUCCESS",
+      "notes": "Actual Rattlebones style input; native LibreSprite cleanup"
+    },
+    {
+      "job_id": "7e594107-a72b-453d-9834-0a48b2dd0e2c",
+      "outcome": "SUCCESS",
+      "notes": "Actual primary golden image; four corners, rails, inset, socket and separately authored gear in LibreSprite"
+    },
+    {
+      "job_id": "59d060d1-6e84-4140-bfaa-0849198412a3",
+      "outcome": "SUCCESS",
+      "notes": "Native reference submitted; 23 LibreSprite components; icons unchanged"
+    }
+  ],
+  "discarded_entire_sources": [],
+  "partial_and_reconstructed_sources": "Stage08 banner-only return and chain requiring major native reconstruction are retained and explicitly identified. Historical rejected cleanup revisions remain in git and prior reports."
+}

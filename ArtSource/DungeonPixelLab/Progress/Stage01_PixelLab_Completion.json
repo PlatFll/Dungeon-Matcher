@@ -1,0 +1,32 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "status: completed\nid: 6a393bed-69f0-45d1-a4e4-0ef2987ea1a6\njob_id: 6a393bed-69f0-45d1-a4e4-0ef2987ea1a6\nframes: 1\ntransparent: no — every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: 455f94be-a14b-5ca2-9866-a9f70d5543f5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/6a393bed-69f0-45d1-a4e4-0ef2987ea1a6/download"
+    }
+  ],
+  "structuredContent": {
+    "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/6a393bed-69f0-45d1-a4e4-0ef2987ea1a6/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/6a393bed-69f0-45d1-a4e4-0ef2987ea1a6/download"
+    ],
+    "asset": {
+      "id": "455f94be-a14b-5ca2-9866-a9f70d5543f5",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 5
+  },
+  "balance_after": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1049.20\ngenerations_used: 2050.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  }
+}

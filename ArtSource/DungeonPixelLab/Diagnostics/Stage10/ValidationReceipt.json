@@ -1,0 +1,16 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-cd0d9ae1-6914-42cc-a8c3-4cd087bb4f0d.log",
+  "log_sha256": "9279a4418a421f811918835957e33fe797218cfb2d28625c6bbe4fca042a6547",
+  "test_xml_sha256": "ac4413cabf732168df272bb7abfb2a8db554506766a5154c1addfc3cf0e9db8e",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage10Tests.cs": "e5322b01e06c5f7bf7dbd486b4bae58bf70fb1d0388ba69cbacec70c310ba0ec",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "f64a1e984dad959451e28f2aa1cb367ee380802fb9d62062318c47be7925de15",
+    "Assets/_Game/Art/DungeonPixelLab/Stage10PortraitPlacement.json": "497d074a16ad6aa88ec84a7f2065a14dedd45e58888e66c28631e47ed13afd2a"
+  },
+  "post_validation_changes": "Only serialized trailing whitespace / original metadata restoration; see WhitespaceNormalization.json. No C# or artwork changes.",
+  "main_user_files_preserved": 8
+}

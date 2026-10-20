@@ -1,0 +1,12 @@
+STAGE 04 — RAISED PLATFORM FRONT FACE / LEDGE / SUPPORTS
+=======================================================
+Read shared rules and Stage 03. ONLY construct the vertical FRONT FACE below the enemy-standing platform and the transition to the wall above the gem board. Do not make more perspective floor rows.
+
+Visual brief: contiguous front-facing edge of a platform built from bigger rectangular violet-purple structural stone blocks, modest top-left bevels, deep dark lower shadow, sparse corner chips. Unbroken thick course from left to right across the battle area; connects naturally into surrounding dark masonry and hides the join to board zone. Distinct from top standing strip: front vertical face should read as height/thickness. No isolated stepping stones, no floating floor lip, no perspective angle.
+
+1. Reuse approved PixelLab Stage 03 generated source if it already includes side-view edge geometry; otherwise generate a narrowly scoped complementary front-face module in PixelLab. Do not create a large expensive second tileset without checking costs.
+2. In LibreSprite produce repeat middle strips, ends, optional edge transitions, occasional larger anchor block. Align top and front layer to same source-pixel grid/PPU as Stage 03.
+3. In test scene, lay the platform from left to right including hidden area behind portrait where appropriate. No visible seams, height jumps, torn masonry, or black gaps; no perspective recession.
+4. Check scene floor anchor and platform edge with a few plain silhouette markers (not new actor assets).
+
+ACCEPT: one continuous authentic horizontal stage platform with physically sensible facade and clean joins. Save raw/cels/PNG and stop. NEXT: 05.

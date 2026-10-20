@@ -1,0 +1,13 @@
+STAGE 14 — FULL UNITY ART-ONLY DUNGEON SCENE ASSEMBLY
+==================================================
+Read shared rules and ensure Stage 01–13 checkpoints exist as DONE or explicitly identify unresolved families. THIS STAGE IS SCENE ASSEMBLY ONLY. No new PixelLab generations or redesigns without a specific documented missing source and user authorization.
+
+1. Assemble approved candidate families into an isolated scene (use `Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity` unless naming conflicts). Keep all instances actual modular tiles/rails/props; NO flattened screenshot, no mockup render texture background.
+2. Layer: dark general wall (and portrait inset separate) -> pillars/support/far gate -> shallow horizontal floor TOP -> vertical raised facade/ledge -> props/torch light/chain banners -> player portrait frame and 8x8 board frame with clipped inner fills -> upper Wave/Guide/gear and lower resonance/potion/bomb shells. Confirm z/sorting order.
+3. No characters/enemies/gems in delivered art-only preview; no gameplay owners, combat scripts or release build list modification. For QA MAY use temporary silhouette/gem overlays outside the production preview, clearly marked optional and not saved as production integration.
+4. Match portrait 360x640 logical proportions of live game and 360x800 extension/safe-area as governed by current layout; respect integer physical scaling and viewport cropping, not a new invented fixed 941x1672 canvas.
+5. Verify all seams/edge transitions, continuous lower-side masonry, single truly side-on raised enemy platform, no isometric floor, separate clipped portrait chamber, clear contrast and cohesive color/light direction.
+6. Render direct actual Unity camera/game-view PNGs at representative configurations (minimum 720x1280, 1080x1920, tall 1080x2400 and safe area when supported). Distinguish actual capture from generated mockup.
+7. Report mismatch categories with screenshots. Fix straightforward scene alignment/offset/z-order issues *within this stage*; do not quietly redraw an asset family. For material defects, list them for Stage 15 targeted iteration.
+
+ACCEPT: scene reproduces the requested flat Dungeon Matcher combat layout from a NEW PixelLab-origin asset set, with native pixel alignment. Give gallery, actual screenshot, source-vs-scene evidence, coverage. STOP. NEXT: 15.

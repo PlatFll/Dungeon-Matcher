@@ -1,0 +1,52 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-a89312a7-4db9-4dee-af97-0171da606b76.log",
+  "log_sha256": "aea86edadd4cca1e19c75e06fa03f33500c26b8299ee6d55b6db63207a4c3f32",
+  "test_xml_sha256": "ea04eb338a1bfef33ceb3d84dd903a67cbe771b39b44bd856f7649b1d1be8b35",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage02Tests.cs": "9d501e76d7a00f2e8cdc416fab0a6169b9dd6dd3908c1ac0e39ee26d690c654c",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "1ceea9301ad33e69d10038ecbc25bea0d393210904d0d6009c1845b8d8685368",
+    "Assets/_Game/Art/DungeonPixelLab/Stage02RecessPlacement.json": "976cc9260cc4fcdb3d7de5b623d10ee71b0ce6495ae4d46260b53fdeb012f098"
+  },
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "1ceea9301ad33e69d10038ecbc25bea0d393210904d0d6009c1845b8d8685368",
+      "after_sha256": "59a85bfe03945199bc86c198ad0dccdc683e3d23c9d712dc9b8a1790392bc2fc",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/PortraitRecess.meta",
+      "before_sha256": "3121704cc3e49d10f2a3c35518a2331e3ade17b4854089501b0ad9e5e47b14d2",
+      "after_sha256": "cbc4e0b32d116885aea516a1ac4ad04f30fddf81697d29436fcf634a2e378bb8",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage02RecessPlacement.json.meta",
+      "before_sha256": "bbdeb2a8b8a423ccb96c952ce01f251676adb508891edfa0eb8a0c92390f38f7",
+      "after_sha256": "f4883a75215aeb5507da2feb1c394e0536bf02dead448fbfb937e3ca4601e0ea",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage02Tests.cs.meta",
+      "before_sha256": "7538d31ec14416bd246034a00eb0a2c6244a473ba1e0555327da70262959ef2f",
+      "after_sha256": "6f1d2085ec5e4b65c2e0d0fd6df9fe7eab1697189600626f3cb7ac443fb5d1fd",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/PortraitRecess/Recess_Center.png.meta",
+      "before_sha256": "3142b8b340ba49fb76fcd76b73523de573d85d5891b8bf5f0a6c11783ce5a684",
+      "after_sha256": "ea0d5d889ccdd2794850bb9b889b0cf93b2fe3380ee0f31946016cbab32815ef",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/PortraitRecess/Recess_Inset.png.meta",
+      "before_sha256": "7c6003b90a072853d1c37aaeca0b542e291628056bd5ebaa1b3152cb8e92b323",
+      "after_sha256": "fbe2c21d5fecaf178ca97a31808fbcba4c6129e2170257ab1ba4a6d1c8469799",
+      "trailing_whitespace_only": true
+    }
+  ]
+}

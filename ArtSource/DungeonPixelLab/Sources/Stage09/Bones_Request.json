@@ -1,0 +1,27 @@
+{
+  "name": "Dungeon Matcher Stage09 skull and loose bones ground clutter",
+  "description": "A tiny environmental dungeon ground-clutter prop: ONE small discarded skull lying slightly tilted to the left on its side with TWO short loose leg-bone fragments lying beside it on the SAME flat baseline. Whole cluster only about 26 native pixels wide and 14 pixels tall, centered with generous clear transparent margins on a 64x64 canvas. Skull about 11 pixels wide, squat empty eye sockets, no expression, no character identity, no body, no crown, no red cape. Fragments short and chunky, separated from the skull by 2 clear pixels so they can be placed independently. Front/side elevation for a flat 2D side-scroller, NOT top-down or isometric. Quiet aged cream bone, cool muted lavender shadow, broad connected top-left light plane, dark clean 1 pixel contour. Understated small background clutter, less bright than a character's face, not a logo or crossed-bones emblem. No dirt specks, dust, rocks, floating pieces, gore, ground tile, shadow ellipse, texture noise, dithering, gradients or anti-aliasing. Reference image is native pixel cluster and shading discipline only; do not copy Rattlebones character.",
+  "width": 64,
+  "height": 64,
+  "n_directions": 1,
+  "view": "side",
+  "seed": 910902,
+  "style_image": {
+    "base64": "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",
+    "usage_description": "Native pixel rendering, clean dark contours, broad matte bone planes. Make small inert ground clutter, not a character or crown."
+  },
+  "style_options": {
+    "color_palette": false,
+    "outline": true,
+    "detail": true,
+    "shading": true
+  },
+  "palette": [
+    "#0A0D11",
+    "#494051",
+    "#766879",
+    "#A39796",
+    "#CCC3B2"
+  ],
+  "max_colors": 5
+}

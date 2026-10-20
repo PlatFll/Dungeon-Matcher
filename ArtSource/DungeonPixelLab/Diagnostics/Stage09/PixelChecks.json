@@ -1,0 +1,302 @@
+{
+  "assets": [
+    {
+      "name": "Clutter_Barrel",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage09/Clutter_Barrel.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage09/Clutter_Barrel.aseprite",
+      "dimensions": [
+        36,
+        42
+      ],
+      "opaque_colors": 8,
+      "palette": [
+        "#0A0D11",
+        "#20202C",
+        "#29212D",
+        "#3D3B50",
+        "#4C3030",
+        "#625E71",
+        "#754737",
+        "#9D6748"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        34,
+        40
+      ],
+      "sha256": "28262f22f4dc5d70bf4b9e2bbc551d4a089bfcfdf4d4799f8e2f273f3bdc060d",
+      "ase_sha256": "0937b2cd0f52b096407bd59ed39e35cc050cc3b019eca0f39f628f2747519984",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Clutter_Skull",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage09/Clutter_Skull.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage09/Clutter_Skull.aseprite",
+      "dimensions": [
+        24,
+        22
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#494051",
+        "#766879",
+        "#A39796",
+        "#CCC3B2"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        22,
+        20
+      ],
+      "sha256": "f055c7823569f0d56bd0fad3b60092d0fe1d5cf3f2f36201e4a4d2b05d620075",
+      "ase_sha256": "b88b2b2ca56f29c013228fb52057087767ec58b4a84aef80edd2ffd1fb13a4f0",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Clutter_Bones",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage09/Clutter_Bones.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage09/Clutter_Bones.aseprite",
+      "dimensions": [
+        26,
+        12
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#A39796",
+        "#CCC3B2"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        24,
+        10
+      ],
+      "sha256": "d126635b79178050a1fe3ce5e0657e61c0fddebe12d197e589a925b8f8c5ba10",
+      "ase_sha256": "79f7a738a13743c59f290ac1d81b9dc2972907b58bf1822639534fe435abcdec",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "combined_palette_count": 12,
+  "combined_palette": [
+    "#0A0D11",
+    "#20202C",
+    "#29212D",
+    "#3D3B50",
+    "#494051",
+    "#4C3030",
+    "#625E71",
+    "#754737",
+    "#766879",
+    "#9D6748",
+    "#A39796",
+    "#CCC3B2"
+  ],
+  "raw_source_sha256": "9e45a4e3e9c1e849e1ad1cce0b660a5a13cdab959bfe121a5953b81961cb628a",
+  "raw_bones_sha256": "17b75a09c4349b221d0b0314d74f32243bb73439d70b27e9817c1ecab1e10631",
+  "barrel_skull_silhouettes_preserved": true,
+  "barrel_wood_pixels_unchanged": true,
+  "bone_fragments": "Exact fuller raw silhouettes restored at native pitch; only coloring cleaned, alpha mask identical.",
+  "connected_components": {
+    "Clutter_Barrel": [
+      1093
+    ],
+    "Clutter_Skull": [
+      304
+    ],
+    "Clutter_Bones": [
+      57,
+      62
+    ]
+  },
+  "contact": [
+    {
+      "name": "Clutter_Barrel",
+      "world_occupied_bounds": [
+        324,
+        142,
+        356,
+        180
+      ],
+      "floor_contact_y": 180
+    },
+    {
+      "name": "Clutter_Skull",
+      "world_occupied_bounds": [
+        112,
+        162,
+        132,
+        180
+      ],
+      "floor_contact_y": 180
+    },
+    {
+      "name": "Clutter_Bones",
+      "world_occupied_bounds": [
+        278,
+        172,
+        299,
+        180
+      ],
+      "floor_contact_y": 180
+    }
+  ],
+  "UI_reserved_rects": [
+    [
+      130,
+      15,
+      239,
+      46
+    ],
+    [
+      175,
+      44,
+      187,
+      56
+    ],
+    [
+      254,
+      23,
+      312,
+      51
+    ],
+    [
+      314,
+      22,
+      350,
+      52
+    ],
+    [
+      9,
+      20,
+      108,
+      210
+    ]
+  ],
+  "diagnostic_20px_standing_lanes": [
+    [
+      144,
+      124,
+      164,
+      180
+    ],
+    [
+      224,
+      124,
+      244,
+      180
+    ],
+    [
+      304,
+      124,
+      324,
+      180
+    ]
+  ],
+  "UI_and_standing_lane_overlap_pixels": 0,
+  "placed_modules": 3,
+  "clipped_sprite_bounds": 0,
+  "protected_art_hashes": 205,
+  "prior_placements_preserved": 215,
+  "reference_hashes_unchanged": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Unlit",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    }
+  ],
+  "native_resampling": "none",
+  "production_scene_and_build_settings": "unchanged; asserted in Unity test",
+  "coverage_limit": "Actual characters/devices not tested; standing lanes are 20px diagnostics, not full actor silhouette certification."
+}

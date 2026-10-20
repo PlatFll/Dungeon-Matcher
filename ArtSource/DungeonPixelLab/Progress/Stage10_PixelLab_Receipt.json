@@ -1,0 +1,20 @@
+{
+  "endpoint": "create_image_pro_flash",
+  "job_id": "a6b83eab-9a47-4738-855f-f70fe1167083",
+  "image_id": "3f3045e4-5e26-5669-9a74-d8453ff98ee1",
+  "seed": 911001,
+  "width": 64,
+  "height": 64,
+  "charged_generations": 5,
+  "balance_before": 1009.2,
+  "balance_after": 1004.2,
+  "cumulative_billable_generations": 50,
+  "authorization": "Approve 5 generations for Stage 10",
+  "raw_sha256": "94dbb3b97728651ad722f43f999ad37a280d2938a106768d51ed9d54473e19e5",
+  "status": "completed",
+  "asset_status": "saved",
+  "request": "Progress/Stage10_PixelLab_Request.json",
+  "reference_audit": "Progress/Stage10_Reference_Audit.json",
+  "style_input": "Actual Rattlebones PNG; outline/detail/shading true, color palette false. UI references inspected locally; Flash supports one style image.",
+  "download": "https://api.pixellab.ai/mcp/images/a6b83eab-9a47-4738-855f-f70fe1167083/download"
+}

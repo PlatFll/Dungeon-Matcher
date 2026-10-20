@@ -1,0 +1,21 @@
+STAGE 15 — FINAL NATIVE ART VALIDATION / REPAIR / HANDOFF
+======================================================
+Read shared rules and all checkpoints. Scope: QA + bounded corrections of identified defects across existing candidates only. Do not generate an unrelated new style or gameplay features.
+
+TECHNICAL
+- Verify raw PixelLab source and cleaned editable/PNG assets, dimensions, color/alpha counts, hashes/provenance, FullRect/Point/no mipmap/no compression, PPU/source-pixel consistency, no fractional interpolation in Unity UI and stage views.
+- Exhaustively exercise legal wall/platform adjacent edges, ledge joins, corners/rails, repeats, shadow overlays and alpha. Check board exactly 8x8 cells and masks/clipped interiors; ensure portrait background never leaks past metal frame.
+- Compare rendered source-pixel pattern to actual screenshot: if blurry distinguish source-pixel blur vs scaled capture; inspect Unity render chain at true 1x. JPEG screenshot isn't authoritative.
+- Verify main/menu/other zones/characters/gems/production scenes/Game.unity/resumable runs untouched. Check Meta/GUID/serialized references and release build settings unchanged.
+
+ART
+- Native-size comparison with actual Rattlebones and supporting golden refs, and with first accepted Wall/Stone/Metal/Fabric ramps. Keep props secondary to hypothetical actor silhouettes; no excessive cracking/dither. Background masonry coherent but not cloned awkwardly. Side-view stage, no perspective floor.
+- Separate (a) truthful subjective style verdict, (b) match to desired dungeon scene intent, and (c) objective technical validation. Do NOT stamp every component '9/10'; state real differences.
+- For each failed family, attempt a clearly bounded native cleanup. Use a targeted additional PixelLab edit only when essential AND within budget and only after cost check; if issue cannot be resolved without new design approval, STOP and report.
+
+DELIVER
+- Native style/contact sheets, before/after from PREVIOUS rejected build, raw-vs-clean pairs, a short actual Unity preview video/GIF if possible, plus exact Unity image capture(s).
+- `Asset_Manifest.json` with which PixelLab job(s) created each family, reused approved raw source, editable and final file paths, palettes/size and QA status.
+- `PixelLab_Ledger.csv` actual total calls and billed generation-equivalents, accepted/discarded IDs, and balance if available.
+- `FINAL_REVIEW.md`: concrete wins, defects, tradeoffs, remaining blockers and explicit pending USER ART APPROVAL. Create/update draft PR only, no merge.
+- Prompt user to review the actual new zone. STOP. No automatic production asset replacement. An optional integration prompt exists after approval.

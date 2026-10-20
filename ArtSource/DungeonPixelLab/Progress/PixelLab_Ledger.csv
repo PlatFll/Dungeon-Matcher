@@ -1,0 +1,70 @@
+stage,utc,tool,job_id,asset_family,prompt_summary,dimensions_or_tile_size,reference_image_paths,billed_generation_equivalents,outcome,raw_source_path,cleaned_path,notes
+00,2026-10-19,get_balance,,setup,Authenticated balance and tier lookup,,,0,SUCCESS,,,No generation request
+00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 create provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
+00,2026-10-19,get_pro_flash_capabilities,,setup,64x64 one-direction object provisional quote,64x64,,0,SUCCESS,,,Quoted5; not charged
+00,2026-10-19,get_balance,,setup,Ending balance verification,,,0,SUCCESS,,,1054.20 unchanged
+01,2026-10-18T23:46:22.970835+00:00,get_balance,,wall masonry,Starting balance,,,0,SUCCESS,,,1054.20 remaining; Tier2
+01,2026-10-18T23:46:22.970835+00:00,get_pro_flash_capabilities,,wall masonry,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; free lookup
+01,2026-10-18T23:46:22.970835+00:00,create_image_pro_flash,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Front-elevation quiet staggered wall,64x64 source;48x48 native repeats,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage01/Wall_Raw_PixelLab.png,Exports/Stage01/,Actual PNG bytes via style_image; outline/detail/shading true; color_palette false; no retry
+01,2026-10-18T23:46:22.970835+00:00,get_image,6a393bed-69f0-45d1-a4e4-0ef2987ea1a6,wall masonry,Completed source receipt and native inspection,,,0,SUCCESS,,,Confirmed charge5; raw saved unchanged
+01,2026-10-18T23:46:22.970835+00:00,get_balance,,wall masonry,Ending balance,,,0,SUCCESS,,,1049.20 remaining; delta5; pack5/35
+02,2026-10-19T00:13:31.315252+00:00,get_balance,,portrait recess,Starting balance,,,0,SUCCESS,,,1049.20 remaining; Tier2
+02,2026-10-19T00:13:31.315252+00:00,get_pro_flash_capabilities,,portrait recess,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; free lookup
+02,2026-10-19T00:13:31.315252+00:00,create_image_pro_flash,3b3f7253-bca9-4463-8f33-3576ee32077a,portrait recess,Separate dark blue-charcoal inset material,64x64 source;56x26 repeat;80x167 inset,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage02/Recess_Raw_PixelLab.png,Exports/Stage02/,Actual native PNG bytes style input; outline/detail/shading; no palette copying; no retry
+02,2026-10-19T00:13:31.315252+00:00,get_image,3b3f7253-bca9-4463-8f33-3576ee32077a,portrait recess,Completed source receipt,,,0,SUCCESS,,,Charge5 confirmed; raw unchanged
+02,2026-10-19T00:13:31.315252+00:00,get_balance,,portrait recess,Ending balance,,,0,SUCCESS,,,1044.20 remaining; delta5; pack10/35
+03,2026-10-19T00:29:18.839574+00:00,get_balance,,floor top,Starting balance,,,0,SUCCESS,,,1044.20 remaining; Tier2
+03,2026-10-19T00:29:18.839574+00:00,create_sidescroller_tileset,fd7b1bf8-270d-447c-a135-177884748b06,floor top,Large flat side-view violet-gray capstones,32x32 source tiles;32x12 and30x12 cleaned pieces,Local golden review; specialized endpoint has no style-image input,3,SUCCESS,Sources/Stage03/Floor_Raw_PixelLab.png,Exports/Stage03/,Live quoted range2-3; measured balance delta3; no retry
+03,2026-10-19T00:29:18.839574+00:00,get_sidescroller_tileset,fd7b1bf8-270d-447c-a135-177884748b06,floor top,Completed source and metadata,,,0,SUCCESS,,,16 tiles;128x128 sheet; raw immutable
+03,2026-10-19T00:29:18.839574+00:00,get_balance,,floor top,Ending balance,,,0,SUCCESS,,,1041.20 remaining; delta3; cumulative13/35
+04,2026-10-19T00:43:19.486949+00:00,get_balance,,front fascia,Starting and ending free live balance checks,,,0,SUCCESS,,,1041.20 unchanged; Tier2; zero new jobs
+04,2026-10-19T00:43:19.486949+00:00,reuse_existing_sidescroller_source,fd7b1bf8-270d-447c-a135-177884748b06,front fascia,Stage04 instruction1 authorized existing side-view support seed,128x128 immutable source;42/62/64x24 native pieces,Local golden review; no new upload,0,SUCCESS,Sources/Stage04/Floor_Raw_PixelLab.png,Exports/Stage04/,No new generation call; original Stage03 charge already counted; pack13/35
+05,2026-10-19T01:00:25.423699+00:00,get_balance,,gate arch door,Starting free live balance check,,,0,SUCCESS,,,1041.20 remaining; Tier2
+05,2026-10-19T01:00:25.423699+00:00,get_pro_flash_capabilities,,gate arch door,96x112 create quote,96x112,,0,SUCCESS,,,6 provisional; no charge for lookup
+05,2026-10-19T01:00:25.423699+00:00,create_image_pro_flash,07e64fd5-124c-40ff-9587-e56e14c67cf0,gate arch door,Compact front-facing violet arch and barred indigo gate,96x112,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,6,SUCCESS,Sources/Stage05/Gate_Raw_PixelLab.png,Exports/Stage05/,Actual image bytes via style_image; no generation retry; native material cleanup and straight-section extension
+05,2026-10-19T01:00:25.423699+00:00,get_image,07e64fd5-124c-40ff-9587-e56e14c67cf0,gate arch door,Completed source and charged-generations receipt,,,0,SUCCESS,,,Charge6 confirmed; source immutable
+05,2026-10-19T01:00:25.423699+00:00,get_balance,,gate arch door,Ending balance check,,,0,SUCCESS,,,1035.20 remaining; delta6; cumulative19/35
+06,2026-10-19T01:18:40.357229+00:00,get_balance,,pillars/support stone,Starting live balance,,,0,SUCCESS,,,1035.20 remaining; Tier2
+06,2026-10-19T01:18:40.357229+00:00,get_pro_flash_capabilities,,pillars/support stone,64x96 create quote,64x96,,0,SUCCESS,,,5 provisional; lookup free
+06,2026-10-19T01:18:40.357229+00:00,create_image_pro_flash,92555034-f78c-4284-8577-3c2b62b63b35,pillars/support stone,"Native violet stone pilaster, stepped cap and foot",64x96,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage06/Pillar_Raw_PixelLab.png,Exports/Stage06/,Actual style PNG; no retry; native LibreSprite module authoring
+06,2026-10-19T01:18:40.357229+00:00,get_image,92555034-f78c-4284-8577-3c2b62b63b35,pillars/support stone,Completed source and receipt,,,0,SUCCESS,,,Charge5 confirmed
+06,2026-10-19T01:18:40.357229+00:00,get_balance,,pillars/support stone,Ending live balance,,,0,SUCCESS,,,1030.20 remaining; delta5; cumulative24/35
+07,2026-10-19T01:32:33.835314+00:00,get_balance,,torches/local light,Starting live balance,,,0,SUCCESS,,,1030.20 remaining; Tier2
+07,2026-10-19T01:32:33.835314+00:00,get_pro_flash_capabilities,,torches/local light,64x64 create quote,64x64,,0,SUCCESS,,,5 provisional; lookup free
+07,2026-10-19T01:32:33.835314+00:00,create_image_pro_flash,69948254-6267-434c-b80a-f1bf562bdb73,torches/local light,Small cool iron wall brazier with amber flame,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage07/Torch_Raw_PixelLab.png,Exports/Stage07/,Actual style PNG; no retry; native LibreSprite cleanup and local opaque light overlays
+07,2026-10-19T01:32:33.835314+00:00,get_image,69948254-6267-434c-b80a-f1bf562bdb73,torches/local light,Completed source and receipt,,,0,SUCCESS,,,Charge5 confirmed
+07,2026-10-19T01:32:33.835314+00:00,get_balance,,torches/local light,Ending live balance,,,0,SUCCESS,,,1025.20 remaining; delta5; cumulative29/35
+08,2026-10-19T01:49:33.531741+00:00,get_balance,,chains/banners,Starting live balance,,,0,SUCCESS,,,1025.20 remaining; Tier2
+08,2026-10-19T01:49:33.531741+00:00,get_pro_flash_capabilities,,chains/banners,96x64 create quote,96x64,,0,SUCCESS,,,5 provisional; lookup free
+08,2026-10-19T01:49:33.531741+00:00,create_image_pro_flash,3527e875-8178-47c1-9b1c-0e949298e4c9,chains/banners,Two props requested; only banner returned,96x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,PARTIAL_SOURCE_SELECTED,Sources/Stage08/Hanging_Raw_PixelLab.png,Exports/Stage08/Hanging_Banner.png,Actual style PNG; banner kept and recolored in LibreSprite
+08,2026-10-19T01:49:33.531741+00:00,get_image,3527e875-8178-47c1-9b1c-0e949298e4c9,chains/banners,Completed banner source,,,0,SUCCESS,,,5 charged confirmed
+08,2026-10-19T01:49:33.531741+00:00,get_balance,,chains/banners,Before chain-only retry,,,0,SUCCESS,,,1020.20 remaining
+08,2026-10-19T01:49:33.531741+00:00,create_image_pixflux,c8a67f85-e4ad-4437-8f5e-1a6a48230204,chains/banners,Narrow iron chain seed,16x64,No style-reference parameter offered; golden compared locally,1,SOURCE_REQUIRED_MAJOR_NATIVE_REPAIR,Sources/Stage08/Chain_Raw_PixelLab.png,Exports/Stage08/,"Two-pixel strand repaired into open links, mount and complete end in LibreSprite"
+08,2026-10-19T01:49:33.531741+00:00,get_image,c8a67f85-e4ad-4437-8f5e-1a6a48230204,chains/banners,Completed chain source,,,0,SUCCESS,,,1 charged confirmed
+08,2026-10-19T01:49:33.531741+00:00,get_balance,,chains/banners,Ending live balance,,,0,SUCCESS,,,1019.20 remaining; delta6; cumulative35/35; no further paid work authorized
+09,2026-10-19T02:03:18.182364+00:00,get_balance,,barrels/skulls/bones,Starting live balance,,,0,SUCCESS,,,1019.20; explicit user Stage09 budget extension
+09,2026-10-19T02:03:18.182364+00:00,get_pro_flash_capabilities,,barrels/skulls/bones,64x64 one-direction object quote,64x64,,0,SUCCESS,,,5 per object; two planned; lookup free
+09,2026-10-19T02:03:18.182364+00:00,create_object_pro_flash,fb8fa0b1-967e-4d0e-aae8-0e40e3b891c6,barrels/skulls/bones,barrel source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage09/Barrel_Raw_PixelLab.png,Exports/Stage09/,Actual golden PNG; one direction; LibreSprite native cleanup
+09,2026-10-19T02:03:18.182364+00:00,get_object,fb8fa0b1-967e-4d0e-aae8-0e40e3b891c6,barrels/skulls/bones,Completed object source,,,0,SUCCESS,,,Object e8fc15d3-f3d7-4a82-88d8-c02824ea73bb
+09,2026-10-19T02:03:18.182364+00:00,get_balance,,barrels/skulls/bones,Balance after barrel,,,0,SUCCESS,,,1014.20; delta5
+09,2026-10-19T02:03:18.182364+00:00,create_object_pro_flash,b170d4ee-f71b-4657-bc35-06a0eb50f4b5,barrels/skulls/bones,bones source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage09/Bones_Raw_PixelLab.png,Exports/Stage09/,Actual golden PNG; one direction; LibreSprite native cleanup
+09,2026-10-19T02:03:18.182364+00:00,get_object,b170d4ee-f71b-4657-bc35-06a0eb50f4b5,barrels/skulls/bones,Completed object source,,,0,SUCCESS,,,Object e13208f9-f411-4101-a823-c814d7ae2cbb
+09,2026-10-19T02:03:18.182364+00:00,get_balance,,barrels/skulls/bones,Balance after bones,,,0,SUCCESS,,,1009.20; delta5; Stage09 total10; cumulative45
+10,2026-10-19T02:27:14.841093+00:00,get_balance,,portrait frame,Starting live balance,,,0,SUCCESS,,,1009.20; user authorized 5 extra generations for Stage10
+10,2026-10-19T02:27:14.841093+00:00,get_pro_flash_capabilities,,portrait frame,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; lookup free
+10,2026-10-19T02:27:14.841093+00:00,create_image_pro_flash,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Isolated corner and rails,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage10/Frame_Raw_PixelLab.png,Exports/Stage10/,Actual Rattlebones reference; native LibreSprite adaptation
+10,2026-10-19T02:27:14.841093+00:00,get_image,a6b83eab-9a47-4738-855f-f70fe1167083,portrait frame,Completed source,,,0,SUCCESS,,,Completion explicitly charged5
+10,2026-10-19T02:27:14.841093+00:00,get_balance,,portrait frame,Balance after source,,,0,SUCCESS,,,1004.20; delta5; cumulative50
+11,2026-10-19T03:26:59.789346+00:00,get_balance,,board frame and cells,Starting live balance,,,0,SUCCESS,,,1004.20; explicit Stage11 approval for 5
+11,2026-10-19T03:26:59.789346+00:00,get_pro_flash_capabilities,,board frame and cells,64x64 create quote,64x64,,0,SUCCESS,,,5 quoted; lookup free
+11,2026-10-19T03:26:59.789346+00:00,create_image_pro_flash,bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7,board frame and cells,Native corner and stone rail source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage11/Board_Raw_PixelLab.png,Exports/Stage11/,Actual Rattlebones style input; native LibreSprite cleanup
+11,2026-10-19T03:26:59.789346+00:00,get_image,bd11c1c8-fd00-4c2d-b3a2-7c2b33f2c2f7,board frame and cells,Completed source,,,0,SUCCESS,,,Completion explicitly charged 5
+11,2026-10-19T03:26:59.789346+00:00,get_balance,,board frame and cells,Balance after source,,,0,SUCCESS,,,999.20; delta 5; cumulative 55
+12,2026-10-19T04:06:58.169793+00:00,create_image_pro_flash,7e594107-a72b-453d-9834-0a48b2dd0e2c,Wave Guide Settings plaques,One dedicated blank riveted metal UI plaque source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage12/Plaque_Raw_PixelLab.png,Exports/Stage12/,"Actual primary golden image; four corners, rails, inset, socket and separately authored gear in LibreSprite"
+12,2026-10-19T04:06:58.169793+00:00,get_image,7e594107-a72b-453d-9834-0a48b2dd0e2c,top plaques,Completed source,,,0,SUCCESS,,,Completion explicitly charged 5
+12,2026-10-19T04:06:58.169793+00:00,get_balance,,top plaques,Balance after source,,,0,SUCCESS,,,994.20; delta 5; cumulative 60
+13,2026-10-19T04:32:08.618432+00:00,create_image_pro_flash,59d060d1-6e84-4140-bfaa-0849198412a3,bottom HUD resonance,One silver-purple frame source,64x64,Docs/ArtDirection/Audit2026-10/media/skeleton-still.png,5,SUCCESS,Sources/Stage13/Resonance_Raw_PixelLab.png,Exports/Stage13/,Native reference submitted; 23 LibreSprite components; icons unchanged
+13,2026-10-19T04:32:08.618432+00:00,get_image,59d060d1-6e84-4140-bfaa-0849198412a3,bottom HUD,Completed source,,,0,SUCCESS,,,Completion explicitly charged 5
+13,2026-10-19T04:32:08.618432+00:00,get_balance,,bottom HUD,Balance after source,,,0,SUCCESS,,,989.20; delta 5; cumulative 65
+14,2026-10-19T04:50:23.176208+00:00,NO_API_CALL,,scene assembly,Assemble approved sources only,,,0,SUCCESS,,,No generation or balance query; cumulative spend remains 65; balance 989.20 is the last verified Stage13 balance.
+15,2026-10-19,get_balance,,final pixel QA,Free authenticated balance lookup during final QA,,,0,SUCCESS,,,989.20 remaining; Tier2; no new generation calls. 14 paid requests across the pack; cumulative billed equivalents 65.

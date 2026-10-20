@@ -1,0 +1,65 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-74a9168f-78e8-48c8-aead-91d8bbd197de.log",
+  "log_sha256": "aa475aca60a63d3db03f0417e0438549349ebb8b9fffc5eb3a44a4029ba93e5a",
+  "test_xml_sha256": "51412944e4fa0a655243f383a21321d410be4ce5e225e0372c40cd420b075514",
+  "tested_files": {
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage07Tests.cs": "8972bde85d774d456f74e010aec4f16bc99e01760ced0c68f55e984cbaf43778",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "2ace16863fbbaa19ea700e82d0a3b6b174298dc1e5dc2c76312f58703eddd45b",
+    "Assets/_Game/Art/DungeonPixelLab/Stage07TorchPlacement.json": "082c99ee1c286010ec96c6b3bae26968387680c51a9f14f4749a52066790a895"
+  },
+  "main_user_files_preserved": 8,
+  "post_validation_serialized_whitespace_normalization": [
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch/Torch_Fixture.png.meta",
+      "before_sha256": "82bf245f998a9d0a768f2121063c505cbf4be67669267913b864dfde8dbb2fb2",
+      "after_sha256": "57245381f594f74273598086e52ab13e6e4038a6eec2e3b7123a19484c1828cf",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch/Torch_Flame.png.meta",
+      "before_sha256": "7ff531b762566d10285840864668671c941d55cba7ffd667d3a5183c0bb70684",
+      "after_sha256": "0231c52a795e5f013ceb4e862b7bef3483766953f36f6c4da1594cc2c5346c4a",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch/Torch_Light_Left.png.meta",
+      "before_sha256": "f816441efadd68b629d09f2c2aa6abf783febb6cad66d3598cceb7c2519b145d",
+      "after_sha256": "10468f874001c1f72c8d0f240bab9b4d6460ee5cb2912f5e0376b4e4d437adf1",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch/Torch_Light_Right.png.meta",
+      "before_sha256": "49cb4d90ddb1436c86f064f47c6f506311e80e651e0e6c5f27fe2e45c3a6146b",
+      "after_sha256": "e527c432c16fa8648c9cfbca4b49905fa38e726b388776ecd441f65716f66440",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Torch.meta",
+      "before_sha256": "535421d2ae20a0df82d71feb367cddb23959ae2003a8bec8f52716f341071bc2",
+      "after_sha256": "7760438e7478349ad36bbc30cfa19887489f72b195a11dda67e5997bc4eb2663",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Art/DungeonPixelLab/Stage07TorchPlacement.json.meta",
+      "before_sha256": "acad570e558f7ad3c2148d67c6a03e63818e35580c482fc26bdd7955c85b5818",
+      "after_sha256": "5f49469f6b18256144d1f4b852f6d5d47df56ca4e17c2a040792c1a666a4259b",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage07Tests.cs.meta",
+      "before_sha256": "4e30bbabf7bab67d7bf18b2639696b2f04e69f70dd2e03ac3d7dbe8727b6ec25",
+      "after_sha256": "5358844bb790c40407e0575c3c21ef86ae1855be4b7081d1fdd6698847fe37c7",
+      "trailing_whitespace_only": true
+    },
+    {
+      "path": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+      "before_sha256": "2ace16863fbbaa19ea700e82d0a3b6b174298dc1e5dc2c76312f58703eddd45b",
+      "after_sha256": "730c02173639f13cf1406cafc589d044225377df00e76753577ee37e3c19d7ea",
+      "trailing_whitespace_only": true
+    }
+  ]
+}

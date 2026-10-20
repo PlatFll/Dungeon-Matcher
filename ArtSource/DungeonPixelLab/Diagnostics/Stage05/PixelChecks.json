@@ -1,0 +1,199 @@
+{
+  "assets": [
+    {
+      "name": "Gate_Arch",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage05/Gate_Arch.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage05/Gate_Arch.aseprite",
+      "dimensions": [
+        96,
+        112
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#151423",
+        "#302940",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        10,
+        12,
+        84,
+        108
+      ],
+      "sha256": "2e265faaf4275ff248bfc96988aad544c0b8154a8dad1d3e259967f8cf3a51d9",
+      "ase_sha256": "fbff5cffeb8035aa50f1fd4f88c52abac1b6fb8ce33ae6bff015e9a21db1968f",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Gate_Hardware",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage05/Gate_Hardware.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage05/Gate_Hardware.aseprite",
+      "dimensions": [
+        96,
+        112
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#5B3627",
+        "#8A5622",
+        "#B07A43"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        29,
+        56,
+        65,
+        62
+      ],
+      "sha256": "ac0d642817e4cd7d06eb5ddd616acc7bdf014f5a41ee5338da377e3569b1e9e1",
+      "ase_sha256": "059fec55a1b4cb23ab8aa65d2f6dd040dc5ba5e4466e392eb69e9934c283b0a4",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Gate_Leaf",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage05/Gate_Leaf.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage05/Gate_Leaf.aseprite",
+      "dimensions": [
+        96,
+        112
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#10131F",
+        "#151423",
+        "#181C2D",
+        "#28283F",
+        "#35324F"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        27,
+        29,
+        68,
+        108
+      ],
+      "sha256": "f28725aa1eaab1e8840f59f68f48d88f84ab51edaab4452251da03db861b7c96",
+      "ase_sha256": "5c928af74cfeb98f64cd81b929a3a9c886f39d28ad0c77f46b5c11fcf4bade24",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "combined_palette_count": 12,
+  "combined_palette": [
+    "#10131F",
+    "#151423",
+    "#181C2D",
+    "#28283F",
+    "#302940",
+    "#35324F",
+    "#382D55",
+    "#4E3D6C",
+    "#5B3627",
+    "#67537D",
+    "#8A5622",
+    "#B07A43"
+  ],
+  "combined_bounds": [
+    10,
+    12,
+    84,
+    108
+  ],
+  "world_occupied_bounds": [
+    187,
+    84,
+    261,
+    180
+  ],
+  "door_center_x": 224,
+  "floor_contact_row": 180,
+  "placed_modules": 3,
+  "shared_canvas": [
+    96,
+    112
+  ],
+  "source_straight_extension_rows": 12,
+  "source_outer_crown_envelope_preserved": true,
+  "closed_base_row_width": 74,
+  "clipped_sprite_bounds": 0,
+  "protected_art_hashes": 126,
+  "prior_placements_preserved": 135,
+  "reference_hashes_unchanged": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    }
+  ],
+  "native_resampling": "none",
+  "production_scene_and_build_settings": "unchanged; asserted in Unity test"
+}

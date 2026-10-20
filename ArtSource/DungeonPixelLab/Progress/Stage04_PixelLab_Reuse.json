@@ -1,0 +1,30 @@
+{
+  "stage": "04",
+  "policy": "Stage04 instruction 1 explicitly authorizes the approved Stage03 generated source if it has side-view edge geometry.",
+  "source_stage": "03",
+  "source_endpoint": "create_sidescroller_tileset",
+  "source_tileset_id": "fd7b1bf8-270d-447c-a135-177884748b06",
+  "base_tile_id": "74904d1b-9197-4c89-afd7-c88fd563734b",
+  "seed": 310301,
+  "raw_source": "Sources/Stage04/Floor_Raw_PixelLab.png",
+  "raw_sha256": "e75ad8d70a9fe896e68bdfd9577aa126bb649c9032cd9ea37aa8b25952d6bfc5",
+  "metadata_sha256": "c7bdeb1f37325dc3aa63cf6bcf57c7e7a4a58d12cd88bca883461a92fb66a1b7",
+  "selected_support_cluster": [
+    96,
+    23,
+    16,
+    5
+  ],
+  "new_jobs": 0,
+  "billed_generation_equivalents": 0,
+  "balance_start": 1041.2,
+  "balance_end": 1041.2,
+  "cumulative_pack_generations": 13,
+  "available_soft_budget": 22,
+  "native_method": "LibreSprite direct cel edits, authored plane extension and joins, independent native PNG export; no resampling",
+  "reference_input": "Original specialized endpoint has no style-image input; actual current goldens inspected locally; no image uploads this stage",
+  "docs": [
+    "https://api.pixellab.ai/mcp/docs",
+    "https://api.pixellab.ai/v2/llms.txt"
+  ]
+}

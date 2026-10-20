@@ -1,0 +1,14 @@
+STAGE 09 — BARRELS, SKULL PILE, LOOSE BONES
+=========================================
+Read shared rules and latest checkpoint. Generate ONLY environmental clutter/props. No full-room source, no new characters.
+
+Text descriptions:
+- A compact battered wooden barrel, readable cylinder from front/side, warm desaturated brown staves, cool dull-iron hoops, limited connected top-left shading, no outlines thicker than needed.
+- A small scattered skull + leg bones cluster sitting at ground contact, pale cream/cool lavender shadow, small quiet silhouette. May contain two individually placeable pieces: skull and bone fragments. NOT a monster NPC or unapproved character portrait.
+
+1. Generate one PixelLab barrel source and one small skull/bone source with transparent alpha; prefer suitable object/map-object tools rather than a full 512px scene.
+2. Clean in LibreSprite. Small palette count per material role; distinguish wood, iron, bone; preserve actual source-pixel size and credible floor contacts.
+3. Author separate cluster placements and optionally variant stacking from same approved source without overproducing assets. A barrel and skeleton pile should not obscure gameplay HUD or character silhouettes.
+4. Unity preview on completed platform with torches. Check readability, overlapping shadows, and understated texture density.
+
+ACCEPT: props support the environment without stealing focus, no float/dirt/noise, clean style. STOP. NEXT: 10.

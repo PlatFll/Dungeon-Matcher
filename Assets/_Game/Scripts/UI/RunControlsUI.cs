@@ -114,7 +114,14 @@ public sealed class RunControlsUI : MonoBehaviour
             GameplayPixelGrid.FitImage(settings.image,new Vector2(45,40));
             GameplayPixelGrid.FitImage(guide.image,new Vector2(79,39));
         }
-        if(BattlePresentationSkin.UsesReferenceKit)
+        if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            settings.transform.SetParent(top,false); guide.transform.SetParent(top,false);
+            nativeArt.SkinControl(settingsRect,"Settings",top);nativeArt.SkinControl(guideRect,"Guide",top);
+            var label=guide.GetComponentInChildren<TMP_Text>();label.fontSize=16*DungeonPixelLabBattleArt.Unit(canvas);label.enableAutoSizing=false;
+        }
+        else if(BattlePresentationSkin.UsesReferenceKit)
         {
             var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
             settingsRect.SetParent(top,false);guideRect.SetParent(top,false);
@@ -172,7 +179,17 @@ public sealed class RunControlsUI : MonoBehaviour
         for(int i=0;i<2;i++)
         {
             var kind=(ConsumableKind)i;int count=session.Charges(kind);float cooldown=session.Cooldown(kind);
-            if(BattlePresentationSkin.UsesReferenceKit)
+            if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+            {
+                float u=DungeonPixelLabBattleArt.Unit(canvas);var r=(RectTransform)slots[i].transform;
+                r.sizeDelta=new Vector2(47,43)*u;r.anchoredPosition=new Vector2(i==0?-87.5f:88.5f,0)*u;
+                if(!r.Find("PixelLabResonanceFrame"))
+                { slots[i].image.sprite=null;slots[i].image.color=Color.clear;nativeArt.Panel(r,"Resonance","Supply_Inset",7,10000); }
+                nativeArt.Panel(r,"Resonance","Supply_Inset",7,10000);
+                if(icons[i].TryGetComponent<NativePixelUiSurface>(out var nativeIcon))nativeIcon.enabled=false;
+                GameplayPixelGrid.Snap(r);GameplayPixelGrid.FitImage(icons[i],new Vector2(28,28)*u);
+            }
+            else if(BattlePresentationSkin.UsesReferenceKit)
             {
                 var slotRect=(RectTransform)slots[i].transform;
                 slotRect.anchoredPosition=new Vector2(i==0?-132:132,0);
@@ -204,6 +221,15 @@ public sealed class RunControlsUI : MonoBehaviour
         {
             confirmBomb.transform.position = abilityRect.position;
             confirmBomb.interactable=session.CanUse(ConsumableKind.Bomb);
+        }
+        if(DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt controlArt)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            controlArt.PlaceControl((RectTransform)SettingsButton.transform,"Settings",top);
+            var guide=top.Find("CombatGuide") as RectTransform;if(guide)controlArt.PlaceControl(guide,"Guide",top);
+            float u=DungeonPixelLabBattleArt.Unit(canvas);
+            hint.rectTransform.sizeDelta=new Vector2(Mathf.Min(430,((RectTransform)hint.transform.parent).rect.width-12),28);
+            foreach(var c in charges) {var r=(RectTransform)c.transform.parent;r.anchoredPosition=new Vector2(15,-16)*u;GameplayPixelGrid.Snap(r);r.SetAsLastSibling();}
         }
         if(saveError!=null)saveError.transform.parent.gameObject.SetActive(session.NeedsSaveRetry);
         if(session.IsVictory&&!session.Board.IsBusy&&!victoryShown){victoryShown=true;OpenVictory();}
@@ -264,22 +290,24 @@ public sealed class RunControlsUI : MonoBehaviour
             text+="\n\nDROWNED COURT\nFlooding lasts 10-12 accepted moves. AIR starts at five; each move spends one. Pop a bubbled gem to restore two. At zero AIR take 5 damage after enemy actions, except the final move drains first. Break Air Coffers or defeat their owners to recover captured bubbles. Sapphire gem damage gains 15%.";
         if (session == null || session.IsFinished || overlay != null) return;
         session.CancelTargeting(); BuildOverlay("Combat guide · paused"); Pause();
-        panel.sizeDelta=new Vector2(500,660);
-        panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,280);
-        var viewport=GameUi.Rect("GuideViewport",panel,new Vector2(450,410),new Vector2(0,25));
+        float pw=DungeonPixelLabBattleArt.Current?Mathf.Min(500,safeRoot.rect.width-16):500;
+        float ph=DungeonPixelLabBattleArt.Current?Mathf.Min(660,safeRoot.rect.height-20):660;
+        panel.sizeDelta=new Vector2(pw,ph);
+        panel.Find("Title").GetComponent<RectTransform>().anchoredPosition=new Vector2(0,ph/2-50);
+        var viewport=GameUi.Rect("GuideViewport",panel,new Vector2(pw-50,ph-250),new Vector2(0,25));
         // Text-only scrolling uses rect clipping, avoiding an unnecessary
         // stencil-write material over the native pixel font.
         viewport.gameObject.AddComponent<RectMask2D>();
-        var content=GameUi.Label("GuideText",viewport,text,new Vector2(440,410),Vector2.zero,20);
+        var content=GameUi.Label("GuideText",viewport,text,new Vector2(pw-60,ph-250),Vector2.zero,20);
         content.alignment=TextAlignmentOptions.TopLeft;
         content.rectTransform.anchorMin=content.rectTransform.anchorMax=content.rectTransform.pivot=new Vector2(.5f,1);
         content.rectTransform.anchoredPosition=Vector2.zero;
-        content.rectTransform.sizeDelta=new Vector2(440,Mathf.Max(410,content.preferredHeight));
+        content.rectTransform.sizeDelta=new Vector2(pw-60,Mathf.Max(ph-250,content.preferredHeight));
         var scroll=viewport.gameObject.AddComponent<ScrollRect>();scroll.content=content.rectTransform;scroll.viewport=viewport;scroll.horizontal=false;
-        GameUi.Button("AbilityGuide",panel,"Ability",new Vector2(135,40),new Vector2(-150,-210),()=>{Close();OpenGuide(CombatGuide.Ability(session.Player));});
-        GameUi.Button("BuildGuide",panel,"Build",new Vector2(135,40),new Vector2(0,-210),()=>{Close();OpenGuide(CombatGuide.Build(RunUpgradeRuntime.Current));});
-        GameUi.Button("ResumeGuide",panel,"Resume",new Vector2(135,40),new Vector2(150,-210),Close);
-        GameUi.Label("InspectionHint",panel,"Tap an enemy portrait to inspect its current state.",new Vector2(450,40),new Vector2(0,-270),17);
+        GameUi.Button("AbilityGuide",panel,"Ability",new Vector2(Mathf.Floor((pw-95)/3),40),new Vector2(-Mathf.Floor((pw-50)/3),-ph/2+120),()=>{Close();OpenGuide(CombatGuide.Ability(session.Player));});
+        GameUi.Button("BuildGuide",panel,"Build",new Vector2(Mathf.Floor((pw-95)/3),40),new Vector2(0,-ph/2+120),()=>{Close();OpenGuide(CombatGuide.Build(RunUpgradeRuntime.Current));});
+        GameUi.Button("ResumeGuide",panel,"Resume",new Vector2(Mathf.Floor((pw-95)/3),40),new Vector2(Mathf.Floor((pw-50)/3),-ph/2+120),Close);
+        GameUi.Label("InspectionHint",panel,"Tap an enemy portrait to inspect its current state.",new Vector2(pw-50,40),new Vector2(0,-ph/2+60),17);
         GameplayThemeSkin.Screen(panel.gameObject);
     }
     private void BuildOverlay(string title)

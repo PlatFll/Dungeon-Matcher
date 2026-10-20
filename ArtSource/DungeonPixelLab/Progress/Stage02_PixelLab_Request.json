@@ -1,0 +1,61 @@
+{
+  "stage": "02",
+  "request": {
+    "description": "A flat seamless center material for a secluded recessed portrait alcove in Dungeon Matcher. Environment texture ONLY: broad horizontal rectangular blue-charcoal stone courses, about 32 pixels wide by 16 pixels high, alternate half-course offset. Calm matte planes, one pixel dark mortar, very restrained top-left bevel clusters. Quiet cool shadowed stone, much darker than purple battle wall. Crisp native pixels, simple connected clusters like reference rendering. No cracks, no speckles, no noisy wear, no ornaments, no character, no skull, no frame, no text. Fill all 64x64 pixels. No baked radial light or vignette (inner edge shadows authored separately later).",
+    "width": 64,
+    "height": 64,
+    "no_background": false,
+    "palette": [
+      "#0A0D11",
+      "#10131F",
+      "#181C2D",
+      "#22263A",
+      "#29253D"
+    ],
+    "palette_name": "Dungeon portrait recess dark blue-charcoal",
+    "max_colors": 5,
+    "seed": 310201,
+    "style_image": {
+      "usage_description": "Rattlebones is rendering authority only: deliberate crisp hard pixels, connected material planes, economical shading. Do not copy character anatomy, objects, royal colors, silhouette, or background transparency.",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c"
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "actual_payload_used_png_base64": true,
+  "receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"3b3f7253-bca9-4463-8f33-3576ee32077a\",\n  \"image_id\": \"3355dabd-37a0-5f42-804b-8c650e7693f8\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"3355dabd-37a0-5f42-804b-8c650e7693f8\",\n  \"job_id\": \"3b3f7253-bca9-4463-8f33-3576ee32077a\",\n  \"description\": \"A flat seamless center material for a secluded recessed portrait alcove in Dungeon Matcher. Environment texture ONLY: broad horizontal rectangular blue-charcoal stone courses, about 32 pixels wide by 16 pixels high, alternate half-course offset. Calm matte planes, one pixel dark mortar, very restrained top-left bevel clusters. Quiet cool shadowed stone, much darker than purple battle wall. Crisp native pixels, simple connected clusters like reference rendering. No cracks, no speckles, no noisy wear, no ornaments, no character, no skull, no frame, no text. Fill all 64x64 pixels. No baked radial light or vignette (inner edge shadows authored separately later).\",\n  \"seed\": 310201,\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/3b3f7253-bca9-4463-8f33-3576ee32077a/download\"\n}\nPoll get_image(job_id=\"3b3f7253-bca9-4463-8f33-3576ee32077a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "3b3f7253-bca9-4463-8f33-3576ee32077a",
+      "image_id": "3355dabd-37a0-5f42-804b-8c650e7693f8",
+      "status": "processing",
+      "source_image_id": "3355dabd-37a0-5f42-804b-8c650e7693f8",
+      "job_id": "3b3f7253-bca9-4463-8f33-3576ee32077a",
+      "description": "A flat seamless center material for a secluded recessed portrait alcove in Dungeon Matcher. Environment texture ONLY: broad horizontal rectangular blue-charcoal stone courses, about 32 pixels wide by 16 pixels high, alternate half-course offset. Calm matte planes, one pixel dark mortar, very restrained top-left bevel clusters. Quiet cool shadowed stone, much darker than purple battle wall. Crisp native pixels, simple connected clusters like reference rendering. No cracks, no speckles, no noisy wear, no ornaments, no character, no skull, no frame, no text. Fill all 64x64 pixels. No baked radial light or vignette (inner edge shadows authored separately later).",
+      "seed": 310201,
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/3b3f7253-bca9-4463-8f33-3576ee32077a/download"
+    },
+    "isError": false
+  },
+  "balance_before": 1049.2,
+  "budget_before": 5,
+  "budget_limit": 35
+}

@@ -1,0 +1,448 @@
+{
+  "assets": [
+    {
+      "name": "Portrait_Rail_Top",
+      "dimensions": [
+        24,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        7
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d2aa9ac31b44c3c2beeccf0d3faed025bf71b7020efba8d61d7995668d1bca18",
+      "ase_sha256": "6a0178b482cb5cdeeb29f9185795f1c7b6f8f7abbfb9d3c0354a5840ca364258",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "dimensions": [
+        24,
+        11
+      ],
+      "bounds": [
+        0,
+        0,
+        24,
+        8
+      ],
+      "opaque_colors": 6,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#4E3D6C",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "18cf7c8dca99c447adee7e9dca8bd50059e064f2151e68dedc5ff6485c987a1c",
+      "ase_sha256": "62ac649d4db7f632f0284117a5f089553363d3592d2ea6523ef23b1020907ea6",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Rail_Left",
+      "dimensions": [
+        9,
+        20
+      ],
+      "bounds": [
+        0,
+        0,
+        8,
+        20
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d5a01b96e290f7c1862611bb00c8e6ad2b819d5fa22d32b11c6bfe7916b24d2d",
+      "ase_sha256": "20e96c4fd35089ca27c0b69be5d6100cdd4c4f02d1bff8b5d86d6fe37ec789f7",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "dimensions": [
+        10,
+        20
+      ],
+      "bounds": [
+        0,
+        0,
+        8,
+        20
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "315727a7128711ee8ac357477f7b1f521af8d45bbf365973f9f41a98e9c54126",
+      "ase_sha256": "739d46d406d438b4d010b37b994c38b617fceaead98c923fae594d63a9973f80",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Corner_TL",
+      "dimensions": [
+        14,
+        14
+      ],
+      "bounds": [
+        1,
+        1,
+        14,
+        14
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d4f5acef2c63c70211b3f6b890eada41ccda1062c0d7d691c3a7796a03f36686",
+      "ase_sha256": "b7bece5ef482c5f31ef5f2166e46708aefce1fb7e7b14d6e3fa6ae96319430a1",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Corner_TR",
+      "dimensions": [
+        13,
+        14
+      ],
+      "bounds": [
+        0,
+        1,
+        13,
+        14
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "058b4a6aee6d33e8a1ae0a1c36575253bb9335e15bc873b24f05949bae64f3d1",
+      "ase_sha256": "f9cdef2d3a10893118c60328915ae39f379d47d3d8374baba156cf940e02d4cd",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Corner_BL",
+      "dimensions": [
+        14,
+        16
+      ],
+      "bounds": [
+        1,
+        0,
+        14,
+        14
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#4E3D6C",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "444076958ad5df4483fc2a115449a638fe9db354ff1623b0dbc5e53934305460",
+      "ase_sha256": "f73f5588d319017ac7253d672045073d19727c511a034adccd41d8dbb88d8401",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Corner_BR",
+      "dimensions": [
+        13,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        14
+      ],
+      "opaque_colors": 11,
+      "palette": [
+        "#0A0D11",
+        "#241F3A",
+        "#4E3D6C",
+        "#615B6B",
+        "#68108E",
+        "#846A95",
+        "#958BA1",
+        "#AB2AD3",
+        "#CCC3D5",
+        "#F183FB",
+        "#FCD4FF"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "4c1f7b179dbd720879ea24e33be20f66361fa91ec493883a0425f7a2d16b31e9",
+      "ase_sha256": "6520e418bde1f4aacbf348cfbc2cec9806f4bcbb2a7e77495eabdd5479a55eb0",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Clamp",
+      "dimensions": [
+        8,
+        8
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        7
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#4E3D6C",
+        "#615B6B",
+        "#846A95",
+        "#958BA1",
+        "#CCC3D5",
+        "#E2DCEA"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "a2c0edc1b9839f99de057c2145b76b6029baf50a44c9bac08b5b934e364cbc9c",
+      "ase_sha256": "916a3064b7f567bbe6b68beba2a6b7d7c17c8e7028ab6a7b036041fc7d51b6cb",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_HP_Shell",
+      "dimensions": [
+        64,
+        10
+      ],
+      "bounds": [
+        0,
+        1,
+        64,
+        9
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#151423",
+        "#4E3D6C",
+        "#615B6B",
+        "#846A95"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0d0e5454db93e901da2382978788c012d5d43d3c257acef7053e936e33c20882",
+      "ase_sha256": "8757f459a94aeb7b15c4489ba64d75c19876336437f2a44004c6a39f9f21774c",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER_REVIEW"
+    },
+    {
+      "name": "Portrait_Heart_Existing",
+      "dimensions": [
+        13,
+        15
+      ],
+      "bounds": [
+        0,
+        0,
+        13,
+        14
+      ],
+      "opaque_colors": 10,
+      "palette": [
+        "#100F19",
+        "#292132",
+        "#453A50",
+        "#650F36",
+        "#65566F",
+        "#897791",
+        "#A2194B",
+        "#D42B63",
+        "#ED5A89",
+        "#FF9FB6"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "81444a0f8d2b2b9d5bbf0f2cef674863830e46325a9a146585e783d2859f8bd4",
+      "ase_sha256": "41e51fc43fddcdc13765bd9f3cca8fae1c9858cfecc81a08f937de0e73228a19",
+      "native_cel_equals_png": true,
+      "status": "EXISTING_ICON_UNCHANGED"
+    }
+  ],
+  "raw_sha256": "94dbb3b97728651ad722f43f999ad37a280d2938a106768d51ed9d54473e19e5",
+  "prior_art_files_preserved": 221,
+  "prior_non_frame_placements_preserved": 210,
+  "frame_placements": 40,
+  "total_placements": 250,
+  "all_native_cels_equal_independent_exports": true,
+  "all_alpha_binary": true,
+  "repeat_rail_opposite_edges_identical": true,
+  "heart_original_RGBA_unchanged": true,
+  "portrait_recess": [
+    18,
+    30,
+    80,
+    167
+  ],
+  "oversized_probe": [
+    160,
+    247
+  ],
+  "spill_checks": [
+    {
+      "scale": 1,
+      "masked_outside": 0,
+      "masked_inside": 11252,
+      "unmasked_outside": 15396
+    },
+    {
+      "scale": 3,
+      "masked_outside": 0,
+      "masked_inside": 101268,
+      "unmasked_outside": 138564
+    }
+  ],
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "rgba_differences": 0
+    },
+    {
+      "label": "Baseline",
+      "scale": 1,
+      "rgba_differences": 0
+    },
+    {
+      "label": "PortraitFull",
+      "scale": 1,
+      "rgba_differences": 0
+    },
+    {
+      "label": "PortraitHalf",
+      "scale": 1,
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "rgba_differences": 0
+    },
+    {
+      "label": "Baseline",
+      "scale": 3,
+      "rgba_differences": 0
+    },
+    {
+      "label": "PortraitFull",
+      "scale": 3,
+      "rgba_differences": 0
+    },
+    {
+      "label": "PortraitHalf",
+      "scale": 3,
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "rgba_differences": 0
+    }
+  ],
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "production_scene_and_build_settings": "Unchanged; tested",
+  "native_scaling": "No resampling. 22 rails repeat at authored native dimensions.",
+  "HP": "Empty shell and separate existing heart. Diagnostic live-width fill rendered at full/half; no values or fill baked into art.",
+  "reference_hashes_unchanged": true,
+  "coverage_limit": "Isolated Unity preview, not production gameplay or device testing."
+}

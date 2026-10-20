@@ -1,0 +1,30 @@
+{
+    "label": "EmptyScaffold-360x640",
+    "unityVersion": "6000.3.19f1",
+    "activeBuildTarget": "StandaloneWindows64",
+    "colorSpace": "Linear",
+    "width": 360,
+    "height": 640,
+    "qualityAntiAliasing": 0,
+    "canvasScale": 0.0,
+    "sprites": [],
+    "cameras": [
+        {
+            "name": "Preview Camera",
+            "target": "screen",
+            "pipeline": "UniversalRP",
+            "orthographicSize": 5.0,
+            "renderScale": 1.0,
+            "hdr": false,
+            "msaa": false,
+            "dynamicResolution": false,
+            "pixels": {
+                "serializedVersion": "2",
+                "x": 0.0,
+                "y": 0.0,
+                "width": 360.0,
+                "height": 640.0
+            }
+        }
+    ]
+}

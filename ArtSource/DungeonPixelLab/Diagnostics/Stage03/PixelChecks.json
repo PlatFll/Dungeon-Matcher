@@ -1,0 +1,315 @@
+{
+  "assets": [
+    {
+      "name": "Floor_Left",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Left.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Left.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "706a072b387ecedfd6e4b2b6d0e36d31db4eb9898c95aa00b961059d25fab48d",
+      "ase_sha256": "14105b42f6f3e8fabec2de29024e398e4f093fc5d932fd4d6bc1525bed601800",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_A",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_A.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_A.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "bcc3920b48b50fc838d5fcaf512d659577bf81dd46868bf1b94bcbf945f77380",
+      "ase_sha256": "9157874a08774f40f8aa88a02f7408119762015bb12ee79f68fea04f0ca8350b",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_B",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_B.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_B.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "3def697617f0b214301f30fa806129b6b152a37b87aec839be037ef210ef9c84",
+      "ase_sha256": "9c4de1cd5c9b9ec4a5d367af5065d88d87a2f8222b81451d6a65a2d48531f709",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Mid_C",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Mid_C.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Mid_C.aseprite",
+      "dimensions": [
+        32,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        32,
+        12
+      ],
+      "sha256": "33c04a1cf00d0d77ddbe5e781bbdec4cc2afebcfb39f333ec8c15c145ffd2300",
+      "ase_sha256": "6a8349cc7091cfb82ceb0ebeef44e6ee9b937ac31d5412d9b4bd5b17f6b1d1e2",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    },
+    {
+      "name": "Floor_Right",
+      "path": "ArtSource/DungeonPixelLab/Exports/Stage03/Floor_Right.png",
+      "native_source": "ArtSource/DungeonPixelLab/Native/Stage03/Floor_Right.aseprite",
+      "dimensions": [
+        30,
+        12
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#241F3A",
+        "#382D55",
+        "#4E3D6C",
+        "#67537D",
+        "#846A95"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        30,
+        12
+      ],
+      "sha256": "a12a69b05c799cc4f466d59ec8e8271f62c260aa11ecb3a7351651c6dce7534f",
+      "ase_sha256": "00ac0e24797183c3f149a10d5435ded82c13f3f9b619c530d1173b23ffa76247",
+      "native_cel_equals_png": true,
+      "status": "CANDIDATE_PENDING_USER"
+    }
+  ],
+  "legal_pairs": [
+    {
+      "left": "Floor_Mid_A",
+      "right": "Floor_Mid_A",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_A",
+      "right": "Floor_Mid_B",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_A",
+      "right": "Floor_Mid_C",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_B",
+      "right": "Floor_Mid_A",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_B",
+      "right": "Floor_Mid_B",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_B",
+      "right": "Floor_Mid_C",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_C",
+      "right": "Floor_Mid_A",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_C",
+      "right": "Floor_Mid_B",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_C",
+      "right": "Floor_Mid_C",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Left",
+      "right": "Floor_Mid_A",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Left",
+      "right": "Floor_Mid_B",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Left",
+      "right": "Floor_Mid_C",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_A",
+      "right": "Floor_Right",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_B",
+      "right": "Floor_Right",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Mid_C",
+      "right": "Floor_Right",
+      "exact_profile_match": true
+    },
+    {
+      "left": "Floor_Left",
+      "right": "Floor_Right",
+      "exact_profile_match": true
+    }
+  ],
+  "same_floor_contact_row": 180,
+  "placed_modules": 8,
+  "floor_native_rect": [
+    106,
+    178,
+    254,
+    12
+  ],
+  "gaps": 0,
+  "overlaps": 0,
+  "clipped_sprite_bounds": 0,
+  "protected_art_hashes": 82,
+  "prior_placements_preserved": true,
+  "reference_hashes_unchanged": true,
+  "unity_test": {
+    "result": "Passed",
+    "passed": "1",
+    "failed": "0"
+  },
+  "screens": [
+    {
+      "label": "Normal",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 1,
+      "dimensions": [
+        360,
+        640
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Normal",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Contact",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    },
+    {
+      "label": "Restored",
+      "scale": 3,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "rgba_differences": 0
+    }
+  ],
+  "native_resampling": "none",
+  "production_scene_and_build_settings": "unchanged; asserted in Unity test"
+}

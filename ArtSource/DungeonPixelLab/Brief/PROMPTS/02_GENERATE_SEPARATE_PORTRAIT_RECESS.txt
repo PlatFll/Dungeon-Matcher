@@ -1,0 +1,12 @@
+STAGE 02 — DISTINCT PLAYER PORTRAIT BACKING MATERIAL
+==================================================
+Read shared rules and latest checkpoint. DO NOT touch main wall or player frame rails yet. Create one NEW PixelLab-origin *inset/recess* environment material just for the empty player portrait area, separate from the battle wall.
+
+Visual brief: A secluded recessed alcove/panel, dark blue-charcoal-violet stone with restrained broad rectangular courses, flatter/quieter than the main wall; stronger dark vignette using deliberate PIXEL clusters or tinted panel geometry, not airbrush blur. It must unmistakably be a separate layer/depth inside the silver/purple player frame, with the character's pale skull and HP becoming the focal points. Do not place a character into generated image. No cavern side art, no busy banners or ornate stones in this material.
+
+1. Generate at least one material seed through PixelLab with supported actual native golden images as style refs. Keep output dimensions modest and source pixels intentional; zero calls is NOT acceptable unless this family is already provided by a PixelLab output from the current new workflow.
+2. In LibreSprite author repeatable recess tiles or an inset backing if better for the actual portrait aspect, plus a simple inner shadow/edge treatment.
+3. In Unity test the new backing *clipped strictly inside* the current portrait-frame placeholder geometry; add excess-sized fill-probe check and verify it cannot leak past rails/corners.
+4. At 1x, demonstrate it is darker and quieter than the battle wall; compare with actual Rattlebones on a temporary external inspection sheet only (never import/change the character).
+
+ACCEPT: visual separation, readable potential actor, no grout pattern continuing seamlessly across the frame boundary, no spill/blur. Report and stop. NEXT: 03.

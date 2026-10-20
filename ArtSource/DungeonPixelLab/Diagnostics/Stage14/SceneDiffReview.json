@@ -1,0 +1,41 @@
+{
+  "changed_objects": [
+    {
+      "id": "265339824",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/04 Props @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -11,7 +11,4 @@\n\n   m_ConstrainProportionsScale: 0\n   m_Children:\n-  - {fileID: 2052928458}\n-  - {fileID: 529192709}\n-  - {fileID: 1321901636}\n   - {fileID: 2134988587}\n   - {fileID: 224202234}"
+    },
+    {
+      "id": "471527337",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/03 Structural masonry @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -69,4 +69,7 @@\n\n   - {fileID: 1552526286}\n   - {fileID: 359824529}\n+  - {fileID: 2052928458}\n+  - {fileID: 529192709}\n+  - {fileID: 1321901636}\n   m_Father: {fileID: 807422142}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}"
+    },
+    {
+      "id": "529192709",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/04 Props @{x: 0, y: 0}/Gate_Arch @{x: 177, y: -72}",
+      "diff": "--- \n\n+++ \n\n@@ -11,5 +11,5 @@\n\n   m_ConstrainProportionsScale: 0\n   m_Children: []\n-  m_Father: {fileID: 265339824}\n+  m_Father: {fileID: 471527337}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n   m_AnchorMin: {x: 0, y: 1}"
+    },
+    {
+      "id": "807422142",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -12,6 +12,6 @@\n\n   m_Children:\n   - {fileID: 1064436667}\n+  - {fileID: 471527337}\n   - {fileID: 997038196}\n-  - {fileID: 471527337}\n   - {fileID: 265339824}\n   - {fileID: 1286908053}"
+    },
+    {
+      "id": "1321901636",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/04 Props @{x: 0, y: 0}/Gate_Hardware @{x: 177, y: -72}",
+      "diff": "--- \n\n+++ \n\n@@ -11,5 +11,5 @@\n\n   m_ConstrainProportionsScale: 0\n   m_Children: []\n-  m_Father: {fileID: 265339824}\n+  m_Father: {fileID: 471527337}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n   m_AnchorMin: {x: 0, y: 1}"
+    },
+    {
+      "id": "1605925103",
+      "object": "114:Dungeon PixelLab preview root script:bbae5d355e3f25e4dae82c401fa94e9a",
+      "diff": "--- \n\n+++ \n\n@@ -9,5 +9,5 @@\n\n   m_EditorHideFlags: 0\n   m_Script: {fileID: 11500000, guid: bbae5d355e3f25e4dae82c401fa94e9a, type: 3}\n-  m_Name:\n+  m_Name: \n   m_EditorClassIdentifier: Assembly-CSharp::DungeonSideViewArtPreview\n   previewCamera: {fileID: 1069134792}\n@@ -128,2 +128,3 @@\n\n     width: 360\n     height: 640\n+  fitScreenInPlayMode: 1"
+    },
+    {
+      "id": "2052928458",
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/04 Props @{x: 0, y: 0}/Gate_Leaf @{x: 177, y: -72}",
+      "diff": "--- \n\n+++ \n\n@@ -11,5 +11,5 @@\n\n   m_ConstrainProportionsScale: 0\n   m_Children: []\n-  m_Father: {fileID: 265339824}\n+  m_Father: {fileID: 471527337}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n   m_AnchorMin: {x: 0, y: 1}"
+    }
+  ],
+  "added_objects": 0,
+  "removed_objects": 0
+}

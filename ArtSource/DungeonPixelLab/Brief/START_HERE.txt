@@ -1,0 +1,31 @@
+DUNGEON MATCHER — PIXELLAB-FIRST, ONE ASSET FAMILY AT A TIME
+================================================================
+This is a staged handoff pack for Astra, not finished artwork and not an instruction to do all stages simultaneously.
+
+HOW TO USE
+1) Attach this ZIP to Astra. Tell it to extract it and read START_HERE.txt and 00_GLOBAL_RULES.txt.
+2) Paste FIRST_MESSAGE_TO_ASTRA.txt, then send only PROMPTS/00_SETUP_AND_PIXEL_PIPELINE.txt.
+3) Wait for the phase's generated asset previews, native-pixel verification, PixelLab ledger, and stage checkpoint.
+4) Once satisfied, send only the NEXT numbered prompt. Each stage must stop on its own.
+5) Stages 14-15 assemble and validate; do not merge or overwrite live assets without approval.
+
+IMPORTANT
+- Generate NEW native environment/UI asset families in PixelLab from TEXT, grounded in the real current golden-character images as style references. No full-screen generated composites.
+- Do not slice the earlier AI mockup, do not use old PR #200's 129 pre-existing modules as accepted final art.
+- The accepted design intent is a flat 2D SIDE-VIEW dungeon battle stage: a tall violet stone wall, a single horizontal enemy-standing floor/platform with chunky quiet slabs, a separate recessed portrait panel, dungeon gate, chains/banners/torches, modular gem board and bottom HUD. NOT an isometric perspective-floor scene.
+- Existing production art is a COLOR/STYLE/INTERFACE authority where approved; the old failed environment is only a comparison and code-scaffold candidate.
+- The artistic style target and exact current golden images are in the repository's art guide/register. Read them fresh every phase.
+- Tier 2 allows larger canvas sizes on eligible image operations, but SIZE CAPABILITY IS TOOL-SPECIFIC. Large canvas is not mandatory and does not imply larger source pixels.
+- PixelLab is used only where a supported tool exists and connectivity is verified; no pretending it was used.
+
+EVERY PHASE HANDOFF
+- New source asset(s), cleaned native PNG(s) and editable LibreSprite file(s) in branch
+- Transparent 1x (where relevant) and nearest-neighbor 4x previews
+- A real Unity 360x640-logical-scale/in-game-scale preview where applicable
+- Objective PNG/alpha/scale/seam checks + honest visual comparison
+- Updated generation ledger, manifest and checkpoint
+- 'DONE / NEEDS REVISION / BLOCKED' with specific issues; stop and WAIT FOR NEXT PROMPT
+
+PRESERVE existing live game characters, gem sprites, code, save data, and production zone scenes.
+
+The ZIP includes a NON-AUTHORITATIVE reference-intent screenshot to help with composition and a low-quality-build screenshot for comparison; neither is usable as native source artwork or as PixelLab style reference. Always read the current guide in the actual checkout.

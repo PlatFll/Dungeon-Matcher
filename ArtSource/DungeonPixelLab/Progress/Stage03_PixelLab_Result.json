@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: fd7b1bf8-270d-447c-a135-177884748b06\nterrain: Dungeon Matcher violet-gray dressed stone, a traditional side-view 2D platformer ledge made of LARGE intact rectangular slabs. Quiet broad matte planes, dark indigo joints, muted purple gray base, subtle lavender top-left light. Horizontal straight stone courses, sparse one-pixel chips only. Very low noise. No rounded cobblestones, no rubble, no dirt, no grass, no ornament, no cracks running through every slab. Side elevation, never isometric or a receding room floor.\ntiles: 16 platform tiles\ntile_size: 32x32px\nview: side (2D platformer)\nbackground: transparent\n\ndownload_png: https://api.pixellab.ai/mcp/sidescroller-tilesets/fd7b1bf8-270d-447c-a135-177884748b06/image\ndownload_metadata: https://api.pixellab.ai/mcp/sidescroller-tilesets/fd7b1bf8-270d-447c-a135-177884748b06/metadata\n\nbase_tile_id (for chaining): 74904d1b-9197-4c89-afd7-c88fd563734b\n\nhint: use edge-matching logic to select tiles for platformer levels"
+      }
+    ],
+    "isError": false
+  },
+  "balance_after": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1041.20\ngenerations_used: 2058.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "balance_before": 1044.2,
+  "remaining_after": 1041.2,
+  "actual_charge_by_balance_delta": 3,
+  "cumulative": 13,
+  "no_concurrent_paid_jobs_in_this_workflow": true
+}

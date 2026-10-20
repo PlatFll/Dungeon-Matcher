@@ -1,0 +1,393 @@
+{
+  "request": {
+    "description": "ONE seamless repeating 64x64 native pixel-art dungeon CASTLE BRICK WALL material. FLAT FRONT ELEVATION, orthographic side-view backdrop, fills entire square edge to edge, no border and no transparency. Four horizontal courses about 16 pixels high; medium-large tidy rectangular masonry blocks about 28-34 pixels wide, staggered vertical mortar joints. Opposite edges join when repeated. Deepest recessed narrow mortar, large QUIET indigo/blue-violet base planes, only a slim selective 1-pixel upper/left bevel and lower-right shadow. A few subdued purple accent blocks. Restrained top-left lighting. Broad connected pixel clusters like the supplied rendering reference, but STONE WALL ONLY, no skull, skeleton, crown, character, figure or reference palette. Whimsical Dungeon Matcher environment background, dark and quiet behind readable HUD and fighters. No torch glow, props, arch, text, frame, floor, perspective, isometric view, individual rocks, cobblestone, cracks, busy chipped texture, speckles, dither, gradients, blurred shading or antialiasing. The tile is a continuous material swatch, not an isolated object or a scene.",
+    "width": 64,
+    "height": 64,
+    "no_background": false,
+    "palette": [
+      "#151423",
+      "#201D33",
+      "#28283F",
+      "#35324F",
+      "#382D55",
+      "#4E3D6C"
+    ],
+    "palette_name": "Dungeon Matcher quiet indigo masonry candidate",
+    "max_colors": 6,
+    "seed": 310101,
+    "style_image": {
+      "base64": "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",
+      "usage_description": "Use this actual native Rattlebones golden image ONLY for crisp native pixel handling, economical connected planes, clear controlled dark separations, sparse top-left shading. Do not copy subject, anatomy, silhouette, royal or bone colors, or any figurative motif. New subject is front-elevation dungeon wall material."
+    },
+    "style_options": {
+      "color_palette": false,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "create_receipt": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"6a393bed-69f0-45d1-a4e4-0ef2987ea1a6\",\n  \"image_id\": \"455f94be-a14b-5ca2-9866-a9f70d5543f5\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"455f94be-a14b-5ca2-9866-a9f70d5543f5\",\n  \"job_id\": \"6a393bed-69f0-45d1-a4e4-0ef2987ea1a6\",\n  \"description\": \"ONE seamless repeating 64x64 native pixel-art dungeon CASTLE BRICK WALL material. FLAT FRONT ELEVATION, orthographic side-view backdrop, fills entire square edge to edge, no border and no transparency. Four horizontal courses about 16 pixels high; medium-large tidy rectangular masonry blocks about 28-34 pixels wide, staggered vertical mortar joints. Opposite edges join when repeated. Deepest recessed narrow mortar, large QUIET indigo/blue-violet base planes, only a slim selective 1-pixel upper/left bevel and lower-right shadow. A few subdued purple accent blocks. Restrained top-left lighting. Broad connected pixel clusters like the supplied rendering reference, but STONE WALL ONLY, no skull, skeleton, crown, character, figure or reference palette. Whimsical Dungeon Matcher environment background, dark and quiet behind readable HUD and fighters. No torch glow, props, arch, text, frame, floor, perspective, isometric view, individual rocks, cobblestone, cracks, busy chipped texture, speckles, dither, gradients, blurred shading or antialiasing. The tile is a continuous material swatch, not an isolated object or a scene.\",\n  \"seed\": 310101,\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/6a393bed-69f0-45d1-a4e4-0ef2987ea1a6/download\"\n}\nPoll get_image(job_id=\"6a393bed-69f0-45d1-a4e4-0ef2987ea1a6\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+      "image_id": "455f94be-a14b-5ca2-9866-a9f70d5543f5",
+      "status": "processing",
+      "source_image_id": "455f94be-a14b-5ca2-9866-a9f70d5543f5",
+      "job_id": "6a393bed-69f0-45d1-a4e4-0ef2987ea1a6",
+      "description": "ONE seamless repeating 64x64 native pixel-art dungeon CASTLE BRICK WALL material. FLAT FRONT ELEVATION, orthographic side-view backdrop, fills entire square edge to edge, no border and no transparency. Four horizontal courses about 16 pixels high; medium-large tidy rectangular masonry blocks about 28-34 pixels wide, staggered vertical mortar joints. Opposite edges join when repeated. Deepest recessed narrow mortar, large QUIET indigo/blue-violet base planes, only a slim selective 1-pixel upper/left bevel and lower-right shadow. A few subdued purple accent blocks. Restrained top-left lighting. Broad connected pixel clusters like the supplied rendering reference, but STONE WALL ONLY, no skull, skeleton, crown, character, figure or reference palette. Whimsical Dungeon Matcher environment background, dark and quiet behind readable HUD and fighters. No torch glow, props, arch, text, frame, floor, perspective, isometric view, individual rocks, cobblestone, cracks, busy chipped texture, speckles, dither, gradients, blurred shading or antialiasing. The tile is a continuous material swatch, not an isolated object or a scene.",
+      "seed": 310101,
+      "image_size": {
+        "width": 64,
+        "height": 64
+      },
+      "output_count": 1,
+      "estimated_generations": 5,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/6a393bed-69f0-45d1-a4e4-0ef2987ea1a6/download"
+    },
+    "isError": false
+  },
+  "balance_before": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1054.20\ngenerations_used: 2045.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "quote": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"name\": \"Pro Flash\",\n  \"revision\": \"pro-flash-presets-48-128-2026-09-29\",\n  \"grid_recovery\": \"Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.\",\n  \"operations\": {\n    \"create\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 1\n    },\n    \"edit\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"edit_methods\": [\n        \"text\",\n        \"reference\"\n      ],\n      \"canvas_growth\": false,\n      \"reference_image_fit\": \"native dimensions must fit the edit canvas\"\n    },\n    \"inpaint\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"canvas_growth\": false,\n      \"crop_to_mask_values\": [\n        true\n      ],\n      \"output_methods\": [\n        \"New layer with changes\",\n        \"Modify current layer, only changes\",\n        \"Modify current layer\"\n      ],\n      \"mask\": {\n        \"white_rgb\": \"generate\",\n        \"black_rgb\": \"preserve\",\n        \"alpha\": \"ignored\",\n        \"binary_rgb_required\": true\n      },\n      \"context\": {\n        \"bounding_box_required\": true,\n        \"max_width_multiple\": 3,\n        \"max_height_multiple\": 3,\n        \"native_pixels\": true\n      }\n    },\n    \"character\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 8,\n      \"n_directions\": [\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Native source padded to a square, minimum 32 pixels, aligned to four pixels.\"\n    },\n    \"object\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": \"n_directions\",\n      \"n_directions\": [\n        1,\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Eight views use the square V3 canvas; one direction keeps the native size.\"\n    }\n  },\n  \"style_reference_fit\": \"native dimensions must fit the target canvas; smaller references are centered without resizing\",\n  \"cost\": {\n    \"image\": 5,\n    \"rotations\": 0,\n    \"total\": 5,\n    \"provisional\": true\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "name": "Pro Flash",
+      "revision": "pro-flash-presets-48-128-2026-09-29",
+      "grid_recovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.",
+      "operations": {
+        "create": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 1
+        },
+        "edit": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "edit_methods": [
+            "text",
+            "reference"
+          ],
+          "canvas_growth": false,
+          "reference_image_fit": "native dimensions must fit the edit canvas"
+        },
+        "inpaint": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "canvas_growth": false,
+          "crop_to_mask_values": [
+            true
+          ],
+          "output_methods": [
+            "New layer with changes",
+            "Modify current layer, only changes",
+            "Modify current layer"
+          ],
+          "mask": {
+            "white_rgb": "generate",
+            "black_rgb": "preserve",
+            "alpha": "ignored",
+            "binary_rgb_required": true
+          },
+          "context": {
+            "bounding_box_required": true,
+            "max_width_multiple": 3,
+            "max_height_multiple": 3,
+            "native_pixels": true
+          }
+        },
+        "character": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 8,
+          "n_directions": [
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Native source padded to a square, minimum 32 pixels, aligned to four pixels."
+        },
+        "object": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": "n_directions",
+          "n_directions": [
+            1,
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Eight views use the square V3 canvas; one direction keeps the native size."
+        }
+      },
+      "style_reference_fit": "native dimensions must fit the target canvas; smaller references are centered without resizing",
+      "cost": {
+        "image": 5,
+        "rotations": 0,
+        "total": 5,
+        "provisional": true
+      }
+    },
+    "isError": false
+  },
+  "official_docs": [
+    "https://api.pixellab.ai/mcp/docs",
+    "https://api.pixellab.ai/v2/llms.txt"
+  ]
+}

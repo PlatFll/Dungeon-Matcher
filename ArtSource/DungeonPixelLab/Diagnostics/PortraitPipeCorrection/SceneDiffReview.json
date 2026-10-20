@@ -1,0 +1,11 @@
+{
+  "scene": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+  "added_objects": [],
+  "removed_objects": [],
+  "changed_existing_objects": [
+    {
+      "object": "224:Dungeon PixelLab preview root/Preview Canvas @{x: -2.8125, y: -5}/ReferenceContent @{x: 0, y: 0}/05 Top UI shells @{x: 0, y: 0}/Portrait panel @{x: 9, y: -20}/InteriorMask",
+      "diff": "--- \n\n+++ \n\n@@ -15,5 +15,5 @@\n\n   m_AnchorMin: {x: 0, y: 0}\n   m_AnchorMax: {x: 1, y: 1}\n-  m_AnchoredPosition: {x: 10, y: -10}\n-  m_SizeDelta: {x: -20, y: -20}\n+  m_AnchoredPosition: {x: 9, y: -9}\n+  m_SizeDelta: {x: -18, y: -18}\n   m_Pivot: {x: 0, y: 1}"
+    }
+  ]
+}

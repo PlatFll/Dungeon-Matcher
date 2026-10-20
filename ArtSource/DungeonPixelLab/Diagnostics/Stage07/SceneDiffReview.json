@@ -1,0 +1,44 @@
+{
+  "scene": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+  "added_objects": [
+    "114:Torch_Fixture @{x: 112, y: -86}",
+    "114:Torch_Fixture @{x: 320, y: -86}",
+    "114:Torch_Flame @{x: 112, y: -86}",
+    "114:Torch_Flame @{x: 320, y: -86}",
+    "114:Torch_Light_Left @{x: 96, y: -68}",
+    "114:Torch_Light_Right @{x: 304, y: -68}",
+    "1:Torch_Fixture @{x: 112, y: -86}",
+    "1:Torch_Fixture @{x: 320, y: -86}",
+    "1:Torch_Flame @{x: 112, y: -86}",
+    "1:Torch_Flame @{x: 320, y: -86}",
+    "1:Torch_Light_Left @{x: 96, y: -68}",
+    "1:Torch_Light_Right @{x: 304, y: -68}",
+    "222:Torch_Fixture @{x: 112, y: -86}",
+    "222:Torch_Fixture @{x: 320, y: -86}",
+    "222:Torch_Flame @{x: 112, y: -86}",
+    "222:Torch_Flame @{x: 320, y: -86}",
+    "222:Torch_Light_Left @{x: 96, y: -68}",
+    "222:Torch_Light_Right @{x: 304, y: -68}",
+    "224:Torch_Fixture @{x: 112, y: -86}",
+    "224:Torch_Fixture @{x: 320, y: -86}",
+    "224:Torch_Flame @{x: 112, y: -86}",
+    "224:Torch_Flame @{x: 320, y: -86}",
+    "224:Torch_Light_Left @{x: 96, y: -68}",
+    "224:Torch_Light_Right @{x: 304, y: -68}"
+  ],
+  "removed_objects": [],
+  "changed_existing_objects": [
+    {
+      "object": "114:Dungeon PixelLab preview root",
+      "diff": "--- \n\n+++ \n\n@@ -49,4 +49,8 @@\n\n   - {fileID: 21300000, guid: 08fdf905ee86a8a4c8cbb19ec8439fa8, type: 3}\n   - {fileID: 21300000, guid: 82a109b4895dfc9458b6bd8f9098de99, type: 3}\n+  - {fileID: 21300000, guid: d270748b16d5a854082154639f3d0262, type: 3}\n+  - {fileID: 21300000, guid: 899af1d39c5fa8247813e733e4b100fc, type: 3}\n+  - {fileID: 21300000, guid: 349344d0cc9029f41bda827f4b54a49c, type: 3}\n+  - {fileID: 21300000, guid: e2f9d98025e45a84ebaaf0df2e9d1abe, type: 3}\n   - {fileID: 21300000, guid: 80c74a257b2073746a1e871f91b1921d, type: 3}\n   - {fileID: 21300000, guid: e26fcf2198c7f6d45ade1a671226450f, type: 3}\n@@ -57,5 +61,5 @@\n\n   - {fileID: 21300000, guid: c65883cf13aea424e9089b3b1e27211f, type: 3}\n   - {fileID: 21300000, guid: 905c02710ecd7dc46a004ee6a6d6be5a, type: 3}\n-  placementManifest: {fileID: 4900000, guid: deb003d1a52b3dc46a1534e6b8b5fabb, type: 3}\n+  placementManifest: {fileID: 4900000, guid: ec4482c901576aa42ba6d34fff866e04, type: 3}\n   width: 360\n   height: 640"
+    },
+    {
+      "object": "224:03 Structural masonry @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -66,4 +66,6 @@\n\n   - {fileID: 224:Support_Corbel @{x: 210, y: -210}}\n   - {fileID: 224:Support_Corbel @{x: 324, y: -210}}\n+  - {fileID: 224:Torch_Light_Left @{x: 96, y: -68}}\n+  - {fileID: 224:Torch_Light_Right @{x: 304, y: -68}}\n   m_Father: {fileID: 224:ReferenceContent @{x: 0, y: 0}}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}"
+    },
+    {
+      "object": "224:04 Props @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -13,4 +13,8 @@\n\n   - {fileID: 224:Gate_Arch @{x: 177, y: -72}}\n   - {fileID: 224:Gate_Hardware @{x: 177, y: -72}}\n+  - {fileID: 224:Torch_Fixture @{x: 112, y: -86}}\n+  - {fileID: 224:Torch_Flame @{x: 112, y: -86}}\n+  - {fileID: 224:Torch_Fixture @{x: 320, y: -86}}\n+  - {fileID: 224:Torch_Flame @{x: 320, y: -86}}\n   m_Father: {fileID: 224:ReferenceContent @{x: 0, y: 0}}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}"
+    }
+  ]
+}

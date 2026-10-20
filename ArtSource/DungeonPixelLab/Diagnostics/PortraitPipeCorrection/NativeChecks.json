@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "artifacts": [
+    {
+      "name": "Portrait_Rail_Left",
+      "dimensions": [
+        7,
+        20
+      ],
+      "opaque_width": 5,
+      "canvas_cross_axis": 7,
+      "pipe_center": 3,
+      "connector_center": 3,
+      "colors": 4,
+      "sha256": "c152b92d51c454cd456d768d1d893166191040c18a595108bc2210d3053ab1a5",
+      "ase_sha256": "c36b118152d54e53751a97df047ec7e4ea6b3f8d6ea4dd778df12210d1758c9e"
+    },
+    {
+      "name": "Portrait_Rail_Right",
+      "dimensions": [
+        7,
+        20
+      ],
+      "opaque_width": 5,
+      "canvas_cross_axis": 7,
+      "pipe_center": 3,
+      "connector_center": 3,
+      "colors": 4,
+      "sha256": "c152b92d51c454cd456d768d1d893166191040c18a595108bc2210d3053ab1a5",
+      "ase_sha256": "8f2292c7171f253935182cd9323c30c5307cd1dfeb12cbde95364cd5c6ce3927"
+    },
+    {
+      "name": "Portrait_Rail_Top",
+      "dimensions": [
+        24,
+        7
+      ],
+      "opaque_width": 5,
+      "canvas_cross_axis": 7,
+      "pipe_center": 3,
+      "connector_center": 3,
+      "colors": 4,
+      "sha256": "7be442f1a4a69084f49535640eb3c1cdab525f1c7f7d862095b1e38ecec416cb",
+      "ase_sha256": "d21fa72cf5f4576ac9f36b87a5bc67d5ed67530a994ee9c47830959b52888ee3"
+    },
+    {
+      "name": "Portrait_Rail_Bottom",
+      "dimensions": [
+        24,
+        7
+      ],
+      "opaque_width": 5,
+      "canvas_cross_axis": 7,
+      "pipe_center": 3,
+      "connector_center": 3,
+      "colors": 4,
+      "sha256": "7be442f1a4a69084f49535640eb3c1cdab525f1c7f7d862095b1e38ecec416cb",
+      "ase_sha256": "45a614834f28b39eb9d74256a2cb200736acf86bd04c033326581728726da204"
+    }
+  ],
+  "protected_files": 298,
+  "test": {
+    "result": "Passed",
+    "total": "2",
+    "passed": "2",
+    "failed": "0"
+  },
+  "portrait_outer": [
+    9,
+    20,
+    99,
+    190
+  ],
+  "portrait_interior": [
+    18,
+    29,
+    81,
+    172
+  ],
+  "sizes_tested": [
+    [
+      99,
+      190
+    ],
+    [
+      100,
+      191
+    ],
+    [
+      119,
+      231
+    ],
+    [
+      60,
+      90
+    ]
+  ],
+  "pixel_scale": [
+    1,
+    3
+  ],
+  "mask_coverage": "Every interior pixel covered; no outside leakage when decorative occluders hidden. Complete frame rendered separately.",
+  "undersize_recovery": true,
+  "exact_3x": true,
+  "unchanged_screen_pixels_outside_portrait": 211590,
+  "board_cells_unchanged": 64
+}

@@ -1,0 +1,31 @@
+{
+  "project": "Dungeon Matcher",
+  "workflow": "PixelLab-first staged dungeon zone",
+  "branch": "feature/dungeon-zone-pixellab-asset-library",
+  "current_stage": "00",
+  "stages": {
+    "00": "NOT_STARTED",
+    "01": "NOT_STARTED",
+    "02": "NOT_STARTED",
+    "03": "NOT_STARTED",
+    "04": "NOT_STARTED",
+    "05": "NOT_STARTED",
+    "06": "NOT_STARTED",
+    "07": "NOT_STARTED",
+    "08": "NOT_STARTED",
+    "09": "NOT_STARTED",
+    "10": "NOT_STARTED",
+    "11": "NOT_STARTED",
+    "12": "NOT_STARTED",
+    "13": "NOT_STARTED",
+    "14": "NOT_STARTED",
+    "15": "NOT_STARTED",
+    "16": "NOT_STARTED"
+  },
+  "approval": "PENDING_USER",
+  "cumulative_billable_generations": 0,
+  "soft_budget_generation_equivalents": 35,
+  "PixelLab_status": "UNVERIFIED",
+  "golden_reference_sha": "VERIFY_ON_RUNTIME",
+  "notes": "Each phase should update a copy under repo Progress/State.json. Never claim autoapproval."
+}

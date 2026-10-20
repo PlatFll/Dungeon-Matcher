@@ -1,0 +1,32 @@
+{
+  "validator": "Tools/Validate-Unity.ps1",
+  "result": "SUCCESS",
+  "exit_code": 0,
+  "unity": "6000.3.19f1",
+  "log_path": "C:\\Users\\USER\\AppData\\Local\\Temp\\DungeonMatcher-UnityValidation-5d6d544b-bfdd-4873-90e6-4d0dc3e27d06.log",
+  "log_sha256": "6dd551069cdcb351ee2bb426158a3ad012e3ec144d6c3a90beb6ebad999da19e",
+  "tests": {
+    "Stage10Correction": {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0"
+    },
+    "Stage11": {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0"
+    }
+  },
+  "tested_files": {
+    "Assets/_Game/Scripts/UI/ResponsiveModularFrameFitter.cs": "23954c9e4505eda2184d37e6a90f3879642cabc3ebb2d8851b8530845db4e46e",
+    "Assets/_Game/Scripts/ArtPreview/DungeonSideViewArtPreview.cs": "99e4227945ddbc987a673beab8082fa225e35f5f93f8082c9319f6789d248d1a",
+    "Assets/_Game/Scripts/Editor/DungeonPixelPipelineStage11Tests.cs": "2c27ece4ee183e84d7b771ac4c04c46bf3ddb67d15f9404cb45d714f603eb2e8",
+    "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity": "6770b9ef1ffb9e82cabf01831bfd90bce0e240f7a0588d77d59d22992033c1f0",
+    "Assets/_Game/Art/DungeonPixelLab/Stage11BoardPlacement.json": "de6db85ef67def3a9cb3461c68948baeedd3e9173db24fdb03d623eb12ff8571"
+  },
+  "post_validation_changes": "Only serialized trailing whitespace and proven original metadata restoration; no C# or pixel changes.",
+  "main_user_files_preserved": 8,
+  "scope": "Isolated art preview, not production gameplay or phone build"
+}

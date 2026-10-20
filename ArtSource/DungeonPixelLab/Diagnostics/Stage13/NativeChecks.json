@@ -1,0 +1,672 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "stage": "13",
+      "name": "Progress_Clamp",
+      "dimensions": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "29f3870015925897935b568fdf8cd3a454f38b55e840862c9544e6b1e6ca77da",
+      "ase_sha256": "fee10d374461b26de163ffba657349b995cc9b3ba0db400b35f361d451752ccc",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Corner_BL",
+      "dimensions": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "29f3870015925897935b568fdf8cd3a454f38b55e840862c9544e6b1e6ca77da",
+      "ase_sha256": "3b83292c1f93f25dd16903f47b257be201229b74962305ef937f626b727ecf86",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Corner_BR",
+      "dimensions": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "29f3870015925897935b568fdf8cd3a454f38b55e840862c9544e6b1e6ca77da",
+      "ase_sha256": "5b8425442a6096990fa40cf04b88dec97a480b9907d3885ddea2281ccfbb7aa4",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Corner_TL",
+      "dimensions": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "29f3870015925897935b568fdf8cd3a454f38b55e840862c9544e6b1e6ca77da",
+      "ase_sha256": "00261895711b78e02cd7ccd9dc871a6576a3dff0942f290712ece45d151bdda6",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Corner_TR",
+      "dimensions": [
+        5,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "29f3870015925897935b568fdf8cd3a454f38b55e840862c9544e6b1e6ca77da",
+      "ase_sha256": "4aa1d86b447eed48139d425f7b7db92f0e4ec5c9e595bf6701c357929eeca467",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Fill",
+      "dimensions": [
+        16,
+        4
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        4
+      ],
+      "opaque_colors": 4,
+      "palette": [
+        "#6E27BF",
+        "#9139D9",
+        "#B75AEB",
+        "#DD92F7"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "d09b0592e2389790f5ff944c41041f92a37bb878547707a6e7cf945cdbdc21c3",
+      "ase_sha256": "6c2bd2ecefe8774e1d041d5e12e9a742e667aef1bd5ea028269ee0163be62c49",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Inset",
+      "dimensions": [
+        16,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "opaque_colors": 1,
+      "palette": [
+        "#151423"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "1204efe2b29bc00247018cb1aa09eb2b9436754b9187e02ef5c59929e86a4b54",
+      "ase_sha256": "68c418d6872cdb143891ea8ed0b398c5acd58faa8a764b6a91029faaed2158ae",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Rail_Bottom",
+      "dimensions": [
+        16,
+        3
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        3
+      ],
+      "opaque_colors": 2,
+      "palette": [
+        "#0A0D11",
+        "#958BA1"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "87b09588851fd787e740b5582ca3d22e1e48962465850b12da8b1c13ae1d1e99",
+      "ase_sha256": "30a95e1d723e1dc5365f7b9fae3aaff2812c543b60d93ca0890b6ded52033bdf",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Rail_Left",
+      "dimensions": [
+        3,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        3,
+        16
+      ],
+      "opaque_colors": 2,
+      "palette": [
+        "#0A0D11",
+        "#958BA1"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "15da53a643eb438366ad30ebd0c549453fbd4556e9e5dfa6f9e87e4608bc2db9",
+      "ase_sha256": "4ea0ab92b3fee0b58f8ba8ae5a5f37a1d946a580b6291bae2350d84f8ae28205",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Rail_Right",
+      "dimensions": [
+        3,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        3,
+        16
+      ],
+      "opaque_colors": 2,
+      "palette": [
+        "#0A0D11",
+        "#958BA1"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "15da53a643eb438366ad30ebd0c549453fbd4556e9e5dfa6f9e87e4608bc2db9",
+      "ase_sha256": "daa8ab7890b8f5e323646233d9bf881bfc91347dc47212222f43da91bf0c5b19",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Progress_Rail_Top",
+      "dimensions": [
+        16,
+        3
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        3
+      ],
+      "opaque_colors": 2,
+      "palette": [
+        "#0A0D11",
+        "#958BA1"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "87b09588851fd787e740b5582ca3d22e1e48962465850b12da8b1c13ae1d1e99",
+      "ase_sha256": "320da33b3480c81ee507bcffe3c24872bc6b42596f7118c5feae386447780904",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Clamp",
+      "dimensions": [
+        7,
+        7
+      ],
+      "bounds": [
+        0,
+        0,
+        7,
+        7
+      ],
+      "opaque_colors": 5,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#958BA1",
+        "#CCC3D5",
+        "#E5AE4F"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "5b6808d8ff701b4ef8a6982af016db7ee319561ccde572ea30ad7240e5fe2f72",
+      "ase_sha256": "96f00b1aef4c05327972b91817f0c7735cc59b3e49f4856a049535d6fa8094b9",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Corner_BL",
+      "dimensions": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#958BA1",
+        "#985E2B",
+        "#CCC3D5",
+        "#E5AE4F",
+        "#FFDB8F"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7ca480b2ece8724bdb88d4aaec80027b4fab5baf163b223dd974400a988a0c7f",
+      "ase_sha256": "314d9ec1af5a2602f18ec33b5ff31ad8ba234b4497ce7c9704efd7932e98b929",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Corner_BR",
+      "dimensions": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#958BA1",
+        "#985E2B",
+        "#CCC3D5",
+        "#E5AE4F",
+        "#FFDB8F"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7ca480b2ece8724bdb88d4aaec80027b4fab5baf163b223dd974400a988a0c7f",
+      "ase_sha256": "16692ae23d242f5461c33395126d480cf2782ea32f2e8161d8b1df0b94a410ff",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Corner_TL",
+      "dimensions": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#958BA1",
+        "#985E2B",
+        "#CCC3D5",
+        "#E5AE4F",
+        "#FFDB8F"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7ca480b2ece8724bdb88d4aaec80027b4fab5baf163b223dd974400a988a0c7f",
+      "ase_sha256": "62a6ebe418b46d3f03db3fb755b75d39679d4190ae1812a9bcfc175ef4d50084",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Corner_TR",
+      "dimensions": [
+        9,
+        9
+      ],
+      "bounds": [
+        0,
+        0,
+        9,
+        9
+      ],
+      "opaque_colors": 7,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#958BA1",
+        "#985E2B",
+        "#CCC3D5",
+        "#E5AE4F",
+        "#FFDB8F"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "7ca480b2ece8724bdb88d4aaec80027b4fab5baf163b223dd974400a988a0c7f",
+      "ase_sha256": "3ff65be93e5b4fed789da352e1842e63871eec780d6f508bdda5416025c6fc23",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Inset",
+      "dimensions": [
+        16,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "opaque_colors": 1,
+      "palette": [
+        "#151023"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "e025ad865d9abfe719c200ee28d1d7277d10f8f5312dd6ba23bd5ce7d74cb621",
+      "ase_sha256": "4165518d06532ea6c1d65dd5b54dd3c5f1e7482cc24c0bdb518a43e25f3598cc",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Motif",
+      "dimensions": [
+        19,
+        17
+      ],
+      "bounds": [
+        0,
+        2,
+        18,
+        15
+      ],
+      "opaque_colors": 2,
+      "palette": [
+        "#4A1590",
+        "#9139D9"
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "sha256": "9dcf65514fd35bd6e9ef1e9582950faeb35d47c3b4a9455d60fb55d7788e222f",
+      "ase_sha256": "5619ed3a1647e15854d79306a38e7637bcbee6d037832f2471004a44f3b1af4f",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Rail_Bottom",
+      "dimensions": [
+        16,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "5f78a861f4d032d846f09dde74c0a974dcee95061e11439e738c6671ffd302ce",
+      "ase_sha256": "c640b84e70f868487cb4cecf8ac521fccb68c0d7d4406edef69210a78862f2b1",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Rail_Left",
+      "dimensions": [
+        5,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "bea268811c65a2acd6ef2d49bf574995d0b93b09d604c061d007993038a2cb61",
+      "ase_sha256": "654f38cb9b7279d14c83c4fee84b638d1699a1fb7aaa9538c7edcd5ecd37db70",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Rail_Right",
+      "dimensions": [
+        5,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        5,
+        16
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "bea268811c65a2acd6ef2d49bf574995d0b93b09d604c061d007993038a2cb61",
+      "ase_sha256": "b46aa0a524fdc08700a48b676d66f35b9a3b287fec3093bbd860ae59cc78c76b",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Resonance_Rail_Top",
+      "dimensions": [
+        16,
+        5
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        5
+      ],
+      "opaque_colors": 3,
+      "palette": [
+        "#0A0D11",
+        "#615B6B",
+        "#CCC3D5"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "5f78a861f4d032d846f09dde74c0a974dcee95061e11439e738c6671ffd302ce",
+      "ase_sha256": "6ebe96017f9b085d953e383e3eb6e90585ac033c140f672ec78a521ad3169c15",
+      "native_equals_png": true
+    },
+    {
+      "stage": "13",
+      "name": "Supply_Inset",
+      "dimensions": [
+        16,
+        16
+      ],
+      "bounds": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "opaque_colors": 1,
+      "palette": [
+        "#958BA1"
+      ],
+      "alpha_values": [
+        255
+      ],
+      "sha256": "08b46533f27af16c1d60a122eb96abf40ab5423f1d74b645aaab8ece0cde2209",
+      "ase_sha256": "c0c792db20236c128c9de419718333b4aa5f5f0733bf0f382fe416feb0f1d8d0",
+      "native_equals_png": true
+    }
+  ],
+  "protected_files": 361,
+  "source_sha256": "ad0d923339d0d1034bd3ec8f2130b3d361f6ce14804f3ca6ede8f38535d35baf",
+  "source_dimensions": [
+    64,
+    64
+  ],
+  "source_opaque_colors": 14,
+  "source_usage": "Raw corner and top-rail profiles guide native cleanup. Metal planes regularized into current family ramp; bolt-centered corners, compact rail caps, fill and source-derived violet motif authored in LibreSprite. Existing icons are bound unchanged, not generated. No source scaling.",
+  "unity_tests": {
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0"
+  },
+  "exact_2x_and_3x": true,
+  "tall_content_equals_3x": true,
+  "all_prior_pixels_outside_bottom_hud_bounds_identical": true,
+  "unchanged_screen_pixels": 215826,
+  "bottom_hud_bounds": [
+    [
+      69,
+      564,
+      116,
+      607
+    ],
+    [
+      245,
+      564,
+      292,
+      607
+    ],
+    [
+      121,
+      563,
+      239,
+      607
+    ],
+    [
+      131,
+      545,
+      229,
+      559
+    ],
+    [
+      56,
+      614,
+      304,
+      630
+    ]
+  ]
+}

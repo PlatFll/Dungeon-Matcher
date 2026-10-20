@@ -1,0 +1,243 @@
+{
+  "libresprite_pixel_exact": true,
+  "probe": {
+    "dimensions": [
+      32,
+      32
+    ],
+    "opaque_color_count": 6,
+    "alpha": [
+      0,
+      255
+    ],
+    "bounds": [
+      2,
+      2,
+      30,
+      30
+    ]
+  },
+  "wall": {
+    "dimensions": [
+      64,
+      32
+    ],
+    "opaque_color_count": 4,
+    "alpha": [
+      255
+    ],
+    "bounds": [
+      0,
+      0,
+      64,
+      32
+    ]
+  },
+  "pixel_tests": [
+    {
+      "name": "probe",
+      "scale": 1,
+      "screen_rect_top_left": [
+        32,
+        576,
+        64,
+        608
+      ],
+      "opaque_pixels": 784,
+      "mismatched_rgb_pixels": 0
+    },
+    {
+      "name": "wall",
+      "scale": 1,
+      "screen_rect_top_left": [
+        96,
+        576,
+        160,
+        608
+      ],
+      "opaque_pixels": 2048,
+      "mismatched_rgb_pixels": 0
+    },
+    {
+      "name": "probe",
+      "scale": 3,
+      "screen_rect_top_left": [
+        96,
+        1728,
+        192,
+        1824
+      ],
+      "opaque_pixels": 7056,
+      "mismatched_rgb_pixels": 0
+    },
+    {
+      "name": "wall",
+      "scale": 3,
+      "screen_rect_top_left": [
+        288,
+        1728,
+        480,
+        1824
+      ],
+      "opaque_pixels": 18432,
+      "mismatched_rgb_pixels": 0
+    }
+  ],
+  "baselines": [
+    {
+      "capture": "Baseline-1080x1920",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "canvas_scale": 2.0,
+      "sprites_audited": 74,
+      "simple_sprites": 72,
+      "noninteger_source_pitch_count": 72,
+      "import_filters": [
+        "Point"
+      ],
+      "ppu": [
+        64.0
+      ],
+      "compression_enabled_count": 0,
+      "mipmap_count": 0,
+      "android_override_count": 0,
+      "cameras": [
+        {
+          "name": "Main Camera",
+          "target": "screen",
+          "pipeline": "UniversalRP",
+          "orthographicSize": 7.5,
+          "renderScale": 1.0,
+          "hdr": true,
+          "msaa": false,
+          "dynamicResolution": false,
+          "pixels": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1080.0,
+            "height": 1920.0
+          }
+        }
+      ]
+    },
+    {
+      "capture": "Baseline-720x1280",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "canvas_scale": 1.0,
+      "sprites_audited": 74,
+      "simple_sprites": 72,
+      "noninteger_source_pitch_count": 72,
+      "import_filters": [
+        "Point"
+      ],
+      "ppu": [
+        64.0
+      ],
+      "compression_enabled_count": 0,
+      "mipmap_count": 0,
+      "android_override_count": 0,
+      "cameras": [
+        {
+          "name": "Main Camera",
+          "target": "screen",
+          "pipeline": "UniversalRP",
+          "orthographicSize": 10.0,
+          "renderScale": 1.0,
+          "hdr": true,
+          "msaa": false,
+          "dynamicResolution": false,
+          "pixels": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 720.0,
+            "height": 1280.0
+          }
+        }
+      ]
+    }
+  ],
+  "live_region_comparisons": [
+    {
+      "name": "ApprovedDungeonBarredDoor",
+      "path": "Assets/_Game/Art/DungeonEnvironment/SideViewRebuild/Props_Door/BarredDoor.png",
+      "sha256": "7b4d1100cbc431604981a7ab52124e966169a708878264d01584d0353324c1e8",
+      "dimensions": [
+        61,
+        87
+      ],
+      "opaque_color_count": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        59,
+        85
+      ],
+      "screen_rect": {
+        "serializedVersion": "2",
+        "x": 578.0,
+        "y": 1432.0,
+        "width": 181.0,
+        "height": 231.0
+      },
+      "pixel_pitch": {
+        "x": 2.9672131538391113,
+        "y": 2.655172348022461
+      },
+      "opaque_comparison_pixels": 33556,
+      "nearest_prediction_matching_pixels": 32628,
+      "nearest_prediction_matching_fraction": 0.9723447371557993
+    },
+    {
+      "name": "ApprovedDungeonTorchLeft",
+      "path": "Assets/_Game/Art/DungeonEnvironment/SideViewRebuild/Props_Torches/TorchLeft.png",
+      "sha256": "779dbb46dcb22ff31fc09ff42e1d2d1f0b9ee2775175e7ff84923142986a858e",
+      "dimensions": [
+        23,
+        56
+      ],
+      "opaque_color_count": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        3,
+        20,
+        54
+      ],
+      "screen_rect": {
+        "serializedVersion": "2",
+        "x": 357.0,
+        "y": 1504.0,
+        "width": 68.0,
+        "height": 148.0
+      },
+      "pixel_pitch": {
+        "x": 2.95652174949646,
+        "y": 2.642857074737549
+      },
+      "opaque_comparison_pixels": 4169,
+      "nearest_prediction_matching_pixels": 4097,
+      "nearest_prediction_matching_fraction": 0.9827296713840249
+    }
+  ],
+  "unity_tests": {
+    "result": "Passed",
+    "total": "1",
+    "passed": "1",
+    "failed": "0"
+  },
+  "historical_360_game_failure": "Diagnostics/Baseline360-Failure.xml: production board (568.26,568.26) cannot fit physical360x640; no 360px gameplay pass claimed."
+}

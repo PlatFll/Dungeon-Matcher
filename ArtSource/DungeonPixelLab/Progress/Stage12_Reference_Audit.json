@@ -1,0 +1,296 @@
+{
+  "guide_sha256": "2b702121cd0913bce8f1dca9949718febfb2ebf790d6fd90bc8df683d01894c4",
+  "register_sha256": "d905f9d7a53cbaf66ece220609c0731bb9718fd10833e85aa73d2855b6370d4e",
+  "pack_sha256": "fb29f1ae398bb49d4bea8b60a1117f978d455b5b60cb0c8cdd0ab06fff0b468b",
+  "references": [
+    {
+      "role": "primary",
+      "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+      "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+      "width": 64,
+      "height": 64,
+      "opaque_colors": 15,
+      "palette": [
+        "#0084C4",
+        "#0A0D11",
+        "#23DAFF",
+        "#4B1127",
+        "#5B3627",
+        "#7C1A30",
+        "#8A5622",
+        "#8D725C",
+        "#B7A393",
+        "#C58826",
+        "#C74A5A",
+        "#FBEA90",
+        "#FDF5E5",
+        "#FEFBEF",
+        "#FF98A0"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        9,
+        3,
+        53,
+        64
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet",
+      "production_path": "Assets/_Game/Art/CombatIdles/Rattlebones_Idle.png",
+      "production_sha256": "59b04929e9fdc15ae9f1d70fd3c85c6ea5362bdac479eb12f45cfcbb0efe4306",
+      "registered_hashes_match": true,
+      "extraction_pixels_match": true
+    },
+    {
+      "role": "support",
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/farmer-still.png",
+      "sha256": "6189bc2cfe01bab84bafada24a7b129a3fd8c2225f629eb8580386f461109e2d",
+      "width": 112,
+      "height": 88,
+      "opaque_colors": 14,
+      "palette": [
+        "#0A0D11",
+        "#3E312A",
+        "#4A2C1C",
+        "#6C5A4A",
+        "#7A4D2E",
+        "#7A5A2C",
+        "#7C5238",
+        "#9A856F",
+        "#B07A43",
+        "#B88A46",
+        "#B9825D",
+        "#E6B08A",
+        "#E7C979",
+        "#F9E7B4"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        25,
+        26,
+        80,
+        84
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet",
+      "production_path": "Assets/_Game/Art/CombatIdles/Farmer_Idle.png",
+      "production_sha256": "f1ee772c518c6106617dcf782de95c431e6d90dd6d079a6a5d1d097ce1f10164",
+      "registered_hashes_match": true,
+      "extraction_pixels_match": true
+    },
+    {
+      "role": "support",
+      "path": "Docs/ArtDirection/EnemyCohesion2026-10/pan_villager-still.png",
+      "sha256": "e1be89f8231483df5db6739dd2cae7bef83e11aaa9b028e4cb1b60ea55aba0ca",
+      "width": 112,
+      "height": 88,
+      "opaque_colors": 16,
+      "palette": [
+        "#0A0D11",
+        "#2B313A",
+        "#3E312A",
+        "#4A2C1C",
+        "#55606E",
+        "#5B5145",
+        "#6C5A4A",
+        "#7A4D2E",
+        "#7C5238",
+        "#93A1B0",
+        "#9A856F",
+        "#9F907A",
+        "#B07A43",
+        "#B9825D",
+        "#E0D2B8",
+        "#E6B08A"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        28,
+        27,
+        75,
+        84
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet",
+      "production_path": "Assets/_Game/Art/CombatIdles/PanVillager_Idle.png",
+      "production_sha256": "cf2f8bcb3d7066e5837e933e105ed9ff70cd50780bf48d26cb8df9185833e51d",
+      "registered_hashes_match": true,
+      "extraction_pixels_match": true
+    },
+    {
+      "role": "locked UI ramp",
+      "path": "Assets/_Game/Art/Backgrounds/Wave/WaveCounterFinal.png",
+      "sha256": "f0158ff926c14499d6fb22546826c6a1bcf8374f296486a46e9ed31fda0d9257",
+      "width": 151,
+      "height": 44,
+      "opaque_colors": 9,
+      "palette": [
+        "#060709",
+        "#0A0D11",
+        "#11101B",
+        "#1A162C",
+        "#251B41",
+        "#3F2D5D",
+        "#4F3973",
+        "#6F508E",
+        "#8A5DA9"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        151,
+        44
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet"
+    },
+    {
+      "role": "approved UI material",
+      "path": "Assets/_Game/Resources/UI/BattlePresentation/ReferenceDungeon/PlayerFrame.png",
+      "sha256": "bd1820ae6070a9408e3f7433f7d6e316322a10625c25ef0d25891aa64690bd5e",
+      "width": 129,
+      "height": 252,
+      "opaque_colors": 74,
+      "palette": [
+        "#0A0D11",
+        "#101020",
+        "#14172A",
+        "#171421",
+        "#191C31",
+        "#20233A",
+        "#210F31",
+        "#211B30",
+        "#250A3B",
+        "#25223F",
+        "#272A43",
+        "#291D28",
+        "#29213D",
+        "#29233E",
+        "#292441",
+        "#2D2646",
+        "#30314C",
+        "#312747",
+        "#312D3B",
+        "#321446",
+        "#32294C",
+        "#382B4D",
+        "#382D52",
+        "#3A3A57",
+        "#3B2D50",
+        "#3C2935",
+        "#3E3159",
+        "#450E65",
+        "#45335A",
+        "#453660",
+        "#461C60",
+        "#463359",
+        "#494350",
+        "#4A3965",
+        "#4C352B",
+        "#4D385E",
+        "#4F3C68",
+        "#503B66",
+        "#533E6A",
+        "#543542",
+        "#5A4169",
+        "#5E277B",
+        "#5E4473",
+        "#615B6B",
+        "#674C75",
+        "#68108E",
+        "#684A34",
+        "#70517F",
+        "#793791",
+        "#7A7287",
+        "#83628F",
+        "#8918B4",
+        "#89653E",
+        "#8B5A66",
+        "#8D332E",
+        "#958BA1",
+        "#9954AC",
+        "#997AA6",
+        "#A8757E",
+        "#AB2AD3",
+        "#AC8454",
+        "#B2A8BD",
+        "#B34429",
+        "#B777C4",
+        "#C499A3",
+        "#CCC3D5",
+        "#D34CE9",
+        "#E0BCC1",
+        "#E2DCEA",
+        "#EC7A22",
+        "#F183FB",
+        "#F5F0F5",
+        "#FCD4FF",
+        "#FFE4B6"
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        129,
+        252
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet"
+    },
+    {
+      "role": "baseline only, not new accepted art",
+      "path": "Assets/_Game/Art/DungeonEnvironment/SideViewRebuild/Tiles_Wall/BackWallReference.png",
+      "sha256": "fd0b1734296a098fb83d17d57cb1b013cfdf336440df48d12891abdcea400e43",
+      "width": 64,
+      "height": 32,
+      "opaque_colors": 4,
+      "palette": [
+        "#171522",
+        "#211C30",
+        "#292139",
+        "#322740"
+      ],
+      "alpha": [
+        255
+      ],
+      "bounds": [
+        0,
+        0,
+        64,
+        32
+      ],
+      "native_pixel_pitch": "1 stored pixel; not an enlarged reference sheet"
+    }
+  ],
+  "stage": "12",
+  "task": "Top HUD plaques; completed portrait correction retained unchanged",
+  "actual_image_input": {
+    "field": "style_image.base64",
+    "path": "Docs/ArtDirection/Audit2026-10/media/skeleton-still.png",
+    "sha256": "705c4c8379d56a262e287d256664db8d180a79917f4a84289bbb813730b9616c",
+    "roles": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "palette_copy": false
+  },
+  "supporting_input_limitation": "Flash accepts one native style image for create. Farmer, Pan and current UI references were inspected locally; larger references were not scaled or claimed as transmitted.",
+  "endpoint": "create_image_pro_flash",
+  "provider_docs": [
+    "https://api.pixellab.ai/mcp/docs",
+    "https://api.pixellab.ai/v2/llms.txt"
+  ],
+  "job_id": "7e594107-a72b-453d-9834-0a48b2dd0e2c"
+}

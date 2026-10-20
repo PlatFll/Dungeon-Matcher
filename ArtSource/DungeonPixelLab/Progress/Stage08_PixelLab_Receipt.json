@@ -1,0 +1,47 @@
+{
+  "stage": "08",
+  "started_balance": 1025.2,
+  "ending_balance": 1019.2,
+  "cumulative_before": 29,
+  "cumulative_after": 35,
+  "budget": 35,
+  "banner": {
+    "job_id": "3527e875-8178-47c1-9b1c-0e949298e4c9",
+    "image_id": "922d0747-3446-5dca-b057-829706dc3aef",
+    "endpoint": "create_image_pro_flash",
+    "estimated": 5,
+    "billed": 5,
+    "seed": 810801,
+    "dimensions": [
+      96,
+      64
+    ],
+    "style_input": "Actual native Rattlebones PNG; outline/detail/shading true, color_palette false",
+    "limitation": "Requested both props, returned only banner; banner selected.",
+    "completion": [
+      "status: completed\nid: 3527e875-8178-47c1-9b1c-0e949298e4c9\njob_id: 3527e875-8178-47c1-9b1c-0e949298e4c9\nframes: 1\ntransparent: yes\nasset_id: 922d0747-3446-5dca-b057-829706dc3aef\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/3527e875-8178-47c1-9b1c-0e949298e4c9/download"
+    ],
+    "raw_sha256": "99e521047e21b95fcdbdcb2725c56c710049ef002ddf79d7ca90445e8d800a19"
+  },
+  "chain": {
+    "job_id": "c8a67f85-e4ad-4437-8f5e-1a6a48230204",
+    "image_id": "5e2551df-3288-58cc-b322-39e1cc70eac8",
+    "endpoint": "create_image_pixflux",
+    "estimated": 1,
+    "billed": 1,
+    "seed": 810802,
+    "dimensions": [
+      16,
+      64
+    ],
+    "style_input": "No style-reference input offered. Actual golden images compared locally.",
+    "limitation": "Raw source only a two-pixel clipped strand; open links, anchor and termination substantially reconstructed in LibreSprite.",
+    "completion": [
+      "status: completed\nid: c8a67f85-e4ad-4437-8f5e-1a6a48230204\njob_id: c8a67f85-e4ad-4437-8f5e-1a6a48230204\nframes: 1\ntransparent: yes\nasset_id: 5e2551df-3288-58cc-b322-39e1cc70eac8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c8a67f85-e4ad-4437-8f5e-1a6a48230204/download"
+    ],
+    "raw_sha256": "cfab87bbe525900e7b26c92c6b3d4aae3770507baa2db6e206a6a6a5f4919bd0"
+  },
+  "ending_balance_receipt": [
+    "credits: $0.00\ngenerations_remaining: 1019.20\ngenerations_used: 2080.80\ngenerations_total: 3100\nnote: fractions come from small steps billed per use \u00e2\u20ac\u201d prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls \u00e2\u20ac\u201d most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-29\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+  ]
+}

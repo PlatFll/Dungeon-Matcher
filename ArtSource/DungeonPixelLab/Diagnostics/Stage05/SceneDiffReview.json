@@ -1,0 +1,28 @@
+{
+  "scene": "Assets/_Game/Scenes/ArtPreview_DungeonPixelLab.unity",
+  "added_objects": [
+    "114:Gate_Arch @{x: 177, y: -72}",
+    "114:Gate_Hardware @{x: 177, y: -72}",
+    "114:Gate_Leaf @{x: 177, y: -72}",
+    "1:Gate_Arch @{x: 177, y: -72}",
+    "1:Gate_Hardware @{x: 177, y: -72}",
+    "1:Gate_Leaf @{x: 177, y: -72}",
+    "222:Gate_Arch @{x: 177, y: -72}",
+    "222:Gate_Hardware @{x: 177, y: -72}",
+    "222:Gate_Leaf @{x: 177, y: -72}",
+    "224:Gate_Arch @{x: 177, y: -72}",
+    "224:Gate_Hardware @{x: 177, y: -72}",
+    "224:Gate_Leaf @{x: 177, y: -72}"
+  ],
+  "removed_objects": [],
+  "changed_existing_objects": [
+    {
+      "object": "114:Dungeon PixelLab preview root",
+      "diff": "--- \n\n+++ \n\n@@ -39,4 +39,7 @@\n\n   - {fileID: 21300000, guid: 34383e47424582c4398e74abecc1aa83, type: 3}\n   - {fileID: 21300000, guid: a2ead3d87c276534697a3d0ce6ed7640, type: 3}\n+  - {fileID: 21300000, guid: f01cd3d5ea7987f4cabc7bd936bf5509, type: 3}\n+  - {fileID: 21300000, guid: a1c97b667cabb2743845a119223e8712, type: 3}\n+  - {fileID: 21300000, guid: 431475767a9dd72419a508fb4923f0b0, type: 3}\n   - {fileID: 21300000, guid: 80c74a257b2073746a1e871f91b1921d, type: 3}\n   - {fileID: 21300000, guid: e26fcf2198c7f6d45ade1a671226450f, type: 3}\n@@ -47,5 +50,5 @@\n\n   - {fileID: 21300000, guid: c65883cf13aea424e9089b3b1e27211f, type: 3}\n   - {fileID: 21300000, guid: 905c02710ecd7dc46a004ee6a6d6be5a, type: 3}\n-  placementManifest: {fileID: 4900000, guid: 4d3e91e4de63ce54585d4c46628ffd0f, type: 3}\n+  placementManifest: {fileID: 4900000, guid: a3765035bd18d0641ac11104297f281b, type: 3}\n   width: 360\n   height: 640"
+    },
+    {
+      "object": "224:04 Props @{x: 0, y: 0}",
+      "diff": "--- \n\n+++ \n\n@@ -9,5 +9,8 @@\n\n   m_LocalScale: {x: 1, y: 1, z: 1}\n   m_ConstrainProportionsScale: 0\n-  m_Children: []\n+  m_Children:\n+  - {fileID: 224:Gate_Leaf @{x: 177, y: -72}}\n+  - {fileID: 224:Gate_Arch @{x: 177, y: -72}}\n+  - {fileID: 224:Gate_Hardware @{x: 177, y: -72}}\n   m_Father: {fileID: 224:ReferenceContent @{x: 0, y: 0}}\n   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}"
+    }
+  ]
+}

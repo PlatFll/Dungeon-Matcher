@@ -1,0 +1,7 @@
+{
+  "tested_scene_sha256": "7c7421f9a635d3b4c873fe4a16224cb699edf0e5e302e191507c137fcf95bb09",
+  "preserved_existing_objects": 1459,
+  "new_objects": 223,
+  "reason": "Keep existing object IDs and ordering; only new bottom HUD hierarchy and required root/layer bindings change. Verified every serialized property is semantically identical to the rendered test scene.",
+  "delivered_scene_sha256": "874b15abd8f1faa891d5f88d5fb6fcad81c6803501aa54fd49b6443b5328676d"
+}

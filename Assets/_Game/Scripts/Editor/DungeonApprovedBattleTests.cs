@@ -56,6 +56,7 @@ public sealed class DungeonApprovedBattleTests
     }
     public static void AssertApprovedLayers(GameplayPixelLayoutController layout)
     {
+        if(DungeonPixelLabBattleArt.Current) {DungeonPixelPipelineStage16Tests.AssertNativeLayers(layout);return;}
         var art = ApprovedDungeonBattleArt.Current;
         Assert.That(art, Is.Not.Null);
         var scenery = GameObject.Find("ApprovedDungeonScenery").transform;
@@ -119,7 +120,7 @@ public sealed class DungeonApprovedBattleTests
         yield return new EnterPlayMode();
         integrated=TestContext.CurrentContext.Test.Name.StartsWith("Approved");
         string phase=integrated?"After":"Before";
-        string output=Path.GetFullPath(Evidence+"/"+phase);Directory.CreateDirectory(output);
+        string output=Path.GetFullPath(integrated ? "ArtSource/DungeonPixelLab/Diagnostics/Stage16/Regression" : Evidence+"/"+phase);Directory.CreateDirectory(output);
         using(CharacterSelectionSettings.UseTemporarySelection("skeleton"))
         foreach(string zone in new[]{"dungeon","magical-forest","drowned-court"})
         {
@@ -140,7 +141,23 @@ public sealed class DungeonApprovedBattleTests
                     File.WriteAllText(output+"/"+name+"-validation.txt",report+"\n"+string.Join("\n",errors));
                     Assert.That(errors,Is.Empty,name);
                     var geometry=Measure(layout);File.WriteAllText(output+"/"+name+"-layout.json",JsonUtility.ToJson(geometry,true));
-                    if(integrated)Compare(JsonUtility.FromJson<LayoutRecord>(File.ReadAllText(Evidence+"/Before/"+name+"-layout.json")),geometry,name);
+                    if(integrated)
+                    {
+                        var before=JsonUtility.FromJson<LayoutRecord>(File.ReadAllText(Evidence+"/Before/"+name+"-layout.json"));
+                        if(DungeonPixelLabBattleArt.Current)
+                        {
+                            // Native scenery/character pixels and UI skins are intentionally replaced.
+                            // The user's existing board footprint and major responsive sections are retained.
+                            foreach(string section in new[]{"TopHUD","GameArea","BottomHUD"})
+                            {
+                                var a=before.items.Single(i=>i.name.EndsWith("/"+section)).bounds;
+                                var b=geometry.items.Single(i=>i.name.EndsWith("/"+section)).bounds;
+                                Assert.That(Vector2.Distance(a.position,b.position),Is.LessThan(.1),name+section);
+                                Assert.That(Vector2.Distance(a.size,b.size),Is.LessThan(.1),name+section);
+                            }
+                        }
+                        else Compare(before,geometry,name);
+                    }
                     ScreenCapture.CaptureScreenshot(output+"/"+name+".png");yield return new WaitForSecondsRealtime(.25f);
                     if(integrated&&zone=="dungeon")
                     {

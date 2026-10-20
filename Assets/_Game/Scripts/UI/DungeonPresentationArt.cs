@@ -20,6 +20,13 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
     private void Start()
     {
         worldCamera = Camera.main;
+        if (DungeonPixelLabBattleArt.Current)
+        {
+            if(worldCamera.TryGetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>(out var pixelCamera))
+            { pixelCamera.refResolutionX=360; pixelCamera.refResolutionY=640; }
+            if(!TryGetComponent<BattleAmbientPresentation>(out _)) gameObject.AddComponent<BattleAmbientPresentation>();
+            UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering += PixelLabBeforeCamera; return;
+        }
         var tile = ApprovedDungeonBattleArt.Current?.Sprite("BackWallReference") ?? BattlePresentationSkin.ZoneSprite("General") ?? RunSession.Current?.Zone?.Definition?.theme?.generalBackground ?? Load("DungeonBackdropTile");
         if (tile == null || worldCamera == null) return;
         var go = new GameObject("DungeonSurroundingMasonry");
@@ -32,6 +39,7 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (DungeonPixelLabBattleArt.Current) { UpdatePixelLabDungeon(); return; }
         UpdateReferenceSides();
         if (approved != null) UpdateApprovedDungeon();
         if (approved == null && backdrop != null && worldCamera != null && worldCamera.orthographic)
@@ -196,6 +204,8 @@ public sealed partial class DungeonPresentationArt : MonoBehaviour
 
     private void OnDestroy()
     {
+        UnityEngine.Rendering.RenderPipelineManager.beginCameraRendering -= PixelLabBeforeCamera;
+        if (pixelLabWorld) Destroy(pixelLabWorld.gameObject);
         if (backdrop != null) Destroy(backdrop.gameObject);
         if (approvedWorld != null) Destroy(approvedWorld);
         if (croppedReferenceFloor != null) Destroy(croppedReferenceFloor);

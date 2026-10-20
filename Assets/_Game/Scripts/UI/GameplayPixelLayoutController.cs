@@ -123,6 +123,19 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         return default;
     }
 
+    public static Geometry CalculateCompactDungeon(int width, int height, Rect safe, Vector2 boardPixels)
+    {
+        safe = Rect.MinMaxRect(Mathf.Ceil(Mathf.Max(0,safe.xMin)),Mathf.Ceil(Mathf.Max(0,safe.yMin)),
+            Mathf.Floor(Mathf.Min(width,safe.xMax)),Mathf.Floor(Mathf.Min(height,safe.yMax)));
+        float w = Mathf.Floor((safe.width-8)/2)*2, h = Mathf.Floor((safe.height-8)/2)*2;
+        if(w<320 || h<620 || boardPixels.x<=0 || boardPixels.y<=0) return default;
+        float size=Mathf.Floor(Mathf.Min(w*.85f,h-272-80-12));
+        return new Geometry {Scale=1,Safe=safe,Viewport=new Rect(safe.xMin+4,safe.yMin+4,w,h),
+            Top=new Rect(0,h-272,w,272),Bottom=new Rect(0,0,w,80),
+            Board=new Rect(Mathf.Floor((w-size)/2),Mathf.Floor((h-272+80-size)/2),size,size),
+            BoardTexelRatio=size/boardPixels.x,FractionalBoardScale=true,Fits=true};
+    }
+
     private static bool Finite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
 
     public void Initialize()
@@ -169,6 +182,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
         lastMinimumBattleHeight=minimumBattleHeight;
         lastScreen = screen; lastSafe = safe; lastBoard = source; lastCanvasRect = canvasRect;
         Current = Calculate(Screen.width, Screen.height, safe, source,minimumBattleHeight,referenceComposition);
+        if (!Current.Fits && DungeonPixelLabBattleArt.Current) Current = CalculateCompactDungeon(Screen.width, Screen.height, safe, source);
         if (!Current.Fits)
         {
             Debug.LogError($"Gameplay pixel layout cannot fit screen {screen}, safe {safe}, board {source}.", this);
@@ -205,6 +219,7 @@ public sealed class GameplayPixelLayoutController : MonoBehaviour
             if (wave.TryGetComponent(out Image waveImage)) GameplayPixelGrid.FitImage(waveImage,
                 BattlePresentationSkin.Folder != null ? new Vector2(264, 54) : WaveTrackerLogicalSize);
         }
+        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt && wave != null) nativeArt.PlaceControl(wave,"Wave",TopHud);
         if (TopHud.TryGetComponent(out TopBattlePresentationController presentation)) presentation.RefreshPresentation();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         validationFrames = 5;

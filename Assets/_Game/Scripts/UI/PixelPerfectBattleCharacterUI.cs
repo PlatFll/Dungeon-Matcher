@@ -41,6 +41,12 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
             observedImage = image;
         }
         Vector2 available = requestedBox;
+        if(DungeonPixelLabBattleArt.Current)
+        {
+            Vector2 sourceReference=isPlayer ? RunSession.Current.Player.Definition.BattleReferenceCanvas : EnemyReferenceCanvasSize;
+            if(sourceReference.x<=0 || sourceReference.y<=0)sourceReference=EnemyReferenceCanvasSize;
+            available=sourceReference*DungeonPixelLabBattleArt.Unit(image.canvas);
+        }
         if (!isPlayer && root.parent is RectTransform slot)
             available.x = Mathf.Min(available.x, slot.rect.width);
         root.localScale = Vector3.one;
@@ -66,6 +72,13 @@ public sealed class PixelPerfectBattleCharacterUI : MonoBehaviour
                 float sourceGroundOffset = Mathf.Max(0f, image.sprite.rect.height - EnemyReferenceCanvasSize.y) *
                     visual.pivot.y - image.sprite.pivot.y;
                 float canvasGroundOffset = sourceGroundOffset * (visual.rect.height / image.sprite.rect.height);
+                if(DungeonPixelLabBattleArt.Current && GetComponentInParent<EnemySlotUI>() is EnemySlotUI nativeSlot)
+                {
+                    float scale=GameplayPixelLayoutController.ScreenRect(visual).height/image.sprite.rect.height;
+                    float ground=GameplayPixelLayoutController.ScreenRect(root).center.y-32*scale;
+                    float platform=GameplayPixelLayoutController.ScreenRect(nativeSlot.CombatBarRect).yMax+2*DungeonPixelLabBattleArt.PhysicalPixelScale;
+                    canvasGroundOffset+=(platform-ground)/image.canvas.rootCanvas.scaleFactor;
+                }
                 enemyRoot.anchoredPosition = enemyRestPosition + Vector2.up * canvasGroundOffset;
                 GameplayPixelGrid.Snap(enemyRoot);
             }

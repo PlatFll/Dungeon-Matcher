@@ -49,8 +49,15 @@ public sealed class TopBattleLayoutController : MonoBehaviour
     private bool layoutBuilt;
     private BattleBackgroundTilemapController tilemapBackground;
 
+    private Vector2 lastNativeEnemyArea;
     private void LateUpdate()
     {
+        if(DungeonPixelLabBattleArt.Current && enemyArea && enemyArea.rect.size!=lastNativeEnemyArea)
+        {
+            lastNativeEnemyArea=enemyArea.rect.size;LayoutEnemyArea();
+            if(TryGetComponent<TopBattlePresentationController>(out var presentation))presentation.RefreshPresentation();
+        }
+
         if (layoutBuilt) RefreshTilemapBackground();
     }
 

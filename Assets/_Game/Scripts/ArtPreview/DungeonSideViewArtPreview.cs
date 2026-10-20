@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>Isolated reference-layout art preview. It never creates gameplay or input owners.</summary>
 public sealed class DungeonSideViewArtPreview : MonoBehaviour
@@ -13,12 +14,90 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
     public TextAsset placementManifest;
     public int width = 1080, height = 1920;
     public Rect safeArea = new Rect(0, 0, 1080, 1920);
+    public bool fitScreenInPlayMode = true;
+    public int LogicalHeight { get; private set; }
     public int PixelScale { get; private set; }
     public Rect ContentPixels { get; private set; }
     public RectTransform Content { get; private set; }
     public readonly List<RectTransform> Pieces = new List<RectTransform>();
     [Serializable] public class Placement { public string name; public int x, y, layer; public int[] clip; }
-    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; }
+    [Serializable] public class Manifest { public int width, height, pixelsPerUnit; public Placement[] placements; public NativePanel[] panels; public NativeLabel[] labels; }
+
+    [Serializable] public class NativePanel
+    {
+        public string name, prefix, backing, label, icon, fill;
+        public int x, y, width, height, inset, connectorPitch, cells, labelFontSize, layer;
+    }
+
+    [Serializable] public class NativeLabel { public string name, text; public int x, y, width, height, fontSize, layer; }
+
+    // The panel owns only preview construction; the shared fitter owns frame internals.
+    void BuildPanel(NativePanel p, Transform parent, Dictionary<string, Sprite> sprites, int offsetY)
+    {
+        var root = TopRect(p.name + " panel", parent, p.x, p.y + offsetY, p.width, p.height);
+        var mask = TopRect("InteriorMask", root, 0, 0, 0, 0);
+        mask.anchorMin = Vector2.zero; mask.anchorMax = Vector2.one;
+        mask.offsetMin = new Vector2(p.inset, p.inset); mask.offsetMax = -mask.offsetMin;
+        mask.gameObject.AddComponent<RectMask2D>();
+        if (!string.IsNullOrEmpty(p.backing))
+        {
+            var backing = sprites[p.backing];
+            var fill = TopRect("OverfilledBacking", mask, 0, 0, 0, 0);
+            fill.anchorMin = Vector2.zero; fill.anchorMax = Vector2.one;
+            fill.offsetMin = -backing.rect.size; fill.offsetMax = backing.rect.size;
+            var image = fill.gameObject.AddComponent<Image>(); image.sprite = backing;
+            image.type = Image.Type.Tiled; image.raycastTarget = false; image.pixelsPerUnitMultiplier = 1;
+        }
+        if (!string.IsNullOrEmpty(p.fill))
+        {
+            // Art-only meter; integer clipping is independent of gameplay energy.
+            var meter = root.gameObject.AddComponent<DungeonPreviewNativeMeter>();
+            meter.Initialize(sprites[p.fill], p.inset);
+        }
+        if (p.cells > 0)
+        {
+            var tile = sprites[p.prefix + "_Cell"];
+            if (p.width - p.inset * 2 != tile.rect.width * p.cells ||
+                p.height - p.inset * 2 != tile.rect.height * p.cells)
+                throw new InvalidOperationException("Board pitch must exactly fill the native interior.");
+            for (int y = 0; y < p.cells; y++) for (int x = 0; x < p.cells; x++)
+            {
+                var cell = TopRect("Cell_" + x + "_" + y, mask, x * tile.rect.width, y * tile.rect.height, tile.rect.width, tile.rect.height);
+                var image = cell.gameObject.AddComponent<Image>(); image.sprite = tile; image.raycastTarget = false;
+            }
+        }
+        var frame = TopRect("ModularFrame", root, 0, 0, 0, 0);
+        frame.anchorMin = Vector2.zero; frame.anchorMax = Vector2.one; frame.offsetMin = frame.offsetMax = Vector2.zero;
+        string[] children = { "TopLeftCorner", "TopRightCorner", "BottomLeftCorner", "BottomRightCorner", "TopEdge", "BottomEdge", "LeftEdge", "RightEdge" };
+        string[] suffixes = { "Corner_TL", "Corner_TR", "Corner_BL", "Corner_BR", "Rail_Top", "Rail_Bottom", "Rail_Left", "Rail_Right" };
+        for (int n = 0; n < children.Length; n++)
+        {
+            var r = TopRect(children[n], frame, 0, 0, 0, 0);
+            var image = r.gameObject.AddComponent<Image>(); image.sprite = sprites[p.prefix + "_" + suffixes[n]];
+            image.raycastTarget = false;
+        }
+        frame.gameObject.AddComponent<ResponsiveModularFrameFitter>().ConfigureNativePieces(sprites[p.prefix + "_Clamp"], p.connectorPitch);
+        if (!string.IsNullOrEmpty(p.label))
+        {
+            // Existing shared bitmap typography. Labels are live and independent
+            // of the replaceable visual frame; this preview adds no input owner.
+            var label = GameUi.Label("LiveLabel", root, p.label,
+                new Vector2(p.width - 2 * p.inset, p.height), Vector2.zero, p.labelFontSize);
+            label.alignment = TextAlignmentOptions.CenterGeoAligned;
+            label.textWrappingMode = TextWrappingModes.NoWrap;
+            label.overflowMode = TextOverflowModes.Truncate;
+            PixelTextFitter.ApplyNativeMenu(label, p.labelFontSize);
+            label.gameObject.AddComponent<DungeonPreviewPixelText>().Initialize(Content);
+        }
+        if (!string.IsNullOrEmpty(p.icon))
+        {
+            var icon = sprites[p.icon];
+            var r = TopRect("NativeIcon", root, Mathf.Floor((p.width - icon.rect.width) / 2),
+                Mathf.Floor((p.height - icon.rect.height) / 2), icon.rect.width, icon.rect.height);
+            var image = r.gameObject.AddComponent<Image>(); image.sprite = icon; image.raycastTarget = false;
+            if (p.layer == 5) r.gameObject.AddComponent<DungeonPreviewNativeIcon>().Initialize(root);
+        }
+    }
 
     static RectTransform TopRect(string name, Transform parent, float x, float y, float w, float h)
     {
@@ -26,6 +105,45 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         r.SetParent(parent, false); r.anchorMin = r.anchorMax = r.pivot = new Vector2(0, 1);
         r.anchoredPosition = new Vector2(x, -y); r.sizeDelta = new Vector2(w, h);
         return r;
+    }
+
+    // Preview-only adapter: top and bottom stay on safe-area edges, with the
+    // unchanged board centered between them, as in the live layout owner.
+    // The production layout's larger minimum width is intentionally untouched.
+    void LateUpdate()
+    {
+        if (!fitScreenInPlayMode || !Application.isPlaying) return;
+        if (Content && width == Screen.width && height == Screen.height && safeArea == Screen.safeArea) return;
+        width = Screen.width; height = Screen.height; safeArea = Screen.safeArea;
+        Rebuild();
+    }
+
+    IEnumerable<Placement> ExtendedPlacements(Manifest manifest, Dictionary<string, Sprite> sprites, int extra)
+    {
+        foreach (var source in manifest.placements)
+        {
+            // The old 16px terminal row is replaced by complete repeat tiles.
+            if (extra > 0 && source.layer == 1 && source.y == 624) continue;
+            var p = new Placement { name = source.name, x = source.x, y = source.y,
+                layer = source.layer, clip = source.clip };
+            if (p.name == "Support_Edge_Foot" || p.y >= 530 && p.layer > 30) p.y += extra;
+            yield return p;
+        }
+        if (extra == 0) yield break;
+        for (int y = 624; y < LogicalHeight; y += 48)
+        {
+            int row = ((y / 48) % 13) * 48;
+            foreach (var source in manifest.placements.Where(p => p.layer == 1 && p.y == row))
+                yield return new Placement { name = source.name, x = source.x, y = y, layer = 1 };
+        }
+        foreach (var name in new[] { "Support_Corner_Left", "Support_Corner_Right" })
+        {
+            var source = manifest.placements.First(p => p.name == name);
+            int tileHeight = (int)sprites[name].rect.height;
+            for (int y = 632; y < LogicalHeight - 8; y += tileHeight)
+                yield return new Placement { name = name, x = source.x, y = y, layer = 12,
+                    clip = new[] { source.x, 632, (int)sprites[name].rect.width, extra } };
+        }
     }
 
     [ContextMenu("Rebuild reference art preview")]
@@ -39,8 +157,10 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         var lookup = modules.ToDictionary(s => s.name, s => s);
         PixelScale = Mathf.FloorToInt(Mathf.Min(safeArea.width / 360f, safeArea.height / 640f));
         if (PixelScale < 1) throw new InvalidOperationException("Preview safe area must fit the 360x640 native reference.");
+        LogicalHeight = Mathf.Clamp(Mathf.FloorToInt(safeArea.height / PixelScale), 640, 800);
+        int extra = LogicalHeight - 640;
         ContentPixels = new Rect(Mathf.Floor(safeArea.x + (safeArea.width - 360 * PixelScale) / 2),
-            Mathf.Floor(safeArea.y + (safeArea.height - 640 * PixelScale) / 2), 360 * PixelScale, 640 * PixelScale);
+            Mathf.Floor(safeArea.y + (safeArea.height - LogicalHeight * PixelScale) / 2), 360 * PixelScale, LogicalHeight * PixelScale);
         var old = previewCanvas.transform.Find("ReferenceContent");
         if (old) { old.gameObject.SetActive(false); if (Application.isPlaying) Destroy(old.gameObject); else DestroyImmediate(old.gameObject); }
         Pieces.Clear();
@@ -55,15 +175,29 @@ public sealed class DungeonSideViewArtPreview : MonoBehaviour
         canvas.position = new Vector3(-width / 128f, -height / 128f, 0); canvas.localScale = Vector3.one / 64;
         Content = new GameObject("ReferenceContent", typeof(RectTransform), typeof(RectMask2D)).GetComponent<RectTransform>();
         Content.SetParent(canvas, false); Content.anchorMin = Content.anchorMax = Content.pivot = Vector2.zero;
-        Content.anchoredPosition = ContentPixels.position; Content.sizeDelta = new Vector2(360, 640);
+        Content.anchoredPosition = ContentPixels.position; Content.sizeDelta = new Vector2(360, LogicalHeight);
         Content.localScale = Vector3.one * PixelScale;
         string[] names = {"01 Base walls", "02 Standing platform", "03 Structural masonry", "04 Props", "05 Top UI shells", "06 Bottom HUD shells"};
-        var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, 640)).ToArray();
+        var layers = names.Select(n => TopRect(n, Content, 0, 0, 360, LogicalHeight)).ToArray();
+        // Keep serialized layer identities, but render far structures before the ledge.
+        layers[2].SetSiblingIndex(1);
+        if (manifest.panels != null) foreach (var panel in manifest.panels)
+            BuildPanel(panel, layers[panel.layer == 5 ? 5 : 4], lookup,
+                panel.layer == 5 ? extra : panel.name == "Board" ? extra / 2 : 0);
+        if (manifest.labels != null) foreach (var item in manifest.labels)
+        {
+            var r = TopRect(item.name, layers[item.layer], item.x, item.y + (item.layer == 5 ? extra : 0), item.width, item.height);
+            var label = GameUi.Label("LiveLabel", r, item.text, r.sizeDelta, Vector2.zero, item.fontSize);
+            label.alignment = TextAlignmentOptions.CenterGeoAligned;
+            label.textWrappingMode = TextWrappingModes.NoWrap; label.overflowMode = TextOverflowModes.Truncate;
+            PixelTextFitter.ApplyNativeMenu(label, item.fontSize);
+            label.gameObject.AddComponent<DungeonPreviewPixelText>().Initialize(Content);
+        }
         var clips = new Dictionary<string, RectTransform>();
-        foreach (var p in manifest.placements.OrderBy(p => p.layer))
+        foreach (var p in ExtendedPlacements(manifest, lookup, extra).OrderBy(p => p.layer))
         {
             if (!lookup.TryGetValue(p.name, out var sprite)) throw new InvalidOperationException("Missing native asset " + p.name);
-            int group = p.layer <= 2 ? 0 : p.layer <= 11 ? 1 : p.layer <= 14 ? 2 : p.layer <= 30 ? 3 : p.y < 530 ? 4 : 5;
+            int group = p.layer <= 2 ? 0 : p.layer <= 11 ? 1 : p.layer <= 14 || p.name.StartsWith("Gate_", StringComparison.Ordinal) ? 2 : p.layer <= 30 ? 3 : p.y < 530 ? 4 : 5;
             Transform parent = layers[group]; int x = p.x, y = p.y;
             if (p.clip != null && p.clip.Length == 4)
             {

@@ -41,6 +41,13 @@ public sealed class WaveTrackerUI :
 
     private void Start()
     {
+        if (DungeonPixelLabBattleArt.Current is DungeonPixelLabBattleArt nativeArt)
+        {
+            var top=FindFirstObjectByType<GameplayPixelLayoutController>().TopHud;
+            nativeArt.SkinControl((RectTransform)transform,"Wave",top);
+            if(waveText) { waveText.rectTransform.offsetMin=waveText.rectTransform.offsetMax=Vector2.zero; waveText.enableAutoSizing=true; waveText.fontSizeMin=16; waveText.fontSizeMax=32; }
+            return;
+        }
         var plaque=BattlePresentationSkin.ZoneSprite("Plaque") ?? RunSession.Current?.Zone?.Definition?.theme?.wavePlaque;
         if(plaque!=null && TryGetComponent<UnityEngine.UI.Image>(out var image))
         {
